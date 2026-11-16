@@ -8,7 +8,7 @@
 | A2 | Frame fill | done ENDED 2026-11-16T06:09:12.066331+00:00; d01c50e0c pushed; G-FRAME/G-REG pass,7/10; time-split process failure recorded |
 | A3 | Soot acceptance | per-unit production/review complete; G-POSE/READ/ROLE/REG pass; OPEN pairwiseFX + isolatedPERF atA9; encoded recovery artifact logged;7/10 |
 | A4 | Mochi | checkpoint: fourkeys/twoFX, contact+supportcontract and films pass; OPEN pairwiseFX/prodenable A9/A11; process failures explicit;8/10 |
-| A5 | Clover | queued; green flood/face wash, ally-only language pending S2b |
+| A5 | Clover | STARTED 2026-11-16T07:39:07.565839+00:00; K1 accepted, K2 correction next; ally-only visuals with final S2b merge pending |
 | A6 | Panko | queued; gold rings/flood, idle-based silhouette, melee stays home |
 | A7 | Enemies and boss | queued; idle-based keys, boss pink flood, Needle yellow flood |
 | A8 | Designer intake interrupt | queued |

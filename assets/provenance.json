@@ -3570,6 +3570,216 @@
       "sha256": "ac4e4b063333e2dccca93b2ae694cffcc04a29b700a36e1820a03d78a7ca8d9a",
       "sourceCandidate": "v4art-shield-cut-1",
       "status": "runtime candidate, film gates pending"
+    },
+    {
+      "id": "v4-clover-K1-A1",
+      "path": "tools/v3craft-lab/poses/raw/clover/K1-A1.png",
+      "tool": "built-in image_gen",
+      "date": "2026-11-16T07:20:57.674051+00:00",
+      "prompt": "Use case: stylized-concept. Asset: one original 2D game character key pose, transparent background. Input image is our own approved Clover character, the only identity and style reference. Redraw this SAME character in a clear gathering/healing WINDUP (K1). Preserve her exact cream long-haired cat face, green eyes, pink ears, head-to-body proportion (small head, long green dress), green leaf shoulder cape with three gold berries, pale sage belted embroidered dress and cream lace underskirt, pouch with clover emblem, one curled cream tail and one small round glass teapot with gold handle/lid and golden green tea. Full body three-quarter facing RIGHT. Make a strong pose change: lower into a bent-knee side crouch with feet apart, rotate torso and teapot back toward screen-left at hip level, grasp the teapot with both paws close to left hip as if gathering a warm healing charge, tilt shoulders diagonally, head stays looking right. Tail sweeps outward low to screen-left. The dress folds diagonally with the bent stance; no rigid standing silhouette. Keep head size and facial proportions exactly like the reference, no oversized baby head. One teapot only; no shield, staff, weapon or duplicate limb. Four limb anatomy, mitten-like paws. Keep the same warm painterly soft-edge illustration, fine thin brown edges, restrained sage/cream/gold palette. Whole silhouette visible, no cropping, 12% transparent margin all around, square image, feet on same horizontal ground line. No text, no background, no floor, no glow, no particles, no shadows separate from character. True transparent alpha.",
+      "referenceInput": "own art: apps/web/public/units/clover/runtime.webp",
+      "sha256": "2286dcf3e0a9992ca3c806cc58546b7f2f1a1997575768a642bfd22509b8b95b",
+      "status": "candidate; unreviewed",
+      "inputs": [
+        "apps/web/public/units/clover/runtime.webp"
+      ]
+    },
+    {
+      "id": "v4-clover-K1-A2",
+      "path": "tools/v3craft-lab/poses/raw/clover/K1-A2.png",
+      "tool": "built-in image_gen",
+      "date": "2026-11-16T07:24:16.533537+00:00",
+      "prompt": "Use case: precise-object-edit. Original 2D game character, true transparent background. Image 1 is our approved Clover character identity and exact palette. Image 2 is our own K1-A1 windup drawing, the EDIT TARGET. Keep Image 2's clear wide bent-knee crouch, leftward teapot gather with BOTH paws, diagonal dress folds, open low tail, facing RIGHT, costume, belt, pouch, leaf cape, one glass teapot, whole body and all feet. Correct its oversized head: reduce the COMPLETE head including both ears, cheek fur and facial features by 8% relative to the body, around the neck junction. Keep the body, paws, dress, tail and teapot the same proportions; do not shrink the whole character. Match the cream/sage/gold tones exactly to Image 1, avoid the slightly warmer/yellower cast in Image 2. Preserve fine painterly texture, thin warm outlines, green eyes, one curled tail, four limbs. No new objects or extra limbs, no effects, no floor, no text. Fully visible silhouette with transparent margin, square canvas. Make only the requested head-proportion and subtle palette correction.\n",
+      "referenceInput": "own art: apps/web/public/units/clover/runtime.webp; tools/v3craft-lab/poses/raw/clover/K1-A1.png",
+      "inputs": [
+        "apps/web/public/units/clover/runtime.webp",
+        "tools/v3craft-lab/poses/raw/clover/K1-A1.png"
+      ],
+      "sha256": "40efa7d0b0b776d42a7301d9406695a10a8a410d72b19f27e71abb8f04c4eb4a",
+      "status": "candidate; unreviewed"
+    },
+    {
+      "id": "v4-clover-K2-A1",
+      "path": "tools/v3craft-lab/poses/raw/clover/K2-A1.png",
+      "tool": "built-in image_gen",
+      "date": "2026-11-16T07:28:53.698797+00:00",
+      "prompt": "Use case: stylized-concept. Asset: one transparent original 2D game character key pose, Clover K2 HEAL RELEASE. Image1 our approved Clover runtime is exact identity/palette/proportions; Image2 our accepted Clover K1 windup is costume and drawn-style consistency. Create a new very different RELEASE pose. Same cream long-haired cat, green eyes, pink ears, SMALL head proportion, leaf cape with three gold berries, sage green belted floral dress with cream lace underskirt, clover pouch, one cream tail, one round glass teapot with gold lid/handle and green-gold tea. Three-quarter facing RIGHT. Lean her torso strongly forward to the right with a braced forward knee, rear leg stretched back left, both feet on the ground. Extend the teapot-bearing arm FULLY to screen-right at shoulder height, far beyond the face and body (at least 25% of torso width farther than the standing reference), teapot spout pointing gently right/up. Free paw open and reaching right under the teapot, as a caring giving gesture. Head follows the extended hand, looking to an ally. Leaf cape and dress hem swing backward toward left. Tail sweeps low backward to left. One teapot, four limbs, mitten paws, no weapon or aggressive expression. Same head size relative to opaque body height as Image1 and Image2; do not make a bigger baby head. Keep sage/cream/gold palette and fine painterly edgework. Whole character visible, square canvas with generous transparent margin to accommodate long horizontal reach, no clipping, no effects/liquid streaks/particles/shadows/floor/text/background, real alpha.\n",
+      "referenceInput": "own art: apps/web/public/units/clover/runtime.webp; tools/v3craft-lab/poses/raw/clover/K1-A2.png",
+      "inputs": [
+        "apps/web/public/units/clover/runtime.webp",
+        "tools/v3craft-lab/poses/raw/clover/K1-A2.png"
+      ],
+      "sha256": "71c3366a72667f28962072d112b3b996421b9fab52fa9f37c667e9fe06500294",
+      "status": "candidate; unreviewed"
+    },
+    {
+      "id": "v4-clover-k2-a2",
+      "date": "2026-11-16T07:40:53.028353+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: our original Clover K2 healing release sprite, real transparent background. Image 1 is the EDIT TARGET, our K2-A1 drawing. Image 2 is our approved Clover runtime and exact identity/palette reference. Preserve Image 1's long forward teapot reach, open supporting paw, forward bent knee and long rear leg, swept dress, low tail, all costume details and one teapot. Change ONLY the oversized head and subtle palette correction. Reduce the COMPLETE head including ears, cheek fur, facial features and hair by about 15 percent around its neck attachment; keep torso, dress, arms, paws, teapot and feet the same size. Smaller head joins naturally at the neck. Same cream fur, green eyes, pink inner ears, sage dress, leaf cape, gold berries, belt and pouch. Match Image 2's restrained cream/sage/gold, no yellow wash. Whole silhouette facing right, original fine painterly texture and thin warm outline. Four limbs, one tail, one glass teapot. No weapon, particles, liquid stream, light effect, floor, cast shadow, text or other objects. Square canvas, generous transparent margins, no clipping, true alpha. Preserve caring release gesture. Output 1024px square.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/clover/K2-A1.png; apps/web/public/units/clover/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/clover/K2-A1.png",
+        "apps/web/public/units/clover/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/clover/K2-A2.png",
+      "sha256": "30302b08662ab8c0966f2c37dc8f9898b1bc88acfdb9528d88c95cd16ac7ea1b",
+      "status": "ART selected, final battle-scale review pending",
+      "postprocess": "normalize to896canvas; 65% maskedmeanLab translation, alpha unchanged"
+    },
+    {
+      "id": "v4-clover-k4-a1",
+      "date": "2026-11-16T07:43:15.947985+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset: one original 2D Clover K4 RECEIVED-HIT drawing, real transparent background. Reference is our own approved Clover runtime, sole identity and palette source. Preserve the SAME cream long-haired cat, small head, green eyes, pink ears, leaf cape with three gold berries, belted sage embroidered dress, cream lace hem, clover pouch, one curled cream tail and one glass teapot with gold lid and handle. Full body three-quarter facing RIGHT. Draw an unmistakable startled recoil: upper torso curls and leans BACK to screen-left, neck tucked, eyes tightly shut, eyebrows pinched, both paws pull the teapot protectively close to the LEFT side of the chest. Shoulders rise. Knees bend and feet brace wide on the SAME flat ground line, no jumping. Cape and loose dress trail right from the recoil; tail extends low left for balance. Strong changed outline versus idle, but keep head ears-to-chin at about one third of total opaque character height, same identity as reference, no oversized baby face. This is the healer receiving a hit, not attacking. Keep exact restrained cream/sage/gold palette, fine painterly texture, warm thin edges. Whole body visible with generous transparent margins, square canvas 1024x1024. Four limbs, one teapot, one tail, no weapon, effects, particles, extra objects, floor, shadow, background or text. True alpha.",
+      "referenceInput": "own art: apps/web/public/units/clover/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/clover/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/clover/K4-A1.png",
+      "sha256": "609c2858e0b120cc3bbac7ee2451ebe67cbef5b40d4f89a2297e03f5dffd1f60",
+      "status": "candidate; review pending"
+    },
+    {
+      "id": "v4-clover-k5-a1",
+      "date": "2026-11-16T07:45:21.773950+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset: our original Clover K5 ULTIMATE HEAL CAST sprite, real transparent background. Input image 1 is our approved Clover runtime for exact identity, proportions and palette. Image 2 is our accepted K1 drawing for painted costume consistency only. Draw the SAME cream long-haired cat in a broad, graceful blessing pose, three-quarter facing RIGHT. Both arms are spread WIDE at shoulder height: the left/back arm carries her single round glass teapot outward to screen-left, with its spout tilted gently up; the right/front arm reaches diagonally right and slightly upward, open paw blessing allies. The hands and teapot stay BELOW the ear tips. Head lifts slightly, calm green eyes looking right, warm closed-mouth smile. Feet planted far apart, knees softly bent, long sage embroidered dress fans outward in an elegant triangular silhouette, leaf cape flares sideways, cream tail curves low to the left. Strong outline difference from the standing idle and from the forward-reaching release. Preserve small head size, ears-to-chin about one third of total opaque body height. Preserve pink ears, leaf cape with three gold berries, gold belt buckle, clover pouch, cream lace hem, one glass teapot with gold handle/lid and green-gold tea, exact cream/sage/gold palette, delicate painterly texture and thin warm contours. Four limbs, one tail, no weapon or new accessory. Full body with generous transparent margin, square 1024x1024, no clipping. No effects, liquid streams, glow, particles, floor, shadow, background, text or extra character. True alpha.",
+      "referenceInput": "own art: apps/web/public/units/clover/runtime.webp; tools/v3craft-lab/poses/raw/clover/K1-A2.png",
+      "inputs": [
+        "apps/web/public/units/clover/runtime.webp",
+        "tools/v3craft-lab/poses/raw/clover/K1-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/clover/K5-A1.png",
+      "sha256": "20fd97d61da92acb02bb03fadae03e999dfb32a2156e285048ab81a284238429",
+      "status": "candidate; review pending"
+    },
+    {
+      "id": "v4-clover-k5-a2",
+      "date": "2026-11-16T07:46:54.604880+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Image 1 is our own Clover K5-A1 ultimate blessing drawing, the EDIT TARGET. Image 2 is our approved Clover runtime, exact palette and identity reference. Make just one proportion correction: ENLARGE the complete head, including both ears, hair, cheeks and face, by 10 percent relative to the unchanged body, anchored at the neck junction. Keep the head naturally attached to the neck. Do not enlarge the body or change the broad blessing pose. Preserve the arms spread wide, one teapot held to the left and open blessing palm to the right, calm green eyes looking right, planted wide feet, long flared sage floral dress, leaf cape with three gold berries, cream lace hem, gold belt, clover pouch and low curled tail. Preserve warm fine painterly edges and cream/sage/gold palette from Image 2, no yellow cast. Four limbs, one tail, one teapot; no extra props, effects, particles, shadow, floor or text. Full silhouette fully inside generous transparent margins. True transparent background, 1024 square.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/clover/K5-A1.png; apps/web/public/units/clover/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/clover/K5-A1.png",
+        "apps/web/public/units/clover/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/clover/K5-A2.png",
+      "sha256": "15d29a6d0fce68df6681400e8ec8b46ccb8573116c5649b853c75b10c1f00d3e",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-clover-healing-sprig-a1",
+      "date": "2026-11-16T07:49:08.234537+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset: one original hand-painted 2D magical HEALING SPRIG texture for a cozy cat RPG, true transparent background. One upward-curving stem with three broad heart-shaped clover leaves unfurling upwards, lower pointed stem at bottom center, delicate cream-white vein strokes, pale sage and fresh mint leaf surfaces, warm ivory tips and tiny restrained gold edges. Soft rounded caring shape, readable sculptural leaf silhouettes, premium storybook gouache texture, clean thin edges. Not a weapon, slash or projectile. No ring, orb, fog, smoke, starburst, explosive spikes, shadow, floor, backdrop, text or character. Shape itself is opaque painted colour with soft edge falloff; surround it with genuine transparency. Entire sprig contained with generous margin, 1024 square. One cohesive sprig only, not a sprite sheet. No image references; entirely original effect artwork.",
+      "referenceInput": "none; original effect",
+      "inputs": [],
+      "output": "tools/v3craft-lab/fx/raw/healing-sprig/1.png",
+      "sha256": "07c7be558afc85ee72edacbc0f421fe4d748b7eb93582dc90a0c189ab1d5d8b4",
+      "status": "candidate; drill pending"
+    },
+    {
+      "id": "v4-clover-healing-canopy-a1",
+      "date": "2026-11-16T07:51:01.820996+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Asset: original 2D healing ultimate effect texture for a cozy hand-painted fantasy cat RPG. One broad horizontally spreading fan-canopy of graceful CLOVER LEAVES unfurling UPWARD from a low center. Large overlapping rounded heart-shaped leaves and curling botanical stems form three generous rising lobes, asymmetrical and organic. Pale sage, mint, creamy ivory leaf tips and restrained warm gold veins. The lobes carry rich visible brushwork and opaque painted bodies; airy transparent gaps divide them, so about 55 percent of the overall rectangular composition contains painted leaves. Broad lower base, sweeping upper scalloped edge; no closed circle or ring, no central hole ring shape. Soft compassionate growth, no sharp attack points, no explosion, slash, lightning, orb, smoke, fog, starburst, particles, ground, shadow, backdrop or text. A premium original painterly texture, not flat vector, no character. Wide landscape composition about 1.7 to 1, all leaves fully contained inside transparent margins. True transparent alpha background. No image references; entirely original effect art. Request1024px wide.",
+      "referenceInput": "none; original effect",
+      "inputs": [],
+      "output": "tools/v3craft-lab/fx/raw/healing-canopy/1.png",
+      "sha256": "274b9d517a3d8764d32ce8c98fdc5b8ae744ccc4bb1fc6c58f3914f675aece33",
+      "status": "candidate; drill pending"
+    },
+    {
+      "id": "v4-clover-export-k0",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow selected own art export",
+      "prompt": "No new generation; normalize to896px common canvas and foot anchor; select K1A2,K2A2-soft,K4A1-colour,K5A2-colour; WebP quality96. See tools/v3craft-lab/v4-clover/prompts.json for exact generation prompts.",
+      "referenceInput": "own art: tools/v3craft-lab/v4-clover/raw/K0-normal.png",
+      "inputs": [
+        "tools/v3craft-lab/v4-clover/raw/K0-normal.png"
+      ],
+      "output": "apps/web/public/units/clover/poses/K0.webp",
+      "sha256": "aa6358c1c73320f68abde443eb0eb264d9e8042762ae5af2bd6ac664b4d166a6",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-k1",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow selected own art export",
+      "prompt": "No new generation; normalize to896px common canvas and foot anchor; select K1A2,K2A2-soft,K4A1-colour,K5A2-colour; WebP quality96. See tools/v3craft-lab/v4-clover/prompts.json for exact generation prompts.",
+      "referenceInput": "own art: tools/v3craft-lab/v4-clover/raw/K1-A2-normal.png",
+      "inputs": [
+        "tools/v3craft-lab/v4-clover/raw/K1-A2-normal.png"
+      ],
+      "output": "apps/web/public/units/clover/poses/K1.webp",
+      "sha256": "94033bf97a8fe004b53c8e614f29e8385c9740eff2381045f9977073e73737a4",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-k2",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow selected own art export",
+      "prompt": "No new generation; normalize to896px common canvas and foot anchor; select K1A2,K2A2-soft,K4A1-colour,K5A2-colour; WebP quality96. See tools/v3craft-lab/v4-clover/prompts.json for exact generation prompts.",
+      "referenceInput": "own art: tools/v3craft-lab/v4-clover/raw/K2-A2-soft.png",
+      "inputs": [
+        "tools/v3craft-lab/v4-clover/raw/K2-A2-soft.png"
+      ],
+      "output": "apps/web/public/units/clover/poses/K2.webp",
+      "sha256": "00e947b4425f9c818e16198a9b86072e0c13bda8a72b7be0f6d556d0083edc40",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-k4",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow selected own art export",
+      "prompt": "No new generation; normalize to896px common canvas and foot anchor; select K1A2,K2A2-soft,K4A1-colour,K5A2-colour; WebP quality96. See tools/v3craft-lab/v4-clover/prompts.json for exact generation prompts.",
+      "referenceInput": "own art: tools/v3craft-lab/v4-clover/raw/K4-A1-colour.png",
+      "inputs": [
+        "tools/v3craft-lab/v4-clover/raw/K4-A1-colour.png"
+      ],
+      "output": "apps/web/public/units/clover/poses/K4.webp",
+      "sha256": "d0d624378a3fa1da68fd84e42c0605e957289be2b836c6259d04d8d6fecc1634",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-k5",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow selected own art export",
+      "prompt": "No new generation; normalize to896px common canvas and foot anchor; select K1A2,K2A2-soft,K4A1-colour,K5A2-colour; WebP quality96. See tools/v3craft-lab/v4-clover/prompts.json for exact generation prompts.",
+      "referenceInput": "own art: tools/v3craft-lab/v4-clover/raw/K5-A2-colour.png",
+      "inputs": [
+        "tools/v3craft-lab/v4-clover/raw/K5-A2-colour.png"
+      ],
+      "output": "apps/web/public/units/clover/poses/K5.webp",
+      "sha256": "dc96962547660fd6a7dbeb69b3433fc5a8e12f3bc2508781c5c985cd6ee24c35",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-healing-sprig",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow crop/resize/WebP export",
+      "prompt": "No new generation; original texture alpha retained, croptransparent margin, max1024x768, quality94.",
+      "referenceInput": "own art: tools/v3craft-lab/fx/raw/healing-sprig/1.png",
+      "inputs": [
+        "tools/v3craft-lab/fx/raw/healing-sprig/1.png"
+      ],
+      "output": "apps/web/public/vfx/clover/healing-sprig.webp",
+      "sha256": "2826db2417efb30141e7e6148f4c47452b17c21f767cb3f8bb0416fe7110fa0a",
+      "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-clover-export-healing-canopy",
+      "date": "2026-11-16T07:55:00.954875+00:00",
+      "tool": "Pillow crop/resize/WebP export",
+      "prompt": "No new generation; original texture alpha retained, croptransparent margin, max1024x768, quality94.",
+      "referenceInput": "own art: tools/v3craft-lab/fx/raw/healing-canopy/1.png",
+      "inputs": [
+        "tools/v3craft-lab/fx/raw/healing-canopy/1.png"
+      ],
+      "output": "apps/web/public/vfx/clover/healing-canopy.webp",
+      "sha256": "8789a708ee5a608bf8d15fbce7dced7b0219f19013e557bfa72a59205147a69d",
+      "status": "production pilot; film gates pending"
     }
   ]
 }

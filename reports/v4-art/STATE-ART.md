@@ -1,4 +1,4 @@
-REQUEST-ART.txt REV2 bytes=47581 sha256=be708a387bcb491515c4f5deda954058d069b91a26334b45331d37a4925bfd88
+REQUEST-ART.txt REV3 bytes=50240 sha256=15e1bc738d2bc686f23d631acd1e2b0d92f4117ab665f2021fa6844fdb8e15c8
 # V4 ART state
 A0 STARTED 2026-11-16T04:43:42.528836+00:00; salvage retained; DONE a86387fe4d250803a676c9c094f6b5ebf90b09f6; pushed.
 Hero cats: Mochi (melee), Soot (ranged), Clover (healer), Panko (melee).
@@ -49,3 +49,7 @@ A3 checkpoint pushed fc588f740af29b9f19c949197a05bfe204454358 06:42UTC; ownlane6
 A4 2026-11-16T07:08:50.382441+00:00: allfourkeys+twooriginaltextures exported; initial scene integration/typecheck25targeted passed. Moving occlusion72.64%FAIL; ultimate wrongly selects incidental damage. Correcting presentation only, universal melee-ultimate gate OPEN pending SHIP clarification.
 
 A4 CHECKPOINT 2026-11-16T07:33:56.098879+00:00: G-POSE PASS K1/K2/K4/K5IoU.49646/.32902/.50131/.50428,Lab.390/.375/2.728/3.810,heads.98848..1.01948,K2changed52.57%/reach+41.03%,fixedfoot~0px. G-READ11/12,11drawnownwindows(10complete,1partial). G-ROLE8basicscontact-7.61..30.97px/encodedimpact<=33.2ms,returnsdeadline;3supportultsfeet~0/allied perSHIP07:25:18contract. G-FRAME1800samples6cases max12.23%occlusion,0numericfail. G-REG2646/315,typecheck0,3F6hashesPASS. G-PERFboss60.24fpsisolated/added620936B. G-FXpeak27.995–31.109%,facealpha0/composite11.42%; pairwisedistinctnessOPEN A9, craftproductionenableOPEN A9/A11. SourceREVIEW/A4/,8selectedJPGs,3audio720films+silent900boss. Score8/10; processFAIL estimated50author/10study/40measurementlog; one5image-lookFAIL.
+
+A4 checkpoint pushed 8019c0f383c8a9de0608d139273b2edfee40d354 2026-11-16T07:39:54.793682+00:00; 87ART files,8selectedJPGs; source hashes unchanged, no repeat tests needed. A5 ACTIVE: K1-A2 accepted, K2-A2 correction generating; other gates notyet.
+
+A5 2026-11-16T08:07:14.489579+00:00: WIP recovery checkpoint; art+integration complete, v9 framing failed; v10 Clover6case occlusion<=11.6779%,socket/feet/camera0. Mochi full-action sweep/final regression/films/perf pending. Request disk upgraded REV3.

@@ -13,8 +13,8 @@ export function presentationTier(plan:PresentedPlan):PresentationTier {
 }
 
 /** One contact impulse for authored and fallback actions, on the same clock. */
-export function impactFeedback(plan:PresentedPlan,elapsed:number,reduced:boolean){
+export function impactFeedback(plan:PresentedPlan,elapsed:number,reduced:boolean,healing=false){
  if(!plan.events.some(e=>e.type==='action_start'||e.type==='charge'))return {shake:0,flash:0};
  const since=elapsed-plan.beats[2]!.start;
- return {shake:!reduced&&presentationTier(plan)==='ultimate'&&since>=0&&since<120?4*(1-since/120):0,flash:0};
+ return {shake:!healing&&!reduced&&presentationTier(plan)==='ultimate'&&since>=0&&since<120?4*(1-since/120):0,flash:0};
 }

@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 10,
   "coordinates": "stage-normalized opaque feet; unitHeight is rendered alpha>=128 height / whole desktop viewport height",
   "unitHeight": 0.315,
   "rowStep": 0.33,
@@ -7,15 +7,15 @@
     {
       "id": "FRONT-UP",
       "row": "front",
-      "x": 0.35,
+      "x": 0.37,
       "y": 0.55,
       "icon": "shield"
     },
     {
       "id": "FRONT-DOWN",
       "row": "front",
-      "x": 0.25,
-      "y": 0.88,
+      "x": 0.3,
+      "y": 0.91,
       "icon": "shield"
     },
     {
@@ -95,8 +95,8 @@
     {
       "id": "FRONT-DOWN",
       "row": "front",
-      "x": 0.25,
-      "y": 0.88,
+      "x": 0.3,
+      "y": 0.91,
       "icon": "shield"
     },
     {
@@ -113,5 +113,6 @@
       "y": 0.7,
       "icon": "bow"
     }
-  ]
+  ],
+  "lowerRowStagger": 0.21
 }

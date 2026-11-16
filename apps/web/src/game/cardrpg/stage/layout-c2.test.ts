@@ -45,7 +45,9 @@ it('reserves an asymmetric drawn envelope without changing its shared foot ancho
 });
 it('uses the same tuned stagger and mirrored positions in preparation and battle',()=>{
   expect(SLOTS_C2.slots[0]!.y-SLOTS_C2.slots[2]!.y).toBeCloseTo(SLOTS_C2.rowStagger);
-  expect(SLOTS_C2.slots[1]!.y-SLOTS_C2.slots[3]!.y).toBeCloseTo(SLOTS_C2.rowStagger);
+  // The lower front seat has extra vertical clearance for Clover's wide cast.
+  expect(SLOTS_C2.slots[1]!.y-SLOTS_C2.slots[3]!.y).toBeCloseTo(SLOTS_C2.lowerRowStagger);
+  expect(SLOTS_C2.lowerRowStagger).toBeGreaterThanOrEqual(SLOTS_C2.rowStagger);
   const b=stageLayoutC2([unit('mochi','front'),unit('button-guard','front')],1280,720);
   expect(b.get('mochi')!.footX+b.get('button-guard')!.footX).toBeCloseTo(1280);
 });

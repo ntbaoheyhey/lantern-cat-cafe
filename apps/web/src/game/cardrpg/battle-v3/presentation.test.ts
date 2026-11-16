@@ -27,6 +27,12 @@ it('shows only a local caster banner during focus and clears it on the next acti
   cinema.render(null,true,1,false,true);expect(cinema.audit).toMatchObject({plate:false,cutin:false,flash:0,focus:false});
  }finally{cinema.dispose();}
 });
+it('keeps a healing cast camera still at contact without changing its event plan',()=>{
+ const plan=configureSequence(pilotFixture('clover-4').plan),before=JSON.stringify(plan);
+ for(const reduced of [false,true])for(const at of [0,600,1099,1100,1133,1199,1200,2200])
+  expect(impactFeedback(plan,at,reduced,true)).toEqual({shake:0,flash:0});
+ expect(JSON.stringify(plan)).toBe(before);
+});
 it('never loads a full-screen video or plate regardless of seeking and reduced motion',()=>{
  const host=document.createElement('div'),cinema=new CinematicPlayer(host),plan=configureSequence(pilotFixture('mochi-4').plan),before=JSON.stringify(plan);
  try{for(const reduced of [false,true])for(const at of [2200,0,599,1100,300,600]){
