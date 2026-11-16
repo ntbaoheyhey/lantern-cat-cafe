@@ -506,5 +506,28 @@
       "transferVisual": "No missing actor texture, missing expected colored effect, or atlas seam observed."
     }
   ],
-  "allFilmPagesReviewed": true
+  "allFilmPagesReviewed": true,
+  "layoutSheets": [
+    {
+      "fixture": "wave1",
+      "path": "reports/v4-art/REVIEW/A10/transfer/raw/layout1440-wave1.jpg",
+      "sha256": "50455affd6c2b767f4d039e3fe96008d63ee514262355ceb22bfd06b0e91d5dc",
+      "reviewedAt": "2026-11-16T13:12:29.500720+00:00",
+      "observation": "All actors fully textured, faces and outer silhouettes readable; no edge clipping in sampled extrema."
+    },
+    {
+      "fixture": "wave3",
+      "path": "reports/v4-art/REVIEW/A10/transfer/raw/layout1440-wave3.jpg",
+      "sha256": "94d3ca16ec68dce8c80c77ef821591ad24171f340a60d7ca6f1214b386868bea",
+      "reviewedAt": "2026-11-16T13:12:29.500720+00:00",
+      "observation": "Ten-unit field fully textured; tight front-enemy spacing remains. No sampled edge clipping or missing effect."
+    },
+    {
+      "fixture": "boss",
+      "path": "reports/v4-art/REVIEW/A10/transfer/raw/layout1440-boss.jpg",
+      "sha256": "7acfeb42570d9b83905cac6e48dde5378a84d35a9c6522b88e76073c1f42e30e",
+      "reviewedAt": "2026-11-16T13:12:29.500720+00:00",
+      "observation": "Boss and both Binding textures intact. Crown, feet and side limbs remain inside field in sampled extrema; no atlas seams."
+    }
+  ]
 }

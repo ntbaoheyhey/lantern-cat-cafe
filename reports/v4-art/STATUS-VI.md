@@ -1,14 +1,12 @@
-# V4 ART — 16/11, 12:19 UTC
-Panko và Binding đã có biên nhận riêng; A7 chưa hoàn thành toàn bộ.
-Teacup có ba dáng mới: giơ thìa chuẩn bị, đưa thìa ra ngoài, co người khi trúng đòn.
-Nhận dạng mù đúng 9/9 hình; đã xem 13 lượt hành động trọn vẹn, gồm 4 tuyệt kỹ.
-Tuyệt kỹ dùng hoa màu kem, lá xanh và hơi trà; hồi đúng đồng đội, không làm đồng đội giật lùi.
-Máy quay đứng yên; kiểm tra bố cục 900p đạt, tốc độ trung vị khoảng 60 hình/giây.
-Đòn thường vẫn gây sát thương và phản đòn theo luật cũ; chưa công nhận đạt vai trò chỉ hồi máu.
-Đang chờ SHIP công bố bản luật cuối cùng và mốc đối chiếu duy nhất; chưa ghép bản chưa hoàn tất.
-Màn hoa còn khá lớn, cần so cùng Clover; hiệu ứng tối nền còn nhạt dần sau mốc 600 ms.
-Một đòn đánh tới Teacup nằm ngoài phim bổ sung 90 giây, không tính là đã kiểm chứng.
-Điểm riêng phần Teacup: 8/10; hình dễ đọc nhưng còn các điểm trên.
-Tiếp theo: Needle Moth, rồi Yarn Giant, sau đó kiểm tra cả đội và các mục còn mở.
-Chưa có bộ idle mới của họa sĩ. Giữ nguyên các ngưỡng kiểm tra.
-Chưa phát hành; kích hoạt chính thức, độ rõ của bảng tên và tỷ lệ thời gian làm việc còn mở.
+# ART — cập nhật A10
+Đã hoàn tất gói bàn giao có giới hạn cho yêu cầu giảm tải ban đầu.
+Chỉ tải VFX của đội hình hiện tại; chờ giải mã và làm nóng trước khi sẵn sàng.
+Sáu atlas giảm từ8.327.096 xuống4.641.562byte; dữ liệu RGBA và kết quả WebGL kiểm tra khớp hoàn toàn.
+Canvas2D còn khác RGB ở điểm ảnh bán trong suốt nên vẫn dùng tệp gốc.
+Đã xem42trang phim và3bảng khung hình1440×900;73hành động đầy đủ,15chiêu cuối.
+Tách riêng8cửa sổ trạng thái; loại3hành động bị cắt cuối phim.
+2.700dấu khung hình khớp;2.662kiểm thử/317tệp, typecheck và3fixture parity đều đạt.
+FPS trung vị59,88–60,24; các giới hạn bố cục đo được tại1440×900 đều đạt.
+Cổng tổng tải production8MB CHƯA ĐẠT: riêng nhóm tài nguyên boss đã8.186.048byte.
+SHIP cần đo lại bản shipping sau lần gộp theo lịch; không coi phép đo dev là kết quả production.
+Tiếp theo: Needle Moth, rồi Yarn Giant và các mục còn lại.
