@@ -4,8 +4,8 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW S6implementationcomplete/G-REPOopen:cleanclone2 complete,7ARTtestfails;othercommands0/finaltreeclean. S4 12/20pass/session31284. History30159active. S7prepdone/datepending;S8learningdone.
-NEXT 1: collect S4session31284 to20 then finalize unchangedharness. S8productionpreview5998+Anvil afterS4releasesfixture; prepare runbook meanwhile. Collecthistory30159;no duplicate.
+NOW S6implementationcomplete/G-REPOopen:cleanclone2 complete,7ARTtestfails;othercommands0/finaltreeclean. S4 14/20pass/session31284. History30159active. S7prepdone/datepending;S8learningdone.
+NEXT 1: collect S4session31284 to20 then finalize unchangedharness. S8preview5998ready/session91975;productionjourneys afterS4releasesfixture;prepare runbook. Collecthistory30159;no duplicate.
 NEXT 2: S2b hold-verification-1 PASS;G-CLASS remainsFAIL/timeboxed toS11; require measured class-only eligibility/acquisition hypothesis before candidate;valid18/18->sensitivity/E4/E5->ONEbaseline->notifyART. No baseline yet.
 NEXT 3: stable20journeys (10perdesktop)+S4proof; S6README/architecture/integration/licenses/cleanclone; S7ART17Nov12:00; S8productionrehearsal/runbook; S9researchdocs; S10review+film18Nov12:00; S11fix/freeze19Nov12:00.
 CHECKPOINT:a81bf93ef pushed stableharness;11/11 controls;runtimefixed sincef16d4ec7a. Freshprofile final20 in progress;partial evidence checkpointed.
@@ -21,15 +21,15 @@ S2b production1.15/Spool2500bp frozen. OriginalE3 16/18;burn0.9968275226/Stars1.
 S2b boundary:2000exact+2000conservation+306quantiles;400cross-runtime+800hybrids. Gear/progression hybrids bothfail. Independenttoken200seeds bothcandidatesfail;nativebanksunchanged.
 S2b lowbotYARN deficit78.711341=wallets+treasury-external;highbotStars414.185>407.448 allowed,includesinactive142.515. No supported scalar remedy;see boundary-decision.json/check/diagnosis/channels.
 S2b1.15holdout300wins/0healerDamage;firstloss17.50245min;boss87.0667s/p9093.57. 1.20holdout300wins butrejected. No sensitivity/E4/E5 on invalidcandidate.
-S4-final-1:12/20complete/pass;10/10at1280done;1440active. First3.352sbattle/95.703sreceipt/18verifiedreceipts;0errors/popups;sourcea81bf93ef.
+S4-final-1:14/20complete/pass;10/10at1280done;1440active. First3.352sbattle/95.703sreceipt/18verifiedreceipts;0errors/popups;sourcea81bf93ef.
 G-UI open:walletcontrast1.132->9.476/sponsor1.914->8.579;freshpilots scopedcontrastpass;later spacing/dismiss/hover notfulljourneyproof.
 G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zeroerrors/originaltimestamps. 55logs/5contracts/30RPCverifiedreceipts/block61162789;no sponsoredFuji latencyproof.
 S1 full-history scan restarted30159/PID68299 withGOMAXPROCS2,scope3790commits;reportpending. Rawfindingsneverprinted. Incrementalscans zero unresolved.
 REPORT BUDGET:tracked~45MB beforelatest;ignoredcaptures putreports>150MB;resolve inS11. Raw work/v4ship-audio. S6prep work/v4ship-prep/S6-inventory.json:README2/5contracts,audio118/118hashes.
 LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;fetched22bca4f0b106937831d24d3985b7f56be8751325. S7preflight621ARTpaths/0conflicts/445SHIPpreserved;noearlymerge.
-SERVICES Vite5994PID33548/backend5997PID33468/Anvil8546PID33478;audioVite5995PID30528. Jobs31284journeys/30159history active;cleanclone13708collected exit1.
+SERVICES Vite5994PID33548/backend5997PID33468/Anvil8546PID33478;audioVite5995PID30528. Jobs31284journeys/30159history active;preview91975/PID98543+98606 ready.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent. User10:07UTC directed recovermissingS6-S11definitions;verified REQUEST lines158-163+hash. No publictx/deploy/ARTedit/imagegeneration.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2 origin/tree/objectstore verified;7knownARTfails/2663pass. No tracked drift. S11/repo-open.json carries history/licence/parity/budget. Vercelguardadded.
-UPDATED 2026-11-16T11:22:36.646962+00:00.
+UPDATED 2026-11-16T11:28:38.711600+00:00.
