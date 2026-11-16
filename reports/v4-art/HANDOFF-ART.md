@@ -1,12 +1,12 @@
-# ART execution anchor — 2026-11-16T21:55:29.908976+00:00
-ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
+# ART execution anchor — 2026-11-16T21:59:10.047469+00:00
+ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: poll PMA-awareR2 PID23656/tail5 jobs/a10-pma-aware-r2.log; inspect halfQ75/80 projections+4freshcrops. These complete4PMA-awarevariants. Runtime alpha override only after selecting straight derivative; preserve original-PMA fallback.
+NEXT1: inspect once raw/pma-aware-r2/{mochi,soot,clover,panko}-comparison.png; record decision before runtime edit. R2 halfQ75=7,839,409B/halfQ80=7,900,518B projected; both unreviewed. Four PMA-aware variants exhausted; no fifth same-method trial.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:e053bdf7b verified;PMA-awareR1 complete0, bothbudgetFAIL;4newcropsclosed. Runtimeb920586d4 still visually rejected;oldpasses2682/320+typecheck+3F6 retained only for that source.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (bothcraftOFF);PMA-R2supervisor23656 jobs/a10-pma-aware-r2.log/receipt scene-ready-transfer/job-pma-aware-r2.json.3ownedjobs.
-STOP/INBOX checked21:35UTC: noSTOP; explicit continuation active; INBOX pause superseded. LatestSHIP18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
+LAST PUSH:a616fc3a2 verified; localfc09a818f push failed once from overlapping own pushes; ordinary sequential retry with this checkpoint. R2exit0; runtimeb920586d4 visually rejected;2682/320+typecheck+3F6 apply only to rejected source.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). R2supervisor23656 finished0 jobs/a10-pma-aware-r2.log; old68961/69950 absent.2ownedjobs.
+STOP/INBOX: noSTOP at21:58UTC16Nov; latest continuation active; prior INBOX pause superseded. Recheck scoped intake after WIP checkpoint; no finalclasses/solebaseline announcement observed and no merge/adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.
