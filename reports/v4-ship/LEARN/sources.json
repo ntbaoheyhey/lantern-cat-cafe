@@ -306,5 +306,131 @@
     "type": "local",
     "topic": "S2 onboarding and measurement",
     "takeaway": "Existing real-click smoke traverses practice then campaign; its600second timeout is not a V4 gate."
+  },
+  {
+    "id": "S2b-ROLES",
+    "url_or_path": "https://meaningfulplay.msu.edu/proceedings2012/mp2012_submission_171.pdf",
+    "type": "paper",
+    "topic": "role design",
+    "takeaway": "Broderick: shared role expectations and healing as health augmentation; qualitative MMO analysis, not a numeric balance recipe."
+  },
+  {
+    "id": "S2b-TRINITY",
+    "url_or_path": "https://www.gamedeveloper.com/design/rethinking-the-trinity-of-mmo-design",
+    "type": "internet-doc",
+    "topic": "role design",
+    "takeaway": "Brian Green describes mitigation, restoration and damage as coupled resource flows; specialization is a design choice."
+  },
+  {
+    "id": "S2b-FFXIV",
+    "url_or_path": "https://na.finalfantasyxiv.com/jobguide/battle/",
+    "type": "internet-doc",
+    "topic": "role UI",
+    "takeaway": "Official role guide separates close-range and ranged damage and describes healer restoration, mitigation and cleansing."
+  },
+  {
+    "id": "S2b-AI",
+    "url_or_path": "https://dev.epicgames.com/documentation/en-us/unreal-engine/behavior-tree-in-unreal-engine---overview",
+    "type": "internet-doc",
+    "topic": "targeting AI",
+    "takeaway": "Explicit state, ordered decisions and event-driven reevaluation make decisions inspectable; use deterministic tie-breaking locally."
+  },
+  {
+    "id": "S2b-VITE",
+    "url_or_path": "https://vite.dev/guide/api-plugin.html",
+    "type": "internet-doc",
+    "topic": "isolated experiments",
+    "takeaway": "Build transform hooks can substitute a research variant without writing production source files; pin to installed API."
+  },
+  {
+    "id": "S2b-CLIPS",
+    "url_or_path": "tools/v4ship-lab/classes/reference-frames.py",
+    "type": "local-source",
+    "topic": "private reference study",
+    "takeaway": "Two user-provided clips; local measurement only. Three sampled windows show contact versus stationary restoration, not enough to infer exact targeting or HPS."
+  },
+  {
+    "id": "S2b-SIM",
+    "url_or_path": "tools/cardrpg-a6/sim.mjs",
+    "type": "local-source",
+    "topic": "balance measurement",
+    "takeaway": "Reuse public firstSession progression and explicit scheduler-derived action timing; no injected resources."
+  },
+  {
+    "id": "S2b-CATALOG",
+    "url_or_path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+    "type": "local-source",
+    "topic": "current classes",
+    "takeaway": "Clover, Cinnamon and Marigold currently carry damaging basic effects; Teacup basic attacks too."
+  },
+  {
+    "id": "S2b-MATRIX",
+    "url_or_path": "reports/v4-ship/S2b/matrix.json",
+    "type": "own-experiment",
+    "topic": "healer targeting and sizing",
+    "takeaway": "Pending three selectors by two heal sizes; unchanged control validated against all three browser fixture hashes and scheduler durations."
+  },
+  {
+    "id": "S2b-C2-SIM",
+    "url_or_path": "tools/cardrpg-c2/sim.mjs",
+    "type": "local-source",
+    "topic": "classes",
+    "takeaway": "Four-cat public DepthModel/shared prospective action policy, actual scheduler and explicit decision/loading assumptions; enable economyV3 for current branch."
+  },
+  {
+    "id": "S3-SIWE",
+    "url_or_path": "https://eips.ethereum.org/EIPS/eip-4361",
+    "type": "formal-document",
+    "topic": "demo path",
+    "takeaway": "Check origin, nonce, expiry and signature; bind sessions to the verified address."
+  },
+  {
+    "id": "S3-ISOLATION",
+    "url_or_path": "https://playwright.dev/docs/browser-contexts",
+    "type": "internet-doc",
+    "topic": "demo path",
+    "takeaway": "Fresh contexts isolate browser state; server and IP rate-limit state still need their own fixture isolation."
+  },
+  {
+    "id": "S3-BEHAVIOR",
+    "url_or_path": "https://playwright.dev/docs/best-practices",
+    "type": "internet-doc",
+    "topic": "demo path",
+    "takeaway": "Drive user-visible behavior with accessible locators and independent state."
+  },
+  {
+    "id": "S3-CONTRAST",
+    "url_or_path": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "type": "internet-doc",
+    "topic": "demo path",
+    "takeaway": "AA requires4.5:1 ordinary text and3:1 large text; do not round borderline failures up."
+  },
+  {
+    "id": "S3-RETRIES",
+    "url_or_path": "https://www.martinfowler.com/articles/patterns-of-distributed-systems/idempotent-receiver.html",
+    "type": "internet-doc",
+    "topic": "demo path",
+    "takeaway": "Persist the response keyed by client/request identity so retries do not duplicate side effects."
+  },
+  {
+    "id": "S3-WALLETS",
+    "url_or_path": "https://www.privy.io/onboarding",
+    "type": "internet-doc",
+    "topic": "demo path",
+    "takeaway": "Provider example of embedded in-app wallet creation/signing; no provider migration or marketing performance claims adopted."
+  },
+  {
+    "id": "S3-AUTHORITY",
+    "url_or_path": "supabase/functions/_shared/chain-campaign.ts",
+    "type": "local-source",
+    "topic": "demo path",
+    "takeaway": "Client saves/wins cannot authorize earned inventory; server journal revisions and request IDs guard mutations."
+  },
+  {
+    "id": "S3-QUEST-PROBE",
+    "url_or_path": "reports/v4-ship/S3/economy-path-probe.json",
+    "type": "own-experiment",
+    "topic": "demo path",
+    "takeaway": "Fresh guest vs capped Judge quest:0vs4same-setEpics; current seal+fusion31YARN exceeds20tester grant by11. Repeated request grants0extra gear."
   }
 ]

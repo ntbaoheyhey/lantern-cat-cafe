@@ -1,0 +1,1214 @@
+{
+  "id": "1280-09",
+  "at": "2026-11-16T05:29:14.203Z",
+  "sourceCommit": "71f2401f763f3f0d79b1a8dc6148e3c2d73600b1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "development + disposable Anvil",
+  "base": "http://127.0.0.1:5994/",
+  "cleanProfile": true,
+  "realClicks": true,
+  "concurrency": 1,
+  "steps": [
+    {
+      "number": 1,
+      "name": "landing",
+      "startedMs": 0,
+      "clickStart": 0,
+      "readyMs": 814,
+      "judgePassVisible": false,
+      "counterTexts": [],
+      "status": "pass",
+      "endedMs": 826,
+      "clicks": 0
+    },
+    {
+      "number": 2,
+      "name": "guest",
+      "startedMs": 1051,
+      "clickStart": 0,
+      "status": "pass",
+      "endedMs": 1893,
+      "clicks": 1
+    },
+    {
+      "number": 3,
+      "name": "battle-reward",
+      "startedMs": 2114,
+      "clickStart": 1,
+      "practiceMs": 7727,
+      "practiceResult": "party",
+      "campaignStartedMs": 10463,
+      "campaignResult": "party",
+      "rewardCount": 2,
+      "status": "pass",
+      "endedMs": 143464,
+      "clicks": 13
+    },
+    {
+      "number": 4,
+      "name": "first-receipt",
+      "startedMs": 143726,
+      "clickStart": 14,
+      "sealableChoices": 0,
+      "status": "fail",
+      "reason": "No earned item is available to seal in the on-chain café",
+      "endedMs": 144717,
+      "clicks": 4
+    },
+    {
+      "number": 5,
+      "name": "cafe-economy",
+      "startedMs": 144942,
+      "clickStart": 18,
+      "epicInputs": 0,
+      "status": "fail",
+      "reason": "Fusion requires three matching Epics; available choices=0. Market buy and Spool depend on missing earned resources",
+      "endedMs": 145011,
+      "clicks": 2
+    },
+    {
+      "number": 6,
+      "name": "boss",
+      "startedMs": 145249,
+      "clickStart": 20,
+      "status": "fail",
+      "reason": "No boss action reachable on the guest demo path",
+      "endedMs": 145292,
+      "clicks": 1
+    },
+    {
+      "number": 7,
+      "name": "wallet-proof",
+      "startedMs": 145569,
+      "clickStart": 21,
+      "status": "fail",
+      "reason": "My café on Avalanche is not reachable from the guest path",
+      "endedMs": 145580,
+      "clicks": 0
+    }
+  ],
+  "clicks": [
+    {
+      "atMs": 1103,
+      "label": "/^(Play free|Play as guest)$/"
+    },
+    {
+      "atMs": 2154,
+      "label": "/^Fight/"
+    },
+    {
+      "atMs": 2966,
+      "label": "Fight"
+    },
+    {
+      "atMs": 3421,
+      "label": "Skip tutorial"
+    },
+    {
+      "atMs": 8104,
+      "label": "Complete lesson"
+    },
+    {
+      "atMs": 8446,
+      "label": "Skip tutorial"
+    },
+    {
+      "atMs": 8489,
+      "label": "Welcome"
+    },
+    {
+      "atMs": 9406,
+      "label": "Skip reveal"
+    },
+    {
+      "atMs": 9445,
+      "label": "Dismiss celebration"
+    },
+    {
+      "atMs": 9480,
+      "label": "Close recruit"
+    },
+    {
+      "atMs": 10008,
+      "label": "/^Fight/"
+    },
+    {
+      "atMs": 10463,
+      "label": "Fight"
+    },
+    {
+      "atMs": 143363,
+      "label": "Next"
+    },
+    {
+      "atMs": 143460,
+      "label": "Skip celebration"
+    },
+    {
+      "atMs": 143769,
+      "label": "Market"
+    },
+    {
+      "atMs": 144601,
+      "label": "Café"
+    },
+    {
+      "atMs": 144680,
+      "label": "Skip tutorial"
+    },
+    {
+      "atMs": 144715,
+      "label": "Seal"
+    },
+    {
+      "atMs": 144977,
+      "label": "Back to café"
+    },
+    {
+      "atMs": 145010,
+      "label": "Fusion"
+    },
+    {
+      "atMs": 145291,
+      "label": "Close market"
+    }
+  ],
+  "errors": [
+    {
+      "atMs": 144092,
+      "kind": "console",
+      "message": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    }
+  ],
+  "networkFailures": [],
+  "httpFailures": [
+    {
+      "atMs": 144092,
+      "url": "http://127.0.0.1:5997/functions/v1/guest-drip",
+      "status": 429
+    }
+  ],
+  "popups": [],
+  "screenshots": [
+    {
+      "step": "1-landing",
+      "file": "raw/1280-09-1-landing.png"
+    },
+    {
+      "step": "2-guest",
+      "file": "raw/1280-09-2-guest.png"
+    },
+    {
+      "step": "3-battle-reward",
+      "file": "raw/1280-09-3-battle-reward.png"
+    },
+    {
+      "step": "4-first-receipt",
+      "file": "raw/1280-09-4-first-receipt.png"
+    },
+    {
+      "step": "5-cafe-economy",
+      "file": "raw/1280-09-5-cafe-economy.png"
+    },
+    {
+      "step": "6-boss",
+      "file": "raw/1280-09-6-boss.png"
+    },
+    {
+      "step": "7-wallet-proof",
+      "file": "raw/1280-09-7-wallet-proof.png"
+    }
+  ],
+  "observations": [
+    {
+      "atMs": 1050,
+      "name": "1-landing",
+      "headings": [
+        "LanternCat Café"
+      ],
+      "buttons": [
+        {
+          "label": "Play free",
+          "disabled": false
+        },
+        {
+          "label": "Connect wallet",
+          "disabled": false
+        },
+        {
+          "label": "Watch battle",
+          "disabled": false
+        },
+        {
+          "label": "Retry Deeds",
+          "disabled": false
+        },
+        {
+          "label": "Retry Fused",
+          "disabled": false
+        },
+        {
+          "label": "Economy",
+          "disabled": false
+        },
+        {
+          "label": "Odds",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false
+    },
+    {
+      "atMs": 2113,
+      "name": "2-guest",
+      "headings": [],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": true
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": true
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "FightYour first adventure",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    },
+    {
+      "atMs": 143726,
+      "name": "3-battle-reward",
+      "headings": [],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": false
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "Fight1/1 · Battle",
+          "disabled": false
+        },
+        {
+          "label": "Skip celebration",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Riposte — Saucer riposte. Each direct hostile hit returns 16 damage per stack. Reflections cannot trigger reflections. Stacks 2/2. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    },
+    {
+      "atMs": 144941,
+      "name": "4-first-receipt",
+      "headings": [
+        "Fuji",
+        "Seal"
+      ],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": false
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "Fight1/1 · Battle",
+          "disabled": false
+        },
+        {
+          "label": "Skip celebration",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Riposte — Saucer riposte. Each direct hostile hit returns 16 damage per stack. Reflections cannot trigger reflections. Stacks 2/2. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        },
+        {
+          "label": " Retry",
+          "disabled": false
+        },
+        {
+          "label": " Copy address",
+          "disabled": false
+        },
+        {
+          "label": "Close market",
+          "disabled": false
+        },
+        {
+          "label": "Café",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Style",
+          "disabled": false
+        },
+        {
+          "label": "History",
+          "disabled": false
+        },
+        {
+          "label": "More",
+          "disabled": false
+        },
+        {
+          "label": "Recover reserved actions",
+          "disabled": false
+        },
+        {
+          "label": "Back to café",
+          "disabled": false
+        },
+        {
+          "label": "Seal guide",
+          "disabled": false
+        },
+        {
+          "label": "Import earned gear",
+          "disabled": false
+        },
+        {
+          "label": "Refresh chain",
+          "disabled": false
+        },
+        {
+          "label": "Fuji guide",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    },
+    {
+      "atMs": 145248,
+      "name": "5-cafe-economy",
+      "headings": [
+        "Fuji",
+        "Fusion"
+      ],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": false
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "Fight1/1 · Battle",
+          "disabled": false
+        },
+        {
+          "label": "Skip celebration",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Riposte — Saucer riposte. Each direct hostile hit returns 16 damage per stack. Reflections cannot trigger reflections. Stacks 2/2. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        },
+        {
+          "label": " Retry",
+          "disabled": false
+        },
+        {
+          "label": " Copy address",
+          "disabled": false
+        },
+        {
+          "label": "Close market",
+          "disabled": false
+        },
+        {
+          "label": "Café",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Style",
+          "disabled": false
+        },
+        {
+          "label": "History",
+          "disabled": false
+        },
+        {
+          "label": "More",
+          "disabled": false
+        },
+        {
+          "label": "Recover reserved actions",
+          "disabled": false
+        },
+        {
+          "label": "Back to café",
+          "disabled": false
+        },
+        {
+          "label": "Fusion guide",
+          "disabled": false
+        },
+        {
+          "label": "Sealed inputs",
+          "disabled": false
+        },
+        {
+          "label": "Reserve fusion",
+          "disabled": false
+        },
+        {
+          "label": "Refresh chain",
+          "disabled": false
+        },
+        {
+          "label": "Fuji guide",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    },
+    {
+      "atMs": 145564,
+      "name": "6-boss",
+      "headings": [],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": false
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "Fight1/1 · Battle",
+          "disabled": false
+        },
+        {
+          "label": "Skip celebration",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Riposte — Saucer riposte. Each direct hostile hit returns 16 damage per stack. Reflections cannot trigger reflections. Stacks 2/2. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    },
+    {
+      "atMs": 145896,
+      "name": "7-wallet-proof",
+      "headings": [],
+      "buttons": [
+        {
+          "label": "Your next goal",
+          "disabled": false
+        },
+        {
+          "label": "Review Night tips",
+          "disabled": false
+        },
+        {
+          "label": "Review Fast reward",
+          "disabled": false
+        },
+        {
+          "label": "Get fish",
+          "disabled": false
+        },
+        {
+          "label": "Get stamps",
+          "disabled": false
+        },
+        {
+          "label": "Use Spool",
+          "disabled": false
+        },
+        {
+          "label": "0xbd0a…a714",
+          "disabled": false
+        },
+        {
+          "label": "Get YARN",
+          "disabled": false
+        },
+        {
+          "label": "Open menu",
+          "disabled": false
+        },
+        {
+          "label": "Invitations",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Season 125 days",
+          "disabled": false
+        },
+        {
+          "label": "Quests",
+          "disabled": false
+        },
+        {
+          "label": "Events",
+          "disabled": false
+        },
+        {
+          "label": "Team",
+          "disabled": false
+        },
+        {
+          "label": "Cats",
+          "disabled": false
+        },
+        {
+          "label": "Bag",
+          "disabled": false
+        },
+        {
+          "label": "Forge",
+          "disabled": false
+        },
+        {
+          "label": "Market",
+          "disabled": false
+        },
+        {
+          "label": "Season",
+          "disabled": false
+        },
+        {
+          "label": "Guide",
+          "disabled": false
+        },
+        {
+          "label": "Fight1/1 · Battle",
+          "disabled": false
+        },
+        {
+          "label": "Skip celebration",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Warm — Cozy. Reduce direct damage by 10% per stack. Does not reduce scald. Stacks 2/3. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Riposte — Saucer riposte. Each direct hostile hit returns 16 damage per stack. Reflections cannot trigger reflections. Stacks 2/2. 1 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Sprout — Second sprout. Consume to survive a fatal hit at 25% HP, once per battle per actor. Stacks 1/1. 2 rounds remaining.",
+          "disabled": false
+        },
+        {
+          "label": "Mute sound",
+          "disabled": false
+        }
+      ],
+      "horizontalOverflow": false,
+      "screen": "hub"
+    }
+  ],
+  "receipts": [],
+  "resolvedPath": "/?demo=1&squad=1&cardrpg2=1&a6=1",
+  "guestReadyMs": 1893,
+  "firstBattleMs": 2968,
+  "firstBattleClicks": 3,
+  "firstRewardMs": 143255,
+  "elapsedMs": 145899,
+  "complete": false,
+  "pass": false
+}

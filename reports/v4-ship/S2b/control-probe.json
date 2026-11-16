@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-16T05:28:10.691Z",
+  "sourceCommit": "04770cb5c60aa9f8081c49e190060c08d1e64ba8",
+  "purpose": "isolated learning matrix; not a parity replacement or runtime funnel gate",
+  "samples": 1,
+  "sessions": 0,
+  "variants": [
+    {
+      "id": "control",
+      "policy": "ratio",
+      "heal": 0,
+      "elapsedSeconds": 3.503974,
+      "fixtures": [
+        {
+          "fixture": "wave1",
+          "seed": 1,
+          "result": "party",
+          "durationSeconds": 217.10000000001742,
+          "actions": 147,
+          "rounds": 22,
+          "winHp": 1,
+          "healing": 692,
+          "healerDamage": 459,
+          "hash": "84d5d56f2ccf0fead36ab86e21cc0c08f63b88f1a7a7fd21897d5e13e02b2271"
+        },
+        {
+          "fixture": "wave1",
+          "seed": 71,
+          "result": "party",
+          "durationSeconds": 213.2333333333496,
+          "actions": 144,
+          "rounds": 22,
+          "winHp": 1,
+          "healing": 722,
+          "healerDamage": 408,
+          "hash": "8b7ed13d9a5121d9b80d3fab1fd0cd40ce470098e35e5167d6794fb4c4cde6d2"
+        },
+        {
+          "fixture": "wave3",
+          "seed": 1,
+          "result": "party",
+          "durationSeconds": 599.533333333299,
+          "actions": 396,
+          "rounds": 40,
+          "winHp": 1,
+          "healing": 1572,
+          "healerDamage": 724,
+          "hash": "fdd1ced4b5608c812afd9bdf738d21174352d0dd318ce7c105ce967eb425689b"
+        },
+        {
+          "fixture": "wave3",
+          "seed": 71,
+          "result": "party",
+          "durationSeconds": 573.6999999999355,
+          "actions": 383,
+          "rounds": 40,
+          "winHp": 1,
+          "healing": 1524,
+          "healerDamage": 702,
+          "hash": "8a313fe134033cec00a98e2de3c5a2b9907c672451dc5c3233b2dd83d67fd0fc"
+        },
+        {
+          "fixture": "boss",
+          "seed": 1,
+          "result": "party",
+          "durationSeconds": 198.83333333334542,
+          "actions": 135,
+          "rounds": 20,
+          "winHp": 1,
+          "healing": 73,
+          "healerDamage": 322,
+          "hash": "4d3635dea2d7a3d3fc3627c0828e08e9efec702f13a5d9fec7e6b89e68371385"
+        },
+        {
+          "fixture": "boss",
+          "seed": 71,
+          "result": "party",
+          "durationSeconds": 211.13333333334901,
+          "actions": 143,
+          "rounds": 21,
+          "winHp": 1,
+          "healing": 73,
+          "healerDamage": 347,
+          "hash": "6797d9cfe68da8201122a416304269c0d7568af72a447030bf535e7b3c398e02"
+        }
+      ],
+      "summary": [
+        {
+          "fixture": "wave1",
+          "wins": 1,
+          "count": 1,
+          "medianSeconds": 217.10000000001742,
+          "p90Seconds": 217.10000000001742,
+          "medianWinHp": 1,
+          "healerDamage": 459
+        },
+        {
+          "fixture": "wave3",
+          "wins": 1,
+          "count": 1,
+          "medianSeconds": 599.533333333299,
+          "p90Seconds": 599.533333333299,
+          "medianWinHp": 1,
+          "healerDamage": 724
+        },
+        {
+          "fixture": "boss",
+          "wins": 1,
+          "count": 1,
+          "medianSeconds": 198.83333333334542,
+          "p90Seconds": 198.83333333334542,
+          "medianWinHp": 1,
+          "healerDamage": 322
+        }
+      ],
+      "progression": {
+        "count": 0,
+        "firstLossMedianMinutes": null,
+        "noLoss": 0,
+        "rows": []
+      }
+    }
+  ]
+}

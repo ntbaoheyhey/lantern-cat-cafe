@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-16T05:50:04.283Z",
+  "method": "Real economy handler with disposable in-memory store and no RPC; authorization cases deliberately distinct",
+  "rows": [
+    {
+      "method": "Ordinary fresh guest, no campaign win",
+      "questAccepted": false,
+      "reason": "Complete the café quest at level 5.",
+      "gear": 0,
+      "maximumSameSetEpics": 0,
+      "spool": 0,
+      "bossSeals": 0,
+      "starThread": 0,
+      "level": 1,
+      "retryExtraGear": 0,
+      "testerYarn": 20,
+      "sealCostYarn": 13,
+      "fusionCostYarn": 18,
+      "combinedCostYarn": 31,
+      "shortfallBeforeTradeOrWithdraw": 11,
+      "weeklyWithdrawalNetCap": 6
+    },
+    {
+      "method": "Existing server-authorized Judge quest",
+      "questAccepted": true,
+      "reason": null,
+      "gear": 4,
+      "maximumSameSetEpics": 4,
+      "spool": 16,
+      "bossSeals": 2,
+      "starThread": 2,
+      "level": 5,
+      "retryExtraGear": 0,
+      "testerYarn": 20,
+      "sealCostYarn": 13,
+      "fusionCostYarn": 18,
+      "combinedCostYarn": 31,
+      "shortfallBeforeTradeOrWithdraw": 11,
+      "weeklyWithdrawalNetCap": 6
+    }
+  ],
+  "limitations": [
+    "No browser timing or chain receipt measured.",
+    "Judge entitlement must be earned through the existing capped server pass; this experiment does not grant one.",
+    "A local battle reward cannot be imported as server-earned gear.",
+    "A second wallet needs real existing test YARN; no hidden balance grant is allowed."
+  ]
+}

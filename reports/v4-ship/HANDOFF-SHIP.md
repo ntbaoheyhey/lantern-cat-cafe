@@ -5,18 +5,21 @@ I OWN ALL AUDIO: QUIET BED, SYNCED WEAPON SFX, UI SOUNDS, CONFIRM CHIME | NEVER 
 NO NEW ECONOMY MECHANICS, NO CONTRACT CHANGES, NO DEPLOYS, NO MAIN MERGE | MERGE ART AT 17/18/19 NOV, ART WINS IN ART FILES
 NO SECRETS ANYWHERE | NEVER LOWER A THRESHOLD | FILES ARE MY MEMORY | NO PERMISSION NEEDED: NEVER REPORT PAUSED
 
-NOW S1 exact-candidate review + S2 sequential20-profile baseline. Resumed16Nov05:21UTC; REV2 adopted.
-NEXT 1: review51unresolved exact candidates; normalize absolute paths; collect history39672; incremental scan; complete S1.
-NEXT 2: collect S2 baseline96543 (20 real-click profiles, ~50min); classify actual failures, checker + friction report, commit/push.
-NEXT 3: S2b class study and isolated experiment during baseline; no product mutations until S2 collection finishes. Due17Nov08UTC.
-LAST GOOD COMMIT 8ccd6f91340e0a21ced243555a3cd4c7afef0e31 (pushed origin/codex/v4-ship-2026-11-16)
-LAST ART SHA MERGED 88fa5bdfd820609f054d174fce24248f35aa9575 (branch base)
-OPEN: V4 product gates unmeasured; boss fixture211.133s exceeds110s target; no sponsor credentials configured here.
-PIDS: fixture68690, Vite launcher68776; command node scripts/v4ship/start-local.mjs; log S0/fixture.log; session94177.
-BACKGROUND JOBS: history39672/PID70360(parent70351); baseline96543/PID80758 alive05:21UTC. Triage97411 complete; old80941 absent.
-S1 G-REG PASS: typecheck,2640web,733server,3/3F6,build. S1/regression.json+parity.json; no further product changes since checks.
-Working scan93884files/782.383s/34392candidates; exact triage641files/131.72s leaves51unresolved. No clean-scan claim.
-S2 scripts demo-path.mjs + check-ship.mjs +2checker negative tests added. Entry practice2.9s/3clicks; full first reward143.8s (one pilot).
-S2-pilot had bad seal selector matching help; corrected to .b2-seal-items button before20-run baseline. Pilot is exploratory, not baseline evidence.
-S2b new ART request: Binding Thread is damage/control, provisional ranged; replied in REQUESTS-TO-ART.md. Final mapping/baseline not implemented.
-Contest screening-only25+25 remains unverified despite required anchor wording above; organizer date21Nov23:59VN verified, Hub conflict documented.
+NOW S2 baseline collected; S2b front35 selected for implementation. Updated 2026-11-16T05:59:31.551235+00:00.
+NEXT 1: collect history39672/PID70360 when done; exact context triage; no clean-history claim.
+NEXT 2: commit/push baseline+research checkpoint; incremental scan05:58UTC0unresolved; subsequentreports safe metadata.
+NEXT 3: implement S2b classes/front35/YarnGiantHP1292; test runtime/UI/E3-E5/G-REG; record sole F6 baseline and notifyART.
+LAST GOOD COMMIT 04770cb5c60aa9f8081c49e190060c08d1e64ba8 (upstreamverified)
+LAST ART SHA MERGED 88fa5bdfd820609f054d174fce24248f35aa9575; a14f8a76assets unmerged per schedule.
+PIDS fixture68690,Vitelauncher68776(session94177,S0/fixture.log); history70351/70360/70361(session39672).
+Completed baseline80758(session96543),holdout97105(session39668); no jobs stopped.
+S1 current34392candidates allreviewed nonsecrets; incremental0unresolved; history3763commits active.
+S2 all20finished: battle~3.3s/3clicks; steps4-7fail20/20;0receipt; retain429errors and harnesslimits.
+S2b holdout1001-1100:300/300wins;0healerDamage; firstloss19.65391min;boss95.0167s/p90108.9s.
+S2b implementpatient woundedfront thenHPratio/stableID,basicheal35;YarnGiantHP45%;otheroffenseunchanged.
+LegacyA6firstloss method superseded by currentC2/economyV3; no browser/humanfirstloss claim.
+S3 LEARN/probeprepared: freshguest0gear,existingJudgequest4same-setEpics;31YARNcost vs20grant;11shortfall.
+S3 realserverauthorityrequired; no localsave mintbridge/hidden grants; secondwalletfinancing unresolved.
+Only originalF6baseline exists; all finalproductgates open;productionunchanged.
+STOPabsent/INBOXempty;116GiBfree;imagesopened0thiscontinuation.
+REQUEST-SHIP.txt bytes46223 sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2

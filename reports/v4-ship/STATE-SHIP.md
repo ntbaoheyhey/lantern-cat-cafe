@@ -21,3 +21,10 @@ S2 pilot: first combat2915ms/3clicks,first campaign reward143828ms; seven-step c
 S2b research prep: Binding Thread provisionally ranged from current damaging snare kit; ART informed via owned request file. Classes/baseline untouched.
 RESUMED 2026-11-16T05:22:13.593571+00:00: HEAD/upstream8ccd6f9 verified; fixture68690/68776,history70351/70360,baseline80758 alive; old triage80941 absent.
 S1 exact triage completed:34392candidates;51unresolved; metadata only; history still active.
+S1 current snapshot triage PASS05:28UTC:34392non-secret matches,0unresolved;641files/231.01s;S1/secrets-working-triage.json. Incremental scan running;history still open.
+S1 incremental review PASS05:30UTC:2non-secret comparison literals,0unresolved;S1/secrets-incremental.json. Full history remains open.
+S2b control PASS exact3F6hashes+timings;full3x2matrix underway;no product/baseline edits.
+RESUMED 2026-11-16T05:42:19.721982+00:00: HEAD/origin04770cb5c verified; fixture68690/68776,history70351/70360/70361,baseline80758,matrix88035 alive.117GiB free; no STOP/INBOX feedback.
+S2b 2026-11-16T05:45:33.492424+00:00: legacy first-loss method found three-cat/old timing; current C2+economyV3 pilot44385 launched. Not a gate pass.
+S2b 2026-11-16T05:57:43.458048+00:00: holdout1001-1100 PASS candidate timing: firstloss19.65391min; boss95.0167s/p90108.9s;300/300wins;0healerDamage. Product/G-CLASS/F6 unchanged.
+S2 DONE 2026-11-16T05:59:31.551235+00:00:20/20profilescollected;0/20complete;0receipts;0popups; G-FUNNEL FAIL; S2/summary.json and RUNS/S2/FRICTION.md. Checker2/2PASS.
