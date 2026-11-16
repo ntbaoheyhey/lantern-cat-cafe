@@ -1,29 +1,20 @@
-ONE BRANCH codex/v3-feel-2026-11-14
-POSES FIRST: EVERY UNIT NEEDS DRAWN WIND-UP, STRIKE, HIT AND CAST POSES
-LEARN BEFORE BUILD, FOR EVERYTHING: PAPERS + WEB DOCS + OWN EXPERIMENTS, NOTES IN LEARN/
-APPRENTICE FIRST: STUDY, DRILL, COMPARE, THEN PRODUCE
-CRAFT TIME >= 60%, MEASURING <= 20%
-SHADER/FLIPBOOK EFFECTS, NEVER CODE-DRAWN RINGS OR FOG
-STATIC CAMERA, EQUAL TIMING, BASIC + ULTIMATE ONLY
-AN ITEM FAILS ONLY ON ITS OWN DEFECTS
-WATCH THE VIDEO BEFORE CLAIMING DONE
-NEVER LOWER A THRESHOLD
-NO DEPLOY, NO MAIN MERGE
-ORIGINAL ART ONLY, OWN ART AS THE ONLY GENERATOR INPUT
-DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW: P1 method study complete; checkpointing, then P2 Soot drawn-pose pilot.
-NEXT 1: Re-anchor P2; check designer inbox; record LEARN/P2 and active craft intervals.
-NEXT 2: >=4 candidates per K1/K2/K4/K5; normalize/inspect then generic runtime swaps/sockets.
-NEXT 3: Re-anchor staff/ultimate; replace curtains; two filmed revisions and blind40 frames before rollout.
-LAST GOOD COMMIT: 52b994a9c8b659f073fc282b06f85508bd87bae9 (pushed).
-OPEN: Q1 video50.233ms; exact schedule/zero overlap; <=30min Q9, no recorder development.
-OPEN: Q2 owned done; inherited A250PASS/97FAIL,B14FAIL goQ9. Q3.A historic craft15.17%FAIL retained.
-OPEN: Soot basic6/10,pilot5/10; curtains fail. P1 study does not accept P.soot.
-METHOD: A full redraw + hard swap; A2 near head-ratio limit, unaccepted; arm-onlyB failed silhouette/seams.
-ESTIMATE: pose-set30-45 author minutes provisional; calibrate in P2. No historic time manufactured.
-PIDS: Owned Vite67838 on5990,VITE_CRAFT_PILOT=soot; demo untouched; system_installd16045 never signal.
-BACKGROUND JOBS: None; P1 typecheck/policy/parity completed.
-TESTS: P1 workspace typecheck,1786 checker tests,three fixture parity PASS; no runtime edits.
+ONE BRANCH codex/v3-feel-2026-11-14 | POSES FIRST: DRAWN WINDUP/STRIKE/HIT/CAST
+LEARN BEFORE BUILD: PAPERS + WEB + OWN EXPERIMENTS | STUDY, DRILL, COMPARE, PRODUCE
+CRAFT >=60%, MEASURING<=20% | SHADER/FLIPBOOK EFFECTS, NO RINGS/FOG MAIN SHAPES
+STATIC CAMERA, EQUAL TIMING, BASIC+ULTIMATE | SCOPED GATES | WATCH FILMS | NEVER LOWER THRESHOLDS
+NO DEPLOY/MAIN MERGE | ORIGINAL ART, OWN INPUTS ONLY
+FILES ARE MEMORY: READ RULES-POSE + HANDOFF + STATE AFTER EVERY COMPACTION
+ALREADY AUTHORIZED: CONTINUE | SAVE IMAGE+PROVENANCE AT ONCE | SMALL SHEETS ONLY
+DO NOT STOP BEFORE19NOV12Z EXCEPT EXPLICIT USER STOP/STOP-V3FEEL
+NOW: P2 resume; updated section0A copied verbatim; RULES/STATE created first.
+NEXT1: Recover and save K1A3/A4 and K2A3/A4 with exact provenance; reject unmappable results and regenerate.
+NEXT2: Complete four candidates K4/K5, numeric checks and best-two2x review; no poses accepted yet.
+NEXT3: Runtime colour/origin experiment before swap code; re-anchor staff/replace curtain ultimate; two film revisions/blind40.
+LAST GOOD COMMIT: c577a85acca6f4d4e456fa8baaeb723c2ea8bb4a (HEAD=origin verified).
+OPEN: P2 pose/runtime/effect/film/craft gates all incomplete; P1 learning is not production acceptance.
+OPEN: Q1 residual50.233ms; Q2 inherited A97/B14fails; Q3.A historic craft15.17%; no history rewritten.
+PIDS: Owned Vite67838 alive5990; system_installd16045 NOT OURS; demo5994/API5997/Anvil8546 untouched.
+BACKGROUND JOBS: prior K2 generation cell g34:86 recover now; no new background launch.
+FILES THIS STEP: REQUEST-POSE.txt,RULES-POSE.md,STATE-POSE.md,HANDOFF-FEEL.md,PROGRESS-POSE.log,DECISIONS-FEEL.md.
 TIME TRIGGERS: R1 Nov16 12Z;R2 Nov18 12Z;FREEZE Nov19 12Z; none due.
-SOURCE: reports/v3-feel/REQUEST-POSE.txt.
-UPDATED: 2026-11-16T01:32:24.309441+00:00
+UPDATED: 2026-11-16T01:56:30.583450+00:00
