@@ -18,6 +18,19 @@ expected = json.loads((out / 'source-hashes.json').read_text())
 reports = []
 limits = {'catMedian': ('min', .30), 'catDeviation': ('max', .08), 'left': ('min', .03), 'right': ('min', .03), 'span': ('min', .80), 'gap': ('max', .20), 'boss': ('min', .45)}
 
+# The film review may finish while the independent 900p captures are running.
+# A later orchestration pass preserves both the sheets and their human notes.
+saved_review = out / 'film-review.json'
+if saved_review.exists():
+    for saved in json.loads(saved_review.read_text()):
+        capture = root / 'reports/v3-feel/REVIEW' / saved['item']
+        data = json.loads(gzip.decompress((capture / saved['fixture'] / 'capture.json.gz').read_bytes()))
+        assert data['videoSha256'] == saved['videoSha256'], 'Saved review belongs to another film'
+        assert all(hashlib.sha256(subprocess.check_output(['git', 'show', data['sourceCommit'] + ':' + path])).hexdigest() == hash_ for path, hash_ in expected.items()), 'Saved review source differs from regression'
+        assert all((root / action['sheet']).exists() for action in saved['actions']), 'Saved review has missing sheets'
+    print('Existing source-bound film review preserved; no sheets reopened or rewritten.', flush=True)
+    raise SystemExit(0)
+
 def balanced(parts):
     if len(parts) == 1:
         return parts[0]
@@ -73,6 +86,7 @@ for item, fixtures, after in [('V4-A9-CLARITY' + suffix, ['wave1', 'wave3', 'bos
                 elapsed = (frame.get('action') or {}).get('elapsed')
                 draw.text((x + 3, y + 146), f'{n/30:.2f}s | {elapsed:.0f}ms' if elapsed is not None else f'{n/30:.2f}s | return', fill='white')
             path = directory / f"A{action['key']}-{action['asset']}-ultimate.jpg"
+            assert not path.exists(), 'Never overwrite an existing film sheet'
             sheet.save(path, quality=92)
             action['sheet'] = str(path.relative_to(root))
         measurements = []

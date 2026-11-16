@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T18:52:36.191519+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: ps -p73945,74804,3426; inspect REVIEW/A9/r2/pipeline-jobs.json and jobs/a9-r2-capture.log. Fivefilms/5400markers PASS; 3x900p captures running. Await pipeline film-review/layout-review then inspect each new sheet once.
+NEXT1: poll 78291 and jobs/a9-r2-film-review-early.log; inspect new R2film-review.json, then27own-ultimate sheets once. Pipeline73945 continues3x900p and reuses reviewed film output.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:8b70282b1 verified. Runtime60763fd90; R1failure ef845ee67 retained. R2summary and27own-ultimate action ledger written; images not yet reviewed.
-LIVE: craftVite3426/5990; R2pipeline73945/jobs/a9-finish-r2.log with capture74804/jobs/a9-r2-capture.log. Regression2664/318+typecheck+3F6PASS; lane77hashesPASS; liveFX16/16 areaPASS, freshface16/16 max.356607%.
+LAST PUSH:40a663e54 verified. Runtime60763fd90; R1failure ef845ee67 retained. R2summary+27windowledger and5400verified markers saved; film review now parallel with900p.
+LIVE: craftVite3426/5990; R2pipeline73945 childcapture74804/jobs/a9-r2-capture.log; earlyfilmreview78291/jobs/a9-r2-film-review-early.log. Three job roots. Later pipeline preserves completed film report.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
