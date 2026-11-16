@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-16T13:07:52.709416+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 5770,
+      "sha256": "ccc09b15f3c7b3e7321c5d5d260cb2572376a343626d33b9f90b89fd2b4fc151"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S2b-boundary.md",
+      "bytes": 9472,
+      "sha256": "6e1b8b61082469bbbcddc0674817868a35bd31873e6ba36164d8cdd23a4619c8"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-decision-1.json",
+      "bytes": 2169,
+      "sha256": "e8474580964d640272f31e4bf85e475cae9aa765c26548c9d11e23b0fbd425e1"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-observation-1.json",
+      "bytes": 142271,
+      "sha256": "bb1306e214dee54cc8beae67ff7d0e97d96c717913cb3416157e5df6fe2059c7"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-observation-1.jsonl.gz",
+      "bytes": 341877,
+      "sha256": "c3e289303732088358123a710d726d6bb19998a8ade015dbd37f2279cc9dca8c"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-observation-1.log.json.gz",
+      "bytes": 206,
+      "sha256": "ca27ddf0d11875f37a0a2df0c8b05098ab0dc58f6bf99898626e59d95c53fa4b"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-regression-1/check.json",
+      "bytes": 1432,
+      "sha256": "f104ab8fa02328b0b338ecd3e53256c81d57fae1ec6e95902be979107f9dbf78"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-regression-1/log.jsonl.gz",
+      "bytes": 16120,
+      "sha256": "6c9e0d138da90936090983c004279e1c24eaa4be82ed318be0a2d42d8b64baee"
+    },
+    {
+      "path": "reports/v4-ship/S2b/eligibility-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "8ef8ce15423708491464db2e63073ad8444e6afebf102cfd4a973987dd9af2d4"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 11586,
+      "sha256": "5998d075fa1089aedd75f9d13a5599c997c22fd274d9ca26ac566df222f22eb3"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 2329,
+      "sha256": "e43bade30be0d2adf78c99f69cd2c6aeeb5932adeafd5ef00381b012983529ab"
+    },
+    {
+      "path": "tools/v4ship-lab/classes/eligibility-observe.mjs",
+      "bytes": 9185,
+      "sha256": "c54900f0f767067985c69fe7546111883eb3a5937c718f36becaf685dda2aa8c"
+    }
+  ],
+  "expandedGzip": 3,
+  "findings": [
+    {
+      "file": "reports/v4-ship/S2b/eligibility-observation-1.json",
+      "line": 28,
+      "type": "generic-api-key",
+      "classification": "false-positive",
+      "reason": "Public SHA-256 recomputed from the isolated observation-only token ledger source; not a credential"
+    },
+    {
+      "file": "reports/v4-ship/S2b/eligibility-observation-1.json",
+      "line": 162,
+      "type": "generic-api-key",
+      "classification": "false-positive",
+      "reason": "Public SHA-256 recomputed from the isolated observation-only token ledger source; not a credential"
+    }
+  ],
+  "unresolved": 0,
+  "pass": true
+}
