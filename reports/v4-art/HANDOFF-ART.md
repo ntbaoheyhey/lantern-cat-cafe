@@ -1,13 +1,14 @@
-# ART execution anchor — 2026-11-16T22:29:39.499865+00:00
+# ART execution anchor — 2026-11-16T22:36:53.244326+00:00
 ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: after checkpoint push, launch tools/.venv/bin/python tools/v3craft-lab/v4-transfer/capture-delivery-r2.py detached; record PID/log. Fresh V4-A11-DELIVERY-R1:3x30s720p30FPSaudio/markers,3x900p layouts,10fps action sheets and private1024px copies; then scoped review.
+NEXT1: poll A11deliveryPID38489/tail5 jobs/a11-delivery-r1.log + A11/delivery-r1/capture-jobs.json.3normal30s720audio films and2700markersPASS;3x900p running then10fps sheets/private1024 copies. Review<=4fresh/look,<=8/HANDOFF; no runtime edits during captures.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:4481146f4 verified; runtime ae96b7d85. Fullweb2689/320PASS; typecheck/46focused+12browserPASS on same runtime; explicit3F6 baseline hashesPASS/inheritedlatest unchanged; lane131paths0violations. New verification checkpoint pending.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log(craftOFF). Regression37174 and parity38137 completedPASS; preview35257 absent.2ownedservers.
+LAST PUSH:3b9ac040a verified,0ahead/behind; runtime ae96b7d85. Fullweb2689/320+typecheckPASS; explicit3F6 baselinePASS/inheritedlatest unchanged; lane131paths0violations. Film evidence running, no acceptance yet.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log(craftOFF); A11deliveryPID38489 jobs/a11-delivery-r1.log/A11/delivery-r1/job.json. Spare5991 Vite8252/launcher8220 stopped after ownership+cwd verification; normalfilms used5990.2ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; films pending.
+A11prep: LEARN/A11-placement.md records6sources/1paper/5docs and saved42defect diagnosis; proposed viewport-only/HUD-aware private drills not run or installed. Film capture metadataPASS at60.24/60.24/59.88medianFPS; visualacceptance pending.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.
@@ -27,7 +28,7 @@ A10contrast scoped receipt source9205464cb/80hashes;85labelsPASS,2700markers/279
 Bindingportraitc5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Contrastrequest13:40 b3-world/speed/stars/auto32unknownobs; newest18:25 transferrequest bound toscene-ready production12/sourcee9af6a933.
 OPEN reducedmotion/strictshake/activation/ensemble/portraitbanner/finalclasses/timesplit,A10totaltransfer; R2Panko boss bannerbackplate touchesportrait f290/f891/tailf892 though text readable; wave3Soot numbercluster f703 retained.
 Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
-Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;trackedV4workingbeforeR2checkpoint120760948B/150MB;gitstatus420entries(inherited included).
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;trackedV4working121320693B/150MB at3b9ac040a; inherited dirt retained.
 Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,diff<=80. ImagingPython tools/.venv/bin/python.
 Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. Max4attempts/problem then change method, never gates.

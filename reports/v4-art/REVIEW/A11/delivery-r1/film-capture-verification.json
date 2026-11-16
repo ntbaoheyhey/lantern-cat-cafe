@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-16T22:36:05.851629+00:00",
+  "scope": "Capture integrity and metadata only. Visual action review is pending. Render FPS uses consecutive actual presentation samples within the encoded 30-second interval; encoded video is 30 FPS. Audio stream presence is not an audio-quality acceptance.",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "sourceCommit": "3b9ac040a33e475e4a1ebca80549a3bce3f27a74",
+      "captureSha256": "49022f5b06e7bf0efd87cf190f2e35380ad73243c5ba15513e558bcbbb3bfbab",
+      "video": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/wave1.webm",
+      "videoSha256": "c121bfb7a677ed68a5f68be42ec6dfb13dcfeb643c6c28e3edc27daf9a4c92ec",
+      "videoHashMatches": true,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "vp9",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "opus",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "containerDurationSeconds": 30.009,
+      "medianRenderFPS": 60.2404848763393,
+      "medianRenderFpsPass": true,
+      "markerProofPass": true,
+      "encodedFrames": 900,
+      "parity": true,
+      "errors": [],
+      "settings": {
+        "master": 0.7,
+        "music": 0.55,
+        "ambience": 0.3,
+        "sfx": 0.8,
+        "voice": 0.7,
+        "ui": 0.6
+      },
+      "recordedAudio": {
+        "path": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/wave1-mix.wav",
+        "integratedLufs": -14.96,
+        "truePeakDbTP": -3.32,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "pass": true
+    },
+    {
+      "fixture": "wave3",
+      "sourceCommit": "3b9ac040a33e475e4a1ebca80549a3bce3f27a74",
+      "captureSha256": "39ba9ab9babdf5f27654a74af33c62f3a46a586d768451555ddc3569a67dd480",
+      "video": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/wave3.webm",
+      "videoSha256": "1e9be28a0b42e96d35ad449b39bcdd27079e8a51eef19f46781bea715b439dd2",
+      "videoHashMatches": true,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "vp9",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "opus",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "containerDurationSeconds": 30.009,
+      "medianRenderFPS": 60.2404848763393,
+      "medianRenderFpsPass": true,
+      "markerProofPass": true,
+      "encodedFrames": 900,
+      "parity": true,
+      "errors": [],
+      "settings": {
+        "master": 0.7,
+        "music": 0.55,
+        "ambience": 0.3,
+        "sfx": 0.8,
+        "voice": 0.7,
+        "ui": 0.6
+      },
+      "recordedAudio": {
+        "path": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/wave3-mix.wav",
+        "integratedLufs": -14.97,
+        "truePeakDbTP": -2.99,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "pass": true
+    },
+    {
+      "fixture": "boss",
+      "sourceCommit": "3b9ac040a33e475e4a1ebca80549a3bce3f27a74",
+      "captureSha256": "07e23c6687541f5ef35ca26f99a3000e032f203396a331c82fda465afae3f7fd",
+      "video": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/boss.webm",
+      "videoSha256": "a459a141618338108134c7c6230143752e6abc3f66c3fa41620d104c00f20a6c",
+      "videoHashMatches": true,
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "vp9",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1"
+        },
+        {
+          "index": 1,
+          "codec_name": "opus",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "containerDurationSeconds": 30.009,
+      "medianRenderFPS": 59.88098909257038,
+      "medianRenderFpsPass": true,
+      "markerProofPass": true,
+      "encodedFrames": 900,
+      "parity": true,
+      "errors": [],
+      "settings": {
+        "master": 0.7,
+        "music": 0.55,
+        "ambience": 0.3,
+        "sfx": 0.8,
+        "voice": 0.7,
+        "ui": 0.6
+      },
+      "recordedAudio": {
+        "path": "reports/v3-feel/REVIEW/V4-A11-DELIVERY-R1/boss-mix.wav",
+        "integratedLufs": -14.74,
+        "truePeakDbTP": -2.33,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "filmVisualAcceptance": false,
+  "productionTransferAcceptance": false
+}
