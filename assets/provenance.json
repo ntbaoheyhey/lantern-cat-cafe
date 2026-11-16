@@ -4508,6 +4508,47 @@
       "sha256": "df4960d786ada7bb1fff77e4dabfea42f393191ce53b12565eee7d0ac2367051",
       "status": "selected source K4; exposed jaw point gates pass; export/runtime/film pending",
       "metrics": "tools/v3craft-lab/v4-yarn-giant/K4-A2-metrics.json"
+    },
+    {
+      "id": "v4-yarn-giant-k5-a1",
+      "date": "2026-11-16T17:13:38.521192+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent 2D battle key pose K5 ultimate release for our original Yarn Giant.\nInput is our exact original character to edit. Change its pose into a powerful DOUBLE outward hammer slam. Plant both feet widely on one horizontal floor line, bend the knees slightly, lean the torso forward, and drive both giant fists outward and down on opposite sides at roughly waist height. Each forearm forms a strong descending diagonal from shoulder to fist. Place both fists far outside the feet, with large transparent triangular gaps between arms and torso. Do not leave the fists hanging by the thighs as in idle. The left fist reaches toward screen-left and the other toward screen-right, a broad unmistakable symmetrical burst of force. Keep both fists above the floor and below the shoulders. The crowned head looks down and toward the enemy at screen-left, with gold eyes still readable.\nKeep the stocky original anatomy, full floor-to-crown height, head and crown identity. The yarn cranium through bottom jaw/neck rope, EXCLUDING crown, occupies approximately one third of floor-to-crown height. Preserve muted mauve/rose yarn, worn small gold crown, round gold pendant, ragged stitched cape, gold eyes, wrapping details, painted outlines, lighting and three-quarter camera. No additional limbs, weapons or props.\nOne whole character on a square genuinely transparent canvas; generous margins around both fists and feet, no clipping. No text, labels, environment, floor, shadow blob, other characters, aura, particles, shockwaves, trails, blur or opaque background. The effect will be authored separately.",
+      "referenceInput": "own art: apps/web/public/units/yarn-giant/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/yarn-giant/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K5-A1.png",
+      "sha256": "2ef08ce2f1e371624df826c66c8f51dc28b49f95ba0bf10b32e7951b7321bbe8",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-k5-a2",
+      "date": "2026-11-16T17:15:57.792805+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent battle key K5 ultimate release, original Yarn Giant.\nEdit this exact double outward hammer pose. Change only the yarn cranium, face and jaw below the crown: reduce its height and width by about 12 percent. Keep the top of the crown at exactly the same height and preserve the crown design unchanged. Raise the lower jaw and naturally reconnect the neck rope. The yarn head excluding crown should occupy approximately one third of the whole floor-to-crown character height. Keep the original gold eyes and head identity.\nKeep both fists far outside the feet on the same strong descending diagonals, with open triangular arm/body gaps. Preserve every limb position and length, fist size, stocky torso, wide planted feet, body height, cape and pendant, camera, lighting, muted mauve/rose yarn colors, texture and canvas composition. Do not shorten the arm spread, move feet or scale the whole character.\nOne complete character with genuine alpha transparency and generous margins. No text, background, floor, shadow, effects, trails, new props, blur or clipping.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/yarn-giant/K5-A1.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/yarn-giant/K5-A1.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K5-A2.png",
+      "sha256": "84b363d3eca811744564989c8d431a5f67647641057990815a991417f1a0cf27",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-k5-a3",
+      "date": "2026-11-16T17:17:35.529731+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent K5 double outward hammer pose, our original Yarn Giant.\nEdit only the yarn head below the crown in this exact image. The last edit made that head too small. Enlarge the yarn cranium, face and jaw by approximately 24 percent in height and width. Anchor the bottom of its jaw/neck rope exactly where it is now, and expand the top of the wool cranium upward behind the crown. Keep the gold crown itself and its top point in exactly the same place. The complete yarn head excluding crown must occupy one third of the character floor-to-crown height. Preserve the original gold-eyed face and yarn construction.\nEverything else stays unchanged: same widely planted feet, two fists far outward/down on strong diagonals, open arm/torso gaps, arm lengths and fist sizes, stocky torso, cape, pendant, full standing height, body stance, camera, lighting, muted mauve/rose palette, painterly outlines, texture and canvas margins. Do not resize the whole character, move the fists or shrink the arm spread.\nOne complete character, genuine alpha transparency. No props, text, background, floor, shadow, effect, particles, trail, blur or clipping.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/yarn-giant/K5-A2.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/yarn-giant/K5-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K5-A3.png",
+      "sha256": "5a6b9c5288086527208baa46f7b337ebd9acbd50e929d12f62c076be8bc5530a",
+      "status": "selected source K5 after authorized maskedLab30%; export/runtime/film pending",
+      "metrics": "tools/v3craft-lab/v4-yarn-giant/K5-A3-colour-30-metrics.json",
+      "derivation": "tools/v3craft-lab/v4-yarn-giant/K5-A3-colour-30.json"
     }
   ]
 }
