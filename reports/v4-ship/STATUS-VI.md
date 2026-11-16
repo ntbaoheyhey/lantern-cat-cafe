@@ -17,3 +17,4 @@
 - Snowtrace đã mở được bằng trình duyệt tích hợp; còn thiếu video biên nhận Fuji và kiểm tra nghe/đọc. R2 vẫn sau ART18/11.
 - Bản clone sạch còn bảy lỗi ART; báo cáo khoảng 84,6 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
+S11:đãkiểmtra2hànhtrình/36biênlai;0lỗitrang/nútthiếunhãn. Nộidungtốiđa38từ;ảnhBindingThreadthiếuthuộcART. ChưađạtG-UI;đangsửacopyvàđộtuơngphản.

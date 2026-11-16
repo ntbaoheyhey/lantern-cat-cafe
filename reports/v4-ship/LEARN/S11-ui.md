@@ -1,0 +1,19 @@
+# S11 whole-journey UI checks
+
+Read16November before implementation. Scope: both desktop sizes, real production preview, text contrast, labels and geometry. These checks supplement human keyboard/screen-reader and image-background review.
+
+1. [WCAG2.2, contrast minimum](https://www.w3.org/TR/WCAG22/#contrast-minimum), formal W3C Recommendation:4.5:1normal text,3:1large text, with the standard inactive-control exception. Unknown backgrounds do not count as passing.
+2. [W3C APG button pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/): use computed accessible names; an icon-only button needs a name even if its glyph is visible.
+3. [Playwright ARIA snapshots](https://playwright.dev/docs/aria-snapshots): inspect computed roles/names. A partial snapshot alone can miss unnamed elements.
+4. [MDN Range.getClientRects](https://developer.mozilla.org/en-US/docs/Web/API/Range/getClientRects): measure text ranges to find actual rendered text fragments, including inline content that a block-only selector misses.
+5. [MDN opacity](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/opacity): ancestor opacity affects children even though the property is not inherited. Do not compute contrast from foreground/background colors while silently ignoring an opacity layer.
+6. [Chrome accessibility reference](https://developer.chrome.com/docs/devtools/accessibility/reference): the accessibility tree exposes computed semantics, while real keyboard and assistive-technology usability need separate interaction checks.
+7. [Local two-method experiment](../S11/ui-method-comparison-1.json): the existing proof-only contrast selector sees0rows on both landing profiles. The whole visible-text/AX observation sees18text nodes,32total visible words and12named controls at each size. Neither result alone proves contrast or the full journey.
+
+Use whole-journey observation for coverage and retain the scoped proof method for focused regressions. Inspect ancestor clipping and conservative solid/gradient contrast; leave images, filters and unresolved compositing explicitly unknown. Keep raw visible-word counts separate from prose counts: button labels, headings and transaction values are not prose, but the full counts stay in evidence. Count visible descriptive copy against25words and do not discard an overage. No additional S10 screenshot is allowed; this initial S11 audit takes none.
+
+8. [CSS Overflow3, viewport propagation](https://www.w3.org/TR/css-overflow-3/#overflow-propagation), W3C working draft; cross-checked against [CSS2.2 overflow](https://www.w3.org/TR/CSS22/visufx.html#overflow-clipping): root/body overflow may apply to the viewport. A fixed app can leave a zero-height body without clipping its text. The original26-observation run is preserved, with the original harness hash verified before archiving.
+9. [Independent browser fixtures](../S11/ui-collector-check-1.json):9/9pass for real clipping, viewport propagation, opacity, filled border images, gradient interior contrast and descriptive-copy classification. An endpoint-only gradient calculation can miss intermediate low contrast. Use a conservative colour envelope and leave painted surfaces unknown.
+10. [Landing method comparison](../S11/ui-landing-background-1.json):the original method reported16pass/2unknown text nodes; media-aware checking retains2pass/16unknown. Neither proves the image-backed labels. [Full audit diagnosis](../S11/ui-diagnosis-1.json) carries the copy overages and measurement defects.
+
+Read all six initial URLs again16November13:13UTC. The revised body-copy definition includes the landing/journey disclaimer and receipt action/payer prose; labelled transaction fields, headings and controls remain visible in the raw count. This definition was chosen before product-copy edits. Zero DOM contrast failures from attempt1 is not an AA claim:filled border images and background media were previously missed.

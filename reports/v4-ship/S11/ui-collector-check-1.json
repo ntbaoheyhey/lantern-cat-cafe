@@ -1,0 +1,482 @@
+{
+  "at": "2026-11-16T13:17:18.405Z",
+  "observerSha256": "afe0d27f91631d0829805a64b316ca21af35f99a560cadbb191f316f12837028",
+  "scope": "Independent CSS examples; no app accessibility pass",
+  "rows": [
+    {
+      "name": "solid contrast",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Readable text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 98.734375,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "low contrast detected",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Faint text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 65.8125,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(204, 204, 204)",
+            "ratio": 1.606,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "fail",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "overflow actually clips",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Clipped long text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 119.1875,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [
+              {
+                "axis": "x",
+                "tag": "P",
+                "class": "",
+                "bounds": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 24,
+                  "height": 24
+                }
+              }
+            ],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 3,
+        "proseWords": 3,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "body overflow propagates to viewport",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Visible fixed text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 19,
+                "width": 115.328125,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 3,
+        "proseWords": 3,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "viewport clipping retained",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Partly outside",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 708,
+                "width": 96.9375,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [
+              {
+                "axis": "y",
+                "tag": "BODY",
+                "class": "",
+                "bounds": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 1280,
+                  "height": 720
+                }
+              }
+            ],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "ancestor opacity is not hidden by opaque child",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Translucent text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 113.25,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": null,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "unknown",
+            "unknownReason": "opacity/filter/blend",
+            "effect": {
+              "tag": "DIV",
+              "class": "",
+              "opacity": "0.5",
+              "filter": "none",
+              "blend": "normal"
+            },
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "filled border image is unknown",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Image-backed text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 20,
+                "y": 23,
+                "width": 131.625,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": null,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "unknown",
+            "unknownReason": "border-image-fill",
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "gradient interior crosses text luminance",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Gradient text",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 91.609375,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(119, 119, 119)",
+            "ratio": 1,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "fail",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 2,
+        "proseWords": 2,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    },
+    {
+      "name": "copy outside paragraphs plus receipt excludes data",
+      "pass": true,
+      "result": {
+        "texts": [
+          {
+            "text": "Fuji testnet has no value",
+            "tag": "SPAN",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 3,
+                "width": 173.4375,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          },
+          {
+            "text": "Do one thing",
+            "tag": "P",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 43,
+                "width": 90.734375,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          },
+          {
+            "text": "Relic minted",
+            "tag": "STRONG",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 83,
+                "width": 95.140625,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 700,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          },
+          {
+            "text": "Fee",
+            "tag": "DT",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 123,
+                "width": 27.578125,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": false
+          },
+          {
+            "text": "0.1 AVAX",
+            "tag": "DD",
+            "class": "",
+            "rects": [
+              {
+                "x": 40,
+                "y": 147,
+                "width": 66.140625,
+                "height": 18
+              }
+            ],
+            "fontSize": 16,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": false
+          },
+          {
+            "text": "Café pays gas",
+            "tag": "SMALL",
+            "class": "",
+            "rects": [
+              {
+                "x": 0,
+                "y": 188,
+                "width": 85.21875,
+                "height": 15
+              }
+            ],
+            "fontSize": 13.3333,
+            "fontWeight": 400,
+            "foreground": "rgb(0, 0, 0)",
+            "ratio": 21,
+            "minimum": 4.5,
+            "inactive": false,
+            "contrast": "pass",
+            "unknownReason": null,
+            "effect": null,
+            "clipping": [],
+            "prose": true
+          }
+        ],
+        "allVisibleWords": 16,
+        "proseWords": 13,
+        "horizontalOverflow": false,
+        "brokenImages": []
+      }
+    }
+  ],
+  "pass": true
+}
