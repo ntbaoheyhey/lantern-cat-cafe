@@ -5,6 +5,7 @@ import gc
 import hashlib
 import json
 import subprocess
+import sys
 import time
 import numpy as np
 from PIL import Image, ImageDraw, _avif
@@ -12,13 +13,16 @@ from skimage.color import rgb2lab
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'reports/v4-art/REVIEW/A10/scene-ready-transfer'
-RAW = OUT / 'raw/pma-aware-r1'
-REPORT = OUT / 'pma-aware-r1.json'
+ATTEMPT = sys.argv[1] if len(sys.argv) > 1 else 'r1'
+assert ATTEMPT in ('r1', 'r2')
+RAW = OUT / ('raw/pma-aware-' + ATTEMPT)
+REPORT = OUT / ('pma-aware-' + ATTEMPT + '.json')
 assert not REPORT.exists()
 RAW.mkdir(parents=True, exist_ok=True)
 BASE = json.loads((OUT / 'resolution-r1.json').read_text())
 SHA = lambda b: hashlib.sha256(b).hexdigest()
-METHODS = {'straight-two-thirds-q75': (2, 3, 75), 'straight-half-q85': (1, 2, 85)}
+METHODS = ({'straight-two-thirds-q75': (2, 3, 75), 'straight-half-q85': (1, 2, 85)} if ATTEMPT == 'r1'
+           else {'straight-half-q75': (1, 2, 75), 'straight-half-q80': (1, 2, 80)})
 PMA = {'mochi', 'soot', 'clover'}
 CROPS = {'mochi': (300, 0, 620, 320), 'soot': (0, 480, 320, 800), 'clover': (300, 160, 620, 480)}
 
@@ -86,9 +90,16 @@ receipt = {'started': datetime.datetime.now(datetime.timezone.utc).isoformat(),
            'baseline': BASE['baseline'], 'mappingReserve': 16384, 'assets': [], 'complete': False}
 for source in [a for a in BASE['assets'] if a['kind'] == 'actor']:
     assert SHA((ROOT / source['source']).read_bytes()) == source['sourceSha256']
+    source_path = ROOT / source['source']
+    metadata = source_path.with_suffix('.atlas') if source['owner'] in PMA else source_path.parent / 'rig.json'
+    source_pma = (any(line.strip() == 'pma: true' for line in metadata.read_text().splitlines()) if source['owner'] in PMA
+                  else next(p['pma'] for p in json.loads(metadata.read_text())['pages'] if p['name'] == source_path.name))
+    assert source_pma == (source['owner'] in PMA)
     original = straight_source(source)
     row = {k: source[k] for k in ['owner', 'kind', 'source', 'sourceSha256', 'size', 'observedResponseOverhead']}
     row['sourcePma'] = row['owner'] in PMA
+    row['sourceMetadata'] = str(metadata.relative_to(ROOT))
+    row['sourceMetadataSha256'] = SHA(metadata.read_bytes())
     row['candidates'] = []
     for method, (num, den, quality) in METHODS.items():
         size = tuple(round(v * num / den) for v in original.size)
