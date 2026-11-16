@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16 12:38 UTC
+# ART execution anchor — 2026-11-16 12:55 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: Run tools/v3craft-lab/v4-transfer/validate.py detached on normalReviewVite23719; inspect marked normal-renderer films, record transfer lower bound, then Needle. A10 transfer WIP: owner-selected VFX + roster-token readiness and6exactlossless atlas derivatives implemented. Run fullweb/typecheck/3F6; measure actual requests and review existing-recorder normal-renderer films. Timebox14:21UTC.
+NEXT1: Check existing validation PID24432/log jobs/a10-validation-final.log; do not duplicate. After900p completes run tools/.venv/bin/python tools/v3craft-lab/v4-transfer/review-900.py. Inspect42unopened normal-renderer film pages and3layout sheets; record scoped A10 receipt, total8MB OPEN; then Needle. Timebox14:21UTC.
 NEXT2: Needle K1/K2/K4 fixed-landmark gates; two own FX drills, private same-scale comparison, production integration, regression/parity/marked films/blind/receipt. Existing LEARN/A7 six-source study applies.
 NEXT3: Yarn Giant K1/K2/K4/K5 + FX; A8 deliveries interrupt; A9 ensemble; verified A10 requests; A11 open gates; A12 afterfreeze. Never stop with summary.
-LAST PUSH:e60100bf2 verified; Teacup final receipt pushed. Production remainsbc85b0c82; eleven source hashes verified against all captures.
-LIVE: normalReviewVite23719 port5990/log jobs/a10-normal-review-vite.log; craftOFF. Oldownedgroups67838/22487 stopped. Validation21423 ended:web2662/317,typecheckPASS; F6hashesPASS butHMRbossimporterror, rerunstable.
-Requested PIDs68961/69950 gone, A6 final/post exits0. Detached nohup needs Python Popen(start_new_session=True); bare shell jobs12730/12858 exited without work.
+LAST PUSH:48599c03a verified; A10 production/capture source48599c03a; Teacup productionbc85b0c82. New checkpoint includes validation/review helpers and pending film-review metadata.
+LIVE: normalReviewVite23719 port5990/log jobs/a10-normal-review-vite.log; craftOFF. FINALjob24432/jobs/a10-validation-final.log active900p. Web2662/317,typecheck,3F6,network,capture,2700markersPASS. reviewPID32813 exited0:42pages generated; none visually opened.
+Requested PIDs68961/69950 absent at12:53UTC; A6final/post logs exit0. Prior21423 F6HMRfailure and blocked-font base-config attempt retained. Detached nohup uses Python Popen(start_new_session=True).
 No STOP/inbox pause at12:21UTC. SHIPdb35585 remains nonfinal at lastcheck; no merge; baseline reports/v3-feel/parity-new.json. SHIP newtransferrequestread12:21UTC; finalclass announcementstillpending. No designer delivery at12:12UTC.
 A10 already delivered a14f8a76b: apps/web/public/units/promo/v4; REQUESTS-TO-SHIP records paths. Verify new request before regeneration.
 A10 experiment: sixPNG8,327,096B→exactWebP4,641,562B; allRGBAequal. Original sources unchanged. Runtime mappings source-hash guarded. TotalSHIP8MBgateOPEN; active6atlas+6VFXalone8,182,806B beforeheaders.
@@ -26,8 +26,9 @@ Teacup median60.240485fps;motion<=9.21955px;return<1.2e-13px;camera0px. Publishe
 Teacup GREG2649tests/315files,typecheck,3F6,lanePASS. Receipt/ART-REVIEW/REVIEW under REVIEW/A7/teacup-healer. Score8/10 scoped,not fullA7DONE.
 Teacup old basicdamage/reflect visible -> GROLE OPEN pendingfinalSHIP. Broad flowers visually heavy; A9compareClover. Strict600focusoff/banner/ensemble/activation/time split OPEN.
 IMAGEOPENS:1 Needle own runtime firstlook only; no generation. All prior Teacup images persisted. Teacup selectedJPG8/8; no more tracked images. Reviews<=1024px,4/look,8/HANDOFF.
-EXCLUDE logs,paritylatest,.DS_Store,raw/private,recorderlinks,duplicatepreviews,nonSYNCmovies. Tracked reports97MB before finalreceipt additions,limit150MB.
+IMAGEOPENS:0since12:55anchor;42A10film pages and3pending900p sheets UNOPENED. Needle own runtime viewed once; no generation. Prior Teacup8/8selectedJPG and all reviews complete; never reopen.
 Commands<=40lines/3KB,diffs<=80lines. Python tools/.venv/bin/python. Jobs>2min detached<=3; checkpoint eachstep<=20min; pushretry3; readRULES/item/commit/newart/hour.
 Craft remains DEV&&VITE_CRAFT_PILOT==='soot'; noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR. FinalSHIP classes+solebaseline only merge once announced final.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Stop only STOP-V4ART/userpause/inboxpause/end29Nov12UTC.
 A10 review config now selects registered actor IDs, fixing promo-folder portrait error. Base-config transfer retained blocked Google-font failure; rerun corrected review config. Canvas consumers retain original URLs;6NoColorSpace renders+alpha exact.
+A10 camera audit uses WORLD units, not pixels: rawX~7.92 must scale by field/world dimensions. performance.json records corrected pixel magnitude, nonultimate frames and impact-relative duration; do not repeat the false pixel interpretation.

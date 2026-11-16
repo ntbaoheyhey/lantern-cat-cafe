@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-16T12:40:02.975Z",
+  "at": "2026-11-16T12:46:23.691Z",
   "scope": "Normal renderer (craft off), fresh browser contexts, development fixture only. Not the SHIP production journey or an 8MB gate pass.",
   "method": "CDP cache disabled; full responses of every request initiated before scene readiness and first fixture action; later completions counted in full.",
   "results": [
@@ -11,12 +11,12 @@
         "owners": [
           "panko",
           "needle-moth",
+          "mochi",
           "button-guard",
           "sock-skipper",
           "teacup-healer",
-          "mochi",
-          "soot",
-          "clover"
+          "clover",
+          "soot"
         ],
         "loadedIds": [
           "clover-1",
@@ -30,13 +30,13 @@
           "enemy:needle-moth",
           "enemy:sock-skipper:basic",
           "enemy:sock-skipper",
+          "enemy:teacup-healer:basic",
+          "enemy:teacup-healer",
           "mochi-1",
           "mochi-2",
           "mochi-3",
           "mochi-4",
           "mochi-passive",
-          "enemy:teacup-healer:basic",
-          "enemy:teacup-healer",
           "panko-1",
           "panko-2",
           "panko-3",
@@ -52,263 +52,13 @@
         "missing": []
       },
       "errors": [],
-      "requests": 1380,
-      "totalTransferBytes": 57483685,
-      "complete": false,
+      "requests": 1378,
+      "totalTransferBytes": 57462144,
+      "complete": true,
       "packed": [
         {
-          "id": "23088.1093",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23088.1094",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/biscuit-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23088.1095",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/brioche-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23088.1096",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23088.1097",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/cinnamon-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23088.1098",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23088.1099",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23088.1100",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/inkcap-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23088.1101",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23088.1102",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mallow-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23088.1103",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/marigold-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23088.1104",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23088.1105",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 984
-        },
-        {
-          "id": "23088.1106",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23088.1107",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pantry-crown-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23088.1108",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23088.1109",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/practice-cushion-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 1005
-        },
-        {
-          "id": "23088.1110",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/rain-spool-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23088.1111",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23088.1112",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 945
-        },
-        {
-          "id": "23088.1113",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sorrel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23088.1114",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 978
-        },
-        {
-          "id": "23088.1115",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23088.1116",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/velvet-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23088.1117",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23088.1466",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "id": "28333.1464",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -317,8 +67,8 @@
           "bytes": 704318
         },
         {
-          "id": "23088.1467",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp",
+          "id": "28333.1465",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -327,8 +77,8 @@
           "bytes": 455284
         },
         {
-          "id": "23088.1468",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
+          "id": "28333.1466",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -337,8 +87,8 @@
           "bytes": 212092
         },
         {
-          "id": "23088.1469",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp",
+          "id": "28333.1467",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -347,8 +97,8 @@
           "bytes": 248938
         },
         {
-          "id": "23088.1470",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
+          "id": "28333.1468",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -357,8 +107,8 @@
           "bytes": 335724
         },
         {
-          "id": "23088.1471",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "id": "28333.1469",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -367,8 +117,8 @@
           "bytes": 727464
         },
         {
-          "id": "23088.1472",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "id": "28333.1470",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -377,8 +127,8 @@
           "bytes": 862002
         },
         {
-          "id": "23088.1473",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "id": "28333.1471",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -389,8 +139,8 @@
       ],
       "unitAtlases": [
         {
-          "id": "23088.1477",
-          "url": "http://127.0.0.1:5991/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "id": "28333.1475",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -399,8 +149,8 @@
           "bytes": 786720
         },
         {
-          "id": "23088.1482",
-          "url": "http://127.0.0.1:5991/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "id": "28333.1480",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -409,8 +159,8 @@
           "bytes": 590112
         },
         {
-          "id": "23088.1483",
-          "url": "http://127.0.0.1:5991/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "id": "28333.1481",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -419,8 +169,8 @@
           "bytes": 521772
         },
         {
-          "id": "23088.1484",
-          "url": "http://127.0.0.1:5991/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "id": "28333.1482",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -429,18 +179,10 @@
           "bytes": 678908
         }
       ],
-      "assetTransferBytes": 6809061,
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 6784740,
       "incomplete": [],
-      "failed": [
-        {
-          "id": "23088.3",
-          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap",
-          "type": "Stylesheet",
-          "done": true,
-          "cached": false,
-          "failed": true
-        }
-      ],
+      "failed": [],
       "cached": []
     },
     {
@@ -452,9 +194,9 @@
           "panko",
           "spool-ram",
           "needle-moth",
+          "crumb-sentinel",
           "kettle-knight",
           "pollen-scout",
-          "crumb-sentinel",
           "teacup-healer",
           "soot",
           "mochi",
@@ -478,16 +220,16 @@
           "enemy:spool-ram",
           "enemy:teacup-healer:basic",
           "enemy:teacup-healer",
-          "mochi-1",
-          "mochi-2",
-          "mochi-3",
-          "mochi-4",
-          "mochi-passive",
           "panko-1",
           "panko-2",
           "panko-3",
           "panko-4",
           "panko-passive",
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4",
+          "mochi-passive",
           "soot-1",
           "soot-2",
           "soot-3",
@@ -498,263 +240,13 @@
         "missing": []
       },
       "errors": [],
-      "requests": 1388,
-      "totalTransferBytes": 61811781,
-      "complete": false,
+      "requests": 1387,
+      "totalTransferBytes": 61813004,
+      "complete": true,
       "packed": [
         {
-          "id": "23106.1089",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23106.1090",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/biscuit-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23106.1091",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/brioche-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23106.1092",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23106.1093",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/cinnamon-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23106.1094",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23106.1095",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23106.1096",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/inkcap-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23106.1097",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23106.1098",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mallow-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23106.1099",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/marigold-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23106.1100",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23106.1101",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 984
-        },
-        {
-          "id": "23106.1102",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23106.1103",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pantry-crown-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23106.1104",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23106.1105",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/practice-cushion-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 1005
-        },
-        {
-          "id": "23106.1106",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/rain-spool-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23106.1107",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23106.1108",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 945
-        },
-        {
-          "id": "23106.1109",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sorrel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23106.1110",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 978
-        },
-        {
-          "id": "23106.1111",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23106.1112",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/velvet-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23106.1113",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23106.1478",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "id": "28336.1496",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -763,8 +255,8 @@
           "bytes": 704318
         },
         {
-          "id": "23106.1479",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp",
+          "id": "28336.1497",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -773,8 +265,8 @@
           "bytes": 458270
         },
         {
-          "id": "23106.1480",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp",
+          "id": "28336.1498",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -783,8 +275,8 @@
           "bytes": 239628
         },
         {
-          "id": "23106.1481",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
+          "id": "28336.1499",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -793,8 +285,8 @@
           "bytes": 212092
         },
         {
-          "id": "23106.1482",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp",
+          "id": "28336.1500",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -803,8 +295,8 @@
           "bytes": 250732
         },
         {
-          "id": "23106.1483",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp",
+          "id": "28336.1501",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -813,8 +305,8 @@
           "bytes": 284262
         },
         {
-          "id": "23106.1484",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
+          "id": "28336.1502",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -823,8 +315,8 @@
           "bytes": 335724
         },
         {
-          "id": "23106.1485",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "id": "28336.1503",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -833,8 +325,8 @@
           "bytes": 727464
         },
         {
-          "id": "23106.1486",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "id": "28336.1504",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -843,8 +335,8 @@
           "bytes": 862002
         },
         {
-          "id": "23106.1487",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "id": "28336.1505",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -855,8 +347,8 @@
       ],
       "unitAtlases": [
         {
-          "id": "23106.1491",
-          "url": "http://127.0.0.1:5991/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "id": "28336.1509",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -865,8 +357,18 @@
           "bytes": 786720
         },
         {
-          "id": "23106.1498",
-          "url": "http://127.0.0.1:5991/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "id": "28336.1516",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 590112
+        },
+        {
+          "id": "28336.1517",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -875,38 +377,20 @@
           "bytes": 521772
         },
         {
-          "id": "23106.1499",
-          "url": "http://127.0.0.1:5991/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "id": "28336.1518",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
           "type": "Image",
           "done": true,
           "cached": false,
           "failed": false,
           "status": 200,
           "bytes": 678908
-        },
-        {
-          "id": "23106.1500",
-          "url": "http://127.0.0.1:5991/units/mochi/delivery/atlas-fa125d28384c.webp",
-          "type": "Image",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 590112
         }
       ],
-      "assetTransferBytes": 7337731,
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 7313410,
       "incomplete": [],
-      "failed": [
-        {
-          "id": "23106.3",
-          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap",
-          "type": "Stylesheet",
-          "done": true,
-          "cached": false,
-          "failed": true
-        }
-      ],
+      "failed": [],
       "cached": []
     },
     {
@@ -916,20 +400,20 @@
         "craftActive": false,
         "owners": [
           "panko",
-          "yarn-giant",
           "binding-thread",
-          "soot",
+          "yarn-giant",
           "mochi",
+          "soot",
           "clover"
         ],
         "loadedIds": [
-          "enemy:binding-thread:basic",
-          "enemy:binding-thread",
           "clover-1",
           "clover-2",
           "clover-3",
           "clover-4",
           "clover-passive",
+          "enemy:binding-thread:basic",
+          "enemy:binding-thread",
           "enemy:yarn-giant:basic",
           "enemy:yarn-giant",
           "mochi-1",
@@ -952,263 +436,13 @@
         "missing": []
       },
       "errors": [],
-      "requests": 1373,
-      "totalTransferBytes": 53645989,
-      "complete": false,
+      "requests": 1372,
+      "totalTransferBytes": 53647212,
+      "complete": true,
       "packed": [
         {
-          "id": "23107.1089",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23107.1090",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/biscuit-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23107.1091",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/brioche-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 956
-        },
-        {
-          "id": "23107.1092",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23107.1093",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/cinnamon-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23107.1094",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23107.1095",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 995
-        },
-        {
-          "id": "23107.1096",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/inkcap-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23107.1097",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23107.1098",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mallow-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23107.1099",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/marigold-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 961
-        },
-        {
-          "id": "23107.1100",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23107.1101",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 984
-        },
-        {
-          "id": "23107.1102",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 950
-        },
-        {
-          "id": "23107.1103",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pantry-crown-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23107.1104",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23107.1105",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/practice-cushion-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 1005
-        },
-        {
-          "id": "23107.1106",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/rain-spool-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23107.1107",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 989
-        },
-        {
-          "id": "23107.1108",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 945
-        },
-        {
-          "id": "23107.1109",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sorrel-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23107.1110",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 978
-        },
-        {
-          "id": "23107.1111",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 994
-        },
-        {
-          "id": "23107.1112",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/velvet-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 955
-        },
-        {
-          "id": "23107.1113",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp?import&url",
-          "type": "Script",
-          "done": true,
-          "cached": false,
-          "failed": false,
-          "status": 200,
-          "bytes": 983
-        },
-        {
-          "id": "23107.1462",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "id": "28340.1460",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1217,8 +451,8 @@
           "bytes": 704318
         },
         {
-          "id": "23107.1463",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
+          "id": "28340.1461",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1227,8 +461,8 @@
           "bytes": 275910
         },
         {
-          "id": "23107.1464",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
+          "id": "28340.1462",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1237,8 +471,8 @@
           "bytes": 311764
         },
         {
-          "id": "23107.1465",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "id": "28340.1463",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1247,8 +481,8 @@
           "bytes": 727464
         },
         {
-          "id": "23107.1466",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "id": "28340.1464",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1257,8 +491,8 @@
           "bytes": 862002
         },
         {
-          "id": "23107.1467",
-          "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "id": "28340.1465",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1269,8 +503,8 @@
       ],
       "unitAtlases": [
         {
-          "id": "23107.1471",
-          "url": "http://127.0.0.1:5991/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "id": "28340.1469",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1279,8 +513,8 @@
           "bytes": 786720
         },
         {
-          "id": "23107.1472",
-          "url": "http://127.0.0.1:5991/units/yarn-giant/delivery/atlas-c7d59339e83a.webp",
+          "id": "28340.1470",
+          "url": "http://127.0.0.1:5990/units/yarn-giant/delivery/atlas-c7d59339e83a.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1289,8 +523,8 @@
           "bytes": 1473156
         },
         {
-          "id": "23107.1473",
-          "url": "http://127.0.0.1:5991/units/binding-thread/delivery/atlas-46347f4d0d83.webp",
+          "id": "28340.1471",
+          "url": "http://127.0.0.1:5990/units/binding-thread/delivery/atlas-46347f4d0d83.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1299,8 +533,8 @@
           "bytes": 592516
         },
         {
-          "id": "23107.1474",
-          "url": "http://127.0.0.1:5991/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "id": "28340.1472",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1309,8 +543,8 @@
           "bytes": 590112
         },
         {
-          "id": "23107.1475",
-          "url": "http://127.0.0.1:5991/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "id": "28340.1473",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1319,8 +553,8 @@
           "bytes": 521772
         },
         {
-          "id": "23107.1476",
-          "url": "http://127.0.0.1:5991/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "id": "28340.1474",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
           "type": "Image",
           "done": true,
           "cached": false,
@@ -1329,18 +563,10 @@
           "bytes": 678908
         }
       ],
-      "assetTransferBytes": 8210369,
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 8186048,
       "incomplete": [],
-      "failed": [
-        {
-          "id": "23107.3",
-          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap",
-          "type": "Stylesheet",
-          "done": true,
-          "cached": false,
-          "failed": true
-        }
-      ],
+      "failed": [],
       "cached": []
     }
   ]

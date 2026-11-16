@@ -11,6 +11,8 @@ stages = [
     ('parity', ['node', 'scripts/v3feel/parity.mjs', 'check']),
     ('network', ['node', 'tools/v3craft-lab/v4-transfer/network.mjs']),
     ('capture', ['node', 'scripts/v3feel/capture.mjs', '--item', 'V4-A10-TRANSFER', '--seconds', '30', '--video-seconds', '30', '--frame-marker']),
+    ('markers', ['tools/.venv/bin/python', 'tools/v3craft-lab/v4-teacup-healer/verify-markers.py', '--capture-root', 'reports/v3-feel/REVIEW/V4-A10-TRANSFER', '--out', 'reports/v4-art/REVIEW/A10/transfer/encoded-markers.json']),
+    ('layout900', ['node', 'scripts/v3a2/battle-capture.mjs', '--fixture', 'all', '--seconds', '30', '--width', '1600', '--height', '900', '--out', 'reports/v4-art/REVIEW/A10/transfer/raw/layout900']),
 ]
 report = {'at': datetime.now(timezone.utc).isoformat(), 'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(), 'stages': []}
 for name, command in stages:

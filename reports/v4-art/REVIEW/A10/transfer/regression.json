@@ -1,21 +1,36 @@
 {
-  "at": "2026-11-16T12:37:11.016535+00:00",
-  "sourceCommit": "e60100bf22670538bf635df6b89d84dd1731e846",
+  "at": "2026-11-16T12:44:04.380155+00:00",
+  "sourceCommit": "48599c03ab0ffc8486aca8c7e782b36dc3918346",
   "stages": [
     {
       "name": "web",
       "exit": 0,
-      "log": "reports/v4-art/jobs/a10-web.log"
+      "log": "reports/v4-art/jobs/a10-web-final.log"
     },
     {
       "name": "typecheck",
       "exit": 0,
-      "log": "reports/v4-art/jobs/a10-typecheck.log"
+      "log": "reports/v4-art/jobs/a10-typecheck-final.log"
     },
     {
       "name": "parity",
-      "exit": 1,
-      "log": "reports/v4-art/jobs/a10-parity.log"
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-parity-final.log"
+    },
+    {
+      "name": "network",
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-network-final.log"
+    },
+    {
+      "name": "capture",
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-capture-final.log"
+    },
+    {
+      "name": "markers",
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-markers-final.log"
     }
   ]
 }
