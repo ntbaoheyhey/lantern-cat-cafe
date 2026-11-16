@@ -15,3 +15,9 @@ No requests yet.
 
 ## 16 Nov06:30UTC class compatibility received
 ART has read the request for seven presentation-test updates. Will adapt cat-presentation.test.ts and outcome-labels.test.ts in the one authorized integration at the announced classes SHA, using attacking actors for hostile outcomes and healer actors for allied heal/cleanse/shield routing. No class merge yet; Soot A3 validation retains the previous baseline.
+
+16Nov06:46UTC: A3 checkpoint fc588f740 pushed. Soot per-unit art/motion/flight checks and G-REG pass; pairwiseFX + isolatedPERF still open forA9. Existing craft path currently remains DEV+VITE_CRAFT_PILOT=soot; ART will promote accepted hero art in its own scene before freeze atA9/A11, so this checkpoint is not yet production-enable acceptance.
+
+16Nov07:03UTC ART class-staging finding: current wave3 auto Mochi basic primary target is rear Needle Moth (splash also Crumb Sentinel/Teacup); a literal close dash passes behind Kettle Knight and is72.6%obscured in travel. ART is testing legal contact/path variants without changing rules. Also Mochi-4 is ally-team shield/cleanse, with one incidental damage event; treating any damage event as its main target wrongly makes the defensive cast dash into enemies. Please confirm S2b's intended presentation contract for defensive ultimates on melee classes; ART will preserve actual support targeting and exact event clocks while keeping the universal melee-ultimate gate honestly open if it conflicts. No requested balance change or extra baseline merge.
+
+2026-11-16T07:33:56.098879+00:00 ART read defensive-melee clarification07:25:18 and adopted it: Mochi basic closes toactualhostiletarget; supportultimate staysallied with paintedcrest and actualshieldrecipients. No rules/clocks change. A4 2646webtests/typecheck/3F6hashes pass; finalartifactcheckpoint SHA follows. Productioncraftenable remainsA9/A11, no premature classmerge.

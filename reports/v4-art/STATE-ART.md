@@ -43,3 +43,9 @@ A3 2026-11-16T06:31:17.087379+00:00: G-POSE numericPASS (IoU K1.5749/K2.5563/K4.
 A4 prep: K1-A2correctedARTaccepted IoU.4960,head.9885,dE.12554,feet1px; noA4runtime. K2-A1head1.0599/clippingFAIL; K2-A2generationactive. Proposed896canvasforALLMochikeys inclK0preservesheight/reach.
 
 A3 CHECKPOINT 2026-11-16T06:41:45.390894+00:00: G-POSE/G-READ/G-ROLE/G-REG pass; REVIEW/A3/ART-REVIEW.md+REVIEW.md;10completewindows,7basics4–5flightframes. Live1316/1433clean; encodedR2ghost remainscapturepathlimitation. CompleteG-FXpairwisedistinctness+isolatedG-PERF OPENA9. Score7/10; processsplitFAIL~25author/10learn/65measurelog (estimated, A4excluded). No fullA3DONEclaim.
+
+A3 checkpoint pushed fc588f740af29b9f19c949197a05bfe204454358 06:42UTC; ownlane65files/8JPGs; no newruntimechangeaftertests. A4 starts active06:42UTC; prior art prep06:18onward; K1A2,K2A2,K4A1artaccepted,896commoncanvas, K5next.
+
+A4 2026-11-16T07:08:50.382441+00:00: allfourkeys+twooriginaltextures exported; initial scene integration/typecheck25targeted passed. Moving occlusion72.64%FAIL; ultimate wrongly selects incidental damage. Correcting presentation only, universal melee-ultimate gate OPEN pending SHIP clarification.
+
+A4 CHECKPOINT 2026-11-16T07:33:56.098879+00:00: G-POSE PASS K1/K2/K4/K5IoU.49646/.32902/.50131/.50428,Lab.390/.375/2.728/3.810,heads.98848..1.01948,K2changed52.57%/reach+41.03%,fixedfoot~0px. G-READ11/12,11drawnownwindows(10complete,1partial). G-ROLE8basicscontact-7.61..30.97px/encodedimpact<=33.2ms,returnsdeadline;3supportultsfeet~0/allied perSHIP07:25:18contract. G-FRAME1800samples6cases max12.23%occlusion,0numericfail. G-REG2646/315,typecheck0,3F6hashesPASS. G-PERFboss60.24fpsisolated/added620936B. G-FXpeak27.995–31.109%,facealpha0/composite11.42%; pairwisedistinctnessOPEN A9, craftproductionenableOPEN A9/A11. SourceREVIEW/A4/,8selectedJPGs,3audio720films+silent900boss. Score8/10; processFAIL estimated50author/10study/40measurementlog; one5image-lookFAIL.

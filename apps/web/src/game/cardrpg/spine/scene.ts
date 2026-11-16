@@ -14,6 +14,7 @@ import {bodyStatuses} from '../battle-v3/status';
 import {bodyTint} from '../battle-v3/clarity';
 import {actionPose,attackMotion,bracePose,hitPose,idlePhase,idlePose,neutralPose,type MotionPoint} from '../battle-v3/motion';
 import {MotionTrails} from '../battle-v3/motion-trails';
+import {meleeContact,meleeRoot} from '../battle-v3/class-motion';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
 import {crowdPose} from '../battle-v3/crowd';
@@ -33,6 +34,7 @@ import { chargeEvent } from '../depth/card-action-plan';
 import {LanternRequiem} from '../vfx-craft/lantern-requiem';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {StaffBolt} from '../vfx-craft/staff-bolt';
+import {ShieldStrike} from '../vfx-craft/shield-strike';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
 
@@ -63,6 +65,7 @@ export class SpineScene {
  /** Q3.B authoring only. Normal builds retain the accepted scene until review. */
  private craft:LanternRequiem|undefined;
  private craftBasic:StaffBolt|undefined;
+ private craftShield:ShieldStrike|undefined;
  private craftLoaded=false;
  private focusBanner=new FocusBannerAnchor();
  private homes=new Map<string,{x:number;y:number;scale:number;order:number;point:MotionPoint}>();
@@ -82,7 +85,8 @@ export class SpineScene {
   if(import.meta.env.DEV&&import.meta.env.VITE_CRAFT_PILOT==='soot'){
    const craft=this.craft=new LanternRequiem();craft.hide();this.scene.add(craft.ground,craft.rear,craft.front);
    const basic=this.craftBasic=new StaffBolt();this.scene.add(basic.ground,basic.rear,basic.front);
-   void craft.ready.then(()=>{if(!this.disposed){this.craftLoaded=true;this.refreshLoading();this.invalidate();}}).catch(error=>{craft.dispose();this.craft=undefined;if(!this.disposed){this.onFailure(`Could not prepare Soot pilot: ${String(error)}`);this.refreshLoading();}});
+   const shield=this.craftShield=new ShieldStrike();this.scene.add(shield.ground,shield.rear,shield.front);
+   void Promise.all([craft.ready,shield.ready]).then(()=>{if(!this.disposed){this.craftLoaded=true;this.refreshLoading();this.invalidate();}}).catch(error=>{craft.dispose();this.craft=undefined;if(!this.disposed){this.onFailure(`Could not prepare Soot pilot: ${String(error)}`);this.refreshLoading();}});
   }
   this.weather=new BattleWeather(host);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
@@ -119,7 +123,7 @@ export class SpineScene {
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset).then(async actor=>{
     // Accepted designer skeletons/sequences take precedence over generated keys.
-    const drawings=this.craft&&asset==='soot'&&actor.source!=='designer'&&actor.source!=='sequence'
+    const drawings=this.craft&&['soot','mochi'].includes(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
      ?await loadDrawnPoseSet(asset).catch(error=>{actor.dispose();throw error;}):undefined;
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
@@ -143,7 +147,7 @@ export class SpineScene {
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
   this.ready=this.pending.size===0&&this.failed.size===0&&(!this.craft||this.craftLoaded);
  }
- private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&this.actors.get(plan.actorId)?.asset==='soot';}
+ private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&['soot','mochi'].includes(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
   if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
@@ -207,6 +211,15 @@ export class SpineScene {
    if(box){base.scale=box.coreHeight/core.world.height;base.x=box.footX-this.worldWidth/2-(actor.bounds.x+actor.bounds.width/2)*base.scale*facing;base.y=PAINT.worldHeight-box.footY-core.world.y*base.scale;}
    this.homes.set(unit.id,{...base,order:box?box.order:10+Math.round((1-base.y/PAINT.worldHeight)*30),point:{x:(base.x+(actor.bounds.x+actor.bounds.width/2)*base.scale*facing+this.worldWidth/2)/pixelsToWorld,y:(PAINT.worldHeight-base.y-core.world.y*base.scale)/pixelsToWorld,core:core.world.height*base.scale/pixelsToWorld}});
   }
+  // Resting opaque rectangles are independent of last frame and actor iteration order.
+  const homeBox=(id:string)=>{
+   const entry=this.actors.get(id)!,home=this.homes.get(id)!,draw=entry.craftPose?.drawing,side=view.actors.find(u=>u.id===id)!.side;
+   if(draw){const m=draw.set.manifest,b=m.poses.K0!.opaqueBounds!,scale=home.point.core/m.opaqueHeight,facing=spriteFacing(entry.actor.unit.nativeFacing,side);
+    const a=(b[0]-m.baseline[0])*scale*facing,c=(b[2]-m.baseline[0])*scale*facing;
+    return{x:home.point.x+Math.min(a,c),y:home.point.y-(m.baseline[1]-b[1])*scale,width:Math.abs(c-a),height:(b[3]-b[1])*scale};}
+   const w=entry.actor.bounds.width/entry.actor.bounds.height*home.point.core;
+   return{x:home.point.x-w/2,y:home.point.y-home.point.core,width:w,height:home.point.core};
+  };
   this.motionAudit.length=0;this.trails.root.visible=false;
   const ordered=[...view.actors].sort((a,b)=>Number(b.id===plan?.actorId)-Number(a.id===plan?.actorId));
   for(const unit of ordered){
@@ -281,6 +294,20 @@ export class SpineScene {
    // The pilot gesture already moves the trunk around planted feet. Applying
    // the old complete-card lean on top would undo that contact and deform the face.
    if(entry.craftPose&&!iced&&['attack','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
+   if(entry.asset==='mochi'&&entry.craftPose&&frame&&unit.id===plan?.actorId&&!plan.ultimate&&unit.hp>0&&!iced&&!view.model&&!chargeEvent(plan)&&targetId&&this.actors.has(targetId)){
+    const m=entry.craftPose.drawing.set.manifest,b=m.poses[plan.ultimate?'K5':'K2']!.opaqueBounds!,direction=unit.side==='enemy'?-1:1;
+    const face=spriteFacing(actor.unit.nativeFacing,unit.side),scale=home.point.core/m.opaqueHeight;
+    const reach=direction>0?Math.max((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale:-Math.min((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale;
+    const targetBox=homeBox(targetId),targetHome=this.homes.get(targetId)!.point;
+    const corridor=this.c2Capacity>4&&!view.boss;
+    const contact=meleeContact(home.point,{...targetHome,x:targetBox.x+targetBox.width/2},reach,targetBox.width/2,direction,(corridor?32:8)*height/720);
+    if(corridor)contact.y-=96*height/720;
+    // A tall boss can be struck at chest height. Matching its feet would put
+    // the entire cat in the lower ally's seat despite already being in reach.
+    const tallTarget=this.actors.get(targetId)!.actor.unit.tier==='boss';
+    if(tallTarget)contact.y=Math.min(contact.y,home.point.y+40*height/720);
+    rootPose=meleeRoot(frame.elapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor?0:(tallTarget?20:60)*height/720);
+   }
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
    const facing=spriteFacing(actor.unit.nativeFacing,unit.side),footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
@@ -342,8 +369,8 @@ export class SpineScene {
   this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,true):null;
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
   if(this.craftHandles(plan)&&frame&&plan){
-   const art=plan.ultimate?this.craft!:this.craftBasic!;
-   (plan.ultimate?this.craftBasic:this.craft)?.hide();
+   const shield=this.actors.get(plan.actorId)?.asset==='mochi',art=shield?this.craftShield!:(plan.ultimate?this.craft!:this.craftBasic!);
+   for(const other of [this.craft,this.craftBasic,this.craftShield])if(other!==art)other?.hide();
    const source=this.socket(plan.actorId,this.actors.get(plan.actorId)?.craftPose?'vfxOrigin':'mainHand'),home=this.homes.get(plan.actorId);
    const entry=this.actors.get(plan.actorId);
    const drawnSocket=(key:'K1'|'K2'|'K5')=>{const p=entry?.craftPose?.socketFor(key,'vfxOrigin');return p?this.screen(entry!.actor.root.localToWorld(this.scratch.set(p.x,p.y,1))):undefined;};
@@ -355,10 +382,13 @@ export class SpineScene {
    // An action also contains retaliation and support. They keep their own
    // reaction/number passes; the offensive spell belongs to its caster.
    const casterSide=view.actors.find(a=>a.id===plan.actorId)?.side;
-   const affected=new Set(plan.events.filter(e=>e.actorId===plan.actorId&&(e.type==='damage'||e.type==='status_apply')).flatMap(e=>e.targetIds));
-   const targets=[...affected].filter(id=>view.actors.some(a=>a.id===id&&a.side!==casterSide)).flatMap(id=>{const h=this.homes.get(id);return h?[h.point]:[];});
+   // Hearthwall is an allied shield/cleanse. Its incidental retaliation must
+   // not turn the protective cast into a dash or paint its crest on an enemy.
+   const support=shield&&plan.ultimate;
+   const affected=new Set(plan.events.filter(e=>e.actorId===plan.actorId&&(support?e.type==='shield'||e.type==='heal':e.type==='damage'||e.type==='status_apply')).flatMap(e=>e.targetIds));
+   const targets=[...affected].filter(id=>view.actors.some(a=>a.id===id&&(support?a.side===casterSide:a.side!==casterSide))).flatMap(id=>{const h=this.homes.get(id);return h?[h.point]:[];});
    const orders=[...this.actors.values()].map(e=>e.actor.root.renderOrder);
-   if(source&&home&&targets.length)art.render({elapsed:frame.elapsed,width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,source,
+   if(source&&home&&targets.length)art.render({ultimate:plan.ultimate,home:home.point,casterFeet:this.socket(plan.actorId,'feet')??home.point,elapsed:frame.elapsed,width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,source,
     windupSource:plan.ultimate?drawnSocket('K1'):launch,releaseSource:drawnSocket(plan.ultimate?'K5':'K2'),
     layoutSource:{x:home.point.x+home.point.core*.40,y:home.point.y-home.point.core*.49},
     targets:targets.map(p=>({x:p.x,y:p.y-p.core*.42})),feet:targets.map(p=>({x:p.x,y:p.y})),
@@ -366,7 +396,7 @@ export class SpineScene {
     rearOrder:Math.min(...orders)-.5,frontOrder:Math.max(...orders)+1,reducedMotion:view.reducedMotion});
    else art.hide();
    this.effects.clearFrame();
-  }else{this.craft?.hide();this.craftBasic?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
+  }else{this.craft?.hide();this.craftBasic?.hide();this.craftShield?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
   // D8 / X06 / X07: sample the final original pose after all transforms and
   // actor tint; retain the actor, then place only local floor and inner-edge light.
   const groundOrder=Math.min(...[...this.actors.values()].map(e=>e.actor.root.renderOrder))-1;
@@ -380,7 +410,7 @@ export class SpineScene {
    const death=sample?.name==='ko',opacity=death?Math.max(0,1-(sample?.at??0)/.6):entry.shadow.material.opacity;
    const capture=()=>entry.craftLight!.render(this.renderer,this.camera,{width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,
     box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.socket(id,entry.craftPose?'vfxOrigin':'mainHand')??this.homes.get(id)!.point,
-    lightColour:'#bc72ed',light,brightness:acting?1:focusLight,opacity,groundOrder});
+    lightColour:entry.asset==='mochi'?'#ffe3a1':'#bc72ed',light,brightness:acting?1:focusLight,opacity,groundOrder});
    if(entry.craftDeath){
     entry.craftDeath.withSourcePaint(capture);const source=entry.craftLight.source;entry.craftDeath.setSource(source.texture,source.crop);
     if(death)entry.craftLight.rim.visible=false;
@@ -450,5 +480,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.craftShield?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

@@ -17,7 +17,7 @@ export function stageLayoutC2(units: readonly StageUnitC2[], width: number, heig
       if(unit.seat===undefined){const choices=unit.row==='front'?[0,1,4,5,2,3]:[2,3,4,5,0,1];seatIndex=choices.find(i=>!occupied.has(i))??0;}
       occupied.add(seatIndex);
     }
-    const seat=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss?contract.enemySix[seatIndex]!:contract.slots[seatIndex%4]!;
+    const seat=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss?contract.enemySix[seatIndex]!:(unit.side==='party'&&enemyCapacity>4&&!hasBoss?contract.partySix:contract.slots)[seatIndex%4]!;
     const helperSeat=unit.side==='enemy'&&hasBoss&&!unit.boss?contract.bossHelpers[unit.seat!==undefined?unit.seat%2:helper++%2]!:null;
     const ratio=unit.boss?Math.max(contract.boss.minRatio,Math.min(contract.boss.maxRatio,unit.bossRatio??1.6)):1;
     // A six-foe formation needs a small shared size reserve at taller desktop ratios.
