@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-16T15:58:12.955149+00:00",
+  "scope": "Two separate one-batch executions over the same frozen scope",
+  "checks": {
+    "sameScope": true,
+    "firstBatchUnchanged": true,
+    "continuedAtNextBatch": true,
+    "noRepeatedCommits": true,
+    "scannedExactlyFifty": true,
+    "incompleteScopeNotClaimedPass": true
+  },
+  "pass": true
+}

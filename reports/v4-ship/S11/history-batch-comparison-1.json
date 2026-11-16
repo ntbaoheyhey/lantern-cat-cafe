@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-16T15:50:45.220453+00:00",
+  "scope": "Eight fixed recent commits; default Gitleaks8.30.1 rules and full redaction. No baseline, size skip or rule reduction. Only location metadata persisted.",
+  "rows": [
+    {
+      "method": "single",
+      "commits": [
+        "c12fabf1a974286afec00200168f621a46d56997",
+        "ae954bc54ac5157ef106d106da122d970c563c8a",
+        "fadba43881cbb0c68e6f60d526ebe4b23eff8faa",
+        "3ce8dad7e1c52c0ddc576d79c15a20236faeb801",
+        "e8c721b4418a399d05d5e20dbb3f002b2db31572",
+        "c70652e3a60f402ff9620113d7386c94fee688af",
+        "155d10f1e28ccbc61b5b1a7b405cdc4bccc5b72d",
+        "502973b135f51f15458f517d98b435a681d6c42d"
+      ],
+      "seconds": 0.794914916,
+      "batchSeconds": [
+        0.786304959
+      ],
+      "findings": [
+        [
+          "502973b135f51f15458f517d98b435a681d6c42d",
+          "reports/v4-ship/S2b/eligibility-observation-1.json",
+          28,
+          "generic-api-key"
+        ],
+        [
+          "502973b135f51f15458f517d98b435a681d6c42d",
+          "reports/v4-ship/S2b/eligibility-observation-1.json",
+          162,
+          "generic-api-key"
+        ]
+      ]
+    },
+    {
+      "method": "checkpointed",
+      "commits": [
+        "c12fabf1a974286afec00200168f621a46d56997",
+        "ae954bc54ac5157ef106d106da122d970c563c8a",
+        "fadba43881cbb0c68e6f60d526ebe4b23eff8faa",
+        "3ce8dad7e1c52c0ddc576d79c15a20236faeb801",
+        "e8c721b4418a399d05d5e20dbb3f002b2db31572",
+        "c70652e3a60f402ff9620113d7386c94fee688af",
+        "155d10f1e28ccbc61b5b1a7b405cdc4bccc5b72d",
+        "502973b135f51f15458f517d98b435a681d6c42d"
+      ],
+      "seconds": 0.761946083,
+      "batchSeconds": [
+        0.34343316699999993,
+        0.401902
+      ],
+      "findings": [
+        [
+          "502973b135f51f15458f517d98b435a681d6c42d",
+          "reports/v4-ship/S2b/eligibility-observation-1.json",
+          28,
+          "generic-api-key"
+        ],
+        [
+          "502973b135f51f15458f517d98b435a681d6c42d",
+          "reports/v4-ship/S2b/eligibility-observation-1.json",
+          162,
+          "generic-api-key"
+        ]
+      ]
+    }
+  ],
+  "sameFindings": true,
+  "sameCommitCoverage": true
+}

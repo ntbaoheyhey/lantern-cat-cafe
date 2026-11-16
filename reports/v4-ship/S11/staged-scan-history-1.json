@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-16T16:12:41.528212+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6149,
+      "sha256": "d5a6d6ad6207c77246cdbf033af7a2af65bd54c780927b5486154f93a8f135c1"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history.md",
+      "bytes": 2529,
+      "sha256": "1ca89ae44fd170f3276987244471b5310a48c1069828fdfe40ce60bf8fad578d"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-batch-comparison-1.json",
+      "bytes": 2226,
+      "sha256": "b99b994c2205a43d51c1f457e8b54e10d8231a41064a74a6bb87c982454efcff"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-batches-1/check.json.gz",
+      "bytes": 3425,
+      "sha256": "df072ad998a57176dbaf7f4dfc47f1511770b6335f30ba6b62173c631ed4074f"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-batches-1/commits.txt.gz",
+      "bytes": 91808,
+      "sha256": "100aa5778ce5ff373b85ec38a0149369143972ba780f6531950ff787d4b9f985"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-batches-1/progress.json",
+      "bytes": 544,
+      "sha256": "234fc128d623804a9a09e2c69b26d37c39f6efc40e3f363c8af20f869bb8f118"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-batches-1/scope.json",
+      "bytes": 29336,
+      "sha256": "e54a9b79a7636df7a79221b7743e9193005b00671594aca098d0d371b398bc17"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-harness-regression-1/check.json",
+      "bytes": 1439,
+      "sha256": "aaefe9b47be139a6f42abc214b8821ae21c3fe5d7f5d5db124dc3513754553c2"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-harness-regression-1/diagnosis.json",
+      "bytes": 1502,
+      "sha256": "e67c18de6e161fa016981409146f0996d383963254f08907ec0eff134cebda84"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-harness-regression-1/log.jsonl.gz",
+      "bytes": 16034,
+      "sha256": "057453d5cf68e1b407eda8436d368808436792fdda547de47ef37d10550a4e81"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-harness-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "ee0c5eeffa9b418f8565fc294850f40c777255967dca3ce6ebaf670616eb34a8"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-resume-verification-1.json",
+      "bytes": 353,
+      "sha256": "10aab5b11704f754a0842c5d86d34d10706e5ac5314da59e61e0b0014d681e58"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-batches.py",
+      "bytes": 6602,
+      "sha256": "cadc7a8da559878bf1d4b22c31e74f6502006a3d0a4f0fc102adef137a68a2ed"
+    }
+  ],
+  "expandedGzip": 3,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}
