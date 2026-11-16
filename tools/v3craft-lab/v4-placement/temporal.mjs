@@ -9,16 +9,17 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {gunzipSync,gzipSync} from 'node:zlib';
 
-const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A11/placement-r1');
+const root=resolve(import.meta.dirname,'../../..'),runtimeCheck=process.argv.includes('--runtime-check');
+const out=resolve(root,'reports/v4-art/REVIEW/A11/'+(runtimeCheck?'placement-runtime-r1':'placement-r1'));
 const attempt=process.argv.find(x=>x.startsWith('--attempt='))?.split('=')[1]??'r2';
-const candidateKind=process.argv.find(x=>x.startsWith('--candidate='))?.split('=')[1]??'nearest';
+const candidateKind=runtimeCheck?'actor':process.argv.find(x=>x.startsWith('--candidate='))?.split('=')[1]??'nearest';
 if(!['nearest','actor'].includes(candidateKind))throw Error('Unknown candidate');
 if(!/^r[1-4]$/.test(attempt))throw Error('Maximum four attempts before method change');
-const reportPath=resolve(out,'temporal-'+attempt+'.json');if(existsSync(reportPath))throw Error('Never overwrite an attempt');
-const raw=resolve(out,'raw/temporal-'+attempt);mkdirSync(raw,{recursive:true});
+const reportPath=resolve(out,runtimeCheck?'runtime-check-r1.json':'temporal-'+attempt+'.json');if(existsSync(reportPath))throw Error('Never overwrite an attempt');
+const raw=resolve(out,'raw/'+(runtimeCheck?'runtime-check-r1':'temporal-'+attempt));mkdirSync(raw,{recursive:true});
 const read=path=>JSON.parse(readFileSync(path,'utf8'));
 const hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
-const sourceHashes=read(resolve(root,'reports/v4-art/REVIEW/A11/delivery-r1/source-hashes.json'));
+const sourceHashes=read(runtimeCheck?resolve(out,'source-hashes.json'):resolve(root,'reports/v4-art/REVIEW/A11/delivery-r1/source-hashes.json'));
 const stable=()=>Object.entries(sourceHashes).every(([p,h])=>hash(resolve(root,p))===h);
 const contrast=resolve(root,'reports/v4-art/REVIEW/A10/contrast');
 const defects=read(resolve(contrast,'film-review.json')).coverageFollowups.filter(x=>x.defectOpen);
@@ -27,7 +28,8 @@ if(defects.length!==42||!stable())throw Error('Unexpected defect inventory or ru
 const report={started:new Date().toISOString(),pid:process.pid,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),
  scriptSha256:hash(new URL(import.meta.url)),candidateKind,candidateSha256:hash(resolve(import.meta.dirname,candidateKind==='actor'?'actor-relative.mjs':'layout-candidates.mjs')),
  sourceHashes,scope:'Private semantic replay of retained encoded frames and their two adjacent frames on either side at720/900. Original frames stay closed. Pose/DOM equivalence is not assumed; baseline reproduction is measured.',
- defectInventory:42,cases:[],complete:false,productionInstalled:false,temporalAcceptance:false};
+ defectInventory:42,cases:[],complete:false,productionInstalled:runtimeCheck,temporalAcceptance:false};
+if(runtimeCheck)report.scope='Installed runtime DOM equivalence to selected private actor-relative method at304 saved semantic states; not full-film acceptance.';
 const save=()=>writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');save();
 const metrics=g=>({clipped:g.clipped,hud:g.hud,faceHits:g.faceHits,pairs:g.pairs});
 const nearest=(label,faces)=>faces.map(f=>({id:f.id,d:Math.hypot(Math.max(f.x-label.rect.x-label.rect.width,label.rect.x-f.x-f.width,0),Math.max(f.y-label.rect.y-label.rect.height,label.rect.y-f.y-f.height,0))})).sort((a,b)=>a.d-b.d)[0]?.id;
@@ -37,6 +39,7 @@ try {
   if(!stable())throw Error('Runtime changed');
   const path=resolve(root,captureSources[fixture.id],fixture.id,'capture.json.gz');
   const capture=JSON.parse(gunzipSync(readFileSync(path)).toString());
+  const privateSamples=runtimeCheck?JSON.parse(gunzipSync(readFileSync(resolve(root,'reports/v4-art/REVIEW/A11/placement-r1/raw/temporal-r4/'+fixture.id+'-'+height+'.json.gz'))).toString()):null;
   const wanted=defects.filter(d=>d.fixture===fixture.id);
   const encoded=[...new Set(wanted.flatMap(d=>[-2,-1,0,1,2].map(n=>d.encodedFrame+n)))].sort((a,b)=>a-b);
   const {page,errors}=await openFixture(browser,fixture,{width,height});
@@ -79,25 +82,27 @@ try {
    const baseline=await page.evaluate(measureLabels);
    if(frame.action&&(baseline.action!==frame.action.id||Math.abs(baseline.elapsed-frame.action.elapsed)>.02))throw Error('Replay clock mismatch');
    const exact=wanted.filter(d=>d.encodedFrame===encodedFrame);
-   const snapshot=['wave1-720-573','wave3-720-285','wave3-720-855','boss-720-390','boss-720-591','boss-900-525'].includes(fixture.id+'-'+height+'-'+encodedFrame);
+   const snapshot=!runtimeCheck&&['wave1-720-573','wave3-720-285','wave3-720-855','boss-720-390','boss-720-591','boss-900-525'].includes(fixture.id+'-'+height+'-'+encodedFrame);
    if(snapshot){
     const p=resolve(raw,fixture.id+'-'+height+'-f'+encodedFrame+'-baseline.png');await page.screenshot({path:p});entry.snapshots.push({encodedFrame,variant:'baseline',path:p.slice(root.length+1),sha256:hash(p)});
    }
-   const placement=await page.evaluate(({baseline,candidateKind})=>{
+   const placement=runtimeCheck?placeActorLabels(baseline.labels,baseline.width,baseline.height,baseline.obstacles,baseline.faces,'actor'):await page.evaluate(({baseline,candidateKind})=>{
     const nodes=new Map([...document.querySelectorAll('.b3-world')].map(n=>[n.dataset.actor,n]));
     const result=window.__artPrivatePlace(baseline.labels,innerWidth,innerHeight,baseline.obstacles,baseline.faces,candidateKind==='actor'?'actor':'hud');
     for(const p of result){const before=baseline.labels.find(l=>l.id===p.id),node=nodes.get(p.id);node.style.left=(parseFloat(before.styleLeft)+p.rect.x-before.rect.x)+'px';node.style.top=(parseFloat(before.styleTop)+p.rect.y-before.rect.y)+'px';}
     return result;
    },{baseline,candidateKind});
    const candidate=await page.evaluate(measureLabels);
+   const originalLabels=runtimeCheck?privateSamples.find(s=>s.encodedFrame===encodedFrame).baseline.labels:baseline.labels;
+   const runtimePositionErrors=runtimeCheck?placement.map(p=>{const actual=candidate.labels.find(l=>l.id===p.id);return {id:p.id,error:actual?Math.hypot(p.rect.x-actual.rect.x,p.rect.y-actual.rect.y):1e9};}):[];
    const shifts=candidate.labels.map(l=>{const b=baseline.labels.find(x=>x.id===l.id),face=baseline.faces.find(f=>f.id===l.id)??b.rect;return{id:l.id,text:l.text,x:l.rect.x-b.rect.x,y:l.rect.y-b.rect.y,faceRelativeX:l.rect.x-face.x,faceRelativeY:l.rect.y-face.y,
     baselineNearest:nearest(b,baseline.faces),candidateNearest:nearest(l,candidate.faces)};});
    const jumps=previous&&encodedFrame===previous.encodedFrame+1?shifts.flatMap(s=>{const p=previous.shifts.find(x=>x.id===s.id&&x.text===s.text);return p?[{id:s.id,distance:Math.hypot(s.x-p.x,s.y-p.y)}]:[];}):[];
    const faceRelativeJumps=previous&&encodedFrame===previous.encodedFrame+1?shifts.flatMap(s=>{const p=previous.shifts.find(x=>x.id===s.id&&x.text===s.text);return p?[{id:s.id,distance:Math.hypot(s.faceRelativeX-p.faceRelativeX,s.faceRelativeY-p.faceRelativeY)}]:[];}):[];
    const sample={encodedFrame,renderFrame:mapping.renderFrame,action:frame.action,retainedDefects:exact.map(d=>({actor:d.actor,resolution:d.resolution})),
     baseline:metrics(baseline),candidate:metrics(candidate),allFeasible:placement.every(p=>p.feasible),
-    textAndIdsPreserved:baseline.labels.length===candidate.labels.length&&candidate.labels.every(l=>baseline.labels.some(b=>b.id===l.id&&b.text===l.text)),
-    shifts,jumps,faceRelativeJumps};
+    textAndIdsPreserved:originalLabels.length===candidate.labels.length&&candidate.labels.every(l=>originalLabels.some(b=>b.id===l.id&&b.text===l.text)),
+    shifts,jumps,faceRelativeJumps,runtimePositionErrors};
    entry.samples.push(sample);rawSamples.push({encodedFrame,baseline,candidate,placement});previous={encodedFrame,shifts};
    if(snapshot&&entry.snapshots.at(-1)?.encodedFrame===encodedFrame&&entry.snapshots.at(-1)?.variant==='baseline'){
     const p=resolve(raw,fixture.id+'-'+height+'-f'+encodedFrame+'-hud.png');await page.screenshot({path:p});entry.snapshots.push({encodedFrame,variant:'hud',path:p.slice(root.length+1),sha256:hash(p)});
@@ -111,9 +116,12 @@ try {
    candidateFaceHits:entry.samples.reduce((n,s)=>n+s.candidate.faceHits.length,0),candidatePairs:entry.samples.reduce((n,s)=>n+s.candidate.pairs.length,0),
    infeasible:entry.samples.filter(s=>!s.allFeasible).length,textLoss:entry.samples.filter(s=>!s.textAndIdsPreserved).length,
    maxStableTextOffsetJump:Math.max(0,...entry.samples.flatMap(s=>s.jumps.map(j=>j.distance))),
-   maxStableTextFaceRelativeJump:Math.max(0,...entry.samples.flatMap(s=>s.faceRelativeJumps.map(j=>j.distance)))};
+   maxStableTextFaceRelativeJump:Math.max(0,...entry.samples.flatMap(s=>s.faceRelativeJumps.map(j=>j.distance))),
+   maxRuntimePositionError:Math.max(0,...entry.samples.flatMap(s=>s.runtimePositionErrors.map(x=>x.error)))};
   save();console.log(fixture.id,height,JSON.stringify(entry.summary));await page.close();
  }
- report.complete=true;report.runtimeUnchanged=stable();report.finished=new Date().toISOString();save();
+ report.complete=true;report.runtimeUnchanged=stable();report.finished=new Date().toISOString();
+ if(runtimeCheck)report.pass=report.runtimeUnchanged&&report.cases.every(c=>!c.errors.length&&['candidateClipped','candidateHud','candidateFaceHits','candidatePairs','infeasible','textLoss'].every(k=>c.summary[k]===0)&&c.summary.maxRuntimePositionError<.1);
+ save();if(runtimeCheck&&!report.pass)process.exitCode=1;
 }catch(error){report.error=String(error.stack??error);report.finished=new Date().toISOString();report.runtimeUnchanged=stable();save();throw error;}
 finally{await browser.close();}
