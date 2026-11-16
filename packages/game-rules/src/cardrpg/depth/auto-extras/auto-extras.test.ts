@@ -10,16 +10,16 @@ import type { AutoExtrasOptions } from './index';
 const on: AutoExtrasOptions = { autoExtras: true, teaCloud: true, frontRelay: true, intentLens: true };
 function fixture(seed = 11) {
   const cats = battleCats(createDepthAccount(seed));
-  cats[1] = { ...cats[1]!, id: 'mallow', row: 'front', skills: CAT_BY_ID.mallow!.skills.map(s => s.id) };
+  cats[1] = { ...cats[1]!, id: 'panko', row: 'front', skills: CAT_BY_ID.panko!.skills.map(s => s.id) };
   const b = createBattle({ seed, chapter: 1, cats, enemies: ['kettle-knight', 'yarn-giant'] });
   return b;
 }
 function reaction(seed = 11) {
-  const b = fixture(seed), source = b.actors.find(a => a.id === 'clover')!, target = b.actors.find(a => a.side === 'enemy')!;
+  const b = fixture(seed), source = b.actors.find(a => a.id === 'panko')!, target = b.actors.find(a => a.side === 'enemy')!;
   b.queue = [source.id, ...b.queue.filter(id => id !== source.id)];
-  target.statuses = [{ id: 'scald', stacks: 1, remaining: 3, source: 'mallow', appliedRound: b.round }];
+  target.statuses = [{ id: 'scald', stacks: 1, remaining: 3, source: 'mochi', appliedRound: b.round }];
   b.actors[0]!.hp = 100;
-  return { b, source, target, choice: { actorId: source.id, skillId: 'clover-1', targetId: target.id } };
+  return { b, source, target, choice: { actorId: source.id, skillId: 'panko-1', targetId: target.id } };
 }
 function relay() {
   const b = fixture(), source = b.actors.find(a => a.id === 'clover')!, target = b.actors[0]!;

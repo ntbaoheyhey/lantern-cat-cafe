@@ -28,7 +28,7 @@ describe('Hush respects the committed utility action in gameplay v4', () => {
         expect(enemy.turns).toBe(turns + 1);
         const events = battle.log.slice(offset).filter(event => event.actorId === enemy.id);
         const hits = events.filter(event => event.kind === 'damage' || event.kind === 'absorbed');
-        if (scenario === 'quiet-signature' && gameplayV4) {
+        if (id==='teacup-healer'&&scenario!=='ordinary-signature'||scenario === 'quiet-signature' && gameplayV4) {
           expect(hits).toHaveLength(0);
           expect(events.some(event => event.kind === 'heal' || event.kind === 'shield')).toBe(false);
           expect(events.some(event => event.kind === 'suppressed')).toBe(true);

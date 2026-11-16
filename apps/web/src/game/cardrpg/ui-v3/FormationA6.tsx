@@ -1,3 +1,4 @@
+import { CombatClassBadge } from './CombatClassBadge';
 import {GameIcon,StarIcons} from '../../../ui/GameIcon';
 import { FormationC2, PrepareC2 } from '../stage/FormationC2';
 import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties, type RefObject } from 'react';
@@ -102,7 +103,7 @@ function LegacyFormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean}
       <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=>{
         const actor=party?.find(cat=>cat.catalogId===id),name=R.CAT_BY_ID[id]!.name,description=`${healthId}-${id}`;
         return <button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} data-knocked-out={actor?.hp===0||undefined} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${name} for placement`} aria-describedby={actor?description:undefined} onClick={()=>setPicked(id)}>
-        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{<StarIcons count={state.account.cards.find(c=>c.cardId===id)?.stars??1}/>}</span><img {...portraitProps(id)} alt=""/><div>{actor?<span className="a6-seat-identity"><b>{name}</b><small>{R.CAT_BY_ID[id]!.role}</small></span>:<b>{name}</b>}<PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/>{!actor&&<small>{R.CAT_BY_ID[id]!.role}</small>}
+        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{<StarIcons count={state.account.cards.find(c=>c.cardId===id)?.stars??1}/>}</span><img {...portraitProps(id)} alt=""/><div>{actor?<span className="a6-seat-identity"><b>{name}</b><CombatClassBadge combatClass={R.CAT_BY_ID[id]!.combatClass}/></span>:<b>{name}</b>}<PowerA6 reducedMotion={m.state.settings.reducedMotion} value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/>{!actor&&<CombatClassBadge combatClass={R.CAT_BY_ID[id]!.combatClass}/>}
           {actor&&<span className="a6-seat-health" data-condition={actor.hp===0?'ko':actor.hp<=actor.maxHp/3?'low':actor.hp<actor.maxHp?'hurt':'full'}>
             <small id={description}>{actor.hp===0?'Knocked out · 0 HP':`${actor.hp.toLocaleString('en-US')} / ${actor.maxHp.toLocaleString('en-US')} HP`}</small>
             <progress aria-label={`${name} HP`} value={actor.hp} max={actor.maxHp}/>

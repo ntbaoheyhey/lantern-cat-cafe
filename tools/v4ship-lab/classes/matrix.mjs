@@ -17,6 +17,7 @@ const samples=Number(process.env.V4_CLASS_SAMPLES??30),sessions=Number(process.e
 const firstSeed=Number(process.env.V4_CLASS_FIRST_SEED??1),heals=(process.env.V4_CLASS_HEALS??'35,65').split(',').map(Number);
 assert(Number.isInteger(firstSeed)&&firstSeed>0&&heals.every(n=>Number.isInteger(n)&&n>0&&n<=100));
 const only=process.env.V4_CLASS_VARIANT;
+const production=process.env.V4_CLASS_PRODUCTION==='1';
 const balance=process.env.V4_CLASS_BALANCE??'none';
 const sessionMethod=process.env.V4_CLASS_SESSION_METHOD??'a6-legacy';
 const enemyPressure=Number(process.env.V4_CLASS_ENEMY_PRESSURE??1);
@@ -31,7 +32,7 @@ const quantile=(xs,q)=>{const s=[...xs].sort((a,b)=>a-b);if(!s.length)return nul
 function replaceOnce(source,from,to,file){assert.equal(source.split(from).length,2,`Expected one transform anchor in ${file}`);return source.replace(from,to);}
 function selector(policy){return `function selectHealerPatientS2b(actors:Actor[]) { const living=actors.filter(a=>a.hp>0); const wounded=living.filter(a=>a.hp<a.maxHp); const pool=wounded.length?wounded:living; return [...pool].sort((a,c)=>${policy==='missing'?'(c.maxHp-c.hp)-(a.maxHp-a.hp)':policy==='front'?"Number(c.row==='front')-Number(a.row==='front') || a.hp/a.maxHp-c.hp/c.maxHp":'a.hp/a.maxHp-c.hp/c.maxHp'} || a.id.localeCompare(c.id))[0]!; }\n`;}
 function variantPlugin(v){return {name:'v4ship-isolated-healer-study',enforce:'pre',transform(source,id){
- if(v.id==='control')return null;
+ if(production||v.id==='control')return null;
  const file=id.split('?')[0].replace(root+'/','');let code=source;
  if(file==='packages/game-rules/src/cardrpg/depth/catalog.ts')code+=`\n// Isolated research variant ${v.id}.\nfor(const cat of CATS.filter(c=>c.role==='healer'))for(const skill of cat.skills){
  if(skill.id.endsWith('-1'))Object.assign(skill,{type:'support',target:'ally',breakPower:0,effects:[{kind:'heal',power:${v.heal}}]});
@@ -73,7 +74,7 @@ async function fixture(bundle,fixture,seed){
  const party=b.actors.filter(a=>a.side==='party'),healers=new Set(b.actors.filter(a=>a.role==='healer').map(a=>a.id));
  return {fixture:fixture.id,seed,result:b.result,durationSeconds:elapsed/1000,actions,rounds:b.round,winHp:party.reduce((s,a)=>s+a.hp,0)/party.reduce((s,a)=>s+a.maxHp,0),healing:b.log.filter(e=>healers.has(e.actorId)&&e.kind==='heal').reduce((s,e)=>s+e.amount,0),healerDamage:b.log.filter(e=>healers.has(e.actorId)&&['damage','dot','detonate','reflect','reaction-damage'].includes(e.kind)).reduce((s,e)=>s+e.amount,0),hash:hash(b)};
 }
-const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),balance,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
+const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),labSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),production,balance,enemyPressure,sessionMethod,purpose:'isolated learning matrix; not a parity replacement or runtime funnel gate',firstSeed,samples,sessions,variants:[]};
 await mkdir(resolve(out,'..'),{recursive:true});
 for(const variant of variants){
  const temp=await mkdtemp('/tmp/v4ship-class-study-');const began=performance.now();
@@ -83,7 +84,7 @@ for(const variant of variants){
   await build({configFile:false,root,envDir:false,publicDir:false,logLevel:'silent',plugins:[variantPlugin(variant)],build:{emptyOutDir:false,outDir:temp,minify:false,lib:{entry,formats:['es'],fileName:()=> 'rules.mjs'}}});
   const url=pathToFileURL(resolve(temp,'rules.mjs')).href,bundle=await import(url);const rows=[];
   for(const f of fixtureConfig.fixtures)for(const seed of [...new Set([...Array.from({length:samples},(_,i)=>i+firstSeed),71])])rows.push(await fixture(bundle,f,seed));
-  if(variant.id==='control')for(const row of rows.filter(r=>r.seed===71)){const baseline=prior.rows.find(r=>r.fixture===row.fixture);assert.equal(row.hash,baseline.hash,`Control hash ${row.fixture}`);assert(Math.abs(row.durationSeconds*1000-baseline.durationMs)<1,`Control scheduler ${row.fixture}`);}
+  if(!production&&variant.id==='control')for(const row of rows.filter(r=>r.seed===71)){const baseline=prior.rows.find(r=>r.fixture===row.fixture);assert.equal(row.hash,baseline.hash,`Control hash ${row.fixture}`);assert(Math.abs(row.durationSeconds*1000-baseline.durationMs)<1,`Control scheduler ${row.fixture}`);}
   let progression=[];
   if(sessions&&sessionMethod==='a6-legacy'){
    const original=await readFile(resolve(root,'tools/cardrpg-a6/sim.mjs'),'utf8');const helper=original.slice(0,original.indexOf('if (!isMainThread)')).replace("const root = resolve(import.meta.dirname, '../..');",`const root = ${JSON.stringify(root)};`);

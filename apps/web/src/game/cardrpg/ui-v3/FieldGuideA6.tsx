@@ -14,12 +14,13 @@ function notesFor(chapter:Chapter,v4:boolean,skillsV5:boolean,c2=false):Note[] {
   const core=new Set(R.CORE_STATUS_RULES_V5.map(status=>status.id));
   const statuses=skillsV5?[...R.CORE_STATUS_RULES_V5,...R.STATUSES.filter(status=>R.statusIdV5(status.id)===status.id&&!core.has(status.id))]:R.STATUSES;
   return [
+   ...R.COMBAT_CLASSES.map(combatClass=>({id:`class-${combatClass}`,name:R.COMBAT_CLASS_LABELS[combatClass],kind:'class',detail:'Combat class',paragraphs:[R.COMBAT_CLASS_DESCRIPTIONS[combatClass]]})),
    ...statuses.map(status=>({id:status.id,name:status.name,kind:status.kind,aliases:skillsV5?R.STATUSES.filter(old=>R.statusIdV5(old.id)===status.id).map(old=>old.name).join(' '):'',detail:`${status.kind} · up to ${status.cap} stack${status.cap===1?'':'s'} · ${status.duration} round${status.duration===1?'':'s'} · ${status.dispellable?status.kind==='debuff'?'Can be cleansed':'Can be dispelled':'Protected from dispel'}`,paragraphs:[skillsV5?wording(status.description):v4?R.statusDescriptionV4(status.id):status.description]})),
    ...(skillsV5?(Object.keys(R.REACTION_NAMES_V5) as R.ReactionIdV5[]).map(id=>({id,name:R.REACTION_NAMES_V5[id],kind:'reaction',detail:'Battle reaction · one per foe each round',paragraphs:[...reactionGuideA6[id],'Reactions do not trigger other reactions. Any crew can create them with the right effects.']})):[]),
   ];
  }
- if(chapter==='companions')return R.CATS.map(cat=>({id:cat.id,name:cat.name,detail:`${cat.role} · ${cat.flavour}`,art:cat.id,paragraphs:[`${cat.passive.name} · ${wording(v4?R.passiveDescriptionV4(cat.id):cat.passive.description)}`]}));
- if(chapter==='enemies')return R.ENEMIES.map(enemy=>{const guide=enemyGuideA6(enemy.id);return {id:enemy.id,name:enemy.name,detail:`${enemy.tier} · ${enemy.flavour} · ${enemy.row}`,art:enemy.id,paragraphs:[guide.intent,guide.counter,...(guide.phases?[guide.phases]:[])]};});
+ if(chapter==='companions')return R.CATS.map(cat=>({id:cat.id,name:cat.name,detail:`${R.COMBAT_CLASS_LABELS[cat.combatClass]} · ${cat.flavour}`,art:cat.id,paragraphs:[`${cat.passive.name} · ${wording(v4?R.passiveDescriptionV4(cat.id):cat.passive.description)}`]}));
+ if(chapter==='enemies')return R.ENEMIES.map(enemy=>{const guide=enemyGuideA6(enemy.id);return {id:enemy.id,name:enemy.name,detail:`${R.COMBAT_CLASS_LABELS[enemy.combatClass]} · ${enemy.tier} · ${enemy.row}`,art:enemy.id,paragraphs:[guide.intent,guide.counter,...(guide.phases?[guide.phases]:[])]};});
  if(chapter==='charms')return R.BOONS.map(boon=>({id:boon.id,name:boon.name,detail:`${boon.archetype} · stack cap ${boon.cap}`,paragraphs:[wording(R.boonForMode(boon.id,v4).description)]}));
  return R.SETS.map(original=>{const set=R.setTextV4(original,v4,c2);return {id:set.id,name:set.name,detail:'Equipment set',paragraphs:[`2 pieces · ${wording(set.two)}`,`4 pieces · ${wording(set.four)}`]};});
 }

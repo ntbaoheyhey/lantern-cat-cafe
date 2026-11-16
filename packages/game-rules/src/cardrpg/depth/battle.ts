@@ -1,3 +1,4 @@
+import { healerPatient } from './combat-class';
 import { FORMATION_C2, validRowsC2 } from './formation-c2';
 import { ECONOMY_C2 } from './economy-c2';
 import { triggerPairCombosA6 } from './bonds-a6';
@@ -110,6 +111,7 @@ function heal(b: Battle, source: Actor, target: Actor, amount: number) {
   if (source.catalogId === 'clover' && !source.passiveUsed) { source.passiveUsed = true; dispel(b, source, target, 'debuff'); }
 }
 function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: string) {
+  if(source.combatClass==='healer'&&source.side!==target.side)return 0;
   const actual = Math.min(target.hp, Math.max(0, Math.round(amount)));
   target.hp -= actual;
   hitRageA6(b,source,target,actual);
@@ -133,6 +135,7 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
   return actual;
 }
 function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false, shape: ShapeV5 = 'single') {
+  if(source.combatClass==='healer')return;
   if (target.hp <= 0) return;
   if (stacks(target, 'decoy')) {
     target.statuses = target.statuses.filter(s => s.id !== 'decoy');
@@ -238,7 +241,7 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   if (!e) throw Error('Unknown enemy');
   const stats = enemyStats?.[id] ?? e;
   const scale = tutorial ? .55 : 1 + Math.max(0, chapter - e.chapter) * .16;
-  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
+  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,combatClass:e.combatClass,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
   if(setup.formationC2&&(!setup.gameplayA6||!validRowsC2(setup.cats.map(c=>c.id),Object.fromEntries(setup.cats.map(c=>[c.id,c.row])))))throw Error('C2 requires four cats, two in each row, and Gameplay A6');
@@ -256,7 +259,7 @@ export function createBattle(setup: BattleSetup): Battle {
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
     if (!cat || !(setup.gameplayA6?[2, 3, 4]:[3, 4]).includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
-    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:setup.gameplayA6?battleKitA6(c.id).map(skill=>skill.id):[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
+    return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,combatClass:cat.combatClass,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:setup.gameplayA6?battleKitA6(c.id).map(skill=>skill.id):[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
   actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
   if(setup.formationC2){const count={front:0,rear:0};for(const foe of actors.filter(a=>a.side==='enemy')){if(count[foe.row]>=2)foe.row=foe.row==='front'?'rear':'front';count[foe.row]++;}}
@@ -343,7 +346,8 @@ function checkResult(b: Battle) {
 export function currentActor(b: Battle) { return b.actors.find(a => a.id === b.queue[0] && a.hp > 0); }
 export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {
   const foes=living(b,actor.side==='party'?'enemy':'party'), allies=living(b,actor.side);
-  if(b.initial.skillsV5){skill=situationalSkillV5(b,actor,skill);if(['weakest','ally-splash'].includes(shapeV5(skill))){const target=weakestV5(allies);return target?[target]:[];}}
+  if(b.initial.skillsV5){skill=situationalSkillV5(b,actor,skill);if(['weakest','ally-splash'].includes(shapeV5(skill))){const target=actor.combatClass==='healer'?healerPatient(allies):weakestV5(allies);return target?[target]:[];}}
+  if(actor.combatClass==='healer'&&skill.target==='ally'){const patient=healerPatient(allies);return patient?[patient]:[];}
   if (skill.target==='self') return [actor];
   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);
   if (skill.target==='ally'||skill.target==='allies') return allies;
@@ -579,7 +583,7 @@ export function enemyAct(b: Battle): boolean {
   const shelter=party.find(a=>stacks(a,'shelter')&&(!b.initial.formationC2||a.row==='front'||!party.some(p=>p.row==='front')));
   const front=party.filter(a=>a.row==='front');
   const reachable=b.v4&&front.length&&(spec.mechanic!=='steal'||b.initial.formationC2&&!intent.signature)?front:party;
-  const target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
+  let target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
   if (!target) {checkResult(b);return false;}
   shield(b,actor,actor,stacks(actor,'glaze')*20);
   const impaired=intent.interrupted||stacks(actor,'drowsy')>0||!!dazed;
@@ -596,8 +600,12 @@ export function enemyAct(b: Battle): boolean {
     const controller=b.actors.find(a=>a.id===actor.statuses.find(s=>s.id===(impaired?'drowsy':'hush'))?.source);
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   };
-  if(b.v4&&impaired&&!b.initial.skillsV5) creditSuppression();
-  if (impaired) {
+  if(b.v4&&impaired&&!b.initial.skillsV5&&actor.combatClass!=='healer') creditSuppression();
+  if (actor.combatClass==='healer') {
+    if(impaired||quiet){if(!dazed)creditSuppression();}
+    else {const patient=healerPatient(living(b,'enemy'));if(patient){target=patient;heal(b,actor,patient,signature?65:35);}}
+  }
+  else if (impaired) {
     if(b.initial.skillsV5&&actor.catalogId==='spool-ram')actor.bonuses.v5Charge=0;
     damage(b,actor,target,b.initial.skillsV5?(spec.tier==='boss'?100:50):40,0,b.v4&&spec.mechanic!=='steal');
   }

@@ -216,6 +216,11 @@ export function validateDepth(value: unknown, legacyFormation = false): asserts 
     for (const node of run.nodes) if (!Array.isArray(node.next) || !Array.isArray(node.enemies) || typeof node.id !== 'string') fail();
     if (run.battle && (!Array.isArray(run.battle.actors) || !Array.isArray(run.battle.queue)
       || !Array.isArray(run.battle.log) || !Array.isArray(run.battle.choices) || !record(run.battle.initial))) fail();
+    if(run.battle)for(const actor of run.battle.actors){
+      const spec=actor.side==='party'?CAT_BY_ID[actor.catalogId]:ENEMY_BY_ID[actor.catalogId];
+      if(!spec)fail();
+      actor.combatClass=spec.combatClass;
+    }
     if(run.gameplayA6!==undefined&&(typeof run.gameplayA6!=='boolean'||run.gameplayA6&&(!run.skillsV5||!run.gameplayV4)))fail();
     if(run.skillsV5!==undefined&&(typeof run.skillsV5!=='boolean'||run.skillsV5&&!run.gameplayV4))fail();
     if(run.gameplayV4!==undefined&&typeof run.gameplayV4!=='boolean') fail();

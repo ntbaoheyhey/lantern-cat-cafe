@@ -1,6 +1,6 @@
 # S2b — Combat classes and ally-only healing
 
-Research started 16 November 2026. G-LEARN experiment matrix and independent holdout are recorded below. No production rules or parity baseline changed.
+Research started 16 November 2026. G-LEARN experiment matrix and independent holdout are recorded below. Production rules now implement the selected candidate; the sole new parity baseline remains pending.
 
 ## Question and proposed mapping
 
@@ -65,3 +65,7 @@ The5%enemy-attack pilot failed at20.23718min and changed more numbers. Reject it
 ## Independent holdout and implementation decision
 
 Seeds1001–1100 reproduce the selected front35/boss45% candidate with100/100 wins per fixture and zero healer damage. Boss median95.0167s, p90108.9000s; current four-cat cohort first-loss median19.65391min, zero censored accounts. Evidence `S2b/selected-holdout.json`. Implement this candidate: heal35 on basic, wounded front allies before lowest HP fraction, stable ID ties, Yarn Giant catalog HP1292 (=round2870×0.45). Keep other offensive numbers and action clocks unchanged. These are scheduler/public-action simulation results, not browser or human first-session timings. The full G-CLASS gate remains open until runtime guards, UI, E3–E5, regression and the sole new F6 baseline are checked.
+
+Implementation refinement: preserve Clover/Cinnamon restorative legacy active shapes and cooldowns; their Basic+Ultimate A6 loadout and selected timing remain identical. Direct V5 Teacup resolver is heal-only, including callers outside the central battle resolver. New native economy validation uses a separate output directory and frozen runtime to preserve historical E3–E5 evidence. Reusing the old cohort would ignore altered combat rewards, so run the same200seeds/profile over42days instead.
+
+Validation refinement: preserve historical E3 tuning/search evidence, then rerun the fixed policy with the post-class native bank: 18 scenarios ×200 token seeds, all registered assumptions ±20% using fresh affected native profiles, existing unchanged thresholds. Evidence goes to S2b/econ. No economy constants are retuned. Class UI computed contrast is11.132:1 at both sizes; the team shell name-chip selector previously overrode the badge background. The Guide is fully opaque; its backdrop dimming is intentional. Remove the old rear-row sword decoration because a sword next to Clover contradicts the new heal-only badge; row remains in accessible text and tooltip.

@@ -1,3 +1,4 @@
+import { CAT_BY_ID } from '../catalog';
 import type { Actor, Battle, Skill } from '../contract';
 import { CORE_STATUS_RULES_V5 } from './statuses';
 import { shapeV5, type EffectV5, type ShapeV5, type SkillV5 } from './shapes';
@@ -6,7 +7,7 @@ export const COMBO_ROLES_V5: Record<string,string> = {
   mochi:'Protects primers',soot:'Primes and triggers Crumb Burst',clover:'Answers enemy Burn and Bleed',
   panko:'Primes Shred for Rupture',mallow:'Primes Burn; triggers Wildfire',sorrel:'Bitter answers healers',
   biscuit:'Primes Bleed; triggers Rupture',inkcap:'Daze stops boss signatures',cinnamon:'Sustains Burn crews',
-  brioche:'Shred triggers Rupture from the front row',velvet:'Mark and Bleed prime Spread',marigold:'Primes Burn and Crumb Burst',
+  brioche:'Shred triggers Rupture from the front row',velvet:'Mark and Bleed prime Spread',marigold:'Cleanses and sustains the crew',
 };
 export const CREWS_V5 = [
   {id:'oven',name:'Oven',cats:['mallow','cinnamon','mochi'],reaction:'wildfire'},
@@ -23,8 +24,8 @@ const patches:Record<string,Patch> = {
   'soot-2':{cooldown:2},
   'soot-1':{shape:'pierce'},
   'soot-4':{shape:'all',effects:[{kind:'hit',power:125},{kind:'detonate',power:125},{kind:'rally',status:'drowsy'}]},
-  'clover-1':{effects:[{kind:'hit',power:80},{kind:'heal',power:18,recipient:'weakest'}]},
   'clover-2':{shape:'ally-row'},
+  'cinnamon-2':{shape:'ally-splash',cooldown:1,effects:[{kind:'heal',power:80},{kind:'rally',status:'cozy',recipient:'main'}]},
   'panko-1':{effects:[{kind:'hit',power:85},{kind:'rally',status:'riposte',self:true},{kind:'rally',status:'brittle'}]},
   'panko-2':{shape:'ally-row',effects:[{kind:'shield',power:65},{kind:'rally',status:'shelter',self:true}]},
   'mallow-1':{shape:'splash',effects:[{kind:'hit',power:100},{kind:'rally',status:'scald',recipient:'main'}]},
@@ -42,8 +43,6 @@ const patches:Record<string,Patch> = {
   'inkcap-1':{cooldown:1,shape:'pierce',effects:[{kind:'hit',power:70},{kind:'rally',status:'brittle'}]},
   'inkcap-2':{shape:'pierce',effects:[{kind:'hit',power:45},{kind:'rally',status:'drowsy'}]},
   'inkcap-4':{shape:'all',effects:[{kind:'hit',power:65},{kind:'rally',status:'drowsy'},{kind:'rally',status:'brittle',stacks:2}]},
-  'cinnamon-1':{effects:[{kind:'hit',power:75},{kind:'drain',power:40},{kind:'rally',status:'scald'}]},
-  'cinnamon-2':{shape:'ally-splash',cooldown:1,effects:[{kind:'heal',power:80},{kind:'rally',status:'cozy',recipient:'main'}]},
   'brioche-3':{effects:[{kind:'dispel'},{kind:'rally',status:'brittle'},{kind:'hit',power:110}]},
   'velvet-1':{cooldown:1,shape:'pierce',effects:[{kind:'hit',power:95},{kind:'rally',status:'scent'},{kind:'rally',status:'snag',stacks:2}]},
   'velvet-2':{shape:'bounce',effects:[{kind:'hit',power:65}]},
@@ -65,7 +64,9 @@ export function situationalSkillV5(b:Battle,actor:Actor,skill:Skill):SkillV5 {
 const cache=new Map<Skill,SkillV5>();
 export function kitSkillV5(original:Skill):SkillV5 {
   const prior=cache.get(original);if(prior)return prior;
-  const patch=patches[original.id]??{};
+  const patch:Patch=CAT_BY_ID[original.catId]?.combatClass==='healer'
+    ? {shape:original.target==='allies'?'team':original.target==='fallen'?'fallen':'weakest',effects:original.effects,...patches[original.id]}
+    : patches[original.id]??{};
   const skill:SkillV5={...original,...patch,shape:patch.shape??shapeV5(original),effects:(patch.effects??original.effects).map(e=>({...e}))};
   // Target rules continue to enforce front-row reach; shape changes only the affected group.
   if(skill.shape==='pierce')skill.target='pierce';

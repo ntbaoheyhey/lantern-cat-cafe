@@ -1,3 +1,4 @@
+import { healerPatient } from '../combat-class';
 import {emitGameplayEvent} from '../events-v4';
 import {ENEMY_BY_ID} from '../catalog';
 import type {Actor,Battle,Intent,StatusId} from '../contract';
@@ -29,7 +30,7 @@ export const ENEMY_MECHANICS_V5:Record<string,{mechanic:string;counter:string}>=
   'sock-skipper':{mechanic:'Targets rear cats and applies Bleed.',counter:'Shield the rear before their next actions.'},
   'spool-ram':{mechanic:'Charges for one turn, then hits a row.',counter:'Daze interrupts the charged action.'},
   'needle-moth':{mechanic:'Three seeded hits on random cats.',counter:'Warm and team shields soften repeated hits.'},
-  'teacup-healer':{mechanic:'Heals its weakest ally every two rounds.',counter:'Bitter halves healing; Mark opens rear access.'},
+  'teacup-healer':{mechanic:'Heals wounded allies; never attacks.',counter:'Bitter halves healing; Mark opens rear access.'},
   'kettle-knight':{mechanic:'Below half HP, basics Burn the front row.',counter:'Cleanse or Regen removes Burn.'},
   'binding-thread':{mechanic:'Knots apply Shred; every third turn Dazes the weakest cat.',counter:'Defeat the thread to release its knot or Cleanse.'},
   'yarn-giant':{mechanic:'Row + Shred signatures; closing phase All + Bitter.',counter:'Cleanse the crew; Daze stops its signature.'},
@@ -78,8 +79,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       for(let i=0;i<3&&actor.hp>0;i++){const living=party();if(!living.length)break;const victim=living[io.roll(b,living.length)]!;targets.push(victim.id);resolvedShape='multi-hit';io.record(b,actor,victim,'multi-hit',i,'multi-hit',actor.catalogId);io.damage(b,actor,victim,40,0,false,'multi-hit');}
       break;
     case 'teacup-healer':
-      if(actor.turns===0)io.apply(b,actor,actor,'steep');
-      if(intent.signature){const patient=weakestV5(foes());if(patient)io.heal(b,actor,patient,65);}else{hit(target);io.apply(b,actor,target,'scent');}
+      {const patient=healerPatient(foes());if(patient)io.heal(b,actor,patient,intent.signature?65:35);}
       break;
     case 'kettle-knight':
       hit(target,intent.signature?intent.power:100);

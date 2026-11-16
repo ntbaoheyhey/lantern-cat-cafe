@@ -1,11 +1,16 @@
-# S2b class research — implementation pending
+# S2b implementation checkpoint
 
-G-LEARN: sources and experiments are in `../LEARN/S2b.md`; three selectors by two heal sizes were measured on all three real-rule fixtures, with a control reproducing all original F6 hashes. Production rules and the single new parity baseline remain unchanged.
+Every12cat and13enemy catalog row and runtime actor has a melee/ranged/healer class. Clover, Cinnamon, Marigold and Teacup restore/protect allies only. The selected wounded-front/basic35 method and Yarn Giant HP1292 follow LEARN/S2b.md; other offensive values and action clocks are unchanged. Saved active actors recover catalog class identity. Labels appear on cards, detail and team screens; all three Guide descriptions stay under25words. CLASS-MAP.md lists every unit.
 
-The legacy A6 progression bot uses three cats and older timing. Those estimates are retained as a method comparison only. The corrected C2 run uses four cats, economyV3, the real DepthModel scheduler and the existing public-action policy. Its decision/loading delays are explicit model assumptions, not observed human timing.
+## Validation
 
-`current-matrix.json`:30fixture/progression seeds per variant. The unchanged control boss median209.217s misses110s; first-loss median18.33587min. All six healer candidates deal0recorded healer damage and win90/90fixture cases. With Yarn Giant catalog HP45%, boss median95.017s/p90109.123s. Only front35meets the first-loss target in this sample:19.86473min. A separate100-seed holdout1001–1100is running before selection.
+- Rules:1409passed,2expected failures,11skips. Server:733passed. Typecheck and production build passed. Economy tooling:20passed.
+- Full web:2633passed,7failed in two ART-owned spine files. The remaining expectations assume damaging healers; REQUESTS-TO-ART.md requests compatible routing fixtures. No ART-owned file was edited. G-REG is not passed.
+- Six measured screen/viewport combinations at1280×720 and1440×900: class labels present, minimum badge contrast11.132:1, zero badge/text overflow detected, zero page errors. Numeric checks are scoped to the class surfaces, not the entire demo path. The prior name-chip CSS overrode badge background; a specific badge selector fixes it. Rear-row sword decorations were removed because they implied healer attacks. Rows remain accessible and in tooltips.
+- Two updated1024px screenshots inspected: team labels read clearly; Guide text is fully opaque inside a deliberately dimmed backdrop. No generator was used. Six evidence screenshots retained in ui/.
+- Final browser scheduler probe matches rules state for3/3fixtures, with durations271.133/618.433/92.167s. This is not the new F6 baseline; the original is untouched.
+- Independent production holdout:300/300fixture wins, zero healer damage, modeled first-loss median19.65391min and boss median95.0167s/p90108.9s. These are simulation/scheduler results, not measured human onboarding.
 
-Rejected: global offensive damage multipliers, stronger65healing, ratio25narrowly outside20min, and5%enemy-attack increase outside20min. No thresholds were changed or rounded. Canonical seed71overlap in the earlier100seed probe was corrected from retained raw rows, not rerun or silently dropped.
+## Open gates
 
-G-CLASS remains OPEN: class contract/kits/UI are not implemented; holdout, static/runtime guard checks, E3–E5, desktop labels and the sole new F6 baseline are still required. G-REG must run after implementation. No clip frames or generated art are included.
+Fresh1000-account/42-day economy cohort CLASS-FINAL-200 is running. Historical E3–E5 integrity passed24/24, but cannot certify post-class rewards. Fixed-policy token scenarios and sensitivity follow the new bank. Final baseline waits for this evidence and ART compatibility. REV2 requires25%Spool retention while the frozen published policy uses15%; this conflict is explicit in DECISIONS-SHIP.md and NEEDS-USER-VI.md. No economy constant was changed. G-CLASS remains open; provisional score6/10.

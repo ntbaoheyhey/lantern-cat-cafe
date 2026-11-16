@@ -6,6 +6,7 @@ import type { BattleV4State, GameplayV4State, StandingPlan } from './gameplay-v4
 /** Battle snapshots retain enemy stats across later balance changes. */
 export const CONTRACT_VERSION = '0.7.0' as const;
 export type Flavour = 'hearth' | 'moon' | 'garden' | 'tide' | 'ember';
+export type CombatClass = 'melee' | 'ranged' | 'healer';
 export type CatRole = 'guardian' | 'striker' | 'witch' | 'healer' | 'controller' | 'hexer';
 export type Row = 'front' | 'rear';
 export type SkillType = 'attack' | 'defend' | 'support' | 'control' | 'ultimate';
@@ -23,17 +24,17 @@ export interface Skill {
   cost: number; cooldown: number; charge: number; breakPower: number; effects: Effect[]; unlockLevel: number; unlockStars: number;
 }
 export interface Cat {
-  id: string; name: string; role: CatRole; flavour: Flavour; row: Row; tags: string[];
+  id: string; name: string; role: CatRole; combatClass: CombatClass; flavour: Flavour; row: Row; tags: string[];
   passive: { id: string; name: string; description: string }; skills: Skill[];
 }
 export interface Enemy {
-  id: string; name: string; role: string; flavour: Flavour; row: Row; tier: 'regular' | 'elite' | 'boss';
+  id: string; name: string; role: string; combatClass: CombatClass; flavour: Flavour; row: Row; tier: 'regular' | 'elite' | 'boss';
   hp: number; attack: number; defense: number; breakCap: number; mechanic: string;
   intent: string; counter: string; status?: StatusId; phases: string[]; chapter: number;
 }
 export interface Actor {
   linkedBossId?: string;
-  id: string; catalogId: string; name: string; side: 'party' | 'enemy'; role: string; row: Row;
+  id: string; catalogId: string; name: string; side: 'party' | 'enemy'; role: string; combatClass: CombatClass; row: Row;
   flavour: Flavour; hp: number; maxHp: number; attack: number; defense: number; initiative: number;
   effectHit: number; effectResist: number; shield: number; charge: number; break: number; breakCap: number;
   statuses: Status[]; cooldowns: Record<string, number>; skills: string[]; passiveUsed: boolean;

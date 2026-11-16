@@ -10,3 +10,5 @@
 2026-11-16T05:45:33.492424+00:00 S2b method correction: A6 bot is three-cat/older timing; use existing C2 public-model bot with economyV3 for current first-loss gate. Legacy results stay exploratory. Deduplicate seed71 and include censored accounts; no threshold changed.
 
 2026-11-16T05:57:43.458048+00:00 S2b select front35/boss45% after30-seed comparison plus independent100-seed holdout: first-loss19.65391min, boss95.0167s/p90108.9s,300/300fixturewins,0healerDamage. No production or F6 baseline changed yet. LEARN/S2b.md.
+
+2026-11-16T06:24:15.013927+00:00 S2b/S3 specification conflict: REV2 explicitly says Spool retention25% and also freezes economy numbers with classes as the sole rule exception. Inherited published ECONOMY_V3.spool.feeBp=1500 since84e49b60d; historical E3 evidence uses15%. Do not describe current behavior as25%, change this price silently, or label G-CLASS/E3 fully passed. Continue the class regression against the unchanged frozen policy; list the discrepancy in NEEDS-USER-VI and compare25% using an isolated experiment before any resolution.

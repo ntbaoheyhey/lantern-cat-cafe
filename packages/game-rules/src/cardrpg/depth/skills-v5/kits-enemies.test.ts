@@ -80,15 +80,15 @@ describe('Skills V5 chapter-one enemies',()=>{
   it('Sock Skipper reaches the rear and applies Bleed; Shelter still redirects',()=>{const f=fixture('sock-skipper');enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events[0]!.target).toBe('clover');expect(f.events[1]!.status).toBe('snag');put(f.b.actors[0]!,'shelter');f.events.length=0;enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events[0]!.target).toBe('mochi');});
   it('Spool Ram charges then row-hits; Daze cancels the charge',()=>{const f=fixture('spool-ram');enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.a.bonuses.v5Charge).toBe(1);expect(f.events).toHaveLength(0);enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.filter(e=>e.kind==='hit')).toHaveLength(2);expect(f.a.bonuses.v5Charge).toBe(0);f.a.bonuses.v5Charge=1;put(f.a,'drowsy');f.b.queue=[f.a.id,'mochi'];expect(enemyAct(f.b)).toBe(true);expect(f.a.bonuses.v5Charge).toBe(0);});
   it('Needle Moth lands exactly three seeded 40-percent hits',()=>{const f=fixture('needle-moth');enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.map(e=>e.power)).toEqual([40,40,40]);});
-  it('Teacup starts Regen once, Marks on basics and heals weakest every second round',()=>{
+  it('Teacup restores allies on basics and signatures without damage or hostile status',()=>{
     const f=fixture('teacup-healer');f.b.actors[4]!.hp=1;f.b.round=1;
     const opening=enemyIntentV5(f.b,f.a,f.intent);expect(opening.signature).toBe(false);
     enemyActionV5(f.b,f.a,opening,f.b.actors[0]!,f.io);
-    expect(f.events).toEqual([{kind:'status',target:f.a.id,status:'steep'},{kind:'hit',target:'mochi',power:100},{kind:'status',target:'mochi',status:'scent'}]);
+    expect(f.events).toEqual([{kind:'heal',target:f.b.actors[4]!.id,power:35}]);
     f.events.length=0;f.a.turns=1;f.b.round=2;const heal=enemyIntentV5(f.b,f.a,f.intent);expect(heal.signature).toBe(true);
     enemyActionV5(f.b,f.a,heal,f.b.actors[0]!,f.io);expect(f.events).toEqual([{kind:'heal',target:f.b.actors[4]!.id,power:65}]);
     f.events.length=0;f.a.turns=2;f.b.round=3;enemyActionV5(f.b,f.a,enemyIntentV5(f.b,f.a,f.intent),f.b.actors[0]!,f.io);
-    expect(f.events).toEqual([{kind:'hit',target:'mochi',power:100},{kind:'status',target:'mochi',status:'scent'}]);
+    expect(f.events).toEqual([{kind:'heal',target:f.b.actors[4]!.id,power:35}]);
   });
   it('Kettle basic applies Burn to the front row only below half HP',()=>{const f=fixture('kettle-knight');f.intent.signature=false;enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.some(e=>e.status==='scald')).toBe(false);f.events.length=0;f.a.hp=1;enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.filter(e=>e.status==='scald').map(e=>e.target)).toEqual(['mochi','mallow']);});
   it('Yarn phase one uses Row/Shred and phase two uses All/Bitter',()=>{const f=fixture('yarn-giant');enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.filter(e=>e.status==='brittle')).toHaveLength(2);f.events.length=0;f.a.phase=2;enemyActionV5(f.b,f.a,f.intent,f.b.actors[0]!,f.io);expect(f.events.filter(e=>e.status==='bitter')).toHaveLength(3);});

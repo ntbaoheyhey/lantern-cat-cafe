@@ -55,13 +55,13 @@ it('uses current enemy mechanics and phase advice only in the A6 field guide',()
  fireEvent.click(screen.getByRole('button',{name:'Battle notes'}));
  fireEvent.click(screen.getByRole('button',{name:'enemies'}));
  fireEvent.click(screen.getByRole('button',{name:'Teacup Healer'}));
- expect(screen.getByText(/Heals its weakest ally on even rounds or at full rage/)).toBeTruthy();
- expect(screen.queryByText('Every third round restores 65 HP to the most injured foe.')).toBeNull();
+ expect(screen.getByText(/Heals wounded front allies first/)).toBeTruthy();
+ expect(screen.queryByText('Restores 35 HP on basics and 65 HP on signatures to wounded front allies first.')).toBeNull();
  fireEvent.click(screen.getByRole('button',{name:'Yarn Giant'}));
  expect(screen.getByText(/66% HP: woolguard shield/)).toBeTruthy();
  view.rerender(<Codex v4 skillsV5/>);
  fireEvent.click(screen.getByRole('button',{name:'enemies'}));
- expect(screen.getByText('Every third round restores 65 HP to the most injured foe.')).toBeTruthy();
+ expect(screen.getByText('Restores 35 HP on basics and 65 HP on signatures to wounded front allies first.')).toBeTruthy();
  expect(screen.queryByText(/66% HP: woolguard shield/)).toBeNull();
 });
 

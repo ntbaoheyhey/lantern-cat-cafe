@@ -4,10 +4,10 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {chromium,config,openFixture} from '../v3feel/browser-fixture.mjs';
-const root=resolve(import.meta.dirname,'../..'),mode='check';
+const root=resolve(import.meta.dirname,'../..'),mode=process.env.V4_PARITY_MODE??'check';
 if(!['old','new','check','probe'].includes(mode))throw Error('Use old, new, check, or probe');
-const output=resolve(root,process.env.V4_PARITY_OUTPUT ?? 'reports/v4-ship/S0/parity.json');
-if(mode!=='check'&&existsSync(output))throw Error('Never overwrite a parity baseline');
+const output=resolve(root,process.env.V4_PARITY_OUTPUT ?? 'reports/v4-ship/current-parity.json');
+if(['old','new'].includes(mode)&&existsSync(output))throw Error('Never overwrite a parity baseline');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']}),rows=[];
 try{for(const fixture of config.fixtures){
  const {page,errors}=await openFixture(browser,fixture,{url:process.env.V4_BASE_URL??'http://127.0.0.1:5994'});
@@ -28,10 +28,10 @@ try{for(const fixture of config.fixtures){
  const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
  const row={fixture:fixture.id,durationMs:data.durationMs,result:data.result,actions:data.actions,hash:hash(data.actual),expectedHash:hash(data.expected),parity:data.parity,errors};rows.push(row);await page.close();console.log(`${fixture.id}: ${row.result}, ${(row.durationMs/1000).toFixed(3)}s, ${row.actions.length} plans, ${row.hash}, parity=${row.parity}`);
 }}finally{await browser.close();}
-const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),reason:mode==='new'?'user decision F6':mode==='old'?'Unchanged demo before F6':'Compare against new F6 baseline',rows};
+const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),reason:mode==='new'?'U10 class-only healer rules and Yarn Giant HP correction; LEARN/S2b.md and DECISIONS-SHIP.md':mode==='old'?'Unchanged demo before F6':'Compare against new F6 baseline',rows};
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 if(rows.some(r=>!r.parity||r.errors.length||r.result!=='party'))process.exitCode=1;
 if(mode==='check'){
- const baseline=JSON.parse(readFileSync(resolve(root,process.env.V4_PARITY_BASELINE ?? 'reports/v3-feel/parity-new.json'),'utf8'));
+ const baseline=JSON.parse(readFileSync(resolve(root,process.env.V4_PARITY_BASELINE ?? (existsSync(resolve(root,'reports/v4-ship/S2b/parity-classes.json'))?'reports/v4-ship/S2b/parity-classes.json':'reports/v3-feel/parity-new.json')),'utf8'));
  if(rows.some(r=>baseline.rows.find(b=>b.fixture===r.fixture)?.hash!==r.hash))throw Error('New F6 parity baseline mismatch');
 }

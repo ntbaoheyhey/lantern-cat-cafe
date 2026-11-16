@@ -23,16 +23,17 @@ function setup(id: string, gameplayV4: boolean, signature: boolean, control: 'hu
 
 describe('Hush reports only an action it actually suppresses', () => {
   for (const id of ['teacup-healer', 'button-guard', 'pollen-scout', 'yarn-giant', 'pantry-crown']) {
-    it.each([false, true])(`${id} basic turn, V4=%s: no control credit or Lantern heal`, gameplayV4 => {
+    it.each([false, true])(`${id} basic turn, V4=%s: only a healer has utility to suppress`, gameplayV4 => {
       const { battle, enemy, controller } = setup(id, gameplayV4, false, 'hush');
       const offset = battle.log.length, hp = controller.hp;
       expect(R.enemyAct(battle)).toBe(true);
       const events = battle.log.slice(offset);
-      expect(events.some(event => event.kind === 'suppressed')).toBe(false);
-      expect(events.some(event => event.kind === 'heal' && event.actorId === controller.id)).toBe(false);
-      expect(controller.hp).toBe(hp);
-      expect(controller.bonuses.crewSuppressed).toBeUndefined();
-      expect(events.some(event => event.actorId === enemy.id && ['damage', 'absorbed'].includes(event.kind))).toBe(true);
+      const healer=id==='teacup-healer',credited=healer&&gameplayV4;
+      expect(events.some(event => event.kind === 'suppressed')).toBe(healer);
+      expect(events.some(event => event.kind === 'heal' && event.actorId === controller.id)).toBe(credited);
+      expect(controller.hp).toBe(hp+(credited?8:0));
+      expect(controller.bonuses.crewSuppressed).toBe(credited?1:undefined);
+      expect(events.some(event => event.actorId === enemy.id && ['damage', 'absorbed'].includes(event.kind))).toBe(!healer);
     });
 
     it(`${id} signature: credits a real suppression exactly once`, () => {
@@ -51,7 +52,7 @@ describe('Hush reports only an action it actually suppresses', () => {
   }
 
   it.each([false, true])('Drowsy still weakens an attack and earns Lantern credit, signature=%s', signature => {
-    const { battle, enemy, controller } = setup('teacup-healer', true, signature, 'drowsy');
+    const { battle, enemy, controller } = setup('button-guard', true, signature, 'drowsy');
     const offset = battle.log.length;
     expect(R.enemyAct(battle)).toBe(true);
     const events = battle.log.slice(offset);
@@ -61,7 +62,7 @@ describe('Hush reports only an action it actually suppresses', () => {
   });
 
   it('does not consume Lantern credit before a real utility signature', () => {
-    const { battle, enemy, controller } = setup('teacup-healer', true, false, 'hush');
+    const { battle, enemy, controller } = setup('button-guard', true, false, 'hush');
     const hp = controller.hp;
     expect(R.enemyAct(battle)).toBe(true);
     expect(controller.hp).toBe(hp);

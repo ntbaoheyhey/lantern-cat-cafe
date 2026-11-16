@@ -104,7 +104,7 @@ export function statusDescriptionV4(id: string): string {
 export function enemyGuideV4(id: string): { intent: string; counter: string; exception: string } {
   const enemy = ENEMY_BY_ID[id]!;
   const byMechanic: Record<string, { intent: string; counter: string; exception: string }> = {
-    heal: { intent: 'Every third round restores 65 HP to the most injured foe.', counter: 'Hush prevents the refill; focus support before its next signature.', exception: 'Basic pressure between refills' },
+    heal: { intent: 'Restores 35 HP on basics and 65 HP on signatures to wounded front allies first.', counter: 'Hush prevents the refill; focus support before its next signature.', exception: 'Never deals damage; suppression spends the turn' },
     shield: { intent: 'Every third round grants 45 shield to its row.', counter: 'Hush prevents the brace; Brittle strips its shield.', exception: 'Basic pressure between braces' },
     steal: { intent: 'Reaches a rear cat and removes 6 shield.', counter: 'Cover the vulnerable rear cat with healing or a decoy.', exception: 'Rear reach bypasses cover' },
     snare: { intent: 'Knots weaken the most injured reachable cat.', counter: 'Cleanse Tangle or focus the small thread.', exception: 'Front row while it lives' },

@@ -35,9 +35,9 @@ it('does not promise a third-round signature for rage-driven enemies',()=>{
 it('explains the healer refill on an odd round when rage is ready',()=>{
  const regular=encounter('teacup-healer',1,0),ready=encounter('teacup-healer',1,100);
  for(const f of [regular,ready]){f.foe.hp-=200;expect(R.enemyAct(f.battle)).toBe(true);}
- expect(regular.battle.log.some(e=>e.kind==='heal'&&e.actorId===regular.foe.id)).toBe(false);
+ expect(regular.battle.log.some(e=>e.kind==='heal'&&e.actorId===regular.foe.id&&e.amount===35)).toBe(true);
  expect(ready.battle.log.some(e=>e.kind==='heal'&&e.actorId===ready.foe.id)).toBe(true);
- expect(enemyGuideA6('teacup-healer').intent).toContain('even rounds or at full rage');
+ expect(enemyGuideA6('teacup-healer').intent).toContain('35 HP per basic, 65 HP at full rage');
 });
 
 it('describes Daze as a replacement hit rather than a skipped boss action',()=>{

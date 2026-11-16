@@ -6,7 +6,7 @@ afterEach(cleanup);
 it('includes skill-specific statuses alongside the eight core statuses without duplicate aliases',()=>{
  render(<FieldGuideA6 v4 skillsV5/>);
  const index=screen.getByRole('navigation',{name:'keywords index'});
- expect(within(index).getAllByRole('button')).toHaveLength(19);
+ expect(within(index).getAllByRole('button')).toHaveLength(22);
  for(const name of ['Crumb trail','Glaze','Shelter','Saucer riposte','Apron link','Second sprout','Yarn decoy']){
   fireEvent.click(within(index).getByRole('button',{name}));
   expect(screen.getByRole('region',{name:name+' field note'})).toBeTruthy();
@@ -31,7 +31,7 @@ it('finds current effects by historical names and recovers an empty search with 
  expect(screen.getByRole('heading',{name:'No notes found.'})).toBeTruthy();
  fireEvent.click(screen.getByRole('button',{name:'Clear search'}));
  expect(document.activeElement).toBe(search);expect((search as HTMLInputElement).value).toBe('');
- expect(within(screen.getByRole('navigation',{name:'keywords index'})).getAllByRole('button')).toHaveLength(19);
+ expect(within(screen.getByRole('navigation',{name:'keywords index'})).getAllByRole('button')).toHaveLength(22);
 });
 
 it('explains actual reaction triggers, stack consumption and limits without requiring a named crew',()=>{
@@ -52,7 +52,7 @@ it('explains actual reaction triggers, stack consumption and limits without requ
 it('keeps the historical catalogue when the current skills mode is disabled',()=>{
  render(<FieldGuideA6 v4 skillsV5={false}/>);
  const index=screen.getByRole('navigation',{name:'keywords index'});
- expect(within(index).getAllByRole('button')).toHaveLength(16);
+ expect(within(index).getAllByRole('button')).toHaveLength(19);
  fireEvent.click(within(index).getByRole('button',{name:'Tangle'}));
  expect(screen.getByText('Direct attack falls by 4% per stack.')).toBeTruthy();
  expect(within(index).queryByRole('button',{name:'Wildfire'})).toBeNull();

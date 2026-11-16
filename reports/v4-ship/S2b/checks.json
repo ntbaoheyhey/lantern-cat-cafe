@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-16T06:25:57.989015+00:00",
+  "sourceHeadBeforeCheckpoint": "546399ba72d641f1479d9ec85472870bfe9563b3",
+  "rules": {
+    "pass": true,
+    "passed": 1409,
+    "expectedFailures": 2,
+    "skipped": 11
+  },
+  "web": {
+    "pass": false,
+    "passed": 2633,
+    "failed": 7,
+    "failuresOwnedBy": "ART",
+    "files": [
+      "spine/cat-presentation.test.ts",
+      "spine/outcome-labels.test.ts"
+    ],
+    "request": "REQUESTS-TO-ART.md"
+  },
+  "server": {
+    "pass": true,
+    "passed": 733
+  },
+  "typecheck": {
+    "pass": true
+  },
+  "build": {
+    "pass": true
+  },
+  "economyToolTests": {
+    "pass": true,
+    "passed": 20
+  },
+  "ui": {
+    "bothDesktopSizes": true,
+    "minimumBadgeContrast": 11.13248188758298,
+    "badgeOverflow": 0,
+    "pageErrors": 0,
+    "source": "S2b/ui/checks.json"
+  },
+  "parity": {
+    "probeOnly": true,
+    "passed": 3,
+    "source": "S2b/parity-probe.json",
+    "newBaselineRecorded": false
+  },
+  "balance": {
+    "source": "S2b/production-holdout.json",
+    "firstLossMedianMinutes": 19.653908333333334,
+    "bossMedianSeconds": 95.01666666666667,
+    "bossP90Seconds": 108.9,
+    "fixtureWins": 300,
+    "fixtureCases": 300,
+    "healerDamage": 0,
+    "method": "Current C2 scheduler/public policy; modeled loading and decision budgets, not human timings"
+  },
+  "economy": {
+    "nativeCohort": "running CLASS-FINAL-200 PID5004",
+    "E3E4E5": "open; historical integrity24/24 is not a post-class pass",
+    "retentionConflict": "REV2 requires25%; frozen policy uses15%; unchanged"
+  },
+  "gates": {
+    "G-CLASS": "OPEN",
+    "G-REG": "FAIL7ART-ownedwebtests"
+  },
+  "logs": {
+    "S2b/rules-tests.log": {
+      "sha256": "6d2983edf75ba597c7201b23cd56eedf16d995fdf8bffcca5e91df6ded53635b"
+    },
+    "S2b/web-tests.log": {
+      "sha256": "94118ffd0c361ed6605a5ea351d5b7e10d6c9ad66b61e541809c1adfdf04c7c4"
+    },
+    "S2b/server-tests.log": {
+      "sha256": "25caa7e9e4639ed48d21c4506d04ef5d9982aa39745c7c95841311803888448b"
+    },
+    "S2b/typecheck.log": {
+      "sha256": "ead8a490e3436e2de0837ab3256778ef795c7b784afe63f5bb6f9c0817b68825"
+    },
+    "S2b/build.log": {
+      "sha256": "80e22189f414870c40229e6b4725ffe1b88de4a810f02778e40819b6ad8f6b90"
+    },
+    "S2b/economy-tools.log": {
+      "sha256": "0b8e4c0e16799febb31cc3d450fb2642c18da308c1932428db2edbe8ae47b516"
+    }
+  }
+}

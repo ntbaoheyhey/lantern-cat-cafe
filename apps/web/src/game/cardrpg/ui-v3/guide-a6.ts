@@ -49,7 +49,7 @@ const enemyNotesA6: Record<string, { intent: string; counter: string }> = {
     counter: 'Warm and team shields soften repeated hits.',
   },
   'teacup-healer': {
-    intent: 'Heals its weakest ally on even rounds or at full rage. Other turns hit and Mark a cat; its first action also grants itself Regen.',
+    intent: 'Heals wounded front allies first: 35 HP per basic, 65 HP at full rage. Never attacks.',
     counter: 'Bitter halves healing and shielding. Mark lets your crew reach it through the front row.',
   },
   'kettle-knight': {

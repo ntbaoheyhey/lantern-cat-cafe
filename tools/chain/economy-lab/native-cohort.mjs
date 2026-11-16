@@ -8,16 +8,16 @@ import {freezeModel} from './freeze.mjs';
 const args=process.argv.slice(2),arg=(k,d)=>args.includes('--'+k)?args[args.indexOf('--'+k)+1]:d;
 const label=arg('label','CANDIDATE'),seeds=Number(arg('seeds',40)),workers=Number(arg('workers',6)),firstSeed=Number(arg('first-seed',90001));
 if(!/^[A-Za-z0-9_-]+$/.test(label)||![seeds,workers,firstSeed].every(n=>Number.isSafeInteger(n)&&n>0))throw Error('Invalid cohort arguments');
-const B=resolve(root,'reports/v3-shell/b2/econ'),out=resolve(B,`${label}.json`);mkdirSync(B,{recursive:true});
+const B=resolve(root,process.env.ECONOMY_EVIDENCE_DIR??'reports/v3-shell/b2/econ'),out=resolve(B,`${label}.json`);mkdirSync(B,{recursive:true});
 if(existsSync(out)&&!args.includes('--replace'))throw Error('Preserve measured cohorts; choose a new label');
 const started=performance.now(),runtime=await loadLabRuntime(resolve(root,'work/economy-lab/native-runtime-'+label));
 const config=arg('config')?JSON.parse(readFileSync(resolve(root,arg('config')))):structuredClone(runtime.ECONOMY_LAB);
-const frozen=freezeModel('native-'+label,runtime.runtimePath,{native:true});
+const frozen=freezeModel('native-'+label,runtime.runtimePath,{native:true,evidenceDirectory:B});
 const configHash=hashConfig(config),sourceFiles=['tools/chain/economy-lab/cohort.mjs','packages/game-rules/src/cardrpg/economy-v3.ts','packages/game-rules/src/cardrpg/economy-lab.ts','packages/game-rules/src/cardrpg/depth/economy-c2.ts'].map(path=>({path,sha256:sha(resolve(root,path))}));
 const queue=config.profiles.flatMap(profile=>Array.from({length:seeds},(_,i)=>({profile:profile.id,seed:firstSeed+i}))),bank=[],active=[];let next=0,cpu=0;
 try{await Promise.all(Array.from({length:Math.min(workers,queue.length)},()=>new Promise((accept,reject)=>{
  const worker=new Worker(frozen.worker,{workerData:{runtimePath:runtime.runtimePath,config}});active.push(worker);
- const dispatch=()=>{if(existsSync(resolve(root,'STOP-V3B'))){reject(Error('STOP-V3B requested'));return;}const job=queue[next++];if(job)worker.postMessage(job);else{void worker.terminate();accept();}};
+ const dispatch=()=>{if(existsSync(resolve(root,process.env.ECONOMY_STOP_FILE??'STOP-V3B'))){reject(Error('STOP-V3B requested'));return;}const job=queue[next++];if(job)worker.postMessage(job);else{void worker.terminate();accept();}};
  worker.on('error',reject);worker.on('message',row=>{if(row.error){reject(Error(row.error));return;}bank.push(row.report);cpu+=row.elapsedSeconds;if(bank.length%25===0)console.log(`${label}: ${bank.length}/${queue.length}, ${((performance.now()-started)/1000).toFixed(1)}s`);dispatch();});dispatch();
 })));}finally{await Promise.all(active.map(w=>w.terminate()));}
 bank.sort((a,b)=>a.profile.localeCompare(b.profile)||a.seed-b.seed);

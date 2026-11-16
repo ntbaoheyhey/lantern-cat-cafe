@@ -1,6 +1,7 @@
 export * from './formation-c2';
 export * from './economy-c2';
 export * from './contract';
+export * from './combat-class';
 export * from './catalog';
 export * from './state';
 export * from './battle';

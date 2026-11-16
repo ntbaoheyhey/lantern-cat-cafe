@@ -1,6 +1,6 @@
 # Class implementation plan — selected front35 implementation
 
-Research and current matrix: LEARN/S2b.md, S2b/current-matrix.json, S2b/selected-holdout.json. Product unchanged until the baseline completes.
+Research and current matrix: LEARN/S2b.md, S2b/current-matrix.json, S2b/selected-holdout.json. Production implementation follows the completed S2 baseline; validation remains open.
 
 - Add a required CombatClass union to Cat, Enemy and runtime Actor, with catalog mapping independent of existing role/flavour/crew. Preserve all non-healer identities and stable action clocks.
 - Rebuild all healer basics and Marigold's offensive active skill as allied healing/protection; strip hostile and non-restorative effects from all healer modes, not only the V5 overlay. Retain revive as restoration. Teacup must never fall through to a damage basic when suppressed or impaired.

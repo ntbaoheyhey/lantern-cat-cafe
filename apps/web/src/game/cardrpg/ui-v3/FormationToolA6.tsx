@@ -1,3 +1,4 @@
+import { CombatClassBadge } from './CombatClassBadge';
 import {GameIcon} from '../../../ui/GameIcon';
 import {useEffect,useRef,type ReactNode} from 'react';
 import {artPropsA6} from './art-a6';
@@ -29,5 +30,5 @@ export function FormationToolA6({title,catId,onClose,children}:{title:string;cat
 }
 
 export function FormationTrioA6({ids,rows}:{ids:string[];rows:Record<string,string>}) {
- return <span className="a6-formation-trio">{ids.map(id=><span key={id}><img {...artPropsA6(id)} alt=""/><b>{CAT_BY_ID[id]!.name}</b><small>{rows[id]==='front'?'Front':'Back'}</small></span>)}</span>;
+ return <span className="a6-formation-trio">{ids.map(id=><span key={id}><img {...artPropsA6(id)} alt=""/><b>{CAT_BY_ID[id]!.name}</b><CombatClassBadge combatClass={CAT_BY_ID[id]!.combatClass}/><small>{rows[id]==='front'?'Front':'Back'}</small></span>)}</span>;
 }

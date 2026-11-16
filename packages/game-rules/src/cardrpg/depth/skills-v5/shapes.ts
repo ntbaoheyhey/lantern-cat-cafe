@@ -1,3 +1,4 @@
+import { healerPatient } from '../combat-class';
 import { FORMATION_C2 } from '../formation-c2';
 import {emitGameplayEvent} from '../events-v4';
 import type { Actor, Battle, Effect, Skill } from '../contract';
@@ -28,8 +29,8 @@ export function landingsV5(b: Battle, actor: Actor, main: Actor, shape: ShapeV5,
   const one = (target: Actor | undefined, multiplier = 1): LandingV5[] => target ? [{target, multiplier}] : [];
   switch (shape) {
     case 'self': return one(actor);
-    case 'weakest': return one(weakestV5(allies));
-    case 'ally-splash': {const patient=weakestV5(allies);return patient?[...one(patient),...adjacentV5(b,patient).map(target=>({target,multiplier:.4}))]:[];}
+    case 'weakest': return one((actor.combatClass==='healer'?healerPatient(allies):weakestV5(allies)));
+    case 'ally-splash': {const patient=(actor.combatClass==='healer'?healerPatient(allies):weakestV5(allies));return patient?[...one(patient),...adjacentV5(b,patient).map(target=>({target,multiplier:.4}))]:[];}
     case 'team': return allies.map(target => ({target, multiplier:1}));
     case 'ally-row': return allies.filter(t => t.row === main.row).map(target => ({target, multiplier:1}));
     case 'row': return foes.filter(t => t.row === main.row).map(target => ({target, multiplier:b.initial.formationC2?FORMATION_C2.rowMultiplier:.6}));
@@ -69,7 +70,7 @@ export function executeShapeV5(b: Battle, actor: Actor, main: Actor, skill: Skil
   if(targets.length&&['splash','multi-hit','bounce','row','all','team','ally-row','ally-splash'].includes(shape))emitGameplayEvent(b,{kind:'multi-hit',actorId:actor.id,skillId:skill.id,shape,targets,text:`${actor.name}: ${skill.name} reaches ${targets.length} landings.`});
   if (actor.hp <= 0) return;
   for (const effect of once) {
-    const recipients = effect.self ? [actor] : effect.recipient === 'weakest' ? [weakestV5(alive(b,actor.side))] : effect.recipient === 'team' ? alive(b,actor.side) : [main];
+    const recipients = effect.self ? [actor] : effect.recipient === 'weakest' ? [actor.combatClass==='healer'?healerPatient(alive(b,actor.side)):weakestV5(alive(b,actor.side))] : effect.recipient === 'team' ? alive(b,actor.side) : [main];
     for (const target of recipients) if (target) io.effect(b,actor,target,effect,skill);
   }
 }

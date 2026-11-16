@@ -1,8 +1,12 @@
-# Bản SHIP V4
-
-Đã đo20lượt trên hai kích thước màn hình. Vào trận khoảng3giây,3lần bấm; chưa có lượt nào đi hết đường demo.
-Sau phần thưởng đầu tiên vẫn thiếu vật phẩm on-chain để niêm phong/hợp nhất; chưa có biên nhận.
-Giới hạn cấp gas của máy chủ cục bộ gây lỗi429trong loạt thử; giữ nguyên lỗi trong báo cáo.
-Đã chọn phương án healer qua100hạt giống độc lập: không gây sát thương; boss trung vị95giây. Đang triển khai và kiểm tra.
-Quét lịch sử git còn chạy; chưa khẳng định kho an toàn để công khai.
-Không triển khai web/hợp đồng, không sửa main. Việc cần bạn làm nằm trong NEEDS-USER-VI.md.
+# V4 SHIP
+- Đã thêm ba lớp: cận chiến, đánh xa, hồi phục cho toàn bộ mèo và địch.
+- Nhân vật hồi phục không gây sát thương; tên lớp có trên thẻ, đội hình và chi tiết.
+- Kiểm tra luật:1409đạt; máy chủ:733đạt; typecheck và build đạt.
+- Web:2633đạt,7lỗi thuộc bài kiểm tra trình diễn của ART; đã ghi yêu cầu phối hợp.
+- Hai cỡ desktop có nhãn lớp rõ, tương phản11,13:1, không tràn nhãn.
+- Mô phỏng: thua lần đầu trung vị19,65phút; boss95,02giây, p90108,9giây. Đây không phải thời gian người chơi thật.
+- Đang chạy lại kinh tế sau đổi lớp; chưa chốt baseline mới.
+- Luồng hiện tại vẫn chưa hoàn thành bước giao dịch đầu tiên và các bước sau.
+- Phát hiện mâu thuẫn: lệnh yêu cầu giữ25%Spool, bản kinh tế đã chốt dùng15%; chưa tự sửa.
+- Quét phần thay đổi không có cảnh báo chưa xử lý; lịch sử git vẫn đang quét.
+- Chưa deploy, chưa merge main. Việc cần người dùng ở NEEDS-USER-VI.md.

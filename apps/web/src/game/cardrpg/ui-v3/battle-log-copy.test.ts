@@ -40,13 +40,13 @@ it('names repeated enemies independently, including fallen helpers, without chan
  expect(battleLogCopy(b,event(b,'status',1,'Mark',{targetId:threads[1]!.id})).context).toBe('Mochi → Binding Thread 2');
  expect(b).toEqual(before);
 });
-it('does not label an enemy support summary with its unused attack planning target',()=>{
+it('keeps the enemy support summary concise while recording the actual patient',()=>{
  const b=R.createBattle({...fixture().initial,enemies:['teacup-healer','button-guard']});
  const healer=b.actors.find(a=>a.catalogId==='teacup-healer')!,patient=b.actors.find(a=>a.catalogId==='button-guard')!;
  patient.hp=20;healer.charge=100;b.queue=[healer.id];b.intents.find(i=>i.actorId===healer.id)!.signature=true;
  expect(R.enemyAct(b)).toBe(true);
  const heal=b.log.find(e=>e.kind==='heal'&&e.actorId===healer.id)!,action=b.log.find(e=>e.kind==='enemy-action')!;
- expect(heal.targetId).toBe(patient.id);expect(action.targetId).not.toBe(patient.id);
+ expect(heal.targetId).toBe(patient.id);expect(action.targetId).toBe(patient.id);
  expect(battleLogCopy(b,heal)).toEqual({context:'Teacup Healer → Button Guard',summary:`Restored ${heal.amount} HP`});
  expect(battleLogCopy(b,action).context).toBe('Teacup Healer');
 });

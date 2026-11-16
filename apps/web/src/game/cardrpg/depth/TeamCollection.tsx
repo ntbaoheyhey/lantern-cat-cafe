@@ -1,3 +1,4 @@
+import { CombatClassBadge } from '../ui-v3/CombatClassBadge';
 import { CatKitV5, ComboHintsV5, KeywordGuideV5 } from './SkillsV5';
 import { ShiftLoadouts } from './EquipmentV4';
 import { useRef, useState } from 'react';
@@ -132,7 +133,7 @@ export function Collection({ m }: { m: DepthModel }) {
         {!cards.length && <p>No companions match these filters.</p>}
       </div>
       <section className="cr-panel dp-detail" ref={detail}>
-        <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {v4 ? R.CAT_CREWS[cat.id]!.map(job => R.CREW_JOBS.find(c => c.id === job)!.name).join(' / ') : cat.flavour}</small><h2>{cat.name}</h2></header>
+        <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {v4 ? R.CAT_CREWS[cat.id]!.map(job => R.CREW_JOBS.find(c => c.id === job)!.name).join(' / ') : cat.flavour}</small><h2>{cat.name}</h2><CombatClassBadge combatClass={cat.combatClass}/></header>
         {R.skillsV5(m.state)&&<CatKitV5 catId={cat.id}/>}
         {v4 && <p data-companion-specialty={cat.id}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[cat.id]}</p>}
         {owned ? <>

@@ -1,3 +1,4 @@
+import { ROLE_COMBAT_CLASS } from './combat-class';
 import { NEW_STATUS_RULES_V5 } from './skills-v5/statuses';
 import { CARDS as LEGACY_CARDS } from '../catalog';
 import type { Cat, CatRole, Effect, Enemy, Flavour, Row, Skill, SkillType, StatusRule, TargetRule } from './contract';
@@ -40,7 +41,7 @@ const specs: Record<string, SkillSpec[]> = {
     ['Midnight service','ultimate','foes',2,3,2,[{kind:'hit',power:125},{kind:'detonate',power:125},{kind:'rally',status:'hush'}],'Detonate every enemy and quiet utility intents.'],
   ],
   clover: [
-    ['Leaf tap','attack','foe',0,0,1,[{kind:'hit',power:80},{kind:'heal',power:18,self:true}],'Tap a foe and tend your own scratches.'],
+    ['Leaf tap','support','ally',0,0,0,[{kind:'heal',power:35}],'Restore 35 HP to a wounded ally.'],
     ['Patient steep','support','ally',1,0,0,[{kind:'heal',power:35},{kind:'rally',status:'steep'}],'Give a small heal and three rounds of Steep.'],
     ['Clearleaf rinse','support','allies',2,2,0,[{kind:'cleanse'},{kind:'heal',power:45}],'Remove every dispellable debuff and heal all allies.'],
     ['Greenhouse morning','ultimate','allies',2,3,0,[{kind:'heal',power:90},{kind:'rally',status:'sprout'}],'Heal the table and protect each ally from one fatal hit.'],
@@ -76,7 +77,7 @@ const specs: Record<string, SkillSpec[]> = {
     ['Dreaming canopy','ultimate','foes',2,3,2,[{kind:'hit',power:65},{kind:'rally',status:'drowsy'},{kind:'rally',status:'tangle',stacks:2}],'Soften signatures and prepare every foe for a break.'],
   ],
   cinnamon: [
-    ['Spice pinch','attack','foe',0,0,1,[{kind:'hit',power:75},{kind:'drain',power:40}],'Turn part of a hit into self-healing.'],
+    ['Spice pinch','support','ally',0,0,0,[{kind:'heal',power:35}],'Restore 35 HP to a wounded ally.'],
     ['Comfort cup','support','ally',1,0,0,[{kind:'heal',power:80},{kind:'rally',status:'cozy'}],'Immediate care with a protective aftertaste.'],
     ['Clean apron','support','ally',2,1,0,[{kind:'cleanse'},{kind:'shield',power:85},{kind:'rally',status:'steep'}],'Cleanse, shield and slowly mend one patient.'],
     ['Second serving','ultimate','fallen',2,4,0,[{kind:'revive',power:40}],'Bring one fallen ally back at 40% HP once per battle.'],
@@ -94,10 +95,10 @@ const specs: Record<string, SkillSpec[]> = {
     ['Velvet curtain','ultimate','foe',2,3,3,[{kind:'execute',power:210},{kind:'rally',status:'decoy',self:true}],'Execute a weakened target and vanish behind a decoy.'],
   ],
   marigold: [
-    ['Seed stitch','attack','foe',0,0,1,[{kind:'hit',power:65},{kind:'rally',status:'steep',self:true}],'Plant slow healing while helping the offense.'],
+    ['Seed stitch','support','ally',0,0,0,[{kind:'heal',power:35}],'Restore 35 HP to a wounded ally.'],
     ['Garden bell','support','allies',1,0,0,[{kind:'heal',power:24},{kind:'rally',status:'steep'}],'Start a patient team-wide recovery.'],
-    ['Spring pruning','control','foe',2,2,1,[{kind:'dispel'},{kind:'rally',status:'scald',stacks:2},{kind:'rally',status:'crumb',stacks:2}],'Prune buffs and seed two kinds of delayed damage.'],
-    ['First tea blossom','ultimate','allies',2,3,0,[{kind:'cleanse'},{kind:'heal',power:110},{kind:'energy',power:2}],'Clear the team, restore health and refill the pot.'],
+    ['Spring pruning','support','ally',2,2,0,[{kind:'cleanse'},{kind:'shield',power:45}],'Cleanse an ally and grant 45 shield.'],
+    ['First tea blossom','ultimate','allies',2,3,0,[{kind:'cleanse'},{kind:'heal',power:110}],'Clear the team and restore health.'],
   ],
 };
 const identities: Array<[string, CatRole, Flavour, Row, string[], string, string]> = [
@@ -115,7 +116,7 @@ const identities: Array<[string, CatRole, Flavour, Row, string[], string, string
   ['marigold','healer','garden','rear',['garden','brew'],'First leaf','Steep on this cat lasts one extra round.'],
 ];
 export const CATS: Cat[] = identities.map(([id, role, flavour, row, tags, passiveName, description]) => ({
-  id, name: LEGACY_CARDS.find(c => c.id === id)!.name, role, flavour, row, tags,
+  id, name: LEGACY_CARDS.find(c => c.id === id)!.name, role, combatClass: ROLE_COMBAT_CLASS[role], flavour, row, tags,
   passive: { id: `${id}-passive`, name: passiveName, description },
   skills: specs[id]!.map(([name,type,target,cost,cooldown,breakPower,effects,description], index): Skill => ({
     id: `${id}-${index + 1}`, catId: id, name, type, target, cost, cooldown, breakPower, effects, description,
@@ -132,18 +133,18 @@ export const TEAM_COMBOS = [
 export const teamCombos = (ids: string[]) => TEAM_COMBOS.filter(c => c.tags.every(tag => ids.some(id => CAT_BY_ID[id]?.tags.includes(tag))));
 
 export const ENEMIES: Enemy[] = [
-  {id:'button-guard',name:'Button Guard',role:'guard',flavour:'garden',row:'front',tier:'regular',hp:480,attack:19,defense:18,breakCap:4,mechanic:'shield',intent:'Button brace grants shields to its row.',counter:'Hush stops the brace. Brittle strips shield faster.',phases:[],chapter:1},
-  {id:'sock-skipper',name:'Sock Skipper',role:'flanker',flavour:'ember',row:'rear',tier:'regular',hp:701,attack:22,defense:8,breakCap:3,mechanic:'steal',intent:'Pocket skip steals 1 shared energy and hits the rear.',counter:'Break it before its turn or lure it with Shelter.',phases:[],chapter:1},
-  {id:'spool-ram',name:'Spool Ram',role:'charger',flavour:'moon',row:'front',tier:'elite',hp:1050,attack:30,defense:16,breakCap:5,mechanic:'charge',intent:'Every third round charges a double-power front-row sweep.',counter:'Fill break to interrupt. Defend reduces the sweep.',phases:[],chapter:1},
-  {id:'needle-moth',name:'Needle Moth',role:'ranger',flavour:'tide',row:'rear',tier:'regular',hp:659,attack:17,defense:6,breakCap:3,mechanic:'dot',intent:'Needle rain applies Scald to the rear row.',counter:'Cleanse Scald or interrupt with Drowsy.',status:'scald',phases:[],chapter:1},
-  {id:'teacup-healer',name:'Teacup Healer',role:'healer',flavour:'garden',row:'rear',tier:'regular',hp:765,attack:14,defense:10,breakCap:3,mechanic:'heal',intent:'Refills the most wounded ally by 65 HP.',counter:'Apply Hush or reach the rear with a Scented mark.',phases:[],chapter:1},
-  {id:'kettle-knight',name:'Kettle Knight',role:'elite',flavour:'ember',row:'front',tier:'elite',hp:1190,attack:25,defense:35,breakCap:6,mechanic:'reflect',intent:'Reflects 12 damage per hit while its shield holds.',counter:'Dispel Cozy, apply Brittle, then break its shield.',phases:[],chapter:2},
-  {id:'yarn-giant',name:'Yarn Giant',role:'yarn',flavour:'garden',row:'front',tier:'boss',hp:2870,attack:32,defense:22,breakCap:7,mechanic:'bind',intent:'Every third round Loomfall sweeps the front and Tangled threads appear.',counter:'Hearth hits add break. Break before Loomfall, cleanse Tangle.',status:'tangle',phases:['Winding','At 50% HP, Loomfall also reaches the rear'],chapter:1},
-  {id:'binding-thread',name:'Binding Thread',role:'thread',flavour:'moon',row:'rear',tier:'regular',hp:383,attack:10,defense:0,breakCap:2,mechanic:'snare',intent:'Knots apply Tangle to the weakest cat.',counter:'Clear the small thread or cleanse the knot.',status:'tangle',phases:[],chapter:1},
-  {id:'practice-cushion',name:'Practice Cushion',role:'dummy',flavour:'garden',row:'front',tier:'regular',hp:230,attack:14,defense:0,breakCap:3,mechanic:'lesson',intent:'A gentle third-round bump teaches a break interrupt.',counter:'Two Hearth hits and a break skill stop the bump.',phases:[],chapter:1},
-  {id:'pollen-scout',name:'Pollen Scout',role:'ranger',flavour:'tide',row:'rear',tier:'elite',hp:945,attack:22,defense:10,breakCap:5,mechanic:'summon',intent:'Every third round plants a Binding Thread, up to two.',counter:'Hush prevents planting. Defeat threads before they multiply pressure.',phases:[],chapter:2},
-  {id:'rain-spool',name:'Rain Spool',role:'charger',flavour:'ember',row:'front',tier:'boss',hp:3675,attack:58,defense:24,breakCap:8,mechanic:'storm',intent:'Every third round Cloudburst washes shields away before a row hit.',counter:'Tide adds break. Use Steep and healing instead of stacking shields.',status:'rattled',phases:['Collecting rain','At 50% HP, Cloudburst targets both rows'],chapter:2},
-  {id:'crumb-sentinel',name:'Crumb Sentinel',role:'guard',flavour:'moon',row:'front',tier:'elite',hp:1260,attack:27,defense:22,breakCap:6,mechanic:'bomb',intent:'Every third round Sugar burst detonates Crumb trails on cats.',counter:'Cleanse Crumb trails before the signature, or break the sentinel.',status:'crumb',phases:[],chapter:3},
-  {id:'pantry-crown',name:'Pantry Crown',role:'yarn',flavour:'tide',row:'rear',tier:'boss',hp:4270,attack:60,defense:25,breakCap:9,mechanic:'banquet',intent:'Every third round Empty banquet drains energy and silences the table.',counter:'Garden adds break. Reserve energy and cleanse Hush.',status:'hush',phases:['Counting cups','At 50% HP, signatures summon a Binding Thread'],chapter:3},
+  {id:'button-guard',name:'Button Guard',role:'guard',combatClass:'melee',flavour:'garden',row:'front',tier:'regular',hp:480,attack:19,defense:18,breakCap:4,mechanic:'shield',intent:'Button brace grants shields to its row.',counter:'Hush stops the brace. Brittle strips shield faster.',phases:[],chapter:1},
+  {id:'sock-skipper',name:'Sock Skipper',role:'flanker',combatClass:'melee',flavour:'ember',row:'rear',tier:'regular',hp:701,attack:22,defense:8,breakCap:3,mechanic:'steal',intent:'Pocket skip steals 1 shared energy and hits the rear.',counter:'Break it before its turn or lure it with Shelter.',phases:[],chapter:1},
+  {id:'spool-ram',name:'Spool Ram',role:'charger',combatClass:'melee',flavour:'moon',row:'front',tier:'elite',hp:1050,attack:30,defense:16,breakCap:5,mechanic:'charge',intent:'Every third round charges a double-power front-row sweep.',counter:'Fill break to interrupt. Defend reduces the sweep.',phases:[],chapter:1},
+  {id:'needle-moth',name:'Needle Moth',role:'ranger',combatClass:'ranged',flavour:'tide',row:'rear',tier:'regular',hp:659,attack:17,defense:6,breakCap:3,mechanic:'dot',intent:'Needle rain applies Scald to the rear row.',counter:'Cleanse Scald or interrupt with Drowsy.',status:'scald',phases:[],chapter:1},
+  {id:'teacup-healer',name:'Teacup Healer',role:'healer',combatClass:'healer',flavour:'garden',row:'rear',tier:'regular',hp:765,attack:14,defense:10,breakCap:3,mechanic:'heal',intent:'Heals a wounded ally: 35 HP basic, 65 HP at full rage.',counter:'Apply Hush or reach the rear with a Scented mark.',phases:[],chapter:1},
+  {id:'kettle-knight',name:'Kettle Knight',role:'elite',combatClass:'melee',flavour:'ember',row:'front',tier:'elite',hp:1190,attack:25,defense:35,breakCap:6,mechanic:'reflect',intent:'Reflects 12 damage per hit while its shield holds.',counter:'Dispel Cozy, apply Brittle, then break its shield.',phases:[],chapter:2},
+  {id:'yarn-giant',name:'Yarn Giant',role:'yarn',combatClass:'melee',flavour:'garden',row:'front',tier:'boss',hp:1292,attack:32,defense:22,breakCap:7,mechanic:'bind',intent:'Every third round Loomfall sweeps the front and Tangled threads appear.',counter:'Hearth hits add break. Break before Loomfall, cleanse Tangle.',status:'tangle',phases:['Winding','At 50% HP, Loomfall also reaches the rear'],chapter:1},
+  {id:'binding-thread',name:'Binding Thread',role:'thread',combatClass:'ranged',flavour:'moon',row:'rear',tier:'regular',hp:383,attack:10,defense:0,breakCap:2,mechanic:'snare',intent:'Knots apply Tangle to the weakest cat.',counter:'Clear the small thread or cleanse the knot.',status:'tangle',phases:[],chapter:1},
+  {id:'practice-cushion',name:'Practice Cushion',role:'dummy',combatClass:'melee',flavour:'garden',row:'front',tier:'regular',hp:230,attack:14,defense:0,breakCap:3,mechanic:'lesson',intent:'A gentle third-round bump teaches a break interrupt.',counter:'Two Hearth hits and a break skill stop the bump.',phases:[],chapter:1},
+  {id:'pollen-scout',name:'Pollen Scout',role:'ranger',combatClass:'ranged',flavour:'tide',row:'rear',tier:'elite',hp:945,attack:22,defense:10,breakCap:5,mechanic:'summon',intent:'Every third round plants a Binding Thread, up to two.',counter:'Hush prevents planting. Defeat threads before they multiply pressure.',phases:[],chapter:2},
+  {id:'rain-spool',name:'Rain Spool',role:'charger',combatClass:'melee',flavour:'ember',row:'front',tier:'boss',hp:3675,attack:58,defense:24,breakCap:8,mechanic:'storm',intent:'Every third round Cloudburst washes shields away before a row hit.',counter:'Tide adds break. Use Steep and healing instead of stacking shields.',status:'rattled',phases:['Collecting rain','At 50% HP, Cloudburst targets both rows'],chapter:2},
+  {id:'crumb-sentinel',name:'Crumb Sentinel',role:'guard',combatClass:'melee',flavour:'moon',row:'front',tier:'elite',hp:1260,attack:27,defense:22,breakCap:6,mechanic:'bomb',intent:'Every third round Sugar burst detonates Crumb trails on cats.',counter:'Cleanse Crumb trails before the signature, or break the sentinel.',status:'crumb',phases:[],chapter:3},
+  {id:'pantry-crown',name:'Pantry Crown',role:'yarn',combatClass:'melee',flavour:'tide',row:'rear',tier:'boss',hp:4270,attack:60,defense:25,breakCap:9,mechanic:'banquet',intent:'Every third round Empty banquet drains energy and silences the table.',counter:'Garden adds break. Reserve energy and cleanse Hush.',status:'hush',phases:['Counting cups','At 50% HP, signatures summon a Binding Thread'],chapter:3},
 ];
 export const ENEMY_BY_ID = Object.fromEntries(ENEMIES.map(e => [e.id,e])) as Record<string, Enemy>;

@@ -3,11 +3,19 @@ import { describe, expect, it } from 'vitest';
 import * as R from './index';
 
 describe('A5 early challenge progression', () => {
-  it('preserves all enemy stats in bands1–5 and10–50 from the published A4 rules', () => {
+  it('preserves published enemy stats except the approved V4 class boss HP correction', () => {
     const levels = [1, 2, 3, 4, 5, ...Array.from({ length: 41 }, (_, i) => i + 10)];
-    const unchanged = levels.map(level => ({ level, stats: R.challengeStatsV4(level) }));
-    // Measured from the unchanged production rules at A5 E3, before the B3 adoption.
-    expect(unchanged).toEqual(historicalStats);
+    expect(R.ENEMY_BY_ID['yarn-giant']!.hp).toBe(1292);
+    for(const level of levels){
+      const actual=R.challengeStatsV4(level),historical=historicalStats.find(row=>row.level===level)!.stats;
+      for(const [id,stats] of Object.entries(historical)){
+        if(id==='yarn-giant'){
+          // Only HP changes under U10; retain the published offense and defense.
+          expect(actual[id]!.attack).toBe(stats.attack);expect(actual[id]!.defense).toBe(stats.defense);
+          expect(actual[id]!.hp).toBeLessThan(stats.hp);
+        }else expect(actual[id]).toEqual(stats);
+      }
+    }
   });
 
   it('bounds the former level6 boss attack jump and keeps every band monotonic', () => {
