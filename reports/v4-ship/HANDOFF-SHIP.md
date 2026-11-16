@@ -4,11 +4,11 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW S4final20/20PASS;S8transfer26.412MB>8MBFAILtoS11/ART;S9checkpointed;S10offlinePASSbothsizes, freshfilm24620active;G-SUBMITopen.
-NEXT 1: Collect fresh production film24620;do not duplicatefixture. Build cut/caption/encoding pipeline;Snowtrace403open. R2 stays18Nov12:00 after ART integration.
+NOW S4final20/20PASS;S8transfer26.412MB>8MBFAILtoS11/ART;S9checkpointed;S10offlinePASSbothsizes;film1FAIL(fontblocked),18receiptsPASS;G-SUBMITopen.
+NEXT 1: Fix film harness font allowlist,retain failedfilm1;freshcapture2 then actual-timestampcut/ENcaptions/VISRT/encode. ffmpeg-full installed. Snowtrace403open;R2 stays18Nov12:00.
 NEXT 2: S2b hold-verification-1 PASS;G-CLASS remainsFAIL/timeboxed toS11; require measured class-only eligibility/acquisition hypothesis before candidate;valid18/18->sensitivity/E4/E5->ONEbaseline->notifyART. No baseline yet.
 NEXT 3: S7ART17Nov12:00;S8rerun10productionjourneys after ARTdeliveryfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. Defined S4/S6/S9 work recorded.
-CHECKPOINT:thiscommit preservesS10offline+tooling;previouspushedf2227c1fc. Productionruntimeunchanged sincef16d4ec7a;noARTedits.
+CHECKPOINT:film1failure preserved;previouspusheda5dd887e9. Productionruntimeunchanged sincef16d4ec7a;noARTedits.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 finalcoverage451.666s:-17.64LUFS/8.7LRA/-1.06dBTP;all5sceneestimatedonsets<=18.07ms;sourcebudget/duck/recovery/errorspass. FrozenASR8/12fail;human/physicalunverified.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
@@ -33,7 +33,7 @@ STOP absent atresume;explicit userresume. S8firstattemptCORS403 retained;starter
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2 origin/tree/objectstore verified;7knownARTfails/2663pass. No tracked drift. S11/repo-open.json carries history/licence/parity/budget. Vercelguardadded.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T12:42:24.782727+00:00.
+UPDATED 2026-11-16T12:49:15.308762+00:00.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
-S10filmtools:capture.mjs+recording.mjs;actualCDP/WebAudio+18RPCreceiptverification;24620capturing production5998/fixture5997. PublicSnowtracepreflight403;S11/submission-open.json.
+S10film1:287.799s/5487frames/18verifiedreceipts;FAIL one GoogleFonts request aborted by local-only harness. Raw retained;rollback no error. Installer15838exit0;useexplicitffmpeg-fullpath.
