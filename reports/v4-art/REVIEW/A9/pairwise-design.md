@@ -41,7 +41,7 @@ Axes below are proposed independently visible differences: S=shape, M=motion, C=
 | Panko / Needle | S M C R |4|PENDING|
 | Panko / Teacup | S M C R |4|PENDING|
 | Panko / Yarn | S M C R |4|PENDING|
-| Binding / Needle | S M T |3|PENDING|
+| Binding / Needle | S M; T not independently readable |2|FAIL R1; revise Needle rank cadence|
 | Binding / Teacup | S M C R |4|PENDING|
 | Binding / Yarn | S M T |3|PENDING|
 | Needle / Teacup | S M C R |4|PENDING|
@@ -49,3 +49,5 @@ Axes below are proposed independently visible differences: S=shape, M=motion, C=
 | Teacup / Yarn | S M C R |4|PENDING|
 
 Shared limits remain explicit: these recordings use the existing class baseline; the final SHIP class announcement has not landed. Reduced-motion live shake is checked, but the existing film recorder has no reduced-motion option. No recorder changes are authorized. Front-face alpha from `front-face-probe-r3.json` is a live bound, not encoded-pixel segmentation. The discarded r1 Soot zero and r2 rear-layer face intersection were probe errors and remain retained.
+
+R1 film decision:11 of27 own-ultimate sheets inspected once. Binding and Needle both reveal their main structures immediately after impact; the45ms Needle rank delay is not a secure third visible axis at10fps. Retain all R1 movies, marker checks and unreviewed sheets. Author90ms/150ms cadence drills, choose before new production validation. No balance, target, impact or duration changes.

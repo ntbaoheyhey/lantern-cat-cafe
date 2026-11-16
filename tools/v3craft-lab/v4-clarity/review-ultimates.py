@@ -37,12 +37,14 @@ for item, fixtures, after in [('V4-A9-CLARITY', ['wave1', 'wave3', 'boss'], 0), 
             if not marked or marked[-1][0]['frame'] / 30 < after:
                 continue
             contact = min(marked, key=lambda pair: abs(pair[1]['action']['elapsed'] - plan['impact']))
+            focus = min(marked, key=lambda pair: abs(pair[1]['action']['elapsed'] - 300))
             first, last = marked[0][0]['frame'], marked[-1][0]['frame']
-            indices = sorted(set(list(range(first, last + 4, 3)) + [contact[0]['frame'], last + 1]))
+            indices = sorted(set(list(range(first, last + 4, 3)) + [contact[0]['frame'], focus[0]['frame'], last + 1]))
             late_focus = [{'frame': shot['frame'], 'elapsed': f['action']['elapsed'], 'brightness': f['focus']['brightness']} for shot, f in marked if f['action']['elapsed'] >= 600 and f['focus']['brightness'] < 1 - 1e-8]
             shakes = [{'frame': shot['frame'], 'elapsed': f['action']['elapsed'], 'pixels': math.hypot(f['renderCamera']['x'], f['renderCamera']['y']) * f['field']['width'] / f['renderCamera']['worldWidth']} for shot, f in marked]
             moving = [v for v in shakes if v['pixels'] > 1e-8]
             actions.append({'key': plan['key'], 'actor': plan['actorId'], 'asset': asset, 'own': True, 'ultimate': True, 'duration': plan['duration'], 'impact': plan['impact'], 'events': plan['events'], 'indices': indices, 'impactFrame': contact[0]['frame'], 'markedImpactElapsed': contact[1]['action']['elapsed'], 'impactSamplingErrorMs': abs(contact[1]['action']['elapsed'] - plan['impact']), 'firstElapsed': marked[0][1]['action']['elapsed'], 'lastElapsed': marked[-1][1]['action']['elapsed'], 'complete': min(indices) >= 0 and max(indices) < duration * 30 and marked[0][1]['action']['elapsed'] <= 34 and marked[-1][1]['action']['elapsed'] >= plan['duration'] - 67, 'focusAfter600': late_focus, 'maxShakePx': max(v['pixels'] for v in shakes), 'shakeObservedSpanMs': moving[-1]['elapsed'] - moving[0]['elapsed'] if moving else 0, 'shakeSamplingCaveat': 'Observed first-to-last nonzero samples do not by themselves bound unsampled duration.', 'visualReview': 'PENDING'})
+            actions[-1]['focusFrame'] = focus[0]['frame']
         needed = sorted({n for a in actions for n in a['indices'] if 0 <= n < duration * 30})
         directory = out / 'raw/ultimate-strips' / item / fixture
         directory.mkdir(parents=True, exist_ok=True)
@@ -50,14 +52,17 @@ for item, fixtures, after in [('V4-A9-CLARITY', ['wave1', 'wave3', 'boss'], 0), 
             expression = balanced([f'eq(n\\,{n})' for n in needed])
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(capture / (fixture + '.webm')), '-vf', 'select=' + expression, '-fps_mode', 'vfr', '-q:v', '2', str(directory / '%04d.jpg')], check=True)
         for action in actions:
-            sheet = Image.new('RGB', (1024, 28 + math.ceil(len(action['indices']) / 4) * 164), '#211e26')
+            sheet = Image.new('RGB', (1024, 620 + math.ceil(len(action['indices']) / 4) * 164), '#211e26')
             draw = ImageDraw.Draw(sheet)
             draw.text((8, 7), f"{item} {fixture} A{action['key']} {action['asset']} OWN ULT | {'COMPLETE' if action['complete'] else 'TRUNCATED'}", fill='white')
+            with Image.open(directory / f"{needed.index(action['focusFrame']) + 1:04d}.jpg") as im:
+                sheet.paste(im.resize((1024, 576), Image.Resampling.LANCZOS), (0, 28))
+            draw.text((8, 606), f"Encoded focus frame {action['focusFrame']} at {action['focusFrame']/30:.3f}s; names judged here, timing in the strip below", fill='white')
             for cell, n in enumerate(action['indices']):
                 if n not in needed:
                     continue
                 frame = data['frames'][data['resampled'][n]['renderFrame']]
-                x, y = cell % 4 * 256, 28 + cell // 4 * 164
+                x, y = cell % 4 * 256, 620 + cell // 4 * 164
                 with Image.open(directory / f'{needed.index(n) + 1:04d}.jpg') as im:
                     sheet.paste(im.resize((256, 144), Image.Resampling.LANCZOS), (x, y))
                 elapsed = (frame.get('action') or {}).get('elapsed')
