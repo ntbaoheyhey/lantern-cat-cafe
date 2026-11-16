@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16 12:38 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: A10 transfer WIP: owner-selected VFX + roster-token readiness and6exactlossless atlas derivatives implemented. Run fullweb/typecheck/3F6; measure actual requests and review existing-recorder normal-renderer films. Timebox14:21UTC.
+NEXT1: Run tools/v3craft-lab/v4-transfer/validate.py detached on normalReviewVite23719; inspect marked normal-renderer films, record transfer lower bound, then Needle. A10 transfer WIP: owner-selected VFX + roster-token readiness and6exactlossless atlas derivatives implemented. Run fullweb/typecheck/3F6; measure actual requests and review existing-recorder normal-renderer films. Timebox14:21UTC.
 NEXT2: Needle K1/K2/K4 fixed-landmark gates; two own FX drills, private same-scale comparison, production integration, regression/parity/marked films/blind/receipt. Existing LEARN/A7 six-source study applies.
 NEXT3: Yarn Giant K1/K2/K4/K5 + FX; A8 deliveries interrupt; A9 ensemble; verified A10 requests; A11 open gates; A12 afterfreeze. Never stop with summary.
-LAST PUSH:e26669a34 verified; Teacup final receipt pushed. Production remainsbc85b0c82; eleven source hashes verified against all captures.
-LIVE: Vite67838 port5990; lossless19094 completeexit0. No generation. Targeted15+sourcehash6PASS. Browser Canvas2D comparisonFAIL(partialalphaRGB), all6NoColorSpaceWebGL exactPASS; retain failure and verify alpha/coverage.
+LAST PUSH:e60100bf2 verified; Teacup final receipt pushed. Production remainsbc85b0c82; eleven source hashes verified against all captures.
+LIVE: normalReviewVite23719 port5990/log jobs/a10-normal-review-vite.log; craftOFF. Oldownedgroups67838/22487 stopped. Validation21423 ended:web2662/317,typecheckPASS; F6hashesPASS butHMRbossimporterror, rerunstable.
 Requested PIDs68961/69950 gone, A6 final/post exits0. Detached nohup needs Python Popen(start_new_session=True); bare shell jobs12730/12858 exited without work.
 No STOP/inbox pause at12:21UTC. SHIPdb35585 remains nonfinal at lastcheck; no merge; baseline reports/v3-feel/parity-new.json. SHIP newtransferrequestread12:21UTC; finalclass announcementstillpending. No designer delivery at12:12UTC.
 A10 already delivered a14f8a76b: apps/web/public/units/promo/v4; REQUESTS-TO-SHIP records paths. Verify new request before regeneration.
@@ -30,3 +30,4 @@ EXCLUDE logs,paritylatest,.DS_Store,raw/private,recorderlinks,duplicatepreviews,
 Commands<=40lines/3KB,diffs<=80lines. Python tools/.venv/bin/python. Jobs>2min detached<=3; checkpoint eachstep<=20min; pushretry3; readRULES/item/commit/newart/hour.
 Craft remains DEV&&VITE_CRAFT_PILOT==='soot'; noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR. FinalSHIP classes+solebaseline only merge once announced final.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Stop only STOP-V4ART/userpause/inboxpause/end29Nov12UTC.
+A10 review config now selects registered actor IDs, fixing promo-folder portrait error. Base-config transfer retained blocked Google-font failure; rerun corrected review config. Canvas consumers retain original URLs;6NoColorSpace renders+alpha exact.

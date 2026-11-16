@@ -13,9 +13,11 @@ import losslessAtlases from './lossless-atlases.json';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
-export const spineAssetUrl=(path:string)=>{const url=deliveryUrls.get(path)??urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
+export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
 async function response(path:string){const r=await fetch(spineAssetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
-const image=async(path:string)=>{const img=new Image();img.src=spineAssetUrl(path);await img.decode();return img;};
+// Exact derivatives are validated for NoColorSpace textures. Canvas consumers
+// retain their original URLs because browser alpha-edge rounding can differ.
+const image=async(path:string)=>{const img=new Image();img.src=deliveryUrls.get(path)??spineAssetUrl(path);await img.decode();return img;};
 export interface ClipData {duration:number;cues:SpineCue[]}
 type SkeletonAsset={data:CutoutData;create:()=>CutoutMesh;clips:Map<string,ClipData>;bounds:{x:number;y:number;width:number;height:number}};
 interface SequenceManifest {id:string;height:number;width:number;scale?:number;fps?:number;sockets:Record<string,[number,number]>;animations:Record<string,{fps?:number;frames:string[];events?:{name:string;time:number}[]}>}
