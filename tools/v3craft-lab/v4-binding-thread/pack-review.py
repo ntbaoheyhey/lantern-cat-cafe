@@ -1,8 +1,9 @@
 """Group newly captured strips without reopening earlier reviews."""
 from pathlib import Path
 from PIL import Image,ImageDraw
-import json
-root=Path('reports/v4-art/REVIEW/A7/binding-thread');raw=root/'raw/action-strips';out=root/'raw/review-pages';out.mkdir(exist_ok=True)
+import argparse,json
+parser=argparse.ArgumentParser();parser.add_argument('--root',default='reports/v4-art/REVIEW/A7/binding-thread');args=parser.parse_args()
+root=Path(args.root);raw=root/'raw/action-strips';out=root/'raw/review-pages';out.mkdir(exist_ok=True)
 actions=json.loads((root/'film-review.json').read_text())[-1]['actions'];groups={'basic':[],'ultimate':[],'hit':[],'field':[]}
 for row in actions:
     prefix=f"boss-A{row['key']}-{row['unit']}"
