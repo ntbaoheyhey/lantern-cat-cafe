@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-16T14:02:08.093572+00:00",
+  "regression": "reports/v4-ship/S11/audio-terminal-regression-1/check.json",
+  "webPass": 2668,
+  "webFail": 7,
+  "failures": [
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+  ],
+  "previous": "reports/v4-ship/S11/ui-focus-regression-1/log.jsonl.gz",
+  "sameFailureSet": true,
+  "ownership": "All seven failures are in ART-owned spine presentation files. They remain failures; SHIP does not edit these paths.",
+  "overallRegressionPass": false,
+  "officialClassParityGate": false
+}

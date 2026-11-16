@@ -48,13 +48,32 @@ describe('layered playback admission and variants',()=>{
   Context.latest.currentTime+=.423;Context.latest.sources.at(-1)!.onended!();
   expect(ramp).toHaveBeenCalledTimes(1);expect(ramp).toHaveBeenCalledWith(1,Context.latest.currentTime+.4);
  });
- it('warms only authored callouts for the current roster after audio unlock',async()=>{
+ it('warms authored callouts and resolved terminal fallback only for the current roster after unlock',async()=>{
   const m={...fixture,packs:{...fixture.packs,mochi:{webm:'/mochi.webm',mp3:'/mochi.mp3'},soot:{webm:'/soot.webm',mp3:'/soot.mp3'}},cues:{...fixture.cues,
    'voice.mochi.ult.charge':samples('voice').map(s=>({...s,pack:'mochi'})),
    'voice.soot.ult.charge':samples('voice').map(s=>({...s,pack:'soot'}))}};
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
   const e=new AudioEngine();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual([]);
-  await e.unlock();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual(['mochi']);
+  await e.unlock();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual(['mochi','test']);
+ });
+ it.each(['hit','death'])('starts the first active boss %s voice synchronously after roster preload',async phase=>{
+  const e=new AudioEngine(()=>.5);await e.unlock();const settings=e.settings;
+  await e.preloadVoices(['foe-0-yarn-giant']);expect(Context.latest.sources).toHaveLength(0);
+  const fetched=vi.mocked(fetch).mock.calls.length;
+  e.play(`voice.yarn-giant.${phase}`);
+  expect(Context.latest.sources).toHaveLength(1);
+  expect(Context.latest.sources[0]!.start).toHaveBeenCalledOnce();
+  expect(vi.mocked(fetch).mock.calls).toHaveLength(fetched);
+  expect(e.settings).toEqual(settings);expect(e.hits.at(-1)?.result).toBe('played');
+ });
+ it('preloads authored terminal packs without replacing them with fallback or another roster',async()=>{
+  const m:AudioManifest={...fixture,packs:{...fixture.packs,hurt:{webm:'/hurt.webm',mp3:'/hurt.mp3'},fallen:{webm:'/fallen.webm',mp3:'/fallen.mp3'},inactive:{webm:'/inactive.webm',mp3:'/inactive.mp3'}},cues:{...fixture.cues,
+   'voice.yarn-giant.hit':samples('voice').map(s=>({...s,pack:'hurt'})),
+   'voice.yarn-giant.death':samples('voice').map(s=>({...s,pack:'fallen'})),
+   'voice.soot.death':samples('voice').map(s=>({...s,pack:'inactive'}))}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();await e.preloadVoices(['foe-0-yarn-giant']);
+  expect(e.diagnostics.packs).toEqual(['hurt','fallen']);expect(Context.latest.sources).toHaveLength(0);
  });
  it('starts dawn on the boss bar clock and releases both music layers on navigation',async()=>{
   const m={...fixture,packs:{...fixture.packs,dawn:{webm:'/dawn.webm',mp3:'/dawn.mp3'}},cues:{...fixture.cues,

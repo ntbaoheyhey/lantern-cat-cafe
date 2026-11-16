@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T13:57:35.262737+00:00",
+  "before": {
+    "samples": 4,
+    "medianRequestToStartCallMs": 5.6500000059604645,
+    "estimatedOnsetMinMs": 35.563333336313576,
+    "estimatedOnsetMaxMs": 38.458333327372856,
+    "within33ms": 0
+  },
+  "after": {
+    "samples": 4,
+    "medianRequestToStartCallMs": 0.7500000074505806,
+    "estimatedOnsetMinMs": 28.635000008940693,
+    "estimatedOnsetMaxMs": 31.97533332737288,
+    "within33ms": 4
+  },
+  "evidence": [
+    "audio-terminal-probe-1.json",
+    "audio-terminal-probe-2.json",
+    "audio-terminal-regression-before-1.json",
+    "audio-terminal-regression-after-1.json"
+  ],
+  "focusedRegression": {
+    "beforeFailed": 4,
+    "beforePassed": 24,
+    "afterPassed": 28,
+    "afterFailed": 0
+  },
+  "method": "Compare four roster-only fresh contexts before and after the active-roster terminal preload. The extra terminal warmup arm remains as a same-run control. Encoded samples, variants, mix, source budget and event timing remain unchanged.",
+  "physicalOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "next": "Complete required regression, commit and build production5, then fresh journey/coverage/endurance. Receipt source-budget omissions remain a separate open failure."
+}
