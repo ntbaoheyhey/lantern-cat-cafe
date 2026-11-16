@@ -10,7 +10,7 @@
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có2.682trường hợp đạt và bảy lỗi ART không đổi; server, rules, typecheck, bản dựng và đối chiếu ba trận đạt.
-- Lịch sử Git:700/3.854 commit; checkpoint gzip1.162/1.332 tệp,1.314 cảnh báo đã đối chiếu. Bổ sung mới7commit/9gzip không có cảnh báo; chưa kết luận toàn bộ lịch sử sạch.
+- Lịch sử Git:700/3.854 commit; checkpoint gzip1.203/1.332 tệp,1.314 cảnh báo đã đối chiếu. Bổ sung mới9commit/19gzip không có cảnh báo; chưa kết luận toàn bộ lịch sử sạch.
 - Production12 đi đủ bảy bước, 18 biên nhận và 60 FPS; tải đến lúc cảnh battle sẵn sàng là27,55MB, vượt8MB. Bốn lượt vào mới cũng xác nhận mức tải này; yêu cầu ART đã cập nhật.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.

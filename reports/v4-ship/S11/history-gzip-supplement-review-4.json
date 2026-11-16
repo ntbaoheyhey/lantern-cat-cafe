@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-16T19:17:35.536683+00:00",
+  "scope": {
+    "path": "reports/v4-ship/S11/history-gzip-supplement-scope-4.json.gz",
+    "sha256": "8b42746128165b6206c00f176fdecf1fd4aea21739e678660615b3a68ff2f53f"
+  },
+  "scan": {
+    "path": "reports/v4-ship/S11/history-gzip-supplement-4.json.gz",
+    "sha256": "5168096fa1be42b1a580af1ede3621ecf11377b5690fde7b1a0d3937136db906"
+  },
+  "mappingChecks": 20,
+  "disjointFromOriginalAndPriorInventory": true,
+  "rowOrderAndScopeMatch": true,
+  "allGzipIntegrityPass": true,
+  "reviewedBlobs": 19,
+  "expandedBytes": 3280947,
+  "findings": 0,
+  "unresolved": 0,
+  "supplementPass": true,
+  "fullHistoryPass": false,
+  "limits": [
+    "Expanded stdin content does not cover path-sensitive rules, encoded/binary payloads or embedded archives.",
+    "Original text and gzip scans and refs after this frozen capture remain separate."
+  ]
+}
