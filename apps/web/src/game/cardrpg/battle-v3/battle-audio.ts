@@ -30,6 +30,7 @@ export class BattleAudio {
   if(view.battleKey!==this.battle){
    this.battle=view.battleKey;this.lastPlan=null;this.statuses.clear();this.fired.clear();this.track=[];this.events.length=0;
    this.elapsed=0;this.nextBark=FIRST_BARK_MS;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
+   if(!this.capture&&typeof window!=='undefined')void window.__thAudio?.preloadVoices?.(view.actors.map(actor=>view.models?.[actor.id]??actor.cardRpg?.cardId??actor.id));
   }
   const now=view.fixedTime===undefined?performance.now():view.fixedTime*1000,delta=this.lastWall===undefined?0:Math.max(0,Math.min(250,now-this.lastWall));this.lastWall=now;
   if(view.galleryPreview||(!this.capture&&(view.paused||view.fixedTime!==undefined)))return;

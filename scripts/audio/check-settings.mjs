@@ -1,12 +1,14 @@
 /** Native keyboard slider operations, actual Web Audio gains, and reload persistence. */
-import {createRequire} from 'node:module';import {writeFileSync,readFileSync} from 'node:fs';import {createHash} from 'node:crypto';
+import {createRequire} from 'node:module';import {writeFileSync,readFileSync,mkdirSync,existsSync} from 'node:fs';import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';import {openAudioScreen} from './ui-fixtures.mjs';
 const require=createRequire(new URL('../../apps/web/package.json',import.meta.url)),{chromium}=require('@playwright/test');
-const B='reports/v3-shell/b2',log=`${B}/tests/s6-settings-browser.log`,lines=[];
+const B=process.env.AUDIO_EVIDENCE_DIR??'reports/v3-shell/b2',log=`${B}/tests/s6-settings-browser.log`,lines=[];
+if(process.env.AUDIO_EVIDENCE_DIR&&existsSync(`${B}/UI-AUDIO-SETTINGS.json`))throw Error('Preserve prior evidence; choose a new AUDIO_EVIDENCE_DIR');
+mkdirSync(`${B}/tests`,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']}),p=await browser.newPage({viewport:{width:1280,height:720}});
 let checks=0;const pass=description=>{checks++;lines.push('PASS '+description);};
 try{
- await openAudioScreen(p,'settings-audio');
+ await openAudioScreen(p,'settings-audio',process.env.AUDIO_URL??'http://127.0.0.1:5996');
  // Chromium does not advance AudioParam.value on a dormant inputless bus.
  // Feed a quiet diagnostic tone through the real bus and measure its output.
  await p.evaluate(()=>window.__thAudio.stop());

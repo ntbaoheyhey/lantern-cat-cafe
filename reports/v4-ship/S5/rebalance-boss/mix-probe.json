@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-16T09:17:28.288Z",
+  "fixtureId": "boss",
+  "method": "Actual rules fixture output; browser-only bus and duck changes; no normalization. Short diagnostic windows, not 30-minute standards compliance.",
+  "rows": [
+    {
+      "variant": {
+        "id": "current",
+        "bedDb": 0,
+        "voiceDb": 0,
+        "trimDb": 0,
+        "duckDb": 8,
+        "attack": 0.04
+      },
+      "seconds": 60,
+      "integratedLufs": -19.78,
+      "lra": 5.2,
+      "truePeakDbTP": -3.52,
+      "maxSources": 10,
+      "maxSpeech": 1,
+      "errors": [],
+      "hits": 144
+    },
+    {
+      "variant": {
+        "id": "bed-minus3-voice-plus2",
+        "bedDb": -3,
+        "voiceDb": 2,
+        "trimDb": 1,
+        "duckDb": 8,
+        "attack": 0.04
+      },
+      "seconds": 60,
+      "integratedLufs": -17.59,
+      "lra": 9.2,
+      "truePeakDbTP": -1.9,
+      "maxSources": 10,
+      "maxSpeech": 1,
+      "errors": [],
+      "hits": 144
+    }
+  ]
+}

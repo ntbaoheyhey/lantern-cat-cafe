@@ -22,6 +22,14 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('layered playback admission and variants',()=>{
+ it('warms only authored callouts for the current roster after audio unlock',async()=>{
+  const m={...fixture,packs:{...fixture.packs,mochi:{webm:'/mochi.webm',mp3:'/mochi.mp3'},soot:{webm:'/soot.webm',mp3:'/soot.mp3'}},cues:{...fixture.cues,
+   'voice.mochi.ult.charge':samples('voice').map(s=>({...s,pack:'mochi'})),
+   'voice.soot.ult.charge':samples('voice').map(s=>({...s,pack:'soot'}))}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual([]);
+  await e.unlock();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual(['mochi']);
+ });
  it('starts dawn on the boss bar clock and releases both music layers on navigation',async()=>{
   const m={...fixture,packs:{...fixture.packs,dawn:{webm:'/dawn.webm',mp3:'/dawn.mp3'}},cues:{...fixture.cues,
    'music.home':samples('music').map(s=>({...s,loop:true})),
@@ -56,6 +64,23 @@ describe('layered playback admission and variants',()=>{
   for(const source of ui){const [at,,seconds]=source.start.mock.calls[0]!;expect(at-10+seconds/source.playbackRate.value).toBeCloseTo(.3,6);}
   e.play('hit.blunt');await flush();
   for(const source of Context.latest.sources.slice(2))expect(source.start.mock.calls[0]?.[2]).toBe(.4);
+ });
+ it('starts decoded cues synchronously before later work in the rendering task',async()=>{
+  const e=new AudioEngine(()=>.5);await e.unlock();e.play('hit.blunt');await flush();e.stop();
+  Context.latest.currentTime+=1;const count=Context.latest.sources.length;
+  e.play('hit.blunt');expect(Context.latest.sources).toHaveLength(count+4);
+ });
+ it('limits real source starts across buses and delayed layers without splitting a composite',async()=>{
+  const e=new AudioEngine(()=>.5);await e.unlock();e.play('hit.blunt');await flush();e.stop();Context.latest.currentTime+=1;
+  const before=Context.latest.sources.length;
+  e.play('hit.blunt');e.play('hit.magic');e.play('ui.click');await flush();
+  const burst=Context.latest.sources.slice(before);
+  expect(burst).toHaveLength(6);expect(e.hits.some(h=>h.id==='hit.magic'&&h.result==='rate-limit')).toBe(true);
+  Context.latest.currentTime+=.095;e.play('hit.magic');await flush();
+  expect(Context.latest.sources).toHaveLength(before+6);
+  Context.latest.currentTime+=.035;e.play('hit.magic');await flush();expect(Context.latest.sources).toHaveLength(before+10);
+  const starts=Context.latest.sources.slice(before).map(s=>s.start.mock.calls[0]![0] as number).sort((a,b)=>a-b);
+  for(const at of starts)expect(starts.filter(t=>t>=at&&t-at<.1-1e-9).length).toBeLessThanOrEqual(6);
  });
  it('restores nested dialog music while letting later navigation take precedence',async()=>{
   const music=samples('music').map(s=>({...s,loop:true}));
@@ -98,11 +123,11 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.unlock();e.music('battle');await flush();
   const shelf=Context.latest.filters.find(f=>f.frequency.value===1200)!;
   expect(shelf.gain.value).toBe(0);
-  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-9);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(3);
+  e.play('voice.mochi.ult');await flush();expect(shelf.gain.value).toBe(-9);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(5);
   Context.latest.sources.at(-1)!.onended!();expect(shelf.gain.value).toBe(0);
   expect(e.settings.music).toBe(.55);expect(e.diagnostics.voice).toBe(0);
   e.music('boss');await flush();Context.latest.currentTime+=8;
-  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(-8);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(3);
+  e.play('voice.soot.ult');await flush();expect(shelf.gain.value).toBe(-8);expect(e.hits.at(-1)?.layers?.[0]?.gainDb).toBe(5);
   const body=Context.latest.filters.find(f=>f.type==='lowshelf'&&f.frequency.value===500)!;
   expect(body.gain.value).toBe(-6);
   expect(shelf.type).toBe('peaking');expect(shelf.frequency.value).toBe(1700);
@@ -134,6 +159,18 @@ describe('layered playback admission and variants',()=>{
   const f=new AudioEngine();await f.unlock();f.play('ult.soot.charge');f.play('voice.soot.ult.charge');await flush();
   expect(f.hits.filter(h=>h.id==='voice.soot.ult.charge'&&h.result==='played')).toHaveLength(1);
   f.play('ult.clover.charge');await flush();expect(f.hits.some(h=>h.id==='voice.clover.ult.charge')).toBe(false);
+ });
+ it('does not restart an explicit line at the later fixed-beat charge fallback',async()=>{
+  const clock=vi.spyOn(Date,'now').mockReturnValue(1000);
+  try{
+   const e=new AudioEngine();await e.unlock();e.play('voice.mochi.ult.charge');await flush();
+   Context.latest.currentTime+=.6;clock.mockReturnValue(1600);e.play('ult.mochi.charge');await flush();
+   expect(e.hits.filter(h=>h.id==='voice.mochi.ult.charge'&&h.result==='played')).toHaveLength(1);
+   expect(e.hits.at(-1)?.result).toBe('duplicate');
+   Context.latest.sources.at(-1)!.onended!();Context.latest.currentTime+=1;clock.mockReturnValue(2600);
+   e.play('voice.mochi.ult.charge');await flush();
+   expect(e.hits.filter(h=>h.id==='voice.mochi.ult.charge'&&h.result==='played')).toHaveLength(2);
+  }finally{clock.mockRestore();}
  });
  it('routes an enemy cast fallback to its own spoken signature and cancels a stopped pending fallback',async()=>{
   const e=new AudioEngine();await e.unlock();e.play('skill.foe-0-yarn-giant.2.cast');await flush();

@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-16T09:14:48.493Z",
+  "fixtureId": "wave1",
+  "method": "Actual rules fixture output; browser-only bus and duck changes; no normalization. Short diagnostic windows, not 30-minute standards compliance.",
+  "rows": [
+    {
+      "variant": {
+        "id": "current",
+        "bedDb": 0,
+        "voiceDb": 0,
+        "trimDb": 0,
+        "duckDb": 8,
+        "attack": 0.04
+      },
+      "seconds": 60,
+      "integratedLufs": -20.54,
+      "lra": 3.5,
+      "truePeakDbTP": -4.93,
+      "maxSources": 8,
+      "maxSpeech": 1,
+      "errors": [],
+      "hits": 144
+    },
+    {
+      "variant": {
+        "id": "bed-minus3-voice-plus2",
+        "bedDb": -3,
+        "voiceDb": 2,
+        "trimDb": 1,
+        "duckDb": 8,
+        "attack": 0.04
+      },
+      "seconds": 60,
+      "integratedLufs": -18.3,
+      "lra": 7.7,
+      "truePeakDbTP": -2.81,
+      "maxSources": 9,
+      "maxSpeech": 1,
+      "errors": [],
+      "hits": 144
+    },
+    {
+      "variant": {
+        "id": "bed-minus5-voice-plus3",
+        "bedDb": -5,
+        "voiceDb": 3,
+        "trimDb": 1.5,
+        "duckDb": 8,
+        "attack": 0.04
+      },
+      "seconds": 60,
+      "integratedLufs": -17.24,
+      "lra": 10.4,
+      "truePeakDbTP": -2.47,
+      "maxSources": 9,
+      "maxSpeech": 1,
+      "errors": [],
+      "hits": 144
+    }
+  ]
+}

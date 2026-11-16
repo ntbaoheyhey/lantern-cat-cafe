@@ -1,6 +1,6 @@
 import type {AudioBridge,CueOptions} from '../game/cardrpg/contracts/audio-cues';
 import {BUS_NAMES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
-import {calloutForCast,voiceCallout} from './callouts';
+import {calloutForCast,voiceCallout,voiceUnit,VOICE_CALLOUTS} from './callouts';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 import {installUiFeedback} from './feedback';
 
@@ -20,6 +20,9 @@ export class AudioEngine implements AudioBridge {
  private tones=new Map<Bus,BiquadFilterNode>();
  private voiceBody?:BiquadFilterNode;
  private buffers=new Map<string,Promise<AudioBuffer>>(); private manifest?:Promise<AudioManifest>;
+ private decoded=new Map<string,AudioBuffer>(); private decodedManifest?:AudioManifest;
+ private sourceStarts:number[]=[];
+ private voiceUnits:string[]=[];
  private active=new Set<Playing>(); private last=new Map<string,number>();
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
  private voiceRequest=0; private pendingVoicePriority=0; private voicePriority=0;
@@ -64,20 +67,29 @@ export class AudioEngine implements AudioBridge {
    }
    this.setSceneTone();
   }
-  await this.ctx.resume();this.paused=false;this.remember();
+  await this.ctx.resume();this.paused=false;this.remember();if(this.voiceUnits.length)void this.preloadVoices(this.voiceUnits);
  }
  private assetUrl(path:string){return path.startsWith('/audio/')?this.assetBase+path.slice('/audio/'.length):path;}
- private loadManifest(){return this.manifest??=fetch(this.assetUrl('/audio/manifest.json')).then(r=>{if(!r.ok)throw new Error('Audio manifest unavailable');return r.json() as Promise<AudioManifest>;}).catch(e=>{this.manifest=undefined;throw e;});}
+ private loadManifest(){return this.manifest??=fetch(this.assetUrl('/audio/manifest.json')).then(r=>{if(!r.ok)throw new Error('Audio manifest unavailable');return r.json() as Promise<AudioManifest>;}).then(m=>this.decodedManifest=m).catch(e=>{this.manifest=undefined;throw e;});}
  private buffer(pack:string,m:AudioManifest):Promise<AudioBuffer>{
   if(!this.buffers.has(pack))this.buffers.set(pack,(async()=>{
    const urls=m.packs[pack];if(!urls)throw new Error(`Unknown audio pack: ${pack}`);
-   for(const format of ['webm','mp3'] as const){try{const response=await fetch(this.assetUrl(urls[format]));if(!response.ok)continue;return await this.ctx!.decodeAudioData(await response.arrayBuffer());}catch{/* Safari may need MP3. */}}
+   for(const format of ['webm','mp3'] as const){try{const response=await fetch(this.assetUrl(urls[format]));if(!response.ok)continue;const buffer=await this.ctx!.decodeAudioData(await response.arrayBuffer());this.decoded.set(pack,buffer);return buffer;}catch{/* Safari may need MP3. */}}
    throw new Error(`Audio pack ${pack} unavailable`);
   })().catch(e=>{this.buffers.delete(pack);throw e;}));return this.buffers.get(pack)!;
  }
- async preload(screen:'home'|'battle'|'landing'){
+ async preload(screen:'home'|'battle'|'boss'|'landing'){
   if(!this.ctx)return;
-  try{const m=await this.loadManifest();const musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])]:['b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
+  try{const m=await this.loadManifest();const musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;const ids=screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic','b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])]:['b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
+ }
+ async preloadVoices(actors:readonly string[]){
+  this.voiceUnits=[...new Set(actors.map(voiceUnit).filter((id):id is string=>!!id))];
+  if(!this.ctx)return;
+  try{
+   const m=await this.loadManifest(),units=new Set(this.voiceUnits);
+   const packs=new Set(VOICE_CALLOUTS.filter(row=>units.has(row.unitId)).flatMap(row=>(m.cues[row.cueId]??[]).map(sample=>sample.pack)));
+   await Promise.all([...packs].map(pack=>this.buffer(pack,m)));
+  }catch{/* playback can retry */}
  }
  private record(id:string,result:string,layers?:LayerPlayed[]){
   this.hits.push({id,result,at:Date.now(),...(layers?{layers,sfx:this.count('sfx'),voice:this.count('voice'),duckDb:this.count('voice')||id.startsWith('ult.')?-8:0}:{})});
@@ -110,8 +122,9 @@ export class AudioEngine implements AudioBridge {
   // A lighter low-mid voice body makes the spoken attacks clearer over the
   // boss strings; compensate presence at the source without shifting pitch.
   if(this.voiceBody){const gain=this.voiceBody.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(scene==='music.boss'?-6:0,now+.15);}
-  if(this.musicBed){const gain=this.musicBed.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'||scene==='music.boss'?-6:0),now+.15);}
-  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?1.3:scene==='music.boss'?3:6),now+.15);}
+  // LEARN/S5-validation.md: rebalance after removing interrupted duplicate speech.
+  if(this.musicBed){const gain=this.musicBed.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'||scene==='music.boss'?-9:0),now+.15);}
+  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?2.3:scene==='music.boss'?4:6),now+.15);}
  }
  private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.04);}
  private releaseDuck(){this.makeSpeechSpace();if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
@@ -122,7 +135,7 @@ export class AudioEngine implements AudioBridge {
    // A can send its explicit request just after the cast fallback. One take
    // owns that sync point, so the second request must not restart the line.
    if(voiceCallout(id)){
-    if(now-(this.calloutRequests.get(id)??-Infinity)<300){this.record(id,'duplicate');return;}
+    if(now-(this.calloutRequests.get(id)??-Infinity)<300||[...this.active].some(p=>p.bus==='voice'&&p.id===id)){this.record(id,'duplicate');return;}
     this.calloutRequests.set(id,now);
    }
   }
@@ -140,7 +153,9 @@ export class AudioEngine implements AudioBridge {
   const epoch=this.epoch,stopped=this.stopped.get(id)??0;
   let voiceToken=0;
   try{
-   const m=await this.loadManifest(),design=resolveDesign(id,m,opts.element),choices=resolveCue(id,m,opts.element);
+   // A resolved Promise still yields until the current rendering task ends.
+   // Cached cues must start in this call, before a busy frame can delay contact.
+   const m=this.decodedManifest??await this.loadManifest(),design=resolveDesign(id,m,opts.element),choices=resolveCue(id,m,opts.element);
    if(!choices?.length&&!design){this.record(id,'unmapped');return;}
    const bus=design?.bus??choices![0]!.bus;
    const priority=opts.priority??(bus==='voice'?/\.ult(?:\.|$)/.test(id)?100:id.includes('.skill')?90:id.endsWith('.death')?80:id.endsWith('.hit')?50:40:design?.priority??20);
@@ -151,7 +166,7 @@ export class AudioEngine implements AudioBridge {
    // All asynchronous loads precede pool selection and atomic source admission.
    const candidates=design?(design.baked?.map(v=>v.sample)??design.layers.flatMap(l=>l.variants)):choices!;
    const packs=[...new Set(candidates.map(s=>s.pack))];
-   const loaded=new Map(await Promise.all(packs.map(async p=>[p,await this.buffer(p,m)] as const)));
+   const loaded=packs.every(p=>this.decoded.has(p))?this.decoded:new Map(await Promise.all(packs.map(async p=>[p,await this.buffer(p,m)] as const)));
    if(this.paused||this.muted||epoch!==this.epoch||stopped!==(this.stopped.get(id)??0))return;
    if(bus==='voice'&&voiceToken!==this.voiceRequest){this.record(id,'superseded');return;}
    const now=this.ctx.currentTime*1000;
@@ -160,32 +175,35 @@ export class AudioEngine implements AudioBridge {
    // They still share a single voice source and retain priority over skills.
    const requiredUltimate=voiceCallout(id)?.kind==='ultimate';
    if(bus==='voice'&&!requiredUltimate&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
-   const count=design?.baked?1:design?.layers.length??1;
-   if(!this.admit(bus,count,priority)){this.record(id,'limit');return;}
-   if(bus==='voice'){this.stopBus('voice');this.voicePriority=priority;this.last.set('voice-cadence',now);}
    if(bus==='ambience'){this.ambience(id);return;}
+   const count=design?.baked?1:design?.layers.length??1;
+   const offsets=design&&!design.baked?design.layers.map(l=>l.offsetMs/1000):[0];
+   const at=this.reserveStarts(offsets);
+   if(at===undefined){this.record(id,'rate-limit');return;}
+   if(!this.admit(bus,count,priority)){this.sourceStarts.splice(-offsets.length);this.record(id,'limit');return;}
+   if(bus==='voice'){this.stopBus('voice');this.voicePriority=priority;this.last.set('voice-cadence',now);}
    this.last.set(id,now);const group=++this.group,played:LayerPlayed[]=[];
    const userPitch=Number.isFinite(opts.pitch)?Math.max(.25,Math.min(4,opts.pitch!)):1;
    // Balance repeated movement beneath the strike and the spoken line.
-   const cueTrimDb=bus==='voice'?(this.bedIds.music==='music.battle'?3:this.bedIds.music==='music.boss'?3:this.bedIds.music==='music.forge'||this.bedIds.music==='music.home'?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
+   const cueTrimDb=bus==='voice'?(['music.battle','music.boss','music.forge','music.home'].includes(this.bedIds.music)?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
    if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
-    this.start(id,loaded.get(chosen.sample.pack)!,chosen.sample,priority,userPitch*pitch,volume*dbGain(gainDb),0,'flat',group);
+    this.start(id,loaded.get(chosen.sample.pack)!,chosen.sample,priority,userPitch*pitch,volume*dbGain(gainDb),0,'flat',group,at);
     played.push(...chosen.layers.map(l=>({...l,pitch:userPitch*pitch,gainDb:gainDb+cueTrimDb})));
    }else if(design){
     for(const layer of design.layers){
      const sample=this.pools.next(`${id}/${layer.role}`,layer.variants,s=>s.variantId??`${s.pack}:${s.start}`),pitch=userPitch*between(design.pitchRange,this.random),gainDb=layer.gainDb+between(design.gainRange,this.random);
      // Resonant bodies carry strikes; bright attacks remain shorter accents.
      const roleTrimDb=bus==='sfx'?(layer.role==='transient'?-9:layer.role==='sweetener'?-7:layer.role==='body'?3:1):0;
-     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume*dbGain(gainDb+roleTrimDb),layer.offsetMs/1000,layer.eq,group);
+     this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume*dbGain(gainDb+roleTrimDb),layer.offsetMs/1000,layer.eq,group,at);
      played.push({role:layer.role,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:layer.offsetMs,pitch,gainDb:gainDb+cueTrimDb+roleTrimDb});
     }
    }else{
     const sample=this.pools.next(id,choices!,s=>s.variantId??`${s.pack}:${s.start}`),profile=bus==='voice'?(voiceProfiles[id.split('.')[1]!]??voiceProfiles.mochi!):undefined;
     // Authored cat sprites already contain pitch, formants and syllable timing.
     const pitch=userPitch*(sample.processedVoice?1:profile?.pitch??1);
-    this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume,0,'flat',group);
+    this.start(id,loaded.get(sample.pack)!,sample,priority,pitch,volume,0,'flat',group,at);
     played.push({role:bus,variantId:sample.variantId??`${sample.pack}:${sample.start}`,offsetMs:0,pitch,gainDb:cueTrimDb});
    }
    if(design?.ducking)this.duckMusic();
@@ -205,12 +223,30 @@ export class AudioEngine implements AudioBridge {
   }
   return true;
  }
- private start(id:string,buffer:AudioBuffer,s:Sample,priority:number,baseRate:number,volume:number,delay:number,eq:LayerEq,group:number){
+ private reserveStarts(offsets:number[],defer=false):number|undefined{
+  const now=this.ctx!.currentTime;
+  this.sourceStarts=this.sourceStarts.filter(t=>t>now-.1);
+  if(offsets.length>6)return undefined;
+  let at=now;
+  for(;;){
+   const times=[...this.sourceStarts,...offsets.map(offset=>at+offset)].sort((a,b)=>a-b);
+   let left=0,overflow=false;
+   for(let right=0;right<times.length;right++){
+    while(times[right]!-times[left]!>=.1-1e-9)left++;
+    if(right-left+1>6){overflow=true;break;}
+   }
+   if(!overflow){this.sourceStarts.push(...offsets.map(offset=>at+offset));return at;}
+   if(!defer)return undefined;
+   // Scene beds may wait for a slot; transients are dropped whole, never delayed.
+   at=Math.min(...this.sourceStarts.filter(t=>t+.101>at))+.101;
+  }
+ }
+ private start(id:string,buffer:AudioBuffer,s:Sample,priority:number,baseRate:number,volume:number,delay:number,eq:LayerEq,group:number,at=this.ctx!.currentTime){
   const ctx=this.ctx!,source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffer;
   const rate=baseRate*(s.bus==='sfx'?this.rate:1);source.playbackRate.value=rate;gain.gain.value=volume;
   // Primary interface feedback ends within 300 ms, including layer offset and pitch.
   const sourceDuration=!s.loop&&(id.startsWith('ui.')||id.startsWith('tx.'))?Math.min(s.duration,Math.max(0,.3-delay)*rate):s.duration;
-  const now=ctx.currentTime+delay,duration=sourceDuration/rate;source.connect(gain);
+  const now=at+delay,duration=sourceDuration/rate;source.connect(gain);
   let filter:BiquadFilterNode|undefined;
   if(eq!=='flat'){
    filter=ctx.createBiquadFilter();filter.type=eq==='low-shelf-180'?'lowshelf':'highpass';
@@ -240,7 +276,7 @@ export class AudioEngine implements AudioBridge {
   for(const p of this.active)if(!id||p.id===id||(id==='music.boss'&&p.id==='music.boss.dawn'))this.end(p,true);
   for(const bus of ['music','ambience'] as const)if(!id||id===this.bedIds[bus]){this.bedIds[bus]='';this.bedTokens[bus]++;}this.setSceneTone();this.releaseDuck();
  }
- music(id:string){this.musicScopes=[];this.bed('music',id);}
+ music(id:string){this.musicScopes=[];this.bed('music',id);const scene=id.replace(/^music\./,'');if(scene==='battle'||scene==='boss')void this.preload(scene);}
  /** Dialog scores restore the underlying scene; later navigation wins. */
  musicScope(id:string){
   if(!this.musicScopes.length)this.musicScopeBase=this.bedIds.music;
@@ -264,15 +300,15 @@ export class AudioEngine implements AudioBridge {
    if(token!==this.bedTokens[bus])return;
    // Keep the outgoing bed until the incoming audio has decoded. Both sides
    // then crossfade for 800 ms, including when a rapid tab switch supersedes a load.
-   const now=this.ctx.currentTime;
+   const now=this.reserveStarts(dawn&&dawnBuffer?[0,0]:[0],true)!;
    for(const p of this.active)if(p.bus===bus){p.gain.gain.cancelScheduledValues(now);p.gain.gain.setValueAtTime(p.gain.gain.value,now);p.gain.gain.linearRampToValueAtTime(0,now+.8);p.source.stop(now+.82);}
    const level=dbGain(['music.battle','music.boss'].includes(cue)?3:0);
-   const incoming=this.start(cue,b,s,0,1,level,0,'flat',++this.group);
+   const incoming=this.start(cue,b,s,0,1,level,0,'flat',++this.group,now);
    incoming.gain.gain.setValueAtTime(0,now);incoming.gain.gain.linearRampToValueAtTime(level,now+.8);this.record(cue,'played');
    // Decode together so the dawn harmonics follow the boss score's bar clock.
    // They share music volume, ducking, mute and pause, and leave with the scene.
    if(dawn&&dawnBuffer){
-    const layer=this.start('music.boss.dawn',dawnBuffer,dawn,0,1,0,0,'flat',++this.group);
+    const layer=this.start('music.boss.dawn',dawnBuffer,dawn,0,1,0,0,'flat',++this.group,now);
     layer.gain.gain.setValueAtTime(0,now);layer.gain.gain.linearRampToValueAtTime(.42,now+30.72);
     this.record('music.boss.dawn','played');
    }

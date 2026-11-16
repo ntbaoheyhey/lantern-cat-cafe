@@ -1,0 +1,443 @@
+{
+  "at": "2026-11-16T09:02:50.690Z",
+  "diagnostic": true,
+  "method": "Isolated real AudioEngine, cold versus selective preload, then simultaneous distinct warmed cues; never acceptance gameplay. Actual start groups; no audio alterations.",
+  "rows": [
+    {
+      "mode": "cold",
+      "preloadMs": 0,
+      "firstLatencyMs": 62,
+      "burstMaxStartsPer100ms": 6,
+      "burst": [
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 8,
+          "when": 1.0933333333333333,
+          "seconds": 0.11538461538461538,
+          "performanceMs": 1401.9000000059605
+        },
+        {
+          "id": "ui.click",
+          "bus": "ui",
+          "group": 9,
+          "when": 1.0933333333333333,
+          "seconds": 0.09320833333333334,
+          "performanceMs": 1402
+        },
+        {
+          "id": "ui.tab",
+          "bus": "ui",
+          "group": 10,
+          "when": 1.0933333333333333,
+          "seconds": 0.09320833333333334,
+          "performanceMs": 1402.1000000089407
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 8,
+          "when": 1.1003333333333332,
+          "seconds": 0.38104967948717944,
+          "performanceMs": 1401.9000000059605
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 8,
+          "when": 1.1113333333333333,
+          "seconds": 0.556290064102564,
+          "performanceMs": 1401.9000000059605
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 8,
+          "when": 1.1163333333333332,
+          "seconds": 0.10598958333333333,
+          "performanceMs": 1401.9000000059605
+        }
+      ],
+      "hits": [
+        {
+          "id": "kit.holy.impact",
+          "result": "played",
+          "at": 1794819768954,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:impact-sounds:impactGeneric_light_004:impact-sounds/impactGeneric_light_004.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.04,
+              "gainDb": -20
+            },
+            {
+              "role": "body",
+              "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+              "offsetMs": 7,
+              "pitch": 1.04,
+              "gainDb": -5
+            },
+            {
+              "role": "tail",
+              "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+              "offsetMs": 18,
+              "pitch": 1.04,
+              "gainDb": -15
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:glass_005:interface-sounds/glass_005.flac/transient",
+              "offsetMs": 23,
+              "pitch": 1.04,
+              "gainDb": -27
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "kit.ember.impact",
+          "result": "rate-limit",
+          "at": 1794819768954
+        },
+        {
+          "id": "kit.heavy.impact",
+          "result": "rate-limit",
+          "at": 1794819768954
+        },
+        {
+          "id": "kit.garden.impact",
+          "result": "rate-limit",
+          "at": 1794819768954
+        },
+        {
+          "id": "ui.click",
+          "result": "played",
+          "at": 1794819768954,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 0
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.tab",
+          "result": "played",
+          "at": 1794819768954,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:switch13:ui-audio/switch13.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 0
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "tx.confirmed",
+          "result": "rate-limit",
+          "at": 1794819768954
+        }
+      ],
+      "resources": [
+        {
+          "path": "/src/audio/engine.ts",
+          "bytes": 81189
+        },
+        {
+          "path": "/src/audio/cues.ts",
+          "bytes": 11462
+        },
+        {
+          "path": "/src/audio/callouts.ts",
+          "bytes": 4372
+        },
+        {
+          "path": "/src/audio/variants.ts",
+          "bytes": 3985
+        },
+        {
+          "path": "/src/audio/feedback.ts",
+          "bytes": 9572
+        },
+        {
+          "path": "/src/audio/voice-profiles.json",
+          "bytes": 33813
+        },
+        {
+          "path": "/src/audio/voice-callouts.json",
+          "bytes": 231495
+        },
+        {
+          "path": "/audio/manifest.json",
+          "bytes": 979927
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "bytes": 165908
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "bytes": 246503
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "bytes": 490990
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "bytes": 69546
+        }
+      ]
+    },
+    {
+      "mode": "preloaded",
+      "preloadMs": 52.70000000298023,
+      "firstLatencyMs": 0.699999988079071,
+      "burstMaxStartsPer100ms": 6,
+      "burst": [
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 9,
+          "when": 1.2426666666666666,
+          "seconds": 0.11538461538461538,
+          "performanceMs": 1268.0999999940395
+        },
+        {
+          "id": "ui.click",
+          "bus": "ui",
+          "group": 10,
+          "when": 1.2426666666666666,
+          "seconds": 0.09320833333333334,
+          "performanceMs": 1268.3999999910593
+        },
+        {
+          "id": "ui.tab",
+          "bus": "ui",
+          "group": 11,
+          "when": 1.2426666666666666,
+          "seconds": 0.09320833333333334,
+          "performanceMs": 1268.3999999910593
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 9,
+          "when": 1.2496666666666665,
+          "seconds": 0.5,
+          "performanceMs": 1268.199999988079
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 9,
+          "when": 1.2606666666666666,
+          "seconds": 0.7243189102564103,
+          "performanceMs": 1268.199999988079
+        },
+        {
+          "id": "kit.holy.impact",
+          "bus": "sfx",
+          "group": 9,
+          "when": 1.2656666666666665,
+          "seconds": 0.10747195512820512,
+          "performanceMs": 1268.2999999970198
+        }
+      ],
+      "hits": [
+        {
+          "id": "kit.holy.impact",
+          "result": "played",
+          "at": 1794819770467,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1.04,
+              "gainDb": -20
+            },
+            {
+              "role": "body",
+              "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+              "offsetMs": 7,
+              "pitch": 1.04,
+              "gainDb": -5
+            },
+            {
+              "role": "tail",
+              "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+              "offsetMs": 18,
+              "pitch": 1.04,
+              "gainDb": -15
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:glass_006:interface-sounds/glass_006.flac/transient",
+              "offsetMs": 23,
+              "pitch": 1.04,
+              "gainDb": -27
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "kit.ember.impact",
+          "result": "rate-limit",
+          "at": 1794819770467
+        },
+        {
+          "id": "kit.heavy.impact",
+          "result": "rate-limit",
+          "at": 1794819770467
+        },
+        {
+          "id": "kit.garden.impact",
+          "result": "rate-limit",
+          "at": 1794819770467
+        },
+        {
+          "id": "ui.click",
+          "result": "played",
+          "at": 1794819770467,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 0
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.tab",
+          "result": "played",
+          "at": 1794819770467,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:switch13:ui-audio/switch13.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 0
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 0
+            }
+          ],
+          "sfx": 4,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "tx.confirmed",
+          "result": "rate-limit",
+          "at": 1794819770467
+        }
+      ],
+      "resources": [
+        {
+          "path": "/src/audio/engine.ts",
+          "bytes": 81189
+        },
+        {
+          "path": "/src/audio/cues.ts",
+          "bytes": 11462
+        },
+        {
+          "path": "/src/audio/callouts.ts",
+          "bytes": 4372
+        },
+        {
+          "path": "/src/audio/variants.ts",
+          "bytes": 3985
+        },
+        {
+          "path": "/src/audio/feedback.ts",
+          "bytes": 9572
+        },
+        {
+          "path": "/src/audio/voice-profiles.json",
+          "bytes": 33813
+        },
+        {
+          "path": "/src/audio/voice-callouts.json",
+          "bytes": 231495
+        },
+        {
+          "path": "/audio/manifest.json",
+          "bytes": 979927
+        },
+        {
+          "path": "/audio/b2-hits.webm",
+          "bytes": 490990
+        },
+        {
+          "path": "/audio/b2-magic.webm",
+          "bytes": 98916
+        },
+        {
+          "path": "/audio/b2-motion.webm",
+          "bytes": 165908
+        },
+        {
+          "path": "/audio/b2-ui.webm",
+          "bytes": 246503
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "bytes": 69546
+        },
+        {
+          "path": "/audio/score-battle.webm",
+          "bytes": 272390
+        }
+      ]
+    }
+  ]
+}

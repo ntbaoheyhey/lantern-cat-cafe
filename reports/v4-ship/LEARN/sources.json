@@ -635,5 +635,54 @@
     "type": "own-experiment",
     "topic": "S5 calibrated audio implementation",
     "takeaway": "Current -14.94/2.2/-2.23 versus quiet-center -17.95/5.9/-3.07 LUFS/LRA/dBTP."
+  },
+  {
+    "id": "S5-validation-1",
+    "type": "formal",
+    "url": "https://www.w3.org/TR/webaudio/#dom-audiobuffersourcenode-start",
+    "accessed": "2026-11-16",
+    "takeaway": "Audio-clock scheduling and actual source starts, not cue requests."
+  },
+  {
+    "id": "S5-validation-2",
+    "type": "web-doc",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start",
+    "accessed": "2026-11-16",
+    "takeaway": "Duration is source content; output duration depends on playback rate."
+  },
+  {
+    "id": "S5-validation-3",
+    "type": "web-doc",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp",
+    "accessed": "2026-11-16",
+    "takeaway": "Device/performance timestamp is an estimate; physical loopback remains separate."
+  },
+  {
+    "id": "S5-validation-4",
+    "type": "web-doc",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData",
+    "accessed": "2026-11-16",
+    "takeaway": "Decode before contact; reuse resolved buffers without yielding a warmed request."
+  },
+  {
+    "id": "S5-validation-5",
+    "type": "web-doc",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime",
+    "accessed": "2026-11-16",
+    "takeaway": "Schedule duck and release gain envelopes."
+  },
+  {
+    "id": "S5-validation-6",
+    "type": "web-doc",
+    "url": "https://ffmpeg.org/ffmpeg-filters.html#loudnorm",
+    "accessed": "2026-11-16",
+    "takeaway": "Read original input I/LRA/TP; never normalize evidence."
+  },
+  {
+    "id": "S5-validation-7",
+    "type": "own-experiment",
+    "url": "reports/v4-ship/S5/engine-probe-before.json",
+    "accessed": "2026-11-16",
+    "takeaway": "Cold52.4ms versus selective preload0.9ms; simultaneous burst20 sources. After fix0.7ms and6 sources."
   }
 ]
