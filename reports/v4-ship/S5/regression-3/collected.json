@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-16T10:18:00.452494+00:00",
+  "complete": true,
+  "session": 96926,
+  "exitCode": 1,
+  "web": {
+    "passed": 2663,
+    "failed": 7,
+    "unchangedArtOwnedFailures": true,
+    "files": [
+      "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts",
+      "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts"
+    ]
+  },
+  "otherCommandsExitZero": [
+    "server",
+    "rules",
+    "typecheck",
+    "parity-probe",
+    "build"
+  ],
+  "officialClassParityGate": false,
+  "newBaseline": false
+}

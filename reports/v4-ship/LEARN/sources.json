@@ -691,5 +691,19 @@
     "title": "Real-engine release under finishing UI sources",
     "url_or_path": "reports/v4-ship/S5/duck-after.json",
     "comparison": "Before: 12 recovery ramps, minimum gain 0.852643 after 450 ms; after: 1 ramp, gain 1.0. Before evidence retained in duck-before.json."
+  },
+  {
+    "id": "S5-duration-doc",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://ffmpeg.org/ffprobe.html",
+    "takeaway": "Use decoded frame sample counts and timestamps when WebM format duration is absent; select only audio stream a:0 and request machine-readable frame/stream fields."
+  },
+  {
+    "id": "S5-duration-comparison",
+    "type": "own-experiment",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S5/duration-method.json",
+    "takeaway": "Five unchanged recordings: header duration resolves 0/5; decoded frames resolve 5/5 at 90.00-90.60 seconds. All correctly fail 1800 seconds."
   }
 ]

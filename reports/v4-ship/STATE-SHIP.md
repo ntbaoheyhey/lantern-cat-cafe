@@ -40,3 +40,14 @@ S2b corrected1.15attack+sharedPower:rules1409PASS;100seedholdout300/300wins0dama
 2026-11-16T07:32:30.019745+00:00 S4 stable1280pilot PASS7/7, battle2.896s/2clicks,receipt95.457s,total201.558s,reloadrecoveryPASS,18timedreceipts/9historykinds/15links,0errors;1440running. NotG-FUNNEL20runpass.
 2026-11-16T07:32:30.019745+00:00 S4 explorer firstpage55logs/5contracts HTTP200 plusNFTemptysecondpage/CORS*; independent snapshot verificationPID31152 respectsRPCbackoffuntil07:34:46. Oldscanner24065 stopped.
 2026-11-16T07:40:12.298326+00:00 S4 public indexed snapshot PASS:55logs/30receipt-verifications,all5contractsemptypagination,matchingcheckpointblock61162789,9RPCcheckpointlogsoverlap;dataAPIzeroencodingnormalized. S2b CLASS115 fresh1000accounts medianscasual14/heavy9,15%18/18PASSbutrequired25%16/18PASS;T-a0.9968275/T-b1.1015424 remainFAIL. Newisolated1.20attackcohortstarted.
+
+S5 ENDED 2026-11-16T10:25:20.636444+00:00, open for S11; production audio f16d4ec7a; coverage checkpoint224a5c98c pushed.
+S5 G-LEARN PASS25 sources/4formal/15web/5experiments; S5/learning-check-duration.json.
+S5 endurance PASS1801.137s wall/1801.08s decoded/18restarts; -16.97LUFS/8.9LRA/-1.53dBTP; max6starts/100ms; duck8dB/recoveryPASS; 0errors/0voiceinterruptions.
+S5 coverage5scenes451.666s: -17.64LUFS/8.7LRA/-1.06dBTP; each device-onset max<=18.07ms. Separate from continuous recording.
+S5 FAIL first boss-death estimatedonset40.665ms; ASR8/12<10. UI34/34duration<=300ms; mix15/15. Human/physical/button/receipt/weapon coverage OPEN; G-AUDIO FAIL.
+S5 G-REG regression-3: server/rules/typecheck/probe/buildPASS; web2663PASS/7sameARTfail. Officialclassparity false. No newbaseline.
+S2b authoritative1.15/2500bp: E3 16/18; burnClaims0.9968275226 and Stars1.1015423773. Boundary/check/decision evidence supersedes older scalar experiments; no third candidate.
+S4 final20journeys still pending; Fuji4counters+agedcache recoveryPASS and 55logs/30RPCreceipts verified. No public sponsored latency proof.
+S1 history30159/PID68299 remains active; do not duplicate. Source scan and current staged scans found no unresolved secrets; no full-history conclusion.
+NEXT S2b hold verification, then stable20journeys/S4, then S6 docs+cleanclone. S6-S11 definitions recovered from verified REQUEST on user instruction.

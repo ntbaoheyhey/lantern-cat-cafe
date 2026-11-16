@@ -8,7 +8,7 @@
 | S2b | CLASSES RULES AND UI | STARTED 2026-11-16T05:26:02.513574+00:00; production classes implemented; runtime/UI/regression/E3-E5 underway; no new F6 baseline |
 | S3 | DEMO PATH POLISH | STARTED 2026-11-16T06:28:46.304591+00:00; authority/scheduler/financing prototype while S2b economy and S1 history run |
 | S4 | ON-CHAIN PROOF | STARTED 2026-11-16T07:02:30.119772+00:00; research/log probe while S2b validation runs |
-| S5 | SOUND | pending |
+| S5 | SOUND | STARTED 2026-11-16T08:55:00Z; ENDED 2026-11-16T10:25:20.636444+00:00; open for S11; endurance1801.137s levels/duck/budget pass; onset40.665ms and ASR8/12 fail; S5/final-check-1.json; AUDIO-REVIEW.md |
 | S6 | REPO AND DOCS | pending |
 | S7 | SYNC-1 17 Nov 12:00 UTC | pending |
 | S8 | PROD-LIKE REHEARSAL | pending |

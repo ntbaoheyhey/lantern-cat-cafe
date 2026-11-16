@@ -11,3 +11,5 @@
 
 - Kiểm tra hiện tại chưa tìm thấy khóa thật trong các cảnh báo đã rà soát; quét toàn bộ lịch sử vẫn chạy. Chưa có kết luận lịch sử sạch. Giữ repo riêng tư và ưu tiên mời tuantqse90 làm cộng tác viên cho đến khi có báo cáo lịch sử; nếu phát hiện khóa từng lộ, thu hồi/đổi khóa trên dịch vụ trước, không dán giá trị vào chat.
 
+
+- Buổi nghe R2 ngày18/11 lúc19:00 Việt Nam: nghe 12 đoạn đã cố định trong work/v4ship-audio/coverage-1/line-01.flac đến line-12.flac, ghi lại lời nghe được trước khi xem đáp án. Ghi câu không rõ và cảm giác nhạc/hiệu ứng che lời vào INBOX.md. Kết quả máy hiện8/12; không thay đoạn khó bằng đoạn dễ.

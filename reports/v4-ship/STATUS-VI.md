@@ -1,14 +1,15 @@
 # Bản thử dành cho giám khảo
 - Nhánh tích hợp: codex/v4-ship-2026-11-16; chưa triển khai lên mạng.
-- Bản chạy cục bộ 1280×720 vừa hoàn thành đủ7bước trong201,6giây.
-- Vào trận sau2,9giây,2lần bấm; biên nhận đầu sau95,5giây.
-- Có18biên nhận kèm thời gian, phí AVAX và bên trả; trang ví có9loại hoạt động.
-- Tải lại sau ghép đồ vẫn tiếp tục đúng; không lỗi mạng, console hay cửa sổ ví trong lượt này.
-- Đang kiểm tra1440×900; chưa đủ20lượt để công nhận tiêu chí phễu.
-- Lớp cận chiến/tầm xa/hồi máu đã có; nhân vật hồi máu không gây sát thương.
-- Mô phỏng kinh tế1000tài khoản vẫn đang chạy; chưa chốt mốc parity mới.
-- Dùng đúng yêu cầu hiện tại: Spool giữ lại25%; đang kiểm tra ảnh hưởng trước khi chốt.
-- Lịch sử Fuji đã tìm được nguồn dữ liệu công khai; đang đối chiếu biên nhận thật.
-- Âm thanh hiện tại còn dày; thử giảm nhạc đã tăng khoảng động từ2,6lên6,1LU.
-- Chưa đạt đầy đủ tiêu chí âm thanh, kho mã và bản triển khai.
-- Việc cần bạn làm được ghi trong NEEDS-USER-VI.md; hiện không cần trả lời để tiếp tục.
+- Âm thanh đã chạy liên tục 30 phút, lặp lại 18 trận; không lỗi trang hay cắt lời thoại.
+- Bản ghi boss: -16,97 LUFS; khoảng động 8,9 LU; đỉnh -1,53 dBTP, đều trong giới hạn.
+- Giới hạn sáu nguồn âm/100 ms, giảm nhạc 8 dB và phục hồi âm lượng đã đạt.
+- Còn một lời thoại kết thúc boss trễ 40,67 ms so với giới hạn 33 ms.
+- Nhận dạng lời thoại đạt 8/12, cần 10/12. Chưa coi âm thanh là đạt toàn bộ.
+- 34 trường hợp âm UI/giao dịch không quá 300 ms; 15 kiểm tra âm lượng/tắt tiếng/tải lại đạt.
+- Sắp chạy đủ 20 hành trình mới: 10 lượt ở mỗi kích thước desktop. Các lượt thử trước chưa thay thế được mốc này.
+- Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
+- Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
+- Kiểm tra web có 2.663 trường hợp đạt và bảy lỗi thuộc phần ART; server, rules, typecheck, bản dựng và phép đối chiếu ba trận đạt.
+- Quét toàn bộ lịch sử git vẫn chạy; chưa kết luận lịch sử sạch.
+- Tiếp theo là kiểm tra hành trình, cập nhật tài liệu và kiểm tra từ bản clone sạch.
+- Việc cần bạn làm nằm trong NEEDS-USER-VI.md; công việc tiếp tục theo hàng đợi.
