@@ -3965,6 +3965,19 @@
       "output": "tools/v3craft-lab/poses/raw/teacup-healer/K1-A1.png",
       "sha256": "3075f3b3f13646c0b6a7b15c76889227c106e95c527469453349fda49367f438",
       "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k1-a2",
+      "date": "2026-11-16T11:16:58.945317+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit the supplied original Teacup Healer K1 windup sprite. This is an exact same-character correction, not a redesign. Keep the 1254x1254 transparent canvas, the body, saucer, spoon, hands, arms, bent brass legs, feet, shadows, palette and current pose exactly as shown. Correct only the undersized head assembly: uniformly enlarge the porcelain domed lid, finial and dark glowing-eye face cavity by approximately 10 percent, anchored at the lower face lip so the face still seats naturally in the same teacup body. Preserve the lid floral gold filigree, rose porcelain, gold eye shapes, finial design, left-facing view and painted edge quality. The new main lid crown should extend upward by about 20 pixels relative to the lower face lip, with proportionate width; the face must not become a taller new cylinder. The whole head assembly should read as the same larger original head, while the handle, teacup bowl, drawn-back spoon and planted feet remain unchanged. Retain all transparent margins and actual alpha. Do not add glow, background, cast shadow, extra objects, labels or text. Output one isolated corrected full-character sprite.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/teacup-healer/K1-A1.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/teacup-healer/K1-A1.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K1-A2.png",
+      "sha256": "981ee71aa795e678999b46a9cecdbd7c2391ba328087588fd7348b2b221dd2e3",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }
