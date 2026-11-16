@@ -10,7 +10,7 @@
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có2.690trường hợp đạt và bảy lỗi ART không đổi; server, rules, typecheck, bản dựng và đối chiếu ba trận đạt.
-- Lịch sử Git vẫn700/3.854commit văn bản;gzip1.332/1.332 đã đối chiếu. Thử mới50nội dung/19,08MB:stdin9,42s;commit gốc68,03s,cùng1cảnh báo fixture kiểm thử đã rà soát. Stdin bỏ sót mẫu MIME/nhiều đoạn/tên YAML;chưa thay bộ quét hay kết luận đầy đủ.
+- Bộ dò trực tiếp khớp9mẫu/50đối tượng;68,23s so với68,03s của commit gốc,không nhanh hơn. Đã đối chiếu500đối tượng:302văn bản/10,52MB,198loại trừ;61cảnh báo chưa rà soát. Bộ quét mới và cũ còn chạy;chưa kết luận lịch sử sạch.
 - Production15 đạt đủ hành trình ở hai kích thước,36 biên nhận,248 âm tiếp xúc,116 hành động ranged,32 nhịp hồi máu Clover và boss trung vị60FPS; tải30,04MB vẫn vượt8MB.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.

@@ -1,0 +1,1165 @@
+{
+  "at": "2026-11-16T22:49:31.337070+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/text-detector-review.py",
+    "sha256": "dbea508177c1d97e406632d9e29f63b0c5166437f32d065fe7fc644a72feec7c"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/text-detector-build-1.json",
+      "sha256": "f882d3830dfd4801da79411f7fe9979082a2fb87ec4da3e83fcccb2f05b021d3"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-study-1.json",
+      "sha256": "5db07773749bdf94e7228b5b06b3b0d67a7c32e84612b6896f550dc915fd3dc2"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/scope.json",
+      "sha256": "c1c11f114eb52c9cc2bf5bcd2d33ab82b381e559851c6a64a75bfe089ab1fbbf"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.check.json.gz",
+      "sha256": "760490b9fc94b5ef14bff390db9ee0b84c6a372236153c9b9335bb7b2093dc45"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.progress.json",
+      "sha256": "b0bde7799059c93a6224f713bf267e7011f4d0f0e0fbd1d47ab4af5b9d41d640"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/check.json",
+      "sha256": "d740995320afef58cdef30e58d9c1d2235ea8f47f8ee0d29ed7f52c7d866d362"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-study-regression-1/log.jsonl.gz",
+      "sha256": "dacd0cc600d26c317578c359f2ceb5cb722af42dad3963bfd9e4ee4f2c846bb8"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/parity-probe.json",
+      "sha256": "c86f07113b3ff71ffaef98038cb730598b7fba23f9a2256d0753f42399da976f"
+    }
+  ],
+  "build": {
+    "moduleRecords": 202,
+    "binaryDependencies": 62,
+    "moduleVerification": true,
+    "replacements": 0,
+    "configByteEquality": true,
+    "pinnedApiSourceEquality": true,
+    "rules": 222,
+    "toolchainArchiveHashAndCompilerBytes": true,
+    "binaryBuildInfoMatches": true
+  },
+  "study": {
+    "fixturePairs": 9,
+    "exactCommitPathObjects": 50,
+    "comparison": {
+      "objects": 50,
+      "bytes": 19075387,
+      "stdinSeconds": 9.421394,
+      "rootGitSeconds": 68.033821,
+      "directDetectorSeconds": 68.225671585,
+      "directWallSeconds": 68.25964800000001,
+      "findings": 1
+    },
+    "replayedRejectedFrames": [
+      {
+        "case": "invalid-utf8",
+        "exitCode": 1,
+        "noResultOrRawEcho": true
+      },
+      {
+        "case": "contains-nul",
+        "exitCode": 1,
+        "noResultOrRawEcho": true
+      },
+      {
+        "case": "digest-mismatch",
+        "exitCode": 1,
+        "noResultOrRawEcho": true
+      },
+      {
+        "case": "truncated",
+        "exitCode": 1,
+        "noResultOrRawEcho": true
+      }
+    ]
+  },
+  "prefix": {
+    "classifiedBlobs": 500,
+    "classifiedBytes": 199808046,
+    "scannedTextBlobs": 302,
+    "scannedTextBytes": 10521910,
+    "scannedTextPathPairs": 343,
+    "excludedNonUtf8Blobs": 198,
+    "containsNulBlobs": 198,
+    "excludedBlobs": 198,
+    "excludedBytes": 189286136,
+    "yamlContextScans": 0,
+    "rawFindings": 61,
+    "immutableObjectsVerified": 500,
+    "findingMappings": [
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 70,
+          "endLine": 70,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 79,
+          "endLine": 79,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 100,
+          "endLine": 100,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 101,
+          "endLine": 101,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 102,
+          "endLine": 102,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 103,
+          "endLine": 103,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 104,
+          "endLine": 104,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 105,
+          "endLine": 105,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 106,
+          "endLine": 106,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 107,
+          "endLine": 107,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 108,
+          "endLine": 108,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 109,
+          "endLine": 109,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 110,
+          "endLine": 110,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 111,
+          "endLine": 111,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 132,
+          "endLine": 132,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 204,
+          "endLine": 204,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 205,
+          "endLine": 205,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 312,
+          "endLine": 312,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 313,
+          "endLine": 313,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 473,
+          "endLine": 473,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 474,
+          "endLine": 474,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 499,
+          "endLine": 499,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 521,
+          "endLine": 521,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 522,
+          "endLine": 522,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 652,
+          "endLine": 652,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 666,
+          "endLine": 666,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 667,
+          "endLine": 667,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 671,
+          "endLine": 671,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 672,
+          "endLine": 672,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00cad9d7fc3e22df24955cb2c801c53099e30b74",
+        "context": "content",
+        "finding": {
+          "file": "00cad9d7fc3e22df24955cb2c801c53099e30b74.txt",
+          "line": 737,
+          "endLine": 737,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s4/gates/source-2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49.json"
+          }
+        ]
+      },
+      {
+        "oid": "00e4b5e789205f92415c9c51de5b979cd68fbd6f",
+        "context": "content",
+        "finding": {
+          "file": "00e4b5e789205f92415c9c51de5b979cd68fbd6f.txt",
+          "line": 28,
+          "endLine": 28,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "d4a8dad8df4e7a1ecf28fd3722ed720acebb30c0",
+            "path": "assets/cardrpg-look/frames/legendary-render.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2403,
+          "endLine": 2403,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2404,
+          "endLine": 2404,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2405,
+          "endLine": 2405,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2406,
+          "endLine": 2406,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2407,
+          "endLine": 2407,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2408,
+          "endLine": 2408,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2409,
+          "endLine": 2409,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2410,
+          "endLine": 2410,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2411,
+          "endLine": 2411,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2412,
+          "endLine": 2412,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2413,
+          "endLine": 2413,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2414,
+          "endLine": 2414,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2435,
+          "endLine": 2435,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2546,
+          "endLine": 2546,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2547,
+          "endLine": 2547,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2654,
+          "endLine": 2654,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2655,
+          "endLine": 2655,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2815,
+          "endLine": 2815,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2816,
+          "endLine": 2816,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2841,
+          "endLine": 2841,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2863,
+          "endLine": 2863,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2864,
+          "endLine": 2864,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 2996,
+          "endLine": 2996,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3010,
+          "endLine": 3010,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3011,
+          "endLine": 3011,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3015,
+          "endLine": 3015,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3016,
+          "endLine": 3016,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3362,
+          "endLine": 3362,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "00ec51f19042c0d1043fff79dccf57cae3d26cd2",
+        "context": "content",
+        "finding": {
+          "file": "00ec51f19042c0d1043fff79dccf57cae3d26cd2.txt",
+          "line": 3926,
+          "endLine": 3926,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/skills-v5/s7/build/build.json"
+          }
+        ]
+      },
+      {
+        "oid": "013689fb8ceff4c3edab17e51ad1ae57e313931e",
+        "context": "content",
+        "finding": {
+          "file": "013689fb8ceff4c3edab17e51ad1ae57e313931e.txt",
+          "line": 20,
+          "endLine": 20,
+          "type": "generic-api-key",
+          "classification": "unresolved"
+        },
+        "mappings": [
+          {
+            "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+            "path": "reports/cardrpg-big/a5/b3/anchored-validation-03/balance/summary.json"
+          }
+        ]
+      }
+    ],
+    "findingsReviewed": 0,
+    "unresolved": 61,
+    "complete": false
+  },
+  "webSummary": [
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+    "Test Files  2 failed | 320 passed (322)",
+    "Tests  7 failed | 2690 passed (2697)"
+  ],
+  "sameSevenArtFailures": true,
+  "parityRowsUnchanged": true,
+  "pass": true,
+  "gRegPass": false,
+  "fullHistoryPass": false,
+  "limits": [
+    "Binds recorded fixture comparisons and exact historical samples; does not rerun the successful detector cases.",
+    "Prefix byte identity, text eligibility, aliases, findings metadata and mappings are verified; findings remain unreviewed.",
+    "No scan of excluded binary/NUL/encoded/archive/submodule/later-reference contents is inferred; default content allowlists remain.",
+    "No live scanner, signed harness/client/binary or installed product runtime is changed."
+  ]
+}

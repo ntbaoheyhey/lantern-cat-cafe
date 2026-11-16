@@ -1,0 +1,335 @@
+{
+  "at": "2026-11-16T22:50:54.184861+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6938,
+      "sha256": "bf918ac38c424f909a940606cb8d40ff248f12de45163b8bedafc47ca912eee3"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-text-objects.md",
+      "bytes": 8795,
+      "sha256": "74d39f6ae6dac5626dd00e360838d9b1dde55cc19cf9dc038c4fef02fc6e6146"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/check.json",
+      "bytes": 1449,
+      "sha256": "d740995320afef58cdef30e58d9c1d2235ea8f47f8ee0d29ed7f52c7d866d362"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/log.jsonl.gz",
+      "bytes": 16122,
+      "sha256": "1f4638233af4e87811618e30cc0849954175001ca63d8abc44dd03a8d3476cc8"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "c86f07113b3ff71ffaef98038cb730598b7fba23f9a2256d0753f42399da976f"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-review-1.json",
+      "bytes": 39254,
+      "sha256": "f5ae044bc85136459af5817b94a3e5611fb3dca684d955cd8963baa93cac37c1"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-study-1.json",
+      "bytes": 25921,
+      "sha256": "5db07773749bdf94e7228b5b06b3b0d67a7c32e84612b6896f550dc915fd3dc2"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.check.json.gz",
+      "bytes": 37763,
+      "sha256": "760490b9fc94b5ef14bff390db9ee0b84c6a372236153c9b9335bb7b2093dc45"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.progress.json",
+      "bytes": 567,
+      "sha256": "b0bde7799059c93a6224f713bf267e7011f4d0f0e0fbd1d47ab4af5b9d41d640"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/scope.json",
+      "bytes": 2712,
+      "sha256": "c1c11f114eb52c9cc2bf5bcd2d33ab82b381e559851c6a64a75bfe089ab1fbbf"
+    },
+    {
+      "path": "reports/v4-ship/S11/text-detector-build-1.json",
+      "bytes": 2630,
+      "sha256": "f882d3830dfd4801da79411f7fe9979082a2fb87ec4da3e83fcccb2f05b021d3"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 24944,
+      "sha256": "1543143dbb0150cb529c20a7788745765d29c577a0f310def2e4c608fc35d9fd"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4694,
+      "sha256": "95229b6a5f8a503eb3159ac110fbe560ad3a065d95f1af13d18d37e6a8c8a722"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-objects.py",
+      "bytes": 10386,
+      "sha256": "d4c3f5f7010951e1571acd2d8d71824a64340ede8c4217937b48300d0862e865"
+    },
+    {
+      "path": "tools/v4ship-lab/security/staged-text-detector.py",
+      "bytes": 3596,
+      "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector-review.py",
+      "bytes": 16358,
+      "sha256": "dbea508177c1d97e406632d9e29f63b0c5166437f32d065fe7fc644a72feec7c"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector-study.py",
+      "bytes": 5823,
+      "sha256": "9e389b47c9692c56404bdba9b3033d43aa21c46f85961acd6dd8883b1e95f1ef"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.mod",
+      "bytes": 3459,
+      "sha256": "5b41f8eb45f2fce93bc05bd42b3f386c64cac4d3119686b6dfc99feb379a4639"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.sum",
+      "bytes": 40320,
+      "sha256": "6ffabd113dcd3a0782b7d7016b0f051fabc55909ccad176e11c76e70549738e9"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/main.go",
+      "bytes": 3579,
+      "sha256": "d50d1473c036110415461daf4e6d382a2954d8af9898156fb67077ee16dcb2d3"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text_detector_client.py",
+      "bytes": 3586,
+      "sha256": "2a54e556e4611973111ab8d6eb507f44e9257952717461423335fe73664fe132"
+    }
+  ],
+  "scans": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6938,
+      "sha256": "bf918ac38c424f909a940606cb8d40ff248f12de45163b8bedafc47ca912eee3",
+      "alias": "bf918ac38c424f909a940606cb8d40ff248f12de45163b8bedafc47ca912eee3.txt",
+      "seconds": 0.002441166,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-text-objects.md",
+      "representation": "raw",
+      "bytes": 8795,
+      "sha256": "74d39f6ae6dac5626dd00e360838d9b1dde55cc19cf9dc038c4fef02fc6e6146",
+      "alias": "74d39f6ae6dac5626dd00e360838d9b1dde55cc19cf9dc038c4fef02fc6e6146.txt",
+      "seconds": 0.002335,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1449,
+      "sha256": "d740995320afef58cdef30e58d9c1d2235ea8f47f8ee0d29ed7f52c7d866d362",
+      "alias": "d740995320afef58cdef30e58d9c1d2235ea8f47f8ee0d29ed7f52c7d866d362.txt",
+      "seconds": 8.1833e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 93249,
+      "sha256": "021e4e6d9acb981bca9ccc4906a505a6c8197209497453b80133e6df7db752d4",
+      "alias": "021e4e6d9acb981bca9ccc4906a505a6c8197209497453b80133e6df7db752d4.txt",
+      "seconds": 0.026020208,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "c86f07113b3ff71ffaef98038cb730598b7fba23f9a2256d0753f42399da976f",
+      "alias": "c86f07113b3ff71ffaef98038cb730598b7fba23f9a2256d0753f42399da976f.txt",
+      "seconds": 0.000702292,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-review-1.json",
+      "representation": "raw",
+      "bytes": 39254,
+      "sha256": "f5ae044bc85136459af5817b94a3e5611fb3dca684d955cd8963baa93cac37c1",
+      "alias": "f5ae044bc85136459af5817b94a3e5611fb3dca684d955cd8963baa93cac37c1.txt",
+      "seconds": 0.012839125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-study-1.json",
+      "representation": "raw",
+      "bytes": 25921,
+      "sha256": "5db07773749bdf94e7228b5b06b3b0d67a7c32e84612b6896f550dc915fd3dc2",
+      "alias": "5db07773749bdf94e7228b5b06b3b0d67a7c32e84612b6896f550dc915fd3dc2.txt",
+      "seconds": 0.009851625,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.check.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 142939,
+      "sha256": "82ed43bf8bd6f1ff026c50049e5b544fe812a73f726d0a2e4d07783af73e44f9",
+      "alias": "82ed43bf8bd6f1ff026c50049e5b544fe812a73f726d0a2e4d07783af73e44f9.txt",
+      "seconds": 0.097184125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.progress.json",
+      "representation": "raw",
+      "bytes": 567,
+      "sha256": "b0bde7799059c93a6224f713bf267e7011f4d0f0e0fbd1d47ab4af5b9d41d640",
+      "alias": "b0bde7799059c93a6224f713bf267e7011f4d0f0e0fbd1d47ab4af5b9d41d640.txt",
+      "seconds": 0.000151333,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/scope.json",
+      "representation": "raw",
+      "bytes": 2712,
+      "sha256": "c1c11f114eb52c9cc2bf5bcd2d33ab82b381e559851c6a64a75bfe089ab1fbbf",
+      "alias": "c1c11f114eb52c9cc2bf5bcd2d33ab82b381e559851c6a64a75bfe089ab1fbbf.txt",
+      "seconds": 0.001065833,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/text-detector-build-1.json",
+      "representation": "raw",
+      "bytes": 2630,
+      "sha256": "f882d3830dfd4801da79411f7fe9979082a2fb87ec4da3e83fcccb2f05b021d3",
+      "alias": "f882d3830dfd4801da79411f7fe9979082a2fb87ec4da3e83fcccb2f05b021d3.txt",
+      "seconds": 0.000902125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 24944,
+      "sha256": "1543143dbb0150cb529c20a7788745765d29c577a0f310def2e4c608fc35d9fd",
+      "alias": "1543143dbb0150cb529c20a7788745765d29c577a0f310def2e4c608fc35d9fd.txt",
+      "seconds": 0.021124625,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4694,
+      "sha256": "95229b6a5f8a503eb3159ac110fbe560ad3a065d95f1af13d18d37e6a8c8a722",
+      "alias": "95229b6a5f8a503eb3159ac110fbe560ad3a065d95f1af13d18d37e6a8c8a722.txt",
+      "seconds": 0.00011925,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-objects.py",
+      "representation": "raw",
+      "bytes": 10386,
+      "sha256": "d4c3f5f7010951e1571acd2d8d71824a64340ede8c4217937b48300d0862e865",
+      "alias": "d4c3f5f7010951e1571acd2d8d71824a64340ede8c4217937b48300d0862e865.txt",
+      "seconds": 0.0050935,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/staged-text-detector.py",
+      "representation": "raw",
+      "bytes": 3596,
+      "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171",
+      "alias": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171.txt",
+      "seconds": 0.000246334,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector-review.py",
+      "representation": "raw",
+      "bytes": 16358,
+      "sha256": "dbea508177c1d97e406632d9e29f63b0c5166437f32d065fe7fc644a72feec7c",
+      "alias": "dbea508177c1d97e406632d9e29f63b0c5166437f32d065fe7fc644a72feec7c.txt",
+      "seconds": 0.004261667,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector-study.py",
+      "representation": "raw",
+      "bytes": 5823,
+      "sha256": "9e389b47c9692c56404bdba9b3033d43aa21c46f85961acd6dd8883b1e95f1ef",
+      "alias": "9e389b47c9692c56404bdba9b3033d43aa21c46f85961acd6dd8883b1e95f1ef.txt",
+      "seconds": 0.0016335,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.mod",
+      "representation": "raw",
+      "bytes": 3459,
+      "sha256": "5b41f8eb45f2fce93bc05bd42b3f386c64cac4d3119686b6dfc99feb379a4639",
+      "alias": "5b41f8eb45f2fce93bc05bd42b3f386c64cac4d3119686b6dfc99feb379a4639.txt",
+      "seconds": 0.000246042,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.sum",
+      "representation": "raw",
+      "bytes": 40320,
+      "sha256": "6ffabd113dcd3a0782b7d7016b0f051fabc55909ccad176e11c76e70549738e9",
+      "alias": "6ffabd113dcd3a0782b7d7016b0f051fabc55909ccad176e11c76e70549738e9.txt",
+      "seconds": 0.016711292,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/main.go",
+      "representation": "raw",
+      "bytes": 3579,
+      "sha256": "d50d1473c036110415461daf4e6d382a2954d8af9898156fb67077ee16dcb2d3",
+      "alias": "d50d1473c036110415461daf4e6d382a2954d8af9898156fb67077ee16dcb2d3.txt",
+      "seconds": 0.000190542,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/text_detector_client.py",
+      "representation": "raw",
+      "bytes": 3586,
+      "sha256": "2a54e556e4611973111ab8d6eb507f44e9257952717461423335fe73664fe132",
+      "alias": "2a54e556e4611973111ab8d6eb507f44e9257952717461423335fe73664fe132.txt",
+      "seconds": 0.00095975,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16122,
+      "sha256": "1f4638233af4e87811618e30cc0849954175001ca63d8abc44dd03a8d3476cc8",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-objects-1/prefix-1.check.json.gz",
+      "representation": "raw",
+      "bytes": 37763,
+      "sha256": "760490b9fc94b5ef14bff390db9ee0b84c6a372236153c9b9335bb7b2093dc45",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}
