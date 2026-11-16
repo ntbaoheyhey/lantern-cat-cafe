@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16 10:12 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: read imagegen skill and K4-A2-prompt.txt; generate Binding correction from ownK4-A1+runtime; save raw/provenance immediately.
+NEXT1: author Binding lab export/sockets and original knotted-thread texture; compare150/250ms planted ranged drills before production.
 NEXT2: measure Binding K4-A2, inspect normalized225px keys/2xheads, author two ranged class drills; then A7 integration/enemy keys.
 NEXT3: continue A7 enemies/boss, A8 deliveries interrupt, A9 ensemble, A10 SHIP art, A11 open gates; no final summary.
-LAST PUSH:524f1ede9 verified10:08UTC; this checkpoint completes A6 scoped film receipt.
-LIVE: Vite67838 port5990 only; jobs68961/69950/75674 finished. Supplement36s2137frames/31actions/paritytrue.
+LAST PUSH:6dc737904 verified10:13UTC; A6 scoped receipt committed/pushed; A7 authoring active.
+LIVE: Vite67838 port5990 only; cellg41:110 completed raw/provenance saved; no image/job pending.
 No STOP/inbox pause/designer delivery at10:03UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private clip catalogue deferredA11. A3/A4 checkpoints; pairwiseFX/activation OPEN.
 A5 checkpoint: blind12/12,overlap13.4228%,isolated60.0602fps,face0%; exactheal/legacydamage role OPEN finalSHIP.
@@ -20,8 +20,8 @@ A6 CHECKPOINT:10/10ownwindows,blind11/12,contactgap38.9763px,return<.000038px,fa
 A7 Binding RANGED perSHIP;K1IoU.438837,dE1.708804,head.975801;K2IoU.389201,dE2.866167,head1.017766,reach+.672794;feet0.
 A7 K4-A1 FAILhead.925078,IoU.356183,dE3.369575,feet0;allacceptedfalse until visual/drill. No enemy production edits.
 A7 head landmarksK0[216,324],K1[407,617],K2[410,625],K4[438,630],uncertainty4px. Never redefine to pass.
-A7 K4-A2-prompt.txt prepared targeted~10%cap+face enlargement;NOT submitted;no generation running. OwnK4+runtime inputs.
-IMAGEOPENS reset after4fullphase sheets;allA6/BindingK1K2K4-A1/priorA3–A5 sheets reviewed,never reopen;newK4-A2 next.
+A7 K4-A2 saved/provenance;IoU.358964,dE5.433691,head.951665[438,632],feet1,no crop. Artselected;runtime/drill/film OPEN.
+IMAGEOPENS reset afterK4-A2preview,headcrop,2normalizedpairs=4;never reopen. AllA6/priorBinding/pre-A6 sheets reviewed.
 EXCLUDE inheritedlogs/paritylatest,.DS_Store,recorderlinks,duplicatepreviews,raw/private/nonSYNCmovies. <=8selectedJPG/item;V4reports<=150MB.
 Checkpoints eachstep<=20min;commands<=40lines/3KB;diffs<=80lines;HANDOFF<=40lines;detachedjobs<=3 PythonPopen/nohup method.
 Time-split uncertainty explicit;do not claim>=50%authoring retroactively. Craft gatedDEV+VITE_CRAFT_PILOT=soot untilA9/A11.

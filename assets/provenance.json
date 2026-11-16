@@ -3925,6 +3925,20 @@
       "output": "tools/v3craft-lab/poses/raw/binding-thread/K4-A1.png",
       "sha256": "85fd7018da22c2b28f44dd43880dd611403643d864558d46c3593045577d6646",
       "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-binding-thread-k4-a2",
+      "date": "2026-11-16T10:15:54.907921+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit, identity-preserve.\nImage1 is our own generated Binding Thread recoil drawing, the edit target. Image2 is our own approved idle art, identity/proportion reference only.\nMake one narrow proportional correction to Image1: enlarge the vertical height of the brass top cap and the wrapped head/face beneath it by about10%, anchored at the lower edge of the first face wrap, so the top cap and knob rise slightly. Preserve the horizontal width and the existing sharp golden-eye expression. The recoil head is currently too short relative to the original identity.\nKeep everything else from Image1 unchanged: the exact recoiling body bend, both folded rope arms/fists, two planted feet, bottom brass rim, thread arrangement, palette, materials, light, outline, overall composition and foot baseline. Do not redesign, rotate or enlarge the whole character. Smooth the short neck-thread join after the head correction. Keep the same transparent square canvas and generous margins, full body visible. No new objects, text, glow, shadow, effect, background or second character. True alpha background.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/binding-thread/K4-A1.png; apps/web/public/units/binding-thread/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/binding-thread/K4-A1.png",
+        "apps/web/public/units/binding-thread/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/binding-thread/K4-A2.png",
+      "sha256": "55f63232814d501ce8abe13bdcfcc77d8b3494737ea0d4339a8fd6b401b07fbd",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }
