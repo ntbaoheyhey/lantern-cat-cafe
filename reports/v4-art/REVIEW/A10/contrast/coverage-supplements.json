@@ -391,7 +391,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0780.png",
       "sha256": "26e982aada2c011aa88ad98b8c64a1d8484d5839db5f8368468f595c78651f4b",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:33:20.113009+00:00",
+      "reviewNote": "Upper Binding role/stun row overlaps help/menu controls. Stun1 is readable here, but labels and toolbar share the same region.",
+      "verdict": "actual-hud-overlap",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -405,7 +410,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0786.png",
       "sha256": "e4543771bbe4530be6b82a40256a7ffa25d7aa60698a39f1c3d9ea8db84114dd",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:33:20.113009+00:00",
+      "reviewNote": "Upper Binding role icon and health bar overlap menu/audio controls while the actor recoils. No stun counter remains; the toolbar collision is confirmed.",
+      "verdict": "actual-hud-overlap",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -419,7 +429,10 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0246.png",
       "sha256": "a1d8be7f765fd995091abce51d9baef285bccd6bf5013df0e4fab1a9c157890f",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:33:20.113009+00:00",
+      "reviewNote": "Needle Moth has two complete debuff1 counters above its health bar. The projected crop missed them. Top-right enemy role/health row separately overlaps toolbar.",
+      "verdict": "readable-in-full-frame"
     },
     {
       "fixture": "wave1",
@@ -433,7 +446,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0573.png",
       "sha256": "3583bf9e6a8295e4decadf373ac66dd520031696869b0e10bb43c08d3fcc77b4",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:33:20.113009+00:00",
+      "reviewNote": "Soot status row is clipped by the real viewport top during the golden support effect; upper glyph/icon portions are absent. Other visible counters and four stars remain readable.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -447,7 +465,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0576.png",
       "sha256": "d127ed70169d2e8b7bf5063a8ddb571b434330711dad48e60f85f48a22e4a142",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:34:14.696538+00:00",
+      "reviewNote": "Soot status row lies above the real viewport top; only lower glyph/icon fragments remain during the golden pulse.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -461,7 +484,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0579.png",
       "sha256": "9ac04c7ba605a19c3734acf47a8414839c2319728602d11ab4078dbdb41649fb",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:34:14.696538+00:00",
+      "reviewNote": "Soot status row remains above the real viewport top. The clipped counter2 cannot be certified as a complete label.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -475,7 +503,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0582.png",
       "sha256": "19b444e0c9382c46f77eb806e639eb5b213432eb1aa14256a7e26f8d94ff949d",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:34:14.696538+00:00",
+      "reviewNote": "Soot status icons cross the real viewport top while lower counter2 is visible. This is a layout defect, not a crop artifact.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -489,7 +522,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0585.png",
       "sha256": "9e30f161bb93e0a7869d1ed7b9192cf4757de4cc1ad3d6208977c7270852214e",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:34:14.696538+00:00",
+      "reviewNote": "Soot counter2 is readable again, but the status icon tops still clip at the actual viewport edge as the gold effect fades.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -503,7 +541,13 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0708.png",
       "sha256": "15d4c39c6ce41ad85d7cfb312d003cac09c1b28f4e3e12b3a480cdb425403569",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:36:49.232100+00:00",
+      "reviewNote": "Soot status row clips against the actual viewport top; only lower portions of counters2/1 remain visible. Panko +1 stays complete and readable through green healing.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11",
+      "reviewOrigin": "Previously inspected once; observation restored from conversation handoff without reopening."
     },
     {
       "fixture": "wave1",
@@ -517,7 +561,13 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0711.png",
       "sha256": "08d33a0dd9fc1895469d5baa611ad5e1b6666a339d41ad544102321b47e3b646",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:36:49.232100+00:00",
+      "reviewNote": "Soot status row remains clipped, with upper glyph/icon portions outside the actual viewport. Panko +1, other visible counters and portrait stars remain readable.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11",
+      "reviewOrigin": "Previously inspected once; observation restored from conversation handoff without reopening."
     },
     {
       "fixture": "wave1",
@@ -531,7 +581,13 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0714.png",
       "sha256": "c10031d655e253178b5d8029b3b9cbdeed8365cd1969d4472c0d322fc6fd4186",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:36:49.232100+00:00",
+      "reviewNote": "Soot status row rises farther beyond the actual top edge; only lower fragments remain. Panko +1 is complete and readable amid healing leaves.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11",
+      "reviewOrigin": "Previously inspected once; observation restored from conversation handoff without reopening."
     },
     {
       "fixture": "wave1",
@@ -545,7 +601,13 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0717.png",
       "sha256": "664073d8112be13cb8d28ff2b4c42b472246dddc5cacc7079bf1c2454f0a1a0d",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:36:49.232100+00:00",
+      "reviewNote": "Actual Soot top clipping persists; partial lower portions of counters2/1 remain. Panko +1 stays readable as healing fades.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11",
+      "reviewOrigin": "Previously inspected once; observation restored from conversation handoff without reopening."
     },
     {
       "fixture": "wave1",

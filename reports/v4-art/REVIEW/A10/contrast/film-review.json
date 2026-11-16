@@ -1203,70 +1203,118 @@
       "encodedFrame": 246,
       "actor": "foe-3-needle-moth",
       "reason": "Right edge of world-label crop cuts the moving status region. Inspect wider native-pixel context; keep original sheet closed.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "readable-in-full-frame",
+      "resolutionNote": "Needle Moth has two complete debuff1 counters above its health bar. The projected crop missed them. Top-right enemy role/health row separately overlaps toolbar.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0246.png"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 573,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row is clipped by the real viewport top during the golden support effect; upper glyph/icon portions are absent. Other visible counters and four stars remain readable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0573.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 576,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row lies above the real viewport top; only lower glyph/icon fragments remain during the golden pulse.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0576.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 579,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row remains above the real viewport top. The clipped counter2 cannot be certified as a complete label.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0579.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 582,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status icons cross the real viewport top while lower counter2 is visible. This is a layout defect, not a crop artifact.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0582.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 585,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot counter2 is readable again, but the status icon tops still clip at the actual viewport edge as the gold effect fades.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0585.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 708,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row clips against the actual viewport top; only lower portions of counters2/1 remain visible. Panko +1 stays complete and readable through green healing.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0708.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 711,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row remains clipped, with upper glyph/icon portions outside the actual viewport. Panko +1, other visible counters and portrait stars remain readable.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0711.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 714,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Soot status row rises farther beyond the actual top edge; only lower fragments remain. Panko +1 is complete and readable amid healing leaves.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0714.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
       "encodedFrame": 717,
       "actor": "soot",
       "reason": "Upper status group reaches top crop/viewport boundary; inspect wider native context to distinguish capture crop from runtime clipping.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-viewport-clipping",
+      "resolutionNote": "Actual Soot top clipping persists; partial lower portions of counters2/1 remain. Panko +1 stays readable as healing fades.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/wave1-f0717.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "wave1",
@@ -1660,14 +1708,24 @@
       "encodedFrame": 780,
       "actor": "foe-2-binding-thread",
       "reason": "Status/toolbar overlap requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-hud-overlap",
+      "resolutionNote": "Upper Binding role/stun row overlaps help/menu controls. Stun1 is readable here, but labels and toolbar share the same region.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0780.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
       "encodedFrame": 786,
       "actor": "foe-2-binding-thread",
       "reason": "Status/toolbar overlap requires full native-pixel viewport context.",
-      "resolved": false
+      "resolved": true,
+      "resolution": "actual-hud-overlap",
+      "resolutionNote": "Upper Binding role icon and health bar overlap menu/audio controls while the actor recoils. No stun counter remains; the toolbar collision is confirmed.",
+      "supplement": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0786.png",
+      "defectOpen": true,
+      "followupItem": "A11"
     }
   ],
   "measurementFollowups": [
