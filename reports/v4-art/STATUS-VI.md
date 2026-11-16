@@ -13,3 +13,4 @@ FPS trung vị 60,24 / 60,24 / 59,88; đang quay 900p, sau đó xem hành độn
 Còn 42 khung clipping/đè HUD, bảng tên Panko và cụm số wave3.
 Hai thử bố trí trên sáu cảnh đã xong; chọn cách tránh HUD/khuôn mặt để kiểm chứng chuyển động, chưa cài vào runtime.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
+A11: pipeline xong;2.799mẫu900p không lỗi bố cục theo ngưỡng. Đã xem28/84sheet; giữ lỗi nhãn sát mép trên và cửa sổ cuối bị cắt.

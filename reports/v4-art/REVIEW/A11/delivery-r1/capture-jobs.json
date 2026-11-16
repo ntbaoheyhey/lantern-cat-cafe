@@ -163,9 +163,40 @@
       ],
       "started": "2026-11-16T22:33:27.385313+00:00",
       "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-delivery-r1-layout900.log",
-      "exitCode": null
+      "exitCode": 0,
+      "finished": "2026-11-16T22:46:10.678702+00:00"
+    },
+    {
+      "name": "layout-review",
+      "command": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/bin/python",
+        "tools/v3craft-lab/v4-transfer/review-900.py",
+        "--root",
+        "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A11/delivery-r1",
+        "--subdir",
+        "layout900"
+      ],
+      "started": "2026-11-16T22:46:10.699251+00:00",
+      "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-delivery-r1-layout-review.log",
+      "exitCode": 0,
+      "finished": "2026-11-16T22:46:11.386528+00:00"
+    },
+    {
+      "name": "action-sheets",
+      "command": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/bin/python",
+        "scripts/v3feel/review-sheets.py",
+        "V4-A11-DELIVERY-R1"
+      ],
+      "started": "2026-11-16T22:46:11.392210+00:00",
+      "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-delivery-r1-action-sheets.log",
+      "exitCode": 0,
+      "finished": "2026-11-16T22:46:15.465682+00:00"
     }
   ],
-  "complete": false,
-  "pass": false
+  "complete": true,
+  "pass": true,
+  "finished": "2026-11-16T22:46:17.542537+00:00",
+  "runtimeUnchanged": true,
+  "reviewSheets": 84
 }
