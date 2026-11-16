@@ -1,10 +1,10 @@
-# ART execution anchor — 2026-11-16T18:58:18.359111+00:00
+# ART execution anchor — 2026-11-16T18:59:51.783758+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: inspect R2 main-bossA11Panko/A16Mochi/A17Soot/A18Clover; then remaining7own sheets. Use film-review.json PENDING only; new900p layouts pending pipeline.
+NEXT1: inspect only R2 tail-wave1A36Mochi(edge),tail-bossA33Soot/A34Clover(edge),then3new900p layouts. Finish all28pair matrix,receipt/critique/state/status/queue andpush; advanceA10contrast immediately.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:249021dd0 verified; runtime60763fd90/77hashes. R2fivefilms5400markers/0bbox failures/60.240485FPS.16/27own sheets reviewed; all8units represented;3difficult pairs pass.
+LAST PUSH:49cb3cbfd verified; runtime60763fd90/77hashes. R2fivefilms5400markers/0bbox failures/60.240485FPS.24/27own sheets reviewed; all8units represented;3difficult pairs pass.
 LIVE: craftVite3426/5990; pipeline73945 childcapture74804/jobs/a9-r2-capture.log continues900p. Earlyfilmreview78291 endedOK; jobs/a9-r2-film-review-early.log. Pipeline later preserves reviewed report.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 NEXTMETHOD formation: fresh5movies5400encoded frames have0bbox framing failures;900p pending. Prior Yarn79.35/77.95% failures remain retained, no replacement claim yet.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite; R2reviewed16/27 recorded inr2/film-review.json; never reopen. All main-wave1 andwave3,main-bossA12,tail-wave1A32/34,tail-bossA28/29/30 closed. A9selected5/8JPG.
+IMAGEOPENS:0afterrewrite; R2reviewed24/27 recorded inr2/film-review.json; never reopen. Only tail-wave1A36/tail-bossA33/A34 and3new900p remain. A9selected5/8JPG; preserve3remaining slots for900p.
 SHAREDFOCUS: YarnA12 has5encodedframes after600ms; shakepeak2.938327px/100msobservedspan, strictduration/reducedmotion film stillOPEN. No fullA7/productionacceptance.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
@@ -24,7 +24,7 @@ Bindingclosedscoped:K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9;11own;3+flightframes;60
 Teacupclosedscoped:K1-A3/K2-A2/K4-A3;blind9/9;13own/4ult;8100markers;24pages+900p;8/8JPG;2649/315/typecheck/3F6;old damage/reflect classesOPEN.
 A10transferd3578d48a/source48599c03a saves3685534B six exactWebGLderivatives;CanvaspartialalphaRGBmismatch retained;SHIPtotal8MBOPENprior26411893B.
 Bindingportraitc5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Contrastrequest13:40 b3-world/speed/stars/auto32unknownobs, not measuredfailure.
-OPEN sharedfocus/reducedmotion/activation/ensemble/portraitbanner/finalclasses/timesplit,bossformation,A10totaltransfer. A7conservative8h ceiling16Nov18:58UTC; common failures carried into A9/A11.
+OPEN reducedmotion/strictshake/activation/ensemble/portraitbanner/finalclasses/timesplit,A10totaltransfer; R2Panko boss bannerbackplate touchesportrait f290/f891/tailf892 though text readable; wave3Soot numbercluster f703 retained.
 Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
 Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies; explicitstage;V3append-only;trackedV4reports114570880B beforecurrentcheckpoint/150MB.
 Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
