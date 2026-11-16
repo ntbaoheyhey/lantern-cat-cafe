@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T21:09:01.322028+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: trace auxiliary ART images in SHIP response list (1,705,765B total) to runtime use;4WebP+4AVIF variants allbudgetFAIL. R4prefilter9,600,560/9,575,674B;4comparisonsclosed. No production selection.
+NEXT1: real-click local entry/network audit;3normalfixtures have0legacy puppets yetSHIPscene-ready has6/694,576B. Trace initiators before crediting savings;all4WebP+4AVIFmethodsFAIL. No production edits.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:721aea22e verified;R4method/job pushed,completedresults/notes pendingcheckpoint. Contrastreceipt9df18432a complete;runtime unchanged9205464cb.
-LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log;R4supervisor11371 done0. R1-R4allcomplete;no compressionjob active. Old68961/69950absent.
+LAST PUSH:05c3b7da8 verified;R4results/reviews closed andpushed. Auxiliary source audit active. Contrastreceipt9df18432a complete;runtime unchanged9205464cb.
+LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. request-audit12818done0;3fixtures ready/0errors/0puppets;R1-R4done0. No worker job active.
 STOP/INBOX checked21:03UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEADa95a3ebcaf; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
