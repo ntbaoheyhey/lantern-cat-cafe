@@ -3,10 +3,18 @@ export async function observeSceneAudio(page){
  await page.evaluate(()=>{
   const audio=window.__thAudio,journey=window.__journeyAudio;
   if(!audio||!journey?.installed)throw Error('Journey audio must be observed first');
-  const state=window.__sceneAudioObservation={samples:[],requests:[],sceneCalls:[]};
+  const state=window.__sceneAudioObservation={samples:[],requests:[],sceneCalls:[],rosterCalls:[],preloads:[]};
+  if(audio.setBattleRoster){const original=audio.setBattleRoster;audio.setBattleRoster=function(actors){
+   const row={at:performance.now(),actors:actors?[...actors]:null,musicBefore:this.bedIds.music};
+   const result=original.apply(this,arguments);row.selected=[...this.rangedPacks];state.rosterCalls.push(row);return result;
+  };}
+  const preload=audio.preload;audio.preload=function(screen){
+   const row={at:performance.now(),screen,selected:this.rangedPacks?[...this.rangedPacks]:null};state.preloads.push(row);
+   const result=preload.apply(this,arguments);void result.then(()=>{row.readyAt=performance.now();row.decoded=[...this.decoded.keys()];});return result;
+  };
   for(const name of ['music','ambience']){
    const method=audio[name];
-   audio[name]=function(id){state.sceneCalls.push({method:name,id,at:performance.now()});return method.apply(this,arguments);};
+   audio[name]=function(id){state.sceneCalls.push({method:name,id,at:performance.now(),selected:this.rangedPacks?[...this.rangedPacks]:null});return method.apply(this,arguments);};
   }
   const play=audio.play,start=audio.start;
   audio.play=function(id){
@@ -56,7 +64,12 @@ export function evaluateSceneAudio(data){
   const ends=duckers.map(v=>v.endedAudioTime??v.when+v.duration/v.rate).filter(t=>t<=s.audioTime);
   return ends.length>0&&s.audioTime-Math.max(...ends)>=.45;
  });
- return {sceneCalls:state.sceneCalls,battles:rows,correctBattleBeds:rows.every(r=>r.pass),firstContacts,
+ const rosterBeforeMusic=state.sceneCalls.filter(r=>r.method==='music'&&['battle','boss'].includes(r.id)).map(call=>{
+  const roster=state.rosterCalls?.filter(r=>r.at<=call.at).at(-1);
+  return {at:call.at,id:call.id,roster:roster?.actors??null,selected:call.selected??null,rosterAt:roster?.at??null,
+   pass:!!roster?.actors?.length&&JSON.stringify(roster.selected)===JSON.stringify(call.selected)};
+ });
+ return {sceneCalls:state.sceneCalls,rosterBeforeMusic,rosterBeforeMusicPass:rosterBeforeMusic.length===2&&rosterBeforeMusic.every(r=>r.pass),battles:rows,correctBattleBeds:rows.every(r=>r.pass),firstContacts,
   firstContactsPredecoded:firstContacts.length===2&&firstContacts.every(r=>r.predecoded),
   duck:{samples:heldDb.length,minDb:heldDb.length?Math.min(...heldDb):null,maxDb:heldDb.length?Math.max(...heldDb):null,
    depthPass:heldDb.length>0&&heldDb.every(v=>v>=-8.0001&&v<=-3.9999),recoverySamples:recovery.length,recoveryPass:recovery.length>0&&recovery.every(s=>s.duck>=.995)},

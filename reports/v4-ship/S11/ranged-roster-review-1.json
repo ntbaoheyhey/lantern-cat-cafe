@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-16T23:15:55.552695+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-roster-review.py",
+    "sha256": "166add3dfe2d70c5e6c04d4c771b268e939a0d2bf9717db3db4aad113ff06a21"
+  },
+  "input": {
+    "path": "reports/v4-ship/S11/ranged-roster-http-1.json",
+    "sha256": "1415c468f28b95599b1ecc9248d83c321e4478eb691c1091a7d81bc1b4930d60"
+  },
+  "raw": {
+    "path": "reports/v4-ship/S11/ranged-roster-http-1.log.json.gz",
+    "bytes": 25746,
+    "sha256": "3b5b5eee56814334d862a7ce681325aa6ef050362d3c3eabdfbbc3fd1cbc03da"
+  },
+  "candidateMappings": 180,
+  "uniqueSprites": 144,
+  "installedFilesVerified": 8,
+  "phases": 104,
+  "sourceStarts": 224,
+  "functionalEvidencePass": true,
+  "payloadDiscrepancies": [
+    {
+      "caseId": "chromium-webm-new-arrival-palettes",
+      "recorded": 337306,
+      "server": 964869
+    }
+  ],
+  "payloadAccountingPass": false,
+  "cold": [
+    {
+      "browser": "chromium",
+      "format": "webm",
+      "method": "monolith",
+      "preloadMs": 86.5,
+      "rangedBytes": 954493,
+      "rangedRequests": 1
+    },
+    {
+      "browser": "chromium",
+      "format": "webm",
+      "method": "palettes",
+      "preloadMs": 64,
+      "rangedBytes": 560221,
+      "rangedRequests": 2
+    },
+    {
+      "browser": "chromium",
+      "format": "mp3",
+      "method": "monolith",
+      "preloadMs": 89.69999999925494,
+      "rangedBytes": 3029184,
+      "rangedRequests": 1
+    },
+    {
+      "browser": "chromium",
+      "format": "mp3",
+      "method": "palettes",
+      "preloadMs": 49.899999998509884,
+      "rangedBytes": 1653696,
+      "rangedRequests": 2
+    },
+    {
+      "browser": "webkit",
+      "format": "webm",
+      "method": "monolith",
+      "preloadMs": 1189,
+      "rangedBytes": 954493,
+      "rangedRequests": 1
+    },
+    {
+      "browser": "webkit",
+      "format": "webm",
+      "method": "palettes",
+      "preloadMs": 464,
+      "rangedBytes": 560221,
+      "rangedRequests": 2
+    },
+    {
+      "browser": "webkit",
+      "format": "mp3",
+      "method": "monolith",
+      "preloadMs": 227,
+      "rangedBytes": 3029184,
+      "rangedRequests": 1
+    },
+    {
+      "browser": "webkit",
+      "format": "mp3",
+      "method": "palettes",
+      "preloadMs": 192,
+      "rangedBytes": 1653696,
+      "rangedRequests": 2
+    }
+  ],
+  "pass": false,
+  "productionValidated": false,
+  "fullAudioGatePass": false,
+  "shippingTransferGatePass": false
+}

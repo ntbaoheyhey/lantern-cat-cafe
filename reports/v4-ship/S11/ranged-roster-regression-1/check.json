@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-16T23:16:51.023Z",
+  "rows": [
+    {
+      "name": "server",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/supabase-tests",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 12.942
+    },
+    {
+      "name": "rules",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 26.603
+    },
+    {
+      "name": "web",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "exitCode": 1,
+      "seconds": 93.535
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 2,
+      "seconds": 15.693
+    },
+    {
+      "name": "parity-probe",
+      "command": [
+        "node",
+        "tools/v4ship-lab/parity-probe.mjs",
+        "reports/v4-ship/S11/ranged-roster-regression-1/parity-probe.json"
+      ],
+      "exitCode": 0,
+      "seconds": 6.574
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 2,
+      "seconds": 15.826
+    }
+  ],
+  "commandsPassed": false,
+  "complete": true,
+  "officialClassParityGate": false,
+  "log": {
+    "path": "reports/v4-ship/S11/ranged-roster-regression-1/log.jsonl.gz",
+    "sha256": "6f17f48df8285a9dd1c337a2c09eb2dd386a903e934530b1a905ba4a07e0b171"
+  }
+}

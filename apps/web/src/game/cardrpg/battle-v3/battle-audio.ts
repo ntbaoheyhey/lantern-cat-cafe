@@ -35,7 +35,7 @@ export class BattleAudio {
   }
   if(!this.capture&&typeof window!=='undefined'){
    const bridge=window.__thAudio,roster=view.actors.map(actor=>view.models?.[actor.id]??actor.cardRpg?.cardId??actor.id),key=roster.join('|');
-   if(bridge?.preloadVoices&&key!==this.voiceRoster){this.voiceRoster=key;void bridge.preloadVoices(roster);}
+   if(bridge&&key!==this.voiceRoster){this.voiceRoster=key;bridge.setBattleRoster?.(roster);void bridge.preloadVoices?.(roster);}
   }
   const now=view.fixedTime===undefined?performance.now():view.fixedTime*1000,delta=this.lastWall===undefined?0:Math.max(0,Math.min(250,now-this.lastWall));this.lastWall=now;
   if(view.galleryPreview||(!this.capture&&(view.paused||view.fixedTime!==undefined)))return;

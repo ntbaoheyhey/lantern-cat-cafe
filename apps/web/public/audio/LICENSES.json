@@ -45501,6 +45501,1144 @@
         "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
       ],
       "derivationEvidence": "reports/v4-ship/LEARN/S11-ranged-audio.md"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.webm",
+      "file": "v4-ranged-ember.webm",
+      "sha256": "0507e947b741c1e6880bacb392b1ec018e46101b905028973a709b3504e5b612",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_000.flac",
+          "sha256": "b98ef8d14715fa515f7d349fc1f1211577d48af741d640e885bedd502772d765",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_001.flac",
+          "sha256": "065ead9afc03b29e9137ca743f4540c95e100bdafad62f84bd3be9ea52543309",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_002.flac",
+          "sha256": "e7c346990fbaccfd947884c8675e5f45b3486a4b56c4b68eeace8e652d9ba757",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_003.flac",
+          "sha256": "f80190a6cda15f9d856ce50455e37847540c98bc746b81ecb56eaaa6a76951b6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_004.flac",
+          "sha256": "6ad3952844e15df164b2fc2cfb289e1e8aaf54a800e0c6ed61ab1f7c13bd72f3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_medium_000.flac",
+          "sha256": "e806dc1b34a808787c0ba6d4ac7414b04330af521b2f87a4142c8943df27147f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt.flac",
+          "sha256": "88b3e2cba040227822c14a6fffc031f3d687f958268f5ff47268d46a88240cce",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt2.flac",
+          "sha256": "9b56927dac5532482ad53e4e831699fe2c524617ef214b5bc8ad552b64774c05",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_000.flac",
+          "sha256": "dafbf0baa66e0a9dab3e9ec59777261698aa97ef075e24423894a4c305e6ed36",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_001.flac",
+          "sha256": "f7ac36edf619c27168e2ffd0076d81dddce7363678d6be15633ba3283009d228",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_002.flac",
+          "sha256": "1edff54b6daab28526d4d287d724e49444efadf862e9f467a2579642f2908256",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_003.flac",
+          "sha256": "67ca0fa1e1441df6bed26a3586e304537a7d15dd52219af68922c7806010466f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_004.flac",
+          "sha256": "e4913dfe6858510eecb726416018d24e5efbafdc482e35c5e9cd22872ecacc40",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPlank_medium_000.flac",
+          "sha256": "76ec74feffaeabcd4375b8cc2b1d4ed2860d44f47db557f883667f48d03eeafa",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife1.flac",
+          "sha256": "e301e3e656ffebbee7392dab0be26e22e3ebf7199fc95585076ccf9160eede8a",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife2.flac",
+          "sha256": "3aa19eea7e749a50218d962b8662b9208fcd9bf83da9a4f68a02c43fd19c1653",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife3.flac",
+          "sha256": "05f1ae5d140e41e0ff782ec6a102cdde3089364ebc1e929bd997db8d6b78ab73",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/knifeSlice.flac",
+          "sha256": "134e4a2cfc7201287546c0a2ccdc71f4a42b69cf08143e812910f7f2c1ce3f82",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_000.flac",
+          "sha256": "94af9d0c752d78a89d0b8adc5520f07396286f4a70554d62c7378662b3a5ee8a",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_001.flac",
+          "sha256": "c9c5bc34983bd555ecb75b7434ea45dfd79f92bee4cf38a58b4d85d048d93f88",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_002.flac",
+          "sha256": "901b49adc07befe19de4cd7df64d0d4d705e8b7cb40ca2412fd06cab527e393b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_003.flac",
+          "sha256": "70937f95044bf4c75ece55ba7776e907398f14e31070d3c28cfecf87ec422da3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_004.flac",
+          "sha256": "0f54496f60795d5e9976d1cc6f9e88dcad8f7c426182bab6d95185726e1643d0",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_medium_000.flac",
+          "sha256": "a831247e325d11b88e43b65f6709cd3756accfd4e2b8578da565093bdb5db9ce",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 337306,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/ember/reference.f32",
+        "bytes": 6106080,
+        "sha256": "ce3b29aacafe79836c45dbc4c24a9cc541f859e777ac9d62aa87a9712b2f935a"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.mp3",
+      "file": "v4-ranged-ember.mp3",
+      "sha256": "2498f8333e44a4862e025d2aae3526e2d6a2965637a90aac94df1260ad08d1b4",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_000.flac",
+          "sha256": "b98ef8d14715fa515f7d349fc1f1211577d48af741d640e885bedd502772d765",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_001.flac",
+          "sha256": "065ead9afc03b29e9137ca743f4540c95e100bdafad62f84bd3be9ea52543309",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_002.flac",
+          "sha256": "e7c346990fbaccfd947884c8675e5f45b3486a4b56c4b68eeace8e652d9ba757",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_003.flac",
+          "sha256": "f80190a6cda15f9d856ce50455e37847540c98bc746b81ecb56eaaa6a76951b6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_004.flac",
+          "sha256": "6ad3952844e15df164b2fc2cfb289e1e8aaf54a800e0c6ed61ab1f7c13bd72f3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_medium_000.flac",
+          "sha256": "e806dc1b34a808787c0ba6d4ac7414b04330af521b2f87a4142c8943df27147f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt.flac",
+          "sha256": "88b3e2cba040227822c14a6fffc031f3d687f958268f5ff47268d46a88240cce",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt2.flac",
+          "sha256": "9b56927dac5532482ad53e4e831699fe2c524617ef214b5bc8ad552b64774c05",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_000.flac",
+          "sha256": "dafbf0baa66e0a9dab3e9ec59777261698aa97ef075e24423894a4c305e6ed36",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_001.flac",
+          "sha256": "f7ac36edf619c27168e2ffd0076d81dddce7363678d6be15633ba3283009d228",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_002.flac",
+          "sha256": "1edff54b6daab28526d4d287d724e49444efadf862e9f467a2579642f2908256",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_003.flac",
+          "sha256": "67ca0fa1e1441df6bed26a3586e304537a7d15dd52219af68922c7806010466f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMining_004.flac",
+          "sha256": "e4913dfe6858510eecb726416018d24e5efbafdc482e35c5e9cd22872ecacc40",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPlank_medium_000.flac",
+          "sha256": "76ec74feffaeabcd4375b8cc2b1d4ed2860d44f47db557f883667f48d03eeafa",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife1.flac",
+          "sha256": "e301e3e656ffebbee7392dab0be26e22e3ebf7199fc95585076ccf9160eede8a",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife2.flac",
+          "sha256": "3aa19eea7e749a50218d962b8662b9208fcd9bf83da9a4f68a02c43fd19c1653",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/drawKnife3.flac",
+          "sha256": "05f1ae5d140e41e0ff782ec6a102cdde3089364ebc1e929bd997db8d6b78ab73",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/knifeSlice.flac",
+          "sha256": "134e4a2cfc7201287546c0a2ccdc71f4a42b69cf08143e812910f7f2c1ce3f82",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_000.flac",
+          "sha256": "94af9d0c752d78a89d0b8adc5520f07396286f4a70554d62c7378662b3a5ee8a",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_001.flac",
+          "sha256": "c9c5bc34983bd555ecb75b7434ea45dfd79f92bee4cf38a58b4d85d048d93f88",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_002.flac",
+          "sha256": "901b49adc07befe19de4cd7df64d0d4d705e8b7cb40ca2412fd06cab527e393b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_003.flac",
+          "sha256": "70937f95044bf4c75ece55ba7776e907398f14e31070d3c28cfecf87ec422da3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_004.flac",
+          "sha256": "0f54496f60795d5e9976d1cc6f9e88dcad8f7c426182bab6d95185726e1643d0",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_medium_000.flac",
+          "sha256": "a831247e325d11b88e43b65f6709cd3756accfd4e2b8578da565093bdb5db9ce",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 764928,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/ember/reference.f32",
+        "bytes": 6106080,
+        "sha256": "ce3b29aacafe79836c45dbc4c24a9cc541f859e777ac9d62aa87a9712b2f935a"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.webm",
+      "file": "v4-ranged-heavy.webm",
+      "sha256": "18dfd1803e86b08e7208974fa2772031994d3fba5a1e39ae2e573fba12e1a970",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_000.flac",
+          "sha256": "4b04dbc4526fc762db8b8d9b8a508d3310aa5fa1d459e7f4d437cb29ecad89d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_001.flac",
+          "sha256": "c1e12c6e438e67c4aab93004a10a55588fa8d96ebfd42bd1a55c623019a89671",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_002.flac",
+          "sha256": "66d67f828d8b8e617a92cc8072d1a264672b5b1d174526531da9ef9172d8a2a2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_003.flac",
+          "sha256": "9ac672d7df6b40efd9aea94899daef1db41493f62fc485b13c1184f621ffc091",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_004.flac",
+          "sha256": "d2e69854b75c3cbc2671d173caa529a6657ef3bc16df7039b4afe431c1b9e628",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_medium_000.flac",
+          "sha256": "2f47ee8c06630752a0dec401db4e56aec64b0225394284011f2011ee8638d7d7",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_000.flac",
+          "sha256": "b98ef8d14715fa515f7d349fc1f1211577d48af741d640e885bedd502772d765",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_001.flac",
+          "sha256": "065ead9afc03b29e9137ca743f4540c95e100bdafad62f84bd3be9ea52543309",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_002.flac",
+          "sha256": "e7c346990fbaccfd947884c8675e5f45b3486a4b56c4b68eeace8e652d9ba757",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_003.flac",
+          "sha256": "f80190a6cda15f9d856ce50455e37847540c98bc746b81ecb56eaaa6a76951b6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_004.flac",
+          "sha256": "6ad3952844e15df164b2fc2cfb289e1e8aaf54a800e0c6ed61ab1f7c13bd72f3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_medium_000.flac",
+          "sha256": "e806dc1b34a808787c0ba6d4ac7414b04330af521b2f87a4142c8943df27147f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_000.flac",
+          "sha256": "94af9d0c752d78a89d0b8adc5520f07396286f4a70554d62c7378662b3a5ee8a",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_001.flac",
+          "sha256": "c9c5bc34983bd555ecb75b7434ea45dfd79f92bee4cf38a58b4d85d048d93f88",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_002.flac",
+          "sha256": "901b49adc07befe19de4cd7df64d0d4d705e8b7cb40ca2412fd06cab527e393b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_003.flac",
+          "sha256": "70937f95044bf4c75ece55ba7776e907398f14e31070d3c28cfecf87ec422da3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_004.flac",
+          "sha256": "0f54496f60795d5e9976d1cc6f9e88dcad8f7c426182bab6d95185726e1643d0",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_medium_000.flac",
+          "sha256": "a831247e325d11b88e43b65f6709cd3756accfd4e2b8578da565093bdb5db9ce",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_000.flac",
+          "sha256": "3546315a5906dc4765bc8efcd7ab59999bf521a25dfc7eecdba7344928f32fb6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_001.flac",
+          "sha256": "0c2b7a85f91cbcc6a05b4efbe482f5a854a7b811648396b893e2bd8e19f3a2d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_002.flac",
+          "sha256": "c3b3eaff56c81616966a1a83fa9fb04c61aba4d67b6e39e99ac176a9bd24d67c",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_003.flac",
+          "sha256": "5496d8d46a9341621a3cfb500954a02f9c59d019912164641fe929dccd469587",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_004.flac",
+          "sha256": "25b30a407b8038f8bf401e64b8727e3bac2ec559266e3735846b2c6ff6a2f4e6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPlate_heavy_000.flac",
+          "sha256": "b78854018f80a35935d93e1a802b328ccd941ea0db2ce9ddf7717dfd578b76cb",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 222915,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/heavy/reference.f32",
+        "bytes": 7099440,
+        "sha256": "82295882087db0a11779cf5b12b964feeb1c101d6b10609bffdb9bde9270ae82"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.mp3",
+      "file": "v4-ranged-heavy.mp3",
+      "sha256": "de1b8838e55e926c7abed5451f18b575049dad18e45d72aa8c81c86d56e1eb1e",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_000.flac",
+          "sha256": "4b04dbc4526fc762db8b8d9b8a508d3310aa5fa1d459e7f4d437cb29ecad89d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_001.flac",
+          "sha256": "c1e12c6e438e67c4aab93004a10a55588fa8d96ebfd42bd1a55c623019a89671",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_002.flac",
+          "sha256": "66d67f828d8b8e617a92cc8072d1a264672b5b1d174526531da9ef9172d8a2a2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_003.flac",
+          "sha256": "9ac672d7df6b40efd9aea94899daef1db41493f62fc485b13c1184f621ffc091",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_004.flac",
+          "sha256": "d2e69854b75c3cbc2671d173caa529a6657ef3bc16df7039b4afe431c1b9e628",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_medium_000.flac",
+          "sha256": "2f47ee8c06630752a0dec401db4e56aec64b0225394284011f2011ee8638d7d7",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_000.flac",
+          "sha256": "b98ef8d14715fa515f7d349fc1f1211577d48af741d640e885bedd502772d765",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_001.flac",
+          "sha256": "065ead9afc03b29e9137ca743f4540c95e100bdafad62f84bd3be9ea52543309",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_002.flac",
+          "sha256": "e7c346990fbaccfd947884c8675e5f45b3486a4b56c4b68eeace8e652d9ba757",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_003.flac",
+          "sha256": "f80190a6cda15f9d856ce50455e37847540c98bc746b81ecb56eaaa6a76951b6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_heavy_004.flac",
+          "sha256": "6ad3952844e15df164b2fc2cfb289e1e8aaf54a800e0c6ed61ab1f7c13bd72f3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactWood_medium_000.flac",
+          "sha256": "e806dc1b34a808787c0ba6d4ac7414b04330af521b2f87a4142c8943df27147f",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_000.flac",
+          "sha256": "94af9d0c752d78a89d0b8adc5520f07396286f4a70554d62c7378662b3a5ee8a",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_001.flac",
+          "sha256": "c9c5bc34983bd555ecb75b7434ea45dfd79f92bee4cf38a58b4d85d048d93f88",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_002.flac",
+          "sha256": "901b49adc07befe19de4cd7df64d0d4d705e8b7cb40ca2412fd06cab527e393b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_003.flac",
+          "sha256": "70937f95044bf4c75ece55ba7776e907398f14e31070d3c28cfecf87ec422da3",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_heavy_004.flac",
+          "sha256": "0f54496f60795d5e9976d1cc6f9e88dcad8f7c426182bab6d95185726e1643d0",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactMetal_medium_000.flac",
+          "sha256": "a831247e325d11b88e43b65f6709cd3756accfd4e2b8578da565093bdb5db9ce",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_000.flac",
+          "sha256": "3546315a5906dc4765bc8efcd7ab59999bf521a25dfc7eecdba7344928f32fb6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_001.flac",
+          "sha256": "0c2b7a85f91cbcc6a05b4efbe482f5a854a7b811648396b893e2bd8e19f3a2d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_002.flac",
+          "sha256": "c3b3eaff56c81616966a1a83fa9fb04c61aba4d67b6e39e99ac176a9bd24d67c",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_003.flac",
+          "sha256": "5496d8d46a9341621a3cfb500954a02f9c59d019912164641fe929dccd469587",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactBell_heavy_004.flac",
+          "sha256": "25b30a407b8038f8bf401e64b8727e3bac2ec559266e3735846b2c6ff6a2f4e6",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPlate_heavy_000.flac",
+          "sha256": "b78854018f80a35935d93e1a802b328ccd941ea0db2ce9ddf7717dfd578b76cb",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 888768,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/heavy/reference.f32",
+        "bytes": 7099440,
+        "sha256": "82295882087db0a11779cf5b12b964feeb1c101d6b10609bffdb9bde9270ae82"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.webm",
+      "file": "v4-ranged-shadow.webm",
+      "sha256": "4dcb035656fcb5eac3b96f2ef39d1491307e31fffc271417f6d0a3d86ea21772",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_000.flac",
+          "sha256": "4b04dbc4526fc762db8b8d9b8a508d3310aa5fa1d459e7f4d437cb29ecad89d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_001.flac",
+          "sha256": "c1e12c6e438e67c4aab93004a10a55588fa8d96ebfd42bd1a55c623019a89671",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_002.flac",
+          "sha256": "66d67f828d8b8e617a92cc8072d1a264672b5b1d174526531da9ef9172d8a2a2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_003.flac",
+          "sha256": "9ac672d7df6b40efd9aea94899daef1db41493f62fc485b13c1184f621ffc091",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_004.flac",
+          "sha256": "d2e69854b75c3cbc2671d173caa529a6657ef3bc16df7039b4afe431c1b9e628",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_medium_000.flac",
+          "sha256": "2f47ee8c06630752a0dec401db4e56aec64b0225394284011f2011ee8638d7d7",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_000.flac",
+          "sha256": "53c1c76ded68498bccf82b89afc2757b904b2d2deb5f126e57e6ed76adb9e952",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_001.flac",
+          "sha256": "721afe74cfdf43f5cd24e50255ddbafd9a4520e957c9aa431794100263ea307b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_002.flac",
+          "sha256": "2415d48839151955b3ba71f7db164015342a5bdbce20ad41fc20f1d06366a506",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_003.flac",
+          "sha256": "1c6c8344933500a65d97eb865d7dd75d6581f992a1f271c35039ad9910d8ac42",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_004.flac",
+          "sha256": "d691b58f5a8676f2546acb2f26c70fc0d7b937c511463921706a4000b5f46bfe",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_medium_000.flac",
+          "sha256": "dc40aacd53d9cf6e60a8bce7dd3c6d734ee456fc18a2d4a96d90bc5a18809f49",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth1.flac",
+          "sha256": "5116e4343f9d61bc218503c58c704d09f440a093cb269a2ffacb05ee4b57637b",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth2.flac",
+          "sha256": "ab85a08ecdc0cd3dddb6bb370bcb863fa4278544b6c13d67d1ff81c68bdebf75",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth3.flac",
+          "sha256": "93d21cc3980e0b0970f501023c79c93e8e53ef7b66e1c4a18d271177879df87f",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth4.flac",
+          "sha256": "cfd341948ee9120560814114678f8aa1537e7f625481dc479a10e6a13bcd2abc",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt.flac",
+          "sha256": "88b3e2cba040227822c14a6fffc031f3d687f958268f5ff47268d46a88240cce",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt2.flac",
+          "sha256": "9b56927dac5532482ad53e4e831699fe2c524617ef214b5bc8ad552b64774c05",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 240764,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/shadow/reference.f32",
+        "bytes": 5987824,
+        "sha256": "d083f1b2fdbcd104e29a04087c9db18b2addd56ed5bc7aaade18be857878ecf6"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.mp3",
+      "file": "v4-ranged-shadow.mp3",
+      "sha256": "5fe6d859aea40bb99d879d98741419a09fa1ee70c097df0fccd8af77df9e29f7",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_000.flac",
+          "sha256": "4b04dbc4526fc762db8b8d9b8a508d3310aa5fa1d459e7f4d437cb29ecad89d2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_001.flac",
+          "sha256": "c1e12c6e438e67c4aab93004a10a55588fa8d96ebfd42bd1a55c623019a89671",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_002.flac",
+          "sha256": "66d67f828d8b8e617a92cc8072d1a264672b5b1d174526531da9ef9172d8a2a2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_003.flac",
+          "sha256": "9ac672d7df6b40efd9aea94899daef1db41493f62fc485b13c1184f621ffc091",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_heavy_004.flac",
+          "sha256": "d2e69854b75c3cbc2671d173caa529a6657ef3bc16df7039b4afe431c1b9e628",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactPunch_medium_000.flac",
+          "sha256": "2f47ee8c06630752a0dec401db4e56aec64b0225394284011f2011ee8638d7d7",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_000.flac",
+          "sha256": "53c1c76ded68498bccf82b89afc2757b904b2d2deb5f126e57e6ed76adb9e952",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_001.flac",
+          "sha256": "721afe74cfdf43f5cd24e50255ddbafd9a4520e957c9aa431794100263ea307b",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_002.flac",
+          "sha256": "2415d48839151955b3ba71f7db164015342a5bdbce20ad41fc20f1d06366a506",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_003.flac",
+          "sha256": "1c6c8344933500a65d97eb865d7dd75d6581f992a1f271c35039ad9910d8ac42",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_heavy_004.flac",
+          "sha256": "d691b58f5a8676f2546acb2f26c70fc0d7b937c511463921706a4000b5f46bfe",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactSoft_medium_000.flac",
+          "sha256": "dc40aacd53d9cf6e60a8bce7dd3c6d734ee456fc18a2d4a96d90bc5a18809f49",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth1.flac",
+          "sha256": "5116e4343f9d61bc218503c58c704d09f440a093cb269a2ffacb05ee4b57637b",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth2.flac",
+          "sha256": "ab85a08ecdc0cd3dddb6bb370bcb863fa4278544b6c13d67d1ff81c68bdebf75",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth3.flac",
+          "sha256": "93d21cc3980e0b0970f501023c79c93e8e53ef7b66e1c4a18d271177879df87f",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/cloth4.flac",
+          "sha256": "cfd341948ee9120560814114678f8aa1537e7f625481dc479a10e6a13bcd2abc",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt.flac",
+          "sha256": "88b3e2cba040227822c14a6fffc031f3d687f958268f5ff47268d46a88240cce",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        },
+        {
+          "path": "assets/audio-sources/b2/rpg-audio/clothBelt2.flac",
+          "sha256": "9b56927dac5532482ad53e4e831699fe2c524617ef214b5bc8ad552b64774c05",
+          "sourceUrl": "https://kenney.nl/assets/rpg-audio"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 749952,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/shadow/reference.f32",
+        "bytes": 5987824,
+        "sha256": "d083f1b2fdbcd104e29a04087c9db18b2addd56ed5bc7aaade18be857878ecf6"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.webm",
+      "file": "v4-ranged-tide.webm",
+      "sha256": "b5f1ee32aeb4c477197f83382db216eed07c2c3f8206f0b7c57737ade29d3085",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_000.flac",
+          "sha256": "d939d3c4523aa2c3c170fecd98bb789db80d7c891b972368721ab0136be91a01",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_001.flac",
+          "sha256": "1cab988621c961df205c6ede784b4bfb92acdd8a0b8682d177a544c303bb1cf2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_002.flac",
+          "sha256": "341a4bf3a6d1bdbc02da0b7aaaf92dd3e94f84f2398ca66d90a82d79801ce7d9",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_003.flac",
+          "sha256": "d882da49b38b560029a2b799e96b74f4e2ccb02e67509648a6b52ed7d2511d29",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_004.flac",
+          "sha256": "0d0873920c77bc5c97dd5ed41ca10c0cd4d451062a3ced8a62bea3c1e22dcf62",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_medium_000.flac",
+          "sha256": "f7628de7e7c193bfebcc012167302ca66eb9552b7399772b4927b2cb9423e001",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_000.flac",
+          "sha256": "2f12980f7ad67ea27b221198147e346869acde7df3c0b6a31995ed6c54198732",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_001.flac",
+          "sha256": "b6a11ed426d54b0d6d002941d8fa6f763087688d7f4c977df08177b6edba7c52",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_002.flac",
+          "sha256": "8908e2110149aa5a6520f60c2b8024a0384bd48971c2c0ddf50ab2494d9ed6a4",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_003.flac",
+          "sha256": "89a3f53ce9bf8afba5761fb44622ca90514f0c565371d7a9f3d21a82dfb29de2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_004.flac",
+          "sha256": "c35141e6b97e562d9f5f2f5d374e28a9d92ba19269f041c35cfc89d90cb00f48",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 163884,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/tide/reference.f32",
+        "bytes": 5030736,
+        "sha256": "54f010314bdb325014b78ca3554c8a0932b19ec4c1531f2c57f8fb1c850a25d7"
+      }
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.mp3",
+      "file": "v4-ranged-tide.mp3",
+      "sha256": "0e3329ca89a0405e7b8a943b0d306e9b8bd31dd0533c07ad5941c39badeb5425",
+      "sourceUrl": "https://kenney.nl/assets",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license": "CC0-1.0",
+      "author": "Kenney; original layered arrangement and room DSP by Taskbar Hero",
+      "date": "2026-11-16",
+      "sourceFiles": [
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_000.flac",
+          "sha256": "d939d3c4523aa2c3c170fecd98bb789db80d7c891b972368721ab0136be91a01",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_001.flac",
+          "sha256": "1cab988621c961df205c6ede784b4bfb92acdd8a0b8682d177a544c303bb1cf2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_002.flac",
+          "sha256": "341a4bf3a6d1bdbc02da0b7aaaf92dd3e94f84f2398ca66d90a82d79801ce7d9",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_003.flac",
+          "sha256": "d882da49b38b560029a2b799e96b74f4e2ccb02e67509648a6b52ed7d2511d29",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_light_004.flac",
+          "sha256": "0d0873920c77bc5c97dd5ed41ca10c0cd4d451062a3ced8a62bea3c1e22dcf62",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_medium_000.flac",
+          "sha256": "f7628de7e7c193bfebcc012167302ca66eb9552b7399772b4927b2cb9423e001",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_000.flac",
+          "sha256": "2f12980f7ad67ea27b221198147e346869acde7df3c0b6a31995ed6c54198732",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_001.flac",
+          "sha256": "b6a11ed426d54b0d6d002941d8fa6f763087688d7f4c977df08177b6edba7c52",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_002.flac",
+          "sha256": "8908e2110149aa5a6520f60c2b8024a0384bd48971c2c0ddf50ab2494d9ed6a4",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_003.flac",
+          "sha256": "89a3f53ce9bf8afba5761fb44622ca90514f0c565371d7a9f3d21a82dfb29de2",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        },
+        {
+          "path": "assets/audio-sources/b2/impact-sounds/impactGlass_heavy_004.flac",
+          "sha256": "c35141e6b97e562d9f5f2f5d374e28a9d92ba19269f041c35cfc89d90cb00f48",
+          "sourceUrl": "https://kenney.nl/assets/impact-sounds"
+        }
+      ],
+      "processing": "Four original AudioEngine.start layers per impact rendered from each named published pack at48kHz, original filters/gains/offsets/envelopes,80ms guards;36balanced combinations per palette. Identical ice/tide impact designs share36verified mappings;144unique sprites serve180palette combinations. Common composite pitch/gain replaces independent layer randomization. Vorbis128leading zeros; nativeLAME192k requested1/0.97 reports effective1.0. No new recording or normalization. Partitioned by palette from the same pre-encoding PCM with unchanged guards; offsets rebased. No lossy transcoding or regenerated samples.",
+      "derivedFrom": [
+        {
+          "path": "apps/web/public/audio/b2-hits.webm",
+          "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+        },
+        {
+          "path": "apps/web/public/audio/b2-motion.webm",
+          "sha256": "41fd7412f2f62c3ded445b51c819912d564c28d69bd6145d15981eb192630e37"
+        }
+      ],
+      "buildScript": {
+        "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+        "bytes": 9821,
+        "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+      },
+      "playbackLimitations": [
+        "Nominal-pitch codec reconstruction only; arbitrary pitch/speed waveform and human perceptual equivalence are unverified.",
+        "Common composite pitch/speed resamples internal layer offsets; original separate layers keep explicit wall-time offsets.",
+        "Each palette uses 36 balanced combinations rather than independently randomizing all 1296 layer combinations. Ice/tide share identical impact PCM; their launch/travel designs differ."
+      ],
+      "derivationEvidence": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 630144,
+      "partitionedFrom": [
+        {
+          "path": "work/v4ship-audio/ranged-class-bake-1/impacts.f32",
+          "sha256": "88ae5d87efe05496126b13ba4477746b67f2e95e31d3c61ec32ff0cb0d994398"
+        }
+      ],
+      "palettePcm": {
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/tide/reference.f32",
+        "bytes": 5030736,
+        "sha256": "54f010314bdb325014b78ca3554c8a0932b19ec4c1531f2c57f8fb1c850a25d7"
+      }
     }
   ]
 }

@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-16T23:11:37.569Z",
+  "learn": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+  "sourceCommit": "8fbb6f407da0c2619607b96331bbaee78df23b5a",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-palette-install.mjs",
+    "bytes": 5442,
+    "sha256": "bb9bf4a0283de5c11b21b3235bf8d035736927d0d0c0ed0c93dfbb08174218f4"
+  },
+  "baseline": {
+    "engine": {
+      "path": "work/v4ship-audio/ranged-roster-1/original-engine.ts",
+      "bytes": 25212,
+      "sha256": "2de9cb77917936bf597b0fed4030038ac2117da24dd4a0820164682cfb1dea0d"
+    },
+    "manifest": {
+      "path": "work/v4ship-audio/ranged-roster-1/original-manifest.json",
+      "bytes": 1267988,
+      "sha256": "79c0d9aa4fc5107d0eccc1b739330e1c5219798f37dbb2ac39e782b37b4ed097"
+    }
+  },
+  "copied": [
+    {
+      "source": {
+        "format": "webm",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/ember/v4-ranged-ember.webm",
+        "bytes": 337306,
+        "sha256": "0507e947b741c1e6880bacb392b1ec018e46101b905028973a709b3504e5b612"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-ember.webm",
+        "bytes": 337306,
+        "sha256": "0507e947b741c1e6880bacb392b1ec018e46101b905028973a709b3504e5b612"
+      }
+    },
+    {
+      "source": {
+        "format": "mp3",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/ember/v4-ranged-ember.mp3",
+        "bytes": 764928,
+        "sha256": "2498f8333e44a4862e025d2aae3526e2d6a2965637a90aac94df1260ad08d1b4"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-ember.mp3",
+        "bytes": 764928,
+        "sha256": "2498f8333e44a4862e025d2aae3526e2d6a2965637a90aac94df1260ad08d1b4"
+      }
+    },
+    {
+      "source": {
+        "format": "webm",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/heavy/v4-ranged-heavy.webm",
+        "bytes": 222915,
+        "sha256": "18dfd1803e86b08e7208974fa2772031994d3fba5a1e39ae2e573fba12e1a970"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-heavy.webm",
+        "bytes": 222915,
+        "sha256": "18dfd1803e86b08e7208974fa2772031994d3fba5a1e39ae2e573fba12e1a970"
+      }
+    },
+    {
+      "source": {
+        "format": "mp3",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/heavy/v4-ranged-heavy.mp3",
+        "bytes": 888768,
+        "sha256": "de1b8838e55e926c7abed5451f18b575049dad18e45d72aa8c81c86d56e1eb1e"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-heavy.mp3",
+        "bytes": 888768,
+        "sha256": "de1b8838e55e926c7abed5451f18b575049dad18e45d72aa8c81c86d56e1eb1e"
+      }
+    },
+    {
+      "source": {
+        "format": "webm",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/shadow/v4-ranged-shadow.webm",
+        "bytes": 240764,
+        "sha256": "4dcb035656fcb5eac3b96f2ef39d1491307e31fffc271417f6d0a3d86ea21772"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-shadow.webm",
+        "bytes": 240764,
+        "sha256": "4dcb035656fcb5eac3b96f2ef39d1491307e31fffc271417f6d0a3d86ea21772"
+      }
+    },
+    {
+      "source": {
+        "format": "mp3",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/shadow/v4-ranged-shadow.mp3",
+        "bytes": 749952,
+        "sha256": "5fe6d859aea40bb99d879d98741419a09fa1ee70c097df0fccd8af77df9e29f7"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-shadow.mp3",
+        "bytes": 749952,
+        "sha256": "5fe6d859aea40bb99d879d98741419a09fa1ee70c097df0fccd8af77df9e29f7"
+      }
+    },
+    {
+      "source": {
+        "format": "webm",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/tide/v4-ranged-tide.webm",
+        "bytes": 163884,
+        "sha256": "b5f1ee32aeb4c477197f83382db216eed07c2c3f8206f0b7c57737ade29d3085"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-tide.webm",
+        "bytes": 163884,
+        "sha256": "b5f1ee32aeb4c477197f83382db216eed07c2c3f8206f0b7c57737ade29d3085"
+      }
+    },
+    {
+      "source": {
+        "format": "mp3",
+        "path": "work/v4ship-audio/ranged-delivery-compare-1/tide/v4-ranged-tide.mp3",
+        "bytes": 630144,
+        "sha256": "0e3329ca89a0405e7b8a943b0d306e9b8bd31dd0533c07ad5941c39badeb5425"
+      },
+      "installed": {
+        "path": "apps/web/public/audio/v4-ranged-tide.mp3",
+        "bytes": 630144,
+        "sha256": "0e3329ca89a0405e7b8a943b0d306e9b8bd31dd0533c07ad5941c39badeb5425"
+      }
+    }
+  ],
+  "manifest": {
+    "path": "apps/web/public/audio/manifest.json",
+    "bytes": 1267982,
+    "sha256": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8"
+  },
+  "licenses": {
+    "path": "apps/web/public/audio/LICENSES.json",
+    "bytes": 2236746,
+    "sha256": "fd22df28775372c8667f3766932f473d48f82598e9e9623cf686d540badc6e3d"
+  },
+  "reboundMappings": 180,
+  "uniqueSprites": 144,
+  "historicalMonolithPreserved": true,
+  "runtimeCandidateInstalled": true,
+  "productionValidated": false,
+  "fullAudioGatePass": false,
+  "shippingTransferGatePass": false
+}

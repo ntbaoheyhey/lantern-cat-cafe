@@ -10,13 +10,15 @@ import {reserveUltimateLeadIn} from './voice-windows';
 import {readFileSync} from 'node:fs';
 import {resolveDesign,type AudioManifest} from '../../../audio/cues';
 it('warms newly appearing actors before their first cue without reloading unchanged rosters',()=>{
- const preloadVoices=vi.fn(async()=>{}),previous=window.__thAudio;
- window.__thAudio={...previous,preloadVoices} as NonNullable<Window['__thAudio']>;
+ const preloadVoices=vi.fn(async()=>{}),setBattleRoster=vi.fn(),previous=window.__thAudio;
+ window.__thAudio={...previous,preloadVoices,setBattleRoster} as NonNullable<Window['__thAudio']>;
  try{
   const audio=new BattleAudio(()=>{}),view={battleKey:{},formationC2:true,actors:[{id:'party-mochi'}],paused:true} as unknown as SceneView;
   audio.render(view);audio.render(view);expect(preloadVoices).toHaveBeenCalledTimes(1);
   audio.render({...view,actors:[...view.actors,{id:'foe-2-binding-thread'} as SceneView['actors'][number]]});
   expect(preloadVoices).toHaveBeenCalledTimes(2);expect(preloadVoices).toHaveBeenLastCalledWith(['party-mochi','foe-2-binding-thread']);
+  expect(setBattleRoster).toHaveBeenCalledTimes(2);expect(setBattleRoster).toHaveBeenLastCalledWith(['party-mochi','foe-2-binding-thread']);
+  audio.render({...view,battleKey:{},models:{'party-mochi':'soot'}});expect(setBattleRoster).toHaveBeenLastCalledWith(['soot']);
  }finally{window.__thAudio=previous;}
 });
 it('uses weapon cues for basics and at most one ultimate callout at focus start',()=>{

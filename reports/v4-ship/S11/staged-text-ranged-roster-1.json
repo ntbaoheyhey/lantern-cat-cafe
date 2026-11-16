@@ -1,0 +1,765 @@
+{
+  "at": "2026-11-16T23:20:34.895537+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "apps/web/public/audio/LICENSES.json",
+      "bytes": 2236746,
+      "sha256": "fd22df28775372c8667f3766932f473d48f82598e9e9623cf686d540badc6e3d"
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "bytes": 1267982,
+      "sha256": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.mp3",
+      "bytes": 764928,
+      "sha256": "2498f8333e44a4862e025d2aae3526e2d6a2965637a90aac94df1260ad08d1b4"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.webm",
+      "bytes": 337306,
+      "sha256": "0507e947b741c1e6880bacb392b1ec018e46101b905028973a709b3504e5b612"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.mp3",
+      "bytes": 888768,
+      "sha256": "de1b8838e55e926c7abed5451f18b575049dad18e45d72aa8c81c86d56e1eb1e"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.webm",
+      "bytes": 222915,
+      "sha256": "18dfd1803e86b08e7208974fa2772031994d3fba5a1e39ae2e573fba12e1a970"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.mp3",
+      "bytes": 749952,
+      "sha256": "5fe6d859aea40bb99d879d98741419a09fa1ee70c097df0fccd8af77df9e29f7"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.webm",
+      "bytes": 240764,
+      "sha256": "4dcb035656fcb5eac3b96f2ef39d1491307e31fffc271417f6d0a3d86ea21772"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.mp3",
+      "bytes": 630144,
+      "sha256": "0e3329ca89a0405e7b8a943b0d306e9b8bd31dd0533c07ad5941c39badeb5425"
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.webm",
+      "bytes": 163884,
+      "sha256": "b5f1ee32aeb4c477197f83382db216eed07c2c3f8206f0b7c57737ade29d3085"
+    },
+    {
+      "path": "apps/web/src/audio/engine.test.ts",
+      "bytes": 29202,
+      "sha256": "2f55cb7c4d610ca7921e1d212e707821485c9b7bc4170c7401d185edfd6635ef"
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "bytes": 25688,
+      "sha256": "e706f5154362fd03f3950c535591d866560bec3f057ca44a75ea9de83cbc0f02"
+    },
+    {
+      "path": "apps/web/src/audio/ranged-packs.ts",
+      "bytes": 1234,
+      "sha256": "ccd9fc216425feb1d0bf74585daf808c870cffeb91811c44326af95c4789cd62"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.test.ts",
+      "bytes": 7437,
+      "sha256": "200037ef00fa8e77fa366726b009f2b0aa139c9ce04ea1ff51ecaf4e97dd280e"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.ts",
+      "bytes": 6939,
+      "sha256": "da29db7fd7e79c28693b910575aa8e6741aa6991ea8a8a8d539e0d00dddaf1f4"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/battle-audio.ts",
+      "bytes": 6333,
+      "sha256": "53d2ae62b6990407a8e02b28fb378fedf73dafd566cabb5bf9cc69da1cb7920d"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/ranged-audio.test.ts",
+      "bytes": 4335,
+      "sha256": "5102fa424844eef7e9ef6037be408883dede3e55fbd51f541b72d8223bb1821a"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
+      "bytes": 2001,
+      "sha256": "22ddf242a9839ee99aff0202d19e64d90ff763a16e62d1f21a521a5360928b99"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/DemoJourney.audio.test.tsx",
+      "bytes": 4559,
+      "sha256": "dd02b6e15246b4040e38dcf2ae09c5bbfd788de62b12efac8fd35f54993ceebe"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/DemoJourney.tsx",
+      "bytes": 6717,
+      "sha256": "b4391026104205fb4f3646ca109c44aa686f77885a2f7da338f46a1f5544ab24"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
+      "bytes": 19795,
+      "sha256": "d1ff7b9bdd759a2334e42029613831aecfd53dfc7280e2e7983c2d3dc0bf13db"
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6973,
+      "sha256": "ca17c82ae5a15fcfba26c4be86866667a31e3febe558119fbaa201a75d5ec566"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 14738,
+      "sha256": "b0e03038862c4bf457873d96977bff78ee57c2f20d0545a710d4706a47c8ee46"
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "bytes": 6040,
+      "sha256": "8b659449d82e11ba0c6e179cd8863a9e50a9d7936cbb1b8db64bd0ae10fec262"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-install-1.json",
+      "bytes": 5085,
+      "sha256": "60e0dcd462e74d6b2b1414b6720fdc338c4ab375e251349439f7cf7b31bcc02c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-build-2.json",
+      "bytes": 426,
+      "sha256": "5c5ebce8a64ff738d9a819b1483d1af60ab04ea5eb01690bf03f7f202cf7a3f2"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-build-2.log.gz",
+      "bytes": 12678,
+      "sha256": "fb7f96e94340387eacdd19e8bea9274c26d9b816a3b345046d87da35193b9a69"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-focused-1.json",
+      "bytes": 20725,
+      "sha256": "43cc53e697d4c8b23e94f8da92af1ef164ce8d515f6a2548608f3d6b0202352a"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-1.json",
+      "bytes": 88445,
+      "sha256": "1415c468f28b95599b1ecc9248d83c321e4478eb691c1091a7d81bc1b4930d60"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-1.log.json.gz",
+      "bytes": 25746,
+      "sha256": "3b5b5eee56814334d862a7ce681325aa6ef050362d3c3eabdfbbc3fd1cbc03da"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-2.json",
+      "bytes": 97105,
+      "sha256": "605b5227d0dcb1fd722e155ad4e8d0e768bf45dfe2b6ddb247e1cf2ab98567ee"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-2.log.json.gz",
+      "bytes": 25682,
+      "sha256": "79b2ee763e71fab9bfaacaee18cd0059d28f28811f194b835fe718238fe3fd58"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-attempt-1.harness.mjs.gz",
+      "bytes": 4429,
+      "sha256": "7bfeba9e13ee3da7837f8c221b6e7f5b6aee381a98c8455a2473fd37ce76eb5f"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-attempt-1.json",
+      "bytes": 928,
+      "sha256": "df0107e62594aca1cd42323c5d500a29c73c821c6b858de521403db322ea95c7"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/check.json",
+      "bytes": 1435,
+      "sha256": "ad5a95ab6e0124baaca23e68f69b2f2a3add5ff1bc3bb1464bf9c2ea72b52b92"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/log.jsonl.gz",
+      "bytes": 3060,
+      "sha256": "6f17f48df8285a9dd1c337a2c09eb2dd386a903e934530b1a905ba4a07e0b171"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "c4ed55c122b755a3797b601a0b7215e082dc894a16a259708ad617f1bb6c42af"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-comparison-1.json",
+      "bytes": 3538,
+      "sha256": "b7563dba85ff5710088f20ce4f9453a3ec86e8b6e18ca4a1bd01b1a6bd04422d"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-review-1.json",
+      "bytes": 2432,
+      "sha256": "548e3fcb148e7d1aa914a7124adecb8b532b8dd137656d355fea77e349195515"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-review-2.json",
+      "bytes": 2339,
+      "sha256": "7585c2d1b046287c6a096f7b4e72b2775e0b29e22e371152ad0fca4aabf26e9c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-shell-1.json",
+      "bytes": 2189,
+      "sha256": "fa04d17a4edb92ddda8bf273c4e74cf4e618a9b81d04b17a143969a73408fd1e"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-typecheck-2.json",
+      "bytes": 637,
+      "sha256": "1e9bd44098586cb1c7da8ca33d30557d5bcea8a5072a008ea804d450a4198f3e"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-typecheck-2.log.gz",
+      "bytes": 206,
+      "sha256": "e0e47f244096da4063c80606751f49e3a417513f55ddfe778c30db14c82ed493"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 26124,
+      "sha256": "b365ff028fb1f98829c587cfa0dffb10f7ba667b042133829f637b5b4243e8ad"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4757,
+      "sha256": "674a09f920431425b88f9271f67555bd8f46f044c00a1eb855cbf49a11b28c01"
+    },
+    {
+      "path": "scripts/audio/runtime-signature.mjs",
+      "bytes": 1940,
+      "sha256": "da06c83f1d2e7762482b9cd0f0e030ff7d1d51d78f9b3ef108a985c5a119ca75"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-palette-install.mjs",
+      "bytes": 5442,
+      "sha256": "bb9bf4a0283de5c11b21b3235bf8d035736927d0d0c0ed0c93dfbb08174218f4"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-roster-http.mjs",
+      "bytes": 11801,
+      "sha256": "a5ec744d030310a274c4af4c87946b7c4559be8393b32a6ccad5a9ccc72e18b6"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-roster-review.py",
+      "bytes": 8202,
+      "sha256": "166add3dfe2d70c5e6c04d4c771b268e939a0d2bf9717db3db4aad113ff06a21"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/scene-observer.mjs",
+      "bytes": 6098,
+      "sha256": "d2fb301d9d053b99904726a1e6cadb28cc99e306bdfc004689b82d9f0fb84a15"
+    }
+  ],
+  "scans": [
+    {
+      "path": "apps/web/public/audio/LICENSES.json",
+      "representation": "raw",
+      "bytes": 2236746,
+      "sha256": "fd22df28775372c8667f3766932f473d48f82598e9e9623cf686d540badc6e3d",
+      "alias": "fd22df28775372c8667f3766932f473d48f82598e9e9623cf686d540badc6e3d.txt",
+      "seconds": 1.4504872500000001,
+      "findings": []
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "representation": "raw",
+      "bytes": 1267982,
+      "sha256": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8",
+      "alias": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8.txt",
+      "seconds": 0.040717792,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/audio/engine.test.ts",
+      "representation": "raw",
+      "bytes": 29202,
+      "sha256": "2f55cb7c4d610ca7921e1d212e707821485c9b7bc4170c7401d185edfd6635ef",
+      "alias": "2f55cb7c4d610ca7921e1d212e707821485c9b7bc4170c7401d185edfd6635ef.txt",
+      "seconds": 0.010406375,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "representation": "raw",
+      "bytes": 25688,
+      "sha256": "e706f5154362fd03f3950c535591d866560bec3f057ca44a75ea9de83cbc0f02",
+      "alias": "e706f5154362fd03f3950c535591d866560bec3f057ca44a75ea9de83cbc0f02.txt",
+      "seconds": 0.015460416,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/audio/ranged-packs.ts",
+      "representation": "raw",
+      "bytes": 1234,
+      "sha256": "ccd9fc216425feb1d0bf74585daf808c870cffeb91811c44326af95c4789cd62",
+      "alias": "ccd9fc216425feb1d0bf74585daf808c870cffeb91811c44326af95c4789cd62.txt",
+      "seconds": 0.000102458,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.test.ts",
+      "representation": "raw",
+      "bytes": 7437,
+      "sha256": "200037ef00fa8e77fa366726b009f2b0aa139c9ce04ea1ff51ecaf4e97dd280e",
+      "alias": "200037ef00fa8e77fa366726b009f2b0aa139c9ce04ea1ff51ecaf4e97dd280e.txt",
+      "seconds": 0.0019665,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.ts",
+      "representation": "raw",
+      "bytes": 6939,
+      "sha256": "da29db7fd7e79c28693b910575aa8e6741aa6991ea8a8a8d539e0d00dddaf1f4",
+      "alias": "da29db7fd7e79c28693b910575aa8e6741aa6991ea8a8a8d539e0d00dddaf1f4.txt",
+      "seconds": 0.001767,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/battle-audio.ts",
+      "representation": "raw",
+      "bytes": 6333,
+      "sha256": "53d2ae62b6990407a8e02b28fb378fedf73dafd566cabb5bf9cc69da1cb7920d",
+      "alias": "53d2ae62b6990407a8e02b28fb378fedf73dafd566cabb5bf9cc69da1cb7920d.txt",
+      "seconds": 0.003082208,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/ranged-audio.test.ts",
+      "representation": "raw",
+      "bytes": 4335,
+      "sha256": "5102fa424844eef7e9ef6037be408883dede3e55fbd51f541b72d8223bb1821a",
+      "alias": "5102fa424844eef7e9ef6037be408883dede3e55fbd51f541b72d8223bb1821a.txt",
+      "seconds": 0.001139541,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/contracts/audio-cues.ts",
+      "representation": "raw",
+      "bytes": 2001,
+      "sha256": "22ddf242a9839ee99aff0202d19e64d90ff763a16e62d1f21a521a5360928b99",
+      "alias": "22ddf242a9839ee99aff0202d19e64d90ff763a16e62d1f21a521a5360928b99.txt",
+      "seconds": 0.000117208,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/DemoJourney.audio.test.tsx",
+      "representation": "raw",
+      "bytes": 4559,
+      "sha256": "dd02b6e15246b4040e38dcf2ae09c5bbfd788de62b12efac8fd35f54993ceebe",
+      "alias": "dd02b6e15246b4040e38dcf2ae09c5bbfd788de62b12efac8fd35f54993ceebe.txt",
+      "seconds": 0.001292708,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/DemoJourney.tsx",
+      "representation": "raw",
+      "bytes": 6717,
+      "sha256": "b4391026104205fb4f3646ca109c44aa686f77885a2f7da338f46a1f5544ab24",
+      "alias": "b4391026104205fb4f3646ca109c44aa686f77885a2f7da338f46a1f5544ab24.txt",
+      "seconds": 0.001946209,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx",
+      "representation": "raw",
+      "bytes": 19795,
+      "sha256": "d1ff7b9bdd759a2334e42029613831aecfd53dfc7280e2e7983c2d3dc0bf13db",
+      "alias": "d1ff7b9bdd759a2334e42029613831aecfd53dfc7280e2e7983c2d3dc0bf13db.txt",
+      "seconds": 0.005064333,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6973,
+      "sha256": "ca17c82ae5a15fcfba26c4be86866667a31e3febe558119fbaa201a75d5ec566",
+      "alias": "ca17c82ae5a15fcfba26c4be86866667a31e3febe558119fbaa201a75d5ec566.txt",
+      "seconds": 0.0022455,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "representation": "raw",
+      "bytes": 14738,
+      "sha256": "b0e03038862c4bf457873d96977bff78ee57c2f20d0545a710d4706a47c8ee46",
+      "alias": "b0e03038862c4bf457873d96977bff78ee57c2f20d0545a710d4706a47c8ee46.txt",
+      "seconds": 0.003778958,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "representation": "raw",
+      "bytes": 6040,
+      "sha256": "8b659449d82e11ba0c6e179cd8863a9e50a9d7936cbb1b8db64bd0ae10fec262",
+      "alias": "8b659449d82e11ba0c6e179cd8863a9e50a9d7936cbb1b8db64bd0ae10fec262.txt",
+      "seconds": 0.003177125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-install-1.json",
+      "representation": "raw",
+      "bytes": 5085,
+      "sha256": "60e0dcd462e74d6b2b1414b6720fdc338c4ab375e251349439f7cf7b31bcc02c",
+      "alias": "60e0dcd462e74d6b2b1414b6720fdc338c4ab375e251349439f7cf7b31bcc02c.txt",
+      "seconds": 0.00016725,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-build-2.json",
+      "representation": "raw",
+      "bytes": 426,
+      "sha256": "5c5ebce8a64ff738d9a819b1483d1af60ab04ea5eb01690bf03f7f202cf7a3f2",
+      "alias": "5c5ebce8a64ff738d9a819b1483d1af60ab04ea5eb01690bf03f7f202cf7a3f2.txt",
+      "seconds": 6.6458e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-build-2.log.gz",
+      "representation": "expanded-gzip",
+      "bytes": 63245,
+      "sha256": "5d0b126f0403ab2ca8676f1cdfb85a7fafd62c38587fbc55727c1af7d80e5f45",
+      "alias": "5d0b126f0403ab2ca8676f1cdfb85a7fafd62c38587fbc55727c1af7d80e5f45.txt",
+      "seconds": 0.017069709,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-focused-1.json",
+      "representation": "raw",
+      "bytes": 20725,
+      "sha256": "43cc53e697d4c8b23e94f8da92af1ef164ce8d515f6a2548608f3d6b0202352a",
+      "alias": "43cc53e697d4c8b23e94f8da92af1ef164ce8d515f6a2548608f3d6b0202352a.txt",
+      "seconds": 0.004786625,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-1.json",
+      "representation": "raw",
+      "bytes": 88445,
+      "sha256": "1415c468f28b95599b1ecc9248d83c321e4478eb691c1091a7d81bc1b4930d60",
+      "alias": "1415c468f28b95599b1ecc9248d83c321e4478eb691c1091a7d81bc1b4930d60.txt",
+      "seconds": 0.003015917,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-1.log.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 610570,
+      "sha256": "daab35b4457234f2139eec1e46890566a3dee4acb0954107041ff14ddbd56e7e",
+      "alias": "daab35b4457234f2139eec1e46890566a3dee4acb0954107041ff14ddbd56e7e.txt",
+      "seconds": 0.0226185,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-2.json",
+      "representation": "raw",
+      "bytes": 97105,
+      "sha256": "605b5227d0dcb1fd722e155ad4e8d0e768bf45dfe2b6ddb247e1cf2ab98567ee",
+      "alias": "605b5227d0dcb1fd722e155ad4e8d0e768bf45dfe2b6ddb247e1cf2ab98567ee.txt",
+      "seconds": 0.003260833,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-2.log.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 610322,
+      "sha256": "d3e194fce7c8e7e3febd87169f20f9e6ac8d7b00620563b1c813afeed94707a2",
+      "alias": "d3e194fce7c8e7e3febd87169f20f9e6ac8d7b00620563b1c813afeed94707a2.txt",
+      "seconds": 0.022695708,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-attempt-1.harness.mjs.gz",
+      "representation": "expanded-gzip",
+      "bytes": 11424,
+      "sha256": "5256af94a0d00a129db64fea34e8cdf3e797c28f4afc539583eb41b31ab98044",
+      "alias": "5256af94a0d00a129db64fea34e8cdf3e797c28f4afc539583eb41b31ab98044.txt",
+      "seconds": 0.002991375,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-attempt-1.json",
+      "representation": "raw",
+      "bytes": 928,
+      "sha256": "df0107e62594aca1cd42323c5d500a29c73c821c6b858de521403db322ea95c7",
+      "alias": "df0107e62594aca1cd42323c5d500a29c73c821c6b858de521403db322ea95c7.txt",
+      "seconds": 7.9417e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1435,
+      "sha256": "ad5a95ab6e0124baaca23e68f69b2f2a3add5ff1bc3bb1464bf9c2ea72b52b92",
+      "alias": "ad5a95ab6e0124baaca23e68f69b2f2a3add5ff1bc3bb1464bf9c2ea72b52b92.txt",
+      "seconds": 6.9042e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 17864,
+      "sha256": "7f5c76ca4f5b12cba68f51341c2692c9735731f8d15f37bff4bdb250be8417de",
+      "alias": "7f5c76ca4f5b12cba68f51341c2692c9735731f8d15f37bff4bdb250be8417de.txt",
+      "seconds": 0.004693709,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "c4ed55c122b755a3797b601a0b7215e082dc894a16a259708ad617f1bb6c42af",
+      "alias": "c4ed55c122b755a3797b601a0b7215e082dc894a16a259708ad617f1bb6c42af.txt",
+      "seconds": 0.000660792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-comparison-1.json",
+      "representation": "raw",
+      "bytes": 3538,
+      "sha256": "b7563dba85ff5710088f20ce4f9453a3ec86e8b6e18ca4a1bd01b1a6bd04422d",
+      "alias": "b7563dba85ff5710088f20ce4f9453a3ec86e8b6e18ca4a1bd01b1a6bd04422d.txt",
+      "seconds": 0.000149667,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-review-1.json",
+      "representation": "raw",
+      "bytes": 2432,
+      "sha256": "548e3fcb148e7d1aa914a7124adecb8b532b8dd137656d355fea77e349195515",
+      "alias": "548e3fcb148e7d1aa914a7124adecb8b532b8dd137656d355fea77e349195515.txt",
+      "seconds": 6.9792e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-review-2.json",
+      "representation": "raw",
+      "bytes": 2339,
+      "sha256": "7585c2d1b046287c6a096f7b4e72b2775e0b29e22e371152ad0fca4aabf26e9c",
+      "alias": "7585c2d1b046287c6a096f7b4e72b2775e0b29e22e371152ad0fca4aabf26e9c.txt",
+      "seconds": 6.2083e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-shell-1.json",
+      "representation": "raw",
+      "bytes": 2189,
+      "sha256": "fa04d17a4edb92ddda8bf273c4e74cf4e618a9b81d04b17a143969a73408fd1e",
+      "alias": "fa04d17a4edb92ddda8bf273c4e74cf4e618a9b81d04b17a143969a73408fd1e.txt",
+      "seconds": 0.000585125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-typecheck-2.json",
+      "representation": "raw",
+      "bytes": 637,
+      "sha256": "1e9bd44098586cb1c7da8ca33d30557d5bcea8a5072a008ea804d450a4198f3e",
+      "alias": "1e9bd44098586cb1c7da8ca33d30557d5bcea8a5072a008ea804d450a4198f3e.txt",
+      "seconds": 6.7625e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-typecheck-2.log.gz",
+      "representation": "expanded-gzip",
+      "bytes": 546,
+      "sha256": "4305a94c87f800e16b5947adb57806271b574ecb316d2b346e3d655c05a573c2",
+      "alias": "4305a94c87f800e16b5947adb57806271b574ecb316d2b346e3d655c05a573c2.txt",
+      "seconds": 0.000207792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 26124,
+      "sha256": "b365ff028fb1f98829c587cfa0dffb10f7ba667b042133829f637b5b4243e8ad",
+      "alias": "b365ff028fb1f98829c587cfa0dffb10f7ba667b042133829f637b5b4243e8ad.txt",
+      "seconds": 0.022089167,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4757,
+      "sha256": "674a09f920431425b88f9271f67555bd8f46f044c00a1eb855cbf49a11b28c01",
+      "alias": "674a09f920431425b88f9271f67555bd8f46f044c00a1eb855cbf49a11b28c01.txt",
+      "seconds": 0.000113417,
+      "findings": []
+    },
+    {
+      "path": "scripts/audio/runtime-signature.mjs",
+      "representation": "raw",
+      "bytes": 1940,
+      "sha256": "da06c83f1d2e7762482b9cd0f0e030ff7d1d51d78f9b3ef108a985c5a119ca75",
+      "alias": "da06c83f1d2e7762482b9cd0f0e030ff7d1d51d78f9b3ef108a985c5a119ca75.txt",
+      "seconds": 0.000552042,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-palette-install.mjs",
+      "representation": "raw",
+      "bytes": 5442,
+      "sha256": "bb9bf4a0283de5c11b21b3235bf8d035736927d0d0c0ed0c93dfbb08174218f4",
+      "alias": "bb9bf4a0283de5c11b21b3235bf8d035736927d0d0c0ed0c93dfbb08174218f4.txt",
+      "seconds": 0.0002035,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-roster-http.mjs",
+      "representation": "raw",
+      "bytes": 11801,
+      "sha256": "a5ec744d030310a274c4af4c87946b7c4559be8393b32a6ccad5a9ccc72e18b6",
+      "alias": "a5ec744d030310a274c4af4c87946b7c4559be8393b32a6ccad5a9ccc72e18b6.txt",
+      "seconds": 0.003104584,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-roster-review.py",
+      "representation": "raw",
+      "bytes": 8202,
+      "sha256": "166add3dfe2d70c5e6c04d4c771b268e939a0d2bf9717db3db4aad113ff06a21",
+      "alias": "166add3dfe2d70c5e6c04d4c771b268e939a0d2bf9717db3db4aad113ff06a21.txt",
+      "seconds": 0.002010959,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/scene-observer.mjs",
+      "representation": "raw",
+      "bytes": 6098,
+      "sha256": "d2fb301d9d053b99904726a1e6cadb28cc99e306bdfc004689b82d9f0fb84a15",
+      "alias": "d2fb301d9d053b99904726a1e6cadb28cc99e306bdfc004689b82d9f0fb84a15.txt",
+      "seconds": 0.001721666,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.mp3",
+      "representation": "raw",
+      "bytes": 764928,
+      "sha256": "2498f8333e44a4862e025d2aae3526e2d6a2965637a90aac94df1260ad08d1b4",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-ember.webm",
+      "representation": "raw",
+      "bytes": 337306,
+      "sha256": "0507e947b741c1e6880bacb392b1ec018e46101b905028973a709b3504e5b612",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.mp3",
+      "representation": "raw",
+      "bytes": 888768,
+      "sha256": "de1b8838e55e926c7abed5451f18b575049dad18e45d72aa8c81c86d56e1eb1e",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-heavy.webm",
+      "representation": "raw",
+      "bytes": 222915,
+      "sha256": "18dfd1803e86b08e7208974fa2772031994d3fba5a1e39ae2e573fba12e1a970",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.mp3",
+      "representation": "raw",
+      "bytes": 749952,
+      "sha256": "5fe6d859aea40bb99d879d98741419a09fa1ee70c097df0fccd8af77df9e29f7",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-shadow.webm",
+      "representation": "raw",
+      "bytes": 240764,
+      "sha256": "4dcb035656fcb5eac3b96f2ef39d1491307e31fffc271417f6d0a3d86ea21772",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.mp3",
+      "representation": "raw",
+      "bytes": 630144,
+      "sha256": "0e3329ca89a0405e7b8a943b0d306e9b8bd31dd0533c07ad5941c39badeb5425",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "apps/web/public/audio/v4-ranged-tide.webm",
+      "representation": "raw",
+      "bytes": 163884,
+      "sha256": "b5f1ee32aeb4c477197f83382db216eed07c2c3f8206f0b7c57737ade29d3085",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-build-2.log.gz",
+      "representation": "raw",
+      "bytes": 12678,
+      "sha256": "fb7f96e94340387eacdd19e8bea9274c26d9b816a3b345046d87da35193b9a69",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-1.log.json.gz",
+      "representation": "raw",
+      "bytes": 25746,
+      "sha256": "3b5b5eee56814334d862a7ce681325aa6ef050362d3c3eabdfbbc3fd1cbc03da",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-2.log.json.gz",
+      "representation": "raw",
+      "bytes": 25682,
+      "sha256": "79b2ee763e71fab9bfaacaee18cd0059d28f28811f194b835fe718238fe3fd58",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-http-attempt-1.harness.mjs.gz",
+      "representation": "raw",
+      "bytes": 4429,
+      "sha256": "7bfeba9e13ee3da7837f8c221b6e7f5b6aee381a98c8455a2473fd37ce76eb5f",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 3060,
+      "sha256": "6f17f48df8285a9dd1c337a2c09eb2dd386a903e934530b1a905ba4a07e0b171",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-roster-typecheck-2.log.gz",
+      "representation": "raw",
+      "bytes": 206,
+      "sha256": "e0e47f244096da4063c80606751f49e3a417513f55ddfe778c30db14c82ed493",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}

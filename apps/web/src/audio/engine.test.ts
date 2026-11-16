@@ -4,6 +4,7 @@ import {VariantPools} from './variants';
 import type {AudioManifest,CueDesign,Sample} from './cues';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
+import {ALL_RANGED_PACKS} from './ranged-packs';
 class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number,_time?:number){this.value=v;}cancelScheduledValues(){}}
 class Node {connect(n:Node){return n;}disconnect(){}}
 class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;loopStart=0;loopEnd=0;onended?:()=>void;start=vi.fn();stop(){this.onended?.();}}
@@ -50,9 +51,44 @@ describe('layered playback admission and variants',()=>{
  it.each(['battle','boss'] as const)('predecodes shipped ranged composites for %s without starting a source',async screen=>{
   const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
-  const e=new AudioEngine();await e.unlock();await e.preload('home');expect(e.diagnostics.packs).not.toContain('v4-ranged-impacts');
-  await e.preload(screen);expect(e.diagnostics.packs).toContain('v4-ranged-impacts');expect(Context.latest.sources).toHaveLength(0);
+  const e=new AudioEngine();await e.unlock();await e.preload('home');expect(e.diagnostics.packs.some(p=>p.startsWith('v4-ranged-'))).toBe(false);
+  await e.preload(screen);expect(e.diagnostics.packs).toEqual(expect.arrayContaining([...ALL_RANGED_PACKS]));expect(Context.latest.sources).toHaveLength(0);
   e.play('kit.ranged-ember.impact');expect(Context.latest.sources).toHaveLength(1);expect(e.hits.at(-1)?.result).toBe('played');
+ });
+ it('selects from a pre-unlock roster, adds new arrivals and keeps contacts synchronous after preload',async()=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});vi.stubGlobal('fetch',fetcher);
+  const e=new AudioEngine();e.setBattleRoster(['party-soot','foe-2-binding-thread','mochi','clover']);
+  expect(fetcher).not.toHaveBeenCalled();await e.unlock();await e.preload('boss');
+  expect(e.diagnostics.packs.filter(p=>p.startsWith('v4-ranged-')).sort()).toEqual(['v4-ranged-ember','v4-ranged-heavy']);
+  expect(Context.latest.sources).toHaveLength(0);const fetched=fetcher.mock.calls.length;
+  e.play('kit.ranged-ember.impact');expect(Context.latest.sources).toHaveLength(1);expect(fetcher.mock.calls).toHaveLength(fetched);
+  e.setBattleRoster(['inkcap','velvet']);await e.preload('boss');
+  expect(e.diagnostics.packs).toEqual(expect.arrayContaining([...ALL_RANGED_PACKS]));
+  e.play('kit.ranged-ice.impact');expect(Context.latest.sources).toHaveLength(2);
+  const beforeRepeat=fetcher.mock.calls.length;await e.preload('boss');expect(fetcher.mock.calls).toHaveLength(beforeRepeat);
+ });
+ it.each([undefined,[],['soot','unrecognized-actor']])('keeps all ranged coverage for missing or unknown roster %s',async roster=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();e.setBattleRoster(roster);await e.preload('battle');
+  expect(e.diagnostics.packs).toEqual(expect.arrayContaining([...ALL_RANGED_PACKS]));
+ });
+ it('avoids ranged payloads for a known melee/healer roster and does not load all packs when leaving battle',async()=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});vi.stubGlobal('fetch',fetcher);
+  const e=new AudioEngine();await e.unlock();e.setBattleRoster(['mochi','panko','clover','teacup-healer']);e.music('battle');await e.preload('battle');
+  expect(e.diagnostics.packs.some(p=>p.startsWith('v4-ranged-'))).toBe(false);
+  e.setBattleRoster();e.music('home');await flush();expect(fetcher.mock.calls.some(([url])=>url.includes('v4-ranged-'))).toBe(false);
+ });
+ it('retries a failed selected pack without replaying or re-fetching successful packs',async()=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  let fail=true;const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:!(fail&&url.includes('v4-ranged-ember.')),arrayBuffer:async()=>new ArrayBuffer(8)});vi.stubGlobal('fetch',fetcher);
+  const e=new AudioEngine();await e.unlock();e.setBattleRoster(['soot','binding-thread']);await e.preload('battle');await flush();
+  expect(e.diagnostics.packs).not.toContain('v4-ranged-ember');expect(e.diagnostics.packs).toContain('v4-ranged-heavy');expect(Context.latest.sources).toHaveLength(0);
+  const heavyRequests=fetcher.mock.calls.filter(([url])=>url.includes('v4-ranged-heavy.')).length;
+  fail=false;await e.preload('battle');e.play('kit.ranged-ember.impact');expect(e.hits.at(-1)?.result).toBe('played');
+  expect(Context.latest.sources).toHaveLength(1);expect(fetcher.mock.calls.filter(([url])=>url.includes('v4-ranged-heavy.'))).toHaveLength(heavyRequests);
  });
  it('preserves a pre-rendered envelope while two distinct receipts share one short window',async()=>{
   const layers=design.layers.slice(0,2),baked=samples().map(sample=>({sample:{...sample,duration:.132,enveloped:true},layers:layers.map(l=>({role:l.role,variantId:'existing',offsetMs:l.offsetMs}))}));

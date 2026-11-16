@@ -29,6 +29,8 @@ function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) 
   const boss=m.battle?.initial.enemies.some(id=>ENEMY_BY_ID[id]?.tier==='boss')??false;
   const music=soundScene(m.screen,m.showBattle,boss);
   const ambience=ambienceScene(m.screen,m.showBattle,boss,m.battle?.initial.chapter??m.state.run?.chapter??1);
+  const audioRoster=m.showBattle?m.battle?.actors.map(actor=>actor.catalogId).join('|'):undefined;
+  useEffect(()=>{audioEngine.setBattleRoster(audioRoster?.split('|'));},[audioRoster]);
   useEffect(()=>{audioEngine.music(music);},[music]);
   useEffect(()=>{audioEngine.ambience(ambience);},[ambience]);
   const key=`lantern.ship.journey:${address.toLowerCase()}`;

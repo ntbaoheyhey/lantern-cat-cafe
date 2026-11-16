@@ -3,6 +3,7 @@ import {BUS_NAMES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type
 import {calloutForCast,voiceCallout,voiceUnit,VOICE_CALLOUTS} from './callouts';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 import {installUiFeedback} from './feedback';
+import {rangedPacksForRoster} from './ranged-packs';
 
 const KEY='tbh-audio-v3';
 const defaults:Record<Bus,number>={master:.7,music:.55,ambience:.3,sfx:.8,voice:.7,ui:.6};
@@ -23,6 +24,7 @@ export class AudioEngine implements AudioBridge {
  private decoded=new Map<string,AudioBuffer>(); private decodedManifest?:AudioManifest;
  private sourceStarts:number[]=[];
  private voiceUnits:string[]=[];
+ private rangedPacks:readonly string[]=rangedPacksForRoster();
  private active=new Set<Playing>(); private last=new Map<string,number>();
  private pools:VariantPools; private group=0; private epoch=0; private stopped=new Map<string,number>();
  private voiceRequest=0; private pendingVoicePriority=0; private voicePriority=0;
@@ -80,12 +82,19 @@ export class AudioEngine implements AudioBridge {
    throw new Error(`Audio pack ${pack} unavailable`);
   })().catch(e=>{this.buffers.delete(pack);throw e;}));return this.buffers.get(pack)!;
  }
+ /** Shell selection precedes music; later scene arrivals can warm additional packs. */
+ setBattleRoster(actors?:readonly string[]){
+  this.rangedPacks=rangedPacksForRoster(actors);
+  const scene=this.bedIds.music.replace(/^music\./,'');
+  if(actors!==undefined&&(scene==='battle'||scene==='boss'))void this.preload(scene);
+ }
  async preload(screen:'home'|'battle'|'boss'|'landing'){
   if(!this.ctx)return;
+  const rangedPacks=this.rangedPacks;
   try{
    const m=await this.loadManifest(),musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;
    const menuPacks=screen==='home'?['voice.guide.idle','voice.mochi.gear','voice.mochi.forge'].flatMap(id=>(m.cues[id]??[]).map(s=>s.pack)):[];
-   const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic','v4-ranged-impacts']:menuPacks),'b2-ui','b2-ui-baked','v4-receipt',...(musicPack?[musicPack]:[])];
+   const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic',...rangedPacks]:menuPacks),'b2-ui','b2-ui-baked','v4-receipt',...(musicPack?[musicPack]:[])];
    await Promise.all([...new Set(ids)].filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));
   }catch{/* playback can retry */}
  }

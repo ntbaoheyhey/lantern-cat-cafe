@@ -11,6 +11,7 @@ import {paintTime} from '../vfx-layered/timeline';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
 import type {SceneView} from '../../squad/turn3d/scene';
 import {resolveDesign,type AudioManifest} from '../../../audio/cues';
+import {rangedPacksForRoster} from '../../../audio/ranged-packs';
 const actions=[...CATS.filter(c=>c.combatClass==='ranged').flatMap(c=>[`${c.id}-1`,`${c.id}-4`]),...ENEMIES.filter(c=>c.combatClass==='ranged').flatMap(c=>[`enemy:${c.id}:basic`,`enemy:${c.id}`])];
 
 it('uses the shipping flight timing for every ranged action without changing combat events',()=>{
@@ -31,6 +32,11 @@ it('uses the shipping flight timing for every ranged action without changing com
   for(const cue of [...release,...travel,...impact]){
    const design=resolveDesign(cue.cue,manifest,cue.element);expect(design).toBeDefined();
    expect(design!.baked?1:design!.layers.length).toBe(1);
+   if(cue.role==='impact'){
+    const owner=id.replace(/^enemy:/,'').replace(/:basic$/,'').replace(/-[1-4]$/,'');
+    const packs=rangedPacksForRoster([owner]);expect(packs).toHaveLength(1);
+    expect(design!.baked!.every(v=>packs.includes(v.sample.pack))).toBe(true);
+   }
   }
  }
 });

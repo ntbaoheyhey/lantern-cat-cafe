@@ -9,13 +9,13 @@
 - Đủ 20/20 hành trình đạt: trung vị battle khoảng 3 giây/2 lần bấm; receipt khoảng 95 giây; 360 receipt đã đối chiếu, không lỗi/popup.
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
-- Kiểm tra web có2.690trường hợp đạt và bảy lỗi ART không đổi; server, rules, typecheck, bản dựng và đối chiếu ba trận đạt.
+- Web có2.697 bài đạt và bảy lỗi ART cũ;server742/rules1.409/parity ba trận không đổi. Typecheck/build đạt sau sửa kiểu mảng trong test;log lỗi gốc được giữ.
 - Đã rà soát61cảnh báo của bản chụp500đối tượng:khớp mã băm32tệp nguồn lịch sử,không còn cảnh báo chưa giải thích trong phần này. Bộ dò mới khớp9mẫu/50đối tượng nhưng không nhanh hơn;hai bộ quét vẫn chạy,chưa kết luận toàn bộ lịch sử sạch.
 - Production15 đạt đủ hành trình ở hai kích thước,36 biên nhận,248 âm tiếp xúc,116 hành động ranged,32 nhịp hồi máu Clover và boss trung vị60FPS; tải30,04MB vẫn vượt8MB.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
 - Snowtrace được ghi bằng WebKit headless; cảnh báo403 của Chromium được giữ riêng. Nguồn phim/phí RPC đã đối chiếu; kiểm tra nghe/đọc thủ công còn mở. R2 vẫn sau ART18/11.
-- HTTP âm thanh:96/96 ca và336 nguồn va chạm đạt;hai nhóm tải560.221B so với954.493B WebM. Chromium dùng cache khi reload;WebKit tải lại. Giữ3 lỗi cooldown lần đầu,chưa rõ nguyên nhân. Chưa cài gói mới;tiếp theo kiểm tra chọn gói theo đội hình thật.
+- Đã nối chọn gói theo đội hình vào UI/audio:104/104 bước,224 nguồn âm và retry đạt ở hai trình duyệt. Kiểm tra độc lập xác nhận đủ byte;giữ lỗi bộ đo lần đầu. Gói quan sát560.221B WebM;đang chuẩn bị đo production mới.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
 S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Tiêu đề landing đã đạt tương phản 15,27:1 ở hai kích thước; còn bốn lỗi ảnh ART và 32 mẫu tương phản battle chưa xác nhận. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.

@@ -55,6 +55,8 @@ const dock:[Screen,string,IconName][]=[['team','Team','team'],['collection','Cat
 export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
  const isBoss=m.battle?.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')??false;
  const musicScene=soundScene(m.screen,m.showBattle,isBoss),ambientScene=ambienceScene(m.screen,m.showBattle,isBoss,m.battle?.initial.chapter??m.state.run?.chapter??1);
+ const audioRoster=m.showBattle?m.battle?.actors.map(actor=>actor.catalogId).join('|'):undefined;
+ useEffect(()=>{audioEngine.setBattleRoster(audioRoster?.split('|'));},[audioRoster]);
  useEffect(()=>{audioEngine.music(musicScene);},[musicScene]);
  useEffect(()=>{audioEngine.ambience(ambientScene);},[ambientScene]);
  const seasonSnapshot=m.snapshot();

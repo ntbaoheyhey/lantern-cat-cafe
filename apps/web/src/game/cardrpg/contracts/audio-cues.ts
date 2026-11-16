@@ -19,6 +19,7 @@ export interface AudioBridge {
  setBus(bus:string,value:number):void; music(id:string):void;
  unlock():Promise<void>; mute(value:boolean):void; pause(value:boolean):void; speed(value:number):void;
  preloadVoices?(actors:readonly string[]):Promise<void>;
+ setBattleRoster?(actors?:readonly string[]):void;
  readonly muted:boolean; readonly ready:boolean;
 }
 declare global { interface Window { __thAudio?:AudioBridge; } }

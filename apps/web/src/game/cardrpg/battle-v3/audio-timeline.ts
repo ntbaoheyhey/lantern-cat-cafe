@@ -5,13 +5,13 @@ import {presentationTier as cueTier} from './presentation';
 import snapshot from './voice-timing.json';
 import {CAT_BY_ID,ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {validatePaint,type PaintTimeline} from '../vfx-layered/timeline';
+import {BATTLE_ELEMENTS as elements} from '../../../audio/ranged-packs';
 export interface VoiceTiming {unitId:string;skillId:string;cueId:string;text:string;durationMs:number;syncPointMs:number;phase?:string;kind:string}
 const live=import.meta.glob('../../../audio/voice-callouts.json',{eager:true,import:'default'}) as Record<string,VoiceTiming[]>;
 /** B owns these takes; the read-only snapshot keeps timing available before the scheduled merge. */
 export const VOICE_TIMING:readonly VoiceTiming[]=Object.values(live)[0]??snapshot.callouts;
 export type CueRole='charge'|'movement'|'release'|'travel'|'impact'|'tail'|'voice'|'bark'|'status'|'cut';
 export interface TimelineCue {t:number;cue:AudioCue;role:CueRole;element?:string;targetId?:string;voicePhase?:'active'|'charge'|'release';flightStart?:number}
-const elements:Record<string,string>={mochi:'holy',soot:'ember',clover:'garden',panko:'heavy',biscuit:'lightning',inkcap:'shadow',velvet:'ice',cinnamon:'fire',brioche:'hearth',sorrel:'tide',marigold:'nature',mallow:'moon'};
 const authored=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const paintings=new Map(Object.values(authored).map(p=>[p.id,validatePaint(p)]));
 /** Read the same authored flight interval as the renderer; contact remains the rules beat. */
