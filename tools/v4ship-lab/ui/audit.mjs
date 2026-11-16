@@ -24,7 +24,7 @@ const response=await fetch('http://127.0.0.1:5998');
 assert(response.ok&&hash(Buffer.from(await response.arrayBuffer()))===build.indexSha256,'Production index identity');
 const require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
-const report={at:new Date().toISOString(),sourceCommit:git(['rev-parse','HEAD']),buildEvidence:buildPath,harnessSha256:hash(readFileSync(import.meta.filename)),observerSha256:hash(readFileSync(resolve(root,'tools/v4ship-lab/ui/observe.mjs'))),scope:'UI observation on two complete real local production journeys; no screenshots, no funnel/rehearsal pass claim',rows:[],profiles:[],pass:false};
+const report={at:new Date().toISOString(),sourceCommit:git(['rev-parse','HEAD']),buildEvidence:buildPath,harnessSha256:hash(readFileSync(import.meta.filename)),observerSha256:hash(readFileSync(resolve(root,'tools/v4ship-lab/ui/observe.mjs'))),scope:`UI observation on two complete real local production journeys; ${capture?'two bounded screenshots':'no screenshots'}; no funnel/rehearsal pass claim`,rows:[],profiles:[],pass:false};
 const raw=[];
 const save=()=>{writeFileSync(rawPath,gzipSync(JSON.stringify(raw)));report.raw={path:relative(root,rawPath),sha256:hash(readFileSync(rawPath))};writeFileSync(output,JSON.stringify(report,null,2)+'\n');};
 const safe=x=>String(x).replace(/0x[\da-f]{64,}/gi,'[hash]').replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g,'[token]').slice(0,240);
@@ -41,6 +41,28 @@ async function inspect(page,cdp,width,phase){
   contrastUnknown:dom.texts.filter(t=>t.contrast==='unknown').length,clippingCandidates:dom.texts.filter(t=>t.clipping.length).map(t=>({text:t.text,class:t.class,clipping:t.clipping})),brokenImages:dom.brokenImages};
  raw.push({width,phase,...dom,controls});report.rows.push(row);save();
  console.log(JSON.stringify({width,phase,prose:row.proseWords,texts:row.textNodes,contrastFail:row.contrastFailures.length,contrastUnknown:row.contrastUnknown,clip:row.clippingCandidates.length,unnamed:row.unnamedControls.length}));
+}
+async function inspectHistoryNavigation(page){
+ const links=page.locator('[data-history-kind] a'),count=await links.count(),rows=[];
+ assert(count>0,'History must contain verified transactions');
+ await links.first().focus();
+ for(let index=0;index<count;index++){
+  stop();if(index)await page.keyboard.press('Tab');
+  await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+  rows.push(await links.nth(index).evaluate((link,index)=>{
+   const range=document.createRange();range.selectNodeContents(link);
+   const rects=[...range.getClientRects()].filter(r=>r.width>0&&r.height>0),clipping=[],scrollports=[];
+   for(let parent=link;parent;parent=parent.parentElement){
+    const style=getComputedStyle(parent),viewport=parent===document.body||parent===document.documentElement;
+    const box=parent.getBoundingClientRect(),bounds=viewport?{left:0,top:0,right:innerWidth,bottom:innerHeight}:{left:box.left+parent.clientLeft,top:box.top+parent.clientTop,right:box.left+parent.clientLeft+parent.clientWidth,bottom:box.top+parent.clientTop+parent.clientHeight};
+    if(['auto','scroll'].includes(style.overflowY))scrollports.push({tag:parent.tagName,scrollTop:parent.scrollTop,clientHeight:parent.clientHeight,scrollHeight:parent.scrollHeight});
+    if((viewport||['auto','scroll','hidden','clip'].includes(style.overflowX))&&rects.some(r=>r.left<bounds.left-1.5||r.right>bounds.right+1.5))clipping.push({axis:'x',tag:parent.tagName});
+    if((viewport||['auto','scroll','hidden','clip'].includes(style.overflowY))&&rects.some(r=>r.top<bounds.top-1.5||r.bottom>bounds.bottom+1.5))clipping.push({axis:'y',tag:parent.tagName});
+   }
+   return {index,text:link.textContent.trim(),focused:document.activeElement===link,rects:rects.map(r=>({x:r.x,y:r.y,width:r.width,height:r.height})),clipping,scrollports,pass:document.activeElement===link&&rects.length>0&&!clipping.length};
+  },index));
+ }
+ return {method:'Focus first history link, then Tab through each next link without opening external pages; measure complete text inside viewport and every clipping/scroll ancestor.',count,rows,pass:rows.length===count&&rows.every(r=>r.pass)};
 }
 try{
  for(const [width,height] of [[1280,720],[1440,900]]){
@@ -75,14 +97,16 @@ try{
    await page.getByRole('heading',{name:'My café on Avalanche',exact:true}).waitFor({timeout:200000});await page.locator('[data-wallet-proof-complete="true"]').waitFor();await audit('wallet-proof');
    const history=await page.locator('[data-history-kind] a').evaluateAll(xs=>xs.map(e=>({href:e.href,hash:new URL(e.href).pathname.split('/').at(-1)})));
    const wallet=await page.locator('.ship-wallet-proof>a').getAttribute('title');
-   profile.receiptVerification=await verifyJourneyReceipts(profile.receipts,history,wallet);profile.complete=true;
+   profile.receiptVerification=await verifyJourneyReceipts(profile.receipts,history,wallet);
+   profile.historyNavigation=await inspectHistoryNavigation(page);profile.complete=true;
   }catch(error){profile.failure=safe(error.message);}
   finally{if(context)await context.close();if(active)try{await fixture('rollback');profile.rollback=true;}catch(error){profile.rollback=false;profile.failure=safe(error.message);}save();}
   assert(profile.complete&&profile.receiptVerification?.pass&&profile.rollback,'Journey/fixture failed; inspect preserved evidence');
  }
  report.journeysPass=report.profiles.every(p=>p.complete&&p.receiptVerification.pass&&!p.errors.length&&!p.blocked.length&&!p.failedRequests.length&&p.rollback);
  report.observationComplete=report.rows.length===26;
- report.pass=report.journeysPass&&report.observationComplete&&report.rows.every(r=>!r.unnamedControls.length&&!r.contrastFailures.length&&!r.contrastUnknown&&!r.clippingCandidates.length&&!r.brokenImages.length&&!r.horizontalOverflow&&r.proseWords<=25);
+ report.historyNavigationPass=report.profiles.every(p=>p.historyNavigation?.pass);
+ report.pass=report.journeysPass&&report.observationComplete&&report.historyNavigationPass&&report.rows.every(r=>!r.unnamedControls.length&&!r.contrastFailures.length&&!r.contrastUnknown&&!r.clippingCandidates.length&&!r.brokenImages.length&&!r.horizontalOverflow&&r.proseWords<=25);
  report.limits=['Canvas/image text, full keyboard/screen-reader use and unvisited panels are not proven by this DOM audit.',
   'Unknown contrast and geometric clipping candidates require diagnosis; they are never automatically passed.',
   'Text outside an internal scrollport is retained separately and needs scroll/navigation coverage; it is not treated as currently visible.',

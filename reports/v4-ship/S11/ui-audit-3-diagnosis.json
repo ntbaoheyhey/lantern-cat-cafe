@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-16T13:47:13.723179+00:00",
+  "productionBuild": "reports/v4-ship/S8/production-build-4.json",
+  "sourceCommit": "e8c721b4418a399d05d5e20dbb3f002b2db31572",
+  "audit": "ui-audit-3.json",
+  "journeysPassed": 2,
+  "receiptsVerified": 36,
+  "samples": 26,
+  "maxBodyWords": 21,
+  "clippingCandidates": 0,
+  "unnamedControls": 0,
+  "horizontalOverflow": false,
+  "historyLinksReached": 30,
+  "historyNavigationPass": true,
+  "keyboardDialogCases": 6,
+  "keyboardPass": true,
+  "knownBrokenArtImages": 4,
+  "contrastUnknown": 36,
+  "gUiPass": false,
+  "diagnosis": "The three wallet clipping candidates from audit2 were text below an internal scrollport. With measured intersections, neither profile has clipping candidates; Tab navigation exposes all15wallet links at each size with full text visible. No product layout change was needed.",
+  "open": [
+    "Landing logo and battle composition contrast remain unknown.",
+    "Missing ART binding-thread portrait persists in both battles at both sizes.",
+    "Secondary panels, canvas text, complete screen-reader use and human review remain unproven."
+  ],
+  "regression": "ui-focus-regression-1/check.json:unchanged product runtime;server742/rules1409/web2665pass/7knownARTfails;typecheck,3fixtureprobe,build pass;official parity false.",
+  "screenshotsAdded": 0
+}

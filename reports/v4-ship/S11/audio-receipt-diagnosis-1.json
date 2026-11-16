@@ -1,0 +1,159 @@
+{
+  "at": "2026-11-16T13:42:39.716768+00:00",
+  "scope": "Retrospective diagnostic from unchanged audio runtime in preparation film2; not a fresh gate or causal mapping. No runtime changes.",
+  "sources": {
+    "capture": "reports/v4-ship/S10/film-capture-2.json",
+    "events": {
+      "path": "reports/v4-ship/S10/film-audio-starts-2.json.gz",
+      "count": 1132,
+      "sha256": "3a8d0a034fa6b5d71902a494158f7d70498c3f3af87dfb292ff2f8645ac93063"
+    }
+  },
+  "receiptCount": 18,
+  "confirmationSourceStarts": 22,
+  "manifestOffsetsMs": [
+    0,
+    12
+  ],
+  "distinctConfirmationGroups": 11,
+  "comparison": {
+    "method1": "Count any confirmation group starting between -33ms and300ms of each receipt; permits group reuse.",
+    "method1Matched": 17,
+    "method2": "Maximum one-to-one assignment with the same window; no group reuse.",
+    "method2Matched": 11
+  },
+  "rows": [
+    {
+      "action": "Guest funding",
+      "block": "26",
+      "nearbyGroups": [
+        0
+      ]
+    },
+    {
+      "action": "mint",
+      "block": "27",
+      "nearbyGroups": [
+        0
+      ]
+    },
+    {
+      "action": "claimTester",
+      "block": "28",
+      "nearbyGroups": [
+        1
+      ]
+    },
+    {
+      "action": "Guest funding",
+      "block": "29",
+      "nearbyGroups": [
+        2
+      ]
+    },
+    {
+      "action": "claimTester",
+      "block": "30",
+      "nearbyGroups": [
+        2
+      ]
+    },
+    {
+      "action": "transfer",
+      "block": "31",
+      "nearbyGroups": []
+    },
+    {
+      "action": "seal",
+      "block": "32",
+      "nearbyGroups": [
+        3
+      ]
+    },
+    {
+      "action": "mint",
+      "block": "33",
+      "nearbyGroups": [
+        4
+      ]
+    },
+    {
+      "action": "seal",
+      "block": "34",
+      "nearbyGroups": [
+        5
+      ]
+    },
+    {
+      "action": "safeBatchTransferFrom",
+      "block": "35",
+      "nearbyGroups": [
+        5
+      ]
+    },
+    {
+      "action": "mint",
+      "block": "36",
+      "nearbyGroups": [
+        5
+      ]
+    },
+    {
+      "action": "setApprovalForAll",
+      "block": "37",
+      "nearbyGroups": [
+        6
+      ]
+    },
+    {
+      "action": "list",
+      "block": "38",
+      "nearbyGroups": [
+        6
+      ]
+    },
+    {
+      "action": "approve",
+      "block": "39",
+      "nearbyGroups": [
+        7
+      ]
+    },
+    {
+      "action": "buy",
+      "block": "40",
+      "nearbyGroups": [
+        7
+      ]
+    },
+    {
+      "action": "withdraw",
+      "block": "41",
+      "nearbyGroups": [
+        8
+      ]
+    },
+    {
+      "action": "mint",
+      "block": "42",
+      "nearbyGroups": [
+        9,
+        10
+      ]
+    },
+    {
+      "action": "claim",
+      "block": "43",
+      "nearbyGroups": [
+        10
+      ]
+    }
+  ],
+  "diagnosis": "A reused timestamp window can appear to cover17of18receipts using11distinct confirmation chimes. This cannot prove every receipt has a chime. Runtime telemetry must retain request/result/group IDs and attach the receipt hash to the completion request before any fix.",
+  "everyReceiptChimePass": false,
+  "limits": [
+    "No causal request identifiers in film telemetry.",
+    "Output timestamps estimate presentation, not physical onset.",
+    "No gain/timing/source-budget changes are justified by counts alone."
+  ]
+}

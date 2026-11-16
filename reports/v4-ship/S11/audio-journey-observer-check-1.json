@@ -1,0 +1,574 @@
+{
+  "at": "2026-11-16T13:45:40.484Z",
+  "scope": "Independent causal attribution fixtures with real WebAudio source starts and silent synthetic buffers; no product-audio pass.",
+  "observerSha256": "435f2c029e8c2945e44760e139829bbe56e9b07962be95de4a732f0e688bde72",
+  "rows": [
+    {
+      "name": "native click",
+      "pass": true,
+      "data": {
+        "controls": [
+          {
+            "sequence": 0,
+            "kind": "pointerup",
+            "label": "Primary action",
+            "performanceMs": 196.59999999403954,
+            "disabled": false
+          },
+          {
+            "sequence": 1,
+            "kind": "click",
+            "label": "Primary action",
+            "performanceMs": 196.59999999403954,
+            "disabled": false
+          }
+        ],
+        "receipts": [],
+        "requests": [
+          {
+            "sequence": 0,
+            "id": "ui.click",
+            "control": 1,
+            "receipt": null,
+            "performanceMs": 196.69999998807907,
+            "audioTime": 0.032
+          }
+        ],
+        "starts": [
+          {
+            "id": "ui.click",
+            "bus": "ui",
+            "request": 0,
+            "group": 1,
+            "pack": "synthetic",
+            "when": 0.032,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 196.8999999910593,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 192.8999999910593
+            }
+          }
+        ],
+        "results": [
+          {
+            "id": "ui.click",
+            "result": "played",
+            "request": 0,
+            "performanceMs": 197,
+            "audioTime": 0.032
+          }
+        ],
+        "activeControl": null,
+        "activeReceipt": null,
+        "installed": true
+      },
+      "analysis": {
+        "controls": [
+          {
+            "label": "Primary action",
+            "sequence": 1,
+            "requests": [
+              {
+                "request": 0,
+                "id": "ui.click",
+                "starts": 1,
+                "groups": [
+                  1
+                ],
+                "results": [
+                  "played"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": 10.000000000000002,
+                "played": true
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "receipts": [],
+        "maxStartsPer100ms": 1,
+        "sourceBudgetPass": true,
+        "primaryControlsPass": false,
+        "everyReceiptChimePass": false,
+        "unattributedTransientStarts": 0,
+        "physicalOnsetVerified": false,
+        "overallAudioGatePass": false
+      }
+    },
+    {
+      "name": "two distinct receipts",
+      "pass": true,
+      "data": {
+        "controls": [],
+        "receipts": [
+          {
+            "sequence": 0,
+            "hash": "first",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741037,
+            "performanceMs": 26.69999998807907
+          },
+          {
+            "sequence": 1,
+            "hash": "second",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741038,
+            "performanceMs": 27.099999994039536
+          }
+        ],
+        "requests": [
+          {
+            "sequence": 0,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 0,
+            "performanceMs": 26.69999998807907,
+            "audioTime": 0.005333333333333333
+          },
+          {
+            "sequence": 1,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 1,
+            "performanceMs": 27.099999994039536,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "starts": [
+          {
+            "id": "tx.confirmed",
+            "bus": "sfx",
+            "request": 0,
+            "group": 1,
+            "pack": "synthetic",
+            "when": 0.005333333333333333,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 27,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 0
+            }
+          },
+          {
+            "id": "tx.confirmed",
+            "bus": "sfx",
+            "request": 1,
+            "group": 2,
+            "pack": "synthetic",
+            "when": 0.005333333333333333,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 27.099999994039536,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 0
+            }
+          }
+        ],
+        "results": [
+          {
+            "id": "tx.confirmed",
+            "result": "played",
+            "request": 0,
+            "performanceMs": 27.099999994039536,
+            "audioTime": 0.005333333333333333
+          },
+          {
+            "id": "tx.confirmed",
+            "result": "played",
+            "request": 1,
+            "performanceMs": 27.099999994039536,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "activeControl": null,
+        "activeReceipt": null,
+        "installed": true
+      },
+      "analysis": {
+        "controls": [],
+        "receipts": [
+          {
+            "hash": "first",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 0,
+                "id": "tx.confirmed",
+                "starts": 1,
+                "groups": [
+                  1
+                ],
+                "results": [
+                  "played"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": 10.000000000000002,
+                "played": true
+              }
+            ],
+            "pass": true
+          },
+          {
+            "hash": "second",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 1,
+                "id": "tx.confirmed",
+                "starts": 1,
+                "groups": [
+                  2
+                ],
+                "results": [
+                  "played"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": 10.000000000000002,
+                "played": true
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "maxStartsPer100ms": 2,
+        "sourceBudgetPass": true,
+        "primaryControlsPass": false,
+        "everyReceiptChimePass": false,
+        "unattributedTransientStarts": 0,
+        "physicalOnsetVerified": false,
+        "overallAudioGatePass": false
+      }
+    },
+    {
+      "name": "one omitted chime",
+      "pass": true,
+      "data": {
+        "controls": [],
+        "receipts": [
+          {
+            "sequence": 0,
+            "hash": "first",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741200,
+            "performanceMs": 14
+          },
+          {
+            "sequence": 1,
+            "hash": "second",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741200,
+            "performanceMs": 14
+          }
+        ],
+        "requests": [
+          {
+            "sequence": 0,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 1,
+            "performanceMs": 14,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "starts": [
+          {
+            "id": "tx.confirmed",
+            "bus": "sfx",
+            "request": 0,
+            "group": 1,
+            "pack": "synthetic",
+            "when": 0.005333333333333333,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 14.199999988079071,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 0
+            }
+          }
+        ],
+        "results": [
+          {
+            "id": "tx.confirmed",
+            "result": "played",
+            "request": 0,
+            "performanceMs": 14.199999988079071,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "activeControl": null,
+        "activeReceipt": null,
+        "installed": true
+      },
+      "analysis": {
+        "controls": [],
+        "receipts": [
+          {
+            "hash": "first",
+            "action": "Fixture receipt",
+            "requests": [],
+            "pass": false
+          },
+          {
+            "hash": "second",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 0,
+                "id": "tx.confirmed",
+                "starts": 1,
+                "groups": [
+                  1
+                ],
+                "results": [
+                  "played"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": 10.000000000000002,
+                "played": true
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "maxStartsPer100ms": 1,
+        "sourceBudgetPass": true,
+        "primaryControlsPass": false,
+        "everyReceiptChimePass": false,
+        "unattributedTransientStarts": 0,
+        "physicalOnsetVerified": false,
+        "overallAudioGatePass": false
+      }
+    },
+    {
+      "name": "explicit rate limit",
+      "pass": true,
+      "data": {
+        "controls": [],
+        "receipts": [
+          {
+            "sequence": 0,
+            "hash": "first",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741358,
+            "performanceMs": 13.299999997019768
+          }
+        ],
+        "requests": [
+          {
+            "sequence": 0,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 0,
+            "performanceMs": 13.400000005960464,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "starts": [],
+        "results": [
+          {
+            "id": "tx.confirmed",
+            "result": "rate-limit",
+            "request": 0,
+            "performanceMs": 13.400000005960464,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "activeControl": null,
+        "activeReceipt": null,
+        "installed": true
+      },
+      "analysis": {
+        "controls": [],
+        "receipts": [
+          {
+            "hash": "first",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 0,
+                "id": "tx.confirmed",
+                "starts": 0,
+                "groups": [],
+                "results": [
+                  "rate-limit"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": null,
+                "played": false
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "maxStartsPer100ms": 0,
+        "sourceBudgetPass": true,
+        "primaryControlsPass": false,
+        "everyReceiptChimePass": false,
+        "unattributedTransientStarts": 0,
+        "physicalOnsetVerified": false,
+        "overallAudioGatePass": false
+      }
+    },
+    {
+      "name": "ambiguous asynchronous same cue",
+      "pass": true,
+      "data": {
+        "controls": [],
+        "receipts": [
+          {
+            "sequence": 0,
+            "hash": "first",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741517,
+            "performanceMs": 14.5
+          },
+          {
+            "sequence": 1,
+            "hash": "second",
+            "action": "Fixture receipt",
+            "confirmedAt": 1794836741517,
+            "performanceMs": 14.599999994039536
+          }
+        ],
+        "requests": [
+          {
+            "sequence": 0,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 0,
+            "performanceMs": 14.599999994039536,
+            "audioTime": 0.005333333333333333
+          },
+          {
+            "sequence": 1,
+            "id": "tx.confirmed",
+            "control": null,
+            "receipt": 1,
+            "performanceMs": 14.599999994039536,
+            "audioTime": 0.005333333333333333
+          }
+        ],
+        "starts": [
+          {
+            "id": "tx.confirmed",
+            "bus": "sfx",
+            "request": null,
+            "group": 1,
+            "pack": "synthetic",
+            "when": 0.010666666666666666,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 25.700000002980232,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 23.599999994039536
+            }
+          },
+          {
+            "id": "tx.confirmed",
+            "bus": "sfx",
+            "request": 1,
+            "group": 2,
+            "pack": "synthetic",
+            "when": 0.010666666666666666,
+            "offset": 0,
+            "duration": 0.01,
+            "rate": 1,
+            "loop": false,
+            "callPerformanceMs": 25.700000002980232,
+            "outputTimestamp": {
+              "contextTime": 0,
+              "performanceTime": 23.599999994039536
+            }
+          }
+        ],
+        "results": [
+          {
+            "id": "tx.confirmed",
+            "result": "played",
+            "request": null,
+            "performanceMs": 25.700000002980232,
+            "audioTime": 0.010666666666666666
+          },
+          {
+            "id": "tx.confirmed",
+            "result": "played",
+            "request": 1,
+            "performanceMs": 25.700000002980232,
+            "audioTime": 0.010666666666666666
+          }
+        ],
+        "activeControl": null,
+        "activeReceipt": null,
+        "installed": true
+      },
+      "analysis": {
+        "controls": [],
+        "receipts": [
+          {
+            "hash": "first",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 0,
+                "id": "tx.confirmed",
+                "starts": 0,
+                "groups": [],
+                "results": [],
+                "estimatedOnsetMs": null,
+                "durationMs": null,
+                "played": false
+              }
+            ],
+            "pass": false
+          },
+          {
+            "hash": "second",
+            "action": "Fixture receipt",
+            "requests": [
+              {
+                "request": 1,
+                "id": "tx.confirmed",
+                "starts": 1,
+                "groups": [
+                  2
+                ],
+                "results": [
+                  "played"
+                ],
+                "estimatedOnsetMs": null,
+                "durationMs": 10,
+                "played": true
+              }
+            ],
+            "pass": true
+          }
+        ],
+        "maxStartsPer100ms": 2,
+        "sourceBudgetPass": true,
+        "primaryControlsPass": false,
+        "everyReceiptChimePass": false,
+        "unattributedTransientStarts": 1,
+        "physicalOnsetVerified": false,
+        "overallAudioGatePass": false
+      }
+    }
+  ],
+  "pass": true
+}
