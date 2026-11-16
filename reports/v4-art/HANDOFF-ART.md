@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T23:06:16.382685+00:00
+# ART execution anchor — 2026-11-16T23:07:20.586575+00:00
 ACTIVE: user continuation;A10scene-ready transfer OPEN after2h timebox;A11 delivery review COMPLETE(scoped), now private placement temporal/all42defect validation. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: fix private temporal.mjs to unpause model around step() and accept --attempt=r2; preserve temporal-r1 failure; relaunch detached and validate recorded clocks/all42defects. Runtime unchanged; no image reopens.
+NEXT1: temporal.mjs r3 must track plan-object ordinal to match capture action.key, then validate id+elapsed. r1/r2 failures preserved; no placement samples accepted or runtime edits.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:ce1c41aff verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log(craftOFF). Temporal49712 exitedFAIL(canAct requires unpaused model), no samples;log jobs/a11-placement-temporal-r1.log. No capture jobs active.
+LAST PUSH:0811a8b4d verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
+LIVE: normalVite20416/5990 craftOFF. Temporal50333 exitedFAIL(clock moved backwards when action IDs reused);log jobs/a11-placement-temporal-r2.log. No capture/replay jobs active.
 STOP/INBOX checked22:58UTC16Nov:noSTOP;latest user continuation active. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11prep:6sources/1paper/5docs+2privateDOMdrills+6same-scale comparisons CLOSED. Viewport-only rejects:13HUD overlaps; HUD+face reservation:0clip/HUD/face/pair hits in6states, alltext preserved. Candidate PRIVATE; temporal/all42defect checks OPEN. A11/placement-r1/decision.json.

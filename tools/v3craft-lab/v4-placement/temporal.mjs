@@ -9,8 +9,10 @@ import {createHash} from 'node:crypto';
 import {gunzipSync,gzipSync} from 'node:zlib';
 
 const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A11/placement-r1');
-const reportPath=resolve(out,'temporal-r1.json');if(existsSync(reportPath))throw Error('Never overwrite an attempt');
-const raw=resolve(out,'raw/temporal-r1');mkdirSync(raw,{recursive:true});
+const attempt=process.argv.find(x=>x.startsWith('--attempt='))?.split('=')[1]??'r2';
+if(!/^r[1-4]$/.test(attempt))throw Error('Maximum four attempts before method change');
+const reportPath=resolve(out,'temporal-'+attempt+'.json');if(existsSync(reportPath))throw Error('Never overwrite an attempt');
+const raw=resolve(out,'raw/temporal-'+attempt);mkdirSync(raw,{recursive:true});
 const read=path=>JSON.parse(readFileSync(path,'utf8'));
 const hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
 const sourceHashes=read(resolve(root,'reports/v4-art/REVIEW/A11/delivery-r1/source-hashes.json'));
@@ -53,7 +55,7 @@ try {
       let guard=0;
       while(m.plan?.id!==target.id){
        if(++guard>100)throw Error('Cannot reach action '+target.id+'; current '+m.plan?.id);
-       if(m.plan)tick(m.plan.duration-m.animationAt+0.001);else m.step();
+       if(m.plan)tick(m.plan.duration-m.animationAt+0.001);else {m.paused=false;m.step();m.paused=true;}
       }
       const delta=target.elapsed-m.animationAt;
       if(delta<-.01)throw Error('Action clock moved backwards '+delta);
