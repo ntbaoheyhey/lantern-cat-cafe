@@ -1,9 +1,9 @@
 # ART execution anchor — 2026-11-16 10:36 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: verify A6 blind attempt2 labels/key/receipt and remaining film receipt on disk; then execute Binding150/250ms ranged drills using tools/v3craft-lab/v4-binding-thread/thread-snare.ts.
+NEXT1: author tools/v3craft-lab/v4-binding-thread/drill.py and runtime-drill.mjs: compare150/250ms planted ranged throws, choose from measured+visual evidence before production.
 NEXT2: measure Binding K4-A2, inspect normalized225px keys/2xheads, author two ranged class drills; then A7 integration/enemy keys.
 NEXT3: continue A7 enemies/boss, A8 deliveries interrupt, A9 ensemble, A10 SHIP art, A11 open gates; no final summary.
-LAST PUSH:42655f111 verified10:20UTC; BindingK4-A2 selectedart; A7 lab export/effect authoring active.
+LAST PUSH:5d38d4db3 verified; A6 prior blind11/12/receipt verified22sources+3films on resume; Binding export+texture+effect WIP checkpoint pushed.
 LIVE: requested68961/69950 exited; a6-final.log/review/post logs completed; Vite67838 check next. Binding export+original45194Btexture+effect WIP saved; integration/drill untested.
 No STOP/inbox pause/designer delivery at10:03UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private clip catalogue deferredA11. A3/A4 checkpoints; pairwiseFX/activation OPEN.
