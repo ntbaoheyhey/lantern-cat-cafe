@@ -1,6 +1,6 @@
 """Test an exact remote checkout without copying the developer's local config."""
 from pathlib import Path
-import datetime, gzip, hashlib, json, os, signal, socket, subprocess, sys, tempfile, time
+import datetime, gzip, hashlib, json, os, socket, subprocess, sys, tempfile, time
 import urllib.request
 
 root = Path(__file__).resolve().parents[3]
@@ -13,13 +13,18 @@ branch = subprocess.check_output(['git', 'branch', '--show-current'], cwd=root, 
 if branch != 'codex/v4-ship-2026-11-16':
     raise RuntimeError('Integration branch required')
 head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
+method = os.environ.get('V4_CLONE_METHOD', 'remote')
+if method not in ['remote', 'published-local']:
+    raise RuntimeError('Choose remote or published-local clone transport')
+remote = 'https://github.com/ntbaoheyhey/taskbar-hero.git'
 out.mkdir(parents=True)
 clone = Path(tempfile.mkdtemp(prefix='v4ship-clean-')) / 'repo'
 env = {k: v for k, v in os.environ.items() if k in ['PATH', 'HOME', 'TMPDIR', 'PNPM_HOME', 'XDG_CACHE_HOME', 'LANG']}
 env.update({'CI': '1', 'NO_COLOR': '1'})
 rows, logs = [], []
 report = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'sourceCommit': head,
-          'branch': branch, 'clone': str(clone), 'scope': 'Fresh remote checkout; no copied node_modules, environment files or local backend',
+          'branch': branch, 'clone': str(clone), 'cloneMethod': method,
+          'scope': 'Fresh Git checkout of an origin-verified commit; no copied node_modules, environment files or local backend',
           'rows': rows, 'officialClassParityGate': False, 'historyScan': 'Separate existing S1 scan; not repeated here',
           'complete': False, 'pass': False}
 
@@ -54,13 +59,27 @@ def run(name, command, cwd=clone, timeout=900, extra=None):
 
 
 try:
+    save()
+    advertised = subprocess.check_output(['git', 'ls-remote', remote, f'refs/heads/{branch}'],
+                                        cwd=root, env=env, text=True, timeout=60).strip().split()
+    report['originAdvertisedCommit'] = advertised[0] if advertised else None
+    if report['originAdvertisedCommit'] != head:
+        raise RuntimeError('Origin does not advertise the requested commit')
+    source = remote if method == 'remote' else root.as_uri()
+    # file:// uses Git's transport to make an independent shallow clone; it
+    # does not copy untracked files, .env files or the source node_modules.
     if run('clone', ['git', 'clone', '--depth', '1', '--single-branch', '--branch', branch, '--no-tags',
-                     'https://github.com/ntbaoheyhey/taskbar-hero.git', str(clone)], cwd=root):
-        raise RuntimeError('Remote clone failed; evidence preserved')
+                     source, str(clone)], cwd=root, timeout=1800):
+        raise RuntimeError('Git clone failed; evidence preserved')
     checkout = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=clone, text=True).strip()
     report['checkoutCommit'] = checkout
+    report['checkoutTree'] = subprocess.check_output(['git', 'rev-parse', 'HEAD^{tree}'], cwd=clone, text=True).strip()
+    report['sourceTree'] = subprocess.check_output(['git', 'rev-parse', f'{head}^{{tree}}'], cwd=root, text=True).strip()
+    report['sharedObjectAlternates'] = (clone / '.git/objects/info/alternates').exists()
     if checkout != head:
-        raise RuntimeError('Remote checkout differs from the requested commit')
+        raise RuntimeError('Checkout differs from the requested commit')
+    if report['checkoutTree'] != report['sourceTree'] or report['sharedObjectAlternates']:
+        raise RuntimeError('Checkout tree mismatch or dependent object store')
     report['initialTrackedChanges'] = subprocess.check_output(['git', 'status', '--porcelain'], cwd=clone, text=True).splitlines()
     if report['initialTrackedChanges']:
         raise RuntimeError('Fresh checkout is unexpectedly dirty')

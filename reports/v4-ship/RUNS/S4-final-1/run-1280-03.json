@@ -1,0 +1,4843 @@
+{
+  "id": "1280-03",
+  "at": "2026-11-16T10:46:01.759Z",
+  "sourceCommit": "a81bf93ef23d3c38f8f75524b696cc7af368c062",
+  "sourceChanges": [],
+  "harness": [
+    {
+      "path": "scripts/v4ship/journey-run.mjs",
+      "sha256": "6df431732436eafc8b2a124fbc27243db1fcd0efcb55394723417feb433ee1a2"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/receipt-check.mjs",
+      "sha256": "d34a17b35cee691ba881e74f02a353e2e33706583c7bf13896ee810bdefb6c50"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/proof-contrast.mjs",
+      "sha256": "3693de3413214b4a94ac73bd050a4995c215d10ab3e5d7621c0ce30eac501515"
+    }
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "development + isolated Anvil/SQL",
+  "cleanProfile": true,
+  "realClicks": true,
+  "backendIsolated": true,
+  "steps": [
+    {
+      "number": 1,
+      "name": "landing",
+      "startedMs": 5,
+      "status": "pass",
+      "endedMs": 824
+    },
+    {
+      "number": 2,
+      "name": "guest",
+      "startedMs": 824,
+      "status": "pass",
+      "endedMs": 1630
+    },
+    {
+      "number": 3,
+      "name": "battle-reward",
+      "startedMs": 1630,
+      "status": "pass",
+      "endedMs": 93425
+    },
+    {
+      "number": 4,
+      "name": "first-receipt",
+      "startedMs": 93425,
+      "status": "pass",
+      "endedMs": 95246
+    },
+    {
+      "number": 5,
+      "name": "cafe-economy",
+      "startedMs": 95246,
+      "status": "pass",
+      "endedMs": 110426
+    },
+    {
+      "number": 6,
+      "name": "boss",
+      "startedMs": 110426,
+      "status": "pass",
+      "endedMs": 202321
+    },
+    {
+      "number": 7,
+      "name": "wallet-proof",
+      "startedMs": 202321,
+      "status": "pass",
+      "endedMs": 202344
+    }
+  ],
+  "clicks": [
+    {
+      "name": "Play free",
+      "atMs": 846
+    },
+    {
+      "name": "Start trial",
+      "atMs": 1653
+    },
+    {
+      "name": "Mint trial reward",
+      "atMs": 93449
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 95265
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 98581
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 100381
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 104028
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 105840
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 108637
+    },
+    {
+      "name": "Face the boss",
+      "atMs": 110455
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "httpFailures": [],
+  "popups": [],
+  "receipts": [
+    {
+      "hash": "0x8b7ef8a3abef1632d11c80dd06ac997fe0ba79c1ee384a69aaec974e657dc3b7",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021869085294",
+      "confirmationMs": 505,
+      "confirmedAt": 1794826055761,
+      "block": "26",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x330df653bf9a672ddc70ffde80c28e7fa87ac36ebd0de064e498343430f9ec25",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "mint",
+      "feeAvax": "0.00009357473231552",
+      "confirmationMs": 760.2999999970198,
+      "confirmedAt": 1794826056528,
+      "block": "27",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x410f058aa4942c58f6a9840c808675f18bad0f9c9d8330882b0f7ca3ed02508c",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "claimTester",
+      "feeAvax": "0.000173882824260315",
+      "confirmationMs": 759,
+      "confirmedAt": 1794826057813,
+      "block": "28",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xc890cf3e9c0380342749df9566833f6f7ddffae91f51d837133a87654fa5aa7e",
+      "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.00002158377207",
+      "confirmationMs": 504,
+      "confirmedAt": 1794826058339,
+      "block": "29",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xfe25f59b572461dcb88deac23491badf04b87f1c1bb229dfc1cf5f88bf23f868",
+      "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+      "payer": "0x890eebe413033077fc9006d0e1fb2eb4e43aa99e",
+      "action": "claimTester",
+      "feeAvax": "0.000155121265644774",
+      "confirmationMs": 757.2999999970198,
+      "confirmedAt": 1794826059108,
+      "block": "30",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x916779b425d1d3853fa2de0876e5d759e82235ee0be0ebeade8cc15c0ea54116",
+      "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+      "payer": "0x890eebe413033077fc9006d0e1fb2eb4e43aa99e",
+      "action": "transfer",
+      "feeAvax": "0.000035905466752452",
+      "confirmationMs": 757.5999999940395,
+      "confirmedAt": 1794826059869,
+      "block": "31",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x9fd8d8156916d7d908a229ad5a3e107ebfdc52ffc7aa9e42a195ea9b54ec28ac",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "seal",
+      "feeAvax": "0.000083705310866956",
+      "confirmationMs": 755.3999999910593,
+      "confirmedAt": 1794826061118,
+      "block": "32",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xcfd3dc670a104cca123790a606daa675b9c898f81569cbc4e2f16653bff6cb30",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "mint",
+      "feeAvax": "0.000132686246333687",
+      "confirmationMs": 756.7999999970198,
+      "confirmedAt": 1794826061884,
+      "block": "33",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x0b272b0bccbda97e8c93e1b136cc7a05ae68873839de07273947a822c139a031",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "seal",
+      "feeAvax": "0.000066003528259984",
+      "confirmationMs": 757.4000000059605,
+      "confirmedAt": 1794826062924,
+      "block": "34",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x31b323dc5475e5d42293387a8db3061a3082ea97be63413844c4654fe457b4cf",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "safeBatchTransferFrom",
+      "feeAvax": "0.000056761626239828",
+      "confirmationMs": 758.8999999910593,
+      "confirmedAt": 1794826063689,
+      "block": "35",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb1897cc207fc3b66f37380042e26750321e41047ed2a9c647bea48b690e2ed81",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "mint",
+      "feeAvax": "0.000131985536658308",
+      "confirmationMs": 757.5,
+      "confirmedAt": 1794826064459,
+      "block": "36",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xcaad90d738ddada2b4b433629d23d0bbb138b2048e2f10ac39b0c6a8c2bae169",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "setApprovalForAll",
+      "feeAvax": "0.00004714590619949",
+      "confirmationMs": 759.2999999970198,
+      "confirmedAt": 1794826066568,
+      "block": "37",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x6506cd81a3f65faa23f6f73dba851aee419c20a9b53d01218212fac0546c1300",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "list",
+      "feeAvax": "0.00023742734048319",
+      "confirmationMs": 761.7999999970198,
+      "confirmedAt": 1794826067337,
+      "block": "38",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb37ea4aca33b0eb66112a3c302b0af945e1fcac9e9a13285f9c921d677f4c0d4",
+      "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+      "payer": "0x890eebe413033077fc9006d0e1fb2eb4e43aa99e",
+      "action": "approve",
+      "feeAvax": "0.000047299506989157",
+      "confirmationMs": 755.9000000059605,
+      "confirmedAt": 1794826068384,
+      "block": "39",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb8e96d604f7443c0ba5f54626d805db86b3fcda6181e0b2315495c469681efb6",
+      "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+      "payer": "0x890eebe413033077fc9006d0e1fb2eb4e43aa99e",
+      "action": "buy",
+      "feeAvax": "0.00018821813565373",
+      "confirmationMs": 762.5,
+      "confirmedAt": 1794826069156,
+      "block": "40",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xa3b4cf43571ac94ee97205a21a211105f04fc3365fa50342ef4e247a1b24ec5f",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "withdraw",
+      "feeAvax": "0.000044693666468694",
+      "confirmationMs": 756.9000000059605,
+      "confirmedAt": 1794826069918,
+      "block": "41",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x9272e71530c72aceb22fe1d331f18a4f657480470e03e185a566e2f4db081938",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "mint",
+      "feeAvax": "0.00013121221775551",
+      "confirmationMs": 757.7999999970198,
+      "confirmedAt": 1794826071180,
+      "block": "42",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x9e5af11b59e6fddc6cd40b1bd42b39c2fe5167bca51d22ffe9156f633d66151b",
+      "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "payer": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+      "action": "claim",
+      "feeAvax": "0.00012059144191712",
+      "confirmationMs": 760.7999999970198,
+      "confirmedAt": 1794826071962,
+      "block": "43",
+      "gasSource": "cafe",
+      "local": true
+    }
+  ],
+  "ui": [
+    {
+      "name": "landing",
+      "atMs": 822,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 0,
+      "proofContrast": []
+    },
+    {
+      "name": "guest",
+      "atMs": 1629,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 8,
+      "proofContrast": []
+    },
+    {
+      "name": "battle-reward",
+      "atMs": 93424,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 11,
+      "proofContrast": []
+    },
+    {
+      "name": "first-receipt",
+      "atMs": 95244,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 17,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00009357473231552 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 98555,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "YARN transferred",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000035905466752452 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 100362,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 20,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000132686246333687 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 103170,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000131985536658308 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 105813,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic listed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00023742734048319 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 108626,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 16,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Sale proceeds claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000044693666468694 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 110421,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144191712 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "cafe-economy",
+      "atMs": 110423,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144191712 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "boss",
+      "atMs": 202317,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144191712 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x2204…3278",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #6 × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "button",
+          "text": "Refresh wallet proof",
+          "foreground": "rgb(48, 37, 28)",
+          "backgrounds": [
+            [
+              243,
+              235,
+              219
+            ]
+          ],
+          "ratio": 12.592,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "wallet-proof",
+      "atMs": 202341,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144191712 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x2204…3278",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #6 × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "button",
+          "text": "Refresh wallet proof",
+          "foreground": "rgb(48, 37, 28)",
+          "backgrounds": [
+            [
+              243,
+              235,
+              219
+            ]
+          ],
+          "ratio": 12.592,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "audioTrace": [
+    {
+      "id": "ui.hover",
+      "result": "locked",
+      "at": 1794825962592,
+      "context": null
+    },
+    {
+      "kind": "button",
+      "label": "Play free",
+      "at": 1794825962596
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794825962646,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.998753419437555,
+          "gainDb": -0.9148229531358698
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.998753419437555,
+          "gainDb": -0.9148229531358698
+        }
+      ]
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794825962647,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9886712432043959,
+          "gainDb": -0.15321845818167357
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9886712432043959,
+          "gainDb": -0.15321845818167357
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "played",
+      "at": 1794825963408,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9742998683600064,
+          "gainDb": 5.970794439718144
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9742998683600064,
+          "gainDb": 5.970794439718144
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794825963409,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9821832288884829,
+          "gainDb": -0.643326202194818
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9821832288884829,
+          "gainDb": -0.643326202194818
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Start trial",
+      "at": 1794825963409
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794825963409,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.970078147130114,
+          "gainDb": -1.0306855265643682
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.970078147130114,
+          "gainDb": -1.0306855265643682
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "played",
+      "at": 1794826054887,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9807952569621884,
+          "gainDb": 7.03549426202641
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9807952569621884,
+          "gainDb": 7.03549426202641
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826055205,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0285659817386004,
+          "gainDb": 1.3644344731037306
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0285659817386004,
+          "gainDb": 1.3644344731037306
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Mint trial reward",
+      "at": 1794826055205
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826055205,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0155744829510487,
+          "gainDb": -0.021220789120670158
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0155744829510487,
+          "gainDb": -0.021220789120670158
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826055760,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0206753793323147,
+          "gainDb": -4.269964692653527
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0206753793323147,
+          "gainDb": -4.269964692653527
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826055761,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.98116653970696,
+          "gainDb": -21.358124300620553
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9956832127307045,
+          "gainDb": -29.61132074986271
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826055767,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0222503206619271,
+          "gainDb": -5.353942519566934
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0222503206619271,
+          "gainDb": -5.353942519566934
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "cooldown",
+      "at": 1794826055773,
+      "context": "running"
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826056528,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0000336448059024,
+          "gainDb": -21.091322790966828
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9993494904218205,
+          "gainDb": -31.416936750403412
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "played",
+      "at": 1794826056530,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9823499504612191,
+          "gainDb": 7.403536378732987
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9823499504612191,
+          "gainDb": 7.403536378732987
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "played",
+      "at": 1794826057022,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9984908314092971,
+          "gainDb": 5.420651480777194
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9984908314092971,
+          "gainDb": 5.420651480777194
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826057022,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9844655128506636,
+          "gainDb": 0.8591011387473211
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9844655128506636,
+          "gainDb": 0.8591011387473211
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Fund workshop",
+      "at": 1794826057022
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826057022,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0196752065808086,
+          "gainDb": -0.9687027472221267
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0196752065808086,
+          "gainDb": -0.9687027472221267
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826057054,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.976047378507093,
+          "gainDb": -4.866240397672225
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.976047378507093,
+          "gainDb": -4.866240397672225
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826057058,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0236428650794527,
+          "gainDb": -4.081529632953218
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0236428650794527,
+          "gainDb": -4.081529632953218
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826057813,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9821094589493939,
+          "gainDb": -20.444936067277887
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0207112220135535,
+          "gainDb": -29.72477347280932
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826058338,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9983740043606426,
+          "gainDb": -3.540155699736543
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9983740043606426,
+          "gainDb": -3.540155699736543
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826058339,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.001749895306373,
+          "gainDb": -21.448280715063603
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.993331527399113,
+          "gainDb": -31.43130557956816
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826058351,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0078958436607943,
+          "gainDb": -5.250478039630474
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0078958436607943,
+          "gainDb": -5.250478039630474
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "cooldown",
+      "at": 1794826058354,
+      "context": "running"
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826059108,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9908647755090532,
+          "gainDb": -21.156996513644938
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.014997647469628,
+          "gainDb": -28.88291998138505
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826059112,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9866816990301384,
+          "gainDb": -3.1641433333450113
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9866816990301384,
+          "gainDb": -3.1641433333450113
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826059114,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0264566403803677,
+          "gainDb": -3.5793351622593708
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0264566403803677,
+          "gainDb": -3.5793351622593708
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826059870,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0299632564133214,
+          "gainDb": -20.842757438494203
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0206939679148959,
+          "gainDb": -30.274892381329533
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826060338,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9827606027327513,
+          "gainDb": 0.3887605211178986
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9827606027327513,
+          "gainDb": 0.3887605211178986
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Seal Epic",
+      "at": 1794826060338
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826060338,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0207604728810076,
+          "gainDb": 1.1699369350121565
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0207604728810076,
+          "gainDb": 1.1699369350121565
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826060362,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.99450010326394,
+          "gainDb": -3.0892389277509023
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.99450010326394,
+          "gainDb": -3.0892389277509023
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826060364,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9833935442586423,
+          "gainDb": -2.6605982974601012
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9833935442586423,
+          "gainDb": -2.6605982974601012
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826061118,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0263219457237862,
+          "gainDb": -19.604131517800553
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0274873162295648,
+          "gainDb": -29.014863083630644
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826061127,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0126417102580254,
+          "gainDb": -4.45837950354396
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0126417102580254,
+          "gainDb": -4.45837950354396
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826061130,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0197639126837301,
+          "gainDb": -3.9292344771916228
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0197639126837301,
+          "gainDb": -3.9292344771916228
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826061885,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9993495983805383,
+          "gainDb": -20.930753226210896
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0269900158409477,
+          "gainDb": -30.047863909129976
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "played",
+      "at": 1794826062138,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0186060547903948,
+          "gainDb": 5.656825192779258
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0186060547903948,
+          "gainDb": 5.656825192779258
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826062138,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0045942529067209,
+          "gainDb": 1.1394129320774806
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0045942529067209,
+          "gainDb": 1.1394129320774806
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Forge Legendary",
+      "at": 1794826062139
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826062139,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9965240008088956,
+          "gainDb": -1.2762657127315347
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9965240008088956,
+          "gainDb": -1.2762657127315347
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826062167,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.002076233386522,
+          "gainDb": -2.5127361015553777
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.002076233386522,
+          "gainDb": -2.5127361015553777
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826062169,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0296986314205496,
+          "gainDb": -3.356532209768779
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0296986314205496,
+          "gainDb": -3.356532209768779
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826062924,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9756461014150719,
+          "gainDb": -19.352377929961584
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0187757656138932,
+          "gainDb": -29.507789020894382
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826062930,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.978122375490877,
+          "gainDb": -5.1757804027048975
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.978122375490877,
+          "gainDb": -5.1757804027048975
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826062934,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0059778954147591,
+          "gainDb": -2.6642119943670086
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0059778954147591,
+          "gainDb": -2.6642119943670086
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826063689,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9863155478100465,
+          "gainDb": -20.376256209002747
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9710288291748569,
+          "gainDb": -30.630738161494865
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826063701,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9717076217908625,
+          "gainDb": -3.9719590387009753
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9717076217908625,
+          "gainDb": -3.9719590387009753
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826063704,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.018667714417587,
+          "gainDb": -4.853031591806538
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.018667714417587,
+          "gainDb": -4.853031591806538
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826064459,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9708726210618641,
+          "gainDb": -21.263531092527266
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0198756756517249,
+          "gainDb": -29.206400323030433
+        }
+      ]
+    },
+    {
+      "id": "ui.hover",
+      "result": "locked",
+      "at": 1794826065778,
+      "context": null
+    },
+    {
+      "kind": "button",
+      "label": "List for 5 YARN",
+      "at": 1794826065783
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826065802,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9801404507798568,
+          "gainDb": 0.743369704878519
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9801404507798568,
+          "gainDb": 0.743369704878519
+        }
+      ]
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826065802,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9983414933899207,
+          "gainDb": -0.0776386348150766
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9983414933899207,
+          "gainDb": -0.0776386348150766
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826065809,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0250835856524019,
+          "gainDb": -3.0893646923647307
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0250835856524019,
+          "gainDb": -3.0893646923647307
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826065812,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9703128109005619,
+          "gainDb": -5.086413510511676
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9703128109005619,
+          "gainDb": -5.086413510511676
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826066569,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0009482835002192,
+          "gainDb": -19.038172837251835
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0030763314560693,
+          "gainDb": -29.442513570756205
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826066575,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9971993789796146,
+          "gainDb": -3.036242115625977
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9971993789796146,
+          "gainDb": -3.036242115625977
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826066580,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9954215503229006,
+          "gainDb": -2.5415626259005264
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9954215503229006,
+          "gainDb": -2.5415626259005264
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826067337,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_001:interface-sounds/confirmation_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9950616975564395,
+          "gainDb": -20.668301842644556
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9781869104925285,
+          "gainDb": -31.418509137800648
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826067596,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0187371665943952,
+          "gainDb": -0.9167484292899156
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0187371665943952,
+          "gainDb": -0.9167484292899156
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Buy with demo wallet",
+      "at": 1794826067596
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826067596,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9782739419747819,
+          "gainDb": -1.4037931870531595
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9782739419747819,
+          "gainDb": -1.4037931870531595
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826067628,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.974487758655652,
+          "gainDb": -4.630683098673301
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.974487758655652,
+          "gainDb": -4.630683098673301
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826067630,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9760560946988869,
+          "gainDb": -5.3315304224757
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9760560946988869,
+          "gainDb": -5.3315304224757
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826068384,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_002:interface-sounds/confirmation_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9940844945584875,
+          "gainDb": -20.967817925244038
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0218970038299882,
+          "gainDb": -28.50843335463958
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826068394,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.97657660959485,
+          "gainDb": -4.806498172211541
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.97657660959485,
+          "gainDb": -4.806498172211541
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826068401,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0284038223650225,
+          "gainDb": -5.041519794180958
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0284038223650225,
+          "gainDb": -5.041519794180958
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826069157,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_003:interface-sounds/confirmation_003.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0146558915496695,
+          "gainDb": -21.37848110863248
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9986550905540028,
+          "gainDb": -31.468744575567975
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826069161,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.000110992680136,
+          "gainDb": -2.5339808345312513
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.000110992680136,
+          "gainDb": -2.5339808345312513
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826069163,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click1:ui-audio/click1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0065346826061683,
+          "gainDb": -4.1450096657391535
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0065346826061683,
+          "gainDb": -4.1450096657391535
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826069919,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:confirmation_004:interface-sounds/confirmation_004.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.013257193110783,
+          "gainDb": -18.88734610646268
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9829301223327211,
+          "gainDb": -31.1546417523079
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826070394,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.001615184755402,
+          "gainDb": 0.5683100398345453
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.001615184755402,
+          "gainDb": 0.5683100398345453
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Withdraw Spool",
+      "at": 1794826070395
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826070395,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click4:ui-audio/click4.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9970562937069455,
+          "gainDb": 0.907451936321956
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9970562937069455,
+          "gainDb": 0.907451936321956
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826070422,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.989223254878357,
+          "gainDb": -5.379841766460027
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.989223254878357,
+          "gainDb": -5.379841766460027
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826070425,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click2:ui-audio/click2.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0290882172265439,
+          "gainDb": -5.076055291438454
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0290882172265439,
+          "gainDb": -5.076055291438454
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826071180,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_001:interface-sounds/maximize_001.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.009584783265494,
+          "gainDb": -18.970905503484076
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0286834517536285,
+          "gainDb": -28.768648177876848
+        }
+      ]
+    },
+    {
+      "id": "tx.wallet",
+      "result": "played",
+      "at": 1794826071201,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:mouseclick1:ui-audio/mouseclick1.flac/transient",
+          "offsetMs": 0,
+          "pitch": 0.9867583177704006,
+          "gainDb": -3.651029672813461
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9867583177704006,
+          "gainDb": -3.651029672813461
+        }
+      ]
+    },
+    {
+      "id": "tx.pending",
+      "result": "played",
+      "at": 1794826071205,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click3:ui-audio/click3.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0263412001809673,
+          "gainDb": -3.56457195802921
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0263412001809673,
+          "gainDb": -3.56457195802921
+        }
+      ]
+    },
+    {
+      "id": "tx.confirmed",
+      "result": "played",
+      "at": 1794826071962,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.024936924408744,
+          "gainDb": -20.539613307420858
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 0.9778604821293448,
+          "gainDb": -28.819090591844642
+        }
+      ]
+    },
+    {
+      "id": "ui.release",
+      "result": "played",
+      "at": 1794826072212,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.003093971120954,
+          "gainDb": 0.34727872757831735
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.003093971120954,
+          "gainDb": 0.34727872757831735
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "label": "Face the boss",
+      "at": 1794826072212
+    },
+    {
+      "id": "ui.click",
+      "result": "played",
+      "at": 1794826072212,
+      "context": "running",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:ui-audio:click5:ui-audio/click5.flac/transient",
+          "offsetMs": 0,
+          "pitch": 1.0033053377570238,
+          "gainDb": -1.1633728828642176
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+          "offsetMs": 12,
+          "pitch": 1.0033053377570238,
+          "gainDb": -1.1633728828642176
+        }
+      ]
+    }
+  ],
+  "firstBattleMs": 2964,
+  "firstBattleClicks": 2,
+  "firstRewardMs": 93424,
+  "firstReceiptMs": 95234,
+  "reloadRecovery": true,
+  "bossMs": 91862,
+  "historyKinds": [
+    "Claim",
+    "Mint",
+    "Withdrawal",
+    "Purchase",
+    "Listing",
+    "Approval",
+    "Burn",
+    "Transfer",
+    "Funding"
+  ],
+  "proofLinks": 15,
+  "receiptVerification": {
+    "scope": "Disposable Anvil receipt values and wallet history; no public latency claim",
+    "rows": [
+      {
+        "hash": "0x8b7ef8a3abef1632d11c80dd06ac997fe0ba79c1ee384a69aaec974e657dc3b7",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x330df653bf9a672ddc70ffde80c28e7fa87ac36ebd0de064e498343430f9ec25",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x410f058aa4942c58f6a9840c808675f18bad0f9c9d8330882b0f7ca3ed02508c",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xc890cf3e9c0380342749df9566833f6f7ddffae91f51d837133a87654fa5aa7e",
+        "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xfe25f59b572461dcb88deac23491badf04b87f1c1bb229dfc1cf5f88bf23f868",
+        "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x916779b425d1d3853fa2de0876e5d759e82235ee0be0ebeade8cc15c0ea54116",
+        "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+        "action": "transfer",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x9fd8d8156916d7d908a229ad5a3e107ebfdc52ffc7aa9e42a195ea9b54ec28ac",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xcfd3dc670a104cca123790a606daa675b9c898f81569cbc4e2f16653bff6cb30",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x0b272b0bccbda97e8c93e1b136cc7a05ae68873839de07273947a822c139a031",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x31b323dc5475e5d42293387a8db3061a3082ea97be63413844c4654fe457b4cf",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "safeBatchTransferFrom",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb1897cc207fc3b66f37380042e26750321e41047ed2a9c647bea48b690e2ed81",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xcaad90d738ddada2b4b433629d23d0bbb138b2048e2f10ac39b0c6a8c2bae169",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "setApprovalForAll",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x6506cd81a3f65faa23f6f73dba851aee419c20a9b53d01218212fac0546c1300",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "list",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb37ea4aca33b0eb66112a3c302b0af945e1fcac9e9a13285f9c921d677f4c0d4",
+        "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+        "action": "approve",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb8e96d604f7443c0ba5f54626d805db86b3fcda6181e0b2315495c469681efb6",
+        "wallet": "0x890EebE413033077Fc9006d0e1fB2eb4E43aA99e",
+        "action": "buy",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xa3b4cf43571ac94ee97205a21a211105f04fc3365fa50342ef4e247a1b24ec5f",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "withdraw",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x9272e71530c72aceb22fe1d331f18a4f657480470e03e185a566e2f4db081938",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x9e5af11b59e6fddc6cd40b1bd42b39c2fe5167bca51d22ffe9156f633d66151b",
+        "wallet": "0x220401b2728903718b1b6cc207ec9f47769a3278",
+        "action": "claim",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      }
+    ],
+    "receiptCount": 18,
+    "actionTypes": 12,
+    "walletReceiptCount": 13,
+    "historyCount": 15,
+    "missingWalletReceipts": [],
+    "explorerLinks": true,
+    "pass": true
+  },
+  "elapsedMs": 202344,
+  "complete": true,
+  "proofContrastPass": true,
+  "runtimeChangesAtEnd": [],
+  "runtimeStable": true,
+  "teardownErrors": [],
+  "pass": true
+}
