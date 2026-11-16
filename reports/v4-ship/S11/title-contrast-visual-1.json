@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-16T17:35:13.010862+00:00",
+  "productionSourceCommit": "9278ef4df3042406d8904a1543ae8f106cfd2d8c",
+  "report": "reports/v4-ship/S11/title-contrast-verify-1.json",
+  "screenshots": [
+    {
+      "path": "reports/v4-ship/S11/title-contrast-1-1280.png",
+      "sha256": "ad1dcb8b162aa3696462ab876e7848202c59b6474c13ab6359e6ac25c14d854e"
+    },
+    {
+      "path": "reports/v4-ship/S11/title-contrast-1-1440.png",
+      "sha256": "2a9bec3afbffc00b174e24e0804060e3dfc14bc8a7a3599ff41cc45b31055a60"
+    }
+  ],
+  "review": "Both1024px captures viewed. The two-line gold title is fully inside the dark backing; play/wallet/trailer controls are distinct and separated from the footer. No visible title crop or overlap. Illustration remains unchanged.",
+  "pass": true,
+  "scope": "Only the captured landing screens; pending counters and unvisited battle/panel behavior are not accepted by this visual check.",
+  "screenshotsAdded": 2,
+  "s11ScreenshotTotal": 4,
+  "imageOpensTotal": 7,
+  "gUiPass": false
+}
