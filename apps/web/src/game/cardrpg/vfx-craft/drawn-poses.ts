@@ -24,10 +24,17 @@ export function loadDrawnPoseSet(unit:string):Promise<DrawingSet>{
 }
 export class DrawnPoses {
  readonly drawing:DrawingLayer;
+ readonly layoutExtents:{leftExtent:number;rightExtent:number};
  constructor(readonly actor:SpineActor,set:DrawingSet){
   if(!actor.mesh)throw Error('Drawing swaps require an accepted cut-out rig');
   const core=unitCore(actor.unit.id,actor.bounds).world;
   this.drawing=actor.mesh.installDrawings(set,[actor.bounds.x+actor.bounds.width/2,core.y],core.height/set.manifest.opaqueHeight);
+  // One home for every drawing: wide strike keys must not move the planted foot.
+  // Include the guarded smear and secondary motion before selecting that home.
+  const m=set.manifest,frames=Object.values(m.poses);
+  const left=Math.min(...frames.map(f=>f.opaqueBounds?.[0]??0));
+  const right=Math.max(...frames.map(f=>f.opaqueBounds?.[2]??m.canvas[0]));
+  this.layoutExtents={leftExtent:(m.baseline[0]-left)/m.opaqueHeight*1.12+.025,rightExtent:(right-m.baseline[0])/m.opaqueHeight*1.12+.025};
   for(const [name,duration]of [['attack',.8],['ult',2.2],['skill',2.2],['hurt',.4],['ko',.6],['idle',3.6]] as const){
    const events=name==='attack'?[{name:'hit',time:.35}]:name==='ult'||name==='skill'?[{name:'ult_release',time:1.1}]:[];
    actor.clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,events)});

@@ -191,7 +191,10 @@ export class SpineScene {
   }
   const layout=view.formationC2?stageLayoutC2(view.actors.flatMap(unit=>{
    const entry=this.actors.get(unit.id);
+   const extents=entry?.craftPose?.layoutExtents;
+   const mirrored=entry&&spriteFacing(entry.actor.unit.nativeFacing,unit.side)<0;
    return entry&&(unit.side==='party'||unit.hp>0)?[{id:unit.id,side:unit.side,row:view.rows?.[unit.id]==='rear'?'rear' as const:'front' as const,
+    ...(extents?{leftExtent:mirrored?extents.rightExtent:extents.leftExtent,rightExtent:mirrored?extents.leftExtent:extents.rightExtent}:{}),
     boss:entry.actor.unit.tier==='boss',aspect:entry.actor.bounds.width/entry.actor.bounds.height,coreHeight:unitCore(entry.asset,entry.actor.bounds).world.height/entry.actor.bounds.height,coreRatio:unitCore(entry.asset,entry.actor.bounds).ratio,bossRatio:unitCore(entry.asset,entry.actor.bounds).ratio,seat:unit.side==='enemy'?this.c2Seats.get(unit.id):undefined}]:[];
   }),this.worldWidth,PAINT.worldHeight,PAINT.worldHeight*(width<700?width*9/16:window.innerHeight)/height,this.c2Capacity):null;
   const pixelsToWorld=this.worldWidth/width;
@@ -295,6 +298,11 @@ export class SpineScene {
     actor.root.position.x=pivotX+(actor.root.position.x-pivotX)*factor;
     actor.root.position.y=pivotY+(actor.root.position.y-pivotY)*factor;
     opaque.x=pivotX+(opaque.x-pivotX)*factor;opaque.y=pivotY+(opaque.y-pivotY)*factor;opaque.width*=factor;opaque.height*=factor;
+    // Keep the complete posed silhouette inside the field, including legacy
+    // root rotations and recoil. The extra half percent also reserves shake.
+    const inset=this.worldWidth*.035;
+    const edgeShift=Math.max(-this.worldWidth/2+inset-opaque.x,Math.min(this.worldWidth/2-inset-opaque.x-opaque.width,0));
+    actor.root.position.x+=edgeShift;opaque.x+=edgeShift;entry.shadow.position.x+=edgeShift;
     actor.root.updateMatrixWorld(true);
    }
    actor.opaqueWorld=opaque;

@@ -20,8 +20,8 @@ it.each([[1280,720],[1440,900]])('keeps dense measured core boxes readable at %i
     const fieldHeight=height,boxes=stageLayoutC2([...party,...wave],width,fieldHeight,height),all=[...boxes];
     for(const [id,b] of all){
       const actor=[...party,...wave].find(u=>u.id===id)!;
-      const ratio=actor.boss?Math.min(1.7,Math.max(1.5,actor.bossRatio??1.6)):1;
-      expect(b.coreHeight/height,id).toBeCloseTo(.27*ratio,5);
+      const ratio=actor.boss?Math.min(1.6,Math.max(1.5,actor.bossRatio??1.6)):1;
+      expect(b.coreHeight/height,id).toBeCloseTo(.315*ratio,5);
       expect(b.x,id).toBeGreaterThanOrEqual(0);expect(b.x+b.width,id).toBeLessThanOrEqual(width);
       expect(b.y,id).toBeGreaterThanOrEqual(0);expect(b.y+b.height,id).toBeLessThanOrEqual(fieldHeight);
     }
@@ -35,6 +35,13 @@ it('gives six enemies distinct seats and keeps survivors in their seats',()=>{
   expect(new Set([...before.values()].map(b=>`${b.footX}:${b.footY}`)).size).toBe(6);
   const after=stageLayoutC2(foes.filter((_,i)=>i!==1&&i!==4),1280,504,720,6);
   for(const [id,b] of after)expect(b).toEqual(before.get(id));
+});
+it('reserves an asymmetric drawn envelope without changing its shared foot anchor per pose',()=>{
+ const actor={...unit('soot','rear'),leftExtent:.9,rightExtent:.65};
+ const first=stageLayoutC2([actor],1280,720).get(actor.id)!;
+ expect(first.footX-first.coreHeight*actor.leftExtent).toBeCloseTo(1280*.04);
+ const later=stageLayoutC2([{...actor}],1280,720).get(actor.id)!;
+ expect(later.footX).toBe(first.footX);
 });
 it('uses the same tuned stagger and mirrored positions in preparation and battle',()=>{
   expect(SLOTS_C2.slots[0]!.y-SLOTS_C2.slots[2]!.y).toBeCloseTo(SLOTS_C2.rowStagger);

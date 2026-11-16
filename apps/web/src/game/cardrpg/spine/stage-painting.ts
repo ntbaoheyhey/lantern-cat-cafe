@@ -29,7 +29,12 @@ export function formationPaintingC2(image: HTMLImageElement) {
  c.fillStyle='#46392c';c.beginPath();c.ellipse(1011,498,42,10,0,0,7);c.fill();c.fillStyle='#b47b56';c.beginPath();c.moveTo(978,455);c.lineTo(1040,455);c.lineTo(1030,496);c.lineTo(988,496);c.closePath();c.fill();
  c.strokeStyle='#516644';c.lineWidth=4;
  for(let i=0;i<11;i++){const x=985+(i*17)%55,y=403+(i*23)%46;c.beginPath();c.moveTo(1010,463);c.quadraticCurveTo(1004,430,x,y);c.stroke();c.fillStyle=i%2?'#82935c':'#536e46';c.beginPath();c.ellipse(x,y,7,18,(i-5)*.24,0,7);c.fill();}
- c.restore();return canvas;
+ c.restore();
+ // Keep the café warm, but lower its detail contrast behind the enlarged cast.
+ // Selected from the actual-field tonal drill in LEARN/A2.md.
+ const toned=document.createElement('canvas');toned.width=canvas.width;toned.height=canvas.height;
+ const tone=toned.getContext('2d')!;tone.filter='saturate(.90) contrast(.90) brightness(.94)';tone.drawImage(canvas,0,0);
+ return toned;
 }
 
 /** Runtime mattes separate distant panes, cafe wall and floor from one original painting. */

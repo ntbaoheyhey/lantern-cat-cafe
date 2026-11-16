@@ -8,6 +8,7 @@ export type DrawingPoint=readonly [number,number];
 export interface DrawingOverlap {part:string;center:DrawingPoint;radius:DrawingPoint;travel:DrawingPoint;phase:number}
 export interface DrawingFrame {
  image:string; face:readonly [number,number,number,number];
+ opaqueBounds?:readonly [number,number,number,number];
  feet:readonly [DrawingPoint,DrawingPoint]; sockets:Record<string,DrawingPoint>;
  overlap?:readonly DrawingOverlap[];
 }

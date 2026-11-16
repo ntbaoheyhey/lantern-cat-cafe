@@ -1,87 +1,87 @@
 {
-  "version": 5,
+  "version": 7,
   "coordinates": "stage-normalized opaque feet; unitHeight is rendered alpha>=128 height / whole desktop viewport height",
-  "unitHeight": 0.27,
-  "rowStep": 0.29,
+  "unitHeight": 0.315,
+  "rowStep": 0.33,
   "slots": [
     {
       "id": "FRONT-UP",
       "row": "front",
-      "x": 0.32,
-      "y": 0.54,
+      "x": 0.35,
+      "y": 0.55,
       "icon": "shield"
     },
     {
       "id": "FRONT-DOWN",
       "row": "front",
-      "x": 0.35,
-      "y": 0.83,
+      "x": 0.37,
+      "y": 0.88,
       "icon": "shield"
     },
     {
       "id": "BACK-UP",
       "row": "rear",
       "x": 0.12,
-      "y": 0.4,
+      "y": 0.37,
       "icon": "bow"
     },
     {
       "id": "BACK-DOWN",
       "row": "rear",
-      "x": 0.15,
-      "y": 0.69,
+      "x": 0.14,
+      "y": 0.7,
       "icon": "bow"
     }
   ],
   "boss": {
-    "x": 0.69,
-    "y": 0.81,
+    "x": 0.67,
+    "y": 0.84,
     "minRatio": 1.5,
-    "maxRatio": 1.7
+    "maxRatio": 1.6
   },
   "bossHelpers": [
     {
-      "x": 0.9,
-      "y": 0.42
+      "x": 0.89,
+      "y": 0.4
     },
     {
       "x": 0.9,
-      "y": 0.74
+      "y": 0.85
     }
   ],
   "rearScale": 1,
   "rearDim": 0,
-  "rowStagger": 0.14,
+  "rowStagger": 0.18,
   "enemySix": [
     {
       "id": "ENEMY-FRONT-UP",
-      "x": 0.6,
-      "y": 0.54
+      "x": 0.56,
+      "y": 0.55
     },
     {
       "id": "ENEMY-FRONT-DOWN",
-      "x": 0.6,
-      "y": 0.83
+      "x": 0.56,
+      "y": 0.88
     },
     {
       "id": "ENEMY-MID-UP",
       "x": 0.75,
-      "y": 0.4
+      "y": 0.37
     },
     {
       "id": "ENEMY-MID-DOWN",
-      "x": 0.75,
+      "x": 0.725,
       "y": 0.69
     },
     {
       "id": "ENEMY-REAR-UP",
-      "x": 0.86,
-      "y": 0.54
+      "x": 0.9,
+      "y": 0.55
     },
     {
       "id": "ENEMY-REAR-DOWN",
-      "x": 0.86,
-      "y": 0.83
+      "x": 0.9,
+      "y": 0.88
     }
   ]
 }
