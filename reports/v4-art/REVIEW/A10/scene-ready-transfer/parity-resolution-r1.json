@@ -1,0 +1,34 @@
+{
+  "at": "2026-11-16T21:48:13.608741+00:00",
+  "sourceCommit": "faa4d4b1660d27e8f7358acddc69074f706803f3",
+  "sourceReport": "reports/v3-feel/parity-probe-1794865687622.json",
+  "sourceReportSha256": "de0aeea31511360ab96cc8dbed49be3435e03cc149323bf070ec321361803f86",
+  "baseline": "reports/v3-feel/parity-new.json",
+  "baselineSha256": "e1e5093fefd9324ec1746594b0c20c816112a7aeddf13440027719479b9f38db",
+  "mode": "probe; explicit F6 comparison; inherited parity-latest unchanged",
+  "exitCode": 0,
+  "rows": [
+    {
+      "fixture": "wave1",
+      "hash": "8b7ed13d9a5121d9b80d3fab1fd0cd40ce470098e35e5167d6794fb4c4cde6d2",
+      "parity": true,
+      "matchesBaseline": true,
+      "errors": []
+    },
+    {
+      "fixture": "wave3",
+      "hash": "8a313fe134033cec00a98e2de3c5a2b9907c672451dc5c3233b2dd83d67fd0fc",
+      "parity": true,
+      "matchesBaseline": true,
+      "errors": []
+    },
+    {
+      "fixture": "boss",
+      "hash": "6797d9cfe68da8201122a416304269c0d7568af72a447030bf535e7b3c398e02",
+      "parity": true,
+      "matchesBaseline": true,
+      "errors": []
+    }
+  ],
+  "pass": true
+}
