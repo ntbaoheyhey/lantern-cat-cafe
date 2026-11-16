@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T18:38UTC
+# ART execution anchor — 2026-11-16T18:49UTC
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Run full A9R2 regression for selected Needle150ms rank cadence; evidence reports/v4-art/REVIEW/A9/r2. Then source-bound Needle live+face and new3x30s+2x45s films/900p.
+NEXT1: Poll R2pipeline73945 and child74804 via REVIEW/A9/r2/pipeline-jobs.json + capture-jobs.json; main capture exited0, supplements/900p continue. Review new R2 sheets once only after source/marker checks.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:ef845ee67 verified; R1 Binding/Needle pairFAIL retained.150ms chosen over90ms after2drills; peak25.445638%,faces2.623377%, impact1100/duration2200 unchanged.
-LIVE: craftVite3426/5990 only. Capture68141 owned tree stopped after pairfailure; completed5films/5400markers and interrupted900p retained. No probe/capture/imagegen running.
+LAST PUSH:60763fd90 verified; Needle150ms cadence selected and committed. R1pair failure+all5films preserved ef845ee67; new source regression/pipeline ongoing.
+LIVE: craftVite3426/5990; R2pipeline73945/jobs/a9-finish-r2.log with capture74804/jobs/a9-r2-capture.log. Validation73386 endedPASS18:44:15; Needlelive and16frontface observations PASS; lanePASS/77hashes. Old68961/69950 absent.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -26,7 +26,7 @@ A10transferd3578d48a/source48599c03a saves3685534B six exactWebGLderivatives;Can
 Bindingportraitc5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Contrastrequest13:40 b3-world/speed/stars/auto32unknownobs, not measuredfailure.
 OPEN sharedfocus/reducedmotion/activation/ensemble/portraitbanner/finalclasses/timesplit,bossformation,A10totaltransfer. A7conservative8h ceiling16Nov18:58UTC; common failures carried into A9/A11.
 Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
-Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies; explicitstage;V3append-only;trackedV4reports103799077B beforecurrentcheckpoint/150MB.
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies; explicitstage;V3append-only;trackedV4reports114570880B beforecurrentcheckpoint/150MB.
 Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,diff<=80. ImagingPython tools/.venv/bin/python.
 Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. Max4attempts/problem then change method, never gates.

@@ -53,3 +53,5 @@ Shared limits remain explicit: these recordings use the existing class baseline;
 R1 film decision:11 of27 own-ultimate sheets inspected once. Binding and Needle both reveal their main structures immediately after impact; the45ms Needle rank delay is not a secure third visible axis at10fps. Retain all R1 movies, marker checks and unreviewed sheets. Author90ms/150ms cadence drills, choose before new production validation. No balance, target, impact or duration changes.
 
 R2 production selection:150ms rank cadence chosen from90/150ms225px drills. Film confirmation is pending; R1 Binding/Needle remains a recorded failure.
+
+R2 timing distinction to verify on film: the slowest Binding strand finishes its reveal around1231ms (1100+11×6+65), whereas the last selected Needle rank/column finishes around1534ms (1100+2×150+8×8+70). This is a roughly303ms separation in completion of the main reveal, plus three rank accents; it does not add hit events. Production source uses only the selected150ms constant; candidate tuning stays in the craft lab.
