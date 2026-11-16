@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: investigate GPU filtering of selected straight-alpha pages (black contour halos on Mochi/Clover despite corrected decode metadata). Study associated-alpha upload, then two private fixed-state filtering drills before runtime change. No fifth PMA encoding trial; no films yet.
+NEXT1: poll privateGPUdrillPID27399/tail5 jobs/a10-pma-filter-r1.log; two methods associated-mips/associated-linear use unchangedQ80 pages, no runtime install. Then four fresh private comparisons vs bound originals.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:022ee3ae3 verified; runtime3b8badd8a.43tests/5files+typecheck+12browser cases PASS; static geometryPASS. Four fresh runtime sheetsFAIL visually (Mochi/Clover contours); numeric passes do not close this. Four fallback screenshots exact, two differ.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). Preview26545 finishedPASS jobs/a10-pma-runtime-r1.log;2ownedjobs. Old68961/69950 absent.
+LAST PUSH:dcb7234fe verified; runtime3b8badd8a still visually rejected.43tests/5files+typecheck+12browser cases/staticgeometryPASS. New private GPU filtering experiment does not alter production code.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); privateGPUdrill27399 jobs/a10-pma-filter-r1.log/job-pma-filter-r1.json.3ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
