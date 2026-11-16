@@ -40,7 +40,7 @@ export class LayeredVfx {
    const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page))?.[1];
    try{
     if(!url)throw Error('Missing painted atlas '+page);
-    const sampled=sampledPages.get(page),image=await loadAtlasImage(url,sampled,{
+    const sampled=sampledPages.get(page),{image}=await loadAtlasImage(url,sampled,{
      track:(image,pending)=>{if(pending)this.decoding.add(image);else this.decoding.delete(image);},aborted:()=>this.disposed
     });if(this.disposed)return;
     const sourceScaleX=sampled?image.naturalWidth/sampled.sourceWidth:1,sourceScaleY=sampled?image.naturalHeight/sampled.sourceHeight:1;

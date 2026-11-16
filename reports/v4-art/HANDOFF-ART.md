@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16T21:59:10.047469+00:00
 ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: install six selected straight-halfQ80 actor derivatives and decoded-delivery alpha metadata; ensure fallback retains sourcePMA. Then run focused tests and six normal+six blocked-sampled browser cases, followed by four fresh runtime comparisons.
+NEXT1: run detached tools/.venv/bin/python tools/v3craft-lab/v4-transfer/validate-resolution.py pma-r1 preview (focused+typecheck+candidate+blocked-fallback); record PID/log immediately. Then create four fresh private runtime comparisons; no films before visual repair.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:201f93b55 verified (sequential retry succeeded). R2exit0; privateQ80 selected for runtime evaluation only;7,900,518B projected incl16KiB reserve/99,482B headroom. Runtimeb920586d4 remains visually rejected.
+LAST PUSH:bd581a0df verified. Six straight-halfQ80 actor pages installed locally (854,468B) with successful-decode alpha metadata; original/exact fallback keeps sourcePMA. Projection7,900,518B only; runtime validation and visual acceptance pending.
 LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). R2supervisor23656 finished0 jobs/a10-pma-aware-r2.log; old68961/69950 absent.2ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.

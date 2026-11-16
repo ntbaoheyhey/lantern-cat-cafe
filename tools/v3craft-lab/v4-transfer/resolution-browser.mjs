@@ -17,7 +17,8 @@ const receipt={started:new Date().toISOString(),scope:'Fixed-state normal develo
  sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),
  scriptSha256AtRun:hash(import.meta.filename),runtimeSources:Object.fromEntries([
  'apps/web/src/game/cardrpg/spine/assets.ts','apps/web/src/game/cardrpg/vfx-layered/player.ts','apps/web/src/game/cardrpg/vfx-layered/atlas.ts',
- 'apps/web/src/game/cardrpg/spine/atlas-delivery.ts','apps/web/src/game/cardrpg/spine/sampled-atlases.json','apps/web/src/game/cardrpg/vfx-layered/sampled-atlases.json'
+ 'apps/web/src/game/cardrpg/spine/atlas-delivery.ts','apps/web/src/game/cardrpg/spine/sampled-atlases.json','apps/web/src/game/cardrpg/vfx-layered/sampled-atlases.json',
+ 'apps/web/src/game/rig/atlas-color.ts','apps/web/src/game/rig/cutout.ts'
  ].filter(p=>existsSync(resolve(root,p))).map(p=>[p,hash(resolve(root,p))])),results:[],complete:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
@@ -35,7 +36,7 @@ try{
    const s=window.__depthScene;
    return {ready:s.ready,craft:!!s.craft,sizeAudit:s.sizeAudit(),
     actors:[...s.actors].map(([id,a])=>{
-     const textures=new Map();a.actor.root.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m?.map?.image){const i=m.map.image;textures.set(i.src,{src:i.src,width:i.naturalWidth||i.width,height:i.naturalHeight||i.height,colorSpace:m.map.colorSpace});}});
+     const textures=new Map();a.actor.root.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m?.map?.image){const i=m.map.image,key=m.customProgramCacheKey();textures.set(i.src,{src:i.src,width:i.naturalWidth||i.width,height:i.naturalHeight||i.height,colorSpace:m.map.colorSpace,alphaEncoding:m.map.userData.atlasAlphaEncoding??null,shaderKey:key.startsWith('painted-srgb-v2-')?key:null});}});
      return{id,asset:a.asset,source:a.actor.source,feet:s.socket(id,'feet'),head:s.socket(id,'head'),face:s.faceBounds(a),textures:[...textures.values()]};
     }),paint:[...s.effects.layered.images].map(([id,p])=>({id,url:p.image.src,width:p.image.naturalWidth,height:p.image.naturalHeight,x:p.x,y:p.y,sourceScaleX:p.sourceScaleX??1,sourceScaleY:p.sourceScaleY??1})),paintFailures:s.effects.layered.stats.failed};
   });

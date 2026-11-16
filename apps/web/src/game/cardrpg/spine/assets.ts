@@ -2,6 +2,7 @@
 import * as T from 'three';
 import { CutoutMesh, type CutoutData, type CutoutBone } from '../../rig/cutout';
 import {withRigContract} from '../../rig/contract';
+import {paintedAtlasTexture} from '../../rig/atlas-color';
 import { importSkeleton } from '../../../../../../scripts/art/import-spine.mjs';
 import { loadPuppetModel, animateIllustrated } from '../../squad/turn3d/look-puppet';
 import { fallbackScale } from '../../squad/turn3d/look-scale';
@@ -36,7 +37,7 @@ export function loadNativeRig(id:string):Promise<SkeletonAsset>{
   const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
   const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
   const textures:T.Texture[]=[];
-  try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,img=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path));const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+  try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,loaded=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path));textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(e){textures.forEach(t=>t.dispose());throw e;}
@@ -51,7 +52,7 @@ export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
   const data=withRigContract(importSkeleton(source,atlasText,spec.scale)),textures:T.Texture[]=[];
   try {
    const folder=spec.atlas.slice(0,spec.atlas.lastIndexOf('/')+1);
-   for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const texture=new T.Texture(await image(folder+page.name));texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+   for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const loaded=await image(folder+page.name);textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return {data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
@@ -65,7 +66,7 @@ function loadSequence(spec:AcceptedSequence):Promise<SequenceAsset>{
  const key=spec.manifest;let cached=sequenceCache.get(key);if(cached)return cached;
  cached=(async()=>{const manifest=await (await response(spec.manifest)).json() as SequenceManifest,folder=spec.manifest.slice(0,spec.manifest.lastIndexOf('/')+1),textures=new Map<string,T.Texture>(),clips=new Map<string,ClipData>();
   try{for(const [name,clip] of Object.entries(manifest.animations)){
-   for(const frame of clip.frames)if(!textures.has(frame)){const texture=new T.Texture(await image(folder+frame));texture.needsUpdate=true;texture.colorSpace=T.NoColorSpace;textures.set(frame,texture);}
+   for(const frame of clip.frames)if(!textures.has(frame)){const loaded=await image(folder+frame);textures.set(frame,paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const duration=clip.frames.length/(clip.fps??manifest.fps??24);clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,clip.events??[])});
   }return {manifest,textures,clips};}catch(error){textures.forEach(t=>t.dispose());throw error;}
  })().catch(error=>{if(sequenceCache.get(key)===cached)sequenceCache.delete(key);throw error;});sequenceCache.set(key,cached);return cached;
