@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-16T18:38:00.415Z",
+  "url": "https://testnet.snowtrace.io/tx/0xa23579b4b9f46e5153c6e05a6825044f3f6fef052be5eb88371d36e197087388",
+  "expected": {
+    "status": "Success",
+    "chainId": 43113,
+    "block": 60934441,
+    "time": "2026-11-12 07:09 UTC",
+    "from": "0x4628EA0f3F9F6B146fFFA9AaA0f636B24DBD1134",
+    "to": "0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11",
+    "feeAvax": "0.00000000002741392",
+    "receivedYarn": "20"
+  },
+  "expectedEvidence": {
+    "path": "reports/v4-ship/S11/explorer-recording-preflight-2.json",
+    "sha256": "c19d2c14fbdb628d2961ff9f22bd4427eee9febaebba04d1cb14e60fcbd83a41"
+  },
+  "harnessSha256": "51471465c0ddb77e47e110b5d87ad1da4b34b8b9aae67378cdae7c32d95d2e48",
+  "playwrightVersion": "1.64.1",
+  "method": "Two installed engines, standard fresh headless contexts, read-only navigation and native video. No desktop control, cookies imported, stealth settings, CAPTCHA solving, page replacement or screenshots.",
+  "rows": [
+    {
+      "name": "chromium-full",
+      "options": {
+        "channel": "chromium",
+        "headless": true
+      },
+      "errors": [],
+      "teardownErrors": [],
+      "publicExplorerFootagePass": false,
+      "browserVersion": "156.0.8078.4",
+      "pageCreatedMs": 1028.9877079999999,
+      "httpStatus": 403,
+      "navigationMs": 1419.7346249999998,
+      "title": "Just a moment...",
+      "failure": "Public receipt unavailable; challenge page is not receipt footage",
+      "video": {
+        "path": "work/v4ship-prep/S10-explorer-headless-1/chromium-full/page@19823542e0a0f48a11d87aec6702df70.webm",
+        "bytes": 3465,
+        "sha256": "713e215e44dbeca36174c2e61362a9f4d33221e51a3507903f5c00df249f2cf8"
+      },
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720,
+            "nb_read_frames": "25"
+          }
+        ],
+        "format": {
+          "duration": "1.000000",
+          "size": "3465"
+        }
+      },
+      "totalMs": 1645.025833
+    },
+    {
+      "name": "webkit",
+      "options": {
+        "headless": true
+      },
+      "errors": [],
+      "teardownErrors": [],
+      "publicExplorerFootagePass": true,
+      "browserVersion": "27.2",
+      "pageCreatedMs": 2582.068792,
+      "httpStatus": 200,
+      "navigationMs": 4897.384709,
+      "title": "Avalanche Fuji Transaction Hash: 0xa23579b4b9… | Snowtrace",
+      "before": {
+        "success": true,
+        "block": true,
+        "yarn": true,
+        "publicTransaction": true,
+        "payerLink": true,
+        "recipientLink": true
+      },
+      "feeContext": [
+        {
+          "label": "Transaction Fee",
+          "context": "TRANSACTION FEE",
+          "subscripts": []
+        },
+        {
+          "label": "Transaction Fee",
+          "context": "Transaction Fee",
+          "subscripts": []
+        },
+        {
+          "label": "network fee",
+          "context": "−0.00000000002741 AVAXnetwork fee",
+          "subscripts": []
+        }
+      ],
+      "verifiedHoldStartedMs": 5156.485084,
+      "verifiedHoldMs": 12002.281499999997,
+      "after": {
+        "success": true,
+        "block": true,
+        "yarn": true,
+        "publicTransaction": true,
+        "payerLink": true,
+        "recipientLink": true
+      },
+      "video": {
+        "path": "work/v4ship-prep/S10-explorer-headless-1/webkit/page@7c92dc6efe92751f053b1f7ea20be1cf.webm",
+        "bytes": 1187780,
+        "sha256": "3967667e3913e51a2c55cd2ff6df6c2600258f2ca3862a56fc51639026cbc45d"
+      },
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "width": 1280,
+            "height": 720,
+            "nb_read_frames": "400"
+          }
+        ],
+        "format": {
+          "duration": "16.000000",
+          "size": "1187780"
+        }
+      },
+      "totalMs": 18736.479667
+    }
+  ],
+  "complete": true,
+  "publicExplorerFootagePass": true,
+  "humanReviewPass": false,
+  "submissionGatePass": false
+}

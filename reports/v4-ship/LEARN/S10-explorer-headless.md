@@ -1,0 +1,23 @@
+# S10 genuine public explorer recording through headless browsers
+
+Prepared16November2026 before the next capture experiment. User permits internal/headless browsers only; native desktop, unlocking and password requests are excluded. The existing default Chromium recording failedHTTP403 and remains inS11/explorer-capture-1.json; the internal browser read the page but advertises no video recorder.
+
+Sources used before the experiment:
+
+1. [WCAG2.2 captions criterion](https://www.w3.org/TR/WCAG22/#captions-prerecorded), formal Recommendation: retain synchronized English captions and Vietnamese text in the final film. This does not establish full accessibility or human readability.
+2. [Playwright browser modes](https://playwright.dev/docs/browsers#chromium-new-headless-mode): the default headless shell is separate from full Chromium; the documented `chromium` channel selects full Chromium in headless mode. The installed WebKit is a second engine. Use fresh contexts and standard settings, with no challenge solving or stealth modifications.
+3. [Playwright videos](https://playwright.dev/docs/videos): await context closure to finalize a video; set matching1280x720 viewport and recording size explicitly. Recording remains actual browser output, not a generated or recreated explorer UI.
+4. [Browser context video options](https://playwright.dev/docs/api/class-browser#browser-new-context-option-record-video) and [Video API](https://playwright.dev/docs/api/class-video): bind final saved paths/bytes/hashes and inspect actual container duration/frame count after closing the context.
+5. LocalS10/explorer-access-2.json andS11/explorer-recording-preflight-2.json: earlier successful read-only in-app access confirms the exact Fuji transaction/block/payer. No film was captured there.
+6. LocalS11/explorer-rpc-verification-1.json: receipt gasUsed171337 × effectiveGasPrice160wei =27,413,920wei =0.00000000002741392AVAX. Preserve the earlier shortened header-reading error; never use0.0102741as the fee.
+7. Localtools/v4ship-lab/film/explorer-capture.mjs andS11/explorer-capture-1.json: native video finalization exists, but its default Chromium navigation failed403. Keep that failure and measure new methods separately.
+
+Planned own comparison: ordinary read-only navigation using full Chromium headless and WebKit headless, both already installed under Playwright1.64.1. Record HTTP result, elapsed time, whether the visible Success/block/YARN fields match, and actual video metadata. Do not accept challenge footage. If a page succeeds, hold the verified public page for12seconds and recheck its fields. No screenshots or image opens. This experiment cannot claim a complete submission film, correct visual fee interpretation, or human readability.
+
+## Measured comparison and selected method
+
+`S10/explorer-headless-comparison-1.json` preserves both methods. FullChromium156 headless received403/Just a moment in1.420s to navigation and1.645s total; its1second challenge recording is not accepted. Standard WebKit27.2 headless received200 in4.897s and verified Success,block60934441,YARN,transaction URL,payer and recipient links before and after a12.002second hold. Its actual1280x720 VP9 recording is16seconds/400frames/1,187,780B, with zero page or cleanup errors. No challenge was solved, cookie imported, or user-agent changed. Select the WebKit recording.
+
+The network-fee panel exposes−0.00000000002741AVAX, consistent with the independently measured RPC fee at shown precision. The short header rendering remains unverified and is not used for captions. The film should replace its old pending-explorer outro with a measured segment of this genuine public page, clearly identifying the12November Fuji transaction separately from local Anvil actions. Preserve every gameplay action and whole voice event, English burned captions, VietnameseSRT and the130–170second/10MB gates. Human listening/readability and scheduled R2/FINAL remain open.
+
+Verification completed16November2026: edit3 retains the same gameplay cuts as edit2 and appends five seconds of the genuine public hold. Actual output169.833333s/9,314,863B/5095decodedframes, −17.86LUFS/−2.22dBTP/5.2LRA. Independent source/caption verification confirms1927original frame hashes,53non-overlapping English/Vietnamese cues and13whole speech events. Both public-source video and rejected Chromium challenge are archived with hashes. The fee DOM probe confirms a literal SUB element containing10 in the compact header, so flattened0.0102741is not a plain decimal; the full fee caption remains bound to RPC arithmetic and the readable network-fee field. No visual readability claim is made. SeeS10/film-verify-3.json; regression still has the same seven ART failures.

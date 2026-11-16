@@ -1,0 +1,220 @@
+{
+  "at": "2026-11-16T18:41:15.346957+00:00",
+  "mode": "PREPARATION ONLY",
+  "capture": "reports/v4-ship/S10/film-capture-2.json",
+  "captureSha256": "75340e449a5286a76e4d8deefb3ff79356521c054b2935f65cf1bd78ad0c664d",
+  "recordingSha256": "4166bcd65705050ed8ff6fa7603d2901308e336dfe9bb699ef251c46d35a51cc",
+  "audioSha256": "bd2f75a2248553d2c584189d886889b001677cb6c36776982a7f6f5622c3141a",
+  "calloutSha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a",
+  "cuts": [
+    {
+      "name": "landing-guest-first-battle",
+      "start": 0,
+      "end": 44.7,
+      "outputStart": 0,
+      "outputEnd": 44.7,
+      "speed": 1
+    },
+    {
+      "name": "trial-result-workshop-boss-start",
+      "start": 105.7,
+      "end": 193.43333333333334,
+      "outputStart": 44.7,
+      "outputEnd": 132.43333333333334,
+      "speed": 1
+    },
+    {
+      "name": "boss-result-wallet-proof",
+      "start": 251.33333333333334,
+      "end": 283.73333333333335,
+      "outputStart": 132.43333333333334,
+      "outputEnd": 164.83333333333334,
+      "speed": 1
+    }
+  ],
+  "seconds": 169.833333,
+  "audioPlan": {
+    "path": "reports/v4-ship/S11/film-audio-headroom-1.json",
+    "sha256": "d08c019e890d1bdabb742203ceb31d707577e6dea23d3f02e20fe95fc8db70c9",
+    "gainDb": -0.8,
+    "learn": "reports/v4-ship/LEARN/S11-film-audio.md"
+  },
+  "explorer": {
+    "evidence": {
+      "path": "reports/v4-ship/S10/explorer-headless-comparison-1.json",
+      "sha256": "6168080ea5f4302eb9409990089b5161287e94075e4cdb8bd1ca467f55aa370d"
+    },
+    "video": {
+      "path": "work/v4ship-prep/S10-explorer-headless-1/webkit/page@7c92dc6efe92751f053b1f7ea20be1cf.webm",
+      "bytes": 1187780,
+      "sha256": "3967667e3913e51a2c55cd2ff6df6c2600258f2ca3862a56fc51639026cbc45d"
+    },
+    "url": "https://testnet.snowtrace.io/tx/0xa23579b4b9f46e5153c6e05a6825044f3f6fef052be5eb88371d36e197087388",
+    "sourceStart": 4.6,
+    "seconds": 5,
+    "outputStart": 164.833333,
+    "outputEnd": 169.833333,
+    "feeRpcEvidence": {
+      "path": "reports/v4-ship/S11/explorer-rpc-verification-1.json",
+      "sha256": "7f4d4dd2499f21a7a431dfea84dae76a04c281f7225854a7d4343b8a207b5b07"
+    },
+    "feeAvax": "0.00000000002741392",
+    "verifiedHoldMs": 12002.281499999997,
+    "humanReadabilityPass": false,
+    "timingMethod": "Interior selection with two-second guards in the verified native-video hold; not a frame-exact compositor timestamp claim."
+  },
+  "publicExplorerFootagePass": true,
+  "sourceRuntime": "reports/v4-ship/S8/production-build-2.json",
+  "pass": true,
+  "submissionPass": false,
+  "open": [
+    "Scheduled integrated R2 and FINAL remain due",
+    "Human listening and caption/readability review remain required"
+  ],
+  "frames": {
+    "selected": 1927,
+    "manifestSha256": "5f91e1e052bb1450d7a01a5b604c100d910f922de770630674cf364cb8a8c768",
+    "integrity": "reports/v4-ship/S10/film-frame-integrity-3.json.gz",
+    "integritySha256": "3b9c9468dc060d7ab6b691774201aad11a67df19049306aeb9a138733109f27c",
+    "firstSourceFrameSeconds": 0.01775193214416504,
+    "sourceMaxGapSeconds": 13.332831144332886,
+    "gapTreatment": "Hold last real compositor frame; no interpolation or synthetic scene"
+  },
+  "captions": {
+    "files": {
+      "en": {
+        "path": "docs/v4/film/preparation-3.en.srt",
+        "sha256": "06ec20b4848c2ce4df2e4aa858e67c3ad7d23bcba5408b8058353c8afbc1af50"
+      },
+      "vi": {
+        "path": "docs/v4/film/preparation-3.vi.srt",
+        "sha256": "b191a7947803cfef3aa29ab0c8b593cd2712fd41f0c37fda03c9548bcc609f97"
+      }
+    },
+    "count": 53,
+    "speechEvents": [
+      {
+        "id": "voice.mochi.ult.charge",
+        "sourceStart": 29.08916664123535,
+        "duration": 1.3205416666666667
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 37.92646408081055,
+        "duration": 1.0426666666666666
+      },
+      {
+        "id": "voice.clover.ult.charge",
+        "sourceStart": 40.20376634597778,
+        "duration": 1.921375
+      },
+      {
+        "id": "voice.panko.ult.charge",
+        "sourceStart": 42.50237035751343,
+        "duration": 1.111
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 105.80346727371216,
+        "duration": 0.9230416666666666
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 110.2194664478302,
+        "duration": 1.0369166666666667
+      },
+      {
+        "id": "voice.mochi.ult.charge",
+        "sourceStart": 178.01636934280396,
+        "duration": 1.3205416666666667
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 186.7843632698059,
+        "duration": 1.0426666666666666
+      },
+      {
+        "id": "voice.clover.ult.charge",
+        "sourceStart": 189.0830602645874,
+        "duration": 1.921375
+      },
+      {
+        "id": "voice.panko.ult.charge",
+        "sourceStart": 191.38176035881042,
+        "duration": 1.111
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 251.46145820617676,
+        "duration": 1.0234166666666666
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 254.64535641670227,
+        "duration": 0.9230416666666666
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 259.06134128570557,
+        "duration": 1.0369166666666667
+      }
+    ],
+    "speechEventsIncluded": 13,
+    "truncatedSpeech": 0,
+    "basis": "Actual source starts and original callout text; human listening review remains open",
+    "rail": {
+      "game": [
+        64,
+        0,
+        1152,
+        648
+      ],
+      "captionArea": [
+        0,
+        648,
+        1280,
+        72
+      ]
+    }
+  },
+  "media": {
+    "path": "work/v4ship-prep/S10-edit-3/preparation.mp4",
+    "sha256": "54512b9ae5c42e62f2bfc59c62eb520b0a9ef02be8a89464b6ec97c20dc44db2",
+    "bytes": 9314863,
+    "seconds": 169.833333,
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 5095,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "videoBitrateTarget": 369000,
+    "audioBitrateTarget": 64000,
+    "ssim": 0.975039,
+    "audioTreatment": "Recorded mix cut at identical source times; constant -0.8 dB film attenuation and AAC encoding; no EQ, normalization, replacement sound or speed change; five seconds of silence for public video, whose native recorder has no audio stream",
+    "loudness": {
+      "input_i": -17.86,
+      "input_tp": -2.22,
+      "input_lra": 5.2
+    }
+  },
+  "checks": {
+    "duration": true,
+    "size": true,
+    "resolution": true,
+    "fps": true,
+    "frameCount": true,
+    "audioVideoDuration": true,
+    "decode": true,
+    "allActionsRetained": true,
+    "captionFiles": true,
+    "noClippedSpeech": true,
+    "publicExplorerFootage": true
+  },
+  "audioGate": {
+    "lufs": true,
+    "truePeak": true,
+    "lra": true
+  },
+  "technicalMediaPass": true
+}

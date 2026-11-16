@@ -1,0 +1,129 @@
+{
+  "at": "2026-11-16T18:46:41.710707+00:00",
+  "scope": "Preparation film source/caption/delivery verification; no screenshots, image opens or native desktop access",
+  "harness": {
+    "path": "tools/v4ship-lab/film/verify.py",
+    "sha256": "11c3285bc4e55d0e52697303d98f7c90682bedf3d98d5b4e089782cccc4d698f"
+  },
+  "render": {
+    "path": "reports/v4-ship/S10/film-edit-3.json",
+    "sha256": "4e473aff3e957036462c574dcca6998d0c45c611a7841a9389ae6d20b659b615"
+  },
+  "decodeAndMeasurementLog": {
+    "path": "reports/v4-ship/S10/film-edit-3.log.json.gz",
+    "sha256": "60b9a32d55d42aedc4575ef74693685a4e0776b53d39a3b60f4d1f0f9f4fa374"
+  },
+  "delivery": {
+    "path": "reports/v4-ship/S10/preparation-3.mp4",
+    "sha256": "54512b9ae5c42e62f2bfc59c62eb520b0a9ef02be8a89464b6ec97c20dc44db2",
+    "bytes": 9314863,
+    "byteEqualToMeasuredRender": true
+  },
+  "frames": {
+    "selected": 1927,
+    "allSelectedOriginalNamesTimesAndHashesMatch": true,
+    "manifestHashMatches": true
+  },
+  "actions": {
+    "allRetained": true,
+    "count": 10,
+    "unchangedSpeed": true
+  },
+  "captions": {
+    "count": 53,
+    "enViTimingIdentical": true,
+    "orderedNonOverlappingInFilm": true,
+    "matchesRenderCuePlan": true,
+    "englishAssTextAndTimingMatch": true,
+    "completeSpeechEvents": 13,
+    "maxSerializedSpeechStartErrorMs": 0.46727371214672075,
+    "humanListeningAndReadabilityPassed": false
+  },
+  "explorer": {
+    "sourceArchives": [
+      {
+        "path": "reports/v4-ship/S10/explorer-source-1-chromium-full.webm",
+        "sha256": "713e215e44dbeca36174c2e61362a9f4d33221e51a3507903f5c00df249f2cf8",
+        "bytes": 3465
+      },
+      {
+        "path": "reports/v4-ship/S10/explorer-source-1-webkit.webm",
+        "sha256": "3967667e3913e51a2c55cd2ff6df6c2600258f2ca3862a56fc51639026cbc45d",
+        "bytes": 1187780
+      }
+    ],
+    "acceptedEngine": "webkit",
+    "rejectedEngine": "chromium-full",
+    "realPublicSourceBound": true,
+    "rpcFeeMatchesCaption": true,
+    "timing": "Interior selection with two-second guards in the verified native-video hold; not a frame-exact compositor timestamp claim.",
+    "humanReadabilityPass": false
+  },
+  "audio": {
+    "input_i": -17.86,
+    "input_tp": -2.22,
+    "input_lra": 5.2
+  },
+  "audioGate": {
+    "lufs": true,
+    "truePeak": true,
+    "lra": true
+  },
+  "mediaChecks": {
+    "duration": true,
+    "size": true,
+    "resolution": true,
+    "fps": true,
+    "frameCount": true,
+    "audioVideoDuration": true,
+    "decode": true,
+    "allActionsRetained": true,
+    "captionFiles": true,
+    "noClippedSpeech": true,
+    "publicExplorerFootage": true
+  },
+  "regression": {
+    "check": {
+      "path": "reports/v4-ship/S10/explorer-film-regression-1/check.json",
+      "sha256": "78d261e9d6640667aa96de3d03ec0501f982c179a39398dc4cd97a93287c1dc4"
+    },
+    "comparison": [
+      {
+        "path": "reports/v4-ship/S7/preflight-regression-2/log.jsonl.gz",
+        "sha256": "e3058b490bac662903a38358662a06b3a968bd05b8fe82581e79d741d7e04804",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ]
+      },
+      {
+        "path": "reports/v4-ship/S10/explorer-film-regression-1/log.jsonl.gz",
+        "sha256": "a775c3a3390db0d09a5d57e98f02a0a78b86ff5de6f198a296fac0ae294c3020",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ]
+      }
+    ],
+    "sameSevenArtFailures": true,
+    "G-REG": false,
+    "officialClassParityGate": false
+  },
+  "reportsBytesAfterDelivery": 130902960,
+  "technicalPreparationPass": true,
+  "submissionPass": false,
+  "open": [
+    "Scheduled integrated R2 and FINAL remain due",
+    "Human listening and caption/readability review remain required"
+  ]
+}

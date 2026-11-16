@@ -15,6 +15,7 @@ import re
 import subprocess
 import textwrap
 from datetime import datetime, timezone
+from decimal import Decimal
 
 ROOT = Path(__file__).resolve().parents[3]
 FF = Path('/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg')
@@ -58,6 +59,7 @@ def main():
     parser.add_argument('capture', type=int)
     parser.add_argument('attempt', type=int)
     parser.add_argument('--audio-plan', type=Path, help='Measured passing source cuts and film attenuation')
+    parser.add_argument('--explorer-evidence', type=Path, help='Verified real WebKit public-page recording comparison')
     args = parser.parse_args()
     out = ROOT / f'work/v4ship-prep/S10-edit-{args.attempt}'
     report_path = ROOT / f'reports/v4-ship/S10/film-edit-{args.attempt}.json'
@@ -131,7 +133,41 @@ def main():
         cursor += cut['end'] - cut['start']
         cut['outputEnd'] = cursor
         cut['speed'] = 1
-    duration = round(cursor, 6)
+    game_duration = round(cursor, 6)
+    explorer = None
+    if args.explorer_evidence:
+        evidence_path = (ROOT / args.explorer_evidence).resolve()
+        assert evidence_path.is_relative_to(ROOT)
+        evidence = json.loads(evidence_path.read_text())
+        assert evidence['complete'] and evidence['publicExplorerFootagePass']
+        row = next(r for r in evidence['rows'] if r['name'] == 'webkit')
+        assert row['publicExplorerFootagePass'] and row['httpStatus'] == 200
+        assert not row['errors'] and not row['teardownErrors']
+        assert all(row['before'].values()) and all(row['after'].values())
+        video = ROOT / row['video']['path']
+        assert digest(video) == row['video']['sha256']
+        rpc_path = ROOT / 'reports/v4-ship/S11/explorer-rpc-verification-1.json'
+        rpc = json.loads(rpc_path.read_text())
+        assert evidence['url'].endswith('/' + rpc['transactionHash'])
+        assert rpc['chainId'] == 43113 and rpc['status'] == 1
+        fee = int(rpc['gasUsed']) * int(rpc['effectiveGasPriceWei'])
+        assert fee == int(rpc['feeWei'])
+        assert format(Decimal(fee) / Decimal(10**18), 'f') == rpc['feeAvax']
+        # Select five seconds well inside the verified twelve-second hold.
+        # Native recording's first-frame offset is not an exact compositor clock;
+        # a two-second leading and trailing guard avoids relying on that offset.
+        hold_start = (row['verifiedHoldStartedMs'] - row['pageCreatedMs']) / 1000
+        start = math.ceil((hold_start + 2) * FPS) / FPS
+        assert start + 5 <= hold_start + row['verifiedHoldMs'] / 1000 - 2
+        assert start + 5 <= float(row['probe']['format']['duration'])
+        explorer = {'evidence': {'path': relative(evidence_path), 'sha256': digest(evidence_path)},
+                    'video': row['video'], 'url': evidence['url'], 'sourceStart': start,
+                    'seconds': 5, 'outputStart': game_duration, 'outputEnd': game_duration + 5,
+                    'feeRpcEvidence': {'path': relative(rpc_path), 'sha256': digest(rpc_path)},
+                    'feeAvax': rpc['feeAvax'], 'verifiedHoldMs': row['verifiedHoldMs'],
+                    'humanReadabilityPass': False,
+                    'timingMethod': 'Interior selection with two-second guards in the verified native-video hold; not a frame-exact compositor timestamp claim.'}
+    duration = round(game_duration + (explorer['seconds'] if explorer else 0), 6)
     assert 130 <= duration <= 170, f'Unexpected cut length: {duration}'
     for action in capture['actions']:
         assert any(c['start'] <= action['at'] < c['end'] for c in cuts), action['name']
@@ -142,8 +178,9 @@ def main():
               'recordingSha256': digest(source_path), 'audioSha256': digest(raw / 'audio.webm'),
               'calloutSha256': digest(callout_path), 'cuts': cuts, 'seconds': duration,
               'audioPlan': audio_plan_evidence,
+              'explorer': explorer, 'publicExplorerFootagePass': bool(explorer),
               'sourceRuntime': capture['buildEvidence'], 'pass': False, 'submissionPass': False,
-              'open': ['Public Snowtrace footage absent; no local substitute',
+              'open': ([] if explorer else ['Public Snowtrace footage absent; no local substitute']) + [
                        'Scheduled integrated R2 and FINAL remain due',
                        'Human listening and caption/readability review remain required']}
     logs = []
@@ -220,7 +257,9 @@ def main():
             (marks['click:Withdraw Spool'], marks['click:Face the boss'], 'Withdraw Spool from the café.', 'Rút Spool từ quán cà phê.'),
             (marks['click:Face the boss'], marks['proof-ready'], 'Face the boss together.\n[Battle impacts and magic]', 'Cùng đối đầu trùm.\n[Tiếng giao chiến và phép thuật]'),
             (marks['proof-ready'], marks['proof-ready'] + 10, 'The wallet history links the complete local journey.', 'Lịch sử ví liên kết toàn bộ hành trình cục bộ.'),
-            (marks['proof-ready'] + 10, marks['end'], 'Public Fuji Snowtrace footage is still pending.\nThis preparation is not the submission film.', 'Còn thiếu cảnh Snowtrace Fuji công khai.\nBản chuẩn bị này chưa phải phim nộp dự thi.'),
+            (marks['proof-ready'] + 10, marks['end'],
+             'Local Anvil journey complete.\nA separate public Fuji receipt follows.' if explorer else 'Public Fuji Snowtrace footage is still pending.\nThis preparation is not the submission film.',
+             'Hoàn tất hành trình trên Anvil cục bộ.\nTiếp theo là biên nhận Fuji công khai riêng biệt.' if explorer else 'Còn thiếu cảnh Snowtrace Fuji công khai.\nBản chuẩn bị này chưa phải phim nộp dự thi.'),
         ]
         for section in sections:
             caption(*section)
@@ -253,6 +292,11 @@ def main():
         for cut in cuts[1:]:
             caption(cut['start'], cut['start'] + 2,
                     '[Battle excerpt · time omitted]', '[Trích đoạn trận đấu · đã lược thời gian]', 5, 'cut')
+        if explorer:
+            captions.append({'start': game_duration, 'end': duration,
+                             'en': 'Public Fuji receipt · 12 Nov 2026\nFee: ' + explorer['feeAvax'] + ' AVAX',
+                             'vi': 'Biên nhận Fuji công khai · 12/11/2026\nPhí: ' + explorer['feeAvax'] + ' AVAX',
+                             'priority': 0, 'kind': 'public-explorer', 'cue': None})
 
         # Resolve overlaps explicitly; no invisible subtitles hidden behind other cues.
         boundaries = sorted({0, duration, *(max(0, min(duration, c[k])) for c in captions for k in ('start', 'end'))})
@@ -315,13 +359,22 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         audio_graph += ''.join(f'[a{i}]' for i in range(len(cuts))) + f'concat=n={len(cuts)}:v=0:a=1'
         if audio_gain_db:
             audio_graph += f',volume={audio_gain_db}dB'
+        if explorer:
+            audio_graph += f",apad=pad_dur={explorer['seconds']},atrim=duration={duration}"
         audio_graph += '[a]'
         run('cut-original-mix', [FF, '-hide_banner', '-y', '-i', raw / 'audio.webm', '-filter_complex', audio_graph,
                                 '-map', '[a]', '-c:a', 'pcm_s24le', 'mix.wav'])
         video_filter = 'fps=30:start_time=0,scale=1152:648:flags=lanczos,pad=1280:720:64:0:black,setsar=1,ass=english.ass,format=yuv420p'
-        run('captioned-master', [FF, '-hide_banner', '-y', '-f', 'concat', '-safe', '0', '-i', manifest,
-                                '-vf', video_filter, '-t', duration, '-an', '-c:v', 'libx264',
-                                '-preset', 'fast', '-crf', '10', '-threads', '4', 'master.mp4'])
+        master_command = [FF, '-hide_banner', '-y', '-f', 'concat', '-safe', '0', '-i', manifest]
+        if explorer:
+            master_command += ['-i', ROOT / explorer['video']['path'], '-filter_complex',
+                               f'[0:v]fps=30:start_time=0,trim=duration={game_duration},setpts=PTS-STARTPTS,setsar=1[g];'
+                               f"[1:v]trim=start={explorer['sourceStart']}:duration={explorer['seconds']},setpts=PTS-STARTPTS,fps=30:start_time=0,setsar=1[e];"
+                               '[g][e]concat=n=2:v=1:a=0,' + video_filter + '[v]', '-map', '[v]']
+        else:
+            master_command += ['-vf', video_filter]
+        run('captioned-master', master_command + ['-t', duration, '-an', '-c:v', 'libx264',
+                                                  '-preset', 'fast', '-crf', '10', '-threads', '4', 'master.mp4'])
         bitrate = min(430000, math.floor((10_000_000 * 8 * .92 / duration - 64000) / 1000) * 1000)
         common = [FF, '-hide_banner', '-y', '-i', 'master.mp4', '-c:v', 'libx264', '-b:v', bitrate,
                   '-preset', 'slow', '-pix_fmt', 'yuv420p', '-threads', '4', '-passlogfile', 'encode-pass']
@@ -350,11 +403,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                                               'no EQ, normalization, replacement sound or speed change') if audio_gain_db else
                                              'Recorded mix cut at identical source times; AAC encoding only, no gain/EQ/normalization',
                            'loudness': {k: float(loudness[k]) for k in ['input_i', 'input_tp', 'input_lra']}}
+        if explorer:
+            report['media']['audioTreatment'] += '; five seconds of silence for public video, whose native recorder has no audio stream'
         report['checks'] = {'duration': 130 <= seconds <= 170, 'size': film.stat().st_size <= 10_000_000,
                             'resolution': v['width'] == 1280 and v['height'] == 720, 'fps': v['avg_frame_rate'] == '30/1',
                             'frameCount': abs(int(v['nb_read_frames']) - round(duration * FPS)) <= 1,
                             'audioVideoDuration': abs(float(v['duration']) - float(a['duration'])) <= .05,
                             'decode': True, 'allActionsRetained': True, 'captionFiles': True, 'noClippedSpeech': True}
+        if explorer:
+            report['checks']['publicExplorerFootage'] = True
         report['audioGate'] = {'lufs': -20 <= float(loudness['input_i']) <= -16,
                                'truePeak': float(loudness['input_tp']) <= -1,
                                'lra': float(loudness['input_lra']) >= 5}

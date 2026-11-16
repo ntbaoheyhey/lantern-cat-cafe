@@ -1,0 +1,116 @@
+{
+  "at": "2026-11-16T18:47:31.198537+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "docs/v4/film/preparation-3.en.srt",
+      "bytes": 3688,
+      "sha256": "06ec20b4848c2ce4df2e4aa858e67c3ad7d23bcba5408b8058353c8afbc1af50"
+    },
+    {
+      "path": "docs/v4/film/preparation-3.vi.srt",
+      "bytes": 4301,
+      "sha256": "b191a7947803cfef3aa29ab0c8b593cd2712fd41f0c37fda03c9548bcc609f97"
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6471,
+      "sha256": "68fcf43c63eab9e2a7075f1a5939aa04855c2ce759786d965c50dbb77ae37a1b"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S10-explorer-headless.md",
+      "bytes": 4750,
+      "sha256": "57f0eacbc4bbc6085ffb93c51d9ac3887d90b254b2c51515f52c38a6fa685728"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-fee-dom-1.json",
+      "bytes": 15628,
+      "sha256": "acb3eec6c1dd768569be115c543cd3a5f574d85d8d6dba87db17d13e326b0da5"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-film-regression-1/check.json",
+      "bytes": 1435,
+      "sha256": "78d261e9d6640667aa96de3d03ec0501f982c179a39398dc4cd97a93287c1dc4"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-film-regression-1/log.jsonl.gz",
+      "bytes": 16092,
+      "sha256": "a775c3a3390db0d09a5d57e98f02a0a78b86ff5de6f198a296fac0ae294c3020"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-film-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "e0169478832050d83660622b1c4cecaf62400fd60fe7b1b1d10939cf053882ea"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-headless-comparison-1.json",
+      "bytes": 4122,
+      "sha256": "6168080ea5f4302eb9409990089b5161287e94075e4cdb8bd1ca467f55aa370d"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-source-1-chromium-full.webm",
+      "bytes": 3465,
+      "sha256": "713e215e44dbeca36174c2e61362a9f4d33221e51a3507903f5c00df249f2cf8"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-source-1-webkit.webm",
+      "bytes": 1187780,
+      "sha256": "3967667e3913e51a2c55cd2ff6df6c2600258f2ca3862a56fc51639026cbc45d"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-edit-3.json",
+      "bytes": 6917,
+      "sha256": "4e473aff3e957036462c574dcca6998d0c45c611a7841a9389ae6d20b659b615"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-edit-3.log.json.gz",
+      "bytes": 9325,
+      "sha256": "60b9a32d55d42aedc4575ef74693685a4e0776b53d39a3b60f4d1f0f9f4fa374"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-frame-integrity-3.json.gz",
+      "bytes": 101430,
+      "sha256": "3b9c9468dc060d7ab6b691774201aad11a67df19049306aeb9a138733109f27c"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-verify-3.json",
+      "bytes": 6104,
+      "sha256": "475294cdf7499a8160dd9a6f3ca0f506dacf0d7b67788c0e7095a08b2588f789"
+    },
+    {
+      "path": "reports/v4-ship/S10/preparation-3.mp4",
+      "bytes": 9314863,
+      "sha256": "54512b9ae5c42e62f2bfc59c62eb520b0a9ef02be8a89464b6ec97c20dc44db2"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 16241,
+      "sha256": "8fc8a65ea8549dcd886d91e59e2958094a54e992acaaac014e8b41e28eb6b4c5"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 3679,
+      "sha256": "bb6b3325c60f0977c482353293fa7714d289970e1298ad296c79432d50fb64ce"
+    },
+    {
+      "path": "tools/v4ship-lab/film/edit.py",
+      "bytes": 28065,
+      "sha256": "29c2ba9e7948868ea626154fc39ea6f614a81fd3343567193c5732a719d536c2"
+    },
+    {
+      "path": "tools/v4ship-lab/film/explorer-headless.mjs",
+      "bytes": 6322,
+      "sha256": "51471465c0ddb77e47e110b5d87ad1da4b34b8b9aae67378cdae7c32d95d2e48"
+    },
+    {
+      "path": "tools/v4ship-lab/film/verify.py",
+      "bytes": 12714,
+      "sha256": "11c3285bc4e55d0e52697303d98f7c90682bedf3d98d5b4e089782cccc4d698f"
+    }
+  ],
+  "expandedGzip": 3,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}
