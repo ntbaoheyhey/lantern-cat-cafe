@@ -13,8 +13,8 @@
 - Quét toàn bộ lịch sử git vẫn chạy; chưa kết luận lịch sử sạch.
 - Production đã đi đủ bảy bước, 18 biên nhận và 60 FPS; tải 26,4 MB trước trận vượt mức 8 MB, đang chờ ART sửa phần tài nguyên.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
-- Phim chuẩn bị:152,83giây/9,32MB,47phụ đề Anh/Việt;18biên nhận thật trên Anvil đã xác minh. LRA4,8<5 còn lỗi.
+- Phim chuẩn bị 2: 164,83 giây/9,34 MB; âm lượng −17,87 LUFS, đỉnh −2,22 dBTP, LRA 5,2 đạt ngưỡng. 52 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
 - Snowtrace đã mở được bằng trình duyệt tích hợp; còn thiếu video biên nhận Fuji và kiểm tra nghe/đọc. R2 vẫn sau ART18/11.
-- Bản clone sạch còn bảy lỗi ART; báo cáo khoảng 84,6 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.
+- Hồi quy hiện còn đúng bảy lỗi ART; server, rules, typecheck, parity probe và build đạt. Báo cáo khoảng 112 MB; chưa đạt toàn bộ G-REPO.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
-S11: đã rút gọn 7 bước workshop xuống tối đa 25 từ và thêm nền chữ rõ hơn. Đang chờ kiểm tra lại production; còn lỗi trả focus ở đăng nhập và ảnh Binding Thread thuộc ART.
+S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Còn bốn lỗi ảnh ART và 36 mẫu chưa xác nhận tương phản. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.

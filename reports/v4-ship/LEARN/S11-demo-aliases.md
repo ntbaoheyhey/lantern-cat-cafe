@@ -1,0 +1,17 @@
+# S11 demo portrait enumeration
+
+Accessed 16 November 2026 UTC, before the implementation change. ART requested a SHIP-owned fix for `tools/v3-demo/asset-aliases.mjs`: promotional folders are not registered actors. No ART merge or presentation change is part of this item.
+
+1. [Node file-system API](https://nodejs.org/api/fs.html#fsreadfilesyncpath-options): read the registry explicitly as UTF-8. A directory listing identifies filesystem entries, not game actors.
+2. [Node path resolution](https://nodejs.org/api/path.html#pathresolvepaths): resolve registry and image paths from the supplied worktree root, preserving the helper's ability to operate on a separate fixture.
+3. [Vite public assets](https://vite.dev/guide/assets.html#the-public-directory): public assets keep their names and are served from the root URL. Preserve existing `/units/<id>/portrait.webp` URLs and source bytes.
+4. [Vite plugin lifecycle](https://vite.dev/guide/api-plugin.html#configureserver): the server middleware hook is a development hook, not a production asset packaging mechanism. This fix cannot clear production transfer or portrait gates.
+5. [RFC 8259, Internet Standard](https://www.rfc-editor.org/rfc/rfc8259): the registry's JSON array is an ordered sequence. Read its actor IDs instead of deriving actor membership from unrelated directory contents.
+6. [ECMAScript flatMap specification](https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.flatmap): the callback's results are flattened one level. Preserve the helper's existing zero-or-one mapping per actor.
+7. Repository primary evidence: `assets/cardrpg-look/spine/slots.json` declares 25 units; `tools/v3-demo/vite.config.mts` consumes the map before server startup; ART's `reports/v4-art/REQUESTS-TO-SHIP.md` and owned configuration identify the incoming `promo` directory. The ART worktree is read only.
+
+Own experiment: compare the existing directory enumerator with registry enumeration against both actual worktrees before editing the helper. Preserve both results in `reports/v4-ship/S11/demo-alias-comparison-1.json`. Select registry enumeration only if all current SHIP URL/source hashes match and it resolves the incoming ART promo-folder failure. Afterward, verify actual helper outputs, portrait precedence and rejection of a missing registered actor, then run the required full regression.
+
+The experiment confirms 25 registered actors in each tree. SHIP's two methods produce the same 12 aliases. ART has 26 directories including `promo`: the directory method throws `Missing demo portrait: promo`, while the registry method supplies 11 valid aliases (ART already supplies Binding Thread's own portrait). Use the registered IDs. No speed claim follows from these small correctness measurements.
+
+Implemented verification: actual helper maps match the predeclared comparison in both worktrees. A temporary fixture using only symlinks to existing artwork verifies native portrait precedence, face-before-art fallback, unregistered promo exclusion and a hard failure for an absent registered actor. The actual SHIP Vite configuration served 25/25 portrait URLs with matching source hashes (12 aliases), then closed its owned port. Full regression preserves the same seven ART failures and passes server/rules/typecheck/probe/build; production and official class gates remain open. Evidence: `demo-alias-check-1.json`, `demo-alias-http-1.json`, and `demo-alias-regression-1/`.

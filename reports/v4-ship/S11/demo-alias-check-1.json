@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T16:58:58.461Z",
+  "helper": {
+    "path": "tools/v3-demo/asset-aliases.mjs",
+    "sha256": "387e8c785db606e9184c57c83985a5bcd21b4dc004707175e05bd834bc088378"
+  },
+  "comparison": {
+    "path": "reports/v4-ship/S11/demo-alias-comparison-1.json",
+    "sha256": "d56edf8ee49af779d18ba0cec73a81bb188c88de886c52de3074399ba22004e7"
+  },
+  "worktrees": [
+    {
+      "worktree": "/Users/bao/taskbar-hero-chain",
+      "aliases": 12,
+      "allExpectedSourceHashesMatch": true
+    },
+    {
+      "worktree": "/Users/bao/taskbar-hero-cardrpg-a6",
+      "aliases": 11,
+      "allExpectedSourceHashesMatch": true
+    }
+  ],
+  "fixture": {
+    "nativeWins": true,
+    "faceWins": true,
+    "artFallback": true,
+    "missingRegisteredRejected": true,
+    "promoIgnored": true,
+    "usesOnlySymlinksToExistingArtwork": true
+  },
+  "pass": true,
+  "productionAcceptance": false
+}
