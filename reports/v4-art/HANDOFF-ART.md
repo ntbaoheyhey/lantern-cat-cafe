@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T23:10:47.075457+00:00
+# ART execution anchor — 2026-11-16T23:14:30.437220+00:00
 ACTIVE: user continuation;A10scene-ready transfer OPEN after2h timebox;A11 delivery review COMPLETE(scoped), now private placement temporal/all42defect validation. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: author private actor-relative side-lane candidate plus persistent-offset variant; replay saved temporal-r3 raw geometry as2drills, then DOM/visual comparison. Stateless HUD-nearest REJECTED:82.26px adjacent offsetjump; no runtime install.
+NEXT1: implement typed actor-relative label layout and cached DOM extents in battle-v3/BattleHud.tsx; preserve text/IDs/face/HUD reservations. Private2drills+304states+6comparisons complete; then focused/fullweb/typecheck/3F6/lane and freshfilms.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:03b956dd5 verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
-LIVE: normalVite20416/5990 craftOFF. Temporal50932 completed;log jobs/a11-placement-temporal-r3.log. No replay/capture jobs active; r1/r2 failures retained.
+LAST PUSH:f6b774759 verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
+LIVE: normalVite20416/5990 craftOFF. Temporal51815 completed;log jobs/a11-placement-temporal-r4.log. No replay/capture jobs active. Runtime placement not installed yet.
 STOP/INBOX checked22:58UTC16Nov:noSTOP;latest user continuation active. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11placement: prior6states pass statically, but304semantic replay states REJECT stateless candidate for82.26px jump. 0measured intersections/textloss; baseline38/42reproduced720 and35/42at900. Remaining originals remain failures. temporal-r3-assessment.json.
@@ -18,7 +18,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;64transfer+6placement+84A11action+3A11layout sheets CLOSED, never reopen. A10JPG8/8;A11selectedJPG0/8/rawonly. HUD-aware placement PRIVATE, temporal/all42defects open.
+IMAGEOPENS:0afterrewrite;64transfer+6oldplacement+84A11action+3layout+6actor-relative sheets CLOSED, never reopen. A10JPG8/8;A11selectedJPG0/8/rawonly. Six staticnearest-r3 pairs generated but unopened; rejected numerically.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.

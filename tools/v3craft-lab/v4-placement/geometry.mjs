@@ -5,7 +5,7 @@ export function measureLabels() {
  const labels=[...document.querySelectorAll('.b3-world')].filter(visible).map(node=>{
   const boxes=[node,...node.querySelectorAll('*')].filter(visible).map(n=>n.getBoundingClientRect()).filter(r=>r.width&&r.height);
   const x=Math.min(...boxes.map(r=>r.left)),y=Math.min(...boxes.map(r=>r.top));
-  return {id:node.dataset.actor,text:node.textContent,styleLeft:node.style.left,styleTop:node.style.top,
+  return {id:node.dataset.actor,side:node.dataset.side,text:node.textContent,styleLeft:node.style.left,styleTop:node.style.top,
    rect:{x,y,width:Math.max(...boxes.map(r=>r.right))-x,height:Math.max(...boxes.map(r=>r.bottom))-y}};
  });
  const obstacles=[...document.querySelectorAll('.b3-top,.b3-boss,.b3-bottom,.th-audio')].filter(visible)
