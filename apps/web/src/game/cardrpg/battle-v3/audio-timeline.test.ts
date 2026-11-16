@@ -57,8 +57,8 @@ it('keeps every healer contact and voice on the fixed clock without any impact s
   }
  }
 });
-it('retains the existing non-healer basics and admits a single rising healer source',()=>{
- for(const [id,role,element] of [['mochi','guardian','holy'],['soot','hexer','ember'],['panko','guardian','heavy']]){
+it('retains melee whoosh and impact cues and admits a single rising healer source',()=>{
+ for(const [id,role,element] of [['mochi','guardian','holy'],['panko','guardian','heavy']]){
   const plan=configureSequence(pilotFixture(`${id}-1`).plan);
   expect(audioTimeline(plan,plan.sequence).map(c=>[c.t,c.cue])).toEqual([[0,`move.${role}.whoosh`],[350,`kit.${element}.impact`]]);
  }

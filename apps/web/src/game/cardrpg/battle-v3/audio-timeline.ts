@@ -4,13 +4,24 @@ import type {SkillSequence} from './sequence';
 import {presentationTier as cueTier} from './presentation';
 import snapshot from './voice-timing.json';
 import {CAT_BY_ID,ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
+import {validatePaint,type PaintTimeline} from '../vfx-layered/timeline';
 export interface VoiceTiming {unitId:string;skillId:string;cueId:string;text:string;durationMs:number;syncPointMs:number;phase?:string;kind:string}
 const live=import.meta.glob('../../../audio/voice-callouts.json',{eager:true,import:'default'}) as Record<string,VoiceTiming[]>;
 /** B owns these takes; the read-only snapshot keeps timing available before the scheduled merge. */
 export const VOICE_TIMING:readonly VoiceTiming[]=Object.values(live)[0]??snapshot.callouts;
-export type CueRole='charge'|'movement'|'release'|'impact'|'tail'|'voice'|'bark'|'status'|'cut';
-export interface TimelineCue {t:number;cue:AudioCue;role:CueRole;element?:string;targetId?:string;voicePhase?:'active'|'charge'|'release'}
+export type CueRole='charge'|'movement'|'release'|'travel'|'impact'|'tail'|'voice'|'bark'|'status'|'cut';
+export interface TimelineCue {t:number;cue:AudioCue;role:CueRole;element?:string;targetId?:string;voicePhase?:'active'|'charge'|'release';flightStart?:number}
 const elements:Record<string,string>={mochi:'holy',soot:'ember',clover:'garden',panko:'heavy',biscuit:'lightning',inkcap:'shadow',velvet:'ice',cinnamon:'fire',brioche:'hearth',sorrel:'tide',marigold:'nature',mallow:'moon'};
+const authored=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
+const paintings=new Map(Object.values(authored).map(p=>[p.id,validatePaint(p)]));
+/** Read the same authored flight interval as the renderer; contact remains the rules beat. */
+function rangedFlight(plan:EffectPlan,impact:number,element:string):TimelineCue[]{
+ const painting=paintings.get(plan.presentationId??plan.skillId);if(!painting)return [];
+ const flights=painting.layers.filter(l=>l.anchor==='flight'&&l.start<painting.impact&&l.keys.some(k=>k.t<painting.impact&&k.alpha>0));
+ if(!flights.length)return [];
+ const castStart=plan.ultimate?600:0,start=castStart+Math.min(...flights.map(l=>l.start))/painting.impact*(impact-castStart);
+ return [{t:start,cue:`kit.ranged-${element}.release`,role:'release',element},{t:(start+impact)/2,cue:`kit.ranged-${element}.travel`,role:'travel',element,flightStart:start}];
+}
 export function cueOwner(plan:EffectPlan){return (plan.presentationId??plan.skillId).replace(/^enemy:/,'').replace(/:basic$/,'').replace(/-[1-4]$/,'');}
 export {cueTier};
 export function voiceTiming(owner:string,skill:string,phase?:string){return VOICE_TIMING.find(v=>v.unitId===owner&&v.skillId===skill&&(phase?v.phase===phase:v.kind==='skill'));}
@@ -20,17 +31,19 @@ export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineC
  if(!plan.events.some(e=>e.type==='action_start'||e.type==='charge'))return [];
  // The fixed beat owns speech and weapon cues; voice lengths never move contact.
  if((plan as EffectPlan&{fixedTiming?:boolean}).fixedTiming){
-  const element=elements[owner]??'heavy',unit=CAT_BY_ID[owner]??ENEMY_BY_ID[owner],role=unit?.role??'striker',healer=unit?.combatClass==='healer';
+  const element=elements[owner]??'heavy',unit=CAT_BY_ID[owner]??ENEMY_BY_ID[owner],role=unit?.role??'striker',healer=unit?.combatClass==='healer',ranged=unit?.combatClass==='ranged';
+  const flight=ranged?rangedFlight(plan,impact,element):[],hit:AudioCue=healer?'heal.medium':ranged?`kit.ranged-${element}.impact`:`kit.${element}.impact`;
   // The contact role is also the healing beat; healers never use weapon layers.
   if(tier==='basic')return healer?[{t:impact,cue:'heal.medium',role:'impact',element}]:[
-   {t:0,cue:`move.${role}.whoosh`,role:'movement',element},
-   {t:impact,cue:`kit.${element}.impact`,role:'impact',element},
+   ...(flight.length?flight:[{t:0,cue:`move.${role}.whoosh` as AudioCue,role:'movement' as const,element}]),
+   {t:impact,cue:hit,role:'impact',element},
   ];
   const line=voiceTiming(owner,id,'charge');
   return [
    ...(line?[{t:0,cue:line.cueId as AudioCue,role:'voice' as const,element,voicePhase:'charge' as const}]:[]),
    {t:600,cue:healer?'kit.magic.charge':`ult.${owner}.charge` as AudioCue,role:'charge',element},
-   {t:impact,cue:healer?'heal.medium':`kit.${element}.impact` as AudioCue,role:'impact',element},
+   ...flight,
+   {t:impact,cue:hit,role:'impact',element},
    ...(!healer?[{t:impact+200,cue:`ult.${owner}.tail` as AudioCue,role:'tail' as const,element}]:[]),
   ];
  }

@@ -6,7 +6,7 @@ export type AudioCue = `ult.${string}.${'charge'|'release'|'impact'|'tail'}`
  | `voice.${string}.skill.${string}` | `voice.${string}.ult.${'charge'|'release'}`
  | `voice.${string}.${'idle'|'gear'|'forge'}`
  | `ui.${string}` | `music.${'landing'|'home'|'map'|'battle'|'elite'|'boss'|'victory'|'defeat'|'reveal'|'level-up'|'quest-complete'}`
- | `ambience.${string}` | `move.${string}.whoosh` | `kit.${string}.${'charge'|'release'|'impact'|'tail'}`
+ | `ambience.${string}` | `move.${string}.whoosh` | `kit.${string}.${'charge'|'release'|'travel'|'impact'|'tail'}`
  | `battle.${'turn'|'round'|'ready'|'cut'}` | 'boss.enrage' | 'rage.full' | 'count.tick'
  | 'crit' | 'block' | 'dodge' | 'miss' | `heal.${'small'|'medium'|'large'}` | 'buff.on' | 'debuff.on'
  | `currency.${string}.gain` | `item.land.${string}` | `gacha.${'charge'|'flip'|'pity'}`

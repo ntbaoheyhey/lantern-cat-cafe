@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-16T21:05:38.256178+00:00",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@taskbar-hero/web",
+    "exec",
+    "vitest",
+    "run",
+    "src/game/cardrpg/battle-v3/audio-timeline.test.ts",
+    "src/game/cardrpg/battle-v3/ranged-audio.test.ts",
+    "src/audio/engine.test.ts"
+  ],
+  "exitCode": 0,
+  "logSha256": "b201570c4fb777dd7247be94e4ad2ad4ce42b3d2e3c55f83c4b0c8d2aad7929e"
+}

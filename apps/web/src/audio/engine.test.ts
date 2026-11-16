@@ -47,6 +47,13 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.unlock();await e.preload('home');
   expect(e.diagnostics.packs).toContain('v4-receipt');expect(Context.latest.sources).toHaveLength(0);
  });
+ it.each(['battle','boss'] as const)('predecodes shipped ranged composites for %s without starting a source',async screen=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();await e.preload('home');expect(e.diagnostics.packs).not.toContain('v4-ranged-impacts');
+  await e.preload(screen);expect(e.diagnostics.packs).toContain('v4-ranged-impacts');expect(Context.latest.sources).toHaveLength(0);
+  e.play('kit.ranged-ember.impact');expect(Context.latest.sources).toHaveLength(1);expect(e.hits.at(-1)?.result).toBe('played');
+ });
  it('preserves a pre-rendered envelope while two distinct receipts share one short window',async()=>{
   const layers=design.layers.slice(0,2),baked=samples().map(sample=>({sample:{...sample,duration:.132,enveloped:true},layers:layers.map(l=>({role:l.role,variantId:'existing',offsetMs:l.offsetMs}))}));
   const m={...fixture,designs:{...fixture.designs,'tx.confirmed':{...design,layers,baked,cooldownMs:0,pitchRange:[1,1],gainRange:[0,0]}}};

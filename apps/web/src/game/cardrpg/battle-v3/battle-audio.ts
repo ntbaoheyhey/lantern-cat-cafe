@@ -62,7 +62,12 @@ export class BattleAudio {
   }
   if(!frame)return;
   for(const [i,key] of this.track.entries()){
-   if(this.fired.has(i)||key.t>frame.elapsed)continue;this.fired.add(i);
+   // At fast playback the canonical midpoint can land on the contact frame.
+   // Re-evaluate the travel checkpoint at the current speed, including a
+   // mid-action speed change. Fired indices retain exactly-once dispatch.
+   const speed=Number.isFinite(view.playbackSpeed)?Math.max(1,Math.min(3,view.playbackSpeed!)):1;
+   const due=key.role==='travel'&&key.flightStart!==undefined?key.flightStart+(key.t-key.flightStart)/speed:key.t;
+   if(this.fired.has(i)||due>frame.elapsed)continue;this.fired.add(i);
    this.send({...context,cue:key.cue,role:key.role,targetId:key.targetId,voicePhase:key.voicePhase},{speed:view.playbackSpeed??1,element:key.element,...(key.role==='voice'?{priority:context.tier==='ultimate'?100:90}:{}),...(key.role==='movement'?{volume:.7}:{})});
   }
   // Death and periodic damage are independent resolved events, not extra hit amounts.

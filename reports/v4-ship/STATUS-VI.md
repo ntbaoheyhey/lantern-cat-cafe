@@ -10,7 +10,7 @@
 - Bốn bộ đếm Fuji và phục hồi dữ liệu cũ đã kiểm tra; chưa đo giao dịch được tài trợ trên Fuji thật.
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có2.686trường hợp đạt và bảy lỗi ART không đổi; server, rules, typecheck, bản dựng và đối chiếu ba trận đạt.
-- Lịch sử Git:700/3.854 commit; checkpoint gzip1.203/1.332 tệp,1.314 cảnh báo đã đối chiếu. Bổ sung mới9commit/19gzip không có cảnh báo; chưa kết luận toàn bộ lịch sử sạch.
+- Lịch sử Git:700/3.854 commit dạng văn bản; gzip đã quét đủ1.332/1.332 tệp,1.314 cảnh báo đã đối chiếu,không phát hiện mới. Phần lịch sử mới và định dạng khác vẫn mở.
 - Production14 đạt đủ hành trình ở hai kích thước,36 biên nhận,248 âm tiếp xúc,32 nhịp hồi máu Clover và boss trung vị60FPS; tải sẵn sàng29,08MB vẫn vượt8MB.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
@@ -21,4 +21,4 @@ S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đ�
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
-Âm thanh S11:production14 đạt nhạc/nền,−17,73/−17,77LUFS nhưng trễ ước tính tối đa33,57ms còn vượt33ms. Đã chuẩn bị72 âm va chạm ranged,WebM/MP3 không lệch trên Chromium/WebKit ở44,1/48kHz; chưa cài vào game, tiếp theo đo phát âm launch/travel thực tế.
+Âm thanh S11:đã cài144 sprite va chạm và launch/travel cho ranged;168/168 ca thử tốc độ cố định đạt pha/nguồn âm,47 kiểm tra tập trung đạt gồm390 đổi tốc độ. Đang kiểm tra bộ phát thật và production;ước tính trễ33,38ms còn vượt33ms,nghe thực tế chưa xác nhận.
