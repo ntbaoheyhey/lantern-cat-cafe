@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; fr
 NEXT1 ON RESUME: restart owned craft Vite5990 with VITE_CRAFT_PILOT=soot from apps/web: pnpm exec vite --config ../../scripts/v3feel/vite.config.mts --host 127.0.0.1 --port 5990 --strictPort (detached; recordPID/log).
 NEXT2: preserve interrupted raw/wave3-900, rerun ONLY existing1440x900 capture/review; do NOT rerun capture-review.py (would overwrite3completedfilms). Then blind-read.py prepare; label9crops before private key/compare.
 NEXT3: review all existing Needle action sheets and new projectile sheets; complete900p layout evidence (wave1/boss also), receipt/STATUS/STATE/commitpush; then Yarn, A9, verified A10contrast request, A11/A12.
-LAST PUSH:b92cd2dc3 verified production Needle; pending pause checkpoint contains regression/capture metadata and review helpers, with no runtime changes.
+LAST PUSH:842c436f4 verified pause checkpoint (regression/capture metadata and helpers); production b92cd2dc3 unchanged. This subsequent anchor commit only records that completed push.
 LIVE:none after user pause. Owned Vite40003/40016 and capture-review64446, capture66139, browser66141 group/ffmpeg66160 stopped; validation63153/probe63154 already exited.
 STOP-V4ART absent; user pause persisted in INBOX. Requested68961/69950 absent; A6final/post logs exit0. No generation running. Never kill SHIP processes.
 Needle production b92cd2dc3: K1-A6 Lab30, K2-A1, K4-A3; K5aliasK2. Four poses215,744B plus originalsewingneedle60,240B. DEV&&VITE_CRAFT_PILOT==='soot' unchanged.
@@ -14,7 +14,7 @@ Needle r1area9.4%FAIL retained. Selectedr2:150msflight,count27,length560,spread9
 Needle live wave1/wave3 area24.4803/24.4476%,face<=1.6655%,paintedtip<1.7e-13px,launchsocket<=.1592px,occlusion<=2.3494%,motion<=9.21955px,camera<=2.9384px. No Needle in bossfixture.
 Needle regression PASS:2664tests/318files,typecheck0,3fixtureparity6hashes; reports REVIEW/A7/needle-moth/{validation,parity,lane-audit}.json. No baseline adoption.
 Needle3completed30s720p30fpsaudiofilms are local reports/v3-feel/REVIEW/V4-A7-NEEDLE/{wave1,wave3,boss}.webm; compressed capture metadata in fixture subdirs. Source b92cd2dc3,paritytrue,0errors; do not overwrite.
-Needle2700encodedmarkersverified900each. Film-review.json/action-strips generated, NONE visually reviewed. wave1/wave3 median60.240485FPS. Full film acceptance, camera duration/layout, action/flight verdicts pending.
+Needle2700encodedmarkersverified900each. Film-review.json:26scopedwindows/24complete,5completeown/1ult;32action sheets generated, NONE visually reviewed. wave1/wave3 median60.240485FPS. Full film acceptance, camera duration/layout, action/flight verdicts pending.
 Needle900p wave3 recorder interrupted by user pause; capture.json absent, partialraw files retained; no900p acceptance. Blind sheet/private key NOT generated, no labels/result. No receipt yet.
 Review helpers prepared: validate.py,capture-review.py,review-films.py,review-900.py,verify-markers.py,blind-read.py,review-flight.py. Flight helper not run/reviewed. capture-review.py is start-from-scratch, not resume-safe.
 review-films.py fits full wideNeedle silhouettes and contact-.3/+.5s windows; exact decoded frame markers supply telemetry. Source claim only, no visual passes inferred.
