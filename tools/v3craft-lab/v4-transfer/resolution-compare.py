@@ -4,17 +4,25 @@ import datetime
 import hashlib
 import json
 import math
+import sys
+import re
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'reports/v4-art/REVIEW/A10/scene-ready-transfer'
-RAW = OUT / 'raw/resolution-runtime-comparisons'
-REPORT = OUT / 'resolution-runtime-comparison.json'
+label = sys.argv[1] if len(sys.argv) > 1 else 'resolution'
+assert re.fullmatch('[a-z0-9-]+', label)
+RAW = OUT / ('raw/' + label + '-runtime-comparisons')
+REPORT = OUT / (label + '-runtime-comparison.json')
 assert not REPORT.exists()
 RAW.mkdir(parents=True, exist_ok=True)
-paths = [OUT / ('browser-resolution-' + label + '.json') for label in ('baseline', 'candidate', 'fallback')]
+paths = [OUT / 'browser-resolution-baseline.json'] + [OUT / ('browser-' + label + '-' + case + '.json') for case in ('candidate', 'fallback')]
 reports = [json.loads(path.read_text()) for path in paths]
 assert all(report['complete'] and report['pass'] for report in reports)
+assert reports[1]['runtimeSources'] == reports[2]['runtimeSources']
+for report in reports:
+    for case in report['results']:
+        assert hashlib.sha256((ROOT / case['snapshot']).read_bytes()).hexdigest() == case['snapshotSha256']
 indexed = [{(r['fixture'], r['height']): r for r in report['results']} for report in reports]
 rows = []
 for key, before in indexed[0].items():

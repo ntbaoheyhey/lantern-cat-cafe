@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T21:59:10.047469+00:00
+# ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: run detached tools/.venv/bin/python tools/v3craft-lab/v4-transfer/validate-resolution.py pma-r1 preview (focused+typecheck+candidate+blocked-fallback); record PID/log immediately. Then create four fresh private runtime comparisons; no films before visual repair.
+NEXT1: poll validation PID26545/tail5 jobs/a10-pma-runtime-r1.log and validation-pma-r1.json. Preview runs focused+typecheck+six normal/six blocked-fallback cases; then create four fresh private runtime comparisons.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:bd581a0df verified. Six straight-halfQ80 actor pages installed locally (854,468B) with successful-decode alpha metadata; original/exact fallback keeps sourcePMA. Projection7,900,518B only; runtime validation and visual acceptance pending.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). R2supervisor23656 finished0 jobs/a10-pma-aware-r2.log; old68961/69950 absent.2ownedjobs.
+LAST PUSH:3b8badd8a verified; six straight-halfQ80 derivatives plus decoded alpha override installed. Focused5files/typecheckPASS; browser preview active; visual/film/production acceptance pending. Projection7,900,518B only.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); previewPID26545 jobs/a10-pma-runtime-r1.log/job-pma-runtime-r1.json.3ownedjobs; old68961/69950 absent.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
