@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-16T20:07:13.670189+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6646,
+      "sha256": "2091ec5dfd73d7a4b547fd96bbf16ce36d594e6273841bc2e6ce2c70014d6191"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-alignment-1.json",
+      "bytes": 50596,
+      "sha256": "b45b2e2100fa295cfed3f25a91bedb7dfd1d3f9e14f64814c8304e6fb286c750"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-browsers-1.json",
+      "bytes": 71170,
+      "sha256": "b303de0723c2c5e45ffcda64a0e91ef2967df566cad8ed06e4baa0f0deae0ec3"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-padding-1.json",
+      "bytes": 48897,
+      "sha256": "bca7c2b4cfe3b8406117e3c686b21ebcef4f4b825f43f6c621c0dfa811e0dddf"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-impact-bake-1.json",
+      "bytes": 124210,
+      "sha256": "80b1e55c4ac742fad4c7ddcd4b792e1ca416109ae83b81097df5ab239dfe4ccd"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-3.events.json.gz",
+      "bytes": 198831,
+      "sha256": "7fc14a216841beef1bef00271409342cae8fa61b61b0c70bd18de088c455d3da"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-3.json",
+      "bytes": 235026,
+      "sha256": "1e88eae314c911eb568471bb818e797eb24ea028ca75f111f4b65a69c6770923"
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-14.json",
+      "bytes": 2378,
+      "sha256": "798c680a8ae3d45447eac8f042bd3361c9e0f2b7ade3a1b6da56ee06253bc546"
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-14.log.gz",
+      "bytes": 13386,
+      "sha256": "112ae79f2d4c76cf0fcc60f08aa94386288db213fc60635882f6d909360bb5d3"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-alignment.mjs",
+      "bytes": 3627,
+      "sha256": "d2df77b4f2348d2f240fa55ecf58902078293d9eca64ce5dd95598ecf49a586d"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-browsers.mjs",
+      "bytes": 4157,
+      "sha256": "2354eeacff4951fd5a778b8f2078b89e2143e6031c803aef803fbbbb55292a9d"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-padding.mjs",
+      "bytes": 5043,
+      "sha256": "749727d0f6ef884926e483583387b2d93e8cb87ba3d24d509d7249ebe366b2c8"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-impact-bake.mjs",
+      "bytes": 8149,
+      "sha256": "9f064a91c57e3f09aeb54374894a0bae19a449a665f36f70790d89a0c4750859"
+    }
+  ],
+  "expandedGzip": 2,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}

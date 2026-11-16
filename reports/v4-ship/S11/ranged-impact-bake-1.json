@@ -1,0 +1,4001 @@
+{
+  "at": "2026-11-16T19:57:29.457Z",
+  "learn": "reports/v4-ship/LEARN/S11-ranged-audio.md",
+  "source": {
+    "path": "apps/web/public/audio/b2-hits.webm",
+    "sha256": "bbb1e1afd5eeb5f5b2a2e9e6e96d03938bb749077b0f0e438574bd8c220c51e6"
+  },
+  "engine": {
+    "path": "apps/web/src/audio/engine.ts",
+    "sha256": "2afe6c128ea33a599c782eeb9581c1025792f7ed26affd17be8ac8e1afd6f3ec"
+  },
+  "script": {
+    "path": "tools/v4ship-lab/audio/ranged-impact-bake.mjs",
+    "sha256": "9f064a91c57e3f09aeb54374894a0bae19a449a665f36f70790d89a0c4750859"
+  },
+  "output": "work/v4ship-audio/ranged-impact-bake-1",
+  "variants": 72,
+  "layerCombinations": [
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 0,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        1,
+        1,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 1.1125,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        2,
+        2,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 2.1059375,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        3,
+        3,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 2.895625,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        4,
+        4,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 3.7314375,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        0,
+        5,
+        5,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 4.482958333333333,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/0-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 5.300416666666667,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 6.293854166666667,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 7.083541666666667,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 7.9193541666666665,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        4,
+        5,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 8.670875,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        1,
+        5,
+        0,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 9.488333333333333,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/1-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        0,
+        2,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 10.600833333333334,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        1,
+        3,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 11.390520833333333,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        2,
+        4,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 12.226333333333333,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        3,
+        5,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 12.977854166666667,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        4,
+        0,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 13.7953125,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        2,
+        5,
+        1,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 14.9078125,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/2-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        0,
+        3,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 15.90125,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 16.7370625,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        2,
+        5,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 17.488583333333334,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        3,
+        0,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 18.306041666666665,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        4,
+        1,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 19.418541666666666,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        3,
+        5,
+        2,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 20.411979166666665,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/3-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        0,
+        4,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 21.201666666666668,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        1,
+        5,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 21.9531875,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        2,
+        0,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 22.770645833333333,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 23.883145833333334,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        4,
+        2,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 24.876583333333333,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        4,
+        5,
+        3,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 25.666270833333332,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/4-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        0,
+        5,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 26.502083333333335,
+        "duration": 0.7374583333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        1,
+        0,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 27.319541666666666,
+        "duration": 1.0325,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        2,
+        1,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 28.432041666666667,
+        "duration": 0.9134375,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        3,
+        2,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 29.425479166666666,
+        "duration": 0.7096875,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        4,
+        3,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 30.215166666666665,
+        "duration": 0.7558125,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "ember",
+      "indices": [
+        5,
+        5,
+        4,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 31.050979166666668,
+        "duration": 0.6715208333333333,
+        "bus": "sfx",
+        "variantId": "ranged.ember.impact/5-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 31.8025,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        1,
+        1,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 33.0425,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        2,
+        2,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 34.2825,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        3,
+        3,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 35.369770833333334,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        4,
+        4,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 36.413375,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        0,
+        5,
+        5,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 37.10191666666667,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/0-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 37.96520833333334,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        1,
+        2,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 39.20520833333333,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 40.292479166666666,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 41.336083333333335,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        4,
+        5,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 42.024625,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        1,
+        5,
+        0,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 42.88791666666667,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/1-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        0,
+        2,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 44.127916666666664,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        1,
+        3,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 45.2151875,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        2,
+        4,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 46.25879166666667,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        3,
+        5,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 46.94733333333333,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        4,
+        0,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 47.810625,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        2,
+        5,
+        1,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 49.050625,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/2-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        0,
+        3,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 50.290625,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 51.33422916666667,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        2,
+        5,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 52.02277083333333,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        3,
+        0,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 52.8860625,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        4,
+        1,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 54.1260625,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        3,
+        5,
+        2,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 55.3660625,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/3-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        0,
+        4,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 56.45333333333333,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        1,
+        5,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 57.141875,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        2,
+        0,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 58.00516666666667,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 59.24516666666667,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        4,
+        2,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 60.485166666666665,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        4,
+        5,
+        3,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 61.5724375,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/4-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        0,
+        5,
+        5
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 62.61604166666667,
+        "duration": 0.7832916666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-0",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        1,
+        0,
+        4
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 63.47933333333334,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-1",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        2,
+        1,
+        3
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 64.71933333333334,
+        "duration": 1.16,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-2",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        3,
+        2,
+        2
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 65.95933333333333,
+        "duration": 1.0072708333333333,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-3",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        4,
+        3,
+        1
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 67.04660416666667,
+        "duration": 0.9636041666666667,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-4",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    {
+      "element": "heavy",
+      "indices": [
+        5,
+        5,
+        4,
+        0
+      ],
+      "sample": {
+        "pack": "v4-ranged-impacts",
+        "start": 68.09020833333334,
+        "duration": 0.6085416666666666,
+        "bus": "sfx",
+        "variantId": "ranged.heavy.impact/5-5",
+        "enveloped": true
+      },
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    }
+  ],
+  "commonRuntimeGainDb": -4,
+  "comparisons": [
+    {
+      "format": "webm",
+      "bytes": 556190,
+      "sha256": "b3a1621f0bd74cac24a2f662e41802387984eaaae6f267431d1b533e247e5730",
+      "rows": [
+        {
+          "variantId": "ranged.ember.impact/0-0",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.0479818707925134,
+          "errorToSignalDb": 1.9793273097974906,
+          "correlation": 0.21567656204712965,
+          "maxAbsoluteError": 0.7191006541252136
+        },
+        {
+          "variantId": "ranged.ember.impact/0-1",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.04591358474812167,
+          "errorToSignalDb": 2.7639112150427296,
+          "correlation": 0.06014903678434562,
+          "maxAbsoluteError": 0.7649724781513214
+        },
+        {
+          "variantId": "ranged.ember.impact/0-2",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": 0.03159480804194601,
+          "errorToSignalDb": -0.12462256746226374,
+          "correlation": 0.5159145024741626,
+          "maxAbsoluteError": 0.5696035921573639
+        },
+        {
+          "variantId": "ranged.ember.impact/0-3",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": 0.03388052571397645,
+          "errorToSignalDb": 2.4212573991259743,
+          "correlation": 0.13024302683207278,
+          "maxAbsoluteError": 0.665185421705246
+        },
+        {
+          "variantId": "ranged.ember.impact/0-4",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": 0.03340503323042396,
+          "errorToSignalDb": -0.2375950236796558,
+          "correlation": 0.5284438217612515,
+          "maxAbsoluteError": 0.6938434392213821
+        },
+        {
+          "variantId": "ranged.ember.impact/0-5",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.017901681384494775,
+          "errorToSignalDb": 4.309513871996749,
+          "correlation": -0.35149920047494637,
+          "maxAbsoluteError": 0.8396357297897339
+        },
+        {
+          "variantId": "ranged.ember.impact/1-0",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.05124469671479384,
+          "errorToSignalDb": 1.9730718037210355,
+          "correlation": 0.21710179792690423,
+          "maxAbsoluteError": 0.7272266447544098
+        },
+        {
+          "variantId": "ranged.ember.impact/1-1",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": 0.02375960876506189,
+          "errorToSignalDb": 2.7530673323153514,
+          "correlation": 0.06008835904427055,
+          "maxAbsoluteError": 0.7607091963291168
+        },
+        {
+          "variantId": "ranged.ember.impact/1-2",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": 0.028295434571496227,
+          "errorToSignalDb": -0.09533356085256345,
+          "correlation": 0.5124522573117073,
+          "maxAbsoluteError": 0.5760525614023209
+        },
+        {
+          "variantId": "ranged.ember.impact/1-3",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": 0.03461651712776483,
+          "errorToSignalDb": 2.4011253709195333,
+          "correlation": 0.1343392404876378,
+          "maxAbsoluteError": 0.683148205280304
+        },
+        {
+          "variantId": "ranged.ember.impact/1-4",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": 0.061839597585642794,
+          "errorToSignalDb": -0.054150419133547775,
+          "correlation": 0.5097241143084744,
+          "maxAbsoluteError": 0.6773092448711395
+        },
+        {
+          "variantId": "ranged.ember.impact/1-5",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.013414980046164413,
+          "errorToSignalDb": 4.443250880032099,
+          "correlation": -0.38874967514833186,
+          "maxAbsoluteError": 0.8206487596035004
+        },
+        {
+          "variantId": "ranged.ember.impact/2-0",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": 0.05312182822616806,
+          "errorToSignalDb": 2.024007512072669,
+          "correlation": 0.20803788193264108,
+          "maxAbsoluteError": 0.7564215064048767
+        },
+        {
+          "variantId": "ranged.ember.impact/2-1",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": 0.018828107780251374,
+          "errorToSignalDb": 2.7643966515589646,
+          "correlation": 0.057096642907263816,
+          "maxAbsoluteError": 0.7605016231536865
+        },
+        {
+          "variantId": "ranged.ember.impact/2-2",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": 0.06361090862792704,
+          "errorToSignalDb": -0.2780895358646938,
+          "correlation": 0.5344616220866746,
+          "maxAbsoluteError": 0.5429229140281677
+        },
+        {
+          "variantId": "ranged.ember.impact/2-3",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": 0.0262519781958887,
+          "errorToSignalDb": 2.4762583234074333,
+          "correlation": 0.11838090531958201,
+          "maxAbsoluteError": 0.6481834948062897
+        },
+        {
+          "variantId": "ranged.ember.impact/2-4",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.08175535941566246,
+          "errorToSignalDb": -0.21603571220232926,
+          "correlation": 0.5287646712083593,
+          "maxAbsoluteError": 0.6632847785949707
+        },
+        {
+          "variantId": "ranged.ember.impact/2-5",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.015445277474426544,
+          "errorToSignalDb": 4.446564219004949,
+          "correlation": -0.38948437751413256,
+          "maxAbsoluteError": 0.8257855772972107
+        },
+        {
+          "variantId": "ranged.ember.impact/3-0",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": 0.06286819521420606,
+          "errorToSignalDb": 2.0410066129088973,
+          "correlation": 0.20583099796979532,
+          "maxAbsoluteError": 0.7466919124126434
+        },
+        {
+          "variantId": "ranged.ember.impact/3-1",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.016444530213575455,
+          "errorToSignalDb": 2.717208818750711,
+          "correlation": 0.0634902964849973,
+          "maxAbsoluteError": 0.7539897561073303
+        },
+        {
+          "variantId": "ranged.ember.impact/3-2",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": 0.028434683639037034,
+          "errorToSignalDb": 0.07016680506037548,
+          "correlation": 0.49352226779679603,
+          "maxAbsoluteError": 0.5322922617197037
+        },
+        {
+          "variantId": "ranged.ember.impact/3-3",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.061196084469987984,
+          "errorToSignalDb": 2.4197922685444286,
+          "correlation": 0.13328364730093922,
+          "maxAbsoluteError": 0.6776136755943298
+        },
+        {
+          "variantId": "ranged.ember.impact/3-4",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.0814269129838468,
+          "errorToSignalDb": -0.19727864169327022,
+          "correlation": 0.5267065708349813,
+          "maxAbsoluteError": 0.6909380704164505
+        },
+        {
+          "variantId": "ranged.ember.impact/3-5",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.006404615557242666,
+          "errorToSignalDb": 4.388589389827008,
+          "correlation": -0.3745137484814616,
+          "maxAbsoluteError": 0.8165288269519806
+        },
+        {
+          "variantId": "ranged.ember.impact/4-0",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": 0.07610821879623039,
+          "errorToSignalDb": 1.9948004772255754,
+          "correlation": 0.21544500603351247,
+          "maxAbsoluteError": 0.7523555159568787
+        },
+        {
+          "variantId": "ranged.ember.impact/4-1",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.018462320935381523,
+          "errorToSignalDb": 2.7583768672526987,
+          "correlation": 0.0543514310952096,
+          "maxAbsoluteError": 0.7496198117733002
+        },
+        {
+          "variantId": "ranged.ember.impact/4-2",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.07691602932470487,
+          "errorToSignalDb": -0.31740877267138023,
+          "correlation": 0.5393762145987641,
+          "maxAbsoluteError": 0.5426504462957382
+        },
+        {
+          "variantId": "ranged.ember.impact/4-3",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.004809323736025104,
+          "errorToSignalDb": 2.3810672242309714,
+          "correlation": 0.13535828667874747,
+          "maxAbsoluteError": 0.6428689062595367
+        },
+        {
+          "variantId": "ranged.ember.impact/4-4",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": 0.04787909540668461,
+          "errorToSignalDb": -0.15234349059465419,
+          "correlation": 0.5199041438800022,
+          "maxAbsoluteError": 0.6656339317560196
+        },
+        {
+          "variantId": "ranged.ember.impact/4-5",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.007863450931353334,
+          "errorToSignalDb": 4.3137309466533775,
+          "correlation": -0.35125134684171505,
+          "maxAbsoluteError": 0.8281140327453613
+        },
+        {
+          "variantId": "ranged.ember.impact/5-0",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": 0.03643349695695253,
+          "errorToSignalDb": 2.0640916419144713,
+          "correlation": 0.19914715435661218,
+          "maxAbsoluteError": 0.7280816435813904
+        },
+        {
+          "variantId": "ranged.ember.impact/5-1",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": 0.06309482545306266,
+          "errorToSignalDb": 2.7782827551209284,
+          "correlation": 0.05890955644220888,
+          "maxAbsoluteError": 0.7916721999645233
+        },
+        {
+          "variantId": "ranged.ember.impact/5-2",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": 0.05326254276877926,
+          "errorToSignalDb": -0.2143681817503051,
+          "correlation": 0.5270090880356182,
+          "maxAbsoluteError": 0.5980581641197205
+        },
+        {
+          "variantId": "ranged.ember.impact/5-3",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": 0.020778636678238635,
+          "errorToSignalDb": 2.453531995980191,
+          "correlation": 0.12242780204954755,
+          "maxAbsoluteError": 0.6654292643070221
+        },
+        {
+          "variantId": "ranged.ember.impact/5-4",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": 0.04057546456949872,
+          "errorToSignalDb": -0.09495952088455642,
+          "correlation": 0.5131047398543447,
+          "maxAbsoluteError": 0.7140659540891647
+        },
+        {
+          "variantId": "ranged.ember.impact/5-5",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": 0.03047685448687108,
+          "errorToSignalDb": 4.534642656602,
+          "correlation": -0.41549564849318327,
+          "maxAbsoluteError": 0.8582168519496918
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-0",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.03300072908002121,
+          "errorToSignalDb": 1.8482751172213587,
+          "correlation": 0.2376693734693162,
+          "maxAbsoluteError": 0.8022443056106567
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-1",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.043807315758057346,
+          "errorToSignalDb": 2.2508171908783883,
+          "correlation": 0.1646764121177816,
+          "maxAbsoluteError": 0.7052283883094788
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-2",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": 0.007164338277143778,
+          "errorToSignalDb": 2.5790117909458092,
+          "correlation": 0.09528289112930899,
+          "maxAbsoluteError": 0.778276264667511
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-3",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": 0.0155886842242648,
+          "errorToSignalDb": 2.3756440941816437,
+          "correlation": 0.13750980104187546,
+          "maxAbsoluteError": 0.8559475541114807
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-4",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.018501114919368216,
+          "errorToSignalDb": 2.1719726778420108,
+          "correlation": 0.17378869055290122,
+          "maxAbsoluteError": 0.7623447477817535
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-5",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.03093137939863712,
+          "errorToSignalDb": 0.9953017121941848,
+          "correlation": 0.36898108062399826,
+          "maxAbsoluteError": 0.709038108587265
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-0",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.06543370056290738,
+          "errorToSignalDb": 2.1812219597807485,
+          "correlation": 0.18001579523456449,
+          "maxAbsoluteError": 0.7580722570419312
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-1",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": 0.03358192426860189,
+          "errorToSignalDb": 1.945689349379705,
+          "correlation": 0.22042899220187642,
+          "maxAbsoluteError": 0.7912703156471252
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-2",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.02515013675314965,
+          "errorToSignalDb": 2.545157624852666,
+          "correlation": 0.09896584648808186,
+          "maxAbsoluteError": 0.7736098766326904
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-3",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": 0.006265297371575898,
+          "errorToSignalDb": 2.4715955020542117,
+          "correlation": 0.11729383118156514,
+          "maxAbsoluteError": 0.8095418214797974
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-4",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": 0.006980294938379922,
+          "errorToSignalDb": 2.1518737405622828,
+          "correlation": 0.1800106862455788,
+          "maxAbsoluteError": 0.7300482392311096
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-5",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.04553145210091373,
+          "errorToSignalDb": 0.9976255005747543,
+          "correlation": 0.37418430998387736,
+          "maxAbsoluteError": 0.7435020208358765
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-0",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": 0.0013606738263989844,
+          "errorToSignalDb": 1.6702458225525842,
+          "correlation": 0.26561035327126975,
+          "maxAbsoluteError": 0.7262066900730133
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-1",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.02444404955489491,
+          "errorToSignalDb": 2.109714930101085,
+          "correlation": 0.1849925292844291,
+          "maxAbsoluteError": 0.8134123980998993
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-2",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.012390551721700768,
+          "errorToSignalDb": 2.671268711719355,
+          "correlation": 0.07377622197153677,
+          "maxAbsoluteError": 0.8063307404518127
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-3",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": 0.007836408658799287,
+          "errorToSignalDb": 2.643380079121923,
+          "correlation": 0.08184500907142662,
+          "maxAbsoluteError": 0.7661411166191101
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-4",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.021074983951778273,
+          "errorToSignalDb": 2.1182066993025956,
+          "correlation": 0.18766465236768765,
+          "maxAbsoluteError": 0.8196763694286346
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-5",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.026453595533585814,
+          "errorToSignalDb": 0.947162441150806,
+          "correlation": 0.3762569794330964,
+          "maxAbsoluteError": 0.6280984878540039
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-0",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.018448913154461177,
+          "errorToSignalDb": 1.832374724250978,
+          "correlation": 0.2359379308023368,
+          "maxAbsoluteError": 0.6971767246723175
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-1",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.01793706208965164,
+          "errorToSignalDb": 2.161065895044016,
+          "correlation": 0.17591440408187922,
+          "maxAbsoluteError": 0.7597377300262451
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-2",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": 0.03149808758829492,
+          "errorToSignalDb": 2.739719580268803,
+          "correlation": 0.06380997861802963,
+          "maxAbsoluteError": 0.7781503200531006
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-3",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.014993890721855184,
+          "errorToSignalDb": 2.4327749189760732,
+          "correlation": 0.12300634165540537,
+          "maxAbsoluteError": 0.8879415392875671
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-4",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.08268617130348696,
+          "errorToSignalDb": 2.3189083365950305,
+          "correlation": 0.15529856201100242,
+          "maxAbsoluteError": 0.7570909559726715
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-5",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.0073011990776089995,
+          "errorToSignalDb": 1.3905897056372505,
+          "correlation": 0.31072296002411615,
+          "maxAbsoluteError": 0.7952418923377991
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-0",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.009025100175986784,
+          "errorToSignalDb": 1.861658704366496,
+          "correlation": 0.23160094040101625,
+          "maxAbsoluteError": 0.7702956199645996
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-1",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.03582649843927354,
+          "errorToSignalDb": 2.085690462563662,
+          "correlation": 0.18843030147648634,
+          "maxAbsoluteError": 0.7411763966083527
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-2",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.029028008117983783,
+          "errorToSignalDb": 2.5057237034257325,
+          "correlation": 0.11266371499668439,
+          "maxAbsoluteError": 0.7511569410562515
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-3",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.0497690529770435,
+          "errorToSignalDb": 2.695543563258756,
+          "correlation": 0.07524178346776123,
+          "maxAbsoluteError": 0.8544598519802094
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-4",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": 0.00845194150251554,
+          "errorToSignalDb": 1.9541143465550084,
+          "correlation": 0.2166450727634912,
+          "maxAbsoluteError": 0.7366045415401459
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-5",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.009857729978531467,
+          "errorToSignalDb": 1.0081051018770582,
+          "correlation": 0.36864596845981246,
+          "maxAbsoluteError": 0.6960775405168533
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-0",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": 0.02439138091690952,
+          "errorToSignalDb": 1.763164972092151,
+          "correlation": 0.25171912727213996,
+          "maxAbsoluteError": 0.73417067527771
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-1",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.02092395897182619,
+          "errorToSignalDb": 2.1125327021345064,
+          "correlation": 0.18871111992362752,
+          "maxAbsoluteError": 0.8130970001220703
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-2",
+          "durationMs": 1160,
+          "rmsDeltaDb": 0.04882620246240831,
+          "errorToSignalDb": 2.763345539217707,
+          "correlation": 0.06058834525135056,
+          "maxAbsoluteError": 0.7190631926059723
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-3",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": 0.03309386652690015,
+          "errorToSignalDb": 2.4550323238182736,
+          "correlation": 0.12337278850371002,
+          "maxAbsoluteError": 0.7420618832111359
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-4",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": 0.04626228448768429,
+          "errorToSignalDb": 2.217868800930656,
+          "correlation": 0.17122558108658256,
+          "maxAbsoluteError": 0.8544548451900482
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-5",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": 0.06315001335383853,
+          "errorToSignalDb": 1.2278720679399104,
+          "correlation": 0.3414598154784058,
+          "maxAbsoluteError": 0.6461316347122192
+        }
+      ]
+    },
+    {
+      "format": "mp3",
+      "bytes": 1652012,
+      "sha256": "e7cdd982a0ae1e38d8c2107dc5f4a39d5d5d86b8e142311501f1dfab266262fb",
+      "rows": [
+        {
+          "variantId": "ranged.ember.impact/0-0",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.26456029920656776,
+          "errorToSignalDb": -30.4478803537752,
+          "correlation": 0.9999989459399189,
+          "maxAbsoluteError": 0.01657658815383911
+        },
+        {
+          "variantId": "ranged.ember.impact/0-1",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.2659337003907828,
+          "errorToSignalDb": -30.375516289321993,
+          "correlation": 0.9999958883367623,
+          "maxAbsoluteError": 0.01677870750427246
+        },
+        {
+          "variantId": "ranged.ember.impact/0-2",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.2649044553918003,
+          "errorToSignalDb": -30.342500604286293,
+          "correlation": 0.999988714977169,
+          "maxAbsoluteError": 0.015723466873168945
+        },
+        {
+          "variantId": "ranged.ember.impact/0-3",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.265367847933358,
+          "errorToSignalDb": -30.306379436325386,
+          "correlation": 0.9999863393274017,
+          "maxAbsoluteError": 0.015433192253112793
+        },
+        {
+          "variantId": "ranged.ember.impact/0-4",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.2650708159917224,
+          "errorToSignalDb": -30.43930242603926,
+          "correlation": 0.9999997915236513,
+          "maxAbsoluteError": 0.01520770788192749
+        },
+        {
+          "variantId": "ranged.ember.impact/0-5",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.2636803003016703,
+          "errorToSignalDb": -30.308181291421967,
+          "correlation": 0.9999807140930914,
+          "maxAbsoluteError": 0.015141308307647705
+        },
+        {
+          "variantId": "ranged.ember.impact/1-0",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.2650765159705266,
+          "errorToSignalDb": -30.406509992030472,
+          "correlation": 0.9999962800374839,
+          "maxAbsoluteError": 0.016481339931488037
+        },
+        {
+          "variantId": "ranged.ember.impact/1-1",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.26524791609055554,
+          "errorToSignalDb": -30.343378668996102,
+          "correlation": 0.9999899993936002,
+          "maxAbsoluteError": 0.01744765043258667
+        },
+        {
+          "variantId": "ranged.ember.impact/1-2",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.26508405138559615,
+          "errorToSignalDb": -30.32089340947888,
+          "correlation": 0.9999869599196715,
+          "maxAbsoluteError": 0.015612125396728516
+        },
+        {
+          "variantId": "ranged.ember.impact/1-3",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.26442111952062863,
+          "errorToSignalDb": -30.45857226552597,
+          "correlation": 0.9999996086303105,
+          "maxAbsoluteError": 0.014399051666259766
+        },
+        {
+          "variantId": "ranged.ember.impact/1-4",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.26486546917716003,
+          "errorToSignalDb": -30.401247504244044,
+          "correlation": 0.9999949809490055,
+          "maxAbsoluteError": 0.015342503786087036
+        },
+        {
+          "variantId": "ranged.ember.impact/1-5",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.264216937540417,
+          "errorToSignalDb": -30.444697149388873,
+          "correlation": 0.9999974199518324,
+          "maxAbsoluteError": 0.015026897192001343
+        },
+        {
+          "variantId": "ranged.ember.impact/2-0",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.26518630263273885,
+          "errorToSignalDb": -30.36311649897217,
+          "correlation": 0.999991945975938,
+          "maxAbsoluteError": 0.016292333602905273
+        },
+        {
+          "variantId": "ranged.ember.impact/2-1",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.26374881618414686,
+          "errorToSignalDb": -30.425590472521307,
+          "correlation": 0.9999937554348669,
+          "maxAbsoluteError": 0.016575932502746582
+        },
+        {
+          "variantId": "ranged.ember.impact/2-2",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.2655343326468693,
+          "errorToSignalDb": -30.42216205714372,
+          "correlation": 0.9999995543695853,
+          "maxAbsoluteError": 0.014897257089614868
+        },
+        {
+          "variantId": "ranged.ember.impact/2-3",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.26611336483138304,
+          "errorToSignalDb": -30.265943347660826,
+          "correlation": 0.9999844303214052,
+          "maxAbsoluteError": 0.015549063682556152
+        },
+        {
+          "variantId": "ranged.ember.impact/2-4",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.26490322316056303,
+          "errorToSignalDb": -30.438841591529744,
+          "correlation": 0.9999991623405811,
+          "maxAbsoluteError": 0.015472650527954102
+        },
+        {
+          "variantId": "ranged.ember.impact/2-5",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.26491012220533366,
+          "errorToSignalDb": -30.341965407148265,
+          "correlation": 0.9999886758559332,
+          "maxAbsoluteError": 0.013879984617233276
+        },
+        {
+          "variantId": "ranged.ember.impact/3-0",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.26516542121236797,
+          "errorToSignalDb": -30.382758185667342,
+          "correlation": 0.999994013293785,
+          "maxAbsoluteError": 0.015984833240509033
+        },
+        {
+          "variantId": "ranged.ember.impact/3-1",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.2655436416755942,
+          "errorToSignalDb": -30.423509468529204,
+          "correlation": 0.9999997317419451,
+          "maxAbsoluteError": 0.01686108112335205
+        },
+        {
+          "variantId": "ranged.ember.impact/3-2",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.26413510464537154,
+          "errorToSignalDb": -30.268091888540024,
+          "correlation": 0.9999778275558533,
+          "maxAbsoluteError": 0.015271872282028198
+        },
+        {
+          "variantId": "ranged.ember.impact/3-3",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.2652528990238608,
+          "errorToSignalDb": -30.4195213708148,
+          "correlation": 0.9999982948663441,
+          "maxAbsoluteError": 0.015305578708648682
+        },
+        {
+          "variantId": "ranged.ember.impact/3-4",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.2653980234944477,
+          "errorToSignalDb": -30.401398560805475,
+          "correlation": 0.9999968403014047,
+          "maxAbsoluteError": 0.01532861590385437
+        },
+        {
+          "variantId": "ranged.ember.impact/3-5",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.265346169883699,
+          "errorToSignalDb": -30.199753501237755,
+          "correlation": 0.9999743238335381,
+          "maxAbsoluteError": 0.014277637004852295
+        },
+        {
+          "variantId": "ranged.ember.impact/4-0",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.2648565829123607,
+          "errorToSignalDb": -30.445958309937026,
+          "correlation": 0.999999763968463,
+          "maxAbsoluteError": 0.016075074672698975
+        },
+        {
+          "variantId": "ranged.ember.impact/4-1",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.26327430394277207,
+          "errorToSignalDb": -30.391192953391627,
+          "correlation": 0.9999884076609739,
+          "maxAbsoluteError": 0.01665198802947998
+        },
+        {
+          "variantId": "ranged.ember.impact/4-2",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.2660474743373725,
+          "errorToSignalDb": -30.395368634077876,
+          "correlation": 0.9999984398639868,
+          "maxAbsoluteError": 0.01553565263748169
+        },
+        {
+          "variantId": "ranged.ember.impact/4-3",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.26545705585685286,
+          "errorToSignalDb": -30.36848426393594,
+          "correlation": 0.9999934692165328,
+          "maxAbsoluteError": 0.01618736982345581
+        },
+        {
+          "variantId": "ranged.ember.impact/4-4",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.26566211516956495,
+          "errorToSignalDb": -30.321663165292442,
+          "correlation": 0.9999890465414487,
+          "maxAbsoluteError": 0.015033572912216187
+        },
+        {
+          "variantId": "ranged.ember.impact/4-5",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.26510663038156684,
+          "errorToSignalDb": -30.29350307325826,
+          "correlation": 0.9999840088852643,
+          "maxAbsoluteError": 0.014291882514953613
+        },
+        {
+          "variantId": "ranged.ember.impact/5-0",
+          "durationMs": 737.4583333333334,
+          "rmsDeltaDb": -0.2644330773789453,
+          "errorToSignalDb": -30.40199562449921,
+          "correlation": 0.9999935682908875,
+          "maxAbsoluteError": 0.015753865242004395
+        },
+        {
+          "variantId": "ranged.ember.impact/5-1",
+          "durationMs": 1032.5,
+          "rmsDeltaDb": -0.2651633352418147,
+          "errorToSignalDb": -30.425374245786717,
+          "correlation": 0.9999986151335588,
+          "maxAbsoluteError": 0.016694366931915283
+        },
+        {
+          "variantId": "ranged.ember.impact/5-2",
+          "durationMs": 913.4375,
+          "rmsDeltaDb": -0.26442992169561114,
+          "errorToSignalDb": -30.40565127997629,
+          "correlation": 0.9999939527569389,
+          "maxAbsoluteError": 0.015912890434265137
+        },
+        {
+          "variantId": "ranged.ember.impact/5-3",
+          "durationMs": 709.6875,
+          "rmsDeltaDb": -0.26601795456991956,
+          "errorToSignalDb": -30.277529325431153,
+          "correlation": 0.9999853910688148,
+          "maxAbsoluteError": 0.015506446361541748
+        },
+        {
+          "variantId": "ranged.ember.impact/5-4",
+          "durationMs": 755.8125,
+          "rmsDeltaDb": -0.2641329038623241,
+          "errorToSignalDb": -30.428373871723625,
+          "correlation": 0.9999953781082997,
+          "maxAbsoluteError": 0.016795635223388672
+        },
+        {
+          "variantId": "ranged.ember.impact/5-5",
+          "durationMs": 671.5208333333334,
+          "rmsDeltaDb": -0.2647244509956128,
+          "errorToSignalDb": -30.44462479903766,
+          "correlation": 0.999999164372506,
+          "maxAbsoluteError": 0.014629244804382324
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-0",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.26497403375848755,
+          "errorToSignalDb": -30.444000494401955,
+          "correlation": 0.9999999604043799,
+          "maxAbsoluteError": 0.01419442892074585
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-1",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2648139867537167,
+          "errorToSignalDb": -30.44931607487818,
+          "correlation": 0.9999999762118826,
+          "maxAbsoluteError": 0.014984548091888428
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-2",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.2650131110647842,
+          "errorToSignalDb": -30.442981572424827,
+          "correlation": 0.9999999863865,
+          "maxAbsoluteError": 0.017574191093444824
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-3",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.2650004544999171,
+          "errorToSignalDb": -30.443137854085556,
+          "correlation": 0.999999959351353,
+          "maxAbsoluteError": 0.017066895961761475
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-4",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.2651464739055582,
+          "errorToSignalDb": -30.438441570664647,
+          "correlation": 0.9999999610041892,
+          "maxAbsoluteError": 0.013469696044921875
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-5",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.2647009168122972,
+          "errorToSignalDb": -30.449248518029247,
+          "correlation": 0.9999995781752756,
+          "maxAbsoluteError": 0.016207873821258545
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-0",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2648041413328475,
+          "errorToSignalDb": -30.449708013598276,
+          "correlation": 0.9999999841224068,
+          "maxAbsoluteError": 0.0153789222240448
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-1",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.26477011226558494,
+          "errorToSignalDb": -30.450848820996164,
+          "correlation": 0.9999999885633429,
+          "maxAbsoluteError": 0.016516029834747314
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-2",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.2646514165637647,
+          "errorToSignalDb": -30.45468167934115,
+          "correlation": 0.999999988271274,
+          "maxAbsoluteError": 0.017386436462402344
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-3",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.2647393894361066,
+          "errorToSignalDb": -30.45183396955137,
+          "correlation": 0.9999999877636482,
+          "maxAbsoluteError": 0.01609402894973755
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-4",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.2659074030501596,
+          "errorToSignalDb": -30.412530719402756,
+          "correlation": 0.9999998098964324,
+          "maxAbsoluteError": 0.015769898891448975
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-5",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.26415838490198823,
+          "errorToSignalDb": -30.470505013770634,
+          "correlation": 0.9999999746996403,
+          "maxAbsoluteError": 0.01454097032546997
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-0",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.2649687914397473,
+          "errorToSignalDb": -30.444405696436352,
+          "correlation": 0.9999999856902496,
+          "maxAbsoluteError": 0.014780580997467041
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-1",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.26509573230993994,
+          "errorToSignalDb": -30.440203214014122,
+          "correlation": 0.9999999743716118,
+          "maxAbsoluteError": 0.01495698094367981
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-2",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.26473886461457546,
+          "errorToSignalDb": -30.451856233196864,
+          "correlation": 0.9999999883312105,
+          "maxAbsoluteError": 0.016580700874328613
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-3",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.264993456064337,
+          "errorToSignalDb": -30.441919573637655,
+          "correlation": 0.9999998045448503,
+          "maxAbsoluteError": 0.015078097581863403
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-4",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2649257675962022,
+          "errorToSignalDb": -30.445303551874694,
+          "correlation": 0.999999933075417,
+          "maxAbsoluteError": 0.016002178192138672
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-5",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2643774504584853,
+          "errorToSignalDb": -30.46325050746871,
+          "correlation": 0.9999999572379942,
+          "maxAbsoluteError": 0.014918208122253418
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-0",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.2650793627000647,
+          "errorToSignalDb": -30.440840603041828,
+          "correlation": 0.9999999860816198,
+          "maxAbsoluteError": 0.015341132879257202
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-1",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.2653386759268852,
+          "errorToSignalDb": -30.432406025060914,
+          "correlation": 0.9999999784492266,
+          "maxAbsoluteError": 0.014373570680618286
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-2",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.26460211920924437,
+          "errorToSignalDb": -30.454572516292142,
+          "correlation": 0.9999998062969924,
+          "maxAbsoluteError": 0.01659923791885376
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-3",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.26495397674019683,
+          "errorToSignalDb": -30.444126344094492,
+          "correlation": 0.9999999045131097,
+          "maxAbsoluteError": 0.017529308795928955
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-4",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2650218628630071,
+          "errorToSignalDb": -30.44259261794439,
+          "correlation": 0.9999999749725845,
+          "maxAbsoluteError": 0.015547990798950195
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-5",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.264195404099861,
+          "errorToSignalDb": -30.46942718041167,
+          "correlation": 0.9999999875724265,
+          "maxAbsoluteError": 0.015543937683105469
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-0",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.26509596892925186,
+          "errorToSignalDb": -30.44015498499576,
+          "correlation": 0.9999999700176209,
+          "maxAbsoluteError": 0.01401492953300476
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-1",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.2653429124451139,
+          "errorToSignalDb": -30.43035138611705,
+          "correlation": 0.9999997722977049,
+          "maxAbsoluteError": 0.015057474374771118
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-2",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2649647035749034,
+          "errorToSignalDb": -30.44449587603683,
+          "correlation": 0.9999999812128295,
+          "maxAbsoluteError": 0.017534494400024414
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-3",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.26472871689485616,
+          "errorToSignalDb": -30.45218415340007,
+          "correlation": 0.9999999883345073,
+          "maxAbsoluteError": 0.015845775604248047
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-4",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.26512543998598753,
+          "errorToSignalDb": -30.439303178807613,
+          "correlation": 0.9999999806424467,
+          "maxAbsoluteError": 0.014964371919631958
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-5",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.2643223421803794,
+          "errorToSignalDb": -30.465249208161932,
+          "correlation": 0.999999980223521,
+          "maxAbsoluteError": 0.014841258525848389
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-0",
+          "durationMs": 783.2916666666667,
+          "rmsDeltaDb": -0.2646563560238673,
+          "errorToSignalDb": -30.45083495126925,
+          "correlation": 0.999999593965704,
+          "maxAbsoluteError": 0.01675999164581299
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-1",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2650627241038327,
+          "errorToSignalDb": -30.438423539427593,
+          "correlation": 0.999999669228996,
+          "maxAbsoluteError": 0.016494154930114746
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-2",
+          "durationMs": 1160,
+          "rmsDeltaDb": -0.2649024336486284,
+          "errorToSignalDb": -30.446370606435565,
+          "correlation": 0.9999999666751626,
+          "maxAbsoluteError": 0.01834803819656372
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-3",
+          "durationMs": 1007.2708333333334,
+          "rmsDeltaDb": -0.2648340919229587,
+          "errorToSignalDb": -30.448629674417266,
+          "correlation": 0.9999999722499731,
+          "maxAbsoluteError": 0.016730427742004395
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-4",
+          "durationMs": 963.6041666666667,
+          "rmsDeltaDb": -0.26490945262711885,
+          "errorToSignalDb": -30.44557248109534,
+          "correlation": 0.999999905460602,
+          "maxAbsoluteError": 0.014878004789352417
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-5",
+          "durationMs": 608.5416666666666,
+          "rmsDeltaDb": -0.26472471556839533,
+          "errorToSignalDb": -30.45112993663708,
+          "correlation": 0.9999998617380714,
+          "maxAbsoluteError": 0.015428870916366577
+        }
+      ]
+    }
+  ],
+  "scope": "Ranged-only composite preparation; encoded reconstruction against the nominal-pitch original start graph. Common runtime pitch/gain is retained but independent layer randomization is reduced to36 balanced combinations per element. No claims about audible equivalence, physical onset or production admission.",
+  "runtimeInstalled": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false
+}

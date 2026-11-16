@@ -1,0 +1,1339 @@
+{
+  "at": "2026-11-16T19:58:20.030Z",
+  "source": {
+    "path": "reports/v4-ship/S11/ranged-impact-bake-1.json",
+    "sha256": "80b1e55c4ac742fad4c7ddcd4b792e1ca416109ae83b81097df5ab239dfe4ccd"
+  },
+  "pcm": {
+    "path": "work/v4ship-audio/ranged-impact-bake-1/impacts.f32",
+    "sha256": "715866d5d7bb258cd9d60211e2713afa255608d9edba47033fccc06568ae2e8e"
+  },
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-codec-alignment.mjs",
+    "sha256": "d2df77b4f2348d2f240fa55ecf58902078293d9eca64ce5dd95598ecf49a586d"
+  },
+  "rows": [
+    {
+      "format": "webm",
+      "sha256": "b3a1621f0bd74cac24a2f662e41802387984eaaae6f267431d1b533e247e5730",
+      "lagSamples": [
+        -128
+      ],
+      "minimumAlignedCorrelation": 0.9979146091740354,
+      "maximumAbsoluteLagMs": 2.6666666666666665,
+      "variants": [
+        {
+          "variantId": "ranged.ember.impact/0-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999090778663561,
+          "alignedCorrelation": 0.999890763387162,
+          "alignedRmsDeltaDb": 0.0479818707925134,
+          "alignedErrorToSignalDb": -36.014204451785425
+        },
+        {
+          "variantId": "ranged.ember.impact/0-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998831776076553,
+          "alignedCorrelation": 0.999817941990634,
+          "alignedRmsDeltaDb": 0.04632805561864733,
+          "alignedErrorToSignalDb": -34.03772466889773
+        },
+        {
+          "variantId": "ranged.ember.impact/0-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999518065999647,
+          "alignedCorrelation": 0.9991963736741228,
+          "alignedRmsDeltaDb": 0.03211094046776797,
+          "alignedErrorToSignalDb": -27.886329254446245
+        },
+        {
+          "variantId": "ranged.ember.impact/0-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998308888517737,
+          "alignedCorrelation": 0.9989224393879069,
+          "alignedRmsDeltaDb": 0.03445672281560398,
+          "alignedErrorToSignalDb": -26.61645717535317
+        },
+        {
+          "variantId": "ranged.ember.impact/0-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999454077029424,
+          "alignedCorrelation": 0.9999234391124809,
+          "alignedRmsDeltaDb": 0.03369133266593109,
+          "alignedErrorToSignalDb": -37.725737955732804
+        },
+        {
+          "variantId": "ranged.ember.impact/0-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999801223104498,
+          "alignedCorrelation": 0.9979146091740354,
+          "alignedRmsDeltaDb": -0.01684611171415431,
+          "alignedErrorToSignalDb": -23.80233342065894
+        },
+        {
+          "variantId": "ranged.ember.impact/1-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999336118028114,
+          "alignedCorrelation": 0.9998853603059209,
+          "alignedRmsDeltaDb": 0.05152083123094925,
+          "alignedErrorToSignalDb": -35.75059309542856
+        },
+        {
+          "variantId": "ranged.ember.impact/1-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998127606564512,
+          "alignedCorrelation": 0.9992050795129255,
+          "alignedRmsDeltaDb": 0.02410065558885536,
+          "alignedErrorToSignalDb": -27.953432570222894
+        },
+        {
+          "variantId": "ranged.ember.impact/1-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998993127859418,
+          "alignedCorrelation": 0.9991153135496639,
+          "alignedRmsDeltaDb": 0.028714495051251412,
+          "alignedErrorToSignalDb": -27.480706582913164
+        },
+        {
+          "variantId": "ranged.ember.impact/1-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999920656523437,
+          "alignedCorrelation": 0.9998720214137854,
+          "alignedRmsDeltaDb": 0.0351193207535626,
+          "alignedErrorToSignalDb": -35.63188169350283
+        },
+        {
+          "variantId": "ranged.ember.impact/1-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999446779750669,
+          "alignedCorrelation": 0.9994414596842226,
+          "alignedRmsDeltaDb": 0.06206810450656481,
+          "alignedErrorToSignalDb": -29.294001798071392
+        },
+        {
+          "variantId": "ranged.ember.impact/1-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997390563492305,
+          "alignedCorrelation": 0.9996677500054748,
+          "alignedRmsDeltaDb": 0.014399655004687276,
+          "alignedErrorToSignalDb": -31.749925009247654
+        },
+        {
+          "variantId": "ranged.ember.impact/2-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999471427386597,
+          "alignedCorrelation": 0.9995010221183145,
+          "alignedRmsDeltaDb": 0.05361593225185063,
+          "alignedErrorToSignalDb": -29.819347664289
+        },
+        {
+          "variantId": "ranged.ember.impact/2-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998313522226051,
+          "alignedCorrelation": 0.9991379301320625,
+          "alignedRmsDeltaDb": 0.019443071916586417,
+          "alignedErrorToSignalDb": -27.611950594379092
+        },
+        {
+          "variantId": "ranged.ember.impact/2-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999940943821681,
+          "alignedCorrelation": 0.999895139157906,
+          "alignedRmsDeltaDb": 0.06441218949632092,
+          "alignedErrorToSignalDb": -35.74000923762505
+        },
+        {
+          "variantId": "ranged.ember.impact/2-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998746967605447,
+          "alignedCorrelation": 0.99885275102804,
+          "alignedRmsDeltaDb": 0.02710532555340476,
+          "alignedErrorToSignalDb": -26.361177393669575
+        },
+        {
+          "variantId": "ranged.ember.impact/2-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999647312901777,
+          "alignedCorrelation": 0.9999422664229212,
+          "alignedRmsDeltaDb": 0.08218706857399433,
+          "alignedErrorToSignalDb": -36.841371269914696
+        },
+        {
+          "variantId": "ranged.ember.impact/2-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996539768579069,
+          "alignedCorrelation": 0.9994412186114132,
+          "alignedRmsDeltaDb": 0.017274847686024976,
+          "alignedErrorToSignalDb": -29.493299069617525
+        },
+        {
+          "variantId": "ranged.ember.impact/3-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998795027074906,
+          "alignedCorrelation": 0.999359377117203,
+          "alignedRmsDeltaDb": 0.06347692474776165,
+          "alignedErrorToSignalDb": -28.71457587245252
+        },
+        {
+          "variantId": "ranged.ember.impact/3-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998548514645308,
+          "alignedCorrelation": 0.9998176015550677,
+          "alignedRmsDeltaDb": -0.015648431047662607,
+          "alignedErrorToSignalDb": -34.34884301745995
+        },
+        {
+          "variantId": "ranged.ember.impact/3-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999142463410029,
+          "alignedCorrelation": 0.9988482716050082,
+          "alignedRmsDeltaDb": 0.029357255795828752,
+          "alignedErrorToSignalDb": -26.340035826548778
+        },
+        {
+          "variantId": "ranged.ember.impact/3-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999305743574463,
+          "alignedCorrelation": 0.9998997413565432,
+          "alignedRmsDeltaDb": 0.06234688025877409,
+          "alignedErrorToSignalDb": -35.95412371377337
+        },
+        {
+          "variantId": "ranged.ember.impact/3-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.99994308323056,
+          "alignedCorrelation": 0.9998833616842722,
+          "alignedRmsDeltaDb": 0.08195834407727898,
+          "alignedErrorToSignalDb": -34.876260503824305
+        },
+        {
+          "variantId": "ranged.ember.impact/3-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998165880235413,
+          "alignedCorrelation": 0.9981669567359007,
+          "alignedRmsDeltaDb": -0.004260993011168819,
+          "alignedErrorToSignalDb": -24.35981830956402
+        },
+        {
+          "variantId": "ranged.ember.impact/4-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999546379352047,
+          "alignedCorrelation": 0.9999237430065079,
+          "alignedRmsDeltaDb": 0.07645268135733585,
+          "alignedErrorToSignalDb": -36.34470983121021
+        },
+        {
+          "variantId": "ranged.ember.impact/4-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999886886961859,
+          "alignedCorrelation": 0.9991443786840932,
+          "alignedRmsDeltaDb": -0.018039814407319898,
+          "alignedErrorToSignalDb": -27.66497043525984
+        },
+        {
+          "variantId": "ranged.ember.impact/4-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998909764104822,
+          "alignedCorrelation": 0.9998542754469112,
+          "alignedRmsDeltaDb": 0.0774537641912296,
+          "alignedErrorToSignalDb": -34.267932227940115
+        },
+        {
+          "variantId": "ranged.ember.impact/4-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998726833152052,
+          "alignedCorrelation": 0.9997639391929651,
+          "alignedRmsDeltaDb": 0.005430664384395895,
+          "alignedErrorToSignalDb": -33.25315142274566
+        },
+        {
+          "variantId": "ranged.ember.impact/4-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999582479657095,
+          "alignedCorrelation": 0.9995329957218915,
+          "alignedRmsDeltaDb": 0.04817175782969126,
+          "alignedErrorToSignalDb": -30.131691912245824
+        },
+        {
+          "variantId": "ranged.ember.impact/4-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997818957310182,
+          "alignedCorrelation": 0.9979231950033022,
+          "alignedRmsDeltaDb": -0.006721264141022845,
+          "alignedErrorToSignalDb": -23.818477437408777
+        },
+        {
+          "variantId": "ranged.ember.impact/5-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999069570817294,
+          "alignedCorrelation": 0.9992661694941184,
+          "alignedRmsDeltaDb": 0.03727756185829126,
+          "alignedErrorToSignalDb": -28.260939166389388
+        },
+        {
+          "variantId": "ranged.ember.impact/5-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.99994918285949,
+          "alignedCorrelation": 0.9998987270758344,
+          "alignedRmsDeltaDb": 0.06418932935204806,
+          "alignedErrorToSignalDb": -35.86588423238139
+        },
+        {
+          "variantId": "ranged.ember.impact/5-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999391768191355,
+          "alignedCorrelation": 0.9998329979001269,
+          "alignedRmsDeltaDb": 0.054615435316232655,
+          "alignedErrorToSignalDb": -34.249307291891114
+        },
+        {
+          "variantId": "ranged.ember.impact/5-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9998769784025856,
+          "alignedCorrelation": 0.9991003946839313,
+          "alignedRmsDeltaDb": 0.022287085954616797,
+          "alignedErrorToSignalDb": -27.422173303732972
+        },
+        {
+          "variantId": "ranged.ember.impact/5-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9999414119394578,
+          "alignedCorrelation": 0.9994318870775767,
+          "alignedRmsDeltaDb": 0.04130677089085197,
+          "alignedErrorToSignalDb": -29.339105140717262
+        },
+        {
+          "variantId": "ranged.ember.impact/5-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996979162335488,
+          "alignedCorrelation": 0.9996182551331605,
+          "alignedRmsDeltaDb": 0.03354163988504358,
+          "alignedErrorToSignalDb": -31.071190350593763
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9993919395219375,
+          "alignedCorrelation": 0.9994111752801556,
+          "alignedRmsDeltaDb": 0.033300489602356834,
+          "alignedErrorToSignalDb": -29.21931968216895
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995551304410147,
+          "alignedCorrelation": 0.9995763905047005,
+          "alignedRmsDeltaDb": 0.0441112990576986,
+          "alignedErrorToSignalDb": -30.567751080889384
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996520109220692,
+          "alignedCorrelation": 0.9996466517293198,
+          "alignedRmsDeltaDb": 0.007459092271048227,
+          "alignedErrorToSignalDb": -31.49941110835805
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997924357289796,
+          "alignedCorrelation": 0.9997817469460993,
+          "alignedRmsDeltaDb": 0.01593886279592712,
+          "alignedErrorToSignalDb": -33.55875315633115
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.99957377142528,
+          "alignedCorrelation": 0.9995825702906305,
+          "alignedRmsDeltaDb": -0.018158923696053028,
+          "alignedErrorToSignalDb": -30.77026880623601
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995399723255608,
+          "alignedCorrelation": 0.9995524578719972,
+          "alignedRmsDeltaDb": -0.0304748891530494,
+          "alignedErrorToSignalDb": -30.437277451852847
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995370166523343,
+          "alignedCorrelation": 0.9995273210304075,
+          "alignedRmsDeltaDb": 0.06566967457521443,
+          "alignedErrorToSignalDb": -29.956237385259694
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9994288326894106,
+          "alignedCorrelation": 0.9994696815223791,
+          "alignedRmsDeltaDb": 0.03385150554566663,
+          "alignedErrorToSignalDb": -29.6656542484622
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996781584079666,
+          "alignedCorrelation": 0.999676243718504,
+          "alignedRmsDeltaDb": -0.02489452099690882,
+          "alignedErrorToSignalDb": -31.845216417910464
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996766289386759,
+          "alignedCorrelation": 0.9996893015926649,
+          "alignedRmsDeltaDb": 0.006566030288068266,
+          "alignedErrorToSignalDb": -32.05903473691124
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999668698423349,
+          "alignedCorrelation": 0.9996843637475862,
+          "alignedRmsDeltaDb": 0.00726394517640146,
+          "alignedErrorToSignalDb": -31.989390412601004
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995458320710435,
+          "alignedCorrelation": 0.9995689539731706,
+          "alignedRmsDeltaDb": 0.04587685897296688,
+          "alignedErrorToSignalDb": -30.483214216079194
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997481136450463,
+          "alignedCorrelation": 0.9997323201079699,
+          "alignedRmsDeltaDb": 0.0018318613336594024,
+          "alignedErrorToSignalDb": -32.71226581958632
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995770495416569,
+          "alignedCorrelation": 0.9995852756843483,
+          "alignedRmsDeltaDb": -0.02394287749004479,
+          "alignedErrorToSignalDb": -30.784472635059647
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996633537908475,
+          "alignedCorrelation": 0.9996621010530726,
+          "alignedRmsDeltaDb": -0.011920537202308934,
+          "alignedErrorToSignalDb": -31.695704718717877
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996793193329441,
+          "alignedCorrelation": 0.9996843038659816,
+          "alignedRmsDeltaDb": 0.008390123644164901,
+          "alignedErrorToSignalDb": -31.986399179453212
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996379831264095,
+          "alignedCorrelation": 0.999642983663926,
+          "alignedRmsDeltaDb": 0.021556827760176138,
+          "alignedErrorToSignalDb": -31.414737974257974
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995755290684413,
+          "alignedCorrelation": 0.9996114576377972,
+          "alignedRmsDeltaDb": -0.025775631917836498,
+          "alignedErrorToSignalDb": -31.059264879087955
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995669404560534,
+          "alignedCorrelation": 0.9995581226366445,
+          "alignedRmsDeltaDb": -0.017853151768532013,
+          "alignedErrorToSignalDb": -30.52489727772015
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996391435957616,
+          "alignedCorrelation": 0.999654593771476,
+          "alignedRmsDeltaDb": -0.01729913420003861,
+          "alignedErrorToSignalDb": -31.590182272267818
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.999743324799894,
+          "alignedCorrelation": 0.9997494188102252,
+          "alignedRmsDeltaDb": 0.03212387430111353,
+          "alignedErrorToSignalDb": -32.86721068509327
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9993369132583029,
+          "alignedCorrelation": 0.9993886868504748,
+          "alignedRmsDeltaDb": -0.014332510681237653,
+          "alignedErrorToSignalDb": -29.12456789107594
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996824234787047,
+          "alignedCorrelation": 0.9996829386143306,
+          "alignedRmsDeltaDb": 0.08326710094319839,
+          "alignedErrorToSignalDb": -31.348856318552482
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9993446643797307,
+          "alignedCorrelation": 0.9993849781861508,
+          "alignedRmsDeltaDb": -0.006483241954603923,
+          "alignedErrorToSignalDb": -29.102069842774
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9994280594022595,
+          "alignedCorrelation": 0.9994871057079818,
+          "alignedRmsDeltaDb": -0.008702379717754748,
+          "alignedErrorToSignalDb": -29.889524799593843
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995215913833289,
+          "alignedCorrelation": 0.9995619808251742,
+          "alignedRmsDeltaDb": -0.03547406131984115,
+          "alignedErrorToSignalDb": -30.510592830789818
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997200552712554,
+          "alignedCorrelation": 0.9997250744092503,
+          "alignedRmsDeltaDb": 0.029334560743511984,
+          "alignedErrorToSignalDb": -32.49371409527944
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997049457094576,
+          "alignedCorrelation": 0.9997003117082882,
+          "alignedRmsDeltaDb": 0.05012023628958168,
+          "alignedErrorToSignalDb": -31.963146181947366
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997370621099098,
+          "alignedCorrelation": 0.9997318238066495,
+          "alignedRmsDeltaDb": 0.00879401695938956,
+          "alignedErrorToSignalDb": -32.692808699288
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995691072466575,
+          "alignedCorrelation": 0.9995965839834382,
+          "alignedRmsDeltaDb": -0.009423586136864517,
+          "alignedErrorToSignalDb": -30.930549234405355
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-0",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.99975035284455,
+          "alignedCorrelation": 0.9997377643859106,
+          "alignedRmsDeltaDb": 0.02517104844118096,
+          "alignedErrorToSignalDb": -32.72120830768241
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-1",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996065977607959,
+          "alignedCorrelation": 0.9996164997028951,
+          "alignedRmsDeltaDb": 0.021738322109425976,
+          "alignedErrorToSignalDb": -31.105851861057573
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-2",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9995354839733283,
+          "alignedCorrelation": 0.9995519124729897,
+          "alignedRmsDeltaDb": 0.04959456632674074,
+          "alignedErrorToSignalDb": -30.296089166245107
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-3",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996650482211022,
+          "alignedCorrelation": 0.9996776998869868,
+          "alignedRmsDeltaDb": 0.033993759595451534,
+          "alignedErrorToSignalDb": -31.78810925343512
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-4",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9996106390926209,
+          "alignedCorrelation": 0.9996124079428239,
+          "alignedRmsDeltaDb": 0.04712913373949464,
+          "alignedErrorToSignalDb": -30.920500030584538
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-5",
+          "lagSamples": -128,
+          "lagMs": -2.6666666666666665,
+          "prefixCorrelation": 0.9997816669896954,
+          "alignedCorrelation": 0.9997449449348779,
+          "alignedRmsDeltaDb": 0.06432300889083291,
+          "alignedErrorToSignalDb": -32.44772898944262
+        }
+      ]
+    },
+    {
+      "format": "mp3",
+      "sha256": "e7cdd982a0ae1e38d8c2107dc5f4a39d5d5d86b8e142311501f1dfab266262fb",
+      "lagSamples": [
+        0
+      ],
+      "minimumAlignedCorrelation": 0.9999743238335381,
+      "maximumAbsoluteLagMs": 0,
+      "variants": [
+        {
+          "variantId": "ranged.ember.impact/0-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998689404219,
+          "alignedCorrelation": 0.9999989459399189,
+          "alignedRmsDeltaDb": -0.26456029920656776,
+          "alignedErrorToSignalDb": -30.4478803537752
+        },
+        {
+          "variantId": "ranged.ember.impact/0-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998985632104,
+          "alignedCorrelation": 0.9999958883367623,
+          "alignedRmsDeltaDb": -0.2659337003907828,
+          "alignedErrorToSignalDb": -30.375516289321993
+        },
+        {
+          "variantId": "ranged.ember.impact/0-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999891087474,
+          "alignedCorrelation": 0.999988714977169,
+          "alignedRmsDeltaDb": -0.2649044553918003,
+          "alignedErrorToSignalDb": -30.342500604286293
+        },
+        {
+          "variantId": "ranged.ember.impact/0-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999997290950645,
+          "alignedCorrelation": 0.9999863393274017,
+          "alignedRmsDeltaDb": -0.265367847933358,
+          "alignedErrorToSignalDb": -30.306379436325386
+        },
+        {
+          "variantId": "ranged.ember.impact/0-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999584343559,
+          "alignedCorrelation": 0.9999997915236513,
+          "alignedRmsDeltaDb": -0.2650708159917224,
+          "alignedErrorToSignalDb": -30.43930242603926
+        },
+        {
+          "variantId": "ranged.ember.impact/0-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999978678969109,
+          "alignedCorrelation": 0.9999807140930914,
+          "alignedRmsDeltaDb": -0.2636803003016703,
+          "alignedErrorToSignalDb": -30.308181291421967
+        },
+        {
+          "variantId": "ranged.ember.impact/1-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999608877123,
+          "alignedCorrelation": 0.9999962800374839,
+          "alignedRmsDeltaDb": -0.2650765159705266,
+          "alignedErrorToSignalDb": -30.406509992030472
+        },
+        {
+          "variantId": "ranged.ember.impact/1-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999562326923,
+          "alignedCorrelation": 0.9999899993936002,
+          "alignedRmsDeltaDb": -0.26524791609055554,
+          "alignedErrorToSignalDb": -30.343378668996102
+        },
+        {
+          "variantId": "ranged.ember.impact/1-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998426841726,
+          "alignedCorrelation": 0.9999869599196715,
+          "alignedRmsDeltaDb": -0.26508405138559615,
+          "alignedErrorToSignalDb": -30.32089340947888
+        },
+        {
+          "variantId": "ranged.ember.impact/1-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999610769553,
+          "alignedCorrelation": 0.9999996086303105,
+          "alignedRmsDeltaDb": -0.26442111952062863,
+          "alignedErrorToSignalDb": -30.45857226552597
+        },
+        {
+          "variantId": "ranged.ember.impact/1-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999996658269693,
+          "alignedCorrelation": 0.9999949809490055,
+          "alignedRmsDeltaDb": -0.26486546917716003,
+          "alignedErrorToSignalDb": -30.401247504244044
+        },
+        {
+          "variantId": "ranged.ember.impact/1-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999188098228,
+          "alignedCorrelation": 0.9999974199518324,
+          "alignedRmsDeltaDb": -0.264216937540417,
+          "alignedErrorToSignalDb": -30.444697149388873
+        },
+        {
+          "variantId": "ranged.ember.impact/2-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998554180053,
+          "alignedCorrelation": 0.999991945975938,
+          "alignedRmsDeltaDb": -0.26518630263273885,
+          "alignedErrorToSignalDb": -30.36311649897217
+        },
+        {
+          "variantId": "ranged.ember.impact/2-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999996707416571,
+          "alignedCorrelation": 0.9999937554348669,
+          "alignedRmsDeltaDb": -0.26374881618414686,
+          "alignedErrorToSignalDb": -30.425590472521307
+        },
+        {
+          "variantId": "ranged.ember.impact/2-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998807849529,
+          "alignedCorrelation": 0.9999995543695853,
+          "alignedRmsDeltaDb": -0.2655343326468693,
+          "alignedErrorToSignalDb": -30.42216205714372
+        },
+        {
+          "variantId": "ranged.ember.impact/2-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999992294471571,
+          "alignedCorrelation": 0.9999844303214052,
+          "alignedRmsDeltaDb": -0.26611336483138304,
+          "alignedErrorToSignalDb": -30.265943347660826
+        },
+        {
+          "variantId": "ranged.ember.impact/2-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999395725254,
+          "alignedCorrelation": 0.9999991623405811,
+          "alignedRmsDeltaDb": -0.26490322316056303,
+          "alignedErrorToSignalDb": -30.438841591529744
+        },
+        {
+          "variantId": "ranged.ember.impact/2-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998426685676,
+          "alignedCorrelation": 0.9999886758559332,
+          "alignedRmsDeltaDb": -0.26491012220533366,
+          "alignedErrorToSignalDb": -30.341965407148265
+        },
+        {
+          "variantId": "ranged.ember.impact/3-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999997668309767,
+          "alignedCorrelation": 0.999994013293785,
+          "alignedRmsDeltaDb": -0.26516542121236797,
+          "alignedErrorToSignalDb": -30.382758185667342
+        },
+        {
+          "variantId": "ranged.ember.impact/3-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999277435351,
+          "alignedCorrelation": 0.9999997317419451,
+          "alignedRmsDeltaDb": -0.2655436416755942,
+          "alignedErrorToSignalDb": -30.423509468529204
+        },
+        {
+          "variantId": "ranged.ember.impact/3-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999994902138012,
+          "alignedCorrelation": 0.9999778275558533,
+          "alignedRmsDeltaDb": -0.26413510464537154,
+          "alignedErrorToSignalDb": -30.268091888540024
+        },
+        {
+          "variantId": "ranged.ember.impact/3-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999107383071,
+          "alignedCorrelation": 0.9999982948663441,
+          "alignedRmsDeltaDb": -0.2652528990238608,
+          "alignedErrorToSignalDb": -30.4195213708148
+        },
+        {
+          "variantId": "ranged.ember.impact/3-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999387799857,
+          "alignedCorrelation": 0.9999968403014047,
+          "alignedRmsDeltaDb": -0.2653980234944477,
+          "alignedErrorToSignalDb": -30.401398560805475
+        },
+        {
+          "variantId": "ranged.ember.impact/3-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998449270837,
+          "alignedCorrelation": 0.9999743238335381,
+          "alignedRmsDeltaDb": -0.265346169883699,
+          "alignedErrorToSignalDb": -30.199753501237755
+        },
+        {
+          "variantId": "ranged.ember.impact/4-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999763717603,
+          "alignedCorrelation": 0.999999763968463,
+          "alignedRmsDeltaDb": -0.2648565829123607,
+          "alignedErrorToSignalDb": -30.445958309937026
+        },
+        {
+          "variantId": "ranged.ember.impact/4-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999992762445661,
+          "alignedCorrelation": 0.9999884076609739,
+          "alignedRmsDeltaDb": -0.26327430394277207,
+          "alignedErrorToSignalDb": -30.391192953391627
+        },
+        {
+          "variantId": "ranged.ember.impact/4-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998532763629,
+          "alignedCorrelation": 0.9999984398639868,
+          "alignedRmsDeltaDb": -0.2660474743373725,
+          "alignedErrorToSignalDb": -30.395368634077876
+        },
+        {
+          "variantId": "ranged.ember.impact/4-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999613381682,
+          "alignedCorrelation": 0.9999934692165328,
+          "alignedRmsDeltaDb": -0.26545705585685286,
+          "alignedErrorToSignalDb": -30.36848426393594
+        },
+        {
+          "variantId": "ranged.ember.impact/4-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999846976291,
+          "alignedCorrelation": 0.9999890465414487,
+          "alignedRmsDeltaDb": -0.26566211516956495,
+          "alignedErrorToSignalDb": -30.321663165292442
+        },
+        {
+          "variantId": "ranged.ember.impact/4-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999993514914716,
+          "alignedCorrelation": 0.9999840088852643,
+          "alignedRmsDeltaDb": -0.26510663038156684,
+          "alignedErrorToSignalDb": -30.29350307325826
+        },
+        {
+          "variantId": "ranged.ember.impact/5-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999993330669812,
+          "alignedCorrelation": 0.9999935682908875,
+          "alignedRmsDeltaDb": -0.2644330773789453,
+          "alignedErrorToSignalDb": -30.40199562449921
+        },
+        {
+          "variantId": "ranged.ember.impact/5-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998197974009,
+          "alignedCorrelation": 0.9999986151335588,
+          "alignedRmsDeltaDb": -0.2651633352418147,
+          "alignedErrorToSignalDb": -30.425374245786717
+        },
+        {
+          "variantId": "ranged.ember.impact/5-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999989622850051,
+          "alignedCorrelation": 0.9999939527569389,
+          "alignedRmsDeltaDb": -0.26442992169561114,
+          "alignedErrorToSignalDb": -30.40565127997629
+        },
+        {
+          "variantId": "ranged.ember.impact/5-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999996254331014,
+          "alignedCorrelation": 0.9999853910688148,
+          "alignedRmsDeltaDb": -0.26601795456991956,
+          "alignedErrorToSignalDb": -30.277529325431153
+        },
+        {
+          "variantId": "ranged.ember.impact/5-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998060070387,
+          "alignedCorrelation": 0.9999953781082997,
+          "alignedRmsDeltaDb": -0.2641329038623241,
+          "alignedErrorToSignalDb": -30.428373871723625
+        },
+        {
+          "variantId": "ranged.ember.impact/5-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999995817503544,
+          "alignedCorrelation": 0.999999164372506,
+          "alignedRmsDeltaDb": -0.2647244509956128,
+          "alignedErrorToSignalDb": -30.44462479903766
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999509662049,
+          "alignedCorrelation": 0.9999999604043799,
+          "alignedRmsDeltaDb": -0.26497403375848755,
+          "alignedErrorToSignalDb": -30.444000494401955
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999736429787,
+          "alignedCorrelation": 0.9999999762118826,
+          "alignedRmsDeltaDb": -0.2648139867537167,
+          "alignedErrorToSignalDb": -30.44931607487818
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999854156366,
+          "alignedCorrelation": 0.9999999863865,
+          "alignedRmsDeltaDb": -0.2650131110647842,
+          "alignedErrorToSignalDb": -30.442981572424827
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999552089572,
+          "alignedCorrelation": 0.999999959351353,
+          "alignedRmsDeltaDb": -0.2650004544999171,
+          "alignedErrorToSignalDb": -30.443137854085556
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999570591436,
+          "alignedCorrelation": 0.9999999610041892,
+          "alignedRmsDeltaDb": -0.2651464739055582,
+          "alignedErrorToSignalDb": -30.438441570664647
+        },
+        {
+          "variantId": "ranged.heavy.impact/0-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999508523253,
+          "alignedCorrelation": 0.9999995781752756,
+          "alignedRmsDeltaDb": -0.2647009168122972,
+          "alignedErrorToSignalDb": -30.449248518029247
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999838989915,
+          "alignedCorrelation": 0.9999999841224068,
+          "alignedRmsDeltaDb": -0.2648041413328475,
+          "alignedErrorToSignalDb": -30.449708013598276
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999885550162,
+          "alignedCorrelation": 0.9999999885633429,
+          "alignedRmsDeltaDb": -0.26477011226558494,
+          "alignedErrorToSignalDb": -30.450848820996164
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999881064091,
+          "alignedCorrelation": 0.999999988271274,
+          "alignedRmsDeltaDb": -0.2646514165637647,
+          "alignedErrorToSignalDb": -30.45468167934115
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999875960147,
+          "alignedCorrelation": 0.9999999877636482,
+          "alignedRmsDeltaDb": -0.2647393894361066,
+          "alignedErrorToSignalDb": -30.45183396955137
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999997855034284,
+          "alignedCorrelation": 0.9999998098964324,
+          "alignedRmsDeltaDb": -0.2659074030501596,
+          "alignedErrorToSignalDb": -30.412530719402756
+        },
+        {
+          "variantId": "ranged.heavy.impact/1-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999714763269,
+          "alignedCorrelation": 0.9999999746996403,
+          "alignedRmsDeltaDb": -0.26415838490198823,
+          "alignedErrorToSignalDb": -30.470505013770634
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999835493564,
+          "alignedCorrelation": 0.9999999856902496,
+          "alignedRmsDeltaDb": -0.2649687914397473,
+          "alignedErrorToSignalDb": -30.444405696436352
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999719171315,
+          "alignedCorrelation": 0.9999999743716118,
+          "alignedRmsDeltaDb": -0.26509573230993994,
+          "alignedErrorToSignalDb": -30.440203214014122
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999877157723,
+          "alignedCorrelation": 0.9999999883312105,
+          "alignedRmsDeltaDb": -0.26473886461457546,
+          "alignedErrorToSignalDb": -30.451856233196864
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999795808939,
+          "alignedCorrelation": 0.9999998045448503,
+          "alignedRmsDeltaDb": -0.264993456064337,
+          "alignedErrorToSignalDb": -30.441919573637655
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999230719212,
+          "alignedCorrelation": 0.999999933075417,
+          "alignedRmsDeltaDb": -0.2649257675962022,
+          "alignedErrorToSignalDb": -30.445303551874694
+        },
+        {
+          "variantId": "ranged.heavy.impact/2-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999520302412,
+          "alignedCorrelation": 0.9999999572379942,
+          "alignedRmsDeltaDb": -0.2643774504584853,
+          "alignedErrorToSignalDb": -30.46325050746871
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999984731713,
+          "alignedCorrelation": 0.9999999860816198,
+          "alignedRmsDeltaDb": -0.2650793627000647,
+          "alignedErrorToSignalDb": -30.440840603041828
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999774015266,
+          "alignedCorrelation": 0.9999999784492266,
+          "alignedRmsDeltaDb": -0.2653386759268852,
+          "alignedErrorToSignalDb": -30.432406025060914
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999997942399229,
+          "alignedCorrelation": 0.9999998062969924,
+          "alignedRmsDeltaDb": -0.26460211920924437,
+          "alignedErrorToSignalDb": -30.454572516292142
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998893323201,
+          "alignedCorrelation": 0.9999999045131097,
+          "alignedRmsDeltaDb": -0.26495397674019683,
+          "alignedErrorToSignalDb": -30.444126344094492
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999702019821,
+          "alignedCorrelation": 0.9999999749725845,
+          "alignedRmsDeltaDb": -0.2650218628630071,
+          "alignedErrorToSignalDb": -30.44259261794439
+        },
+        {
+          "variantId": "ranged.heavy.impact/3-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999884123024,
+          "alignedCorrelation": 0.9999999875724265,
+          "alignedRmsDeltaDb": -0.264195404099861,
+          "alignedErrorToSignalDb": -30.46942718041167
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999671105554,
+          "alignedCorrelation": 0.9999999700176209,
+          "alignedRmsDeltaDb": -0.26509596892925186,
+          "alignedErrorToSignalDb": -30.44015498499576
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999997542489576,
+          "alignedCorrelation": 0.9999997722977049,
+          "alignedRmsDeltaDb": -0.2653429124451139,
+          "alignedErrorToSignalDb": -30.43035138611705
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999804395154,
+          "alignedCorrelation": 0.9999999812128295,
+          "alignedRmsDeltaDb": -0.2649647035749034,
+          "alignedErrorToSignalDb": -30.44449587603683
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999892156972,
+          "alignedCorrelation": 0.9999999883345073,
+          "alignedRmsDeltaDb": -0.26472871689485616,
+          "alignedErrorToSignalDb": -30.45218415340007
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999776073689,
+          "alignedCorrelation": 0.9999999806424467,
+          "alignedRmsDeltaDb": -0.26512543998598753,
+          "alignedErrorToSignalDb": -30.439303178807613
+        },
+        {
+          "variantId": "ranged.heavy.impact/4-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999786414653,
+          "alignedCorrelation": 0.999999980223521,
+          "alignedRmsDeltaDb": -0.2643223421803794,
+          "alignedErrorToSignalDb": -30.465249208161932
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-0",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999498979476,
+          "alignedCorrelation": 0.999999593965704,
+          "alignedRmsDeltaDb": -0.2646563560238673,
+          "alignedErrorToSignalDb": -30.45083495126925
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-1",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999996239624996,
+          "alignedCorrelation": 0.999999669228996,
+          "alignedRmsDeltaDb": -0.2650627241038327,
+          "alignedErrorToSignalDb": -30.438423539427593
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-2",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.999999968488179,
+          "alignedCorrelation": 0.9999999666751626,
+          "alignedRmsDeltaDb": -0.2649024336486284,
+          "alignedErrorToSignalDb": -30.446370606435565
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-3",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999999669434864,
+          "alignedCorrelation": 0.9999999722499731,
+          "alignedRmsDeltaDb": -0.2648340919229587,
+          "alignedErrorToSignalDb": -30.448629674417266
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-4",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998747234675,
+          "alignedCorrelation": 0.999999905460602,
+          "alignedRmsDeltaDb": -0.26490945262711885,
+          "alignedErrorToSignalDb": -30.44557248109534
+        },
+        {
+          "variantId": "ranged.heavy.impact/5-5",
+          "lagSamples": 0,
+          "lagMs": 0,
+          "prefixCorrelation": 0.9999998291969096,
+          "alignedCorrelation": 0.9999998617380714,
+          "alignedRmsDeltaDb": -0.26472471556839533,
+          "alignedErrorToSignalDb": -30.45112993663708
+        }
+      ]
+    }
+  ],
+  "scope": "Cross-correlation diagnostic on browser-decoded prepared sprites; search +/-512 samples using the first85ms, then evaluate each full sprite at the best lag. No source offsets, encoded files, runtime or acceptance thresholds changed.",
+  "runtimeChanged": false,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false
+}
