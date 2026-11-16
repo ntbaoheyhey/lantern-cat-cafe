@@ -6,9 +6,9 @@ NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
 NOW ACTIVE:S11 titlecontrast productionverified4/4at15.270:1;keyboard6/6;two capturesviewed. Next secondarypanel UIcoverage. Historyscansactive;audio/submission/classgatesopen.
 NEXT 1:Inspect secondary landingdialogs/settings with current production8;compare primaryjourney vs panel coverage,retain unknowns/failures and fix onlySHIP files. No screenshotsneeded;S11budget4/8,imageopens7.
-NEXT 2:Continue gzip2/session20507 supervisor39765 and text99980/supervisor8488. Lastreviewed947/1332gzip1314findings;700/3854text176findings. Newgzipprogress needs exactreview;no fullhistorypass.
+NEXT 2:Continue gzip2/session20507 supervisor39765 and text99980/supervisor8488. Lastreviewed1018/1332gzip1314findings(prefix-review-3);700/3854text176findings. Newgzipprogress needs exactreview;no fullhistorypass.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
-CHECKPOINT:Title source9278ef4df andproduction8 verification;LEARN/S11-title-contrast.md. Previousremotepushed6d6255ebc;thispush includesbothsource+evidence. NoARTedit/merge.
+CHECKPOINT:10dc37507pushed(title9278ef4df/production8). ResumeWIP freezescoherentgzip1018review;1314unchanged/0new. Activecheckpointscontinue. NoARTedit/merge.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 freshcoverage451.676s:-17.63LUFS/8.7LRA/-1.90dBTP;4/5estimatedonsetsFAIL,max33.369ms. Bothfrozen/freshASR8/12;8takesdiffer,notcontrolledimprovement. Originalcoverage1retained.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
@@ -33,7 +33,7 @@ STOP absent;explicitUSER RESUME. S11journey3:18verifiedreceipts/18chimes,max5sta
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T17:35:13.010862+00:00. Userinternalbrowseronly;no nativeapps/desktop/password. IABfullfee0.00000000002741392AVAX=RPC;oldreadingerror supersededbyexplorer-iab-preflight-1.json.
+UPDATED 2026-11-16T17:40:25.862117+00:00. Userinternalbrowseronly;no nativeapps/desktop/password. IABfullfee0.00000000002741392AVAX=RPC;oldreadingerror supersededbyexplorer-iab-preflight-1.json.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit2=164.833s/9,343,307B/-17.87LUFS/-2.22dBTP/5.2LRA;1927sourceframes/52EN-VIcues/13wholevoiceevents;film-verify-2.json. submissionPassfalse;failededit1retained.
