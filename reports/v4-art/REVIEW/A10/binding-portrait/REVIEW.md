@@ -1,0 +1,4 @@
+# Binding Thread missing portrait repair
+SHIP S11 reported four failed decode observations for `/units/binding-thread/portrait.webp` on16Nov13:20UTC. That file was absent in ART. The pre-repair browser check retained in `before.json` reproduces a decode failure at1280x720 and1440x900 despite HTTP200.
+The new portrait is an exact97,490-byte copy of the approved640x640 `runtime.webp`; no pixels, style or identity were edited. SHA256 `cbd44de6b3eb407145f02755621bef1533545167b57724fa0952024c92e2a08a` matches the runtime source. Provenance records the derivative.
+`after.json` confirms browser Image.decode succeeds for both URLs at both required viewports with640x640 intrinsic size. This is a scoped URL repair; it does not rerun SHIP's complete journeys or establish its total transfer gate. SHIP should repeat S11 after scheduled integration. No animation, timing, rules or renderer source changed; the next Needle item regression remains required before its receipt.

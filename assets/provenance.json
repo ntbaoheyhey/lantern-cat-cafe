@@ -4202,7 +4202,7 @@
       ],
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A1.png",
       "sha256": "0f4596797c7c33dda53c246544c9bf418d1974933df7b8c6c66a74f344279271",
-      "status": "candidate; quantitative/visual review pending"
+      "status": "rejected: head ratio .799373 outside .95..1.05; raw and metrics retained"
     },
     {
       "id": "v4-needle-moth-k1-a2",
@@ -4216,7 +4216,31 @@
       ],
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A2.png",
       "sha256": "fdbafd5eff7f5d0ee707b44977cd6484eadbcfcb58085b04a7aceae71005a549",
-      "status": "candidate; quantitative/visual review pending"
+      "status": "rejected: head ratio .849046 outside .95..1.05; raw and metrics retained"
+    },
+    {
+      "id": "v4-binding-thread-approved-portrait",
+      "date": "2026-11-16T13:35:05.238116+00:00",
+      "tool": "exact byte copy; no generation or pixel editing",
+      "input": "apps/web/public/units/binding-thread/runtime.webp",
+      "output": "apps/web/public/units/binding-thread/portrait.webp",
+      "sha256": "cbd44de6b3eb407145f02755621bef1533545167b57724fa0952024c92e2a08a",
+      "bytes": 97490,
+      "status": "exact approved runtime duplicate; browser decode passes at1280x720 and1440x900; SHIP integrated journey rerun pending"
+    },
+    {
+      "id": "v4-needle-moth-k1-a3",
+      "date": "2026-11-16T13:35:29.763182+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit the first reference image, our original Needle Moth K1-A2 sprite. Use the second reference only as the approved character identity and texture guide. One isolated handmade cloth moth sprite with true transparency. Make ONE targeted correction: enlarge the main wedge-shaped mauve head, including its gold eyes, by about 18 percent around its bottom/chin attachment above the rose scarf. The main head must be about 105 source pixels tall on the current 1254-square canvas, with chin near y607 and top near y502, excluding the two gold leaf antennae. Preserve the pointed wedge shape, eye direction, stitched textile shading, and the head's anatomical connection. Keep the antennae slender and correctly attached. Keep every other part of K1-A2 unchanged: shortened raised wings, their rose panels and gold stitches, rose scarf and round gold brooch, long gold needle held back toward screen-right, segmented body, thin planted legs and feet, current pose and framing. Keep the highest wing tips near y204 and lowest feet near y1176; total character height roughly972 pixels. Do not enlarge the full character or extend the wings. No background, shadow, ground, text, extra objects, duplicate limbs, cropping, glow or motion blur. This is a corrected wind-up pose from our own artwork, not a redesign.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K1-A2.png; apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K1-A2.png",
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A3.png",
+      "sha256": "4e0d6e053f323dcd9ce7918f6016f1518e22244c48aaef2081aa929b1100c49d",
+      "status": "rejected: head ratio1.132910 outside .95..1.05; fixed landmarks493..612; raw and metrics retained"
     }
   ]
 }
