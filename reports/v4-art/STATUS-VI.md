@@ -1,6 +1,9 @@
-# Tiến độ ART
-Đã sửa ảnh chân dung Binding Thread bị thiếu bằng bản sao nguyên vẹn của ảnh đã duyệt.
-Trình duyệt giải mã thành công ở1280x720 và1440x900; giữ bằng chứng lỗi trước sửa.
-SHIP cần kiểm tra lại luồng sản phẩm sau lần tích hợp theo lịch.
-Needle Moth đang vẽ K1; ba lần thử chưa đạt kích thước đầu, giữ nguyên ngưỡng.
-A6, Binding, Teacup và biên bản A10 trong phạm vi đã hoàn tất; tổng tải sản phẩm8MB vẫn mở.
+Đã tạm dừng theo yêu cầu lúc14:26UTC ngày16/11/2026.
+Handoff đã lưu; các tiến trình ART đang chạy đã dừng.
+Needle đã tích hợp pose và hiệu ứng vào chế độ DEV, commit b92cd2dc3.
+2.664 kiểm thử, typecheck và parity3fixture đều đạt.
+Đã ghi3phim30giây có âm thanh;2.700marker đều khớp.
+Chưa xem các sheet phim; bản ghi900p bị ngắt khi dừng.
+Chưa tạo blind-read; chưa có receipt Needle hoàn tất.
+Khi được yêu cầu tiếp tục: hoàn tất900p, blind-read, review phim/đạn rồi receipt.
+Sau Needle là Yarn; yêu cầu tương phản chữ của SHIP còn trong hàng đợi.

@@ -1,29 +1,35 @@
-# ART execution anchor — 2026-11-16T14:12UTC
-Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v3-feel-2026-11-14;freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: Commit/push Needle DEV craft integration, then detached fullweb/typecheck/3F6 and live-probe.mjs; capture3marked30s720p films after live gates. PublishedposePASS; allposes/VFX+Bindingportrait4,163,747B.
-NEXT2: Needle K2/K4 fixed-landmark gates,2ownFX drills, private same-scale compare, runtime integration, regression/3F6/marked films/blind/receipt; then YarnK1/K2/K4/K5+FX.
-NEXT3: A8delivery interrupt;A9ensemble/activation;verifiedA10requests;A11open gates;A12afterfreeze. Never stop with summary.
-LAST PUSH:3cbe1842e verified; Needle selections/lab passes pushed. Needle runtime integration now WIP. A10total8MBOPEN.
-LIVE: craftVitePID40003/5990/jobs/needle-craft-vite.log. Needle drills59198/60057finished, both logs recorded; no generation/capture active.
-Requested68961/69950 absent; A6final/post logs exit0. Detached jobs use PythonPopen(start_new_session=True),stdinDEVNULL,nohup,log;max3;recordPID immediately.
-NoSTOP/inboxpause checked14:11UTC; SHIP13:20portrait delivered c5ccdfae1, integration pending. New13:40textcontrast evidence request queued A10. Class db35585 nonfinal; no merge/baseline adoption.
-A10promo alreadydelivered a14f8a76b; don'tregenerate. Transfer implementation48599c03a selects timeline.owner pages; roster-token-safe readiness; WebGL-only exact lossless atlases.
-A10sixatlases8,327,096->4,641,562B save3,685,534B; allsourceRGBA/testedNoColorSpace output+alpha exact. Canvaspartial-alphaRGB mismatch retained; genericCanvasURLsoriginal.
-A10network normalrenderer craftOFF freshcontexts ready,0missing,8/10/6packedimages. Subsets6,784,740/7,313,410/8,186,048B;bossalone>8MB. SHIPactualproductiontotal8MBgateOPEN;prior26,411,893B;needshippingrerun.
-A10all42film pages+3exact1440x900sheets inspected once;73completeactor/15ult/8actorless/3truncatedexcluded;2700markers exact. Fullweb2662/317,typecheck,3F6,lanePASS;2700layoutframes measuredlimitsPASS.
-A10FPS59.88/60.24/60.24;cameraWORLD convertedpixels<=3.117px,ultimateonly,ends<=116.7ms; reducedmotion unmeasured. No false7.92px claim. Nativejsonminify88B rejected.
-A10receipt/REVIEW/ART-REVIEW under REVIEW/A10/transfer; scopedscore7/10, fulltransferOPEN. BroadnormalFX/undrawnposes/portraitbanner/classes/focus/activation/ensemble/timesplit stayA9/A11.
-A10reviewconfig enumerates registeredunitIDs toavoidpromo-folderportrait error; SHIPasset-aliases helper notedited. REQUESTS-TO-SHIP has exactneeded fix and delivery limitation.
-A0/A1/A2complete;A1b exhaustiveprivatecatalogue deferredA11;A3-A6scoped. Finalensemble/activationOPEN.
-A6blindattempt1 10/12FAILretained,attempt2 11/12PASS;22sourcehashes/3films;10completewindows incl36sboss.2648/315,typecheck/3F6PASS;FX26.26–29.18%,face0%,60.240485fps,630122B. No repeat review.
-Binding K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9;11completewindows;3+flightframes;K2changed33.2767%;60.240485fps;FX25.7218%,face2.1698%,socket0. A46truncated; exactfilmclock limited(no markers). Allreviewed.
-Teacup K1-A3/K2-A2/K4-A3,K5aliasK2;3posemetricsPASS;K2changed32.7334%;blind9/9;13completewindows/4ults;8100markers exact. Productionbc85b0c82;11sourcehashes verified.
-Teacupall24film pages+900psheetreviewed;8/8selectedJPG;neverreopen. FX20.4389–21.2972%,face<=2.7916%,socket<1.7e-13,occlusion<=12.7265%. Correctspoonbowlsocket603,490.
-Teacup60.240485fps;motion<=9.21955px;return<1.2e-13;camera0;allposeFX3,784,736B;2649/315,typecheck,3F6,lanePASS. Tailwave3A69beyond90s excluded. Olddamage/reflect,focuspost600,ensemble/activation/timesplitOPEN.
-Needle: K1-A6Lab30 selected(head1.014501,dE5.369302,IoU.378964,feet1). K2-A1 numericalPASS(head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%,feet0). K4-A3 numericalPASS(head.977105,dE3.566826,IoU.402302,feet0). K2/K4 source selections persisted; export/drills pending. K1A1..A5/K4A1..A2 failures retained.
-IMAGEOPENS:0afterrewrite; allsourcepreviews,K1colour,K2K4group,r1/r2drills/privatecompare seenonce. Neverreopen. NeedletrackedJPG3/8. Selectedr2:150ms,count27,length560,spread900,thickness1.8; area25.6102%,face1.9477%,socket<1.3e-13px.
-EXCLUDE logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies. Reports tracked~97MBbeforethissmallreceipt;limit150MB. No indiscriminate staging.
-RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese. Commandsoutput<=40lines/3KB,diffs<=80. Python tools/.venv/bin/python. Commitpush eachstep<=20min,includingfailures.
-Bindingportrait13:20SHIPrequest fixed by exact97,490B runtime copy. BeforedecodeFAIL retained;after640x640decodePASSat1280x720/1440x900. Receipt REVIEW/A10/binding-portrait;SHIPjourneyverificationpending.
-Craftremains DEV&&VITE_CRAFT_PILOT==='soot';noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR/subagents. Sourceassetsoutsideownedpublic stayunchanged.
-Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. StoponlySTOP-V4ART/currentuserpause/inboxpause/end29Nov12UTC.
+# ART execution anchor — 2026-11-16T14:27UTC
+PAUSED by explicit user chat: “lưu handoff và dừng nhé”. Save/checkpoint only; do not resume queue until user requests continuation.
+Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
+NEXT1 ON RESUME: restart owned craft Vite5990 with VITE_CRAFT_PILOT=soot from apps/web: pnpm exec vite --config ../../scripts/v3feel/vite.config.mts --host 127.0.0.1 --port 5990 --strictPort (detached; recordPID/log).
+NEXT2: preserve interrupted raw/wave3-900, rerun ONLY existing1440x900 capture/review; do NOT rerun capture-review.py (would overwrite3completedfilms). Then blind-read.py prepare; label9crops before private key/compare.
+NEXT3: review all existing Needle action sheets and new projectile sheets; complete900p layout evidence (wave1/boss also), receipt/STATUS/STATE/commitpush; then Yarn, A9, verified A10contrast request, A11/A12.
+LAST PUSH:b92cd2dc3 verified production Needle; pending pause checkpoint contains regression/capture metadata and review helpers, with no runtime changes.
+LIVE:none after user pause. Owned Vite40003/40016 and capture-review64446, capture66139, browser66141 group/ffmpeg66160 stopped; validation63153/probe63154 already exited.
+STOP-V4ART absent; user pause persisted in INBOX. Requested68961/69950 absent; A6final/post logs exit0. No generation running. Never kill SHIP processes.
+Needle production b92cd2dc3: K1-A6 Lab30, K2-A1, K4-A3; K5aliasK2. Four poses215,744B plus originalsewingneedle60,240B. DEV&&VITE_CRAFT_PILOT==='soot' unchanged.
+Needle source K1 head1.014501,dE5.369302,IoU.378964,feet1; K2 head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%; K4 head.977105,dE3.566826,IoU.402302,feet0. Failures retained.
+Needle exported225px pose3/3PASS; K2changed33.8568%; alpha exact vs normalized. Source hashes10 under REVIEW/A7/needle-moth; conservative allposes/VFX+newBindingportrait4,163,747B<6MB.
+Needle r1area9.4%FAIL retained. Selectedr2:150msflight,count27,length560,spread900,thickness1.8. Labarea25.6102/25.9755%,face<=1.9477%,paintedtiperror<1.3e-13. Two variants/private225pxcomparison reviewed.
+Needle live wave1/wave3 area24.4803/24.4476%,face<=1.6655%,paintedtip<1.7e-13px,launchsocket<=.1592px,occlusion<=2.3494%,motion<=9.21955px,camera<=2.9384px. No Needle in bossfixture.
+Needle regression PASS:2664tests/318files,typecheck0,3fixtureparity6hashes; reports REVIEW/A7/needle-moth/{validation,parity,lane-audit}.json. No baseline adoption.
+Needle3completed30s720p30fpsaudiofilms are local reports/v3-feel/REVIEW/V4-A7-NEEDLE/{wave1,wave3,boss}.webm; compressed capture metadata in fixture subdirs. Source b92cd2dc3,paritytrue,0errors; do not overwrite.
+Needle2700encodedmarkersverified900each. Film-review.json/action-strips generated, NONE visually reviewed. wave1/wave3 median60.240485FPS. Full film acceptance, camera duration/layout, action/flight verdicts pending.
+Needle900p wave3 recorder interrupted by user pause; capture.json absent, partialraw files retained; no900p acceptance. Blind sheet/private key NOT generated, no labels/result. No receipt yet.
+Review helpers prepared: validate.py,capture-review.py,review-films.py,review-900.py,verify-markers.py,blind-read.py,review-flight.py. Flight helper not run/reviewed. capture-review.py is start-from-scratch, not resume-safe.
+review-films.py fits full wideNeedle silhouettes and contact-.3/+.5s windows; exact decoded frame markers supply telemetry. Source claim only, no visual passes inferred.
+IMAGEOPENS:0afterrewrite. All Needle source/crop/K1colour/K2K4group/r1/r2/privatecomparison alreadyseen; neverreopen. TrackedselectedNeedleJPG3/8; all film/900/blind sheets remain unseen.
+Original raw/prompt/provenance saved under tools/v3craft-lab/{poses/raw/needle-moth,v4-needle-moth/raw}; private comparison under reports/v4-art/ref/A7/needle-moth; never stage raw/ref/movies.
+A6 complete: blindattempt1 10/12FAILretained,attempt2 11/12PASS;22hashes/3films/10completewindows incl36sboss;2648/315,typecheck/3F6PASS. Do not repeat.
+Binding complete:K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9;11completewindows;3+flightframes;60.240485FPS. A46truncated, exactfilmclock limited(no markers).
+Teacup complete scoped:K1-A3/K2-A2/K4-A3;blind9/9;13completeown/4ult;8100markers;24pages+900p reviewed,8/8JPG;2649/315/typecheck/3F6. Olddamage/reflect class limitation remains.
+A10transfer scoped receipt d3578d48a, source48599c03a: owner-scoped readiness;6exactWebGLderivatives save3,685,534B. CanvaspartialalphaRGB mismatch retained; generic originals unchanged.
+A10normalnetwork subsets6,784,740/7,313,410/8,186,048B; SHIPactualinitial8,000,000B totalgateOPEN(prior26,411,893B).42filmpages+3exact1440x900sheets reviewed;73actor/15ult/2700markers;2662/317/typecheck/3F6PASS.
+Bindingportrait c5ccdfae1 exact approvedruntime copy97,490B; beforedecodeFAIL retained, afterdecodePASS720/900. SHIP integratedjourney rerun pending.
+SHIP lastread14:11UTC:13:40 battletextcontrast-unknown request queued A10 (b3-world/speed/stars/auto); no measuredfailure yet. Class db35585 nonfinal; no merge. Only finalclasses+solebaseline announcement authorizes one merge.
+OPEN sharedfocuspost600/activation/ensemble/portraitbanner/classes/time-split and A10totaltransfer. No false full-A7 or full-production acceptance.
+Own publicunits/VFX,cardrpg battle-v3/spine/stage/vfx-craft/vfx-layered exceptaudio,rig,craftlab,v3feel,provenance/ARTreports. No rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents.
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies. Explicit staging only; V3history append-only; trackedV4reports~97MB ceiling150MB.
+Jobs>2min detached Popen(start_new_session=True),stdinDEVNULL/nohup/log;max3. Ports5990–5993 only. Commitpush eachstep<=20min,includingfailures, only while authorized work is active.
+RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese. Output<=40lines/3KB;diff<=80. Imaging Python tools/.venv/bin/python.
+Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Current explicit user pause takes precedence over automatic queue continuation.
