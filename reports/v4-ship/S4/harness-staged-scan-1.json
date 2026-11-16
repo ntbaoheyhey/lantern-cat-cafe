@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-16T10:38:56.285938+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 5113,
+      "sha256": "a477b3f3dce153f3f582467605792652fc3435f93033c002b0f06602a95ea969"
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "bytes": 5098,
+      "sha256": "a0d9f2ff8199c4927b4b157372e776f6331296f9601d8d9cd469fbe7d0152e64"
+    },
+    {
+      "path": "reports/v4-ship/S4/harness-check-1.json",
+      "bytes": 403,
+      "sha256": "84a6b31aa1406a03612f8e1616584ea5acf6a08b0c47261985dc6f87831ea9d9"
+    },
+    {
+      "path": "reports/v4-ship/S4/regression-final-1/check.json",
+      "bytes": 1417,
+      "sha256": "61b260772099f557c8a4aeac82192e3ce418eb6845ecff186a6671853564d241"
+    },
+    {
+      "path": "reports/v4-ship/S4/regression-final-1/log.jsonl.gz",
+      "bytes": 16102,
+      "sha256": "f44ecf0a3c529ccd3ae9293342faa1ba50e44e571962e27600f91e2b52341802"
+    },
+    {
+      "path": "reports/v4-ship/S4/regression-final-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "17f24a5045cd2a1c7fbd05f58e3fe1b068d1b6f15e6ff57549eadc02450c59c2"
+    },
+    {
+      "path": "scripts/v4ship/journey-run.mjs",
+      "bytes": 10812,
+      "sha256": "6df431732436eafc8b2a124fbc27243db1fcd0efcb55394723417feb433ee1a2"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/finalize.mjs",
+      "bytes": 4000,
+      "sha256": "6418797e03701c023e2cf30ee289a07df4a62f47c3cbdd461653a6b735361012"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/receipt-check.mjs",
+      "bytes": 2522,
+      "sha256": "d34a17b35cee691ba881e74f02a353e2e33706583c7bf13896ee810bdefb6c50"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/receipt-check.test.mjs",
+      "bytes": 2417,
+      "sha256": "ca35aafa873706a72f2196f92d66a75af4bc5becd5ec8e00ee5fe80208c69543"
+    }
+  ],
+  "expandedGzip": 1,
+  "findings": [],
+  "pass": true
+}
