@@ -1,0 +1,98 @@
+{
+  "at": "2026-11-16T10:49:02.876974+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 7797,
+      "sha256": "edcb0fe1e039f6b6764bd886aa62a246b6b402ad94e174fc44b1271591deb40a"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 9643,
+      "sha256": "057082808d92e155750a3c932eff2afe2437a42882f47af8022bf1d9e048045c"
+    },
+    {
+      "path": "docs/avalanche-integration.md",
+      "bytes": 8343,
+      "sha256": "f21bab3f1156566392f9dcfc984fc0da36e2a611790dd44adcae3e8e721bc50b"
+    },
+    {
+      "path": "docs/credits-v4.md",
+      "bytes": 3135,
+      "sha256": "fcec5a1ae13f185a57ed990e1f3f3e3fa3ebe0dab21e978af47edb7411055c2a"
+    },
+    {
+      "path": "docs/licenses/spine-runtimes-4.2.120.txt",
+      "bytes": 1468,
+      "sha256": "435774fb793b0f67892899fc934f98009e64fd90ad3ab964117274e279a0f50e"
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 5284,
+      "sha256": "2145e0e17838e0e08ab65975485d1a6b261b37655266cd7ae11928fbc72610c9"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S6.md",
+      "bytes": 1841,
+      "sha256": "e5d36bceea5aa32b8c72dfa4ba39e7a01cd094ed530025e7ce656ed748afa3ad"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/sources.json",
+      "bytes": 31924,
+      "sha256": "7c5fa0c12a4505710aa3d09dbc0072835817f55da12b17d848d98a8aade210cd"
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "bytes": 5278,
+      "sha256": "70ad5ab4966bb75a42e16323a1f678ad8b67665afbe4b915b9eda44773705d24"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-01.json",
+      "bytes": 123078,
+      "sha256": "e73d7e903359514b5a3529688dd3702abfc02e4b9d6a1ea593fdb5cea4fc300c"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1280-02.json",
+      "bytes": 121959,
+      "sha256": "d3dc1ebfb618992693b056dfadf1ff5f1dd33d15cd10a497545b524d49563497"
+    },
+    {
+      "path": "reports/v4-ship/S6/docs-check-1.json",
+      "bytes": 1294,
+      "sha256": "ce4154be9d3bd57ac5e2f280defe08316621952fb99693f49cf1d3ad8e39ab8b"
+    },
+    {
+      "path": "reports/v4-ship/S6/docs-staged-scan-1.json",
+      "bytes": 2875,
+      "sha256": "14e0a912be97f6bb0d27a2f7613f098f8213264cb6edb1f3d8f136400819fa12"
+    },
+    {
+      "path": "reports/v4-ship/S6/learning-comparison.json",
+      "bytes": 34262,
+      "sha256": "5f555a83929340b88a1517ce273944db0c1996f63521bdad07501d1cf6f05ec5"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 8357,
+      "sha256": "19a243c80dc19e5bee41fe8f418093501590936f2b74159849b35b0df8c998cc"
+    },
+    {
+      "path": "tools/v4ship-lab/repo/clean_clone.py",
+      "bytes": 7357,
+      "sha256": "629c9b6178ff9852b3d022f1e50121e67a5674d00270cf8a2b258928992eae9d"
+    }
+  ],
+  "expandedGzip": 0,
+  "findings": [
+    {
+      "file": "reports/v4-ship/S6/learning-comparison.json",
+      "line": 17,
+      "type": "generic-api-key",
+      "classification": "false-positive",
+      "reason": "Public contract address exactly matches the versioned Fuji deployment registry; not a credential"
+    }
+  ],
+  "unresolved": 0,
+  "pass": true
+}

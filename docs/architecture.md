@@ -1,7 +1,9 @@
 # Architecture
 
+V4 integration state, 16 November 2026. The public site remains an older build; this document describes source behavior and the isolated local journey.
+
 ## Layout
-- `apps/web`: Vite + React + TS client; includes both the classic bottom game strip (v1) and the expanded Cat RPG v2 stage layout with Phaser combat, procedural cat rig, and tabs.
+- `apps/web`: Vite, React and TypeScript; V4 uses the A6/Depth rules model with Three/Spine battle presentation and the SHIP café journey. Classic Phaser and v2 paths remain in the repository.
 - `packages/game-rules`: pure TS game rules shared by client and server (both v1 and v2 engines).
 - `packages/api-contract`: the client/server API types, error codes, HTTP statuses and endpoint names; see `docs/api.md` and `docs/api-v2.md`.
 - `packages/chain`: chain constants and contract addresses (Fuji, 43113).
@@ -10,6 +12,21 @@
 - `supabase`: migrations and Edge Functions.
 
 See [extending](extending.md) and [extending-v2](extending-v2.md) for step-by-step checklists to add content, endpoints, or features.
+
+
+## V4 journey and recovery
+
+`DemoJourney` presents intro battle, reward, café workshop, finale battle and wallet proof. Its build-time switch requires guest wallet, chain loop and economy services; a URL alone cannot enable them. `scripts/v4ship/start-local.mjs` configures an isolated local backend and Anvil on SHIP ports. The acceptance URL includes development switches, so its success cannot substitute for a production-preview rehearsal.
+
+The browser guest wallet signs ordinary chain transactions. SIWE authenticates the guest session, while `chain-judge` supplies a server-generated battle replay and bounded vouchers. `guest-drip` supplies test gas. Workshop actions use the existing chain/economy handlers. A browser campaign save never becomes issuance authority.
+
+The UI stores only resumable phases and receipt metadata. After reload, wallet proof obtains holdings and indexed history from chain data. Funding history is admitted only after checking the successful receipt and its destination. Before every write, the runtime checks chain and account, simulates the call, checks the wallet again, waits for a successful receipt and rejects replacements that represent another action.
+
+Every receipt includes hash, action, confirmation duration, fee in AVAX, actual payer, block and local/public label. Fees come from gas used multiplied by effective gas price. Café-funded gas is displayed separately from the transaction sender. Unknown timing remains unknown. Wallet history and four public counters have separate recovery evidence; local receipt timing does not establish public Fuji latency.
+
+Shared class rules assign melee, ranged or healer to every actor. Healers cannot damage opponents; Mochi/Panko are melee, Soot ranged and Clover healer. Attack/Power remains 1.15 and Spool retention 25%. The E3 boundary and official class baseline are still open, as recorded in [S2b](../reports/v4-ship/S2b/hold-verification-1.json).
+
+Audio is owned by `apps/web/src/audio` plus the battle audio/timeline bridge. Playback uses a bounded source-start budget, per-source duck ownership and persisted mixer settings. Runtime measurement, human intelligibility and physical onset are distinct checks; see [audio evidence](../reports/v4-ship/AUDIO-REVIEW.md).
 
 ## On-chain vs off-chain
 - Off-chain: legacy v1/v2 connected progression is decided by Supabase. The newer Depth/A6 campaign remains a browser save; it is not mint authority. Soft currencies, including older resources named yarn, are distinct from ERC-20 YARN.

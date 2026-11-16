@@ -4,11 +4,11 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW S5closure f5182cee2/S2bhold59e0177ed pushed;S4regression-final-1 complete;stableharnessready. S5final-check-1 complete:1801.137swall/1801.08sdecoded/18restarts;G-AUDIOfail,carryS11/audio-open.json. Capture32484/validator59794/final65514collected. History30159running.
-NEXT 1: start S4-final-1 stable20journeys immediately; V4_RECOVERY=1/V4_STABLE=1/V4_AUDIO_TRACE=1/V4_FAIL_FAST=1.
+NOW S4-final-1 session31284 active;S6docs/learning/checker WIP;runtimeunchanged. S5final-check-1 complete:1801.137swall/1801.08sdecoded/18restarts;G-AUDIOfail,carryS11/audio-open.json. Capture32484/validator59794/final65514collected. History30159running.
+NEXT 1: collect S4-final-1 session31284 until20runs;then finalize. S6 docs checkpoint->freshclone. Do not change runtime during journeys.
 NEXT 2: S2b hold-verification-1 PASS;G-CLASS remainsFAIL/timeboxed toS11; require measured class-only eligibility/acquisition hypothesis before candidate;valid18/18->sensitivity/E4/E5->ONEbaseline->notifyART. No baseline yet.
 NEXT 3: stable20journeys (10perdesktop)+S4proof; S6README/architecture/integration/licenses/cleanclone; S7ART17Nov12:00; S8productionrehearsal/runbook; S9researchdocs; S10review+film18Nov12:00; S11fix/freeze19Nov12:00.
-CHECKPOINT:previous59e0177ed;S4stable/RPCreceiptharness now checkpointed,11/11 verifiercontrols. Runtimefixed sincef16d4ec7a;full20journeys notyetexecuted.
+CHECKPOINT:a81bf93ef pushed stableharness;11/11 controls;runtimefixed sincef16d4ec7a. Freshprofile final20 in progress;partial evidence checkpointed.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 finalcoverage451.666s:-17.64LUFS/8.7LRA/-1.06dBTP;all5sceneestimatedonsets<=18.07ms;sourcebudget/duck/recovery/errorspass. FrozenASR8/12fail;human/physicalunverified.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
@@ -21,7 +21,7 @@ S2b production1.15/Spool2500bp frozen. OriginalE3 16/18;burn0.9968275226/Stars1.
 S2b boundary:2000exact+2000conservation+306quantiles;400cross-runtime+800hybrids. Gear/progression hybrids bothfail. Independenttoken200seeds bothcandidatesfail;nativebanksunchanged.
 S2b lowbotYARN deficit78.711341=wallets+treasury-external;highbotStars414.185>407.448 allowed,includesinactive142.515. No supported scalar remedy;see boundary-decision.json/check/diagnosis/channels.
 S2b1.15holdout300wins/0healerDamage;firstloss17.50245min;boss87.0667s/p9093.57. 1.20holdout300wins butrejected. No sensitivity/E4/E5 on invalidcandidate.
-S4 contrast pilots1280/1440:7/7,18receipts,9historykinds,15links,reload,zeroerrors/popups;receipt95.301/95.662s. LaterCSS syntheticgeometrypasses;final20journeysabsent.
+S4-final-1:2/20complete sofar;first3.352sbattle/95.703sreceipt/18RPCverifiedreceipts/15historylinks;0errors/popups;S4-final-1 sourcea81bf93ef. Pilots remain separate.
 G-UI open:walletcontrast1.132->9.476/sponsor1.914->8.579;freshpilots scopedcontrastpass;later spacing/dismiss/hover notfulljourneyproof.
 G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zeroerrors/originaltimestamps. 55logs/5contracts/30RPCverifiedreceipts/block61162789;no sponsoredFuji latencyproof.
 S1 full-history scan restarted30159/PID68299 withGOMAXPROCS2,scope3790commits;reportpending. Rawfindingsneverprinted. Incrementalscans zero unresolved.
@@ -31,4 +31,5 @@ SERVICES Vite5994 PID33548/backend5997 PID33468/Anvil8546 PID33478;audioVite5995
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent. User10:07UTC directed recovermissingS6-S11definitions;verified REQUEST lines158-163+hash. No publictx/deploy/ARTedit/imagegeneration.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
-UPDATED 2026-11-16T10:38:55.995543+00:00.
+S6 learning8sources/1formal/5web;README+architecture+integration+credits updated;53links/5contracts/118audiohashes checked. Freshclonepending;Spine entitlement unverified.
+UPDATED 2026-11-16T10:48:07.237676+00:00.

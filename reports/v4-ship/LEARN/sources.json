@@ -705,5 +705,61 @@
     "accessed": "2026-11-16",
     "url_or_path": "reports/v4-ship/S5/duration-method.json",
     "takeaway": "Five unchanged recordings: header duration resolves 0/5; decoded frames resolve 5/5 at 90.00-90.60 seconds. All correctly fail 1800 seconds."
+  },
+  {
+    "id": "S6-SSDF",
+    "type": "formal-document",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    "takeaway": "PS.3 recommends retaining release integrity and component provenance; PW.4.4 calls for component verification. Bind clean-clone results to a commit."
+  },
+  {
+    "id": "S6-CLONE",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://git-scm.com/docs/git-clone",
+    "takeaway": "Use a fresh checkout and pinned recursive submodules; a copied working directory can inherit local files or untracked configuration."
+  },
+  {
+    "id": "S6-PNPM10",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://pnpm.io/10.x/cli/install",
+    "takeaway": "Explicit frozen-lockfile rejects manifest drift and keeps the pinned workspace dependency resolution."
+  },
+  {
+    "id": "S6-SECRETSCAN",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning",
+    "takeaway": "Current-tree scanning and all-branch history scanning cover different exposure scopes; keep their results separate."
+  },
+  {
+    "id": "S6-SPINE",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://esotericsoftware.com/spine-runtimes-license",
+    "takeaway": "Spine is separately licensed and requires its copyright and license notice; the public November 2026 text differs from the installed April 2025 notice. Record the pinned notice without claiming entitlement."
+  },
+  {
+    "id": "S6-CC0",
+    "type": "internet-doc",
+    "accessed": "2026-11-16",
+    "url_or_path": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "takeaway": "A licence label alone does not independently establish source ownership; retain per-file source and processing provenance."
+  },
+  {
+    "id": "S6-REGISTRY",
+    "type": "repository-source",
+    "accessed": "2026-11-16",
+    "url_or_path": "packages/chain/deployments/43113.json",
+    "takeaway": "Five configured Fuji addresses; optional RelicForge has no address in this registry."
+  },
+  {
+    "id": "S6-COMPARISON",
+    "type": "own-experiment",
+    "accessed": "2026-11-16",
+    "url_or_path": "reports/v4-ship/S6/learning-comparison.json",
+    "takeaway": "README covers 2/5 registry contracts. Historical licence rows total1477; current encoded audio coverage is118/118 by exact path/hash."
   }
 ]
