@@ -1,5 +1,5 @@
 {
-  "scope": "Every encoded third frame (10fps) across all three30s films. Native-scale portrait-star crops and projected world-label regions; unchanged poses/blind reads are not re-reviewed.",
+  "scope": "Every encoded third frame (10fps). V2 uses176x54 native-pixel world-label regions and four64x54 portrait-star regions. Projection uses face-box centre/body top, not recorded DOM bounds; exact counter coverage remains a separate open gate. Earlier pages/notes are retained unchanged.",
   "sourceHashes": {
     "apps/web/public/units/binding-thread/poses/K0.webp": "b9b15b6410e5386fd4f73e2b7f9d7db7abf6d8e8d141d022ccd500a6120425cf",
     "apps/web/public/units/binding-thread/poses/K1.webp": "e7781abfa69746941b127ccceb0ecfcd32558c1e5d07fbb1e6eefbaaa8827f60",
@@ -127,7 +127,106 @@
         "maxTransientVoices": 9,
         "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
       },
-      "actions": 29
+      "actions": 29,
+      "actorCount": 8
+    },
+    {
+      "fixture": "wave3",
+      "sourceCommit": "69426751bd7a55be425462345fa69c4e15d0beea",
+      "hashesVerified": 80,
+      "videoSha256": "76990d20dd335c4aadeccb277a1ac013ce1664556d5dd865b1b721e6e0a516b7",
+      "samples10fps": 300,
+      "encodedFramingSamples": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "frame": 149
+        },
+        "catDeviation": {
+          "value": 0.02955665024630516,
+          "frame": 702
+        },
+        "left": {
+          "value": 0.04533822382959518,
+          "frame": 39
+        },
+        "right": {
+          "value": 0.036308225161340246,
+          "frame": 13
+        },
+        "span": {
+          "value": 0.8193372918955328,
+          "frame": 640
+        },
+        "gap": {
+          "value": 0.0017403803967042109,
+          "frame": 255
+        }
+      },
+      "framingFailures": [],
+      "parity": true,
+      "errors": [],
+      "medianRenderFps": 60.2404848763393,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A10-CONTRAST-R1/wave3-mix.wav",
+        "integratedLufs": -15.03,
+        "truePeakDbTP": -3.04,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "actions": 29,
+      "actorCount": 10
+    },
+    {
+      "fixture": "boss",
+      "sourceCommit": "69426751bd7a55be425462345fa69c4e15d0beea",
+      "hashesVerified": 80,
+      "videoSha256": "ca6b3ebd2e294cec98074b24db6f9f50e17c3b80cc7fef34663eaffcf4dbdd79",
+      "samples10fps": 300,
+      "encodedFramingSamples": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "frame": 472
+        },
+        "catDeviation": {
+          "value": 0.025061559483166462,
+          "frame": 92
+        },
+        "left": {
+          "value": 0.035334411061704096,
+          "frame": 238
+        },
+        "right": {
+          "value": 0.036266457421405995,
+          "frame": 174
+        },
+        "span": {
+          "value": 0.8252152934280266,
+          "frame": 323
+        },
+        "gap": {
+          "value": 0.0680075074161092,
+          "frame": 389
+        },
+        "boss": {
+          "value": 0.49643999999999977,
+          "frame": 295
+        }
+      },
+      "framingFailures": [],
+      "parity": true,
+      "errors": [],
+      "medianRenderFps": 60.241350089766605,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A10-CONTRAST-R1/boss-mix.wav",
+        "integratedLufs": -14.8,
+        "truePeakDbTP": -2.82,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "actions": 28,
+      "actorCount": 7
     }
   ],
   "pages": [
@@ -140,7 +239,8 @@
       "sha256": "ca7356b6271421add9ae3625d161821a5d476a7bf63967cd2d54f7ea18f395d0",
       "reviewed": true,
       "humanVerdict": "partial-coverage",
-      "reviewNote": "Inspected once before this continuation: stars and visible Needle counter read clearly; unrelated HUD fragments appear in projected crops. Exact coverage of every world counter is not established. Never reopen this sheet."
+      "reviewNote": "Inspected once before this continuation: stars and visible Needle counter read clearly; unrelated HUD fragments appear in projected crops. Exact coverage of every world counter is not established. Never reopen this sheet.",
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-02.jpg",
@@ -149,7 +249,8 @@
       "encodedEnd": 147,
       "samples": 25,
       "sha256": "5e6f5af5e969e9adc2a4b879aad11f9f74eccb2da7612443ed993ea72449bd72",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-03.jpg",
@@ -158,7 +259,8 @@
       "encodedEnd": 222,
       "samples": 25,
       "sha256": "d4b8e397d4125da586e3134f0d7b94f330976e8d43124bd49184ef02d78ca6b6",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-04.jpg",
@@ -167,7 +269,8 @@
       "encodedEnd": 297,
       "samples": 25,
       "sha256": "11f47015ee2e2905a091513ce92fe51c2af7e9d3d204c7840c3aae634d82e977",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-05.jpg",
@@ -176,7 +279,8 @@
       "encodedEnd": 372,
       "samples": 25,
       "sha256": "942cffbf3cccfbe822fcd77f31210fa56124f5a374b4a03e30c9f1ad683a720d",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-06.jpg",
@@ -185,7 +289,8 @@
       "encodedEnd": 447,
       "samples": 25,
       "sha256": "243f53b516fd56c91e4bb9d3c3139acc841422f041ceadddfd62c26f48226498",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-07.jpg",
@@ -194,7 +299,8 @@
       "encodedEnd": 522,
       "samples": 25,
       "sha256": "1c61b06f30828ce69eb1d44a1c842b73fcaddcd8876ea696158e524737bbfd98",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-08.jpg",
@@ -203,7 +309,8 @@
       "encodedEnd": 597,
       "samples": 25,
       "sha256": "945b514c30a82c0a795bb5d013cf2555d06826ad11d03f714e86ddf5307f80f7",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-09.jpg",
@@ -212,7 +319,8 @@
       "encodedEnd": 672,
       "samples": 25,
       "sha256": "f6e6994adc40aeae6545ddc225538c5166f7aaac5ab600ec5e46225fbfd454f9",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-10.jpg",
@@ -221,7 +329,8 @@
       "encodedEnd": 747,
       "samples": 25,
       "sha256": "195223096da1ef10558296f9fd8477afff1ad4d9ebe0bfefd186a9ce38a24b5f",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-11.jpg",
@@ -230,7 +339,8 @@
       "encodedEnd": 822,
       "samples": 25,
       "sha256": "b6e85397c0c61f0574226cd8b1060780e48cbeaa1c23dc6f249f69c1453dbf30",
-      "reviewed": false
+      "reviewed": false,
+      "reviewRequired": false
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-12.jpg",
@@ -239,7 +349,701 @@
       "encodedEnd": 897,
       "samples": 25,
       "sha256": "5a260fcd7596f53416183d70cc5286e538d9aecee12bd4cd05f7c160e70bca12",
+      "reviewed": false,
+      "reviewRequired": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-01.jpg",
+      "fixture": "wave1",
+      "encodedStart": 0,
+      "encodedEnd": 42,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "fbc4e5372d36bc05c13187737718b4cc4c792bcacb297189168b17d20c81e2bd",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f0-42: four star plaques stay distinct and legible. World HP bars are included; Needle counter1 appears byf42 and remains readable. Existing toolbar/world-label overlap is visible for upper actors; no claim that this fixes that layout issue.",
+      "reviewedAt": "2026-11-16T19:45:09.693390+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-02.jpg",
+      "fixture": "wave1",
+      "encodedStart": 45,
+      "encodedEnd": 87,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "fe7e777539992259f9fa7fa8f92105a9afbf01ed7b6cec3f255ce73991a9a859",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f45-87: four star plaques remain legible; visible Needle counter1 keeps its opaque dark backing while characters move. No clipped digit observed within these wider crops. Exact DOM counter bounds were not recorded.",
+      "reviewedAt": "2026-11-16T19:45:09.695121+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-03.jpg",
+      "fixture": "wave1",
+      "encodedStart": 90,
+      "encodedEnd": 132,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "72ddb990d1495b04d7ffe54d727796ee1931d16fbe9399078e4a2b5c9e3cf02c",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f90-132: status1 counters on Panko/Button Guard and two Needle badges remain distinct over warm impact light; four star plaques readable. Damage numerals enter neighbouring regions without hiding these counters.",
+      "reviewedAt": "2026-11-16T19:45:42.116842+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-04.jpg",
+      "fixture": "wave1",
+      "encodedStart": 135,
+      "encodedEnd": 177,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "3fbf36b72c595096acaf37286cca3af59fe9e18dcc996e590c699bfb33c7c342",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f135-177: visible single-stack badges and all four stars read consistently. Some unrelated neighbouring status fragments enter crop edges; toolbar overlap remains visible.",
+      "reviewedAt": "2026-11-16T19:45:42.117008+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-05.jpg",
+      "fixture": "wave1",
+      "encodedStart": 180,
+      "encodedEnd": 222,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "08d09bc39c1d30751fa1f0233040cb4c242ce580224a1781465817f2fe04e880",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f180-222: Panko and enemy status1 counters stay legible through impact and movement; stars remain separate from portrait art. Existing damage-number fragments are outside the counter plaques.",
+      "reviewedAt": "2026-11-16T19:45:42.117014+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-06.jpg",
+      "fixture": "wave1",
+      "encodedStart": 225,
+      "encodedEnd": 267,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "480bfd921921b65b966b5329229b7dea6ace037e0db2f43e2b416a57feca0eb9",
+      "reviewed": true,
+      "humanVerdict": "supplement-required",
+      "reviewNote": "f225-267: visible counters remain legible, including Needle stack2 byf264. Needle label reaches the right crop boundary atf246; this is a coverage gap requiring a wider supplementary crop, not a measured contrast failure.",
+      "reviewedAt": "2026-11-16T19:45:42.117021+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-07.jpg",
+      "fixture": "wave1",
+      "encodedStart": 270,
+      "encodedEnd": 312,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "a4e7779bd168c6eeba7871d784ce9f1c909b2f2f5b498b1d27cc3767fa858ad0",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f270-312: Needle2/1 and the single-stack ally/enemy plaques remain readable; focus darkening starts nearf309 without obscuring the stars. Toolbar overlap persists.",
+      "reviewedAt": "2026-11-16T19:46:08.305121+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-08.jpg",
+      "fixture": "wave1",
+      "encodedStart": 315,
+      "encodedEnd": 357,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "e8ac730b9c70027c6fe74388d2d8a75f19e4b3a31eee299626c035adbe6774b9",
+      "reviewed": true,
+      "humanVerdict": "visible-labels-readable",
+      "reviewNote": "f315-357: visible counters remain readable through focus release and Panko cover; Panko2/1 and Needle2/1 are distinct. The second upper actor crop acquires black/top-toolbar content during movement; no exact DOM coverage assertion.",
+      "reviewedAt": "2026-11-16T19:46:08.305320+00:00"
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-09.jpg",
+      "fixture": "wave1",
+      "encodedStart": 360,
+      "encodedEnd": 402,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "bb88acbd2c3526ef1d88f7012dc45d654ed5519cd78c5265e8e9a4c09d899075",
       "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-10.jpg",
+      "fixture": "wave1",
+      "encodedStart": 405,
+      "encodedEnd": 447,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "5c50719c0cdbedd78484e1922c201db49b82f2a1297e80a43bc0cc151e1e802b",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-11.jpg",
+      "fixture": "wave1",
+      "encodedStart": 450,
+      "encodedEnd": 492,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "ea2ec315ab9161a9edbc54ef8229e29f4965211bbb7264923786e58e87bcdd4e",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-12.jpg",
+      "fixture": "wave1",
+      "encodedStart": 495,
+      "encodedEnd": 537,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "7ec13448a3bff524401984fd044ce3f028a51b1913e3c9c25091a42a11e6d869",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-13.jpg",
+      "fixture": "wave1",
+      "encodedStart": 540,
+      "encodedEnd": 582,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "9b450fd9342f46672fa5e5db7f555aaa984b6aef9d0408d0513601831da39df7",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-14.jpg",
+      "fixture": "wave1",
+      "encodedStart": 585,
+      "encodedEnd": 627,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "289a1fcc70fac7ad0b8f68fc418ba08cbb35a8ff90bc3f5209a1c162584cc01c",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-15.jpg",
+      "fixture": "wave1",
+      "encodedStart": 630,
+      "encodedEnd": 672,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "c551d4781e7f40bf13d12821d83b927e344f61a09d8639443d212ec5e2cc74a0",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-16.jpg",
+      "fixture": "wave1",
+      "encodedStart": 675,
+      "encodedEnd": 717,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "bbf3ce80a105cafa226763e1c5939efab65a2f4f26372c9d0d63874d36616ec2",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-17.jpg",
+      "fixture": "wave1",
+      "encodedStart": 720,
+      "encodedEnd": 762,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "151249c6406e87fd98c4d7976a0de144528ab923707498420fdca7e07d3010b1",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-18.jpg",
+      "fixture": "wave1",
+      "encodedStart": 765,
+      "encodedEnd": 807,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "cb692521070c55210ae2469b3121f5596a62b22d416bef451e8ef11abeb70edb",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-19.jpg",
+      "fixture": "wave1",
+      "encodedStart": 810,
+      "encodedEnd": 852,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "48604685d3f3304a043023a8509b9a1df0158d5b6e49a781a17d5c6dd6c359f7",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave1-hud-v2-20.jpg",
+      "fixture": "wave1",
+      "encodedStart": 855,
+      "encodedEnd": 897,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "7c8f4fd1b16477ff64a338e0082084c3b198e6c1f271c3335b465c489d121248",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-01.jpg",
+      "fixture": "wave3",
+      "encodedStart": 0,
+      "encodedEnd": 42,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "de4b4f6eb60f862ac950cf37c547f136ae91fc1ffc411b7bffbb340cd6cd0428",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-02.jpg",
+      "fixture": "wave3",
+      "encodedStart": 45,
+      "encodedEnd": 87,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "feb9f82da67e3589fa85ba2f3f70b92f944a0c601479f311d4d1289eabb1468f",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-03.jpg",
+      "fixture": "wave3",
+      "encodedStart": 90,
+      "encodedEnd": 132,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "ad43bf4f27da665558eb43ab1e2acfa0ee90ab78bbf9f6b0eb0d86ca99844751",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-04.jpg",
+      "fixture": "wave3",
+      "encodedStart": 135,
+      "encodedEnd": 177,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "631f6546557d4b8c53cb6f14d18fb0a393652fb58d1a362df4bb4d18ff53119f",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-05.jpg",
+      "fixture": "wave3",
+      "encodedStart": 180,
+      "encodedEnd": 222,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "b838327527de77d81acb898bb893a973446423083bc61fa0d998150f857d02d2",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-06.jpg",
+      "fixture": "wave3",
+      "encodedStart": 225,
+      "encodedEnd": 267,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "05b13d96559c6db847edf670a4dd559d9314840c4bcc4d2224518474b47acebd",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-07.jpg",
+      "fixture": "wave3",
+      "encodedStart": 270,
+      "encodedEnd": 312,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "097ffa5c548c5789743148fc116acc551c321e256c76591f907a9f22f4bf3727",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-08.jpg",
+      "fixture": "wave3",
+      "encodedStart": 315,
+      "encodedEnd": 357,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "c69145a4ea7ee07cf2afb529392d8a534f94c04d6076ce9e72e1ea4bbc68893b",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-09.jpg",
+      "fixture": "wave3",
+      "encodedStart": 360,
+      "encodedEnd": 402,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "f43ec57fc5fb3b0da18b5d4c88fc13154325d7f09f4fb51e786a6978e5abc57c",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-10.jpg",
+      "fixture": "wave3",
+      "encodedStart": 405,
+      "encodedEnd": 447,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "dcf7d746bf603683820ef23ee96a6dfc6620d02292e41d06cab08841b068260c",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-11.jpg",
+      "fixture": "wave3",
+      "encodedStart": 450,
+      "encodedEnd": 492,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "f143daaa9a42602e9f985c1ee9fff8822c2d52f186e764855016ded1e8f4a663",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-12.jpg",
+      "fixture": "wave3",
+      "encodedStart": 495,
+      "encodedEnd": 537,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "91db38e7997bf6a21576be47b7506a2f5297150d6987751c9a2de177c5ec4172",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-13.jpg",
+      "fixture": "wave3",
+      "encodedStart": 540,
+      "encodedEnd": 582,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "a7d04f17979b07114355c812f072ee50c290ef6563a862932ab9b0aeccd17b0d",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-14.jpg",
+      "fixture": "wave3",
+      "encodedStart": 585,
+      "encodedEnd": 627,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "ce6ed1fab931ec4e33f357a9884d600356edbb8b57e52bcfab86cfd2e6e792e3",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-15.jpg",
+      "fixture": "wave3",
+      "encodedStart": 630,
+      "encodedEnd": 672,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "166aaa111427ced68370ed643d1a0f5ee0a55d5533c7bc5f49a94849a8dd3122",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-16.jpg",
+      "fixture": "wave3",
+      "encodedStart": 675,
+      "encodedEnd": 717,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "d28bc02a977e9627d27a394908876d38f4fa3c2f62f65cdf8065ff81673fb69e",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-17.jpg",
+      "fixture": "wave3",
+      "encodedStart": 720,
+      "encodedEnd": 762,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "bfc1741d2798312d70c4834705c0a31bb6f6a6e960b0b1be061808551171d668",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-18.jpg",
+      "fixture": "wave3",
+      "encodedStart": 765,
+      "encodedEnd": 807,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "c1cfa69f1e32d4b9f8003fc98477312be2cf0881c5a9ab7ffbb045e152871753",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-19.jpg",
+      "fixture": "wave3",
+      "encodedStart": 810,
+      "encodedEnd": 852,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "3a529f616c757de2458e304ae8f67d468ab9f33a89abec58d11b540a8403b1ff",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/wave3-hud-v2-20.jpg",
+      "fixture": "wave3",
+      "encodedStart": 855,
+      "encodedEnd": 897,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "717a258607e4b10e55d73073f90f8535ed00c745b98d158aad6f48b0c7df15d5",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-01.jpg",
+      "fixture": "boss",
+      "encodedStart": 0,
+      "encodedEnd": 42,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "04bb08240c1d009c55eb9ae809deff1745c84c42b81833696fb86566fc71ebdd",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-02.jpg",
+      "fixture": "boss",
+      "encodedStart": 45,
+      "encodedEnd": 87,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "70370330a1ebd011f17fc425640bf69882abb6c4a5dd08b4b53cd92b72fa053e",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-03.jpg",
+      "fixture": "boss",
+      "encodedStart": 90,
+      "encodedEnd": 132,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "40813ba6865a33baacd938b25102503bbf1dadd5000517dbf7266a97f807f2d2",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-04.jpg",
+      "fixture": "boss",
+      "encodedStart": 135,
+      "encodedEnd": 177,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "3a14e9056d670a513269bb57e858605c1a58d34d4f4c97429e2b9d9f3b71074f",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-05.jpg",
+      "fixture": "boss",
+      "encodedStart": 180,
+      "encodedEnd": 222,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "09568a5e3af91ee76534ae11baaa30c10ae1ebecce4ecf736f5cfd11270cac26",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-06.jpg",
+      "fixture": "boss",
+      "encodedStart": 225,
+      "encodedEnd": 267,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "0dfe288bf8b777cf430aaaae85c213a498c8702b3f94c1f5558c9814a3e198af",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-07.jpg",
+      "fixture": "boss",
+      "encodedStart": 270,
+      "encodedEnd": 312,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "0b8343018a9397dc59a0573cf2f9e24df4a81c814d4b221f6b33ee3484df60d5",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-08.jpg",
+      "fixture": "boss",
+      "encodedStart": 315,
+      "encodedEnd": 357,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "cb7bf4a6ec7351d6736e233e7223a1420a71b05940bf5048b3b069d264c21fd2",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-09.jpg",
+      "fixture": "boss",
+      "encodedStart": 360,
+      "encodedEnd": 402,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "9f2b6603474b27e782993c01f753ea5dd74c8e94c61014fc6ea37a64855341c5",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-10.jpg",
+      "fixture": "boss",
+      "encodedStart": 405,
+      "encodedEnd": 447,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "bdf5564ec556b2ecf2ab0433ab858f56bab4266ca50f6cf7354c612df1838075",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-11.jpg",
+      "fixture": "boss",
+      "encodedStart": 450,
+      "encodedEnd": 492,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "86e6f0542fc119974585cbc888e721ccc6aca908ca72ac6579be6cfd724a126d",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-12.jpg",
+      "fixture": "boss",
+      "encodedStart": 495,
+      "encodedEnd": 537,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "e4e45ac205c14f90a418a2da2b141538d512f0ff601ea49378d90fbb36c9cf9a",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-13.jpg",
+      "fixture": "boss",
+      "encodedStart": 540,
+      "encodedEnd": 582,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "b8ae6005a9683a7ef021251181cfb28d7ba2c647d25a78ac14bef6b4bab14dc7",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-14.jpg",
+      "fixture": "boss",
+      "encodedStart": 585,
+      "encodedEnd": 627,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "61051246e1b9cbe2c47a2ca4c99e8d36bfcf43baea640584c3e2cf9ada78db12",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-15.jpg",
+      "fixture": "boss",
+      "encodedStart": 630,
+      "encodedEnd": 672,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "ac34ba943324eee18c578dc43fdfaecdb826ce0db957e98509a32c7be6fb1a72",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-16.jpg",
+      "fixture": "boss",
+      "encodedStart": 675,
+      "encodedEnd": 717,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "70476d18047604a7bf09b028b102f7bfb27f58510ad795f0bd8e22a1db5af38b",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-17.jpg",
+      "fixture": "boss",
+      "encodedStart": 720,
+      "encodedEnd": 762,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "f2f12afbfc2489c705bbd6c58ce3bf04465aa1d9b0a80a2b933dc006b8d998c1",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-18.jpg",
+      "fixture": "boss",
+      "encodedStart": 765,
+      "encodedEnd": 807,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "678cbace0f2bb8e1c621f186cf68cccf2bc305ec6888dcdf706790f75e432485",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-19.jpg",
+      "fixture": "boss",
+      "encodedStart": 810,
+      "encodedEnd": 852,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "630e13070d2e4289ea113d6ba21f71cbc080985b258398a3a4be9ca156abef13",
+      "reviewed": false
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-20.jpg",
+      "fixture": "boss",
+      "encodedStart": 855,
+      "encodedEnd": 897,
+      "samples": 15,
+      "layoutVersion": 2,
+      "reviewRequired": true,
+      "sha256": "7b1634e82daa02a926f4913e9ab3413c1be0a03bc49c8209eadf2455d12e326e",
+      "reviewed": false
+    }
+  ],
+  "coverageFollowups": [
+    {
+      "fixture": "wave1",
+      "encodedFrame": 246,
+      "actor": "foe-3-needle-moth",
+      "reason": "Right edge of world-label crop cuts the moving status region. Inspect wider native-pixel context; keep original sheet closed.",
+      "resolved": false
     }
   ]
 }
