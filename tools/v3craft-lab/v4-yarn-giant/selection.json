@@ -1,18 +1,16 @@
 {
   "unit": "yarn-giant",
-  "poses": {
-    "K1": "K1-A2"
+  "K1": {
+    "candidate": "K1-A2",
+    "image": "raw/K1-A2-normal.png",
+    "metrics": "K1-A2-metrics.json"
   },
-  "fixedSourceHead": [
-    240,
-    374
-  ],
-  "normalCanvas": [
-    1152,
-    1152
-  ],
+  "K2": {
+    "candidate": "K2-A3",
+    "image": "raw/K2-A3-colour-20.png",
+    "metrics": "K2-A3-colour-20-metrics.json"
+  },
   "pending": [
-    "K2",
     "K4",
     "K5",
     "original ultimate",

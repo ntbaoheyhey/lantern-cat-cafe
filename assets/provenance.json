@@ -4438,6 +4438,49 @@
       "sha256": "7a3d7077429aa90f11927ea39e8bd8257316fc620a7ca5fffa0b211a7d6f81a7",
       "status": "selected source K1; point pose gates pass; export/runtime/film pending",
       "metrics": "tools/v3craft-lab/v4-yarn-giant/K1-A2-metrics.json"
+    },
+    {
+      "id": "v4-yarn-giant-k2-a1",
+      "date": "2026-11-16T17:02:58.551315+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: one transparent 2D battle key pose, K2 contact punch, for our original Yarn Giant.\nInput image 1 is our exact original idle character, the edit target. Input image 2 is our approved K1 windup, an identity and head-size reference only.\nChange the pose into an unmistakable forceful LEFTWARD MELEE PUNCH at contact. Extend the front arm straight and almost horizontally far toward screen-left; its large wrapped fist must be well outside the idle body silhouette, about one quarter of the idle body width beyond its left edge. Twist and lean the torso toward the fist. The other fist is pulled back close to the right shoulder, with a visible open gap between elbow and torso. Use a broad stable stance, rear foot to screen-right, both soles planted on one horizontal floor line. Keep the crown at the original standing height, no raised hand above it. The face looks left and remains readable above the punching arm.\nPreserve the exact cranium and jaw proportions relative to floor-to-crown height of image 1; the head must not grow. Preserve muted mauve/rose yarn, ragged stitched shoulder cape, small worn gold crown, round gold pendant, gold eyes, wrapped fists and feet, yarn strands, painted outlines and lighting. Same stocky monster, same three-quarter camera. Strong diagonal action silhouette, no new weapons or props.\nComposition: one whole character, square transparent canvas with generous margins around the extended fist and crown, no clipping. No text, labels, other characters, environment, floor, shadow blob, aura, particles, trails, blur or opaque background. Genuine alpha transparency.",
+      "referenceInput": "own art: apps/web/public/units/yarn-giant/runtime.webp; tools/v3craft-lab/poses/raw/yarn-giant/K1-A2.png",
+      "inputs": [
+        "apps/web/public/units/yarn-giant/runtime.webp",
+        "tools/v3craft-lab/poses/raw/yarn-giant/K1-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K2-A1.png",
+      "sha256": "f0f939f8fddf22cb624f4e93d5c6f51c6637272288dd316eb67e914d090eea05",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-k2-a2",
+      "date": "2026-11-16T17:05:22.764084+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent 2D battle pose K2 contact punch, our original Yarn Giant.\nInput image 1 is the K2 punch to edit. Input image 2 is our original idle and defines the intended head proportions.\nCorrect two measured problems. First, make the yarn cranium, face and jaw BELOW the crown 10 percent smaller in height and width. Keep the crown top at the same standing height and its design unchanged; raise the jaw and reconnect neck yarn naturally. Second, lengthen the extended LEFT punching forearm by about 40 percent, moving its large fist much farther left without moving the shoulder, torso or feet. The fist must reach at least an extra one-sixth of full character height farther left than in image 1. Show a long straight striking arm with a clear readable fist. Give this extended fist sufficient empty canvas; zoom the whole composition out if needed, without changing anatomical proportions.\nKeep the other fist bent back at the right shoulder and both feet widely planted on the same floor line. Preserve fist sizes, torso, cape, pendant, foot positions relative to torso, full standing height, three-quarter camera, lighting, muted mauve/rose palette, yarn detail, gold eyes and worn crown. Do not foreshorten the front arm. Same character, no new props.\nOne complete character on a square genuinely transparent canvas, generous margins, no clipping. No text, environment, floor, cast shadow, aura, particles, trail, blur or opaque background.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/yarn-giant/K2-A1.png; apps/web/public/units/yarn-giant/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/yarn-giant/K2-A1.png",
+        "apps/web/public/units/yarn-giant/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K2-A2.png",
+      "sha256": "5dc5ea92367f27483151c0e8417a1da9d7f25a10e0f046ca3358849275d6f438",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-k2-a3",
+      "date": "2026-11-16T17:06:58.832711+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent 2D battle pose K2 contact punch, our original Yarn Giant.\nThis image is the exact approved action silhouette to edit. Change only its yarn head below the crown: increase the cranium, face and jaw height and width by about 10 percent. Keep the crown top in exactly the same position, keep the crown itself unchanged, and extend the lower jaw a little toward the neck. Reconnect the yarn neckline naturally. The yarn head from top of cranium, excluding crown, to bottom of jaw/neck rope should occupy one third of the whole floor-to-crown character height. Keep the gold eyes and original face identity.\nEverything else stays unchanged: the exceptionally long straight left punch and its fist, rear raised fist, all arm lengths, torso and cape, pendant, both planted feet, pose, full standing height, canvas framing, empty margins, mauve/rose yarn palette, highlights, painted texture and camera. Do not shorten the punch or move the feet. Do not scale the whole character.\nOne complete character with genuine alpha transparency. No new props, text, background, floor, shadow, effects, trail, blur or clipping.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/yarn-giant/K2-A2.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/yarn-giant/K2-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K2-A3.png",
+      "sha256": "09e5fd1d5ec03dfb143e38bf1aa88af91026004729bcbb49bfc26d5d679d579a",
+      "status": "selected source K2 after authorized masked Lab correction20%; export/runtime/film pending",
+      "metrics": "tools/v3craft-lab/v4-yarn-giant/K2-A3-colour-20-metrics.json",
+      "derivation": "tools/v3craft-lab/v4-yarn-giant/K2-A3-colour-20.json"
     }
   ]
 }
