@@ -3939,6 +3939,19 @@
       "output": "tools/v3craft-lab/poses/raw/binding-thread/K4-A2.png",
       "sha256": "55f63232814d501ce8abe13bdcfcc77d8b3494737ea0d4339a8fd6b401b07fbd",
       "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-binding-thread-knotted-thread",
+      "date": "2026-11-16T10:23:53.145950+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept, identity-preserve.\nAsset: one original painted transparent projectile texture for our Binding Thread ranged battle character. The attached image is our own runtime art; use only its dusty rose/plum yarn, aged brass warmth, wrapped-cord construction and painted outline style.\nPaint one compact interwoven yarn knot at the LEFT end, pulling two long frayed twisted cords horizontally toward the RIGHT. The leading knot is angular and braided, with clear overlapping strands and small negative-space gaps. The two tails are unequal, one almost straight and one gently curved, tapering into individual fibres. This must read as thrown physical thread, not a ring, orb, fog, magic beam or explosion. Keep pink highlights muted, dark plum strand edges, and warm soft rim lighting matching the source. No character, hand, face, separate objects, neon glow or text.\nOne connected asset only, occupying a wide horizontal strip in the middle of a square canvas, generous transparent padding, full knot and both tail tips visible. True alpha background. No ground shadow, environment, checkerboard or gradient backdrop. Preserve tactile yarn detail at small battle size.",
+      "referenceInput": "own art only",
+      "inputs": [
+        "apps/web/public/units/binding-thread/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/v4-binding-thread/raw/knotted-thread.png",
+      "sha256": "8e88f6a293100040b8ae821528fce24da55bb218fcac259f15d2acb2ec4547f7",
+      "status": "candidate; drill review pending"
     }
   ]
 }
