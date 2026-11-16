@@ -1149,7 +1149,10 @@
       "layoutVersion": 2,
       "reviewRequired": true,
       "sha256": "f2f12afbfc2489c705bbd6c58ce3bf04465aa1d9b0a80a2b933dc006b8d998c1",
-      "reviewed": false
+      "reviewed": true,
+      "humanVerdict": "visible-regions-readable",
+      "reviewNote": "f720-762: ally 2/1 and Panko 2/1/2/+1 remain readable through the pink sweep; enemy stun1 is legible while present. Four portrait stars are clear. Existing Binding/toolbar overlap remains.",
+      "reviewedAt": "2026-11-16T19:57:21.133606+00:00"
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-18.jpg",
@@ -1160,7 +1163,10 @@
       "layoutVersion": 2,
       "reviewRequired": true,
       "sha256": "678cbace0f2bb8e1c621f186cf68cccf2bc305ec6888dcdf706790f75e432485",
-      "reviewed": false
+      "reviewed": true,
+      "humanVerdict": "supplement-required",
+      "reviewNote": "f765-807: visible ally counters and four stars are readable; Panko overflow+1 is legible until its row changes. Binding status/toolbar overlap is especially visible at f780 and f786 and needs full context.",
+      "reviewedAt": "2026-11-16T19:57:21.133606+00:00"
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-19.jpg",
@@ -1171,7 +1177,10 @@
       "layoutVersion": 2,
       "reviewRequired": true,
       "sha256": "630e13070d2e4289ea113d6ba21f71cbc080985b258398a3a4be9ca156abef13",
-      "reviewed": false
+      "reviewed": true,
+      "humanVerdict": "visible-regions-readable",
+      "reviewNote": "f810-852: ally 2/1 and Panko 2/2/1 counters remain readable through the character motion; all four stars remain clear. Existing lower Binding/toolbar collision persists, already queued for context.",
+      "reviewedAt": "2026-11-16T19:57:21.133606+00:00"
     },
     {
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/hud-films/boss-hud-v2-20.jpg",
@@ -1182,7 +1191,10 @@
       "layoutVersion": 2,
       "reviewRequired": true,
       "sha256": "7b1634e82daa02a926f4913e9ab3413c1be0a03bc49c8209eadf2455d12e326e",
-      "reviewed": false
+      "reviewed": true,
+      "humanVerdict": "visible-regions-readable",
+      "reviewNote": "f855-897: ally 2/1 and Panko 2/2/1 counters and all four stars remain readable through the closing frames. Existing lower Binding/toolbar overlap persists; no additional crop-coverage gap observed.",
+      "reviewedAt": "2026-11-16T19:57:21.133606+00:00"
     }
   ],
   "coverageFollowups": [
@@ -1569,6 +1581,20 @@
       "encodedFrame": 672,
       "actor": "soot",
       "reason": "Upper crop boundary or viewport/toolbar occlusion requires full native-pixel viewport context.",
+      "resolved": false
+    },
+    {
+      "fixture": "boss",
+      "encodedFrame": 780,
+      "actor": "foe-2-binding-thread",
+      "reason": "Status/toolbar overlap requires full native-pixel viewport context.",
+      "resolved": false
+    },
+    {
+      "fixture": "boss",
+      "encodedFrame": 786,
+      "actor": "foe-2-binding-thread",
+      "reason": "Status/toolbar overlap requires full native-pixel viewport context.",
       "resolved": false
     }
   ],
