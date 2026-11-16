@@ -1,0 +1,108 @@
+"""Bind reviewed placement films and layouts to the installed runtime, without overwriting evidence."""
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib
+import json
+import subprocess
+
+ROOT = Path(__file__).resolve().parents[3]
+OUT = ROOT / 'reports/v4-art/REVIEW/A11/placement-runtime-r1'
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+git = lambda *args: subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
+now = datetime.now(timezone.utc).isoformat()
+targets = ['lane-audit-final.json', 'acceptance-receipt.json']
+assert not any((OUT / name).exists() for name in targets), 'Never overwrite a receipt'
+runtime = read(OUT / 'source-hashes.json')
+validation = read(OUT / 'validation.json')
+pipeline = read(OUT / 'capture-jobs.json')
+films = read(OUT / 'film-review.json')
+capture = read(OUT / 'film-capture-verification.json')
+markers = read(OUT / 'encoded-markers.json')
+layout = read(OUT / 'layout900.json')
+visual = read(OUT / 'layout900-review.json')
+native = read(OUT / 'native-label-review-r1.json')
+assert validation['complete'] and validation['pass'] and validation['runtimeUnchanged']
+assert pipeline['complete'] and pipeline['pass'] and pipeline['runtimeUnchanged']
+assert films['reviewComplete'] and len(films['sheets']) == films['reviewedCount'] > 0
+assert all(s['reviewed'] and s['visualObservation'] for s in films['sheets'])
+assert films['assessmentScope'] and films['limitations'] and films['finding']
+assert visual['reviewComplete'] and len(visual['sheets']) == 3
+assert all(s['reviewed'] and s['observation'] for s in visual['sheets'])
+assert native['complete'] and native['mappingPass'] and native['reviewComplete']
+assert len(native['mappings']) == 42 and native['reviewedCount'] == len(native['sheets'])
+assert all(s['reviewed'] and s['observation'] for s in native['sheets'])
+assert native['finding'] and native['limitations']
+fixtures = {'wave1', 'wave3', 'boss'}
+assert capture['pass'] and {r['fixture'] for r in capture['rows']} == fixtures
+assert len(markers) == 3 and {r['fixture'] for r in markers} == fixtures
+assert all(r['pass'] and r['frames'] == r['valid'] == 900 for r in markers)
+assert len(layout['results']) == 3 and {r['fixture'] for r in layout['results']} == fixtures
+assert all(r['parity'] and not r['errors'] and not r['failures'] for r in layout['results'])
+assert runtime == validation['runtimeHashes'] == pipeline['runtimeSourceHashes']
+assert all(sha(ROOT / p) == h for p, h in runtime.items()), 'Runtime changed'
+assert all(sha(ROOT / s['reviewPath']) == s['sha256'] for s in films['sheets'])
+assert all(sha(ROOT / s['path']) == s['sha256'] for s in visual['sheets'])
+assert all(sha(ROOT / s['path']) == s['sha256'] for s in native['sheets'])
+assert all(sha(ROOT / r['video']) == r['videoSha256'] for r in capture['rows'])
+runtime_commit = git('rev-parse', '48f5df4c0')
+runtime_delta = git('diff', '--name-only', runtime_commit, 'HEAD', '--', 'apps/web/src', 'apps/web/public').splitlines()
+assert not runtime_delta, runtime_delta
+parity = read(OUT / 'parity.json')
+assert parity['pass'] and parity['runtimeHashes'] == runtime
+assert len(parity['rows']) == 3 and all(r['parity'] and r['baselineMatches'] and not r['errors'] for r in parity['rows'])
+assert sha(ROOT / 'reports/v3-feel/parity-new.json') == parity['baselineSha256']
+replay = read(OUT / 'runtime-check-r1.json')
+assert replay['complete'] and replay['pass'] and replay['productionInstalled'] and replay['runtimeUnchanged']
+
+baseline = read(OUT / 'lane-audit.json')['baseline']
+committed = [line.split('\t') for line in git('diff', '--name-status', baseline, 'HEAD').splitlines()]
+staged = [line.split('\t') for line in git('diff', '--cached', '--name-status').splitlines()]
+planned = [str((OUT / name).relative_to(ROOT)) for name in targets]
+files = sorted({row[-1] for row in committed + staged} | set(planned))
+allowed = ('apps/web/public/units/', 'apps/web/public/vfx/', 'apps/web/src/game/cardrpg/battle-v3/',
+           'apps/web/src/game/cardrpg/spine/', 'apps/web/src/game/cardrpg/stage/',
+           'apps/web/src/game/cardrpg/vfx-craft/', 'apps/web/src/game/cardrpg/vfx-layered/',
+           'apps/web/src/game/rig/', 'tools/v3craft-lab/', 'scripts/v3feel/', 'reports/v4-art/', 'reports/v3-feel/')
+violations = [p for p in files if not p.startswith(allowed) or 'audio' in p.lower()
+              or p.endswith(('.log', '.webm', '.mp4', '.DS_Store')) or '/raw/' in p or '/private/' in p]
+originals = [p for p in files if p.startswith(('apps/web/public/units/', 'apps/web/public/vfx/')) and '/sampled-delivery/' not in p]
+v3_changes = [row for row in committed + staged if row[-1].startswith('reports/v3') and row[0] != 'A']
+audit = {'at': now, 'baseline': baseline, 'head': git('rev-parse', 'HEAD'), 'count': len(files), 'files': files,
+         'scope': 'Committed ART paths, explicitly staged checkpoint paths and the two planned receipt outputs; inherited unstaged files excluded.',
+         'pendingCheckpointPaths': [row[-1] for row in staged], 'plannedReceiptPaths': planned,
+         'violations': violations, 'originalOrExactMapChanges': originals, 'v3NonAppendChanges': v3_changes,
+         'pass': not (violations or originals or v3_changes)}
+(OUT / targets[0]).write_text(json.dumps(audit, indent=2) + '\n')
+assert audit['pass'], audit
+proofs = ['source-hashes.json', 'validation-preflight.json', 'validation.json', 'parity.json',
+          'runtime-check-r1.json', 'capture-jobs.json', 'film-capture-verification.json', 'encoded-markers.json',
+          'film-review.json', 'layout900.json', 'layout900-review.json', 'native-label-review-r1.json', 'lane-audit-final.json']
+receipt = {
+    'at': now, 'status': 'SCOPED_PLACEMENT_REVIEW_COMPLETE; full composition and integration acceptance OPEN',
+    'runtimeCommit': runtime_commit, 'captureSourceCommit': pipeline['sourceCommit'], 'receiptSourceCommit': git('rev-parse', 'HEAD'),
+    'scriptSha256': sha(Path(__file__)), 'runtime': {'verifiedHashes': len(runtime), 'changesSinceInstalledRuntime': runtime_delta},
+    'proofs': [{'path': str((OUT / p).relative_to(ROOT)), 'sha256': sha(OUT / p)} for p in proofs],
+    'validation': {'fullWeb': validation['fullWebSummary'], 'typecheck': 'Source-matched preflight passed',
+                   'explicitThreeFixtureParity': True, 'installedDomEquivalence': True, 'lanePass': True},
+    'films': [{'fixture': r['fixture'], 'videoSha256': r['videoSha256'], 'durationSeconds': r['containerDurationSeconds'],
+               'encodedFrames': r['encodedFrames'], 'medianRenderFPS': r['medianRenderFPS'], 'audioCodecs': r['audioCodecs']}
+              for r in capture['rows']],
+    'visualReview': {'actionSheets': len(films['sheets']), 'ultimateSheets': sum(s['tier'] == 'ultimate' for s in films['sheets']),
+                     'layout900Sheets': len(visual['sheets']), 'layout900Samples': sum(r['frames'] for r in layout['results']),
+                     'scope': films['assessmentScope'], 'finding': films['finding'], 'limitations': films['limitations']},
+    'nativeLabelReview': {'sheets': len(native['sheets']), 'semanticSamples': len(native['mappings']),
+                          'maxElapsedDifferenceMs': max(abs(m['elapsedDifferenceMs']) for m in native['mappings']),
+                          'scope': native['scope'], 'finding': native['finding'], 'limitations': native['limitations']},
+    'open': ['All original defects without exact reproduced evidence remain retained.',
+             'Portrait/banner contact, shield/result-number crowding and 900p wave1 orange-glow attribution.',
+             'Continuous-shake duration, reduced-motion film, activation, final SHIP classes and process-time split.',
+             'Audio quality and complete native-pixel legibility are not accepted by reduced review sheets.'],
+    'transfer': {'integratedProductionGate': 'OPEN', 'boundShipBytes': [27546250, 27546252], 'limitBytes': 8000000,
+                 'previousProjectionBytes': 7966311, 'previousProjectionPredatesPlacementRuntime': True,
+                 'cumulativeAddedAsset6MbGate': 'Remeasure at integration'},
+    'fullAcceptance': False,
+}
+(OUT / targets[1]).write_text(json.dumps(receipt, indent=2) + '\n')
+print(json.dumps({'receipt': str((OUT / targets[1]).relative_to(ROOT)), 'lanePaths': len(files),
+                  'actionSheets': len(films['sheets']), 'fullAcceptance': False}))
