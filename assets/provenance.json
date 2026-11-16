@@ -4241,6 +4241,34 @@
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A3.png",
       "sha256": "4e0d6e053f323dcd9ce7918f6016f1518e22244c48aaef2081aa929b1100c49d",
       "status": "rejected: head ratio1.132910 outside .95..1.05; fixed landmarks493..612; raw and metrics retained"
+    },
+    {
+      "id": "v4-needle-moth-k1-a4",
+      "date": "2026-11-16T13:38:10.335653+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Precise edit of our original Needle Moth wind-up sprite in the first reference (K1-A3). The second reference is only the approved character identity guide. Keep the same full sprite and true transparent background. Make one correction only: SHRINK THE MAIN WEDGE HEAD by twelve percent in both width and height, anchored at its bottom chin near source y612. In K1-A3 the head cap begins near y493 and the cloth chin ends near y612, making it119 pixels tall; after this edit the cap should begin near y507 and the chin stay near y612, giving105 pixels. These coordinates refer to the current1254x1254 image and exclude the leaf antennae and rose scarf. Preserve the wedge geometry, gold eyes, expression and woven mauve cloth. Reattach the slender leaf antennae naturally without making them broader. Keep wings, body, scarf, needle, arms, feet, pose and framing completely unchanged, with highest wing tips near y202 and feet near y1176. Do not scale or crop the entire sprite. No new features, text, shadow, background, glow or blur. This is a small proportional correction to the existing original art.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K1-A3.png; apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K1-A3.png",
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A4.png",
+      "sha256": "f9837367b6cf5f8b9c0e5d8f85cde51a3d9ccc7e13a1d4563ce9ac8a8e390b7f",
+      "status": "rejected: head ratio1.054583 and dE6.452161 exceed unchanged limits; raw/metrics retained"
+    },
+    {
+      "id": "v4-needle-moth-k1-a5",
+      "date": "2026-11-16T13:40:42.520982+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Precise-object edit: use the first image as the edit target, our original Needle Moth wind-up sprite K1-A4. Use the second image only as the approved material, color and character-identity reference. Keep the complete character on a genuinely transparent background. The head is still slightly too large: make ONLY the mauve wedge-shaped head and its two gold eyes about SEVEN PERCENT SMALLER, in both width and height. Keep its chin attachment above the scarf fixed, lower the top cap accordingly, and reattach the existing slender antennae naturally. Target about104 source pixels from the top of the main head cap to the pointed cloth chin, excluding antennae and scarf, on the1254-square canvas. Preserve the same head shape, eye direction and stitched cloth texture. Keep every other pixel region as close to K1-A4 as possible: wing height and shape, rose panels, gold stitches, scarf, brooch, long needle, arms, body, planted legs and feet, framing and pose. Do not scale the entire sprite. Keep the subdued dusty mauve and rose palette of the approved second reference; do not increase saturation or brightness. No new objects, text, glow, shadow, ground, background or cropping.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K1-A4.png; apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K1-A4.png",
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A5.png",
+      "sha256": "ce48e466ff7a96be87b17db0e3c57ef765f2b760432156923e1891511def6dfe",
+      "status": "rejected: head ratio.940574 and dE6.800043 exceed unchanged limits; raw/metrics retained"
     }
   ]
 }

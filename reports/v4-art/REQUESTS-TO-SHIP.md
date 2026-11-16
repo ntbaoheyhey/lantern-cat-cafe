@@ -30,3 +30,5 @@ Please fix tools/v3-demo/asset-aliases.mjs to enumerate registered unit IDs inst
 
 ## Binding portrait repair — 2026-11-16T13:35:59.815836+00:00
 Added `/units/binding-thread/portrait.webp` as an exact byte copy of approved runtime artwork (97,490B,640x640). Before/after browser decode checks at1280x720 and1440x900 are in `REVIEW/A10/binding-portrait`; the missing URL failed before and decodes after. No new generated artwork or renderer change. Please rerun S11 integrated journeys after scheduled merge; total production transfer remains open. Delivery commit follows.
+
+Binding portrait delivery pushed: `c5ccdfae1`. Scoped browser decode checks pass; schedule integration and rerun S11 as above.

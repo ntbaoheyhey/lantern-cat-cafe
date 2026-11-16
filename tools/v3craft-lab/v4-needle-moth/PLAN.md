@@ -7,3 +7,7 @@ Authoring started after the A10 receipt; no production change was made during it
 K1-A1 retained as failed: IoU .347831, mean Lab dE 1.166445, feet 0px, head ratio .799373 outside +/-5%. Fixed source head landmarks489..589 preceded measurement.
 K1-A2 retained as failed: fixed head518..607; IoU .366825, dE3.544436, feet1px, head ratio .849046. Wing height improved but head shrank; no threshold relaxed.
 K1-A3 retained as failed: fixed head493..612, IoU .372294,dE5.849026,feet0,head ratio1.132910. The requested18% enlargement overshot; K1-A4 targets a12% reduction around the chin. Measurement uses actual alpha>=128 K0 height, not the nominal410px description.
+K1-A4 retained as failed: fixed head494..605; head ratio1.054583 and dE6.452161 exceed their unchanged limits. IoU.376799,feet0,no clipping. K1-A5 requests7%smaller head and the subdued approved palette; Lab correction remains available after anatomy passes.
+K1-A5 retained as failed: fixed head501..600; head ratio.940574,dE6.800043,IoU.377493,feet0. K1-A6 requests only4%head enlargement from this result; minimal Lab translation may follow on the normalized copy, preserving all raw attempts.
+
+Lab effect scaffold authored in needle-stitches.ts; no production routing yet. Drill1 uses150ms straight flight,850px fan spread/18needles; drill2 uses250ms flight and a940px spread. Three45ms-separated falling fans replace Binding cross-woven net; original gold needle/rose zigzag paint pending. Area/face/socket gates must be measured after export.
