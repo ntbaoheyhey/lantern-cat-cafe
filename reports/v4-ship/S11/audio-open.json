@@ -1,32 +1,69 @@
 {
-  "at": "2026-11-16T10:25:20.636444+00:00",
-  "item": "S5",
-  "status": "open; timeboxed",
-  "gates": [
-    "estimatedOnset",
-    "primaryButtonAudioCoverage",
-    "everyReceiptChime",
+  "at": "2026-11-16T18:51:27.081712+00:00",
+  "item": "S5/S11",
+  "status": "open; evidence refreshed without audio runtime change",
+  "priorState": {
+    "path": "reports/v4-ship/S11/audio-open-before-refresh-1.json",
+    "sha256": "399740b54b232f9e53b6a3da745276affc01a185c9d90b004974de0d7c612495"
+  },
+  "gatesStillOpen": [
+    "allEventEstimatedOnset",
     "weaponImpactCoverage",
     "intelligibilityProxy",
     "humanListening",
-    "physicalAudibleOnset"
+    "physicalAudibleOnset",
+    "completeCoverageOnCurrentIntegratedRuntime"
   ],
-  "finalCheck": {
-    "path": "reports/v4-ship/S5/final-check-1.json",
-    "sha256": "cd76fce51c820ade62c87f5e3d9e2033d74aa6a0c6e34d9d510d285b7c349b62"
+  "observedScopedPasses": {
+    "journey3PrimaryControls": "10/10 on production6 at1280x720",
+    "journey3ReceiptChimes": "18/18 RPC-verified local receipts causally matched",
+    "journey3SourceBudget": 5,
+    "endurance": {
+      "coverage30Minutes": true,
+      "loudness": true,
+      "truePeak": true,
+      "loudnessRange": true,
+      "sourceBudget": true,
+      "duckDepth": true,
+      "duckRecovery": true,
+      "zeroErrors": true
+    },
+    "bossDeathEstimatedOnsets": "18/18 within33ms; maximum32.84933333331719ms"
   },
   "measurements": {
-    "recognition": "8/12; required10/12",
-    "estimatedOnsetMaxMs": 40.66533334228734,
-    "failingOnsetCue": "voice.yarn-giant.death",
-    "pageErrors": 0,
-    "voiceInterruptions": 0
+    "recognition": "Frozen and fresh first-twelve proxies both8/12; human review unverified",
+    "allEventEstimatedOnsetMaxMs": 33.37833333341405,
+    "continuousSeconds": 1801.1170001029968,
+    "aggregate": {
+      "lufs": -16.99,
+      "lra": 8.9,
+      "peak": -1.82
+    },
+    "audioSignatureMatchesCurrent": 135
   },
   "nextMethods": [
-    "Preserve first-occurrence onset failure; compare terminal-voice warmup with unchanged scene timing.",
-    "Address source clarity/masking with the same frozen first-twelve selection; do not reroll successful alternatives.",
-    "Use complete journey playback records for button/receipt coverage, and paired visual/audio events for weapon coverage.",
-    "Human listening at R2 and physical onset verification remain separate from proxies."
+    "Observe actual battle plan/contact events and source starts for weapon/impact coverage; do not infer coverage from cue totals.",
+    "Refresh complete production journey audio evidence at both required viewports.",
+    "Keep human listening and physical onset separate; no device interaction or password request."
   ],
-  "runtimeChanged": false
+  "evidence": [
+    {
+      "path": "reports/v4-ship/S11/audio-journey-3.json",
+      "sha256": "beb207b4e738828c0a4f06862500c25f6b075f9fc5685d47b4bd20492b413321"
+    },
+    {
+      "path": "reports/v4-ship/S11/audio-endurance-decision-1.json",
+      "sha256": "53de89e1033994bbe89d58992c79396ed82fa04897f9c64388c66a22c1b106c9"
+    },
+    {
+      "path": "reports/v4-ship/S11/audio-coverage-comparison-1.json",
+      "sha256": "3dc670061042256b9e64782ec0788fc483b609606e8797b5189bc6a8fa98e84b"
+    },
+    {
+      "path": "reports/v4-ship/S11/audio-startup-decision-1.json",
+      "sha256": "a9b5e40e9d3e2995e1b55558bcbc51c56a6e11ec5765124b2861116420777b67"
+    }
+  ],
+  "runtimeChanged": false,
+  "overallAudioGatePass": false
 }

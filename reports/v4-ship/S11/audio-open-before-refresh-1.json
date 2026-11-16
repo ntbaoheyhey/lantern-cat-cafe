@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-16T10:25:20.636444+00:00",
+  "item": "S5",
+  "status": "open; timeboxed",
+  "gates": [
+    "estimatedOnset",
+    "primaryButtonAudioCoverage",
+    "everyReceiptChime",
+    "weaponImpactCoverage",
+    "intelligibilityProxy",
+    "humanListening",
+    "physicalAudibleOnset"
+  ],
+  "finalCheck": {
+    "path": "reports/v4-ship/S5/final-check-1.json",
+    "sha256": "cd76fce51c820ade62c87f5e3d9e2033d74aa6a0c6e34d9d510d285b7c349b62"
+  },
+  "measurements": {
+    "recognition": "8/12; required10/12",
+    "estimatedOnsetMaxMs": 40.66533334228734,
+    "failingOnsetCue": "voice.yarn-giant.death",
+    "pageErrors": 0,
+    "voiceInterruptions": 0
+  },
+  "nextMethods": [
+    "Preserve first-occurrence onset failure; compare terminal-voice warmup with unchanged scene timing.",
+    "Address source clarity/masking with the same frozen first-twelve selection; do not reroll successful alternatives.",
+    "Use complete journey playback records for button/receipt coverage, and paired visual/audio events for weapon coverage.",
+    "Human listening at R2 and physical onset verification remain separate from proxies."
+  ],
+  "runtimeChanged": false
+}

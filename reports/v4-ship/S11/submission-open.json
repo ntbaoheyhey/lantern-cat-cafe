@@ -1,24 +1,46 @@
 {
-  "at": "2026-11-16T12:58:57.528716+00:00",
+  "at": "2026-11-16T18:51:27.081712+00:00",
   "gate": "G-SUBMIT",
   "pass": false,
+  "priorState": {
+    "path": "reports/v4-ship/S11/submission-open-before-refresh-1.json",
+    "sha256": "56723f817960b381548899e24b8b273ac80aceec87f5c5debef41d644e79a0ee"
+  },
   "preparation": {
     "capture": "S10/film-capture-2.json",
     "verifiedReceipts": 18,
-    "media": "S10/film-verify-1.json",
-    "seconds": 152.833333,
-    "bytes": 9315673,
-    "captions": "47 synchronized English/Vietnamese cues,10 actual voice events; human review open"
+    "media": "S10/film-verify-3.json",
+    "seconds": 169.833333,
+    "bytes": 9314863,
+    "captions": "53 synchronized English/Vietnamese cues, 13 whole recorded voice events; human review open",
+    "publicExplorer": "Five seconds from verified standard-headless WebKit recording; separate historical public Fuji receipt",
+    "audio": {
+      "input_i": -17.86,
+      "input_tp": -2.22,
+      "input_lra": 5.2
+    }
   },
+  "closedFollowups": [
+    "Actual public Snowtrace source footage captured and source hash bound to delivery",
+    "Preparation encoded audio meets loudness, peak and LRA thresholds"
+  ],
   "open": [
     "Scheduled R2/FINAL integrated builds remain due",
-    "Public Snowtrace access verified in normal in-app browser; actual explorer film recording remains absent",
-    "Edited film LRA4.8<5; human listening and caption/readability review remain open",
+    "Human listening and caption/readability review remain open",
     "Seven known ART regression failures and official class baseline remain open"
   ],
   "evidence": [
-    "reports/v4-ship/S10/film-verify-1.json",
-    "reports/v4-ship/S10/explorer-access-2.json",
-    "reports/v4-ship/S10/regression-2/check.json"
+    {
+      "path": "reports/v4-ship/S10/film-verify-3.json",
+      "sha256": "475294cdf7499a8160dd9a6f3ca0f506dacf0d7b67788c0e7095a08b2588f789"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-headless-comparison-1.json",
+      "sha256": "6168080ea5f4302eb9409990089b5161287e94075e4cdb8bd1ca467f55aa370d"
+    },
+    {
+      "path": "reports/v4-ship/S10/explorer-fee-dom-1.json",
+      "sha256": "acb3eec6c1dd768569be115c543cd3a5f574d85d8d6dba87db17d13e326b0da5"
+    }
   ]
 }

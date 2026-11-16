@@ -1,0 +1,142 @@
+{
+  "at": "2026-11-16T18:51:27.081712+00:00",
+  "scope": "Refresh acceptance state from immutable later evidence, preserving original failures and unresolved gates",
+  "sourceCommit": "862f97196355e7de4594bc1e1fce29b6b8c36bef",
+  "priorStates": {
+    "submission": {
+      "path": "reports/v4-ship/S11/submission-open-before-refresh-1.json",
+      "sha256": "56723f817960b381548899e24b8b273ac80aceec87f5c5debef41d644e79a0ee"
+    },
+    "audio": {
+      "path": "reports/v4-ship/S11/audio-open-before-refresh-1.json",
+      "sha256": "399740b54b232f9e53b6a3da745276affc01a185c9d90b004974de0d7c612495"
+    },
+    "repo": {
+      "path": "reports/v4-ship/S11/repo-open-before-refresh-1.json",
+      "sha256": "16a884c43f3948e1b4cf055fe8fecd14e17b9ecc7a176774f481938f5f29a836"
+    }
+  },
+  "currentStates": {
+    "submission": {
+      "path": "reports/v4-ship/S11/submission-open.json",
+      "sha256": "567fcc56f52a1601291b8c8d6c7005f390efbcb54ca64f41c44a3bb79281bab4"
+    },
+    "audio": {
+      "path": "reports/v4-ship/S11/audio-open.json",
+      "sha256": "2548f6baf79792beecaf0e510e97e00e3edb01cfee7e2c7ad99fcef3000b4a80"
+    },
+    "repo": {
+      "path": "reports/v4-ship/S11/repo-open.json",
+      "sha256": "48ca1584afab5d934188f7d4af170b63ab81ba49b95823aa94cbe2344654f7f4"
+    }
+  },
+  "comparisons": {
+    "oldVsCurrentFilm": {
+      "seconds": [
+        152.833333,
+        169.833333
+      ],
+      "bytes": [
+        9315673,
+        9314863
+      ],
+      "lra": [
+        4.8,
+        5.2
+      ],
+      "captions": [
+        47,
+        53
+      ],
+      "wholeVoices": [
+        10,
+        13
+      ],
+      "publicExplorerFootage": [
+        false,
+        true
+      ]
+    },
+    "oldVsLatestBossDeathEstimateMs": [
+      40.66533334228734,
+      32.84933333331719
+    ],
+    "allEventEstimateStillFailsMs": 33.37833333341405,
+    "audioSignatureHashesMatch": 135
+  },
+  "history": {
+    "prefix": {
+      "path": "reports/v4-ship/S11/history-gzip-prefix-review-7.json",
+      "sha256": "f4f7984917fcc3fbf74364d0d7c9e7ab14378474fc1151c201da5b8615aa7c3f"
+    },
+    "textSupplement": {
+      "path": "reports/v4-ship/S11/history-supplement-6.json",
+      "sha256": "fa55aa7eb7d298acfa0cf87d94bf1b7121d35486f7d7b72a242458bc22521277"
+    },
+    "gzipSupplement": {
+      "path": "reports/v4-ship/S11/history-gzip-supplement-review-3.json",
+      "sha256": "9a70064e0d8ff41644694c9895d4d489692b1c6d4eda2d02caa20c3135bb0fb9"
+    },
+    "newTextCommits": 7,
+    "totalSupplementalTextCommits": 40,
+    "priorReviewedFalsePositives": 1,
+    "reachableScopeCoveredByOriginalAndSupplementLists": true,
+    "allOriginalCommitsScanned": false,
+    "verificationCorrection": "An initial scope-only assertion incorrectly required zero findings in every historical supplement. Supplement2 has one previously reviewed false positive. Verified its immutable committed blob and review hash; retained zero-unresolved requirement. No scanner result or detector setting changed."
+  },
+  "runtimeChanged": false,
+  "fullHistoryPass": false,
+  "overallAudioGatePass": false,
+  "submissionPass": false,
+  "learn": [
+    "reports/v4-ship/LEARN/S11-history.md",
+    "reports/v4-ship/LEARN/S11-history-gzip.md",
+    "reports/v4-ship/LEARN/S11-audio.md",
+    "reports/v4-ship/LEARN/S10-explorer-headless.md"
+  ],
+  "regression": {
+    "check": {
+      "path": "reports/v4-ship/S11/evidence-refresh-regression-1/check.json",
+      "sha256": "4806b6d91be729eeb984f425a61e9c16e378b8364baf01e313429ac704fbf496"
+    },
+    "logs": [
+      {
+        "path": "reports/v4-ship/S10/explorer-film-regression-1/log.jsonl.gz",
+        "sha256": "a775c3a3390db0d09a5d57e98f02a0a78b86ff5de6f198a296fac0ae294c3020",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ],
+        "counts": [
+          "2 failed | 318 passed (320)",
+          "7 failed | 2680 passed (2687)"
+        ]
+      },
+      {
+        "path": "reports/v4-ship/S11/evidence-refresh-regression-1/log.jsonl.gz",
+        "sha256": "da7e674e432177fbac49dd176dc4ee4ca2fb26abf19ea4bed60cdcffa486dd34",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ],
+        "counts": [
+          "2 failed | 318 passed (320)",
+          "7 failed | 2680 passed (2687)"
+        ]
+      }
+    ],
+    "sameSevenArtFailures": true,
+    "gRegPass": false,
+    "officialClassParityPass": false
+  }
+}
