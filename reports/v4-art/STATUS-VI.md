@@ -14,3 +14,4 @@ Còn 42 khung clipping/đè HUD, bảng tên Panko và cụm số wave3.
 Hai thử bố trí trên sáu cảnh đã xong; chọn cách tránh HUD/khuôn mặt để kiểm chứng chuyển động, chưa cài vào runtime.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
 A11: pipeline xong;2.799mẫu900p không lỗi bố cục theo ngưỡng. Đã xem28/84sheet; giữ lỗi nhãn sát mép trên và cửa sổ cuối bị cắt.
+A11: đã xem56/84sheet; wave3 còn bannerPanko chạm chân dung và sốSoot dày. Cửa sổ Crumb cuối chỉ có trạng thái mở đầu.
