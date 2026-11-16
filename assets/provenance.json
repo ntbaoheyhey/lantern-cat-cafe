@@ -3886,6 +3886,19 @@
       "output": "apps/web/public/vfx/panko/crust-cut.webp",
       "sha256": "f1fbe8077f84468cd4d87db288dfe0ba3d26cbb47945db00e7271d61bdf78b5f",
       "review": "reports/v4-art/LEARN/A6.md; production gates pending"
+    },
+    {
+      "id": "v4-binding-thread-k1-a1",
+      "date": "2026-11-16T09:42:48.999176+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset: one original transparent full-body drawn key pose for our 2D battle character Binding Thread.\nImage1 is our own approved runtime art and is the sole identity/style reference. Redraw the SAME anthropomorphic wooden spindle: aged brass top rim and small rounded knob, brass bottom rim, tightly wound dusty-rose and plum cloth threads, narrow golden eyes under the top rim, two long flexible rope arms with wrapped fists, two little wrapped feet. Preserve the exact material rendering, palette, outline weight, face shape and head scale.\nChange only the pose into a strong K1 ranged windup, enemy facing three-quarter LEFT. Keep both feet planted at the same baseline. Twist the tall spool torso slightly toward screen-right while eyes aim left. Gather both long arms above waist level across the body toward screen-right: one wrapped fist pulled back near the right shoulder, the other held across the torso, with sharply bent rope elbows. Raise the upper arms to leave clear transparent gaps where the idle hanging arms used to be. Make the anticipation read strongly in silhouette without shrinking the head or changing the two brass rims.\nFull body including knob, both fists and both feet visible, generous transparent padding, square canvas, roughly the same vertical body occupancy as the source. Same character only, no emitted thread beam, no effects, no ground shadow, no scenery, no text, no second character. True alpha background.",
+      "referenceInput": "own art: apps/web/public/units/binding-thread/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/binding-thread/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/binding-thread/K1-A1.png",
+      "sha256": "8c92940c925c7a16d993268e93df9bd09cddc88b08d8031d1ab2aafe040c348f",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }

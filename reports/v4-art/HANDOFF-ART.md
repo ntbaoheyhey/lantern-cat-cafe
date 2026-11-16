@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14.
 NEXT1: ps -p 68392; tail -n5 reports/v4-art/jobs/a6-framing.log; summarize six-case r4 alpha; fix >.15 then final regression and films.
 NEXT2: After live alpha passes, run A6 regression, acceptance films, blind/face/performance review; preserve failures.
 NEXT3: A7 enemies/boss, A9 ensemble; A1b exhaustive private-video catalogue at A11.
-LAST PUSH:1fde9299a;verified09:34UTC; r4checkpoint follows.
+LAST PUSH:97cfe97f7;verified09:41UTC.
 STOP/INBOX/designer:last checked none; recheck after checkpoint. SHIP db35585 nonfinal; no merge; baseline reports/v3-feel/parity-new.json.
 LIVE: Vite67838 port5990; fullalpha-r4 PID68392 reports/v4-art/jobs/a6-framing.log; launched09:41UTC.
 A5 v13 full-action occlusion6cases/1800samples PASS worst13.423%; final numeric framing/wrong-facing PASS.
@@ -33,3 +33,5 @@ ROUTE-R2: focusedwave3 two sizes PASS max.1282565/.0934989;typecheckPASS,10route
 REG-r2:2648tests/315files,typecheck,3fixtureF6 PASS. Fullalpha FAILdenseMochi/Kettle38.64%,wave1/900Mochi15.648%; raw/dynamic-route-r2-fail.json.gz. r3 pending.
 IMAGEOPENS1: Binding Thread own runtime inspected once; A7 prep LEARN only, no generated assets.
 R3 FAIL densePanko/Spool24.43%@900,regularMochi15.89%; compressed fail retained. R4 Spool(.52,.94),Kettle(.71,.94); regularMochi+24pxX,cap.1525vh.
+A7 candidate K1-A1 saved tools/v3craft-lab/poses/raw/binding-thread/K1-A1.png with provenance; builtin cell complete. First display seen; no reopen. Measurements pending.
+R4 FULLALPHA:1800samples all6cases numeric/facing PASS,worst14.0963%wave1/900. source-tree.json saved; final regression/films next.
