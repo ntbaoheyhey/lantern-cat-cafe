@@ -1,0 +1,35 @@
+[
+  {
+    "name": "typecheck",
+    "exitCode": 0,
+    "seconds": 87.8,
+    "log": "reports/v4-ship/S1/typecheck.log"
+  },
+  {
+    "name": "web-tests",
+    "exitCode": 0,
+    "seconds": 264.95,
+    "log": "reports/v4-ship/S1/tests.log",
+    "passed": 2640
+  },
+  {
+    "name": "parity",
+    "exitCode": 0,
+    "seconds": 9.96,
+    "log": "reports/v4-ship/S1/parity.log"
+  },
+  {
+    "name": "build",
+    "exitCode": 0,
+    "seconds": 62.21,
+    "log": "reports/v4-ship/S1/build.log"
+  },
+  {
+    "name": "server-tests",
+    "exitCode": 0,
+    "passed": 733,
+    "seconds": 26.91,
+    "log": "reports/v4-ship/S1/server-tests.log",
+    "invocation": "pnpm --filter @taskbar-hero/supabase-tests test"
+  }
+]

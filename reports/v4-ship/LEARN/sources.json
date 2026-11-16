@@ -54,5 +54,257 @@
     "type": "internet-doc",
     "topic": "S0 test runner recovery",
     "takeaway": "Vitest5 shares a filesystem module cache across workspace projects by default."
+  },
+  {
+    "id": "S1-ACP77",
+    "url_or_path": "https://build.avax.network/docs/acps/77-reinventing-subnets",
+    "type": "formal-document",
+    "topic": "S1 L1 validator fees",
+    "takeaway": "Activated specification: continuous dynamic validator fee floor512nAVAX/s; below10000 fee-paying validators equals~1.33AVAX per30days, excluding infrastructure."
+  },
+  {
+    "id": "S1-ACP176",
+    "url_or_path": "https://build.avax.network/docs/acps/176-dynamic-evm-gas-limit-and-price-discovery-updates",
+    "type": "formal-document",
+    "topic": "S1 fees",
+    "takeaway": "Activated dynamic gas target/price mechanism; a historical benchmark is not a current game fee."
+  },
+  {
+    "id": "S1-ACP226",
+    "url_or_path": "https://build.avax.network/docs/acps/226-dynamic-minimum-block-times",
+    "type": "formal-document",
+    "topic": "S1 block timing",
+    "takeaway": "Activated dynamic millisecond block-delay mechanism; use timestampMilliseconds for measurement."
+  },
+  {
+    "id": "S1-ACP209",
+    "url_or_path": "https://build.avax.network/docs/acps/209-eip7702-style-account-abstraction",
+    "type": "formal-document",
+    "topic": "S1 account abstraction",
+    "takeaway": "Status Proposed; cannot describe EIP7702 as active on C-Chain."
+  },
+  {
+    "id": "S1-RELEASES",
+    "url_or_path": "https://build.avax.network/docs/nodes/releases",
+    "type": "internet-doc",
+    "topic": "S1 network upgrades",
+    "takeaway": "Granite preceded Helicon; v1.15.3 release5Nov2026 is currently recommended, Helicon mainnet22Sep2026."
+  },
+  {
+    "id": "S1-GRANITE",
+    "url_or_path": "https://docs.avax.network/blog/granite-upgrade",
+    "type": "internet-doc",
+    "topic": "S1 Granite",
+    "takeaway": "Fuji activation29Oct2025; official support confirms mainnet19Nov2025."
+  },
+  {
+    "id": "S1-MAINNET-GRANITE",
+    "url_or_path": "https://support.avax.network/en/articles/12673093-avalanchego-granite",
+    "type": "internet-doc",
+    "topic": "S1 Granite",
+    "takeaway": "Mainnet Granite activation19Nov2025 at16:00UTC."
+  },
+  {
+    "id": "S1-EXCHANGE",
+    "url_or_path": "https://build.avax.network/docs/primary-network/exchange-integration",
+    "type": "internet-doc",
+    "topic": "S1 finality and fees",
+    "takeaway": "Acceptance gives finality; receipts require execution; no EIP7702 set-code; billed gas can exceed execution gas when limit oversized."
+  },
+  {
+    "id": "S1-NANSEN",
+    "url_or_path": "https://nansen.ai/post/avalanche-q2-2026-report",
+    "type": "primary-analysis",
+    "topic": "S1 historical fees",
+    "takeaway": "Report published5Aug2026 states Q2 median C-Chain transaction fee$0.000014; not a November quote."
+  },
+  {
+    "id": "S1-PRECOMPILE",
+    "url_or_path": "https://build.avax.network/docs/avalanche-l1s/evm-configuration/evm-l1-customization",
+    "type": "internet-doc",
+    "topic": "S1 L1 customization",
+    "takeaway": "Configurable transaction/deployer allowlists, native minting, fee and reward managers for own L1."
+  },
+  {
+    "id": "S1-REWARD-MANAGER",
+    "url_or_path": "https://build.avax.network/docs/avalanche-l1s/precompiles/reward-manager",
+    "type": "internet-doc",
+    "topic": "S1 fee destination",
+    "takeaway": "Controls L1 fee recipient/burn policy, distinct from game reward contracts."
+  },
+  {
+    "id": "S1-ICTT",
+    "url_or_path": "https://build.avax.network/docs/cross-chain/interchain-token-transfer/overview",
+    "type": "internet-doc",
+    "topic": "S1 cross-chain roadmap",
+    "takeaway": "ICTT contracts transfer assets between L1s over ICM; needs deployments and relayers."
+  },
+  {
+    "id": "S1-RELAYER",
+    "url_or_path": "https://docs.avacloud.io/portal/gasless-transactions/how-to-set-up-a-gasless-relayer",
+    "type": "internet-doc",
+    "topic": "S1 sponsored transactions",
+    "takeaway": "Managed L1 relayer setup requires a plan, forwarder and funding; not a free C-Chain sponsorship guarantee."
+  },
+  {
+    "id": "S1-DATA",
+    "url_or_path": "https://developers.avacloud.io/data-api/rate-limits",
+    "type": "internet-doc",
+    "topic": "S1 free data alternatives",
+    "takeaway": "Unauthenticated6000CU/min and1.2M/day; free account8000CU/min and2M/day; endpoint CU costs vary."
+  },
+  {
+    "id": "S1-INTEGRATIONS",
+    "url_or_path": "https://build.avax.network/integrations",
+    "type": "internet-doc",
+    "topic": "S1 embedded wallets",
+    "takeaway": "Lists Openfort/Privy and other wallet partners for C-Chain/L1s; not proof of a built-in free AvaCloud wallet."
+  },
+  {
+    "id": "S1-ERC4337",
+    "url_or_path": "https://eips.ethereum.org/EIPS/eip-4337",
+    "type": "formal-document",
+    "topic": "S1 account abstraction",
+    "takeaway": "Smart accounts, bundlers and paymasters enable sponsorship without a native protocol change."
+  },
+  {
+    "id": "S1-VRF",
+    "url_or_path": "https://docs.chain.link/vrf/v2-5/supported-networks",
+    "type": "internet-doc",
+    "topic": "S1 randomness roadmap",
+    "takeaway": "Fuji VRFv2.5 coordinator is listed; current game has no VRF integration."
+  },
+  {
+    "id": "S1-DFK",
+    "url_or_path": "https://docs.defikingdoms.com/how-defi-kingdoms-works/defi-kingdoms-blockchain",
+    "type": "internet-doc",
+    "topic": "S1 game precedent",
+    "takeaway": "DFK Chain uses JEWEL gas so players need no outside gas token."
+  },
+  {
+    "id": "S1-BEAM",
+    "url_or_path": "https://docs.onbeam.com/token/gas",
+    "type": "internet-doc",
+    "topic": "S1 game precedent",
+    "takeaway": "BEAM pays native transaction fees across Beam applications."
+  },
+  {
+    "id": "S1-GUNZ",
+    "url_or_path": "https://gunbygunz.com/documentation/",
+    "type": "internet-doc",
+    "topic": "S1 game precedent",
+    "takeaway": "GUNZ uses native GUN gas and permissioned contract deployment."
+  },
+  {
+    "id": "S1-CONTEST-HUB",
+    "url_or_path": "https://build.avax.network/events/596c0b2d-63aa-4cf0-a0ad-a7e34ddbfdc0",
+    "type": "internet-doc",
+    "topic": "S1 contest",
+    "takeaway": "Hub contradicts organizer site: agenda24Nov, close25Nov05:59UTC+7; linked submission route."
+  },
+  {
+    "id": "S1-CONTEST-TEAM",
+    "url_or_path": "https://team1vn.xyz/",
+    "type": "internet-doc",
+    "topic": "S1 contest",
+    "takeaway": "Verified in Chromium after HTTP403: deadline21Nov23:59Vietnam, repository public or collaborator tuantqse90, Canva/GoogleSlides and2-3minute film."
+  },
+  {
+    "id": "S1-GITLEAKS",
+    "url_or_path": "https://github.com/gitleaks/gitleaks",
+    "type": "internet-doc",
+    "topic": "S1 secret scan",
+    "takeaway": "Redact100 and all-ref git scan; report only location/type metadata."
+  },
+  {
+    "id": "S1-ROTATION",
+    "url_or_path": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+    "type": "internet-doc",
+    "topic": "S1 incident handling",
+    "takeaway": "Rotate/revoke first; coordinated history rewrite has side effects and is owner decision."
+  },
+  {
+    "id": "S1-PROBE",
+    "url_or_path": "reports/v4-ship/S1/fuji-readonly.json",
+    "type": "own-experiment",
+    "topic": "S1 RPC methods",
+    "takeaway": "Ten sequential public reads vs batch ten:4247.83ms vs496.996ms; median20block gaps900ms; contracts5/5."
+  },
+  {
+    "id": "S1-MAINNET-PROBE",
+    "url_or_path": "reports/v4-ship/S1/mainnet-readonly.json",
+    "type": "own-experiment",
+    "topic": "S1 block timing",
+    "takeaway": "Twenty C-Chain block gaps median701ms; instantaneous gas quote7500000150wei; read-only."
+  },
+  {
+    "id": "S1-LOCAL",
+    "url_or_path": "scripts/fuji-proof.mjs",
+    "type": "local",
+    "topic": "S1 existing evidence",
+    "takeaway": "Existing proof reads contracts but prints optional RPC URL; new experiment hardcodes only public endpoints and never reads keys."
+  },
+  {
+    "id": "S2-CHI",
+    "url_or_path": "https://grail.cs.washington.edu/projects/game-abtesting/chi2012/",
+    "type": "paper",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Tutorial effects depend on game complexity; contextual instruction helped the complex game, not universally."
+  },
+  {
+    "id": "S2-IMPLICIT",
+    "url_or_path": "https://pubmed.ncbi.nlm.nih.gov/36419670/",
+    "type": "paper",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Pilot study supports practice with feedback and timely help; evidence is not a universal conversion guarantee."
+  },
+  {
+    "id": "S2-ROBLOX",
+    "url_or_path": "https://create.roblox.com/docs/production/game-design/onboarding",
+    "type": "internet-doc",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Measure the first-session funnel; teach essentials and demonstrate progression quickly."
+  },
+  {
+    "id": "S2-ISOLATION",
+    "url_or_path": "https://playwright.dev/docs/browser-contexts",
+    "type": "internet-doc",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Fresh browser contexts isolate cookies/storage for each run."
+  },
+  {
+    "id": "S2-NETWORK",
+    "url_or_path": "https://playwright.dev/docs/network",
+    "type": "internet-doc",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Observe response status and failed requests; a transport failure differs from an HTTP failure."
+  },
+  {
+    "id": "S2-PRIVY",
+    "url_or_path": "https://www.privy.io/onboarding",
+    "type": "internet-doc",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Guest sessions and progressive authentication defer account friction; vendor example, not an implementation mandate."
+  },
+  {
+    "id": "S2-OPENFORT",
+    "url_or_path": "https://www.openfort.io/blog/technical-dive-gas-sponsorship",
+    "type": "internet-doc",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Sponsorship policy can constrain contracts/functions/budgets; free-to-player does not mean free-to-operator."
+  },
+  {
+    "id": "S2-ENTRY",
+    "url_or_path": "reports/v4-ship/S2/entry-probe.json",
+    "type": "own-experiment",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Compared two routes: root redirected to caf\u00e9 in2376ms; index.html loaded legacy in2108ms, both without pageerrors."
+  },
+  {
+    "id": "S2-LOCAL",
+    "url_or_path": "tools/v3-demo/smoke.mjs",
+    "type": "local",
+    "topic": "S2 onboarding and measurement",
+    "takeaway": "Existing real-click smoke traverses practice then campaign; its600second timeout is not a V4 gate."
   }
 ]

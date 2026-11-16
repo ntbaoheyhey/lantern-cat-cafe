@@ -1,8 +1,11 @@
-1. Đã tạo nhánh V4; chưa deploy hay đổi main.
-2. Kiểm tra bản nền đạt: 2.640 test web, 733 test server, 128 test hợp đồng.
-3. Kiểm tra kiểu, build và ba trận so với luật F6 đều đạt.
-4. Đã sửa lỗi chạy test đồng thời tranh chấp bộ nhớ đệm.
-5. Trận boss mẫu ở tốc độ thường còn 211 giây; mục tiêu V4 là 110 giây.
-6. Đang xác minh Avalanche, hạn nộp và quét bí mật trong toàn bộ lịch sử git.
-7. Các cổng luồng demo, âm thanh và giao diện V4 chưa được đo.
-8. Chưa cần bạn thao tác ở bước này.
+# Bản SHIP — 16/11, 12:12 Việt Nam
+- Đang làm trên nhánh codex/v4-ship-2026-11-16; chưa deploy.
+- Khách vào trận tập trong khoảng 3 giây, 3 lần bấm ở lần đo thử.
+- Phần thưởng trận chiến dịch đầu tiên xuất hiện khoảng 144 giây; chưa đạt cả hành trình 7 bước.
+- Đang đo 20 hồ sơ khách mới ở hai kích thước màn hình, không sửa game trong lúc đo.
+- Typecheck, 2.640 test web, 733 test server, parity 3 trận và build đã qua.
+- Đã xác minh thông tin Avalanche và quy định nộp bài; hạn làm việc vẫn là 21/11 lúc 23:59 Việt Nam.
+- Quét file hiện tại đã xong; đang phân loại cảnh báo và quét lịch sử. Chưa kết luận repo sạch khóa bí mật.
+- Chưa đo 10 giao dịch Fuji được tài trợ vì máy chưa có cấu hình ví tài trợ.
+- Chuẩn bị nghiên cứu 3 lớp nhân vật; chưa đổi luật hoặc mốc parity.
+- Việc bạn cần làm nằm trong NEEDS-USER-VI.md; không cần thao tác để tiếp tục phần đang làm.

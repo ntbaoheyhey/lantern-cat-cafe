@@ -2,9 +2,9 @@
 
 | Item | Work | State / evidence |
 |---|---|---|
-| S0 | ADOPT AND BRANCH | done; STARTED 2026-11-16T04:44:21.272565+00:00; ENDED 2026-11-16T04:48:36.267987+00:00; S0/checks.json; commit follows |
-| S1 | AVALANCHE, CONTEST, REPO SAFETY | STARTED 2026-11-16T04:48:36.267987+00:00; research and redacted scan |
-| S2 | FUNNEL BASELINE | pending |
+| S0 | ADOPT AND BRANCH | done; STARTED 2026-11-16T04:44:21.272565+00:00; ENDED 2026-11-16T04:48:36.267987+00:00; S0/checks.json; 71f2401f763f3f0d79b1a8dc6148e3c2d73600b1 |
+| S1 | AVALANCHE, CONTEST, REPO SAFETY | STARTED 2026-11-16T04:48:36.267987+00:00; research/docs/G-REG pass; current candidate triage and history scan pending |
+| S2 | FUNNEL BASELINE | STARTED 2026-11-16T04:56:58.392605+00:00; G-LEARN pass; harness/checker written;20profiles running from05:09UTC |
 | S2b | CLASSES RULES AND UI | pending |
 | S3 | DEMO PATH POLISH | pending |
 | S4 | ON-CHAIN PROOF | pending |
