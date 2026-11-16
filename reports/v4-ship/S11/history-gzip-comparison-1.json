@@ -1,0 +1,189 @@
+{
+  "at": "2026-11-16T17:05:12.581414+00:00",
+  "scope": "Controlled in-memory gzip wrappers around four exact historical blobs with previously reviewed non-secret detector matches. No credential values or expanded data are persisted. This experiment is not historical archive clearance.",
+  "review": {
+    "path": "reports/v4-ship/S11/history-triage-5.json.gz",
+    "sha256": "bf5376bfae7bb22dea88d472fb1cba9daf782c6798ced1d298ba4c3e8e65909f"
+  },
+  "scanner": "8.30.1",
+  "rows": [
+    {
+      "source": {
+        "commit": "f738c8975d162bbd045b9d4782f14aab5845a5bf",
+        "path": "reports/v4-ship/S4/fuji-events.json",
+        "sha256": "c021bdd63be45378c583a9f54bebef48e12b978ab2a81f7e20f9134b2b962a2b",
+        "reviewedSource": true
+      },
+      "methods": [
+        {
+          "method": "raw-gzip-bytes",
+          "seconds": 0.0206,
+          "bytes": 1527,
+          "findings": [],
+          "count": 0
+        },
+        {
+          "method": "expanded-gzip-text",
+          "seconds": 0.0407,
+          "bytes": 7876,
+          "findings": [
+            {
+              "line": 8,
+              "endLine": 8,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        },
+        {
+          "method": "original-text-control",
+          "seconds": 0.0403,
+          "bytes": 7876,
+          "findings": [
+            {
+              "line": 8,
+              "endLine": 8,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "f738c8975d162bbd045b9d4782f14aab5845a5bf",
+        "path": "reports/v4-ship/S4/fuji-counters.json",
+        "sha256": "5bf4c867f80ae60a6f565c7aa02946349df6894662effe5c0032a1e5b1c65e70",
+        "reviewedSource": true
+      },
+      "methods": [
+        {
+          "method": "raw-gzip-bytes",
+          "seconds": 0.0199,
+          "bytes": 581,
+          "findings": [],
+          "count": 0
+        },
+        {
+          "method": "expanded-gzip-text",
+          "seconds": 0.0227,
+          "bytes": 1395,
+          "findings": [
+            {
+              "line": 9,
+              "endLine": 9,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        },
+        {
+          "method": "original-text-control",
+          "seconds": 0.0228,
+          "bytes": 1395,
+          "findings": [
+            {
+              "line": 9,
+              "endLine": 9,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "b7fcbe16d8b703c880256d992a62d2d1494b369b",
+        "path": "packages/chain/src/index.test.ts",
+        "sha256": "4409a77938fab10ba70fd5e5a66644b67549c7d953a256881e5234b824540713",
+        "reviewedSource": true
+      },
+      "methods": [
+        {
+          "method": "raw-gzip-bytes",
+          "seconds": 0.0198,
+          "bytes": 742,
+          "findings": [],
+          "count": 0
+        },
+        {
+          "method": "expanded-gzip-text",
+          "seconds": 0.0227,
+          "bytes": 1462,
+          "findings": [
+            {
+              "line": 20,
+              "endLine": 20,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        },
+        {
+          "method": "original-text-control",
+          "seconds": 0.0233,
+          "bytes": 1462,
+          "findings": [
+            {
+              "line": 20,
+              "endLine": 20,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": {
+        "commit": "b7fcbe16d8b703c880256d992a62d2d1494b369b",
+        "path": "packages/chain/src/index.ts",
+        "sha256": "57e7ec8a8d585f220969869bd7226cf7121df41e64e7bb92c62cad3c57cd6558",
+        "reviewedSource": true
+      },
+      "methods": [
+        {
+          "method": "raw-gzip-bytes",
+          "seconds": 0.0457,
+          "bytes": 798,
+          "findings": [],
+          "count": 0
+        },
+        {
+          "method": "expanded-gzip-text",
+          "seconds": 0.0395,
+          "bytes": 1802,
+          "findings": [
+            {
+              "line": 34,
+              "endLine": 34,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        },
+        {
+          "method": "original-text-control",
+          "seconds": 0.0279,
+          "bytes": 1802,
+          "findings": [
+            {
+              "line": 34,
+              "endLine": 34,
+              "type": "generic-api-key"
+            }
+          ],
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "expandedMatchesOriginalAll": true,
+  "rawFindings": 0,
+  "expandedFindings": 4,
+  "originalFindings": 4,
+  "decision": "Expand exact gzip blob bytes before default-detector stdin scans; preserve compressed/expanded hashes and per-blob checkpoints. Binary scans alone cannot replace decoded content scanning.",
+  "fullHistoryPass": false
+}

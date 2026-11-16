@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-16T17:18:15.135316+00:00",
+  "python": "3.9.6",
+  "source": "Local subprocess.Popen._communicate registers stdin only when the current input argument is truthy; input=None on timeout retry leaves unfinished writes unregistered.",
+  "payloadBytes": 9600000,
+  "payloadSha256": "b64ea7d5e173945efa3be5fa96419b4e17a8723218b784021b9d07fd860accab",
+  "rows": [
+    {
+      "method": "first-input-then-None-timeout-retries",
+      "completed": false,
+      "seconds": 0.855,
+      "processStillRunning": true
+    },
+    {
+      "method": "single-communicate-worker-with-main-watchdog",
+      "completed": true,
+      "seconds": 0.337,
+      "watchdogChecks": 5,
+      "received": {
+        "bytes": 9600000,
+        "sha256": "b64ea7d5e173945efa3be5fa96419b4e17a8723218b784021b9d07fd860accab"
+      }
+    }
+  ],
+  "regressionReproduced": true,
+  "replacementExactBytes": true,
+  "fullHistoryPass": false
+}

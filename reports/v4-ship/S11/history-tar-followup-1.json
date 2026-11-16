@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-16T17:14:38.380100+00:00",
+  "pass": false,
+  "complete": false,
+  "errorType": "UnicodeDecodeError",
+  "method": "Require every regular tar member to decode as UTF-8 before scanning",
+  "failure": "A regular member contains non-UTF8 bytes; no whole-archive text claim is valid. Original gzip blobs and checkpoint remain unchanged.",
+  "nextMethod": "Scan every regular member as bytes, record text/binary distinctions and leave encoded/binary acceptance explicitly open.",
+  "fullHistoryPass": false
+}
