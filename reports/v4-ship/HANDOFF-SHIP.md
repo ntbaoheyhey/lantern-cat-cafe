@@ -24,8 +24,8 @@ S2b1.15holdout300wins/0healerDamage;firstloss17.50245min;boss87.0667s/p9093.57. 
 S4-final-1:20/20PASS;1280/1440battlemed2.957/2.9325s(2clicks),receiptmed95.2325/95.190s,max95.848s;360verifiedreceipts;0errors/popups;S4/final-journeys-1.json.
 G-UI primaryaudit3 retains32ARTbattlecontrastunknown/4portraitfails. Title4/4PASS15.270:1;secondary5 47/47PASS5.407min/prose13;modal4 16/16;keyboard5 6/6. No globalUIpass/fulljourneyrerun.
 G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zeroerrors/originaltimestamps. 55logs/5contracts/30RPCverifiedreceipts/block61162789;no sponsoredFuji latencyproof.
-S1 text700/3854/176reviewed;gzip1332/1332COMPLETE(prefix9)/1314reviewed. Supplements81text/125gzip. Filename1:3946commits/136617pairs independentlyverified;51scans+19exactYAMLaliases/0findings. Text/binary/archive/submodules/laterrefsOPEN.
-REPORT BUDGET:134210891B measured2026-11-16T21:54:37.554097+00:00;limit150MB. Archive2 moved22ignoredhistoricalPNGs/18035483Bwithverifiedhashes. S8screenshots6/8;S10 8/8;S11 5/8;imageopens8/8unchanged.
+S1 text700/3854/176reviewed;gzip1332/1332COMPLETE(prefix9)/1314reviewed. Supplements81text/125gzip. Filename1:3946commits/136617pairs independentlyverified;51scans+19exactYAMLaliases/0findings. Text/binary/archive/submodules/laterrefsOPEN. SVG189/259/0findings verified;encoded/externalnotcovered.
+REPORT BUDGET:134413155B measured2026-11-16T22:03:07.799883+00:00;limit150MB. Archive2 moved22ignoredhistoricalPNGs/18035483Bwithverifiedhashes. S8screenshots6/8;S10 8/8;S11 5/8;imageopens8/8unchanged.
 LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;fetchedARTa1372f831 preflight2:1004ARTpaths/0conflicts/956SHIPpreserved;A9runtime77hashesmatch. OldA10receipt14/16matchesnewtip;notselectedgreen.
 SERVICES audio5995PID3393;production15/session98686 supervisor13311 preview13365ready5998/API5997/Anvil8546;fixturefree. Headlessboss58310active. Text99980/8488+37112CPUactive,untouched;gzipcomplete.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
@@ -33,7 +33,7 @@ STOP absent;USER RESUME. Healerproduction13 journeys3/4:32Clovercontactsoneheals
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T21:54:37.554097+00:00. Filenamegapcheckpoint+currentrangedcoverage/ASRsaved;G-REGsame7ARTfails/2690webpass. InitialGitlinkinventoryfailure+harnessespreserved;correctedtreewalkreviewPASS. Lastconfirmedpushd5bea2341.
+UPDATED 2026-11-16T22:03:07.799883+00:00. SVG189blobs/259pairs/294966UTF8B/0findings independentlyverified;regression2690webPASS+same7ARTfails,others0. Runtimeunchanged;boss58310active. Lastconfirmedpush24ee77edc.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit3=169.833s/9,314,863B/-17.86LUFS/-2.22dBTP/5.2LRA;1927sourceframes/53EN-VIcues/13wholevoices+actualSnowtrace5s;film-verify-3.json. Preparationonly;oldattemptsretained.

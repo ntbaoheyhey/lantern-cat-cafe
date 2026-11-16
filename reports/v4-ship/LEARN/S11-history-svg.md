@@ -1,0 +1,16 @@
+# S11 historical SVG text coverage
+
+Read 16 November 2026 UTC before implementation. Inspect bytes only: do not render, open or edit any ART image, follow referenced URLs or execute SVG content. The installed runtime and active boss capture remain unchanged.
+
+1. [W3C SVG 2 metadata](https://www.w3.org/TR/SVG2/struct.html#MetadataElement), formal specification: metadata can contain character data and is not directly rendered. Visual review cannot establish text-content coverage.
+2. [W3C XML 1.0 character and entity references](https://www.w3.org/TR/xml/#sec-references), formal Recommendation: XML supports references and external entities. Inspect original bytes without resolving them; raw-byte detection does not imply coverage of every encoded or external value.
+3. [Git cat-file](https://git-scm.com/docs/git-cat-file): exact blob objects return immutable content. Verify Git object identity, byte count and SHA-256 before scanning.
+4. [Gitleaks directory and stdin modes](https://github.com/gitleaks/gitleaks#commands): stdin scans supplied content without a filename. Keep all default detectors and redaction; do not add a baseline, size filter or rule exception.
+5. [Gitleaks 8.30.1 default configuration](https://github.com/gitleaks/gitleaks/blob/v8.30.1/config/gitleaks.toml): the global filename filter excludes SVG. The five positive filename predicates do not match the captured SVG names, so the content supplement can deduplicate exact blobs while retaining all original path mappings.
+6. [GitHub historical secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning): historical branch versions remain distinct from the current tree. This supplement uses the already frozen and independently reviewed 3,946-commit superproject inventory; later refs remain separate.
+
+Measured comparison before implementation: the identical 332-byte synthetic metadata fixture contains an explicitly invalid public PEM-shaped marker, with no actual credential material. Original `.svg` directory scan returns zero findings; neutral `.txt` and stdin each return the same one `private-key` location. The runs took 0.020126, 0.021231 and 0.020474 s. Temporary fixtures were removed and no image was rendered. See `S11/history-svg-method-comparison-1.json`.
+
+Selected scope: 259 historical SVG path/blob pairs, deduplicated to 189 exact blobs totaling 294,966 bytes. Scan each complete blob through the unchanged default stdin detector and retain only hashes and redacted finding locations. Preserve non-UTF8 or encoded/reference observations explicitly; no universal XML parsing, decoded-content, binary-image, archive, external-resource, submodule or full-history acceptance claim follows.
+
+Completed evidence: all 189 blobs / 259 path mappings (294,966 UTF-8 bytes) scanned with zero findings. No NUL, numeric-reference, base64 or entity-declaration markers were observed. Independent immutable commit:path review verifies every mapping and payload; this does not establish encoded-content or binary coverage. Full regression completed: server/rules/typecheck/three-fixture probe/build exit 0; web 2,690 pass and the exact same seven ART failures as history-path-regression-1. See `S11/history-svg-review-1.json` and `S11/history-svg-regression-comparison-1.json`; G-REG and official class parity remain false.

@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-16T21:57:50.900425+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-history-svg.md",
+  "harness": {
+    "path": "tools/v4ship-lab/security/history-svg.py",
+    "sha256": "60d11f98c3f54641522a848af96fdebad8e4650e1164586325ee79359595db01"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/scope.json",
+      "sha256": "76c6227269ce6c6312eedb14140e33c5a53f6c8ded8a6dd13be6752568810754"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/inventory.json.gz",
+      "sha256": "4bc4c377d4e19ac68339c1282a1c46c8427654af474725a1fdb607e7bb41a624"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-path-review-1.json",
+      "sha256": "a78b72fd27e9ff6ebbd6a516931e85e11531620ffe423e7d13d5dc165b361a3d"
+    }
+  ],
+  "rows": {
+    "path": "reports/v4-ship/S11/history-svg-1.rows.json.gz",
+    "sha256": "68161f6e722fe6beefab8562d3f533b31aefd71efe46df9a6807cd603042a3a3"
+  },
+  "scanner": "8.30.1",
+  "command": [
+    "gitleaks",
+    "stdin",
+    "--no-banner",
+    "--no-color",
+    "--redact=100",
+    "--log-level=fatal",
+    "--report-format=json",
+    "--report-path=-",
+    "--ignore-gitleaks-allow"
+  ],
+  "commits": 3946,
+  "pathBlobPairs": 259,
+  "scannedBlobs": 189,
+  "scannedBytes": 294966,
+  "nonUtf8Blobs": 0,
+  "containsNulBlobs": 0,
+  "numericReferenceMarkers": 0,
+  "base64Markers": 0,
+  "entityDeclarationMarkers": 0,
+  "findings": 0,
+  "complete": true,
+  "fullHistoryPass": false,
+  "imageOpens": 0,
+  "artFilesChanged": false,
+  "limits": [
+    "Raw exact SVG bytes only; encoded/entity-resolved or external-resource contents are not established.",
+    "Other binary formats, archives, submodules, original textual history and subsequent references remain open."
+  ]
+}

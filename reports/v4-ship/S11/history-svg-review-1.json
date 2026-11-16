@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-16T21:58:58.359117+00:00",
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-svg-1.json",
+      "sha256": "a8380a3573d183670dd3cbd3e18f3d018da85a138470cb4d79548b9a12686416"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-svg-1.rows.json.gz",
+      "sha256": "68161f6e722fe6beefab8562d3f533b31aefd71efe46df9a6807cd603042a3a3"
+    }
+  ],
+  "scopeMatchesAllFrozenSvgPairs": true,
+  "uniqueBlobOrderAndHashesVerified": true,
+  "commitPathPayloadsVerified": 189,
+  "pathBlobPairs": 259,
+  "utf8Bytes": 294966,
+  "findings": 0,
+  "pass": true,
+  "imageOpens": 0,
+  "fullHistoryPass": false,
+  "limits": [
+    "Raw exact SVG bytes only; encoded/entity-resolved or external-resource contents are not established.",
+    "Other binary formats, archives, submodules, original textual history and subsequent references remain open."
+  ]
+}
