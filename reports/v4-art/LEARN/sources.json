@@ -1,0 +1,51 @@
+[
+  {
+    "id": "A0-lasseter",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A0 salvage",
+    "takeaway": "Readable held poses; secondary motion should not defeat contact."
+  },
+  {
+    "id": "A0-object",
+    "url_or_path": "https://threejs.org/docs/pages/Object3D.html",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "Visibility through source ancestry and world transforms must be preserved in clones."
+  },
+  {
+    "id": "A0-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "One visible slot attachment at a time; sockets belong to drawing geometry."
+  },
+  {
+    "id": "A0-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "Decode input colours once; preserve shared texture treatment."
+  },
+  {
+    "id": "A0-runtime",
+    "url_or_path": "tools/v3craft-lab/p2/runtime-study.json",
+    "type": "experiment",
+    "topic": "A0 salvage",
+    "takeaway": "Actual renderer: centered plane drift134/167px vs foot-local0/0px; restored rig pixel exact."
+  },
+  {
+    "id": "A0-recoil",
+    "url_or_path": "reports/v3-feel/LEARN/P2.md",
+    "type": "local",
+    "topic": "A0 salvage",
+    "takeaway": "Prior recoil method and focus double-paint diagnosis, preserved rather than recreated."
+  },
+  {
+    "id": "A0-focus",
+    "url_or_path": "apps/web/src/game/cardrpg/battle-v3/focus.test.ts",
+    "type": "experiment",
+    "topic": "A0 salvage",
+    "takeaway": "Hidden rig and swapped mask reproduction: intended8visible copies, none if actor hidden."
+  }
+]

@@ -264,12 +264,15 @@ export class SpineScene {
    const input=frame?{plan:frame.plan,elapsed:frame.elapsed,asset:entry.asset,side:unit.side,home:home.point,target,width,height}:null;
    if(!view.reducedMotion&&!view.model&&!iced){
     if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
-    const from=this.homes.get(caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
-    const plantedCaster=!!plan&&unit.id===plan.actorId&&['throw','staff-cast','summon'].includes(attackMotion(entry.asset,plan));
-    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height,plantedCaster);
+    const damageSource=plan?.events.find(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id))?.actorId;
+    const from=this.homes.get(damageSource??caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
+    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
     if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun'))rootPose=idlePose(worldTime,unit.id);
+    // A hit hold must also stop the recipient's brace/idle root, otherwise
+    // their independent motion adds displacement to the bounded recoil.
+    if(damageAge!==undefined&&damageAge>=0&&damageAge<.3)rootPose=neutralPose();
     if(unit.hp<=0){const fall=Math.min(1,deathAge/.4);rootPose.angle=(unit.side==='enemy'?-1:1)*fall*.9;rootPose.y=fall*12*height/720;}
    }
    // The pilot gesture already moves the trunk around planted feet. Applying

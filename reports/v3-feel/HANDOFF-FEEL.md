@@ -6,15 +6,18 @@ NO DEPLOY/MAIN MERGE | ORIGINAL ART, OWN INPUTS ONLY
 FILES ARE MEMORY: READ RULES-POSE + HANDOFF + STATE AFTER EVERY COMPACTION
 ALREADY AUTHORIZED: CONTINUE | SAVE IMAGE+PROVENANCE AT ONCE | SMALL SHEETS ONLY
 DO NOT STOP BEFORE19NOV12Z EXCEPT EXPLICIT USER STOP/STOP-V3FEEL
-NOW: P2 revision2 composed: local painted ignition, narrower warm impacts, basic ember chips, per-pose overlap.
-NEXT1: Fix discovered legacy28–38px recoil/planted retaliation0px to new6–12px contract; then R2film/blind40.
-NEXT2: Master comparison/contrast/FPS/speed/remaining pose gates and actual craft floors.
-NEXT3: Hourly trial checkpoint prepared now; no rollout before pilot passes.
-LAST GOOD COMMIT: 77136c874bca20ad20aecc921ea516e65cf071e2; HEAD=origin verified.
-OPEN: P2 trial only; runtime/film/effect/craft gates incomplete. No production acceptance.
-OPEN: Q1 video50.233ms;Q2 A97/B14;historicQ3.A craft15.17% retained.
-PIDS: OwnedVite67838 alive5990;system_installd16045 NOT OURS;demo5994/API5997/8546 untouched.
-BACKGROUND JOBS: No active job except owned Vite67838; R0/R1 films and latest boss preview/typecheck complete.
-FILES: generic drawing track,selected Soot poses,staff-smear/socket edits,LEARN/P2,provenance/state are uncommitted.
-TIME TRIGGERS: R1Nov16 12Z;R2Nov18 12Z;freezeNov19 12Z;none due.
-UPDATED: 2026-11-16T02:53:38.939149+00:00
+NOW: Explicit USER STOP for review at 2026-11-16T03:05:04.756811+00:00; no implementation continues.
+USER: “dừng, viết báo cáo kết thúc nhé.” / “mình cần review lại tí”. See INBOX.md.
+NEXT1: Wait for user review/instruction; do not resume on this saved queue alone.
+NEXT2: When resumed, inspect apparent double-paint at200ms; isolation images saved but uninspected.
+NEXT3: Review all10R2windows; final film after focus repair; blind40/contrast/FPS/craft gates.
+LAST GOOD COMMIT: 88fa5bdfd820609f054d174fce24248f35aa9575; HEAD=origin verified; trial checkpoint only.
+UNCOMMITTED: recoil/event direction+tests; focus map/visibility+test; blind helper; reports/state.
+CHECKS: checkpoint2640web/1786policy/typecheck/3fixtureparityPASS; latest29focused/typecheckPASS.
+R2:1803/1801/1802frames;29/29/28actions;allparitytrue;focus repair is later than films.
+OPEN: P2 not accepted; R2review/blind40/visual/performance/craft gates incomplete; enemyK4temporary.
+OPEN: Q1video50.233ms;Q2A97/B14;historicalQ3.Acraft15.17%.
+PIDS: OwnedVite67838 alive5990 for review; demo5994/API5997/8546 untouched.
+BACKGROUND JOBS: No capture/test/generation/probe active; probe42386 finished/browser closed.
+FILES: REPORT-FEEL.md English;STATUS-VI.md Vietnamese;R2films in REVIEW/P2-R2/.
+UPDATED: 2026-11-16T03:05:04.756811+00:00
