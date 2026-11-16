@@ -1,10 +1,10 @@
-# ART execution anchor — 2026-11-16 12:55 UTC
+# ART execution anchor — 2026-11-16T13:00:57.294870+00:00
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: Check existing validation PID24432/log jobs/a10-validation-final.log; do not duplicate. After900p completes run tools/.venv/bin/python tools/v3craft-lab/v4-transfer/review-900.py. Inspect42unopened normal-renderer film pages and3layout sheets; record scoped A10 receipt, total8MB OPEN; then Needle. Timebox14:21UTC.
+NEXT1: Poll1440x900PID34998/jobs/a10-layout1440.log and supplemental24432; when required3fixtures complete run tools/.venv/bin/python tools/v3craft-lab/v4-transfer/review-900.py then inspect3newlayout sheets. All42film pages reviewed; finish scoped A10receipt/commit/push then Needle.
 NEXT2: Needle K1/K2/K4 fixed-landmark gates; two own FX drills, private same-scale comparison, production integration, regression/parity/marked films/blind/receipt. Existing LEARN/A7 six-source study applies.
 NEXT3: Yarn Giant K1/K2/K4/K5 + FX; A8 deliveries interrupt; A9 ensemble; verified A10 requests; A11 open gates; A12 afterfreeze. Never stop with summary.
-LAST PUSH:48599c03a verified; A10 production/capture source48599c03a; Teacup productionbc85b0c82. New checkpoint includes validation/review helpers and pending film-review metadata.
-LIVE: normalReviewVite23719 port5990/log jobs/a10-normal-review-vite.log; craftOFF. FINALjob24432/jobs/a10-validation-final.log active900p. Web2662/317,typecheck,3F6,network,capture,2700markersPASS. reviewPID32813 exited0:42pages generated; none visually opened.
+LAST PUSH:f1e2b1ab3 verified. A10 production/capture48599c03a unchanged; Teacup productionbc85b0c82.
+LIVE: normalReviewVite23719 port5990/log jobs/a10-normal-review-vite.log; craftOFF. FINALjob24432/jobs/a10-validation-final.log active900p. Web2662/317,typecheck,3F6,network,capture,2700markersPASS. reviewPID32813 exited0:42pages generated; none visually opened. Required1440x900PID34998/jobs/a10-layout1440.log launched12:57UTC;1600supplement retained.
 Requested PIDs68961/69950 absent at12:53UTC; A6final/post logs exit0. Prior21423 F6HMRfailure and blocked-font base-config attempt retained. Detached nohup uses Python Popen(start_new_session=True).
 No STOP/inbox pause at12:21UTC. SHIPdb35585 remains nonfinal at lastcheck; no merge; baseline reports/v3-feel/parity-new.json. SHIP newtransferrequestread12:21UTC; finalclass announcementstillpending. No designer delivery at12:12UTC.
 A10 already delivered a14f8a76b: apps/web/public/units/promo/v4; REQUESTS-TO-SHIP records paths. Verify new request before regeneration.
@@ -25,8 +25,8 @@ Teacup all24film reviewpages+900p sheet seen once; no reopen. Wave1 A27 truncate
 Teacup median60.240485fps;motion<=9.21955px;return<1.2e-13px;camera0px. PublishedK2change32.7334%;allpose/VFX3,784,736B. 900p901frames all measuredlayout limitsPASS.
 Teacup GREG2649tests/315files,typecheck,3F6,lanePASS. Receipt/ART-REVIEW/REVIEW under REVIEW/A7/teacup-healer. Score8/10 scoped,not fullA7DONE.
 Teacup old basicdamage/reflect visible -> GROLE OPEN pendingfinalSHIP. Broad flowers visually heavy; A9compareClover. Strict600focusoff/banner/ensemble/activation/time split OPEN.
-IMAGEOPENS:1 Needle own runtime firstlook only; no generation. All prior Teacup images persisted. Teacup selectedJPG8/8; no more tracked images. Reviews<=1024px,4/look,8/HANDOFF.
-IMAGEOPENS:0since12:55anchor;42A10film pages and3pending900p sheets UNOPENED. Needle own runtime viewed once; no generation. Prior Teacup8/8selectedJPG and all reviews complete; never reopen.
+IMAGEOPENS:0afterrewrite; all42A10film pages reviewed once, visual-observations.json complete. Do not reopen. Required1440layout3sheets pending. Needle original seen once;Teacup8/8selectedJPG.
+IMAGEOPENS:0afterrewrite; all42A10film pages reviewed once, visual-observations.json complete. Do not reopen. Required1440layout3sheets pending. Needle original seen once;Teacup8/8selectedJPG.
 Commands<=40lines/3KB,diffs<=80lines. Python tools/.venv/bin/python. Jobs>2min detached<=3; checkpoint eachstep<=20min; pushretry3; readRULES/item/commit/newart/hour.
 Craft remains DEV&&VITE_CRAFT_PILOT==='soot'; noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR. FinalSHIP classes+solebaseline only merge once announced final.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Stop only STOP-V4ART/userpause/inboxpause/end29Nov12UTC.
