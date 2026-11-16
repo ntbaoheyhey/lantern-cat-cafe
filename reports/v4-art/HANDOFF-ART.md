@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T16:48UTC
+# ART execution anchor — 2026-11-16T16:56UTC
 ACTIVE: user “tiếp tục”16Nov15:44UTC supersedes pause; continue through29Nov12UTC.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Begin Yarn Giant: read scoped LEARN/A7.md and own runtime/manifest; author K1/K2/K4/K5 and originalultimate. A6/Binding/Teacup/Needle source work alreadycomplete.
+NEXT1: Finalize Yarn K1-A1 head landmarks and run tools/.venv/bin/python tools/v3craft-lab/v4-yarn-giant/measure.py K1-A1 TOP CHIN. Raw/prompt/provenance saved; K0fixedhead240..374/134px,alphaheight409;1152canvas. No numerical pass yet.
 NEXT2: Carry boss formation-width failure into Yarn/shared layout:720span79.3441%,90077.9451%(100samples,worst9.7667s); effect pixels do not count toward unit span.
 NEXT3: Yarn receipt then A9, verified A10contrast (b3-world/speed/stars/auto), A11; postfreezeA12. Check designer delivery and final SHIP classes at item boundaries.
-LAST PUSH:e3e716a18 verified; Needle receipt/provenance/STATE/STATUS checkpoint committing now. Runtime b92cd2dc3 unchanged;10sourcehashes match.
-LIVE: craftVite3426/5990/jobs/needle-craft-vite-resume.log. All capture/900p/validation jobs finished; R2flight17441exit0/logjobs/a7-needle-flight-r2.log. No generation.
+LAST PUSH:ae1d5a76f verified Needle scopedreceipt; sourceb92cd2dc3 unchanged. This checkpoint saves YarnK1-A1 prompt/provenance and landmark/measure/save helpers; raw/previews/logs excluded. Resume status228entries(9tracked/219untracked).
+LIVE: craftVite3426/5990/jobs/needle-craft-vite-resume.log alive16:55UTC; capturejobs finished;68961/69950 absent. Imagegen g3:62 completed; raw poses/raw/yarn-giant/K1-A1.png saved,sha07c3b3bb; no generation running.
 STOP-V4ART absent; INBOX latest15:44resume. SHIP requests unchanged13:40contrast at16:41read; db35585a nonfinal; no finalclasses/solebaseline announcement or merge.
 Needle scoped receipt REVIEW/A7/needle-moth/{acceptance-receipt,performance,layout900,projectile-frames}.json; REVIEW.md/ART-REVIEW.md. FullA7OPEN forYarn/sharedgates.
 Needle production: K1-A6Lab30,K2-A1,K4-A3,K5aliasK2;215,744Bposes+60,240Boriginalneedle. DEV&&VITE_CRAFT_PILOT==='soot' retained.
@@ -18,7 +18,7 @@ Originalflight1/4/4/3/3:wave1A5FAIL133.4msgapretained. V4-A7-NEEDLE-FLIGHT-R2/wa
 Needle feet<=9.21955px,return0;originalbossmedian60.240485FPS,mean59.618734.6MBboundallpose/VFX+Bindingportrait4,163,747B;notSHIPtotaltransfer.
 Needle regression2664/318,typecheck0,3fixture6hashes,lanePASS unchangedsource.3x900pcomplete;wave1/wave3bboxPASSbothsizes;bossunitspanFAILbothsizes.
 Needle encodedultcamera<=.221655px/50.1msobservedspan;notcontinuous120msupperbound.5post600focusframes;reducedmotionfilm/strictdurationOPEN.
-IMAGEOPENS:0afterrewrite;Needle31corrected+4legacy+blind+6flight+3layout+bossfailure reviewed;neverreopen. NeedleJPG8/8;no unreviewed sheet needed forreceipt.
+IMAGEOPENS:0afterrewrite; Yarnownruntime/source-landmarks/K1-A1-preview/K1-A1-head-landmarks already reviewed; neverreopen. Candidatehead notyetfixed. Needle allreviewed/JPG8/8. Yarn0selectedJPG.
 Raw/prompt/provenance tools/v3craft-lab/{poses/raw/needle-moth,v4-needle-moth/raw};private ref/A7/needle-moth;neverstage raw/ref/movies.
 A6complete:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315,typecheck/3F6.
 Bindingcomplete scoped:K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9,11own,3+flightframes,60.240485FPS. A46truncated;exactfilmclocklimited(no markers).
