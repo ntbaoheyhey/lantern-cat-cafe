@@ -1,12 +1,12 @@
-# ART execution anchor — 2026-11-16T20:39:58.175582+00:00
+# ART execution anchor — 2026-11-16T21:04:35.073369+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: change delivery method after4WebP budget failures (near60/RGB85/60/40);investigate installed AVIF lossless-alpha mode before2private drills. R2RGB40 projects8,496,751B>8MB;nativefur/cloth softened. No production edit/selection.
+NEXT1: poll R3 PID10309 and tail5 jobs/a10-scene-ready-drill-r3.log; then inspect drill-r3.json and4new raw comparisons once. AVIF60/444 versus45/420, explicit lossless alpha; tiny capability PASS only, no production selection.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:c84eb49cc verified;contrastreceipt9df18432a complete. Scene-ready R1failures pushed;R2results/4comparison notes saved pending checkpoint. Current runtime unchanged9205464cb contrast source.
-LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log. Drill7896/R28500completed exit0;results scene-ready-transfer/drill-r1.json+drill-r2.json. Old68961/69950absent.
-STOP/INBOX checked20:36UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEAD88be1e708 lastobserved; finalclasses/solebaseline absent; no merge/baseline adoption.
+LAST PUSH:a2dbb6de4 verified;contrastreceipt9df18432a complete. Scene-ready R1/R2failures and all8comparison notes pushed. Current runtime unchanged9205464cb contrast source.
+LIVE: craftVite3426/5990;normalVite8220/5991 log jobs/a10-scene-ready-vite.log;R3supervisor10309 log jobs/a10-scene-ready-drill-r3.log/receipt scene-ready-transfer/job-drill-r3.json. 3ownedjobs;R1/R2done0;old68961/69950absent.
+STOP/INBOX checked21:03UTC: noSTOP; latest user “tiếp tục” supersedes pause; designer mochi/soot/clover empty. SHIPHEADa95a3ebcaf; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.

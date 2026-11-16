@@ -19,7 +19,8 @@ from skimage.metrics import structural_similarity
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'reports/v4-art/REVIEW/A10/scene-ready-transfer'
 ROUND = sys.argv[1] if len(sys.argv) > 1 else 'r1'
-assert ROUND in ('r1', 'r2')
+assert ROUND in ('r1', 'r2', 'r3')
+assert not (OUT / ('drill-'+ROUND+'.json')).exists(), 'Preserve prior drill receipts; use a new round.'
 RAW = OUT / ('raw/drill-'+ROUND)
 RAW.mkdir(parents=True, exist_ok=True)
 SHA = lambda data: hashlib.sha256(data).hexdigest()
@@ -30,6 +31,14 @@ METHODS = {
 }
 if ROUND == 'r2':
     METHODS = {f'rgb{quality}': ['-q', str(quality), '-alpha_q', '100', '-sharp_yuv', '-exact', '-m', '6'] for quality in (60, 40)}
+if ROUND == 'r3':
+    from PIL import _avif
+    METHODS = {
+        name: dict(format='AVIF', quality=quality, subsampling=subsampling,
+                   speed=6, codec='aom', max_threads=2,
+                   advanced={'a:lossless': '1', 'a:cq-level': '0'})
+        for name, quality, subsampling in [('avif60-444', 60, '4:4:4'), ('avif45-420', 45, '4:2:0')]
+    }
 
 
 def metrics(original, candidate):
@@ -131,7 +140,8 @@ receipt = {
     'scope': 'Private encodes and budget projection; not production traffic or visual acceptance.',
     'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
     'scriptSha256AtRun': SHA(Path(__file__).read_bytes()),
-    'encoder': subprocess.check_output([shutil.which('cwebp'), '-version'], text=True).strip(),
+    'encoder': ({'libavif': _avif.libavif_version, 'codecs': _avif.codec_versions()}
+                if ROUND == 'r3' else subprocess.check_output([shutil.which('cwebp'), '-version'], text=True).strip()),
     'shipEvidence': {'path': str(ship_path), 'sha256': SHA(ship_path.read_bytes()), 'sourceCommit': ship['sourceCommit']},
     'packedManifestSha256': SHA(manifest_path.read_bytes()),
     'baseline': {'imageBytes': image_bytes, 'nonImageBytes': nonimage, 'unchangedAuxiliaryImageBytes': auxiliary, 'imageAllowance': 8000000-nonimage, 'totalGate': 8000000},
@@ -145,9 +155,14 @@ for source in sources:
     row['observedResponseOverhead'] = row['observedOriginalTransferBytes']-row['sourceBytes']
     assert row['observedResponseOverhead'] >= 0
     for method, options in METHODS.items():
-        candidate = RAW/(source['kind']+'-'+source['owner']+'-'+method+'.webp')
+        extension = '.avif' if ROUND == 'r3' else '.webp'
+        candidate = RAW/(source['kind']+'-'+source['owner']+'-'+method+extension)
+        assert not candidate.exists(), 'Do not overwrite private experiment evidence.'
         started = time.monotonic()
-        subprocess.run([shutil.which('cwebp'), *options, '-quiet', str(path), '-o', str(candidate)], check=True)
+        if ROUND == 'r3':
+            original.save(candidate, **options)
+        else:
+            subprocess.run([shutil.which('cwebp'), *options, '-quiet', str(path), '-o', str(candidate)], check=True)
         actual = Image.open(candidate).convert('RGBA')
         row['candidates'].append({'method': method, 'path': str(candidate.relative_to(ROOT)), 'bytes': candidate.stat().st_size, 'sha256': SHA(candidate.read_bytes()), 'seconds': time.monotonic()-started, **metrics(original, actual)})
         del actual
