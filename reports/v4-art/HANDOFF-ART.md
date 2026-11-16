@@ -1,13 +1,13 @@
-# ART execution anchor — 2026-11-16T22:59:10.067880+00:00
-ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
+# ART execution anchor — 2026-11-16T23:01:48.883215+00:00
+ACTIVE: user continuation;A10scene-ready transfer OPEN after2h timebox;A11 delivery review COMPLETE(scoped), now private placement temporal/all42defect validation. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: inspect only fresh A11/delivery-r1/raw/layout900-{wave1,wave3,boss}.jpg after width<=1024 check;save observations, finalize84/84film review, audit newer paths, write source-bound delivery receipt. Do not restart capture or reopen84sheets.
+NEXT1: extend tools/v3craft-lab/v4-placement with temporal.mjs using existing42 A10contrast defectframes; validate HUD-aware private placement at adjacent clocks/720+900 before runtime install. Read drill.mjs and scoped defect schemas; no image reopens.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:624b1dd7f verified; runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS. Delivery pipeline complete/runtime100hashesunchanged;84/84film sheets inspected, known labelclipping retained.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log(craftOFF). Delivery38489 completed22:46UTC; privateplacement42024 complete; spare5991 stopped;5992/5993 unused.
+LAST PUSH:822f6a54e verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log(craftOFF),checked22:58UTC. Delivery38489 finished22:46UTC; old68961/69950 absent. No ART capture jobs active; spare5991 stopped.
 STOP/INBOX checked22:58UTC16Nov:noSTOP;latest user continuation active. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
-R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; final receipt pending.
+R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11prep:6sources/1paper/5docs+2privateDOMdrills+6same-scale comparisons CLOSED. Viewport-only rejects:13HUD overlaps; HUD+face reservation:0clip/HUD/face/pair hits in6states, alltext preserved. Candidate PRIVATE; temporal/all42defect checks OPEN. A11/placement-r1/decision.json.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -18,7 +18,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;64transfer+6placement+84A11delivery sheets closed, never reopen. A10JPG8/8;A11selectedJPG0/8/rawonly. Delivery reviews84/84; HUD-aware placement PRIVATE, temporal/all42defects open.
+IMAGEOPENS:0afterrewrite;64transfer+6placement+84A11action+3A11layout sheets CLOSED, never reopen. A10JPG8/8;A11selectedJPG0/8/rawonly. HUD-aware placement PRIVATE, temporal/all42defects open.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.

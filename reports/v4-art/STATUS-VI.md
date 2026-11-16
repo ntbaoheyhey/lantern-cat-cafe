@@ -1,4 +1,4 @@
-V4 ART — 2026-11-16T22:43:50.004308+00:00
+V4 ART — 2026-11-16T23:01:48.883215+00:00
 A10 truyền ảnh vẫn MỞ sau khi vượt khung 2 giờ; A11 tiếp tục kiểm chứng rồi sửa bố cục.
 Runtime ae96b7d85 dùng alpha kết hợp khi tải GPU, giữ mipmap và Panko nguyên kích thước.
 2.689 kiểm thử web trong 320 tệp đạt; typecheck, 46 kiểm thử tập trung và 12 cảnh trình duyệt đạt.
@@ -13,5 +13,6 @@ FPS trung vị 60,24 / 60,24 / 59,88; đang quay 900p, sau đó xem hành độn
 Còn 42 khung clipping/đè HUD, bảng tên Panko và cụm số wave3.
 Hai thử bố trí trên sáu cảnh đã xong; chọn cách tránh HUD/khuôn mặt để kiểm chứng chuyển động, chưa cài vào runtime.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
-A11: pipeline xong;2.799mẫu900p không lỗi bố cục theo ngưỡng. Đã xem28/84sheet; giữ lỗi nhãn sát mép trên và cửa sổ cuối bị cắt.
-A11: đã xem56/84sheet; wave3 còn bannerPanko chạm chân dung và sốSoot dày. Cửa sổ Crumb cuối chỉ có trạng thái mở đầu.
+A11: đã xem84/84sheet hành động và3/3sheet900p; lưu biên nhận theo100hash runtime không đổi.
+Ba cửa sổ cuối bị cắt vẫn giữ nguyên hạn chế; chữ sátHUD/banner chạm chân dung/cụm số dày còn mở.
+Tiếp theo: kiểm chứng vị trí nhãn qua các thời điểm kề nhau và42khung lỗi cũ; chưa cài sửa vào runtime.
