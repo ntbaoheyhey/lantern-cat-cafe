@@ -4481,6 +4481,33 @@
       "status": "selected source K2 after authorized masked Lab correction20%; export/runtime/film pending",
       "metrics": "tools/v3craft-lab/v4-yarn-giant/K2-A3-colour-20-metrics.json",
       "derivation": "tools/v3craft-lab/v4-yarn-giant/K2-A3-colour-20.json"
+    },
+    {
+      "id": "v4-yarn-giant-k4-a1",
+      "date": "2026-11-16T17:09:34.797700+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent battle key pose K4 hurt/guard, our original Yarn Giant.\nInput is our exact existing idle character, not a loose style reference. Change only its pose into a compact recoiling GUARD. Keep both wrapped feet planted on one level floor. Bend the knees, pull the torso slightly back toward screen-right, and raise both forearms diagonally across the chest into a strong crossed guard below the face. The elbows tuck in to create a markedly narrower compact silhouette than the original hanging fists. Tilt the crowned head away slightly while its gold eyes still look left. Show no attack extension and no added weapon.\nPreserve the stocky original yarn anatomy and the exact yarn head size relative to full floor-to-crown height: the cranium through lower jaw/neck rope, EXCLUDING the crown, is approximately one third of the standing character height. Keep the crown near its original overall height; do not crouch into a much shorter body. Preserve muted mauve/rose yarn, small worn gold crown, round gold pendant, ragged stitched cape, glowing gold eyes, wrapping detail, painted outlines, lighting and three-quarter camera.\nOne whole character on a square genuinely transparent canvas with generous margins, no clipping. No text, labels, floor, environment, shadow blob, other characters, aura, particles, trails, blur, new props or opaque background.",
+      "referenceInput": "own art: apps/web/public/units/yarn-giant/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/yarn-giant/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K4-A1.png",
+      "sha256": "1d509d70339026f1876ead3ddad6f2fdc10dfe7508dd81b5e5778ee2134550e2",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-k4-a2",
+      "date": "2026-11-16T17:11:34.871878+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve.\nAsset type: transparent 2D K4 guarding/recoil battle pose of our original Yarn Giant.\nEdit this exact image. Lower both crossed guarding fists and forearms by about 8 percent of the full character height, so they cross in front of the upper belly and lower chest. Keep them crossed in a compact defensive guard. Reveal the entire lower jaw and neck rope above the forearms, with a small clear gap: we must see the complete yarn head outline. The face and its jaw must not be covered by either fist. Do not turn the guard into a punch.\nKeep the head and crown size, head placement, gold eyes, complete body height, torso, cape, pendant, knee bend, feet and planted floor line, body lean, camera, lighting, muted mauve/rose palette and original yarn texture unchanged. Only move the forearms/fists down and naturally reconnect the elbows. Same stocky yarn monster and original painted style.\nOne complete character on a square genuinely transparent canvas with empty margins. No cropping, new props, text, background, floor, shadow, aura, particles, trails or blur.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/yarn-giant/K4-A1.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/yarn-giant/K4-A1.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/yarn-giant/K4-A2.png",
+      "sha256": "df4960d786ada7bb1fff77e4dabfea42f393191ce53b12565eee7d0ac2367051",
+      "status": "selected source K4; exposed jaw point gates pass; export/runtime/film pending",
+      "metrics": "tools/v3craft-lab/v4-yarn-giant/K4-A2-metrics.json"
     }
   ]
 }
