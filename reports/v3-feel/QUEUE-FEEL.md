@@ -2,8 +2,8 @@
 
 | Item | State | Work | Evidence / log |
 |---|---|---|---|
-| P0 | started | Save CRAFT work, adopt pose contract/checker | STARTED 2026-11-16T01:08:01.561395+00:00; LEARN/P0.md; typecheck/parity PASS; 1774 checker tests PASS; unit tests running |
-| P1 | todo | Learn pose craft; Soot Method A/B and swap experiment | >=12 sources, >=2 formal; 6 master basics; no production before study |
+| P0 | done | Save CRAFT work, adopt pose contract/checker | STARTED 2026-11-16T01:08:01.561395+00:00; LEARN/P0.md; typecheck/parity PASS; 1784 checker tests PASS;2634 web tests PASS; commit52b994a9c pushed; ENDED 2026-11-16T01:09:57.399455+00:00 |
+| P1 | done | Learn pose craft; Soot Method A/B and swap experiment | STARTED 2026-11-16T01:10:42.804300+00:00; 16sources/2formal;6basics/1ultimate;A/B+swaps;checker23PASS/0FAIL/0OPEN;1786policy tests,typecheck,parity PASS;REVIEW/P1/REVIEW.md;ENDED 2026-11-16T01:33:10.001816+00:00;commit pending |
 | P2 | todo | Soot drawn poses and re-anchored effects | Continue Q3.B: basic6/10, pilot5/10; curtains FAIL; >=2 revisions |
 | P3 | todo | Fixture roster poses and effects | Mochi,Clover,Panko,boss,Binding Thread,wave enemies; pilot must pass first |
 | P4 | todo | Remaining roster poses | Actual25 units/12 cats; unreached units Method C OPEN at18Nov04Z |

@@ -1,0 +1,166 @@
+{
+  "at": "2026-11-16T01:27:38.280811+00:00",
+  "fieldHeight": 196,
+  "method": "alpha>=128, common bottom-contact centroid, six Lab kmeans++ palettes(seed42), optimal one-to-one DeltaE00 matching; anatomical head landmarks recorded",
+  "headLandmarks": {
+    "K0": [
+      191,
+      355
+    ],
+    "A1": [
+      315,
+      657
+    ],
+    "A2": [
+      394,
+      724
+    ]
+  },
+  "transforms": {
+    "K0": {
+      "scale": 0.4827586206896552,
+      "x": 148,
+      "y": -59,
+      "footSource": [
+        273.4157894736842,
+        599.0
+      ],
+      "bbox": [
+        142,
+        193,
+        499,
+        599
+      ]
+    },
+    "A1": {
+      "scale": 0.2641509433962264,
+      "x": 143,
+      "y": -49,
+      "footSource": [
+        517.7422096317281,
+        1056.0
+      ],
+      "bbox": [
+        59,
+        314,
+        1192,
+        1056
+      ]
+    },
+    "A2": {
+      "scale": 0.25891677675033026,
+      "x": 166,
+      "y": -68,
+      "footSource": [
+        440.1936170212766,
+        1150.0
+      ],
+      "bbox": [
+        45,
+        393,
+        1174,
+        1150
+      ]
+    },
+    "rigK0": {
+      "scale": 0.3858267716535433,
+      "x": 190,
+      "y": 10,
+      "footSource": [
+        234.43589743589743,
+        569.0
+      ],
+      "bbox": [
+        77,
+        61,
+        524,
+        569
+      ]
+    },
+    "B1": {
+      "scale": 0.3858267716535433,
+      "x": 190,
+      "y": 10,
+      "footSource": [
+        234.43589743589743,
+        569.0
+      ],
+      "bbox": [
+        77,
+        61,
+        655,
+        569
+      ]
+    },
+    "B2": {
+      "scale": 0.3858267716535433,
+      "x": 190,
+      "y": 10,
+      "footSource": [
+        234.43589743589743,
+        569.0
+      ],
+      "bbox": [
+        77,
+        61,
+        675,
+        569
+      ]
+    }
+  },
+  "rows": [
+    {
+      "candidate": "A1",
+      "baseline": "K0",
+      "iou": 0.5518689007549255,
+      "frontReachBodyFraction": 0.3520408163265306,
+      "paletteDeltaE00": 2.9934328266752384,
+      "headRatioRelative": 1.141049240681086,
+      "footDriftPx": 0,
+      "heightPx": 196,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "A2",
+      "baseline": "K0",
+      "iou": 0.48893655452698126,
+      "frontReachBodyFraction": 0.413265306122449,
+      "paletteDeltaE00": 6.797532602907702,
+      "headRatioRelative": 1.0791957985630054,
+      "footDriftPx": 0,
+      "heightPx": 196,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "B1",
+      "baseline": "rigK0",
+      "iou": 0.896453601728408,
+      "frontReachBodyFraction": 0.2602040816326531,
+      "paletteDeltaE00": 2.7428816007703216,
+      "headRatioRelative": 1.0,
+      "footDriftPx": 0,
+      "heightPx": 196,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "B2",
+      "baseline": "rigK0",
+      "iou": 0.8706754530477759,
+      "frontReachBodyFraction": 0.29591836734693877,
+      "paletteDeltaE00": 3.3917787648187705,
+      "headRatioRelative": 1.0,
+      "footDriftPx": 0,
+      "heightPx": 196,
+      "numericPass": false,
+      "accepted": false
+    }
+  ],
+  "sheets": [
+    "reports/v3-feel/REVIEW/P1/method-comparison.jpg",
+    "reports/v3-feel/REVIEW/P1/swap-comparison.jpg"
+  ],
+  "productionAccepted": false
+}

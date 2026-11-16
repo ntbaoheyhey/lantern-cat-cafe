@@ -4479,7 +4479,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "efc0faf07e022dc7ae78e60e1a0e3f37e6bf719691b2aa82226ed8b8df5156d3"
+          "sha256": "7083cfc2a365e592686ab2ed65d0dbc709f365f90a3ae16d7e1c5f29456b8b7e"
         }
       ]
     },
@@ -4493,7 +4493,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "efc0faf07e022dc7ae78e60e1a0e3f37e6bf719691b2aa82226ed8b8df5156d3"
+          "sha256": "7083cfc2a365e592686ab2ed65d0dbc709f365f90a3ae16d7e1c5f29456b8b7e"
         }
       ]
     },
@@ -4535,11 +4535,11 @@
       "evidence": [
         {
           "path": "assets/provenance.json",
-          "sha256": "1825112c3e57eec2b13798fcbcd7e4a914f930c6e72d3b62bb26de66d0cbfc68"
+          "sha256": "04364cda74f860f8891622ecf313338d463568cc26128ea0960cc0e2eeeba0b8"
         },
         {
-          "path": "reports/v3-feel/REVIEW/Q3.A/drills.json",
-          "sha256": "02e4b628d4a528747f185b17366aa5be15e9137a392dae1074ba51d2b9ca7916"
+          "path": "reports/v3-feel/REVIEW/P1/results.json",
+          "sha256": "d1d838d21354be7561d3168e6425285e44878a7479b837c3a18af88253e5b9f1"
         }
       ]
     },
@@ -4552,8 +4552,8 @@
       ],
       "evidence": [
         {
-          "path": "reports/v3-feel/REVIEW/C0/measurements.json",
-          "sha256": "7159096421f034a91005e02747d07b7b40e79f8548b5925f798a865beea00ab8"
+          "path": "reports/v3-feel/REVIEW/P1/results.json",
+          "sha256": "d1d838d21354be7561d3168e6425285e44878a7479b837c3a18af88253e5b9f1"
         }
       ]
     },
@@ -4561,13 +4561,13 @@
       "samples": [
         {
           "fixture": "all",
-          "value": 27
+          "value": 29
         }
       ],
       "evidence": [
         {
           "path": "reports/v3-feel/HANDOFF-FEEL.md",
-          "sha256": "2fc3d2616d68b7fa856f3b148f502bc1e540e329950a082000e4ad45300b6cf1"
+          "sha256": "c8db48354756eb70ecfd1eb900522a26662d6f48039a72d2a2e9f49fcb6a51d8"
         }
       ]
     },
@@ -4581,7 +4581,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/STATUS-VI.md",
-          "sha256": "51a3be096b1a35cea177913df9c9159a0d5dbeb693d5bf348bd132feee7a02b3"
+          "sha256": "d908abe906d38f51926530fbdd04a0940946f12add38697270f57aa263049868"
         }
       ]
     },
@@ -6739,7 +6739,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/REVIEW/P0/results.json",
-          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+          "sha256": "df69efb582e47faa4146dd829d12f634636193c8f376ed241bb032dda99d9484"
         }
       ]
     },
@@ -6753,7 +6753,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/REVIEW/P0/results.json",
-          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+          "sha256": "df69efb582e47faa4146dd829d12f634636193c8f376ed241bb032dda99d9484"
         }
       ]
     },
@@ -6767,7 +6767,7 @@
       "evidence": [
         {
           "path": "reports/v3-feel/DECISIONS-FEEL.md",
-          "sha256": "8e26ab96abcaadb2d72b831754087d6077fc38efef9fa0c014094fa2f92068b8"
+          "sha256": "7083cfc2a365e592686ab2ed65d0dbc709f365f90a3ae16d7e1c5f29456b8b7e"
         }
       ]
     },
@@ -6785,7 +6785,7 @@
         },
         {
           "path": "reports/v3-feel/REVIEW/P0/results.json",
-          "sha256": "60f99ce88eb9cbf875f8c92548458f988418ba27b4548406517986aeabfffb7d"
+          "sha256": "df69efb582e47faa4146dd829d12f634636193c8f376ed241bb032dda99d9484"
         }
       ]
     },
@@ -6830,6 +6830,62 @@
           "sha256": "4c78a0f378e8eb2766451138301c09a7659ac226f7c0e7e1f38068ee94311aae"
         }
       ]
+    },
+    "P0.branchPushed": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P0/results.json",
+          "sha256": "df69efb582e47faa4146dd829d12f634636193c8f376ed241bb032dda99d9484"
+        }
+      ]
+    },
+    "P1.typecheck": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P1/results.json",
+          "sha256": "d1d838d21354be7561d3168e6425285e44878a7479b837c3a18af88253e5b9f1"
+        }
+      ]
+    },
+    "P1.unitTests": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P1/results.json",
+          "sha256": "d1d838d21354be7561d3168e6425285e44878a7479b837c3a18af88253e5b9f1"
+        }
+      ]
+    },
+    "P1.parityRegression": {
+      "samples": [
+        {
+          "fixture": "all",
+          "value": true
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/v3-feel/REVIEW/P1/results.json",
+          "sha256": "d1d838d21354be7561d3168e6425285e44878a7479b837c3a18af88253e5b9f1"
+        }
+      ]
     }
   },
   "updatedAt": "2026-11-16T01:09:28.200753+00:00",
@@ -6843,6 +6899,9 @@
     "Q2": {
       "commit": "47b161aa2321c80e98fbbcf289f7ee9bf2e1f1d1",
       "message": "V3CRAFT Q2: stabilize painted size through animation\n\nLearning: reports/v3-feel/LEARN/Q2.md\n\nCache opaque contours per mesh triangle, report their posed bounds, and preserve each pose shape with a foot-pivoted uniform size correction. Move outer enemy slots inward to retain recoil clearance. Six desktop rendered-pixel cases pass sampled size and clipping checks; typecheck and focused unit tests pass. Q2 remains open pending fresh footage and full regression.\n\n"
+    },
+    "P0": {
+      "commit": "52b994a9c8b659f073fc282b06f85508bd87bae9"
     }
   }
 }

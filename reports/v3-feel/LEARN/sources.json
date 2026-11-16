@@ -1068,5 +1068,117 @@
     "type": "local",
     "topic": "P0",
     "takeaway": "Keep failed main-shape and weak pose observations while retaining good draft code."
+  },
+  {
+    "id": "P1-lasseter",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "P1-poses",
+    "takeaway": "Stage silhouettes clearly; anticipate, contact, follow through."
+  },
+  {
+    "id": "P1-ciede",
+    "url_or_path": "https://hajim.rochester.edu/ece/sites/gsharma/ciede2000/ciede2000noteCRNA.pdf",
+    "type": "paper",
+    "topic": "P1-poses",
+    "takeaway": "Validate perceptual color difference against published test pairs."
+  },
+  {
+    "id": "P1-xrd",
+    "url_or_path": "https://gdcvault.com/play/1022031/GuiltyGearXrd-s-Art-Style-The",
+    "type": "breakdown",
+    "topic": "P1-poses",
+    "takeaway": "Arc System Works art talk identified; handout retrieval failed, no content claim from unavailable PDF."
+  },
+  {
+    "id": "P1-deadcells",
+    "url_or_path": "https://www.gamedeveloper.com/production/art-design-deep-dive-using-a-3d-pipeline-for-2d-animation-in-i-dead-cells-i-",
+    "type": "breakdown",
+    "topic": "P1-poses",
+    "takeaway": "Convincing keys first; VFX convey transition speed and impact."
+  },
+  {
+    "id": "P1-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "One attachment per slot; point attachments provide effects sockets."
+  },
+  {
+    "id": "P1-mesh",
+    "url_or_path": "https://esotericsoftware.com/spine-meshes",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Deformation bends an image; it does not draw new hidden surfaces."
+  },
+  {
+    "id": "P1-sequence",
+    "url_or_path": "https://esotericsoftware.com/blog/Spine-4-1-released",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Sequence keys embed frame-by-frame playback in a skeleton."
+  },
+  {
+    "id": "P1-keys",
+    "url_or_path": "https://esotericsoftware.com/spine-keys",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Slot attachment keys select one drawing at a time."
+  },
+  {
+    "id": "P1-chibi",
+    "url_or_path": "https://esotericsoftware.com/spine-examples-chibi-stickers",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Pin feet while limbs/body deform and apply independent overlap."
+  },
+  {
+    "id": "P1-angles",
+    "url_or_path": "https://esotericsoftware.com/forum/d/29726-how-to-animate-multi-angle-characters-and-swap-body-parts-correctly-in-spine-2d",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Staff Misaki demonstrates shoulder-weighted torso transitions and attachment continuity."
+  },
+  {
+    "id": "P1-skimage",
+    "url_or_path": "https://scikit-image.org/docs/stable/api/skimage.color.html",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Use Lab conversion and CIEDE2000 on opaque pixels."
+  },
+  {
+    "id": "P1-kmeans",
+    "url_or_path": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.cluster.vq.kmeans2.html",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Use six clusters with seeded kmeans++ for reproducible palette extraction."
+  },
+  {
+    "id": "P1-assignment",
+    "url_or_path": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html",
+    "type": "doc",
+    "topic": "P1-poses",
+    "takeaway": "Match six palette centroids one-to-one by minimum total color difference."
+  },
+  {
+    "id": "P1-local",
+    "url_or_path": "reports/v3-feel/REVIEW/Q3.A/D8.jpg",
+    "type": "local",
+    "topic": "P1-poses",
+    "takeaway": "Three revisions retain the same standing silhouette."
+  },
+  {
+    "id": "P1-experiment",
+    "url_or_path": "tools/v3craft-lab/poses/results.json",
+    "type": "experiment",
+    "topic": "P1-poses",
+    "takeaway": "A2 meets measured preliminary numerical bounds; arm-only swaps fail silhouette; no production pose accepted."
+  },
+  {
+    "id": "P1-runtime",
+    "url_or_path": "apps/web/src/game/rig/cutout.ts",
+    "type": "local",
+    "topic": "P1-poses",
+    "takeaway": "Existing visibility track selects existing parts; no full pose artwork set currently loaded."
   }
 ]

@@ -2787,6 +2787,64 @@
       "referenceInputs": [],
       "sha256": "b8ff3ac4f6637b599e7a5b01f7c1bee208ce25dc3ca3fd6996956e30d23923f1",
       "status": "opt-in author draft; local native/seek/clear checks pass, full filmed pose acceptance pending"
+    },
+    {
+      "id": "v3pose-soot-K2-A1",
+      "path": "tools/v3craft-lab/poses/raw/soot-K2-A1.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset type: original 2D RPG battle key pose, Soot K2 strike, Method A candidate 1. Input image1 is our own approved full-body Soot; image2 is our own Soot portrait for identity only. Redraw this exact gray kitten in one NEW full-body attack-contact pose, three-quarter facing RIGHT. Change the silhouette decisively: torso leans forward and twists right, rightmost lantern-holding arm fully extends horizontally toward the enemy with a clear gap between forearm and chest, the short hooked bronze staff and its hanging hexagonal golden lantern reach well beyond the muzzle. Free paw sweeps behind for counterbalance; feet remain planted on a shared horizontal baseline with a small forward step. Tail trails left. Preserve the exact gray fur, golden eyes, pink nose and inner ears, purple hood folded behind ears, embroidered purple layered cloak and pentagonal gold clasp, teal woven tunic and fringed sash, brown belt/brass buckle, cream hanging charm/pouch, single gray tail, two ears/four limbs. Keep the same head-to-body proportions and soft painterly shading, upper-left lighting, lavender/teal palette and outline weight. No large wizard staff, no added hat, no spell effects, no scene, no text, no extra props. Single character, not a grid. Full body and lantern inside square canvas with generous transparent margins. Feet at about94% height; character opaque height about64% of canvas, matching input scale. Actual transparent RGBA background. Only pose changes; character identity and costume stay exact.",
+      "referenceInput": "own art: apps/web/public/units/soot/runtime.webp, apps/web/public/units/soot/portrait.webp",
+      "inputs": [
+        "apps/web/public/units/soot/runtime.webp",
+        "apps/web/public/units/soot/portrait.webp"
+      ],
+      "date": "2026-11-16T01:13:36.352862+00:00",
+      "status": "rejected study candidate: head/body ratio1.14105 exceeds1.08; retained locally for experiment reproducibility",
+      "sha256": "a43edb27be4e598ee587ed95d5bf41c32477a234bbb08e5e5fbd8f29c1dd8b10",
+      "reviewedAt": "2026-11-16T01:32:24.309441+00:00"
+    },
+    {
+      "id": "v3pose-soot-K2-A2",
+      "path": "tools/v3craft-lab/poses/raw/soot-K2-A2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Asset type: original 2D RPG battle key pose, Soot K2 strike, Method A candidate 1. Input image1 is our own approved full-body Soot; image2 is our own Soot portrait for identity only. Redraw this exact gray kitten in one NEW full-body attack-contact pose, three-quarter facing RIGHT. Change the silhouette decisively: torso leans forward and twists right, rightmost lantern-holding arm fully extends horizontally toward the enemy with a clear gap between forearm and chest, the short hooked bronze staff and its hanging hexagonal golden lantern reach well beyond the muzzle. Free paw sweeps behind for counterbalance; feet remain planted on a shared horizontal baseline with a small forward step. Tail trails left. Preserve the exact gray fur, golden eyes, pink nose and inner ears, purple hood folded behind ears, embroidered purple layered cloak and pentagonal gold clasp, teal woven tunic and fringed sash, brown belt/brass buckle, cream hanging charm/pouch, single gray tail, two ears/four limbs. Keep the same head-to-body proportions and soft painterly shading, upper-left lighting, lavender/teal palette and outline weight. No large wizard staff, no added hat, no spell effects, no scene, no text, no extra props. Single character, not a grid. Full body and lantern inside square canvas with generous transparent margins. Feet at about94% height; character opaque height about64% of canvas, matching input scale. Actual transparent RGBA background. Only pose changes; character identity and costume stay exact.\nCandidate 2 variation: a tighter fencing-like forward stance, back heel planted and front knee bent only slightly. Keep the original kitten head size relative to total opaque height (do not enlarge the head or shorten legs). Both golden eyes visible but gaze strongly right. Extend the lantern arm straight from shoulder height; use a narrow forearm, with the hook opening downward and lantern hanging vertically. Keep empty margin above the hood and to the right of the lantern.",
+      "referenceInput": "own art: apps/web/public/units/soot/runtime.webp, apps/web/public/units/soot/portrait.webp",
+      "inputs": [
+        "apps/web/public/units/soot/runtime.webp",
+        "apps/web/public/units/soot/portrait.webp"
+      ],
+      "date": "2026-11-16T01:13:36.353708+00:00",
+      "status": "provisional P1 study winner only; numeric boundaries pass narrowly; production canvas, sockets and runtime/film gates untested",
+      "sha256": "aec7bb68d6ea90132777b31f461dcd2385311d3fbd08356ff08bae27ba00560a",
+      "reviewedAt": "2026-11-16T01:32:24.309441+00:00"
+    },
+    {
+      "id": "v3pose-soot-K2-B1",
+      "path": "tools/v3craft-lab/poses/raw/soot-K2-B1-arm.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Original game animation attachment swap, Soot K2 Method B candidate1. Input is ONLY a crop of our approved gray kitten Soot holding his small hooked bronze lantern staff; use it for exact material, color and costume identity. Draw only the replacement rightward reaching ARM WITH PAW, SHORT HOOKED STAFF AND HEXAGONAL GOLD LANTERN on a transparent background. The arm stretches nearly horizontally to the RIGHT from a purple embroidered cloak shoulder cuff on the left to a gray paw gripping the small bronze hook at the right, with the matching hexagonal lantern dangling below the hook. Include the shoulder connection so it can overlap the original cloak. Gray furry forearm with original kitten proportions, soft painterly texture, upper-left highlights, lavender embroidered cuff, exactly matching the crop. Entire attachment contained within canvas with margin. NO torso, NO head, NO feet, NO extra arm, NO text, NO background, NO magic or effect. Keep one paw and one lantern. This is a detachable part to assemble on the existing own-art body; do not draw a whole character.",
+      "referenceInput": "own art: apps/web/public/units/soot/runtime.webp crop[340,315,525,490]",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/soot-staff-arm-input.png"
+      ],
+      "date": "2026-11-16T01:20:08.229848+00:00",
+      "status": "rejected arm-only study: IoU.89645 exceeds.75; old hook fragment and lighting seam",
+      "sha256": "38cdc21e79d22d565b9ca0c5e542b10ed4bdfed449d250a64dffc837241618c3",
+      "reviewedAt": "2026-11-16T01:32:24.309441+00:00"
+    },
+    {
+      "id": "v3pose-soot-K2-B2",
+      "path": "tools/v3craft-lab/poses/raw/soot-K2-B2-arm.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Original game animation attachment swap, Soot K2 Method B candidate1. Input is ONLY a crop of our approved gray kitten Soot holding his small hooked bronze lantern staff; use it for exact material, color and costume identity. Draw only the replacement rightward reaching ARM WITH PAW, SHORT HOOKED STAFF AND HEXAGONAL GOLD LANTERN on a transparent background. The arm stretches nearly horizontally to the RIGHT from a purple embroidered cloak shoulder cuff on the left to a gray paw gripping the small bronze hook at the right, with the matching hexagonal lantern dangling below the hook. Include the shoulder connection so it can overlap the original cloak. Gray furry forearm with original kitten proportions, soft painterly texture, upper-left highlights, lavender embroidered cuff, exactly matching the crop. Entire attachment contained within canvas with margin. NO torso, NO head, NO feet, NO extra arm, NO text, NO background, NO magic or effect. Keep one paw and one lantern. This is a detachable part to assemble on the existing own-art body; do not draw a whole character.\nCandidate2: keep the arm slimmer and nearly level; the shoulder cuff is a small curved purple sleeve edge, not a large body section. Paw rotated in three-quarter view, exactly three subtle visible knuckle lobes and thumb around the short staff grip. Lantern matches the small original prop and hangs directly below the hook. Stronger rightward extension, with no change to costume or palette.",
+      "referenceInput": "own art: apps/web/public/units/soot/runtime.webp crop[340,315,525,490]",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/soot-staff-arm-input.png"
+      ],
+      "date": "2026-11-16T01:20:08.231521+00:00",
+      "status": "rejected arm-only study: IoU.87068 exceeds.75; old hook fragment and lighting seam",
+      "sha256": "ba7304e8355b7a68d55e5cbd27c08895a6899c210f0f7061ce113912e94f1180",
+      "reviewedAt": "2026-11-16T01:32:24.309441+00:00"
     }
   ]
 }

@@ -220,7 +220,7 @@ for(const item of ['Q0','Q1','Q2','Q3','Q4','Q5','Q9']){
  if(item!=='Q0')add(item,'videoDefects','eq',0,'any current-item or completed-item defect fails; future-item defects stay in the queue');
 }
 for(const item of ['P0','P1','P2','P3','P4','C0','Q0','Q1','Q2','Q3.A','Q3.B','Q3','Q4','Q5','Q6','Q7','Q8','Q9','R1','R2','R3']){
- if(!['Q0','R3'].includes(item))add(item,'learn','eq',true,'nonempty LEARN file; >=6 sources, >=1 formal/paper, >=3 internet docs, recorded own experiment; build commit cites LEARN');
+ if(!['Q0','R3'].includes(item))add(item,'learn','eq',true,item==='P1'?'P1-poses: >=12 sources, >=2 papers/formal docs, >=3 internet docs, own experiment, cited build commit':'nonempty LEARN file; >=6 sources, >=1 formal/paper, >=3 internet docs, recorded own experiment; build commit cites LEARN');
  for(const key of ['typecheck','unitTests','parityRegression'])add(item,key,'eq',true,'per-item typecheck, touched-package unit tests, combat parity');
  if(['Q2','Q3','Q5','R2','R3'].includes(item))for(const key of ['browserSuite','aLaneGates','bLaneGates'])add(item,key,'eq',true,'full 435-case browser/A/B regression at Q2, Q3, Q5, R2 and FREEZE');
 }
@@ -266,14 +266,16 @@ export function validateEvidence(measurement,base=root){
  }
  return null;
 }
-export function checkFeel(data,base=root,options={}){const selected=selectedItems(options.item,options.done);return gates.filter(g=>!selected||selected.has(g.item)).map(gate=>{
+export function checkFeel(data,base=root,options={}){const selected=selectedItems(options.item,options.done);
+ if(selected&&[...selected].some(id=>id.startsWith('P.')))selected.add('P.learn');
+ return gates.filter(g=>!selected||selected.has(g.item)||selected.has(g.id)).map(gate=>{
  let measurement=data?.measurements?.[gate.id];
  const derived=(value,paths)=>({samples:[{fixture:'all',value}],evidence:paths.filter(p=>existsSync(resolve(base,p))).map(path=>({path,sha256:createHash('sha256').update(readFileSync(resolve(base,path))).digest('hex')}))});
  if(gate.key==='learn'){
   const path=resolve(base,'reports/v3-feel/LEARN/sources.json');
   const sources=existsSync(path)?JSON.parse(readFileSync(path,'utf8')):[];
-  const message=options.commitMessage??data?.buildCommits?.[gate.item]?.message;
-  const receipt=gate.item==='P'?poseLearningReceipt(base,sources,message):learningReceipt(base,gate.item==='P1'?'P1-poses':gate.item,sources,message);
+  const message=options.commitMessage??data?.buildCommits?.[gate.item]?.message??(gate.item==='P'?data?.buildCommits?.P1?.message:undefined);
+  const receipt=['P','P1'].includes(gate.item)?poseLearningReceipt(base,sources,message):learningReceipt(base,gate.item,sources,message);
   measurement=derived(receipt.pass,receipt.paths);
  }
  if(gate.item==='P'&&gate.key!=='learn'){

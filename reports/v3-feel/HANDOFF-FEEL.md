@@ -11,17 +11,19 @@ NEVER LOWER A THRESHOLD
 NO DEPLOY, NO MAIN MERGE
 ORIGINAL ART ONLY, OWN ART AS THE ONLY GENERATOR INPUT
 DO NOT STOP BEFORE 19 NOV 12:00 UTC.
-NOW: P0 adopting V3-POSE, saving unfinished CRAFT work; LEARN/P0.md complete.
-NEXT 1: Commit/push P0 checkpoint, register commit receipt, then immediately start P1.
-NEXT 2: P1 study and Method A/B Soot strike experiment; then P2 pilot, no rollout before pass.
-NEXT 3: Time triggers R1 Nov16 12:00Z, R2 Nov18 12:00Z, FREEZE Nov19 12:00Z.
-LAST GOOD COMMIT: 7955547fb1614e4d5484c1205aee1a4860d734d2 (HEAD/origin verified).
-OPEN: Q1 video residual50.233ms; schedule exact/zero overlap; <=30min Q9, no recorder development.
-OPEN: Q2-owned visuals done; inherited A250 PASS/97 FAIL and B14 FAIL go Q9.
-OPEN: Q3.A drills done, historic craft-time15.17% FAIL unchanged; Q3.B continues in P2.
-PIDS: Owned Vite67838 on5990, VITE_CRAFT_PILOT=soot; demo untouched.
-BACKGROUND JOBS: None; all old PIDs audited. R2 capture and staff-ground study completed.
-TESTS: Fresh P0 typecheck,2634 web tests,1784 checker tests and three-fixture parity PASS.
-BUDGET: tracked137168475 bytes; local771MB before trim;96GiB free.
+NOW: P1 method study complete; checkpointing, then P2 Soot drawn-pose pilot.
+NEXT 1: Re-anchor P2; check designer inbox; record LEARN/P2 and active craft intervals.
+NEXT 2: >=4 candidates per K1/K2/K4/K5; normalize/inspect then generic runtime swaps/sockets.
+NEXT 3: Re-anchor staff/ultimate; replace curtains; two filmed revisions and blind40 frames before rollout.
+LAST GOOD COMMIT: 52b994a9c8b659f073fc282b06f85508bd87bae9 (pushed).
+OPEN: Q1 video50.233ms; exact schedule/zero overlap; <=30min Q9, no recorder development.
+OPEN: Q2 owned done; inherited A250PASS/97FAIL,B14FAIL goQ9. Q3.A historic craft15.17%FAIL retained.
+OPEN: Soot basic6/10,pilot5/10; curtains fail. P1 study does not accept P.soot.
+METHOD: A full redraw + hard swap; A2 near head-ratio limit, unaccepted; arm-onlyB failed silhouette/seams.
+ESTIMATE: pose-set30-45 author minutes provisional; calibrate in P2. No historic time manufactured.
+PIDS: Owned Vite67838 on5990,VITE_CRAFT_PILOT=soot; demo untouched; system_installd16045 never signal.
+BACKGROUND JOBS: None; P1 typecheck/policy/parity completed.
+TESTS: P1 workspace typecheck,1786 checker tests,three fixture parity PASS; no runtime edits.
+TIME TRIGGERS: R1 Nov16 12Z;R2 Nov18 12Z;FREEZE Nov19 12Z; none due.
 SOURCE: reports/v3-feel/REQUEST-POSE.txt.
-UPDATED: 2026-11-16T01:06:03.593519+00:00
+UPDATED: 2026-11-16T01:32:24.309441+00:00

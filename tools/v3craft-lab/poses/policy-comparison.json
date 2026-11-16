@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-16T01:28:36.284Z",
+  "source": "real P1 source registry and checker definitions",
+  "existingUnitSelection": [],
+  "proposedUnitSelection": [
+    "P.learn",
+    "P.soot"
+  ],
+  "sixSourceGeneric": {
+    "pass": true,
+    "errors": [],
+    "sourceCount": 6,
+    "paths": [
+      "reports/v3-feel/LEARN/P1-poses.md",
+      "reports/v3-feel/LEARN/sources.json",
+      "tools/v3craft-lab/poses/results.json",
+      "apps/web/src/game/rig/cutout.ts"
+    ]
+  },
+  "sixSourcePose": {
+    "pass": false,
+    "errors": [
+      "fewer than twelve pose sources",
+      "fewer than two formal pose sources"
+    ],
+    "sourceCount": 6,
+    "paths": [
+      "reports/v3-feel/LEARN/P1-poses.md",
+      "reports/v3-feel/LEARN/sources.json",
+      "tools/v3craft-lab/poses/results.json",
+      "apps/web/src/game/rig/cutout.ts"
+    ]
+  },
+  "fullPose": {
+    "pass": true,
+    "errors": [],
+    "sourceCount": 16,
+    "paths": [
+      "reports/v3-feel/LEARN/P1-poses.md",
+      "reports/v3-feel/LEARN/sources.json",
+      "reports/v3-feel/REVIEW/Q3.A/D8.jpg",
+      "tools/v3craft-lab/poses/results.json",
+      "apps/web/src/game/rig/cutout.ts"
+    ]
+  }
+}
