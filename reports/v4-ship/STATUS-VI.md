@@ -11,7 +11,7 @@
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Kiểm tra web có2.686trường hợp đạt và bảy lỗi ART không đổi; server, rules, typecheck, bản dựng và đối chiếu ba trận đạt.
 - Lịch sử Git:700/3.854 commit; checkpoint gzip1.203/1.332 tệp,1.314 cảnh báo đã đối chiếu. Bổ sung mới9commit/19gzip không có cảnh báo; chưa kết luận toàn bộ lịch sử sạch.
-- Production12 đi đủ bảy bước, 18 biên nhận và 60 FPS; tải đến lúc cảnh battle sẵn sàng là27,55MB, vượt8MB. Bốn lượt vào mới cũng xác nhận mức tải này; yêu cầu ART đã cập nhật.
+- Production14 đạt đủ hành trình ở hai kích thước,36 biên nhận,248 âm tiếp xúc,32 nhịp hồi máu Clover và boss trung vị60FPS; tải sẵn sàng29,08MB vẫn vượt8MB.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
 - Snowtrace được ghi bằng WebKit headless; cảnh báo403 của Chromium được giữ riêng. Nguồn phim/phí RPC đã đối chiếu; kiểm tra nghe/đọc thủ công còn mở. R2 vẫn sau ART18/11.
@@ -21,4 +21,4 @@ S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đ�
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
-Âm thanh S11:đã áp dụng chuyển nhạc/nền theo trận thường,boss và trở về café;4/4test mới đạt. Bản production mới đang chuẩn bị để đo lại âm và hai hành trình. Bản cũ−15,47/−15,55LUFS còn được giữ; ranged mới ở bước chuẩn bị, chưa triển khai.
+Âm thanh S11:production14 đã xác nhận đúng nhạc/nền và nạp âm trước tiếp xúc ở cả hai kích thước;−17,73/−17,77LUFS,LRA7,9/8,5,đỉnh−1,94/−2,04dBTP đạt. Trễ ước tính tối đa33,57ms vẫn vượt33ms. Ranged đang kiểm tra lệch MP3 giữa hai trình duyệt; chưa cài âm mới.
