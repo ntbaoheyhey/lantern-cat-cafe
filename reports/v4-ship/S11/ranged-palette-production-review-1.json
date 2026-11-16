@@ -1,0 +1,403 @@
+{
+  "at": "2026-11-16T23:29:09.482832+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-palette-production-review.py",
+    "sha256": "0e2299630d77e3db4a95da1af5f64ded8f8fa35562ca85f31087af7c853323e3"
+  },
+  "groups": {
+    "before": [
+      {
+        "evidence": {
+          "path": "reports/v4-ship/S11/scene-journey-7.json",
+          "sha256": "def5998a13c56d69e35d853f965ed489b78a6576fb814283b3e4afe152737f82"
+        },
+        "events": {
+          "path": "reports/v4-ship/S11/scene-journey-7.events.json.gz",
+          "sha256": "4426f3aa0c5f75526dc0931264f816259e20a75d7272151529703e376bfe3033"
+        },
+        "capture": {
+          "path": "work/v4ship-audio/scene-journey-7/journey.webm",
+          "bytes": 3210532,
+          "sha256": "63c16b6d89353c3b5186c9f2a683bafb5183140969ca4bd4e992806921f4f29b",
+          "wallSeconds": 199.25100016593933,
+          "method": "Decoded frame sample count and timestamp span",
+          "sampleRate": 48000,
+          "frames": 3320,
+          "encodedSeconds": 199.2,
+          "timestampSpanSeconds": 199.196,
+          "headerSeconds": null,
+          "maximumTimestampGapMs": 3.0000000000143245,
+          "minimumTimestampGapMs": -3.0000000000143245
+        },
+        "sourceCommit": "608b7b9864f308716e499e5379958a9fc10e9756",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rosterBeforeMusic": [],
+        "contacts": 124,
+        "predecodedContacts": 124,
+        "rangedContacts": 58,
+        "healerContacts": 16,
+        "verifiedReceipts": 18,
+        "receiptChimes": 18,
+        "primaryControls": 10,
+        "maxStartsPer100ms": 4,
+        "duckHeldSamples": 1923,
+        "duckRecoverySamples": 3110,
+        "voiceInterruptions": 0,
+        "mix": {
+          "lufs": -17.73,
+          "lra": 8.1,
+          "peak": -2.08
+        },
+        "mixGates": {
+          "loudness": true,
+          "truePeak": true,
+          "loudnessRange": true
+        },
+        "sceneReadyBytes": 30042340,
+        "imageBytes": 22861499,
+        "rangedResponses": [
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-impacts.webm",
+            "totalBytes": 954763,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "bossMedianFps": 60,
+        "estimatedOnsetMaxMs": 33.568333336297655,
+        "estimatedOnsetOver33ms": 6,
+        "transferPass": false
+      },
+      {
+        "evidence": {
+          "path": "reports/v4-ship/S11/scene-journey-8.json",
+          "sha256": "7c5dccec24259b73c1526f40f29f5f8255c31a69bd90ff809201ae647fe1399b"
+        },
+        "events": {
+          "path": "reports/v4-ship/S11/scene-journey-8.events.json.gz",
+          "sha256": "c95996a3e5f7109ab1fef9c824358300ae4eb1251559473a081909e8a92a9e36"
+        },
+        "capture": {
+          "path": "work/v4ship-audio/scene-journey-8/journey.webm",
+          "bytes": 3198923,
+          "sha256": "a5c418be9e88ece673e06a60e792955c8ec31b1568713026a399bf022618508e",
+          "wallSeconds": 198.49799990653992,
+          "method": "Decoded frame sample count and timestamp span",
+          "sampleRate": 48000,
+          "frames": 3308,
+          "encodedSeconds": 198.48,
+          "timestampSpanSeconds": 198.476,
+          "headerSeconds": null,
+          "maximumTimestampGapMs": 3.0000000000143245,
+          "minimumTimestampGapMs": -3.0000000000143245
+        },
+        "sourceCommit": "608b7b9864f308716e499e5379958a9fc10e9756",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "rosterBeforeMusic": [],
+        "contacts": 124,
+        "predecodedContacts": 124,
+        "rangedContacts": 58,
+        "healerContacts": 16,
+        "verifiedReceipts": 18,
+        "receiptChimes": 18,
+        "primaryControls": 10,
+        "maxStartsPer100ms": 6,
+        "duckHeldSamples": 1922,
+        "duckRecoverySamples": 3122,
+        "voiceInterruptions": 0,
+        "mix": {
+          "lufs": -17.76,
+          "lra": 8.2,
+          "peak": -1.79
+        },
+        "mixGates": {
+          "loudness": true,
+          "truePeak": true,
+          "loudnessRange": true
+        },
+        "sceneReadyBytes": 30042338,
+        "imageBytes": 22861499,
+        "rangedResponses": [
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-impacts.webm",
+            "totalBytes": 954763,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "bossMedianFps": 60,
+        "estimatedOnsetMaxMs": 33.67333333406714,
+        "estimatedOnsetOver33ms": 17,
+        "transferPass": false
+      }
+    ],
+    "after": [
+      {
+        "evidence": {
+          "path": "reports/v4-ship/S11/scene-journey-9.json",
+          "sha256": "fb69385f2ff4406b1b586defa7da247c5c1278db82e039878da326ac7d9d7d41"
+        },
+        "events": {
+          "path": "reports/v4-ship/S11/scene-journey-9.events.json.gz",
+          "sha256": "2c1a1e784362b52dc54c31df5da32bd651de1c5a0ee8828a880db926bfaa2d2f"
+        },
+        "capture": {
+          "path": "work/v4ship-audio/scene-journey-9/journey.webm",
+          "bytes": 3018094,
+          "sha256": "ccc86fbe21ebcd7119b83d326887f7e47b24ed1ff4d587eb1c48e81d6ba1dee9",
+          "wallSeconds": 187.3230001926422,
+          "method": "Decoded frame sample count and timestamp span",
+          "sampleRate": 48000,
+          "frames": 3121,
+          "encodedSeconds": 187.26,
+          "timestampSpanSeconds": 187.25900000000001,
+          "headerSeconds": null,
+          "maximumTimestampGapMs": 3.0000000000143245,
+          "minimumTimestampGapMs": -3.0000000000143245
+        },
+        "sourceCommit": "208805af81dc6ae507fbb3f82945e4993f2d8739",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rosterBeforeMusic": [
+          {
+            "musicAt": 1603.1000000014901,
+            "rosterAt": 1603.1000000014901,
+            "preloadAt": 1603.199999999255,
+            "readyAt": 1704.699999999255,
+            "selected": [
+              "v4-ranged-ember",
+              "v4-ranged-heavy"
+            ]
+          },
+          {
+            "musicAt": 97469.10000000149,
+            "rosterAt": 97469.10000000149,
+            "preloadAt": 97469.10000000149,
+            "readyAt": 97616.80000000075,
+            "selected": [
+              "v4-ranged-ember",
+              "v4-ranged-heavy"
+            ]
+          }
+        ],
+        "contacts": 124,
+        "predecodedContacts": 124,
+        "rangedContacts": 58,
+        "healerContacts": 16,
+        "verifiedReceipts": 18,
+        "receiptChimes": 18,
+        "primaryControls": 10,
+        "maxStartsPer100ms": 6,
+        "duckHeldSamples": 1917,
+        "duckRecoverySamples": 2660,
+        "voiceInterruptions": 0,
+        "mix": {
+          "lufs": -17.72,
+          "lra": 8.8,
+          "peak": -1.63
+        },
+        "mixGates": {
+          "loudness": true,
+          "truePeak": true,
+          "loudnessRange": true
+        },
+        "sceneReadyBytes": 29649511,
+        "imageBytes": 22861499,
+        "rangedResponses": [
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-ember.webm",
+            "totalBytes": 337576,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-heavy.webm",
+            "totalBytes": 223185,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "bossMedianFps": 60,
+        "estimatedOnsetMaxMs": 33.565333332604496,
+        "estimatedOnsetOver33ms": 12,
+        "transferPass": false
+      },
+      {
+        "evidence": {
+          "path": "reports/v4-ship/S11/scene-journey-10.json",
+          "sha256": "1c4b66ae6b6b176cbd906efbcefa13cc08da5f9831593917d2bd97818c1c760a"
+        },
+        "events": {
+          "path": "reports/v4-ship/S11/scene-journey-10.events.json.gz",
+          "sha256": "2deb3388d0de71e8746564a58c9e40a2ae619204ade800afec5dd81641468714"
+        },
+        "capture": {
+          "path": "work/v4ship-audio/scene-journey-10/journey.webm",
+          "bytes": 3156368,
+          "sha256": "da1070b60a448a185e2745c0a1aa1ac3bed1d0f3be39d5104e2636435b5eda51",
+          "wallSeconds": 195.8989999294281,
+          "method": "Decoded frame sample count and timestamp span",
+          "sampleRate": 48000,
+          "frames": 3264,
+          "encodedSeconds": 195.84,
+          "timestampSpanSeconds": 195.836,
+          "headerSeconds": null,
+          "maximumTimestampGapMs": 3.0000000000143245,
+          "minimumTimestampGapMs": -3.0000000000143245
+        },
+        "sourceCommit": "208805af81dc6ae507fbb3f82945e4993f2d8739",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "rosterBeforeMusic": [
+          {
+            "musicAt": 1669.699999999255,
+            "rosterAt": 1669.6000000014901,
+            "preloadAt": 1669.699999999255,
+            "readyAt": 1758.199999999255,
+            "selected": [
+              "v4-ranged-ember",
+              "v4-ranged-heavy"
+            ]
+          },
+          {
+            "musicAt": 106267.89999999851,
+            "rosterAt": 106267.89999999851,
+            "preloadAt": 106267.89999999851,
+            "readyAt": 106425.10000000149,
+            "selected": [
+              "v4-ranged-ember",
+              "v4-ranged-heavy"
+            ]
+          }
+        ],
+        "contacts": 124,
+        "predecodedContacts": 124,
+        "rangedContacts": 58,
+        "healerContacts": 16,
+        "verifiedReceipts": 18,
+        "receiptChimes": 18,
+        "primaryControls": 10,
+        "maxStartsPer100ms": 6,
+        "duckHeldSamples": 1921,
+        "duckRecoverySamples": 3005,
+        "voiceInterruptions": 0,
+        "mix": {
+          "lufs": -17.76,
+          "lra": 8.6,
+          "peak": -1.95
+        },
+        "mixGates": {
+          "loudness": true,
+          "truePeak": true,
+          "loudnessRange": true
+        },
+        "sceneReadyBytes": 29649510,
+        "imageBytes": 22861499,
+        "rangedResponses": [
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-ember.webm",
+            "totalBytes": 337576,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "http://127.0.0.1:5998/audio/v4-ranged-heavy.webm",
+            "totalBytes": 223185,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "bossMedianFps": 60,
+        "estimatedOnsetMaxMs": 33.461333334820665,
+        "estimatedOnsetOver33ms": 10,
+        "transferPass": false
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "width": 1280,
+      "sceneReadyByteReduction": 392829,
+      "rangedResponseByteReduction": 394002,
+      "imageBytesUnchanged": true
+    },
+    {
+      "width": 1440,
+      "sceneReadyByteReduction": 392828,
+      "rangedResponseByteReduction": 394002,
+      "imageBytesUnchanged": true
+    }
+  ],
+  "regression": {
+    "inputs": [
+      {
+        "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/check.json",
+        "sha256": "f24758bfb51d20ad522d02d90f501a964273d7df02afccb65b6bb99cf93d760b"
+      },
+      {
+        "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+        "sha256": "a3aaf0970a018a93eb4564fb0a875f237f222c98b1b475478a45ed3be27cbe6e"
+      },
+      {
+        "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/parity-probe.json",
+        "sha256": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59"
+      },
+      {
+        "path": "reports/v4-ship/S11/ranged-roster-regression-1/check.json",
+        "sha256": "ad5a95ab6e0124baaca23e68f69b2f2a3add5ff1bc3bb1464bf9c2ea72b52b92"
+      },
+      {
+        "path": "reports/v4-ship/S11/ranged-roster-regression-1/log.jsonl.gz",
+        "sha256": "6f17f48df8285a9dd1c337a2c09eb2dd386a903e934530b1a905ba4a07e0b171"
+      },
+      {
+        "path": "reports/v4-ship/S11/ranged-roster-regression-1/parity-probe.json",
+        "sha256": "c4ed55c122b755a3797b601a0b7215e082dc894a16a259708ad617f1bb6c42af"
+      }
+    ],
+    "sameSevenArtFailures": true,
+    "webSummary": [
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+      "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+      "Test Files  2 failed | 320 passed (322)",
+      "Tests  7 failed | 2697 passed (2704)"
+    ],
+    "parityRowsUnchanged": true,
+    "gRegPass": false
+  },
+  "observedProductionIntegrationPass": true,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false,
+  "rehearsalGatePass": false,
+  "officialClassParityPass": false,
+  "limits": [
+    "Two production journeys; all ten passing rehearsals remain required after transfer repairs.",
+    "Mix values are original FFmpeg reductions of hash-verified output captures; random takes differ between runs.",
+    "CDP transfer bytes include HTTP overhead. Encoded palette payload savings are a separate measurement.",
+    "Observed contacts do not cover every unit/skill. Output timestamps estimate onset; no physical or listening acceptance.",
+    "Historical harnesses are verified against their original committed source; their coverage/endurance is not transferred to the new runtime."
+  ]
+}

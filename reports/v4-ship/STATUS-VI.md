@@ -1,7 +1,7 @@
 # Bản thử dành cho giám khảo
 - Nhánh tích hợp: codex/v4-ship-2026-11-16; chưa triển khai lên mạng.
-- Bản ranged hiện tại đã chạy liên tục30phút,18lần khởi động lại trận,8.012nguồn âm bắt đầu,không lỗi; thời lượng mã hóa đã đối chiếu.
-- Bản ghi ranged boss:−17,00LUFS; khoảng động8,9LU;đỉnh−1,74dBTP,đều trong giới hạn.
+- Bản monolith trước đây đã chạy30phút/18lần khởi động lại trận/8.012nguồn âm/0lỗi. Đây là bằng chứng lịch sử; chưa thay cho endurance của runtime palette mới.
+- Bản ghi boss30phút cũ:−17,00LUFS/8,9LU/−1,74dBTP. Runtime palette mới đã được đo qua hai hành trình; endurance riêng còn cần xác nhận.
 - Giới hạn sáu nguồn âm/100 ms, giảm nhạc 8 dB và phục hồi âm lượng đã đạt.
 - Toàn bộ âm vẫn có mẫu ước tính vượt33ms; nhận dạng và đo vật lý còn mở. Không kết luận G-AUDIO đã đạt.
 - Bản healer mới nhận dạng lời thoại 7/12, cần10/12; đây chưa phải so sánh có kiểm soát với bản8/12 trước. Kiểm tra nghe còn mở.
@@ -11,15 +11,15 @@
 - Kinh tế giữ Spool 25% và sức đánh 1,15; E3 còn 16/18. Chưa tạo mốc parity mới.
 - Web có2.697 bài đạt và bảy lỗi ART cũ;server742/rules1.409/parity ba trận không đổi. Typecheck/build đạt sau sửa kiểu mảng trong test;log lỗi gốc được giữ.
 - Đã rà soát61cảnh báo của bản chụp500đối tượng:khớp mã băm32tệp nguồn lịch sử,không còn cảnh báo chưa giải thích trong phần này. Bộ dò mới khớp9mẫu/50đối tượng nhưng không nhanh hơn;hai bộ quét vẫn chạy,chưa kết luận toàn bộ lịch sử sạch.
-- Production15 đạt đủ hành trình ở hai kích thước,36 biên nhận,248 âm tiếp xúc,116 hành động ranged,32 nhịp hồi máu Clover và boss trung vị60FPS; tải30,04MB vẫn vượt8MB.
+- Production16/208805af8 đạt hai hành trình:36biên nhận,248âm tiếp xúc đã giải mã trước,116ranged,32Clover;đội hình trước nhạc4/4,boss60FPS. Tải29,65MB vẫn vượt8MB;đã hoàn nguyên dữ liệu thử.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
 - Phim chuẩn bị 3: 169,83 giây/9,31 MB, có 5 giây Snowtrace thật; −17,86 LUFS/−2,22 dBTP/LRA 5,2 đạt ngưỡng. 53 phụ đề Anh–Việt khớp thời gian; đủ 13 câu thoại.
 - Snowtrace được ghi bằng WebKit headless; cảnh báo403 của Chromium được giữ riêng. Nguồn phim/phí RPC đã đối chiếu; kiểm tra nghe/đọc thủ công còn mở. R2 vẫn sau ART18/11.
-- Đã nối chọn gói theo đội hình vào UI/audio:104/104 bước,224 nguồn âm và retry đạt ở hai trình duyệt. Kiểm tra độc lập xác nhận đủ byte;giữ lỗi bộ đo lần đầu. Gói quan sát560.221B WebM;đang chuẩn bị đo production mới.
+- Chọn gói theo đội hình đã qua104/104bước và hai hành trình production. Mức trộn mới−17,72/−17,76LUFS,8,8/8,6LRA,−1,63/−1,95dBTP đạt;giảm nhạc/phục hồi đạt,không ngắt thoại.
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
 S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Tiêu đề landing đã đạt tương phản 15,27:1 ở hai kích thước; còn bốn lỗi ảnh ART và 32 mẫu tương phản battle chưa xác nhận. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
 Âm thanh S11:đã cài144 sprite va chạm và launch/travel cho ranged;168/168 ca thử tốc độ cố định đạt pha/nguồn âm,47 kiểm tra tập trung đạt gồm390 đổi tốc độ. Bộ phát thật168/168ca và production hai kích thước đã đối chiếu;ước tính trễ33,67ms còn vượt33ms,nghe thực tế chưa xác nhận.
-Kiểm chứng mới đã liên kết cùng runtime:5cảnh,boss30phút,34UI,15settings,168scheduler và2hành trình production. G-AUDIO chưa đạt: lời7/12,trễ33,38ms,bag4,6/forge0,8LRA; nghe thực tế chưa xác nhận. PNG:3.107đoạn chữ/0phát hiện;6JPEG mang đuôi PNG chưa quét.
+Bằng chứng5cảnh/boss30phút/UI34/settings15/scheduler168 thuộc runtime monolith cũ. Palette mới đã qua production hai kích thước;trễ ước tính vẫn>33ms,nghe thực tế chưa xác nhận. PNG:3.107đoạn chữ/0phát hiện;6JPEG mang đuôi PNG chưa quét.

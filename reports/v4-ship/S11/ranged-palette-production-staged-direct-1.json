@@ -1,0 +1,281 @@
+{
+  "at": "2026-11-16T23:29:57.891892+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6790,
+      "sha256": "86418ec3eccc15237e06ca49c8cd0b2087d917ffbdd21783544944de474786f8"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 17046,
+      "sha256": "8c5cf408c623385ab91bff711e90856e69eecd604d450ff4375fc49b386e3745"
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "bytes": 6541,
+      "sha256": "75ed5d9e26e891727af12e33f4d11f78390feb11056eb0ad17c5f7c4b1a913d6"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/check.json",
+      "bytes": 1460,
+      "sha256": "f24758bfb51d20ad522d02d90f501a964273d7df02afccb65b6bb99cf93d760b"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+      "bytes": 16161,
+      "sha256": "a3aaf0970a018a93eb4564fb0a875f237f222c98b1b475478a45ed3be27cbe6e"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-review-1.json",
+      "bytes": 14701,
+      "sha256": "c602d514da56deb2fff9cf0f764ff310063e516ad458c49b4641f3923489a949"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.events.json.gz",
+      "bytes": 199946,
+      "sha256": "2deb3388d0de71e8746564a58c9e40a2ae619204ade800afec5dd81641468714"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.json",
+      "bytes": 239376,
+      "sha256": "1c4b66ae6b6b176cbd906efbcefa13cc08da5f9831593917d2bd97818c1c760a"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.events.json.gz",
+      "bytes": 197629,
+      "sha256": "2c1a1e784362b52dc54c31df5da32bd651de1c5a0ee8828a880db926bfaa2d2f"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.json",
+      "bytes": 239375,
+      "sha256": "fb69385f2ff4406b1b586defa7da247c5c1278db82e039878da326ac7d9d7d41"
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-16.json",
+      "bytes": 2378,
+      "sha256": "0250d8c69ac8d27fd03eb1553ed58cb433d0b24c2b8e5a4a15de7ed833d554be"
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-16.log.gz",
+      "bytes": 13405,
+      "sha256": "432fb39ec72e0c83f3d5e2297912c9e47cdb77c78634fb342163544c8982a370"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 26625,
+      "sha256": "52b928429a7345958955ef888a482a5ed9d0c685d8611f99afb4c92f539c8268"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4784,
+      "sha256": "98cb5e698ff2dee01883232de95af39832f26e5c50848e27437c7d1105564bff"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-palette-production-review.py",
+      "bytes": 12508,
+      "sha256": "0e2299630d77e3db4a95da1af5f64ded8f8fa35562ca85f31087af7c853323e3"
+    }
+  ],
+  "scans": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6790,
+      "sha256": "86418ec3eccc15237e06ca49c8cd0b2087d917ffbdd21783544944de474786f8",
+      "alias": "86418ec3eccc15237e06ca49c8cd0b2087d917ffbdd21783544944de474786f8.txt",
+      "seconds": 0.004282166,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "representation": "raw",
+      "bytes": 17046,
+      "sha256": "8c5cf408c623385ab91bff711e90856e69eecd604d450ff4375fc49b386e3745",
+      "alias": "8c5cf408c623385ab91bff711e90856e69eecd604d450ff4375fc49b386e3745.txt",
+      "seconds": 0.00433875,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/PROGRESS-SHIP.log",
+      "representation": "raw",
+      "bytes": 6541,
+      "sha256": "75ed5d9e26e891727af12e33f4d11f78390feb11056eb0ad17c5f7c4b1a913d6",
+      "alias": "75ed5d9e26e891727af12e33f4d11f78390feb11056eb0ad17c5f7c4b1a913d6.txt",
+      "seconds": 0.003510667,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1460,
+      "sha256": "f24758bfb51d20ad522d02d90f501a964273d7df02afccb65b6bb99cf93d760b",
+      "alias": "f24758bfb51d20ad522d02d90f501a964273d7df02afccb65b6bb99cf93d760b.txt",
+      "seconds": 7.6125e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 95769,
+      "sha256": "a7eda491a81af066384ec238a0969b99acffc8612b28eb1b4931893670d22457",
+      "alias": "a7eda491a81af066384ec238a0969b99acffc8612b28eb1b4931893670d22457.txt",
+      "seconds": 0.026527958,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59",
+      "alias": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59.txt",
+      "seconds": 0.000670458,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-review-1.json",
+      "representation": "raw",
+      "bytes": 14701,
+      "sha256": "c602d514da56deb2fff9cf0f764ff310063e516ad458c49b4641f3923489a949",
+      "alias": "c602d514da56deb2fff9cf0f764ff310063e516ad458c49b4641f3923489a949.txt",
+      "seconds": 0.000586708,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.events.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 4151515,
+      "sha256": "cfe17e0ac962d0fb3197d1998ed84de2ea8a5b715b2723bd2820a4fee123d8fc",
+      "alias": "cfe17e0ac962d0fb3197d1998ed84de2ea8a5b715b2723bd2820a4fee123d8fc.txt",
+      "seconds": 0.156314459,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.json",
+      "representation": "raw",
+      "bytes": 239376,
+      "sha256": "1c4b66ae6b6b176cbd906efbcefa13cc08da5f9831593917d2bd97818c1c760a",
+      "alias": "1c4b66ae6b6b176cbd906efbcefa13cc08da5f9831593917d2bd97818c1c760a.txt",
+      "seconds": 0.0562035,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.events.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 4056352,
+      "sha256": "f131bff854e303fbfd897ad848c34f040c3b2b996f1edeffc6de7c4e222fb8fa",
+      "alias": "f131bff854e303fbfd897ad848c34f040c3b2b996f1edeffc6de7c4e222fb8fa.txt",
+      "seconds": 0.153093542,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.json",
+      "representation": "raw",
+      "bytes": 239375,
+      "sha256": "fb69385f2ff4406b1b586defa7da247c5c1278db82e039878da326ac7d9d7d41",
+      "alias": "fb69385f2ff4406b1b586defa7da247c5c1278db82e039878da326ac7d9d7d41.txt",
+      "seconds": 0.0563205,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-16.json",
+      "representation": "raw",
+      "bytes": 2378,
+      "sha256": "0250d8c69ac8d27fd03eb1553ed58cb433d0b24c2b8e5a4a15de7ed833d554be",
+      "alias": "0250d8c69ac8d27fd03eb1553ed58cb433d0b24c2b8e5a4a15de7ed833d554be.txt",
+      "seconds": 0.000761042,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-16.log.gz",
+      "representation": "expanded-gzip",
+      "bytes": 80260,
+      "sha256": "24d2b1c1f0bacbfff538b8a76de05926495a2eb3d4d1d39c590d198d935a3f7e",
+      "alias": "24d2b1c1f0bacbfff538b8a76de05926495a2eb3d4d1d39c590d198d935a3f7e.txt",
+      "seconds": 0.021366084,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 26625,
+      "sha256": "52b928429a7345958955ef888a482a5ed9d0c685d8611f99afb4c92f539c8268",
+      "alias": "52b928429a7345958955ef888a482a5ed9d0c685d8611f99afb4c92f539c8268.txt",
+      "seconds": 0.022514584,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4784,
+      "sha256": "98cb5e698ff2dee01883232de95af39832f26e5c50848e27437c7d1105564bff",
+      "alias": "98cb5e698ff2dee01883232de95af39832f26e5c50848e27437c7d1105564bff.txt",
+      "seconds": 0.0002135,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-palette-production-review.py",
+      "representation": "raw",
+      "bytes": 12508,
+      "sha256": "0e2299630d77e3db4a95da1af5f64ded8f8fa35562ca85f31087af7c853323e3",
+      "alias": "0e2299630d77e3db4a95da1af5f64ded8f8fa35562ca85f31087af7c853323e3.txt",
+      "seconds": 0.000559417,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16161,
+      "sha256": "a3aaf0970a018a93eb4564fb0a875f237f222c98b1b475478a45ed3be27cbe6e",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.events.json.gz",
+      "representation": "raw",
+      "bytes": 199946,
+      "sha256": "2deb3388d0de71e8746564a58c9e40a2ae619204ade800afec5dd81641468714",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.events.json.gz",
+      "representation": "raw",
+      "bytes": 197629,
+      "sha256": "2c1a1e784362b52dc54c31df5da32bd651de1c5a0ee8828a880db926bfaa2d2f",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S8/production-build-16.log.gz",
+      "representation": "raw",
+      "bytes": 13405,
+      "sha256": "432fb39ec72e0c83f3d5e2297912c9e47cdb77c78634fb342163544c8982a370",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}
