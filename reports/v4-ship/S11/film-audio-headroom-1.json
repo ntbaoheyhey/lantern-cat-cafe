@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-16T16:46:46.217291+00:00",
+  "comparison": {
+    "path": "reports/v4-ship/S11/film-audio-comparison-1.json",
+    "sha256": "1c8689526ec017c0b9cd0a4ef9002590096f76ed7662af8f2d9bdd8c7846d64f"
+  },
+  "method": "Retain twelve more seconds of genuine boss footage with constant -0.8 dB film gain. Source cuts, rate, channel balance and relative mix remain identical; this is not runtime audio acceptance.",
+  "gainDb": -0.8,
+  "cuts": [
+    {
+      "name": "landing-guest-first-battle",
+      "start": 0,
+      "end": 44.7,
+      "outputStart": 0,
+      "outputEnd": 44.7,
+      "speed": 1
+    },
+    {
+      "name": "trial-result-workshop-boss-start",
+      "start": 105.7,
+      "end": 193.43333333333334,
+      "outputStart": 44.7,
+      "outputEnd": 132.43333333333334,
+      "speed": 1
+    },
+    {
+      "name": "boss-result-wallet-proof",
+      "start": 251.33333333333334,
+      "end": 283.73333333333335,
+      "outputStart": 132.43333333333334,
+      "outputEnd": 164.83333333333334,
+      "speed": 1
+    }
+  ],
+  "seconds": 164.83333333333334,
+  "sourceAudio": {
+    "path": "work/v4ship-prep/S10-film-2/journey/audio.webm",
+    "sha256": "bd2f75a2248553d2c584189d886889b001677cb6c36776982a7f6f5622c3141a"
+  },
+  "complete": true,
+  "submissionPass": false,
+  "loudness": {
+    "input_i": -17.87,
+    "input_tp": -2.17,
+    "input_lra": 5.2
+  },
+  "audio": {
+    "path": "work/v4ship-prep/S11-film-headroom-1/boss-minus-0.8db.m4a",
+    "sha256": "575c44c7e2c8792b79265f56b79b979d98af3ba028d18e96d51aeb989c2bbbf8",
+    "bytes": 1294336
+  },
+  "gates": {
+    "duration": true,
+    "lufs": true,
+    "truePeak": true,
+    "lra": true,
+    "allActions": true,
+    "noClippedSpeech": true
+  },
+  "candidateAudioPass": true,
+  "log": {
+    "path": "reports/v4-ship/S11/film-audio-headroom-1.log.json.gz",
+    "sha256": "a1a0a7548a9b398952e030ce9dbae96b51ce1684f028cd9b604fddf4ca323b4e"
+  }
+}

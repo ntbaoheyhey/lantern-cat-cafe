@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-16T16:55:46.309344+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "docs/v4/film/README.md",
+      "bytes": 3013,
+      "sha256": "4f0da1ebf832dca089f11c09d58f11fee5ef4543f1bb1398b664faa17739ff96"
+    },
+    {
+      "path": "docs/v4/film/preparation-2.en.srt",
+      "bytes": 3612,
+      "sha256": "94099130d03182094ef66c610b52be58148069f3ba395b3a487953f9613b2f25"
+    },
+    {
+      "path": "docs/v4/film/preparation-2.vi.srt",
+      "bytes": 4189,
+      "sha256": "36345d1524546f616acc34381a53aba6a936e26710fc4afa07014b8fd8aa8bed"
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6349,
+      "sha256": "e53ab53eb4d0b3b826f53c8c2b97501062898cbe29a72d610f8e0e2f9461c771"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-film-audio.md",
+      "bytes": 4458,
+      "sha256": "3a6736ffa6e451a5687a1808310456d7d1d433233fb72dc20886c48bde5320fe"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-edit-2.json",
+      "bytes": 5722,
+      "sha256": "406ce490069634ad458027ec582009d2d8258700670f2a546c187aaf5e42728f"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-edit-2.log.json.gz",
+      "bytes": 9167,
+      "sha256": "084f162414d22c7563d2ad3fcddadd86ac2454705cd196ade130e5fb99a9ba87"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-frame-integrity-2.json.gz",
+      "bytes": 101430,
+      "sha256": "c24ed2ebfb56c30ed339990fc7601ab830b06f737ef5ca0d8a9578c481b7002d"
+    },
+    {
+      "path": "reports/v4-ship/S10/film-verify-2.json",
+      "bytes": 3360,
+      "sha256": "5fcf11c7ee37f6fbaadbe7ffe7be93736fbdd70a50c0494433270923c4cead96"
+    },
+    {
+      "path": "reports/v4-ship/S10/preparation-2.mp4",
+      "bytes": 9343307,
+      "sha256": "1e29e5d9b73ac57c2128102abdbc4d5c99009e6bd29dce566a2d417b8191f685"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-comparison-1.json",
+      "bytes": 5073,
+      "sha256": "1c8689526ec017c0b9cd0a4ef9002590096f76ed7662af8f2d9bdd8c7846d64f"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-comparison-1.log.json.gz",
+      "bytes": 1687,
+      "sha256": "24c9f199c1f7108d0512ced29cd6d455ab943ce06272caf1b9a1ea60d0228e5a"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-headroom-1.json",
+      "bytes": 1911,
+      "sha256": "d08c019e890d1bdabb742203ceb31d707577e6dea23d3f02e20fe95fc8db70c9"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-headroom-1.log.json.gz",
+      "bytes": 1254,
+      "sha256": "a1a0a7548a9b398952e030ce9dbae96b51ce1684f028cd9b604fddf4ca323b4e"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-plan-1.json",
+      "bytes": 909,
+      "sha256": "960afccd5249b1e11d659be717b467df3964a4d090a6f2e4ae7a31caaea13d3d"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-regression-1/check.json",
+      "bytes": 1429,
+      "sha256": "d65de007082adf7bed1c07c7bca89381f952c2242645d2c15c2bcef57d60487c"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-regression-1/log.jsonl.gz",
+      "bytes": 16052,
+      "sha256": "01d55f58ca33d998ef3120c2b612dd44f7dccc50f174db0c1045b3030e1359fc"
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "394252a8484ff89743863ec2c5da8f6a3d37c3962377c86f6172abc754094c29"
+    },
+    {
+      "path": "tools/v4ship-lab/film/audio-edits.py",
+      "bytes": 6339,
+      "sha256": "d17ff5e2e046138ea09c4ab53f34163b4152d81c09da586adc69a1f36b2fa391"
+    },
+    {
+      "path": "tools/v4ship-lab/film/edit.py",
+      "bytes": 23814,
+      "sha256": "006821ec3526cb755e7c4cd4c5663060f803fe3914dee5f75def6f75c8044a22"
+    }
+  ],
+  "expandedGzip": 5,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}

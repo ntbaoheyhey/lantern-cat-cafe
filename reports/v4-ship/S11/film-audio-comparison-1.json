@@ -1,0 +1,175 @@
+{
+  "at": "2026-11-16T16:44:51.622300+00:00",
+  "sourceCapture": {
+    "path": "reports/v4-ship/S10/film-capture-2.json",
+    "sha256": "75340e449a5286a76e4d8deefb3ff79356521c054b2935f65cf1bd78ad0c664d"
+  },
+  "sourceAudio": {
+    "path": "work/v4ship-prep/S10-film-2/journey/audio.webm",
+    "sha256": "bd2f75a2248553d2c584189d886889b001677cb6c36776982a7f6f5622c3141a"
+  },
+  "harness": {
+    "path": "tools/v4ship-lab/film/audio-edits.py",
+    "sha256": "d17ff5e2e046138ea09c4ab53f34163b4152d81c09da586adc69a1f36b2fa391"
+  },
+  "methods": [
+    "Existing edit",
+    "Twelve additional seconds of first battle",
+    "Twelve additional seconds of boss battle"
+  ],
+  "audioTreatment": "Original source mix at unchanged gain, EQ, rate and channel mapping; source-time cuts and identical 64 kbps AAC encoding only.",
+  "rows": [
+    {
+      "method": "original",
+      "cuts": [
+        {
+          "name": "landing-guest-first-battle",
+          "start": 0,
+          "end": 44.7,
+          "outputStart": 0,
+          "outputEnd": 44.7,
+          "speed": 1
+        },
+        {
+          "name": "trial-result-workshop-boss-start",
+          "start": 105.7,
+          "end": 181.43333333333334,
+          "outputStart": 44.7,
+          "outputEnd": 120.43333333333334,
+          "speed": 1
+        },
+        {
+          "name": "boss-result-wallet-proof",
+          "start": 251.33333333333334,
+          "end": 283.73333333333335,
+          "outputStart": 120.43333333333334,
+          "outputEnd": 152.83333333333334,
+          "speed": 1
+        }
+      ],
+      "seconds": 152.83333333333334,
+      "audio": {
+        "path": "work/v4ship-prep/S10-edit-1/preparation.mp4",
+        "sha256": "53607004ba14116f4eb410ca12ace075623e85ff4ef97040c7d33fd82546823d"
+      },
+      "loudness": {
+        "input_i": -17.27,
+        "input_tp": -1.18,
+        "input_lra": 4.8
+      },
+      "gates": {
+        "duration": true,
+        "lufs": true,
+        "truePeak": true,
+        "lra": false,
+        "allActions": true,
+        "noClippedSpeech": true
+      },
+      "candidateAudioPass": false
+    },
+    {
+      "method": "longer-first-battle",
+      "cuts": [
+        {
+          "name": "landing-guest-first-battle",
+          "start": 0,
+          "end": 56.7,
+          "outputStart": 0,
+          "outputEnd": 56.7,
+          "speed": 1
+        },
+        {
+          "name": "trial-result-workshop-boss-start",
+          "start": 105.7,
+          "end": 181.43333333333334,
+          "outputStart": 56.7,
+          "outputEnd": 132.43333333333334,
+          "speed": 1
+        },
+        {
+          "name": "boss-result-wallet-proof",
+          "start": 251.33333333333334,
+          "end": 283.73333333333335,
+          "outputStart": 132.43333333333334,
+          "outputEnd": 164.83333333333334,
+          "speed": 1
+        }
+      ],
+      "seconds": 164.83333333333334,
+      "audio": {
+        "path": "work/v4ship-prep/S11-film-audio-1/longer-first-battle.m4a",
+        "sha256": "730d018a8d4847d8cf75748df6d42e22a72d04e35fe656317b0cedb381b8dcaf"
+      },
+      "loudness": {
+        "input_i": -17.12,
+        "input_tp": -0.69,
+        "input_lra": 4.9
+      },
+      "gates": {
+        "duration": true,
+        "lufs": true,
+        "truePeak": false,
+        "lra": false,
+        "allActions": true,
+        "noClippedSpeech": true
+      },
+      "candidateAudioPass": false
+    },
+    {
+      "method": "longer-boss-battle",
+      "cuts": [
+        {
+          "name": "landing-guest-first-battle",
+          "start": 0,
+          "end": 44.7,
+          "outputStart": 0,
+          "outputEnd": 44.7,
+          "speed": 1
+        },
+        {
+          "name": "trial-result-workshop-boss-start",
+          "start": 105.7,
+          "end": 193.43333333333334,
+          "outputStart": 44.7,
+          "outputEnd": 132.43333333333334,
+          "speed": 1
+        },
+        {
+          "name": "boss-result-wallet-proof",
+          "start": 251.33333333333334,
+          "end": 283.73333333333335,
+          "outputStart": 132.43333333333334,
+          "outputEnd": 164.83333333333334,
+          "speed": 1
+        }
+      ],
+      "seconds": 164.83333333333334,
+      "audio": {
+        "path": "work/v4ship-prep/S11-film-audio-1/longer-boss-battle.m4a",
+        "sha256": "23ede752b25c2bc660368e5c24d9c815ea9be2ffea9d711722b0d47687f4f51e"
+      },
+      "loudness": {
+        "input_i": -17.08,
+        "input_tp": -0.69,
+        "input_lra": 5.2
+      },
+      "gates": {
+        "duration": true,
+        "lufs": true,
+        "truePeak": false,
+        "lra": true,
+        "allActions": true,
+        "noClippedSpeech": true
+      },
+      "candidateAudioPass": false
+    }
+  ],
+  "complete": true,
+  "submissionPass": false,
+  "selected": null,
+  "decision": "Neither predeclared longer excerpt fixes all gates. Preserve failures; change method before further retries.",
+  "log": {
+    "path": "reports/v4-ship/S11/film-audio-comparison-1.log.json.gz",
+    "sha256": "24c9f199c1f7108d0512ced29cd6d455ab943ce06272caf1b9a1ea60d0228e5a"
+  }
+}

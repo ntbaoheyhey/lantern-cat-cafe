@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-16T16:54:54.871463+00:00",
+  "scope": "Preparation film 2 source/caption/delivery verification; no new screenshots or native desktop access",
+  "render": {
+    "path": "reports/v4-ship/S10/film-edit-2.json",
+    "sha256": "406ce490069634ad458027ec582009d2d8258700670f2a546c187aaf5e42728f"
+  },
+  "delivery": {
+    "path": "reports/v4-ship/S10/preparation-2.mp4",
+    "bytes": 9343307,
+    "sha256": "1e29e5d9b73ac57c2128102abdbc4d5c99009e6bd29dce566a2d417b8191f685",
+    "byteEqualToMeasuredRender": true
+  },
+  "frames": {
+    "oldSelected": 1567,
+    "selected": 1927,
+    "addedRealFrames": 360,
+    "allOldHashesUnchanged": true,
+    "allSelectedOriginalNamesTimesAndHashesMatch": true,
+    "manifestHashMatches": true
+  },
+  "captions": {
+    "count": 52,
+    "enViTimingIdentical": true,
+    "orderedNonOverlappingInFilm": true,
+    "matchesRenderCuePlan": true,
+    "englishAssTextMatches": true,
+    "completeSpeechEvents": 13,
+    "maxSerializedSpeechStartErrorMs": 0.46727371214672075,
+    "humanListeningAndReadabilityPassed": false
+  },
+  "audio": {
+    "input_i": -17.87,
+    "input_tp": -2.22,
+    "input_lra": 5.2
+  },
+  "audioGate": {
+    "lufs": true,
+    "truePeak": true,
+    "lra": true
+  },
+  "mediaChecks": {
+    "duration": true,
+    "size": true,
+    "resolution": true,
+    "fps": true,
+    "frameCount": true,
+    "audioVideoDuration": true,
+    "decode": true,
+    "allActionsRetained": true,
+    "captionFiles": true,
+    "noClippedSpeech": true
+  },
+  "regression": {
+    "path": "reports/v4-ship/S11/film-audio-regression-1/check.json",
+    "sha256": "d65de007082adf7bed1c07c7bca89381f952c2242645d2c15c2bcef57d60487c",
+    "knownArtFailures": [
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+      "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+    ],
+    "sameSevenFailuresAsPrior": true,
+    "G-REG": false,
+    "officialClassParityGate": false
+  },
+  "reportsBytesAfterDelivery": 111742343,
+  "technicalPreparationPass": true,
+  "submissionPass": false,
+  "open": [
+    "Public Snowtrace footage absent; no local substitute",
+    "Scheduled integrated R2 and FINAL remain due",
+    "Human listening and caption/readability review remain required"
+  ]
+}

@@ -57,6 +57,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('capture', type=int)
     parser.add_argument('attempt', type=int)
+    parser.add_argument('--audio-plan', type=Path, help='Measured passing source cuts and film attenuation')
     args = parser.parse_args()
     out = ROOT / f'work/v4ship-prep/S10-edit-{args.attempt}'
     report_path = ROOT / f'reports/v4-ship/S10/film-edit-{args.attempt}.json'
@@ -100,6 +101,28 @@ def main():
         {'name': 'trial-result-workshop-boss-start', 'start': speech_safe(marks['reward-ready'] - 6, -1), 'end': speech_safe(marks['boss-battle'] + 10, 1)},
         {'name': 'boss-result-wallet-proof', 'start': speech_safe(marks['proof-ready'] - 10, -1), 'end': math.floor(marks['end'] * FPS) / FPS},
     ]
+    audio_gain_db, audio_plan_evidence = 0.0, None
+    if args.audio_plan:
+        plan_path = (ROOT / args.audio_plan).resolve()
+        if not plan_path.is_relative_to(ROOT):
+            raise RuntimeError('Audio plan must be in the repository')
+        plan = json.loads(plan_path.read_text())
+        if not plan.get('complete') or not plan.get('candidateAudioPass') or not all(plan['gates'].values()):
+            raise RuntimeError('Audio plan has not passed its measurements')
+        comparison_path = ROOT / plan['comparison']['path']
+        assert digest(comparison_path) == plan['comparison']['sha256']
+        comparison = json.loads(comparison_path.read_text())
+        assert comparison['sourceCapture']['path'] == relative(capture_path)
+        assert comparison['sourceCapture']['sha256'] == digest(capture_path)
+        assert plan['sourceAudio']['path'] == relative(raw / 'audio.webm')
+        assert plan['sourceAudio']['sha256'] == digest(raw / 'audio.webm')
+        assert digest(ROOT / plan['audio']['path']) == plan['audio']['sha256']
+        assert [c['name'] for c in cuts] == [c['name'] for c in plan['cuts']]
+        cuts = [{k: cut[k] for k in ('name', 'start', 'end')} for cut in plan['cuts']]
+        audio_gain_db = float(plan['gainDb'])
+        assert math.isfinite(audio_gain_db) and -6 <= audio_gain_db <= 0
+        audio_plan_evidence = {'path': relative(plan_path), 'sha256': digest(plan_path),
+                               'gainDb': audio_gain_db, 'learn': 'reports/v4-ship/LEARN/S11-film-audio.md'}
     cursor = 0
     for i, cut in enumerate(cuts):
         assert 0 <= cut['start'] < cut['end'] <= recording['seconds']
@@ -118,6 +141,7 @@ def main():
               'capture': relative(capture_path), 'captureSha256': digest(capture_path),
               'recordingSha256': digest(source_path), 'audioSha256': digest(raw / 'audio.webm'),
               'calloutSha256': digest(callout_path), 'cuts': cuts, 'seconds': duration,
+              'audioPlan': audio_plan_evidence,
               'sourceRuntime': capture['buildEvidence'], 'pass': False, 'submissionPass': False,
               'open': ['Public Snowtrace footage absent; no local substitute',
                        'Scheduled integrated R2 and FINAL remain due',
@@ -288,7 +312,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
         audio_graph = f'[0:a]asplit={len(cuts)}' + ''.join(f'[s{i}]' for i in range(len(cuts))) + ';'
         audio_graph += ';'.join(f"[s{i}]atrim=start={c['start']:.9f}:end={c['end']:.9f},asetpts=PTS-STARTPTS[a{i}]" for i, c in enumerate(cuts)) + ';'
-        audio_graph += ''.join(f'[a{i}]' for i in range(len(cuts))) + f'concat=n={len(cuts)}:v=0:a=1[a]'
+        audio_graph += ''.join(f'[a{i}]' for i in range(len(cuts))) + f'concat=n={len(cuts)}:v=0:a=1'
+        if audio_gain_db:
+            audio_graph += f',volume={audio_gain_db}dB'
+        audio_graph += '[a]'
         run('cut-original-mix', [FF, '-hide_banner', '-y', '-i', raw / 'audio.webm', '-filter_complex', audio_graph,
                                 '-map', '[a]', '-c:a', 'pcm_s24le', 'mix.wav'])
         video_filter = 'fps=30:start_time=0,scale=1152:648:flags=lanczos,pad=1280:720:64:0:black,setsar=1,ass=english.ass,format=yuv420p'
@@ -318,7 +345,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
                            'frames': int(v['nb_read_frames']), 'videoCodec': v['codec_name'], 'audioCodec': a['codec_name'],
                            'videoBitrateTarget': bitrate, 'audioBitrateTarget': 64000,
                            'ssim': float(re.findall(r'All:([0-9.]+)', ssim_log)[-1]),
-                           'audioTreatment': 'Recorded mix cut at identical source times; AAC encoding only, no gain/EQ/normalization',
+                           'audioTreatment': ('Recorded mix cut at identical source times; constant '
+                                              f'{audio_gain_db} dB film attenuation and AAC encoding; '
+                                              'no EQ, normalization, replacement sound or speed change') if audio_gain_db else
+                                             'Recorded mix cut at identical source times; AAC encoding only, no gain/EQ/normalization',
                            'loudness': {k: float(loudness[k]) for k in ['input_i', 'input_tp', 'input_lra']}}
         report['checks'] = {'duration': 130 <= seconds <= 170, 'size': film.stat().st_size <= 10_000_000,
                             'resolution': v['width'] == 1280 and v['height'] == 720, 'fps': v['avg_frame_rate'] == '30/1',
@@ -328,7 +358,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         report['audioGate'] = {'lufs': -20 <= float(loudness['input_i']) <= -16,
                                'truePeak': float(loudness['input_tp']) <= -1,
                                'lra': float(loudness['input_lra']) >= 5}
-        report['pass'] = all(report['checks'].values())
+        report['technicalMediaPass'] = all(report['checks'].values())
+        report['pass'] = report['technicalMediaPass'] and all(report['audioGate'].values())
     except Exception as error:
         report['failure'] = str(error)
     finally:
