@@ -12,7 +12,7 @@
 | A6 | Panko | checkpoint10:12UTC; pose/read/role/frame/perf/regression pass;10/10 ownwindows incl36s supplement; OPEN pairwiseFX/activation A9/A11; processsplit not demonstrated;8/10 |
 | A7 | Enemies and boss | Scoped receipts complete for Binding/Teacup/Needle/Yarn; Yarn9/9 blind,15windows,3films/900p. Shared boss span/focus/ensemble/activation remain OPEN; retain failures. |
 | A8 | Designer intake interrupt | queued |
-| A9 | Ultimate clarity | ACTIVE 2026-11-16T18:06UTC; all8 hero ultimates, pairwise3/5 axes, shared focus and boss framing; original textures only, full films after changes. |
-| A10 | SHIP art requests interrupt | Original5assets delivered; transfer derivatives delivered but SHIP total8MB open; portrait corrected pending integration; verified contrast request queued afterA9. |
+| A9 | Ultimate clarity | Scoped checkpoint:28/28 pairs>=3axes;27R2 own sheets/23strictcomplete,5400markers,3x900p bboxPASS; focus600ms fixed. Shared limits and UI followups remain A11; REVIEW/A9/REVIEW.md. |
+| A10 | SHIP art requests interrupt | ACTIVE: verified32 contrast-unknown observations first; then new18:25 scene-ready transfer request27.55MB/8MB, imagebudget3.315MB. Original5assets/derivatives delivered; portrait integration pending. |
 | A11 | Open items and polish | queued |
 | A12 | Demo Day backlog after freeze | queued |

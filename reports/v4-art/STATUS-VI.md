@@ -1,13 +1,15 @@
-Đang tiếp tục V4 ART theo yêu cầu lúc15:44UTC ngày16/11.
-Đã lưu receipt phạm vi Yarn Giant; chuyển sang A9 cho toàn bộ nhóm chính.
-Bốn tư thế đạt kiểm tra hình học/màu; blind-read lần1 đạt9/9.
-Đã xem đủ15 cửa sổ hành động và3 bố cục900p, không mở lại ảnh cũ.
-Ba phim âm thanh30giây,2.700 marker khớp với dữ liệu.
-Ba đòn chủ động tiếp xúc đúng nhịp, khoảng cách tối đa1,09% chiều ngang; trở về đúng chỗ.
-Median cả ba phim khoảng60,24FPS;2.664 kiểm thử, typecheck và parity3fixture đạt.
-Tổng tài nguyên bổ sung bảo thủ5,08MB, dưới6MB.
-Bố cục boss chưa đạt:79,35% ở720p và77,95% ở900p; giữ nguyên bằng chứng lỗi.
-A9 sẽ kiểm tra hiệu ứng cùng nhau, sửa focus quá600ms và bố cục chung.
-Bằng chứng reduced-motion, kích hoạt production và tỷ lệ thời gian vẫn mở.
-Chưa có thông báo lớp/baseline cuối từ SHIP; chưa merge.
-Tiếp theo: yêu cầu tương phản chữ đã xác minh, A11/A12.
+# Tình trạng ART — 2026-11-16T19:10:12.036128+00:00
+Đã lưu vòng kiểm tra A9 trên bộ trận hiện tại; chuyển sang A10.
+Cả28 cặp ultimate có ít nhất3 khác biệt nhìn thấy trên phim.
+Đã xem27 lượt:23 đầy đủ,1 có mẫu đầu muộn50ms,3 bị cắt ở mép phim.
+5phim có âm thanh,5.400 dấu khung hình khớp; median60,24FPS.
+Bố cục đo đạt ở720p và900p; boss900p rộng tối thiểu81,08%.
+Focus đã hết sau600ms trong các mẫu phim được kiểm tra.
+Kiểm thử web2.664 bài, typecheck và parity3 trận đều đạt.
+Vẫn giữ thất bại R1 của Binding/Needle và lỗi bố cục Yarn cũ.
+Còn bảng tên Panko chạm thẻ chân dung và cụm số dày ở wave3.
+Chưa có phim reduced-motion và chứng minh đủ thời gian rung liên tục.
+Vẫn chờ thông báo class cuối của SHIP và bật production; tỷ lệ thời gian chưa được chứng minh.
+A10: kiểm tra tương phản4 nhóm chữ,32 quan sát chưa kết luận.
+SHIP đo tải cảnh thực tế khoảng27,55MB; phần ảnh cần tiếp tục giảm.
+Chưa merge SHIP, chưa đổi baseline.

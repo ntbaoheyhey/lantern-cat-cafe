@@ -1,0 +1,182 @@
+{
+  "method": "Unmodified silent fixed-clock 1440x900 capture; bbox layout only, not audio, FPS, alpha occlusion or HUD proof.",
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "captureSha256": "08637fc6f73cb999c8c6e874ea221d435c7acaa52a1e8049ef1ffcbcfa1044e5",
+      "sourceCommit": "29efa5387a596de922be0c4640d6517c06da8b6e",
+      "runtimeSourceHashesVerified": 77,
+      "frames": 952,
+      "seconds": 31.733333333333334,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999986,
+          "t": 27.3,
+          "index": 819
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 5.3,
+          "index": 159
+        },
+        "span": {
+          "value": 0.812722961048404,
+          "t": 30.966666666666665,
+          "index": 929
+        },
+        "gap": {
+          "value": 0.10411638345687414,
+          "t": 13.333333333333334,
+          "index": 400
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        306,
+        111,
+        399
+      ],
+      "sheet": "reports/v4-art/REVIEW/A9/r2/raw/layout900-wave1.jpg",
+      "visuallyReviewed": true,
+      "visualReview": {
+        "status": "reviewed_once",
+        "at": "2026-11-16T19:07:34.165477+00:00",
+        "note": "Four selected900p views inspected once: all actors remain identifiable and evenly scaled, the bread panels stay behind faces, and Needle ranks read at the larger layout. Orange circular glows in the non-ultimate frame111 are outside the A9 own-ultimate scope; retain their attribution as an A11 question rather than infer a new per-unit gate result."
+      },
+      "selectedSheet": "reports/v4-art/REVIEW/A9/r2/layout900-wave1.jpg"
+    },
+    {
+      "fixture": "wave3",
+      "captureSha256": "3d6d3f7b4e3493a5d57abc548098eeb43720c26f3d0096c1d1ad1ed0cb40a7fc",
+      "sourceCommit": "49cb3cbfd118674b2a041be658482b75c2e6f0cd",
+      "runtimeSourceHashesVerified": 77,
+      "frames": 901,
+      "seconds": 30.033333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.5,
+          "index": 165
+        },
+        "catDeviation": {
+          "value": 0.029556650246305494,
+          "t": 21.433333333333334,
+          "index": 643
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03425489917921909,
+          "t": 21.333333333333332,
+          "index": 640
+        },
+        "span": {
+          "value": 0.8192028137340447,
+          "t": 19.433333333333334,
+          "index": 583
+        },
+        "gap": {
+          "value": -0.013566401614058539,
+          "t": 7.666666666666667,
+          "index": 230
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        354,
+        642,
+        231
+      ],
+      "sheet": "reports/v4-art/REVIEW/A9/r2/raw/layout900-wave3.jpg",
+      "visuallyReviewed": true,
+      "visualReview": {
+        "status": "reviewed_once",
+        "at": "2026-11-16T19:07:34.165477+00:00",
+        "note": "Four selected900p views inspected once: dense lower enemies remain identifiable, hero scale is consistent and no side-edge cut is visible. Soot contact atframe642 repeats the busy number cluster; record for shared UI polish. This sheet is layout evidence, not audio or real-time performance evidence."
+      },
+      "selectedSheet": "reports/v4-art/REVIEW/A9/r2/layout900-wave3.jpg"
+    },
+    {
+      "fixture": "boss",
+      "captureSha256": "33b4311db9b44fbb97294b8ed2c22a454141c2f8a1ad0d140bfdf57ac3baad8c",
+      "sourceCommit": "69caed40feb01a94c2dd3bc44bed8e9838ac17a6",
+      "runtimeSourceHashesVerified": 77,
+      "frames": 946,
+      "seconds": 31.533333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.7,
+          "index": 171
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.03592712340189347,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03785162215397042,
+          "t": 4.266666666666667,
+          "index": 128
+        },
+        "span": {
+          "value": 0.8107795524165717,
+          "t": 15.966666666666667,
+          "index": 479
+        },
+        "gap": {
+          "value": 0.07903557917315535,
+          "t": 11.7,
+          "index": 351
+        },
+        "boss": {
+          "value": 0.4964399999999999,
+          "t": 2.566666666666667,
+          "index": 77
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        282,
+        111,
+        351
+      ],
+      "sheet": "reports/v4-art/REVIEW/A9/r2/raw/layout900-boss.jpg",
+      "visuallyReviewed": true,
+      "visualReview": {
+        "status": "reviewed_once",
+        "at": "2026-11-16T19:07:34.165477+00:00",
+        "note": "Four selected900p views inspected once: Yarn and the two Binding helpers fit the wider formation; the low braid fan stays distinct from the caster and recipient faces. The full946-frame trace gives minimum unit span81.077955%, separately passing after the retained earlier77.945150% Yarn failure."
+      },
+      "selectedSheet": "reports/v4-art/REVIEW/A9/r2/layout900-boss.jpg"
+    }
+  ],
+  "failures": []
+}

@@ -1,5 +1,7 @@
 # Eight-ultimate design selection
 
+Historical design and R1 decision record. Final R2 film decisions for all28pairs are in r2/pairwise-review.json and REVIEW.md; the initial PENDING rows below are retained as planning history.
+
 Source: validated runtime `dcf4dd515`; the A9 capture checkpoint has identical hashes for all77 runtime/art files. The two720p live peak boards were inspected once. This is the authored comparison plan; **film confirmation remains pending**. A shared1100ms impact is never counted as a distinction. Hue shades within the same broad family and different labels are not counted as independent axes.
 
 | Unit | Shape | Motion path | Colour family | Local timing accent | Target response |
