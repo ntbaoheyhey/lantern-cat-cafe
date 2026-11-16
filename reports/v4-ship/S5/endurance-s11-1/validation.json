@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-16T16:36:04.367Z",
+  "trial": "endurance-s11-1",
+  "rows": [
+    {
+      "name": "boss",
+      "seconds": 1801.1170001029968,
+      "lufs": -16.99,
+      "lra": 8.9,
+      "peak": -1.82,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 21442
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 27089,
+      "estimatedOutputLatencyMs": {
+        "min": 27.839000000065425,
+        "p95": 33.06033333367668,
+        "max": 33.37833333341405
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 7
+    }
+  ],
+  "coverageSeconds": 1801.1170001029968,
+  "continuousSingleSession": true,
+  "aggregate": {
+    "lufs": -16.99,
+    "lra": 8.9,
+    "peak": -1.82
+  },
+  "gates": {
+    "coverage30Minutes": true,
+    "loudness": true,
+    "truePeak": true,
+    "loudnessRange": true,
+    "sourceBudget": true,
+    "duckDepth": true,
+    "duckRecovery": true,
+    "zeroErrors": true
+  },
+  "physicalAudibleOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "note": "One uninterrupted browser context and recording. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately."
+}

@@ -28,3 +28,4 @@
 27. Commit/push every item or <=60min; three push retries with backoff; never write frozen/ART/main branches.
 28. Failed gate: diagnose/fix/re-run failing check, max4 attempts then change method; timebox open items for S11.
 29. Ports 5994-5998 and8546 only; never touch ART5990-5993; no pkill/killall; kill only owned PIDs or named old supervisor.
+30. USER 16 Nov: browser work only in the internal browser; never control native apps or the user desktop; no device password request.
