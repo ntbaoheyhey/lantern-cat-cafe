@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-16T23:47:39.291787+00:00",
+  "pass": false,
+  "harness": {
+    "path": "reports/v4-ship/S11/history-case-keys-attempt-1.py.gz",
+    "sha256": "1c8f17d055e1864eeee823de9688a7161ec9f56203e30072799fc388add35b99",
+    "decodedSha256": "38eacf65e6f6c972b57b18ef30a070fe274aa42126a376a24cd441f05ae580b0"
+  },
+  "exceptionType": "AssertionError",
+  "frames": [
+    {
+      "path": "<stdin>",
+      "line": 7,
+      "function": "<module>"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-case-keys.py",
+      "line": 136,
+      "function": "main"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-case-keys.py",
+      "line": 86,
+      "function": "positioned"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-case-keys.py",
+      "line": 80,
+      "function": "capture_span"
+    }
+  ],
+  "detailsSuppressed": true,
+  "rawCapturesPersisted": false,
+  "diagnosis": "Gitleaks stdin fragments reset column offsets. The classifier incorrectly treated them as whole-document positions. Retained failure preceded replacement by a separate whole-fragment metadata-only helper.",
+  "diagnosticCounts": {
+    "prettyExact": 438,
+    "prettyShifted": 1,
+    "compactNotWholeDocument": 438
+  }
+}

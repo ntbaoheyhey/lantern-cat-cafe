@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-16T23:49:46.983202+00:00",
+  "pass": true,
+  "steps": [
+    {
+      "command": [
+        "/Users/bao/taskbar-hero-chain/work/v4ship-prep/toolchains/go1.27.4/go/bin/gofmt",
+        "-w",
+        "/Users/bao/taskbar-hero-chain/tools/v4ship-lab/security/text-positions/main.go"
+      ],
+      "exitCode": 0,
+      "seconds": 0.037041
+    },
+    {
+      "command": [
+        "/Users/bao/taskbar-hero-chain/work/v4ship-prep/toolchains/go1.27.4/go/bin/go",
+        "build",
+        "-mod=readonly",
+        "-trimpath",
+        "-o",
+        "/Users/bao/taskbar-hero-chain/work/v4ship-prep/text-positions-api-1",
+        "../text-positions/main.go"
+      ],
+      "exitCode": 0,
+      "seconds": 1.496429
+    }
+  ],
+  "sources": [
+    {
+      "path": "tools/v4ship-lab/security/text-positions/main.go",
+      "bytes": 2869,
+      "sha256": "a9fe2af4f4338def88c9d2780d64e0b4969976d12f151e7bec535bdf8bf8afe5"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.mod",
+      "bytes": 3459,
+      "sha256": "5b41f8eb45f2fce93bc05bd42b3f386c64cac4d3119686b6dfc99feb379a4639"
+    },
+    {
+      "path": "tools/v4ship-lab/security/text-detector/go.sum",
+      "bytes": 40320,
+      "sha256": "6ffabd113dcd3a0782b7d7016b0f051fabc55909ccad176e11c76e70549738e9"
+    }
+  ],
+  "config": {
+    "path": "work/v4ship-prep/security-rules/gitleaks-8.30.1.toml",
+    "bytes": 97731,
+    "sha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf"
+  },
+  "goVersion": "go version go1.27.4 darwin/arm64",
+  "protectedScannerInputsUnchanged": true,
+  "wholeFragments": true,
+  "output": "Exact match and scalar byte offsets only; no values or matching digests.",
+  "binary": {
+    "path": "work/v4ship-prep/text-positions-api-1",
+    "bytes": 13137218,
+    "sha256": "1930f607f04fbadded86bb2008429f7e0eba101393dcbe27093e9433a3e807e4"
+  }
+}
