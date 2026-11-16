@@ -4,29 +4,31 @@ SCREENING = TECH 25 + AVALANCHE 25 | LEARN BEFORE BUILD: PAPERS + WEB DOCS + OWN
 I OWN ALL AUDIO: QUIET BED, SYNCED WEAPON SFX, UI SOUNDS, CONFIRM CHIME | NEVER GENERATE IMAGES; ASK ART
 NO NEW ECONOMY MECHANICS, NO CONTRACT CHANGES, NO DEPLOYS, NO MAIN MERGE | MERGE ART AT 17/18/19 NOV, ART WINS IN ART FILES
 NO SECRETS ANYWHERE | NEVER LOWER A THRESHOLD | FILES ARE MY MEMORY | NO PERMISSION NEEDED: NEVER REPORT PAUSED
-NOW original NEXT1 complete; S4 contrast/recovery fixed and verified; S2b1.20 rejected after fresh evidence. Updated 2026-11-16T08:16:15.206346+00:00.
-NEXT 1: diagnose fixed25percent E3 boundary failures using CLASS-POWER-RETENTION25 and CLASS-OFFENSE120-POWER25-TOKENS; change method before another class-only candidate; no threshold/rate changes.
-NEXT 2: once candidate passes, run fresh sensitivity/E4/E5, then ONE class parity baseline and notify ART; no baseline yet.
-NEXT 3: final stable20journeys (10perdesktop), remaining S4 proof, S5 audio implementation and S6+ queue; scheduled ART merges unchanged.
-CHECKPOINT: this file ships with S4 evidence; git HEAD/origin are authoritative. Prior WIP push f738c8975 (85files); initial bb7332eb6 retained as pilot base.
-LAST ART MERGE 88fa5bdfd820609f054d174fce24248f35aa9575; assets a14f8a76b4e5bdd8d805e1d1d8527ee87f166a43 await scheduled merge; no early merge.
-ORIGINAL NEXT1: pilot96319/audio46851 exit0, PIDs29576/30708 gone; collected S4/pilot-collection.json. No browser source changed during captures.
-FRESH PILOTS S4-contrast-after1280/1440 both7/7,18receipts,9historykinds,15links,reloadRecovery,0pathErrors/popups; receipt95.301/95.662s,total202.623/203.029s; not20run gate.
-G-UI OPEN overall: wallet contrast1.132->9.476/sponsor1.914->8.579; both fresh journeys pass scoped text audit. Subsequent spacing/dismiss/hover CSS passes both-size synthetic geometry check; failure1 retained.
-G-PROOF: Fuji4counter outage/reload/recovery pass; original timestamps retained,4aged labels shown,6blocked requests,0pageErrors; S4/counter-recovery.json. SponsoredFuji latency unproven.
-G-REG: server742pass,typecheckpass,buildpass; rules1409pass+2expectedfail+11skip after25percent expectation correction. Final web2653pass/8fail:7ART assertions+StageLayout5s timeout; unchanged isolatedStageLayout11/11pass.
-PARITY session85376 was a probe only, not a pass or new baseline. FocusedS4 previously38/38 and indexed4/4. Never edit ART tests.
-S2b production attack/Power1.15 and Spool2500bp retained. Earlier1.15holdout300/300wins,0healerDamage,firstloss17.50245min,boss87.0667s/p9093.57s.
-S2b CLASS-OFFENSE120-POWER25-200 complete1000accounts/1887.441s; Legendary casual14/regular10/heavy9/whale9/bot9days; native snapshot and provenance retained.
-S2b1.20 independent100seedholdout2001..2100:300wins/0healerDamage,firstloss16.796min,boss86.233s/p9087.867s. Token200seeds/18scenarios16pass: burnClaims0.9938142595<1, Star1.1012631046>1.10. NOT adopted; S2b/offense120-decision.json.
-S2b required1.15/25percent also16/18: burnClaims0.9968275226<1, Star1.1015423773>1.10;15percent18/18 is NOT authorized policy. No threshold changes; invalid-base sensitivity jobs stopped.
-S4 earlier intro timeout preserved; skip/natural probes reached reward; hot reload remains unconfirmed hypothesis. Intro ~90s.
-S4 Fuji snapshot55logs/5contracts/30RPCverifiedreceipts/checkpoint61162789; verified counters burn2.02/Deeds0/Fused0/tx30. Read-only recovery confirms live/cache behavior.
-S4 indexer validates pages/blockhashes/cache,20blockRPCoverlap;lag>500failsclosed;zero0xindices/emptydata normalized. Local history validates participants/native funding.
-S5 research and60s mixexperiment complete; current-14.91LUFS/LRA2.6/peak-2.23;bed-6trim-3 gives-19.39/LRA6.1/peak-4.38;max10sources/1speech. Production audio unchanged.
-S5 proposed research target-23LUFS+/-2 still needs reconciliation with rules/checker; shortfixtures are not30min compliance. Keep required layered impacts audible.
-ART defensive Mochi4 support stays allied; damaging melee closes actual hostile target; action clocks unchanged.
-S1 full-history scan70351/70360 still running at08:01UTC after3h13; no final report. Incremental S4 scan95files/5false positives triaged:4samepublicYarnTokenaddress,1field-namearray; Fuji8352byte code verified;0unresolved at08:10.
-SERVICES last verified owned: Vite5994 PID33548/backend5997 PID33468/Anvil8546 PID33478; audioVite5995 PID30528. No active pilot/cohort/token/recovery sessions after collection; history still pending.
-STOP absent on resume; INBOX/other prose reports not reread per user two-report instruction. No deploy/publictx/ARTfileedit/imagegeneration.
+NOW fixed25percent NEXT1 diagnosis complete; no justified third class candidate. Updated 2026-11-16T08:35:03.448265+00:00.
+NEXT 1: S5 audio implementation from measured quiet-bed mix; enforce RULES -18+/-2LUFS, >=5LU LRA, <=-1dBTP,4-8dBduck,layered impacts and30min validation; resolve stale -23 proposal against RULES.
+NEXT 2: S2b remains open for S11; require a measured class-only acquisition/eligibility hypothesis before another candidate. Valid18/18 candidate -> fresh sensitivity/E4/E5 -> ONE baseline -> notify ART; no baseline yet.
+NEXT 3: final stable20journeys (10perdesktop), remaining S4 proof and S6+; scheduled ART integrations unchanged. Never substitute pilots for gates.
+CHECKPOINT: previous pending26files scanned107files/0unresolved, committed+pushed2a7ca6c40; prior f738c8975. This diagnosis ships in the next checkpoint; git HEAD/origin authoritative.
+LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575; assets a14f8a76b4e5bdd8d805e1d1d8527ee87f166a43 await scheduled merge; no early merge.
+S2b boundary-diagnosis: 2000exact original-output comparisons,2000conservation checks,306savedquantiles pass; raw unchanged across rerun. First attempt wrong288count preserved; no policy/gate changes.
+S2b boundary-channels:400cross-runtime exact replays+800hybrids; gear-only burn0.9947185671/progression0.9907852586;high-botStars1.1014655147/1.1016305618; neither repairs gates; hybrids are not candidates.
+S2b independent token seeds73113..73312:1.15/1.20 burn0.9922455524/0.9889858946;Stars1.1017422013/1.1018494265. Bothfail;paired relevant95percent intervals include0; native banks unchanged.
+S2b diagnosis:low-bot meanYARN deficit78.711341=wallets+treasury-external;high-bot meanStars414.185balance versus407.448allowed;inactive142.515 retained. Material surplus+affordability failures; no supported scalar remedy.
+S2b decision:production attack/Power1.15,Spool2500bp;end blind scalar search;keep original16/18;no sensitivity/E4/E5/baseline on invalid candidate. See boundary-decision.json,LEARN/S2b-boundary.md.
+S2b1.15holdout300/300wins,0healerDamage,firstloss17.50245min,boss87.0667s/p9093.57s.1.20holdout300wins/0healerDamage,firstloss16.796min,boss86.233s/p9087.867s;1.20rejected.
+S2b native1.20 complete1000accounts/1887.441s;Legendary14/10/9/9/9days. Official1.15E3burn0.9968275226/Stars1.1015423773;1.20burn0.9938142595/Stars1.1012631046;both16/18.15percent18/18 is unauthorized.
+G-REG newest:server742pass;rules1409pass+2expectedfail+11skip;model17pass;typecheck/buildpass;web2654pass/7ARTassertionsfail,noStageLayouttimeout. No ART edits. boundary-check.json + bundled boundary-log.jsonl.gz.
+PARITY newest boundary probe3/3 actual/rules agree and exit0; NOT an official baseline gate or new baseline. Earlier85376 also probe-only.
+ORIGINAL pilots96319/audio46851 collectedexit0;S4/pilot-collection.json. FRESH S4contrast-after1280/1440:7/7,18receipts,9historykinds,15links,reload,0errors/popups;receipt95.301/95.662s,total202.623/203.029s.
+G-UI OPEN:walletcontrast1.132->9.476/sponsor1.914->8.579;freshjourneys passed scoped contrast. Later spacing/dismiss/hoverCSS passes both-size synthetic geometry;failure1 retained;full20journeys absent.
+G-PROOF:Fuji4counter outage/reload/recoverypass;originaltimestampsretained,4agedlabels,6blockedrequests,0pageErrors;S4/counter-recovery.json. SponsoredFuji latency unproven.
+S4 intro~90s;earlier transition timeout preserved,hotreload remains unconfirmed hypothesis. Last pilot fixes are not20run proof.
+S4 Fuji55logs/5contracts/30RPCverifiedreceipts/checkpoint61162789;burn2.02/Deeds0/Fused0/tx30;read-onlyrecoveryconfirmscache. Indexer validatespages/blockhashes,20blockoverlap,lag>500failsclosed.
+S5 research+60smixexperiment:current-14.91LUFS/LRA2.6/peak-2.23;bed-6trim-3 gives-19.39/LRA6.1/peak-4.38;max10sources/1speech. Production audio unchanged;shortfixturesnot30min compliance.
+ART defensiveMochi4 staysallied;damagingmelee closeshostiletarget;clocks unchanged. Do not edit ART-owned tests to hide seven failures.
+S1 full-history scan70351/70360 absent08:26UTC;finalreportstilluncollected. Incremental95files/5falsepositives resolved;checkpoint107files/0unresolved collectedandpushed. Rawfindingsneverprinted.
+REPORT BUDGET OPEN:trackedreports45.4MB beforediagnosis;ignoredlocalcapturesputreportstree>150MB. Preserveexistingcaptures;resolveartifactbudgetinS11.
+SERVICES lastknown:Vite5994 PID33548/backend5997 PID33468/Anvil8546 PID33478;audioVite5995 PID30528. No active diagnostic/cohort/token/test jobs after collection.
+STOP absent;user restricts prose reads to RULES/HANDOFF,so INBOX/STATE/REQUEST/ARTreports not reread. No deploy/publictx/ARTedit/imagegeneration.
+UTC:SYNC17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.

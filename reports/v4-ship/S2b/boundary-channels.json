@@ -1,0 +1,378 @@
+{
+  "at": "2026-11-16T08:31:42.447Z",
+  "labSha256": "c744d8a7f5d08ea5df272ad6b24edf30c5337ce96f0e027c2c5db3ce0f39cfe4",
+  "configHash": "860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798",
+  "retentionBp": 2500,
+  "referenceRawSha256": "f5109a873053fcfa01c553ee07b40b716a6febc12a5adb563b6f97d7093a2182",
+  "models": [
+    {
+      "bank": {
+        "path": "reports/v4-ship/S2b/econ/CLASS-OFFENSE115-POWER-200.json",
+        "sha256": "740c770875cdfbcd2c7628f5b66265357b61bc576aca13f592f75cc0b6e934b3",
+        "manifestSha256": "3269b5e05b7f7553c4298daa0fd5d867c30ba30ea6462db5f8008ebf518d9bb7"
+      },
+      "modelSnapshot": {
+        "path": "reports/v4-ship/S2b/econ/snapshots/CLASS-POWER-RETENTION25-token-regression.json.gz",
+        "sha256": "a621c1d6e2335396f8e22bd922eefcd6922f063e156ef12834579c0dfb6a116f"
+      }
+    },
+    {
+      "bank": {
+        "path": "reports/v4-ship/S2b/econ/CLASS-OFFENSE120-POWER25-200.json",
+        "sha256": "b88896a9de30a5ce3e95cea28f42def4533311dc46b03363233d51532612a737",
+        "manifestSha256": "a6e560434420189c0c3d63c3fad1d0efa20b4544714457d0ae9784fe7af4faa8"
+      },
+      "modelSnapshot": {
+        "path": "reports/v4-ship/S2b/econ/snapshots/CLASS-OFFENSE120-POWER25-TOKENS-token-regression.json.gz",
+        "sha256": "c21d2146ee4a2d7210715c266cfc7741043822174833e7e4a7e202222d4046d8"
+      }
+    }
+  ],
+  "masks": {
+    "gear": [
+      "gear",
+      "gearItems"
+    ],
+    "progression": [
+      "hours",
+      "wins",
+      "completedRoutes",
+      "level",
+      "cleared"
+    ]
+  },
+  "firstSeed": 73113,
+  "seeds": 200,
+  "crossRuntimeReplays": 400,
+  "validationPass": true,
+  "candidateEligible": false,
+  "summary": [
+    {
+      "scenario": "casual-heavy-d0.5-b0.1",
+      "channel": "gear",
+      "seeds": 200,
+      "metrics": {
+        "burnClaims": {
+          "median": 0.9947185670833748,
+          "mean": 0.994614240685039,
+          "medianDifferenceFrom115": 0.0024730146549535315,
+          "meanPairedDifferenceFrom115": 0.0022844674767403283
+        },
+        "starRatio": {
+          "median": 1.077161596190962,
+          "mean": 1.0772455769183695,
+          "medianDifferenceFrom115": -0.00012976550027188338,
+          "meanPairedDifferenceFrom115": -0.000290784791336004
+        },
+        "burn": {
+          "median": 21120,
+          "mean": 21094.345,
+          "medianDifferenceFrom115": 128,
+          "meanPairedDifferenceFrom115": 86.89
+        },
+        "claims": {
+          "median": 21209.335609249505,
+          "mean": 21209.110715344552,
+          "medianDifferenceFrom115": 48.46890000023268,
+          "meanPairedDifferenceFrom115": 35.39529869998789
+        },
+        "balances": {
+          "median": 3733.897757124999,
+          "mean": 3757.7257153449987,
+          "medianDifferenceFrom115": 57.92401675000019,
+          "meanPairedDifferenceFrom115": 25.89529869999985
+        },
+        "externalVolume": {
+          "median": 3800,
+          "mean": 3756,
+          "medianDifferenceFrom115": 200,
+          "meanPairedDifferenceFrom115": 80
+        },
+        "treasury": {
+          "median": 114,
+          "mean": 113.04,
+          "medianDifferenceFrom115": 6,
+          "meanPairedDifferenceFrom115": 2.61
+        },
+        "starSource": {
+          "median": 5493.5,
+          "mean": 5472.82,
+          "medianDifferenceFrom115": 28,
+          "meanPairedDifferenceFrom115": 8.65
+        },
+        "starSink": {
+          "median": 5099,
+          "mean": 5081.17,
+          "medianDifferenceFrom115": 27.5,
+          "meanPairedDifferenceFrom115": 9.34
+        },
+        "starBalances": {
+          "median": 392,
+          "mean": 391.65,
+          "medianDifferenceFrom115": -1,
+          "meanPairedDifferenceFrom115": -0.69
+        },
+        "seals": {
+          "median": 301,
+          "mean": 298.265,
+          "medianDifferenceFrom115": 7,
+          "meanPairedDifferenceFrom115": 3.785
+        },
+        "fusions": {
+          "median": 189,
+          "mean": 188.93,
+          "medianDifferenceFrom115": 2,
+          "meanPairedDifferenceFrom115": 0.63
+        }
+      }
+    },
+    {
+      "scenario": "casual-heavy-d0.5-b0.1",
+      "channel": "progression",
+      "seeds": 200,
+      "metrics": {
+        "burnClaims": {
+          "median": 0.9907852586401518,
+          "mean": 0.9921575855265402,
+          "medianDifferenceFrom115": -0.0014602937882695066,
+          "meanPairedDifferenceFrom115": -0.00017218768175788712
+        },
+        "starRatio": {
+          "median": 1.0775738112409905,
+          "mean": 1.0774911277786001,
+          "medianDifferenceFrom115": 0.00028244954975664704,
+          "meanPairedDifferenceFrom115": -0.00004523393110573593
+        },
+        "burn": {
+          "median": 21025.5,
+          "mean": 21001.025,
+          "medianDifferenceFrom115": 33.5,
+          "meanPairedDifferenceFrom115": -6.43
+        },
+        "claims": {
+          "median": 21232.338569749667,
+          "mean": 21164.90682804831,
+          "medianDifferenceFrom115": 71.47186050039454,
+          "meanPairedDifferenceFrom115": -8.808588596251283
+        },
+        "balances": {
+          "median": 3782.4342841249986,
+          "mean": 3809.8418280487504,
+          "medianDifferenceFrom115": 106.46054374999994,
+          "meanPairedDifferenceFrom115": 78.01141140374942
+        },
+        "externalVolume": {
+          "median": 3750,
+          "mean": 3759,
+          "medianDifferenceFrom115": 150,
+          "meanPairedDifferenceFrom115": 83
+        },
+        "treasury": {
+          "median": 112.5,
+          "mean": 113.04,
+          "medianDifferenceFrom115": 4.5,
+          "meanPairedDifferenceFrom115": 2.61
+        },
+        "starSource": {
+          "median": 5460.5,
+          "mean": 5460.125,
+          "medianDifferenceFrom115": -5,
+          "meanPairedDifferenceFrom115": -4.045
+        },
+        "starSink": {
+          "median": 5069.5,
+          "mean": 5068.225,
+          "medianDifferenceFrom115": -2,
+          "meanPairedDifferenceFrom115": -3.605
+        },
+        "starBalances": {
+          "median": 392,
+          "mean": 391.9,
+          "medianDifferenceFrom115": -1,
+          "meanPairedDifferenceFrom115": -0.44
+        },
+        "seals": {
+          "median": 291,
+          "mean": 295.605,
+          "medianDifferenceFrom115": -3,
+          "meanPairedDifferenceFrom115": 1.125
+        },
+        "fusions": {
+          "median": 185,
+          "mean": 187.155,
+          "medianDifferenceFrom115": -2,
+          "meanPairedDifferenceFrom115": -1.145
+        }
+      }
+    },
+    {
+      "scenario": "casual-heavy-d0.5-b0.35",
+      "channel": "gear",
+      "seeds": 200,
+      "metrics": {
+        "burnClaims": {
+          "median": 1.1346850598247626,
+          "mean": 1.1345143125385146,
+          "medianDifferenceFrom115": 0.0016574142359893074,
+          "meanPairedDifferenceFrom115": 0.00038838728397335933
+        },
+        "starRatio": {
+          "median": 1.1014655146884624,
+          "mean": 1.1019637850027186,
+          "medianDifferenceFrom115": -0.0002766865829786358,
+          "meanPairedDifferenceFrom115": -0.00014592900806238983
+        },
+        "burn": {
+          "median": 24084,
+          "mean": 24121.225,
+          "medianDifferenceFrom115": 9,
+          "meanPairedDifferenceFrom115": 22.47
+        },
+        "claims": {
+          "median": 21291.962497999233,
+          "mean": 21264.29987577447,
+          "medianDifferenceFrom115": -0.6871631253707164,
+          "meanPairedDifferenceFrom115": 11.692485359964193
+        },
+        "balances": {
+          "median": 6295.843042124996,
+          "mean": 6206.494875774996,
+          "medianDifferenceFrom115": 95.42255999999634,
+          "meanPairedDifferenceFrom115": 13.202485359998322
+        },
+        "externalVolume": {
+          "median": 9700,
+          "mean": 9345,
+          "medianDifferenceFrom115": 100,
+          "meanPairedDifferenceFrom115": 25
+        },
+        "treasury": {
+          "median": 291,
+          "mean": 281.58,
+          "medianDifferenceFrom115": 3,
+          "meanPairedDifferenceFrom115": 1.02
+        },
+        "starSource": {
+          "median": 4493.5,
+          "mean": 4476.095,
+          "medianDifferenceFrom115": 10,
+          "meanPairedDifferenceFrom115": -2.125
+        },
+        "starSink": {
+          "median": 4080.5,
+          "mean": 4062.94,
+          "medianDifferenceFrom115": 13,
+          "meanPairedDifferenceFrom115": -1.4
+        },
+        "starBalances": {
+          "median": 414,
+          "mean": 413.155,
+          "medianDifferenceFrom115": -0.5,
+          "meanPairedDifferenceFrom115": -0.725
+        },
+        "seals": {
+          "median": 785,
+          "mean": 780.98,
+          "medianDifferenceFrom115": 7,
+          "meanPairedDifferenceFrom115": 0.265
+        },
+        "fusions": {
+          "median": 161.5,
+          "mean": 160.465,
+          "medianDifferenceFrom115": 1.5,
+          "meanPairedDifferenceFrom115": 1.25
+        }
+      }
+    },
+    {
+      "scenario": "casual-heavy-d0.5-b0.35",
+      "channel": "progression",
+      "seeds": 200,
+      "metrics": {
+        "burnClaims": {
+          "median": 1.1324578048983072,
+          "mean": 1.1309889590593185,
+          "medianDifferenceFrom115": -0.0005698406904661724,
+          "meanPairedDifferenceFrom115": -0.003136966195223476
+        },
+        "starRatio": {
+          "median": 1.101630561762732,
+          "mean": 1.1018100217255231,
+          "medianDifferenceFrom115": -0.00011163950870907158,
+          "meanPairedDifferenceFrom115": -0.00029969228525744576
+        },
+        "burn": {
+          "median": 24100,
+          "mean": 24059.17,
+          "medianDifferenceFrom115": 25,
+          "meanPairedDifferenceFrom115": -39.585
+        },
+        "claims": {
+          "median": 21266.713390249497,
+          "mean": 21275.01138289201,
+          "medianDifferenceFrom115": -25.936270875106857,
+          "meanPairedDifferenceFrom115": 22.403992477500832
+        },
+        "balances": {
+          "median": 6147.378492375,
+          "mean": 6227.166382892503,
+          "medianDifferenceFrom115": -53.04198974999963,
+          "meanPairedDifferenceFrom115": 33.8739924774998
+        },
+        "externalVolume": {
+          "median": 9600,
+          "mean": 9291,
+          "medianDifferenceFrom115": 0,
+          "meanPairedDifferenceFrom115": -29
+        },
+        "treasury": {
+          "median": 288,
+          "mean": 279.675,
+          "medianDifferenceFrom115": 0,
+          "meanPairedDifferenceFrom115": -0.885
+        },
+        "starSource": {
+          "median": 4491.5,
+          "mean": 4489.535,
+          "medianDifferenceFrom115": 8,
+          "meanPairedDifferenceFrom115": 11.315
+        },
+        "starSink": {
+          "median": 4073,
+          "mean": 4075.74,
+          "medianDifferenceFrom115": 5.5,
+          "meanPairedDifferenceFrom115": 11.4
+        },
+        "starBalances": {
+          "median": 414.5,
+          "mean": 413.795,
+          "medianDifferenceFrom115": 0,
+          "meanPairedDifferenceFrom115": -0.085
+        },
+        "seals": {
+          "median": 780.5,
+          "mean": 774.13,
+          "medianDifferenceFrom115": 2.5,
+          "meanPairedDifferenceFrom115": -6.585
+        },
+        "fusions": {
+          "median": 160.5,
+          "mean": 160.18,
+          "medianDifferenceFrom115": 0.5,
+          "meanPairedDifferenceFrom115": 0.965
+        }
+      }
+    }
+  ],
+  "raw": {
+    "path": "reports/v4-ship/S2b/boundary-channels.jsonl.gz",
+    "sha256": "4d1542e654cd7a9523298b5ee58156475b0843800e1a59b66d762a429c69c7e0",
+    "runs": 800
+  },
+  "elapsedSeconds": 38.465254083,
+  "limits": [
+    "Hybrid records isolate model pathways but are not realizable native cohorts or candidate gate evidence.",
+    "Same diagnostic seed block as boundary analysis; not a new holdout.",
+    "No first-Legendary record, rate, threshold, clock or production code changed."
+  ]
+}

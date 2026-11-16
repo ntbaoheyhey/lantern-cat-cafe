@@ -1,0 +1,159 @@
+{
+  "at": "2026-11-16T08:33:54.238552+00:00",
+  "sourceCommit": "2a7ca6c40768ea677e5c9804bc78bec782b77485",
+  "diagnosis": {
+    "exitCode": 0,
+    "exactComparisons": 2000,
+    "identityComparisons": 2000,
+    "quantileComparisons": 306,
+    "expectedQuantileComparisons": 306,
+    "previousRawSha256": "f5109a873053fcfa01c553ee07b40b716a6febc12a5adb563b6f97d7093a2182",
+    "pass": true
+  },
+  "channelProbe": {
+    "exitCode": 0,
+    "crossRuntimeReplays": 400,
+    "diagnosticRuns": 800,
+    "pass": true
+  },
+  "preservedAttempts": [
+    {
+      "check": "diagnostic bookkeeping",
+      "exitCode": 1,
+      "reason": "Hardcoded expected 288 quantile checks was wrong; all 306 recorded quantiles and 2000 original outputs matched. Fixed count derived from saved reports, full rerun passed and reproduced the same raw bytes."
+    },
+    {
+      "check": "server command selection",
+      "exitCode": 0,
+      "acceptedAsTest": false,
+      "reason": "Initial @taskbar-hero/server filter matched no project. Correct @taskbar-hero/supabase-tests rerun passed 742 tests."
+    },
+    {
+      "check": "research note append",
+      "acceptedAsEvidence": false,
+      "reason": "Python newline escape failed; corrected with apply_patch. Channel masks were specified in tool invocation before execution."
+    }
+  ],
+  "regression": {
+    "modelTests": {
+      "exitCode": 0,
+      "passed": 17
+    },
+    "server": {
+      "exitCode": 0,
+      "passed": 742
+    },
+    "rules": {
+      "exitCode": 0,
+      "passed": 1409,
+      "expectedFailures": 2,
+      "skipped": 11
+    },
+    "web": {
+      "exitCode": 1,
+      "passed": 2654,
+      "failed": 7,
+      "files": [
+        "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts",
+        "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "note": "Same 7 ART-owned assertions; no StageLayout timeout this run. ART files unchanged."
+    },
+    "typecheck": {
+      "exitCode": 0
+    },
+    "build": {
+      "exitCode": 0
+    },
+    "parity": {
+      "exitCode": 0,
+      "mode": "probe",
+      "fixtures": 3,
+      "newBaseline": false,
+      "officialParityGatePass": false
+    }
+  },
+  "overallGatePass": false,
+  "gateReasons": [
+    "E3 remains 16/18.",
+    "Seven ART-owned web assertions remain unresolved.",
+    "No authorized new class parity baseline yet."
+  ],
+  "log": {
+    "path": "reports/v4-ship/S2b/boundary-log.jsonl.gz",
+    "sha256": "c36996601a63a193bca3641c17a0122ce46cebaa36e512e34ac8086f93c251e6"
+  },
+  "secrets": {
+    "at": "2026-11-16T08:35:08.668795+00:00",
+    "scanner": "8.30.1",
+    "scope": "All staged current contents for NEXT1 checkpoint, including gzip decompressed in memory. Not history scan. Raw findings suppressed.",
+    "files": [
+      {
+        "path": "reports/v4-ship/HANDOFF-SHIP.md",
+        "bytes": 5595,
+        "decodedBytes": 5595
+      },
+      {
+        "path": "reports/v4-ship/LEARN/S2b-boundary.md",
+        "bytes": 7495,
+        "decodedBytes": 7495
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-channels.json",
+        "bytes": 12007,
+        "decodedBytes": 12007
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-channels.jsonl.gz",
+        "bytes": 50955,
+        "decodedBytes": 255995
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-check.json",
+        "bytes": 2777,
+        "decodedBytes": 2777
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-decision.json",
+        "bytes": 8524,
+        "decodedBytes": 8524
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-diagnosis.json",
+        "bytes": 649961,
+        "decodedBytes": 649961
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-log.jsonl.gz",
+        "bytes": 17403,
+        "decodedBytes": 81197
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-parity-probe.json",
+        "bytes": 150013,
+        "decodedBytes": 150013
+      },
+      {
+        "path": "reports/v4-ship/S2b/boundary-runs.jsonl.gz",
+        "bytes": 4109227,
+        "decodedBytes": 17949942
+      },
+      {
+        "path": "tools/v4ship-lab/classes/boundary-channels.mjs",
+        "bytes": 5124,
+        "decodedBytes": 5124
+      },
+      {
+        "path": "tools/v4ship-lab/classes/boundary-diagnosis.mjs",
+        "bytes": 12220,
+        "decodedBytes": 12220
+      }
+    ],
+    "findings": [],
+    "unresolved": 0,
+    "pass": true
+  },
+  "reportBudget": {
+    "note": "Tracked reports were 45,407,068 bytes before this item; existing ignored captures put the local reports tree over 150 MB. No existing capture deleted; budget remains open for S11."
+  }
+}
