@@ -1,0 +1,187 @@
+{
+  "at": "2026-11-16T22:56:29.506251+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6945,
+      "sha256": "f95f7467f994c31987aa77b8b1a7c4f873226e1f82637cd7baa217abcc546d51"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-text-triage.md",
+      "bytes": 4096,
+      "sha256": "c5b296c1c2941ceab26ccd0d434404c5acbc5317c1471a421a08e81106b9aee9"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-1.json",
+      "bytes": 60283,
+      "sha256": "53ede500b1a161942bcbb451dec7b1c86ee7b382582994669a140be4f2826d7d"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/check.json",
+      "bytes": 1461,
+      "sha256": "02583017c3d4f0f66a7af5944cf9138525d354c43ac5b934cd0c601a505ca010"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/log.jsonl.gz",
+      "bytes": 16127,
+      "sha256": "94267783f936109e8a22f39f73cc002900e0e9aea0ba4c5681b0408f695df536"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "0db2e12c84c103692d9f83da9e5b85edeb590dff8a564cc2995d51e3b372292e"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-review-1.json",
+      "bytes": 3384,
+      "sha256": "a6d36f5a910493c6f846e0b77f22f55b121ee3872ce85bafd836a74cdd24d7a9"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 25379,
+      "sha256": "0aec35ce755bad2e42445865a4ae25ed7edb38df1c295e8087dbf6028cd9a8aa"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4717,
+      "sha256": "0f4cf47ff843e2fbb87d8445cf7e50c0312ad2b44b7545780e6f15a22fd19a2c"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-prefix-triage-review.py",
+      "bytes": 5917,
+      "sha256": "c39541935c7404e1e01c8865db789a87faa7218f1c9aaf3dd92e6b10f5710ddf"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-prefix-triage.py",
+      "bytes": 11683,
+      "sha256": "083bd0f708dedcbb73e2774b4ab1b4ee0a61de735365a80930baa3d1b5a01877"
+    }
+  ],
+  "scans": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6945,
+      "sha256": "f95f7467f994c31987aa77b8b1a7c4f873226e1f82637cd7baa217abcc546d51",
+      "alias": "f95f7467f994c31987aa77b8b1a7c4f873226e1f82637cd7baa217abcc546d51.txt",
+      "seconds": 0.002309583,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-text-triage.md",
+      "representation": "raw",
+      "bytes": 4096,
+      "sha256": "c5b296c1c2941ceab26ccd0d434404c5acbc5317c1471a421a08e81106b9aee9",
+      "alias": "c5b296c1c2941ceab26ccd0d434404c5acbc5317c1471a421a08e81106b9aee9.txt",
+      "seconds": 0.00111175,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-1.json",
+      "representation": "raw",
+      "bytes": 60283,
+      "sha256": "53ede500b1a161942bcbb451dec7b1c86ee7b382582994669a140be4f2826d7d",
+      "alias": "53ede500b1a161942bcbb451dec7b1c86ee7b382582994669a140be4f2826d7d.txt",
+      "seconds": 0.018871709,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1461,
+      "sha256": "02583017c3d4f0f66a7af5944cf9138525d354c43ac5b934cd0c601a505ca010",
+      "alias": "02583017c3d4f0f66a7af5944cf9138525d354c43ac5b934cd0c601a505ca010.txt",
+      "seconds": 8.5625e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 95999,
+      "sha256": "0932c6c844bdfe51579fd01a37eaf1f1eadb15b0e8a5ead668cfd2f103023610",
+      "alias": "0932c6c844bdfe51579fd01a37eaf1f1eadb15b0e8a5ead668cfd2f103023610.txt",
+      "seconds": 0.026672917,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "0db2e12c84c103692d9f83da9e5b85edeb590dff8a564cc2995d51e3b372292e",
+      "alias": "0db2e12c84c103692d9f83da9e5b85edeb590dff8a564cc2995d51e3b372292e.txt",
+      "seconds": 0.000690417,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-review-1.json",
+      "representation": "raw",
+      "bytes": 3384,
+      "sha256": "a6d36f5a910493c6f846e0b77f22f55b121ee3872ce85bafd836a74cdd24d7a9",
+      "alias": "a6d36f5a910493c6f846e0b77f22f55b121ee3872ce85bafd836a74cdd24d7a9.txt",
+      "seconds": 0.000147583,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 25379,
+      "sha256": "0aec35ce755bad2e42445865a4ae25ed7edb38df1c295e8087dbf6028cd9a8aa",
+      "alias": "0aec35ce755bad2e42445865a4ae25ed7edb38df1c295e8087dbf6028cd9a8aa.txt",
+      "seconds": 0.021519875,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4717,
+      "sha256": "0f4cf47ff843e2fbb87d8445cf7e50c0312ad2b44b7545780e6f15a22fd19a2c",
+      "alias": "0f4cf47ff843e2fbb87d8445cf7e50c0312ad2b44b7545780e6f15a22fd19a2c.txt",
+      "seconds": 0.000117458,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-prefix-triage-review.py",
+      "representation": "raw",
+      "bytes": 5917,
+      "sha256": "c39541935c7404e1e01c8865db789a87faa7218f1c9aaf3dd92e6b10f5710ddf",
+      "alias": "c39541935c7404e1e01c8865db789a87faa7218f1c9aaf3dd92e6b10f5710ddf.txt",
+      "seconds": 0.001575,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-text-prefix-triage.py",
+      "representation": "raw",
+      "bytes": 11683,
+      "sha256": "083bd0f708dedcbb73e2774b4ab1b4ee0a61de735365a80930baa3d1b5a01877",
+      "alias": "083bd0f708dedcbb73e2774b4ab1b4ee0a61de735365a80930baa3d1b5a01877.txt",
+      "seconds": 0.005430542,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16127,
+      "sha256": "94267783f936109e8a22f39f73cc002900e0e9aea0ba4c5681b0408f695df536",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}

@@ -1,0 +1,20 @@
+# S11 exact text-prefix finding review
+
+Read 16 November 2026 before this review. The direct detector's immutable first prefix has 61 unresolved generic-rule locations in four exact JSON objects. A path, a field name or a 64-character hexadecimal shape is insufficient to dismiss a finding.
+
+1. [FIPS 180-4, formal Secure Hash Standard](https://csrc.nist.gov/pubs/fips/180-4/upd1/final): recompute the digest from the actual referenced source bytes before classifying a manifest digest. This establishes the derivation of a value; it does not clear other content in the source.
+2. [RFC 8259, formal JSON standard](https://www.rfc-editor.org/rfc/rfc8259.txt): duplicate names have inconsistent interpretation across parsers. Reject duplicate keys and non-JSON constants during this review.
+3. [Python 3.12 JSON decoding](https://docs.python.org/3.12/library/json.html): use object_pairs_hook for duplicate detection; parse the full document and exact finding line, then require their values to agree.
+4. [Python hashlib](https://docs.python.org/3/library/hashlib.html): SHA-256 operates on bytes. Keep both detector values and recomputed matching digests in memory; persist only source locations and equality attestations.
+5. [Git revision syntax](https://git-scm.com/docs/gitrevisions): an immutable commit:path identifies the historical source. Prefer the report's frozen mapping and its explicitly declared revision; do not substitute the mutable working tree.
+6. [Git cat-file](https://git-scm.com/docs/git-cat-file): batch mode provides exact object type, length and bytes. Independently reconstruct the Git object identity; do not use filters or textconv.
+7. Pinned Gitleaks 8.30.1 and the earlier text-method study: stdin has known coverage gaps. Here it may recover an exact match only after all four object-level metadata sets reproduce the direct scan exactly. Never extend this limited equivalence to unexamined files.
+8. Exact historical renderer source: inspect its TOKENS path, SHA-256 implementation and tokensSha256 assignment, and require its byte digest to match the receipt's scriptSha256. Read-only inspection; no rendering, generator inputs or ART edits.
+
+Prespecified comparison: run per-reference Git subprocess lookups and a persistent batched lookup with a commit:path cache against the same 61 findings. Require identical source objects and classifications, measure requests and elapsed time, and retain missing/mismatched references as unresolved. Four memory-only stdin rescans have already reproduced all 61 direct locations, with every capture exactly 64 characters; no capture values were output. Two initial ad-hoc metadata inspections failed before execution due to a literal newline escape; a multiline command corrected the inspection without changing input data.
+
+The original prefix and its unresolved findings remain immutable. This review may classify only those 61 exact findings. Later scanner checkpoints, excluded binary/encoded/archive/submodule contents, later references and the full-history gate remain open.
+
+Measured result: all 61 locations reproduce exactly in four memory-only rescans. All captures equal full JSON values and the recomputed SHA-256 of 32 immutable source references. Single subprocess lookups: 61 requests, 0.455776 s. Persistent batch plus cache: 32 requests, 0.010317 s. Both give identical source objects and 61/61 derivations; the batch method is selected for subsequent bounded review. This is a warm local sample, not an estimate of whole-history duration. The renderer receipt also matches its exact historical producer script, whose token path and SHA-256 assignment are verified through syntax-tree inspection.
+
+Independent review re-reads four historical report objects and all 32 source references with git-show, verifies all 61 exact derivations, and retains the original unresolved finding set. The complete regression matches the previous seven ART failures and 2,690 web passes; server/rules/typecheck/three-fixture probe/build exit zero and all three parity rows are unchanged. No global acceptance gate closes.
