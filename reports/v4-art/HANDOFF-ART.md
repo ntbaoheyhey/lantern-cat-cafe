@@ -1,7 +1,7 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: user continuation;A10request OPEN after2h timebox, nowA11 open alpha/Panko repair then UI polish. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: install nativePankoAVIF60/444 (185927B) from existingR3 and set selected straight derivative textures.premultiplyAlpha=true; shader must undo actual uploadedPMA. Preserve fallback sourcePMA and defaultmips. Then focused/typecheck/browser, four fresh runtime sheets, fullreg+3F6+films.
+NEXT1: launch detached validate-resolution.py pma-r2 preview; nativePanko60 and associated-upload/default-mips installed. Record PID/log immediately; focused/typecheck+12browser cases, four new runtime sheets, then fullregression/3F6/lane+3films and900p.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
 LAST PUSH:11a0365af verified. Original-PNGcontrol12cases/4sheets proves eye/muzzle circles are alpha-filter halos, not missing glasses; prior interpretation corrected. Select nativePanko60 plus associated-mips; mixedprojection7,966,311B/reserve16384/headroom33689 only.

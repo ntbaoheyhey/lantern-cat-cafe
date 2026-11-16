@@ -30,16 +30,18 @@ it('does not start a fallback request after disposal aborts decoding',async()=>{
  expect(images).toHaveLength(1);
 });
 
-it.each(['pass','reject','wrong-size'] as const)('matches shader alpha handling to the decoded delivery on %s',async outcome=>{
+it.each([true,false].flatMap(sourcePremultiplied=>(['pass','reject','wrong-size'] as const).map(outcome=>({sourcePremultiplied,outcome}))))('matches uploaded alpha for $outcome with source PMA=$sourcePremultiplied',async({outcome,sourcePremultiplied})=>{
  mode=outcome;
  const loaded=await loadAtlasImage('/source-pma.webp',sampled);
  const texture=paintedAtlasTexture(loaded.image,loaded.alphaEncoding),material=new T.MeshBasicMaterial({map:texture});
- usePaintedAtlasColor(material,true);
+ usePaintedAtlasColor(material,sourcePremultiplied);
  const shader={fragmentShader:'#include <map_fragment>'} as T.WebGLProgramParametersWithUniforms;
  material.onBeforeCompile(shader,{} as T.WebGLRenderer);
  expect(loaded.sampled).toBe(outcome==='pass');
- expect(shader.fragmentShader.includes('sampledDiffuseColor.rgb /=')).toBe(outcome!=='pass');
- expect(material.customProgramCacheKey()).toBe(outcome==='pass'?'painted-srgb-v2-straight':'painted-srgb-v2-pma');
+ expect(texture.premultiplyAlpha).toBe(outcome==='pass');
+ const uploadedPma=outcome==='pass'||sourcePremultiplied;
+ expect(shader.fragmentShader.includes('sampledDiffuseColor.rgb /=')).toBe(uploadedPma);
+ expect(material.customProgramCacheKey()).toBe('painted-srgb-v2-'+(uploadedPma?'pma':'straight'));
  texture.dispose();material.dispose();
 });
 it('retains source PMA when no derivative or no alpha override is declared',async()=>{
@@ -47,6 +49,7 @@ it('retains source PMA when no derivative or no alpha override is declared',asyn
   const loaded=await loadAtlasImage('/source-pma.webp',derivative);
   const texture=paintedAtlasTexture(loaded.image,loaded.alphaEncoding),material=new T.MeshBasicMaterial({map:texture});
   usePaintedAtlasColor(material,true);expect(material.customProgramCacheKey()).toBe('painted-srgb-v2-pma');
+  expect(texture.premultiplyAlpha).toBe(false);
   texture.dispose();material.dispose();
  }
 });

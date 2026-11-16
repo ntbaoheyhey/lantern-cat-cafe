@@ -36,7 +36,7 @@ try{
    const s=window.__depthScene;
    return {ready:s.ready,craft:!!s.craft,sizeAudit:s.sizeAudit(),
     actors:[...s.actors].map(([id,a])=>{
-     const textures=new Map();a.actor.root.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m?.map?.image){const i=m.map.image,key=m.customProgramCacheKey();textures.set(i.src,{src:i.src,width:i.naturalWidth||i.width,height:i.naturalHeight||i.height,colorSpace:m.map.colorSpace,alphaEncoding:m.map.userData.atlasAlphaEncoding??null,shaderKey:key.startsWith('painted-srgb-v2-')?key:null});}});
+     const textures=new Map();a.actor.root.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m?.map?.image){const i=m.map.image,key=m.customProgramCacheKey();textures.set(i.src,{src:i.src,width:i.naturalWidth||i.width,height:i.naturalHeight||i.height,colorSpace:m.map.colorSpace,premultiplyAlpha:m.map.premultiplyAlpha,minFilter:m.map.minFilter,magFilter:m.map.magFilter,generateMipmaps:m.map.generateMipmaps,alphaEncoding:m.map.userData.atlasAlphaEncoding??null,shaderKey:key.startsWith('painted-srgb-v2-')?key:null});}});
      return{id,asset:a.asset,source:a.actor.source,feet:s.socket(id,'feet'),head:s.socket(id,'head'),face:s.faceBounds(a),textures:[...textures.values()]};
     }),paint:[...s.effects.layered.images].map(([id,p])=>({id,url:p.image.src,width:p.image.naturalWidth,height:p.image.naturalHeight,x:p.x,y:p.y,sourceScaleX:p.sourceScaleX??1,sourceScaleY:p.sourceScaleY??1})),paintFailures:s.effects.layered.stats.failed};
   });
