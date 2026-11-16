@@ -1,24 +1,14 @@
-# V4 ART — 16/11
-Mochi đã có bốn tư thế vẽ riêng: lấy đà, đánh khiên, trúng đòn và tạo lá chắn.
-Đòn thường lao vào đúng đối thủ rồi trở về; đường đi đã tránh Kettle và Panko.
-Chiêu cuối dựng lớp khiên vàng/xanh sau đồng đội, không lao sang phe địch.
-SHIP đã xác nhận cách thể hiện chiêu hỗ trợ này; luật và thời gian không đổi.
-Đã xem ba phim có âm thanh và phim boss ở màn hình cao hơn.
-Bài đọc tư thế nhận đúng 11/12; toàn bộ động tác của Mochi đều đổi hình vẽ.
-Kiểm tra khung hình, tốc độ, mã và kết quả trận đấu đều đạt ở mốc này.
-Còn cần so sánh hiệu ứng cả đội ở A9 và bật nhánh hình mới cho bản sản phẩm.
-Hiệu ứng xanh của Clover, vàng của Panko và hồng của boss vẫn cần thay.
-Thời gian đo/ghi chép vượt mức quy định; đã ghi rõ, không coi là đạt.
-Đang làm Clover: tư thế lấy đà đã đạt; tư thế thả phép cần sửa tỉ lệ đầu.
-Chưa có idle mới từ họa sĩ; chưa nhận mốc luật lớp nhân vật cuối cùng từ SHIP.
-
-Clover đã có bốn tư thế mới và hiệu ứng lá trên đúng đồng đội.
-Đã xem đủ mười động tác của Clover; bài đọc tư thế đạt 12/12.
-Khung hình đạt ở cả sáu trường hợp; che khuất lớn nhất 13,42%.
-Phim boss riêng đạt 60,06 fps; 2647 kiểm thử web và kiểm tra kiểu/kết quả trận đều đạt.
-Luật hiện tại vẫn gây sát thương ở đòn thường của Clover, nên chưa công nhận vai trò chỉ hồi máu.
-Còn đo thời điểm lá xuất hiện chính xác, so sánh bốn chiêu cuối và bật nhánh sản phẩm.
-Chưa chứng minh đạt tỉ lệ thời gian vẽ/đo theo yêu cầu; giữ nguyên phần chưa đạt.
-Tiếp tục Panko: đã chọn tư thế, chuẩn bị hai hình hiệu ứng gốc; chưa đưa vào trận.
-
-16 Nov10:12UTC: Panko đạt mốc kiểm tra hình/đọc tư thế/vai trò/khung hình/hiệu năng; đọc mù11/12,10/10 cửa sổ hành động đủ phim, bổ sung phim36giây cho chiêu cuối boss. Vẫn mở so sánh hiệu ứng cả đội và kích hoạt production; chưa chứng minh tỷ lệ thời gian. Tiếp tục sửa đầu K4 của Binding Thread (đánh xa).
+# V4 ART — 16/11, 12:19 UTC
+Panko và Binding đã có biên nhận riêng; A7 chưa hoàn thành toàn bộ.
+Teacup có ba dáng mới: giơ thìa chuẩn bị, đưa thìa ra ngoài, co người khi trúng đòn.
+Nhận dạng mù đúng 9/9 hình; đã xem 13 lượt hành động trọn vẹn, gồm 4 tuyệt kỹ.
+Tuyệt kỹ dùng hoa màu kem, lá xanh và hơi trà; hồi đúng đồng đội, không làm đồng đội giật lùi.
+Máy quay đứng yên; kiểm tra bố cục 900p đạt, tốc độ trung vị khoảng 60 hình/giây.
+Đòn thường vẫn gây sát thương và phản đòn theo luật cũ; chưa công nhận đạt vai trò chỉ hồi máu.
+Đang chờ SHIP công bố bản luật cuối cùng và mốc đối chiếu duy nhất; chưa ghép bản chưa hoàn tất.
+Màn hoa còn khá lớn, cần so cùng Clover; hiệu ứng tối nền còn nhạt dần sau mốc 600 ms.
+Một đòn đánh tới Teacup nằm ngoài phim bổ sung 90 giây, không tính là đã kiểm chứng.
+Điểm riêng phần Teacup: 8/10; hình dễ đọc nhưng còn các điểm trên.
+Tiếp theo: Needle Moth, rồi Yarn Giant, sau đó kiểm tra cả đội và các mục còn mở.
+Chưa có bộ idle mới của họa sĩ. Giữ nguyên các ngưỡng kiểm tra.
+Chưa phát hành; kích hoạt chính thức, độ rõ của bảng tên và tỷ lệ thời gian làm việc còn mở.

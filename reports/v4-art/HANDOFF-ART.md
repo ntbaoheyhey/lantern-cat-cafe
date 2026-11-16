@@ -1,34 +1,31 @@
-# ART execution anchor — 2026-11-16 12:07 UTC
-Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: Adapt tools/v3craft-lab/v4-binding-thread/{review-films.py,blind-read.py} for Teacup; input reports/v3-feel/REVIEW/V4-A7-TEACUP. Save nine blind labels before key access; verify decoded frame markers and review complete own/hit windows.
-NEXT2: Teacup final regression/capture passed; film/blind/900p/performance receipt pending. Final SHIP healer-only semantics still pending.
-NEXT3: A7 Teacup/NeedleMoth/YarnGiant; A8 deliveries interrupt; A9 ensemble; A10 SHIP art; A11 open gates; A12 afterfreeze. No final summary.
-LAST PUSH:b426b0258 verified; final runners/parity and corrected anchor checkpointed. Eleven production hashes match at12:06UTC.
-LIVE: Review PID12964 completed markers/blindprepare/strips; PID12963 sequential90s wave1/wave3 supplements then900p wave3; log reports/v4-art/jobs/a7-teacup-tail90.log, childlogs tail90-wave1/tail90-wave3/900. PID10732 completed all exits0;2649tests. Vite67838 port5990. PIDs68961/69950 gone,A6 exits0.
-No STOP/inbox pause at12:06UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json. A10 assets alreadydelivered a14f8a76b; REQUESTS-TO-SHIP haspaths; verifycurrentrequest before anyregen.
-A0/A1/A2 complete; A1b exhaustive private catalogue deferredA11. A3/A4/A5 scoped checkpoints; A5 exactheal pending finalSHIP. Activation/ensemble OPEN.
-A6 verified22sourcehashes/3films/labels; blindattempt1=10/12FAIL preserved,attempt2=11/12PASS; tencompleteownwindows incl36sboss supplement. Do not repeat blind or film review.
-A6 FINAL2648tests/315files/typecheck/3F6PASS;return<.000038px;face0%;FX26.26–29.18%;60.240485fps;630122B. Time-split unproven.
-Binding K1-A1/K2-A1/K4-A2 selected;K5 aliasesK2;K4-A1 head failure retained. Published212654Bposes+45194BFX.
-Binding IoU .438837/.389201/.358964;dE1.708804/2.866167/5.433691;head.975801/1.017766/.951665;feet0/0/1;reach+.672794body.
-Binding head landmarks fixed4px uncertainty;K4-A2 nearlowerbound. Normalized/head reviews complete; never reopen.
-Binding 150ms knot throw +24strand woven net selected; labarea27.5858%,face1.8139%,socket.12045px. FailedR1/R2/R3 retained.
-Bothenemy liveprobe socket0px,area25.7218%,face2.1698%,maxunitocclusion1.25685%; film reviewed; receipt separates live metrics from film/telemetry.
-Binding2648tests/315files/typecheck/3F6PASS saved; production unchanged sincec19ded569. Blind9/9 labels-before-key; never reopen.
-All7originalfilm pages reviewed once:6ownbasic/6receivedhits,plantedreadable/static;observations persisted in REVIEW.md. No original-film ultimate.
-Tail60 complete3584frames/47actions/paritytrue/audio-14.91LUFS;A29(33.93s)/A30(36.21s)/A45(56.88s)complete;A46(59.16s)TRUNCATED. Tail8pages reviewed:ultimate1/2/3,fullfieldsA29/A30/A45,basic1,hit1. Observations REVIEW.md. All remaining tail and5flight sheets reviewed; observations REVIEW.md. A46 staysincomplete.
-TeacupK1-A1 FAILhead.907895 fromfixed[346,545];IoU.459745,dE4.689834,feet0,nocrop. K0[222,326]/4pxunchanged. Preview+headcrop seen once. A2head.986583 PASS,butdE6.199313 FAIL;IoU.463666,feet0. A3 selectedIoU.459779,dE4.180821,head.984307,feet1; normalizedreview seen. No thresholds relaxed.
-TeacupK4-A2 FAILhead1.060726/dE6.727747 preserved. K4-A3 fixed[452,650],head1.017873,IoU.528766,feet1,nocrop;rawdE7.444980FAIL->70%Lab2.261635/alphaunchanged. All3poses artselected; runtime unaccepted.
-IMAGEOPENS:8 persisted then reset0: blind1,originalbasic1-3,hit1-3,field1 reviewed once; field2 pending. Never reopen. SelectedJPG7/8; finalfilm slot remains.
-EXCLUDE logs,paritylatest,.DS_Store,recorderlinks,duplicatepreviews,raw/private/nonSYNCmovies. Checkpoint eachstep<=20min;detachedjobs<=3.
-Binding scopedreceipt11complete,3+flightframes,K2change33.2767%,60.240485fps,3.184MBupperbound;focus600hold+200fade/exactfilmclock OPEN A9/A11. Time-split unproven; Craft gatedDEV+VITE_CRAFT_PILOT=soot untilA9/A11;noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR.
-ReadRULES/item/commit/newart/hour;commands<=40lines/3KB,diffs<=80lines;sync17/18Nov11:30;finalprep19Nov09:30,push10:00;authorizedthrough29Nov12UTC.
-Teacup R1 drills: compact area15.416%FAIL; broad23.994%PASS; faces73.314%/71.514%FAIL; socket<1.2e-13px. R1 source+metrics preserved; R2 adds face protection to rear canopy.
-Teacup R1 four frames reviewed once:60rise preserves lowbody/face gap;120rise approaches face; broad1100fan reaches behind hostile. R3 tests920x610fan with60rise and rear face protection; no source image edits.
-Teacup R3 superseded by R4; R3 labarea21.6935%,faces0.1173%,socket<1.2e-13px. All failures preserved; film unaccepted.
-Private Teacup225px healer reference comparison reviewed once; observations LEARN/A7. No reference input to generation. No final SHIP baseline; healer-only basics remain open.
-Teacup liveR1: wave1area20.1603%,wave3area19.4086%FAIL; faces<=2.1952%,unitocclusion<=12.7265%. K1 visual source auditFAIL(auto socket hit handle); fixed spoon[603,490], rerun required. Old basic damage persists.
-Teacup R4 final645fan passes lab22.9095%/face0.0601%; liveR2 areas21.2972%/20.4389%, faces<=2.7916%, healIDs exact,nohealK4/shake; source manual[603,490] verified. Publishedpose gates3/3,K2change32.7334%,allassets3.785MB.
-Teacup capture wave1/wave3/boss:1783/1787/1779 compositor frames,29/29/28 actions,allparitytrue,-14.97/-14.95/-14.79LUFS. All2700 encodedmarkers verified;blind9/9 labels-before-key. Alloriginalposes/field1 reviewed;field2pending. Five ownbasicwindows/no ultimate;A27hit truncated.
-Marker decoder returns zero-based ordinal including0; prior Binding helper assumed1-based. Teacup adaptation uses exact zero-based ordinal, no fallback. Original Teacup5own windows/no ultimate;90s supplements running for coverage.
-Resume nohup-shell jobs12730/12858 exited before output; relaunched with independent process sessions; no results inferred.
+# ART execution anchor — 2026-11-16 12:20 UTC
+Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
+NEXT1: Verify Teacup receipt push, then inspect apps/web/public/units/needle-moth/runtime.webp once; author original K1 windup from that own source. Use built-in imagegen only; save raw/prompt/provenance immediately.
+NEXT2: Needle K1/K2/K4 fixed-landmark gates; two own FX drills, private same-scale comparison, production integration, regression/parity/marked films/blind/receipt. Existing LEARN/A7 six-source study applies.
+NEXT3: Yarn Giant K1/K2/K4/K5 + FX; A8 deliveries interrupt; A9 ensemble; verified A10 requests; A11 open gates; A12 afterfreeze. Never stop with summary.
+LAST PUSH:88b23e422 verified; Teacup final receipt checkpoint follows. Production remainsbc85b0c82; eleven source hashes verified against all captures.
+LIVE: Vite67838 port5990. No ART job or generation pending. Finaljob10732 all exits0; tailjob12963 wave1/wave3/900 exits0; review15035 exit0. Logs reports/v4-art/jobs/a7-teacup-{final,tail90,tail-review}.log.
+Requested PIDs68961/69950 gone, A6 final/post exits0. Detached nohup needs Python Popen(start_new_session=True); bare shell jobs12730/12858 exited without work.
+No STOP/inbox pause at12:06UTC. SHIPdb35585 remains nonfinal at lastcheck; no merge; baseline reports/v3-feel/parity-new.json. Read REQUESTS-TO-ART at next item. No designer delivery at12:12UTC.
+A10 already delivered a14f8a76b: apps/web/public/units/promo/v4; REQUESTS-TO-SHIP records paths. Verify new request before regeneration.
+A0/A1/A2 complete; A1b exhaustive private catalogue deferredA11. A3-A6 scoped; final ensemble/activation OPEN.
+A6 verified22sourcehashes/3films/labels; attempt1 10/12FAIL retained,attempt2 11/12PASS;10completeownwindows incl36sboss supplement. Never repeat review.
+A6 2648tests/315files/typecheck/3F6PASS;FX26.26–29.18%,face0%,60.240485fps,630122B. Time split unproven.
+Binding K1-A1/K2-A1/K4-A2 selected,K5aliasK2; all sheets reviewed once. Receipt11completeownwindows,blind9/9,3+flightframes,K2change33.2767%,median60.240485fps,FX25.7218%,face2.1698%,socket0px.
+Binding A46 at59.16s truncated; A29/A30/A45 complete. No decoded markers in these films; exact timing only paired telemetry. Focus600hold+200fade,ensemble/activation/time split OPEN.
+Teacup selected K1-A3/K2-A2/K4-A3; K5aliasK2;canvas1152,K0height409,K0head[222,326] uncertainty4px. Posefiles304736B.
+Teacup IoU .459779/.471791/.528766; dE4.180821/2.817879/2.261635; head.984307/1.014023/1.017873;feet1px;K2reach+.647059body.
+Raw head/colour failures preserved,including896canvas and K4-A3 rawdE7.444980. Selected70%Lab corrections preserve alpha; no threshold relaxed.
+Teacup two original FX total290782B. R1face failures and R3wave3area19.4086% retained. R4:60rise/920x645rear fan;lab22.9095%,face0.0601%.
+Teacup automatic spoon socket[646,550] was on handle despite geometric0error; visually corrected bowl[603,490] verified. No source crop reopened.
+Teacup liveR2 area21.2972%/20.4389%,face<=2.7916%,occlusion<=12.7265%,socket<1.7e-13px; actual healIDs exact; no healed-recipient K4/shake.
+Teacup receipt13completeownwindows/4ultimates; blind9/9 labels-before-key;8100encodedframes match zero-based markers. Old helper1-based assumption corrected only for Teacup.
+Teacup all24film reviewpages+900p sheet seen once; no reopen. Wave1 A27 truncated original recovered at30.03s supplement; tailwave3A69hit91.46s beyond90s NOTCAPTURED/EXCLUDED.
+Teacup median60.240485fps;motion<=9.21955px;return<1.2e-13px;camera0px. PublishedK2change32.7334%;allpose/VFX3,784,736B. 900p901frames all measuredlayout limitsPASS.
+Teacup GREG2649tests/315files,typecheck,3F6,lanePASS. Receipt/ART-REVIEW/REVIEW under REVIEW/A7/teacup-healer. Score8/10 scoped,not fullA7DONE.
+Teacup old basicdamage/reflect visible -> GROLE OPEN pendingfinalSHIP. Broad flowers visually heavy; A9compareClover. Strict600focusoff/banner/ensemble/activation/time split OPEN.
+IMAGEOPENS:0 after checkpoint rewrite; all prior Teacup images persisted. Teacup selectedJPG8/8; no more tracked images. Reviews<=1024px,4/look,8/HANDOFF.
+EXCLUDE logs,paritylatest,.DS_Store,raw/private,recorderlinks,duplicatepreviews,nonSYNCmovies. Tracked reports97MB before finalreceipt additions,limit150MB.
+Commands<=40lines/3KB,diffs<=80lines. Python tools/.venv/bin/python. Jobs>2min detached<=3; checkpoint eachstep<=20min; pushretry3; readRULES/item/commit/newart/hour.
+Craft remains DEV&&VITE_CRAFT_PILOT==='soot'; noaudio/rules/dependencies/contracts/deploy/mainmerge/ARTPR. FinalSHIP classes+solebaseline only merge once announced final.
+Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC. Stop only STOP-V4ART/userpause/inboxpause/end29Nov12UTC.
