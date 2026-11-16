@@ -1,10 +1,10 @@
-# ART execution anchor — 2026-11-16 10:03 UTC
+# ART execution anchor — 2026-11-16 10:12 UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC then codex/v4-art-demoday-2026-11-19.
-NEXT1: split/review900boss sheet, full ultimate phases and supplementary36s boss film; finish A6 receipt.
-NEXT2: generate Binding K4-A2 using prepared prompt, persist raw+provenance immediately; measure then inspect normalized keys and drills.
+NEXT1: read imagegen skill and K4-A2-prompt.txt; generate Binding correction from ownK4-A1+runtime; save raw/provenance immediately.
+NEXT2: measure Binding K4-A2, inspect normalized225px keys/2xheads, author two ranged class drills; then A7 integration/enemy keys.
 NEXT3: continue A7 enemies/boss, A8 deliveries interrupt, A9 ensemble, A10 SHIP art, A11 open gates; no final summary.
-LAST PUSH:275723e3d verified10:04UTC; blind attempt2 committed/pushed.
-LIVE: Vite67838 port5990; supplementary36s boss PID75674 logreports/v4-art/jobs/a6-tail36.log; old68961/69950 finished all exits0.
+LAST PUSH:524f1ede9 verified10:08UTC; this checkpoint completes A6 scoped film receipt.
+LIVE: Vite67838 port5990 only; jobs68961/69950/75674 finished. Supplement36s2137frames/31actions/paritytrue.
 No STOP/inbox pause/designer delivery at10:03UTC. SHIPdb35585 nonfinal; NO merge; baseline reports/v3-feel/parity-new.json.
 A0/A1/A2 complete; A1b exhaustive private clip catalogue deferredA11. A3/A4 checkpoints; pairwiseFX/activation OPEN.
 A5 checkpoint: blind12/12,overlap13.4228%,isolated60.0602fps,face0%; exactheal/legacydamage role OPEN finalSHIP.
@@ -14,14 +14,14 @@ A6 crustcut+3ovendoors wired;supportult planted;basic8vertexroute:smear270,arriv
 A6 lowercontactcap.1525vh,+24pxX720;incidental scales.85/.85/.85/.65;seats Kettle(.71,.94),Spool(.52,.94),Crumb(.73,.68),Pollen(.88,.28).
 A6 R4fullalpha6cases1800samplesPASS;worst14.096304%wave1/900;earlier failures preserved;FINAL2648tests/315files/typecheck/3F6PASS.
 A6 3x30s720audiofilms complete paritytrue/errors0;900boss900frames29actionsPASS. Nonisolated60.24fps is not isolated gate.
-A6 wave1 reviewed:2basicsK1→K2→K0,4hitsK4,1ultK5 behind painteddoors;faces/staticfield visible. Wave3/boss/900 reviewed;boss720A27 beyond30s, supplement capturing;ultimatefullphase pending.
+A6 wave1 reviewed:2basicsK1→K2→K0,4hitsK4,1ultK5 behind painteddoors;faces/staticfield visible. Wave3/boss/900 andfullphases reviewed;boss720A27 completed in36s supplement.
 A6 blindr1=10/12FAIL preserved;attempt2=11/12PASS,labels saved before key;crop03 idle misread retained. No threshold change.
-A6 remaining:boss720A27 supplement/fullultimatephases/contact receipt;face0%,FX26.26–29.18%,isolated59.848677avgFPS;finish reports/state/queue/status.
+A6 CHECKPOINT:10/10ownwindows,blind11/12,contactgap38.9763px,return<.000038px,face0%,FX26.26–29.18%,median60.240485fps;OPENensemble/activation/time-split.
 A7 Binding RANGED perSHIP;K1IoU.438837,dE1.708804,head.975801;K2IoU.389201,dE2.866167,head1.017766,reach+.672794;feet0.
 A7 K4-A1 FAILhead.925078,IoU.356183,dE3.369575,feet0;allacceptedfalse until visual/drill. No enemy production edits.
 A7 head landmarksK0[216,324],K1[407,617],K2[410,625],K4[438,630],uncertainty4px. Never redefine to pass.
 A7 K4-A2-prompt.txt prepared targeted~10%cap+face enlargement;NOT submitted;no generation running. OwnK4+runtime inputs.
-IMAGEOPENS reset after4new900pages;never reopen900,720wave1/wave3/boss/blind/Binding/pre-A6 reviewed sheets. Fullphase strips pending.
+IMAGEOPENS reset after4fullphase sheets;allA6/BindingK1K2K4-A1/priorA3–A5 sheets reviewed,never reopen;newK4-A2 next.
 EXCLUDE inheritedlogs/paritylatest,.DS_Store,recorderlinks,duplicatepreviews,raw/private/nonSYNCmovies. <=8selectedJPG/item;V4reports<=150MB.
 Checkpoints eachstep<=20min;commands<=40lines/3KB;diffs<=80lines;HANDOFF<=40lines;detachedjobs<=3 PythonPopen/nohup method.
 Time-split uncertainty explicit;do not claim>=50%authoring retroactively. Craft gatedDEV+VITE_CRAFT_PILOT=soot untilA9/A11.

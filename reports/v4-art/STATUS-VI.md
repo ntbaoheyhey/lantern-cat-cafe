@@ -20,3 +20,5 @@ Luật hiện tại vẫn gây sát thương ở đòn thường của Clover, n
 Còn đo thời điểm lá xuất hiện chính xác, so sánh bốn chiêu cuối và bật nhánh sản phẩm.
 Chưa chứng minh đạt tỉ lệ thời gian vẽ/đo theo yêu cầu; giữ nguyên phần chưa đạt.
 Tiếp tục Panko: đã chọn tư thế, chuẩn bị hai hình hiệu ứng gốc; chưa đưa vào trận.
+
+16 Nov10:12UTC: Panko đạt mốc kiểm tra hình/đọc tư thế/vai trò/khung hình/hiệu năng; đọc mù11/12,10/10 cửa sổ hành động đủ phim, bổ sung phim36giây cho chiêu cuối boss. Vẫn mở so sánh hiệu ứng cả đội và kích hoạt production; chưa chứng minh tỷ lệ thời gian. Tiếp tục sửa đầu K4 của Binding Thread (đánh xa).
