@@ -19,4 +19,4 @@
 - Class:800lượt quan sát khớp mô hình gốc; thiếu YARN là điểm chặn chính, chưa có căn cứ cho ứng viên mới. Giữ1,15/25% và lỗi16/18.
 S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đạt. Tiêu đề landing đã đạt tương phản 15,27:1 ở hai kích thước; còn bốn lỗi ảnh ART và 32 mẫu tương phản battle chưa xác nhận. Công cụ demo đã bỏ qua thư mục promo; 25/25 chân dung qua HTTP khớp nguồn.
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
-Modal: đã xác nhận lỗi thao tác nền; bản sửa native qua21test tập trung và hồi quy chỉ còn7lỗi ART cũ. Chờ kiểm chứng production10; chưa kết luận G-UI/G-REG đạt.
+Modal: production11 đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Không rò click/focus;7lỗi ART cũ và các cổng tổng vẫn mở. Đang chuyển sang đo tải ban đầu S8.

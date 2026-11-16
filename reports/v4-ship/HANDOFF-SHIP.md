@@ -4,11 +4,11 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW ACTIVE:S11 native landingmodals implemented after32rowcomparison;baseline16/16pointer+64/64matchedfocusleaks;native0/16+0/64. Source regressioncomplete;productionproofNEXT.
-NEXT 1:Stop ownedproduction9 supervisor52821;buildproduction10 fromthissourcecommit. Run modal-isolation4 current/noinjection/2motions and secondary-panels5+keyboard5;retain failures;no screenshots/imageopens.
-NEXT 2:S8 inspect currentproduction initialrequestbreakdown for avoidableSHIP-ownedloads while awaiting ARTintegration. Keep activehistoryprogress/reviews coherent;never duplicate scanners.
+NOW ACTIVE:S11 modal isolation COMPLETE source519b7710b/production11;16/16nativecases+6/6keyboard+47/47panelspass. No pointer/focus/AXleaks;exit/isolation+returnpass. NEXT S8 transferinspection.
+NEXT 1:S8 measure cold initialrequests beforefirstbattle onproduction11;comparecompleteCDPresponses withtimingboundary. Diagnose avoidableSHIP-ownedloads, preserveARTownership;no screenshots/imageopens.
+NEXT 2:Keep historyscanners/reviews coherent withoutduplicate runs;then resolve measuredSHIPtransfercosts andprepare scheduledARTintegration. G-REHEARSAL/globalUI/REGstillopen.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
-CHECKPOINT:571c48c83 remotepushconfirmed. Thiscommit nativeModal/source+LEARN,S11/modalcomparison1,regression1;gzipreview5 1078/1332/1314unchanged. Productionproofpending.
+CHECKPOINT:519b7710b sourcepushed. Thispush adds production11/modalproof1;native16/16+keyboard6/6+secondary47/47 PASS. Production10occupiedportfailure preserved;11ready. NoARTedit.
 S5 recovery:before12ramps/min0.852643 after450ms;after1ramp/gain1.0;bothregressionfailurespreserved. Menu/roster initialfail->33focusedpass.
 S5 freshcoverage451.676s:-17.63LUFS/8.7LRA/-1.90dBTP;4/5estimatedonsetsFAIL,max33.369ms. Bothfrozen/freshASR8/12;8takesdiffer,notcontrolledimprovement. Originalcoverage1retained.
 S5 frozenpilot2 dry10/12 vsmix7/12;pilot3mix7/12. SeededEQ8identicaltakes:current3/8,flat3/8,bright4/8but-15.79LUFS. RejectEQchanges;retaincalibratedmix;decision-1.json.
@@ -22,18 +22,18 @@ S2beligibility800exactreplays;casualpolishnoitem2.73vsnoYARN1403.5/newtokenlowbo
 S2b lowbotYARN deficit78.711341=wallets+treasury-external;highbotStars414.185>407.448 allowed,includesinactive142.515. No supported scalar remedy;see boundary-decision.json/check/diagnosis/channels.
 S2b1.15holdout300wins/0healerDamage;firstloss17.50245min;boss87.0667s/p9093.57. 1.20holdout300wins butrejected. No sensitivity/E4/E5 on invalidcandidate.
 S4-final-1:20/20PASS;1280/1440battlemed2.957/2.9325s(2clicks),receiptmed95.2325/95.190s,max95.848s;360verifiedreceipts;0errors/popups;S4/final-journeys-1.json.
-G-UI primaryaudit3 retains32ARTbattlecontrastunknown/4portraitfails. Title4/4PASS15.270:1;secondarypanels47/47PASS5.407min,prosemax13;keyboard6/6. No globalUIpass or new fulljourney.
+G-UI primaryaudit3 retains32ARTbattlecontrastunknown/4portraitfails. Title4/4PASS15.270:1;secondary5 47/47PASS5.407min/prose13;modal4 16/16;keyboard5 6/6. No globalUIpass/fulljourneyrerun.
 G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zeroerrors/originaltimestamps. 55logs/5contracts/30RPCverifiedreceipts/block61162789;no sponsoredFuji latencyproof.
 S1 text700/3854/176reviewed;gzip1078/1332/1314reviewed(prefix5). Textsupplements1-4=23commits;gzipfuture23/23/0findings throughcaptured1559dff5a refs. Binary/path-sensitive/remaininghistoryopen.
-REPORT BUDGET:117517169B beforestagedreport;limit150MB. S8screenshots6/8;S10screenshots8/8;S11screenshots5/8;imageopens8/8. No further imageopens thisHANDOFF.
+REPORT BUDGET:117725757B beforestagedreport;limit150MB. S8screenshots6/8;S10screenshots8/8;S11screenshots5/8;imageopens8/8. No further imageopens thisHANDOFF.
 LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;observedtip3ac0f5a17a3bd962344afeba0ff2f6353df292e5 notpreflighted. Prior22bca4f0b621ARTpaths/0conflicts/445SHIPpreserved;noearlymerge.
-SERVICES audio5995PID3393;production9/session73828 supervisor52821 preview52880 ready5998/API5997/Anvil8546;oldproduction8stoppedclean. History99980/8488 andgzip20507/39765active.
+SERVICES audio5995PID3393;production11/session95794 supervisor61159 preview61227 ready5998/API5997/Anvil8546;oldproduction9stoppedclean. History99980/8488 andgzip20507/39765active.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent;explicitUSER RESUME. S11journey3:18verifiedreceipts/18chimes,max5starts/100ms;receiptmaxonset32.473ms/maxduration136.032ms;firstclick90.378ms. G-AUDIO false.
 REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-16T18:10:16.759744+00:00. Internal/headlessonly;no desktop/password. Native sign-inbusyCancel,StrictModecleanup,ShellPagesexit andfocusreturn covered;21focusedpass. Gzip39765/text8488 remainrunning;fullhistoryfalse.
+UPDATED 2026-11-16T18:13:06.592316+00:00. Internal/headlessonly;no desktop/password. Modalproductprovenwithoutinjection;nextS8coldtransfermeasurement. Originalhistoryscannersremainactive;fullhistoryfalse.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit2=164.833s/9,343,307B/-17.87LUFS/-2.22dBTP/5.2LRA;1927sourceframes/52EN-VIcues/13wholevoiceevents;film-verify-2.json. submissionPassfalse;failededit1retained.

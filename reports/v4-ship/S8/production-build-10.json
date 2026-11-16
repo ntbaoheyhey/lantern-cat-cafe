@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-16T18:11:01.206Z",
+  "sourceCommit": "519b7710b364deb4b43203b6227dd8fe0baf9a79",
+  "sourceCheckout": "/Users/bao/taskbar-hero-chain",
+  "output": "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-10/dist",
+  "port": 5998,
+  "mode": "Production shipping Vite config + same-origin-bound local API/Anvil; no public writes",
+  "config": "tools/v4ship-lab/rehearsal/vite.config.mts",
+  "publicBuildFlags": {
+    "VITE_CHAIN_DEMO": "0",
+    "VITE_ECONOMY_V3": "1",
+    "VITE_GUEST_WALLET": "1",
+    "VITE_CHAIN_LOOP": "1",
+    "VITE_ITEM_TRADING": "1",
+    "VITE_YARN_TOKEN": "1",
+    "VITE_SHIP_JOURNEY": "1",
+    "VITE_UI_V3": "1",
+    "VITE_CHAIN_CAMPAIGN": "1",
+    "VITE_CHAIN_CAMPAIGN_REWARDS": "0",
+    "VITE_RELIC_FORGE": "0",
+    "VITE_YARN_COSMETICS": "0",
+    "VITE_ALLOW_MOCK_AUTH": "0",
+    "VITE_CHAIN_MODE": "local",
+    "VITE_SUPABASE_URL": "http://127.0.0.1:5997",
+    "VITE_FUJI_RPC_URL": "http://127.0.0.1:8546",
+    "VITE_V3_START_BLOCK": "0",
+    "VITE_CHAIN_STATS_URL": ""
+  },
+  "buildComplete": false,
+  "ready": false,
+  "supervisorPid": 61085,
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/rehearsal/start.mjs",
+      "sha256": "7fc33891c3d9f4e0ea080d41cafd1a92aa67589d12a87efeb844f63e5fb6a35b"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/vite.config.mts",
+      "sha256": "b424d3dcf5e210176d3c1856cf2b9950c58764defb614878d9beb38c3e066c28"
+    }
+  ],
+  "failure": "Owned port 5998 must be free first"
+}
