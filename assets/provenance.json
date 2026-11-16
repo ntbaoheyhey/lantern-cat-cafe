@@ -4562,6 +4562,60 @@
       "output": "tools/v3craft-lab/poses/raw/yarn-giant/braid-wave-A1.png",
       "sha256": "ba87d164ba5cbc9ba53f2b6aa7b628dbeeb11a86aa862fbbd4c82d0e4bc4bea5",
       "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-yarn-giant-published-pose-set",
+      "date": "2026-11-16T17:47:56.890000+00:00",
+      "tool": "tools/v3craft-lab/v4-yarn-giant/export.py and export-fx.py",
+      "inputs": [
+        "apps/web/public/units/yarn-giant/runtime.webp",
+        "tools/v3craft-lab/v4-yarn-giant/raw/K1-A2-normal.png",
+        "tools/v3craft-lab/v4-yarn-giant/raw/K2-A3-colour-20.png",
+        "tools/v3craft-lab/v4-yarn-giant/raw/K4-A2-normal.png",
+        "tools/v3craft-lab/v4-yarn-giant/raw/K5-A3-colour-30.png",
+        "tools/v3craft-lab/poses/raw/yarn-giant/braid-wave-A1.png"
+      ],
+      "outputs": [
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/K0.webp",
+          "bytes": 92290,
+          "sha256": "0cf856d53e63dba23b05ab00c103615d8b11d724ce897e96bebfa8006c284068"
+        },
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/K1.webp",
+          "bytes": 91984,
+          "sha256": "74908de855c3b3abb495b1a01ae0f026a354cf646ef4ffa742d9526aae57586d"
+        },
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/K2.webp",
+          "bytes": 120222,
+          "sha256": "f1438d10631d0ddcd7fff98368007a35500c39555ad48b907cf3f0adfd3176c8"
+        },
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/K4.webp",
+          "bytes": 72594,
+          "sha256": "825e6f35ebe9bf8160b830743db5e48ed3793ffe404d8b88385bbe7602b9c2b8"
+        },
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/K5.webp",
+          "bytes": 118216,
+          "sha256": "86dacf402df18ac611800436048d52207edb80a57ac48d992f6024b665e0e6d4"
+        },
+        {
+          "path": "apps/web/public/units/yarn-giant/poses/manifest.json",
+          "bytes": 5520,
+          "sha256": "0b5eb6b5bf2e5350f056caa20e28ad5322b92664de1526f495e314d38c87b829"
+        },
+        {
+          "path": "apps/web/public/vfx/yarn-giant/braid-wave.webp",
+          "bytes": 411766,
+          "sha256": "80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138"
+        }
+      ],
+      "derivation": "Fixed-head/feet normalized originals; K2 masked Lab20%, K5 masked Lab30%, alpha preserved; padded pose canvases and original texture WebP export. Raw originals and prompts retained locally.",
+      "runtimeSourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+      "status": "Published runtime trial; source and sampled live gates pass; encoded-film receipt pending",
+      "metrics": "reports/v4-art/REVIEW/A7/yarn-giant/published-pose-metrics.json"
     }
   ]
 }
