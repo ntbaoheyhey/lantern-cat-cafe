@@ -4190,6 +4190,33 @@
         }
       ],
       "status": "Exact RGBA equality verified; browser and loading validation pending"
+    },
+    {
+      "id": "v4-needle-moth-k1-a1",
+      "date": "2026-11-16T13:18:14.606538+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Create ONE original painted battle key pose of our Needle Moth using the attached own-art runtime sprite as the only character/style reference. Transparent background, RGBA, square1024 canvas. Single complete character, no labels, no panels, no ground or shadows, no extra effects. Preserve the same left-facing three-quarter view and painterly line/brush texture. Preserve dusty mauve and muted rose palette, gold stitched wing veins and antennae, triangular dark mauve head with narrow golden eyes, rose scarf/bow with gold brooch, segmented silk abdomen, thin jointed legs and the SAME long gold sewing-needle staff with an eye at its end. Head must stay small: main wedge head excluding antennae is about10.7percent of the full antenna-to-foot character height, exactly the original proportion. Keep both feet on one baseline and at original relative spacing. Full antennae, wing tips, needle and feet inside the canvas with clear margin. Change the actual drawing and joint angles, not a rotation or stretch of the idle. No glowing rings, mist, particles, new clothing, extra limbs, duplicate character, pasted idle, text or watermark.\nPose K1, ranged anticipation: coil the upper body and BOTH wings inward into a visibly narrow upright silhouette. The rose wing panels fold upward behind the shoulders like two tall tapered sails, leaving clear negative space beside the abdomen. Bend the knees only slightly; feet remain planted. Pull the needle hand and staff back toward screen-right across the shoulder in a strong diagonal windup, ready to thrust toward screen-left. The free hand braces near the chest. Keep face and both eyes readable; do not hide the head with the needle or wings. Preserve original head size and total character height. This must read as a held windup, clearly different from the broad triangular idle wings.",
+      "referenceInput": "own art: apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A1.png",
+      "sha256": "0f4596797c7c33dda53c246544c9bf418d1974933df7b8c6c66a74f344279271",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-needle-moth-k1-a2",
+      "date": "2026-11-16T13:31:38.154315+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Edit target: first attached image, our own Needle Moth K1-A1 candidate. Supporting identity reference: second attached image, our approved own runtime sprite. Output ONE complete character on a genuinely transparent RGBA background, no sheet, no text, square canvas. Preserve the first image exactly in its small wedge head/eyes/antennae, scarf/brooch, segmented abdomen, two arms, long gold sewing needle, bent legs, planted feet, pose orientation, colors and brush texture. Make ONE targeted correction: shorten the two raised folded wing sails at their TOPS. Their extreme tips currently rise much too far above the antennae. Lower the highest wing tip by about230pixels on the1254pixel source, and lower the other tip similarly, reshaping the stitched rose wing panels gracefully so they remain tall tapered folded wings behind the shoulders. Keep the head and lower body the same size; do NOT enlarge the head or shrink the abdomen. The corrected entire character height, from highest wing tip to lowest foot, must be approximately9.3times the main wedge-head height (excluding antennae), matching the approved source proportion. This means the highest wing tip should be about245pixels above the top of the head, rather than about470pixels above it. Keep clear negative space outside the narrow folded wings and around the arms. No new pose, no widened wings, no glow, no particles, no cropped tips/feet, no background, no extra limbs.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K1-A1.png; apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K1-A1.png",
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K1-A2.png",
+      "sha256": "fdbafd5eff7f5d0ee707b44977cd6484eadbcfcb58085b04a7aceae71005a549",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }
