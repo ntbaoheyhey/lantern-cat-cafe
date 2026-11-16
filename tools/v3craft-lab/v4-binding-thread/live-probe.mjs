@@ -2,12 +2,13 @@
 import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixture.mjs';
 import {mkdir,writeFile} from 'node:fs/promises';
 const out='reports/v4-art/REVIEW/A7/binding-thread';await mkdir(`${out}/raw/live`,{recursive:true});
+const unitIndex=Number(process.argv[2]??0);
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']}),results=[];
-try{for(const fixture of config.fixtures){
+try{for(const fixture of config.fixtures.filter(f=>!unitIndex||f.id==='boss')){
  const {page,errors}=await openFixture(browser,fixture);
- const result=await page.evaluate(async()=>{
+ const result=await page.evaluate(async unitIndex=>{
   const s=window.__depthScene,m=window.__depthReview,T=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/node_modules/three/build/three.module.js');
-  const pair=[...s.actors.entries()].find(([,e])=>e.asset==='binding-thread');if(!pair)return{present:false,rows:[]};
+  const pair=[...s.actors.entries()].filter(([,e])=>e.asset==='binding-thread')[unitIndex];if(!pair)return{present:false,rows:[]};
   const [id,entry]=pair,rows=[],missing=[],W=s.width,H=s.height,renderer=s.renderer,rt=new T.WebGLRenderTarget(W,H);
   for(const ultimate of [false,true]){
    m.paused=false;
@@ -24,15 +25,26 @@ try{for(const fixture of config.fixtures){
     let count=0;for(let i=3;i<pixels.length;i+=4)if(pixels[i]>=128)count++;
     const coverage=faces.map(f=>{let n=0,c=0;for(let y=Math.max(0,Math.floor(f.y));y<Math.min(H,Math.ceil(f.y+f.height));y++)for(let x=Math.max(0,Math.floor(f.x));x<Math.min(W,Math.ceil(f.x+f.width));x++){n++;if(pixels[((H-1-y)*W+x)*4+3]>=128)c++;}return n?c/n:0;});
     const paint=fx.knot.localToWorld(new T.Vector3(67/768-.5,.5-70/139,0)).project(s.camera),head={x:(paint.x*.5+.5)*W,y:(.5-paint.y*.5)*H};
-    rows.push({ultimate,ms,key:entry.craftPose.drawing.key,source,role:s.motionAudit.find(a=>a.id===id),fx:structuredClone(fx.audit),areaFraction:count/(W*H),maxFaceCoverage:Math.max(0,...coverage),paintedHeadError:Math.hypot(head.x-fx.audit.head.x,head.y-fx.audit.head.y),launchSocketError:(ms===(ultimate?950:200))?Math.hypot(source.x-fx.audit.launch.x,source.y-fx.audit.launch.y):null,cameraPixels:Math.hypot(s.camera.position.x,s.camera.position.y)*W/s.worldWidth});
+    const occlusion=[];
+    if([200,350,1250].includes(ms)){
+     const union=new Uint8Array(W*H);
+     for(const unit of [...s.sizeAudit().units].sort((a,b)=>b.drawOrder-a.drawOrder)){
+      renderer.setRenderTarget(rt);renderer.setClearColor(0,0);renderer.clear();renderer.render(s.actors.get(unit.id).actor.root,s.camera);
+      renderer.readRenderTargetPixels(rt,0,0,W,H,pixels);let opaque=0,hidden=0;
+      for(let i=0;i<union.length;i++)if(pixels[i*4+3]>=128){opaque++;if(union[i])hidden++;union[i]=1;}
+      occlusion.push({id:unit.id,opaque,hidden,fraction:opaque?hidden/opaque:0});
+     }
+     renderer.setRenderTarget(null);renderer.setClearColor(color,alpha);
+    }
+    rows.push({ultimate,ms,key:entry.craftPose.drawing.key,source,role:s.motionAudit.find(a=>a.id===id),fx:structuredClone(fx.audit),areaFraction:count/(W*H),maxFaceCoverage:Math.max(0,...coverage),paintedHeadError:Math.hypot(head.x-fx.audit.head.x,head.y-fx.audit.head.y),launchSocketError:(ms===(ultimate?950:200))?Math.hypot(source.x-fx.audit.launch.x,source.y-fx.audit.launch.y):null,cameraPixels:Math.hypot(s.camera.position.x,s.camera.position.y)*W/s.worldWidth,occlusion});
     s.render({...s.view(),fixedTime:20+ms/1000,paused:true},0);
    }
   }
   rt.dispose();return{present:true,id,missing,rows};
- });
+ },unitIndex);
  results.push({fixture:fixture.id,errors,...result});
  await page.screenshot({path:`${out}/raw/live/${fixture.id}-end.png`});await page.close();
- console.log(JSON.stringify({fixture:fixture.id,present:result.present,missing:result.missing,errors,flightSamples:result.rows.filter(r=>r.fx.flight).length,peakUltimate:Math.max(0,...result.rows.filter(r=>r.ultimate).map(r=>r.areaFraction)),maxFaceCoverage:Math.max(0,...result.rows.map(r=>r.maxFaceCoverage)),socketErrors:result.rows.filter(r=>r.launchSocketError!==null).map(r=>r.launchSocketError)}));
+ console.log(JSON.stringify({fixture:fixture.id,present:result.present,missing:result.missing,errors,flightSamples:result.rows.filter(r=>r.fx.flight).length,peakUltimate:Math.max(0,...result.rows.filter(r=>r.ultimate).map(r=>r.areaFraction)),maxFaceCoverage:Math.max(0,...result.rows.map(r=>r.maxFaceCoverage)),socketErrors:result.rows.filter(r=>r.launchSocketError!==null).map(r=>r.launchSocketError),maxUnitOcclusion:Math.max(0,...result.rows.flatMap(r=>r.occlusion.map(o=>o.fraction)))}));
 }
-await writeFile(`${out}/live-probe.json`,JSON.stringify(results,null,2)+'\n');
+await writeFile(`${out}/live-probe${unitIndex?'-second':''}.json`,JSON.stringify(results,null,2)+'\n');
 }finally{await browser.close();}
