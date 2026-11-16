@@ -1,6 +1,7 @@
 /** Independent flat cut-out player; data and GPU pixels are shared, pose state is not. */
 import * as T from 'three';
 import {usePaintedAtlasColor} from './atlas-color';
+import {DrawingLayer,type DrawingSet,type DrawingPoint} from './drawing-layer';
 export interface CutoutKey {time?:number;x?:number;y?:number;value?:number;angle?:number;name?:string|null;curve?:'stepped'|number[]}
 interface CutoutNode {name:string;parent:number;x:number;y:number;rotation:number;sx:number;sy:number}
 interface Weight {bone:number;x:number;y:number;weight:number}
@@ -32,6 +33,14 @@ function value(keys:CutoutKey[],at:number,key:'x'|'y'|'value',fallback:number){
  const t=curve(Math.min(1,(at-(a.time??0))/Math.max(1e-6,(b.time??0)-(a.time??0))),a.curve);return v+((b[key]??(key==='value'?b.angle:undefined)??fallback)-v)*t;
 }
 export class CutoutMesh extends T.Group {
+ drawing?:DrawingLayer;
+ private drawingHidden:{node:T.Object3D;visible:boolean}[]=[];
+ installDrawings(set:DrawingSet,origin:DrawingPoint,scale:number){
+  this.clearDrawings();
+  this.traverse(node=>{if((node as T.Mesh).isMesh){this.drawingHidden.push({node,visible:node.visible});node.visible=false;}});
+  this.drawing=new DrawingLayer(set,origin,scale);this.add(this.drawing);return this.drawing;
+ }
+ clearDrawings(){this.drawing?.dispose();this.drawing=undefined;for(const {node,visible}of this.drawingHidden)node.visible=visible;this.drawingHidden=[];}
  proceduralTime=0;
  readonly bones:CutoutBone[];private boneOrder:number[]=[];private local:number[][];private at=0;private clip='';private loop=false;
  private batches:{geometry:T.BufferGeometry;parts:{part:Part;offset:number}[];positions:Float32Array}[]=[];
@@ -49,8 +58,8 @@ export class CutoutMesh extends T.Group {
    visited[i]=2;this.boneOrder.push(i);
   };for(let i=0;i<data.nodes.length;i++)visit(i);
   this.bones=data.nodes.map(()=>({worldX:0,worldY:0,a:1,b:0,c:0,d:1}));this.local=data.nodes.map(()=>[0,0,0,1,1]);
-  this.state={data:{defaultMix:0},setAnimation:(_track,name,loop)=>{this.clip=name;this.at=0;this.loop=loop;},clearTracks:()=>{this.clip='';this.at=0;},getCurrent:()=>this.clip?{animation:{name:this.clip}}:null};
-  this.skeleton={data,setToSetupPose:()=>this.pose(0,''),findBone:name=>this.bones[data.nodes.findIndex(n=>n.name===name)],getBoundsRect:()=>this.bounds(),getBounds:(offset,size)=>{const b=this.bounds();offset.set(b.x,b.y);size.set(b.width,b.height);}};
+  this.state={data:{defaultMix:0},setAnimation:(_track,name,loop)=>{this.clip=name;this.at=0;this.loop=loop;},clearTracks:()=>{this.clip='';this.at=0;this.drawing?.sample('idle',0,false);},getCurrent:()=>this.clip?{animation:{name:this.clip}}:null};
+  this.skeleton={data,setToSetupPose:()=>{this.pose(0,'');this.drawing?.sample('idle',0,false);},findBone:name=>this.bones[data.nodes.findIndex(n=>n.name===name)],getBoundsRect:()=>this.bounds(),getBounds:(offset,size)=>{const b=this.bounds();offset.set(b.x,b.y);size.set(b.width,b.height);}};
   for(let page=0;page<textures.length;page++){
    const parts=data.parts.filter(p=>p.page===page);let count=0;const entries=parts.map(part=>{const offset=count;count+=part.vertices.length;return{part,offset};});
    const positions=new Float32Array(count*3),uv=new Float32Array(count*2),indices:number[]=[];
@@ -90,5 +99,5 @@ export class CutoutMesh extends T.Group {
   }batch.geometry.attributes.position!.needsUpdate=true;}
  }
  private bounds(){let x=Infinity,y=Infinity,right=-Infinity,top=-Infinity;for(const batch of this.batches)for(let i=0;i<batch.positions.length;i+=3){const px=batch.positions[i]!,py=batch.positions[i+1]!;if(px===0&&py===0)continue;x=Math.min(x,px);y=Math.min(y,py);right=Math.max(right,px);top=Math.max(top,py);}return Number.isFinite(x)?{x,y,width:right-x,height:top-y}:{...this.data.bounds};}
- dispose(){for(const node of this.children)if(node instanceof T.Mesh){node.geometry.dispose();(node.material as T.Material).dispose();}this.removeFromParent();}
+ dispose(){this.clearDrawings();for(const node of this.children)if(node instanceof T.Mesh){node.geometry.dispose();(node.material as T.Material).dispose();}this.removeFromParent();}
 }

@@ -3,7 +3,74 @@ import * as T from 'three';
 import nativeJson from '../../../public/units/marigold/rig.json?raw';
 import {CutoutMesh,blinkAt,faceAt,type CutoutData} from './cutout';
 import {withRigContract} from './contract';
+import {drawingAt,type DrawingManifest,type DrawingSet,type DrawingKey} from './drawing-layer';
+import poseManifest from '../../../public/units/soot/poses/manifest.json';
 const native=JSON.parse(nativeJson) as CutoutData;
+
+it('shows exactly one private drawing while retaining shared texture ownership and restoring rig visibility',()=>{
+ const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
+ const a=new CutoutMesh(native,[new T.Texture()]),b=new CutoutMesh(native,[new T.Texture()]);
+ const original=a.children[0]!,one=a.installDrawings(set,[0,0],1),two=b.installDrawings(set,[0,0],1);
+ let disposed=0;for(const texture of Object.values(set.textures))texture.addEventListener('dispose',()=>disposed++);
+ one.sample('attack',.35,false);a.pose(.35,'attack');
+ expect(one.key).toBe('K2');expect(two.key).toBe('K0');expect(one.material.map).toBe(set.textures.K2);
+ expect(original.visible).toBe(false);expect(a.children.filter(c=>c.visible&&c instanceof T.Mesh)).toEqual([one]);
+ expect(one.geometry).not.toBe(two.geometry);expect(one.material).not.toBe(two.material);
+ a.state.clearTracks();expect(one.key).toBe('K0');expect(one.material.map).toBe(set.textures.K0);
+ one.sample('ult',1.1,false);a.skeleton.setToSetupPose();expect(one.key).toBe('K0');
+ a.clearDrawings();expect(original.visible).toBe(true);expect(one.parent).toBeNull();expect(disposed).toBe(0);
+ a.dispose();b.dispose();expect(disposed).toBe(0);
+});
+
+it('seeks discrete keys and foot-local overlap without accumulated state, with a stationary impact hold',()=>{
+ const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
+ const mesh=new CutoutMesh(native,[new T.Texture()]),layer=mesh.installDrawings(set,[17,23],.7);
+ const vertices=()=>Array.from(layer.geometry.attributes.position!.array);
+ layer.sample('attack',.35,false);const impact=vertices();layer.sample('attack',.42,false);expect(vertices()).toEqual(impact);
+ layer.sample('ult',1.1,false);expect(layer.key).toBe('K5');layer.sample('attack',.35,false);expect(vertices()).toEqual(impact);
+ for(const name of ['idle','attack','ult','hurt'])for(const t of [0,.15,.3,.35,.6,1.1,2.2]){
+  layer.sample(name,t,false);expect(layer.point(set.manifest.baseline)).toEqual({x:17,y:23});
+  for(const p of layer.faceCorners())expect(Number.isFinite(p.x+p.y)).toBe(true);
+ }
+ layer.sample('attack',.35,true);expect(layer.key).toBe('K2');mesh.dispose();
+});
+
+it('shows a retaliation drawing during a cast without losing its presentation time on seek or return',()=>{
+ const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
+ const mesh=new CutoutMesh(native,[new T.Texture()]),layer=mesh.installDrawings(set,[0,0],1);
+ layer.sample('ult',1.1,false,0);expect(layer.key).toBe('K4');
+ layer.sample('ult',1.275,true,.175);expect(layer.key).toBe('K4');
+ layer.sample('ult',1.28,false,.18);expect(layer.key).toBe('K5');
+ layer.sample('ult',1.0,false,-.1);expect(layer.key).toBe('K5');
+ layer.sample('ult',1.1,false,0);expect(layer.key).toBe('K4');
+ layer.sample('ult',2.2,false,1.1);expect(layer.key).toBe('K0');mesh.dispose();
+});
+
+it('moves painted cloth regions while preserving faces, feet and non-inverted mesh triangles',()=>{
+ const manifest=structuredClone(poseManifest) as unknown as DrawingManifest;
+ const plain=structuredClone(manifest);for(const frame of Object.values(plain.poses))delete frame.overlap;
+ const textures=Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]));
+ const a=new CutoutMesh(native,[new T.Texture()]),b=new CutoutMesh(native,[new T.Texture()]);
+ const layer=a.installDrawings({manifest,textures},[0,0],1),baseline=b.installDrawings({manifest:plain,textures},[0,0],1);
+ for(const [name,t]of [['idle',.9],['attack',.15],['attack',.5],['hurt',.15],['ult',.7]] as const){
+  layer.sample(name,t,false);baseline.sample(name,t,false);
+  expect(layer.faceCorners()).toEqual(baseline.faceCorners());expect(layer.contactPoints()).toEqual(baseline.contactPoints());
+  const region=layer.frame.overlap![0]!,p=layer.point(region.center),q=baseline.point(region.center);
+  expect(Math.hypot(p.x-q.x,p.y-q.y)).toBeGreaterThan(.1);
+  const g=layer.geometry,indices=g.index!,v=g.attributes.position!;
+  for(let i=0;i<indices.count;i+=3){
+   const x=indices.getX(i),y=indices.getX(i+1),z=indices.getX(i+2);
+   const cross=(v.getX(y)-v.getX(x))*(v.getY(z)-v.getY(x))-(v.getY(y)-v.getY(x))*(v.getX(z)-v.getX(x));
+   expect(cross).toBeGreaterThan(0);
+  }
+ }
+ a.dispose();b.dispose();
+});
+
+it('holds action drawings inside the common basic/ultimate envelopes and limits the hit drawing',()=>{
+ const cases:[string,number,DrawingKey][]=[['attack',0,'K0'],['attack',.05,'K1'],['attack',.27,'K1'],['attack',.33,'K2'],['attack',.5,'K2'],['attack',.8,'K0'],['ult',0,'K1'],['ult',.3,'K5'],['ult',1.1,'K5'],['ult',2.2,'K0'],['hurt',0,'K4'],['hurt',.17,'K4'],['hurt',.2,'K0'],['ko',.4,'K4']];
+ for(const [name,time,key]of cases)expect(drawingAt(name,time)).toBe(key);
+});
 
 it('seeks shared clips without history and keeps pose state private',()=>{
  const data=native as CutoutData,a=new CutoutMesh(data,[new T.Texture()]),b=new CutoutMesh(data,[new T.Texture()]);

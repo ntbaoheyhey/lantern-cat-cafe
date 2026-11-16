@@ -772,5 +772,25 @@
     "status": "Completed: all3 films;1805/1804/1804 compositor frames;29/29/28 actions;parity true. PID absent and terminal summaries verified.",
     "auditedAt": "2026-11-15T18:38:02.847164+00:00",
     "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
+  },
+  "P2-capture": {
+    "pid": 53969,
+    "command": [
+      "node",
+      "scripts/v3feel/capture.mjs",
+      "--item",
+      "P2-R1",
+      "--seconds",
+      "30",
+      "--video-seconds",
+      "30",
+      "--frame-marker"
+    ],
+    "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+    "log": "reports/v3-feel/P2-capture.log",
+    "started": "2026-11-16T02:38:18.112140+00:00",
+    "finished": true,
+    "status": "R1 all3films complete1797/1800/1802frames,29/29/28actions,paritytrue",
+    "verifiedAt": "2026-11-16T02:42:15.629832+00:00"
   }
 }

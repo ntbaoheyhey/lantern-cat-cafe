@@ -96,7 +96,8 @@ void main(){
    f.worldHeight-(f.face.y+f.face.height*.5)*px+camera.position.y,f.face.width*.65*px,f.face.height*.65*px);
   u.uSource!.value.set(f.lightSource.x*px-f.worldWidth/2+camera.position.x,f.worldHeight-f.lightSource.y*px+camera.position.y);
   u.uColour!.value.set(f.lightColour);u.uLight!.value=f.light;u.uBrightness!.value=f.brightness;
-  const feet=localFeet.map(([x,y])=>this.actor.root.localToWorld(new T.Vector3(x,y,0)));
+  const contacts=this.actor.mesh?.drawing?.contactPoints()??localFeet.map(([x,y])=>({x,y}));
+  const feet=contacts.map(({x,y})=>this.actor.root.localToWorld(new T.Vector3(x,y,0)));
   const sh=this.shadow.material.uniforms;sh.uFeet!.value.set(feet[0]!.x,feet[0]!.y,feet[1]!.x,feet[1]!.y);
   sh.uRadius!.value.set(13*k*px,4.2*k*px);sh.uSoftness!.value=3*k*px;sh.uOpacity!.value=f.opacity;
   const floor=(feet[0]!.y+feet[1]!.y)*.5,margin=20*k*px,shadowLeft=x-h*.19-margin,shadowRight=x+w+margin;

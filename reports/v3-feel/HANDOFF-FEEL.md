@@ -6,15 +6,15 @@ NO DEPLOY/MAIN MERGE | ORIGINAL ART, OWN INPUTS ONLY
 FILES ARE MEMORY: READ RULES-POSE + HANDOFF + STATE AFTER EVERY COMPACTION
 ALREADY AUTHORIZED: CONTINUE | SAVE IMAGE+PROVENANCE AT ONCE | SMALL SHEETS ONLY
 DO NOT STOP BEFORE19NOV12Z EXCEPT EXPLICIT USER STOP/STOP-V3FEEL
-NOW: P2 resume; updated section0A copied verbatim; RULES/STATE created first.
-NEXT1: Recover and save K1A3/A4 and K2A3/A4 with exact provenance; reject unmappable results and regenerate.
-NEXT2: Complete four candidates K4/K5, numeric checks and best-two2x review; no poses accepted yet.
-NEXT3: Runtime colour/origin experiment before swap code; re-anchor staff/replace curtain ultimate; two film revisions/blind40.
-LAST GOOD COMMIT: c577a85acca6f4d4e456fa8baaeb723c2ea8bb4a (HEAD=origin verified).
-OPEN: P2 pose/runtime/effect/film/craft gates all incomplete; P1 learning is not production acceptance.
-OPEN: Q1 residual50.233ms; Q2 inherited A97/B14fails; Q3.A historic craft15.17%; no history rewritten.
-PIDS: Owned Vite67838 alive5990; system_installd16045 NOT OURS; demo5994/API5997/Anvil8546 untouched.
-BACKGROUND JOBS: prior K2 generation cell g34:86 recover now; no new background launch.
-FILES THIS STEP: REQUEST-POSE.txt,RULES-POSE.md,STATE-POSE.md,HANDOFF-FEEL.md,PROGRESS-POSE.log,DECISIONS-FEEL.md.
-TIME TRIGGERS: R1 Nov16 12Z;R2 Nov18 12Z;FREEZE Nov19 12Z; none due.
-UPDATED: 2026-11-16T01:56:30.583450+00:00
+NOW: P2 revision2 composed: local painted ignition, narrower warm impacts, basic ember chips, per-pose overlap.
+NEXT1: Fix discovered legacy28–38px recoil/planted retaliation0px to new6–12px contract; then R2film/blind40.
+NEXT2: Master comparison/contrast/FPS/speed/remaining pose gates and actual craft floors.
+NEXT3: Hourly trial checkpoint prepared now; no rollout before pilot passes.
+LAST GOOD COMMIT: 77136c874bca20ad20aecc921ea516e65cf071e2; HEAD=origin verified.
+OPEN: P2 trial only; runtime/film/effect/craft gates incomplete. No production acceptance.
+OPEN: Q1 video50.233ms;Q2 A97/B14;historicQ3.A craft15.17% retained.
+PIDS: OwnedVite67838 alive5990;system_installd16045 NOT OURS;demo5994/API5997/8546 untouched.
+BACKGROUND JOBS: No active job except owned Vite67838; R0/R1 films and latest boss preview/typecheck complete.
+FILES: generic drawing track,selected Soot poses,staff-smear/socket edits,LEARN/P2,provenance/state are uncommitted.
+TIME TRIGGERS: R1Nov16 12Z;R2Nov18 12Z;freezeNov19 12Z;none due.
+UPDATED: 2026-11-16T02:53:38.939149+00:00

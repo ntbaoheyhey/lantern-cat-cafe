@@ -31,12 +31,12 @@ import { PaintedVfx } from './vfx';
 import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 import {LanternRequiem} from '../vfx-craft/lantern-requiem';
-import {SootPoses} from '../vfx-craft/soot-poses';
+import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {StaffBolt} from '../vfx-craft/staff-bolt';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
 
-interface DisplayActor {actor:SpineActor;craftPose?:SootPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
+interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
 export class SpineScene {
  private audio=new BattleAudio();
@@ -117,9 +117,12 @@ export class SpineScene {
    const request=Symbol(unit.id);this.pending.set(unit.id,request);this.ready=false;
    const occupied=[...this.lanes.values()].filter(a=>a.side===unit.side).map(a=>a.lane);let lane=unit.side==='party'?this.lanes.get(unit.id)!.lane:0;if(unit.side==='enemy')while(occupied.includes(lane))lane++;this.lanes.set(unit.id,{side:unit.side,lane});
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
-   void loadSpineActor(asset).then(actor=>{
+   void loadSpineActor(asset).then(async actor=>{
+    // Accepted designer skeletons/sequences take precedence over generated keys.
+    const drawings=this.craft&&asset==='soot'&&actor.source!=='designer'&&actor.source!=='sequence'
+     ?await loadDrawnPoseSet(asset).catch(error=>{actor.dispose();throw error;}):undefined;
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
-    const craftPose=this.craft&&asset==='soot'?new SootPoses(actor):undefined;
+    const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
     const craftLight=craftPose?new PaintLight(actor):undefined;if(craftLight)this.scene.add(craftLight.ground,craftLight.rim);
     const craftDeath=craftPose?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
     const shadow=new T.Mesh(this.geometry,new T.MeshBasicMaterial({map:this.shadowTexture,transparent:true,depthTest:false,depthWrite:false,toneMapped:false}));shadow.renderOrder=-10;
@@ -249,7 +252,9 @@ export class SpineScene {
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime+phaseOffset;
    actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
-   entry.craftPose?.deform(name,at,view.reducedMotion);
+   const drawingDamage=unit.hp>0&&frame?.plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id));
+   const damageAge=drawingDamage&&frame?(frame.elapsed-frame.plan.beats[2]!.start)/1000:undefined;
+   entry.craftPose?.deform(name,at,view.reducedMotion,damageAge);
    entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
    if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();
@@ -328,7 +333,9 @@ export class SpineScene {
   if(this.craftHandles(plan)&&frame&&plan){
    const art=plan.ultimate?this.craft!:this.craftBasic!;
    (plan.ultimate?this.craftBasic:this.craft)?.hide();
-   const source=this.socket(plan.actorId,'mainHand'),home=this.homes.get(plan.actorId);
+   const source=this.socket(plan.actorId,this.actors.get(plan.actorId)?.craftPose?'vfxOrigin':'mainHand'),home=this.homes.get(plan.actorId);
+   const entry=this.actors.get(plan.actorId);
+   const drawnSocket=(key:'K1'|'K2'|'K5')=>{const p=entry?.craftPose?.socketFor(key,'vfxOrigin');return p?this.screen(entry!.actor.root.localToWorld(this.scratch.set(p.x,p.y,1))):undefined;};
    // An action also contains retaliation and support. They keep their own
    // reaction/number passes; the offensive spell belongs to its caster.
    const casterSide=view.actors.find(a=>a.id===plan.actorId)?.side;
@@ -336,6 +343,7 @@ export class SpineScene {
    const targets=[...affected].filter(id=>view.actors.some(a=>a.id===id&&a.side!==casterSide)).flatMap(id=>{const h=this.homes.get(id);return h?[h.point]:[];});
    const orders=[...this.actors.values()].map(e=>e.actor.root.renderOrder);
    if(source&&home&&targets.length)art.render({elapsed:frame.elapsed,width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,source,
+    windupSource:drawnSocket('K1'),releaseSource:drawnSocket(plan.ultimate?'K5':'K2'),
     layoutSource:{x:home.point.x+home.point.core*.40,y:home.point.y-home.point.core*.49},
     targets:targets.map(p=>({x:p.x,y:p.y-p.core*.42})),feet:targets.map(p=>({x:p.x,y:p.y})),
     faces:[...this.actors.values()].filter(e=>e.actor.root.visible).map(e=>this.faceBounds(e)),
@@ -355,7 +363,7 @@ export class SpineScene {
    const light=(acting||view.model)&&['attack','ult'].includes(sample?.name??'')?.8*rise*fall:0;
    const death=sample?.name==='ko',opacity=death?Math.max(0,1-(sample?.at??0)/.6):entry.shadow.material.opacity;
    const capture=()=>entry.craftLight!.render(this.renderer,this.camera,{width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,
-    box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.socket(id,'mainHand')??this.homes.get(id)!.point,
+    box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.socket(id,entry.craftPose?'vfxOrigin':'mainHand')??this.homes.get(id)!.point,
     lightColour:'#bc72ed',light,brightness:acting?1:focusLight,opacity,groundOrder});
    if(entry.craftDeath){
     entry.craftDeath.withSourcePaint(capture);const source=entry.craftLight.source;entry.craftDeath.setSource(source.texture,source.crop);

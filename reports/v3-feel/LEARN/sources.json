@@ -481,14 +481,14 @@
     "url_or_path": "tools/v3craft-lab/q3/motion-study.json",
     "type": "experiment",
     "topic": "Q3 Q3.A D1",
-    "takeaway": "Released band fragments move 19.51\u201336.34 px but look like thin contour wires; reject their shape and use filled original-paint chips."
+    "takeaway": "Released band fragments move 19.51–36.34 px but look like thin contour wires; reject their shape and use filled original-paint chips."
   },
   {
     "id": "Q3-X04",
     "url_or_path": "tools/v3craft-lab/q3/chip-motion-study.json",
     "type": "experiment",
     "topic": "Q3 Q3.A D1",
-    "takeaway": "Filled paint chips avoid wire contours; seven measured centroids travel 20.68\u201334.71px; the eighth is gone at the late probe and is explicitly unmeasured."
+    "takeaway": "Filled paint chips avoid wire contours; seven measured centroids travel 20.68–34.71px; the eighth is gone at the late probe and is explicitly unmeasured."
   },
   {
     "id": "Q3-T17",
@@ -499,7 +499,8 @@
     "topics": [
       "Q3",
       "Q3.A",
-      "Q3.B"
+      "Q3.B",
+      "P2"
     ]
   },
   {
@@ -635,7 +636,7 @@
     "url_or_path": "tools/v3craft-lab/q3/lamp-motion-study.json",
     "type": "experiment",
     "topic": "Q3 Q3.A D4",
-    "takeaway": "Narrow opposed weights fold599triangles; broader coherent weighted swing has0folds, fixed crown and7.74\u201310.41px independent lamp motion."
+    "takeaway": "Narrow opposed weights fold599triangles; broader coherent weighted swing has0folds, fixed crown and7.74–10.41px independent lamp motion."
   },
   {
     "id": "Q3-T26",
@@ -649,7 +650,7 @@
     "url_or_path": "tools/v3craft-lab/q3/flipbook-preparation-study.json",
     "type": "experiment",
     "topic": "Q3 Q3.A D4",
-    "takeaway": "Three cold entries stall86.8\u201392.5ms; explicit program/atlas preparation reduces reveal gaps to16.9\u201317.3ms, with80ms preparation separately recorded."
+    "takeaway": "Three cold entries stall86.8–92.5ms; explicit program/atlas preparation reduces reveal gaps to16.9–17.3ms, with80ms preparation separately recorded."
   },
   {
     "id": "Q3-X15",
@@ -850,7 +851,7 @@
       "Q3",
       "Q3.A"
     ],
-    "takeaway": "Actual feet stay atx284.94/330.11,y551 screen; footprint+directional rim retains face>=99.808% and body>=98.294% normalized contrast versus46.174\u201348.465% for broad wash."
+    "takeaway": "Actual feet stay atx284.94/330.11,y551 screen; footprint+directional rim retains face>=99.808% and body>=98.294% normalized contrast versus46.174–48.465% for broad wash."
   },
   {
     "id": "Q3-X20",
@@ -925,7 +926,8 @@
     "topic": "Q3.B",
     "topics": [
       "Q3",
-      "Q3.B"
+      "Q3.B",
+      "P2"
     ],
     "takeaway": "Eight accepted moves have scoped limitations; combination and battle coverage require fresh review."
   },
@@ -969,7 +971,7 @@
     "url_or_path": "tools/v3craft-lab/q3b/staff-travel-study.json",
     "type": "experiment",
     "topic": "Q3.B",
-    "takeaway": "Six real fixture/desktop paths: short tip gaps204.53\u2013296.49px at30Hz;46ms finite sweep gap0, endpoint0 and425ms clear. Full-field frames expose bystander-face risk for production protection."
+    "takeaway": "Six real fixture/desktop paths: short tip gaps204.53–296.49px at30Hz;46ms finite sweep gap0, endpoint0 and425ms clear. Full-field frames expose bystander-face risk for production protection."
   },
   {
     "id": "Q3B-S05",
@@ -1074,7 +1076,10 @@
     "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
     "type": "paper",
     "topic": "P1-poses",
-    "takeaway": "Stage silhouettes clearly; anticipate, contact, follow through."
+    "takeaway": "Stage silhouettes clearly; anticipate, contact, follow through.",
+    "topics": [
+      "P2"
+    ]
   },
   {
     "id": "P1-ciede",
@@ -1102,7 +1107,10 @@
     "url_or_path": "https://esotericsoftware.com/spine-attachments",
     "type": "doc",
     "topic": "P1-poses",
-    "takeaway": "One attachment per slot; point attachments provide effects sockets."
+    "takeaway": "One attachment per slot; point attachments provide effects sockets.",
+    "topics": [
+      "P2"
+    ]
   },
   {
     "id": "P1-mesh",
@@ -1116,14 +1124,20 @@
     "url_or_path": "https://esotericsoftware.com/blog/Spine-4-1-released",
     "type": "doc",
     "topic": "P1-poses",
-    "takeaway": "Sequence keys embed frame-by-frame playback in a skeleton."
+    "takeaway": "Sequence keys embed frame-by-frame playback in a skeleton.",
+    "topics": [
+      "P2"
+    ]
   },
   {
     "id": "P1-keys",
     "url_or_path": "https://esotericsoftware.com/spine-keys",
     "type": "doc",
     "topic": "P1-poses",
-    "takeaway": "Slot attachment keys select one drawing at a time."
+    "takeaway": "Slot attachment keys select one drawing at a time.",
+    "topics": [
+      "P2"
+    ]
   },
   {
     "id": "P1-chibi",
@@ -1172,7 +1186,10 @@
     "url_or_path": "tools/v3craft-lab/poses/results.json",
     "type": "experiment",
     "topic": "P1-poses",
-    "takeaway": "A2 meets measured preliminary numerical bounds; arm-only swaps fail silhouette; no production pose accepted."
+    "takeaway": "A2 meets measured preliminary numerical bounds; arm-only swaps fail silhouette; no production pose accepted.",
+    "topics": [
+      "P2"
+    ]
   },
   {
     "id": "P1-runtime",
@@ -1180,5 +1197,40 @@
     "type": "local",
     "topic": "P1-poses",
     "takeaway": "Existing visibility track selects existing parts; no full pose artwork set currently loaded."
+  },
+  {
+    "id": "P2-texture",
+    "url_or_path": "https://threejs.org/docs/pages/Texture.html",
+    "type": "doc",
+    "topic": "P2",
+    "takeaway": "Texture upload alpha/colour convention and shared resource lifetime."
+  },
+  {
+    "id": "P2-transform",
+    "url_or_path": "https://threejs.org/docs/pages/Object3D.html",
+    "type": "doc",
+    "topic": "P2",
+    "takeaway": "Artwork and sockets share one foot-local transform."
+  },
+  {
+    "id": "P2-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "P2",
+    "takeaway": "Decode source colours once into linear working space."
+  },
+  {
+    "id": "P2-runtime",
+    "url_or_path": "apps/web/src/game/rig/cutout.ts",
+    "type": "local",
+    "topic": "P2",
+    "takeaway": "Keep actor pose state private and restore hidden attachments."
+  },
+  {
+    "id": "P2-layer-experiment",
+    "url_or_path": "tools/v3craft-lab/p2/runtime-study.json",
+    "type": "experiment",
+    "topic": "P2",
+    "takeaway": "Real renderer: aligned explicit-colour drawing0px foot drift, original restoration pixel max0; parent-only hiding fails opaque hull."
   }
 ]

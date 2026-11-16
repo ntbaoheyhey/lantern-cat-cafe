@@ -4,9 +4,10 @@ import type {SceneView} from '../../squad/turn3d/scene';
 import type {SpineActor} from './assets';
 import {SpineScene} from './scene';
 
-const {load} = vi.hoisted(() => ({load: vi.fn()}));
+const {load,loadDrawings} = vi.hoisted(() => ({load: vi.fn(),loadDrawings: vi.fn()}));
 vi.mock('./assets', () => ({loadSpineActor: load}));
-beforeEach(() => load.mockReset());
+vi.mock('../vfx-craft/drawn-poses', () => ({loadDrawnPoseSet: loadDrawings}));
+beforeEach(() => {load.mockReset();loadDrawings.mockReset();});
 
 function request() {
   let resolve!: (actor: SpineActor) => void, reject!: (error: Error) => void;
@@ -34,6 +35,14 @@ function fixture() {
   };
   return {scene, switchTo};
 }
+
+it('disposes the loaded actor when its drawing assets reject', async () => {
+ const orphan=actor();load.mockResolvedValue(orphan);loadDrawings.mockRejectedValue(new Error('Missing pose'));
+ const {scene,switchTo}=fixture();Object.assign(scene,{craft:{dispose:vi.fn()}});switchTo('soot');
+ await vi.waitFor(()=>expect(orphan.dispose).toHaveBeenCalledOnce());
+ await vi.waitFor(()=>expect(scene.loading).toMatchObject({completed:0,total:1}));
+ expect(scene.actors.size).toBe(0);expect(scene.ready).toBe(false);scene.dispose();
+});
 
 it('releases an obsolete load gate and enemy lane before its image arrives', async () => {
   const old = request(), next = request(); load.mockReturnValueOnce(old.promise).mockReturnValueOnce(next.promise);
