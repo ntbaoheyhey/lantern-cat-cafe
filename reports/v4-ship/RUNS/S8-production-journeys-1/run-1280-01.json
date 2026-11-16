@@ -1,0 +1,170 @@
+{
+  "id": "1280-01",
+  "at": "2026-11-16T12:07:01.455Z",
+  "sourceCommit": "1e04ea112c4e0de4a7bbe69b7f4946a44ac4d6a8",
+  "sourceChanges": [],
+  "harness": [
+    {
+      "path": "scripts/v4ship/rehearsal-run.mjs",
+      "sha256": "fb7ce20ac9b185d5e9e6765a46259e87b1e97a45dbf771c68e9276801f0c13a7"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/metrics.mjs",
+      "sha256": "a6400e9006d0789cd042d6264109eceb8fae9a80bc03bfc3cb02b9168ae6c7cf"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/receipt-check.mjs",
+      "sha256": "d34a17b35cee691ba881e74f02a353e2e33706583c7bf13896ee810bdefb6c50"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/proof-contrast.mjs",
+      "sha256": "3693de3413214b4a94ac73bd050a4995c215d10ab3e5d7621c0ce30eac501515"
+    }
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "production Vite build + vite preview + isolated Anvil/SQL",
+  "buildEvidence": {
+    "at": "2026-11-16T11:23:58.023513+00:00",
+    "sourceCommit": "e4803c14a9605520dd339b1f89b746683e125464",
+    "shipHead": "c9d63f2cac6bec9e29eb8230f06649647f2d56c4",
+    "sourceCheckout": "/var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/v4ship-clean-mlsdsvyj/repo",
+    "output": "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-1/dist",
+    "runtimeDiffFromShip": [],
+    "mode": "production build + Vite preview + existing local API/Anvil; no public writes",
+    "port": 5998,
+    "buildComplete": true,
+    "ready": true,
+    "publicBuildFlags": {
+      "VITE_CHAIN_DEMO": "0",
+      "VITE_ECONOMY_V3": "1",
+      "VITE_GUEST_WALLET": "1",
+      "VITE_CHAIN_LOOP": "1",
+      "VITE_ITEM_TRADING": "1",
+      "VITE_YARN_TOKEN": "1",
+      "VITE_SHIP_JOURNEY": "1",
+      "VITE_UI_V3": "1",
+      "VITE_CHAIN_CAMPAIGN": "1",
+      "VITE_CHAIN_CAMPAIGN_REWARDS": "0",
+      "VITE_RELIC_FORGE": "0",
+      "VITE_YARN_COSMETICS": "0",
+      "VITE_ALLOW_MOCK_AUTH": "0",
+      "VITE_CHAIN_MODE": "local",
+      "VITE_SUPABASE_URL": "http://127.0.0.1:5997",
+      "VITE_FUJI_RPC_URL": "http://127.0.0.1:8546",
+      "VITE_V3_START_BLOCK": "0",
+      "VITE_CHAIN_STATS_URL": ""
+    },
+    "buildSeconds": 1.892,
+    "exitCode": 0,
+    "log": {
+      "path": "reports/v4-ship/S8/production-build-1.log.gz",
+      "sha256": "c3b5e98cba367714040140e113d8b9875a70421b00688f9b1d3131baa0b6709d"
+    },
+    "localFixtureConfigSha256": "826c20b1a9647af04e85fde8ca95edf69ed5a6f126795dc3742595f8d8b73984",
+    "fixtureId": "1794814813511-33468",
+    "indexSha256": "dc45f2dbca9cbc13ecb2386fdd3573155c57930e7cdbbde53ee2c02984956b2c",
+    "supervisorPid": 98543,
+    "previewLauncherPid": 98606
+  },
+  "cleanProfile": true,
+  "realClicks": true,
+  "backendIsolated": true,
+  "steps": [
+    {
+      "number": 1,
+      "name": "landing",
+      "startedMs": 6,
+      "status": "pass",
+      "endedMs": 749
+    },
+    {
+      "number": 2,
+      "name": "guest",
+      "startedMs": 749,
+      "status": "fail",
+      "reason": "locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Start trial', exact: true }) to be visible\u001b[22m\n",
+      "endedMs": 60937
+    }
+  ],
+  "clicks": [
+    {
+      "name": "Play free",
+      "atMs": 935
+    }
+  ],
+  "errors": [
+    "Access to fetch at 'http://127.0.0.1:5997/functions/v1/auth-nonce' from origin 'http://127.0.0.1:5998' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'http://127.0.0.1:5997/functions/v1/auth-nonce' from origin 'http://127.0.0.1:5998' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'http://127.0.0.1:5997/functions/v1/auth-nonce' from origin 'http://127.0.0.1:5998' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "networkFailures": [
+    {
+      "path": "/functions/v1/auth-nonce",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "path": "/functions/v1/auth-nonce",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "path": "/functions/v1/auth-nonce",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "httpFailures": [],
+  "popups": [],
+  "receipts": [],
+  "ui": [
+    {
+      "name": "landing",
+      "atMs": 746,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 0,
+      "proofContrast": []
+    }
+  ],
+  "audioTrace": [],
+  "failure": "locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Start trial', exact: true }) to be visible\u001b[22m\n",
+  "visibleFailure": "Fuji testnet · No real value\nLantern\nCat Café\nPlay free\nConnect wallet\nWatch battle\nOffline\nDeeds\n0\nYARN burned\n0\nFused\n22\nFuji tx\nPowered by Routescan.io APIs\nEconomy\nOdds\nContracts\nWelcome home\n\nSigning proves wallet ownership. No purchas",
+  "rehearsal": {
+    "pass": false,
+    "gates": {
+      "transfer": false,
+      "bossFps": false,
+      "noDevelopmentPath": true
+    },
+    "transfer": {
+      "valid": false,
+      "requests": 0,
+      "bytesObservedAtBattle": 0,
+      "conservativeTransferBytes": 0,
+      "incomplete": [],
+      "failed": [],
+      "cached": [],
+      "resources": []
+    },
+    "boss": null,
+    "developmentPaths": [],
+    "resourceTiming": [],
+    "method": "Fresh browser context, service workers blocked, HTTP cache disabled; CDP full encoded responses for requests begun before first battle (conservative upper bound); rAF cadence only while the visible boss battle renders, including stalls.",
+    "limitations": [
+      "rAF measures browser rendering cadence; it is not a hardware display scanout measurement.",
+      "Local API and Anvil are isolated production-build test infrastructure. This does not prove public network or sponsor latency."
+    ]
+  },
+  "elapsedMs": 61057,
+  "complete": false,
+  "proofContrastPass": false,
+  "runtimeChangesAtEnd": [],
+  "runtimeStable": true,
+  "teardownErrors": [],
+  "pass": false
+}

@@ -50,7 +50,7 @@ S5 G-REG regression-3: server/rules/typecheck/probe/buildPASS; web2663PASS/7same
 S2b authoritative1.15/2500bp: E3 16/18; burnClaims0.9968275226 and Stars1.1015423773. Boundary/check/decision evidence supersedes older scalar experiments; no third candidate.
 S4 final20journeys still pending; Fuji4counters+agedcache recoveryPASS and 55logs/30RPCreceipts verified. No public sponsored latency proof.
 S1 history30159/PID68299 remains active; do not duplicate. Source scan and current staged scans found no unresolved secrets; no full-history conclusion.
-NEXT S2b hold verification, then stable20journeys/S4, then S6 docs+cleanclone. S6-S11 definitions recovered from verified REQUEST on user instruction.
+NEXT S10offline/film preparation;S8transferfail carriedtoS11/ART;scheduledS7 integration17Nov12:00UTC.
 
 S6 preparation 2026-11-16T10:48:07.237676+00:00: learning8/1formal/5web/1comparison;docs53local links valid/all5contracts;audio118/118 hashes. Clean clone pending. S4-final-1 runtime stable and active.
 RESUME S6 2026-11-16T11:22:36.646962+00:00: cleanclone2complete e4803c14a;allcommands0except7knownARTwebfails;initial/finaltrackedclean. G-REPOopen/S11repo-open. S4 12/20pass. S7read-onlyprep621ART/0conflicts;S8LEARN11sources,productionrehearsalnext. VercelSHIPexclusion2/2;pendingjobsunverified.
@@ -60,3 +60,8 @@ S8 PREP 2026-11-16T11:35:25.555658+00:00:productionrunner and10shell-block/25fun
 RESUME 2026-11-16T11:50:25.796919+00:00:S4final20/20PASS;360RPCverifiedreceipts;1280/1440battlemedian2.957/2.9325s,receipt95.2325/95.190s,max95.848s. Runtime/harness stable. S8previewHTTP200;next10productionjourneys.
 S9implementationcomplete:14sources/2formal/10web/1comparison,32local links;source economy hash exact/deployedunverified;G-REGserver742/rules1409/web2663pass7ARTfails;typecheck/probe/build0. S9/check-1.json.
 S6reportbudgetclosed:<80MB;160ignoredcaptures archived intact/160hashesverified. S1history30159alive;no new scan. No STOP/INBOX/ART instruction changes.
+RESUME 2026-11-16T12:24:22.161833+00:00:1e04ea112upstream;STOPabsent. Collected36771exit1;history30159/68299stillactive,68300defunctonly. Old5994/33548gone.
+S8attempt1 CORS403FAIL preserved. Productionbuild2 source1e04ea112 uses shippingViteconfig/explicitflags/5998origin+API5997/Anvil8546;supervisor13673/session76229,preview13741.
+S8attempt2 sevensteps/18RPCreceipts/0errors/60FPS pass;initial26411893B>8000000FAIL. ARTpackedVFX25pages12827018B;unitatlases alsooversize. Diagnosis/ARTrequest/S11preserved;noARTedits.
+S8regression2:server742/rules1409/web2663pass7knownARTfail;typecheck/probe/build0. Officialclassparityfalse;score5/10;10completepassingproductionjourneys stillrequired.
+S10PREP LEARN7sources/1formal/5web/1experiment;150sscript+11slidecontents. Historical12.0333scodec:CRF24 1795295B/SSIM.988772 vs2pass430k 775605B/.969863. Nooffline/freshV4film yet.

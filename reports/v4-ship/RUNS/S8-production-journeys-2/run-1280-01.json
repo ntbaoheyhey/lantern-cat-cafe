@@ -1,0 +1,6197 @@
+{
+  "id": "1280-01",
+  "at": "2026-11-16T12:10:42.299Z",
+  "sourceCommit": "1e04ea112c4e0de4a7bbe69b7f4946a44ac4d6a8",
+  "sourceChanges": [],
+  "harness": [
+    {
+      "path": "scripts/v4ship/rehearsal-run.mjs",
+      "sha256": "fb7ce20ac9b185d5e9e6765a46259e87b1e97a45dbf771c68e9276801f0c13a7"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/metrics.mjs",
+      "sha256": "a6400e9006d0789cd042d6264109eceb8fae9a80bc03bfc3cb02b9168ae6c7cf"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/receipt-check.mjs",
+      "sha256": "d34a17b35cee691ba881e74f02a353e2e33706583c7bf13896ee810bdefb6c50"
+    },
+    {
+      "path": "tools/v4ship-lab/proof/proof-contrast.mjs",
+      "sha256": "3693de3413214b4a94ac73bd050a4995c215d10ab3e5d7621c0ce30eac501515"
+    }
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "production Vite build + vite preview + isolated Anvil/SQL",
+  "buildEvidence": {
+    "at": "2026-11-16T12:10:17.567Z",
+    "sourceCommit": "1e04ea112c4e0de4a7bbe69b7f4946a44ac4d6a8",
+    "sourceCheckout": "/Users/bao/taskbar-hero-chain",
+    "output": "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-2/dist",
+    "port": 5998,
+    "mode": "Production shipping Vite config + same-origin-bound local API/Anvil; no public writes",
+    "config": "tools/v4ship-lab/rehearsal/vite.config.mts",
+    "publicBuildFlags": {
+      "VITE_CHAIN_DEMO": "0",
+      "VITE_ECONOMY_V3": "1",
+      "VITE_GUEST_WALLET": "1",
+      "VITE_CHAIN_LOOP": "1",
+      "VITE_ITEM_TRADING": "1",
+      "VITE_YARN_TOKEN": "1",
+      "VITE_SHIP_JOURNEY": "1",
+      "VITE_UI_V3": "1",
+      "VITE_CHAIN_CAMPAIGN": "1",
+      "VITE_CHAIN_CAMPAIGN_REWARDS": "0",
+      "VITE_RELIC_FORGE": "0",
+      "VITE_YARN_COSMETICS": "0",
+      "VITE_ALLOW_MOCK_AUTH": "0",
+      "VITE_CHAIN_MODE": "local",
+      "VITE_SUPABASE_URL": "http://127.0.0.1:5997",
+      "VITE_FUJI_RPC_URL": "http://127.0.0.1:8546",
+      "VITE_V3_START_BLOCK": "0",
+      "VITE_CHAIN_STATS_URL": ""
+    },
+    "buildComplete": true,
+    "ready": true,
+    "supervisorPid": 13673,
+    "harness": [
+      {
+        "path": "tools/v4ship-lab/rehearsal/start.mjs",
+        "sha256": "7fc33891c3d9f4e0ea080d41cafd1a92aa67589d12a87efeb844f63e5fb6a35b"
+      },
+      {
+        "path": "tools/v4ship-lab/rehearsal/vite.config.mts",
+        "sha256": "b424d3dcf5e210176d3c1856cf2b9950c58764defb614878d9beb38c3e066c28"
+      }
+    ],
+    "fixtureId": "1794831018874-13673",
+    "localFixtureConfigSha256": "4edbba4526603a363352a8728b77caa1d2aaf856878106e1662ae0a2e7e0a716",
+    "preflight": [
+      {
+        "origin": "http://127.0.0.1:5998",
+        "status": 204,
+        "allowedOrigin": "http://127.0.0.1:5998"
+      },
+      {
+        "origin": "http://127.0.0.1:5994",
+        "status": 403,
+        "allowedOrigin": null
+      }
+    ],
+    "buildCommand": [
+      "pnpm",
+      "exec",
+      "vite",
+      "build",
+      "--config",
+      "/Users/bao/taskbar-hero-chain/tools/v4ship-lab/rehearsal/vite.config.mts",
+      "--outDir",
+      "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-2/dist"
+    ],
+    "exitCode": 0,
+    "buildSeconds": 2.049,
+    "log": {
+      "path": "reports/v4-ship/S8/production-build-2.log.gz",
+      "sha256": "5e935434135dc2dd7bca9eb7e352aa2038178c506069fbc2eb825ca055fd113a"
+    },
+    "indexSha256": "2539dee2aeb8443fa3403f947aae3a55db0c596c0cd5c02ad4d133cd3fdfe209",
+    "previewLauncherPid": 13741
+  },
+  "cleanProfile": true,
+  "realClicks": true,
+  "backendIsolated": true,
+  "steps": [
+    {
+      "number": 1,
+      "name": "landing",
+      "startedMs": 6,
+      "status": "pass",
+      "endedMs": 866
+    },
+    {
+      "number": 2,
+      "name": "guest",
+      "startedMs": 866,
+      "status": "pass",
+      "endedMs": 1864
+    },
+    {
+      "number": 3,
+      "name": "battle-reward",
+      "startedMs": 1864,
+      "status": "pass",
+      "endedMs": 93824
+    },
+    {
+      "number": 4,
+      "name": "first-receipt",
+      "startedMs": 93824,
+      "status": "pass",
+      "endedMs": 95651
+    },
+    {
+      "number": 5,
+      "name": "cafe-economy",
+      "startedMs": 95651,
+      "status": "pass",
+      "endedMs": 111102
+    },
+    {
+      "number": 6,
+      "name": "boss",
+      "startedMs": 111102,
+      "status": "pass",
+      "endedMs": 203127
+    },
+    {
+      "number": 7,
+      "name": "wallet-proof",
+      "startedMs": 203127,
+      "status": "pass",
+      "endedMs": 203297
+    }
+  ],
+  "clicks": [
+    {
+      "name": "Play free",
+      "atMs": 1072
+    },
+    {
+      "name": "Start trial",
+      "atMs": 1894
+    },
+    {
+      "name": "Mint trial reward",
+      "atMs": 93854
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 95685
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 99001
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 100818
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 104574
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 106385
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 109201
+    },
+    {
+      "name": "Face the boss",
+      "atMs": 111134
+    }
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "httpFailures": [],
+  "popups": [],
+  "receipts": [
+    {
+      "hash": "0x6ac63e6ccf808546fd82ca8a5cb01c2c2d190cf973eca5094e78a3f8a6115145",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.000021869084685",
+      "confirmationMs": 508,
+      "confirmedAt": 1794831136717,
+      "block": "26",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xb11bf35cce91b1e86671a2ba4620e1a0e97aeee1063fa0c2893018d00b686410",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "mint",
+      "feeAvax": "0.00009357473005792",
+      "confirmationMs": 762.7000000029802,
+      "confirmedAt": 1794831137487,
+      "block": "27",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x6cd99dd089131b2c1bee0a8595109f790aedb2ce5480be18106b35d273376e18",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "claimTester",
+      "feeAvax": "0.000173882820552501",
+      "confirmationMs": 759.5,
+      "confirmedAt": 1794831138780,
+      "block": "28",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x6550f358f5033f74629bfa87d49c0baa36192c896495f9b583fb73678104a511",
+      "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+      "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+      "action": "Guest funding",
+      "feeAvax": "0.00002158377165",
+      "confirmationMs": 506,
+      "confirmedAt": 1794831139317,
+      "block": "29",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xe6fa4c5ab943c79bb7e287319157c05505c892ea9067562aa92617d12fd3987f",
+      "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+      "payer": "0xa386714145e8920e64994aa94916fe6b7eed37c8",
+      "action": "claimTester",
+      "feeAvax": "0.0001551089709747",
+      "confirmationMs": 760.2999999970198,
+      "confirmedAt": 1794831140091,
+      "block": "30",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xd99a614c0620764cbc27092c882cff13bb337b1d87932010722d51938bf73b80",
+      "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+      "payer": "0xa386714145e8920e64994aa94916fe6b7eed37c8",
+      "action": "transfer",
+      "feeAvax": "0.000035905466119644",
+      "confirmationMs": 761.4000000059605,
+      "confirmedAt": 1794831140859,
+      "block": "31",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x541385f55450623be42012d039e508410d6718b6e75c05c3472a84f5f917430e",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "seal",
+      "feeAvax": "0.000083705309634376",
+      "confirmationMs": 758.1000000089407,
+      "confirmedAt": 1794831142090,
+      "block": "32",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x015894e9ce5f6ab6d838e3cb137c763fdf8a2ea7bd0ab0fc574a4420c685179d",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "mint",
+      "feeAvax": "0.00013269844071729",
+      "confirmationMs": 758.6000000089407,
+      "confirmedAt": 1794831142863,
+      "block": "33",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x9cdbb6af0ada53685c8a37471e4261bf12745763ed5238130ebd6fdbae60a5a5",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "seal",
+      "feeAvax": "0.000066003527609264",
+      "confirmationMs": 759.1000000089407,
+      "confirmedAt": 1794831143909,
+      "block": "34",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x9c115792607acadb1c35234b79705c8869a747f59f26ff93c5000e966958d3e2",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "safeBatchTransferFrom",
+      "feeAvax": "0.000056761625735297",
+      "confirmationMs": 757.5,
+      "confirmedAt": 1794831144671,
+      "block": "35",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xe0410ee7c0c66fd46a2a4e3f52a43f337e7283fe6429cc30c27f67e21944079a",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "mint",
+      "feeAvax": "0.00013199766728782",
+      "confirmationMs": 758.3999999910593,
+      "confirmedAt": 1794831145444,
+      "block": "36",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x157ca70c207b689509135c5517bc365b1447af60a1ae96a60238ac0a722dc584",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "setApprovalForAll",
+      "feeAvax": "0.000047145905919308",
+      "confirmationMs": 759.4000000059605,
+      "confirmedAt": 1794831147661,
+      "block": "37",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xde7d8763dda6c12c365e626d9d46c379a517f448d78ab1332ad700bd6ec03ed7",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "list",
+      "feeAvax": "0.00023742733930596",
+      "confirmationMs": 757.5,
+      "confirmedAt": 1794831148424,
+      "block": "38",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x33aa8905e67e76470e8b962ab9d88332653f732e7ec13245621c1f94085ef871",
+      "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+      "payer": "0xa386714145e8920e64994aa94916fe6b7eed37c8",
+      "action": "approve",
+      "feeAvax": "0.000047299506754392",
+      "confirmationMs": 758.5,
+      "confirmedAt": 1794831149473,
+      "block": "39",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xcd83bd0bb296e90e0b02f4cc45c1d6ade57fe808cb4caea663d1d2feb4820cb4",
+      "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+      "payer": "0xa386714145e8920e64994aa94916fe6b7eed37c8",
+      "action": "buy",
+      "feeAvax": "0.00018821813490569",
+      "confirmationMs": 760.4000000059605,
+      "confirmedAt": 1794831150237,
+      "block": "40",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x03230a94a7b80063c503568d8bf1ce19ff5b2ae906ce8fa39d3d6ae93ea68a07",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "withdraw",
+      "feeAvax": "0.000044693666335368",
+      "confirmationMs": 757.2999999970198,
+      "confirmedAt": 1794831150999,
+      "block": "41",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0xe76d07d0ad9f131959844f4e7d999baddd73ed795c9adfc85445061a5e508613",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "mint",
+      "feeAvax": "0.000131200157879203",
+      "confirmationMs": 758.5,
+      "confirmedAt": 1794831152287,
+      "block": "42",
+      "gasSource": "cafe",
+      "local": true
+    },
+    {
+      "hash": "0x30154388c8ca71fc7905f11889633477864e17133c92e21c7276b818b7ebe127",
+      "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "payer": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+      "action": "claim",
+      "feeAvax": "0.00012059144155691",
+      "confirmationMs": 758.3999999910593,
+      "confirmedAt": 1794831153067,
+      "block": "43",
+      "gasSource": "cafe",
+      "local": true
+    }
+  ],
+  "ui": [
+    {
+      "name": "landing",
+      "atMs": 849,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 0,
+      "proofContrast": []
+    },
+    {
+      "name": "guest",
+      "atMs": 1863,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 8,
+      "proofContrast": []
+    },
+    {
+      "name": "battle-reward",
+      "atMs": 93822,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 11,
+      "proofContrast": []
+    },
+    {
+      "name": "first-receipt",
+      "atMs": 95649,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 17,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00009357473005792 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 98975,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "YARN transferred",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000035905466119644 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Seal Epic",
+      "atMs": 100785,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 20,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00013269844071729 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Forge Legendary",
+      "atMs": 103603,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 13,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic minted",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00013199766728782 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "List for 5 YARN",
+      "atMs": 106358,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Relic listed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00023742733930596 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Buy with demo wallet",
+      "atMs": 109173,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 16,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Sale proceeds claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.000044693666335368 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "Withdraw Spool",
+      "atMs": 110986,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144155691 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "cafe-economy",
+      "atMs": 111099,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 14,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144155691 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "boss",
+      "atMs": 203123,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144155691 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x0bd0…eb43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #1 × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "button",
+          "text": "Refresh wallet proof",
+          "foreground": "rgb(48, 37, 28)",
+          "backgrounds": [
+            [
+              243,
+              235,
+              219
+            ]
+          ],
+          "ratio": 12.592,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "wallet-proof",
+      "atMs": 203291,
+      "horizontalOverflow": false,
+      "unlabeled": [],
+      "clipped": [],
+      "bodyWords": 10,
+      "proofContrast": [
+        {
+          "scope": "receipt",
+          "tag": "button",
+          "text": "×",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "strong",
+          "text": "Spool claimed",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Confirmed locally",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.76 s",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dt",
+          "text": "Fee",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "dd",
+          "text": "0.00012059144155691 AVAX",
+          "foreground": "rgb(48, 37, 31)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 14.097,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "small",
+          "text": "Paid by the café · sponsored gas",
+          "foreground": "rgb(89, 69, 47)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.579,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "receipt",
+          "tag": "a",
+          "text": "Snowtrace receipt",
+          "foreground": "rgb(97, 64, 24)",
+          "backgrounds": [
+            [
+              255,
+              248,
+              235
+            ]
+          ],
+          "ratio": 8.816,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h1",
+          "text": "My café on Avalanche",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "p",
+          "text": "Your owned items and game transactions, verified for this wallet.",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Wallet 0x0bd0…eb43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "strong",
+          "text": "11.75 YARN",
+          "foreground": "rgb(247, 238, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 10.187,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Owned items",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Paw Charm × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Café Deed #1 × 1",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "h2",
+          "text": "Transactions · 15",
+          "foreground": "rgb(245, 235, 220)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.953,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 43",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 42",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Withdrawal · Block 41",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Purchase · Block 40",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Listing · Block 38",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Approval · Block 37",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 36",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 35",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 34",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 33",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Burn · Block 32",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Transfer · Block 31",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Claim · Block 28",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Mint · Block 27",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Funding · Block 26",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "button",
+          "text": "Refresh wallet proof",
+          "foreground": "rgb(48, 37, 28)",
+          "backgrounds": [
+            [
+              243,
+              235,
+              219
+            ]
+          ],
+          "ratio": 12.592,
+          "minimum": 4.5,
+          "pass": true
+        },
+        {
+          "scope": "wallet",
+          "tag": "a",
+          "text": "Powered by Routescan.io APIs",
+          "foreground": "rgb(255, 229, 157)",
+          "backgrounds": [
+            [
+              71,
+              52,
+              39
+            ],
+            [
+              25,
+              26,
+              32
+            ]
+          ],
+          "ratio": 9.476,
+          "minimum": 4.5,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "audioTrace": [],
+  "firstBattleMs": 3252,
+  "firstBattleClicks": 2,
+  "firstRewardMs": 93711,
+  "firstReceiptMs": 95638,
+  "reloadRecovery": true,
+  "bossMs": 91967,
+  "historyKinds": [
+    "Claim",
+    "Mint",
+    "Withdrawal",
+    "Purchase",
+    "Listing",
+    "Approval",
+    "Burn",
+    "Transfer",
+    "Funding"
+  ],
+  "proofLinks": 15,
+  "receiptVerification": {
+    "scope": "Disposable Anvil receipt values and wallet history; no public latency claim",
+    "rows": [
+      {
+        "hash": "0x6ac63e6ccf808546fd82ca8a5cb01c2c2d190cf973eca5094e78a3f8a6115145",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xb11bf35cce91b1e86671a2ba4620e1a0e97aeee1063fa0c2893018d00b686410",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x6cd99dd089131b2c1bee0a8595109f790aedb2ce5480be18106b35d273376e18",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x6550f358f5033f74629bfa87d49c0baa36192c896495f9b583fb73678104a511",
+        "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+        "action": "Guest funding",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xe6fa4c5ab943c79bb7e287319157c05505c892ea9067562aa92617d12fd3987f",
+        "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+        "action": "claimTester",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xd99a614c0620764cbc27092c882cff13bb337b1d87932010722d51938bf73b80",
+        "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+        "action": "transfer",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x541385f55450623be42012d039e508410d6718b6e75c05c3472a84f5f917430e",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x015894e9ce5f6ab6d838e3cb137c763fdf8a2ea7bd0ab0fc574a4420c685179d",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x9cdbb6af0ada53685c8a37471e4261bf12745763ed5238130ebd6fdbae60a5a5",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "seal",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x9c115792607acadb1c35234b79705c8869a747f59f26ff93c5000e966958d3e2",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "safeBatchTransferFrom",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xe0410ee7c0c66fd46a2a4e3f52a43f337e7283fe6429cc30c27f67e21944079a",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x157ca70c207b689509135c5517bc365b1447af60a1ae96a60238ac0a722dc584",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "setApprovalForAll",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xde7d8763dda6c12c365e626d9d46c379a517f448d78ab1332ad700bd6ec03ed7",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "list",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x33aa8905e67e76470e8b962ab9d88332653f732e7ec13245621c1f94085ef871",
+        "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+        "action": "approve",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xcd83bd0bb296e90e0b02f4cc45c1d6ade57fe808cb4caea663d1d2feb4820cb4",
+        "wallet": "0xA386714145e8920E64994Aa94916fE6b7EeD37c8",
+        "action": "buy",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x03230a94a7b80063c503568d8bf1ce19ff5b2ae906ce8fa39d3d6ae93ea68a07",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "withdraw",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0xe76d07d0ad9f131959844f4e7d999baddd73ed795c9adfc85445061a5e508613",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "mint",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      },
+      {
+        "hash": "0x30154388c8ca71fc7905f11889633477864e17133c92e21c7276b818b7ebe127",
+        "wallet": "0x0bd01fb2d9a03282c76cf942f8bb72598ca0eb43",
+        "action": "claim",
+        "checks": {
+          "success": true,
+          "hash": true,
+          "payer": true,
+          "fee": true,
+          "block": true,
+          "timing": true,
+          "localLabel": true,
+          "action": true
+        },
+        "pass": true
+      }
+    ],
+    "receiptCount": 18,
+    "actionTypes": 12,
+    "walletReceiptCount": 13,
+    "historyCount": 15,
+    "missingWalletReceipts": [],
+    "explorerLinks": true,
+    "pass": true
+  },
+  "rehearsal": {
+    "pass": false,
+    "gates": {
+      "transfer": false,
+      "bossFps": true,
+      "noDevelopmentPath": true,
+      "fullBossCoverage": true
+    },
+    "transfer": {
+      "valid": true,
+      "requests": 225,
+      "bytesObservedAtBattle": 26411893,
+      "conservativeTransferBytes": 26411893,
+      "incomplete": [],
+      "failed": [],
+      "cached": [],
+      "resources": [
+        {
+          "path": "http://127.0.0.1:5998/",
+          "totalBytes": 1033,
+          "type": "Document",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "https://fonts.googleapis.com/css2",
+          "totalBytes": 1368,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/index-BvpO8ea2.js",
+          "totalBytes": 9377,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/config-DgKJWkbX.js",
+          "totalBytes": 3948,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/rolldown-runtime-XKyaHtl9.js",
+          "totalBytes": 1047,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/react-Ds-GqiDD.js",
+          "totalBytes": 127419,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/web3-DVRwcg9p.js",
+          "totalBytes": 115817,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/entry-DBkywiS-.js",
+          "totalBytes": 14061,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/GameIcon-bs-FIxzU.js",
+          "totalBytes": 1115,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/GameIcon-CKpojp-j.css",
+          "totalBytes": 929,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/catalog-D83wmjJw.js",
+          "totalBytes": 12810,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/cardrpg-BeG1Pqny.js",
+          "totalBytes": 52150,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/rng-Cfw1Pt4b.js",
+          "totalBytes": 876,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/engine-B0rnn4GP.js",
+          "totalBytes": 13543,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/flags-Djm76TVb.js",
+          "totalBytes": 874,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/depth-DJ52qyqy.js",
+          "totalBytes": 18032,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/controls-BOogsXa3.js",
+          "totalBytes": 15798,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/voice-callouts-DZ3xkHdC.js",
+          "totalBytes": 3740,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/velvet-1x-sCeplT4Q.js",
+          "totalBytes": 69195,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/card-effect-data-C4CU59fD.js",
+          "totalBytes": 83006,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/scene--j-orP7B.js",
+          "totalBytes": 301096,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/three.module-CxPCwrzd.js",
+          "totalBytes": 75370,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/card-v4-presentation-KB5TsSCM.js",
+          "totalBytes": 3192,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/card-staging-BjkyyDRG.js",
+          "totalBytes": 1449,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/number-badges-CfUWjpIv.js",
+          "totalBytes": 1121,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/battle-presentation-BjCXng9H.js",
+          "totalBytes": 2048,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/JourneyV4-DaEsDqmQ.js",
+          "totalBytes": 2457,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/shared-9GzfPyzo.js",
+          "totalBytes": 2509,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/TextDietC2-BOgJw8i9.js",
+          "totalBytes": 1401,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/motion-b2-CL_-yGBT.js",
+          "totalBytes": 975,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/audio-cues-CH4y0Ed8.js",
+          "totalBytes": 397,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/motion-b2-DLMFQJmf.css",
+          "totalBytes": 2075,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/TextDietC2-D0t-Yys4.css",
+          "totalBytes": 15161,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/GiftAmountsA6-CzPg6u4i.js",
+          "totalBytes": 1101,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CountUpA6-w5oZ_4E9.js",
+          "totalBytes": 1065,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/SkillsV5-BrfnaWsL.js",
+          "totalBytes": 1952,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/player-mode-BWI3uI_F.js",
+          "totalBytes": 438,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/meta-presentation-BoL9wTPl.js",
+          "totalBytes": 1497,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CompanionPreview-CTmZItU4.js",
+          "totalBytes": 4401,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/art-a6-DfuhEpLN.js",
+          "totalBytes": 89447,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/scene-actors-C_qBVvRQ.js",
+          "totalBytes": 3746,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/onboarding-DGs6wsQq.js",
+          "totalBytes": 854,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Pages-CJv0hcTi.js",
+          "totalBytes": 13365,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/PaintedKit-k5ItriSx.js",
+          "totalBytes": 1337,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/PaintedKit-BVcsLWqz.css",
+          "totalBytes": 1912,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/economy-sinks-v3-Q_GMHEob.js",
+          "totalBytes": 1213,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CafeV4-DJnK61Dp.js",
+          "totalBytes": 3331,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/guide-a6-D8j2iqVj.js",
+          "totalBytes": 2275,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Equipment-CS0vvPOB.js",
+          "totalBytes": 7596,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/ForecastV4-CbsV7ie5.js",
+          "totalBytes": 38858,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/OpeningV4-DO67nsdg.js",
+          "totalBytes": 1789,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/OddsC2-Dd-0htEh.js",
+          "totalBytes": 2750,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CompactLabelsC2-CUmcy82q.js",
+          "totalBytes": 883,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/KeepsakeArtA6-DbdQhOhZ.js",
+          "totalBytes": 3946,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/EquipmentV4-eqlOGfmE.js",
+          "totalBytes": 4374,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CollectibleDesigns-C8qxqdqE.js",
+          "totalBytes": 3455,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/RouteTonic-Cn6caHPo.js",
+          "totalBytes": 1347,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/RouteTonic-C5GLw35W.css",
+          "totalBytes": 1094,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Invitations-Bh3kWEMR.js",
+          "totalBytes": 5843,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CompanionCard-wbHn5i0N.js",
+          "totalBytes": 1837,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CombatClassBadge-C7kSYs-P.js",
+          "totalBytes": 894,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CombatClassBadge-DPHF4du6.css",
+          "totalBytes": 675,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/PowerA6-DyzsjO9q.js",
+          "totalBytes": 2714,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/SelectorV4-Druy4hLq.js",
+          "totalBytes": 3537,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/SelectorV4-DD_Dvot-.css",
+          "totalBytes": 1401,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Invitations-CGE1bmM8.css",
+          "totalBytes": 2743,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/LiveCounters-CaQF4fAt.js",
+          "totalBytes": 5531,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/siwe-Bq4eGOJj.js",
+          "totalBytes": 4811,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/runtime-g0sMm9jV.js",
+          "totalBytes": 3766,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/indexed-logs-CHR37Zx1.js",
+          "totalBytes": 8169,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/star-plans-v4-CkRibhaK.js",
+          "totalBytes": 972,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/TeamCollection-CgBiUMBw.js",
+          "totalBytes": 4760,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/PreparationV4-vsvypsRv.js",
+          "totalBytes": 3241,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/CompanionGrowthV4-Dcq8qZfk.js",
+          "totalBytes": 2487,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Entrance-D4IZD_Ds.js",
+          "totalBytes": 5667,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/WalletProvider-DjDvDnwL.js",
+          "totalBytes": 1584,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/engine-DhdIExQI.js",
+          "totalBytes": 6560,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/callouts-Dw6WBO1-.js",
+          "totalBytes": 3532,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Entrance-uZPoFInA.css",
+          "totalBytes": 1087,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/shell-BAhyeoIG.css",
+          "totalBytes": 5376,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/cardrpg-y--jSL44.js",
+          "totalBytes": 1335,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/cardrpg-B6d9u7aH.css",
+          "totalBytes": 6150,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/ui-v3-BJZ1Kbqb.js",
+          "totalBytes": 819,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/ui-v3-8hmYY4Mz.css",
+          "totalBytes": 13333,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/audio-DHau4yGJ.js",
+          "totalBytes": 3963,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/entry-hs6S3DLC.css",
+          "totalBytes": 12100,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/ChainRoot-DB3sY0iq.js",
+          "totalBytes": 3875,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/GasBalance-DZd6wN9e.js",
+          "totalBytes": 1502,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/errors-DVUfsOiN.js",
+          "totalBytes": 1814,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/GasBalance-o5SbRjst.css",
+          "totalBytes": 5537,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/YarnBalance-D2lEL7cN.js",
+          "totalBytes": 1001,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/ChainRoot-QP3OeX9M.css",
+          "totalBytes": 2218,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/landing.webp",
+          "totalBytes": 274038,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-deed.webp",
+          "totalBytes": 10050,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/fight.svg",
+          "totalBytes": 877,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-wallet.webp",
+          "totalBytes": 11290,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-yarn.webp",
+          "totalBytes": 11786,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-fuse.webp",
+          "totalBytes": 10090,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-history.webp",
+          "totalBytes": 9634,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-economy.webp",
+          "totalBytes": 15100,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-bell.webp",
+          "totalBytes": 11864,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-settings.webp",
+          "totalBytes": 10720,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-sound.webp",
+          "totalBytes": 10610,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-season.webp",
+          "totalBytes": 14358,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/home.svg",
+          "totalBytes": 835,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-forge.webp",
+          "totalBytes": 10432,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-cats.webp",
+          "totalBytes": 11916,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/fonts/barlow-condensed-latin-500-normal.woff2",
+          "totalBytes": 21744,
+          "type": "Font",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/fonts/baloo-2-latin-800-normal.woff2",
+          "totalBytes": 18952,
+          "type": "Font",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/fonts/barlow-condensed-latin-700-normal.woff2",
+          "totalBytes": 22764,
+          "type": "Font",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/chain-local.json",
+          "totalBytes": 779,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 184,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 182,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 29190,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/auth-nonce",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/manifest.json",
+          "totalBytes": 37716,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/auth-nonce",
+          "totalBytes": 378,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 348,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:8546/",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/menu-voices.webm",
+          "totalBytes": 98469,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/b2-ui.webm",
+          "totalBytes": 246773,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/b2-ui-baked.webm",
+          "totalBytes": 69814,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/menu-home.webm",
+          "totalBytes": 303928,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/landing.webm",
+          "totalBytes": 448422,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/auth-verify",
+          "totalBytes": 810,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/auth-verify",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/refresh.svg",
+          "totalBytes": 605,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/DemoJourney-Dk6aooRG.js",
+          "totalBytes": 7385,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/chain-index-CzTxO85i.js",
+          "totalBytes": 1503,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/DemoJourney-BQxANTh-.css",
+          "totalBytes": 1777,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-ZHxSjkYI.webp",
+          "totalBytes": 134066,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-Dvp7yae4.webp",
+          "totalBytes": 134804,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/panko-C5k0olxY.webp",
+          "totalBytes": 165968,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/soot-BBMAonk6.webp",
+          "totalBytes": 138116,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/arrow.svg",
+          "totalBytes": 783,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/heart.svg",
+          "totalBytes": 625,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-quest.webp",
+          "totalBytes": 12588,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/chain-local.json",
+          "totalBytes": 779,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/button-disabled-normal.webp",
+          "totalBytes": 10962,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/button-primary-hover.webp",
+          "totalBytes": 13080,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/chain-judge",
+          "totalBytes": 0,
+          "type": "Other",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/button-primary-pressed.webp",
+          "totalBytes": 12118,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5997/functions/v1/chain-judge",
+          "totalBytes": 40254,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/Battle-BPzqdFrJ.js",
+          "totalBytes": 63088,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/player-BfHBWtxd.js",
+          "totalBytes": 26650,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/core-DTaTrRcr.js",
+          "totalBytes": 7770,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/layout-c2-BYfNEhtZ.js",
+          "totalBytes": 1855,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/assets-Bvf-cZhY.js",
+          "totalBytes": 19587,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/stage-painting-XZrw5MlG.js",
+          "totalBytes": 1603,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/FeelLab-DDgms2hg.js",
+          "totalBytes": 4082,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/EffectEvidence-Ck8HpEdr.js",
+          "totalBytes": 67655,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/FeelLab-BRfFjXsP.css",
+          "totalBytes": 1300,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/battle-layout-DafSuDpI.css",
+          "totalBytes": 6376,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/BattleHudV3-Dr90UGbs.js",
+          "totalBytes": 13912,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/SoundControlA6-C69du2sr.js",
+          "totalBytes": 1022,
+          "type": "Script",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/SoundControlA6-DSV53eLu.css",
+          "totalBytes": 527,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/BattleHudV3-BNsS6fjO.css",
+          "totalBytes": 9001,
+          "type": "Stylesheet",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/clock.svg",
+          "totalBytes": 847,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-boss-seal.webp",
+          "totalBytes": 10764,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/mochi/portrait.webp",
+          "totalBytes": 16222,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/soot/portrait.webp",
+          "totalBytes": 16578,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/clover/portrait.webp",
+          "totalBytes": 14590,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/panko/portrait.webp",
+          "totalBytes": 14498,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-potion.webp",
+          "totalBytes": 9230,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/icons/menu.svg",
+          "totalBytes": 787,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-1x-CkbkV-l6.webp",
+          "totalBytes": 49946,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/soot-1x-B-eVyKBz.webp",
+          "totalBytes": 35448,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-1x-BBAlJAV3.webp",
+          "totalBytes": 45190,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/panko-1x-BkVihpdC.webp",
+          "totalBytes": 49236,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/yarn-giant-CCu0tWKm.webp",
+          "totalBytes": 93126,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/binding-thread-xFBSvJjL.webp",
+          "totalBytes": 28496,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/baloo-2-latin-800-normal-BbF3Etk1.woff2",
+          "totalBytes": 18952,
+          "type": "Font",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-1-1x-0eO9HYpi.webp",
+          "totalBytes": 4532,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-4-1x-Cq_OpluA.webp",
+          "totalBytes": 4824,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-2-1x-BzG82R-T.webp",
+          "totalBytes": 4386,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-4-1x-DrUYIN-L.webp",
+          "totalBytes": 4880,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-DMMElfhQ.atlas",
+          "totalBytes": 2043,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/panko/rig.json",
+          "totalBytes": 39212,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/yarn-giant/rig.json",
+          "totalBytes": 36407,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/binding-thread/rig.json",
+          "totalBytes": 36546,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/painted-cafe-c11-v1-B-hcVdVI.webp",
+          "totalBytes": 244566,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/biscuit-0-DpSB8rBh.webp",
+          "totalBytes": 639468,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/brioche-0-Cle3gWYa.webp",
+          "totalBytes": 792822,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/cinnamon-0-DIPZVf-3.webp",
+          "totalBytes": 826996,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-0-C1qh75or.webp",
+          "totalBytes": 704318,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/binding-thread-0-PEmTGcfi.webp",
+          "totalBytes": 275910,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/button-guard-0-MAHzIyUR.webp",
+          "totalBytes": 455284,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/crumb-sentinel-0-CVniO6dz.webp",
+          "totalBytes": 458270,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/kettle-knight-0-DlR3dV_Z.webp",
+          "totalBytes": 239628,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/needle-moth-0-l3M7OZC0.webp",
+          "totalBytes": 212092,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/pantry-crown-0-BgSHEvD8.webp",
+          "totalBytes": 318414,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/pollen-scout-0-Qie5-jFC.webp",
+          "totalBytes": 250732,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/practice-cushion-0-D7hpj_8H.webp",
+          "totalBytes": 308854,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/rain-spool-0-KY9U9vi7.webp",
+          "totalBytes": 254994,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/sock-skipper-0-FF7wzY2F.webp",
+          "totalBytes": 248938,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/spool-ram-0-Db3h7EX9.webp",
+          "totalBytes": 284262,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/teacup-healer-0-DamYxlQo.webp",
+          "totalBytes": 335724,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/yarn-giant-0-Sj9YVSGD.webp",
+          "totalBytes": 311764,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/inkcap-0-BtGb_HO9.webp",
+          "totalBytes": 742288,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mallow-0-D8kvql6I.webp",
+          "totalBytes": 749596,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/marigold-0-N12vppiw.webp",
+          "totalBytes": 803648,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-0-Dm68abJ-.webp",
+          "totalBytes": 727464,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/panko-0-CWKYqwim.webp",
+          "totalBytes": 862002,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/soot-0-CNUjObz1.webp",
+          "totalBytes": 661406,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/sorrel-0-JDSAnPWs.webp",
+          "totalBytes": 620072,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/velvet-0-BWKeMacQ.webp",
+          "totalBytes": 742072,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/yarn-giant/portrait.webp",
+          "totalBytes": 20304,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-mochi.webm",
+          "totalBytes": 94830,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-soot.webm",
+          "totalBytes": 83453,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-clover.webm",
+          "totalBytes": 104874,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-panko.webm",
+          "totalBytes": 87859,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-yarn-giant.webm",
+          "totalBytes": 67125,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/audio/callout-binding-thread.webm",
+          "totalBytes": 68686,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-DGr7McCx.json",
+          "totalBytes": 26579,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/soot-NOC_z34r.json",
+          "totalBytes": 1754,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-CBI7vRHn.json",
+          "totalBytes": 25246,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/yarn-giant/rig-depth.png",
+          "totalBytes": 2823543,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/panko/rig-depth.png",
+          "totalBytes": 1570161,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/units/binding-thread/rig-depth.png",
+          "totalBytes": 1156592,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/soot-D9EdxT-u.png",
+          "totalBytes": 947984,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/mochi-BTMx_wwY.png",
+          "totalBytes": 858722,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "http://127.0.0.1:5998/assets/clover-Cgil4ddk.png",
+          "totalBytes": 971714,
+          "type": "Image",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    },
+    "boss": {
+      "valid": true,
+      "frames": 5431,
+      "seconds": 91.19640000000001,
+      "averageFps": 59.54182401936918,
+      "medianFps": 60,
+      "minimumWindowFps": 22,
+      "windows": [
+        22,
+        61,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        55,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "hiddenFrames": 0
+    },
+    "developmentPaths": [],
+    "resourceTiming": [
+      {
+        "path": "http://127.0.0.1:5998/assets/index-BvpO8ea2.js",
+        "transferSize": 9305,
+        "encodedBodySize": 9005,
+        "duration": 7.399999991059303
+      },
+      {
+        "path": "https://fonts.googleapis.com/css2",
+        "transferSize": 1195,
+        "encodedBodySize": 895,
+        "duration": 381.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/rolldown-runtime-XKyaHtl9.js",
+        "transferSize": 1026,
+        "encodedBodySize": 726,
+        "duration": 7.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/config-DgKJWkbX.js",
+        "transferSize": 3878,
+        "encodedBodySize": 3578,
+        "duration": 7.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/web3-DVRwcg9p.js",
+        "transferSize": 115658,
+        "encodedBodySize": 115358,
+        "duration": 22
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/react-Ds-GqiDD.js",
+        "transferSize": 127260,
+        "encodedBodySize": 126960,
+        "duration": 22.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/GameIcon-bs-FIxzU.js",
+        "transferSize": 1045,
+        "encodedBodySize": 745,
+        "duration": 6.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/entry-DBkywiS-.js",
+        "transferSize": 13989,
+        "encodedBodySize": 13689,
+        "duration": 7.199999988079071
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/GameIcon-CKpojp-j.css",
+        "transferSize": 915,
+        "encodedBodySize": 615,
+        "duration": 6.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/catalog-D83wmjJw.js",
+        "transferSize": 12738,
+        "encodedBodySize": 12438,
+        "duration": 9.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/rng-Cfw1Pt4b.js",
+        "transferSize": 855,
+        "encodedBodySize": 555,
+        "duration": 6.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/cardrpg-BeG1Pqny.js",
+        "transferSize": 52046,
+        "encodedBodySize": 51746,
+        "duration": 15.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/flags-Djm76TVb.js",
+        "transferSize": 804,
+        "encodedBodySize": 504,
+        "duration": 22.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/engine-B0rnn4GP.js",
+        "transferSize": 13471,
+        "encodedBodySize": 13171,
+        "duration": 24.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/depth-DJ52qyqy.js",
+        "transferSize": 17953,
+        "encodedBodySize": 17653,
+        "duration": 24.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/voice-callouts-DZ3xkHdC.js",
+        "transferSize": 3669,
+        "encodedBodySize": 3369,
+        "duration": 27.900000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/controls-BOogsXa3.js",
+        "transferSize": 15725,
+        "encodedBodySize": 15425,
+        "duration": 32.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/card-v4-presentation-KB5TsSCM.js",
+        "transferSize": 3122,
+        "encodedBodySize": 2822,
+        "duration": 35.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/velvet-1x-sCeplT4Q.js",
+        "transferSize": 69076,
+        "encodedBodySize": 68776,
+        "duration": 41.19999998807907
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/three.module-CxPCwrzd.js",
+        "transferSize": 75249,
+        "encodedBodySize": 74949,
+        "duration": 48.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/card-effect-data-C4CU59fD.js",
+        "transferSize": 82872,
+        "encodedBodySize": 82572,
+        "duration": 51.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/scene--j-orP7B.js",
+        "transferSize": 300824,
+        "encodedBodySize": 300524,
+        "duration": 86
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/card-staging-BjkyyDRG.js",
+        "transferSize": 1379,
+        "encodedBodySize": 1079,
+        "duration": 38.900000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/number-badges-CfUWjpIv.js",
+        "transferSize": 1051,
+        "encodedBodySize": 751,
+        "duration": 41.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/battle-presentation-BjCXng9H.js",
+        "transferSize": 1978,
+        "encodedBodySize": 1678,
+        "duration": 45
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/JourneyV4-DaEsDqmQ.js",
+        "transferSize": 2387,
+        "encodedBodySize": 2087,
+        "duration": 46.1000000089407
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/shared-9GzfPyzo.js",
+        "transferSize": 2439,
+        "encodedBodySize": 2139,
+        "duration": 46.30000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/TextDietC2-BOgJw8i9.js",
+        "transferSize": 1331,
+        "encodedBodySize": 1031,
+        "duration": 47.80000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/motion-b2-DLMFQJmf.css",
+        "transferSize": 2012,
+        "encodedBodySize": 1712,
+        "duration": 10.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/audio-cues-CH4y0Ed8.js",
+        "transferSize": 378,
+        "encodedBodySize": 78,
+        "duration": 48.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/motion-b2-CL_-yGBT.js",
+        "transferSize": 905,
+        "encodedBodySize": 605,
+        "duration": 49.099999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/TextDietC2-D0t-Yys4.css",
+        "transferSize": 15096,
+        "encodedBodySize": 14796,
+        "duration": 13.900000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/GiftAmountsA6-CzPg6u4i.js",
+        "transferSize": 1031,
+        "encodedBodySize": 731,
+        "duration": 51.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CountUpA6-w5oZ_4E9.js",
+        "transferSize": 995,
+        "encodedBodySize": 695,
+        "duration": 52.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/SkillsV5-BrfnaWsL.js",
+        "transferSize": 1882,
+        "encodedBodySize": 1582,
+        "duration": 52.900000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/player-mode-BWI3uI_F.js",
+        "transferSize": 417,
+        "encodedBodySize": 117,
+        "duration": 51.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/meta-presentation-BoL9wTPl.js",
+        "transferSize": 1427,
+        "encodedBodySize": 1127,
+        "duration": 58.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/onboarding-DGs6wsQq.js",
+        "transferSize": 833,
+        "encodedBodySize": 533,
+        "duration": 58.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CompanionPreview-CTmZItU4.js",
+        "transferSize": 4330,
+        "encodedBodySize": 4030,
+        "duration": 58.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/scene-actors-C_qBVvRQ.js",
+        "transferSize": 3676,
+        "encodedBodySize": 3376,
+        "duration": 62
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/art-a6-DfuhEpLN.js",
+        "transferSize": 89318,
+        "encodedBodySize": 89018,
+        "duration": 76.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/PaintedKit-BVcsLWqz.css",
+        "transferSize": 1849,
+        "encodedBodySize": 1549,
+        "duration": 10.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/PaintedKit-k5ItriSx.js",
+        "transferSize": 1267,
+        "encodedBodySize": 967,
+        "duration": 66.1000000089407
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/economy-sinks-v3-Q_GMHEob.js",
+        "transferSize": 1143,
+        "encodedBodySize": 843,
+        "duration": 66.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Pages-CJv0hcTi.js",
+        "transferSize": 13293,
+        "encodedBodySize": 12993,
+        "duration": 68.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CafeV4-DJnK61Dp.js",
+        "transferSize": 3260,
+        "encodedBodySize": 2960,
+        "duration": 69.30000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/guide-a6-D8j2iqVj.js",
+        "transferSize": 2205,
+        "encodedBodySize": 1905,
+        "duration": 71.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Equipment-CS0vvPOB.js",
+        "transferSize": 7524,
+        "encodedBodySize": 7224,
+        "duration": 71.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/OpeningV4-DO67nsdg.js",
+        "transferSize": 1719,
+        "encodedBodySize": 1419,
+        "duration": 73.8999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/ForecastV4-CbsV7ie5.js",
+        "transferSize": 38761,
+        "encodedBodySize": 38461,
+        "duration": 78.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CompactLabelsC2-CUmcy82q.js",
+        "transferSize": 813,
+        "encodedBodySize": 513,
+        "duration": 75.1000000089407
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/OddsC2-Dd-0htEh.js",
+        "transferSize": 2680,
+        "encodedBodySize": 2380,
+        "duration": 75.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/RouteTonic-C5GLw35W.css",
+        "transferSize": 1031,
+        "encodedBodySize": 731,
+        "duration": 10.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/KeepsakeArtA6-DbdQhOhZ.js",
+        "transferSize": 3875,
+        "encodedBodySize": 3575,
+        "duration": 77.59999999403954
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/RouteTonic-Cn6caHPo.js",
+        "transferSize": 1277,
+        "encodedBodySize": 977,
+        "duration": 78.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/EquipmentV4-eqlOGfmE.js",
+        "transferSize": 4303,
+        "encodedBodySize": 4003,
+        "duration": 78.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CollectibleDesigns-C8qxqdqE.js",
+        "transferSize": 3384,
+        "encodedBodySize": 3084,
+        "duration": 78.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Invitations-Bh3kWEMR.js",
+        "transferSize": 5771,
+        "encodedBodySize": 5471,
+        "duration": 82.09999999403954
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CombatClassBadge-C7kSYs-P.js",
+        "transferSize": 873,
+        "encodedBodySize": 573,
+        "duration": 81.40000000596046
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CompanionCard-wbHn5i0N.js",
+        "transferSize": 1767,
+        "encodedBodySize": 1467,
+        "duration": 81.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CombatClassBadge-DPHF4du6.css",
+        "transferSize": 661,
+        "encodedBodySize": 361,
+        "duration": 10.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/PowerA6-DyzsjO9q.js",
+        "transferSize": 2644,
+        "encodedBodySize": 2344,
+        "duration": 81.80000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/SelectorV4-Druy4hLq.js",
+        "transferSize": 3466,
+        "encodedBodySize": 3166,
+        "duration": 82
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/SelectorV4-DD_Dvot-.css",
+        "transferSize": 1338,
+        "encodedBodySize": 1038,
+        "duration": 13.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Invitations-CGE1bmM8.css",
+        "transferSize": 2680,
+        "encodedBodySize": 2380,
+        "duration": 13.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/runtime-g0sMm9jV.js",
+        "transferSize": 3696,
+        "encodedBodySize": 3396,
+        "duration": 87.09999999403954
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/LiveCounters-CaQF4fAt.js",
+        "transferSize": 5459,
+        "encodedBodySize": 5159,
+        "duration": 87.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/siwe-Bq4eGOJj.js",
+        "transferSize": 4739,
+        "encodedBodySize": 4439,
+        "duration": 87.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/star-plans-v4-CkRibhaK.js",
+        "transferSize": 902,
+        "encodedBodySize": 602,
+        "duration": 87.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/indexed-logs-CHR37Zx1.js",
+        "transferSize": 8097,
+        "encodedBodySize": 7797,
+        "duration": 87.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/TeamCollection-CgBiUMBw.js",
+        "transferSize": 4688,
+        "encodedBodySize": 4388,
+        "duration": 90.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/PreparationV4-vsvypsRv.js",
+        "transferSize": 3171,
+        "encodedBodySize": 2871,
+        "duration": 93.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/WalletProvider-DjDvDnwL.js",
+        "transferSize": 1514,
+        "encodedBodySize": 1214,
+        "duration": 93.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/CompanionGrowthV4-Dcq8qZfk.js",
+        "transferSize": 2417,
+        "encodedBodySize": 2117,
+        "duration": 93.59999999403954
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Entrance-D4IZD_Ds.js",
+        "transferSize": 5595,
+        "encodedBodySize": 5295,
+        "duration": 93.8999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Entrance-uZPoFInA.css",
+        "transferSize": 1024,
+        "encodedBodySize": 724,
+        "duration": 13.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/shell-BAhyeoIG.css",
+        "transferSize": 5311,
+        "encodedBodySize": 5011,
+        "duration": 17.400000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/engine-DhdIExQI.js",
+        "transferSize": 6488,
+        "encodedBodySize": 6188,
+        "duration": 97
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/callouts-Dw6WBO1-.js",
+        "transferSize": 3462,
+        "encodedBodySize": 3162,
+        "duration": 98.90000000596046
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/cardrpg-B6d9u7aH.css",
+        "transferSize": 6085,
+        "encodedBodySize": 5785,
+        "duration": 18.80000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/cardrpg-y--jSL44.js",
+        "transferSize": 1265,
+        "encodedBodySize": 965,
+        "duration": 99.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/ui-v3-BJZ1Kbqb.js",
+        "transferSize": 749,
+        "encodedBodySize": 449,
+        "duration": 99.90000000596046
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/entry-hs6S3DLC.css",
+        "transferSize": 12035,
+        "encodedBodySize": 11735,
+        "duration": 20.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/ui-v3-8hmYY4Mz.css",
+        "transferSize": 13268,
+        "encodedBodySize": 12968,
+        "duration": 22.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/audio-DHau4yGJ.js",
+        "transferSize": 3893,
+        "encodedBodySize": 3593,
+        "duration": 100.09999999403954
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/ChainRoot-DB3sY0iq.js",
+        "transferSize": 3804,
+        "encodedBodySize": 3504,
+        "duration": 6.4000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/GasBalance-DZd6wN9e.js",
+        "transferSize": 1432,
+        "encodedBodySize": 1132,
+        "duration": 6.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/errors-DVUfsOiN.js",
+        "transferSize": 1744,
+        "encodedBodySize": 1444,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/GasBalance-o5SbRjst.css",
+        "transferSize": 5472,
+        "encodedBodySize": 5172,
+        "duration": 7
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/YarnBalance-D2lEL7cN.js",
+        "transferSize": 931,
+        "encodedBodySize": 631,
+        "duration": 6.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/ChainRoot-QP3OeX9M.css",
+        "transferSize": 2155,
+        "encodedBodySize": 1855,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/landing.webp",
+        "transferSize": 274068,
+        "encodedBodySize": 273768,
+        "duration": 9.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-deed.webp",
+        "transferSize": 10084,
+        "encodedBodySize": 9784,
+        "duration": 4.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/fight.svg",
+        "transferSize": 910,
+        "encodedBodySize": 610,
+        "duration": 4.300000011920929
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-wallet.webp",
+        "transferSize": 11322,
+        "encodedBodySize": 11022,
+        "duration": 4.4000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-yarn.webp",
+        "transferSize": 11818,
+        "encodedBodySize": 11518,
+        "duration": 4.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-fuse.webp",
+        "transferSize": 10124,
+        "encodedBodySize": 9824,
+        "duration": 4.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-history.webp",
+        "transferSize": 9668,
+        "encodedBodySize": 9368,
+        "duration": 8.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-economy.webp",
+        "transferSize": 15132,
+        "encodedBodySize": 14832,
+        "duration": 9.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-bell.webp",
+        "transferSize": 11896,
+        "encodedBodySize": 11596,
+        "duration": 12
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-settings.webp",
+        "transferSize": 10752,
+        "encodedBodySize": 10452,
+        "duration": 11.900000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-sound.webp",
+        "transferSize": 10642,
+        "encodedBodySize": 10342,
+        "duration": 12.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-season.webp",
+        "transferSize": 14390,
+        "encodedBodySize": 14090,
+        "duration": 12.400000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/home.svg",
+        "transferSize": 868,
+        "encodedBodySize": 568,
+        "duration": 12.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-forge.webp",
+        "transferSize": 10464,
+        "encodedBodySize": 10164,
+        "duration": 13.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-cats.webp",
+        "transferSize": 11948,
+        "encodedBodySize": 11648,
+        "duration": 15.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/fonts/barlow-condensed-latin-500-normal.woff2",
+        "transferSize": 21724,
+        "encodedBodySize": 21424,
+        "duration": 4.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/fonts/baloo-2-latin-800-normal.woff2",
+        "transferSize": 18932,
+        "encodedBodySize": 18632,
+        "duration": 4.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/fonts/barlow-condensed-latin-700-normal.woff2",
+        "transferSize": 22744,
+        "encodedBodySize": 22444,
+        "duration": 4.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/chain-local.json",
+        "transferSize": 809,
+        "encodedBodySize": 509,
+        "duration": 4.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:8546/",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 1
+      },
+      {
+        "path": "http://127.0.0.1:8546/",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 1.0999999940395355
+      },
+      {
+        "path": "http://127.0.0.1:8546/",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 1.0999999940395355
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/manifest.json",
+        "transferSize": 37671,
+        "encodedBodySize": 37371,
+        "duration": 28
+      },
+      {
+        "path": "http://127.0.0.1:5997/functions/v1/auth-nonce",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 11.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:8546/",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 11.899999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/menu-voices.webm",
+        "transferSize": 98501,
+        "encodedBodySize": 98201,
+        "duration": 9.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/b2-ui-baked.webm",
+        "transferSize": 69846,
+        "encodedBodySize": 69546,
+        "duration": 9.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/b2-ui.webm",
+        "transferSize": 246803,
+        "encodedBodySize": 246503,
+        "duration": 13
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/menu-home.webm",
+        "transferSize": 303958,
+        "encodedBodySize": 303658,
+        "duration": 13.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/landing.webm",
+        "transferSize": 448452,
+        "encodedBodySize": 448152,
+        "duration": 20.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5997/functions/v1/auth-verify",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 21.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/refresh.svg",
+        "transferSize": 638,
+        "encodedBodySize": 338,
+        "duration": 2.6000000089406967
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/chain-index-CzTxO85i.js",
+        "transferSize": 1433,
+        "encodedBodySize": 1133,
+        "duration": 7.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/DemoJourney-Dk6aooRG.js",
+        "transferSize": 7313,
+        "encodedBodySize": 7013,
+        "duration": 7.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/DemoJourney-BQxANTh-.css",
+        "transferSize": 1714,
+        "encodedBodySize": 1414,
+        "duration": 9.699999988079071
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-ZHxSjkYI.webp",
+        "transferSize": 134096,
+        "encodedBodySize": 133796,
+        "duration": 8.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-Dvp7yae4.webp",
+        "transferSize": 134834,
+        "encodedBodySize": 134534,
+        "duration": 6.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/panko-C5k0olxY.webp",
+        "transferSize": 165998,
+        "encodedBodySize": 165698,
+        "duration": 6.9000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/soot-BBMAonk6.webp",
+        "transferSize": 138146,
+        "encodedBodySize": 137846,
+        "duration": 8.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/arrow.svg",
+        "transferSize": 816,
+        "encodedBodySize": 516,
+        "duration": 5.4000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/heart.svg",
+        "transferSize": 658,
+        "encodedBodySize": 358,
+        "duration": 5.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-quest.webp",
+        "transferSize": 12620,
+        "encodedBodySize": 12320,
+        "duration": 5.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/chain-local.json",
+        "transferSize": 809,
+        "encodedBodySize": 509,
+        "duration": 12.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/button-disabled-normal.webp",
+        "transferSize": 10994,
+        "encodedBodySize": 10694,
+        "duration": 12
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/button-primary-hover.webp",
+        "transferSize": 13112,
+        "encodedBodySize": 12812,
+        "duration": 2.4000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5997/functions/v1/chain-judge",
+        "transferSize": 0,
+        "encodedBodySize": 0,
+        "duration": 37.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/Battle-BPzqdFrJ.js",
+        "transferSize": 62976,
+        "encodedBodySize": 62676,
+        "duration": 20
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/layout-c2-BYfNEhtZ.js",
+        "transferSize": 1785,
+        "encodedBodySize": 1485,
+        "duration": 10.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/core-DTaTrRcr.js",
+        "transferSize": 7698,
+        "encodedBodySize": 7398,
+        "duration": 11
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/player-BfHBWtxd.js",
+        "transferSize": 26562,
+        "encodedBodySize": 26262,
+        "duration": 17.200000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/stage-painting-XZrw5MlG.js",
+        "transferSize": 1533,
+        "encodedBodySize": 1233,
+        "duration": 11
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/assets-Bvf-cZhY.js",
+        "transferSize": 19508,
+        "encodedBodySize": 19208,
+        "duration": 13.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/FeelLab-DDgms2hg.js",
+        "transferSize": 4011,
+        "encodedBodySize": 3711,
+        "duration": 18.899999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/FeelLab-BRfFjXsP.css",
+        "transferSize": 1237,
+        "encodedBodySize": 937,
+        "duration": 14.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/EffectEvidence-Ck8HpEdr.js",
+        "transferSize": 67541,
+        "encodedBodySize": 67241,
+        "duration": 27.600000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/battle-layout-DafSuDpI.css",
+        "transferSize": 6311,
+        "encodedBodySize": 6011,
+        "duration": 16.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/BattleHudV3-Dr90UGbs.js",
+        "transferSize": 13840,
+        "encodedBodySize": 13540,
+        "duration": 20
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/SoundControlA6-C69du2sr.js",
+        "transferSize": 952,
+        "encodedBodySize": 652,
+        "duration": 19.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/SoundControlA6-DSV53eLu.css",
+        "transferSize": 513,
+        "encodedBodySize": 213,
+        "duration": 13.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/BattleHudV3-BNsS6fjO.css",
+        "transferSize": 8936,
+        "encodedBodySize": 8636,
+        "duration": 18.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/clock.svg",
+        "transferSize": 880,
+        "encodedBodySize": 580,
+        "duration": 3.8999999910593033
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-boss-seal.webp",
+        "transferSize": 10796,
+        "encodedBodySize": 10496,
+        "duration": 4
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/mochi/portrait.webp",
+        "transferSize": 16254,
+        "encodedBodySize": 15954,
+        "duration": 4
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/clover/portrait.webp",
+        "transferSize": 14622,
+        "encodedBodySize": 14322,
+        "duration": 4.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/soot/portrait.webp",
+        "transferSize": 16610,
+        "encodedBodySize": 16310,
+        "duration": 4.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/panko/portrait.webp",
+        "transferSize": 14530,
+        "encodedBodySize": 14230,
+        "duration": 4.100000008940697
+      },
+      {
+        "path": "http://127.0.0.1:5998/icons/menu.svg",
+        "transferSize": 820,
+        "encodedBodySize": 520,
+        "duration": 6.5999999940395355
+      },
+      {
+        "path": "http://127.0.0.1:5998/art/v3-shell/b2/icon-potion.webp",
+        "transferSize": 9264,
+        "encodedBodySize": 8964,
+        "duration": 6.699999988079071
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-1x-CkbkV-l6.webp",
+        "transferSize": 49978,
+        "encodedBodySize": 49678,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-1x-BBAlJAV3.webp",
+        "transferSize": 45222,
+        "encodedBodySize": 44922,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/soot-1x-B-eVyKBz.webp",
+        "transferSize": 35480,
+        "encodedBodySize": 35180,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/panko-1x-BkVihpdC.webp",
+        "transferSize": 49268,
+        "encodedBodySize": 48968,
+        "duration": 6.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/yarn-giant-CCu0tWKm.webp",
+        "transferSize": 93158,
+        "encodedBodySize": 92858,
+        "duration": 6.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/binding-thread-xFBSvJjL.webp",
+        "transferSize": 28528,
+        "encodedBodySize": 28228,
+        "duration": 6.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/baloo-2-latin-800-normal-BbF3Etk1.woff2",
+        "transferSize": 18932,
+        "encodedBodySize": 18632,
+        "duration": 6.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-1-1x-0eO9HYpi.webp",
+        "transferSize": 4566,
+        "encodedBodySize": 4266,
+        "duration": 6
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-4-1x-Cq_OpluA.webp",
+        "transferSize": 4858,
+        "encodedBodySize": 4558,
+        "duration": 4.9000000059604645
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-2-1x-BzG82R-T.webp",
+        "transferSize": 4420,
+        "encodedBodySize": 4120,
+        "duration": 4.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-4-1x-DrUYIN-L.webp",
+        "transferSize": 4914,
+        "encodedBodySize": 4614,
+        "duration": 5.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-DMMElfhQ.atlas",
+        "transferSize": 2040,
+        "encodedBodySize": 1740,
+        "duration": 2.3999999910593033
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/panko/rig.json",
+        "transferSize": 39166,
+        "encodedBodySize": 38866,
+        "duration": 20.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/yarn-giant/rig.json",
+        "transferSize": 36362,
+        "encodedBodySize": 36062,
+        "duration": 11.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/binding-thread/rig.json",
+        "transferSize": 36501,
+        "encodedBodySize": 36201,
+        "duration": 18.099999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/painted-cafe-c11-v1-B-hcVdVI.webp",
+        "transferSize": 244596,
+        "encodedBodySize": 244296,
+        "duration": 7.899999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/brioche-0-Cle3gWYa.webp",
+        "transferSize": 792852,
+        "encodedBodySize": 792552,
+        "duration": 22.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/biscuit-0-DpSB8rBh.webp",
+        "transferSize": 639498,
+        "encodedBodySize": 639198,
+        "duration": 18
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/cinnamon-0-DIPZVf-3.webp",
+        "transferSize": 827026,
+        "encodedBodySize": 826726,
+        "duration": 32.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-0-C1qh75or.webp",
+        "transferSize": 704348,
+        "encodedBodySize": 704048,
+        "duration": 28.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/binding-thread-0-PEmTGcfi.webp",
+        "transferSize": 275940,
+        "encodedBodySize": 275640,
+        "duration": 22.69999998807907
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/button-guard-0-MAHzIyUR.webp",
+        "transferSize": 455314,
+        "encodedBodySize": 455014,
+        "duration": 28.099999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/crumb-sentinel-0-CVniO6dz.webp",
+        "transferSize": 458300,
+        "encodedBodySize": 458000,
+        "duration": 33.19999998807907
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/kettle-knight-0-DlR3dV_Z.webp",
+        "transferSize": 239658,
+        "encodedBodySize": 239358,
+        "duration": 33.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/needle-moth-0-l3M7OZC0.webp",
+        "transferSize": 212122,
+        "encodedBodySize": 211822,
+        "duration": 33.400000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/pantry-crown-0-BgSHEvD8.webp",
+        "transferSize": 318444,
+        "encodedBodySize": 318144,
+        "duration": 37
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/pollen-scout-0-Qie5-jFC.webp",
+        "transferSize": 250762,
+        "encodedBodySize": 250462,
+        "duration": 36.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/practice-cushion-0-D7hpj_8H.webp",
+        "transferSize": 308884,
+        "encodedBodySize": 308584,
+        "duration": 38
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/rain-spool-0-KY9U9vi7.webp",
+        "transferSize": 255024,
+        "encodedBodySize": 254724,
+        "duration": 37.400000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/sock-skipper-0-FF7wzY2F.webp",
+        "transferSize": 248968,
+        "encodedBodySize": 248668,
+        "duration": 37.5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/spool-ram-0-Db3h7EX9.webp",
+        "transferSize": 284292,
+        "encodedBodySize": 283992,
+        "duration": 38.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/teacup-healer-0-DamYxlQo.webp",
+        "transferSize": 335754,
+        "encodedBodySize": 335454,
+        "duration": 53.79999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/yarn-giant-0-Sj9YVSGD.webp",
+        "transferSize": 311794,
+        "encodedBodySize": 311494,
+        "duration": 53.400000005960464
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/inkcap-0-BtGb_HO9.webp",
+        "transferSize": 742318,
+        "encodedBodySize": 742018,
+        "duration": 68.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mallow-0-D8kvql6I.webp",
+        "transferSize": 749626,
+        "encodedBodySize": 749326,
+        "duration": 68.80000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/marigold-0-N12vppiw.webp",
+        "transferSize": 803678,
+        "encodedBodySize": 803378,
+        "duration": 71
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-0-Dm68abJ-.webp",
+        "transferSize": 727494,
+        "encodedBodySize": 727194,
+        "duration": 70.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/panko-0-CWKYqwim.webp",
+        "transferSize": 862032,
+        "encodedBodySize": 861732,
+        "duration": 72.70000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/soot-0-CNUjObz1.webp",
+        "transferSize": 661436,
+        "encodedBodySize": 661136,
+        "duration": 72.3999999910593
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/sorrel-0-JDSAnPWs.webp",
+        "transferSize": 620102,
+        "encodedBodySize": 619802,
+        "duration": 72.90000000596046
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/velvet-0-BWKeMacQ.webp",
+        "transferSize": 742102,
+        "encodedBodySize": 741802,
+        "duration": 73.20000000298023
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/yarn-giant/portrait.webp",
+        "transferSize": 20336,
+        "encodedBodySize": 20036,
+        "duration": 72.29999999701977
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-mochi.webm",
+        "transferSize": 94862,
+        "encodedBodySize": 94562,
+        "duration": 4.199999988079071
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-soot.webm",
+        "transferSize": 83485,
+        "encodedBodySize": 83185,
+        "duration": 4.699999988079071
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-clover.webm",
+        "transferSize": 104904,
+        "encodedBodySize": 104604,
+        "duration": 4.700000002980232
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-binding-thread.webm",
+        "transferSize": 68718,
+        "encodedBodySize": 68418,
+        "duration": 3.2999999970197678
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-yarn-giant.webm",
+        "transferSize": 67157,
+        "encodedBodySize": 66857,
+        "duration": 3.5999999940395355
+      },
+      {
+        "path": "http://127.0.0.1:5998/audio/callout-panko.webm",
+        "transferSize": 87891,
+        "encodedBodySize": 87591,
+        "duration": 5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/soot-NOC_z34r.json",
+        "transferSize": 1734,
+        "encodedBodySize": 1434,
+        "duration": 14.399999991059303
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-DGr7McCx.json",
+        "transferSize": 26542,
+        "encodedBodySize": 26242,
+        "duration": 17.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-CBI7vRHn.json",
+        "transferSize": 25216,
+        "encodedBodySize": 24916,
+        "duration": 17.799999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/panko/rig-depth.png",
+        "transferSize": 1570190,
+        "encodedBodySize": 1569890,
+        "duration": 21
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/yarn-giant/rig-depth.png",
+        "transferSize": 2823572,
+        "encodedBodySize": 2823272,
+        "duration": 22.30000001192093
+      },
+      {
+        "path": "http://127.0.0.1:5998/units/binding-thread/rig-depth.png",
+        "transferSize": 1156621,
+        "encodedBodySize": 1156321,
+        "duration": 19.599999994039536
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/soot-D9EdxT-u.png",
+        "transferSize": 948015,
+        "encodedBodySize": 947715,
+        "duration": 6.299999997019768
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/mochi-BTMx_wwY.png",
+        "transferSize": 858753,
+        "encodedBodySize": 858453,
+        "duration": 5
+      },
+      {
+        "path": "http://127.0.0.1:5998/assets/clover-Cgil4ddk.png",
+        "transferSize": 971745,
+        "encodedBodySize": 971445,
+        "duration": 5.200000002980232
+      }
+    ],
+    "method": "Fresh browser context, service workers blocked, HTTP cache disabled; CDP full encoded responses for requests begun before first battle (conservative upper bound); rAF cadence only while the visible boss battle renders, including stalls.",
+    "limitations": [
+      "rAF measures browser rendering cadence; it is not a hardware display scanout measurement.",
+      "Local API and Anvil are isolated production-build test infrastructure. This does not prove public network or sponsor latency."
+    ]
+  },
+  "elapsedMs": 203299,
+  "complete": true,
+  "proofContrastPass": true,
+  "runtimeChangesAtEnd": [],
+  "runtimeStable": true,
+  "teardownErrors": [],
+  "pass": false
+}

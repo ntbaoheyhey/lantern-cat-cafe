@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-16T12:08:28.618Z",
+  "trial": "S8-production-journeys-1",
+  "scope": "Production Vite preview with local API and Anvil; no public deployment or Fuji transaction latency claim.",
+  "gates": {
+    "tenComplete": false,
+    "realProductionBuild": false,
+    "stableRuntime": false,
+    "boundHarness": false,
+    "noDevelopmentPaths": false,
+    "transfer": false,
+    "bossFps": false,
+    "receiptValuesAndHistory": false
+  },
+  "pass": false,
+  "firstBattleMedianMs": null,
+  "firstReceiptMedianMs": null,
+  "bossMedianFps": null,
+  "maximumInitialTransferBytes": 0,
+  "sourceCommits": [
+    "1e04ea112c4e0de4a7bbe69b7f4946a44ac4d6a8"
+  ],
+  "buildSourceCommits": [
+    "e4803c14a9605520dd339b1f89b746683e125464"
+  ],
+  "runs": [
+    {
+      "id": "1280-01",
+      "pass": false,
+      "failure": "locator.waitFor: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Start trial', exact: true }) to be visible\u001b[22m\n",
+      "boss": null,
+      "initialTransferBytes": 0
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/v4-ship/RUNS/S8-production-journeys-1/run-1280-01.json",
+      "sha256": "0fa659adc31946d4cfa45db1ff55ee42069bbbb9dff163b870795b05f5c4dad7"
+    }
+  ]
+}

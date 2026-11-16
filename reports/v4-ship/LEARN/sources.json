@@ -992,5 +992,75 @@
     "accessed": "2026-11-16",
     "url_or_path": "reports/v4-ship/S2b/econ/CLASS-POWER-RETENTION25.json",
     "takeaway": "Canonical config860d9a7a...matches currentECONOMY_LAB;18scenarios/200seeds at25%retention; two failed boundaries are retained."
+  },
+  {
+    "id": "S8-CORS",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "type": "internet-doc",
+    "topic": "S8 rehearsal/review preparation",
+    "takeaway": "Exact scheme/host/port must match the API allowlist; keep rejected-origin evidence."
+  },
+  {
+    "id": "S8-SIWE",
+    "url_or_path": "https://eips.ethereum.org/EIPS/eip-4361",
+    "type": "formal-document",
+    "topic": "S8 rehearsal/review preparation",
+    "takeaway": "SIWE domain includes the port; bind the disposable API to the production preview origin instead of weakening checks."
+  },
+  {
+    "id": "S8-ORIGIN-COMPARISON",
+    "url_or_path": "reports/v4-ship/S8/production-build-2.json",
+    "type": "own-experiment",
+    "topic": "S8 rehearsal/review preparation",
+    "takeaway": "Original preview origin returned403; dedicated5998 fixture returns204 for5998 and403 for5994."
+  },
+  {
+    "id": "S10-WCAG",
+    "url_or_path": "https://www.w3.org/TR/WCAG22/#captions-prerecorded",
+    "type": "formal-document",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "Caption meaningful prerecorded audio and retain clear timing/provenance labels."
+  },
+  {
+    "id": "S10-FFMPEG-ENCODING",
+    "url_or_path": "https://ffmpeg.org/ffmpeg.html#Main-options",
+    "type": "internet-doc",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "Two-pass rate control provides a file-budget starting point; verify the complete final film."
+  },
+  {
+    "id": "S10-FFMPEG-FILTERS",
+    "url_or_path": "https://ffmpeg.org/ffmpeg-filters.html#subtitles-1",
+    "type": "internet-doc",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "libass burns captions; aligned SSIM is a quality metric, not a readability proof."
+  },
+  {
+    "id": "S10-PLAYWRIGHT",
+    "url_or_path": "https://playwright.dev/docs/videos",
+    "type": "internet-doc",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "Close the context to finish video; existing compositor/audio capture gives timestamped project evidence."
+  },
+  {
+    "id": "S10-VITE",
+    "url_or_path": "https://vite.dev/guide/build.html#public-base-path",
+    "type": "internet-doc",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "Dynamically constructed public URLs need explicit offline asset resolution."
+  },
+  {
+    "id": "S10-SERVICE-WORKERS",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers",
+    "type": "internet-doc",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "Secure-origin worker registration does not give cold file-based offline opening."
+  },
+  {
+    "id": "S10-CODEC-COMPARISON",
+    "url_or_path": "reports/v4-ship/S10/codec-comparison-1.json",
+    "type": "own-experiment",
+    "topic": "S10 rehearsal/review preparation",
+    "takeaway": "CRF24 versus430k two-pass:1795295 versus775605 bytes;SSIM.988772 versus.969863 on identical12-second historical footage."
   }
 ]
