@@ -15,6 +15,7 @@ export interface AudioHit {id:string;result:string;at:number;layers?:LayerPlayed
 export class AudioEngine implements AudioBridge {
  private ctx?:AudioContext;
  private mixTrim?:GainNode;
+ private musicBed?:GainNode;
  private buses=new Map<Bus,GainNode>(); private duck?:GainNode; private speechSpace?:BiquadFilterNode;
  private tones=new Map<Bus,BiquadFilterNode>();
  private voiceBody?:BiquadFilterNode;
@@ -48,8 +49,10 @@ export class AudioEngine implements AudioBridge {
    this.buses.get('master')!.connect(trim);this.duck=this.ctx.createGain();this.duck.connect(this.buses.get('master')!);
    this.speechSpace=this.ctx.createBiquadFilter();this.speechSpace.type='lowshelf';this.speechSpace.frequency.value=1200;this.speechSpace.gain.value=0;
    this.speechSpace.connect(this.duck);
+   // LEARN/S5-implementation.md: keep the calibrated bed separate from saved sliders.
+   this.musicBed=this.ctx.createGain();this.musicBed.connect(this.speechSpace);
    for(const name of BUS_NAMES.slice(1)){
-    const output=name==='music'?this.speechSpace:this.buses.get('master')!;
+    const output=name==='music'?this.musicBed:this.buses.get('master')!;
     if(name==='voice'||name==='sfx'||name==='music'){
      const tone=this.ctx.createBiquadFilter();tone.type='highshelf';tone.frequency.value=1500;tone.gain.value=0;
      this.tones.set(name,tone);
@@ -74,7 +77,7 @@ export class AudioEngine implements AudioBridge {
  }
  async preload(screen:'home'|'battle'|'landing'){
   if(!this.ctx)return;
-  try{const m=await this.loadManifest();const musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui',...(musicPack?[musicPack]:[])]:['b2-ui',...(musicPack?[musicPack]:[])];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
+  try{const m=await this.loadManifest();const musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;const ids=screen==='battle'?['b2-hits','b2-motion','b2-magic','b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])]:['b2-ui','b2-ui-baked',...(musicPack?[musicPack]:[])];await Promise.all(ids.filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));}catch{/* playback can retry */}
  }
  private record(id:string,result:string,layers?:LayerPlayed[]){
   this.hits.push({id,result,at:Date.now(),...(layers?{layers,sfx:this.count('sfx'),voice:this.count('voice'),duckDb:this.count('voice')||id.startsWith('ult.')?-8:0}:{})});
@@ -107,9 +110,10 @@ export class AudioEngine implements AudioBridge {
   // A lighter low-mid voice body makes the spoken attacks clearer over the
   // boss strings; compensate presence at the source without shifting pitch.
   if(this.voiceBody){const gain=this.voiceBody.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(scene==='music.boss'?-6:0,now+.15);}
-  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?2.8:scene==='music.boss'?4.5:6),now+.15);}
+  if(this.musicBed){const gain=this.musicBed.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'||scene==='music.boss'?-6:0),now+.15);}
+  if(this.mixTrim){const gain=this.mixTrim.gain,now=this.ctx.currentTime;gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(dbGain(scene==='music.battle'?1.3:scene==='music.boss'?3:6),now+.15);}
  }
- private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.12);}
+ private duckMusic(){if(!this.ctx||!this.duck)return;this.makeSpeechSpace();const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(dbGain(-8),now+.04);}
  private releaseDuck(){this.makeSpeechSpace();if(!this.ctx||!this.duck||[...this.active].some(p=>p.bus==='voice'||p.id.startsWith('ult.')))return;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
  play(id:string,opts:CueOptions={}){
   const now=Date.now();
@@ -204,7 +208,9 @@ export class AudioEngine implements AudioBridge {
  private start(id:string,buffer:AudioBuffer,s:Sample,priority:number,baseRate:number,volume:number,delay:number,eq:LayerEq,group:number){
   const ctx=this.ctx!,source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffer;
   const rate=baseRate*(s.bus==='sfx'?this.rate:1);source.playbackRate.value=rate;gain.gain.value=volume;
-  const now=ctx.currentTime+delay,duration=s.duration/rate;source.connect(gain);
+  // Primary interface feedback ends within 300 ms, including layer offset and pitch.
+  const sourceDuration=!s.loop&&(id.startsWith('ui.')||id.startsWith('tx.'))?Math.min(s.duration,Math.max(0,.3-delay)*rate):s.duration;
+  const now=ctx.currentTime+delay,duration=sourceDuration/rate;source.connect(gain);
   let filter:BiquadFilterNode|undefined;
   if(eq!=='flat'){
    filter=ctx.createBiquadFilter();filter.type=eq==='low-shelf-180'?'lowshelf':'highpass';
@@ -219,7 +225,7 @@ export class AudioEngine implements AudioBridge {
    const attack=Math.min(movement ? .035 : .003,duration*.3),release=Math.min(movement ? .04 : .015,duration*.3);
    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
    gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
-   source.start(now,s.start,s.duration);
+   source.start(now,s.start,sourceDuration);
   }
   if(s.bus==='voice'||id.startsWith('ult.'))this.duckMusic();
   return p;

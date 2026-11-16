@@ -586,5 +586,54 @@
     "type": "own-experiment",
     "topic": "real boss output A/B/C",
     "takeaway": "Three actual60-second captures compare music/trim/duck shapes; -6dBbed gives6.1LU LRA versus2.6current."
+  },
+  {
+    "id": "S5-implementation-formal",
+    "url_or_path": "https://www.w3.org/TR/webaudio/",
+    "type": "formal-document",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Sample clock and render quanta; preserve gameplay timing."
+  },
+  {
+    "id": "S5-implementation-ramp",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/setTargetAtTime",
+    "type": "internet-doc",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Time constant differs from full fade duration."
+  },
+  {
+    "id": "S5-implementation-hold",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime",
+    "type": "internet-doc",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Automation hold with compatibility limitations."
+  },
+  {
+    "id": "S5-implementation-start",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start",
+    "type": "internet-doc",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Buffer duration and pitch determine wall duration."
+  },
+  {
+    "id": "S5-implementation-timestamp",
+    "url_or_path": "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp",
+    "type": "internet-doc",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Relate sample position to performance time."
+  },
+  {
+    "id": "S5-implementation-meter",
+    "url_or_path": "https://ffmpeg.org/ffmpeg-filters.html#ebur128",
+    "type": "internet-doc",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Measure captured output without normalization."
+  },
+  {
+    "id": "S5-implementation-compare",
+    "url_or_path": "reports/v4-ship/S5/center-probe/mix-probe.json",
+    "type": "own-experiment",
+    "topic": "S5 calibrated audio implementation",
+    "takeaway": "Current -14.94/2.2/-2.23 versus quiet-center -17.95/5.9/-3.07 LUFS/LRA/dBTP."
   }
 ]

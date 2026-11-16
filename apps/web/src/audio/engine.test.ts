@@ -50,6 +50,13 @@ describe('layered playback admission and variants',()=>{
   expect(Context.latest.filters.map(f=>[f.type,f.frequency.value])).toEqual(expect.arrayContaining([['lowshelf',1200],['lowshelf',180],['highpass',1800]]));
   expect(Context.latest.sources.map(s=>s.start.mock.calls[0]?.[0])).toEqual([10,10.007,10.018,10.023]);
  });
+ it('keeps slow pitched interface layers inside 300 ms without shortening battle impacts',async()=>{
+  const e=new AudioEngine(()=>0);await e.unlock();e.play('ui.click',{pitch:.5});await flush();
+  const ui=Context.latest.sources.slice();expect(ui).toHaveLength(2);
+  for(const source of ui){const [at,,seconds]=source.start.mock.calls[0]!;expect(at-10+seconds/source.playbackRate.value).toBeCloseTo(.3,6);}
+  e.play('hit.blunt');await flush();
+  for(const source of Context.latest.sources.slice(2))expect(source.start.mock.calls[0]?.[2]).toBe(.4);
+ });
  it('restores nested dialog music while letting later navigation take precedence',async()=>{
   const music=samples('music').map(s=>({...s,loop:true}));
   const m={...fixture,cues:{...fixture.cues,'music.home':music,'music.forge':music,'music.battle':music}};
