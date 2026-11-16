@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-16T21:13:48.044679+00:00",
+  "input": {
+    "path": "reports/v4-ship/S11/ranged-runtime-playback-1.json",
+    "sha256": "832b46e3bfe66a4ce83cbb387f70d7c38397c736e46785c9ce5594578a007d92"
+  },
+  "events": {
+    "path": "reports/v4-ship/S11/ranged-runtime-playback-1.events.json.gz",
+    "sha256": "34ee615c2404d8392f51b43b5432918818ce3774060ca607fe47b4adcee41af1"
+  },
+  "cases": 168,
+  "profiles": {
+    "fixed-1": 28,
+    "fixed-2": 28,
+    "fixed-3": 28,
+    "accelerate-before-launch": 28,
+    "slow-during-flight": 28,
+    "accelerate-after-launch": 28
+  },
+  "viewports": {
+    "1280": 84,
+    "1440": 84
+  },
+  "normalPreloadAndSourceAdmission": true,
+  "perGroupNaturalCompletion": true,
+  "sourceStartCeiling": true,
+  "changingProfilesOnce": true,
+  "pass": true,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false,
+  "scope": "Independent coverage and raw-event check of installed scheduler output; no physical onset or listener inference."
+}

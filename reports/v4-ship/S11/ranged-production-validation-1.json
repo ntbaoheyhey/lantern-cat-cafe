@@ -1,0 +1,4079 @@
+{
+  "at": "2026-11-16T21:23:47.597Z",
+  "learn": "reports/v4-ship/LEARN/S11-ranged-audio.md",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/ranged-production-validation.mjs",
+    "sha256": "577d8fca05925f9fe937dfdb3e956b2862c7852c8a97b2745f1021204a36ee60"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/ranged-class-inventory-1.json",
+      "sha256": "d876b50ecb79f97e28d1392658450ff0c7270c658c98872779236f87c31b9e5c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-runtime-playback-1.json",
+      "sha256": "832b46e3bfe66a4ce83cbb387f70d7c38397c736e46785c9ce5594578a007d92"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-integration-regression-comparison-1.json",
+      "sha256": "d6e8c5528aec4b465770dfc1dee67388b6195d57d5c40e091c73d0e00161e7eb"
+    }
+  ],
+  "rows": [
+    {
+      "evidence": {
+        "path": "reports/v4-ship/S11/scene-journey-7.json",
+        "sha256": "def5998a13c56d69e35d853f965ed489b78a6576fb814283b3e4afe152737f82"
+      },
+      "events": {
+        "path": "reports/v4-ship/S11/scene-journey-7.events.json.gz",
+        "sha256": "4426f3aa0c5f75526dc0931264f816259e20a75d7272151529703e376bfe3033"
+      },
+      "capture": {
+        "path": "work/v4ship-audio/scene-journey-7/journey.webm",
+        "bytes": 3210532,
+        "sha256": "63c16b6d89353c3b5186c9f2a683bafb5183140969ca4bd4e992806921f4f29b",
+        "wallSeconds": 199.25100016593933,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 3320,
+        "encodedSeconds": 199.2,
+        "timestampSpanSeconds": 199.196,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000143245,
+        "minimumTimestampGapMs": -3.0000000000143245
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sourceCommit": "608b7b9864f308716e499e5379958a9fc10e9756",
+      "verifiedReceipts": 18,
+      "causalContacts": 124,
+      "rangedPlans": 58,
+      "ranged": [
+        {
+          "scene": 0,
+          "plan": 1,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -50.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -17.400000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 5,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -68.40000000223517
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.400000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.09999999776482582
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 6,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -68.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 9,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -49.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.699999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 13,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 14,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 17,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -182.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.09999999776483
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 21,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 22,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -85.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -49.899999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 25,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -49.399999998509884
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.199999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 29,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -48
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 30,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 33,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -166.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 37,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -68
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.400000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 38,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.70000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 41,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -48.79999999701977
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -15.299999997019768
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 45,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 46,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -85.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 49,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -182.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -99.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 53,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.20000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 54,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.60000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.400000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 55,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 56,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.29999999701977
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 59,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -49.900000002235174
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.600000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 63,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -101
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 64,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.59999999776483
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 65,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51.20000000298023
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 66,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.400000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 69,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -184.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -101
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 72,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -50.899999998509884
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.599999997764826
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 76,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.59999999776483
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.899999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 77,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.40000000223517
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 80,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -50.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -17
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 84,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 85,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 88,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -164.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -81.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 92,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -82
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -48.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 93,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -68.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.29999999701977
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 96,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -64.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -31.299999997019768
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 100,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 101,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -99
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -49.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 104,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -166.89999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -84.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 108,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.20000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.70000000298023
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.09999999776482582
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 109,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 112,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -51
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.800000000745058
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 116,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -101.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 117,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 120,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -183.60000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -102
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 124,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.89999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 125,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 126,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.69999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 127,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 130,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -51.900000002235174
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.699999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 134,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 135,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -82.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -48.80000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 136,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -85
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -35.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 137,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.80000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 140,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -166
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -84
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        }
+      ],
+      "healerContacts": 16,
+      "normalBattleBeds": true,
+      "firstContactsPredecoded": true,
+      "mix": {
+        "lufs": -17.73,
+        "lra": 8.1,
+        "peak": -2.08
+      },
+      "mixGates": {
+        "loudness": true,
+        "truePeak": true,
+        "loudnessRange": true
+      },
+      "duck": {
+        "samples": 1923,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "depthPass": true,
+        "recoverySamples": 3110,
+        "recoveryPass": true
+      },
+      "voiceInterruptions": 0,
+      "maximumStartsPer100ms": 4,
+      "maximumAbsoluteContactOnsetEstimateMs": 33.568333336297655,
+      "contactEstimatesOutside33ms": 6,
+      "sceneReadyBytes": 30042340,
+      "transferPass": false,
+      "boss": {
+        "valid": true,
+        "frames": 5394,
+        "seconds": 90.1964,
+        "averageFps": 59.79174335117588,
+        "medianFps": 60,
+        "minimumWindowFps": 44,
+        "windows": [
+          44,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          57,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60
+        ],
+        "hiddenFrames": 0
+      }
+    },
+    {
+      "evidence": {
+        "path": "reports/v4-ship/S11/scene-journey-8.json",
+        "sha256": "7c5dccec24259b73c1526f40f29f5f8255c31a69bd90ff809201ae647fe1399b"
+      },
+      "events": {
+        "path": "reports/v4-ship/S11/scene-journey-8.events.json.gz",
+        "sha256": "c95996a3e5f7109ab1fef9c824358300ae4eb1251559473a081909e8a92a9e36"
+      },
+      "capture": {
+        "path": "work/v4ship-audio/scene-journey-8/journey.webm",
+        "bytes": 3198923,
+        "sha256": "a5c418be9e88ece673e06a60e792955c8ec31b1568713026a399bf022618508e",
+        "wallSeconds": 198.49799990653992,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 3308,
+        "encodedSeconds": 198.48,
+        "timestampSpanSeconds": 198.476,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000143245,
+        "minimumTimestampGapMs": -3.0000000000143245
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sourceCommit": "608b7b9864f308716e499e5379958a9fc10e9756",
+      "verifiedReceipts": 18,
+      "causalContacts": 124,
+      "rangedPlans": 58,
+      "ranged": [
+        {
+          "scene": 0,
+          "plan": 1,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -48.20000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -15.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 5,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.89999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -35.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 6,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.60000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.69999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 9,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -50.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.699999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 13,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.59999999776483
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.899999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 14,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.099999997764826
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 17,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -167.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.10000000149012
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 21,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.60000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -49.69999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 22,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 25,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -49.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -14.900000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 29,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -84.30000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 30,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 33,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -183.30000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 37,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51.600000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 38,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.29999999701977
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 41,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -48.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 45,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -51
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 46,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -101.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 49,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -166.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 53,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.89999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.69999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 54,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -31.800000000745058
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 55,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 56,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 59,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -51.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.699999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 63,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -84.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.600000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 64,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.80000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 65,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -82.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 66,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.69999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 0,
+          "plan": 69,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -166.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -82.39999999850988
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 72,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -67.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -35.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 76,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 77,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.29999999701977
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 80,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -51.600000001490116
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -16.699999999254942
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 84,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 85,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 88,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -183.30000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 92,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.80000000074506
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 93,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.10000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -35
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 96,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 100,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.60000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -49.900000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 101,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.10000000149012
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.19999999925494
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 104,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -183.39999999850988
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100.39999999850988
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 108,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -65.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.10000000149011612
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 109,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 112,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -66.40000000223517
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 116,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -100
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.100000001490116
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 117,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.899999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 120,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -167
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 124,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.70000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 125,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -50.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.20000000298023224
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 126,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.30000000074506
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.19999999925494194
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 127,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -66.40000000223517
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -32.900000002235174
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 130,
+          "owner": "soot",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -50.69999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -18.099999997764826
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 134,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -101.19999999925494
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -49.599999997764826
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.4000000022351742
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 135,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.09999999776483
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -34.399999998509884
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 136,
+          "owner": "binding-thread",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -83.5
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.5
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.29999999701976776
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 137,
+          "owner": "binding-thread",
+          "ultimate": false,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-heavy.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -67.20000000298023
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-heavy.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -33.70000000298023
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-heavy.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.3999999985098839
+            }
+          ]
+        },
+        {
+          "scene": 1,
+          "plan": 140,
+          "owner": "soot",
+          "ultimate": true,
+          "phases": [
+            {
+              "role": "release",
+              "cue": "kit.ranged-ember.release",
+              "sourceCount": 1,
+              "sourcePack": "b2-magic",
+              "predecoded": true,
+              "requestMinusContactMs": -183.59999999776483
+            },
+            {
+              "role": "travel",
+              "cue": "kit.ranged-ember.travel",
+              "sourceCount": 1,
+              "sourcePack": "b2-motion",
+              "predecoded": true,
+              "requestMinusContactMs": -96.59999999776483
+            },
+            {
+              "role": "impact",
+              "cue": "kit.ranged-ember.impact",
+              "sourceCount": 1,
+              "sourcePack": "v4-ranged-impacts",
+              "predecoded": true,
+              "requestMinusContactMs": 0.30000000074505806
+            }
+          ]
+        }
+      ],
+      "healerContacts": 16,
+      "normalBattleBeds": true,
+      "firstContactsPredecoded": true,
+      "mix": {
+        "lufs": -17.76,
+        "lra": 8.2,
+        "peak": -1.79
+      },
+      "mixGates": {
+        "loudness": true,
+        "truePeak": true,
+        "loudnessRange": true
+      },
+      "duck": {
+        "samples": 1922,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "depthPass": true,
+        "recoverySamples": 3122,
+        "recoveryPass": true
+      },
+      "voiceInterruptions": 0,
+      "maximumStartsPer100ms": 6,
+      "maximumAbsoluteContactOnsetEstimateMs": 33.67333333406714,
+      "contactEstimatesOutside33ms": 17,
+      "sceneReadyBytes": 30042338,
+      "transferPass": false,
+      "boss": {
+        "valid": true,
+        "frames": 5399,
+        "seconds": 90.263,
+        "averageFps": 59.803020063591944,
+        "medianFps": 60,
+        "minimumWindowFps": 46,
+        "windows": [
+          46,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          56,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60,
+          60
+        ],
+        "hiddenFrames": 0
+      }
+    }
+  ],
+  "installedScheduler168CasesVerified": true,
+  "actualBothViewportJourneysVerified": true,
+  "rangedPhasesAndPreloadsVerified": true,
+  "healerRoutingPreserved": true,
+  "mixGatesPass": true,
+  "sourceStartCeilingPass": true,
+  "duckAndRecoveryPass": true,
+  "voiceUninterrupted": true,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false,
+  "gRegPass": false,
+  "officialClassParityPass": false,
+  "limits": [
+    "Production journeys prove only their encountered ranged classes; all14actions and speed changes are covered by the separate installed-scheduler fixture capture.",
+    "Full-scene telemetry attributes flight audio to the same action before rendered contact; it does not measure flight pixels or acoustic onset.",
+    "These two production journeys do not replace ten required rehearsals. Transfer, human intelligibility and physical timing remain separate gates.",
+    "Compared takes are randomized; mix observations are not a controlled perceptual experiment."
+  ]
+}

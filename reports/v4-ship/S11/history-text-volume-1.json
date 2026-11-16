@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-16T21:12:21.096243+00:00",
+  "scope": "Read-only git diff-tree -r -m --root --numstat diagnosis of active frozen text batch28; no scanner interruption or duplicate scan.",
+  "completedCommits": 700,
+  "totalCommits": 3854,
+  "batch": 28,
+  "batchCommits": 25,
+  "largeMergeTextLineChanges": [
+    {
+      "commit": "5c6c3a64de71cc87bbef1e028a4c35936be61be2",
+      "lines": 33558343,
+      "paths": 13479
+    },
+    {
+      "commit": "a60ea174ac052c35e697ea7025400b6dca6a3584",
+      "lines": 33554585,
+      "paths": 13379
+    },
+    {
+      "commit": "2188b4679080c5e7aa6fefc4a00e82276ca38bd7",
+      "lines": 33552259,
+      "paths": 13324
+    }
+  ],
+  "knownSupervisorPid": 8488,
+  "knownScannerPid": 37112,
+  "decision": "Preserve the active scanner and its700completed commits; repeated large per-parent merge patches explain the high-volume batch. No full-history conclusion.",
+  "fullHistoryPass": false
+}
