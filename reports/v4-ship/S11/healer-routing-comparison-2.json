@@ -1,0 +1,2150 @@
+{
+  "at": "2026-11-16T19:09:18.445Z",
+  "scope": "Read-only in-memory routing comparison on actual catalog/fixture/timeline/manifest; no playback, runtime edit or perceptual acceptance.",
+  "signature": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.ts",
+      "sha256": "f3ea36f4fc88b70d0be77f85ebd189488007a58e588dc1acbe9e3f153ec09f6e"
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "28b2ffe132337278df1c6fc452afe54e06c1e6b32305929e78ce4a28ec2b2f27"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/depth/catalog.ts",
+      "sha256": "e0f4895e260588db6a9cef2f992bc195226494fdffc875343b3a094bddf32786"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/healer-routing-compare.mjs",
+      "sha256": "d9a2d5e959f94364479d6e0ab583e9593d81dfe90e6e39bd1634f7885156d9a1"
+    }
+  ],
+  "healers": [
+    "clover",
+    "cinnamon",
+    "marigold",
+    "teacup-healer"
+  ],
+  "rows": [
+    {
+      "unit": "clover",
+      "id": "clover-1",
+      "mode": "full",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.garden.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "clover",
+      "id": "clover-1",
+      "mode": "short",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.garden.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "clover",
+      "id": "clover-1",
+      "mode": "off",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.garden.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "clover",
+      "id": "clover-4",
+      "mode": "full",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "kit.garden.impact",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "clover",
+      "id": "clover-4",
+      "mode": "short",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "kit.garden.impact",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "clover",
+      "id": "clover-4",
+      "mode": "off",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.garden.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "kit.garden.impact",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.clover.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.clover.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.clover.charge",
+            "ult.clover.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.clover.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-1",
+      "mode": "full",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.fire.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-1",
+      "mode": "short",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.fire.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-1",
+      "mode": "off",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.fire.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-4",
+      "mode": "full",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "kit.fire.impact",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-4",
+      "mode": "short",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "kit.fire.impact",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "cinnamon",
+      "id": "cinnamon-4",
+      "mode": "off",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.fire.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "kit.fire.impact",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.cinnamon.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.cinnamon.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.cinnamon.charge",
+            "ult.cinnamon.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.cinnamon.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-1",
+      "mode": "full",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.nature.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-1",
+      "mode": "short",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.nature.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-1",
+      "mode": "off",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.nature.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-4",
+      "mode": "full",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "kit.nature.impact",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-4",
+      "mode": "short",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "kit.nature.impact",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "marigold",
+      "id": "marigold-4",
+      "mode": "off",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.nature.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "kit.nature.impact",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.marigold.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.marigold.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.marigold.charge",
+            "ult.marigold.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.marigold.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer:basic",
+      "mode": "full",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.heavy.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer:basic",
+      "mode": "short",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.heavy.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer:basic",
+      "mode": "off",
+      "ultimate": false,
+      "durationMs": 800,
+      "contactMs": 350,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [
+            "kit.heavy.impact"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "move.healer.whoosh",
+              "role": "movement"
+            },
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 1,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 350,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 2
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer",
+      "mode": "full",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "kit.heavy.impact",
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer",
+      "mode": "short",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "kit.heavy.impact",
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    },
+    {
+      "unit": "teacup-healer",
+      "id": "enemy:teacup-healer",
+      "mode": "off",
+      "ultimate": true,
+      "durationMs": 2200,
+      "contactMs": 1100,
+      "methods": [
+        {
+          "method": "current",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "kit.heavy.impact",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "kit.heavy.impact",
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 4
+        },
+        {
+          "method": "replace-contact-only",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "ult.teacup-healer.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            },
+            {
+              "t": 1300,
+              "cue": "ult.teacup-healer.tail",
+              "role": "tail"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [
+            "ult.teacup-healer.tail"
+          ],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        },
+        {
+          "method": "class-aware",
+          "track": [
+            {
+              "t": 0,
+              "cue": "voice.teacup-healer.ult.charge",
+              "role": "voice"
+            },
+            {
+              "t": 600,
+              "cue": "kit.magic.charge",
+              "role": "charge"
+            },
+            {
+              "t": 1100,
+              "cue": "heal.medium",
+              "role": "impact"
+            }
+          ],
+          "weaponMovement": 0,
+          "impactSampleCues": [],
+          "contactCount": 1,
+          "contactUnchanged": true,
+          "voiceUnchanged": true,
+          "maxSingleCueSources": 3
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "method": "current",
+      "cases": 24,
+      "casesWithImpactSamples": 24,
+      "casesWithWeaponMovement": 12,
+      "exactlyOneContact": 24,
+      "unchangedContactAndVoice": 24
+    },
+    {
+      "method": "replace-contact-only",
+      "cases": 24,
+      "casesWithImpactSamples": 12,
+      "casesWithWeaponMovement": 12,
+      "exactlyOneContact": 24,
+      "unchangedContactAndVoice": 24
+    },
+    {
+      "method": "class-aware",
+      "cases": 24,
+      "casesWithImpactSamples": 0,
+      "casesWithWeaponMovement": 0,
+      "exactlyOneContact": 24,
+      "unchangedContactAndVoice": 24
+    }
+  ]
+}

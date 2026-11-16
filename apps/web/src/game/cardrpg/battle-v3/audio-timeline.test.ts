@@ -7,6 +7,8 @@ import {BattleAudio} from './battle-audio';
 import type {SceneView} from '../../squad/turn3d/scene';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
 import {reserveUltimateLeadIn} from './voice-windows';
+import {readFileSync} from 'node:fs';
+import {resolveDesign,type AudioManifest} from '../../../audio/cues';
 it('warms newly appearing actors before their first cue without reloading unchanged rosters',()=>{
  const preloadVoices=vi.fn(async()=>{}),previous=window.__thAudio;
  window.__thAudio={...previous,preloadVoices} as NonNullable<Window['__thAudio']>;
@@ -33,6 +35,38 @@ it('uses one impact cue for a simultaneous hit on many recipients',()=>{
  const plan=configureSequence(pilotFixture('mochi-1').plan);plan.events.push(...Array.from({length:12},(_,i)=>({...plan.events.find(e=>e.type==='damage')!,amount:1,targetIds:['target-'+i]})));
  const audio=new BattleAudio(()=>{});audio.setCapture(true);const view={battleKey:plan,formationC2:true,actors:[],paused:true} as unknown as SceneView;
  for(let i=0;i<16;i++)audio.render({...view,frame:sampleActionPlan(plan,plan.duration-1,false),fixedTime:10+i/60});expect(audio.events.filter(e=>e.role==='impact')).toHaveLength(1);
+});
+it('keeps every healer contact and voice on the fixed clock without any impact samples',()=>{
+ const manifest=JSON.parse(readFileSync('public/audio/manifest.json','utf8')) as AudioManifest;
+ for(const unit of [...CATS,...ENEMIES].filter(u=>u.combatClass==='healer')){
+  const ids=CATS.some(c=>c.id===unit.id)?[`${unit.id}-1`,`${unit.id}-4`]:[`enemy:${unit.id}:basic`,`enemy:${unit.id}`];
+  for(const id of ids)for(const mode of ['full','short','off'] as CinematicMode[]){
+   const plan=configureSequence(pilotFixture(id).plan,mode),track=audioTimeline(plan,plan.sequence);
+   expect(plan.duration).toBe(plan.ultimate?2200:800);
+   expect(track.filter(c=>c.role==='impact').map(c=>[c.t,c.cue])).toEqual([[plan.ultimate?1100:350,'heal.medium']]);
+   expect(track.filter(c=>c.role==='movement'||c.role==='tail')).toEqual([]);
+   expect(track.filter(c=>c.role==='voice').map(c=>c.t)).toEqual(plan.ultimate?[0]:[]);
+   for(const cue of track.filter(c=>c.role!=='voice')){
+    const design=resolveDesign(cue.cue,manifest,cue.element);expect(design).toBeDefined();
+    expect(design!.layers.flatMap(l=>l.variants).some(v=>v.variantId?.includes('impact-sounds:'))).toBe(false);
+   }
+   const audio=new BattleAudio(()=>{});audio.setCapture(true);
+   const view={battleKey:plan,formationC2:true,actors:[],paused:true} as unknown as SceneView;
+   for(let i=0;i<3;i++)audio.render({...view,frame:sampleActionPlan(plan,plan.duration-1,false),fixedTime:10+i/60});
+   expect(audio.events.filter(e=>e.role==='impact').map(e=>e.cue)).toEqual(['heal.medium']);
+  }
+ }
+});
+it('retains the existing non-healer basics and admits a single rising healer source',()=>{
+ for(const [id,role,element] of [['mochi','guardian','holy'],['soot','hexer','ember'],['panko','guardian','heavy']]){
+  const plan=configureSequence(pilotFixture(`${id}-1`).plan);
+  expect(audioTimeline(plan,plan.sequence).map(c=>[c.t,c.cue])).toEqual([[0,`move.${role}.whoosh`],[350,`kit.${element}.impact`]]);
+ }
+ const manifest=JSON.parse(readFileSync('public/audio/manifest.json','utf8')) as AudioManifest;
+ const heal=resolveDesign('heal.medium',manifest)!;
+ expect(heal.layers).toHaveLength(1);expect(heal.priority).toBe(60);
+ expect(heal.layers[0]!.variants.map(v=>v.variantId?.match(/maximize_(\d+)/)?.[1])).toEqual(['001','003','005','006']);
+ expect(heal.layers[0]!.variants.every(v=>v.bus==='sfx'&&v.pack==='b2-ui')).toBe(true);
 });
 it('never starts optional chatter before or after an ultimate callout',()=>{
  const plan=configureSequence(pilotFixture('mochi-4').plan),played:string[]=[],audio=new BattleAudio(id=>played.push(id));audio.setCapture(true);

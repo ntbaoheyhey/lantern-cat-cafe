@@ -31240,24 +31240,10 @@
             },
             {
               "pack": "b2-ui",
-              "start": 2.7499583333333333,
-              "duration": 0.12,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:maximize_002:interface-sounds/maximize_002.flac/transient"
-            },
-            {
-              "pack": "b2-ui",
               "start": 2.9499583333333335,
               "duration": 0.12,
               "bus": "sfx",
               "variantId": "kenney:interface-sounds:maximize_003:interface-sounds/maximize_003.flac/transient"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 3.149958333333333,
-              "duration": 0.12,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:maximize_004:interface-sounds/maximize_004.flac/transient"
             },
             {
               "pack": "b2-ui",
@@ -31277,56 +31263,6 @@
           "offsetMs": 0,
           "eq": "flat",
           "gainDb": -7
-        },
-        {
-          "role": "sweetener",
-          "variants": [
-            {
-              "pack": "b2-ui",
-              "start": 0.8361041666666666,
-              "duration": 0.08120833333333333,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 0.9973125,
-              "duration": 0.011625,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 1.0889375,
-              "duration": 0.007125,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 1.1760625,
-              "duration": 0.021770833333333333,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 1.2778333333333334,
-              "duration": 0.007125,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener"
-            },
-            {
-              "pack": "b2-ui",
-              "start": 1.3649583333333333,
-              "duration": 0.045,
-              "bus": "sfx",
-              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener"
-            }
-          ],
-          "offsetMs": 12,
-          "eq": "high-pass-1800",
-          "gainDb": -19
         }
       ],
       "pitchRange": [
@@ -31338,7 +31274,7 @@
         1.5
       ],
       "cooldownMs": 30,
-      "priority": 0
+      "priority": 60
     },
     "heal.large": {
       "bus": "sfx",

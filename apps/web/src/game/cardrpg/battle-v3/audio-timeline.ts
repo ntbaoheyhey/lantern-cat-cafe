@@ -20,17 +20,18 @@ export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineC
  if(!plan.events.some(e=>e.type==='action_start'||e.type==='charge'))return [];
  // The fixed beat owns speech and weapon cues; voice lengths never move contact.
  if((plan as EffectPlan&{fixedTiming?:boolean}).fixedTiming){
-  const element=elements[owner]??'heavy',role=(CAT_BY_ID[owner]??ENEMY_BY_ID[owner])?.role??'striker';
-  if(tier==='basic')return [
+  const element=elements[owner]??'heavy',unit=CAT_BY_ID[owner]??ENEMY_BY_ID[owner],role=unit?.role??'striker',healer=unit?.combatClass==='healer';
+  // The contact role is also the healing beat; healers never use weapon layers.
+  if(tier==='basic')return healer?[{t:impact,cue:'heal.medium',role:'impact',element}]:[
    {t:0,cue:`move.${role}.whoosh`,role:'movement',element},
    {t:impact,cue:`kit.${element}.impact`,role:'impact',element},
   ];
   const line=voiceTiming(owner,id,'charge');
   return [
    ...(line?[{t:0,cue:line.cueId as AudioCue,role:'voice' as const,element,voicePhase:'charge' as const}]:[]),
-   {t:600,cue:`ult.${owner}.charge` as AudioCue,role:'charge',element},
-   {t:impact,cue:`kit.${element}.impact` as AudioCue,role:'impact',element},
-   {t:impact+200,cue:`ult.${owner}.tail` as AudioCue,role:'tail',element},
+   {t:600,cue:healer?'kit.magic.charge':`ult.${owner}.charge` as AudioCue,role:'charge',element},
+   {t:impact,cue:healer?'heal.medium':`kit.${element}.impact` as AudioCue,role:'impact',element},
+   ...(!healer?[{t:impact+200,cue:`ult.${owner}.tail` as AudioCue,role:'tail' as const,element}]:[]),
   ];
  }
  const movement=plan.beats[1]!.start,slot=Number(id.match(/-([1-4])$/)?.[1]??(tier==='active'?2:1));
