@@ -1,0 +1,90 @@
+{
+  "at": "2026-11-16T22:11:04.187570+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/history-png-review.py",
+    "sha256": "f15e59d4e8a52d62b43f9b00b93e2cf2da524e432510840083e31a67c0c191e5"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-png-1/check.json",
+      "sha256": "e44fc517e07912645490a1015bb5ff603cc8cc949ce11f9ba2aad5d18b2a36df"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-png-1/rows.json.gz",
+      "sha256": "7a18b2fe61f220a1a51b3b94d6f3c7ea88a18c6552039034ac3c510a71a5cb55"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/inventory.json.gz",
+      "sha256": "4bc4c377d4e19ac68339c1282a1c46c8427654af474725a1fdb607e7bb41a624"
+    }
+  ],
+  "scopeMatchesAllFrozenPngPairs": true,
+  "commitPathObjectsVerified": 27892,
+  "pathBlobPairs": 64003,
+  "objectBytes": 12985353108,
+  "decodedChunkMappingsVerified": 27466,
+  "uniqueScannedTextsVerified": 3107,
+  "findings": 0,
+  "anomalies": [
+    {
+      "oid": "06c7d4698e28348e16bd769320c136fc2a4d50b2",
+      "bytes": 150269,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74413
+      ],
+      "metadataUnscanned": true
+    },
+    {
+      "oid": "42758d57c89b4f37616e7db93c19bf318d87f6ba",
+      "bytes": 150068,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74411
+      ],
+      "metadataUnscanned": true
+    },
+    {
+      "oid": "495dd25d39f1cb69be3e35441c1c2cd52cf365e0",
+      "bytes": 83312,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74608
+      ],
+      "metadataUnscanned": true
+    },
+    {
+      "oid": "7c753f9414265adb6b6109cc04ef7643bdc0095a",
+      "bytes": 154471,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74401
+      ],
+      "metadataUnscanned": true
+    },
+    {
+      "oid": "a0b8a0ea1b8c3a47ace6dfe73a44615f97c1f3cb",
+      "bytes": 154064,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74400
+      ],
+      "metadataUnscanned": true
+    },
+    {
+      "oid": "f7e5e6cffaaa73adff1a900b92f894da33793026",
+      "bytes": 150043,
+      "detectedContainer": "jpeg",
+      "inventoryIndices": [
+        74412
+      ],
+      "metadataUnscanned": true
+    }
+  ],
+  "pass": true,
+  "fullHistoryPass": false,
+  "binaryCoveragePass": false,
+  "imageOpens": 0,
+  "seconds": 57.05401087499922,
+  "limits": "Independent mapping/byte/decode/aggregate review; detector was not rerun. Non-PNG anomalies and all non-text/encoded/binary scopes remain open."
+}

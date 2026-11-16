@@ -22,4 +22,4 @@ S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phả
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
 Âm thanh S11:đã cài144 sprite va chạm và launch/travel cho ranged;168/168 ca thử tốc độ cố định đạt pha/nguồn âm,47 kiểm tra tập trung đạt gồm390 đổi tốc độ. Bộ phát thật168/168ca và production hai kích thước đã đối chiếu;ước tính trễ33,67ms còn vượt33ms,nghe thực tế chưa xác nhận.
-Kiểm chứng mới: năm cảnh audio đạt mức tổng hợp; lời7/12 và trễ33,38ms chưa đạt; boss30phút đang chạy. Lịch sử:136.617cặp Git đã đối chiếu;51phiên bản/19lockfile và189SVG/259đường dẫn quét0phát hiện. G-REPO vẫn mở.
+Kiểm chứng mới: lời7/12 và trễ33,38ms chưa đạt; boss đã đủ30phút/18lần khởi động lại/0lỗi,đang xử lý kết quả. Lịch sử PNG:27.892đối tượng/3.107đoạn chữ khác nhau/0phát hiện;6tệp JPEG mang đuôi PNG và nội dung nhị phân khác chưa quét.

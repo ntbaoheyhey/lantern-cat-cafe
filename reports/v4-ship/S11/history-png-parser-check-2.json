@@ -1,0 +1,133 @@
+{
+  "at": "2026-11-16T22:06:54.913817+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-history-png.md",
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/security/png-metadata-check.py",
+      "sha256": "f6139e5a8dc6fe784fd4d192c0dc1827a91d4640fef10e4e4b771167f9d09d03"
+    },
+    {
+      "path": "tools/v4ship-lab/security/png_metadata.py",
+      "sha256": "f15a137699406411f9bfaac62a6d53a9fd62aeb25b8e6c6e442c99a9ee64f9d1"
+    }
+  ],
+  "rows": [
+    {
+      "case": "positive-text-0",
+      "type": "tEXt",
+      "compressed": false,
+      "textEncoding": "latin-1",
+      "fieldCount": 2,
+      "payloadBytes": 285,
+      "payloadSha256": "2310559c70b1a3a1b1fa1fdfe01cdf8f6a887f688a74708a300036e5fa20fb54",
+      "expectedPublicInvalidFixtureFindings": 1,
+      "pass": true
+    },
+    {
+      "case": "positive-text-1",
+      "type": "zTXt",
+      "compressed": true,
+      "textEncoding": "latin-1",
+      "fieldCount": 2,
+      "payloadBytes": 285,
+      "payloadSha256": "2310559c70b1a3a1b1fa1fdfe01cdf8f6a887f688a74708a300036e5fa20fb54",
+      "expectedPublicInvalidFixtureFindings": 1,
+      "pass": true
+    },
+    {
+      "case": "positive-text-2",
+      "type": "iTXt",
+      "compressed": false,
+      "textEncoding": "utf-8",
+      "fieldCount": 4,
+      "payloadBytes": 296,
+      "payloadSha256": "a0493030428fc5004eadca77511776633d3527d138ade6b5bacfa4de8f759601",
+      "expectedPublicInvalidFixtureFindings": 1,
+      "pass": true
+    },
+    {
+      "case": "positive-text-3",
+      "type": "iTXt",
+      "compressed": true,
+      "textEncoding": "utf-8",
+      "fieldCount": 4,
+      "payloadBytes": 296,
+      "payloadSha256": "a0493030428fc5004eadca77511776633d3527d138ade6b5bacfa4de8f759601",
+      "expectedPublicInvalidFixtureFindings": 1,
+      "pass": true
+    },
+    {
+      "case": "missing-separator",
+      "expectedCode": "missing-keyword-separator",
+      "pass": true
+    },
+    {
+      "case": "bad-keyword",
+      "expectedCode": "invalid-keyword-spacing",
+      "pass": true
+    },
+    {
+      "case": "wrong-compression",
+      "expectedCode": "unsupported-compression-method",
+      "pass": true
+    },
+    {
+      "case": "truncated-zlib",
+      "expectedCode": "incomplete-zlib",
+      "pass": true
+    },
+    {
+      "case": "trailing-zlib",
+      "expectedCode": "trailing-zlib-data",
+      "pass": true
+    },
+    {
+      "case": "expansion-ceiling",
+      "expectedCode": "text-resource-limit",
+      "pass": true
+    },
+    {
+      "case": "invalid-utf8",
+      "expectedCode": "invalid-text-encoding",
+      "pass": true
+    },
+    {
+      "case": "invalid-flag",
+      "expectedCode": "invalid-compression-flag",
+      "pass": true
+    },
+    {
+      "case": "nul-text",
+      "expectedCode": "text-contains-nul",
+      "pass": true
+    },
+    {
+      "case": "utf8-and-ignored-uncompressed-method",
+      "pass": true
+    },
+    {
+      "case": "unchanged-existing-container",
+      "oid": "000586842f9751d4cb550b1dd4d13e39f44a2aca",
+      "pass": true
+    },
+    {
+      "case": "crc",
+      "expectedCode": "chunk-crc-mismatch",
+      "pass": true
+    },
+    {
+      "case": "truncated-container",
+      "expectedCode": "truncated-chunk-header",
+      "pass": true
+    },
+    {
+      "case": "trailing-container",
+      "expectedCode": "trailing-png-data",
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "imageOpens": 0,
+  "generatedImages": 0,
+  "limits": "Synthetic text-chunk payloads and in-memory corruptions of one existing container only; no PNG generated, rendered or saved."
+}

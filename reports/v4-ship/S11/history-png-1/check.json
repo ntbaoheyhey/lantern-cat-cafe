@@ -1,0 +1,109 @@
+{
+  "at": "2026-11-16T22:09:49.331572+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-history-png.md",
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/security/history-png.py",
+      "sha256": "cc241f756110953dc9df37f60e37d58234e4054015917055532a0a01e6acbc49"
+    },
+    {
+      "path": "tools/v4ship-lab/security/png_metadata.py",
+      "sha256": "f15a137699406411f9bfaac62a6d53a9fd62aeb25b8e6c6e442c99a9ee64f9d1"
+    },
+    {
+      "path": "tools/v4ship-lab/security/stdin_worker.py",
+      "sha256": "dd27d13f9648c073c2f0f60b281860d981ed790c5e26c4efcd3367097fa8740a"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/scope.json",
+      "sha256": "76c6227269ce6c6312eedb14140e33c5a53f6c8ded8a6dd13be6752568810754"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/inventory.json.gz",
+      "sha256": "4bc4c377d4e19ac68339c1282a1c46c8427654af474725a1fdb607e7bb41a624"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-path-review-1.json",
+      "sha256": "a78b72fd27e9ff6ebbd6a516931e85e11531620ffe423e7d13d5dc165b361a3d"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-png-parser-check-2.json",
+      "sha256": "d1f329e50e7c3ec2bdd8aa0133eb7bb3d3a9ea71e54fe612823dbb2710144605"
+    }
+  ],
+  "rows": {
+    "path": "reports/v4-ship/S11/history-png-1/rows.json.gz",
+    "sha256": "7a18b2fe61f220a1a51b3b94d6f3c7ea88a18c6552039034ac3c510a71a5cb55"
+  },
+  "scanner": "8.30.1",
+  "command": [
+    "gitleaks",
+    "stdin",
+    "--no-banner",
+    "--no-color",
+    "--redact=100",
+    "--log-level=fatal",
+    "--report-format=json",
+    "--report-path=-",
+    "--ignore-gitleaks-allow"
+  ],
+  "commits": 3946,
+  "pathBlobPairs": 64003,
+  "selectedBlobs": 27892,
+  "inspectedBlobs": 27892,
+  "inspectedBytes": 12985353108,
+  "chunkCounts": {
+    "IHDR": 27886,
+    "IDAT": 2819810,
+    "IEND": 27886,
+    "pHYs": 4021,
+    "eXIf": 2847,
+    "oFFs": 2833,
+    "tEXt": 27466,
+    "PLTE": 327,
+    "tRNS": 295,
+    "caBX": 94,
+    "sRGB": 14,
+    "cHRM": 2,
+    "bKGD": 2,
+    "tIME": 2,
+    "caNv": 1
+  },
+  "unscannedNonTextBytesByType": {
+    "IHDR": 362518,
+    "IDAT": 12945918608,
+    "IEND": 0,
+    "pHYs": 36189,
+    "eXIf": 153934,
+    "oFFs": 25497,
+    "PLTE": 10620,
+    "tRNS": 2485,
+    "caBX": 2141912,
+    "sRGB": 14,
+    "cHRM": 64,
+    "bKGD": 12,
+    "tIME": 14,
+    "caNv": 16
+  },
+  "uniqueDecodedTexts": 3107,
+  "uniqueDecodedBytes": 82017,
+  "mappedDecodedBytes": 674078,
+  "objectsWithErrors": 6,
+  "textResourceCeilingPerObject": 67108864,
+  "findings": 0,
+  "complete": true,
+  "allSelectedMetadataParsed": false,
+  "fullHistoryPass": false,
+  "binaryCoveragePass": false,
+  "imageOpens": 0,
+  "runtimeChanged": false,
+  "seconds": 134.75990904199716,
+  "limits": [
+    "Only standard tEXt/zTXt/iTXt fields are decoded and scanned; no pixel decoding or rendering.",
+    "EXIF, ICC, unknown chunks, compressed pixels, steganography, encoded subcontent and trailing data are not scanned.",
+    "Malformed containers, unsupported text and resource-limit errors remain explicit gaps.",
+    "Later refs, archives, submodules and the original unfinished text history remain open."
+  ]
+}
