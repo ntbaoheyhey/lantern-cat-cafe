@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-16T22:26:52.063671+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6976,
+      "sha256": "da06e60f3a1cc6953fdf7d5b6b83058c7d056a4bf85215d047ad201e7fc5a835"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+      "bytes": 6323,
+      "sha256": "f467e8629715f1b1214ef91e673b1ad00b8ed836dcc05393c24899ad58760df5"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-attempt-1.harness.json.gz",
+      "bytes": 3280,
+      "sha256": "2083a777e8eff3c0e562c6d5613b671a927f5093cc1a0d6faf73ca52bb3df9f8"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-attempt-1.json",
+      "bytes": 6121,
+      "sha256": "d4c7e49633ffdcc4dd9ab93d088521f59525432dd511fb972881b6331f4dc1f7"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-cold-1.json",
+      "bytes": 42371,
+      "sha256": "103c5ac75c0e72887d5a09015bf3eeddbd6d5cd8c449016b2698419ef86106b5"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-comparison-2.json",
+      "bytes": 358075,
+      "sha256": "76844900babe41a5ec9f2b9a13035860c7f836c0fdac7353ffce9cf0874defeb"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-comparison-2.rows.json.gz",
+      "bytes": 84569,
+      "sha256": "64dff8f88189f6c2398d6c538cdf9f988e39d9ae2d60209077b0a7b35d8aff44"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-regression-1/check.json",
+      "bytes": 1438,
+      "sha256": "5e2a3a0d2273aca90143d39472ded6dba9d35ea1e1d4e2b8d7f300f7139a2089"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-regression-1/log.jsonl.gz",
+      "bytes": 16125,
+      "sha256": "f533ce297d6cabc33cf17741c02277a9d9a32cbe9c91eec9d33003a1e05e4541"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "23e06ee47e1e4b1615c41e6de7dc512c0fb09fb8d476adc04c483ba48bc39ca3"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-review-1.json",
+      "bytes": 4259,
+      "sha256": "fb3b3d0e9e0779f2c9c46b31aba7cc475bfc087bc5425a5e8c018c7b0093c65f"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 24066,
+      "sha256": "c6256c9715735066da53e999507273376afc33695eda4c2f417237dd03ec651f"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4669,
+      "sha256": "feda12b96c971a5b4382fea699a42e0f1e2378fac2c1e18f27bc1ae6b5f37014"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-delivery-cold.mjs",
+      "bytes": 4204,
+      "sha256": "bd8a689317aefbba167f5026c6f4aec04727a57ca12a5590fe2dd127a45aaa52"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-delivery-compare.mjs",
+      "bytes": 9821,
+      "sha256": "b7080ee3e1cfc0357174f854f8a5b72dff2a12ca661a500ae496e65aebc969f0"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-delivery-review.py",
+      "bytes": 12363,
+      "sha256": "2e7607853a57857746bd3e2d2eccc21978609e906c9d35dd59d758e0c16caf26"
+    }
+  ],
+  "expandedGzip": 3,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}
