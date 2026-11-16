@@ -11,3 +11,12 @@ Hiệu ứng xanh của Clover, vàng của Panko và hồng của boss vẫn c�
 Thời gian đo/ghi chép vượt mức quy định; đã ghi rõ, không coi là đạt.
 Đang làm Clover: tư thế lấy đà đã đạt; tư thế thả phép cần sửa tỉ lệ đầu.
 Chưa có idle mới từ họa sĩ; chưa nhận mốc luật lớp nhân vật cuối cùng từ SHIP.
+
+Clover đã có bốn tư thế mới và hiệu ứng lá trên đúng đồng đội.
+Đã xem đủ mười động tác của Clover; bài đọc tư thế đạt 12/12.
+Khung hình đạt ở cả sáu trường hợp; che khuất lớn nhất 13,42%.
+Phim boss riêng đạt 60,06 fps; 2647 kiểm thử web và kiểm tra kiểu/kết quả trận đều đạt.
+Luật hiện tại vẫn gây sát thương ở đòn thường của Clover, nên chưa công nhận vai trò chỉ hồi máu.
+Còn đo thời điểm lá xuất hiện chính xác, so sánh bốn chiêu cuối và bật nhánh sản phẩm.
+Chưa chứng minh đạt tỉ lệ thời gian vẽ/đo theo yêu cầu; giữ nguyên phần chưa đạt.
+Tiếp tục Panko: đã chọn tư thế, chuẩn bị hai hình hiệu ứng gốc; chưa đưa vào trận.

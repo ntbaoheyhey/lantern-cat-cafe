@@ -53,3 +53,5 @@ A4 CHECKPOINT 2026-11-16T07:33:56.098879+00:00: G-POSE PASS K1/K2/K4/K5IoU.49646
 A4 checkpoint pushed 8019c0f383c8a9de0608d139273b2edfee40d354 2026-11-16T07:39:54.793682+00:00; 87ART files,8selectedJPGs; source hashes unchanged, no repeat tests needed. A5 ACTIVE: K1-A2 accepted, K2-A2 correction generating; other gates notyet.
 
 A5 2026-11-16T08:07:14.489579+00:00: WIP recovery checkpoint; art+integration complete, v9 framing failed; v10 Clover6case occlusion<=11.6779%,socket/feet/camera0. Mochi full-action sweep/final regression/films/perf pending. Request disk upgraded REV3.
+
+A5 ART CHECKPOINT 2026-11-16T08:50:27.630936+00:00: finalv13 sixcaseframingPASSmax13.4228%;GPOSEbattleK2changed39.893%;GREAD12/12and10/10complete;face0%;isolatedboss60.0602fps;GREG2647/315+typecheck+3F6PASS. GROLEhealonly/exactonsetOPENpendingSHIP;pairwiseFXOPENA9;productionactivationOPEN;timesplitNOTDEMONSTRATED. Evidence REVIEW/A5/{REVIEW,ART-REVIEW}.md,acceptance-receipt.json,performance.json,8JPG. A6preparedart/textures next.
