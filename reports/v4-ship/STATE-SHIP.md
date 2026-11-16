@@ -50,7 +50,7 @@ S5 G-REG regression-3: server/rules/typecheck/probe/buildPASS; web2663PASS/7same
 S2b authoritative1.15/2500bp: E3 16/18; burnClaims0.9968275226 and Stars1.1015423773. Boundary/check/decision evidence supersedes older scalar experiments; no third candidate.
 S4 final20journeys still pending; Fuji4counters+agedcache recoveryPASS and 55logs/30RPCreceipts verified. No public sponsored latency proof.
 S1 history30159/PID68299 remains active; do not duplicate. Source scan and current staged scans found no unresolved secrets; no full-history conclusion.
-NEXT S10offline/film preparation;S8transferfail carriedtoS11/ART;scheduledS7 integration17Nov12:00UTC.
+NEXT S2bclass-onlyhypothesis/hold then independentS11UI/audio/repo;S8transferfailtoS11/ART;S7integration17Nov12:00UTC.
 
 S6 preparation 2026-11-16T10:48:07.237676+00:00: learning8/1formal/5web/1comparison;docs53local links valid/all5contracts;audio118/118 hashes. Clean clone pending. S4-final-1 runtime stable and active.
 RESUME S6 2026-11-16T11:22:36.646962+00:00: cleanclone2complete e4803c14a;allcommands0except7knownARTwebfails;initial/finaltrackedclean. G-REPOopen/S11repo-open. S4 12/20pass. S7read-onlyprep621ART/0conflicts;S8LEARN11sources,productionrehearsalnext. VercelSHIPexclusion2/2;pendingjobsunverified.
@@ -68,3 +68,4 @@ S10PREP LEARN7sources/1formal/5web/1experiment;150sscript+11slidecontents. Histo
 
 2026-11-16T12:42:24.782727+00:00 S10offlinebuild4/sourcef2227c1fc PASS:261404426B localfolder;build3full2sizes/1614originalhasheseach/0networkerrors/reloadreset;CSS-onlybuild4canonicalassets+modules+packsidentical/layoutPASS. Firstregexandarrayorderfailuresretained.
 S10regression1server742/rules1409/web2663pass7knownARTfail,typecheck/probe/build0. Film24620active;Snowtrace403publiccaptureopen. S10screenshots8/8;reports84.61MB;noadditionalstaticcaptures.
+2026-11-16T13:00:01.534210+00:00 S10film2PASS18receipts/0errors/rollback;edit1parserfailurepreserved then unchangedfilmverified152.833333s/9315673B/SSIM.981584/47cues10voices;LRA4.8FAIL. NormalIABSnowtraceaccessPASS;actualpublicfilmabsent. S10regression2same7ARTfails;typecheck/probe/build0. No productionedits.

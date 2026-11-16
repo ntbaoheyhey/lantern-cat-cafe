@@ -17,7 +17,7 @@ const unchanged=()=>!git(['diff','--name-only',build.sourceCommit,'--',...runtim
 const source=await fetch('http://127.0.0.1:5998');if(!source.ok||sha(Buffer.from(await source.arrayBuffer()))!==build.indexSha256)throw Error('Preview index mismatch');
 mkdirSync(out,{recursive:true});const raw=resolve(out,'journey');
 const require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
-const report={at:new Date().toISOString(),sourceCommit:git(['rev-parse','HEAD']),buildEvidence:buildPath,mode:'Preparatory real local build/API/Anvil capture; not R2, FINAL, Fuji latency or a rehearsal gate',raw:relative(root,raw),harness:['capture.mjs','recording.mjs'].map(n=>({path:`tools/v4ship-lab/film/${n}`,sha256:sha(readFileSync(resolve(import.meta.dirname,n)))})),marks:[],actions:[],receipts:[],errors:[],network:[],pass:false};
+const report={at:new Date().toISOString(),sourceCommit:git(['rev-parse','HEAD']),buildEvidence:buildPath,mode:'Preparatory real local build/API/Anvil capture; not R2, FINAL, Fuji latency or a rehearsal gate',raw:relative(root,raw),harness:['capture.mjs','recording.mjs'].map(n=>({path:`tools/v4ship-lab/film/${n}`,sha256:sha(readFileSync(resolve(import.meta.dirname,n)))})),marks:[],actions:[],receipts:[],errors:[],network:[],fontReads:[],failedRequests:[],pass:false};
 const safe=v=>String(v).replace(/0x[\da-f]{64,}/gi,'[hex]').replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g,'[token]').slice(0,300);
 const fixture=async action=>{const r=await fetch(`http://127.0.0.1:5997/__fixture/${action}`,{method:'POST'});if(!r.ok)throw Error(`Fixture ${action} failed:${r.status}`);};
 let active=false,browser,page,recorder,zero=0,recorded=false;
@@ -26,7 +26,16 @@ try{
  browser=await chromium.launch({headless:true,args:['--use-angle=metal','--disable-background-timer-throttling','--disable-renderer-backgrounding']});
  const context=await browser.newContext({viewport:{width:1280,height:720},serviceWorkers:'block'});page=await context.newPage();
  page.on('pageerror',e=>report.errors.push(safe(e.message)));page.on('console',e=>{if(e.type()==='error')report.errors.push(safe(e.text()));});
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(['blob:','data:'].includes(u.protocol)||u.hostname==='127.0.0.1'&&['5998','5997','8546'].includes(u.port))await route.continue();else{report.network.push(u.origin+u.pathname);await route.abort();}});
+ page.on('requestfailed',r=>{const u=new URL(r.url());report.failedRequests.push({url:safe(u.origin+u.pathname),method:r.method(),error:safe(r.failure()?.errorText)});});
+ await context.route('**/*',async route=>{
+  const request=route.request(),u=new URL(request.url());
+  const local=['blob:','data:'].includes(u.protocol)||u.hostname==='127.0.0.1'&&['5998','5997','8546'].includes(u.port);
+  const fontRead=u.protocol==='https:'&&request.method()==='GET'&&(
+   u.hostname==='fonts.googleapis.com'&&request.resourceType()==='stylesheet'||
+   u.hostname==='fonts.gstatic.com'&&request.resourceType()==='font');
+  if(local||fontRead){if(fontRead)report.fontReads.push({url:u.origin+u.pathname,method:request.method(),type:request.resourceType()});await route.continue();}
+  else{report.network.push(u.origin+u.pathname);await route.abort();}
+ });
  await page.exposeFunction('recordFilmReceipt',value=>report.receipts.push(value));await page.addInitScript(()=>window.addEventListener('chain:receipt',e=>window.recordFilmReceipt(e.detail)));
  recorder=await prepareRecording(page,raw);
  await page.goto('http://127.0.0.1:5998/?demo=1&squad=1&cardrpg2=1&a6=1');
@@ -48,11 +57,11 @@ try{
  await page.waitForTimeout(22000);await mark('end');
  report.audioStarts=await page.evaluate(()=>window.__filmAudioStarts);
  const recording=await recorder.stop();recorded=false;report.recording={...recording,pictures:undefined,frames:recording.pictures.length};
- report.pass=report.receiptVerification.pass&&report.receipts.length===18&&!report.errors.length&&!report.network.length&&unchanged();
+ report.pass=report.receiptVerification.pass&&report.receipts.length===18&&!report.errors.length&&!report.network.length&&!report.failedRequests.length&&unchanged();
 }catch(error){report.failure=safe(error.message);}
 finally{
  if(recorded)try{const r=await recorder.stop();report.partialRecording={seconds:r.seconds,frames:r.pictures.length};}catch(e){report.teardownError=safe(e.message);}
- if(browser)await browser.close();if(active)try{await fixture('rollback');}catch(e){report.pass=false;report.rollbackError=safe(e.message);}
+ if(browser)await browser.close();if(active)try{await fixture('rollback');report.fixtureRollback=true;}catch(e){report.pass=false;report.rollbackError=safe(e.message);}
  const events=report.audioStarts;if(events){const path=resolve(root,`reports/v4-ship/S10/film-audio-starts-${attempt}.json.gz`),bytes=gzipSync(JSON.stringify(events));writeFileSync(path,bytes);report.audioStarts={path:relative(root,path),count:events.length,sha256:sha(bytes)};}
  writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
 }

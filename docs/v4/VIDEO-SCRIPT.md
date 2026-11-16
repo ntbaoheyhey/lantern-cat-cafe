@@ -1,6 +1,6 @@
 # V4 film script — preparation for R2
 
-Target150seconds, 1280×720, 30fps, ≤10MB. R2 is due after the18November12:00UTC ART integration. This document is a cut plan; no V4 film is complete yet. Capture the real seven-step application through DOM actions, preserving source commit, build flags, timestamps and actual WebAudio. Keep the full uncut capture and edit-decision list locally.
+Target150seconds, 1280×720, 30fps, ≤10MB. R2 is due after the18November12:00UTC ART integration. The [preparation film and captions](film/README.md) now exist; G-SUBMIT remains open. This table is the intended submission cut plan, including the still-missing public explorer footage. Capture the real seven-step application through DOM actions, preserving source commit, build flags, timestamps and actual WebAudio. Keep the full uncut capture and edit-decision list locally.
 
 Use a persistent **Local rehearsal · Anvil** label on local footage. Show a separately verified public explorer page under **Fuji testnet · recorded public receipt**. Never substitute an Anvil hash into a public explorer or film the offline mock build as on-chain evidence.
 

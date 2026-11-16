@@ -13,5 +13,6 @@
 - Quét toàn bộ lịch sử git vẫn chạy; chưa kết luận lịch sử sạch.
 - Production đã đi đủ bảy bước, 18 biên nhận và 60 FPS; tải 26,4 MB trước trận vượt mức 8 MB, đang chờ ART sửa phần tài nguyên.
 - Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
-- Đang quay bản production thật để chuẩn bị phim; Snowtrace trả 403 nên cảnh biên nhận công khai chưa đạt. R2 vẫn sau ART ngày 18/11.
+- Phim chuẩn bị:152,83giây/9,32MB,47phụ đề Anh/Việt;18biên nhận thật trên Anvil đã xác minh. LRA4,8<5 còn lỗi.
+- Snowtrace đã mở được bằng trình duyệt tích hợp; còn thiếu video biên nhận Fuji và kiểm tra nghe/đọc. R2 vẫn sau ART18/11.
 - Bản clone sạch còn bảy lỗi ART; báo cáo khoảng 84,6 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.

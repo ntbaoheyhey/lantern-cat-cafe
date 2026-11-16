@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-16T12:55:14.960261+00:00",
+  "mode": "PREPARATION ONLY",
+  "capture": "reports/v4-ship/S10/film-capture-2.json",
+  "captureSha256": "75340e449a5286a76e4d8deefb3ff79356521c054b2935f65cf1bd78ad0c664d",
+  "recordingSha256": "4166bcd65705050ed8ff6fa7603d2901308e336dfe9bb699ef251c46d35a51cc",
+  "audioSha256": "bd2f75a2248553d2c584189d886889b001677cb6c36776982a7f6f5622c3141a",
+  "calloutSha256": "f484e0392704670fa2c8521b5dbeac2337504b19adad54923d31a14b375b2a7a",
+  "cuts": [
+    {
+      "name": "landing-guest-first-battle",
+      "start": 0,
+      "end": 44.7,
+      "outputStart": 0,
+      "outputEnd": 44.7,
+      "speed": 1
+    },
+    {
+      "name": "trial-result-workshop-boss-start",
+      "start": 105.7,
+      "end": 181.43333333333334,
+      "outputStart": 44.7,
+      "outputEnd": 120.43333333333334,
+      "speed": 1
+    },
+    {
+      "name": "boss-result-wallet-proof",
+      "start": 251.33333333333334,
+      "end": 283.73333333333335,
+      "outputStart": 120.43333333333334,
+      "outputEnd": 152.83333333333334,
+      "speed": 1
+    }
+  ],
+  "seconds": 152.833333,
+  "sourceRuntime": "reports/v4-ship/S8/production-build-2.json",
+  "pass": false,
+  "submissionPass": false,
+  "open": [
+    "Public Snowtrace footage absent; no local substitute",
+    "Scheduled integrated R2 and FINAL remain due",
+    "Human listening and caption/readability review remain required"
+  ],
+  "frames": {
+    "selected": 1567,
+    "manifestSha256": "9f15010b85a59c8701b17e4a29d1255412c40eee7fffc5edb9d5afd983765ecb",
+    "integrity": "reports/v4-ship/S10/film-frame-integrity-1.json.gz",
+    "integritySha256": "569c0010cc1e26142393709fe411d007ab0c88ff4849a1856a1283c533984844",
+    "firstSourceFrameSeconds": 0.01775193214416504,
+    "sourceMaxGapSeconds": 13.332831144332886,
+    "gapTreatment": "Hold last real compositor frame; no interpolation or synthetic scene"
+  },
+  "captions": {
+    "files": {
+      "en": {
+        "path": "docs/v4/film/preparation-1.en.srt",
+        "sha256": "d098491c74dba97537ca4726daf7a5ad2550a3d13eed687702e41d6178525f98"
+      },
+      "vi": {
+        "path": "docs/v4/film/preparation-1.vi.srt",
+        "sha256": "98cb891d0037a8d3132a865b4b6dd0a2b72826707d410ad8021bb09e8258c2e0"
+      }
+    },
+    "count": 47,
+    "speechEvents": [
+      {
+        "id": "voice.mochi.ult.charge",
+        "sourceStart": 29.08916664123535,
+        "duration": 1.3205416666666667
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 37.92646408081055,
+        "duration": 1.0426666666666666
+      },
+      {
+        "id": "voice.clover.ult.charge",
+        "sourceStart": 40.20376634597778,
+        "duration": 1.921375
+      },
+      {
+        "id": "voice.panko.ult.charge",
+        "sourceStart": 42.50237035751343,
+        "duration": 1.111
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 105.80346727371216,
+        "duration": 0.9230416666666666
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 110.2194664478302,
+        "duration": 1.0369166666666667
+      },
+      {
+        "id": "voice.mochi.ult.charge",
+        "sourceStart": 178.01636934280396,
+        "duration": 1.3205416666666667
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 251.46145820617676,
+        "duration": 1.0234166666666666
+      },
+      {
+        "id": "voice.binding-thread.ult.charge",
+        "sourceStart": 254.64535641670227,
+        "duration": 0.9230416666666666
+      },
+      {
+        "id": "voice.soot.ult.charge",
+        "sourceStart": 259.06134128570557,
+        "duration": 1.0369166666666667
+      }
+    ],
+    "speechEventsIncluded": 10,
+    "truncatedSpeech": 0,
+    "basis": "Actual source starts and original callout text; human listening review remains open",
+    "rail": {
+      "game": [
+        64,
+        0,
+        1152,
+        648
+      ],
+      "captionArea": [
+        0,
+        648,
+        1280,
+        72
+      ]
+    }
+  },
+  "failure": "Extra data: line 13 column 1 (char 263)"
+}
