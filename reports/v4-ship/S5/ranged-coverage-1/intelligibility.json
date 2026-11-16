@@ -1,0 +1,255 @@
+{
+  "at": "2026-11-16T21:41:38.509154+00:00",
+  "trial": "ranged-coverage-1",
+  "method": "First twelve distinct eligible callouts in scene/capture order; first occurrence only, no substitutions after recognition. Original unnormalized full mix, 150ms pre-roll and 200ms tail. Local small.en CPU/int8, no text prompt, beam5, temperature0, no VAD, no previous-text conditioning. Exact normalized words determine the automated proxy; physical listening remains separate.",
+  "captureReport": {
+    "path": "reports/v4-ship/S5/ranged-coverage-1/recognition-capture.json",
+    "sha256": "de5e0f2c020c709284ed9b108fab8c2382173e699171afbf3cf94e1c9be029ff"
+  },
+  "rows": [
+    {
+      "scene": "wave1",
+      "cueId": "voice.panko.ult.charge",
+      "expected": "Close!",
+      "atSeconds": 10.157000064849854,
+      "durationSeconds": 1.111,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Close",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-01.flac",
+        "sha256": "0876620c725d86b6eedec124d972f51985ea83a30ce0c53f9f6c875cc6f6b1f6"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.needle-moth.ult.charge",
+      "expected": "Wings sharp and ready!",
+      "atSeconds": 13.34000015258789,
+      "durationSeconds": 1.92525,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Wings sharp and ready!",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-02.flac",
+        "sha256": "4b84017508cf6449a9de10cf47b4a5977faa812efba1167ed43427d4b8e4f5ca"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.mochi.ult.charge",
+      "expected": "Shields!",
+      "atSeconds": 17.708000183105472,
+      "durationSeconds": 1.1948333333333334,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "What shields?",
+      "wordAccuracy": 0,
+      "exact": false,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-03.flac",
+        "sha256": "4f9cd4475e78bcbc7f85f8b4547d962a2eb3fb1964bdef5bc2b9759eef33ecc2"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.soot.ult.charge",
+      "expected": "Lights!",
+      "atSeconds": 19.99399995803833,
+      "durationSeconds": 1.0426666666666666,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "likes",
+      "wordAccuracy": 0,
+      "exact": false,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-04.flac",
+        "sha256": "ce1a7c254e96155b89200ac51265ba68da4f71fba811507990a89b6c24b215d9"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.clover.ult.charge",
+      "expected": "Watch the flowers bloom!",
+      "atSeconds": 22.29200005531311,
+      "durationSeconds": 1.9244166666666667,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Watch the flowers blow.",
+      "wordAccuracy": 0.75,
+      "exact": false,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-05.flac",
+        "sha256": "6661ae9f3131e659face903f8834b7dc4c8ebabcf3cfca69d6282f4ead2dc2d2"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.button-guard.ult.charge",
+      "expected": "Hold the line!",
+      "atSeconds": 34.30900001525879,
+      "durationSeconds": 1.34525,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Hold the line.",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-06.flac",
+        "sha256": "35969acde464c23e36db2b48af977f3095d15a483029f7ac26cfb63d0a9a1999"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.sock-skipper.ult.charge",
+      "expected": "Catch!",
+      "atSeconds": 38.89300012588501,
+      "durationSeconds": 0.9944166666666666,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Catch ya!",
+      "wordAccuracy": 0,
+      "exact": false,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-07.flac",
+        "sha256": "d97ee4fdbc9c086b4a9a0c3367c3934314094a953e7c482f2d1a861abc549e89"
+      }
+    },
+    {
+      "scene": "wave1",
+      "cueId": "voice.teacup-healer.ult.charge",
+      "expected": "Fill the cup!",
+      "atSeconds": 41.17799997329712,
+      "durationSeconds": 1.2277083333333334,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "recognized": "Fill the cup",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-08.flac",
+        "sha256": "4e16f7bd32c77dea593f7acb9efabbe84876e81d7fa084780c2a5f1148165166"
+      }
+    },
+    {
+      "scene": "wave3",
+      "cueId": "voice.pollen-scout.ult.charge",
+      "expected": "Pollen!",
+      "atSeconds": 31.227100133895874,
+      "durationSeconds": 0.9604583333333333,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave3.webm",
+        "bytes": 1450593,
+        "sha256": "8da430cb8ee9807fd4a2f9196e89731b01174b4368d5127a1b2f1ff855c8b24e"
+      },
+      "recognized": "Pollen.",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-09.flac",
+        "sha256": "118d4def6ac150e6d61726a0a2b20d685302006ba1d8e54cf2f88d1b7f19b60b"
+      }
+    },
+    {
+      "scene": "wave3",
+      "cueId": "voice.kettle-knight.ult.charge",
+      "expected": "Steam is rising!",
+      "atSeconds": 39.746000051498406,
+      "durationSeconds": 1.66275,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave3.webm",
+        "bytes": 1450593,
+        "sha256": "8da430cb8ee9807fd4a2f9196e89731b01174b4368d5127a1b2f1ff855c8b24e"
+      },
+      "recognized": "Steam is rising.",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-10.flac",
+        "sha256": "c0b22fcb28e04dd4debabfbfa82f34ff71c8f2fa04ccc2665bc9260f9e78012b"
+      }
+    },
+    {
+      "scene": "wave3",
+      "cueId": "voice.crumb-sentinel.ult.charge",
+      "expected": "All together now!",
+      "atSeconds": 42.0460000038147,
+      "durationSeconds": 1.5769583333333332,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave3.webm",
+        "bytes": 1450593,
+        "sha256": "8da430cb8ee9807fd4a2f9196e89731b01174b4368d5127a1b2f1ff855c8b24e"
+      },
+      "recognized": "all together now.",
+      "wordAccuracy": 1.0,
+      "exact": true,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-11.flac",
+        "sha256": "e42fa6809610d663779c4222720cbeeacf5e945d4b6407ee5ea4ed4b78241111"
+      }
+    },
+    {
+      "scene": "wave3",
+      "cueId": "voice.spool-ram.ult.charge",
+      "expected": "Full!",
+      "atSeconds": 44.34599995613098,
+      "durationSeconds": 0.7425833333333334,
+      "interrupted": false,
+      "audio": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave3.webm",
+        "bytes": 1450593,
+        "sha256": "8da430cb8ee9807fd4a2f9196e89731b01174b4368d5127a1b2f1ff855c8b24e"
+      },
+      "recognized": "Oh.",
+      "wordAccuracy": 0,
+      "exact": false,
+      "crop": {
+        "path": "work/v4ship-audio/ranged-coverage-1/line-12.flac",
+        "sha256": "d21e602f3f7c976d2a68617c8df99b3f40af8f9c613b00aaf3bf9c2bd3d81355"
+      }
+    }
+  ],
+  "measured": 12,
+  "exact": 7,
+  "automatedProxyPass": false,
+  "humanListeningPass": null
+}

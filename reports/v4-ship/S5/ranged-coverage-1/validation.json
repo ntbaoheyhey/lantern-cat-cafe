@@ -1,0 +1,156 @@
+{
+  "at": "2026-11-16T21:41:28.067Z",
+  "trial": "ranged-coverage-1",
+  "rows": [
+    {
+      "name": "wave1",
+      "seconds": 90.06299996376038,
+      "lufs": -17.81,
+      "lra": 8.1,
+      "peak": -2.82,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1166
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1083,
+      "estimatedOutputLatencyMs": {
+        "min": 28.038000000000466,
+        "p95": 32.97333333109782,
+        "max": 33.373333333329356
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "wave3",
+      "seconds": 90.0680000782013,
+      "lufs": -18.08,
+      "lra": 8.1,
+      "peak": -2.63,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1102
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1027,
+      "estimatedOutputLatencyMs": {
+        "min": 27.982333331096015,
+        "p95": 32.97433333482695,
+        "max": 33.368333333331975
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "home",
+      "seconds": 90.63700008392334,
+      "lufs": -17.36,
+      "lra": 5,
+      "peak": -2.31,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 1,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 141
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 2579,
+      "estimatedOutputLatencyMs": {
+        "min": 27.985333331098445,
+        "p95": 33.083333332588154,
+        "max": 33.280333331844304
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 1
+    },
+    {
+      "name": "bag",
+      "seconds": 90.64400005340576,
+      "lufs": -17.12,
+      "lra": 4.6,
+      "peak": -1.82,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 249
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3286,
+      "estimatedOutputLatencyMs": {
+        "min": 28.184333330347727,
+        "p95": 33.272333335567964,
+        "max": 33.38333333333139
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 2
+    },
+    {
+      "name": "forge",
+      "seconds": 90.23300004005432,
+      "lufs": -18.02,
+      "lra": 0.8,
+      "peak": -2.5,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 76
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3509,
+      "estimatedOutputLatencyMs": {
+        "min": 28.488333331098147,
+        "p95": 32.677333330357214,
+        "max": 32.88233333333301
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 5
+    }
+  ],
+  "coverageSeconds": 451.6450002193451,
+  "continuousSingleSession": false,
+  "aggregate": {
+    "lufs": -17.63,
+    "lra": 8.5,
+    "peak": -1.82
+  },
+  "gates": {
+    "coverage30Minutes": false,
+    "loudness": true,
+    "truePeak": true,
+    "loudnessRange": true,
+    "sourceBudget": true,
+    "duckDepth": true,
+    "duckRecovery": true,
+    "zeroErrors": true
+  },
+  "physicalAudibleOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "note": "Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately."
+}

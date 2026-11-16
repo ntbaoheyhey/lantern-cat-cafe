@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-16T21:48:31.016845+00:00",
+  "complete": false,
+  "failure": "Initial inventory expected three cat-file result fields. No scope or scan result was published.",
+  "anomalies": [
+    {
+      "commit": "ca1de4e5da37b086d1135c474fa9a8cb6fa65aa4",
+      "path": "contracts/lib/forge-std",
+      "response": "8987040ede9553cea20c95ad40d0455930f9c8e0 submodule",
+      "treeEntries": [
+        [
+          "160000",
+          "commit",
+          "8987040ede9553cea20c95ad40d0455930f9c8e0"
+        ]
+      ]
+    },
+    {
+      "commit": "ca1de4e5da37b086d1135c474fa9a8cb6fa65aa4",
+      "path": "contracts/lib/openzeppelin-contracts",
+      "response": "69c8def5f222ff96f2b5beff05dfba996368aa79 submodule",
+      "treeEntries": [
+        [
+          "160000",
+          "commit",
+          "69c8def5f222ff96f2b5beff05dfba996368aa79"
+        ]
+      ]
+    }
+  ],
+  "diagnosticAttempt1": "The initial diagnostic assumed unavailable Gitlink commits; its assertion failed. No scope was accepted.",
+  "harnesses": {
+    "path": "reports/v4-ship/S11/history-paths-1/attempt-1-harnesses.json.gz",
+    "sha256": "c3592d7b948982388ab454110bf75ab5e707285f9c67e9fb3a524c8c6271f5fd"
+  }
+}
