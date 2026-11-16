@@ -1,9 +1,9 @@
 # Bản thử dành cho giám khảo
 - Nhánh tích hợp: codex/v4-ship-2026-11-16; chưa triển khai lên mạng.
-- Bản âm thanh trước đã chạy30phút; bản sửa healer mới đang đo lại, chưa kế thừa kết luận độ bền.
-- Bản ghi boss mới: −16,99 LUFS; khoảng động8,9 LU; đỉnh−1,82 dBTP, đều trong giới hạn.
+- Bản healer mới đã chạy liên tục30phút,18lần khởi động lại trận,không lỗi; thời lượng mã hóa đã đối chiếu.
+- Bản ghi healer boss:−16,99LUFS; khoảng động8,9LU;đỉnh−1,65dBTP,đều trong giới hạn.
 - Giới hạn sáu nguồn âm/100 ms, giảm nhạc 8 dB và phục hồi âm lượng đã đạt.
-- 18/18 lời thoại kết thúc boss đạt mốc ước tính33 ms; toàn bộ âm vẫn có mẫu33,38 ms vượt ngưỡng. Chưa đo độ trễ vật lý.
+- Toàn bộ âm vẫn có mẫu ước tính vượt33ms; nhận dạng và đo vật lý còn mở. Không kết luận G-AUDIO đã đạt.
 - Bản healer mới nhận dạng lời thoại 7/12, cần10/12; đây chưa phải so sánh có kiểm soát với bản8/12 trước. Kiểm tra nghe còn mở.
 - 34 trường hợp âm UI/giao dịch không quá 300 ms; 15 kiểm tra âm lượng/tắt tiếng/tải lại đạt.
 - Đủ 20/20 hành trình đạt: trung vị battle khoảng 3 giây/2 lần bấm; receipt khoảng 95 giây; 360 receipt đã đối chiếu, không lỗi/popup.
@@ -21,4 +21,4 @@ S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đ�
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
-Âm thanh S11:32lần chạm Clover ở hai hành trình production13 đều dùng một chime, không va chạm;36biên nhận và20nút đạt. Năm cảnh451,68s đạt mức tổng−17,63LUFS/8,6LRA/−1,41dBTP;đang chạy độ bền30phút. Đã tìm ra luồng demo thiếu chuyển nhạc/nền; bản sửa thử4/4ca, chưa áp dụng. Launch/travel của ranged còn thiếu.
+Âm thanh S11:32lần chạm Clover ở production13 đều dùng chime. Hai hành trình thực hoàn tất36biên nhận nhưng cả bốn trận còn nhạc home/thiếu nền boss;−15,47/−15,55LUFS vượt ngưỡng. Đang áp dụng bản sửa chuyển cảnh; phép tính nguồn ranged đã chọn hướng thử, chưa triển khai.
