@@ -1,11 +1,11 @@
-# ART execution anchor — 2026-11-16T19:25:35.023540+00:00
+# ART execution anchor — 2026-11-16T19:30:29.378029+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: poll A10pipeline87989/log a10-contrast-pipeline-r1.log; fullweb/typecheck/3parity then3films/900layouts. Runtime r2 all11views/79labels PASS(min5.95837), hover comparison reviewed/closed. Review fresh films/layouts next; no runtime edits during pipeline.
+NEXT1: poll A10finish90330/a10-contrast-finish.log. R1wave1 has null renderFrame at encodedf0; preserved. Retry wave1 only with unchanged recorder/80hashes, verify2700markers, finish900layouts and native HUD10fps review pages.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:9205464cb verified (hover correction + retained r1 failure); plaques07b0bd162, study173d58395, A9receipt557813950 pushed.
-LIVE: craftVite3426/5990; pipeline87989, child PID/log in A10/contrast/pipeline-jobs.json. Runtime87832 completed0/11views; r1 failure retained. Logs a10-contrast-runtime-r2.log/a10-contrast-pipeline-r1.log.
+LAST PUSH:69426751b verified (79real-label PASS observations); runtime9205464cb hover/07b0bd162 plaques. A9receipt557813950 remains pushed. No runtime edits during capture.
+LIVE: craftVite3426/5990; finish90330 detached/child PIDlogs A10/contrast/finish-jobs.json. Priorpipeline87989 stopped at marker failure after2664/318+typecheck+3parity and3films. Runtime retry87832 completed0.
 STOP/INBOX checked19:08UTC unchanged; noSTOPfile; designer mochi/soot/clover empty. SHIPHEAD55e72e843; final class announcement absent; db35585a remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:2afterrewrite; A10 private3-way HUD and hover comparison inspected once/closed. A10 already8/8indexedJPG; new images local raw only. A9 all27R2own/3layout and earlier boards remain closed.
+IMAGEOPENS:0afterrewrite; prior2comparison sheets closed; A10 private3-way HUD and hover comparison inspected once/closed. A10 already8/8indexedJPG; new images local raw only. A9 all27R2own/3layout and earlier boards remain closed.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
