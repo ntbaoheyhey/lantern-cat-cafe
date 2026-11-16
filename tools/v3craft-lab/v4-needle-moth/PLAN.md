@@ -1,7 +1,7 @@
 # Needle Moth authoring plan
 LEARN/A7 applies: original held poses and shaped ranged flight. K0 head fixed254..298 before generation, uncertainty2px.
 K1 coils narrow wings and winds needle toward screen-right. K2 extends needle/forearm toward screen-left with wings swept back; target reach adds>=15%of original408pxbody width. K4 folds wings/arms protectively and bends away. Feet planted.
-Use1152normalization canvas with original640sprite centered at256,256; preserve410pxopaque height and44pxhead. K5 aliasesK2 for this enemy.
+Use1152normalization canvas with original640sprite centered at256,256; preserve408pxalpha>=128 height and44pxhead. K5 aliasesK2 for this enemy.
 Two original FX drills: separated gold/rose needle flight with stitched wake; ultimate fan of sparse needle stitches behind targets, preserving faces. No source reference frames in generation.
 Authoring started after the A10 receipt; no production change was made during its normal-renderer capture.
 K1-A1 retained as failed: IoU .347831, mean Lab dE 1.166445, feet 0px, head ratio .799373 outside +/-5%. Fixed source head landmarks489..589 preceded measurement.
@@ -16,3 +16,5 @@ K1-A6 main-head489..596 passes1.014501; rawdE7.591432FAIL retained. Authorized30
 K2-A1 fixedhead488..580: ratio.961771,dE3.817424,IoU.321196,feet0,reach+.286420bodywidth,changedbbox33.8927%,no clipping. Numerical source gates pass; grouped225px review and published metrics remain pending.
 K4-A1 rejected: head faces screen-right and fixedhead475..558 givesratio.813569. IoU.400377,dE1.134306,feet0. K4-A2 corrects head orientation and size while preserving the guard body; failure retained.
 K4-A2 restores left-facing identity but fixedhead454..548 remains too small:ratio.919448FAIL;dE1.925614,IoU.398680,feet1. K4-A3 requests10%head-only enlargement. No head landmarks changed after measurement.
+
+K2-A1 and K4-A3 source drawings selected from the already-viewed grouped225px review; runtime/film acceptance remains pending. No failed candidate landmarks changed.

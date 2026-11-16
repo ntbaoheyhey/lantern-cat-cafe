@@ -3,7 +3,7 @@ import {chromium} from '../../../scripts/v3feel/browser-fixture.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 const root=resolve('.'),lab='tools/v3craft-lab/v4-needle-moth',out=`${lab}/raw/${process.env.ART_DRILL_ROUND||'runtime'}`;
-const tuning={count:Number(process.env.ART_NEEDLE_COUNT??18),length:Number(process.env.ART_NEEDLE_LENGTH??520),spread:Number(process.env.ART_NEEDLE_SPREAD??850)};
+const tuning={count:Number(process.env.ART_NEEDLE_COUNT??18),length:Number(process.env.ART_NEEDLE_LENGTH??520),spread:Number(process.env.ART_NEEDLE_SPREAD??850),thickness:Number(process.env.ART_NEEDLE_THICKNESS??1)};
 await mkdir(out,{recursive:true});
 const manifest=JSON.parse(await readFile(`${lab}/exported/manifest.json`,'utf8'));
 const fx=JSON.parse(await readFile(`${lab}/fx-export.json`,'utf8'));
@@ -37,7 +37,7 @@ try{
   target.scale.set(targetManifest.canvas[0]*targetScale,-targetManifest.canvas[1]*targetScale,1);target.renderOrder=10;group.add(target);
   const socket=(key)=>{const p=manifest.poses[key].sockets.vfxOrigin;return{x:home.x+(p[0]-manifest.baseline[0])*actorScale,y:home.y+(p[1]-manifest.baseline[1])*actorScale};};
   const face=(m,key,pos,scale)=>{const f=m.poses[key].face;return{x:pos.x+(f[0]-m.baseline[0])*scale,y:pos.y+(f[1]-m.baseline[1])*scale,width:f[2]*scale,height:f[3]*scale};};
-  const effects={};for(const travel of [150,250]){const e=new NeedleStitches({travel,spread:tuning.spread+(travel===250?90:0),length:tuning.length,count:tuning.count,textureUrl:`/@fs${root}/${lab}/textures/sewing-needle.webp`,aspect:fx.dimensions[1]/fx.dimensions[0],tip:fx.tipUv});await e.ready;scene.add(e.ground,e.rear,e.front);effects[travel]=e;}
+  const effects={};for(const travel of [150,250]){const e=new NeedleStitches({travel,spread:tuning.spread+(travel===250?90:0),length:tuning.length,count:tuning.count,thickness:tuning.thickness,textureUrl:`/@fs${root}/${lab}/textures/sewing-needle.webp`,aspect:fx.dimensions[1]/fx.dimensions[0],tip:fx.tipUv});await e.ready;scene.add(e.ground,e.rear,e.front);effects[travel]=e;}
   window.drill={render(ms,ultimate,travel,hit=false){
    const key=hit?'K4':ultimate?(ms<50?'K0':ms<300?'K1':ms<2000?'K2':'K0'):(ms<50?'K0':ms<330?'K1':ms<500?'K2':'K0');
    for(const [k,m]of Object.entries(poses))m.visible=k===key;

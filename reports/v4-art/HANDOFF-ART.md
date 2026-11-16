@@ -1,10 +1,10 @@
 # ART execution anchor — 2026-11-16T14:12UTC
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v3-feel-2026-11-14;freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19 through29Nov12UTC.
-NEXT1: Persist K2-A1/K4-A3 selection decisions from already-viewed grouped225px sheet, then run tools/.venv/bin/python tools/v3craft-lab/v4-needle-moth/export.py; inspect sockets/exported metrics and launch detached drill r1.
+NEXT1: Publish selected Needle poses with export.py --publish, copy selected originalFX/runtime module, route craft scene; run regression/live probe/marked films. r2labPASS,privatecompare reviewed; production still unchanged.
 NEXT2: Needle K2/K4 fixed-landmark gates,2ownFX drills, private same-scale compare, runtime integration, regression/3F6/marked films/blind/receipt; then YarnK1/K2/K4/K5+FX.
 NEXT3: A8delivery interrupt;A9ensemble/activation;verifiedA10requests;A11open gates;A12afterfreeze. Never stop with summary.
-LAST PUSH:66b6f5514 verified; checkpointing genuine Needle lab/provenance WIP now. Production Needle assets/routing unchanged. A10total8MBOPEN.
-LIVE: craftVitePID40003/5990/jobs/needle-craft-vite.log launched withVITE_CRAFT_PILOT=soot. OldownednormalVite23719group stopped. AllA10captures/validation finished; no job pending exceptnewVite.
+LAST PUSH:f5c37828f verified; Needle lab/provenance WIP checkpoint pushed. Production Needle assets/routing unchanged. A10total8MBOPEN.
+LIVE: craftVitePID40003/5990/jobs/needle-craft-vite.log. Needle drills59198/60057finished, both logs recorded; no generation/capture active.
 Requested68961/69950 absent; A6final/post logs exit0. Detached jobs use PythonPopen(start_new_session=True),stdinDEVNULL,nohup,log;max3;recordPID immediately.
 NoSTOP/inboxpause checked14:11UTC; SHIP13:20portrait delivered c5ccdfae1, integration pending. New13:40textcontrast evidence request queued A10. Class db35585 nonfinal; no merge/baseline adoption.
 A10promo alreadydelivered a14f8a76b; don'tregenerate. Transfer implementation48599c03a selects timeline.owner pages; roster-token-safe readiness; WebGL-only exact lossless atlases.
@@ -20,8 +20,8 @@ Binding K1-A1/K2-A1/K4-A2,K5aliasK2;blind9/9;11completewindows;3+flightframes;K2
 Teacup K1-A3/K2-A2/K4-A3,K5aliasK2;3posemetricsPASS;K2changed32.7334%;blind9/9;13completewindows/4ults;8100markers exact. Productionbc85b0c82;11sourcehashes verified.
 Teacupall24film pages+900psheetreviewed;8/8selectedJPG;neverreopen. FX20.4389–21.2972%,face<=2.7916%,socket<1.7e-13,occlusion<=12.7265%. Correctspoonbowlsocket603,490.
 Teacup60.240485fps;motion<=9.21955px;return<1.2e-13;camera0;allposeFX3,784,736B;2649/315,typecheck,3F6,lanePASS. Tailwave3A69beyond90s excluded. Olddamage/reflect,focuspost600,ensemble/activation/timesplitOPEN.
-Needle: K1-A6Lab30 selected(head1.014501,dE5.369302,IoU.378964,feet1). K2-A1 numericalPASS(head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%,feet0). K4-A3 numericalPASS(head.977105,dE3.566826,IoU.402302,feet0). K2/K4 groupedreview seen, decisions not yet persisted. K1A1..A5/K4A1..A2 failures retained.
-IMAGEOPENS:0afterrewrite; all previous previews/crops/K1colour/K2K4group alreadyseen, neverreopen. Latestgroup shows distinctrelease/guard,leftfacingidentity. NeedletrackedJPG0/8;save reviewedselectionlater. No generation running; originalFX60,240B exported, two drills/privatecompare/runtimepending.
+Needle: K1-A6Lab30 selected(head1.014501,dE5.369302,IoU.378964,feet1). K2-A1 numericalPASS(head.961771,dE3.817424,IoU.321196,reach+.286420,changed33.8927%,feet0). K4-A3 numericalPASS(head.977105,dE3.566826,IoU.402302,feet0). K2/K4 source selections persisted; export/drills pending. K1A1..A5/K4A1..A2 failures retained.
+IMAGEOPENS:0afterrewrite; allsourcepreviews,K1colour,K2K4group,r1/r2drills/privatecompare seenonce. Neverreopen. NeedletrackedJPG0/8. Selectedr2:150ms,count27,length560,spread900,thickness1.8; area25.6102%,face1.9477%,socket<1.3e-13px.
 EXCLUDE logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies. Reports tracked~97MBbeforethissmallreceipt;limit150MB. No indiscriminate staging.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese. Commandsoutput<=40lines/3KB,diffs<=80. Python tools/.venv/bin/python. Commitpush eachstep<=20min,includingfailures.
 Bindingportrait13:20SHIPrequest fixed by exact97,490B runtime copy. BeforedecodeFAIL retained;after640x640decodePASSat1280x720/1440x900. Receipt REVIEW/A10/binding-portrait;SHIPjourneyverificationpending.

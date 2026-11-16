@@ -3,7 +3,7 @@ import * as T from 'three';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from '../../../apps/web/src/game/cardrpg/vfx-craft/lantern-requiem';
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
 export interface NeedleFrame extends RequiemFrame {ultimate:boolean}
-export interface NeedleTuning {travel?:number;spread?:number;length?:number;count?:number;textureUrl:string;aspect:number;tip:[number,number]}
+export interface NeedleTuning {travel?:number;spread?:number;length?:number;count?:number;thickness?:number;textureUrl:string;aspect:number;tip:[number,number]}
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const smooth=(v:number)=>{const t=clamp(v);return t*t*(3-2*t);};
 export function needleFlight(ms:number,impact:number,travel:number){
@@ -59,6 +59,7 @@ export class NeedleStitches {
     const open=smooth((age-rank*45-column*8)/70),tilt=(u-.5)*.7+(rank-1)*.16;
     const p={x:cx+(u-.5)*spread+(rank-1)*20*k,y:cy+(rank-1)*65*k-(1-open)*55*k};
     this.place(m,p,length,-Math.PI/2+tilt,alpha*open*.9,-.2+decay);
+    m.scale.y*=this.tuning.thickness??1;
    }
   }
   for(const m of this.all){const u=m.material.uniforms;u.uFaceCount!.value=Math.min(16,f.faces.length);
