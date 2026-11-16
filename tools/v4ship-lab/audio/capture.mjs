@@ -39,7 +39,7 @@ async function instrument(page){
      stats.starts.push(record);return result;
     };return source;
    };
-   try{return start.apply(this,arguments);}finally{this.ctx.createBufferSource=create;}
+   try{const playing=start.apply(this,arguments);record.ducking=playing.ducking;return playing;}finally{this.ctx.createBufferSource=create;}
   };
   window.__audioMeter=setInterval(()=>stats.samples.push({audioTime:a.ctx?.currentTime,wallMs:Date.now(),duck:a.duck?.gain.value,...a.diagnostics,packs:undefined}),25);
  });
@@ -91,7 +91,10 @@ try{for(const name of names){
    actions.push({atSeconds:elapsed,screen:name});
   }
   await page.waitForTimeout(Math.min(5,seconds-elapsed)*1000);
-  if((elapsed+5)%30===0)console.log(JSON.stringify({trial,name,elapsed:elapsed+5,seconds}));
+  if((elapsed+5)%30===0){
+   const live=await page.evaluate(()=>({context:window.__thAudio.ctx.state,active:window.__thAudio.diagnostics.active,voice:window.__thAudio.diagnostics.voice,starts:window.__audioStats.starts.length,restarts:window.__audioStats.restarts}));
+   console.log(JSON.stringify({trial,name,elapsed:elapsed+5,seconds,errors:errors.length,...live}));
+  }
  }
  const data=await page.evaluate(async()=>{
   clearInterval(window.__audioRestart);clearInterval(window.__audioMeter);window.__depthReview.paused=true;

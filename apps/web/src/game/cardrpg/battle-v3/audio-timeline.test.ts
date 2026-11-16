@@ -1,4 +1,4 @@
-import {expect,it} from 'vitest';
+import {expect,it,vi} from 'vitest';
 import {CATS,ENEMIES} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {audioTimeline,VOICE_TIMING} from './audio-timeline';
 import {configureSequence,type CinematicMode} from './sequence';
@@ -7,6 +7,16 @@ import {BattleAudio} from './battle-audio';
 import type {SceneView} from '../../squad/turn3d/scene';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
 import {reserveUltimateLeadIn} from './voice-windows';
+it('warms newly appearing actors before their first cue without reloading unchanged rosters',()=>{
+ const preloadVoices=vi.fn(async()=>{}),previous=window.__thAudio;
+ window.__thAudio={...previous,preloadVoices} as NonNullable<Window['__thAudio']>;
+ try{
+  const audio=new BattleAudio(()=>{}),view={battleKey:{},formationC2:true,actors:[{id:'party-mochi'}],paused:true} as unknown as SceneView;
+  audio.render(view);audio.render(view);expect(preloadVoices).toHaveBeenCalledTimes(1);
+  audio.render({...view,actors:[...view.actors,{id:'foe-2-binding-thread'} as SceneView['actors'][number]]});
+  expect(preloadVoices).toHaveBeenCalledTimes(2);expect(preloadVoices).toHaveBeenLastCalledWith(['party-mochi','foe-2-binding-thread']);
+ }finally{window.__thAudio=previous;}
+});
 it('uses weapon cues for basics and at most one ultimate callout at focus start',()=>{
  for(const id of [...CATS.flatMap(c=>[`${c.id}-1`,`${c.id}-4`]),...ENEMIES.flatMap(e=>[`enemy:${e.id}`,`enemy:${e.id}:basic`])])for(const mode of ['full','short','off'] as CinematicMode[]){
   const plan=configureSequence(pilotFixture(id).plan,mode),track=audioTimeline(plan,plan.sequence),voices=track.filter(c=>c.role==='voice');

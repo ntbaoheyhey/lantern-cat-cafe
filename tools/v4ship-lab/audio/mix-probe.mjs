@@ -15,12 +15,13 @@ try{for(const variant of variants){
  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id===fixtureId),{url:'http://127.0.0.1:5995',fixedClock:false,setupPage:p=>installOutputCapture(p,path)});
  await page.evaluate(async({v,fixtureId})=>{
   const a=window.__thAudio;await a.unlock();await a.preload('battle');a.music(fixtureId==='boss'?'boss':'battle');
+  if(v.poolSeed!==undefined){const {VariantPools}=await import('/src/audio/variants.ts');let state=v.poolSeed;const random=()=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state/4294967296;};a.random=random;a.pools=new VariantPools(random);}
   await new Promise(r=>setTimeout(r,600));
   a.setBus('music',a.settings.music*10**(v.bedDb/20));
   if(v.voiceDb)a.buses.get('voice').gain.setValueAtTime(a.settings.voice*10**(v.voiceDb/20),a.ctx.currentTime);
   if(v.voiceToneDb)a.tones.get('voice').gain.setValueAtTime(a.tones.get('voice').gain.value+v.voiceToneDb,a.ctx.currentTime);
   const now=a.ctx.currentTime;a.mixTrim.gain.cancelScheduledValues(now);a.mixTrim.gain.setValueAtTime(a.mixTrim.gain.value*10**(v.trimDb/20),now);
-  a.duckMusic=()=>{a.makeSpeechSpace();const p=a.duck.gain,t=a.ctx.currentTime;p.cancelScheduledValues(t);p.setValueAtTime(p.value,t);p.linearRampToValueAtTime(10**(-v.duckDb/20),t+v.attack);};
+  if(v.duckDb!==undefined)a.duckMusic=()=>{a.makeSpeechSpace();a.ducked=true;const p=a.duck.gain,t=a.ctx.currentTime;p.cancelScheduledValues(t);p.setValueAtTime(p.value,t);p.linearRampToValueAtTime(10**(-v.duckDb/20),t+v.attack);};
   window.__mixProbe={start:await window.__outputCapture.start(),voices:[]};
   a.hits.length=0;const s=window.__depthScene,m=window.__depthReview;s.last=0;s.raf=requestAnimationFrame(s.loop);m.nextStepAt=0;m.paused=false;m.notify(false);
   window.__mixTimer=setInterval(()=>window.__mixProbe.voices.push({...a.diagnostics,packs:undefined,at:Date.now()}),100);

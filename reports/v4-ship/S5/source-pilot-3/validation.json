@@ -1,0 +1,182 @@
+{
+  "at": "2026-11-16T09:35:58.078Z",
+  "trial": "source-pilot-3",
+  "rows": [
+    {
+      "name": "wave1",
+      "seconds": 90.06200003623962,
+      "lufs": -17.78,
+      "lra": 7.9,
+      "peak": -2.86,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1151
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1031,
+      "estimatedOutputLatencyMs": {
+        "min": 12.701999999997497,
+        "p95": 17.57533333333413,
+        "max": 18.048333333339542
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "wave3",
+      "seconds": 90.08400011062622,
+      "lufs": -17.98,
+      "lra": 8,
+      "peak": -2.68,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1109
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 976,
+      "estimatedOutputLatencyMs": {
+        "min": 12.704999999999927,
+        "p95": 17.851333330370835,
+        "max": 30.369333330352674
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "boss",
+      "seconds": 90.07099986076355,
+      "lufs": -17.05,
+      "lra": 9.3,
+      "peak": -1.95,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1009
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 989,
+      "estimatedOutputLatencyMs": {
+        "min": 12.730000000003201,
+        "p95": 17.760333336314943,
+        "max": 18.067333333334318
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "home",
+      "seconds": 90.6930000782013,
+      "lufs": -17.35,
+      "lra": 5,
+      "peak": -2.19,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 2,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 146
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 2604,
+      "estimatedOutputLatencyMs": {
+        "min": 13.345333330333233,
+        "p95": 17.97233332439646,
+        "max": 28.782333321410988
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 1
+    },
+    {
+      "name": "bag",
+      "seconds": 90.68700003623962,
+      "lufs": -17.13,
+      "lra": 4.3,
+      "peak": -1.9,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 250
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3286,
+      "estimatedOutputLatencyMs": {
+        "min": 12.75933333631292,
+        "p95": 17.85033334523905,
+        "max": 41.16433332737279
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 2
+    },
+    {
+      "name": "forge",
+      "seconds": 90.32500004768372,
+      "lufs": -18.07,
+      "lra": 0.8,
+      "peak": -1.89,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 75
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3513,
+      "estimatedOutputLatencyMs": {
+        "min": 12.806000008931733,
+        "p95": 17.647333327382512,
+        "max": 30.74733333631366
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 5
+    }
+  ],
+  "coverageSeconds": 541.922000169754,
+  "continuousSingleSession": false,
+  "aggregate": {
+    "lufs": -17.55,
+    "lra": 8.8,
+    "peak": -1.64
+  },
+  "gates": {
+    "coverage30Minutes": false,
+    "loudness": true,
+    "truePeak": true,
+    "loudnessRange": true,
+    "sourceBudget": true,
+    "duckDepth": true,
+    "duckRecovery": true,
+    "zeroErrors": true
+  },
+  "physicalAudibleOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "note": "Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately."
+}

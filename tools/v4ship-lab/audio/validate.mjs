@@ -14,7 +14,7 @@ for(const row of check.rows){
  for(const item of [row.capture,row.events])if(hash(resolve(root,item.path))!==item.sha256)throw Error('Changed evidence');
  clips.push(resolve(root,row.capture.path));
  const data=JSON.parse(gunzipSync(readFileSync(resolve(root,row.events.path))));
- const duckers=data.starts.filter(s=>s.bus==='voice'||s.id.startsWith('ult.'));
+ const duckers=data.starts.filter(s=>s.ducking??(s.bus==='voice'||s.id.startsWith('ult.')));
  const voice=data.starts.filter(s=>s.bus==='voice');
  const held=data.samples.filter(s=>voice.some(v=>s.audioTime>=v.when+.1&&s.audioTime<(v.endedAudioTime??v.when+v.bufferDuration/v.rate)));
  const heldDb=held.map(s=>20*Math.log10(s.duck));
@@ -47,8 +47,9 @@ const analysis=spawnSync('ffmpeg',['-hide_banner','-f','concat','-safe','0','-i'
 if(analysis.status!==0)throw Error('Aggregate loudness analysis failed');
 const levels=JSON.parse(analysis.stderr.match(/\{\s*"input_i"[\s\S]*?\}/)[0]);
 const total=rows.reduce((sum,r)=>sum+r.seconds,0),aggregate={lufs:+levels.input_i,lra:+levels.input_lra,peak:+levels.input_tp};
-const report={at:new Date().toISOString(),trial,rows,coverageSeconds:total,continuousSingleSession:false,aggregate,
+const continuous=rows.length===1&&rows[0].seconds>=1800;
+const report={at:new Date().toISOString(),trial,rows,coverageSeconds:total,continuousSingleSession:continuous,aggregate,
  gates:{coverage30Minutes:total>=1800,loudness:aggregate.lufs>=-20&&aggregate.lufs<=-16,truePeak:aggregate.peak<=-1,loudnessRange:aggregate.lra>=5,sourceBudget:rows.every(r=>r.sourceBudget),duckDepth:rows.filter(r=>r.heldDuckDb).every(r=>r.duckDepthPass),duckRecovery:rows.filter(r=>r.recoverySamples).every(r=>r.recoveryPass),zeroErrors:rows.every(r=>r.pageErrors.length===0)},
  physicalAudibleOnsetVerified:false,overallAudioGatePass:false,
- note:'Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately.'};
+ note:(continuous?'One uninterrupted browser context and recording. ':'Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. ')+'Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately.'};
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({coverageSeconds:total,aggregate,gates:report.gates}));

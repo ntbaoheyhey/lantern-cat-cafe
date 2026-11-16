@@ -2,7 +2,7 @@ import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
 import {AudioEngine} from './engine';
 import {VariantPools} from './variants';
 import type {AudioManifest,CueDesign,Sample} from './cues';
-class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number){this.value=v;}cancelScheduledValues(){}}
+class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number,_time?:number){this.value=v;}cancelScheduledValues(){}}
 class Node {connect(n:Node){return n;}disconnect(){}}
 class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;loopStart=0;loopEnd=0;onended?:()=>void;start=vi.fn();stop(){this.onended?.();}}
 class Gain extends Node {gain=new Param();}
@@ -22,6 +22,32 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>vi.unstubAllGlobals());
 describe('layered playback admission and variants',()=>{
+ it('warms the shared menu speech pack at home without loading it for battle',async()=>{
+  const m={...fixture,packs:{...fixture.packs,'menu-voices':{webm:'/menu.webm',mp3:'/menu.mp3'}},cues:{...fixture.cues,'voice.guide.idle':samples('voice').map(s=>({...s,pack:'menu-voices'}))}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();await e.preload('battle');expect(e.diagnostics.packs).not.toContain('menu-voices');
+  await e.preload('home');expect(e.diagnostics.packs).toContain('menu-voices');
+ });
+ it('finishes duck recovery on its original deadline while unrelated effects end',async()=>{
+  const e=new AudioEngine();await e.unlock();e.play('voice.mochi.ult');await flush();
+  const voice=Context.latest.sources[0]!,duck=(e as unknown as {duck:Gain}).duck.gain;
+  const ramp=vi.spyOn(duck,'linearRampToValueAtTime');
+  Context.latest.currentTime+=.15;e.play('hit.blunt');await flush();
+  Context.latest.currentTime=10.4;voice.onended!();
+  expect(ramp).toHaveBeenLastCalledWith(1,10.8);
+  for(const source of Context.latest.sources.slice(1)){Context.latest.currentTime+=.1;source.onended!();}
+  expect(ramp).toHaveBeenCalledTimes(1);
+ });
+ it('holds a designed effect duck through its last layer before recovering once',async()=>{
+  const m={...fixture,designs:{...fixture.designs,'fx.charge':{...design,ducking:true}}};
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));
+  const e=new AudioEngine();await e.unlock();e.play('fx.charge');await flush();
+  const duck=(e as unknown as {duck:Gain}).duck.gain,ramp=vi.spyOn(duck,'linearRampToValueAtTime');
+  for(const source of Context.latest.sources.slice(0,-1))source.onended!();
+  expect(ramp).not.toHaveBeenCalled();expect(duck.value).toBeCloseTo(10**(-8/20));
+  Context.latest.currentTime+=.423;Context.latest.sources.at(-1)!.onended!();
+  expect(ramp).toHaveBeenCalledTimes(1);expect(ramp).toHaveBeenCalledWith(1,Context.latest.currentTime+.4);
+ });
  it('warms only authored callouts for the current roster after audio unlock',async()=>{
   const m={...fixture,packs:{...fixture.packs,mochi:{webm:'/mochi.webm',mp3:'/mochi.mp3'},soot:{webm:'/soot.webm',mp3:'/soot.mp3'}},cues:{...fixture.cues,
    'voice.mochi.ult.charge':samples('voice').map(s=>({...s,pack:'mochi'})),

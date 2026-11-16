@@ -684,5 +684,12 @@
     "url": "reports/v4-ship/S5/engine-probe-before.json",
     "accessed": "2026-11-16",
     "takeaway": "Cold52.4ms versus selective preload0.9ms; simultaneous burst20 sources. After fix0.7ms and6 sources."
+  },
+  {
+    "id": "S5-duck-recovery-comparison",
+    "type": "own-experiment",
+    "title": "Real-engine release under finishing UI sources",
+    "url_or_path": "reports/v4-ship/S5/duck-after.json",
+    "comparison": "Before: 12 recovery ramps, minimum gain 0.852643 after 450 ms; after: 1 ramp, gain 1.0. Before evidence retained in duck-before.json."
   }
 ]

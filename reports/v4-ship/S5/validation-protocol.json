@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-16T09:38:52.595478+00:00",
+  "productionChanges": "Duck lifecycle and menu/roster preloading only after completed pilot3; keep calibrated current EQ.",
+  "runs": [
+    {
+      "trial": "coverage-1",
+      "secondsPerScene": 90,
+      "scenes": [
+        "wave1",
+        "wave3",
+        "home",
+        "bag",
+        "forge"
+      ],
+      "separateContexts": true
+    },
+    {
+      "trial": "endurance-1",
+      "seconds": 1800,
+      "scenes": [
+        "boss"
+      ],
+      "continuousSingleContext": true
+    }
+  ],
+  "frozenProxy": "coverage-1 first twelve distinct eligible gameplay occurrences in scene/capture order, first occurrence only; no substitutions after recognition. Retain pilot3 7/12.",
+  "noRuntimeChangesDuringCapture": true,
+  "unverifiedByAutomation": [
+    "Physical audible onset",
+    "Human listening"
+  ]
+}

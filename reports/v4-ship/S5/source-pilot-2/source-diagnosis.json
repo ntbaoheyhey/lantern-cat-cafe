@@ -1,0 +1,213 @@
+{
+  "at": "2026-11-16T09:27:18.688533+00:00",
+  "trial": "source-pilot-2",
+  "method": "Same twelve frozen gameplay occurrences and same unprompted small.en recognizer. Decode each exact shipped pack offset/duration from source telemetry, add only150ms/200ms silence, no normalization or gain. Compare source versus full mixed recognition; no replacement acceptance lines.",
+  "rows": [
+    {
+      "cueId": "voice.panko.ult.charge",
+      "variantId": "panko-charge-2.flac",
+      "expected": "Close!",
+      "mixedRecognized": "close",
+      "mixedExact": true,
+      "sourceRecognized": "Close",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-panko.webm",
+        "sha256": "a8f34b27f606cd00b8d43d41e4870a198d8be46d508f99471b2d09c37e21e653"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-01-padded.flac",
+        "sha256": "4c5f5b6fa85f5505ab5f521998d27fef701f447dda6ea8ca2dd92d71cbc19503"
+      }
+    },
+    {
+      "cueId": "voice.needle-moth.ult.charge",
+      "variantId": "needle-moth-charge-1.flac",
+      "expected": "Wings sharp and ready!",
+      "mixedRecognized": "Wings sharp and ready!",
+      "mixedExact": true,
+      "sourceRecognized": "Wings sharp and ready!",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-needle-moth.webm",
+        "sha256": "c262162cf5debca5810339c8299381e867534904c737e4a774329990f24ffb94"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-02-padded.flac",
+        "sha256": "fff18604679d97f017ede981315fdc5b15b972607bf2ddc6296fb5b4a5fd00d2"
+      }
+    },
+    {
+      "cueId": "voice.mochi.ult.charge",
+      "variantId": "mochi-charge-1.flac",
+      "expected": "Shields!",
+      "mixedRecognized": "of shields.",
+      "mixedExact": false,
+      "sourceRecognized": "shields",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-mochi.webm",
+        "sha256": "24bee00f9980058c0dd5af0778652c80d3002fccc41c49523b6144057eede2ab"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-03-padded.flac",
+        "sha256": "59f21a4d480ece579907e57d48a015686a8b27b14b3b5a7c11db023f953e1198"
+      }
+    },
+    {
+      "cueId": "voice.soot.ult.charge",
+      "variantId": "soot-charge-2.flac",
+      "expected": "Lights!",
+      "mixedRecognized": "likes",
+      "mixedExact": false,
+      "sourceRecognized": "Lights.",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-soot.webm",
+        "sha256": "ad2cf423723eda42123f0f3c30f031efe8c3d46d324d9a0a8499b7929d45f6ce"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-04-padded.flac",
+        "sha256": "4f8dae581196b2705f61a741f6d4beb4c0caba9f2d30efb18f3bcc6400e999b1"
+      }
+    },
+    {
+      "cueId": "voice.clover.ult.charge",
+      "variantId": "clover-charge-1.flac",
+      "expected": "Watch the flowers bloom!",
+      "mixedRecognized": "Watch the flowers bloom.",
+      "mixedExact": true,
+      "sourceRecognized": "Watch the flowers bloom.",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-clover.webm",
+        "sha256": "d7e2a77880ebd9576e871184a18e9a2cf16601dc953d3bb35f5b6850e8dcab82"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-05-padded.flac",
+        "sha256": "2c430b5d3886af18c31fc274c8cbc8445685b87ccd836d9900c5bfb6cab873c4"
+      }
+    },
+    {
+      "cueId": "voice.button-guard.ult.charge",
+      "variantId": "button-guard-charge-2.flac",
+      "expected": "Hold the line!",
+      "mixedRecognized": "Hold the line.",
+      "mixedExact": true,
+      "sourceRecognized": "Hold the line.",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-button-guard.webm",
+        "sha256": "41da5a22e742fdedd227dad2276cb8040fdeddcd60e9553bdb24f6f25563b9aa"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-06-padded.flac",
+        "sha256": "94d05e224c01d30a93be03f11aa307cee2d3fff32e477f4187d11b464b8a303a"
+      }
+    },
+    {
+      "cueId": "voice.sock-skipper.ult.charge",
+      "variantId": "sock-skipper-charge-2.flac",
+      "expected": "Catch!",
+      "mixedRecognized": "That's right",
+      "mixedExact": false,
+      "sourceRecognized": "Catch!",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-sock-skipper.webm",
+        "sha256": "751520fb78dde40d2593f416a5367e492ffd43d095af9688e973828e3306b411"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-07-padded.flac",
+        "sha256": "52044ab8f34ed3130b3e8f563cc961307e77eccaa60d01d30b8d41c69cee59c1"
+      }
+    },
+    {
+      "cueId": "voice.teacup-healer.ult.charge",
+      "variantId": "teacup-healer-charge-2.flac",
+      "expected": "Fill the cup!",
+      "mixedRecognized": "So the cup",
+      "mixedExact": false,
+      "sourceRecognized": "So the cup",
+      "sourceExact": false,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-teacup-healer.webm",
+        "sha256": "2fa2b79dd176fcc551b4adb3904e77625cceaa5804b8a87301495c2634d2fa92"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-08-padded.flac",
+        "sha256": "f352e54379188640f52ca5a762e6486eb4b7263586fc61e6d2554bdfac6b7f83"
+      }
+    },
+    {
+      "cueId": "voice.pollen-scout.ult.charge",
+      "variantId": "pollen-scout-charge-1.flac",
+      "expected": "Pollen!",
+      "mixedRecognized": "Pollen",
+      "mixedExact": true,
+      "sourceRecognized": "Pollen!",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-pollen-scout.webm",
+        "sha256": "cf75dc40316844c8ec5ec1175adc0a7a3e575c7a7e11225e7a67b2c9e03e15cb"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-09-padded.flac",
+        "sha256": "2493f9611cacbdc27aef0512b6bdb22cf02884388f2f87db5a247647c1be999e"
+      }
+    },
+    {
+      "cueId": "voice.kettle-knight.ult.charge",
+      "variantId": "kettle-knight-charge-2.flac",
+      "expected": "Steam is rising!",
+      "mixedRecognized": "Steam is rising.",
+      "mixedExact": true,
+      "sourceRecognized": "Steam is rising.",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-kettle-knight.webm",
+        "sha256": "449ca1d594a7df73a6bf141408060f69f37cc5604b40eef93e604981c413b2ba"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-10-padded.flac",
+        "sha256": "525870fab217b9706927958549f64f8910a7213dac87ba813ba31fecff328fc0"
+      }
+    },
+    {
+      "cueId": "voice.crumb-sentinel.ult.charge",
+      "variantId": "crumb-sentinel-charge-1.flac",
+      "expected": "All together now!",
+      "mixedRecognized": "All together now.",
+      "mixedExact": true,
+      "sourceRecognized": "all together now.",
+      "sourceExact": true,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-crumb-sentinel.webm",
+        "sha256": "cfdb0b847b76e5ca11a4cf852cf3adeccee117945bcdcb5573ed5c4a5764d28a"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-11-padded.flac",
+        "sha256": "0f18eb4cca205115ab096953e9755290dffcdfff0d7101160d99490ff47a891a"
+      }
+    },
+    {
+      "cueId": "voice.spool-ram.ult.charge",
+      "variantId": "spool-ram-charge-1.flac",
+      "expected": "Full!",
+      "mixedRecognized": "Oh.",
+      "mixedExact": false,
+      "sourceRecognized": "4",
+      "sourceExact": false,
+      "sourcePack": {
+        "path": "apps/web/public/audio/callout-spool-ram.webm",
+        "sha256": "13ef450711c6fd80a925e78ea61f9fa249d83fd3ce63a603790e9277b95a0ce6"
+      },
+      "crop": {
+        "path": "work/v4ship-audio/source-pilot-2/source-12-padded.flac",
+        "sha256": "f4c498cdec0f035c6022311bd47559fc81ae0134e5492b3d9c823f05b5afdd42"
+      }
+    }
+  ],
+  "sourceExact": 10,
+  "mixedExact": 7
+}

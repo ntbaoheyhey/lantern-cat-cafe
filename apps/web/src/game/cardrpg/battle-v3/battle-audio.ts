@@ -14,6 +14,7 @@ export class BattleAudio {
  private battle:unknown;private lastPlan:unknown;private fired=new Set<number>();private track:TimelineCue[]=[];
  private statuses=new Map<string,Set<BodyStatus>>();private lastWall:number|undefined;private elapsed=0;private nextBark=FIRST_BARK_MS;private barks=0;
  private capture=false;private impacts:number[]=[];private pending:{event:FiredCue;options:CueOptions}[]=[];
+ private voiceRoster='';
  constructor(private play:(id:AudioCue,options?:CueOptions)=>void=playCue){}
  /** Deterministic evidence swaps the audio bridge for a recorder, never a second AudioContext. */
  setCapture(enabled:boolean){this.capture=enabled;}
@@ -30,7 +31,11 @@ export class BattleAudio {
   if(view.battleKey!==this.battle){
    this.battle=view.battleKey;this.lastPlan=null;this.statuses.clear();this.fired.clear();this.track=[];this.events.length=0;
    this.elapsed=0;this.nextBark=FIRST_BARK_MS;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
-   if(!this.capture&&typeof window!=='undefined')void window.__thAudio?.preloadVoices?.(view.actors.map(actor=>view.models?.[actor.id]??actor.cardRpg?.cardId??actor.id));
+   this.voiceRoster='';
+  }
+  if(!this.capture&&typeof window!=='undefined'){
+   const bridge=window.__thAudio,roster=view.actors.map(actor=>view.models?.[actor.id]??actor.cardRpg?.cardId??actor.id),key=roster.join('|');
+   if(bridge?.preloadVoices&&key!==this.voiceRoster){this.voiceRoster=key;void bridge.preloadVoices(roster);}
   }
   const now=view.fixedTime===undefined?performance.now():view.fixedTime*1000,delta=this.lastWall===undefined?0:Math.max(0,Math.min(250,now-this.lastWall));this.lastWall=now;
   if(view.galleryPreview||(!this.capture&&(view.paused||view.fixedTime!==undefined)))return;
