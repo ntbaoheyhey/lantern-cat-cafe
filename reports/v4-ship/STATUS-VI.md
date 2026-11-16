@@ -1,11 +1,10 @@
-# Bản SHIP — 16/11, 12:12 Việt Nam
-- Đang làm trên nhánh codex/v4-ship-2026-11-16; chưa deploy.
-- Khách vào trận tập trong khoảng 3 giây, 3 lần bấm ở lần đo thử.
-- Phần thưởng trận chiến dịch đầu tiên xuất hiện khoảng 144 giây; chưa đạt cả hành trình 7 bước.
-- Đang đo 20 hồ sơ khách mới ở hai kích thước màn hình, không sửa game trong lúc đo.
-- Typecheck, 2.640 test web, 733 test server, parity 3 trận và build đã qua.
-- Đã xác minh thông tin Avalanche và quy định nộp bài; hạn làm việc vẫn là 21/11 lúc 23:59 Việt Nam.
-- Quét file hiện tại đã xong; đang phân loại cảnh báo và quét lịch sử. Chưa kết luận repo sạch khóa bí mật.
-- Chưa đo 10 giao dịch Fuji được tài trợ vì máy chưa có cấu hình ví tài trợ.
-- Chuẩn bị nghiên cứu 3 lớp nhân vật; chưa đổi luật hoặc mốc parity.
-- Việc bạn cần làm nằm trong NEEDS-USER-VI.md; không cần thao tác để tiếp tục phần đang làm.
+V4 SHIP — 16/11 12:23 Việt Nam
+Đã nhận REV 2 và tiếp tục công việc trên nhánh tích hợp.
+S0 hoàn tất; S1 đã có tài liệu và kiểm tra hồi quy đạt.
+Đang rà soát 51 cảnh báo bảo mật chưa phân loại; chưa kết luận repo sạch.
+Quét lịch sử vẫn chạy; không ghi giá trị khóa vào báo cáo.
+Đo luồng khách 20 lượt đang chạy; chưa sửa sản phẩm trong lúc đo.
+Các lượt đầu vào trận dưới 3 giây nhưng chưa đi hết forge/market/boss/chứng từ.
+Bộ tranh và biểu tượng lớp của ART đã sẵn sàng; sẽ nhập theo lịch.
+Chưa deploy, chưa sửa hợp đồng, chưa tạo hình ảnh.
+Việc bạn cần làm nằm trong NEEDS-USER-VI.md.

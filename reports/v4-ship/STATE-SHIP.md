@@ -1,4 +1,4 @@
-REQUEST-SHIP.txt bytes=44331 sha256=0aec12d86b89d408d57544c07043ab1e6f88588e3daf4b0d4098bb92a876eb41
+REQUEST-SHIP.txt bytes=46223 sha256=76f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2
 # State
 S0 STARTED 2026-11-16T04:44:21.272565+00:00; base 88fa5bdfd820609f054d174fce24248f35aa9575.
 Disk 119 GiB free (normal mode); shell clean; no salvage.
@@ -19,3 +19,5 @@ S2 G-LEARN PASS9sources/2papers/5web/entry experiment. Harness and fail-closed c
 S2 baseline20profiles launched16Nov05:09UTC, sequential1280x720 then1440x900. No product mutations during baseline.
 S2 pilot: first combat2915ms/3clicks,first campaign reward143828ms; seven-step completion not achieved. Pilot seal selector corrected before baseline.
 S2b research prep: Binding Thread provisionally ranged from current damaging snare kit; ART informed via owned request file. Classes/baseline untouched.
+RESUMED 2026-11-16T05:22:13.593571+00:00: HEAD/upstream8ccd6f9 verified; fixture68690/68776,history70351/70360,baseline80758 alive; old triage80941 absent.
+S1 exact triage completed:34392candidates;51unresolved; metadata only; history still active.
