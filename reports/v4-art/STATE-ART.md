@@ -1,6 +1,6 @@
 REQUEST-ART.txt bytes=45694 sha256=06bca8af1bbc749bf3675081ad6b8799b2875b3f4e2aa2962741c225e4e03269
 # V4 ART state
-A0 STARTED 2026-11-16T04:43:42.528836+00:00; salvage retained; checkpoint commit pending.
+A0 STARTED 2026-11-16T04:43:42.528836+00:00; salvage retained; DONE a86387fe4d250803a676c9c094f6b5ebf90b09f6; pushed.
 Hero cats: Mochi (melee), Soot (ranged), Clover (healer), Panko (melee).
 Enemy action ranking (all 60s P2-R2 logs): binding-thread=6, needle-moth=5, teacup-healer=5, button-guard=3, sock-skipper=3, kettle-knight=3, crumb-sentinel=3, spool-ram=3, pollen-scout=2; boss yarn-giant=3.
 Evidence: REVIEW/A0/hero-ranking.json; three leaders selected.
@@ -13,3 +13,9 @@ A0 G-LEARN:7sources incl1paper,3docs,own renderer comparisons; LEARN/A0.md.
 A0 self-score9/10 salvage; visual acceptance not claimed. Time split: administrative item, authoring0%; no invented credit.
 All later film/art gates: not yet.
 Baseline preserved: reports/v3-feel/parity-new.json; merge SHIP classes only on announced SHA.
+A1 STARTED 2026-11-16T04:47:08.486425+00:00; hybrid art drill, no runtime edits yet.
+SHIP art request: keyart+thumbnail+class icons due17Nov12UTC; queued A10; event shape contract unchanged.
+A1 DONE 2026-11-16T04:50:36.787961+00:00, commit pending; G-LEARN9sources/3papers/4docs/own6timing4colour PASS; G-REG unchanged-code A0 evidence reused.
+A1 recipe: face/foot-guarded smear270–330ms; contact90ms; K4=180ms; preserve accepted Soot colour; new poses no-match then Lab mean/quantiles.
+A1 evidence LEARN/A1.md, REVIEW/A1/8sheets, tools/v3craft-lab/v4-hybrid/results.json; score8/10; films not yet.
+A1 time:04:46:25–04:49:49UTC, approx60%drill authoring/20%study/20%measurement+state (estimated from step timestamps, not activity telemetry).

@@ -47,5 +47,68 @@
     "type": "experiment",
     "topic": "A0 salvage",
     "takeaway": "Hidden rig and swapped mask reproduction: intended8visible copies, none if actor hidden."
+  },
+  {
+    "id": "A1-lasseter",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Pose-to-pose staging, anticipation, follow-through; hold emphasis selectively."
+  },
+  {
+    "id": "A1-reinhard",
+    "url_or_path": "https://home.cis.rit.edu/~cnspci/references/dip/color_transfer/reinhard2001.pdf",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Match channel statistics in decorrelated l-alpha-beta; Lab adaptation is our experiment, not the original colour model."
+  },
+  {
+    "id": "A1-ipadapter",
+    "url_or_path": "https://arxiv.org/abs/2308.06721",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Image conditioning supports reference identity, not a guarantee; do not claim our generator uses this architecture."
+  },
+  {
+    "id": "A1-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Only one visible drawing in an attachment slot; effect points follow attachment."
+  },
+  {
+    "id": "A1-keys",
+    "url_or_path": "https://esotericsoftware.com/spine-keys",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Discrete attachment keys coexist with transforms and events."
+  },
+  {
+    "id": "A1-mix",
+    "url_or_path": "https://esotericsoftware.com/spine-applying-animations",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Per-transition zero mix is possible; Timeline API handles reverse playback needs."
+  },
+  {
+    "id": "A1-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "One sRGB input decode and linear render path."
+  },
+  {
+    "id": "A1-local",
+    "url_or_path": "reports/v3-feel/LEARN/P2.md",
+    "type": "local",
+    "topic": "A1 hybrid",
+    "takeaway": "Existing shared foot-local drawing layer and own art metrics."
+  },
+  {
+    "id": "A1-experiment",
+    "url_or_path": "tools/v3craft-lab/v4-hybrid/results.json",
+    "type": "experiment",
+    "topic": "A1 hybrid",
+    "takeaway": "Pending six timing variants and four colour methods on Soot, common216px opaque height."
   }
 ]

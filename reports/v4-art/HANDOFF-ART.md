@@ -4,13 +4,13 @@ DESIGNER IDLE ONLY | DRAWN K1 K2 K4 K5 | FRAME FILL FIRST
 LEARN: PAPERS + DOCS + OWN EXPERIMENTS | STUDY, DRILL, COMPARE, PRODUCE
 ORIGINAL ART ONLY | SAVE + PROVENANCE NOW | SMALL SHEETS | AUDIO IS SHIP'S
 STATIC CAMERA | BASIC + ULTIMATE | NO MAIN MERGE/DEPLOY | FILES ARE MEMORY
-NOW: A0 green salvage ready to commit; 2026-11-16T04:46:14.196114+00:00.
-NEXT1: Commit+push adoption and salvage; record SHA.
-NEXT2: A1 Soot smear0/60/90ms contact drill and Lab mean/histogram/no-match comparison.
-NEXT3: A1b class study from both reference clips; then A2 framing.
-LAST GOOD COMMIT: 88fa5bdfd820609f054d174fce24248f35aa9575; HEAD=origin verified at adoption.
-OPEN: Film/art gates unaccepted; inherited SHIP reports/v3-demo/vite.log unstaged, untouched.
-PIDS: owned Vite67838 alive5990; old probe42386 ended.
-BACKGROUND JOBS: none; web/typecheck/parity/focus completed PASS.
-FILES: REVIEW/A0, LEARN/A0, sources.json, state files, salvage patch, focus-swap.mjs.
-UPDATED: 2026-11-16T04:46:14.196114+00:00
+NOW: A1 study complete; commit+push recipe/art drill; no runtime change.
+NEXT1: A1b classify reference dash/projectile/heal windows and drill own units.
+NEXT2: A10 requested landing keyart, thumbnail,3class icons before17Nov12UTC.
+NEXT3: A2 frame-fill layout; then A3 apply hybrid recipe to Soot.
+LAST GOOD COMMIT: a86387fe4d250803a676c9c094f6b5ebf90b09f6, pushed A0.
+OPEN: V4 film gates; inherited SHIP reports/v3-demo/vite.log unstaged untouched.
+PIDS: owned Vite67838 alive5990.
+BACKGROUND JOBS: none.
+FILES: A1 LEARN/REVIEW,8JPGs,drill.py/results.json; reference sheet private ignored.
+UPDATED: 2026-11-16T04:50:36.787961+00:00

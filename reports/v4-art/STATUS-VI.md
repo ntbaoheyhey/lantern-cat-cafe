@@ -1,6 +1,7 @@
-Đã giữ bản sửa focus và phản ứng trúng đòn từ phiên trước.
-Soot không còn vẽ chồng bóng tư thế cũ trong bài kiểm tra trực tiếp.
-Toàn bộ 2.641 bài kiểm tra web, kiểu dữ liệu và 3 trận kiểm tra luật đều đạt.
-Đội hình cần làm: Mochi, Soot, Clover, Panko, Binding Thread, Needle Moth, Teacup Healer và Yarn Giant.
-Chất lượng trên phim chưa được công nhận: bố cục còn nhỏ, nhiều nhân vật chưa có tư thế và hiệu ứng riêng.
-Đang chuyển sang so sánh cách đổi tư thế và khớp màu, sau đó học chuyển động của 3 hệ.
+Đã lưu và đẩy bản sửa focus/phản ứng trúng đòn.
+Đã so sánh 6 cách đổi tư thế và 4 cách khớp màu trên Soot.
+Chọn vệt chuyển động ngắn giữ nguyên mặt/chân; khựng hình 90ms ở lúc chạm đòn.
+Giữ tranh Soot hiện có; không cần vẽ lại vì màu đã phù hợp.
+Đây mới là bài luyện, chưa phải kết quả đạt trên phim trận.
+Tiếp theo: học lao tới/bắn xa/hồi máu từ 2 clip, rồi sửa bố cục cho nhân vật lớn và rõ.
+Đã nhận yêu cầu ảnh trang đầu, thumbnail và 3 biểu tượng hệ từ SHIP.
