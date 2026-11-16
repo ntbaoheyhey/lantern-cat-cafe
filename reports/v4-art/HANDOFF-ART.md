@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T22:03:54.546307+00:00
 ACTIVE: latest user “tiếp tục” resumes ART through29Nov12UTC unless current pause/STOP/end; prior handoff-only context is not a new pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: poll Panko privatePID30693/tail5 jobs/a10-panko-filter-r1.log, then pma-filter-compare.py --panko-detail and inspect four fresh sheets once. Reuse two-thirdsQ75 vs halfQ85 with associated-mips; projected totals7,948,265/7,917,582B.
+NEXT1: fix private Panko harness by creating a fresh Texture per replacement (dimension changes corrupted prior trial). Reuse nativeR3 AVIF60/444 vs45/420 with exact sourcealpha; projected7,966,311/7,909,799B. No new encoding variants; review before install.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:55729c66b verified. GPUfilter12cases+staticgeometryPASS;4newprivate comparisons reviewed. Select associated-mips; reject no-mipmap sharp/aliased result. Panko thin glasses still BLOCK visual acceptance; runtime not yet updated.
-LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF); Panko privatePID30693 jobs/a10-panko-filter-r1.log/job-panko-filter-r1.json.3ownedjobs.
+LAST PUSH:ebe5cafe0 verified. Panko8cases executed but private screenshots are INVALID for selection: reused GPU storage across image dimension changes. Failure retained. Associated-mips remains selected; current production candidate unaccepted.
+LIVE: normalVite20416/5990 jobs/a10-normal-5990-resolution.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log (craftOFF). Panko30693 finished; experiment failed visual validity.2ownedjobs.
 STOP/INBOX checked22:00UTC16Nov: noSTOP; continuation supersedes prior INBOX pause. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:4afterrewrite;48private comparisons closed incl4GPU-filterR1 sheets;never reopen. A10JPG8/8/rawonly. Q80 runtime3b8badd8a still visually rejected; associated-upload/default-mips selected privately; Panko fine glasses remain open.
+IMAGEOPENS:0afterrewrite;52private comparisons closed incl4Panko-filterR1 sheets;never reopen. First image tool call emitted nothing; four sheets were subsequently inspected once. A10JPG8/8/rawonly; no new encoding variants.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
