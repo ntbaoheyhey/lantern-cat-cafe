@@ -3978,6 +3978,58 @@
       "output": "tools/v3craft-lab/poses/raw/teacup-healer/K1-A2.png",
       "sha256": "981ee71aa795e678999b46a9cecdbd7c2391ba328087588fd7348b2b221dd2e3",
       "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k1-a3",
+      "date": "2026-11-16T11:21:16.620562+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit target: the supplied Teacup Healer K1 windup sprite with its corrected larger lid and face. Preserve exactly the full silhouette, head size, finial, lid and face proportions, saucer, spoon position, brass hands and legs, planted feet, all outline coordinates, transparent canvas and alpha. Make only a tiny paint-color correction: gently reduce the excess yellow saturation in the gold and porcelain highlights by roughly five percent, so the rose porcelain is a touch cooler and the brass is less yellow while remaining warm gold, never silver. Preserve existing lightness, dark plum face cavity and every painted detail. Opaque mean Lab measurements show the current colors are too yellow relative to the original, not too bright. This is a minimal chroma adjustment, not a repaint, relighting, rescaling or redesign. Do not enlarge or shrink anything or change the pose. Keep the background truly transparent; add no effects, shadows, text or objects. Output the entire unchanged-pose sprite.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/teacup-healer/K1-A2.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/teacup-healer/K1-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K1-A3.png",
+      "sha256": "29ce49ae11b0b78f79a2e57ef55209defd1e2318a62876a040cba4df2ca732da",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k2-a1",
+      "date": "2026-11-16T11:23:36.819015+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Create an original hand-painted 2D game sprite of the exact Teacup Healer shown in the own-art reference. This is key K2, a committed healing release, facing screen-left, with a transparent background and generous margins. Preserve its rose porcelain cup body, ornate gold floral filigree, matching saucer skirt, curved cup handle on screen-right, brass articulated hands and legs, domed lid with original finial, dark face cavity and narrow glowing gold eyes. Keep the original head-to-body ratio and the same palette and brushwork. Feet remain planted on one level baseline in a wide stable stance, without walking, jumping, turning or scaling the character. Make a very different arm silhouette from the reference: extend the spoon-bearing arm fully toward screen-left at chest height, with the long golden spoon reaching far beyond the left edge of the cup body and its bowl gently tipped upward as if offering restorative tea to an ally. The opposite brass hand opens toward that same leftward ally; keep a visible open gap between arm and cup. Lean the cup slightly into this generous offering while keeping the head level and its size unchanged. The spoon head should reach at least one third of a cup-body width farther left than the original silhouette. Do not draw a hit, hostile attack, extra liquid, glow, spell effect, motion trail, background, floor or text. The result must remain one full isolated porcelain-and-brass character, all extremities inside the canvas, ready for a hard pose swap.",
+      "referenceInput": "own art: apps/web/public/units/teacup-healer/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/teacup-healer/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K2-A1.png",
+      "sha256": "bcebc8a05a442d6734c8c987b57c4074c611e1a4649b5d5022a005d3a19e644f",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k2-a2",
+      "date": "2026-11-16T11:26:33.596565+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit the supplied original Teacup Healer K2 healing-release sprite. Correct only its oversized head assembly: scale the entire domed porcelain lid, finial and dark glowing-eye face cavity together to approximately 85 percent of their present size, anchored at the lower face lip where it meets the cup. Keep the smaller head naturally seated on the same cup bowl, preserving the same face, original gold eye shapes, rose lid and floral filigree. Do not change the cup body, handle, saucer, the extended brass arms and spoon, the open offering hand, legs, planted feet or their coordinates. Preserve all current colors, brushwork, transparency and full-character composition. The long spoon must remain fully visible and the release must still point left. Do not simply scale the whole sprite, crop it or shorten the spoon. No new objects, effects, shadows, background or text. Output one corrected full transparent sprite.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/teacup-healer/K2-A1.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/teacup-healer/K2-A1.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K2-A2.png",
+      "sha256": "2d94fbbfb185fff8566532c8410c49997c508d1aec4d052c13cf16e11630d5e6",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-teacup-healer-k4-a1",
+      "date": "2026-11-16T11:30:16.938305+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Create an original hand-painted 2D game sprite of the exact Teacup Healer in the own-art reference, now key K4: a clear received-hit recoil, still facing screen-left. Preserve the original rose porcelain, gold flower filigree, curved right-side handle, matching saucer, brass hands and legs, spoon, domed lid and finial, dark face and narrow gold eyes. Keep head size and proportions exactly on model; retain original colors and edge treatment. Fold the articulated arms defensively against the upper cup, draw the spoon across the chest with its bowl up at screen-right, curl the cup and lid backward toward screen-right and bend both knees moderately while preserving the original overall head-to-foot height. Keep both feet planted on the same level baseline. Make the body silhouette visibly compact and defensive, with the face readable beneath the lid, without rotating the whole cutout or shrinking its head. The cup and lid remain intact: no cracks added, spilled tea, missing pieces, new props, particles, aura, text, floor or background. A single full-character transparent sprite with generous margins and all spoon/limb extremities visible.",
+      "referenceInput": "own art: apps/web/public/units/teacup-healer/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/teacup-healer/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/teacup-healer/K4-A1.png",
+      "sha256": "df3d3566f71114fa8ddad752370687d517f3bac7c12c491285177cbde19fab9d",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }

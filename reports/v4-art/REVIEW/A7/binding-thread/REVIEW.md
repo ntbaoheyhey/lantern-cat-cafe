@@ -13,3 +13,24 @@ Tail review pass1 (eight new pages, inspected once): A29/A30/A45 show withdrawnK
 Tail review pass2 (eight new pages, inspected once): A46 is visibly truncated during release preparation; its impact/recovery are absent. Field1/2 show local wraps and broad rear weave without losing faces or shifting the stage. Consecutive30fps flight sheets show the detached knot advancing leftward: basicA5 frames146–148, basicA6 frames172–174, ultimateA29 frames1048–1051, ultimateA30 frames1116–1119, ultimateA45 frames1736–1739. At least3 consecutive flight frames are visible in each selected action. These unmarked films support visible motion, not exact frame-to-render clock alignment.
 
 Scoped receipt:11 complete own windows (8basic/3ultimate),1 explicitly truncated supplement window. Nine production hashes and4 encoded film hashes match. Battle225px K2 changed union-bbox fraction33.2767%; largest ranged motion9.21955px including reaction; complete-window return<1e-12px; telemetry impact error<=0.1ms. Isolated tail median60.240485fps. Conservative all-pose/all-VFX payload3,184,142B. Both live enemy sockets0px, peak ultimate25.7218%, face2.1698%, sampled unit occlusion1.25685%. Full2648tests/315files/typecheck/threefixture parity passed before these evidence-only changes. Sharedfocus600ms hold+200ms fade, frame-clock alignment, final ensemble/activation and time-split remain explicitly limited in acceptance-receipt.json.
+
+| Film | Scoped actions | Observed phases/effect/reaction |
+|---|---|---|
+| wave1/wave3 30s | No Binding present | Reviewed fixture evidence remains available; no invented Binding coverage. |
+| boss30s | A5/6/13/14/21/22 basics; six received hits | K1→K2→K0;150ms knot; retaliation K4 where scheduled. |
+| boss60s tail | A29/30/45 complete ults; A37/38 basics; A33/40 received hits | K1→K2→K4 retaliation→K2→K0; rear woven net; planted feet and clear faces. |
+| boss60s boundary | A46 | Only preparation/release start visible; no impact/recovery claim. |
+
+Defect checklist: camera displacement no (all scoped camera translation0); facing away no; uneven enemy scale not observed; idle-only own attack no; generic blob/ring/fog no; ultimate>45% no (live25.7218%); pasted-pose seam still visible under frame-by-frame inspection; faces washed out no; numbers remain readable, with some retaliation overlap.
+
+Ten-line critique against the previously studied private same-scale ranged reference (A1b; no new reference opens):
+1. The late physical knot has a clearer direction than the old generic spell.
+2. Three or more consecutive film frames make its travel readable.
+3. Planted feet follow the ranged class language in the reference study.
+4. The withdrawn and extended arm silhouettes read at battle scale.
+5. Hard key holds are still visibly more stepped than the reference motion.
+6. The shared brief seam treatment cannot replace continuous limb animation.
+7. The woven net now identifies thread binding without covering faces.
+8. Its broad rear shape remains heavier than the local projectile.
+9. Retaliation temporarily interrupts the release pose but matches actual events.
+10. Final ensemble comparison and exact clock alignment remain necessary; scoped score8/10.
