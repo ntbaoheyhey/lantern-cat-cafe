@@ -95,7 +95,10 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0120.png",
       "sha256": "110610455178c667f66ce22980005328adcfb2d42f6ac3f807f904874640b230",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:00:42.120830+00:00",
+      "reviewNote": "Yarn debuff counter1 is complete and readable above the health bar; it was outside the projected crop. Panko counter1 and four portrait stars are also clear.",
+      "verdict": "readable-in-full-frame"
     },
     {
       "fixture": "boss",
@@ -109,7 +112,10 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0213.png",
       "sha256": "ed953ca0be26a2d9325d2e16e4e85e41e1976470b8f76d58eb66c18548c19fe6",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:00:42.120830+00:00",
+      "reviewNote": "Yarn debuff counter1 is complete and readable while the boss moves below it; the projected crop did not track this DOM label. Mochi counter2 and Panko1 are also clear.",
+      "verdict": "readable-in-full-frame"
     },
     {
       "fixture": "boss",
@@ -123,7 +129,10 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0219.png",
       "sha256": "119bca529eb0beeb50225f41955c76aafe2663192e2874e2c2196afe3227e85c",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:00:42.120830+00:00",
+      "reviewNote": "Yarn debuff counter1 remains complete and readable above the health bar during the changing pose; projected crop uncertainty is resolved. Top-right Binding role icon overlaps the menu button; retained as a separate layout defect.",
+      "verdict": "readable-in-full-frame"
     },
     {
       "fixture": "boss",
@@ -137,7 +146,10 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0240.png",
       "sha256": "07027cc040181bb2ee0a3259b2dd6468787ec5544a184c3894a58a852afabca2",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:00:42.120830+00:00",
+      "reviewNote": "Both Yarn debuff counters1 are complete and readable above the boss despite the needle effect. The projected crop did not cover the full label; no glyph clipping in the full viewport.",
+      "verdict": "readable-in-full-frame"
     },
     {
       "fixture": "boss",
@@ -151,7 +163,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0390.png",
       "sha256": "271984d7c58e8465177877841b6c1e879490608e5647ab6dcf080075a6d5177d",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:01:40.274312+00:00",
+      "reviewNote": "Yarn status row actually intersects the global boss health bar at the top. Both visible debuff1 counters remain readable, but the role/status group overlaps unrelated HUD content. This is a layout defect, not a crop artifact.",
+      "verdict": "actual-hud-overlap",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -165,7 +182,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0525.png",
       "sha256": "ecd1a45c39884847b759c545fff9784f839b5d9ba45acbffe2702c3962128999",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:01:40.274312+00:00",
+      "reviewNote": "Soot status row is cut by the real top viewport edge above the turn-order toolbar. The visible lower counter2 does not establish complete glyph/icon coverage. This is actual viewport clipping, not a projected-crop artifact.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -179,7 +201,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0528.png",
       "sha256": "7208d59d01cc484c8765fea84c529dee8d38c6e07ebf5a5f577018488dd419d3",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:01:40.274312+00:00",
+      "reviewNote": "Soot status row remains cut by the real top viewport edge; only its lower portion and counter2 survive. Preserve as an actual layout/readability failure.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -193,7 +220,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0531.png",
       "sha256": "1f094802d96cdbdd4de39125718654b406bbcd5acb6cb12af9f6108ed039408b",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:01:40.274312+00:00",
+      "reviewNote": "Soot status row rises farther beyond the top viewport edge; the lower glyph fragment is clipped. Full-frame inspection confirms actual failure, not a crop boundary.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -207,7 +239,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0534.png",
       "sha256": "2c7dce94eba9b4178f7cdd311ad51155bc9f34ae644282e491378c6b6272cb54",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:02:26.154645+00:00",
+      "reviewNote": "Soot status icons are actually clipped at the top viewport edge; lower counter2 is visible, but the whole status row is incomplete.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -221,7 +258,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0537.png",
       "sha256": "3a0c5a9160a758d1c231c0cce972ad3d311e66c0554958e34d047c270f1b4ff1",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:02:26.154645+00:00",
+      "reviewNote": "Soot status icons still touch and clip at the real upper viewport edge. Counter2 is visible; this does not clear the status-row clipping defect.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -235,7 +277,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0591.png",
       "sha256": "a351b92ce9817aff8423aa638d7fd49401b63bf456000034697126cde4618179",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:02:26.154645+00:00",
+      "reviewNote": "The upper Binding role/stun row overlaps menu/audio controls. The toolbar intersects the stun1 region, so complete counter coverage cannot be certified. The lower Binding and Yarn stun1 labels are readable.",
+      "verdict": "actual-hud-overlap",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -249,7 +296,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0660.png",
       "sha256": "fcbd36cab4ad5a32459b0b154508a1268bd09369be5f56bb5b5f5f64f2c8fe07",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:02:26.154645+00:00",
+      "reviewNote": "Soot status row clips against the top viewport edge while its lower2/1 counters remain visible. Panko overflow+1 is fully readable during the green healing effect. The upper Binding row also overlaps the toolbar.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -263,7 +315,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0663.png",
       "sha256": "cbc36284da2788fa1d773c5bfdb93295fdb6718b1d2ed1c619714212515a83c6",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:03:03.091780+00:00",
+      "reviewNote": "Soot status row is clipped at the actual viewport top; its lower2/1 glyph portions remain visible. Panko overflow+1 stays clear amid healing leaves.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -277,7 +334,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0666.png",
       "sha256": "50249763a7027b2d768ddc6609dc5081347f7ceb86e1a1170f7020f5e4edaf0f",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:03:03.091780+00:00",
+      "reviewNote": "Soot status icons and upper glyph portions extend beyond the real viewport top. This confirms actual clipping while Panko+1 and other visible counters remain clear.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -291,7 +353,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0669.png",
       "sha256": "a02255d16cb3ec3c9adedc1ea530fa8ef042966978108164ced56014292cadb4",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:03:03.091780+00:00",
+      "reviewNote": "Soot remains clipped at the real viewport top, including upper portions of the status counters. Panko+1 is complete and readable against the green effect.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
@@ -305,7 +372,12 @@
       "path": "reports/v4-art/REVIEW/A10/contrast/raw/coverage-supplements/boss-f0672.png",
       "sha256": "664df72cfa73488cb19bd948ccc38408853d7c5c9730352ec9f013d667d6c308",
       "nativeCopiesMatch": true,
-      "reviewed": false
+      "reviewed": true,
+      "reviewedAt": "2026-11-16T20:03:03.091780+00:00",
+      "reviewNote": "Soot status row still crosses the real top edge; lower2/1 fragments remain. Panko+1 is complete and readable as the healing effect fades.",
+      "verdict": "actual-viewport-clipping",
+      "defectOpen": true,
+      "followupItem": "A11"
     },
     {
       "fixture": "boss",
