@@ -12,5 +12,6 @@
 - Kiểm tra web có 2.663 trường hợp đạt và bảy lỗi thuộc phần ART; server, rules, typecheck, bản dựng và phép đối chiếu ba trận đạt.
 - Quét toàn bộ lịch sử git vẫn chạy; chưa kết luận lịch sử sạch.
 - Production đã đi đủ bảy bước, 18 biên nhận và 60 FPS; tải 26,4 MB trước trận vượt mức 8 MB, đang chờ ART sửa phần tài nguyên.
-- Đang làm gói offline và công cụ ghi phim S10; R2 vẫn sau lần tích hợp ART ngày 18/11. Tài liệu doanh thu chỉ dùng giả định.
-- Bản clone sạch còn bảy lỗi ART; báo cáo khoảng 82,6 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.
+- Gói offline đã chạy đủ hành trình ở cả hai kích thước, không gọi mạng; 1.614 tài nguyên giữ nguyên byte. Mọi giao dịch offline đều ghi rõ mock.
+- Đang quay bản production thật để chuẩn bị phim; Snowtrace trả 403 nên cảnh biên nhận công khai chưa đạt. R2 vẫn sau ART ngày 18/11.
+- Bản clone sạch còn bảy lỗi ART; báo cáo khoảng 84,6 MB, ảnh lịch sử đã giữ nguyên trong kho cục bộ.

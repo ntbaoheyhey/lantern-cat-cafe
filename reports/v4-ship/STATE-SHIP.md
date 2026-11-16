@@ -65,3 +65,6 @@ S8attempt1 CORS403FAIL preserved. Productionbuild2 source1e04ea112 uses shipping
 S8attempt2 sevensteps/18RPCreceipts/0errors/60FPS pass;initial26411893B>8000000FAIL. ARTpackedVFX25pages12827018B;unitatlases alsooversize. Diagnosis/ARTrequest/S11preserved;noARTedits.
 S8regression2:server742/rules1409/web2663pass7knownARTfail;typecheck/probe/build0. Officialclassparityfalse;score5/10;10completepassingproductionjourneys stillrequired.
 S10PREP LEARN7sources/1formal/5web/1experiment;150sscript+11slidecontents. Historical12.0333scodec:CRF24 1795295B/SSIM.988772 vs2pass430k 775605B/.969863. Nooffline/freshV4film yet.
+
+2026-11-16T12:42:24.782727+00:00 S10offlinebuild4/sourcef2227c1fc PASS:261404426B localfolder;build3full2sizes/1614originalhasheseach/0networkerrors/reloadreset;CSS-onlybuild4canonicalassets+modules+packsidentical/layoutPASS. Firstregexandarrayorderfailuresretained.
+S10regression1server742/rules1409/web2663pass7knownARTfail,typecheck/probe/build0. Film24620active;Snowtrace403publiccaptureopen. S10screenshots8/8;reports84.61MB;noadditionalstaticcaptures.

@@ -1,0 +1,7 @@
+.offline-notice{position:fixed;z-index:2147483647;top:0;left:50%;transform:translateX(-50%);padding:6px 16px;background:#182522;color:#fff;font:600 13px/1.3 system-ui;text-align:center;pointer-events:none;border-radius:0 0 8px 8px;white-space:nowrap}
+.offline-receipt{position:fixed;z-index:20000;right:16px;bottom:16px;max-width:280px;padding:14px;display:grid;gap:6px;background:#182522;color:#fff;border:2px solid #f6cf80;border-radius:12px;font:14px/1.4 system-ui}
+.offline-receipt button{padding:7px;background:#f6cf80;color:#182522;border:0;border-radius:6px;cursor:pointer}
+.offline-receipt small{color:#fff}.b-live-counter>small{display:block}.ship-wallet-proof ol{font:16px/1.7 system-ui;text-align:left}
+.offline-wallet{max-width:460px;padding:24px;background:#fff0d2;color:#182522;border:2px solid #735431;border-radius:12px;font:16px/1.5 system-ui}.offline-wallet::backdrop{background:#0009}.offline-wallet button{padding:10px 16px;background:#182522;color:#fff;border:0;border-radius:8px;cursor:pointer}
+body:has(.dp-app[data-battle-active="true"]) .offline-notice{top:auto;left:auto;right:12px;bottom:78px;transform:none}
+.b-live-counter{display:grid;gap:2px}.b-live-counter>strong,.b-live-counter>small{display:block}

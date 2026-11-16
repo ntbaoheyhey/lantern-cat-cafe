@@ -13,7 +13,7 @@
 | S7 | SYNC-1 17 Nov 12:00 UTC | preflight complete; scheduled merge pending; S7/preflight-1.json |
 | S8 | PROD-LIKE REHEARSAL | pilot completes7steps/18receipts/60FPS; transfer26.412MB>8MB FAIL; ARTrequest+S11; regression7knownARTfails |
 | S9 | RESEARCH DOCS | implementation complete; 14-source learning, source config equality, 32 links; G-REG seven ART failures; deployed equality awaits S12; S9/check-1.json |
-| S10 | R2 18 Nov 12:00 UTC | preparation active: LEARN/codec comparison/script/11slidecontents; offline package and fresh film next; scheduled R2 not complete |
+| S10 | R2 18 Nov 12:00 UTC | preparation: offlinePASS2sizes/byte-exactassets; realfilm24620active; publicSnowtrace403open; scheduled R2 not complete |
 | S11 | FINAL/FREEZE 19 Nov 10:00/12:00 UTC | pending |
 | S12 | DEPLOY/SUBMISSION 20-21 Nov | pending |
 | S13 | DEMO DAY 22-29 Nov | pending |
