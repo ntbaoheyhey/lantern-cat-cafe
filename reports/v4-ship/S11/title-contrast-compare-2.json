@@ -1,0 +1,1118 @@
+{
+  "at": "2026-11-16T17:29:22.470Z",
+  "mode": "compare",
+  "sourceCommit": "6d6255ebcf7b99294fd32130a4e597fba2cba4d3",
+  "build": "reports/v4-ship/S8/production-build-7.json",
+  "indexSha256": "be10b65ed7fa7206de06e5f95c3780ba894cd68bd99e9c00e3f0fcaf3c9ddb07",
+  "harnessSha256": "8f6bb5aef144dca30b909b0b765a9f4cc397b7489a7e5703fe8d02aab0f56ff9",
+  "observerSha256": "713ed4fee74d4ceef5a9b662a72ef7efe7ce17c5f5116d92836c18cb0c13792c",
+  "methods": [
+    {
+      "name": "original",
+      "css": ""
+    },
+    {
+      "name": "solid-on-art",
+      "css": ".b-landing .b-hero>h1.t-title{background:none;background-clip:border-box;-webkit-background-clip:border-box;color:#ffedab;filter:none;text-shadow:none;}"
+    },
+    {
+      "name": "solid-on-backplate",
+      "css": ".b-landing .b-hero>h1.t-title{background:none;background-clip:border-box;-webkit-background-clip:border-box;color:#ffedab;filter:none;text-shadow:none;background:#171529;border:1px solid #68516c;border-radius:14px;box-sizing:border-box;width:max-content;max-width:100%;padding:36px 20px 24px;}"
+    }
+  ],
+  "rows": [
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "original",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 76.796875,
+              "y": 140.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 76.796875,
+              "y": 140.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 84.48,
+          "fontWeight": 800,
+          "foreground": "rgba(0, 0, 0, 0)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "opacity/filter/blend",
+          "effect": {
+            "tag": "H1",
+            "class": "t-title",
+            "opacity": "1",
+            "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+            "blend": "normal"
+          },
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 76.796875,
+              "y": 238.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 76.796875,
+              "y": 238.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 65.8944,
+          "fontWeight": 800,
+          "foreground": "rgba(0, 0, 0, 0)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "opacity/filter/blend",
+          "effect": {
+            "tag": "H1",
+            "class": "t-title",
+            "opacity": "1",
+            "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+            "blend": "normal"
+          },
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 76.796875,
+          "top": 169.390625,
+          "right": 636.796875,
+          "bottom": 324.828125,
+          "width": 560,
+          "height": 155.4375
+        },
+        "rects": [
+          {
+            "left": 76.796875,
+            "top": 140.390625,
+            "right": 363.28125,
+            "bottom": 275.390625
+          },
+          {
+            "left": 76.796875,
+            "top": 238.109375,
+            "right": 309.234375,
+            "bottom": 344.109375
+          }
+        ],
+        "background": "rgba(0, 0, 0, 0)",
+        "foreground": "rgba(0, 0, 0, 0)",
+        "backgroundClip": "text",
+        "backgroundImage": "linear-gradient(rgb(255, 237, 171) 25%, rgb(246, 154, 48) 90%)",
+        "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+        "padding": "0px",
+        "titleTextInsideBackplate": false,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 76.796875,
+            "top": 368.828125,
+            "right": 243.90625,
+            "bottom": 428.828125,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 255.90625,
+            "top": 368.828125,
+            "right": 450.65625,
+            "bottom": 428.828125,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 76.796875,
+            "top": 442.828125,
+            "right": 207.734375,
+            "bottom": 486.828125,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 76.796875,
+          "top": 632,
+          "right": 1216,
+          "bottom": 698,
+          "width": 1139.203125,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 2,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "solid-on-art",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 76.796875,
+              "y": 140.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 76.796875,
+              "y": 140.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 84.48,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "overlapping-media",
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 76.796875,
+              "y": 238.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 76.796875,
+              "y": 238.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 65.8944,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "overlapping-media",
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 76.796875,
+          "top": 169.390625,
+          "right": 636.796875,
+          "bottom": 324.828125,
+          "width": 560,
+          "height": 155.4375
+        },
+        "rects": [
+          {
+            "left": 76.796875,
+            "top": 140.390625,
+            "right": 363.28125,
+            "bottom": 275.390625
+          },
+          {
+            "left": 76.796875,
+            "top": 238.109375,
+            "right": 309.234375,
+            "bottom": 344.109375
+          }
+        ],
+        "background": "rgba(0, 0, 0, 0)",
+        "foreground": "rgb(255, 237, 171)",
+        "backgroundClip": "border-box",
+        "backgroundImage": "none",
+        "filter": "none",
+        "padding": "0px",
+        "titleTextInsideBackplate": false,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 76.796875,
+            "top": 368.828125,
+            "right": 243.90625,
+            "bottom": 428.828125,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 255.90625,
+            "top": 368.828125,
+            "right": 450.65625,
+            "bottom": 428.828125,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 76.796875,
+            "top": 442.828125,
+            "right": 207.734375,
+            "bottom": 486.828125,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 76.796875,
+          "top": 632,
+          "right": 1216,
+          "bottom": 698,
+          "width": 1139.203125,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 2,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "method": "solid-on-backplate",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 97.796875,
+              "y": 177.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 97.796875,
+              "y": 177.390625,
+              "width": 286.484375,
+              "height": 135
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 84.48,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": 15.27,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "pass",
+          "unknownReason": null,
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 97.796875,
+              "y": 275.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 97.796875,
+              "y": 275.109375,
+              "width": 232.4375,
+              "height": 106
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 65.8944,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": 15.27,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "pass",
+          "unknownReason": null,
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 76.796875,
+          "top": 169.390625,
+          "right": 405.28125,
+          "bottom": 386.828125,
+          "width": 328.484375,
+          "height": 217.4375
+        },
+        "rects": [
+          {
+            "left": 97.796875,
+            "top": 177.390625,
+            "right": 384.28125,
+            "bottom": 312.390625
+          },
+          {
+            "left": 97.796875,
+            "top": 275.109375,
+            "right": 330.234375,
+            "bottom": 381.109375
+          }
+        ],
+        "background": "rgb(23, 21, 41)",
+        "foreground": "rgb(255, 237, 171)",
+        "backgroundClip": "border-box",
+        "backgroundImage": "none",
+        "filter": "none",
+        "padding": "36px 20px 24px",
+        "titleTextInsideBackplate": true,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 76.796875,
+            "top": 430.828125,
+            "right": 243.90625,
+            "bottom": 490.828125,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 255.90625,
+            "top": 430.828125,
+            "right": 450.65625,
+            "bottom": 490.828125,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 76.796875,
+            "top": 504.828125,
+            "right": 207.734375,
+            "bottom": 548.828125,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 76.796875,
+          "top": 632,
+          "right": 1216,
+          "bottom": 698,
+          "width": 1139.203125,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 0,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "original",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 86.390625,
+              "y": 158,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 86.390625,
+              "y": 158,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 95.04,
+          "fontWeight": 800,
+          "foreground": "rgba(0, 0, 0, 0)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "opacity/filter/blend",
+          "effect": {
+            "tag": "H1",
+            "class": "t-title",
+            "opacity": "1",
+            "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+            "blend": "normal"
+          },
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 86.390625,
+              "y": 267.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 86.390625,
+              "y": 267.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 74.1312,
+          "fontWeight": 800,
+          "foreground": "rgba(0, 0, 0, 0)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "opacity/filter/blend",
+          "effect": {
+            "tag": "H1",
+            "class": "t-title",
+            "opacity": "1",
+            "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+            "blend": "normal"
+          },
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 86.390625,
+          "top": 191,
+          "right": 646.390625,
+          "bottom": 365.875,
+          "width": 560,
+          "height": 174.875
+        },
+        "rects": [
+          {
+            "left": 86.390625,
+            "top": 158,
+            "right": 408.671875,
+            "bottom": 310
+          },
+          {
+            "left": 86.390625,
+            "top": 267.4375,
+            "right": 347.890625,
+            "bottom": 386.4375
+          }
+        ],
+        "background": "rgba(0, 0, 0, 0)",
+        "foreground": "rgba(0, 0, 0, 0)",
+        "backgroundClip": "text",
+        "backgroundImage": "linear-gradient(rgb(255, 237, 171) 25%, rgb(246, 154, 48) 90%)",
+        "filter": "drop-shadow(rgb(68, 38, 52) 1px 0px 0px) drop-shadow(rgb(68, 38, 52) -1px 0px 0px) drop-shadow(rgb(27, 16, 35) 0px 2px 0px)",
+        "padding": "0px",
+        "titleTextInsideBackplate": false,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 86.390625,
+            "top": 409.875,
+            "right": 253.5,
+            "bottom": 469.875,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 265.5,
+            "top": 409.875,
+            "right": 460.25,
+            "bottom": 469.875,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 86.390625,
+            "top": 483.875,
+            "right": 217.328125,
+            "bottom": 527.875,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 86.390625,
+          "top": 812,
+          "right": 1368,
+          "bottom": 878,
+          "width": 1281.609375,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 2,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "solid-on-art",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 86.390625,
+              "y": 158,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 86.390625,
+              "y": 158,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 95.04,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "overlapping-media",
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 86.390625,
+              "y": 267.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 86.390625,
+              "y": 267.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 74.1312,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": null,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "unknown",
+          "unknownReason": "overlapping-media",
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 86.390625,
+          "top": 191,
+          "right": 646.390625,
+          "bottom": 365.875,
+          "width": 560,
+          "height": 174.875
+        },
+        "rects": [
+          {
+            "left": 86.390625,
+            "top": 158,
+            "right": 408.671875,
+            "bottom": 310
+          },
+          {
+            "left": 86.390625,
+            "top": 267.4375,
+            "right": 347.890625,
+            "bottom": 386.4375
+          }
+        ],
+        "background": "rgba(0, 0, 0, 0)",
+        "foreground": "rgb(255, 237, 171)",
+        "backgroundClip": "border-box",
+        "backgroundImage": "none",
+        "filter": "none",
+        "padding": "0px",
+        "titleTextInsideBackplate": false,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 86.390625,
+            "top": 409.875,
+            "right": 253.5,
+            "bottom": 469.875,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 265.5,
+            "top": 409.875,
+            "right": 460.25,
+            "bottom": 469.875,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 86.390625,
+            "top": 483.875,
+            "right": 217.328125,
+            "bottom": 527.875,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 86.390625,
+          "top": 812,
+          "right": 1368,
+          "bottom": 878,
+          "width": 1281.609375,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 2,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "method": "solid-on-backplate",
+      "titles": [
+        {
+          "text": "Lantern",
+          "tag": "H1",
+          "class": "t-title",
+          "rects": [
+            {
+              "x": 107.390625,
+              "y": 195,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 107.390625,
+              "y": 195,
+              "width": 322.28125,
+              "height": 152
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 95.04,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": 15.27,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "pass",
+          "unknownReason": null,
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        },
+        {
+          "text": "Cat Café",
+          "tag": "SPAN",
+          "class": "",
+          "rects": [
+            {
+              "x": 107.390625,
+              "y": 304.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "unclippedRects": [
+            {
+              "x": 107.390625,
+              "y": 304.4375,
+              "width": 261.5,
+              "height": 119
+            }
+          ],
+          "scrollContainers": [
+            {
+              "tag": "MAIN",
+              "class": "b-landing",
+              "bounds": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 900
+              },
+              "scrollTop": 0
+            }
+          ],
+          "fontSize": 74.1312,
+          "fontWeight": 800,
+          "foreground": "rgb(255, 237, 171)",
+          "ratio": 15.27,
+          "minimum": 3,
+          "inactive": false,
+          "contrast": "pass",
+          "unknownReason": null,
+          "effect": null,
+          "clipping": [],
+          "prose": false
+        }
+      ],
+      "geometry": {
+        "bounds": {
+          "left": 86.390625,
+          "top": 191,
+          "right": 450.671875,
+          "bottom": 427.875,
+          "width": 364.28125,
+          "height": 236.875
+        },
+        "rects": [
+          {
+            "left": 107.390625,
+            "top": 195,
+            "right": 429.671875,
+            "bottom": 347
+          },
+          {
+            "left": 107.390625,
+            "top": 304.4375,
+            "right": 368.890625,
+            "bottom": 423.4375
+          }
+        ],
+        "background": "rgb(23, 21, 41)",
+        "foreground": "rgb(255, 237, 171)",
+        "backgroundClip": "border-box",
+        "backgroundImage": "none",
+        "filter": "none",
+        "padding": "36px 20px 24px",
+        "titleTextInsideBackplate": true,
+        "buttons": [
+          {
+            "name": "Play free",
+            "left": 86.390625,
+            "top": 471.875,
+            "right": 253.5,
+            "bottom": 531.875,
+            "width": 167.109375,
+            "height": 60
+          },
+          {
+            "name": "Connect wallet",
+            "left": 265.5,
+            "top": 471.875,
+            "right": 460.25,
+            "bottom": 531.875,
+            "width": 194.75,
+            "height": 60
+          },
+          {
+            "name": "Watch battle",
+            "left": 86.390625,
+            "top": 545.875,
+            "right": 217.328125,
+            "bottom": 589.875,
+            "width": 130.9375,
+            "height": 44
+          }
+        ],
+        "footer": {
+          "left": 86.390625,
+          "top": 812,
+          "right": 1368,
+          "bottom": 878,
+          "width": 1281.609375,
+          "height": 66
+        },
+        "controlsClearOfFooter": true,
+        "titleInsideViewport": true
+      },
+      "proseWords": 6,
+      "contrastUnknown": 0,
+      "contrastFailures": [],
+      "clipping": [],
+      "horizontalOverflow": false,
+      "brokenImages": [],
+      "unnamedControls": [],
+      "titlePass": true
+    }
+  ],
+  "profiles": [
+    {
+      "width": 1280,
+      "height": 720,
+      "errors": [],
+      "blocked": [],
+      "failedRequests": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "blocked": [],
+      "failedRequests": []
+    }
+  ],
+  "screenshots": [],
+  "pass": true,
+  "scope": "Only the landing title and landing geometry/names; no battle, whole-journey or global UI gate claim."
+}

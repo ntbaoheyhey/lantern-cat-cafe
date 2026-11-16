@@ -63,3 +63,19 @@
 .b-network-note{background:#171529;border:1px solid #68516c;border-radius:8px;padding:8px 12px}
 .b-landing-bottom{background:#171529;border:1px solid #68516c;border-radius:14px;padding:14px 18px}
 .b-landing .b-trailer-link{background:#171529;border:1px solid #68516c;border-radius:10px;padding:10px 14px;margin-top:14px}
+
+/* Keep the title and its full font bounds on an opaque surface over the key art. */
+.b-landing .b-hero>h1.t-title{
+  background:#171529;
+  background-clip:border-box;
+  -webkit-background-clip:border-box;
+  color:#ffedab;
+  filter:none;
+  text-shadow:none;
+  border:1px solid #68516c;
+  border-radius:14px;
+  box-sizing:border-box;
+  width:max-content;
+  max-width:100%;
+  padding:36px 20px 24px;
+}

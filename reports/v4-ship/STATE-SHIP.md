@@ -76,3 +76,4 @@ S11 checkpoint 2026-11-16T17:02:39.263137+00:00:film2 technicalPASS164.833s/9,34
 
 S11 2026-11-16T17:19:42.685636+00:00:gzip912/1332,1314exactreviewed0unresolved;two tar60members0findings. Pipe retry stall reproduced9.6MB,original scanner stopped without losing912rows;continuation next. Text700/3854,176unchangedreviewed;fullhistoryfalse. Fullregression retains7ARTfails;no productedit.
 S11 2026-11-16T17:25:46.782040+00:00:gzip2 transport recovery4/4checks;actualstalledblob2.713s;947/1332/1314findings exactreviewed0unresolved. Supervisor39765/session20507active;oldgzip1frozen. Textsupplement3sixnewcommits0findings. Fullregressionsame7ARTfails;nextSHIPtitlecontrast.
+S11 2026-11-16T17:33:11.647212+00:00:titlecontrast comparison2bothsizes15.270:1/fulltextcontainment;comparison1paddingfailure+exactharnessretained. Scoped shell.css applied;fullregression retains7ARTfail. Actualproduction8/visual/keyboard next. NoARTedit.
