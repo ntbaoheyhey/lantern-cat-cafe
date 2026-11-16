@@ -26,13 +26,27 @@ it('seeks discrete keys and foot-local overlap without accumulated state, with a
  const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
  const mesh=new CutoutMesh(native,[new T.Texture()]),layer=mesh.installDrawings(set,[17,23],.7);
  const vertices=()=>Array.from(layer.geometry.attributes.position!.array);
- layer.sample('attack',.35,false);const impact=vertices();layer.sample('attack',.42,false);expect(vertices()).toEqual(impact);
+ layer.sample('attack',.35,false);const impact=vertices();layer.sample('attack',.439,false);expect(vertices()).toEqual(impact);
  layer.sample('ult',1.1,false);expect(layer.key).toBe('K5');layer.sample('attack',.35,false);expect(vertices()).toEqual(impact);
  for(const name of ['idle','attack','ult','hurt'])for(const t of [0,.15,.3,.35,.6,1.1,2.2]){
   layer.sample(name,t,false);expect(layer.point(set.manifest.baseline)).toEqual({x:17,y:23});
   for(const p of layer.faceCorners())expect(Number.isFinite(p.x+p.y)).toBe(true);
  }
  layer.sample('attack',.35,true);expect(layer.key).toBe('K2');mesh.dispose();
+});
+
+it('samples a launch socket without changing the visible key, mesh or later reverse seeks',()=>{
+ const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
+ const mesh=new CutoutMesh(native,[new T.Texture()]),layer=mesh.installDrawings(set,[17,23],.7);
+ const pixel=set.manifest.poses.K1!.sockets.vfxOrigin!,at={clip:'attack',seconds:.2,reduced:false};
+ layer.sample('attack',.2,false);const launch=layer.point(pixel,'K1');
+ layer.sample('attack',.3,false);expect(layer.key).toBe('K2');
+ const vertices=Array.from(layer.geometry.attributes.position!.array);
+ expect(layer.point(pixel,'K1',at)).toEqual(launch);expect(layer.key).toBe('K2');
+ expect(Array.from(layer.geometry.attributes.position!.array)).toEqual(vertices);
+ layer.sample('ult',1.6,false);expect(layer.point(pixel,'K1',at)).toEqual(launch);
+ layer.sample('attack',.2,false);expect(layer.point(pixel,'K1')).toEqual(launch);
+ layer.sample('attack',.3,true);expect(layer.key).toBe('K1');mesh.dispose();
 });
 
 it('shows a retaliation drawing during a cast without losing its presentation time on seek or return',()=>{
@@ -52,7 +66,7 @@ it('moves painted cloth regions while preserving faces, feet and non-inverted me
  const textures=Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]));
  const a=new CutoutMesh(native,[new T.Texture()]),b=new CutoutMesh(native,[new T.Texture()]);
  const layer=a.installDrawings({manifest,textures},[0,0],1),baseline=b.installDrawings({manifest:plain,textures},[0,0],1);
- for(const [name,t]of [['idle',.9],['attack',.15],['attack',.5],['hurt',.15],['ult',.7]] as const){
+ for(const [name,t]of [['idle',.9],['attack',.15],['attack',.28],['attack',.3],['attack',.32],['attack',.5],['hurt',.15],['ult',.7]] as const){
   layer.sample(name,t,false);baseline.sample(name,t,false);
   expect(layer.faceCorners()).toEqual(baseline.faceCorners());expect(layer.contactPoints()).toEqual(baseline.contactPoints());
   const region=layer.frame.overlap![0]!,p=layer.point(region.center),q=baseline.point(region.center);

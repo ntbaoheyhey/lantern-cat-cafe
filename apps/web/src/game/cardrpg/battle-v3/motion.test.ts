@@ -27,13 +27,13 @@ it('seeks an ultimate identically in reverse order without a hero-spot approach'
  const input=fixture(true),expected=actionPose({...input,elapsed:900});expect(expected).toMatchObject({x:0,y:0});
  actionPose({...input,elapsed:2100});expect(actionPose({...input,elapsed:900})).toEqual(expected);expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
 });
-it('holds a bounded reflected hit for75ms, settles once, and leaves damage unchanged',()=>{
+it('holds a bounded reflected hit for90ms, settles once, and leaves damage unchanged',()=>{
  const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}]));
  const before=JSON.stringify(plan),impact=plan.beats[2]!.start;
  for(const height of [720,900]){
   const contact=hitPose(plan,impact,'cat',-1,height);
   expect(Math.abs(contact.x)).toBeGreaterThanOrEqual(6);expect(Math.abs(contact.x)).toBeLessThanOrEqual(12);
-  for(const age of [0,1000/30,2000/30,75])expect(hitPose(plan,impact+age,'cat',-1,height).x).toBe(contact.x);
+  for(const age of [0,1000/30,2000/30,75,90])expect(hitPose(plan,impact+age,'cat',-1,height).x).toBe(contact.x);
   expect(hitPose(plan,impact+150,'cat',-1,height).x).toBeGreaterThan(contact.x);
   expect(hitPose(plan,impact+300,'cat',-1,height)).toMatchObject({x:0,y:0,flash:0});
  }

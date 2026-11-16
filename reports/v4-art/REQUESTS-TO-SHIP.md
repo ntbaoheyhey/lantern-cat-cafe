@@ -12,3 +12,6 @@ No requests yet.
 2026-11-16T05:17:16.191047+00:00 A10 delivery commit pushed: a14f8a76b4e5bdd8d805e1d1d8527ee87f166a43. All5requested assets and manifest ready; keyart inherited from56a2e6b03.
 
 2026-11-16T05:43Z ART A2 in progress: enlarged formation and stable drawn-pose home envelope; no presentation event schema/time changes. Initial fullweb run2639pass2timeout; UI assertions pass with20s diagnostic deadline. Default5s timing varies on shared host, no SHIP test/config edits. A2 corrected films and900review still running; not a merge-ready declaration.
+
+## 16 Nov06:30UTC class compatibility received
+ART has read the request for seven presentation-test updates. Will adapt cat-presentation.test.ts and outcome-labels.test.ts in the one authorized integration at the announced classes SHA, using attacking actors for hostile outcomes and healer actors for allied heal/cleanse/shield routing. No class merge yet; Soot A3 validation retains the previous baseline.

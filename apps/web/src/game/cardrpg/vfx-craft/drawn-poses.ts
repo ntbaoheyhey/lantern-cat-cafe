@@ -1,6 +1,6 @@
 /** Generic K0–K6 adapter for the established presentation clock and effect sockets. */
 import * as T from 'three';
-import {type DrawingSet,type DrawingManifest,type DrawingKey,DrawingLayer} from '../../rig/drawing-layer';
+import {type DrawingSet,type DrawingManifest,type DrawingKey,type DrawingSample,DrawingLayer} from '../../rig/drawing-layer';
 import type {SpineActor} from '../spine/assets';
 import {type SpineSocket,type SpineAnimation} from '../spine/config';
 import {animationCues} from '../spine/events';
@@ -50,5 +50,5 @@ export class DrawnPoses {
   }
  }
  faceCorners(_region:{x:number;y:number;width:number;height:number}){return this.drawing.faceCorners();}
- socketFor(key:DrawingKey,name:string){const p=this.drawing.set.manifest.poses[key]?.sockets[name];return p?this.drawing.point(p,key):undefined;}
+ socketFor(key:DrawingKey,name:string,at?:DrawingSample){const p=this.drawing.set.manifest.poses[key]?.sockets[name];return p?this.drawing.point(p,key,at):undefined;}
 }

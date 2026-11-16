@@ -1,16 +1,8 @@
-# Mỹ thuật V4 — 16/11
-
-Khung trận đã đầy hơn: bốn mèo lớn, đều nhau; boss nổi bật.
-Sáu quái được giãn lại để không che nhau quá mức khi đánh.
-Nền quán vẫn ấm, nhưng dịu hơn để nhân vật dễ nhìn.
-Đã xem lại ba trận720p và trận boss900p; riêng900p không có tiếng.
-Bộ kiểm thử đầy đủ đã qua với thời gian chờ mặc định.
-Kiểm tra kiểu dữ liệu và cả ba trận đối chiếu đều qua; đang lưu và đẩy mã.
-
-Chỉ Soot đã có các tư thế vẽ riêng; các nhân vật khác vẫn còn động tác cũ.
-Vòng vàng, ánh xanh phủ mặt và hiệu ứng boss còn cần thay ở các bước sau.
-Bước tiếp theo là làm Soot phóng đạn rõ hơn, giữ điểm xuất phát khi đổi tư thế.
-Chưa nhận hoạt ảnh đứng từ họa sĩ; vẫn dùng chuyển động đứng hiện có.
-
-Đợt chỉnh khung đã dành quá nhiều thời gian cho đo và quay; chưa đạt tỷ lệ thời gian yêu cầu.
-Ảnh bìa, ảnh video và ba biểu tượng lớp đã giao cho SHIP.
+Soot đã có tư thế lấy đà, đánh, trúng đòn và thi triển rõ hơn trong khung hình lớn.
+Tia đạn bay nhìn thấy được trước khi chạm mục tiêu; chân Soot đứng yên.
+Bộ kiểm thử, kiểm tra kiểu và ba trận mẫu vẫn đạt.
+Phim quay lại có vệt khối ở đoạn hồi tư thế; ảnh dựng trực tiếp cùng thời điểm không có vệt đó.
+Chưa kết luận Soot hoàn tất mọi tiêu chí: còn so sánh hiệu ứng với bảy nhân vật và đo hiệu năng khi máy rảnh.
+Mochi đã chọn được tư thế lấy đà và đẩy khiên; đang làm trúng đòn và thi triển.
+Các vòng sáng/vùng sáng quá rộng của những nhân vật khác vẫn còn, sẽ xử lý theo hàng đợi.
+Chưa có idle từ họa sĩ; chưa nhận thông báo baseline lớp cuối cùng từ SHIP.

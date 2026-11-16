@@ -347,6 +347,11 @@ export class SpineScene {
    const source=this.socket(plan.actorId,this.actors.get(plan.actorId)?.craftPose?'vfxOrigin':'mainHand'),home=this.homes.get(plan.actorId);
    const entry=this.actors.get(plan.actorId);
    const drawnSocket=(key:'K1'|'K2'|'K5')=>{const p=entry?.craftPose?.socketFor(key,'vfxOrigin');return p?this.screen(entry!.actor.root.localToWorld(this.scratch.set(p.x,p.y,1))):undefined;};
+   // A released projectile retains its K1@200ms home socket, independent of
+   // later keys, recoil and render history. Local hand glints still use source.
+   const launchPoint=entry?.craftPose?.socketFor('K1','vfxOrigin',{clip:'attack',seconds:.2,reduced:view.reducedMotion});
+   const facing=entry?spriteFacing(entry.actor.unit.nativeFacing,view.actors.find(a=>a.id===plan.actorId)?.side??'party'):1;
+   const launch=launchPoint&&home?this.screen(this.scratch.set(home.x+launchPoint.x*home.scale*facing,home.y+launchPoint.y*home.scale,1)):undefined;
    // An action also contains retaliation and support. They keep their own
    // reaction/number passes; the offensive spell belongs to its caster.
    const casterSide=view.actors.find(a=>a.id===plan.actorId)?.side;
@@ -354,7 +359,7 @@ export class SpineScene {
    const targets=[...affected].filter(id=>view.actors.some(a=>a.id===id&&a.side!==casterSide)).flatMap(id=>{const h=this.homes.get(id);return h?[h.point]:[];});
    const orders=[...this.actors.values()].map(e=>e.actor.root.renderOrder);
    if(source&&home&&targets.length)art.render({elapsed:frame.elapsed,width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,source,
-    windupSource:drawnSocket('K1'),releaseSource:drawnSocket(plan.ultimate?'K5':'K2'),
+    windupSource:plan.ultimate?drawnSocket('K1'):launch,releaseSource:drawnSocket(plan.ultimate?'K5':'K2'),
     layoutSource:{x:home.point.x+home.point.core*.40,y:home.point.y-home.point.core*.49},
     targets:targets.map(p=>({x:p.x,y:p.y-p.core*.42})),feet:targets.map(p=>({x:p.x,y:p.y})),
     faces:[...this.actors.values()].filter(e=>e.actor.root.visible).map(e=>this.faceBounds(e)),

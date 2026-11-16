@@ -43,9 +43,9 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
  const hits=plan.events.filter(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(id));
  const impact=plan.beats[2]!.start,scale=height/720;
  const age=elapsed-impact;if(!hits.length||age<0||age>=300)return p;
- // V3-POSE 4B.4: a discrete contact held with K4, then a bounded settle.
+ // A1/A3: hold the discrete K4 contact for90ms, then one bounded settle.
  // Multiple damage outcomes share this scheduled contact, not extra kicks.
- const critical=hits.some(e=>e.critical),amount=1-smooth((age-75)/225);
+ const critical=hits.some(e=>e.critical),amount=1-smooth((age-90)/210);
  p.x=direction*(critical?9.5:9)*scale*amount;p.y=-2*scale*amount;
  p.angle=direction*(critical?.045:.035)*amount;p.sx=1+.025*amount;p.sy=1-.025*amount;
  p.flash=age<2000/30?1:0;
