@@ -97,5 +97,119 @@
     "headChin": 558,
     "uncertaintyPx": 2,
     "note": "Fixed from first5px coordinate crop before measurement. Main cap to cloth chin; independently rejected for screen-right facing."
+  },
+  "K1-A6Sockets": {
+    "face": [
+      470,
+      489,
+      154,
+      107
+    ],
+    "mainHand": [
+      777,
+      524
+    ],
+    "offHand": [
+      549,
+      687
+    ],
+    "head": [
+      546,
+      546
+    ],
+    "chest": [
+      575,
+      746
+    ],
+    "weaponTip": [
+      203.0,
+      822.0
+    ],
+    "vfxOrigin": [
+      203.0,
+      822.0
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Manual face and hand positions from first source-coordinate/pose views; leading needle tip from leftmost opaque needle pixels. Lab socket audit still required."
+  },
+  "K2-A1Sockets": {
+    "face": [
+      547,
+      488,
+      167,
+      92
+    ],
+    "mainHand": [
+      391,
+      608
+    ],
+    "offHand": [
+      718,
+      637
+    ],
+    "head": [
+      632,
+      538
+    ],
+    "chest": [
+      648,
+      709
+    ],
+    "weaponTip": [
+      36.0,
+      609.0
+    ],
+    "vfxOrigin": [
+      36.0,
+      609.0
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Manual face and hand positions from first source-coordinate/pose views; leading needle tip from leftmost opaque needle pixels. Lab socket audit still required."
+  },
+  "K4-A2": {
+    "headTop": 454,
+    "headChin": 548,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px coordinate crop before measurement; main cap to pointed cloth chin, excluding dark neck/scarf below. Left-facing identity corrected."
+  },
+  "K4-A3": {
+    "headTop": 448,
+    "headChin": 548,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px source-coordinate crop before measurement; cap top to cloth chin excluding neck/scarf shadow."
+  },
+  "K4-A3Sockets": {
+    "face": [
+      681,
+      448,
+      205,
+      100
+    ],
+    "mainHand": [
+      724,
+      715
+    ],
+    "offHand": [
+      773,
+      628
+    ],
+    "weaponTip": [
+      390,
+      1049
+    ],
+    "vfxOrigin": [
+      390,
+      1049
+    ],
+    "head": [
+      784,
+      507
+    ],
+    "chest": [
+      690,
+      726
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Coordinates from first full guard preview and head crop; K4 is a non-emitting hit pose; socket visual audit pending."
   }
 }

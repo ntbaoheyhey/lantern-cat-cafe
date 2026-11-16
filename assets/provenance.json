@@ -4319,6 +4319,46 @@
       "output": "tools/v3craft-lab/poses/raw/needle-moth/K4-A1.png",
       "sha256": "2e2a9822fc4c180e6f22275dd8068951884c029abc7d7ee1ab9bb53578b913ee",
       "status": "rejected: main head faces screen-right and head ratio.813569; raw/metrics retained"
+    },
+    {
+      "id": "v4-needle-moth-k4-a2",
+      "date": "2026-11-16T13:59:24.356328+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Edit only the HEAD of our original Needle Moth guard/recoil sprite in the FIRST reference. The SECOND reference is the approved identity: use its left-facing wedge head with two gold eyes, not a new face. Preserve the first image's guarded arms, diagonal needle, recoiling segmented body, folded wings, feet, pose and transparency. Correct the head so it faces SCREEN-LEFT in the same three-quarter direction as the approved second reference, while the neck remains attached to the recoiling body. Do not mirror the body or whole image. The current main head is too small, about83px from cap to chin: enlarge the corrected main head to about103px high, with top near sourcey455 and pointed cloth chin near y558 on the1254-square canvas. Preserve the small pointed mauve cloth wedge, original gold eyes and two slender gold-leaf antennae; attach antennae naturally but do not include them in head height. Match the head's proportions and subdued cloth color to the approved identity. Keep all other regions of the first image unchanged: upper wing tip near y231, feet near y1177, rose scarf/brooch, stitches and long needle. No cropping, full-character scaling, new objects, extra limbs, text, glow, shadow or background. This is a head orientation and proportional correction of one existing original recoil drawing.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K4-A1.png; apps/web/public/units/needle-moth/runtime.webp",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K4-A1.png",
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K4-A2.png",
+      "sha256": "9bfbae01c85c5000bfc4f3958ac3923c6fe6a1abda3ca7d2918c35d632d28c82",
+      "status": "rejected: head ratio.919448 below .95; facing corrected; raw/metrics retained"
+    },
+    {
+      "id": "v4-needle-moth-sewing-needle",
+      "date": "2026-11-16T14:02:02.674070+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Create one original painted GAME VFX TEXTURE for our Needle Moth, using the supplied own runtime sprite only for its muted gold, dusty rose and hand-sewn textile language. Show a single horizontal gold sewing needle, its sharp point facing LEFT and oval eye near the right end. A broad but airy trail of chunky dusty-rose zigzag stitches threads through the eye and continues toward the RIGHT. Each connected stitch is a short woven cloth slash with visible thread edges, with transparent gaps between stitches; this is a physical needle and stitched wake, not magical fog. The thin metallic needle should remain distinctly readable in front of the rose trail. Make one coherent long tapered projectile shape, roughly five times wider than tall, on a genuinely transparent canvas with generous margins. Paint the whole needle and wake with consistent side-on lighting and fine handmade cloth/metal texture matching our character. No character, hands, face, ground, shadows, text, icons, glow, starburst, rings, background, panel dividers, multiple separate projectiles or cropping. It will be rotated and reused as an original moving needle and as staggered needle fans.",
+      "inputs": [
+        "apps/web/public/units/needle-moth/runtime.webp"
+      ],
+      "referenceInput": "own art only",
+      "output": "tools/v3craft-lab/v4-needle-moth/raw/sewing-needle.png",
+      "sha256": "2b127724d167f28df4fa87ad83b75bb0e63c13cc96865afa09549033912d7803",
+      "status": "candidate; two lab drills and private comparison pending"
+    },
+    {
+      "id": "v4-needle-moth-k4-a3",
+      "date": "2026-11-16T14:04:26.887844+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Precise edit of our own Needle Moth recoil sprite in the supplied image. Preserve the corrected LEFT-facing wedge head, two gold eyes and all character identity. Make one proportional adjustment only: enlarge the MAIN CLOTH HEAD including eyes by TEN PERCENT in both width and height, anchored at the pointed chin above the scarf. The current main head is94 source pixels from top cap near y454 to cloth chin near y548; target approximately103 pixels, with the cap near y445 and chin remaining near y548, excluding the antennae and scarf. Preserve the wedge shape, muted mauve woven material and eye expression. Reattach the same slender gold leaf antennae naturally. Keep the entire rest of the guard drawing unchanged: recoiling torso, two guarded arms, gold diagonal needle, rose scarf and brooch, wings and stitches, planted legs, feet, canvas and framing. Keep true transparency. No whole-character scaling, mirrored body, changed pose, cropped features, new objects, text, background, glow or shadow. A tiny head proportion correction, not a redesign.",
+      "referenceInput": "own art: tools/v3craft-lab/poses/raw/needle-moth/K4-A2.png",
+      "inputs": [
+        "tools/v3craft-lab/poses/raw/needle-moth/K4-A2.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/needle-moth/K4-A3.png",
+      "sha256": "afdbc0351fa7410431fac63cbb3c1542b04e959dff5befae538ea8c95e203b8b",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }
