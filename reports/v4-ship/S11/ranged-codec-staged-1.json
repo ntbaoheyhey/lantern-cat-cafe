@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-16T20:17:24.867657+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6747,
+      "sha256": "5295d9af84fc98fe32ca4625b822db627c569d937e3c1014f8be6fe163793039"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-ranged-audio.md",
+      "bytes": 9666,
+      "sha256": "2a4ca7bfc94a5e4066332eaf12a520652235bff4e78b8be61f0c9c3a07db55fc"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-package-1.json",
+      "bytes": 2623,
+      "sha256": "5836701764c6e5842292f36c0fbdf9025d0d26e126b1e153f11678362f680bb1"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-ready-1.json",
+      "bytes": 12352,
+      "sha256": "0302bcd7de40813653de1cfe51e70e25a429fe0ca879d10084b222b81c8d2b9b"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-ready-1.rows.json.gz",
+      "bytes": 30237,
+      "sha256": "b436b2d99219745d9923850aed065826c633cb3512a6d10efa386ee275749691"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-regression-1/check.json",
+      "bytes": 1433,
+      "sha256": "c94b2a80a56ae1370641cdd0c69a809a6c3b00580ab072553ed78d604de4476c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-regression-1/log.jsonl.gz",
+      "bytes": 16052,
+      "sha256": "a8e500e1a9bfd716fbb92bb9f7a0b869173116726a2e4b5c42d193856eb3d0a0"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "7fd4eabe7b25398ccb2cd43cc5fe9a39c153c0ff29f995cd3b37b48b32e8a15b"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-scale-1.json",
+      "bytes": 13111,
+      "sha256": "ca9d2c42cda2eab4d8ed93e60cc2582ff8cdd153db2960bc9790fc4d4db03e8c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-scale-1.rows.json.gz",
+      "bytes": 41922,
+      "sha256": "12e9cdd81fc4de5f005adcfd1ef54acbaa6c72676a333d8cef04b331fd1faa22"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-mp3-muxers-1.json",
+      "bytes": 353844,
+      "sha256": "11034969199d3e503512b19c969786d8efa8b0530870334a4c4456567e0754a7"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-mp3-tags-1.json",
+      "bytes": 353711,
+      "sha256": "8fc84123f9ecd59d0e26b27a4216c877ba1312258d59853235dc12f7e96b7717"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 20553,
+      "sha256": "8f0c6c43f235ec247d71ea6aeca21a6d53fff2baca5599990fccb0892a1692cc"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4085,
+      "sha256": "74535d5da56e4ba965685d39a9320178eacf196848c08727d0d3e985c2e830ab"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-measure.mjs",
+      "bytes": 1881,
+      "sha256": "44608dc75afe26b23521f256a6ee51f40cd2ac8d15b01782b366456665abb1f6"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-package.mjs",
+      "bytes": 4492,
+      "sha256": "88d53bcb305ccff7d90326d034f76a36ccfa89b675c46e1be1acd1ad65dd710f"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-ready.mjs",
+      "bytes": 4992,
+      "sha256": "a082977cc0bf60f8e51cfda20f6b6f7fc2cbe8cf0e7ca7331f650e292982648e"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-codec-scale.mjs",
+      "bytes": 5440,
+      "sha256": "bdbad1eec1aa13cecafd6b4f07407ca12239cab759cc60d2b8bf0a1904ceb503"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-mp3-muxers.mjs",
+      "bytes": 5502,
+      "sha256": "de8ca17e0b8b8d6170cb4997b9236f465f9d7e32537397a9c5eb185b92652516"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/ranged-mp3-tags.mjs",
+      "bytes": 5466,
+      "sha256": "b149769a78771d75361f8a0c20abd60bb26357ad68fd77d651755bc86315a1a0"
+    }
+  ],
+  "expandedGzip": 3,
+  "findings": [],
+  "unresolved": 0,
+  "pass": true
+}

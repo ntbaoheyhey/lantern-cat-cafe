@@ -21,4 +21,4 @@ S11: workshop tối đa 21 từ trong lần đo mới; focus bàn phím 6/6 đ�
 S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phản tối thiểu5,407:1, bàn phím6/6 và lưu12 mức âm lượng đạt. Hồi quy vẫn còn bảy lỗi ART; chưa đạt UI toàn cục.
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
-Âm thanh S11:production14 đã xác nhận đúng nhạc/nền và nạp âm trước tiếp xúc ở cả hai kích thước;−17,73/−17,77LUFS,LRA7,9/8,5,đỉnh−1,94/−2,04dBTP đạt. Trễ ước tính tối đa33,57ms vẫn vượt33ms. Ranged đang kiểm tra lệch MP3 giữa hai trình duyệt; chưa cài âm mới.
+Âm thanh S11:production14 đạt nhạc/nền,−17,73/−17,77LUFS nhưng trễ ước tính tối đa33,57ms còn vượt33ms. Đã chuẩn bị72 âm va chạm ranged,WebM/MP3 không lệch trên Chromium/WebKit ở44,1/48kHz; chưa cài vào game, tiếp theo đo phát âm launch/travel thực tế.
