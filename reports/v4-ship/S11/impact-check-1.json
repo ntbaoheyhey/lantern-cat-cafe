@@ -1,0 +1,187 @@
+{
+  "at": "2026-11-16T19:06:40.650410+00:00",
+  "scope": "Two complete production12 journeys. Observed submitted-contact-to-source-start attribution only; no global weapon or physical acceptance.",
+  "learn": "reports/v4-ship/LEARN/S11-impact-coverage.md",
+  "journeys": [
+    {
+      "evidence": {
+        "path": "reports/v4-ship/S11/impact-journey-1.json",
+        "sha256": "8b185a7ce62e7ce97ae21103e33ab213ddf38bccdcbf31d7b4acf474035b1b9f"
+      },
+      "events": {
+        "path": "reports/v4-ship/S11/impact-journey-1.events.json.gz",
+        "sha256": "edefabe7ba13b2d7a521ff672965abc5df40143bc5b9dc4caf4df43bc134fc2d"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "sourceCommit": "e9af6a933e6189177da15c64c316f426a9510201",
+      "journeyPass": true,
+      "rollback": true,
+      "receiptsVerified": 18,
+      "controls": 10,
+      "controlsPass": true,
+      "receiptChimesPass": true,
+      "maxStartsPer100ms": 5,
+      "sourceBudgetPass": true,
+      "controlMaxEstimatedOnsetMs": 106.07033333445088,
+      "receiptMaxEstimatedOnsetMs": 33.05633333258447,
+      "receiptMaxDurationMs": 135.57060763459106,
+      "scenes": 2,
+      "expectedContacts": 124,
+      "causallyPlayedContacts": 124,
+      "failedContacts": 0,
+      "unattributedImpactEvents": 0,
+      "coverageByOwner": {
+        "mochi": 18,
+        "soot": 18,
+        "clover": 16,
+        "panko": 16,
+        "yarn-giant": 16,
+        "binding-thread": 40
+      },
+      "observedContactCoveragePass": true,
+      "estimatedOnsetMaxMs": 101.18633333370599,
+      "estimatedOver33ms": 13,
+      "estimatedUnavailable": 0,
+      "healerImpactCues": {
+        "kit.garden.impact": 16
+      },
+      "healerBasicImpactCues": {
+        "kit.garden.impact": 12
+      }
+    },
+    {
+      "evidence": {
+        "path": "reports/v4-ship/S11/impact-journey-2.json",
+        "sha256": "cc78a64b314c2de20e2c68528a24a6ce7701872b59382c07a0224face8dec335"
+      },
+      "events": {
+        "path": "reports/v4-ship/S11/impact-journey-2.events.json.gz",
+        "sha256": "c3f8752c1194e2ef1152200354ae7e142de963c1f04130a5e69e84910d49a0ed"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "sourceCommit": "e9af6a933e6189177da15c64c316f426a9510201",
+      "journeyPass": true,
+      "rollback": true,
+      "receiptsVerified": 18,
+      "controls": 10,
+      "controlsPass": true,
+      "receiptChimesPass": true,
+      "maxStartsPer100ms": 4,
+      "sourceBudgetPass": true,
+      "controlMaxEstimatedOnsetMs": 33.17833333221574,
+      "receiptMaxEstimatedOnsetMs": 32.677333334082505,
+      "receiptMaxDurationMs": 136.01463799076896,
+      "scenes": 2,
+      "expectedContacts": 124,
+      "causallyPlayedContacts": 124,
+      "failedContacts": 0,
+      "unattributedImpactEvents": 0,
+      "coverageByOwner": {
+        "mochi": 18,
+        "soot": 18,
+        "clover": 16,
+        "panko": 16,
+        "yarn-giant": 16,
+        "binding-thread": 40
+      },
+      "observedContactCoveragePass": true,
+      "estimatedOnsetMaxMs": 96.6703333340779,
+      "estimatedOver33ms": 11,
+      "estimatedUnavailable": 0,
+      "healerImpactCues": {
+        "kit.garden.impact": 16
+      },
+      "healerBasicImpactCues": {
+        "kit.garden.impact": 12
+      }
+    }
+  ],
+  "observerCheck": {
+    "path": "reports/v4-ship/S11/impact-observer-check-2.json",
+    "sha256": "e88e095af4b944e592475da5386808b5239fc8955326b520bf4266c67dc09db3"
+  },
+  "comparison": {
+    "path": "reports/v4-ship/S11/impact-method-comparison-1.json",
+    "sha256": "bcf4d31ffc513ddb7e55dd2d53f18f67efc2664a50c4cd1777ee8f54dcf64323"
+  },
+  "failedObserverPreserved": {
+    "path": "reports/v4-ship/S11/impact-observer-1.harness.mjs.gz",
+    "sha256": "58aefcae29002ced2671d21fcedf0793d728d0f5b51db4a8cd732c4f149fb70e"
+  },
+  "semanticIssue": {
+    "requirement": {
+      "path": "reports/v4-ship/REQUEST-SHIP.txt",
+      "lines": [
+        138,
+        157
+      ]
+    },
+    "timeline": {
+      "path": "apps/web/src/game/cardrpg/battle-v3/audio-timeline.ts",
+      "sha256": "f3ea36f4fc88b70d0be77f85ebd189488007a58e588dc1acbe9e3f153ec09f6e"
+    },
+    "manifest": {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "28b2ffe132337278df1c6fc452afe54e06c1e6b32305929e78ce4a28ec2b2f27"
+    },
+    "finding": "Fixed timing selects whoosh and elemental impact by owner role, including healer Clover. The garden impact design contains wood-impact layers. Ranged basics also lack a distinct travel event.",
+    "resolutionEvidence": "heal.medium is present through designs/bindings, with maximize and click/tick samples; lack of a direct cues entry does not imply a missing cue. Garden and ember designs differ despite identical fallback slices.",
+    "next": "Compare class-aware routing and resolved samples before implementing SHIP-owned audio changes. Preserve visual/combat clocks and all gates."
+  },
+  "regression": {
+    "check": {
+      "path": "reports/v4-ship/S11/impact-regression-1/check.json",
+      "sha256": "b3bad792e868e07e8ed7637366293c59f1f7078277850c4b408b4d391908d94b"
+    },
+    "logs": [
+      {
+        "path": "reports/v4-ship/S11/evidence-refresh-regression-1/log.jsonl.gz",
+        "sha256": "da7e674e432177fbac49dd176dc4ee4ca2fb26abf19ea4bed60cdcffa486dd34",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ],
+        "counts": [
+          "Test Files  2 failed | 318 passed (320)",
+          "Tests  7 failed | 2680 passed (2687)"
+        ]
+      },
+      {
+        "path": "reports/v4-ship/S11/impact-regression-1/log.jsonl.gz",
+        "sha256": "c5ffa2990f2afd56004b92693e168d9994f446759e707ae1456abf06378c6b2a",
+        "failures": [
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+          "src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+          "src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows"
+        ],
+        "counts": [
+          "Test Files  2 failed | 318 passed (320)",
+          "Tests  7 failed | 2680 passed (2687)"
+        ]
+      }
+    ],
+    "sameSevenArtFailures": true,
+    "gRegPass": false,
+    "officialClassParityPass": false
+  },
+  "runtimeChanged": false,
+  "completeWeaponCoveragePass": false,
+  "physicalAudiovisualOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false
+}

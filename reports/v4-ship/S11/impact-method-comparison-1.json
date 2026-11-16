@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-16T18:54:58.622542+00:00",
+  "source": {
+    "path": "reports/v4-ship/S11/audio-journey-3.events.json.gz",
+    "sha256": "a521de34906ebd4c12d7f574cab28e650e444284ea3774a47650eb3c930f96ea"
+  },
+  "scope": "Read-only replay of recorded impact requests/source starts. Controlled omission removes the first request group only in memory, never changes source capture or runtime.",
+  "rows": [
+    {
+      "input": "recorded",
+      "expectedRequests": 124,
+      "sourceStarts": 496,
+      "aggregateCountPass": true,
+      "uniqueCausalMatches": 124,
+      "uniqueCausalPass": true,
+      "missingRequests": []
+    },
+    {
+      "input": "controlled-omission",
+      "expectedRequests": 124,
+      "sourceStarts": 492,
+      "aggregateCountPass": true,
+      "uniqueCausalMatches": 123,
+      "uniqueCausalPass": false,
+      "missingRequests": [
+        7
+      ]
+    }
+  ],
+  "control": {
+    "omittedRequest": 7,
+    "removedStarts": 4,
+    "actualProductionFailure": false
+  },
+  "decision": "Use unique causal request groups. Aggregate source totals count four layers per impact and miss the deliberately omitted group. Neither method by itself proves which rendered combat contact caused a request; next collect real scene plan/contact identities.",
+  "physicalOnsetVerified": false,
+  "completeWeaponCoveragePass": false
+}

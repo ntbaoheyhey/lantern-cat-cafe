@@ -1,0 +1,499 @@
+{
+  "at": "2026-11-16T18:57:39.924Z",
+  "scope": "Controlled renderer stubs with real silent WebAudio source starts; checks attribution only, no product-audio or rendered-art pass.",
+  "harnessSha256": "df9322427e3d67086d2322f4eb9d35be8fcf129af00ad8ee4e733a3d897757f8",
+  "observerSha256": "dcdd8d7c7548ff486264cf4e0d595167f538b23f65684443de2b6d1ea0e4af6c",
+  "rows": [
+    {
+      "name": "one contact once",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 121,
+              "audioTime": 0
+            }
+          ],
+          "starts": [
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 0,
+              "group": 1,
+              "pack": "synthetic",
+              "when": 0,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 121.20000000111759,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            }
+          ],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 0,
+              "performanceMs": 121.30000000074506,
+              "audioTime": 0
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    },
+    {
+      "name": "shared plan across scenes",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 11.200000001117587,
+              "audioTime": 0.005333333333333333
+            },
+            {
+              "sequence": 1,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 11.5,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "starts": [
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 0,
+              "group": 1,
+              "pack": "synthetic",
+              "when": 0.005333333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 11.400000000372529,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            },
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 1,
+              "group": 2,
+              "pack": "synthetic",
+              "when": 0.005333333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 11.5,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            }
+          ],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 0,
+              "performanceMs": 11.5,
+              "audioTime": 0.005333333333333333
+            },
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 1,
+              "performanceMs": 11.5,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    },
+    {
+      "name": "missing renderer submission",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 11.100000001490116,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "starts": [
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 0,
+              "group": 1,
+              "pack": "synthetic",
+              "when": 0.005333333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 11.200000001117587,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            }
+          ],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 0,
+              "performanceMs": 11.200000001117587,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    },
+    {
+      "name": "explicit audio rejection",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 10.800000000745058,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "starts": [],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "rate-limit",
+              "request": 0,
+              "performanceMs": 10.800000000745058,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    },
+    {
+      "name": "late observer installation",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 10.700000001117587,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "starts": [
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 0,
+              "group": 1,
+              "pack": "synthetic",
+              "when": 0.005333333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 11,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            }
+          ],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 0,
+              "performanceMs": 11.099999999627471,
+              "audioTime": 0.005333333333333333
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    },
+    {
+      "name": "rearm after scene deletion",
+      "pass": false,
+      "result": {
+        "scenes": 0,
+        "expectedContacts": 0,
+        "observedContacts": 0,
+        "causallyPlayedContacts": 0,
+        "failedContacts": 0,
+        "unattributedImpactEvents": 0,
+        "owners": [],
+        "rows": [],
+        "errors": [],
+        "observedImpactCoveragePass": false,
+        "allEstimatedWithin33ms": false,
+        "physicalAudiovisualOnsetVerified": false,
+        "completeWeaponCoveragePass": false,
+        "scope": "Observed fixed-timing contacts in these scenes only. Renderer submission and audio output timestamps are estimates, not measured photons or acoustic onset; unobserved units and skill modes remain open."
+      },
+      "data": {
+        "impact": {
+          "scenes": [],
+          "plans": [],
+          "events": [],
+          "submissions": [],
+          "errors": []
+        },
+        "audio": {
+          "controls": [],
+          "receipts": [],
+          "requests": [
+            {
+              "sequence": 0,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 10.800000000745058,
+              "audioTime": 0.005333333333333333
+            },
+            {
+              "sequence": 1,
+              "id": "kit.holy.impact",
+              "control": null,
+              "receipt": null,
+              "performanceMs": 112.90000000037253,
+              "audioTime": 0.10133333333333333
+            }
+          ],
+          "starts": [
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 0,
+              "group": 1,
+              "pack": "synthetic",
+              "when": 0.005333333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 11,
+              "outputTimestamp": {
+                "contextTime": 0,
+                "performanceTime": 0
+              }
+            },
+            {
+              "id": "kit.holy.impact",
+              "bus": "sfx",
+              "request": 1,
+              "group": 2,
+              "pack": "synthetic",
+              "when": 0.10133333333333333,
+              "offset": 0,
+              "duration": 0.01,
+              "rate": 1,
+              "loop": false,
+              "callPerformanceMs": 112.90000000037253,
+              "outputTimestamp": {
+                "contextTime": 0.067964,
+                "performanceTime": 112.59999999962747
+              }
+            }
+          ],
+          "results": [
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 0,
+              "performanceMs": 11,
+              "audioTime": 0.005333333333333333
+            },
+            {
+              "id": "kit.holy.impact",
+              "result": "played",
+              "request": 1,
+              "performanceMs": 113,
+              "audioTime": 0.10133333333333333
+            }
+          ],
+          "activeControl": null,
+          "activeReceipt": null,
+          "installed": true
+        }
+      }
+    }
+  ],
+  "pass": false
+}
