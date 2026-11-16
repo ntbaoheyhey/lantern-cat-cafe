@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T21:44:41.100714+00:00
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: run fullweb/typecheck then resolution-browser.mjs resolution-candidate and resolution-fallback --block-sampled, detached1job. Compare6cases to baseline and inspect newraw sheets. Need3fixtureparity/films/900p/fullgates before acceptance.
+NEXT1: poll validation PID20100/tail5 jobs/a10-resolution-validation-r1.log;fullweb/typecheck/candidate+blocked-AVIF fallback6cases each. After completion compare6candidate scenes vs baseline, raw images<=4/look;parity/films/layout900 remain.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 open items/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:31c0a2769 verified;baseline6cases saved. Sampled runtime candidate installed12files1,556,851B, actor2/3+VFX1/2;34focused tests/5filesPASS. Hybrid7,966,992B projection only;SHIP8MBOPEN.
-LIVE: craftVite3426/5990 jobs/needle-craft-vite-resume.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log. All supervisors done;2ownedservers/1jobslot.
+LAST PUSH:b920586d4 verified;sampled runtime candidate12files1,556,851B+fallback+source ratios;34focused tests/5filesPASS. Hybrid7,966,992B projected only;no production8MB acceptance.
+LIVE: craftVite3426/5990 jobs/needle-craft-vite-resume.log;normalVite8220/5991 jobs/a10-scene-ready-vite.log;validation-supervisor20100 jobs/a10-resolution-validation-r1.log/receipt scene-ready-transfer/job-validation-resolution-r1.json.3ownedjobs.
 STOP/INBOX checked21:35UTC: noSTOP; explicit continuation active; INBOX pause superseded. LatestSHIP18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
