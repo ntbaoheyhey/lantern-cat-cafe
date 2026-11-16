@@ -34,7 +34,8 @@ it('keeps corridor arcs bounded, holds contact and retraces them before the same
 it('keeps the dense route continuous through the drawing swap and returns on the same clock',()=>{
  const h={x:432,y:819,core:283.5},contact={x:822.3,y:375};
  expect(denseMeleeRoot(99,h,contact)).toMatchObject({x:0,y:0});
- expect(denseMeleeRoot(350,h,contact)).toMatchObject({x:390.29999999999995,y:-444,phase:'strike'});
+ const strike=denseMeleeRoot(350,h,contact);
+ expect(strike.phase).toBe('strike');expect(strike.x).toBeCloseTo(contact.x-h.x,8);expect(strike.y).toBeCloseTo(contact.y-h.y,8);
  expect(denseMeleeRoot(559,h,contact)).toEqual(denseMeleeRoot(350,h,contact));
  expect(denseMeleeRoot(800,h,contact)).toMatchObject({x:0,y:0,phase:'idle'});
  for(const t of [269.999,299.999,559.999,799.999]){

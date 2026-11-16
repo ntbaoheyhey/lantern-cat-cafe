@@ -25,7 +25,7 @@ export function stageLayoutC2(units: readonly StageUnitC2[], width: number, heig
     const dense=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss;
     // A6: incidental foes leave a continuous approach lane for the featured melee cat.
     const incidental=dense?Object.entries({
-      'kettle-knight':{x:.72,y:.35,scale:.85},'spool-ram':{x:.64,y:.92,scale:.85},
+      'kettle-knight':{x:.75,y:.35,scale:.85},'spool-ram':{x:.64,y:.92,scale:.85},
       'crumb-sentinel':{x:.73,y:.68,scale:.85},'pollen-scout':{x:.88,y:.28,scale:.65},
     }).find(([asset])=>(unit.asset??unit.id)===asset||(!unit.asset&&unit.id.includes(asset)))?.[1]:undefined;
     const crowdedScale=unit.side==='enemy'&&enemyCapacity>4&&!hasBoss?.96:1;

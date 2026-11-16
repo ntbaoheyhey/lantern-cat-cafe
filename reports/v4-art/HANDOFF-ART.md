@@ -1,12 +1,12 @@
 # ART execution anchor — 2026-11-16 09:30 UTC
 Request REV3 50240B SHA25615e1bc738d2bc686f23d631acd1e2b0d92f4117ab665f2021fa6844fdb8e15c8.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14.
-NEXT1: ps -p 65062; tail -n 5 reports/v4-art/jobs/a6-route.log; inspect typecheck-route.log/route-tests.log errors and live-probe worst occlusion. Fix failures then fullalpha.
+NEXT1: ps -p 65820,65821; tail -n5 reports/v4-art/jobs/a6-{framing,regression}.log; summarize full-action max fractions and fix any >.15 before films.
 NEXT2: After live alpha passes, run A6 regression, acceptance films, blind/face/performance review; preserve failures.
 NEXT3: A7 enemies/boss, A9 ensemble; A1b exhaustive private-video catalogue at A11.
-LAST PUSH:8883e3fb8;verified09:28UTC; current route implementation checkpoint follows.
+LAST PUSH:9439128ba;verified09:30UTC.
 STOP/INBOX/designer:last checked none; recheck after checkpoint. SHIP db35585 nonfinal; no merge; baseline reports/v3-feel/parity-new.json.
-LIVE: owned Vite67838 port5990; route check PID65062 log reports/v4-art/jobs/a6-route.log (typecheck,route tests,live all6); launched09:30UTC.
+LIVE: Vite67838 port5990; PID65820 reports/v4-art/jobs/a6-framing.log; PID65821 reports/v4-art/jobs/a6-regression.log; launched09:33UTC.
 A5 v13 full-action occlusion6cases/1800samples PASS worst13.423%; final numeric framing/wrong-facing PASS.
 A5 fullweb/typecheck/3fixtureparity EXIT0; final 3x30s audio720films and silent900boss completed.
 A5 10 own actions(7basic/3ult)+1receivedhit inspected; all complete/posechanging. Blind12/12.
@@ -27,5 +27,6 @@ Time split/gate gaps must remain honest; >=50%authoring,<=25%measurement/logging
 A6 pre-change fullalpha FAILwave3Pankopath83.02%,wave1Mochi15.648%;rawgz+framing-v1-fail.json retained.21curvevariantsFAILbest29.48%.
 A6 typecheckPASS;runtime painted tip error<1e-12px;basic returns800ms. Fullpath correction needed before films.
 A6 mask maps A–H failed; I moves nonheroKettle(.72,.35),Spool(.64,.92),Crumb(.73,.68),Pollen(.88,.28);scales.85/.85/.85/.65 in lab only. Production layout now J; gates pending.
-A6 J route now authored in production:8vertices;K2switch270ms;K2hold560ms,K0return800;40pxgap720. Dense incidental layout/scales applied. Gates pending.
+A6 J route now authored in production:8vertices;K2switch270ms;K2hold560ms,K0return800;40pxgap720. Dense incidental layout/scales applied. Gates pending; r1wave3/720 Kettle21.229%,90014.375%; move Kettle.x .72->.75, recheck.
 RESUME09:29: 68 dirty paths are inherited logs/parity, excluded duplicate previews and local diagnostics; no pending source edits. Checkpoint diagnostics; no new gate claim.
+ROUTE-R2: focusedwave3 two sizes PASS max.1282565/.0934989;typecheckPASS,10routetestsPASS. Full-action regression pending.
