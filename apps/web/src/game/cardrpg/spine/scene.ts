@@ -322,7 +322,7 @@ export class SpineScene {
     // above the ally seated below. The painted contact cut bridges the edge.
     if(!corridor&&!tallTarget&&contact.y>home.point.y+height*.1525){
      contact.y=home.point.y+height*.1525;
-     contact.x+=direction*12*height/720;
+     contact.x+=direction*24*height/720;
     }
     rootPose=corridor&&entry.asset==='panko'&&contact.y<home.point.y-height*.25
      ?denseMeleeRoot(frame.elapsed,home.point,contact)
