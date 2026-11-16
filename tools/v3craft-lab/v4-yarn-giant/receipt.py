@@ -110,6 +110,7 @@ if '--metrics-only' in sys.argv:
     raise SystemExit(0)
 blind = read(root / 'blind-result.json')
 layout900 = read(root / 'layout900.json')
+assert all(f['visuallyReviewed'] for f in layout900['fixtures']), 'Inspect each new 900p sheet before the receipt'
 poses = read(root / 'published-pose-metrics.json')
 budget = read(root / 'asset-budget.json')
 live = read(root / 'live-gates-r5.json')
@@ -136,6 +137,7 @@ receipt = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'sampledLiveAlpha': all(r['numericalSamplePass'] for r in live['rows']),
         'layout720BoundingBoxes': all(not f['failures'] for f in layout720),
         'layout900BoundingBoxes': not layout900['failures'],
+        'layout900VisuallyReviewed': all(f['visuallyReviewed'] for f in layout900['fixtures']),
         'bossMedian50fps': next(p['medianRenderFps'] for p in performance if p['fixture'] == 'boss') >= 50,
         'addedAssetUpperBound6MB': budget['bytes'] <= 6000000,
         'regression': validation['pass'], 'laneAudit': read(root / 'lane-audit.json')['pass']}}

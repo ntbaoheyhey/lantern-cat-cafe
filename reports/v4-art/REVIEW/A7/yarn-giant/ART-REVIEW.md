@@ -17,6 +17,6 @@ Original braid-wave-A1 is a three-braid ragged cloth fan,1024x410,411766B; SHA25
 
 Lab R1 staging/role failures are retained. R2 uses actor group10 between rear9/front11, shared drawingAt and meleeRoot. Selected broad1180x472 fan measured27.4164% area,<=4.4643% face coverage,0px tip error,8px contact gap and0 return error. A private225px same-scale comparison was reviewed once for staging only, without reference pixels as generation inputs or a timing-equivalence claim.
 
-Runtime trial/source3ac0f5a17 holds the contact drawing90ms before its retaliation guard, retains immediate flash/recoil, keeps small actors in front of the giant, and approaches all real recipient edges. See LIVE-REVIEW.md for retained runtime failures and successful samples. Film receipt is still pending.
+Runtime trial/source3ac0f5a17 holds the contact drawing90ms before its retaliation guard, retains immediate flash/recoil, keeps small actors in front of the giant, and approaches all real recipient edges. See LIVE-REVIEW.md for retained runtime failures and successful samples. All15 complete film windows are reviewed, blind attempt1 passes9/9, and the joined receipt is saved. Actual boss span fails at720/900 and remains open; authored source gates pass.
 
-Selected tracked JPGs currently3/8: poses225.jpg, drill-broad.jpg, contact-live.jpg. Raw originals, private references and redundant previews stay untracked.
+Selected tracked JPGs 5/8: poses225.jpg, drill-broad.jpg, contact-live.jpg, layout900-boss.jpg, blind-1.jpg. Raw originals, private references and redundant previews stay untracked.

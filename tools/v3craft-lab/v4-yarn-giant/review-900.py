@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw
 import hashlib
 import json
 import statistics
+import subprocess
 
 root = Path('reports/v4-art/REVIEW/A7/yarn-giant')
 limits = {'catMedian': ('min', .30), 'catDeviation': ('max', .08),
@@ -15,6 +16,10 @@ for fixture in ['wave1', 'wave3', 'boss']:
     metadata = folder / 'capture.json'
     d = json.loads(metadata.read_text())
     assert (d['width'], d['height']) == (1440, 900)
+    source_commit = d['_meta']['sourceCommit']
+    expected_hashes = json.loads((root / 'source-hashes.json').read_text())
+    captured_hashes = {p: hashlib.sha256(subprocess.check_output(['git', 'show', source_commit + ':' + p])).hexdigest() for p in expected_hashes}
+    assert captured_hashes == expected_hashes, '900p runtime differs from validated film source'
     values = []
     for f in d['frames']:
         units = f['units']
@@ -44,7 +49,8 @@ for fixture in ['wave1', 'wave3', 'boss']:
             failures.append({'metric': key, 'count': len(failing), 'worst': extrema[key]})
     own = [f['index'] for f in d['frames'] if f['action'] and
            'yarn-giant' in f['action']['actorId'] and 350 <= f['action']['elapsed'] < 384]
-    indices = [0] + own[:1] + [extrema['catDeviation']['index'], extrema['gap']['index']]
+    indices = [extrema[f['metric']]['index'] for f in failures]
+    indices += [0] + own[:1] + [extrema['catDeviation']['index'], extrema['gap']['index']]
     if fixture == 'boss':
         indices += [extrema['boss']['index']]
     available = sorted(int(p.stem.split('-')[1]) for p in folder.glob('frame-*.png'))
@@ -61,6 +67,7 @@ for fixture in ['wave1', 'wave3', 'boss']:
     assert not path.exists(), 'Never regenerate an already inspected sheet'
     sheet.save(path, quality=92)
     result = {'fixture': fixture, 'captureSha256': hashlib.sha256(metadata.read_bytes()).hexdigest(),
+              'sourceCommit': source_commit, 'runtimeSourceHashesVerified': len(captured_hashes),
               'frames': len(d['frames']), 'seconds': d['seconds'], 'parity': d['parity'], 'errors': d['errors'],
               'extrema': extrema, 'failures': failures, 'reviewFrameIndices': indices,
               'sheet': str(path), 'visuallyReviewed': False}
