@@ -1,14 +1,14 @@
-# ART execution anchor — 2026-11-16T23:07:20.586575+00:00
+# ART execution anchor — 2026-11-16T23:10:47.075457+00:00
 ACTIVE: user continuation;A10scene-ready transfer OPEN after2h timebox;A11 delivery review COMPLETE(scoped), now private placement temporal/all42defect validation. Continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: temporal.mjs r3 must track plan-object ordinal to match capture action.key, then validate id+elapsed. r1/r2 failures preserved; no placement samples accepted or runtime edits.
+NEXT1: author private actor-relative side-lane candidate plus persistent-offset variant; replay saved temporal-r3 raw geometry as2drills, then DOM/visual comparison. Stateless HUD-nearest REJECTED:82.26px adjacent offsetjump; no runtime install.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: A11 remaining42placement frames/banner-number polish/900pwave1f111glow attribution; postfreezeA12. Designer intake interrupts before18Nov12UTC; only explicit finalclasses+solebaseline permits merge.
-LAST PUSH:0811a8b4d verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
-LIVE: normalVite20416/5990 craftOFF. Temporal50333 exitedFAIL(clock moved backwards when action IDs reused);log jobs/a11-placement-temporal-r2.log. No capture/replay jobs active.
+LAST PUSH:03b956dd5 verified;runtime ae96b7d85. Fullweb2689/320+typecheck+explicit3F6PASS reused via unchanged100hashes. Delivery receipt saved:84/84action+3/3layout sheets CLOSED; composition/integrated8MB remain OPEN.
+LIVE: normalVite20416/5990 craftOFF. Temporal50932 completed;log jobs/a11-placement-temporal-r3.log. No replay/capture jobs active; r1/r2 failures retained.
 STOP/INBOX checked22:58UTC16Nov:noSTOP;latest user continuation active. LatestSHIP remains18:25scene-ready request; finalclasses/solebaseline absent; no merge/baseline adoption.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
-A11prep:6sources/1paper/5docs+2privateDOMdrills+6same-scale comparisons CLOSED. Viewport-only rejects:13HUD overlaps; HUD+face reservation:0clip/HUD/face/pair hits in6states, alltext preserved. Candidate PRIVATE; temporal/all42defect checks OPEN. A11/placement-r1/decision.json.
+A11placement: prior6states pass statically, but304semantic replay states REJECT stateless candidate for82.26px jump. 0measured intersections/textloss; baseline38/42reproduced720 and35/42at900. Remaining originals remain failures. temporal-r3-assessment.json.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
 Yarn originalbraid-wave-A1=1024x410/411766B,sha80d66f4389f4371ad3c439e7b64687f7c505057d5b8d34936c03c75adde04138;5poses495306B; cumulativeassetupper5076339B/6MB.

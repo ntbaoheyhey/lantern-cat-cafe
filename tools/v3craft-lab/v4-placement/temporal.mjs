@@ -48,19 +48,23 @@ try {
    const replay=capture.frames.slice(previousRender+1,mapping.renderFrame+1).map(f=>({frameAt:f.frameAt,action:f.action}));
    await page.evaluate(frames=>{
     const m=window.__depthReview,s=window.__depthScene;
+    const syncPlan=()=>{if(m.plan&&window.__artReplayPlan!==m.plan){window.__artReplayPlan=m.plan;window.__artReplayKey=(window.__artReplayKey??-1)+1;}};
     const tick=delta=>{window.__artReplayClock=(window.__artReplayClock??1000)+delta;m.paused=false;m.tick(delta,window.__artReplayClock);m.paused=true;};
     for(const frame of frames){
      const target=frame.action;
      if(target){
       let guard=0;
-      while(m.plan?.id!==target.id){
-       if(++guard>100)throw Error('Cannot reach action '+target.id+'; current '+m.plan?.id);
+      syncPlan();
+      while(window.__artReplayKey!==target.key||!m.plan){
+       if(++guard>100)throw Error('Cannot reach key '+target.key+' action '+target.id+'; current '+window.__artReplayKey+'/'+m.plan?.id);
        if(m.plan)tick(m.plan.duration-m.animationAt+0.001);else {m.paused=false;m.step();m.paused=true;}
+       syncPlan();
       }
+      if(m.plan.id!==target.id)throw Error('Action ID differs at key '+target.key);
       const delta=target.elapsed-m.animationAt;
       if(delta<-.01)throw Error('Action clock moved backwards '+delta);
       if(delta>0)tick(delta);
-     }else if(m.plan){tick(m.plan.duration-m.animationAt+0.001);}
+     }else if(m.plan){tick(m.plan.duration-m.animationAt+0.001);syncPlan();}
      cancelAnimationFrame(s.raf);
      s.render({...s.view(),fixedTime:10+frame.frameAt,paused:true},Math.max(0,frame.frameAt-(window.__artPreviousFrame??frame.frameAt)));
      window.__artPreviousFrame=frame.frameAt;
