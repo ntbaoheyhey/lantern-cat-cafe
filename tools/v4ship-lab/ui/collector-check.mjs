@@ -24,6 +24,7 @@ try{
  await check('overflow actually clips','<p style="width:24px;white-space:nowrap;overflow:hidden">Clipped long text</p>',r=>assert(r.texts[0].clipping.some(c=>c.axis==='x')));
  await check('body overflow propagates to viewport','<style>body{overflow:hidden}main{position:fixed;inset:0}</style><main><p>Visible fixed text</p></main>',r=>assert.equal(r.texts[0].clipping.length,0));
  await check('viewport clipping retained','<style>body{overflow:hidden}</style><p style="position:fixed;top:705px;margin:0">Partly outside</p>',r=>assert(r.texts[0].clipping.some(c=>c.axis==='y')));
+ await check('offscreen scroll rows are retained separately','<div style="height:30px;overflow:auto"><p style="margin:0">Top text</p><p style="margin:16px 0 0">Hidden scrolled text</p></div>',r=>{assert.equal(r.texts.length,1);assert.equal(r.texts[0].text,'Top text');assert.equal(r.scrollHidden.length,1);assert.equal(r.scrollHidden[0].text,'Hidden scrolled text');});
  await check('ancestor opacity is not hidden by opaque child','<div style="opacity:.5"><p style="background:white">Translucent text</p></div>',r=>assert.equal(r.texts[0].contrast,'unknown'));
  await check('filled border image is unknown','<p style="border:20px solid;border-image:linear-gradient(red,blue) 10 fill">Image-backed text</p>',r=>assert.equal(r.texts[0].unknownReason,'border-image-fill'));
  await check('gradient interior crosses text luminance','<p style="background:linear-gradient(black,white);color:#777">Gradient text</p>',r=>assert.equal(r.texts[0].ratio,1));

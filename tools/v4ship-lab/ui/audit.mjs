@@ -9,7 +9,7 @@ import {gzipSync} from 'node:zlib';
 import {verifyJourneyReceipts} from '../proof/receipt-check.mjs';
 import {observeDocument} from './observe.mjs';
 
-const root=resolve(import.meta.dirname,'../../..'),attempt=process.argv[2];
+const root=resolve(import.meta.dirname,'../../..'),attempt=process.argv[2],capture=process.env.V4_UI_CAPTURE==='1';
 assert(/^\d+$/.test(attempt),'Use a new attempt number');
 const output=resolve(root,`reports/v4-ship/S11/ui-audit-${attempt}.json`),rawPath=resolve(root,`reports/v4-ship/S11/ui-audit-${attempt}.rows.json.gz`);
 assert(!existsSync(output)&&!existsSync(rawPath),'Preserve prior evidence');
@@ -36,7 +36,7 @@ async function inspect(page,cdp,width,phase){
  const tree=await cdp.send('Accessibility.getFullAXTree');
  const roles=['button','link','checkbox','slider','textbox','combobox','img','image'];
  const controls=tree.nodes.filter(n=>!n.ignored&&roles.includes(n.role?.value)).map(n=>({role:n.role.value,name:n.name?.value??'',disabled:n.properties?.find(p=>p.name==='disabled')?.value?.value??false}));
- const row={width,phase,allVisibleWords:dom.allVisibleWords,proseWords:dom.proseWords,textNodes:dom.texts.length,controls:controls.length,unnamedControls:controls.filter(c=>!c.name.trim()),horizontalOverflow:dom.horizontalOverflow,
+ const row={width,phase,allVisibleWords:dom.allVisibleWords,proseWords:dom.proseWords,textNodes:dom.texts.length,scrollHidden:dom.scrollHidden.length,controls:controls.length,unnamedControls:controls.filter(c=>!c.name.trim()),horizontalOverflow:dom.horizontalOverflow,
   contrastFailures:dom.texts.filter(t=>t.contrast==='fail').map(t=>({text:t.text,class:t.class,ratio:t.ratio,minimum:t.minimum})),
   contrastUnknown:dom.texts.filter(t=>t.contrast==='unknown').length,clippingCandidates:dom.texts.filter(t=>t.clipping.length).map(t=>({text:t.text,class:t.class,clipping:t.clipping})),brokenImages:dom.brokenImages};
  raw.push({width,phase,...dom,controls});report.rows.push(row);save();
@@ -56,7 +56,14 @@ try{
    await page.exposeFunction('uiReceipt',v=>profile.receipts.push(v));await page.addInitScript(()=>window.addEventListener('chain:receipt',e=>window.uiReceipt(e.detail)));
    await page.goto('http://127.0.0.1:5998/?demo=1&squad=1&cardrpg2=1&a6=1');
    const button=name=>page.getByRole('button',{name,exact:true});
-   const audit=async phase=>{await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));await inspect(page,cdp,width,phase);};
+   const audit=async phase=>{
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));await inspect(page,cdp,width,phase);
+    if(capture&&width===1280&&['landing','after:Seal Epic'].includes(phase)){
+     const path=resolve(root,`reports/v4-ship/S11/ui-audit-${attempt}-${phase==='landing'?'landing':'forge'}.png`);assert(!existsSync(path),'Preserve screenshot');
+     const shot=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,clip:{x:0,y:0,width,height,scale:1024/width}});
+     writeFileSync(path,Buffer.from(shot.data,'base64'));(report.screenshots??=[]).push({phase,path:relative(root,path),width:1024,sha256:hash(readFileSync(path))});save();
+    }
+   };
    await button('Play free').waitFor();await audit('landing');await button('Play free').click();await button('Start trial').waitFor();await audit('intro');
    await button('Start trial').click();await page.locator('.dp-battle').waitFor();await page.waitForTimeout(2000);await audit('trial-battle');
    await button('Mint trial reward').waitFor({timeout:200000});await audit('trial-reward');
@@ -78,6 +85,7 @@ try{
  report.pass=report.journeysPass&&report.observationComplete&&report.rows.every(r=>!r.unnamedControls.length&&!r.contrastFailures.length&&!r.contrastUnknown&&!r.clippingCandidates.length&&!r.brokenImages.length&&!r.horizontalOverflow&&r.proseWords<=25);
  report.limits=['Canvas/image text, full keyboard/screen-reader use and unvisited panels are not proven by this DOM audit.',
   'Unknown contrast and geometric clipping candidates require diagnosis; they are never automatically passed.',
+  'Text outside an internal scrollport is retained separately and needs scroll/navigation coverage; it is not treated as currently visible.',
   'Prose counts include visible paragraph/status/alert text; raw visible-word counts also remain in evidence.'];
 }catch(error){report.failure=safe(error.message);}
 finally{await browser.close();save();}

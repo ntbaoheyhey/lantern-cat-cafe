@@ -24,3 +24,7 @@ S8 built the actual shipping Vite configuration with explicit flags and no dev q
 ## Missing battle portrait — 16 November 13:20 UTC
 
 S11 observed a decoded-image failure for `/units/binding-thread/portrait.webp` in both trial and boss at1280×720 and1440×900 (4/4 observations). The production preview completes both journeys and all36receipts; a successful HTTP response alone does not establish that the image decoded. Please correct the ART-owned asset/reference with existing approved artwork at the scheduled integration. Evidence:`reports/v4-ship/S11/ui-audit-1.json` and its raw rows. SHIP is retaining the failed image check and will verify the integrated asset; no generated replacement or ART file edit.
+
+## Battle text contrast needs composition evidence — 16 November 13:40 UTC
+
+Production audit2 retains eight contrast-unknown text nodes per battle at both sizes: `b3-world` filtered text, `b3-speed`, `b3-stars`, and `b3-auto` over media (32 observations total). This is uncertainty, not a measured contrast failure. Please provide verified AA text contrast or existing-artwork backplates at the scheduled integration. The missing binding-thread portrait still fails four decoded-image checks. See `S11/ui-audit-2.json` and raw rows; SHIP has not edited ART presentation.

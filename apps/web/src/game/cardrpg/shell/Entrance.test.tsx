@@ -9,3 +9,10 @@ it('keeps failed authentication recoverable without claiming success',async()=>{
 it('explains a rejected signature and permits retry',async()=>{render(<Gate connect={async()=>{throw new Error('User rejected signature');}}><p>Café open</p></Gate>);fireEvent.click(screen.getByRole('button',{name:'Connect wallet'}));fireEvent.click(screen.getByRole('button',{name:'Core / MetaMask'}));expect((await screen.findByRole('alert')).textContent).toContain('Signature declined');});
 it('shows a Fuji switch action for the wrong network',async()=>{const change=vi.fn(async()=>{});render(<Gate wrongNetwork switchNetwork={change}><p>Café open</p></Gate>);fireEvent.click(screen.getByRole('button',{name:'Connect wallet'}));fireEvent.click(screen.getByRole('button',{name:'Switch to Fuji'}));await waitFor(()=>expect(change).toHaveBeenCalledOnce());expect(screen.queryByText('Café open')).toBeNull();});
 it('skips landing for an existing authenticated session',()=>{render(<Gate session><p>Café open</p></Gate>);expect(screen.getByText('Café open')).toBeTruthy();});
+it.each(['Escape','Close button'])('returns focus to the sign-in opener after %s',close=>{
+ render(<Gate><p>Café open</p></Gate>);
+ const opener=screen.getByRole('button',{name:'Connect wallet'});opener.focus();fireEvent.click(opener);
+ const dialog=screen.getByRole('dialog',{name:'Wallet sign-in'});expect(document.activeElement).toBe(dialog);
+ if(close==='Escape')fireEvent.keyDown(dialog,{key:'Escape'});else fireEvent.click(screen.getByRole('button',{name:'Close sign-in'}));
+ expect(screen.queryByRole('dialog',{name:'Wallet sign-in'})).toBeNull();expect(document.activeElement).toBe(opener);
+});

@@ -20,7 +20,12 @@ export function Gate({children,session,guest,connect,wrongNetwork,switchNetwork}
  const enter=()=>{try{localStorage.setItem(ENTRY,'1');}catch{/* current session still works */}setEntered(true);setForced(false);setModal(false);audioEngine.music('home');};
  useEffect(()=>{const open=()=>{setForced(true);setModal(false);};window.addEventListener('shell:landing',open);return()=>window.removeEventListener('shell:landing',open);},[]);
  useEffect(()=>{if(session&&!forced)enter();},[session,forced]);
- useEffect(()=>{if(modal)panel.current?.focus();},[modal]);
+ useEffect(()=>{
+  if(!modal)return;
+  const opener=document.activeElement instanceof HTMLElement?document.activeElement:null;
+  panel.current?.focus();
+  return()=>{if(opener?.isConnected)opener.focus();};
+ },[modal]);
  const run=async(action:'guest'|'wallet'|'switch')=>{if(lock.current)return;lock.current=true;setBusy(true);setError('');await audioEngine.unlock();audioEngine.music('landing');try{if(action==='switch'){await switchNetwork?.();return;}if(action==='guest'){if(guest)await guest();enter();}else{if(!connect)throw new Error('Wallet unavailable. Play free.');await connect();enter();}}catch(e){const message=e instanceof Error?e.message:'';setError(/reject|denied|4001/i.test(message)?'Signature declined. Try again.':/Fuji/i.test(message)?'Switch to Fuji.':/wallet|connector|provider/i.test(message)?'Install Core or MetaMask, or play free.':'Sign-in offline. Retry or play offline.');setModal(true);}finally{lock.current=false;setBusy(false);}};
  if((entered||session)&&!forced)return <>{children}</>;
  return <main className="b-landing"><img className="b-keyart" src="/art/v3-shell/landing.webp" alt="Cats guarding a lantern-lit café at night"/><div className="b-landing-shade"/>

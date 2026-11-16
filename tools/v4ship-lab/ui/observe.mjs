@@ -35,13 +35,25 @@ export function observeDocument(){
    }
    return {reason:'no-opaque-background'};
   }
-  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),texts=[];let node;
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),texts=[],scrollHidden=[];let node;
   while(node=walker.nextNode()){
    const e=node.parentElement,text=node.textContent?.trim();
    if(!e||!text||!visible(e)||e.closest('script,style,svg'))continue;
    const range=document.createRange();range.selectNodeContents(node);
-   const rects=[...range.getClientRects()].filter(r=>r.width>0&&r.height>0&&r.right>0&&r.left<innerWidth&&r.bottom>0&&r.top<innerHeight);
+   let rects=[...range.getClientRects()].filter(r=>r.width>0&&r.height>0&&r.right>0&&r.left<innerWidth&&r.bottom>0&&r.top<innerHeight);
    if(!rects.length)continue;
+   const unclippedRects=rects.map(box),scrollContainers=[];
+   for(let p=e;p;p=p.parentElement){
+    const s=getComputedStyle(p),x=['auto','scroll'].includes(s.overflowX),y=['auto','scroll'].includes(s.overflowY);
+    if(!x&&!y)continue;
+    const b=p.getBoundingClientRect();scrollContainers.push({tag:p.tagName,class:p.className?.toString().slice(0,120),bounds:box(b),scrollTop:p.scrollTop});
+    rects=rects.map(r=>{
+     const left=x?Math.max(r.left,b.left+p.clientLeft):r.left,right=x?Math.min(r.right,b.left+p.clientLeft+p.clientWidth):r.right;
+     const top=y?Math.max(r.top,b.top+p.clientTop):r.top,bottom=y?Math.min(r.bottom,b.top+p.clientTop+p.clientHeight):r.bottom;
+     return {x:left,y:top,left,right,top,bottom,width:right-left,height:bottom-top};
+    }).filter(r=>r.width>0&&r.height>0);
+   }
+   if(!rects.length){scrollHidden.push({text:text.slice(0,160),unclippedRects,scrollContainers});continue;}
    const style=getComputedStyle(e),back=backgrounds(e,rects),fg=parse(style.color),fontSize=parseFloat(style.fontSize),fontWeight=parseInt(style.fontWeight)||400;
    const minimum=fontSize>=24||fontSize>=18.666&&fontWeight>=700?3:4.5;
    // Endpoint-only comparison can miss a gradient crossing the text colour.
@@ -66,10 +78,10 @@ export function observeDocument(){
    // Include descriptive copy outside paragraphs. Receipt fields remain in
    // the raw visible count, but are labelled transaction data, not body copy.
    const prose=Boolean(e.closest('p,[role="status"],[role="alert"],.b-landing-top>span,.ship-journey>header>span'))&&!e.closest('button,a,nav,h1,h2,h3,dl');
-   texts.push({text:text.slice(0,160),tag:e.tagName,class:e.className?.toString().slice(0,120),rects:rects.map(box),fontSize,fontWeight,foreground:style.color,
+   texts.push({text:text.slice(0,160),tag:e.tagName,class:e.className?.toString().slice(0,120),rects:rects.map(box),unclippedRects,scrollContainers,fontSize,fontWeight,foreground:style.color,
     ratio:ratio===null?null:+ratio.toFixed(3),minimum,inactive,contrast:inactive?'inactive-exempt':ratio===null?'unknown':ratio>=minimum?'pass':'fail',unknownReason:back.reason??null,effect:back.effect??null,clipping,prose});
   }
   const words=xs=>xs.join(' ').trim().split(/\s+/).filter(Boolean).length;
   const brokenImages=[...document.images].filter(e=>visible(e)&&e.complete&&e.naturalWidth===0).map(e=>({alt:e.alt,src:new URL(e.src).pathname}));
-  return {texts,allVisibleWords:words(texts.map(t=>t.text)),proseWords:words(texts.filter(t=>t.prose).map(t=>t.text)),horizontalOverflow:document.documentElement.scrollWidth>innerWidth,brokenImages};
+  return {texts,scrollHidden,allVisibleWords:words(texts.map(t=>t.text)),proseWords:words(texts.filter(t=>t.prose).map(t=>t.text)),horizontalOverflow:document.documentElement.scrollWidth>innerWidth,brokenImages};
 }
