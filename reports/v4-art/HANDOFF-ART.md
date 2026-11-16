@@ -1,11 +1,11 @@
 # ART execution anchor — 2026-11-16T18:06UTC
 ACTIVE: user “tiếp tục” supersedes14:26pause; continue through29Nov12UTC unless current pause/STOP/end.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: Launch A9 capture-review.py (existing recorders only),3x30s+wave1/boss45s and900p. Regression2664/318,typecheck,3F6,77hashes PASS; front-faceR3 PASS.
+NEXT1: Poll A9 capture pipeline; author/review all scoped own ultimate sheets+28pair matrix, then final receipt. Keep r1/r2 live measurement limitations explicit.
 NEXT2: Complete pairwise8hero matrix, lane audit,3fresh30s audiofilms+extended coverage/900p/allaction reviews; originaltexture drills/privatecomparison already complete. Preserve failures.
 NEXT3: Verified A10contrast request, then A11 open items; postfreezeA12. Designer intake interrupts before18Nov12UTC; final SHIP baseline only after explicit announcement.
-LAST PUSH:3e6aa5060 verified; all8 live ultimates saved, r1 probe failures retained; front-faceR3 max0.356607% scopedfaces, no runtime correction needed.
-LIVE: craftVite3426/5990; live probes complete. Capture next; no other ART probe/imagegen running.
+LAST PUSH:a1372f831 verified; A9 regression/live alpha/front-face saved. Fresh capture running from this unchanged runtime.
+LIVE: craftVite3426/5990; A9capture68141/reports/v4-art/jobs/a9-capture-review-r1.log; sequential3x30s+2x45s+3x900p. Other probes completed.
 STOP/INBOX checked18:07 unchanged; designer mochi/soot/clover folders empty. SHIPHEAD571c48c83 is not finalclasses; db35585a announcement remains explicitlynonfinal; no merge/baseline adoption.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
 Yarn selectedK1-A2/K2-A3Lab20/K4-A2/K5-A3Lab30,counts2/3/2/3;4/4posePASS,head.975619/.975557/1.030978/1.042028,feet0;K2reach+49.5556%,changedbbox52.243864%.
@@ -16,7 +16,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 NEXTMETHOD formation: static outward rear-cat/helper translations within observed3.5% edges predict82.9107/81.7895%720/900; hypothesis only, require fresh films. Conservative union extents currently overreserve.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:3afterrewrite: A9lift/pour/private50.05s reviewed once; selected2/8 A9. All previous Yarn and closed-item sheets remain closed.
+IMAGEOPENS:5afterrewrite: A9drills/private3+two live peak boards2 inspected once; selected2/8 A9. All prior closed-item sheets remain closed.
 SHAREDFOCUS: YarnA12 has5encodedframes after600ms; shakepeak2.938327px/100msobservedspan, strictduration/reducedmotion film stillOPEN. No fullA7/productionacceptance.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
