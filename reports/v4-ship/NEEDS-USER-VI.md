@@ -13,3 +13,5 @@
 
 
 - Buổi nghe R2 ngày18/11 lúc19:00 Việt Nam: nghe 12 đoạn đã cố định trong work/v4ship-audio/coverage-1/line-01.flac đến line-12.flac, ghi lại lời nghe được trước khi xem đáp án. Ghi câu không rõ và cảm giác nhạc/hiệu ứng che lời vào INBOX.md. Kết quả máy hiện8/12; không thay đoạn khó bằng đoạn dễ.
+
+- Ngày20/11: dùng [runbook V4](USER-DEPLOY-VI.md) đúng nhánh codex/v4-ship-2026-11-16; lưu URL production trước, kiểm tra quota Vercel100/ngày, migration dry-run, envelope600+1000YARN và sponsor còn1AVAX sau reservation+drip+gas. Ghi DEPLOYED <url> + commit vào INBOX; không gửi secret. Các gate còn đỏ vẫn nằm trong HANDOFF/S11.

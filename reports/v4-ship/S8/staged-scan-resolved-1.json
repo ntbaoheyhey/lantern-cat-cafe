@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-16T11:36:05.816601+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 5351,
+      "sha256": "5e46a8db3d3e5de06b2056f4061c3f25ba22fb5176a04cc148e97d70b3615cc6"
+    },
+    {
+      "path": "reports/v4-ship/NEEDS-USER-VI.md",
+      "bytes": 2379,
+      "sha256": "c8993cd93c6c213a273bf52e71b23136da113ba749b74010a593118a101c962e"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-05.json",
+      "bytes": 121325,
+      "sha256": "3dd0e617ee6e87f8edbe3b649bd52d24c4187410ff72f8b2f555440159d17384"
+    },
+    {
+      "path": "reports/v4-ship/RUNS/S4-final-1/run-1440-06.json",
+      "bytes": 121303,
+      "sha256": "6016afe8c3d8560a94657c09fa081d33fb24ae361b33754d8ce362b21b62e5fb"
+    },
+    {
+      "path": "reports/v4-ship/S8/preparation-check-1.json",
+      "bytes": 729,
+      "sha256": "c587ac2e809b1e49965bd41a1ab33af2d078fa19f9eccfd92ed386a29559a662"
+    },
+    {
+      "path": "reports/v4-ship/S8/regression-1/check.json",
+      "bytes": 1406,
+      "sha256": "75dd0e96d5f0ff6ba62dd2aa339daf55cd1b81a8014015543709f50b5032c46b"
+    },
+    {
+      "path": "reports/v4-ship/S8/regression-1/log.jsonl.gz",
+      "bytes": 16124,
+      "sha256": "40e418341fb3cd61afa0bf374099333535eeec0b0d86a55a59cbf740add41a79"
+    },
+    {
+      "path": "reports/v4-ship/S8/regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "18496d9e56f84152df6b457d8260301660603ae81fd054f7b76c361408da4cab"
+    },
+    {
+      "path": "reports/v4-ship/S8/staged-scan-initial-1.json",
+      "bytes": 2882,
+      "sha256": "251702440255e8d7d9ee61f59e4ee63516ab904324025cbd7211b4cc9a07eb08"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 9135,
+      "sha256": "862c3b17139a6628507808e263fcc59095cbb6583fe4449e788ce462021d6b59"
+    },
+    {
+      "path": "reports/v4-ship/USER-DEPLOY-VI.md",
+      "bytes": 13935,
+      "sha256": "a8419dbd28b411ebb0210389cfd4e46acc8cab13a8dc54fa41b14fb27b1fea07"
+    },
+    {
+      "path": "scripts/v4ship/rehearsal-run.mjs",
+      "bytes": 10934,
+      "sha256": "fb7ce20ac9b185d5e9e6765a46259e87b1e97a45dbf771c68e9276801f0c13a7"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/finalize.mjs",
+      "bytes": 2939,
+      "sha256": "7f023f4cf6bc0e5049a945b5875fcc98f5f72223e4a606ea2e2e9d20543de30b"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/metrics.mjs",
+      "bytes": 5149,
+      "sha256": "a6400e9006d0789cd042d6264109eceb8fae9a80bc03bfc3cb02b9168ae6c7cf"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/metrics.test.mjs",
+      "bytes": 1333,
+      "sha256": "553d84ebf2a1376a994165949801fdb47048b8a004e665f4e42fb229e33bbe13"
+    }
+  ],
+  "expandedGzip": 1,
+  "findings": [
+    {
+      "file": "reports/v4-ship/USER-DEPLOY-VI.md",
+      "line": 140,
+      "type": "generic-api-key",
+      "classification": "false-positive",
+      "reason": "Public YARN contract address exactly matches versioned Fuji registry; not a credential"
+    }
+  ],
+  "unresolved": 0,
+  "pass": true
+}
