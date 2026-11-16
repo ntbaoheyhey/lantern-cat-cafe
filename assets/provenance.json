@@ -3780,6 +3780,72 @@
       "output": "apps/web/public/vfx/clover/healing-canopy.webp",
       "sha256": "8789a708ee5a608bf8d15fbce7dced7b0219f19013e557bfa72a59205147a69d",
       "status": "production pilot; film gates pending"
+    },
+    {
+      "id": "v4-panko-k1-a1",
+      "date": "2026-11-16T08:14:08.735802+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Original game character pose drawing on a true transparent background. Image 1 is our own approved Panko baker cat and the only identity/style input. Draw K1 ANTICIPATION for a quick close-range rolling-pin strike, facing RIGHT. Keep this exact cream kitten, olive-green eyes, soft cream chef hat with gold side button, beige baker apron with gold buttons and tied waist, mauve trousers, warm brown oven mitts, one short golden wooden rolling pin in its right paw (viewer left), one bread-shaped wooden shield in its left paw (viewer right), curled cream tail. Strongly change the BODY silhouette: deep wide bent-knee crouch, torso coiled left, rolling-pin paw drawn far back to the LEFT at waist height, rolling pin almost horizontal aimed left as a clear wind-up; bread shield held close low beside the right hip, exposing chest and face. Head remains the same size relative to torso, same three-quarter right-facing face, same hat volume. Short chunky limbs; do not enlarge head. Both feet separated and firmly planted on one baseline, all toes visible. Keep the same painted texture, thin warm outlines, cream/beige/mauve palette and lightness. No new accessories, extra limbs, duplicate tools, particles, motion streaks, floor, shadow, background or text. One whole character only, all extremities within canvas with generous transparent margin. Square canvas.",
+      "referenceInput": "own art: apps/web/public/units/panko/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/panko/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/panko/K1-A1.png",
+      "sha256": "152a8fbb95e2191ccb5e186fc45158c492963ffee0d189dcb5a700f9c39f22c6",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-panko-k2-a1",
+      "date": "2026-11-16T08:17:13.761573+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Draw a new K2 IMPACT pose of our own approved Panko baker kitten from Image1, the only identity and style input. True transparent background, one full body character, facing RIGHT. Preserve exact cream fur, green eyes, cream chef hat with gold button, beige apron with gold buttons and waist tie, mauve trousers, brown oven mitts, one golden short wooden rolling pin, one bread-shaped wooden shield, one curled tail, fine painterly texture and thin warm outline. A decisive LOW FORWARD rolling-pin thrust: torso leaning right, wide bent legs, rear leg left stretched, forward leg right braced; right arm reaches far across to the RIGHT with the rolling pin held almost horizontal at chest height, its far tip at least a third of one body-width beyond the idle shield edge. Left paw grips the bread shield tucked low against the LEFT flank, behind the forward arm, never blocking face. Head and chef hat exactly the same size relative to torso as Image1; three-quarter face right with determined green eyes, no oversized head. Show a strong diagonal from left back foot to right rolling-pin tip, but BOTH feet remain firmly on the same ground baseline. Clearly different silhouette from the upright idle: extended arm, long reach, compressed torso, spread feet. Keep palette/lightness exactly matched. No motion trails, effects, extra limbs, duplicated tools, new objects, floor, shadow, text or background. Entire silhouette contained with generous transparent margin, square canvas.",
+      "referenceInput": "own art: apps/web/public/units/panko/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/panko/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/panko/K2-A1.png",
+      "sha256": "624eb18255f79e416142b0977a62d3b4b39f6d8665ddf15865532792384dd973",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-panko-k4-a1",
+      "date": "2026-11-16T08:19:35.484248+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Create the K4 HIT-REACTION drawing of our own approved Panko baker kitten, using Image1 only for exact identity, costume, proportions, palette and painted style. True transparent background, square canvas, one fully visible character facing RIGHT. Keep cream fur, green eyes (now briefly shut), same cream chef hat with gold button, beige baker apron tied at waist, mauve trousers, brown mitts, one wooden rolling pin and one bread-shaped shield, one curled tail. Recoil visibly to the LEFT from a hit coming from the right: deep crouch with knees folded, shoulders hunched, head tilted left a little, eyes squeezed shut and small tight mouth. Draw the bread shield pulled inward diagonally over the lower belly, BELOW the chin, and the rolling pin lowered to the LEFT beside the rear thigh. Keep face and hat readable, exactly same head/hat size relative to torso, never enlarge the head. Both feet remain separated on the same ground baseline, tail recoils low and left. Strong compressed silhouette different from upright idle and windup. Preserve cream/beige/mauve color and fine painterly texture, thin warm outlines. No new accessories, extra limbs, duplicated tools, particles, streaks, floor, shadow, text or background. Generous transparent margin around every extremity.",
+      "referenceInput": "own art: apps/web/public/units/panko/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/panko/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/panko/K4-A1.png",
+      "sha256": "daf6e3b239ef940192e0e65b3032559a3c6b597729677c5b9bae0816612f6d9f",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-panko-k4-a2",
+      "date": "2026-11-16T08:21:43.298346+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Image1 is our approved Panko baker kitten identity and palette. Image2 is our own K4-A1 recoil pose and is the EDIT TARGET. Preserve Image2's exact crouch, arms, bread shield against lower torso, lowered rolling pin at left, tail, legs and planted feet; keep closed eyes and the left head tilt. Correct ONLY its oversized head: shrink the entire head including chef hat, both ears, cheek fur, eyes and muzzle by 9% relative to the body, anchored at the neck. Do NOT shrink the torso or the whole character. Use Image1 for the original cream/beige/mauve palette and painterly texture, same hat and face identity. All accessories and limbs unchanged. True transparent background, whole silhouette and all extremities visible with transparent margin. No shadows, effects or text. One corrected pose only.",
+      "referenceInput": "own art: apps/web/public/units/panko/runtime.webp; tools/v3craft-lab/poses/raw/panko/K4-A1.png",
+      "inputs": [
+        "apps/web/public/units/panko/runtime.webp",
+        "tools/v3craft-lab/poses/raw/panko/K4-A1.png"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/panko/K4-A2.png",
+      "sha256": "ae37a24bba667697df15e99dee0c78e73a210ea1a51339c32a2fe48aa54dfbb6",
+      "status": "candidate; quantitative/visual review pending"
+    },
+    {
+      "id": "v4-panko-k5-a1",
+      "date": "2026-11-16T08:23:15.795398+00:00",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Create a new K5 SUPPORT ULTIMATE drawing of our own approved Panko baker kitten in Image1. True transparent background, fully visible single character facing RIGHT, square canvas. Preserve exact cream kitten identity, olive-green eyes, cream chef hat with gold button, beige gold-buttoned baker apron with waist tie, mauve trousers, brown mitts, one short golden wooden rolling pin, one bread-shaped wooden shield, one low curled cream tail. Draw a broad protective stance: knees bent and both feet planted wide on one baseline, torso upright and turned slightly right, BOTH ARMS stretched wide at lower chest height. Bread shield lifted outward to the far RIGHT with its front facing the viewer, top edge still BELOW chin; rolling pin held horizontally out to the far LEFT, low enough to keep both ears and face clear. A proud firm protective expression, mouth closed; a baker opening a wide oven door to shelter the team. Big open silhouette, very different from the idle and crouched windup, but same head/hat size relative to body and same short chunky limbs. Do not enlarge the head or tools. Same painted texture, light cream/beige/mauve color and thin warm outlines. No glow, magic effects, particles, extra limbs, extra tools, scenery, floor, shadow, text or background. Generous transparent margins around the entire silhouette.",
+      "referenceInput": "own art: apps/web/public/units/panko/runtime.webp",
+      "inputs": [
+        "apps/web/public/units/panko/runtime.webp"
+      ],
+      "output": "tools/v3craft-lab/poses/raw/panko/K5-A1.png",
+      "sha256": "478e2473ce3b25b5164115fffcf98e994e5ce586c319706cfca58b9054a98e17",
+      "status": "candidate; quantitative/visual review pending"
     }
   ]
 }

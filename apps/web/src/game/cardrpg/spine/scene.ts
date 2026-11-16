@@ -317,7 +317,10 @@ export class SpineScene {
     if(tallTarget)contact.y=Math.min(contact.y,home.point.y+40*height/720);
     // Reach a lower-row target at its upper silhouette, keeping the dash
     // above the ally seated below. The painted contact cut bridges the edge.
-    if(!corridor&&!tallTarget)contact.y=Math.min(contact.y,home.point.y+height*.15);
+    if(!corridor&&!tallTarget&&contact.y>home.point.y+height*.1525){
+     contact.y=home.point.y+height*.1525;
+     contact.x+=direction*12*height/720;
+    }
     rootPose=meleeRoot(frame.elapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor?0:(tallTarget?20:60)*height/720);
    }
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;

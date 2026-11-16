@@ -1,0 +1,194 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+> vitest run --reporter=dot
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+·······················································································································································································································································stdout | src/api/mockV2Fixtures.test.ts > boss fixtures > records strongest warrior chapter 2 outcomes without asserting balance
+Chapter 2, warrior max-level fixture, seeds 1-5: win, win, win, win, win
+
+stdout | src/api/mockV2Fixtures.test.ts > boss fixtures > records strongest warrior chapter 3 outcomes without asserting balance
+Chapter 3, warrior max-level fixture, seeds 1-5: win, win, win, win, win
+
+stdout | src/api/mockV2Fixtures.test.ts > boss fixtures > records strongest warrior chapter 4 outcomes without asserting balance
+Chapter 4, warrior max-level fixture, seeds 1-5: loss, loss, loss, loss, loss
+
+stdout | src/api/mockV2Fixtures.test.ts > boss fixtures > records strongest warrior chapter 5 outcomes without asserting balance
+Chapter 5, warrior max-level fixture, seeds 1-5: loss, loss, loss, loss, loss
+
+·····································································································································································································································································································································································································································································································································stdout | src/art/backdrops/BackdropView.test.tsx > BackdropView Component and backdropRects > rect count per backdrop and layer logged and < 4000 (assert)
+[BackdropView] livingroom   -> far rects: 1078, near rects:  515, total: 1593
+[BackdropView] kitchen      -> far rects:  740, near rects:  612, total: 1352
+[BackdropView] bathroom     -> far rects: 1616, near rects:  384, total: 2000
+[BackdropView] basement     -> far rects:  914, near rects:  455, total: 1369
+[BackdropView] rooftops     -> far rects:  582, near rects:  262, total: 844
+
+········stderr | src/game/squad/turn3d/look-vfx.test.ts > closes a decoded atlas that arrives after navigation disposed the scene
+THREE.ImageBitmapLoader: createImageBitmap() not supported.
+
+·························································································································································································································································································································································································································································································································································································································································································································································································································································································································································stdout | src/game/arena/arenaFixtures.test.ts > regenerates every generated demo API fixture and audits inference against the raw log
+ch1-win: class=warrior chapter=1 level=60 seed=1 won=true duration=740ms events=5; inference impact.big=0/0 impact.dodged=0/0 windup.big=0/0
+ch1-loss: class=warrior chapter=1 level=1 seed=1 won=false duration=6000ms events=22; inference impact.big=4/4 impact.dodged=4/4 windup.big=3/5
+ch3-win: class=archer chapter=3 level=60 seed=1 won=true duration=9950ms events=68; inference impact.big=6/7 impact.dodged=7/7 windup.big=6/7
+ch3-loss: class=archer chapter=3 level=1 seed=1 won=false duration=1500ms events=7; inference impact.big=1/1 impact.dodged=1/1 windup.big=1/1
+ch5-loss: class=witch chapter=5 level=1 seed=1 won=false duration=1500ms events=5; inference impact.big=1/1 impact.dodged=1/1 windup.big=1/1
+ch2-win: class=witch chapter=2 level=60 seed=1 won=true duration=4050ms events=22; inference impact.big=2/2 impact.dodged=2/2 windup.big=2/2
+
+···················································································································································································································································································································································································································································stdout | src/theme.contrast.test.ts > theme WCAG contrast > --text on --bg >= 4.5:1
+--text on --bg: 17.6059:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --text on --surface >= 4.5:1
+--text on --surface: 14.2082:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --text on --surface-2 >= 4.5:1
+--text on --surface-2: 11.6826:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --text on --surface-3 >= 4.5:1
+--text on --surface-3: 9.3044:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --muted on --bg >= 4.5:1
+--muted on --bg: 9.4570:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --muted on --surface >= 4.5:1
+--muted on --surface: 7.6319:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --muted on --surface-2 >= 4.5:1
+--muted on --surface-2: 6.2753:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --good on --surface-2 >= 3:1
+--good on --surface-2: 7.7205:1 (minimum 3:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --on-accent on --accent >= 4.5:1
+--on-accent on --accent: 10.8988:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --border on --bg >= 3:1
+--border on --bg: 3.1843:1 (minimum 3:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --accent on --surface >= 4.5:1
+--accent on --surface: 9.1418:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --muted on --surface-2 >= 4.5:1
+--muted on --surface-2: 6.2753:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --focus on --surface >= 3:1
+--focus on --surface: 11.2293:1 (minimum 3:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --focus on --surface-2 >= 3:1
+--focus on --surface-2: 9.2332:1 (minimum 3:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --muted on --surface-3 >= 4.5:1
+--muted on --surface-3: 4.9978:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --accent on --bg >= 4.5:1
+--accent on --bg: 11.3279:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --accent on --surface-2 >= 4.5:1
+--accent on --surface-2: 7.5168:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --accent on --surface-3 >= 4.5:1
+--accent on --surface-3: 5.9866:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --good on --bg >= 4.5:1
+--good on --bg: 11.6349:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --good on --surface >= 4.5:1
+--good on --surface: 9.3896:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --good on --surface-3 >= 4.5:1
+--good on --surface-3: 6.1488:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --bad on --bg >= 4.5:1
+--bad on --bg: 9.2449:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --bad on --surface >= 4.5:1
+--bad on --surface: 7.4608:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --bad on --surface-2 >= 4.5:1
+--bad on --surface-2: 6.1346:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --bad on --surface-3 >= 4.5:1
+--bad on --surface-3: 4.8857:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --shard on --bg >= 4.5:1
+--shard on --bg: 12.3519:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --shard on --surface >= 4.5:1
+--shard on --surface: 9.9682:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --shard on --surface-2 >= 4.5:1
+--shard on --surface-2: 8.1963:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --shard on --surface-3 >= 4.5:1
+--shard on --surface-3: 6.5278:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --key on --bg >= 4.5:1
+--key on --bg: 9.0250:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --key on --surface >= 4.5:1
+--key on --surface: 7.2833:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --key on --surface-2 >= 4.5:1
+--key on --surface-2: 5.9887:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --key on --surface-3 >= 4.5:1
+--key on --surface-3: 4.7696:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-common on --bg >= 4.5:1
+--rarity-common on --bg: 9.7436:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-common on --surface >= 4.5:1
+--rarity-common on --surface: 7.8633:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-common on --surface-2 >= 4.5:1
+--rarity-common on --surface-2: 6.4655:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-common on --surface-3 >= 4.5:1
+--rarity-common on --surface-3: 5.1493:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-rare-text on --bg >= 4.5:1
+--rarity-rare-text on --bg: 8.9942:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-rare-text on --surface >= 4.5:1
+--rarity-rare-text on --surface: 7.2585:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-rare-text on --surface-2 >= 4.5:1
+--rarity-rare-text on --surface-2: 5.9683:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-rare-text on --surface-3 >= 4.5:1
+--rarity-rare-text on --surface-3: 4.7533:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-epic-text on --bg >= 4.5:1
+--rarity-epic-text on --bg: 9.3362:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-epic-text on --surface >= 4.5:1
+--rarity-epic-text on --surface: 7.5345:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-epic-text on --surface-2 >= 4.5:1
+--rarity-epic-text on --surface-2: 6.1952:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-epic-text on --surface-3 >= 4.5:1
+--rarity-epic-text on --surface-3: 4.9340:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-legendary on --bg >= 4.5:1
+--rarity-legendary on --bg: 9.1387:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-legendary on --surface >= 4.5:1
+--rarity-legendary on --surface: 7.3751:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-legendary on --surface-2 >= 4.5:1
+--rarity-legendary on --surface-2: 6.0641:1 (minimum 4.5:1)
+
+stdout | src/theme.contrast.test.ts > theme WCAG contrast > --rarity-legendary on --surface-3 >= 4.5:1
+--rarity-legendary on --surface-3: 4.8296:1 (minimum 4.5:1)
+
+·······································································································································································································································································································································································································································································································································
+
+ Test Files  315 passed (315)
+      Tests  2647 passed (2647)
+   Start at  15:08:38
+   Duration  146.38s (environment 48%, tests 29%, import 18%, transform 4%)
+
+Environment  jsdom was created 315 times · 124.49s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
