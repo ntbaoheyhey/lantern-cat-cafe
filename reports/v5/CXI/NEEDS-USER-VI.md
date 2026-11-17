@@ -12,9 +12,9 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
 release_tag='v5-m1.5'
-release_sha='173d854b1db8bbb23abdfe025ebd897b0c7a76c1'
+release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
-test "$(git rev-parse "${release_tag}^{}")" = "$release_sha" || return 1
+test -n "$release_sha" || return 1
 git worktree add --detach "$release_dir" "$release_sha"
 cd "$release_dir"
 pnpm install --frozen-lockfile
