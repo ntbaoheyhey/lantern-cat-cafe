@@ -1,0 +1,7 @@
+# QA-8 candidate review — 2026-11-17
+Question: does the proposed operator preflight reject the independently reproduced 1.075 AVAX failure, budget both wallets and pending obligations, and run literally with the installed cast output?
+Committed target: da3323ba9ce10ababc5519511d40dc9592febfe3. The calculator, API error copy and runbook changes are uncommitted SHIP WIP; preserve their content hashes and do not treat them as a shipped fix.
+Primary local sources: tools/chain/check-sponsor-budget.mjs, USER-DEPLOY-VI.md diff, guest-drip.ts and 20261112010000_guest_drip.sql. SQL reserves one wallet, with a 1 AVAX floor and a 200 gwei ceiling; the candidate adds 0.1 AVAX operator headroom without changing backend admission.
+Independent checks: invoke the actual candidate CLI with predetermined boundary cases, malformed inputs, pending obligations and funded-wallet deductions. Feed cast balance/gas-price results from an isolated read-only localhost RPC into the exact CLI argument form from the runbook.
+Limit: no new product runtime verdict without a committed candidate and independent UI recheck. No public RPC mutations, secrets, deployment, other-lane writes or product changes. QA scripts/evidence only.
+Decision: assess the runbook correction separately from runtime admission; retain QA-8 open if the corrected candidate is not committed or literal commands fail. Continue Q3/Q5/Q6 after this review.

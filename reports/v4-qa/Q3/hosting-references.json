@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-11-17T02:55:56.852351+00:00",
+  "sources": [
+    {
+      "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits",
+      "notes": "GitHub recommends <=10 GB compressed .git size; push size enforced at 2 GB; single-object hard limit documented as100 MB. These measures differ from uncompressed working-tree bytes."
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+      "notes": "Regular Git files over100MiB are blocked; files over50MiB produce warnings. Current maximum blob72,484,813bytes is below100MiB."
+    }
+  ],
+  "assessment": "31.27 GB exported file bytes alone do not prove an upload rejection. Measure repository object storage and actual planned push packaging; no remote upload performed."
+}

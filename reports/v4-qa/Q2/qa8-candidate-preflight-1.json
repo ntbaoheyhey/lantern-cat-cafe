@@ -1,0 +1,429 @@
+{
+  "at": "2026-11-17T02:56:03.320Z",
+  "committedTarget": "da3323ba9ce10ababc5519511d40dc9592febfe3",
+  "candidateCommitted": false,
+  "scope": "Independent CLI and literal cast-output review of uncommitted SHIP candidate. No new runtime or public-chain verdict.",
+  "hashes": {
+    "tools/chain/check-sponsor-budget.mjs": "a921ac384200cf395c4fb1e2d12a2926965cf0aa2229511a1e07ca313e86193c",
+    "apps/web/src/game/cardrpg/chain/api.ts": "0b757ef18058b636036a66bfeb9eb7efc09a661be52b5be14888c64cf61462d5",
+    "reports/v4-ship/USER-DEPLOY-VI.md": "fdad319a881065b80b254b00deca3cfd58d788791b22ff89d6a0019c07e3c4e1"
+  },
+  "cases": [
+    {
+      "name": "reported-low-balance",
+      "args": {
+        "balance-wei": "1075000000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 1,
+        "fields": {
+          "budgetPass": false,
+          "minimumWei": "1208400000000000000",
+          "shortfallWei": "133400000000000000",
+          "newWallets": 2
+        }
+      },
+      "exit": 1,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 0,
+        "newWallets": 2,
+        "balanceWei": "1075000000000000000",
+        "pendingWei": "0",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1101050000000000000",
+        "minimumWei": "1208400000000000000",
+        "shortfallWei": "133400000000000000",
+        "budgetPass": false,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "one-run-exact-boundary",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "budgetPass": true,
+          "minimumWei": "1208400000000000000",
+          "shortfallWei": "0"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 0,
+        "newWallets": 2,
+        "balanceWei": "1208400000000000000",
+        "pendingWei": "0",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1101050000000000000",
+        "minimumWei": "1208400000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "one-wei-below",
+      "args": {
+        "balance-wei": "1208399999999999999",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 1,
+        "fields": {
+          "shortfallWei": "1"
+        }
+      },
+      "exit": 1,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 0,
+        "newWallets": 2,
+        "balanceWei": "1208399999999999999",
+        "pendingWei": "0",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1101050000000000000",
+        "minimumWei": "1208400000000000000",
+        "shortfallWei": "1",
+        "budgetPass": false,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "three-fresh-runs",
+      "args": {
+        "balance-wei": "1425200000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "3",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "newWallets": 6,
+          "minimumWei": "1425200000000000000"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 3,
+        "fundedWallets": 0,
+        "newWallets": 6,
+        "balanceWei": "1425200000000000000",
+        "pendingWei": "0",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1303150000000000000",
+        "minimumWei": "1425200000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "batch-plus-existing-obligations",
+      "args": {
+        "balance-wei": "1526250000000000000",
+        "pending-wei": "101050000000000000",
+        "gas-price-wei": "25000000000",
+        "runs": "3",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "minimumWei": "1526250000000000000"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 3,
+        "fundedWallets": 0,
+        "newWallets": 6,
+        "balanceWei": "1526250000000000000",
+        "pendingWei": "101050000000000000",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1404200000000000000",
+        "minimumWei": "1526250000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "one-funded-wallet",
+      "args": {
+        "balance-wei": "1154200000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "1"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "newWallets": 1,
+          "minimumWei": "1154200000000000000"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 1,
+        "newWallets": 1,
+        "balanceWei": "1154200000000000000",
+        "pendingWei": "0",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1050525000000000000",
+        "minimumWei": "1154200000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "all-funded-still-preserves-pending",
+      "args": {
+        "balance-wei": "1201050000000000000",
+        "pending-wei": "101050000000000000",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "2"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "newWallets": 0,
+          "minimumWei": "1201050000000000000"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 2,
+        "newWallets": 0,
+        "balanceWei": "1201050000000000000",
+        "pendingWei": "101050000000000000",
+        "currentGasPriceWei": "25000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1101050000000000000",
+        "minimumWei": "1201050000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "gas-ceiling",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "200000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 0,
+        "fields": {
+          "minimumWei": "1208400000000000000"
+        }
+      },
+      "exit": 0,
+      "actual": {
+        "runs": 1,
+        "fundedWallets": 0,
+        "newWallets": 2,
+        "balanceWei": "1208400000000000000",
+        "pendingWei": "0",
+        "currentGasPriceWei": "200000000000",
+        "budgetGasPriceWei": "200000000000",
+        "reserveWei": "1000000000000000000",
+        "headroomWei": "100000000000000000",
+        "currentPriceMinimumWei": "1108400000000000000",
+        "minimumWei": "1208400000000000000",
+        "shortfallWei": "0",
+        "budgetPass": true,
+        "limits": "Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet."
+      },
+      "error": "",
+      "pass": true
+    },
+    {
+      "name": "gas-over-ceiling",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "200000000001",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "Current gas price is outside the existing server admission range",
+      "pass": true
+    },
+    {
+      "name": "zero-gas",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "0",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "Current gas price is outside the existing server admission range",
+      "pass": true
+    },
+    {
+      "name": "negative-pending",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "-1",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "pendingWei must be a nonnegative integer string",
+      "pass": true
+    },
+    {
+      "name": "too-many-funded-wallets",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "3"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "fundedWallets must be an integer between 0 and 2",
+      "pass": true
+    },
+    {
+      "name": "fractional-runs",
+      "args": {
+        "balance-wei": "1208400000000000000",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1.5",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "runs must be an integer between 1 and 25",
+      "pass": true
+    },
+    {
+      "name": "decimal-annotation",
+      "args": {
+        "balance-wei": "1208400000000000000 [1.208e18]",
+        "pending-wei": "0",
+        "gas-price-wei": "25000000000",
+        "runs": "1",
+        "funded-wallets": "0"
+      },
+      "expected": {
+        "exit": 2
+      },
+      "exit": 2,
+      "actual": null,
+      "error": "balanceWei must be a nonnegative integer string",
+      "pass": true
+    }
+  ],
+  "castBridge": {
+    "version": "cast Version: 1.8.6-Homebrew",
+    "balance": {
+      "code": 0,
+      "out": "1208400000000000000",
+      "err": ""
+    },
+    "gas": {
+      "code": 0,
+      "out": "25000000000",
+      "err": ""
+    },
+    "cli": {
+      "code": 0,
+      "out": "{\n  \"runs\": 1,\n  \"fundedWallets\": 0,\n  \"newWallets\": 2,\n  \"balanceWei\": \"1208400000000000000\",\n  \"pendingWei\": \"0\",\n  \"currentGasPriceWei\": \"25000000000\",\n  \"budgetGasPriceWei\": \"200000000000\",\n  \"reserveWei\": \"1000000000000000000\",\n  \"headroomWei\": \"100000000000000000\",\n  \"currentPriceMinimumWei\": \"1101050000000000000\",\n  \"minimumWei\": \"1208400000000000000\",\n  \"shortfallWei\": \"0\",\n  \"budgetPass\": true,\n  \"limits\": \"Read-only batch budget; no funds reserved. Recheck before the batch. Daily50 and per-IP3/24h quotas still apply; server admission is atomic per wallet.\"\n}",
+      "err": ""
+    },
+    "methods": [
+      "eth_getBalance",
+      "eth_gasPrice"
+    ],
+    "pass": true
+  },
+  "complete": true,
+  "pass": true,
+  "candidateUnchanged": true
+}

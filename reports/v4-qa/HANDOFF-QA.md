@@ -1,7 +1,7 @@
 # QA execution anchor — 2026-11-17T02:49:10.457756+00:00
-ACTIVE: Q3 LEARN complete; preparing full snapshot export, single local commit and redacted scans.
-NEXT 1: Read Q3 work-order lines68-73, inspect README/snapshot prerequisites, record LEARN/Q3.md and timebox90min.
-NEXT 2: Export immutable latest SHIP tree to authorized snapshot directory, ONE local commit, no remote/push; redacted dir/git scans; fresh README install/test/build/dev check.
+ACTIVE: Q3 export complete95,464files/31.27GB; phase load-deferred: git-init at2026-11-17T02:57:22.518797+00:00.
+NEXT 1: Inspect Q3/snapshot-rehearsal.json and owned PID42832; continue existing job, never duplicate export. It is load-deferred before Git initialization/staging.
+NEXT 2: After snapshot commit and dir scan END, launch prepared tools/v4qa/snapshot-quickstart.py detached nice15 under load guard; may overlap git scan (max2jobs). No root remote or push. Finish Q3 options and size metrics.
 NEXT 3: Finish Q3 Vietnamese option and checkpoint, then Q5 live-smoke kit/3local proofs and Q6 film/submission critique while Q4 time triggers are pending.
 RUNNING: Q3snapshot PID42832 /Users/bao/taskbar-hero-qa/work/v4qa/jobs/q3-snapshot-supervisor.log; max2/current1. Production2 PID35291 stopped only after command ownership and completed browser verified; ports6200/6201/6202 closed. ART test PID40204 finished PASS.
 LAST VERIFIED PUSH: 2026-11-17T02:45:14.744398+00:00 2a31bd4a7f06d8b8d57eb73a9bec609597e3e224. This file is updated before each checkpoint; work/v4qa/last-push.txt is authoritative afterward.
