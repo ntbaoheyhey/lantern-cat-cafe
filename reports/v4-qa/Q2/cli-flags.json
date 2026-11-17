@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-17T01:32:51.848742+00:00",
+  "scope": "CLI --help only; no login/link/read credentials/remote mutation",
+  "checks": [
+    {
+      "command": [
+        "supabase",
+        "db",
+        "push",
+        "--help"
+      ],
+      "exitCode": 0,
+      "flags": {
+        "--linked": true,
+        "--dry-run": true
+      }
+    },
+    {
+      "command": [
+        "supabase",
+        "migration",
+        "list",
+        "--help"
+      ],
+      "exitCode": 0,
+      "flags": {
+        "--linked": true
+      }
+    },
+    {
+      "command": [
+        "supabase",
+        "functions",
+        "deploy",
+        "--help"
+      ],
+      "exitCode": 0,
+      "flags": {
+        "--project-ref": true,
+        "--use-api": true,
+        "--no-verify-jwt": true
+      }
+    },
+    {
+      "command": [
+        "supabase",
+        "secrets",
+        "set",
+        "--help"
+      ],
+      "exitCode": 0,
+      "flags": {
+        "--project-ref": true
+      }
+    }
+  ]
+}
