@@ -14,6 +14,8 @@ const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
 const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
 const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const transparentWorkPrototype=process.env.CXV_TRANSPARENT_WORK==='1';
+const drawingResetMode=process.env.CXV_DRAWING_RESET??null;
+if(drawingResetMode&&!['baseline','coalesced'].includes(drawingResetMode))throw Error('Invalid drawing-reset mode');
 if(transparentWorkPrototype&&(production||localProduction||outerPrototype||facePrototype))throw Error('Transparent-vertex prototype requires isolated candidate Vite');
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
 const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
@@ -31,6 +33,7 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.facePrototype=facePrototype;
 report.outerPrototype=outerPrototype;
 report.transparentWorkPrototype=transparentWorkPrototype;
+report.drawingResetMode=drawingResetMode;
 report.pendingBatch=pendingBatch;
 report.focusProfile=focusProfile;
 report.hudMode=hudMode;
@@ -46,6 +49,7 @@ try{
    if(labelSearchMode){const {installLabelSearchOverride}=await import('./label-search-prototype.mjs');labelSearchOverride=await installLabelSearchOverride(page,{mode:labelSearchMode,paired:labelSearchPaired});}
   }:undefined});
   const runIdentity=runtimeEvidence();
+  if(drawingResetMode){const {installDrawingResetPrototype}=await import('./drawing-reset-prototype.mjs');report.drawingResetDetails=await installDrawingResetPrototype(page,{active:drawingResetMode==='coalesced'});}
   if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
   if(outerPrototype){const {installOuterCellPrototype}=await import('./outer-cell-prototype.mjs');report.outerPrototypeDetails=await installOuterCellPrototype(page);}
   if(transparentWorkPrototype){const {installTransparentVertexPrototype}=await import('./transparent-vertex-prototype.mjs');report.transparentWorkDetails=await installTransparentVertexPrototype(page,{staticOnly:process.env.CXV_STATIC_VERTEX_WORK==='1',baselineClone:process.env.CXV_STATIC_VERTEX_BASELINE==='1'});}
@@ -101,6 +105,7 @@ try{
   }
   if(process.env.CXV_PROFILE){const {profile}=await cdp.send('Profiler.stop');await writeFile(resolve(out,'cpu.cpuprofile'),JSON.stringify(profile));}
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
+  if(drawingResetMode){run.drawingReset=await page.evaluate(()=>window.__cxvDrawingReset.variants.map(({id,unit,drawingCalls,setupCalls,skipped,inActor})=>({id,unit,drawingCalls,setupCalls,skipped,inActor})));if(run.drawingReset.some(r=>r.inActor!==0))errors.push('Drawing-reset guard leaked');}
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   if(facePrototype)run.prototypeWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.__cxvFaceWeights?.size??0,bytes:[...(e.craftPose?.drawing.__cxvFaceWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});
