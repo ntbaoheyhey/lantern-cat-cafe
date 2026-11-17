@@ -8,3 +8,10 @@
 
 | ID | G1 Light | G2 Matter | G3 Motion | G4 Shape | G5 Fit | Total / 25 | Composite Path | Status |
 |---|---|---|---|---|---|---|---|---|
+| `mochi-impact` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/mochi-impact.jpg | PASS |
+| `mochi-slash` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/mochi-slash.jpg | PASS |
+| `mochi-anticipation` | 5 | 4 | 4 | 5 | 5 | 23 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
+| `mochi-decal` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-decal.jpg | PASS |
+| `mochi-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
+| `mochi-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
+| `mochi-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
