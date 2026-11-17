@@ -20,7 +20,9 @@ for(const t of trials){
 }
 const pairs=runs[0].captures.map(c=>({name:c.name,...compare(buffers.get('baseline/'+c.name),buffers.get('native/'+c.name))}));
 const sheets=[];
-const frameSets=runs[0].blobTrials?.length ? [['all-bytes-blob-0','blob-restored-0'],['all-bytes-blob-1','blob-restored-1']] : [['ordinary','image-restored'],['decoded-png','original-restored']];
+const frameSets=runs[0].captures.some(c=>c.name==='decode-default-full')
+ ? [['blob-restored-0','blob-restored-settled-0'],['decode-default-full','decode-nofancy-full'],['decode-default-half','decode-restored-default-half']]
+ : runs[0].blobTrials?.length ? [['all-bytes-blob-0','blob-restored-0'],['all-bytes-blob-1','blob-restored-1']] : [['ordinary','image-restored'],['decoded-png','original-restored']];
 for(const names of frameSets){
  const frames=runs.flatMap(r=>names.map(n=>r.captures.find(c=>c.name===n))),path=resolve(out,'review-'+names[0]+'.jpg');assert(!existsSync(path));
  execFileSync('ffmpeg',['-v','error',...frames.flatMap(f=>['-i',f.path]),'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',path]);

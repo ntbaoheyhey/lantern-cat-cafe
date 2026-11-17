@@ -41,3 +41,7 @@ Decision: BLOCKED-ON unresolved full-page pixel attribution. Preserve the exact 
 - `V7-F-victory-composite-diagnostic.json`, `V7-F-victory-capture-consistency.json`, `V7-F-victory-idle-composition.json`, `V7-F-victory-normal-control.json`, `V7-F-victory-early-composition.json`, `V7-F-victory-unmodified-baseline.json`.
 - Raw source snapshots, artifacts, films and diagnostics remain under `/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/`, directories prefixed `V7-F-victory-`.
 - Do not reopen the four prototype sheets, two first-series production sheets or the discrepancy sheet already reviewed.
+
+## Background delivery diagnostics 2026-11-17T23:52:28.909684+00:00
+
+All 18 baseline/native pairs are RGB-exact; 36 frames measured and three fresh 1024x576 sheets reviewed once. Four heroes, title, receipt, HUD and Next remain clear. The restored-HTTP C variant persists after one-second settling in both artifacts. None of three dwebp-output probes reproduces original B; original failures remain unexplained. No application edit, tolerance change or READY. RestoredHTTP C is RGB91dcc7d54e434e28, distinct from original failure B9030c0a75fafc212; C changes240311pixels/max37 from A. These diagnostics establish background delivery sensitivity in both builds, not actual decoder-path attribution or the cause of B. Evidence: V7-F-victory-background-attribution.json, V7-F-victory-background-blob.json, V7-F-victory-background-decode.json.

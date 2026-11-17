@@ -39,3 +39,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T23:14:42.217522+00:00 V-F: sáu lượt atlas số hoàn tất,26 hành động/6 chiêu cuối mỗi lượt,0 lỗi;12 ảnh đo/4 ảnh mới đã xem. Frame p95 không cải thiện16.7/33.4ms,thêm54987B;loại phương án,không sửa ứng dụng. Chuyển kiểm chất lượng texture V-D.
 2026-11-17T23:35:23.065008+00:00 Clover: hoàn tất4lượt tự chơi;0lỗi,4ảnh ghép đã xem. Lượt đối chứng4x cuối thiếu1hành động vì cửa sổ32giây;không kết luận tương đương hay tăngFPS. Bước kế: kiểm tra chọn texture gốc và ảnh cặp.
 2026-11-17T23:38:01.872719+00:00 Clover: không tích hợp texture mới.36tests+typecheck+32cặp ảnh đạt kỹ thuật, nhưng đòn thường bị mask che hết và ulti cải thiện quá ít. Đã hoàn tác riêng phần thử nghiệm, giữ ảnh gốc/bằng chứng. Tiếp tục tìm nguồn sai khác pixel màn kết quả giảm chuyển động.
+
+2026-11-17T23:52:28.909684+00:00 V-E/F:36ảnh đo/18cặp chính xác,3ảnh ghép mới đãxem,0lỗi. Biến thể nền mới xuất hiện ở cảhai build và tồn tại sau1giây;chưa giải thích sai khác gốc. Giữ BLOCKED,không sửa ứngdụng. Wake15phút ACTIVE;V-A3 đãpush,capture-arrival giữnguyên. Tiếp tục đo startup.
