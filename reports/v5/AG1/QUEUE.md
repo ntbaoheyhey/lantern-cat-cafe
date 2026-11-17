@@ -1,5 +1,5 @@
 # AG1 QUEUE
-- [ ] L1: Reference video, frame by frame [timebox 60m]
+- [x] L1: Reference video, frame by frame [timebox 60m] - DONE
 - [ ] L2: How people make game skill effects with AI (and by hand) [timebox 90m]
 - [ ] L3: Skill sound design learning [timebox 45m]
 - [ ] Q1: Judge's-eye review of v5-m1 [timebox 90m, starts when tag v5-m1 on BOARD]
