@@ -1,7 +1,7 @@
 # AG3 HANDOFF
-- ACTIVE card: A4 Revisions [until FREEZE]
-- NEXT 1: Check mailbox INBOX-AG3.md and USER.md for revision requests or feedback
-- NEXT 2: Run backlog tasks: spot-check random siblings and optimize additional candidates
-- NEXT 3: Keep A1/A2/A3 reports synchronized with any requested tweaks
-- last pushed SHA: 83e2b8628
-- last re-read UTC: 2026-11-17T05:38:00Z
+- ACTIVE card: R3 Distant-enemy variants at 0.75x
+- NEXT 1: Generate 0.75x variants for rear/distant enemy rig pages (rig-page-0.75x.webp)
+- NEXT 2: Evaluate SSIM at display scale and compile reports/v5/AG3/R3-report.md
+- NEXT 3: Send READY/INFO to CXI and proceed to R4
+- last pushed SHA: 5067dde6f
+- last re-read UTC: 2026-11-17T05:51:00Z

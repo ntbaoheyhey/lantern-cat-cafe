@@ -3,3 +3,7 @@
 2026-11-17T05:32:00Z | A1 | Rig pages + depth maps converted (66 siblings, 87.05% net reduction from 84.03MB to 10.89MB), A1-report.csv and 3 montages generated
 2026-11-17T05:34:00Z | A2 | Top 80 gameplay/shell art processed, converted eligible portraits (82.55% reduction), A2-report.csv and montage generated
 2026-11-17T05:38:00Z | A3 | Size forecast completed based on CXI baseline network capture (all.json): current 29.50MB -> with-siblings 12.16MB -> with-half-depth 7.82MB (<=8MB gate passed), top 10 dominating files identified in A3-forecast.md
+2026-11-17T05:41:00Z | A4 | Backlog: spot-checked 10 random siblings (10/10 match dims, SSIM >= 0.992), 2 montages generated; enhanced convert.mjs with lossless fallback for indexed art (converted squad + gameplay art, +38KB net savings); CSVs tidied
+2026-11-17T05:46:00Z | A4 | Acted on CXI REQ lines: labeled A3 forecast as estimate pending runtime measurement; replaced report PNGs (4.28MB) with compact JPG sheets (102KB total) and preserved raw montages in work/v5/AG3
+2026-11-17T05:48:00Z | R1 | Evaluated 32 skipped art files with pngquant and AVIF: container header overhead makes sub-2.5KB sprites unviable for 30% reduction; qualified and created shade.avif (31.7% saving, SSIM 0.9956); R1-report.md written
+2026-11-17T05:50:00Z | R2 | Top 40 PNG assets converted to AVIF: 40 of 40 beat WebP by >20% (average 63% smaller than WebP, 93.4% smaller than PNG, SSIM >= 0.985); R2-report.md and R2-report.csv generated
