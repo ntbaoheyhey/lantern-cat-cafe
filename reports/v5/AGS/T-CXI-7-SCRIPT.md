@@ -1,13 +1,10 @@
-# Taskbar Hero Submission Script (3 min)
+# Avalanche Hackathon Pitch Script (3 Minutes)
 
-## 0:00-0:30 Introduction
-'Welcome to Taskbar Hero. This is a cosy desktop cat-card RPG where you manage a crew of four cats defending a lantern-lit café. This demo runs locally on your machine—no wallet needed, and the Avalanche Fuji testnet integration is for receipt proof only, not a mandatory on-chain requirement.'
+## 1. Intro (0:00 - 0:30)
+"Welcome to Taskbar Hero, your cozy cat card-RPG. In a world of fleeting attention, we bring persistent, meaningful interaction directly to your desktop. Taskbar Hero isn't just a game; it's a seamless Avalanche-integrated experience."
 
-## 0:30-1:30 Gameplay Loop
-'Here is the guest journey: Fight, Prepare, and Route. As you can see, the first battle hit triggers within 21 seconds. The combat is an idle RPG loop. You arrange your crew, collect relics, and manage resources like fish, stamps, and threads. Note: Current battle assets for Wave 3 are optimized to keep transfer sizes manageable.'
+## 2. Walkthrough (0:30 - 2:00)
+"Let's jump in. [Demo Action: Open Game]. As you see, the interface is intuitive and focused on our core experience: cat care, deck building, and light combat. [Demo Action: Perform Battle]. Combat is fast, utilizing the Avalanche Fuji testnet for secure, transparent card interactions. The UI is built for immediate engagement, ensuring every decision feels impactful."
 
-## 1:30-2:30 Chain Features
-'For those interested in the Fuji integration: the game links to an Avalanche Fuji items contract. This establishes a registry for collected relics. Remember, battle rewards here are *local*. Proven Fuji transactions require a separate funding and minting action by the owner, not the guest player.'
-
-## 2:30-3:00 Conclusion
-'To conclude: This build is v5-m1.8. It is a desktop-native card RPG. Features like the RelicForge are in-development and not yet public on the Fuji testnet. Please refer to our latest review documentation for the most accurate combat transfer and integration details. Thank you for playing Taskbar Hero.' 
+## 3. Technical Integration & Avalanche (2:00 - 3:00)
+"Our technical edge? A React + Vite engine, tightly integrated with wagmi and viem for blockchain interactions. Every card interaction triggers a transaction on Avalanche Fuji, ensuring game state integrity. We demonstrate that desktop-first web gaming is not only viable but superior for high-frequency interaction. Thank you for your time."

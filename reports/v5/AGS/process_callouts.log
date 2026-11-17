@@ -1,0 +1,740 @@
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-binding-thread.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:07.17, start: 0.006000, bitrate: 76 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.169000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-binding-thread.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.169000000
+[out#0/opus @ 0x7971464180] video:0KiB audio:65KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.134159%
+size=      66KiB time=00:00:06.80 bitrate=  79.0kbits/s speed= 209x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-biscuit.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.21, start: 0.006000, bitrate: 81 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.205000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-biscuit.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.205000000
+[out#0/opus @ 0x75e903c180] video:0KiB audio:82KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.089600%
+size=      83KiB time=00:00:08.84 bitrate=  76.7kbits/s speed= 239x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-brioche.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:10.52, start: 0.006000, bitrate: 75 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.524000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-brioche.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.524000000
+[out#0/opus @ 0x75e503c180] video:0KiB audio:92KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.101952%
+size=      93KiB time=00:00:10.16 bitrate=  75.1kbits/s speed= 242x elapsed=0:00:00.04    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-button-guard.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:07.86, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.856000000
+File 'v5/voice/callout-button-guard.opus' already exists. Overwrite? [y/N] Not overwriting - exiting
+Error opening output file v5/voice/callout-button-guard.opus.
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-cinnamon.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:10.29, start: 0.006000, bitrate: 80 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.285000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-cinnamon.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.285000000
+[out#0/opus @ 0x74d503c180] video:0KiB audio:94KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.052763%
+size=      95KiB time=00:00:09.92 bitrate=  78.2kbits/s speed= 242x elapsed=0:00:00.04    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-clover.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:10.35, start: 0.006000, bitrate: 80 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.354000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-clover.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:10.354000000
+[out#0/opus @ 0x7a3d070180] video:0KiB audio:96KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.045754%
+size=      97KiB time=00:00:09.99 bitrate=  79.4kbits/s speed= 243x elapsed=0:00:00.04    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-crumb-sentinel.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.98, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.981000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-crumb-sentinel.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.981000000
+[out#0/opus @ 0x7a77070180] video:0KiB audio:82KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.085882%
+size=      83KiB time=00:00:08.61 bitrate=  78.8kbits/s speed= 240x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-inkcap.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.64, start: 0.006000, bitrate: 83 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.641000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-inkcap.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.641000000
+[out#0/opus @ 0x7a1ac046c0] video:0KiB audio:81KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.109180%
+size=      82KiB time=00:00:08.27 bitrate=  81.0kbits/s speed= 236x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-kettle-knight.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.29, start: 0.006000, bitrate: 72 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.294000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-kettle-knight.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.294000000
+[out#0/opus @ 0x751f03c180] video:0KiB audio:82KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.108361%
+size=      83KiB time=00:00:08.93 bitrate=  75.8kbits/s speed= 239x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-mallow.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.27, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.270000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-mallow.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.270000000
+[out#0/opus @ 0x75fb068180] video:0KiB audio:73KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.126495%
+size=      73KiB time=00:00:07.90 bitrate=  76.1kbits/s speed= 239x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-marigold.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.74, start: 0.006000, bitrate: 79 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.736000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-marigold.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.736000000
+[out#0/opus @ 0x7842c046c0] video:0KiB audio:86KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.096694%
+size=      87KiB time=00:00:09.37 bitrate=  75.6kbits/s speed= 246x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-mochi.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.39, start: 0.006000, bitrate: 80 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.389000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-mochi.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.389000000
+[out#0/opus @ 0x7687070180] video:0KiB audio:86KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.119015%
+size=      86KiB time=00:00:09.02 bitrate=  78.5kbits/s speed= 231x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-needle-moth.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.32, start: 0.006000, bitrate: 72 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.323000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-needle-moth.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.323000000
+[out#0/opus @ 0x7b5b068180] video:0KiB audio:83KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.107506%
+size=      84KiB time=00:00:08.95 bitrate=  76.8kbits/s speed= 244x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-panko.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.99, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.994000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-panko.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.994000000
+[out#0/opus @ 0x7a77068180] video:0KiB audio:78KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.129036%
+size=      79KiB time=00:00:08.63 bitrate=  75.3kbits/s speed= 248x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-pantry-crown.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.52, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.519000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-pantry-crown.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.519000000
+[out#0/opus @ 0x7c8f070180] video:0KiB audio:78KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.117662%
+size=      79KiB time=00:00:08.15 bitrate=  79.1kbits/s speed= 241x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-pollen-scout.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.32, start: 0.006000, bitrate: 72 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.321000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-pollen-scout.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.321000000
+[out#0/opus @ 0x76e4c046c0] video:0KiB audio:72KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.130865%
+size=      73KiB time=00:00:07.95 bitrate=  75.4kbits/s speed= 241x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-practice-cushion.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.45, start: 0.006000, bitrate: 75 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.449000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-practice-cushion.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.449000000
+[out#0/opus @ 0x75f3070180] video:0KiB audio:77KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.123052%
+size=      78KiB time=00:00:08.08 bitrate=  78.6kbits/s speed= 242x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-rain-spool.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.41, start: 0.006000, bitrate: 75 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.406000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-rain-spool.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.406000000
+[out#0/opus @ 0x78c503c180] video:0KiB audio:75KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.162791%
+size=      76KiB time=00:00:08.04 bitrate=  77.5kbits/s speed= 239x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-sock-skipper.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:07.20, start: 0.006000, bitrate: 79 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.197000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-sock-skipper.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.197000000
+[out#0/opus @ 0x76c103c180] video:0KiB audio:68KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.089133%
+size=      69KiB time=00:00:06.83 bitrate=  82.2kbits/s speed= 240x elapsed=0:00:00.02    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-soot.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:08.43, start: 0.006000, bitrate: 78 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.429000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-soot.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:08.429000000
+[out#0/opus @ 0x78f9068180] video:0KiB audio:74KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.165582%
+size=      75KiB time=00:00:08.06 bitrate=  75.7kbits/s speed= 247x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-sorrel.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.41, start: 0.006000, bitrate: 80 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.405000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-sorrel.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.405000000
+[out#0/opus @ 0x7730c046c0] video:0KiB audio:77KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.187846%
+size=      78KiB time=00:00:09.04 bitrate=  70.9kbits/s speed= 244x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-spool-ram.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:06.28, start: 0.006000, bitrate: 79 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:06.275000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-spool-ram.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:06.275000000
+[out#0/opus @ 0x784ac046c0] video:0KiB audio:58KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.172580%
+size=      59KiB time=00:00:05.91 bitrate=  81.2kbits/s speed= 232x elapsed=0:00:00.02    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-teacup-healer.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:07.29, start: 0.006000, bitrate: 71 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.294000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-teacup-healer.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:07.294000000
+[out#0/opus @ 0x7bcd068180] video:0KiB audio:65KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.167025%
+size=      66KiB time=00:00:06.93 bitrate=  78.3kbits/s speed= 236x elapsed=0:00:00.02    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-velvet.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:09.54, start: 0.006000, bitrate: 82 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.543000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-velvet.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:09.543000000
+[out#0/opus @ 0x77bb03c180] video:0KiB audio:86KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.099262%
+size=      87KiB time=00:00:09.17 bitrate=  77.8kbits/s speed= 234x elapsed=0:00:00.03    
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, matroska,webm, from 'callout-yarn-giant.webm':
+  Metadata:
+    ENCODER         : Lavf63.1.102
+  Duration: 00:00:06.88, start: 0.006000, bitrate: 77 kb/s
+  Stream #0:0: Audio: opus, 48000 Hz, mono, fltp, start 0.006000
+    Metadata:
+      ENCODER         : Lavc63.1.102 libopus
+      DURATION        : 00:00:06.882000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (opus (native) -> opus (libopus))
+Press [q] to stop, [?] for help
+Output #0, opus, to 'v5/voice/callout-yarn-giant.opus':
+  Metadata:
+    encoder         : Lavf63.1.102
+  Stream #0:0: Audio: opus, 48000 Hz, mono, flt, 64 kb/s
+    Metadata:
+      encoder         : Lavc63.1.102 libopus
+      DURATION        : 00:00:06.882000000
+[out#0/opus @ 0x7c0f070180] video:0KiB audio:63KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 1.173771%
+size=      63KiB time=00:00:06.51 bitrate=  79.6kbits/s speed= 241x elapsed=0:00:00.02    
