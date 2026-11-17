@@ -62,6 +62,42 @@
     "anchor": "caster",
     "sizePx": 256
   },
+  "enemy-death-dissolve": {
+    "file": "enemy-death-dissolve.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 512
+  },
+  "enemy-hit-spark-1": {
+    "file": "enemy-hit-spark-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "enemy-hit-spark-2": {
+    "file": "enemy-hit-spark-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "enemy-hit-spark-3": {
+    "file": "enemy-hit-spark-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
   "impact-burst-gen": {
     "anchor": "target",
     "blend": "add",
@@ -268,5 +304,32 @@
     "blend": "add",
     "anchor": "caster",
     "sizePx": 256
+  },
+  "yarn-giant-charge-swirl": {
+    "file": "yarn-giant-charge-swirl.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 128
+  },
+  "yarn-giant-ground-crack": {
+    "file": "yarn-giant-ground-crack.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "yarn-giant-shockwave-ring": {
+    "file": "yarn-giant-shockwave-ring.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
   }
 }
