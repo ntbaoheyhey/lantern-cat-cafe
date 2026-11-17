@@ -1,7 +1,7 @@
-ACTIVE: T-CXI-5 REDO (Legacy Beds).
+ACTIVE: T-CXI-8 REDO (Wave3).
 NEXT 1: T-CXI-8 (REDO Wave3), T-CXI-7 (REDO Script).
 PIDs: None.
-Open TASKS: T-CXI-5 REDO, T-CXI-8 REDO, T-CXI-7 REDO.
+Open TASKS: T-CXI-8 REDO, T-CXI-7 REDO.
 Last Pushed SHA: 73c94bb2b.
 Wake ID: task-310.
 Last RULES re-read: 2026-11-18T00:00 UTC.
