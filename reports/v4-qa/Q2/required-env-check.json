@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-17T01:23:48.066235+00:00",
+  "targetSha": "abf6438866f0b5fcb9d09747d565c59cf6b35a3b",
+  "assertions": [
+    {
+      "name": "AUTH_JWT_SECRET",
+      "namedInRunbook": false,
+      "sourceLocations": [
+        "supabase/functions/_shared/auth.ts:44",
+        "supabase/functions/_shared/game-server.ts:20",
+        "supabase/functions/_shared/v2/server.ts:18",
+        "supabase/functions/chain-campaign-reward/index.ts:14",
+        "supabase/functions/chain-campaign/index.ts:12",
+        "supabase/functions/chain-cosmetics/index.ts:13",
+        "supabase/functions/chain-economy-v3/index.ts:13",
+        "supabase/functions/chain-items/index.ts:15",
+        "supabase/functions/chain-judge/index.ts:16",
+        "supabase/functions/guest-drip/index.ts:12"
+      ]
+    },
+    {
+      "name": "VOUCHER_SIGNER_PRIVATE_KEY",
+      "namedInRunbook": false,
+      "sourceLocations": [
+        "supabase/functions/_shared/game-server.ts:135",
+        "supabase/functions/_shared/v2/server.ts:62",
+        "supabase/functions/chain-campaign-reward/index.ts:22",
+        "supabase/functions/chain-economy-v3/index.ts:20",
+        "supabase/functions/chain-items/index.ts:25",
+        "supabase/functions/chain-judge/index.ts:26",
+        "supabase/functions/guest-drip/index.ts:19"
+      ]
+    },
+    {
+      "name": "SPONSOR_PRIVATE_KEY",
+      "namedInRunbook": false,
+      "sourceLocations": [
+        "supabase/functions/guest-drip/index.ts:19"
+      ]
+    },
+    {
+      "name": "GAME_SEED_SECRET",
+      "namedInRunbook": false,
+      "sourceLocations": [
+        "supabase/functions/_shared/game-server.ts:152",
+        "supabase/functions/_shared/v2/server.ts:69"
+      ]
+    }
+  ],
+  "observedConsequence": "Source guest-drip returns503 without sponsor or voucher signer; JWT auth wiring requires configured secret. This static audit does not assert hosted secrets are absent.",
+  "fix": "Add a names-only prerequisites table, distinguishing AUTH_JWT_SECRET fallback, existing VOUCHER_SIGNER_PRIVATE_KEY, optional dedicated SPONSOR_PRIVATE_KEY and GAME_SEED_SECRET. Verify existence in Supabase Secrets; never copy values into reports."
+}

@@ -1,6 +1,6 @@
 # Trạng thái QA
-QA độc lập đang chuẩn bị; chưa có kết luận chạy thử riêng.
-Theo báo cáo SHIP, URL công khai vẫn là bản cũ; sẽ kiểm chứng khi có DEPLOYED.
-Ba điểm cần xác minh: đường demo/biên nhận, tải ban đầu vượt8MB, khả năng triển khai từ hướng dẫn.
-Đã tạo nhánh QA riêng; không sửa sản phẩm hoặc tạo ảnh.
-Máy đang tải cao; đang đọc tài liệu trước khi chạy kiểm thử.
+Nhánh QA riêng đã đẩy lên; bộ kiểm tra độc lập đã viết, chưa có kết quả chạy demo.
+Ba điểm đang kiểm chứng: hướng dẫn thiếu tên secret bắt buộc; tải đầu8MB; bằng chứng Fuji khác với giao dịch Anvil cục bộ.
+QA-1: runbook cần bảng tên biến bắt buộc; chưa kết luận cấu hình đang chạy bị thiếu.
+Máy đã giảm tải; cài dependency đúng lockfile hoàn tất, đang tạo clone mới.
+Không sửa mã sản phẩm, không deploy, không tạo ảnh.

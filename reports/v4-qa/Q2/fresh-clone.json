@@ -1,5 +1,32 @@
 {
   "started": "2026-11-17T01:17:44.826761+00:00",
-  "steps": [],
+  "steps": [
+    {
+      "label": "qa-lockfile-install",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--reporter=append-only"
+      ],
+      "cwd": "/Users/bao/taskbar-hero-qa",
+      "exitCode": 0,
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/qa-lockfile-install.log"
+    },
+    {
+      "label": "fresh-ship-clone",
+      "command": [
+        "git",
+        "clone",
+        "--branch",
+        "codex/v4-ship-2026-11-16",
+        "/Users/bao/taskbar-hero",
+        "/Users/bao/taskbar-hero-qa-clone"
+      ],
+      "cwd": "/Users/bao/taskbar-hero-qa",
+      "exitCode": 0,
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/fresh-ship-clone.log"
+    }
+  ],
   "secretsRead": false
 }
