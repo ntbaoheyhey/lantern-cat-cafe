@@ -1,14 +1,14 @@
-# ART execution anchor - 2026-11-17T00:31:52.343713+00:00
-ACTIVE: A11 banner runtimeR1 REJECTED13Soot/Clover label contacts(wave3/720);fullweb2699/322,typecheck,3F6PASS,554DOMsampled.104hashes fixed; no newfilms. Placementreceipt r2 complete;A10integratedtransfer OPEN;through29Nov12UTC.
+# ART execution anchor - 2026-11-17T00:39:12.400763+00:00
+ACTIVE: A11 banner runtimeR2 preflightPASS9tests/3files+typecheck,105runtimehashes. Live visual-status reservation corrects measured16->34px and64->83px growth; installed554-state validation/films pending. R1 failed13contacts retained; A10 integrated transfer OPEN.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: implement R2 initial status-geometry reservation; trace proves Clover empty16px at first layout grows to34px when counter2 renders. Account for badge width/multiple badges; add16->34 regression, preserve R1, then fresh validation/films/receipt.
+NEXT1: after correction checkpoint push, detach tools/.venv/bin/python tools/v3craft-lab/v4-placement/validate-banner-runtime.py --attempt r2; record PID/log. If fullweb/3F6/lane/installed554state PASS, run capture-banner-runtime.py --attempt r2 then new films/reviews/receipt.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: caster-identified banner private drills/comparison, then number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:b82438f24 verified(origin accepted); failed installed-banner13label contacts preserved; runtime3b64c3008/104hashes unchanged during diagnosis.
+LAST PUSH:d9f7b9253 verified(origin accepted); first-layout diagnosis saved; runtime3b64c3008/104hashes unchanged.
 RECEIPT: placement-runtime-r1/acceptance-receipt-r2.json now valid after9path staging;221lane pathsPASS/102runtimehashes unchanged. Original r1 receipt/audit/failure retained; full acceptance OPEN.
-LIVE: no finite ART jobs alive; trace79334 complete/PASS,104runtime hashes unchanged. NormalVite20416/5990 craftOFF; log reports/v4-art/jobs/a10-normal-5990-resolution.log.
+LIVE: no finite jobs alive; R2 preflight81461 PASS. Vite20416/5990 craftOFF;log reports/v4-art/jobs/a10-normal-5990-resolution.log.
 STOP/INBOX checked 2026-11-17T00:31:52.343713+00:00: noSTOP; later user continuation supersedes pause; no SHIP beyond16Nov18:25. Original68961/69950 absent. Resume475grouped/699all status entries,index empty; inherited dirt retained.
-PRIVATEBANNER: portrait+owner+skill selected after96states/8comparisons+554densefocus,0private intersections/loss. InstalledR1 failed13contacts from stale16px status reservation; first-layout trace complete. Finalbossfocus truncated; blindassociation OPEN.
+PRIVATEBANNER: existing portrait+owner+skill selection retained. New status drills reject34px-only width omission and stale scene snapshot; live visual model+CSS clone selected. One fresh comparison CLOSED; detached placement/blindassociation remain open.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11placement:304state DOM equivalencePASS; native42mappings/41fresh frames,12sheets CLOSED. Original failures reproduced38/42at720,35/42at900; others retained. Stateless82.26pxjump rejected; runtime actor-relative selected.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
@@ -20,7 +20,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite; all8banner-r2 comparisons now CLOSED, never reopen. Earlier84placementaction/native12/banner-r1four/layout3 CLOSED. A10JPG8/8;A11selectedJPG0/8.
+IMAGEOPENS:0afterrewrite; one fresh status-reservation comparison CLOSED. Prior8banner-r2/84placementaction/native12/banner-r1four/layout3 CLOSED; never reopen. A10JPG8/8;A11selectedJPG0/8.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.

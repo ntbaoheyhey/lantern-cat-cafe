@@ -3,15 +3,21 @@ from pathlib import Path
 from datetime import datetime, timezone
 from PIL import Image
 import gzip
+import argparse
 import hashlib
 import json
 import os
+import re
 import statistics
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / 'reports/v4-art/REVIEW/A11/banner-runtime-r1'
-ITEM = 'V4-A11-BANNER-R1'
+parser = argparse.ArgumentParser()
+parser.add_argument('--attempt', required=True)
+args = parser.parse_args()
+assert re.fullmatch(r'r[1-9][0-9]*', args.attempt), 'Invalid attempt'
+OUT = ROOT / ('reports/v4-art/REVIEW/A11/banner-runtime-' + args.attempt)
+ITEM = 'V4-A11-BANNER-' + args.attempt.upper()
 CAPTURE = ROOT / 'reports/v3-feel/REVIEW' / ITEM
 REPORT = OUT / 'capture-jobs.json'
 assert not REPORT.exists() and not CAPTURE.exists(), 'Never overwrite prior evidence'
@@ -20,7 +26,7 @@ now = lambda: datetime.now(timezone.utc).isoformat()
 read = lambda p: json.loads(p.read_text())
 runtime = read(OUT / 'source-hashes.json')
 stable = lambda: all(sha(ROOT / p) == h for p, h in runtime.items())
-gates = ['validation.json', 'parity.json', 'lane-audit.json', 'runtime-check-r1.json']
+gates = ['validation.json', 'parity.json', 'lane-audit.json', ('runtime-check-' + args.attempt + '.json')]
 assert stable() and all(read(OUT / name)['pass'] for name in gates)
 report = {'started': now(), 'pid': os.getpid(), 'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
           'scriptSha256': sha(Path(__file__)), 'runtimeSourceHashes': runtime,
@@ -40,7 +46,7 @@ commands = [
 try:
     for name, command in commands:
         assert stable(), 'Runtime changed while filming'
-        log = ROOT / 'reports/v4-art/jobs' / ('a11-banner-runtime-r1-' + name + '.log')
+        log = ROOT / 'reports/v4-art/jobs' / ('a11-banner-runtime-' + args.attempt + '-' + name + '.log')
         row = {'name': name, 'command': command, 'log': str(log), 'started': now()}
         report['steps'].append(row)
         with log.open('xb') as stream:

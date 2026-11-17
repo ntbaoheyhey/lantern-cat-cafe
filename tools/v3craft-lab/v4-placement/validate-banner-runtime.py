@@ -1,6 +1,7 @@
 """Validate the installed caster-identified banner with existing test, parity and replay entry points."""
 from pathlib import Path
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 import os
@@ -8,7 +9,11 @@ import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / 'reports/v4-art/REVIEW/A11/banner-runtime-r1'
+parser = argparse.ArgumentParser()
+parser.add_argument('--attempt', required=True)
+args = parser.parse_args()
+assert re.fullmatch(r'r[1-9][0-9]*', args.attempt), 'Invalid attempt'
+OUT = ROOT / ('reports/v4-art/REVIEW/A11/banner-runtime-' + args.attempt)
 REPORT = OUT / 'validation.json'
 assert not REPORT.exists(), 'Never overwrite a validation attempt'
 now = lambda: datetime.now(timezone.utc).isoformat()
@@ -29,7 +34,7 @@ save()
 
 def step(name, command):
     assert stable(), 'Runtime changed during validation'
-    log = ROOT / 'reports/v4-art/jobs' / ('a11-banner-runtime-r1-' + name + '.log')
+    log = ROOT / 'reports/v4-art/jobs' / ('a11-banner-runtime-' + args.attempt + '-' + name + '.log')
     row = {'name': name, 'command': command, 'log': str(log), 'started': now()}
     report['steps'].append(row)
     with log.open('xb') as output:
@@ -72,9 +77,9 @@ try:
                       and all(r['baselineMatches'] and r['parity'] and not r['errors'] and r['result'] == 'party' for r in rows))
     (OUT / 'parity.json').write_text(json.dumps(parity, indent=2) + '\n')
     assert parity['pass'], 'Explicit F6 comparison failed'
-    step('runtime-replay', ['node', 'tools/v3craft-lab/v4-placement/banner-runtime-check.mjs'])
-    replay = read(OUT / 'runtime-check-r1.json')
-    assert replay['complete'] and replay['pass']
+    step('runtime-replay', ['node', 'tools/v3craft-lab/v4-placement/banner-runtime-check.mjs', '--attempt', args.attempt])
+    replay = read(OUT / ('runtime-check-' + args.attempt + '.json'))
+    assert replay['complete'] and replay['pass'], 'Installed banner replay failed; preserve runtime-check evidence'
     baseline_commit = '9205464cb4c0743fa87d5a00ce2caa5e346101a8'
     changes = [r.split('\t') for r in subprocess.check_output(['git', 'diff', '--name-status', baseline_commit, source], cwd=ROOT, text=True).splitlines()]
     allowed = ('apps/web/public/units/', 'apps/web/public/vfx/', 'apps/web/src/game/cardrpg/battle-v3/',

@@ -21,9 +21,9 @@ assert not TARGET.exists()
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 now = lambda: datetime.now(timezone.utc).isoformat()
 paths = list(json.loads((ROOT / 'reports/v4-art/REVIEW/A11/placement-runtime-r1/source-hashes.json').read_text()))
-paths += ['apps/web/src/game/cardrpg/battle-v3/' + n for n in ['banner-layout.ts', 'identified-focus.ts']]
+paths += ['apps/web/src/game/cardrpg/battle-v3/' + n for n in ['banner-layout.ts', 'identified-focus.ts', 'world-label-status.ts']]
 runtime = {p: sha(ROOT / p) for p in sorted(set(paths))}
-tests = {p: sha(ROOT / p) for p in ['apps/web/src/game/cardrpg/battle-v3/banner-layout.test.ts', 'apps/web/src/game/cardrpg/battle-v3/presentation.test.ts']}
+tests = {p: sha(ROOT / p) for p in ['apps/web/src/game/cardrpg/battle-v3/banner-layout.test.ts', 'apps/web/src/game/cardrpg/battle-v3/presentation.test.ts', 'apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts', 'apps/web/src/game/cardrpg/battle-v3/banner-status-regression.json']}
 stable = lambda: all(sha(ROOT / p) == h for p, h in (runtime | tests).items())
 report = {'started': now(), 'pid': os.getpid(), 'parentCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
           'scope': 'Working-tree banner implementation preflight; full tests/parity/runtime replay/films pending.',
@@ -32,7 +32,7 @@ save = lambda: TARGET.write_text(json.dumps(report, indent=2) + '\n')
 save()
 try:
     for name, command in [
-        ('focused', ['pnpm', '--filter', '@taskbar-hero/web', 'exec', 'vitest', 'run', 'src/game/cardrpg/battle-v3/banner-layout.test.ts', 'src/game/cardrpg/battle-v3/presentation.test.ts', '--reporter=dot']),
+        ('focused', ['pnpm', '--filter', '@taskbar-hero/web', 'exec', 'vitest', 'run', 'src/game/cardrpg/battle-v3/banner-layout.test.ts', 'src/game/cardrpg/battle-v3/presentation.test.ts', 'src/game/cardrpg/battle-v3/world-label-status.test.ts', '--reporter=dot']),
         ('typecheck', ['pnpm', '--filter', '@taskbar-hero/web', 'typecheck']),
     ]:
         assert stable(), 'Source changed during preflight'

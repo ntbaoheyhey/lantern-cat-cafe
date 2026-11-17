@@ -1,4 +1,4 @@
-/** Two private DOM banner-layout drills on unchanged, newly filmed runtime. */
+/** Source-bound installed banner replay; preserve each revision independently. */
 import {chromium,config,openFixture} from '../../../scripts/v3feel/browser-fixture.mjs';
 import {measureLabels} from './geometry.mjs';
 import {placePrivateBanner} from './banner-candidates.mjs';
@@ -7,12 +7,14 @@ import {resolve} from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A11/banner-runtime-r1');
-const target=resolve(out,'runtime-check-r1.json');
+const attempt=process.argv[process.argv.indexOf('--attempt')+1];
+if(!/^r[1-9][0-9]*$/.test(attempt))throw Error('Supply --attempt rN');
+const root=resolve(import.meta.dirname,'../../..'),out=resolve(root,'reports/v4-art/REVIEW/A11/banner-runtime-'+attempt);
+const target=resolve(out,'runtime-check-'+attempt+'.json');
 if(existsSync(target))throw Error('Never overwrite a drill');
 mkdirSync(resolve(out,'raw'),{recursive:true});
 const sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
-const runtime=JSON.parse(readFileSync(resolve(root,'reports/v4-art/REVIEW/A11/banner-runtime-r1/source-hashes.json'),'utf8'));
+const runtime=JSON.parse(readFileSync(resolve(out,'source-hashes.json'),'utf8'));
 const stable=()=>Object.entries(runtime).every(([p,h])=>sha(resolve(root,p))===h);
 if(!stable())throw Error('Runtime changed before private drill');
 const report={started:new Date().toISOString(),pid:process.pid,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),

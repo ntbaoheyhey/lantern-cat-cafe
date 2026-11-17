@@ -1,4 +1,4 @@
-import {useEffect,useRef,useState,type CSSProperties} from 'react';
+import {useEffect,useLayoutEffect,useRef,useState,type CSSProperties} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import type {DepthModel} from '../depth/model';
@@ -16,6 +16,7 @@ import {GameIcon} from '../../../ui/GameIcon';
 import {displayedBossPhase} from '../depth/battle-presentation';
 import {battleWave,IntentMark} from './hud-details';
 import {createWorldLabelLayout} from './world-label-dom';
+import {bindWorldStatusSource} from './world-label-status';
 
 function Meter({hp,max,name,shield=0,reduced=false}:{hp:number;max:number;name:string;shield?:number;reduced?:boolean}){
  const value=Math.max(0,Math.min(100,hp/max*100)),[trail,setTrail]=useState(value);
@@ -38,6 +39,9 @@ function Badges({actor,tutorial=false}:{actor:R.Actor;tutorial?:boolean}){
 }
 export default function BattleHud({m}:{m:DepthModel}){
  const battle=m.visualBattle!,controls=battleControls(m),world=useRef(new Map<string,HTMLDivElement>()),total=useRef<HTMLOutputElement>(null);
+ const worldLayer=useRef<HTMLDivElement>(null);
+ useLayoutEffect(()=>bindWorldStatusSource(worldLayer.current!,()=>
+  (m.visualBattle?.actors??[]).map(actor=>({id:actor.id,shield:actor.shield>0,stacks:actor.statuses.map(status=>status.stacks)}))),[m]);
  const [intro,setIntro]=useState(true);
  const wave=battleWave(m),boss=battle.actors.find(a=>a.side==='enemy'&&R.ENEMY_BY_ID[a.catalogId]?.tier==='boss');
  useEffect(()=>{setIntro(true);const timer=setTimeout(()=>setIntro(false),900);return()=>clearTimeout(timer);},[battle.initial]);
@@ -80,7 +84,7 @@ export default function BattleHud({m}:{m:DepthModel}){
    <button ref={menuButton} aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}><GameIcon name="menu" size={20}/></button>
   </header>
   {intro&&!m.plan&&battle.round===1&&<div className="b3-wave-intro" aria-live="polite"><GameIcon name="fight" size={36}/><strong>Wave {wave.current}/{wave.total}</strong></div>}
-  <div className="b3-world-layer">{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-tutorial-id={a.id===party[0]?.id?"battle-rows":undefined} data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
+  <div className="b3-world-layer" ref={worldLayer}>{battle.actors.filter(a=>a.hp>0).map(a=><div className="b3-world" data-tutorial-id={a.id===party[0]?.id?"battle-rows":undefined} data-side={a.side} data-actor={a.id} title={a.name} aria-label={a.name} key={a.id} ref={node=>{if(node)world.current.set(a.id,node);else world.current.delete(a.id);}}>
    <div data-tutorial-id={a.id===battle.actors.find(a=>a.side==='enemy'&&a.hp>0)?.id?"battle-intent":undefined} className="b3-marker-row">{a.side==='enemy'&&<IntentMark intent={battle.intents.find(i=>i.actorId===a.id)} />}<Badges actor={a} tutorial={a.id===party[0]?.id}/></div><Meter hp={a.hp} max={a.maxHp} shield={a.shield} name={a.name} reduced={m.state.settings.reducedMotion}/><Rage value={a.charge} name={a.name}/>
   </div>)}</div>
   <footer className="b3-bottom">
