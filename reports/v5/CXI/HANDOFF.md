@@ -5,7 +5,7 @@ NEXT 2: Resolve AGS B2 context metadata mismatch; keep original bus compatibilit
 NEXT 3: Fresh transfer, merged gates; next unblocked QA/refill until all DONE conditions proven.
 Local HEAD before checkpoint f8f004ec2 (AGS0232c11ab merged); checkpoint34bc227ef pushed; cfce3804d pushed.
 R3 focused61pass/3fail:70 sample contexts fail existing bus compatibility; no weakening tests.
-R5 DONE: finalJS1112059,focused17pass/build0; total9.47-10.15MB stillFAIL.
+R5 DONE: finalJS1112059,focused8pass/build0; total9.47-10.15MB stillFAIL.
 Preview PID80797 work/v5/CXI/jobs/m1-preview.log serves16823a7c6; pipeline74628 completed0.
 Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
 Last transfer16823a7c6:wave1=10078148,wave3=10589555,boss=9915707; allFAIL8MB,0errors.
