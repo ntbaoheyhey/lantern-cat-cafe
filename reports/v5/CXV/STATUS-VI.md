@@ -25,3 +25,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T20:46:50.594707+00:00 Đang kiểm V-F: bỏ tính lại các hàng đỉnh phía dưới vốn đứng yên.910mẫu toàn bộ đỉnh/380GPU+bounds trùng; vẫn giữ toàn bộ mesh/UV/index. Bản bỏ vùng trong suốt đã loại vì khác pixel ở preview. Đang chạy6lượt trận đối chứng; chưa sửa runtime/chưa kết luận tăngFPS.
 
 2026-11-17T20:50:44Z V-F: 6 lượt thử đủ; CPU render giảm 2.9→2.7ms và 13.8→12.8ms ở4x; p95 chưa cải thiện. Chưa áp dụng runtime. Wake15phút vẫnACTIVE.
+
+2026-11-17T20:57:42.241486+00:00 V-F: mã native giữ nguyên910trạng thái lưới và380ảnh GPU;42kiểm thử vàtypecheckđạt.2ảnh mới đã xem một lần. Đang kiểm chứng hiệu năng bản production, chưa gửiREADY.

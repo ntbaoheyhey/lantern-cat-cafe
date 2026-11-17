@@ -1,0 +1,273 @@
+{
+  "utc": "2026-11-17T20:57:19.677Z",
+  "source": "a4032121081eb2cb1be0c2fa87fc0dbd26fea06d",
+  "runtimePatchSha256": "746ff91b4596ff7a429c7cf70c6dfb458372dd0baab9ad26c43d1f66c98bdee4",
+  "runtimeUntrackedSha256": {
+    "apps/web/src/game/rig/drawing-layer-static.test.ts": "d6a6de217094f14cba059c70f01960a601e58e45b8c950e2d360d4e429340848"
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-17T20:56:43.594Z",
+  "ended": "2026-11-17T20:57:01.365Z",
+  "rawPath": "work/v5/CXV/films/V7-F-static-native/geometry-final/report.json",
+  "rawSha256": "a15d50f0973cf702be66397bb26d4d3700f1ea2ff73e0df2bc7e798442ad4635",
+  "baseline": {
+    "utc": "2026-11-17T20:52:05.870646+00:00",
+    "source": "a4032121081eb2cb1be0c2fa87fc0dbd26fea06d",
+    "path": "apps/web/src/game/rig/drawing-layer.ts",
+    "sourceSha256": "ae82b1fd03bfc1b035c2dda1ca0f713aff8b4b178064325706c78477dc445445",
+    "servedModuleSha256": "6e4b903bb67e6538ecfa67882688457622ab4d692086b31ca2f11ad17740cb2f"
+  },
+  "candidateSourceSha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727",
+  "method": "Native stationary-row cutoff compared with the original module saved before editing: below baseline and every face projection/neck region. All original vertex values, UVs and indices must match, including frozen vertices. Independent idle0 initialization, full motion/filtered GPU suite plus preview scales. Original point/weight source asserted unchanged; all vertices and filtered GPU outputs must match.",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "motionCases": 420,
+      "gpuCases": 176,
+      "differences": [],
+      "allVerticesExact": true,
+      "gpuExact": true,
+      "topology": [
+        {
+          "unit": "needle-moth",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "mochi",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "teacup-healer",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "soot",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "clover",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "panko",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        }
+      ],
+      "actors": [
+        {
+          "unit": "needle-moth",
+          "vertices": 1089,
+          "sampledVertices": 792,
+          "indices": 6144
+        },
+        {
+          "unit": "mochi",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "teacup-healer",
+          "vertices": 1089,
+          "sampledVertices": 792,
+          "indices": 6144
+        },
+        {
+          "unit": "soot",
+          "vertices": 1089,
+          "sampledVertices": 990,
+          "indices": 6144
+        },
+        {
+          "unit": "clover",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "panko",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "motionCases": 490,
+      "gpuCases": 204,
+      "differences": [],
+      "allVerticesExact": true,
+      "gpuExact": true,
+      "topology": [
+        {
+          "unit": "binding-thread",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "binding-thread",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "yarn-giant",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "mochi",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "soot",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "clover",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        },
+        {
+          "unit": "panko",
+          "uvExact": true,
+          "indicesExact": true,
+          "fullTopology": true,
+          "vertices": 1089,
+          "indices": 6144
+        }
+      ],
+      "actors": [
+        {
+          "unit": "binding-thread",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "binding-thread",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "yarn-giant",
+          "vertices": 1089,
+          "sampledVertices": 792,
+          "indices": 6144
+        },
+        {
+          "unit": "mochi",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "soot",
+          "vertices": 1089,
+          "sampledVertices": 990,
+          "indices": 6144
+        },
+        {
+          "unit": "clover",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        },
+        {
+          "unit": "panko",
+          "vertices": 1089,
+          "sampledVertices": 858,
+          "indices": 6144
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "focusedTests": 42,
+    "focusedFiles": 5,
+    "testLog": "work/v5/CXV/jobs/static-vertex-contract.log",
+    "testLogSha256": "109d030d9ed4fc5ad4d055dafbb78c9eb35883c6e7d931a5b2516c94002ff9fa",
+    "typecheckExit": 0,
+    "typecheckDiagnostics": 0,
+    "typecheckCommand": "node apps/web/node_modules/typescript/bin/tsc --noEmit --project apps/web/tsconfig.json"
+  },
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/geometry-final/wave3.png",
+      "review": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/geometry-final/wave3-review.png",
+      "utc": "2026-11-17T20:56:52.189Z",
+      "width": 1280,
+      "height": 720,
+      "reviewWidth": 1024,
+      "reviewHeight": 576,
+      "sha256": "27016cd04bd1771ecc7aade31072665535aab80fad6f877ca4ecd7859607f6aa",
+      "rgbMean": 110.44185185185185,
+      "rgbStdDev": 49.53624653367158
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/geometry-final/boss.png",
+      "review": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/geometry-final/boss-review.png",
+      "utc": "2026-11-17T20:57:01.356Z",
+      "width": 1280,
+      "height": 720,
+      "reviewWidth": 1024,
+      "reviewHeight": 576,
+      "sha256": "ef795ff0c1d6b88ba75e1e049d90785286f607c79300643f1a171f2155b57934",
+      "rgbMean": 115.05321759259259,
+      "rgbStdDev": 47.32739415319932
+    }
+  ],
+  "reviewedUtc": "2026-11-17T20:57:42.241486+00:00",
+  "pass": true,
+  "limits": "Native current-source comparison with archived original module; local candidate6310, not independent judge acceptance. Microbenchmark timings omitted: typecheck may have overlapped startup. Ordinary production benefit still pending.",
+  "visualReview": "Two fresh1024x576 wave3/boss captures inspected once after measurement. Four hero feet, face silhouettes and enemy silhouettes intact; labels legible; no visible tears or missing rows. Retains boss entrance alpha."
+}

@@ -44,6 +44,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  private overlapValues:Float32Array;
  private vertex:[number,number]=[0,0];private output={x:0,y:0};
  private vertexWeights=new Map<DrawingKey,VertexWeights>();
+ private movingVertexCount=Infinity;private stationaryRowsValid=false;
  constructor(readonly set:DrawingSet,readonly origin:DrawingPoint,readonly pixelScale:number){
   const m=set.manifest;
   super(new T.PlaneGeometry(m.canvas[0],m.canvas[1],32,32),new T.MeshBasicMaterial({map:set.textures.K0,
@@ -52,9 +53,38 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   this.secondary=new SecondaryMotion(m.unit);this.seekMotion=new SecondaryMotion(m.unit);this.overlapValues=new Float32Array(Math.max(0,...Object.values(m.poses).map(f=>f.overlap?.length??0)));
   this.name=`${m.unit} drawn keys`;this.frustumCulled=false;
   this.source=Float32Array.from(this.geometry.attributes.position!.array);this.sample('idle',0,false);
+  this.movingVertexCount=this.stationaryCutoff();
+ }
+ /** Keep the full mesh and triangle order. Only rows below every motion region
+  * can reuse the constructor's original full idle sample. Metadata is immutable. */
+ private stationaryCutoff(){
+  const m=this.set.manifest,full=this.source.length/3,finite=(values:readonly number[])=>values.every(Number.isFinite);
+  const pair=(values:readonly number[])=>values.length===2&&finite(values);
+  if(!pair(m.canvas)||!pair(m.baseline)||!pair(this.origin)||!finite([m.opaqueHeight,this.pixelScale])||
+   !m.canvas.every(n=>Number.isSafeInteger(n)&&n>0)||m.opaqueHeight<=0||this.pixelScale<=0||
+   !Number.isFinite(m.opaqueHeight*this.pixelScale)||m.opaqueHeight*this.pixelScale===0)return full;
+  let bottom=m.baseline[1];
+  for(const frame of Object.values(m.poses)){
+   if(frame.face.length!==4||!finite(frame.face)||frame.face[2]<1||frame.face[3]<1||!frame.feet.every(pair)||
+    !Object.values(frame.sockets).every(pair))return full;
+   for(const region of frame.overlap??NO_OVERLAP){
+    if(!pair(region.center)||!pair(region.radius)||!pair(region.travel)||!Number.isFinite(region.phase)||
+     region.radius[0]<=0||region.radius[1]<=0)return full;
+   }
+   bottom=Math.max(bottom,frame.face[1]+frame.face[3]*1.31+1);
+  }
+  if(!Number.isFinite(bottom)||!this.source.every(Number.isFinite))return full;
+  // PlaneGeometry is ordered top to bottom. Leave all earlier rows active.
+  for(let i=0;i<full;i++)if(m.canvas[1]/2-this.source[i*3+1]!>=bottom)return i;
+  return full;
  }
  /** Every call starts from source coordinates; backwards seeks never integrate drift. */
  sample(name:string,seconds:number,reduced:boolean,damageAge?:number,clock=seconds,target=0,critAge=-1){
+  const finiteInputs=Number.isFinite(seconds*1000)&&Number.isFinite(clock)&&Number.isFinite(target)&&
+   Number.isFinite(damageAge??0)&&Number.isFinite(critAge);
+  // Preserve existing exceptions for invalid motion inputs, but invalidate the
+  // reuse state first so a later successful sample refreshes every vertex.
+  if(!finiteInputs)this.stationaryRowsValid=false;
   // A caster may take retaliation during its own action. Override only its
   // drawing for the contact interval; the action/cue clock keeps running.
   if(damageAge!==undefined&&damageAge>=0&&damageAge<.18){name='hurt';seconds=damageAge;}
@@ -70,11 +100,17 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
   this.expression.sample(this.frame.face,m.canvas,eyeClosure(this.secondary.leftBlink,this.secondary.leftSoftness),eyeClosure(this.secondary.rightBlink,this.secondary.rightSoftness),this.key);
   const weights=this.weightsFor(this.key);
-  for(let i=0;i<positions.count;i++){
+  const finite=finiteInputs&&Number.isFinite(this.secondary.body)&&
+   this.overlapValues.every(Number.isFinite);
+  const count=finite&&this.stationaryRowsValid?Math.min(positions.count,this.movingVertexCount):positions.count;
+  for(let i=0;i<count;i++){
    this.vertex[0]=this.source[i*3]!+m.canvas[0]/2;this.vertex[1]=m.canvas[1]/2-this.source[i*3+1]!;
    const point=this.point(this.vertex,this.key,undefined,this.output,weights.data,i*weights.stride);
    positions.setXYZ(i,point.x,point.y,.002);
   }
+  // A bad clock can poison even zero-weight rows (NaN*0). Refresh them once
+  // after recovery before skipping work again.
+  this.stationaryRowsValid=finite;
   positions.needsUpdate=true;
  }
  /** Authored regions and source vertices are immutable for this layer's lifetime.
