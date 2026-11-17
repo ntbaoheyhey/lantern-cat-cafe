@@ -1,0 +1,113 @@
+{
+  "utc": "2026-11-17T18:59:23.602Z",
+  "source": "9d545f8ae8329a0d6be55c5cd810844c877fe5d4",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "paddingCells": 2,
+  "method": "Read-only pixel gate over every current pose manifest, actual delivered image and direct original. Union all authored pose bounds, snap to original32grid and pad2cells. Every alpha>0pixel must fit the union; source dimensions must match the authored canvas. No runtime mutation, texture resampling or FPS claim",
+  "assets": [
+    {
+      "unit": "binding-thread",
+      "grid": [
+        2,
+        9,
+        26,
+        28
+      ],
+      "vertices": 500,
+      "rows": 10
+    },
+    {
+      "unit": "clover",
+      "grid": [
+        2,
+        9,
+        32,
+        29
+      ],
+      "vertices": 651,
+      "rows": 10
+    },
+    {
+      "unit": "mochi",
+      "grid": [
+        1,
+        9,
+        32,
+        29
+      ],
+      "vertices": 672,
+      "rows": 10
+    },
+    {
+      "unit": "needle-moth",
+      "grid": [
+        5,
+        10,
+        25,
+        26
+      ],
+      "vertices": 357,
+      "rows": 10
+    },
+    {
+      "unit": "panko",
+      "grid": [
+        3,
+        9,
+        30,
+        28
+      ],
+      "vertices": 560,
+      "rows": 10
+    },
+    {
+      "unit": "soot",
+      "grid": [
+        0,
+        7,
+        32,
+        32
+      ],
+      "vertices": 858,
+      "rows": 10
+    },
+    {
+      "unit": "teacup-healer",
+      "grid": [
+        0,
+        10,
+        25,
+        26
+      ],
+      "vertices": 442,
+      "rows": 10
+    },
+    {
+      "unit": "yarn-giant",
+      "grid": [
+        1,
+        10,
+        29,
+        26
+      ],
+      "vertices": 493,
+      "rows": 10
+    }
+  ],
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "ended": "2026-11-17T18:59:26.996Z",
+  "expectedRows": 80,
+  "pass": true,
+  "raw": "work/v5/CXV/films/V7-F-mesh-outer-assets/report.json",
+  "rows": 80,
+  "dimensionsMatch": true,
+  "outside": 0,
+  "maskDifferences": 0,
+  "decision": "Tool-only prerequisite passed; no runtime changes. Next retained-vertex/socket and GPU filtering/bounds parity before runtime decision."
+}

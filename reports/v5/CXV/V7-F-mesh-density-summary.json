@@ -1,0 +1,126 @@
+{
+  "utc": "2026-11-17T18:52:21.092Z",
+  "source": "9d545f8ae8329a0d6be55c5cd810844c877fe5d4",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "4b73facc0c5686725c2f5b375a1c383006a021701ef5bc11ca4ee9270f8200f9",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only32/24/20grid topology comparison. Same current art/material/UVs/clocks and motion formula; images not downsampled. Isolated1280x720 GPU RGBA differences on visible union, mesh interpolation at32grid vertices, exact arbitrary sockets/feet. Includes two forced diagonal face extrema for heroes. Separate warmed geometry timing at4xCPU. Changed topology is not exact-pixel parity or ordinary FPS.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "ended": "2026-11-17T18:52:35.481Z",
+  "pass": true,
+  "raw": "work/v5/CXV/films/V7-F-mesh-density/report.json",
+  "fixtures": [
+    {
+      "fixture": "wave3",
+      "rows": 68,
+      "timing": [
+        {
+          "segments": 32,
+          "vertices": 1089,
+          "triangles": 2048,
+          "medianMs": 217.19999999552965,
+          "cpuWeightBytes": 2221560
+        },
+        {
+          "segments": 24,
+          "vertices": 625,
+          "triangles": 1152,
+          "medianMs": 126.70000000298023,
+          "cpuWeightBytes": 1275000
+        },
+        {
+          "segments": 20,
+          "vertices": 441,
+          "triangles": 800,
+          "medianMs": 91.69999999552965,
+          "cpuWeightBytes": 899640
+        }
+      ],
+      "quality": [
+        {
+          "segments": 24,
+          "maxBodyPx": 3.4610233940384307,
+          "maxFacePx": 1.4403217466907419,
+          "maxGpuRmse": 10.156863369704611,
+          "arbitraryPointsExact": true
+        },
+        {
+          "segments": 20,
+          "maxBodyPx": 3.4775545922932998,
+          "maxFacePx": 1.75868903815551,
+          "maxGpuRmse": 12.67510111018094,
+          "arbitraryPointsExact": true
+        }
+      ]
+    },
+    {
+      "fixture": "boss",
+      "rows": 78,
+      "timing": [
+        {
+          "segments": 32,
+          "vertices": 1089,
+          "triangles": 2048,
+          "medianMs": 257.79999999701977,
+          "cpuWeightBytes": 2700720
+        },
+        {
+          "segments": 24,
+          "vertices": 625,
+          "triangles": 1152,
+          "medianMs": 153,
+          "cpuWeightBytes": 1550000
+        },
+        {
+          "segments": 20,
+          "vertices": 441,
+          "triangles": 800,
+          "medianMs": 109.29999999701977,
+          "cpuWeightBytes": 1093680
+        }
+      ],
+      "quality": [
+        {
+          "segments": 24,
+          "maxBodyPx": 3.4610233940384254,
+          "maxFacePx": 1.440321746690754,
+          "maxGpuRmse": 10.221914119842502,
+          "arbitraryPointsExact": true
+        },
+        {
+          "segments": 20,
+          "maxBodyPx": 3.9575907940621944,
+          "maxFacePx": 2.2680026637508703,
+          "maxGpuRmse": 13.543355985124755,
+          "arbitraryPointsExact": true
+        }
+      ]
+    }
+  ],
+  "interpretation": "Uniform24 grid saves about40% geometry sampling CPU but changes actual mesh interpolation by up to3.46screenpx/1.44facepx;20grid changes up to3.96/2.27px. Arbitrary sockets exact does not prove painted feet unchanged. No runtime integration. Explore removal of genuinely transparent outer grid cells while retaining32grid spacing and original UV/vertex coordinates.",
+  "review": {
+    "utc": "2026-11-17T18:56:10.179645+00:00",
+    "sheets": [
+      "boss-mochi.jpg",
+      "boss-soot.jpg",
+      "boss-clover.jpg",
+      "boss-panko.jpg"
+    ],
+    "dimensions": [
+      768,
+      320
+    ],
+    "columnSegments": [
+      32,
+      24,
+      20
+    ],
+    "inspectedOnce": true,
+    "decision": "Reject uniform coarsening; subtle hurt silhouette/feet and face interpolation differences are not required for an exact outer-cell alternative."
+  }
+}
