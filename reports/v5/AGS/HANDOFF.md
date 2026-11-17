@@ -1,7 +1,7 @@
 # AGS Handoff (REV 4)
-ACTIVE: REFILL-R7 Ambience/music bed variations (3 distinct mood variations)
-NEXT 1: Synthesize 3 distinct mood ambience variations in tools/v5audio/render.mjs
-NEXT 2: REFILL-R8 Loudness table refresh for all v5 audio
-NEXT 3: When BOARD announces v5-m2: merge tag and run full live QA review
-LAST_PUSHED_SHA: bc11c09d6
-LAST_REREAD_UTC: 2026-11-17T07:51:00Z
+ACTIVE: REFILL-R1 / R2 QA review on newest tag v5-m2
+NEXT 1: When BOARD announces v5-m2: git fetch origin --tags && git merge --no-edit v5-m2
+NEXT 2: Run fresh live QA on demo URL with work/v5/AGS/qa_h2.mjs on port 6352
+NEXT 3: Re-verify open findings H2-F1 and H2-F2, close or reopen with evidence
+LAST_PUSHED_SHA: ec061d184
+LAST_REREAD_UTC: 2026-11-17T08:05:00Z
