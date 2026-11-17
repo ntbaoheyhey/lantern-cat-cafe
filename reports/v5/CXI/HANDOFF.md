@@ -1,9 +1,9 @@
 # CXI handoff
 ACTIVE: I2, started 2026-11-17T05:32:30Z; six-hour box ends 11:32:30Z; NO FREEZE.
-NEXT 1: Merge verified AG4 owned delivery origin/ag/v5-sound-2026-11-17, run root suite, implement per-cue loader and scene-correct audio unlock.
+NEXT 1: Merge AG3 READY6181ba394 (ownership checked179 paths), root suite; integrate AVIF choices and await AG4 full144 variants.
 NEXT 2: Measure after audio; eliminate unused layered textures with CXV and reduce duplicate legacy image requests.
 NEXT 3: Complete bundle diet, M1/M2/M3, Fuji kit, then every REFILL item; waiting triggers next three refill items.
-Running PID: 17640 preview6301 (work/v5/CXI/jobs/i2-preview.log); AG4 merge suite completed exit0.
+Running PID:17640 preview6301 (work/v5/CXI/jobs/i2-preview.log); audio tests59/build/probe completed0.
 Last pushed SHA: a056308e7
 Last RULES re-read UTC: 2026-11-17T05:47:48Z
 Mailbox read cursors: INBOX-CXI20; DELIVERIES12; USER7.

@@ -5,6 +5,7 @@ import type {AudioManifest,CueDesign,Sample} from './cues';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {ALL_RANGED_PACKS} from './ranged-packs';
+import {loadV5AudioManifest} from './v5-manifest-loader';
 class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number,_time?:number){this.value=v;}cancelScheduledValues(){}}
 class Node {connect(n:Node){return n;}disconnect(){}}
 class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;loopStart=0;loopEnd=0;onended?:()=>void;start=vi.fn();stop(){this.onended?.();}}
@@ -35,6 +36,25 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>{vi.unstubAllGlobals();vi.restoreAllMocks();});
 describe('layered playback admission and variants',()=>{
+ it.each(['http','decode'])('falls back from Opus to M4A after %s failure',async failure=>{
+  const m={...fixture,packs:{test:{opus:'/test.opus',m4a:'/test.m4a',preferredFormat:'opus' as const}}};
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:!(failure==='http'&&url.endsWith('.opus')),arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);if(failure==='decode')vi.spyOn(Context.prototype,'decodeAudioData').mockRejectedValueOnce(Error('codec unavailable'));
+  const e=new AudioEngine();await e.unlock();e.play('hit.blunt');await vi.waitFor(()=>expect(e.hits.at(-1)?.result).toBe('played'));
+  expect(fetcher.mock.calls.map(c=>c[0])).toEqual(['/audio/manifest.json','/test.opus','/test.m4a']);
+ });
+ it('preloads delivered packs and keeps scheduled contacts synchronous with original variant metadata',async()=>{
+  const read=(path:string)=>JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio',path),'utf8'));
+  const m=read('manifest.json'),v5=read('v5/manifest.json');
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>url.includes('/v5/')?v5:m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);const e=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await e.unlock();e.setBattleRoster(['soot','mochi']);await e.preload('battle');
+  expect(e.diagnostics.packs).toContain('v5:legacy/ranged-ember-impact-0-0');
+  const fetched=fetcher.mock.calls.length;e.play('kit.ranged-ember.impact');
+  expect(Context.latest.sources).toHaveLength(1);expect(e.hits.at(-1)?.layers).toHaveLength(4);
+  e.play('skill.mochi.1.impact',{element:'holy'});expect(Context.latest.sources).toHaveLength(2);
+  expect(Context.latest.sources[1]!.start.mock.calls[0]!.slice(0,2)).toEqual([10,0]);
+  expect(fetcher.mock.calls).toHaveLength(fetched);
+ });
  const shippedForge=()=>{
   const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
   OfflineContext.instances=[];OfflineContext.failAt=-1;vi.stubGlobal('OfflineAudioContext',OfflineContext);
