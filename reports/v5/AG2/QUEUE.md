@@ -1,7 +1,9 @@
-# AG2 QUEUE
-- [x] S1 Setup
-- [x] T0 Calibration [time box 30 min]
-- [x] T1 Hero skill set [time box 3 h]
-- [x] T2 Enemy + boss set [time box 2 h]
-- [x] T3 Shared utility textures [time box 60 min]
-- [x] T4 Revisions [time box until FREEZE]
+# AG2 QUEUE (REV 3)
+- [ ] Q1 LEARN + STYLE BIBLE [time box 60 min]
+- [ ] Q2 Mochi full set, generation-first [time box 75 min]
+- [ ] Q3 Soot full set [time box 75 min]
+- [ ] Q4 Clover full set [time box 75 min]
+- [ ] Q5 Panko full set [time box 75 min]
+- [ ] Q6 Ultimates: ult-charge + ult-release per hero [time box 2 h]
+- [ ] Q7 Yarn-giant boss: swirl, shockwave, crack, sparks x3, dissolve [time box 2 h]
+- [ ] Q8 Act on CXV/CXI/AG1 review REQs in INBOX-AG2.md [time box 60 min]
