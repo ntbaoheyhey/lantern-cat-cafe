@@ -1,0 +1,1240 @@
+{
+  "experiment": "static-vertex",
+  "baselineModuleSha256": "ae82b1fd03bfc1b035c2dda1ca0f713aff8b4b178064325706c78477dc445445",
+  "candidateModuleSha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727",
+  "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11",
+  "utc": "2026-11-17T21:07:07.092Z",
+  "source": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "configSha256": "4ba0ff9c925aad56b78392fe7a42fb86e751081251bbc326ea1629254ac07e44",
+  "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+  "artifacts": [
+    {
+      "mode": "baseline",
+      "dist": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/baseline",
+      "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+      "files": 3763,
+      "bytes": 287376765,
+      "transformed": 1
+    },
+    {
+      "mode": "native",
+      "dist": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/native",
+      "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+      "files": 3763,
+      "bytes": 287378081,
+      "transformed": 0
+    }
+  ],
+  "staticAssetsExact": true,
+  "order": [
+    "baseline",
+    "native",
+    "native",
+    "baseline",
+    "baseline",
+    "native"
+  ],
+  "pass": true,
+  "hardware": "Apple M3 Pro",
+  "timingWindows": "Frame/render headline metrics exclude first2000ms; startup and wholeRun metrics are also reported. Style/layout totals span the full32s measurement plus surrounding CDP calls. Elapsed times are retained per trial.",
+  "method": "Two local production artifacts from identical source/config/assets;a single asserted source-module transform creates the alternate build, with identical non-script assets. Sequential alternating32s1x/4xCPU trials,normal game loop and seeded boss fixture. No behavioral browser overrides. Median across3trials per mode/rate. Fixture progression is not account progression;4x is a stress proxy.",
+  "limits": "Local6311/6312 production-bundle evidence only;CXI6301 independent acceptance pending. No hosting/deployment. Source assets and judge build untouched.",
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "trials": 3,
+      "wholeRunFrameP95Ms": 16.799999999999272,
+      "wholeRunOver50": 0,
+      "startupFrameP95Ms": 16.800000000000182,
+      "startupCpuMaxMs": 41.30000000447035,
+      "samples": 1800,
+      "frameMedianMs": 16.69999999999891,
+      "frameP95Ms": 16.799999999999272,
+      "over50": 0,
+      "submitMedianMs": 3,
+      "styleTotalMs": 620.147,
+      "layoutTotalMs": 102.774,
+      "focusMedianMs": 5.200000002980232,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 1,
+      "mode": "native",
+      "trials": 3,
+      "wholeRunFrameP95Ms": 16.799999999999272,
+      "wholeRunOver50": 0,
+      "startupFrameP95Ms": 16.799999999999727,
+      "startupCpuMaxMs": 38.599999994039536,
+      "samples": 1800,
+      "frameMedianMs": 16.69999999999891,
+      "frameP95Ms": 16.799999999999272,
+      "over50": 0,
+      "submitMedianMs": 2.7999999970197678,
+      "styleTotalMs": 617.407,
+      "layoutTotalMs": 102.838,
+      "focusMedianMs": 5.300000004470348,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "trials": 3,
+      "wholeRunFrameP95Ms": 49.90000000000009,
+      "wholeRunOver50": 18,
+      "startupFrameP95Ms": 66.69999999999982,
+      "startupCpuMaxMs": 130.69999999552965,
+      "samples": 1317,
+      "frameMedianMs": 16.700000000000728,
+      "frameP95Ms": 33.400000000001455,
+      "over50": 12,
+      "submitMedianMs": 13.799999997019768,
+      "styleTotalMs": 2258.431,
+      "layoutTotalMs": 374.61699999999996,
+      "focusMedianMs": 24.599999994039536,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "native",
+      "trials": 3,
+      "wholeRunFrameP95Ms": 33.400000000001455,
+      "wholeRunOver50": 18,
+      "startupFrameP95Ms": 66.60000000000036,
+      "startupCpuMaxMs": 133,
+      "samples": 1382,
+      "frameMedianMs": 16.700000000000728,
+      "frameP95Ms": 33.400000000001455,
+      "over50": 13,
+      "submitMedianMs": 12.600000001490116,
+      "styleTotalMs": 2350.579,
+      "layoutTotalMs": 400.497,
+      "focusMedianMs": 25.100000001490116,
+      "actions": 26,
+      "ultimates": 6
+    }
+  ],
+  "trials": [
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32001.5,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.799999999999955,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 13.800000004470348,
+          "p99": 19.599999994039536,
+          "max": 38.69999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000291,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 4.600000001490116,
+          "p99": 14.300000004470348,
+          "max": 38.69999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 0,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T20:59:55.350Z",
+      "ended": "2026-11-17T21:01:05.631Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.5,
+        "p99": 12.600000001490116,
+        "max": 20
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2758,
+        "LayoutDuration": 0.103788,
+        "RecalcStyleCount": 5689,
+        "RecalcStyleDuration": 0.620147,
+        "TaskDuration": 9.850319
+      },
+      "focusEntryCpuMs": {
+        "median": 5.200000002980232,
+        "p95": 8.5,
+        "p99": 8.5,
+        "max": 8.5
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 14.5,
+        "p95": 18.30000000447035,
+        "p99": 18.30000000447035,
+        "max": 18.30000000447035
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/0-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32029.70000000298,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000036,
+          "p99": 166.59999999999945,
+          "max": 166.59999999999945
+        },
+        "submitCpuMs": {
+          "median": 15.899999998509884,
+          "p95": 47.79999999701977,
+          "p99": 127.10000000149012,
+          "max": 127.10000000149012
+        },
+        "over33": 12,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1383,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.5,
+          "p99": 66.60000000000036,
+          "max": 166.59999999999945
+        },
+        "submitCpuMs": {
+          "median": 13.899999998509884,
+          "p95": 21.5,
+          "p99": 44.70000000298023,
+          "max": 127.10000000149012
+        },
+        "over33": 69,
+        "over50": 22
+      },
+      "index": 0,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T20:59:55.350Z",
+      "ended": "2026-11-17T21:01:05.631Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1319,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999854,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.799999997019768,
+        "p95": 21.100000001490116,
+        "p99": 43,
+        "max": 72.70000000298023
+      },
+      "over33": 57,
+      "over50": 17,
+      "layout": {
+        "LayoutCount": 1983,
+        "LayoutDuration": 0.361437,
+        "RecalcStyleCount": 4130,
+        "RecalcStyleDuration": 2.241748,
+        "TaskDuration": 31.881892999999998
+      },
+      "focusEntryCpuMs": {
+        "median": 24.599999994039536,
+        "p95": 30.100000001490116,
+        "p99": 30.100000001490116,
+        "max": 30.100000001490116
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 47.900000005960464,
+        "p95": 66.79999999701977,
+        "p99": 66.79999999701977,
+        "max": 66.79999999701977
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/0-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32002.10000000149,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.100000001490116,
+          "p95": 13.800000004470348,
+          "p99": 21,
+          "max": 38.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.399999998509884,
+          "p99": 13.899999998509884,
+          "max": 38.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 1,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:01:05.914Z",
+      "ended": "2026-11-17T21:02:14.897Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.8000000044703484,
+        "p95": 4.300000004470348,
+        "p99": 12.5,
+        "max": 20.700000002980232
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2757,
+        "LayoutDuration": 0.103392,
+        "RecalcStyleCount": 5689,
+        "RecalcStyleDuration": 0.624464,
+        "TaskDuration": 9.584345
+      },
+      "focusEntryCpuMs": {
+        "median": 5.399999998509884,
+        "p95": 6,
+        "p99": 6,
+        "max": 6
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 11.700000002980232,
+        "p95": 18.799999997019768,
+        "p99": 18.799999997019768,
+        "max": 18.799999997019768
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/1-native/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32036.39999999851,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 66,
+        "frameMs": {
+          "median": 16.799999999999727,
+          "p95": 66.70000000000027,
+          "p99": 150.10000000000036,
+          "max": 150.10000000000036
+        },
+        "submitCpuMs": {
+          "median": 15,
+          "p95": 50.100000001490116,
+          "p99": 126.30000000447035,
+          "max": 126.30000000447035
+        },
+        "over33": 11,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1431,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.69999999999982,
+          "max": 150.10000000000036
+        },
+        "submitCpuMs": {
+          "median": 13,
+          "p95": 20.099999994039536,
+          "p99": 44.899999998509884,
+          "max": 126.30000000447035
+        },
+        "over33": 63,
+        "over50": 18
+      },
+      "index": 1,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:01:05.914Z",
+      "ended": "2026-11-17T21:02:14.897Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1365,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.10000000000218,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 12.899999998509884,
+        "p95": 19.599999994039536,
+        "p99": 43.100000001490116,
+        "max": 74.70000000298023
+      },
+      "over33": 52,
+      "over50": 13,
+      "layout": {
+        "LayoutCount": 2051,
+        "LayoutDuration": 0.400497,
+        "RecalcStyleCount": 4279,
+        "RecalcStyleDuration": 2.350579,
+        "TaskDuration": 31.866719
+      },
+      "focusEntryCpuMs": {
+        "median": 25.100000001490116,
+        "p95": 27.69999999552965,
+        "p99": 27.69999999552965,
+        "max": 27.69999999552965
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 47.600000001490116,
+        "p95": 72.70000000298023,
+        "p99": 72.70000000298023,
+        "max": 72.70000000298023
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/1-native/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32004.60000000149,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.1999999955296516,
+          "p95": 15,
+          "p99": 22.80000000447035,
+          "max": 40.600000001490116
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.399999998509884,
+          "p99": 14.399999998509884,
+          "max": 40.600000001490116
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 2,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:02:15.180Z",
+      "ended": "2026-11-17T21:03:24.200Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1801,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.299999997019768,
+        "p99": 11.799999997019768,
+        "max": 22.80000000447035
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2753,
+        "LayoutDuration": 0.101101,
+        "RecalcStyleCount": 5683,
+        "RecalcStyleDuration": 0.614168,
+        "TaskDuration": 9.546742
+      },
+      "focusEntryCpuMs": {
+        "median": 4.699999995529652,
+        "p95": 5.699999995529652,
+        "p99": 5.699999995529652,
+        "max": 5.699999995529652
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 11.799999997019768,
+        "p95": 19.200000002980232,
+        "p99": 19.200000002980232,
+        "max": 19.200000002980232
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/2-native/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32015.20000000298,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 66,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.60000000000036,
+          "p99": 166.70000000000027,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 15.100000001490116,
+          "p95": 49.5,
+          "p99": 133,
+          "max": 133
+        },
+        "over33": 13,
+        "over50": 6
+      },
+      "wholeRun": {
+        "samples": 1456,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000036,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 12.700000002980232,
+          "p95": 19.69999999552965,
+          "p99": 42.600000001490116,
+          "max": 133
+        },
+        "over33": 60,
+        "over50": 20
+      },
+      "index": 2,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:02:15.180Z",
+      "ended": "2026-11-17T21:03:24.200Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1390,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.60000000000036,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 12.600000001490116,
+        "p95": 19.299999997019768,
+        "p99": 42.29999999701977,
+        "max": 64.20000000298023
+      },
+      "over33": 47,
+      "over50": 14,
+      "layout": {
+        "LayoutCount": 2079,
+        "LayoutDuration": 0.393919,
+        "RecalcStyleCount": 4343,
+        "RecalcStyleDuration": 2.348595,
+        "TaskDuration": 31.821675
+      },
+      "focusEntryCpuMs": {
+        "median": 22.399999998509884,
+        "p95": 30.799999997019768,
+        "p99": 30.799999997019768,
+        "max": 30.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 48.29999999701977,
+        "p95": 64.20000000298023,
+        "p99": 64.20000000298023,
+        "max": 64.20000000298023
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/2-native/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32000.39999999851,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 15.5,
+          "p99": 18.200000002980232,
+          "max": 41.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 4.600000001490116,
+          "p99": 14.599999994039536,
+          "max": 41.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 3,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:03:24.484Z",
+      "ended": "2026-11-17T21:04:33.001Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000000728,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.5,
+        "p99": 12.5,
+        "max": 21.399999998509884
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2752,
+        "LayoutDuration": 0.10205,
+        "RecalcStyleCount": 5683,
+        "RecalcStyleDuration": 0.61327,
+        "TaskDuration": 9.932879999999999
+      },
+      "focusEntryCpuMs": {
+        "median": 4.5999999940395355,
+        "p95": 6,
+        "p99": 6,
+        "max": 6
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 11.200000002980232,
+        "p95": 17.80000000447035,
+        "p99": 17.80000000447035,
+        "max": 17.80000000447035
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/3-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32025,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 62,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.69999999999982,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 16.399999998509884,
+          "p95": 49.399999998509884,
+          "p99": 130.69999999552965,
+          "max": 130.69999999552965
+        },
+        "over33": 13,
+        "over50": 8
+      },
+      "wholeRun": {
+        "samples": 1366,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.900000000001455,
+          "p99": 66.69999999999982,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 13.900000005960464,
+          "p95": 21.399999998509884,
+          "p99": 43.899999998509884,
+          "max": 130.69999999552965
+        },
+        "over33": 74,
+        "over50": 18
+      },
+      "index": 3,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:03:24.484Z",
+      "ended": "2026-11-17T21:04:33.001Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1304,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.100000000000364,
+        "max": 100.10000000000218
+      },
+      "submitCpuMs": {
+        "median": 13.899999998509884,
+        "p95": 20.700000002980232,
+        "p99": 43.100000001490116,
+        "max": 78.79999999701977
+      },
+      "over33": 61,
+      "over50": 10,
+      "layout": {
+        "LayoutCount": 1962,
+        "LayoutDuration": 0.379,
+        "RecalcStyleCount": 4075,
+        "RecalcStyleDuration": 2.258431,
+        "TaskDuration": 31.883799
+      },
+      "focusEntryCpuMs": {
+        "median": 23.700000002980232,
+        "p95": 26.200000002980232,
+        "p99": 26.200000002980232,
+        "max": 26.200000002980232
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 51,
+        "p95": 63.80000000447035,
+        "p99": 63.80000000447035,
+        "max": 63.80000000447035
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/3-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32001.40000000596,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.19999999999982,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.1999999955296516,
+          "p95": 15.299999997019768,
+          "p99": 18.700000002980232,
+          "max": 41.30000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 4.600000001490116,
+          "p99": 14.300000004470348,
+          "max": 41.30000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 4,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:04:33.289Z",
+      "ended": "2026-11-17T21:05:42.349Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.5999999940395355,
+        "p99": 12.800000004470348,
+        "max": 21.100000001490116
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2750,
+        "LayoutDuration": 0.102774,
+        "RecalcStyleCount": 5681,
+        "RecalcStyleDuration": 0.62019,
+        "TaskDuration": 9.933755
+      },
+      "focusEntryCpuMs": {
+        "median": 5.4000000059604645,
+        "p95": 6.399999998509884,
+        "p99": 6.399999998509884,
+        "max": 6.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 11.5,
+        "p95": 20.19999999552965,
+        "p99": 20.19999999552965,
+        "max": 20.19999999552965
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/4-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32035.10000000149,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 33.29999999999973,
+          "p95": 66.69999999999982,
+          "p99": 149.9000000000001,
+          "max": 149.9000000000001
+        },
+        "submitCpuMs": {
+          "median": 16.399999998509884,
+          "p95": 41,
+          "p99": 134.39999999850988,
+          "max": 134.39999999850988
+        },
+        "over33": 12,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1381,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.90000000000009,
+          "p99": 66.69999999999982,
+          "max": 149.9000000000001
+        },
+        "submitCpuMs": {
+          "median": 13.799999997019768,
+          "p95": 21.299999997019768,
+          "p99": 44.19999999552965,
+          "max": 134.39999999850988
+        },
+        "over33": 77,
+        "over50": 17
+      },
+      "index": 4,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:04:33.289Z",
+      "ended": "2026-11-17T21:05:42.349Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "7c58cc24950599a6847c1a420670e2736654d4cf0defc9180a7fbe33fdf33c77",
+        "artifactMode": "baseline",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1317,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.5,
+        "p99": 50.10000000000218,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.700000002980232,
+        "p95": 20.799999997019768,
+        "p99": 43.19999999552965,
+        "max": 65.59999999403954
+      },
+      "over33": 65,
+      "over50": 12,
+      "layout": {
+        "LayoutCount": 1980,
+        "LayoutDuration": 0.374617,
+        "RecalcStyleCount": 4123,
+        "RecalcStyleDuration": 2.267058,
+        "TaskDuration": 31.902464
+      },
+      "focusEntryCpuMs": {
+        "median": 24.600000001490116,
+        "p95": 29.399999998509884,
+        "p99": 29.399999998509884,
+        "max": 29.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 53.100000001490116,
+        "p95": 65.59999999403954,
+        "p99": 65.59999999403954,
+        "max": 65.59999999403954
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/4-baseline/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32001.39999999851,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.800000000000182,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 13.899999998509884,
+          "p99": 20,
+          "max": 38.599999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.399999998509884,
+          "p99": 13.899999998509884,
+          "max": 38.599999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "index": 5,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:05:42.632Z",
+      "ended": "2026-11-17T21:06:51.683Z",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.299999997019768,
+        "p99": 12.099999994039536,
+        "max": 21.100000001490116
+      },
+      "over33": 0,
+      "over50": 0,
+      "layout": {
+        "LayoutCount": 2758,
+        "LayoutDuration": 0.102838,
+        "RecalcStyleCount": 5688,
+        "RecalcStyleDuration": 0.617407,
+        "TaskDuration": 9.470683
+      },
+      "focusEntryCpuMs": {
+        "median": 5.300000004470348,
+        "p95": 5.800000004470348,
+        "p99": 5.800000004470348,
+        "max": 5.800000004470348
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 11.5,
+        "p95": 18.5,
+        "p99": 18.5,
+        "max": 18.5
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/5-native/report.json"
+    },
+    {
+      "hardware": "Apple M3 Pro",
+      "elapsedMs": 32020,
+      "steadyWindowStartMs": 2000,
+      "startup": {
+        "samples": 67,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.59999999999991,
+          "p99": 166.70000000000027,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 14.799999997019768,
+          "p95": 45.70000000298023,
+          "p99": 133.10000000149012,
+          "max": 133.10000000149012
+        },
+        "over33": 11,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1449,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000036,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 12.699999995529652,
+          "p95": 21,
+          "p99": 44.399999998509884,
+          "max": 133.10000000149012
+        },
+        "over33": 58,
+        "over50": 18
+      },
+      "index": 5,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "utc": "2026-11-17T21:05:42.632Z",
+      "ended": "2026-11-17T21:06:51.683Z",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "54f3985f2819515be5d9935167fe1a0e6cbadeb4fd8c56cb6e9da85296fe0a7a",
+        "artifactMode": "native",
+        "buildSource": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "a8da848254a580889ca758ab3ed01200e2ccd31c2e0b1c478aa2ee3dfaf7ea1e",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "samples": 1382,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.10000000000218,
+        "max": 116.59999999999854
+      },
+      "submitCpuMs": {
+        "median": 12.599999994039536,
+        "p95": 20.5,
+        "p99": 43.399999998509884,
+        "max": 77.5
+      },
+      "over33": 47,
+      "over50": 13,
+      "layout": {
+        "LayoutCount": 2071,
+        "LayoutDuration": 0.430995,
+        "RecalcStyleCount": 4315,
+        "RecalcStyleDuration": 2.356374,
+        "TaskDuration": 31.81108
+      },
+      "focusEntryCpuMs": {
+        "median": 25.600000001490116,
+        "p95": 30.399999998509884,
+        "p99": 30.399999998509884,
+        "max": 30.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 45,
+        "p95": 77.5,
+        "p99": 77.5,
+        "max": 77.5
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-native/production/trials/5-native/report.json"
+    }
+  ]
+}

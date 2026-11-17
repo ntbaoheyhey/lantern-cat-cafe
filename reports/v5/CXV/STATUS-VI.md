@@ -27,3 +27,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T20:50:44Z V-F: 6 lượt thử đủ; CPU render giảm 2.9→2.7ms và 13.8→12.8ms ở4x; p95 chưa cải thiện. Chưa áp dụng runtime. Wake15phút vẫnACTIVE.
 
 2026-11-17T20:57:42.241486+00:00 V-F: mã native giữ nguyên910trạng thái lưới và380ảnh GPU;42kiểm thử vàtypecheckđạt.2ảnh mới đã xem một lần. Đang kiểm chứng hiệu năng bản production, chưa gửiREADY.
+
+2026-11-17T21:10:34.090214+00:00 V-F native:6lượt production sạch,12ảnh đã đo/4ảnh xem một lần;CPU render3→2.8ms và13.8→12.6ms4x. p95ổn định không đổi16.8/33.4ms;startup4xvẫn giật.42test/typecheckđạt,910trạng thái/380GPUtrùng. Chờ CXI kiểm độc lập;wake15phút vẫnACTIVE,khôngxoá.
