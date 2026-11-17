@@ -2,6 +2,8 @@ import {useEffect,useRef} from 'react';
 import * as T from 'three';
 import {loadSpineActor,type SpineActor} from '../spine/assets';
 import {unitCore} from '../stage/core';
+import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
+import {isCraftOwner} from '../vfx-craft/encounter';
 import {VICTORY_GESTURES,victoryPose} from './victory';
 import {artPropsA6} from '../ui-v3/art-a6';
 import './victory.css';
@@ -11,7 +13,8 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
  useEffect(()=>{
   const element=host.current!;let renderer:T.WebGLRenderer;
   try{renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});}catch{return;}
-  const scene=new T.Scene(),camera=new T.OrthographicCamera(-1,1,1,0,.1,1000),actors=new Map<number,SpineActor>();
+  const scene=new T.Scene(),camera=new T.OrthographicCamera(-1,1,1,0,.1,1000),actors=new Map<number,SpineActor>(),drawings=new Map<number,DrawnPoses>();
+  delete element.dataset.ready;delete element.dataset.loadError;
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=T.SRGBColorSpace;camera.position.z=100;
   renderer.domElement.setAttribute('aria-hidden','true');element.append(renderer.domElement);
   let disposed=false,raf=0,start=0,width=0,height=0;
@@ -24,6 +27,7 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
    for(const [i,actor] of actors){
     const cat=cats[i]!,core=unitCore(cat.id,actor.bounds).world,scale=Math.min(height*.43/core.height,width*.34/actor.bounds.width),pose=victoryPose(cat.id,seconds+i*.12,calm);
     actor.sample(cat.alive?'victory':'idle','result',calm?actor.duration('victory')*.65:seconds%actor.duration(cat.alive?'victory':'idle'),0,camera,calm);
+    drawings.get(i)?.deform(cat.alive?'victory':'idle',seconds,calm);
     const b=actor.bounds,footX=(b.x+b.width/2)*scale,footY=core.y*scale;
     const sx=cat.alive?pose.sx:1,sy=cat.alive?pose.sy:1,angle=cat.alive?pose.angle:0,cos=Math.cos(-angle),sin=Math.sin(-angle);
     actor.root.scale.set(scale*sx,scale*sy,1);actor.root.rotation.z=-angle;
@@ -34,7 +38,15 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
    }
    renderer.render(scene,camera);raf=requestAnimationFrame(draw);
   };
-  cats.forEach((cat,i)=>void loadSpineActor(cat.id).then(actor=>{if(disposed){actor.dispose();return;}actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(actors.size===cats.length);}).catch(()=>{element.dataset.loadError='true';}));
+  cats.forEach((cat,i)=>void loadSpineActor(cat.id,undefined,{deferNativePixels:isCraftOwner(cat.id)}).then(async actor=>{
+   try{
+    if(disposed){actor.dispose();return;}
+    const set=isCraftOwner(cat.id)&&actor.source!=='designer'&&actor.source!=='sequence'?await loadDrawnPoseSet(cat.id):undefined;
+    if(disposed){actor.dispose();return;}
+    if(set)drawings.set(i,new DrawnPoses(actor,set));
+    actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(actors.size===cats.length);element.dataset.drawn=String(drawings.size);
+   }catch(error){actor.dispose();throw error;}
+  }).catch(()=>{if(!disposed)element.dataset.loadError='true';}));
   raf=requestAnimationFrame(draw);
   return()=>{disposed=true;cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
  // Cat identity, survival and reduced motion are the complete rendering inputs.

@@ -1,0 +1,12 @@
+# V7 E — status application and victory crew
+Candidate READY; local production acceptance remains CXI-owned.
+
+Status application uses a bounded600ms local badge for newly present conditions, stack gains and later contact refreshes. Scald/flame,Bitter/flask,Drowsy/crescent,Tangle-or-Brittle/fracture differ in shape. Drowsy is signature weakening and Tangle/Brittle break pressure; no slow/skip-turn/body-tint behavior was added. Persistent foot glyphs and HUD truth remain. At most2 transient accents per unit; dead/removed units and battle/clock resets clear state. Path2D shapes are cached; no texture or WebGL draw call added. Existing shield pulse remains600ms.
+
+VictoryCrew now uses the same drawn art and living-motion deformation as battle for craft-owned units, retaining designer/sequence precedence. A local quiet gradient and four small floor shadows give cats priority. Diagnostic canvas isolation proved the prior gold flare belongs to shell/screen-skin.css radial-burst.webp; no shell/UI-v3 source was edited. All4 cats loaded drawn poses. Native fallback remains available if WebGL is unavailable; loading errors retain the existing image fallback.
+
+Study14:58–15:14UTC: /Users/bao/taskbar-hero-mailbox/LEARN/CXV-status-outcome-clarity-v7-20261117.md. Chinese/English Riot ASU/VALORANT sources and W3C shape+color guidance; actual fixtures, canvas isolation and quiet-backing experiment. Browser-only diagnostic golden-pixel threshold14648→2796 in461x245 crop, not a contrast-ratio/occlusion metric.
+
+Validation:15 tests passed(status-cues,clarity,secondary-motion); web typecheck EXIT0. Own1280x720 candidate capture2026-11-17T15:16:45.759Z at http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1. Source306ec178c+runtimePatch9d2512d97420ed7033b81e2f4d1b4613bc0f0c610e37fa6cfd9f42cd9e46be80; new helper/test hashes in report. Four1024x576 sheets measured and inspected once; zero page errors. Four status accents visible at120/400ms and absent by1200ms in both modes; persistent glyphs survive. Reduced result frames1/3 have zero changed channels and no confetti. Normal victory is rule-resolved level6 wave1,party win round24; explicit fixture, not ordinary progression/reward evidence.
+
+Evidence: /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-candidate-r1/report.json; diagnostic under V7-E-victory-diagnostic. Tests/typecheck logs under work/v5/CXV/jobs/status-tests.log and ve-typecheck.log.
