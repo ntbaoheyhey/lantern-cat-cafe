@@ -1,6 +1,6 @@
 # CXV V7 queue — desktop judge first three minutes
-- [ ] V-C ACTIVE:boss arrival+recipient net capture,inspect,test,typecheck; READY.
-- [ ] V-A3:four-hero facial-depth yaw/tilt+expression atop idle; friend600ms side-by-side table.
+- [ ] V-C candidate READY:V7-C.md,16/16+tsc0,fresh4arrival+4effect sheets; BLOCKED-ON CXI green for integrated confirmation.
+- [ ] V-A3 ACTIVE:four-hero facial-depth yaw/tilt+expression atop idle; friend600ms side-by-side table.
 - [ ] V-B2:distinct readable four-hero ultimates; answer CXI6700ms voice lead-in with measured change or reasoned no.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
 - [ ] V-E:status visuals,outcome/victory,boss entrance worth filming.
