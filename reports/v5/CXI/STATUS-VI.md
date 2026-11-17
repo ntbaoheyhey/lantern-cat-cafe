@@ -1,5 +1,5 @@
 # CXI — desktop 17/11/2026 UTC
-Bản kiểm tra v5-m1.10; ứng dụng `2ee12c29e9980926b7c75de0111b5c78dbfd24fc`; index `34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa`. Xuất bản tag sau commit tài liệu; BOARD xác nhận remote.
+Bản xanh v5-m1.10; ứng dụng `2ee12c29e9980926b7c75de0111b5c78dbfd24fc`; index `34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa`. Tag 659d0d6f7 đã push và xác minh remote; BOARD đã cập nhật.
 URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
 Full suite: 5.277 passed / 11 skipped / hai expected failures; tổng 5.290, gồm 2.977 web. Chín bước pipeline và build/typecheck đạt.
 Number: 171 glyph / 9 atlas khớp; 171→38 readbacks; atlas 4× 62,4→25,5 ms. Contour: 130 bounds/root/GPU và 910 motion / 130 GPU khớp.
