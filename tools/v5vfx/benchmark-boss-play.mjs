@@ -19,12 +19,17 @@ try{
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   if(process.env.CXV_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start');}
-  const run=await page.evaluate(async rate=>{
+  const run=await page.evaluate(async ({rate,methodProfile})=>{
    const s=window.__depthScene,m=window.__depthReview,originalRender=s.render,originalBefore=s.beforeFrame;
    const intervals=[],cpu=[],calls=[],textures=[],plans=[],slowFrames=[],seen=new Set();
    const allIntervals=[],allCpu=[],startupIntervals=[],startupCpu=[];let firstRenderLatencyMs=null;
    const initial={round:m.battle.round,actors:m.battle.actors.map(a=>({id:a.id,hp:a.hp,charge:a.charge})),log:m.battle.log.length};
    let last=0,rafNow=0;const start=performance.now();
+   const methodCosts={startup:{},steady:{}},restores=[];
+   if(methodProfile){
+    const instrument=(object,key,label)=>{if(!object||typeof object[key]!=='function')return;const original=object[key];object[key]=function(...args){const begin=performance.now();try{return original.apply(this,args);}finally{const elapsed=performance.now()-begin,window=methodCosts[begin-start<2000?'startup':'steady'],row=window[label]??(window[label]={calls:0,totalMs:0,maxMs:0});row.calls++;row.totalMs+=elapsed;row.maxMs=Math.max(row.maxMs,elapsed);}};restores.push(()=>object[key]=original);};
+    for(const [,e]of s.actors){instrument(e.actor,'sample','actor.sample');instrument(e.actor?.mesh,'pose','native.pose');instrument(e.craftPose,'deform','craft.deform');instrument(e.craftPose?.drawing,'sample','drawing.sample');}
+   }
    s.beforeFrame=function(now){rafNow=now;return originalBefore?.call(this,now);};
    s.render=function(...args){
     const at=performance.now();const result=originalRender.apply(this,args),cost=performance.now()-at;
@@ -38,11 +43,11 @@ try{
    };
    cancelAnimationFrame(s.raf);m.paused=false;m.notify(false);s.raf=requestAnimationFrame(s.loop);
    await new Promise(resolve=>setTimeout(resolve,32000));
-   const elapsedMs=performance.now()-start;m.paused=true;m.notify(false);cancelAnimationFrame(s.raf);s.render=originalRender;s.beforeFrame=originalBefore;
+   const elapsedMs=performance.now()-start;m.paused=true;m.notify(false);cancelAnimationFrame(s.raf);s.render=originalRender;s.beforeFrame=originalBefore;for(const restore of restores)restore();
    const stats=v=>{const a=[...v].sort((x,y)=>x-y);return{median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],p99:a[Math.floor(a.length*.99)],max:a.at(-1)};};
    const windowStats=(frames,submit)=>({samples:frames.length,frameMs:stats(frames),submitCpuMs:stats(submit),over33:frames.filter(v=>v>33.5).length,over50:frames.filter(v=>v>50.5).length});
-   return{rate,elapsedMs,samples:intervals.length,frameMs:stats(intervals),submitCpuMs:stats(cpu),over33:intervals.filter(v=>v>33.5).length,over50:intervals.filter(v=>v>50.5).length,firstRenderLatencyMs,wholeRun:windowStats(allIntervals,allCpu),startup:windowStats(startupIntervals,startupCpu),steadyWindowStartMs:2000,calls:stats(calls),textures:stats(textures),slowFrames,initial,final:{round:m.battle.round,actors:m.battle.actors.map(a=>({id:a.id,hp:a.hp,charge:a.charge})),log:m.battle.log.length,result:m.battle.result,screen:m.screen},plans};
-  },rate);
+   return{rate,methodCosts:methodProfile?methodCosts:undefined,methodCostsNote:methodProfile?'Inclusive wall CPU timings with wrapper overhead; nested methods overlap. Use for attribution only.':undefined,elapsedMs,samples:intervals.length,frameMs:stats(intervals),submitCpuMs:stats(cpu),over33:intervals.filter(v=>v>33.5).length,over50:intervals.filter(v=>v>50.5).length,firstRenderLatencyMs,wholeRun:windowStats(allIntervals,allCpu),startup:windowStats(startupIntervals,startupCpu),steadyWindowStartMs:2000,calls:stats(calls),textures:stats(textures),slowFrames,initial,final:{round:m.battle.round,actors:m.battle.actors.map(a=>({id:a.id,hp:a.hp,charge:a.charge})),log:m.battle.log.length,result:m.battle.result,screen:m.screen},plans};
+  },{rate,methodProfile:process.env.CXV_METHOD_PROFILE==='1'});
   if(process.env.CXV_PROFILE){const {profile}=await cdp.send('Profiler.stop');await writeFile(resolve(out,'cpu.cpuprofile'),JSON.stringify(profile));}
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));

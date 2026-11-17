@@ -4,7 +4,7 @@
 - [x] V-B2 m1.7 production4hero fixtures confirmed16:23Z;4freshsheets/0errors;fixedTiming/leadIn0/contact1100/duration2200;ordinary32s loop26actoractions+3status,6ults/all4heroes;leadIn0,3status omitvoice.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
 - [x] V-E m1.7 independently confirmed16:23Z;4freshsheets/0errors;status120/400ms+expiry,4drawncrew,reducedPNGexact/confetti0.
-- [ ] V-F milestone accepted by CXI15:35UTC (261baff27→01f6fa17e);lower-body correction accepted16:03UTC;ordinary boss-play startup/4x stress remains.
+- [ ] V-F milestone accepted by CXI15:35UTC (261baff27→01f6fa17e);lower-body correction accepted16:03UTC;scalar50ec14e73 independently accepted16:41Z;spatial0d0e59494 READY with mixed startup result;ordinary4x stress remains.
 - CANCELLED mobile/390px scope:owner desktop-only instruction.
 - CANCELLED unassigned bulk texture regeneration:V7 one-at-a-time audit first.
 
