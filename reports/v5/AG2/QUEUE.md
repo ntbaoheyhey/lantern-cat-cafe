@@ -3,5 +3,5 @@
 - [x] T0 Calibration [time box 30 min]
 - [x] T1 Hero skill set [time box 3 h]
 - [x] T2 Enemy + boss set [time box 2 h]
-- [ ] T3 Shared utility textures [time box 60 min]
+- [x] T3 Shared utility textures [time box 60 min]
 - [ ] T4 Revisions [time box until FREEZE]
