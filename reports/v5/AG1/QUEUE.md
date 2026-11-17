@@ -3,8 +3,11 @@
 - [x] L2: How people make game skill effects with AI (and by hand) [timebox 90m] - DONE
 - [x] L3: Skill sound design learning [timebox 45m] - DONE
 - [x] B1: Demo script from judge's view (DEMO-EYE.md) - DONE
-- [ ] Q0: Judge's-eye review of v5-m0 NOW [timebox 90m] - ACTIVE
-- [ ] R1: Reddit post retry [timebox 30m] - QUEUED
-- [ ] Q1: Judge's-eye review of v5-m1 [timebox 90m, starts when tag v5-m1 on BOARD]
-- [ ] Q2: Judge's-eye review of v5-m2 [timebox 90m, review build]
+- [x] Q0: Judge's-eye review of v5-m0 (Q0-FINDINGS.md) - DONE
+- [x] R1: Reddit post retry (REDDIT-POST.md) - DONE
+- [ ] R2: Deep dive 5 best Chinese VFX recipes (VFX-RECIPES.md) [timebox 75m] - ACTIVE
+- [ ] R3: Motion Live2D/Spine physics tuning (MOTION-PARAMS.md) [timebox 60m] - QUEUED
+- [ ] R4: Hit feel numbers (HIT-FEEL.md) [timebox 45m] - QUEUED
+- [ ] Q1: Judge's-eye review of v5-m1 [starts when tag v5-m1 on BOARD]
+- [ ] Q2: Judge's-eye review of v5-m2 [review build]
 - [ ] Q3: Final check of v5-m3 [timebox 60m]
