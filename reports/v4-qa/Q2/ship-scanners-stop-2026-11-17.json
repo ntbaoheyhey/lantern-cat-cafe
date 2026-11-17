@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-17T03:08:47.198063+00:00",
+  "reason": "Complete the owner request to save handoff and stop; previously missed SHIP background scans.",
+  "roots": {
+    "8488": "tools/v4ship-lab/security/history-batches.py",
+    "43798": "tools/v4ship-lab/security/history-text-objects.py"
+  },
+  "ownedPids": [
+    8488,
+    37112,
+    37113,
+    43798,
+    43811,
+    43813
+  ],
+  "progressPreserved": true,
+  "fullHistoryClearance": false,
+  "signals": [
+    {
+      "pid": 8488,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 43798,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 37112,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 43811,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 43813,
+      "signal": "SIGTERM"
+    }
+  ],
+  "remainingActivePids": [],
+  "stopped": true,
+  "ended": "2026-11-17T03:08:48.122801+00:00"
+}
