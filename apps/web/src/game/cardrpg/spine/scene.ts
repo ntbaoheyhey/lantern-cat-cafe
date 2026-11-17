@@ -1,3 +1,4 @@
+import {CraftEncounter,isCraftOwner} from '../vfx-craft/encounter';
 import {CasterFocus,FocusBannerAnchor} from '../battle-v3/focus';
 import {BattlePostFx} from '../battle-v3/post-fx';
 import {BattleAudio} from '../battle-v3/battle-audio';
@@ -31,16 +32,7 @@ import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
 import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
-import {LanternRequiem} from '../vfx-craft/lantern-requiem';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
-import {StaffBolt} from '../vfx-craft/staff-bolt';
-import {ShieldStrike} from '../vfx-craft/shield-strike';
-import {HealingLeaves} from '../vfx-craft/healing-leaves';
-import {OvenBastion} from '../vfx-craft/oven-bastion';
-import {ThreadSnare} from '../vfx-craft/thread-snare';
-import {TeaBlossoms} from '../vfx-craft/tea-blossoms';
-import {NeedleStitches} from '../vfx-craft/needle-stitches';
-import {YarnSurge} from '../vfx-craft/yarn-surge';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
@@ -71,16 +63,17 @@ export class SpineScene {
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private casterFocus=new CasterFocus();
  /** Q3.B authoring only. Normal builds retain the accepted scene until review. */
- private craft:LanternRequiem|undefined;
- private craftBasic:StaffBolt|undefined;
- private craftShield:ShieldStrike|undefined;
- private craftHeal:HealingLeaves|undefined;
- private craftOven:OvenBastion|undefined;
- private craftThread:ThreadSnare|undefined;
- private craftTea:TeaBlossoms|undefined;
- private craftNeedle:NeedleStitches|undefined;
- private craftYarn:YarnSurge|undefined;
- private craftLoaded=false;
+ private craftEffects=new CraftEncounter(this.scene);
+ private get craft(){return this.craftEffects.effects.lantern;}
+ private get craftBasic(){return this.craftEffects.effects.basic;}
+ private get craftShield(){return this.craftEffects.effects.shield;}
+ private get craftHeal(){return this.craftEffects.effects.heal;}
+ private get craftOven(){return this.craftEffects.effects.oven;}
+ private get craftThread(){return this.craftEffects.effects.thread;}
+ private get craftTea(){return this.craftEffects.effects.tea;}
+ private get craftNeedle(){return this.craftEffects.effects.needle;}
+ private get craftYarn(){return this.craftEffects.effects.yarn;}
+ private get craftLoaded(){return this.effectsLoaded;}
  private focusBanner=new FocusBannerAnchor();
  private homes=new Map<string,{x:number;y:number;scale:number;order:number;point:MotionPoint}>();
  private trails=new MotionTrails();
@@ -96,18 +89,6 @@ export class SpineScene {
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
   this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.bossPhase=new BossPhase(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root,this.trails.root,this.casterFocus.root);this.postFx=new BattlePostFx(this.renderer,this.scene,this.camera);this.cinema=new CinematicPlayer(host);
-  if(import.meta.env.DEV&&import.meta.env.VITE_CRAFT_PILOT==='soot'){
-   const craft=this.craft=new LanternRequiem();craft.hide();this.scene.add(craft.ground,craft.rear,craft.front);
-   const basic=this.craftBasic=new StaffBolt();this.scene.add(basic.ground,basic.rear,basic.front);
-   const shield=this.craftShield=new ShieldStrike();this.scene.add(shield.ground,shield.rear,shield.front);
-   const heal=this.craftHeal=new HealingLeaves();this.scene.add(heal.ground,heal.rear,heal.front);
-   const oven=this.craftOven=new OvenBastion();this.scene.add(oven.ground,oven.rear,oven.front);
-   const thread=this.craftThread=new ThreadSnare();this.scene.add(thread.ground,thread.rear,thread.front);
-   const tea=this.craftTea=new TeaBlossoms();this.scene.add(tea.ground,tea.rear,tea.front);
-   const needle=this.craftNeedle=new NeedleStitches();this.scene.add(needle.ground,needle.rear,needle.front);
-   const yarn=this.craftYarn=new YarnSurge();this.scene.add(yarn.ground,yarn.rear,yarn.front);
-   void Promise.all([craft.ready,shield.ready,heal.ready,oven.ready,thread.ready,tea.ready,needle.ready,yarn.ready]).then(()=>{if(!this.disposed){this.craftLoaded=true;this.refreshLoading();this.invalidate();}}).catch(error=>{craft.dispose();this.craft=undefined;if(!this.disposed){this.onFailure(`Could not prepare Soot pilot: ${String(error)}`);this.refreshLoading();}});
-  }
   this.weather=new BattleWeather(host);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
@@ -128,7 +109,7 @@ export class SpineScene {
   const layered=!!view.formationC2,key=JSON.stringify([layered,owners]);
   if(key!==this.effectsKey){
    const request=Symbol(key);this.effectsRequest=request;this.effectsKey=key;this.effectsLoaded=owners.length===0;
-   if(owners.length)void this.effects.prepare(owners,layered).then(()=>{
+   if(owners.length)void Promise.all([this.effects.prepare(owners,layered),this.craftEffects.prepare(owners)]).then(()=>{
     if(this.disposed||this.effectsRequest!==request)return;
     this.effectsLoaded=true;this.refreshLoading();this.invalidate();
    }).catch(error=>{
@@ -155,8 +136,9 @@ export class SpineScene {
    const occupied=[...this.lanes.values()].filter(a=>a.side===unit.side).map(a=>a.lane);let lane=unit.side==='party'?this.lanes.get(unit.id)!.lane:0;if(unit.side==='enemy')while(occupied.includes(lane))lane++;this.lanes.set(unit.id,{side:unit.side,lane});
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset).then(async actor=>{
+    if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     // Accepted designer skeletons/sequences take precedence over generated keys.
-    const drawings=this.craft&&['soot','mochi','clover','panko','binding-thread','teacup-healer','needle-moth','yarn-giant'].includes(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
+    const drawings=isCraftOwner(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
      ?await loadDrawnPoseSet(asset).catch(error=>{actor.dispose();throw error;}):undefined;
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
@@ -178,9 +160,9 @@ export class SpineScene {
  }
  private refreshLoading(){
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
-  this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded&&(!this.craft||this.craftLoaded);
+  this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded;
  }
- private craftHandles(plan:EffectPlan|null){return !!this.craft&&this.craftLoaded&&!!plan&&!chargeEvent(plan)&&['soot','mochi','clover','panko','binding-thread','teacup-healer','needle-moth','yarn-giant'].includes(this.actors.get(plan.actorId)?.asset??'');}
+ private craftHandles(plan:EffectPlan|null){return this.craftLoaded&&!!plan&&!chargeEvent(plan)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
   if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
@@ -545,5 +527,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craft?.dispose();this.craftBasic?.dispose();this.craftShield?.dispose();this.craftHeal?.dispose();this.craftOven?.dispose();this.craftThread?.dispose();this.craftTea?.dispose();this.craftNeedle?.dispose();this.craftYarn?.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craftEffects.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

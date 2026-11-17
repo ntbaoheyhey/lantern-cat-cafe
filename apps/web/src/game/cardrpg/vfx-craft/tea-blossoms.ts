@@ -15,12 +15,12 @@ function material(noise:T.Texture,foreground:boolean){return new T.ShaderMateria
 export class TeaBlossoms {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},recipients:[] as CraftPoint[],active:0,mainShape:'cream tea blossoms, mint leaves, short steam curls; allied descending blossom pours and an overhead flowering canopy'};
- private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];private canopy:Ink;private glint:Ink;private sprigs:Ink[]=[];
+ private disposed=false;private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];private canopy:Ink;private glint:Ink;private sprigs:Ink[]=[];
  constructor(private readonly tuning:{rise?:number;canopyWidth?:number;canopyHeight?:number;textureRoot?:string}={}){
   const add=(root:T.Group,front:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,front));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.canopy=add(this.rear,true);this.glint=add(this.front,true);for(let i=0;i<18;i++)this.sprigs.push(add(this.front,true));
-  const load=async(name:string)=>{const im=new Image();im.src=`${this.tuning.textureRoot??'/vfx/teacup-healer'}/${name}.webp`;await im.decode();const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
-  this.ready=Promise.all([load('tea-blossom'),load('tea-canopy')]).then(([sprig,canopy])=>{for(const m of this.all)m.material.uniforms.uTexture!.value=m===this.canopy?canopy:sprig;});this.hide();
+  const load=async(name:string)=>{const im=new Image();im.src=`${this.tuning.textureRoot??'/vfx/teacup-healer'}/${name}.webp`;await im.decode();if(this.disposed)return;const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
+  this.ready=Promise.all([load('tea-blossom'),load('tea-canopy')]).then(([sprig,canopy])=>{if(this.disposed)return;for(const m of this.all)m.material.uniforms.uTexture!.value=m===this.canopy?canopy:sprig;});this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2){
   m.visible=alpha>.002;m.position.set(x,y,0);m.scale.set(w,-h,1);m.rotation.z=angle;const u=m.material.uniforms;u.uAlpha!.value=alpha;u.uTime!.value=ms/1000;u.uErode!.value=erode;
@@ -59,5 +59,5 @@ export class TeaBlossoms {
   Object.assign(this.audit,{elapsed:ms,ultimate:f.ultimate,source:{...f.source},recipients:f.feet.map(p=>({...p})),active:this.all.filter(m=>m.visible).length});
  }
  hide(){this.rear.visible=this.front.visible=this.ground.visible=false;}
- dispose(){for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const t of this.textures)t.dispose();this.noise.dispose();for(const r of [this.rear,this.front,this.ground])r.removeFromParent();}
+ dispose(){if(this.disposed)return;this.disposed=true;for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const t of this.textures)t.dispose();this.noise.dispose();for(const r of [this.rear,this.front,this.ground])r.removeFromParent();}
 }

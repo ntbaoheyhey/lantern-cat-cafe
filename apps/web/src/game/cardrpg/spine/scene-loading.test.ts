@@ -7,7 +7,7 @@ import {SpineScene} from './scene';
 const {load,loadDrawings} = vi.hoisted(() => ({load: vi.fn(),loadDrawings: vi.fn()}));
 vi.mock('./assets', () => ({loadSpineActor: load}));
 vi.mock('../vfx-craft/drawn-poses', () => ({loadDrawnPoseSet: loadDrawings}));
-beforeEach(() => {load.mockReset();loadDrawings.mockReset();});
+beforeEach(() => {load.mockReset();loadDrawings.mockReset().mockResolvedValue(undefined);});
 
 function request<Value=SpineActor>() {
   let resolve!: (actor: Value) => void, reject!: (error: Error) => void;
@@ -18,11 +18,12 @@ function actor() {
   return {root: new T.Group(), dispose: vi.fn(), onCue: () => {}} as unknown as SpineActor;
 }
 // Exercise the real scene lifecycle without constructing a WebGL context.
-function fixture(prepareEffects=vi.fn().mockResolvedValue(undefined)) {
+function fixture(prepareEffects=vi.fn().mockResolvedValue(undefined),prepareCraft=vi.fn().mockResolvedValue(undefined)) {
   let view = {actors: []} as unknown as SceneView;
   const scene: SpineScene = Object.assign(Object.create(SpineScene.prototype) as SpineScene, {
     scene: new T.Scene(), actors: new Map(), pending: new Map(), failed: new Set(), lanes: new Map(), sampled: new Map(), homes: new Map(),
     casterFocus: {dispose: vi.fn()}, trails: {dispose: vi.fn()}, bossPhase: {dispose: vi.fn()}, weather: {dispose: vi.fn()},
+    craftEffects: {effects:{},prepare:prepareCraft,dispose:vi.fn()},
     loading: {completed: 0, total: 0}, stats: {loaded: 0}, time: 0, disposed: false, ready: false,
     geometry: new T.PlaneGeometry(), ringGeometry: new T.RingGeometry(), shadowTexture: new T.Texture(),
     onFailure: vi.fn(), view: () => view,
@@ -38,10 +39,26 @@ function fixture(prepareEffects=vi.fn().mockResolvedValue(undefined)) {
 
 it('disposes the loaded actor when its drawing assets reject', async () => {
  const orphan=actor();load.mockResolvedValue(orphan);loadDrawings.mockRejectedValue(new Error('Missing pose'));
- const {scene,switchTo}=fixture();Object.assign(scene,{craft:{dispose:vi.fn()}});switchTo('soot');
+ const {scene,switchTo}=fixture();switchTo('soot');
  await vi.waitFor(()=>expect(orphan.dispose).toHaveBeenCalledOnce());
  await vi.waitFor(()=>expect(scene.loading).toMatchObject({completed:0,total:1}));
  expect(scene.actors.size).toBe(0);expect(scene.ready).toBe(false);scene.dispose();
+});
+
+it('loads hero drawings without a Soot pilot and waits for the authored encounter effects',async()=>{
+ const held=request<void>(),prepare=vi.fn().mockReturnValue(held.promise);
+ load.mockImplementation(async()=>actor());const {scene,switchTo}=fixture(undefined,prepare);
+ switchTo('mochi');await vi.waitFor(()=>expect(scene.actors.size).toBe(1));
+ expect(loadDrawings).toHaveBeenCalledExactlyOnceWith('mochi');
+ expect(prepare).toHaveBeenCalledExactlyOnceWith(['mochi']);expect(scene.ready).toBe(false);
+ held.resolve();await vi.waitFor(()=>expect(scene.ready).toBe(true));scene.dispose();
+});
+
+it('keeps accepted designer and sequence art when preparing authored effects',async()=>{
+ load.mockImplementation(async(id:string)=>({...actor(),source:id==='soot'?'designer':'sequence'}));
+ const {scene,switchTo}=fixture();switchTo('soot','mochi');
+ await vi.waitFor(()=>expect(scene.ready).toBe(true));
+ expect(loadDrawings).not.toHaveBeenCalled();scene.dispose();
 });
 
 it('releases an obsolete load gate and enemy lane before its image arrives', async () => {

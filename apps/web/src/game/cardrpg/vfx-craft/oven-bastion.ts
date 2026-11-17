@@ -17,13 +17,13 @@ function material(noise:T.Texture,foreground:boolean){return new T.ShaderMateria
 export class OvenBastion {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},recipients:[] as CraftPoint[],active:0,mainShape:'painted crust cut; three hinged bread doors behind the caster'};
- private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];private cut:Ink;private doors:Ink[]=[];private crumbs:Ink[]=[];private dust:Ink[]=[];
+ private disposed=false;private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];private cut:Ink;private doors:Ink[]=[];private crumbs:Ink[]=[];private dust:Ink[]=[];
  constructor(){
   const add=(root:T.Group,foreground:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,foreground));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.cut=add(this.front,true);for(let i=0;i<3;i++)this.doors.push(add(this.rear,false));for(let i=0;i<6;i++)this.crumbs.push(add(this.front,true));for(let i=0;i<4;i++)this.dust.push(add(this.ground,false));
   const slices=[[0,.30],[.30,.70],[.70,1]];this.doors.forEach((m,i)=>m.material.uniforms.uSlice!.value.set(...slices[i]!));
-  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/panko/${name}.webp`;await image.decode();const tex=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
-  this.ready=Promise.all([load('crust-cut'),load('oven-bastion')]).then(([cut,doors])=>{for(const m of this.all)m.material.uniforms.uTexture!.value=this.doors.includes(m)?doors:cut;});this.hide();
+  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/panko/${name}.webp`;await image.decode();if(this.disposed)return;const tex=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
+  this.ready=Promise.all([load('crust-cut'),load('oven-bastion')]).then(([cut,doors])=>{if(this.disposed)return;for(const m of this.all)m.material.uniforms.uTexture!.value=this.doors.includes(m)?doors:cut;});this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2,heat=0){
   m.visible=alpha>.002;m.position.set(x,y,0);m.scale.set(w,-h,1);m.rotation.z=angle;const u=m.material.uniforms;u.uAlpha!.value=alpha;u.uTime!.value=ms/1000;u.uErode!.value=erode;u.uHeat!.value=heat;
@@ -58,5 +58,5 @@ export class OvenBastion {
   Object.assign(this.audit,{elapsed:ms,ultimate:f.ultimate,source:{...s},recipients:f.feet.map(p=>({...p})),active:this.all.filter(m=>m.visible).length});
  }
  hide(){this.rear.visible=this.front.visible=this.ground.visible=false;}
- dispose(){for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const t of this.textures)t.dispose();this.noise.dispose();for(const r of [this.rear,this.front,this.ground])r.removeFromParent();}
+ dispose(){if(this.disposed)return;this.disposed=true;for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const t of this.textures)t.dispose();this.noise.dispose();for(const r of [this.rear,this.front,this.ground])r.removeFromParent();}
 }

@@ -21,11 +21,11 @@ function material(noise:T.Texture){return new T.ShaderMaterial({transparent:true
 export class YarnSurge {
  readonly ground=new T.Group();readonly rear=new T.Group();readonly front=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},paintedTip:{x:0,y:0},socketError:0,active:0,mainShape:'three heavy woven braids; low outward fan'};
- private noise=flowingNoise();private texture:T.Texture|undefined;private all:Ink[]=[];private cut:Ink;private wave:Ink;private echo:Ink;
+ private disposed=false;private noise=flowingNoise();private texture:T.Texture|undefined;private all:Ink[]=[];private cut:Ink;private wave:Ink;private echo:Ink;
  constructor(private tuning:YarnTuning={width:1180,height:472,textureUrl:'/vfx/yarn-giant/braid-wave.webp',tip:[.99609375,.6085365853658536]}){
   const add=(root:T.Group)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.cut=add(this.front);this.wave=add(this.rear);this.echo=add(this.ground);
-  this.ready=(async()=>{const image=new Image();image.src=this.tuning.textureUrl;await image.decode();const tex=this.texture=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=tex;})();
+  this.ready=(async()=>{const image=new Image();image.src=this.tuning.textureUrl;await image.decode();if(this.disposed)return;const tex=this.texture=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=tex;})();
   this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,alpha:number,ms:number,erode=-.2,heat=0){
@@ -57,5 +57,5 @@ export class YarnSurge {
   Object.assign(this.audit,{elapsed:ms,ultimate:f.ultimate,source:{...source},paintedTip:tip,socketError:Math.hypot(tip.x-source.x,tip.y-source.y),active:this.all.filter(m=>m.visible).length});
  }
  hide(){for(const root of [this.ground,this.rear,this.front])root.visible=false;for(const m of this.all)m.visible=false;this.audit.active=0;}
- dispose(){this.texture?.dispose();this.noise.dispose();for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const root of [this.ground,this.rear,this.front])root.removeFromParent();}
+ dispose(){if(this.disposed)return;this.disposed=true;this.texture?.dispose();this.noise.dispose();for(const m of this.all){m.geometry.dispose();m.material.dispose();}for(const root of [this.ground,this.rear,this.front])root.removeFromParent();}
 }

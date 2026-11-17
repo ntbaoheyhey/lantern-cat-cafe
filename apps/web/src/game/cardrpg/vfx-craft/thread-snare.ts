@@ -23,12 +23,12 @@ function material(noise:T.Texture){
 export class ThreadSnare {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,source:{x:0,y:0},launch:{x:0,y:0},head:{x:0,y:0},target:{x:0,y:0},flight:false,active:0,mainShape:'original braided knot and frayed cord; crossed painted strands at target'};
- private noise=flowingNoise();private texture?:T.Texture;private all:Ink[]=[];private knot:Ink;private hand:Ink;private wraps:Ink[]=[];private net:Ink[]=[];
+ private disposed=false;private noise=flowingNoise();private texture?:T.Texture;private all:Ink[]=[];private knot:Ink;private hand:Ink;private wraps:Ink[]=[];private net:Ink[]=[];
  constructor(private travel=150,url='/vfx/binding-thread/knotted-thread.webp'){
   const add=()=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;this.front.add(m);this.all.push(m);return m;};
   this.knot=add();this.hand=add();for(let i=0;i<6;i++)this.wraps.push(add());
   for(let i=0;i<24;i++){const strand=add();strand.material.uniforms.uCordOnly!.value=1;this.front.remove(strand);this.rear.add(strand);this.net.push(strand);}
-  this.ready=(async()=>{const im=new Image();im.src=url;await im.decode();const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=texture;})();this.hide();
+  this.ready=(async()=>{const im=new Image();im.src=url;await im.decode();if(this.disposed)return;const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=texture;})();this.hide();
  }
  private place(m:Ink,p:CraftPoint,w:number,angle:number,alpha:number,erode=-.2){
   m.visible=alpha>.002;m.position.set(p.x,p.y,0);m.scale.set(w,-w*139/768,1);m.rotation.z=angle;
@@ -71,5 +71,5 @@ export class ThreadSnare {
   Object.assign(this.audit,{elapsed:ms,source:{...f.source},launch:{...launch},head,target:{...target},flight:flight.active&&flight.alpha>.05,active:this.all.filter(m=>m.visible).length});
  }
  hide(){this.rear.visible=this.front.visible=this.ground.visible=false;}
- dispose(){for(const m of this.all){m.geometry.dispose();m.material.dispose();}this.texture?.dispose();this.noise.dispose();for(const root of [this.rear,this.front,this.ground])root.removeFromParent();}
+ dispose(){if(this.disposed)return;this.disposed=true;for(const m of this.all){m.geometry.dispose();m.material.dispose();}this.texture?.dispose();this.noise.dispose();for(const root of [this.rear,this.front,this.ground])root.removeFromParent();}
 }

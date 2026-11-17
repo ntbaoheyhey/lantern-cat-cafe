@@ -18,15 +18,15 @@ function material(noise:T.Texture,foreground:boolean){return new T.ShaderMateria
 export class ShieldStrike {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},mainShape:'painted crescent cut and angular gold/teal shield crest',active:0};
- private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];
+ private disposed=false;private noise=flowingNoise();private textures:T.Texture[]=[];private all:Ink[]=[];
  private cut:Ink;private crest:Ink;private shards:Ink[]=[];private dust:Ink[]=[];
  constructor(){
   const add=(root:T.Group,foreground:boolean)=>{const mesh=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,foreground));mesh.frustumCulled=false;mesh.visible=false;root.add(mesh);this.all.push(mesh);return mesh;};
   this.cut=add(this.front,true);this.crest=add(this.rear,false);
   for(let i=0;i<7;i++)this.shards.push(add(this.front,true));
   for(let i=0;i<4;i++)this.dust.push(add(this.ground,false));
-  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/mochi/${name}.webp`;await image.decode();const texture=new T.Texture(image);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;this.textures.push(texture);return texture;};
-  this.ready=Promise.all([load('shield-cut'),load('shield-crest')]).then(([cut,crest])=>{for(const mesh of this.all)mesh.material.uniforms.uTexture!.value=mesh===this.crest?crest:cut;});this.hide();
+  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/mochi/${name}.webp`;await image.decode();if(this.disposed)return;const texture=new T.Texture(image);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;this.textures.push(texture);return texture;};
+  this.ready=Promise.all([load('shield-cut'),load('shield-crest')]).then(([cut,crest])=>{if(this.disposed)return;for(const mesh of this.all)mesh.material.uniforms.uTexture!.value=mesh===this.crest?crest:cut;});this.hide();
  }
  private place(mesh:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2,heat=0){
   mesh.visible=alpha>.002;mesh.position.set(x,y,0);mesh.scale.set(w,-h,1);mesh.rotation.z=angle;
@@ -57,5 +57,5 @@ export class ShieldStrike {
   Object.assign(this.audit,{elapsed:ms,ultimate:f.ultimate,source:{...s},active:this.all.filter(m=>m.visible).length});
  }
  hide(){this.rear.visible=this.front.visible=this.ground.visible=false;}
- dispose(){for(const mesh of this.all){mesh.geometry.dispose();mesh.material.dispose();}for(const texture of this.textures)texture.dispose();this.noise.dispose();for(const root of [this.rear,this.front,this.ground])root.removeFromParent();}
+ dispose(){if(this.disposed)return;this.disposed=true;for(const mesh of this.all){mesh.geometry.dispose();mesh.material.dispose();}for(const texture of this.textures)texture.dispose();this.noise.dispose();for(const root of [this.rear,this.front,this.ground])root.removeFromParent();}
 }
