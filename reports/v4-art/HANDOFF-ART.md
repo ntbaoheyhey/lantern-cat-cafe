@@ -1,12 +1,12 @@
-# ART execution anchor - 2026-11-17T00:39:12.400763+00:00
-ACTIVE: A11 banner runtimeR2 preflightPASS9tests/3files+typecheck,105runtimehashes. Live visual-status reservation corrects measured16->34px and64->83px growth; installed554-state validation/films pending. R1 failed13contacts retained; A10 integrated transfer OPEN.
+# ART execution anchor - 2026-11-17T00:43:06.532880+00:00
+ACTIVE: A11 banner runtimeR2 validationPASS:2701webtests/323files,typecheck,3F6,lane275,554DOMsamples;0intersections/loss/jump/mismatch.105hashes unchanged since0839ee2d3. Fresh films/900p/native review/receipt pending. R1 failed13contacts retained;A10 integrated transfer OPEN.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: after correction checkpoint push, detach tools/.venv/bin/python tools/v3craft-lab/v4-placement/validate-banner-runtime.py --attempt r2; record PID/log. If fullweb/3F6/lane/installed554state PASS, run capture-banner-runtime.py --attempt r2 then new films/reviews/receipt.
+NEXT1: after validation checkpoint push, detach tools/.venv/bin/python tools/v3craft-lab/v4-placement/capture-banner-runtime.py --attempt r2; immediately record PID/log. On PASS run review-banner-films.py --attempt r2, review all new10fps/native/900p sheets, scoped receipt.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: caster-identified banner private drills/comparison, then number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:d9f7b9253 verified(origin accepted); first-layout diagnosis saved; runtime3b64c3008/104hashes unchanged.
+LAST PUSH:0839ee2d3 verified(origin accepted); R2 implementation/preflight9tests+typecheck/lane275 saved;105runtimehashes bound.
 RECEIPT: placement-runtime-r1/acceptance-receipt-r2.json now valid after9path staging;221lane pathsPASS/102runtimehashes unchanged. Original r1 receipt/audit/failure retained; full acceptance OPEN.
-LIVE: no finite jobs alive; R2 preflight81461 PASS. Vite20416/5990 craftOFF;log reports/v4-art/jobs/a10-normal-5990-resolution.log.
+LIVE: no finite jobs alive; validation81673 completePASS. Vite20416/5990 craftOFF;log reports/v4-art/jobs/a10-normal-5990-resolution.log.
 STOP/INBOX checked 2026-11-17T00:31:52.343713+00:00: noSTOP; later user continuation supersedes pause; no SHIP beyond16Nov18:25. Original68961/69950 absent. Resume475grouped/699all status entries,index empty; inherited dirt retained.
 PRIVATEBANNER: existing portrait+owner+skill selection retained. New status drills reject34px-only width omission and stale scene snapshot; live visual model+CSS clone selected. One fresh comparison CLOSED; detached placement/blindassociation remain open.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
