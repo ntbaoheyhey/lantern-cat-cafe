@@ -1,0 +1,709 @@
+{
+  "utc": "2026-11-17T21:57:06.938Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-17T21:39:28.323Z",
+  "ended": "2026-11-17T21:40:15.502Z",
+  "method": "Browser-response overrides on candidate6310; rule-resolved wave1 result fixture. No application edit. Same audit instrumentation for both modes. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/report.json",
+    "sha256": "efaa12f9069ca4608468443def90a82040d2e99398c54212877792567ab61819"
+  },
+  "pixelChecks": [
+    {
+      "name": "loaded",
+      "equal": true,
+      "hashes": [
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9"
+      ]
+    },
+    {
+      "name": "idle",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "resized",
+      "equal": true,
+      "hashes": [
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc"
+      ]
+    },
+    {
+      "name": "restored-size",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "restored-context",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "os-reduced",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "normal-frozen-1000",
+      "equal": true,
+      "hashes": [
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c"
+      ]
+    },
+    {
+      "name": "normal-frozen-1600",
+      "equal": true,
+      "hashes": [
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821"
+      ]
+    },
+    {
+      "name": "normal-frozen-2800",
+      "equal": true,
+      "hashes": [
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "override": {
+        "mode": "baseline",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794950405326",
+            "sourceSha256": "15e4b095eb8969718b44a2625f09b5f14803df0fcf218a391fff75f0b54f5fda",
+            "overrideSha256": "d21310912ad08784caef49dd4ef8dcc990b37513aa12b3acf89877ac6f49eea1"
+          }
+        ]
+      },
+      "cases": [
+        {
+          "name": "reduced-steady",
+          "ms": 5000,
+          "draws": 301,
+          "cpuMs": 676.9000000283122
+        },
+        {
+          "name": "normal-steady",
+          "ms": 3000,
+          "draws": 180,
+          "cpuMs": 554.4000000059605
+        },
+        {
+          "name": "os-reduced-steady",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 221.59999998658895
+        },
+        {
+          "name": "os-normal-resumed",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 260.4000000283122
+        }
+      ],
+      "disposed": [
+        {
+          "draws": 546,
+          "disposed": true,
+          "connected": false
+        },
+        {
+          "draws": 435,
+          "disposed": true,
+          "connected": false
+        }
+      ],
+      "pendingUnmount": {
+        "draws": 2,
+        "cpuMs": 13.200000002980232,
+        "actors": 1,
+        "drawings": 1,
+        "disposed": true,
+        "width": 461,
+        "height": 245,
+        "ready": "false"
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ]
+    },
+    {
+      "mode": "demand",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "override": {
+        "mode": "demand",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794950405326",
+            "sourceSha256": "15e4b095eb8969718b44a2625f09b5f14803df0fcf218a391fff75f0b54f5fda",
+            "overrideSha256": "4bf4ac11c668a8fd31c794284f278d03fce5c4e6285c04b653538abfe590c333"
+          }
+        ]
+      },
+      "cases": [
+        {
+          "name": "reduced-steady",
+          "ms": 5000,
+          "draws": 0,
+          "cpuMs": 0
+        },
+        {
+          "name": "normal-steady",
+          "ms": 3000,
+          "draws": 181,
+          "cpuMs": 553.0000000596046
+        },
+        {
+          "name": "os-reduced-steady",
+          "ms": 1500,
+          "draws": 0,
+          "cpuMs": 0
+        },
+        {
+          "name": "os-normal-resumed",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 228.10000000149012
+        }
+      ],
+      "disposed": [
+        {
+          "draws": 8,
+          "disposed": true,
+          "connected": false
+        },
+        {
+          "draws": 311,
+          "disposed": true,
+          "connected": false
+        }
+      ],
+      "pendingUnmount": {
+        "draws": 2,
+        "cpuMs": 13.299999997019768,
+        "actors": 1,
+        "drawings": 1,
+        "disposed": true,
+        "width": 461,
+        "height": 245,
+        "ready": "false"
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "mode": "baseline",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/loaded-crew.png",
+      "rgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "draws": 139,
+        "cpuMs": 269.0000000074506,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "baseline",
+      "name": "idle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/idle.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/idle-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 456,
+        "cpuMs": 956.8000000268221,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "baseline",
+      "name": "resized",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/resized.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/resized-crew.png",
+      "rgbSha256": "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+      "state": {
+        "draws": 473,
+        "cpuMs": 969.6000000238419,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 320,
+        "height": 190,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 936504,
+      "sha256": "7f52621f172ca165beaf7070ee54520b49c4d9a2daae9e4278553ce5c13f5eb9",
+      "mean": 53.34444444444444,
+      "stdDev": 36.25670648903594
+    },
+    {
+      "mode": "baseline",
+      "name": "restored-size",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/restored-size.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/restored-size-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 497,
+        "cpuMs": 986.7000000029802,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "baseline",
+      "name": "restored-context",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/restored-context.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/restored-context-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 546,
+        "cpuMs": 1066.300000026822,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "baseline",
+      "name": "os-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/os-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/os-reduced-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 326,
+        "cpuMs": 903.6999999731779,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "baseline",
+      "name": "normal-frozen-1000",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-1000.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-1000-crew.png",
+      "rgbSha256": "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+      "state": {
+        "draws": 433,
+        "cpuMs": 1191.6000000014901,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937993,
+      "sha256": "41ba44ea8f2deb310b1969892f017885df8caeca2b2680e00911805ec08f0667",
+      "mean": 53.25553240740741,
+      "stdDev": 36.42778757786986
+    },
+    {
+      "mode": "baseline",
+      "name": "normal-frozen-1600",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-1600.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-1600-crew.png",
+      "rgbSha256": "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+      "state": {
+        "draws": 434,
+        "cpuMs": 1192.3000000044703,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937724,
+      "sha256": "d351257b4a2a76efb273974d5965413ca424b99099c308834b9875193bbfb566",
+      "mean": 53.29125,
+      "stdDev": 36.51499358853437
+    },
+    {
+      "mode": "baseline",
+      "name": "normal-frozen-2800",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-2800.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/baseline/normal-frozen-2800-crew.png",
+      "rgbSha256": "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+      "state": {
+        "draws": 435,
+        "cpuMs": 1193.5000000074506,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937982,
+      "sha256": "5f9677dc085a08228e7a9cb77f26431ac77d8f9741b7b294b463d2fa0b28d888",
+      "mean": 53.20997685185185,
+      "stdDev": 36.37065434776337
+    },
+    {
+      "mode": "demand",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/loaded-crew.png",
+      "rgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "draws": 5,
+        "cpuMs": 47.29999998956919,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "demand",
+      "name": "idle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/idle.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/idle-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 5,
+        "cpuMs": 47.29999998956919,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "demand",
+      "name": "resized",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/resized.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/resized-crew.png",
+      "rgbSha256": "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+      "state": {
+        "draws": 6,
+        "cpuMs": 49.79999998956919,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 320,
+        "height": 190,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 936504,
+      "sha256": "7f52621f172ca165beaf7070ee54520b49c4d9a2daae9e4278553ce5c13f5eb9",
+      "mean": 53.34444444444444,
+      "stdDev": 36.25670648903594
+    },
+    {
+      "mode": "demand",
+      "name": "restored-size",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/restored-size.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/restored-size-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 7,
+        "cpuMs": 52.099999994039536,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "demand",
+      "name": "restored-context",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/restored-context.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/restored-context-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 8,
+        "cpuMs": 75.3999999910593,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "demand",
+      "name": "os-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/os-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/os-reduced-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 203,
+        "cpuMs": 612.6000000685453,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "demand",
+      "name": "normal-frozen-1000",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-1000.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-1000-crew.png",
+      "rgbSha256": "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+      "state": {
+        "draws": 309,
+        "cpuMs": 863.0000000745058,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937993,
+      "sha256": "41ba44ea8f2deb310b1969892f017885df8caeca2b2680e00911805ec08f0667",
+      "mean": 53.25553240740741,
+      "stdDev": 36.42778757786986
+    },
+    {
+      "mode": "demand",
+      "name": "normal-frozen-1600",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-1600.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-1600-crew.png",
+      "rgbSha256": "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+      "state": {
+        "draws": 310,
+        "cpuMs": 863.8000000715256,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937724,
+      "sha256": "d351257b4a2a76efb273974d5965413ca424b99099c308834b9875193bbfb566",
+      "mean": 53.29125,
+      "stdDev": 36.51499358853437
+    },
+    {
+      "mode": "demand",
+      "name": "normal-frozen-2800",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-2800.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/demand/normal-frozen-2800-crew.png",
+      "rgbSha256": "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+      "state": {
+        "draws": 311,
+        "cpuMs": 865.1000000759959,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937982,
+      "sha256": "5f9677dc085a08228e7a9cb77f26431ac77d8f9741b7b294b463d2fa0b28d888",
+      "mean": 53.20997685185185,
+      "stdDev": 36.37065434776337
+    }
+  ],
+  "sheets": [
+    {
+      "mode": "baseline",
+      "part": "lifecycle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/review/baseline-lifecycle.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "5a5c0d5f2086bfe46a41ed0763ca6eee5233733fa91c755e5cfa4764963629ce",
+      "frames": [
+        "loaded",
+        "resized",
+        "restored-context",
+        "os-reduced"
+      ]
+    },
+    {
+      "mode": "baseline",
+      "part": "poses",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/review/baseline-poses.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "cdcf3ca699f9a87e1fbd70b245229c4f8cc5d022fe0e000ead27af3469a493b4",
+      "frames": [
+        "idle",
+        "normal-frozen-1000",
+        "normal-frozen-1600",
+        "normal-frozen-2800"
+      ]
+    },
+    {
+      "mode": "demand",
+      "part": "lifecycle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/review/demand-lifecycle.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "5a5c0d5f2086bfe46a41ed0763ca6eee5233733fa91c755e5cfa4764963629ce",
+      "frames": [
+        "loaded",
+        "resized",
+        "restored-context",
+        "os-reduced"
+      ]
+    },
+    {
+      "mode": "demand",
+      "part": "poses",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/review/demand-poses.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "cdcf3ca699f9a87e1fbd70b245229c4f8cc5d022fe0e000ead27af3469a493b4",
+      "frames": [
+        "idle",
+        "normal-frozen-1000",
+        "normal-frozen-1600",
+        "normal-frozen-2800"
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-17T21:57:58.508497+00:00",
+  "visualReview": "Four measured1024x576 sheets inspected once: all four heroes remain distinct; faces, HUD, receipt and Next control readable. Resize updates framing without clipped actors. Restored-context and OS-reduced poses match; frozen normal poses retain distinct gestures. No overlapping effects or missing characters observed. Study fixture, not independent judge acceptance.",
+  "pass": true,
+  "errors": [],
+  "limits": "Candidate browser experiment with audit counters and explicit result fixtures. Pixel equality applies to the cropped victory crew region at named states; full scenes contain unrelated UI. Frozen normal frames are not timing/performance evidence. CPU counters include instrumentation overhead. Independent production/judge acceptance remains separate."
+}

@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {hash} from './victory-demand-source.mjs';
 const root=resolve(import.meta.dirname,'../..'),input=resolve(root,'work/v5/CXV/films/V7-F-victory-demand-production');
 const output=resolve(root,'reports/v5/CXV/V7-F-victory-demand-production.json');
-const report=JSON.parse(readFileSync(output));assert(report.correctnessPass&&!report.reviewedUtc&&!report.sheets);
+const report=JSON.parse(readFileSync(output));assert(report.artifactFilesReverified&&report.trialBehaviorPass&&report.runs.length===24&&!report.reviewedUtc&&!report.sheets);
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});report.captures=[];report.sheets=[];
 for(const [trial,mode]of [[0,'baseline'],[5,'native']]){
  const captures=report.runs.filter(r=>r.trial===trial);assert.equal(captures.length,4);

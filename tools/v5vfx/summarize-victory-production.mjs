@@ -45,7 +45,7 @@ for(const entry of series.runs){
  }
 }
 const reducedCrewHashes=[...new Set(runs.filter(r=>r.reduced).map(r=>r.crewSha256))];
-assert.equal(reducedCrewHashes.length,1,'All reduced crew PNGs must be byte-identical');
+const reducedCrewExact=reducedCrewHashes.length===1;
 const median=a=>{const b=[...a].sort((x,y)=>x-y);return b[Math.floor(b.length/2)];};
 const comparisons=[];
 for(const rate of [1,4])for(const reduced of [true,false]){
@@ -55,6 +55,6 @@ for(const rate of [1,4])for(const reduced of [true,false]){
  }));
  comparisons.push({rate,reduced,...groups,taskChangePercent:(groups.native.medianTaskMs/groups.baseline.medianTaskMs-1)*100,scriptChangePercent:(groups.native.medianScriptMs/groups.baseline.medianScriptMs-1)*100});
 }
-const report={utc:new Date().toISOString(),started:series.utc,ended:series.ended,source:built.source,runtimePatchSha256:built.runtimePatchSha256,baselineModuleSha256:built.baselineModuleSha256,candidateModuleSha256:built.candidateModuleSha256,candidateIsApplicationSource:false,viewport:{width:1280,height:720},durationMs:32000,order:series.order,buildManifest:{path:resolve(input,'build.json'),sha256:buildManifestSha256},artifacts,artifactFilesReverified:true,tools,staticAssetsExact:true,reducedCrewHashes,comparisons,runs,correctnessPass:true,acceptanceDecision:'Pending visual review, full semantic TypeScript check and interpretation of normal-motion timing variance.',limits:'Local production artifacts with rule-resolved wave1 result fixtures, not the independent judge. Native names the build-time candidate only. CDP values measure the whole page; draw counters count WebGL calls, not frames. Three samples per cell do not establish statistical significance. No screenshot is taken during measured windows. No gameplay FPS claim.',reviewedUtc:null,visualReview:null};
+const report={utc:new Date().toISOString(),started:series.utc,ended:series.ended,source:built.source,runtimePatchSha256:built.runtimePatchSha256,baselineModuleSha256:built.baselineModuleSha256,candidateModuleSha256:built.candidateModuleSha256,candidateIsApplicationSource:false,viewport:{width:1280,height:720},durationMs:32000,order:series.order,buildManifest:{path:resolve(input,'build.json'),sha256:buildManifestSha256},artifacts,artifactFilesReverified:true,tools,staticAssetsExact:true,reducedCrewHashes,reducedCrewExact,comparisons,runs,trialBehaviorPass:true,correctnessPass:reducedCrewExact,acceptanceDecision:'BLOCKED: investigate two reduced crew PNG variants and normal-motion elapsed-time variance before acceptance. Semantic TypeScript passed; prototype visual review passed separately.',limits:'Local production artifacts with rule-resolved wave1 result fixtures, not the independent judge. Native names the build-time candidate only. CDP timeTicks values measure elapsed task/script duration, not exclusive CPU; draw counters count WebGL calls, not frames. Three samples per cell do not establish statistical significance. No screenshot is taken during measured windows. No gameplay FPS claim.',reviewedUtc:null,visualReview:null};
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({output,correctnessPass:report.correctnessPass,comparisons}));
