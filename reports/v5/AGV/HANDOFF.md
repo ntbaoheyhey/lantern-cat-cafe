@@ -1,5 +1,5 @@
-ACTIVE: Submission Visuals (B5), T-CXV-1 (Sheet Audit), T-CXV-2 (Face-depth Research)
-NEXT 1: T-CXV-1 (Sheet Audit)
+ACTIVE: Submission Visuals (B5), T-CXV-2 (Face-depth Research)
+
 NEXT 2: T-CXV-2 (Face-depth Research)
 Running PIDs: None
 TASKs: T-CXV-1, T-CXV-2 open
