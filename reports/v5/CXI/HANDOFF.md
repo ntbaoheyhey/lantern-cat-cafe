@@ -1,21 +1,24 @@
-# CXI I2/R3/R5 continuation
-ACTIVE: R2 mobile CTA and R4 delivered shell AVIFs; I2/R3 dependencies; rules reread 2026-11-17T08:43:23Z; STOP absent.
-NEXT 1: Fix owned shell.css mobile dock; wire audited four portrait AVIFs with WebP fallback.
-NEXT 2: Own new transfer and390px receipt capture; resolve remaining I2 bytes and Kettle regression.
-NEXT 3: Fresh transfer, merged gates; next unblocked QA/refill until all DONE conditions proven.
-Local HEAD before checkpoint f8f004ec2 (AGS0232c11ab merged); checkpoint34bc227ef pushed; cfce3804d pushed.
-R3 context repair merged/wired;loader+engine59pass;original pack/bus/start/duration checked;bed loops retained.
-R5 DONE: finalJS1112059,focused8pass/build0; total9.47-10.15MB stillFAIL.
-Preview PID80797 work/v5/CXI/jobs/m1-preview.log serves7730532ea code; pipeline4707 completed0;21e993c9c built.
+# CXI V5 continuation
+ACTIVE: repair R6 output-only plugin regression blocking R3/I2 full gates; rules reread2026-11-17T08:56:09Z; STOP absent.
+NEXT 1: Skip poster exclusion for nonstandard build outDir; production wallet bundle tests use temporary directories.
+NEXT 2: Fresh typecheck/web/root/build/transfer; capture R7 receipt at390px.
+NEXT 3: Merge Kettle correction when READY, validate current12 AVIF derivatives, continue QA/proof/refill.
+Last pushed implementation e3960033748199f5517d8b36bac0982403e9e8b7.
+Pipeline6780 ended08:54:08 exit1: web2890pass/2failed, both wallet/prodBundle temporary-outDir builds.
+Preview PID80797 work/v5/CXI/jobs/m1-preview.log; last completed build21e993c9c.
 Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
-Last transfer16823a7c6:wave1=10078148,wave3=10589555,boss=9915707; allFAIL8MB,0errors.
+Last transfer21e993c9c/r4-mobile:wave1=9371757,wave3=9883166,boss=9273352; allFAIL8MB,0errors.
 Accepted tagv5-m1=b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3; no new acceptance claimed.
-Own08:34 captures restore Button/Spool, Kettle strokes missing; REQ CXV08:36; hero actions readable.
-12 approved texture hashes pinned; native/procedural fallback and original-image decode preserved.
+Own08:34 captures restore Button/Spool;Kettle lacks former gold strokes. CXV08:49:26: R2 small thrust replaces legacy strokes; correction in progress.
+12 approved texture hashes pinned; native/procedural fallback and original-image decode preserved; AVIF12 requestedAGV08:47.
+R3:8aefbf1e9 merged;exact pack/bus/start/duration context lookup+3beds;59focused pass;transfer pending.
+R4:4portraits+cafe AVIF save264549bytes;9focused pass;own captures good;landing AVIF wired awaits build.
+R5 DONE:JS1319090->1112059;8focused pass/build0. R6:13 dist-only posters1395314bytes;custom output guard needs repair.
+R2:H2-F1 DONE mobile Fight x38/w314,click Prepare/battle succeeds;H2-F3 formation48.55px stillopen.
+R7:fullhash/actualpayer/fee/time/network visible;no local explorer;4focused pass;390px capture pending;H2-F2 genuine proof stillopen.
 Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox read through08:49:26; USER08:45(WD only); LEARN INDEX reread this resume.
-Mobile study08:24-08:41 complete. I5 localproof study began08:46;continue before implementation.
-Open QA:H2-F1 mobile Fight overflow;H2-F2 visible actual receipt proof;H7/README truthful runbooks.
-Next green merge window by09:44:05UTC:v5-m1.N + BOARD; M2/M3 retain schedule.
-No secrets/env reads, funded Fuji, deployments/contracts edits, main merge, submission or subagents.
-WD restart already completed PID99689; CXI restored07:35; do not resume WD monitoring.
+Mailbox read through08:49:26; USER08:45(WD only);LEARN INDEX reread08:56.
+I5 localproof study began08:46;complete note/INDEX before implementation;never call startLocal or fuji-smoke --dry-run.
+Next green merge window by09:44:05UTC:v5-m1.N + BOARD;M2/M3 retain schedule.
+No secrets/env reads,fundedFuji,deployments/contracts edits,main merge,submission or subagents.
+WD restart completedPID99689 earlier;CXI restored07:35;do not resume WD monitoring.
