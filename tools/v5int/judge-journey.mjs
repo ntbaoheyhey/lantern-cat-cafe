@@ -64,7 +64,7 @@ try{
   await detail.getByRole('button',{name:'Growth',exact:true}).click();
   const growth=detail.locator('[data-growth="level"]');
   report.training={cat:await detail.locator('h2').innerText(),before:await growth.innerText()};
-  await growth.getByRole('button',{name:'Level up',exact:true}).click();
+  await growth.locator('button[aria-describedby]').click();
   await page.waitForFunction(before=>document.querySelector('[data-growth="level"]')?.innerText!==before,report.training.before);
   report.training.after=await growth.innerText();step('levelled one friend through Growth');
   await page.screenshot({path:resolve(out,'level.png')});
