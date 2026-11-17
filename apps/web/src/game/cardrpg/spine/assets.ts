@@ -15,7 +15,6 @@ import sampledAtlases from './sampled-atlases.json';
 import {loadAtlasImage} from './atlas-delivery';
 import {nativeRigDelivery} from './native-rig-loader';
 import {deferredRigFactory} from './deferred-atlas-loader';
-import {loadV5Textures} from './v5-texture-loader';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
@@ -117,13 +116,12 @@ export class SpineActor {
 function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet',options:{deferNativePixels?:boolean}={}):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
- const textures=loadV5Textures(id),ready=async()=>{await textures;return measuredActor(actor);};
  const designer=unit.designer,sequence=unit.sequence;
  if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
   const data=await loadNativeRig(id,options.deferNativePixels);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);
   for(const [name,clip] of data.clips)actor.clips.set(name,clip);
   for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing native socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}
-  return ready();
+  return measuredActor(actor);
  }catch(error){actor.mesh?.dispose();actor.mesh=undefined;actor.clips.clear();actor.boneRefs.clear();errors.push(String(error));}
  const noRuntime=typeof location!=='undefined'&&new URLSearchParams(location.search).get('spineRuntime')==='0';
  const candidates:{source:'designer'|'placeholder';spec:AcceptedSkeleton}[]=[];
@@ -138,10 +136,10 @@ export async function loadSpineActor(id:string,preference?:'placeholder'|'design
   try{const data=await loadSequence(sequence);actor.source='sequence';actor.sequence=data;for(const [k,v] of data.clips)actor.clips.set(k,v);const scale=data.manifest.scale??sequence.scale;
    Object.assign(actor.bounds,{x:-data.manifest.width*scale/2,y:0,width:data.manifest.width*scale,height:data.manifest.height*scale});
    actor.plane=new T.Mesh(new T.PlaneGeometry(actor.bounds.width,actor.bounds.height),new T.MeshBasicMaterial({transparent:true,depthWrite:false,depthTest:false,toneMapped:false}));actor.plane.position.y=actor.bounds.height/2;actor.root.add(actor.plane);
-   for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)) {const xy=data.manifest.sockets[bone];if(xy)actor.sockets.get(name as SpineSocket)!.position.set(xy[0]*scale,xy[1]*scale,1);}return ready();
+   for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)) {const xy=data.manifest.sockets[bone];if(xy)actor.sockets.get(name as SpineSocket)!.position.set(xy[0]*scale,xy[1]*scale,1);}return measuredActor(actor);
   }catch(error){errors.push(String(error));}
  }
- for(const candidate of candidates)try{const data=await loadSkeleton(candidate.spec,candidate.source==='placeholder'&&!!options.deferNativePixels);actor.mesh=data.create();actor.mesh.zOffset=.001;actor.mesh.state.data.defaultMix=SPINE_CONFIG.mixSeconds;actor.root.add(actor.mesh);actor.source=candidate.source;Object.assign(actor.bounds,data.bounds);for(const [k,v] of data.clips)actor.clips.set(k,v);for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}return ready();}catch(error){actor.mesh?.dispose();actor.mesh?.removeFromParent();actor.mesh=undefined;errors.push(String(error));}
+ for(const candidate of candidates)try{const data=await loadSkeleton(candidate.spec,candidate.source==='placeholder'&&!!options.deferNativePixels);actor.mesh=data.create();actor.mesh.zOffset=.001;actor.mesh.state.data.defaultMix=SPINE_CONFIG.mixSeconds;actor.root.add(actor.mesh);actor.source=candidate.source;Object.assign(actor.bounds,data.bounds);for(const [k,v] of data.clips)actor.clips.set(k,v);for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}return measuredActor(actor);}catch(error){actor.mesh?.dispose();actor.mesh?.removeFromParent();actor.mesh=undefined;errors.push(String(error));}
  // Last fallback uses accepted old pixels and motion, normalized to the same unit contract.
  const {scene}=await loadPuppetModel(id);actor.puppet=scene;actor.root.add(scene);const rig=scene.userData.paintedRig,measurement=fallbackScale(rig),bodyHeight=(measurement.max[1]!-measurement.min[1]!);
  const scale=unit.targetHeight/bodyHeight;scene.scale.set(scale*measurement.widthScale,scale,scale);
@@ -149,5 +147,5 @@ export async function loadSpineActor(id:string,preference?:'placeholder'|'design
  Object.assign(actor.bounds,{x:-unit.targetHeight*rig.aspect/2,y:0,width:unit.targetHeight*rig.aspect,height:unit.targetHeight});
  for(const [name,y] of [['feet',0],['chest',.5],['head',.77],['hpAnchor',1.12],['vfxOrigin',.52],['mainHand',.5],['offHand',.48]] as const)actor.sockets.get(name)!.position.set(name==='mainHand'?unit.targetHeight*.24:name==='offHand'?-unit.targetHeight*.2:0,unit.targetHeight*y,1);
  for(const name of unit.animations){const spec=SPINE_CONFIG.animations[name as SpineAnimation],duration=(spec.seconds[0]!+spec.seconds[1]!)/2;actor.clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,[])});}
- actor.root.userData.intakeWarnings=errors;return ready();
+ actor.root.userData.intakeWarnings=errors;return measuredActor(actor);
 }

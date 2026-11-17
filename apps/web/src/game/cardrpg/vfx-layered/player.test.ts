@@ -2,12 +2,13 @@ import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import type {EffectPlan} from '../../squad/turn3d/effects';
 import {LayeredVfx,PAINT_TIMELINES} from './player';
 import sampledPages from './sampled-atlases.json';
+import deliveryPages from './vfx-atlas-manifest-loader.json';
 
 let images:TestImage[];
 class TestImage {
  src='';resolve!:()=>void;reject!:(error:Error)=>void;
- get naturalWidth(){return sampledPages.find(p=>p.url===this.src)?.width??1024;}
- get naturalHeight(){return sampledPages.find(p=>p.url===this.src)?.height??2560;}
+ get naturalWidth(){return [...sampledPages,...deliveryPages].find(p=>p.url===this.src)?.width??1024;}
+ get naturalHeight(){return [...sampledPages,...deliveryPages].find(p=>p.url===this.src)?.height??2560;}
  private decoded=new Promise<void>((yes,no)=>{this.resolve=yes;this.reject=no;});
  constructor(){images.push(this);}
  decode(){return this.decoded;}
@@ -19,9 +20,10 @@ const plan={skillId:'enemy:needle-moth:basic'} as EffectPlan;
 it('requests no atlas at construction and selects enemies by timeline owner',async()=>{
  const fx=new LayeredVfx(()=>undefined);await fx.ready;expect(images).toHaveLength(0);
  const ready=fx.prepare(['needle-moth','needle-moth']);
- expect(images).toHaveLength(1);expect(images[0]!.src).toContain('needle-moth-0.webp');
+ expect(images).toHaveLength(1);expect(images[0]!.src).toBe(deliveryPages.find(p=>p.request==='needle-moth-0.webp')!.url);
  expect(fx.handles(plan)).toBe(false);images[0]!.resolve();await ready;
  expect(fx.handles(plan)).toBe(true);
+ for(const paint of fx.images.values()){expect(paint.sourceScaleX).toBe(.5);expect(paint.sourceScaleY).toBe(.5);}
  expect([...fx.images.keys()].every(id=>PAINT_TIMELINES.get(id)?.owner==='needle-moth')).toBe(true);fx.dispose();
 });
 
@@ -35,7 +37,9 @@ it('shares overlapping decode requests and waits for every page in the new roste
 
 it('keeps the established procedural fallback available when an atlas fails',async()=>{
  const fx=new LayeredVfx(()=>undefined),ready=fx.prepare(['needle-moth']);
- images[0]!.reject(new Error('network unavailable'));await ready;
+ images[0]!.reject(new Error('sampled atlas unavailable'));
+ await vi.waitFor(()=>expect(images).toHaveLength(2));
+ expect(images[1]!.src).toContain('needle-moth-0.webp');images[1]!.reject(new Error('original atlas unavailable'));await ready;
  expect(fx.handles(plan)).toBe(false);expect(fx.stats.failed).toContain(plan.skillId);fx.dispose();
 });
 

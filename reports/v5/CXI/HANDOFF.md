@@ -1,10 +1,10 @@
 # CXI I2 active
 ACTIVE: CXI resumed by owner 2026-11-17T07:36:20Z; I2 transfer<=8MB remains FAIL. R0/I3 complete; v5-m1 accepted.
-NEXT 1: Repair granted paintSourceRect uses in field-vfx/impact-strokes/impact-wake and sampled-atlas player test mocks.
+NEXT 1: Merge audited CXV366fdbf81/AGV6a83ae3eb/AGSc494478c8; wire approved pose delivery and voice slices.
 NEXT 2: Resolve optional-loader test isolation; audit/merge READY voice, pose and CXV renderer deliveries; forward blend only when approved.
 NEXT 3: Build and fresh production visual/transfer checks; continue I2 then I4/I5/I6 and all refill.
 Checkpoint: owned optional-texture and voice-loader WIP, not visual acceptance; prior pushed d24f042190d459f8eaebaaa7596045e0539a648f.
-WIP validation: audio61 passed; optional/sequence8 passed1 failed (optional decode consumes recovery mock). No final build yet.
+Validation:16 rect/player/loader/assets tests passed; typecheck0; prior audio61 pass. Fresh merged suite/build/capture pending.
 Measured sampled atlases: wave1 12,306,063; wave3 12,753,441; boss12,002,487 bytes. All0 page/console errors, all over8MB.
 Confirmed visual failure: three renderer helpers still use original full-size source rects; scoped CXV grant06:56 recorded in OWNERSHIP.
 Only CXI known running job: preview80797, work/v5/CXI/jobs/m1-preview.log; serves experimental d24f04219, not v5-m1 acceptance.
