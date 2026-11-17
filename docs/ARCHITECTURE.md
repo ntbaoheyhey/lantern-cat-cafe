@@ -31,6 +31,10 @@ The entry loader defaults absent or malformed selectors to the desktop Depth gam
 
 Delivered AVIF and Opus variants substitute through manifest/load helpers; original WebP or audio sources remain fallback paths. Dimensions, source rectangles, blend mode, loop points and gains remain part of the delivery contract. Cold transfer is measured from a new browser context with cache disabled against the production build, counting complete encoded responses for requests started before battle readiness. Wave1/wave3/boss fixtures exercise assets; they do not establish guest authentication or public transaction success.
 
+Small Opus files travel in immutable, integrity-checked packages only when every member already belongs to the current preload. The decoder receives each original encoded file; package failure or a two-second timeout falls back to the same original Opus before alternate formats. Voice selection is shared by the runtime and package builder so inactive crew members add no downloads. Cue variants, timing and gains stay in the original manifest.
+
+Drawn characters reuse weights derived from fixed artwork coordinates while sampling motion and sockets each frame. When drawings hide the native meshes, bones remain live and native vertex work is deferred until a bounds query or restoration needs it. Exact geometry and pixel comparisons cover these changes; CPU stress results remain scoped measurements, not a fixed frame-rate guarantee.
+
 Motion uses seeded, seekable sampling, with per-hero breathing/gestures and planted feet. Contact holds and reduced-motion behavior are preserved. Visual comparison uses the current production capture; an old development screenshot is not evidence for a new tag.
 
 ## Authentication, funding and recovery
