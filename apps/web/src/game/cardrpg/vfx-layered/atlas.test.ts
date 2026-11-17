@@ -1,5 +1,5 @@
 import {describe,it,expect} from 'vitest';
-import {atlasSlots} from './atlas';
+import {atlasSlots,paintSourceRect,type PackedPaint} from './atlas';
 describe('painted atlas placement',()=>{
  it.each([1,2,5,7,32,86])('retains every sheet without overlaps or out-of-page sampling: %i',count=>{
   const pages=atlasSlots(count,1024,512);const indices:number[]=[];
@@ -13,4 +13,12 @@ describe('painted atlas placement',()=>{
   expect(indices.sort((a,b)=>a-b)).toEqual(Array.from({length:count},(_,i)=>i));
  });
  it('rejects unsupported image geometry',()=>expect(()=>atlasSlots(1,8192,512)).toThrow());
+});
+
+it('scales packed offsets and crop extents independently of destination geometry',()=>{
+ const paint:PackedPaint={image:{} as HTMLImageElement,x:1024,y:512,width:1024,height:512,sourceUrl:'/original.webp',sourceScaleX:683/1024,sourceScaleY:.5};
+ expect(paintSourceRect(paint,[64,128,256,192])).toEqual([1088*683/1024,320,256*683/1024,96]);
+ expect([paint.x,paint.y,paint.width,paint.height]).toEqual([1024,512,1024,512]);
+ const original={...paint,sourceScaleX:undefined,sourceScaleY:undefined};
+ expect(paintSourceRect(original,[64,128,256,192])).toEqual([1088,640,256,192]);
 });

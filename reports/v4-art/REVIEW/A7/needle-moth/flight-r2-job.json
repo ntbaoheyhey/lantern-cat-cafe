@@ -1,0 +1,21 @@
+{
+  "pid": 17441,
+  "started": "2026-11-16T16:34:43.905976+00:00",
+  "command": [
+    "nohup",
+    "node",
+    "scripts/v3feel/capture.mjs",
+    "--item",
+    "V4-A7-NEEDLE-FLIGHT-R2",
+    "--fixture",
+    "wave1",
+    "--seconds",
+    "30",
+    "--video-seconds",
+    "30",
+    "--frame-marker"
+  ],
+  "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-needle-flight-r2.log",
+  "sourceCommit": "1a6bef6366366ce2bef4450569485bceab1f2703",
+  "reason": "Original A5 encoded film skips133.4ms over150ms flight; isolated repeat of unchanged source, retaining original failure."
+}

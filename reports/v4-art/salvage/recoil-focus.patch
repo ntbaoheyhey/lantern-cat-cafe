@@ -1,0 +1,606 @@
+diff --git a/apps/web/src/game/cardrpg/battle-v3/focus.test.ts b/apps/web/src/game/cardrpg/battle-v3/focus.test.ts
+index d5219e0af..758e1488f 100644
+--- a/apps/web/src/game/cardrpg/battle-v3/focus.test.ts
++++ b/apps/web/src/game/cardrpg/battle-v3/focus.test.ts
+@@ -1,5 +1,24 @@
+-import {expect,it} from 'vitest';
+-import {FocusBannerAnchor} from './focus';
++import {expect,it,vi} from 'vitest';
++import * as T from 'three';
++import {CasterFocus,FocusBannerAnchor} from './focus';
++
++it('outlines only the current visible drawing through swaps and hidden ancestors',()=>{
++ const focus=new CasterFocus(),actor=new T.Group(),hiddenRig=new T.Group();hiddenRig.visible=false;
++ const geometry=new T.PlaneGeometry(),windup=new T.Texture(),cast=new T.Texture();
++ const material=new T.MeshBasicMaterial({map:windup}),drawing=new T.Mesh(geometry,material);
++ hiddenRig.add(new T.Mesh(new T.PlaneGeometry(),new T.MeshBasicMaterial()));actor.add(hiddenRig,drawing);actor.updateMatrixWorld(true);
++ focus.render(actor,'#ffd892',1,1);
++ const visible=()=>focus.root.children.filter(o=>o.visible) as T.Mesh<T.BufferGeometry,T.MeshBasicMaterial>[];
++ expect(visible()).toHaveLength(8);expect(visible().every(m=>m.geometry===geometry&&m.material.map===windup)).toBe(true);
++ material.map=cast;focus.render(actor,'#ffd892',1,1);
++ expect(visible()).toHaveLength(8);expect(visible().every(m=>m.material.map===cast)).toBe(true);
++ drawing.visible=false;focus.render(actor,'#ffd892',1,1);expect(visible()).toHaveLength(0);
++ drawing.visible=true;actor.visible=false;focus.render(actor,'#ffd892',1,1);expect(visible()).toHaveLength(0);
++ actor.visible=true;focus.render(actor,'#ffd892',1,1);expect(visible()).toHaveLength(8);
++ const disposeGeometry=vi.spyOn(geometry,'dispose'),disposeTexture=vi.spyOn(cast,'dispose');focus.dispose();
++ expect(disposeGeometry).not.toHaveBeenCalled();expect(disposeTexture).not.toHaveBeenCalled();
++ geometry.dispose();windup.dispose();cast.dispose();material.dispose();
++});
+ 
+ it('keeps the title still through breathing, then relayouts for a new action or viewport',()=>{
+  const anchor=new FocusBannerAnchor(),plan={},caster={x:500,y:200,width:250,height:300};
+diff --git a/apps/web/src/game/cardrpg/battle-v3/focus.ts b/apps/web/src/game/cardrpg/battle-v3/focus.ts
+index aa1e83fbf..0b72f5a0d 100644
+--- a/apps/web/src/game/cardrpg/battle-v3/focus.ts
++++ b/apps/web/src/game/cardrpg/battle-v3/focus.ts
+@@ -29,9 +29,18 @@ export class CasterFocus {
+   }
+   this.root.visible=true;this.tint.set(color);
+   for(const copy of this.copies){
++   // Hidden rig attachments must not reappear through their outline copies.
++   let visible=true;
++   for(let node:T.Object3D|null=copy.source;node;node=node.parent)visible&&=node.visible;
++   copy.mesh.visible=visible;if(!visible)continue;
++   const sourceMaterial=copy.source.material as T.MeshBasicMaterial,material=copy.mesh.material as T.MeshBasicMaterial;
++   // Drawing swaps change the map on an existing mesh. Keep the alpha mask
++   // current while sharing source geometry and texture ownership.
++   if(!!material.map!==!!sourceMaterial.map)material.needsUpdate=true;
++   material.map=sourceMaterial.map;copy.mesh.geometry=copy.source.geometry;
+    copy.mesh.matrix.copy(copy.source.matrixWorld);copy.mesh.matrix.elements[12]!+=copy.dx*pixelsToWorld;copy.mesh.matrix.elements[13]!+=copy.dy*pixelsToWorld;
+    copy.mesh.matrixWorldNeedsUpdate=true;copy.mesh.renderOrder=copy.source.renderOrder-.5;
+-   (copy.mesh.material as T.MeshBasicMaterial).opacity=copy.alpha*amount;
++   material.opacity=copy.alpha*amount*sourceMaterial.opacity;
+   }
+  }
+  private clear(){for(const copy of this.copies)(copy.mesh.material as T.Material).dispose();this.root.clear();this.copies=[];this.source=undefined;}
+diff --git a/apps/web/src/game/cardrpg/battle-v3/motion.test.ts b/apps/web/src/game/cardrpg/battle-v3/motion.test.ts
+index a1c81768d..ea41b98f6 100644
+--- a/apps/web/src/game/cardrpg/battle-v3/motion.test.ts
++++ b/apps/web/src/game/cardrpg/battle-v3/motion.test.ts
+@@ -20,22 +20,29 @@ it('keeps every archetype planted with readable weight changes and an exact retu
+ });
+ it('reacts to actual damage recipients, including counter-damage, and settles exactly',()=>{
+  const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}])),t=plan.beats[2]!.start;
+- expect(hitPose(plan,t+67,'enemy',1,720).x).toBeGreaterThanOrEqual(23);expect(hitPose(plan,t+67,'cat',-1,720).x).toBeLessThanOrEqual(-29);
++ expect(hitPose(plan,t+67,'enemy',1,720).x).toBe(9);expect(hitPose(plan,t+67,'cat',-1,720).x).toBe(-9.5);
+  expect(hitPose(plan,t+33,'enemy',1,720).flash).toBe(1);expect(hitPose(plan,t+400,'enemy',1,720)).toMatchObject({x:0,y:0,angle:0,flash:0});expect(hitPose(plan,t+33,'other',1,720).x).toBe(0);
+ });
+ it('seeks an ultimate identically in reverse order without a hero-spot approach',()=>{
+  const input=fixture(true),expected=actionPose({...input,elapsed:900});expect(expected).toMatchObject({x:0,y:0});
+  actionPose({...input,elapsed:2100});expect(actionPose({...input,elapsed:900})).toEqual(expected);expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
+ });
+-it('keeps a reflected ranged hit planted without losing its reaction or changing damage',()=>{
++it('holds a bounded reflected hit for75ms, settles once, and leaves damage unchanged',()=>{
+  const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}]));
+  const before=JSON.stringify(plan),impact=plan.beats[2]!.start;
+- for(let at=impact;at<impact+400;at+=1000/30){
+-  const recoil=hitPose(plan,at,'cat',-1,720),planted=hitPose(plan,at,'cat',-1,720,true);
+-  expect(planted).toEqual({...recoil,x:0,y:0});
++ for(const height of [720,900]){
++  const contact=hitPose(plan,impact,'cat',-1,height);
++  expect(Math.abs(contact.x)).toBeGreaterThanOrEqual(6);expect(Math.abs(contact.x)).toBeLessThanOrEqual(12);
++  for(const age of [0,1000/30,2000/30,75])expect(hitPose(plan,impact+age,'cat',-1,height).x).toBe(contact.x);
++  expect(hitPose(plan,impact+150,'cat',-1,height).x).toBeGreaterThan(contact.x);
++  expect(hitPose(plan,impact+300,'cat',-1,height)).toMatchObject({x:0,y:0,flash:0});
+  }
+- const contact=hitPose(plan,impact+33,'cat',-1,720,true);
+- expect(contact.flash).toBe(1);expect(contact.sy).toBeLessThan(1);expect(contact.angle).not.toBe(0);
++ expect(hitPose(plan,impact+33,'cat',-1,720).flash).toBe(1);
++ expect(hitPose(plan,impact+2000/30,'cat',-1,720).flash).toBe(0);
++ const repeated={...plan,events:[...plan.events,plan.events.at(-1)!]};
++ expect(hitPose(repeated,impact+100,'cat',-1,720)).toEqual(hitPose(plan,impact+100,'cat',-1,720));
++ const zero={...plan,events:plan.events.map(e=>e.type==='damage'?{...e,amount:0}:e)};
++ expect(hitPose(zero,impact+33,'cat',-1,720)).toMatchObject({x:0,y:0,flash:0});
+  expect(JSON.stringify(plan)).toBe(before);
+ });
+ it('keeps both side cameras fixed before, during and after contact',()=>{
+@@ -63,7 +70,7 @@ it('mirrors enemy poses while retaining the same timing and bounded displacement
+ });
+ it('gives every simultaneous damage recipient its own recoil and flash',()=>{
+  const recipients=['front','rear','healer'],plan=configureSequence(createActionPlan([events[0]!,...recipients.map(id=>({...events[1]!,targetIds:[id]}))]));
+- for(const id of recipients){expect(hitPose(plan,383,id,1,720).flash).toBe(1);expect(hitPose(plan,417,id,1,720).x).toBeGreaterThanOrEqual(23);expect(hitPose(plan,750,id,1,720).x).toBe(0);}
++ for(const id of recipients){expect(hitPose(plan,383,id,1,720).flash).toBe(1);expect(hitPose(plan,417,id,1,720).x).toBe(9);expect(hitPose(plan,750,id,1,720).x).toBe(0);}
+ });
+ it('braces actual recipients without inventing a hit or moving bystanders',()=>{
+  const plan=fixture().plan,before=JSON.stringify(plan),impact=plan.beats[2]!.start,ready=bracePose(plan,impact-67,'enemy',1,720);
+diff --git a/apps/web/src/game/cardrpg/battle-v3/motion.ts b/apps/web/src/game/cardrpg/battle-v3/motion.ts
+index 5cf2f7c04..c6eec5883 100644
+--- a/apps/web/src/game/cardrpg/battle-v3/motion.ts
++++ b/apps/web/src/game/cardrpg/battle-v3/motion.ts
+@@ -5,7 +5,6 @@ export type AttackMotion=typeof MOTIONS[number];
+ export interface MotionPoint {x:number;y:number;core:number}
+ export interface RootPose {x:number;y:number;sx:number;sy:number;angle:number;phase:'idle'|'anticipation'|'travel'|'strike'|'return'|'land';flash:number}
+ const clamp=(x:number)=>Math.max(0,Math.min(1,x));
+-const out=(x:number)=>1-(1-clamp(x))**3;
+ const smooth=(x:number)=>{const u=clamp(x);return u*u*(3-2*u);};
+ export const neutralPose=():RootPose=>({x:0,y:0,sx:1,sy:1,angle:0,phase:'idle',flash:0});
+ const archetypes:Record<string,AttackMotion>={mochi:'dash-slash',biscuit:'dash-slash',panko:'leap-slam',brioche:'spin',velvet:'spin',cinnamon:'throw',marigold:'throw',soot:'staff-cast',sorrel:'staff-cast',clover:'summon',mallow:'summon',inkcap:'summon','button-guard':'dash-slash','sock-skipper':'spin','spool-ram':'dash-slash','kettle-knight':'leap-slam','yarn-giant':'leap-slam','needle-moth':'throw','pollen-scout':'throw','teacup-healer':'summon','binding-thread':'staff-cast','rain-spool':'staff-cast','crumb-sentinel':'dash-slash','pantry-crown':'summon'};
+@@ -39,21 +38,17 @@ export function bracePose(plan:EffectPlan|null,elapsed:number,id:string,directio
+  return p;
+ }
+ /** One visible impulse for each target, including counter-hits and damage over time. */
+-export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number,planted=false):RootPose {
++export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number):RootPose {
+  const p=neutralPose();if(!plan)return p;
+- const hits=plan.events.filter(e=>e.type==='damage'&&e.targetIds.includes(id));
++ const hits=plan.events.filter(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(id));
+  const impact=plan.beats[2]!.start,scale=height/720;
+- for(let i=0;i<hits.length;i++){
+-  const age=elapsed-impact-Math.min(i,5)*33;if(age<0||age>360)continue;
+-  const strength=hits[i]!.critical?30:28,attack=out(age/67),settle=1-smooth((age-100)/260),amount=attack*settle;
+-  p.x+=direction*strength*scale*amount;p.y-=Math.sin(clamp(age/260)*Math.PI)*5*scale;
+-  p.angle+=direction*(hits[i]!.critical?.13:.07)*amount;p.sx+=.055*amount;p.sy-=.055*amount;
+-  p.flash=Math.max(p.flash,age<2000/30?1:0);
+- }
+- p.x=Math.max(-38*scale,Math.min(38*scale,p.x));
+- // A ranged caster can receive reflected damage during its own action. Keep
+- // that slot planted while retaining squash, tilt and the contact flash.
+- if(planted){p.x=0;p.y=0;}
++ const age=elapsed-impact;if(!hits.length||age<0||age>=300)return p;
++ // V3-POSE 4B.4: a discrete contact held with K4, then a bounded settle.
++ // Multiple damage outcomes share this scheduled contact, not extra kicks.
++ const critical=hits.some(e=>e.critical),amount=1-smooth((age-75)/225);
++ p.x=direction*(critical?9.5:9)*scale*amount;p.y=-2*scale*amount;
++ p.angle=direction*(critical?.045:.035)*amount;p.sx=1+.025*amount;p.sy=1-.025*amount;
++ p.flash=age<2000/30?1:0;
+  return p;
+ }
+ export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}
+diff --git a/apps/web/src/game/cardrpg/spine/scene.ts b/apps/web/src/game/cardrpg/spine/scene.ts
+index fa45dc198..0317d8c54 100644
+--- a/apps/web/src/game/cardrpg/spine/scene.ts
++++ b/apps/web/src/game/cardrpg/spine/scene.ts
+@@ -264,12 +264,15 @@ export class SpineScene {
+    const input=frame?{plan:frame.plan,elapsed:frame.elapsed,asset:entry.asset,side:unit.side,home:home.point,target,width,height}:null;
+    if(!view.reducedMotion&&!view.model&&!iced){
+     if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
+-    const from=this.homes.get(caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
+-    const plantedCaster=!!plan&&unit.id===plan.actorId&&['throw','staff-cast','summon'].includes(attackMotion(entry.asset,plan));
+-    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height,plantedCaster);
++    const damageSource=plan?.events.find(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id))?.actorId;
++    const from=this.homes.get(damageSource??caster?.id??'')?.point.x??(unit.side==='enemy'?0:width);
++    reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
+     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
+     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
+     if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun'))rootPose=idlePose(worldTime,unit.id);
++    // A hit hold must also stop the recipient's brace/idle root, otherwise
++    // their independent motion adds displacement to the bounded recoil.
++    if(damageAge!==undefined&&damageAge>=0&&damageAge<.3)rootPose=neutralPose();
+     if(unit.hp<=0){const fall=Math.min(1,deathAge/.4);rootPose.angle=(unit.side==='enemy'?-1:1)*fall*.9;rootPose.y=fall*12*height/720;}
+    }
+    // The pilot gesture already moves the trunk around planted feet. Applying
+diff --git a/reports/v3-demo/vite.log b/reports/v3-demo/vite.log
+index c47047911..5d79f82de 100644
+--- a/reports/v3-demo/vite.log
++++ b/reports/v3-demo/vite.log
+@@ -11,3 +11,113 @@ Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+ 9:56:42 AM [vite] server restarted.
+ 10:08:27 AM [vite] ../../tools/v3-demo/vite.config.mts changed, restarting server...
+ 10:08:27 AM [vite] server restarted.
++11:13:01 AM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++11:13:01 AM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++11:13:01 AM [vite] (client) page reload dist-v2/e2e-5992/index.html
++11:13:01 AM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++11:13:01 AM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++11:13:02 AM [vite] (client) page reload dist-v2/e2e-5992/index.html
++11:13:02 AM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++11:13:02 AM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++11:13:02 AM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++11:13:02 AM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++11:13:03 AM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++12:46:01 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++12:46:01 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++12:46:01 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++12:46:01 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++12:46:01 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++12:46:02 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++12:46:02 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++12:46:02 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++12:46:02 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++12:46:02 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++12:46:03 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/Battle.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/CatDetailsA6.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/CatPreviewA6.tsx
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/SheetsV3.tsx
++12:57:25 PM [vite] (client) hmr invalidate /src/game/cardrpg/shared.tsx Could not Fast Refresh ("cardName" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
++12:57:25 PM [vite] (client) hmr update /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/HomeV4.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/Invitations.tsx, /src/game/cardrpg/depth/CafeV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/depth/CompanionGrowthV4.tsx, /src/game/cardrpg/depth/PantryRecipeV4.tsx, /src/game/cardrpg/ui-v3/PowerA6.tsx, /src/game/cardrpg/depth/RunMap.tsx and 8 more
++12:57:26 PM [vite] (client) [console.error] Cannot update a component (`ChainDock`) while rendering a different component (`Hydrate`). To locate the bad setState() call inside `Hydrate`, follow the stack trace as described in https://react.dev/link/setstate-in-render
++12:58:14 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++12:58:14 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++12:58:14 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++12:58:14 PM [vite] (client) hmr update /src/game/cardrpg/battle-v3/battle.css
++12:58:36 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:58:36 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:58:36 PM [vite] (client) hmr invalidate /src/game/cardrpg/shared.tsx Could not Fast Refresh ("cardName" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
++12:58:36 PM [vite] (client) hmr update /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/HomeV4.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/Invitations.tsx, /src/game/cardrpg/depth/CafeV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/depth/CompanionGrowthV4.tsx, /src/game/cardrpg/depth/PantryRecipeV4.tsx, /src/game/cardrpg/ui-v3/PowerA6.tsx, /src/game/cardrpg/depth/RunMap.tsx and 8 more
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/CatDetailsA6.tsx
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/CatPreviewA6.tsx
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/battle-v3/BattleHud.tsx
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/shell/Coach.tsx, /src/game/cardrpg/shell/FieldGuide.tsx
++12:58:51 PM [vite] (client) hmr invalidate /src/game/cardrpg/shared.tsx Could not Fast Refresh ("cardName" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
++12:58:51 PM [vite] (client) hmr update /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/HomeV4.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/Invitations.tsx, /src/game/cardrpg/depth/CafeV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/depth/CompanionGrowthV4.tsx, /src/game/cardrpg/depth/PantryRecipeV4.tsx, /src/game/cardrpg/ui-v3/PowerA6.tsx, /src/game/cardrpg/depth/RunMap.tsx and 8 more
++12:59:58 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++12:59:58 PM [vite] (client) hmr invalidate /src/game/cardrpg/shared.tsx Could not Fast Refresh ("cardName" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
++12:59:58 PM [vite] (client) hmr update /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/HomeV4.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/Invitations.tsx, /src/game/cardrpg/depth/CafeV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/depth/CompanionGrowthV4.tsx, /src/game/cardrpg/depth/PantryRecipeV4.tsx, /src/game/cardrpg/ui-v3/PowerA6.tsx, /src/game/cardrpg/depth/RunMap.tsx and 8 more
++1:01:16 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/SkillsV5.tsx, /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/EquipmentV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/ui-v3/ShellV3.tsx and 64 more
++1:01:16 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx
++1:01:16 PM [vite] (client) hmr update /src/game/cardrpg/ui-v3/SkillContextA6.tsx
++1:01:16 PM [vite] (client) hmr invalidate /src/game/cardrpg/shared.tsx Could not Fast Refresh ("cardName" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
++1:01:16 PM [vite] (client) hmr update /src/game/cardrpg/depth/JourneyV4.tsx, /src/game/cardrpg/depth/Pages.tsx, /src/game/cardrpg/depth/HomeV4.tsx, /src/game/cardrpg/depth/TeamCollection.tsx, /src/game/cardrpg/depth/Equipment.tsx, /src/game/cardrpg/depth/Invitations.tsx, /src/game/cardrpg/depth/CafeV4.tsx, /src/game/cardrpg/depth/CompanionCard.tsx, /src/game/cardrpg/depth/CompanionGrowthV4.tsx, /src/game/cardrpg/depth/PantryRecipeV4.tsx, /src/game/cardrpg/ui-v3/PowerA6.tsx, /src/game/cardrpg/depth/RunMap.tsx and 8 more
++1:01:43 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/BattleHud.tsx
++1:01:43 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
++1:01:43 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:06:27 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx
++1:06:27 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
++1:08:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx
++1:11:50 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:12:10 PM [vite] (client) hmr update /src/game/cardrpg/depth/App.tsx, /src/game/cardrpg/depth/CompanionPreview.tsx
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:12:29 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:12:30 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:18:18 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:18:19 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:24:52 PM [vite] (client) hmr update /src/game/cardrpg/depth/CompanionPreview.tsx
++1:29:09 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx, /src/game/cardrpg/battle-v3/VictoryCrew.tsx
++1:29:09 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:31:58 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:43:48 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/index.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/market-fixture/e2e/fixtures/market-view.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/art2-fixture/e2e/fixtures/art2-view.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/feature-fixture/e2e/fixtures/feature-samples.html
++1:43:49 PM [vite] (client) page reload dist-v2/e2e-5992/motion-fixture/e2e/fixtures/motion-view.html
++1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++1:50:44 PM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+diff --git a/reports/v3-feel/CRAFT/craft-times.json b/reports/v3-feel/CRAFT/craft-times.json
+index a9b30e3eb..4dbe64ed9 100644
+--- a/reports/v3-feel/CRAFT/craft-times.json
++++ b/reports/v3-feel/CRAFT/craft-times.json
+@@ -1438,6 +1438,57 @@
+       "start": "2026-11-16T02:49:44.839465+00:00",
+       "work": "Strengthen local lantern ignition and travelling-flame opening; sculpt separate after-impact fragments and inspect field-scale timing.",
+       "end": "2026-11-16T02:52:23.483068+00:00"
++    },
++    {
++      "item": "P2",
++      "asset": "soot-lantern-requiem",
++      "kind": "ultimate",
++      "category": "measure",
++      "revision": 2,
++      "start": "2026-11-16T02:52:23.483068+00:00",
++      "work": "Run renderer pose/effect footprints, prepare second filmed revision and commit verified trial assets.",
++      "end": "2026-11-16T02:54:30.984225+00:00"
++    },
++    {
++      "item": "P2",
++      "asset": "soot-drawn-poses",
++      "kind": "pose",
++      "category": "author",
++      "revision": 2,
++      "start": "2026-11-16T02:54:30.984225+00:00",
++      "work": "Author bounded6\u201312px hit recoil and75ms held contact, including Soot retaliation; keep source trajectory stable and verify actual field movement.",
++      "end": "2026-11-16T02:56:30.486652+00:00"
++    },
++    {
++      "item": "P2",
++      "asset": "soot-drawn-poses",
++      "kind": "pose",
++      "category": "review",
++      "revision": 2,
++      "start": "2026-11-16T02:56:30.486652+00:00",
++      "reviewPath": "reports/v3-feel/REVIEW/P2/REVIEW.md",
++      "work": "Review bounded reaction and matched-scale reference while unchanged R2 films record; prepare blind read methodology.",
++      "end": "2026-11-16T02:58:26.640278+00:00"
++    },
++    {
++      "item": "P2",
++      "asset": "soot-drawn-poses",
++      "kind": "pose",
++      "category": "measure",
++      "revision": 3,
++      "start": "2026-11-16T02:58:26.640278+00:00",
++      "work": "Reproduce focus failure and prepare blind-film measurement helper while unchanged R2 capture finished; entire mixed interval conservatively measurement.",
++      "end": "2026-11-16T03:00:19.412063+00:00"
++    },
++    {
++      "item": "P2",
++      "asset": "soot-drawn-poses",
++      "kind": "pose",
++      "category": "measure",
++      "revision": 3,
++      "start": "2026-11-16T03:00:19.412063+00:00",
++      "work": "Mixed focus repair, tests, visual diagnosis and isolation probe; conservatively measurement. Closed at explicit user stop, no downtime credit.",
++      "end": "2026-11-16T03:05:04.756811+00:00"
+     }
+   ],
+   "rejectedSteps": [
+@@ -1857,14 +1908,5 @@
+       "creditedMinutes": 0,
+       "reason": "Handoff interrupted author interval; preserved without inferred downtime credit."
+     }
+-  ],
+-  "active": {
+-    "item": "P2",
+-    "asset": "soot-lantern-requiem",
+-    "kind": "ultimate",
+-    "category": "measure",
+-    "revision": 2,
+-    "start": "2026-11-16T02:52:23.483068+00:00",
+-    "work": "Run renderer pose/effect footprints, prepare second filmed revision and commit verified trial assets."
+-  }
++  ]
+ }
+diff --git a/reports/v3-feel/DECISIONS-FEEL.md b/reports/v3-feel/DECISIONS-FEEL.md
+index 5dfb01a1e..13b17af5c 100644
+--- a/reports/v3-feel/DECISIONS-FEEL.md
++++ b/reports/v3-feel/DECISIONS-FEEL.md
+@@ -268,3 +268,4 @@ Q2 checker coverage correction: bossHeightRatio applies to the boss fixture; eli
+ 2026-11-16T01:56:30.583450+00:00 Updated V3-POSE order adopted verbatim (section0A anti-forget), bytes54054,sha256906716304bf915a2ffeee62c81e7b280fb42d1c9f0a8ee00d81a6a89496ec4cd; authorization active; RULES/STATE created before P2 continuation; previous handoff wording does not stop work.
+ 
+ 2026-11-16 P2 R0 review correction: initial no-Soot-damage claim used an actor filter that excluded retaliation. wave3A24 damages Soot12; K5 hid K4. Review corrected, drawing-only180ms retaliation override added; action clock/cues unchanged.
++2026-11-16T02:54:30.984225+00:00 P2: old motion tests expecting28–30px and zero ranged-retaliation recoil are SUPERSEDED by user4B.4(6–12px knockback+75ms contact hold); replace assertions with new bounded event-owned response; no combat rules change.
+diff --git a/reports/v3-feel/HANDOFF-FEEL.md b/reports/v3-feel/HANDOFF-FEEL.md
+index 957a2ee38..5855f67f7 100644
+--- a/reports/v3-feel/HANDOFF-FEEL.md
++++ b/reports/v3-feel/HANDOFF-FEEL.md
+@@ -6,15 +6,18 @@ NO DEPLOY/MAIN MERGE | ORIGINAL ART, OWN INPUTS ONLY
+ FILES ARE MEMORY: READ RULES-POSE + HANDOFF + STATE AFTER EVERY COMPACTION
+ ALREADY AUTHORIZED: CONTINUE | SAVE IMAGE+PROVENANCE AT ONCE | SMALL SHEETS ONLY
+ DO NOT STOP BEFORE19NOV12Z EXCEPT EXPLICIT USER STOP/STOP-V3FEEL
+-NOW: P2 revision2 composed: local painted ignition, narrower warm impacts, basic ember chips, per-pose overlap.
+-NEXT1: Fix discovered legacy28–38px recoil/planted retaliation0px to new6–12px contract; then R2film/blind40.
+-NEXT2: Master comparison/contrast/FPS/speed/remaining pose gates and actual craft floors.
+-NEXT3: Hourly trial checkpoint prepared now; no rollout before pilot passes.
+-LAST GOOD COMMIT: 77136c874bca20ad20aecc921ea516e65cf071e2; HEAD=origin verified.
+-OPEN: P2 trial only; runtime/film/effect/craft gates incomplete. No production acceptance.
+-OPEN: Q1 video50.233ms;Q2 A97/B14;historicQ3.A craft15.17% retained.
+-PIDS: OwnedVite67838 alive5990;system_installd16045 NOT OURS;demo5994/API5997/8546 untouched.
+-BACKGROUND JOBS: No active job except owned Vite67838; R0/R1 films and latest boss preview/typecheck complete.
+-FILES: generic drawing track,selected Soot poses,staff-smear/socket edits,LEARN/P2,provenance/state are uncommitted.
+-TIME TRIGGERS: R1Nov16 12Z;R2Nov18 12Z;freezeNov19 12Z;none due.
+-UPDATED: 2026-11-16T02:53:38.939149+00:00
++NOW: Explicit USER STOP for review at 2026-11-16T03:05:04.756811+00:00; no implementation continues.
++USER: “dừng, viết báo cáo kết thúc nhé.” / “mình cần review lại tí”. See INBOX.md.
++NEXT1: Wait for user review/instruction; do not resume on this saved queue alone.
++NEXT2: When resumed, inspect apparent double-paint at200ms; isolation images saved but uninspected.
++NEXT3: Review all10R2windows; final film after focus repair; blind40/contrast/FPS/craft gates.
++LAST GOOD COMMIT: 88fa5bdfd820609f054d174fce24248f35aa9575; HEAD=origin verified; trial checkpoint only.
++UNCOMMITTED: recoil/event direction+tests; focus map/visibility+test; blind helper; reports/state.
++CHECKS: checkpoint2640web/1786policy/typecheck/3fixtureparityPASS; latest29focused/typecheckPASS.
++R2:1803/1801/1802frames;29/29/28actions;allparitytrue;focus repair is later than films.
++OPEN: P2 not accepted; R2review/blind40/visual/performance/craft gates incomplete; enemyK4temporary.
++OPEN: Q1video50.233ms;Q2A97/B14;historicalQ3.Acraft15.17%.
++PIDS: OwnedVite67838 alive5990 for review; demo5994/API5997/8546 untouched.
++BACKGROUND JOBS: No capture/test/generation/probe active; probe42386 finished/browser closed.
++FILES: REPORT-FEEL.md English;STATUS-VI.md Vietnamese;R2films in REVIEW/P2-R2/.
++UPDATED: 2026-11-16T03:05:04.756811+00:00
+diff --git a/reports/v3-feel/INBOX.md b/reports/v3-feel/INBOX.md
+index fd883deb4..25d7e1816 100644
+--- a/reports/v3-feel/INBOX.md
++++ b/reports/v3-feel/INBOX.md
+@@ -1,3 +1,5 @@
+ # User feedback
+ 
+ No additional notes yet. User lines here may override thresholds or names.
++
++2026-11-16T03:05:04.756811+00:00 USER STOP (chat): “dừng, viết báo cáo kết thúc nhé.” / “mình cần review lại tí”. Stop implementation and preserve work for review.
+diff --git a/reports/v3-feel/LEARN/P2.md b/reports/v3-feel/LEARN/P2.md
+index 6464dc16c..7e594ae39 100644
+--- a/reports/v3-feel/LEARN/P2.md
++++ b/reports/v3-feel/LEARN/P2.md
+@@ -59,3 +59,9 @@ Opening revision2 before edit: all three R1 ultimate windows lose the local igni
+ Contact-composition refinement: wave3 native1100ms shows21 similar pale petals at once, which weakens the main flame hierarchy. D3/D5 asymmetry and Q3B-X01 body readability motivate shorter/narrower warm-magenta cuts (124/88/65px,32/19/13px at720h) with modest per-target angle variation; retain sparse foreground, face masking and the75ms impact hold. All-target readability must be judged again in film.
+ 
+ Measured warm-cut composition23.735/23.960% alpha footprint at1280/1440: FAIL25% floor. Strengthen the rear travelling main body (widths .75/.35/.38 viewport height) instead of restoring the occluding foreground petals. This is a failed gate-driven silhouette revision; same alpha>=128 measurement and unchanged25–60% threshold.
++
++Hit-contract refinement before code: legacy hitPose creates28/30px impulses (cap38px) and removes recoil entirely for a ranged caster. Both violate4B.4. The already measured own R1 retaliation at1100–1280ms confirms K4 but a planted foot; native contact shows continued root movement during the intended hold. Compare two analytic candidates: clipping a28px ease to9px creates a long flat top unrelated to the75ms hold; a9px immediate contact held75ms then a225ms cubic settle matches the held drawing and exact return. Use the latter, critical9.5px; at900h peaks11.25/11.875px, within6–12. One scheduled damage contact per recipient (multiple outcome events must not add artificial later recoil). Zero-damage events get no recoil. This updates visual response only; damage/schedule remain unchanged. Use the attacker of each damage event for recoil direction so retaliation recoils away from its actual source.
++
++Focus integration diagnosis before fix: the native400ms K5 frame shows a purple detached silhouette above/right of the cat. CasterFocus clones every old rig mesh regardless of visibility and copies each material map only when the actor changes; drawing swaps reuse the same geometry but change its texture. The outline therefore combines hidden K0 rig parts with a stale K1 mask on K5 geometry. Three.js Object3D visibility and Texture ownership sources already studied apply. Keep shared geometry/textures, sync the current map each render, and mask clone visibility through the source ancestry. Test with a two-key own-style mesh plus a hidden parent before applying to the actual K5 film. Do not change the running R2 capture; record this discovered regression and fix after its endpoint.
++
++Blind40 measurement plan before scripting: reuse unchanged film capture resampled.renderFrame -> frames[ordinal] correspondence from media-timing.mjs/frame-marker.mjs (encoded marker is ordinal+1, decoder returns ordinal), crop the actual1280px film around Soot without resizing. Randomize identifiers and select across available K0/K1/K2/K4/K5 strata so idle prevalence cannot hide a weak cast/hit read. Save the private expected labels separately; show only four randomly ordered crops per sheet, no fixture/time/phase caption. Write40 labels plus timestamp/hash before reading the key. Reject unmatched markers rather than guessing boundary phases. This is an evaluation helper, not a recorder change; retain only one compact receipt and put working images in ignored raw.
+diff --git a/reports/v3-feel/PROGRESS-POSE.log b/reports/v3-feel/PROGRESS-POSE.log
+index febdc78fa..59490485f 100644
+--- a/reports/v3-feel/PROGRESS-POSE.log
++++ b/reports/v3-feel/PROGRESS-POSE.log
+@@ -17,3 +17,6 @@
+ 2026-11-16T02:48:23.935620+00:00 P2 RESUMED hash=906716304bf915a2ffeee62c81e7b280fb42d1c9f0a8ee00d81a6a89496ec4cd; rules/state present; preview+typecheck recovered; continue opening/contact revision; HEAD77136c874
+ 2026-11-16T02:52:23.483068+00:00 P2 revision2 preview improved opening/contact;2640webtests/typecheck/3fixtureparityPASS; finalfilm/gatesOPEN; HEAD77136c874
+ 2026-11-16T02:53:38.939149+00:00 P2 trial checkpoint prepared;2640web/1786policy/typecheck/parityPASS; area25.424/25.636%; recoil contract defect found; HEAD77136c874
++2026-11-16T02:54:30.984225+00:00 P2 CHECKPOINT pushed 88fa5bdfd820609f054d174fce24248f35aa9575;continue bounded recoil revision thenR2film
++2026-11-16T03:00:19.412063+00:00 P2 R2 films1803/1801/1802frames allparitytrue; focus test reproduces16visiblecopies vs8expected; repairnext; HEAD88fa5bdfd
++2026-11-16T03:05:04.756811+00:00 USER STOP for review; report saved;ledger closed;no active jobs except reviewVite;lastpushed88fa5bdfd820609f054d174fce24248f35aa9575;P2OPEN
+diff --git a/reports/v3-feel/REVIEW/P2/REVIEW.md b/reports/v3-feel/REVIEW/P2/REVIEW.md
+index 8542b5ea1..3800c272b 100644
+--- a/reports/v3-feel/REVIEW/P2/REVIEW.md
++++ b/reports/v3-feel/REVIEW/P2/REVIEW.md
+@@ -47,3 +47,7 @@ Comparison with R0: changing the silhouette and moving its head/tail fixes the r
+ 
+ ## Revision2 author preview (not film acceptance)
+ Boss basic r4 became a broad pale arrowhead at350–416ms; r5 changes contact to shorter separated ember chips and a two-frame hot flash. Ultimate native400/600/700/800ms: local ignition now visible600–700ms; main body takes over800ms. Native1100ms repeated pale petals were reduced to narrower warm-magenta cuts, leaving the main flame silhouette and target bodies readable. Updated overlap is in these previews. R2 full films, blind40 and objective gates still required; scores unchanged until review.
++
++## Private matched-scale comparison during revision2
++`ref/P2/basic-master.jpg` compares P1-B03 keys44.7/44.9s against native Soot150/350ms, body~196px versus192/194px. The master turns the torso/back, swings the leg and releases a wide arc; Soot shifts from lantern-behind to a fully extended forward arm and open rear arm. The silhouette now changes clearly but the planted lower body and head turn are restrained. That restraint fits a ranged bolt, but follow-through remains less rich. The ref retains a visible passing silhouette between extremes; our smear briefly bridges the two keys instead.
++`ref/P2/ultimate-master.jpg` compares P1-U01 gather/release at78.4/78.6s with Soot400/800ms, body~196px versus194.5px. The master unfolds a crossed forearm into an open stance; Soot holds K5 while the flame grows. Our long held key needs clear cloth/tail motion and stronger separation from K0; the blind read will decide whether that distinction is adequate. Both private sheets contain four samples and are never shipped or generator inputs. These previews supplement, not replace, the required final-film comparisons.
+diff --git a/reports/v3-feel/STATE-POSE.md b/reports/v3-feel/STATE-POSE.md
+index 93ef1ebc0..42813a66b 100644
+--- a/reports/v3-feel/STATE-POSE.md
++++ b/reports/v3-feel/STATE-POSE.md
+@@ -1,9 +1,9 @@
+ REQUEST-POSE.txt bytes=54054 sha256=906716304bf915a2ffeee62c81e7b280fb42d1c9f0a8ee00d81a6a89496ec4cd
+ # V3-POSE living state
+-UPDATED 2026-11-16T02:48:23.935620+00:00; authorization active; P2 in progress; STOP-V3FEEL absent; no time trigger due.
++UPDATED 2026-11-16T03:05:04.756811+00:00; explicit USER STOP for review; no implementation continues.
+ SOURCE /Users/bao/art/codex-prompts/PASTE-CODEX-V3-POSE-2026-11-16.txt (verbatim mirrored).
+ WORKTREE /Users/bao/taskbar-hero-cardrpg-a6 | BRANCH codex/v3-feel-2026-11-14
+-HEAD=origin 77136c874bca20ad20aecc921ea516e65cf071e2 (anti-forget checkpoint pushed).
++HEAD=origin 88fa5bdfd820609f054d174fce24248f35aa9575 (P2 trial checkpoint pushed).
+ DONE P0 52b994a9c8b659f073fc282b06f85508bd87bae9 | LEARN/P0.md; gate adoption;2634web/1784policy/typecheck/parity PASS.
+ DONE P1 c577a85acca6f4d4e456fa8baaeb723c2ea8bb4a | REVIEW/P1/REVIEW.md;16sources/2formal;23checker PASS;1786policy/typecheck/parity PASS.
+ P1 is method learning only; zero production acceptance/authoring credit.
+@@ -51,3 +51,12 @@ REGRESSION: web2640testsPASS/typecheckPASS/3fixtureF6parityPASS; shader-colour r
+ 
+ REVISION2 area: narrow impacts failed23.735/23.960%; wider rear body now25.424/25.636%PASS probe. Faces/film/FPS remainOPEN.
+ FOUND: legacy hitPose28–38px recoil and planted retaliation0px violate new6–12px pose contract; revise after checkpoint.
++## User stop snapshot
++Chat explicitly requests stop/report for review;88fa5bdfd pushed; later edits remain local.
++R2 complete1803/1801/1802frames,29/29/28actions,paritytrue; all10window review incomplete.
++Recoil9/9.5px at720h,11.25/11.875px at900h,75ms hold; local changes.
++Focus stale-map/hidden-mesh defect reproduced and repaired;29focused/typecheckPASS.
++Apparent double-paint at200ms unresolved; isolation images saved and uninspected at stop.
++Probe confirms8visible outline copies use currentK1map;8hidden-rig copies invisible.
++Blind helper prepared; no40labels/results. No acceptance or roster rollout.
++No active capture/test/generation; ownedVite67838 stays for review. REPORT-FEEL.md/STATUS-VI.md.
+diff --git a/reports/v3-feel/STATUS-VI.md b/reports/v3-feel/STATUS-VI.md
+index 2228f6f04..583befacd 100644
+--- a/reports/v3-feel/STATUS-VI.md
++++ b/reports/v3-feel/STATUS-VI.md
+@@ -1,20 +1,18 @@
+-Đã chuyển sang prompt V3-POSE: mỗi nhân vật có tư thế đánh vẽ riêng (gồng, chém, trúng đòn, tung chiêu)
+-Q1 còn mở: lịch 800/2.200 ms đúng, không chồng lượt; sai lệch video tối đa 50,233 ms > 33 ms.
+-Camera đứng yên; chỉ rung chiêu cuối trong giới hạn, không có tấm chiêu toàn màn hình.
+-Q2 đã xem 83/83 cửa sổ hành động, 100 trạng thái quay mặt; ram quay đúng.
+-Chiều cao mèo tối thiểu 191/239 px; tỉ lệ lớn/nhỏ tối đa 1,037 < 1,05.
+-Đội hình phủ tối thiểu 86,18% chiều ngang; HUD 12%/10,67% chiều cao.
+-154/154 lần gây sát thương/hồi máu/tạo khiên có đúng một số; tối đa 2 nhãn, <=682,61 ms.
+-Không thấy số/đơn vị che mặt hoặc HUD; 6 lần dựng lại chiêu lệch <=2,182 px, vẫn cách vùng mặt 8 px.
+-Mốc Q2: 2.634 kiểm thử web và 435/435 trình duyệt PASS; sau sửa Soot mới kiểm lại kiểu/parity.
+-Q2 vẫn mở tổng thể: Q1 chưa đạt; A còn 97 lỗi, B còn 14 lỗi cũ/mốc tương lai, giữ nguyên để xử lý Q9.
+-P1: đã học 16 nguồn, xem 6 đòn thường/1 chiêu; chọn vẽ toàn thân rồi đổi tư thế tức thời.
+-Soot: đủ 16 mẫu; đã chọn 4 tư thế, xuất K0/K1/K2/K4/K5; số đo tranh đạt, chưa duyệt sản xuất.
+-Tỉ lệ sáng tác hiện 15.17% < 60% (không tính thời gian gián đoạn); Q3.A vẫn mở.
+-Đã xem đủ 10 hành động Soot bản R1: mở chiêu sớm hơn nhưng hình chính còn giống rèm; chưa đạt.
+-P2-R0: 3 phim đã quay xong, parity đúng; đang xem tư thế/đòn thường. Chiêu cuối còn giống rèm.
+-Neo chân sai lệch <=0,213 px; X09 giữ đúng màu/tua lại (sai lệch 0), đang làm tan biến và mảnh vỡ.
+-Chưa đủ mốc sáng tác 60/30/25 phút cho V3-POSE/hai vòng sửa; không tính thời gian gián đoạn.
+-Roster thực có 12 mèo/25 đơn vị; yêu cầu 13 mèo còn là chênh lệch, không tự thêm nhân vật.
+-Không hạ ngưỡng, không triển khai, không merge main; làm một mình.
+-Mốc xem lại: 16/11 19:00, demo cuối 18/11 19:00, đóng băng 19/11 19:00 (giờ Việt Nam).
++Đã dừng theo yêu cầu của bạn để review, ngày16/11/2026.
++P2 Soot chưa nghiệm thu; chưa triển khai cho các nhân vật còn lại.
++Đã có K0/K1/K2/K4/K5, đổi tranh tức thời, socket riêng và chuyển động phụ đuôi/áo.
++Đã làm lại đòn thường và Lantern Requiem thành ngọn lửa di chuyển; sửa mở chiêu và va chạm boss.
++Chọn K1A2,K2A4,K4A4,K5A2 từ16 mẫu; số đo màu/đầu/silhouette của tranh đạt.
++Probe:chân lệch0/2px; chiều cao sai khác tối đa khoảng2,1%; diện tích chiêu25,42%/25,64% ở hai cỡ desktop.
++Checkpoint đã push:88fa5bdfd; sửa recoil/focus sau đó còn trong worktree,chưa commit.
++Checkpoint:2.640 kiểm thử web,1.786 kiểm thử chính sách,typecheck và parity3fixture đạt.
++Sau sửa recoil/focus:29 kiểm thử tập trung và typecheck đạt; chưa chạy lại toàn bộ.
++Đã quay3 phim P2-R2,parity đúng; phim chưa có bản sửa focus mới nhất.
++Còn điểm chưa xác nhận:hình chồng ở focus200ms cần xem ảnh tách lớp; outline cũ có lỗi map/visibility.
++Chưa xem xong10 cửa sổ R2; chưa chạy blind40,contrast/FPS và các gate còn lại.
++Chưa đủ thời gian sáng tác60/30/25phút và tỉ lệ60%; không tính thời gian gián đoạn.
++Địch chưa có K4 vẫn dùng phản ứng tạm.
++Lỗi cũ giữ nguyên:Q1video50,233ms>33ms;Q2A97/B14;Q3.Acraft15,17%.
++Phim:reports/v3-feel/REVIEW/P2-R2/{wave1,wave3,boss}.webm.
++Báo cáo:reports/v3-feel/REPORT-FEEL.md. Máy chủ5990 vẫn chạy; không có job dựng/quay/kiểm thử đang chạy.
++Không deploy,không merge main,không mở PR.
+diff --git a/reports/v3-feel/jobs.json b/reports/v3-feel/jobs.json
+index c8199de67..a28e30887 100644
+--- a/reports/v3-feel/jobs.json
++++ b/reports/v3-feel/jobs.json
+@@ -774,12 +774,12 @@
+     "verifiedAt": "2026-11-16T01:06:03.593519+00:00"
+   },
+   "P2-capture": {
+-    "pid": 53969,
++    "pid": 58771,
+     "command": [
+       "node",
+       "scripts/v3feel/capture.mjs",
+       "--item",
+-      "P2-R1",
++      "P2-R2",
+       "--seconds",
+       "30",
+       "--video-seconds",
+@@ -788,9 +788,9 @@
+     ],
+     "cwd": "/Users/bao/taskbar-hero-cardrpg-a6",
+     "log": "reports/v3-feel/P2-capture.log",
+-    "started": "2026-11-16T02:38:18.112140+00:00",
++    "started": "2026-11-16T02:56:30.486652+00:00",
+     "finished": true,
+-    "status": "R1 all3films complete1797/1800/1802frames,29/29/28actions,paritytrue",
+-    "verifiedAt": "2026-11-16T02:42:15.629832+00:00"
++    "ended": "2026-11-16T03:00:19.412063+00:00",
++    "status": "R2 three films complete1803/1801/1802 compositorframes; all paritytrue; focus defect known"
+   }
+ }
+diff --git a/reports/v3-feel/vite.log b/reports/v3-feel/vite.log
+index 435e3bca4..3ce6c07e9 100644
+--- a/reports/v3-feel/vite.log
++++ b/reports/v3-feel/vite.log
+@@ -422,3 +422,39 @@ Visit https://react.dev/link/error-boundaries to learn more about error boundari
+ 1:28:01 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+ 1:30:26 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
+ 1:30:50 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:03:00 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:03:02 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:14:24 AM [vite] (client) page reload src/game/rig/cutout.ts
++9:16:35 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:16:35 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:18:57 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:18:57 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:18:57 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:19:44 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:27:09 AM [vite] (client) page reload src/game/rig/cutout.ts
++9:27:09 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:29:26 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:31:22 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:32:50 AM [vite] (client) page reload src/game/rig/drawing-layer.ts
++9:32:50 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:32:50 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:35:46 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:37:39 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:41:39 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:41:42 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:42:15 AM [vite] (client) page reload src/game/rig/drawing-layer.ts
++9:42:15 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:45:50 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:49:06 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:49:45 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:51:02 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:52:25 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:52:28 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:53:06 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:53:08 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:53:10 AM [vite] (client) [console.warn] WARNING: Multiple instances of Three.js being imported.
++9:54:31 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:54:31 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:55:02 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++9:55:31 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx
++10:00:19 AM [vite] (client) hmr update /src/game/cardrpg/depth/Battle.tsx

@@ -18,6 +18,28 @@ function resolveRam(charged=false,rage=false,dazed=false){
  return{battle,actor,plan:model.plan!,model};
 }
 
+describe('Teacup recovery presentation',()=>{
+ it('uses the actual wounded enemy ally from a real signature action',()=>{
+  const account=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),true));
+  const battle=R.createBattle({seed:71,chapter:1,gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true,cats:R.battleCats(account),enemies:['teacup-healer','binding-thread']});
+  const actor=battle.actors.find(a=>a.catalogId==='teacup-healer')!;
+  const patient=battle.actors.find(a=>a.catalogId==='binding-thread')!;
+  patient.hp=Math.floor(patient.maxHp*.2);actor.charge=100;actor.turns=3;
+  battle.intents.find(intent=>intent.actorId===actor.id)!.signature=true;
+  battle.queue=[actor.id,...battle.queue.filter(id=>id!==actor.id)];battle.v4!.committed=true;
+  const model=new DepthModel(true);model.state=account;model.tutorialBattle=battle;model.sceneReady=true;model.sceneStarted=true;model.watching=true;model.screen='map';model.act();
+  const plan=model.plan!,recipients:string[]=[];
+  expect(plan.actorId).toBe(actor.id);
+  expect(plan.ultimate).toBe(true);
+  expect(plan.events.some(e=>e.actorId===actor.id&&e.type==='heal'&&e.targetIds.includes(patient.id))).toBe(true);
+  paintedTargets(plan,'heal',battle.actors,recipients);
+  expect(recipients).toContain(patient.id);
+  expect(recipients.every(id=>battle.actors.find(a=>a.id===id)?.side===actor.side)).toBe(true);
+  expect(plan.events.some(e=>e.actorId===actor.id&&e.type==='damage')).toBe(false);
+ });
+});
+
+
 describe('historical Spool Ram preparation and current damage presentation',()=>{
  it('previews a current direct strike even when a saved gallery request asks for preparation',()=>{
   for(const id of ['enemy:spool-ram:basic','enemy:spool-ram']){

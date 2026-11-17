@@ -1,0 +1,485 @@
+[
+  {
+    "id": "A0-lasseter",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A0 salvage",
+    "takeaway": "Readable held poses; secondary motion should not defeat contact."
+  },
+  {
+    "id": "A0-object",
+    "url_or_path": "https://threejs.org/docs/pages/Object3D.html",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "Visibility through source ancestry and world transforms must be preserved in clones."
+  },
+  {
+    "id": "A0-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "One visible slot attachment at a time; sockets belong to drawing geometry."
+  },
+  {
+    "id": "A0-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "A0 salvage",
+    "takeaway": "Decode input colours once; preserve shared texture treatment."
+  },
+  {
+    "id": "A0-runtime",
+    "url_or_path": "tools/v3craft-lab/p2/runtime-study.json",
+    "type": "experiment",
+    "topic": "A0 salvage",
+    "takeaway": "Actual renderer: centered plane drift134/167px vs foot-local0/0px; restored rig pixel exact."
+  },
+  {
+    "id": "A0-recoil",
+    "url_or_path": "reports/v3-feel/LEARN/P2.md",
+    "type": "local",
+    "topic": "A0 salvage",
+    "takeaway": "Prior recoil method and focus double-paint diagnosis, preserved rather than recreated."
+  },
+  {
+    "id": "A0-focus",
+    "url_or_path": "apps/web/src/game/cardrpg/battle-v3/focus.test.ts",
+    "type": "experiment",
+    "topic": "A0 salvage",
+    "takeaway": "Hidden rig and swapped mask reproduction: intended8visible copies, none if actor hidden."
+  },
+  {
+    "id": "A1-lasseter",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Pose-to-pose staging, anticipation, follow-through; hold emphasis selectively."
+  },
+  {
+    "id": "A1-reinhard",
+    "url_or_path": "https://home.cis.rit.edu/~cnspci/references/dip/color_transfer/reinhard2001.pdf",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Match channel statistics in decorrelated l-alpha-beta; Lab adaptation is our experiment, not the original colour model."
+  },
+  {
+    "id": "A1-ipadapter",
+    "url_or_path": "https://arxiv.org/abs/2308.06721",
+    "type": "paper",
+    "topic": "A1 hybrid",
+    "takeaway": "Image conditioning supports reference identity, not a guarantee; do not claim our generator uses this architecture."
+  },
+  {
+    "id": "A1-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Only one visible drawing in an attachment slot; effect points follow attachment."
+  },
+  {
+    "id": "A1-keys",
+    "url_or_path": "https://esotericsoftware.com/spine-keys",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Discrete attachment keys coexist with transforms and events."
+  },
+  {
+    "id": "A1-mix",
+    "url_or_path": "https://esotericsoftware.com/spine-applying-animations",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "Per-transition zero mix is possible; Timeline API handles reverse playback needs."
+  },
+  {
+    "id": "A1-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "A1 hybrid",
+    "takeaway": "One sRGB input decode and linear render path."
+  },
+  {
+    "id": "A1-local",
+    "url_or_path": "reports/v3-feel/LEARN/P2.md",
+    "type": "local",
+    "topic": "A1 hybrid",
+    "takeaway": "Existing shared foot-local drawing layer and own art metrics."
+  },
+  {
+    "id": "A1-experiment",
+    "url_or_path": "tools/v3craft-lab/v4-hybrid/results.json",
+    "type": "experiment",
+    "topic": "A1 hybrid",
+    "takeaway": "Pending six timing variants and four colour methods on Soot, common216px opaque height."
+  },
+  {
+    "id": "A1b-hoffman",
+    "url_or_path": "https://sites.socsci.uci.edu/~ddhoff/InterpBiologicalMotion.pdf",
+    "type": "paper",
+    "topic": "A1b classes",
+    "takeaway": "Relative motion encodes structure; use action trajectory+posture cues, not colour alone."
+  },
+  {
+    "id": "A1b-clarity",
+    "url_or_path": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+    "type": "breakdown",
+    "topic": "A1b classes",
+    "takeaway": "Visual hierarchy and facing/silhouette must represent gameplay purpose."
+  },
+  {
+    "id": "A1b-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "doc",
+    "topic": "A1b classes",
+    "takeaway": "Effects should identify the action and source while preserving whole-roster clarity."
+  },
+  {
+    "id": "A1b-character",
+    "url_or_path": "https://www.riotgames.com/en/artedu/character-art",
+    "type": "doc",
+    "topic": "A1b classes",
+    "takeaway": "Proportion and readability must survive small game scale."
+  },
+  {
+    "id": "A1b-events",
+    "url_or_path": "https://esotericsoftware.com/spine-events",
+    "type": "doc",
+    "topic": "A1b classes",
+    "takeaway": "Animation events trigger presentation work; runtime owns actual playback."
+  },
+  {
+    "id": "A1b-reference",
+    "url_or_path": "reports/v3-feel/CRAFT/REFERENCE-BREAKDOWN.md",
+    "type": "local",
+    "topic": "A1b classes",
+    "takeaway": "Sixteen classified action studies across two videos, source times and uncertainty retained."
+  },
+  {
+    "id": "A1b-own",
+    "url_or_path": "tools/v3craft-lab/v4-classes/results.json",
+    "type": "experiment",
+    "topic": "A1b classes",
+    "takeaway": "Pending3dash/2projectile/2heal variants on own Mochi/Soot/Clover art."
+  },
+  {
+    "id": "A10-saliency",
+    "url_or_path": "https://ilab.usc.edu/publications/doc/Itti_etal98pami.pdf",
+    "type": "paper",
+    "topic": "A10",
+    "takeaway": "Use local contrast hierarchy; not a human-viewer test."
+  },
+  {
+    "id": "A10-steam",
+    "url_or_path": "https://partner.steamgames.com/doc/store/assets/standard",
+    "type": "doc",
+    "topic": "A10",
+    "takeaway": "Communicate game identity in key art; remain readable small."
+  },
+  {
+    "id": "A10-youtube",
+    "url_or_path": "https://support.google.com/youtube/answer/72431?hl=en",
+    "type": "doc",
+    "topic": "A10",
+    "takeaway": "16:9 and JPG/PNG; high-resolution original."
+  },
+  {
+    "id": "A10-contrast",
+    "url_or_path": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    "type": "doc",
+    "topic": "A10",
+    "takeaway": "Meaningful cues3:1; avoid fine faint strokes."
+  },
+  {
+    "id": "A10-own",
+    "url_or_path": "tools/v3craft-lab/v4-promo/results.json",
+    "type": "experiment",
+    "topic": "A10",
+    "takeaway": "Left copy region66.58%vs1.67%occupied."
+  },
+  {
+    "id": "A10-local",
+    "url_or_path": "apps/web/public/units/",
+    "type": "local",
+    "topic": "A10",
+    "takeaway": "Four approved cat identities."
+  },
+  {
+    "id": "A2-saliency",
+    "url_or_path": "https://ilab.usc.edu/publications/doc/Itti_etal98pami.pdf",
+    "type": "paper",
+    "topic": "A2",
+    "takeaway": "Local contrast hierarchy; keep actor and target legible."
+  },
+  {
+    "id": "A2-clarity",
+    "url_or_path": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+    "type": "doc",
+    "topic": "A2",
+    "takeaway": "Silhouette and hierarchy convey gameplay."
+  },
+  {
+    "id": "A2-spine",
+    "url_or_path": "https://esotericsoftware.com/spine-runtime-skeletons",
+    "type": "doc",
+    "topic": "A2",
+    "takeaway": "World vertices follow local and parent transforms."
+  },
+  {
+    "id": "A2-environment",
+    "url_or_path": "https://www.riotgames.com/en/artedu/environment-art",
+    "type": "doc",
+    "topic": "A2",
+    "takeaway": "Environment layout communicates gameplay and supports fantasy."
+  },
+  {
+    "id": "A2-local",
+    "url_or_path": "apps/web/src/game/cardrpg/stage/layout-c2.ts",
+    "type": "local",
+    "topic": "A2",
+    "takeaway": "Slots and core height control formation geometry."
+  },
+  {
+    "id": "A2-own",
+    "url_or_path": "tools/v3craft-lab/v4-frame/results.json",
+    "type": "experiment",
+    "topic": "A2",
+    "takeaway": "Three actual renderer variants at bothdesktop sizes; enlarged bodies expose dense-wave overlap."
+  },
+  {
+    "id": "A3-animation",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Anticipation, staging and follow-through; reused P1/P2 study."
+  },
+  {
+    "id": "A3-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "doc",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "One visible attachment per slot; common point transforms for effects. Reopened."
+  },
+  {
+    "id": "A3-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "doc",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Restraint and kit-level thematic clarity. Reopened."
+  },
+  {
+    "id": "A3-flipbook",
+    "url_or_path": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/Flipbook-Node.html",
+    "type": "doc",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Tile-index UV subdivision and top-left Y inversion. Read16Nov."
+  },
+  {
+    "id": "A3-colour",
+    "url_or_path": "https://threejs.org/manual/pages/color-management.html",
+    "type": "doc",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Single source decode, retained P2 reading."
+  },
+  {
+    "id": "A3-own-hybrid",
+    "url_or_path": "tools/v3craft-lab/v4-hybrid/results.json",
+    "type": "experiment",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Six timing/four palette variants; guarded smear90mscontact selected."
+  },
+  {
+    "id": "A3-own-travel",
+    "url_or_path": "reports/v3-feel/LEARN/P2.md",
+    "type": "experiment",
+    "topic": "A3 Soot runtime and VFX",
+    "takeaway": "Prior finite swept-section and rear-body contrast drill; current-layout revalidation pending."
+  },
+  {
+    "id": "A4-animation",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "Mochi pose rhythm",
+    "takeaway": "Prior study: anticipation, staging, follow-through"
+  },
+  {
+    "id": "A4-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "web doc",
+    "topic": "Melee effect clarity",
+    "takeaway": "Kit-wide restraint and attributable shapes"
+  },
+  {
+    "id": "A4-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "web doc",
+    "topic": "Pose sockets",
+    "takeaway": "One visible attachment per slot; point emission"
+  },
+  {
+    "id": "A4-flipbook",
+    "url_or_path": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/Flipbook-Node.html",
+    "type": "web doc",
+    "topic": "UV tile animation",
+    "takeaway": "Indexed tile subdivision; shape-driven use"
+  },
+  {
+    "id": "A4-own-dash",
+    "url_or_path": "tools/v3craft-lab/v4-classes/results.json",
+    "type": "experiment",
+    "topic": "Mochi approaches",
+    "takeaway": "200ms selected from150/200/250;8pxgap;return800"
+  },
+  {
+    "id": "A4-own-hybrid",
+    "url_or_path": "tools/v3craft-lab/v4-hybrid/results.json",
+    "type": "experiment",
+    "topic": "Drawn key swaps",
+    "takeaway": "Guardfaceandfoot;90mscontact"
+  },
+  {
+    "id": "A4-reference",
+    "url_or_path": "reports/v4-art/LEARN/A1b.md",
+    "type": "local",
+    "topic": "Private reference comparison",
+    "takeaway": "Motion/contact cues; playback timing uncertain"
+  },
+  {
+    "id": "A5-animation",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A5 healing pose staging",
+    "takeaway": "Prior A1/A4 study: anticipation and pose contrast before interpolation"
+  },
+  {
+    "id": "A5-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "web doc",
+    "topic": "A5 ally-only VFX",
+    "takeaway": "Communicate actual state with restrained source-specific shapes"
+  },
+  {
+    "id": "A5-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "web doc",
+    "topic": "A5 pose sockets",
+    "takeaway": "One visible image and shared attachment transforms"
+  },
+  {
+    "id": "A5-flipbook",
+    "url_or_path": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/Flipbook-Node.html",
+    "type": "web doc",
+    "topic": "A5 painted animation",
+    "takeaway": "Indexed atlas UVs when shape changes require frames"
+  },
+  {
+    "id": "A5-own-heal",
+    "url_or_path": "tools/v3craft-lab/v4-classes/results.json",
+    "type": "experiment",
+    "topic": "A5 leaves vs steam",
+    "takeaway": "Both concepts ally-only at350ms; leaves selected for Clover"
+  },
+  {
+    "id": "A5-private-reference",
+    "url_or_path": "reports/v4-art/LEARN/A1b.md",
+    "type": "private/local",
+    "topic": "A5 same-scale healer comparison",
+    "takeaway": "Prior inspected ally-local rising effect; never a generator input"
+  },
+  {
+    "id": "A6-animation",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "Prior A1/A4 study: anticipation and pose contrast before interpolation"
+  },
+  {
+    "id": "A6-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "web doc",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "Communicate actual state with restrained source-specific shapes"
+  },
+  {
+    "id": "A6-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "web doc",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "One visible image and shared attachment transforms"
+  },
+  {
+    "id": "A6-flipbook",
+    "url_or_path": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/Flipbook-Node.html",
+    "type": "web doc",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "Indexed atlas UVs when shape changes require frames"
+  },
+  {
+    "id": "A6-own-dash",
+    "url_or_path": "tools/v3craft-lab/v4-panko/drill.json",
+    "type": "experiment",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "Compare150/200ms Panko;350impact/800return,8pxcontactgap"
+  },
+  {
+    "id": "A6-private-reference",
+    "url_or_path": "reports/v4-art/LEARN/A1b.md",
+    "type": "private/local",
+    "topic": "A6 Panko staging and contact",
+    "takeaway": "Prior inspected ally-local rising effect; never a generator input"
+  },
+  {
+    "id": "A7-animation",
+    "url_or_path": "https://users.cs.northwestern.edu/~animation/Lasseter_1987.pdf",
+    "type": "paper",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "prior A1/A4 study, reopened16Nov: staging, anticipation and follow-through support distinct held key poses."
+  },
+  {
+    "id": "A7-vfx",
+    "url_or_path": "https://www.riotgames.com/en/artedu/visual-effects",
+    "type": "web doc",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "reopened16Nov: each effect must identify its action and character while preserving clarity across the roster."
+  },
+  {
+    "id": "A7-attachments",
+    "url_or_path": "https://esotericsoftware.com/spine-attachments",
+    "type": "web doc",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "reopened16Nov: one slot controls the visible attachment; point attachments provide projectile spawn locations."
+  },
+  {
+    "id": "A7-flipbook",
+    "url_or_path": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/Flipbook-Node.html",
+    "type": "web/formal API",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "reopened16Nov: tile index addresses UV-sheet frames; use painted frames when the shape changes, not to multiply opaque washes."
+  },
+  {
+    "id": "A7-own-classes",
+    "url_or_path": "tools/v3craft-lab/v4-classes/results.json",
+    "type": "experiment",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "existing paired drills: ranged150/250ms gives5/8visible frames at30fps with0foot motion; melee150/200/250ms covers432.5px with8pxcontactgap and return800ms; leaves/steam both stay on allied recipients at350ms with0enemyshapes/hitposes/shake."
+  },
+  {
+    "id": "A7-own-hybrid",
+    "url_or_path": "tools/v3craft-lab/v4-hybrid/results.json",
+    "type": "experiment",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "prior hard-swap, smear and60/90ms contact comparison; reuse90ms contact and discrete K4."
+  },
+  {
+    "id": "A7-reference",
+    "url_or_path": "reports/v4-art/LEARN/A1b.md",
+    "type": "private/local",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "previous same-scale ranged/healer/melee reference studies. Reference clips remain measurement-only, never generator input."
+  },
+  {
+    "id": "A7-class-contract",
+    "url_or_path": "/Users/bao/taskbar-hero-chain/reports/v4-ship/REQUESTS-TO-ART.md",
+    "type": "local",
+    "topic": "A7 featured enemy pose/class language",
+    "takeaway": "Binding Thread retains snare/damage; Teacup healer-only final baseline still pending."
+  }
+]

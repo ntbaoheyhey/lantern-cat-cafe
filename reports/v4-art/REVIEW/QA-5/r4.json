@@ -1,0 +1,134 @@
+{
+  "started": "2026-11-17T02:19:44.257886+00:00",
+  "pid": 32132,
+  "sourceCommit": "05765cc84011290ebabf4e128b693e77d67b2c7a",
+  "rulesCommit": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "testHashes": {
+    "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts": "d17e9f857d0a93c887df22f434f9593a4ac27b84493be8fda23aa7048041fb28",
+    "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts": "5b8cc9eadf208e9f4b567513401ecc124b8057686537800d4ed440b46cef747a"
+  },
+  "steps": [
+    {
+      "name": "art-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-art-focused.log",
+      "started": "2026-11-17T02:15:19.388270+00:00",
+      "pid": 28890,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:15:20.524792+00:00",
+      "summary": [
+        "Test Files  2 passed (2)",
+        "Tests  13 passed (13)",
+        "Duration  749ms (environment 67%, transform 18%, import 12%, tests 3%)"
+      ],
+      "reusedFrom": "r3"
+    },
+    {
+      "name": "ship-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "--config",
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/v3craft-lab/v4-qa5/raw/r3/ship.config.mts",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-ship-focused.log",
+      "started": "2026-11-17T02:15:20.525346+00:00",
+      "pid": 28902,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:15:21.750136+00:00",
+      "summary": [
+        "Test Files  2 passed (2)",
+        "Tests  13 passed (13)",
+        "Duration  879ms (transform 48%, environment 38%, import 11%, tests 3%)"
+      ],
+      "reusedFrom": "r3"
+    },
+    {
+      "name": "art-web",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-art-web.log",
+      "started": "2026-11-17T02:15:21.750521+00:00",
+      "pid": 28914,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:16:53.292274+00:00",
+      "summary": [
+        "Test Files  323 passed (323)",
+        "Tests  2703 passed (2703)",
+        "Duration  91.17s (environment 53%, tests 28%, import 16%, transform 2%)"
+      ],
+      "reusedFrom": "r3"
+    },
+    {
+      "name": "art-typecheck",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "typecheck"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r4-art-typecheck.log",
+      "started": "2026-11-17T02:19:44.563673+00:00",
+      "pid": 32154,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:19:57.554207+00:00",
+      "summary": []
+    },
+    {
+      "name": "art-parity",
+      "command": [
+        "node",
+        "scripts/v3feel/parity.mjs",
+        "probe"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r4-art-parity.log",
+      "started": "2026-11-17T02:19:57.555797+00:00",
+      "pid": 32375,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:20:02.646462+00:00",
+      "summary": []
+    }
+  ],
+  "complete": true,
+  "pass": true,
+  "reusedEvidence": {
+    "path": "reports/v4-art/REVIEW/QA-5/r3.json",
+    "sha256": "6015caa9c84b7ae90501b4739f1f1a4bb89f208997eb4a320f7037d39c233a07",
+    "changedPaths": [
+      "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts",
+      "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts",
+      "reports/v3-demo/vite.log",
+      "reports/v3-feel/parity-latest.json",
+      "reports/v3-feel/vite.log",
+      "reports/v4-art/HANDOFF-ART.md",
+      "reports/v4-art/REVIEW/A11/banner-runtime-r2/film-review.json",
+      "reports/v4-art/REVIEW/A6/web-tests.log",
+      "reports/v4-art/REVIEW/QA-5/r2.json",
+      "reports/v4-art/jobs/a6-probe.log",
+      "tools/v3craft-lab/v4-qa5/.gitignore",
+      "tools/v3craft-lab/v4-qa5/validate.py"
+    ]
+  },
+  "parityEvidence": "reports/v3-feel/parity-probe-1794881997753.json",
+  "parityBaselineUnchanged": true,
+  "parityPass": true,
+  "finished": "2026-11-17T02:20:02.649174+00:00"
+}

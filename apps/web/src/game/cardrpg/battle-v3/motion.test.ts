@@ -20,22 +20,29 @@ it('keeps every archetype planted with readable weight changes and an exact retu
 });
 it('reacts to actual damage recipients, including counter-damage, and settles exactly',()=>{
  const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}])),t=plan.beats[2]!.start;
- expect(hitPose(plan,t+67,'enemy',1,720).x).toBeGreaterThanOrEqual(23);expect(hitPose(plan,t+67,'cat',-1,720).x).toBeLessThanOrEqual(-29);
+ expect(hitPose(plan,t+67,'enemy',1,720).x).toBe(9);expect(hitPose(plan,t+67,'cat',-1,720).x).toBe(-9.5);
  expect(hitPose(plan,t+33,'enemy',1,720).flash).toBe(1);expect(hitPose(plan,t+400,'enemy',1,720)).toMatchObject({x:0,y:0,angle:0,flash:0});expect(hitPose(plan,t+33,'other',1,720).x).toBe(0);
 });
 it('seeks an ultimate identically in reverse order without a hero-spot approach',()=>{
  const input=fixture(true),expected=actionPose({...input,elapsed:900});expect(expected).toMatchObject({x:0,y:0});
  actionPose({...input,elapsed:2100});expect(actionPose({...input,elapsed:900})).toEqual(expected);expect(idlePhase('cat')).not.toBe(idlePhase('enemy'));
 });
-it('keeps a reflected ranged hit planted without losing its reaction or changing damage',()=>{
+it('holds a bounded reflected hit for90ms, settles once, and leaves damage unchanged',()=>{
  const plan=configureSequence(createActionPlan([...events,{...events[1]!,actorId:'enemy',targetIds:['cat'],critical:true}]));
  const before=JSON.stringify(plan),impact=plan.beats[2]!.start;
- for(let at=impact;at<impact+400;at+=1000/30){
-  const recoil=hitPose(plan,at,'cat',-1,720),planted=hitPose(plan,at,'cat',-1,720,true);
-  expect(planted).toEqual({...recoil,x:0,y:0});
+ for(const height of [720,900]){
+  const contact=hitPose(plan,impact,'cat',-1,height);
+  expect(Math.abs(contact.x)).toBeGreaterThanOrEqual(6);expect(Math.abs(contact.x)).toBeLessThanOrEqual(12);
+  for(const age of [0,1000/30,2000/30,75,90])expect(hitPose(plan,impact+age,'cat',-1,height).x).toBe(contact.x);
+  expect(hitPose(plan,impact+150,'cat',-1,height).x).toBeGreaterThan(contact.x);
+  expect(hitPose(plan,impact+300,'cat',-1,height)).toMatchObject({x:0,y:0,flash:0});
  }
- const contact=hitPose(plan,impact+33,'cat',-1,720,true);
- expect(contact.flash).toBe(1);expect(contact.sy).toBeLessThan(1);expect(contact.angle).not.toBe(0);
+ expect(hitPose(plan,impact+33,'cat',-1,720).flash).toBe(1);
+ expect(hitPose(plan,impact+2000/30,'cat',-1,720).flash).toBe(0);
+ const repeated={...plan,events:[...plan.events,plan.events.at(-1)!]};
+ expect(hitPose(repeated,impact+100,'cat',-1,720)).toEqual(hitPose(plan,impact+100,'cat',-1,720));
+ const zero={...plan,events:plan.events.map(e=>e.type==='damage'?{...e,amount:0}:e)};
+ expect(hitPose(zero,impact+33,'cat',-1,720)).toMatchObject({x:0,y:0,flash:0});
  expect(JSON.stringify(plan)).toBe(before);
 });
 it('keeps both side cameras fixed before, during and after contact',()=>{
@@ -63,7 +70,7 @@ it('mirrors enemy poses while retaining the same timing and bounded displacement
 });
 it('gives every simultaneous damage recipient its own recoil and flash',()=>{
  const recipients=['front','rear','healer'],plan=configureSequence(createActionPlan([events[0]!,...recipients.map(id=>({...events[1]!,targetIds:[id]}))]));
- for(const id of recipients){expect(hitPose(plan,383,id,1,720).flash).toBe(1);expect(hitPose(plan,417,id,1,720).x).toBeGreaterThanOrEqual(23);expect(hitPose(plan,750,id,1,720).x).toBe(0);}
+ for(const id of recipients){expect(hitPose(plan,383,id,1,720).flash).toBe(1);expect(hitPose(plan,417,id,1,720).x).toBe(9);expect(hitPose(plan,750,id,1,720).x).toBe(0);}
 });
 it('braces actual recipients without inventing a hit or moving bystanders',()=>{
  const plan=fixture().plan,before=JSON.stringify(plan),impact=plan.beats[2]!.start,ready=bracePose(plan,impact-67,'enemy',1,720);

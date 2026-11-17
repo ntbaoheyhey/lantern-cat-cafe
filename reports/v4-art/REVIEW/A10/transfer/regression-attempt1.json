@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-16T12:37:11.016535+00:00",
+  "sourceCommit": "e60100bf22670538bf635df6b89d84dd1731e846",
+  "stages": [
+    {
+      "name": "web",
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-web.log"
+    },
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "log": "reports/v4-art/jobs/a10-typecheck.log"
+    },
+    {
+      "name": "parity",
+      "exit": 1,
+      "log": "reports/v4-art/jobs/a10-parity.log"
+    }
+  ]
+}

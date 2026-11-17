@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-16T05:15:15.703737+00:00",
+  "assets": [
+    {
+      "path": "apps/web/public/units/promo/v4/class-healer.png",
+      "bytes": 49850,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/class-healer.webp",
+      "bytes": 34078,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/class-melee.png",
+      "bytes": 66550,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/class-melee.webp",
+      "bytes": 45244,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/class-ranged.png",
+      "bytes": 37787,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/class-ranged.webp",
+      "bytes": 27266,
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/landing-keyart.webp",
+      "bytes": 329438,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "apps/web/public/units/promo/v4/video-thumbnail.jpg",
+      "bytes": 376043,
+      "dimensions": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "kind": "melee",
+      "contrastMethod": "RGB of alpha>128 boundary2px inward, no global WCAG claim; antialias alpha ignored",
+      "edgeContrast": {
+        "#292635": {
+          "median": 1.7348805466520276,
+          "p10": 1.4565952965091595,
+          "edgeFractionAtLeast3": 0.06527281998980113
+        },
+        "#f3ebdb": {
+          "median": 7.1769344116030105,
+          "p10": 5.1743732270757485,
+          "edgeFractionAtLeast3": 0.9627740948495666
+        }
+      },
+      "visibleBBoxAlpha16": [
+        28,
+        22,
+        220,
+        234
+      ]
+    },
+    {
+      "kind": "ranged",
+      "contrastMethod": "RGB of alpha>128 boundary2px inward, no global WCAG claim; antialias alpha ignored",
+      "edgeContrast": {
+        "#292635": {
+          "median": 1.4544635294319272,
+          "p10": 1.2175462281274674,
+          "edgeFractionAtLeast3": 0.11698789780367548
+        },
+        "#f3ebdb": {
+          "median": 8.560629842778278,
+          "p10": 3.792662375523495,
+          "edgeFractionAtLeast3": 0.9341102644554011
+        }
+      },
+      "visibleBBoxAlpha16": [
+        35,
+        30,
+        227,
+        212
+      ]
+    },
+    {
+      "kind": "healer",
+      "contrastMethod": "RGB of alpha>128 boundary2px inward, no global WCAG claim; antialias alpha ignored",
+      "edgeContrast": {
+        "#292635": {
+          "median": 1.6940860539313527,
+          "p10": 1.436643190114593,
+          "edgeFractionAtLeast3": 0.08036189462480042
+        },
+        "#f3ebdb": {
+          "median": 7.349758807348119,
+          "p10": 4.813024137490699,
+          "edgeFractionAtLeast3": 0.9494411921234699
+        }
+      },
+      "visibleBBoxAlpha16": [
+        40,
+        39,
+        216,
+        217
+      ]
+    }
+  ],
+  "regression": {
+    "webTests": 2641,
+    "files": 314,
+    "typecheck": true,
+    "parityFixtures": 3,
+    "evidence": "../A1b/; same unchanged production code state; all commands exited0"
+  }
+}

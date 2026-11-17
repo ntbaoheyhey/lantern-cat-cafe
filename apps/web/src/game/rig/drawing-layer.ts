@@ -5,9 +5,11 @@ import * as T from 'three';
 import {usePaintedAtlasColor} from './atlas-color';
 export type DrawingKey='K0'|'K1'|'K2'|'K3'|'K4'|'K5'|'K6';
 export type DrawingPoint=readonly [number,number];
+export interface DrawingSample {clip:string;seconds:number;reduced:boolean}
 export interface DrawingOverlap {part:string;center:DrawingPoint;radius:DrawingPoint;travel:DrawingPoint;phase:number}
 export interface DrawingFrame {
  image:string; face:readonly [number,number,number,number];
+ opaqueBounds?:readonly [number,number,number,number];
  feet:readonly [DrawingPoint,DrawingPoint]; sockets:Record<string,DrawingPoint>;
  overlap?:readonly DrawingOverlap[];
 }
@@ -18,7 +20,7 @@ export interface DrawingManifest {
 export interface DrawingSet {manifest:DrawingManifest;textures:Partial<Record<DrawingKey,T.Texture>>}
 export function drawingAt(name:string,seconds:number):DrawingKey {
  const ms=Math.max(0,seconds*1000);
- if(name==='attack')return ms<25||ms>=560?'K0':ms<330?'K1':'K2';
+ if(name==='attack')return ms<50||ms>=560?'K0':ms<330?'K1':'K2';
  if(name==='ult'||name==='skill')return ms<300?'K1':ms<1800?'K5':'K0';
  if(name==='hurt')return ms<180?'K4':'K0';
  if(name==='ko')return 'K4';
@@ -41,7 +43,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   // drawing for the contact interval; the action/cue clock keeps running.
   if(damageAge!==undefined&&damageAge>=0&&damageAge<.18){name='hurt';seconds=damageAge;}
   this.seconds=seconds;this.clip=name;this.reduced=reduced;
-  const key=drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
+  const key=!reduced&&name==='attack'&&seconds>=.27&&seconds<.33?'K2':drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
   this.material.map=this.set.textures[this.key]!;
   const positions=this.geometry.attributes.position!,m=this.set.manifest;
   for(let i=0;i<positions.count;i++){
@@ -50,38 +52,40 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   }
   positions.needsUpdate=true;
  }
- point([x,y]:DrawingPoint,key:DrawingKey=this.key){
+ point([x,y]:DrawingPoint,key:DrawingKey=this.key,at?:DrawingSample){
+  const seconds=at?.seconds??this.seconds,clip=at?.clip??this.clip,reduced=at?.reduced??this.reduced;
   const m=this.set.manifest,height=m.opaqueHeight*this.pixelScale;
   const px=(x-m.baseline[0])*this.pixelScale,py=(m.baseline[1]-y)*this.pixelScale;
-  const upper=smooth((py/height-.08)/.52),ms=this.seconds*1000;
+  const upper=smooth((py/height-.08)/.52),ms=seconds*1000;
   let lift=0,lean=0;
-  if(this.clip==='idle'||this.clip==='idle-phase2'||this.clip==='victory'){
-   lift=.018*Math.sin(this.seconds/3.6*Math.PI*2)*(this.reduced?.25:1);
-  }else if(this.clip==='attack'){
-   // Hold the contact drawing completely still through 350–425ms hit-stop.
+  if(clip==='idle'||clip==='idle-phase2'||clip==='victory'){
+   lift=.018*Math.sin(seconds/3.6*Math.PI*2)*(reduced?.25:1);
+  }else if(clip==='attack'){
+   // Hold the contact drawing completely still through 350–440ms hit-stop.
    if(ms<270)lift=-.012*Math.sin(Math.min(1,ms/250)*Math.PI/2);
    else if(ms<330)lean=.018*smooth((ms-270)/60);
    else if(ms>=560&&ms<800){const t=(ms-560)/240;lift=.012*Math.sin(t*Math.PI*2)*(1-t);}
-  }else if(this.clip==='ult'||this.clip==='skill'){
+  }else if(clip==='ult'||clip==='skill'){
    if(ms>=300&&ms<1100)lift=.008*Math.sin((ms-300)/800*Math.PI);
    else if(ms>=1800&&ms<2200)lift=.012*Math.sin((ms-1800)/400*Math.PI*2)*(1-(ms-1800)/400);
-  }else if(this.clip==='hurt'&&ms>=180&&ms<400)lift=-.012*Math.sin((ms-180)/220*Math.PI);
+  }else if(clip==='hurt'&&ms>=180&&ms<400)lift=-.012*Math.sin((ms-180)/220*Math.PI);
   // Pose changes remain available with reduced motion; overlap is attenuated.
-  if(this.reduced){lean=0;if(this.clip!=='idle')lift*=.25;}
+  if(reduced){lean=0;if(clip!=='idle')lift*=.25;}
   const frame=m.poses[key]!,[fx,fy,fw,fh]=frame.face;
   const faceDistance=Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8));
   const guard=smooth((faceDistance-1)*3)*smooth((m.baseline[1]-y)/40);
-  const hold=this.clip==='attack'&&ms>=350&&ms<425?.35:(this.clip==='ult'||this.clip==='skill')&&ms>=1100&&ms<1175?1.1:this.clip==='hurt'&&ms<75?0:this.seconds;
-  const activity=this.clip==='attack'?Math.sin(Math.min(1,hold/.8)*Math.PI):this.clip==='hurt'?Math.sin(Math.min(1,hold/.4)*Math.PI):this.clip==='ko'?0:1;
+  const hold=clip==='attack'&&ms>=350&&ms<440?.35:(clip==='ult'||clip==='skill')&&ms>=1100&&ms<1190?1.1:clip==='hurt'&&ms<90?0:seconds;
+  const activity=clip==='attack'?Math.sin(Math.min(1,hold/.8)*Math.PI):clip==='hurt'?Math.sin(Math.min(1,hold/.4)*Math.PI):clip==='ko'?0:1;
   let ox=0,oy=0;
   for(const region of frame.overlap??[]){
    const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];
-   const weight=smooth(1-dx*dx-dy*dy)*guard,phase=hold*Math.PI*2/(this.clip==='idle'?2.6:1.1)+region.phase;
-   const wave=Math.sin(phase)*activity*(this.reduced?.25:1)*weight;
+   const weight=smooth(1-dx*dx-dy*dy)*guard,phase=hold*Math.PI*2/(clip==='idle'?2.6:1.1)+region.phase;
+   const wave=Math.sin(phase)*activity*(reduced?.25:1)*weight;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
-  return{x:this.origin[0]+px+height*lean*upper+ox*factor*this.pixelScale,y:this.origin[1]+py+height*lift*upper-oy*factor*this.pixelScale};
+  const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
+  return{x:this.origin[0]+px*(1+smear)+height*lean*upper+ox*factor*this.pixelScale,y:this.origin[1]+py+height*lift*upper-oy*factor*this.pixelScale};
  }
  get frame(){return this.set.manifest.poses[this.key]!;}
  faceCorners(){const [x,y,w,h]=this.frame.face;return[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(p=>this.point(p as [number,number]));}

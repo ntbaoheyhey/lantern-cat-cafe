@@ -5,7 +5,6 @@ export type AttackMotion=typeof MOTIONS[number];
 export interface MotionPoint {x:number;y:number;core:number}
 export interface RootPose {x:number;y:number;sx:number;sy:number;angle:number;phase:'idle'|'anticipation'|'travel'|'strike'|'return'|'land';flash:number}
 const clamp=(x:number)=>Math.max(0,Math.min(1,x));
-const out=(x:number)=>1-(1-clamp(x))**3;
 const smooth=(x:number)=>{const u=clamp(x);return u*u*(3-2*u);};
 export const neutralPose=():RootPose=>({x:0,y:0,sx:1,sy:1,angle:0,phase:'idle',flash:0});
 const archetypes:Record<string,AttackMotion>={mochi:'dash-slash',biscuit:'dash-slash',panko:'leap-slam',brioche:'spin',velvet:'spin',cinnamon:'throw',marigold:'throw',soot:'staff-cast',sorrel:'staff-cast',clover:'summon',mallow:'summon',inkcap:'summon','button-guard':'dash-slash','sock-skipper':'spin','spool-ram':'dash-slash','kettle-knight':'leap-slam','yarn-giant':'leap-slam','needle-moth':'throw','pollen-scout':'throw','teacup-healer':'summon','binding-thread':'staff-cast','rain-spool':'staff-cast','crumb-sentinel':'dash-slash','pantry-crown':'summon'};
@@ -39,21 +38,17 @@ export function bracePose(plan:EffectPlan|null,elapsed:number,id:string,directio
  return p;
 }
 /** One visible impulse for each target, including counter-hits and damage over time. */
-export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number,planted=false):RootPose {
+export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:number,height:number):RootPose {
  const p=neutralPose();if(!plan)return p;
- const hits=plan.events.filter(e=>e.type==='damage'&&e.targetIds.includes(id));
+ const hits=plan.events.filter(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(id));
  const impact=plan.beats[2]!.start,scale=height/720;
- for(let i=0;i<hits.length;i++){
-  const age=elapsed-impact-Math.min(i,5)*33;if(age<0||age>360)continue;
-  const strength=hits[i]!.critical?30:28,attack=out(age/67),settle=1-smooth((age-100)/260),amount=attack*settle;
-  p.x+=direction*strength*scale*amount;p.y-=Math.sin(clamp(age/260)*Math.PI)*5*scale;
-  p.angle+=direction*(hits[i]!.critical?.13:.07)*amount;p.sx+=.055*amount;p.sy-=.055*amount;
-  p.flash=Math.max(p.flash,age<2000/30?1:0);
- }
- p.x=Math.max(-38*scale,Math.min(38*scale,p.x));
- // A ranged caster can receive reflected damage during its own action. Keep
- // that slot planted while retaining squash, tilt and the contact flash.
- if(planted){p.x=0;p.y=0;}
+ const age=elapsed-impact;if(!hits.length||age<0||age>=300)return p;
+ // A1/A3: hold the discrete K4 contact for90ms, then one bounded settle.
+ // Multiple damage outcomes share this scheduled contact, not extra kicks.
+ const critical=hits.some(e=>e.critical),amount=1-smooth((age-90)/210);
+ p.x=direction*(critical?9.5:9)*scale*amount;p.y=-2*scale*amount;
+ p.angle=direction*(critical?.045:.035)*amount;p.sx=1+.025*amount;p.sy=1-.025*amount;
+ p.flash=age<2000/30?1:0;
  return p;
 }
 export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}

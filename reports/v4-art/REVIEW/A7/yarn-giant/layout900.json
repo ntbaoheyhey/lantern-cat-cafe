@@ -1,0 +1,192 @@
+{
+  "method": "Unmodified silent fixed-clock 1440x900 capture; bbox layout only, not audio, FPS, alpha occlusion or HUD proof.",
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "captureSha256": "96145bfdabc78c80994ecc2c717dc8c125af5f8cfb5ac5e3eaea349b88b4fcc6",
+      "sourceCommit": "ce5becfce9a603d9ec5a2c7930fdbf438e0c9fe1",
+      "runtimeSourceHashesVerified": 11,
+      "frames": 952,
+      "seconds": 31.733333333333334,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999986,
+          "t": 27.3,
+          "index": 819
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 5.3,
+          "index": 159
+        },
+        "span": {
+          "value": 0.812722961048404,
+          "t": 30.966666666666665,
+          "index": 929
+        },
+        "gap": {
+          "value": 0.10411638345687414,
+          "t": 13.333333333333334,
+          "index": 400
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        111,
+        399
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-wave1.jpg",
+      "visuallyReviewed": true,
+      "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+      "reviewNote": "All sampled painted bodies and heads remain legible and inside the frame; received reactions and heal accents are visible. Yellow incidental-enemy bubbles remain visible in frame111.",
+      "sheetSha256": "8b903c4e4e317631d6fe22759a1a738aabcb3c5d155cf1c9b29a74dbf431452f"
+    },
+    {
+      "fixture": "wave3",
+      "captureSha256": "2cff42d9e5d43bcadb214de434e22cf4561049c34bd004f7d9faed0eee121d9e",
+      "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+      "runtimeSourceHashesVerified": 11,
+      "frames": 901,
+      "seconds": 30.033333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.5,
+          "index": 165
+        },
+        "catDeviation": {
+          "value": 0.029556650246305494,
+          "t": 21.433333333333334,
+          "index": 643
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03425489917921909,
+          "t": 21.333333333333332,
+          "index": 640
+        },
+        "span": {
+          "value": 0.8192028137340447,
+          "t": 19.433333333333334,
+          "index": 583
+        },
+        "gap": {
+          "value": -0.013566401614058539,
+          "t": 7.666666666666667,
+          "index": 230
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        642,
+        231
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-wave3.jpg",
+      "visuallyReviewed": true,
+      "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+      "reviewNote": "Dense formation remains legible; frame642 original purple ultimate covers the middle enemy lane while the cats stay identifiable. Frame231 shows a clear received reaction.",
+      "sheetSha256": "36b1b8e2cc242c3c10e3c1619b471e705a8b1ac28b852a29547f3ce0ff426d48"
+    },
+    {
+      "fixture": "boss",
+      "captureSha256": "3a5487ee61a00acd2291253f45bada6c29fe1fa271c5cb6eba126fa94f354f64",
+      "sourceCommit": "ce5becfce9a603d9ec5a2c7930fdbf438e0c9fe1",
+      "runtimeSourceHashesVerified": 11,
+      "frames": 946,
+      "seconds": 31.533333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.7,
+          "index": 171
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.05585162215397044,
+          "t": 4.266666666666667,
+          "index": 128
+        },
+        "span": {
+          "value": 0.779451495094258,
+          "t": 9.766666666666667,
+          "index": 293
+        },
+        "gap": {
+          "value": 0.07903557917315535,
+          "t": 11.7,
+          "index": 351
+        },
+        "boss": {
+          "value": 0.4964399999999999,
+          "t": 2.566666666666667,
+          "index": 77
+        }
+      },
+      "failures": [
+        {
+          "metric": "span",
+          "count": 100,
+          "worst": {
+            "value": 0.779451495094258,
+            "t": 9.766666666666667,
+            "index": 293
+          }
+        }
+      ],
+      "reviewFrameIndices": [
+        294,
+        0,
+        108,
+        111
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-boss.jpg",
+      "visuallyReviewed": true,
+      "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+      "reviewNote": "Frame294 preserves the measured span failure; FX pixels are excluded from that metric. Frame108 shows the long contact punch, frame111 the subsequent crossed guard, with both small helpers in front of the giant.",
+      "sheetSha256": "7c6f78b8bdc534e332b4d73732aaa23fc39dc1de9fcbdd74b14516d431e04e2e"
+    }
+  ],
+  "failures": [
+    {
+      "fixture": "boss",
+      "metric": "span",
+      "count": 100,
+      "worst": {
+        "value": 0.779451495094258,
+        "t": 9.766666666666667,
+        "index": 293
+      }
+    }
+  ]
+}

@@ -84,7 +84,7 @@ function chip(mesh:Mesh,x:number,y:number,angle:number,length:number,width:numbe
 export class StaffBolt {
  readonly rear=new T.Group();readonly front=new T.Group();readonly ground=new T.Group();
  readonly layers:{role:Role;mesh:Mesh;foreground:boolean}[]=[];
- readonly audit={elapsed:0,revision:5,activeRoles:[] as Role[],source:{x:0,y:0},target:{x:0,y:0},mainShape:'coiled lantern smear, released lance and warm unequal contact shards'};
+ readonly audit={elapsed:0,revision:6,activeRoles:[] as Role[],source:{x:0,y:0},launch:{x:0,y:0},target:{x:0,y:0},mainShape:'coiled lantern smear, released lance and warm unequal contact shards'};
  private noise=flowingNoise();
  private glints:Mesh[]=[];private smears:Mesh[]=[];private lance:Mesh;private thread:Mesh;private flashes:Mesh[]=[];private contacts:Mesh[]=[];private groundShards:Mesh[]=[];private sparks:Mesh[]=[];
  constructor(){
@@ -109,7 +109,7 @@ export class StaffBolt {
   const ms=f.elapsed,k=f.height/720,s=f.source,t=f.targets[0]??point(f.width*.75,f.height*.5),foot=f.feet[0]??point(t.x,f.height*.75),px=f.worldWidth/f.width;
   for(const root of [this.rear,this.front,this.ground]){root.visible=ms>=0&&ms<800;root.position.set(-f.worldWidth/2,f.worldHeight,0);root.scale.set(px,-px,1);}
   this.front.renderOrder=f.frontOrder;this.ground.renderOrder=f.rearOrder-1;this.rear.renderOrder=f.rearOrder;
-  const wind=smooth((ms-50)/200),head=clamp((ms-330)/20),tail=clamp((ms-350)/45);
+  const wind=smooth((ms-50)/200),head=clamp((ms-200)/150),tail=clamp((ms-246)/150);
   for(const [i,mesh]of this.glints.entries()){
    const angle=[-1.18,-.05,.79][i]!,length=(42+i*13)*k,near=point(s.x+Math.cos(angle)*5*k,s.y+Math.sin(angle)*5*k);
    const far=point(s.x+Math.cos(angle)*(length+10*k),s.y+Math.sin(angle)*(length+10*k));
@@ -123,12 +123,12 @@ export class StaffBolt {
     clamp(q-.65),q,(i?8:24)*k,.22,true);
    this.ink(mesh,ms,envelope(ms,270,15,345,20)*(i?.76:.86),i?.75:.25,smooth((ms-325)/20)*.8);
   }
-  const dx=t.x-release.x,path=[release,point(release.x+dx*.32,release.y-24*k),point(t.x-dx*.26,t.y-18*k),t];
+  const launch=gather,dx=t.x-launch.x,path=[launch,point(launch.x+dx*.32,launch.y-24*k),point(t.x-dx*.26,t.y-18*k),t];
   shape(this.lance,path,tail,head,34*k,.24);
-  this.ink(this.lance,ms,envelope(ms,330,12,425,75),ms<350?.4:1-smooth((ms-350)/75),-.1+1.2*smooth((ms-375)/75));
+  this.ink(this.lance,ms,envelope(ms,200,12,425,75),ms<350?.4:1-smooth((ms-350)/75),-.1+1.2*smooth((ms-375)/75));
   const echo=path.map((p,i)=>point(p.x,p.y+(i===1?21:i===2?16:0)*k));
-  shape(this.thread,echo,clamp((ms-362)/55),clamp((ms-335)/24),7*k,-.2);
-  this.ink(this.thread,ms,envelope(ms,335,15,450,100)*.76,.15,smooth((ms-390)/60));
+  shape(this.thread,echo,clamp((ms-258)/150),clamp((ms-208)/150),7*k,-.2);
+  this.ink(this.thread,ms,envelope(ms,208,15,450,100)*.76,.15,smooth((ms-390)/60));
   // Contact changes shape after two hot frames: unequal petals peel away
   // from the strike axis instead of freezing into a four-point star.
   const contactAge=ms-350,axis=Math.atan2(t.y-s.y,t.x-s.x);
@@ -172,7 +172,7 @@ export class StaffBolt {
    const u=layer.mesh.material.uniforms;u.uFaceCount!.value=layer.foreground?Math.min(16,f.faces.length):0;
    for(const [i,face]of f.faces.slice(0,16).entries())u.uFaces!.value[i].set((face.x+face.width/2)*px-f.worldWidth/2,f.worldHeight-(face.y+face.height/2)*px,(face.width/2+8)*px,(face.height/2+8)*px);
   }
-  this.audit.elapsed=ms;this.audit.source={...s};this.audit.target={...t};this.audit.activeRoles=[...new Set(this.layers.filter(l=>l.mesh.visible).map(l=>l.role))];
+  this.audit.elapsed=ms;this.audit.source={...s};this.audit.launch={...launch};this.audit.target={...t};this.audit.activeRoles=[...new Set(this.layers.filter(l=>l.mesh.visible).map(l=>l.role))];
  }
  hide(){this.rear.visible=this.front.visible=this.ground.visible=false;}
  dispose(){for(const l of this.layers){l.mesh.geometry.dispose();l.mesh.material.dispose();}for(const root of [this.rear,this.front,this.ground])root.removeFromParent();this.noise.dispose();}

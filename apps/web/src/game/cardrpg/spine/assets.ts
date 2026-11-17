@@ -2,6 +2,7 @@
 import * as T from 'three';
 import { CutoutMesh, type CutoutData, type CutoutBone } from '../../rig/cutout';
 import {withRigContract} from '../../rig/contract';
+import {paintedAtlasTexture} from '../../rig/atlas-color';
 import { importSkeleton } from '../../../../../../scripts/art/import-spine.mjs';
 import { loadPuppetModel, animateIllustrated } from '../../squad/turn3d/look-puppet';
 import { fallbackScale } from '../../squad/turn3d/look-scale';
@@ -9,11 +10,18 @@ import { SPINE_CONFIG, SPINE_UNIT_BY_ID, type SpineUnit, type SpineAnimation, ty
 import { animationCues, SpineEventCursor, type SpineCue } from './events';
 import {opaqueBounds} from '../stage/core';
 import {opaqueWorldBounds,type OpaqueWorldBounds} from '../stage/opaque-pose-bounds';
+import losslessAtlases from './lossless-atlases.json';
+import sampledAtlases from './sampled-atlases.json';
+import {loadAtlasImage} from './atlas-delivery';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
+const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
+const sampledPages=new Map(sampledAtlases.map(page=>[page.request,page]));
 export const spineAssetUrl=(path:string)=>{const url=urls.get(path);if(!url)throw Error(`Unpublished Spine asset ${path}`);return url;};
 async function response(path:string){const r=await fetch(spineAssetUrl(path));if(!r.ok)throw Error(`${path}: HTTP ${r.status}`);return r;}
-const image=async(path:string)=>{const img=new Image();img.src=spineAssetUrl(path);await img.decode();return img;};
+// Sampled pages retain normalized UVs and NoColorSpace interpretation. Exact
+// derivatives remain separate fallbacks; generic Canvas URLs remain original.
+const image=(path:string)=>loadAtlasImage(deliveryUrls.get(path)??spineAssetUrl(path),sampledPages.get(path));
 export interface ClipData {duration:number;cues:SpineCue[]}
 type SkeletonAsset={data:CutoutData;create:()=>CutoutMesh;clips:Map<string,ClipData>;bounds:{x:number;y:number;width:number;height:number}};
 interface SequenceManifest {id:string;height:number;width:number;scale?:number;fps?:number;sockets:Record<string,[number,number]>;animations:Record<string,{fps?:number;frames:string[];events?:{name:string;time:number}[]}>}
@@ -22,14 +30,14 @@ const skeletonCache=new Map<string,Promise<SkeletonAsset>>(),sequenceCache=new M
 const templateStyles=import.meta.glob('../../../../../../art/units/*/style.json',{eager:true,import:'default'});
 const templateIds=new Set(Object.keys(templateStyles).map(p=>p.split('/').at(-2)!));
 const designerIds=new Set(['mochi','soot','clover']);
-/** Native JSON and original atlas pixels; no third-party animation runtime. */
+/** Native JSON with normalized UVs; no third-party animation runtime. */
 export function loadNativeRig(id:string):Promise<SkeletonAsset>{
  const key='native:'+id,cached=skeletonCache.get(key);if(cached)return cached;
  const pending=(async()=>{
   const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
   const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
   const textures:T.Texture[]=[];
-  try{for(const page of data.pages){const img=new Image();img.src=`/units/${id}/${page.name}`;await img.decode();const texture=new T.Texture(img);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+  try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,loaded=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path));textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(e){textures.forEach(t=>t.dispose());throw e;}
@@ -44,7 +52,7 @@ export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
   const data=withRigContract(importSkeleton(source,atlasText,spec.scale)),textures:T.Texture[]=[];
   try {
    const folder=spec.atlas.slice(0,spec.atlas.lastIndexOf('/')+1);
-   for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const texture=new T.Texture(await image(folder+page.name));texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures.push(texture);}
+   for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const loaded=await image(folder+page.name);textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
    return {data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
   }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
@@ -58,7 +66,7 @@ function loadSequence(spec:AcceptedSequence):Promise<SequenceAsset>{
  const key=spec.manifest;let cached=sequenceCache.get(key);if(cached)return cached;
  cached=(async()=>{const manifest=await (await response(spec.manifest)).json() as SequenceManifest,folder=spec.manifest.slice(0,spec.manifest.lastIndexOf('/')+1),textures=new Map<string,T.Texture>(),clips=new Map<string,ClipData>();
   try{for(const [name,clip] of Object.entries(manifest.animations)){
-   for(const frame of clip.frames)if(!textures.has(frame)){const texture=new T.Texture(await image(folder+frame));texture.needsUpdate=true;texture.colorSpace=T.NoColorSpace;textures.set(frame,texture);}
+   for(const frame of clip.frames)if(!textures.has(frame)){const loaded=await image(folder+frame);textures.set(frame,paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
    const duration=clip.frames.length/(clip.fps??manifest.fps??24);clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,clip.events??[])});
   }return {manifest,textures,clips};}catch(error){textures.forEach(t=>t.dispose());throw error;}
  })().catch(error=>{if(sequenceCache.get(key)===cached)sequenceCache.delete(key);throw error;});sequenceCache.set(key,cached);return cached;

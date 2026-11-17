@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-17T00:38:22.465891+00:00",
+  "sourceCommit": "d9f7b9253",
+  "scope": "Private status-reservation correction only; no full banner acceptance.",
+  "sourceRuntimeUnchangedDuringDrills": true,
+  "selected": "Read current visual model through HUD-bound callback; size a hidden CSS-equivalent status row; reserve both currently painted and pending label placements.",
+  "rejected": [
+    {
+      "method": "Minimum34px height only",
+      "reason": "Clears measured Clover contact but misses concurrent Panko64-to83px width growth."
+    },
+    {
+      "method": "Clone from scene snapshot",
+      "reason": "Scene snapshot is also React-delayed; retained R1 private drill still contacts Clover."
+    }
+  ],
+  "evidence": [
+    "../banner-status-drills-r1/reservation-drills.json",
+    "reservation-drills.json",
+    "visual-comparison.json"
+  ],
+  "freshComparison": {
+    "path": "reports/v4-art/REVIEW/A11/banner-status-drills-r2/raw/comparison-1024.png",
+    "sha256": "7124cfc9944d5909a21ee074ff8f30ce92e60522e6a579b6996dfcd43fa02555",
+    "width": 1024,
+    "reviewed": true,
+    "closed": true,
+    "findings": "New gap separates Clover status text from the caption; Soot portrait, owner and full skill remain readable at native crop scale. Placement remains detached; blind association and full temporal acceptance remain open."
+  },
+  "runtimeValidation": "pending"
+}

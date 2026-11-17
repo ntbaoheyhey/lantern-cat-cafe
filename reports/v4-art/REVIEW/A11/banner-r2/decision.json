@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-17T00:08:35.302121+00:00",
+  "drillsSha256": "0d9478cc1b4ff5e185bfe119a5465b667bda002b7e64ba3151fa9f27494d9944",
+  "comparisonsSha256": "f672f2710cef16099b0477baf9a95571d576826956bb169a19e85e484b905d21",
+  "runtimeHashesVerified": 102,
+  "sampledStates": 96,
+  "recordedUltimates": 16,
+  "baselineHudSamples": 45,
+  "metrics": {
+    "named": {
+      "hudHits": 0,
+      "faceHits": 0,
+      "bodyHits": 0,
+      "labelHits": 0,
+      "clipped": 0,
+      "infeasible": 0,
+      "textLoss": 0,
+      "identityLoss": 0
+    },
+    "portrait": {
+      "hudHits": 0,
+      "faceHits": 0,
+      "bodyHits": 0,
+      "labelHits": 0,
+      "clipped": 0,
+      "infeasible": 0,
+      "textLoss": 0,
+      "identityLoss": 0
+    }
+  },
+  "reviewedSheets": 8,
+  "selected": "portrait",
+  "status": "PRIVATE_SELECTION; dense temporal check and production validation pending",
+  "reason": "Existing caster portrait plus explicit owner and separate full-size skill line is clearer than a spatially detached text-only label. All eight native crops retain readable text and unchanged actor art.",
+  "productionInstalled": false,
+  "fullAcceptance": false,
+  "attempts": {
+    "vertical": 1,
+    "obstacles": 2,
+    "named": 3,
+    "portrait": 4
+  },
+  "next": "Replay every recorded focus sample for portrait candidate before installation; preserve all rejected methods and boundary limits."
+}

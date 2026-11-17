@@ -1,0 +1,5573 @@
+[
+  {
+    "item": "V4-A9-CLARITY-R2",
+    "fixture": "wave1",
+    "sourceCommit": "60763fd90fc9b758bd46c97f4155c3ef1a9bbe42",
+    "videoSha256": "cd0daf1683dd1f716f3f0c0581c6675b178dde65425d27d0094905075eac7818",
+    "audio": {
+      "path": "reports/v3-feel/REVIEW/V4-A9-CLARITY-R2/wave1-mix.wav",
+      "integratedLufs": -14.99,
+      "truePeakDbTP": -3.22,
+      "maxTransientVoices": 9,
+      "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+    },
+    "parity": true,
+    "errors": [],
+    "medianRenderFps": 60.2404848763393,
+    "actions": [
+      {
+        "key": 12,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 2,
+            "round": 2,
+            "actionId": 61,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 2,
+            "actionId": 61,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 2,
+            "actionId": 61,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 2,
+            "actionId": 61,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          308,
+          311,
+          314,
+          316,
+          317,
+          320,
+          323,
+          326,
+          329,
+          332,
+          335,
+          338,
+          340,
+          341,
+          344,
+          347,
+          350,
+          353,
+          356,
+          359,
+          362,
+          365,
+          368,
+          371,
+          374
+        ],
+        "impactFrame": 340,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 33.30000000000109,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.221882562953853,
+        "shakeObservedSpanMs": 66.60000000000036,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Oven door name readable. Panko winds the rolling pin, opens the protective pose and recovers. Central bread panel is visible by633ms; the two side doors open at hinges across833-1033ms, ahead of the1100ms shield event. Doors persist to1833ms before clearing, visibly earlier in onset and later in hold than Mochi. Caster and recipient faces remain readable.",
+          "poseDescription": "Rolling-pin wind-up \u2192 protective spread \u2192 baker rest",
+          "recordedAt": "2026-11-16T18:56:20.171129+00:00"
+        },
+        "focusFrame": 316,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave1/A12-panko-ultimate.jpg"
+      },
+      {
+        "key": 14,
+        "actor": "foe-3-needle-moth",
+        "asset": "needle-moth",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 2,
+            "round": 2,
+            "actionId": 76,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "panko",
+              "foe-3-needle-moth",
+              "mochi",
+              "clover"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 2,
+            "actionId": 76,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 2,
+            "actionId": 76,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 2,
+            "actionId": 76,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 2,
+            "actionId": 76,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 9,
+            "note": ""
+          }
+        ],
+        "indices": [
+          404,
+          407,
+          410,
+          412,
+          413,
+          416,
+          419,
+          422,
+          425,
+          428,
+          431,
+          434,
+          435,
+          437,
+          440,
+          443,
+          446,
+          449,
+          452,
+          455,
+          458,
+          461,
+          464,
+          467,
+          469,
+          470
+        ],
+        "impactFrame": 435,
+        "markedImpactElapsed": 1083.3999999999996,
+        "impactSamplingErrorMs": 16.600000000000364,
+        "firstElapsed": 33.399999999999636,
+        "lastElapsed": 2183.300000000001,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.3299999999999876,
+        "shakeObservedSpanMs": 50.0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Needle canopy title readable. The caster changes from an aimed casting silhouette to the wide released shape, then folded rest. Long needle/eyelet ranks visibly build across1150,1250,1350 and1450ms and reach their full canopy around1550ms; the main reveal remains visibly unfinished after Binding has opened its crossed net. Caster and recipients remain identifiable, with a brief reflected guard and separate damage readouts. No colour-family credit is needed.",
+          "poseDescription": "Aimed wind-up \u2192 spread release/brief reflected guard \u2192 folded rest",
+          "recordedAt": "2026-11-16T18:54:55.501085+00:00"
+        },
+        "focusFrame": 412,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave1/A14-needle-moth-ultimate.jpg"
+      },
+      {
+        "key": 18,
+        "actor": "mochi",
+        "asset": "mochi",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 114,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "foe-3-needle-moth"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 17,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 44,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 18,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 19,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 20,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 21,
+            "turn": 0,
+            "round": 3,
+            "actionId": 114,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 20,
+            "note": ""
+          }
+        ],
+        "indices": [
+          534,
+          537,
+          540,
+          543,
+          546,
+          549,
+          552,
+          555,
+          558,
+          561,
+          564,
+          567,
+          570,
+          573,
+          576,
+          579,
+          582,
+          585,
+          588,
+          591,
+          594,
+          597,
+          600
+        ],
+        "impactFrame": 567,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 16.700000000000728,
+        "lastElapsed": 2183.2000000000007,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.3366666666666176,
+        "shakeObservedSpanMs": 66.69999999999709,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Last light shelter name readable. Mochi changes from crouched guard to open shield stance while remaining with the party. Angular teal/gold shield facets unfold around917-1100ms and hold before clearing around1717ms; allied blue shield readouts differ from healing. Against Panko, the later onset and earlier clearing reinforce the different faceted unfolding versus hinged doors. Faces remain readable; several readouts still compete near the lower party.",
+          "poseDescription": "Crouched guard \u2192 raised open shield \u2192 standing guard",
+          "recordedAt": "2026-11-16T18:56:20.171129+00:00"
+        },
+        "focusFrame": 543,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave1/A18-mochi-ultimate.jpg"
+      },
+      {
+        "key": 19,
+        "actor": "soot",
+        "asset": "soot",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 130,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-button-guard",
+              "foe-1-sock-skipper",
+              "foe-2-teacup-healer",
+              "foe-3-needle-moth",
+              "soot"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-button-guard"
+            ],
+            "amount": 56,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-button-guard"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-sock-skipper"
+            ],
+            "amount": 64,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-sock-skipper"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-teacup-healer"
+            ],
+            "amount": 62,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-teacup-healer"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 57,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 60,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 13,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 6,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          604,
+          607,
+          610,
+          612,
+          613,
+          616,
+          619,
+          622,
+          625,
+          628,
+          631,
+          634,
+          636,
+          637,
+          640,
+          643,
+          646,
+          649,
+          652,
+          655,
+          658,
+          661,
+          664,
+          667,
+          669,
+          670
+        ],
+        "impactFrame": 636,
+        "markedImpactElapsed": 1099.8999999999978,
+        "impactSamplingErrorMs": 0.10000000000218279,
+        "firstElapsed": 33.29999999999927,
+        "lastElapsed": 2199.7999999999993,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 0.22165547827418003,
+        "shakeObservedSpanMs": 33.400000000001455,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Midnight service title readable. Soot winds up then extends the lantern while remaining planted. A curled violet/amber travelling body grows across750-1050ms; contact shards and sparks release by1167-1367ms and clear around1467ms. That early travel and short post-impact release are distinct from Binding and Needle post-impact builds and Yarn sustained grounded fan. Faces remain readable; multiple hostile numbers cluster briefly.",
+          "poseDescription": "K1 lantern wind-up \u2192 K5 extended cast/brief guard \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:57:10.079951+00:00"
+        },
+        "focusFrame": 612,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave1/A19-soot-ultimate.jpg"
+      },
+      {
+        "key": 20,
+        "actor": "clover",
+        "asset": "clover",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 143,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 9,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 55,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 143,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          }
+        ],
+        "indices": [
+          672,
+          675,
+          678,
+          680,
+          681,
+          684,
+          687,
+          690,
+          693,
+          696,
+          699,
+          702,
+          704,
+          705,
+          708,
+          711,
+          714,
+          717,
+          720,
+          723,
+          726,
+          729,
+          732,
+          735,
+          738
+        ],
+        "impactFrame": 704,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.29999999999927,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Greenhouse morning name readable. Clover opens both arms, holds the cast and recovers. Rounded clover leaves grow from the ground at833-1100ms, with the recipient sprigs rising together and green healing numbers over actual allies. This is visibly distinct from the descending flower canopy and sequential pours of Teacup. Faces remain readable through the rear leaves.",
+          "poseDescription": "Gathered wind-up \u2192 open-arm cast \u2192 neutral tea stance",
+          "recordedAt": "2026-11-16T18:56:20.171129+00:00"
+        },
+        "focusFrame": 680,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave1/A20-clover-ultimate.jpg"
+      }
+    ],
+    "framing": {
+      "samples": 900,
+      "extrema": {
+        "catMedian": {
+          "frame": 150,
+          "renderOrdinal": 283,
+          "catMedian": 0.3102749999999999,
+          "catDeviation": 0.005298013833077597,
+          "left": 0.10353669714557223,
+          "right": 0.06124458925503151,
+          "span": 0.8352187135993963,
+          "gap": 0.06986662840322974,
+          "boss": null
+        },
+        "catDeviation": {
+          "frame": 202,
+          "renderOrdinal": 384,
+          "catMedian": 0.3183183129853284,
+          "catDeviation": 0.025268144047054353,
+          "left": 0.10414145437298954,
+          "right": 0.058400694834047306,
+          "span": 0.8374578507929632,
+          "gap": 0.07393720961188706,
+          "boss": null
+        },
+        "left": {
+          "frame": 39,
+          "renderOrdinal": 69,
+          "catMedian": 0.3102750000000001,
+          "catDeviation": 0.01522844421957048,
+          "left": 0.04533441106170405,
+          "right": 0.06124458925503151,
+          "span": 0.8934209996832645,
+          "gap": 0.07643055320247764,
+          "boss": null
+        },
+        "right": {
+          "frame": 175,
+          "renderOrdinal": 332,
+          "catMedian": 0.3122862184706411,
+          "catDeviation": 0.02182552754267042,
+          "left": 0.10342459249606362,
+          "right": 0.03499999999999992,
+          "span": 0.8615754075039365,
+          "gap": 0.07113933540474013,
+          "boss": null
+        },
+        "span": {
+          "frame": 577,
+          "renderOrdinal": 1117,
+          "catMedian": 0.3197249999999999,
+          "catDeviation": 0.01959603502475027,
+          "left": 0.12319816419421581,
+          "right": 0.060902554901175465,
+          "span": 0.8158992809046087,
+          "gap": 0.08412694121869713,
+          "boss": null
+        },
+        "gap": {
+          "frame": 444,
+          "renderOrdinal": 856,
+          "catMedian": 0.31379584373735114,
+          "catDeviation": 0.011220173267489586,
+          "left": 0.10368368543193048,
+          "right": 0.05955996350141801,
+          "span": 0.8367563510666515,
+          "gap": 0.11903456318477224,
+          "boss": null
+        }
+      },
+      "failures": []
+    },
+    "scope": "Own ultimates of the eight featured units. Supplemental review begins after30s; no received-hit window is substituted for an own ultimate."
+  },
+  {
+    "item": "V4-A9-CLARITY-R2",
+    "fixture": "wave3",
+    "sourceCommit": "60763fd90fc9b758bd46c97f4155c3ef1a9bbe42",
+    "videoSha256": "eab38cb89a510f7e0228463428fa54f5c96200a5bd4fbaa97fd0b06b9a1b8c9b",
+    "audio": {
+      "path": "reports/v3-feel/REVIEW/V4-A9-CLARITY-R2/wave3-mix.wav",
+      "integratedLufs": -14.99,
+      "truePeakDbTP": -2.71,
+      "maxTransientVoices": 9,
+      "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+    },
+    "parity": true,
+    "errors": [],
+    "medianRenderFps": 60.2404848763393,
+    "actions": [
+      {
+        "key": 14,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 2,
+            "round": 2,
+            "actionId": 73,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 2,
+            "actionId": 73,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 2,
+            "actionId": 73,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 2,
+            "actionId": 73,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          359,
+          362,
+          365,
+          367,
+          368,
+          371,
+          374,
+          377,
+          380,
+          383,
+          386,
+          389,
+          391,
+          392,
+          395,
+          398,
+          401,
+          404,
+          407,
+          410,
+          413,
+          416,
+          419,
+          422,
+          425
+        ],
+        "impactFrame": 391,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.399999999999636,
+        "lastElapsed": 2199.899999999998,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.9383265510905137,
+        "shakeObservedSpanMs": 100,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Oven door remains legible in the denser wave3 layout, left of the caster. Panko visibly changes from wind-up to the spread protective pose. Central panel begins633ms, the hinged sides open across833-1033ms, blue+180 shield appears at impact, and the doors fade after1733ms. Faces remain readable and the pose returns to rest.",
+          "poseDescription": "K1 wind-up \u2192 K5 protective spread \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:57:10.079951+00:00"
+        },
+        "focusFrame": 367,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave3/A14-panko-ultimate.jpg"
+      },
+      {
+        "key": 22,
+        "actor": "mochi",
+        "asset": "mochi",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 130,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "foe-4-needle-moth"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 17,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "foe-4-needle-moth"
+            ],
+            "amount": 42,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 18,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 19,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 20,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 21,
+            "turn": 0,
+            "round": 3,
+            "actionId": 130,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 20,
+            "note": ""
+          }
+        ],
+        "indices": [
+          597,
+          600,
+          603,
+          606,
+          609,
+          612,
+          615,
+          618,
+          621,
+          624,
+          627,
+          630,
+          633,
+          636,
+          639,
+          642,
+          645,
+          648,
+          651,
+          654,
+          657,
+          660,
+          663
+        ],
+        "impactFrame": 630,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 16.599999999998545,
+        "lastElapsed": 2183.2000000000007,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.340000000000024,
+        "shakeObservedSpanMs": 66.79999999999927,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Last light shelter remains readable in wave3. Mochi changes from crouched K1 to open K5 shield stance and stays allied. The faceted teal/gold crest grows917-1100ms, holds through1517ms and clears by1716ms; shield readouts remain identifiable, although several appear together near the lower party. Faces are readable and K0 returns.",
+          "poseDescription": "K1 crouched guard \u2192 K5 open shield \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:58:18.359111+00:00"
+        },
+        "focusFrame": 606,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave3/A22-mochi-ultimate.jpg"
+      },
+      {
+        "key": 23,
+        "actor": "soot",
+        "asset": "soot",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 154,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-kettle-knight",
+              "soot",
+              "foe-1-spool-ram",
+              "foe-2-pollen-scout",
+              "foe-3-crumb-sentinel",
+              "foe-4-needle-moth",
+              "foe-5-teacup-healer"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-kettle-knight"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-0-kettle-knight",
+            "skillId": "soot-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 12,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-kettle-knight"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-spool-ram"
+            ],
+            "amount": 55,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-spool-ram"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-pollen-scout"
+            ],
+            "amount": 56,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-pollen-scout"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 13,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-3-crumb-sentinel"
+            ],
+            "amount": 48,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-3-crumb-sentinel"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-4-needle-moth"
+            ],
+            "amount": 60,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 17,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-4-needle-moth"
+            ],
+            "amount": 60,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 18,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 6,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 20,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-4-needle-moth"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 22,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-5-teacup-healer"
+            ],
+            "amount": 55,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 23,
+            "turn": 0,
+            "round": 3,
+            "actionId": 154,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-5-teacup-healer"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          667,
+          670,
+          673,
+          675,
+          676,
+          679,
+          682,
+          685,
+          688,
+          691,
+          694,
+          697,
+          699,
+          700,
+          703,
+          706,
+          709,
+          712,
+          715,
+          718,
+          721,
+          724,
+          727,
+          730,
+          732,
+          733
+        ],
+        "impactFrame": 699,
+        "markedImpactElapsed": 1099.8999999999978,
+        "impactSamplingErrorMs": 0.10000000000218279,
+        "firstElapsed": 50,
+        "lastElapsed": 2199.899999999998,
+        "complete": false,
+        "focusAfter600": [],
+        "maxShakePx": 1.2233333333333574,
+        "shakeObservedSpanMs": 33.20000000000073,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Contained cast with late first sample50ms; do not upgrade its strict complete flag. Midnight service remains readable. K1 changes into extended K5; travelling curl grows750-1050ms, separates into contact shards around1250-1350ms and clears by1466ms. Hostile number cluster near23.43s is visibly busy, retained for shared UI polish. Faces remain readable and rest returns.",
+          "poseDescription": "K1 lantern wind-up \u2192 K5 cast/brief K4 guard \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:58:18.359111+00:00"
+        },
+        "focusFrame": 675,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": false,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave3/A23-soot-ultimate.jpg"
+      },
+      {
+        "key": 24,
+        "actor": "clover",
+        "asset": "clover",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 167,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 11,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 12,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 83,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 167,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          }
+        ],
+        "indices": [
+          735,
+          738,
+          741,
+          743,
+          744,
+          747,
+          750,
+          753,
+          756,
+          759,
+          762,
+          765,
+          767,
+          768,
+          771,
+          774,
+          777,
+          780,
+          783,
+          786,
+          789,
+          792,
+          795,
+          798,
+          800,
+          801
+        ],
+        "impactFrame": 767,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 16.700000000000728,
+        "lastElapsed": 2166.5999999999985,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Greenhouse morning title and caster remain readable. Open-arm K5 is distinct from the first wind-up drawing. Ground-up rounded leaves grow833-1100ms; green healing numbers and upward recipient sprigs appear together; leaves fade by1933ms. No dominant damage-shaped main effect appears. Party faces stay clear.",
+          "poseDescription": "K1 gathered wind-up \u2192 K5 open-arm cast \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:58:18.359111+00:00"
+        },
+        "focusFrame": 743,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave3/A24-clover-ultimate.jpg"
+      },
+      {
+        "key": 25,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 172,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 172,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 172,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 172,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          804,
+          807,
+          810,
+          812,
+          813,
+          816,
+          819,
+          822,
+          825,
+          828,
+          831,
+          834,
+          836,
+          837,
+          840,
+          843,
+          846,
+          849,
+          852,
+          855,
+          858,
+          861,
+          864,
+          867,
+          869,
+          870
+        ],
+        "impactFrame": 836,
+        "markedImpactElapsed": 1116.5999999999985,
+        "impactSamplingErrorMs": 16.599999999998545,
+        "firstElapsed": 33.29999999999927,
+        "lastElapsed": 2183.2999999999993,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 3.1041504640831223,
+        "shakeObservedSpanMs": 100.0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Second wave3 Oven door remains readable at the left of the caster. Rolling-pin wind-up changes to broad protective K5. Central panel rises650ms and sides open by1050ms; impact sample1117ms is within one frame, followed by+180 shield. Doors hold through1750ms and clear around1950ms; K0 returns.",
+          "poseDescription": "K1 rolling-pin wind-up \u2192 K5 protective spread \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:58:18.359111+00:00"
+        },
+        "focusFrame": 812,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/wave3/A25-panko-ultimate.jpg"
+      }
+    ],
+    "framing": {
+      "samples": 900,
+      "extrema": {
+        "catMedian": {
+          "frame": 33,
+          "renderOrdinal": 56,
+          "catMedian": 0.31027499999999997,
+          "catDeviation": 0.00657010264873592,
+          "left": 0.08591497171216639,
+          "right": 0.05032640465572524,
+          "span": 0.8637586236321084,
+          "gap": -0.04341641586440055,
+          "boss": null
+        },
+        "catDeviation": {
+          "frame": 703,
+          "renderOrdinal": 1371,
+          "catMedian": 0.3197249999999998,
+          "catDeviation": 0.029556650246304828,
+          "left": 0.08279747172479662,
+          "right": 0.045417331478379785,
+          "span": 0.8717851967968236,
+          "gap": -0.045749367365668724,
+          "boss": null
+        },
+        "left": {
+          "frame": 39,
+          "renderOrdinal": 69,
+          "catMedian": 0.3102750000000001,
+          "catDeviation": 0.01522844421957048,
+          "left": 0.04533441106170405,
+          "right": 0.05114600043631423,
+          "span": 0.9035195885019818,
+          "gap": -0.0450542192204451,
+          "boss": null
+        },
+        "right": {
+          "frame": 13,
+          "renderOrdinal": 22,
+          "catMedian": 0.31467920072595257,
+          "catDeviation": 0.0029114909336386274,
+          "left": 0.10607429056521674,
+          "right": 0.036308225161340246,
+          "span": 0.857617484273443,
+          "gap": -0.3463743309729959,
+          "boss": null
+        },
+        "span": {
+          "frame": 641,
+          "renderOrdinal": 1251,
+          "catMedian": 0.3197249999999999,
+          "catDeviation": 0.01959603502475049,
+          "left": 0.12292768355582302,
+          "right": 0.05785451051990065,
+          "span": 0.8192178059242763,
+          "gap": -0.04080216490373685,
+          "boss": null
+        },
+        "gap": {
+          "frame": 256,
+          "renderOrdinal": 494,
+          "catMedian": 0.3102750000000001,
+          "catDeviation": 0.0038656307165696457,
+          "left": 0.10349696732825442,
+          "right": 0.05177974377326855,
+          "span": 0.844723288898477,
+          "gap": 0.001857836257800205,
+          "boss": null
+        }
+      },
+      "failures": []
+    },
+    "scope": "Own ultimates of the eight featured units. Supplemental review begins after30s; no received-hit window is substituted for an own ultimate."
+  },
+  {
+    "item": "V4-A9-CLARITY-R2",
+    "fixture": "boss",
+    "sourceCommit": "60763fd90fc9b758bd46c97f4155c3ef1a9bbe42",
+    "videoSha256": "dc9500837f26c0891dac516bc1e096dce4cbaad40a319f06e1ef09391c185f11",
+    "audio": {
+      "path": "reports/v3-feel/REVIEW/V4-A9-CLARITY-R2/boss-mix.wav",
+      "integratedLufs": -14.74,
+      "truePeakDbTP": -2.49,
+      "maxTransientVoices": 10,
+      "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+    },
+    "parity": true,
+    "errors": [],
+    "medianRenderFps": 60.2404848763393,
+    "actions": [
+      {
+        "key": 11,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 2,
+            "round": 2,
+            "actionId": 54,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 2,
+            "actionId": 54,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 2,
+            "actionId": 54,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 2,
+            "actionId": 54,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          281,
+          284,
+          287,
+          290,
+          293,
+          296,
+          299,
+          302,
+          305,
+          308,
+          311,
+          313,
+          314,
+          317,
+          320,
+          323,
+          326,
+          329,
+          332,
+          335,
+          338,
+          341,
+          344,
+          347
+        ],
+        "impactFrame": 313,
+        "markedImpactElapsed": 1083.3999999999996,
+        "impactSamplingErrorMs": 16.600000000000364,
+        "firstElapsed": 16.69999999999891,
+        "lastElapsed": 2183.2999999999993,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 3.116674071087316,
+        "shakeObservedSpanMs": 99.90000000000146,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Oven door text is readable, but the right end of its backplate touches the first portrait card at focus frame290. Retain that shared banner-layout issue. Panko changes K1 to K5, center panel rises617ms, hinged doors open before impact, blue+180 shield appears, and the panels fade before rest. Faces stay clear.",
+          "poseDescription": "K1 wind-up \u2192 K5 protective spread \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:09.868904+00:00"
+        },
+        "focusFrame": 290,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A11-panko-ultimate.jpg"
+      },
+      {
+        "key": 12,
+        "actor": "foe-0-yarn-giant",
+        "asset": "yarn-giant",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 2,
+            "round": 2,
+            "actionId": 63,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi",
+              "panko",
+              "foe-0-yarn-giant"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 2,
+            "actionId": 63,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 40,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 2,
+            "actionId": 63,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 3,
+            "note": "Shred"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 2,
+            "actionId": 63,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 2,
+            "actionId": 63,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 2,
+            "actionId": 63,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shred"
+          }
+        ],
+        "indices": [
+          350,
+          353,
+          356,
+          359,
+          362,
+          365,
+          368,
+          371,
+          374,
+          377,
+          380,
+          383,
+          386,
+          389,
+          392,
+          395,
+          398,
+          401,
+          404,
+          407,
+          410,
+          413,
+          416
+        ],
+        "impactFrame": 383,
+        "markedImpactElapsed": 1116.6000000000004,
+        "impactSamplingErrorMs": 16.600000000000364,
+        "firstElapsed": 33.30000000000109,
+        "lastElapsed": 2183.2000000000007,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 3.1041504640833666,
+        "shakeObservedSpanMs": 100.0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Loomfall title readable. Yarn changes from twisted wind-up to wide cast, advances into the low braid fan, holds contact and returns. Thick braids begin before impact, fill the low fan by1017-1117ms, remain through1717ms, then dissolve by1917ms. This sustained pre-impact fan differs in shape, path and timing from Soot travelling coil, Binding crossed net and Needle late ranks. Faces and small helpers remain identifiable.",
+          "poseDescription": "K1 torso wind-up \u2192 K5 broad cast/brief K4 guard \u2192 K0 crouched rest",
+          "recordedAt": "2026-11-16T18:57:10.079951+00:00"
+        },
+        "focusFrame": 359,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A12-yarn-giant-ultimate.jpg"
+      },
+      {
+        "key": 16,
+        "actor": "mochi",
+        "asset": "mochi",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 99,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko",
+              "foe-1-binding-thread"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 17,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 43,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 18,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 19,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 20,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 20,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 21,
+            "turn": 0,
+            "round": 3,
+            "actionId": 99,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 20,
+            "note": ""
+          }
+        ],
+        "indices": [
+          481,
+          484,
+          487,
+          490,
+          493,
+          496,
+          499,
+          502,
+          505,
+          508,
+          511,
+          514,
+          517,
+          520,
+          523,
+          526,
+          529,
+          532,
+          535,
+          538,
+          541,
+          544,
+          547
+        ],
+        "impactFrame": 514,
+        "markedImpactElapsed": 1116.5999999999985,
+        "impactSamplingErrorMs": 16.599999999998545,
+        "firstElapsed": 16.69999999999709,
+        "lastElapsed": 2183.2999999999993,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 3.1041504640831223,
+        "shakeObservedSpanMs": 100.0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Boss-stage Last light shelter is readable. Mochi stays allied, changes K1 to open K5, unfolds facets917-1117ms and restores rest after the crest clears. Allied shield readouts remain distinguishable; the earlier-versus-later timing separation from Panko survives the boss layout. Faces remain visible.",
+          "poseDescription": "K1 crouched guard \u2192 K5 open shield \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:09.868904+00:00"
+        },
+        "focusFrame": 490,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A16-mochi-ultimate.jpg"
+      },
+      {
+        "key": 17,
+        "actor": "soot",
+        "asset": "soot",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 112,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant",
+              "soot",
+              "foe-1-binding-thread",
+              "foe-2-binding-thread"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 54,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 30,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 6,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 67,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-binding-thread"
+            ],
+            "amount": 62,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 112,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-binding-thread"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          550,
+          553,
+          556,
+          558,
+          559,
+          562,
+          565,
+          568,
+          571,
+          574,
+          577,
+          580,
+          582,
+          583,
+          586,
+          589,
+          592,
+          595,
+          598,
+          601,
+          604,
+          607,
+          610,
+          613,
+          616
+        ],
+        "impactFrame": 582,
+        "markedImpactElapsed": 1083.3999999999978,
+        "impactSamplingErrorMs": 16.600000000002183,
+        "firstElapsed": 16.799999999999272,
+        "lastElapsed": 2183.399999999998,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.333333333333333,
+        "shakeObservedSpanMs": 66.70000000000073,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Boss-stage Midnight service is readable. Soot launches a curved flame from the extended lantern; it grows717-1083ms, releases shards after contact and clears by1517ms. The boss and both Binding faces remain visible in front of the main rear effect. The brief received guard and final rest are visible.",
+          "poseDescription": "K1 lantern wind-up \u2192 K5 extended cast/brief K4 guard \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:09.868904+00:00"
+        },
+        "focusFrame": 558,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A17-soot-ultimate.jpg"
+      },
+      {
+        "key": 18,
+        "actor": "clover",
+        "asset": "clover",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 3,
+            "round": 3,
+            "actionId": 125,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 41,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 13,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 3,
+            "actionId": 125,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          }
+        ],
+        "indices": [
+          619,
+          622,
+          625,
+          627,
+          628,
+          631,
+          634,
+          637,
+          640,
+          643,
+          646,
+          649,
+          651,
+          652,
+          655,
+          658,
+          661,
+          664,
+          667,
+          670,
+          673,
+          676,
+          679,
+          682,
+          685
+        ],
+        "impactFrame": 651,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.400000000001455,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Boss-stage Greenhouse morning is readable. The gathered pose opens into K5; rounded ground leaves grow833-1100ms, actual allied heal numbers appear and sprigs rise. Leaf mass fades before the return, with all party faces still identifiable.",
+          "poseDescription": "K1 gathered wind-up \u2192 K5 open-arm cast \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:09.868904+00:00"
+        },
+        "focusFrame": 627,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A18-clover-ultimate.jpg"
+      },
+      {
+        "key": 27,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 165,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          882,
+          885,
+          888,
+          891,
+          894,
+          897,
+          899,
+          900
+        ],
+        "impactFrame": 899,
+        "markedImpactElapsed": 583.2999999999993,
+        "impactSamplingErrorMs": 516.7000000000007,
+        "firstElapsed": 16.700000000000728,
+        "lastElapsed": 583.2999999999993,
+        "complete": false,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Film-edge fragment ends at583ms before the effect and impact. K1 changes to K5 and Oven door text is readable, while its backplate again touches the first portrait near focus frame891. No impact, aftermath or return acceptance is claimed from this fragment; the separate tail-film A27 covers a complete corresponding cast.",
+          "poseDescription": "K1 wind-up \u2192 K5 onset; contact/recovery outside film",
+          "recordedAt": "2026-11-16T18:59:51.783758+00:00"
+        },
+        "focusFrame": 891,
+        "containedInFilm": false,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-CLARITY-R2/boss/A27-panko-ultimate.jpg"
+      }
+    ],
+    "framing": {
+      "samples": 900,
+      "extrema": {
+        "catMedian": {
+          "frame": 36,
+          "renderOrdinal": 65,
+          "catMedian": 0.31027499999999997,
+          "catDeviation": 0.0011697347999224394,
+          "left": 0.07588539731864324,
+          "right": 0.0651084817212535,
+          "span": 0.8590061209601032,
+          "gap": 0.006589800770284615,
+          "boss": 0.5050238465154119
+        },
+        "catDeviation": {
+          "frame": 91,
+          "renderOrdinal": 175,
+          "catMedian": 0.31848071104195474,
+          "catDeviation": 0.025162837386203285,
+          "left": 0.09410106610986829,
+          "right": 0.06507584218919837,
+          "span": 0.8408230917009334,
+          "gap": 0.006860346018185215,
+          "boss": 0.5010242713270633
+        },
+        "left": {
+          "frame": 39,
+          "renderOrdinal": 71,
+          "catMedian": 0.3102750000000001,
+          "catDeviation": 0.01522844421957048,
+          "left": 0.035334411061704096,
+          "right": 0.065078561386821,
+          "span": 0.8995870275514749,
+          "gap": 0.006436947607505595,
+          "boss": 0.503463725052951
+        },
+        "right": {
+          "frame": 774,
+          "renderOrdinal": 1524,
+          "catMedian": 0.3122919947542597,
+          "catDeviation": 0.00709211296879908,
+          "left": 0.09330143326266443,
+          "right": 0.036266457421405995,
+          "span": 0.8704321093159295,
+          "gap": 0.006860346018185215,
+          "boss": 0.5115097804194318
+        },
+        "span": {
+          "frame": 321,
+          "renderOrdinal": 627,
+          "catMedian": 0.3197249999999998,
+          "catDeviation": 0.014778308408668006,
+          "left": 0.10928601540655203,
+          "right": 0.06536058064260253,
+          "span": 0.8253534039508454,
+          "gap": 0.009493712137124799,
+          "boss": 0.5080435975220895
+        },
+        "gap": {
+          "frame": 386,
+          "renderOrdinal": 755,
+          "catMedian": 0.3121846083348516,
+          "catDeviation": 0.018838402157047573,
+          "left": 0.09330012960614747,
+          "right": 0.06543791975145985,
+          "span": 0.8412619506423926,
+          "gap": 0.06839210735475429,
+          "boss": 0.49643999999999994
+        },
+        "boss": {
+          "frame": 55,
+          "renderOrdinal": 103,
+          "catMedian": 0.3123064311924445,
+          "catDeviation": 0.012655582992999959,
+          "left": 0.09342441513021466,
+          "right": 0.06536058064260253,
+          "span": 0.8412150042271829,
+          "gap": 0.006357390286540721,
+          "boss": 0.49643999999999977
+        }
+      },
+      "failures": []
+    },
+    "scope": "Own ultimates of the eight featured units. Supplemental review begins after30s; no received-hit window is substituted for an own ultimate."
+  },
+  {
+    "item": "V4-A9-TAIL45-R2",
+    "fixture": "wave1",
+    "sourceCommit": "60763fd90fc9b758bd46c97f4155c3ef1a9bbe42",
+    "videoSha256": "ca36d9c4d4ced3780d036d2020f29b5dee0f6b69b1cc59efa78f6fb83af9653c",
+    "audio": {
+      "path": "reports/v3-feel/REVIEW/V4-A9-TAIL45-R2/wave1-mix.wav",
+      "integratedLufs": -15.04,
+      "truePeakDbTP": -3.17,
+      "maxTransientVoices": 9,
+      "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+    },
+    "parity": true,
+    "errors": [],
+    "medianRenderFps": 60.2404848763393,
+    "actions": [
+      {
+        "key": 30,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 191,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 4,
+            "actionId": 191,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 191,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 191,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          964,
+          967,
+          970,
+          972,
+          973,
+          976,
+          979,
+          982,
+          985,
+          988,
+          991,
+          994,
+          996,
+          997,
+          1000,
+          1003,
+          1006,
+          1009,
+          1012,
+          1015,
+          1018,
+          1021,
+          1024,
+          1027,
+          1030
+        ],
+        "impactFrame": 996,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.30000000000291,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.9383265510905137,
+        "shakeObservedSpanMs": 100,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Late wave1 Oven door is readable beside the caster. K1 changes into protective K5; central panel starts633ms, sides open833-1033ms, blue+180 appears at1100ms and panels fade after1733ms. Faces remain readable and rest returns before the next action.",
+          "poseDescription": "K1 wind-up \u2192 K5 protective spread \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:51.783758+00:00"
+        },
+        "focusFrame": 972,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/wave1/A30-panko-ultimate.jpg"
+      },
+      {
+        "key": 32,
+        "actor": "foe-3-needle-moth",
+        "asset": "needle-moth",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 205,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "panko",
+              "foe-3-needle-moth",
+              "mochi"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 205,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 205,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 4,
+            "actionId": 205,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 4,
+            "actionId": 205,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-3-needle-moth",
+            "skillId": "rangerAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          }
+        ],
+        "indices": [
+          1102,
+          1105,
+          1108,
+          1109,
+          1111,
+          1114,
+          1117,
+          1120,
+          1123,
+          1126,
+          1129,
+          1132,
+          1134,
+          1135,
+          1138,
+          1141,
+          1144,
+          1147,
+          1150,
+          1153,
+          1156,
+          1159,
+          1162,
+          1165,
+          1167,
+          1168
+        ],
+        "impactFrame": 1134,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 33.400000000001455,
+        "lastElapsed": 2183.2000000000044,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.223333333333236,
+        "shakeObservedSpanMs": 83.29999999999563,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Second contained Needle ultimate confirms progressive rank reveal from1133 through1450/1550ms, followed by clearing near1750ms and rest. This slower three-accent build is visibly distinct from the already-open Binding lattice at1233ms. Title and faces are readable; rank accents do not represent additional scheduled hit events.",
+          "poseDescription": "Aimed wind-up \u2192 spread release/brief reflected guard \u2192 folded rest",
+          "recordedAt": "2026-11-16T18:54:55.501085+00:00"
+        },
+        "focusFrame": 1109,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/wave1/A32-needle-moth-ultimate.jpg"
+      },
+      {
+        "key": 34,
+        "actor": "foe-2-teacup-healer",
+        "asset": "teacup-healer",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 218,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-2-teacup-healer",
+            "skillId": "healerAttack",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 1,
+            "turn": 0,
+            "round": 4,
+            "actionId": 218,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "foe-2-teacup-healer",
+            "skillId": "healerAttack",
+            "targetIds": [
+              "foe-3-needle-moth"
+            ],
+            "amount": 65,
+            "note": ""
+          }
+        ],
+        "indices": [
+          1239,
+          1242,
+          1245,
+          1248,
+          1251,
+          1254,
+          1257,
+          1260,
+          1263,
+          1266,
+          1269,
+          1272,
+          1275,
+          1278,
+          1281,
+          1284,
+          1287,
+          1290,
+          1293,
+          1296,
+          1299,
+          1302,
+          1305,
+          1306,
+          1308
+        ],
+        "impactFrame": 1272,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 16.599999999998545,
+        "lastElapsed": 2199.800000000003,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Careful refill name readable. Raised spoon cast changes silhouette and settles back without a damage-shaped main effect. Five-petal flowers unfold downward from the overhead canopy; successive smaller blossoms pour toward Needle at1200-1400ms as its green+65 heal appears. The descending stagger differs from Clover single simultaneous upward sprig release; both retain the same healing response and colour family. Faces remain visible.",
+          "poseDescription": "Raised-spoon wind-up \u2192 wide spoon cast \u2192 settled cup",
+          "recordedAt": "2026-11-16T18:56:20.171129+00:00"
+        },
+        "focusFrame": 1248,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/wave1/A34-teacup-healer-ultimate.jpg"
+      },
+      {
+        "key": 36,
+        "actor": "mochi",
+        "asset": "mochi",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 5,
+            "round": 5,
+            "actionId": 235,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 70,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 5,
+            "actionId": 235,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          }
+        ],
+        "indices": [
+          1318,
+          1321,
+          1324,
+          1326,
+          1327,
+          1330,
+          1333,
+          1336,
+          1339,
+          1342,
+          1345,
+          1348,
+          1349,
+          1350,
+          1351
+        ],
+        "impactFrame": 1349,
+        "markedImpactElapsed": 1066.5999999999985,
+        "impactSamplingErrorMs": 33.400000000001455,
+        "firstElapsed": 33.19999999999709,
+        "lastElapsed": 1066.5999999999985,
+        "complete": false,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Film-edge fragment ends1067ms before the scheduled1100ms impact. Last light shelter is readable; crouched K1 changes to open K5 and the crest begins growing. This fragment supplies no impact or recovery pass; complete Mochi own windows elsewhere retain that evidence.",
+          "poseDescription": "K1 guard \u2192 K5 crest onset; impact/recovery outside film",
+          "recordedAt": "2026-11-16T19:01:44.488455+00:00"
+        },
+        "focusFrame": 1326,
+        "containedInFilm": false,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/wave1/A36-mochi-ultimate.jpg"
+      }
+    ],
+    "framing": {
+      "samples": 1350,
+      "extrema": {
+        "catMedian": {
+          "frame": 34,
+          "renderOrdinal": 60,
+          "catMedian": 0.31027499999999997,
+          "catDeviation": 0.004509573312617032,
+          "left": 0.08590446275239849,
+          "right": 0.06124458925503151,
+          "span": 0.85285094799257,
+          "gap": 0.07598445058594043,
+          "boss": null
+        },
+        "catDeviation": {
+          "frame": 202,
+          "renderOrdinal": 389,
+          "catMedian": 0.3183180539952799,
+          "catDeviation": 0.02526735098537447,
+          "left": 0.10414149582478345,
+          "right": 0.058401482577007835,
+          "span": 0.8374570215982087,
+          "gap": 0.07393675693385351,
+          "boss": null
+        },
+        "left": {
+          "frame": 263,
+          "renderOrdinal": 506,
+          "catMedian": 0.3109533302474766,
+          "catDeviation": 0.01301377052154451,
+          "left": 0.04533441106170405,
+          "right": 0.06124458925503151,
+          "span": 0.8934209996832645,
+          "gap": 0.06493860575494406,
+          "boss": null
+        },
+        "right": {
+          "frame": 175,
+          "renderOrdinal": 337,
+          "catMedian": 0.3122862184706411,
+          "catDeviation": 0.02182552754267042,
+          "left": 0.10342459249606362,
+          "right": 0.03499999999999992,
+          "span": 0.8615754075039365,
+          "gap": 0.07113933540474005,
+          "boss": null
+        },
+        "span": {
+          "frame": 578,
+          "renderOrdinal": 1127,
+          "catMedian": 0.3197249999999999,
+          "catDeviation": 0.01959603502475027,
+          "left": 0.12319816419421581,
+          "right": 0.060862269883141806,
+          "span": 0.8159395659226424,
+          "gap": 0.08414045754535104,
+          "boss": null
+        },
+        "gap": {
+          "frame": 444,
+          "renderOrdinal": 862,
+          "catMedian": 0.3137953135869623,
+          "catDeviation": 0.011218502745378722,
+          "left": 0.10368368543193048,
+          "right": 0.05955996350141779,
+          "span": 0.8367563510666517,
+          "gap": 0.11903456318477224,
+          "boss": null
+        }
+      },
+      "failures": []
+    },
+    "scope": "Own ultimates of the eight featured units. Supplemental review begins after30s; no received-hit window is substituted for an own ultimate."
+  },
+  {
+    "item": "V4-A9-TAIL45-R2",
+    "fixture": "boss",
+    "sourceCommit": "8b70282b17452ab85b0ad7232209fc54b1251862",
+    "videoSha256": "16fce62582e4c7fbfcadc41361e4ec08c118fd7733eaef4050e22659b9de2acd",
+    "audio": {
+      "path": "reports/v3-feel/REVIEW/V4-A9-TAIL45-R2/boss-mix.wav",
+      "integratedLufs": -14.82,
+      "truePeakDbTP": -2.13,
+      "maxTransientVoices": 10,
+      "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+    },
+    "parity": true,
+    "errors": [],
+    "medianRenderFps": 60.2404848763393,
+    "actions": [
+      {
+        "key": 27,
+        "actor": "panko",
+        "asset": "panko",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 165,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 180,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Saucer riposte"
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 165,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "panko",
+            "skillId": "panko-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shelter"
+          }
+        ],
+        "indices": [
+          884,
+          887,
+          890,
+          892,
+          893,
+          896,
+          899,
+          902,
+          905,
+          908,
+          911,
+          914,
+          916,
+          917,
+          920,
+          923,
+          926,
+          929,
+          932,
+          935,
+          938,
+          941,
+          944,
+          947,
+          950
+        ],
+        "impactFrame": 916,
+        "markedImpactElapsed": 1099.9999999999964,
+        "impactSamplingErrorMs": 3.637978807091713e-12,
+        "firstElapsed": 33.39999999999782,
+        "lastElapsed": 2199.9999999999964,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.221882562954278,
+        "shakeObservedSpanMs": 66.69999999999709,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "The separate tail film contains the complete boss Oven door cast. Center panel starts633ms, side doors open before1100ms shield and fade after1733ms. Caster/party faces and name text are readable. The backplate still touches the first portrait at focus frame892; preserve that issue even though the text is legible.",
+          "poseDescription": "K1 wind-up \u2192 K5 protective spread \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:51.783758+00:00"
+        },
+        "focusFrame": 892,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A27-panko-ultimate.jpg"
+      },
+      {
+        "key": 28,
+        "actor": "foe-0-yarn-giant",
+        "asset": "yarn-giant",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 175,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi",
+              "panko",
+              "foe-0-yarn-giant"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 175,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 175,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Shred"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 4,
+            "actionId": 175,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 4,
+            "actionId": 175,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 4,
+            "actionId": 175,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-0-yarn-giant",
+            "skillId": "yarnAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Shred"
+          }
+        ],
+        "indices": [
+          953,
+          956,
+          959,
+          961,
+          962,
+          965,
+          968,
+          971,
+          974,
+          977,
+          980,
+          983,
+          985,
+          986,
+          989,
+          992,
+          995,
+          998,
+          1001,
+          1004,
+          1007,
+          1010,
+          1013,
+          1016,
+          1019
+        ],
+        "impactFrame": 985,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 33.200000000004366,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.244385479116223,
+        "shakeObservedSpanMs": 66.69999999999709,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Second Loomfall confirms low pre-impact braid growth and the sustained aftermath; the initial twisted silhouette changes into broad cast before the strike. Contact sample1100ms and subsequent reflected guard are visible, with return after2133ms. The forebody/ground braids share a palette but are separate readable forms. Name and faces remain readable.",
+          "poseDescription": "K1 torso wind-up \u2192 K5 broad cast/brief K4 guard \u2192 K0 crouched rest",
+          "recordedAt": "2026-11-16T18:57:10.079951+00:00"
+        },
+        "focusFrame": 961,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A28-yarn-giant-ultimate.jpg"
+      },
+      {
+        "key": 29,
+        "actor": "foe-1-binding-thread",
+        "asset": "binding-thread",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 182,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-1-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko",
+              "foe-1-binding-thread"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 182,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-1-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 182,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 4,
+            "actionId": 182,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-1-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Shred"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 4,
+            "actionId": 182,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-1-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          1022,
+          1025,
+          1028,
+          1030,
+          1031,
+          1034,
+          1037,
+          1040,
+          1043,
+          1046,
+          1049,
+          1052,
+          1054,
+          1055,
+          1058,
+          1061,
+          1064,
+          1067,
+          1070,
+          1073,
+          1076,
+          1079,
+          1082,
+          1085,
+          1088
+        ],
+        "impactFrame": 1054,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 33.30000000000291,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.2218825629534613,
+        "shakeObservedSpanMs": 66.59999999999854,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Lower Binding Woven snare title readable above the controls. Planted caster winds and extends its arm; the target-directed cord expands into a broad open-diamond lattice, already established at1233ms and held through1533ms before dissolution. The geometry and expanding wrap differ from the Needle ranks, whose reveal continues until about1550ms. Target faces stay readable.",
+          "poseDescription": "Coiled arm wind-up \u2192 extended cast/brief reflected guard \u2192 upright rest",
+          "recordedAt": "2026-11-16T18:54:55.501085+00:00"
+        },
+        "focusFrame": 1030,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A29-binding-thread-ultimate.jpg"
+      },
+      {
+        "key": 30,
+        "actor": "foe-2-binding-thread",
+        "asset": "binding-thread",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 4,
+            "round": 4,
+            "actionId": 193,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "foe-2-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko",
+              "foe-2-binding-thread"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 4,
+            "actionId": 193,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "foe-2-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 4,
+            "actionId": 193,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "panko",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "foe-2-binding-thread"
+            ],
+            "amount": 32,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 4,
+            "actionId": 193,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-2-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 3,
+            "note": "Shred"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 4,
+            "actionId": 193,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "foe-2-binding-thread",
+            "skillId": "threadAttack",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          1091,
+          1094,
+          1097,
+          1099,
+          1100,
+          1103,
+          1106,
+          1109,
+          1112,
+          1115,
+          1118,
+          1121,
+          1123,
+          1124,
+          1127,
+          1130,
+          1133,
+          1136,
+          1139,
+          1142,
+          1145,
+          1148,
+          1151,
+          1154,
+          1157
+        ],
+        "impactFrame": 1123,
+        "markedImpactElapsed": 1099.9000000000015,
+        "impactSamplingErrorMs": 0.09999999999854481,
+        "firstElapsed": 33.30000000000291,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 1.2218825629534613,
+        "shakeObservedSpanMs": 66.59999999999854,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Upper Binding repeats the same quick crossed-net reveal: visible by1133ms, established at1233ms, then held. The final sample is the next action at17ms, correctly distinguished from this cast. Name, caster and recipient faces remain readable; posture returns to the upright rest.",
+          "poseDescription": "Coiled arm wind-up \u2192 extended cast/brief reflected guard \u2192 upright rest",
+          "recordedAt": "2026-11-16T18:54:55.501085+00:00"
+        },
+        "focusFrame": 1099,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A30-binding-thread-ultimate.jpg"
+      },
+      {
+        "key": 32,
+        "actor": "mochi",
+        "asset": "mochi",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 5,
+            "round": 5,
+            "actionId": 210,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 4,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 7,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 10,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          },
+          {
+            "version": 3,
+            "seq": 14,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_expire",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Removed debuffs"
+          },
+          {
+            "version": 3,
+            "seq": 15,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "shield",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 130,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 16,
+            "turn": 0,
+            "round": 5,
+            "actionId": 210,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "mochi",
+            "skillId": "mochi-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 2,
+            "note": "Warm"
+          }
+        ],
+        "indices": [
+          1169,
+          1172,
+          1175,
+          1177,
+          1178,
+          1181,
+          1184,
+          1187,
+          1190,
+          1193,
+          1196,
+          1199,
+          1201,
+          1202,
+          1205,
+          1208,
+          1211,
+          1214,
+          1217,
+          1220,
+          1223,
+          1226,
+          1229,
+          1232,
+          1235
+        ],
+        "impactFrame": 1201,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.299999999995634,
+        "lastElapsed": 2199.9000000000015,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.9383265510905137,
+        "shakeObservedSpanMs": 99.90000000000146,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Late boss Last light shelter is readable and fully contained. Guard wind-up changes to open K5; the crest grows before1100ms, allied shield readouts appear and the angular field fades after1633ms. The actor stays with allies and returns to K0. No new silhouette or face defect appears.",
+          "poseDescription": "K1 crouched guard \u2192 K5 open shield \u2192 K0 rest",
+          "recordedAt": "2026-11-16T18:59:51.783758+00:00"
+        },
+        "focusFrame": 1177,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A32-mochi-ultimate.jpg"
+      },
+      {
+        "key": 33,
+        "actor": "soot",
+        "asset": "soot",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 5,
+            "round": 5,
+            "actionId": 220,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant",
+              "foe-1-binding-thread",
+              "foe-2-binding-thread"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 77,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-0-yarn-giant"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 67,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "fizzle",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-1-binding-thread"
+            ],
+            "amount": 0,
+            "note": "Binding Thread resisted Daze"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "damage",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-binding-thread"
+            ],
+            "amount": 99,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 5,
+            "actionId": 220,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "soot",
+            "skillId": "soot-4",
+            "targetIds": [
+              "foe-2-binding-thread"
+            ],
+            "amount": 1,
+            "note": "Daze"
+          }
+        ],
+        "indices": [
+          1238,
+          1241,
+          1244,
+          1246,
+          1247,
+          1250,
+          1253,
+          1256,
+          1259,
+          1262,
+          1265,
+          1268,
+          1271,
+          1274,
+          1277,
+          1280,
+          1283,
+          1286,
+          1289,
+          1292,
+          1295,
+          1298,
+          1301,
+          1304
+        ],
+        "impactFrame": 1271,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.299999999995634,
+        "lastElapsed": 2199.899999999994,
+        "complete": true,
+        "focusAfter600": [],
+        "maxShakePx": 2.9383265510905137,
+        "shakeObservedSpanMs": 99.89999999999418,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Final complete Midnight service is readable. K1 changes into extended K5; the curled flame travels733-1033ms, contact produces visible hostile recoil and numbers, and shards release1233-1433ms before clearing around1533ms. Soot briefly guards from the reflected response and returns to K0. Caster, boss and helper faces stay readable.",
+          "poseDescription": "K1 lantern wind-up \u2192 K5 cast/brief K4 guard \u2192 K0 rest",
+          "recordedAt": "2026-11-16T19:01:44.488455+00:00"
+        },
+        "focusFrame": 1246,
+        "containedInFilm": true,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A33-soot-ultimate.jpg"
+      },
+      {
+        "key": 34,
+        "actor": "clover",
+        "asset": "clover",
+        "own": true,
+        "ultimate": true,
+        "duration": 2200,
+        "impact": 1100,
+        "events": [
+          {
+            "version": 3,
+            "seq": 0,
+            "turn": 5,
+            "round": 5,
+            "actionId": 233,
+            "beat": 0,
+            "type": "action_start",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi",
+              "soot",
+              "clover",
+              "panko"
+            ],
+            "amount": 0
+          },
+          {
+            "version": 3,
+            "seq": 2,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 3,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "mochi"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 5,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 6,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "soot"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 8,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 9,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "clover"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          },
+          {
+            "version": 3,
+            "seq": 11,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "heal",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 0,
+            "note": ""
+          },
+          {
+            "version": 3,
+            "seq": 12,
+            "turn": 0,
+            "round": 5,
+            "actionId": 233,
+            "beat": 2,
+            "type": "status_apply",
+            "actorId": "clover",
+            "skillId": "clover-4",
+            "targetIds": [
+              "panko"
+            ],
+            "amount": 1,
+            "note": "Second sprout"
+          }
+        ],
+        "indices": [
+          1307,
+          1310,
+          1313,
+          1315,
+          1316,
+          1319,
+          1322,
+          1325,
+          1328,
+          1331,
+          1334,
+          1337,
+          1339,
+          1340,
+          1343,
+          1346,
+          1349,
+          1350,
+          1352
+        ],
+        "impactFrame": 1339,
+        "markedImpactElapsed": 1100,
+        "impactSamplingErrorMs": 0,
+        "firstElapsed": 33.30000000000291,
+        "lastElapsed": 1433.300000000003,
+        "complete": false,
+        "focusAfter600": [],
+        "maxShakePx": 0.0,
+        "shakeObservedSpanMs": 0,
+        "shakeSamplingCaveat": "Observed first-to-last nonzero samples do not by themselves bound unsampled duration.",
+        "visualReview": {
+          "status": "reviewed_once",
+          "note": "Film-edge fragment includes the1100ms heal and ends1433ms during aftermath. Greenhouse morning is readable; K1 changes to open K5, rounded leaves rise and the actual allies show green heal readouts with readable faces. Recovery lies outside this film and is not accepted from this fragment.",
+          "poseDescription": "K1 gathered wind-up \u2192 K5 heal; recovery outside film",
+          "recordedAt": "2026-11-16T19:01:44.488455+00:00"
+        },
+        "focusFrame": 1315,
+        "containedInFilm": false,
+        "firstSampleWithinOneFrame": true,
+        "sheet": "reports/v4-art/REVIEW/A9/r2/raw/ultimate-strips/V4-A9-TAIL45-R2/boss/A34-clover-ultimate.jpg"
+      }
+    ],
+    "framing": {
+      "samples": 1350,
+      "extrema": {
+        "catMedian": {
+          "frame": 33,
+          "renderOrdinal": 58,
+          "catMedian": 0.31027499999999997,
+          "catDeviation": 0.006563423562429671,
+          "left": 0.07591494022474604,
+          "right": 0.06516608518379419,
+          "span": 0.8589189745914597,
+          "gap": 0.006789971890979985,
+          "boss": 0.5065139689932083
+        },
+        "catDeviation": {
+          "frame": 91,
+          "renderOrdinal": 173,
+          "catMedian": 0.31848057757294745,
+          "catDeviation": 0.025163191907372817,
+          "left": 0.09410112390323483,
+          "right": 0.06507585270211025,
+          "span": 0.840823023394655,
+          "gap": 0.006860346018185215,
+          "boss": 0.5010258283873443
+        },
+        "left": {
+          "frame": 235,
+          "renderOrdinal": 455,
+          "catMedian": 0.31407054858219363,
+          "catDeviation": 0.012085019112195727,
+          "left": 0.03533822382959523,
+          "right": 0.06536058064260253,
+          "span": 0.8993011955278023,
+          "gap": 0.006860346018185215,
+          "boss": 0.5113500937409485
+        },
+        "right": {
+          "frame": 1028,
+          "renderOrdinal": 2022,
+          "catMedian": 0.3123825857330113,
+          "catDeviation": 0.012861685234944575,
+          "left": 0.09341715176619597,
+          "right": 0.0362534685235536,
+          "span": 0.8703293797102505,
+          "gap": 0.006323083742913305,
+          "boss": 0.4964400000000001
+        },
+        "span": {
+          "frame": 1208,
+          "renderOrdinal": 2382,
+          "catMedian": 0.3197249999999999,
+          "catDeviation": 0.01959603502475027,
+          "left": 0.10942489848713373,
+          "right": 0.06536058064260253,
+          "span": 0.8252145208702637,
+          "gap": 0.01406243396615201,
+          "boss": 0.5112685452047633
+        },
+        "gap": {
+          "frame": 385,
+          "renderOrdinal": 750,
+          "catMedian": 0.3120537582121248,
+          "catDeviation": 0.018468556604356312,
+          "left": 0.09329941163981931,
+          "right": 0.06543791975145985,
+          "span": 0.8412626686087208,
+          "gap": 0.06839210735475429,
+          "boss": 0.49643999999999994
+        },
+        "boss": {
+          "frame": 58,
+          "renderOrdinal": 107,
+          "catMedian": 0.31457653620385667,
+          "catDeviation": 0.013674052921318847,
+          "left": 0.09338767582068347,
+          "right": 0.06536058064260253,
+          "span": 0.841251743536714,
+          "gap": 0.0061894458728244395,
+          "boss": 0.49643999999999977
+        }
+      },
+      "failures": []
+    },
+    "scope": "Own ultimates of the eight featured units. Supplemental review begins after30s; no received-hit window is substituted for an own ultimate."
+  }
+]

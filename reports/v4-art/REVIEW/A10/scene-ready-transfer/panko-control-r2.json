@@ -1,0 +1,5439 @@
+{
+  "started": "2026-11-16T22:16:47.784Z",
+  "scope": "Two private GPU upload/filter drills on the same selected straight-alpha AVIFs. No runtime configuration is installed.",
+  "sourceCommit": "d16cd2ed3e608815f3fda813d63451bdb07ac672",
+  "scriptSha256": "3a1224fbc71d616f2ab935336c802d2bee6c22378039ba52b5d2f2864530af01",
+  "runtimeSources": {
+    "apps/web/src/game/cardrpg/spine/assets.ts": "c20ec3f1dd7048b481909217fe4c93d7b193afb96ee1a67deb86cbd4650d348b",
+    "apps/web/src/game/cardrpg/spine/atlas-delivery.ts": "b1f0287619060e86391d1e37571f63065a8e9454f29c72cfab943bb5a3e5f7e6",
+    "apps/web/src/game/rig/atlas-color.ts": "cf81ce18249a00a150135cf0c44ac56bcfd08606e5bc19c30cfa59617dd67726",
+    "apps/web/src/game/cardrpg/spine/sampled-atlases.json": "234b0f4591b033b13db05127c57d1aad91d87975ed8ef4c650cd7e0684b1eab1"
+  },
+  "methods": [
+    "source-default",
+    "source-associated",
+    "avif60-444"
+  ],
+  "reusedPankoTrials": [
+    {
+      "path": "apps/web/public/units/panko/rig-depth.png",
+      "bytes": 1569890,
+      "sha256": "1a9e5df12fcb667343b823d09e43e8dedb65ead0a61b8fb890a22fb4b9f27e94",
+      "decodedSize": [
+        2048,
+        1024
+      ],
+      "method": "source-default"
+    },
+    {
+      "path": "apps/web/public/units/panko/rig-depth.png",
+      "bytes": 1569890,
+      "sha256": "1a9e5df12fcb667343b823d09e43e8dedb65ead0a61b8fb890a22fb4b9f27e94",
+      "decodedSize": [
+        2048,
+        1024
+      ],
+      "method": "source-associated"
+    },
+    {
+      "method": "avif60-444",
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r3/actor-panko-avif60-444.avif",
+      "bytes": 185927,
+      "sha256": "dbd5595cee4126ce24fb011e23dd9b175ed92d46385703c8d78ab39fc2fbdd34",
+      "seconds": 0.4184742080000001,
+      "dimensionsExact": true,
+      "alphaExact": true,
+      "rgbaExact": false,
+      "maskedPixels": 541894,
+      "maskedMeanLabDelta": 0.24197161553940735,
+      "perPixelDeltaE76": {
+        "mean": 2.0552408695220947,
+        "p95": 4.294727802276611,
+        "max": 31.202003479003906
+      },
+      "ssimDiagnostic512": 0.9980998689365596,
+      "numericalGate": true,
+      "humanReviewRequired": true,
+      "decodedSize": [
+        2048,
+        1024
+      ]
+    }
+  ],
+  "results": [
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "method": "source-default",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": false,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-straight"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 665.9347924215014,
+              "y": 676.8133551612547
+            },
+            "face": {
+              "x": 567.0324599599764,
+              "y": 551.1132542032393,
+              "width": 101.5850324874724,
+              "height": 73.48475746933718
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1120.7655571851035,
+              "y": 398.43945939715593
+            },
+            "face": {
+              "x": 1085.783377112331,
+              "y": 216.2462012682956,
+              "width": 56.967607998251424,
+              "height": 41.7874763945708
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 908.790000679072,
+              "y": 677.0707813072873
+            },
+            "face": {
+              "x": 878.0925236914113,
+              "y": 517.7754487641319,
+              "width": 63.77344854566741,
+              "height": 43.12387359514207
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1126.3370855519042,
+              "y": 203.45873635268606
+            },
+            "face": {
+              "x": 1097.5323912940034,
+              "y": 82.62750238840493,
+              "width": 64.49998448561246,
+              "height": 38.08758793831879
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 934.3983013436629,
+              "y": 489.80195529741354
+            },
+            "face": {
+              "x": 892.2275576106153,
+              "y": 340.31061938687725,
+              "width": 78.28717393289253,
+              "height": 43.47200659377478
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1111.1623232425463,
+              "y": 633.6453504503688
+            },
+            "face": {
+              "x": 1054.918336761222,
+              "y": 463.27442167906923,
+              "width": 114.04400181323376,
+              "height": 40.42092637430699
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 153.46397969251413,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 101.65865000361734,
+              "y": 90.08803919732908,
+              "width": 90.4677715766033,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 452.65246541836586,
+              "y": 302.5633745156356
+            },
+            "face": {
+              "x": 406.92966826742327,
+              "y": 110.80833650567183,
+              "width": 97.55282386341463,
+              "height": 67.70886758605508
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 135.80808427586368,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 96.0044721997857,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 567.0324599599764,
+                "y": 551.1132542032393,
+                "width": 101.5850324874724,
+                "height": 73.48475746933718
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "coreBox": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "faceBox": {
+                "x": 1085.783377112331,
+                "y": 216.2462012682956,
+                "width": 56.967607998251424,
+                "height": 41.7874763945708
+              },
+              "drawOrder": 107250,
+              "ratio": 0.30316767118510896,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 878.0925236914113,
+                "y": 517.7754487641319,
+                "width": 63.77344854566741,
+                "height": 43.12387359514207
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "coreBox": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "faceBox": {
+                "x": 1097.5323912940034,
+                "y": 82.62750238840493,
+                "width": 64.49998448561246,
+                "height": 38.08758793831879
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "coreBox": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "faceBox": {
+                "x": 892.2275576106153,
+                "y": 340.31061938687725,
+                "width": 78.28717393289253,
+                "height": 43.47200659377478
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "coreBox": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "faceBox": {
+                "x": 1054.918336761222,
+                "y": 463.27442167906923,
+                "width": 114.04400181323376,
+                "height": 40.42092637430699
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 101.65865000361734,
+                "y": 90.08803919732908,
+                "width": 90.4677715766033,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "coreBox": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "faceBox": {
+                "x": 406.92966826742327,
+                "y": 110.80833650567183,
+                "width": 97.55282386341463,
+                "height": 67.70886758605508
+              },
+              "drawOrder": 81900,
+              "ratio": 0.3116789047736962,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 96.0044721997857,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-720-source-default.png",
+      "snapshotSha256": "ef9e66fd8d6c0ff6f1fc5768c3a10002084a857b87a7e1ac8616de1ebd00ee15"
+    },
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "method": "source-associated",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 665.9347924215014,
+              "y": 676.8133551612547
+            },
+            "face": {
+              "x": 567.0324599599764,
+              "y": 551.1132542032393,
+              "width": 101.5850324874724,
+              "height": 73.48475746933718
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1120.7655571851035,
+              "y": 398.43945939715593
+            },
+            "face": {
+              "x": 1085.783377112331,
+              "y": 216.2462012682956,
+              "width": 56.967607998251424,
+              "height": 41.7874763945708
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 908.790000679072,
+              "y": 677.0707813072873
+            },
+            "face": {
+              "x": 878.0925236914113,
+              "y": 517.7754487641319,
+              "width": 63.77344854566741,
+              "height": 43.12387359514207
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1126.3370855519042,
+              "y": 203.45873635268606
+            },
+            "face": {
+              "x": 1097.5323912940034,
+              "y": 82.62750238840493,
+              "width": 64.49998448561246,
+              "height": 38.08758793831879
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 934.3983013436629,
+              "y": 489.80195529741354
+            },
+            "face": {
+              "x": 892.2275576106153,
+              "y": 340.31061938687725,
+              "width": 78.28717393289253,
+              "height": 43.47200659377478
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1111.1623232425463,
+              "y": 633.6453504503688
+            },
+            "face": {
+              "x": 1054.918336761222,
+              "y": 463.27442167906923,
+              "width": 114.04400181323376,
+              "height": 40.42092637430699
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 153.46397969251413,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 101.65865000361734,
+              "y": 90.08803919732908,
+              "width": 90.4677715766033,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 452.65246541836586,
+              "y": 302.5633745156356
+            },
+            "face": {
+              "x": 406.92966826742327,
+              "y": 110.80833650567183,
+              "width": 97.55282386341463,
+              "height": 67.70886758605508
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 135.80808427586368,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 96.0044721997857,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 567.0324599599764,
+                "y": 551.1132542032393,
+                "width": 101.5850324874724,
+                "height": 73.48475746933718
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "coreBox": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "faceBox": {
+                "x": 1085.783377112331,
+                "y": 216.2462012682956,
+                "width": 56.967607998251424,
+                "height": 41.7874763945708
+              },
+              "drawOrder": 107250,
+              "ratio": 0.30316767118510896,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 878.0925236914113,
+                "y": 517.7754487641319,
+                "width": 63.77344854566741,
+                "height": 43.12387359514207
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "coreBox": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "faceBox": {
+                "x": 1097.5323912940034,
+                "y": 82.62750238840493,
+                "width": 64.49998448561246,
+                "height": 38.08758793831879
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "coreBox": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "faceBox": {
+                "x": 892.2275576106153,
+                "y": 340.31061938687725,
+                "width": 78.28717393289253,
+                "height": 43.47200659377478
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "coreBox": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "faceBox": {
+                "x": 1054.918336761222,
+                "y": 463.27442167906923,
+                "width": 114.04400181323376,
+                "height": 40.42092637430699
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 101.65865000361734,
+                "y": 90.08803919732908,
+                "width": 90.4677715766033,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "coreBox": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "faceBox": {
+                "x": 406.92966826742327,
+                "y": 110.80833650567183,
+                "width": 97.55282386341463,
+                "height": 67.70886758605508
+              },
+              "drawOrder": 81900,
+              "ratio": 0.3116789047736962,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 96.0044721997857,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-720-source-associated.png",
+      "snapshotSha256": "fbb005bea16e5b38263b4c75879f6b27169899f50ca862b556fba677344295f8"
+    },
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "method": "avif60-444",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r3/actor-panko-avif60-444.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 665.9347924215014,
+              "y": 676.8133551612547
+            },
+            "face": {
+              "x": 567.0324599599764,
+              "y": 551.1132542032393,
+              "width": 101.5850324874724,
+              "height": 73.48475746933718
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1120.7655571851035,
+              "y": 398.43945939715593
+            },
+            "face": {
+              "x": 1085.783377112331,
+              "y": 216.2462012682956,
+              "width": 56.967607998251424,
+              "height": 41.7874763945708
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 908.790000679072,
+              "y": 677.0707813072873
+            },
+            "face": {
+              "x": 878.0925236914113,
+              "y": 517.7754487641319,
+              "width": 63.77344854566741,
+              "height": 43.12387359514207
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1126.3370855519042,
+              "y": 203.45873635268606
+            },
+            "face": {
+              "x": 1097.5323912940034,
+              "y": 82.62750238840493,
+              "width": 64.49998448561246,
+              "height": 38.08758793831879
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 934.3983013436629,
+              "y": 489.80195529741354
+            },
+            "face": {
+              "x": 892.2275576106153,
+              "y": 340.31061938687725,
+              "width": 78.28717393289253,
+              "height": 43.47200659377478
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1111.1623232425463,
+              "y": 633.6453504503688
+            },
+            "face": {
+              "x": 1054.918336761222,
+              "y": 463.27442167906923,
+              "width": 114.04400181323376,
+              "height": 40.42092637430699
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 153.46397969251413,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 101.65865000361734,
+              "y": 90.08803919732908,
+              "width": 90.4677715766033,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 452.65246541836586,
+              "y": 302.5633745156356
+            },
+            "face": {
+              "x": 406.92966826742327,
+              "y": 110.80833650567183,
+              "width": 97.55282386341463,
+              "height": 67.70886758605508
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 135.80808427586368,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 96.0044721997857,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 529.6759304457236,
+                "y": 487.65433910149306,
+                "width": 275.6012718844005,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 567.0324599599764,
+                "y": 551.1132542032393,
+                "width": 101.5850324874724,
+                "height": 73.48475746933718
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "coreBox": {
+                "x": 1000.0913962779397,
+                "y": 181.02460416626093,
+                "width": 214.39646390778796,
+                "height": 218.28072325327844
+              },
+              "faceBox": {
+                "x": 1085.783377112331,
+                "y": 216.2462012682956,
+                "width": 56.967607998251424,
+                "height": 41.7874763945708
+              },
+              "drawOrder": 107250,
+              "ratio": 0.30316767118510896,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "coreBox": {
+                "x": 815.4988016821067,
+                "y": 490.5274488409932,
+                "width": 192.3318996989915,
+                "height": 187.84483199999988
+              },
+              "faceBox": {
+                "x": 878.0925236914113,
+                "y": 517.7754487641319,
+                "width": 63.77344854566741,
+                "height": 43.12387359514207
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999984,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "coreBox": {
+                "x": 1050.6082258234987,
+                "y": 59.53604897183661,
+                "width": 164.4313206814843,
+                "height": 143.10151098310183
+              },
+              "faceBox": {
+                "x": 1097.5323912940034,
+                "y": 82.62750238840493,
+                "width": 64.49998448561246,
+                "height": 38.08758793831879
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "coreBox": {
+                "x": 832.239469209577,
+                "y": 303.29678490580983,
+                "width": 204.95488657655142,
+                "height": 186.3906851675702
+              },
+              "faceBox": {
+                "x": 892.2275576106153,
+                "y": 340.31061938687725,
+                "width": 78.28717393289253,
+                "height": 43.47200659377478
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "coreBox": {
+                "x": 1000.8703905799683,
+                "y": 411.09961777475166,
+                "width": 229.15098521746552,
+                "height": 220.99392
+              },
+              "faceBox": {
+                "x": 1054.918336761222,
+                "y": 463.27442167906923,
+                "width": 114.04400181323376,
+                "height": 40.42092637430699
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 49.09639174783578,
+                "y": 53.804820153815704,
+                "width": 202.1022438966556,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 101.65865000361734,
+                "y": 90.08803919732908,
+                "width": 90.4677715766033,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "coreBox": {
+                "x": 341.17123765912436,
+                "y": 77.23484784636989,
+                "width": 226.13911445757617,
+                "height": 224.40881143706125
+              },
+              "faceBox": {
+                "x": 406.92966826742327,
+                "y": 110.80833650567183,
+                "width": 97.55282386341463,
+                "height": 67.70886758605508
+              },
+              "drawOrder": 81900,
+              "ratio": 0.3116789047736962,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 54.348770498054364,
+                "y": 273.54002009901086,
+                "width": 183.05952140554842,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 96.0044721997857,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-720-avif60-444.png",
+      "snapshotSha256": "6cb22a3d3862700952acf38198d3b88885da2c3f18b8ad8e27899889a0e2b742"
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "method": "source-default",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": false,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-straight"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 857.6010299462464,
+              "y": 605.1864400098909
+            },
+            "face": {
+              "x": 776.768204177398,
+              "y": 307.31290456822205,
+              "width": 136.2987970459037,
+              "height": 87.38833637523902
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1159.4177681606834,
+              "y": 612.1700860914345
+            },
+            "face": {
+              "x": 1135.477812307123,
+              "y": 410.31665131420544,
+              "width": 52.897641911833944,
+              "height": 46.904038930520244
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1161.3945879986857,
+              "y": 288.15853423978547
+            },
+            "face": {
+              "x": 1124.2288190157046,
+              "y": 89.50465871996612,
+              "width": 55.18907114907711,
+              "height": 46.15183090004824
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 471.8524654183659,
+              "y": 396.1633745156355
+            },
+            "face": {
+              "x": 426.1296682674233,
+              "y": 204.40833650567183,
+              "width": 97.55282386341457,
+              "height": 67.70886758605499
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 149.1675879446783,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 97.36225825578153,
+              "y": 90.08803919732908,
+              "width": 90.46777157660328,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 126.25931377780923,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 86.45570170173123,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "coreBox": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "faceBox": {
+                "x": 776.768204177398,
+                "y": 307.31290456822205,
+                "width": 136.2987970459037,
+                "height": 87.38833637523902
+              },
+              "drawOrder": 163800,
+              "ratio": 0.502345725498641,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 1135.477812307123,
+                "y": 410.31665131420544,
+                "width": 52.897641911833944,
+                "height": 46.904038930520244
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "coreBox": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "faceBox": {
+                "x": 1124.2288190157046,
+                "y": 89.50465871996612,
+                "width": 55.18907114907711,
+                "height": 46.15183090004824
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "coreBox": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "faceBox": {
+                "x": 426.1296682674233,
+                "y": 204.40833650567183,
+                "width": 97.55282386341457,
+                "height": 67.70886758605499
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3116789047736963,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 97.36225825578153,
+                "y": 90.08803919732908,
+                "width": 90.46777157660328,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 86.45570170173123,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-720-source-default.png",
+      "snapshotSha256": "5af6a936974f51c80950ac472db8dcd7b9212f6ff5fccd2a4c1b6f93728f45ff"
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "method": "source-associated",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 857.6010299462464,
+              "y": 605.1864400098909
+            },
+            "face": {
+              "x": 776.768204177398,
+              "y": 307.31290456822205,
+              "width": 136.2987970459037,
+              "height": 87.38833637523902
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1159.4177681606834,
+              "y": 612.1700860914345
+            },
+            "face": {
+              "x": 1135.477812307123,
+              "y": 410.31665131420544,
+              "width": 52.897641911833944,
+              "height": 46.904038930520244
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1161.3945879986857,
+              "y": 288.15853423978547
+            },
+            "face": {
+              "x": 1124.2288190157046,
+              "y": 89.50465871996612,
+              "width": 55.18907114907711,
+              "height": 46.15183090004824
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 471.8524654183659,
+              "y": 396.1633745156355
+            },
+            "face": {
+              "x": 426.1296682674233,
+              "y": 204.40833650567183,
+              "width": 97.55282386341457,
+              "height": 67.70886758605499
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 149.1675879446783,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 97.36225825578153,
+              "y": 90.08803919732908,
+              "width": 90.46777157660328,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 126.25931377780923,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 86.45570170173123,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "coreBox": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "faceBox": {
+                "x": 776.768204177398,
+                "y": 307.31290456822205,
+                "width": 136.2987970459037,
+                "height": 87.38833637523902
+              },
+              "drawOrder": 163800,
+              "ratio": 0.502345725498641,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 1135.477812307123,
+                "y": 410.31665131420544,
+                "width": 52.897641911833944,
+                "height": 46.904038930520244
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "coreBox": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "faceBox": {
+                "x": 1124.2288190157046,
+                "y": 89.50465871996612,
+                "width": 55.18907114907711,
+                "height": 46.15183090004824
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "coreBox": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "faceBox": {
+                "x": 426.1296682674233,
+                "y": 204.40833650567183,
+                "width": 97.55282386341457,
+                "height": 67.70886758605499
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3116789047736963,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 97.36225825578153,
+                "y": 90.08803919732908,
+                "width": 90.46777157660328,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 86.45570170173123,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-720-source-associated.png",
+      "snapshotSha256": "b655a5dbb4416f88fd0055c43c1acd606fbd11c122d736618b3f908e8270a3cf"
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "method": "avif60-444",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r3/actor-panko-avif60-444.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 383.85859397825834,
+              "y": 655.3607760696823
+            },
+            "face": {
+              "x": 341.4682653242747,
+              "y": 466.75371297641726,
+              "width": 82.0875665606095,
+              "height": 64.98497202764071
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 857.6010299462464,
+              "y": 605.1864400098909
+            },
+            "face": {
+              "x": 776.768204177398,
+              "y": 307.31290456822205,
+              "width": 136.2987970459037,
+              "height": 87.38833637523902
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1159.4177681606834,
+              "y": 612.1700860914345
+            },
+            "face": {
+              "x": 1135.477812307123,
+              "y": 410.31665131420544,
+              "width": 52.897641911833944,
+              "height": 46.904038930520244
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1161.3945879986857,
+              "y": 288.15853423978547
+            },
+            "face": {
+              "x": 1124.2288190157046,
+              "y": 89.50465871996612,
+              "width": 55.18907114907711,
+              "height": 46.15183090004824
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 471.8524654183659,
+              "y": 396.1633745156355
+            },
+            "face": {
+              "x": 426.1296682674233,
+              "y": 204.40833650567183,
+              "width": 97.55282386341457,
+              "height": 67.70886758605499
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 149.1675879446783,
+              "y": 277.36731330993763
+            },
+            "face": {
+              "x": 97.36225825578153,
+              "y": 90.08803919732908,
+              "width": 90.46777157660328,
+              "height": 62.401453426707874
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 126.25931377780923,
+              "y": 503.9677077961949
+            },
+            "face": {
+              "x": 86.45570170173123,
+              "y": 299.568979404052,
+              "width": 86.96031816051631,
+              "height": 69.40860725249507
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1280,
+          "height": 720,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "coreBox": {
+                "x": 292.30141793205803,
+                "y": 425.12571332306703,
+                "width": 192.27555279028542,
+                "height": 230.20200000000006
+              },
+              "faceBox": {
+                "x": 341.4682653242747,
+                "y": 466.75371297641726,
+                "width": 82.0875665606095,
+                "height": 64.98497202764071
+              },
+              "drawOrder": 177450,
+              "ratio": 0.3197250000000001,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "coreBox": {
+                "x": 657.3154312927695,
+                "y": 242.7145856639031,
+                "width": 399.7881095977539,
+                "height": 361.6889223590215
+              },
+              "faceBox": {
+                "x": 776.768204177398,
+                "y": 307.31290456822205,
+                "width": 136.2987970459037,
+                "height": 87.38833637523902
+              },
+              "drawOrder": 163800,
+              "ratio": 0.502345725498641,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 1089.3793998682772,
+                "y": 382.35964230498354,
+                "width": 145.8206001317228,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 1135.477812307123,
+                "y": 410.31665131420544,
+                "width": 52.897641911833944,
+                "height": 46.904038930520244
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "coreBox": {
+                "x": 1082.0504346252405,
+                "y": 61.81999554268664,
+                "width": 153.1495653747595,
+                "height": 225.5625052908918
+              },
+              "faceBox": {
+                "x": 1124.2288190157046,
+                "y": 89.50465871996612,
+                "width": 55.18907114907711,
+                "height": 46.15183090004824
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "coreBox": {
+                "x": 360.3712376591244,
+                "y": 170.83484784636983,
+                "width": 226.13911445757617,
+                "height": 224.40881143706133
+              },
+              "faceBox": {
+                "x": 426.1296682674233,
+                "y": 204.40833650567183,
+                "width": 97.55282386341457,
+                "height": 67.70886758605499
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3116789047736963,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 53.804820153815704,
+                "width": 202.10224389665564,
+                "height": 224.31216282407152
+              },
+              "faceBox": {
+                "x": 97.36225825578153,
+                "y": 90.08803919732908,
+                "width": 90.46777157660328,
+                "height": 62.401453426707874
+              },
+              "drawOrder": 75075,
+              "ratio": 0.3115446705889882,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "coreBox": {
+                "x": 44.79999999999997,
+                "y": 273.54002009901086,
+                "width": 183.0595214055483,
+                "height": 230.20199999999994
+              },
+              "faceBox": {
+                "x": 86.45570170173123,
+                "y": 299.568979404052,
+                "width": 86.96031816051631,
+                "height": 69.40860725249507
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-720-avif60-444.png",
+      "snapshotSha256": "26a1f3b7cafd17449f5d7840d603ab122ed30e8369b2f05b585686575fb81c10"
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "method": "source-default",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": false,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-straight"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 749.2184905268766,
+              "y": 846.0166939515684
+            },
+            "face": {
+              "x": 625.5905749499706,
+              "y": 688.8915677540491,
+              "width": 126.98129060934036,
+              "height": 91.85594683667148
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1247.3569464813793,
+              "y": 498.04932424644494
+            },
+            "face": {
+              "x": 1203.6292213904137,
+              "y": 270.3077515853695,
+              "width": 71.20950999781394,
+              "height": 52.23434549321354
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1267.1213569398801,
+              "y": 254.32342044085757
+            },
+            "face": {
+              "x": 1231.1154891175045,
+              "y": 103.28437798550617,
+              "width": 80.62498060701546,
+              "height": 47.60948492289849
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 1051.1978766795785,
+              "y": 612.252444121767
+            },
+            "face": {
+              "x": 998.4844470132692,
+              "y": 425.3882742335966,
+              "width": 97.85896741611566,
+              "height": 54.34000824221846
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 1022.38750084884,
+              "y": 846.3384766341093
+            },
+            "face": {
+              "x": 984.0156546142641,
+              "y": 647.2193109551648,
+              "width": 79.71681068208431,
+              "height": 53.90484199392756
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1235.3529040531828,
+              "y": 792.056688062961
+            },
+            "face": {
+              "x": 1165.0479209515272,
+              "y": 579.0930270988366,
+              "width": 142.55500226654226,
+              "height": 50.526157967883705
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 509.0155817729574,
+              "y": 378.2042181445445
+            },
+            "face": {
+              "x": 451.86208533427913,
+              "y": 138.5104206320898,
+              "width": 121.9410298292683,
+              "height": 84.63608448256886
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 181.94010975077782,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 117.18344763965692,
+              "y": 112.61004899666135,
+              "width": 113.08471447075408,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 163.3601053448297,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 113.60559024973226,
+              "y": 374.4612242550651,
+              "width": 108.70039770064527,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 625.5905749499706,
+                "y": 688.8915677540491,
+                "width": 126.98129060934036,
+                "height": 91.85594683667148
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "coreBox": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "faceBox": {
+                "x": 1203.6292213904137,
+                "y": 270.3077515853695,
+                "width": 71.20950999781394,
+                "height": 52.23434549321354
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3031676711851089,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "coreBox": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "faceBox": {
+                "x": 1231.1154891175045,
+                "y": 103.28437798550617,
+                "width": 80.62498060701546,
+                "height": 47.60948492289849
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "coreBox": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "faceBox": {
+                "x": 998.4844470132692,
+                "y": 425.3882742335966,
+                "width": 97.85896741611566,
+                "height": 54.34000824221846
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 984.0156546142641,
+                "y": 647.2193109551648,
+                "width": 79.71681068208431,
+                "height": 53.90484199392756
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "coreBox": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "faceBox": {
+                "x": 1165.0479209515272,
+                "y": 579.0930270988366,
+                "width": 142.55500226654226,
+                "height": 50.526157967883705
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "coreBox": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "faceBox": {
+                "x": 451.86208533427913,
+                "y": 138.5104206320898,
+                "width": 121.9410298292683,
+                "height": 84.63608448256886
+              },
+              "drawOrder": 81900,
+              "ratio": 0.31167890477369614,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 117.18344763965692,
+                "y": 112.61004899666135,
+                "width": 113.08471447075408,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 113.60559024973226,
+                "y": 374.4612242550651,
+                "width": 108.70039770064527,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-900-source-default.png",
+      "snapshotSha256": "3cf80ebfda56e4dc43cb520777f2280d5dc1c43129a55477fba0ec2d8009a0ea"
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "method": "source-associated",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 749.2184905268766,
+              "y": 846.0166939515684
+            },
+            "face": {
+              "x": 625.5905749499706,
+              "y": 688.8915677540491,
+              "width": 126.98129060934036,
+              "height": 91.85594683667148
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1247.3569464813793,
+              "y": 498.04932424644494
+            },
+            "face": {
+              "x": 1203.6292213904137,
+              "y": 270.3077515853695,
+              "width": 71.20950999781394,
+              "height": 52.23434549321354
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1267.1213569398801,
+              "y": 254.32342044085757
+            },
+            "face": {
+              "x": 1231.1154891175045,
+              "y": 103.28437798550617,
+              "width": 80.62498060701546,
+              "height": 47.60948492289849
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 1051.1978766795785,
+              "y": 612.252444121767
+            },
+            "face": {
+              "x": 998.4844470132692,
+              "y": 425.3882742335966,
+              "width": 97.85896741611566,
+              "height": 54.34000824221846
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 1022.38750084884,
+              "y": 846.3384766341093
+            },
+            "face": {
+              "x": 984.0156546142641,
+              "y": 647.2193109551648,
+              "width": 79.71681068208431,
+              "height": 53.90484199392756
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1235.3529040531828,
+              "y": 792.056688062961
+            },
+            "face": {
+              "x": 1165.0479209515272,
+              "y": 579.0930270988366,
+              "width": 142.55500226654226,
+              "height": 50.526157967883705
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 509.0155817729574,
+              "y": 378.2042181445445
+            },
+            "face": {
+              "x": 451.86208533427913,
+              "y": 138.5104206320898,
+              "width": 121.9410298292683,
+              "height": 84.63608448256886
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 181.94010975077782,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 117.18344763965692,
+              "y": 112.61004899666135,
+              "width": 113.08471447075408,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 163.3601053448297,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 113.60559024973226,
+              "y": 374.4612242550651,
+              "width": 108.70039770064527,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 625.5905749499706,
+                "y": 688.8915677540491,
+                "width": 126.98129060934036,
+                "height": 91.85594683667148
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "coreBox": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "faceBox": {
+                "x": 1203.6292213904137,
+                "y": 270.3077515853695,
+                "width": 71.20950999781394,
+                "height": 52.23434549321354
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3031676711851089,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "coreBox": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "faceBox": {
+                "x": 1231.1154891175045,
+                "y": 103.28437798550617,
+                "width": 80.62498060701546,
+                "height": 47.60948492289849
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "coreBox": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "faceBox": {
+                "x": 998.4844470132692,
+                "y": 425.3882742335966,
+                "width": 97.85896741611566,
+                "height": 54.34000824221846
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 984.0156546142641,
+                "y": 647.2193109551648,
+                "width": 79.71681068208431,
+                "height": 53.90484199392756
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "coreBox": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "faceBox": {
+                "x": 1165.0479209515272,
+                "y": 579.0930270988366,
+                "width": 142.55500226654226,
+                "height": 50.526157967883705
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "coreBox": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "faceBox": {
+                "x": 451.86208533427913,
+                "y": 138.5104206320898,
+                "width": 121.9410298292683,
+                "height": 84.63608448256886
+              },
+              "drawOrder": 81900,
+              "ratio": 0.31167890477369614,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 117.18344763965692,
+                "y": 112.61004899666135,
+                "width": 113.08471447075408,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 113.60559024973226,
+                "y": 374.4612242550651,
+                "width": 108.70039770064527,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-900-source-associated.png",
+      "snapshotSha256": "74ec8ea14f4aa89f1ca7b15f6748dcd203866b4ccc8c8c43c7e285fb499302cc"
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "method": "avif60-444",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r3/actor-panko-avif60-444.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-1-spool-ram",
+            "asset": "spool-ram",
+            "feet": {
+              "x": 749.2184905268766,
+              "y": 846.0166939515684
+            },
+            "face": {
+              "x": 625.5905749499706,
+              "y": 688.8915677540491,
+              "width": 126.98129060934036,
+              "height": 91.85594683667148
+            }
+          },
+          {
+            "id": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "feet": {
+              "x": 1247.3569464813793,
+              "y": 498.04932424644494
+            },
+            "face": {
+              "x": 1203.6292213904137,
+              "y": 270.3077515853695,
+              "width": 71.20950999781394,
+              "height": 52.23434549321354
+            }
+          },
+          {
+            "id": "foe-2-pollen-scout",
+            "asset": "pollen-scout",
+            "feet": {
+              "x": 1267.1213569398801,
+              "y": 254.32342044085757
+            },
+            "face": {
+              "x": 1231.1154891175045,
+              "y": 103.28437798550617,
+              "width": 80.62498060701546,
+              "height": 47.60948492289849
+            }
+          },
+          {
+            "id": "foe-3-crumb-sentinel",
+            "asset": "crumb-sentinel",
+            "feet": {
+              "x": 1051.1978766795785,
+              "y": 612.252444121767
+            },
+            "face": {
+              "x": 998.4844470132692,
+              "y": 425.3882742335966,
+              "width": 97.85896741611566,
+              "height": 54.34000824221846
+            }
+          },
+          {
+            "id": "foe-0-kettle-knight",
+            "asset": "kettle-knight",
+            "feet": {
+              "x": 1022.38750084884,
+              "y": 846.3384766341093
+            },
+            "face": {
+              "x": 984.0156546142641,
+              "y": 647.2193109551648,
+              "width": 79.71681068208431,
+              "height": 53.90484199392756
+            }
+          },
+          {
+            "id": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "feet": {
+              "x": 1235.3529040531828,
+              "y": 792.056688062961
+            },
+            "face": {
+              "x": 1165.0479209515272,
+              "y": 579.0930270988366,
+              "width": 142.55500226654226,
+              "height": 50.526157967883705
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 509.0155817729574,
+              "y": 378.2042181445445
+            },
+            "face": {
+              "x": 451.86208533427913,
+              "y": 138.5104206320898,
+              "width": 121.9410298292683,
+              "height": 84.63608448256886
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 181.94010975077782,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 117.18344763965692,
+              "y": 112.61004899666135,
+              "width": 113.08471447075408,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 163.3601053448297,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 113.60559024973226,
+              "y": 374.4612242550651,
+              "width": 108.70039770064527,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-spool-ram",
+              "asset": "spool-ram",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 614.0169029349036,
+              "footprint": 938.2730202151336,
+              "box": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 578.8949130571544,
+                "y": 609.5679238768663,
+                "width": 344.5015898555006,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 625.5905749499706,
+                "y": 688.8915677540491,
+                "width": 126.98129060934036,
+                "height": 91.85594683667148
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-4-needle-moth",
+              "asset": "needle-moth",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 457.510986328125,
+              "box": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "coreBox": {
+                "x": 1096.5142453474243,
+                "y": 226.28075520782616,
+                "width": 267.9955798847352,
+                "height": 272.850904066598
+              },
+              "faceBox": {
+                "x": 1203.6292213904137,
+                "y": 270.3077515853695,
+                "width": 71.20950999781394,
+                "height": 52.23434549321354
+              },
+              "drawOrder": 107250,
+              "ratio": 0.3031676711851089,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-pollen-scout",
+              "asset": "pollen-scout",
+              "side": "enemy",
+              "kind": "small",
+              "height": 459.7632535881951,
+              "footprint": 545.8437466402664,
+              "box": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "coreBox": {
+                "x": 1172.4602822793736,
+                "y": 74.42006121479577,
+                "width": 205.53915085185508,
+                "height": 178.87688872887728
+              },
+              "faceBox": {
+                "x": 1231.1154891175045,
+                "y": 103.28437798550617,
+                "width": 80.62498060701546,
+                "height": 47.60948492289849
+              },
+              "drawOrder": 54600,
+              "ratio": 0.19875209858764142,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-3-crumb-sentinel",
+              "asset": "crumb-sentinel",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.6706834049409,
+              "footprint": 680.9301888929913,
+              "box": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "coreBox": {
+                "x": 923.4993365119714,
+                "y": 379.12098113226233,
+                "width": 256.19360822068927,
+                "height": 232.98835645946275
+              },
+              "faceBox": {
+                "x": 998.4844470132692,
+                "y": 425.3882742335966,
+                "width": 97.85896741611566,
+                "height": 54.34000824221846
+              },
+              "drawOrder": 132600,
+              "ratio": 0.2588759516216253,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-kettle-knight",
+              "asset": "kettle-knight",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 610.6068833966121,
+              "footprint": 658.9398820823599,
+              "box": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "coreBox": {
+                "x": 905.7735021026332,
+                "y": 613.1593110512415,
+                "width": 240.4148746237396,
+                "height": 234.80603999999994
+              },
+              "faceBox": {
+                "x": 984.0156546142641,
+                "y": 647.2193109551648,
+                "width": 79.71681068208431,
+                "height": 53.90484199392756
+              },
+              "drawOrder": 183300,
+              "ratio": 0.26089559999999995,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-5-teacup-healer",
+              "asset": "teacup-healer",
+              "side": "enemy",
+              "kind": "standard",
+              "height": 612.9364592837591,
+              "footprint": 662.3276402828467,
+              "box": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "coreBox": {
+                "x": 1097.4879882249602,
+                "y": 513.8745222184396,
+                "width": 286.43873152183187,
+                "height": 276.2424
+              },
+              "faceBox": {
+                "x": 1165.0479209515272,
+                "y": 579.0930270988366,
+                "width": 142.55500226654226,
+                "height": 50.526157967883705
+              },
+              "drawOrder": 171600,
+              "ratio": 0.306936,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "coreBox": {
+                "x": 369.6640470739056,
+                "y": 96.54355980796237,
+                "width": 282.6738930719701,
+                "height": 280.51101429632655
+              },
+              "faceBox": {
+                "x": 451.86208533427913,
+                "y": 138.5104206320898,
+                "width": 121.9410298292683,
+                "height": 84.63608448256886
+              },
+              "drawOrder": 81900,
+              "ratio": 0.31167890477369614,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 51.48062481992988,
+                "y": 67.25602519226963,
+                "width": 252.62780487081952,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 117.18344763965692,
+                "y": 112.61004899666135,
+                "width": 113.08471447075408,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 61.535963122568106,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 113.60559024973226,
+                "y": 374.4612242550651,
+                "width": 108.70039770064527,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/wave3-900-avif60-444.png",
+      "snapshotSha256": "6fd42f06fff4e09fb38dc3cd4ebd0fcc839d687e59dd8cc5f72d29d0729c26ce"
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "method": "source-default",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": false,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-straight"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 964.8012874328083,
+              "y": 756.4830500123637
+            },
+            "face": {
+              "x": 863.7602552217476,
+              "y": 384.1411307102776,
+              "width": 170.37349630737947,
+              "height": 109.23542046904879
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1294.8722102008542,
+              "y": 765.2126076142931
+            },
+            "face": {
+              "x": 1264.9472653839039,
+              "y": 512.8958141427568,
+              "width": 66.12205238979232,
+              "height": 58.63004866315032
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1297.3432349983568,
+              "y": 360.19816779973183
+            },
+            "face": {
+              "x": 1250.8860237696306,
+              "y": 111.88082339995765,
+              "width": 68.98633893634633,
+              "height": 57.68978862506029
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 530.6155817729575,
+              "y": 495.2042181445444
+            },
+            "face": {
+              "x": 473.4620853342792,
+              "y": 255.5104206320898,
+              "width": 121.94102982926825,
+              "height": 84.63608448256878
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 180.859484930848,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 116.10282281972692,
+              "y": 112.61004899666135,
+              "width": 113.0847144707543,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 152.2241422222616,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 102.46962712716419,
+              "y": 374.4612242550651,
+              "width": 108.70039770064525,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "coreBox": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "faceBox": {
+                "x": 863.7602552217476,
+                "y": 384.1411307102776,
+                "width": 170.37349630737947,
+                "height": 109.23542046904879
+              },
+              "drawOrder": 163800,
+              "ratio": 0.5023457254986409,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 1264.9472653839039,
+                "y": 512.8958141427568,
+                "width": 66.12205238979232,
+                "height": 58.63004866315032
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "coreBox": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "faceBox": {
+                "x": 1250.8860237696306,
+                "y": 111.88082339995765,
+                "width": 68.98633893634633,
+                "height": 57.68978862506029
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "coreBox": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "faceBox": {
+                "x": 473.4620853342792,
+                "y": 255.5104206320898,
+                "width": 121.94102982926825,
+                "height": 84.63608448256878
+              },
+              "drawOrder": 107250,
+              "ratio": 0.31167890477369625,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 116.10282281972692,
+                "y": 112.61004899666135,
+                "width": 113.0847144707543,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 102.46962712716419,
+                "y": 374.4612242550651,
+                "width": 108.70039770064525,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-900-source-default.png",
+      "snapshotSha256": "467c96abd2d4559be0b4a514c393ac8c5575f9d9d8a7a238352d8e139c7bb6c6"
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "method": "source-associated",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/units/panko/rig-depth.png",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 964.8012874328083,
+              "y": 756.4830500123637
+            },
+            "face": {
+              "x": 863.7602552217476,
+              "y": 384.1411307102776,
+              "width": 170.37349630737947,
+              "height": 109.23542046904879
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1294.8722102008542,
+              "y": 765.2126076142931
+            },
+            "face": {
+              "x": 1264.9472653839039,
+              "y": 512.8958141427568,
+              "width": 66.12205238979232,
+              "height": 58.63004866315032
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1297.3432349983568,
+              "y": 360.19816779973183
+            },
+            "face": {
+              "x": 1250.8860237696306,
+              "y": 111.88082339995765,
+              "width": 68.98633893634633,
+              "height": 57.68978862506029
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 530.6155817729575,
+              "y": 495.2042181445444
+            },
+            "face": {
+              "x": 473.4620853342792,
+              "y": 255.5104206320898,
+              "width": 121.94102982926825,
+              "height": 84.63608448256878
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 180.859484930848,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 116.10282281972692,
+              "y": 112.61004899666135,
+              "width": 113.0847144707543,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 152.2241422222616,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 102.46962712716419,
+              "y": 374.4612242550651,
+              "width": 108.70039770064525,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "coreBox": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "faceBox": {
+                "x": 863.7602552217476,
+                "y": 384.1411307102776,
+                "width": 170.37349630737947,
+                "height": 109.23542046904879
+              },
+              "drawOrder": 163800,
+              "ratio": 0.5023457254986409,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 1264.9472653839039,
+                "y": 512.8958141427568,
+                "width": 66.12205238979232,
+                "height": 58.63004866315032
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "coreBox": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "faceBox": {
+                "x": 1250.8860237696306,
+                "y": 111.88082339995765,
+                "width": 68.98633893634633,
+                "height": 57.68978862506029
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "coreBox": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "faceBox": {
+                "x": 473.4620853342792,
+                "y": 255.5104206320898,
+                "width": 121.94102982926825,
+                "height": 84.63608448256878
+              },
+              "drawOrder": 107250,
+              "ratio": 0.31167890477369625,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 116.10282281972692,
+                "y": 112.61004899666135,
+                "width": 113.0847144707543,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 102.46962712716419,
+                "y": 374.4612242550651,
+                "width": 108.70039770064525,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-900-source-associated.png",
+      "snapshotSha256": "1019a14379efbfabe86e4121d6173bad445120b6cb30505d71049cafa546400a"
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "method": "avif60-444",
+      "state": {
+        "ready": true,
+        "craft": false,
+        "changed": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "url": "http://127.0.0.1:5991/@fs/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r3/actor-panko-avif60-444.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "url": "http://127.0.0.1:5991/units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif",
+            "premultiplyAlpha": true,
+            "generateMipmaps": true,
+            "minFilter": 1008,
+            "shaderKey": "painted-srgb-v2-pma"
+          }
+        ],
+        "actors": [
+          {
+            "id": "panko",
+            "asset": "panko",
+            "feet": {
+              "x": 431.82324247282287,
+              "y": 819.2009700871029
+            },
+            "face": {
+              "x": 378.8353316553434,
+              "y": 583.4421412205215,
+              "width": 102.60945820076182,
+              "height": 81.23121503455104
+            }
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "feet": {
+              "x": 964.8012874328083,
+              "y": 756.4830500123637
+            },
+            "face": {
+              "x": 863.7602552217476,
+              "y": 384.1411307102776,
+              "width": 170.37349630737947,
+              "height": 109.23542046904879
+            }
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1294.8722102008542,
+              "y": 765.2126076142931
+            },
+            "face": {
+              "x": 1264.9472653839039,
+              "y": 512.8958141427568,
+              "width": 66.12205238979232,
+              "height": 58.63004866315032
+            }
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "asset": "binding-thread",
+            "feet": {
+              "x": 1297.3432349983568,
+              "y": 360.19816779973183
+            },
+            "face": {
+              "x": 1250.8860237696306,
+              "y": 111.88082339995765,
+              "width": 68.98633893634633,
+              "height": 57.68978862506029
+            }
+          },
+          {
+            "id": "mochi",
+            "asset": "mochi",
+            "feet": {
+              "x": 530.6155817729575,
+              "y": 495.2042181445444
+            },
+            "face": {
+              "x": 473.4620853342792,
+              "y": 255.5104206320898,
+              "width": 121.94102982926825,
+              "height": 84.63608448256878
+            }
+          },
+          {
+            "id": "soot",
+            "asset": "soot",
+            "feet": {
+              "x": 180.859484930848,
+              "y": 346.7091416374221
+            },
+            "face": {
+              "x": 116.10282281972692,
+              "y": 112.61004899666135,
+              "width": 113.0847144707543,
+              "height": 78.00181678338483
+            }
+          },
+          {
+            "id": "clover",
+            "asset": "clover",
+            "feet": {
+              "x": 152.2241422222616,
+              "y": 629.9596347452435
+            },
+            "face": {
+              "x": 102.46962712716419,
+              "y": 374.4612242550651,
+              "width": 108.70039770064525,
+              "height": 86.7607590656188
+            }
+          }
+        ],
+        "sizeAudit": {
+          "width": 1440,
+          "height": 900,
+          "modelToStage": 1,
+          "units": [
+            {
+              "id": "panko",
+              "asset": "panko",
+              "side": "party",
+              "kind": "cat",
+              "height": 510,
+              "footprint": 451.875,
+              "box": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "coreBox": {
+                "x": 317.37677241507254,
+                "y": 531.4071416538338,
+                "width": 240.34444098785684,
+                "height": 287.75250000000005
+              },
+              "faceBox": {
+                "x": 378.8353316553434,
+                "y": 583.4421412205215,
+                "width": 102.60945820076182,
+                "height": 81.23121503455104
+              },
+              "drawOrder": 177450,
+              "ratio": 0.31972500000000004,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "asset": "yarn-giant",
+              "side": "enemy",
+              "kind": "boss",
+              "height": 920.0389797404662,
+              "footprint": 1014.2747782044491,
+              "box": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "coreBox": {
+                "x": 714.4442891159621,
+                "y": 303.3932320798789,
+                "width": 499.73513699719217,
+                "height": 452.11115294877675
+              },
+              "faceBox": {
+                "x": 863.7602552217476,
+                "y": 384.1411307102776,
+                "width": 170.37349630737947,
+                "height": 109.23542046904879
+              },
+              "drawOrder": 163800,
+              "ratio": 0.5023457254986409,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 1207.3242498353468,
+                "y": 477.94955288122947,
+                "width": 182.27575016465312,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 1264.9472653839039,
+                "y": 512.8958141427568,
+                "width": 66.12205238979232,
+                "height": 58.63004866315032
+              },
+              "drawOrder": 165750,
+              "ratio": 0.3197249999999999,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "asset": "binding-thread",
+              "side": "enemy",
+              "kind": "small",
+              "height": 460.32470703125,
+              "footprint": 308.946533203125,
+              "box": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "coreBox": {
+                "x": 1198.1630432815507,
+                "y": 77.2749944283583,
+                "width": 191.4369567184492,
+                "height": 281.95313161361474
+              },
+              "faceBox": {
+                "x": 1250.8860237696306,
+                "y": 111.88082339995765,
+                "width": 68.98633893634633,
+                "height": 57.68978862506029
+              },
+              "drawOrder": 78000,
+              "ratio": 0.31328125734846085,
+              "source": "template",
+              "fallback": false
+            },
+            {
+              "id": "mochi",
+              "asset": "mochi",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 509.375,
+              "box": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "coreBox": {
+                "x": 391.26404707390566,
+                "y": 213.54355980796228,
+                "width": 282.67389307197016,
+                "height": 280.5110142963266
+              },
+              "faceBox": {
+                "x": 473.4620853342792,
+                "y": 255.5104206320898,
+                "width": 121.94102982926825,
+                "height": 84.63608448256878
+              },
+              "drawOrder": 107250,
+              "ratio": 0.31167890477369625,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "soot",
+              "asset": "soot",
+              "side": "party",
+              "kind": "cat",
+              "height": 508.75,
+              "footprint": 446.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 67.25602519226963,
+                "width": 252.62780487081943,
+                "height": 280.3902035300894
+              },
+              "faceBox": {
+                "x": 116.10282281972692,
+                "y": 112.61004899666135,
+                "width": 113.0847144707543,
+                "height": 78.00181678338483
+              },
+              "drawOrder": 75075,
+              "ratio": 0.31154467058898827,
+              "source": "placeholder",
+              "fallback": false
+            },
+            {
+              "id": "clover",
+              "asset": "clover",
+              "side": "party",
+              "kind": "cat",
+              "height": 511.25,
+              "footprint": 411.875,
+              "box": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "coreBox": {
+                "x": 50.40000000000005,
+                "y": 341.9250251237636,
+                "width": 228.82440175693534,
+                "height": 287.75249999999994
+              },
+              "faceBox": {
+                "x": 102.46962712716419,
+                "y": 374.4612242550651,
+                "width": 108.70039770064525,
+                "height": 86.7607590656188
+              },
+              "drawOrder": 136500,
+              "ratio": 0.3197249999999999,
+              "source": "placeholder",
+              "fallback": false
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "snapshot": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/panko-control-r2/boss-900-avif60-444.png",
+      "snapshotSha256": "35c0b3ff008705821b29e4e81a7c692987980c21953ab988985851ee36289be9"
+    }
+  ],
+  "complete": true,
+  "productionAcceptance": false,
+  "finished": "2026-11-16T22:16:56.985Z",
+  "pass": true
+}

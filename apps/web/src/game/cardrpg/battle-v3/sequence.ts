@@ -37,7 +37,7 @@ export function configureSequence(plan:EffectPlan,_mode:CinematicMode='full'):Se
  const sequence:SkillSequence={tier,duration,impact,
   camera:[{t:0,zoom:1,x:0,y:0,tilt:0},{t:duration,zoom:1,x:0,y:0,tilt:0}],
   time:[{t:0,value:1},{t:duration,value:1}],
-  dim:ultimate?[{t:0,value:.55},{t:600,value:.55},{t:800,value:0},{t:duration,value:0}]:[{t:0,value:0},{t:duration,value:0}],
+  dim:ultimate?[{t:0,value:.55},{t:450,value:.55},{t:600,value:0},{t:duration,value:0}]:[{t:0,value:0},{t:duration,value:0}],
   casterAnim:[{t:0,name:ultimate?'ult':'attack'}],targetAnim:[{t:impact,name:'hurt'}],
   vfx:structuredClone(authored?.vfx??[]),postfx:[{t:0,bloom:0,aberration:0,vignette:0},{t:duration,bloom:0,aberration:0,vignette:0}],audio:[],
   damage:plan.targetIds.map(target=>({t:impact,target,split:1}))};

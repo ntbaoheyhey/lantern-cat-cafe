@@ -1,0 +1,259 @@
+{
+  "scope": "Live10fps actual rendered-alpha evidence paired with three720p films and new900p boss film; visual inspection recorded in REVIEW.md. This script does not assign visual acceptance.",
+  "cases": [
+    {
+      "fixture": "wave1",
+      "width": 1280,
+      "height": 720,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "t": 22.9
+        },
+        "catDeviation": {
+          "value": 0.029556650246305494,
+          "t": 6.9
+        },
+        "left": {
+          "value": 0.03289532493380026,
+          "t": 13.2
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 0.2
+        },
+        "span": {
+          "value": 0.9077918809674609,
+          "t": 5.9
+        },
+        "gap": {
+          "value": 0.16031066642329436,
+          "t": 13.2
+        },
+        "occlusion": {
+          "value": 0.00476801760498808,
+          "t": 0.3
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 86.390625,
+      "errors": []
+    },
+    {
+      "fixture": "wave3",
+      "width": 1280,
+      "height": 720,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "t": 17
+        },
+        "catDeviation": {
+          "value": 0.03045685279187782,
+          "t": 23.5
+        },
+        "left": {
+          "value": 0.032895324933803705,
+          "t": 23.5
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 0
+        },
+        "span": {
+          "value": 0.9165067508117541,
+          "t": 15.4
+        },
+        "gap": {
+          "value": -0.042380208344229196,
+          "t": 7.6
+        },
+        "occlusion": {
+          "value": 0.09737077445895188,
+          "t": 9
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 86.390625,
+      "errors": []
+    },
+    {
+      "fixture": "boss",
+      "width": 1280,
+      "height": 720,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "t": 16.9
+        },
+        "catDeviation": {
+          "value": 0.030456852791877598,
+          "t": 9.1
+        },
+        "left": {
+          "value": 0.032895324933803705,
+          "t": 20.1
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 0.3
+        },
+        "span": {
+          "value": 0.9022363337407989,
+          "t": 12.9
+        },
+        "gap": {
+          "value": 0.11626012789727058,
+          "t": 5.2
+        },
+        "boss": {
+          "value": 0.49643999999999977,
+          "t": 10.8
+        },
+        "occlusion": {
+          "value": 0.025098727512066696,
+          "t": 0.3
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 86.390625,
+      "errors": []
+    },
+    {
+      "fixture": "wave1",
+      "width": 1440,
+      "height": 900,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "t": 1.9
+        },
+        "catDeviation": {
+          "value": 0.029556650246305494,
+          "t": 22
+        },
+        "left": {
+          "value": 0.03312917771893359,
+          "t": 13.2
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 5.3
+        },
+        "span": {
+          "value": 0.9064354232971784,
+          "t": 5.9
+        },
+        "gap": {
+          "value": 0.14478962935921602,
+          "t": 13.2
+        },
+        "occlusion": {
+          "value": 0.07666400033679956,
+          "t": 0.3
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 96,
+      "errors": []
+    },
+    {
+      "fixture": "wave3",
+      "width": 1440,
+      "height": 900,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 1.9
+        },
+        "catDeviation": {
+          "value": 0.03045685279187782,
+          "t": 23.5
+        },
+        "left": {
+          "value": 0.03312917771893664,
+          "t": 23.5
+        },
+        "right": {
+          "value": 0.03500000000000003,
+          "t": 0
+        },
+        "span": {
+          "value": 0.91611861201306,
+          "t": 15.4
+        },
+        "gap": {
+          "value": -0.05764467593803242,
+          "t": 7.6
+        },
+        "occlusion": {
+          "value": 0.12233551010349926,
+          "t": 8.7
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 96,
+      "errors": []
+    },
+    {
+      "fixture": "boss",
+      "width": 1440,
+      "height": 900,
+      "source": "v8 formation + full sampled class motion",
+      "samples": 300,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "t": 1.9
+        },
+        "catDeviation": {
+          "value": 0.03045685279187782,
+          "t": 9.1
+        },
+        "left": {
+          "value": 0.03312917771893664,
+          "t": 20.1
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 1.5
+        },
+        "span": {
+          "value": 0.90804037082311,
+          "t": 12.9
+        },
+        "gap": {
+          "value": 0.09362236433030059,
+          "t": 5.2
+        },
+        "boss": {
+          "value": 0.4964399999999998,
+          "t": 2.3
+        },
+        "occlusion": {
+          "value": 0.02937634048473216,
+          "t": 3.6
+        }
+      },
+      "numericFailures": [],
+      "wrongFacing": 0,
+      "hudBottomHeight": 96,
+      "errors": []
+    }
+  ]
+}

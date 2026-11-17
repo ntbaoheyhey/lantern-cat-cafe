@@ -1,0 +1,216 @@
+{
+  "count": 12,
+  "correct": 10,
+  "labelledAt": "2026-11-16T09:50:50.032811+00:00",
+  "comparedAt": "2026-11-16T09:50:50.091276+00:00",
+  "labelsArtifact": "reports/v4-art/REVIEW/A6/blind-labels.json",
+  "labelsSha256": "fa3567644ad51d2a36e1d41c083ebd3220653a7150959c6ec70c8e403cc1ee7b",
+  "sampling": "Random within available pose strata, 3eachofwindup,strike,hit,cast; remaining random from unused pool. Markers decoded by existing frame-marker.mjs; no image scaling.",
+  "item": "V4-A6",
+  "frames": [
+    {
+      "fixture": "wave3",
+      "frame": 364,
+      "renderOrdinal": 724,
+      "expected": "windup",
+      "crop": [
+        235,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave3.webm",
+      "videoSha256": "aa40cd31dfd8bcf4e09079973ee13300843fa194b27db3793fd3348cb12ef575",
+      "id": "01",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "frame": 174,
+      "renderOrdinal": 345,
+      "expected": "hit",
+      "crop": [
+        234,
+        413,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave1.webm",
+      "videoSha256": "4cc9d0168571f164935f6187eb98317a8ccb3b3a72fd82c37df8f014d33c18b4",
+      "id": "02",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "frame": 889,
+      "renderOrdinal": 1773,
+      "expected": "windup",
+      "crop": [
+        235,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/boss.webm",
+      "videoSha256": "309f4a4e1b84023ce6979f971e85b640133c32b5327f95fb26e6c81483531ac5",
+      "id": "03",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "frame": 120,
+      "renderOrdinal": 237,
+      "expected": "hit",
+      "crop": [
+        234,
+        413,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave3.webm",
+      "videoSha256": "aa40cd31dfd8bcf4e09079973ee13300843fa194b27db3793fd3348cb12ef575",
+      "id": "04",
+      "label": "idle",
+      "correct": false
+    },
+    {
+      "fixture": "wave1",
+      "frame": 96,
+      "renderOrdinal": 190,
+      "expected": "strike",
+      "crop": [
+        453,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave1.webm",
+      "videoSha256": "4cc9d0168571f164935f6187eb98317a8ccb3b3a72fd82c37df8f014d33c18b4",
+      "id": "05",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "frame": 314,
+      "renderOrdinal": 624,
+      "expected": "cast",
+      "crop": [
+        226,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave1.webm",
+      "videoSha256": "4cc9d0168571f164935f6187eb98317a8ccb3b3a72fd82c37df8f014d33c18b4",
+      "id": "06",
+      "label": "windup",
+      "correct": false
+    },
+    {
+      "fixture": "wave1",
+      "frame": 98,
+      "renderOrdinal": 194,
+      "expected": "strike",
+      "crop": [
+        455,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave1.webm",
+      "videoSha256": "4cc9d0168571f164935f6187eb98317a8ccb3b3a72fd82c37df8f014d33c18b4",
+      "id": "07",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "frame": 288,
+      "renderOrdinal": 571,
+      "expected": "cast",
+      "crop": [
+        226,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/boss.webm",
+      "videoSha256": "309f4a4e1b84023ce6979f971e85b640133c32b5327f95fb26e6c81483531ac5",
+      "id": "08",
+      "label": "cast",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "frame": 94,
+      "renderOrdinal": 186,
+      "expected": "strike",
+      "crop": [
+        327,
+        364,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/boss.webm",
+      "videoSha256": "309f4a4e1b84023ce6979f971e85b640133c32b5327f95fb26e6c81483531ac5",
+      "id": "09",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "frame": 365,
+      "renderOrdinal": 726,
+      "expected": "windup",
+      "crop": [
+        235,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave3.webm",
+      "videoSha256": "aa40cd31dfd8bcf4e09079973ee13300843fa194b27db3793fd3348cb12ef575",
+      "id": "10",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "frame": 121,
+      "renderOrdinal": 239,
+      "expected": "hit",
+      "crop": [
+        234,
+        413,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/wave3.webm",
+      "videoSha256": "aa40cd31dfd8bcf4e09079973ee13300843fa194b27db3793fd3348cb12ef575",
+      "id": "11",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "boss",
+      "frame": 313,
+      "renderOrdinal": 622,
+      "expected": "cast",
+      "crop": [
+        226,
+        414,
+        320,
+        256
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A6/boss.webm",
+      "videoSha256": "309f4a4e1b84023ce6979f971e85b640133c32b5327f95fb26e6c81483531ac5",
+      "id": "12",
+      "label": "cast",
+      "correct": true
+    }
+  ]
+}

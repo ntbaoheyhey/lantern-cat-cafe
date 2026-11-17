@@ -1,0 +1,2005 @@
+{
+  "sourceCommit": "3e6aa506065e6913371579dc3edcd8daae35b3f8",
+  "validatedSourceCommit": "dcf4dd515361d85770a9850852c88fa47dcf74f2",
+  "method": "Front FX alpha>=128 intersected with face rectangles at1100ms; rear/ground draw below every actor. Live readback, not encoded-pixel proof.",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "panko",
+      "actorId": "panko",
+      "skillId": "panko-4",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 757.5237791339175,
+            "y": 223.66199696714358,
+            "width": 77.35921944054007,
+            "height": 38.89798311416541
+          },
+          "scoped": false,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1088.1194944545464,
+            "y": 98.29697154069012,
+            "width": 60.67109694073679,
+            "height": 43.23321831939643
+          },
+          "scoped": false,
+          "total": 2684,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 336.25969795558876,
+            "y": 480.89211086182235,
+            "width": 102.11374407582935,
+            "height": 44.60758293838859
+          },
+          "scoped": true,
+          "total": 4738,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1044.4227695678333,
+            "y": 325.9873726048331,
+            "width": 59.44488997555004,
+            "height": 29.98861613691946
+          },
+          "scoped": false,
+          "total": 1860,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 873.2728711188798,
+            "y": 461.4618341306022,
+            "width": 38.91176470588232,
+            "height": 24.458823529411745
+          },
+          "scoped": false,
+          "total": 1000,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 186.35119849239237,
+            "y": 82.6593506595073,
+            "width": 104.46206896551723,
+            "height": 61.45365112882651
+          },
+          "scoped": false,
+          "total": 6615,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 443.832357441447,
+            "y": 199.2008460956571,
+            "width": 109.79559902200481,
+            "height": 69.98012976295607
+          },
+          "scoped": false,
+          "total": 7881,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 208.86605740003418,
+            "y": 297.7330036755896,
+            "width": 97.59608801955991,
+            "height": 53.23422982885097
+          },
+          "scoped": false,
+          "total": 5346,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "needle-moth",
+      "actorId": "foe-3-needle-moth",
+      "skillId": "rangerAttack",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 757.5237791339175,
+            "y": 223.66199696714358,
+            "width": 77.35921944054007,
+            "height": 38.89798311416541
+          },
+          "scoped": false,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1088.1194944545464,
+            "y": 98.29697154069012,
+            "width": 60.67109694073679,
+            "height": 43.23321831939643
+          },
+          "scoped": false,
+          "total": 2684,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 340.0600775682906,
+            "y": 466.6996094340996,
+            "width": 114.23587223587225,
+            "height": 58.54970035396951
+          },
+          "scoped": true,
+          "total": 6900,
+          "covered": 12,
+          "fraction": 0.0017391304347826088
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1044.4227695678333,
+            "y": 325.9873726048331,
+            "width": 59.44488997555004,
+            "height": 29.98861613691946
+          },
+          "scoped": false,
+          "total": 1860,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 951.7215589732257,
+            "y": 485.631093276015,
+            "width": 51.00206581573434,
+            "height": 25.0443507867285
+          },
+          "scoped": true,
+          "total": 1352,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 186.35119849239237,
+            "y": 82.6593506595073,
+            "width": 104.46206896551723,
+            "height": 61.45365112882651
+          },
+          "scoped": false,
+          "total": 6615,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 443.832357441447,
+            "y": 199.2008460956571,
+            "width": 109.79559902200481,
+            "height": 69.98012976295607
+          },
+          "scoped": true,
+          "total": 7881,
+          "covered": 6,
+          "fraction": 0.0007613247049866769
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 173.3541360310735,
+            "y": 312.0591046268626,
+            "width": 93.36070092577933,
+            "height": 47.15781275573835
+          },
+          "scoped": true,
+          "total": 4512,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.0017391304347826088,
+      "maxAnyFaceCoverage": 0.0017391304347826088,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "mochi",
+      "actorId": "mochi",
+      "skillId": "mochi-4",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 757.5237791339175,
+            "y": 223.66199696714358,
+            "width": 77.35921944054007,
+            "height": 38.89798311416541
+          },
+          "scoped": false,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1088.1194944545464,
+            "y": 98.29697154069012,
+            "width": 60.67109694073679,
+            "height": 43.23321831939643
+          },
+          "scoped": false,
+          "total": 2684,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 340.0600775682906,
+            "y": 466.6996094340996,
+            "width": 114.23587223587225,
+            "height": 58.54970035396951
+          },
+          "scoped": true,
+          "total": 6900,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1044.4227695678333,
+            "y": 325.9873726048331,
+            "width": 59.44488997555004,
+            "height": 29.98861613691946
+          },
+          "scoped": false,
+          "total": 1860,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 951.7215589732257,
+            "y": 485.631093276015,
+            "width": 51.00206581573434,
+            "height": 25.0443507867285
+          },
+          "scoped": true,
+          "total": 1352,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 186.35119849239237,
+            "y": 82.6593506595073,
+            "width": 104.46206896551723,
+            "height": 61.45365112882651
+          },
+          "scoped": true,
+          "total": 6615,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 433.2964161211535,
+            "y": 207.52617714579762,
+            "width": 108.68655256723724,
+            "height": 62.106601466992714
+          },
+          "scoped": true,
+          "total": 6867,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 208.86605740003418,
+            "y": 297.7330036755896,
+            "width": 97.59608801955991,
+            "height": 53.23422982885097
+          },
+          "scoped": true,
+          "total": 5346,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "soot",
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 778.5191304693681,
+            "y": 220.3370577560588,
+            "width": 79.27569625765659,
+            "height": 38.31574394555071
+          },
+          "scoped": true,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1104.8830537422941,
+            "y": 94.96617335530124,
+            "width": 62.12409545632181,
+            "height": 44.40744167088309
+          },
+          "scoped": true,
+          "total": 2944,
+          "covered": 1,
+          "fraction": 0.00033967391304347825
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 340.0600775682906,
+            "y": 466.6996094340996,
+            "width": 114.23587223587225,
+            "height": 58.54970035396951
+          },
+          "scoped": false,
+          "total": 6900,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1042.70150685512,
+            "y": 319.1228100619252,
+            "width": 51.402736769078956,
+            "height": 31.99320722130301
+          },
+          "scoped": true,
+          "total": 1749,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 951.7215589732257,
+            "y": 485.631093276015,
+            "width": 51.00206581573434,
+            "height": 25.0443507867285
+          },
+          "scoped": true,
+          "total": 1352,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 164.00637090618545,
+            "y": 88.44208642832021,
+            "width": 104.46206896551723,
+            "height": 55.86206896551724
+          },
+          "scoped": true,
+          "total": 5985,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 443.832357441447,
+            "y": 199.2008460956571,
+            "width": 109.79559902200481,
+            "height": 69.98012976295607
+          },
+          "scoped": false,
+          "total": 7881,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 208.86605740003418,
+            "y": 297.7330036755896,
+            "width": 97.59608801955991,
+            "height": 53.23422982885097
+          },
+          "scoped": false,
+          "total": 5346,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.00033967391304347825,
+      "maxAnyFaceCoverage": 0.00033967391304347825,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "clover",
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 760.2177632186578,
+            "y": 222.48887605606475,
+            "width": 77.35921944053996,
+            "height": 38.897983114165385
+          },
+          "scoped": false,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1090.8134785392863,
+            "y": 97.1238506296113,
+            "width": 60.67109694073679,
+            "height": 43.2332183193964
+          },
+          "scoped": false,
+          "total": 2728,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 342.7540616530307,
+            "y": 465.5264885230208,
+            "width": 114.2358722358723,
+            "height": 58.549700353969456
+          },
+          "scoped": true,
+          "total": 6900,
+          "covered": 10,
+          "fraction": 0.0014492753623188406
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1047.1167536525732,
+            "y": 324.81425169375433,
+            "width": 59.44488997555027,
+            "height": 29.98861613691929
+          },
+          "scoped": false,
+          "total": 1860,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 875.9668552036198,
+            "y": 460.2887132195234,
+            "width": 38.91176470588243,
+            "height": 24.45882352941169
+          },
+          "scoped": false,
+          "total": 1000,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 189.0451825771325,
+            "y": 81.48622974842846,
+            "width": 104.46206896551723,
+            "height": 61.45365112882649
+          },
+          "scoped": true,
+          "total": 6510,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 446.526341526187,
+            "y": 198.02772518457826,
+            "width": 109.79559902200492,
+            "height": 69.98012976295618
+          },
+          "scoped": true,
+          "total": 7881,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 194.92434466325847,
+            "y": 307.1442542787286,
+            "width": 102.58679706601464,
+            "height": 50.461613691931575
+          },
+          "scoped": true,
+          "total": 5304,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.0014492753623188406,
+      "maxAnyFaceCoverage": 0.0014492753623188406,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "teacup-healer",
+      "actorId": "foe-2-teacup-healer",
+      "skillId": "healerAttack",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 760.2177632186578,
+            "y": 222.48887605606475,
+            "width": 77.35921944053996,
+            "height": 38.897983114165385
+          },
+          "scoped": false,
+          "total": 3120,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1090.8134785392863,
+            "y": 97.1238506296113,
+            "width": 60.67109694073679,
+            "height": 43.2332183193964
+          },
+          "scoped": false,
+          "total": 2728,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 342.7540616530307,
+            "y": 465.5264885230208,
+            "width": 114.2358722358723,
+            "height": 58.549700353969456
+          },
+          "scoped": false,
+          "total": 6900,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1017.5606656330135,
+            "y": 323.79241841646177,
+            "width": 53.67784841075786,
+            "height": 30.409145975443323
+          },
+          "scoped": true,
+          "total": 1760,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 875.9668552036198,
+            "y": 460.2887132195234,
+            "width": 38.91176470588243,
+            "height": 24.45882352941169
+          },
+          "scoped": true,
+          "total": 1000,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 189.0451825771325,
+            "y": 81.48622974842846,
+            "width": 104.46206896551723,
+            "height": 61.45365112882649
+          },
+          "scoped": false,
+          "total": 6510,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 446.526341526187,
+            "y": 198.02772518457826,
+            "width": 109.79559902200492,
+            "height": 69.98012976295618
+          },
+          "scoped": false,
+          "total": 7881,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 211.56004148477427,
+            "y": 296.5598827645108,
+            "width": 97.59608801955994,
+            "height": 53.234229828850914
+          },
+          "scoped": false,
+          "total": 5346,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "boss",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "yarn-giant",
+      "actorId": "foe-0-yarn-giant",
+      "skillId": "yarnAttack",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "panko",
+          "box": {
+            "x": 340.0600775682906,
+            "y": 466.6996094340996,
+            "width": 114.23587223587225,
+            "height": 58.54970035396951
+          },
+          "scoped": true,
+          "total": 6900,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "box": {
+            "x": 1087.586112241273,
+            "y": 425.0031977722745,
+            "width": 51.875030520916425,
+            "height": 31.1250183125498
+          },
+          "scoped": false,
+          "total": 1696,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "box": {
+            "x": 1087.3658448584004,
+            "y": 108.0378223152396,
+            "width": 52.15965733562075,
+            "height": 31.295794401372348
+          },
+          "scoped": false,
+          "total": 1696,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 419.5803096571176,
+            "y": 209.13461762503846,
+            "width": 104.99240277064519,
+            "height": 65.0135533295649
+          },
+          "scoped": true,
+          "total": 6996,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 173.55119849239244,
+            "y": 82.6593506595073,
+            "width": 104.4620689655172,
+            "height": 61.45365112882651
+          },
+          "scoped": false,
+          "total": 6678,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "box": {
+            "x": 692.8771891767187,
+            "y": 85.58710088150326,
+            "width": 169.1044326068054,
+            "height": 126.48839043497887
+          },
+          "scoped": true,
+          "total": 21760,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 183.26605740003424,
+            "y": 297.7330036755896,
+            "width": 97.59608801955989,
+            "height": 53.23422982885097
+          },
+          "scoped": false,
+          "total": 5292,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75073.5,
+        "front": 177451,
+        "actorMin": 75074,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "boss",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "errors": [],
+      "asset": "binding-thread",
+      "actorId": "foe-1-binding-thread",
+      "skillId": "threadAttack",
+      "width": 1280,
+      "height": 720,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "panko",
+          "box": {
+            "x": 340.0600775682906,
+            "y": 466.6996094340996,
+            "width": 114.23587223587225,
+            "height": 58.54970035396951
+          },
+          "scoped": true,
+          "total": 6900,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "box": {
+            "x": 1139.6249333598953,
+            "y": 427.28508938237763,
+            "width": 51.072600849085575,
+            "height": 31.197023034675397
+          },
+          "scoped": true,
+          "total": 1664,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "box": {
+            "x": 1087.3658448584004,
+            "y": 108.0378223152396,
+            "width": 52.15965733562075,
+            "height": 31.295794401372348
+          },
+          "scoped": false,
+          "total": 1696,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 443.832357441447,
+            "y": 199.2008460956571,
+            "width": 109.79559902200481,
+            "height": 69.98012976295607
+          },
+          "scoped": false,
+          "total": 7881,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 173.55119849239244,
+            "y": 82.6593506595073,
+            "width": 104.4620689655172,
+            "height": 61.45365112882651
+          },
+          "scoped": false,
+          "total": 6678,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "box": {
+            "x": 716.9548165315308,
+            "y": 286.49934191961177,
+            "width": 150.8303178484107,
+            "height": 118.89138349376168
+          },
+          "scoped": false,
+          "total": 18240,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 183.26605740003424,
+            "y": 297.7330036755896,
+            "width": 97.59608801955989,
+            "height": 53.23422982885097
+          },
+          "scoped": false,
+          "total": 5292,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75073.5,
+        "front": 177451,
+        "actorMin": 75074,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "panko",
+      "actorId": "panko",
+      "skillId": "panko-4",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 846.778219938582,
+            "y": 279.2842159811599,
+            "width": 96.69902430067486,
+            "height": 48.62247889270668
+          },
+          "scoped": false,
+          "total": 4802,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1220.0228640893679,
+            "y": 122.57793419809295,
+            "width": 75.83887117592099,
+            "height": 54.04152289924562
+          },
+          "scoped": false,
+          "total": 4180,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 372.998118465671,
+            "y": 600.8218583495083,
+            "width": 127.64218009478668,
+            "height": 55.759478672985665
+          },
+          "scoped": true,
+          "total": 7353,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 980.2645849197847,
+            "y": 576.5340124354831,
+            "width": 48.63970588235293,
+            "height": 30.57352941176464
+          },
+          "scoped": false,
+          "total": 1568,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1152.6019579809763,
+            "y": 407.1909355282718,
+            "width": 74.30611246943772,
+            "height": 37.48577017114911
+          },
+          "scoped": false,
+          "total": 2850,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 227.21249413667553,
+            "y": 103.03090809661441,
+            "width": 130.5775862068966,
+            "height": 76.81706391103322
+          },
+          "scoped": false,
+          "total": 10087,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 496.2639428229938,
+            "y": 248.70777739180167,
+            "width": 137.24449877750618,
+            "height": 87.47516220369519
+          },
+          "scoped": false,
+          "total": 12282,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 255.35606777122797,
+            "y": 371.87297436671736,
+            "width": 121.99511002444979,
+            "height": 66.54278728606363
+          },
+          "scoped": false,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "needle-moth",
+      "actorId": "foe-3-needle-moth",
+      "skillId": "rangerAttack",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 846.778219938582,
+            "y": 279.2842159811599,
+            "width": 96.69902430067486,
+            "height": 48.62247889270668
+          },
+          "scoped": false,
+          "total": 4802,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1220.0228640893679,
+            "y": 122.57793419809295,
+            "width": 75.83887117592099,
+            "height": 54.04152289924562
+          },
+          "scoped": false,
+          "total": 4180,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 377.7485929815482,
+            "y": 583.0812315648549,
+            "width": 142.79484029484036,
+            "height": 73.18712544246182
+          },
+          "scoped": true,
+          "total": 10656,
+          "covered": 38,
+          "fraction": 0.003566066066066066
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 1078.3254447377171,
+            "y": 606.7455863672491,
+            "width": 63.752582269667755,
+            "height": 31.305438483410626
+          },
+          "scoped": true,
+          "total": 2145,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1152.6019579809763,
+            "y": 407.1909355282718,
+            "width": 74.30611246943772,
+            "height": 37.48577017114911
+          },
+          "scoped": false,
+          "total": 2850,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 227.21249413667553,
+            "y": 103.03090809661441,
+            "width": 130.5775862068966,
+            "height": 76.81706391103322
+          },
+          "scoped": false,
+          "total": 10087,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 496.2639428229938,
+            "y": 248.70777739180167,
+            "width": 137.24449877750618,
+            "height": 87.47516220369519
+          },
+          "scoped": true,
+          "total": 12282,
+          "covered": 8,
+          "fraction": 0.0006513597134017262
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 210.96616606002684,
+            "y": 389.78060055580863,
+            "width": 116.70087615722431,
+            "height": 58.94726594467278
+          },
+          "scoped": true,
+          "total": 7080,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.003566066066066066,
+      "maxAnyFaceCoverage": 0.003566066066066066,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "mochi",
+      "actorId": "mochi",
+      "skillId": "mochi-4",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 846.778219938582,
+            "y": 279.2842159811599,
+            "width": 96.69902430067486,
+            "height": 48.62247889270668
+          },
+          "scoped": false,
+          "total": 4802,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1220.0228640893679,
+            "y": 122.57793419809295,
+            "width": 75.83887117592099,
+            "height": 54.04152289924562
+          },
+          "scoped": false,
+          "total": 4180,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 377.7485929815482,
+            "y": 583.0812315648549,
+            "width": 142.79484029484036,
+            "height": 73.18712544246182
+          },
+          "scoped": true,
+          "total": 10656,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 1078.3254447377171,
+            "y": 606.7455863672491,
+            "width": 63.752582269667755,
+            "height": 31.305438483410626
+          },
+          "scoped": true,
+          "total": 2145,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1152.6019579809763,
+            "y": 407.1909355282718,
+            "width": 74.30611246943772,
+            "height": 37.48577017114911
+          },
+          "scoped": false,
+          "total": 2850,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 227.21249413667553,
+            "y": 103.03090809661441,
+            "width": 130.5775862068966,
+            "height": 76.81706391103322
+          },
+          "scoped": true,
+          "total": 10087,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 483.0940161726271,
+            "y": 259.1144412044773,
+            "width": 135.85819070904643,
+            "height": 77.63325183374099
+          },
+          "scoped": true,
+          "total": 10608,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 255.35606777122797,
+            "y": 371.87297436671736,
+            "width": 121.99511002444979,
+            "height": 66.54278728606363
+          },
+          "scoped": true,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "soot",
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 873.0224091078949,
+            "y": 275.1280419673038,
+            "width": 99.09462032207102,
+            "height": 47.89467993193841
+          },
+          "scoped": true,
+          "total": 4900,
+          "covered": 14,
+          "fraction": 0.002857142857142857
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1240.9773131990526,
+            "y": 118.41443646635683,
+            "width": 77.65511932040226,
+            "height": 55.509302088603974
+          },
+          "scoped": true,
+          "total": 4424,
+          "covered": 5,
+          "fraction": 0.0011301989150090416
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 377.7485929815482,
+            "y": 583.0812315648549,
+            "width": 142.79484029484036,
+            "height": 73.18712544246182
+          },
+          "scoped": false,
+          "total": 10656,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 1078.3254447377171,
+            "y": 606.7455863672491,
+            "width": 63.752582269667755,
+            "height": 31.305438483410626
+          },
+          "scoped": true,
+          "total": 2145,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1150.450379590085,
+            "y": 398.6102323496368,
+            "width": 64.25342096134841,
+            "height": 39.991509026628705
+          },
+          "scoped": true,
+          "total": 2665,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 199.28145965391687,
+            "y": 110.25932780763064,
+            "width": 130.5775862068966,
+            "height": 69.82758620689644
+          },
+          "scoped": true,
+          "total": 9301,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 496.2639428229938,
+            "y": 248.70777739180167,
+            "width": 137.24449877750618,
+            "height": 87.47516220369519
+          },
+          "scoped": false,
+          "total": 12282,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 255.35606777122797,
+            "y": 371.87297436671736,
+            "width": 121.99511002444979,
+            "height": 66.54278728606363
+          },
+          "scoped": false,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.002857142857142857,
+      "maxAnyFaceCoverage": 0.002857142857142857,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "clover",
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 849.472204023322,
+            "y": 278.1110950700809,
+            "width": 96.69902430067498,
+            "height": 48.622478892706795
+          },
+          "scoped": false,
+          "total": 4802,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1222.716848174108,
+            "y": 121.40481328701411,
+            "width": 75.83887117592099,
+            "height": 54.04152289924552
+          },
+          "scoped": false,
+          "total": 4235,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 380.4425770662884,
+            "y": 581.908110653776,
+            "width": 142.7948402948403,
+            "height": 73.18712544246182
+          },
+          "scoped": true,
+          "total": 10800,
+          "covered": 1,
+          "fraction": 0.00009259259259259259
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 982.9585690045249,
+            "y": 575.3608915244042,
+            "width": 48.63970588235293,
+            "height": 30.57352941176464
+          },
+          "scoped": false,
+          "total": 1550,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1155.2959420657164,
+            "y": 406.0178146171929,
+            "width": 74.30611246943772,
+            "height": 37.48577017114911
+          },
+          "scoped": false,
+          "total": 2850,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 229.90647822141568,
+            "y": 101.85778718553557,
+            "width": 130.5775862068965,
+            "height": 76.81706391103312
+          },
+          "scoped": true,
+          "total": 10296,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 498.95792690773385,
+            "y": 247.53465648072282,
+            "width": 137.24449877750624,
+            "height": 87.47516220369519
+          },
+          "scoped": true,
+          "total": 12371,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 237.25543082907308,
+            "y": 383.9303178484108,
+            "width": 128.23349633251843,
+            "height": 63.07701711491444
+          },
+          "scoped": true,
+          "total": 8385,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0.00009259259259259259,
+      "maxAnyFaceCoverage": 0.00009259259259259259,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "wave1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "teacup-healer",
+      "actorId": "foe-2-teacup-healer",
+      "skillId": "healerAttack",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "foe-0-button-guard",
+          "box": {
+            "x": 849.472204023322,
+            "y": 278.1110950700809,
+            "width": 96.69902430067498,
+            "height": 48.622478892706795
+          },
+          "scoped": false,
+          "total": 4802,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "box": {
+            "x": 1222.716848174108,
+            "y": 121.40481328701411,
+            "width": 75.83887117592099,
+            "height": 54.04152289924552
+          },
+          "scoped": false,
+          "total": 4235,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "panko",
+          "box": {
+            "x": 380.4425770662884,
+            "y": 581.908110653776,
+            "width": 142.7948402948403,
+            "height": 73.18712544246182
+          },
+          "scoped": false,
+          "total": 10800,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "box": {
+            "x": 982.9585690045249,
+            "y": 575.3608915244042,
+            "width": 48.63970588235293,
+            "height": 30.57352941176464
+          },
+          "scoped": true,
+          "total": 1550,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "box": {
+            "x": 1118.3508320412666,
+            "y": 404.7405230205772,
+            "width": 67.09731051344761,
+            "height": 38.01143246930417
+          },
+          "scoped": true,
+          "total": 2652,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 229.90647822141568,
+            "y": 101.85778718553557,
+            "width": 130.5775862068965,
+            "height": 76.81706391103312
+          },
+          "scoped": false,
+          "total": 10296,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 498.95792690773385,
+            "y": 247.53465648072282,
+            "width": 137.24449877750624,
+            "height": 87.47516220369519
+          },
+          "scoped": false,
+          "total": 12371,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 258.05005185596804,
+            "y": 370.6998534556385,
+            "width": 121.99511002444984,
+            "height": 66.54278728606363
+          },
+          "scoped": false,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75074.5,
+        "front": 177451,
+        "actorMin": 75075,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "boss",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "yarn-giant",
+      "actorId": "foe-0-yarn-giant",
+      "skillId": "yarnAttack",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "panko",
+          "box": {
+            "x": 377.7485929815482,
+            "y": 583.0812315648549,
+            "width": 142.79484029484036,
+            "height": 73.18712544246182
+          },
+          "scoped": true,
+          "total": 10656,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "box": {
+            "x": 1203.6761363227758,
+            "y": 530.9607169875734,
+            "width": 64.84378815114542,
+            "height": 38.90627289068732
+          },
+          "scoped": false,
+          "total": 2640,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "box": {
+            "x": 1203.400802094185,
+            "y": 134.7539976662799,
+            "width": 65.199571669526,
+            "height": 39.11974300171542
+          },
+          "scoped": false,
+          "total": 2640,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "box": {
+            "x": 811.6148520022236,
+            "y": 106.69059587410956,
+            "width": 211.38054075850675,
+            "height": 158.11048804372345
+          },
+          "scoped": true,
+          "total": 33708,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 465.94888309258204,
+            "y": 261.12499180352836,
+            "width": 131.2405034633066,
+            "height": 81.26694166195614
+          },
+          "scoped": true,
+          "total": 10906,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 226.55606777122787,
+            "y": 371.87297436671736,
+            "width": 121.99511002444999,
+            "height": 66.54278728606363
+          },
+          "scoped": false,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 212.8124941366755,
+            "y": 103.03090809661441,
+            "width": 130.5775862068966,
+            "height": 76.81706391103322
+          },
+          "scoped": false,
+          "total": 10164,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75073.5,
+        "front": 177451,
+        "actorMin": 75074,
+        "actorMax": 177450
+      }
+    },
+    {
+      "fixture": "boss",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "errors": [],
+      "asset": "binding-thread",
+      "actorId": "foe-1-binding-thread",
+      "skillId": "threadAttack",
+      "width": 1440,
+      "height": 900,
+      "ms": 1100,
+      "faces": [
+        {
+          "id": "panko",
+          "box": {
+            "x": 377.7485929815482,
+            "y": 583.0812315648549,
+            "width": 142.79484029484036,
+            "height": 73.18712544246182
+          },
+          "scoped": true,
+          "total": 10656,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "box": {
+            "x": 1268.7246627210536,
+            "y": 533.8130815002023,
+            "width": 63.840751061357196,
+            "height": 38.99627879334423
+          },
+          "scoped": true,
+          "total": 2600,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "box": {
+            "x": 1203.400802094185,
+            "y": 134.7539976662799,
+            "width": 65.199571669526,
+            "height": 39.11974300171542
+          },
+          "scoped": false,
+          "total": 2640,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "box": {
+            "x": 781.6561334756309,
+            "y": 357.8308971717451,
+            "width": 188.53789731051347,
+            "height": 148.61422936720197
+          },
+          "scoped": false,
+          "total": 28500,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "mochi",
+          "box": {
+            "x": 496.2639428229938,
+            "y": 248.70777739180167,
+            "width": 137.24449877750618,
+            "height": 87.47516220369519
+          },
+          "scoped": false,
+          "total": 12282,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "clover",
+          "box": {
+            "x": 226.55606777122787,
+            "y": 371.87297436671736,
+            "width": 121.99511002444999,
+            "height": 66.54278728606363
+          },
+          "scoped": false,
+          "total": 8364,
+          "covered": 0,
+          "fraction": 0
+        },
+        {
+          "id": "soot",
+          "box": {
+            "x": 212.8124941366755,
+            "y": 103.03090809661441,
+            "width": 130.5775862068966,
+            "height": 76.81706391103322
+          },
+          "scoped": false,
+          "total": 10164,
+          "covered": 0,
+          "fraction": 0
+        }
+      ],
+      "maxScopedFaceCoverage": 0,
+      "maxAnyFaceCoverage": 0,
+      "layerOrder": {
+        "rear": 75073.5,
+        "front": 177451,
+        "actorMin": 75074,
+        "actorMax": 177450
+      }
+    }
+  ],
+  "finished": "2026-11-16T18:26:56.999Z",
+  "pass": true
+}

@@ -1,0 +1,1214 @@
+{
+  "at": "2026-11-16T18:03:25.371648+00:00",
+  "scope": "Yarn authored poses, original texture and sampled live/encoded-film choreography; full A7 shared gates remain separate",
+  "sourceHashesVerified": 11,
+  "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+  "scopedWindows": 15,
+  "completeScopedWindows": 15,
+  "completeOwnWindows": 3,
+  "completeOwnUltimates": 1,
+  "films": [
+    {
+      "fixture": "wave1",
+      "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+      "videoSha256": "82c47eb5124ffadca1fdb592339f6b14d4e8495604a5d75c1949d19eef8334c4",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-YARN/wave1-mix.wav",
+        "integratedLufs": -14.93,
+        "truePeakDbTP": -3.31,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "mediaProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.006000"
+        }
+      },
+      "parity": true,
+      "errors": []
+    },
+    {
+      "fixture": "wave3",
+      "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+      "videoSha256": "797946d46e39e3176bf601009bc5c12e7028b4b337860826325ec175e227fb0e",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-YARN/wave3-mix.wav",
+        "integratedLufs": -14.99,
+        "truePeakDbTP": -3.34,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "mediaProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.009000"
+        }
+      },
+      "parity": true,
+      "errors": []
+    },
+    {
+      "fixture": "boss",
+      "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+      "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-YARN/boss-mix.wav",
+        "integratedLufs": -14.77,
+        "truePeakDbTP": -2.5,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "mediaProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp9",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "30.009000"
+        }
+      },
+      "parity": true,
+      "errors": []
+    }
+  ],
+  "ownActions": [
+    {
+      "fixture": "boss",
+      "key": 4,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 24,
+      "nearestImpactFrame": 122,
+      "nearestImpactElapsed": 350,
+      "impactSamplingErrorMs": 0,
+      "recipientGaps": [
+        {
+          "id": "panko",
+          "pixels": 0,
+          "viewportFraction": 0.0
+        }
+      ],
+      "maxMotionPixels": 50.39999999999998,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    },
+    {
+      "fixture": "boss",
+      "key": 12,
+      "ultimate": true,
+      "complete": true,
+      "durationMs": 2200,
+      "impactMs": 1100,
+      "encodedFrames": 66,
+      "nearestImpactFrame": 382,
+      "nearestImpactElapsed": 1100,
+      "impactSamplingErrorMs": 0,
+      "recipientGaps": [
+        {
+          "id": "panko",
+          "pixels": 13.931574874087119,
+          "viewportFraction": 0.010884042870380561
+        },
+        {
+          "id": "mochi",
+          "pixels": 0,
+          "viewportFraction": 0.0
+        }
+      ],
+      "maxMotionPixels": 197.45428381845358,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 2.9383265510905137,
+      "nonzeroCameraFrames": [
+        {
+          "frame": 382,
+          "elapsed": 1100,
+          "pixels": 2.9383265510905137
+        },
+        {
+          "frame": 383,
+          "elapsed": 1133.2999999999993,
+          "pixels": 1.221882562954278
+        },
+        {
+          "frame": 384,
+          "elapsed": 1166.6000000000004,
+          "pixels": 0.1511887709698466
+        },
+        {
+          "frame": 385,
+          "elapsed": 1200,
+          "pixels": 0.22165547827418003
+        }
+      ],
+      "observedCameraSpanMs": 100,
+      "post600FocusFrames": [
+        {
+          "frame": 368,
+          "elapsed": 633.2999999999993,
+          "brightness": 0.5415749999999979
+        },
+        {
+          "frame": 369,
+          "elapsed": 666.6999999999989,
+          "brightness": 0.633424999999997
+        },
+        {
+          "frame": 370,
+          "elapsed": 700,
+          "brightness": 0.725
+        },
+        {
+          "frame": 371,
+          "elapsed": 733.3999999999996,
+          "brightness": 0.816849999999999
+        },
+        {
+          "frame": 372,
+          "elapsed": 766.6999999999989,
+          "brightness": 0.9084249999999969
+        }
+      ]
+    },
+    {
+      "fixture": "boss",
+      "key": 20,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 23,
+      "nearestImpactFrame": 723,
+      "nearestImpactElapsed": 333.3999999999978,
+      "impactSamplingErrorMs": 16.600000000002183,
+      "recipientGaps": [
+        {
+          "id": "panko",
+          "pixels": 0,
+          "viewportFraction": 0.0
+        }
+      ],
+      "maxMotionPixels": 50.39999999999998,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    }
+  ],
+  "blind": {
+    "count": 9,
+    "correct": 9,
+    "pass": true,
+    "labelledAt": "2026-11-16T18:03:24.448957+00:00",
+    "comparedAt": "2026-11-16T18:03:24.548024+00:00",
+    "labelsArtifact": "reports/v4-art/REVIEW/A7/yarn-giant/blind-labels.json",
+    "labelsSha256": "f3d176c4dd8aab68cbcc3ef950916004341304f8d897caf839c86296f170a924",
+    "sampling": "3 each of windup/strike/received-hit, held interiors >34ms from swaps; Yarn body225px; own retaliation excluded from received-hit category and own strikes use the90ms contact hold; shuffled before labels; existing encoded frame ordinals.",
+    "frames": [
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 114,
+        "renderOrdinal": 220,
+        "expected": "windup",
+        "crop": [
+          646,
+          229,
+          489,
+          391
+        ],
+        "bodyHeight": 359.4332180257078,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "01",
+        "label": "windup",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 719,
+        "renderOrdinal": 1414,
+        "expected": "windup",
+        "crop": [
+          646,
+          256,
+          489,
+          390
+        ],
+        "bodyHeight": 357.8513329006089,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "02",
+        "label": "windup",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 116,
+        "renderOrdinal": 224,
+        "expected": "windup",
+        "crop": [
+          646,
+          243,
+          489,
+          390
+        ],
+        "bodyHeight": 358.2211479892815,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "03",
+        "label": "windup",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 725,
+        "renderOrdinal": 1426,
+        "expected": "strike",
+        "crop": [
+          405,
+          283,
+          728,
+          392
+        ],
+        "bodyHeight": 360.45981772935744,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "04",
+        "label": "strike",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 98,
+        "renderOrdinal": 189,
+        "expected": "hit",
+        "crop": [
+          656,
+          230,
+          340,
+          389
+        ],
+        "bodyHeight": 357.43679999999995,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "05",
+        "label": "hit",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 123,
+        "renderOrdinal": 236,
+        "expected": "strike",
+        "crop": [
+          405,
+          283,
+          728,
+          392
+        ],
+        "bodyHeight": 360.45981772935744,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "06",
+        "label": "strike",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 213,
+        "renderOrdinal": 414,
+        "expected": "hit",
+        "crop": [
+          656,
+          230,
+          341,
+          389
+        ],
+        "bodyHeight": 357.43679999999995,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "07",
+        "label": "hit",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 724,
+        "renderOrdinal": 1424,
+        "expected": "strike",
+        "crop": [
+          405,
+          283,
+          728,
+          392
+        ],
+        "bodyHeight": 360.45981772935744,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "08",
+        "label": "strike",
+        "correct": true
+      },
+      {
+        "fixture": "boss",
+        "unit": "foe-0-yarn-giant",
+        "frame": 42,
+        "renderOrdinal": 77,
+        "expected": "hit",
+        "crop": [
+          656,
+          230,
+          341,
+          389
+        ],
+        "bodyHeight": 357.43679999999995,
+        "video": "reports/v3-feel/REVIEW/V4-A7-YARN/boss.webm",
+        "videoSha256": "13b71afbd5a2db66506c10512de333f2e78444331d69a403892b17b932c0c256",
+        "id": "09",
+        "label": "hit",
+        "correct": true
+      }
+    ]
+  },
+  "liveMeasurements": {
+    "at": "2026-11-16T17:42:14.708165+00:00",
+    "scope": "Sampled real boss fixture at720/900; film gates remain unverified",
+    "source": "reports/v4-art/REVIEW/A7/yarn-giant/live-probe-r5-multitarget.json",
+    "rows": [
+      {
+        "width": 1280,
+        "height": 720,
+        "errors": [],
+        "missing": [],
+        "contacts": [
+          {
+            "ultimate": false,
+            "key": "K2",
+            "travelPx": 49.229665853019945,
+            "targetGaps": [
+              {
+                "id": "panko",
+                "fraction": 0.0
+              }
+            ]
+          },
+          {
+            "ultimate": true,
+            "key": "K5",
+            "travelPx": 197.41953135160887,
+            "targetGaps": [
+              {
+                "id": "panko",
+                "fraction": 0.010884042870380606
+              },
+              {
+                "id": "mochi",
+                "fraction": 0.0
+              }
+            ]
+          }
+        ],
+        "returns": [
+          {
+            "ultimate": false,
+            "ms": 800,
+            "errorPx": 0.0
+          },
+          {
+            "ultimate": true,
+            "ms": 2200,
+            "errorPx": 0.0
+          }
+        ],
+        "peakUltimateArea": 0.28246853298611113,
+        "maxFaceCoverage": 0.025217391304347827,
+        "maxPaintedTipErrorPx": 2.938326551090512,
+        "maxUnitOcclusion": 0.0414434857560006,
+        "sampledLayoutMinima": {
+          "span": 0.8124803231754247,
+          "left": 0.1020496240485701,
+          "right": 0.08307781854159813,
+          "catMedian": 0.3120398464361438,
+          "bossHeight": 0.4964399999999998,
+          "bossTop": 0.0690731563553707
+        },
+        "maxCatDeviation": 0.023080488807614374,
+        "numericalSamplePass": true
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "errors": [],
+        "missing": [],
+        "contacts": [
+          {
+            "ultimate": false,
+            "key": "K2",
+            "travelPx": 61.537082316274955,
+            "targetGaps": [
+              {
+                "id": "panko",
+                "fraction": 0.0
+              }
+            ]
+          },
+          {
+            "ultimate": true,
+            "key": "K5",
+            "travelPx": 242.1614595677849,
+            "targetGaps": [
+              {
+                "id": "panko",
+                "fraction": 0.007124540349131476
+              },
+              {
+                "id": "mochi",
+                "fraction": 0.0
+              }
+            ]
+          }
+        ],
+        "returns": [
+          {
+            "ultimate": false,
+            "ms": 800,
+            "errorPx": 0.0
+          },
+          {
+            "ultimate": true,
+            "ms": 2200,
+            "errorPx": 0.0
+          }
+        ],
+        "peakUltimateArea": 0.2983287037037037,
+        "maxFaceCoverage": 0.025243993993993994,
+        "maxPaintedTipErrorPx": 2.9383265510905874,
+        "maxUnitOcclusion": 0.07372877539071297,
+        "sampledLayoutMinima": {
+          "span": 0.8006828217734447,
+          "left": 0.10941173229090084,
+          "right": 0.06323630504814914,
+          "catMedian": 0.3120398464361438,
+          "bossHeight": 0.49644,
+          "bossTop": 0.0690731563553707
+        },
+        "maxCatDeviation": 0.023080488807614485,
+        "numericalSamplePass": true
+      }
+    ]
+  },
+  "liveMethod": "Live alpha readback corroborated by the reviewed films; not encoded-pixel segmentation.",
+  "layout720": [
+    {
+      "fixture": "wave1",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "frame": 150
+        },
+        "catDeviation": {
+          "value": 0.025228513051749446,
+          "frame": 91
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 39
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "frame": 175
+        },
+        "span": {
+          "value": 0.8158991172356072,
+          "frame": 577
+        },
+        "gap": {
+          "value": 0.11897002973903854,
+          "frame": 444
+        }
+      },
+      "failures": []
+    },
+    {
+      "fixture": "wave3",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999986,
+          "frame": 575
+        },
+        "catDeviation": {
+          "value": 0.02955665024630516,
+          "frame": 704
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 39
+        },
+        "right": {
+          "value": 0.036308225161340246,
+          "frame": 13
+        },
+        "span": {
+          "value": 0.8186193251098987,
+          "frame": 643
+        },
+        "gap": {
+          "value": 0.002275123411597768,
+          "frame": 258
+        }
+      },
+      "failures": []
+    },
+    {
+      "fixture": "boss",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "frame": 33
+        },
+        "catDeviation": {
+          "value": 0.02516242885093445,
+          "frame": 91
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 39
+        },
+        "right": {
+          "value": 0.05426645742140601,
+          "frame": 146
+        },
+        "span": {
+          "value": 0.7935057982502178,
+          "frame": 324
+        },
+        "gap": {
+          "value": 0.06861494352831281,
+          "frame": 385
+        },
+        "boss": {
+          "value": 0.49643999999999977,
+          "frame": 55
+        }
+      },
+      "failures": [
+        "span"
+      ]
+    }
+  ],
+  "layout900": {
+    "method": "Unmodified silent fixed-clock 1440x900 capture; bbox layout only, not audio, FPS, alpha occlusion or HUD proof.",
+    "fixtures": [
+      {
+        "fixture": "wave1",
+        "captureSha256": "96145bfdabc78c80994ecc2c717dc8c125af5f8cfb5ac5e3eaea349b88b4fcc6",
+        "sourceCommit": "ce5becfce9a603d9ec5a2c7930fdbf438e0c9fe1",
+        "runtimeSourceHashesVerified": 11,
+        "frames": 952,
+        "seconds": 31.733333333333334,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.31027499999999986,
+            "t": 27.3,
+            "index": 819
+          },
+          "catDeviation": {
+            "value": 0.02599924989515634,
+            "t": 3.6666666666666665,
+            "index": 110
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.03499999999999992,
+            "t": 5.3,
+            "index": 159
+          },
+          "span": {
+            "value": 0.812722961048404,
+            "t": 30.966666666666665,
+            "index": 929
+          },
+          "gap": {
+            "value": 0.10411638345687414,
+            "t": 13.333333333333334,
+            "index": 400
+          }
+        },
+        "failures": [],
+        "reviewFrameIndices": [
+          0,
+          111,
+          399
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-wave1.jpg",
+        "visuallyReviewed": true,
+        "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+        "reviewNote": "All sampled painted bodies and heads remain legible and inside the frame; received reactions and heal accents are visible. Yellow incidental-enemy bubbles remain visible in frame111.",
+        "sheetSha256": "8b903c4e4e317631d6fe22759a1a738aabcb3c5d155cf1c9b29a74dbf431452f"
+      },
+      {
+        "fixture": "wave3",
+        "captureSha256": "2cff42d9e5d43bcadb214de434e22cf4561049c34bd004f7d9faed0eee121d9e",
+        "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+        "runtimeSourceHashesVerified": 11,
+        "frames": 901,
+        "seconds": 30.033333333333335,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.3102749999999999,
+            "t": 5.5,
+            "index": 165
+          },
+          "catDeviation": {
+            "value": 0.029556650246305494,
+            "t": 21.433333333333334,
+            "index": 643
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.03425489917921909,
+            "t": 21.333333333333332,
+            "index": 640
+          },
+          "span": {
+            "value": 0.8192028137340447,
+            "t": 19.433333333333334,
+            "index": 583
+          },
+          "gap": {
+            "value": -0.013566401614058539,
+            "t": 7.666666666666667,
+            "index": 230
+          }
+        },
+        "failures": [],
+        "reviewFrameIndices": [
+          0,
+          642,
+          231
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-wave3.jpg",
+        "visuallyReviewed": true,
+        "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+        "reviewNote": "Dense formation remains legible; frame642 original purple ultimate covers the middle enemy lane while the cats stay identifiable. Frame231 shows a clear received reaction.",
+        "sheetSha256": "36b1b8e2cc242c3c10e3c1619b471e705a8b1ac28b852a29547f3ce0ff426d48"
+      },
+      {
+        "fixture": "boss",
+        "captureSha256": "3a5487ee61a00acd2291253f45bada6c29fe1fa271c5cb6eba126fa94f354f64",
+        "sourceCommit": "ce5becfce9a603d9ec5a2c7930fdbf438e0c9fe1",
+        "runtimeSourceHashesVerified": 11,
+        "frames": 946,
+        "seconds": 31.533333333333335,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.3102749999999999,
+            "t": 5.7,
+            "index": 171
+          },
+          "catDeviation": {
+            "value": 0.02599924989515634,
+            "t": 3.6666666666666665,
+            "index": 110
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.05585162215397044,
+            "t": 4.266666666666667,
+            "index": 128
+          },
+          "span": {
+            "value": 0.779451495094258,
+            "t": 9.766666666666667,
+            "index": 293
+          },
+          "gap": {
+            "value": 0.07903557917315535,
+            "t": 11.7,
+            "index": 351
+          },
+          "boss": {
+            "value": 0.4964399999999999,
+            "t": 2.566666666666667,
+            "index": 77
+          }
+        },
+        "failures": [
+          {
+            "metric": "span",
+            "count": 100,
+            "worst": {
+              "value": 0.779451495094258,
+              "t": 9.766666666666667,
+              "index": 293
+            }
+          }
+        ],
+        "reviewFrameIndices": [
+          294,
+          0,
+          108,
+          111
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/yarn-giant/raw/layout900-boss.jpg",
+        "visuallyReviewed": true,
+        "reviewedAt": "2026-11-16T18:03:24.448957+00:00",
+        "reviewNote": "Frame294 preserves the measured span failure; FX pixels are excluded from that metric. Frame108 shows the long contact punch, frame111 the subsequent crossed guard, with both small helpers in front of the giant.",
+        "sheetSha256": "7c6f78b8bdc534e332b4d73732aaa23fc39dc1de9fcbdd74b14516d431e04e2e"
+      }
+    ],
+    "failures": [
+      {
+        "fixture": "boss",
+        "metric": "span",
+        "count": 100,
+        "worst": {
+          "value": 0.779451495094258,
+          "t": 9.766666666666667,
+          "index": 293
+        }
+      }
+    ]
+  },
+  "assetBudget": {
+    "scope": "Conservative upper bound: every published pose-directory and public VFX file plus new Binding portrait; separate from SHIP total transfer",
+    "bytes": 5076339,
+    "limitBytes": 6000000,
+    "files": [
+      {
+        "path": "apps/web/public/units/binding-thread/portrait.webp",
+        "bytes": 97490
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K0.webp",
+        "bytes": 49342
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K1.webp",
+        "bytes": 54070
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K2.webp",
+        "bytes": 63344
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K4.webp",
+        "bytes": 45898
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/manifest.json",
+        "bytes": 7964
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K0.webp",
+        "bytes": 45022
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K1.webp",
+        "bytes": 70880
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K2.webp",
+        "bytes": 88928
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K4.webp",
+        "bytes": 61906
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K5.webp",
+        "bytes": 73842
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/manifest.json",
+        "bytes": 7380
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K0.webp",
+        "bytes": 59592
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K1.webp",
+        "bytes": 78176
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K2.webp",
+        "bytes": 93296
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K4.webp",
+        "bytes": 53760
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K5.webp",
+        "bytes": 78028
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/manifest.json",
+        "bytes": 7388
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K0.webp",
+        "bytes": 57116
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K1.webp",
+        "bytes": 47142
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K2.webp",
+        "bytes": 57054
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K4.webp",
+        "bytes": 54432
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/manifest.json",
+        "bytes": 5537
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K0.webp",
+        "bytes": 55736
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K1.webp",
+        "bytes": 79434
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K2.webp",
+        "bytes": 76736
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K4.webp",
+        "bytes": 63062
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K5.webp",
+        "bytes": 74294
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/manifest.json",
+        "bytes": 8570
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K0.webp",
+        "bytes": 134076
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K1.webp",
+        "bytes": 153042
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K2.webp",
+        "bytes": 159248
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K4.webp",
+        "bytes": 166636
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K5.webp",
+        "bytes": 173228
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/lantern-flame.webp",
+        "bytes": 132548
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/manifest.json",
+        "bytes": 8504
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K0.webp",
+        "bytes": 73380
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K1.webp",
+        "bytes": 73604
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K2.webp",
+        "bytes": 85946
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K4.webp",
+        "bytes": 71806
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/manifest.json",
+        "bytes": 5076
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/K0.webp",
+        "bytes": 92290
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/K1.webp",
+        "bytes": 91984
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/K2.webp",
+        "bytes": 120222
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/K4.webp",
+        "bytes": 72594
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/K5.webp",
+        "bytes": 118216
+      },
+      {
+        "path": "apps/web/public/units/yarn-giant/poses/manifest.json",
+        "bytes": 5520
+      },
+      {
+        "path": "apps/web/public/vfx/binding-thread/knotted-thread.webp",
+        "bytes": 45194
+      },
+      {
+        "path": "apps/web/public/vfx/clover/healing-canopy.webp",
+        "bytes": 273166
+      },
+      {
+        "path": "apps/web/public/vfx/clover/healing-sprig.webp",
+        "bytes": 110296
+      },
+      {
+        "path": "apps/web/public/vfx/mochi/shield-crest.webp",
+        "bytes": 166834
+      },
+      {
+        "path": "apps/web/public/vfx/mochi/shield-cut.webp",
+        "bytes": 83862
+      },
+      {
+        "path": "apps/web/public/vfx/needle-moth/sewing-needle.webp",
+        "bytes": 60240
+      },
+      {
+        "path": "apps/web/public/vfx/panko/crust-cut.webp",
+        "bytes": 122750
+      },
+      {
+        "path": "apps/web/public/vfx/panko/oven-bastion.webp",
+        "bytes": 158110
+      },
+      {
+        "path": "apps/web/public/vfx/teacup-healer/tea-blossom.webp",
+        "bytes": 43294
+      },
+      {
+        "path": "apps/web/public/vfx/teacup-healer/tea-canopy.webp",
+        "bytes": 247488
+      },
+      {
+        "path": "apps/web/public/vfx/yarn-giant/braid-wave.webp",
+        "bytes": 411766
+      }
+    ]
+  },
+  "poseMetrics": {
+    "at": "2026-11-16T17:42:15.373486+00:00",
+    "K0OpaqueTargetHeight": 225,
+    "resizedCanvas": [
+      634,
+      634
+    ],
+    "alphaThreshold": 128,
+    "changedRgbaThreshold": 24,
+    "differenceDenominator": "union opaque bounding-box area",
+    "headUncertaintySourcePx": 4,
+    "rows": [
+      {
+        "key": "K1",
+        "file": "apps/web/public/units/yarn-giant/poses/K1.webp",
+        "iou": 0.5590285066543516,
+        "meanLabDeltaE76": 4.918301110089528,
+        "changedUnionBboxFraction": 0.5756263269639066,
+        "headRatioFromFixedLandmarks": 0.9756193359262737,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": -0.12096774193548387,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      },
+      {
+        "key": "K2",
+        "file": "apps/web/public/units/yarn-giant/poses/K2.webp",
+        "iou": 0.48513282075574826,
+        "meanLabDeltaE76": 5.102249727809362,
+        "changedUnionBboxFraction": 0.5224386381631038,
+        "headRatioFromFixedLandmarks": 0.9755573398828641,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": 0.49193548387096775,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      },
+      {
+        "key": "K4",
+        "file": "apps/web/public/units/yarn-giant/poses/K4.webp",
+        "iou": 0.6200928769000431,
+        "meanLabDeltaE76": 3.56815153216986,
+        "changedUnionBboxFraction": 0.5973476702508961,
+        "headRatioFromFixedLandmarks": 1.0309784411276948,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": -0.13709677419354838,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      },
+      {
+        "key": "K5",
+        "file": "apps/web/public/units/yarn-giant/poses/K5.webp",
+        "iou": 0.5894568378320354,
+        "meanLabDeltaE76": 5.132296783477828,
+        "changedUnionBboxFraction": 0.5415356820234869,
+        "headRatioFromFixedLandmarks": 1.0420277644037874,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": 0.13709677419354838,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      }
+    ],
+    "visualAndFilmGatesSeparate": true
+  },
+  "encodedMarkerFramesVerified": 2700,
+  "validation": {
+    "started": "2026-11-16T17:43:23.309318+00:00",
+    "sourceCommit": "3ac0f5a17a3bd962344afeba0ff2f6353df292e5",
+    "steps": [
+      {
+        "name": "web",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-yarn-web-final.log"
+      },
+      {
+        "name": "typecheck",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-yarn-typecheck-final.log"
+      },
+      {
+        "name": "parity",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-yarn-parity-final.log"
+      }
+    ],
+    "runtimeSourceHashes": {
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/spine/scene.ts": "5d774fae94940aba1fdc28b06bcc71b3a163bda84747b5b7db0b86352d67240f",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/stage/layout-c2.ts": "2383ecf796fdb5a06f69ac629e905397fa142b293bf46def0d9057e0e0a25a20",
+      "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/vfx-craft/yarn-surge.ts": "2d5e7732094e4e14dd240c2e72f731f6700c451fa70a50b07725bea04d21aba6"
+    },
+    "finished": "2026-11-16T17:45:19.049797+00:00",
+    "pass": true
+  },
+  "limits": [
+    "Live alpha area/face/occlusion samples are distinct from exact encoded-pixel masks.",
+    "Observed nonzero shake span is not a continuous-duration upper bound; reduced-motion film remains separate.",
+    "Full ultimate pairwise distinctness, focus after600ms, production activation, final SHIP classes and process time split remain open."
+  ],
+  "scopedGates": {
+    "poseNumerical": true,
+    "blindRead": true,
+    "everyCapturedWindowReviewed": true,
+    "fixedSchedule": true,
+    "meleeRecipientGapOnCompleteFilmWindows": true,
+    "returnsOnFirstFollowingFilmFrame": true,
+    "sampledLiveAlpha": true,
+    "layout720BoundingBoxes": false,
+    "layout900BoundingBoxes": false,
+    "layout900VisuallyReviewed": true,
+    "bossMedian50fps": true,
+    "addedAssetUpperBound6MB": true,
+    "regression": true,
+    "laneAudit": true
+  }
+}

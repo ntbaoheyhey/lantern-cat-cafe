@@ -1,0 +1,794 @@
+{
+  "started": "2026-11-16T20:49:59.095868+00:00",
+  "scope": "Private encodes and budget projection; not production traffic or visual acceptance.",
+  "sourceCommit": "9df18432a30175e7dccd5cf8e6bccc4394012f52",
+  "encoder": "1.6.0\nlibsharpyuv: 0.4.2",
+  "shipEvidence": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v4-ship/S8/initial-transfer-2.json",
+    "sha256": "64ed7752a8bc1cfee98677deec19ad91615304596bb714f936b46a33c31e5379",
+    "sourceCommit": "e9af6a933e6189177da15c64c316f426a9510201"
+  },
+  "packedManifestSha256": "cd2db13eedecb36d0b1d042d63fef2d036c044ca1dfed1eff7143e269e7f9373",
+  "baseline": {
+    "imageBytes": 22861499,
+    "nonImageBytes": 4684752,
+    "unchangedAuxiliaryImageBytes": 1705765,
+    "imageAllowance": 3315248,
+    "totalGate": 8000000
+  },
+  "methods": {
+    "near60": [
+      "-near_lossless",
+      "60",
+      "-exact",
+      "-q",
+      "100",
+      "-m",
+      "6"
+    ],
+    "rgb85": [
+      "-q",
+      "85",
+      "-alpha_q",
+      "100",
+      "-sharp_yuv",
+      "-exact",
+      "-m",
+      "6"
+    ]
+  },
+  "assets": [
+    {
+      "owner": "mochi",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/mochi/psd-placeholder-r3/mochi.png",
+      "request": "assets/cardrpg-look/spine/mochi/psd-placeholder-r3/mochi.png",
+      "observedOriginalTransferBytes": 858722,
+      "sourceSha256": "fa125d28384cf039e191b981ac5b70a6ec094e2cae1a3326b9769621efb37518",
+      "sourceBytes": 858453,
+      "size": [
+        1024,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-mochi-near60.webp",
+          "bytes": 490384,
+          "sha256": "0a404626b2b7298c63db89427a738862cd13b7f883fa0718965e5f399de7a0dd",
+          "seconds": 3.6389002920000006,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 298162,
+          "maskedMeanLabDelta": 0.014115956467306475,
+          "perPixelDeltaE76": {
+            "mean": 1.0633642673492432,
+            "p95": 2.0653841495513916,
+            "max": 3.7142579555511475
+          },
+          "ssimDiagnostic512": 0.9986729498957213,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-mochi-rgb85.webp",
+          "bytes": 206056,
+          "sha256": "6080aacd3a3463ad5356a30055913565bf9646b4f5ef399de4d6aace9a6e7ce5",
+          "seconds": 6.639169292,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 298162,
+          "maskedMeanLabDelta": 0.23497233564840075,
+          "perPixelDeltaE76": {
+            "mean": 3.055546760559082,
+            "p95": 6.796702861785889,
+            "max": 48.75056457519531
+          },
+          "ssimDiagnostic512": 0.9887205449283721,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 269
+    },
+    {
+      "owner": "soot",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+      "request": "assets/cardrpg-look/spine/soot/placeholder/soot.png",
+      "observedOriginalTransferBytes": 947984,
+      "sourceSha256": "5cc365e1a56369e43ed74bdb8f8563aa53a063afe18639935e09670abfa9924b",
+      "sourceBytes": 947715,
+      "size": [
+        1024,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-soot-near60.webp",
+          "bytes": 498666,
+          "sha256": "fe542a4c85426cb4b3afee9f20f05e508740a64e9a63ee916fa90ae0772c7e13",
+          "seconds": 3.025459250000001,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 334222,
+          "maskedMeanLabDelta": 0.010021611895719375,
+          "perPixelDeltaE76": {
+            "mean": 1.1440112590789795,
+            "p95": 2.2602698802948,
+            "max": 3.6978399753570557
+          },
+          "ssimDiagnostic512": 0.9991107230972016,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-soot-rgb85.webp",
+          "bytes": 134396,
+          "sha256": "84c9c9656ea6ed686a22445635d80b68a74d52612aa954c28a5a8c4835742ff2",
+          "seconds": 5.2647333750000005,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 334222,
+          "maskedMeanLabDelta": 0.2341164523914449,
+          "perPixelDeltaE76": {
+            "mean": 2.4210808277130127,
+            "p95": 5.237860679626465,
+            "max": 20.63381004333496
+          },
+          "ssimDiagnostic512": 0.9943358777370577,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 269,
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-soot-comparison.png",
+        "sha256": "d83106684097be30b09a10febbb29d1efcf70f97f2846bbcbe07e991f43241e3",
+        "crop": [
+          0,
+          480,
+          320,
+          800
+        ],
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T20:53:48.300830+00:00",
+        "reviewNote": "Same native face crop inspected once. Eye, ear edge, hat stitching and whiskers remain legible in RGB85; some fine fur grain is smoother. Near60 appears similar here but its measured alpha mutation fails the chosen delivery condition. No battle-film acceptance."
+      }
+    },
+    {
+      "owner": "clover",
+      "kind": "actor",
+      "source": "assets/cardrpg-look/spine/clover/psd-placeholder-r1/clover.png",
+      "request": "assets/cardrpg-look/spine/clover/psd-placeholder-r1/clover.png",
+      "observedOriginalTransferBytes": 971714,
+      "sourceSha256": "eddc48d3c87832f72c1a3751d454ae2a26261af66fe1552beab1a687acbc8381",
+      "sourceBytes": 971445,
+      "size": [
+        1024,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-clover-near60.webp",
+          "bytes": 553882,
+          "sha256": "956e4308cdcb5fe23321318e31b93e53dc41466dca385e2e40644cbde255f5f3",
+          "seconds": 4.258056042,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 351123,
+          "maskedMeanLabDelta": 0.006292416014250709,
+          "perPixelDeltaE76": {
+            "mean": 1.0324679613113403,
+            "p95": 1.9075161218643188,
+            "max": 3.4120163917541504
+          },
+          "ssimDiagnostic512": 0.9989758421711713,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-clover-rgb85.webp",
+          "bytes": 220576,
+          "sha256": "83cca99db34d9d917b0eceea8654184afc24311321e03c10cbaae88de95429ba",
+          "seconds": 3.7004465420000017,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 351123,
+          "maskedMeanLabDelta": 0.14018418637565538,
+          "perPixelDeltaE76": {
+            "mean": 2.639282703399658,
+            "p95": 6.323542594909668,
+            "max": 39.66371536254883
+          },
+          "ssimDiagnostic512": 0.9925831989225138,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 269
+    },
+    {
+      "owner": "panko",
+      "kind": "actor",
+      "source": "apps/web/public/units/panko/rig-depth.png",
+      "request": "/units/panko/rig-depth.png",
+      "observedOriginalTransferBytes": 1570161,
+      "sourceSha256": "1a9e5df12fcb667343b823d09e43e8dedb65ead0a61b8fb890a22fb4b9f27e94",
+      "sourceBytes": 1569890,
+      "size": [
+        2048,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-panko-near60.webp",
+          "bytes": 691358,
+          "sha256": "35cb9f9001231281896326634dcd1bdbae2e963e4354079436953c6520a92b9a",
+          "seconds": 4.502498458000002,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 541894,
+          "maskedMeanLabDelta": 0.007956635025295918,
+          "perPixelDeltaE76": {
+            "mean": 1.0152848958969116,
+            "p95": 1.980389952659607,
+            "max": 3.4862589836120605
+          },
+          "ssimDiagnostic512": 0.9996513717249794,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-panko-rgb85.webp",
+          "bytes": 225460,
+          "sha256": "5c0250f5ad96aec3fcc89c01e1f4a2f82bf9a54747f0787cb5bdbd714d3bace3",
+          "seconds": 2.840326499999996,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 541894,
+          "maskedMeanLabDelta": 0.15916046270817527,
+          "perPixelDeltaE76": {
+            "mean": 2.164069175720215,
+            "p95": 4.545947074890137,
+            "max": 30.784591674804688
+          },
+          "ssimDiagnostic512": 0.9979157045161111,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 271,
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-panko-comparison.png",
+        "sha256": "6e9b0d8dfa82a2b272bf95d34fc013640af4daeae0b06e81b181ff5179d773b2",
+        "crop": [
+          160,
+          160,
+          480,
+          480
+        ],
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T20:53:48.300830+00:00",
+        "reviewNote": "Same native apron crop inspected once. Belt knot, pocket seam and buttons remain distinct; RGB85 smooths fine woven texture slightly. The crop does not establish face/whole-body readability."
+      }
+    },
+    {
+      "owner": "binding-thread",
+      "kind": "actor",
+      "source": "apps/web/public/units/binding-thread/rig-depth.png",
+      "request": "/units/binding-thread/rig-depth.png",
+      "observedOriginalTransferBytes": 1156592,
+      "sourceSha256": "46347f4d0d833c43a34b0075c76c385c2590f3edeaee3be6b3f9bff23135ffab",
+      "sourceBytes": 1156321,
+      "size": [
+        2048,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-binding-thread-near60.webp",
+          "bytes": 534998,
+          "sha256": "5d3af4a20b66d9a57267ccf906744a41057da4d858cff29dca419c739e37dbbe",
+          "seconds": 3.404665999999999,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 363699,
+          "maskedMeanLabDelta": 0.016202185443219774,
+          "perPixelDeltaE76": {
+            "mean": 1.0648874044418335,
+            "p95": 1.996031403541565,
+            "max": 3.5103046894073486
+          },
+          "ssimDiagnostic512": 0.9997166881053303,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-binding-thread-rgb85.webp",
+          "bytes": 171876,
+          "sha256": "2b81e60e6ffdf443076743c5e1cd9353ece8808aaf0bf5da771b76e3804ef2c3",
+          "seconds": 2.506152583000002,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 363699,
+          "maskedMeanLabDelta": 0.12653888685142523,
+          "perPixelDeltaE76": {
+            "mean": 2.5850300788879395,
+            "p95": 5.150286674499512,
+            "max": 29.35776710510254
+          },
+          "ssimDiagnostic512": 0.9975260418152986,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 271
+    },
+    {
+      "owner": "yarn-giant",
+      "kind": "actor",
+      "source": "apps/web/public/units/yarn-giant/rig-depth.png",
+      "request": "/units/yarn-giant/rig-depth.png",
+      "observedOriginalTransferBytes": 2823543,
+      "sourceSha256": "c7d59339e83a51ec9845b5cacfe7e7266a8ba5f8cf2da646986f7e2927d9ebd2",
+      "sourceBytes": 2823272,
+      "size": [
+        2048,
+        2048
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-yarn-giant-near60.webp",
+          "bytes": 1389444,
+          "sha256": "235b3c7be8acf73e94abe2243ab644e70ea1f294b4a929ddfc80a0ca102c85b1",
+          "seconds": 5.3084385830000045,
+          "dimensionsExact": true,
+          "alphaExact": false,
+          "rgbaExact": false,
+          "maskedPixels": 977247,
+          "maskedMeanLabDelta": 0.012145405865219085,
+          "perPixelDeltaE76": {
+            "mean": 1.0446627140045166,
+            "p95": 1.9701204299926758,
+            "max": 3.329368829727173
+          },
+          "ssimDiagnostic512": 0.999512550555211,
+          "numericalGate": false,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/actor-yarn-giant-rgb85.webp",
+          "bytes": 339628,
+          "sha256": "2f92f160f56bbd60fa13371b967236ab7ffbe1db4c56c49df62c69ee6e1c1961",
+          "seconds": 4.185599625000002,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 977247,
+          "maskedMeanLabDelta": 0.15524907038621907,
+          "perPixelDeltaE76": {
+            "mean": 2.4488396644592285,
+            "p95": 5.046241760253906,
+            "max": 30.197650909423828
+          },
+          "ssimDiagnostic512": 0.9966725962512811,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 271
+    },
+    {
+      "owner": "mochi",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/mochi-0.webp",
+      "page": "mochi-0.webp",
+      "observedOriginalTransferBytes": 727464,
+      "sourceSha256": "f08a34979f8ac410d046ae4c4639f1b3cac8285133a732539cee9375a42588c0",
+      "sourceBytes": 727194,
+      "size": [
+        1024,
+        2560
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-mochi-near60.webp",
+          "bytes": 725422,
+          "sha256": "66d8a911543a51e8b5f5b1b38ca26d6a11eab636c474780a77c89c1fc1c7bdd9",
+          "seconds": 8.000985958000001,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 209448,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-mochi-rgb85.webp",
+          "bytes": 348836,
+          "sha256": "79ba70e1f518840a2361fe948e7e20d91cddb79d7e21046b96e1730b76fc62b3",
+          "seconds": 9.357339749999994,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 209448,
+          "maskedMeanLabDelta": 0.1427417095988681,
+          "perPixelDeltaE76": {
+            "mean": 1.5520615577697754,
+            "p95": 3.4734833240509033,
+            "max": 28.714237213134766
+          },
+          "ssimDiagnostic512": 0.999853371895672,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270
+    },
+    {
+      "owner": "soot",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/soot-0.webp",
+      "page": "soot-0.webp",
+      "observedOriginalTransferBytes": 661406,
+      "sourceSha256": "ca02da5fbe8c03f03a01586d2779fbf97ef3a8ab45dcf5cc50bc9f3ba6f6e17b",
+      "sourceBytes": 661136,
+      "size": [
+        1024,
+        2560
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-soot-near60.webp",
+          "bytes": 660110,
+          "sha256": "c1bcfe25d3ac6356e9ce2154e2c5f8a3709a318132a393268491426bcd48ee5e",
+          "seconds": 6.980019416000005,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 161904,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-soot-rgb85.webp",
+          "bytes": 324160,
+          "sha256": "f7766abf2fc83d966b23195a6d6d5d3d6f6ce2e941ccd7f5f682ffc02d441b1d",
+          "seconds": 10.07144975,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 161904,
+          "maskedMeanLabDelta": 0.2593201575201154,
+          "perPixelDeltaE76": {
+            "mean": 1.3999214172363281,
+            "p95": 3.326951503753662,
+            "max": 34.2039680480957
+          },
+          "ssimDiagnostic512": 0.9999290683353351,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270,
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-soot-comparison.png",
+        "sha256": "e86e4ecd656f3312357bc6e54e847494e5d950063291f9e32f036fc383aec905",
+        "crop": [
+          320,
+          0,
+          640,
+          320
+        ],
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T20:53:48.300830+00:00",
+        "reviewNote": "Same native painted-flame crop inspected once. Purple/gold shapes and bright core remain recognizable without an obvious seam in RGB85. This is texture detail, not impact timing or whole-effect film proof."
+      }
+    },
+    {
+      "owner": "clover",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/clover-0.webp",
+      "page": "clover-0.webp",
+      "observedOriginalTransferBytes": 704318,
+      "sourceSha256": "c1c0bc6fcc435c2ba2035812b468ae67d446c12a2689a4709d3e865e8134e199",
+      "sourceBytes": 704048,
+      "size": [
+        1024,
+        2560
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-clover-near60.webp",
+          "bytes": 702188,
+          "sha256": "6a8fbaf556f4f6cb2cfff4f5406ae9aeb7c0ad5daab7a972ef96e2e805978f3a",
+          "seconds": 6.549613249999993,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 157434,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-clover-rgb85.webp",
+          "bytes": 328000,
+          "sha256": "ac69c8c671cb769f630f93e9cb696db76b77389566de908f3c49b411c458e95f",
+          "seconds": 9.057023790999992,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 157434,
+          "maskedMeanLabDelta": 0.1718976102210977,
+          "perPixelDeltaE76": {
+            "mean": 1.3961825370788574,
+            "p95": 3.262418031692505,
+            "max": 22.43790626525879
+          },
+          "ssimDiagnostic512": 0.9999303305144633,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270
+    },
+    {
+      "owner": "panko",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/panko-0.webp",
+      "page": "panko-0.webp",
+      "observedOriginalTransferBytes": 862002,
+      "sourceSha256": "66720d11663a387c76e5b0295fc8fec49608342a8ca57d2fd9c03b38044cd76f",
+      "sourceBytes": 861732,
+      "size": [
+        1024,
+        2560
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-panko-near60.webp",
+          "bytes": 861184,
+          "sha256": "7e86cca46cadfd543613c6673cd90477c34568deaa984f4606dbf3b53cbd7db9",
+          "seconds": 8.102063958000002,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 185524,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-panko-rgb85.webp",
+          "bytes": 361762,
+          "sha256": "46943115a89f40d8c4bf1690b871068ede197f0b615ebf8463eea32ed285466f",
+          "seconds": 9.397242000000006,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 185524,
+          "maskedMeanLabDelta": 0.12739129567116603,
+          "perPixelDeltaE76": {
+            "mean": 1.5280996561050415,
+            "p95": 3.3963546752929688,
+            "max": 26.057924270629883
+          },
+          "ssimDiagnostic512": 0.9998873787715029,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270,
+      "comparison": {
+        "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-panko-comparison.png",
+        "sha256": "6c4ad9580068879b6c2f07e2f619e03f5a65c57b719156ee00e40cae787df1c4",
+        "crop": [
+          160,
+          1600,
+          480,
+          1920
+        ],
+        "reviewed": true,
+        "reviewedAt": "2026-11-16T20:53:48.300830+00:00",
+        "reviewNote": "Same native oven crop inspected once. Door silhouette, handle and golden flourishes remain distinguishable in RGB85; no obvious isolated compression block was seen. Complete effect motion remains untested."
+      }
+    },
+    {
+      "owner": "binding-thread",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
+      "page": "binding-thread-0.webp",
+      "observedOriginalTransferBytes": 275910,
+      "sourceSha256": "6c635ee1c73b5057679ede7b32567a30bf9e52281b145ab36796d960d75ab161",
+      "sourceBytes": 275640,
+      "size": [
+        1024,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-binding-thread-near60.webp",
+          "bytes": 275136,
+          "sha256": "a7c5f7ea9be22acb573e73688f5a964cfdb4c2b1b35652f6639339ca8378a526",
+          "seconds": 2.657018334,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 62776,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-binding-thread-rgb85.webp",
+          "bytes": 133318,
+          "sha256": "0151ee538142bb801d775b4a3453da28be285b49db0fb18eac15dd49c16b0792",
+          "seconds": 5.322221875000011,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 62776,
+          "maskedMeanLabDelta": 0.1656084199601511,
+          "perPixelDeltaE76": {
+            "mean": 1.671310544013977,
+            "p95": 3.764789581298828,
+            "max": 18.35350799560547
+          },
+          "ssimDiagnostic512": 0.9996324167826961,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270
+    },
+    {
+      "owner": "yarn-giant",
+      "kind": "vfx",
+      "source": "assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
+      "page": "yarn-giant-0.webp",
+      "observedOriginalTransferBytes": 311764,
+      "sourceSha256": "e93a46f3812c93d597a2c1894a5e2b2fdea52c189685301e99d164ce0f6a7897",
+      "sourceBytes": 311494,
+      "size": [
+        1024,
+        1024
+      ],
+      "candidates": [
+        {
+          "method": "near60",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-yarn-giant-near60.webp",
+          "bytes": 310642,
+          "sha256": "330f8108f6b02bacd278117812f790ef9a866bf601d79eb68bbe5789f808d0ba",
+          "seconds": 2.7278350420000095,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": true,
+          "maskedPixels": 88565,
+          "maskedMeanLabDelta": 0.0,
+          "perPixelDeltaE76": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "ssimDiagnostic512": 1.0,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        },
+        {
+          "method": "rgb85",
+          "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/drill-r1/vfx-yarn-giant-rgb85.webp",
+          "bytes": 141568,
+          "sha256": "11049f878be4fe4a806c05863a79575e89bfed4e03d38d5f8a1467aa495364da",
+          "seconds": 5.553893541999997,
+          "dimensionsExact": true,
+          "alphaExact": true,
+          "rgbaExact": false,
+          "maskedPixels": 88565,
+          "maskedMeanLabDelta": 0.16723905443595588,
+          "perPixelDeltaE76": {
+            "mean": 1.6903409957885742,
+            "p95": 3.9280028343200684,
+            "max": 19.57696533203125
+          },
+          "ssimDiagnostic512": 0.9995233535911558,
+          "numericalGate": true,
+          "humanReviewRequired": true
+        }
+      ],
+      "observedResponseOverhead": 270
+    }
+  ],
+  "complete": true,
+  "projections": [
+    {
+      "method": "near60",
+      "ownedImageBytesWithObservedOverhead": 7696654,
+      "allImageBytes": 9402419,
+      "totalBytes": 14087171,
+      "withinBudgetProjection": false,
+      "numericalGates": false,
+      "measuredProductionPass": false
+    },
+    {
+      "method": "rgb85",
+      "ownedImageBytesWithObservedOverhead": 2938876,
+      "allImageBytes": 4644641,
+      "totalBytes": 9329393,
+      "withinBudgetProjection": false,
+      "numericalGates": true,
+      "measuredProductionPass": false
+    }
+  ],
+  "finished": "2026-11-16T20:52:15.257477+00:00",
+  "scriptSha256AtRun": "3f589674ed858f9a4dc9a6321a5b946032b58630421b3618f1390739813dfd69",
+  "decision": {
+    "at": "2026-11-16T20:53:48.300830+00:00",
+    "productionSelected": false,
+    "reason": "Both budget projections exceed8MB. Near60 also changes actor alpha. RGB85 numerical color/alpha checks pass and four detail comparisons are closed, but it does not meet the budget. Next two retained experiments use RGB60/RGB40 at unchanged dimensions and lossless alpha."
+  }
+}

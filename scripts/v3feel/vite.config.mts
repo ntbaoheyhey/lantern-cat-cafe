@@ -1,9 +1,17 @@
 import base from '../../apps/web/vite.config.ts';
-import {readFileSync} from 'node:fs';
+import {existsSync,readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
-import {demoAssetAliases} from '../../tools/v3-demo/asset-aliases.mjs';
 
-const aliases = demoAssetAliases(resolve(import.meta.dirname, '../..'));
+const root=resolve(import.meta.dirname,'../..');
+// Public units also contains promotional assets. Only registered actors need portraits.
+const units=JSON.parse(readFileSync(resolve(root,'assets/cardrpg-look/spine/slots.json'),'utf8')).units as {id:string}[];
+const aliases=new Map<string,string>(units.flatMap(({id}):[string,string][]=>{
+  if(existsSync(resolve(root,'apps/web/public/units',id,'portrait.webp')))return [];
+  const face=resolve(root,'assets/cardrpg-a6/illustrations',`${id}-face.webp`);
+  const source=existsSync(face)?face:resolve(root,'assets/cardrpg-a6/illustrations',`${id}.webp`);
+  if(!existsSync(source))throw Error(`Missing registered actor portrait: ${id}`);
+  return [[`/units/${id}/portrait.webp`,source]];
+}));
 
 // Demo-only entry and bundled fonts; the shipping application config is unchanged.
 export default {
