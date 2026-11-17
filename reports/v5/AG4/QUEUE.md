@@ -5,14 +5,14 @@
 - [x] U2 Split the 3 MB ranged-impacts file: cut v4-ranged-impacts cues <= 300KB total
 - [x] U3 Enemy + boss + UI set: hits x3, death x2, yarn-giant ult, receipt chime
 - [x] U4 Revisions: durationSeconds, bus, runtime aliases mapped in manifest.json & CXI-MAPPING.json
-- [ ] R1 Variations: 2 extra takes per frequent cue (pitch +/-3%, layer swap)
-- [ ] R2 Ambience loops: cosy workshop/café idle and battle bed (<=150KB each)
-- [ ] R3 UI set: click, hover, confirm, cancel, card flip, coin, error (<=15KB each)
-
-## Refill List Remaining
-- [ ] R4 Stingers: victory, defeat, level-up, boss appear (<=3s each)
+- [x] R1 Variations: 2 extra takes per frequent cue (pitch +/-3%, layer swap: 20 cues, 40 files)
+- [x] R2 Ambience loops: cosy workshop/café idle and battle bed (<=150KB each)
+- [x] R3 UI set: click, hover, confirm, cancel, card flip, coin, error (<=15KB each)
+- [x] R4 Stingers: victory, defeat, level-up, boss appear (<=3s each)
 - [ ] R5 Chain moments: transaction sent, confirmed on Avalanche, receipt ready
 - [ ] R6 Cat emotes synthesized: happy chirp, hurt yelp, heal purr per hero
+
+## Refill List Remaining
 - [ ] R7 Boss phase-change and ultimate layers matching CXV cue list
 - [ ] R8 Mix pass: loudness table for all v5 files, fix outliers, gain tuning
 - [ ] R9 Size pass: reduce every file 10% without lowering any score

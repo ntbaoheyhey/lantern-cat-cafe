@@ -1,482 +1,4328 @@
 {
-  "at": "2026-11-17T05:42:04.142Z",
-  "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3",
-  "sourceLicense": "CC0-1.0",
-  "totalVariants": 36,
-  "totalOpusBytes": 84139,
-  "totalM4aBytes": 164155,
-  "totalCombinedBytes": 248294,
-  "totalCombinedKb": 242.5,
-  "budgetMaxKb": 300,
-  "budgetPass": true,
-  "variants": [
-    {
+  "at": "2026-11-17T06:02:30.488Z",
+  "totalVariants": 144,
+  "totalOpusBytes": 712080,
+  "totalM4aBytes": 912344,
+  "mapping": {
+    "ranged.ember.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-0.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/0-0",
       "element": "ember",
-      "safeName": "ranged-ember-impact-0-0",
-      "sourceStartSec": 0,
-      "durationSec": 1.0325,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-0-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-0-0.m4a",
-      "opusSizeBytes": 2644,
-      "m4aSizeBytes": 4875,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-1.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/0-1",
       "element": "ember",
-      "safeName": "ranged-ember-impact-0-1",
-      "sourceStartSec": 1.1125,
-      "durationSec": 0.9134375,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-0-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-0-1.m4a",
-      "opusSizeBytes": 2456,
-      "m4aSizeBytes": 4804,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-2.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/0-2",
       "element": "ember",
-      "safeName": "ranged-ember-impact-0-2",
-      "sourceStartSec": 2.1059375,
-      "durationSec": 0.7096875,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-0-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-0-2.m4a",
-      "opusSizeBytes": 1935,
-      "m4aSizeBytes": 3925,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/0-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-3.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/0-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/0-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-4.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/0-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/0-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-5.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/0-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-0.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/1-0",
       "element": "ember",
-      "safeName": "ranged-ember-impact-1-0",
-      "sourceStartSec": 5.161041666666666,
-      "durationSec": 0.9134375,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-1-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-1-0.m4a",
-      "opusSizeBytes": 2436,
-      "m4aSizeBytes": 5207,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-1.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/1-1",
       "element": "ember",
-      "safeName": "ranged-ember-impact-1-1",
-      "sourceStartSec": 6.154479166666667,
-      "durationSec": 0.9134375,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-1-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-1-1.m4a",
-      "opusSizeBytes": 2247,
-      "m4aSizeBytes": 4757,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-2.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/1-2",
       "element": "ember",
-      "safeName": "ranged-ember-impact-1-2",
-      "sourceStartSec": 7.147916666666667,
-      "durationSec": 0.9134375,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-1-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-1-2.m4a",
-      "opusSizeBytes": 2344,
-      "m4aSizeBytes": 5035,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/1-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-3.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/1-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/1-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-4.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/1-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/1-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-5.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/1-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-0.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/2-0",
       "element": "ember",
-      "safeName": "ranged-ember-impact-2-0",
-      "sourceStartSec": 10.5109375,
-      "durationSec": 0.7096875,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-2-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-2-0.m4a",
-      "opusSizeBytes": 2050,
-      "m4aSizeBytes": 4407,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-1.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/2-1",
       "element": "ember",
-      "safeName": "ranged-ember-impact-2-1",
-      "sourceStartSec": 11.300625,
-      "durationSec": 0.9134375,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-2-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-2-1.m4a",
-      "opusSizeBytes": 2407,
-      "m4aSizeBytes": 4609,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-2.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
       "variantId": "ranged.ember.impact/2-2",
       "element": "ember",
-      "safeName": "ranged-ember-impact-2-2",
-      "sourceStartSec": 12.2940625,
-      "durationSec": 0.7096875,
-      "opusPath": "/audio/v5/legacy/ranged-ember-impact-2-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-ember-impact-2-2.m4a",
-      "opusSizeBytes": 2279,
-      "m4aSizeBytes": 4078,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.ember.impact/2-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-3.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/2-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/2-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-4.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/2-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/2-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-5.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/2-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-0.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-0",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-1.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-1",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-2.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-2",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-3.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-4.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/3-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-3-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-3-5.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/3-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-0.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-0",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-1.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-1",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-2.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-2",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-3.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-4.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/4-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-4-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-4-5.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/4-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-0.m4a",
+      "durationSeconds": 0.7374583333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-0",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_000:impact-sounds/impactMining_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:knifeSlice:rpg-audio/knifeSlice.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-1.m4a",
+      "durationSeconds": 1.0325,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-1",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_001:impact-sounds/impactMining_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-2.m4a",
+      "durationSeconds": 0.9134375,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-2",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_002:impact-sounds/impactMining_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-3": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-3.m4a",
+      "durationSeconds": 0.7096875,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-3",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_003:impact-sounds/impactMining_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife1:rpg-audio/drawKnife1.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-4": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-4.m4a",
+      "durationSeconds": 0.7558125,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-4",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactMining_004:impact-sounds/impactMining_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife2:rpg-audio/drawKnife2.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.ember.impact/5-5": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-5-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-5-5.m4a",
+      "durationSeconds": 0.6715208333333333,
+      "bus": "sfx",
+      "variantId": "ranged.ember.impact/5-5",
+      "element": "ember",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPlank_medium_000:impact-sounds/impactPlank_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:rpg-audio:drawKnife3:rpg-audio/drawKnife3.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-0.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/0-0",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-0-0",
-      "sourceStartSec": 31.8025,
-      "durationSec": 1.16,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-0-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-0-0.m4a",
-      "opusSizeBytes": 3229,
-      "m4aSizeBytes": 6222,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-1.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/0-1",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-0-1",
-      "sourceStartSec": 33.0425,
-      "durationSec": 1.16,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-0-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-0-1.m4a",
-      "opusSizeBytes": 3148,
-      "m4aSizeBytes": 5847,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-2.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/0-2",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-0-2",
-      "sourceStartSec": 34.2825,
-      "durationSec": 1.0072708333333333,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-0-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-0-2.m4a",
-      "opusSizeBytes": 2831,
-      "m4aSizeBytes": 5017,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/0-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-3.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/0-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/0-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-4.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/0-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/0-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-5.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/0-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_000:impact-sounds/impactMetal_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-0.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/1-0",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-1-0",
-      "sourceStartSec": 37.9625,
-      "durationSec": 1.16,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-1-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-1-0.m4a",
-      "opusSizeBytes": 3224,
-      "m4aSizeBytes": 5887,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-1.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/1-1",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-1-1",
-      "sourceStartSec": 39.2025,
-      "durationSec": 1.16,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-1-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-1-1.m4a",
-      "opusSizeBytes": 3205,
-      "m4aSizeBytes": 5787,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-2.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/1-2",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-1-2",
-      "sourceStartSec": 40.4425,
-      "durationSec": 1.0072708333333333,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-1-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-1-2.m4a",
-      "opusSizeBytes": 2478,
-      "m4aSizeBytes": 5344,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/1-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-3.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/1-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/1-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-4.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/1-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/1-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-5.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/1-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_001:impact-sounds/impactMetal_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-0.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/2-0",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-2-0",
-      "sourceStartSec": 43.864270833333336,
-      "durationSec": 1.0072708333333333,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-2-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-2-0.m4a",
-      "opusSizeBytes": 2678,
-      "m4aSizeBytes": 5835,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-1.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/2-1",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-2-1",
-      "sourceStartSec": 44.95154166666667,
-      "durationSec": 1.16,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-2-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-2-1.m4a",
-      "opusSizeBytes": 2696,
-      "m4aSizeBytes": 5748,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-2.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
       "variantId": "ranged.heavy.impact/2-2",
       "element": "heavy",
-      "safeName": "ranged-heavy-impact-2-2",
-      "sourceStartSec": 46.191541666666666,
-      "durationSec": 1.0072708333333333,
-      "opusPath": "/audio/v5/legacy/ranged-heavy-impact-2-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-heavy-impact-2-2.m4a",
-      "opusSizeBytes": 2727,
-      "m4aSizeBytes": 5393,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.heavy.impact/2-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-3.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/2-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/2-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-4.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/2-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/2-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-5.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/2-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_002:impact-sounds/impactMetal_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-0.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-0",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-1.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-1",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-2.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-2",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-3.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-4.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/3-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-3-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-3-5.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/3-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_003:impact-sounds/impactMetal_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-0.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-0",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-1.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-1",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-2.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-2",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-3.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-4.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/4-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-4-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-4-5.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/4-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_heavy_004:impact-sounds/impactMetal_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-0.m4a",
+      "durationSeconds": 0.7832916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-0",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactPlate_heavy_000:impact-sounds/impactPlate_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_medium_000:impact-sounds/impactWood_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-1.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-1",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_000:impact-sounds/impactBell_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_004:impact-sounds/impactWood_heavy_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-2.m4a",
+      "durationSeconds": 1.16,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-2",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_001:impact-sounds/impactBell_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_003:impact-sounds/impactWood_heavy_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-3": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-3.m4a",
+      "durationSeconds": 1.0072708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-3",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_002:impact-sounds/impactBell_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_002:impact-sounds/impactWood_heavy_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-4": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-4.m4a",
+      "durationSeconds": 0.9636041666666667,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-4",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_003:impact-sounds/impactBell_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_001:impact-sounds/impactWood_heavy_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.heavy.impact/5-5": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-5-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-5-5.m4a",
+      "durationSeconds": 0.6085416666666666,
+      "bus": "sfx",
+      "variantId": "ranged.heavy.impact/5-5",
+      "element": "heavy",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactMetal_medium_000:impact-sounds/impactMetal_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactBell_heavy_004:impact-sounds/impactBell_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactWood_heavy_000:impact-sounds/impactWood_heavy_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-0.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/0-0",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-0-0",
-      "sourceStartSec": 68.77875,
-      "durationSec": 0.8367916666666667,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-0-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-0-0.m4a",
-      "opusSizeBytes": 2281,
-      "m4aSizeBytes": 4053,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-1.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/0-1",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-0-1",
-      "sourceStartSec": 69.69554166666667,
-      "durationSec": 0.879125,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-0-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-0-1.m4a",
-      "opusSizeBytes": 2306,
-      "m4aSizeBytes": 4050,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-2.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/0-2",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-0-2",
-      "sourceStartSec": 70.65466666666667,
-      "durationSec": 0.8793958333333334,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-0-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-0-2.m4a",
-      "opusSizeBytes": 2270,
-      "m4aSizeBytes": 4030,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/0-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-3.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/0-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/0-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-4.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/0-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/0-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-5.m4a",
+      "durationSeconds": 0.4250833333333333,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/0-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-0.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/1-0",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-1-0",
-      "sourceStartSec": 73.95758333333333,
-      "durationSec": 0.879125,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-1-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-1-0.m4a",
-      "opusSizeBytes": 2279,
-      "m4aSizeBytes": 3956,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-1.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/1-1",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-1-1",
-      "sourceStartSec": 74.91670833333333,
-      "durationSec": 0.879125,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-1-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-1-1.m4a",
-      "opusSizeBytes": 2218,
-      "m4aSizeBytes": 3945,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-2.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/1-2",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-1-2",
-      "sourceStartSec": 75.87583333333335,
-      "durationSec": 0.8793958333333334,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-1-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-1-2.m4a",
-      "opusSizeBytes": 2188,
-      "m4aSizeBytes": 3907,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/1-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-3.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/1-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/1-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-4.m4a",
+      "durationSeconds": 0.4786458333333333,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/1-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/1-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-5.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/1-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-0.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/2-0",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-2-0",
-      "sourceStartSec": 79.28822916666667,
-      "durationSec": 0.8793958333333334,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-2-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-2-0.m4a",
-      "opusSizeBytes": 2258,
-      "m4aSizeBytes": 4535,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-1.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/2-1",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-2-1",
-      "sourceStartSec": 80.247625,
-      "durationSec": 0.879125,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-2-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-2-1.m4a",
-      "opusSizeBytes": 2183,
-      "m4aSizeBytes": 4379,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-2.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
       "variantId": "ranged.shadow.impact/2-2",
       "element": "shadow",
-      "safeName": "ranged-shadow-impact-2-2",
-      "sourceStartSec": 81.20675,
-      "durationSec": 0.8793958333333334,
-      "opusPath": "/audio/v5/legacy/ranged-shadow-impact-2-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-shadow-impact-2-2.m4a",
-      "opusSizeBytes": 2265,
-      "m4aSizeBytes": 4526,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.shadow.impact/2-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-3.m4a",
+      "durationSeconds": 0.4301041666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/2-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/2-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-4.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/2-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/2-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-5.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/2-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-0.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-0",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-1.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-1",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-2.m4a",
+      "durationSeconds": 0.42764583333333334,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-2",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-3.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-4.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/3-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-3-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-3-5.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/3-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-0.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-0",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-1.m4a",
+      "durationSeconds": 0.4784791666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-1",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-2.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-2",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-3.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-4.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/4-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-4-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-4-5.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/4-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-0.m4a",
+      "durationSeconds": 0.539,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-0",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_000:impact-sounds/impactPunch_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_medium_000:impact-sounds/impactSoft_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt2:rpg-audio/clothBelt2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-1.m4a",
+      "durationSeconds": 0.8367916666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-1",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_001:impact-sounds/impactPunch_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_000:impact-sounds/impactSoft_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:clothBelt:rpg-audio/clothBelt.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-2.m4a",
+      "durationSeconds": 0.879125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-2",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_002:impact-sounds/impactPunch_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_001:impact-sounds/impactSoft_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth4:rpg-audio/cloth4.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-3": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-3.m4a",
+      "durationSeconds": 0.8793958333333334,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-3",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_003:impact-sounds/impactPunch_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_002:impact-sounds/impactSoft_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth3:rpg-audio/cloth3.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-4": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-4.m4a",
+      "durationSeconds": 0.85125,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-4",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_heavy_004:impact-sounds/impactPunch_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_003:impact-sounds/impactSoft_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth2:rpg-audio/cloth2.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.shadow.impact/5-5": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-5-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-5-5.m4a",
+      "durationSeconds": 0.8080416666666667,
+      "bus": "sfx",
+      "variantId": "ranged.shadow.impact/5-5",
+      "element": "shadow",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactPunch_medium_000:impact-sounds/impactPunch_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactSoft_heavy_004:impact-sounds/impactSoft_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:rpg-audio:cloth1:rpg-audio/cloth1.flac/foley",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-0.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/0-0",
       "element": "tide",
-      "safeName": "ranged-tide-impact-0-0",
-      "sourceStartSec": 99.96533333333333,
-      "durationSec": 0.5483125,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-0-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-0-0.m4a",
-      "opusSizeBytes": 1768,
-      "m4aSizeBytes": 3240,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-1.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/0-1",
       "element": "tide",
-      "safeName": "ranged-tide-impact-0-1",
-      "sourceStartSec": 100.59364583333333,
-      "durationSec": 0.739,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-0-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-0-1.m4a",
-      "opusSizeBytes": 1938,
-      "m4aSizeBytes": 3813,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-2.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/0-2",
       "element": "tide",
-      "safeName": "ranged-tide-impact-0-2",
-      "sourceStartSec": 101.41264583333333,
-      "durationSec": 0.55425,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-0-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-0-2.m4a",
-      "opusSizeBytes": 1835,
-      "m4aSizeBytes": 3493,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/0-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-3.m4a",
+      "durationSeconds": 0.478625,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/0-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/0-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-4.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/0-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/0-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-5.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/0-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-0.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/1-0",
       "element": "tide",
-      "safeName": "ranged-tide-impact-1-0",
-      "sourceStartSec": 104.09341666666666,
-      "durationSec": 0.739,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-1-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-1-0.m4a",
-      "opusSizeBytes": 2038,
-      "m4aSizeBytes": 4252,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-1.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/1-1",
       "element": "tide",
-      "safeName": "ranged-tide-impact-1-1",
-      "sourceStartSec": 104.91241666666666,
-      "durationSec": 0.739,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-1-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-1-1.m4a",
-      "opusSizeBytes": 2012,
-      "m4aSizeBytes": 4260,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-2.m4a",
+      "durationSeconds": 0.478625,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/1-2",
       "element": "tide",
-      "safeName": "ranged-tide-impact-1-2",
-      "sourceStartSec": 105.73141666666666,
-      "durationSec": 0.55425,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-1-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-1-2.m4a",
-      "opusSizeBytes": 1728,
-      "m4aSizeBytes": 3459,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/1-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-3.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/1-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/1-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-4.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/1-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/1-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-5.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/1-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-0.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/2-0",
       "element": "tide",
-      "safeName": "ranged-tide-impact-2-0",
-      "sourceStartSec": 108.64366666666668,
-      "durationSec": 0.55425,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-2-0.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-2-0.m4a",
-      "opusSizeBytes": 1862,
-      "m4aSizeBytes": 4027,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-1.m4a",
+      "durationSeconds": 0.478625,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/2-1",
       "element": "tide",
-      "safeName": "ranged-tide-impact-2-1",
-      "sourceStartSec": 109.27791666666667,
-      "durationSec": 0.739,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-2-1.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-2-1.m4a",
-      "opusSizeBytes": 2222,
-      "m4aSizeBytes": 4772,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     },
-    {
+    "ranged.tide.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-2.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
       "variantId": "ranged.tide.impact/2-2",
       "element": "tide",
-      "safeName": "ranged-tide-impact-2-2",
-      "sourceStartSec": 110.09691666666666,
-      "durationSec": 0.55425,
-      "opusPath": "/audio/v5/legacy/ranged-tide-impact-2-2.opus",
-      "m4aPath": "/audio/v5/legacy/ranged-tide-impact-2-2.m4a",
-      "opusSizeBytes": 1474,
-      "m4aSizeBytes": 2681,
-      "license": "CC0-1.0",
-      "sourceFile": "apps/web/public/audio/v4-ranged-impacts.mp3"
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/2-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-3.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/2-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/2-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-4.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/2-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/2-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-5.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/2-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-0.m4a",
+      "durationSeconds": 0.478625,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-0",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-1.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-1",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-2.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-2",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-3.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-4.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/3-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-3-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-3-5.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/3-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-0.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-0",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-1.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-1",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-2.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-2",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-3.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-4.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/4-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-4-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-4-5.m4a",
+      "durationSeconds": 0.539,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/4-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-0.m4a",
+      "durationSeconds": 0.8504375,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-0",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-1.m4a",
+      "durationSeconds": 0.5483125,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-1",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_000:impact-sounds/impactGlass_heavy_000.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_004:impact-sounds/impactGlass_light_004.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-2.m4a",
+      "durationSeconds": 0.739,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-2",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_001:impact-sounds/impactGlass_heavy_001.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_003:impact-sounds/impactGlass_light_003.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-3": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-3.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-3.m4a",
+      "durationSeconds": 0.55425,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-3",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_002:impact-sounds/impactGlass_heavy_002.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_002:impact-sounds/impactGlass_light_002.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-4": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-4.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-4.m4a",
+      "durationSeconds": 0.478625,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-4",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_003:impact-sounds/impactGlass_heavy_003.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_001:impact-sounds/impactGlass_light_001.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
+    },
+    "ranged.tide.impact/5-5": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-5-5.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-5-5.m4a",
+      "durationSeconds": 0.7062708333333333,
+      "bus": "sfx",
+      "variantId": "ranged.tide.impact/5-5",
+      "element": "tide",
+      "layers": [
+        {
+          "role": "transient",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/transient",
+          "offsetMs": 0
+        },
+        {
+          "role": "body",
+          "variantId": "kenney:impact-sounds:impactGlass_medium_000:impact-sounds/impactGlass_medium_000.flac/body",
+          "offsetMs": 7
+        },
+        {
+          "role": "tail",
+          "variantId": "kenney:impact-sounds:impactGlass_heavy_004:impact-sounds/impactGlass_heavy_004.flac/tail",
+          "offsetMs": 18
+        },
+        {
+          "role": "sweetener",
+          "variantId": "kenney:impact-sounds:impactGlass_light_000:impact-sounds/impactGlass_light_000.flac/sweetener",
+          "offsetMs": 23
+        }
+      ]
     }
-  ]
+  }
 }
