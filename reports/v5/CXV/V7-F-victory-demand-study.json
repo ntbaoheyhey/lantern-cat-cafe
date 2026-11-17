@@ -1,0 +1,232 @@
+{
+  "utc": "2026-11-17T21:39:28.323Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-response overrides on candidate6310; rule-resolved wave1 result fixture. No application edit. Same audit instrumentation for both modes. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay.",
+  "errors": [],
+  "pass": true,
+  "pixelChecks": [
+    {
+      "name": "loaded",
+      "equal": true,
+      "hashes": [
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9"
+      ]
+    },
+    {
+      "name": "idle",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "resized",
+      "equal": true,
+      "hashes": [
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc"
+      ]
+    },
+    {
+      "name": "restored-size",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "restored-context",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "os-reduced",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "normal-frozen-1000",
+      "equal": true,
+      "hashes": [
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c"
+      ]
+    },
+    {
+      "name": "normal-frozen-1600",
+      "equal": true,
+      "hashes": [
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821"
+      ]
+    },
+    {
+      "name": "normal-frozen-2800",
+      "equal": true,
+      "hashes": [
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e"
+      ]
+    }
+  ],
+  "ended": "2026-11-17T21:40:15.502Z",
+  "runs": [
+    {
+      "mode": "baseline",
+      "override": {
+        "mode": "baseline",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794950405326",
+            "sourceSha256": "15e4b095eb8969718b44a2625f09b5f14803df0fcf218a391fff75f0b54f5fda",
+            "overrideSha256": "d21310912ad08784caef49dd4ef8dcc990b37513aa12b3acf89877ac6f49eea1"
+          }
+        ]
+      },
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T21:39:32.535Z",
+      "cases": [
+        {
+          "name": "reduced-steady",
+          "ms": 5000,
+          "draws": 301,
+          "cpuMs": 676.9000000283122
+        },
+        {
+          "name": "normal-steady",
+          "ms": 3000,
+          "draws": 180,
+          "cpuMs": 554.4000000059605
+        },
+        {
+          "name": "os-reduced-steady",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 221.59999998658895
+        },
+        {
+          "name": "os-normal-resumed",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 260.4000000283122
+        }
+      ],
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "disposed": [
+        {
+          "draws": 546,
+          "disposed": true,
+          "connected": false
+        },
+        {
+          "draws": 435,
+          "disposed": true,
+          "connected": false
+        }
+      ],
+      "pendingUnmount": {
+        "draws": 2,
+        "cpuMs": 13.200000002980232,
+        "actors": 1,
+        "drawings": 1,
+        "disposed": true,
+        "width": 461,
+        "height": 245,
+        "ready": "false"
+      }
+    },
+    {
+      "mode": "demand",
+      "override": {
+        "mode": "demand",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794950405326",
+            "sourceSha256": "15e4b095eb8969718b44a2625f09b5f14803df0fcf218a391fff75f0b54f5fda",
+            "overrideSha256": "4bf4ac11c668a8fd31c794284f278d03fce5c4e6285c04b653538abfe590c333"
+          }
+        ]
+      },
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T21:39:56.041Z",
+      "cases": [
+        {
+          "name": "reduced-steady",
+          "ms": 5000,
+          "draws": 0,
+          "cpuMs": 0
+        },
+        {
+          "name": "normal-steady",
+          "ms": 3000,
+          "draws": 181,
+          "cpuMs": 553.0000000596046
+        },
+        {
+          "name": "os-reduced-steady",
+          "ms": 1500,
+          "draws": 0,
+          "cpuMs": 0
+        },
+        {
+          "name": "os-normal-resumed",
+          "ms": 1500,
+          "draws": 90,
+          "cpuMs": 228.10000000149012
+        }
+      ],
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "disposed": [
+        {
+          "draws": 8,
+          "disposed": true,
+          "connected": false
+        },
+        {
+          "draws": 311,
+          "disposed": true,
+          "connected": false
+        }
+      ],
+      "pendingUnmount": {
+        "draws": 2,
+        "cpuMs": 13.299999997019768,
+        "actors": 1,
+        "drawings": 1,
+        "disposed": true,
+        "width": 461,
+        "height": 245,
+        "ready": "false"
+      }
+    }
+  ],
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-prototype/report.json",
+  "visualReviewPending": true
+}
