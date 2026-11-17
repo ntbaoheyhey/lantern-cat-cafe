@@ -54,7 +54,10 @@ try{
   const sheet=resolve(out,owner+'-closure-1024.jpg');await sharp({create:{width:1024,height:1000,channels:3,background:'#171326'}}).composite(tiles).jpeg({quality:90}).toFile(sheet);report.sheets.push(sheet);
  }
  report.errors=errors;report.blockedRequests=blockedRequests;
- report.pass=errors.length===0&&blockedRequests.length===0&&report.rows.length===(process.env.CXV_HEROES??'mochi,soot,clover,panko').split(',').length*5&&report.rows.every(r=>r.openChanged===0&&r.alphaChanged===0&&r.outsideEyeBounds===0&&(r.key==='K4'?r.closedChanged===0:r.closedChanged>0));
+ // The candidate harness deliberately blocks external web fonts; that is not a
+ // GPU failure. Keep the request inventory and reject other unexpected blocks.
+ report.unexpectedBlocked=blockedRequests.filter(r=>new URL(r.url).hostname!=='fonts.googleapis.com');
+ report.pass=errors.length===0&&report.unexpectedBlocked.length===0&&report.rows.length===(process.env.CXV_HEROES??'mochi,soot,clover,panko').split(',').length*5&&report.rows.every(r=>r.openChanged===0&&r.alphaChanged===0&&r.outsideEyeBounds===0&&(r.key==='K4'?r.closedChanged===0:r.closedChanged>0));
  report.complete=true;assert(report.pass,'GPU closure control failed');
 }catch(e){report.failure=String(e.stack);throw e;}finally{await browser.close();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');}
 console.log(JSON.stringify({complete:report.complete,pass:report.pass,rows:report.rows.length,sheets:report.sheets,report:resolve(out,'report.json')}));
