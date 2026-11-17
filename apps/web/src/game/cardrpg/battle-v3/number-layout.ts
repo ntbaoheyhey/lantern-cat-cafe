@@ -18,6 +18,17 @@ export function placeNumber(body:Rect,p:NumberFootprint,width:number,height:numb
  if(previous)consider(previous.x,previous.y);
  for(const y of [idealY,foot-45*scale,foot+16*scale,foot-body.height*.36])
   for(const dx of [0,-.35,.35,-.65,.65,-.9,.9])consider(cx+dx*body.width,y);
+ // Align stack candidates to reserved ink boundaries. A fixed grid can miss
+ // the small gap between two large critical labels and report a false crowd.
+ for(const box of occupied){
+  const gap=8*scale;
+  for(const x of [cx,box.x+box.width/2]){
+   consider(x,box.y-p.bottom-gap);
+   consider(x,box.y+box.height+p.top+p.rise+gap);
+  }
+  consider(box.x-p.halfWidth-gap,idealY);
+  consider(box.x+box.width+p.halfWidth+gap,idealY);
+ }
  if(!best||best.cost>=width*width){
   const radius=Math.max(body.width,120*scale);
   for(let y=Math.max(ceiling+p.top+p.rise,foot-body.height*.7);y<=floor-p.bottom;y+=12*scale)

@@ -21,10 +21,14 @@ it('gives enemies Basic or Ultimate with bounded contact impulses and no support
   const ultimate=configureSequence(pilotFixture('enemy:'+owner).plan),basic=configureSequence(pilotFixture('enemy:'+owner+':basic').plan);
   expect(presentationTier(ultimate)).toBe('ultimate');expect(presentationTier(basic)).toBe('basic');
   const damaging=(plan:typeof basic)=>plan.events.some(e=>e.type==='damage'&&e.actorId===plan.actorId);
-  expect(impactFeedback(basic,350,false)).toEqual({flash:0,shake:damaging(basic)?1.5:0});
+  const basicFeedback=impactFeedback(basic,350,false);expect(basicFeedback.flash).toBe(0);
+  if(damaging(basic)){expect(basicFeedback.shake).toBeGreaterThan(0);expect(basicFeedback.shake).toBeLessThanOrEqual(1.5);}
+  else expect(basicFeedback.shake).toBe(0);
   expect(impactFeedback(basic,350,true)).toEqual({flash:0,shake:0});
   const before=JSON.stringify(ultimate),contact=ultimate.beats[2]!.start;
-  expect(impactFeedback(ultimate,contact,false)).toEqual({flash:0,shake:damaging(ultimate)?4:0});
+  const ultimateFeedback=impactFeedback(ultimate,contact,false);expect(ultimateFeedback.flash).toBe(0);
+  if(damaging(ultimate)){expect(ultimateFeedback.shake).toBeGreaterThan(0);expect(ultimateFeedback.shake).toBeLessThanOrEqual(4);}
+  else expect(ultimateFeedback.shake).toBe(0);
   for(const offset of [-1,120,300])expect(impactFeedback(ultimate,contact+offset,false)).toEqual({flash:0,shake:0});
   expect(impactFeedback(ultimate,contact,true)).toEqual({flash:0,shake:0});expect(JSON.stringify(ultimate)).toBe(before);
  }

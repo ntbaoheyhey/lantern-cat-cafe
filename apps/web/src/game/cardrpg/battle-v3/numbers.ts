@@ -6,6 +6,7 @@ import type {Rect} from '../../squad/turn3d/label-layout';
 import type {StatusPresentation} from '../../squad/turn3d/card-status-beats';
 import {numberRecipients,numberOffset} from './number-pieces';
 import {paintNumberBadge,type NumberBadge,type BadgePlan} from './number-badges';
+import {numberPeakScale,sampleNumberMotion,type NumberMotion} from './number-motion';
 type Glyph={x:number;y:number;width:number;height:number};
 type Atlas={canvas:HTMLCanvasElement;glyphs:Map<string,Glyph>;digitHeight:number};
 type Burst={key:string;id:string;text:string;x:number;y:number;at:number;height:number;color:string;critical:boolean;kind:string;badge?:NumberBadge};
@@ -17,6 +18,7 @@ export class BattleNumbers {
  private atlases=new Map<string,Atlas>();private chars='0123456789−+!CRIT◇×';
  private plan:EffectPlan|null=null;private pending:{id:string;labels:EffectPlan['events'][number][]}[]=[];
  private shown=new Set<string>();private bursts:Burst[]=[];private now=0;private last=0;private frameAt=-1;
+ private motion:NumberMotion={scale:1,rise:0,alpha:0,accent:0};
  constructor(private host:HTMLElement){
   this.c=this.canvas.getContext('2d')!;this.canvas.dataset.puppetNumbers='true';this.canvas.setAttribute('aria-hidden','true');
   Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'6'});
@@ -87,21 +89,26 @@ export class BattleNumbers {
   const occupied:Rect[]=[],faces=this.anchors.filter(a=>a.visible&&a.face).map(a=>a.face!);
   const scale=Math.min(1.3,Math.max(.65,this.host.ownerDocument.defaultView!.innerHeight/720));
   for(const b of this.bursts){
-   const age=this.now-b.at;if(age<0)continue;const t=age/NUMBER_LIFETIME_MS;
-   const pop=reduced?1:1+(b.critical?.18:.1)*(1-Math.min(1,age/160)),gh=b.height*pop;
-   const maxGh=b.height*(reduced?1:b.critical?1.18:1.1),tagHeight=14*scale;
+   const age=this.now-b.at;if(age<0)continue;
+   const motion=sampleNumberMotion(age,b.critical,b.kind,reduced,this.motion),gh=b.height*motion.scale;
+   const maxGh=b.height*(reduced?1:numberPeakScale(b.critical,b.kind)),tagHeight=14*scale;
    const textWidth=this.textWidth(b.text,gh,b.color),badgeSize=b.badge?gh:0,gap=b.badge&&b.text?5:0,inkWidth=textWidth+badgeSize+gap;
    const maxWidth=this.textWidth(b.text,maxGh,b.color)+(b.badge?maxGh:0)+gap;
-   const footprint:NumberFootprint={halfWidth:Math.max(maxWidth/2,b.critical?this.textWidth('CRIT',tagHeight,'#ffad55')/2:0)+4,top:(b.critical?maxGh*.75+tagHeight/2:maxGh/2)+4,bottom:maxGh/2+4,rise:reduced?0:24*scale};
+   const critWidth=b.critical?this.textWidth('CRIT',tagHeight,'#ffad55'):0,accentPad=b.critical?10*scale:0;
+   const footprint:NumberFootprint={halfWidth:Math.max(maxWidth/2,critWidth/2+accentPad)+4,top:(b.critical?maxGh*.75+tagHeight/2:maxGh/2)+4,bottom:maxGh/2+4,rise:reduced?0:24*scale};
    const anchor=this.anchors.find(a=>a.id===b.id),body=anchor?.body??{x:b.x-50,y:(anchor?.footY??b.y)-160,width:100,height:160};
    const placed=placeNumber(body,footprint,width,height,faces,occupied,scale,{x:b.x,y:b.y});
    if(!placed)continue;
    b.x=placed.x;b.y=placed.y;occupied.push(placed.box);
-   const x=b.x,y=b.y-footprint.rise*t;
-   c.save();c.globalAlpha=Math.min(1,(1-t)*4);c.translate(x,y);
+   const x=b.x,y=b.y-motion.rise*scale;
+   c.save();c.globalAlpha=motion.alpha;c.translate(x,y);
    if(b.badge)paintNumberBadge(c,b.badge,-(textWidth+gap)/2,0,badgeSize);
-   if(b.text)this.text(b.text,(badgeSize+gap)/2,0,gh,b.color);if(b.critical)this.text('CRIT',0,-gh*.75,tagHeight,'#ffad55');c.restore();
-   const top=b.critical?gh*.75+tagHeight/2:gh/2,actualWidth=Math.max(inkWidth,b.critical?this.textWidth('CRIT',tagHeight,'#ffad55'):0);
+   if(b.text)this.text(b.text,(badgeSize+gap)/2,0,gh,b.color);if(b.critical){
+    this.text('CRIT',0,-gh*.75,tagHeight,'#ffad55');
+    if(motion.accent>0){c.globalAlpha*=motion.accent;c.strokeStyle='#ffe4a1';c.lineWidth=2*scale;c.lineCap='round';
+     c.beginPath();for(const side of [-1,1]){c.moveTo(side*(critWidth/2+3*scale),-gh*.75+2*scale);c.lineTo(side*(critWidth/2+8*scale),-gh*.75-3*scale);}c.stroke();}
+   }c.restore();
+   const top=b.critical?gh*.75+tagHeight/2:gh/2,actualWidth=Math.max(inkWidth,critWidth+(motion.accent>0?accentPad*2:0));
    this.drawn.push({key:b.key,id:b.id,text:b.text,x:x-actualWidth/2,y:y-top,width:actualWidth,height:top+gh/2,glyphHeight:b.text?gh:0,kind:b.kind,born:b.at});
   }
  }

@@ -2,20 +2,22 @@ import type {SceneView} from '../../squad/turn3d/scene';
 import type {Rect} from '../../squad/turn3d/label-layout';
 import {bodyStatuses,STATUS_COLOR,STATUS_PATH,type BodyStatus} from './status';
 import {ShieldPulses} from './clarity';
+import {GroundImpacts,GROUND_PUFFS,sampleDustPuff,type DustPuff,type GroundPoint} from './ground-impact';
 export class BodyFx {
  readonly canvas=document.createElement('canvas');
  private c:CanvasRenderingContext2D;
  private frozen=new Map<string,number>();
  private fallen=new Map<string,number>();
  private shields=new ShieldPulses();private battleKey:unknown;private shieldPlan:unknown;
- readonly audit={bubbles:[] as {id:string;age:number;alpha:number;interiorAlpha:number}[]};
+ private ground=new GroundImpacts();private puff:DustPuff={x:0,y:0,rx:0,ry:0,alpha:0};
+ readonly audit={bubbles:[] as {id:string;age:number;alpha:number;interiorAlpha:number}[],dust:this.ground.bursts};
  constructor(host:HTMLElement){
   this.canvas.dataset.bodyFx='true';this.canvas.setAttribute('aria-hidden','true');
   Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'3'});
   this.c=this.canvas.getContext('2d')!;host.appendChild(this.canvas);
  }
- render(view:SceneView,time:number,w:number,h:number,boxes:Map<string,Rect>){
-  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.shields.clear();this.frozen.clear();this.fallen.clear();this.shieldPlan=undefined;}
+ render(view:SceneView,time:number,w:number,h:number,boxes:Map<string,Rect>,contacts:ReadonlyMap<string,GroundPoint>){
+  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.shields.clear();this.frozen.clear();this.fallen.clear();this.ground.clear();this.shieldPlan=undefined;}
   this.audit.bubbles.length=0;this.shields.retain(new Set(view.actors.map(a=>a.id)));
   const frame=view.frame,applied=frame&&frame.elapsed>=frame.plan.beats[2]!.start&&this.shieldPlan!==frame.plan;
   const shieldTargets=new Set(applied?frame.plan.events.filter(e=>e.type==='shield').flatMap(e=>e.targetIds):[]);
@@ -23,6 +25,16 @@ export class BodyFx {
   const ratio=Math.min(devicePixelRatio||1,2),c=this.c;
   if(this.canvas.width!==w*ratio||this.canvas.height!==h*ratio){this.canvas.width=w*ratio;this.canvas.height=h*ratio;}
   c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,w,h);
+  for(const burst of this.ground.sample(frame,view.reducedMotion,contacts)){
+   c.save();c.translate(burst.x,burst.y);c.scale(burst.scale,burst.scale);
+   for(let i=0;i<GROUND_PUFFS;i++){
+    const p=sampleDustPuff(burst.age,i,this.puff);p.x+=(i%2?-1:1)*burst.spread;c.globalAlpha=p.alpha;c.fillStyle='#967860';
+    c.beginPath();c.ellipse(p.x,p.y,p.rx,p.ry,0,0,Math.PI*2);c.fill();
+    c.globalAlpha=p.alpha*.8;c.fillStyle='#ead8b9';
+    c.beginPath();c.ellipse(p.x-p.rx*.12,p.y-p.ry*.3,p.rx*.8,p.ry*.65,0,0,Math.PI*2);c.fill();
+   }
+   c.restore();
+  }
   const t=view.reducedMotion?0:time;
   for(const unit of view.actors){
    const b=boxes.get(unit.id);if(!b)continue;
@@ -59,5 +71,5 @@ export class BodyFx {
   if(kind==='buff'||kind==='debuff'){const down=kind==='debuff';for(let i=0;i<3;i++){const p=(t*.6+i/3)%1,px=x+(i-1)*r*.65,py=down?top+r+p*r:feet-p*r;c.globalAlpha=.6*(1-p);c.beginPath();c.moveTo(px-5,py+(down?-5:5));c.lineTo(px,py);c.lineTo(px+5,py+(down?-5:5));c.stroke();}if(down){c.globalAlpha=.12;c.beginPath();c.ellipse(x,feet-8,r*.8,12,0,0,Math.PI*2);c.fill();}}
   c.restore();
  }
- dispose(){this.canvas.remove();this.frozen.clear();this.fallen.clear();this.shields.clear();}
+ dispose(){this.canvas.remove();this.frozen.clear();this.fallen.clear();this.shields.clear();this.ground.clear();}
 }
