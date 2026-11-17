@@ -9,4 +9,4 @@ QA retains ownership of independent retest status.
 - QA-5: ART-owned seven presentation-test failures; recorded in REQUESTS-TO-ART.md. Rules semantics remain healer=ally support, no damage. No ART file edited.
 
 - QA-6: manifest regenerated to1ce8f46d7b (159source files); independent working/Git hashes agree; `--check` now passes. Existing explicit policy SQL verified in3disposable DBs: manifest-only blocked, current policy/new journal works, rerun preserves state, stale journal aborts without mutation. `S11/campaign-manifest-comparison-1.json`, `S11/campaign-policy-check-1.json`; USER-DEPLOY-VI now requires the hash/policy transition. No live policy updated.
-- QA-7: typography guard rejects10approved token declarations; source guard repair is next, no ART stylesheet edit.
+- QA-7: guard now allows only approved token expressions plus generic fallback; documented commandPASS82,456B/0errors. Two negative-control tests retain family/payload/central-file restrictions. `S11/typography-guard-study-1.json`; no stylesheet or ART change.

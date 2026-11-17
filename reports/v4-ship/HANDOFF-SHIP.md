@@ -5,7 +5,7 @@ I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everystep/<=20min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
 NOW ACTIVE: QA-3fixed;QA-4production19layout10/10;QA-2still29.54MB. Audio numericlatency study6contexts/120sources improvesmax33.386->25.383ms; one-line hint edit passes45engine tests; real mix check next.
-NEXT 1: Fix QA-7 in scripts/ui/check-typography.mjs: allow only approved --font-body/display/num/ui/title variables with optional generic fallback; keep 400KB guard; add rejection controls. No ART CSS edits.
+NEXT 1: Read QA-8 row and its evidence; fix SHIP-owned MAJOR after LEARN comparison. QA-7 guard nowpasses plus2negative-control tests. Audio4fixtures passestimated<=25.382ms/mix; physical/speech/30minstillopen.
 NEXT 2: After QA priorities, revalidate remaining audio/UI/history/binary. Forge real6/6success/3of3speech/max6;288graphplans/576exactreplays;LRA5.8/5.4. Physical/listening/bagLRA/global gates open; no live scanner edits.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
 CHECKPOINT:Paletteproductionreview1 verifiesbefore7/8 againstoriginalGitobjects andcurrent9/10. Bothrollback/0errors,boss60FPS,mix-17.72/-17.76LUFS,8.8/8.6LRA,-1.63/-1.95peak. Transfer29649511/510BFAIL.

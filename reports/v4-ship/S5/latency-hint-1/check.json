@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-17T02:28:37.582Z",
+  "at": "2026-11-17T02:30:13.978Z",
   "trial": "latency-hint-1",
   "harness": {
     "path": "tools/v4ship-lab/audio/capture.mjs",
@@ -1255,6 +1255,126 @@
         "path": "reports/v4-ship/S5/latency-hint-1/boss-events.json.gz",
         "bytes": 83270,
         "sha256": "da3a1472cebe9a5a152f9a0db01b86dc6f502062c9b3d992a437cf4fe8da89cd"
+      }
+    },
+    {
+      "name": "forge",
+      "seconds": 90,
+      "actualSeconds": 90.21600008010864,
+      "integratedLufs": -17.4,
+      "lra": 5.6,
+      "truePeakDbTP": -2.22,
+      "sourceStarts": 32,
+      "rollingAll": {
+        "max": 6,
+        "worst": [
+          {
+            "id": "ui.hover",
+            "bus": "ui",
+            "when": 2.3813333333333335,
+            "group": 19
+          },
+          {
+            "id": "ui.release",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 20
+          },
+          {
+            "id": "ui.click",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 21
+          },
+          {
+            "id": "ui.forge.hammer",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 22
+          },
+          {
+            "id": "ui.forge.success",
+            "bus": "ui",
+            "when": 2.3973333333333335,
+            "group": 23
+          },
+          {
+            "id": "voice.mochi.forge",
+            "bus": "voice",
+            "when": 2.4,
+            "group": 24
+          }
+        ]
+      },
+      "rollingTransients": {
+        "max": 6,
+        "worst": [
+          {
+            "id": "ui.hover",
+            "bus": "ui",
+            "when": 2.3813333333333335,
+            "group": 19
+          },
+          {
+            "id": "ui.release",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 20
+          },
+          {
+            "id": "ui.click",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 21
+          },
+          {
+            "id": "ui.forge.hammer",
+            "bus": "ui",
+            "when": 2.384,
+            "group": 22
+          },
+          {
+            "id": "ui.forge.success",
+            "bus": "ui",
+            "when": 2.3973333333333335,
+            "group": 23
+          },
+          {
+            "id": "voice.mochi.forge",
+            "bus": "voice",
+            "when": 2.4,
+            "group": 24
+          }
+        ]
+      },
+      "requestToScheduleMs": {
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "maxUiDurationMs": 136.0077966766844,
+      "voiceLines": [
+        "voice.mochi.forge"
+      ],
+      "restarts": 0,
+      "errors": [],
+      "settings": {
+        "master": 0.7,
+        "music": 0.55,
+        "ambience": 0.3,
+        "sfx": 0.8,
+        "voice": 0.7,
+        "ui": 0.6
+      },
+      "capture": {
+        "path": "work/v4ship-audio/latency-hint-1/forge.webm",
+        "bytes": 1453491,
+        "sha256": "06ebf36b4aa55e203c4885081392029ae530934bc825e0fbcb0eac03a2d4cc8a"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/latency-hint-1/forge-events.json.gz",
+        "bytes": 31952,
+        "sha256": "1a16d5bf9677419d51a43fb92d296fa598eaa08a3dfd174846dd655daba35c8c"
       }
     }
   ]

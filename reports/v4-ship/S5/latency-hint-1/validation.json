@@ -1,0 +1,130 @@
+{
+  "at": "2026-11-17T02:30:33.633Z",
+  "trial": "latency-hint-1",
+  "rows": [
+    {
+      "name": "wave1",
+      "seconds": 90.07200002670288,
+      "lufs": -17.84,
+      "lra": 8,
+      "peak": -2.9,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1162
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1102,
+      "estimatedOutputLatencyMs": {
+        "min": 22.697000000000116,
+        "p95": 25.072666669646424,
+        "max": 25.373666666666395
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "wave3",
+      "seconds": 90.06900000572205,
+      "lufs": -18.05,
+      "lra": 8.1,
+      "peak": -2.71,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1103
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1016,
+      "estimatedOutputLatencyMs": {
+        "min": 22.68000000000029,
+        "p95": 25.18066667113453,
+        "max": 25.381666666668025
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "boss",
+      "seconds": 90.05800008773804,
+      "lufs": -17.09,
+      "lra": 9.2,
+      "peak": -2.32,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 4,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 1008
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 1021,
+      "estimatedOutputLatencyMs": {
+        "min": 22.68266667113494,
+        "p95": 25.158666663684926,
+        "max": 25.381666666668025
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 0
+    },
+    {
+      "name": "forge",
+      "seconds": 90.21600008010864,
+      "lufs": -17.4,
+      "lra": 5.6,
+      "peak": -2.22,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 227
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3313,
+      "estimatedOutputLatencyMs": {
+        "min": 22.713999999999942,
+        "p95": 25.17566667113715,
+        "max": 25.28066667262692
+      },
+      "estimatedOnsetPass": true,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 2
+    }
+  ],
+  "coverageSeconds": 360.4150002002716,
+  "continuousSingleSession": false,
+  "aggregate": {
+    "lufs": -17.63,
+    "lra": 8.5,
+    "peak": -2.22
+  },
+  "gates": {
+    "coverage30Minutes": false,
+    "loudness": true,
+    "truePeak": true,
+    "loudnessRange": true,
+    "sourceBudget": true,
+    "duckDepth": true,
+    "duckRecovery": true,
+    "zeroErrors": true
+  },
+  "physicalAudibleOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "note": "Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately."
+}
