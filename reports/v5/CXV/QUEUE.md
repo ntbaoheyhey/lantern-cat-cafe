@@ -25,14 +25,14 @@
 
 ## Visible open dependencies and carried work
 - [x] Kettle production contact closure:CXI fresh v6-ia1 capture and green v5-m1.1@5fa814f5e confirm torso fix/broad mask; beauty3 remains V-C/E.
-- [ ] Kettle beauty3/5 and Binding coverage under V-C/E.
+- [x] Binding recipient coverage under V-C verified;Kettle beauty3/5 retained as V-D art quality debt.
 - [ ] AGS Q0b-F2 independent recheck under V-B/C; producer fix delivered.
-- [ ] CXI13:28 pacing REQ: assess6700ms ultimate voice lead-in in actual desktop patrol; preserve voice/contact/rules, no latency audit.
-- [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
-- [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
+- [x] CXI13:28 pacing REQ: V-B2 fixedTiming/leadIn0 confirmed by68actions and32s normal-loop fixture(all4hero ults);reasoned no,production confirmation pending.
+- [x] R5 statuses -> V-E accepted01f6fa17e;600ms bounded Scald/Bitter/Drowsy/Tangle shapes,real rule semantics;no invented stun/slow.
+- [x] R6 victory -> V-E accepted;R8fidgets -> V-A3 correctedREADY;R9arrival -> V-C verified;R7 camera only if measured clarity requires it.
 - [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.
 - [x] V-D clover-particle-1 fresh reviewV6:composite3/3/1/2/4,runtime3/3/3/2/4; revision/no new approval; V6-REVIEW-CLOVER-PARTICLE-1.md.
 - [x] V-D Panko temp particle1 fresh review:C4/4/1/4/4,R2/3/3/2/4;4x4 collection mislabeled1x1 is BLOCKER; crop one128/256px crumb and resubmit. No approval.
 - [x] CXI12:27 lantern-requiem loader-only scope ACK/granted; material/draw/motion preserved, CXI owns implementation/check.
 - [x] CANCELLED obsolete REV4 timeboxes/refill quota/print-proof card: V6 prioritizes visible quality and current assignments over bookkeeping.
-- [x] CANCELLED extra FPS/audio/secret audit/repository-export work: no visible judge benefit and V6 explicitly excludes it.
+- [x] CANCELLED V6 broad FPS/audio/secret audit/repository-export work;V7 explicitly reopens scoped boss-play smoothness under V-F.
