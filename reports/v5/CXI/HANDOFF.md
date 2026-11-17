@@ -1,10 +1,10 @@
 # CXI V6 continuation
 ACTIVE: I-A v5-m1.3 published; desktop practice/recovery/docs verified. I-B cold bytes and I-C actual patrol timing open.
-NEXT 1: Inspect audio/engine.ts scene/roster preload against LEARN notes; target true unused cold audio requests, preserve gains/loops/fallback.
+NEXT 1: Inspect ordinary cat-level onboarding controls and measure level-first guest patrol with judge-journey.mjs; keep real controls/rewards.
 NEXT 2: Integrate AGV12AVIF/AGS residual audio READY deliveries; fullsuite then next green tag.
 NEXT 3: Measure normal cat levelling before patrol; I-E films when I-A..C green.
-Last pushed SHA:04c913bc585ac028bed31f1e8ea901369acb6da2; green tagv5-m1.3 at same application SHA. Evidence checkpoint follows.
-self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T12:22:31Z.
+Last pushed SHA:50242e9f9; green tagv5-m1.3=04c913bc5; application unchanged since green build.
+self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T13:15:48Z.
 Last RULES re-read UTC:2026-11-17T13:10:11Z; STOP-ALL/STOP-CXI absent.
 ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
 No running compute jobs. PID20682 v6-living pipeline complete0; PID17048 v6-recovery complete0. Logs under work/v5/CXI/jobs/.
