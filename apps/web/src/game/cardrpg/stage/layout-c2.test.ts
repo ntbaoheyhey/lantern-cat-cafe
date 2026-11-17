@@ -36,6 +36,13 @@ it('gives six enemies distinct seats and keeps survivors in their seats',()=>{
   const after=stageLayoutC2(foes.filter((_,i)=>i!==1&&i!==4),1280,504,720,6);
   for(const [id,b] of after)expect(b).toEqual(before.get(id));
 });
+it('keeps the lower six-foe bodies above the1280x720 portrait strip',()=>{
+ const foes=['kettle-knight','spool-ram','pollen-scout','crumb-sentinel','needle-moth','teacup-healer'].map((id,i)=>({...unit(id,i<2?'front':'rear'),asset:id,seat:i}));
+ const layout=stageLayoutC2(foes,1280,720,720,6);
+ for(const id of ['kettle-knight','spool-ram'])expect(layout.get(id)!.footY).toBeLessThanOrEqual(636.8-16);
+ const withoutRam=stageLayoutC2(foes.filter(f=>f.id!=='spool-ram'),1280,720,720,6);
+ expect(withoutRam.get('kettle-knight')).toEqual(layout.get('kettle-knight'));
+});
 it('reserves an asymmetric drawn envelope without changing its shared foot anchor per pose',()=>{
  const actor={...unit('soot','rear'),leftExtent:.9,rightExtent:.65};
  const first=stageLayoutC2([actor],1280,720).get(actor.id)!;

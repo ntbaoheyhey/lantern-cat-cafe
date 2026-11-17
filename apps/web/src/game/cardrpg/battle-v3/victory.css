@@ -1,4 +1,4 @@
-.b3-victory-crew{position:relative;min-height:150px;height:clamp(150px,32vh,290px);width:100%;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 90%,#d8ae5426,transparent 68%);border-radius:16px}
+.b3-victory-crew{position:relative;min-height:150px;height:clamp(150px,32vh,290px);width:100%;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse 44px 8px at 22% 54%,#100f2577,transparent),radial-gradient(ellipse 44px 8px at 65% 54%,#100f2577,transparent),radial-gradient(ellipse 44px 8px at 35% 91%,#100f2577,transparent),radial-gradient(ellipse 44px 8px at 78% 91%,#100f2577,transparent),radial-gradient(ellipse at 50% 60%,#211e36ed 10%,#211e36bd 48%,#211e3633 80%);border-radius:16px}
 .b3-victory-fallback{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));height:100%;align-items:center}
 .b3-victory-fallback img{width:100%;max-height:90%;object-fit:contain}
 .b3-victory-crew[data-ready=true] .b3-victory-fallback{visibility:hidden}
