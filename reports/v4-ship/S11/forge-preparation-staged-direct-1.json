@@ -1,0 +1,315 @@
+{
+  "at": "2026-11-17T01:36:58.954894+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6984,
+      "sha256": "0f3d590db62d891b1e1692f03a61e7639a1ad9b0b8ed4b6815d4c01146937a30"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-forge-admission.md",
+      "bytes": 8496,
+      "sha256": "c39735b03fe9172d2eacdc80d18b8696157a06923533048be1fa2a9e3594857e"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/check.json",
+      "bytes": 1439,
+      "sha256": "bc86107766d25b26bdb607508e9e6ea70625109323df72cff27e545fde6bbaa2"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/log.jsonl.gz",
+      "bytes": 16181,
+      "sha256": "06604b058dd52967eb479b946cf81b06d85107b86c05590995e599e01feef51d"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "62bf0e951036f72b48a806b4801c5c8ca35f2cc5d808ba83b3d6f9614a39a845"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-study-1.json",
+      "bytes": 94280,
+      "sha256": "9ed3e2671f6e9a48601c25cc285a13dffa953866a139ee0664e0ad7f6e3a8c1d"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-composite-bake-1.json",
+      "bytes": 828453,
+      "sha256": "97e46afcdadc4baacf927693bd9cdb098f5c3704716fee1238e7fb3d2b434ee5"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.json",
+      "bytes": 40741,
+      "sha256": "43a11ed29647fa1e775b073bf0000feaf1cce6eab42d5c365775940f7efef36f"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.rows.json.gz",
+      "bytes": 1535,
+      "sha256": "b78bd323fb0154c78d24aa60003a259e7b23e102cd878f3eb097b6f9b8e483d9"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.json",
+      "bytes": 39024,
+      "sha256": "e3994102f01ae632b174c5e04133d939fac4b29a422fa8e2bab1e87380cc3328"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.rows.json.gz",
+      "bytes": 11318,
+      "sha256": "47ba3b2425f48a466d190f8952b7adfc15a2ef3e6e2f55ebe0c30383702eb843"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-preparation-review-1.json",
+      "bytes": 2386,
+      "sha256": "832772916f2723e4fd545cb7288f5f4aa94a1faa6087d18562b5c5e2e037cacb"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 32060,
+      "sha256": "c299046363b92b674464ff4b1d7a9d03d79f33bfe62743e9fa3d1e43a6d45c92"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4760,
+      "sha256": "99e5ceaefd692744d609f795c41caa7b9294d7d11058726f7e7f96f2c8499c0c"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-admission-study.mjs",
+      "bytes": 6282,
+      "sha256": "273f3ac8d7f861247e8a6b965a88de7ce9cb8997a91dc6560d9e8578b85249ec"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-composite-bake.mjs",
+      "bytes": 10171,
+      "sha256": "32a5cd73ce1bc28afc40ce99680d286b8f4e7b9202c96d6cf4fdcd656e1d047c"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-native-replay-study.mjs",
+      "bytes": 5512,
+      "sha256": "e74d3134f648a6757da08091eda236c619e05e49f9bb31743893d5acffc68dd3"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-native-study.mjs",
+      "bytes": 5885,
+      "sha256": "0420b3c1272861bfd038f42e377c5a2700668e00bd7188b387d6212506763e24"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-preparation-review.mjs",
+      "bytes": 4334,
+      "sha256": "35cce3f244977bf9f71ea7fba911d743483176a9bd1c1dc71eff22455541a7a2"
+    }
+  ],
+  "scans": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6984,
+      "sha256": "0f3d590db62d891b1e1692f03a61e7639a1ad9b0b8ed4b6815d4c01146937a30",
+      "alias": "0f3d590db62d891b1e1692f03a61e7639a1ad9b0b8ed4b6815d4c01146937a30.txt",
+      "seconds": 0.0022445,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-forge-admission.md",
+      "representation": "raw",
+      "bytes": 8496,
+      "sha256": "c39735b03fe9172d2eacdc80d18b8696157a06923533048be1fa2a9e3594857e",
+      "alias": "c39735b03fe9172d2eacdc80d18b8696157a06923533048be1fa2a9e3594857e.txt",
+      "seconds": 0.002127792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1439,
+      "sha256": "bc86107766d25b26bdb607508e9e6ea70625109323df72cff27e545fde6bbaa2",
+      "alias": "bc86107766d25b26bdb607508e9e6ea70625109323df72cff27e545fde6bbaa2.txt",
+      "seconds": 9.6708e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 100335,
+      "sha256": "e26dbd47d79976e9b7d1fc29ad1539ffb357bdce49a8540691339ad07f28ffcc",
+      "alias": "e26dbd47d79976e9b7d1fc29ad1539ffb357bdce49a8540691339ad07f28ffcc.txt",
+      "seconds": 0.027786292,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "62bf0e951036f72b48a806b4801c5c8ca35f2cc5d808ba83b3d6f9614a39a845",
+      "alias": "62bf0e951036f72b48a806b4801c5c8ca35f2cc5d808ba83b3d6f9614a39a845.txt",
+      "seconds": 0.000741875,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-study-1.json",
+      "representation": "raw",
+      "bytes": 94280,
+      "sha256": "9ed3e2671f6e9a48601c25cc285a13dffa953866a139ee0664e0ad7f6e3a8c1d",
+      "alias": "9ed3e2671f6e9a48601c25cc285a13dffa953866a139ee0664e0ad7f6e3a8c1d.txt",
+      "seconds": 0.003103708,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-composite-bake-1.json",
+      "representation": "raw",
+      "bytes": 828453,
+      "sha256": "97e46afcdadc4baacf927693bd9cdb098f5c3704716fee1238e7fb3d2b434ee5",
+      "alias": "97e46afcdadc4baacf927693bd9cdb098f5c3704716fee1238e7fb3d2b434ee5.txt",
+      "seconds": 0.205992292,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.json",
+      "representation": "raw",
+      "bytes": 40741,
+      "sha256": "43a11ed29647fa1e775b073bf0000feaf1cce6eab42d5c365775940f7efef36f",
+      "alias": "43a11ed29647fa1e775b073bf0000feaf1cce6eab42d5c365775940f7efef36f.txt",
+      "seconds": 0.001518666,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.rows.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 57489,
+      "sha256": "e92c0c60a06d5fa0062deac8686f2c998520cfeb3bbfbcd20f2147f1994b79d2",
+      "alias": "e92c0c60a06d5fa0062deac8686f2c998520cfeb3bbfbcd20f2147f1994b79d2.txt",
+      "seconds": 0.000301542,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.json",
+      "representation": "raw",
+      "bytes": 39024,
+      "sha256": "e3994102f01ae632b174c5e04133d939fac4b29a422fa8e2bab1e87380cc3328",
+      "alias": "e3994102f01ae632b174c5e04133d939fac4b29a422fa8e2bab1e87380cc3328.txt",
+      "seconds": 0.00149125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.rows.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 98189,
+      "sha256": "faba1e96cc4d234498a55c66d0de8dfd5f390555f283deaf3d5744d07fe25285",
+      "alias": "faba1e96cc4d234498a55c66d0de8dfd5f390555f283deaf3d5744d07fe25285.txt",
+      "seconds": 0.00049475,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-preparation-review-1.json",
+      "representation": "raw",
+      "bytes": 2386,
+      "sha256": "832772916f2723e4fd545cb7288f5f4aa94a1faa6087d18562b5c5e2e037cacb",
+      "alias": "832772916f2723e4fd545cb7288f5f4aa94a1faa6087d18562b5c5e2e037cacb.txt",
+      "seconds": 0.0001255,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 32060,
+      "sha256": "c299046363b92b674464ff4b1d7a9d03d79f33bfe62743e9fa3d1e43a6d45c92",
+      "alias": "c299046363b92b674464ff4b1d7a9d03d79f33bfe62743e9fa3d1e43a6d45c92.txt",
+      "seconds": 0.027743583,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4760,
+      "sha256": "99e5ceaefd692744d609f795c41caa7b9294d7d11058726f7e7f96f2c8499c0c",
+      "alias": "99e5ceaefd692744d609f795c41caa7b9294d7d11058726f7e7f96f2c8499c0c.txt",
+      "seconds": 0.000930959,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-admission-study.mjs",
+      "representation": "raw",
+      "bytes": 6282,
+      "sha256": "273f3ac8d7f861247e8a6b965a88de7ce9cb8997a91dc6560d9e8578b85249ec",
+      "alias": "273f3ac8d7f861247e8a6b965a88de7ce9cb8997a91dc6560d9e8578b85249ec.txt",
+      "seconds": 0.000247708,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-composite-bake.mjs",
+      "representation": "raw",
+      "bytes": 10171,
+      "sha256": "32a5cd73ce1bc28afc40ce99680d286b8f4e7b9202c96d6cf4fdcd656e1d047c",
+      "alias": "32a5cd73ce1bc28afc40ce99680d286b8f4e7b9202c96d6cf4fdcd656e1d047c.txt",
+      "seconds": 0.002789459,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-native-replay-study.mjs",
+      "representation": "raw",
+      "bytes": 5512,
+      "sha256": "e74d3134f648a6757da08091eda236c619e05e49f9bb31743893d5acffc68dd3",
+      "alias": "e74d3134f648a6757da08091eda236c619e05e49f9bb31743893d5acffc68dd3.txt",
+      "seconds": 0.0015395,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-native-study.mjs",
+      "representation": "raw",
+      "bytes": 5885,
+      "sha256": "0420b3c1272861bfd038f42e377c5a2700668e00bd7188b387d6212506763e24",
+      "alias": "0420b3c1272861bfd038f42e377c5a2700668e00bd7188b387d6212506763e24.txt",
+      "seconds": 0.000240917,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-preparation-review.mjs",
+      "representation": "raw",
+      "bytes": 4334,
+      "sha256": "35cce3f244977bf9f71ea7fba911d743483176a9bd1c1dc71eff22455541a7a2",
+      "alias": "35cce3f244977bf9f71ea7fba911d743483176a9bd1c1dc71eff22455541a7a2.txt",
+      "seconds": 0.000211167,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16181,
+      "sha256": "06604b058dd52967eb479b946cf81b06d85107b86c05590995e599e01feef51d",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.rows.json.gz",
+      "representation": "raw",
+      "bytes": 1535,
+      "sha256": "b78bd323fb0154c78d24aa60003a259e7b23e102cd878f3eb097b6f9b8e483d9",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.rows.json.gz",
+      "representation": "raw",
+      "bytes": 11318,
+      "sha256": "47ba3b2425f48a466d190f8952b7adfc15a2ef3e6e2f55ebe0c30383702eb843",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}

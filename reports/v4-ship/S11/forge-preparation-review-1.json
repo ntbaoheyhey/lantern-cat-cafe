@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-17T01:36:30.753Z",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/forge-preparation-review.mjs",
+    "sha256": "35cce3f244977bf9f71ea7fba911d743483176a9bd1c1dc71eff22455541a7a2"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/forge-admission-study-1.json",
+      "sha256": "9ed3e2671f6e9a48601c25cc285a13dffa953866a139ee0664e0ad7f6e3a8c1d"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-composite-bake-1.json",
+      "sha256": "97e46afcdadc4baacf927693bd9cdb098f5c3704716fee1238e7fb3d2b434ee5"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-study-1.json",
+      "sha256": "e3994102f01ae632b174c5e04133d939fac4b29a422fa8e2bab1e87380cc3328"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-replay-1.json",
+      "sha256": "43a11ed29647fa1e775b073bf0000feaf1cce6eab42d5c365775940f7efef36f"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/check.json",
+      "sha256": "bc86107766d25b26bdb607508e9e6ea70625109323df72cff27e545fde6bbaa2"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-admission-regression-1/parity-probe.json",
+      "sha256": "62bf0e951036f72b48a806b4801c5c8ca35f2cc5d808ba83b3d6f9614a39a845"
+    }
+  ],
+  "runtimeFiles": 234,
+  "runtimeUnchanged": true,
+  "admissionObservedBaselineReproduced": true,
+  "proposedBothCompositeWindows": 6,
+  "rejectedEncodingRetained": true,
+  "originalNativeRepeatFailureRetained": true,
+  "nativeExactReplayComparisons": 576,
+  "repeatGraphThresholdFailures": 7,
+  "regression": {
+    "sameSevenArtFailures": true,
+    "threeParityRowsIdentical": true,
+    "testSummaries": [
+      {
+        "name": "server",
+        "lines": [
+          "Tests  742 passed (742)"
+        ]
+      },
+      {
+        "name": "rules",
+        "lines": [
+          "Tests  1409 passed | 2 expected fail | 11 skipped (1422)"
+        ]
+      },
+      {
+        "name": "web",
+        "lines": [
+          "⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯",
+          "Tests  7 failed | 2697 passed (2704)"
+        ]
+      }
+    ],
+    "gRegPass": false,
+    "officialClassParityPass": false
+  },
+  "qaPriority": "QA-1 MAJOR runbook prerequisites next; native forge runtime not installed.",
+  "integrityPass": true,
+  "runtimeInstalled": false,
+  "physicalOnsetVerified": false,
+  "humanListeningVerified": false,
+  "overallAudioGatePass": false
+}
