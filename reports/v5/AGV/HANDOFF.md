@@ -1,6 +1,6 @@
-ACTIVE: Submission Visuals (B5), T-CXV-2 (Face-depth Research)
+T-CXV-2 (Face-depth Research)
 
-NEXT 2: T-CXV-2 (Face-depth Research)
+
 Running PIDs: None
 TASKs: T-CXV-1, T-CXV-2 open
 Blocked: B4 (Video generation failed: tools only support static images)
