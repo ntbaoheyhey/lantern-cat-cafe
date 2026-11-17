@@ -1,11 +1,11 @@
 # CXI handoff — REV4 R0 active
 ACTIVE: R0 restructure merge; started 2026-11-17T06:34:53Z; 90 minute box.
-NEXT 1: Merge audited CXV a1b198a4824e, then AG1 ebfa22fc8f39, AG2 b1fbbffd44aa, AG3 9aabbf4267a0, AG4 df4587c3ff89.
+NEXT 1: Monitor detached r0-suite checks; inspect failure logs or tag v5-m1 when all four exits are0.
 NEXT 2: Detached typecheck + web tests + root tests + build; fix only owned failures, tag v5-m1 only when green.
 NEXT 3: BOARD/tag notifications, adopt REV4 OWNERSHIP; resume I2 transfer reduction.
 STOP-ALL and STOP-CXI absent at restart; USER REV4 restart authorizes work.
 Last pushed SHA: e81dfa4da; no owned WIP at restart. Branch codex/v5-int-2026-11-17.
-Running PIDs/logs: none. Old preview and pipeline were stopped.
+Running PIDs/logs: suite PID70958 work/v5/CXI/jobs/r0-suite.log; per-check r0-{typecheck,web,root,build}.log/.exit.
 Ownership audit: work/v5/CXI/r0/ownership-audit.json; all five old lane path checks pass.
 Integration pre-R0 RED: three spine/vfx-cues tests; CXV fix ed388eb30 included in audited tip.
 I2 incomplete: deferred native pixels implemented but scene wiring pending CXV; current transfer ~13–15MB.

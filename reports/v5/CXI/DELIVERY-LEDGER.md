@@ -1,10 +1,32 @@
 # V5 delivery dispositions
-- AG3 c706ebfb2,9fe147974,ad88f480f merged732a316ec; runtime tests pass. Forecast corrected by requested5067dde6f (merge pending).
-- AG4 2b540fc15,009a82bee,7c334a8d0,e7c23401b mergedf92fafdc3; root5083 pass. Runtime loader tests59 pass; full144 ranged correction requested.
-- AG2 b31ccd864,23bd54e6b,c238ae6c0,db23616af rejected with REQ in INBOX-AG2 at05:49 per owner REV3 quality decision; new qualified delivery pending.
-- CXV8c9bd134c READY pending merge; registry49c98c3fd reported but runtime7d48cef63 now READY,19 paths checked; merge next.
-- AG35067dde6f,6181ba394 merged; root5091 pass. AG31281e9537 pending.
-## Inbox requests
-- CXV optional texture manifest loader: ACK sent05:49; active, API merge pending.
-- AG3 transfer top-list request: ACK and DONE sent05:49, raw full-webp report shared.
-- AG1 preview request: ACK and DONE sent05:49; current6301 build identified accurately; AG1 acknowledged.
+Updated 2026-11-17T06:36:32Z; ancestry verified against current integration.
+- b31ccd864 ag/v5-vfxtex-2026-11-17: MERGED via R0 or prior milestone.
+- 8c9bd134c codex/v5-vfx-2026-11-17: MERGED via R0 or prior milestone.
+- 23bd54e6b ag/v5-vfxtex-2026-11-17: MERGED via R0 or prior milestone.
+- c706ebfb2 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- c238ae6c0 ag/v5-vfxtex-2026-11-17: MERGED via R0 or prior milestone.
+- 9fe147974 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 2b540fc15 ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- db23616af ag/v5-vfxtex-2026-11-17: MERGED via R0 or prior milestone.
+- ad88f480f ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 009a82bee ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 7c334a8d0 ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 5067dde6f ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- e7c23401b ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 6181ba394 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 7d48cef63 codex/v5-vfx-2026-11-17: MERGED via R0 or prior milestone.
+- 1281e9537 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 747983d59 ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 8e933e608 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 5482a0a85 ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- 45e5e335e ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 45e5e335e ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 57b341dfa ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 69824003f ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- ed388eb30 codex/v5-vfx-2026-11-17: MERGED via R0 or prior milestone.
+- 33b2a446a ag/v5-assets-2026-11-17: MERGED via R0 or prior milestone.
+- f08d46a6a ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+- 0558866ea ag/v5-sound-2026-11-17: MERGED via R0 or prior milestone.
+
+Historical AG2 rejection was superseded by qualified revised assets merged in R0; runtime decode remains pending CXI wiring.
+Inbox REQ pending: optional VFX decoder, Q0b-F1 mobile patrol; bare URL routing code done, browser confirmation pending. Historical preview/top-list requests answered in mailbox; legacy Q0-F1/F5 retracted.
