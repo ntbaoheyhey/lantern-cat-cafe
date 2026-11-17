@@ -4,7 +4,8 @@ import fs from 'fs';
 import path from 'path';
 
 const vfxDir = '/Users/bao/th-v5-ag2/apps/web/public/vfx/v5';
-const compDir = '/Users/bao/th-v5-ag2/reports/v5/AGV/comp';
+const compDir = '/Users/bao/th-v5-ag2/work/v5/AGV/comp';
+const repCompDir = '/Users/bao/th-v5-ag2/reports/v5/AGV/comp';
 const montageDir = '/Users/bao/th-v5-ag2/reports/v5/AGV/montages';
 const workBase = '/Users/bao/th-v5-ag2/work/v5/AGV/jobs/recomp';
 const baseFrames = {
@@ -14,6 +15,7 @@ const baseFrames = {
 };
 
 if (!fs.existsSync(compDir)) fs.mkdirSync(compDir, { recursive: true });
+if (!fs.existsSync(repCompDir)) fs.mkdirSync(repCompDir, { recursive: true });
 if (!fs.existsSync(montageDir)) fs.mkdirSync(montageDir, { recursive: true });
 if (!fs.existsSync(workBase)) fs.mkdirSync(workBase, { recursive: true });
 
@@ -174,7 +176,21 @@ for (const [id, meta] of Object.entries(manifest)) {
   }
 }
 
-console.log('Individual composites finished. Building set montages...');
+console.log('Individual composites finished. Syncing representative composites to reports/v5/AGV/comp...');
+const representativeIds = [
+  'mochi-impact', 'soot-impact', 'clover-impact', 'panko-impact',
+  'clover-ult-release', 'mochi-ult-release', 'yarn-giant-charge-swirl',
+  'panko-crit-burst', 'mochi-crit-burst', 'aura-shield-ward', 'ambience-dust-motes'
+];
+for (const id of representativeIds) {
+  const src = path.join(compDir, `${id}.jpg`);
+  const dst = path.join(repCompDir, `${id}.jpg`);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dst);
+  }
+}
+
+console.log('Building set montages...');
 
 // Set definitions for REVIEW requests
 const sets = {
@@ -212,6 +228,10 @@ const sets = {
   'hitstop-vignettes': [
     'hit-stop-flash-white', 'hit-stop-flash-gold',
     'vignette-damage-red', 'vignette-heal-green', 'vignette-ult-gold'
+  ],
+  'ambience-plates': [
+    'ambience-dust-motes', 'ambience-light-shafts',
+    'plate-damage-crit', 'plate-damage-normal', 'plate-heal-glow'
   ]
 };
 

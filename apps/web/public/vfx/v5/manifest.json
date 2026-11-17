@@ -1,4 +1,22 @@
 {
+  "ambience-dust-motes": {
+    "file": "ambience-dust-motes.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 80,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 256
+  },
+  "ambience-light-shafts": {
+    "file": "ambience-light-shafts.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 90,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 256
+  },
   "aura-attack-buff": {
     "file": "aura-attack-buff.webp",
     "cols": 4,
@@ -391,6 +409,33 @@
     "cols": 4,
     "rows": 4,
     "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-damage-crit": {
+    "file": "plate-damage-crit.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-damage-normal": {
+    "file": "plate-damage-normal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-heal-glow": {
+    "file": "plate-heal-glow.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
     "blend": "add",
     "anchor": "target",
     "sizePx": 256
