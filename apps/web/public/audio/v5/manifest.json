@@ -5835,5 +5835,53 @@
       "ui.fail",
       "tx.failed"
     ]
+  },
+  "stinger.victory": {
+    "opus": "/audio/v5/stinger-victory.opus",
+    "m4a": "/audio/v5/stinger-victory.m4a",
+    "durationSeconds": 2.408,
+    "bus": "sfx",
+    "runtimeCueId": "stinger.victory",
+    "aliases": [
+      "victory",
+      "battle.victory",
+      "voice.victory"
+    ]
+  },
+  "stinger.defeat": {
+    "opus": "/audio/v5/stinger-defeat.opus",
+    "m4a": "/audio/v5/stinger-defeat.m4a",
+    "durationSeconds": 2.208,
+    "bus": "sfx",
+    "runtimeCueId": "stinger.defeat",
+    "aliases": [
+      "defeat",
+      "battle.defeat",
+      "voice.defeat"
+    ]
+  },
+  "stinger.level_up": {
+    "opus": "/audio/v5/stinger-level-up.opus",
+    "m4a": "/audio/v5/stinger-level-up.m4a",
+    "durationSeconds": 1.808,
+    "bus": "sfx",
+    "runtimeCueId": "stinger.level_up",
+    "aliases": [
+      "level-up",
+      "gacha.reveal",
+      "gacha.pity"
+    ]
+  },
+  "stinger.boss_appear": {
+    "opus": "/audio/v5/stinger-boss-appear.opus",
+    "m4a": "/audio/v5/stinger-boss-appear.m4a",
+    "durationSeconds": 2.608,
+    "bus": "sfx",
+    "runtimeCueId": "stinger.boss_appear",
+    "aliases": [
+      "boss.appear",
+      "boss.intro",
+      "boss.start"
+    ]
   }
 }

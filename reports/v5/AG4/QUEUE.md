@@ -8,7 +8,7 @@
 - [x] R1 Variations: 2 extra takes per frequent cue (pitch +/-3%, layer swap: 20 cues, 40 files)
 - [x] R2 Ambience loops: cosy workshop/café idle and battle bed (<=150KB each)
 - [x] R3 UI set: click, hover, confirm, cancel, card flip, coin, error (<=15KB each)
-- [ ] R4 Stingers: victory, defeat, level-up, boss appear (<=3s each)
+- [x] R4 Stingers: victory, defeat, level-up, boss appear (<=3s each)
 - [ ] R5 Chain moments: transaction sent, confirmed on Avalanche, receipt ready
 - [ ] R6 Cat emotes synthesized: happy chirp, hurt yelp, heal purr per hero
 

@@ -102,3 +102,11 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `ui.card_flip` | 5 | 5 | 5 | 5 | 4 | 4 | PASS | Parchment card slide + edge snap, -19.6 LUFS, 3.0 KB |
 | `ui.coin` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Sparkling high metallic bell ring, -16.6 LUFS, 3.1 KB |
 | `ui.error` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft muted low dissonant thud, -18.4 LUFS, 3.1 KB |
+
+## R4 Stingers
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `stinger.victory` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Celebratory C-major fanfare + brassy chime, -16.2 LUFS, 2.41s |
+| `stinger.defeat` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Gentle melancholic descending D-minor sigh, -16.2 LUFS, 2.21s |
+| `stinger.level_up` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Rising pentatonic harp sweep + sparkle, -16.7 LUFS, 1.81s |
+| `stinger.boss_appear` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Ominous horn swell -> colossal thud & rumble, -16.7 LUFS, 2.61s |

@@ -1531,6 +1531,137 @@ export function renderUiSet() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R4: Stingers Definitions (victory, defeat, level-up, boss appear, all <= 3s)
+ */
+export const STINGER_DEFINITIONS = [
+  {
+    cueId: 'stinger.victory',
+    name: 'stinger-victory',
+    runtimeCueId: 'stinger.victory',
+    aliases: ['victory', 'battle.victory', 'voice.victory'],
+    durationSec: 2.4,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.75*(sin(2*PI*523.25*t)+0.7*sin(2*PI*659.25*t)+0.6*sin(2*PI*783.99*t)+0.5*sin(2*PI*1046.5*t))*exp(-t/0.3)':s=48000:d=0.8",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*(sin(2*PI*261.63*t)+0.6*sin(2*PI*392*t))*exp(-t/0.6)':s=48000:d=1.5",
+    bodyDelayMs: 50,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=1.6,bandpass=f=2400:w=1200,volume=0.25,afade=t=out:st=0.2:d=1.4",
+    tailDelayMs: 100,
+    masterGain: 0.85,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'stinger.defeat',
+    name: 'stinger-defeat',
+    runtimeCueId: 'stinger.defeat',
+    aliases: ['defeat', 'battle.defeat', 'voice.defeat'],
+    durationSec: 2.2,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.7*(sin(2*PI*440*t)+0.6*sin(2*PI*349.23*t)+0.5*sin(2*PI*293.66*t))*exp(-t/0.4)':s=48000:d=1.0",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(146.83-30*(t/1.2))*t)*exp(-t/0.7)':s=48000:d=1.4",
+    bodyDelayMs: 60,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=1.5,lowpass=f=350,volume=0.3,afade=t=out:st=0.2:d=1.3",
+    tailDelayMs: 120,
+    masterGain: 0.90,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'stinger.level_up',
+    name: 'stinger-level-up',
+    runtimeCueId: 'stinger.level_up',
+    aliases: ['level-up', 'gacha.reveal', 'gacha.pity'],
+    durationSec: 1.8,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.75*(sin(2*PI*1046.5*t)+0.7*sin(2*PI*1318.51*t)+0.6*sin(2*PI*1567.98*t)+0.8*sin(2*PI*2093*t))*exp(-t/0.25)':s=48000:d=0.7",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*(sin(2*PI*523.25*t)+0.5*sin(2*PI*783.99*t))*exp(-t/0.45)':s=48000:d=1.1",
+    bodyDelayMs: 40,
+    tailFilter: "anoisesrc=c=white:r=48000:d=1.2,bandpass=f=3200:w=1600,volume=0.22,afade=t=out:st=0.1:d=1.1",
+    tailDelayMs: 80,
+    masterGain: 0.70,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'stinger.boss_appear',
+    name: 'stinger-boss-appear',
+    runtimeCueId: 'stinger.boss_appear',
+    aliases: ['boss.appear', 'boss.intro', 'boss.start'],
+    durationSec: 2.6,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*(sin(2*PI*73.42*t)+0.6*sin(2*PI*87.31*t)+0.5*sin(2*PI*110*t))*exp(-t/0.8)':s=48000:d=1.8",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(95-35*(t/0.6))*t)*exp(-t/0.18)':s=48000:d=0.6",
+    bodyDelayMs: 600,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=1.6,lowpass=f=420,volume=0.35,afade=t=out:st=0.2:d=1.4",
+    tailDelayMs: 650,
+    masterGain: 0.75,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderStingers() {
+  console.log(`Rendering ${STINGER_DEFINITIONS.length} Stingers (R4)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of STINGER_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: def.bus,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  // Write reports/v5/AG4/R4-loudness.csv
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,bus'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},sfx`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'R4-loudness.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+  console.log(`Wrote loudness report: ${csvPath}`);
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R4 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
 
 // CLI dispatcher
 const arg = process.argv[2];
@@ -1548,6 +1679,8 @@ if (arg === '--calibrate') {
   renderAmbience();
 } else if (arg === '--ui-set') {
   renderUiSet();
+} else if (arg === '--stingers') {
+  renderStingers();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
@@ -1556,7 +1689,8 @@ if (arg === '--calibrate') {
   renderVariations();
   renderAmbience();
   renderUiSet();
+  renderStingers();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --stingers | --all]');
 }
 

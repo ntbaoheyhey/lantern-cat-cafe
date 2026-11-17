@@ -380,3 +380,35 @@ Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -19.6 to -16.6 LUFS (avg 
    - Body: `aevalsrc=exprs='0.65*(sin(2*PI*164.81*t)+0.6*sin(2*PI*174.61*t))*exp(-t/0.08)':s=48000:d=0.18` (delay 8ms)
    - Tail: `anoisesrc=c=brown:r=48000:d=0.18,lowpass=f=400,volume=0.2,afade=t=out:st=0.03:d=0.15` (delay 15ms)
    - Measured: -18.4 LUFS, peak -2.8 dBFS, size 3,088 B, dur 0.27s.
+
+## R4: Stingers (Victory, Defeat, Level-Up, Boss Appear, all <= 3s)
+Synthesis source: tools/v5audio/render.mjs (deterministic filtergraph execution via ffmpeg).
+Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -16.7 to -16.2 LUFS (0.5 LU spread). True peak <= -2.0 dBFS. Durations 1.8s to 2.6s (<= 3.0s limit).
+
+1. `stinger.victory` (`stinger-victory`):
+   - Fanfare transient: C major triad arpeggio (C4 523.25Hz, E4 659.25Hz, G4 783.99Hz, C5 1046.5Hz)
+   - Harmonized brass body: C3 (261.63Hz) + G3 (392Hz) warm horn swell (delay 50ms)
+   - Shimmer tail: pink noise bandpass 2400Hz (w=1200), volume 0.25 (delay 100ms)
+   - Duration: 2.41s
+   - Measured: -16.2 LUFS, peak -2.0 dBFS, size 15,319 B.
+
+2. `stinger.defeat` (`stinger-defeat`):
+   - Melancholic transient: descending minor motif (A3 440Hz, F3 349.23Hz, D3 293.66Hz)
+   - Hollow body: low D minor drone (146.83Hz down to 116Hz) (delay 60ms)
+   - Deflating tail: brown noise lowpass 350Hz, volume 0.3 (delay 120ms)
+   - Duration: 2.21s
+   - Measured: -16.2 LUFS, peak -2.1 dBFS, size 13,736 B.
+
+3. `stinger.level_up` (`stinger-level-up`):
+   - Sparkle harp transient: pentatonic rising sweep (C6 1046.5Hz, E6 1318.5Hz, G6 1568Hz, C7 2093Hz)
+   - Resonant body: warm C5 + G5 dual bells (delay 40ms)
+   - Glittering tail: white noise bandpass 3200Hz (w=1600), volume 0.22 (delay 80ms)
+   - Duration: 1.81s
+   - Measured: -16.7 LUFS, peak -2.0 dBFS, size 11,959 B.
+
+4. `stinger.boss_appear` (`stinger-boss-appear`):
+   - Ominous transient: dissonant low horns (D2 73.42Hz, F2 87.31Hz, A2 110Hz)
+   - Colossal slam body: deep punch thud (95Hz down to 35Hz) (delay 600ms)
+   - Earthquake rumble tail: brown noise lowpass 420Hz, volume 0.35 (delay 650ms)
+   - Duration: 2.61s
+   - Measured: -16.7 LUFS, peak -2.3 dBFS, size 14,994 B.
