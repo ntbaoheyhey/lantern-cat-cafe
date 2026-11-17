@@ -1,14 +1,14 @@
 # CXI V7 continuation
-ACTIVE: I-A m17 held for own blink-seam finding; I-B chunk experiment; assistant: AGS.
-NEXT 1: Run room-event build/3cold transfers;16existing tests pass. CXV blink fix pending; V-E source reviewed, merge after isolated measurement.
+ACTIVE: I-A source-reviewed V-E/V-F merge and own production validation; blinkREDO remains; assistant: AGS.
+NEXT 1: Merge261baff27 (includesV-E81ef11fb4), then focusedtests/build/status/yarn/benchmark production pipeline.
 NEXT 2: Review CXV V-A3 seam repair and queued V-E81ef11fb4; no m17 tag/films until accepted.
 NEXT 3: Integrate accepted AGS4beds+AGV12AVIF then3cold transfers; residual wave3 gap needs own loader work.
-Last pushed SHA:6880cccb0; CXV merge105986f69; greenv5-m1.6=daee13215 remains.
+Last pushed SHA:3bada65ed55f97bf1ccfbde135590aa89355eabd; greenm1.6=daee13215; no m17tag.
 self-wake:cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; verified14:51UTC; existing exact V7 prompt, no duplicate.
-Last RULES re-read UTC:2026-11-17T15:24:18.872149+00:00;STOP-ALL/STOP-CXI absent.
+Last RULES re-read UTC:2026-11-17T15:31:10.581903+00:00;STOP-ALL/STOP-CXI absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none; PID70118 web3-study finished2builds. Current875442gzipB vs automatic880173B; no config change.
-Cold m16:8584126/9145394/8659811B;allFAIL8MB;route9864ms;0errors.
+Running:none; own status/outcome baseline4rows0errors; own pre-V-Fbenchmark0errors,4xCPU27frames>50.5ms; yarn baseline ready.
+Cold current room-event:8556506/9119755/8634208B;allFAIL8MB;route9686ms0errors.
 I-C firsthit20501ms incl17700ms reading8cards;enemy165→119;0errors.5227pass incl2927web.
 AGS open:T1 exactQA,T2/T3 sourcedresearch,T5 eb2 mono/missingmanifest REDO,T7 accurate submission drafts; five tasks.
 AGV openT4 approved12AVIF,T6 four384wportraits;noREADY. CXV52c2f99f1 merged105986f69, validationpending.

@@ -1,0 +1,88 @@
+{
+  "utc": "2026-11-17T15:27:02.362Z",
+  "source": "3bada65ed55f97bf1ccfbde135590aa89355eabd",
+  "indexSha256": "29952ef56d5abeb79e8f5099d14e4aaa7d9dd8deaa915926920b81dcdb07a77b",
+  "method": "Fresh Chromium context, service workers blocked, HTTP cache disabled. Count the full encoded response of every request started from navigation to visible battle-ready UI, including navigation and responses finishing after readiness. Production bundles only; unchanged official rules/fixtures are prepared outside the browser, then selected through the existing review interface.",
+  "buildExit": 0,
+  "existingTestsPassed": 16,
+  "rows": [
+    {
+      "fixture": "wave1",
+      "beforeBytes": 8584519,
+      "afterBytes": 8556506,
+      "savedBytes": 28013,
+      "requests": 737,
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "budgetPass": false
+    },
+    {
+      "fixture": "wave3",
+      "beforeBytes": 9145779,
+      "afterBytes": 9119755,
+      "savedBytes": 26024,
+      "requests": 751,
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "budgetPass": false
+    },
+    {
+      "fixture": "boss",
+      "beforeBytes": 8660228,
+      "afterBytes": 8634208,
+      "savedBytes": 26020,
+      "requests": 733,
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "budgetPass": false
+    }
+  ],
+  "route": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-17T15:27:12.756Z",
+    "sourceCommit": "3bada65ed55f97bf1ccfbde135590aa89355eabd",
+    "indexSha256": "29952ef56d5abeb79e8f5099d14e4aaa7d9dd8deaa915926920b81dcdb07a77b",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.",
+    "steps": [
+      {
+        "name": "route menu visible",
+        "ms": 1958
+      },
+      {
+        "name": "fight available",
+        "ms": 2223
+      },
+      {
+        "name": "battle visible",
+        "ms": 2842
+      },
+      {
+        "name": "practice receipt visible",
+        "ms": 9686
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "menu": "Your practice battle is ready\n\nMeet your crew in preparation, then choose Fight. Your first chapter opens after practice.\n\nReturn to preparation",
+    "buttons": [
+      {
+        "name": "Return to preparation",
+        "disabled": false
+      }
+    ],
+    "receipt": "Practice complete. A free invitation awaits.",
+    "deployment": {
+      "text": "Avalanche Fuji testnet\nLocal battle \u00b7 no transaction sent\nView deployed items contract \u2197",
+      "url": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    }
+  }
+}
