@@ -14,7 +14,7 @@
         "height": 900
       },
       "started": "2026-11-17T01:37:22.802Z",
-      "clicks": 9,
+      "clicks": 10,
       "errors": [],
       "failedRequests": [],
       "blockedRequests": [],
@@ -54,6 +54,10 @@
         {
           "name": "Withdraw Spool",
           "atMs": 107693
+        },
+        {
+          "name": "Face the boss",
+          "atMs": 107926
         }
       ],
       "layouts": [
@@ -546,6 +550,55 @@
           ],
           "alerts": [],
           "nonEnglish": []
+        },
+        {
+          "label": "wallet-proof",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1521,
+              "right": 1650
+            },
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1516,
+              "right": 1645
+            },
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1537,
+              "right": 1666
+            },
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1500,
+              "right": 1629
+            },
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1511,
+              "right": 1640
+            },
+            {
+              "tag": "INPUT",
+              "text": "",
+              "left": 1493,
+              "right": 1622
+            }
+          ],
+          "alerts": [],
+          "nonEnglish": []
         }
       ],
       "focus": [
@@ -560,9 +613,571 @@
           "tabs": 2
         }
       ],
-      "receipts": [],
-      "renderedReceipts": [],
-      "explorer": [],
+      "receipts": [
+        {
+          "hash": "0xe9625e011bca7ee22ec01d85eb0ec612b5e000e6dae01f97ead08e713ba089cc",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "action": "Guest funding",
+          "feeAvax": "0.000021869085504",
+          "confirmationMs": 10,
+          "local": true,
+          "observedAt": 101943.60000000149,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "unknown",
+            "functionName": null
+          }
+        },
+        {
+          "hash": "0xaf6dc4304480e0d7f9d4777a48b5bfd5b91fdb7a254ed3b335de947f9fd29aeb",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "mint",
+          "feeAvax": "0.000093574733128256",
+          "confirmationMs": 16.80000000447035,
+          "local": true,
+          "observedAt": 101972.10000000149,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0xbc2690e98f35cf3892512df43d0c6e18d8a069dbb9492a699950afade60c992f",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "claimTester",
+          "feeAvax": "0.000173882825608611",
+          "confirmationMs": 761.8000000044703,
+          "local": true,
+          "observedAt": 102900.10000000149,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claimTester"
+          }
+        },
+        {
+          "hash": "0x1688e017cb463da7287cdd8b562533201653e2d8786e4317a1c2c8fd562e4f19",
+          "wallet": "0xE796De53bFDD1Eca1Ba5608365347f772F2A41b1",
+          "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "action": "Guest funding",
+          "feeAvax": "0.000021583772217",
+          "confirmationMs": 505,
+          "local": true,
+          "observedAt": 103433,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "unknown",
+            "functionName": null
+          }
+        },
+        {
+          "hash": "0xc037dae227fc2ab7ac6899c5fa062c2ef920c1f4c1bb86d5787251efaaa7f75a",
+          "wallet": "0xE796De53bFDD1Eca1Ba5608365347f772F2A41b1",
+          "payer": "0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "action": "claimTester",
+          "feeAvax": "0.000155121266553396",
+          "confirmationMs": 765.9000000059605,
+          "local": true,
+          "observedAt": 104216.79999999702,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claimTester"
+          }
+        },
+        {
+          "hash": "0x8e1ecbfff12b06e0e20d6be3652e7abe221ff7fc7d1a19a312acffd5ce08dd93",
+          "wallet": "0xE796De53bFDD1Eca1Ba5608365347f772F2A41b1",
+          "payer": "0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "action": "transfer",
+          "feeAvax": "0.000035905466928232",
+          "confirmationMs": 763.2999999970198,
+          "local": true,
+          "observedAt": 104988.29999999702,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "transfer"
+          }
+        },
+        {
+          "hash": "0x56409cd5d2b59b01a174e471ebe7e664e2c27a37e4beb0e8575eb4b62da2e051",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "seal",
+          "feeAvax": "0.000083705311277816",
+          "confirmationMs": 763.8999999985099,
+          "local": true,
+          "observedAt": 105946.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "seal"
+          }
+        },
+        {
+          "hash": "0x77a0045eaeeb2eae50baea01f3521dfbb57d4c78e260662fa79279bb505a9c9f",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "mint",
+          "feeAvax": "0.000132686246986452",
+          "confirmationMs": 19.299999997019768,
+          "local": true,
+          "observedAt": 105989.29999999702,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0x8c855661c6f9095752a2e5a02ce0a3f7076e32565a42a181fa5bd42ee0d80362",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "seal",
+          "feeAvax": "0.000066003528520272",
+          "confirmationMs": 11.700000002980232,
+          "local": true,
+          "observedAt": 106186.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "seal"
+          }
+        },
+        {
+          "hash": "0x46c7c9a7232b2acf77fb813a5923efd33d8881c1cc1716c1667bcac3fe4e2bf1",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "safeBatchTransferFrom",
+          "feeAvax": "0.000056761626408005",
+          "confirmationMs": 11.899999998509884,
+          "local": true,
+          "observedAt": 106207.5,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "safeBatchTransferFrom"
+          }
+        },
+        {
+          "hash": "0x7661394e91893d7231918f14151e14c45a5a9c1fd14ab6f0bc02ac9d12dae72d",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "mint",
+          "feeAvax": "0.000131997668724035",
+          "confirmationMs": 13.299999997019768,
+          "local": true,
+          "observedAt": 106244,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0xd55e958abb46fe9801c30c30a5187c8d86127ebc3fe0c1d7cd8f4a090248d42f",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "setApprovalForAll",
+          "feeAvax": "0.000047145906386278",
+          "confirmationMs": 763.6999999955297,
+          "local": true,
+          "observedAt": 107165.89999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "setApprovalForAll"
+          }
+        },
+        {
+          "hash": "0x4ce6d7a486d4c4faee3926f1a403dcbf0a16c1acbf1ef0f5b70b0b74c11db494",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "list",
+          "feeAvax": "0.000237427341424974",
+          "confirmationMs": 13.599999994039536,
+          "local": true,
+          "observedAt": 107188.89999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "list"
+          }
+        },
+        {
+          "hash": "0x5a1c817532a78bac7736f38647e7478a6cac7ab58525d57db7d532338788ea2e",
+          "wallet": "0xE796De53bFDD1Eca1Ba5608365347f772F2A41b1",
+          "payer": "0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "action": "approve",
+          "feeAvax": "0.000047299507130016",
+          "confirmationMs": 13.899999998509884,
+          "local": true,
+          "observedAt": 107376.39999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "approve"
+          }
+        },
+        {
+          "hash": "0xd5bcccacf027cb8f09e6b20955ffa368ba94af4c30e570f411ebd900bbd514a3",
+          "wallet": "0xE796De53bFDD1Eca1Ba5608365347f772F2A41b1",
+          "payer": "0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "action": "buy",
+          "feeAvax": "0.00018821813621476",
+          "confirmationMs": 14.399999998509884,
+          "local": true,
+          "observedAt": 107401.29999999702,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "buy"
+          }
+        },
+        {
+          "hash": "0xd415b051106ff3377772992788e57e7e3c764a9bf1c8f0775c3d92d547b82c78",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "withdraw",
+          "feeAvax": "0.00004469366660202",
+          "confirmationMs": 12.5,
+          "local": true,
+          "observedAt": 107425.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "withdraw"
+          }
+        },
+        {
+          "hash": "0x630e3a9b3eaba5ea3044df93ca63c561e0ebbaba585e12db21fc9147d57f71bd",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "mint",
+          "feeAvax": "0.00013121221801664",
+          "confirmationMs": 13.799999997019768,
+          "local": true,
+          "observedAt": 107598.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+          "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "action": "claim",
+          "feeAvax": "0.00012059144215726",
+          "confirmationMs": 14.800000004470348,
+          "local": true,
+          "observedAt": 107652.60000000149,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claim",
+            "claimAmountWei": "6000000000000000000"
+          }
+        }
+      ],
+      "renderedReceipts": [
+        {
+          "hash": "0xe9625e011bca7ee22ec01d85eb0ec612b5e000e6dae01f97ead08e713ba089cc",
+          "text": "×\nGuest funding\nConfirmed locally\n0.01 s\nFee\n0.000021869085504 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xe9625e011bca7ee22ec01d85eb0ec612b5e000e6dae01f97ead08e713ba089cc",
+          "payerTitle": "Transaction payer: 0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xaf6dc4304480e0d7f9d4777a48b5bfd5b91fdb7a254ed3b335de947f9fd29aeb",
+          "text": "×\nRelic minted\nConfirmed locally\n0.02 s\nFee\n0.000093574733128256 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xaf6dc4304480e0d7f9d4777a48b5bfd5b91fdb7a254ed3b335de947f9fd29aeb",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xbc2690e98f35cf3892512df43d0c6e18d8a069dbb9492a699950afade60c992f",
+          "text": "×\nTest YARN claimed\nConfirmed locally\n0.76 s\nFee\n0.000173882825608611 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xbc2690e98f35cf3892512df43d0c6e18d8a069dbb9492a699950afade60c992f",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x1688e017cb463da7287cdd8b562533201653e2d8786e4317a1c2c8fd562e4f19",
+          "text": "×\nGuest funding\nConfirmed locally\n0.51 s\nFee\n0.000021583772217 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x1688e017cb463da7287cdd8b562533201653e2d8786e4317a1c2c8fd562e4f19",
+          "payerTitle": "Transaction payer: 0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xc037dae227fc2ab7ac6899c5fa062c2ef920c1f4c1bb86d5787251efaaa7f75a",
+          "text": "×\nTest YARN claimed\nConfirmed locally\n0.77 s\nFee\n0.000155121266553396 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xc037dae227fc2ab7ac6899c5fa062c2ef920c1f4c1bb86d5787251efaaa7f75a",
+          "payerTitle": "Transaction payer: 0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x8e1ecbfff12b06e0e20d6be3652e7abe221ff7fc7d1a19a312acffd5ce08dd93",
+          "text": "×\nYARN transferred\nConfirmed locally\n0.76 s\nFee\n0.000035905466928232 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x8e1ecbfff12b06e0e20d6be3652e7abe221ff7fc7d1a19a312acffd5ce08dd93",
+          "payerTitle": "Transaction payer: 0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x56409cd5d2b59b01a174e471ebe7e664e2c27a37e4beb0e8575eb4b62da2e051",
+          "text": "×\nYARN burned\nConfirmed locally\n0.76 s\nFee\n0.000083705311277816 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x56409cd5d2b59b01a174e471ebe7e664e2c27a37e4beb0e8575eb4b62da2e051",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x77a0045eaeeb2eae50baea01f3521dfbb57d4c78e260662fa79279bb505a9c9f",
+          "text": "×\nRelic minted\nConfirmed locally\n0.02 s\nFee\n0.000132686246986452 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x77a0045eaeeb2eae50baea01f3521dfbb57d4c78e260662fa79279bb505a9c9f",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x8c855661c6f9095752a2e5a02ce0a3f7076e32565a42a181fa5bd42ee0d80362",
+          "text": "×\nYARN burned\nConfirmed locally\n0.01 s\nFee\n0.000066003528520272 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x8c855661c6f9095752a2e5a02ce0a3f7076e32565a42a181fa5bd42ee0d80362",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x46c7c9a7232b2acf77fb813a5923efd33d8881c1cc1716c1667bcac3fe4e2bf1",
+          "text": "×\nFusion inputs sent\nConfirmed locally\n0.01 s\nFee\n0.000056761626408005 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x46c7c9a7232b2acf77fb813a5923efd33d8881c1cc1716c1667bcac3fe4e2bf1",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x7661394e91893d7231918f14151e14c45a5a9c1fd14ab6f0bc02ac9d12dae72d",
+          "text": "×\nRelic minted\nConfirmed locally\n0.01 s\nFee\n0.000131997668724035 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x7661394e91893d7231918f14151e14c45a5a9c1fd14ab6f0bc02ac9d12dae72d",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xd55e958abb46fe9801c30c30a5187c8d86127ebc3fe0c1d7cd8f4a090248d42f",
+          "text": "×\nMarket approved\nConfirmed locally\n0.76 s\nFee\n0.000047145906386278 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xd55e958abb46fe9801c30c30a5187c8d86127ebc3fe0c1d7cd8f4a090248d42f",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x4ce6d7a486d4c4faee3926f1a403dcbf0a16c1acbf1ef0f5b70b0b74c11db494",
+          "text": "×\nRelic listed\nConfirmed locally\n0.01 s\nFee\n0.000237427341424974 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x4ce6d7a486d4c4faee3926f1a403dcbf0a16c1acbf1ef0f5b70b0b74c11db494",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x5a1c817532a78bac7736f38647e7478a6cac7ab58525d57db7d532338788ea2e",
+          "text": "×\nYARN approved\nConfirmed locally\n0.01 s\nFee\n0.000047299507130016 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x5a1c817532a78bac7736f38647e7478a6cac7ab58525d57db7d532338788ea2e",
+          "payerTitle": "Transaction payer: 0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xd5bcccacf027cb8f09e6b20955ffa368ba94af4c30e570f411ebd900bbd514a3",
+          "text": "×\nRelic purchased\nConfirmed locally\n0.01 s\nFee\n0.00018821813621476 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xd5bcccacf027cb8f09e6b20955ffa368ba94af4c30e570f411ebd900bbd514a3",
+          "payerTitle": "Transaction payer: 0xe796de53bfdd1eca1ba5608365347f772f2a41b1",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xd415b051106ff3377772992788e57e7e3c764a9bf1c8f0775c3d92d547b82c78",
+          "text": "×\nSale proceeds claimed\nConfirmed locally\n0.01 s\nFee\n0.00004469366660202 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xd415b051106ff3377772992788e57e7e3c764a9bf1c8f0775c3d92d547b82c78",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x630e3a9b3eaba5ea3044df93ca63c561e0ebbaba585e12db21fc9147d57f71bd",
+          "text": "×\nRelic minted\nConfirmed locally\n0.01 s\nFee\n0.00013121221801664 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x630e3a9b3eaba5ea3044df93ca63c561e0ebbaba585e12db21fc9147d57f71bd",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+          "text": "×\nSpool claimed\nConfirmed locally\n0.01 s\nFee\n0.00012059144215726 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+          "payerTitle": "Transaction payer: 0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+          "visible": true,
+          "withinViewport": true
+        }
+      ],
+      "explorer": [
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xe9625e011bca7ee22ec01d85eb0ec612b5e000e6dae01f97ead08e713ba089cc",
+          "status": "LOCAL_ONLY",
+          "hash": "0xe9625e011bca7ee22ec01d85eb0ec612b5e000e6dae01f97ead08e713ba089cc",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xaf6dc4304480e0d7f9d4777a48b5bfd5b91fdb7a254ed3b335de947f9fd29aeb",
+          "status": "LOCAL_ONLY",
+          "hash": "0xaf6dc4304480e0d7f9d4777a48b5bfd5b91fdb7a254ed3b335de947f9fd29aeb",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xbc2690e98f35cf3892512df43d0c6e18d8a069dbb9492a699950afade60c992f",
+          "status": "LOCAL_ONLY",
+          "hash": "0xbc2690e98f35cf3892512df43d0c6e18d8a069dbb9492a699950afade60c992f",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x1688e017cb463da7287cdd8b562533201653e2d8786e4317a1c2c8fd562e4f19",
+          "status": "LOCAL_ONLY",
+          "hash": "0x1688e017cb463da7287cdd8b562533201653e2d8786e4317a1c2c8fd562e4f19",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xc037dae227fc2ab7ac6899c5fa062c2ef920c1f4c1bb86d5787251efaaa7f75a",
+          "status": "LOCAL_ONLY",
+          "hash": "0xc037dae227fc2ab7ac6899c5fa062c2ef920c1f4c1bb86d5787251efaaa7f75a",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x8e1ecbfff12b06e0e20d6be3652e7abe221ff7fc7d1a19a312acffd5ce08dd93",
+          "status": "LOCAL_ONLY",
+          "hash": "0x8e1ecbfff12b06e0e20d6be3652e7abe221ff7fc7d1a19a312acffd5ce08dd93",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x56409cd5d2b59b01a174e471ebe7e664e2c27a37e4beb0e8575eb4b62da2e051",
+          "status": "LOCAL_ONLY",
+          "hash": "0x56409cd5d2b59b01a174e471ebe7e664e2c27a37e4beb0e8575eb4b62da2e051",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x77a0045eaeeb2eae50baea01f3521dfbb57d4c78e260662fa79279bb505a9c9f",
+          "status": "LOCAL_ONLY",
+          "hash": "0x77a0045eaeeb2eae50baea01f3521dfbb57d4c78e260662fa79279bb505a9c9f",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x8c855661c6f9095752a2e5a02ce0a3f7076e32565a42a181fa5bd42ee0d80362",
+          "status": "LOCAL_ONLY",
+          "hash": "0x8c855661c6f9095752a2e5a02ce0a3f7076e32565a42a181fa5bd42ee0d80362",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x46c7c9a7232b2acf77fb813a5923efd33d8881c1cc1716c1667bcac3fe4e2bf1",
+          "status": "LOCAL_ONLY",
+          "hash": "0x46c7c9a7232b2acf77fb813a5923efd33d8881c1cc1716c1667bcac3fe4e2bf1",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x7661394e91893d7231918f14151e14c45a5a9c1fd14ab6f0bc02ac9d12dae72d",
+          "status": "LOCAL_ONLY",
+          "hash": "0x7661394e91893d7231918f14151e14c45a5a9c1fd14ab6f0bc02ac9d12dae72d",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xd55e958abb46fe9801c30c30a5187c8d86127ebc3fe0c1d7cd8f4a090248d42f",
+          "status": "LOCAL_ONLY",
+          "hash": "0xd55e958abb46fe9801c30c30a5187c8d86127ebc3fe0c1d7cd8f4a090248d42f",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x4ce6d7a486d4c4faee3926f1a403dcbf0a16c1acbf1ef0f5b70b0b74c11db494",
+          "status": "LOCAL_ONLY",
+          "hash": "0x4ce6d7a486d4c4faee3926f1a403dcbf0a16c1acbf1ef0f5b70b0b74c11db494",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x5a1c817532a78bac7736f38647e7478a6cac7ab58525d57db7d532338788ea2e",
+          "status": "LOCAL_ONLY",
+          "hash": "0x5a1c817532a78bac7736f38647e7478a6cac7ab58525d57db7d532338788ea2e",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xd5bcccacf027cb8f09e6b20955ffa368ba94af4c30e570f411ebd900bbd514a3",
+          "status": "LOCAL_ONLY",
+          "hash": "0xd5bcccacf027cb8f09e6b20955ffa368ba94af4c30e570f411ebd900bbd514a3",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xd415b051106ff3377772992788e57e7e3c764a9bf1c8f0775c3d92d547b82c78",
+          "status": "LOCAL_ONLY",
+          "hash": "0xd415b051106ff3377772992788e57e7e3c764a9bf1c8f0775c3d92d547b82c78",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x630e3a9b3eaba5ea3044df93ca63c561e0ebbaba585e12db21fc9147d57f71bd",
+          "status": "LOCAL_ONLY",
+          "hash": "0x630e3a9b3eaba5ea3044df93ca63c561e0ebbaba585e12db21fc9147d57f71bd",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+          "status": "LOCAL_ONLY",
+          "hash": "0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        }
+      ],
       "requests": [
         {
           "url": "http://127.0.0.1:6200/",
@@ -7502,14 +8117,554 @@
           "mime": "image/webp",
           "bytes": 12588,
           "atMs": 107799
+        },
+        {
+          "url": "http://127.0.0.1:6201/functions/v1/chain-judge",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 107925
+        },
+        {
+          "url": "http://127.0.0.1:6201/functions/v1/chain-judge",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 40122,
+          "atMs": 107939
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 110052
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 111031
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 118576
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 119557
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 123846
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 126545
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 128931
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 136545
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 139733
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 140603
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 150500
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 151949
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 159089
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 162332
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 164298
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 173369
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 176028
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 177544
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 178527
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 180404
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 185457
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 188567
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 189543
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 191359
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 192943
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 203017
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204105
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 184,
+          "atMs": 204111
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204115
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 184,
+          "atMs": 204118
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204119
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204120
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204141
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204141
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 182,
+          "atMs": 204142
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 245,
+          "atMs": 204143
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 50060,
+          "atMs": 204158
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204159
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204161
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204178
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204182
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204194
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204194
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204207
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204207
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204215
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204216
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 204222
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204222
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 12919,
+          "atMs": 204225
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204226
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 204226
         }
       ],
-      "assertions": [],
+      "assertions": [
+        {
+          "name": "first_battle_within_30s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_receipt_within_180s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_battle_at_most_3clicks",
+          "pass": true
+        },
+        {
+          "name": "seven_step_journey_complete",
+          "pass": true
+        },
+        {
+          "name": "at_least_5_action_types",
+          "pass": true
+        },
+        {
+          "name": "receipts_success_fee_payer",
+          "pass": true
+        },
+        {
+          "name": "receipt_event_fields",
+          "pass": true
+        },
+        {
+          "name": "every_receipt_visibly_labeled",
+          "pass": true
+        },
+        {
+          "name": "no_horizontal_overflow",
+          "pass": false
+        },
+        {
+          "name": "primary_keyboard_access",
+          "pass": true
+        },
+        {
+          "name": "cold_visible_battle_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0
+        },
+        {
+          "name": "public_explorer_proof",
+          "pass": null,
+          "scope": "unverified on public chain; local hashes excluded"
+        }
+      ],
       "skipped": [],
       "screenshots": [
         "1-1440x900-landing.jpg",
         "1-1440x900-battle.jpg",
-        "1-1440x900-first-receipt.jpg"
+        "1-1440x900-first-receipt.jpg",
+        "1-1440x900-wallet-proof.jpg"
       ],
       "firstBattleMs": 3130,
       "firstBattleClicks": 2,
@@ -7614,8 +8769,26 @@
         "measurement": "CDP loadingFinished encodedDataLength by first visible battle; incomplete in-flight responses separately listed"
       },
       "inFlightAtBattle": [],
-      "firstReceiptMs": 102179
+      "firstReceiptMs": 102179,
+      "actionTypes": [
+        "unknown.Guest funding",
+        "RelicNFT.mint",
+        "SeasonRewards.claimTester",
+        "YarnToken.transfer",
+        "YarnToken.seal",
+        "RelicNFT.safeBatchTransferFrom",
+        "RelicNFT.setApprovalForAll",
+        "RelicMarketV2.list",
+        "YarnToken.approve",
+        "RelicMarketV2.buy",
+        "RelicMarketV2.withdraw",
+        "SeasonRewards.claim"
+      ],
+      "verdict": "FAIL",
+      "elapsedMs": 204226,
+      "ended": "2026-11-17T01:40:47.028Z",
+      "video": "/Users/bao/taskbar-hero-qa/work/v4qa/q1-cold-1/videos/page@8b203450f301da865a52a756da8e67cb.webm"
     }
   ],
-  "screenshots": 3
+  "screenshots": 4
 }
