@@ -13,13 +13,13 @@
 - [x] H9 Sound R9 size pass + R10 re-score and redo 3 lowest [60 min]
 - [x] AG1-R3 Motion Live2D/Spine physics tuning -> reports/v5/AGS/MOTION-PARAMS.md [60 min]
 - [x] AG1-R4 Hit feel numbers -> reports/v5/AGS/HIT-FEEL.md [45 min]
+- [x] REFILL-R3 Accessibility: reduced motion, contrast, text size findings -> reports/v5/AGS/ACCESSIBILITY.md [45 min]
+- [x] REFILL-R4 Error/offline states test plan for CXI (wallet missing, RPC down, sponsor low) -> reports/v5/AGS/OFFLINE-TEST-PLAN.md [45 min]
+- [x] REFILL-R5 Slides outline (8-10 slides) in submission/SLIDES-OUTLINE.md [45 min]
 
 ## Refill List
 - [ ] R1 QA on newest tag (repeatable)
 - [ ] R2 Re-verify every open finding on newest tag, close or reopen with evidence (repeatable)
-- [ ] R3 Accessibility: reduced motion, contrast, text size findings
-- [ ] R4 Error/offline states test plan for CXI (wallet missing, RPC down, sponsor low)
-- [ ] R5 Slides outline (8-10 slides) in submission/SLIDES-OUTLINE.md
 - [ ] R6 FAQ for judges
 - [ ] R7 Ambience/music bed variations
 - [ ] R8 Loudness table refresh for all v5 audio
