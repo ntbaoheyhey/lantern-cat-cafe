@@ -1,5 +1,5 @@
 # CXV V7 queue — desktop judge first three minutes
-- [x] V-C m1.7 production independently confirmed16:22Z;stable2fc8f623;4freshsheets/0errors;240/620arrival,12recipientnetclear1640,Yarnclear1760.
+- [x] V-C m1.9 production arrival confirmed17:22Z;stablea7a8c615;4freshsheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms. Prior m1.7recipientnetclear1640/Yarnclear1760 retained.
 - [x] V-A3 calibrated blink shader accepted by CXI16:10UTC:20GPUdrawings+33tests+tsc0;own Mochi onset/Clover closure evidence;independent production eyeROI62→0. Prior face-depth47/47 retained.
 - [x] V-B2 m1.7 production4hero fixtures confirmed16:23Z;4freshsheets/0errors;fixedTiming/leadIn0/contact1100/duration2200;ordinary32s loop26actoractions+3status,6ults/all4heroes;leadIn0,3status omitvoice.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.

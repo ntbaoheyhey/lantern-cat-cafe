@@ -50,13 +50,9 @@ try{
    const boss=[...s.actors].find(([,e])=>e.asset==='yarn-giant');
    const effects=Object.fromEntries(['craftThread','craftYarn','craftShield','craftHeal','craftOven','craft'].filter(k=>s[k]?.audit).map(k=>[k,structuredClone(s[k].audit)]));
    const net=s.craftThread?.rear;
-   const measured={ms,actionAt:m.animationAt,bossFeet:boss?s.socket(boss[0],'feet'):null,bossHome:boss?s.homes.get(boss[0])?.point:null,bossRoot:boss?s.motionAudit.find(a=>a.id===boss[0]):null,cinematic:{...s.cinematic},effects,netActive:net?.visible?net.children.filter(c=>c.visible).length:0,targets:m.plan?[...new Set(m.plan.events.flatMap(e=>e.targetIds??[]))]:[]};
-   if(arrival&&boss){
-    const entered=boss[1].entered;
-    try{boss[1].entered=-100;s.render(renderView,0);const neutral=s.motionAudit.find(a=>a.id===boss[0]);measured.expiredEntranceRoot=neutral;measured.entranceContribution={x:measured.bossRoot.x-neutral.x,y:measured.bossRoot.y-neutral.y};}
-    finally{boss[1].entered=entered;s.render(renderView,0);}
-   }
-   return measured;
+   // One render per sample: repeating with altered entrance age would trigger
+   // arrival accents and change reaction state in this stateful scene.
+   return{ms,actionAt:m.animationAt,bossFeet:boss?s.socket(boss[0],'feet'):null,bossHome:boss?s.homes.get(boss[0])?.point:null,bossRoot:boss?s.motionAudit.find(a=>a.id===boss[0]):null,cinematic:{...s.cinematic},effects,netActive:net?.visible?net.children.filter(c=>c.visible).length:0,targets:m.plan?[...new Set(m.plan.events.flatMap(e=>e.targetIds??[]))]:[]};
   },{ms,arrival});
   const frameTimes=arrival?(earlyAction?[79,80,arrivalMode==='-acting'?160:280,430]:[0,80,240,620]):[impact-1,impact,impact+180,impact+540];
   const sampleTimes=earlyAction?[...new Set([...frameTimes,81,120,160,240,429,620])].sort((a,b)=>a-b):frameTimes;
