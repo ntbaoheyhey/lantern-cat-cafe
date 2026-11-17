@@ -1,7 +1,7 @@
 # AGS Handoff (REV 4)
-ACTIVE: H5 Submission text drafts (VIDEO-PLAN.md & Voice slices done)
-NEXT 1: Compile reports/v5/AGS/submission/SUBMISSION-DRAFT.md
-NEXT 2: Compile reports/v5/AGS/JUDGE-CHECKLIST.md (H6)
-NEXT 3: H3 Sound R7 boss phase/ult layers + R8 mix pass
-LAST_PUSHED_SHA: d495e7e2a
-LAST_REREAD_UTC: 2026-11-17T07:00:00Z
+ACTIVE: H9 Sound R9 size pass + R10 re-score and redo 3 lowest
+NEXT 1: Run size optimization script on audio assets (R9)
+NEXT 2: Re-score all v5 audio cues in SCORES.md & polish lowest (R10)
+NEXT 3: AG1-R3 Motion Live2D/Spine physics tuning (MOTION-PARAMS.md)
+LAST_PUSHED_SHA: pending commit
+LAST_REREAD_UTC: 2026-11-17T07:11:00Z

@@ -2052,6 +2052,197 @@ export function renderCatEmotes() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R7: Boss Phase & Ultimate Layers Definitions (Yarn Giant)
+ */
+export const BOSS_LAYER_DEFINITIONS = [
+  {
+    cueId: 'boss.yarn-giant.phase_change',
+    name: 'boss-yarn-giant-phase-change',
+    runtimeCueId: 'boss.yarn-giant.phase_change',
+    aliases: ['boss.phase_change', 'boss.enrage', 'yarn-giant.phase2'],
+    durationSec: 1.85,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(2400-1100*(t/0.04))*t)*exp(-t/0.012)':s=48000:d=0.04",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*(sin(2*PI*(65+40*(t/1.2))*t)+0.5*sin(2*PI*(130+80*(t/1.2))*t))*(1+0.25*sin(2*PI*8*t))*exp(-t/0.8)':s=48000:d=1.4",
+    bodyDelayMs: 25,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=1.4,lowpass=f=280,volume=0.38,afade=t=out:st=0.3:d=1.1",
+    tailDelayMs: 120,
+    masterGain: 0.95,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'boss.yarn-giant.shockwave',
+    name: 'boss-yarn-giant-shockwave',
+    runtimeCueId: 'boss.yarn-giant.shockwave',
+    aliases: ['boss.shockwave', 'yarn-giant.ground-crack', 'shockwave.heavy'],
+    durationSec: 1.45,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.95*sin(2*PI*(140-80*(t/0.03))*t)*exp(-t/0.008)':s=48000:d=0.03",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(48-12*(t/0.8))*t)*exp(-t/0.45)':s=48000:d=1.0",
+    bodyDelayMs: 15,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=1.1,bandpass=f=450:w=300,volume=0.32,afade=t=out:st=0.1:d=1.0",
+    tailDelayMs: 50,
+    masterGain: 0.92,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'boss.yarn-giant.thread_charge',
+    name: 'boss-yarn-giant-thread-charge',
+    runtimeCueId: 'boss.yarn-giant.thread_charge',
+    aliases: ['boss.charge', 'yarn-giant.charge-swirl', 'ult.yarn-giant.charge'],
+    durationSec: 0.95,
+    bus: 'sfx',
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.25,bandpass=f=800:w=500,afade=t=in:st=0:d=0.25,volume=0.4",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*(sin(2*PI*(180+340*(t/0.75))*t)+0.4*sin(2*PI*(360+680*(t/0.75))*t))*exp(-max(0,0.75-t)/0.4)':s=48000:d=0.8",
+    bodyDelayMs: 80,
+    tailFilter: "aevalsrc=exprs='0.7*sin(2*PI*520*t)*exp(-t/0.15)':s=48000:d=0.25",
+    tailDelayMs: 650,
+    masterGain: 0.58,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderBossLayers() {
+  console.log(`Rendering ${BOSS_LAYER_DEFINITIONS.length} Boss Phase & Ultimate Layers (R7)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of BOSS_LAYER_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: def.bus,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,bus'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},sfx`);
+  }
+  writeReportFile('R7-loudness.csv', csvLines.join('\n') + '\n');
+  console.log('Wrote R7-loudness.csv to reports');
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R7 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
+/**
+ * R8: Full Audio Mix Pass & Gain Proposal Generation
+ */
+export function runMixPass() {
+  console.log('=== Running Full V5 Audio Mix Pass (R8) ===');
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+  const busTargets = {
+    sfx: -18.0,
+    ui: -19.0,
+    voice: -18.0,
+    ambience: -22.0
+  };
+
+  const cueEntries = Object.entries(manifest).filter(([k, v]) => typeof v === 'object' && v.opus && !k.startsWith('ranged.') && !k.startsWith('kit.ranged'));
+  const rows = [];
+  const proposals = [];
+
+  for (const [cueId, meta] of cueEntries) {
+    const fullPath = path.join(ROOT_DIR, 'apps/web/public', meta.opus);
+    if (!fs.existsSync(fullPath)) continue;
+
+    const loudness = measureLoudness(fullPath);
+    const bus = meta.bus || 'sfx';
+    const targetLufs = busTargets[bus] || -18.0;
+    const diff = targetLufs - loudness.integratedLUFS;
+    const gainProposalDb = Math.abs(diff) > 1.5 ? parseFloat(diff.toFixed(1)) : 0.0;
+
+    rows.push({
+      cueId,
+      opus: meta.opus,
+      bus,
+      integratedLUFS: loudness.integratedLUFS,
+      truePeakDb: loudness.truePeakDb,
+      targetLufs,
+      gainProposalDb
+    });
+
+    if (gainProposalDb !== 0) {
+      proposals.push({ cueId, bus, currentLUFS: loudness.integratedLUFS, targetLufs, gainProposalDb });
+    }
+  }
+
+  // Write CSV
+  const csvLines = [
+    'cueId,opus,bus,integratedLUFS,truePeakDbFS,targetLufs,gainProposalDb'
+  ];
+  for (const r of rows) {
+    csvLines.push(`${r.cueId},${r.opus},${r.bus},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},${r.targetLufs.toFixed(1)},${r.gainProposalDb.toFixed(1)}`);
+  }
+  writeReportFile('R8-loudness-full.csv', csvLines.join('\n') + '\n');
+
+  // Write Markdown Report
+  const mdReport = [
+    '# R8: V5 Audio Mix Pass & Gain Proposals',
+    '',
+    `- Total evaluated cues: ${rows.length}`,
+    `- Outliers requiring gain tuning: ${proposals.length}`,
+    `- Bus Targets: SFX = -18.0 LUFS, UI = -19.0 LUFS, Voice = -18.0 LUFS, Ambience = -22.0 LUFS`,
+    '',
+    '## Gain Tuning Recommendations for CXI Audio Engine',
+    '| Cue ID | Bus | Current LUFS | Target LUFS | Proposed Gain (dB) | Notes |',
+    '| :--- | :---: | :---: | :---: | :---: | :--- |'
+  ];
+
+  for (const p of proposals) {
+    mdReport.push(`| \`${p.cueId}\` | ${p.bus} | ${p.currentLUFS.toFixed(1)} | ${p.targetLufs.toFixed(1)} | ${p.gainProposalDb > 0 ? '+' : ''}${p.gainProposalDb} dB | Calibration offset |`);
+  }
+
+  if (proposals.length === 0) {
+    mdReport.push('| None | - | - | - | 0.0 dB | All evaluated cues within +/- 1.5 LU of bus targets! |');
+  }
+
+  writeReportFile('R8-MIX-PASS.md', mdReport.join('\n') + '\n');
+  console.log(`Mix pass complete. Evaluated ${rows.length} cues, found ${proposals.length} tuning recommendations.`);
+  return { rows, proposals };
+}
+
 // CLI dispatcher
 const arg = process.argv[2];
 if (arg === '--calibrate') {
@@ -2074,6 +2265,10 @@ if (arg === '--calibrate') {
   renderChainMoments();
 } else if (arg === '--cat-emotes') {
   renderCatEmotes();
+} else if (arg === '--boss-layers') {
+  renderBossLayers();
+} else if (arg === '--mix-pass') {
+  runMixPass();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
@@ -2085,7 +2280,9 @@ if (arg === '--calibrate') {
   renderStingers();
   renderChainMoments();
   renderCatEmotes();
+  renderBossLayers();
+  runMixPass();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --stingers | --chain-moments | --cat-emotes | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --stingers | --chain-moments | --cat-emotes | --boss-layers | --mix-pass | --all]');
 }
 

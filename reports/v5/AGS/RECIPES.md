@@ -458,3 +458,25 @@ All synthesized deterministically into WebM Opus + AAC M4A. Target: -18.0 LUFS +
    - `emote.panko.happy`: Toast pop 2100Hz + warm upward trill 440->760Hz with 20Hz vibrato. Dur 0.39s, -16.9 LUFS, peak -2.4 dBFS, size 2,794 B.
    - `emote.panko.hurt`: Dry crust click 1250Hz + downward drop 640->300Hz. Dur 0.33s, -16.5 LUFS, peak -2.1 dBFS, size 2,215 B.
    - `emote.panko.purr`: Flour puff + 115Hz warm body with 27Hz amplitude modulation. Dur 0.86s, -16.3 LUFS, peak -1.8 dBFS, size 9,136 B.
+
+## R7 Boss Phase & Ultimate Layers (Yarn Giant)
+Command: `node tools/v5audio/render.mjs --boss-layers`
+All synthesized deterministically into WebM Opus + AAC M4A. Target: -18.0 LUFS +/- 2 LU.
+
+1. `boss.yarn-giant.phase_change` (`boss-yarn-giant-phase-change`):
+   - Tension fracture transient: sine 2400->1300Hz sweep, 40ms, exp(-t/0.012)
+   - Monster roar body: dual tone (65Hz + 130Hz rising to 105Hz/210Hz) with 8Hz vibrato, delay 25ms
+   - Debris rumble tail: brown noise lowpass 280Hz, volume 0.38, decay 1.1s, delay 120ms
+   - Duration: 1.86s, Measured: -16.5 LUFS, peak -2.5 dBFS, size 12,948 B.
+
+2. `boss.yarn-giant.shockwave` (`boss-yarn-giant-shockwave`):
+   - Stomp crack transient: stone impact 140->60Hz, 30ms, exp(-t/0.008)
+   - Shockwave ring body: sub-bass expansion 48Hz dropping to 36Hz, delay 15ms
+   - Airborne thread tail: pink noise bandpass 450Hz (w=300), volume 0.32, decay 1.0s, delay 50ms
+   - Duration: 1.46s, Measured: -18.1 LUFS, peak -1.8 dBFS, size 10,514 B.
+
+3. `boss.yarn-giant.thread_charge` (`boss-yarn-giant-thread-charge`):
+   - Inward suction transient: pink noise bandpass 800Hz (w=500), fade-in 0.25s, volume 0.4
+   - Thread tension body: harmonic rise 180Hz + 360Hz sweeping to 520Hz/1040Hz, delay 80ms
+   - Tension hold tail: 520Hz sine ring, delay 650ms
+   - Duration: 0.96s, Measured: -16.7 LUFS, peak -5.5 dBFS, size 6,176 B.

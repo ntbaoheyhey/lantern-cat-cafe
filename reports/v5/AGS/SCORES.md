@@ -133,3 +133,10 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `emote.panko.happy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Toasty cheerful chirp 440->760Hz, -16.9 LUFS, 2.8 KB |
 | `emote.panko.hurt` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Crust-pop startled mew 640->300Hz, -16.5 LUFS, 2.2 KB |
 | `emote.panko.purr` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Bakery dough purr 115Hz @ 27Hz pulse, -16.3 LUFS, 9.1 KB |
+
+## R7 Boss Phase & Ultimate Layers (Yarn Giant)
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `boss.yarn-giant.phase_change` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Fiber fracture snap + monstrous low roar 65->105Hz, -16.5 LUFS, 12.9 KB |
+| `boss.yarn-giant.shockwave` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Heavy stone stomp crack + 48Hz shockwave ring, -18.1 LUFS, 10.5 KB |
+| `boss.yarn-giant.thread_charge` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Inverted suction whoosh + harmonic thread tension 180->520Hz, -16.7 LUFS, 6.2 KB |
