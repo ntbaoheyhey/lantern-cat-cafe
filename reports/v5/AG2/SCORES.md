@@ -59,3 +59,7 @@
 | `aura-fire-buff` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-fire-buff.jpg | PASS |
 | `aura-heal-regen` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-heal-regen.jpg | PASS |
 | `aura-attack-buff` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-attack-buff.jpg | PASS |
+| `status-poison-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-poison-loop.jpg | PASS |
+| `status-burn-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-burn-loop.jpg | PASS |
+| `status-stun-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-stun-loop.jpg | PASS |
+| `status-slow-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-slow-loop.jpg | PASS |
