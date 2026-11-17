@@ -1,0 +1,1040 @@
+{
+  "at": "2026-11-16T22:20:42.278149+00:00",
+  "scriptSha256": "34c83064d2bbaa897fef0edaf09da231df696f71c3dcd556ecded05bcc5473a2",
+  "evidenceHashes": {
+    "reports/v4-art/REVIEW/A10/scene-ready-transfer/browser-resolution-baseline.json": "a406cde3261c630bc5700170484e94474b2f405a0d2272581961ccf4e690a233",
+    "reports/v4-art/REVIEW/A10/scene-ready-transfer/browser-pma-r2-candidate.json": "8b1a171ee04c762a3247317853d94409d48a97a141e43b4d9e3d10ac9f439975",
+    "reports/v4-art/REVIEW/A10/scene-ready-transfer/browser-pma-r2-fallback.json": "d11cf17ba3afed3d41d7c5abff7d0852d8b404cdb5677bd2134f4bdc6255a309"
+  },
+  "scope": "Same paused state only; head face-box and feet-socket comparisons are not all-pose/film acceptance. Byte totals are development image requests, not production totals. VFX is loaded but idle screenshots do not prove effect appearance.",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "height": 720,
+      "actors": [
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "asset": "needle-moth",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-0-button-guard",
+          "asset": "button-guard",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "asset": "sock-skipper",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "asset": "teacup-healer",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.022407114383199537,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249902,
+            1.0033307799249893
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.11755468925429113,
+            "y": -0.5455430476911829,
+            "width": 0.21977936348241656,
+            "height": -1.1368683772161603e-13
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.22568523516429195,
+            "y": 0.1909148670378613,
+            "width": -0.8818867741039185,
+            "height": -0.8516485822777895
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.08558516621029355,
+            "y": -0.11941782560465697,
+            "width": 0.03398671476369941,
+            "height": 0.004860378667189025
+          }
+        }
+      ],
+      "baselineImageBytes": 12471622,
+      "candidateImageBytes": 8081967,
+      "savedImageBytes": 4389655,
+      "fallbackSnapshotExact": true,
+      "sampledTextures": 4,
+      "sampledPaintEntries": 20,
+      "fallbackPaintUsesNativeCoordinates": true
+    },
+    {
+      "fixture": "wave3",
+      "height": 720,
+      "actors": [
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-4-needle-moth",
+          "asset": "needle-moth",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-5-teacup-healer",
+          "asset": "teacup-healer",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.2256852351642351,
+            "y": 0.1909148670378471,
+            "width": -0.8818867741038616,
+            "height": -0.8516485822777611
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.08558516621029355,
+            "y": -0.11941782560465697,
+            "width": 0.03398671476369941,
+            "height": 0.004860378667189025
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.022407114383199537,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249902,
+            1.0033307799249893
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.11755468925429113,
+            "y": -0.5455430476911829,
+            "width": 0.21977936348241656,
+            "height": -1.1368683772161603e-13
+          }
+        }
+      ],
+      "baselineImageBytes": 16216083,
+      "candidateImageBytes": 11826428,
+      "savedImageBytes": 4389655,
+      "fallbackSnapshotExact": false,
+      "sampledTextures": 4,
+      "sampledPaintEntries": 20,
+      "fallbackPaintUsesNativeCoordinates": true
+    },
+    {
+      "fixture": "boss",
+      "height": 720,
+      "actors": [
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "asset": "binding-thread",
+          "sourceStable": true,
+          "feetDeltaPx": 0.2553935532103536,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0005558549810452,
+            1.0005558549810454
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.5375233221816416,
+            "y": 0.0383732468133644,
+            "width": -0.5375233221816416,
+            "height": -5.684341886080802e-14
+          }
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "asset": "binding-thread",
+          "sourceStable": true,
+          "feetDeltaPx": 0.4269452375679066,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.7420551958534816,
+            "y": 0.21422493568140055,
+            "width": -0.7420551958534816,
+            "height": -0.23667671019700265
+          }
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "asset": "yarn-giant",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.1689858208563919,
+            "y": 0.15758623156239082,
+            "width": 0.005494173156080251,
+            "height": -0.32729957393553377
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.22568523516429195,
+            "y": 0.1909148670378613,
+            "width": -0.8818867741039185,
+            "height": -0.8516485822777895
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0855851662103646,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            0.9999999999999982,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": -0.11941782560465697,
+            "width": 0.033986714763614145,
+            "height": 0.004860378667189025
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.09514789170149511,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249898,
+            1.0033307799249893
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": -0.5455430476911829,
+            "width": 0.21977936348230287,
+            "height": -1.1368683772161603e-13
+          }
+        }
+      ],
+      "baselineImageBytes": 9224723,
+      "candidateImageBytes": 2598079,
+      "savedImageBytes": 6626644,
+      "fallbackSnapshotExact": false,
+      "sampledTextures": 7,
+      "sampledPaintEntries": 24,
+      "fallbackPaintUsesNativeCoordinates": true
+    },
+    {
+      "fixture": "wave1",
+      "height": 900,
+      "actors": [
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-3-needle-moth",
+          "asset": "needle-moth",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-0-button-guard",
+          "asset": "button-guard",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "asset": "sock-skipper",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-2-teacup-healer",
+          "asset": "teacup-healer",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.10698145776279233,
+            "y": -0.14927228200581055,
+            "width": 0.04248339345463137,
+            "height": 0.006075473333964965
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.2821065439554218,
+            "y": 0.23864358379734085,
+            "width": -1.1023584676299265,
+            "height": -1.0645607278472653
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.028008892978999694,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249893,
+            1.0033307799249886
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.14694336156782128,
+            "y": -0.6819288096139644,
+            "width": 0.2747242043528786,
+            "height": -1.1368683772161603e-13
+          }
+        }
+      ],
+      "baselineImageBytes": 12471622,
+      "candidateImageBytes": 8081967,
+      "savedImageBytes": 4389655,
+      "fallbackSnapshotExact": true,
+      "sampledTextures": 4,
+      "sampledPaintEntries": 20,
+      "fallbackPaintUsesNativeCoordinates": true
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "actors": [
+        {
+          "id": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-4-needle-moth",
+          "asset": "needle-moth",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-5-teacup-healer",
+          "asset": "teacup-healer",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.28210654395536494,
+            "y": 0.23864358379731243,
+            "width": -1.1023584676299834,
+            "height": -1.0645607278472085
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.10698145776279233,
+            "y": -0.14927228200581055,
+            "width": 0.04248339345463137,
+            "height": 0.006075473333964965
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.028008892978999694,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249893,
+            1.0033307799249886
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.14694336156782128,
+            "y": -0.6819288096139644,
+            "width": 0.2747242043528786,
+            "height": -1.1368683772161603e-13
+          }
+        }
+      ],
+      "baselineImageBytes": 16216083,
+      "candidateImageBytes": 11826428,
+      "savedImageBytes": 4389655,
+      "fallbackSnapshotExact": false,
+      "sampledTextures": 4,
+      "sampledPaintEntries": 20,
+      "fallbackPaintUsesNativeCoordinates": true
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "actors": [
+        {
+          "id": "panko",
+          "asset": "panko",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+          }
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "asset": "binding-thread",
+          "sourceStable": true,
+          "feetDeltaPx": 0.3192419415128283,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.00055585498104,
+            1.0005558549810456
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.671904152727393,
+            "y": 0.04796655851674814,
+            "width": -0.6719041527276204,
+            "height": 5.684341886080802e-14
+          }
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "asset": "binding-thread",
+          "sourceStable": true,
+          "feetDeltaPx": 0.5336815469595422,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.9275689948169656,
+            "y": 0.26778116960174714,
+            "width": -0.9275689948169656,
+            "height": -0.2958458877462249
+          }
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "asset": "yarn-giant",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": -0.21123227607029094,
+            "y": 0.19698278945298853,
+            "width": 0.006867716445299266,
+            "height": -0.4091244674195309
+          }
+        },
+        {
+          "id": "mochi",
+          "asset": "mochi",
+          "sourceStable": true,
+          "feetDeltaPx": 0.0,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.2821065439554218,
+            "y": 0.23864358379734085,
+            "width": -1.1023584676299265,
+            "height": -1.0645607278472653
+          }
+        },
+        {
+          "id": "soot",
+          "asset": "soot",
+          "sourceStable": true,
+          "feetDeltaPx": 0.10698145776294155,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0000000000000022,
+            1.0
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": -0.14927228200581055,
+            "width": 0.04248339345446084,
+            "height": 0.006075473333964965
+          }
+        },
+        {
+          "id": "clover",
+          "asset": "clover",
+          "sourceStable": true,
+          "feetDeltaPx": 0.11893486462697556,
+          "feetWithin3Px": true,
+          "headFaceBoxRatios": [
+            1.0033307799249893,
+            1.0033307799249886
+          ],
+          "headWithin5Percent": true,
+          "coreBoxDelta": {
+            "x": 0.0,
+            "y": -0.6819288096139644,
+            "width": 0.2747242043528786,
+            "height": -1.1368683772161603e-13
+          }
+        }
+      ],
+      "baselineImageBytes": 9224723,
+      "candidateImageBytes": 2598079,
+      "savedImageBytes": 6626644,
+      "fallbackSnapshotExact": true,
+      "sampledTextures": 7,
+      "sampledPaintEntries": 24,
+      "fallbackPaintUsesNativeCoordinates": true
+    }
+  ],
+  "staticGeometryPass": true,
+  "fallbackCoordinatesPass": true,
+  "comparisons": [
+    {
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-r2-runtime-comparisons/wave1-720-native.png",
+      "sha256": "aefe98b3b2dd50647ed3caca03d8a139c7e5beea82155c68970a841454cde4fa",
+      "reviewed": true,
+      "reviewRecordedAt": "2026-11-16T22:24:21.069081+00:00",
+      "reviewSource": "Observations preserved from the four prior visual inspections; images were not reopened."
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-r2-runtime-comparisons/wave3-720-native.png",
+      "sha256": "a7adaa2db9f30a9225a2ecc4253213f3ecce8909809012e390573136d138dc56",
+      "reviewed": true,
+      "reviewRecordedAt": "2026-11-16T22:24:21.069081+00:00",
+      "reviewSource": "Observations preserved from the four prior visual inspections; images were not reopened."
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-r2-runtime-comparisons/boss-720-native.png",
+      "sha256": "4ef6d3341f197aa054d3bdacf4adf2afb78931dc22adaeb7743995b4a2aaff5b",
+      "reviewed": true,
+      "reviewRecordedAt": "2026-11-16T22:24:21.069081+00:00",
+      "reviewSource": "Observations preserved from the four prior visual inspections; images were not reopened."
+    },
+    {
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-r2-runtime-comparisons/boss-900-stage.png",
+      "sha256": "1c5533f7b5bbc4183109f926a796dc5f5950de923dd7686154eda6392c54c67d",
+      "reviewed": true,
+      "reviewRecordedAt": "2026-11-16T22:24:21.069081+00:00",
+      "reviewSource": "Observations preserved from the four prior visual inspections; images were not reopened."
+    }
+  ],
+  "filmAcceptance": false,
+  "productionTransferAcceptance": false,
+  "visualReview": {
+    "recordedAt": "2026-11-16T22:24:21.069081+00:00",
+    "source": "Prior visual inspection carried through conversation handoff; no new image views.",
+    "sheetsReviewed": 4,
+    "observations": [
+      "Mochi and Clover no longer show the rejected contour fragments.",
+      "Soot retains identity with modest softening.",
+      "Panko has the corrected clean face established by the identical-original-image upload control; circular eye/muzzle contours were filtering halos, not missing painted glasses.",
+      "Binding and Yarn retain recognizable form and major texture.",
+      "The 900p composition is preserved, including the pre-existing wave banner covering part of Mochi."
+    ],
+    "decision": "Static appearance is suitable to proceed to film verification; full acceptance remains open.",
+    "fallbackDifferenceAttribution": "Pending for wave3 at 720p/900p and boss at 720p; no inherited banner-only attribution.",
+    "filmAcceptance": false,
+    "productionTransferAcceptance": false
+  }
+}

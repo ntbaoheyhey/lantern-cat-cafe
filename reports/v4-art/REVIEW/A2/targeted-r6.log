@@ -1,0 +1,11 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a6/apps/web
+
+
+ Test Files  5 passed (5)
+      Tests  34 passed (34)
+   Start at  12:37:19
+   Duration  71.06s (tests 75%, environment 11%, transform 8%, import 6%)
+
+    Isolate  5 workers spawned · ~1.64s startup each (spawn + environment, per file)
+             at least ~6.56s faster with isolate: false — reuses workers across files instead of one per file

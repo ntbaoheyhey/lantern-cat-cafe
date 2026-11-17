@@ -1,0 +1,48 @@
+{
+  "reviewedAt": "2026-11-16T22:00:26.817645+00:00",
+  "sourceCommit": "201f93b55cf8ca86320366ca3cc39cfa9ed1b2f3",
+  "boundTrialSha256": "2e8534cb2d1a83fc175ddb762d74f4d7e0f03065b17a305a1431c7e1aea2a689",
+  "scope": "Private isolated atlas-component comparisons only; no runtime/film or production-transfer acceptance.",
+  "reviews": [
+    {
+      "owner": "mochi",
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-aware-r2/mochi-comparison.png",
+      "sha256": "ffedd1c6faa24b9a91769d6248f2dbd603d83356d02e89af28b5bf6bcdcbba69",
+      "inspectedOnce": true,
+      "observations": "Cream head component retains the tufts and silhouette. Fine fur becomes smooth, similarly at Q75/Q80; no obvious bright internal band in this isolated component. Assembled face and seams remain unproven."
+    },
+    {
+      "owner": "soot",
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-aware-r2/soot-comparison.png",
+      "sha256": "8f0c95e4358a6c7272f95dfed0293d148c78cbf49f5927074955b793416febf0",
+      "inspectedOnce": true,
+      "observations": "Eye, pupil, hat rim and major whiskers remain recognizable; fur and some thin whiskers soften. No obviously inflated pale rim in the shown crop. Runtime assembly still required."
+    },
+    {
+      "owner": "clover",
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-aware-r2/clover-comparison.png",
+      "sha256": "d78597de42754a0d127783aa50595c4d464d195f32059c46d2bbad4db6cc2c8b",
+      "inspectedOnce": true,
+      "observations": "Cream head and orange ear components retain shape with substantial fine-fur smoothing. Dark/light backgrounds expose no obvious broad bright fringe; assembled face and seam proof remains open."
+    },
+    {
+      "owner": "panko",
+      "path": "reports/v4-art/REVIEW/A10/scene-ready-transfer/raw/pma-aware-r2/panko-comparison.png",
+      "sha256": "3b7b366cc8e7f79c655c0b0f1ba128ec1014b53597516afda46ea9676442bdcf",
+      "inspectedOnce": true,
+      "observations": "Cap, brass badge, nose and whiskers remain recognizable with smoothing. Blank eye layers and horizontal component boundaries exist in the source crop too. Glasses and assembled face cannot be accepted from this crop."
+    }
+  ],
+  "decision": "Select straight-half-q80 for runtime evaluation only, preserving more encoded detail within the unchanged projection gate.",
+  "projection": {
+    "method": "straight-half-q80",
+    "actorBytesWithOverhead": 856088,
+    "totalBytesIncludingMappingReserve": 7900518,
+    "withinBudgetProjection": true,
+    "measuredProductionPass": false
+  },
+  "projectedHeadroomBytes": 99482,
+  "runtimeAlphaRequirement": "Decoded selected derivatives are straight alpha. Retain source PMA for every original/exact fallback.",
+  "pmaAwareVariantsUsed": 4,
+  "productionAcceptance": false
+}

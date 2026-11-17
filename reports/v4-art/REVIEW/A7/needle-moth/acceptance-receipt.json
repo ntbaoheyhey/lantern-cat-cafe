@@ -1,0 +1,1146 @@
+{
+  "at": "2026-11-16T16:43:41.701132+00:00",
+  "scope": "Needle poses and original ranged FX; full A7 remains open for Yarn and shared gates.",
+  "sourceHashesVerified": 10,
+  "scopedWindows": 25,
+  "completeScopedWindows": 24,
+  "completeOwnWindows": 5,
+  "completeOwnUltimates": 1,
+  "films": [
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave1",
+      "sourceCommit": "b92cd2dc327575449d5a2872844c170bbdf0191c",
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave1-mix.wav",
+        "integratedLufs": -14.96,
+        "truePeakDbTP": -3.25,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "scope": "All Needle actions/hits"
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave3",
+      "sourceCommit": "b92cd2dc327575449d5a2872844c170bbdf0191c",
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/wave3-mix.wav",
+        "integratedLufs": -14.97,
+        "truePeakDbTP": -3.09,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "scope": "All Needle actions/hits"
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "boss",
+      "sourceCommit": "b92cd2dc327575449d5a2872844c170bbdf0191c",
+      "videoSha256": "6abd6e00e88176d3396e5a93f55cb002238895f6d85c395d322af8fa749a3c71",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-NEEDLE/boss-mix.wav",
+        "integratedLufs": -14.77,
+        "truePeakDbTP": -2.91,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "scope": "All Needle actions/hits"
+    },
+    {
+      "item": "V4-A7-NEEDLE-FLIGHT-R2",
+      "fixture": "wave1",
+      "sourceCommit": "1a6bef6366366ce2bef4450569485bceab1f2703",
+      "videoSha256": "83adb6cfd8894d13d64557f7aab1b90088dbf3e28c5b47c943a814a138c0416b",
+      "seconds": 30,
+      "fps": 30,
+      "width": 1280,
+      "height": 720,
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A7-NEEDLE-FLIGHT-R2/wave1-mix.wav",
+        "integratedLufs": -14.98,
+        "truePeakDbTP": -3.11,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "parity": true,
+      "errors": [],
+      "scope": "A5 flight retry only; other repeated windows not re-reviewed"
+    }
+  ],
+  "ownActions": [
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave1",
+      "key": 5,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 24,
+      "nearestImpactFrame": 150,
+      "nearestImpactElapsed": 349.89999999999964,
+      "impactSamplingErrorMs": 0.1000000000003638,
+      "maxMotionPixels": 9.219544457292889,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave1",
+      "key": 14,
+      "ultimate": true,
+      "complete": true,
+      "durationMs": 2200,
+      "impactMs": 1100,
+      "encodedFrames": 66,
+      "nearestImpactFrame": 436,
+      "nearestImpactElapsed": 1099.9000000000015,
+      "impactSamplingErrorMs": 0.09999999999854481,
+      "maxMotionPixels": 9.219544457292889,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.22165547827418003,
+      "nonzeroCameraFrames": [
+        {
+          "frame": 438,
+          "elapsed": 1166.5999999999985,
+          "pixels": 0.15118877096987063
+        },
+        {
+          "frame": 439,
+          "elapsed": 1200,
+          "pixels": 0.22165547827418003
+        },
+        {
+          "frame": 440,
+          "elapsed": 1216.7000000000007,
+          "pixels": 0.1045836190853033
+        }
+      ],
+      "observedCameraSpanMs": 50.10000000000218,
+      "post600FocusFrames": [
+        {
+          "frame": 422,
+          "elapsed": 633.2999999999993,
+          "brightness": 0.5415749999999979
+        },
+        {
+          "frame": 423,
+          "elapsed": 666.5999999999985,
+          "brightness": 0.633149999999996
+        },
+        {
+          "frame": 424,
+          "elapsed": 700,
+          "brightness": 0.725
+        },
+        {
+          "frame": 425,
+          "elapsed": 733.2999999999993,
+          "brightness": 0.8165749999999979
+        },
+        {
+          "frame": 426,
+          "elapsed": 766.7000000000007,
+          "brightness": 0.908425000000002
+        }
+      ]
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave1",
+      "key": 23,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 23,
+      "nearestImpactFrame": 805,
+      "nearestImpactElapsed": 350.1000000000022,
+      "impactSamplingErrorMs": 0.10000000000218279,
+      "maxMotionPixels": 9.219544457292889,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave3",
+      "key": 7,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 24,
+      "nearestImpactFrame": 200,
+      "nearestImpactElapsed": 333.2999999999993,
+      "impactSamplingErrorMs": 16.700000000000728,
+      "maxMotionPixels": 0.0,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    },
+    {
+      "item": "V4-A7-NEEDLE",
+      "fixture": "wave3",
+      "key": 18,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 23,
+      "nearestImpactFrame": 519,
+      "nearestImpactElapsed": 350,
+      "impactSamplingErrorMs": 0,
+      "maxMotionPixels": 9.219544457292875,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    },
+    {
+      "item": "V4-A7-NEEDLE-FLIGHT-R2",
+      "fixture": "wave1",
+      "key": 5,
+      "ultimate": false,
+      "complete": true,
+      "durationMs": 800,
+      "impactMs": 350,
+      "encodedFrames": 24,
+      "nearestImpactFrame": 148,
+      "nearestImpactElapsed": 349.89999999999964,
+      "impactSamplingErrorMs": 0.1000000000003638,
+      "maxMotionPixels": 9.219544457292889,
+      "firstFollowingFrameReturnPixels": 0.0,
+      "maxCameraPixels": 0.0,
+      "nonzeroCameraFrames": [],
+      "observedCameraSpanMs": 0,
+      "post600FocusFrames": []
+    }
+  ],
+  "liveMeasurements": {
+    "method": "Live alpha probes, separately corroborated by the reviewed film appearance; not encoded-pixel segmentation.",
+    "ultimateAreaByFixture": {
+      "wave1": 0.2448025173611111,
+      "wave3": 0.24447591145833333
+    },
+    "maxFaceCoverage": 0.016654384672070744,
+    "maxPaintedTipErrorDuringFlight": 1.6077746776921858e-13,
+    "maxLaunchSocketError": 0.15918458501796978,
+    "maxUnitOcclusion": 0.023493156167453774
+  },
+  "layout720": [
+    {
+      "fixture": "wave1",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "frame": 151
+        },
+        "catDeviation": {
+          "value": 0.025136877287810222,
+          "frame": 203
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 40
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "frame": 177
+        },
+        "span": {
+          "value": 0.8159651820639606,
+          "frame": 577
+        },
+        "gap": {
+          "value": 0.11903418555392369,
+          "frame": 445
+        }
+      },
+      "failures": []
+    },
+    {
+      "fixture": "wave3",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999997,
+          "frame": 33
+        },
+        "catDeviation": {
+          "value": 0.02955665024630494,
+          "frame": 703
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 39
+        },
+        "right": {
+          "value": 0.036308225161340246,
+          "frame": 13
+        },
+        "span": {
+          "value": 0.8190629834010489,
+          "frame": 641
+        },
+        "gap": {
+          "value": 0.0018587539080927584,
+          "frame": 256
+        }
+      },
+      "failures": []
+    },
+    {
+      "fixture": "boss",
+      "frames": 900,
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "frame": 470
+        },
+        "catDeviation": {
+          "value": 0.025061559483166462,
+          "frame": 92
+        },
+        "left": {
+          "value": 0.04533441106170405,
+          "frame": 40
+        },
+        "right": {
+          "value": 0.05426645742140601,
+          "frame": 453
+        },
+        "span": {
+          "value": 0.7934412551631816,
+          "frame": 324
+        },
+        "gap": {
+          "value": 0.09349340051581549,
+          "frame": 178
+        },
+        "boss": {
+          "value": 0.49643999999999977,
+          "frame": 182
+        }
+      },
+      "failures": [
+        "span"
+      ]
+    }
+  ],
+  "layout900": {
+    "method": "Unmodified silent fixed-clock 1440x900 capture; bbox layout only, not audio, FPS, alpha occlusion or HUD proof.",
+    "fixtures": [
+      {
+        "fixture": "wave1",
+        "captureSha256": "cf6556420a718dd206c4dc1a3ec9d22500fbac36d1e036c22d736a46185e4024",
+        "frames": 952,
+        "seconds": 31.733333333333334,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.31027499999999986,
+            "t": 27.3,
+            "index": 819
+          },
+          "catDeviation": {
+            "value": 0.02599924989515634,
+            "t": 3.6666666666666665,
+            "index": 110
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.03499999999999992,
+            "t": 5.3,
+            "index": 159
+          },
+          "span": {
+            "value": 0.812722961048404,
+            "t": 30.966666666666665,
+            "index": 929
+          },
+          "gap": {
+            "value": 0.10411638345687414,
+            "t": 13.333333333333334,
+            "index": 400
+          }
+        },
+        "failures": [],
+        "reviewFrameIndices": [
+          0,
+          132,
+          111,
+          399
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-wave1.jpg",
+        "visuallyReviewed": true
+      },
+      {
+        "fixture": "wave3",
+        "captureSha256": "9eacf0f2b471e6f78e66b1994e45e81ae2f45ddb01a8502453c5f5dadd063f67",
+        "frames": 901,
+        "seconds": 30.033333333333335,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.3102749999999999,
+            "t": 5.5,
+            "index": 165
+          },
+          "catDeviation": {
+            "value": 0.029556650246305494,
+            "t": 21.433333333333334,
+            "index": 643
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.03425489917921909,
+            "t": 21.333333333333332,
+            "index": 640
+          },
+          "span": {
+            "value": 0.8192028137340447,
+            "t": 19.433333333333334,
+            "index": 583
+          },
+          "gap": {
+            "value": -0.013566401614058539,
+            "t": 7.666666666666667,
+            "index": 230
+          }
+        },
+        "failures": [],
+        "reviewFrameIndices": [
+          0,
+          180,
+          642,
+          231
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-wave3.jpg",
+        "visuallyReviewed": true
+      },
+      {
+        "fixture": "boss",
+        "captureSha256": "399fd1f1bf1a6fc7c636e3428e04232d7e7b695264586555f399a7a282dbe4d5",
+        "frames": 946,
+        "seconds": 31.533333333333335,
+        "parity": true,
+        "errors": [],
+        "extrema": {
+          "catMedian": {
+            "value": 0.3102749999999999,
+            "t": 5.7,
+            "index": 171
+          },
+          "catDeviation": {
+            "value": 0.02599924989515634,
+            "t": 3.6666666666666665,
+            "index": 110
+          },
+          "left": {
+            "value": 0.045927123401893484,
+            "t": 1.1,
+            "index": 33
+          },
+          "right": {
+            "value": 0.05585162215397044,
+            "t": 4.266666666666667,
+            "index": 128
+          },
+          "span": {
+            "value": 0.779451495094258,
+            "t": 9.766666666666667,
+            "index": 293
+          },
+          "gap": {
+            "value": 0.07369990575027248,
+            "t": 5.166666666666667,
+            "index": 155
+          },
+          "boss": {
+            "value": 0.4964399999999997,
+            "t": 0.3333333333333333,
+            "index": 10
+          }
+        },
+        "failures": [
+          {
+            "metric": "span",
+            "count": 100,
+            "worst": {
+              "value": 0.779451495094258,
+              "t": 9.766666666666667,
+              "index": 293
+            }
+          }
+        ],
+        "reviewFrameIndices": [
+          0,
+          111,
+          156,
+          9
+        ],
+        "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-boss.jpg",
+        "visuallyReviewed": true
+      }
+    ],
+    "failures": [
+      {
+        "fixture": "boss",
+        "metric": "span",
+        "count": 100,
+        "worst": {
+          "value": 0.779451495094258,
+          "t": 9.766666666666667,
+          "index": 293
+        }
+      }
+    ]
+  },
+  "assetBudget": {
+    "scope": "Conservative upper bound: every published pose-directory and public VFX file plus new Binding portrait; separate from SHIP total transfer",
+    "bytes": 4163747,
+    "limitBytes": 6000000,
+    "files": [
+      {
+        "path": "apps/web/public/units/binding-thread/portrait.webp",
+        "bytes": 97490
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K0.webp",
+        "bytes": 49342
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K1.webp",
+        "bytes": 54070
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K2.webp",
+        "bytes": 63344
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/K4.webp",
+        "bytes": 45898
+      },
+      {
+        "path": "apps/web/public/units/binding-thread/poses/manifest.json",
+        "bytes": 7964
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K0.webp",
+        "bytes": 45022
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K1.webp",
+        "bytes": 70880
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K2.webp",
+        "bytes": 88928
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K4.webp",
+        "bytes": 61906
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/K5.webp",
+        "bytes": 73842
+      },
+      {
+        "path": "apps/web/public/units/clover/poses/manifest.json",
+        "bytes": 7380
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K0.webp",
+        "bytes": 59592
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K1.webp",
+        "bytes": 78176
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K2.webp",
+        "bytes": 93296
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K4.webp",
+        "bytes": 53760
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/K5.webp",
+        "bytes": 78028
+      },
+      {
+        "path": "apps/web/public/units/mochi/poses/manifest.json",
+        "bytes": 7388
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K0.webp",
+        "bytes": 57116
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K1.webp",
+        "bytes": 47142
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K2.webp",
+        "bytes": 57054
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/K4.webp",
+        "bytes": 54432
+      },
+      {
+        "path": "apps/web/public/units/needle-moth/poses/manifest.json",
+        "bytes": 5537
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K0.webp",
+        "bytes": 55736
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K1.webp",
+        "bytes": 79434
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K2.webp",
+        "bytes": 76736
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K4.webp",
+        "bytes": 63062
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/K5.webp",
+        "bytes": 74294
+      },
+      {
+        "path": "apps/web/public/units/panko/poses/manifest.json",
+        "bytes": 8570
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K0.webp",
+        "bytes": 134076
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K1.webp",
+        "bytes": 153042
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K2.webp",
+        "bytes": 159248
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K4.webp",
+        "bytes": 166636
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/K5.webp",
+        "bytes": 173228
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/lantern-flame.webp",
+        "bytes": 132548
+      },
+      {
+        "path": "apps/web/public/units/soot/poses/manifest.json",
+        "bytes": 8504
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K0.webp",
+        "bytes": 73380
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K1.webp",
+        "bytes": 73604
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K2.webp",
+        "bytes": 85946
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/K4.webp",
+        "bytes": 71806
+      },
+      {
+        "path": "apps/web/public/units/teacup-healer/poses/manifest.json",
+        "bytes": 5076
+      },
+      {
+        "path": "apps/web/public/vfx/binding-thread/knotted-thread.webp",
+        "bytes": 45194
+      },
+      {
+        "path": "apps/web/public/vfx/clover/healing-canopy.webp",
+        "bytes": 273166
+      },
+      {
+        "path": "apps/web/public/vfx/clover/healing-sprig.webp",
+        "bytes": 110296
+      },
+      {
+        "path": "apps/web/public/vfx/mochi/shield-crest.webp",
+        "bytes": 166834
+      },
+      {
+        "path": "apps/web/public/vfx/mochi/shield-cut.webp",
+        "bytes": 83862
+      },
+      {
+        "path": "apps/web/public/vfx/needle-moth/sewing-needle.webp",
+        "bytes": 60240
+      },
+      {
+        "path": "apps/web/public/vfx/panko/crust-cut.webp",
+        "bytes": 122750
+      },
+      {
+        "path": "apps/web/public/vfx/panko/oven-bastion.webp",
+        "bytes": 158110
+      },
+      {
+        "path": "apps/web/public/vfx/teacup-healer/tea-blossom.webp",
+        "bytes": 43294
+      },
+      {
+        "path": "apps/web/public/vfx/teacup-healer/tea-canopy.webp",
+        "bytes": 247488
+      }
+    ]
+  },
+  "poseMetrics": {
+    "at": "2026-11-16T14:18:09.611016+00:00",
+    "K0OpaqueTargetHeight": 225,
+    "resizedCanvas": [
+      635,
+      635
+    ],
+    "alphaThreshold": 128,
+    "changedRgbaThreshold": 24,
+    "differenceDenominator": "union opaque bounding-box area",
+    "headUncertaintySourcePx": 2,
+    "rows": [
+      {
+        "key": "K1",
+        "file": "apps/web/public/units/needle-moth/poses/K1.webp",
+        "iou": 0.3792058610709117,
+        "meanLabDeltaE76": 5.379355779870618,
+        "changedUnionBboxFraction": 0.41417040358744395,
+        "headRatioFromFixedLandmarks": 1.014500836586726,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": -0.026905829596412557,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      },
+      {
+        "key": "K2",
+        "file": "apps/web/public/units/needle-moth/poses/K2.webp",
+        "iou": 0.3210428160696247,
+        "meanLabDeltaE76": 3.7458623930594173,
+        "changedUnionBboxFraction": 0.3385682326621924,
+        "headRatioFromFixedLandmarks": 0.9617710361791535,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": 0.28699551569506726,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      },
+      {
+        "key": "K4",
+        "file": "apps/web/public/units/needle-moth/poses/K4.webp",
+        "iou": 0.4030443691715803,
+        "meanLabDeltaE76": 3.61475437241046,
+        "changedUnionBboxFraction": 0.4339412057797708,
+        "headRatioFromFixedLandmarks": 0.9771050866941278,
+        "feetVerticalDriftPx": 0,
+        "frontReachBodyWidth": -0.03587443946188341,
+        "clippedBeforeExport": false,
+        "numericalGatesPass": true
+      }
+    ],
+    "visualAndFilmGatesSeparate": true
+  },
+  "encodedMarkerFramesVerified": 3600,
+  "flightOriginal": [
+    {
+      "fixture": "wave1",
+      "key": 5,
+      "actor": "foe-3-needle-moth",
+      "ultimate": false,
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "frames": [
+        {
+          "encodedFrame": 149,
+          "renderOrdinal": 276,
+          "elapsed": 216.5
+        },
+        {
+          "encodedFrame": 150,
+          "renderOrdinal": 277,
+          "elapsed": 349.89999999999964
+        },
+        {
+          "encodedFrame": 151,
+          "renderOrdinal": 278,
+          "elapsed": 399.89999999999964
+        },
+        {
+          "encodedFrame": 152,
+          "renderOrdinal": 280,
+          "elapsed": 449.89999999999964
+        },
+        {
+          "encodedFrame": 153,
+          "renderOrdinal": 282,
+          "elapsed": 483.1999999999998
+        },
+        {
+          "encodedFrame": 154,
+          "renderOrdinal": 284,
+          "elapsed": 516.5
+        }
+      ],
+      "visibleFramesReviewed": 1,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/projectile-review/wave1-A5.jpg",
+      "visibleEncodedFrames": [
+        150
+      ],
+      "pass": false,
+      "review": "Only one clearly distinct flight frame;216.5->349.9ms marker gap spans most of travel. Existing film evidence fails3frames."
+    },
+    {
+      "fixture": "wave1",
+      "key": 14,
+      "actor": "foe-3-needle-moth",
+      "ultimate": true,
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "frames": [
+        {
+          "encodedFrame": 432,
+          "renderOrdinal": 828,
+          "elapsed": 966.5999999999985
+        },
+        {
+          "encodedFrame": 433,
+          "renderOrdinal": 830,
+          "elapsed": 1000
+        },
+        {
+          "encodedFrame": 434,
+          "renderOrdinal": 832,
+          "elapsed": 1033.2999999999993
+        },
+        {
+          "encodedFrame": 435,
+          "renderOrdinal": 834,
+          "elapsed": 1066.5999999999985
+        },
+        {
+          "encodedFrame": 436,
+          "renderOrdinal": 836,
+          "elapsed": 1099.9000000000015
+        },
+        {
+          "encodedFrame": 437,
+          "renderOrdinal": 836,
+          "elapsed": 1099.9000000000015
+        }
+      ],
+      "visibleFramesReviewed": 4,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/projectile-review/wave1-A14.jpg",
+      "visibleEncodedFrames": [
+        433,
+        434,
+        435,
+        436
+      ],
+      "pass": true,
+      "review": "Conservative first-look count of separate travelling rose/gold needle strokes; source weapon alone excluded. Fine line visibility is weaker against the floor than the ultimate fan."
+    },
+    {
+      "fixture": "wave1",
+      "key": 23,
+      "actor": "foe-3-needle-moth",
+      "ultimate": false,
+      "videoSha256": "a5f54a1945e075c78df6e99366c6b7f31de1293d1de3ff5f700ce8fd5eaa8fa0",
+      "frames": [
+        {
+          "encodedFrame": 800,
+          "renderOrdinal": 1548,
+          "elapsed": 200.10000000000218
+        },
+        {
+          "encodedFrame": 801,
+          "renderOrdinal": 1550,
+          "elapsed": 233.40000000000146
+        },
+        {
+          "encodedFrame": 802,
+          "renderOrdinal": 1552,
+          "elapsed": 266.7000000000007
+        },
+        {
+          "encodedFrame": 803,
+          "renderOrdinal": 1554,
+          "elapsed": 300
+        },
+        {
+          "encodedFrame": 804,
+          "renderOrdinal": 1556,
+          "elapsed": 333.40000000000146
+        },
+        {
+          "encodedFrame": 805,
+          "renderOrdinal": 1557,
+          "elapsed": 350.1000000000022
+        }
+      ],
+      "visibleFramesReviewed": 4,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/projectile-review/wave1-A23.jpg",
+      "visibleEncodedFrames": [
+        801,
+        802,
+        803,
+        804
+      ],
+      "pass": true,
+      "review": "Conservative first-look count of separate travelling rose/gold needle strokes; source weapon alone excluded. Fine line visibility is weaker against the floor than the ultimate fan."
+    },
+    {
+      "fixture": "wave3",
+      "key": 7,
+      "actor": "foe-4-needle-moth",
+      "ultimate": false,
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "frames": [
+        {
+          "encodedFrame": 196,
+          "renderOrdinal": 378,
+          "elapsed": 216.60000000000036
+        },
+        {
+          "encodedFrame": 197,
+          "renderOrdinal": 380,
+          "elapsed": 250
+        },
+        {
+          "encodedFrame": 198,
+          "renderOrdinal": 381,
+          "elapsed": 266.60000000000036
+        },
+        {
+          "encodedFrame": 199,
+          "renderOrdinal": 383,
+          "elapsed": 316.6999999999989
+        },
+        {
+          "encodedFrame": 200,
+          "renderOrdinal": 384,
+          "elapsed": 333.2999999999993
+        },
+        {
+          "encodedFrame": 201,
+          "renderOrdinal": 386,
+          "elapsed": 383.2999999999993
+        }
+      ],
+      "visibleFramesReviewed": 3,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/projectile-review/wave3-A7.jpg",
+      "visibleEncodedFrames": [
+        197,
+        199,
+        200
+      ],
+      "pass": true,
+      "review": "Conservative first-look count of separate travelling rose/gold needle strokes; source weapon alone excluded. Fine line visibility is weaker against the floor than the ultimate fan."
+    },
+    {
+      "fixture": "wave3",
+      "key": 18,
+      "actor": "foe-4-needle-moth",
+      "ultimate": false,
+      "videoSha256": "497160fd58803f8ca7361a5ea7bf41ae41ea1ccca01f74757b648226ae79ddc9",
+      "frames": [
+        {
+          "encodedFrame": 514,
+          "renderOrdinal": 1001,
+          "elapsed": 200
+        },
+        {
+          "encodedFrame": 515,
+          "renderOrdinal": 1003,
+          "elapsed": 233.29999999999927
+        },
+        {
+          "encodedFrame": 516,
+          "renderOrdinal": 1005,
+          "elapsed": 266.7000000000007
+        },
+        {
+          "encodedFrame": 517,
+          "renderOrdinal": 1007,
+          "elapsed": 300
+        },
+        {
+          "encodedFrame": 518,
+          "renderOrdinal": 1009,
+          "elapsed": 333.2999999999993
+        },
+        {
+          "encodedFrame": 519,
+          "renderOrdinal": 1010,
+          "elapsed": 350
+        }
+      ],
+      "visibleFramesReviewed": 3,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/projectile-review/wave3-A18.jpg",
+      "visibleEncodedFrames": [
+        516,
+        517,
+        518
+      ],
+      "pass": true,
+      "review": "Conservative first-look count of separate travelling rose/gold needle strokes; source weapon alone excluded. Fine line visibility is weaker against the floor than the ultimate fan."
+    }
+  ],
+  "flightRetry": [
+    {
+      "fixture": "wave1",
+      "key": 5,
+      "actor": "foe-3-needle-moth",
+      "ultimate": false,
+      "videoSha256": "83adb6cfd8894d13d64557f7aab1b90088dbf3e28c5b47c943a814a138c0416b",
+      "frames": [
+        {
+          "encodedFrame": 144,
+          "renderOrdinal": 277,
+          "elapsed": 233.30000000000018
+        },
+        {
+          "encodedFrame": 145,
+          "renderOrdinal": 279,
+          "elapsed": 266.60000000000036
+        },
+        {
+          "encodedFrame": 146,
+          "renderOrdinal": 280,
+          "elapsed": 283.1999999999998
+        },
+        {
+          "encodedFrame": 147,
+          "renderOrdinal": 282,
+          "elapsed": 333.1999999999998
+        },
+        {
+          "encodedFrame": 148,
+          "renderOrdinal": 283,
+          "elapsed": 349.89999999999964
+        },
+        {
+          "encodedFrame": 149,
+          "renderOrdinal": 285,
+          "elapsed": 399.89999999999964
+        }
+      ],
+      "visibleFramesReviewed": 5,
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/flight-r2/raw/projectile-review/wave1-A5.jpg",
+      "visibleEncodedFrames": [
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "pass": true,
+      "review": "Five distinct rose/gold strokes approach Panko before the impact/flash at149; original A5dropout retained separately."
+    }
+  ],
+  "validation": {
+    "started": "2026-11-16T14:19:10.330780+00:00",
+    "sourceCommit": "b92cd2dc327575449d5a2872844c170bbdf0191c",
+    "steps": [
+      {
+        "name": "web",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-needle-web.log"
+      },
+      {
+        "name": "typecheck",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-needle-typecheck.log"
+      },
+      {
+        "name": "parity",
+        "exitCode": 0,
+        "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a7-needle-parity.log"
+      }
+    ],
+    "finished": "2026-11-16T14:21:27.286783+00:00",
+    "pass": true
+  },
+  "limits": [
+    "Original wave1 A5 failed the3-frame film gate; retain its133.4ms marked gap and separate unchanged-source retry.",
+    "Wave1 A27 received-hit recovery is truncated; A28 has no encoded frame before30s and is excluded.",
+    "Boss900 unit span falls to77.9451%; full G-FRAME remains OPEN despite Needle absent from that fixture.",
+    "Focus still fades after600ms. Reduced-motion film and strict shake-duration upper bound remain unproven in this item.",
+    "Pairwise FX distinctness, shared ensemble, production activation, final classes and authoring/time-split proof remain OPEN.",
+    "900p is silent fixed-clock layout evidence; alpha occlusion/HUD are not derived from bounding boxes.",
+    "The6MB asset subset bound is separate from SHIP8MB total initial-transfer gate."
+  ],
+  "scopedGates": {
+    "poseNumeric": true,
+    "blind9": true,
+    "encodedMarkers": true,
+    "rangedPlanted5Percent": true,
+    "schedule": true,
+    "camera4Pixels": true,
+    "flight3FramesAllOriginal": false,
+    "flight3FramesWithDisclosedA5Retry": true,
+    "ultimateArea20To45PercentLive": true,
+    "face50PercentLive": true,
+    "socket6PixelsLive": true,
+    "bossMedian50Fps": true,
+    "assets6MB": true,
+    "regression": true,
+    "allFixture900Layout": false
+  }
+}

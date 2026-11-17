@@ -1,0 +1,9 @@
+# QA-5 presentation contract repair
+
+The seven stale expectations in `spine/cat-presentation.test.ts` and `spine/outcome-labels.test.ts` are repaired in ART commit `0860bf7a6`. Recovery fixtures put the competing injured allies in the same priority row. Healer cases check actual allied recovery, team healing and cleansing. Hostile-only status, reflected damage and number-label cases use Soot. Mochi shielding remains separate from its damage. Two added status-only cases retain applied/resisted/expired hostile routing without inventing damage.
+
+Validation: `r4.json` is PASS, with source/test hashes and immutable SHIP rules SHA `b1e4398a8844fa51d2784760e92ed24528d13d2b`. Both focused runs pass 13 tests; the ART full web suite passes 2703 tests in 323 files; typecheck passes; all three F6 fixture hashes match the unchanged ART baseline. Passed results from `r3.json` are reused only after input hashes and absence of runtime changes were checked. Runtime/art/audio/balance and the parity baseline were not changed by this repair.
+
+Retained limitations: r1 shell launch exited before startup. r2 snapshot lacked the root tsconfig and ran no SHIP tests; r3 corrected this. The optional broad r3 experiment combined ART shell code with SHIP rules and failed seven SHIP-owned shell/economy/lab tests; it is not an integrated SHIP validation result. Those failures and their logs remain recorded. The owned focused tests pass with the SHIP rules. SHIP still needs to integrate the test files and run its complete source; QA owns independent closure of QA-5. No final class baseline has been announced or merged here.
+
+Exact rerun of owned tests: `pnpm --filter @taskbar-hero/web exec vitest run src/game/cardrpg/spine/cat-presentation.test.ts src/game/cardrpg/spine/outcome-labels.test.ts --reporter=dot`.

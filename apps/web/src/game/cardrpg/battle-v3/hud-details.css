@@ -2,8 +2,10 @@
 .b3-top :is(.b3-wave,.b3-round){display:flex;align-items:center;gap:6px;flex:none;white-space:nowrap}
 .b3-round b{margin-left:0;font-size:19px}.b3-wave b{font-family:var(--font-num);font-size:19px;color:#ffe4a2}
 .b3-top-spacer{flex:1}.b3-top button{flex:none;display:grid;place-items:center}
-.b3-hud button:not(.b3-portrait){background:radial-gradient(ellipse at 35% 0,#e7bc5e27,transparent 70%),repeating-linear-gradient(174deg,#ffffff07 0 1px,transparent 1px 5px),linear-gradient(175deg,#72503e,#3d2c31 55%,#241f2b);border-color:#bd8d54;box-shadow:inset 0 0 0 2px #2b2026,inset 0 4px 0 #fbd7922b,0 3px 0 #17131d,0 5px 9px #0005;transition:filter .15s,transform .15s}
+.b3-hud button:not(.b3-portrait){--b3-button-paint:radial-gradient(ellipse at 35% 0,#e7bc5e27,transparent 70%),repeating-linear-gradient(174deg,#ffffff07 0 1px,transparent 1px 5px),linear-gradient(175deg,#72503e,#3d2c31 55%,#241f2b);background:var(--b3-button-paint);border-color:#bd8d54;box-shadow:inset 0 0 0 2px #2b2026,inset 0 4px 0 #fbd7922b,0 3px 0 #17131d,0 5px 9px #0005;transition:filter .15s,transform .15s}
 .b3-hud button:not(:disabled):hover{filter:brightness(1.15)}.b3-hud button:active{transform:translateY(2px)}
+/* Keep the opaque HUD paint when the shared application hover rule is active. */
+.b3-hud button:is(.b3-speed,.b3-auto):hover:not(:disabled){background:var(--b3-button-paint);filter:brightness(1.07)}
 .b3-hud button.b3-speed{font-size:30px;min-height:54px;border:1px solid #b18750;border-radius:25% 18% 24% 20%;min-width:70px}
 .b3-bottom-actions button{min-height:44px;display:flex;align-items:center;justify-content:center;gap:8px}
 .b3-auto i{width:7px;height:7px;border-radius:50%;background:#655254;box-shadow:inset 0 1px #fff3}.b3-auto i[data-on=true]{background:#b9e98a;box-shadow:0 0 9px #b9e98a}

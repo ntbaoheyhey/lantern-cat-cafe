@@ -1,0 +1,4260 @@
+{
+  "sourceCommit": "bc85b0c8201de64ad0af862407bc0391b43b150a",
+  "fixture": "wave3",
+  "recorded": "2026-11-16T12:04:32.484Z",
+  "seconds": 30,
+  "fps": 30,
+  "videoBytes": 5973599,
+  "actualCompositorFrames": 1787,
+  "maxCompositorGapSeconds": 0.04999804496765137,
+  "audio": {
+    "path": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave3-mix.wav",
+    "integratedLufs": -14.95,
+    "truePeakDbTP": -3.17,
+    "maxTransientVoices": 9,
+    "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+  },
+  "plans": [
+    {
+      "key": 0,
+      "id": 8,
+      "at": 0.1099998950958252,
+      "frameAt": 0.09780001640319824,
+      "clockStart": 0.08120001640319834,
+      "legacyInferredStart": 0.09339989509582529,
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 8,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-4-needle-moth",
+            "foe-3-crumb-sentinel",
+            "foe-5-teacup-healer",
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 8,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 58,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 8,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 20,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 6,
+          "turn": 0,
+          "round": 1,
+          "actionId": 8,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 23,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 7,
+          "turn": 0,
+          "round": 1,
+          "actionId": 8,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 18,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "handle",
+          "soundCue": "mochi-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "door",
+          "soundCue": "mochi-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "knock-ring",
+          "soundCue": "mochi-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "seam",
+          "soundCue": "mochi-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "mochi-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 1,
+      "id": 12,
+      "at": 0.9904999732971191,
+      "frameAt": 0.9811000823974609,
+      "clockStart": 0.9645000823974605,
+      "legacyInferredStart": 0.9738999732971187,
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 12,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 12,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 69,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 12,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 1,
+          "note": "Crumb trail"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "ember",
+          "soundCue": "soot-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "ember",
+          "soundCue": "soot-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spark",
+          "soundCue": "soot-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "ink-stain",
+          "soundCue": "soot-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "soot-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 2,
+      "id": 17,
+      "at": 1.8919999599456787,
+      "frameAt": 1.8811001777648926,
+      "clockStart": 1.8644001777648929,
+      "legacyInferredStart": 1.875299959945679,
+      "actorId": "clover",
+      "skillId": "clover-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 17,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "foe-4-needle-moth",
+            "clover"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 17,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 35,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 17,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 17,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 0,
+          "note": "Removed debuffs"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "stem",
+          "soundCue": "clover-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "leaf",
+          "soundCue": "clover-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "leaf",
+          "soundCue": "clover-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "sprout",
+          "soundCue": "clover-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "clover-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 3,
+      "id": 22,
+      "at": 2.774199962615967,
+      "frameAt": 2.7644002437591553,
+      "clockStart": 2.747800243759155,
+      "legacyInferredStart": 2.7575999626159664,
+      "actorId": "panko",
+      "skillId": "panko-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 22,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "targetIds": [
+            "foe-4-needle-moth",
+            "panko"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 22,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 52,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 22,
+          "beat": 2,
+          "type": "fizzle",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 0,
+          "note": "Needle Moth resisted Shred"
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 22,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Saucer riposte"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "pan",
+          "soundCue": "panko-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "pan",
+          "soundCue": "panko-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "tray",
+          "soundCue": "panko-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "spark",
+          "soundCue": "panko-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "panko-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 4,
+      "id": 29,
+      "at": 3.6754000186920166,
+      "frameAt": 3.664400100708008,
+      "clockStart": 3.647700100708007,
+      "legacyInferredStart": 3.658700018692016,
+      "actorId": "foe-0-kettle-knight",
+      "skillId": "enemy:kettle-knight:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 29,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko",
+            "foe-0-kettle-knight"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 29,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 19,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 29,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 16,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 1,
+          "actionId": 29,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 70,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 6,
+          "turn": 0,
+          "round": 1,
+          "actionId": 29,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 1,
+          "note": "Warm"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "steam",
+          "soundCue": "eliteAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "handle",
+          "soundCue": "eliteAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "eliteAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 5,
+      "id": 33,
+      "at": 4.575400114059448,
+      "frameAt": 4.5644001960754395,
+      "clockStart": 4.547700196075438,
+      "legacyInferredStart": 4.558700114059447,
+      "actorId": "foe-3-crumb-sentinel",
+      "skillId": "enemy:crumb-sentinel:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 33,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko",
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 1,
+          "turn": 0,
+          "round": 1,
+          "actionId": 33,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 25,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 33,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 16,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 33,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Crumb trail"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "bread",
+          "soundCue": "guardAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "crumb-crown",
+          "soundCue": "guardAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "guardAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 6,
+      "id": 37,
+      "at": 5.475800037384033,
+      "frameAt": 5.464299917221069,
+      "clockStart": 5.447599917221069,
+      "legacyInferredStart": 5.459100037384033,
+      "actorId": "foe-1-spool-ram",
+      "skillId": "enemy:spool-ram:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 37,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko",
+            "foe-1-spool-ram"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 37,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 35,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 37,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "foe-1-spool-ram"
+          ],
+          "amount": 16,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "knot",
+          "soundCue": "chargerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "wick",
+          "soundCue": "chargerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "chargerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 7,
+      "id": 41,
+      "at": 6.3769001960754395,
+      "frameAt": 6.364300012588501,
+      "clockStart": 6.347500012588502,
+      "legacyInferredStart": 6.36010019607544,
+      "actorId": "foe-4-needle-moth",
+      "skillId": "enemy:needle-moth:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 41,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-4-needle-moth",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 1,
+          "actionId": 41,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-4-needle-moth",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "needle",
+          "soundCue": "rangerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "needle",
+          "soundCue": "rangerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seam",
+          "soundCue": "rangerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "wing",
+          "soundCue": "rangerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "rangerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 8,
+      "id": 44,
+      "at": 7.2581000328063965,
+      "frameAt": 7.247499942779541,
+      "clockStart": 7.230899942779541,
+      "legacyInferredStart": 7.241500032806396,
+      "actorId": "foe-2-pollen-scout",
+      "skillId": "enemy:pollen-scout:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 44,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-2-pollen-scout",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko",
+            "foe-2-pollen-scout"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 1,
+          "turn": 0,
+          "round": 1,
+          "actionId": 44,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-2-pollen-scout",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 23,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 1,
+          "actionId": 44,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "foe-2-pollen-scout"
+          ],
+          "amount": 16,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seed-pod",
+          "soundCue": "rangerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seed-pod",
+          "soundCue": "rangerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "flower-bell",
+          "soundCue": "rangerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "leaf",
+          "soundCue": "rangerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "rangerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 9,
+      "id": 52,
+      "at": 8.14330005645752,
+      "frameAt": 8.130800008773804,
+      "clockStart": 8.114200008773803,
+      "legacyInferredStart": 8.12670005645752,
+      "actorId": "foe-5-teacup-healer",
+      "skillId": "enemy:teacup-healer:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 1,
+          "round": 1,
+          "actionId": 52,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-5-teacup-healer",
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 1,
+          "turn": 0,
+          "round": 1,
+          "actionId": 52,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 1,
+          "note": "Regen"
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 1,
+          "actionId": 52,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 11,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 1,
+          "actionId": 52,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 1,
+          "note": "Mark"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "tray",
+          "soundCue": "healerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "tray",
+          "soundCue": "healerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "steam",
+          "soundCue": "healerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "bubble",
+          "soundCue": "healerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "healerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 10,
+      "id": 52,
+      "at": 8.922600030899048,
+      "frameAt": 8.914199829101562,
+      "clockStart": 8.914199829101562,
+      "legacyInferredStart": 8.922600030899048,
+      "actorId": "",
+      "skillId": "round-status",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 300,
+      "impact": 0,
+      "events": [
+        {
+          "version": 3,
+          "seq": 1,
+          "turn": 0,
+          "round": 1,
+          "actionId": 52,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "round-status",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 18,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 0,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "glow",
+          "soundCue": "heal.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 0,
+          "duration": 0,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "ribbon",
+          "soundCue": "heal.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 0,
+          "duration": 70,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "cast",
+          "vfx": "ring",
+          "soundCue": "heal.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 70,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "sparks",
+          "soundCue": "heal.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 170,
+          "duration": 130,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "afterglow",
+          "soundCue": "heal.residue"
+        }
+      ]
+    },
+    {
+      "key": 11,
+      "id": 60,
+      "at": 9.326900243759155,
+      "frameAt": 9.31410002708435,
+      "clockStart": 9.297500027084352,
+      "legacyInferredStart": 9.310300243759157,
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 60,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-4-needle-moth",
+            "foe-3-crumb-sentinel",
+            "foe-5-teacup-healer",
+            "mochi"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 60,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 55,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 60,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 21,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 6,
+          "turn": 0,
+          "round": 2,
+          "actionId": 60,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 23,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 7,
+          "turn": 0,
+          "round": 2,
+          "actionId": 60,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 18,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "handle",
+          "soundCue": "mochi-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "door",
+          "soundCue": "mochi-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "knock-ring",
+          "soundCue": "mochi-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "seam",
+          "soundCue": "mochi-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "mochi-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 12,
+      "id": 64,
+      "at": 10.210000038146973,
+      "frameAt": 10.197400093078613,
+      "clockStart": 10.180800093078613,
+      "legacyInferredStart": 10.193400038146972,
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 64,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 64,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 68,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 64,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 2,
+          "note": "Crumb trail"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "ember",
+          "soundCue": "soot-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "ember",
+          "soundCue": "soot-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spark",
+          "soundCue": "soot-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "ink-stain",
+          "soundCue": "soot-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "soot-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 13,
+      "id": 68,
+      "at": 11.107599973678589,
+      "frameAt": 11.097400188446045,
+      "clockStart": 11.080700188446045,
+      "legacyInferredStart": 11.090899973678589,
+      "actorId": "clover",
+      "skillId": "clover-1",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 68,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "foe-4-needle-moth",
+            "panko"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 68,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 39,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 68,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 19,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "stem",
+          "soundCue": "clover-1.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "leaf",
+          "soundCue": "clover-1.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "leaf",
+          "soundCue": "clover-1.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "sprout",
+          "soundCue": "clover-1.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "clover-1.residue"
+        }
+      ]
+    },
+    {
+      "key": 14,
+      "id": 73,
+      "at": 12.008699893951416,
+      "frameAt": 11.980700016021729,
+      "clockStart": 11.96400001602173,
+      "legacyInferredStart": 11.991999893951418,
+      "actorId": "panko",
+      "skillId": "panko-4",
+      "ultimate": true,
+      "tier": "ultimate",
+      "duration": 2200,
+      "impact": 1100,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 73,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 73,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 180,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 73,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 2,
+          "note": "Saucer riposte"
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 73,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Shelter"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "handle",
+          "soundCue": "panko-4.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 600,
+          "duration": 500,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "oven",
+          "soundCue": "panko-4.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 1100,
+          "duration": 66.66666666666667,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "pan",
+          "soundCue": "panko-4.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 1166.6666666666667,
+          "duration": 700,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "flame",
+          "soundCue": "panko-4.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 1866.6666666666667,
+          "duration": 333.33333333333326,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "tray",
+          "soundCue": "panko-4.residue"
+        }
+      ]
+    },
+    {
+      "key": 15,
+      "id": 78,
+      "at": 14.275799989700317,
+      "frameAt": 14.2639000415802,
+      "clockStart": 14.247300041580202,
+      "legacyInferredStart": 14.259199989700319,
+      "actorId": "foe-0-kettle-knight",
+      "skillId": "enemy:kettle-knight:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 78,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko",
+            "foe-0-kettle-knight"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 78,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 78,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "steam",
+          "soundCue": "eliteAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "handle",
+          "soundCue": "eliteAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "eliteAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 16,
+      "id": 83,
+      "at": 15.174100160598755,
+      "frameAt": 15.163900136947632,
+      "clockStart": 15.147300136947633,
+      "legacyInferredStart": 15.157500160598756,
+      "actorId": "foe-3-crumb-sentinel",
+      "skillId": "enemy:crumb-sentinel:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 83,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko",
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 83,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 83,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 32,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 83,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Crumb trail"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "bread",
+          "soundCue": "guardAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "crumb-crown",
+          "soundCue": "guardAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "guardAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 17,
+      "id": 88,
+      "at": 16.07610011100769,
+      "frameAt": 16.06380009651184,
+      "clockStart": 16.047200096511844,
+      "legacyInferredStart": 16.059500111007694,
+      "actorId": "foe-1-spool-ram",
+      "skillId": "enemy:spool-ram:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 88,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko",
+            "foe-1-spool-ram"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 88,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 88,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "foe-1-spool-ram"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "knot",
+          "soundCue": "chargerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "wick",
+          "soundCue": "chargerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "chargerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 18,
+      "id": 93,
+      "at": 16.960000038146973,
+      "frameAt": 16.947199821472168,
+      "clockStart": 16.930499821472168,
+      "legacyInferredStart": 16.943300038146972,
+      "actorId": "foe-4-needle-moth",
+      "skillId": "enemy:needle-moth:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 93,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-4-needle-moth",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko",
+            "foe-4-needle-moth"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 93,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-4-needle-moth",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 93,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "needle",
+          "soundCue": "rangerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "needle",
+          "soundCue": "rangerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seam",
+          "soundCue": "rangerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "wing",
+          "soundCue": "rangerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "rangerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 19,
+      "id": 97,
+      "at": 17.841300010681152,
+      "frameAt": 17.83049988746643,
+      "clockStart": 17.81379988746643,
+      "legacyInferredStart": 17.824600010681152,
+      "actorId": "foe-2-pollen-scout",
+      "skillId": "enemy:pollen-scout:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 97,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-2-pollen-scout",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko",
+            "foe-2-pollen-scout"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 2,
+          "actionId": 97,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-2-pollen-scout",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 97,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "rangerAttack",
+          "targetIds": [
+            "foe-2-pollen-scout"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seed-pod",
+          "soundCue": "rangerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "seed-pod",
+          "soundCue": "rangerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "flower-bell",
+          "soundCue": "rangerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "leaf",
+          "soundCue": "rangerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "rangerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 20,
+      "id": 107,
+      "at": 18.72410011291504,
+      "frameAt": 18.713799953460693,
+      "clockStart": 18.697099953460693,
+      "legacyInferredStart": 18.70740011291504,
+      "actorId": "foe-5-teacup-healer",
+      "skillId": "enemy:teacup-healer:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 2,
+          "round": 2,
+          "actionId": 107,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "panko",
+            "foe-5-teacup-healer"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 32,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "fizzle",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "healerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": "Panko resisted Mark"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "tray",
+          "soundCue": "healerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "tray",
+          "soundCue": "healerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "steam",
+          "soundCue": "healerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "bubble",
+          "soundCue": "healerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "healerAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 21,
+      "id": 107,
+      "at": 19.519500017166138,
+      "frameAt": 19.513700008392334,
+      "clockStart": 19.513700008392334,
+      "legacyInferredStart": 19.519500017166138,
+      "actorId": "",
+      "skillId": "round-status",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 300,
+      "impact": 0,
+      "events": [
+        {
+          "version": 3,
+          "seq": 1,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "foe-5-teacup-healer",
+          "skillId": "round-status",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 18,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "mochi",
+          "skillId": "round-status",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0,
+          "note": "Mark"
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 2,
+          "actionId": 107,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "round-status",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 0,
+          "note": "Warm"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 0,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "glow",
+          "soundCue": "status_expire.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 0,
+          "duration": 0,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "cast",
+          "vfx": "ribbon",
+          "soundCue": "status_expire.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 0,
+          "duration": 70,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "cast",
+          "vfx": "ring",
+          "soundCue": "status_expire.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 70,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "sparks",
+          "soundCue": "status_expire.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 170,
+          "duration": 130,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "afterglow",
+          "soundCue": "status_expire.residue"
+        }
+      ]
+    },
+    {
+      "key": 22,
+      "id": 130,
+      "at": 19.93969988822937,
+      "frameAt": 19.913699865341187,
+      "clockStart": 19.897099865341183,
+      "legacyInferredStart": 19.923099888229366,
+      "actorId": "mochi",
+      "skillId": "mochi-4",
+      "ultimate": true,
+      "tier": "ultimate",
+      "duration": 2200,
+      "impact": 1100,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 130,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover",
+            "panko",
+            "foe-4-needle-moth"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 0,
+          "note": "Removed debuffs"
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 130,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 2,
+          "note": "Warm"
+        },
+        {
+          "version": 3,
+          "seq": 6,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 0,
+          "note": "Removed debuffs"
+        },
+        {
+          "version": 3,
+          "seq": 7,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 130,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 8,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 2,
+          "note": "Warm"
+        },
+        {
+          "version": 3,
+          "seq": 10,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 0,
+          "note": "Removed debuffs"
+        },
+        {
+          "version": 3,
+          "seq": 11,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 130,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 12,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 2,
+          "note": "Warm"
+        },
+        {
+          "version": 3,
+          "seq": 14,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_expire",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Removed debuffs"
+        },
+        {
+          "version": 3,
+          "seq": 15,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 130,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 16,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 2,
+          "note": "Warm"
+        },
+        {
+          "version": 3,
+          "seq": 17,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 42,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 18,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 20,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 19,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 20,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 20,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 20,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 21,
+          "turn": 0,
+          "round": 3,
+          "actionId": 130,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 20,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "window",
+          "soundCue": "mochi-4.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 600,
+          "duration": 500,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "roof",
+          "soundCue": "mochi-4.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 1100,
+          "duration": 66.66666666666667,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "lantern",
+          "soundCue": "mochi-4.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 1166.6666666666667,
+          "duration": 700,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "shield-facet",
+          "soundCue": "mochi-4.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 1866.6666666666667,
+          "duration": 333.33333333333326,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "light-pool",
+          "soundCue": "mochi-4.residue"
+        }
+      ]
+    },
+    {
+      "key": 23,
+      "id": 154,
+      "at": 22.24530005455017,
+      "frameAt": 22.21369981765747,
+      "clockStart": 22.196899817657467,
+      "legacyInferredStart": 22.228500054550167,
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "ultimate": true,
+      "tier": "ultimate",
+      "duration": 2200,
+      "impact": 1100,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 154,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-kettle-knight",
+            "soot",
+            "foe-1-spool-ram",
+            "foe-2-pollen-scout",
+            "foe-3-crumb-sentinel",
+            "foe-4-needle-moth",
+            "foe-5-teacup-healer"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "soot-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 12,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        },
+        {
+          "version": 3,
+          "seq": 7,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-1-spool-ram"
+          ],
+          "amount": 55,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 8,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-1-spool-ram"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        },
+        {
+          "version": 3,
+          "seq": 10,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-2-pollen-scout"
+          ],
+          "amount": 56,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 11,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-2-pollen-scout"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        },
+        {
+          "version": 3,
+          "seq": 13,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 48,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 14,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        },
+        {
+          "version": 3,
+          "seq": 16,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 60,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 17,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 60,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 18,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 6,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 20,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-4-needle-moth"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        },
+        {
+          "version": 3,
+          "seq": 22,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 55,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 23,
+          "turn": 0,
+          "round": 3,
+          "actionId": 154,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-5-teacup-healer"
+          ],
+          "amount": 1,
+          "note": "Daze"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "tray",
+          "soundCue": "soot-4.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 600,
+          "duration": 500,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "star",
+          "soundCue": "soot-4.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 1100,
+          "duration": 66.66666666666667,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "lantern",
+          "soundCue": "soot-4.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 1166.6666666666667,
+          "duration": 700,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "crescent",
+          "soundCue": "soot-4.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 1866.6666666666667,
+          "duration": 333.33333333333326,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "comet",
+          "soundCue": "soot-4.residue"
+        }
+      ]
+    },
+    {
+      "key": 24,
+      "id": 167,
+      "at": 24.52590012550354,
+      "frameAt": 24.49690008163452,
+      "clockStart": 24.480200081634525,
+      "legacyInferredStart": 24.509200125503543,
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "ultimate": true,
+      "tier": "ultimate",
+      "duration": 2200,
+      "impact": 1100,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 167,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "mochi",
+            "soot",
+            "clover",
+            "panko"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 11,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "mochi"
+          ],
+          "amount": 1,
+          "note": "Second sprout"
+        },
+        {
+          "version": 3,
+          "seq": 5,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 12,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 6,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "soot"
+          ],
+          "amount": 1,
+          "note": "Second sprout"
+        },
+        {
+          "version": 3,
+          "seq": 8,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 9,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover"
+          ],
+          "amount": 1,
+          "note": "Second sprout"
+        },
+        {
+          "version": 3,
+          "seq": 11,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "heal",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 83,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 12,
+          "turn": 0,
+          "round": 3,
+          "actionId": 167,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Second sprout"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "stem",
+          "soundCue": "clover-4.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 600,
+          "duration": 500,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "greenhouse",
+          "soundCue": "clover-4.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 1100,
+          "duration": 66.66666666666667,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "sprout",
+          "soundCue": "clover-4.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 1166.6666666666667,
+          "duration": 700,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "petal",
+          "soundCue": "clover-4.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 1866.6666666666667,
+          "duration": 333.33333333333326,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "window",
+          "soundCue": "clover-4.residue"
+        }
+      ]
+    },
+    {
+      "key": 25,
+      "id": 172,
+      "at": 26.822999954223633,
+      "frameAt": 26.796800136566162,
+      "clockStart": 26.780200136566165,
+      "legacyInferredStart": 26.806399954223636,
+      "actorId": "panko",
+      "skillId": "panko-4",
+      "ultimate": true,
+      "tier": "ultimate",
+      "duration": 2200,
+      "impact": 1100,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 172,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 2,
+          "turn": 0,
+          "round": 3,
+          "actionId": 172,
+          "beat": 2,
+          "type": "shield",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 180,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 172,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 2,
+          "note": "Saucer riposte"
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 172,
+          "beat": 2,
+          "type": "status_apply",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 1,
+          "note": "Shelter"
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "handle",
+          "soundCue": "panko-4.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 600,
+          "duration": 500,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "oven",
+          "soundCue": "panko-4.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 1100,
+          "duration": 66.66666666666667,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "pan",
+          "soundCue": "panko-4.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 1166.6666666666667,
+          "duration": 700,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "flame",
+          "soundCue": "panko-4.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 1866.6666666666667,
+          "duration": 333.33333333333326,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "tray",
+          "soundCue": "panko-4.residue"
+        }
+      ]
+    },
+    {
+      "key": 26,
+      "id": 177,
+      "at": 29.109999895095825,
+      "frameAt": 29.096699953079224,
+      "clockStart": 29.079999953079223,
+      "legacyInferredStart": 29.093299895095825,
+      "actorId": "foe-0-kettle-knight",
+      "skillId": "enemy:kettle-knight:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 177,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko",
+            "foe-0-kettle-knight"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 177,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-0-kettle-knight",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 177,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "eliteAttack",
+          "targetIds": [
+            "foe-0-kettle-knight"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "teapot",
+          "soundCue": "eliteAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "steam",
+          "soundCue": "eliteAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "handle",
+          "soundCue": "eliteAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "eliteAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 27,
+      "id": 182,
+      "at": 30.011199951171875,
+      "frameAt": 29.996700048446655,
+      "clockStart": 29.979900048446652,
+      "legacyInferredStart": 29.99439995117187,
+      "actorId": "foe-3-crumb-sentinel",
+      "skillId": "enemy:crumb-sentinel:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 182,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko",
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 182,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-3-crumb-sentinel",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 182,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-3-crumb-sentinel"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "bread",
+          "soundCue": "guardAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "guardAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "crumb-crown",
+          "soundCue": "guardAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "guardAttack.residue"
+        }
+      ]
+    },
+    {
+      "key": 28,
+      "id": 187,
+      "at": 30.89520001411438,
+      "frameAt": 30.879900217056274,
+      "clockStart": 30.863300217056278,
+      "legacyInferredStart": 30.878600014114383,
+      "actorId": "foe-1-spool-ram",
+      "skillId": "enemy:spool-ram:basic",
+      "ultimate": false,
+      "tier": "basic",
+      "duration": 800,
+      "impact": 350,
+      "events": [
+        {
+          "version": 3,
+          "seq": 0,
+          "turn": 3,
+          "round": 3,
+          "actionId": 187,
+          "beat": 0,
+          "type": "action_start",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko",
+            "foe-1-spool-ram"
+          ],
+          "amount": 0
+        },
+        {
+          "version": 3,
+          "seq": 3,
+          "turn": 0,
+          "round": 3,
+          "actionId": 187,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "foe-1-spool-ram",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "panko"
+          ],
+          "amount": 0,
+          "note": ""
+        },
+        {
+          "version": 3,
+          "seq": 4,
+          "turn": 0,
+          "round": 3,
+          "actionId": 187,
+          "beat": 2,
+          "type": "damage",
+          "actorId": "panko",
+          "skillId": "chargerAttack",
+          "targetIds": [
+            "foe-1-spool-ram"
+          ],
+          "amount": 32,
+          "note": ""
+        }
+      ],
+      "beats": [
+        {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 250,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.anticipation"
+        },
+        {
+          "kind": "travel",
+          "start": 250,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "spool",
+          "soundCue": "chargerAttack.travel"
+        },
+        {
+          "kind": "impact",
+          "start": 350,
+          "duration": 66.66666666666667,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "special",
+          "vfx": "knot",
+          "soundCue": "chargerAttack.impact"
+        },
+        {
+          "kind": "reaction",
+          "start": 416.6666666666667,
+          "duration": 250,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "wick",
+          "soundCue": "chargerAttack.reaction"
+        },
+        {
+          "kind": "residue",
+          "start": 666.6666666666667,
+          "duration": 133.33333333333331,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "glow",
+          "soundCue": "chargerAttack.residue"
+        }
+      ]
+    }
+  ],
+  "result": "party",
+  "parity": true,
+  "errors": []
+}

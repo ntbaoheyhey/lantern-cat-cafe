@@ -268,3 +268,4 @@ Q2 checker coverage correction: bossHeightRatio applies to the boss fixture; eli
 2026-11-16T01:56:30.583450+00:00 Updated V3-POSE order adopted verbatim (section0A anti-forget), bytes54054,sha256906716304bf915a2ffeee62c81e7b280fb42d1c9f0a8ee00d81a6a89496ec4cd; authorization active; RULES/STATE created before P2 continuation; previous handoff wording does not stop work.
 
 2026-11-16 P2 R0 review correction: initial no-Soot-damage claim used an actor filter that excluded retaliation. wave3A24 damages Soot12; K5 hid K4. Review corrected, drawing-only180ms retaliation override added; action clock/cues unchanged.
+2026-11-16T02:54:30.984225+00:00 P2: old motion tests expecting28–30px and zero ranged-retaliation recoil are SUPERSEDED by user4B.4(6–12px knockback+75ms contact hold); replace assertions with new bounded event-owned response; no combat rules change.

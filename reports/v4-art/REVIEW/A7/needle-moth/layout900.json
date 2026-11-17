@@ -1,0 +1,179 @@
+{
+  "method": "Unmodified silent fixed-clock 1440x900 capture; bbox layout only, not audio, FPS, alpha occlusion or HUD proof.",
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "captureSha256": "cf6556420a718dd206c4dc1a3ec9d22500fbac36d1e036c22d736a46185e4024",
+      "frames": 952,
+      "seconds": 31.733333333333334,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.31027499999999986,
+          "t": 27.3,
+          "index": 819
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03499999999999992,
+          "t": 5.3,
+          "index": 159
+        },
+        "span": {
+          "value": 0.812722961048404,
+          "t": 30.966666666666665,
+          "index": 929
+        },
+        "gap": {
+          "value": 0.10411638345687414,
+          "t": 13.333333333333334,
+          "index": 400
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        132,
+        111,
+        399
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-wave1.jpg",
+      "visuallyReviewed": true
+    },
+    {
+      "fixture": "wave3",
+      "captureSha256": "9eacf0f2b471e6f78e66b1994e45e81ae2f45ddb01a8502453c5f5dadd063f67",
+      "frames": 901,
+      "seconds": 30.033333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.5,
+          "index": 165
+        },
+        "catDeviation": {
+          "value": 0.029556650246305494,
+          "t": 21.433333333333334,
+          "index": 643
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.03425489917921909,
+          "t": 21.333333333333332,
+          "index": 640
+        },
+        "span": {
+          "value": 0.8192028137340447,
+          "t": 19.433333333333334,
+          "index": 583
+        },
+        "gap": {
+          "value": -0.013566401614058539,
+          "t": 7.666666666666667,
+          "index": 230
+        }
+      },
+      "failures": [],
+      "reviewFrameIndices": [
+        0,
+        180,
+        642,
+        231
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-wave3.jpg",
+      "visuallyReviewed": true
+    },
+    {
+      "fixture": "boss",
+      "captureSha256": "399fd1f1bf1a6fc7c636e3428e04232d7e7b695264586555f399a7a282dbe4d5",
+      "frames": 946,
+      "seconds": 31.533333333333335,
+      "parity": true,
+      "errors": [],
+      "extrema": {
+        "catMedian": {
+          "value": 0.3102749999999999,
+          "t": 5.7,
+          "index": 171
+        },
+        "catDeviation": {
+          "value": 0.02599924989515634,
+          "t": 3.6666666666666665,
+          "index": 110
+        },
+        "left": {
+          "value": 0.045927123401893484,
+          "t": 1.1,
+          "index": 33
+        },
+        "right": {
+          "value": 0.05585162215397044,
+          "t": 4.266666666666667,
+          "index": 128
+        },
+        "span": {
+          "value": 0.779451495094258,
+          "t": 9.766666666666667,
+          "index": 293
+        },
+        "gap": {
+          "value": 0.07369990575027248,
+          "t": 5.166666666666667,
+          "index": 155
+        },
+        "boss": {
+          "value": 0.4964399999999997,
+          "t": 0.3333333333333333,
+          "index": 10
+        }
+      },
+      "failures": [
+        {
+          "metric": "span",
+          "count": 100,
+          "worst": {
+            "value": 0.779451495094258,
+            "t": 9.766666666666667,
+            "index": 293
+          }
+        }
+      ],
+      "reviewFrameIndices": [
+        0,
+        111,
+        156,
+        9
+      ],
+      "sheet": "reports/v4-art/REVIEW/A7/needle-moth/raw/layout900-boss.jpg",
+      "visuallyReviewed": true
+    }
+  ],
+  "failures": [
+    {
+      "fixture": "boss",
+      "metric": "span",
+      "count": 100,
+      "worst": {
+        "value": 0.779451495094258,
+        "t": 9.766666666666667,
+        "index": 293
+      }
+    }
+  ]
+}

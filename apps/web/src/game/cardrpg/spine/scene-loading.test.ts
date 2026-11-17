@@ -7,30 +7,31 @@ import {SpineScene} from './scene';
 const {load,loadDrawings} = vi.hoisted(() => ({load: vi.fn(),loadDrawings: vi.fn()}));
 vi.mock('./assets', () => ({loadSpineActor: load}));
 vi.mock('../vfx-craft/drawn-poses', () => ({loadDrawnPoseSet: loadDrawings}));
-beforeEach(() => {load.mockReset();loadDrawings.mockReset();});
+beforeEach(() => {load.mockReset();loadDrawings.mockReset().mockResolvedValue(undefined);});
 
-function request() {
-  let resolve!: (actor: SpineActor) => void, reject!: (error: Error) => void;
-  const promise = new Promise<SpineActor>((yes, no) => {resolve = yes; reject = no;});
+function request<Value=SpineActor>() {
+  let resolve!: (actor: Value) => void, reject!: (error: Error) => void;
+  const promise = new Promise<Value>((yes, no) => {resolve = yes; reject = no;});
   return {promise, resolve, reject};
 }
 function actor() {
   return {root: new T.Group(), dispose: vi.fn(), onCue: () => {}} as unknown as SpineActor;
 }
 // Exercise the real scene lifecycle without constructing a WebGL context.
-function fixture() {
+function fixture(prepareEffects=vi.fn().mockResolvedValue(undefined),prepareCraft=vi.fn().mockResolvedValue(undefined)) {
   let view = {actors: []} as unknown as SceneView;
   const scene: SpineScene = Object.assign(Object.create(SpineScene.prototype) as SpineScene, {
     scene: new T.Scene(), actors: new Map(), pending: new Map(), failed: new Set(), lanes: new Map(), sampled: new Map(), homes: new Map(),
     casterFocus: {dispose: vi.fn()}, trails: {dispose: vi.fn()}, bossPhase: {dispose: vi.fn()}, weather: {dispose: vi.fn()},
+    craftEffects: {effects:{},prepare:prepareCraft,dispose:vi.fn()},
     loading: {completed: 0, total: 0}, stats: {loaded: 0}, time: 0, disposed: false, ready: false,
     geometry: new T.PlaneGeometry(), ringGeometry: new T.RingGeometry(), shadowTexture: new T.Texture(),
     onFailure: vi.fn(), view: () => view,
-    resize: {disconnect: vi.fn()}, stage: {dispose: vi.fn()}, effects: {dispose: vi.fn()}, bodyFx: {dispose: vi.fn()}, cinema: {dispose: vi.fn()}, postFx: {dispose: vi.fn()}, numbers: {dispose: vi.fn()},
+    resize: {disconnect: vi.fn()}, stage: {dispose: vi.fn()}, effects: {dispose: vi.fn(),prepare:prepareEffects}, bodyFx: {dispose: vi.fn()}, cinema: {dispose: vi.fn()}, postFx: {dispose: vi.fn()}, numbers: {dispose: vi.fn()},
     renderer: {domElement: document.createElement('canvas'), dispose: vi.fn(), forceContextLoss: vi.fn()},
   });
   const switchTo = (...ids: string[]) => {
-    view = {actors: ids.map(id => ({id, side: 'enemy', cardRpg: {cardId: id}}))} as unknown as SceneView;
+    view = {formationC2:true,actors: ids.map(id => ({id, side: 'enemy', cardRpg: {cardId: id}}))} as unknown as SceneView;
     scene.prepare(view);
   };
   return {scene, switchTo};
@@ -38,10 +39,26 @@ function fixture() {
 
 it('disposes the loaded actor when its drawing assets reject', async () => {
  const orphan=actor();load.mockResolvedValue(orphan);loadDrawings.mockRejectedValue(new Error('Missing pose'));
- const {scene,switchTo}=fixture();Object.assign(scene,{craft:{dispose:vi.fn()}});switchTo('soot');
+ const {scene,switchTo}=fixture();switchTo('soot');
  await vi.waitFor(()=>expect(orphan.dispose).toHaveBeenCalledOnce());
  await vi.waitFor(()=>expect(scene.loading).toMatchObject({completed:0,total:1}));
  expect(scene.actors.size).toBe(0);expect(scene.ready).toBe(false);scene.dispose();
+});
+
+it('loads hero drawings without a Soot pilot and waits for the authored encounter effects',async()=>{
+ const held=request<void>(),prepare=vi.fn().mockReturnValue(held.promise);
+ load.mockImplementation(async()=>actor());const {scene,switchTo}=fixture(undefined,prepare);
+ switchTo('mochi');await vi.waitFor(()=>expect(scene.actors.size).toBe(1));
+ expect(loadDrawings).toHaveBeenCalledExactlyOnceWith('mochi');
+ expect(prepare).toHaveBeenCalledExactlyOnceWith(['mochi']);expect(scene.ready).toBe(false);
+ held.resolve();await vi.waitFor(()=>expect(scene.ready).toBe(true));scene.dispose();
+});
+
+it('keeps accepted designer and sequence art when preparing authored effects',async()=>{
+ load.mockImplementation(async(id:string)=>({...actor(),source:id==='soot'?'designer':'sequence'}));
+ const {scene,switchTo}=fixture();switchTo('soot','mochi');
+ await vi.waitFor(()=>expect(scene.ready).toBe(true));
+ expect(loadDrawings).not.toHaveBeenCalled();scene.dispose();
 });
 
 it('releases an obsolete load gate and enemy lane before its image arrives', async () => {
@@ -90,4 +107,34 @@ it('disposes late actors without changing or reporting to a destroyed scene', as
   expect(internal.onFailure).not.toHaveBeenCalled(); expect(scene.ready).toBe(false);
   expect(scene.actors.size).toBe(0); expect(internal.pending.size).toBe(0); expect(internal.lanes.size).toBe(0);
   switchTo('ignored'); expect(load).toHaveBeenCalledTimes(2);
+});
+
+it('holds battle readiness until the current roster effects finish, ignoring a returning roster old request',async()=>{
+ const first=request<void>(),middle=request<void>(),last=request<void>();
+ const prepare=vi.fn().mockReturnValueOnce(first.promise).mockReturnValueOnce(middle.promise).mockReturnValueOnce(last.promise);
+ load.mockImplementation(async()=>actor());const {scene,switchTo}=fixture(prepare);
+ switchTo('needle-moth');switchTo('mochi');switchTo('needle-moth');
+ await vi.waitFor(()=>expect(scene.actors.size).toBe(1));expect(scene.ready).toBe(false);
+ first.resolve();middle.resolve();await Promise.resolve();expect(scene.ready).toBe(false);
+ last.resolve();await vi.waitFor(()=>expect(scene.ready).toBe(true));
+ switchTo('needle-moth');expect(prepare).toHaveBeenCalledTimes(3);
+ expect(prepare).toHaveBeenLastCalledWith(['needle-moth'],true);scene.dispose();
+});
+
+it('ignores obsolete effect failure but retains the current preparation failure',async()=>{
+ const old=request<void>(),current=request<void>();
+ const prepare=vi.fn().mockReturnValueOnce(old.promise).mockReturnValueOnce(current.promise);
+ load.mockImplementation(async()=>actor());const {scene,switchTo}=fixture(prepare);
+ switchTo('needle-moth');switchTo('mochi');
+ const failure=(scene as unknown as {onFailure:ReturnType<typeof vi.fn>}).onFailure;
+ old.reject(new Error('obsolete'));await vi.waitFor(()=>expect(scene.actors.size).toBe(1));
+ expect(failure).not.toHaveBeenCalled();expect(scene.ready).toBe(false);
+ current.reject(new Error('current'));await vi.waitFor(()=>expect(failure).toHaveBeenCalledOnce());
+ expect(scene.ready).toBe(false);switchTo();expect(scene.ready).toBe(true);scene.dispose();
+});
+
+it('does not release readiness after an effect finishes on a disposed scene',async()=>{
+ const held=request<void>();load.mockImplementation(async()=>actor());
+ const {scene,switchTo}=fixture(vi.fn().mockReturnValue(held.promise));switchTo('mochi');scene.dispose();
+ held.resolve();await Promise.resolve();expect(scene.ready).toBe(false);
 });

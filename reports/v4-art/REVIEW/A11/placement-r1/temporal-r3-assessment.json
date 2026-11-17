@@ -1,0 +1,181 @@
+{
+  "at": "2026-11-16T23:10:47.075457+00:00",
+  "executionComplete": true,
+  "semanticActionClockMatched": true,
+  "runtimeUnchanged": true,
+  "samples": 304,
+  "retainedDefectsCoveredPerSize": 42,
+  "baselineReproduced720": 38,
+  "baselineReproduced900": 35,
+  "notReproduced": [
+    {
+      "fixture": "wave1",
+      "height": 720,
+      "encodedFrame": 585,
+      "actor": "soot",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "wave3",
+      "height": 720,
+      "encodedFrame": 285,
+      "actor": "mochi",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "wave3",
+      "height": 720,
+      "encodedFrame": 297,
+      "actor": "mochi",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "boss",
+      "height": 720,
+      "encodedFrame": 390,
+      "actor": "foe-0-yarn-giant",
+      "resolution": "actual-hud-overlap"
+    },
+    {
+      "fixture": "wave1",
+      "height": 900,
+      "encodedFrame": 585,
+      "actor": "soot",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 285,
+      "actor": "mochi",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 297,
+      "actor": "mochi",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 648,
+      "actor": "soot",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 390,
+      "actor": "foe-0-yarn-giant",
+      "resolution": "actual-hud-overlap"
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 537,
+      "actor": "soot",
+      "resolution": "actual-viewport-clipping"
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 660,
+      "actor": "soot",
+      "resolution": "actual-viewport-clipping"
+    }
+  ],
+  "candidateMeasuredIntersections": 0,
+  "textAndIdsPreserved": true,
+  "largestStableTextOffsetJumps": [
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 524,
+      "id": "soot",
+      "distance": 82.26131428639466
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 673,
+      "id": "soot",
+      "distance": 82.24991095169952
+    },
+    {
+      "fixture": "wave1",
+      "height": 900,
+      "encodedFrame": 720,
+      "id": "soot",
+      "distance": 82.23345020143113
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 646,
+      "id": "soot",
+      "distance": 82.23345020143113
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 852,
+      "id": "soot",
+      "distance": 82.23345020143113
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 783,
+      "id": "soot",
+      "distance": 82.2178487811687
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 535,
+      "id": "soot",
+      "distance": 82.2178487811687
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 772,
+      "id": "soot",
+      "distance": 82.214380406977
+    },
+    {
+      "fixture": "boss",
+      "height": 900,
+      "encodedFrame": 662,
+      "id": "soot",
+      "distance": 82.214380406977
+    },
+    {
+      "fixture": "wave1",
+      "height": 900,
+      "encodedFrame": 709,
+      "id": "soot",
+      "distance": 82.19879021786909
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 635,
+      "id": "soot",
+      "distance": 82.19879021786909
+    },
+    {
+      "fixture": "wave3",
+      "height": 900,
+      "encodedFrame": 841,
+      "id": "soot",
+      "distance": 82.19879021786909
+    }
+  ],
+  "productionInstalled": false,
+  "decision": "REJECT stateless nearest-free placement for temporal instability. Collision-free geometry alone is insufficient.",
+  "diagnosis": "At boss900 f523->524, a narrow free space between HUD and Soot face disappears; the nearest-free solution abruptly moves the label sideways by82.26px.",
+  "nextMethod": "Try actor-relative side lanes, then preserve the previous relative placement while feasible. Compare both private methods before installing."
+}

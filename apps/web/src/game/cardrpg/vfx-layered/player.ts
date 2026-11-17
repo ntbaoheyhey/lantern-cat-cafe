@@ -5,34 +5,52 @@ import {paintedTargets} from '../spine/vfx-registry';
 import {chargeEvent} from '../depth/card-action-plan';
 import {stageLayoutC2} from '../stage/layout-c2';
 import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline';
-import type {PackedPaint} from './atlas';
+import {paintSourceRect,type PackedPaint} from './atlas';
+import {loadAtlasImage} from '../spine/atlas-delivery';
+import sampledAtlases from './sampled-atlases.json';
 import type {SequencePlan} from '../battle-v3/sequence';
 import packedManifest from '../../../../../../assets/cardrpg-look/vfx-packed/manifest.json';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const textures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const packedTextures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-packed/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+const sampledPages=new Map(sampledAtlases.map(page=>[page.request,page]));
 export const PAINT_TIMELINES=new Map(Object.values(manifests).map(t=>[t.id,validatePaint(t)]));
 type Point={x:number;y:number};
 export class LayeredVfx {
  readonly images=new Map<string,PackedPaint>();
  readonly stats={draws:0,active:0,failed:[] as string[]};
- readonly ready:Promise<void>;
+ ready:Promise<void>=Promise.resolve();
  enabled=true;onlyLayers:Set<string>|null=null;
  private disposed=false;
- constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){
-  this.ready=Promise.all(packedManifest.pages.map(async page=>{
-   const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page.file);
-   const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page.file))?.[1];
+ private pages=new Map<string,Promise<void>>();
+ private decoding=new Set<HTMLImageElement>();
+ constructor(private socket:(id:string,socket:SpineSocket)=>Point|undefined){}
+ /** Metadata imports are cheap; request pixels only for this encounter's owners. */
+ prepare(owners:Iterable<string>):Promise<void>{
+  if(this.disposed)return Promise.resolve();
+  const selected=new Set(owners),pages=new Set<string>();
+  for(const [id,entry] of Object.entries(packedManifest.entries))if(selected.has(PAINT_TIMELINES.get(id)?.owner??''))pages.add(entry.page);
+  return this.ready=Promise.all([...pages].map(page=>this.loadPage(page))).then(()=>{});
+ }
+ private loadPage(page:string):Promise<void>{
+  const cached=this.pages.get(page);if(cached)return cached;
+  const entries=Object.entries(packedManifest.entries).filter(([,e])=>e.page===page);
+  const pending=(async()=>{
+   const url=Object.entries(packedTextures).find(([path])=>path.endsWith('/'+page))?.[1];
    try{
-    if(!url)throw Error('Missing painted atlas '+page.file);
-    const image=new Image();image.src=url;await image.decode();if(this.disposed)return;
+    if(!url)throw Error('Missing painted atlas '+page);
+    const sampled=sampledPages.get(page),{image}=await loadAtlasImage(url,sampled,{
+     track:(image,pending)=>{if(pending)this.decoding.add(image);else this.decoding.delete(image);},aborted:()=>this.disposed
+    });if(this.disposed)return;
+    const sourceScaleX=sampled?image.naturalWidth/sampled.sourceWidth:1,sourceScaleY=sampled?image.naturalHeight/sampled.sourceHeight:1;
     for(const [id,entry] of entries){const sourceUrl=Object.entries(textures).find(([path])=>path.endsWith('/'+id.replaceAll(':','-')+'.webp'))?.[1];
      if(!sourceUrl||!PAINT_TIMELINES.has(id))throw Error('Unknown packed painting '+id);
-     this.images.set(id,{image,...entry,sourceUrl});
+     this.images.set(id,{image,...entry,sourceUrl,sourceScaleX,sourceScaleY});
     }
-   }catch{this.stats.failed.push(...entries.map(([id])=>id));}
-  })).then(()=>{});
+   }catch{if(!this.disposed)this.stats.failed.push(...entries.map(([id])=>id));}
+  })();
+  this.pages.set(page,pending);return pending;
  }
  handles(plan:EffectPlan){const id=plan.presentationId??plan.skillId;return this.enabled&&this.images.has(id)&&PAINT_TIMELINES.has(id);}
  /** Decode and upload the atlas before its first combat impact. */
@@ -75,9 +93,9 @@ export class LayeredVfx {
     const extent=unit*layer.size*(passiveTarget?.75:charging?.7:1),rotation=view.reducedMotion?0:key.rotate;
     c.save();c.globalCompositeOperation=layer.blend==='add'?'lighter':layer.blend==='screen'?'screen':'source-over';c.globalAlpha=key.alpha;
     c.translate(p.x+key.x*unit*facing,p.y+key.y*unit);c.rotate(rotation*facing);c.scale(key.sx*facing,key.sy);
-    c.drawImage(image.image,image.x+region[0],image.y+region[1],region[2],region[3],-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
+    c.drawImage(image.image,...paintSourceRect(image,region),-extent/2,-extent/2,extent,extent);c.restore();this.stats.draws++;this.stats.active++;
    }
   }
  }
- dispose(){this.disposed=true;for(const image of new Set([...this.images.values()].map(p=>p.image)))image.src='';this.images.clear();}
+ dispose(){this.disposed=true;for(const image of new Set([...this.decoding,...[...this.images.values()].map(p=>p.image)]))image.src='';this.decoding.clear();this.images.clear();this.pages.clear();}
 }

@@ -1,0 +1,126 @@
+{
+  "method": "Normal renderer, real-time 30s marked audio films; raw renderer timestamps, no fixed-clock FPS inference",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "sourceCommit": "48599c03ab0ffc8486aca8c7e782b36dc3918346",
+      "videoSha256": "910deae2ac49dbb8c52423043fe9f73c1a324901fe210d731fae31c6d87f6588",
+      "videoHashVerified": true,
+      "medianRenderFps": 59.88098909257038,
+      "maxRenderMs": 22.899866104125977,
+      "medianRenderMs": 3.7000179290771484,
+      "cameraFirst": {
+        "scale": 1,
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "worldWidth": 3466.6666666666665,
+        "worldHeight": 1950
+      },
+      "durationSet": [
+        300,
+        800,
+        2200
+      ],
+      "impactSet": [
+        0,
+        350,
+        1100
+      ],
+      "parity": true,
+      "errors": [],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A10-TRANSFER/wave1-mix.wav",
+        "integratedLufs": -14.99,
+        "truePeakDbTP": -3.35,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "cameraMaximumWorldX": 7.919888495851655,
+      "cameraMaximumPixels": 3.116674071087553,
+      "cameraNonUltimateFrames": 0,
+      "cameraLatestMsAfterImpact": 116.70000000000073
+    },
+    {
+      "fixture": "wave3",
+      "sourceCommit": "48599c03ab0ffc8486aca8c7e782b36dc3918346",
+      "videoSha256": "d3fc29b7cf7cd7552bd1ffe5162bed7e678b3256f7ce99e6db66fa0c2c48d5cd",
+      "videoHashVerified": true,
+      "medianRenderFps": 60.2404848763393,
+      "maxRenderMs": 23.599863052368164,
+      "medianRenderMs": 4.199981689453125,
+      "cameraFirst": {
+        "scale": 1,
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "worldWidth": 3466.6666666666665,
+        "worldHeight": 1950
+      },
+      "durationSet": [
+        300,
+        800,
+        2200
+      ],
+      "impactSet": [
+        0,
+        350,
+        1100
+      ],
+      "parity": true,
+      "errors": [],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A10-TRANSFER/wave3-mix.wav",
+        "integratedLufs": -15,
+        "truePeakDbTP": -3.23,
+        "maxTransientVoices": 9,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "cameraMaximumWorldX": 7.919888495851655,
+      "cameraMaximumPixels": 3.116674071087553,
+      "cameraNonUltimateFrames": 0,
+      "cameraLatestMsAfterImpact": 116.70000000000073
+    },
+    {
+      "fixture": "boss",
+      "sourceCommit": "48599c03ab0ffc8486aca8c7e782b36dc3918346",
+      "videoSha256": "50dc985fba3ef45b3534f97e049f0607916cb58871ec203c1f3c45f7bb50d2a4",
+      "videoHashVerified": true,
+      "medianRenderFps": 60.2404848763393,
+      "maxRenderMs": 22.500038146972656,
+      "medianRenderMs": 3.200054168701172,
+      "cameraFirst": {
+        "scale": 1,
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "worldWidth": 3466.6666666666665,
+        "worldHeight": 1950
+      },
+      "durationSet": [
+        300,
+        800,
+        2200
+      ],
+      "impactSet": [
+        0,
+        350,
+        1100
+      ],
+      "parity": true,
+      "errors": [],
+      "audio": {
+        "path": "reports/v3-feel/REVIEW/V4-A10-TRANSFER/boss-mix.wav",
+        "integratedLufs": -14.74,
+        "truePeakDbTP": -2.71,
+        "maxTransientVoices": 10,
+        "method": "Unmodified production WebAudio output; actual timestamps; no postmix normalization."
+      },
+      "cameraMaximumWorldX": 7.8753692315453785,
+      "cameraMaximumPixels": 3.1041504640835895,
+      "cameraNonUltimateFrames": 0,
+      "cameraLatestMsAfterImpact": 116.60000000000218
+    }
+  ],
+  "cameraMethod": "Render camera is in world units. Convert X by field.width/worldWidth and Y by field.height/worldHeight, then take Euclidean pixel magnitude. Previous raw world-X value was not a pixel result."
+}

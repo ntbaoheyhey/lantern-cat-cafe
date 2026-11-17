@@ -1,0 +1,573 @@
+{
+  "at": "2026-11-16T12:46:23.691Z",
+  "scope": "Normal renderer (craft off), fresh browser contexts, development fixture only. Not the SHIP production journey or an 8MB gate pass.",
+  "method": "CDP cache disabled; full responses of every request initiated before scene readiness and first fixture action; later completions counted in full.",
+  "results": [
+    {
+      "fixture": "wave1",
+      "runtime": {
+        "ready": true,
+        "craftActive": false,
+        "owners": [
+          "panko",
+          "needle-moth",
+          "mochi",
+          "button-guard",
+          "sock-skipper",
+          "teacup-healer",
+          "clover",
+          "soot"
+        ],
+        "loadedIds": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4",
+          "clover-passive",
+          "enemy:button-guard:basic",
+          "enemy:button-guard",
+          "enemy:needle-moth:basic",
+          "enemy:needle-moth",
+          "enemy:sock-skipper:basic",
+          "enemy:sock-skipper",
+          "enemy:teacup-healer:basic",
+          "enemy:teacup-healer",
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4",
+          "mochi-passive",
+          "panko-1",
+          "panko-2",
+          "panko-3",
+          "panko-4",
+          "panko-passive",
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4",
+          "soot-passive"
+        ],
+        "failed": [],
+        "missing": []
+      },
+      "errors": [],
+      "requests": 1378,
+      "totalTransferBytes": 57462144,
+      "complete": true,
+      "packed": [
+        {
+          "id": "28333.1464",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 704318
+        },
+        {
+          "id": "28333.1465",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/button-guard-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 455284
+        },
+        {
+          "id": "28333.1466",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 212092
+        },
+        {
+          "id": "28333.1467",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/sock-skipper-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 248938
+        },
+        {
+          "id": "28333.1468",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 335724
+        },
+        {
+          "id": "28333.1469",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 727464
+        },
+        {
+          "id": "28333.1470",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 862002
+        },
+        {
+          "id": "28333.1471",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 661406
+        }
+      ],
+      "unitAtlases": [
+        {
+          "id": "28333.1475",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 786720
+        },
+        {
+          "id": "28333.1480",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 590112
+        },
+        {
+          "id": "28333.1481",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 521772
+        },
+        {
+          "id": "28333.1482",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 678908
+        }
+      ],
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 6784740,
+      "incomplete": [],
+      "failed": [],
+      "cached": []
+    },
+    {
+      "fixture": "wave3",
+      "runtime": {
+        "ready": true,
+        "craftActive": false,
+        "owners": [
+          "panko",
+          "spool-ram",
+          "needle-moth",
+          "crumb-sentinel",
+          "kettle-knight",
+          "pollen-scout",
+          "teacup-healer",
+          "soot",
+          "mochi",
+          "clover"
+        ],
+        "loadedIds": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4",
+          "clover-passive",
+          "enemy:crumb-sentinel:basic",
+          "enemy:crumb-sentinel",
+          "enemy:kettle-knight:basic",
+          "enemy:kettle-knight",
+          "enemy:needle-moth:basic",
+          "enemy:needle-moth",
+          "enemy:pollen-scout:basic",
+          "enemy:pollen-scout",
+          "enemy:spool-ram:basic",
+          "enemy:spool-ram",
+          "enemy:teacup-healer:basic",
+          "enemy:teacup-healer",
+          "panko-1",
+          "panko-2",
+          "panko-3",
+          "panko-4",
+          "panko-passive",
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4",
+          "mochi-passive",
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4",
+          "soot-passive"
+        ],
+        "failed": [],
+        "missing": []
+      },
+      "errors": [],
+      "requests": 1387,
+      "totalTransferBytes": 61813004,
+      "complete": true,
+      "packed": [
+        {
+          "id": "28336.1496",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 704318
+        },
+        {
+          "id": "28336.1497",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/crumb-sentinel-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 458270
+        },
+        {
+          "id": "28336.1498",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/kettle-knight-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 239628
+        },
+        {
+          "id": "28336.1499",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/needle-moth-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 212092
+        },
+        {
+          "id": "28336.1500",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/pollen-scout-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 250732
+        },
+        {
+          "id": "28336.1501",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/spool-ram-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 284262
+        },
+        {
+          "id": "28336.1502",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/teacup-healer-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 335724
+        },
+        {
+          "id": "28336.1503",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 727464
+        },
+        {
+          "id": "28336.1504",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 862002
+        },
+        {
+          "id": "28336.1505",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 661406
+        }
+      ],
+      "unitAtlases": [
+        {
+          "id": "28336.1509",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 786720
+        },
+        {
+          "id": "28336.1516",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 590112
+        },
+        {
+          "id": "28336.1517",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 521772
+        },
+        {
+          "id": "28336.1518",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 678908
+        }
+      ],
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 7313410,
+      "incomplete": [],
+      "failed": [],
+      "cached": []
+    },
+    {
+      "fixture": "boss",
+      "runtime": {
+        "ready": true,
+        "craftActive": false,
+        "owners": [
+          "panko",
+          "binding-thread",
+          "yarn-giant",
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "loadedIds": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4",
+          "clover-passive",
+          "enemy:binding-thread:basic",
+          "enemy:binding-thread",
+          "enemy:yarn-giant:basic",
+          "enemy:yarn-giant",
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4",
+          "mochi-passive",
+          "panko-1",
+          "panko-2",
+          "panko-3",
+          "panko-4",
+          "panko-passive",
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4",
+          "soot-passive"
+        ],
+        "failed": [],
+        "missing": []
+      },
+      "errors": [],
+      "requests": 1372,
+      "totalTransferBytes": 53647212,
+      "complete": true,
+      "packed": [
+        {
+          "id": "28340.1460",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/clover-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 704318
+        },
+        {
+          "id": "28340.1461",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/binding-thread-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 275910
+        },
+        {
+          "id": "28340.1462",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/yarn-giant-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 311764
+        },
+        {
+          "id": "28340.1463",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/mochi-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 727464
+        },
+        {
+          "id": "28340.1464",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/panko-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 862002
+        },
+        {
+          "id": "28340.1465",
+          "url": "http://127.0.0.1:5990/@fs/Users/bao/taskbar-hero-cardrpg-a6/assets/cardrpg-look/vfx-packed/soot-0.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 661406
+        }
+      ],
+      "unitAtlases": [
+        {
+          "id": "28340.1469",
+          "url": "http://127.0.0.1:5990/units/panko/delivery/atlas-1a9e5df12fcb.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 786720
+        },
+        {
+          "id": "28340.1470",
+          "url": "http://127.0.0.1:5990/units/yarn-giant/delivery/atlas-c7d59339e83a.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 1473156
+        },
+        {
+          "id": "28340.1471",
+          "url": "http://127.0.0.1:5990/units/binding-thread/delivery/atlas-46347f4d0d83.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 592516
+        },
+        {
+          "id": "28340.1472",
+          "url": "http://127.0.0.1:5990/units/mochi/delivery/atlas-fa125d28384c.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 590112
+        },
+        {
+          "id": "28340.1473",
+          "url": "http://127.0.0.1:5990/units/soot/delivery/atlas-5cc365e1a563.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 521772
+        },
+        {
+          "id": "28340.1474",
+          "url": "http://127.0.0.1:5990/units/clover/delivery/atlas-eddc48d3c878.webp",
+          "type": "Image",
+          "done": true,
+          "cached": false,
+          "failed": false,
+          "status": 200,
+          "bytes": 678908
+        }
+      ],
+      "metadataImportBytes": 24321,
+      "assetTransferBytes": 8186048,
+      "incomplete": [],
+      "failed": [],
+      "cached": []
+    }
+  ]
+}

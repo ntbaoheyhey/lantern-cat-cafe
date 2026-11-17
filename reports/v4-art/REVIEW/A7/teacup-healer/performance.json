@@ -1,0 +1,53 @@
+{
+  "selected": {
+    "item": "V4-A7-TEACUP-TAIL90",
+    "fixture": "wave3",
+    "medianRenderFps": 60.2404848763393,
+    "averageRenderFps": 59.429269998045456,
+    "compositorFrames": 5337,
+    "maxCompositorGapSeconds": 0.04999899864196777
+  },
+  "allFilms": [
+    {
+      "item": "V4-A7-TEACUP",
+      "fixture": "wave1",
+      "medianRenderFps": 60.2404848763393,
+      "averageRenderFps": 59.352032327955,
+      "compositorFrames": 1783,
+      "maxCompositorGapSeconds": 0.06666398048400879
+    },
+    {
+      "item": "V4-A7-TEACUP",
+      "fixture": "wave3",
+      "medianRenderFps": 60.2404848763393,
+      "averageRenderFps": 59.508512836639696,
+      "compositorFrames": 1787,
+      "maxCompositorGapSeconds": 0.04999804496765137
+    },
+    {
+      "item": "V4-A7-TEACUP",
+      "fixture": "boss",
+      "medianRenderFps": 60.2404848763393,
+      "averageRenderFps": 59.170610222407625,
+      "compositorFrames": 1779,
+      "maxCompositorGapSeconds": 0.23332500457763672
+    },
+    {
+      "item": "V4-A7-TEACUP-TAIL90",
+      "fixture": "wave1",
+      "medianRenderFps": 59.88098909257038,
+      "averageRenderFps": 59.649239750493905,
+      "compositorFrames": 5358,
+      "maxCompositorGapSeconds": 0.06666398048400879
+    },
+    {
+      "item": "V4-A7-TEACUP-TAIL90",
+      "fixture": "wave3",
+      "medianRenderFps": 60.2404848763393,
+      "averageRenderFps": 59.429269998045456,
+      "compositorFrames": 5337,
+      "maxCompositorGapSeconds": 0.04999899864196777
+    }
+  ],
+  "isolation": "Wave3 follows wave1 encoding in one sequential job; original regression/review jobs exited; no concurrent owned capture, generation or heavy review job during wave3 recording."
+}

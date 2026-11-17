@@ -1,0 +1,64 @@
+{
+  "started": "2026-11-17T02:14:51.459531+00:00",
+  "pid": 28621,
+  "sourceCommit": "8a256755d4178741dafb9e3faf1957885d1a6a1f",
+  "rulesCommit": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "testHashes": {
+    "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts": "d17e9f857d0a93c887df22f434f9593a4ac27b84493be8fda23aa7048041fb28",
+    "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts": "5b8cc9eadf208e9f4b567513401ecc124b8057686537800d4ed440b46cef747a"
+  },
+  "steps": [
+    {
+      "name": "art-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r2-art-focused.log",
+      "started": "2026-11-17T02:14:51.649073+00:00",
+      "pid": 28633,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:14:52.901913+00:00",
+      "summary": [
+        "Test Files  2 passed (2)",
+        "Tests  13 passed (13)",
+        "Duration  829ms (environment 69%, transform 18%, import 10%, tests 2%)"
+      ]
+    },
+    {
+      "name": "ship-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "--config",
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/v3craft-lab/v4-qa5/raw/r2/ship.config.mts",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r2-ship-focused.log",
+      "started": "2026-11-17T02:14:52.902482+00:00",
+      "pid": 28653,
+      "exitCode": 1,
+      "finished": "2026-11-17T02:14:53.653667+00:00",
+      "summary": [
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts [ src/game/cardrpg/spine/cat-presentation.test.ts ]",
+        "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts [ src/game/cardrpg/spine/outcome-labels.test.ts ]",
+        "Test Files  2 failed (2)",
+        "Tests  no tests",
+        "Duration  397ms (environment 99%, worker 1%)"
+      ]
+    }
+  ],
+  "complete": true,
+  "pass": false,
+  "error": "ship-focused failed; retained log: reports/v4-art/jobs/qa5-r2-ship-focused.log",
+  "finished": "2026-11-17T02:14:53.654012+00:00"
+}

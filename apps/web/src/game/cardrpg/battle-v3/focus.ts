@@ -29,9 +29,18 @@ export class CasterFocus {
   }
   this.root.visible=true;this.tint.set(color);
   for(const copy of this.copies){
+   // Hidden rig attachments must not reappear through their outline copies.
+   let visible=true;
+   for(let node:T.Object3D|null=copy.source;node;node=node.parent)visible&&=node.visible;
+   copy.mesh.visible=visible;if(!visible)continue;
+   const sourceMaterial=copy.source.material as T.MeshBasicMaterial,material=copy.mesh.material as T.MeshBasicMaterial;
+   // Drawing swaps change the map on an existing mesh. Keep the alpha mask
+   // current while sharing source geometry and texture ownership.
+   if(!!material.map!==!!sourceMaterial.map)material.needsUpdate=true;
+   material.map=sourceMaterial.map;copy.mesh.geometry=copy.source.geometry;
    copy.mesh.matrix.copy(copy.source.matrixWorld);copy.mesh.matrix.elements[12]!+=copy.dx*pixelsToWorld;copy.mesh.matrix.elements[13]!+=copy.dy*pixelsToWorld;
    copy.mesh.matrixWorldNeedsUpdate=true;copy.mesh.renderOrder=copy.source.renderOrder-.5;
-   (copy.mesh.material as T.MeshBasicMaterial).opacity=copy.alpha*amount;
+   material.opacity=copy.alpha*amount*sourceMaterial.opacity;
   }
  }
  private clear(){for(const copy of this.copies)(copy.mesh.material as T.Material).dispose();this.root.clear();this.copies=[];this.source=undefined;}

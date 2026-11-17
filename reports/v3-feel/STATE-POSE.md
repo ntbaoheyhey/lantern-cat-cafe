@@ -1,9 +1,9 @@
 REQUEST-POSE.txt bytes=54054 sha256=906716304bf915a2ffeee62c81e7b280fb42d1c9f0a8ee00d81a6a89496ec4cd
 # V3-POSE living state
-UPDATED 2026-11-16T02:48:23.935620+00:00; authorization active; P2 in progress; STOP-V3FEEL absent; no time trigger due.
+UPDATED 2026-11-16T03:05:04.756811+00:00; explicit USER STOP for review; no implementation continues.
 SOURCE /Users/bao/art/codex-prompts/PASTE-CODEX-V3-POSE-2026-11-16.txt (verbatim mirrored).
 WORKTREE /Users/bao/taskbar-hero-cardrpg-a6 | BRANCH codex/v3-feel-2026-11-14
-HEAD=origin 77136c874bca20ad20aecc921ea516e65cf071e2 (anti-forget checkpoint pushed).
+HEAD=origin 88fa5bdfd820609f054d174fce24248f35aa9575 (P2 trial checkpoint pushed).
 DONE P0 52b994a9c8b659f073fc282b06f85508bd87bae9 | LEARN/P0.md; gate adoption;2634web/1784policy/typecheck/parity PASS.
 DONE P1 c577a85acca6f4d4e456fa8baaeb723c2ea8bb4a | REVIEW/P1/REVIEW.md;16sources/2formal;23checker PASS;1786policy/typecheck/parity PASS.
 P1 is method learning only; zero production acceptance/authoring credit.
@@ -51,3 +51,12 @@ REGRESSION: web2640testsPASS/typecheckPASS/3fixtureF6parityPASS; shader-colour r
 
 REVISION2 area: narrow impacts failed23.735/23.960%; wider rear body now25.424/25.636%PASS probe. Faces/film/FPS remainOPEN.
 FOUND: legacy hitPose28–38px recoil and planted retaliation0px violate new6–12px pose contract; revise after checkpoint.
+## User stop snapshot
+Chat explicitly requests stop/report for review;88fa5bdfd pushed; later edits remain local.
+R2 complete1803/1801/1802frames,29/29/28actions,paritytrue; all10window review incomplete.
+Recoil9/9.5px at720h,11.25/11.875px at900h,75ms hold; local changes.
+Focus stale-map/hidden-mesh defect reproduced and repaired;29focused/typecheckPASS.
+Apparent double-paint at200ms unresolved; isolation images saved and uninspected at stop.
+Probe confirms8visible outline copies use currentK1map;8hidden-rig copies invisible.
+Blind helper prepared; no40labels/results. No acceptance or roster rollout.
+No active capture/test/generation; ownedVite67838 stays for review. REPORT-FEEL.md/STATUS-VI.md.

@@ -1,0 +1,174 @@
+{
+  "count": 9,
+  "correct": 9,
+  "pass": true,
+  "labelledAt": "2026-11-16T12:08:48.921331+00:00",
+  "comparedAt": "2026-11-16T12:08:49.038169+00:00",
+  "labelsArtifact": "reports/v4-art/REVIEW/A7/teacup-healer/blind-labels.json",
+  "labelsSha256": "e11de45a4f63d761690c663d271478e61b9883e4c2945e52c76559e16db6a484",
+  "sampling": "3 each of windup/strike/received-hit, held interiors >34ms from swaps; affected Teacup units; shuffled before labels; existing encoded frame ordinals.",
+  "frames": [
+    {
+      "fixture": "wave1",
+      "unit": "foe-2-teacup-healer",
+      "frame": 850,
+      "renderOrdinal": 1680,
+      "expected": "windup",
+      "crop": [
+        879,
+        252,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave1.webm",
+      "videoSha256": "fcdf1b3be8412e89f81527d62b41d49409957e23629b40bf484cc16f3868dac1",
+      "id": "01",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-5-teacup-healer",
+      "frame": 260,
+      "renderOrdinal": 509,
+      "expected": "strike",
+      "crop": [
+        834,
+        385,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave3.webm",
+      "videoSha256": "1e89f139fd8e5131f8598502134218440210651e54aefdadb3225c1bfad61def",
+      "id": "02",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-5-teacup-healer",
+      "frame": 259,
+      "renderOrdinal": 507,
+      "expected": "strike",
+      "crop": [
+        834,
+        385,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave3.webm",
+      "videoSha256": "1e89f139fd8e5131f8598502134218440210651e54aefdadb3225c1bfad61def",
+      "id": "03",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-2-teacup-healer",
+      "frame": 853,
+      "renderOrdinal": 1686,
+      "expected": "windup",
+      "crop": [
+        879,
+        253,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave1.webm",
+      "videoSha256": "fcdf1b3be8412e89f81527d62b41d49409957e23629b40bf484cc16f3868dac1",
+      "id": "04",
+      "label": "windup",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-2-teacup-healer",
+      "frame": 18,
+      "renderOrdinal": 30,
+      "expected": "hit",
+      "crop": [
+        921,
+        251,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave1.webm",
+      "videoSha256": "fcdf1b3be8412e89f81527d62b41d49409957e23629b40bf484cc16f3868dac1",
+      "id": "05",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-2-teacup-healer",
+      "frame": 17,
+      "renderOrdinal": 28,
+      "expected": "hit",
+      "crop": [
+        922,
+        251,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave1.webm",
+      "videoSha256": "fcdf1b3be8412e89f81527d62b41d49409957e23629b40bf484cc16f3868dac1",
+      "id": "06",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-5-teacup-healer",
+      "frame": 574,
+      "renderOrdinal": 1134,
+      "expected": "hit",
+      "crop": [
+        929,
+        385,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave3.webm",
+      "videoSha256": "1e89f139fd8e5131f8598502134218440210651e54aefdadb3225c1bfad61def",
+      "id": "07",
+      "label": "hit",
+      "correct": true
+    },
+    {
+      "fixture": "wave3",
+      "unit": "foe-5-teacup-healer",
+      "frame": 256,
+      "renderOrdinal": 501,
+      "expected": "strike",
+      "crop": [
+        834,
+        385,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave3.webm",
+      "videoSha256": "1e89f139fd8e5131f8598502134218440210651e54aefdadb3225c1bfad61def",
+      "id": "08",
+      "label": "strike",
+      "correct": true
+    },
+    {
+      "fixture": "wave1",
+      "unit": "foe-2-teacup-healer",
+      "frame": 852,
+      "renderOrdinal": 1684,
+      "expected": "windup",
+      "crop": [
+        879,
+        252,
+        300,
+        280
+      ],
+      "video": "reports/v3-feel/REVIEW/V4-A7-TEACUP/wave1.webm",
+      "videoSha256": "fcdf1b3be8412e89f81527d62b41d49409957e23629b40bf484cc16f3868dac1",
+      "id": "09",
+      "label": "windup",
+      "correct": true
+    }
+  ]
+}

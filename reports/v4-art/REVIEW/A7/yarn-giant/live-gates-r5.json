@@ -1,0 +1,127 @@
+{
+  "at": "2026-11-16T17:42:14.708165+00:00",
+  "scope": "Sampled real boss fixture at720/900; film gates remain unverified",
+  "source": "reports/v4-art/REVIEW/A7/yarn-giant/live-probe-r5-multitarget.json",
+  "rows": [
+    {
+      "width": 1280,
+      "height": 720,
+      "errors": [],
+      "missing": [],
+      "contacts": [
+        {
+          "ultimate": false,
+          "key": "K2",
+          "travelPx": 49.229665853019945,
+          "targetGaps": [
+            {
+              "id": "panko",
+              "fraction": 0.0
+            }
+          ]
+        },
+        {
+          "ultimate": true,
+          "key": "K5",
+          "travelPx": 197.41953135160887,
+          "targetGaps": [
+            {
+              "id": "panko",
+              "fraction": 0.010884042870380606
+            },
+            {
+              "id": "mochi",
+              "fraction": 0.0
+            }
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "ultimate": false,
+          "ms": 800,
+          "errorPx": 0.0
+        },
+        {
+          "ultimate": true,
+          "ms": 2200,
+          "errorPx": 0.0
+        }
+      ],
+      "peakUltimateArea": 0.28246853298611113,
+      "maxFaceCoverage": 0.025217391304347827,
+      "maxPaintedTipErrorPx": 2.938326551090512,
+      "maxUnitOcclusion": 0.0414434857560006,
+      "sampledLayoutMinima": {
+        "span": 0.8124803231754247,
+        "left": 0.1020496240485701,
+        "right": 0.08307781854159813,
+        "catMedian": 0.3120398464361438,
+        "bossHeight": 0.4964399999999998,
+        "bossTop": 0.0690731563553707
+      },
+      "maxCatDeviation": 0.023080488807614374,
+      "numericalSamplePass": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "missing": [],
+      "contacts": [
+        {
+          "ultimate": false,
+          "key": "K2",
+          "travelPx": 61.537082316274955,
+          "targetGaps": [
+            {
+              "id": "panko",
+              "fraction": 0.0
+            }
+          ]
+        },
+        {
+          "ultimate": true,
+          "key": "K5",
+          "travelPx": 242.1614595677849,
+          "targetGaps": [
+            {
+              "id": "panko",
+              "fraction": 0.007124540349131476
+            },
+            {
+              "id": "mochi",
+              "fraction": 0.0
+            }
+          ]
+        }
+      ],
+      "returns": [
+        {
+          "ultimate": false,
+          "ms": 800,
+          "errorPx": 0.0
+        },
+        {
+          "ultimate": true,
+          "ms": 2200,
+          "errorPx": 0.0
+        }
+      ],
+      "peakUltimateArea": 0.2983287037037037,
+      "maxFaceCoverage": 0.025243993993993994,
+      "maxPaintedTipErrorPx": 2.9383265510905874,
+      "maxUnitOcclusion": 0.07372877539071297,
+      "sampledLayoutMinima": {
+        "span": 0.8006828217734447,
+        "left": 0.10941173229090084,
+        "right": 0.06323630504814914,
+        "catMedian": 0.3120398464361438,
+        "bossHeight": 0.49644,
+        "bossTop": 0.0690731563553707
+      },
+      "maxCatDeviation": 0.023080488807614485,
+      "numericalSamplePass": true
+    }
+  ]
+}

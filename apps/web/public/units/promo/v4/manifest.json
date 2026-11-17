@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-16T05:16:10.135902+00:00",
+  "purpose": "A10 promotional illustrations and class icons; not gameplay screenshots",
+  "assets": {
+    "landing": {
+      "url": "/units/promo/v4/landing-keyart.webp",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "copySafeRegionNormalized": [
+        0.03,
+        0.18,
+        0.32,
+        0.72
+      ],
+      "guidance": "Keep full16:9 image; overlay live title/CTA in left third; avoid center crop that removes cats."
+    },
+    "thumbnail": {
+      "url": "/units/promo/v4/video-thumbnail.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "guidance": "Title-free illustration; SHIP can add exact title in upper-left. Native generated source1672x941, not4K."
+    },
+    "classes": {
+      "melee": {
+        "webp": "/units/promo/v4/class-melee.webp",
+        "png": "/units/promo/v4/class-melee.png",
+        "dimensions": [
+          256,
+          256
+        ],
+        "recommendedDisplayPx": 64
+      },
+      "ranged": {
+        "webp": "/units/promo/v4/class-ranged.webp",
+        "png": "/units/promo/v4/class-ranged.png",
+        "dimensions": [
+          256,
+          256
+        ],
+        "recommendedDisplayPx": 64
+      },
+      "healer": {
+        "webp": "/units/promo/v4/class-healer.webp",
+        "png": "/units/promo/v4/class-healer.png",
+        "dimensions": [
+          256,
+          256
+        ],
+        "recommendedDisplayPx": 64
+      }
+    }
+  },
+  "integration": "Use cream#f3ebdb icon chips and text labels. Outline contrast is low against dark#292635; no global WCAG claim.",
+  "provenance": "assets/provenance.json; prompts tools/v3craft-lab/v4-promo/*-prompt.txt"
+}
