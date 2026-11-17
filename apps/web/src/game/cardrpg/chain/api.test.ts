@@ -5,7 +5,7 @@ import {friendlyError} from './errors';
 afterEach(() => {vi.unstubAllEnvs(); vi.unstubAllGlobals();});
 it.each([
   [429, 'daily_limit', 'Daily limit. Try tomorrow.'], [429, 'ip_limit', 'Guest limit. Try later.'],
-  [503, 'sponsor_low', 'No gas. Open faucet.'], [409, 'seal_unpaid', 'Seal unpaid. Retry.'],
+  [503, 'sponsor_low', 'Café gas is low. Ask the host to refill it.'], [409, 'seal_unpaid', 'Seal unpaid. Retry.'],
   [409, 'no_judge_pass', 'Get a judge pass.'], [404, 'no_item', 'Item unavailable. Refresh.'],
   [401, 'private-detail', 'Sign in again.'], [503, 'private-detail', 'Unavailable. Retry.'],
   [503, '__proto__', 'Unavailable. Retry.'], [503, 'constructor', 'Unavailable. Retry.'],
