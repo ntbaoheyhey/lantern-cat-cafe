@@ -30,19 +30,20 @@ try{
  await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true}));});
  await page.goto(url+'&dev=1');
  await page.waitForFunction(()=>window.__depthReview,null,{timeout:60000});
- for(const id of (process.env.CXV_SKILLS??'enemy:binding-thread,enemy:yarn-giant:basic,enemy:yarn-giant').split(',')){
-  const fixture=pilotFixture(id),plan=configureSequence(fixture.plan),frames=[];
-  await page.evaluate(({battle,plan,id})=>{const m=window.__depthReview;m.state.tutorial=4;Object.assign(m.state.settings,{quality:'high',speed:1,reducedMotion:false});Object.assign(m,{galleryBattle:battle,tutorialBattle:null,plan,galleryId:id,animationAt:0,paused:true,sceneStarted:true,labOpen:false,screen:'map'});m.notify(false);},{battle:fixture.battle,plan,id});
+ for(const id of (process.env.CXV_SKILLS??'boss-arrival,enemy:binding-thread,enemy:yarn-giant:basic,enemy:yarn-giant').split(',')){
+  const arrival=id==='boss-arrival',fixture=pilotFixture(arrival?'mochi-1':id),plan=arrival?null:configureSequence(fixture.plan),frames=[],audit=[];
+  await page.evaluate(({battle,plan,id})=>{const m=window.__depthReview;m.state.tutorial=4;Object.assign(m.state.settings,{quality:'high',speed:1,reducedMotion:false});Object.assign(m,{galleryBattle:battle,tutorialBattle:null,plan,galleryId:plan?id:'',animationAt:0,paused:true,sceneStarted:true,labOpen:false,screen:'map'});m.notify(false);},{battle:fixture.battle,plan,id});
   await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
   await page.evaluate(()=>document.fonts.ready);
-  const impact=plan.beats[2].start;
-  for(const [i,ms]of [impact-1,impact,impact+90,impact+540].entries()){
-   await page.evaluate(ms=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=ms;s.render({...s.view(),fixedTime:20+ms/1000,paused:true},0);},ms);
+  if(arrival)await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),frame:null,fixedTime:20,paused:true,galleryPreview:true},0);s.phaseNoticeAt=-100;for(const e of s.actors.values()){e.entered=e.asset==='yarn-giant'?20:-100;e.entranceDone=e.asset!=='yarn-giant';e.hurtAt=-100;}});
+  const impact=plan?.beats[2].start??0;
+  for(const [i,ms]of (arrival?[0,80,240,620]:[impact-1,impact,impact+90,impact+540]).entries()){
+   audit.push(await page.evaluate(ms=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=ms;s.render({...s.view(),fixedTime:20+ms/1000,paused:true,galleryPreview:false},0);const boss=[...s.actors].find(([,e])=>e.asset==='yarn-giant');return {ms,bossFeet:boss?s.socket(boss[0],'feet'):null};},ms));
    const path=resolve(out,id.replaceAll(':','-')+'-'+i+'.png');await page.screenshot({path});frames.push(path);
   }
   const sheet=resolve(out,id.replaceAll(':','-')+'.jpg');
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...frames.flatMap(path=>['-i',path]),'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',sheet]);
-  report.rows.push({id,impact,frames,sheet});
+  report.rows.push({id,impact,frames,sheet,audit});
  }
 }finally{await browser.close();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));}
 console.log(JSON.stringify({out,rows:report.rows.length,errors:report.errors}));

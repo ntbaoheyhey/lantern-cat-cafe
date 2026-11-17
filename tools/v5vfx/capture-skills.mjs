@@ -76,6 +76,7 @@ try {
           casterRoot: s.actors.get(m.plan.actorId)?.actor.root.position.toArray(), pose: s.sampled.get(m.plan.actorId)?.name,
           heroStates: [...s.actors].filter(([,e])=>['mochi','soot','clover','panko'].includes(e.asset)).map(([actorId,e])=>({
             owner:e.asset,pose:s.sampled.get(actorId)?.name,key:e.craftPose?.drawing.key,crowd:s.motionAudit.find(a=>a.id===actorId)?.crowd,
+            faceDepth:e.craftPose?{yawDegrees:e.craftPose.drawing.faceDepth?.yaw??0,pitchDegrees:e.craftPose.drawing.faceDepth?.pitch??0,clock:e.craftPose.drawing.secondary.clock,softness:e.craftPose.drawing.secondary.leftSoftness}:null,
             blink:e.craftPose?[e.craftPose.drawing.secondary.leftBlink,e.craftPose.drawing.secondary.rightBlink]:null}))};
       }, {ms, id});
       await page.screenshot({path: resolve(dir, `frame-${String(index).padStart(2, '0')}.png`)});

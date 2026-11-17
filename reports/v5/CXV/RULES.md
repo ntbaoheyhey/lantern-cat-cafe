@@ -9,7 +9,7 @@
 8. Stop rule: wake mid-task => next tool call; otherwise read RULES+HANDOFF and new inbox/USER, then NEXT1.
 9. Stop rule: compaction never ends work; immediately re-read absolute RULES+HANDOFF and continue.
 10. Read RULES+HANDOFF before new item, each wake/compaction, hourly; HANDOFF<=20lines; reports on disk.
-11. One CXV wake heartbeat every15min, idcxv-wake; verify hourly; no duplicate or UI automation.
+11. One CXV wake heartbeat every15min, idcxv-wake; verify hourly; never delete per owner14:43Z; no duplicate or UI automation.
 12. Desktop1280x720 only; BOARD exact judgeURL query mandatory; own6310 for candidate build. DONE requires fresh own captures+focused tests+typecheck.
 13. Before new work kind read LEARN/INDEX; Chinese+English >=3 concrete primary sources, experiment, own LEARN note; original art only.
 14. AGV fewer than2open TASKs => assign useful next; TASK/ACK/DONE/ACCEPT/REDO via one echo append per mailbox line, text<=300chars.

@@ -1,4 +1,9 @@
 import * as T from 'three';
+/** Multiplying open amounts preserves a full blink under a soft expression. */
+export function eyeClosure(blink:number,softness:number){
+ const clamp=(n:number)=>Math.max(0,Math.min(1,n));
+ return 1-(1-clamp(blink))*(1-clamp(softness));
+}
 /** Local eye UV compression reuses painted pixels; no new art or texture decode. */
 export function drawingExpression(material:T.MeshBasicMaterial){
  const left={value:new T.Vector4()},right={value:new T.Vector4()},blink={value:new T.Vector2()};

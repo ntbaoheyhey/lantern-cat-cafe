@@ -10,12 +10,12 @@ export const SECONDARY_SPRINGS={
 export function motionSeed(id:string){let value=2166136261;for(let i=0;i<id.length;i++)value=Math.imul(value^id.charCodeAt(i),16777619);return value>>>0;}
 function random(seed:number,index:number){let n=Math.imul(seed^(index+1),1597334677);n^=n>>>16;n=Math.imul(n,2246822507);return (n>>>0)/4294967296;}
 interface LivingGesture {turn:number;tilt:number;nod:number;ear:number;hand:number;tail:number;weight:number}
-interface LivingProfile {breath:number;gestures:readonly [Partial<LivingGesture>,Partial<LivingGesture>]}
+interface LivingProfile {breath:number;softEyes:readonly [number,number];gestures:readonly [Partial<LivingGesture>,Partial<LivingGesture>]}
 const HERO_LIVING:Readonly<Record<string,LivingProfile>>={
- mochi:{breath:3.35,gestures:[{turn:.65,tilt:1.8,tail:.4},{ear:1,turn:-.25,tilt:-.6,tail:.7}]},
- soot:{breath:4.15,gestures:[{turn:.3,tilt:.8,hand:1},{ear:.5,tilt:-1.2,tail:1,weight:-.3}]},
- clover:{breath:3.8,gestures:[{turn:.35,nod:.8,hand:.7},{turn:-.4,tilt:1.7,ear:.3,tail:.6}]},
- panko:{breath:4.4,gestures:[{tilt:-1.3,nod:.3,weight:.5},{turn:.4,ear:.7,nod:.45,tail:.4}]},
+ mochi:{breath:3.35,softEyes:[.10,.07],gestures:[{turn:.65,tilt:1.8,tail:.4},{ear:1,turn:-.25,tilt:-.6,tail:.7}]},
+ soot:{breath:4.15,softEyes:[.13,.10],gestures:[{turn:.3,tilt:.8,hand:1},{ear:.5,tilt:-1.2,tail:1,weight:-.3}]},
+ clover:{breath:3.8,softEyes:[.18,.18],gestures:[{turn:.35,nod:.8,hand:.7},{turn:-.4,tilt:1.7,ear:.3,tail:.6}]},
+ panko:{breath:4.4,softEyes:[.11,.13],gestures:[{tilt:-1.3,nod:.3,weight:.5},{turn:.4,ear:.7,nod:.45,tail:.4}]},
 };
 const smooth=(n:number)=>{const t=Math.max(0,Math.min(1,n));return t*t*(3-2*t);};
 /** Seeded absolute starts: gestures survive seeks without a per-frame random clock. */
@@ -57,6 +57,7 @@ export function springForPart(part:string):SpringSpec {
 export class SecondaryMotion {
  readonly seed:number;clock=0;body=0;look=0;leftBlink=0;rightBlink=0;earFlatten=0;hair=0;ear=0;accessory=0;
  turn=0;tilt=0;tiltSin=0;tiltCos=1;nod=0;weight=0;earFlick=0;handLift=0;tailSweep=0;overlapGain=1;fidgetAge=-1;fidgetKind=0;
+ leftSoftness=0;rightSoftness=0;
  private clip='idle';private poseTime=0;private hitAge=-1;private amount=1;private period=3.6;
  private readonly profile:LivingProfile|undefined;
  constructor(id:string){this.seed=motionSeed(id);this.profile=HERO_LIVING[id];}
@@ -75,6 +76,7 @@ export class SecondaryMotion {
  }
  private living(phase:number,reduced:boolean){
   this.turn=this.tilt=this.nod=this.weight=this.earFlick=this.handLift=this.tailSweep=0;
+  this.leftSoftness=this.rightSoftness=0;
   this.tiltSin=0;this.tiltCos=1;this.overlapGain=this.profile?1.6:1;this.fidgetAge=-1;
   if(!this.profile||reduced||this.clip==='ko')return;
   const index=Math.max(0,Math.floor((this.clock-1.45)/8.5));
@@ -82,6 +84,8 @@ export class SecondaryMotion {
   this.fidgetAge=this.clock-fidgetStart(this.seed,previous);this.fidgetKind=previous%2;
   const gesture=this.profile.gestures[this.fidgetKind]!,envelope=fidgetEnvelope(this.fidgetAge);
   const mix=ambientMix(this.clip,this.poseTime),tau=Math.PI*2;
+  const expression=mix*envelope;
+  this.leftSoftness=this.profile.softEyes[0]*expression;this.rightSoftness=this.profile.softEyes[1]*expression;
   this.weight=mix*(.55*Math.sin(this.clock*tau/(this.period*2.35)+phase+.5)+(gesture.weight??0)*envelope);
   this.turn=mix*(.45*Math.sin(this.clock*tau/(this.period*1.8)+phase*.7)+(gesture.turn??0)*envelope);
   this.tilt=mix*(2*Math.sin(this.clock*tau/(this.period*2.1)+phase+1)+(gesture.tilt??0)*envelope);
