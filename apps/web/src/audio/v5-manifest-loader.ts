@@ -3,6 +3,7 @@ import {resolveDesign,type AudioManifest,type Bus,type CueDesign,type Sample} fr
 interface Delivery {
  opus:string;m4a:string;durationSeconds:number;gainDb:number;bus:Bus;
  runtimeCueId:string;aliases?:string[];variantId?:string;loop?:boolean;
+ sourcePack?:string;start?:number;duration?:number;
 }
 const path=(value:unknown,extension:string):value is string=>typeof value==='string'
  &&value.startsWith('/audio/v5/')&&!value.includes('..')&&new RegExp(`^[\\w/.-]+\\.${extension}$`).test(value);
@@ -10,8 +11,8 @@ function valid(value:unknown):value is Delivery {
  if(!value||typeof value!=='object')return false;
  const d=value as Delivery;
  return path(d.opus,'opus')&&path(d.m4a,'m4a')&&Number.isFinite(d.durationSeconds)
-  &&d.durationSeconds>0&&d.durationSeconds<=20&&Number.isFinite(d.gainDb)
-  &&d.gainDb>=-24&&d.gainDb<=12&&['sfx','ui','voice','ambience'].includes(d.bus)
+  &&d.durationSeconds>0&&d.durationSeconds<=(d.loop?120:20)&&Number.isFinite(d.gainDb)
+  &&d.gainDb>=-24&&d.gainDb<=12&&['sfx','ui','voice','ambience','music'].includes(d.bus)
   &&typeof d.runtimeCueId==='string';
 }
 
@@ -28,7 +29,15 @@ export function applyV5Audio(base:AudioManifest,input:unknown):AudioManifest {
    return valid(delivery)?[[typeof delivery.variantId==='string'?delivery.variantId:id,delivery]]:[];
   }));
  if(!rows.length)return base;
- const byId=new Map(rows),packs={...base.packs},substitutions=new Map<string,Set<string>>();
+ const byId=new Map<string,Delivery[]>(),packs={...base.packs},substitutions=new Map<string,Set<string>>();
+ for(const [id,d] of rows){const variants=byId.get(id)??[];variants.push(d);byId.set(id,variants);}
+ // Whole-bed transcodes keep every original cue, loop boundary and gain unchanged.
+ for(const id of ['menu-home','score-battle','scene-night']){
+  const samples=Object.values(base.cues).flat().filter(s=>s.pack===id);
+  const d=byId.get(id)?.find(d=>d.opus===`/audio/v5/legacy/${id}.opus`&&d.loop&&d.gainDb===0
+   &&samples.length>0&&samples.every(s=>s.loop&&s.bus===d.bus&&s.start+s.duration<=d.durationSeconds+.02));
+  if(d&&packs[id])packs[id]={...packs[id],opus:d.opus,m4a:d.m4a,preferredFormat:'opus'};
+ }
  const packFor=(d:Delivery)=>{
   const key=`v5:${d.opus.slice('/audio/v5/'.length,-5)}`;
   packs[key]={opus:d.opus,m4a:d.m4a,preferredFormat:'opus'};
@@ -36,9 +45,11 @@ export function applyV5Audio(base:AudioManifest,input:unknown):AudioManifest {
  };
  const sample=(s:Sample):Sample=>{
   if(!/^(?:v4-ranged-|cat-|callout-|b2-)/.test(s.pack))return s;
-  const d=byId.get(s.variantId??'');
-  const next=d&&(/\/(?:legacy|voice|b2)\//.test(d.opus))&&d.bus===s.bus&&d.durationSeconds+.02>=s.duration
-   ?{...s,pack:packFor(d),start:0,gainDb:d.gainDb}:s;
+  const b2=s.pack.startsWith('b2-');
+  const d=byId.get(s.variantId??'')?.find(d=>/\/(?:legacy|voice|b2)\//.test(d.opus)
+   &&d.bus===s.bus&&d.durationSeconds+.02>=s.duration
+   &&(!b2||d.sourcePack===s.pack&&d.start===s.start&&d.duration===s.duration));
+  const next=d?{...s,pack:packFor(d),start:0,gainDb:b2?s.gainDb??d.gainDb:d.gainDb}:s;
   const set=substitutions.get(s.pack)??new Set<string>();set.add(next.pack);substitutions.set(s.pack,set);
   return next;
  };

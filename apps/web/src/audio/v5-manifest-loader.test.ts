@@ -31,10 +31,33 @@ describe('V5 audio delivery',()=>{
  });
  it('retains the original B2 pack when one exact variant is absent',()=>{
   const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json');
-  const missing=Object.keys(delivery).find(key=>delivery[key]?.opus?.includes('/b2/b2-hits-'))!;
-  delete delivery[missing];const next=applyV5Audio(base,delivery);
+  const missing=Object.values(delivery).flat().find((row:any)=>row.opus?.includes('/b2/b2-hits-')) as {variantId:string};
+  for(const [key,value] of Object.entries(delivery)){
+   const keep=(Array.isArray(value)?value:[value]).filter((row:any)=>row.variantId!==missing.variantId);
+   if(keep.length)delivery[key]=keep;else delete delivery[key];
+  }
+  const next=applyV5Audio(base,delivery);
   expect(next.packSubstitutions!['b2-hits']).toContain('b2-hits');
   expect(next.packSubstitutions!['b2-ui']).not.toContain('b2-ui');
+ });
+ it('retains B2 source offsets when delivery context does not match, and preserves sample gain on an exact match',()=>{
+  const base=read('manifest.json') as AudioManifest;
+  const sample=Object.values(base.designs!).flatMap(d=>d.layers.flatMap(l=>l.variants)).find(s=>s.pack==='b2-hits')!;
+  const exact={opus:'/audio/v5/b2/context.opus',m4a:'/audio/v5/b2/context.m4a',durationSeconds:sample.duration,
+   gainDb:0,bus:sample.bus,variantId:sample.variantId,sourcePack:sample.pack,start:sample.start,duration:sample.duration};
+  const fixture={...base,designs:{},cues:{check:[{...sample,gainDb:-3}]}};
+  for(const wrong of [{sourcePack:'b2-ui'},{start:sample.start+1},{duration:sample.duration+.1},{bus:'voice'}]){
+   expect(applyV5Audio(fixture,{slice:{...exact,...wrong}}).cues.check).toEqual(fixture.cues.check);
+  }
+  expect(applyV5Audio(fixture,{slice:exact}).cues.check![0]).toMatchObject({start:0,gainDb:-3,pack:'v5:b2/context'});
+ });
+ it('uses full-bed transcodes with unchanged loop cues and original-format fallback',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  for(const pack of ['menu-home','score-battle','scene-night']){
+   expect(next.packs[pack]!.opus).toBe(`/audio/v5/legacy/${pack}.opus`);
+   expect(next.packs[pack]!.webm).toBe(base.packs[pack]!.webm);
+   for(const [id,samples]of Object.entries(base.cues))if(samples.some(s=>s.pack===pack))expect(next.cues[id]).toEqual(samples);
+  }
  });
  it('preserves every ranged take, its duration and constituent layers while replacing available files',()=>{
   const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json'),next=applyV5Audio(base,delivery);

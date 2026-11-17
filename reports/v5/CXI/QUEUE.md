@@ -12,11 +12,11 @@ I6 queued M3 2026-11-19T08:00:00Z; continue refill afterwards; NO FREEZE.
 REFILL RULE: while waiting or no queued/active card, activate next three uncompleted items; 45 min each; R1/R2 repeat as new work arrives.
 R1 refill pending: Merge all new READY, suite, next tag, BOARD + INFO; at least every 3h.
 R2 active 2026-11-17T08:43:23Z:mobile study complete;H2-F1 .uv-patrol x628 independently reproduced; responsive dock fix next.
-R3 BLOCKED-ON AGS B2 context/source metadata correction 2026-11-17T08:32:30Z:264 variant IDs collide across original pack/bus contexts; focused61pass/3fail, originals retained where unproven.
+R3 active 2026-11-17T08:52:18Z:metadata repair8aefbf1e9 merged;exact context loader59tests pass;3legacy beds wired;fresh transfer pending.
 R4 refill pending: Wire AGV / historical AG3 AVIF siblings with >20% savings vs WebP.
 R5 DONE 2026-11-17T08:39:16Z cfce3804d: scoped loader splits+disposal tested,build0;JS1319090->1112059;reports/v5/CXI/R5.md.
 R6 DONE 2026-11-17T08:43:23Z 7730532ea:13 output-only poster exclusions1395314bytes;build0,source hashes unchanged;reports/v5/CXI/R6.md.
-R7 refill pending: 390px receipt clarity: tx, fee, payer, explorer.
+R7 active 2026-11-17T08:52:18Z:fullhash/payer/fee/network visible;local explorer suppressed;4focusedpass;390px capture pending.
 R8 refill pending: Three indicative cold guest-battle-receipt timing runs under30s.
 R9 refill pending: Friendly wallet-missing/RPC-down/sponsor-low states; no console errors.
 R10 refill pending: Refresh owner/review runbooks to newest tag.
