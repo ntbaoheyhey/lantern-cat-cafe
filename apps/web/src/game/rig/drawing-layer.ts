@@ -31,6 +31,8 @@ export function drawingAt(name:string,seconds:number):DrawingKey {
 }
 const smooth=(t:number)=>{const x=Math.max(0,Math.min(1,t));return x*x*(3-2*x);};
 const NO_OVERLAP:readonly DrawingOverlap[]=[];
+const enum Weight {Upper,Guard,Planted,Head,Neck,Ear,Accessory,Count}
+type VertexWeights={data:Float64Array;stride:number};
 export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  key:DrawingKey='K0';private seconds=0;private clip='idle';private reduced=false;
  private source:Float32Array;
@@ -41,6 +43,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  private expression:ReturnType<typeof drawingExpression>;
  private overlapValues:Float32Array;
  private vertex:[number,number]=[0,0];private output={x:0,y:0};
+ private vertexWeights=new Map<DrawingKey,VertexWeights>();
  constructor(readonly set:DrawingSet,readonly origin:DrawingPoint,readonly pixelScale:number){
   const m=set.manifest;
   super(new T.PlaneGeometry(m.canvas[0],m.canvas[1],32,32),new T.MeshBasicMaterial({map:set.textures.K0,
@@ -65,18 +68,45 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const overlaps=this.frame.overlap??NO_OVERLAP;
   for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
   this.expression.sample(this.frame.face,m.canvas,eyeClosure(this.secondary.leftBlink,this.secondary.leftSoftness),eyeClosure(this.secondary.rightBlink,this.secondary.rightSoftness),this.key);
+  const weights=this.weightsFor(this.key);
   for(let i=0;i<positions.count;i++){
    this.vertex[0]=this.source[i*3]!+m.canvas[0]/2;this.vertex[1]=m.canvas[1]/2-this.source[i*3+1]!;
-   const point=this.point(this.vertex,this.key,undefined,this.output);
+   const point=this.point(this.vertex,this.key,undefined,this.output,weights.data,i*weights.stride);
    positions.setXYZ(i,point.x,point.y,.002);
   }
   positions.needsUpdate=true;
  }
- point([x,y]:DrawingPoint,key:DrawingKey=this.key,at?:DrawingSample,out={x:0,y:0}){
+ /** Authored regions and source vertices are immutable for this layer's lifetime.
+  * Float64 storage retains the uncached calculation's precision; live motion,
+  * facial projection and arbitrary socket points still evaluate each sample. */
+ private weightsFor(key:DrawingKey):VertexWeights{
+  const cached=this.vertexWeights.get(key);if(cached)return cached;
+  const m=this.set.manifest,frame=m.poses[key]!,overlaps=frame.overlap??NO_OVERLAP;
+  const stride=Weight.Count+overlaps.length,data=new Float64Array(this.source.length/3*stride),height=m.opaqueHeight*this.pixelScale;
+  const [fx,fy,fw,fh]=frame.face;
+  for(let i=0;i<this.source.length/3;i++){
+   const x=this.source[i*3]!+m.canvas[0]/2,y=m.canvas[1]/2-this.source[i*3+1]!,offset=i*stride,py=(m.baseline[1]-y)*this.pixelScale;
+   data[offset+Weight.Upper]=smooth((py/height-.08)/.52);
+   const faceDistance=Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8));
+   const guard=data[offset+Weight.Guard]=smooth((faceDistance-1)*3)*smooth((m.baseline[1]-y)/40);
+   let planted=1;for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
+   data[offset+Weight.Planted]=planted;data[offset+Weight.Head]=smooth((py/height-.32)/.38);
+   const neckY=fy+fh*1.13;data[offset+Weight.Neck]=smooth((neckY-y)/(fh*.45));
+   const ex=(x-fx-fw*.5)/(fw*.62),ey=(y-fy+fh*.20)/(fh*.65);data[offset+Weight.Ear]=smooth(1-ex*ex-ey*ey)*guard;
+   const accessory=frame.sockets.mainHand;
+   if(accessory){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65);data[offset+Weight.Accessory]=smooth(1-ax*ax-ay*ay)*guard;}
+   for(let index=0;index<overlaps.length;index++){
+    const region=overlaps[index]!,dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];
+    data[offset+Weight.Count+index]=smooth(1-dx*dx-dy*dy)*guard;
+   }
+  }
+  const weights={data,stride};this.vertexWeights.set(key,weights);return weights;
+ }
+ point([x,y]:DrawingPoint,key:DrawingKey=this.key,at?:DrawingSample,out={x:0,y:0},weights?:Float64Array,offset=0){
   const seconds=at?.seconds??this.seconds,clip=at?.clip??this.clip,reduced=at?.reduced??this.reduced;
   const m=this.set.manifest,height=m.opaqueHeight*this.pixelScale;
   const px=(x-m.baseline[0])*this.pixelScale,py=(m.baseline[1]-y)*this.pixelScale;
-  const upper=smooth((py/height-.08)/.52),ms=seconds*1000;
+  const upper=weights?.[offset+Weight.Upper]??smooth((py/height-.08)/.52),ms=seconds*1000;
   const hold=clip==='attack'&&ms>=350&&ms<440?.35:(clip==='ult'||clip==='skill')&&ms>=1100&&ms<1190?1.1:clip==='hurt'&&ms<90?0:seconds;
   const motion=at?this.seekMotion:this.secondary;
   if(at)motion.sample(hold,clip,hold,reduced,0,clip==='hurt'?seconds:-1);
@@ -96,35 +126,36 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   // Pose changes remain available with reduced motion; overlap is attenuated.
   if(reduced){lean=0;if(clip!=='idle')lift*=.25;}
   const frame=m.poses[key]!,[fx,fy,fw,fh]=frame.face;
-  const faceDistance=Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8));
-  const guard=smooth((faceDistance-1)*3)*smooth((m.baseline[1]-y)/40);
+  const guard=weights?.[offset+Weight.Guard]??smooth((Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8))-1)*3)*smooth((m.baseline[1]-y)/40);
   let ox=0,oy=0;
   const overlaps=frame.overlap??NO_OVERLAP;
   for(let index=0;index<overlaps.length;index++){
    const region=overlaps[index]!;
-   const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];
-   const weight=smooth(1-dx*dx-dy*dy)*guard;
+   let weight=weights?.[offset+Weight.Count+index];
+   if(weight===undefined){const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];weight=smooth(1-dx*dx-dy*dy)*guard;}
    const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
   }
   // Ears/tufts are above the protected face, driven after the body with their own spring.
   if(!reduced&&clip!=='ko'){
-   const ex=(x-fx-fw*.5)/(fw*.62),ey=(y-fy+fh*.20)/(fh*.65),ear=smooth(1-ex*ex-ey*ey)*guard;
+   let ear=weights?.[offset+Weight.Ear];
+   if(ear===undefined){const ex=(x-fx-fw*.5)/(fw*.62),ey=(y-fy+fh*.20)/(fh*.65);ear=smooth(1-ex*ex-ey*ey)*guard;}
    const flick=motion.earFlick*(x<fx+fw*.5?1:-.55);
    ox+=(motion.ear*2.3+motion.hair*.5+flick*3.5)*ear;oy+=(motion.earFlatten*fh*.12+motion.ear*1.6+flick*4)*ear;
    const accessory=frame.sockets.mainHand;
-   if(accessory){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65),weight=smooth(1-ax*ax-ay*ay)*guard;
+   if(accessory){let weight=weights?.[offset+Weight.Accessory];
+    if(weight===undefined){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65);weight=smooth(1-ax*ax-ay*ay)*guard;}
     ox+=motion.accessory*1.4*weight;oy+=(motion.accessory*2-motion.handLift*m.opaqueHeight*.008)*weight;}
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
   const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
   // Smoothly pin the measured foot contacts, including feet just above the baseline.
-  let planted=1;
-  for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
-  const head=motion.look*m.opaqueHeight*.008*smooth((py/height-.32)/.38)*this.pixelScale;
+  let planted=weights?.[offset+Weight.Planted]??1;
+  if(!weights)for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
+  const head=motion.look*m.opaqueHeight*.008*(weights?.[offset+Weight.Head]??smooth((py/height-.32)/.38))*this.pixelScale;
   // Neck roll carries the outline; cheek/muzzle projection changes the inner
   // feature spacing so a yaw reads as depth rather than a sliding face.
-  const neckX=fx+fw*.5,neckY=fy+fh*1.13,neck=smooth((neckY-y)/(fh*.45));
+  const neckX=fx+fw*.5,neckY=fy+fh*1.13,neck=weights?.[offset+Weight.Neck]??smooth((neckY-y)/(fh*.45));
   const dx=x-neckX,dy=y-neckY;
   const turnX=(dx*(motion.tiltCos-1)-dy*motion.tiltSin)*neck;
   const turnY=(dx*motion.tiltSin+dy*(motion.tiltCos-1))*neck;
@@ -139,5 +170,5 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  get frame(){return this.set.manifest.poses[this.key]!;}
  faceCorners(){const [x,y,w,h]=this.frame.face;return[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(p=>this.point(p as [number,number]));}
  contactPoints(){return this.frame.feet.map(p=>this.point(p));}
- dispose(){this.geometry.dispose();this.material.dispose();this.removeFromParent();}
+ dispose(){this.vertexWeights.clear();this.geometry.dispose();this.material.dispose();this.removeFromParent();}
 }

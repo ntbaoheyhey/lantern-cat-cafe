@@ -12,6 +12,22 @@ function drawing(raw:unknown){
 }
 const span=(values:number[])=>Math.max(...values)-Math.min(...values);
 
+it.each([mochi,soot,clover,panko])('keeps the sampled mesh identical to arbitrary-point projection across poses: $unit',raw=>{
+ const d=drawing(raw),source=new T.PlaneGeometry(raw.canvas[0],raw.canvas[1],32,32),vertices=source.attributes.position!;
+ const point:[number,number]=[0,0],out={x:0,y:0},expected=new Float32Array(vertices.count*3);
+ const cases:[string,number][]=[['idle',.6],['attack',.1],['attack',.27],['attack',.35],['attack',.439],['attack',.44],['attack',.799],['ult',.6],['ult',1.1],['ult',1.8],['hurt',.06],['hurt',.18],['victory',1]];
+ try{
+  for(const reduced of [false,true])for(const [clip,seconds]of cases){
+   d.sample(clip,seconds,reduced,undefined,30+seconds,.7);
+   for(let i=0;i<vertices.count;i++){
+    point[0]=vertices.getX(i)+d.set.manifest.canvas[0]/2;point[1]=d.set.manifest.canvas[1]/2-vertices.getY(i);
+    const p=d.point(point,d.key,undefined,out);expected[i*3]=p.x;expected[i*3+1]=p.y;expected[i*3+2]=.002;
+   }
+   expect(Array.from(d.geometry.attributes.position!.array)).toEqual(Array.from(expected));
+  }
+ }finally{source.dispose();d.dispose();}
+});
+
 it.each([mochi,soot,clover,panko])('gives $unit a restrained lateral idle with planted feet and reproducible long seeks',raw=>{
  const d=drawing(raw),head=d.frame.sockets.head!,feet=d.contactPoints(),xs:number[]=[],snapshots:number[][]=[];
  try{

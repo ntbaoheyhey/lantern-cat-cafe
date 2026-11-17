@@ -1,9 +1,9 @@
 # CXV V7 queue — desktop judge first three minutes
-- [x] V-C local integrated behavior independently confirmed14:46Z;V7-C.md;BOARDm1.5+posttag recovery UI;4fresh sheets/0errors;Yarn fan V-F.
+- [x] V-C m1.7 production independently confirmed16:22Z;stable2fc8f623;4freshsheets/0errors;240/620arrival,12recipientnetclear1640,Yarnclear1760.
 - [x] V-A3 calibrated blink shader accepted by CXI16:10UTC:20GPUdrawings+33tests+tsc0;own Mochi onset/Clover closure evidence;independent production eyeROI62→0. Prior face-depth47/47 retained.
-- [x] V-B2 candidate validation;V7-B2.md;4distinct ultimates,68model actions/24ults/leadIn0;6700 bypassed by fixedTiming.
+- [x] V-B2 m1.7 production4hero fixtures confirmed16:23Z;4freshsheets/0errors;fixedTiming/leadIn0/contact1100/duration2200;ordinary-loop recheck running.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
-- [x] V-E accepted by CXI15:35UTC after own production37focused/build0/7sheets (combinedE/F);81ef11fb4→01f6fa17e.
+- [x] V-E m1.7 independently confirmed16:23Z;4freshsheets/0errors;status120/400ms+expiry,4drawncrew,reducedPNGexact/confetti0.
 - [ ] V-F milestone accepted by CXI15:35UTC (261baff27→01f6fa17e);lower-body correction accepted16:03UTC;ordinary boss-play startup/4x stress remains.
 - CANCELLED mobile/390px scope:owner desktop-only instruction.
 - CANCELLED unassigned bulk texture regeneration:V7 one-at-a-time audit first.
