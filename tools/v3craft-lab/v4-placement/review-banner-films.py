@@ -13,8 +13,10 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[3]
 parser = argparse.ArgumentParser()
 parser.add_argument('--attempt', required=True)
+parser.add_argument('--verification', default='film-capture-verification.json')
 args = parser.parse_args()
 assert re.fullmatch(r'r[1-9][0-9]*', args.attempt)
+assert re.fullmatch(r'[a-z0-9-]+\.json', args.verification)
 OUT = ROOT / ('reports/v4-art/REVIEW/A11/banner-runtime-' + args.attempt)
 CAPTURE = ROOT / 'reports/v3-feel/REVIEW' / ('V4-A11-BANNER-' + args.attempt.upper())
 RAW = OUT / 'raw/native-banner'
@@ -27,13 +29,14 @@ runtime = read(OUT / 'source-hashes.json')
 stable = lambda: all(sha(ROOT / p) == h for p, h in runtime.items())
 replay_path = OUT / ('runtime-check-' + args.attempt + '.json')
 replay, markers = read(replay_path), read(OUT / 'encoded-markers.json')
-assert stable() and replay['pass'] and read(OUT / 'film-capture-verification.json')['pass']
+assert stable() and replay['pass'] and read(OUT / args.verification)['pass']
 assert all(row['pass'] for row in markers)
 RAW.mkdir(parents=True)
 report = {'started': now(), 'pid': os.getpid(), 'scriptSha256': sha(Path(__file__)),
           'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
           'runtimeHashes': runtime, 'replaySha256': sha(replay_path),
           'markerSha256': sha(OUT / 'encoded-markers.json'),
+          'verificationPath': str((OUT / args.verification).relative_to(ROOT)), 'verificationSha256': sha(OUT / args.verification),
           'scope': 'Native512x256 encoded-film crops at first/middle/last available focus samples for every recorded ultimate. Replay geometry locates a generous crop; the encoded pixels still require visual confirmation. No claim of pixel-identical replay or uncaptured action tails.',
           'mappingToleranceMs': 1000 / 30 + 1, 'mappings': [], 'sheets': [], 'fixtures': [],
           'complete': False, 'mappingPass': False, 'reviewComplete': False, 'reviewedCount': 0}
