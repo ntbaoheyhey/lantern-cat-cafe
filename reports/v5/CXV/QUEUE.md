@@ -36,3 +36,5 @@
 - [x] CXI12:27 lantern-requiem loader-only scope ACK/granted; material/draw/motion preserved, CXI owns implementation/check.
 - [x] CANCELLED obsolete REV4 timeboxes/refill quota/print-proof card: V6 prioritizes visible quality and current assignments over bookkeeping.
 - [x] CANCELLED V6 broad FPS/audio/secret audit/repository-export work;V7 explicitly reopens scoped boss-play smoothness under V-F.
+
+- V-F guarded pose crop scopedREADY 2026-11-17T18:02:37.467431+00:00:130GPU exact/80assets/96tests/tsc0;normalstartup47.6→39.8ms,4x160.7→130ms;p95frame4x66.7 unchanged.Independent review pending;summary V7-F-pose-crop-summary.json.

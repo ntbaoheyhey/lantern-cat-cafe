@@ -8,7 +8,8 @@ import {chromium,config,openFixture} from './browser-fixture.mjs';
 import {runtimeEvidence} from './runtime-evidence.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-pose-read-window');await mkdir(out,{recursive:true});
 const padding=Number(process.env.CXV_POSE_READ_PADDING??2);assert(Number.isInteger(padding)&&padding>=0&&padding<=8);
-const baselineSourceRef=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+// Keep the pre-crop implementation reproducible after runtime integration.
+const baselineSourceRef=execFileSync('git',['rev-parse',process.env.CXV_POSE_BASE_REF??'5e576693210d4b1879d783a12c6c992909af313f'],{encoding:'utf8'}).trim();
 const source=execFileSync('git',['show',baselineSourceRef+':apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts'],{encoding:'utf8'});
 let candidate=source;
 const replace=(from,to)=>{assert(candidate.includes(from),'Prototype anchor changed: '+from.slice(0,70));candidate=candidate.replace(from,to);};

@@ -3,20 +3,31 @@ import type * as T from 'three';
 type Point=[number,number];
 type Triangle=[number,number,number];
 type Sample={ids:Triangle;weights:Triangle};
-type Pixels={width:number;height:number;rgba:Uint8ClampedArray};
+type Pixels={width:number;height:number;x:number;y:number;readWidth:number;readHeight:number;rgba:Uint8ClampedArray};
 export interface OpaqueWorldBounds {x:number;y:number;width:number;height:number}
 const textures=new WeakMap<T.Texture,Pixels>();
 const geometryHulls=new WeakMap<T.BufferGeometry,WeakMap<T.Texture,Sample[]>>();
 
-function pixels(texture:T.Texture):Pixels|undefined {
+function pixels(texture:T.Texture,bounds:unknown):Pixels|undefined {
  const cached=textures.get(texture);if(cached)return cached;
  const source=texture.image as HTMLImageElement,canvas=document.createElement('canvas');
- canvas.width=source.width;canvas.height=source.height;
+ const width=source.width,height=source.height;
+ let x=0,y=0,readWidth=width,readHeight=height;
+ // Pose metadata uses source-pixel, exclusive right/bottom bounds. The two-pixel
+ // guard covers the delivered/original masks checked by audit-pose-read-window.
+ // Missing or malformed hints retain the full-image measurement for other art.
+ if(Array.isArray(bounds)&&bounds.length===4&&bounds.every(Number.isSafeInteger)&&bounds[0]>=0&&bounds[1]>=0&&bounds[2]>bounds[0]&&bounds[3]>bounds[1]&&bounds[2]<=width&&bounds[3]<=height){
+  x=Math.max(0,bounds[0]-2);y=Math.max(0,bounds[1]-2);
+  readWidth=Math.min(width,bounds[2]+2)-x;readHeight=Math.min(height,bounds[3]+2)-y;
+ }
+ canvas.width=readWidth;canvas.height=readHeight;
  const context=canvas.getContext('2d',{willReadFrequently:true});
  // Pixel measurement is optional; an unavailable backend must not reject valid art.
  if(!context)return undefined;
- context.drawImage(source,0,0);
- const data={width:canvas.width,height:canvas.height,rgba:context.getImageData(0,0,canvas.width,canvas.height).data};
+ if(x===0&&y===0&&readWidth===width&&readHeight===height)context.drawImage(source,0,0);
+ else context.drawImage(source,x,y,readWidth,readHeight,0,0,readWidth,readHeight);
+ // UVs remain in the original image coordinates; only RGBA indexing is cropped.
+ const data={width,height,x,y,readWidth,readHeight,rgba:context.getImageData(0,0,readWidth,readHeight).data};
  textures.set(texture,data);return data;
 }
 
@@ -42,7 +53,7 @@ function samples(mesh:T.Mesh):Sample[] {
  // Drawn poses alternate texture keys on the same mesh. Keep each contour so
  // returning to idle/contact does not scan the painted pixels again.
  let variants=geometryHulls.get(geometry);const cached=variants?.get(texture);if(cached)return cached;
- const data=pixels(texture);if(!data)return [];
+ const data=pixels(texture,mesh.userData.opaquePixelBounds);if(!data)return [];
  const {width,height,rgba}=data,result:Sample[]=[];
  for(let t=0;t<index.count;t+=3){
   const ids:Triangle=[index.getX(t),index.getX(t+1),index.getX(t+2)];
@@ -55,12 +66,12 @@ function samples(mesh:T.Mesh):Sample[] {
    const v=(caY*(x-c[0])+acX*(y-c[1]))/denominator;
    return[u,v,1-u-v];
   };
-  const x0=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(width-1,Math.ceil(Math.max(a[0],b[0],c[0])));
-  const y0=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(height-1,Math.ceil(Math.max(a[1],b[1],c[1]))),edge:Point[]=[];
+  const x0=Math.max(data.x,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(data.x+data.readWidth-1,Math.ceil(Math.max(a[0],b[0],c[0])));
+  const y0=Math.max(data.y,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(data.y+data.readHeight-1,Math.ceil(Math.max(a[1],b[1],c[1]))),edge:Point[]=[];
   for(let y=y0;y<=y1;y++){
    let left=-1,right=-1;const py=y+.5-c[1];
    for(let x=x0;x<=x1;x++){
-    if(rgba[(y*width+x)*4+3]!<128)continue;
+    if(rgba[((y-data.y)*data.readWidth+x-data.x)*4+3]!<128)continue;
     // Keep the exact containment tolerance without an array and callback for
     // every painted pixel. Only retained contour vertices need weight arrays.
     const px=x+.5-c[0],u=(bcY*px+cbX*py)/denominator,v=(caY*px+acX*py)/denominator;
@@ -72,7 +83,7 @@ function samples(mesh:T.Mesh):Sample[] {
    // for the second endpoint, preserving the exact alpha/containment checks.
    right=left;
    for(let x=x1;x>left;x--){
-    if(rgba[(y*width+x)*4+3]!<128)continue;
+    if(rgba[((y-data.y)*data.readWidth+x-data.x)*4+3]!<128)continue;
     const px=x+.5-c[0],u=(bcY*px+cbX*py)/denominator,v=(caY*px+acX*py)/denominator;
     if(u<-.000001||v<-.000001||1-u-v<-.000001)continue;
     right=x;break;

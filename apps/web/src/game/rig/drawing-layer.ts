@@ -61,6 +61,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   this.seconds=seconds;this.clip=name;this.reduced=reduced;
   const key=!reduced&&name==='attack'&&seconds>=.27&&seconds<.33?'K2':drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
   this.material.map=this.set.textures[this.key]!;
+  this.userData.opaquePixelBounds=this.frame.opaqueBounds;
   const positions=this.geometry.attributes.position!,m=this.set.manifest;
   const hold=name==='attack'&&seconds>=.35&&seconds<.44?.35:(name==='ult'||name==='skill')&&seconds>=1.1&&seconds<1.19?1.1:name==='hurt'&&seconds<.09?0:seconds;
   this.secondary.sample(clock-seconds+hold,name,hold,reduced,target,damageAge??(name==='hurt'?seconds:-1),critAge);

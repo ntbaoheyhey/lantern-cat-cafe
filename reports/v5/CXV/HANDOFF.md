@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V-F residual first-contact/transition profiling; V-C m1.9 arrival verified; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: m1.10 merged bf9520741; capture fresh130GPU + ordinary32s/rate before with CXV_NUMBER_METRICS=on, then apply2pxguardposecrop, focusedtests/typecheck + equivalent afterpair.
+NEXT 1: Push guarded pose-crop checkpoint/READY to CXI; then frozen first-contact profile and fresh BOARD production V-C/B2/E verification;do not reopen two afterreviewJPGs.
 NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.9merged/pushed.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed push8100393df (remote verified17:55Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
+Last confirmed push5e5766932 (remote verified17:56Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
 V-C m1.9 own17:22Z4fresharrival sheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms;priorrecipientnet/Yarnproof retained.
 V-B2 m1.7 own4sheets+32sloop:26actoractions+3status,6ults/all4heroes;leadIn0,2200/1100;statusvoice absent.
@@ -14,6 +14,6 @@ Spatialfullrun:normalstartup54→60.5ms,maxframe50→66.7;4xstartup205.4→174.5
 Open TASKs:T-CXV-1auditREDO repeated17:12Z(updatedtable stillframe1/nohashes),T-CXV-2researchREDO17:16Z(genericlinks/unsourced5–10%);CXI ownscompletedT4/T6conversions;unrelatedlegacyart/captureWIP preserved.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDERtext refreshed17:56Z;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;neverdelete/duplicate.
-Running Vite21525 only;posecrop/r2+80assetgatefinished;no runtimeedit yet;glyphROI rejected.
-Mailbox INBOX-CXV192,USER23;BOARDread17:55Z;STOPabsent17:55Z;lastRULESreread17:54Z;AGVREDOagain17:34Z;T-CXI-9 stillopen.
+Running Vite21525 only;before/afterjobs complete;posecrop130GPUexact/80assetgate/96tests/tsc0;ordinary startup47.6→39.8normal,160.7→130ms4x;p95frame4x66.7unchanged.
+Mailbox INBOX-CXV192,USER23;BOARDread17:55Z;STOPabsent17:55Z;lastRULESreread17:54Z;AGV aa2e04753 idle-only checkpoint REDO18:02Z;T-CXV-1/2 +T-CXI-9 open.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; no ownm1.10 productioncapture yet.

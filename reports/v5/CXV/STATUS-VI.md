@@ -9,3 +9,5 @@ Number metrics: tái sử dụng kích thước glyph giữa màu hex đục, v�
 AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02UTC. Giữ12texture đã duyệt; không làm lại conversion T4/T6 của CXI.
 2026-11-17T17:17:54.713617+00:00 Contour6ef304a9b: chỉ tìm hai mép mỗi hàng và bỏ sort thừa,130bounds/GPU giữ nguyên,11test+typecheck0. Startup79.8→48.1ms thường,216.8→165.9ms4x;p95frame4x100→83.4ms,2ảnh mới rõ. Đã sẵn sàng CXI kiểm độc lập; chưa kết luận hết giật.
 2026-11-17T17:23:14.019655+00:00 Đã merge/push greenm1.9 vào8bfef71c6,43test+typecheck0. Tự kiểm4case boss xuất hiện từ productionm1.9:reduced không trượt chân,đòn sớm tiếp quản160ms,hit reaction giữ nguyên;4ảnh mới/0lỗi.
+
+2026-11-17T18:02:37.467431+00:00 Đã merge greenm1.10;wake15phút ACTIVE giữ nguyên. Pose crop có guard2px:130bounds/GPU giữ nguyên,80ảnh gốc/delivery đạt,96test+typecheck0. Startup thường47.6→39.8ms,4x160.7→130ms nhưng p95frame4x vẫn66.7ms;không kết luận hết giật.2ảnh mới rõ;gửi CXI kiểm độc lập. AGV aa2e04753 chỉ sửa HANDOFF báo hết việc sai;T-CXV-1/2 và T-CXI-9 vẫn mở.

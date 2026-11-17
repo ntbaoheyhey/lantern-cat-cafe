@@ -1,0 +1,1740 @@
+{
+  "utc": "2026-11-17T18:02:37.467431+00:00",
+  "decision": "READY for independent review: exact visual parity and reduced startup/readback work; not an overall FPS or production-acceptance claim.",
+  "method": "Sequential fresh browsers, Apple M3 Pro/Metal, 1280x720, normal model loop32s perCPUrate, CXV_NUMBER_METRICS=on. Fixture setup is not account progression;4xCPU is a stress proxy.",
+  "runs": {
+    "before": {
+      "capture": {
+        "utc": "2026-11-17T17:56:32.361Z",
+        "ended": "2026-11-17T17:57:41.083Z",
+        "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+        "source": "5e576693210d4b1879d783a12c6c992909af313f",
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {},
+        "numberMetricsMode": "on"
+      },
+      "gpuRows": 130,
+      "gpuProof": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-before/gpu/report.json",
+        "sha256": "f22640bd509896a91ec9194d58d6a6da0d28d83b0435da3870f9ac0a4f5f65f9",
+        "bytes": 51032
+      },
+      "ordinaryProof": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-before/ordinary/report.json",
+        "sha256": "b5eff6f5dcac91e7cf27a4cb62088a25f2d62bb627530bbbd49fc9491781f751",
+        "bytes": 92222
+      },
+      "rates": [
+        {
+          "rate": 1,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32001.60000000149,
+          "samples": 1796,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.700000000004366,
+            "p99": 16.80000000000109,
+            "max": 33.400000000001455
+          },
+          "submitCpuMs": {
+            "median": 4.0999999940395355,
+            "p95": 5.600000001490116,
+            "p99": 16.600000001490116,
+            "max": 28.299999997019768
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 13.300000004470348,
+          "wholeRun": {
+            "samples": 1913,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.700000000004366,
+              "p99": 16.80000000000109,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 4.0999999940395355,
+              "p95": 5.699999995529652,
+              "p99": 18.600000001490116,
+              "max": 47.600000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.700000000000273,
+              "p99": 16.800000000000182,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 4,
+              "p95": 15.600000001490116,
+              "p99": 20.200000002980232,
+              "max": 47.600000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "plans": [
+            {
+              "wallMs": 110.70000000298023,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 996.6000000014901,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 1897.2000000029802,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 2780.5,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 3666.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4565.89999999851,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 5464.5,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 6242.60000000149,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 6648.10000000149,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 7549.30000000447,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 8432.60000000149,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 9316.60000000149,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 11615.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 12515.89999999851,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 13399,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 14193.60000000149,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 14618.10000000149,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 16921.20000000298,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 19221.89999999851,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 21518.80000000447,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 22420.30000000447,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 23299.80000000447,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24183.39999999851,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24958.80000000447,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 25366.80000000447,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 26252.10000000149,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 27133.89999999851,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 28017,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 30316.60000000149,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "actorActions": 26,
+          "statusPresentations": 3,
+          "ultimates": 6,
+          "logEvents": 171
+        },
+        {
+          "rate": 4,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32058.39999999851,
+          "samples": 983,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 66.70000000000073,
+            "p99": 100,
+            "max": 216.70000000000073
+          },
+          "submitCpuMs": {
+            "median": 18.700000002980232,
+            "p95": 28.599999994039536,
+            "p99": 59.899999998509884,
+            "max": 138.30000000447035
+          },
+          "over33": 102,
+          "over50": 83,
+          "firstRenderLatencyMs": 43,
+          "wholeRun": {
+            "samples": 1035,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 66.70000000000073,
+              "p99": 100,
+              "max": 216.70000000000073
+            },
+            "submitCpuMs": {
+              "median": 18.700000002980232,
+              "p95": 29.100000001490116,
+              "p99": 70.80000000447035,
+              "max": 160.70000000298023
+            },
+            "over33": 115,
+            "over50": 93
+          },
+          "startup": {
+            "samples": 52,
+            "frameMs": {
+              "median": 33.29999999999973,
+              "p95": 100,
+              "p99": 216.70000000000027,
+              "max": 216.70000000000027
+            },
+            "submitCpuMs": {
+              "median": 19.200000002980232,
+              "p95": 70.80000000447035,
+              "p99": 160.70000000298023,
+              "max": 160.70000000298023
+            },
+            "over33": 13,
+            "over50": 10
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 57
+          },
+          "plans": [
+            {
+              "wallMs": 209.39999999850988,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 1139.7000000029802,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 2100.2000000029802,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 3039.60000000149,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4007.10000000149,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4960.10000000149,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 5927.80000000447,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 6668.70000000298,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 7175.39999999851,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 8145.20000000298,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 9081.89999999851,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 10038.5,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 12398.10000000149,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 13370.80000000447,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 14346.89999999851,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 15075.70000000298,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 15612.30000000447,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 18012,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 20428.5,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 22790.10000000149,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 23753.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24709.89999999851,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 25665.10000000149,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 26411.60000000149,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 26948.10000000149,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 27915.30000000447,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 28870.5,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 29825.30000000447,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "actorActions": 25,
+          "statusPresentations": 3,
+          "ultimates": 5,
+          "logEvents": 161
+        }
+      ]
+    },
+    "after": {
+      "capture": {
+        "utc": "2026-11-17T18:00:10.084Z",
+        "ended": "2026-11-17T18:01:18.739Z",
+        "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+        "source": "5e576693210d4b1879d783a12c6c992909af313f",
+        "runtimePatchSha256": "e3f492d6c4be893e672b256c91a001c28c01e556cc5c0446282e4f20fbb00c16",
+        "runtimeUntrackedSha256": {
+          "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+        },
+        "numberMetricsMode": "on"
+      },
+      "gpuRows": 130,
+      "gpuProof": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-after/gpu/report.json",
+        "sha256": "d711e79fd1317035fa1d3771180b212aa17cb054456d2a519fe92f352dd38196",
+        "bytes": 51299
+      },
+      "ordinaryProof": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-after/ordinary/report.json",
+        "sha256": "fa7390aee4c131b6ae667c3aa2d1e36775c9d3c59b53dd6ac2209364c82123f1",
+        "bytes": 89700
+      },
+      "rates": [
+        {
+          "rate": 1,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32008,
+          "samples": 1798,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.80000000000109,
+            "max": 33.399999999999636
+          },
+          "submitCpuMs": {
+            "median": 4,
+            "p95": 5.5999999940395355,
+            "p99": 15,
+            "max": 27
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 14.600000001490116,
+          "wholeRun": {
+            "samples": 1915,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.799999999999272,
+              "p99": 16.80000000000109,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 4,
+              "p95": 5.600000001490116,
+              "p99": 16,
+              "max": 39.80000000447035
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.800000000000182,
+              "p99": 16.800000000000182,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 3.899999998509884,
+              "p95": 14.399999998509884,
+              "p99": 18.69999999552965,
+              "max": 39.80000000447035
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "plans": [
+            {
+              "wallMs": 107.80000000447035,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 1005.9000000059605,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 1891.7000000029802,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 2774.10000000149,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 3657.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4540.5,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 5439.4000000059605,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 6219.60000000149,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 6643.10000000149,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 7542.20000000298,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 8424.60000000149,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 9311.20000000298,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 11610.10000000149,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 12490.80000000447,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 13392.40000000596,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 14170.40000000596,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 14575.90000000596,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 16878.40000000596,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 19177.60000000149,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 21460.60000000149,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 22362.20000000298,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 23244.5,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24125.5,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24902.60000000149,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 25307.5,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 26209.20000000298,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 27092.70000000298,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 27992.5,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 30277.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3f492d6c4be893e672b256c91a001c28c01e556cc5c0446282e4f20fbb00c16",
+            "runtimeUntrackedSha256": {
+              "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+            }
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3f492d6c4be893e672b256c91a001c28c01e556cc5c0446282e4f20fbb00c16",
+            "runtimeUntrackedSha256": {
+              "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+            }
+          },
+          "actorActions": 26,
+          "statusPresentations": 3,
+          "ultimates": 6,
+          "logEvents": 171
+        },
+        {
+          "rate": 4,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32062.5,
+          "samples": 1001,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 66.69999999999982,
+            "p99": 99.89999999999964,
+            "max": 199.89999999999782
+          },
+          "submitCpuMs": {
+            "median": 18.600000001490116,
+            "p95": 26.30000000447035,
+            "p99": 47.70000000298023,
+            "max": 126
+          },
+          "over33": 93,
+          "over50": 75,
+          "firstRenderLatencyMs": 35.599999994039536,
+          "wholeRun": {
+            "samples": 1057,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 66.70000000000027,
+              "p99": 100,
+              "max": 199.89999999999782
+            },
+            "submitCpuMs": {
+              "median": 18.700000002980232,
+              "p95": 27.5,
+              "p99": 50,
+              "max": 130
+            },
+            "over33": 106,
+            "over50": 83
+          },
+          "startup": {
+            "samples": 56,
+            "frameMs": {
+              "median": 33.29999999999973,
+              "p95": 83.30000000000018,
+              "p99": 183.29999999999973,
+              "max": 183.29999999999973
+            },
+            "submitCpuMs": {
+              "median": 19.5,
+              "p95": 56.29999999701977,
+              "p99": 130,
+              "max": 130
+            },
+            "over33": 13,
+            "over50": 8
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 57
+          },
+          "plans": [
+            {
+              "wallMs": 201.29999999701977,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 1122.3999999985099,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 2084.0999999940395,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 3026.39999999851,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4005.7999999970198,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 4965,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 5884.39999999851,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 6617.5999999940395,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 7152.69999999553,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 8088.19999999553,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 9069.39999999851,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 10020.59999999404,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 12380.5,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 13373.59999999404,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 14336.19999999553,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 15074.19999999553,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 15617.59999999404,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 18005.59999999404,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 20407.59999999404,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 22772.79999999702,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 23737.89999999851,
+              "kind": "action",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 24707.19999999553,
+              "kind": "action",
+              "actorId": "foe-1-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 25656.29999999702,
+              "kind": "action",
+              "actorId": "foe-2-binding-thread",
+              "skillId": "threadAttack",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 26382.59999999404,
+              "kind": "non-action",
+              "actorId": "",
+              "skillId": "round-status",
+              "ultimate": false,
+              "duration": 300,
+              "leadIn": null,
+              "fixedTiming": true,
+              "voiceWindows": null
+            },
+            {
+              "wallMs": 26923.39999999851,
+              "kind": "action",
+              "actorId": "mochi",
+              "skillId": "mochi-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 27883.69999999553,
+              "kind": "action",
+              "actorId": "soot",
+              "skillId": "soot-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 28875.09999999404,
+              "kind": "action",
+              "actorId": "clover",
+              "skillId": "clover-1",
+              "ultimate": false,
+              "duration": 800,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            },
+            {
+              "wallMs": 29822.29999999702,
+              "kind": "action",
+              "actorId": "panko",
+              "skillId": "panko-4",
+              "ultimate": true,
+              "duration": 2200,
+              "leadIn": 0,
+              "fixedTiming": true,
+              "voiceWindows": 0
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3f492d6c4be893e672b256c91a001c28c01e556cc5c0446282e4f20fbb00c16",
+            "runtimeUntrackedSha256": {
+              "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+            }
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3f492d6c4be893e672b256c91a001c28c01e556cc5c0446282e4f20fbb00c16",
+            "runtimeUntrackedSha256": {
+              "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+            }
+          },
+          "actorActions": 25,
+          "statusPresentations": 3,
+          "ultimates": 5,
+          "logEvents": 161
+        }
+      ]
+    }
+  },
+  "checks": {
+    "focusedTests": 96,
+    "typecheckExit": 0,
+    "gitDiffCheckExit": 0
+  },
+  "visualReview": [
+    {
+      "image": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-after/ordinary/boss-1x-review.jpg",
+        "sha256": "bd7b7e0caad03231b393abe667484ae1d5d5c88539711f62755352d799c33536",
+        "bytes": 177258
+      },
+      "reviewedUtc": "2026-11-17T18:02:37.467431+00:00",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "viewCount": 1,
+      "finding": "Faces, HP/status markers and silhouettes clear;feet remain above HUD;thin release rings leave faces readable. Normal view contains a fading damage value over Panko. No new clipping seen;130GPU exact proof is authoritative for unchanged frozen pixels."
+    },
+    {
+      "image": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-after/ordinary/boss-4x-review.jpg",
+        "sha256": "2e2873287f6f55ba24386b00366265fdb7f208a3b6066baa3a3020d66b258b71",
+        "bytes": 167017
+      },
+      "reviewedUtc": "2026-11-17T18:02:37.467431+00:00",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "viewCount": 1,
+      "finding": "Faces, HP/status markers and silhouettes clear;feet remain above HUD;thin release rings leave faces readable. Normal view contains a fading damage value over Panko. No new clipping seen;130GPU exact proof is authoritative for unchanged frozen pixels."
+    }
+  ],
+  "presentationSequenceExact": true,
+  "assetGate": {
+    "proof": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-crop-after/assets/report.json",
+      "sha256": "9ed8353c299964f8f4efdd164a3c8075a3a33219774c8d21d614c917bdb89b6c",
+      "bytes": 51910
+    },
+    "utc": "2026-11-17T18:01:19.020Z",
+    "ended": "2026-11-17T18:01:21.929Z",
+    "rows": 80,
+    "outsideGuard": 0,
+    "maskDifferences": 0,
+    "fullPixels": 76021760,
+    "readPixels": 15284040,
+    "assets": [
+      {
+        "manifestSha256": "567028f67291c9295f4965e05e784ee605fe15a9b9f91c5ee1ff77810dae6378",
+        "file": "apps/web/public/units/binding-thread/poses/manifest.json",
+        "unit": "binding-thread"
+      },
+      {
+        "manifestSha256": "b2fe784c6b02d5a29d3846fb639455a79871b2d92d93975e372ff4420ed1a87b",
+        "file": "apps/web/public/units/clover/poses/manifest.json",
+        "unit": "clover"
+      },
+      {
+        "manifestSha256": "d5f1e844f2e111311466dbd7191a678c7417f391cb9cffb8612f3b5026f385c6",
+        "file": "apps/web/public/units/mochi/poses/manifest.json",
+        "unit": "mochi"
+      },
+      {
+        "manifestSha256": "b3576467fbcce63a7034579c9097aadbab1d58af4bf9c05e8a2ad12e48d270b0",
+        "file": "apps/web/public/units/needle-moth/poses/manifest.json",
+        "unit": "needle-moth"
+      },
+      {
+        "manifestSha256": "7de7d4012829e70c2ad6698418bee84a7147997198223ae65f5f795fe9ace3c2",
+        "file": "apps/web/public/units/panko/poses/manifest.json",
+        "unit": "panko"
+      },
+      {
+        "manifestSha256": "dce7e5ffe357cb5a65fd3ecea31c04a4977088fb705cfc8d21b2402848d66554",
+        "file": "apps/web/public/units/soot/poses/manifest.json",
+        "unit": "soot"
+      },
+      {
+        "manifestSha256": "0b50254a4836f99bfaf9a88b56ac0b2fb35ca2718a78bb2a86bf3a3b6149d5ba",
+        "file": "apps/web/public/units/teacup-healer/poses/manifest.json",
+        "unit": "teacup-healer"
+      },
+      {
+        "manifestSha256": "0b5eb6b5bf2e5350f056caa20e28ad5322b92664de1526f495e314d38c87b829",
+        "file": "apps/web/public/units/yarn-giant/poses/manifest.json",
+        "unit": "yarn-giant"
+      }
+    ],
+    "note": "Both current delivered images and original WebP fallback;re-run whenever pose images, delivery or metadata changes. Two delivered poses extend one pixel outside raw hints;2pxguard contains them. GPU texture allocation unchanged."
+  }
+}
