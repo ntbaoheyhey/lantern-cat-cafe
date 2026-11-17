@@ -1,95 +1,95 @@
 # Sheet Audit
 
-| Texture | Declared Grid | Actual Grid | Frame Count | Status |
-| --- | --- | --- | --- | --- |
-| ambience-dust-motes | 4x4 | ? | 1 | Check |
-| ambience-light-shafts | 4x4 | ? | 1 | Check |
-| aura-attack-buff | 4x4 | ? | 1 | Check |
-| aura-fire-buff | 4x4 | ? | 1 | Check |
-| aura-heal-regen | 4x4 | ? | 1 | Check |
-| aura-shield-ward | 4x4 | ? | 1 | Check |
-| boss-intro-entrance-dust | 4x4 | ? | 1 | Check |
-| boss-intro-nameplate-frame | 1x1 | ? | 1 | Check |
-| clover-anticipation | 1x1 | ? | 1 | Check |
-| clover-crit-burst | 4x4 | ? | 1 | Check |
-| clover-decal | 1x1 | ? | 1 | Check |
-| clover-impact | 4x4 | ? | 1 | Check |
-| clover-impact-alt | 4x4 | ? | 1 | Check |
-| clover-particle-1 | 1x1 | ? | 1 | Check |
-| clover-particle-2 | 1x1 | ? | 1 | Check |
-| clover-particle-3 | 1x1 | ? | 1 | Check |
-| clover-projectile | 1x1 | ? | 1 | Check |
-| clover-ult-charge | 4x4 | ? | 1 | Check |
-| clover-ult-release | 4x4 | ? | 1 | Check |
-| crit-impact-burst | 4x4 | ? | 1 | Check |
-| crit-spark-flare | 1x1 | ? | 1 | Check |
-| enemy-binding-thread-knot | 4x4 | ? | 1 | Check |
-| enemy-death-dissolve | 4x4 | ? | 1 | Check |
-| enemy-hit-spark-1 | 1x1 | ? | 1 | Check |
-| enemy-hit-spark-2 | 1x1 | ? | 1 | Check |
-| enemy-hit-spark-3 | 1x1 | ? | 1 | Check |
-| enemy-kettle-knight-jab | 4x4 | ? | 1 | Check |
-| enemy-needle-moth-rain | 4x4 | ? | 1 | Check |
-| enemy-teacup-healer-refill | 4x4 | ? | 1 | Check |
-| hit-stop-flash-gold | 1x1 | ? | 1 | Check |
-| hit-stop-flash-white | 1x1 | ? | 1 | Check |
-| icon-status-burn | 1x1 | ? | 1 | Check |
-| icon-status-poison | 1x1 | ? | 1 | Check |
-| icon-status-slow | 1x1 | ? | 1 | Check |
-| icon-status-stun | 1x1 | ? | 1 | Check |
-| impact-burst-gen | 4x4 | ? | 1 | Check |
-| impact-burst-proc | 4x4 | ? | 1 | Check |
-| mochi-anticipation | 1x1 | ? | 1 | Check |
-| mochi-crit-burst | 4x4 | ? | 1 | Check |
-| mochi-decal | 1x1 | ? | 1 | Check |
-| mochi-impact | 4x4 | ? | 1 | Check |
-| mochi-impact-alt | 4x4 | ? | 1 | Check |
-| mochi-particle-1 | 1x1 | ? | 1 | Check |
-| mochi-particle-2 | 1x1 | ? | 1 | Check |
-| mochi-particle-3 | 1x1 | ? | 1 | Check |
-| mochi-slash | 4x4 | ? | 1 | Check |
-| mochi-ult-charge | 4x4 | ? | 1 | Check |
-| mochi-ult-release | 4x4 | ? | 1 | Check |
-| panko-anticipation | 1x1 | ? | 1 | Check |
-| panko-crit-burst | 4x4 | ? | 1 | Check |
-| panko-decal | 1x1 | ? | 1 | Check |
-| panko-impact | 4x4 | ? | 1 | Check |
-| panko-impact-alt | 4x4 | ? | 1 | Check |
-| panko-particle-1 | 1x1 | ? | 1 | Check |
-| panko-particle-2 | 1x1 | ? | 1 | Check |
-| panko-particle-3 | 1x1 | ? | 1 | Check |
-| panko-slash | 4x4 | ? | 1 | Check |
-| panko-ult-charge | 4x4 | ? | 1 | Check |
-| panko-ult-release | 4x4 | ? | 1 | Check |
-| plate-damage-crit | 1x1 | ? | 1 | Check |
-| plate-damage-normal | 1x1 | ? | 1 | Check |
-| plate-heal-glow | 1x1 | ? | 1 | Check |
-| soot-anticipation | 1x1 | ? | 1 | Check |
-| soot-crit-burst | 4x4 | ? | 1 | Check |
-| soot-decal | 1x1 | ? | 1 | Check |
-| soot-impact | 4x4 | ? | 1 | Check |
-| soot-impact-alt | 4x4 | ? | 1 | Check |
-| soot-particle-1 | 1x1 | ? | 1 | Check |
-| soot-particle-2 | 1x1 | ? | 1 | Check |
-| soot-particle-3 | 1x1 | ? | 1 | Check |
-| soot-projectile | 1x1 | ? | 1 | Check |
-| soot-ult-charge | 4x4 | ? | 1 | Check |
-| soot-ult-release | 4x4 | ? | 1 | Check |
-| status-burn-loop | 4x4 | ? | 1 | Check |
-| status-poison-loop | 4x4 | ? | 1 | Check |
-| status-slow-loop | 4x4 | ? | 1 | Check |
-| status-stun-loop | 4x4 | ? | 1 | Check |
-| util-glow-dot-128 | 1x1 | ? | 1 | Check |
-| util-glow-dot-64 | 1x1 | ? | 1 | Check |
-| util-heal-plus | 1x1 | ? | 1 | Check |
-| util-leaf-particle | 1x1 | ? | 1 | Check |
-| util-noise-tile | 1x1 | ? | 1 | Check |
-| util-shield-hex-ripple | 4x4 | ? | 1 | Check |
-| util-star-sparkle | 4x4 | ? | 1 | Check |
-| victory-burst | 4x4 | ? | 1 | Check |
-| vignette-damage-red | 1x1 | ? | 1 | Check |
-| vignette-heal-green | 1x1 | ? | 1 | Check |
-| vignette-ult-gold | 1x1 | ? | 1 | Check |
-| yarn-giant-charge-swirl | 4x4 | ? | 1 | Check |
-| yarn-giant-ground-crack | 1x1 | ? | 1 | Check |
-| yarn-giant-shockwave-ring | 4x4 | ? | 1 | Check |
+| Texture | Declared Grid | Actual Grid | Frame Count | SizePx | Dimensions | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| ambience-dust-motes | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| ambience-light-shafts | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| aura-attack-buff | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| aura-fire-buff | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| aura-heal-regen | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| aura-shield-ward | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| boss-intro-entrance-dust | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| boss-intro-nameplate-frame | 1x1 | 1x0 | 1 | 512 | 512x256 | Mismatch |
+| clover-anticipation | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| clover-crit-burst | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| clover-decal | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| clover-impact | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| clover-impact-alt | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| clover-particle-1 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| clover-particle-2 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| clover-particle-3 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| clover-projectile | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| clover-ult-charge | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| clover-ult-release | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| crit-impact-burst | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| crit-spark-flare | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| enemy-binding-thread-knot | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| enemy-death-dissolve | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| enemy-hit-spark-1 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| enemy-hit-spark-2 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| enemy-hit-spark-3 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| enemy-kettle-knight-jab | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| enemy-needle-moth-rain | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| enemy-teacup-healer-refill | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| hit-stop-flash-gold | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| hit-stop-flash-white | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| icon-status-burn | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| icon-status-poison | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| icon-status-slow | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| icon-status-stun | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| impact-burst-gen | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| impact-burst-proc | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| mochi-anticipation | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| mochi-crit-burst | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| mochi-decal | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| mochi-impact | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| mochi-impact-alt | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| mochi-particle-1 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| mochi-particle-2 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| mochi-particle-3 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| mochi-slash | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| mochi-ult-charge | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| mochi-ult-release | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| panko-anticipation | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| panko-crit-burst | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| panko-decal | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| panko-impact | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| panko-impact-alt | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| panko-particle-1 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| panko-particle-2 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| panko-particle-3 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| panko-slash | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| panko-ult-charge | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| panko-ult-release | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| plate-damage-crit | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| plate-damage-normal | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| plate-heal-glow | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| soot-anticipation | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| soot-crit-burst | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| soot-decal | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| soot-impact | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| soot-impact-alt | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| soot-particle-1 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| soot-particle-2 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| soot-particle-3 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| soot-projectile | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| soot-ult-charge | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| soot-ult-release | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| status-burn-loop | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| status-poison-loop | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| status-slow-loop | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| status-stun-loop | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| util-glow-dot-128 | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| util-glow-dot-64 | 1x1 | 1x1 | 1 | 64 | 64x64 | OK |
+| util-heal-plus | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| util-leaf-particle | 1x1 | 1x1 | 1 | 128 | 128x128 | OK |
+| util-noise-tile | 1x1 | 1x1 | 1 | 256 | 256x256 | OK |
+| util-shield-hex-ripple | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| util-star-sparkle | 4x4 | 4x4 | 1 | 128 | 512x512 | OK |
+| victory-burst | 4x4 | 4x4 | 1 | 256 | 1024x1024 | OK |
+| vignette-damage-red | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| vignette-heal-green | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| vignette-ult-gold | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| yarn-giant-charge-swirl | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
+| yarn-giant-ground-crack | 1x1 | 1x1 | 1 | 512 | 512x512 | OK |
+| yarn-giant-shockwave-ring | 4x4 | 8x8 | 1 | 128 | 1024x1024 | Mismatch |
