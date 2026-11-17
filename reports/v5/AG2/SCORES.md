@@ -36,3 +36,11 @@
 | `panko-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
 | `panko-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
 | `panko-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
+| `mochi-ult-charge` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/mochi-ult-charge.jpg | PASS |
+| `mochi-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/mochi-ult-release.jpg | PASS |
+| `soot-ult-charge` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/soot-ult-charge.jpg | PASS |
+| `soot-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/soot-ult-release.jpg | PASS |
+| `clover-ult-charge` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-ult-charge.jpg | PASS |
+| `clover-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-ult-release.jpg | PASS |
+| `panko-ult-charge` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-ult-charge.jpg | PASS |
+| `panko-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-ult-release.jpg | PASS |

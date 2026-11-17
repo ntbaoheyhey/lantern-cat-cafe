@@ -5,6 +5,6 @@
 - [x] Q4 Clover full set [time box 75 min]
 - [x] R-mochi Revise Mochi ancillaries (stitch/shield motif, honey/gold palette) [time box 30 min]
 - [x] Q5 Panko full set [time box 75 min]
-- [/] Q6 Ultimates: ult-charge + ult-release per hero [time box 2 h]
-- [ ] Q7 Yarn-giant boss: swirl, shockwave, crack, sparks x3, dissolve [time box 2 h]
+- [x] Q6 Ultimates: ult-charge + ult-release per hero [time box 2 h]
+- [/] Q7 Yarn-giant boss: swirl, shockwave, crack, sparks x3, dissolve [time box 2 h]
 - [ ] Q8 Act on CXV/CXI/AG1 review REQs in INBOX-AG2.md [time box 60 min]

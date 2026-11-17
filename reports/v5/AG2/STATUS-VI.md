@@ -1,5 +1,5 @@
 # TRẠNG THÁI AG2 (VFX TEXTURES - REV 3)
-- Hoàn thành R-mochi: đã làm lại anticipation thành khiên vải thêu mật ong/vàng ấm, hạt may vá/mảnh vải/bông gòn, decal thảm khiên có viền chỉ. Đã gửi REVIEW mochi-v2.
-- Hoàn thành Q5 Panko full set (generation-first): sinh ảnh AI cho panko-impact 4x4 (72KB) và panko-slash 4x4 (46KB), decal bánh quế bơ nướng.
-- Toàn bộ điểm G1-G5 >= 4 (24-25/25), composite battle <= 147KB, đã gửi REVIEW tới CXV.
-- Bắt đầu thực hiện Q6 Ultimates: 8 sheets 4x4 (ult-charge và ult-release cho cả 4 hero Mochi, Soot, Clover, Panko).
+- Hoàn thành Q6 Ultimates: xuất xưởng 8 flipbook 4x4 cho cả 4 hero (ult-charge và ult-release), kích thước 35-117KB/file.
+- Tổng dung lượng vfx/v5 là 1.18MB (< 2.5MB tối đa), 54 mục manifest hợp lệ 100%, check.mjs chạy trong 21ms.
+- Toàn bộ điểm G1-G5 >= 4 (25/25), composite battle <= 148KB, đã gửi REVIEW tới CXV.
+- Bắt đầu thực hiện Q7 Yarn-giant boss: swirl, shockwave, ground crack, 3 tia lửa trúng đòn của quái, và hiệu ứng tan biến khi chết (death dissolve).
