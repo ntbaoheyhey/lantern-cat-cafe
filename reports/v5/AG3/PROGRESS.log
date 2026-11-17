@@ -3,3 +3,4 @@
 2026-11-17T05:32:00Z | A1 | Rig pages + depth maps converted (66 siblings, 87.05% net reduction from 84.03MB to 10.89MB), A1-report.csv and 3 montages generated
 2026-11-17T05:34:00Z | A2 | Top 80 gameplay/shell art processed, converted eligible portraits (82.55% reduction), A2-report.csv and montage generated
 2026-11-17T05:38:00Z | A3 | Size forecast completed based on CXI baseline network capture (all.json): current 29.50MB -> with-siblings 12.16MB -> with-half-depth 7.82MB (<=8MB gate passed), top 10 dominating files identified in A3-forecast.md
+2026-11-17T05:41:00Z | A4 | Backlog: spot-checked 10 random siblings (10/10 match dims, SSIM >= 0.992), 2 montages generated; enhanced convert.mjs with lossless fallback for indexed art (converted squad + gameplay art, +38KB net savings); CSVs tidied

@@ -26,7 +26,6 @@ if (fileListPath && fs.existsSync(fileListPath)) {
 
 if (filesToProcess.length === 0) {
   if (mode === 'rig') {
-    // Find all rig-*.png in apps/web/public/units
     const unitsDir = 'apps/web/public/units';
     if (fs.existsSync(unitsDir)) {
       const entries = fs.readdirSync(unitsDir, { withFileTypes: true });
@@ -102,8 +101,6 @@ for (let idx = 0; idx < filesToProcess.length; idx++) {
   const pngBytes = stat.size;
   const dims = getDimensions(pngPath);
   const isDepth = path.basename(pngPath) === 'rig-depth.png';
-  const isRigPage = path.basename(pngPath).startsWith('rig-page');
-
   const minSSIM = mode === 'rig' ? 0.985 : 0.980;
 
   // 1. Primary sibling (.webp)
@@ -112,15 +109,16 @@ for (let idx = 0; idx < filesToProcess.length; idx++) {
   let ssim = 0;
   let dimsOk = false;
   let webpBytes = 0;
+  let usedLossless = false;
 
-  // Convert with cwebp
+  // Try lossy cwebp first
   execSync(`cwebp -q ${q} -alpha_q 100 -exact -sharp_yuv "${pngPath}" -o "${webpPath}" 2>/dev/null`);
   webpBytes = fs.statSync(webpPath).size;
-  const webpDims = getDimensions(webpPath);
+  let webpDims = getDimensions(webpPath);
   dimsOk = (dims.w === webpDims.w && dims.h === webpDims.h);
   ssim = computeSSIM(pngPath, webpPath);
 
-  // Quality gate retry once if needed
+  // If SSIM failed, try higher quality
   if (ssim < minSSIM) {
     q = 95;
     execSync(`cwebp -q ${q} -alpha_q 100 -exact -sharp_yuv "${pngPath}" -o "${webpPath}" 2>/dev/null`);
@@ -128,7 +126,27 @@ for (let idx = 0; idx < filesToProcess.length; idx++) {
     ssim = computeSSIM(pngPath, webpPath);
   }
 
-  const savingPct = ((pngBytes - webpBytes) / pngBytes) * 100;
+  let savingPct = ((pngBytes - webpBytes) / pngBytes) * 100;
+
+  // If lossy didn't achieve >= 30% saving, test lossless WebP
+  if (savingPct < 30.0) {
+    const tmpLossless = path.resolve('work/v5/AG3/tmp_lossless.webp');
+    try {
+      execSync(`cwebp -lossless -exact "${pngPath}" -o "${tmpLossless}" 2>/dev/null`);
+      const lBytes = fs.statSync(tmpLossless).size;
+      const lSaving = ((pngBytes - lBytes) / pngBytes) * 100;
+      if (lSaving >= 30.0) {
+        fs.copyFileSync(tmpLossless, webpPath);
+        webpBytes = lBytes;
+        savingPct = lSaving;
+        ssim = 1.00000;
+        usedLossless = true;
+      }
+      if (fs.existsSync(tmpLossless)) fs.unlinkSync(tmpLossless);
+    } catch (e) {
+      // ignore
+    }
+  }
 
   // Gate: SSIM >= minSSIM, dimsOk, and saving >= 30%
   if (ssim >= minSSIM && dimsOk && savingPct >= 30.0) {
@@ -140,13 +158,12 @@ for (let idx = 0; idx < filesToProcess.length; idx++) {
       savingPct: savingPct.toFixed(2),
       ssim: ssim.toFixed(5),
       dimsOk: 'true',
-      note: 'primary'
+      note: usedLossless ? 'primary (lossless)' : 'primary'
     });
     totalPngBytes += pngBytes;
     totalWebpBytes += webpBytes;
-    console.log(`[${idx + 1}/${filesToProcess.length}] OK: ${webpPath} (${savingPct.toFixed(1)}% saving, SSIM ${ssim.toFixed(4)})`);
+    console.log(`[${idx + 1}/${filesToProcess.length}] OK: ${webpPath} (${savingPct.toFixed(1)}% saving, SSIM ${ssim.toFixed(4)}${usedLossless ? ' lossless' : ''})`);
   } else {
-    // Revert/delete
     if (fs.existsSync(webpPath)) fs.unlinkSync(webpPath);
     console.warn(`[${idx + 1}/${filesToProcess.length}] SKIP: ${pngPath} (saving=${savingPct.toFixed(1)}%, SSIM=${ssim.toFixed(4)}, dimsOk=${dimsOk})`);
     results.push({
@@ -172,7 +189,6 @@ for (let idx = 0; idx < filesToProcess.length; idx++) {
     const halfDimsOk = (halfDims.w === halfW && halfDims.h === halfH);
     const halfSavingPct = ((pngBytes - halfBytes) / pngBytes) * 100;
 
-    // For half size, SSIM metric can be computed against a 50% downscaled original reference
     let halfSSIM = 1.0;
     try {
       const refHalf = path.resolve('work/v5/AG3/ref_half.png');
