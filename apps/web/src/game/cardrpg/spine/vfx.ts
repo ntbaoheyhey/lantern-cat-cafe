@@ -28,7 +28,7 @@ export class PaintedVfx {
  readonly overrides=new DesignerVfx();readonly ready:Promise<void>;private disposed=false;
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
  readonly timeline:V5SkillPlayer;
- readonly blendLayers:SkillBlendLayers;private faceMask:HTMLCanvasElement|undefined;
+ readonly blendLayers:SkillBlendLayers;private faceMask:HTMLCanvasElement|undefined;private legacyMask:HTMLCanvasElement|undefined;
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
  private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private fallbackCast=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
@@ -138,21 +138,23 @@ export class PaintedVfx {
   if(view.formationC2&&this.stats.draws)this.glow.render(this.canvas,c,view.quality==='low',view.reducedMotion);
   if(this.stats.draws){
    this.stats.maskedFaces=this.protect(c,view,protectedLabels);
-   for(const pass of this.blendLayers.passes)if(pass.active)this.protect(pass.context,view,protectedLabels);
+   for(const pass of this.blendLayers.passes)if(pass.active)this.protect(pass.context,view,protectedLabels,true);
   }
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
- private protect(c:CanvasRenderingContext2D,view:SceneView,labels:readonly Rect[]){
-  if(!this.faceMask){
+ private protect(c:CanvasRenderingContext2D,view:SceneView,labels:readonly Rect[],narrow=false){
+  let source=narrow?this.faceMask:this.legacyMask;
+  if(!source){
    const mask=document.createElement('canvas');mask.width=mask.height=128;const m=mask.getContext('2d')!;
-   const fade=m.createRadialGradient(64,64,0,64,64,64);fade.addColorStop(0,'#000');fade.addColorStop(.6,'#000');fade.addColorStop(1,'#0000');
-   m.fillStyle=fade;m.fillRect(0,0,128,128);this.faceMask=mask;
+   const fade=m.createRadialGradient(64,64,narrow?0:64*.18/.55,64,64,64);fade.addColorStop(0,'#000');fade.addColorStop(narrow?.6:.25,'#000');fade.addColorStop(1,'#0000');
+   m.fillStyle=fade;m.fillRect(0,0,128,128);source=mask;if(narrow)this.faceMask=mask;else this.legacyMask=mask;
   }
   c.save();c.globalCompositeOperation='destination-out';c.globalAlpha=1;let count=0;
   for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
-   // Protect the eyes/muzzle, with a soft elliptical edge. A body-sized circle
-   // also erased nearby hand-held slashes and support impacts entirely.
-   c.drawImage(this.faceMask,face.x-size*.25,face.y-size*.2,size*.5,size*.4);count++;
+   // Only V5 texture blend passes use the small eyes/muzzle ellipse. Legacy
+   // atlases and procedural effects retain their original body protection.
+   if(narrow)c.drawImage(source,face.x-size*.25,face.y-size*.2,size*.5,size*.4);
+   else c.drawImage(source,face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);count++;
   }
   if(!view.formationC2){c.fillStyle='#000';for(const box of labels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();return count;
@@ -160,5 +162,5 @@ export class PaintedVfx {
  /** An opt-in scene renderer owns this action's complete effect pass. */
  clearFrame(){this.blendLayers.clear();this.ctx.setTransform(1,0,0,1,0,0);this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;}
  clear(){this.timeline.clear();this.blendLayers.clear();this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
- dispose(){this.disposed=true;this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.blendLayers.dispose();if(this.faceMask){this.faceMask.width=this.faceMask.height=1;this.faceMask=undefined;}this.canvas.remove();}
+ dispose(){this.disposed=true;this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.blendLayers.dispose();if(this.faceMask){this.faceMask.width=this.faceMask.height=1;this.faceMask=undefined;}if(this.legacyMask){this.legacyMask.width=this.legacyMask.height=1;this.legacyMask=undefined;}this.canvas.remove();}
 }

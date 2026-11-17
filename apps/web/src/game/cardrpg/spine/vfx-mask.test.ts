@@ -1,0 +1,22 @@
+import {afterEach,expect,it,vi} from 'vitest';
+import {PaintedVfx} from './vfx';
+import type {SceneView} from '../../squad/turn3d/scene';
+import type {Rect} from '../../squad/turn3d/label-layout';
+type Harness={socket:(id:string,part:string)=>{x:number;y:number};protect:(c:CanvasRenderingContext2D,v:SceneView,r:readonly Rect[],narrow?:boolean)=>number;faceMask?:HTMLCanvasElement;legacyMask?:HTMLCanvasElement};
+afterEach(()=>vi.restoreAllMocks());
+it('retains legacy body clearance and isolates the small mask to explicitly selected passes',()=>{
+ const gradients:number[][]=[];
+ const maskContext={createRadialGradient:(...args:number[])=>{gradients.push(args);return{addColorStop:vi.fn()};},fillRect:vi.fn()};
+ vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockImplementation((()=>maskContext) as unknown as HTMLCanvasElement['getContext']);
+ const painter=Object.create(PaintedVfx.prototype) as Harness;
+ painter.socket=(_id,part)=>({x:200,y:part==='head'?100:177});
+ const drawImage=vi.fn(),c={save:vi.fn(),restore:vi.fn(),drawImage,fillRect:vi.fn()} as unknown as CanvasRenderingContext2D;
+ const view={actors:[{id:'target',hp:1}],formationC2:true} as unknown as SceneView;
+ expect(painter.protect(c,view,[])).toBe(1);
+ for(const [i,value] of [145,45,110,110].entries())expect(drawImage.mock.calls[0]![i+1]).toBeCloseTo(value);
+ expect(painter.protect(c,view,[],true)).toBe(1);
+ expect(drawImage.mock.calls[1]!.slice(1)).toEqual([175,80,50,40]);
+ expect(painter.legacyMask).not.toBe(painter.faceMask);
+ painter.protect(c,view,[]);painter.protect(c,view,[],true);
+ expect(gradients).toHaveLength(2);expect(gradients[0]![2]).toBeCloseTo(64*.18/.55);expect(gradients[1]![2]).toBe(0);
+});
