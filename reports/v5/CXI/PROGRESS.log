@@ -11,3 +11,10 @@
 2026-11-17T05:33:26Z I2a added reusable production CDP probe, reusing official fixtures and existing transfer/ready helpers; preview PID 17640.
 2026-11-17T05:33:26Z I2a baseline + three frames/fixture detached PID 17650; no auth/chain evidence claimed by fixture probe.
 2026-11-17T05:34:16Z I2a preview now HTTP200; first probe raced startup (ECONNREFUSED, no measurements); restarted PID 19245, original failed log retained. AG3 READY c706ebfb2, AG2 latest23bd54e6b, CXV V0 docs8c9bd134c.
+2026-11-17T05:35:01Z I2a first measured probe blocked shipped external font GETs (4 per fixture); marked incomplete and preserved. Permit only public font GETs as prior production probe did; new baseline-fonts PID 19721.
+2026-11-17T05:35:37Z I2a correction: only one blocked font GET; other three are default public Fuji RPC reads. Probe now permits explicit read-only method allowlist, still blocks signing/sends; baseline-complete PID 19923.
+2026-11-17T05:37:09Z I2a new request evidence identifies eth_getBlockByNumber in LiveCounters batch; second read-method allowlist correction includes block/log/receipt reads only; baseline-final PID 20862.
+2026-11-17T05:38:42Z I2a prior RPC batch now succeeds; subsequent Routescan testnet blocks GET revealed by live counters. Allow read-only indexer GET prefix; all other external writes remain blocked; baseline-public-reads PID 21673.
+2026-11-17T05:39:38Z I2a DONE valid baseline wave1=19127566 wave3=23117965 boss=13460944 bytes; zero errors. I2b result preload wired after scoped CXV ACK; AG3 fetched and86paths ownership check clean.
+2026-11-17T05:39:39Z I2b detached PID 22099, focused tests then build (includes typecheck), then same transfer script; max2jobs including preview.
+2026-11-17T05:40:56Z I2b DONE 7focused pass, build/typecheck0, cold transfer complete (wave1=19132303, wave3=22665272, boss=13465836); before sheets inspected; no initial reduction claimed.

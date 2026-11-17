@@ -13,6 +13,7 @@ import { ForecastV4 } from './ForecastV4';
 import { AdviceV4 } from './AdviceV4';
 import { ScoutingV4 } from './ScoutingV4';
 import { PracticePayoffV4 } from './OpeningV4';
+import {nextEncounterUnits,queueEncounterPreload} from './encounter-preloader';
 
 function CrewDetails({ v4, children }: { v4: boolean; children: ReactNode }) {
   return v4 ? <details className="cr-panel dp-v4-crew-details"><summary>Equipped gear and skills</summary>{children}</details> : <>{children}</>;
@@ -75,6 +76,8 @@ export function Prepare({ m }: { m: DepthModel }) {
 
 export function BattleResult({ m }: { m: DepthModel }) {
   const battle = m.battle!;
+  const preloadUnits=battle.result==='party'&&!m.replay&&!m.tutorialBattle?nextEncounterUnits(m.state).join('|'):'';
+  useEffect(()=>queueEncounterPreload(preloadUnits?preloadUnits.split('|'):[]),[preloadUnits]);
   const summary = summarizeBattle(battle);
   const canAdvise = !!battle.v4 && battle.result === 'enemy' && !m.replay && !m.tutorialBattle;
   const liveLoss = R.gameplayV4(m.state) && canAdvise;

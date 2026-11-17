@@ -43,7 +43,7 @@ try{
   stop();
   const context=await browser.newContext({viewport:report.viewport,deviceScaleFactor:1,serviceWorkers:'block'});
   const page=await context.newPage(),cdp=await context.newCDPSession(page),records=new Map();
-  const row={fixture:fixture.id,enemies:fixture.enemies,errors:[],httpFailures:[],blocked:[],developmentPaths:[],complete:false};
+  const row={fixture:fixture.id,enemies:fixture.enemies,errors:[],httpFailures:[],blocked:[],publicReads:[],developmentPaths:[],complete:false};
   report.rows.push(row);
   await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:true});
   cdp.on('Network.requestWillBeSent',event=>{
@@ -66,7 +66,15 @@ try{
   page.on('console',message=>{if(message.type()==='error')row.errors.push(message.text());});
   await context.route('**/*',route=>{
    const target=new URL(route.request().url());
-   if(['data:','blob:'].includes(target.protocol)||target.origin===url.origin)return route.continue();
+   const publicFont=target.protocol==='https:'&&route.request().method()==='GET'&&['fonts.googleapis.com','fonts.gstatic.com'].includes(target.hostname);
+   const publicIndexer=target.protocol==='https:'&&target.hostname==='api.routescan.io'&&target.pathname.startsWith('/v2/network/testnet/evm/43113/')&&route.request().method()==='GET';
+   if(['data:','blob:'].includes(target.protocol)||target.origin===url.origin||publicFont||publicIndexer)return route.continue();
+   if(target.href==='https://api.avax-test.network/ext/bc/C/rpc'&&route.request().method()==='POST'){
+    const payload=route.request().postDataJSON(),calls=Array.isArray(payload)?payload:[payload];
+    const readMethods=new Set(['eth_chainId','net_version','eth_blockNumber','eth_getBalance','eth_call','eth_getCode','eth_getTransactionCount','eth_getBlockByNumber','eth_getBlockByHash','eth_getLogs','eth_getTransactionReceipt']);
+    if(calls.length&&calls.every(call=>readMethods.has(call?.method))){row.publicReads.push(...calls.map(call=>call.method));return route.continue();}
+    row.blocked.push({path:target.origin+target.pathname,methods:calls.map(call=>call?.method)});return route.abort();
+   }
    row.blocked.push(target.origin+target.pathname);return route.abort();
   });
   await page.addInitScript(()=>localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true})));
