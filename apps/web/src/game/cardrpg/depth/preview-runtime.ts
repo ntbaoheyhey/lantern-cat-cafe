@@ -1,6 +1,6 @@
-import { TurnScene, type SceneView } from '../../squad/turn3d/scene';
+import type { TurnScene, SceneView } from '../../squad/turn3d/scene';
 import { sampleActionPlan } from '../../squad/turn3d/effects';
-import { loadModel } from '../../squad/turn3d/assets';
+import { loadPreviewModel, loadPreviewScene } from './preview-loader';
 import { isLookV2 } from '../../squad/turn3d/look-v2';
 import type { galleryFixture } from './feel-lab';
 import type { DepthModel } from './model';
@@ -31,7 +31,7 @@ export function preloadPreviewModels(ids: string[]) {
     if (pending.has(key)) continue;
     pending.add(key);
     preloadQueue = preloadQueue.then(() => new Promise<void>(done => {
-      afterPaintIdle(() => { void loadModel(id).catch(() => undefined).finally(() => { pending.delete(key); done(); }); });
+      afterPaintIdle(() => { void loadPreviewModel(id).catch(() => undefined).finally(() => { pending.delete(key); done(); }); });
     }));
   }
 }
@@ -45,6 +45,9 @@ export class PreviewRuntime {
   private notify?: (status: string) => void;
   private slot?: HTMLElement;
   private cancelStart?: () => void;
+  private generation = 0;
+  private loadingGeneration?: number;
+  private disposed = false;
   private frame = 0;
   private elapsed = 0;
   private last = 0;
@@ -57,12 +60,14 @@ export class PreviewRuntime {
   constructor(private m: DepthModel) { this.host.className = 'dp-preview-surface'; }
 
   attach(slot: HTMLElement, options: () => Options, notify: (status: string) => void) {
+    if (this.disposed) return () => {};
     this.slot = slot; this.options = options; this.notify = notify;
     slot.appendChild(this.host);
     notify(this.scene?.ready ? '' : this.message);
     this.schedule(); this.invalidate();
     return () => {
       if (this.slot !== slot) return;
+      this.generation++;
       this.lastOptions = options(); this.slot = undefined; this.options = undefined; this.notify = undefined;
       this.host.remove(); this.cancelStart?.(); this.cancelStart = undefined;
       cancelAnimationFrame(this.frame); this.frame = 0; this.last = 0;
@@ -87,20 +92,33 @@ export class PreviewRuntime {
     return current.view;
   };
   private schedule() {
-    if (!this.slot || this.cancelStart) return;
+    if (!this.slot || this.cancelStart || this.disposed || this.loadingGeneration === this.generation) return;
     this.cancelStart = afterPaintIdle(() => {
       this.cancelStart = undefined;
       if (!this.slot) return;
-      if (!this.scene) {
-        try {
-          performance.mark('preview-create:start');
-          this.scene = new TurnScene(this.host, this.view, () => {}, () => {}, this.status);
-          performance.mark('preview-create:end');
-          if (this.m.offline || import.meta.env.DEV) window.__depthPreviewScene = this.scene;
-        } catch (error) { this.status(`Preview unavailable. ${String(error).slice(0, 100)}`); return; }
-      }
-      cancelAnimationFrame(this.frame); this.frame = requestAnimationFrame(this.tick);
+      const generation = this.generation;
+      this.loadingGeneration = generation;
+      void this.prepareScene(generation);
     });
+  }
+  private async prepareScene(generation: number) {
+    const current = () => !this.disposed && !!this.slot && generation === this.generation;
+    try {
+      if (!this.scene) {
+        const Renderer = await loadPreviewScene();
+        if (!current()) return;
+        performance.mark('preview-create:start');
+        this.scene = new Renderer(this.host, this.view, () => {}, () => {}, this.status);
+        performance.mark('preview-create:end');
+        if (this.m.offline || import.meta.env.DEV) window.__depthPreviewScene = this.scene;
+      }
+      if (!current()) return;
+      cancelAnimationFrame(this.frame); this.frame = requestAnimationFrame(this.tick);
+    } catch (error) {
+      if (current()) this.status(`Preview unavailable. ${String(error).slice(0, 100)}`);
+    } finally {
+      if (this.loadingGeneration === generation) this.loadingGeneration = undefined;
+    }
   }
   private tick = (now: number) => {
     const current = this.options?.();
@@ -123,6 +141,7 @@ export class PreviewRuntime {
     this.last = now; this.frame = requestAnimationFrame(this.tick);
   };
   private releaseScene() {
+    this.generation++;
     this.cancelStart?.(); this.cancelStart = undefined;
     cancelAnimationFrame(this.frame); this.frame = 0;
     if (window.__depthPreviewScene === this.scene) delete window.__depthPreviewScene;
@@ -130,5 +149,5 @@ export class PreviewRuntime {
     this.host.replaceChildren(); delete this.host.dataset.ready;
     this.last = 0; this.playedEntrance = undefined; this.status('Preparing miniatures…');
   }
-  dispose() { this.releaseScene(); this.host.remove(); }
+  dispose() { this.disposed = true; this.releaseScene(); this.host.remove(); }
 }

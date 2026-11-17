@@ -10,7 +10,8 @@ import { readablePortrait, readableSkillIcon } from '../../squad/turn3d/look-rea
 import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/look-b2';
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
-import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
+import type { TurnScene, SceneView, Anchor } from '../../squad/turn3d/scene';
+import {loadPreviewScene} from './preview-loader';
 import { SpineScene } from '../spine/scene';
 import { lookSpineEnabled } from '../spine/config';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
@@ -51,6 +52,16 @@ export function BattleView({ m }: { m: DepthModel }) {
   const [logOpen, setLogOpen] = useState(false);
   const [sound, setSound] = useState(m.audio.enabled);
   const [volume, setVolume] = useState(m.audio.volume);
+  const useSpine = !!m.battle?.initial.formationC2 || lookSpineEnabled(location.search,lookV2);
+  const [legacyRenderer,setLegacyRenderer] = useState<typeof TurnScene | null>(null);
+  useEffect(() => {
+    if(useSpine)return;
+    let active=true;
+    void loadPreviewScene().then(Renderer=>{if(active)setLegacyRenderer(()=>Renderer);}).catch(error=>{
+      if(active){m.sceneError=`Battle preview unavailable. ${String(error)}`;m.notify(false);}
+    });
+    return()=>{active=false;};
+  },[m,useSpine]);
   useEffect(() => { m.audio.useBrowserPreferences(!m.offline); setVolume(m.audio.volume); }, [m]);
   const battle = m.visualBattle ?? lastBattle.current;
   lastBattle.current = battle;
@@ -88,6 +99,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
   useEffect(() => {
+    if(!useSpine&&!legacyRenderer)return;
     let animation = 0, last = 0;
     m.sceneReady = false;
     const currentAudio = m.audio;
@@ -120,7 +132,7 @@ export function BattleView({ m }: { m: DepthModel }) {
           if (!readable || plate.style.transform !== transform) plate.style.transform = transform;
         }
       };
-      const Renderer = m.battle?.initial.formationC2 || lookSpineEnabled(location.search,lookV2) ? SpineScene : TurnScene;
+      const Renderer = useSpine ? SpineScene : legacyRenderer!;
       scene.current = new Renderer(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {
         m.sceneError = message; m.notify(false);
       });
@@ -172,8 +184,8 @@ export function BattleView({ m }: { m: DepthModel }) {
     // previous action for an extra frame after the model had finished it.
     if(scene.current instanceof SpineScene)scene.current.beforeFrame=tick;
     else animation = requestAnimationFrame(tick);
-    return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
-  }, [m, lookV2, readable]);
+    return () => { cancelAnimationFrame(animation); scene.current?.dispose(); scene.current=null; m.sceneReady = false; delete window.__depthScene; };
+  }, [m, lookV2, readable, useSpine, legacyRenderer]);
   useEffect(() => {
     if (scene.current instanceof SpineScene) scene.current.prepare();
     else scene.current?.invalidate();
