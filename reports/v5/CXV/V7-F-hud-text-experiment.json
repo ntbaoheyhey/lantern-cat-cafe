@@ -1,0 +1,1182 @@
+{
+  "utc": "2026-11-17T19:52:15.973Z",
+  "order": [
+    "baseline",
+    "text",
+    "text",
+    "baseline",
+    "baseline",
+    "text"
+  ],
+  "stableSource": true,
+  "pass": true,
+  "method": "Sequential alternating32s actual game loop per1x/4xCPU rate. HUD timing instrumentation is shared by baseline and text prototype;CDP timings are attribution,4x is a stress proxy. Browser-only source overrides are not production acceptance;summary uses medians across trials,not a pooled frame sample.",
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "trials": 3,
+      "samples": 1800,
+      "frameMedianMs": 16.69999999999891,
+      "frameP95Ms": 16.799999999999272,
+      "over50": 0,
+      "submitMedianMs": 4,
+      "canvasMedianMs": 0.19999999552965164,
+      "canvasTotalMs": 326.800000064075,
+      "labelsTotalMs": 262.2999998778105,
+      "tailTotalMs": 39.69999995082617,
+      "styleTotalMs": 2635.4959999999996,
+      "stylePerFrameMs": 1.373065625,
+      "layoutTotalMs": 165.14000000000001,
+      "focusMedianMs": 5.200000002980232
+    },
+    {
+      "rate": 1,
+      "mode": "text",
+      "trials": 3,
+      "samples": 1799,
+      "frameMedianMs": 16.69999999999891,
+      "frameP95Ms": 16.799999999999272,
+      "over50": 0,
+      "submitMedianMs": 3,
+      "canvasMedianMs": 0.19999999552965164,
+      "canvasTotalMs": 314.699999794364,
+      "labelsTotalMs": 263.6000000908971,
+      "tailTotalMs": 24.900000035762787,
+      "styleTotalMs": 674.1899999999999,
+      "stylePerFrameMs": 0.35150677789363916,
+      "layoutTotalMs": 105.886,
+      "focusMedianMs": 5.700000002980232
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "trials": 3,
+      "samples": 1012,
+      "frameMedianMs": 33.29999999999927,
+      "frameP95Ms": 66.70000000000073,
+      "over50": 75,
+      "submitMedianMs": 18.599999994039536,
+      "canvasMedianMs": 0.7000000029802322,
+      "canvasTotalMs": 784.6999999135733,
+      "labelsTotalMs": 669.3000000566244,
+      "tailTotalMs": 98.79999993741512,
+      "styleTotalMs": 6819.804999999999,
+      "stylePerFrameMs": 6.386338345864662,
+      "layoutTotalMs": 403.28700000000003,
+      "focusMedianMs": 25.600000001490116
+    },
+    {
+      "rate": 4,
+      "mode": "text",
+      "trials": 3,
+      "samples": 1245,
+      "frameMedianMs": 16.700000000000728,
+      "frameP95Ms": 66.60000000000036,
+      "over50": 72,
+      "submitMedianMs": 13.700000002980232,
+      "canvasMedianMs": 0.7999999970197678,
+      "canvasTotalMs": 977.4000000879169,
+      "labelsTotalMs": 824.0000000149012,
+      "tailTotalMs": 84.5999999716878,
+      "styleTotalMs": 2308.486,
+      "stylePerFrameMs": 1.7718265151515153,
+      "layoutTotalMs": 373.97200000000004,
+      "focusMedianMs": 25.799999997019768
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:45:01.045Z",
+      "ended": "2026-11-17T19:46:09.707Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1799,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 33.39999999999782
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 4.0999999940395355,
+        "p95": 5.600000001490116,
+        "p99": 13.200000002980232,
+        "max": 20.700000002980232
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1919,
+          "totalMs": 326.800000064075,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 1.3999999985098839
+        },
+        "labels": {
+          "calls": 1919,
+          "totalMs": 265.2999999448657,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.6000000014901161
+        },
+        "tail": {
+          "calls": 1919,
+          "totalMs": 36.09999994188547,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.20000000298023224
+        }
+      },
+      "layout": {
+        "LayoutCount": 2745,
+        "LayoutDuration": 0.16411,
+        "RecalcStyleCount": 5659,
+        "RecalcStyleDuration": 2.624064,
+        "TaskDuration": 12.146317999999999
+      },
+      "focusEntryCpuMs": {
+        "median": 5.399999998509884,
+        "p95": 6.399999998509884,
+        "p99": 6.399999998509884,
+        "max": 6.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12,
+        "p95": 20,
+        "p99": 20,
+        "max": 20
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/0-baseline/report.json"
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:45:01.045Z",
+      "ended": "2026-11-17T19:46:09.707Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1016,
+      "frameMs": {
+        "median": 33.29999999999927,
+        "p95": 66.70000000000073,
+        "p99": 83.40000000000146,
+        "max": 150
+      },
+      "over33": 89,
+      "over50": 75,
+      "submitCpuMs": {
+        "median": 18.599999994039536,
+        "p95": 25.900000005960464,
+        "p99": 48.100000001490116,
+        "max": 73.20000000298023
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1074,
+          "totalMs": 784.6999999135733,
+          "median": 0.7000000029802322,
+          "p95": 1.6000000014901161,
+          "max": 6.5
+        },
+        "labels": {
+          "calls": 1074,
+          "totalMs": 669.3000000566244,
+          "median": 0.6000000014901161,
+          "p95": 1.2999999970197678,
+          "max": 2.5
+        },
+        "tail": {
+          "calls": 1074,
+          "totalMs": 98.79999993741512,
+          "median": 0,
+          "p95": 0.6999999955296516,
+          "max": 1.1999999955296516
+        }
+      },
+      "layout": {
+        "LayoutCount": 1551,
+        "LayoutDuration": 0.407302,
+        "RecalcStyleCount": 3183,
+        "RecalcStyleDuration": 6.819805,
+        "TaskDuration": 31.940388
+      },
+      "focusEntryCpuMs": {
+        "median": 25.299999997019768,
+        "p95": 31.399999998509884,
+        "p99": 31.399999998509884,
+        "max": 31.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 49.80000000447035,
+        "p95": 73.20000000298023,
+        "p99": 73.20000000298023,
+        "max": 73.20000000298023
+      },
+      "presentations": 28,
+      "actions": 25,
+      "ultimates": 5,
+      "logEvents": 161,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/0-baseline/report.json"
+    },
+    {
+      "index": 1,
+      "mode": "text",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:46:09.977Z",
+      "ended": "2026-11-17T19:47:18.623Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.5,
+        "p99": 12.300000004470348,
+        "max": 20.69999999552965
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1919,
+          "totalMs": 311.9999997243285,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 1.8000000044703484
+        },
+        "labels": {
+          "calls": 1919,
+          "totalMs": 263.6000000908971,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.6000000014901161
+        },
+        "tail": {
+          "calls": 1919,
+          "totalMs": 24.900000035762787,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.20000000298023224
+        }
+      },
+      "layout": {
+        "LayoutCount": 2742,
+        "LayoutDuration": 0.107004,
+        "RecalcStyleCount": 5652,
+        "RecalcStyleDuration": 0.679391,
+        "TaskDuration": 10.128007
+      },
+      "focusEntryCpuMs": {
+        "median": 5.399999998509884,
+        "p95": 6.199999995529652,
+        "p99": 6.199999995529652,
+        "max": 6.199999995529652
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12.099999994039536,
+        "p95": 19.299999997019768,
+        "p99": 19.299999997019768,
+        "max": 19.299999997019768
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/1-text/report.json"
+    },
+    {
+      "index": 1,
+      "mode": "text",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:46:09.977Z",
+      "ended": "2026-11-17T19:47:18.623Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1245,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.60000000000036,
+        "p99": 83.39999999999782,
+        "max": 149.89999999999782
+      },
+      "over33": 89,
+      "over50": 72,
+      "submitCpuMs": {
+        "median": 13.700000002980232,
+        "p95": 20.100000001490116,
+        "p99": 43.19999999552965,
+        "max": 70.80000000447035
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1311,
+          "totalMs": 960.6000000163913,
+          "median": 0.7000000029802322,
+          "p95": 1.6000000014901161,
+          "max": 6.199999995529652
+        },
+        "labels": {
+          "calls": 1311,
+          "totalMs": 824.0000000149012,
+          "median": 0.6999999955296516,
+          "p95": 1.2999999970197678,
+          "max": 2.600000001490116
+        },
+        "tail": {
+          "calls": 1311,
+          "totalMs": 84.5999999716878,
+          "median": 0,
+          "p95": 0.5,
+          "max": 1.1000000014901161
+        }
+      },
+      "layout": {
+        "LayoutCount": 1878,
+        "LayoutDuration": 0.40162,
+        "RecalcStyleCount": 3890,
+        "RecalcStyleDuration": 2.289756,
+        "TaskDuration": 31.878073
+      },
+      "focusEntryCpuMs": {
+        "median": 25.100000001490116,
+        "p95": 33.600000001490116,
+        "p99": 33.600000001490116,
+        "max": 33.600000001490116
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 48,
+        "p95": 70.80000000447035,
+        "p99": 70.80000000447035,
+        "max": 70.80000000447035
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/1-text/report.json"
+    },
+    {
+      "index": 2,
+      "mode": "text",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:47:18.890Z",
+      "ended": "2026-11-17T19:48:27.540Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1799,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 33.29999999999927
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 2.9000000059604645,
+        "p95": 4.399999998509884,
+        "p99": 12.600000001490116,
+        "max": 20.100000001490116
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1918,
+          "totalMs": 314.699999794364,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 2.100000001490116
+        },
+        "labels": {
+          "calls": 1918,
+          "totalMs": 265.2000001221895,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.6000000014901161
+        },
+        "tail": {
+          "calls": 1918,
+          "totalMs": 24.200000077486038,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.20000000298023224
+        }
+      },
+      "layout": {
+        "LayoutCount": 2741,
+        "LayoutDuration": 0.105886,
+        "RecalcStyleCount": 5653,
+        "RecalcStyleDuration": 0.673212,
+        "TaskDuration": 10.058554
+      },
+      "focusEntryCpuMs": {
+        "median": 5.700000002980232,
+        "p95": 6.700000002980232,
+        "p99": 6.700000002980232,
+        "max": 6.700000002980232
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12.100000001490116,
+        "p95": 18.100000001490116,
+        "p99": 18.100000001490116,
+        "max": 18.100000001490116
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/2-text/report.json"
+    },
+    {
+      "index": 2,
+      "mode": "text",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:47:18.890Z",
+      "ended": "2026-11-17T19:48:27.540Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1221,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.60000000000036,
+        "p99": 83.39999999999964,
+        "max": 133.40000000000146
+      },
+      "over33": 89,
+      "over50": 72,
+      "submitCpuMs": {
+        "median": 14,
+        "p95": 20.299999997019768,
+        "p99": 44.29999999701977,
+        "max": 66.39999999850988
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1287,
+          "totalMs": 1011.2000001594424,
+          "median": 0.8000000044703484,
+          "p95": 1.6999999955296516,
+          "max": 6.299999997019768
+        },
+        "labels": {
+          "calls": 1287,
+          "totalMs": 832.4999997839332,
+          "median": 0.6999999955296516,
+          "p95": 1.3000000044703484,
+          "max": 2.5
+        },
+        "tail": {
+          "calls": 1287,
+          "totalMs": 76.70000007003546,
+          "median": 0,
+          "p95": 0.5,
+          "max": 1.1000000014901161
+        }
+      },
+      "layout": {
+        "LayoutCount": 1843,
+        "LayoutDuration": 0.353791,
+        "RecalcStyleCount": 3810,
+        "RecalcStyleDuration": 2.308486,
+        "TaskDuration": 31.851369000000002
+      },
+      "focusEntryCpuMs": {
+        "median": 25.799999997019768,
+        "p95": 33.399999998509884,
+        "p99": 33.399999998509884,
+        "max": 33.399999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 51.600000001490116,
+        "p95": 66.39999999850988,
+        "p99": 66.39999999850988,
+        "max": 66.39999999850988
+      },
+      "presentations": 28,
+      "actions": 25,
+      "ultimates": 5,
+      "logEvents": 161,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/2-text/report.json"
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:48:27.815Z",
+      "ended": "2026-11-17T19:49:36.537Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 4,
+        "p95": 5.600000001490116,
+        "p99": 12.799999997019768,
+        "max": 21.900000005960464
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1920,
+          "totalMs": 319.50000009685755,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 1.7000000029802322
+        },
+        "labels": {
+          "calls": 1920,
+          "totalMs": 260.29999989271164,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.7999999970197678
+        },
+        "tail": {
+          "calls": 1920,
+          "totalMs": 39.69999995082617,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.20000000298023224
+        }
+      },
+      "layout": {
+        "LayoutCount": 2749,
+        "LayoutDuration": 0.16514,
+        "RecalcStyleCount": 5660,
+        "RecalcStyleDuration": 2.636286,
+        "TaskDuration": 12.140636
+      },
+      "focusEntryCpuMs": {
+        "median": 5.199999995529652,
+        "p95": 5.600000001490116,
+        "p99": 5.600000001490116,
+        "max": 5.600000001490116
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12,
+        "p95": 19.600000001490116,
+        "p99": 19.600000001490116,
+        "max": 19.600000001490116
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/3-baseline/report.json"
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:48:27.815Z",
+      "ended": "2026-11-17T19:49:36.537Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1012,
+      "frameMs": {
+        "median": 33.29999999999927,
+        "p95": 66.70000000000073,
+        "p99": 83.5,
+        "max": 150
+      },
+      "over33": 94,
+      "over50": 72,
+      "submitCpuMs": {
+        "median": 18.400000005960464,
+        "p95": 25.899999998509884,
+        "p99": 49.599999994039536,
+        "max": 73.5
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1064,
+          "totalMs": 784.6000000759959,
+          "median": 0.7000000029802322,
+          "p95": 1.7000000029802322,
+          "max": 6.800000004470348
+        },
+        "labels": {
+          "calls": 1064,
+          "totalMs": 663.5999998301268,
+          "median": 0.6000000014901161,
+          "p95": 1.2999999970197678,
+          "max": 4.200000002980232
+        },
+        "tail": {
+          "calls": 1064,
+          "totalMs": 102.49999997764826,
+          "median": 0,
+          "p95": 0.7000000029802322,
+          "max": 1.5
+        }
+      },
+      "layout": {
+        "LayoutCount": 1539,
+        "LayoutDuration": 0.403287,
+        "RecalcStyleCount": 3155,
+        "RecalcStyleDuration": 6.795064,
+        "TaskDuration": 31.893165
+      },
+      "focusEntryCpuMs": {
+        "median": 25.600000001490116,
+        "p95": 30.899999998509884,
+        "p99": 30.899999998509884,
+        "max": 30.899999998509884
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 53.69999999552965,
+        "p95": 73.5,
+        "p99": 73.5,
+        "max": 73.5
+      },
+      "presentations": 28,
+      "actions": 25,
+      "ultimates": 5,
+      "logEvents": 161,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/3-baseline/report.json"
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:49:36.809Z",
+      "ended": "2026-11-17T19:50:45.516Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1800,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 33.29999999999927
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 4,
+        "p95": 5.5,
+        "p99": 13.200000002980232,
+        "max": 21.5
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1919,
+          "totalMs": 334.9999999627471,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 1.4000000059604645
+        },
+        "labels": {
+          "calls": 1919,
+          "totalMs": 262.2999998778105,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.5999999940395355
+        },
+        "tail": {
+          "calls": 1919,
+          "totalMs": 39.80000005662441,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.20000000298023224
+        }
+      },
+      "layout": {
+        "LayoutCount": 2747,
+        "LayoutDuration": 0.165459,
+        "RecalcStyleCount": 5659,
+        "RecalcStyleDuration": 2.635496,
+        "TaskDuration": 12.048369999999998
+      },
+      "focusEntryCpuMs": {
+        "median": 5.200000002980232,
+        "p95": 7.100000001490116,
+        "p99": 7.100000001490116,
+        "max": 7.100000001490116
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 13.200000002980232,
+        "p95": 19.80000000447035,
+        "p99": 19.80000000447035,
+        "max": 19.80000000447035
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/4-baseline/report.json"
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:49:36.809Z",
+      "ended": "2026-11-17T19:50:45.516Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 964,
+      "frameMs": {
+        "median": 33.29999999999927,
+        "p95": 83.29999999999927,
+        "p99": 100,
+        "max": 133.3000000000029
+      },
+      "over33": 96,
+      "over50": 75,
+      "submitCpuMs": {
+        "median": 19.399999998509884,
+        "p95": 27.69999999552965,
+        "p99": 51.399999998509884,
+        "max": 72.40000000596046
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1019,
+          "totalMs": 789.1000000461936,
+          "median": 0.7999999970197678,
+          "p95": 1.6999999955296516,
+          "max": 6.899999998509884
+        },
+        "labels": {
+          "calls": 1019,
+          "totalMs": 688.7000001966953,
+          "median": 0.7000000029802322,
+          "p95": 1.3999999985098839,
+          "max": 2.7999999970197678
+        },
+        "tail": {
+          "calls": 1019,
+          "totalMs": 94.69999999552965,
+          "median": 0,
+          "p95": 0.7000000029802322,
+          "max": 1.2000000029802322
+        }
+      },
+      "layout": {
+        "LayoutCount": 1482,
+        "LayoutDuration": 0.372191,
+        "RecalcStyleCount": 3024,
+        "RecalcStyleDuration": 6.917415,
+        "TaskDuration": 31.93534
+      },
+      "focusEntryCpuMs": {
+        "median": 26.099999994039536,
+        "p95": 32.69999999552965,
+        "p99": 32.69999999552965,
+        "max": 32.69999999552965
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 53.5,
+        "p95": 72.40000000596046,
+        "p99": 72.40000000596046,
+        "max": 72.40000000596046
+      },
+      "presentations": 28,
+      "actions": 25,
+      "ultimates": 5,
+      "logEvents": 161,
+      "override": {
+        "mode": "baseline",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "c702409ba124860f808dc6eefb21fdfcadf864789a7613e22e21d9c713434413"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/4-baseline/report.json"
+    },
+    {
+      "index": 5,
+      "mode": "text",
+      "rate": 1,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:50:45.803Z",
+      "ended": "2026-11-17T19:51:54.511Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1799,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 33.29999999999927
+      },
+      "over33": 0,
+      "over50": 0,
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.5,
+        "p99": 12.800000004470348,
+        "max": 20.899999998509884
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1918,
+          "totalMs": 315.7000000849366,
+          "median": 0.19999999552965164,
+          "p95": 0.30000000447034836,
+          "max": 1.5
+        },
+        "labels": {
+          "calls": 1918,
+          "totalMs": 262.3999999463558,
+          "median": 0.10000000149011612,
+          "p95": 0.20000000298023224,
+          "max": 0.7999999970197678
+        },
+        "tail": {
+          "calls": 1918,
+          "totalMs": 26.40000008791685,
+          "median": 0,
+          "p95": 0.10000000149011612,
+          "max": 0.10000000149011612
+        }
+      },
+      "layout": {
+        "LayoutCount": 2747,
+        "LayoutDuration": 0.105753,
+        "RecalcStyleCount": 5657,
+        "RecalcStyleDuration": 0.67419,
+        "TaskDuration": 10.060674
+      },
+      "focusEntryCpuMs": {
+        "median": 6,
+        "p95": 6.300000004470348,
+        "p99": 6.300000004470348,
+        "max": 6.300000004470348
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12.800000004470348,
+        "p95": 20.200000002980232,
+        "p99": 20.200000002980232,
+        "max": 20.200000002980232
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/5-text/report.json"
+    },
+    {
+      "index": 5,
+      "mode": "text",
+      "rate": 4,
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "utc": "2026-11-17T19:50:45.803Z",
+      "ended": "2026-11-17T19:51:54.511Z",
+      "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "samples": 1254,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.59999999999854,
+        "p99": 83.39999999999964,
+        "max": 133.29999999999927
+      },
+      "over33": 88,
+      "over50": 74,
+      "submitCpuMs": {
+        "median": 13.699999995529652,
+        "p95": 20,
+        "p99": 43.399999998509884,
+        "max": 68.5
+      },
+      "hud": {
+        "canvas": {
+          "calls": 1320,
+          "totalMs": 977.4000000879169,
+          "median": 0.7999999970197678,
+          "p95": 1.7000000029802322,
+          "max": 6.299999997019768
+        },
+        "labels": {
+          "calls": 1320,
+          "totalMs": 819.3999997079372,
+          "median": 0.6000000014901161,
+          "p95": 1.2999999970197678,
+          "max": 3.6999999955296516
+        },
+        "tail": {
+          "calls": 1320,
+          "totalMs": 88.09999998658895,
+          "median": 0,
+          "p95": 0.5999999940395355,
+          "max": 1.2000000029802322
+        }
+      },
+      "layout": {
+        "LayoutCount": 1890,
+        "LayoutDuration": 0.373972,
+        "RecalcStyleCount": 3913,
+        "RecalcStyleDuration": 2.338811,
+        "TaskDuration": 31.888026
+      },
+      "focusEntryCpuMs": {
+        "median": 26.100000001490116,
+        "p95": 29.100000001490116,
+        "p99": 29.100000001490116,
+        "max": 29.100000001490116
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 50,
+        "p95": 68.5,
+        "p99": 68.5,
+        "max": 68.5
+      },
+      "presentations": 29,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "override": {
+        "mode": "text",
+        "audit": true,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "346f2d5856bfb6e0d8abf6e4634b004e41c790ac715e4a2ec0735976b76cbee6"
+          }
+        }
+      },
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-text-play/5-text/report.json"
+    }
+  ]
+}
