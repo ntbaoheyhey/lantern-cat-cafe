@@ -10,3 +10,5 @@ Source4b4c41114; production19. No public writes, deployments, ART edits or gate 
 | G-REG | FAIL only the same7ART-owned tests; server742/rules1409/web2701passing; typecheck,3-fixture probe,build exit0. Probe is not approved class baseline. | S11/qa-cold-layout-regression-review-1.json |
 
 Self-score:7/10for the scoped QA corrections. Two small defects fixed and cold transfer improved with source-bound evidence; load budget still fails and needs ART delivery. No overall G-UI/G-REHEARSAL/G-AUDIO/G-CLASS PASS claimed. No new screenshots; image-open budget unchanged.
+
+QA-6: `campaign-manifest --check` nowPASS159sources with independent Git/worktree agreement. Three local databases confirm explicit policy transition and stale-journal rollback; source hash update alone does not grant authority. Evidence `campaign-policy-check-1.json`. Runbook includes exact migration hashes, read-only preflight and the already existing reviewed SQL transaction. Self-score9/10for this scoped fix; hosted policy transition is user-only and existing old campaigns still require a reviewed state migration.

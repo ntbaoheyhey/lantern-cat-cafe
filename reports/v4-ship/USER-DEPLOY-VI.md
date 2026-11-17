@@ -108,6 +108,22 @@ open work/v3-shell/activate-demo.sql
 
 Đọc SQL, chạy trong Supabase SQL Editor trong 10 phút. Script chỉ tạo file. File `work/v3-shell/fuji-start-block.txt` là mốc lịch sử có sẵn dùng chung; giữ nó giữa các lần deploy. Nếu v3 đã hoạt động mà file mất, khôi phục mốc cũ từ bằng chứng triển khai trước khi dùng; không chọn block mới làm mất lịch sử. Nếu campaign fingerprint khác hoặc thiếu quỹ, giữ issuer tắt và xử lý tương thích; không xóa người chơi hoặc giảm `reserved_net`.
 
+### Đối chiếu rules và chuyển policy (QA-6)
+
+Manifest hiện tại là `1ce8f46d7bd5e346e4d66964d61157dae07df1b3fdd26550f8746450ca641c82`; bản cũ là `ba1bf19667c03038f77cda94c8998b9baa2659d1381ef7cb99b56cc55bb96eea`. Lệnh `campaign-manifest.mjs --check` ở bước1 phải PASS. Chỉ cập nhật manifest trong source chưa đổi policy trong DB.
+
+Trong lúc issuer vẫn tắt, xem trạng thái bằng SQL chỉ đọc:
+
+```sql
+select source_id, rules_hash, enabled
+from public.chain_source_policies
+where source_id = 'campaign-journal-v1';
+select rules_hash, count(*) as campaigns
+from public.chain_campaigns group by rules_hash;
+```
+
+File `activate-demo.sql` vừa tạo ở bước3 chính là giao dịch chuyển policy sang hash mới, cùng các kiểm tra ngân sách đã nêu. Đọc rồi chạy file trong10phút; không tự sửa hash bằng một câu UPDATE riêng. Nếu có campaign mang hash cũ, giao dịch sẽ dừng và giữ nguyên người chơi, policy, ngân sách. Giữ issuer tắt và lập migration tương thích cho các campaign đó; không xóa/reset hoặc đổi nhãn hash của lịch sử. Nếu chưa có campaign cũ, giao dịch tạo/cập nhật policy mới và có thể chạy lại mà không reset tiến độ. Kiểm tra lại hai truy vấn trên trước bước4. Việc này không bật legacy campaign rewards.
+
 ## 4. Kiểm tra sponsor và bật backend
 
 Trong Secrets đặt đúng `SIWE_DOMAIN=taskbarhero-eight.vercel.app` và `SIWE_ALLOWED_ORIGIN=https://taskbarhero-eight.vercel.app`, hoặc host/origin production thật nếu thay đổi. Kiểm tra proxy/gateway bảo đảm hop cuối `x-forwarded-for` đáng tin trước khi bật guest/judge. Giữ quota 3 ví/IP/ngày và 50 ví/ngày.

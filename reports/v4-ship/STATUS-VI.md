@@ -1,8 +1,10 @@
-V4 SHIP — cập nhật 17/11, 09:17 giờ Việt Nam
-Đã lưu và đẩy phần việc dở dang; áp dụng mốc lưu tối đa20phút.
-Khách vào trận qua2nút, nhưng tải đầu còn29,54MB so với mục tiêu8MB.
-Đã giảm khoảng110KB bằng tải Hub khi cần; phần hình cần ART giảm tiếp.
-Đã sửa hướng dẫn:8Spool ->6YARN, giữ2trong pool.
-Sửa vị trí nguồn Routescan trên màn hẹp: thử30trường hợp, hai cỡ desktop không đổi vị trí. Bản production sau sửa còn cần kiểm tra.
-Còn7test phần ART lỗi; gate âm thanh/parity/economy chưa đạt hết. Không ghi PASS thay cho bằng chứng.
-Không deploy, không sửa contract, không thay thông số kinh tế.
+V4 SHIP — 17/11, 09:30 giờ Việt Nam
+Đã lưu và đẩy các mốc làm việc; tối đa 20 phút giữa hai mốc.
+Tải đầu còn 29,54 MB so với mục tiêu 8 MB; đã giảm khoảng 110 KB. ART cần giảm phần hình.
+Hướng dẫn đã đúng: 8 Spool → 6 YARN, giữ 2 trong pool.
+Nguồn Routescan nằm trong màn hình ở cả 10 trường hợp kiểm tra production; hai cỡ desktop giữ nguyên vị trí.
+Đã sửa manifest rules và kiểm tra chuyển policy trên 3 DB dùng thử; không đụng DB thật.
+Runbook nói rõ cách chuyển policy và giữ nguyên người chơi có rules cũ.
+Âm thanh: thử 120 cue cho thấy giảm độ trễ ước tính; 45 test engine đạt. Đang ghi 4 cảnh để kiểm tra bản thật.
+ART đã gửi sửa 7 test; tích hợp vào đợt 17/11 lúc 19:00 giờ Việt Nam theo lịch.
+Còn gate âm thanh, parity/economy và giới hạn tải chưa đóng. Không deploy hoặc sửa contract.
