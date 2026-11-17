@@ -2,7 +2,7 @@
 import {chromium,config} from '../../scripts/v3feel/browser-fixture.mjs';
 export {chromium,config};
 const root=process.cwd();
-export async function openFixture(browser,fixture,{width=1280,height=720,url='http://127.0.0.1:5990',fixedClock=true,setupPage}={}){
+export async function openFixture(browser,fixture,{width=1280,height=720,url='http://127.0.0.1:6310',fixedClock=true,setupPage}={}){
  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
  if(setupPage)await setupPage(page);
  const errors=[],blockedRequests=[];page.on('pageerror',e=>errors.push(e.message));

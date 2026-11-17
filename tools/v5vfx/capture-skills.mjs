@@ -79,8 +79,11 @@ try {
       samples.push({ms, ...audit});
     }
     const sheet = resolve(out, `${id}.jpg`);
-    execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-framerate', '6', '-i', resolve(dir, 'frame-%02d.png'),
-      '-vf', 'scale=480:-1,tile=4x3', '-frames:v', '1', '-q:v', '4', sheet]);
+    const reviewTimes = info.impact > 500 ? [850, 1100, 1280, 2199] : [150, 350, 470, 799];
+    const inputs = reviewTimes.flatMap(ms => ['-i', resolve(dir, `frame-${String(times.indexOf(ms)).padStart(2, '0')}.png`)]);
+    execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', ...inputs, '-filter_complex',
+      '[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]',
+      '-map', '[v]', '-frames:v', '1', '-q:v', '4', sheet]);
     report.sheets.push({id, archive: /-[23]$/.test(id), ...info, sheet, samples});
     await writeFile(resolve(out, 'capture.json'), JSON.stringify(report, null, 2));
     if (!samples.some(s => s.ms === info.impact && s.draws > 0)) throw Error(`Missing timeline contact: ${id}`);
