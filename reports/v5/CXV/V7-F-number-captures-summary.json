@@ -1,0 +1,52 @@
+{
+  "started": "2026-11-17T17:02:54.639Z",
+  "finished": "2026-11-17T17:03:09.635Z",
+  "sourceCommit": "b6281f210c01625215798fbd696b7d21eb3e5d2b",
+  "runtimePatchSha256": "abf01b9dee972764f78ced000db0f43dd9d989dcdda5449b06dbb49156bbd21b",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "12 exact timestamps per action; critical and triple-stack modify only isolated renderer fixture events, not game rules.",
+  "pass": true,
+  "errors": [],
+  "cases": [
+    {
+      "name": "normal",
+      "samples": 12,
+      "issues": [],
+      "maxLabels": 1,
+      "synthetic": false
+    },
+    {
+      "name": "critical",
+      "samples": 12,
+      "issues": [],
+      "maxLabels": 1,
+      "synthetic": true
+    },
+    {
+      "name": "heal",
+      "samples": 12,
+      "issues": [],
+      "maxLabels": 1,
+      "synthetic": false
+    },
+    {
+      "name": "stack",
+      "samples": 12,
+      "issues": [],
+      "maxLabels": 3,
+      "synthetic": true
+    },
+    {
+      "name": "critical-reduced",
+      "samples": 12,
+      "issues": [],
+      "maxLabels": 1,
+      "synthetic": true
+    }
+  ],
+  "review": {
+    "utc": "2026-11-17T17:04:55.369882+00:00",
+    "images": "five distinct1024x576 contact+100ms scenes inspected once",
+    "finding": "damage,critical,heal,three-label stack and reduced critical remain legible; no face or label collisions across60samples"
+  }
+}

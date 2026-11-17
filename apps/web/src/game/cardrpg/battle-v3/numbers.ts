@@ -16,13 +16,14 @@ export class BattleNumbers {
  readonly drawn:{key:string;id:string;text:string;x:number;y:number;width:number;height:number;glyphHeight:number;kind:string;born:number}[]=[];
  private c:CanvasRenderingContext2D;private anchors:readonly Anchor[]=[];
  private atlases=new Map<string,Atlas>();private chars='0123456789−+!CRIT◇×';
+ private glyphMetrics?:{font:string;glyphs:Map<string,Glyph>;digitHeight:number};
  private plan:EffectPlan|null=null;private pending:{id:string;labels:EffectPlan['events'][number][]}[]=[];
  private shown=new Set<string>();private bursts:Burst[]=[];private now=0;private last=0;private frameAt=-1;
  private motion:NumberMotion={scale:1,rise:0,alpha:0,accent:0};
  constructor(private host:HTMLElement){
   this.c=this.canvas.getContext('2d')!;this.canvas.dataset.puppetNumbers='true';this.canvas.setAttribute('aria-hidden','true');
   Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'6'});
-  host.appendChild(this.canvas);void document.fonts?.ready.then(()=>this.atlases.clear());
+  host.appendChild(this.canvas);void document.fonts?.ready.then(()=>{this.atlases.clear();this.glyphMetrics=undefined;});
  }
  setAnchors(anchors:readonly Anchor[]){this.anchors=anchors;}
  private atlas(color:string){
@@ -32,13 +33,18 @@ export class BattleNumbers {
   c.font=`800 96px ${font}`;c.textAlign='center';c.textBaseline='middle';c.lineJoin='round';
   const g=c.createLinearGradient(0,35,0,112);g.addColorStop(0,'#fffef0');g.addColorStop(.38,'#fff1ac');g.addColorStop(.58,color);g.addColorStop(1,color);
   c.fillStyle=g;c.strokeStyle='#301b35';c.lineWidth=7;
-  const glyphs=new Map<string,Glyph>();
+  // Opaque palette colors share the same alpha silhouette and measured spacing.
+  // Keep painting each color; reuse only ink metrics for the same loaded font.
+  const solid=/^#[\da-f]{6}$/i.test(color),metrics=solid&&this.glyphMetrics?.font===font?this.glyphMetrics:undefined;
+  const glyphs=metrics?.glyphs??new Map<string,Glyph>();
   [...this.chars].forEach((ch,i)=>{c.strokeText(ch,i*96+48,76);c.fillText(ch,i*96+48,76);
+   if(metrics)return;
    const px=c.getImageData(i*96,0,96,144).data;let x0=96,y0=144,x1=0,y1=0;
    for(let y=0;y<144;y++)for(let x=0;x<96;x++)if(px[(y*96+x)*4+3]!>16){x0=Math.min(x0,x);x1=Math.max(x1,x);y0=Math.min(y0,y);y1=Math.max(y1,y);}
    glyphs.set(ch,{x:i*96+x0,y:y0,width:x1-x0+1,height:y1-y0+1});
   });
-  const digitHeight=Math.max(...[...'0123456789'].map(ch=>glyphs.get(ch)!.height)),atlas={canvas,glyphs,digitHeight};this.atlases.set(color,atlas);return atlas;
+  const digitHeight=metrics?.digitHeight??Math.max(...[...'0123456789'].map(ch=>glyphs.get(ch)!.height)),atlas={canvas,glyphs,digitHeight};
+  if(solid&&!metrics)this.glyphMetrics={font,glyphs,digitHeight};this.atlases.set(color,atlas);return atlas;
  }
  private text(text:string,x:number,y:number,height:number,color:string){
   const atlas=this.atlas(color),s=height/atlas.digitHeight,glyphs=[...text].map(ch=>atlas.glyphs.get(ch)).filter((g):g is Glyph=>!!g);
@@ -117,5 +123,5 @@ export class BattleNumbers {
   while(this.bursts.filter(b=>b.id===burst.id).length>=3){const first=this.bursts.findIndex(b=>b.id===burst.id);this.bursts.splice(first,1);}
   this.bursts.push(burst);
  }
- dispose(){this.canvas.remove();delete this.host.dataset.puppetNumbers;this.atlases.clear();this.bursts.length=0;}
+ dispose(){this.canvas.remove();delete this.host.dataset.puppetNumbers;this.atlases.clear();this.glyphMetrics=undefined;this.bursts.length=0;}
 }

@@ -1,0 +1,49 @@
+{
+  "variant": "reuse",
+  "utc": "2026-11-17T16:58:56.927Z",
+  "source": "b6281f210c01625215798fbd696b7d21eb3e5d2b",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "method": "Same loaded font/browser at4x CPU; original runtime atlas versus batched-read prototype, interleaved fresh five-color builds. Compare every glyph rectangle and whole-atlas RGBA SHA256. This is CPU attribution, not FPS or production acceptance.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "exact": true,
+  "originalMedianMs": 40.399999998509884,
+  "batchedMedianMs": 18.100000001490116,
+  "pass": true,
+  "ended": "2026-11-17T16:58:59.672Z",
+  "rows": [
+    {
+      "batch": false,
+      "elapsedMs": 72.80000000447035,
+      "readbacks": 95
+    },
+    {
+      "batch": true,
+      "elapsedMs": 19.100000001490116,
+      "readbacks": 19
+    },
+    {
+      "batch": true,
+      "elapsedMs": 18.100000001490116,
+      "readbacks": 19
+    },
+    {
+      "batch": false,
+      "elapsedMs": 40.399999998509884,
+      "readbacks": 95
+    },
+    {
+      "batch": false,
+      "elapsedMs": 36.599999994039536,
+      "readbacks": 95
+    },
+    {
+      "batch": true,
+      "elapsedMs": 16.899999998509884,
+      "readbacks": 19
+    }
+  ],
+  "glyphMetricsExact": true,
+  "wholeAtlasRgbaExact": true
+}
