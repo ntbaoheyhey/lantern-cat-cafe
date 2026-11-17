@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-17T02:48:28.864566+00:00",
+  "sourceSha": "4b4c41114ea9795820aa9204023e0954a9810f84",
+  "run": "1-390x844",
+  "completed": "2026-11-17T02:42:23.668Z",
+  "receiptCount": 18,
+  "independentLocalRpcVerified": true,
+  "walletProofReady": true,
+  "layoutsChecked": 11,
+  "landingAndWalletProofScreenshotsInspected": true,
+  "visualObservation": "390px landing shows the Routescan attribution fully within the panel. Wallet proof shows 11.75 YARN, owned Paw Charm/Cafe Deed, 15 transactions and visible receipt labels. No horizontal overflow or clipped elements at any of the eleven checkpoints.",
+  "errors": [],
+  "failedRequests": [],
+  "failedAssertions": [
+    {
+      "name": "cold_visible_battle_transfer_under_8MB",
+      "pass": false,
+      "inFlight": 0
+    },
+    {
+      "name": "cold_scene_images_ready_transfer_under_8MB",
+      "pass": false,
+      "inFlight": 0,
+      "definition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate"
+    }
+  ],
+  "scope": "Owned local Anvil receipts; no public Fuji explorer proof claimed.",
+  "findingVerdicts": {
+    "QA-4": "fixed at 4b4c4111",
+    "QA-2": "open: transfer exceeds 8 MB"
+  }
+}

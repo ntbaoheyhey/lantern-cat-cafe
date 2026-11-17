@@ -1,0 +1,26 @@
+{
+  "started": "2026-11-17T02:46:41.198319+00:00",
+  "targetSha": "dfce473f976e0bdf592c01b47e6077978d6070bc",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@taskbar-hero/web",
+    "exec",
+    "vitest",
+    "run",
+    "src/game/cardrpg/spine/cat-presentation.test.ts",
+    "src/game/cardrpg/spine/outcome-labels.test.ts",
+    "--reporter=dot"
+  ],
+  "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/art-test-recheck-dfce473f.log",
+  "scope": "Independent execution of the exact repaired repository test files; not an ART harness or a full SHIP root-suite pass.",
+  "ended": "2026-11-17T02:46:42.688688+00:00",
+  "exitCode": 0,
+  "endingSha": "dfce473f976e0bdf592c01b47e6077978d6070bc",
+  "summary": [
+    "Test Files  2 passed (2)",
+    "Tests  13 passed (13)",
+    "Duration  1.00s (environment 61%, transform 25%, import 11%, tests 2%)"
+  ],
+  "status": "PASS"
+}

@@ -1,21 +1,16 @@
-# QA execution anchor — 2026-11-17T02:15:36.731104+00:00
-ACTIVE: Q2 current-target independent desktop/phone recheck running; reserve failure QA8 complete and rollback verified.
-NEXT 1: Inspect recheck PID35682, work/v4qa/jobs/recheck-current-2.log and Q2/current-build-2-recheck.json when finished; inspect new screenshots before closing QA2/QA4.
-NEXT 2: Record source4b4c4111 artifact size/transfer/top10 and current finding verdicts; finalize Q2 matrix/status/queue and checkpoint.
-NEXT 3: Begin Q3 LEARN then snapshot export from immutable latest SHIP target, local single commit, redacted scans and fresh quick-start checks.
-RUNNING: production2 PID35291 work/v4qa/jobs/production-2.log; recheck PID35682 work/v4qa/jobs/recheck-current-2.log; max2/current2.
-FINISHED: cold PID14675; post-cold PID21099 (completed02:09:07UTC); never relaunch or regenerate verified metadata.
-LAST PUSH: 2026-11-17T02:29:11.458449+00:00 dcbb67ecd15b0f91915de24085783aa249b819ea
-TARGET SHIP runtime: 4b4c41114ea9795820aa9204023e0954a9810f84; build2 ready with metadata. Priorb1e4398a evidence preserved separately.
-TARGET ART: 5aa7c81aa83a4bcca7219dcec52607f97b80ebf7; two QA5test files changed; independently execute after current fixture releases; do not use ART harness verdict.
-FIXTURE: owned production preview6200/API6201/Anvil6202 configured chain43113 (verified owned anvil/v1.8.6). Funding fault snapshots and restores this local fixture only.
-Q1 ENDED02:05:57UTC: three paths,54successful local receipts;12JPEGs; transferFAIL; phone attributionQA4; desktop closed-audio flags false positives.
-Q2 PASS: typecheck/Supabase/Forge/icons/build. FAIL: root7presentation tests (QA5ART), manifest, typography (triage ongoing).
-Q2 metadata final:7942files/248741169bytes; endpoints and runtime/index preservation verified; completed evidence pushed.
-OPEN: QA2transfer/QA4phone/QA7typography/QA8reserve SHIP; QA5tests ART. QA1fixed52aaaba39; QA3fixed4b4c4111; QA6fixed46e4768b.
-PUBLIC: reserve candidate unconfirmed; no public transaction. Vercel upload-size concern conditional on plan/packaging.
-CHECKPOINT: noSTOP/noQA pause/noactualDEPLOYED line at02:14UTC; inspect next checkpoint. Q2 timebox ends~03:23:48UTC.
-
-Prior reserve attempt1 stopped before mutation on incorrect31337 assumption; preserved Q2/reserve-fault-reproduction.json. Attempt2 verifies owned process, Anvil identity and local receipt before changing balance.
-LATEST SHIP source46e4768b: QA6 manifest fixed by own exact-script rerun; audio latency changed, runtime stays4b4c4111. New-tip source review Q2/open-findings-recheck-46e4768b.json.
-ART QA5 next: after desktop/phone run ends, stop owned production2 before switching scratch clone to5aa7c81aa83a4bcca7219dcec52607f97b80ebf7; run prepared tools/v4qa/recheck-art-tests.py detached nice15. Lockfile/web package dependencies unchanged; root scripts differ only. No ART verdict used.
+# QA execution anchor — 2026-11-17T02:49:10.457756+00:00
+ACTIVE: Q2 completed; begin Q3 LEARN and snapshot rehearsal immediately.
+NEXT 1: Read Q3 work-order lines68-73, inspect README/snapshot prerequisites, record LEARN/Q3.md and timebox90min.
+NEXT 2: Export immutable latest SHIP tree to authorized snapshot directory, ONE local commit, no remote/push; redacted dir/git scans; fresh README install/test/build/dev check.
+NEXT 3: Finish Q3 Vietnamese option and checkpoint, then Q5 live-smoke kit/3local proofs and Q6 film/submission critique while Q4 time triggers are pending.
+RUNNING: none. Production2 PID35291 stopped only after command ownership and completed browser verified; ports6200/6201/6202 closed. ART test PID40204 finished PASS.
+LAST VERIFIED PUSH: 2026-11-17T02:45:14.744398+00:00 2a31bd4a7f06d8b8d57eb73a9bec609597e3e224. This file is updated before each checkpoint; work/v4qa/last-push.txt is authoritative afterward.
+SHIP SOURCE: da3323ba9ce10ababc5519511d40dc9592febfe3; ART SOURCE: dfce473f976e0bdf592c01b47e6077978d6070bc. Snapshot target must be freshly pinned and recorded.
+SCRATCH CLONE: detached ART dfce473f976e0bdf592c01b47e6077978d6070bc; do not start SHIP fixture until repinned and rebuilt.
+RUNTIME EVIDENCE:4b4c41114ea9795820aa9204023e0954a9810f84 production2; earlierb1e4398a evidence preserved. Anvil owned fixture uses43113, not31337; verify ownership/client before local writes.
+Q2 DONE: Q2/RUNBOOK-FINDINGS.md. Both current desktop/phone18verified local receipts, no errors/layout failures. Screenshots inspected. Transfer29.54MB still FAIL.
+OPEN SHIP: QA-8reserve and QA-2transfer. QA-4fixed4b4c4111; QA-7fixedda3323ba; QA-6fixed46e4768b; QA-3fixed4b4c4111; QA-1fixed52aaaba39.
+ART QA-5: independently repaired13/13tests ondfce473f; SHIP integration/full-suite PASS not established; verify at Q4.
+PUBLIC/HOSTED: no Fuji writes, no deployments/auth settings; public explorer proof and hosted packaging/migration unverified.
+CHECKPOINT: inspect STOP-V4QA/INBOX/UTC/SHIP deployment line each checkpoint. No stop or DEPLOYED observed on resume.
+TRIGGERS UTC:17Nov12sync1/latest14;18Nov09pre-R2;19Nov10:30+12freeze;20NovactualDEPLOYED;22–29daily;end29Nov12. Follow Q8 only when Q1–Q7 await triggers.

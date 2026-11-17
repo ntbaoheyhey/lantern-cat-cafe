@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-17T02:47:38.691746+00:00",
+  "targetSha": "da3323ba9ce10ababc5519511d40dc9592febfe3",
+  "exportedFiles": 1060,
+  "archiveSha256": "4994b7a711a392d2830acb50fbbdc8cb40a307eb9148dcd93f43f31140e91bc2",
+  "scope": "Exact committed checker, repository tests, source and font inputs exported into QA-owned scratch.",
+  "results": [
+    {
+      "command": [
+        "node",
+        "scripts/ui/check-typography.mjs"
+      ],
+      "exitCode": 0,
+      "output": "{\n  \"bytes\": 82456,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/ui/check-typography.test.mjs"
+      ],
+      "exitCode": 0,
+      "output": "\u2714 token consumers preserve centralized faces without accepting arbitrary families (1.165958ms)\n\u2714 a file named typography does not bypass central placement or the font payload limit (2.155833ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 54.203459\n"
+    }
+  ],
+  "status": "PASS"
+}
