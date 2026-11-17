@@ -1,0 +1,2901 @@
+{
+  "utc": "2026-11-17T23:13:46.955Z",
+  "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+  "order": [
+    "baseline",
+    "baked",
+    "baked",
+    "baseline",
+    "baseline",
+    "baked"
+  ],
+  "seriesSha256": "e0bd6549b19b84026d0a19412029c74d8ff135efe3677db45498002af7e53d83",
+  "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+  "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+  "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+  "snapshots": [
+    {
+      "name": "run-offline-number-production.mjs",
+      "sha256": "9b9ca99ad24b82773bff103e1cca6ef198972547512ca32fa7b1ba5f1a464be7"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "b43cdace15ab72606bac691ff6b3c538661a04baed19da7e7254b3e9f83fba26"
+    },
+    {
+      "name": "offline-number-prototype.mjs",
+      "sha256": "5c26566562ede7fbe9ea780218b984456572d51aa786f61637452c4827d7b83a"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+    }
+  ],
+  "pass": true,
+  "method": "Six sequential alternating 32s natural-speed seeded boss trials, each at 1x and 4x CPU. Identical preserved production artifact with an instance-only number-atlas prototype. Startup is first 2s; steady excludes startup; whole-run is also retained. Screenshots follow timing. 4x is a stress proxy.",
+  "limits": "Local intercepted PNG request/decode/canvas restoration is measured before gameplay at matching CPU throttle. It is not full cold-network/loading measurement. Task/script durations are elapsed CDP renderer metrics, not exclusive CPU. This is not native application integration or independent6301 judge acceptance. Fixed wall-time trials can finish at different animation states; plan/final comparisons are reported, not silently assumed.",
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "steadyRenderMedianMs": {
+        "median": 2.8000000044703484,
+        "min": 2.7999999970197678,
+        "max": 3,
+        "values": [
+          2.8000000044703484,
+          2.7999999970197678,
+          3
+        ]
+      },
+      "steadyRenderP95Ms": {
+        "median": 4.300000004470348,
+        "min": 4.300000004470348,
+        "max": 4.399999998509884,
+        "values": [
+          4.300000004470348,
+          4.300000004470348,
+          4.399999998509884
+        ]
+      },
+      "steadyFrameP95Ms": {
+        "median": 16.700000000004366,
+        "min": 16.700000000004366,
+        "max": 16.799999999995634,
+        "values": [
+          16.799999999995634,
+          16.700000000004366,
+          16.700000000004366
+        ]
+      },
+      "wholeRenderP95Ms": {
+        "median": 4.5,
+        "min": 4.399999998509884,
+        "max": 4.5,
+        "values": [
+          4.5,
+          4.399999998509884,
+          4.5
+        ]
+      },
+      "wholeFrameP95Ms": {
+        "median": 16.700000000004366,
+        "min": 16.700000000004366,
+        "max": 16.799999999999272,
+        "values": [
+          16.799999999999272,
+          16.700000000004366,
+          16.700000000004366
+        ]
+      },
+      "wholeLongFrames": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "startupRenderMedianMs": {
+        "median": 3.2000000029802322,
+        "min": 3.1999999955296516,
+        "max": 3.2999999970197678,
+        "values": [
+          3.2000000029802322,
+          3.1999999955296516,
+          3.2999999970197678
+        ]
+      },
+      "startupRenderP95Ms": {
+        "median": 14.199999995529652,
+        "min": 13.699999995529652,
+        "max": 15.5,
+        "values": [
+          15.5,
+          13.699999995529652,
+          14.199999995529652
+        ]
+      },
+      "startupRenderMaxMs": {
+        "median": 39.80000000447035,
+        "min": 39.69999999552965,
+        "max": 46.899999998509884,
+        "values": [
+          39.80000000447035,
+          46.899999998509884,
+          39.69999999552965
+        ]
+      },
+      "startupFrameP95Ms": {
+        "median": 16.800000000000182,
+        "min": 16.700000000000273,
+        "max": 16.800000000000182,
+        "values": [
+          16.800000000000182,
+          16.700000000000273,
+          16.800000000000182
+        ]
+      },
+      "firstRenderLatencyMs": {
+        "median": 9.600000001490116,
+        "min": 7.9000000059604645,
+        "max": 16.399999998509884,
+        "values": [
+          16.399999998509884,
+          7.9000000059604645,
+          9.600000001490116
+        ]
+      },
+      "decodeElapsedMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "restoreElapsedMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preparationTaskElapsedMs": {
+        "median": 0.9169999999999999,
+        "min": 0.71,
+        "max": 1.502,
+        "values": [
+          0.9169999999999999,
+          0.71,
+          1.502
+        ]
+      },
+      "preparationScriptElapsedMs": {
+        "median": 0.129,
+        "min": 0,
+        "max": 0.34600000000000003,
+        "values": [
+          0.129,
+          0,
+          0.34600000000000003
+        ]
+      },
+      "bytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "actions": {
+        "median": 26,
+        "min": 26,
+        "max": 26,
+        "values": [
+          26,
+          26,
+          26
+        ]
+      },
+      "ultimates": {
+        "median": 6,
+        "min": 6,
+        "max": 6,
+        "values": [
+          6,
+          6,
+          6
+        ]
+      },
+      "logEvents": {
+        "median": 171,
+        "min": 171,
+        "max": 171,
+        "values": [
+          171,
+          171,
+          171
+        ]
+      }
+    },
+    {
+      "rate": 1,
+      "mode": "baked",
+      "steadyRenderMedianMs": {
+        "median": 2.899999998509884,
+        "min": 2.7999999970197678,
+        "max": 2.899999998509884,
+        "values": [
+          2.899999998509884,
+          2.7999999970197678,
+          2.899999998509884
+        ]
+      },
+      "steadyRenderP95Ms": {
+        "median": 4.299999997019768,
+        "min": 4.299999997019768,
+        "max": 4.799999997019768,
+        "values": [
+          4.299999997019768,
+          4.299999997019768,
+          4.799999997019768
+        ]
+      },
+      "steadyFrameP95Ms": {
+        "median": 16.700000000004366,
+        "min": 16.700000000004366,
+        "max": 16.799999999999272,
+        "values": [
+          16.700000000004366,
+          16.700000000004366,
+          16.799999999999272
+        ]
+      },
+      "wholeRenderP95Ms": {
+        "median": 4.399999998509884,
+        "min": 4.300000004470348,
+        "max": 5,
+        "values": [
+          4.399999998509884,
+          4.300000004470348,
+          5
+        ]
+      },
+      "wholeFrameP95Ms": {
+        "median": 16.700000000004366,
+        "min": 16.700000000004366,
+        "max": 16.799999999999272,
+        "values": [
+          16.700000000004366,
+          16.700000000004366,
+          16.799999999999272
+        ]
+      },
+      "wholeLongFrames": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "startupRenderMedianMs": {
+        "median": 3.1999999955296516,
+        "min": 3,
+        "max": 3.2999999970197678,
+        "values": [
+          3.1999999955296516,
+          3,
+          3.2999999970197678
+        ]
+      },
+      "startupRenderP95Ms": {
+        "median": 14.300000004470348,
+        "min": 13.600000001490116,
+        "max": 15.399999998509884,
+        "values": [
+          13.600000001490116,
+          14.300000004470348,
+          15.399999998509884
+        ]
+      },
+      "startupRenderMaxMs": {
+        "median": 40.80000000447035,
+        "min": 40.20000000298023,
+        "max": 41,
+        "values": [
+          40.20000000298023,
+          40.80000000447035,
+          41
+        ]
+      },
+      "startupFrameP95Ms": {
+        "median": 16.799999999999727,
+        "min": 16.799999999999272,
+        "max": 16.800000000000182,
+        "values": [
+          16.799999999999727,
+          16.800000000000182,
+          16.799999999999272
+        ]
+      },
+      "firstRenderLatencyMs": {
+        "median": 10,
+        "min": 8.399999998509884,
+        "max": 13.899999998509884,
+        "values": [
+          13.899999998509884,
+          8.399999998509884,
+          10
+        ]
+      },
+      "decodeElapsedMs": {
+        "median": 4.799999997019768,
+        "min": 3.3000000044703484,
+        "max": 8.5,
+        "values": [
+          8.5,
+          3.3000000044703484,
+          4.799999997019768
+        ]
+      },
+      "restoreElapsedMs": {
+        "median": 0.5,
+        "min": 0.3999999985098839,
+        "max": 0.5,
+        "values": [
+          0.5,
+          0.3999999985098839,
+          0.5
+        ]
+      },
+      "preparationTaskElapsedMs": {
+        "median": 2.245,
+        "min": 2.16,
+        "max": 3.632,
+        "values": [
+          3.632,
+          2.16,
+          2.245
+        ]
+      },
+      "preparationScriptElapsedMs": {
+        "median": 0.161,
+        "min": 0.15,
+        "max": 0.85,
+        "values": [
+          0.85,
+          0.15,
+          0.161
+        ]
+      },
+      "bytes": {
+        "median": 54987,
+        "min": 54987,
+        "max": 54987,
+        "values": [
+          54987,
+          54987,
+          54987
+        ]
+      },
+      "actions": {
+        "median": 26,
+        "min": 26,
+        "max": 26,
+        "values": [
+          26,
+          26,
+          26
+        ]
+      },
+      "ultimates": {
+        "median": 6,
+        "min": 6,
+        "max": 6,
+        "values": [
+          6,
+          6,
+          6
+        ]
+      },
+      "logEvents": {
+        "median": 171,
+        "min": 171,
+        "max": 171,
+        "values": [
+          171,
+          171,
+          171
+        ]
+      }
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "steadyRenderMedianMs": {
+        "median": 13.299999997019768,
+        "min": 13.100000001490116,
+        "max": 13.399999998509884,
+        "values": [
+          13.100000001490116,
+          13.299999997019768,
+          13.399999998509884
+        ]
+      },
+      "steadyRenderP95Ms": {
+        "median": 20.099999994039536,
+        "min": 19.700000002980232,
+        "max": 20.600000001490116,
+        "values": [
+          19.700000002980232,
+          20.099999994039536,
+          20.600000001490116
+        ]
+      },
+      "steadyFrameP95Ms": {
+        "median": 33.400000000001455,
+        "min": 33.400000000001455,
+        "max": 33.400000000001455,
+        "values": [
+          33.400000000001455,
+          33.400000000001455,
+          33.400000000001455
+        ]
+      },
+      "wholeRenderP95Ms": {
+        "median": 20.5,
+        "min": 20.399999998509884,
+        "max": 20.899999998509884,
+        "values": [
+          20.399999998509884,
+          20.5,
+          20.899999998509884
+        ]
+      },
+      "wholeFrameP95Ms": {
+        "median": 33.5,
+        "min": 33.400000000001455,
+        "max": 49.89999999999782,
+        "values": [
+          33.5,
+          49.89999999999782,
+          33.400000000001455
+        ]
+      },
+      "wholeLongFrames": {
+        "median": 22,
+        "min": 18,
+        "max": 24,
+        "values": [
+          24,
+          18,
+          22
+        ]
+      },
+      "startupRenderMedianMs": {
+        "median": 16.200000002980232,
+        "min": 15.899999998509884,
+        "max": 16.599999994039536,
+        "values": [
+          16.200000002980232,
+          16.599999994039536,
+          15.899999998509884
+        ]
+      },
+      "startupRenderP95Ms": {
+        "median": 48.29999999701977,
+        "min": 47.20000000298023,
+        "max": 54.600000001490116,
+        "values": [
+          47.20000000298023,
+          54.600000001490116,
+          48.29999999701977
+        ]
+      },
+      "startupRenderMaxMs": {
+        "median": 136.29999999701977,
+        "min": 135.39999999850988,
+        "max": 148.80000000447035,
+        "values": [
+          136.29999999701977,
+          148.80000000447035,
+          135.39999999850988
+        ]
+      },
+      "startupFrameP95Ms": {
+        "median": 66.70000000000027,
+        "min": 66.69999999999982,
+        "max": 83.30000000000018,
+        "values": [
+          66.70000000000027,
+          83.30000000000018,
+          66.69999999999982
+        ]
+      },
+      "firstRenderLatencyMs": {
+        "median": 21,
+        "min": 19.299999997019768,
+        "max": 22.19999999552965,
+        "values": [
+          19.299999997019768,
+          22.19999999552965,
+          21
+        ]
+      },
+      "decodeElapsedMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "restoreElapsedMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "preparationTaskElapsedMs": {
+        "median": 4.347,
+        "min": 2.245,
+        "max": 7.969,
+        "values": [
+          2.245,
+          7.969,
+          4.347
+        ]
+      },
+      "preparationScriptElapsedMs": {
+        "median": 0,
+        "min": 0,
+        "max": 0.039,
+        "values": [
+          0,
+          0.039,
+          0
+        ]
+      },
+      "bytes": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0
+        ]
+      },
+      "actions": {
+        "median": 26,
+        "min": 26,
+        "max": 26,
+        "values": [
+          26,
+          26,
+          26
+        ]
+      },
+      "ultimates": {
+        "median": 6,
+        "min": 6,
+        "max": 6,
+        "values": [
+          6,
+          6,
+          6
+        ]
+      },
+      "logEvents": {
+        "median": 171,
+        "min": 171,
+        "max": 171,
+        "values": [
+          171,
+          171,
+          171
+        ]
+      }
+    },
+    {
+      "rate": 4,
+      "mode": "baked",
+      "steadyRenderMedianMs": {
+        "median": 13.200000002980232,
+        "min": 13.100000001490116,
+        "max": 13.5,
+        "values": [
+          13.100000001490116,
+          13.200000002980232,
+          13.5
+        ]
+      },
+      "steadyRenderP95Ms": {
+        "median": 20.5,
+        "min": 19.899999998509884,
+        "max": 20.69999999552965,
+        "values": [
+          19.899999998509884,
+          20.5,
+          20.69999999552965
+        ]
+      },
+      "steadyFrameP95Ms": {
+        "median": 33.400000000001455,
+        "min": 33.400000000001455,
+        "max": 49.89999999999782,
+        "values": [
+          33.400000000001455,
+          33.400000000001455,
+          49.89999999999782
+        ]
+      },
+      "wholeRenderP95Ms": {
+        "median": 21.100000001490116,
+        "min": 20.600000001490116,
+        "max": 21.600000001490116,
+        "values": [
+          20.600000001490116,
+          21.100000001490116,
+          21.600000001490116
+        ]
+      },
+      "wholeFrameP95Ms": {
+        "median": 49.89999999999782,
+        "min": 33.5,
+        "max": 50,
+        "values": [
+          49.89999999999782,
+          33.5,
+          50
+        ]
+      },
+      "wholeLongFrames": {
+        "median": 19,
+        "min": 18,
+        "max": 20,
+        "values": [
+          19,
+          18,
+          20
+        ]
+      },
+      "startupRenderMedianMs": {
+        "median": 16.100000001490116,
+        "min": 16,
+        "max": 16.30000000447035,
+        "values": [
+          16.100000001490116,
+          16,
+          16.30000000447035
+        ]
+      },
+      "startupRenderP95Ms": {
+        "median": 51.29999999701977,
+        "min": 44.70000000298023,
+        "max": 58.399999998509884,
+        "values": [
+          58.399999998509884,
+          44.70000000298023,
+          51.29999999701977
+        ]
+      },
+      "startupRenderMaxMs": {
+        "median": 134.60000000149012,
+        "min": 123.20000000298023,
+        "max": 136.10000000149012,
+        "values": [
+          134.60000000149012,
+          123.20000000298023,
+          136.10000000149012
+        ]
+      },
+      "startupFrameP95Ms": {
+        "median": 66.70000000000005,
+        "min": 66.60000000000036,
+        "max": 66.70000000000027,
+        "values": [
+          66.70000000000005,
+          66.60000000000036,
+          66.70000000000027
+        ]
+      },
+      "firstRenderLatencyMs": {
+        "median": 20.5,
+        "min": 19.899999998509884,
+        "max": 20.69999999552965,
+        "values": [
+          20.5,
+          19.899999998509884,
+          20.69999999552965
+        ]
+      },
+      "decodeElapsedMs": {
+        "median": 5.100000001490116,
+        "min": 4.699999995529652,
+        "max": 5.199999995529652,
+        "values": [
+          4.699999995529652,
+          5.199999995529652,
+          5.100000001490116
+        ]
+      },
+      "restoreElapsedMs": {
+        "median": 1.8000000044703484,
+        "min": 0.6000000014901161,
+        "max": 2.600000001490116,
+        "values": [
+          0.6000000014901161,
+          1.8000000044703484,
+          2.600000001490116
+        ]
+      },
+      "preparationTaskElapsedMs": {
+        "median": 10.190999999999999,
+        "min": 7.8999999999999995,
+        "max": 11.068999999999999,
+        "values": [
+          11.068999999999999,
+          10.190999999999999,
+          7.8999999999999995
+        ]
+      },
+      "preparationScriptElapsedMs": {
+        "median": 1.832,
+        "min": 0.156,
+        "max": 2.088,
+        "values": [
+          1.832,
+          2.088,
+          0.156
+        ]
+      },
+      "bytes": {
+        "median": 54987,
+        "min": 54987,
+        "max": 54987,
+        "values": [
+          54987,
+          54987,
+          54987
+        ]
+      },
+      "actions": {
+        "median": 26,
+        "min": 26,
+        "max": 26,
+        "values": [
+          26,
+          26,
+          26
+        ]
+      },
+      "ultimates": {
+        "median": 6,
+        "min": 6,
+        "max": 6,
+        "values": [
+          6,
+          6,
+          6
+        ]
+      },
+      "logEvents": {
+        "median": 171,
+        "min": 171,
+        "max": 171,
+        "values": [
+          171,
+          171,
+          171
+        ]
+      }
+    }
+  ],
+  "planChecks": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "rate": 1,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "rate": 4,
+      "samePlansAsFirst": true,
+      "sameFinalAsFirst": true
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/0-baseline/report.json",
+      "sha256": "451885bdf4a45f264f5e4978c8fed787289e016266b835c2a0587050bcfe18ed",
+      "utc": "2026-11-17T23:06:35.416Z",
+      "ended": "2026-11-17T23:07:44.991Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32003.20000000298,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999995634,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.8000000044703484,
+        "p95": 4.300000004470348,
+        "p99": 12.699999995529652,
+        "max": 20
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.19999999999982,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 15.5,
+          "p99": 21,
+          "max": 39.80000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000291,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 4.5,
+          "p99": 14.599999994039536,
+          "max": 39.80000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 16.399999998509884,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 0.9169999999999999,
+        "scriptElapsedMs": 0.129,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 2,
+      "startupSlowFrames": [
+        {
+          "wallMs": 432.3999999985099,
+          "cpuMs": 39.80000000447035,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 366.8999999985099,
+          "cpuMs": 21,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "drawCalls": 25,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/0-baseline/report.json",
+      "sha256": "451885bdf4a45f264f5e4978c8fed787289e016266b835c2a0587050bcfe18ed",
+      "utc": "2026-11-17T23:06:35.416Z",
+      "ended": "2026-11-17T23:07:44.991Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32034.19999999553,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.69999999999709,
+        "max": 99.90000000000146
+      },
+      "submitCpuMs": {
+        "median": 13.100000001490116,
+        "p95": 19.700000002980232,
+        "p99": 43.900000005960464,
+        "max": 67.30000000447035
+      },
+      "startup": {
+        "samples": 61,
+        "frameMs": {
+          "median": 16.800000000000182,
+          "p95": 66.70000000000027,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16.200000002980232,
+          "p95": 47.20000000298023,
+          "p99": 136.29999999701977,
+          "max": 136.29999999701977
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1404,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.5,
+          "p99": 66.70000000000027,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.199999995529652,
+          "p95": 20.399999998509884,
+          "p99": 45.70000000298023,
+          "max": 136.29999999701977
+        },
+        "over33": 67,
+        "over50": 24
+      },
+      "firstRenderLatencyMs": 19.299999997019768,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 2.245,
+        "scriptElapsedMs": 0,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 74,
+      "startupSlowFrames": [
+        {
+          "wallMs": 469.8999999985099,
+          "cpuMs": 136.29999999701977,
+          "skill": "mochi-1",
+          "age": 366.60000000000014,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 402.79999999701977,
+          "cpuMs": 59.20000000298023,
+          "skill": "mochi-1",
+          "age": 299.89999999999986,
+          "drawCalls": 25,
+          "textures": 25
+        },
+        {
+          "wallMs": 194.09999999403954,
+          "cpuMs": 57.20000000298023,
+          "skill": "mochi-1",
+          "age": 83.29999999999995,
+          "drawCalls": 22,
+          "textures": 22
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/1-baked/report.json",
+      "sha256": "4b1cec0296c24f8e841969293614989b882991ac87b8a809c742f2e953e1c89c",
+      "utc": "2026-11-17T23:07:45.285Z",
+      "ended": "2026-11-17T23:08:53.865Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.10000000149,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.899999998509884,
+        "p95": 4.299999997019768,
+        "p99": 12.399999998509884,
+        "max": 21
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.1999999955296516,
+          "p95": 13.600000001490116,
+          "p99": 20.299999997019768,
+          "max": 40.20000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 4.399999998509884,
+          "p99": 13.900000005960464,
+          "max": 40.20000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 13.899999998509884,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 8.5,
+        "restoreElapsedMs": 0.5,
+        "taskElapsedMs": 3.632,
+        "scriptElapsedMs": 0.85,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 4,
+      "startupSlowFrames": [
+        {
+          "wallMs": 447,
+          "cpuMs": 40.20000000298023,
+          "skill": "mochi-1",
+          "age": 366.5999999999999,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 362.6000000014901,
+          "cpuMs": 20.299999997019768,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "drawCalls": 25,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/1-baked/report.json",
+      "sha256": "4b1cec0296c24f8e841969293614989b882991ac87b8a809c742f2e953e1c89c",
+      "utc": "2026-11-17T23:07:45.285Z",
+      "ended": "2026-11-17T23:08:53.865Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32032.30000000447,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999854,
+        "max": 116.69999999999709
+      },
+      "submitCpuMs": {
+        "median": 13.100000001490116,
+        "p95": 19.899999998509884,
+        "p99": 43.30000000447035,
+        "max": 66.20000000298023
+      },
+      "startup": {
+        "samples": 59,
+        "frameMs": {
+          "median": 33.29999999999973,
+          "p95": 66.70000000000005,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16.100000001490116,
+          "p95": 58.399999998509884,
+          "p99": 134.60000000149012,
+          "max": 134.60000000149012
+        },
+        "over33": 14,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1401,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.89999999999782,
+          "p99": 66.60000000000582,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.199999995529652,
+          "p95": 20.600000001490116,
+          "p99": 45.399999998509884,
+          "max": 134.60000000149012
+        },
+        "over33": 72,
+        "over50": 19
+      },
+      "firstRenderLatencyMs": 20.5,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 4.699999995529652,
+        "restoreElapsedMs": 0.6000000014901161,
+        "taskElapsedMs": 11.068999999999999,
+        "scriptElapsedMs": 1.832,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 79,
+      "startupSlowFrames": [
+        {
+          "wallMs": 448.5,
+          "cpuMs": 134.60000000149012,
+          "skill": "mochi-1",
+          "age": 383.39999999999986,
+          "drawCalls": 26,
+          "textures": 27
+        },
+        {
+          "wallMs": 170.20000000298023,
+          "cpuMs": 67.20000000298023,
+          "skill": "mochi-1",
+          "age": 66.70000000000005,
+          "drawCalls": 22,
+          "textures": 22
+        },
+        {
+          "wallMs": 383.40000000596046,
+          "cpuMs": 58.399999998509884,
+          "skill": "mochi-1",
+          "age": 316.70000000000005,
+          "drawCalls": 23,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/2-baked/report.json",
+      "sha256": "2154247bdccab556a34f7cbfb41307b71afe2fd8349ae57cc6edff76727abb06",
+      "utc": "2026-11-17T23:08:54.156Z",
+      "ended": "2026-11-17T23:10:03.241Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32002.19999999553,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.299999997019768,
+        "p99": 12.699999995529652,
+        "max": 23.5
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 14.300000004470348,
+          "p99": 21.19999999552965,
+          "max": 40.80000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.300000004470348,
+          "p99": 14.600000001490116,
+          "max": 40.80000000447035
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 8.399999998509884,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 3.3000000044703484,
+        "restoreElapsedMs": 0.3999999985098839,
+        "taskElapsedMs": 2.16,
+        "scriptElapsedMs": 0.15,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 4,
+      "startupSlowFrames": [
+        {
+          "wallMs": 442.59999999403954,
+          "cpuMs": 40.80000000447035,
+          "skill": "mochi-1",
+          "age": 366.5999999999999,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 361.5,
+          "cpuMs": 21.19999999552965,
+          "skill": "mochi-1",
+          "age": 283.2999999999997,
+          "drawCalls": 25,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/2-baked/report.json",
+      "sha256": "2154247bdccab556a34f7cbfb41307b71afe2fd8349ae57cc6edff76727abb06",
+      "utc": "2026-11-17T23:08:54.156Z",
+      "ended": "2026-11-17T23:10:03.241Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32022.5,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.100000000000364,
+        "max": 100.10000000000218
+      },
+      "submitCpuMs": {
+        "median": 13.200000002980232,
+        "p95": 20.5,
+        "p99": 43.899999998509884,
+        "max": 69.60000000149012
+      },
+      "startup": {
+        "samples": 61,
+        "frameMs": {
+          "median": 16.800000000000182,
+          "p95": 66.60000000000036,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16,
+          "p95": 44.70000000298023,
+          "p99": 123.20000000298023,
+          "max": 123.20000000298023
+        },
+        "over33": 12,
+        "over50": 6
+      },
+      "wholeRun": {
+        "samples": 1389,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.5,
+          "p99": 66.60000000000036,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.399999998509884,
+          "p95": 21.100000001490116,
+          "p99": 45.399999998509884,
+          "max": 123.20000000298023
+        },
+        "over33": 68,
+        "over50": 18
+      },
+      "firstRenderLatencyMs": 19.899999998509884,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 5.199999995529652,
+        "restoreElapsedMs": 1.8000000044703484,
+        "taskElapsedMs": 10.190999999999999,
+        "scriptElapsedMs": 2.088,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 83,
+      "startupSlowFrames": [
+        {
+          "wallMs": 492.79999999701977,
+          "cpuMs": 123.20000000298023,
+          "skill": "mochi-1",
+          "age": 400,
+          "drawCalls": 29,
+          "textures": 27
+        },
+        {
+          "wallMs": 396.79999999701977,
+          "cpuMs": 64.30000000447035,
+          "skill": "mochi-1",
+          "age": 300,
+          "drawCalls": 25,
+          "textures": 25
+        },
+        {
+          "wallMs": 177.60000000149012,
+          "cpuMs": 62.099999994039536,
+          "skill": "mochi-1",
+          "age": 83.29999999999973,
+          "drawCalls": 22,
+          "textures": 22
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/3-baseline/report.json",
+      "sha256": "3043fff2a95ccba770de248829771216c64d4498e6f5c5ac7b59d455c9d60bc2",
+      "utc": "2026-11-17T23:10:03.529Z",
+      "ended": "2026-11-17T23:11:12.093Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32000.40000000596,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.300000004470348,
+        "p99": 12.200000002980232,
+        "max": 21.100000001490116
+      },
+      "startup": {
+        "samples": 116,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 33.30000000000018,
+          "max": 50
+        },
+        "submitCpuMs": {
+          "median": 3.1999999955296516,
+          "p95": 13.699999995529652,
+          "p99": 27.700000002980232,
+          "max": 46.899999998509884
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1916,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 50
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.399999998509884,
+          "p99": 14.200000002980232,
+          "max": 46.899999998509884
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 7.9000000059604645,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 0.71,
+        "scriptElapsedMs": 0,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 6,
+      "startupSlowFrames": [
+        {
+          "wallMs": 424.20000000298023,
+          "cpuMs": 46.899999998509884,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 361.1000000014901,
+          "cpuMs": 27.700000002980232,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "drawCalls": 25,
+          "textures": 25
+        },
+        {
+          "wallMs": 1007.8000000044703,
+          "cpuMs": 24.799999997019768,
+          "skill": "soot-1",
+          "age": 50,
+          "drawCalls": 23,
+          "textures": 29
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/3-baseline/report.json",
+      "sha256": "3043fff2a95ccba770de248829771216c64d4498e6f5c5ac7b59d455c9d60bc2",
+      "utc": "2026-11-17T23:10:03.529Z",
+      "ended": "2026-11-17T23:11:12.093Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "740ef87feffe4b2edfbd41febfe19485055b11b5",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32022.59999999404,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.100000000000364,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.299999997019768,
+        "p95": 20.099999994039536,
+        "p99": 44.600000001490116,
+        "max": 75.79999999701977
+      },
+      "startup": {
+        "samples": 58,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.30000000000018,
+          "p99": 183.29999999999973,
+          "max": 183.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 16.599999994039536,
+          "p95": 54.600000001490116,
+          "p99": 148.80000000447035,
+          "max": 148.80000000447035
+        },
+        "over33": 14,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1388,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.89999999999782,
+          "p99": 66.69999999999982,
+          "max": 183.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 13.399999998509884,
+          "p95": 20.5,
+          "p99": 45.69999999552965,
+          "max": 148.80000000447035
+        },
+        "over33": 70,
+        "over50": 18
+      },
+      "firstRenderLatencyMs": 22.19999999552965,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 7.969,
+        "scriptElapsedMs": 0.039,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 81,
+      "startupSlowFrames": [
+        {
+          "wallMs": 502.19999999552965,
+          "cpuMs": 148.80000000447035,
+          "skill": "mochi-1",
+          "age": 400,
+          "drawCalls": 29,
+          "textures": 27
+        },
+        {
+          "wallMs": 438.79999999701977,
+          "cpuMs": 57.79999999701977,
+          "skill": "mochi-1",
+          "age": 333.4000000000001,
+          "drawCalls": 23,
+          "textures": 25
+        },
+        {
+          "wallMs": 197.19999999552965,
+          "cpuMs": 54.600000001490116,
+          "skill": "mochi-1",
+          "age": 100,
+          "drawCalls": 22,
+          "textures": 22
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/4-baseline/report.json",
+      "sha256": "34b8b2ae649548926f68778ddddd419c1badede23771a057be90e9606bd72d1e",
+      "utc": "2026-11-17T23:11:12.378Z",
+      "ended": "2026-11-17T23:12:21.409Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "e4ad13d3882e0bfbe3cc7896b744be17d1e36286",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.70000000298,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 3,
+        "p95": 4.399999998509884,
+        "p99": 12.900000005960464,
+        "max": 21.099999994039536
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.2999999970197678,
+          "p95": 14.199999995529652,
+          "p99": 21.30000000447035,
+          "max": 39.69999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 4.5,
+          "p99": 14.599999994039536,
+          "max": 39.69999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 9.600000001490116,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 1.502,
+        "scriptElapsedMs": 0.34600000000000003,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 5,
+      "startupSlowFrames": [
+        {
+          "wallMs": 425.40000000596046,
+          "cpuMs": 39.69999999552965,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 359.1000000014901,
+          "cpuMs": 21.30000000447035,
+          "skill": "mochi-1",
+          "age": 283.4000000000001,
+          "drawCalls": 25,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/4-baseline/report.json",
+      "sha256": "34b8b2ae649548926f68778ddddd419c1badede23771a057be90e9606bd72d1e",
+      "utc": "2026-11-17T23:11:12.378Z",
+      "ended": "2026-11-17T23:12:21.409Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "e4ad13d3882e0bfbe3cc7896b744be17d1e36286",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32005.10000000149,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999854,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.399999998509884,
+        "p95": 20.600000001490116,
+        "p99": 44.5,
+        "max": 67.39999999850988
+      },
+      "startup": {
+        "samples": 63,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.69999999999982,
+          "p99": 166.60000000000036,
+          "max": 166.60000000000036
+        },
+        "submitCpuMs": {
+          "median": 15.899999998509884,
+          "p95": 48.29999999701977,
+          "p99": 135.39999999850988,
+          "max": 135.39999999850988
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1373,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.69999999999982,
+          "max": 166.60000000000036
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 20.899999998509884,
+          "p99": 47,
+          "max": 135.39999999850988
+        },
+        "over33": 64,
+        "over50": 22
+      },
+      "firstRenderLatencyMs": 21,
+      "preparation": {
+        "active": false,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 0,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 0,
+        "restoreElapsedMs": 0,
+        "taskElapsedMs": 4.347,
+        "scriptElapsedMs": 0,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 0,
+        "served": 0,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 85,
+      "startupSlowFrames": [
+        {
+          "wallMs": 501.8999999985099,
+          "cpuMs": 135.39999999850988,
+          "skill": "mochi-1",
+          "age": 383.39999999999964,
+          "drawCalls": 26,
+          "textures": 27
+        },
+        {
+          "wallMs": 200.20000000298023,
+          "cpuMs": 62.899999998509884,
+          "skill": "mochi-1",
+          "age": 83.39999999999964,
+          "drawCalls": 22,
+          "textures": 22
+        },
+        {
+          "wallMs": 433,
+          "cpuMs": 60.79999999701977,
+          "skill": "mochi-1",
+          "age": 316.6999999999998,
+          "drawCalls": 23,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/5-baked/report.json",
+      "sha256": "18b15dd75b49676923c90503e5ce46aa09e7bdd7203a4667ca6c1b80d523cf52",
+      "utc": "2026-11-17T23:12:21.690Z",
+      "ended": "2026-11-17T23:13:31.809Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "e4ad13d3882e0bfbe3cc7896b744be17d1e36286",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.59999999404,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.899999998509884,
+        "p95": 4.799999997019768,
+        "p99": 13,
+        "max": 20.399999998509884
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3.2999999970197678,
+          "p95": 15.399999998509884,
+          "p99": 22.399999998509884,
+          "max": 41
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 5,
+          "p99": 14.899999998509884,
+          "max": 41
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "firstRenderLatencyMs": 10,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 4.799999997019768,
+        "restoreElapsedMs": 0.5,
+        "taskElapsedMs": 2.245,
+        "scriptElapsedMs": 0.161,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 4,
+      "startupSlowFrames": [
+        {
+          "wallMs": 425.09999999403954,
+          "cpuMs": 41,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 27
+        },
+        {
+          "wallMs": 359.79999999701977,
+          "cpuMs": 22.399999998509884,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "drawCalls": 25,
+          "textures": 25
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/5-baked/report.json",
+      "sha256": "18b15dd75b49676923c90503e5ce46aa09e7bdd7203a4667ca6c1b80d523cf52",
+      "utc": "2026-11-17T23:12:21.690Z",
+      "ended": "2026-11-17T23:13:31.809Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "e4ad13d3882e0bfbe3cc7896b744be17d1e36286",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32023.79999999702,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 49.89999999999782,
+        "p99": 66.59999999999854,
+        "max": 100.09999999999854
+      },
+      "submitCpuMs": {
+        "median": 13.5,
+        "p95": 20.69999999552965,
+        "p99": 43.400000005960464,
+        "max": 71.20000000298023
+      },
+      "startup": {
+        "samples": 62,
+        "frameMs": {
+          "median": 16.799999999999727,
+          "p95": 66.70000000000027,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16.30000000447035,
+          "p95": 51.29999999701977,
+          "p99": 136.10000000149012,
+          "max": 136.10000000149012
+        },
+        "over33": 13,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1371,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 50,
+          "p99": 66.69999999999982,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 21.600000001490116,
+          "p99": 45.70000000298023,
+          "max": 136.10000000149012
+        },
+        "over33": 80,
+        "over50": 20
+      },
+      "firstRenderLatencyMs": 20.69999999552965,
+      "preparation": {
+        "active": true,
+        "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "manifestSha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b",
+        "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/ffc86a.png",
+        "assetSha256": "c3f4f86ba6e22f1dee1dbb9765dab90a91d14378da9ec88852d597f7bd82a364",
+        "bytes": 54987,
+        "font": "\"Baloo 2\"",
+        "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+        "decodeElapsedMs": 5.100000001490116,
+        "restoreElapsedMs": 2.600000001490116,
+        "taskElapsedMs": 7.8999999999999995,
+        "scriptElapsedMs": 0.156,
+        "note": "Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption."
+      },
+      "offlineNumber": {
+        "seeded": 1,
+        "served": 1,
+        "calls": [
+          {
+            "color": "#ffc86a",
+            "font": "\"Baloo 2\"",
+            "baked": true
+          },
+          {
+            "color": "#83ddff",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#c9adf3",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          },
+          {
+            "color": "#55eb9b",
+            "font": "\"Baloo 2\"",
+            "baked": false
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": [],
+      "plansSha256": "97cbfdd389f571d16d82936723a2893e23e628a9bf1c050645c2d1399d1c72f6",
+      "initialSha256": "d2da3785c8791b883cec27ca4f1536c715ba2414b208d37d633d1dc464a4374c",
+      "finalSha256": "8f3c9d4e516c57bbf470f24742ddca054b4cb4298e36df862be7eb022e3a1a5f",
+      "slowFrameCount": 86,
+      "startupSlowFrames": [
+        {
+          "wallMs": 494.09999999403954,
+          "cpuMs": 136.10000000149012,
+          "skill": "mochi-1",
+          "age": 383.3000000000002,
+          "drawCalls": 26,
+          "textures": 27
+        },
+        {
+          "wallMs": 430.29999999701977,
+          "cpuMs": 57.100000001490116,
+          "skill": "mochi-1",
+          "age": 316.7000000000003,
+          "drawCalls": 23,
+          "textures": 25
+        },
+        {
+          "wallMs": 212.09999999403954,
+          "cpuMs": 54.400000005960464,
+          "skill": "mochi-1",
+          "age": 100,
+          "drawCalls": 22,
+          "textures": 22
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-17T23:06:35.416Z",
+      "ended": "2026-11-17T23:07:44.991Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/0-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1202257,
+      "sha256": "e697b0f2a22ea9f5f59294cefbb751a1f8ba59b2e7db12bc5ef814c6dbb93f6f",
+      "mean": 113.21046296296296,
+      "stdDev": 48.01467813546524
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-17T23:06:35.416Z",
+      "ended": "2026-11-17T23:07:44.991Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/0-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1238059,
+      "sha256": "cd2d9b52cb77b0aae7f5c1e37839d5236fd9f05280f3fc847025531a49bb6c47",
+      "mean": 114.07585648148148,
+      "stdDev": 47.573175705645376
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "rate": 1,
+      "utc": "2026-11-17T23:07:45.285Z",
+      "ended": "2026-11-17T23:08:53.865Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/1-baked/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1207456,
+      "sha256": "60f86df84b68700880a0eed1ecf6c927ce9bd8d2e9aa09ad16e6e8e0f2c86b61",
+      "mean": 113.17435185185185,
+      "stdDev": 47.90249954379289
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "rate": 4,
+      "utc": "2026-11-17T23:07:45.285Z",
+      "ended": "2026-11-17T23:08:53.865Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/1-baked/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1275492,
+      "sha256": "dce952ffbf4de6a76cd486fe1c9c49bfebd74eb74454116694ecf9e63142cbb7",
+      "mean": 114.66613425925927,
+      "stdDev": 47.60649602966695
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "rate": 1,
+      "utc": "2026-11-17T23:08:54.156Z",
+      "ended": "2026-11-17T23:10:03.241Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/2-baked/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1207640,
+      "sha256": "4ef94875c98eb118f33b97e5aec77470126fa0f00e3e7fbd0876930d4f618fd0",
+      "mean": 113.16280092592592,
+      "stdDev": 47.89468046824032
+    },
+    {
+      "index": 2,
+      "mode": "baked",
+      "rate": 4,
+      "utc": "2026-11-17T23:08:54.156Z",
+      "ended": "2026-11-17T23:10:03.241Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/2-baked/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1237932,
+      "sha256": "49359dfd4016f66a55bafffe96067679d90625b661c37a470ae948cfa03a242c",
+      "mean": 114.0788425925926,
+      "stdDev": 47.57397491697679
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-17T23:10:03.529Z",
+      "ended": "2026-11-17T23:11:12.093Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/3-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1200172,
+      "sha256": "b3d968e0f93a32ade13843b2d6bafb641970b14500fbf9d299ab24ee38cbdc25",
+      "mean": 113.25030092592593,
+      "stdDev": 48.088561841689945
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-17T23:10:03.529Z",
+      "ended": "2026-11-17T23:11:12.093Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/3-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1245711,
+      "sha256": "0efdab80b3dd6e3382343a89eb2a82fb85b9d7f6cca1d6f68ecef3c59ddc5f0e",
+      "mean": 114.16131944444444,
+      "stdDev": 47.57860473799742
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-17T23:11:12.378Z",
+      "ended": "2026-11-17T23:12:21.409Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/4-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1199933,
+      "sha256": "76bc7eaf9a5924a45248df1fbf39d908740734309248757c7e30c40c8cb4f2c2",
+      "mean": 113.24608796296296,
+      "stdDev": 48.086753883453376
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-17T23:11:12.378Z",
+      "ended": "2026-11-17T23:12:21.409Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/4-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1226792,
+      "sha256": "eaa466850c89fa72d839025c35bbe5a71f098f4540ef212ca3135e540e045728",
+      "mean": 114.12407407407407,
+      "stdDev": 47.64188141628475
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "rate": 1,
+      "utc": "2026-11-17T23:12:21.690Z",
+      "ended": "2026-11-17T23:13:31.809Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/5-baked/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1205442,
+      "sha256": "5226239b833401fbc4957b3780d98ade18870b6bb267eed5a0e4f4df58363f33",
+      "mean": 113.18770833333333,
+      "stdDev": 47.95668688001188
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "rate": 4,
+      "utc": "2026-11-17T23:12:21.690Z",
+      "ended": "2026-11-17T23:13:31.809Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/trials/5-baked/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1221267,
+      "sha256": "fa2653d7736dddde115a4a10b2ad003ed3304e28044ca90b95e1e075e8fd16c1",
+      "mean": 114.12018518518518,
+      "stdDev": 47.612434183252056
+    }
+  ],
+  "reviewImages": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/review/0-baseline-1x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "46fa4a55a43f4fa9e8d43e4aa6ea23039a675424f7dacac00d6f50ef6f9f3869"
+    },
+    {
+      "index": 1,
+      "mode": "baked",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/review/1-baked-1x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "a3ef27931761e716281d1750209544c74bfb5b053a2ac87cd023f1f4e411a7eb"
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/review/4-baseline-4x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "760c17ac35f3fbaf5c681f4293a9dd891df92275cacc324e5448ea88b207d063"
+    },
+    {
+      "index": 5,
+      "mode": "baked",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-production/review/5-baked-4x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "c2d04e7e65885c15f0aa926b088dd5b6c63550716cc6edfa42bcf294fd61a8ba"
+    }
+  ],
+  "measuredUtc": "2026-11-17T23:13:48.557Z",
+  "reviewedUtc": "2026-11-17T23:14:42.217522+00:00",
+  "visualReview": "Four measured1024x576 fresh desktop views inspected once. All four heroes, enemy trio, HP/status marks, HUD and number/telegraph layers remain visible. Different natural animation phases are expected; these screenshots are not an exact-pixel pair. Frozen-scene160 comparisons remain the exact correctness evidence.",
+  "adopt": false,
+  "decision": "Reject runtime adoption: steady frame pacing unchanged, startup stalls retained, no useful balanced-trial improvement despite 54987 extra bytes and separate preparation. Full cold-load/failure/font/disposal integration is not warranted without a useful benefit. No application asset or source changed; no READY."
+}

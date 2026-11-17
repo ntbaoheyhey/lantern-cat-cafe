@@ -35,3 +35,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T22:00:43.446234+00:00 V-F victory: chưa áp dụng mã.6lượt production giảm render lúc reduced về0,nhưng2ảnh4x lệch màu tối đa6/255 và thời gian task thường tăng13.95%.4sheet prototype+2sheet production đã xem một lần;4676file typecheck đạt. Đang tách framebuffer GPU khỏi compositing; sau đó kiểm thời gian CPU thread. Wake15phút vẫnACTIVE.
 
 2026-11-17T23:07:48.587121+00:00 Wake15phút vẫnACTIVE,đúng ORDER;V-A3 đãpush,capture-arrival giữnguyên. Bỏ setupdraw không giảm thờigian trận thực nên đãloại(ecfabf85d). Nghiêncứu atlas số:ảnhPNG phải khôi phục vào canvas mới giữ320mẫuphóngto/thu nhỏ;WebPlossless đãloại vìkhácpixel. Mộtpalette sátthương54987B giữ160mẫu số/bốtrí/GPU/cue;2ảnh mới rõ−46/−35/◇18. Sáulượt production đangchạy,chuẩn bị đo ởcùng mứcCPU;chưa sửaứngdụng/chưaREADY.
+
+2026-11-17T23:14:42.217522+00:00 V-F: sáu lượt atlas số hoàn tất,26 hành động/6 chiêu cuối mỗi lượt,0 lỗi;12 ảnh đo/4 ảnh mới đã xem. Frame p95 không cải thiện16.7/33.4ms,thêm54987B;loại phương án,không sửa ứng dụng. Chuyển kiểm chất lượng texture V-D.
