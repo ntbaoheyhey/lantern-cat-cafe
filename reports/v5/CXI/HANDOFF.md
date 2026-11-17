@@ -1,13 +1,15 @@
 # CXI handoff
-ACTIVE: I2 (started 2026-11-17T05:32:30Z; deadline +6 h); M0 a3c9cff0b published.
-NEXT 1: cat work/v5/CXI/jobs/i2c-build.exit work/v5/CXI/jobs/i2c-transfer.exit work/v5/CXI/jobs/i2c-suite.exit
-NEXT 2: Checkpoint full-WebP result, then prefer half depth and measure/capture before-after comparison.
-NEXT 3: Implement encounter loading/preload, WebP fallback, half-resolution depth, audio and bundle diet in order.
-Running PIDs/logs: 17640 production preview 6301; work/v5/CXI/jobs/i2-preview.log; 23874 I2c build/measure/root-suite work/v5/CXI/jobs/i2c.log and i2c-*.log.
-Last pushed SHA: aeb022862714e209523579b17db9e90a69eb0604
-Last RULES re-read UTC: 2026-11-17T05:32:30Z
-Mailbox read cursors: INBOX-CXI 15; DELIVERIES 10; USER 5.
-Stop files checked: absent at 2026-11-17T05:40:56Z.
-Original order: /Users/bao/.codex/attachments/0df62500-2e14-488c-a609-b4e406aa907d/Pasted text.txt (read only current card excerpts).
-Unowned WIP: preserve all existing untracked files and reports/v4-ship/S11/history-*.
-CXV integration: own optional spine/manifest-loader.ts; wait AG2 schema/registry API; CXI loader exceptions recorded in OWNERSHIP.
+ACTIVE: I2, started 2026-11-17T05:32:30Z; six-hour box ends 11:32:30Z; NO FREEZE.
+NEXT 1: Edit spine/native-rig-loader.ts to select delivered half-depth variants; build and capture with measure-transfer --label=half-depth --capture=true.
+NEXT 2: Compare three before/after encounter sheets; integrate AG4 mappings and reduce eager home audio.
+NEXT 3: Complete bundle diet, M1/M2/M3, Fuji kit, then every REFILL item; waiting triggers next three refill items.
+Running PID: 17640 preview6301; work/v5/CXI/jobs/i2-preview.log. PID23874 exited: build/transfer/root-suite all0.
+Last pushed SHA: a1816d42915b47f6cf3697b2d3ba30b5e0169e92
+Last RULES re-read UTC: 2026-11-17T05:47:48Z
+Mailbox read cursors: INBOX-CXI20; DELIVERIES12; USER7.
+Stop files absent at this checkpoint.
+Authoritative order read once: /Users/bao/art/codex-prompts/PASTE-CODEX-V5-CXI-INTEGRATOR-2026-11-17.txt (body REV3, title REV1).
+Preserve unrelated old lane files and reports/v4-ship/S11/history-*; explicit owned staging only.
+Evidence: I2c root5083 passed, zero unexpected failures; web2783; 11 skipped/2 expected fail unchanged.
+Transfer full-WebP wave1=15353005 wave3=16661340 boss=13466320; all fail8MB; zero browser errors.
+CXV optional manifest loader pending registry integration; AG2 REV1 deliveries rejected pending owner quality gate.

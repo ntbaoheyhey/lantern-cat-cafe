@@ -1,10 +1,9 @@
-# Trạng thái CXI
-Cập nhật UTC: 2026-11-17T05:31:11Z.
-QA-8 đã commit riêng: 315904a14, 14/14 kiểm thử đạt.
-ART + SHIP đã gộp sạch; typecheck và build đạt.
-Web: 2.781 đạt; root: 5.081 đạt, không có lỗi ngoài dự kiến.
-M0 đang được gắn tag; tiếp theo đo tải lạnh của boss/wave1/wave3.
-Rủi ro 1: chưa xác nhận dữ liệu tải trận <=8 MB.
-Rủi ro 2: cần kiểm tra hình ảnh sau tối ưu atlas.
-Rủi ro 3: tài sản/âm thanh V5 còn chờ bàn giao.
-Không triển khai, không dùng khóa hoặc tiền thật.
+# CXI — trạng thái
+M0 đã push; SHIP + ART + QA-8 đã tích hợp, bộ kiểm thử xanh.
+WebP đã tích hợp; 5.083 test pass, không lỗi bất ngờ.
+Transfer wave1 15,35MB; wave3 16,66MB; boss 13,47MB: chưa đạt 8MB.
+Đang thử depth nửa kích thước và tách âm thanh theo cue.
+Không freeze; tiếp tục đến khi queue, refill, deliveries và mọi gate hoàn tất.
+Rủi ro 1: transfer còn cao; chỉ số hiện tại là fixture combat, chưa phải hành trình khách thật.
+Rủi ro 2: texture AG2 REV1 chưa đạt cổng chất lượng mới của chủ dự án.
+Rủi ro 3: bằng chứng Fuji thật vẫn do chủ dự án tự chạy; kit local chưa xong.
