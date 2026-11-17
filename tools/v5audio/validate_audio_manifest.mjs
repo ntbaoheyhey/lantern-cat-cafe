@@ -4,7 +4,7 @@ import path from 'node:path';
 const MANIFEST_PATH = path.resolve('apps/web/public/audio/v5/manifest.json');
 const REPORT_PATH = path.resolve('reports/v5/AGS/AUDIO-SCHEMA-REPORT.md');
 
-const VALID_BUSES = new Set(['sfx', 'ui', 'voice', 'ambience', 'bgm']);
+const VALID_BUSES = new Set(['sfx', 'ui', 'voice', 'ambience', 'bgm', 'music']);
 
 function validateItem(key, entry, errors, pathUsage) {
   if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
@@ -38,10 +38,10 @@ function validateItem(key, entry, errors, pathUsage) {
     pathUsage.set(entry.m4a, (pathUsage.get(entry.m4a) || 0) + 1);
   }
 
-  // 3. Check durationSeconds if present
+  // 3. Check durationSeconds if present (allow up to 60s for music beds)
   if (entry.durationSeconds !== undefined) {
-    if (!Number.isFinite(entry.durationSeconds) || entry.durationSeconds <= 0 || entry.durationSeconds > 30) {
-      errors.push(`[INVALID_DURATION] Key "${key}" durationSeconds out of valid range (0, 30]: ${entry.durationSeconds}`);
+    if (!Number.isFinite(entry.durationSeconds) || entry.durationSeconds <= 0 || entry.durationSeconds > 60) {
+      errors.push(`[INVALID_DURATION] Key "${key}" durationSeconds out of valid range (0, 60]: ${entry.durationSeconds}`);
     }
   }
 

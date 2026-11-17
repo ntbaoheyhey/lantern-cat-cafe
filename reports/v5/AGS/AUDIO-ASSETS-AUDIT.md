@@ -2,10 +2,10 @@
 
 **Audit Date**: 2026-11-17  
 **Registry**: `apps/web/public/audio/v5/manifest.json`  
-**Total Audited Cues**: 680 registered audio cues  
+**Total Audited Cues**: 1659 registered audio cues  
 **Integrity Status**: **100% PASS** (0 missing files, 0 zero-byte corruptions)  
-**Total Opus Footprint**: **2.27 MB** (2,378,495 bytes)  
-**Total M4A Footprint**: **3.14 MB** (3,293,657 bytes)  
+**Total Opus Footprint**: **3.89 MB** (4,074,244 bytes)  
+**Total M4A Footprint**: **6.12 MB** (6,419,661 bytes)  
 
 ---
 
@@ -21,8 +21,8 @@
 | **Game Stingers** | 4 | Opus + M4A | 18.9 KB | Victory, defeat, level up, and boss encounter fanfares |
 | **Cat Voice Callouts** | 100 | Opus + M4A | 9.4 KB | 104 individual hero voice lines (select, attack, ult, hit, death) |
 | **Ranged Impact Cuts** | 144 | Opus + M4A | 6.8 KB | Multi-layer ranged projectiles (ember, shadow, tide, heavy) |
-| **B2 Variant Slices** | 264 | Opus + M4A | 1.1 KB | 264 micro-variant slices replacing 1.0 MB monolithic preloads |
-| **Total Audio Registry** | **680** | **Dual Opus/AAC** | **--** | **Complete V5 Game Soundscape** |
+| **B2 Variant Slices** | 1150 | Opus + M4A | 1.1 KB | 264 micro-variant slices replacing 1.0 MB monolithic preloads |
+| **Total Audio Registry** | **1659** | **Dual Opus/AAC** | **--** | **Complete V5 Game Soundscape** |
 
 ---
 
