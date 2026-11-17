@@ -4,3 +4,4 @@
 2026-11-17T05:34:00Z | A2 | Top 80 gameplay/shell art processed, converted eligible portraits (82.55% reduction), A2-report.csv and montage generated
 2026-11-17T05:38:00Z | A3 | Size forecast completed based on CXI baseline network capture (all.json): current 29.50MB -> with-siblings 12.16MB -> with-half-depth 7.82MB (<=8MB gate passed), top 10 dominating files identified in A3-forecast.md
 2026-11-17T05:41:00Z | A4 | Backlog: spot-checked 10 random siblings (10/10 match dims, SSIM >= 0.992), 2 montages generated; enhanced convert.mjs with lossless fallback for indexed art (converted squad + gameplay art, +38KB net savings); CSVs tidied
+2026-11-17T05:46:00Z | A4 | Acted on CXI REQ lines: labeled A3 forecast as estimate pending runtime measurement; replaced report PNGs (4.28MB) with compact JPG sheets (102KB total) and preserved raw montages in work/v5/AG3

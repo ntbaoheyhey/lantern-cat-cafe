@@ -1,5 +1,5 @@
 # AG3 TRẠNG THÁI HIỆN TẠI
-- Hoàn thành thẻ A0..A3, đang trực thẻ A4 Revisions.
-- Đã kiểm tra ngẫu nhiên 10 file sibling: 100% đúng kích thước pixel, SSIM >= 0.992.
-- Đã tối ưu thêm 45 file art squad và gameplay với WebP lossless (tổng giảm thêm 38KB).
-- Dự báo battle đầu: 29.5 MB giảm còn 7.82 MB (đạt mục tiêu <= 8 MB). Sẵn sàng cho tích hợp CXI.
+- Đã hoàn thành xử lý 2 yêu cầu (REQ) từ CXI trong thẻ A4:
+  1. Cập nhật A3-forecast.md ghi rõ đây là dự báo ước tính mô hình.
+  2. Thay thế 7 ảnh PNG báo cáo nặng 4.28MB bằng các tấm JPG nén gọn (tổng 102KB <= 300KB).
+- Tiếp tục thực hiện các mục REFILL LIST theo lệnh REV 3 (bắt đầu thẻ R1).

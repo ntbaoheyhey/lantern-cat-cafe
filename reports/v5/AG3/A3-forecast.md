@@ -1,15 +1,15 @@
-# A3 Size Forecast for the First Battle
+# A3 Size Forecast for the First Battle (Estimate)
 
 ## 1. Executive Summary
 - **Target Gate**: First battle transfer $\le 8.0\text{ MB}$ (down from 29.5 MB baseline).
 - **Asset Diet Result**: All unit rig pages and depth maps converted to WebP siblings:
   - Full-size WebP siblings (`q90, alpha_q 100, -exact -sharp_yuv`): **84.0% size reduction**, SSIM $\ge 0.995$.
   - Half-size depth siblings (`rig-depth.half.webp` at 50% scale, `q80`): **96.0% size reduction**.
-- **First Battle Forecast**:
-  - **Current Baseline**: **29.50 MB**
+- **First Battle Forecast (Estimate)**:
+  - **Cold Production Baseline (CXI Rehearsal)**: **29.50 MB** (individual test fixtures: Wave 1: 19.13 MB, Wave 3: 23.12 MB, Boss: 13.46 MB including full audio/JS runtime).
   - **With-Siblings (100% WebP)**: **12.16 MB** (58.8% overall reduction)
   - **With-Half-Depth (WebP + 50% Depth)**: **7.82 MB** (73.5% overall reduction)
-  - **Gate Status**: **PASSED** ($\le 8.0\text{ MB}$ target reached).
+  - **Gate Status**: **ESTIMATE ONLY** (Model estimate based on asset replacement savings; CXI runtime measurement will decide the official $\le 8.0\text{ MB}$ pass/fail once loader wiring is integrated).
 
 ---
 
