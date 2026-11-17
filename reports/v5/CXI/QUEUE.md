@@ -1,5 +1,5 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.9@8724ab798 pushed/remoteverified;BOARD+lanesannounced. Spatial/native accepted;13packages/544exactfiles;full5282total,5269pass,11skip,2expectedfail;3fresh30sfilms. CXV numbermetrics e58ef974c NEXT independent review.
+I-A DONE/REPEAT: v5-m1.9@8724ab798 pushed/remoteverified;BOARD+lanesannounced. Spatial/native accepted;13packages/544exactfiles;full5282total,5269pass,11skip,2expectedfail;3fresh30sfilms. Numbermetrics accepted58a89cd72 with exact171glyph/9atlas+bounded CPU gain; contour6ef304a9b independent review NEXT; fullsuite/films needed before m1.10.
 I-B OPEN: m1.9 cold7667250/8228520/7742967B;wave3FAIL228520B,boss257033Bheadroom. AGS T5fourbeds/T8sixfoecallouts REDO remain open; no rejected audio merged.
 I-C FIRST-HIT DONE:21078ms incl17700reading8cards,HP165→119,0errors;route10503ms excludesreading.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
