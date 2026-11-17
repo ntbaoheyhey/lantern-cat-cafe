@@ -43,14 +43,10 @@ The codebase is backed by **over 2,800 automated unit and integration tests** pa
   2. Click **"Connect Wallet"** to anchor your victory receipt, mint your Relic NFT, and inspect the real transaction hash on Avalanche Fuji.
 
 ### Q6: Where are your smart contracts deployed on Avalanche Fuji?
-**A:** Our smart contracts are compiled with Solidity 0.8.24 and deployed on Avalanche Fuji Testnet (Chain ID 43113):
-- **`RelicNFT.sol`**: `0x88f5a6b0c2a8f89e13d9e4c194a2b972e3a1f8c1` (ERC-721 with on-chain metadata).
-- **`RelicMarket.sol`**: `0x99a1f2b4c8d1e3a5f7b9c2d4e6f8a0b2c4e6f8a0` (P2P zero-fee escrow market).
-- **`CampaignRewards.sol`**: `0x77b3d2c1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5` (Cryptographic reward distributor).
-All contracts can be verified on the official Fuji explorer: `https://testnet.snowtrace.io`.
+**A:** We use signed voucher minting and guest-drip funding. Our smart contracts (ERC-1155) are deployed on Avalanche Fuji Testnet (Chain ID 43113) and can be inspected on the official Fuji explorer: `https://testnet.snowtrace.io`.
 
 ### Q7: How does gas sponsorship work?
-**A:** For players who connect a wallet with zero balance, we integrate an Account Abstraction Paymaster / Gas Sponsorship wallet that sponsors the gas fee on Avalanche Fuji. Players experience true Web2-speed onboarding while gaining Web3 ownership proofs.
+**A:** Gas for on-chain interactions is provided by the protocol's guest-drip mechanism, ensuring players can mint their first relics without needing an existing AVAX balance.
 
 ---
 
