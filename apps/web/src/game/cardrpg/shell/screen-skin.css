@@ -392,3 +392,10 @@ dialog.chain-panel.b2-wallet>button{display:flex;flex-direction:column;gap:6px;m
  .uv-app[data-a6=true] .uv-shell :is(.b2-result,.c2-result) .a6-result-actions{padding:6px 0 0!important;gap:8px}
  .uv-app[data-a6=true] .uv-shell :is(.b2-result,.c2-result) .a6-result-actions .uv-fight{min-width:0}
 }
+/* Desktop practice/replay copy needs a readable card, not a loot-sized tile. */
+@media (min-width:1024px) {
+ .uv-app[data-a6=true] .uv-shell .c2-result .a6-result-tickets>article.a6-result-empty {
+  width:280px;max-width:100%;min-height:116px;display:flex;align-items:center;gap:14px;padding:14px;
+ }
+ .uv-app[data-a6=true] .uv-shell .c2-result .a6-result-empty p {font-size:18px;line-height:1.35;text-align:left}
+}

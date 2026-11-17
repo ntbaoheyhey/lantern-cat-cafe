@@ -37,3 +37,10 @@ test('requires explicit owner configuration and refuses local or redirectable cr
   const run=spawnSync(process.execPath,['tools/v5int/fuji-proof-kit.mjs','--fuji'],{env:{PATH:process.env.PATH},encoding:'utf8'});
   assert.equal(run.status,1);assert.match(run.stderr,/Set all documented PROOF_\* variables/);assert.equal(run.stdout,'');
 });
+test('does not claim lookup latency as public confirmation time for an existing funding receipt',async()=>{
+  const fixture=input(),rpc=async method=>({eth_chainId:'0xa869',eth_getTransactionReceipt:fixture.receipt,eth_getTransactionByHash:fixture.tx}[method]);
+  const existing=await collectProof({rpc,guest,local:false,submit:async()=>({hash,confirmationMs:null})});
+  assert.equal(existing.confirmationMs,null);assert.equal(existing.timingSource,'unavailable');assert(existing.observationMs>=0);
+  const measured=await collectProof({rpc,guest,local:false,submit:async()=>({hash,confirmationMs:1650})});
+  assert.equal(measured.confirmationMs,1650);assert.equal(measured.timingSource,'funding service');
+});
