@@ -35,20 +35,21 @@ export function applyV5Audio(base:AudioManifest,input:unknown):AudioManifest {
   return key;
  };
  const sample=(s:Sample):Sample=>{
-  if(!/^(?:v4-ranged-|cat-|callout-)/.test(s.pack))return s;
+  if(!/^(?:v4-ranged-|cat-|callout-|b2-)/.test(s.pack))return s;
   const d=byId.get(s.variantId??'');
-  const next=d&&(/\/(?:legacy|voice)\//.test(d.opus))&&d.bus===s.bus&&d.durationSeconds+.02>=s.duration
+  const next=d&&(/\/(?:legacy|voice|b2)\//.test(d.opus))&&d.bus===s.bus&&d.durationSeconds+.02>=s.duration
    ?{...s,pack:packFor(d),start:0,gainDb:d.gainDb}:s;
   const set=substitutions.get(s.pack)??new Set<string>();set.add(next.pack);substitutions.set(s.pack,set);
   return next;
  };
  const designs=Object.fromEntries(Object.entries(base.designs??{}).map(([id,d])=>[id,{
-  ...d,...(d.baked?{baked:d.baked.map(v=>({...v,sample:sample(v.sample)}))}:{})
+  ...d,layers:d.layers.map(layer=>({...layer,variants:layer.variants.map(sample)})),
+  ...(d.baked?{baked:d.baked.map(v=>({...v,sample:sample(v.sample)}))}:{})
  }]));
  const cues=Object.fromEntries(Object.entries(base.cues).map(([id,samples])=>[id,samples.map(sample)]));
  const deliveredDesigns:Record<string,CueDesign>={},deliveredPacks=new Set<string>();
  for(const [id,d] of rows){
-  if(d.opus.includes('/legacy/')||d.opus.includes('/voice/')&&d.variantId)continue;
+  if(/\/(?:legacy|b2)\//.test(d.opus)||d.opus.includes('/voice/')&&d.variantId)continue;
   const pack=packFor(d);if(d.bus==='sfx'||d.bus==='ui')deliveredPacks.add(pack);
   const keys=[id,d.runtimeCueId,...(Array.isArray(d.aliases)?d.aliases.filter(a=>typeof a==='string'):[])];
   for(const key of keys){

@@ -2,10 +2,40 @@ import {afterEach,describe,expect,it,vi} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {applyV5Audio,loadV5AudioManifest} from './v5-manifest-loader';
-import {resolveDesign,type AudioManifest} from './cues';
+import {resolveDesign,type AudioManifest,type Sample} from './cues';
 const read=(path:string)=>JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio',path),'utf8'));
 afterEach(()=>vi.unstubAllGlobals());
 describe('V5 audio delivery',()=>{
+ it('replaces every delivered B2 layer without changing its cue timing, mixing or variant identity',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  const seen=new Set<string>();
+  const check=(before:Sample,after:Sample)=>{
+   if(!/^b2-(hits|ui|motion|magic)$/.test(before.pack))return;
+   seen.add(before.variantId!);
+   expect(after).toEqual({...before,pack:expect.stringMatching(/^v5:b2\//),start:0,gainDb:0});
+  };
+  for(const [id,design] of Object.entries(base.designs??{})){
+   const delivered=next.designs![id]!;
+   for(const [i,layer] of design.layers.entries()){
+    expect({...delivered.layers[i],variants:[]}).toEqual({...layer,variants:[]});
+    layer.variants.forEach((sample,j)=>check(sample,delivered.layers[i]!.variants[j]!));
+   }
+   design.baked?.forEach((take,i)=>check(take.sample,delivered.baked![i]!.sample));
+  }
+  for(const [id,samples] of Object.entries(base.cues))samples.forEach((sample,i)=>check(sample,next.cues[id]![i]!));
+  expect(seen.size).toBe(264);
+  for(const pack of ['b2-hits','b2-ui','b2-motion','b2-magic']){
+   expect(next.packSubstitutions![pack]!.length).toBeGreaterThan(0);expect(next.packSubstitutions![pack]).not.toContain(pack);
+  }
+  expect(next.deliveredPacks?.some(pack=>pack.startsWith('v5:b2/'))).toBe(false);
+ });
+ it('retains the original B2 pack when one exact variant is absent',()=>{
+  const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json');
+  const missing=Object.keys(delivery).find(key=>delivery[key]?.opus?.includes('/b2/b2-hits-'))!;
+  delete delivery[missing];const next=applyV5Audio(base,delivery);
+  expect(next.packSubstitutions!['b2-hits']).toContain('b2-hits');
+  expect(next.packSubstitutions!['b2-ui']).not.toContain('b2-ui');
+ });
  it('preserves every ranged take, its duration and constituent layers while replacing available files',()=>{
   const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json'),next=applyV5Audio(base,delivery);
   for(const key of ['kit.ranged-ember.impact','kit.ranged-heavy.impact','kit.ranged-shadow.impact','kit.ranged-tide.impact','kit.ranged-ice.impact']){

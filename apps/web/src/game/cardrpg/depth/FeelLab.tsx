@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import type { DepthModel } from './model';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
 import { BriefChecklist, ComparisonEvidence } from './LabEvidence';
-import { MotionEvidence } from './MotionEvidence';
-import { EffectEvidence } from './EffectEvidence';
+const MotionEvidence=lazy(()=>import('./MotionEvidence').then(module=>({default:module.MotionEvidence})));
+const EffectEvidence=lazy(()=>import('./EffectEvidence').then(module=>({default:module.EffectEvidence})));
 import './feel-lab.css';
 
 const panels = [
@@ -79,7 +79,7 @@ export function FeelLab({ m, home = false }: { m: DepthModel; home?: boolean }) 
           <p>Previews use a separate battle fixture. Return restores the previous battle and its playback position.</p>
         </>}
         {m.labPanel === 'compare' && <ComparisonEvidence />}
-        {m.labPanel === 'motion' && <><MotionEvidence /><EffectEvidence /></>}
+        {m.labPanel === 'motion' && <Suspense fallback={<p role="status">Loading motion references…</p>}><MotionEvidence /><EffectEvidence /></Suspense>}
         {m.labPanel === 'checklist' && <BriefChecklist m={m} />}
         {m.labPanel === 'performance' && <>
           <label className="dp-lab-check"><input type="checkbox" checked={m.labPerformance} onChange={event => { m.labPerformance = event.target.checked; m.notify(false); }} /> Show live frame overlay</label>

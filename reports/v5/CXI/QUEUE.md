@@ -12,9 +12,9 @@ I6 queued M3 2026-11-19T08:00:00Z; continue refill afterwards; NO FREEZE.
 REFILL RULE: while waiting or no queued/active card, activate next three uncompleted items; 45 min each; R1/R2 repeat as new work arrives.
 R1 refill pending: Merge all new READY, suite, next tag, BOARD + INFO; at least every 3h.
 R2 refill pending: Fix AGS / historical AG1 owned-code QA findings by severity.
-R3 refill pending: Wire AGS / historical AG4 per-cue opus/m4a/gains; drop legacy first-load pack.
+R3 BLOCKED-ON AGS B2 context/source metadata correction 2026-11-17T08:32:30Z:264 variant IDs collide across original pack/bus contexts; focused61pass/3fail, originals retained where unproven.
 R4 refill pending: Wire AGV / historical AG3 AVIF siblings with >20% savings vs WebP.
-R5 active 2026-11-17T08:18:42Z: split preview runtime under CXV08:18 grant; learning08:05-08:20 then implementation, record before/after.
+R5 active 2026-11-17T08:32:30Z:FeelLab focused passed; final build/transfer pending; first split JS1319090->1169022 bytes.
 R6 refill pending: Exclude never-referenced assets from build using AGV / historical AG3 unused report.
 R7 refill pending: 390px receipt clarity: tx, fee, payer, explorer.
 R8 refill pending: Three indicative cold guest-battle-receipt timing runs under30s.

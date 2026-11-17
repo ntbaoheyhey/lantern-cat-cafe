@@ -1,21 +1,21 @@
-# CXI R5 active; I2 visual/bytes pending
-ACTIVE: R5 preview split grant08:18; I2 BLOCKED-ON CXV mask/audio/image deliveries. Rules reread2026-11-17T08:18:42Z; no STOP files.
-NEXT 1: Finish R5 scoped preview/Battle lazy loaders and evidence imports; focused tests, build and measure.
-NEXT 2: Reduce remaining audio/bundle bytes to<=8MB, then complete I2 evidence.
-NEXT 3: Build/capture/measure fresh craft runtime; continue byte reductions, merged gates, then I4/I5/I6/refill.
-Owned WIP checkpoint: same-size craft AVIF hooks in7 granted files; new craft-image-loader+tests; granted sequence assertion fix.
-Craft focused20/20 after CXV08:10 grant; Image dimensions/URLs and both-failure path fixed, lifecycle assertions retained.
-Craft delivery disk savings:11 same-size AVIF,1723000->950772 bytes; original WebP fallback retained.
-Latest runtime4bb07e05d: wave1=10228198,wave3=10739619,boss=10129808 bytes08:16:39Z; zero errors; allFAIL8MB.
-Own repaired visual capture07:46:15Z restores rings/arcs/strokes in3 comparison sheets, zero page errors; work/v5/CXI/effects/i2-repaired-poses/.
-Merged4bb07e05d gates typecheck0/web2855/root5155/build0. Own3 enemy sheets show narrow-mask regression; CXV REQ pending.
-Pipeline56635 completed all steps0; preview PID80797, work/v5/CXI/jobs/m1-preview.log, serves built4bb07e05d. No other running CXI job.
-Full demo URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Latest pushed4bb07e05d; accepted tagv5-m1=b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3.
-Accepted gates:typecheck0/web2821/root5121/build0; experimental delivery work is not a new milestone.
-Mailbox read through08:04:10; USER07:12; LEARN INDEX08:09; RULES reread08:09UTC.
-AGS b2 slices active08:21. Bundle study08:05-08:20 complete; LEARN/CXI-bundle-boundaries-20261117.md. Mobile-layout study starts08:24.
-Open QA:H2-F1/Q0b-F1 mobile Fight overflow; H2-F2 actual receipt proof; H7 runbooks;08:01 README copy/link REQ.
-Approved12 texture hashes pinned in static manifest; SRI fetch->blob decode only during craft encounter prepare; all other layers procedural.
-No secrets/env values, funded Fuji, deployments/contracts edits, main merge, submission or subagents. Explicit paths only.
-Do not run tools/chain/local.mjs:startLocal; it builds/deploys contracts. WD restart already completed; CXI restored07:35.
+# CXI I2/R3/R5 continuation
+ACTIVE: R5 final evidence split and I2 mask correction; rules reread 2026-11-17T08:32:30Z; STOP absent.
+NEXT 1: Checkpoint owned WIP, merge audited CXV b19b99c3d, independently rebuild/capture.
+NEXT 2: Resolve AGS B2 context metadata mismatch; keep original bus compatibility/fallback.
+NEXT 3: Fresh transfer, merged gates; next unblocked QA/refill until all DONE conditions proven.
+Local HEAD before checkpoint f8f004ec2 (AGS0232c11ab merged); latest pushed16823a7c6.
+R3 focused61pass/3fail:70 sample contexts fail existing bus compatibility; no weakening tests.
+R5 FeelLab loader-only grant08:26 wired; FeelLab focused passed; final build pending.
+Preview PID80797 work/v5/CXI/jobs/m1-preview.log serves16823a7c6; no active pipeline jobs.
+Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
+Last transfer16823a7c6:wave1=10078148,wave3=10589555,boss=9915707; allFAIL8MB,0errors.
+Accepted tagv5-m1=b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3; no new acceptance claimed.
+Own08:16 enemy captures found narrow-mask regression; CXV b19b99c3d READY; fresh proof required.
+12 approved texture hashes pinned; native/procedural fallback and original-image decode preserved.
+Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Mailbox read through08:28:19; USER08:12; LEARN INDEX reread this resume.
+Mobile-layout study started08:24; note/INDEX and remaining study incomplete.
+Open QA:H2-F1 mobile Fight overflow;H2-F2 visible actual receipt proof;H7/README truthful runbooks.
+Next green merge window by09:44:05UTC:v5-m1.N + BOARD; M2/M3 retain schedule.
+No secrets/env reads, funded Fuji, deployments/contracts edits, main merge, submission or subagents.
+WD restart already completed PID99689; CXI restored07:35; do not resume WD monitoring.

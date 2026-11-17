@@ -49,6 +49,8 @@ describe('layered playback admission and variants',()=>{
   const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>url.includes('/v5/')?v5:m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
   vi.stubGlobal('fetch',fetcher);const e=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await e.unlock();e.setBattleRoster(['soot','mochi']);await e.preload('battle');
   expect(e.diagnostics.packs).toContain('v5:legacy/ranged-ember-impact-0-0');
+  for(const pack of ['b2-hits','b2-ui','b2-motion','b2-magic'])expect(e.diagnostics.packs).not.toContain(pack);
+  expect(e.diagnostics.packs.some(pack=>pack.startsWith('v5:b2/'))).toBe(true);
   const fetched=fetcher.mock.calls.length;e.play('kit.ranged-ember.impact');
   expect(Context.latest.sources).toHaveLength(1);expect(e.hits.at(-1)?.layers).toHaveLength(4);
   e.play('skill.mochi.1.impact',{element:'holy'});expect(Context.latest.sources).toHaveLength(2);
