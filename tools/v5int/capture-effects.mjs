@@ -53,10 +53,10 @@ try{
    const path=resolve(out,id.replaceAll(':','-')+'-'+i+'.png');await page.screenshot({path});frames.push(path);
   }
   const sheet=resolve(out,group.name+'.jpg');
-  for(const [i,path] of frames.entries())layers.push({input:await sharp(path).resize(480,270).toBuffer(),left:i*480,top:row*270});
+  for(const [i,path] of frames.entries())layers.push({input:await sharp(path).resize(320,180).toBuffer(),left:i*320,top:row*180});
   report.rows.push({id,impact,times,frames,sheet});
   }
-  await sharp({create:{width:1440,height:270*group.ids.length,channels:3,background:'#171326'}}).composite(layers).jpeg({quality:78}).toFile(resolve(out,group.name+'.jpg'));
+  await sharp({create:{width:960,height:180*group.ids.length,channels:3,background:'#171326'}}).composite(layers).jpeg({quality:78}).toFile(resolve(out,group.name+'.jpg'));
  }
 }finally{
  await browser.close();await rm(temporary,{recursive:true,force:true});await writeFile(resolve(out,'capture.json'),JSON.stringify(report,null,2)+'\n');
