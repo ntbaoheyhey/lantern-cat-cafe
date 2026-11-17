@@ -1,7 +1,7 @@
 # AG3 HANDOFF
-- ACTIVE card: R3 Distant-enemy variants at 0.75x
-- NEXT 1: Generate 0.75x variants for rear/distant enemy rig pages (rig-page-0.75x.webp)
-- NEXT 2: Evaluate SSIM at display scale and compile reports/v5/AG3/R3-report.md
-- NEXT 3: Send READY/INFO to CXI and proceed to R4
-- last pushed SHA: 5067dde6f
-- last re-read UTC: 2026-11-17T05:51:00Z
+- ACTIVE card: R4 Unused-image report
+- NEXT 1: node tools/v5assets/find-unused.mjs
+- NEXT 2: Generate reports/v5/AG3/R4-unused.md and CSV for CXI
+- NEXT 3: Send READY/INFO to CXI and begin R5 Duplicate-image report
+- last pushed SHA: 6181ba394
+- last re-read UTC: 2026-11-17T05:55:00Z
