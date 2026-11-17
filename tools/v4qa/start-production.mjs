@@ -43,6 +43,8 @@ try{
   report.buildPid=child.pid;save();report.buildExit=await new Promise((ok,bad)=>{child.once('error',bad);child.once('exit',ok);});
   writeFileSync(resolve(dir,'build.log'),Buffer.concat(log));
   if(report.buildExit!==0)throw Error('Production build failed; inspect build.log');
+  const metadataLog=execFileSync('node',[resolve(source,'tools/chain/economy-v3-metadata.mjs'),`--out=${resolve(output,'relics')}`],{cwd:source,env:process.env,encoding:'utf8'});
+  report.metadataPostbuild={completed:true,summary:metadataLog.trim()};
   report.output=output;report.indexSha256=sha(readFileSync(resolve(output,'index.html')));
   child=spawn('pnpm',['exec','vite','preview','--config',config,'--outDir',output,'--host','127.0.0.1','--port','6200','--strictPort'],{cwd:resolve(source,'apps/web'),env:process.env,stdio:'ignore'});
   report.previewPid=child.pid;child.once('exit',code=>{if(!stopping)void stop(code??1);});

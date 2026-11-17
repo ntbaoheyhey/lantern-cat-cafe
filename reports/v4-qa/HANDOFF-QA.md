@@ -10,3 +10,4 @@ TARGET ART: 4109469bfef8 (origin fetched01:12UTC).
 CHECKPOINT: Q0 complete; noSTOP,QA INBOX has no user instruction. No DEPLOYED seen yet.
 LOAD: clone install deferred01:30:18UTC load1=11.85; next eligibility check01:35:18UTC; supervisor PID8110.
 NOTE: clone is permitted generated-output sandbox; product files in QA tree remain untouched. Q2 shares fresh clone install evidence.
+FIXTURE NOTE: build1 lacks package metadata post-step; do not mutate active preview. After cold run ends, run source tools/chain/economy-v3-metadata.mjs --out=/Users/bao/taskbar-hero-qa/work/v4qa/production-1/dist/relics; verify index/runtime hashes unchanged + HTTP metadata; preserve initial inventory. Future launcher now includes step.

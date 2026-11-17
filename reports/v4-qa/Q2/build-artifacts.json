@@ -94,5 +94,6 @@
     "relics/00000000000000000000000000000000000000000000000000000000000080e8.json": false
   },
   "vercelFunctionBundleBytes": null,
-  "functionLimitStatus": "N/A for static Vite output; source contains no Vercel API functions; no authenticated Vercel build performed"
+  "functionLimitStatus": "N/A for static Vite output; source contains no Vercel API functions; no authenticated Vercel build performed",
+  "limitation": "Initial QA launcher followed SHIP rehearsal Vite build but omitted the package post-build metadata step. Missing metadata paths are a QA fixture gap, not yet a production defect. Complete the unchanged metadata generator after active cold run; verify runtime bundle bytes unchanged and HTTP metadata endpoints separately."
 }
