@@ -1284,7 +1284,7 @@ docs/screenshots/phone.png
 docs/screenshots/boss.png
 docs/screenshots/idle-strip.png
 docs/screenshots/inventory.png
-docs/architecture.md
+docs/ARCHITECTURE.md
 docs/ui-guide.md
 docs/qa-report-2.md
 docs/game-rules.md

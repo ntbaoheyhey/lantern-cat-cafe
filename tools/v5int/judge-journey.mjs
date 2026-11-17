@@ -6,6 +6,8 @@ import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
+const practiceOnly=process.argv[3]==='--practice-only';
+assert(process.argv[3]===undefined||practiceOnly,'Optional mode: --practice-only');
 assert(/^[a-z0-9-]+$/.test(label??''),'Supply a fresh evidence label');
 for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
 const out=resolve(root,'work/v5/CXI/journey',label);assert(!existsSync(out),'Preserve earlier evidence');mkdirSync(out,{recursive:true});
@@ -13,7 +15,7 @@ const url='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex'),indexSha256=hash(readFileSync(resolve(root,'apps/web/dist/index.html')));
 assert.equal(hash(Buffer.from(await (await fetch(url)).arrayBuffer())),indexSha256,'Preview differs from current build');
 const req=createRequire(resolve(root,'apps/web/package.json')),{chromium}=req('@playwright/test');
-const report={url,utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256,viewport:{width:1280,height:720},scope:'Cold frontend guest play through ordinary controls to encounter rewards; public transaction proof is a separate owner-run step.',steps:[],errors:[],httpFailures:[],blocked:[],complete:false};
+const report={url,utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256,viewport:{width:1280,height:720},scope:practiceOnly?'Cold first practice and invitation presentation only; no patrol reward or public transaction claimed.':'Cold frontend guest play through ordinary controls to encounter rewards; public transaction proof is a separate owner-run step.',steps:[],errors:[],httpFailures:[],blocked:[],complete:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 let page;
 try{
@@ -48,6 +50,10 @@ try{
  report.practice={ms:Math.round(performance.now()-start),text:await page.locator('[data-practice-receipt="true"]').innerText(),scope:'Practice completion and free invitation availability; no currency or blockchain transaction claimed.'};
  assert.match(report.practice.text,/Practice complete.*free invitation/s);
  await page.screenshot({path:resolve(out,'practice.png')});
+ if(practiceOnly){
+  report.totalMs=report.practice.ms;report.receiptText=report.practice.text;
+  report.complete=!report.errors.length&&!report.httpFailures.length&&!report.blocked.length;report.budgetPass=report.complete&&report.totalMs<30_000;
+ }else{
  await page.getByRole('button',{name:'Complete lesson',exact:true}).click();await completeTutorial();
  await page.getByRole('group',{name:'Free welcome',exact:true}).getByRole('button',{name:'Welcome',exact:true}).click();
  await page.getByRole('heading',{name:'Welcome home',exact:true}).waitFor({timeout:remaining()});step('free friend welcomed');
@@ -63,6 +69,7 @@ try{
  await page.screenshot({path:resolve(out,'result.png')});
  report.complete=report.rewards.length>0&&report.outcome==='party'&&!report.errors.length&&!report.httpFailures.length&&!report.blocked.length;
  report.budgetPass=report.complete&&report.totalMs<30_000;
+ }
  await context.close();
 }catch(error){report.failure=String(error.message).slice(0,1000);if(page&&!page.isClosed()){report.visibleText=(await page.locator('body').innerText()).slice(0,8000);const sharp=req('sharp');await sharp(await page.screenshot()).resize({width:1024}).jpeg({quality:82}).toFile(resolve(out,'failure.jpg'));}}
 finally{await browser.close();writeFileSync(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');}

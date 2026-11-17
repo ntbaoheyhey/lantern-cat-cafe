@@ -4,7 +4,7 @@ I-B OPEN: cold wave1/wave3/boss<=8,000,000B + before/after sheets. Current88bd85
 I-C ACTIVE: routing+receipt mount pass. Practice10.382s but empty receipt; real patrol exceeds30s at1x/3x. Fix practice result, RPC sign-in classification; desktop1280x720 only.
 I-D OPEN: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
 I-E OPEN afterI-A..C: production preview,3x30s films wave1/wave3/boss+contact sheets,REVIEW-VI; refresh meaningful tags.
-I-F OPEN: judge README/ARCHITECTURE with verified code/chain facts; AGS drafts; verify current links before applying stale blanket rewrite.
+I-F DONE: current desktop README+docs/ARCHITECTURE.md,3-step6301preview,5registry/explorer addresses, EOA/SIWE/ERC1155 truth; primary EN/ZH study, scoped links+registry+case checks pass. Owner public deployment remains unverified.
 I-G OPEN: desktop QA REQs severity-first; maintain full suite after fixes.
 
 Preserved DONE evidence

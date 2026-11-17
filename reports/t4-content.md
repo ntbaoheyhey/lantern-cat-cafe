@@ -12,7 +12,7 @@ STATUS: DONE
 ## 1. Per Piece of the Mission
 
 ### Piece 1 — Documents against the code (PASS)
-Every factual claim across the 11 target documents (`docs/play-v2.md`, `docs/content-v2.md`, `docs/drop-rates-v2.md`, `docs/extending-v2.md`, `docs/game-rules.md`, `docs/architecture.md`, `docs/database.md`, `docs/api-v2.md`, `docs/ui-guide.md`, `docs/licenses-v2.md`, `README.md`) was audited against the codebase on `main`.
+Every factual claim across the 11 target documents (`docs/play-v2.md`, `docs/content-v2.md`, `docs/drop-rates-v2.md`, `docs/extending-v2.md`, `docs/game-rules.md`, `docs/ARCHITECTURE.md`, `docs/database.md`, `docs/api-v2.md`, `docs/ui-guide.md`, `docs/licenses-v2.md`, `README.md`) was audited against the codebase on `main`.
 
 Where documents asserted numbers, numbers were verified against `packages/game-rules/src/v2/config.ts` (`V2_CONFIG`), `packages/game-rules/src/config.ts` (`CONFIG`), and content definitions in `packages/game-rules/src/v2/content/` (`MATERIALS`, `RECIPES`, `SALVAGE`, `CLASSES`, `CHESTS`, `SLOTS`, `RARITIES`).
 
@@ -25,7 +25,7 @@ Where documents asserted numbers, numbers were verified against `packages/game-r
 | `docs/drop-rates-v2.md` | 45 | 0 | 0 | Verified against `packages/game-rules/src/v2/lootcheck/lootcheck.test.ts` and `chests.ts`. All probabilities and expected values match. |
 | `docs/extending-v2.md` | 28 | 0 | 0 | Verified against TypeScript type signatures, validation rules in `validate.ts`, and test snapshots. |
 | `docs/game-rules.md` | 35 | 1 | 0 | Added top notice clarifying that the document specifies classic v1 rules (`packages/game-rules/src/config.ts`), linking to `docs/play-v2.md` and `docs/content-v2.md` for Cat RPG v2 rules. Verified all 33 numbers in table against `CONFIG`. |
-| `docs/architecture.md` | 16 | 2 | 0 | Added clarification that `apps/web` includes both classic v1 strip and v2 full stage layout with Phaser & cat rig. Added reference to `docs/api-v2.md`. Clarified Fuji testnet gas (free test AVAX, no real money). |
+| `docs/ARCHITECTURE.md` | 16 | 2 | 0 | Added clarification that `apps/web` includes both classic v1 strip and v2 full stage layout with Phaser & cat rig. Added reference to `docs/api-v2.md`. Clarified Fuji testnet gas (free test AVAX, no real money). |
 | `docs/database.md` | 24 | 2 | 0 | Added documentation for v2 database migration `20261101000000_v2_cat_rpg.sql` and `20261102000000_v2_integrity.sql`: 6 new tables (`cat_state`, `items`, `player_stacks`, `boss_clears`, `boss_history`, `forge_history`) and 8 v2 functions (`v2_snapshot`, `v2_claim`, `v2_equip`, `v2_lock_item`, `v2_boss_fight`, `v2_craft`, `v2_salvage`, `v2_relic_forge`). |
 | `docs/api-v2.md` | 32 | 2 | 0 | Corrected `v2-salvage` description: salvage returns Yarn and materials, but 0 Fish (`recipes.ts`, `SALVAGE`). Added clarification that Relics are minted on the Avalanche Fuji testnet at no real cost. |
 | `docs/ui-guide.md` | 20 | 2 | 0 | Added v2 components under `apps/web/src/layout/` (`StageLayout.tsx`, `bag/`, `forge/`, `classpicker/`, `boss/`, `hud/`). Clarified v2 rarity colors (`common`, `uncommon`, `rare`, `epic`, `legendary`). |
@@ -169,7 +169,7 @@ Prepared the complete mechanical guide for card CL7:
  apps/web/src/layout/forge/ForgePanel.tsx        |   4 +-
  apps/web/src/onboarding/HowToPlay.tsx           |   4 +-
  docs/api-v2.md                                  |   4 +-
- docs/architecture.md                            |  12 +-
+ docs/ARCHITECTURE.md                            |  12 +-
  docs/class-looks-fallback.md                    | 176 ++++++++++++
  docs/class-looks/README.md                      | 338 ++++++++++++++++++++++++
  docs/class-looks/alchemist.png                  | Bin 0 -> 4000 bytes
@@ -196,7 +196,7 @@ apps/web/src/layout/classpicker/ClassPicker.tsx
 apps/web/src/layout/forge/ForgePanel.tsx
 apps/web/src/onboarding/HowToPlay.tsx
 docs/api-v2.md
-docs/architecture.md
+docs/ARCHITECTURE.md
 docs/class-looks-fallback.md
 docs/class-looks/README.md
 docs/class-looks/alchemist.png

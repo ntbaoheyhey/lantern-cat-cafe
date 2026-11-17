@@ -1,98 +1,85 @@
 # Taskbar Hero — Lantern Cat Café
 
-A desktop cat RPG on Avalanche Fuji. Lead Mochi and Panko in melee, Soot at range and Clover as a healer; defend the café, mint a trial relic, craft and trade, then inspect the wallet receipts. Healers deal zero damage.
+A cosy desktop card RPG: arrange a four-cat crew, defend a lantern-lit café, collect gear and improve your team. Mochi and Panko guard the front, Soot attacks from range, and Clover heals. Optional Avalanche Fuji services add collectible ownership, trading and verifiable transaction receipts.
 
-**V4 is an integration build on `codex/v4-ship-2026-11-16`.** The [live site](https://taskbarhero-eight.vercel.app) still serves an older release. The local V4 journey, public read-only Fuji evidence and production acceptance are recorded separately. [Current work queue](reports/v4-ship/HANDOFF-SHIP.md) · [Architecture](docs/architecture.md) · [Avalanche integration](docs/avalanche-integration.md) · [Credits and licences](docs/credits-v4.md).
+**Current integration:** `codex/v5-int-2026-11-17`. [Current green tag and work state](reports/v5/CXI/HANDOFF.md) · [Desktop evidence](reports/v5/CXI/I-C.md) · [Architecture](docs/ARCHITECTURE.md) · [Owner deployment and Fuji proof](reports/v5/CXI/NEEDS-USER-VI.md).
 
-## Run the complete local journey
+**Judge URL:** [Open the desktop production preview](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). This URL works on the preview host after the steps below. A public deployment of the current green tag has not yet been verified; the owner runbook describes how to publish it.
 
-Use Node 24 (`.nvmrc`), pnpm 10.28.0 (`packageManager`), Git, and Foundry. The development host used Node 24.22.2 and Forge 1.8.6; clean-clone results are recorded under [S6](reports/v4-ship/S6/). Install dependencies and the pinned contract submodules:
+## Three-step quick start
 
-```sh
-git clone --branch codex/v4-ship-2026-11-16 --recurse-submodules https://github.com/ntbaoheyhey/taskbar-hero.git
-cd taskbar-hero
-pnpm install --frozen-lockfile
-pnpm --filter @taskbar-hero/web exec playwright install chromium
-node scripts/v4ship/start-local.mjs
-```
+Use Node 24 (see `.nvmrc`) and pnpm 10.28.0. The frontend demo needs no wallet, account or test tokens.
 
-Open `http://127.0.0.1:5994/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1`. Keep the supervisor running; Ctrl-C stops its own Vite, backend and Anvil children. It reserves web 5994, API 5997 and RPC 8546, creates a disposable database/chain and enables the local journey. It does not submit public transactions. The local Anvil chain uses Fuji's chain ID 43113; that ID alone does not make a receipt public.
+1. Get the integration branch and install dependencies:
 
-1. **Landing:** choose **Play free** to create a browser guest wallet.
-2. **Guest:** choose **Start trial**. No injected-wallet popup is needed.
-3. **Battle and reward:** watch the server-issued replay and choose **Mint trial reward**.
-4. **Receipt:** inspect confirmation time, AVAX fee, payer and the transaction link.
-5. **Café:** fund the workshop, seal an Epic, forge a Legendary, list it, buy with the demo wallet and withdraw Spool.
-6. **Boss:** choose **Face the boss** and finish the encounter.
-7. **Wallet proof:** inspect owned items, YARN and the transaction history.
+   ```sh
+   git clone --branch codex/v5-int-2026-11-17 https://github.com/ntbaoheyhey/taskbar-hero.git
+   cd taskbar-hero
+   pnpm install --frozen-lockfile
+   ```
 
-Local receipts are labelled local. Their Snowtrace URLs demonstrate link formatting; their hashes are not public Fuji transactions. The workshop includes bounded demo entitlements, not unlimited production rewards. Browser guest keys belong only to disposable test wallets.
+2. Build and keep the production preview running:
 
-For a frontend-only development server, use `pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 5996 --strictPort`. Without configured services, mock APIs and browser saves demonstrate UI behavior only. The full journey requires the supervisor above.
+   ```sh
+   pnpm --filter @taskbar-hero/web build
+   pnpm --filter @taskbar-hero/web exec vite preview --host 127.0.0.1 --port 6301 --strictPort
+   ```
 
-## Fuji contracts
+3. Open the judge URL above on desktop. Choose **Play free → Fight → Fight**, finish the short battle guide, then welcome your free cat. Follow the guide to level up a cat and start a patrol. The result shows your route points and gear. The visible speed button cycles 1×, 2× and 3×.
 
-The [versioned deployment registry](packages/chain/deployments/43113.json) contains these five public addresses. All are Fuji testnet, chain 43113. Source and ABI references live in [contracts](contracts/src/) and [packages/chain](packages/chain/).
+The bare host also opens this game. `?legacy=1` explicitly opens the older shell. The demo stores campaign progress in the browser; the URL does not enable chain services. To develop locally, use `pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 6300 --strictPort`.
+
+## Where Avalanche is used
+
+Combat is a deterministic TypeScript simulation. In the configured chain mode, Supabase authenticates SIWE sessions and authorizes eligible rewards; Fuji contracts settle mints, ownership, trades and token claims. Browser campaign saves are not issuance authority.
+
+- **Guest entry:** an ordinary browser EOA signs SIWE. The guest-drip service supplies test AVAX from a sponsor. This implementation uses funded EOAs, with no ERC-4337 EntryPoint/paymaster flow.
+- **Items and trading:** RelicNFT uses ERC-1155 signed vouchers. RelicMarketV2 supports AVAX/YARN trades; YarnToken is ERC-20; SeasonRewards settles signed claims. Features require their matching deployed services and build switches.
+- **Receipts:** a confirmed action displays its transaction hash, network, actual fee payer, AVAX fee, known confirmation duration and explorer link. Local receipts have a local label and no public explorer link. Synthetic UI captures are labelled separately.
+
+The [public read-only check](reports/v5/CXI/PUBLIC-FUJI.json) found bytecode at all five registry addresses on Fuji block **61,234,900**, 17 November 2026. This establishes code presence; public guest funding and the complete hosted chain journey still need the owner-run proof. The proof kit verifies the receipt, sender, recipient, exact funding amount and actual gas fee. Unknown confirmation timing stays unknown.
 
 | Contract | Role | Fuji explorer |
 | --- | --- | --- |
 | RelicNFT | ERC-1155 items and signed-voucher minting | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
 | RelicMarket | Legacy AVAX escrow market | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |
-| YarnToken | ERC-20 YARN and recorded burns | [0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b](https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b) |
-| RelicMarketV2 | AVAX/YARN market with sale fee and seller proceeds | [0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4](https://testnet.snowtrace.io/address/0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4) |
-| SeasonRewards | Signed, bounded reward claims | [0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11](https://testnet.snowtrace.io/address/0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11) |
+| YarnToken | ERC-20 YARN | [0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b](https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b) |
+| RelicMarketV2 | AVAX/YARN market and seller proceeds | [0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4](https://testnet.snowtrace.io/address/0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4) |
+| SeasonRewards | Signed reward claims | [0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11](https://testnet.snowtrace.io/address/0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11) |
 
-RelicForge is optional local code and has no public address in this registry. ERC-20 YARN is distinct from older off-chain resources also named yarn. Spool withdrawal retains 25% (2,500 basis points); retained value is not a token burn. The class attack/Power multiplier remains 1.15.
+Addresses come from the [versioned Fuji registry](packages/chain/deployments/43113.json). All are testnet, chain ID 43113; test tokens have no real value. Optional RelicForge has no public address in that registry.
 
-## Architecture and authority
+## Architecture
 
 ```mermaid
 flowchart LR
-  UI[React UI and guest or injected wallet] -->|SIWE and authenticated actions| API[Supabase Edge Functions]
-  API --> DB[(Server ledgers and entitlements)]
-  Rules[Deterministic shared rules] --> UI
-  Rules --> API
-  API -->|Bound vouchers and reward claims| UI
-  UI -->|Signed transactions| Chain[Fuji contracts]
-  Chain -->|Receipts and ownership| UI
+  Rules[Shared deterministic rules] --> UI[React desktop game and Three/Spine presentation]
+  Rules --> API[Supabase Edge Functions]
+  UI -->|SIWE and authenticated actions| API
+  API --> DB[(Progression and entitlement ledgers)]
+  API -->|Authorized vouchers| UI
+  UI -->|Wallet transactions| Fuji[Avalanche Fuji contracts]
+  Fuji -->|Ownership and verified receipts| UI
 ```
 
-`apps/web` contains the React interface, Three/Spine battle presentation and audio, with legacy Phaser paths retained. `packages/game-rules` holds deterministic rules. `packages/auth` verifies SIWE sessions; `packages/api-contract` holds API types. Supabase owns connected progression, entitlements and issuance. Browser campaign saves are not mint authority. Contracts own tokens, escrow, nonce consumption and claim settlement. See [architecture](docs/architecture.md) for the trust boundaries and recovery behavior.
+`apps/web` owns presentation, audio and wallet interaction. `packages/game-rules` supplies shared rules; `packages/auth` verifies sessions; `packages/chain` contains ABIs and addresses. Supabase owns connected progression and issuance decisions; contracts own token settlement. The [architecture page](docs/ARCHITECTURE.md) explains those boundaries, loading and recovery.
 
-## Verification
-
-Run from a fresh checkout after dependency installation:
+## Run checks and inspect evidence
 
 ```sh
 pnpm typecheck
+pnpm --filter @taskbar-hero/web test
 pnpm test
-pnpm --filter @taskbar-hero/supabase-tests test
-pnpm build
-forge test --root contracts -vv
-node --test tools/v4ship-lab/proof/receipt-check.test.mjs
+pnpm --filter @taskbar-hero/web build
+node --test tools/v5int/fuji-proof-kit.test.mjs
 ```
 
-With the local supervisor running, record three rules/presentation fixtures without creating a baseline:
+Root `pnpm test` includes the workspace web tests. Contract tests are a separate read-only check: after installing Foundry and initializing submodules with `git submodule update --init --recursive`, run `forge test --root contracts`.
 
-```sh
-V4_PARITY_MODE=probe V4_BASE_URL=http://127.0.0.1:5994 V4_PARITY_OUTPUT=work/local-parity.json node scripts/v4ship/parity.mjs
-```
+The [desktop evidence record](reports/v5/CXI/I-C.md) separates passing suites, synthetic receipt presentation and real frontend play. Fresh cold combat entries measured **8.74–8.95 MB**, above the 8 MB target. The first practice result appears in about 10 seconds; an untrained first patrol took **66.3 seconds at 3×**, so the full 30-second patrol target remains open. These local measurements do not establish public network performance.
 
-Create `work/` first if it is absent. A passing probe proves agreement for those fixtures; the class release gate also needs valid economy evidence and an approved baseline. Do not run `old` or `new` modes as a way to dismiss a mismatch.
+The [owner runbook](reports/v5/CXI/NEEDS-USER-VI.md) contains the isolated Anvil dry-run and explicit, environment-gated Fuji funding command. It also pins the green release for deployment. No private key is an input to that proof kit.
 
-The twenty-journey acceptance harness requires its own fresh disposable ledgers and records ten runs at each desktop size, 1280×720 and 1440×900:
+## Credits
 
-```sh
-V4_ITEM=S4-review-new V4_RECOVERY=1 V4_STABLE=1 V4_AUDIO_TRACE=1 V4_FAIL_FAST=1 node scripts/v4ship/journey-run.mjs
-node tools/v4ship-lab/proof/finalize.mjs S4-review-new review-new.json
-```
-
-Choose unused output names. The harness checks receipts against the local RPC before rolling back, preserves failures, verifies reload recovery and rejects runtime drift. This development run does not certify production-preview behavior or public sponsored latency.
-
-Latest complete regression at this documentation update: server/rules/typecheck/three-fixture probe/build passed; web had 2,663 passing tests and seven failures in ART-owned presentation tests. [Exact result](reports/v4-ship/S4/regression-final-1/check.json). G-CLASS remains open at E3 16/18 with no new baseline; [S2b evidence](reports/v4-ship/S2b/hold-verification-1.json). Audio measurements and remaining gates are in [AUDIO-REVIEW](reports/v4-ship/AUDIO-REVIEW.md). Production rehearsal and final submission film remain pending.
-
-## Credits and historical evidence
-
-Project code is [MIT licensed](LICENSE). Dependencies, fonts, audio and artwork retain their own terms; see [V4 credits](docs/credits-v4.md), [audio provenance](apps/web/public/audio/LICENSES.json), and [ART provenance](docs/art/PROVENANCE.md). A manifest match is not an independent ownership audit.
-
-The [older submission pack](docs/submission.md), [older slide outline](docs/pitch-slides.md) and [November 3 media manifest](reports/submission/evidence/media-manifest.json) describe historical builds. Their screenshots and test counts are not V4 acceptance evidence. Current submission work is tracked in the V4 queue.
+Project code is [MIT licensed](LICENSE). Dependencies and media retain their own terms: [credits](docs/credits-v4.md), [audio provenance](apps/web/public/audio/LICENSES.json), and [art provenance](docs/art/PROVENANCE.md). Earlier [submission material](docs/submission.md) describes historical builds; current acceptance evidence lives under `reports/v5/CXI`.

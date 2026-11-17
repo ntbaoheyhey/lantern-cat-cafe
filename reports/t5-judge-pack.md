@@ -307,7 +307,7 @@ Implementation/evidence snapshot: `329fe7955698ee8d2052b39920bcfdce700a3f82`. Th
 ```text
 $ git diff --stat origin/main...HEAD
  README.md                                     |  12 +
- docs/architecture.md                          |  55 +++++
+ docs/ARCHITECTURE.md                          |  55 +++++
  docs/avalanche-integration.md                 | 107 +++++++++
  docs/deploy.md                                |  43 ++++
  package.json                                  |   3 +-
@@ -322,7 +322,7 @@ $ git diff --stat origin/main...HEAD
 
 $ git diff --name-only origin/main...HEAD
 README.md
-docs/architecture.md
+docs/ARCHITECTURE.md
 docs/avalanche-integration.md
 docs/deploy.md
 package.json
@@ -353,7 +353,7 @@ To https://github.com/ntbaoheyhey/taskbar-hero.git
 Final verification before the report metadata commit:
 
 ```text
-$ node scripts/check-links.mjs README.md docs/avalanche-integration.md docs/architecture.md docs/deploy.md reports/t5-judge-pack.md
+$ node scripts/check-links.mjs README.md docs/avalanche-integration.md docs/ARCHITECTURE.md docs/deploy.md reports/t5-judge-pack.md
 Checked 5 markdown files and 76 links/paths.
 ✓ All links, image paths, and backticked repo paths exist on disk.
 $ node scripts/check-links.mjs --json
