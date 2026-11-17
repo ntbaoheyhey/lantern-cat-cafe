@@ -20,9 +20,9 @@ function pixels(texture:T.Texture):Pixels|undefined {
  textures.set(texture,data);return data;
 }
 
-function convexHull(points:Point[]):Point[] {
+/** Input is lexicographically ordered by y then x: two endpoints per row. */
+function rowOrderedHull(points:Point[]):Point[] {
  if(points.length<4)return points;
- points.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
  const cross=(o:Point,a:Point,b:Point)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
  const lower:Point[]=[],upper:Point[]=[];
  for(const p of points){while(lower.length>1&&cross(lower.at(-2)!,lower.at(-1)!,p)<=0)lower.pop();lower.push(p);}
@@ -65,11 +65,21 @@ function samples(mesh:T.Mesh):Sample[] {
     // every painted pixel. Only retained contour vertices need weight arrays.
     const px=x+.5-c[0],u=(bcY*px+cbX*py)/denominator,v=(caY*px+acX*py)/denominator;
     if(u<-.000001||v<-.000001||1-u-v<-.000001)continue;
-    if(left<0)left=x;right=x;
+    left=x;break;
    }
-   if(left>=0){edge.push([left+.5,y+.5]);if(right!==left)edge.push([right+.5,y+.5]);}
+   if(left<0)continue;
+   // Only the two row extrema can survive the convex hull. Search backwards
+   // for the second endpoint, preserving the exact alpha/containment checks.
+   right=left;
+   for(let x=x1;x>left;x--){
+    if(rgba[(y*width+x)*4+3]!<128)continue;
+    const px=x+.5-c[0],u=(bcY*px+cbX*py)/denominator,v=(caY*px+acX*py)/denominator;
+    if(u<-.000001||v<-.000001||1-u-v<-.000001)continue;
+    right=x;break;
+   }
+   edge.push([left+.5,y+.5]);if(right!==left)edge.push([right+.5,y+.5]);
   }
-  for(const p of convexHull(edge))result.push({ids,weights:barycentric(...p)});
+  for(const p of rowOrderedHull(edge))result.push({ids,weights:barycentric(...p)});
  }
  if(!variants){variants=new WeakMap();geometryHulls.set(geometry,variants);}variants.set(texture,result);return result;
 }
