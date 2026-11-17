@@ -12,9 +12,9 @@ This document synthesizes production-proven game visual effects techniques acros
 - **Date**: 2024-2026
 - **Access / Block Note**: Directly probed via curl (`old.reddit.com/r/ClaudeAI/comments/1xwlfsn/for_those_who_asked/.json`). Returned `HTTP/2 302` redirect to `/login/?reason=lor2` followed by TLS connection reset (`curl: (56) Recv failure: Connection reset by peer`). Community workflow reconstructed via search indexing and r/aigamedev mirrors.
 - **Concrete Techniques & Numbers**:
-  1. *Claude as Pipeline Orchestrator*: Do not use LLMs as direct pixel painters; prompt Claude to script FFmpeg frame extraction at 12-16 fps and run Python Pillow grid packing into power-of-two sprite sheets ($1024\times1024$ or $2048\times2048$).
-  2. *Video-to-Sprite Matting*: Render motion passes on high-contrast solid keying backgrounds (pure black `#000000` or key green `#00FF00`); execute background removal using `rembg` (u2net) with 1-2 px alpha edge feathering.
-  3. *Iterative Intermediate Previews*: Output intermediate 4-frame contact previews before compiling full sheets to catch pixel warping and scale drifting.
+  1. *Primary Post Fact (Claude & Blender 3D Workflow)*: The original author utilized Claude to generate and iterate Python scripts driving Blender 3D rigging (8-leg inverse kinematics, 12 sequential render shots across 4 procedural revisions), controlling cameras and spatial bone constraints.
+  2. *Pipeline Adaptation for 2D Web VFX (Our Synthesis)*: For 2D sprite workflows, adapt this Claude orchestration model to drive local toolsets: execute FFmpeg frame slicing at 12-16 fps and Python Pillow packing into power-of-two sprite sheets ($1024\times1024$ or $2048\times2048$) with `rembg` alpha matting and 1-2 px edge feathering.
+  3. *Iterative Intermediate Previews*: Output intermediate 4-frame contact previews before compiling full sheets to catch layout warping and scale drift early.
 - **Applies to**: CXV timeline (orchestration & timing) / AG2 textures (sprite sheet packing)
 
 ### Source 2: Reddit r/aigamedev (Sprite Sheet AI Pipelines)
