@@ -10,4 +10,7 @@
 - [x] R3 Distant-enemy variants at 0.75x for enemy rig pages (only if SSIM at display size >= 0.98) [60 min]
 - [x] R4 Unused-image report: grep apps/web/src for each public image path; list never-referenced files with sizes for CXI (read only, no deletes) [45 min]
 - [x] R5 Duplicate-image report: identical hashes and near-duplicates (same dims, SSIM >= 0.995) [30 min]
-- [ ] R6 Landing/first-screen images: smallest acceptable versions of the first screen's images (LCP), with a montage [45 min]
+- [x] R6 Landing/first-screen images: smallest acceptable versions of the first screen's images (LCP), with a montage [45 min]
+- [ ] R7 New images after every new tag on BOARD: convert any new heavy image (repeatable) [30 min]
+- [ ] R8 In-game spot check: composite 10 random siblings over a battle frame at display size vs the PNG; REQ to CXI if any looks different [45 min]
+- [ ] R9 Write tools/v5assets/README.md: exact commands to redo every conversion [20 min]

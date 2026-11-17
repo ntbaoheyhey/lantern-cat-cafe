@@ -1,5 +1,6 @@
 # Trạng thái AG3
-- Hoàn thành thẻ R5: Phát hiện 40 nhóm trùng lặp 100% SHA-256 (88 file) và 6 cặp gần trùng (SSIM >= 0.995).
-- Lãng phí lớn nhất: binding-thread portrait vs runtime trùng lặp 97.5 KB; 5 file foreground trùng byte.
-- Bắt đầu thẻ R6: Tối ưu hóa tài nguyên màn hình đầu tiên / Landing page (LCP), tạo montage đối chiếu.
-- Đã xuất R5-duplicates.csv và R5-duplicates.md, gửi READY cho CXI.
+- Hoàn thành thẻ R6: Tối ưu hóa các ảnh LCP màn hình đầu tiên (giảm 36.6% payload, tiết kiệm 311.3 KB).
+- Keyart landing.webp -> landing.avif giảm 24.1% (tiết kiệm 64 KB, SSIM hiển thị 0.9862).
+- Bộ 4 portrait tướng (mochi, panko, soot, clover) giảm trên 50% kích thước sang AVIF.
+- Nạp thêm R7, R8, R9 vào QUEUE theo REFILL RULE.
+- Đang kiểm tra tag mới từ BOARD (R7) và tiến hành R8 spot check.
