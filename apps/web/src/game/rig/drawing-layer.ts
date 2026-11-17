@@ -4,7 +4,8 @@
 import * as T from 'three';
 import {usePaintedAtlasColor} from './atlas-color';
 import {SecondaryMotion} from './secondary-motion';
-import {drawingExpression} from './drawing-expression';
+import {drawingExpression,eyeClosure} from './drawing-expression';
+import {FaceDepth} from './face-depth';
 export type DrawingKey='K0'|'K1'|'K2'|'K3'|'K4'|'K5'|'K6';
 export type DrawingPoint=readonly [number,number];
 export interface DrawingSample {clip:string;seconds:number;reduced:boolean}
@@ -34,6 +35,8 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  key:DrawingKey='K0';private seconds=0;private clip='idle';private reduced=false;
  private source:Float32Array;
  readonly secondary:SecondaryMotion;
+ readonly faceDepth=new FaceDepth();private seekFaceDepth=new FaceDepth();
+ private faceOffset={x:0,y:0};
  private seekMotion:SecondaryMotion;
  private expression:ReturnType<typeof drawingExpression>;
  private overlapValues:Float32Array;
@@ -58,9 +61,10 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const positions=this.geometry.attributes.position!,m=this.set.manifest;
   const hold=name==='attack'&&seconds>=.35&&seconds<.44?.35:(name==='ult'||name==='skill')&&seconds>=1.1&&seconds<1.19?1.1:name==='hurt'&&seconds<.09?0:seconds;
   this.secondary.sample(clock-seconds+hold,name,hold,reduced,target,damageAge??(name==='hurt'?seconds:-1),critAge);
+  this.faceDepth.sample(this.secondary.turn,this.secondary.nod);
   const overlaps=this.frame.overlap??NO_OVERLAP;
   for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
-  this.expression.sample(this.frame.face,m.canvas,this.secondary.leftBlink,this.secondary.rightBlink);
+  this.expression.sample(this.frame.face,m.canvas,eyeClosure(this.secondary.leftBlink,this.secondary.leftSoftness),eyeClosure(this.secondary.rightBlink,this.secondary.rightSoftness));
   for(let i=0;i<positions.count;i++){
    this.vertex[0]=this.source[i*3]!+m.canvas[0]/2;this.vertex[1]=m.canvas[1]/2-this.source[i*3+1]!;
    const point=this.point(this.vertex,this.key,undefined,this.output);
@@ -118,15 +122,16 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   let planted=1;
   for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
   const head=motion.look*m.opaqueHeight*.008*smooth((py/height-.32)/.38)*this.pixelScale;
-  // A neck pivot carries the outline. The inner face moves a little farther,
-  // producing a small turn without sliding the whole painted character.
+  // Neck roll carries the outline; cheek/muzzle projection changes the inner
+  // feature spacing so a yaw reads as depth rather than a sliding face.
   const neckX=fx+fw*.5,neckY=fy+fh*1.13,neck=smooth((neckY-y)/(fh*.45));
   const dx=x-neckX,dy=y-neckY;
   const turnX=(dx*(motion.tiltCos-1)-dy*motion.tiltSin)*neck;
   const turnY=(dx*motion.tiltSin+dy*(motion.tiltCos-1))*neck;
-  const face=smooth(1-((x-neckX)/(fw*.72))**2-((y-fy-fh*.55)/(fh*.9))**2);
-  const lifeX=(turnX+m.opaqueHeight*(motion.turn*(.004*neck+.014*face)+.009*motion.weight*upper))*this.pixelScale;
-  const lifeY=(-turnY+m.opaqueHeight*.006*motion.nod*neck)*this.pixelScale;
+  const depth=at?this.seekFaceDepth:this.faceDepth;if(at)depth.sample(motion.turn,motion.nod);
+  const projected=depth.offset(x,y,frame.face,this.faceOffset);
+  const lifeX=(turnX+projected.x+m.opaqueHeight*(motion.turn*.004*neck+.009*motion.weight*upper))*this.pixelScale;
+  const lifeY=(-turnY-projected.y+m.opaqueHeight*.006*motion.nod*neck)*this.pixelScale;
   out.x=this.origin[0]+px+(px*smear+height*lean*upper+ox*factor*this.pixelScale+head+lifeX)*planted;
   out.y=this.origin[1]+py+(height*lift*upper-oy*factor*this.pixelScale+lifeY)*planted;
   return out;

@@ -39,7 +39,7 @@ try{
      nose:project(fx+fw*.60,fy+fh*.64),leftEye:project(fx+fw*.40,fy+fh*.44),rightEye:project(fx+fw*.74,fy+fh*.40),
      leftEyeEdges:[project(fx+fw*.28,fy+fh*.44),project(fx+fw*.52,fy+fh*.44)],rightEyeEdges:[project(fx+fw*.635,fy+fh*.40),project(fx+fw*.845,fy+fh*.40)]};
     return {id,owner:e.asset,key:d.key,pose:s.sampled.get(id)?.name,clock:d.secondary.clock,head:s.socket(id,'head'),feet:d.contactPoints(),
-     facePoints,
+     facePoints,faceDepth:{yaw:d.faceDepth?.yaw??0,pitch:d.faceDepth?.pitch??0},
      secondary:{...d.secondary},overlap:(d.frame.overlap??[]).map(o=>({part:o.part,point:d.point(o.center)}))};
    })};
   },{time:times[i],mode,reduced});
