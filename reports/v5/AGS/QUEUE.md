@@ -1,7 +1,7 @@
 # AGS Queue (REV 4)
 - [x] S1 Setup: branch check, state files, read AG4/AG1 state, INBOX-CXI notice, push proof
 - [ ] S2 Merge tag v5-m1 when BOARD announces it [merger: CXI; merge once tagged]
-- [ ] H1 Sound R5 chain moments (tx sent, confirmed Avalanche, receipt ready) + R6 cat emotes (synthesized) [75 min] READY to CXI
+- [x] H1 Sound R5 chain moments (tx sent, confirmed Avalanche, receipt ready) + R6 cat emotes (synthesized) [75 min] READY to CXI
 - [ ] H2 QA review of the newest tag on demo URL (1280x720 + 390x844, guest -> battle -> receipt), fresh captures, REQs by owner [90 min]
 - [ ] H3 Sound R7 boss phase/ultimate layers matching CXV cue list + R8 mix pass with gain proposals to CXI [75 min]
 - [ ] H4 Demo video plan: 90-120 s shot list + voice-over script (English, judge-first, Avalanche proof), timing table -> reports/v5/AGS/submission/VIDEO-PLAN.md [60 min]

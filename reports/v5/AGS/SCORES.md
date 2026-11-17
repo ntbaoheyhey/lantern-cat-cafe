@@ -110,3 +110,26 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `stinger.defeat` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Gentle melancholic descending D-minor sigh, -16.2 LUFS, 2.21s |
 | `stinger.level_up` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Rising pentatonic harp sweep + sparkle, -16.7 LUFS, 1.81s |
 | `stinger.boss_appear` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Ominous horn swell -> colossal thud & rumble, -16.7 LUFS, 2.61s |
+
+## R5 Chain Moments (Avalanche & Fuji Finality)
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `chain.tx_sent` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Telemetry chirp + rising harmonic pulse, -17.5 LUFS, 4.4 KB |
+| `chain.tx_confirmed` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Crystal strike + D5/A5 Fuji bell + 90Hz lock, -16.3 LUFS, 10.2 KB |
+| `chain.receipt_ready` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Mechanical register ding + golden coin cascade, -16.5 LUFS, 7.3 KB |
+
+## R6 Cat Emotes (4 Heroes x 3 Emotes)
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `emote.mochi.happy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft cotton upward trill 420->780Hz, -17.1 LUFS, 2.8 KB |
+| `emote.mochi.hurt` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Startled cushion squeak-yelp 680->320Hz, -16.9 LUFS, 3.6 KB |
+| `emote.mochi.purr` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Marshmallow purr 110Hz @ 26Hz pulse, -17.9 LUFS, 5.2 KB |
+| `emote.soot.happy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Playful ember trill 560->940Hz, -17.4 LUFS, 2.7 KB |
+| `emote.soot.hurt` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Sharp kitten hiss-yelp 760->360Hz, -17.2 LUFS, 2.1 KB |
+| `emote.soot.purr` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Hearthside crackle purr 125Hz @ 28Hz pulse, -16.6 LUFS, 6.0 KB |
+| `emote.clover.happy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Breezy chirrup + bell overtone 500->860Hz, -16.9 LUFS, 2.9 KB |
+| `emote.clover.hurt` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft twig-snap mew 690->330Hz, -17.0 LUFS, 3.8 KB |
+| `emote.clover.purr` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Garden herbalist purr 130Hz @ 25Hz pulse, -16.5 LUFS, 6.0 KB |
+| `emote.panko.happy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Toasty cheerful chirp 440->760Hz, -16.9 LUFS, 2.8 KB |
+| `emote.panko.hurt` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Crust-pop startled mew 640->300Hz, -16.5 LUFS, 2.2 KB |
+| `emote.panko.purr` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Bakery dough purr 115Hz @ 27Hz pulse, -16.3 LUFS, 9.1 KB |

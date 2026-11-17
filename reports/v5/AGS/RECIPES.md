@@ -412,3 +412,49 @@ Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -16.7 to -16.2 LUFS (0.5 
    - Earthquake rumble tail: brown noise lowpass 420Hz, volume 0.35 (delay 650ms)
    - Duration: 2.61s
    - Measured: -16.7 LUFS, peak -2.3 dBFS, size 14,994 B.
+
+## R5 Chain Moments (Avalanche & Fuji Finality)
+Command: `node tools/v5audio/render.mjs --chain-moments`
+All synthesized deterministically into WebM Opus + AAC M4A. Target: -18.0 LUFS +/- 2 LU.
+
+1. `chain.tx_sent` (`chain-tx-sent`):
+   - Telemetry ping transient: sine 3500->5200Hz sweep, 30ms, exp(-t/0.008)
+   - Uplink body: dual harmonic ascending chords 880Hz + 1320Hz, delay 15ms
+   - Ethereal sparkle tail: pink noise bandpass 3800Hz (w=1200), volume 0.25, delay 40ms
+   - Duration: 0.46s, Measured: -17.5 LUFS, peak -2.0 dBFS, size 4,429 B.
+
+2. `chain.tx_confirmed` (`chain-tx-confirmed`):
+   - Crystal mallet transient: sine 2200->1400Hz sweep, 20ms, exp(-t/0.006)
+   - Fuji finality bell body: D5 (587.33Hz) + A5 (880Hz) + D6 (1174.66Hz) + 90Hz sub-anchor, delay 10ms
+   - Shimmering tail: pink noise bandpass 1800Hz (w=1000), volume 0.22, decay 0.8s, delay 40ms
+   - Duration: 1.26s, Measured: -16.3 LUFS, peak -1.8 dBFS, size 10,204 B.
+
+3. `chain.receipt_ready` (`chain-receipt-ready`):
+   - Register chime transient: dual chime 2637Hz + 5274Hz, 40ms, exp(-t/0.015)
+   - Cascading coins body: arpeggiated coin notes (1174.66Hz, 1760Hz, 2349.32Hz), delay 15ms
+   - Golden shimmer tail: white noise bandpass 2800Hz (w=1400), volume 0.20, delay 50ms
+   - Duration: 0.66s, Measured: -16.5 LUFS, peak -2.4 dBFS, size 7,251 B.
+
+## R6 Cat Emotes (4 Heroes x 3 Emotes)
+Command: `node tools/v5audio/render.mjs --cat-emotes`
+All synthesized deterministically into WebM Opus + AAC M4A. Target: -18.0 LUFS +/- 2 LU.
+
+1. Mochi (White cat / fluffy cotton):
+   - `emote.mochi.happy`: Soft pink noise burst + sine glide 420->780Hz with 18Hz vibrato. Dur 0.39s, -17.1 LUFS, peak -2.1 dBFS, size 2,763 B.
+   - `emote.mochi.hurt`: High squeak click 850Hz + downward drop 680->320Hz. Dur 0.33s, -16.9 LUFS, peak -2.0 dBFS, size 3,581 B.
+   - `emote.mochi.purr`: Low brown noise + 110Hz body tone with 26Hz amplitude modulation. Dur 0.86s, -17.9 LUFS, peak -2.3 dBFS, size 5,226 B.
+
+2. Soot (Black cat / ember spark):
+   - `emote.soot.happy`: Crackle snap transient + rising trill 560->940Hz with 22Hz flutter. Dur 0.36s, -17.4 LUFS, peak -1.7 dBFS, size 2,656 B.
+   - `emote.soot.hurt`: Spark click 1100Hz + steep pitch drop 760->360Hz. Dur 0.31s, -17.2 LUFS, peak -2.1 dBFS, size 2,134 B.
+   - `emote.soot.purr`: Warm hearth transient + 125Hz body with 28Hz amplitude modulation. Dur 0.86s, -16.6 LUFS, peak -1.9 dBFS, size 5,989 B.
+
+3. Clover (Calico cat / herbal garden):
+   - `emote.clover.happy`: Bell tintinnabulation 1760Hz + cheerful glide 500->860Hz + 1000->1720Hz. Dur 0.39s, -16.9 LUFS, peak -2.1 dBFS, size 2,941 B.
+   - `emote.clover.hurt`: Twig-snap 950Hz + downward mew 690->330Hz. Dur 0.33s, -17.0 LUFS, peak -2.1 dBFS, size 3,836 B.
+   - `emote.clover.purr`: Leaf murmur + 130Hz soothing body with 25Hz amplitude modulation. Dur 0.86s, -16.5 LUFS, peak -2.1 dBFS, size 5,991 B.
+
+4. Panko (Ginger tabby / bakery bread):
+   - `emote.panko.happy`: Toast pop 2100Hz + warm upward trill 440->760Hz with 20Hz vibrato. Dur 0.39s, -16.9 LUFS, peak -2.4 dBFS, size 2,794 B.
+   - `emote.panko.hurt`: Dry crust click 1250Hz + downward drop 640->300Hz. Dur 0.33s, -16.5 LUFS, peak -2.1 dBFS, size 2,215 B.
+   - `emote.panko.purr`: Flour puff + 115Hz warm body with 27Hz amplitude modulation. Dur 0.86s, -16.3 LUFS, peak -1.8 dBFS, size 9,136 B.

@@ -16,11 +16,17 @@ const ROOT_DIR = path.resolve(__dirname, '../..');
 const AUDIO_DIR = path.join(ROOT_DIR, 'apps/web/public/audio');
 const AUDIO_V5_DIR = path.join(ROOT_DIR, 'apps/web/public/audio/v5');
 const LEGACY_DIR = path.join(AUDIO_V5_DIR, 'legacy');
-const REPORTS_DIR = path.join(ROOT_DIR, 'reports/v5/AG4');
+const REPORTS_AGS_DIR = path.join(ROOT_DIR, 'reports/v5/AGS');
+const REPORTS_DIR = REPORTS_AGS_DIR;
 
 fs.mkdirSync(AUDIO_V5_DIR, { recursive: true });
 fs.mkdirSync(LEGACY_DIR, { recursive: true });
-fs.mkdirSync(REPORTS_DIR, { recursive: true });
+fs.mkdirSync(REPORTS_AGS_DIR, { recursive: true });
+
+function writeReportFile(filename, content) {
+  const agsPath = path.join(REPORTS_AGS_DIR, filename);
+  fs.writeFileSync(agsPath, content, 'utf8');
+}
 
 function runFfmpeg(args) {
   const res = spawnSync('ffmpeg', ['-hide_banner', '-y', ...args], { encoding: 'utf8' });
@@ -1662,6 +1668,389 @@ export function renderStingers() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R5: Chain Moments Definitions (Avalanche transactions & receipts)
+ */
+export const CHAIN_MOMENT_DEFINITIONS = [
+  {
+    cueId: 'chain.tx_sent',
+    name: 'chain-tx-sent',
+    runtimeCueId: 'chain.tx_sent',
+    aliases: ['tx.sent', 'chain.sent', 'blockchain.sent', 'wallet.sent'],
+    durationSec: 0.45,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*sin(2*PI*(3500+1700*(t/0.03))*t)*exp(-t/0.008)':s=48000:d=0.03",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*(sin(2*PI*(880+220*(t/0.18))*t)+0.5*sin(2*PI*(1320+330*(t/0.18))*t))*exp(-t/0.06)':s=48000:d=0.18",
+    bodyDelayMs: 15,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.25,bandpass=f=3800:w=1200,volume=0.25,afade=t=out:st=0.02:d=0.23",
+    tailDelayMs: 40,
+    masterGain: 1.15,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'chain.tx_confirmed',
+    name: 'chain-tx-confirmed',
+    runtimeCueId: 'chain.tx_confirmed',
+    aliases: ['tx.confirmed', 'chain.confirmed', 'avalanche.confirmed', 'blockchain.confirmed', 'fuji.confirmed'],
+    durationSec: 1.25,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(2200-800*(t/0.02))*t)*exp(-t/0.006)':s=48000:d=0.02",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*(sin(2*PI*587.33*t)+0.65*sin(2*PI*880*t)+0.5*sin(2*PI*1174.66*t)+0.4*sin(2*PI*90*t))*exp(-t/0.28)':s=48000:d=0.9",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.9,bandpass=f=1800:w=1000,volume=0.22,afade=t=out:st=0.1:d=0.8",
+    tailDelayMs: 40,
+    masterGain: 0.82,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'chain.receipt_ready',
+    name: 'chain-receipt-ready',
+    runtimeCueId: 'chain.receipt_ready',
+    aliases: ['receipt.ready', 'chain.receipt', 'receipt.fanout', 'ui.receipt.ready'],
+    durationSec: 0.65,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*(sin(2*PI*2637*t)+0.6*sin(2*PI*5274*t))*exp(-t/0.015)':s=48000:d=0.04",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.75*(sin(2*PI*1174.66*t)*exp(-t/0.12)+0.65*sin(2*PI*1760*t)*exp(-max(0,t-0.05)/0.12)+0.55*sin(2*PI*2349.32*t)*exp(-max(0,t-0.1)/0.15))':s=48000:d=0.45",
+    bodyDelayMs: 15,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.35,bandpass=f=2800:w=1400,volume=0.20,afade=t=out:st=0.05:d=0.30",
+    tailDelayMs: 50,
+    masterGain: 0.72,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderChainMoments() {
+  console.log(`Rendering ${CHAIN_MOMENT_DEFINITIONS.length} Chain Moments (R5)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of CHAIN_MOMENT_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: def.bus,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,bus'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},sfx`);
+  }
+  writeReportFile('R5-loudness.csv', csvLines.join('\n') + '\n');
+  console.log('Wrote R5-loudness.csv to reports');
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R5 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
+/**
+ * R6: Cat Emotes Definitions (4 heroes x 3 actions = 12 cues)
+ */
+export const CAT_EMOTE_DEFINITIONS = [
+  // Mochi
+  {
+    cueId: 'emote.mochi.happy',
+    name: 'cat-mochi-happy',
+    runtimeCueId: 'emote.mochi.happy',
+    aliases: ['mochi.happy', 'cat.happy', 'emote.happy'],
+    durationSec: 0.38,
+    bus: 'sfx',
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.03,bandpass=f=1200:w=800,afade=t=out:st=0:d=0.03,volume=0.5",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(420+360*(t/0.25))*t)*exp(-t/0.12)*(1+0.2*sin(2*PI*18*t))':s=48000:d=0.28",
+    bodyDelayMs: 15,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.18,lowpass=f=700,volume=0.25,afade=t=out:st=0.02:d=0.16",
+    tailDelayMs: 35,
+    masterGain: 1.15,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.mochi.hurt',
+    name: 'cat-mochi-hurt',
+    runtimeCueId: 'emote.mochi.hurt',
+    aliases: ['mochi.hurt', 'cat.hurt', 'emote.hurt'],
+    durationSec: 0.32,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.8*sin(2*PI*850*t)*exp(-t/0.008)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(680-360*(t/0.15))*t)*exp(-t/0.05)':s=48000:d=0.18",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.15,lowpass=f=550,volume=0.22,afade=t=out:st=0.01:d=0.14",
+    tailDelayMs: 25,
+    masterGain: 1.10,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.mochi.purr',
+    name: 'cat-mochi-purr',
+    runtimeCueId: 'emote.mochi.purr',
+    aliases: ['mochi.purr', 'cat.purr', 'emote.purr'],
+    durationSec: 0.85,
+    bus: 'sfx',
+    transientFilter: "anoisesrc=c=brown:r=48000:d=0.05,lowpass=f=300,volume=0.3,afade=t=in:st=0:d=0.05",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*110*t)*(0.5+0.5*sin(2*PI*26*t))*exp(-t/0.5)':s=48000:d=0.75",
+    bodyDelayMs: 20,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.45,lowpass=f=220,volume=0.35,afade=t=out:st=0.05:d=0.40",
+    tailDelayMs: 60,
+    masterGain: 1.25,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // Soot
+  {
+    cueId: 'emote.soot.happy',
+    name: 'cat-soot-happy',
+    runtimeCueId: 'emote.soot.happy',
+    aliases: ['soot.happy'],
+    durationSec: 0.35,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*sin(2*PI*(3200-1200*(t/0.01))*t)*exp(-t/0.004)':s=48000:d=0.012",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(560+380*(t/0.22))*t)*exp(-t/0.10)*(1+0.25*sin(2*PI*22*t))':s=48000:d=0.25",
+    bodyDelayMs: 12,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.18,bandpass=f=2200:w=1200,volume=0.22,afade=t=out:st=0.02:d=0.16",
+    tailDelayMs: 30,
+    masterGain: 1.15,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.soot.hurt',
+    name: 'cat-soot-hurt',
+    runtimeCueId: 'emote.soot.hurt',
+    aliases: ['soot.hurt'],
+    durationSec: 0.30,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*1100*t)*exp(-t/0.005)':s=48000:d=0.012",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(760-400*(t/0.14))*t)*exp(-t/0.045)':s=48000:d=0.16",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.14,bandpass=f=1800:w=900,volume=0.20,afade=t=out:st=0.01:d=0.13",
+    tailDelayMs: 25,
+    masterGain: 1.10,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.soot.purr',
+    name: 'cat-soot-purr',
+    runtimeCueId: 'emote.soot.purr',
+    aliases: ['soot.purr'],
+    durationSec: 0.85,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.6*sin(2*PI*280*t)*exp(-t/0.01)':s=48000:d=0.02",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*(sin(2*PI*125*t)+0.3*sin(2*PI*250*t))*(0.5+0.5*sin(2*PI*28*t))*exp(-t/0.52)':s=48000:d=0.75",
+    bodyDelayMs: 18,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.45,lowpass=f=320,volume=0.30,afade=t=out:st=0.05:d=0.40",
+    tailDelayMs: 60,
+    masterGain: 1.20,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // Clover
+  {
+    cueId: 'emote.clover.happy',
+    name: 'cat-clover-happy',
+    runtimeCueId: 'emote.clover.happy',
+    aliases: ['clover.happy'],
+    durationSec: 0.38,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.8*sin(2*PI*1760*t)*exp(-t/0.006)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*(sin(2*PI*(500+360*(t/0.26))*t)+0.4*sin(2*PI*(1000+720*(t/0.26))*t))*exp(-t/0.12)':s=48000:d=0.28",
+    bodyDelayMs: 14,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.22,bandpass=f=1600:w=800,volume=0.22,afade=t=out:st=0.02:d=0.20",
+    tailDelayMs: 35,
+    masterGain: 1.15,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.clover.hurt',
+    name: 'cat-clover-hurt',
+    runtimeCueId: 'emote.clover.hurt',
+    aliases: ['clover.hurt'],
+    durationSec: 0.32,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*sin(2*PI*950*t)*exp(-t/0.006)':s=48000:d=0.012",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(690-360*(t/0.14))*t)*exp(-t/0.048)':s=48000:d=0.16",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.14,lowpass=f=480,volume=0.22,afade=t=out:st=0.01:d=0.13",
+    tailDelayMs: 25,
+    masterGain: 1.10,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.clover.purr',
+    name: 'cat-clover-purr',
+    runtimeCueId: 'emote.clover.purr',
+    aliases: ['clover.purr'],
+    durationSec: 0.85,
+    bus: 'sfx',
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.04,lowpass=f=400,volume=0.3",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*(sin(2*PI*130*t)+0.25*sin(2*PI*260*t))*(0.5+0.5*sin(2*PI*25*t))*exp(-t/0.5)':s=48000:d=0.75",
+    bodyDelayMs: 18,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.45,lowpass=f=280,volume=0.30,afade=t=out:st=0.05:d=0.40",
+    tailDelayMs: 60,
+    masterGain: 1.20,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // Panko
+  {
+    cueId: 'emote.panko.happy',
+    name: 'cat-panko-happy',
+    runtimeCueId: 'emote.panko.happy',
+    aliases: ['panko.happy'],
+    durationSec: 0.38,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.85*sin(2*PI*2100*t)*exp(-t/0.007)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(440+320*(t/0.25))*t)*exp(-t/0.11)*(1+0.2*sin(2*PI*20*t))':s=48000:d=0.28",
+    bodyDelayMs: 14,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.20,lowpass=f=600,volume=0.24,afade=t=out:st=0.02:d=0.18",
+    tailDelayMs: 35,
+    masterGain: 1.15,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.panko.hurt',
+    name: 'cat-panko-hurt',
+    runtimeCueId: 'emote.panko.hurt',
+    aliases: ['panko.hurt'],
+    durationSec: 0.32,
+    bus: 'sfx',
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*1250*t)*exp(-t/0.006)':s=48000:d=0.012",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(640-340*(t/0.15))*t)*exp(-t/0.048)':s=48000:d=0.17",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.14,lowpass=f=420,volume=0.22,afade=t=out:st=0.01:d=0.13",
+    tailDelayMs: 25,
+    masterGain: 1.10,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'emote.panko.purr',
+    name: 'cat-panko-purr',
+    runtimeCueId: 'emote.panko.purr',
+    aliases: ['panko.purr'],
+    durationSec: 0.85,
+    bus: 'sfx',
+    transientFilter: "anoisesrc=c=brown:r=48000:d=0.04,lowpass=f=350,volume=0.3",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.88*(sin(2*PI*115*t)+0.28*sin(2*PI*230*t))*(0.5+0.5*sin(2*PI*27*t))*exp(-t/0.5)':s=48000:d=0.75",
+    bodyDelayMs: 18,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.45,lowpass=f=250,volume=0.32,afade=t=out:st=0.05:d=0.40",
+    tailDelayMs: 60,
+    masterGain: 1.20,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderCatEmotes() {
+  console.log(`Rendering ${CAT_EMOTE_DEFINITIONS.length} Cat Emotes (R6)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of CAT_EMOTE_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: def.bus,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,bus'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},sfx`);
+  }
+  writeReportFile('R6-loudness.csv', csvLines.join('\n') + '\n');
+  console.log('Wrote R6-loudness.csv to reports');
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R6 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
 
 // CLI dispatcher
 const arg = process.argv[2];
@@ -1681,6 +2070,10 @@ if (arg === '--calibrate') {
   renderUiSet();
 } else if (arg === '--stingers') {
   renderStingers();
+} else if (arg === '--chain-moments') {
+  renderChainMoments();
+} else if (arg === '--cat-emotes') {
+  renderCatEmotes();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
@@ -1690,7 +2083,9 @@ if (arg === '--calibrate') {
   renderAmbience();
   renderUiSet();
   renderStingers();
+  renderChainMoments();
+  renderCatEmotes();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --stingers | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --stingers | --chain-moments | --cat-emotes | --all]');
 }
 
