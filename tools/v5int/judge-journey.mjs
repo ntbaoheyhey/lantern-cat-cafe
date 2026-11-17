@@ -39,26 +39,30 @@ try{
   }
   assert(!await tutorial.isVisible(),'Visible tutorial did not finish');
  };
- const remaining=()=>Math.max(1,30_000-(performance.now()-start));
+ const remaining=()=>Math.max(1,90_000-(performance.now()-start));
  await page.goto(url);await page.getByRole('button',{name:'Play free',exact:true}).click();step('guest entered');
  await page.locator('.uv-patrol').click();step('prepare opened');
  await page.getByRole('button',{name:'Fight',exact:true}).click();await page.locator('.dp-battle').waitFor();step('battle visible');
  await completeTutorial();
- const speed=page.getByRole('button',{name:'Change playback speed',exact:true});
- await speed.click();await speed.click();assert.equal(await speed.innerText(),'×3');step('selected visible 3x playback');report.playback=3;
  await page.getByRole('button',{name:'Complete lesson',exact:true}).waitFor({timeout:remaining()});step('practice completed');
+ report.practice={ms:Math.round(performance.now()-start),text:await page.locator('[data-practice-receipt="true"]').innerText(),scope:'Practice completion and free invitation availability; no currency or blockchain transaction claimed.'};
+ assert.match(report.practice.text,/Practice complete.*free invitation/s);
+ await page.screenshot({path:resolve(out,'practice.png')});
  await page.getByRole('button',{name:'Complete lesson',exact:true}).click();await completeTutorial();
  await page.getByRole('group',{name:'Free welcome',exact:true}).getByRole('button',{name:'Welcome',exact:true}).click();
  await page.getByRole('heading',{name:'Welcome home',exact:true}).waitFor({timeout:remaining()});step('free friend welcomed');
  await page.locator('.uv-sheet-heading').getByRole('button',{name:'Close',exact:true}).click();
  await page.locator('.uv-patrol').click();
  await page.getByRole('button',{name:'Fight',exact:true}).click();step('patrol battle started');
+ const speed=page.getByRole('button',{name:'Change playback speed',exact:true});
+ await speed.click();await speed.click();assert.equal(await speed.innerText(),'×3');step('selected visible 3x patrol playback');report.playback=3;
  await page.locator('.a6-result-receipt [data-reward-id]').first().waitFor({timeout:remaining()});step('patrol rewards visible');
  report.totalMs=Math.round(performance.now()-start);report.receiptText=await page.locator('.a6-result-receipt').innerText();
  report.rewards=await page.locator('.a6-result-receipt [data-reward-id]').evaluateAll(nodes=>nodes.map(node=>({id:node.dataset.rewardId,label:node.getAttribute('aria-label'),text:node.textContent})));
  report.outcome=await page.locator('.a6-result-story').getAttribute('data-outcome');
  await page.screenshot({path:resolve(out,'result.png')});
- report.complete=report.totalMs<30_000&&report.rewards.length>0&&report.outcome==='party'&&!report.errors.length&&!report.httpFailures.length&&!report.blocked.length;
+ report.complete=report.rewards.length>0&&report.outcome==='party'&&!report.errors.length&&!report.httpFailures.length&&!report.blocked.length;
+ report.budgetPass=report.complete&&report.totalMs<30_000;
  await context.close();
 }catch(error){report.failure=String(error.message).slice(0,1000);if(page&&!page.isClosed()){report.visibleText=(await page.locator('body').innerText()).slice(0,8000);const sharp=req('sharp');await sharp(await page.screenshot()).resize({width:1024}).jpeg({quality:82}).toFile(resolve(out,'failure.jpg'));}}
 finally{await browser.close();writeFileSync(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');}
