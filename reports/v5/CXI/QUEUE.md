@@ -1,9 +1,9 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.7 app0a3c6ab1a; fullsuite5250/2950web+tsc0 at69e68a660, then three seat values+18focused/build0; own blink/26sample portrait review+finalchecks+3films pass. I-A-BLINK/I-C/I-E/evidence.
-I-B OPEN: m1.7 cold7909547/8469958/7984401B;wave3FAIL469958B,boss15599Bheadroom. ApprovedT4/T6done;AGS T5fourbeds stillREDO;T8sixfoecallouts assigned. No future savings counted.
-I-C FIRST-HIT DONE:20,882ms incl17,700reading8cards,damage46,zeroerrors;route9684ms. Old66–70s timedfullpatrolreceipt.
+I-A DONE/REPEAT: m1.8 application73bcdbed4 validated; release commit/tag/push next. Audio500 exact encoded/PCM pairs; scalar14focused+own play; final5steps and3films pass.
+I-B OPEN: m1.8 cold7696760/8260321/7774452B;wave3FAIL260321B,boss225548Bheadroom. Lossless transport accepted;AGS T5fourbeds REDO/T8sixfoecallouts remain open.
+I-C FIRST-HIT DONE:21131ms incl17700reading8cards,damage46,zeroerrors;route9558ms. Ordinary guest story retained.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
-I-E DONE/REFRESH: m1.7 three30sactual1×gameplay+audio,1280×720,0errors;3freshsheets inspectedonce;REVIEW-VI/evidence v7-m17-films.json.
+I-E DONE/REFRESH: m1.8 three30sactual1xgameplay+audio,1280x720,0errors;freshsheets inspectedonce;REVIEW-VI/evidence v7-m18-films.json.
 I-F ACTIVE: README/ARCHITECTURE/runbook current;SUBMISSION-FACTS verified; AGS T7 must correct unsupported chain/mint/Forge claims in draft/script.
 I-G DONE/REPEAT: sheet failure/stall recovery passes13focused and fullsuite; bothcontrols insideviewport; failed1138ms/stalled8666ms,caféreturn/reloadpass. AGS originalNight issue stillneeds exacttrace.
 
