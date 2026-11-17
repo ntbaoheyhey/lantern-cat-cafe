@@ -29,11 +29,13 @@ A separate production diagnostic22:00:22–22:01:44Z found four identical WebGL 
 
 The unchanged-baseline RAF freeze/resume probe completed22:14:06Z. All five full-frame and crew captures are RGB-exact to the original baseline, including both32s freezes and2s resumes. Its measured1024×576 sheet was inspected once at2026-11-17T22:17:38.373129+00:00: four heroes, title, receipt, HUD and Next remain clear. Late RAF idleness did not reproduce the discrepant variant. Early loading/composition is a separate untested hypothesis.
 
-Next: inspect the existing loading/composition evidence to define one discriminating early-lifecycle experiment, or move to another unblocked V7 item under the two-failed-attempt rule. Do not apply the candidate or send READY while exact-pixel acceptance remains unresolved.
+The early-lifecycle diagnostic completed six trials at22:23:57Z. The unchanged continuously rendering baseline reproduced the original discrepant candidate full-frame and crew RGB hashes exactly in one trial; the other five settled trials, including both early-frozen baseline and both naturally idle candidate trials, matched the original baseline. Computed styles/geometry normalize identically and settled compositor-reason signatures match. Both early-frozen baselines stop at4draws and retain baseline pixels after resuming. The measured1024×576 sheet was reviewed once: four heroes, title, receipt, HUD and Next remain clear. This narrows attribution but does not establish the browser raster/compositor cause.
+
+Next: finish six fresh unchanged-baseline32s captures without RAF/layer/early-screenshot instrumentation. Keep the exact-pixel gate open until baseline variability is independently established; no application edit or READY.
 
 ## Evidence
 
 - `V7-F-victory-demand-prototype.json`, `V7-F-victory-demand-types.json`, `V7-F-victory-demand-production.json`.
-- `V7-F-victory-composite-diagnostic.json`, `V7-F-victory-capture-consistency.json`, `V7-F-victory-idle-composition.json`, `V7-F-victory-normal-control.json`.
+- `V7-F-victory-composite-diagnostic.json`, `V7-F-victory-capture-consistency.json`, `V7-F-victory-idle-composition.json`, `V7-F-victory-normal-control.json`, `V7-F-victory-early-composition.json`.
 - Raw source snapshots, artifacts, films and diagnostics remain under `/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/`, directories prefixed `V7-F-victory-`.
 - Do not reopen the four prototype sheets, two first-series production sheets or the discrepancy sheet already reviewed.

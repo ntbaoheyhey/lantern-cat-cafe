@@ -1,0 +1,1226 @@
+{
+  "utc": "2026-11-17T22:24:14.146Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "provenance": {
+    "utc": "2026-11-17T22:19:53.155Z",
+    "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+    "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+    "tools": [
+      {
+        "name": "run-victory-early-composition.mjs",
+        "sha256": "44b99e23bf49c4ffcd5e156f4388ac57c107b022d39233a503df594f1ffadb43"
+      },
+      {
+        "name": "diagnose-victory-early-composition.mjs",
+        "sha256": "22a9ac939aa9b3049d8eea3a2599b9d265916782d4cd0c166d1d87d83de96905"
+      },
+      {
+        "name": "production-candidate-fixture.mjs",
+        "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      }
+    ],
+    "verifiedArtifacts": [
+      {
+        "mode": "baseline",
+        "files": 3764,
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e"
+      },
+      {
+        "mode": "native",
+        "files": 3764,
+        "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "trial": 0,
+      "mode": "baseline",
+      "early": false,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/report.json",
+      "sha256": "b7a0549207f95caa31a4f79c1550b0d8747a76468ca1d7931141f329e0cec540",
+      "utc": "2026-11-17T22:19:55.246Z",
+      "ended": "2026-11-17T22:20:35.093Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "early": true,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/report.json",
+      "sha256": "7bac2fd4e1949469b82a94a31c30b521b8b49be483d7050a4d9b038dd757a1f0",
+      "utc": "2026-11-17T22:20:35.388Z",
+      "ended": "2026-11-17T22:21:16.821Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    },
+    {
+      "trial": 2,
+      "mode": "native",
+      "early": false,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/report.json",
+      "sha256": "01f3eae9ddaafb9dd88cbbcb9bafed8f999524ea6502c80d1b750a121644b3f4",
+      "utc": "2026-11-17T22:21:17.105Z",
+      "ended": "2026-11-17T22:21:56.309Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "early": false,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/report.json",
+      "sha256": "7e71be39b19d7072ea8905c699589bf5e673276c72f55f2114c7f5679bee0c8d",
+      "utc": "2026-11-17T22:21:56.599Z",
+      "ended": "2026-11-17T22:22:35.795Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    },
+    {
+      "trial": 4,
+      "mode": "baseline",
+      "early": true,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/report.json",
+      "sha256": "361fff013bc18322ef4cef17771a0860177c483ef03974c2cc14fd00fc9ebc7e",
+      "utc": "2026-11-17T22:22:36.078Z",
+      "ended": "2026-11-17T22:23:17.560Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "early": false,
+      "reportPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/report.json",
+      "sha256": "0d9903d3baeb1626a2cefb9af8b693737a720359f58f27a8d9094225445f8cd4",
+      "utc": "2026-11-17T22:23:17.834Z",
+      "ended": "2026-11-17T22:23:57.101Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "method": "Preserved local artifacts. Baseline can park all RAF immediately after the first four-actor WebGL frame; natural candidate remains unchanged. No GPU readback before screenshots. Record computed composition styles, image readiness and CDP layers.32s at4x is a reproduction window, not a performance test. Resume and reversible crew-size restoration follow the original captures."
+    }
+  ],
+  "references": {
+    "baselineFullRgb": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+    "variantFullRgb": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+  },
+  "captures": [
+    {
+      "trial": 0,
+      "mode": "baseline",
+      "early": false,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/loaded-crew.png",
+      "utc": "2026-11-17T22:20:01.035Z",
+      "sha256": "54ed6e4a43d218e562fcc7acc10904b0fa2f0a7889d42e097b155b75a0f71201",
+      "fullRgbSha256": "fbbe0f74c02b988165d4056f09badd3539a9857807636e01375492cdf426d4ef",
+      "crewRgbSha256": "3487fc22f41d8600e3e9cd236a94f2ddfd7e4a573830ac3de39a1b436f8bf619",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 227,
+        "skipped": 0,
+        "draws": 492,
+        "completeAt": 3241.2000000029802,
+        "now": 5269.5,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.785893735532404,
+      "stdDev": 42.72022481145555,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 0,
+      "mode": "baseline",
+      "early": false,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/settled-crew.png",
+      "utc": "2026-11-17T22:20:33.449Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "fullRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "crewRgbSha256": "31a821c3ffbcf493b0382dc1bd9c309dccedfb920daa16575fd6df1ee9822b0b",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 2172,
+        "skipped": 0,
+        "draws": 8272,
+        "completeAt": 3241.2000000029802,
+        "now": 37690.10000000149,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.30986183449074,
+      "stdDev": 42.480479055653255,
+      "variant": "original-discrepant-candidate"
+    },
+    {
+      "trial": 0,
+      "mode": "baseline",
+      "early": false,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/0-baseline-natural/size-restored-crew.png",
+      "utc": "2026-11-17T22:20:35.001Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "fullRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "crewRgbSha256": "31a821c3ffbcf493b0382dc1bd9c309dccedfb920daa16575fd6df1ee9822b0b",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 2269,
+        "skipped": 0,
+        "draws": 8660,
+        "completeAt": 3241.2000000029802,
+        "now": 39308.90000000596,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.30986183449074,
+      "stdDev": 42.480479055653255,
+      "variant": "original-discrepant-candidate"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "early": true,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/loaded-crew.png",
+      "utc": "2026-11-17T22:20:40.510Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "fullRgbSha256": "e00e854cd97c2a443e67cb0ef86847f10c067b6bca175c4c95951740acca33ef",
+      "crewRgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "frozen": true,
+        "parked": 1,
+        "calls": 105,
+        "skipped": 1,
+        "draws": 4,
+        "completeAt": 2261.9000000059605,
+        "now": 4723.5,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "early": true,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/settled-crew.png",
+      "utc": "2026-11-17T22:21:12.841Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": true,
+        "parked": 1,
+        "calls": 105,
+        "skipped": 1,
+        "draws": 4,
+        "completeAt": 2261.9000000059605,
+        "now": 37044.10000000149,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "early": true,
+      "name": "resumed",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/resumed.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/resumed-crew.png",
+      "utc": "2026-11-17T22:21:15.195Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 226,
+        "skipped": 1,
+        "draws": 492,
+        "completeAt": 2261.9000000059605,
+        "now": 39379.20000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "early": true,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/1-baseline-early/size-restored-crew.png",
+      "utc": "2026-11-17T22:21:16.729Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 319,
+        "skipped": 1,
+        "draws": 864,
+        "completeAt": 2261.9000000059605,
+        "now": 40940.80000000447,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 2,
+      "mode": "native",
+      "early": false,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/loaded-crew.png",
+      "utc": "2026-11-17T22:21:22.338Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "fullRgbSha256": "e00e854cd97c2a443e67cb0ef86847f10c067b6bca175c4c95951740acca33ef",
+      "crewRgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 108,
+        "skipped": 0,
+        "draws": 8,
+        "completeAt": 2375,
+        "now": 4822.89999999851,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 2,
+      "mode": "native",
+      "early": false,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/settled-crew.png",
+      "utc": "2026-11-17T22:21:54.685Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 108,
+        "skipped": 0,
+        "draws": 8,
+        "completeAt": 2375,
+        "now": 37158.29999999702,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 2,
+      "mode": "native",
+      "early": false,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/2-native-natural/size-restored-crew.png",
+      "utc": "2026-11-17T22:21:56.218Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 110,
+        "skipped": 0,
+        "draws": 16,
+        "completeAt": 2375,
+        "now": 38712.39999999851,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "early": false,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/loaded-crew.png",
+      "utc": "2026-11-17T22:22:01.793Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "fullRgbSha256": "e00e854cd97c2a443e67cb0ef86847f10c067b6bca175c4c95951740acca33ef",
+      "crewRgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 108,
+        "skipped": 0,
+        "draws": 8,
+        "completeAt": 2349.7999999970198,
+        "now": 4809.5,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "early": false,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/settled-crew.png",
+      "utc": "2026-11-17T22:22:34.142Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 108,
+        "skipped": 0,
+        "draws": 8,
+        "completeAt": 2349.7999999970198,
+        "now": 37122.79999999702,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "early": false,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/3-native-natural/size-restored-crew.png",
+      "utc": "2026-11-17T22:22:35.708Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 110,
+        "skipped": 0,
+        "draws": 16,
+        "completeAt": 2349.7999999970198,
+        "now": 38677.39999999851,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 4,
+      "mode": "baseline",
+      "early": true,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/loaded-crew.png",
+      "utc": "2026-11-17T22:22:41.253Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "fullRgbSha256": "e00e854cd97c2a443e67cb0ef86847f10c067b6bca175c4c95951740acca33ef",
+      "crewRgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "frozen": true,
+        "parked": 1,
+        "calls": 106,
+        "skipped": 1,
+        "draws": 4,
+        "completeAt": 2269.10000000149,
+        "now": 4729.20000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 4,
+      "mode": "baseline",
+      "early": true,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/settled-crew.png",
+      "utc": "2026-11-17T22:23:13.603Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": true,
+        "parked": 1,
+        "calls": 106,
+        "skipped": 1,
+        "draws": 4,
+        "completeAt": 2269.10000000149,
+        "now": 37081.20000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 4,
+      "mode": "baseline",
+      "early": true,
+      "name": "resumed",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/resumed.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/resumed-crew.png",
+      "utc": "2026-11-17T22:23:15.936Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 226,
+        "skipped": 1,
+        "draws": 488,
+        "completeAt": 2269.10000000149,
+        "now": 39432.20000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 4,
+      "mode": "baseline",
+      "early": true,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/4-baseline-early/size-restored-crew.png",
+      "utc": "2026-11-17T22:23:17.471Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 319,
+        "skipped": 1,
+        "draws": 860,
+        "completeAt": 2269.10000000149,
+        "now": 40976.70000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "early": false,
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/loaded-crew.png",
+      "utc": "2026-11-17T22:23:23.058Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "fullRgbSha256": "e00e854cd97c2a443e67cb0ef86847f10c067b6bca175c4c95951740acca33ef",
+      "crewRgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 255,
+        "skipped": 0,
+        "draws": 596,
+        "completeAt": 2286.5,
+        "now": 4742.70000000298,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5",
+      "visibleImages": 28,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148,
+      "variant": "new-variant"
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "early": false,
+      "name": "settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/settled.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/settled-crew.png",
+      "utc": "2026-11-17T22:23:55.457Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 2200,
+        "skipped": 0,
+        "draws": 8376,
+        "completeAt": 2286.5,
+        "now": 37147.40000000596,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "early": false,
+      "name": "size-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/size-restored.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/5-baseline-natural/size-restored-crew.png",
+      "utc": "2026-11-17T22:23:57.010Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "parked": 0,
+        "calls": 2296,
+        "skipped": 0,
+        "draws": 8760,
+        "completeAt": 2286.5,
+        "now": 38757.60000000149,
+        "ready": "true",
+        "drawn": "4",
+        "animations": []
+      },
+      "styleHash": "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6",
+      "layerHash": "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52",
+      "visibleImages": 26,
+      "width": 1280,
+      "height": 720,
+      "mean": 53.29154116030092,
+      "stdDev": 42.49862380054791,
+      "variant": "original-baseline"
+    }
+  ],
+  "styleGroups": {
+    "ac0f05d37d95b006fb699767b067d84d4d4c4c91bbed70b0c2636abbcff687e6": [
+      {
+        "selector": ".b3-victory-crew>canvas",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "style": {
+          "backgroundImage": "none",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "selector": ".b3-victory-crew",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "style": {
+          "backgroundImage": "radial-gradient(44px 8px at 22% 54%, rgba(16, 15, 37, 0.467), rgba(0, 0, 0, 0)), radial-gradient(44px 8px at 65% 54%, rgba(16, 15, 37, 0.467), rgba(0, 0, 0, 0)), radial-gradient(44px 8px at 35% 91%, rgba(16, 15, 37, 0.467), rgba(0, 0, 0, 0)), radial-gradient(44px 8px at 78% 91%, rgba(16, 15, 37, 0.467), rgba(0, 0, 0, 0)), radial-gradient(at 50% 60%, rgba(33, 30, 54, 0.93) 10%, rgba(33, 30, 54, 0.74) 48%, rgba(33, 30, 54, 0.2) 80%)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "isolate",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "16px"
+        }
+      },
+      {
+        "selector": ".a6-result-companion",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 300,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 563,
+          "left": 133.1875
+        },
+        "style": {
+          "backgroundImage": "radial-gradient(rgba(230, 175, 97, 0.2), rgba(0, 0, 0, 0) 65%), url(\"http://local-artifact/art/v3-shell/b2/radial-burst.webp\")",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "46% 46% 12px 12px"
+        }
+      },
+      {
+        "selector": ".c2-result",
+        "rect": {
+          "x": 103.1875,
+          "y": 153,
+          "width": 1073.625,
+          "height": 503,
+          "top": 153,
+          "right": 1176.8125,
+          "bottom": 656,
+          "left": 103.1875
+        },
+        "style": {
+          "backgroundImage": "none",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "selector": ".uv-sheet-content",
+        "rect": {
+          "x": 85.1875,
+          "y": 141,
+          "width": 1109.625,
+          "height": 527,
+          "top": 141,
+          "right": 1194.8125,
+          "bottom": 668,
+          "left": 85.1875
+        },
+        "style": {
+          "backgroundImage": "none",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "selector": ".uv-sheet",
+        "rect": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "style": {
+          "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://local-artifact/art/v3-shell/b2/backdrop-garden.webp\")",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "24px"
+        }
+      },
+      {
+        "selector": ".uv-shell",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "style": {
+          "backgroundImage": "none",
+          "backgroundColor": "rgb(23, 19, 38)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "selector": ".uv-app",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "style": {
+          "backgroundImage": "none",
+          "backgroundColor": "rgb(34, 30, 42)",
+          "opacity": "1",
+          "filter": "none",
+          "backdropFilter": "none",
+          "mixBlendMode": "normal",
+          "transform": "none",
+          "isolation": "auto",
+          "willChange": "auto",
+          "contain": "none",
+          "clipPath": "none",
+          "visibility": "visible",
+          "borderRadius": "0px"
+        }
+      }
+    ]
+  },
+  "layerGroups": {
+    "0552d91a3e702820a68965c6625f4cf7f94de145b255fddc25be6d00114e98e5": [
+      {
+        "width": 0,
+        "height": 0,
+        "drawsContent": true,
+        "reasons": []
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is for the visual viewport.",
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Is the document.rootScroller.",
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 642,
+        "drawsContent": true,
+        "reasons": [
+          "Has a backdrop filter."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 461,
+        "height": 245,
+        "drawsContent": true,
+        "reasons": [
+          "Is an accelerated canvas, or is a display list backed canvas that was promoted to a layer based on a performance heuristic."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 327,
+        "height": 128,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 73,
+        "height": 40,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is for the visual viewport."
+        ]
+      }
+    ],
+    "14364e0ab7266666243dac0df046989198614d575ad5f8760dc5745169011f52": [
+      {
+        "width": 0,
+        "height": 0,
+        "drawsContent": true,
+        "reasons": []
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is for the visual viewport.",
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Is the document.rootScroller.",
+          "Is a scrollable overflow element using accelerated scrolling."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 642,
+        "drawsContent": true,
+        "reasons": [
+          "Has a backdrop filter."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 461,
+        "height": 245,
+        "drawsContent": true,
+        "reasons": [
+          "Is an accelerated canvas, or is a display list backed canvas that was promoted to a layer based on a performance heuristic."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 73,
+        "height": 40,
+        "drawsContent": true,
+        "reasons": [
+          "Overlaps other composited content."
+        ]
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "drawsContent": false,
+        "reasons": [
+          "Is for the visual viewport."
+        ]
+      }
+    ]
+  },
+  "behaviorPass": true,
+  "naturalBaselineReproducesVariant": true,
+  "earlyFreezeReproducesVariant": false,
+  "naturalCandidateReproducesVariant": false,
+  "allCapturesMatchOriginalBaseline": false,
+  "sheet": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-early-composition/review.jpg",
+    "width": 1024,
+    "height": 576,
+    "sha256": "dede2fd8c1a997f26aef8b901209395990cffa7ce8d51130c3aa8932a01c147f",
+    "frames": [
+      {
+        "trial": 0,
+        "name": "settled"
+      },
+      {
+        "trial": 1,
+        "name": "settled"
+      },
+      {
+        "trial": 2,
+        "name": "settled"
+      },
+      {
+        "trial": 1,
+        "name": "resumed"
+      }
+    ]
+  },
+  "reviewedUtc": "2026-11-17T22:24:43.222586+00:00",
+  "interpretation": "Six diagnostic trials passed. Natural continuously rendering baseline trial0 exactly reproduces the original discrepant candidate full-frame and crew RGB hashes; the other five settled trials match the original baseline. Both early-frozen baseline trials stay at4 draws and match the baseline before and after resuming. All normalized computed-style and geometry records are identical; settled compositing-reason signatures match. Thus early RAF idleness does not uniquely explain the variant. This instrumented baseline reproduction does not establish the underlying raster/compositor cause; a fresh unmodified-baseline series without RAF/layer/early-screenshot instrumentation is running. Measured1024x576 sheet inspected once: four heroes, title, receipt, HUD and Next remain clear; no pose/layout loss.",
+  "limits": "Small reproduction sample with CDP layers and draw/RAF wrappers. These can change scheduling; a failure to reproduce is not exact-pixel acceptance. Baseline freeze and later size restoration are diagnostic browser interventions only. No application source or CSS is edited and no performance result is inferred."
+}
