@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T03:04:55.547860+00:00",
+  "reason": "Explicit user request to save handoff and stop",
+  "verifiedSupervisor": 42832,
+  "verifiedProcessGroup": 42832,
+  "members": [
+    {
+      "pid": 42832,
+      "ppid": 1,
+      "command": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /Users/bao/taskbar-hero-qa/tools/v4qa/snapshot-rehearsal.py da3323ba9ce10ababc5519511d40dc9592febfe3"
+    },
+    {
+      "pid": 50456,
+      "ppid": 42832,
+      "command": "git -c core.autocrlf=false add --force --all"
+    }
+  ],
+  "signal": "SIGTERM",
+  "remainingPids": [],
+  "snapshotIndexLockPresent": false
+}

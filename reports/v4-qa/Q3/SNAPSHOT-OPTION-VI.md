@@ -1,10 +1,10 @@
-# Phương án repo snapshot — đang đo, 2026-11-17T02:57:22.518797+00:00
+# Phương án repo snapshot — tạm dừng theo người dùng, 2026-11-17T02:57:22.518797+00:00
 Đây là rehearsal trên SHIP `da3323ba9ce10ababc5519511d40dc9592febfe3`, chưa phải freeze19/11. Chưa tạo repo remote hay đẩy snapshot.
 
 | Phương án | Điều kiện | Hiện trạng |
 |---|---|---|
 | A: chia sẻ repo hiện tại | Chủ repo xác minh toàn bộ lịch sử, refs và tệp cần công khai; không dùng kết quả scan snapshot để thay thế lịch sử. | QA không tự công bố repo hay kết luận full-history đã sạch. |
-| B: repo mới một commit từ freeze | Chốt cây phát hành, giữ submodule pins, scan cây và commit mới, thử fresh quick-start, rồi người dùng quyết định tạo/chia sẻ remote. | Export full tree đã xong; commit, scan và quick-start đang chạy/đợi load guard. |
+| B: repo mới một commit từ freeze | Chốt cây phát hành, giữ submodule pins, scan cây và commit mới, thử fresh quick-start, rồi người dùng quyết định tạo/chia sẻ remote. | Export full tree đã xong; đã dừng khi Git stage; chưa có commit, scan hoặc quick-start. |
 
 ## Dung lượng đã đo
 Cây nguồn có95.464blob,31.267.821.987byte. Trong đó reports29.272.128.476byte/84.298file; screenshots171.336.615byte/847file. Các demo docs lịch sử được đề xuất xem xét loại bỏ chiếm871.829.321byte/790file. Phần còn lại theo đề xuất khoảng952.527.575byte/9.529file; đây chưa phải bản đã build sau khi lọc.
@@ -23,4 +23,4 @@ File lớn nhất72.484.813byte là telemetryJSON. Dung lượng working tree kh
 6. Đo `.git` và gói dự kiến push; kiểm tra logged-out các URL dành cho giám khảo. Người dùng tự quyết định tạo remote và công bố sau khi xem kết quả. QA không thực hiện bước đó.
 
 ## Chưa kết luận
-Scan và fresh quick-start chưa hoàn tất. README full supervisor cố định cổng5994/5997/8546 ngoài quyền QA; rehearsal chỉ đổi port của lệnh frontend-dev được README hỗ trợ sang6203. Full local journey đã có bằng chứng Q1/Q2 riêng. Một parent commit không làm mất yêu cầu licence hay lịch sử riêng của submodule công khai.
+Đã dừng theo yêu cầu người dùng. Scan và fresh quick-start chưa chạy. Git stage bị ngắt an toàn; chưa có HEAD/index/index.lock, không có remote. Export31,27GB và các Git object đã tạo được giữ nguyên để tiếp tục tại chỗ khi được cho phép. README full supervisor cố định cổng5994/5997/8546 ngoài quyền QA; rehearsal chỉ đổi port của lệnh frontend-dev được README hỗ trợ sang6203. Full local journey đã có bằng chứng Q1/Q2 riêng. Một parent commit không làm mất yêu cầu licence hay lịch sử riêng của submodule công khai.

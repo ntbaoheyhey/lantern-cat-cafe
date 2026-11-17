@@ -3,8 +3,38 @@
   "targetSha": "da3323ba9ce10ababc5519511d40dc9592febfe3",
   "pid": 42832,
   "snapshot": "/Users/bao/taskbar-hero-snapshot",
-  "phase": "load-deferred: git-init",
-  "steps": [],
+  "phase": "stopped-on-user-request",
+  "steps": [
+    {
+      "label": "git-init",
+      "command": [
+        "git",
+        "init",
+        "--initial-branch=codex/v4-snapshot-local",
+        "--template="
+      ],
+      "started": "2026-11-17T03:04:16.430985+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/snapshot/git-init.log",
+      "ended": "2026-11-17T03:04:16.452295+00:00",
+      "exitCode": 0
+    },
+    {
+      "label": "git-stage",
+      "command": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "add",
+        "--force",
+        "--all"
+      ],
+      "started": "2026-11-17T03:04:16.460113+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/snapshot/git-stage.log",
+      "status": "INTERRUPTED_BY_USER",
+      "interruptedAt": "2026-11-17T03:05:55.953333+00:00",
+      "exitCode": null
+    }
+  ],
   "scans": {},
   "scope": "One local parent commit, no parent remote or push. Pinned public submodule histories are separate.",
   "scanLimitations": [
@@ -321,5 +351,9 @@
     "ended": "2026-11-17T02:54:16.396534+00:00",
     "files": 95464,
     "bytes": 31267821694
-  }
+  },
+  "phaseBeforeUserStop": "git-stage",
+  "stoppedAt": "2026-11-17T03:05:55.953333+00:00",
+  "stopEvidence": "Q3/stop-on-user-request.json",
+  "resumeConstraint": "Export and partial Git object database exist. Original runner refuses existing paths. Resume in place only after explicit user authorization; do not delete/re-export31GB or create a second snapshot commit."
 }

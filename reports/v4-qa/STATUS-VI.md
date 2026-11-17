@@ -1,3 +1,5 @@
+TẠM DỪNG theo yêu cầu “lưu handoff và dừng” lúc 2026-11-17T03:05:55.953333+00:00. Đã dừng riêng nhóm tiến trình snapshot do lượt này tạo; không có job QA của lượt này còn chạy. Xem HANDOFF-QA.md để tiếp tục khi được cho phép.
+
 # V4 QA — 2026-11-17T02:49 UTC
 Q2 đã hoàn tất; bảng từng bước ở Q2/RUNBOOK-FINDINGS.md. Chưa deploy hay gửi giao dịch Fuji.
 Ba viewport Q1 đi hết 7 chặng, mỗi lượt18receipt local được QA xác minh; bản4b4c4111 chạy lại desktop/phone cũng đạt18receipt mỗi lượt.
