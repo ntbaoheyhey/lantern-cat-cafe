@@ -1,10 +1,11 @@
 # CXV V6 assignments — judge's first three minutes
-- [ ] V-A ACTIVE: living characters at friend's-video bar; measure reference, compare four heroes, layered idle/reactions, fresh1280x720 capture + focused tests/tsc.
+- [ ] V-A: first living-motion step passes24/24+tsc0; fresh1280x720 idle/hit/cast/victory/reduced evidence in V6-A-LIVING.md. Independent current-tag reference review/facial-depth gap remains open.
+- [x] V-A1: four hero breath/turn/weight/seeded gestures delivered; headX1.33–1.95%H vs0%,feet0; sourceb064f41fc+patch7b989cc8; no Live2D-equivalence claim.
 - [ ] V-B:12 hero actions with anticipation/contact/reaction/finish; distinct readable ultimates; unblock approved texture compositing; fresh captures/tests/tsc.
 - [ ] V-C:enemy/boss telegraphs, hit/death and filmed entrance; preserve Yarn hand contact; fresh captures/tests/tsc.
 - [ ] V-D:pair AGV G1-G5 texture scores with exact fixes; answer everyIMGJOB using original art/plain words and immediate GEN-LOG; fresh composites.
 - [ ] V-E:close judge-visible Kettle beauty/contact, status visuals and outcome/victory; fresh captures/tests/tsc.
-- [ ] V-F:smooth real boss fight on normal laptop and readable390x844; no standalone FPS gate studies; fresh captures/tests/tsc.
+- [ ] V-F:desktop only; smooth real boss fight on normal laptop with readable effects/numbers at1280x720; no standalone FPS gate studies; fresh captures/tests/tsc.
 
 ## Prior DONE work retained as baseline evidence
 - [x] V0 study8c9bd134c; V1 timelines7d48cef63/overrideed388eb30:16 timelines,12 sheets,focused tests+tsc.
@@ -19,16 +20,17 @@
 - [x] R3 numbers8665b1654:10/10+tsc0,5 sheets,zero overlap; R3.md.
 - [x] R4 ground19ffd3212:11/11+tsc0,16 sheets/14 units,360ms bounded dust; R4.md.
 - [x] R1 Kettle torso-anchor0f14e7497:21/21+tsc0,6 sheets; R1-KETTLE-CONTACT.md.
-- [x] All earlier loader/decode/lazy/mobile scope REQs ACK+DONE/granted; exact scope mailbox OWNERSHIP.md. Wrong-route AG1 Q0-F2/F3 retracted.
+- [x] All earlier loader/decode/lazy scope REQs ACK+DONE/granted; exact scope mailbox OWNERSHIP.md. Wrong-route AG1 Q0-F2/F3 retracted.
 
 ## Visible open dependencies and carried work
-- [ ] Kettle production closure BLOCKED-ON CXI capture of0f14e7497; proceed V-A/B meanwhile.
+- [x] Kettle production contact closure:CXI fresh v6-ia1 capture and green v5-m1.1@5fa814f5e confirm torso fix/broad mask; beauty3 remains V-C/E.
 - [ ] Kettle beauty3/5 and Binding coverage under V-C/E.
 - [ ] AGS Q0b-F2 independent recheck under V-B/C; producer fix delivered.
 - [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
 - [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
 - [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.
 - [x] V-D clover-particle-1 fresh reviewV6:composite3/3/1/2/4,runtime3/3/3/2/4; revision/no new approval; V6-REVIEW-CLOVER-PARTICLE-1.md.
+- [x] V-D Panko temp particle1 fresh review:C4/4/1/4/4,R2/3/3/2/4;4x4 collection mislabeled1x1 is BLOCKER; crop one128/256px crumb and resubmit. No approval.
 - [x] CXI12:27 lantern-requiem loader-only scope ACK/granted; material/draw/motion preserved, CXI owns implementation/check.
 - [x] CANCELLED obsolete REV4 timeboxes/refill quota/print-proof card: V6 prioritizes visible quality and current assignments over bookkeeping.
 - [x] CANCELLED extra FPS/audio/secret audit/repository-export work: no visible judge benefit and V6 explicitly excludes it.

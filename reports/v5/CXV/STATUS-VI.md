@@ -1,7 +1,7 @@
-# CXV — 17/11/2026, 19:24 giờ Việt Nam
-Đã bật đúng một lịch CXV wake mỗi15 phút trong chat này; nhánh và máy chủ6310 hoạt động.
-Đã lưu nguyên văn lệnh V6; tiếp tục V-A: đo chuyển động video mẫu và so với bốn mèo trong game.
-Nền hiện có: timeline kỹ năng, chuyển động phụ, phản ứng địch, số sát thương và bụi chân đã qua kiểm tra trước đó.
-Rủi ro1:ultimate còn bị compositor chặn phần lớn texture; sẽ xử lý V-B.
-Rủi ro2:Kettle đẹp mới3/5, cần capture tích hợp củaCXI để đóng lỗi contact.
-Rủi ro3:status/victory/boss entrance và QA độc lập chưa hoàn tất; không dùng ảnh cũ làm bằng chứng V6.
+# CXV — 17/11/2026, 19:54 giờ Việt Nam
+Chỉ làm desktop; đã bỏ toàn bộ việc điện thoại khỏi hàng đợi.
+Bốn mèo đã có nhịp thở riêng, nghiêng/quay đầu, chuyển trọng tâm và cử động phụ; chân giữ nguyên vị trí.
+V-A bước1:24/24 kiểm tra và typecheck đạt; đã quay1280×720 và xem đủ idle/hit/cast/victory/reduced.
+Rủi ro1:độ sâu gương mặt còn kém video mẫu; cần AGV xem độc lập trên tag mới, chưa tuyên bố ngang Live2D.
+Rủi ro2:ultimate vẫn che nhiều sân và texture được duyệt chưa vào đầy đủ; đang chuyển sang V-B.
+Rủi ro3:Kettle mới3/5 về hình ảnh; status/victory/boss entrance và QA độc lập còn mở. Contact Kettle đã được CXI xác nhận.

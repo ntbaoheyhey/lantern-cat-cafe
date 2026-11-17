@@ -6,7 +6,7 @@
 5. Exactly one same-chat heartbeat CXV wake every15m; check hourly, recreate only if missing; ignore wakes mid-task.
 6. Own cardrpg/{battle-v3,spine,vfx-craft,vfx-layered,depth,stage}/**, game/rig/**, public/vfx/v5/from-cx/**, reports/v5/CXV/**, tools/v5vfx/**.
 7. Respect OWNERSHIP.md: CXI loaders/manifests/asset indexes and existing narrow grants remain; coordinate edits outside ownership by REQ.
-8. V-A living heroes; V-B basic/skill/ultimate timing and texture wiring; V-C enemies/boss; V-D AGV reviews/IMGJOB; V-E visible debts; V-F performance/phone.
+8. USER12:36Z desktop only: drop all mobile/phone work. V-A living heroes; V-B actions/texture wiring; V-C enemies/boss; V-D AGV; V-E visible debts; V-F desktop performance/readability.
 9. DONE only after own fresh judge-URL captures, focused tests and typecheck green; send READY to CXI after every passing step.
 10. Judge URL includes ?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; BOARD exact host wins for integration. Own local6310 for implementation captures.
 11. Record URL, current commit/tag and capture UTC; never judge old captures. Reference videos teach principles only; small contact sheets <=1024px, <=4 images/look.
