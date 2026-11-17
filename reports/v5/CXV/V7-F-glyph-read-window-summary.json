@@ -1,0 +1,554 @@
+{
+  "utc": "2026-11-17T17:42:28.047Z",
+  "source": "d8eb7b83f3856d83a0882840836c3f4f80e1782c",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Current runtime atlas versus conservative TextMetrics read windows, same-browser alternating builds at4xCPU. Five font families, eight opaque palette colors plus translucent fallback. Preserve glyph painting/order/cache and compare every glyph plus full atlas RGBA hash. Measurement only; no runtime edit or gameplay claim.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "measurements": [
+    {
+      "family": "\"Baloo 2\"",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 30.799999997019768,
+      "windowMedianMs": 29.30000000447035,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 63,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 0,
+          "elapsedMs": 33.70000000298023,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "window",
+          "block": 1,
+          "elapsedMs": 29.30000000447035,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 30.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 32.80000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 2,
+          "elapsedMs": 25.799999997019768,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "window",
+          "block": 3,
+          "elapsedMs": 39.100000001490116,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 30.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 26,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 4,
+          "elapsedMs": 25.80000000447035,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "window",
+          "block": 5,
+          "elapsedMs": 25.200000002980232,
+          "reads": 38,
+          "readPixels": 142274
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 28.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 30.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 6,
+          "elapsedMs": 34.19999999552965,
+          "reads": 38,
+          "readPixels": 142274
+        }
+      ]
+    },
+    {
+      "family": "monospace",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 30.700000002980232,
+      "windowMedianMs": 25.899999998509884,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 92.70000000298023,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 0,
+          "elapsedMs": 28.200000002980232,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "window",
+          "block": 1,
+          "elapsedMs": 26.5,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 28.80000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 25.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 2,
+          "elapsedMs": 21.600000001490116,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "window",
+          "block": 3,
+          "elapsedMs": 23.69999999552965,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 32.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 27.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 4,
+          "elapsedMs": 25.899999998509884,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "window",
+          "block": 5,
+          "elapsedMs": 25.600000001490116,
+          "reads": 38,
+          "readPixels": 144110
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 30.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 47.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 6,
+          "elapsedMs": 31.700000002980232,
+          "reads": 38,
+          "readPixels": 144110
+        }
+      ]
+    },
+    {
+      "family": "serif",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 32.600000001490116,
+      "windowMedianMs": 27.099999994039536,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 84.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 0,
+          "elapsedMs": 28.100000001490116,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "window",
+          "block": 1,
+          "elapsedMs": 24,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 35.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 32.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 2,
+          "elapsedMs": 52.19999999552965,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "window",
+          "block": 3,
+          "elapsedMs": 24.299999997019768,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 30.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 27.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 4,
+          "elapsedMs": 27.099999994039536,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "window",
+          "block": 5,
+          "elapsedMs": 24.299999997019768,
+          "reads": 38,
+          "readPixels": 157952
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 38.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 32.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 6,
+          "elapsedMs": 29.299999997019768,
+          "reads": 38,
+          "readPixels": 157952
+        }
+      ]
+    },
+    {
+      "family": "Arial",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 30.700000002980232,
+      "windowMedianMs": 27.899999998509884,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 76.69999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 0,
+          "elapsedMs": 31.5,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "window",
+          "block": 1,
+          "elapsedMs": 31.399999998509884,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 33.70000000298023,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 29.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 2,
+          "elapsedMs": 27.899999998509884,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "window",
+          "block": 3,
+          "elapsedMs": 26.100000001490116,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 28.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 30.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 4,
+          "elapsedMs": 24,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "window",
+          "block": 5,
+          "elapsedMs": 47.100000001490116,
+          "reads": 38,
+          "readPixels": 160356
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 27.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 31.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 6,
+          "elapsedMs": 27.200000002980232,
+          "reads": 38,
+          "readPixels": 160356
+        }
+      ]
+    },
+    {
+      "family": "\"Times New Roman\"",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 27.399999998509884,
+      "windowMedianMs": 28.69999999552965,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 65.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 0,
+          "elapsedMs": 30.799999997019768,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "window",
+          "block": 1,
+          "elapsedMs": 32,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 27.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 28.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 2,
+          "elapsedMs": 29.80000000447035,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "window",
+          "block": 3,
+          "elapsedMs": 26.100000001490116,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 26.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 40.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 4,
+          "elapsedMs": 28.69999999552965,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "window",
+          "block": 5,
+          "elapsedMs": 25.5,
+          "reads": 38,
+          "readPixels": 151430
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 27.19999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 19.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "window",
+          "block": 6,
+          "elapsedMs": 22.900000005960464,
+          "reads": 38,
+          "readPixels": 151430
+        }
+      ]
+    }
+  ],
+  "ended": "2026-11-17T17:42:36.439Z",
+  "pass": true,
+  "disposition": "REJECT runtime integration:exact855glyph rectangles/45atlas combinations across5fonts and7alternating blocks, but currentBaloo2median30.8\u219229.3ms only4.9% andTimesNewRoman27.4\u219228.7ms regresses4.7%; variation is material. Reduces copiedpixels ~73%, not read count38. Avoid extra font-boundary logic for weak first-contact benefit.",
+  "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-glyph-read-window/report.json"
+}
