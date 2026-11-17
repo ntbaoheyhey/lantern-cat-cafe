@@ -1,6 +1,6 @@
 # QA queue
-Q0 | active | setup and LEARN | timebox60min
-Q1 | queued | judge-eye cold production run | timebox3h
+Q0 | done ENDED 2026-11-17T01:15:57.643733+00:00 | LEARN/Q0.md; install deferred under load guard toQ1
+Q1 | active STARTED 2026-11-17T01:15:57.643733+00:00 | judge-eye cold production run | timebox3h
 Q2 | queued | deploy runbook dry run | timebox2h
 Q3 | queued | clean snapshot option | timebox90min
 Q4 sync1 | queued |17Nov12UTC merge/latest14UTC | timebox2h
