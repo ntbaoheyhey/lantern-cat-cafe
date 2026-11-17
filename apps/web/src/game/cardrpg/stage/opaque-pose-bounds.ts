@@ -6,7 +6,7 @@ type Sample={ids:Triangle;weights:Triangle};
 type Pixels={width:number;height:number;rgba:Uint8ClampedArray};
 export interface OpaqueWorldBounds {x:number;y:number;width:number;height:number}
 const textures=new WeakMap<T.Texture,Pixels>();
-const geometryHulls=new WeakMap<T.BufferGeometry,{texture:T.Texture;samples:Sample[]}>();
+const geometryHulls=new WeakMap<T.BufferGeometry,WeakMap<T.Texture,Sample[]>>();
 
 function pixels(texture:T.Texture):Pixels|undefined {
  const cached=textures.get(texture);if(cached)return cached;
@@ -39,7 +39,9 @@ function samples(mesh:T.Mesh):Sample[] {
  if(Array.isArray(material)||!('map' in material))return [];
  const texture=material.map as T.Texture|null,uv=geometry.attributes.uv,index=geometry.index;
  if(!texture||!texture.image||!uv||!index)return [];
- const cached=geometryHulls.get(geometry);if(cached?.texture===texture)return cached.samples;
+ // Drawn poses alternate texture keys on the same mesh. Keep each contour so
+ // returning to idle/contact does not scan the painted pixels again.
+ let variants=geometryHulls.get(geometry);const cached=variants?.get(texture);if(cached)return cached;
  const data=pixels(texture);if(!data)return [];
  const {width,height,rgba}=data,result:Sample[]=[];
  for(let t=0;t<index.count;t+=3){
@@ -65,7 +67,7 @@ function samples(mesh:T.Mesh):Sample[] {
   }
   for(const p of convexHull(edge))result.push({ids,weights:barycentric(...p)});
  }
- geometryHulls.set(geometry,{texture,samples:result});return result;
+ if(!variants){variants=new WeakMap();geometryHulls.set(geometry,variants);}variants.set(texture,result);return result;
 }
 
 /** World-space opacity bounds follow the current skinned vertices and reflection. */

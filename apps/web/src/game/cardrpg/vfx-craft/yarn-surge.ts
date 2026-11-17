@@ -31,7 +31,7 @@ export class YarnSurge {
  readonly ground=new T.Group();readonly rear=new T.Group();readonly front=new T.Group();readonly ready:Promise<void>;
  readonly audit={elapsed:0,ultimate:false,source:{x:0,y:0},paintedTip:{x:0,y:0},socketError:0,active:0,mainShape:'three heavy woven braids; low outward fan'};
  private disposed=false;private noise=flowingNoise();private texture:T.Texture|undefined;private all:Ink[]=[];private cut:Ink;private wave:Ink;private echo:Ink;private contact:Ink;
- constructor(private tuning:YarnTuning={width:1180,height:472,textureUrl:'/vfx/yarn-giant/braid-wave.webp',tip:[.99609375,.6085365853658536]}){
+ constructor(private tuning:YarnTuning={width:860,height:268,textureUrl:'/vfx/yarn-giant/braid-wave.webp',tip:[.99609375,.6085365853658536]}){
   const add=(root:T.Group)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.cut=add(this.front);this.wave=add(this.rear);this.echo=add(this.ground);this.contact=add(this.front);this.contact.material.uniforms.uBurst!.value=1;
   this.ready=(async()=>{const image=await loadCraftImage(this.tuning.textureUrl);if(this.disposed)return;const tex=this.texture=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=tex;})();
@@ -56,8 +56,9 @@ export class YarnSurge {
    const grow=smooth((held-600)/500),decay=smooth((held-1560)/620),w=Math.min(this.tuning.width*k,f.width-32*k)*(.24+.76*grow),h=this.tuning.height*k*(.24+.76*grow);
    const destination=f.width*.50,cx=Math.max(w/2+16*k,Math.min(f.width-w/2-16*k,source.x*(1-grow)+destination*grow));
    const bottom=Math.min(f.height*.94,Math.max(f.casterFeet.y+28*k,f.height*.88));
-   this.place(this.wave,cx,bottom-h/2,w,h,1-decay,held,-.2+decay*1.04,age>=0&&age<67?1:0);
-   this.place(this.echo,cx,bottom+4*k,w*.96,62*k,(1-decay)*.23,held,-.2+decay*.9);
+   const release=1-smooth((ms-1280)/480);
+   this.place(this.wave,cx,bottom-h/2,w,h,(1-decay)*release,held,-.2+decay*1.04,age>=0&&age<67?1:0);
+   this.place(this.echo,cx,bottom+4*k,w*.96,62*k,(1-decay)*release*.23,held,-.2+decay*.9);
    // A short original-texture contact flash stays on the visible fist socket.
    const [tx,ty]=this.tuning.tip,fw=70*k,fh=28*k;
    this.place(this.cut,source.x+fw*(.5-tx),source.y+fh*(.5-ty),fw,fh,envelope(ms,1060,40,1300,170),held,-.2,age>=0&&age<67?1:0);
