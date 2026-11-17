@@ -44,3 +44,10 @@
 | `clover-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-ult-release.jpg | PASS |
 | `panko-ult-charge` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-ult-charge.jpg | PASS |
 | `panko-ult-release` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-ult-release.jpg | PASS |
+| `yarn-giant-charge-swirl` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
+| `yarn-giant-shockwave-ring` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/yarn-giant-shockwave-ring.jpg | PASS |
+| `yarn-giant-ground-crack` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-ground-crack.jpg | PASS |
+| `enemy-hit-spark-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
+| `enemy-hit-spark-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
+| `enemy-hit-spark-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
+| `enemy-death-dissolve` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
