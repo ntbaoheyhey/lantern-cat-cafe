@@ -1,0 +1,5102 @@
+{
+  "utc": "2026-11-17T22:31:50.721Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+  "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-17T22:30:48.028Z",
+  "ended": "2026-11-17T22:31:07.412Z",
+  "method": "Preserved current-runtime baseline artifact; seeded boss then6s normal speed1 automatic rule-selected play at1x/4x. Inclusive elapsed method/submission wrappers, CPU sampling and timeline traces add overhead. User-timing marks align render intervals to profiler samples. Attribution only; no FPS, exclusive-CPU, physical-laptop or judge-acceptance claim.",
+  "provenance": {
+    "utc": "2026-11-17T22:30:47.668Z",
+    "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+    "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+    "tools": [
+      {
+        "name": "run-startup-attribution.mjs",
+        "sha256": "d736e6697e5660ab4d2ecc0be93d85fcfef3dce5374594d99d307ed4107dd2bb"
+      },
+      {
+        "name": "trace-boss-startup.mjs",
+        "sha256": "afda9a57128152746e61ce3145595bf304ec45e381d2842fb81212949ca5e28b"
+      },
+      {
+        "name": "production-candidate-fixture.mjs",
+        "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      }
+    ]
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/report.json",
+    "sha256": "39ddf1b7435895d10827a9c7b42f55ad8218f7e3825ab3821964663b177df286"
+  },
+  "runs": [
+    {
+      "rate": 1,
+      "utc": "2026-11-17T22:30:58.052Z",
+      "frameCount": 359,
+      "plans": [
+        {
+          "at": 100.39999999850988,
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 1002.1000000014901,
+          "skill": "soot-1",
+          "actor": "soot",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 1883.3999999985099,
+          "skill": "clover-1",
+          "actor": "clover",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 2785.2999999970198,
+          "skill": "panko-1",
+          "actor": "panko",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 3684.6999999955297,
+          "skill": "yarnAttack",
+          "actor": "foe-0-yarn-giant",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 4568.10000000149,
+          "skill": "threadAttack",
+          "actor": "foe-1-binding-thread",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 5450,
+          "skill": "threadAttack",
+          "actor": "foe-2-binding-thread",
+          "ultimate": false,
+          "duration": 800
+        }
+      ],
+      "startup": {
+        "frames": 118,
+        "methodCosts": {
+          "native.pose": {
+            "calls": 848,
+            "elapsedMs": 6.200000017881393,
+            "maxMs": 0.10000000149011612
+          },
+          "actor.sample": {
+            "calls": 826,
+            "elapsedMs": 13.80000003427267,
+            "maxMs": 0.3999999985098839
+          },
+          "drawing.sample": {
+            "calls": 848,
+            "elapsedMs": 135.89999996125698,
+            "maxMs": 2
+          },
+          "craft.deform": {
+            "calls": 826,
+            "elapsedMs": 136.99999998509884,
+            "maxMs": 2
+          },
+          "canvas.drawImage": {
+            "calls": 11851,
+            "elapsedMs": 22.200000055134296,
+            "maxMs": 0.8000000044703484
+          },
+          "gl.bufferSubData": {
+            "calls": 1173,
+            "elapsedMs": 2.6000000089406967,
+            "maxMs": 0.10000000149011612
+          },
+          "gl.drawElements": {
+            "calls": 4008,
+            "elapsedMs": 1.2999999970197678,
+            "maxMs": 0.10000000149011612
+          },
+          "canvas.getImageData": {
+            "calls": 26,
+            "elapsedMs": 39.900000020861626,
+            "maxMs": 6.200000002980232
+          },
+          "gl.texImage2D": {
+            "calls": 8,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "gl.texSubImage2D": {
+            "calls": 10,
+            "elapsedMs": 47.099999986588955,
+            "maxMs": 12.199999995529652
+          },
+          "gl.bufferData": {
+            "calls": 123,
+            "elapsedMs": 0.10000000149011612,
+            "maxMs": 0.10000000149011612
+          },
+          "gl.compileShader": {
+            "calls": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "gl.linkProgram": {
+            "calls": 3,
+            "elapsedMs": 0.10000000149011612,
+            "maxMs": 0.10000000149011612
+          }
+        }
+      },
+      "slowFrames": [
+        {
+          "serial": 28,
+          "at": 450.29999999701977,
+          "rafInterval": 16.700000000000273,
+          "skill": "mochi-1",
+          "age": 366.5999999999999,
+          "costs": {
+            "native.pose": {
+              "calls": 9,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.8000000044703484,
+              "maxMs": 0.3999999985098839
+            },
+            "drawing.sample": {
+              "calls": 9,
+              "elapsedMs": 4.499999985098839,
+              "maxMs": 0.8999999985098839
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.299999989569187,
+              "maxMs": 0.8999999985098839
+            },
+            "canvas.drawImage": {
+              "calls": 119,
+              "elapsedMs": 1.4999999925494194,
+              "maxMs": 0.6000000014901161
+            },
+            "canvas.getImageData": {
+              "calls": 21,
+              "elapsedMs": 14.200000010430813,
+              "maxMs": 5.299999997019768
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 10.700000002980232,
+              "maxMs": 6.4000000059604645
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            }
+          },
+          "elapsedMs": 41.600000001490116,
+          "drawCalls": 23,
+          "textures": 27,
+          "traceBegin": 62425348363,
+          "traceEnd": 62425390012,
+          "traceSpanMs": 41.649,
+          "sampleCoverageMs": 41.649,
+          "top": [
+            {
+              "selfSampledWallMs": 10.562000000000001,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 8.806999999999999,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.206,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6925
+                },
+                {
+                  "functionName": "atlas",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6256
+                },
+                {
+                  "functionName": "textWidth",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7734
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.064,
+              "stack": [
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.946,
+              "stack": [
+                {
+                  "functionName": "",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6925
+                },
+                {
+                  "functionName": "atlas",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6256
+                },
+                {
+                  "functionName": "textWidth",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7734
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7894
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 75,
+          "at": 1268.7999999970198,
+          "rafInterval": 16.600000000000364,
+          "skill": "soot-1",
+          "age": 283.3000000000002,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.9000000059604645,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.9000000059604645,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 98,
+              "elapsedMs": 0.9000000059604645,
+              "maxMs": 0.6000000014901161
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 4.899999998509884,
+              "maxMs": 4.899999998509884
+            },
+            "gl.bufferSubData": {
+              "calls": 12,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 36,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 12.199999995529652,
+              "maxMs": 12.199999995529652
+            },
+            "gl.bufferData": {
+              "calls": 6,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 23.30000000447035,
+          "drawCalls": 29,
+          "textures": 30,
+          "traceBegin": 62426166900,
+          "traceEnd": 62426190172,
+          "traceSpanMs": 23.272,
+          "sampleCoverageMs": 25.019000000000002,
+          "top": [
+            {
+              "selfSampledWallMs": 8.665000000000001,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.609,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.436,
+              "stack": [
+                {
+                  "functionName": "mark",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.579,
+              "stack": [
+                {
+                  "functionName": "(program)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.548,
+              "stack": [
+                {
+                  "functionName": "createTexture",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "U",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 35911
+                },
+                {
+                  "functionName": "setRenderTarget",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 40849
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 203,
+                  "columnNumber": 118
+                },
+                {
+                  "functionName": "y",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 29471
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 23,
+          "at": 370.19999999552965,
+          "rafInterval": 16.699999999999818,
+          "skill": "mochi-1",
+          "age": 283.2999999999997,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.10000000149011612
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 3.799999989569187,
+              "maxMs": 0.8999999985098839
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 3.8999999910593033,
+              "maxMs": 1
+            },
+            "canvas.drawImage": {
+              "calls": 106,
+              "elapsedMs": 0.7000000029802322,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 6.200000002980232,
+              "maxMs": 6.200000002980232
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 32,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5.700000002980232,
+              "maxMs": 5.700000002980232
+            }
+          },
+          "elapsedMs": 20.80000000447035,
+          "drawCalls": 25,
+          "textures": 25,
+          "traceBegin": 62425268361,
+          "traceEnd": 62425289101,
+          "traceSpanMs": 20.74,
+          "sampleCoverageMs": 20.839,
+          "top": [
+            {
+              "selfSampledWallMs": 6.087,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.851,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.636,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.505,
+              "stack": [
+                {
+                  "functionName": "u",
+                  "scriptId": "123",
+                  "url": "http://127.0.0.1:6311/assets/card-v4-presentation-BdTOX96F.js",
+                  "lineNumber": 0,
+                  "columnNumber": 3741
+                },
+                {
+                  "functionName": "m",
+                  "scriptId": "123",
+                  "url": "http://127.0.0.1:6311/assets/card-v4-presentation-BdTOX96F.js",
+                  "lineNumber": 0,
+                  "columnNumber": 3578
+                },
+                {
+                  "functionName": "projectAnchors",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 32764
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.499,
+              "stack": [
+                {
+                  "functionName": "en",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 4,
+                  "columnNumber": 1782
+                },
+                {
+                  "functionName": "layer",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 4,
+                  "columnNumber": 4634
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 4,
+                  "columnNumber": 2753
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 222,
+          "at": 3718.7999999970198,
+          "rafInterval": 16.699999999999818,
+          "skill": "yarnAttack",
+          "age": 50.100000000000364,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1.2000000029802322,
+              "maxMs": 0.29999999701976776
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1.2000000029802322,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.30000000447034836
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 9.199999995529652,
+              "maxMs": 9.199999995529652
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 6.100000001490116,
+              "maxMs": 6.100000001490116
+            }
+          },
+          "elapsedMs": 20.5,
+          "drawCalls": 22,
+          "textures": 39,
+          "traceBegin": 62428616909,
+          "traceEnd": 62428637437,
+          "traceSpanMs": 20.528,
+          "sampleCoverageMs": 22.148,
+          "top": [
+            {
+              "selfSampledWallMs": 8.709,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.513999999999999,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.115,
+              "stack": [
+                {
+                  "functionName": "mark",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.62,
+              "stack": [
+                {
+                  "functionName": "(program)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.529,
+              "stack": [
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "Cn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22763
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 236,
+          "at": 3951.7999999970198,
+          "rafInterval": 16.699999999999818,
+          "skill": "yarnAttack",
+          "age": 283.40000000000055,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.9999999925494194,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.9999999925494194,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.5,
+              "maxMs": 0.5
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 7,
+              "maxMs": 7
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 7.699999995529652,
+              "maxMs": 7.699999995529652
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 20.100000001490116,
+          "drawCalls": 24,
+          "textures": 42,
+          "traceBegin": 62428849937,
+          "traceEnd": 62428869988,
+          "traceSpanMs": 20.051,
+          "sampleCoverageMs": 20.050999999999995,
+          "top": [
+            {
+              "selfSampledWallMs": 7.433,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 6.7749999999999995,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.507,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.498,
+              "stack": [
+                {
+                  "functionName": "bindFramebuffer",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "se",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 7748
+                },
+                {
+                  "functionName": "setRenderTarget",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 40849
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 203,
+                  "columnNumber": 118
+                },
+                {
+                  "functionName": "y",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 29471
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.491,
+              "stack": [
+                {
+                  "functionName": "xn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20998
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 10,
+          "at": 150.39999999850988,
+          "rafInterval": 16.800000000000182,
+          "skill": "mochi-1",
+          "age": 66.69999999999982,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 2,
+              "maxMs": 1.3000000044703484
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 2,
+              "maxMs": 1.3000000044703484
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.5000000074505806,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.4000000059604645,
+              "maxMs": 5.4000000059604645
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5.5999999940395355,
+              "maxMs": 5.5999999940395355
+            }
+          },
+          "elapsedMs": 18.5,
+          "drawCalls": 22,
+          "textures": 22,
+          "traceBegin": 62425048564,
+          "traceEnd": 62425067014,
+          "traceSpanMs": 18.45,
+          "sampleCoverageMs": 18.45,
+          "top": [
+            {
+              "selfSampledWallMs": 5.568,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.507,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.51,
+              "stack": [
+                {
+                  "functionName": "v",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3740,
+                  "columnNumber": 8666
+                },
+                {
+                  "functionName": "_",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3740,
+                  "columnNumber": 8352
+                },
+                {
+                  "functionName": "gt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 33004
+                },
+                {
+                  "functionName": "yt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 35468
+                },
+                {
+                  "functionName": "renderBufferDirect",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 24700
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.506,
+              "stack": [
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 30171
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "118",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.501,
+              "stack": [
+                {
+                  "functionName": "getContext",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 128,
+          "at": 2150.60000000149,
+          "rafInterval": 16.699999999999818,
+          "skill": "clover-1",
+          "age": 283.39999999999964,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.8999999985098839,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.8999999985098839,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 98,
+              "elapsedMs": 0.6999999955296516,
+              "maxMs": 0.5
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.899999998509884,
+              "maxMs": 5.899999998509884
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 6,
+              "maxMs": 6
+            }
+          },
+          "elapsedMs": 17.099999994039536,
+          "drawCalls": 23,
+          "textures": 34,
+          "traceBegin": 62427048627,
+          "traceEnd": 62427065808,
+          "traceSpanMs": 17.181,
+          "sampleCoverageMs": 17.307,
+          "top": [
+            {
+              "selfSampledWallMs": 5.795,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.674,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.527,
+              "stack": [
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.512,
+              "stack": [
+                {
+                  "functionName": "get alphaTest",
+                  "scriptId": "56",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 87574
+                },
+                {
+                  "functionName": "g",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3740,
+                  "columnNumber": 2337
+                },
+                {
+                  "functionName": "gt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 33004
+                },
+                {
+                  "functionName": "yt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 35468
+                },
+                {
+                  "functionName": "renderBufferDirect",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 24700
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.479,
+              "stack": [
+                {
+                  "functionName": "offset",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 862
+                },
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 61,
+          "at": 1034.6999999955297,
+          "rafInterval": 16.599999999999454,
+          "skill": "soot-1",
+          "age": 50,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.6999999955296516,
+              "maxMs": 0.29999999701976776
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.7999999970197678,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.3999999985098839,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 4.100000001490116,
+              "maxMs": 4.100000001490116
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 3.7999999970197678,
+              "maxMs": 3.7999999970197678
+            },
+            "gl.bufferData": {
+              "calls": 3,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 16.900000005960464,
+          "drawCalls": 23,
+          "textures": 29,
+          "traceBegin": 62425932812,
+          "traceEnd": 62425949788,
+          "traceSpanMs": 16.976,
+          "sampleCoverageMs": 17.107,
+          "top": [
+            {
+              "selfSampledWallMs": 4.538,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.098,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.535,
+              "stack": [
+                {
+                  "functionName": "getProgramInfoLog",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "C",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3733,
+                  "columnNumber": 283
+                },
+                {
+                  "functionName": "Vn.getUniforms",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3740,
+                  "columnNumber": 297
+                },
+                {
+                  "functionName": "yt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 35468
+                },
+                {
+                  "functionName": "renderBufferDirect",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 24700
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.598,
+              "stack": [
+                {
+                  "functionName": "a",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3689,
+                  "columnNumber": 6232
+                },
+                {
+                  "functionName": "pt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 29549
+                },
+                {
+                  "functionName": "pt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 29549
+                },
+                {
+                  "functionName": "pt",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 29549
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3792,
+                  "columnNumber": 27844
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.498,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "145",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "uploads": [
+        {
+          "serial": 10,
+          "label": "gl.texImage2D",
+          "at": 161.89999999850988,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 10,
+          "label": "gl.texSubImage2D",
+          "at": 162.10000000149012,
+          "elapsedMs": 5.5999999940395355,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "mochi",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/mochi/poses/K1.avif"
+        },
+        {
+          "serial": 23,
+          "label": "gl.texImage2D",
+          "at": 384.29999999701977,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 23,
+          "label": "gl.texSubImage2D",
+          "at": 384.3999999985099,
+          "elapsedMs": 5.700000002980232,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "mochi",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/mochi/poses/K2.avif"
+        },
+        {
+          "serial": 28,
+          "label": "gl.texSubImage2D",
+          "at": 469.8999999985099,
+          "elapsedMs": 4.299999997019768,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "foe-1-binding-thread",
+              "key": "K4"
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "key": "K4"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/binding-thread/poses/K4.avif"
+        },
+        {
+          "serial": 28,
+          "label": "gl.texSubImage2D",
+          "at": 474.69999999552965,
+          "elapsedMs": 6.4000000059604645,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K4"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K4.avif"
+        },
+        {
+          "serial": 61,
+          "label": "gl.texImage2D",
+          "at": 1043.2999999970198,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 61,
+          "label": "gl.texSubImage2D",
+          "at": 1043.3999999985099,
+          "elapsedMs": 3.7999999970197678,
+          "type": "HTMLImageElement",
+          "width": 640,
+          "height": 640,
+          "sourceLabels": [
+            {
+              "id": "soot",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/soot/poses/K1.avif"
+        },
+        {
+          "serial": 61,
+          "label": "gl.texSubImage2D",
+          "at": 1051.5,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 75,
+          "label": "gl.texImage2D",
+          "at": 1279,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 75,
+          "label": "gl.texSubImage2D",
+          "at": 1279.1000000014901,
+          "elapsedMs": 12.199999995529652,
+          "type": "HTMLImageElement",
+          "width": 640,
+          "height": 640,
+          "sourceLabels": [
+            {
+              "id": "soot",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/soot/poses/K2.avif"
+        },
+        {
+          "serial": 128,
+          "label": "gl.texImage2D",
+          "at": 2161,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 128,
+          "label": "gl.texSubImage2D",
+          "at": 2161.10000000149,
+          "elapsedMs": 6,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "clover",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/clover/poses/K2.avif"
+        },
+        {
+          "serial": 222,
+          "label": "gl.texImage2D",
+          "at": 3732.5,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 222,
+          "label": "gl.texSubImage2D",
+          "at": 3732.5,
+          "elapsedMs": 6.100000001490116,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K1.avif"
+        },
+        {
+          "serial": 236,
+          "label": "gl.texImage2D",
+          "at": 3963.39999999851,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 236,
+          "label": "gl.texSubImage2D",
+          "at": 3963.5,
+          "elapsedMs": 7.699999995529652,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K2.avif"
+        }
+      ],
+      "profile": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/1x.cpuprofile",
+        "sha256": "cd83c93a3cc085b5a346eb59982756efe9b31c516087f8d2f22c53751afdbd5d"
+      },
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/1x.trace.json",
+        "sha256": "2760e1cc3384d1f268ac58172ac1b68c63d0394acd7b140f7304d10754f883f5"
+      },
+      "initial": {
+        "round": 1,
+        "log": 0
+      },
+      "final": {
+        "round": 2,
+        "log": 34,
+        "result": null
+      },
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/1x.png",
+        "sha256": "2ab7ef378f5cd3ee70edafb5c00f5ed71d2106bcaddfbaa993420ea83d51d48a",
+        "width": 1280,
+        "height": 720,
+        "mean": 114.67157407407407,
+        "stdDev": 47.117027838532906
+      },
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/1x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "c93a46b130a5ebfa40b38deafd94b1c90b11c2d5b6db6c94f99275aefcefc061"
+      },
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "rate": 4,
+      "utc": "2026-11-17T22:31:07.403Z",
+      "frameCount": 213,
+      "plans": [
+        {
+          "at": 185.40000000596046,
+          "skill": "mochi-1",
+          "actor": "mochi",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 1089.7000000029802,
+          "skill": "soot-1",
+          "actor": "soot",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 2004.3000000044703,
+          "skill": "clover-1",
+          "actor": "clover",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 2958.5,
+          "skill": "panko-1",
+          "actor": "panko",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 3868.5,
+          "skill": "yarnAttack",
+          "actor": "foe-0-yarn-giant",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 4807.5,
+          "skill": "threadAttack",
+          "actor": "foe-1-binding-thread",
+          "ultimate": false,
+          "duration": 800
+        },
+        {
+          "at": 5726.10000000149,
+          "skill": "threadAttack",
+          "actor": "foe-2-binding-thread",
+          "ultimate": false,
+          "duration": 800
+        }
+      ],
+      "startup": {
+        "frames": 55,
+        "methodCosts": {
+          "native.pose": {
+            "calls": 406,
+            "elapsedMs": 12.199999995529652,
+            "maxMs": 1
+          },
+          "actor.sample": {
+            "calls": 385,
+            "elapsedMs": 40.8999999910593,
+            "maxMs": 5
+          },
+          "drawing.sample": {
+            "calls": 406,
+            "elapsedMs": 297.60000006854534,
+            "maxMs": 5.699999995529652
+          },
+          "craft.deform": {
+            "calls": 385,
+            "elapsedMs": 292.7000000625849,
+            "maxMs": 6.5999999940395355
+          },
+          "canvas.drawImage": {
+            "calls": 5528,
+            "elapsedMs": 45.60000002384186,
+            "maxMs": 3.7000000029802322
+          },
+          "gl.bufferSubData": {
+            "calls": 538,
+            "elapsedMs": 3.0000000074505806,
+            "maxMs": 0.7000000029802322
+          },
+          "gl.drawElements": {
+            "calls": 1833,
+            "elapsedMs": 1.400000013411045,
+            "maxMs": 0.30000000447034836
+          },
+          "canvas.getImageData": {
+            "calls": 25,
+            "elapsedMs": 76.19999999552965,
+            "maxMs": 11.600000001490116
+          },
+          "gl.texImage2D": {
+            "calls": 5,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "gl.texSubImage2D": {
+            "calls": 9,
+            "elapsedMs": 73.3999999910593,
+            "maxMs": 14.799999997019768
+          },
+          "gl.bufferData": {
+            "calls": 117,
+            "elapsedMs": 0.6000000014901161,
+            "maxMs": 0.3999999985098839
+          },
+          "gl.compileShader": {
+            "calls": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "gl.linkProgram": {
+            "calls": 3,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      "slowFrames": [
+        {
+          "serial": 13,
+          "at": 552.6000000014901,
+          "rafInterval": 83.29999999999973,
+          "skill": "mochi-1",
+          "age": 399.89999999999964,
+          "costs": {
+            "native.pose": {
+              "calls": 9,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.9999999850988388,
+              "maxMs": 0.5999999940395355
+            },
+            "drawing.sample": {
+              "calls": 9,
+              "elapsedMs": 18.50000000745058,
+              "maxMs": 5.600000001490116
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 18.100000008940697,
+              "maxMs": 5.700000002980232
+            },
+            "canvas.drawImage": {
+              "calls": 119,
+              "elapsedMs": 5.299999997019768,
+              "maxMs": 1.5999999940395355
+            },
+            "canvas.getImageData": {
+              "calls": 21,
+              "elapsedMs": 36.600000001490116,
+              "maxMs": 11.600000001490116
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.5,
+              "maxMs": 0.5
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 26.799999997019768,
+              "maxMs": 14.799999997019768
+            },
+            "gl.drawElements": {
+              "calls": 36,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 24,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            }
+          },
+          "elapsedMs": 137.39999999850988,
+          "drawCalls": 29,
+          "textures": 27,
+          "traceBegin": 62434831375,
+          "traceEnd": 62434968872,
+          "traceSpanMs": 137.497,
+          "sampleCoverageMs": 138.17600000000002,
+          "top": [
+            {
+              "selfSampledWallMs": 26.476,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 20.525999999999996,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 13.557,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6925
+                },
+                {
+                  "functionName": "atlas",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6256
+                },
+                {
+                  "functionName": "textWidth",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7734
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 10.613000000000001,
+              "stack": [
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 7.694999999999999,
+              "stack": [
+                {
+                  "functionName": "strokeText",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6925
+                },
+                {
+                  "functionName": "atlas",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 6256
+                },
+                {
+                  "functionName": "textWidth",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7734
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 168,
+                  "columnNumber": 7894
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 7,
+          "at": 228,
+          "rafInterval": 83.40000000000009,
+          "skill": "mochi-1",
+          "age": 100,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 8.899999998509884,
+              "maxMs": 5.699999995529652
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 9.799999997019768,
+              "maxMs": 6.5999999940395355
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.1999999955296516,
+              "maxMs": 1.0999999940395355
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 10.800000004470348,
+              "maxMs": 10.800000004470348
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 10.899999998509884,
+              "maxMs": 10.899999998509884
+            }
+          },
+          "elapsedMs": 59.5,
+          "drawCalls": 22,
+          "textures": 22,
+          "traceBegin": 62434506784,
+          "traceEnd": 62434566311,
+          "traceSpanMs": 59.527,
+          "sampleCoverageMs": 59.52699999999999,
+          "top": [
+            {
+              "selfSampledWallMs": 10.967,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 10.168,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.275,
+              "stack": [
+                {
+                  "functionName": "xn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20998
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.131,
+              "stack": [
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.6129999999999995,
+              "stack": [
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 12,
+          "at": 448.70000000298023,
+          "rafInterval": 50,
+          "skill": "mochi-1",
+          "age": 316.5999999999999,
+          "costs": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0.19999999552965164,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 1.0999999940395355,
+              "maxMs": 0.8999999985098839
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 7.899999998509884,
+              "maxMs": 2.899999998509884
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 7.100000001490116,
+              "maxMs": 2.899999998509884
+            },
+            "canvas.drawImage": {
+              "calls": 106,
+              "elapsedMs": 2.600000001490116,
+              "maxMs": 1.6000000014901161
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 11.399999998509884,
+              "maxMs": 11.399999998509884
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 11.899999998509884,
+              "maxMs": 11.899999998509884
+            }
+          },
+          "elapsedMs": 58.5,
+          "drawCalls": 23,
+          "textures": 25,
+          "traceBegin": 62434727496,
+          "traceEnd": 62434786041,
+          "traceSpanMs": 58.545,
+          "sampleCoverageMs": 59.64999999999999,
+          "top": [
+            {
+              "selfSampledWallMs": 12.243,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 10.999,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.026,
+              "stack": [
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "Cn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22763
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.72,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.897,
+              "stack": [
+                {
+                  "functionName": "m",
+                  "scriptId": "123",
+                  "url": "http://127.0.0.1:6311/assets/card-v4-presentation-BdTOX96F.js",
+                  "lineNumber": 0,
+                  "columnNumber": 3578
+                },
+                {
+                  "functionName": "projectAnchors",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 32764
+                },
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 138,
+          "at": 4161.60000000149,
+          "rafInterval": 50,
+          "skill": "yarnAttack",
+          "age": 316.59999999999945,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 4.899999998509884,
+              "maxMs": 1
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.999999992549419,
+              "maxMs": 1
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 2.5,
+              "maxMs": 1.6000000014901161
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 14.100000001490116,
+              "maxMs": 14.100000001490116
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.9000000059604645,
+              "maxMs": 0.9000000059604645
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 15,
+              "maxMs": 15
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 53.600000001490116,
+          "drawCalls": 24,
+          "textures": 42,
+          "traceBegin": 62438440306,
+          "traceEnd": 62438493929,
+          "traceSpanMs": 53.623,
+          "sampleCoverageMs": 53.772000000000006,
+          "top": [
+            {
+              "selfSampledWallMs": 15.737999999999998,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 14.057000000000002,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.075,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.691,
+              "stack": [
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.202,
+              "stack": [
+                {
+                  "functionName": "t",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21031
+                },
+                {
+                  "functionName": "xn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20998
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 27,
+          "at": 1119.2000000029802,
+          "rafInterval": 50.100000000000364,
+          "skill": "soot-1",
+          "age": 83.40000000000009,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 5.600000008940697,
+              "maxMs": 1.2000000029802322
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 5.700000010430813,
+              "maxMs": 1.2000000029802322
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.7000000029802322,
+              "maxMs": 1.5
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 8.199999995529652,
+              "maxMs": 8.199999995529652
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 32,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 8.199999995529652,
+              "maxMs": 8.199999995529652
+            },
+            "gl.bufferData": {
+              "calls": 9,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 51.600000001490116,
+          "drawCalls": 25,
+          "textures": 29,
+          "traceBegin": 62435398033,
+          "traceEnd": 62435449601,
+          "traceSpanMs": 51.568,
+          "sampleCoverageMs": 52.492999999999995,
+          "top": [
+            {
+              "selfSampledWallMs": 9.077,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 8.083,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.857,
+              "stack": [
+                {
+                  "functionName": "xn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20998
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.841,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.597,
+              "stack": [
+                {
+                  "functionName": "render",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11894
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 131,
+          "at": 3911.60000000149,
+          "rafInterval": 16.699999999999818,
+          "skill": "yarnAttack",
+          "age": 66.59999999999945,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 4.699999988079071,
+              "maxMs": 1.1999999955296516
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.799999989569187,
+              "maxMs": 1.1999999955296516
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.8000000044703484,
+              "maxMs": 0.9000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 12.299999997019768,
+              "maxMs": 12.299999997019768
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0.10000000149011612,
+              "maxMs": 0.10000000149011612
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 17.200000002980232,
+              "maxMs": 17.200000002980232
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 49.399999998509884,
+          "drawCalls": 22,
+          "textures": 39,
+          "traceBegin": 62438190379,
+          "traceEnd": 62438239809,
+          "traceSpanMs": 49.43,
+          "sampleCoverageMs": 49.778999999999996,
+          "top": [
+            {
+              "selfSampledWallMs": 17.381999999999998,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 12.384,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 3.336,
+              "stack": [
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.936,
+              "stack": [
+                {
+                  "functionName": "offset",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 862
+                },
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 1.968,
+              "stack": [
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "Cn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22763
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 34,
+          "at": 1318.2000000029802,
+          "rafInterval": 33.29999999999973,
+          "skill": "soot-1",
+          "age": 283.2999999999997,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 5.200000010430813,
+              "maxMs": 1.4000000059604645
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 5.300000011920929,
+              "maxMs": 1.4000000059604645
+            },
+            "canvas.drawImage": {
+              "calls": 98,
+              "elapsedMs": 1.4000000059604645,
+              "maxMs": 0.7000000029802322
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 9.199999995529652,
+              "maxMs": 9.199999995529652
+            },
+            "gl.bufferSubData": {
+              "calls": 12,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 36,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 9.299999997019768,
+              "maxMs": 9.299999997019768
+            },
+            "gl.bufferData": {
+              "calls": 6,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          },
+          "elapsedMs": 47.20000000298023,
+          "drawCalls": 29,
+          "textures": 30,
+          "traceBegin": 62435596972,
+          "traceEnd": 62435644134,
+          "traceSpanMs": 47.162,
+          "sampleCoverageMs": 48.38700000000001,
+          "top": [
+            {
+              "selfSampledWallMs": 9.276,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 8.514000000000001,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.54,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 4.4159999999999995,
+              "stack": [
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.362,
+              "stack": [
+                {
+                  "functionName": "mark",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "s.render",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 14,
+                  "columnNumber": 20
+                },
+                {
+                  "functionName": "loop",
+                  "scriptId": "115",
+                  "url": "http://127.0.0.1:6311/assets/Battle-OGSiRfJo.js",
+                  "lineNumber": 236,
+                  "columnNumber": 11477
+                },
+                {
+                  "functionName": "(root)",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "serial": 67,
+          "at": 2261.60000000149,
+          "rafInterval": 16.699999999999818,
+          "skill": "clover-1",
+          "age": 283.3000000000002,
+          "costs": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.5999999940395355,
+              "maxMs": 0.5
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 4.299999997019768,
+              "maxMs": 1
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.299999997019768,
+              "maxMs": 1
+            },
+            "canvas.drawImage": {
+              "calls": 98,
+              "elapsedMs": 1.2999999895691872,
+              "maxMs": 1.1000000014901161
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 10.699999995529652,
+              "maxMs": 10.699999995529652
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.19999999552965164,
+              "maxMs": 0.19999999552965164
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 11.199999995529652,
+              "maxMs": 11.199999995529652
+            }
+          },
+          "elapsedMs": 46.5,
+          "drawCalls": 23,
+          "textures": 34,
+          "traceBegin": 62436540429,
+          "traceEnd": 62436586906,
+          "traceSpanMs": 46.477,
+          "sampleCoverageMs": 46.993,
+          "top": [
+            {
+              "selfSampledWallMs": 11.558,
+              "stack": [
+                {
+                  "functionName": "texSubImage2D",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "W",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 11770
+                },
+                {
+                  "functionName": "pe",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 24503
+                },
+                {
+                  "functionName": "ne",
+                  "scriptId": "122",
+                  "url": "http://127.0.0.1:6311/assets/three.module-DYVl4Dmj.js",
+                  "lineNumber": 3768,
+                  "columnNumber": 20472
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 11.135,
+              "stack": [
+                {
+                  "functionName": "getImageData",
+                  "scriptId": "0",
+                  "url": "",
+                  "lineNumber": -1,
+                  "columnNumber": -1
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "bn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 20381
+                },
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 5.351999999999999,
+              "stack": [
+                {
+                  "functionName": "Sn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 21326
+                },
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.96,
+              "stack": [
+                {
+                  "functionName": "point",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 5794
+                },
+                {
+                  "functionName": "sample",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 3303
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                },
+                {
+                  "functionName": "deform",
+                  "scriptId": "131",
+                  "url": "http://127.0.0.1:6311/assets/drawn-poses-DGjG8OoP.js",
+                  "lineNumber": 0,
+                  "columnNumber": 1964
+                },
+                {
+                  "functionName": "object.<computed>",
+                  "scriptId": "146",
+                  "url": "",
+                  "lineNumber": 5,
+                  "columnNumber": 139
+                }
+              ]
+            },
+            {
+              "selfSampledWallMs": 2.928,
+              "stack": [
+                {
+                  "functionName": "",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22839
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "traverse",
+                  "scriptId": "57",
+                  "url": "http://127.0.0.1:6311/assets/three.core-DH5FCTQa.js",
+                  "lineNumber": 0,
+                  "columnNumber": 69695
+                },
+                {
+                  "functionName": "Cn",
+                  "scriptId": "129",
+                  "url": "http://127.0.0.1:6311/assets/assets-C1rrbztY.js",
+                  "lineNumber": 34,
+                  "columnNumber": 22763
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "uploads": [
+        {
+          "serial": 7,
+          "label": "gl.texImage2D",
+          "at": 270,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 7,
+          "label": "gl.texSubImage2D",
+          "at": 270.90000000596046,
+          "elapsedMs": 10.899999998509884,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "mochi",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/mochi/poses/K1.avif"
+        },
+        {
+          "serial": 12,
+          "label": "gl.texImage2D",
+          "at": 490.80000000447035,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 12,
+          "label": "gl.texSubImage2D",
+          "at": 491.80000000447035,
+          "elapsedMs": 11.899999998509884,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "mochi",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/mochi/poses/K2.avif"
+        },
+        {
+          "serial": 13,
+          "label": "gl.texSubImage2D",
+          "at": 616.9000000059605,
+          "elapsedMs": 14.799999997019768,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K4"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K4.avif"
+        },
+        {
+          "serial": 13,
+          "label": "gl.texSubImage2D",
+          "at": 632.6000000014901,
+          "elapsedMs": 12,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "foe-1-binding-thread",
+              "key": "K4"
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "key": "K4"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/binding-thread/poses/K4.avif"
+        },
+        {
+          "serial": 27,
+          "label": "gl.texImage2D",
+          "at": 1150.5,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 27,
+          "label": "gl.texSubImage2D",
+          "at": 1150.8000000044703,
+          "elapsedMs": 8.199999995529652,
+          "type": "HTMLImageElement",
+          "width": 640,
+          "height": 640,
+          "sourceLabels": [
+            {
+              "id": "soot",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/soot/poses/K1.avif"
+        },
+        {
+          "serial": 27,
+          "label": "gl.texSubImage2D",
+          "at": 1169.4000000059605,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 34,
+          "label": "gl.texImage2D",
+          "at": 1350.8000000044703,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 34,
+          "label": "gl.texSubImage2D",
+          "at": 1351.7000000029802,
+          "elapsedMs": 9.299999997019768,
+          "type": "HTMLImageElement",
+          "width": 640,
+          "height": 640,
+          "sourceLabels": [
+            {
+              "id": "soot",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/soot/poses/K2.avif"
+        },
+        {
+          "serial": 67,
+          "label": "gl.texImage2D",
+          "at": 2294.4000000059605,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 67,
+          "label": "gl.texSubImage2D",
+          "at": 2294.4000000059605,
+          "elapsedMs": 11.199999995529652,
+          "type": "HTMLImageElement",
+          "width": 896,
+          "height": 896,
+          "sourceLabels": [
+            {
+              "id": "clover",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/clover/poses/K2.avif"
+        },
+        {
+          "serial": 131,
+          "label": "gl.texImage2D",
+          "at": 3940,
+          "elapsedMs": 0.10000000149011612,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 131,
+          "label": "gl.texSubImage2D",
+          "at": 3940.10000000149,
+          "elapsedMs": 17.200000002980232,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K1"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K1.avif"
+        },
+        {
+          "serial": 138,
+          "label": "gl.texImage2D",
+          "at": 4195.5,
+          "elapsedMs": 0,
+          "type": null,
+          "width": null,
+          "height": null,
+          "sourceLabels": [],
+          "url": null
+        },
+        {
+          "serial": 138,
+          "label": "gl.texSubImage2D",
+          "at": 4196.5,
+          "elapsedMs": 15,
+          "type": "HTMLImageElement",
+          "width": 1152,
+          "height": 1152,
+          "sourceLabels": [
+            {
+              "id": "foe-0-yarn-giant",
+              "key": "K2"
+            }
+          ],
+          "url": "http://127.0.0.1:6311/units/yarn-giant/poses/K2.avif"
+        }
+      ],
+      "profile": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/4x.cpuprofile",
+        "sha256": "0c564ae5b4119dc089e20a008a88c93320c3e476e02c27c11b3332bf7691426e"
+      },
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/4x.trace.json",
+        "sha256": "9307cf94fea83f1ea554904d8b7c96e0579c7fa0a528f657c08a46149fb6f8fb"
+      },
+      "initial": {
+        "round": 1,
+        "log": 0
+      },
+      "final": {
+        "round": 2,
+        "log": 34,
+        "result": null
+      },
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/4x.png",
+        "sha256": "cb3958813b05b0858635cfe69551dc96d3ed6e4c1e3dabdb145b4d5a2a905864",
+        "width": 1280,
+        "height": 720,
+        "mean": 114.87983796296297,
+        "stdDev": 47.36161548416709
+      },
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-startup-attribution/4x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "522784671256348706ac0c57c68ae598b695115b42f0ea6597c414690d3e7a0f"
+      },
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-17T22:32:34.098755+00:00",
+  "interpretation": "Two fresh measured1024x576 battle captures inspected once: four heroes, Yarn/binding foes, HUD, status cues and telegraphs remain readable. Different final action phases are expected from real timing; no frame-pair parity claim. Largest first-action frames are Mochi contact at366.6/399.9ms:41.6ms at1x,137.4ms at4x under instrumentation. They contain21canvas getImageData calls (14.2/36.6ms inclusive), texture submissions10.7/26.8ms, and drawing work. Sample stacks attribute readbacks to opaque-pose masks and number glyph atlas first-use measurement. These are hypotheses for isolated experiments, not additive CPU savings or ordinary performance results.",
+  "limits": "Sampling intervals are intersected with matching renderer-thread user-timing marks; weighted samples approximate exclusive sampled wall time. Native (program) or GC attribution can be incomplete. Nested method durations overlap and must not be added together.6s diagnostic captures first actions after actors are ready, not cold page/network load. Trace and wrappers change timings; use unprofiled trials for any later benefit claim.",
+  "sourceInspection": {
+    "assets-C1rrbztY.js:35:20382": "stage/opaque-pose-bounds.ts texturePixels: crop with2pxguard,drawImage,getImageData",
+    "assets-C1rrbztY.js:35:21327": "stage/opaque-pose-bounds.ts contour cache builder",
+    "Battle-OGSiRfJo.js:169:6926": "Number atlas stroke/fill then per-glyph getImageData; exact current source to be located before prototype"
+  }
+}
