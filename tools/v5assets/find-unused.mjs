@@ -56,6 +56,22 @@ for (const line of invLines) {
     status = "REFERENCED_DYNAMIC";
     tier = "PUPPET_RIG_PAGE";
     matchFile = "apps/web/public/units/*/rig.json";
+  } else if (publicRel.includes("/poses/")) {
+    // Dynamic pose sheet referenced by pose-manifest-loader
+    status = "REFERENCED_DYNAMIC";
+    tier = "POSE_MANIFEST_LOADER";
+    matchFile = "apps/web/public/units/*/poses/manifest.json";
+  } else if (publicRel.endsWith(".avif")) {
+    // Check if counterpart .webp is referenced
+    const webpRel = publicRel.replace(/\.avif$/, ".webp");
+    for (const s of scannables) {
+      if (s.content.includes(webpRel) || s.content.includes(path.basename(webpRel))) {
+        status = "REFERENCED_AVIF_SIBLING";
+        tier = "AVIF_SIBLING_OF_ACTIVE_WEBP";
+        matchFile = s.file;
+        break;
+      }
+    }
   } else {
     // Check Tier 1: exact path
     for (const s of scannables) {
