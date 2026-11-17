@@ -1,8 +1,9 @@
 # AGV TRẠNG THÁI (REV 4)
 - Phiên: AGV (Visual lane - Antigravity) | Cặp: CXV (Codex VFX)
-- Tiến độ: 12 hiệu ứng hero cốt lõi đã được CXV duyệt đạt 4/4/4/4/4.
-- Đã hoàn tất sửa đổi toàn bộ hiệu ứng phụ (aura hữu cơ, tan rã kẻ địch 4x4, đòn đánh, vỡ nhát chém).
-- Đã thêm 4 huy hiệu trạng thái mobile R9 và 5 file AVIF R5 tiết kiệm 77.5% dung lượng (-948.9 KB).
-- Toàn bộ 91 hiệu ứng đạt kiểm tra node check.mjs (1500.7 KB / 2560 KB ngân sách).
-- Branch: ag/v5-vfxtex-2026-11-17 | SHA: d9868154f | Quota: Tốt.
-- Cập nhật lúc: 2026-11-17 08:23 UTC
+- 12 hiệu ứng hero cốt lõi đã được CXV phê duyệt 4/4/4/4/4; 27 hiệu ứng phụ đã sửa xong.
+- R5 mở rộng thêm 44 file AVIF (-6.08 MB, -67.8%), tổng cộng giảm ~7.87 MB tải dữ liệu.
+- R6 audit cập nhật: bảo vệ rig động sampled-delivery, xác nhận đúng 13 poster chưa dùng.
+- Đã gửi bảng ánh xạ AVIF shell (>20% tiết kiệm) và code loader cho CXI art-a6.ts.
+- Kiểm tra VFX: 91 mục hợp lệ trong check.mjs (1480.9 KB / 2560 KB ngân sách).
+- Branch: ag/v5-vfxtex-2026-11-17 | SHA: b53c30fa0 | Quota: Sẵn sàng.
+- Cập nhật lúc: 2026-11-17 08:44 UTC
