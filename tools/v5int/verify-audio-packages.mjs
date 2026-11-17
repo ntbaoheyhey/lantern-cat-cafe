@@ -62,7 +62,7 @@ try{
    const bytes=Buffer.from(JSON.stringify(body));candidate.integrity='sha256-'+createHash('sha256').update(bytes).digest('base64');
    await page.route('**'+group.url,route=>route.fulfill({contentType:'application/json',body:bytes}));
   }else await page.route('**'+group.url,async route=>{
-   if(mode==='http')return route.fulfill({status:503,body:'Injected unavailable package'});
+   if(mode==='http')return route.fulfill({status:503,contentType:'application/json',body:await readFile(resolve(root,'apps/web/public',group.url.slice(1)))});
    if(mode==='integrity')return route.fulfill({contentType:'application/json',body:'{}'});
    await new Promise(resolve=>setTimeout(resolve,2500));try{await route.abort();}catch{/* Timeout already aborted. */}
   });
