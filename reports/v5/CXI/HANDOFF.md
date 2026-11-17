@@ -1,21 +1,18 @@
-# CXI V6 continuation
-ACTIVE: I-G route recovery works; guest evidence condition fixed after fresh capture exposed offline=false. Two guest result regressions pass.
-NEXT 1: Inspect v6-route3 pipeline; inspect fresh route/receipt and v6-route2 effects once; publish v5-m1.4 after green.
-NEXT 2: I-B selected no-inline experiment complete0,161KB savings; apply catalog rule after tag. AGV/AGS pending.
-NEXT 3: CXV pacing study pending for70.151s level-first patrol; I-E films when I-A..C green.
-Last pushed SHA:f9d5de881; green tagv5-m1.3=04c913bc5; newer CXV merge and route fix require fullsuite.
-self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T13:15:48Z.
-Last RULES re-read UTC:2026-11-17T13:43:08Z; STOP-ALL/STOP-CXI absent.
-ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
-RunningPID33189:work/v5/CXI/jobs/v6-route3-pipeline.log;statusv6-route3-status.json. PID29627 fullsuite0/route1 guest condition fixed.
-Production preview parent80797/child80825,port6301; currentdist4519278d0,indexf4e598bd6eee79c780eb79cd9916fc802dfda0bf5174a8c9a03697e78835503a.
-Fullsuite4519278d0:2914web;5214root=77Node+5137workspace,11skip/2expectedfail;typecheck/build0.
-Fresh cold04c913bc5 wave1/wave3/boss8,744,220/9,305,491/8,819,936B;0errors;FAIL8MB.
-Practicev6-living-practice9,347ms/0errors;280pxcard inspected. Actualpatrolv6-recovery66,331ms/3x/party/35routepoints+RareMoonwickShawl;FAIL30s.
-Fresh effects v6-route2 Mochi/Soot+Clover/Panko inspected once; no new visible regression. Do not reopen inspected sheets.
-Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox read INBOX141/DELIVERIES49/USER23/LEARN47 at2026-11-17T13:35:50Z; old WATCHDOG ignored.
-Desktop only; no mobile tasks in QUEUE; unfinished sizing reverted. Owner-only deployment/Fuji unchanged.
-AGS residual audio REQ09:03 remains; AGV approved12AVIF REQ08:47 remains. CXV77bbef422 mergedc44267f8c.
-Proof kit5tests+Anvil516ms/0.000042AVAX pass; runbook tagv5-m1.3. No keys/envfile reads/public writes.
-I-F README+ARCHITECTURE+runbook44links pass;5registry addresses verified. AGS copy correction REQ remains.
+# CXI V7 continuation
+ACTIVE: I-A publish green v5-m1.4; assistant: AGS.
+NEXT 1: Commit+push V7 orientation+I-A evidence; tag v5-m1.4; update BOARD; dispatch T-CXI-1 QA.
+NEXT 2: Apply catalog-only no-inline in apps/web/vite.config.ts; fresh cold wave1/wave3/boss; AGV top15 TASK.
+NEXT 3: Measure load-to-first-hit desktop; I-D real/absent tx panels; I-E films+REVIEW-VI.
+Last pushed SHA:7700da3a9; green v5-m1.3=04c913bc5; route3 typecheck/web/root/build/transfer/route all0.
+self-wake: cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; edited2026-11-17T14:00:10Z.
+Last RULES re-read UTC:2026-11-17T14:00:10Z; STOP-ALL/STOP-CXI absent.
+ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
+Running jobs:none; v7-ia4 route9323ms/zeroerrors complete; preview parent80797/child80825 port6301.
+Route3 suite:2916web;5216root=77Node+5139workspace,11skip/2expectedfail;typecheck/build0.
+Cold route3 wave1/wave3/boss8744791/9306068/8820532B;0errors;FAIL8MB;route receipt9199ms.
+I-C old70.151s measures level-first receipt, not first hit; V7 first-hit measurement needed.
+AGS open:T-CXI-2 winners,T-CXI-3 load research; residual4beds+copy correction; T-CXI-1 QA next.
+AGV T-CXI-4 top15+12AVIF exact target table in I-B-TOP15.md ready to send. CXV pacing research; c0c8081a8 merged40d757334.
+Mailbox read INBOX-CXI142/INBOX-AGS62/USER23/LEARN47 at2026-11-17T14:00:10Z; ignore old watchdog.
+I-D public Fuji owner-only;5contracts checked;kit5tests+Anvil516ms;no real public tx claimed.
+I-E3x30s films/contact sheets+Vietnamese review open;I-F README/ARCHITECTURE verified, draft corrections open.

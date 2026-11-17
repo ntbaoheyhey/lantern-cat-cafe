@@ -1,9 +1,10 @@
-# Fresh desktop cold top15 — 2026-11-17T13:07:54Z
-Source: v5-m1.3 / 04c913bc585ac028bed31f1e8ea901369acb6da2. Exact encoded transfer, HTTP cache disabled; full responses for requests started before battle readiness.
+# V7 fresh desktop cold transfer tasks
+Measured 2026-11-17T13:43:35.749Z; source f9d5de8815c30451ae56b0786a9a6652229f0886; viewport1280x720; HTTP cache disabled.
 URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1
-Raw evidence: /Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v6-living/all.json
+Evidence: /Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v6-route3/all.json
+All responses started before readiness counted through completion. No late-load budget gaming.
 
-## wave1 — 8744220 B
+## wave1
 | Path | Encoded bytes |
 |---|---:|
 | /art/v3-shell/landing.avif | 208137 |
@@ -22,7 +23,7 @@ Raw evidence: /Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v6-living/all.j
 | /vfx/v5/clover-ult-charge.webp | 102488 |
 | /vfx/v5/clover-ult-release.webp | 101182 |
 
-## wave3 — 9305491 B
+## wave3
 | Path | Encoded bytes |
 |---|---:|
 | /art/v3-shell/landing.avif | 208137 |
@@ -41,7 +42,7 @@ Raw evidence: /Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v6-living/all.j
 | /assets/panko-B_GHw6bD.avif | 110740 |
 | /vfx/v5/clover-ult-charge.webp | 102488 |
 
-## boss — 8819936 B
+## boss
 | Path | Encoded bytes |
 |---|---:|
 | /audio/score-boss.webm | 261256 |
@@ -60,5 +61,21 @@ Raw evidence: /Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v6-living/all.j
 | /assets/web3-BXuhzNNJ.js | 114888 |
 | /assets/panko-B_GHw6bD.avif | 110740 |
 
-AGV priority remains same-size derivatives of the 12 approved textures in apps/web/src/game/cardrpg/spine/v5-approved-manifest-loader.json (943,110B across every fixture). Supply source hash, dimensions and output mapping; preserve alpha, original textures and approved look.
-Already integrated shell/portrait/craft/lantern AVIF paths need no duplicate delivery. Audio paths are AGS-owned; legacy residual beds are requested separately.
+## T-CXI-4 to AGV: approved texture derivatives
+Deliver NEW AVIF siblings for these exact files, preserving dimensions, frame grid, alpha and visible colour/edges. Keep originals. Target aggregate <=350000B; quality must be checked before integration. Provide source SHA256/dimensions/alpha/size/output mapping and visual QA notes. CXI verifies decode/fallback and real1280x720 cast captures.
+| Original absolute path | Original bytes | AVIF size goal |
+|---|---:|---:|
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/mochi-slash.webp | 39316 | 13760 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/mochi-ult-release.webp | 93520 | 32731 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/clover-impact.webp | 90690 | 31741 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/clover-ult-charge.webp | 102218 | 35776 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/clover-ult-release.webp | 100912 | 35319 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/panko-impact.webp | 73618 | 25766 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/panko-slash.webp | 46924 | 16423 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/panko-ult-charge.webp | 93690 | 32791 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/panko-ult-release.webp | 82530 | 28885 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/soot-impact.webp | 65904 | 23066 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/soot-ult-charge.webp | 92980 | 32542 |
+| /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/soot-ult-release.webp | 57588 | 20155 |
+
+Other top15 entries already use integrated AVIF or are CXI JS/AGS audio; no duplicate conversions. Retain manifest semantics until CXI integrates approved derivatives.
