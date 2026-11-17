@@ -100,3 +100,20 @@ Integrated loudness target: -18.0 LUFS +/- 2 LU. Measured spread: -19.2 to -16.7
     - Body: `aevalsrc=exprs='1.0*sin(2*PI*(95-30*(t/0.25))*t)*exp(-t/0.08)':s=48000:d=0.25` (delay 220ms)
     - Tail: `anoisesrc=c=pink:r=48000:d=0.75,bandpass=f=2500:w=1800,volume=0.36,afade=t=out:st=0.06:d=0.69` (delay 250ms)
     - Measured: -17.6 LUFS, peak -2.3 dBFS, size 5,520 B, dur 1.09s.
+
+## U2 Split Ranged Impacts (v4-ranged-impacts.mp3 -> audio/v5/legacy/)
+- Source file: `apps/web/public/audio/v4-ranged-impacts.mp3` (3,029,184 bytes, 3.0 MB)
+- License: CC0-1.0 (from `apps/web/public/audio/LICENSES.json`, inherited from Kenney audio packs)
+- Command: `node tools/v5audio/render.mjs --split-ranged`
+- Output directory: `apps/web/public/audio/v5/legacy/`
+- Coverage: 36 selected variants (9 variants each for `ember`, `heavy`, `shadow`, `tide/ice`)
+  - `ranged.ember.impact/0-0` to `2-2`
+  - `ranged.heavy.impact/0-0` to `2-2`
+  - `ranged.shadow.impact/0-0` to `2-2`
+  - `ranged.tide.impact/0-0` to `2-2`
+- Encodings:
+  - Opus: WebM container, 48kHz mono, 16kbps (`-c:a libopus -b:a 16k -ac 1 -f webm`) -> 36 files, 84,139 bytes (82.2 KB)
+  - M4A: AAC fallback, 48kHz mono, 32kbps (`-c:a aac -b:a 32k -ac 1`) -> 36 files, 164,155 bytes (160.3 KB)
+  - Combined Total: 248,294 bytes (242.5 KB), achieving the <= 300 KB budget requirement (92% reduction from the 3 MB monolith).
+- Manifest: All 36 variants mapped into `apps/web/public/audio/v5/manifest.json`.
+- Mapping table: `reports/v5/AG4/U2-mapping.csv` and `reports/v5/AG4/U2-mapping.json`.

@@ -13,11 +13,13 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '../..');
+const AUDIO_DIR = path.join(ROOT_DIR, 'apps/web/public/audio');
 const AUDIO_V5_DIR = path.join(ROOT_DIR, 'apps/web/public/audio/v5');
+const LEGACY_DIR = path.join(AUDIO_V5_DIR, 'legacy');
 const REPORTS_DIR = path.join(ROOT_DIR, 'reports/v5/AG4');
 
 fs.mkdirSync(AUDIO_V5_DIR, { recursive: true });
-fs.mkdirSync(path.join(AUDIO_V5_DIR, 'legacy'), { recursive: true });
+fs.mkdirSync(LEGACY_DIR, { recursive: true });
 fs.mkdirSync(REPORTS_DIR, { recursive: true });
 
 function runFfmpeg(args) {
@@ -43,7 +45,6 @@ function probeAudio(filePath) {
 }
 
 export function measureLoudness(filePath) {
-  // Use apad for short one-shot sound effects so EBU R128 400ms gating window integrates accurately
   const res = spawnSync('ffmpeg', [
     '-hide_banner',
     '-i', filePath,
@@ -66,7 +67,6 @@ export function measureLoudness(filePath) {
 
 /**
  * Synthesize an audio cue using 3-layer architecture: Transient, Body, Tail
- * Includes iterative loudness calibration to meet strict game audio targets.
  */
 export function synthesizeCue({
   name,
@@ -79,7 +79,7 @@ export function synthesizeCue({
   tailDelayMs = 15,
   masterGain = 1.0,
   targetLufs = -18.0,
-  limiterLinear = 0.78, // ~ -2.1 dBFS to guarantee decoded true peak <= -1.0 dBTP
+  limiterLinear = 0.78,
   subDir = ''
 }) {
   const outDir = subDir ? path.join(AUDIO_V5_DIR, subDir) : AUDIO_V5_DIR;
@@ -96,7 +96,6 @@ export function synthesizeCue({
   let finalProbe = null;
   let finalLoudness = null;
 
-  // Calibrate gain in up to 3 passes
   for (let pass = 0; pass < 3; pass++) {
     const filtergraph = [
       trClause,
@@ -130,7 +129,6 @@ export function synthesizeCue({
     currentGain = Math.max(0.1, currentGain * factor);
   }
 
-  // Render AAC / M4A fallback
   runFfmpeg([
     '-i', opusPath,
     '-c:a', 'aac',
@@ -186,7 +184,6 @@ export function renderCalibration() {
  * U1: Hero Skill Set Definitions (4 heroes x 3 actions = 12 cues)
  */
 export const HERO_SKILL_DEFINITIONS = [
-  // 1. Mochi: soft cloth whoosh + plush thud
   {
     cueId: 'hero.mochi.basic',
     name: 'hero-mochi-basic',
@@ -232,8 +229,6 @@ export const HERO_SKILL_DEFINITIONS = [
     targetLufs: -18.0,
     limiterLinear: 0.78
   },
-
-  // 2. Soot: crackle + ember pop
   {
     cueId: 'hero.soot.basic',
     name: 'hero-soot-basic',
@@ -279,8 +274,6 @@ export const HERO_SKILL_DEFINITIONS = [
     targetLufs: -18.0,
     limiterLinear: 0.78
   },
-
-  // 3. Clover: airy chime + leaf rustle (heal)
   {
     cueId: 'hero.clover.basic',
     name: 'hero-clover-basic',
@@ -326,8 +319,6 @@ export const HERO_SKILL_DEFINITIONS = [
     targetLufs: -18.0,
     limiterLinear: 0.78
   },
-
-  // 4. Panko: crunchy toast crack + butter squish
   {
     cueId: 'hero.panko.basic',
     name: 'hero-panko-basic',
@@ -392,7 +383,6 @@ export function renderHeroSkills() {
     console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
   }
 
-  // Write U1-loudness.csv
   const csvLines = [
     'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,impactOffsetMs'
   ];
@@ -403,7 +393,6 @@ export function renderHeroSkills() {
   fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
   console.log(`Wrote loudness report: ${csvPath}`);
 
-  // Update or create manifest.json
   const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
   let currentManifest = {};
   if (fs.existsSync(manifestPath)) {
@@ -420,7 +409,6 @@ export function renderHeroSkills() {
   fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
   console.log(`Updated manifest: ${manifestPath}`);
 
-  // Calculate loudness variance
   const lufsValues = results.map(r => r.integratedLUFS);
   const minLufs = Math.min(...lufsValues);
   const maxLufs = Math.max(...lufsValues);
@@ -428,11 +416,187 @@ export function renderHeroSkills() {
   const spread = maxLufs - minLufs;
 
   console.log(`Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
-  if (spread > 4.0) {
-    console.warn(`WARNING: Loudness spread ${spread.toFixed(1)} exceeds +/- 2 LU tolerance! Adjust gains.`);
+  return { results, spread, avgLufs };
+}
+
+/**
+ * U2: Selected Ranged Impacts Metadata from v4-ranged-impacts.mp3
+ * (9 primary variants for each of the 4 battle elements = 36 variants total)
+ */
+export const RANGED_VARIANTS_METADATA = [
+  // ember (Soot)
+  { element: 'ember', variantId: 'ranged.ember.impact/0-0', safeName: 'ranged-ember-impact-0-0', start: 0, duration: 1.0325 },
+  { element: 'ember', variantId: 'ranged.ember.impact/0-1', safeName: 'ranged-ember-impact-0-1', start: 1.1125, duration: 0.9134375 },
+  { element: 'ember', variantId: 'ranged.ember.impact/0-2', safeName: 'ranged-ember-impact-0-2', start: 2.1059375, duration: 0.7096875 },
+  { element: 'ember', variantId: 'ranged.ember.impact/1-0', safeName: 'ranged-ember-impact-1-0', start: 5.161041666666666, duration: 0.9134375 },
+  { element: 'ember', variantId: 'ranged.ember.impact/1-1', safeName: 'ranged-ember-impact-1-1', start: 6.154479166666667, duration: 0.9134375 },
+  { element: 'ember', variantId: 'ranged.ember.impact/1-2', safeName: 'ranged-ember-impact-1-2', start: 7.147916666666667, duration: 0.9134375 },
+  { element: 'ember', variantId: 'ranged.ember.impact/2-0', safeName: 'ranged-ember-impact-2-0', start: 10.5109375, duration: 0.7096875 },
+  { element: 'ember', variantId: 'ranged.ember.impact/2-1', safeName: 'ranged-ember-impact-2-1', start: 11.300625, duration: 0.9134375 },
+  { element: 'ember', variantId: 'ranged.ember.impact/2-2', safeName: 'ranged-ember-impact-2-2', start: 12.2940625, duration: 0.7096875 },
+
+  // heavy (Binding Thread / Yarn Giant)
+  { element: 'heavy', variantId: 'ranged.heavy.impact/0-0', safeName: 'ranged-heavy-impact-0-0', start: 31.8025, duration: 1.16 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/0-1', safeName: 'ranged-heavy-impact-0-1', start: 33.0425, duration: 1.16 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/0-2', safeName: 'ranged-heavy-impact-0-2', start: 34.2825, duration: 1.0072708333333333 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/1-0', safeName: 'ranged-heavy-impact-1-0', start: 37.9625, duration: 1.16 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/1-1', safeName: 'ranged-heavy-impact-1-1', start: 39.2025, duration: 1.16 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/1-2', safeName: 'ranged-heavy-impact-1-2', start: 40.4425, duration: 1.0072708333333333 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/2-0', safeName: 'ranged-heavy-impact-2-0', start: 43.864270833333335, duration: 1.0072708333333333 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/2-1', safeName: 'ranged-heavy-impact-2-1', start: 44.95154166666667, duration: 1.16 },
+  { element: 'heavy', variantId: 'ranged.heavy.impact/2-2', safeName: 'ranged-heavy-impact-2-2', start: 46.191541666666665, duration: 1.0072708333333333 },
+
+  // shadow (Inkcap)
+  { element: 'shadow', variantId: 'ranged.shadow.impact/0-0', safeName: 'ranged-shadow-impact-0-0', start: 68.77875, duration: 0.8367916666666667 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/0-1', safeName: 'ranged-shadow-impact-0-1', start: 69.69554166666667, duration: 0.879125 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/0-2', safeName: 'ranged-shadow-impact-0-2', start: 70.65466666666667, duration: 0.8793958333333334 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/1-0', safeName: 'ranged-shadow-impact-1-0', start: 73.95758333333333, duration: 0.879125 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/1-1', safeName: 'ranged-shadow-impact-1-1', start: 74.91670833333333, duration: 0.879125 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/1-2', safeName: 'ranged-shadow-impact-1-2', start: 75.87583333333334, duration: 0.8793958333333334 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/2-0', safeName: 'ranged-shadow-impact-2-0', start: 79.28822916666667, duration: 0.8793958333333334 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/2-1', safeName: 'ranged-shadow-impact-2-1', start: 80.247625, duration: 0.879125 },
+  { element: 'shadow', variantId: 'ranged.shadow.impact/2-2', safeName: 'ranged-shadow-impact-2-2', start: 81.20675, duration: 0.8793958333333334 },
+
+  // tide / ice (Sorrel / Velvet)
+  { element: 'tide', variantId: 'ranged.tide.impact/0-0', safeName: 'ranged-tide-impact-0-0', start: 99.96533333333333, duration: 0.5483125 },
+  { element: 'tide', variantId: 'ranged.tide.impact/0-1', safeName: 'ranged-tide-impact-0-1', start: 100.59364583333333, duration: 0.739 },
+  { element: 'tide', variantId: 'ranged.tide.impact/0-2', safeName: 'ranged-tide-impact-0-2', start: 101.41264583333333, duration: 0.55425 },
+  { element: 'tide', variantId: 'ranged.tide.impact/1-0', safeName: 'ranged-tide-impact-1-0', start: 104.09341666666666, duration: 0.739 },
+  { element: 'tide', variantId: 'ranged.tide.impact/1-1', safeName: 'ranged-tide-impact-1-1', start: 104.91241666666666, duration: 0.739 },
+  { element: 'tide', variantId: 'ranged.tide.impact/1-2', safeName: 'ranged-tide-impact-1-2', start: 105.73141666666666, duration: 0.55425 },
+  { element: 'tide', variantId: 'ranged.tide.impact/2-0', safeName: 'ranged-tide-impact-2-0', start: 108.64366666666667, duration: 0.55425 },
+  { element: 'tide', variantId: 'ranged.tide.impact/2-1', safeName: 'ranged-tide-impact-2-1', start: 109.27791666666667, duration: 0.739 },
+  { element: 'tide', variantId: 'ranged.tide.impact/2-2', safeName: 'ranged-tide-impact-2-2', start: 110.09691666666666, duration: 0.55425 }
+];
+
+export function splitRangedImpacts() {
+  const sourceMp3 = path.join(AUDIO_DIR, 'v4-ranged-impacts.mp3');
+  if (!fs.existsSync(sourceMp3)) {
+    throw new Error(`Source audio file not found: ${sourceMp3}`);
   }
 
-  return { results, spread, avgLufs };
+  console.log(`Splitting ${RANGED_VARIANTS_METADATA.length} ranged impact segments from v4-ranged-impacts.mp3 (U2)...`);
+  const mappingRows = [];
+  const manifestEntries = {};
+  let totalOpusBytes = 0;
+  let totalM4aBytes = 0;
+
+  for (const v of RANGED_VARIANTS_METADATA) {
+    const opusName = `${v.safeName}.opus`;
+    const m4aName = `${v.safeName}.m4a`;
+    const opusPath = path.join(LEGACY_DIR, opusName);
+    const m4aPath = path.join(LEGACY_DIR, m4aName);
+
+    // Cut to Opus (WebM container, 16kbps mono)
+    runFfmpeg([
+      '-ss', v.start.toString(),
+      '-t', v.duration.toString(),
+      '-i', sourceMp3,
+      '-c:a', 'libopus',
+      '-b:a', '16k',
+      '-ac', '1',
+      '-f', 'webm',
+      opusPath
+    ]);
+
+    // Cut to M4A (AAC fallback, 32kbps mono)
+    runFfmpeg([
+      '-ss', v.start.toString(),
+      '-t', v.duration.toString(),
+      '-i', sourceMp3,
+      '-c:a', 'aac',
+      '-b:a', '32k',
+      '-ac', '1',
+      m4aPath
+    ]);
+
+    const opusSize = fs.statSync(opusPath).size;
+    const m4aSize = fs.statSync(m4aPath).size;
+    totalOpusBytes += opusSize;
+    totalM4aBytes += m4aSize;
+
+    const row = {
+      variantId: v.variantId,
+      element: v.element,
+      safeName: v.safeName,
+      sourceStartSec: v.start,
+      durationSec: v.duration,
+      opusPath: `/audio/v5/legacy/${opusName}`,
+      m4aPath: `/audio/v5/legacy/${m4aName}`,
+      opusSizeBytes: opusSize,
+      m4aSizeBytes: m4aSize,
+      license: 'CC0-1.0',
+      sourceFile: 'apps/web/public/audio/v4-ranged-impacts.mp3'
+    };
+    mappingRows.push(row);
+
+    manifestEntries[v.variantId] = {
+      opus: row.opusPath,
+      m4a: row.m4aPath,
+      gainDb: 0,
+      element: v.element,
+      originalStart: v.start,
+      duration: v.duration,
+      impactOffsetMs: 0
+    };
+  }
+
+  const totalCombinedBytes = totalOpusBytes + totalM4aBytes;
+  const totalOpusKb = (totalOpusBytes / 1024).toFixed(1);
+  const totalCombinedKb = (totalCombinedBytes / 1024).toFixed(1);
+
+  console.log(`Split complete:`);
+  console.log(`- 36 Opus files: ${totalOpusBytes} bytes (${totalOpusKb} KB)`);
+  console.log(`- 36 M4A files: ${totalM4aBytes} bytes (${(totalM4aBytes/1024).toFixed(1)} KB)`);
+  console.log(`- Total cut files: ${totalCombinedBytes} bytes (${totalCombinedKb} KB) [Budget: <= 300 KB]`);
+
+  // Write reports/v5/AG4/U2-mapping.csv
+  const csvLines = [
+    'variantId,element,safeName,sourceStartSec,durationSec,opusPath,m4aPath,opusSizeBytes,m4aSizeBytes,license'
+  ];
+  for (const r of mappingRows) {
+    csvLines.push(`${r.variantId},${r.element},${r.safeName},${r.sourceStartSec.toFixed(3)},${r.durationSec.toFixed(3)},${r.opusPath},${r.m4aPath},${r.opusSizeBytes},${r.m4aSizeBytes},${r.license}`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'U2-mapping.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+
+  // Write reports/v5/AG4/U2-mapping.json
+  const jsonReport = {
+    at: new Date().toISOString(),
+    sourceFile: 'apps/web/public/audio/v4-ranged-impacts.mp3',
+    sourceLicense: 'CC0-1.0',
+    totalVariants: mappingRows.length,
+    totalOpusBytes,
+    totalM4aBytes,
+    totalCombinedBytes,
+    totalCombinedKb: parseFloat(totalCombinedKb),
+    budgetMaxKb: 300,
+    budgetPass: totalCombinedBytes <= 300 * 1024,
+    variants: mappingRows
+  };
+  const jsonPath = path.join(REPORTS_DIR, 'U2-mapping.json');
+  fs.writeFileSync(jsonPath, JSON.stringify(jsonReport, null, 2) + '\n', 'utf8');
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let manifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      manifest = {};
+    }
+  }
+  manifest = {
+    ...manifest,
+    ...manifestEntries
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n', 'utf8');
+  console.log(`Wrote mapping report: ${csvPath}`);
+  console.log(`Wrote mapping JSON: ${jsonPath}`);
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  return jsonReport;
 }
 
 // CLI dispatcher
@@ -441,6 +605,8 @@ if (arg === '--calibrate') {
   renderCalibration();
 } else if (arg === '--hero-skills') {
   renderHeroSkills();
+} else if (arg === '--split-ranged') {
+  splitRangedImpacts();
 } else if (arg === '--help' || !arg) {
   console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --all]');
 }

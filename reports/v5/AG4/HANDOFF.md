@@ -1,7 +1,7 @@
 # AG4 Handoff
-ACTIVE: U2 Split the 3 MB ranged-impacts file
-NEXT 1: node tools/v5audio/render.mjs --split-ranged
-NEXT 2: U3 Enemy + boss + UI set (hits, death, yarn-giant ult, receipt chime)
-NEXT 3: U4 Revisions (INBOX-AG4 requests, gain tuning)
-LAST_PUSHED_SHA: 35f32f76a
-LAST_REREAD_UTC: 2026-11-17T05:34:00Z
+ACTIVE: U3 Enemy + boss + UI set
+NEXT 1: node tools/v5audio/render.mjs --enemy-ui
+NEXT 2: U4 Revisions (INBOX-AG4 requests, gain tuning)
+NEXT 3: BACKLOG variations & diet
+LAST_PUSHED_SHA: 2b540fc15
+LAST_REREAD_UTC: 2026-11-17T05:42:00Z
