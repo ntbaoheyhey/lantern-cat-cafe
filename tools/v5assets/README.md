@@ -132,20 +132,35 @@ node tools/v5assets/spot-check-composite.mjs
 
 ---
 
-## Checkpoint & Delivery Workflow
+### 9. Units Pose Sheets AVIF Conversion (`convert-poses-avif.mjs`)
+Converts all `apps/web/public/units/*/poses/*.webp` spritesheets into compact `.avif` siblings.
+- **Encoder**: `magick input.webp -quality 80 -define heic:speed=2 output.avif`
+- **Quality Gate**: SSIM $\ge 0.990$. Automatically reverts any file if size savings are $< 20\%$ or SSIM $< 0.990$.
+- **REV 4 Result**: 38 sheets across 27 units converted, reducing total size from 3.05 MB to 1.11 MB (**-63.6%**, saving 1.98 MB payload), with all SSIM $\ge 0.997$.
 
 ```bash
-# 1. Track newly created sibling files
-cat work/v5/AG3/new-files.txt
+node tools/v5assets/convert-poses-avif.mjs
+# Outputs:
+#   reports/v5/AGV/POSES-AVIF-MAPPING.json
+#   reports/v5/AGV/POSES-AVIF-REPORT.md
+```
+
+---
+
+## Checkpoint & Delivery Workflow (REV 4 AGV)
+
+```bash
+# 1. Track newly created sibling files or owned tools
+git status --short
 
 # 2. Stage only owned paths
-git add -- tools/v5assets reports/v5/AG3 $(cat work/v5/AG3/new-files.txt)
+git add -- tools/v5assets/ reports/v5/AGV/ <new sibling files>
 
 # 3. Commit and push
-git commit -m "v5 AG3 <card> <step>"
-git push -u origin ag/v5-assets-2026-11-17
+git commit -m "v5 AGV <card> <step>"
+git push -u origin ag/v5-vfxtex-2026-11-17
 
-# 4. Notify CXI via mailbox
-echo "$TS FROM AG3 TO CXI | READY | <summary> | <branch>@<sha> <report-path>" >> /Users/bao/taskbar-hero-mailbox/DELIVERIES.md
-echo "$TS FROM AG3 TO CXI | INFO | <details> | <branch>@<sha> <csv-path>" >> /Users/bao/taskbar-hero-mailbox/INBOX-CXI.md
+# 4. Notify CXI / CXV via mailbox
+echo "$TS FROM AGV TO CXI | READY | <summary> | <branch>@<sha> <report-path>" >> /Users/bao/taskbar-hero-mailbox/DELIVERIES.md
+echo "$TS FROM AGV TO CXI | DONE | <details> | <branch>@<sha> <mapping-path>" >> /Users/bao/taskbar-hero-mailbox/INBOX-CXI.md
 ```

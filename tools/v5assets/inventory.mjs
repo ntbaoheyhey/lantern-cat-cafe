@@ -36,7 +36,7 @@ const allFiles = TARGET_DIRS.flatMap(dir => findFiles(dir));
 console.log(`Found ${allFiles.length} images.`);
 
 // Create a temporary file list for magick identify
-const tmpListPath = path.resolve('work/v5/AG3/identify_list.txt');
+const tmpListPath = path.resolve('work/v5/AGV/identify_list.txt');
 fs.mkdirSync(path.dirname(tmpListPath), { recursive: true });
 fs.writeFileSync(tmpListPath, allFiles.join('\n') + '\n', 'utf8');
 
@@ -96,7 +96,7 @@ const csvRows = ['path,bytes,width,height,has_alpha'];
 for (const item of items) {
   csvRows.push(`${item.path},${item.bytes},${item.width},${item.height},${item.hasAlpha}`);
 }
-const csvPath = 'reports/v5/AG3/inventory.csv';
+const csvPath = 'reports/v5/AGV/inventory.csv';
 fs.mkdirSync(path.dirname(csvPath), { recursive: true });
 fs.writeFileSync(csvPath, csvRows.join('\n') + '\n', 'utf8');
 console.log(`Saved inventory to ${csvPath}`);
