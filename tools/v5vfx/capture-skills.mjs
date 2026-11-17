@@ -8,10 +8,11 @@ import {runtimeEvidence} from './runtime-evidence.mjs';
 
 const root = process.cwd(), out = resolve(process.env.CXV_CAPTURE_OUT ?? 'work/v5/CXV/films/V1');
 const url = process.env.CXV_URL ?? 'http://127.0.0.1:6310';
+const reducedMotion = process.env.CXV_REDUCED === '1';
 const ids = (process.env.CXV_SKILLS ?? 'mochi-1,mochi-2,mochi-4,soot-1,soot-2,soot-4,clover-1,clover-2,clover-4,panko-1,panko-2,panko-4').split(',');
 await mkdir(out, {recursive: true});
 const report = {started: new Date().toISOString(), sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
-  ...runtimeEvidence(),
+  ...runtimeEvidence(), reducedMotion,
   method: '12 exact simulation timestamps per sheet; irregular sampling, not a real-time FPS measurement. Skill slot 2 uses the explicit archive fixture.', sheets: []};
 const browser = await chromium.launch({headless: true, args: ['--use-angle=metal']});
 try {
@@ -32,7 +33,7 @@ try {
       return data ? route.fulfill({body: data, contentType: 'image/webp'}) : route.abort();
     });
     await page.evaluate(async ({entries, root}) => {
-      const registry = await import('/@fs' + root + '/apps/web/src/game/cardrpg/spine/vfx-registry.ts');
+      const registry = await import('/src/game/cardrpg/spine/vfx-registry.ts');
       registry.clearV5Textures();
       for (const [key, spec] of entries) {
         const image = new Image(); image.src = '/__cxv_review__/' + encodeURIComponent(spec.file); await image.decode();
@@ -43,19 +44,19 @@ try {
   }
   for (const id of ids) {
     const dir = resolve(out, id); await mkdir(dir, {recursive: true});
-    await page.evaluate(async ({id, root}) => {
-      const {pilotFixture} = await import('/@fs' + root + '/apps/web/src/game/cardrpg/vfx-layered/fixture.ts');
-      const {configureSequence} = await import('/@fs' + root + '/apps/web/src/game/cardrpg/battle-v3/sequence.ts');
+    await page.evaluate(async ({id, reducedMotion}) => {
+      const {pilotFixture} = await import('/src/game/cardrpg/vfx-layered/fixture.ts');
+      const {configureSequence} = await import('/src/game/cardrpg/battle-v3/sequence.ts');
       const fixture = pilotFixture(id, false, /-[23]$/.test(id)), m = window.__depthReview;
       m.galleryBattle = fixture.battle; m.plan = configureSequence(fixture.plan); m.galleryId = id;
       m.animationAt = 0; m.paused = true; m.sceneStarted = true; m.labOpen = false;
-      m.state.settings.reducedMotion = false; m.notify(false);
+      m.state.settings.reducedMotion = reducedMotion; m.notify(false);
       const s = window.__depthScene; cancelAnimationFrame(s.raf); s.ensureActors(s.view());
-    }, {id, root});
+    }, {id, reducedMotion});
     await page.waitForFunction(() => window.__depthScene.ready && window.__depthScene.actors.size === window.__depthReview.battle.actors.length, null, {timeout: 90000});
     const info = await page.evaluate(() => ({impact: window.__depthReview.plan.beats[2].start, duration: window.__depthReview.plan.duration}));
-    const times = process.env.CXV_TRAVEL_SAMPLES ? (info.impact > 500 ? [0, 850, 1000, 1050, 1099, 1100, 1133, 1160, 1280, 1450, 1650, 2199] :
-      [0, 150, 249, 300, 349, 350, 383, 410, 470, 550, 750, 799]) : info.impact > 500 ? [0, 600, 850, 1000, 1099, 1100, 1133, 1160, 1280, 1450, 1650, 2199] :
+    const times = process.env.CXV_TRAVEL_SAMPLES ? (info.impact > 500 ? [0, 850, 1000, 1050, 1099, 1100, 1133, 1160, 1280, 1550, 1760, 2199] :
+      [0, 150, 249, 300, 349, 350, 383, 410, 470, 550, 750, 799]) : info.impact > 500 ? [0, 600, 850, 1000, 1099, 1100, 1133, 1160, 1280, 1550, 1760, 2199] :
       [0, 150, 249, 349, 350, 383, 410, 470, 550, 650, 750, 799];
     const samples = [];
     for (let index = 0; index < times.length; index++) {
@@ -66,10 +67,11 @@ try {
         let label = document.querySelector('[data-cxv-timestamp]');
         if (!label) {label = document.createElement('div'); label.dataset.cxvTimestamp = 'true';
           Object.assign(label.style, {position: 'fixed', bottom: '8px', left: '8px', color: '#fff4d8', background: '#21182dee', padding: '6px 10px', font: '16px monospace', zIndex: '999999'}); document.body.append(label);}
-        label.textContent = `${id} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
+        label.textContent = `${id}${/-[23]$/.test(id) ? ' ARCHIVE' : ' LIVE'}${m.state.settings.reducedMotion ? ' REDUCED' : ''} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
         return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
           modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
           eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand'),
+          craftFootprint: (id.startsWith('mochi') ? [s.craftShield?.crest] : id.startsWith('clover') ? [s.craftHeal?.canopy] : id.startsWith('panko') ? s.craftOven?.doors : s.craft?.bodies)?.filter(Boolean).map(mesh=>({visible:mesh.visible,position:mesh.position.toArray(),scale:mesh.scale.toArray(),alpha:mesh.material.uniforms.uAlpha.value})),
           casterRoot: s.actors.get(m.plan.actorId)?.actor.root.position.toArray(), pose: s.sampled.get(m.plan.actorId)?.name,
           heroStates: [...s.actors].filter(([,e])=>['mochi','soot','clover','panko'].includes(e.asset)).map(([actorId,e])=>({
             owner:e.asset,pose:s.sampled.get(actorId)?.name,key:e.craftPose?.drawing.key,crowd:s.motionAudit.find(a=>a.id===actorId)?.crowd,
@@ -79,8 +81,11 @@ try {
       samples.push({ms, ...audit});
     }
     const sheet = resolve(out, `${id}.jpg`);
-    execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-framerate', '6', '-i', resolve(dir, 'frame-%02d.png'),
-      '-vf', 'scale=480:-1,tile=4x3', '-frames:v', '1', '-q:v', '4', sheet]);
+    const reviewTimes = info.impact > 500 ? [850, 1100, 1280, 2199] : [150, 350, 470, 799];
+    const inputs = reviewTimes.flatMap(ms => ['-i', resolve(dir, `frame-${String(times.indexOf(ms)).padStart(2, '0')}.png`)]);
+    execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', ...inputs, '-filter_complex',
+      '[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]',
+      '-map', '[v]', '-frames:v', '1', '-q:v', '4', sheet]);
     report.sheets.push({id, archive: /-[23]$/.test(id), ...info, sheet, samples});
     await writeFile(resolve(out, 'capture.json'), JSON.stringify(report, null, 2));
     if (!samples.some(s => s.ms === info.impact && s.draws > 0)) throw Error(`Missing timeline contact: ${id}`);

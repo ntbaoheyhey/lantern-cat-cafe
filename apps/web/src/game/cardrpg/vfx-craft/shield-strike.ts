@@ -42,9 +42,10 @@ export class ShieldStrike {
   const s=f.source,cutAlpha=envelope(ms,impact-100,45,impact+300,180);
   if(!f.ultimate)this.place(this.cut,s.x,s.y,145*k*(.78+.22*smooth((held-impact+100)/100)),185*k,-.12,cutAlpha,held,-.2+fade*1.2,age>=0&&age<67?1:0);
   if(f.ultimate){
-   const grow=smooth((held-800)/300),decay=smooth((held-1190)/800),width=980*k*(.3+.7*grow),height=520*k*(.2+.8*grow);
-   const bottom=Math.min(f.height*.91,Math.max(f.casterFeet.y,...f.feet.map(p=>p.y))+95*k),cx=Math.max(width/2+12*k,Math.min(f.width-width/2-12*k,f.feet.reduce((n,p)=>n+p.x,0)/Math.max(1,f.feet.length)));
-   this.place(this.crest,cx,bottom-height/2,width,height,0,envelope(ms,800,300,2100,700),held,-.2+decay*1.12,age>=0&&age<67?.25:0);
+   // Keep the allied crest behind the party and clear it during recovery.
+   const grow=smooth((held-800)/300),decay=smooth((held-1200)/560),width=700*k*(.3+.7*grow),height=430*k*(.2+.8*grow);
+   const bottom=Math.min(f.height*.91,Math.max(f.casterFeet.y,...f.feet.map(p=>p.y))+65*k),cx=Math.max(width/2+12*k,Math.min(f.width-width/2-12*k,f.feet.reduce((n,p)=>n+p.x,0)/Math.max(1,f.feet.length)));
+   this.place(this.crest,cx,bottom-height/2,width,height,0,envelope(ms,800,300,1760,560),held,-.2+decay*.95,age>=0&&age<67?.25:0);
   }
   if(!f.ultimate)for(const [i,mesh]of this.shards.entries()){
    const a=-1.2+i*.39,q=smooth((held-impact-55)/320),distance=(28+56*q+i*8)*k;

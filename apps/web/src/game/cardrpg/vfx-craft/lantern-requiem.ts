@@ -185,7 +185,7 @@ export class LanternRequiem {
    const spread=[0,-h*.27,h*.29][i]!,offset=i?dx*.11:0;
    const tip={x:end.x-offset,y:end.y+spread*.83};
    const points=[s,{x:s.x+dx*.30,y:s.y+spread*.20+h*.12},{x:tip.x-dx*.29,y:tip.y+spread*.23+h*.04},tip];
-   const width=h*[.75,.35,.38][i]!*(.12+.88*Math.pow(head,1.25))*(1-.92*tail);
+   const width=h*[.75,.35,.38][i]!*.67*(.12+.88*Math.pow(head,1.25))*(1-.92*tail);
    const movingTail=Math.max(tail,.12*smooth((t-850)/250));
    mesh.material.uniforms.uPainted!.value=this.painted&&this.paint?1:0;
    moveRibbon(mesh.geometry,points,width,this.painted?0:[.12,-.23,.18][i]!,true,1,movingTail,Math.max(movingTail+.002,head),this.painted);
