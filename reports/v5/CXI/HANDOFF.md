@@ -1,13 +1,13 @@
 # CXI V7 continuation
-ACTIVE: I-A CXV V-A3 merged, m17 eleven-step production validation; assistant: AGS.
-NEXT 1: Compare m17 metrics and inspect fresh idle/hit/reduced/gestures-r1 sheets; failed unbundled harness repaired,rerun passed.
-NEXT 2: Compare m16 numeric baseline to m17, verify contact/reduced/feet; finalbuild3films then publish next green tag.
+ACTIVE: I-A m17 held for own blink-seam finding; I-B chunk experiment; assistant: AGS.
+NEXT 1: Finish I-B source/import graph study; automatic-web3 estimate+4731B rejected. Original blink seam reproduced in A/B; CXV repair pending.
+NEXT 2: Review CXV V-A3 seam repair and queued V-E81ef11fb4; no m17 tag/films until accepted.
 NEXT 3: Integrate accepted AGS4beds+AGV12AVIF then3cold transfers; residual wave3 gap needs own loader work.
-Last pushed SHA:fca1a2d1eeeb1393f85ae9d76ded582049983362; CXV merge105986f69; greenv5-m1.6=daee13215 remains.
+Last pushed SHA:cffa74b815a2e1f7cc831e95d8ab555f0b2cb42f; CXV merge105986f69; greenv5-m1.6=daee13215 remains.
 self-wake:cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; verified14:51UTC; existing exact V7 prompt, no duplicate.
-Last RULES re-read UTC:2026-11-17T15:18:48Z;STOP-ALL/STOP-CXI absent.
+Last RULES re-read UTC:2026-11-17T15:24:18.872149+00:00;STOP-ALL/STOP-CXI absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none; m17 pipeline10steps0; gesture harness initially1, direct nativeTS import rerun0 at15:22UTC.
+Running:none; PID70118 web3-study finished2builds. Current875442gzipB vs automatic880173B; no config change.
 Cold m16:8584126/9145394/8659811B;allFAIL8MB;route9864ms;0errors.
 I-C firsthit20501ms incl17700ms reading8cards;enemy165→119;0errors.5227pass incl2927web.
 AGS open:T1 exactQA,T2/T3 sourcedresearch,T5 eb2 mono/missingmanifest REDO,T7 accurate submission drafts; five tasks.

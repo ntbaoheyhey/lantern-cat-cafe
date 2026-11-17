@@ -7,6 +7,7 @@ import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
+const disableNewFace=process.env.CXI_DISABLE_NEW_FACE==='1';
 assert(/^[a-z0-9-]+$/.test(label??''));
 const out=resolve(root,'work/v5/CXI/face',label),req=createRequire(resolve(root,'apps/web/package.json')),sharp=req('sharp');
 try{await access(out);throw new Error('Use a fresh evidence label');}catch(e){if(e.code!=='ENOENT')throw e;}
@@ -15,8 +16,15 @@ const report={utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));report.url=page.url();
- const actors=await page.evaluate(()=>{
+ report.controlledComparison=disableNewFace?'Current production build with face-depth and soft-expression additions disabled in memory; same original blink shader and timeline. Not a separate m1.6 build.':null;
+ const actors=await page.evaluate(disableNewFace=>{
   const s=window.__depthScene,m=window.__depthReview;m.plan=null;m.animationAt=0;
+  if(disableNewFace)for(const e of s.actors.values()){
+   const d=e.craftPose?.drawing;if(!d)continue;
+   const depthSample=d.faceDepth.sample.bind(d.faceDepth),expressionSample=d.expression.sample;
+   d.faceDepth.sample=()=>depthSample(0,0);
+   d.expression.sample=(face,canvas)=>expressionSample(face,canvas,d.secondary.leftBlink,d.secondary.rightBlink);
+  }
   for(const e of s.actors.values())e.hurtAt=-100;
   s.render({...s.view(),frame:null,fixedTime:20,paused:true,galleryPreview:true},0);s.phaseNoticeAt=-100;
   return ['mochi','soot','clover','panko'].map(owner=>{
@@ -27,7 +35,7 @@ try{
    const right=Math.min(1280,Math.ceil(Math.max(...corners.map(p=>p.x))+24)),bottom=Math.min(720,Math.ceil(Math.max(...corners.map(p=>p.y))+24));
    return{id,owner,seed:d.secondary.seed,offset:d.secondary.clock-20,clip:{x,y,width:right-x,height:bottom-y}};
   });
- });
+ },disableNewFace);
  const tiles=[];
  for(const [row,actor] of actors.entries()){
   let index=0;while(fidgetStart(actor.seed,index)-actor.offset<0)index++;
