@@ -27,20 +27,23 @@ try{
   const times=[0,.4,.8,1.4,2.2,3,0,.04,.1,.18,.3,.5];
   for(let i=0;i<times.length;i++){
    const hit=i>=6,at=times[i];
-   const audit=await page.evaluate(({id,hit,at})=>{
+   const audit=await page.evaluate(({id,hit,at,owner,clip})=>{
     const s=window.__depthScene,entry=s.actors.get(id);entry.hurtAt=hit?24:-100;
     s.render({...s.view(),frame:null,fixedTime:(hit?24:20)+at,paused:true,galleryPreview:true},0);
+    let label=document.querySelector('[data-cxv-motion-label]');
+    if(!label){label=document.createElement('div');label.dataset.cxvMotionLabel='true';document.body.append(label);}
+    Object.assign(label.style,{position:'fixed',left:clip.x+5+'px',top:clip.y+5+'px',font:'16px monospace',color:'#fff4d8',background:'#21182dee',padding:'4px',zIndex:'999999'});
+    label.textContent=owner+' '+(hit?'hit':'idle')+' '+at.toFixed(2)+'s';
     const d=entry.craftPose.drawing,head=s.socket(id,'head');
     return {key:d.key,clock:d.secondary.clock,blink:[d.secondary.leftBlink,d.secondary.rightBlink],ear:d.secondary.earFlatten,
       feet:d.contactPoints(),root:entry.actor.root.position.toArray(),head};
-   },{id:setup.id,hit,at});
+   },{id:setup.id,hit,at,owner,clip:setup.clip});
    const path=resolve(dir,`frame-${String(i).padStart(2,'0')}.png`);
    await page.screenshot({path,clip:setup.clip});samples.push({hit,at,...audit});
   }
-  const labels=times.map((t,i)=>`drawtext=text='${owner} ${i<6?'idle':'hit'} ${t.toFixed(2)}s':x=${(i%4)*320+8}:y=${Math.floor(i/4)*320+8}:fontsize=16:fontcolor=white:box=1:boxcolor=black@0.7`).join(',');
   const sheet=resolve(out,owner+'.jpg');
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-threads','1','-filter_threads','1','-i',resolve(dir,'frame-%02d.png'),
-   '-vf',`scale=320:320:force_original_aspect_ratio=decrease,pad=320:320:(ow-iw)/2:(oh-ih)/2,tile=4x3,${labels}`,'-frames:v','1','-q:v','3','-y',sheet]);
+   '-vf','scale=320:320:force_original_aspect_ratio=decrease,pad=320:320:(ow-iw)/2:(oh-ih)/2,tile=4x3','-frames:v','1','-q:v','3','-y',sheet]);
   report.sheets.push({owner,...setup,sheet,samples});process.stdout.write(`${owner}: ${sheet}\n`);
   await page.evaluate(id=>{window.__depthScene.actors.get(id).hurtAt=-100;},setup.id);
  }

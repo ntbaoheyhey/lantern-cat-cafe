@@ -3,7 +3,7 @@ ACTIVE: V2 secondary motion (started 2026-11-17T05:54:06Z; 5h). V0/V1 DONE.
 NEXT 1: Commit/push V2 spring/drawing implementation after passed tests/typecheck, then run tools/v5vfx/capture-motion.mjs detached.
 NEXT 2: Inspect four own current-build idle/hit sheets and boss FPS; fix only observed issues. Freshness metadata required.
 NEXT 3: Self-capture AG2 Clover/Panko/Mochi-v2 via decoded API for requested review, then V2 READY and V3.
-Processes: Vite PID 21499 port 6310, work/v5/CXV/jobs/vite-6310.log. Support capture/tests/typecheck completed.
+Processes: Vite PID 21499 port 6310 (vite-6310.log); V2 capture PID 51635 (v2-capture.log), under work/v5/CXV/jobs/.
 Last pushed SHA: 7d48cef63; V1 READY announced.
 Last RULES re-read UTC: 2026-11-17T05:54:06Z; REV 3 no-freeze/refill policy; source prompt already read once.
 Mailbox offsets: INBOX-CXV 32, USER 9, BOARD 16; check STOP-ALL/STOP-CXV at checkpoints.
