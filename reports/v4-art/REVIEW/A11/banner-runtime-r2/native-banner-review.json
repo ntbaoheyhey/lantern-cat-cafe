@@ -136,7 +136,9 @@
       ],
       "lastAvailableFocusMs": 583.3000000000011,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1-supplement-r1.png"
     },
     {
       "fixture": "wave1",
@@ -157,7 +159,9 @@
       ],
       "lastAvailableFocusMs": 583.3000000000011,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1-supplement-r1.png"
     },
     {
       "fixture": "wave1",
@@ -178,7 +182,9 @@
       ],
       "lastAvailableFocusMs": 583.3000000000011,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1-supplement-r1.png"
     },
     {
       "fixture": "wave1",
@@ -703,7 +709,9 @@
       ],
       "lastAvailableFocusMs": 566.7000000000007,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3-supplement-r1.png"
     },
     {
       "fixture": "wave3",
@@ -724,7 +732,9 @@
       ],
       "lastAvailableFocusMs": 566.7000000000007,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3-supplement-r1.png"
     },
     {
       "fixture": "wave3",
@@ -745,7 +755,9 @@
       ],
       "lastAvailableFocusMs": 566.7000000000007,
       "focusEndCaptured": true,
-      "bannerFullyVisible": false
+      "bannerFullyVisible": true,
+      "originalCropFullyVisible": false,
+      "supplementalCoveragePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3-supplement-r1.png"
     },
     {
       "fixture": "boss",
@@ -1369,6 +1381,120 @@
       "reviewedAt": "2026-11-17T00:56:14.283499+00:00",
       "observation": "Prior-turn visual observation persisted without reopening: final Panko f892/+250ms and f899/+483.3ms retain readable portrait, owner name and Oven door caption with clear gaps from status/footer. Film ends before focus end, impact and recovery; those tails are not accepted.",
       "coveragePass": true
+    },
+    {
+      "fixture": "wave1",
+      "path": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1-supplement-r1.png",
+      "sha256": "e1b615163b7d46513420613876cfdc1d0256c2fa1a3a721f0148a558bb27661a",
+      "dimensions": [
+        1024,
+        568
+      ],
+      "mappingIndices": [
+        0,
+        1,
+        2
+      ],
+      "supplement": true,
+      "sourceBindings": [
+        {
+          "mappingIndex": 0,
+          "encodedFrame": 308,
+          "crop": [
+            380,
+            420,
+            892,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1/frame-001.png",
+          "sourceSha256": "25855037d6add80f12dd0bac7354f9ce65dc845962c29953f534d720f0952d8b"
+        },
+        {
+          "mappingIndex": 1,
+          "encodedFrame": 316,
+          "crop": [
+            380,
+            420,
+            892,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1/frame-002.png",
+          "sourceSha256": "a7a01b25a9f68e189de40c3e36c13ce18f5267e0054762d5675b54f496d21025"
+        },
+        {
+          "mappingIndex": 2,
+          "encodedFrame": 324,
+          "crop": [
+            380,
+            420,
+            892,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave1/frame-003.png",
+          "sourceSha256": "585d70b4ac6ac4a96c886934d4e16779f49e6311af8086d2bab44fb2f62e10a1"
+        }
+      ],
+      "reviewed": true,
+      "reviewedAt": "2026-11-17T00:57:20.667808+00:00",
+      "observation": "All three wave1 Panko crops show the complete portrait, Panko name and Oven door caption at f308/316/324, stable to the right of the actor and clear of status badges and footer cards. No clipping or visible overlap in these native samples.",
+      "coveragePass": true
+    },
+    {
+      "fixture": "wave3",
+      "path": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3-supplement-r1.png",
+      "sha256": "c49510bc1366778f253363a217c5a46b54da99b9d184275e4acfc2fc445e77de",
+      "dimensions": [
+        1024,
+        568
+      ],
+      "mappingIndices": [
+        27,
+        28,
+        29
+      ],
+      "supplement": true,
+      "sourceBindings": [
+        {
+          "mappingIndex": 27,
+          "encodedFrame": 808,
+          "crop": [
+            0,
+            420,
+            512,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3/frame-013.png",
+          "sourceSha256": "4e5e3caca1efa074004a8a5f45600f52a451aff7e492914fea97ce3bb8780d8e"
+        },
+        {
+          "mappingIndex": 28,
+          "encodedFrame": 816,
+          "crop": [
+            0,
+            420,
+            512,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3/frame-014.png",
+          "sourceSha256": "c6523d6274a9426623ed2e969ea531df4e43f12fd41ad6df51c8f3e998a80bdc"
+        },
+        {
+          "mappingIndex": 29,
+          "encodedFrame": 824,
+          "crop": [
+            0,
+            420,
+            512,
+            676
+          ],
+          "sourcePath": "reports/v4-art/REVIEW/A11/banner-runtime-r2/raw/native-banner/wave3/frame-015.png",
+          "sourceSha256": "7adf614effa7a1d4d52fa57a1c26bba2a42e9917e4093f0a33b60e5d326638c1"
+        }
+      ],
+      "reviewed": true,
+      "reviewedAt": "2026-11-17T00:57:20.667808+00:00",
+      "observation": "All three wave3 later-Panko crops show the complete portrait, Panko name and Oven door caption at f808/816/824 on the far left, stable and clear of the actor, status badges and footer. Placement remains spatially detached; owner identity is conveyed by portrait and text.",
+      "coveragePass": true
     }
   ],
   "fixtures": [
@@ -1399,10 +1525,14 @@
   ],
   "complete": true,
   "mappingPass": true,
-  "reviewComplete": false,
-  "reviewedCount": 13,
+  "reviewComplete": true,
+  "reviewedCount": 15,
   "finished": "2026-11-17T00:50:59.883366+00:00",
-  "missingCaptionMappings": [
+  "missingCaptionMappings": [],
+  "visualCoverageComplete": true,
+  "supplementsCreatedAt": "2026-11-17T00:56:55.763622+00:00",
+  "supplementScriptSha256": "5e3161d430385854e98990a33328cd248e7c43fcb53fd50759a6fde2cb87c9af",
+  "originalMissingCaptionMappings": [
     0,
     1,
     2,
@@ -1410,5 +1540,11 @@
     28,
     29
   ],
-  "visualCoverageComplete": false
+  "finding": "All 48 mapped native samples across 16 ultimate windows show a complete readable portrait/owner/skill caption after two film-located supplements. Six original replay-located crops failed coverage and remain unchanged as failed crop evidence.",
+  "limitations": [
+    "Sampled native crops do not establish continuous-frame geometry or blind owner association.",
+    "Final boss Panko focus ends at film boundary; focus-end, impact and recovery are not captured.",
+    "Detached banner placement remains a design limitation.",
+    "Audio quality and integrated production acceptance are outside this review."
+  ]
 }
