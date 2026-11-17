@@ -32,28 +32,43 @@ try{
  await page.waitForFunction(()=>window.__depthReview,null,{timeout:60000});
  await page.evaluate(url=>history.replaceState(null,'',url),url);
  for(const id of (process.env.CXV_SKILLS??'boss-arrival,enemy:binding-thread,enemy:yarn-giant:basic,enemy:yarn-giant').split(',')){
-  const arrival=id==='boss-arrival',fixture=pilotFixture(arrival?'mochi-1':id),plan=arrival?null:configureSequence(fixture.plan),frames=[],audit=[];
-  await page.evaluate(({battle,plan,id})=>{const m=window.__depthReview;m.state.tutorial=4;Object.assign(m.state.settings,{quality:'high',speed:1,reducedMotion:false});Object.assign(m,{galleryBattle:battle,tutorialBattle:null,plan,galleryId:plan?id:'',animationAt:0,paused:true,sceneStarted:true,labOpen:false,screen:'map'});m.notify(false);},{battle:fixture.battle,plan,id});
+  const arrival=id.startsWith('boss-arrival'),arrivalMode=arrival?id.slice('boss-arrival'.length)||'-normal':null;
+  if(arrival&&!['-normal','-reduced','-acting','-incoming'].includes(arrivalMode))throw Error('Unknown arrival mode '+id);
+  const reducedMotion=arrivalMode==='-reduced',earlyAction=arrivalMode==='-acting'||arrivalMode==='-incoming';
+  const fixture=pilotFixture(arrival?(arrivalMode==='-acting'?'enemy:yarn-giant:basic':'mochi-1'):id),plan=arrival&&!earlyAction?null:configureSequence(fixture.plan),frames=[],audit=[];
+  await page.evaluate(({battle,plan,id,reducedMotion})=>{const m=window.__depthReview;m.state.tutorial=4;Object.assign(m.state.settings,{quality:'high',speed:1,reducedMotion});Object.assign(m,{galleryBattle:battle,tutorialBattle:null,plan,galleryId:plan?id:'',animationAt:0,paused:true,sceneStarted:true,labOpen:false,screen:'map'});m.notify(false);},{battle:fixture.battle,plan,id,reducedMotion});
   await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
   await page.evaluate(()=>document.fonts.ready);
-  if(!arrival)await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
+  // The DOM wave banner follows real time, not our explicit scene clock. Let it
+  // finish naturally before restarting the measured entrance presentation.
+  await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   if(arrival)await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),frame:null,fixedTime:20,paused:true,galleryPreview:true},0);s.phaseNoticeAt=-100;for(const e of s.actors.values()){e.entered=e.asset==='yarn-giant'?20:-100;e.entranceDone=e.asset!=='yarn-giant';e.hurtAt=-100;}});
   const impact=plan?.beats[2].start??0;
-  const sample=ms=>page.evaluate(ms=>{
-   const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=ms;s.render({...s.view(),fixedTime:20+ms/1000,paused:true,galleryPreview:false},0);
+  const sample=ms=>page.evaluate(({ms,arrival})=>{
+   const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=arrival?Math.max(0,ms-80):ms;
+   const view=s.view(),renderView={...view,frame:arrival&&ms<80?null:view.frame,fixedTime:20+ms/1000,paused:true,galleryPreview:false};s.render(renderView,0);
    const boss=[...s.actors].find(([,e])=>e.asset==='yarn-giant');
    const effects=Object.fromEntries(['craftThread','craftYarn','craftShield','craftHeal','craftOven','craft'].filter(k=>s[k]?.audit).map(k=>[k,structuredClone(s[k].audit)]));
    const net=s.craftThread?.rear;
-   return{ms,bossFeet:boss?s.socket(boss[0],'feet'):null,effects,netActive:net?.visible?net.children.filter(c=>c.visible).length:0,targets:m.plan?[...new Set(m.plan.events.flatMap(e=>e.targetIds??[]))]:[]};
-  },ms);
-  for(const [i,ms]of (arrival?[0,80,240,620]:[impact-1,impact,impact+180,impact+540]).entries()){
+   const measured={ms,actionAt:m.animationAt,bossFeet:boss?s.socket(boss[0],'feet'):null,bossHome:boss?s.homes.get(boss[0])?.point:null,bossRoot:boss?s.motionAudit.find(a=>a.id===boss[0]):null,cinematic:{...s.cinematic},effects,netActive:net?.visible?net.children.filter(c=>c.visible).length:0,targets:m.plan?[...new Set(m.plan.events.flatMap(e=>e.targetIds??[]))]:[]};
+   if(arrival&&boss){
+    const entered=boss[1].entered;
+    try{boss[1].entered=-100;s.render(renderView,0);const neutral=s.motionAudit.find(a=>a.id===boss[0]);measured.expiredEntranceRoot=neutral;measured.entranceContribution={x:measured.bossRoot.x-neutral.x,y:measured.bossRoot.y-neutral.y};}
+    finally{boss[1].entered=entered;s.render(renderView,0);}
+   }
+   return measured;
+  },{ms,arrival});
+  const frameTimes=arrival?(earlyAction?[79,80,arrivalMode==='-acting'?160:280,430]:[0,80,240,620]):[impact-1,impact,impact+180,impact+540];
+  const sampleTimes=earlyAction?[...new Set([...frameTimes,81,120,160,240,429,620])].sort((a,b)=>a-b):frameTimes;
+  for(const ms of sampleTimes){
    audit.push(await sample(ms));
+   const i=frameTimes.indexOf(ms);if(i<0)continue;
    const path=resolve(out,id.replaceAll(':','-')+'-'+i+'.png');await page.screenshot({path});frames.push(path);
   }
   const sheet=resolve(out,id.replaceAll(':','-')+'.jpg');
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...frames.flatMap(path=>['-i',path]),'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',sheet]);
   if(!arrival&&plan.ultimate)for(const ms of [1760,2199])audit.push(await sample(ms));
-  report.rows.push({id,impact,plan:plan?{duration:plan.duration,fixedTiming:plan.fixedTiming,speechLeadInMs:plan.speechLeadInMs,voiceWindows:plan.voiceWindows}:null,frames,sheet,audit});
+  report.rows.push({id,arrivalMode,reducedMotion,impact,plan:plan?{duration:plan.duration,fixedTiming:plan.fixedTiming,speechLeadInMs:plan.speechLeadInMs,voiceWindows:plan.voiceWindows}:null,frames,sheet,audit});
  }
 }finally{
  await browser.close();report.ended=new Date().toISOString();report.indexSha256After=hash(await(await fetch(url)).text());
