@@ -28,3 +28,6 @@ Q2 QA-1 recheck | 52aaaba399a38cf76de68866af6c8e6ed972cfdd | fixed; unchanged ru
 Latest observed SHIPd029bc9c4 changes audio engine/test, while runtime preview remains b1e4398a. QA2/QA3 source-delta recheck stillopen (Q2/open-findings-recheck-d029bc9c4.json); exact newest transfer requires preview refresh.
 
 Q2 metadata postbuild HTTP PASS with unchanged runtime/index hashes (Q2/metadata-postbuild-check.json). First layout probe root-route setup failure; retry uses canonical demo query, preserves metadata check.
+
+Q1 complete 2026-11-17T02:05:57.037523+00:00; all3local paths/54receipts verified,12JPEGs<=200KB each. Transfer budgetFAIL; phone attributionQA4MINOR; desktop audio geometry false positive closed.
+Q2 typecheckPASS; root pnpm testFAIL7presentation tests (QA5ART); explicit SupabasePASS; Forge deferredload>9 until~02:09UTC.

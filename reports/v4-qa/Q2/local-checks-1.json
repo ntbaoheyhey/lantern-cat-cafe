@@ -14,12 +14,33 @@
       "started": "2026-11-17T02:00:45.664226+00:00",
       "ended": "2026-11-17T02:01:01.397992+00:00",
       "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-typecheck.log"
+    },
+    {
+      "name": "test",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 1,
+      "status": "FAIL",
+      "started": "2026-11-17T02:01:01.398272+00:00",
+      "ended": "2026-11-17T02:03:23.554701+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-test.log"
+    },
+    {
+      "name": "supabase-test",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/supabase-tests",
+        "test"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "started": "2026-11-17T02:03:23.554993+00:00",
+      "ended": "2026-11-17T02:03:34.746273+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-supabase-test.log"
     }
   ],
-  "scope": "Local safe commands only; no Vercel/Supabase auth or deployment; diagnostic secret-like tokens redacted.",
-  "active": {
-    "name": "test",
-    "pid": 21309,
-    "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-test.log"
-  }
+  "scope": "Local safe commands only; no Vercel/Supabase auth or deployment; diagnostic secret-like tokens redacted."
 }

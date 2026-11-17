@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Commit only QA-owned evidence; push only the explicitly authorized branch."""
 from pathlib import Path
-import datetime, fcntl, subprocess, sys, time
+import datetime, fcntl, re, subprocess, sys, time
 
 ROOT = Path('/Users/bao/taskbar-hero-qa')
 BRANCH = 'codex/v4-qa-2026-11-17'
 lock = (ROOT/'work/v4qa/checkpoint.lock').open('a')
 fcntl.flock(lock, fcntl.LOCK_EX)
+print('CHECKPOINT UTC', datetime.datetime.now(datetime.timezone.utc).isoformat(), flush=True)
+print('STOP-V4QA', (ROOT/'STOP-V4QA').exists(), flush=True)
+print('QA INBOX:', (ROOT/'reports/v4-qa/INBOX.md').read_text()[:700].strip(), flush=True)
+ship_inbox = Path('/Users/bao/taskbar-hero-chain/reports/v4-ship/INBOX.md').read_text()
+print('DEPLOYED:', re.findall(r'\bDEPLOYED\s+https?://\S+', ship_inbox)[:3], flush=True)
 def git(*args):
     return subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
 

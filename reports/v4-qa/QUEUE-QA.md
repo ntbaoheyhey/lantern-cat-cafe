@@ -1,6 +1,6 @@
 # QA queue
 Q0 | done ENDED 2026-11-17T01:15:57.643733+00:00 | LEARN/Q0.md; install deferred under load guard toQ1
-Q1 | active STARTED 2026-11-17T01:15:57.643733+00:00 | judge-eye cold production run | timebox3h
+Q1 | done ENDED 2026-11-17T02:05:57.037523+00:00 | Q1/SCORECARD.md; Q1/ACTION-INVENTORY.md; Q1/q1-cold-1; Q1/layout-adjudication.json | transferFAIL, localpath3/3
 Q2 | active STARTED 2026-11-17T01:23:48Z | deploy runbook dry run | timebox2h
 Q3 | queued | clean snapshot option | timebox90min
 Q4 sync1 | queued |17Nov12UTC merge/latest14UTC | timebox2h
