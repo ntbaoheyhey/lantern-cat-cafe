@@ -41,3 +41,27 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `enemy.death.boss` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Dramatic crystal shatter + descending sub boom, -17.7 LUFS |
 | `boss.yarn-giant.ultimate` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Yarn tension swell -> colossal wool earthquake slam, -17.1 LUFS |
 | `ui.receipt.confirmed` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft celestial confirmation chime (G5, B5, D6, G6), -17.7 LUFS |
+
+## R1 Variations
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `hero.mochi.basic.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | High snap variation (+3%), -18.8 LUFS, -2.9 dBTP |
+| `hero.mochi.basic.var2` | 4 | 5 | 5 | 5 | 4 | 4 | PASS | Deep plush thud (-3%), -19.3 LUFS, -2.3 dBTP |
+| `hero.mochi.skill.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Bright fabric whip (+3%), -18.9 LUFS, -2.6 dBTP |
+| `hero.mochi.skill.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Heavier cushion impact (-3%), -18.7 LUFS, -1.9 dBTP |
+| `hero.soot.basic.var1` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Crisp high ember pop (+3%), -19.1 LUFS, -1.7 dBTP |
+| `hero.soot.basic.var2` | 5 | 4 | 5 | 5 | 5 | 4 | PASS | Low smoky pop (-3%), -18.2 LUFS, -1.6 dBTP |
+| `hero.soot.skill.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Dense spark crackle (+3%), -17.2 LUFS, -1.7 dBTP |
+| `hero.soot.skill.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Warm combustion burst (-3%), -17.0 LUFS, -2.1 dBTP |
+| `hero.clover.basic.var1` | 5 | 4 | 5 | 5 | 5 | 4 | PASS | Higher crystal shimmer (+3%), -17.3 LUFS, -1.2 dBTP |
+| `hero.clover.basic.var2` | 5 | 4 | 5 | 5 | 5 | 4 | PASS | Warm resonant chime (-3%), -17.1 LUFS, -1.3 dBTP |
+| `hero.clover.skill.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Bright healing chime cascade (+3%), -16.7 LUFS, -2.1 dBTP |
+| `hero.clover.skill.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Deep soothing aura chord (-3%), -16.5 LUFS, -2.1 dBTP |
+| `hero.panko.basic.var1` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Crisp crust snap (+3%), -19.4 LUFS, -2.5 dBTP |
+| `hero.panko.basic.var2` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Low buttery crunch (-3%), -19.7 LUFS, -2.1 dBTP |
+| `hero.panko.skill.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Sizzling butter fracture (+3%), -17.7 LUFS, -2.0 dBTP |
+| `hero.panko.skill.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Rich skillet crunch (-3%), -17.6 LUFS, -2.1 dBTP |
+| `enemy.hit.light.var1` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Sharp slap tick (+3%), -19.4 LUFS, -3.1 dBTP |
+| `enemy.hit.light.var2` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Muffled tick (-3%), -20.2 LUFS, -2.8 dBTP |
+| `enemy.hit.medium.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Mid-frequency punch knock (+3%), -18.1 LUFS, -2.0 dBTP |
+| `enemy.hit.medium.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Deep wooden knock (-3%), -17.7 LUFS, -2.2 dBTP |

@@ -96,7 +96,7 @@ export function synthesizeCue({
   let finalProbe = null;
   let finalLoudness = null;
 
-  for (let pass = 0; pass < 3; pass++) {
+  for (let pass = 0; pass < 4; pass++) {
     const filtergraph = [
       trClause,
       bdClause,
@@ -122,11 +122,19 @@ export function synthesizeCue({
     if (!targetLufs) break;
 
     const diff = targetLufs - finalLoudness.integratedLUFS;
-    if (Math.abs(diff) <= 0.6 && finalLoudness.truePeakDb <= -1.0) {
+    if (Math.abs(diff) <= 1.8 && finalLoudness.truePeakDb <= -1.0) {
       break;
     }
-    const factor = Math.pow(10, diff / 20);
-    currentGain = Math.max(0.1, currentGain * factor);
+
+    if (pass === 3) break;
+
+    if (finalLoudness.truePeakDb > -1.0) {
+      const peakOvershoot = finalLoudness.truePeakDb - (-1.4);
+      currentGain *= Math.pow(10, -peakOvershoot / 20);
+    } else {
+      const factor = Math.pow(10, Math.min(1.5, Math.max(-1.5, diff)) / 20);
+      currentGain = Math.max(0.1, currentGain * factor);
+    }
   }
 
   runFfmpeg([
@@ -775,6 +783,431 @@ export function renderEnemyAndUi() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R1: Variations Definitions (2 takes per frequent cue with pitch +/-3% and micro-layer variations)
+ * 10 frequent cues x 2 takes = 20 variation cues
+ */
+export const VARIATION_DEFINITIONS = [
+  // 1. Mochi basic variations
+  {
+    cueId: 'hero.mochi.basic.var1',
+    name: 'hero-mochi-basic-var1',
+    runtimeCueId: 'skill.mochi.1.impact.var1',
+    aliases: ['mochi-1-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.42,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.038,bandpass=f=1236:w=800,afade=t=out:st=0:d=0.038,volume=0.9",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(98-41*(t/0.115))*t)*exp(-t/0.043)':s=48000:d=0.115",
+    bodyDelayMs: 14,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.24,lowpass=f=465,volume=0.32,afade=t=out:st=0.02:d=0.22",
+    tailDelayMs: 28,
+    masterGain: 2.85,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.mochi.basic.var2',
+    name: 'hero-mochi-basic-var2',
+    runtimeCueId: 'skill.mochi.1.impact.var2',
+    aliases: ['mochi-1-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.43,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.042,bandpass=f=1164:w=800,afade=t=out:st=0:d=0.042,volume=0.9",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(92-39*(t/0.125))*t)*exp(-t/0.047)':s=48000:d=0.125",
+    bodyDelayMs: 16,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.26,lowpass=f=435,volume=0.32,afade=t=out:st=0.02:d=0.24",
+    tailDelayMs: 32,
+    masterGain: 2.85,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 2. Mochi skill variations
+  {
+    cueId: 'hero.mochi.skill.var1',
+    name: 'hero-mochi-skill-var1',
+    runtimeCueId: 'skill.mochi.2.impact.var1',
+    aliases: ['mochi-2-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.63,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.088,bandpass=f=1442:w=1000,afade=t=in:st=0:d=0.058,afade=t=out:st=0.058:d=0.03,volume=0.95",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(113-46*(t/0.175))*t)*exp(-t/0.058)':s=48000:d=0.175",
+    bodyDelayMs: 52,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.43,lowpass=f=412,volume=0.36,afade=t=out:st=0.05:d=0.38",
+    tailDelayMs: 76,
+    masterGain: 2.11,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.mochi.skill.var2',
+    name: 'hero-mochi-skill-var2',
+    runtimeCueId: 'skill.mochi.2.impact.var2',
+    aliases: ['mochi-2-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.67,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.092,bandpass=f=1358:w=1000,afade=t=in:st=0:d=0.062,afade=t=out:st=0.062:d=0.03,volume=0.95",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(107-44*(t/0.185))*t)*exp(-t/0.062)':s=48000:d=0.185",
+    bodyDelayMs: 58,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.47,lowpass=f=388,volume=0.36,afade=t=out:st=0.05:d=0.42",
+    tailDelayMs: 84,
+    masterGain: 2.11,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 3. Soot basic variations
+  {
+    cueId: 'hero.soot.basic.var1',
+    name: 'hero-soot-basic-var1',
+    runtimeCueId: 'skill.soot.1.impact.var1',
+    aliases: ['soot-1-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.35,
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(4120-1850*(t/0.008))*t)*exp(-t/0.002)':s=48000:d=0.008",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(155-67*(t/0.078))*t)*exp(-t/0.024)':s=48000:d=0.078",
+    bodyDelayMs: 5,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.23,highpass=f=2266,volume=0.28,afade=t=out:st=0.01:d=0.22",
+    tailDelayMs: 10,
+    masterGain: 1.63,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.soot.basic.var2',
+    name: 'hero-soot-basic-var2',
+    runtimeCueId: 'skill.soot.1.impact.var2',
+    aliases: ['soot-1-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.37,
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(3880-1750*(t/0.008))*t)*exp(-t/0.002)':s=48000:d=0.008",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(145-63*(t/0.082))*t)*exp(-t/0.026)':s=48000:d=0.082",
+    bodyDelayMs: 6,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.25,highpass=f=2134,volume=0.28,afade=t=out:st=0.01:d=0.24",
+    tailDelayMs: 11,
+    masterGain: 1.63,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 4. Soot skill variations
+  {
+    cueId: 'hero.soot.skill.var1',
+    name: 'hero-soot-skill-var1',
+    runtimeCueId: 'skill.soot.2.impact.var1',
+    aliases: ['soot-2-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.60,
+    transientFilter: "aevalsrc=exprs='0.95*(sin(2*PI*3914*t)+0.5*sin(2*PI*5974*t))*exp(-t/0.004)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(144-52*(t/0.136))*t)*exp(-t/0.044)':s=48000:d=0.14",
+    bodyDelayMs: 14,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.43,bandpass=f=3300:w=1800,volume=0.34,afade=t=out:st=0.03:d=0.40",
+    tailDelayMs: 24,
+    masterGain: 1.18,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.soot.skill.var2',
+    name: 'hero-soot-skill-var2',
+    runtimeCueId: 'skill.soot.2.impact.var2',
+    aliases: ['soot-2-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.64,
+    transientFilter: "aevalsrc=exprs='0.95*(sin(2*PI*3686*t)+0.5*sin(2*PI*5626*t))*exp(-t/0.004)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(136-48*(t/0.144))*t)*exp(-t/0.046)':s=48000:d=0.15",
+    bodyDelayMs: 16,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.47,bandpass=f=3100:w=1800,volume=0.34,afade=t=out:st=0.03:d=0.44",
+    tailDelayMs: 26,
+    masterGain: 1.18,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 5. Clover basic variations
+  {
+    cueId: 'hero.clover.basic.var1',
+    name: 'hero-clover-basic-var1',
+    runtimeCueId: 'skill.clover.1.impact.var1',
+    aliases: ['clover-1-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.43,
+    transientFilter: "aevalsrc=exprs='0.8*(sin(2*PI*1813*t)+0.5*sin(2*PI*2719*t)+0.3*sin(2*PI*3626*t))*exp(-t/0.058)':s=48000:d=0.15",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.75*sin(2*PI*(216-41*(t/0.116))*t)*exp(-t/0.039)':s=48000:d=0.116",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.29,bandpass=f=2266:w=1100,volume=0.25,afade=t=out:st=0.03:d=0.26",
+    tailDelayMs: 19,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.clover.basic.var2',
+    name: 'hero-clover-basic-var2',
+    runtimeCueId: 'skill.clover.1.impact.var2',
+    aliases: ['clover-1-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.45,
+    transientFilter: "aevalsrc=exprs='0.8*(sin(2*PI*1707*t)+0.5*sin(2*PI*2561*t)+0.3*sin(2*PI*3414*t))*exp(-t/0.062)':s=48000:d=0.15",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.75*sin(2*PI*(204-39*(t/0.124))*t)*exp(-t/0.041)':s=48000:d=0.124",
+    bodyDelayMs: 11,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.31,bandpass=f=2134:w=1100,volume=0.25,afade=t=out:st=0.03:d=0.28",
+    tailDelayMs: 21,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 6. Clover skill variations
+  {
+    cueId: 'hero.clover.skill.var1',
+    name: 'hero-clover-skill-var1',
+    runtimeCueId: 'skill.clover.2.impact.var1',
+    aliases: ['clover-2-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.70,
+    transientFilter: "aevalsrc=exprs='0.75*(sin(2*PI*1813*t)+0.6*sin(2*PI*2283*t)+0.5*sin(2*PI*2716*t))*exp(-t/0.097)':s=48000:d=0.21",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*sin(2*PI*(165-31*(t/0.175))*t)*exp(-t/0.049)':s=48000:d=0.175",
+    bodyDelayMs: 19,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.48,bandpass=f=1957:w=1300,volume=0.30,afade=t=out:st=0.04:d=0.44",
+    tailDelayMs: 34,
+    masterGain: 0.87,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.clover.skill.var2',
+    name: 'hero-clover-skill-var2',
+    runtimeCueId: 'skill.clover.2.impact.var2',
+    aliases: ['clover-2-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.74,
+    transientFilter: "aevalsrc=exprs='0.75*(sin(2*PI*1707*t)+0.6*sin(2*PI*2150*t)+0.5*sin(2*PI*2558*t))*exp(-t/0.103)':s=48000:d=0.23",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.8*sin(2*PI*(155-29*(t/0.185))*t)*exp(-t/0.051)':s=48000:d=0.185",
+    bodyDelayMs: 21,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.52,bandpass=f=1843:w=1300,volume=0.30,afade=t=out:st=0.04:d=0.48",
+    tailDelayMs: 36,
+    masterGain: 0.87,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 7. Panko basic variations
+  {
+    cueId: 'hero.panko.basic.var1',
+    name: 'hero-panko-basic-var1',
+    runtimeCueId: 'skill.panko.1.impact.var1',
+    aliases: ['panko-1-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.37,
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.014,highpass=f=3090,volume=0.75,afade=t=out:st=0:d=0.014",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(124-62*(t/0.09))*t)*exp(-t/0.029)':s=48000:d=0.09",
+    bodyDelayMs: 7,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.24,bandpass=f=2678:w=1400,volume=0.25,afade=t=out:st=0.02:d=0.22",
+    tailDelayMs: 14,
+    masterGain: 1.55,
+    targetLufs: -18.0,
+    limiterLinear: 0.68
+  },
+  {
+    cueId: 'hero.panko.basic.var2',
+    name: 'hero-panko-basic-var2',
+    runtimeCueId: 'skill.panko.1.impact.var2',
+    aliases: ['panko-1-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.39,
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.016,highpass=f=2910,volume=0.75,afade=t=out:st=0:d=0.016",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.92*sin(2*PI*(116-58*(t/0.095))*t)*exp(-t/0.031)':s=48000:d=0.095",
+    bodyDelayMs: 8,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.25,bandpass=f=2522:w=1400,volume=0.25,afade=t=out:st=0.02:d=0.23",
+    tailDelayMs: 16,
+    masterGain: 1.55,
+    targetLufs: -18.0,
+    limiterLinear: 0.68
+  },
+
+  // 8. Panko skill variations
+  {
+    cueId: 'hero.panko.skill.var1',
+    name: 'hero-panko-skill-var1',
+    runtimeCueId: 'skill.panko.2.impact.var1',
+    aliases: ['panko-2-var1'],
+    impactOffsetMs: 350,
+    durationSec: 0.63,
+    transientFilter: "aevalsrc=exprs='0.88*(sin(2*PI*2781*t)+0.5*sin(2*PI*4223*t))*exp(-t/0.008)':s=48000:d=0.019",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(108-46*(t/0.136))*t)*exp(-t/0.044)':s=48000:d=0.145",
+    bodyDelayMs: 11,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.43,bandpass=f=3090:w=2000,volume=0.32,afade=t=out:st=0.04:d=0.39",
+    tailDelayMs: 24,
+    masterGain: 1.28,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'hero.panko.skill.var2',
+    name: 'hero-panko-skill-var2',
+    runtimeCueId: 'skill.panko.2.impact.var2',
+    aliases: ['panko-2-var2'],
+    impactOffsetMs: 350,
+    durationSec: 0.67,
+    transientFilter: "aevalsrc=exprs='0.88*(sin(2*PI*2619*t)+0.5*sin(2*PI*3977*t))*exp(-t/0.008)':s=48000:d=0.021",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(102-44*(t/0.144))*t)*exp(-t/0.046)':s=48000:d=0.155",
+    bodyDelayMs: 13,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.47,bandpass=f=2910:w=2000,volume=0.32,afade=t=out:st=0.04:d=0.43",
+    tailDelayMs: 26,
+    masterGain: 1.28,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 9. Enemy hit light variations
+  {
+    cueId: 'enemy.hit.light.var1',
+    name: 'enemy-hit-light-var1',
+    runtimeCueId: 'hit.light.var1',
+    aliases: ['hit-1-var1'],
+    impactOffsetMs: 20,
+    durationSec: 0.32,
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.011,highpass=f=2884,volume=0.7,afade=t=out:st=0:d=0.011",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(165-72*(t/0.078))*t)*exp(-t/0.024)':s=48000:d=0.078",
+    bodyDelayMs: 6,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.20,lowpass=f=824,volume=0.25,afade=t=out:st=0.02:d=0.18",
+    tailDelayMs: 12,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.68
+  },
+  {
+    cueId: 'enemy.hit.light.var2',
+    name: 'enemy-hit-light-var2',
+    runtimeCueId: 'hit.light.var2',
+    aliases: ['hit-1-var2'],
+    impactOffsetMs: 20,
+    durationSec: 0.33,
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.013,highpass=f=2716,volume=0.7,afade=t=out:st=0:d=0.013",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.9*sin(2*PI*(155-68*(t/0.082))*t)*exp(-t/0.026)':s=48000:d=0.082",
+    bodyDelayMs: 6,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.21,lowpass=f=776,volume=0.25,afade=t=out:st=0.02:d=0.19",
+    tailDelayMs: 12,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.68
+  },
+
+  // 10. Enemy hit medium variations
+  {
+    cueId: 'enemy.hit.medium.var1',
+    name: 'enemy-hit-medium-var1',
+    runtimeCueId: 'hit.medium.var1',
+    aliases: ['hit-2-var1'],
+    impactOffsetMs: 25,
+    durationSec: 0.37,
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(3708-2060*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(134-57*(t/0.097))*t)*exp(-t/0.034)':s=48000:d=0.097",
+    bodyDelayMs: 7,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.27,bandpass=f=618:w=400,volume=0.28,afade=t=out:st=0.03:d=0.24",
+    tailDelayMs: 14,
+    masterGain: 1.5,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'enemy.hit.medium.var2',
+    name: 'enemy-hit-medium-var2',
+    runtimeCueId: 'hit.medium.var2',
+    aliases: ['hit-2-var2'],
+    impactOffsetMs: 25,
+    durationSec: 0.39,
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(3492-1940*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(126-53*(t/0.103))*t)*exp(-t/0.036)':s=48000:d=0.103",
+    bodyDelayMs: 9,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.29,bandpass=f=582:w=400,volume=0.28,afade=t=out:st=0.03:d=0.26",
+    tailDelayMs: 16,
+    masterGain: 1.5,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderVariations() {
+  console.log(`Rendering ${VARIATION_DEFINITIONS.length} Variation cues (R1)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of VARIATION_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId, impactOffsetMs: def.impactOffsetMs });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      gainDb: 0,
+      impactOffsetMs: def.impactOffsetMs,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: 'sfx',
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  // Write reports/v5/AG4/R1-loudness.csv
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,impactOffsetMs'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},${r.impactOffsetMs}`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'R1-loudness.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+  console.log(`Wrote loudness report: ${csvPath}`);
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R1 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
 
 // CLI dispatcher
 const arg = process.argv[2];
@@ -786,11 +1219,15 @@ if (arg === '--calibrate') {
   splitRangedImpacts();
 } else if (arg === '--enemy-ui') {
   renderEnemyAndUi();
+} else if (arg === '--variations') {
+  renderVariations();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
   splitRangedImpacts();
   renderEnemyAndUi();
+  renderVariations();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --all]');
 }
+

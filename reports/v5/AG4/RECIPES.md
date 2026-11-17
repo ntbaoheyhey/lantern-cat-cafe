@@ -166,3 +166,127 @@ Integrated loudness target: -18.0 LUFS +/- 2 LU. Measured spread: -19.5 to -17.1
    - Body: `aevalsrc=exprs='0.5*sin(2*PI*392*t)*exp(-t/0.25)':s=48000:d=0.60` (delay 10ms)
    - Tail: `anoisesrc=c=pink:r=48000:d=0.70,bandpass=f=3200:w=1200,volume=0.18,afade=t=out:st=0.05:d=0.65` (delay 20ms)
    - Measured: -17.7 LUFS, peak -2.1 dBFS, size 8,145 B, dur 0.81s.
+
+## R1: Variations (2 takes per frequent cue, pitch +/-3% and layer micro-adjustments)
+Synthesis source: tools/v5audio/render.mjs (deterministic filtergraph execution via ffmpeg).
+Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -20.2 to -16.5 LUFS (avg -18.2 LUFS). True peak <= -1.2 dBFS across all 20 cues.
+
+1. `hero.mochi.basic.var1` (+3% pitch):
+   - Transient: `anoisesrc=c=pink:r=48000:d=0.038,bandpass=f=1236:w=800,afade=t=out:st=0:d=0.038,volume=0.9`
+   - Body: `aevalsrc=exprs='0.9*sin(2*PI*(98-41*(t/0.115))*t)*exp(-t/0.043)':s=48000:d=0.115` (delay 14ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.24,lowpass=f=465,volume=0.32,afade=t=out:st=0.02:d=0.22` (delay 28ms)
+   - Measured: -18.8 LUFS, peak -2.9 dBFS, size 2,907 B, dur 0.43s.
+
+2. `hero.mochi.basic.var2` (-3% pitch):
+   - Transient: `anoisesrc=c=pink:r=48000:d=0.042,bandpass=f=1164:w=800,afade=t=out:st=0:d=0.042,volume=0.9`
+   - Body: `aevalsrc=exprs='0.9*sin(2*PI*(92-39*(t/0.125))*t)*exp(-t/0.047)':s=48000:d=0.125` (delay 16ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.26,lowpass=f=435,volume=0.32,afade=t=out:st=0.02:d=0.24` (delay 32ms)
+   - Measured: -19.3 LUFS, peak -2.3 dBFS, size 2,892 B, dur 0.44s.
+
+3. `hero.mochi.skill.var1` (+3% pitch):
+   - Transient: `anoisesrc=c=pink:r=48000:d=0.088,bandpass=f=1442:w=1000,afade=t=in:st=0:d=0.058,afade=t=out:st=0.058:d=0.03,volume=0.95`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(113-46*(t/0.175))*t)*exp(-t/0.058)':s=48000:d=0.175` (delay 52ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.43,lowpass=f=412,volume=0.36,afade=t=out:st=0.05:d=0.38` (delay 76ms)
+   - Measured: -18.9 LUFS, peak -2.6 dBFS, size 4,107 B, dur 0.64s.
+
+4. `hero.mochi.skill.var2` (-3% pitch):
+   - Transient: `anoisesrc=c=pink:r=48000:d=0.092,bandpass=f=1358:w=1000,afade=t=in:st=0:d=0.062,afade=t=out:st=0.062:d=0.03,volume=0.95`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(107-44*(t/0.185))*t)*exp(-t/0.062)':s=48000:d=0.185` (delay 58ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.47,lowpass=f=388,volume=0.36,afade=t=out:st=0.05:d=0.42` (delay 84ms)
+   - Measured: -18.7 LUFS, peak -1.9 dBFS, size 4,316 B, dur 0.68s.
+
+5. `hero.soot.basic.var1` (+3% pitch):
+   - Transient: `aevalsrc=exprs='0.9*sin(2*PI*(4120-1850*(t/0.008))*t)*exp(-t/0.002)':s=48000:d=0.008`
+   - Body: `aevalsrc=exprs='0.92*sin(2*PI*(155-67*(t/0.078))*t)*exp(-t/0.024)':s=48000:d=0.078` (delay 5ms)
+   - Tail: `anoisesrc=c=white:r=48000:d=0.23,highpass=f=2266,volume=0.28,afade=t=out:st=0.01:d=0.22` (delay 10ms)
+   - Measured: -19.1 LUFS, peak -1.7 dBFS, size 2,503 B, dur 0.36s.
+
+6. `hero.soot.basic.var2` (-3% pitch):
+   - Transient: `aevalsrc=exprs='0.9*sin(2*PI*(3880-1750*(t/0.008))*t)*exp(-t/0.002)':s=48000:d=0.008`
+   - Body: `aevalsrc=exprs='0.92*sin(2*PI*(145-63*(t/0.082))*t)*exp(-t/0.026)':s=48000:d=0.082` (delay 6ms)
+   - Tail: `anoisesrc=c=white:r=48000:d=0.25,highpass=f=2134,volume=0.28,afade=t=out:st=0.01:d=0.24` (delay 11ms)
+   - Measured: -18.2 LUFS, peak -1.6 dBFS, size 2,655 B, dur 0.38s.
+
+7. `hero.soot.skill.var1` (+3% pitch):
+   - Transient: `aevalsrc=exprs='0.95*(sin(2*PI*3914*t)+0.5*sin(2*PI*5974*t))*exp(-t/0.004)':s=48000:d=0.015`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(144-52*(t/0.136))*t)*exp(-t/0.044)':s=48000:d=0.14` (delay 14ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.43,bandpass=f=3300:w=1800,volume=0.34,afade=t=out:st=0.03:d=0.40` (delay 24ms)
+   - Measured: -17.2 LUFS, peak -1.7 dBFS, size 3,898 B, dur 0.61s.
+
+8. `hero.soot.skill.var2` (-3% pitch):
+   - Transient: `aevalsrc=exprs='0.95*(sin(2*PI*3686*t)+0.5*sin(2*PI*5626*t))*exp(-t/0.004)':s=48000:d=0.015`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(136-48*(t/0.144))*t)*exp(-t/0.046)':s=48000:d=0.15` (delay 16ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.47,bandpass=f=3100:w=1800,volume=0.34,afade=t=out:st=0.03:d=0.44` (delay 26ms)
+   - Measured: -17.0 LUFS, peak -2.1 dBFS, size 4,155 B, dur 0.65s.
+
+9. `hero.clover.basic.var1` (+3% pitch):
+   - Transient: `aevalsrc=exprs='0.8*(sin(2*PI*1813*t)+0.5*sin(2*PI*2719*t)+0.3*sin(2*PI*3626*t))*exp(-t/0.058)':s=48000:d=0.15`
+   - Body: `aevalsrc=exprs='0.75*sin(2*PI*(216-41*(t/0.116))*t)*exp(-t/0.039)':s=48000:d=0.116` (delay 10ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.29,bandpass=f=2266:w=1100,volume=0.25,afade=t=out:st=0.03:d=0.26` (delay 19ms)
+   - Measured: -17.3 LUFS, peak -1.2 dBFS, size 2,499 B, dur 0.44s.
+
+10. `hero.clover.basic.var2` (-3% pitch):
+    - Transient: `aevalsrc=exprs='0.8*(sin(2*PI*1707*t)+0.5*sin(2*PI*2561*t)+0.3*sin(2*PI*3414*t))*exp(-t/0.062)':s=48000:d=0.15`
+    - Body: `aevalsrc=exprs='0.75*sin(2*PI*(204-39*(t/0.124))*t)*exp(-t/0.041)':s=48000:d=0.124` (delay 11ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.31,bandpass=f=2134:w=1100,volume=0.25,afade=t=out:st=0.03:d=0.28` (delay 21ms)
+    - Measured: -17.1 LUFS, peak -1.3 dBFS, size 3,591 B, dur 0.46s.
+
+11. `hero.clover.skill.var1` (+3% pitch):
+    - Transient: `aevalsrc=exprs='0.75*(sin(2*PI*1813*t)+0.6*sin(2*PI*2283*t)+0.5*sin(2*PI*2716*t))*exp(-t/0.097)':s=48000:d=0.21`
+    - Body: `aevalsrc=exprs='0.8*sin(2*PI*(165-31*(t/0.175))*t)*exp(-t/0.049)':s=48000:d=0.175` (delay 19ms)
+    - Tail: `anoisesrc=c=white:r=48000:d=0.48,bandpass=f=1957:w=1300,volume=0.30,afade=t=out:st=0.04:d=0.44` (delay 34ms)
+    - Measured: -16.7 LUFS, peak -2.1 dBFS, size 6,029 B, dur 0.71s.
+
+12. `hero.clover.skill.var2` (-3% pitch):
+    - Transient: `aevalsrc=exprs='0.75*(sin(2*PI*1707*t)+0.6*sin(2*PI*2150*t)+0.5*sin(2*PI*2558*t))*exp(-t/0.103)':s=48000:d=0.23`
+    - Body: `aevalsrc=exprs='0.8*sin(2*PI*(155-29*(t/0.185))*t)*exp(-t/0.051)':s=48000:d=0.185` (delay 21ms)
+    - Tail: `anoisesrc=c=white:r=48000:d=0.52,bandpass=f=1843:w=1300,volume=0.30,afade=t=out:st=0.04:d=0.48` (delay 36ms)
+    - Measured: -16.5 LUFS, peak -2.1 dBFS, size 5,948 B, dur 0.75s.
+
+13. `hero.panko.basic.var1` (+3% pitch):
+    - Transient: `anoisesrc=c=white:r=48000:d=0.014,highpass=f=3090,volume=0.75,afade=t=out:st=0:d=0.014`
+    - Body: `aevalsrc=exprs='0.92*sin(2*PI*(124-62*(t/0.09))*t)*exp(-t/0.029)':s=48000:d=0.09` (delay 7ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.24,bandpass=f=2678:w=1400,volume=0.25,afade=t=out:st=0.02:d=0.22` (delay 14ms)
+    - Measured: -19.4 LUFS, peak -2.5 dBFS, size 2,237 B, dur 0.38s.
+
+14. `hero.panko.basic.var2` (-3% pitch):
+    - Transient: `anoisesrc=c=white:r=48000:d=0.016,highpass=f=2910,volume=0.75,afade=t=out:st=0:d=0.016`
+    - Body: `aevalsrc=exprs='0.92*sin(2*PI*(116-58*(t/0.095))*t)*exp(-t/0.031)':s=48000:d=0.095` (delay 8ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.25,bandpass=f=2522:w=1400,volume=0.25,afade=t=out:st=0.02:d=0.23` (delay 16ms)
+    - Measured: -19.7 LUFS, peak -2.1 dBFS, size 2,448 B, dur 0.40s.
+
+15. `hero.panko.skill.var1` (+3% pitch):
+    - Transient: `aevalsrc=exprs='0.88*(sin(2*PI*2781*t)+0.5*sin(2*PI*4223*t))*exp(-t/0.008)':s=48000:d=0.019`
+    - Body: `aevalsrc=exprs='0.95*sin(2*PI*(108-46*(t/0.136))*t)*exp(-t/0.044)':s=48000:d=0.145` (delay 11ms)
+    - Tail: `anoisesrc=c=white:r=48000:d=0.43,bandpass=f=3090:w=2000,volume=0.32,afade=t=out:st=0.04:d=0.39` (delay 24ms)
+    - Measured: -17.7 LUFS, peak -2.0 dBFS, size 3,481 B, dur 0.64s.
+
+16. `hero.panko.skill.var2` (-3% pitch):
+    - Transient: `aevalsrc=exprs='0.88*(sin(2*PI*2619*t)+0.5*sin(2*PI*3977*t))*exp(-t/0.008)':s=48000:d=0.021`
+    - Body: `aevalsrc=exprs='0.95*sin(2*PI*(102-44*(t/0.144))*t)*exp(-t/0.046)':s=48000:d=0.155` (delay 13ms)
+    - Tail: `anoisesrc=c=white:r=48000:d=0.47,bandpass=f=2910:w=2000,volume=0.32,afade=t=out:st=0.04:d=0.43` (delay 26ms)
+    - Measured: -17.6 LUFS, peak -2.1 dBFS, size 4,458 B, dur 0.68s.
+
+17. `enemy.hit.light.var1` (+3% pitch):
+    - Transient: `anoisesrc=c=white:r=48000:d=0.011,highpass=f=2884,volume=0.7,afade=t=out:st=0:d=0.011`
+    - Body: `aevalsrc=exprs='0.9*sin(2*PI*(165-72*(t/0.078))*t)*exp(-t/0.024)':s=48000:d=0.078` (delay 6ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.20,lowpass=f=824,volume=0.25,afade=t=out:st=0.02:d=0.18` (delay 12ms)
+    - Measured: -19.4 LUFS, peak -3.1 dBFS, size 3,427 B, dur 0.33s.
+
+18. `enemy.hit.light.var2` (-3% pitch):
+    - Transient: `anoisesrc=c=white:r=48000:d=0.013,highpass=f=2716,volume=0.7,afade=t=out:st=0:d=0.013`
+    - Body: `aevalsrc=exprs='0.9*sin(2*PI*(155-68*(t/0.082))*t)*exp(-t/0.026)':s=48000:d=0.082` (delay 6ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.21,lowpass=f=776,volume=0.25,afade=t=out:st=0.02:d=0.19` (delay 12ms)
+    - Measured: -20.2 LUFS, peak -2.8 dBFS, size 3,369 B, dur 0.34s.
+
+19. `enemy.hit.medium.var1` (+3% pitch):
+    - Transient: `aevalsrc=exprs='0.9*sin(2*PI*(3708-2060*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015`
+    - Body: `aevalsrc=exprs='0.95*sin(2*PI*(134-57*(t/0.097))*t)*exp(-t/0.034)':s=48000:d=0.097` (delay 7ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.27,bandpass=f=618:w=400,volume=0.28,afade=t=out:st=0.03:d=0.24` (delay 14ms)
+    - Measured: -18.1 LUFS, peak -2.0 dBFS, size 2,309 B, dur 0.38s.
+
+20. `enemy.hit.medium.var2` (-3% pitch):
+    - Transient: `aevalsrc=exprs='0.9*sin(2*PI*(3492-1940*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015`
+    - Body: `aevalsrc=exprs='0.95*sin(2*PI*(126-53*(t/0.103))*t)*exp(-t/0.036)':s=48000:d=0.103` (delay 9ms)
+    - Tail: `anoisesrc=c=pink:r=48000:d=0.29,bandpass=f=582:w=400,volume=0.28,afade=t=out:st=0.03:d=0.26` (delay 16ms)
+    - Measured: -17.7 LUFS, peak -2.2 dBFS, size 2,655 B, dur 0.40s.
