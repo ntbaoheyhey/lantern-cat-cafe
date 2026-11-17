@@ -1,14 +1,14 @@
-# ART execution anchor - 2026-11-17T00:11:58.896013+00:00
-ACTIVE: A11 placement84/84action+12native+3layout sheets CLOSED;2696/321,typecheck,3F6,304DOM,2700markers,2799layoutsamplesPASS. Scoped acceptance-receipt-r2.json COMPLETE; fullAcceptance:false; A10integratedtransfer OPEN;through29Nov12UTC.
+# ART execution anchor - 2026-11-17T00:17:40.376181+00:00
+ACTIVE: A11 portrait banner C2 runtime trial installed;7focusedtests/2files+typecheckPASS,104hashes. Fullweb/3F6/DOM/newfilms pending. Placementreceipt r2 complete;A10integratedtransfer OPEN;through29Nov12UTC.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: commit/push banner-r2 dense temporal checkpoint; implement selected portrait+owner+skill with measured title/HUD/worldlabel geometry and per-action held position, then source-matched tests/parity/lane/equivalence and fresh films/layouts.
+NEXT1: commit/push banner runtime+preflight, then implement/run banner-runtime-check.mjs and banner validation driver(fullweb,3F6,lane,installedDOM). After passes use existing capture pipeline for3fresh30s720p audio films and900p layouts.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: caster-identified banner private drills/comparison, then number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:81317b73d verified(origin accepted); banner-r2 private portrait choice8reviews complete. Runtime48f5df4c0 unchanged(102hashes); placementreceipt r2 complete.
+LAST PUSH:cac3876a8 verified(origin accepted); banner-r2 dense private temporal554samplesPASS; runtime48f5df4c0 unchanged before implementation.
 RECEIPT: placement-runtime-r1/acceptance-receipt-r2.json now valid after9path staging;221lane pathsPASS/102runtimehashes unchanged. Original r1 receipt/audit/failure retained; full acceptance OPEN.
-LIVE: dense banner temporal70829 complete(554samples);banner-r2/temporal-r1.log retained. NormalVite20416/5990 craftOFF; no finite ART job running.
+LIVE: banner preflight73575 complete;banner-runtime-r1/{preflight,focused,typecheck}.log retained. NormalVite20416/5990 craftOFF; no finite ART job.
 STOP/INBOX checked2026-11-17T00:01:43.556910+00:00:noSTOP; latest user continuation active; no newSHIP beyond16Nov18:25. Original68961/69950 absent;Vite20416 alive. Resume467status entries,index empty; inherited dirt retained.
-PRIVATEBANNER: portrait+owner+skill selected after96states/8comparisons and554dense focus samples;0intersections/clip/textloss/identityloss/positiondelta. Finalbossfocus truncated; blindassociation/continuous notaccepted. Runtime notinstalled; r1/named alternatives retained.
+PRIVATEBANNER: portrait+owner+skill selected after96states/8comparisons+554densefocus;0intersections/clip/textloss/identityloss/positiondelta. C2runtime trial nowinstalled, fullvalidationpending. Finalbossfocus cut; blindassociation/continuous notaccepted.
 R2fallback:3/6exact; otherdifferences27699/25821/26832pixels in narrow upperstage rectangles. fallback-pma-r2-differences.json retains bounds; waveintro attribution is inference, not proved. Projection7,966,311B not integrated8MB pass; fresh films complete; receipt A11/delivery-r1/acceptance-receipt.json complete(scoped).
 A11placement:304state DOM equivalencePASS; native42mappings/41fresh frames,12sheets CLOSED. Original failures reproduced38/42at720,35/42at900; others retained. Stateless82.26pxjump rejected; runtime actor-relative selected.
 Yarn receipt source3ac0f5a17/11runtimehashes; docs-only ce5 capture hashes match. REVIEW/A7/yarn-giant/acceptance-receipt.json; source/capture failures retained.
@@ -30,7 +30,7 @@ A10contrast scoped receipt source9205464cb/80hashes;85labelsPASS,2700markers/279
 Bindingportraitc5ccdfae1 decodePASS720/900;SHIPintegratedrerunpending. Contrastrequest13:40 b3-world/speed/stars/auto32unknownobs; newest18:25 transferrequest bound toscene-ready production12/sourcee9af6a933.
 OPEN reducedmotion/strictshake/activation/ensemble/portraitbanner/finalclasses/timesplit,A10totaltransfer; R2Panko boss bannerbackplate touchesportrait f290/f891/tailf892 though text readable; wave3Soot numbercluster f703 retained.
 Own units/VFX,presentation/rig/craftlab/provenance/ARTreports; no rules/audio/contracts/secrets/dependencies/deploy/mainmerge/ARTPR/subagents; DEV&&VITE_CRAFT_PILOT==='soot'.
-Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;last trackedV4bytes135679587/150MB; inherited dirt retained.
+Exclude logs,.DS_Store,raw/private,recorderlinks,duplicatepreviews,inheritedparity-latest,nonSYNCmovies;explicitstage;V3append-only;last trackedV4bytes135710804/150MB; inherited dirt retained.
 Jobs>2min detachedPopen(start_new_session=True),stdinDEVNULL/log,max3;ports5990–5993only. Commitpush eachstep<=20min includingfailures.
 RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,diff<=80. ImagingPython tools/.venv/bin/python.
 Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. Max4attempts/problem then change method, never gates.

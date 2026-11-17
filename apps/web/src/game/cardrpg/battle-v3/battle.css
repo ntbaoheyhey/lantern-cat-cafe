@@ -66,3 +66,6 @@
 /* In-field ultimate title: fixed camera, local focus. */
 .b3-focus-name {position:absolute;box-sizing:border-box;min-height:38px;display:flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid var(--element,#f6d7a0);border-radius:8px;background:linear-gradient(100deg,#241c2aee,#463242ee);color:#fff5d9;font:700 16px/1.25 var(--font-display);text-align:center;overflow-wrap:anywhere;text-shadow:0 1px 2px #000;box-shadow:0 2px 12px #0008;}
 .b3-focus-name[hidden]{display:none;}
+.b3-focus-identified{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:10px;text-align:left;align-items:center}
+.b3-focus-identified>img{width:36px;height:36px;box-sizing:border-box;object-fit:contain;border-radius:8px;border:1px solid var(--element);background:#1b1824}
+.b3-focus-copy{display:flex;flex-direction:column;gap:2px;min-width:0}

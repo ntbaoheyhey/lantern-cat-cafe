@@ -481,7 +481,10 @@ export class SpineScene {
   }
   this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
-  this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,plan?.ultimate&&this.actors.has(plan.actorId)?this.focusBanner.place(plan,this.bounds(this.actors.get(plan.actorId)!),width,height,this.cinematicRects):undefined);
+  const bannerActor=plan?.ultimate?view.actors.find(a=>a.id===plan.actorId):undefined,bannerEntry=bannerActor?this.actors.get(bannerActor.id):undefined;
+  this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,
+   !view.formationC2&&plan?.ultimate&&bannerEntry?this.focusBanner.place(plan,this.bounds(bannerEntry),width,height,this.cinematicRects):undefined,
+   view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:`/units/${bannerEntry.asset}/portrait.webp`,anchors:this.anchors}:undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
   this.audio.render(view);
   this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});

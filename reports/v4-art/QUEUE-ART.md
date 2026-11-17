@@ -14,5 +14,5 @@
 | A8 | Designer intake interrupt | queued |
 | A9 | Ultimate clarity | Scoped checkpoint:28/28 pairs>=3axes;27R2 own sheets/23strictcomplete,5400markers,3x900p bboxPASS; focus600ms fixed. Shared limits and UI followups remain A11; REVIEW/A9/REVIEW.md. |
 | A10 | SHIP art requests interrupt | OPEN: scene-ready transfer2h timebox exceeded; installed delivery has scoped84action/3layout review receipt. Projection below8MB is not integrated acceptance; fallback uncertainty and42placement failures retained. |
-| A11 | Open items and polish | ACTIVE: actor-relative placement runtime48f5df4c0 validated2696/321/typecheck/3F6/304DOM;84action+12native+3layout sheets closed. Scoped receipt r2 complete; invalid-checkpoint r1 retained. Portrait+owner+skill selected privately after96states/8comparisons; dense temporal replay before runtime installation, then number-density polish. Full acceptance OPEN. |
+| A11 | Open items and polish | ACTIVE: actor-relative placement runtime48f5df4c0 validated2696/321/typecheck/3F6/304DOM;84action+12native+3layout sheets closed. Scoped receipt r2 complete; invalid-checkpoint r1 retained. Portrait+owner+skill trial installed after554densefocus/8comparisons;7focusedtests+typecheckPASS. Fullweb/3F6/DOM/newfilms pending; then number-density polish. Full acceptance OPEN. |
 | A12 | Demo Day backlog after freeze | queued |
