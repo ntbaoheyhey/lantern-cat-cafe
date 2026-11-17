@@ -1,0 +1,238 @@
+{
+  "utc": "2026-11-17T19:10:54.581Z",
+  "ended": "2026-11-17T19:11:30.595Z",
+  "source": "d69b9dc5c29d9c068b5a625b2ad0a0fc247dc6ab",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+  "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+  "hardware": "Apple M3 Pro",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "pass": true,
+  "errors": [],
+  "method": "Own production32s4xCPU sampling profile,attribution only;sampling changes timings. Current served candidate,not latestgreen artifact. Shader/DOM/geometry values retained;no application writes.",
+  "raw": "work/v5/CXV/films/V7-F-current-production-profile/report.json",
+  "profile": "work/v5/CXV/films/V7-F-current-production-profile/cpu.cpuprofile",
+  "topSelfMs": [
+    {
+      "function": "(program)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 6551.65
+    },
+    {
+      "function": "render",
+      "url": "http://127.0.0.1:6301/assets/Battle-B_hkd53N.js",
+      "line": 237,
+      "column": 11895,
+      "ms": 5895.8
+    },
+    {
+      "function": "point",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 4422,
+      "ms": 4074.73
+    },
+    {
+      "function": "u",
+      "url": "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js",
+      "line": 1,
+      "column": 3742,
+      "ms": 1365.86
+    },
+    {
+      "function": "getBoundingClientRect",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 1052.21
+    },
+    {
+      "function": "sample",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 2317,
+      "ms": 674.73
+    },
+    {
+      "function": "offset",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 863,
+      "ms": 613.74
+    },
+    {
+      "function": "drawImage",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 550.13
+    },
+    {
+      "function": "",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 21066,
+      "ms": 537.14
+    },
+    {
+      "function": "updateMatrixWorld",
+      "url": "http://127.0.0.1:6301/assets/three.core-DH5FCTQa.js",
+      "line": 1,
+      "column": 70110,
+      "ms": 358.2
+    },
+    {
+      "function": "multiplyMatrices",
+      "url": "http://127.0.0.1:6301/assets/three.core-DH5FCTQa.js",
+      "line": 1,
+      "column": 56033,
+      "ms": 339.79
+    },
+    {
+      "function": "texSubImage2D",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 333.98
+    },
+    {
+      "function": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 315.21
+    },
+    {
+      "function": "s.render",
+      "url": "",
+      "line": 14,
+      "column": 21,
+      "ms": 309.78
+    },
+    {
+      "function": "getImageData",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 289.49
+    },
+    {
+      "function": "Sn",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 19655,
+      "ms": 282.76
+    },
+    {
+      "function": "w",
+      "url": "http://127.0.0.1:6301/assets/cardrpg-C8IIZI7d.js",
+      "line": 1,
+      "column": 3399,
+      "ms": 282.3
+    },
+    {
+      "function": "querySelectorAll",
+      "url": "",
+      "line": 0,
+      "column": 0,
+      "ms": 243.14
+    },
+    {
+      "function": "g",
+      "url": "http://127.0.0.1:6301/assets/three.module-DYVl4Dmj.js",
+      "line": 3741,
+      "column": 2338,
+      "ms": 213.44
+    },
+    {
+      "function": "getUtoTmapping",
+      "url": "http://127.0.0.1:6301/assets/three.core-DH5FCTQa.js",
+      "line": 40,
+      "column": 37873,
+      "ms": 199.36
+    },
+    {
+      "function": "kr",
+      "url": "http://127.0.0.1:6301/assets/cardrpg-C8IIZI7d.js",
+      "line": 1,
+      "column": 91637,
+      "ms": 181.82
+    },
+    {
+      "function": "m",
+      "url": "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js",
+      "line": 1,
+      "column": 3579,
+      "ms": 154.18
+    },
+    {
+      "function": "pose",
+      "url": "http://127.0.0.1:6301/assets/assets-DaUVoTVT.js",
+      "line": 35,
+      "column": 10675,
+      "ms": 148.16
+    },
+    {
+      "function": "i",
+      "url": "http://127.0.0.1:6301/assets/BattleHudV3-B4p_CnPl.js",
+      "line": 2,
+      "column": 15069,
+      "ms": 146.56
+    },
+    {
+      "function": "i.current.e.sceneError",
+      "url": "http://127.0.0.1:6301/assets/Battle-B_hkd53N.js",
+      "line": 237,
+      "column": 40534,
+      "ms": 143.6
+    }
+  ],
+  "run": {
+    "rate": 4,
+    "elapsedMs": 32023.29999999702,
+    "samples": 1047,
+    "frameMs": {
+      "median": 33.29999999999927,
+      "p95": 50,
+      "p99": 66.70000000000073,
+      "max": 166.59999999999854
+    },
+    "submitCpuMs": {
+      "median": 18.299999997019768,
+      "p95": 26.5,
+      "p99": 60.20000000298023,
+      "max": 125.09999999403954
+    },
+    "startup": {
+      "samples": 45,
+      "frameMs": {
+        "median": 33.30000000000018,
+        "p95": 99.90000000000009,
+        "p99": 216.69999999999982,
+        "max": 216.69999999999982
+      },
+      "submitCpuMs": {
+        "median": 20.799999997019768,
+        "p95": 77.5,
+        "p99": 186.5,
+        "max": 186.5
+      },
+      "over33": 14,
+      "over50": 10
+    },
+    "over50": 28,
+    "identity": {
+      "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+      "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+    },
+    "identityAfter": {
+      "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+      "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+    }
+  }
+}

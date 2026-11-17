@@ -1,0 +1,63 @@
+{
+  "utc": "2026-11-17T19:14:41.169Z",
+  "ended": "2026-11-17T19:14:57.474Z",
+  "source": "d2bab71b01de650fcd49b8752566affb29888d3f",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "toolSha256": "8669e542eb2d44d1e18417ef6970d7be38215bd57d6841d4e668410dacc96688",
+  "prototypeSha256": "ff16396ec2bd57c9c169d31ecda2eea15294911236f00e366986c725eeaeb450",
+  "statusSourceSha256": "043e1ad523c0dc75c67a6ff12d29f1b391cb2fb09d452179de298cd610d9b38d",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual HUD label DOM/current fonts/CSS. Bind synthetic pending status snapshots only in the browser fixture; compare every original single-label footprint with batched clone append/read/remove. Test missing source,overflow stacks,hidden nodes,reversed input and cleanup. Seven alternating20-call warmed blocks at4xCPU;CDP LayoutCount/LayoutDuration corroborate. No runtime edits or ordinary FPS claim.",
+  "pass": true,
+  "errors": [],
+  "raw": "work/v5/CXV/films/V7-F-pending-label-batch/report.json",
+  "fixtures": [
+    {
+      "fixture": "wave3",
+      "actors": 10,
+      "checks": 26,
+      "exact": true,
+      "cleanup": true,
+      "timing": [
+        {
+          "mode": "single",
+          "medianMs": 850.1999999955297,
+          "medianLayoutCount": 203,
+          "medianLayoutMs": 86.32999999999996
+        },
+        {
+          "mode": "batch",
+          "medianMs": 165.90000000596046,
+          "medianLayoutCount": 22,
+          "medianLayoutMs": 24.158999999999985
+        }
+      ]
+    },
+    {
+      "fixture": "boss",
+      "actors": 7,
+      "checks": 26,
+      "exact": true,
+      "cleanup": true,
+      "timing": [
+        {
+          "mode": "single",
+          "medianMs": 540.1999999955297,
+          "medianLayoutCount": 143,
+          "medianLayoutMs": 53.61200000000001
+        },
+        {
+          "mode": "batch",
+          "medianMs": 135.39999999850988,
+          "medianLayoutCount": 23,
+          "medianLayoutMs": 20.651000000000003
+        }
+      ]
+    }
+  ],
+  "next": "Complete full focus/ordinary browser override comparison during19:12\u201319:28study. No runtime edits until19:28Z."
+}
