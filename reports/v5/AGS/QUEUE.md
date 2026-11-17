@@ -11,17 +11,17 @@
 - [x] H7 Owner runbook review (read-only): reports/v5/CXI/NEEDS-USER-VI.md and Fuji proof kit; list unclear steps as REQs to CXI [30 min]
 - [x] H8 Hackathon judging research (AG1 R5): criteria, past winners' demo structure -> update reports/v5/AGS/DEMO-EYE.md [45 min]
 - [x] H9 Sound R9 size pass + R10 re-score and redo 3 lowest [60 min]
-- [ ] AG1-R3 Motion Live2D/Spine physics tuning -> reports/v5/AGS/MOTION-PARAMS.md [60 min]
-- [ ] AG1-R4 Hit feel numbers -> reports/v5/AGS/HIT-FEEL.md [45 min]
+- [x] AG1-R3 Motion Live2D/Spine physics tuning -> reports/v5/AGS/MOTION-PARAMS.md [60 min]
+- [x] AG1-R4 Hit feel numbers -> reports/v5/AGS/HIT-FEEL.md [45 min]
+- [x] REFILL-R3 Accessibility: reduced motion, contrast, text size findings -> reports/v5/AGS/ACCESSIBILITY.md [45 min]
+- [x] REFILL-R4 Error/offline states test plan for CXI (wallet missing, RPC down, sponsor low) -> reports/v5/AGS/OFFLINE-TEST-PLAN.md [45 min]
+- [x] REFILL-R5 Slides outline (8-10 slides) in submission/SLIDES-OUTLINE.md [45 min]
+- [x] REFILL-R6 FAQ for judges -> reports/v5/AGS/JUDGE-FAQ.md [45 min]
+- [ ] REFILL-R7 Ambience/music bed variations (3 distinct mood variations) [60 min]
+- [ ] REFILL-R8 Loudness table refresh for all v5 audio -> reports/v5/AGS/LOUDNESS-TABLE.md [30 min]
 
 ## Refill List
 - [ ] R1 QA on newest tag (repeatable)
 - [ ] R2 Re-verify every open finding on newest tag, close or reopen with evidence (repeatable)
-- [ ] R3 Accessibility: reduced motion, contrast, text size findings
-- [ ] R4 Error/offline states test plan for CXI (wallet missing, RPC down, sponsor low)
-- [ ] R5 Slides outline (8-10 slides) in submission/SLIDES-OUTLINE.md
-- [ ] R6 FAQ for judges
-- [ ] R7 Ambience/music bed variations
-- [ ] R8 Loudness table refresh for all v5 audio
 - [ ] R9 Vietnamese status summary for owner each new tag (STATUS-VI.md)
 - [ ] R10 Cross-check README/landing copy for typos and unclear claims -> REQ to CXI

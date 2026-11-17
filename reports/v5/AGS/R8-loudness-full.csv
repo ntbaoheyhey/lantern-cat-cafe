@@ -17,7 +17,7 @@ enemy.hit.heavy,/audio/v5/enemy-hit-heavy.opus,sfx,-19.1,-2.0,-18.0,0.0
 enemy.death.small,/audio/v5/enemy-death-small.opus,sfx,-19.4,-2.2,-18.0,0.0
 enemy.death.boss,/audio/v5/enemy-death-boss.opus,sfx,-18.2,-2.0,-18.0,0.0
 boss.yarn-giant.ultimate,/audio/v5/boss-yarn-giant-ultimate.opus,sfx,-16.5,-2.7,-18.0,0.0
-ui.receipt.confirmed,/audio/v5/ui-receipt-confirmed.opus,sfx,-16.6,-2.3,-18.0,0.0
+ui.receipt.confirmed,/audio/v5/ui-receipt-confirmed.opus,ui,-16.6,-2.3,-19.0,-2.4
 skill.mochi.1.impact,/audio/v5/hero-mochi-basic.opus,sfx,-19.5,-1.8,-18.0,0.0
 kit.holy.impact,/audio/v5/hero-mochi-basic.opus,sfx,-19.5,-1.8,-18.0,0.0
 mochi-1,/audio/v5/hero-mochi-basic.opus,sfx,-19.5,-1.8,-18.0,0.0
@@ -60,8 +60,8 @@ hit.medium,/audio/v5/enemy-hit-medium.opus,sfx,-18.5,-1.9,-18.0,0.0
 hit.heavy,/audio/v5/enemy-hit-heavy.opus,sfx,-19.1,-2.0,-18.0,0.0
 hit.crit,/audio/v5/enemy-hit-heavy.opus,sfx,-19.1,-2.0,-18.0,0.0
 ui.death,/audio/v5/enemy-death-small.opus,ui,-19.4,-2.2,-19.0,0.0
-enemy.death,/audio/v5/enemy-death-small.opus,ui,-19.4,-2.2,-19.0,0.0
-boss.death,/audio/v5/enemy-death-boss.opus,ui,-18.2,-2.0,-19.0,0.0
+enemy.death,/audio/v5/enemy-death-small.opus,sfx,-19.4,-2.2,-18.0,0.0
+boss.death,/audio/v5/enemy-death-boss.opus,sfx,-18.2,-2.0,-18.0,0.0
 ui.death.boss,/audio/v5/enemy-death-boss.opus,ui,-18.2,-2.0,-19.0,0.0
 ult.yarn-giant.impact,/audio/v5/boss-yarn-giant-ultimate.opus,sfx,-16.5,-2.7,-18.0,0.0
 kit.heavy.charge,/audio/v5/boss-yarn-giant-ultimate.opus,sfx,-16.5,-2.7,-18.0,0.0
@@ -103,8 +103,8 @@ panko-hit-1-1.flac,/audio/v5/voice/panko-hit-1-1.opus,voice,-16.1,-6.4,-18.0,-1.
 panko-hit-1-2.flac,/audio/v5/voice/panko-hit-1-2.opus,voice,-16.1,-6.1,-18.0,-1.9
 panko-death-1-1.flac,/audio/v5/voice/panko-death-1-1.opus,voice,-16.0,-6.9,-18.0,-2.0
 panko-death-1-2.flac,/audio/v5/voice/panko-death-1-2.opus,voice,-16.4,-7.1,-18.0,-1.6
-ambience.workshop.cosy,/audio/v5/ambience-workshop-cosy.opus,bgm,-21.5,-8.6,-18.0,3.5
-ambience.battle.bed,/audio/v5/ambience-battle-bed.opus,bgm,-21.6,-7.7,-18.0,3.6
+ambience.workshop.cosy,/audio/v5/ambience-workshop-cosy.opus,bgm,-21.5,-9.0,-22.0,0.0
+ambience.battle.bed,/audio/v5/ambience-battle-bed.opus,bgm,-21.6,-7.2,-22.0,0.0
 ui.click,/audio/v5/ui-click.opus,ui,-19.4,-3.5,-19.0,0.0
 ui.hover,/audio/v5/ui-hover.opus,ui,-19.2,-3.3,-19.0,0.0
 ui.confirm,/audio/v5/ui-confirm.opus,ui,-17.6,-2.6,-19.0,0.0
@@ -116,9 +116,9 @@ stinger.victory,/audio/v5/stinger-victory.opus,sfx,-16.2,-2.0,-18.0,-1.8
 stinger.defeat,/audio/v5/stinger-defeat.opus,sfx,-16.2,-1.9,-18.0,-1.8
 stinger.level_up,/audio/v5/stinger-level-up.opus,sfx,-16.8,-2.1,-18.0,0.0
 stinger.boss_appear,/audio/v5/stinger-boss-appear.opus,sfx,-16.6,-2.1,-18.0,0.0
-chain.tx_sent,/audio/v5/chain-tx-sent.opus,sfx,-17.9,-2.8,-18.0,0.0
-chain.tx_confirmed,/audio/v5/chain-tx-confirmed.opus,sfx,-16.4,-2.0,-18.0,-1.6
-chain.receipt_ready,/audio/v5/chain-receipt-ready.opus,sfx,-16.6,-2.7,-18.0,0.0
+chain.tx_sent,/audio/v5/chain-tx-sent.opus,ui,-17.9,-2.8,-19.0,0.0
+chain.tx_confirmed,/audio/v5/chain-tx-confirmed.opus,ui,-16.4,-2.0,-19.0,-2.6
+chain.receipt_ready,/audio/v5/chain-receipt-ready.opus,ui,-16.6,-2.7,-19.0,-2.4
 emote.mochi.happy,/audio/v5/cat-mochi-happy.opus,sfx,-17.3,-2.1,-18.0,0.0
 emote.mochi.hurt,/audio/v5/cat-mochi-hurt.opus,sfx,-16.9,-2.3,-18.0,0.0
 emote.mochi.purr,/audio/v5/cat-mochi-purr.opus,sfx,-16.7,-2.0,-18.0,0.0
@@ -218,3 +218,6 @@ panko-release-2.flac,/audio/v5/voice/panko-release-2.opus,voice,-16.2,-6.0,-18.0
 boss.yarn-giant.phase_change,/audio/v5/boss-yarn-giant-phase-change.opus,sfx,-16.7,-2.5,-18.0,0.0
 boss.yarn-giant.shockwave,/audio/v5/boss-yarn-giant-shockwave.opus,sfx,-18.0,-1.6,-18.0,0.0
 boss.yarn-giant.thread_charge,/audio/v5/boss-yarn-giant-thread-charge.opus,sfx,-16.4,-2.9,-18.0,-1.6
+ambience.cafe.afternoon,/audio/v5/ambience-cafe-afternoon.opus,bgm,-22.1,-12.4,-22.0,0.0
+ambience.battle.intense,/audio/v5/ambience-battle-intense.opus,bgm,-21.7,-8.3,-22.0,0.0
+ambience.boss.dread,/audio/v5/ambience-boss-dread.opus,bgm,-20.4,-6.7,-22.0,-1.6
