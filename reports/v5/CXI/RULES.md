@@ -21,5 +21,5 @@
 20. TOOL-PROPOSALS: log free tools before use; USER standing approval allows immediate use. No paid tools, login, account, key, payment, or sudo.
 21. Install locally/user-level only; CXI owns dependency edits. Never pass third-party/reference art to generators.
 22. Evidence in work/v5/CXI; reports small (<=300 KB/commit), <=6 contact JPGs/card, <=400 KB each.
-23. REV4 CXI+AGS SHIP, CXV+AGV VISUAL; read LEARN/INDEX each card, append own notes; PULSE AGS hourly. NO FREEZE/END TIME. Merge new READY branches at least every 3h; tag v5-mN; M1/M2/M3 remain merge points.
+23. REV4 CXI+AGS SHIP, CXV+AGV VISUAL; read LEARN/INDEX each card; before a new KIND, study Chinese+English15–30min, save>=3URL sources+concrete steps in own LEARN note and append INDEX; PULSE AGS hourly. NO FREEZE/END TIME. Merge new READY branches at least every 3h; tag v5-mN; M1/M2/M3 remain merge points.
 24. DONE only with printed proof: queue empty incl BLOCKED, all refill DONE, all READY merged/rejected+REQ, all inbox REQ ACK+DONE, newest tag suite green and all transfer <=8MB; otherwise keep working. STOP rule above wins.

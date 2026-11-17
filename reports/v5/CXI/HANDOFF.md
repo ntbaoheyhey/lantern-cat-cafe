@@ -1,20 +1,19 @@
-# CXI handoff — I2 active after R0
-ACTIVE: I2 transfer<=8MB; R0 and I3 done 2026-11-17T06:43:38Z; v5-m1 green.
-NEXT 1: Finish VFX before capture on existing deferred build; then build new19 sampled atlas delivery, measure and capture VFX after.
-NEXT 2: Scoped scene.ts third arg deferNativePixels:isCraftOwner(asset), then compact layered loader and optional V5 texture decode.
-NEXT 3: Voice-array integration, AGV pose AVIF deliveries; mobile Q0b-F1; continue I4/I5/I6 and refill.
-Running PIDs/logs: preview PID80797 work/v5/CXI/jobs/m1-preview.log; VFX before capture PID83309 work/v5/CXI/jobs/i2-effects-before.log/.exit.
-Last pushed SHA:b26cf0e3c, v5-m1; current runtime build code757c4a997.
-Green gates: typecheck0; web2821/2821; root5121 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
-R0 merged five old lane tips; all27 READY entries ancestry-confirmed; DELIVERY-LEDGER.md.
-OWNERSHIP rewritten REV4, scoped grants retained; new scene third-arg grant CXV06:35 recorded.
-Audio scalar normalization now replaces all144 ranged variants; exact voice arrays still need loading.
-I2 last measured13–15MB before R0; no claim8MB yet. New capture required.
-AGV asked for pose AVIF siblings; AGS asked remaining combat voice slices and judge/runbook checklist.
-Bare URL routing tested9cases; production browser confirmation pending.
-Q0b-F1 ACK:390px patrol CTA overflow; fix owned ui-v3 after R0.
-Next merge window <=3h after v5-m1; M2 review due18Nov08:00UTC.
-Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox cursors INBOX-CXI64, DELIVERIES30, USER14; read every checkpoint.
-Preserve unrelated work/history-*; no secrets/env values/deploys/funded Fuji/contracts/main merge/submission.
-Last RULES/HANDOFF/LEARN read:2026-11-17T06:43:38Z; reread before next card implementation.
+# CXI I2 active
+ACTIVE: CXI resumed by owner 2026-11-17T07:36:20Z; I2 transfer<=8MB remains FAIL. R0/I3 complete; v5-m1 accepted.
+NEXT 1: Repair granted paintSourceRect uses in field-vfx/impact-strokes/impact-wake and sampled-atlas player test mocks.
+NEXT 2: Resolve optional-loader test isolation; audit/merge READY voice, pose and CXV renderer deliveries; forward blend only when approved.
+NEXT 3: Build and fresh production visual/transfer checks; continue I2 then I4/I5/I6 and all refill.
+Checkpoint: owned optional-texture and voice-loader WIP, not visual acceptance; prior pushed d24f042190d459f8eaebaaa7596045e0539a648f.
+WIP validation: audio61 passed; optional/sequence8 passed1 failed (optional decode consumes recovery mock). No final build yet.
+Measured sampled atlases: wave1 12,306,063; wave3 12,753,441; boss12,002,487 bytes. All0 page/console errors, all over8MB.
+Confirmed visual failure: three renderer helpers still use original full-size source rects; scoped CXV grant06:56 recorded in OWNERSHIP.
+Only CXI known running job: preview80797, work/v5/CXI/jobs/m1-preview.log; serves experimental d24f04219, not v5-m1 acceptance.
+Fresh captures/measurements: work/v5/CXI/effects/ and work/v5/CXI/transfer/. Preserve old labels/history.
+New deliveries: AGS104 voice cuts+d495e7e2a/boss layers0b4b6fd56; AGV38 poseAVIF; CXV V5 READY366fdbf81. Fetch/audit tips before merge.
+CXV REQ07:18: forward optional manifest blend add/screen/normal; do not enable unapproved textures.
+Open QA: AGS H2-F1 390px Fight overflow, H2-F2 honest actual chain proof only; H7 runbook branch/pnpm exec corrections.
+Full demo URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Mailbox read: INBOX-CXI through07:34:30; USER through07:12; LEARN INDEX 2026-11-17T07:36:20Z.
+Last accepted tag v5-m1:b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3; gates typecheck0/web2821/root5121/build0.
+No secrets/env values, funded Fuji, deployments/contracts edits, main merge, submission or agents. Explicit owned staging only.
+Do not run tools/chain/local.mjs:startLocal (contract build/deploy owner-only). Prepare owner-operated kit instead.
