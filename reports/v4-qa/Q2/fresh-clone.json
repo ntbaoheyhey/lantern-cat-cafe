@@ -26,9 +26,23 @@
       "cwd": "/Users/bao/taskbar-hero-qa",
       "exitCode": 0,
       "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/fresh-ship-clone.log"
+    },
+    {
+      "label": "clone-lockfile-install",
+      "command": [
+        "pnpm",
+        "install",
+        "--frozen-lockfile",
+        "--reporter=append-only"
+      ],
+      "cwd": "/Users/bao/taskbar-hero-qa-clone",
+      "exitCode": 0,
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/clone-lockfile-install.log"
     }
   ],
   "secretsRead": false,
   "sourceTargetSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
-  "recovery": "Original clone succeeded; pin-race during checkout preserved in prepare-clone-attempt3.log"
+  "recovery": "Original clone succeeded; pin-race during checkout preserved in prepare-clone-attempt3.log",
+  "clonedSha": "abf6438866f0b5fcb9d09747d565c59cf6b35a3b",
+  "ended": "2026-11-17T01:35:24.509331+00:00"
 }
