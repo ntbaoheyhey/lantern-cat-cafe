@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V-F residual first-contact/transition profiling; V-C m1.9 arrival verified; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Beforepair complete;apply restrictedFloat32/64 bounds fastpath preserving zero accumulation;add Float64/normalizedInt16/interleaved/Float16 oracle coverage, then130GPU+ordinaryafter.
+NEXT 1: Restrictedpackedbounds applied;51oracletests+typecheck0;run130GPUagainstpacked-before,zero-preservingprototype and isolatedordinaryafter;notREADY until measurements/review.
 NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b READY;track independentCXIreview;greenm1.9merged/pushed.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed pushad293561d; announcedv5-m1.9 merged8bfef71c6; scalar50ec14e73 integrated73bcdbed4 CXI ACCEPT16:41Z.
+Last confirmed pushb2f89ba53; announcedv5-m1.9 merged8bfef71c6; scalar50ec14e73 integrated73bcdbed4 CXI ACCEPT16:41Z.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
 V-C m1.9 own17:22Z4fresharrival sheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms;priorrecipientnet/Yarnproof retained.
 V-B2 m1.7 own4sheets+32sloop:26actoractions+3status,6ults/all4heroes;leadIn0,2200/1100;statusvoice absent.

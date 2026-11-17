@@ -16,7 +16,7 @@ const original=`   for(let j=0;j<3;j++){
 const packed=`   if(packed){
     const a=sample.ids[0]*3,b=sample.ids[1]*3,c=sample.ids[2]*3,u=sample.weights[0],v=sample.weights[1],w=sample.weights[2];
     const ax=packed[a]!,ay=packed[a+1]!,bx=packed[b]!,by=packed[b+1]!,cx=packed[c]!,cy=packed[c+1]!;
-    x=ax*u+bx*v+cx*w;y=ay*u+by*v+cy*w;z=packed[a+2]!*u+packed[b+2]!*v+packed[c+2]!*w;
+    x=0+ax*u+bx*v+cx*w;y=0+ay*u+by*v+cy*w;z=0+packed[a+2]!*u+packed[b+2]!*v+packed[c+2]!*w;
     visible=ax!==0||ay!==0||bx!==0||by!==0||cx!==0||cy!==0;
    }else{
 ${original}
