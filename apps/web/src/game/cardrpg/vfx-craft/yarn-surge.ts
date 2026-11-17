@@ -1,5 +1,6 @@
 /** Original braided-yarn impact and low three-braid fan. LEARN/A7.md. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 
 export interface YarnFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
@@ -33,7 +34,7 @@ export class YarnSurge {
  constructor(private tuning:YarnTuning={width:1180,height:472,textureUrl:'/vfx/yarn-giant/braid-wave.webp',tip:[.99609375,.6085365853658536]}){
   const add=(root:T.Group)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.cut=add(this.front);this.wave=add(this.rear);this.echo=add(this.ground);this.contact=add(this.front);this.contact.material.uniforms.uBurst!.value=1;
-  this.ready=(async()=>{const image=new Image();image.src=this.tuning.textureUrl;await image.decode();if(this.disposed)return;const tex=this.texture=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=tex;})();
+  this.ready=(async()=>{const image=await loadCraftImage(this.tuning.textureUrl);if(this.disposed)return;const tex=this.texture=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=tex;})();
   this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,alpha:number,ms:number,erode=-.2,heat=0){

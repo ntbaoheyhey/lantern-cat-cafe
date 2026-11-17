@@ -12,7 +12,7 @@ it.each(['full','short','off'] as CinematicMode[])('keeps fixed timing and resol
   expect(plan.duration).toBe(plan.ultimate?2200:800);expect(plan.events).toBe(original.events);expect(JSON.stringify(plan.events)).toBe(events);
   for(let t=0;t<=plan.duration;t+=1000/30){const frame=sequenceAt(plan,t)!;
    expect(frame.camera).toMatchObject({zoom:1,x:0,y:0,tilt:0});expect(frame.plate).toBe(false);expect(frame.cutin).toBe(false);expect(frame.flash).toBe(0);
-   expect(frame.shake).toBeLessThanOrEqual(4);if(!plan.ultimate||t<impact||t>=impact+120)expect(frame.shake).toBe(0);
+   expect(frame.shake).toBeLessThanOrEqual(4);if(!plan.events.some(event=>event.type==='damage')||t<impact||t>=impact+120)expect(frame.shake).toBe(0);
    if(t>=600)expect(frame.dim).toBe(0);
    expect(sequenceAt(plan,t,true)!.shake).toBe(0);
   }

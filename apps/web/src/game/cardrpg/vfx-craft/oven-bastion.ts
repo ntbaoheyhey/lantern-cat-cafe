@@ -1,5 +1,6 @@
 /** Panko's crust cut and three opening bread doors. Original art; LEARN/A6.md. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 export interface OvenFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
@@ -22,7 +23,7 @@ export class OvenBastion {
   const add=(root:T.Group,foreground:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,foreground));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.cut=add(this.front,true);for(let i=0;i<3;i++)this.doors.push(add(this.rear,false));for(let i=0;i<6;i++)this.crumbs.push(add(this.front,true));for(let i=0;i<4;i++)this.dust.push(add(this.ground,false));
   const slices=[[0,.30],[.30,.70],[.70,1]];this.doors.forEach((m,i)=>m.material.uniforms.uSlice!.value.set(...slices[i]!));
-  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/panko/${name}.webp`;await image.decode();if(this.disposed)return;const tex=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
+  const load=async(name:string)=>{const image=await loadCraftImage(`/vfx/panko/${name}.webp`);if(this.disposed)return;const tex=new T.Texture(image);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
   this.ready=Promise.all([load('crust-cut'),load('oven-bastion')]).then(([cut,doors])=>{if(this.disposed)return;for(const m of this.all)m.material.uniforms.uTexture!.value=this.doors.includes(m)?doors:cut;});this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2,heat=0){

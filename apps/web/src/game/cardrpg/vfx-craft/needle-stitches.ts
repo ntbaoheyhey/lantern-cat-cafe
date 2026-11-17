@@ -1,5 +1,6 @@
 /** A7: straight needle release, followed by three staggered stitched fans. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
 export interface NeedleFrame extends RequiemFrame {ultimate:boolean}
@@ -28,7 +29,7 @@ export class NeedleStitches {
   const add=(root:T.Group)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.needle=add(this.front);for(let i=0;i<3;i++)this.contacts.push(add(this.front));
   for(let i=0;i<(tuning.count??18);i++)this.fan.push(add(this.rear));
-  this.ready=(async()=>{const im=new Image();im.src=tuning.textureUrl;await im.decode();if(this.disposed)return;
+  this.ready=(async()=>{const im=await loadCraftImage(tuning.textureUrl);if(this.disposed)return;
    const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;
    for(const m of this.all)m.material.uniforms.uTexture!.value=texture;
   })();this.hide();

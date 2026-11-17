@@ -1,5 +1,6 @@
 /** Clover's original recipient-centred sprigs and unfurling canopy. LEARN/A5.md. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 export interface HealingFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
@@ -19,7 +20,7 @@ export class HealingLeaves {
  constructor(){
   const add=(root:T.Group,front:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,front));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.canopy=add(this.rear,false);this.glint=add(this.front,true);for(let i=0;i<18;i++)this.sprigs.push(add(this.front,true));
-  const load=async(name:string)=>{const im=new Image();im.src=`/vfx/clover/${name}.webp`;await im.decode();if(this.disposed)return;const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
+  const load=async(name:string)=>{const im=await loadCraftImage(`/vfx/clover/${name}.webp`);if(this.disposed)return;const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
   this.ready=Promise.all([load('healing-sprig'),load('healing-canopy')]).then(([sprig,canopy])=>{if(this.disposed)return;for(const m of this.all)m.material.uniforms.uTexture!.value=m===this.canopy?canopy:sprig;});this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2){
