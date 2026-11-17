@@ -19,7 +19,7 @@ import { gameplayV4 as activeGameplayV4, gameplayA6 as activeGameplayA6 } from '
 import { CompanionPreviewProvider } from './CompanionPreview';
 import { preloadPreviewModels } from './preview-runtime';
 const BattleView = lazy(() => import('./Battle').then(m => ({default:m.BattleView})));
-import { Hub } from './Pages';
+const Hub = lazy(() => import('./Pages').then(m => ({default:m.Hub})));
 const Team = lazy(() => import('./TeamCollection').then(m => ({default:m.Team})));
 const Collection = lazy(() => import('./TeamCollection').then(m => ({default:m.Collection})));
 const Invitations = lazy(() => import('./Invitations').then(m => ({default:m.Invitations})));

@@ -3,7 +3,7 @@ DEMO PATH FIRST: guest -> battle <=30s -> receipt <=180s | Avalanche time+fee+pa
 LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reductions.
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
-NO SECRETS; commit+push everyitem/<=60min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
+NO SECRETS; commit+push everystep/<=20min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
 NOW ACTIVE: QA-2 MAJOR cold battle transfer29.65MB vs8MB; investigate SHIP deferral and coordinate ART assets. QA-1 independently fixed52aaaba39. Native forge installed; admission/mix pass, onset33.178ms still fails.
 NEXT 1: Read both QA queues; fix QA-2 SHIP-owned cold loading using measured two-method comparison, preserve ART ownership/scheduled merges and8MB gate. QA-3 withdrawal example8Spool->6YARN+2retained follows.
 NEXT 2: After QA priorities, revalidate remaining audio/UI/history/binary. Forge real6/6success/3of3speech/max6;288graphplans/576exactreplays;LRA5.8/5.4. Physical/listening/bagLRA/global gates open; no live scanner edits.
@@ -30,11 +30,11 @@ LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;fetchedARTa1372f831 prefl
 SERVICES audio5995PID3393;production16/session80213 supervisor54985 preview55074ready5998/API5997/Anvil8546;fixturefree. Text99980/8488+37112active;newtext9122/43798active;gzipcomplete.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent;USER RESUME. Healerproduction13 journeys3/4:32Clovercontactsonehealsource/noimpact,124/124causalcontacts each,36receipts/20controls/36chimesPASS;onsetmax102.556/98.063FAIL. Recognition7/12;humanunknown.
-REQUEST46223bytes sha25676f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
 S9complete:14sources/2formal/10web,docs32links,sourcehash860d9a7a5ac92349914acd76206c63c60e74bc519bf202c96df0dc1ebd720798exact;deployedunverified. Regression2663pass/7ARTfails;S9/check-1.json.
-UPDATED 2026-11-17T01:53:41.502085+00:00. Prior52aaaba39pushed/QA-1fixed. Nativeforge1:90.231s/-17.42LUFS/5.8LRA/-1.92dBTP;UI135.946ms;duck/recoveryPASS. QA-2MAJOR next;QA-3MINOR queued. No overallgateclosed.
 S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/check/layout evidence inS10. RealjudgeTrial(true),mockservices,1614assetsbyte-exact/profile;0network/errors;reload/resetPASS.
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit3=169.833s/9,314,863B/-17.86LUFS/-2.22dBTP/5.2LRA;1927sourceframes/53EN-VIcues/13wholevoices+actualSnowtrace5s;film-verify-3.json. Preparationonly;oldattemptsretained.
 PNG:27892blobs/64003pairs/12.985GBverified;27466tEXt/3107uniquetexts/82017B/0findings. SixJPEGmetadata nowverified842227B/0COM/opaqueAPP;839835entropyBunscanned. Otherchunks/pixels/encodedopen;noimageopens.
+REV3 RESUME2026-11-17T02:12Z:59WIP changes recovered; current tests/gates retain failures above; checkpoint in progress; priorpushed d029bc9c448ba0c35672bcae132e02262d6e30c9.
+REQUEST now REV3 verbatim. NEXT1 read QA queues, inspect partial cold-transfer change + comparison/regression, finish QA-2.

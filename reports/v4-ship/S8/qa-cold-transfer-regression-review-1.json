@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-17T02:08:25.566925+00:00",
+  "regressionPath": "reports/v4-ship/S11/qa-cold-transfer-regression-1/check.json",
+  "sha256": "c9bc9e698aca2a3c756a118fa530fef30757581d76ee21f77495e7a7c2d39444",
+  "sameSevenArtFailures": true,
+  "threeParityRowsIdentical": true,
+  "testSummaries": {
+    "server": [
+      "Tests  742 passed (742)"
+    ],
+    "rules": [
+      "Tests  1409 passed | 2 expected fail | 11 skipped (1422)"
+    ],
+    "web": [
+      "\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 7 \u23af\u23af\u23af\u23af\u23af\u23af\u23af",
+      "Tests  7 failed | 2701 passed (2708)"
+    ]
+  },
+  "gRegPass": false,
+  "officialClassParityPass": false,
+  "runtimeChange": "Only unused Hub module import becomes lazy; committed production comparison pending."
+}
