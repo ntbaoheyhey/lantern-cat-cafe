@@ -1,7 +1,7 @@
 # CXV V7 queue — desktop judge first three minutes
-- [ ] V-C candidate READY:V7-C.md,16/16+tsc0,fresh4arrival+4effect sheets; BLOCKED-ON CXI green for integrated confirmation.
-- [ ] V-A3 ACTIVE:four-hero facial-depth yaw/tilt+expression atop idle; friend600ms side-by-side table.
-- [ ] V-B2:distinct readable four-hero ultimates; answer CXI6700ms voice lead-in with measured change or reasoned no.
+- [x] V-C local integrated behavior independently confirmed14:46Z;V7-C.md;BOARDm1.5+posttag recovery UI;4fresh sheets/0errors;Yarn fan V-F.
+- [x] V-A3 candidate READY2847a7028;V7-A3.md;idle/gesture/hit/reduced+8casts;47/47 combined checks;await CXI production integration.
+- [x] V-B2 candidate validation;V7-B2.md;4distinct ultimates,68model actions/24ults/leadIn0;6700 bypassed by fixedTiming.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
 - [ ] V-E:status visuals,outcome/victory,boss entrance worth filming.
 - [ ] V-F:desktop boss fight performance/readability; preserve units,numbers,telegraphs.
