@@ -1,4 +1,6 @@
 import type {EffectPlan} from '../../squad/turn3d/effects';
+import {sampleReaction,reactionSample} from './reaction';
+const reactionScratch=reactionSample();
 
 export const MOTIONS=['dash-slash','leap-slam','spin','throw','staff-cast','summon'] as const;
 export type AttackMotion=typeof MOTIONS[number];
@@ -45,10 +47,10 @@ export function hitPose(plan:EffectPlan|null,elapsed:number,id:string,direction:
  const age=elapsed-impact;if(!hits.length||age<0||age>=300)return p;
  // A1/A3: hold the discrete K4 contact for90ms, then one bounded settle.
  // Multiple damage outcomes share this scheduled contact, not extra kicks.
- const critical=hits.some(e=>e.critical),amount=1-smooth((age-90)/210);
+ const critical=hits.some(e=>e.critical),reaction=sampleReaction(age,-1,false,reactionScratch),amount=reaction.recoil;
  p.x=direction*(critical?9.5:9)*scale*amount;p.y=-2*scale*amount;
- p.angle=direction*(critical?.045:.035)*amount;p.sx=1+.025*amount;p.sy=1-.025*amount;
- p.flash=age<2000/30?1:0;
+ p.angle=direction*(critical?.045:.035)*amount;p.sx=1+.025*reaction.squash;p.sy=1-.025*reaction.squash;
+ p.flash=reaction.flash;
  return p;
 }
 export function idlePhase(id:string){let h=2166136261;for(const c of id)h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)%6283/1000;}

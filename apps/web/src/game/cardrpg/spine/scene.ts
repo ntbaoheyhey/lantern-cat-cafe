@@ -144,7 +144,7 @@ export class SpineScene {
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
     const craftLight=craftPose?new PaintLight(actor):undefined;if(craftLight)this.scene.add(craftLight.ground,craftLight.rim);
-    const craftDeath=craftPose?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
+    const craftDeath=actor.mesh?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
     const shadow=new T.Mesh(this.geometry,new T.MeshBasicMaterial({map:this.shadowTexture,transparent:true,depthTest:false,depthWrite:false,toneMapped:false}));shadow.renderOrder=-10;
     const ring=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.honey,transparent:true,opacity:.6,depthTest:false,depthWrite:false,toneMapped:false}));ring.renderOrder=-5;
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
