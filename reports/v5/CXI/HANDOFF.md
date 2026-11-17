@@ -1,17 +1,19 @@
 # CXI V7 continuation
-ACTIVE: I-A release m1.7 reports/tag/push; I-B remainingwave3; assistant: AGS.
-NEXT 1: Verify release docs/owned diff, commit+tagv5-m1.7+push; announceBOARD and QA tasks.
-NEXT 2: I-B scoped audio preload/metadata experiment; review AGS T5/T8 delivery; preserve currentapp during measurements.
-NEXT 3: Verify AGS T7 script and currentexactQA; no unsupportedFuji/mint/Forge claims.
-Last pushed SHA:be701d072; app0a3c6ab1a/index2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd; m1.7tag/pushnext, priorgreenm1.6 retaineduntilsuccess.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f; exact V7 prompt verified15:41UTC; no duplicate.
-Last RULES re-read UTC:2026-11-17T16:15:27.654820+00:00; STOPfiles absent at lastcheck.
+ACTIVE: Publish validated m1.8 evidence checkpoint; assistant: AGS.
+NEXT 1: Commit owned m1.8 reports, tag v5-m1.8, push branch+tag; then update BOARD and lane announcements.
+NEXT 2: Independently review CXV spatial0d0e59494 with own normal/4x boss benchmark and portrait checks before any acceptance.
+NEXT 3: Continue I-B wave3 gap260321B; review AGS T5/T8 evidence, investigate current transfer paths.
+Last pushed:f9d0171353e5b19ba141d318477a33c0d6bd81b0; released v5-m1.7@43109a1879f1f0c1486393052536c3b72a219393 until m1.8 push succeeds.
+Application:73bcdbed424815382c6cb8a9bcc5a4f32447ce6d;capture:f9d0171353e5b19ba141d318477a33c0d6bd81b0;index:c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified16:48UTC;exact V7 prompt verified16:29UTC;no duplicate.
+Last RULES re-read UTC:2026-11-17T16:49:27.665093+00:00;STOPfiles absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none; PID87050 finalpipeline all5steps0;3films complete.
-Coldm1.7:7909547/8469958/7984401B;wave3FAIL469958B; no all-fixturebudgetclosure.
-I-C greenm1.6 firsthit20501ms incl17700ms reading8cards;165→119HP,0errors;5227pass incl2927web.
-AGS open:T1exactQA,T2/T3research,T5fourbedsREDO,T7truthfulscript,T8sixfoecallouts; six tasks.
-T4/T6 reassigned CXI15:37 in OWNERSHIP; preserve originals, no generation/AGV manifest/style edits. CXV READYde8c0c3d8+5adc06da3 received, ownreview pending.
-Mailbox read INBOX-CXI180/USER23/LEARN57; AGSfiveopen tasks; T1 oldtagQA stillneeds exactnewservedhash.
-I-D no real publictx; owner-only Fuji/deploy; NEEDS-USER-VI pinned greenm1.6.
-I-E fresh3x30s films/7newguestfilmsheets inspectedonce; work/v5/CXI/films/v7-m17-final; no subjectiveaudio/exactAVsync claim.
+Running:none;final pipeline95749 completed all5steps0 at16:44:06UTC;log work/v5/CXI/jobs/v7-m18-final-pipeline.log.
+Cold m1.8:7696760/8260321/7774452B;wave3FAIL260321B;bossheadroom225548B;no all-fixture closure.
+I-C:21131ms incl17700ms reading8cards;165→119HP;0ordinaryerrors;practice9558ms withoutreading;recovery1139/8702ms.
+Validation:full5261=77Node+5184workspace incl2961web onddf02f9d2;11skip/2expectedfailure;scalar14focused+build/typecheck0;no fullsuite afterscalar claim.
+AGS open:T1exactQA,T2/T3research,T5fourbedsREDO,T7truthfulscript,T8sixfoecallouts;six useful tasks.
+Mailbox read INBOX-CXI189/USER23/LEARN58;spatialREADY0d0e59494 unaccepted;native.pose follow-up investigation only.
+I-D:no realpublicFuji transaction;hosting/fundedFuji owner-only;runbookpreparedm1.8.
+I-E:3x30s actual1xgameplay/browseraudio films1280x720,0errors;work/v5/CXI/films/v7-m18-final;no subjectiveaudio/exactAVsyncclaim.
+Reviewed sheets tracked evidence/v7-m18-final-validation.json;never reopen;route menu-1024.jpg remains uninspected.
