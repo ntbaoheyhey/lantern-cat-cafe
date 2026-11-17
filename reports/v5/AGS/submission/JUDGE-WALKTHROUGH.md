@@ -12,13 +12,12 @@
    - Navigate to `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`.
    - *Audio Note*: Cosy café afternoon ambience begins playing softly.
 
-2. **Step 2: Instant Guest Entry**
+2. **Step 2: Guest Entry**
    - Click **Play free** on the landing title screen.
-   - **Zero wallet popups or browser extension requirements**.
 
 3. **Step 3: Fast-Paced Squad Combat**
    - Click **Fight** (or Start Battle).
-   - Watch the 4-cat squad auto-attack the animated Yarn Spools.
+   - Watch the 4-cat squad auto-attack the animated Yarn Spools. Actual gameplay speed.
 
 4. **Step 4: Victory & Voucher Claim**
    - Upon victory, click **Claim trial voucher** (or Claim Relic).
@@ -45,5 +44,5 @@
 
 | Test Item | Expected Result | How to Verify |
 | :--- | :--- | :--- |
-| **Guest Mode** | Zero friction, instant play | Click "Play free". |
-| **Injected Wallet** | Prompts SIWE signature | Connect wallet with Core/MetaMask on Chain 43113. |
+| **Guest Mode** | Play locally | Click "Play free". |
+| **Chain Integration** | Optional signed-voucher | Configure chain services as documented. |
