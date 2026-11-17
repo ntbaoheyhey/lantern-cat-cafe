@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.4=173d854b1; previous42exactREADY+CXV77bbef422 merged; typecheck0/web2912/root5212/build0; fresh production effects/practice pass. CXVc0c8081a8 merged40d757334; route3 ALL GREEN:2916web/5216root; tag pushed; ownroute9.323s/zeroerrors, Fuji panel visually verified. Repeat on newREADY.
+I-A DONE/REPEAT: v5-m1.5(application a2cbb3fb4); previous42exactREADY+CXV77bbef422 merged; typecheck0/web2912/root5212/build0; fresh production effects/practice pass. CXVc0c8081a8 merged40d757334; route3 ALL GREEN:2916web/5216root; tag pushed; ownroute9.323s/zeroerrors, Fuji panel visually verified. Repeat on newREADY.
 I-B OPEN: cold wave1/wave3/boss<=8,000,000B + before/after sheets. Current04c913bc5 8.744/9.305/8.820MB fails; AGS residual packs REQ09:03,AGV approved12 derivatives REQ08:47.
-I-C ACTIVE: routing/receipt/recovery pass; truthful wide practice invitation9.347s, zero errors. Actual patrol66.331s at3x returns35route points+Rare Moonwick Shawl, FAIL30s. V7 target load-to-FIRST HIT <=30s; old70.151s measured receipt, not first hit; desktop1280x720 only.
+I-C FIRST-HIT DONE:20,849ms incl17,700ms reading8cards,damage46 visible,zeroerrors; routing/receipt/recovery pass; truthful wide practice invitation9.347s, zero errors. Actual patrol66.331s at3x returns35route points+Rare Moonwick Shawl, FAIL30s. V7 target load-to-FIRST HIT <=30s; old70.151s measured receipt, not first hit; desktop1280x720 only.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
 I-E OPEN afterI-A..C: production preview,3x30s films wave1/wave3/boss+contact sheets,REVIEW-VI; refresh meaningful tags.
 I-F DONE: current desktop README+docs/ARCHITECTURE.md,3-step6301preview,5registry/explorer addresses, EOA/SIWE/ERC1155 truth; primary EN/ZH study, scoped links+registry+case checks pass. Owner public deployment remains unverified.
-I-G ACTIVE: PLANNER/AGS route detour reproduced; practice isolated from campaign, explicit return to pending preparation;20focusedpass;route3 fullsuite/9.199s capture pass. AGV T-CXI-4 exact top15/12AVIF target table ready.
+I-G ACTIVE:AGS alternate Night route lacks repro artifact; requested exact controls+capture; PLANNER/AGS route detour reproduced; practice isolated from campaign, explicit return to pending preparation;20focusedpass;route3 fullsuite/9.199s capture pass. AGV T-CXI-4 exact top15/12AVIF target table ready.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.

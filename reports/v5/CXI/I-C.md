@@ -14,3 +14,7 @@ Production index SHA256: 29be25fb0eac2a9f961cc75fbbb3aa8d350aea0e304d3bfd5e9a77a
 
 Raw evidence (ignored under work/v5/CXI/): jobs/v6-living-*.log; transfer/v6-living/all.json; effects/v6-living/capture.json, heroes-mochi-soot.jpg, heroes-clover-panko.jpg; journey/v6-living-practice/report.json and practice-1024.jpg; journey/v6-recovery/report.json; proof/v6-local-proof-timed.json.
 Next: reduce real cold bytes and measure normal progression through cat levelling before patrol. Public deployment and funded Fuji transaction remain owner-only. Desktop only.
+
+## V7 first actual hit — 2026-11-17T14:11:52Z
+Own ordinary guest practice on full judge URL1280x720:21,564ms to visible enemy health165->119 (46damage), including17,700ms reading59words across all8tutorialcards at200wpm. No tutorial skip, speed change, saved progress or fixture injection. Console/page/HTTP errors0;public writes0. Raw work/v5/CXI/first-hit/v7-reading-hud/report.json; source130360f6f; screenshot1024x576 measured then inspected once: damage46 visible at actual contact.
+Earlier70s metric was full level-first patrol receipt, not first hit. First probe failed because it observed retired DOM damage nodes; current renderer paints those on canvas, while its accessible enemy HP reflects visualBattle at impact. No product defect claimed from that invalid selector.

@@ -1,6 +1,6 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã push và kiểm tra đầy đủ: **v5-m1.4**, commit **173d854b1db8bbb23abdfe025ebd897b0c7a76c1**. Typecheck/build xanh, 2.916 web test và 5.216 root test pass. [Bằng chứng desktop](I-C.md) ghi rõ tải lạnh còn vượt 8 MB; 66–70 giây cũ là thời gian đến biên nhận, đang bổ sung phép đo đến đòn đánh đầu tiên. Commit sửa tiếp theo chỉ được thay vào lệnh dưới sau khi CXI công bố tag xanh mới trên BOARD.
+Bản đã push và kiểm tra đầy đủ: **v5-m1.5**, mã ứng dụng đã kiểm chứng tại commit **a2cbb3fb4c4062847f8531524934b3b9330b1283** (tag gồm thêm báo cáo). Typecheck/build xanh, 2.924 web test và 5.224 root test pass. [Bằng chứng desktop](I-C.md) ghi rõ tải lạnh còn vượt 8 MB; 66–70 giây cũ là thời gian đến biên nhận, đòn đánh đầu tiên đã đo được 20,849 giây, gồm 17,7 giây đọc đủ 8 thẻ hướng dẫn. Commit sửa tiếp theo chỉ được thay vào lệnh dưới sau khi CXI công bố tag xanh mới trên BOARD.
 
 Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.4'
+release_tag='v5-m1.5'
 release_sha='173d854b1db8bbb23abdfe025ebd897b0c7a76c1'
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test "$(git rev-parse "${release_tag}^{}")" = "$release_sha" || return 1
