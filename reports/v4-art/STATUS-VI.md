@@ -6,7 +6,8 @@ Ba phim 30 giây có âm thanh; 2.700 marker và 2.799 mẫu 900p đạt; FPS tr
 Chưa thấy nhảy nhãn/cắt viewport mới ở tỷ lệ sheet; chưa nghiệm thu toàn bộ.
 Ba cửa sổ cuối bị cắt vẫn giữ hạn chế; không suy ra impact/hồi phục bị thiếu.
 Biên nhận r2 đã lưu đúng staging; 221 đường dẫn đúng phạm vi. Giữ nguyên r1 và lỗi quy trình.
-Hai thử banner bị loại; tiếp theo là bản riêng nhận diện rõ nhân vật thi triển.
+Chọn riêng thẻ chân dung + tên người thi triển + tên chiêu sau 96 mẫu/8 ảnh; chưa cài runtime.
 Cụm số wave3 vẫn dày; không chồng hộp mực chưa đủ để nghiệm thu.
 A10 truyền tải production vẫn mở: 27,55 MB/8 MB; dự toán 7.966.311 byte chưa tính JS placement.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
+Tiếp theo kiểm tra mọi mẫu focus; không mở lại 8 ảnh đã xem.
