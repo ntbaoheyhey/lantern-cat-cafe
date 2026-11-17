@@ -1,0 +1,14 @@
+{
+  "scope": "Public sampled balance and deterministic lower bound; no hosted wallet or pending-reservation access",
+  "at": "2026-11-17T01:30:36.420713+00:00",
+  "blockNumber": 61208117,
+  "balanceWei": "1099999999993280000",
+  "gasPriceWei": "160",
+  "minimumForNextWalletWithoutPendingWei": "1050000000003360000",
+  "minimumForTwoFreshWalletsWithoutPendingWei": "1100000000006720000",
+  "nextWalletLowerBoundPass": true,
+  "twoWalletLowerBoundPass": false,
+  "shortfallForTwoWithoutPendingWei": "13440000",
+  "pendingReservationsKnown": false,
+  "claimBoundary": "This does not execute the public guest flow or certify future deployment balance. Recheck after funding and actual pending reservation total on deployment day."
+}

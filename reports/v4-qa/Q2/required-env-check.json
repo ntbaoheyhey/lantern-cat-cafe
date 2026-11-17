@@ -16,7 +16,8 @@
         "supabase/functions/chain-items/index.ts:15",
         "supabase/functions/chain-judge/index.ts:16",
         "supabase/functions/guest-drip/index.ts:12"
-      ]
+      ],
+      "role": "required signing/session prerequisite"
     },
     {
       "name": "VOUCHER_SIGNER_PRIVATE_KEY",
@@ -29,14 +30,16 @@
         "supabase/functions/chain-items/index.ts:25",
         "supabase/functions/chain-judge/index.ts:26",
         "supabase/functions/guest-drip/index.ts:19"
-      ]
+      ],
+      "role": "required signing/session prerequisite"
     },
     {
       "name": "SPONSOR_PRIVATE_KEY",
       "namedInRunbook": false,
       "sourceLocations": [
         "supabase/functions/guest-drip/index.ts:19"
-      ]
+      ],
+      "role": "optional dedicated sponsor; voucher signer fallback"
     },
     {
       "name": "GAME_SEED_SECRET",
@@ -44,7 +47,8 @@
       "sourceLocations": [
         "supabase/functions/_shared/game-server.ts:152",
         "supabase/functions/_shared/v2/server.ts:69"
-      ]
+      ],
+      "role": "optional dedicated seed; JWT fallback"
     }
   ],
   "observedConsequence": "Source guest-drip returns503 without sponsor or voucher signer; JWT auth wiring requires configured secret. This static audit does not assert hosted secrets are absent.",
