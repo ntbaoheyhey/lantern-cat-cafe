@@ -2,7 +2,7 @@
 I-A DONE/REPEAT: v5-m1.2=8ff1f1d4f; all42exactREADY merged; typecheck0/web2902/root5202/build0; I-C.md records honest remaining timing/byte debt. Repeat on newREADY.
 I-B OPEN: cold wave1/wave3/boss<=8,000,000B + before/after sheets. Current88bd85cb8 8.743/8.949/8.819MB fails; AGS residual packs REQ09:03,AGV approved12 derivatives REQ08:47.
 I-C ACTIVE: routing+receipt mount pass. Practice10.382s but empty receipt; real patrol exceeds30s at1x/3x. Fix practice result, RPC sign-in classification; desktop1280x720 only.
-I-D OPEN: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. R7 UI done; desktop presentation proof pending,kit4tests+Anvilpass; H2-F2/H7 remain.
+I-D OPEN: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
 I-E OPEN afterI-A..C: production preview,3x30s films wave1/wave3/boss+contact sheets,REVIEW-VI; refresh meaningful tags.
 I-F OPEN: judge README/ARCHITECTURE with verified code/chain facts; AGS drafts; verify current links before applying stale blanket rewrite.
 I-G OPEN: desktop QA REQs severity-first; maintain full suite after fixes.

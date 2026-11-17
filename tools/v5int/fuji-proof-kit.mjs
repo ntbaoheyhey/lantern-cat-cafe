@@ -27,7 +27,7 @@ export function publicConfig(env){
   return {rpcUrl:env.PROOF_RPC_URL,dripUrl:env.PROOF_DRIP_URL,guest:env.PROOF_GUEST_ADDRESS,token:env.PROOF_GUEST_TOKEN};
 }
 
-export function fundingProof({hash,guest,tx,receipt,confirmationMs,local}){
+export function fundingProof({hash,guest,tx,receipt,confirmationMs,observationMs,local}){
   requireProof(hashPattern.test(hash)&&address.test(guest),'Invalid proof identity.');
   requireProof(tx&&receipt&&equal(tx.hash,hash)&&equal(receipt.transactionHash,hash),'Transaction hash mismatch.');
   requireProof(receipt.status==='0x1','Funding transaction did not succeed.');
@@ -35,10 +35,13 @@ export function fundingProof({hash,guest,tx,receipt,confirmationMs,local}){
   requireProof(/^0x[\da-f]+$/i.test(tx.value??'')&&BigInt(tx.value)===FUNDING_WEI,'Funding amount mismatch.');
   requireProof(['gasUsed','effectiveGasPrice','blockNumber'].every(key=>/^0x[\da-f]+$/i.test(receipt[key]??'')),'Incomplete receipt fee or block.');
   const fee=BigInt(receipt.gasUsed)*BigInt(receipt.effectiveGasPrice);
-  requireProof(BigInt(receipt.gasUsed)>0n&&Number.isFinite(confirmationMs)&&confirmationMs>=0,'Incomplete receipt timing or gas.');
+  const timed=Number.isFinite(confirmationMs)&&confirmationMs>=0;
+  requireProof(BigInt(receipt.gasUsed)>0n&&(!local||timed)&&(confirmationMs==null||timed),'Incomplete receipt timing or gas.');
+  requireProof(observationMs===undefined||Number.isFinite(observationMs)&&observationMs>=0,'Invalid observation timing.');
   return {kind:'sponsored guest funding',network:local?'local Anvil':'Avalanche Fuji',chainId:43113,hash,guest,payer:receipt.from,
     fundingWei:FUNDING_WEI.toString(),feeWei:fee.toString(),feeAvax:decimal(fee),block:BigInt(receipt.blockNumber).toString(),
-    confirmationMs:Math.round(confirmationMs),explorer:local?null:`https://testnet.snowtrace.io/tx/${hash}`,
+    confirmationMs:timed?Math.round(confirmationMs):null,timingSource:timed?(local?'local submission to receipt':'funding service'):'unavailable',
+    ...(observationMs===undefined?{}:{observationMs:Math.round(observationMs)}),explorer:local?null:`https://testnet.snowtrace.io/tx/${hash}`,
     scope:local?'Local funding only; not a public Fuji or full game journey proof.':'Confirmed guest funding only; not a mint or full game journey proof.'};
 }
 
@@ -54,11 +57,17 @@ export function rpcClient(url){
 
 export async function collectProof({rpc,guest,submit,local}){
   requireProof(BigInt(await rpc('eth_chainId'))===43113n,'Expected Fuji chain ID 43113.');
-  const start=performance.now(),hash=await submit();requireProof(hashPattern.test(hash),'Funding service did not return a transaction hash.');
+  const start=performance.now(),submission=await submit(),hash=typeof submission==='string'?submission:submission?.hash;
+  requireProof(hashPattern.test(hash),'Funding service did not return a transaction hash.');
   const deadline=performance.now()+45_000;
   while(performance.now()<deadline){
     const receipt=await rpc('eth_getTransactionReceipt',[hash]);
-    if(receipt)return fundingProof({hash,guest,receipt,tx:await rpc('eth_getTransactionByHash',[hash]),confirmationMs:performance.now()-start,local});
+    if(receipt){
+      const tx=await rpc('eth_getTransactionByHash',[hash]),observationMs=performance.now()-start;
+      // A repeated drip request can return an old confirmed hash. Fetch latency
+      // is not that transaction's confirmation time.
+      return fundingProof({hash,guest,receipt,tx,observationMs,confirmationMs:local?observationMs:submission?.confirmationMs??null,local});
+    }
     await sleep(500);
   }
   throw new Error('Funding confirmation timed out. No confirmed proof was produced.');
@@ -69,7 +78,8 @@ async function publicProof(config){
     let response;try{response=await fetch(config.dripUrl,{method:'POST',redirect:'error',headers:{'content-type':'application/json',authorization:`Bearer ${config.token}`},body:'{}',signal:AbortSignal.timeout(25_000)});}catch{throw new Error('Guest funding service unavailable.');}
     requireProof(response.ok,'Guest funding request failed. Check the guest session and sponsor budget.');
     let body;try{body=await response.json();}catch{throw new Error('Guest funding response is invalid.');}
-    requireProof(['pending','confirmed'].includes(body.status),'Guest funding was not accepted.');return body.txHash;
+    requireProof(['pending','confirmed'].includes(body.status),'Guest funding was not accepted.');
+    return {hash:body.txHash,confirmationMs:Number.isFinite(body.confirmationMs)&&body.confirmationMs>=0?body.confirmationMs:null};
   }});
 }
 
