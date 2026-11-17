@@ -5,7 +5,7 @@ import { artPropsA6 } from '../ui-v3/art-a6';
 import { FormationToolA6 } from '../ui-v3/FormationToolA6';
 import { suggestedTeamsA6, MODE_TEAMS_A6 } from '../ui-v3/formation-a6';
 import { stageLayoutC2, SLOTS_C2 } from './layout-c2';
-import cafeUrl from '../../../../../../assets/cardrpg-look/stage/painted-cafe-c11-v1.webp?url';
+import {stagePaintingUrl as cafeUrl} from '../spine/stage-image-loader';
 import { cafePainting, formationPaintingC2 } from '../spine/stage-painting';
 import './formation-c2.css';
 import {DropOddsC2} from '../ui-v3/OddsC2';

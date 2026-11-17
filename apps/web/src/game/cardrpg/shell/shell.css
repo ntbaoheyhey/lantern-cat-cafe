@@ -108,3 +108,37 @@ dialog.b-modal::backdrop,dialog.b-page::backdrop{background:#0e0a1bd9;backdrop-f
  .b-landing .b-live{flex-wrap:wrap}
  .b-landing .b-live>.b-index-credit{flex-basis:100%}
 }
+@media (max-width: 700px) {
+  .uv-app .uv-shell .uv-dock {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 16px 18px;
+  }
+  .uv-app .uv-shell .uv-dock nav {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .uv-app .uv-shell .uv-dock nav button { flex: none; }
+  .uv-app .uv-shell .uv-patrol-group {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    min-width: 0;
+  }
+  .uv-app .uv-shell .uv-map-button {
+    position: static;
+    flex: 0 0 44px;
+    padding: 5px;
+  }
+  .uv-app .uv-shell .uv-patrol {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    min-height: 72px;
+    font-size: 25px;
+  }
+  .uv-app .uv-shell .uv-patrol > span { min-width: 0; }
+}
