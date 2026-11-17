@@ -1,7 +1,7 @@
 /** Onset-aligned production rig review; deterministic stills, never gameplay footage. */
 import assert from 'node:assert/strict';
 import {chromium,config,openFixture,runtimeEvidence} from './production-fixture.mjs';
-import {loadRules} from '../cardrpg-big/a4-load.mjs';
+import {fidgetStart} from '../../apps/web/src/game/rig/secondary-motion.ts';
 import {mkdir,writeFile,access} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {createRequire} from 'node:module';
@@ -11,7 +11,6 @@ assert(/^[a-z0-9-]+$/.test(label??''));
 const out=resolve(root,'work/v5/CXI/face',label),req=createRequire(resolve(root,'apps/web/package.json')),sharp=req('sharp');
 try{await access(out);throw new Error('Use a fresh evidence label');}catch(e){if(e.code!=='ENOENT')throw e;}
 await mkdir(out,{recursive:true});
-const modules=await loadRules(),{fidgetStart}=await modules.load('apps/web/src/game/rig/secondary-motion.ts');
 const report={utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),viewport:{width:1280,height:720},method:'Official boss fixture at exact production judge URL; first visible seeded gesture per hero, sampled at0/200/400/600ms. Phase banner suppressed only in this paused rig review. Head crops form four rows, Mochi/Soot/Clover/Panko. Not real-time gameplay footage.',rows:[],complete:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
