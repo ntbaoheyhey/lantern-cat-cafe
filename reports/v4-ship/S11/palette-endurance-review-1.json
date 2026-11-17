@@ -1,0 +1,182 @@
+{
+  "at": "2026-11-17T00:13:04.794Z",
+  "learn": "reports/v4-ship/LEARN/S11-audio-delivery.md",
+  "pass": true,
+  "harness": {
+    "path": "tools/v4ship-lab/audio/palette-endurance-review.mjs",
+    "sha256": "92b36670982959f82b2a1c46751537c9c36b5b7261b18a3a91adc152bb0bf3a3"
+  },
+  "helpers": [
+    {
+      "path": "tools/v4ship-lab/audio/duration.mjs",
+      "sha256": "3a339985e8277aef1f881293f18685c775ace46948e30c02fd76d4012e65b43a"
+    },
+    {
+      "path": "scripts/audio/runtime-signature.mjs",
+      "sha256": "da06c83f1d2e7762482b9cd0f0e030ff7d1d51d78f9b3ef108a985c5a119ca75"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/validate.mjs",
+      "sha256": "3bd32ef187b8c0df90dc951ab6432ddc0f610cd4b2d455c9acf9485b65dd7232"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S5/palette-endurance-1/check.json",
+      "sha256": "b3d912e0afc6eb90dcd2f4fa8786524da45ac984e77b2c2b1adf93142dcd7da7"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-endurance-1/validation.json",
+      "sha256": "974abacb0f492d6d682cda0a21c38b588ebd4650b05e3b7948c0a73f48582345"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-endurance-1/boss-events.json.gz",
+      "sha256": "01c217e839e20abf1a5c507af4a2533d25ce90069ea434ca05e5bca67647cbb2"
+    },
+    {
+      "path": "reports/v4-ship/S5/ranged-endurance-1/check.json",
+      "sha256": "ee5b62eff13de9bea3e300bb6a70d64035a98d135c642e5fe219146f0053ac3b"
+    },
+    {
+      "path": "reports/v4-ship/S5/ranged-endurance-1/validation.json",
+      "sha256": "8618e4304ade98976c4bcc2fe92194a0ce41d6d9a96d682591c12112846be957"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-endurance-regression-1/check.json",
+      "sha256": "eaa0b958d4dca26014cadbb3eb0b8bf20e6812bfa384ee07129e99658821e0de"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-endurance-regression-1/log.jsonl.gz",
+      "sha256": "29e5601976aae5b509ed629892652f73ecb099c36a4b3afeabbebe8b2b53d9a5"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-endurance-regression-1/parity-probe.json",
+      "sha256": "ecbac9ca569f20b0c4c47097ccdeb4ff7504b8199ec7299656f69e5f78ff18da"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-residual-regression-1/log.jsonl.gz",
+      "sha256": "3484967d21f09e8cfacab2460265f321ae8a4b647b96d09aab69b10a857e2a02"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-residual-regression-1/parity-probe.json",
+      "sha256": "680c48f66d8cc37c47997a04264ce9fb05af04b8c7088132fec23405e0ad3b1c"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-review-1.json",
+      "sha256": "c602d514da56deb2fff9cf0f764ff310063e516ad458c49b4641f3923489a949"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-9.json",
+      "sha256": "fb69385f2ff4406b1b586defa7da247c5c1278db82e039878da326ac7d9d7d41"
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-journey-10.json",
+      "sha256": "1c4b66ae6b6b176cbd906efbcefa13cc08da5f9831593917d2bd97818c1c760a"
+    }
+  ],
+  "runtime": {
+    "sourceCommit": "208805af81dc6ae507fbb3f82945e4993f2d8739",
+    "files": 234,
+    "allCurrentAndCommittedHashesMatch": true
+  },
+  "capture": {
+    "path": "work/v4ship-audio/palette-endurance-1/boss.webm",
+    "bytes": 29028456,
+    "sha256": "ffe374b20097e535ad3464360779ac3d88cede4f2e1b71fd1a375938196ba1fc"
+  },
+  "duration": {
+    "wallSeconds": 1801.2650001049042,
+    "method": "Decoded frame sample count and timestamp span",
+    "sampleRate": 48000,
+    "frames": 30019,
+    "encodedSeconds": 1801.14,
+    "timestampSpanSeconds": 1801.167,
+    "headerSeconds": null,
+    "maximumTimestampGapMs": 36.000000000001364,
+    "minimumTimestampGapMs": -3.000000000156433,
+    "restarts": 18
+  },
+  "sourceStarts": 8015,
+  "maxStartsPer100ms": 6,
+  "rangedPaletteStarts": [
+    {
+      "pack": "v4-ranged-ember",
+      "starts": 167
+    },
+    {
+      "pack": "v4-ranged-heavy",
+      "starts": 406
+    }
+  ],
+  "duck": {
+    "heldSamples": 21440,
+    "minDb": -7.999999988978489,
+    "maxDb": -7.999999988978489,
+    "recoverySamples": 27449,
+    "minRecovery": 1,
+    "duckPass": true,
+    "recoveryPass": true
+  },
+  "voiceInterruptions": 0,
+  "errors": [],
+  "maximumTelemetryGapMs": 136,
+  "mix": {
+    "loudnorm": {
+      "lufs": -17,
+      "lra": 8.9,
+      "truePeakDbTP": -1.76
+    },
+    "ebur128": {
+      "lufs": -17,
+      "lra": 8.9,
+      "truePeakDbTP": -1.8,
+      "seconds": 6.667839,
+      "method": "FFmpeg ebur128 true-peak analysis; unmodified recorded input"
+    }
+  },
+  "estimatedOnset": {
+    "count": 4044,
+    "min": 27.91099999868311,
+    "p95": 33.059333332581446,
+    "max": 33.37833333335584,
+    "outside33ms": 228,
+    "physicalMeasurement": false
+  },
+  "historicalComparison": {
+    "sourceCommit": "608b7b9864f308716e499e5379958a9fc10e9756",
+    "currentRuntimeValidation": false,
+    "wallSeconds": 1801.2109999656677,
+    "sourceStarts": 8012,
+    "lufs": -17,
+    "lra": 8.9,
+    "truePeakDbTP": -1.74,
+    "causalPaletteEffectClaimed": false
+  },
+  "regression": {
+    "sameSevenArtFailures": true,
+    "webSummary": [
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+      "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+      "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+      "Test Files  2 failed | 320 passed (322)",
+      "Tests  7 failed | 2697 passed (2704)"
+    ],
+    "parityRowsUnchanged": true,
+    "gRegPass": false
+  },
+  "continuousCurrentRuntime30Minutes": true,
+  "physicalAudibleOnsetVerified": false,
+  "humanListeningVerified": false,
+  "currentRepresentativeSceneCoverageVerified": false,
+  "overallAudioGatePass": false,
+  "limits": [
+    "Seeded fixture restarts in one browser context; actual production semantics are separately bound to journeys9/10.",
+    "Source telemetry and output timestamps are not physical audible onset or listening proof.",
+    "Historical monolith mix differs in random takes and runtime; no causal perceptual comparison.",
+    "Current per-scene range, recognition, complete weapon coverage and the8MB production transfer gate remain open."
+  ]
+}
