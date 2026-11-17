@@ -199,12 +199,12 @@
   },
   "enemy-death-dissolve": {
     "file": "enemy-death-dissolve.webp",
-    "cols": 1,
-    "rows": 1,
-    "frameMs": 50,
-    "blend": "normal",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 45,
+    "blend": "add",
     "anchor": "target",
-    "sizePx": 512
+    "sizePx": 256
   },
   "enemy-hit-spark-1": {
     "file": "enemy-hit-spark-1.webp",
@@ -277,6 +277,42 @@
     "blend": "add",
     "anchor": "target",
     "sizePx": 256
+  },
+  "icon-status-burn": {
+    "file": "icon-status-burn.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "icon-status-poison": {
+    "file": "icon-status-poison.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "icon-status-slow": {
+    "file": "icon-status-slow.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "icon-status-stun": {
+    "file": "icon-status-stun.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 128
   },
   "impact-burst-gen": {
     "anchor": "target",

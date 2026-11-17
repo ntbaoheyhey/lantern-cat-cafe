@@ -242,6 +242,9 @@ const sets = {
   ],
   'victory': [
     'victory-burst'
+  ],
+  'boss-intro': [
+    'boss-intro-nameplate-frame', 'boss-intro-entrance-dust'
   ]
 };
 
