@@ -3,6 +3,7 @@ import {createRequire} from 'node:module';
 import {mkdirSync,existsSync,writeFileSync,readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {loadavg} from 'node:os';
+import {requestAllowed} from './network-policy.mjs';
 
 const qa=resolve(import.meta.dirname,'../..');
 const source='/Users/bao/taskbar-hero-qa-clone';
@@ -11,8 +12,7 @@ const {chromium}=require('@playwright/test');
 const {decodeFunctionData,parseEther}=require('viem');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const publicUrl=url=>{try{const u=new URL(url);return u.origin+u.pathname;}catch{return 'invalid-url';}};
-const safeError=e=>String(e?.message??e).replace(/0x[0-9a-f]{64}/gi,'[64hex omitted]').replace(/Bearer\s+\S+/gi,'Bearer [omitted]').slice(0,500);
-const readMethods=new Set(['eth_chainId','eth_blockNumber','eth_call','eth_getBalance','eth_getCode','eth_getLogs','eth_getTransactionByHash','eth_getTransactionReceipt','eth_getTransactionCount','eth_gasPrice','eth_feeHistory','eth_estimateGas','eth_getBlockByNumber','eth_getBlockByHash','net_version','web3_clientVersion']);
+const safeError=e=>String(e?.message??e).replace(/0x[0-9a-f]{64}/gi,'[64hex omitted]').replace(/Bearer\s+\S+/gi,'Bearer [omitted]').replace(/\beyJ[\w-]+\.[\w-]+\.[\w-]+\b/g,'[JWT omitted]').slice(0,500);
 
 export async function checkExplorer(url,{local=false,fetcher=fetch}={}){
   let u;try{u=new URL(url);}catch{return {url,status:'FAIL',reason:'invalid URL'};}
@@ -95,12 +95,8 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
       try{
         if(local&&allowGuestTx){await fixture('begin');isolated=true;}
         await context.route('**/*',async route=>{
-          const request=route.request(),u=new URL(request.url());let permit=false;
-          if(['data:','blob:'].includes(u.protocol))permit=true;
-          else if(local)permit=(['127.0.0.1','localhost'].includes(u.hostname)&&['6200','6201','6202','6203'].includes(u.port))||(request.method()==='GET'&&['fonts.googleapis.com','fonts.gstatic.com'].includes(u.hostname));
-          else if(['GET','HEAD','OPTIONS'].includes(request.method()))permit=true;
-          else if(allowGuestTx)permit=true;
-          else{try{const data=request.postDataJSON();const batch=Array.isArray(data)?data:[data];permit=batch.every(x=>readMethods.has(x.method));}catch{permit=false;}}
+          const request=route.request();
+          const permit=requestAllowed({url:request.url(),method:request.method(),body:request.postData(),local,allowGuestTx});
           if(!permit){row.blockedRequests.push({url:publicUrl(request.url()),method:request.method()});await route.abort();}else await route.continue();
         });
         await page.addInitScript(()=>{
