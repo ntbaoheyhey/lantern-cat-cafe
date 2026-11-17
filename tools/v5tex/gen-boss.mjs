@@ -56,7 +56,7 @@ console.log('Building yarn-giant-charge-swirl flipbook...');
 
     // First, crop and rotate a section from the raw generated yarn vortex
     const baseFrame = path.join(framesDir, `base_${f}.png`);
-    run(`magick "${rawYarnVortex}" -resize ${sz}x${sz} -gravity center -crop 256x256+0+0 +repage -rotate ${rot} -gravity center -crop 256x256+0+0 +repage -black-threshold 6% "${baseFrame}"`);
+    run(`magick "${rawYarnVortex}" -resize ${sz}x${sz} -gravity center -crop 256x256+0+0 +repage -background black -rotate ${rot} -gravity center -crop 256x256+0+0 +repage -black-threshold 6% "${baseFrame}"`);
 
     // Draw glowing woolen thread spirals and intensifying white core over base
     const coreRad = Math.round(10 + progress * 24);

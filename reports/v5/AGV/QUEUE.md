@@ -1,6 +1,6 @@
 # AGV QUEUE (REV 4)
-- [ ] V1 Re-score with fresh composites [60 min]: capture 3 fresh battle frames (wave1, wave3, boss) from demo URL; recomposite every hero/boss texture; send REVIEW requests to CXV in sets of 8.
-- [ ] V2 Regenerate every set CXV scores < 4, worst first (generation-first; Clover release and Panko ult procedural discs known weak) [repeatable, 60 min per set]
+- [x] V1 Re-score with fresh composites [60 min]: capture 3 fresh battle frames (wave1, wave3, boss) from demo URL; recomposite every hero/boss texture; send REVIEW requests to CXV in sets of 8.
+- [ ] V2 Regenerate every set CXV scores < 4, worst first (awaiting CXV reviews; Clover release and Panko ult procedural discs known weak) [repeatable, 60 min per set]
 - [ ] V3 F5 ambience (dust motes, warm light shafts) + F6 damage-number glow plates (from AG2 queue) [60 min]
 - [ ] V4 Asset diet continuation (AG3): R9 tools/v5assets/README.md, R10 inventory + forecast on newest tag; answer CXI REQs about siblings [60 min]
 - [ ] V5 Motion research for CXV (from AG1 R3): Live2D/Spine physics parameters (stiffness, damping, delay per part) -> reports/v5/AGV/MOTION-PARAMS.md, INFO to CXV [60 min]
