@@ -117,3 +117,52 @@ Integrated loudness target: -18.0 LUFS +/- 2 LU. Measured spread: -19.2 to -16.7
   - Combined Total: 248,294 bytes (242.5 KB), achieving the <= 300 KB budget requirement (92% reduction from the 3 MB monolith).
 - Manifest: All 36 variants mapped into `apps/web/public/audio/v5/manifest.json`.
 - Mapping table: `reports/v5/AG4/U2-mapping.csv` and `reports/v5/AG4/U2-mapping.json`.
+
+## U3 Enemy, Boss & UI Set (7 Cues)
+Command: `node tools/v5audio/render.mjs --enemy-ui`
+All cues synthesized deterministically with WebM Opus (48kHz mono, ~48kbps) + AAC M4A fallbacks.
+Integrated loudness target: -18.0 LUFS +/- 2 LU. Measured spread: -19.5 to -17.1 LUFS (2.4 LU spread). True peak <= -2.0 dBFS.
+
+1. `enemy.hit.light` (`enemy-hit-light`):
+   - Transient: `anoisesrc=c=white:r=48000:d=0.012,highpass=f=2800,volume=0.8,afade=t=out:st=0:d=0.012`
+   - Body: `aevalsrc=exprs='0.85*sin(2*PI*(160-70*(t/0.06))*t)*exp(-t/0.02)':s=48000:d=0.06` (delay 6ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.18,lowpass=f=800,volume=0.22,afade=t=out:st=0.02:d=0.16` (delay 12ms)
+   - Measured: -19.5 LUFS, peak -3.3 dBFS, size 2,837 B, dur 0.29s.
+
+2. `enemy.hit.medium` (`enemy-hit-medium`):
+   - Transient: `aevalsrc=exprs='0.9*sin(2*PI*(3600-2000*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(130-55*(t/0.10))*t)*exp(-t/0.035)':s=48000:d=0.10` (delay 8ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.28,bandpass=f=600:w=400,volume=0.28,afade=t=out:st=0.03:d=0.25` (delay 15ms)
+   - Measured: -18.3 LUFS, peak -2.3 dBFS, size 2,488 B, dur 0.39s.
+
+3. `enemy.hit.heavy` (`enemy-hit-heavy`):
+   - Transient: `aevalsrc=exprs='0.95*(sin(2*PI*2400*t)+0.6*sin(2*PI*4800*t))*exp(-t/0.005)':s=48000:d=0.018`
+   - Body: `aevalsrc=exprs='1.0*sin(2*PI*(100-40*(t/0.18))*t)*exp(-t/0.06)':s=48000:d=0.18` (delay 10ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.40,lowpass=f=450,volume=0.35,afade=t=out:st=0.05:d=0.35` (delay 20ms)
+   - Measured: -18.5 LUFS, peak -2.3 dBFS, size 3,389 B, dur 0.53s.
+
+4. `enemy.death.small` (`enemy-death-small`):
+   - Transient: `anoisesrc=c=pink:r=48000:d=0.05,bandpass=f=1800:w=1200,afade=t=out:st=0:d=0.05,volume=0.85`
+   - Body: `aevalsrc=exprs='0.85*sin(2*PI*(140-50*(t/0.14))*t)*exp(-t/0.05)':s=48000:d=0.14` (delay 15ms)
+   - Tail: `anoisesrc=c=white:r=48000:d=0.50,bandpass=f=1200:w=800,afade=t=out:st=0.05:d=0.45,volume=0.30` (delay 30ms)
+   - Measured: -18.2 LUFS, peak -2.0 dBFS, size 3,828 B, dur 0.66s.
+
+5. `enemy.death.boss` (`enemy-death-boss`):
+   - Transient: `aevalsrc=exprs='0.85*(sin(2*PI*2200*t)+0.6*sin(2*PI*3300*t)+0.4*sin(2*PI*5500*t))*exp(-t/0.03)':s=48000:d=0.08`
+   - Body: `aevalsrc=exprs='1.0*sin(2*PI*(85-25*(t/0.35))*t)*exp(-t/0.12)':s=48000:d=0.35` (delay 30ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.85,lowpass=f=350,volume=0.38,afade=t=out:st=0.10:d=0.75` (delay 60ms)
+   - Measured: -17.7 LUFS, peak -2.0 dBFS, size 6,760 B, dur 1.16s.
+
+6. `boss.yarn-giant.ultimate` (`boss-yarn-giant-ultimate`):
+   - Anticipation: `anoisesrc=c=pink:r=48000:d=0.45,bandpass=f=900:w=600,afade=t=in:st=0:d=0.40,afade=t=out:st=0.40:d=0.05,volume=0.85`
+   - Transient: `aevalsrc=exprs='0.95*sin(2*PI*(3500-2200*(t/0.02))*t)*exp(-t/0.005)':s=48000:d=0.02` (delay 450ms)
+   - Body: `aevalsrc=exprs='1.0*sin(2*PI*(80-28*(t/0.30))*t)*exp(-t/0.10)':s=48000:d=0.30` (delay 450ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.65,lowpass=f=380,volume=0.36,afade=t=out:st=0.08:d=0.57` (delay 480ms)
+   - Measured: -17.1 LUFS, peak -2.3 dBFS, size 6,765 B, dur 1.19s.
+
+7. `ui.receipt.confirmed` (`ui-receipt-confirmed`):
+   - Harmonic chord cascade (G5, B5, D6, G6).
+   - Transient: `aevalsrc=exprs='0.7*(0.9*sin(2*PI*783.99*t)+0.8*sin(2*PI*987.77*t)+0.7*sin(2*PI*1174.66*t)+0.6*sin(2*PI*1567.98*t))*exp(-t/0.22)':s=48000:d=0.78`
+   - Body: `aevalsrc=exprs='0.5*sin(2*PI*392*t)*exp(-t/0.25)':s=48000:d=0.60` (delay 10ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.70,bandpass=f=3200:w=1200,volume=0.18,afade=t=out:st=0.05:d=0.65` (delay 20ms)
+   - Measured: -17.7 LUFS, peak -2.1 dBFS, size 8,145 B, dur 0.81s.

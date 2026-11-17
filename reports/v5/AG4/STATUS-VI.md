@@ -1,5 +1,6 @@
 # Trạng thái AG4 (Âm thanh V5)
-- Đang chạy: U3 Bộ âm thanh quái, boss & UI (hit reactions x3, death x2, yarn-giant ult, receipt chime).
-- Đã xong: S1 Setup, U0 Learn/Calibration, U1 Hero skills (12 cues), U2 Split ranged-impacts (36 cues, 248KB <= 300KB).
-- Tiếp theo: Thiết kế công thức synth U3 trong render.mjs, đo loudness, xuất opus/m4a và cập nhật manifest.
-- Kế hoạch: U4 (revisions theo phản hồi CXI/AG1).
+- Đang chạy: U4 Revisions & R1 Variations (2 takes cho các cue thường gặp).
+- Đã xong: S1 Setup, U0 Learn/Calibration, U1 Hero skills (12 cues), U2 Split ranged (36 cues), U3 Enemy/Boss/UI (7 cues).
+- Điểm chất lượng: Tất cả các file đạt S1-S5 >= 4 trên SCORES.md.
+- Tiếp theo: Kiểm tra INBOX-AG4 cho REQ, triển khai R1 tạo biến thể pitch +/-3%.
+- Kế hoạch: R2 Ambience loops, R3 Full UI set, R4 Stingers, R5 Chain moments.

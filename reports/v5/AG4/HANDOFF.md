@@ -1,7 +1,7 @@
 # AG4 Handoff
-ACTIVE: U3 Enemy + boss + UI set
-NEXT 1: node tools/v5audio/render.mjs --enemy-ui
-NEXT 2: U4 Revisions (INBOX-AG4 requests, gain tuning)
-NEXT 3: BACKLOG variations & diet
-LAST_PUSHED_SHA: 2b540fc15
-LAST_REREAD_UTC: 2026-11-17T05:42:00Z
+ACTIVE: U4 Revisions & R1 Variations
+NEXT 1: node tools/v5audio/render.mjs --variations
+NEXT 2: R2 Ambience loops (cosy workshop and battle bed <= 150KB)
+NEXT 3: R3 UI set (click, hover, confirm, cancel, card flip, coin, error)
+LAST_PUSHED_SHA: 009a82bee
+LAST_REREAD_UTC: 2026-11-17T05:46:00Z

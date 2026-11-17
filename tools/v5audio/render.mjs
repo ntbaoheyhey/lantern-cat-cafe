@@ -599,6 +599,183 @@ export function splitRangedImpacts() {
   return jsonReport;
 }
 
+
+
+
+/**
+ * U3: Enemy + Boss + UI Set Definitions (7 cues)
+ */
+export const ENEMY_UI_DEFINITIONS = [
+  // 1. Hit reactions x3
+  {
+    cueId: 'enemy.hit.light',
+    name: 'enemy-hit-light',
+    impactOffsetMs: 20,
+    durationSec: 0.28,
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.012,highpass=f=2800,volume=0.8,afade=t=out:st=0:d=0.012",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(160-70*(t/0.06))*t)*exp(-t/0.02)':s=48000:d=0.06",
+    bodyDelayMs: 6,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.18,lowpass=f=800,volume=0.22,afade=t=out:st=0.02:d=0.16",
+    tailDelayMs: 12,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.72
+  },
+  {
+    cueId: 'enemy.hit.medium',
+    name: 'enemy-hit-medium',
+    impactOffsetMs: 25,
+    durationSec: 0.38,
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*(3600-2000*(t/0.015))*t)*exp(-t/0.003)':s=48000:d=0.015",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(130-55*(t/0.10))*t)*exp(-t/0.035)':s=48000:d=0.10",
+    bodyDelayMs: 8,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.28,bandpass=f=600:w=400,volume=0.28,afade=t=out:st=0.03:d=0.25",
+    tailDelayMs: 15,
+    masterGain: 1.5,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'enemy.hit.heavy',
+    name: 'enemy-hit-heavy',
+    impactOffsetMs: 30,
+    durationSec: 0.52,
+    transientFilter: "aevalsrc=exprs='0.95*(sin(2*PI*2400*t)+0.6*sin(2*PI*4800*t))*exp(-t/0.005)':s=48000:d=0.018",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='1.0*sin(2*PI*(100-40*(t/0.18))*t)*exp(-t/0.06)':s=48000:d=0.18",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.40,lowpass=f=450,volume=0.35,afade=t=out:st=0.05:d=0.35",
+    tailDelayMs: 20,
+    masterGain: 1.4,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 2. Death x2
+  {
+    cueId: 'enemy.death.small',
+    name: 'enemy-death-small',
+    impactOffsetMs: 40,
+    durationSec: 0.65,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.05,bandpass=f=1800:w=1200,afade=t=out:st=0:d=0.05,volume=0.85",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.85*sin(2*PI*(140-50*(t/0.14))*t)*exp(-t/0.05)':s=48000:d=0.14",
+    bodyDelayMs: 15,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.50,bandpass=f=1200:w=800,afade=t=out:st=0.05:d=0.45,volume=0.30",
+    tailDelayMs: 30,
+    masterGain: 1.5,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'enemy.death.boss',
+    name: 'enemy-death-boss',
+    impactOffsetMs: 60,
+    durationSec: 1.15,
+    transientFilter: "aevalsrc=exprs='0.85*(sin(2*PI*2200*t)+0.6*sin(2*PI*3300*t)+0.4*sin(2*PI*5500*t))*exp(-t/0.03)':s=48000:d=0.08",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='1.0*sin(2*PI*(85-25*(t/0.35))*t)*exp(-t/0.12)':s=48000:d=0.35",
+    bodyDelayMs: 30,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.85,lowpass=f=350,volume=0.38,afade=t=out:st=0.10:d=0.75",
+    tailDelayMs: 60,
+    masterGain: 1.2,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 3. Yarn-Giant Ultimate
+  {
+    cueId: 'boss.yarn-giant.ultimate',
+    name: 'boss-yarn-giant-ultimate',
+    impactOffsetMs: 460,
+    durationSec: 1.18,
+    transientFilter: "anoisesrc=c=pink:r=48000:d=0.45,bandpass=f=900:w=600,afade=t=in:st=0:d=0.40,afade=t=out:st=0.40:d=0.05,volume=0.85",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='1.0*sin(2*PI*(80-28*(t/0.30))*t)*exp(-t/0.10)':s=48000:d=0.30",
+    bodyDelayMs: 450,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.65,lowpass=f=380,volume=0.36,afade=t=out:st=0.08:d=0.57",
+    tailDelayMs: 480,
+    masterGain: 1.3,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+
+  // 4. Receipt "chain confirmed" chime (soft, 0.8s)
+  {
+    cueId: 'ui.receipt.confirmed',
+    name: 'ui-receipt-confirmed',
+    impactOffsetMs: 15,
+    durationSec: 0.80,
+    transientFilter: "aevalsrc=exprs='0.7*(0.9*sin(2*PI*783.99*t)+0.8*sin(2*PI*987.77*t)+0.7*sin(2*PI*1174.66*t)+0.6*sin(2*PI*1567.98*t))*exp(-t/0.22)':s=48000:d=0.78",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.5*sin(2*PI*392*t)*exp(-t/0.25)':s=48000:d=0.60",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.70,bandpass=f=3200:w=1200,volume=0.18,afade=t=out:st=0.05:d=0.65",
+    tailDelayMs: 20,
+    masterGain: 0.85,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  }
+];
+
+export function renderEnemyAndUi() {
+  console.log(`Rendering ${ENEMY_UI_DEFINITIONS.length} Enemy/Boss/UI cues (U3)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of ENEMY_UI_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId, impactOffsetMs: def.impactOffsetMs });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      gainDb: 0,
+      impactOffsetMs: def.impactOffsetMs
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  // Write reports/v5/AG4/U3-loudness.csv
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,impactOffsetMs'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},${r.impactOffsetMs}`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'U3-loudness.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+  console.log(`Wrote loudness report: ${csvPath}`);
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`U3 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
+
 // CLI dispatcher
 const arg = process.argv[2];
 if (arg === '--calibrate') {
@@ -607,6 +784,13 @@ if (arg === '--calibrate') {
   renderHeroSkills();
 } else if (arg === '--split-ranged') {
   splitRangedImpacts();
+} else if (arg === '--enemy-ui') {
+  renderEnemyAndUi();
+} else if (arg === '--all') {
+  renderCalibration();
+  renderHeroSkills();
+  splitRangedImpacts();
+  renderEnemyAndUi();
 } else if (arg === '--help' || !arg) {
   console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --all]');
 }
