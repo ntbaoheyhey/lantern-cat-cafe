@@ -399,3 +399,8 @@ dialog.chain-panel.b2-wallet>button{display:flex;flex-direction:column;gap:6px;m
  }
  .uv-app[data-a6=true] .uv-shell .c2-result .a6-result-empty p {font-size:18px;line-height:1.35;text-align:left}
 }
+
+/* Offline results link public deployment evidence without inventing a receipt. */
+.uv-app .a6-deployment-evidence{display:grid;gap:3px;margin:12px 0 0;padding-top:10px;border-top:1px solid #b78c5770;text-align:center;font-size:13px}
+.uv-app .a6-deployment-evidence small{color:#dfd2bd}
+.uv-app .a6-deployment-evidence a{color:#ffdb8a;text-decoration:underline;text-underline-offset:3px}

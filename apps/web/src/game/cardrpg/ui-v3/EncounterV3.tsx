@@ -54,6 +54,10 @@ export function ResultV3({m}:{m:DepthModel}) {
 
 export function RouteV3({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
  const defaults=patrolDefaults(m.state),[chosen,setChosen]=useState<number|null>(null),band=Math.min(chosen??defaults.band,defaults.ceiling);
- if(R.gameplayA6(m.state))return m.state.run?.towerA6&&!m.state.run.complete?<TowerA6 m={m} onReturn={onReturn}/>:<CampaignA6 m={m}/>;
+ if(R.gameplayA6(m.state)){
+  if(m.tutorialBattle)return <section className="uv-detail a6-route-ready" aria-label="Practice route"><h2>Your practice battle is ready</h2><p>Meet your crew in preparation, then choose Fight. Your first chapter opens after practice.</p><button className="uv-fight" onClick={()=>onReturn?onReturn():m.go('prepare')}>Return to preparation</button></section>;
+  if(m.state.run?.towerA6&&!m.state.run.complete)return <TowerA6 m={m} onReturn={onReturn}/>;
+  return <>{m.battle&&!m.battle.result&&<section className="uv-detail a6-route-ready" aria-label="Battle ready"><h2>Your next battle is ready</h2><p>Return to your crew to choose Fight.</p><button className="uv-fight" onClick={()=>onReturn?onReturn():m.go('prepare')}>Return to preparation</button></section>}<CampaignA6 m={m}/></>;
+ }
  return <section aria-label="Route preview"><details className="uv-route-options" open={!m.state.run}><summary>Choose a route</summary><label>Challenge band <select value={band} aria-label="Challenge band" disabled={defaults.active} onChange={e=>setChosen(Number(e.target.value))}>{Array.from({length:defaults.ceiling},(_,i)=><option key={i} value={i+1}>Band {i+1}</option>)}</select></label><div className="uv-task-grid">{R.CHAPTERS.map(c=><button key={c.id} disabled={defaults.active||c.id>1&&!m.state.cleared.includes(c.id-1)} onClick={()=>{m.start(c.id,'campaign',band);}}><b>Explore {c.name}</b><small>{c.reward}</small></button>)}</div><div className="cr-actions"><button disabled={defaults.active} onClick={()=>m.start(Math.min(3,m.state.cleared.length+1),'daily')}>Start daily challenge</button><button disabled={defaults.active||!m.state.cleared.includes(3)} onClick={()=>m.start(1,'tower')}>Climb Tower · {m.state.towerBest}</button></div></details><Suspense fallback={<p>Opening the route…</p>}><RunMap m={m}/></Suspense></section>;
 }

@@ -6,6 +6,7 @@ import { DepthModel } from '../depth/model';
 import { CampaignA6 } from './CampaignA6';
 import { IdleChestA6 } from './IdleChestA6';
 import ShellV3 from './ShellV3';
+import {RouteV3} from './EncounterV3';
 
 const dialogMethods=['showModal','close']as const;
 const dialogDescriptors=dialogMethods.map(key=>Object.getOwnPropertyDescriptor(HTMLDialogElement.prototype,key));
@@ -93,6 +94,27 @@ it('opens preparation after choosing a stage from the home map button',async()=>
  fireEvent.click(stage!);
  expect(await screen.findByRole('button',{name:/^Fight/})).toBeTruthy();
  expect(m.screen).toBe('prepare');
+});
+
+it('returns from the practice route without starting a campaign under the lesson',async()=>{
+ vi.stubGlobal('ResizeObserver',class {observe(){}disconnect(){}});
+ const m=new DepthModel(true,true,true,true,true);m.tutorial();
+ const practice=m.tutorialBattle,before=R.exportSave(m.state);
+ function View(){useSyncExternalStore(m.subscribe,m.snapshot);return <ShellV3 m={m}>{null}</ShellV3>;}
+ render(<View/>);
+ await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Route',exact:true}));await vi.dynamicImportSettled();});
+ expect(screen.getByRole('region',{name:'Practice route'})).toBeTruthy();
+ expect(screen.queryByRole('button',{name:/Chapter 1/})).toBeNull();
+ fireEvent.click(screen.getByRole('button',{name:'Return to preparation'}));
+ expect(await screen.findByRole('button',{name:'Fight',exact:true})).toBeTruthy();
+ expect(m.tutorialBattle).toBe(practice);expect(R.exportSave(m.state)).toBe(before);
+});
+
+it('returns a pending campaign battle to preparation without replacing its state',()=>{
+ const m=new DepthModel(true,true,true,true,true);m.start(1);m.enter(R.availableNodes(m.state.run!)[0]!.id);m.go('hub');
+ const battle=m.battle,before=R.exportSave(m.state);render(<RouteV3 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Return to preparation'}));
+ expect(m.screen).toBe('prepare');expect(m.battle).toBe(battle);expect(R.exportSave(m.state)).toBe(before);
 });
 
 it('the scenic route keeps branch availability and earned stars tied to real nodes',()=>{
