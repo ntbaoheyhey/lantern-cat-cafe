@@ -8,6 +8,6 @@
 - [x] R1 pngquant / lossy-alpha variants for files where WebP saved < 30% [45 min]
 - [x] R2 AVIF siblings for the top 40 by size, with SSIM table; tell CXI which beat WebP by > 20% [60 min]
 - [x] R3 Distant-enemy variants at 0.75x for enemy rig pages (only if SSIM at display size >= 0.98) [60 min]
-- [ ] R4 Unused-image report: grep apps/web/src for each public image path; list never-referenced files with sizes for CXI (read only, no deletes) [45 min]
+- [x] R4 Unused-image report: grep apps/web/src for each public image path; list never-referenced files with sizes for CXI (read only, no deletes) [45 min]
 - [ ] R5 Duplicate-image report: identical hashes and near-duplicates (same dims, SSIM >= 0.995) [30 min]
 - [ ] R6 Landing/first-screen images: smallest acceptable versions of the first screen's images (LCP), with a montage [45 min]
