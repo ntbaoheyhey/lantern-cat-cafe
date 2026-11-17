@@ -1,0 +1,1234 @@
+{
+  "at": "2026-11-17T00:50:59.743507+00:00",
+  "learn": "reports/v4-ship/LEARN/S11-history-jpeg.md",
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/security/history-jpeg.py",
+      "sha256": "42f36a1b2986305604e5006b173ca6f950f083408d98a048d129d493f6d84445"
+    },
+    {
+      "path": "tools/v4ship-lab/security/jpeg_metadata.py",
+      "sha256": "41761042d7833f572e084dc4227478cbb281253a6fc3b31dda0a3ca2498690aa"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-png-1/check.json",
+      "sha256": "e44fc517e07912645490a1015bb5ff603cc8cc949ce11f9ba2aad5d18b2a36df"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-png-1/rows.json.gz",
+      "sha256": "7a18b2fe61f220a1a51b3b94d6f3c7ea88a18c6552039034ac3c510a71a5cb55"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-paths-1/inventory.json.gz",
+      "sha256": "4bc4c377d4e19ac68339c1282a1c46c8427654af474725a1fdb607e7bb41a624"
+    }
+  ],
+  "objects": [
+    {
+      "oid": "06c7d4698e28348e16bd769320c136fc2a4d50b2",
+      "sha256": "f5993f0010beb7bd8a79f95a9a96b4029947d130feb504211d3a5eb8efaa1939",
+      "bytes": 150269,
+      "inventoryIndices": [
+        74413
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/foes-fallback/yarn-impact.png",
+          "oid": "06c7d4698e28348e16bd769320c136fc2a4d50b2",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 150269
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 150269,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "efaa17b1eed023b976e6df0178812c91c219e1fc26d8680060f94c129248c430"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 30,
+            "payloadBytes": 26,
+            "fillBytes": 0,
+            "payloadSha256": "e9d11c6f6a1af115102a34029e6000e74193a1ac91e984296016bf3041650dcb"
+          },
+          {
+            "marker": "C4",
+            "offset": 207,
+            "bytes": 92,
+            "payloadBytes": 88,
+            "fillBytes": 0,
+            "payloadSha256": "9510141519170db6cf039bf4a27af40e926946c6b46a92cac654a5129b4c7594"
+          },
+          {
+            "marker": "C4",
+            "offset": 299,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "f15e036b4d86778f4fc4e27133eadf6879918d0f99a780aac60e104f0b2ae25d"
+          },
+          {
+            "marker": "C4",
+            "offset": 327,
+            "bytes": 54,
+            "payloadBytes": 50,
+            "fillBytes": 0,
+            "payloadSha256": "0eb9f038fe88a50b986933f9e9bfe987db80798c67c86b70c574cc4bb68a518a"
+          },
+          {
+            "marker": "DA",
+            "offset": 381,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 150267,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 395,
+            "bytes": 149872,
+            "sha256": "fde43b0eda667610fffcf9a746e1caa830b1f381d1c99c775b18fe9cad8bc640",
+            "stuffedPairs": 537,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 149872,
+        "frame": {
+          "width": 1440,
+          "height": 900,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "texts": []
+    },
+    {
+      "oid": "42758d57c89b4f37616e7db93c19bf318d87f6ba",
+      "sha256": "a7bf06c8ad359a693ac6cc55093fb7560d963cd44a3fd1ae775e46bcf7925de7",
+      "bytes": 150068,
+      "inventoryIndices": [
+        74411
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/foes-fallback/yarn-contact-after.png",
+          "oid": "42758d57c89b4f37616e7db93c19bf318d87f6ba",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 150068
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 150068,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "efaa17b1eed023b976e6df0178812c91c219e1fc26d8680060f94c129248c430"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 30,
+            "payloadBytes": 26,
+            "fillBytes": 0,
+            "payloadSha256": "e9d11c6f6a1af115102a34029e6000e74193a1ac91e984296016bf3041650dcb"
+          },
+          {
+            "marker": "C4",
+            "offset": 207,
+            "bytes": 94,
+            "payloadBytes": 90,
+            "fillBytes": 0,
+            "payloadSha256": "bb6de9dc6660d2030aab3e0a96fcb86bd2981a1200608848796dbfb1ca741c98"
+          },
+          {
+            "marker": "C4",
+            "offset": 301,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "f15e036b4d86778f4fc4e27133eadf6879918d0f99a780aac60e104f0b2ae25d"
+          },
+          {
+            "marker": "C4",
+            "offset": 329,
+            "bytes": 55,
+            "payloadBytes": 51,
+            "fillBytes": 0,
+            "payloadSha256": "879c506592be97b53d986654f2bfe54cf7513d916aba8d59c3cb098b3c15fb47"
+          },
+          {
+            "marker": "DA",
+            "offset": 384,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 150066,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 398,
+            "bytes": 149668,
+            "sha256": "8e262356be8737af50b8bd833b5e0a2f440a12f2799e3e7e0c0787d1ee0a17e0",
+            "stuffedPairs": 737,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 149668,
+        "frame": {
+          "width": 1440,
+          "height": 900,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "texts": []
+    },
+    {
+      "oid": "495dd25d39f1cb69be3e35441c1c2cd52cf365e0",
+      "sha256": "029626a857b4949139fbeb133474450abdf87625ca41c3595f3e576a755fb9c3",
+      "bytes": 83312,
+      "inventoryIndices": [
+        74608
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/roster/soot-export.png",
+          "oid": "495dd25d39f1cb69be3e35441c1c2cd52cf365e0",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 83312
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 83312,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "ff8de5e5e56031a48a150e5eecc1dd8893b43b5586c38da24f5c4e2b630eb944"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 30,
+            "payloadBytes": 26,
+            "fillBytes": 0,
+            "payloadSha256": "0ee94c900176aab74bd20f90cecf0b5bc57913353141ae143a42f7133927b562"
+          },
+          {
+            "marker": "C4",
+            "offset": 207,
+            "bytes": 82,
+            "payloadBytes": 78,
+            "fillBytes": 0,
+            "payloadSha256": "5fb36d8e27bed3245308ca2be01f422c21174b91ea9c2d7297bec3e2243b7675"
+          },
+          {
+            "marker": "C4",
+            "offset": 289,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "f15e036b4d86778f4fc4e27133eadf6879918d0f99a780aac60e104f0b2ae25d"
+          },
+          {
+            "marker": "C4",
+            "offset": 317,
+            "bytes": 51,
+            "payloadBytes": 47,
+            "fillBytes": 0,
+            "payloadSha256": "05a85d4039e06a2e9a4eec6831e11a5d83ad8cf005e9ec357cc9cd603d00c914"
+          },
+          {
+            "marker": "DA",
+            "offset": 368,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 83310,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 382,
+            "bytes": 82928,
+            "sha256": "8360874956e4be4c734cb1c87dbc93c1d0a327251fb52164873d6d06a151de47",
+            "stuffedPairs": 296,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 82928,
+        "frame": {
+          "width": 625,
+          "height": 1059,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 625,
+        "height": 1059
+      },
+      "texts": []
+    },
+    {
+      "oid": "7c753f9414265adb6b6109cc04ef7643bdc0095a",
+      "sha256": "b2f9552b0b3dd08342ec61e3de38b7fb4f4424027e40aa9ade0e06d417e87958",
+      "bytes": 154471,
+      "inventoryIndices": [
+        74401
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/foes-fallback/button-impact.png",
+          "oid": "7c753f9414265adb6b6109cc04ef7643bdc0095a",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 154471
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 154471,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "efaa17b1eed023b976e6df0178812c91c219e1fc26d8680060f94c129248c430"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 30,
+            "payloadBytes": 26,
+            "fillBytes": 0,
+            "payloadSha256": "da9cd3ee870c0a5638a164bf30cbcc2b1501674cdb1bc802229878f501c1fe39"
+          },
+          {
+            "marker": "C4",
+            "offset": 207,
+            "bytes": 93,
+            "payloadBytes": 89,
+            "fillBytes": 0,
+            "payloadSha256": "522836f10c0ba938268c24c7549400dc79d1e6eee32f94affa2835799ffbabad"
+          },
+          {
+            "marker": "C4",
+            "offset": 300,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "8e50efe25673330965ca9441120282081c820be9fbd9e0f7ffc315a3919de58e"
+          },
+          {
+            "marker": "C4",
+            "offset": 328,
+            "bytes": 58,
+            "payloadBytes": 54,
+            "fillBytes": 0,
+            "payloadSha256": "8a76a468f3990be71652498fc02d9e80ba6cf75149a165fe5ee781655bfab25d"
+          },
+          {
+            "marker": "DA",
+            "offset": 386,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 154469,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 400,
+            "bytes": 154069,
+            "sha256": "5350350bbc837d9c78810c438220e21e841e2798930ea316ba52dda985e7ef4d",
+            "stuffedPairs": 586,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 154069,
+        "frame": {
+          "width": 1440,
+          "height": 900,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "texts": []
+    },
+    {
+      "oid": "a0b8a0ea1b8c3a47ace6dfe73a44615f97c1f3cb",
+      "sha256": "11de7c4986538e7ca9c613bc41e4fe3bc09a1c18953d86cd7bf8a82c6b240bd0",
+      "bytes": 154064,
+      "inventoryIndices": [
+        74400
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/foes-fallback/button-idle.png",
+          "oid": "a0b8a0ea1b8c3a47ace6dfe73a44615f97c1f3cb",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 154064
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 154064,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "efaa17b1eed023b976e6df0178812c91c219e1fc26d8680060f94c129248c430"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 31,
+            "payloadBytes": 27,
+            "fillBytes": 0,
+            "payloadSha256": "468e98bfebea5144a458debd7aa50de801d299e649a98c4efa500e543084b065"
+          },
+          {
+            "marker": "C4",
+            "offset": 208,
+            "bytes": 98,
+            "payloadBytes": 94,
+            "fillBytes": 0,
+            "payloadSha256": "4ab15d62afa1d44a0e4f236054296b01a4b5ac66534a4f821cd24807fdef3310"
+          },
+          {
+            "marker": "C4",
+            "offset": 306,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "8e50efe25673330965ca9441120282081c820be9fbd9e0f7ffc315a3919de58e"
+          },
+          {
+            "marker": "C4",
+            "offset": 334,
+            "bytes": 59,
+            "payloadBytes": 55,
+            "fillBytes": 0,
+            "payloadSha256": "548d3c60726034de93e557b5df05e522c46e523142287c8e2ca55248241f0a65"
+          },
+          {
+            "marker": "DA",
+            "offset": 393,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 154062,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 407,
+            "bytes": 153655,
+            "sha256": "90aa41068f93c80d4dd08a7e3c1198a96023ace04f70295102d0b184eefbe386",
+            "stuffedPairs": 554,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 153655,
+        "frame": {
+          "width": 1440,
+          "height": 900,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "texts": []
+    },
+    {
+      "oid": "f7e5e6cffaaa73adff1a900b92f894da33793026",
+      "sha256": "6b33cd0b86527b0f0f28cbbd5278bd7ab19315d10b455912845ca85b2b0981a5",
+      "bytes": 150043,
+      "inventoryIndices": [
+        74412
+      ],
+      "mappings": [
+        {
+          "path": "reports/cardrpg-look/art-rebuild/r1/foes-fallback/yarn-idle.png",
+          "oid": "f7e5e6cffaaa73adff1a900b92f894da33793026",
+          "mode": "100644",
+          "commit": "b9c1497d65bc7485ddf3c044127c4a746e076567",
+          "kind": "blob",
+          "bytes": 150043
+        }
+      ],
+      "originalPngErrorsRetained": [
+        {
+          "chunk": 0,
+          "offset": 8,
+          "code": "not-png-signature"
+        }
+      ],
+      "parsed": {
+        "framingPass": true,
+        "metadataComplete": true,
+        "bytes": 150043,
+        "segments": [
+          {
+            "marker": "D8",
+            "offset": 0,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          },
+          {
+            "marker": "E0",
+            "offset": 2,
+            "bytes": 18,
+            "payloadBytes": 14,
+            "fillBytes": 0,
+            "payloadSha256": "1fb2a1c85b30a2d812c0c54aa6662cee809224a2ee52ff70bfe57604a3e7a2c8"
+          },
+          {
+            "marker": "DB",
+            "offset": 20,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "abc62d464fa87a8ff803497c7d49b98ac0036dc80f597f07fdd0eda4b2e4b8b2"
+          },
+          {
+            "marker": "DB",
+            "offset": 89,
+            "bytes": 69,
+            "payloadBytes": 65,
+            "fillBytes": 0,
+            "payloadSha256": "4e45a6dbdb57467a188869544a936533efebcc3c393cfe3df0cd7976dc4f9908"
+          },
+          {
+            "marker": "C0",
+            "offset": 158,
+            "bytes": 19,
+            "payloadBytes": 15,
+            "fillBytes": 0,
+            "payloadSha256": "efaa17b1eed023b976e6df0178812c91c219e1fc26d8680060f94c129248c430"
+          },
+          {
+            "marker": "C4",
+            "offset": 177,
+            "bytes": 30,
+            "payloadBytes": 26,
+            "fillBytes": 0,
+            "payloadSha256": "e9d11c6f6a1af115102a34029e6000e74193a1ac91e984296016bf3041650dcb"
+          },
+          {
+            "marker": "C4",
+            "offset": 207,
+            "bytes": 94,
+            "payloadBytes": 90,
+            "fillBytes": 0,
+            "payloadSha256": "2eb7a54260cfdced96de4e4af7284a5569617708e8b15b57ab64f5e2e38b7ce0"
+          },
+          {
+            "marker": "C4",
+            "offset": 301,
+            "bytes": 28,
+            "payloadBytes": 24,
+            "fillBytes": 0,
+            "payloadSha256": "f15e036b4d86778f4fc4e27133eadf6879918d0f99a780aac60e104f0b2ae25d"
+          },
+          {
+            "marker": "C4",
+            "offset": 329,
+            "bytes": 55,
+            "payloadBytes": 51,
+            "fillBytes": 0,
+            "payloadSha256": "fd6b1bc82255bcd2cb26ddaef244ddd4699c6af4ebca37f1309d099107751382"
+          },
+          {
+            "marker": "DA",
+            "offset": 384,
+            "bytes": 14,
+            "payloadBytes": 10,
+            "fillBytes": 0,
+            "payloadSha256": "aefb8bb0151c18bd97eed9ff0e49942c9167c3651c39570491de8102b5b62ffd"
+          },
+          {
+            "marker": "D9",
+            "offset": 150041,
+            "bytes": 2,
+            "payloadBytes": 0,
+            "fillBytes": 0
+          }
+        ],
+        "markerCounts": {
+          "D8": 1,
+          "E0": 1,
+          "DB": 2,
+          "C0": 1,
+          "C4": 4,
+          "DA": 1,
+          "D9": 1
+        },
+        "entropy": [
+          {
+            "offset": 398,
+            "bytes": 149643,
+            "sha256": "9fc99aca695afc9c3b288ede7f48e16edb3c6189398897e2c8cb8dba937d6336",
+            "stuffedPairs": 670,
+            "restartMarkers": []
+          }
+        ],
+        "unscannedEntropyBytes": 149643,
+        "frame": {
+          "width": 1440,
+          "height": 900,
+          "precision": 8,
+          "componentIds": [
+            1,
+            2,
+            3
+          ],
+          "codec": "mjpeg"
+        },
+        "jfif": [
+          {
+            "version": [
+              1,
+              1
+            ],
+            "units": 0,
+            "density": [
+              1,
+              1
+            ],
+            "thumbnailDimensions": [
+              0,
+              0
+            ],
+            "unscannedThumbnailBytes": 0
+          }
+        ],
+        "commentFields": 0,
+        "opaqueMetadata": [],
+        "trailingBytes": 0,
+        "pixelDecode": false
+      },
+      "probe": {
+        "codec_name": "mjpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "texts": []
+    }
+  ],
+  "selectedObjects": 6,
+  "mappedPaths": 6,
+  "bytes": 842227,
+  "commentFields": 0,
+  "unknownMetadataSegments": 0,
+  "unscannedEntropyBytes": 839835,
+  "comparison": {
+    "boundedMarkerSeconds": 0.001302125005167909,
+    "ffprobeSeconds": 0.16425537499890197,
+    "sameCodecAndDimensions": true,
+    "ffprobeVersion": "ffprobe version 9.0.2 Copyright (c) 2007-2026 the FFmpeg developers",
+    "command": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-f",
+      "mjpeg",
+      "-i",
+      "pipe:0",
+      "-show_entries",
+      "stream=codec_name,width,height",
+      "-of",
+      "json"
+    ],
+    "limits": "Header identity/dimensions only; ffprobe is not complete metadata validation."
+  },
+  "parserControls": [
+    {
+      "name": "bad-signature",
+      "pass": true,
+      "error": "not-jpeg-soi"
+    },
+    {
+      "name": "truncated-marker",
+      "pass": true,
+      "error": "truncated-marker"
+    },
+    {
+      "name": "short-length",
+      "pass": true,
+      "error": "short-segment-length"
+    },
+    {
+      "name": "length-overrun",
+      "pass": true,
+      "error": "segment-out-of-bounds"
+    },
+    {
+      "name": "missing-eoi",
+      "pass": true,
+      "error": "missing-entropy-terminator"
+    },
+    {
+      "name": "trailing-data",
+      "pass": true,
+      "error": "trailing-data"
+    },
+    {
+      "name": "nested-soi",
+      "pass": true,
+      "error": "unexpected-standalone-marker"
+    },
+    {
+      "name": "invalid-jfif-thumbnail",
+      "pass": true,
+      "error": "invalid-jfif-size"
+    },
+    {
+      "name": "missing-sos",
+      "pass": true,
+      "error": "missing-frame-or-scan"
+    },
+    {
+      "name": "missing-jfif",
+      "pass": true,
+      "error": "missing-or-duplicate-jfif"
+    },
+    {
+      "name": "unsupported-frame",
+      "pass": true,
+      "error": "unsupported-marker"
+    },
+    {
+      "name": "standalone-restart",
+      "pass": true,
+      "error": "unexpected-standalone-marker"
+    },
+    {
+      "name": "stuffed-byte-outside-entropy",
+      "pass": true,
+      "error": "unexpected-standalone-marker"
+    },
+    {
+      "name": "restart-without-interval",
+      "pass": true,
+      "error": "invalid-restart-marker"
+    },
+    {
+      "name": "utf8-comment-after-entropy",
+      "pass": true
+    },
+    {
+      "name": "embedded-eoi-in-comment",
+      "pass": true
+    },
+    {
+      "name": "fill-before-eoi",
+      "pass": true
+    },
+    {
+      "name": "stuffed-byte-in-entropy",
+      "pass": true
+    },
+    {
+      "name": "bounded-restart-marker",
+      "pass": true
+    },
+    {
+      "name": "wrong-restart-sequence",
+      "pass": true,
+      "error": "invalid-restart-marker"
+    },
+    {
+      "name": "unknown-app-gap",
+      "pass": true,
+      "gapPreserved": true
+    },
+    {
+      "name": "nul-comment-gap",
+      "pass": true,
+      "gapPreserved": true
+    }
+  ],
+  "detector": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "textScans": [],
+  "pass": true,
+  "fullHistoryPass": false,
+  "binaryCoveragePass": false,
+  "imageOpens": 0,
+  "pixelOutput": false,
+  "limits": "Exactly six original PNG exclusions. Complete marker framing finds only fixed JFIF metadata and zero COM/other APP segments. Entropy-coded samples, coding tables, any encoded/steganographic contents, all other binary objects and later references remain excluded. No ART/runtime/scanner edits or image display."
+}

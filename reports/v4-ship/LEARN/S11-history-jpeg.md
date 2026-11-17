@@ -1,0 +1,23 @@
+# S11 six mislabeled JPEG objects
+
+Prespecified17November2026 after pushedc7c6b3fab. Only the six immutable objects explicitly excluded by the signed PNG review are in scope; retain their original PNG errors. Read raw Git bytes and metadata only. No image display, pixel output, image generation, ART edits or live-scanner mutation.
+
+1. [ITU-T T.81 / ISO10918-1](https://www.w3.org/Graphics/JPEG/itu-t81.pdf), formal AnnexB: distinguish length-bearing segments, stand-alone markers, entropy byte stuffing, restart markers and end-of-image. Do not search for unqualified marker byte patterns inside payloads.
+2. [ITU-T T.871 JFIF](https://www.itu.int/rec/T-REC-T.871): APP0 JFIF has a fixed numeric header and bounded thumbnail length. Validate its identifier, fields and exact payload size; thumbnail pixels remain excluded.
+3. [libjpeg-turbo marker reader](https://github.com/libjpeg-turbo/libjpeg-turbo/blob/main/src/jdmarker.c): use an explicit marker/entropy state machine and bounds checks; unsupported structures must remain gaps. Static source consultation only.
+4. [ExifTool JPEG tag documentation](https://github.com/exiftool/exiftool/blob/master/html/TagNames/JPEG.html): APP/COM segments can carry independent metadata containers. The exiftool.org documentation returned403; use the project's official GitHub source. Do not equate no COM with no EXIF/XMP/unknown APP data.
+5. [ffprobe documentation](https://ffmpeg.org/ffprobe.html): restrict independent probe output to codec_name,width,height and capture output in memory; no pixel or tag output. Its header probe does not certify complete metadata coverage.
+6. [Python3.12 struct](https://docs.python.org/3.12/library/struct.html): explicit big-endian lengths and checked offsets; never use native alignment for serialized bytes.
+7. [Git cat-file](https://git-scm.com/docs/git-cat-file) and the signed PNG/inventory review: derive exact objects, commit:path mappings, lengths and identities. Filename suffix is not container identity.
+
+Initial read-only metadata inspection:all six have SOI,APP0/JFIF,DQT,SOF0,DHT,SOS and terminalEOI; no text-bearing header segment was observed beforeSOS. This does not rule out metadata after entropy or trailing bytes, so full marker traversal is required.
+
+Compare complete bounded marker traversal with ffprobe header probing on all six objects:record timings and require identical JPEG classification/dimensions. The comparison covers header identity only; independently reparse every segment and entropy boundary using a separate streaming reader. Prespecify corrupted lengths/signature, missing/trailing EOI, nestedSOI, invalidJFIF/thumbnail lengths, missingSOS, shifted source/mapping and accounting controls. Exercise comments after entropy, fill bytes, stuffed bytes, restart markers and unsupported APP data using memory-only parser fixtures; no image artifacts or decoder output.
+
+Extract supported COM text in memory only and scan through the separately signed complete-fragment detector. Record unsupported APP/encoded contents as explicit gaps, not zero findings. Pixel/entropy payload, tables, thumbnails, steganography, other binary formats and later references remain unreviewed. Full regression, bounded docs, staged/expanded/generated scans and commit/push are required before NEXT.
+
+Measured inspection1:all six immutable objects/6path mappings/842227bytes have complete SOI-to-EOI framing, one fixed JFIF header each and no COM/otherAPP/trailing/thumbnail payloads. Their839835entropy bytes remain explicitly unscanned. Complete marker traversal0.001302125s versus ffprobe headers0.164255375s agrees on JPEG identity and dimensions6/6; ffprobe is not claimed to verify the full marker traversal. All22memory-only parser controls pass, including late comments, embedded marker bytes, fill/stuffing/restarts and explicit unsupported-metadata gaps. No fixture image file or pixel output was produced.
+
+Independent review1 rereads all six exact commit:path objects and reconstructs every segment, fill/stuffed/restart marker, entropy boundary and fixedJFIF field with a separate buffered streaming parser. All results match;15additional independent/accounting controls pass. Original six PNG signature failures are preserved unchanged. No comments or opaque APP containers exist in the selected bytes;839835entropy bytes and coding-table semantics remain unreviewed.
+
+Fresh regression retains742server/1409rules/2697web passes plus exactly seven inherited ART failures;typecheck/probe/build0 and parity rows unchanged. No runtime/ART/live-scanner edits or image opens. Full-history, binary coverage, G-REG and official class parity remain false.

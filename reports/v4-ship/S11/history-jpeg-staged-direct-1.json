@@ -1,0 +1,201 @@
+{
+  "at": "2026-11-17T00:56:24.743786+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6877,
+      "sha256": "bf1f685ba4b3985bb5b37be5545c9f84a10a9e289a749d2bc737f8af0947ce99"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-jpeg.md",
+      "bytes": 4662,
+      "sha256": "1ca59a1e3da42e8604def2b4bd101cb38ab1d094500674ed553dd2bb000d9535"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-1.json",
+      "bytes": 33434,
+      "sha256": "9b4f726729ece685fe99c5edbbcf8f03f3fb3830e8b0bf95f7fc797896968fac"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/check.json",
+      "bytes": 1434,
+      "sha256": "c1dac24bbd8a05c9c0261ebd77ec4507d994452324d483b514b546889cb44cbc"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/log.jsonl.gz",
+      "bytes": 16176,
+      "sha256": "3d69a1e005974890c937e55aee09f298cdaa6f149f2b78ae50f063f09a377293"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "ab66e5174b3cf92fd8d833a8133b032175f98e3cbca592678a7133fcf7175b33"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-review-1.json",
+      "bytes": 4016,
+      "sha256": "e2cb43aca118f6a82ecd486aec81334494857c6e8ca7b0151868062101c8d50a"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 30601,
+      "sha256": "aa87e4d210abe12e4f4c2baa748490fb617eaeab0934017c9250d8b604cd38c1"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4739,
+      "sha256": "944bd498af671493afb6dc6e7c7e7c3d449a5816d659fc35663737341af52dc6"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-jpeg-review.py",
+      "bytes": 12251,
+      "sha256": "e9e543e4935c8d289cf539c6a820cadc4314da1fdefde85a09baa9086978712e"
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-jpeg.py",
+      "bytes": 8713,
+      "sha256": "42f36a1b2986305604e5006b173ca6f950f083408d98a048d129d493f6d84445"
+    },
+    {
+      "path": "tools/v4ship-lab/security/jpeg_metadata.py",
+      "bytes": 6092,
+      "sha256": "41761042d7833f572e084dc4227478cbb281253a6fc3b31dda0a3ca2498690aa"
+    }
+  ],
+  "scans": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6877,
+      "sha256": "bf1f685ba4b3985bb5b37be5545c9f84a10a9e289a749d2bc737f8af0947ce99",
+      "alias": "bf1f685ba4b3985bb5b37be5545c9f84a10a9e289a749d2bc737f8af0947ce99.txt",
+      "seconds": 0.004333375,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-history-jpeg.md",
+      "representation": "raw",
+      "bytes": 4662,
+      "sha256": "1ca59a1e3da42e8604def2b4bd101cb38ab1d094500674ed553dd2bb000d9535",
+      "alias": "1ca59a1e3da42e8604def2b4bd101cb38ab1d094500674ed553dd2bb000d9535.txt",
+      "seconds": 0.000215083,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-1.json",
+      "representation": "raw",
+      "bytes": 33434,
+      "sha256": "9b4f726729ece685fe99c5edbbcf8f03f3fb3830e8b0bf95f7fc797896968fac",
+      "alias": "9b4f726729ece685fe99c5edbbcf8f03f3fb3830e8b0bf95f7fc797896968fac.txt",
+      "seconds": 0.000807792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1434,
+      "sha256": "c1dac24bbd8a05c9c0261ebd77ec4507d994452324d483b514b546889cb44cbc",
+      "alias": "c1dac24bbd8a05c9c0261ebd77ec4507d994452324d483b514b546889cb44cbc.txt",
+      "seconds": 9.0417e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 99995,
+      "sha256": "4fff6ab07815216eaac224ab3f81e15837f89580585a45125d58d48585399859",
+      "alias": "4fff6ab07815216eaac224ab3f81e15837f89580585a45125d58d48585399859.txt",
+      "seconds": 0.028462791,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "ab66e5174b3cf92fd8d833a8133b032175f98e3cbca592678a7133fcf7175b33",
+      "alias": "ab66e5174b3cf92fd8d833a8133b032175f98e3cbca592678a7133fcf7175b33.txt",
+      "seconds": 0.000782125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-review-1.json",
+      "representation": "raw",
+      "bytes": 4016,
+      "sha256": "e2cb43aca118f6a82ecd486aec81334494857c6e8ca7b0151868062101c8d50a",
+      "alias": "e2cb43aca118f6a82ecd486aec81334494857c6e8ca7b0151868062101c8d50a.txt",
+      "seconds": 0.000186,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 30601,
+      "sha256": "aa87e4d210abe12e4f4c2baa748490fb617eaeab0934017c9250d8b604cd38c1",
+      "alias": "aa87e4d210abe12e4f4c2baa748490fb617eaeab0934017c9250d8b604cd38c1.txt",
+      "seconds": 0.033056583,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4739,
+      "sha256": "944bd498af671493afb6dc6e7c7e7c3d449a5816d659fc35663737341af52dc6",
+      "alias": "944bd498af671493afb6dc6e7c7e7c3d449a5816d659fc35663737341af52dc6.txt",
+      "seconds": 0.000997917,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-jpeg-review.py",
+      "representation": "raw",
+      "bytes": 12251,
+      "sha256": "e9e543e4935c8d289cf539c6a820cadc4314da1fdefde85a09baa9086978712e",
+      "alias": "e9e543e4935c8d289cf539c6a820cadc4314da1fdefde85a09baa9086978712e.txt",
+      "seconds": 0.0006945,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/history-jpeg.py",
+      "representation": "raw",
+      "bytes": 8713,
+      "sha256": "42f36a1b2986305604e5006b173ca6f950f083408d98a048d129d493f6d84445",
+      "alias": "42f36a1b2986305604e5006b173ca6f950f083408d98a048d129d493f6d84445.txt",
+      "seconds": 0.000535333,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/security/jpeg_metadata.py",
+      "representation": "raw",
+      "bytes": 6092,
+      "sha256": "41761042d7833f572e084dc4227478cbb281253a6fc3b31dda0a3ca2498690aa",
+      "alias": "41761042d7833f572e084dc4227478cbb281253a6fc3b31dda0a3ca2498690aa.txt",
+      "seconds": 0.000370458,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16176,
+      "sha256": "3d69a1e005974890c937e55aee09f298cdaa6f149f2b78ae50f063f09a377293",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}
