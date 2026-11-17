@@ -1,9 +1,9 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.6 application6bb96c69d;typecheck/build0,5227pass incl2927web,11skip/2expectedfail;sevenchecks+freshvisual+3films pass. Next CXV V-A3 READY review.
-I-B OPEN: m1.6 cold8584126/9145394/8659811B,allFAIL8MB; no-inline saving161522–161528B retained. AGV12AVIF(T4),4portraits(T6) pending. AGS residual4beds(T5)eb2e2b25d REDO:stereo/manifest/hash/loop evidence.
-I-C FIRST-HIT DONE:20,501ms incl17,700ms reading8cards,damage46,zeroerrors;route detour9864ms. Old66–70s timed fullpatrol receipt, not30s firsthit target.
+I-A DONE/REPEAT: v5-m1.7 app0a3c6ab1a; fullsuite5250/2950web+tsc0 at69e68a660, then three seat values+18focused/build0; own blink/26sample portrait review+finalchecks+3films pass. I-A-BLINK/I-C/I-E/evidence.
+I-B OPEN: m1.7 cold7909547/8469958/7984401B;wave3FAIL469958B,boss15599Bheadroom. ApprovedT4/T6done;AGS T5fourbeds stillREDO;T8sixfoecallouts assigned. No future savings counted.
+I-C FIRST-HIT DONE:20,882ms incl17,700reading8cards,damage46,zeroerrors;route9684ms. Old66–70s timedfullpatrolreceipt.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
-I-E DONE/REFRESH: m1.6 production3x30s films actual1×+audio,1280×720,0errors,3fresh sheets inspected once;REVIEW-VI/I-E/evidence/v7-m16b-films.json.
+I-E DONE/REFRESH: m1.7 three30sactual1×gameplay+audio,1280×720,0errors;3freshsheets inspectedonce;REVIEW-VI/evidence v7-m17-films.json.
 I-F ACTIVE: README/ARCHITECTURE/runbook current;SUBMISSION-FACTS verified; AGS T7 must correct unsupported chain/mint/Forge claims in draft/script.
 I-G DONE/REPEAT: sheet failure/stall recovery passes13focused and fullsuite; bothcontrols insideviewport; failed1138ms/stalled8666ms,caféreturn/reloadpass. AGS originalNight issue stillneeds exacttrace.
 

@@ -15,3 +15,6 @@ Fresh source a2cbb3fb4; indexSHA256 34c538f01d820b4cb3aa793bbe969db954d888185015
 Cold wave1/wave3/boss8583793/9144973/8659415B, all stillFAIL8MB. No actual funded Fuji claimed.
 Own fresh Kettle,4hero and binding/Yarn sheets measured then inspected once. Recipient net clearer; retained broad masks and contact numbers; Yarn ultimate fan still covers much of lower field (CXV V-F debt). Visual sheets are paused presentation samples, not realtime film or performance proof.
 Reports-only commit follows application validation. Release v5-m1.5 includes this evidence; I-E real-time review films next.
+
+## v5-m1.7 green — 17 November2026
+Application0a3c6ab1a; final capture sourcebe701d072 is reports-only. Blink repair and lower portrait clearance independently accepted; approved AVIF delivery retained. Fullsuite5250/typecheck0 at69e68a660, then three seat values with18focused/build0. Finalfivechecks0 andthree30sfilms with0errors. Evidence:I-A-BLINK.md,I-C.md,I-E.md,evidence/v7-m17-final-validation.json. Cold7909547/8469958/7984401B:wave3stillFAIL469958B. Firsthit20882ms with17700msreading. No publicdeployment or Fuji transaction claimed.

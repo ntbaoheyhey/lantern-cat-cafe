@@ -4,7 +4,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {ECONOMY_V3 as E} from '@taskbar-hero/game-rules/src/cardrpg/economy-v3';
 import type {DepthModel} from '../depth/model';
 import {GameIcon} from '../../../ui/GameIcon';
-import {openChainRoom} from '../chain/ChainRoom';
+import {openChainRoom} from '../chain/room-event';
 import {playCue} from '../contracts/audio-cues';
 import {GearArtA6} from '../ui-v3/KeepsakeArtA6';
 import {PaintedTile} from './PaintedKit';

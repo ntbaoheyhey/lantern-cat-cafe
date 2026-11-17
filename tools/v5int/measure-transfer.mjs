@@ -83,6 +83,10 @@ try{
    await page.goto(url.origin+'/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1');
    await page.getByRole('button',{name:'Play free',exact:true}).click({timeout:60000});
    await page.waitForFunction(()=>window.__depthReview,null,{timeout:60000});
+   // Let the real cafe mount before selecting a review encounter. Otherwise a
+   // fast fixture injection can skip home requests and undercount cold entry.
+   await page.locator('.uv-home-crew img').first().waitFor({state:'visible'});
+   await page.evaluate(()=>Promise.all([...document.querySelectorAll('.uv-home-crew img')].map(image=>image.decode())));
    const state=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(config.seed),true));state.tutorial=4;
    Object.assign(state.settings,{speed:1,quality:'high',reducedMotion:false});
    for(const card of state.account.cards){card.level=6;state.skills[card.cardId]=R.CAT_BY_ID[card.cardId].skills.map(skill=>skill.id);}

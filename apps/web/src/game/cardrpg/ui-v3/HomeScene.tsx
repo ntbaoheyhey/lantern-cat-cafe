@@ -16,7 +16,7 @@ export function HomeScene({m,onRecruit,onTasks,onTower}:{m:DepthModel;onRecruit:
  return <div className="uv-scene" aria-label="Living cafe">
   <img className="uv-cafe-poster" src={cafePoster} alt="Lantern-lit cafe, ready for the evening shift"/>
   <div className="uv-ambient" aria-hidden="true"><i className="uv-lantern"/><i className="uv-lantern"/>{[0,1,2,3,4,5].map(i=><i className="uv-mote" key={i}/>)}</div>
-  <div className="uv-home-crew" aria-label="Your current crew">{m.state.team.map((id,index)=><figure key={id} style={{animationDelay:`${index*-.8}s`}}><img {...portraitProps(id)} alt={R.CAT_BY_ID[id]!.name}/><figcaption>{R.CAT_BY_ID[id]!.name}</figcaption></figure>)}</div>
+  <div className="uv-home-crew" aria-label="Your current crew">{m.state.team.map((id,index)=><figure key={id} style={{animationDelay:`${index*-.8}s`}}><img {...portraitProps(id,'art','compact')} alt={R.CAT_BY_ID[id]!.name}/><figcaption>{R.CAT_BY_ID[id]!.name}</figcaption></figure>)}</div>
   <div className="uv-scene-vignette"/>
   {!m.state.formationC2&&<div className="uv-home-title"><small>THE EVENING SHIFT</small><h1>Your evening crew</h1></div>}
   <button disabled={a6&&m.state.tutorial<3} className="uv-hotspot uv-recruit-hotspot" onClick={onRecruit} aria-label="Recruit counter">{m.state.formationC2?'invitations':'Recruit counter'} <span aria-hidden="true"><GameIcon name="external" size={18}/></span></button>
