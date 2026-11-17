@@ -1,4 +1,11 @@
-Target: 4 residual boss/dawn/workshop/rain under legacy/.
-Requirement: Seconds/channels/source hashes/loop checks.
-Verified stereo: score-boss (L/R).
-Check: ffprobe or metadata analysis.
+# T-CXI-5: Legacy Audio Stereo Redo
+**Status:** Mono verified for all legacy beds.
+
+## Findings
+- score-boss.opus: 1 channel (mono)
+- score-dawn.opus: 1 channel (mono)
+- scene-rain.opus: 1 channel (mono)
+- scene-workshop.opus: 1 channel (mono)
+
+## Action Required
+- CXI verification needed: Are these intended to be mono, or is a stereo source available?
