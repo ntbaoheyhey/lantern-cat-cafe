@@ -34,7 +34,7 @@ export async function checkExplorer(url,{local=false,fetcher=fetch}={}){
 
 async function layout(page,label){
   return page.evaluate(label=>{
-    const visible=e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'&&!e.closest('[inert],[aria-hidden="true"]');};
+    const visible=e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect(),closed=e.closest('details:not([open])');return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'&&!e.closest('[inert],[aria-hidden="true"]')&&(!closed||closed.querySelector(':scope > summary')?.contains(e));};
     const candidates=[...document.querySelectorAll('button,a,input,h1,h2,p,dt,dd,figcaption')].filter(visible);
     return {label,viewport:{width:innerWidth,height:innerHeight},pageWidth:document.documentElement.scrollWidth,overflowX:document.documentElement.scrollWidth>innerWidth+2,clipped:candidates.filter(e=>{const r=e.getBoundingClientRect();return r.left< -2||r.right>innerWidth+2;}).slice(0,20).map(e=>({tag:e.tagName,text:(e.innerText??e.getAttribute('aria-label')??'').trim().slice(0,100),left:Math.round(e.getBoundingClientRect().left),right:Math.round(e.getBoundingClientRect().right)})),alerts:[...document.querySelectorAll('[role="alert"]')].filter(visible).map(e=>e.innerText.slice(0,200)),nonEnglish:[...new Set((document.body.innerText.match(/[\u3040-\u30ff\u3400-\u9fff][^\n]{0,40}/g)??[]))].slice(0,10)};
   },label);
@@ -60,12 +60,13 @@ async function verifyReceipts(rows,build){
   }
 }
 
-export async function runJourneys({url,viewports=[{width:1440,height:900},{width:1280,height:720},{width:390,height:844}],runs=1,allowGuestTx=false,label='q1-cold-1',buildPath=resolve(qa,'reports/v4-qa/Q1/build-1.json'),reportRoot=resolve(qa,'reports/v4-qa/Q1'),capture=true,guardLoad=true}={}){
+export async function runJourneys({url,viewports=[{width:1440,height:900},{width:1280,height:720},{width:390,height:844}],runs=1,allowGuestTx=false,label='q1-cold-1',buildPath=resolve(qa,'reports/v4-qa/Q1/build-1.json'),reportRoot=resolve(qa,'reports/v4-qa/Q1'),capture=true,guardLoad=true,beforeLocalJourney}={}){
   if(!/^[a-z0-9-]+$/i.test(label))throw Error('Safe unique label required');
   const target=new URL(url);const local=['127.0.0.1','localhost'].includes(target.hostname);
   if(local&&!['6200','6203'].includes(target.port))throw Error('Only owned QA preview ports allowed');
   if(!['http:','https:'].includes(target.protocol))throw Error('HTTP URL required');
   if(!local&&target.protocol!=='https:')throw Error('Public URL must use HTTPS');
+  if(beforeLocalJourney&&(!local||!allowGuestTx))throw Error('Fault injection is restricted to owned local guest fixtures');
   const dir=resolve(reportRoot,label),raw=resolve(qa,'work/v4qa',label);
   if(existsSync(dir)||existsSync(raw))throw Error('Never overwrite earlier run evidence');
   mkdirSync(dir,{recursive:true});mkdirSync(raw,{recursive:true});
@@ -93,7 +94,7 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
       const click=async(name)=>{const button=page.getByRole('button',{name,exact:true});await button.waitFor({state:'visible'});await button.click();row.clicks++;row.steps.push({name,atMs:Date.now()-began});};
       const fixture=async action=>{const r=await fetch(`http://127.0.0.1:6201/__fixture/${action}`,{method:'POST'});if(!r.ok)throw Error(`Local isolation ${action} HTTP${r.status}`);};
       try{
-        if(local&&allowGuestTx){await fixture('begin');isolated=true;}
+        if(local&&allowGuestTx){await fixture('begin');isolated=true;if(beforeLocalJourney)row.localSetup=await beforeLocalJourney({build});}
         await context.route('**/*',async route=>{
           const request=route.request();
           const permit=requestAllowed({url:request.url(),method:request.method(),body:request.postData(),local,allowGuestTx});
@@ -138,6 +139,8 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
             row.layouts.push(await layout(page,name));save();
           }
           await click('Face the boss');await page.getByRole('heading',{name:'My café on Avalanche',exact:true}).waitFor({timeout:180000});
+          await page.locator('[data-wallet-proof-complete="true"]').waitFor({state:'visible',timeout:30000});
+          row.walletProof=await page.locator('.ship-wallet-proof').evaluate(e=>({ready:e.getAttribute('data-wallet-proof-complete')==='true',text:e.innerText,transactionLinks:[...e.querySelectorAll('a[href*="/tx/"]')].map(a=>a.href)}));
           row.layouts.push(await layout(page,'wallet-proof'));await shot('wallet-proof');
           row.receipts=await page.evaluate(()=>window.__v4qaReceipts);row.renderedReceipts=await page.evaluate(()=>window.__v4qaRendered);
           if(local)await verifyReceipts(row.receipts,build);
@@ -145,7 +148,7 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
           for(const href of links)row.explorer.push(await checkExplorer(href,{local}));
           row.actionTypes=[...new Set(row.receipts.map(r=>r.verification?`${r.verification.contract}.${r.verification.functionName??r.action}`:r.action))];
           mark('first_battle_within_30s',row.firstBattleMs<=30000,{indicative:true});mark('first_receipt_within_180s',row.firstReceiptMs<=180000,{indicative:true});mark('first_battle_at_most_3clicks',row.firstBattleClicks<=3);
-          mark('seven_step_journey_complete',true);mark('at_least_5_action_types',row.actionTypes.length>=5);
+          mark('seven_step_journey_complete',true);mark('wallet_proof_loaded',row.walletProof.ready);mark('at_least_5_action_types',row.actionTypes.length>=5);
           mark('receipts_success_fee_payer',row.receipts.length>0&&row.receipts.every(r=>r.verification?r.verification.success&&r.verification.feeMatches&&r.verification.payerMatches:true));
           mark('receipt_event_fields',row.receipts.length>0&&row.receipts.every(r=>r.confirmationMs!==null&&r.confirmationMs>=0&&r.feeAvax!==undefined&&/^0x[0-9a-f]{40}$/i.test(r.payer)));
           mark('every_receipt_visibly_labeled',row.receipts.every(r=>row.renderedReceipts.some(v=>v.hash===r.hash&&v.visible&&/Confirmed/.test(v.text)&&/Fee/.test(v.text)&&/paid gas/.test(v.text)&&v.payerTitle?.includes(r.payer)&&v.href?.endsWith(r.hash))));
@@ -156,6 +159,8 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
         }
       }catch(error){
         row.failure=safeError(error);row.verdict='FAIL';
+        row.visibleFailure=await page.locator('[role="alert"],.ship-workshop,.ship-trial-card').allTextContents().catch(()=>[]);
+        await shot('failure').catch(()=>{});
         row.receipts=await page.evaluate(()=>window.__v4qaReceipts??[]).catch(()=>[]);row.renderedReceipts=await page.evaluate(()=>window.__v4qaRendered??[]).catch(()=>[]);
         row.lastLayout=await layout(page,'failure').catch(()=>null);await shot('failure').catch(()=>{});
       }finally{
