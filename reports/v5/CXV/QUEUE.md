@@ -1,10 +1,10 @@
 # CXV V7 queue — desktop judge first three minutes
-- [x] V-C m1.7 production independently confirmed16:22Z;stable2fc8f623;4freshsheets/0errors;240/620arrival,12recipientnetclear1640,Yarnclear1760.
+- [x] V-C m1.9 production arrival confirmed17:22Z;stablea7a8c615;4freshsheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms. Prior m1.7recipientnetclear1640/Yarnclear1760 retained.
 - [x] V-A3 calibrated blink shader accepted by CXI16:10UTC:20GPUdrawings+33tests+tsc0;own Mochi onset/Clover closure evidence;independent production eyeROI62→0. Prior face-depth47/47 retained.
 - [x] V-B2 m1.7 production4hero fixtures confirmed16:23Z;4freshsheets/0errors;fixedTiming/leadIn0/contact1100/duration2200;ordinary32s loop26actoractions+3status,6ults/all4heroes;leadIn0,3status omitvoice.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
 - [x] V-E m1.7 independently confirmed16:23Z;4freshsheets/0errors;status120/400ms+expiry,4drawncrew,reducedPNGexact/confetti0.
-- [ ] V-F: lower-body correction accepted16:03UTC; scalar50ec14e73 accepted16:41Z; spatial0d0e59494 accepted16:57Z; nativea46e5255d accepted17:02Z. Greenm1.8 mergedb6281f210. Number metrics e58ef974c pushed; ordinary off/on mixed:normal startup66.5→79.8ms,4x252.7→216.8ms;no generalFPSclaim. All performance claims remain scoped;4x stress open.
+- [ ] V-F: lower-body correction accepted16:03UTC; scalar50ec14e73 accepted16:41Z; spatial0d0e59494 accepted16:57Z; nativea46e5255d accepted17:02Z. Greenm1.9 merged8bfef71c6. Number metrics e58ef974c CXI ACCEPT17:27Z (171glyphs/9atlases exact,171→38reads,4xatlas62.4→25.5ms;wholegame mixed); ordinary off/on mixed:normal startup66.5→79.8ms,4x252.7→216.8ms;no generalFPSclaim. Contour6ef304a9b scopedREADY:130GPUexact,11tests+tsc0,normal/4x startup48.1/165.9ms;4xp95frame83.4ms. Packedc79f50b71 scopedREADY:130GPUexact/51oracletests/tsc0,7block warmboss206.3→156ms;ordinarymixed. All performance claims remain scoped;4x stress open.
 - CANCELLED mobile/390px scope:owner desktop-only instruction.
 - CANCELLED unassigned bulk texture regeneration:V7 one-at-a-time audit first.
 

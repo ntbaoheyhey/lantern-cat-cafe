@@ -1,0 +1,847 @@
+{
+  "utc": "2026-11-17T17:22:05.108Z",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "boardTag": "v5-m1.9 @8724ab79832aeb527298991f0660a35b7fbf7d73; branch and annotated tag pushed and remote hashes verified.",
+  "indexSha256": "a7a8c615c0998065c2406a1eecc4c1612aaf868d14757ac7e4f3d10736c9e3b9",
+  "fixtureSource": "4892934f453d16c3de37b943037ba50ac389c559",
+  "candidateSource": "8bfef71c64c7ce4f4813fa2b90f90871ac4f752f",
+  "method": "Fresh 1280x720 BOARD production scene; existing fixture DTOs, exact presentation clock. Production pixels; not a normal-play or FPS claim. DOM wave intro finishes naturally before the scene entrance clock is restarted; one render per sample. No whole-app time equivalence or first-battle journey claim.",
+  "errors": [],
+  "ended": "2026-11-17T17:22:12.263Z",
+  "indexSha256After": "a7a8c615c0998065c2406a1eecc4c1612aaf868d14757ac7e4f3d10736c9e3b9",
+  "focusedTests": 43,
+  "typecheckExit": 0,
+  "review": "Four1024x576 sheets inspected once: normal landing/readability, reduced stablefeet, acting takeover, incoming hit with original reaction.",
+  "rows": [
+    {
+      "id": "boss-arrival",
+      "arrivalMode": "-normal",
+      "reducedMotion": false,
+      "impact": 0,
+      "plan": null,
+      "frames": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-0.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-1.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-2.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-3.png"
+      ],
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival.jpg",
+      "audit": [
+        {
+          "ms": 0,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 921.5999999999999,
+            "y": 546.8000000000001
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 921.5999999999999,
+            "y": 546.8000000000001,
+            "dx": 63.999999999999886,
+            "dy": -58,
+            "phase": "travel",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 80,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 905.007407407408,
+            "y": 561.8370370370366
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 905.0074074074081,
+            "y": 561.8370370370366,
+            "dx": 47.40740740740807,
+            "dy": -42.9629629629635,
+            "phase": "travel",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 240,
+          "actionAt": 160,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "travel",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 620,
+          "actionAt": 540,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "idle",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "boss-arrival-reduced",
+      "arrivalMode": "-reduced",
+      "reducedMotion": true,
+      "impact": 0,
+      "plan": null,
+      "frames": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-reduced-0.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-reduced-1.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-reduced-2.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-reduced-3.png"
+      ],
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-reduced.jpg",
+      "audit": [
+        {
+          "ms": 0,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "idle",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 80,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "idle",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 240,
+          "actionAt": 160,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "idle",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 620,
+          "actionAt": 540,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "idle",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "boss-arrival-acting",
+      "arrivalMode": "-acting",
+      "reducedMotion": false,
+      "impact": 350,
+      "plan": {
+        "duration": 800,
+        "fixedTiming": true,
+        "speechLeadInMs": 0,
+        "voiceWindows": []
+      },
+      "frames": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-acting-0.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-acting-1.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-acting-2.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-acting-3.png"
+      ],
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-acting.jpg",
+      "audit": [
+        {
+          "ms": 79,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 905.3618425925924,
+            "y": 561.5158301504632
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 905.3618425925924,
+            "y": 561.5158301504632,
+            "dx": 47.761842592592416,
+            "dy": -43.28416984953685,
+            "phase": "travel",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 80,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 905.0074074074081,
+            "y": 561.8370370370366
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 905.0074074074081,
+            "y": 561.8370370370366,
+            "dx": 47.40740740740807,
+            "dy": -42.9629629629635,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 81,
+          "actionAt": 1,
+          "bossFeet": {
+            "x": 904.6288787529297,
+            "y": 562.1800786301574
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 904.62887875293,
+            "y": 562.1800786301574,
+            "dx": 47.02887875292993,
+            "dy": -42.6199213698427,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 120,
+          "actionAt": 40,
+          "bossFeet": {
+            "x": 873.5999999999999,
+            "y": 590.3000000000002
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 873.5999999999998,
+            "y": 590.3000000000003,
+            "dx": 15.999999999999773,
+            "dy": -14.499999999999773,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 160,
+          "actionAt": 80,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "dx": 0,
+            "dy": 0,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 240,
+          "actionAt": 160,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 611.0208
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 611.0208,
+            "dx": 0,
+            "dy": 6.22079999999994,
+            "phase": "travel",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 429,
+          "actionAt": 349,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 633.5999999999999
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 633.6,
+            "dx": 0,
+            "dy": 28.799999999999955,
+            "phase": "strike",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 430,
+          "actionAt": 350,
+          "bossFeet": {
+            "x": 858.8193478372616,
+            "y": 633.5430079261162
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 633.6,
+            "dx": 0,
+            "dy": 28.799999999999955,
+            "phase": "strike",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 620,
+          "actionAt": 540,
+          "bossFeet": {
+            "x": 857.5999999999999,
+            "y": 628.1679012345678
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.6,
+            "y": 628.1679012345679,
+            "dx": 0,
+            "dy": 23.367901234567853,
+            "phase": "return",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "boss-arrival-incoming",
+      "arrivalMode": "-incoming",
+      "reducedMotion": false,
+      "impact": 350,
+      "plan": {
+        "duration": 800,
+        "fixedTiming": true,
+        "speechLeadInMs": 0,
+        "voiceWindows": []
+      },
+      "frames": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-incoming-0.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-incoming-1.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-incoming-2.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-incoming-3.png"
+      ],
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-C-arrival-production-r4/boss-arrival-incoming.jpg",
+      "audit": [
+        {
+          "ms": 79,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 905.3618425925924,
+            "y": 561.5158301504632
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 905.3618425925924,
+            "y": 561.5158301504632,
+            "dx": 47.761842592592416,
+            "dy": -43.28416984953685,
+            "phase": "travel",
+            "archetype": "idle",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 80,
+          "actionAt": 0,
+          "bossFeet": {
+            "x": 905.007407407408,
+            "y": 561.8370370370366
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 905.0074074074081,
+            "y": 561.8370370370366,
+            "dx": 47.40740740740807,
+            "dy": -42.9629629629635,
+            "phase": "travel",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 81,
+          "actionAt": 1,
+          "bossFeet": {
+            "x": 904.6507500000001,
+            "y": 562.1602578124998
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 904.6507500000002,
+            "y": 562.1602578124999,
+            "dx": 47.05075000000022,
+            "dy": -42.63974218750013,
+            "phase": "travel",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 120,
+          "actionAt": 40,
+          "bossFeet": {
+            "x": 889.5999999999997,
+            "y": 575.8000000000003
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 889.5999999999997,
+            "y": 575.8000000000004,
+            "dx": 31.99999999999966,
+            "dy": -28.99999999999966,
+            "phase": "travel",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 160,
+          "actionAt": 80,
+          "bossFeet": {
+            "x": 874.1925925925925,
+            "y": 589.762962962963
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 874.1925925925925,
+            "y": 589.7629629629631,
+            "dx": 16.592592592592496,
+            "dy": -15.037037037036953,
+            "phase": "travel",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 240,
+          "actionAt": 160,
+          "bossFeet": {
+            "x": 857.7288766605302,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 857.7288766605303,
+            "y": 604.8000000000001,
+            "dx": 0.12887666053029534,
+            "dy": 0,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 280,
+          "actionAt": 200,
+          "bossFeet": {
+            "x": 860.1418285948915,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 860.1418285948916,
+            "y": 604.8000000000001,
+            "dx": 2.5418285948916264,
+            "dy": 0,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 429,
+          "actionAt": 349,
+          "bossFeet": {
+            "x": 865.6,
+            "y": 604.8
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 865.6,
+            "y": 604.8000000000001,
+            "dx": 8,
+            "dy": 0,
+            "phase": "anticipation",
+            "archetype": "leap-slam",
+            "hitOffset": 0,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 430,
+          "actionAt": 350,
+          "bossFeet": {
+            "x": 867.616123197718,
+            "y": 602.7525066050969
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 866.6,
+            "y": 602.8000000000001,
+            "dx": 9,
+            "dy": -2,
+            "phase": "idle",
+            "archetype": "leap-slam",
+            "hitOffset": 9,
+            "flash": 1,
+            "crowd": "idle"
+          }
+        },
+        {
+          "ms": 620,
+          "actionAt": 540,
+          "bossFeet": {
+            "x": 862.421185617104,
+            "y": 603.7286254184214
+          },
+          "bossHome": {
+            "x": 857.6,
+            "y": 604.8000000000001,
+            "core": 362.88
+          },
+          "bossRoot": {
+            "id": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "homeX": 857.6,
+            "homeY": 604.8000000000001,
+            "x": 862.421185617104,
+            "y": 603.7286254184214,
+            "dx": 4.821185617103993,
+            "dy": -1.0713745815786524,
+            "phase": "idle",
+            "archetype": "leap-slam",
+            "hitOffset": 4.8211856171039855,
+            "flash": 0,
+            "crowd": "idle"
+          }
+        }
+      ]
+    }
+  ]
+}

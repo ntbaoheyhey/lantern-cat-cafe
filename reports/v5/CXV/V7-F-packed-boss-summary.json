@@ -1,0 +1,572 @@
+{
+  "utc": "2026-11-17T17:37:13.386010+00:00",
+  "disposition": "READY for independent production review; bounded warmed-bounds gain, ordinary results mixed and 4xstress open.",
+  "review": "Two new1024x576 final views inspected once:faces/numbers readable,feet aboveHUD,Yarn release fades retained. Diagnostic fixture setup is not account progression.",
+  "comparison": {
+    "before": {
+      "numberMetricsMode": "on",
+      "utc": "2026-11-17T17:26:58.341Z",
+      "source": "ad293561dc9c10e45bef6b4604cdb480e80e0339",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "production": false,
+      "hardware": "Apple M3 Pro",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+      "errors": [],
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "numberMetricsOverrideNote": "Shared dispatch for on/off; off clears glyph metrics before atlas lookups to reproduce per-color measurement in the same runtime. Per-color atlas caching remains unchanged.",
+      "sourceMeaning": "Candidate application source HEAD plus runtime patch",
+      "ended": "2026-11-17T17:28:06.899Z",
+      "pass": true,
+      "rates": [
+        {
+          "rate": 1,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32001.09999999404,
+          "samples": 1797,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.700000000004366,
+            "p99": 16.80000000000109,
+            "max": 33.400000000001455
+          },
+          "submitCpuMs": {
+            "median": 4.100000001490116,
+            "p95": 5.9000000059604645,
+            "p99": 16.899999998509884,
+            "max": 33.30000000447035
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 8.5,
+          "wholeRun": {
+            "samples": 1914,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.700000000004366,
+              "p99": 16.80000000000109,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 4.100000001490116,
+              "p95": 6,
+              "p99": 17.700000002980232,
+              "max": 48.100000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.700000000000273,
+              "p99": 16.800000000000182,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 4,
+              "p95": 16.5,
+              "p99": 21,
+              "max": 48.100000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "drawingWeights": [
+            {
+              "id": "foe-0-yarn-giant",
+              "poses": 5,
+              "bytes": 304920
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "mochi",
+              "poses": 5,
+              "bytes": 392040
+            },
+            {
+              "id": "soot",
+              "poses": 4,
+              "bytes": 357192
+            },
+            {
+              "id": "clover",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "panko",
+              "poses": 5,
+              "bytes": 392040
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ],
+          "presentations": 29,
+          "actions": 26,
+          "statuses": 3,
+          "ultimates": 6,
+          "ultimateHeroes": [
+            "clover",
+            "foe-0-yarn-giant",
+            "mochi",
+            "panko",
+            "soot"
+          ]
+        },
+        {
+          "rate": 4,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32041.60000000149,
+          "samples": 943,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 83.20000000000073,
+            "p99": 100,
+            "max": 200
+          },
+          "submitCpuMs": {
+            "median": 19.600000001490116,
+            "p95": 27.5,
+            "p99": 60.399999998509884,
+            "max": 129.89999999850988
+          },
+          "over33": 94,
+          "over50": 80,
+          "firstRenderLatencyMs": 43.80000000447035,
+          "wholeRun": {
+            "samples": 990,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 83.29999999999927,
+              "p99": 116.69999999999982,
+              "max": 233.30000000000018
+            },
+            "submitCpuMs": {
+              "median": 19.700000002980232,
+              "p95": 28.200000002980232,
+              "p99": 72.39999999850988,
+              "max": 175.70000000298023
+            },
+            "over33": 107,
+            "over50": 90
+          },
+          "startup": {
+            "samples": 47,
+            "frameMs": {
+              "median": 33.30000000000018,
+              "p95": 100.09999999999991,
+              "p99": 233.30000000000018,
+              "max": 233.30000000000018
+            },
+            "submitCpuMs": {
+              "median": 21.299999997019768,
+              "p95": 65,
+              "p99": 175.70000000298023,
+              "max": 175.70000000298023
+            },
+            "over33": 13,
+            "over50": 10
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 57
+          },
+          "drawingWeights": [
+            {
+              "id": "foe-1-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "foe-0-yarn-giant",
+              "poses": 4,
+              "bytes": 243936
+            },
+            {
+              "id": "mochi",
+              "poses": 5,
+              "bytes": 392040
+            },
+            {
+              "id": "soot",
+              "poses": 4,
+              "bytes": 357192
+            },
+            {
+              "id": "clover",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "panko",
+              "poses": 5,
+              "bytes": 392040
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ],
+          "presentations": 28,
+          "actions": 25,
+          "statuses": 3,
+          "ultimates": 5,
+          "ultimateHeroes": [
+            "clover",
+            "mochi",
+            "panko",
+            "soot"
+          ]
+        }
+      ],
+      "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-packed-boss-before/report.json"
+    },
+    "after": {
+      "numberMetricsMode": "on",
+      "utc": "2026-11-17T17:33:35.958Z",
+      "source": "c79f50b7140a6d9ac83443b90b0de7da7e7b1043",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "production": false,
+      "hardware": "Apple M3 Pro",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+      "errors": [],
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "numberMetricsOverrideNote": "Shared dispatch for on/off; off clears glyph metrics before atlas lookups to reproduce per-color measurement in the same runtime. Per-color atlas caching remains unchanged.",
+      "sourceMeaning": "Candidate application source HEAD plus runtime patch",
+      "ended": "2026-11-17T17:34:44.840Z",
+      "pass": true,
+      "rates": [
+        {
+          "rate": 1,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32001.20000000298,
+          "samples": 1793,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999995634,
+            "p99": 16.80000000000291,
+            "max": 33.399999999999636
+          },
+          "submitCpuMs": {
+            "median": 4.299999997019768,
+            "p95": 6.100000001490116,
+            "p99": 18.600000001490116,
+            "max": 30.399999998509884
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 8.100000001490116,
+          "wholeRun": {
+            "samples": 1908,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.799999999999272,
+              "p99": 16.80000000000291,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4.299999997019768,
+              "p95": 6.299999997019768,
+              "p99": 19.399999998509884,
+              "max": 52.5
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 115,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.800000000000182,
+              "p99": 33.30000000000018,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4.5,
+              "p95": 20.299999997019768,
+              "p99": 32.099999994039536,
+              "max": 52.5
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "drawingWeights": [
+            {
+              "id": "foe-0-yarn-giant",
+              "poses": 5,
+              "bytes": 304920
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "mochi",
+              "poses": 5,
+              "bytes": 392040
+            },
+            {
+              "id": "soot",
+              "poses": 4,
+              "bytes": 357192
+            },
+            {
+              "id": "clover",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "panko",
+              "poses": 5,
+              "bytes": 392040
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ],
+          "presentations": 29,
+          "actions": 26,
+          "statuses": 3,
+          "ultimates": 6,
+          "ultimateHeroes": [
+            "clover",
+            "foe-0-yarn-giant",
+            "mochi",
+            "panko",
+            "soot"
+          ]
+        },
+        {
+          "rate": 4,
+          "numberMetricsMode": "on",
+          "elapsedMs": 32029.10000000149,
+          "samples": 951,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 83.29999999999927,
+            "p99": 100,
+            "max": 216.70000000000073
+          },
+          "submitCpuMs": {
+            "median": 19.30000000447035,
+            "p95": 27.899999998509884,
+            "p99": 57.80000000447035,
+            "max": 143.79999999701977
+          },
+          "over33": 98,
+          "over50": 81,
+          "firstRenderLatencyMs": 35.79999999701977,
+          "wholeRun": {
+            "samples": 1003,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 83.29999999999927,
+              "p99": 100,
+              "max": 216.70000000000073
+            },
+            "submitCpuMs": {
+              "median": 19.30000000447035,
+              "p95": 28.299999997019768,
+              "p99": 62.29999999701977,
+              "max": 163.70000000298023
+            },
+            "over33": 112,
+            "over50": 89
+          },
+          "startup": {
+            "samples": 52,
+            "frameMs": {
+              "median": 33.30000000000018,
+              "p95": 83.40000000000009,
+              "p99": 216.69999999999982,
+              "max": 216.69999999999982
+            },
+            "submitCpuMs": {
+              "median": 19.100000001490116,
+              "p95": 62.600000001490116,
+              "p99": 163.70000000298023,
+              "max": 163.70000000298023
+            },
+            "over33": 14,
+            "over50": 8
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 57
+          },
+          "drawingWeights": [
+            {
+              "id": "foe-0-yarn-giant",
+              "poses": 4,
+              "bytes": 243936
+            },
+            {
+              "id": "foe-1-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "foe-2-binding-thread",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "mochi",
+              "poses": 5,
+              "bytes": 392040
+            },
+            {
+              "id": "soot",
+              "poses": 4,
+              "bytes": 357192
+            },
+            {
+              "id": "clover",
+              "poses": 4,
+              "bytes": 313632
+            },
+            {
+              "id": "panko",
+              "poses": 5,
+              "bytes": 392040
+            }
+          ],
+          "identity": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "identityAfter": {
+            "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "runtimeUntrackedSha256": {}
+          },
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ],
+          "presentations": 28,
+          "actions": 25,
+          "statuses": 3,
+          "ultimates": 5,
+          "ultimateHeroes": [
+            "clover",
+            "mochi",
+            "panko",
+            "soot"
+          ]
+        }
+      ],
+      "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-packed-boss-after/report.json"
+    }
+  },
+  "limits": "Sequential runs on sharedAppleM3Pro;4xCPU is stress proxy. NormalCPUmedian4.1\u21924.3ms/startup48.1\u219252.5ms worsen.4xCPUmedian19.6\u219219.3ms/startup175.7\u2192163.7ms improve;framep9583.3ms unchanged,p99116.7\u2192100ms. Same26+3/6ultsnormal and25+3/5ults4x;0errors."
+}

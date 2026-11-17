@@ -91,11 +91,22 @@ export function opaqueWorldBounds(root:T.Object3D):OpaqueWorldBounds|undefined {
   const mesh=node as T.Mesh;if(!mesh.isMesh||!mesh.visible)return;
   const positions=mesh.geometry.attributes.position;if(!positions)return;
   const m=mesh.matrixWorld.elements;
+  // Only ordinary packed floats have the same semantics as raw array reads.
+  // Normalized, interleaved and half-float attributes need their getters.
+  const packed=positions.itemSize===3&&!positions.normalized&&!('isInterleavedBufferAttribute' in positions)&&(positions.array instanceof Float32Array||positions.array instanceof Float64Array)?positions.array:null;
   for(const sample of samples(mesh)){
    let x=0,y=0,z=0,visible=false;
-   for(let j=0;j<3;j++){
-    const index=sample.ids[j]!,weight=sample.weights[j]!,px=positions.getX(index),py=positions.getY(index);
-    x+=px*weight;y+=py*weight;z+=positions.getZ(index)*weight;visible ||=px!==0||py!==0;
+   if(packed){
+    const a=sample.ids[0]*3,b=sample.ids[1]*3,c=sample.ids[2]*3,u=sample.weights[0],v=sample.weights[1],w=sample.weights[2];
+    const ax=packed[a]!,ay=packed[a+1]!,bx=packed[b]!,by=packed[b+1]!,cx=packed[c]!,cy=packed[c+1]!;
+    // Keep the original left-to-right accumulation, including its initial zero.
+    x=0+ax*u+bx*v+cx*w;y=0+ay*u+by*v+cy*w;z=0+packed[a+2]!*u+packed[b+2]!*v+packed[c+2]!*w;
+    visible=ax!==0||ay!==0||bx!==0||by!==0||cx!==0||cy!==0;
+   }else{
+    for(let j=0;j<3;j++){
+     const index=sample.ids[j]!,weight=sample.weights[j]!,px=positions.getX(index),py=positions.getY(index);
+     x+=px*weight;y+=py*weight;z+=positions.getZ(index)*weight;visible ||=px!==0||py!==0;
+    }
    }
    // The cut-out renderer collapses hidden attachments to zero vertices.
    if(!visible)continue;

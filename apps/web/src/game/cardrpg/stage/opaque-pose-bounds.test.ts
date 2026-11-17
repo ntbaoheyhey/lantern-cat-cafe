@@ -1,5 +1,5 @@
 import {afterEach,expect,it,vi} from 'vitest';
-import {Box3,Mesh,MeshBasicMaterial,PlaneGeometry,Texture,Triangle,Vector3} from 'three';
+import {Box3,BufferAttribute,Float16BufferAttribute,Int16BufferAttribute,InterleavedBuffer,InterleavedBufferAttribute,Mesh,MeshBasicMaterial,PlaneGeometry,Texture,Triangle,Vector3} from 'three';
 import {opaqueWorldBounds} from './opaque-pose-bounds';
 afterEach(()=>vi.restoreAllMocks());
 
@@ -16,7 +16,7 @@ it('reuses both alternating pose contours while still measuring current deformat
  geometry.dispose();material.dispose();a.dispose();b.dispose();
 });
 
-it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow'].map(pattern=>({flipY,pattern}))))('retains every painted extremum through deformation and reflection (flipY=$flipY, $pattern)',({flipY,pattern})=>{
+it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow'].flatMap(pattern=>['float32','float64','normalized-int16','interleaved','float16'].map(format=>({flipY,pattern,format})))) )('retains every painted extremum through 3D deformation and reflection (flipY=$flipY, $pattern, $format)',({flipY,pattern,format})=>{
  const image=document.createElement('canvas');image.width=8;image.height=6;
  const rgba=new Uint8ClampedArray(8*6*4);
  for(let y=0;y<6;y++)for(let x=0;x<8;x++){
@@ -27,10 +27,20 @@ it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow']
  }
  vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue({drawImage:()=>{},getImageData:()=>({data:rgba})} as unknown as ReturnType<HTMLCanvasElement['getContext']>);
  const texture=new Texture(image);texture.flipY=flipY;
- const geometry=new PlaneGeometry(8,6,2,2),positions=geometry.attributes.position!,uv=geometry.attributes.uv!,index=geometry.index!;
+ const geometry=new PlaneGeometry(8,6,2,2),uv=geometry.attributes.uv!,index=geometry.index!;
+ let positions=geometry.attributes.position!;
  for(let i=0;i<positions.count;i++){const x=positions.getX(i),y=positions.getY(i);positions.setXYZ(i,x+.07*y*y,y+.13*x*x,.09*x*y);}
+ if(format!=='float32'){
+  const converted=format==='float64'?new BufferAttribute(new Float64Array(positions.count*3),3):
+   format==='normalized-int16'?new Int16BufferAttribute(new Int16Array(positions.count*3),3,true):
+   format==='interleaved'?new InterleavedBufferAttribute(new InterleavedBuffer(new Float32Array(positions.count*5).fill(77),5),3,1):
+   new Float16BufferAttribute(new Uint16Array(positions.count*3),3);
+  const scale=format==='normalized-int16'?1/8:1;
+  for(let i=0;i<positions.count;i++)converted.setXYZ(i,positions.getX(i)*scale,positions.getY(i)*scale,positions.getZ(i)*scale);
+  geometry.setAttribute('position',converted);positions=converted;
+ }
  const material=new MeshBasicMaterial({map:texture}),mesh=new Mesh(geometry,material);
- mesh.scale.set(-1.4,.8,1);mesh.rotation.z=.23;mesh.position.set(7,-3,2);mesh.updateMatrixWorld(true);
+ mesh.scale.set(-1.4,.8,1);mesh.rotation.set(.17,-.21,.23);mesh.position.set(7,-3,2);mesh.updateMatrixWorld(true);
  // Independent oracle: transform every painted pixel through Three's triangle
  // interpolation, without row endpoints or convex-hull reduction.
  const expected=new Box3(),point=new Vector3(),weights=new Vector3(),world=new Vector3();
