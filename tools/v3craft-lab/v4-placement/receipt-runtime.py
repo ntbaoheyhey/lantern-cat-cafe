@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import subprocess
+import argparse
+import re
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'reports/v4-art/REVIEW/A11/placement-runtime-r1'
@@ -11,8 +13,17 @@ read = lambda p: json.loads(p.read_text())
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 git = lambda *args: subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
 now = datetime.now(timezone.utc).isoformat()
-targets = ['lane-audit-final.json', 'acceptance-receipt.json']
+parser = argparse.ArgumentParser()
+parser.add_argument('--revision', default='')
+args = parser.parse_args()
+assert not args.revision or re.fullmatch(r'[a-z0-9-]+', args.revision), 'Invalid revision'
+suffix = '-' + args.revision if args.revision else ''
+targets = ['lane-audit-final' + suffix + '.json', 'acceptance-receipt' + suffix + '.json']
 assert not any((OUT / name).exists() for name in targets), 'Never overwrite a receipt'
+checkpoint_paths = ['reports/v4-art/' + name for name in
+                    ['HANDOFF-ART.md', 'QUEUE-ART.md', 'STATE-ART.md', 'STATUS-VI.md']]
+checkpoint_paths.append(str((OUT / 'film-review.json').relative_to(ROOT)))
+assert not git('diff', '--name-only', '--', *checkpoint_paths), 'Explicitly stage pending checkpoint changes first'
 runtime = read(OUT / 'source-hashes.json')
 validation = read(OUT / 'validation.json')
 pipeline = read(OUT / 'capture-jobs.json')
@@ -77,11 +88,12 @@ audit = {'at': now, 'baseline': baseline, 'head': git('rev-parse', 'HEAD'), 'cou
 assert audit['pass'], audit
 proofs = ['source-hashes.json', 'validation-preflight.json', 'validation.json', 'parity.json',
           'runtime-check-r1.json', 'capture-jobs.json', 'film-capture-verification.json', 'encoded-markers.json',
-          'film-review.json', 'layout900.json', 'layout900-review.json', 'native-label-review-r1.json', 'lane-audit-final.json']
+          'film-review.json', 'layout900.json', 'layout900-review.json', 'native-label-review-r1.json', targets[0]]
 receipt = {
     'at': now, 'status': 'SCOPED_PLACEMENT_REVIEW_COMPLETE; full composition and integration acceptance OPEN',
     'runtimeCommit': runtime_commit, 'captureSourceCommit': pipeline['sourceCommit'], 'receiptSourceCommit': git('rev-parse', 'HEAD'),
     'scriptSha256': sha(Path(__file__)), 'runtime': {'verifiedHashes': len(runtime), 'changesSinceInstalledRuntime': runtime_delta},
+    'revision': args.revision or 'original',
     'proofs': [{'path': str((OUT / p).relative_to(ROOT)), 'sha256': sha(OUT / p)} for p in proofs],
     'validation': {'fullWeb': validation['fullWebSummary'], 'typecheck': 'Source-matched preflight passed',
                    'explicitThreeFixtureParity': True, 'installedDomEquivalence': True, 'lanePass': True},
