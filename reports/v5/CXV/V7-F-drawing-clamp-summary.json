@@ -1,0 +1,209 @@
+{
+  "utc": "2026-11-17T18:28:47.968Z",
+  "source": "2c4d58c319693aff55a1c232c052879be7eaa17c",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "d6b627350644461a2a3e8e77f27f28c9d1e6074636572a891708ecf84cea95c8",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only conservative inner-square clamp shortcut. Both baseline/candidate point functions are cloned from the same current browser method and share dispatch.910 real pose cases compare every vertex byte, arbitrary sockets, feet and face corners.7 alternating warmed blocks/mode/fixture at4x CPU, no renderer timing. Exact IEEE numeric fallback oracle tested separately. This is not ordinary FPS, GPU parity, or runtime integration.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "pass": true,
+  "ended": "2026-11-17T18:29:00.433Z",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "timing": [
+        {
+          "mode": "original",
+          "ms": 237.79999999701977,
+          "samples": 360,
+          "block": 0
+        },
+        {
+          "mode": "shortcut",
+          "ms": 226,
+          "samples": 360,
+          "block": 0
+        },
+        {
+          "mode": "shortcut",
+          "ms": 227.59999999403954,
+          "samples": 360,
+          "block": 1
+        },
+        {
+          "mode": "original",
+          "ms": 235.5,
+          "samples": 360,
+          "block": 1
+        },
+        {
+          "mode": "original",
+          "ms": 236.90000000596046,
+          "samples": 360,
+          "block": 2
+        },
+        {
+          "mode": "shortcut",
+          "ms": 228,
+          "samples": 360,
+          "block": 2
+        },
+        {
+          "mode": "shortcut",
+          "ms": 227.79999999701977,
+          "samples": 360,
+          "block": 3
+        },
+        {
+          "mode": "original",
+          "ms": 236.39999999850988,
+          "samples": 360,
+          "block": 3
+        },
+        {
+          "mode": "original",
+          "ms": 235.10000000149012,
+          "samples": 360,
+          "block": 4
+        },
+        {
+          "mode": "shortcut",
+          "ms": 226.70000000298023,
+          "samples": 360,
+          "block": 4
+        },
+        {
+          "mode": "shortcut",
+          "ms": 225.79999999701977,
+          "samples": 360,
+          "block": 5
+        },
+        {
+          "mode": "original",
+          "ms": 233.89999999850988,
+          "samples": 360,
+          "block": 5
+        },
+        {
+          "mode": "original",
+          "ms": 235.5,
+          "samples": 360,
+          "block": 6
+        },
+        {
+          "mode": "shortcut",
+          "ms": 226.20000000298023,
+          "samples": 360,
+          "block": 6
+        }
+      ],
+      "oracleCases": 28000,
+      "originalMedianMs": 235.5,
+      "shortcutMedianMs": 226.70000000298023,
+      "prototype": "const limit=m.opaqueHeight*.025,half=limit*.5,factor=Number.isFinite(limit)&&limit>=.001&&ox>=-half&&ox<=half&&oy>=-half&&oy<=half?1:Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));",
+      "motionCases": 420,
+      "differences": 0
+    },
+    {
+      "id": "boss",
+      "timing": [
+        {
+          "mode": "original",
+          "ms": 276.6000000014901,
+          "samples": 420,
+          "block": 0
+        },
+        {
+          "mode": "shortcut",
+          "ms": 263.3999999985099,
+          "samples": 420,
+          "block": 0
+        },
+        {
+          "mode": "shortcut",
+          "ms": 262.3999999985099,
+          "samples": 420,
+          "block": 1
+        },
+        {
+          "mode": "original",
+          "ms": 275.6000000014901,
+          "samples": 420,
+          "block": 1
+        },
+        {
+          "mode": "original",
+          "ms": 274.8999999985099,
+          "samples": 420,
+          "block": 2
+        },
+        {
+          "mode": "shortcut",
+          "ms": 266,
+          "samples": 420,
+          "block": 2
+        },
+        {
+          "mode": "shortcut",
+          "ms": 263.6000000014901,
+          "samples": 420,
+          "block": 3
+        },
+        {
+          "mode": "original",
+          "ms": 275.3999999985099,
+          "samples": 420,
+          "block": 3
+        },
+        {
+          "mode": "original",
+          "ms": 272.5,
+          "samples": 420,
+          "block": 4
+        },
+        {
+          "mode": "shortcut",
+          "ms": 263,
+          "samples": 420,
+          "block": 4
+        },
+        {
+          "mode": "shortcut",
+          "ms": 263.1000000014901,
+          "samples": 420,
+          "block": 5
+        },
+        {
+          "mode": "original",
+          "ms": 274.6000000014901,
+          "samples": 420,
+          "block": 5
+        },
+        {
+          "mode": "original",
+          "ms": 276.69999999552965,
+          "samples": 420,
+          "block": 6
+        },
+        {
+          "mode": "shortcut",
+          "ms": 263.20000000298023,
+          "samples": 420,
+          "block": 6
+        }
+      ],
+      "oracleCases": 28000,
+      "originalMedianMs": 275.3999999985099,
+      "shortcutMedianMs": 263.20000000298023,
+      "prototype": "const limit=m.opaqueHeight*.025,half=limit*.5,factor=Number.isFinite(limit)&&limit>=.001&&ox>=-half&&ox<=half&&oy>=-half&&oy<=half?1:Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));",
+      "motionCases": 490,
+      "differences": 0
+    }
+  ],
+  "interpretation": "Exact910 motion cases,28k scalar cases repeated in both fixtures. Warm geometry gains3.7%wave3/4.4%boss only;not FPS or runtime acceptance. Continue study with static facial projection weights;no runtime edit before18:43Z."
+}
