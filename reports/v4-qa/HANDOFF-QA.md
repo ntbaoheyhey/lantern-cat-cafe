@@ -7,7 +7,7 @@ RUNNING: production2 PID35291 work/v4qa/jobs/production-2.log; recheck PID35682 
 FINISHED: cold PID14675; post-cold PID21099 (completed02:09:07UTC); never relaunch or regenerate verified metadata.
 LAST PUSH: 2026-11-17T02:29:11.458449+00:00 dcbb67ecd15b0f91915de24085783aa249b819ea
 TARGET SHIP runtime: 4b4c41114ea9795820aa9204023e0954a9810f84; build2 ready with metadata. Priorb1e4398a evidence preserved separately.
-TARGET ART: 8a256755d4178741dafb9e3faf1957885d1a6a1f. Q4 sync1 at17Nov12UTC/latest14.
+TARGET ART: 5aa7c81aa83a4bcca7219dcec52607f97b80ebf7; two QA5test files changed; independently execute after current fixture releases; do not use ART harness verdict.
 FIXTURE: owned production preview6200/API6201/Anvil6202 configured chain43113 (verified owned anvil/v1.8.6). Funding fault snapshots and restores this local fixture only.
 Q1 ENDED02:05:57UTC: three paths,54successful local receipts;12JPEGs; transferFAIL; phone attributionQA4; desktop closed-audio flags false positives.
 Q2 PASS: typecheck/Supabase/Forge/icons/build. FAIL: root7presentation tests (QA5ART), manifest, typography (triage ongoing).
@@ -17,3 +17,4 @@ PUBLIC: reserve candidate unconfirmed; no public transaction. Vercel upload-size
 CHECKPOINT: noSTOP/noQA pause/noactualDEPLOYED line at02:14UTC; inspect next checkpoint. Q2 timebox ends~03:23:48UTC.
 
 Prior reserve attempt1 stopped before mutation on incorrect31337 assumption; preserved Q2/reserve-fault-reproduction.json. Attempt2 verifies owned process, Anvil identity and local receipt before changing balance.
+LATEST SHIP source46e4768b: QA6 manifest fixed by own exact-script rerun; audio latency changed, runtime stays4b4c4111. New-tip source review Q2/open-findings-recheck-46e4768b.json.

@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-17T02:37:41.568115+00:00",
+  "shipSha": "46e4768bd3355f74c5cb94c57caf70b3eeb34656",
+  "runtimeSha": "4b4c41114ea9795820aa9204023e0954a9810f84",
+  "artSha": "5aa7c81aa83a4bcca7219dcec52607f97b80ebf7",
+  "shipSourceChanges": [
+    "apps/web/src/audio/engine.ts",
+    "supabase/functions/_shared/chain-campaign-manifest.ts"
+  ],
+  "artSourceChanges": [
+    "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts",
+    "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts"
+  ],
+  "QA2": "New audio latency line changes runtime after measured4b4c4111; no asset/lazy-loading fix in this delta.29.54MB evidence scoped to4b4c4111; remains open.",
+  "QA4": "Narrow landing CSS unchanged; pending phone browser check on4b4c4111.",
+  "QA5": "ART changed the two failing test files; independent execution queued after current browser fixture completes. No closure from owner result.",
+  "QA6": "Own exact committed script check PASS, fixed46e4768b. Hosted policy state not inspected.",
+  "QA7": "Typography guard and offending CSS unchanged; remains open.",
+  "QA8": "Guest-drip path and one-wallet preflight unchanged; remains open; local condition only."
+}
