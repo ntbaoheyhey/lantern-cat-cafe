@@ -1,0 +1,757 @@
+{
+  "at": "2026-11-17T01:16:03.787Z",
+  "learn": "reports/v4-ship/LEARN/S11-palette-coverage.md",
+  "integrityPass": true,
+  "harness": {
+    "path": "tools/v4ship-lab/audio/palette-coverage-review.mjs",
+    "sha256": "de69a1d82861ccaef251c735607c1d965102ef09c3efcb29b1c897ed97ad3aef"
+  },
+  "helpers": [
+    {
+      "path": "tools/v4ship-lab/audio/capture.mjs",
+      "sha256": "b9617124bb98043a0915d04941578839365e9c7dea18123d11338c89ce5438f3"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/validate.mjs",
+      "sha256": "3bd32ef187b8c0df90dc951ab6432ddc0f610cd4b2d455c9acf9485b65dd7232"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/duration.mjs",
+      "sha256": "3a339985e8277aef1f881293f18685c775ace46948e30c02fd76d4012e65b43a"
+    },
+    {
+      "path": "scripts/audio/runtime-signature.mjs",
+      "sha256": "da06c83f1d2e7762482b9cd0f0e030ff7d1d51d78f9b3ef108a985c5a119ca75"
+    },
+    {
+      "path": "scripts/audio/capture-page.mjs",
+      "sha256": "c63ece34c4fad00870763ae27403557aaa3c307da501b61aca04637628f3463f"
+    },
+    {
+      "path": "scripts/audio/ui-fixtures.mjs",
+      "sha256": "408cf72135ba5d491781fd558a0f3041bdb104a179e4f5b50d41bc075c979946"
+    },
+    {
+      "path": "scripts/v3feel/browser-fixture.mjs",
+      "sha256": "bb410a733178c325c3c6973425ddfdbf512c400427938798feec4d53c6dd650d"
+    },
+    {
+      "path": "scripts/v3a2/check-gates.mjs",
+      "sha256": "517f43a841c496f0bddd5c83bbad5e09e5cb4776eb07c6ab633ed0a439982c25"
+    },
+    {
+      "path": "scripts/v3a2/fixtures.json",
+      "sha256": "007e49c79b5ba96f7f7850ae16a18b6eecd264974801b20c59f650a95dbf80c1"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-prespec-1.json",
+      "sha256": "1e7ff483568665b40c14606e9c6514f0f318a3c1eb6de9adea3066fce15ae14a"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-study-1.json",
+      "sha256": "0d2421f38a9e730bd38a086b2a490e801c3a27d03229fd8491c69ef215528c92"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-aggregate-1.json",
+      "sha256": "9ccfe70a133718e98e497cccac379ef5b11668efb5a1eef9e40d3a2eed6fe648"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-1/check.json",
+      "sha256": "c7b45bd8c70f2edfcafd81eb1222d3935c001ee9019ac7ed63fcb6a52ff10c82"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-1/validation.json",
+      "sha256": "097b157df31f0fdac135d434b0cb06d71dd7101871ccada7c48cdcffd74a7b74"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-regression-1/check.json",
+      "sha256": "0acd2084a5487f561eff5de727e658a786b28bbf1a62bef2b29979f8b0d5903e"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-regression-1/log.jsonl.gz",
+      "sha256": "48d208beeced8f734b68a89bbfc624bed4a1ab5825b28bc52b3e3f3b3e21baa5"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-regression-1/parity-probe.json",
+      "sha256": "d0a2f9c950b285c28b0e3181588c71c150da0dc5b80b57e02eec2af364a809bf"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/log.jsonl.gz",
+      "sha256": "3d69a1e005974890c937e55aee09f298cdaa6f149f2b78ae50f063f09a377293"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-jpeg-regression-1/parity-probe.json",
+      "sha256": "ab66e5174b3cf92fd8d833a8133b032175f98e3cbca592678a7133fcf7175b33"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-study-failure-1.json",
+      "sha256": "1493d13b50e83e884425701f8b2778c2176d6587893efb43a5c54e582be6f897"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-study-failure-1.py.gz",
+      "sha256": "c66ac83052a630b10f732330765e086e2f0bacc03f4bbfded2fb7d2a5b463742"
+    }
+  ],
+  "runtime": {
+    "sourceCommit": "208805af81dc6ae507fbb3f82945e4993f2d8739",
+    "files": 234,
+    "allCurrentAndCommittedHashesMatch": true
+  },
+  "rows": [
+    {
+      "name": "wave1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "3ce038be14380ed4febe93bdad1c76426c507534a3778d95da736154db71d451"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/wave1-events.json.gz",
+        "bytes": 82179,
+        "sha256": "289104ac24e595b5397f429726723756669df92ca308ebf109247a2ed2dbf660"
+      },
+      "duration": {
+        "wallSeconds": 90.05099987983704,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1500,
+        "encodedSeconds": 90,
+        "timestampSpanSeconds": 89.99600000000001,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": false
+      },
+      "sourceStarts": 395,
+      "maxStartsPer100ms": 4,
+      "maxTransientStartsPer100ms": 4,
+      "sourceBudgetPass": true,
+      "restarts": 0,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.81,
+          "lra": 8,
+          "truePeakDbTP": -2.62
+        },
+        "ebur128": {
+          "lufs": -17.9,
+          "lra": 7.9,
+          "truePeakDbTP": -2.6,
+          "seconds": 0.3595939999999998
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": true
+      },
+      "duck": {
+        "heldSamples": 1154,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "recoverySamples": 1091,
+        "minRecovery": 1,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 179,
+        "min": 28.02100000000064,
+        "p95": 32.96033333482228,
+        "max": 33.26833333184186,
+        "outside33ms": 7
+      },
+      "invalidTimestampGroups": 0,
+      "estimatedOnsetPass": false,
+      "voiceLines": [
+        "voice.panko.ult.charge",
+        "voice.needle-moth.ult.charge",
+        "voice.mochi.ult.charge",
+        "voice.soot.ult.charge",
+        "voice.clover.ult.charge",
+        "voice.button-guard.ult.charge",
+        "voice.sock-skipper.ult.charge",
+        "voice.teacup-healer.ult.charge"
+      ],
+      "voiceInterruptions": 0,
+      "maxObservedUiDurationMs": null,
+      "observedUiDurationPass": null,
+      "actionLoopRecords": 0,
+      "rateLimitedRequests": 0,
+      "admission": {
+        "requestedVoices": {
+          "voice.panko.ult.charge": 8,
+          "voice.needle-moth.ult.charge": 8,
+          "voice.mochi.ult.charge": 6,
+          "voice.soot.ult.charge": 6,
+          "voice.clover.ult.charge": 2,
+          "voice.button-guard.ult.charge": 6,
+          "voice.sock-skipper.ult.charge": 5,
+          "voice.teacup-healer.ult.charge": 2
+        },
+        "rejectedByCue": {},
+        "scope": "Requests and starts follow instrumentation; hits also retain earlier fixture setup."
+      },
+      "rangedPaletteStarts": {
+        "v4-ranged-ember": 8,
+        "v4-ranged-heavy": 8
+      },
+      "pageErrors": [],
+      "maxSampleGapMs": 49
+    },
+    {
+      "name": "boss",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/boss.webm",
+        "bytes": 1450593,
+        "sha256": "129edc4d020138433a47cfe6dd49115101cda83774c84f4f86fc57f59d89dbcd"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/boss-events.json.gz",
+        "bytes": 82977,
+        "sha256": "b4a56c29315b5d3f57b6896774896492aa2779a954daa0bee90c969a56254bc2"
+      },
+      "duration": {
+        "wallSeconds": 90.05299997329712,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1500,
+        "encodedSeconds": 90,
+        "timestampSpanSeconds": 89.999,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": false
+      },
+      "sourceStarts": 393,
+      "maxStartsPer100ms": 4,
+      "maxTransientStartsPer100ms": 4,
+      "sourceBudgetPass": true,
+      "restarts": 0,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.05,
+          "lra": 9.2,
+          "truePeakDbTP": -2.15
+        },
+        "ebur128": {
+          "lufs": -17.3,
+          "lra": 9.1,
+          "truePeakDbTP": -2.1,
+          "seconds": 0.36402991599999995
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": false,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": true
+      },
+      "duck": {
+        "heldSamples": 1014,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "recoverySamples": 999,
+        "minRecovery": 1,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 198,
+        "min": 28.023000000001048,
+        "p95": 32.76833333184186,
+        "max": 33.160333337800694,
+        "outside33ms": 6
+      },
+      "invalidTimestampGroups": 0,
+      "estimatedOnsetPass": false,
+      "voiceLines": [
+        "voice.panko.ult.charge",
+        "voice.mochi.ult.charge",
+        "voice.soot.ult.charge",
+        "voice.clover.ult.charge",
+        "voice.yarn-giant.ult.charge",
+        "voice.binding-thread.ult.charge"
+      ],
+      "voiceInterruptions": 0,
+      "maxObservedUiDurationMs": null,
+      "observedUiDurationPass": null,
+      "actionLoopRecords": 0,
+      "rateLimitedRequests": 0,
+      "admission": {
+        "requestedVoices": {
+          "voice.panko.ult.charge": 8,
+          "voice.mochi.ult.charge": 8,
+          "voice.soot.ult.charge": 8,
+          "voice.clover.ult.charge": 3,
+          "voice.yarn-giant.ult.charge": 6,
+          "voice.binding-thread.ult.charge": 12
+        },
+        "rejectedByCue": {},
+        "scope": "Requests and starts follow instrumentation; hits also retain earlier fixture setup."
+      },
+      "rangedPaletteStarts": {
+        "v4-ranged-ember": 9,
+        "v4-ranged-heavy": 18
+      },
+      "pageErrors": [],
+      "maxSampleGapMs": 120
+    },
+    {
+      "name": "home",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/home.webm",
+        "bytes": 1460253,
+        "sha256": "cda143cb91d39e447563c0a53de7e896a092fb74ecc7d9b44e4420634ab6e520"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/home-events.json.gz",
+        "bytes": 29432,
+        "sha256": "2b124cb451a1ff693f3e93c77aa140e5ec4040a2fcdbda3c3d4f98473ba26332"
+      },
+      "duration": {
+        "wallSeconds": 90.67400002479553,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1510,
+        "encodedSeconds": 90.6,
+        "timestampSpanSeconds": 90.596,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "sourceStarts": 21,
+      "maxStartsPer100ms": 1,
+      "maxTransientStartsPer100ms": 1,
+      "sourceBudgetPass": true,
+      "restarts": 0,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.36,
+          "lra": 5.1,
+          "truePeakDbTP": -2.25
+        },
+        "ebur128": {
+          "lufs": -17.3,
+          "lra": 5.1,
+          "truePeakDbTP": -2.3,
+          "seconds": 0.365010667
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": true
+      },
+      "duck": {
+        "heldSamples": 147,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "recoverySamples": 2659,
+        "minRecovery": 1,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 21,
+        "min": 28.149000001490094,
+        "p95": 32.886333333328366,
+        "max": 33.17533333034953,
+        "outside33ms": 1
+      },
+      "invalidTimestampGroups": 0,
+      "estimatedOnsetPass": false,
+      "voiceLines": [
+        "voice.guide.idle"
+      ],
+      "voiceInterruptions": 0,
+      "maxObservedUiDurationMs": 122.70558790703252,
+      "observedUiDurationPass": true,
+      "actionLoopRecords": 18,
+      "rateLimitedRequests": 1,
+      "admission": {
+        "requestedVoices": {
+          "voice.guide.idle": 3
+        },
+        "rejectedByCue": {
+          "ui.click": {
+            "rate-limit": 1
+          }
+        },
+        "scope": "Requests and starts follow instrumentation; hits also retain earlier fixture setup."
+      },
+      "rangedPaletteStarts": {},
+      "pageErrors": [],
+      "maxSampleGapMs": 27
+    },
+    {
+      "name": "bag",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/bag.webm",
+        "bytes": 1460253,
+        "sha256": "a0e5d426559427dc3dac7df3710c71a1f6f8bddb4651551a428cf5e4564b6d45"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/bag-events.json.gz",
+        "bytes": 36490,
+        "sha256": "125824c49c66ce21fbd2f9529542a26011e994b9947b3b2b9fb87df8caadc007"
+      },
+      "duration": {
+        "wallSeconds": 90.64599990844727,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1510,
+        "encodedSeconds": 90.6,
+        "timestampSpanSeconds": 90.602,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000036664,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "sourceStarts": 80,
+      "maxStartsPer100ms": 6,
+      "maxTransientStartsPer100ms": 6,
+      "sourceBudgetPass": true,
+      "restarts": 0,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.14,
+          "lra": 4.7,
+          "truePeakDbTP": -2.03
+        },
+        "ebur128": {
+          "lufs": -17.1,
+          "lra": 5.1,
+          "truePeakDbTP": -2,
+          "seconds": 0.3658687910000003
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": false,
+          "truePeak": true
+        },
+        "bothMetersPass": false
+      },
+      "duck": {
+        "heldSamples": 249,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "recoverySamples": 3287,
+        "minRecovery": 1,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 62,
+        "min": 28.488333334826166,
+        "p95": 33.17733333034266,
+        "max": 33.384333333335235,
+        "outside33ms": 7
+      },
+      "invalidTimestampGroups": 0,
+      "estimatedOnsetPass": false,
+      "voiceLines": [
+        "voice.mochi.gear"
+      ],
+      "voiceInterruptions": 0,
+      "maxObservedUiDurationMs": 123.57628569420535,
+      "observedUiDurationPass": true,
+      "actionLoopRecords": 18,
+      "rateLimitedRequests": 2,
+      "admission": {
+        "requestedVoices": {
+          "voice.mochi.gear": 4
+        },
+        "rejectedByCue": {
+          "ui.click": {
+            "rate-limit": 1
+          },
+          "ui.open": {
+            "rate-limit": 1
+          }
+        },
+        "scope": "Requests and starts follow instrumentation; hits also retain earlier fixture setup."
+      },
+      "rangedPaletteStarts": {},
+      "pageErrors": [],
+      "maxSampleGapMs": 36
+    },
+    {
+      "name": "forge",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/forge.webm",
+        "bytes": 1453491,
+        "sha256": "5ecc230b54d29ecd9564d54156475857d58fa039cac347712126007654630394"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/forge-events.json.gz",
+        "bytes": 30954,
+        "sha256": "94af10b8cf370dcac0a72e9336cc3a9b9cd3884faff67e3cb188d03f2e6f03cd"
+      },
+      "duration": {
+        "wallSeconds": 90.21300005912781,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1503,
+        "encodedSeconds": 90.18,
+        "timestampSpanSeconds": 90.176,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000001137,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "sourceStarts": 40,
+      "maxStartsPer100ms": 6,
+      "maxTransientStartsPer100ms": 6,
+      "sourceBudgetPass": true,
+      "restarts": 0,
+      "mix": {
+        "loudnorm": {
+          "lufs": -18.07,
+          "lra": 0.8,
+          "truePeakDbTP": -2.18
+        },
+        "ebur128": {
+          "lufs": -18,
+          "lra": 0.9,
+          "truePeakDbTP": -2.2,
+          "seconds": 0.3623373329999995
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": false
+      },
+      "duck": {
+        "heldSamples": 75,
+        "minDb": -7.999999988978489,
+        "maxDb": -7.999999988978489,
+        "recoverySamples": 3509,
+        "minRecovery": 1,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 29,
+        "min": 28.58633333632315,
+        "p95": 32.579333328867506,
+        "max": 33.17933333035262,
+        "outside33ms": 1
+      },
+      "invalidTimestampGroups": 0,
+      "estimatedOnsetPass": false,
+      "voiceLines": [
+        "voice.mochi.forge"
+      ],
+      "voiceInterruptions": 0,
+      "maxObservedUiDurationMs": 123.4822699998755,
+      "observedUiDurationPass": true,
+      "actionLoopRecords": 18,
+      "rateLimitedRequests": 5,
+      "admission": {
+        "requestedVoices": {
+          "voice.mochi.forge": 3
+        },
+        "rejectedByCue": {
+          "ui.click": {
+            "rate-limit": 1
+          },
+          "ui.open": {
+            "rate-limit": 1
+          },
+          "ui.forge.success": {
+            "rate-limit": 1
+          },
+          "voice.mochi.forge": {
+            "rate-limit": 2
+          }
+        },
+        "scope": "Requests and starts follow instrumentation; hits also retain earlier fixture setup."
+      },
+      "rangedPaletteStarts": {},
+      "pageErrors": [],
+      "maxSampleGapMs": 36
+    }
+  ],
+  "coverage": {
+    "scenes": [
+      "wave1",
+      "boss",
+      "home",
+      "bag",
+      "forge"
+    ],
+    "wallSeconds": 451.63699984550476,
+    "decodedSeconds": 451.38000000000005,
+    "allFiveDurationsPass": false,
+    "continuous30Minutes": false
+  },
+  "aggregate": {
+    "loudnorm": {
+      "lufs": -17.5,
+      "lra": 9,
+      "truePeakDbTP": 0.03
+    },
+    "ebur128": {
+      "lufs": -17.5,
+      "lra": 9,
+      "truePeakDbTP": 0,
+      "seconds": 1.692713084
+    },
+    "loudnormGates": {
+      "loudness": true,
+      "range": true,
+      "peak": false
+    },
+    "ebur128Gates": {
+      "loudness": true,
+      "range": true,
+      "peak": false
+    },
+    "methodsAgree": {
+      "lufs": true,
+      "lra": true,
+      "truePeak": true
+    }
+  },
+  "aggregateDiagnostic": {
+    "evidence": {
+      "path": "reports/v4-ship/S11/palette-coverage-aggregate-1.json",
+      "sha256": "9ccfe70a133718e98e497cccac379ef5b11668efb5a1eef9e40d3a2eed6fe648"
+    },
+    "separatePcm": {
+      "loudnorm": {
+        "lufs": -17.5,
+        "lra": 8.9,
+        "truePeakDbTP": -2.03,
+        "seconds": 13.129994415999999
+      },
+      "ebur128": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": -2,
+        "seconds": 1.6981812499999995
+      }
+    },
+    "packetConcat": {
+      "loudnorm": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": 0.03,
+        "seconds": 12.89744725
+      },
+      "ebur128": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": 0,
+        "seconds": 1.7739320829999996
+      }
+    },
+    "sampleExactSeparateJoinVerified": true,
+    "firstDifferentFrame": 4320000,
+    "originalPeakFailurePreserved": true,
+    "specificDecoderCauseProven": false
+  },
+  "failedSceneAcoustics": [
+    "bag",
+    "forge"
+  ],
+  "sceneMeterDisagreements": [
+    "boss",
+    "bag"
+  ],
+  "regression": {
+    "sameSevenArtFailures": true,
+    "summaries": {
+      "server": [
+        "Test Files  50 passed (50)",
+        "Tests  742 passed (742)"
+      ],
+      "rules": [
+        "Test Files  97 passed | 3 skipped (100)",
+        "Tests  1409 passed | 2 expected fail | 11 skipped (1422)"
+      ],
+      "web": [
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+        "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+        "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+        "Test Files  2 failed | 320 passed (322)",
+        "Tests  7 failed | 2697 passed (2704)"
+      ]
+    },
+    "parityRowsUnchanged": true,
+    "gRegPass": false
+  },
+  "physicalAudibleOnsetVerified": false,
+  "humanListeningVerified": false,
+  "completeRosterCoverageVerified": false,
+  "overallAudioGatePass": false,
+  "limits": [
+    "Observed five seeded/menu scenes only; separate current production journeys and endurance remain necessary.",
+    "Telemetry starts include setup before the recorded window; action-loop records do not prove every requested UI action occurred.",
+    "No-evidence duck, recovery, UI duration or onset observations remain null rather than passing.",
+    "Meter agreement tolerances do not relax acoustic gates; both meters must meet each original threshold.",
+    "No physical onset, listening, causal palette effect or global acceptance follows from this review."
+  ]
+}

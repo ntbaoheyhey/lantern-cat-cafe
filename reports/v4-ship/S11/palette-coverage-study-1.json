@@ -1,0 +1,197 @@
+{
+  "at": "2026-11-17T01:01:38.725668+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/palette-coverage-study.py",
+    "sha256": "a768d8244a2b45f632562fde7188f10b0f03745f0995e3c72107cd8442a73c71"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S5/ranged-coverage-1/check.json",
+      "sha256": "de5e0f2c020c709284ed9b108fab8c2382173e699171afbf3cf94e1c9be029ff"
+    },
+    {
+      "path": "reports/v4-ship/S5/ranged-coverage-1/validation.json",
+      "sha256": "9654cf5fbb304184d032bb42b9cad36d4d98f80f5c40c6762886009e2e0c164c"
+    }
+  ],
+  "historicalOnly": true,
+  "rows": [
+    {
+      "name": "wave1",
+      "capture": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "6cf60bde6949c548aeb276cc416f08bfb7258d629cff4e026e085e3a1c5bcd96"
+      },
+      "original": {
+        "lufs": -17.81,
+        "lra": 8.1,
+        "truePeakDbTP": -2.82
+      },
+      "loudnorm": {
+        "lufs": -17.81,
+        "lra": 8.1,
+        "truePeakDbTP": -2.82,
+        "seconds": 2.7727607080014423,
+        "loudnessPass": true,
+        "rangePass": true,
+        "peakPass": true
+      },
+      "ebur128": {
+        "lufs": -17.9,
+        "lra": 7.9,
+        "truePeakDbTP": -2.8,
+        "seconds": 0.36470508300408255,
+        "loudnessPass": true,
+        "rangePass": true,
+        "peakPass": true
+      },
+      "methodsAgree": false,
+      "originalReproduced": true
+    },
+    {
+      "name": "wave3",
+      "capture": {
+        "path": "work/v4ship-audio/ranged-coverage-1/wave3.webm",
+        "bytes": 1450593,
+        "sha256": "8da430cb8ee9807fd4a2f9196e89731b01174b4368d5127a1b2f1ff855c8b24e"
+      },
+      "original": {
+        "lufs": -18.08,
+        "lra": 8.1,
+        "truePeakDbTP": -2.63
+      },
+      "loudnorm": {
+        "lufs": -18.08,
+        "lra": 8.1,
+        "truePeakDbTP": -2.63,
+        "seconds": 2.6278944590012543,
+        "loudnessPass": true,
+        "rangePass": true,
+        "peakPass": true
+      },
+      "ebur128": {
+        "lufs": -18.1,
+        "lra": 8.2,
+        "truePeakDbTP": -2.6,
+        "seconds": 0.40642658400611253,
+        "loudnessPass": true,
+        "rangePass": true,
+        "peakPass": true
+      },
+      "methodsAgree": true,
+      "originalReproduced": true
+    },
+    {
+      "name": "home",
+      "capture": {
+        "path": "work/v4ship-audio/ranged-coverage-1/home.webm",
+        "bytes": 1460253,
+        "sha256": "fc70eddf5560a3b76f517dcdbdeb8f87f9af417c8e8786ed0c36b10235a2abdb"
+      },
+      "original": {
+        "lufs": -17.36,
+        "lra": 5,
+        "truePeakDbTP": -2.31
+      },
+      "loudnorm": {
+        "lufs": -17.36,
+        "lra": 5.0,
+        "truePeakDbTP": -2.31,
+        "seconds": 2.5929487499961397,
+        "loudnessPass": true,
+        "rangePass": true,
+        "peakPass": true
+      },
+      "ebur128": {
+        "lufs": -17.3,
+        "lra": 4.9,
+        "truePeakDbTP": -2.3,
+        "seconds": 0.36674008300178684,
+        "loudnessPass": true,
+        "rangePass": false,
+        "peakPass": true
+      },
+      "methodsAgree": true,
+      "originalReproduced": true
+    },
+    {
+      "name": "bag",
+      "capture": {
+        "path": "work/v4ship-audio/ranged-coverage-1/bag.webm",
+        "bytes": 1460253,
+        "sha256": "977f72aed13543335701e010ebcc2e246da71e933de62aa12782cbdecc45a591"
+      },
+      "original": {
+        "lufs": -17.12,
+        "lra": 4.6,
+        "truePeakDbTP": -1.82
+      },
+      "loudnorm": {
+        "lufs": -17.12,
+        "lra": 4.6,
+        "truePeakDbTP": -1.82,
+        "seconds": 2.584502917001373,
+        "loudnessPass": true,
+        "rangePass": false,
+        "peakPass": true
+      },
+      "ebur128": {
+        "lufs": -17.1,
+        "lra": 4.5,
+        "truePeakDbTP": -1.8,
+        "seconds": 0.37284758299938403,
+        "loudnessPass": true,
+        "rangePass": false,
+        "peakPass": true
+      },
+      "methodsAgree": true,
+      "originalReproduced": true
+    },
+    {
+      "name": "forge",
+      "capture": {
+        "path": "work/v4ship-audio/ranged-coverage-1/forge.webm",
+        "bytes": 1453491,
+        "sha256": "325ba1847eb51220ba486922919423796d63647b4acd950ccb0b7dc15c0f7426"
+      },
+      "original": {
+        "lufs": -18.02,
+        "lra": 0.8,
+        "truePeakDbTP": -2.5
+      },
+      "loudnorm": {
+        "lufs": -18.02,
+        "lra": 0.8,
+        "truePeakDbTP": -2.5,
+        "seconds": 2.642049458998372,
+        "loudnessPass": true,
+        "rangePass": false,
+        "peakPass": true
+      },
+      "ebur128": {
+        "lufs": -18.0,
+        "lra": 0.9,
+        "truePeakDbTP": -2.5,
+        "seconds": 0.4105050419966574,
+        "loudnessPass": true,
+        "rangePass": false,
+        "peakPass": true
+      },
+      "methodsAgree": true,
+      "originalReproduced": true
+    }
+  ],
+  "complete": true,
+  "pass": false,
+  "limits": "Method comparison only; original scene acceptance thresholds remain unchanged. No current-runtime, physical-onset or listening claim.",
+  "historicalAggregate": {
+    "lufs": -17.63,
+    "lra": 8.5,
+    "peak": -1.82
+  },
+  "perSceneRangeFailures": [
+    "bag",
+    "forge"
+  ]
+}

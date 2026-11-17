@@ -1,0 +1,578 @@
+{
+  "at": "2026-11-17T01:22:02.149Z",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/palette-duration-review.mjs",
+    "sha256": "3b327c13f462ab894d58452e7ce5701b55e0636aa87db55a3a094ae29816f132"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-duration-prespec-1.json",
+      "sha256": "952111455d39d5762e69b5636082039dfcf48355ac9e6af58d25dcc17c47e5e1"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-review-1.json",
+      "sha256": "5d2439f3c6b9450ee17c0a71c38fbe57a6bebe7c19878c4ffc2fb3042129a45a"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-duration-1/check.json",
+      "sha256": "c68ea80709698b482e2b750f2d664f0ee6c4b986593cb86ddc5450116ed5c403"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-duration-1/validation.json",
+      "sha256": "db0fa4a867073c9d77575a877a3b85e93f25a85208335fcf23c1f6731d5ddda6"
+    },
+    {
+      "path": "reports/v4-ship/S11/palette-coverage-regression-1/check.json",
+      "sha256": "0acd2084a5487f561eff5de727e658a786b28bbf1a62bef2b29979f8b0d5903e"
+    }
+  ],
+  "runtime": {
+    "sourceCommit": "208805af81dc6ae507fbb3f82945e4993f2d8739",
+    "files": 234,
+    "allCurrentAndCommittedHashesMatch": true
+  },
+  "originalDurationFailuresRetained": [
+    {
+      "name": "wave1",
+      "duration": {
+        "wallSeconds": 90.05099987983704,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1500,
+        "encodedSeconds": 90,
+        "timestampSpanSeconds": 89.99600000000001,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": false
+      }
+    },
+    {
+      "name": "boss",
+      "duration": {
+        "wallSeconds": 90.05299997329712,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1500,
+        "encodedSeconds": 90,
+        "timestampSpanSeconds": 89.999,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": false
+      }
+    }
+  ],
+  "retryRows": [
+    {
+      "name": "wave1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-duration-1/wave1.webm",
+        "bytes": 1483471,
+        "sha256": "78c6cec6cbde6c39768174dcf7a98dc28a0823845920e5a49de2da782902ce68"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-duration-1/wave1-events.json.gz",
+        "bytes": 83598,
+        "sha256": "548dc67fdd009febb4c903c7fc4c53908cdf15c951d5580a3afa06e09f10ec7a"
+      },
+      "duration": {
+        "wallSeconds": 92.06600022315979,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1534,
+        "encodedSeconds": 92.04,
+        "timestampSpanSeconds": 92.039,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000001137,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "minimumSeconds": 90,
+        "pass": true
+      },
+      "sourceStarts": 405,
+      "maxStartsPer100ms": 4,
+      "sourceBudgetPass": true,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.9,
+          "lra": 8,
+          "truePeakDbTP": -2.82
+        },
+        "ebur128": {
+          "lufs": -17.9,
+          "lra": 8.1,
+          "truePeakDbTP": -2.8
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "peak": true
+        },
+        "bothMetersPass": true
+      },
+      "duck": {
+        "heldSamples": 1200,
+        "recoverySamples": 1086,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 182,
+        "min": 28.019000000000233,
+        "p95": 32.96833333482209,
+        "max": 33.27633333929407,
+        "outside33ms": 7
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "boss",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-duration-1/boss.webm",
+        "bytes": 1483471,
+        "sha256": "2260cb1b47ba6bcb2a2ae14ea8de93157426aefccf93e3074537cbd0cf76c198"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-duration-1/boss-events.json.gz",
+        "bytes": 85082,
+        "sha256": "c1194264f5172ed5a2d5ee64865ed631c2bb872e24c8f0dcee9a74b61894a49e"
+      },
+      "duration": {
+        "wallSeconds": 92.05799984931946,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1534,
+        "encodedSeconds": 92.04,
+        "timestampSpanSeconds": 92.036,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "minimumSeconds": 90,
+        "pass": true
+      },
+      "sourceStarts": 407,
+      "maxStartsPer100ms": 4,
+      "sourceBudgetPass": true,
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.34,
+          "lra": 9.2,
+          "truePeakDbTP": -2.04
+        },
+        "ebur128": {
+          "lufs": -17.3,
+          "lra": 9.2,
+          "truePeakDbTP": -2
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "peak": true
+        },
+        "bothMetersPass": true
+      },
+      "duck": {
+        "heldSamples": 1031,
+        "recoverySamples": 1066,
+        "duckPass": true,
+        "recoveryPass": true
+      },
+      "estimatedOnset": {
+        "count": 202,
+        "min": 28.007000000005064,
+        "p95": 33.06733333631564,
+        "max": 33.26633333184145,
+        "outside33ms": 11
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    }
+  ],
+  "selected": [
+    {
+      "name": "wave1",
+      "evidence": "reports/v4-ship/S5/palette-coverage-duration-1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-duration-1/wave1.webm",
+        "bytes": 1483471,
+        "sha256": "78c6cec6cbde6c39768174dcf7a98dc28a0823845920e5a49de2da782902ce68"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-duration-1/wave1-events.json.gz",
+        "bytes": 83598,
+        "sha256": "548dc67fdd009febb4c903c7fc4c53908cdf15c951d5580a3afa06e09f10ec7a"
+      },
+      "duration": {
+        "wallSeconds": 92.06600022315979,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1534,
+        "encodedSeconds": 92.04,
+        "timestampSpanSeconds": 92.039,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000001137,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "minimumSeconds": 90,
+        "pass": true
+      },
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.9,
+          "lra": 8,
+          "truePeakDbTP": -2.82
+        },
+        "ebur128": {
+          "lufs": -17.9,
+          "lra": 8.1,
+          "truePeakDbTP": -2.8
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "peak": true
+        },
+        "bothMetersPass": true
+      },
+      "maxStartsPer100ms": 4,
+      "estimatedOnset": {
+        "count": 182,
+        "min": 28.019000000000233,
+        "p95": 32.96833333482209,
+        "max": 33.27633333929407,
+        "outside33ms": 7
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "boss",
+      "evidence": "reports/v4-ship/S5/palette-coverage-duration-1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-duration-1/boss.webm",
+        "bytes": 1483471,
+        "sha256": "2260cb1b47ba6bcb2a2ae14ea8de93157426aefccf93e3074537cbd0cf76c198"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-duration-1/boss-events.json.gz",
+        "bytes": 85082,
+        "sha256": "c1194264f5172ed5a2d5ee64865ed631c2bb872e24c8f0dcee9a74b61894a49e"
+      },
+      "duration": {
+        "wallSeconds": 92.05799984931946,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1534,
+        "encodedSeconds": 92.04,
+        "timestampSpanSeconds": 92.036,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "minimumSeconds": 90,
+        "pass": true
+      },
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.34,
+          "lra": 9.2,
+          "truePeakDbTP": -2.04
+        },
+        "ebur128": {
+          "lufs": -17.3,
+          "lra": 9.2,
+          "truePeakDbTP": -2
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "peak": true
+        },
+        "bothMetersPass": true
+      },
+      "maxStartsPer100ms": 4,
+      "estimatedOnset": {
+        "count": 202,
+        "min": 28.007000000005064,
+        "p95": 33.06733333631564,
+        "max": 33.26633333184145,
+        "outside33ms": 11
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "home",
+      "evidence": "reports/v4-ship/S5/palette-coverage-1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/home.webm",
+        "bytes": 1460253,
+        "sha256": "cda143cb91d39e447563c0a53de7e896a092fb74ecc7d9b44e4420634ab6e520"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/home-events.json.gz",
+        "bytes": 29432,
+        "sha256": "2b124cb451a1ff693f3e93c77aa140e5ec4040a2fcdbda3c3d4f98473ba26332"
+      },
+      "duration": {
+        "wallSeconds": 90.67400002479553,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1510,
+        "encodedSeconds": 90.6,
+        "timestampSpanSeconds": 90.596,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.000000000001002,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.36,
+          "lra": 5.1,
+          "truePeakDbTP": -2.25
+        },
+        "ebur128": {
+          "lufs": -17.3,
+          "lra": 5.1,
+          "truePeakDbTP": -2.3,
+          "seconds": 0.365010667
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": true
+      },
+      "maxStartsPer100ms": 1,
+      "estimatedOnset": {
+        "count": 21,
+        "min": 28.149000001490094,
+        "p95": 32.886333333328366,
+        "max": 33.17533333034953,
+        "outside33ms": 1
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "bag",
+      "evidence": "reports/v4-ship/S5/palette-coverage-1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/bag.webm",
+        "bytes": 1460253,
+        "sha256": "a0e5d426559427dc3dac7df3710c71a1f6f8bddb4651551a428cf5e4564b6d45"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/bag-events.json.gz",
+        "bytes": 36490,
+        "sha256": "125824c49c66ce21fbd2f9529542a26011e994b9947b3b2b9fb87df8caadc007"
+      },
+      "duration": {
+        "wallSeconds": 90.64599990844727,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1510,
+        "encodedSeconds": 90.6,
+        "timestampSpanSeconds": 90.602,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000036664,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "mix": {
+        "loudnorm": {
+          "lufs": -17.14,
+          "lra": 4.7,
+          "truePeakDbTP": -2.03
+        },
+        "ebur128": {
+          "lufs": -17.1,
+          "lra": 5.1,
+          "truePeakDbTP": -2,
+          "seconds": 0.3658687910000003
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": true,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": false,
+          "truePeak": true
+        },
+        "bothMetersPass": false
+      },
+      "maxStartsPer100ms": 6,
+      "estimatedOnset": {
+        "count": 62,
+        "min": 28.488333334826166,
+        "p95": 33.17733333034266,
+        "max": 33.384333333335235,
+        "outside33ms": 7
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    },
+    {
+      "name": "forge",
+      "evidence": "reports/v4-ship/S5/palette-coverage-1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/forge.webm",
+        "bytes": 1453491,
+        "sha256": "5ecc230b54d29ecd9564d54156475857d58fa039cac347712126007654630394"
+      },
+      "events": {
+        "path": "reports/v4-ship/S5/palette-coverage-1/forge-events.json.gz",
+        "bytes": 30954,
+        "sha256": "94af10b8cf370dcac0a72e9336cc3a9b9cd3884faff67e3cb188d03f2e6f03cd"
+      },
+      "duration": {
+        "wallSeconds": 90.21300005912781,
+        "method": "Decoded frame sample count and timestamp span",
+        "sampleRate": 48000,
+        "frames": 1503,
+        "encodedSeconds": 90.18,
+        "timestampSpanSeconds": 90.176,
+        "headerSeconds": null,
+        "maximumTimestampGapMs": 3.0000000000001137,
+        "minimumTimestampGapMs": -3.0000000000143245,
+        "pass": true
+      },
+      "mix": {
+        "loudnorm": {
+          "lufs": -18.07,
+          "lra": 0.8,
+          "truePeakDbTP": -2.18
+        },
+        "ebur128": {
+          "lufs": -18,
+          "lra": 0.9,
+          "truePeakDbTP": -2.2,
+          "seconds": 0.3623373329999995
+        },
+        "loudnormGates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "ebur128Gates": {
+          "loudness": true,
+          "range": false,
+          "peak": true
+        },
+        "methodsAgree": {
+          "lufs": true,
+          "lra": true,
+          "truePeak": true
+        },
+        "bothMetersPass": false
+      },
+      "maxStartsPer100ms": 6,
+      "estimatedOnset": {
+        "count": 29,
+        "min": 28.58633333632315,
+        "p95": 32.579333328867506,
+        "max": 33.17933333035262,
+        "outside33ms": 1
+      },
+      "voiceInterruptions": 0,
+      "pageErrors": []
+    }
+  ],
+  "coverage": {
+    "definedScenes": [
+      "wave1",
+      "boss",
+      "home",
+      "bag",
+      "forge"
+    ],
+    "allFiveMinimumDurationsPass": true,
+    "minimumSeconds": 90,
+    "wallSeconds": 455.65700006484985,
+    "decodedSeconds": 455.46,
+    "continuous30Minutes": false
+  },
+  "failedSceneAcoustics": [
+    "bag",
+    "forge"
+  ],
+  "retryPacketConcatAggregate": {
+    "lufs": -17.61,
+    "lra": 8.6,
+    "peak": -2.04
+  },
+  "regression": {
+    "existingCompletedItemRegression": "reports/v4-ship/S11/palette-coverage-regression-1",
+    "sourceAndCaptureDependenciesUnchangedThroughRetry": true,
+    "sameSevenArtFailures": true,
+    "gRegPass": false
+  },
+  "integrityPass": true,
+  "physicalAudibleOnsetVerified": false,
+  "humanListeningVerified": false,
+  "completeRosterCoverageVerified": false,
+  "overallAudioGatePass": false,
+  "limits": [
+    "Only the two scenes that missed the original timestamp-span threshold were retried; all original observations and failures remain preserved.",
+    "Selected five-scene evidence is a collection of separate recordings. No new combined acoustic recording or continuous endurance is claimed.",
+    "Original packet-concat peak failure and method-dependent PCM diagnostic remain preserved; per-scene range, onset, admission and listening gates stay independent."
+  ]
+}

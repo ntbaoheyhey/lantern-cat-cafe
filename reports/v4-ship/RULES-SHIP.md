@@ -23,9 +23,10 @@
 22. Freeze 19 Nov 12:00 UTC: tag and one draft PR to main; thereafter only deploy crash/flow fixes; Demo Day separate branch.
 23. 20 Nov deploy support; submission checklist before 21 Nov 12:00 UTC, deadline lead 21 Nov 16:59 UTC; verify contest facts.
 24. 22-29 Nov Demo Day Anvil-only prototypes; final push 29 Nov 12:00 UTC.
-25. Re-anchor each item/resume/commit: date, rules/handoff/state/request, branch/status, ART requests, INBOX, stop signal.
+25. Re-anchor each item/resume/commit: date, rules/handoff/state/request, branch/status, ART requests, INBOX, QA requests to SHIP/ART, stop signal.
 26. HANDOFF <=40 lines, STATE <=120, STATUS-VI <=25; one log/check/item; <=8 screenshots/item; image opens<=1024px,<=4/look,<=8/HANDOFF; films R2/FINAL <=10MB; reports <=150MB.
 27. Commit/push every item or <=60min; three push retries with backoff; never write frozen/ART/main branches.
 28. Failed gate: diagnose/fix/re-run failing check, max4 attempts then change method; timebox open items for S11.
 29. Ports 5994-5998 and8546 only; never touch ART5990-5993; no pkill/killall; kill only owned PIDs or named old supervisor.
 30. USER 16 Nov: browser work only in the internal browser; never control native apps or the user desktop; no device password request.
+31. USER 17 Nov: read /Users/bao/taskbar-hero-qa/reports/v4-qa/REQUESTS-TO-SHIP.md and REQUESTS-TO-ART.md at every checkpoint; fix BLOCKER/MAJOR items owned by SHIP. Preserve ART ownership. If QA is still initializing, record absence and check again next checkpoint without pausing independent work.

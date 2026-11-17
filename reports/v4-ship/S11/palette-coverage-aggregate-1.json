@@ -1,0 +1,211 @@
+{
+  "at": "2026-11-17T01:15:10.960Z",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/palette-aggregate-study.mjs",
+    "bytes": 6847,
+    "sha256": "22248d38613bab9855bebfcd9cb3e23042370eabf2ceafe65d16f4f767c80128"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-1/check.json",
+      "bytes": 50025,
+      "sha256": "c7b45bd8c70f2edfcafd81eb1222d3935c001ee9019ac7ed63fcb6a52ff10c82"
+    },
+    {
+      "path": "reports/v4-ship/S5/palette-coverage-1/validation.json",
+      "bytes": 4240,
+      "sha256": "097b157df31f0fdac135d434b0cb06d71dd7101871ccada7c48cdcffd74a7b74"
+    }
+  ],
+  "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "sampleRate": 48000,
+  "channels": 2,
+  "rows": [
+    {
+      "name": "wave1",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/wave1.webm",
+        "bytes": 1450593,
+        "sha256": "3ce038be14380ed4febe93bdad1c76426c507534a3778d95da736154db71d451"
+      },
+      "decoded": {
+        "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/wave1.f32",
+        "bytes": 34560000,
+        "sha256": "d7fa308e59f60bb20fcc3eb6d3f36c53a319f0886d317944f6f5bd00ee3e6c48"
+      },
+      "offsetBytes": 0,
+      "samplePeakDbFS": -2.6305948886950876,
+      "samplePeakLinear": 0.7387036681175232,
+      "peakFrame": 4003796,
+      "peakSeconds": 83.41241666666667,
+      "frames": 4320000,
+      "seconds": 90
+    },
+    {
+      "name": "boss",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/boss.webm",
+        "bytes": 1450593,
+        "sha256": "129edc4d020138433a47cfe6dd49115101cda83774c84f4f86fc57f59d89dbcd"
+      },
+      "decoded": {
+        "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/boss.f32",
+        "bytes": 34560000,
+        "sha256": "11764e26e5b49a7d6e18056b79e0eda354c9ccd85536d35a285351d8c509b317"
+      },
+      "offsetBytes": 34560000,
+      "samplePeakDbFS": -2.2320564549796145,
+      "samplePeakLinear": 0.7733875513076782,
+      "peakFrame": 936443,
+      "peakSeconds": 19.509229166666668,
+      "frames": 4320000,
+      "seconds": 90
+    },
+    {
+      "name": "home",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/home.webm",
+        "bytes": 1460253,
+        "sha256": "cda143cb91d39e447563c0a53de7e896a092fb74ecc7d9b44e4420634ab6e520"
+      },
+      "decoded": {
+        "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/home.f32",
+        "bytes": 34790400,
+        "sha256": "2c7bd1b243b855ee552b293e4bd9e7e9a8e3e509e22c43e8bc08fe5633ee7353"
+      },
+      "offsetBytes": 69120000,
+      "samplePeakDbFS": -2.4952542637167614,
+      "samplePeakLinear": 0.7503040432929993,
+      "peakFrame": 2367443,
+      "peakSeconds": 49.321729166666664,
+      "frames": 4348800,
+      "seconds": 90.6
+    },
+    {
+      "name": "bag",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/bag.webm",
+        "bytes": 1460253,
+        "sha256": "a0e5d426559427dc3dac7df3710c71a1f6f8bddb4651551a428cf5e4564b6d45"
+      },
+      "decoded": {
+        "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/bag.f32",
+        "bytes": 34790400,
+        "sha256": "7e0aa69b71af4821a88e442ee4443bd463cdfe35349315cf53fde1b6ce07b0c4"
+      },
+      "offsetBytes": 103910400,
+      "samplePeakDbFS": -2.0337282614038097,
+      "samplePeakLinear": 0.7912497520446777,
+      "peakFrame": 38912,
+      "peakSeconds": 0.8106666666666666,
+      "frames": 4348800,
+      "seconds": 90.6
+    },
+    {
+      "name": "forge",
+      "capture": {
+        "path": "work/v4ship-audio/palette-coverage-1/forge.webm",
+        "bytes": 1453491,
+        "sha256": "5ecc230b54d29ecd9564d54156475857d58fa039cac347712126007654630394"
+      },
+      "decoded": {
+        "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/forge.f32",
+        "bytes": 34629120,
+        "sha256": "cab7c42ba6b0380c2137a2139fe7ee5f80197d0da3456acdb4f4b04b251f89e1"
+      },
+      "offsetBytes": 138700800,
+      "samplePeakDbFS": -2.219332783456961,
+      "samplePeakLinear": 0.7745212912559509,
+      "peakFrame": 25445,
+      "peakSeconds": 0.5301041666666667,
+      "frames": 4328640,
+      "seconds": 90.18
+    }
+  ],
+  "boundariesSeconds": [
+    90,
+    180,
+    270.6,
+    361.2
+  ],
+  "independentPcm": {
+    "file": {
+      "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/separately-decoded.f32",
+      "bytes": 173329920,
+      "sha256": "8c146953f6d5537edf47b08d20e8ac00c41c32c8fadc08332777060f07bf2166"
+    },
+    "samplePeakDbFS": -2.0337282614038097,
+    "samplePeakLinear": 0.7912497520446777,
+    "peakFrame": 13027712,
+    "peakSeconds": 271.41066666666666,
+    "frames": 21666240,
+    "seconds": 451.38,
+    "eachJoinedChunkByteExact": true,
+    "meters": {
+      "loudnorm": {
+        "lufs": -17.5,
+        "lra": 8.9,
+        "truePeakDbTP": -2.03,
+        "seconds": 13.129994415999999
+      },
+      "ebur128": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": -2,
+        "seconds": 1.6981812499999995
+      }
+    }
+  },
+  "packetConcat": {
+    "file": {
+      "path": "work/v4ship-audio/palette-coverage-1/aggregate-study-1/packet-concat.f32",
+      "bytes": 173329920,
+      "sha256": "d034e4675226d9fcd388cbc2bf6f6a527318100347a28917d1909625662c0054"
+    },
+    "samplePeakDbFS": -0.0795357933935551,
+    "samplePeakLinear": 0.9908849000930786,
+    "peakFrame": 12989113,
+    "peakSeconds": 270.6065208333333,
+    "frames": 21666240,
+    "seconds": 451.38,
+    "meters": {
+      "loudnorm": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": 0.03,
+        "seconds": 12.89744725
+      },
+      "ebur128": {
+        "lufs": -17.5,
+        "lra": 9,
+        "truePeakDbTP": 0,
+        "seconds": 1.7739320829999996
+      }
+    },
+    "nearestSeparateBoundarySeconds": 0.00652083333329756
+  },
+  "comparison": {
+    "sameDecodedBytes": false,
+    "separateFrames": 21666240,
+    "packetFrames": 21666240,
+    "unequalSamples": 117124,
+    "firstDifferentFrame": 4320000
+  },
+  "originalValidation": {
+    "aggregate": {
+      "lufs": -17.5,
+      "lra": 9,
+      "peak": 0.03
+    },
+    "truePeakPass": false,
+    "unchanged": true
+  },
+  "pass": true,
+  "runtimeChanged": false,
+  "overallAudioGatePass": false,
+  "limits": [
+    "No fades, gain changes, added silence or omitted decoded samples in the independent PCM concatenation.",
+    "The two concatenation methods can differ in decoder state or timestamp handling; this diagnostic alone does not identify a specific codec implementation defect.",
+    "Both aggregates are artificial sequences of separate contexts, not physical recordings of transitions. Original per-scene gates and failed packet validation remain authoritative evidence of their own scopes."
+  ]
+}

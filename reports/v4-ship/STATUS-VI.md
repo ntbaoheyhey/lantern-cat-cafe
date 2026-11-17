@@ -22,4 +22,4 @@ S11 hộp thoại phụ: bản production mới đạt47/47 mẫu, tương phả
 Modal đạt16/16 ca cô lập nền,6/6 bàn phím,47/47 mẫu UI. Phép đo S8 đã sửa mốc cảnh sẵn sàng và đạt7/7 ca kiểm chứng; đang tiếp tục rà soát lịch sử Git. Không thay đổi âm thanh hay tài nguyên ART.
 ART: kiểm tra trước tích hợp1.004tệp, không xung đột; giữ956tệp SHIP và xác nhận77hash A9. Chưa hợp nhất; bảy lỗi ART và ngưỡng tải8MB vẫn mở.
 Âm thanh S11:đã cài144 sprite va chạm và launch/travel cho ranged;168/168 ca thử tốc độ cố định đạt pha/nguồn âm,47 kiểm tra tập trung đạt gồm390 đổi tốc độ. Bộ phát thật168/168ca và production hai kích thước đã đối chiếu;ước tính trễ33,67ms còn vượt33ms,nghe thực tế chưa xác nhận.
-Đã nén37báo cáo parity,tiết kiệm5,312MB/khôi phục đúngbyte. Đã đối chiếu metadata6tệpJPEG mang đuôiPNG,không có comment/APP lạ;dữ liệu ảnh nén vẫn chưa quét,không mở ảnh. Tiếp tục đo5cảnh audio của runtime palette hiện tại.
+Đủ5cảnh âm thanh ≥90giây sau ghi lại2cảnh;giữ lỗi gốc. Bag LRA4,7/5,1 và forge0,8/0,9 chưa đạt;ước tính onset còn lỗi. Forge chỉ phát1/3lời thoại do giới hạn nguồn âm;đang xử lý. QA SHIP/ART chưa có phát hiện tái hiện độc lập;không điều khiển desktop.
