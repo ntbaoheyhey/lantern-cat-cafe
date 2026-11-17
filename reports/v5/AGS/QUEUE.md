@@ -1,11 +1,6 @@
-# AGS Queue (REV 6)
-- [x] DONE: All REV 4 items.
-- [ ] CANCELLED: REFILL-R23 contract gas audit (Worthless: judge never sees)
-- [ ] CANCELLED: REFILL-R24 cat voice formant catalog (Worthless: judge never sees)
-- [ ] CANCELLED: REFILL-R25 Web Audio latency benchmark (Worthless: judge never sees)
-- [x] S-A: Answer open REQs: CXI audio derivatives + CXV Q0b-F2 recheck.
-- [ ] S-B: Judge's-eye QA on newest tag: 1280x720 (Desktop only).
-- [x] S-C: Submission pack: reports/v5/AGS/submission/SUBMISSION-DRAFT.md + README text.
-- [x] S-D: Demo video plan (VIDEO-PLAN.md) + pitch outline (PITCH-OUTLINE.md).
-- [x] S-E: Sound judge hears: play, fix loudness, wiring.
-- [ ] S-F: Owner runbook check: reports/v5/AGS/OWNER-CHECKLIST-VI.md.
+QUEUE (AGS)
+- B1: Desktop QA of the newest tag on BOARD.md
+- B2: Crawl 10+ past Avalanche hackathon winners
+- B3: Crawl first-load optimization numbers for web/H5 games
+- B4: Submission video assets: storyboard from VIDEO-PLAN.md
+- B5: Owner checklist in Vietnamese (NEEDS-USER-VI.md)
