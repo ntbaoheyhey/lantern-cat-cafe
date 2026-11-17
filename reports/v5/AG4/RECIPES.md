@@ -334,3 +334,49 @@ Target loudness: -22.0 LUFS +/- 2 LU (calibrated background bed level sitting un
    - Metallic shimmer: white noise bandpass 2200Hz (w=600), volume 0.04
    - Duration: 12.0s seamless loop
    - Measured: -22.0 LUFS, peak -8.1 dBFS, opus 65,932 B (64.4 KB), m4a 100,166 B (97.8 KB).
+
+## R3: Full UI Kit (7 Cues, <= 15 KB each)
+Synthesis source: tools/v5audio/render.mjs (deterministic filtergraph execution via ffmpeg).
+Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -19.6 to -16.6 LUFS (avg -18.2 LUFS). True peak <= -1.3 dBFS. File sizes 1.1 KB to 3.1 KB (well within <= 15 KB budget).
+
+1. `ui.click` (`ui-click`):
+   - Transient: `aevalsrc=exprs='0.9*sin(2*PI*3200*t)*exp(-t/0.003)':s=48000:d=0.01`
+   - Body: `aevalsrc=exprs='0.95*sin(2*PI*(320-100*(t/0.06))*t)*exp(-t/0.018)':s=48000:d=0.06` (delay 2ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.07,lowpass=f=950,volume=0.25,afade=t=out:st=0.01:d=0.06` (delay 5ms)
+   - Measured: -19.3 LUFS, peak -3.7 dBFS, size 1,312 B, dur 0.16s.
+
+2. `ui.hover` (`ui-hover`):
+   - Transient: `anoisesrc=c=white:r=48000:d=0.02,bandpass=f=3800:w=1200,afade=t=out:st=0:d=0.02,volume=0.4`
+   - Body: `aevalsrc=exprs='0.5*sin(2*PI*1760*t)*exp(-t/0.02)':s=48000:d=0.04` (delay 2ms)
+   - Tail: `anoisesrc=c=pink:r=48000:d=0.04,bandpass=f=2400:w=800,volume=0.15,afade=t=out:st=0.01:d=0.03` (delay 6ms)
+   - Measured: -19.1 LUFS, peak -2.9 dBFS, size 1,138 B, dur 0.13s.
+
+3. `ui.confirm` (`ui-confirm`):
+   - Transient: `aevalsrc=exprs='0.75*(sin(2*PI*1046.5*t)+0.8*sin(2*PI*1318.51*t))*exp(-t/0.04)':s=48000:d=0.12`
+   - Body: `aevalsrc=exprs='0.65*sin(2*PI*1567.98*t)*exp(-t/0.06)':s=48000:d=0.15` (delay 40ms)
+   - Tail: `anoisesrc=c=white:r=48000:d=0.20,bandpass=f=2800:w=1400,volume=0.2,afade=t=out:st=0.04:d=0.16` (delay 20ms)
+   - Measured: -17.5 LUFS, peak -2.7 dBFS, size 2,140 B, dur 0.29s.
+
+4. `ui.cancel` (`ui-cancel`):
+   - Transient: `aevalsrc=exprs='0.6*sin(2*PI*1200*t)*exp(-t/0.01)':s=48000:d=0.02`
+   - Body: `aevalsrc=exprs='0.75*sin(2*PI*(659.25-220*(t/0.12))*t)*exp(-t/0.05)':s=48000:d=0.14` (delay 8ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.15,lowpass=f=550,volume=0.22,afade=t=out:st=0.02:d=0.13` (delay 15ms)
+   - Measured: -17.0 LUFS, peak -2.6 dBFS, size 2,608 B, dur 0.23s.
+
+5. `ui.card_flip` (`ui-card-flip`):
+   - Transient: `anoisesrc=c=white:r=48000:d=0.02,highpass=f=3400,afade=t=out:st=0:d=0.02,volume=0.7`
+   - Body: `anoisesrc=c=pink:r=48000:d=0.12,bandpass=f=1800:w=1000,afade=t=in:st=0:d=0.03,afade=t=out:st=0.03:d=0.09,volume=0.6` (delay 6ms)
+   - Tail: `aevalsrc=exprs='0.5*sin(2*PI*(180-60*(t/0.06))*t)*exp(-t/0.02)':s=48000:d=0.06` (delay 30ms)
+   - Measured: -19.6 LUFS, peak -1.3 dBFS, size 3,020 B, dur 0.21s.
+
+6. `ui.coin` (`ui-coin`):
+   - Transient: `aevalsrc=exprs='0.8*(sin(2*PI*2093*t)+0.6*sin(2*PI*3136*t)+0.4*sin(2*PI*4186*t))*exp(-t/0.03)':s=48000:d=0.10`
+   - Body: `aevalsrc=exprs='0.7*sin(2*PI*2093*t)*exp(-t/0.12)':s=48000:d=0.25` (delay 10ms)
+   - Tail: `anoisesrc=c=white:r=48000:d=0.30,highpass=f=4000,volume=0.18,afade=t=out:st=0.03:d=0.27` (delay 20ms)
+   - Measured: -16.6 LUFS, peak -2.0 dBFS, size 3,130 B, dur 0.36s.
+
+7. `ui.error` (`ui-error`):
+   - Transient: `aevalsrc=exprs='0.7*sin(2*PI*240*t)*exp(-t/0.015)':s=48000:d=0.03`
+   - Body: `aevalsrc=exprs='0.65*(sin(2*PI*164.81*t)+0.6*sin(2*PI*174.61*t))*exp(-t/0.08)':s=48000:d=0.18` (delay 8ms)
+   - Tail: `anoisesrc=c=brown:r=48000:d=0.18,lowpass=f=400,volume=0.2,afade=t=out:st=0.03:d=0.15` (delay 15ms)
+   - Measured: -18.4 LUFS, peak -2.8 dBFS, size 3,088 B, dur 0.27s.

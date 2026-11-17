@@ -1349,6 +1349,188 @@ export function renderAmbience() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R3: UI Set Definitions (click, hover, confirm, cancel, card flip, coin, error, all <= 15 KB)
+ */
+export const UI_SET_DEFINITIONS = [
+  {
+    cueId: 'ui.click',
+    name: 'ui-click',
+    runtimeCueId: 'ui.click',
+    aliases: ['ui.tab', 'ui.toggle'],
+    durationSec: 0.15,
+    bus: 'ui',
+    transientFilter: "aevalsrc=exprs='0.9*sin(2*PI*3200*t)*exp(-t/0.003)':s=48000:d=0.01",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.95*sin(2*PI*(320-100*(t/0.06))*t)*exp(-t/0.018)':s=48000:d=0.06",
+    bodyDelayMs: 2,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.07,lowpass=f=950,volume=0.25,afade=t=out:st=0.01:d=0.06",
+    tailDelayMs: 5,
+    masterGain: 2.8,
+    targetLufs: -18.0,
+    limiterLinear: 0.70
+  },
+  {
+    cueId: 'ui.hover',
+    name: 'ui-hover',
+    runtimeCueId: 'ui.hover',
+    aliases: ['ui.scroll'],
+    durationSec: 0.12,
+    bus: 'ui',
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.02,bandpass=f=3800:w=1200,afade=t=out:st=0:d=0.02,volume=0.4",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.5*sin(2*PI*1760*t)*exp(-t/0.02)':s=48000:d=0.04",
+    bodyDelayMs: 2,
+    tailFilter: "anoisesrc=c=pink:r=48000:d=0.04,bandpass=f=2400:w=800,volume=0.15,afade=t=out:st=0.01:d=0.03",
+    tailDelayMs: 6,
+    masterGain: 2.5,
+    targetLufs: -18.0,
+    limiterLinear: 0.70
+  },
+  {
+    cueId: 'ui.confirm',
+    name: 'ui-confirm',
+    runtimeCueId: 'ui.confirm',
+    aliases: ['ui.open', 'ui.turn'],
+    durationSec: 0.28,
+    bus: 'ui',
+    transientFilter: "aevalsrc=exprs='0.75*(sin(2*PI*1046.5*t)+0.8*sin(2*PI*1318.51*t))*exp(-t/0.04)':s=48000:d=0.12",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.65*sin(2*PI*1567.98*t)*exp(-t/0.06)':s=48000:d=0.15",
+    bodyDelayMs: 40,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.20,bandpass=f=2800:w=1400,volume=0.2,afade=t=out:st=0.04:d=0.16",
+    tailDelayMs: 20,
+    masterGain: 1.1,
+    targetLufs: -18.0,
+    limiterLinear: 0.75
+  },
+  {
+    cueId: 'ui.cancel',
+    name: 'ui-cancel',
+    runtimeCueId: 'ui.cancel',
+    aliases: ['ui.close'],
+    durationSec: 0.22,
+    bus: 'ui',
+    transientFilter: "aevalsrc=exprs='0.6*sin(2*PI*1200*t)*exp(-t/0.01)':s=48000:d=0.02",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.75*sin(2*PI*(659.25-220*(t/0.12))*t)*exp(-t/0.05)':s=48000:d=0.14",
+    bodyDelayMs: 8,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.15,lowpass=f=550,volume=0.22,afade=t=out:st=0.02:d=0.13",
+    tailDelayMs: 15,
+    masterGain: 1.4,
+    targetLufs: -18.0,
+    limiterLinear: 0.72
+  },
+  {
+    cueId: 'ui.card_flip',
+    name: 'ui-card-flip',
+    runtimeCueId: 'ui.card_flip',
+    aliases: ['ui.flip', 'ui.page'],
+    durationSec: 0.20,
+    bus: 'ui',
+    transientFilter: "anoisesrc=c=white:r=48000:d=0.02,highpass=f=3400,afade=t=out:st=0:d=0.02,volume=0.7",
+    transientDelayMs: 0,
+    bodyFilter: "anoisesrc=c=pink:r=48000:d=0.12,bandpass=f=1800:w=1000,afade=t=in:st=0:d=0.03,afade=t=out:st=0.03:d=0.09,volume=0.6",
+    bodyDelayMs: 6,
+    tailFilter: "aevalsrc=exprs='0.5*sin(2*PI*(180-60*(t/0.06))*t)*exp(-t/0.02)':s=48000:d=0.06",
+    tailDelayMs: 30,
+    masterGain: 1.8,
+    targetLufs: -18.0,
+    limiterLinear: 0.72
+  },
+  {
+    cueId: 'ui.coin',
+    name: 'ui-coin',
+    runtimeCueId: 'ui.coin',
+    aliases: ['currency.fish.gain', 'currency.threads.gain'],
+    durationSec: 0.35,
+    bus: 'ui',
+    transientFilter: "aevalsrc=exprs='0.8*(sin(2*PI*2093*t)+0.6*sin(2*PI*3136*t)+0.4*sin(2*PI*4186*t))*exp(-t/0.03)':s=48000:d=0.10",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.7*sin(2*PI*2093*t)*exp(-t/0.12)':s=48000:d=0.25",
+    bodyDelayMs: 10,
+    tailFilter: "anoisesrc=c=white:r=48000:d=0.30,highpass=f=4000,volume=0.18,afade=t=out:st=0.03:d=0.27",
+    tailDelayMs: 20,
+    masterGain: 0.95,
+    targetLufs: -18.0,
+    limiterLinear: 0.78
+  },
+  {
+    cueId: 'ui.error',
+    name: 'ui-error',
+    runtimeCueId: 'ui.error',
+    aliases: ['ui.fail', 'tx.failed'],
+    durationSec: 0.26,
+    bus: 'ui',
+    transientFilter: "aevalsrc=exprs='0.7*sin(2*PI*240*t)*exp(-t/0.015)':s=48000:d=0.03",
+    transientDelayMs: 0,
+    bodyFilter: "aevalsrc=exprs='0.65*(sin(2*PI*164.81*t)+0.6*sin(2*PI*174.61*t))*exp(-t/0.08)':s=48000:d=0.18",
+    bodyDelayMs: 8,
+    tailFilter: "anoisesrc=c=brown:r=48000:d=0.18,lowpass=f=400,volume=0.2,afade=t=out:st=0.03:d=0.15",
+    tailDelayMs: 15,
+    masterGain: 1.35,
+    targetLufs: -18.0,
+    limiterLinear: 0.72
+  }
+];
+
+export function renderUiSet() {
+  console.log(`Rendering ${UI_SET_DEFINITIONS.length} UI cues (R3)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of UI_SET_DEFINITIONS) {
+    const res = synthesizeCue(def);
+    results.push({ ...res, cueId: def.cueId });
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: parseFloat(res.duration.toFixed(3)),
+      bus: def.bus,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, size ${res.sizeBytes} B, dur ${res.duration.toFixed(2)}s`);
+  }
+
+  // Write reports/v5/AG4/R3-loudness.csv
+  const csvLines = [
+    'cueId,name,opusPath,sizeBytes,durationSec,integratedLUFS,truePeakDbFS,bus'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.sizeBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},ui`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'R3-loudness.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+  console.log(`Wrote loudness report: ${csvPath}`);
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R3 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
 
 // CLI dispatcher
 const arg = process.argv[2];
@@ -1364,6 +1546,8 @@ if (arg === '--calibrate') {
   renderVariations();
 } else if (arg === '--ambience') {
   renderAmbience();
+} else if (arg === '--ui-set') {
+  renderUiSet();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
@@ -1371,7 +1555,8 @@ if (arg === '--calibrate') {
   renderEnemyAndUi();
   renderVariations();
   renderAmbience();
+  renderUiSet();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --ui-set | --all]');
 }
 

@@ -91,3 +91,14 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | `ambience.workshop.cosy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Warm C-major pad + purr + chime, -21.6 LUFS, 86.9 KB |
 | `ambience.battle.bed` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | D-minor tension + 60 BPM pulse, -22.0 LUFS, 64.4 KB |
+
+## R3 Full UI Set
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `ui.click` | 5 | 5 | 5 | 5 | 4 | 4 | PASS | Crisp tactile wooden switch click, -19.3 LUFS, 1.3 KB |
+| `ui.hover` | 5 | 4 | 5 | 5 | 5 | 4 | PASS | Soft airy tick flutter, -19.1 LUFS, 1.1 KB |
+| `ui.confirm` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Affirmative major-third chime, -17.5 LUFS, 2.1 KB |
+| `ui.cancel` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft descending warm rejection, -17.0 LUFS, 2.6 KB |
+| `ui.card_flip` | 5 | 5 | 5 | 5 | 4 | 4 | PASS | Parchment card slide + edge snap, -19.6 LUFS, 3.0 KB |
+| `ui.coin` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Sparkling high metallic bell ring, -16.6 LUFS, 3.1 KB |
+| `ui.error` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Soft muted low dissonant thud, -18.4 LUFS, 3.1 KB |
