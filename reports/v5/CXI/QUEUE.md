@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.8@8d06c71ed pushed; application73bcdbed4 validated. Audio500 exact encoded/PCM pairs; scalar14focused+own play; final5steps and3films pass.
-I-B OPEN: m1.8 cold7696760/8260321/7774452B;wave3FAIL260321B,boss225548Bheadroom. Lossless transport accepted;AGS T5fourbeds REDO/T8sixfoecallouts remain open.
-I-C FIRST-HIT DONE:21131ms incl17700reading8cards,damage46,zeroerrors;route9558ms. Ordinary guest story retained.
+I-A DONE/REPEAT: m1.9 validated; tag/push now. Spatial/native accepted;13packages/544exactfiles;full5282total,5269pass,11skip,2expectedfail;3fresh30sfilms. CXV numbermetrics e58ef974c NEXT independent review.
+I-B OPEN: m1.9 cold7667250/8228520/7742967B;wave3FAIL228520B,boss257033Bheadroom. AGS T5fourbeds/T8sixfoecallouts REDO remain open; no rejected audio merged.
+I-C FIRST-HIT DONE:21078ms incl17700reading8cards,HP165→119,0errors;route10503ms excludesreading.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
-I-E DONE/REFRESH: m1.8 three30sactual1xgameplay+audio,1280x720,0errors;freshsheets inspectedonce;REVIEW-VI/evidence v7-m18-films.json.
-I-F ACTIVE: README/ARCHITECTURE/runbook current;SUBMISSION-FACTS verified; AGS T7 must correct unsupported chain/mint/Forge claims in draft/script.
-I-G DONE/REPEAT: sheet failure/stall recovery passes13focused and fullsuite; bothcontrols insideviewport; failed1138ms/stalled8666ms,caféreturn/reloadpass. AGS originalNight issue stillneeds exacttrace.
+I-E DONE/REFRESH: m1.9 three30.000sactual1xgameplay+browseraudio,1280x720,0errors;freshsheetsinspectedonce;REVIEW-VI/evidence v7-m19-films.json.
+I-F DONE/REPEAT: README/ARCHITECTURE/runbook/SUBMISSION-FACTS currentm1.9. AGS T7outline stillREDO:actualsubmissionfiles contain unsupportedmint/receipt/Forge claims;fullspoken3minscriptmissing.
+I-G DONE/REPEAT: rejected/stalledsheet recovery714/8664ms,controlsfit,café/reloadpass. AGS originalNight reportstillmissingexactclicks,index,UTC,requests;T1REDO.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.
