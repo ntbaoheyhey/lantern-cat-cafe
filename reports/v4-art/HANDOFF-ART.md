@@ -1,12 +1,15 @@
-# ART execution anchor — 2026-11-17T02:16:55.314072+00:00
-ACTIVE: A11 banner scoped review83/83 and receipt qa5-r2 COMPLETE; begin production craft activation + scene-ready delivery. QA5 validated, independent integration/recheck open.
+# ART execution anchor — 2026-11-17T02:48:00Z
+ACTIVE: current user continuation reconciled requested historical queue; proceed production craft activation + scene-ready delivery. QA5 validated, independent integration/recheck open.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC -> codex/v4-art-demoday-2026-11-19.
 NEXT1: read apps/web/src/game/cardrpg/spine/scene.ts lines99..112,183..190,actor-loading pose selection and craftHandles; replace DEV+VITE_CRAFT_PILOT-only activation with safe production hero-set activation, accounting for encounter texture readiness and fallback, then validate actual build.
 BANNER CLOSED SCOPED: REVIEW/A11/banner-runtime-r2/acceptance-receipt-qa5-r2.json binds105unchangedruntimehashes,83actions/16ults,48native mappings/15sheets,2799layout900samples. qa5failure retained; exact requiredPROGRESS append-only exception. Full art/class/FX acceptanceOPEN.
 NEXT3: A10 transfer: read SHIP S8/initial-transfer-decision-1.json and initial-transfer-2.json; refreshed17Nov02:06 production17/d029bc9c4=29,650,191B, images22,861,499B; six active atlases8,328,716B alone exceed8MB. Initial imagebudget3,315,248B. Existing delivery projection7,966,311B is not integrated acceptance.
 NEXT4: caster identity private comparison/association; number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:0d3455ef4 (receipt checkpoint follows) verified origin accepted. Checkpoint after this rewrite supersedes; use git log -1 + origin branch to verify.
+LAST PUSH:5aa7c81aa verified HEAD=origin/codex/v3-feel-2026-11-14 on resume. This reconciliation checkpoint follows; use git log -1 + origin branch to verify.
 LIVE SERVER: Vite20416/5990; no capture job. CraftOFF. Max3 backgroundjobs. Poll owned PID only.
+REQUESTED JOBS:68961 and69950 absent17Nov02:42UTC. Historical HANDOFF cef9ccd92 identifies a6-final.log/a6-post.log; tails show PARITY/CAPTURE/REVIEW/BOSS900/REVIEW900 and LIVE/FACE/PERF exits0. Do not restart completed jobs.
+REQUESTED QUEUE:blind attempt2 already11/12 (first attempt10/12 retained); A6 receipt6dc737904 complete scoped; BindingK4-A2 accepted42655f111 and later scoped receipt22bca4f0b. Do not relabel known blind samples or redo reviewed sheets. Activation/composition/class limits remain OPEN.
+RESUME WIP:810individual status entries,5tracked changes; only logs+historical parity pointer tracked. No source WIP to stage. Preserve inherited media/raw/private/.DS_Store; explicit paths only. User requests skipping logs in commits.
 QA: REQUESTS-TO-ART read17Nov02:11; QA-5 seven stale support assumptions. Fix uses real allied heal/cleanse/shield and Soot hostile outcomes; same-row recovery fixtures support both catalogs. SHIP snapshot b1e4398a immutable/local/ignored.
 BANNER:105runtimehashes unchanged since0839ee2d3; prior2701web/323files,typecheck,3F6,lane275,554DOMsamples;0intersections/loss/jump/mismatch. Native48/48+15sheets and3layout900 CLOSED. Fresh720p/audio/2700markers+2799layout900samplesPASS. Eight more sheets saved; image counter reset at83/83 (last3 displayed once; previous load emitted none).
 CLARITY: reviewed Clover basic still paints enemy under legacy rules; no heal-only G-ROLE claim until final SHIPclass merge. Lower-row paired source/target result effects and numbers remain open; banner scoped only.
