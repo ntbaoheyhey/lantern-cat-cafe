@@ -9,7 +9,7 @@ Kettle incoming torso contact fix21/21+tsc0,6 final sheets. R1-KETTLE-CONTACT.md
 R1 v3 23 reviews DONE/sent; no new approvals. Static badges/nameplate need final-use evaluation.
 Retain broad legacy body mask b19b99c3d. Extra-pass experiment fully reverted08:49; do not restore it.
 R4 complete19ffd3212,11/11+tsc0,16 sheets. R3 complete8665b1654,10/10+tsc0,5 sheets.
-Last pushed19ffd3212; contact/reviews commit pending now.
+Last pushed0f14e7497; contact/reviews READY delivered09:03Z.
 R2 implementation DONE28/28+tsc0; Kettle beauty/Binding coverage debt for R10.
 V0–V5 DONE locally. V5 boss58.67FPS,p9516.8ms; no extra FPS study.
 AGS Q0b-F2 closure and later M2 owner feedback remain open.
