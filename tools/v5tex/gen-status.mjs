@@ -4,14 +4,13 @@ import fs from 'fs';
 import path from 'path';
 
 const vfxDir = '/Users/bao/th-v5-ag2/apps/web/public/vfx/v5';
-const workBase = '/Users/bao/th-v5-ag2/work/v5/AG2/jobs/status_v1';
-const compDir = '/Users/bao/th-v5-ag2/reports/v5/AG2/comp';
-const battleBg = '/Users/bao/th-v5-ag2/work/v5/AG2/comp_base/battle_bg.jpg';
+const workBase = '/Users/bao/th-v5-ag2/work/v5/AGV/jobs/status_v2';
+const compDir = '/Users/bao/th-v5-ag2/work/v5/AGV/comp';
+const repCompDir = '/Users/bao/th-v5-ag2/reports/v5/AGV/comp';
 const manifestPath = path.join(vfxDir, 'manifest.json');
 
 if (!fs.existsSync(vfxDir)) fs.mkdirSync(vfxDir, { recursive: true });
 if (!fs.existsSync(workBase)) fs.mkdirSync(workBase, { recursive: true });
-if (!fs.existsSync(compDir)) fs.mkdirSync(compDir, { recursive: true });
 
 function run(cmd) {
   execSync(cmd, { stdio: 'pipe' });
@@ -21,13 +20,38 @@ function toWebP(pngIn, webpOut, q = 85) {
   run(`cwebp -q ${q} -alpha_q 90 "${pngIn}" -o "${webpOut}"`);
 }
 
-function compositeAtlasEffect(effectWebp, outCompJpg, posX = 480, posY = 270, frameW = 128, frameH = 128) {
-  let samplePng = path.join(workBase, 'temp_sample.png');
-  run(`magick "${effectWebp}" -crop ${frameW}x${frameH}+${frameW}+${frameH} +repage "${samplePng}"`);
-  const left = Math.round(posX - frameW / 2);
-  const top = Math.round(posY - frameH / 2);
-  run(`magick "${battleBg}" "${samplePng}" -geometry +${left}+${top} -compose plus -composite -quality 80 "${outCompJpg}"`);
-  console.log(`  [Composite] -> ${outCompJpg}`);
+function drawPetal(cx, cy, L, W, ang, fillCol, strokeCol = null) {
+  const cos = Math.cos(ang);
+  const sin = Math.sin(ang);
+  const perpCos = -sin;
+  const perpSin = cos;
+
+  const tipX = cx + cos * L;
+  const tipY = cy + sin * L;
+  const ctrl1X = cx + cos * (L * 0.45) + perpCos * (W * 0.5);
+  const ctrl1Y = cy + sin * (L * 0.45) + perpSin * (W * 0.5);
+  const ctrl2X = cx + cos * (L * 0.45) - perpCos * (W * 0.5);
+  const ctrl2Y = cy + sin * (L * 0.45) - perpSin * (W * 0.5);
+
+  let str = `fill "${fillCol}" `;
+  if (strokeCol) str += `stroke "${strokeCol}" stroke-width 1 `;
+  else str += `stroke none `;
+  str += `path "M ${cx.toFixed(1)},${cy.toFixed(1)} Q ${ctrl1X.toFixed(1)},${ctrl1Y.toFixed(1)} ${tipX.toFixed(1)},${tipY.toFixed(1)} Q ${ctrl2X.toFixed(1)},${ctrl2Y.toFixed(1)} ${cx.toFixed(1)},${cy.toFixed(1)} Z"`;
+  return str;
+}
+
+function drawBlob(cx, cy, radius, numLobes, seed, fillCol) {
+  const pts = [];
+  const steps = numLobes * 4;
+  for (let i = 0; i < steps; i++) {
+    const a = (i * Math.PI * 2) / steps;
+    const lobeMod = 0.8 + 0.3 * Math.sin(a * numLobes + seed);
+    const r = radius * lobeMod;
+    const px = cx + Math.cos(a) * r;
+    const py = cy + Math.sin(a) * r;
+    pts.push(`${px.toFixed(1)},${py.toFixed(1)}`);
+  }
+  return `fill "${fillCol}" stroke none polygon ${pts.join(' ')}`;
 }
 
 function buildStatusAtlas(name, renderFrame) {
@@ -46,164 +70,157 @@ function buildStatusAtlas(name, renderFrame) {
 
   const outWebp = path.join(vfxDir, `${name}.webp`);
   toWebP(stitchedPng, outWebp, 85);
-  console.log(`  -> ${outWebp}`);
-  compositeAtlasEffect(outWebp, path.join(compDir, `${name}.jpg`), 480, 270, 128, 128);
+  const stat = fs.statSync(outWebp);
+  console.log(`  -> ${outWebp} (${(stat.size / 1024).toFixed(1)} KB)`);
 }
 
-console.log('Generating 4 Status Effect Loops (F3)...');
+console.log('Regenerating Status Effect Loops (V2: Painted Organic Matter)...');
 
-// 1. STATUS POISON LOOP (Bubbling Violet Venom & Spores)
-console.log('Building status-poison-loop...');
-buildStatusAtlas('status-poison-loop', (f, framePath) => {
-  const C = 64;
-  const draws = [];
-  const phase = (f * Math.PI * 2) / 16;
-
-  // Toxic violet core
-  draws.push(`fill "rgba(180, 70, 240, 0.45)" circle ${C},${C + 10} ${C + 18},${C + 10}`);
-  draws.push(`fill "rgba(100, 220, 80, 0.25)" circle ${C},${C + 10} ${C + 35},${C + 10}`);
-
-  // Rising bubbling venom droplets (seamless cyclic loop)
-  for (let b = 0; b < 6; b++) {
-    const bPhase = (phase + (b * Math.PI * 2) / 6) % (Math.PI * 2);
-    const rise = (bPhase / (Math.PI * 2)) * 45; // 0 to 45 px up
-    const sway = Math.sin(bPhase * 2) * 8;
-    const bx = C - 15 + (b * 6) + sway;
-    const by = C + 20 - rise;
-    const sz = 2.5 + (b % 3);
-    const alpha = (Math.sin(bPhase) * 0.85).toFixed(2);
-    if (alpha > 0.05) {
-      draws.push(`fill "rgba(180, 50, 230, ${alpha})" circle ${bx.toFixed(1)},${by.toFixed(1)} ${(bx + sz).toFixed(1)},${by.toFixed(1)}`);
-      draws.push(`fill "rgba(120, 255, 100, ${alpha})" circle ${(bx - 1).toFixed(1)},${(by - 1).toFixed(1)} ${(bx + sz * 0.5).toFixed(1)},${(by - 1).toFixed(1)}`);
-    }
-  }
-
-  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x1.0 "${framePath}"`);
-});
-
-// 2. STATUS BURN LOOP (Crackling Flame Tongues & Embers)
+// 1. STATUS BURN LOOP (Rising dancing flame tongues & drifting sparks)
 console.log('Building status-burn-loop...');
 buildStatusAtlas('status-burn-loop', (f, framePath) => {
   const C = 64;
   const draws = [];
-  const phase = (f * Math.PI * 2) / 16;
+  const t = (f * Math.PI * 2) / 16;
 
-  // Luminous fire core
-  draws.push(`fill "rgba(255, 230, 90, 0.5)" circle ${C},${C + 12} ${C + 16},${C + 12}`);
-  draws.push(`fill "rgba(255, 60, 0, 0.3)" circle ${C},${C + 12} ${C + 32},${C + 12}`);
+  // 3 distinct dancing flame tongues rising from bottom
+  const tongues = [
+    { x0: 54, h: 36, phase: 0, w: 14 },
+    { x0: 64, h: 46, phase: 1.8, w: 18 },
+    { x0: 74, h: 34, phase: 3.5, w: 14 }
+  ];
 
-  // 3 Flickering flame tongues rising
-  for (let t = 0; t < 3; t++) {
-    const tPhase = (phase + (t * Math.PI * 2) / 3) % (Math.PI * 2);
-    const h = 20 + Math.sin(tPhase) * 12;
-    const tx = C - 12 + t * 12;
-    const ty = C + 14;
-    draws.push(`stroke "rgba(255, 80, 0, 0.85)" stroke-width 3.5 fill none line ${tx},${ty} ${tx + Math.sin(tPhase * 2) * 5},${ty - h}`);
-    draws.push(`stroke "rgba(255, 220, 60, 0.9)" stroke-width 2 fill none line ${tx},${ty} ${tx + Math.sin(tPhase * 2) * 3},${ty - h * 0.7}`);
+  for (const tg of tongues) {
+    const sway = Math.sin(t + tg.phase) * 6;
+    const tipY = 85 - tg.h + Math.cos(t * 2 + tg.phase) * 5;
+    const tipX = tg.x0 + sway;
+
+    // Outer fire tongue
+    draws.push(drawPetal(tg.x0, 85, 85 - tipY, tg.w, -Math.PI / 2 + (sway * 0.05), 'rgba(235, 75, 15, 0.75)', 'rgba(180, 20, 5, 0.6)'));
+    // Inner hot yellow tongue
+    draws.push(drawPetal(tg.x0, 82, (85 - tipY) * 0.65, tg.w * 0.55, -Math.PI / 2 + (sway * 0.05), 'rgba(255, 215, 60, 0.9)', 'rgba(255, 150, 20, 0.7)'));
   }
 
-  // Floating spark embers
-  for (let s = 0; s < 8; s++) {
-    const sPhase = (phase + (s * Math.PI * 2) / 8) % (Math.PI * 2);
-    const rise = (sPhase / (Math.PI * 2)) * 48;
-    const sx = C + Math.cos(sPhase * 3) * 16;
-    const sy = C + 15 - rise;
-    const alpha = (Math.sin(sPhase) * 0.9).toFixed(2);
-    if (alpha > 0.05) {
-      draws.push(`fill "rgba(255, 240, 140, ${alpha})" circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 1.8).toFixed(1)},${sy.toFixed(1)}`);
-    }
+  // Incandescent white base
+  draws.push(drawBlob(64, 82, 10, 5, f, 'rgba(255, 255, 230, 0.95)'));
+
+  // Sizzling sparks floating upward
+  for (let s = 0; s < 5; s++) {
+    const st = (t + s * 1.3) % (Math.PI * 2);
+    const sx = 64 + Math.sin(st * 2 + s) * 16;
+    const sy = 75 - (st / (Math.PI * 2)) * 45;
+    const a = (1 - (75 - sy) / 45).toFixed(2);
+    draws.push(`fill "rgba(255, 230, 140, ${a})" stroke none circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 1.5).toFixed(1)},${sy.toFixed(1)}`);
   }
 
-  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x1.0 "${framePath}"`);
+  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x0.8 "${framePath}"`);
 });
 
-// 3. STATUS STUN LOOP (Orbiting Golden Dizziness Yarn / Stars)
-console.log('Building status-stun-loop...');
-buildStatusAtlas('status-stun-loop', (f, framePath) => {
+// 2. STATUS POISON LOOP (Wobbling toxic bubbles & virulent vapors)
+console.log('Building status-poison-loop...');
+buildStatusAtlas('status-poison-loop', (f, framePath) => {
   const C = 64;
   const draws = [];
-  const phase = (f * Math.PI * 2) / 16;
+  const t = (f * Math.PI * 2) / 16;
 
-  // Gentle central halo
-  draws.push(`fill "rgba(255, 235, 140, 0.3)" circle ${C},${C} ${C + 15},${C}`);
+  // Swirling virulent vapor cloud
+  const cloudR = 26 + Math.sin(t) * 4;
+  draws.push(drawBlob(C, C + 4, cloudR, 6, f * 2, 'rgba(40, 160, 65, 0.45)'));
+  draws.push(drawBlob(C, C + 4, cloudR * 0.65, 5, f * 3, 'rgba(140, 225, 50, 0.6)'));
 
-  // 3 Orbiting golden stars in an elliptical 3D tilt
-  for (let i = 0; i < 3; i++) {
-    const ang = (i * Math.PI * 2) / 3 + phase;
-    const ox = C + Math.cos(ang) * 28;
-    const oy = C + Math.sin(ang) * 12; // Elliptical foreshortening
+  // 4 rising wobbling toxic bubbles
+  const bubbles = [
+    { x: 50, phase: 0, r: 6 },
+    { x: 62, phase: 1.5, r: 8 },
+    { x: 74, phase: 3.1, r: 5 },
+    { x: 58, phase: 4.6, r: 7 }
+  ];
 
-    // Star glint with cross
-    draws.push(`fill "white" circle ${ox.toFixed(1)},${oy.toFixed(1)} ${(ox + 3).toFixed(1)},${oy.toFixed(1)}`);
-    draws.push(`fill "rgba(255, 215, 60, 0.9)" circle ${ox.toFixed(1)},${oy.toFixed(1)} ${(ox + 7).toFixed(1)},${oy.toFixed(1)}`);
-    draws.push(`stroke "rgba(255, 255, 230, 0.9)" stroke-width 1.5 line ${(ox - 8).toFixed(1)},${oy.toFixed(1)} ${(ox + 8).toFixed(1)},${oy.toFixed(1)} line ${ox.toFixed(1)},${(oy - 8).toFixed(1)} ${ox.toFixed(1)},${(oy + 8).toFixed(1)}`);
+  for (const b of bubbles) {
+    const bt = (t + b.phase) % (Math.PI * 2);
+    const by = 82 - (bt / (Math.PI * 2)) * 40;
+    const bx = b.x + Math.sin(bt * 3) * 4;
+    const ba = (1 - (82 - by) / 45).toFixed(2);
+
+    // Bubble rim
+    draws.push(`stroke "rgba(180, 255, 100, ${ba})" stroke-width 1.5 fill "rgba(60, 180, 70, ${(ba * 0.35).toFixed(2)})" circle ${bx.toFixed(1)},${by.toFixed(1)} ${(bx + b.r).toFixed(1)},${by.toFixed(1)}`);
+    // Glint highlight
+    draws.push(`fill "rgba(255, 255, 240, ${ba})" stroke none circle ${(bx - b.r * 0.3).toFixed(1)},${(by - b.r * 0.3).toFixed(1)} ${(bx - b.r * 0.3 + 1.2).toFixed(1)},${(by - b.r * 0.3).toFixed(1)}`);
   }
 
-  // Soft orbiting wool fiber thread connecting the stars
-  for (let seg = 0; seg < 12; seg++) {
-    const a1 = (seg * Math.PI * 2) / 12 + phase;
-    const a2 = ((seg + 1) * Math.PI * 2) / 12 + phase;
-    const x1 = C + Math.cos(a1) * 28;
-    const y1 = C + Math.sin(a1) * 12;
-    const x2 = C + Math.cos(a2) * 28;
-    const y2 = C + Math.sin(a2) * 12;
-    draws.push(`stroke "rgba(255, 200, 50, 0.5)" stroke-width 1.5 stroke-dasharray 4,4 fill none line ${x1.toFixed(1)},${y1.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`);
-  }
-
-  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x1.0 "${framePath}"`);
+  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x0.8 "${framePath}"`);
 });
 
-// 4. STATUS SLOW LOOP (Viscous Honey Streams & Heavy Molten Droplets)
+// 3. STATUS SLOW LOOP (Frost crystallization tendrils & falling ice spicules)
 console.log('Building status-slow-loop...');
 buildStatusAtlas('status-slow-loop', (f, framePath) => {
   const C = 64;
   const draws = [];
-  const phase = (f * Math.PI * 2) / 16;
+  const t = (f * Math.PI * 2) / 16;
 
-  // Warm honey puddle underglow
-  draws.push(`fill "rgba(255, 210, 60, 0.4)" circle ${C},${C + 16} ${C + 20},${C + 16}`);
-  draws.push(`fill "rgba(200, 100, 15, 0.25)" circle ${C},${C + 16} ${C + 35},${C + 16}`);
+  // Frost mist pool
+  draws.push(drawBlob(C, C + 10, 25 + Math.sin(t) * 3, 6, f, 'rgba(50, 120, 210, 0.4)'));
 
-  // 4 Viscous dripping honey strands
-  for (let s = 0; s < 4; s++) {
-    const sPhase = (phase + (s * Math.PI * 2) / 4) % (Math.PI * 2);
-    const drop = (sPhase / (Math.PI * 2)) * 36;
-    const sx = C - 15 + s * 10;
-    const sy = C - 10 + drop;
-    const alpha = (Math.sin(sPhase) * 0.85).toFixed(2);
-    if (alpha > 0.05) {
-      // Teardrop honey bead
-      draws.push(`fill "rgba(255, 200, 45, ${alpha})" circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 3.5).toFixed(1)},${sy.toFixed(1)}`);
-      draws.push(`fill "rgba(255, 250, 180, ${alpha})" circle ${(sx - 1).toFixed(1)},${(sy - 1).toFixed(1)} ${(sx + 1.5).toFixed(1)},${(sy - 1).toFixed(1)}`);
-      draws.push(`stroke "rgba(230, 130, 20, ${alpha})" stroke-width 1.5 fill none line ${sx.toFixed(1)},${(sy - 15).toFixed(1)} ${sx.toFixed(1)},${sy.toFixed(1)}`);
-    }
+  // 4 sharp crystalline frost icicle branches pointing downward
+  const branches = [
+    { x: 44, len: 24, phase: 0 },
+    { x: 56, len: 34, phase: 1.5 },
+    { x: 68, len: 32, phase: 3.0 },
+    { x: 80, len: 22, phase: 4.5 }
+  ];
+
+  for (const br of branches) {
+    const pulse = 0.8 + 0.2 * Math.sin(t + br.phase);
+    const by = 48 + br.len * pulse;
+
+    // Jagged icicle spine
+    draws.push(`stroke "rgba(190, 235, 255, 0.9)" stroke-width 2 fill none line ${br.x},48 ${br.x + 2},${by - 8} line ${br.x + 2},${by - 8} ${br.x},${by}`);
+    // Pale frost core
+    draws.push(`stroke "white" stroke-width 1 fill none line ${br.x},48 ${br.x},${by - 5}`);
   }
 
-  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x1.0 "${framePath}"`);
+  // Drifting ice crystals
+  for (let c = 0; c < 5; c++) {
+    const ct = (t + c * 1.2) % (Math.PI * 2);
+    const cy = 48 + (ct / (Math.PI * 2)) * 38;
+    const cx = 45 + c * 9 + Math.sin(ct * 2) * 3;
+    const ca = (1 - (cy - 48) / 38).toFixed(2);
+    draws.push(`fill "rgba(220, 245, 255, ${ca})" stroke none polygon ${cx},${cy - 2.5} ${cx + 2.5},${cy} ${cx},${cy + 2.5} ${cx - 2.5},${cy}`);
+  }
+
+  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x0.8 "${framePath}"`);
 });
 
-// Update manifest
-console.log('Updating manifest.json with 4 status effect loop entries...');
-const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-const statusEntries = {
-  'status-poison-loop': { file: 'status-poison-loop.webp', cols: 4, rows: 4, frameMs: 60, blend: 'add', anchor: 'target', sizePx: 128 },
-  'status-burn-loop': { file: 'status-burn-loop.webp', cols: 4, rows: 4, frameMs: 50, blend: 'add', anchor: 'target', sizePx: 128 },
-  'status-stun-loop': { file: 'status-stun-loop.webp', cols: 4, rows: 4, frameMs: 50, blend: 'add', anchor: 'target', sizePx: 128 },
-  'status-slow-loop': { file: 'status-slow-loop.webp', cols: 4, rows: 4, frameMs: 70, blend: 'add', anchor: 'target', sizePx: 128 }
-};
-for (const [k, v] of Object.entries(statusEntries)) manifest[k] = v;
+// 4. STATUS STUN LOOP (Swirling painted dizziness spiral & dizzy stars)
+console.log('Building status-stun-loop...');
+buildStatusAtlas('status-stun-loop', (f, framePath) => {
+  const C = 64;
+  const draws = [];
+  const t = (f * Math.PI * 2) / 16;
 
-const sortedManifest = {};
-for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
-fs.writeFileSync(manifestPath, JSON.stringify(sortedManifest, null, 2) + '\n', 'utf8');
+  // 3 painted dizzy stars / swirls orbiting in a tilted 3D oval
+  for (let s = 0; s < 3; s++) {
+    const ang = t + (s * Math.PI * 2) / 3;
+    const rx = 28;
+    const ry = 12; // tilted perspective
+    const sx = C + Math.cos(ang) * rx;
+    const sy = 52 + Math.sin(ang) * ry;
 
-// Montage
-const montageOut = '/Users/bao/th-v5-ag2/reports/v5/AG2/T1/status-montage.jpg';
-const statusFiles = [
-  `${vfxDir}/status-poison-loop.webp`,
-  `${vfxDir}/status-burn-loop.webp`,
-  `${vfxDir}/status-stun-loop.webp`,
-  `${vfxDir}/status-slow-loop.webp`,
-];
-run(`magick montage ${statusFiles.map(f => `"${f}"`).join(' ')} -tile 2x2 -geometry 128x128+4+4 -background "#0a0a0a" -quality 80 "${montageOut}"`);
-console.log(`  -> Status Montage: ${montageOut}`);
+    // Scale by depth (front larger, back smaller)
+    const depth = (Math.sin(ang) + 1) / 2; // 0 to 1
+    const sz = 4.5 + depth * 3.5;
+    const alpha = (0.6 + depth * 0.4).toFixed(2);
+
+    // 4-pointed painted star with curled tips
+    draws.push(`fill "rgba(255, 230, 80, ${alpha})" stroke "rgba(230, 140, 20, ${alpha})" stroke-width 1 polygon ${sx},${sy - sz * 1.4} ${sx + sz * 0.4},${sy - sz * 0.4} ${sx + sz * 1.4},${sy} ${sx + sz * 0.4},${sy + sz * 0.4} ${sx},${sy + sz * 1.4} ${sx - sz * 0.4},${sy + sz * 0.4} ${sx - sz * 1.4},${sy} ${sx - sz * 0.4},${sy - sz * 0.4}`);
+    // White spark highlight
+    draws.push(`fill "white" stroke none circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 1.5).toFixed(1)},${sy.toFixed(1)}`);
+  }
+
+  // Faint orbital ellipse streak
+  draws.push(`stroke "rgba(255, 215, 60, 0.25)" stroke-width 1.5 fill none ellipse ${C},52 28,12 0,360`);
+
+  run(`magick -size 128x128 xc:black -draw '${draws.join(' ')}' -blur 0x0.8 "${framePath}"`);
+});
+
+console.log('All 4 status effect loops regenerated.');
