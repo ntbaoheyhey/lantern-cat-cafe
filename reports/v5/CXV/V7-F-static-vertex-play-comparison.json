@@ -1,0 +1,993 @@
+{
+  "utc": "2026-11-17T20:50:24.507Z",
+  "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "prototypeSha256": "871a6f43e8a2db740d25768410b0a3529cc0ade8aa2d69fb78c7e94d352a1ebb",
+  "provenance": {
+    "observedUtc": "2026-11-17T20:46:03.337144+00:00",
+    "seriesStarted": "2026-11-17T20:41:22.526Z",
+    "method": "Tool files observed unchanged since before the series start; verify digests again before summarizing. Application identity is checked before/after each run.",
+    "files": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/benchmark-boss-play.mjs",
+        "sha256": "2689caeebed56ebb270595bd7a5d2b28885a4d3e25649647b8a4b234216740d9",
+        "modifiedUtc": "2026-11-17T20:41:22.382620+00:00",
+        "snapshot": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/tool-snapshot/benchmark-boss-play.mjs"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/transparent-vertex-prototype.mjs",
+        "sha256": "871a6f43e8a2db740d25768410b0a3529cc0ade8aa2d69fb78c7e94d352a1ebb",
+        "modifiedUtc": "2026-11-17T20:41:22.382437+00:00",
+        "snapshot": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/tool-snapshot/transparent-vertex-prototype.mjs"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/run-static-vertex-comparison.mjs",
+        "sha256": "229e0a8cd8824078526de5c60203b9a88381863a8d2dab260b49869af99469a3",
+        "modifiedUtc": "2026-11-17T20:41:22.383144+00:00",
+        "snapshot": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/tool-snapshot/run-static-vertex-comparison.mjs"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/browser-fixture.mjs",
+        "sha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+        "modifiedUtc": "2026-11-17T19:19:33.264574+00:00",
+        "snapshot": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/tool-snapshot/browser-fixture.mjs"
+      }
+    ]
+  },
+  "order": [
+    "baseline",
+    "static",
+    "static",
+    "baseline",
+    "baseline",
+    "static"
+  ],
+  "method": "Both modes install identical fresh full-geometry clones initialized at idle0. Baseline retains the original sample method; static updates only nonstationary original indices. Same materials, full positions/UVs/indices, caches and fixture. Setup is outside measurement; startup GPU/bounds costs remain in whole-run. This is a Vite browser prototype, not native integration or judge acceptance.",
+  "limits": "Vite browser prototype only, matched clone controls. The same external Google font stylesheet was intentionally blocked in all12runs; zero browser errors. Steady metrics exclude first2000ms; startup and whole-run retained. CPU4x is a stress proxy. Independent6301 judge acceptance and native integration absent.",
+  "pass": true,
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "trials": 3,
+      "steadyRenderMedianMs": 2.899999998509884,
+      "steadyFrameP95Ms": 16.799999999999272,
+      "wholeFrameP95Ms": 16.799999999995634,
+      "wholeLongFrames": 0,
+      "startupFrameP95Ms": 16.700000000000273,
+      "startupRenderMaxMs": 28.19999999552965,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 1,
+      "mode": "static",
+      "trials": 3,
+      "steadyRenderMedianMs": 2.7000000029802322,
+      "steadyFrameP95Ms": 16.700000000004366,
+      "wholeFrameP95Ms": 16.700000000004366,
+      "wholeLongFrames": 0,
+      "startupFrameP95Ms": 16.800000000000182,
+      "startupRenderMaxMs": 37.399999998509884,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "trials": 3,
+      "steadyRenderMedianMs": 13.799999997019768,
+      "steadyFrameP95Ms": 66.60000000000036,
+      "wholeFrameP95Ms": 66.60000000000036,
+      "wholeLongFrames": 78,
+      "startupFrameP95Ms": 83.40000000000009,
+      "startupRenderMaxMs": 127.09999999403954,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "static",
+      "trials": 3,
+      "steadyRenderMedianMs": 12.800000004470348,
+      "steadyFrameP95Ms": 66.59999999999854,
+      "wholeFrameP95Ms": 66.59999999999991,
+      "wholeLongFrames": 78,
+      "startupFrameP95Ms": 83.29999999999973,
+      "startupRenderMaxMs": 124,
+      "actions": 26,
+      "ultimates": 6
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:41:22.830Z",
+      "ended": "2026-11-17T20:42:31.702Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32000.10000000149,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.8000000044703484,
+        "p95": 4.299999997019768,
+        "p99": 12.5,
+        "max": 20
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.399999998509884,
+          "p99": 14.5,
+          "max": 28
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.100000001490116,
+          "p95": 15.900000005960464,
+          "p99": 18.600000001490116,
+          "max": 28
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1800,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/0-baseline/report.json"
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:41:22.830Z",
+      "ended": "2026-11-17T20:42:31.702Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32032.30000000447,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.59999999999945,
+        "p99": 83.30000000000018,
+        "max": 116.79999999999927
+      },
+      "submitCpuMs": {
+        "median": 13.5,
+        "p95": 19.599999994039536,
+        "p99": 43,
+        "max": 64.30000000447035
+      },
+      "wholeRun": {
+        "samples": 1345,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000036,
+          "p99": 83.30000000000109,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 13.599999994039536,
+          "p95": 20.400000005960464,
+          "p99": 44.600000001490116,
+          "max": 122.30000000447035
+        },
+        "over33": 99,
+        "over50": 77
+      },
+      "startup": {
+        "samples": 61,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.29999999999995,
+          "p99": 166.70000000000027,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 16.80000000447035,
+          "p95": 59.70000000298023,
+          "p99": 122.30000000447035,
+          "max": 122.30000000447035
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "over33": 87,
+      "over50": 70,
+      "samples": 1284,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/0-baseline/report.json"
+    },
+    {
+      "index": 1,
+      "mode": "static",
+      "utc": "2026-11-17T20:42:31.971Z",
+      "ended": "2026-11-17T20:43:40.572Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32000.89999999851,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.299999997019768,
+        "p99": 11.899999998509884,
+        "max": 20.900000005960464
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.300000004470348,
+          "p99": 14.599999994039536,
+          "max": 37.399999998509884
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 14.600000001490116,
+          "p99": 19.900000005960464,
+          "max": 37.399999998509884
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1800,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/1-static/report.json"
+    },
+    {
+      "index": 1,
+      "mode": "static",
+      "utc": "2026-11-17T20:42:31.971Z",
+      "ended": "2026-11-17T20:43:40.572Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32027.70000000298,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 50,
+        "p99": 83.30000000000018,
+        "max": 133.39999999999782
+      },
+      "submitCpuMs": {
+        "median": 12.699999995529652,
+        "p95": 19.19999999552965,
+        "p99": 41.20000000298023,
+        "max": 67.10000000149012
+      },
+      "wholeRun": {
+        "samples": 1398,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.5,
+          "p99": 83.39999999999782,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 12.799999997019768,
+          "p95": 19.80000000447035,
+          "p99": 42.100000001490116,
+          "max": 119
+        },
+        "over33": 101,
+        "over50": 70
+      },
+      "startup": {
+        "samples": 65,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.29999999999973,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 15.200000002980232,
+          "p95": 51.70000000298023,
+          "p99": 119,
+          "max": 119
+        },
+        "over33": 11,
+        "over50": 7
+      },
+      "over33": 90,
+      "over50": 63,
+      "samples": 1333,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/1-static/report.json"
+    },
+    {
+      "index": 2,
+      "mode": "static",
+      "utc": "2026-11-17T20:43:40.835Z",
+      "ended": "2026-11-17T20:44:49.488Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32001.30000000447,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 33.400000000001455
+      },
+      "submitCpuMs": {
+        "median": 2.7000000029802322,
+        "p95": 4.199999995529652,
+        "p99": 12,
+        "max": 20.100000001490116
+      },
+      "wholeRun": {
+        "samples": 1916,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.400000000001455
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.200000002980232,
+          "p99": 14.299999997019768,
+          "max": 36.399999998509884
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 15.100000001490116,
+          "p99": 19.399999998509884,
+          "max": 36.399999998509884
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1799,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/2-static/report.json"
+    },
+    {
+      "index": 2,
+      "mode": "static",
+      "utc": "2026-11-17T20:43:40.835Z",
+      "ended": "2026-11-17T20:44:49.488Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32048.60000000149,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.59999999999854,
+        "p99": 83.30000000000109,
+        "max": 133.29999999999927
+      },
+      "submitCpuMs": {
+        "median": 12.899999998509884,
+        "p95": 18.80000000447035,
+        "p99": 43.600000001490116,
+        "max": 67.60000000149012
+      },
+      "wholeRun": {
+        "samples": 1362,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000036,
+          "p99": 83.30000000000109,
+          "max": 183.4000000000001
+        },
+        "submitCpuMs": {
+          "median": 13,
+          "p95": 19.30000000447035,
+          "p99": 44.70000000298023,
+          "max": 129.70000000298023
+        },
+        "over33": 96,
+        "over50": 78
+      },
+      "startup": {
+        "samples": 63,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.29999999999973,
+          "p99": 183.4000000000001,
+          "max": 183.4000000000001
+        },
+        "submitCpuMs": {
+          "median": 15.799999997019768,
+          "p95": 49.80000000447035,
+          "p99": 129.70000000298023,
+          "max": 129.70000000298023
+        },
+        "over33": 11,
+        "over50": 8
+      },
+      "over33": 85,
+      "over50": 70,
+      "samples": 1299,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/2-static/report.json"
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:44:49.763Z",
+      "ended": "2026-11-17T20:45:58.478Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32000.60000000149,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.899999998509884,
+        "p95": 4.300000004470348,
+        "p99": 12.699999995529652,
+        "max": 20
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 4.399999998509884,
+          "p99": 14.700000002980232,
+          "max": 28.19999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 16.800000000000182,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 3.3000000044703484,
+          "p95": 15.400000005960464,
+          "p99": 18.200000002980232,
+          "max": 28.19999999552965
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1800,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/3-baseline/report.json"
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:44:49.763Z",
+      "ended": "2026-11-17T20:45:58.478Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32080.89999999851,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.60000000000036,
+        "p99": 83.30000000000109,
+        "max": 150
+      },
+      "submitCpuMs": {
+        "median": 13.899999998509884,
+        "p95": 20.600000001490116,
+        "p99": 43.600000001490116,
+        "max": 70.39999999850988
+      },
+      "wholeRun": {
+        "samples": 1293,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000036,
+          "p99": 83.39999999999782,
+          "max": 183.39999999999964
+        },
+        "submitCpuMs": {
+          "median": 14,
+          "p95": 20.899999998509884,
+          "p99": 46.5,
+          "max": 127.09999999403954
+        },
+        "over33": 102,
+        "over50": 81
+      },
+      "startup": {
+        "samples": 60,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 100.09999999999991,
+          "p99": 183.39999999999964,
+          "max": 183.39999999999964
+        },
+        "submitCpuMs": {
+          "median": 16.299999997019768,
+          "p95": 65.70000000298023,
+          "p99": 127.09999999403954,
+          "max": 127.09999999403954
+        },
+        "over33": 11,
+        "over50": 8
+      },
+      "over33": 91,
+      "over50": 73,
+      "samples": 1233,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/3-baseline/report.json"
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:45:58.761Z",
+      "ended": "2026-11-17T20:47:07.496Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32001.10000000149,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 33.29999999999927
+      },
+      "submitCpuMs": {
+        "median": 2.899999998509884,
+        "p95": 4.399999998509884,
+        "p99": 12.200000002980232,
+        "max": 20.5
+      },
+      "wholeRun": {
+        "samples": 1916,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 49.90000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 4.5,
+          "p99": 13.600000001490116,
+          "max": 37.79999999701977
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 16.800000000000182,
+          "max": 49.90000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.100000001490116,
+          "p95": 15.699999995529652,
+          "p99": 18.19999999552965,
+          "max": 37.79999999701977
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1799,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/4-baseline/report.json"
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "utc": "2026-11-17T20:45:58.761Z",
+      "ended": "2026-11-17T20:47:07.496Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32077.39999999851,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.60000000000036,
+        "p99": 83.39999999999964,
+        "max": 133.3000000000029
+      },
+      "submitCpuMs": {
+        "median": 13.799999997019768,
+        "p95": 20.100000001490116,
+        "p99": 43.20000000298023,
+        "max": 66.39999999850988
+      },
+      "wholeRun": {
+        "samples": 1300,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000218,
+          "p99": 83.40000000000146,
+          "max": 183.4000000000001
+        },
+        "submitCpuMs": {
+          "median": 13.899999998509884,
+          "p95": 20.900000005960464,
+          "p99": 44.899999998509884,
+          "max": 130.89999999850988
+        },
+        "over33": 102,
+        "over50": 78
+      },
+      "startup": {
+        "samples": 60,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.40000000000009,
+          "p99": 183.4000000000001,
+          "max": 183.4000000000001
+        },
+        "submitCpuMs": {
+          "median": 16.100000001490116,
+          "p95": 52.80000000447035,
+          "p99": 130.89999999850988,
+          "max": 130.89999999850988
+        },
+        "over33": 13,
+        "over50": 8
+      },
+      "over33": 89,
+      "over50": 70,
+      "samples": 1240,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/4-baseline/report.json"
+    },
+    {
+      "index": 5,
+      "mode": "static",
+      "utc": "2026-11-17T20:47:07.778Z",
+      "ended": "2026-11-17T20:48:16.407Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 1,
+      "elapsedMs": 32003.10000000149,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000000728,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7000000029802322,
+        "p95": 4.0999999940395355,
+        "p99": 11.899999998509884,
+        "max": 19.899999998509884
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 50
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.100000001490116,
+          "p99": 14.200000002980232,
+          "max": 39.30000000447035
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.299999999999955,
+          "max": 50
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 15.199999995529652,
+          "p99": 19.899999998509884,
+          "max": 39.30000000447035
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "over33": 0,
+      "over50": 0,
+      "samples": 1800,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/5-static/report.json"
+    },
+    {
+      "index": 5,
+      "mode": "static",
+      "utc": "2026-11-17T20:47:07.778Z",
+      "ended": "2026-11-17T20:48:16.407Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "source": "ea3b7de9ce162abb7d112abd60ae3d3e3ee1dc92",
+      "rate": 4,
+      "elapsedMs": 32027.80000000447,
+      "steadyWindowStartMs": 2000,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 66.59999999999854,
+        "p99": 83.30000000000291,
+        "max": 133.29999999999927
+      },
+      "submitCpuMs": {
+        "median": 12.800000004470348,
+        "p95": 19.5,
+        "p99": 42.099999994039536,
+        "max": 67.20000000298023
+      },
+      "wholeRun": {
+        "samples": 1367,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.59999999999991,
+          "p99": 83.39999999999782,
+          "max": 183.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 12.899999998509884,
+          "p95": 20.100000001490116,
+          "p99": 45.20000000298023,
+          "max": 124
+        },
+        "over33": 101,
+        "over50": 78
+      },
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.30000000000018,
+          "p99": 183.30000000000018,
+          "max": 183.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 15.700000002980232,
+          "p95": 51.20000000298023,
+          "p99": 124,
+          "max": 124
+        },
+        "over33": 11,
+        "over50": 8
+      },
+      "over33": 90,
+      "over50": 70,
+      "samples": 1303,
+      "actions": 26,
+      "ultimates": 6,
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-static-vertex-play/5-static/report.json"
+    }
+  ]
+}

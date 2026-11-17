@@ -43,3 +43,5 @@
 - V-A3 fresh production19:29/19:30Znormal/reduced eight600ms sheets:all4feetstable,reduceddepth0;source d69b9dc5c/indexaf3adbe2 unchanged;no new runtime change. V7-A3-current-production-summary.json.
 
 - [x] V-F exact label-search prototype:1006synthetic+6418livecalls exact;6production trials,8tests/fullcandidateTSC0,12measured/4reviewed captures. Modest render3→2.8/13.8→12.9ms;steady framep95 unchanged. Runtime BLOCKED-ON CXI scope for squad/turn3d/label-layout.ts+test;study gate20:30:04Z. Shared source untouched; startup stalls unresolved.
+
+- [ ] V-F stationary-vertex study: exact910whole-geometry states/380GPU+worldbounds; normal/reduced/reverse/previewscales. Six matched ordinaryplay trials active; no runtime edit until complete and20:47:22Z. Approximate transparent2/4cell variants rejected; native contracts prepared but not run.

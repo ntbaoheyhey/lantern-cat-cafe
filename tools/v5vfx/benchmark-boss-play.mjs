@@ -48,7 +48,7 @@ try{
   const runIdentity=runtimeEvidence();
   if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
   if(outerPrototype){const {installOuterCellPrototype}=await import('./outer-cell-prototype.mjs');report.outerPrototypeDetails=await installOuterCellPrototype(page);}
-  if(transparentWorkPrototype){const {installTransparentVertexPrototype}=await import('./transparent-vertex-prototype.mjs');report.transparentWorkDetails=await installTransparentVertexPrototype(page,{staticOnly:process.env.CXV_STATIC_VERTEX_WORK==='1'});}
+  if(transparentWorkPrototype){const {installTransparentVertexPrototype}=await import('./transparent-vertex-prototype.mjs');report.transparentWorkDetails=await installTransparentVertexPrototype(page,{staticOnly:process.env.CXV_STATIC_VERTEX_WORK==='1',baselineClone:process.env.CXV_STATIC_VERTEX_BASELINE==='1'});}
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});

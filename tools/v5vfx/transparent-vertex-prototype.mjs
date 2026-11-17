@@ -1,6 +1,6 @@
 /** Tool-only partial CPU deformation, retaining all vertices and original triangles. */
-export async function installTransparentVertexPrototype(page,{active=true,padding=2,fullControl=false,staticOnly=false}={}){
- return page.evaluate(async ({active,padding,fullControl,staticOnly})=>{
+export async function installTransparentVertexPrototype(page,{active=true,padding=2,fullControl=false,staticOnly=false,baselineClone=false}={}){
+ return page.evaluate(async ({active,padding,fullControl,staticOnly,baselineClone})=>{
   const {drawingAt}=await import('/src/game/rig/drawing-layer.ts'),{eyeClosure}=await import('/src/game/rig/drawing-expression.ts');
   const s=window.__depthScene;cancelAnimationFrame(s.raf);const variants=[],details=[];
   for(const [actorId,e]of s.actors){
@@ -21,12 +21,12 @@ export async function installTransparentVertexPrototype(page,{active=true,paddin
    if(staticOnly&&!fullControl){for(let i=0;i<d.source.length/3;i++)if(h/2-d.source[i*3+1]<staticThreshold)ids.push(i);}
    else for(let y=grid[1];y<=grid[3];y++)for(let x=grid[0];x<=grid[2];x++)ids.push(y*33+x);
    const geometry=d.geometry.clone(),initialPosition=Float32Array.from(geometry.attributes.position.array);
-   const cut={geometry,source:d.source,weights:d.vertexWeights,sample:candidate,initialPosition};
+   const cut={geometry,source:d.source,weights:d.vertexWeights,sample:baselineClone?sample:candidate,initialPosition};
    variants.push({d,full,cut,ids,activeIds:Uint16Array.from(ids),fullTopology:true,staticOnly});
-   details.push({actorId,unit:m.unit,grid,dimensionsMatch,valid,staticOnly,staticThreshold,vertices:1089,sampledVertices:ids.length,triangles:geometry.index.count/3,fullVertices:1089,indexBytes:ids.length*2,initialSample:{clip:'idle',seconds:0,clock:0},textureFilters:Object.entries(d.set.textures).map(([key,t])=>({key,min:t.minFilter,mag:t.magFilter,mipmaps:t.generateMipmaps}))});
+   details.push({actorId,unit:m.unit,grid,dimensionsMatch,valid,staticOnly,baselineClone,staticThreshold,vertices:1089,sampledVertices:baselineClone?1089:ids.length,triangles:geometry.index.count/3,fullVertices:1089,indexBytes:ids.length*2,initialSample:{clip:'idle',seconds:0,clock:0},textureFilters:Object.entries(d.set.textures).map(([key,t])=>({key,min:t.minFilter,mag:t.magFilter,mipmaps:t.generateMipmaps}))});
   }
   const select=mode=>{for(const {d,full,cut,activeIds}of variants){const v=mode==='full'?full:cut;d.geometry=v.geometry;d.source=v.source;d.vertexWeights=v.weights;d.sample=v.sample;d.__cxvActiveIds=activeIds;}};
   window.__cxvOuter={variants,select,restore(){select('full');for(const {d,cut}of variants){delete d.__cxvActiveIds;cut.geometry.dispose();}delete window.__cxvOuter;}};
   select(active?'cut':'full');return details;
- },{active,padding,fullControl,staticOnly});
+ },{active,padding,fullControl,staticOnly,baselineClone});
 }
