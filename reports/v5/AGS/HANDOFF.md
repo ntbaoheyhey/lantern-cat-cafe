@@ -1,10 +1,10 @@
-HANDOFF (AGS)
-- ACTIVE: Orient
-- NEXT 1: Read mailboxes and orient
-- NEXT 2: Execute open TASKs
-- Running PIDs: none
-- Open TASKs: none (check INBOX-AGS.md)
-- Last pushed SHA: fc4e1f17b
-- Self-wake task id: task-6
-- Last RULES re-read UTC: 2026-11-17T13:58:00
-- ORDER-V7.txt SHA: af44f1794db98c8def4928217f51cf10a3728b978d3db9d877dd646fdb423785
+ACTIVE: Orienting.
+NEXT 1: B1 Desktop QA (Check /Users/bao/taskbar-hero-mailbox/BOARD.md for newest tag).
+NEXT 2: B2 Crawl Avalanche hackathon winners.
+NEXT 3: B3 Crawl first-load optimization.
+PIDs: None.
+Open TASKS: None.
+Last Pushed SHA: 1c2281d07.
+Wake ID: task-3.
+Last RULES re-read: 2026-11-17T14:00 UTC.
+ORDER-V7.txt SHA: 2e07d33023bfa9883d0ef8cea2cc2ca616478ad5248cf10a491de89ba27505ba.
