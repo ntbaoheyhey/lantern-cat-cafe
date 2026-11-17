@@ -1,6 +1,6 @@
 # CXV queue
-- [ ] V0 Learn before build — ACTIVE, 75 minutes
-- [ ] V1 Skill VFX timeline system — 5 hours
+- [x] V0 Learn before build — DONE; three windows, ten sources, code map
+- [ ] V1 Skill VFX timeline system — ACTIVE, 5 hours
 - [ ] V2 Live2D-grade secondary motion — 5 hours
 - [ ] V3 Enemies + boss — 4 hours
 - [ ] V4 Polish from AG1 QA + owner review — 4 hours; owner notes after M2

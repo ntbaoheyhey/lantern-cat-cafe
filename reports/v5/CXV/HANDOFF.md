@@ -1,10 +1,12 @@
 # CXV handoff
-ACTIVE: V0 learn before build (started 2026-11-17T05:26Z; deadline 06:41Z).
-NEXT 1: ffprobe -v error -show_entries format=duration:stream=width,height,r_frame_rate -of json /Users/bao/Downloads/1794839260117_4283331764508693014_g7637148592472214939.mp4
-NEXT 2: Extract 1 fps overview and 10 fps blink/head-turn/body-sway contact sheets into work/v5/CXV/learn/ref/.
-NEXT 3: Research >=8 sources (>=4 Chinese), map >=10 techniques to V1-V4 in LEARN-V0.md; read scoped existing modules.
+ACTIVE: V1 skill timeline (started 2026-11-17T05:32Z; deadline 10:32Z). V0 DONE.
+NEXT 1: sed -n '41,79p' apps/web/src/game/cardrpg/spine/vfx-registry.ts
+NEXT 2: Read spine/vfx.ts and vfx-layered/player.ts in <=40-line slices; inspect AG2 manifest and actual skill IDs.
+NEXT 3: Implement pure timeline + procedural playback + texture registration; test ordering/duration/reduced-motion and capture 12 hero sheets.
 Running PIDs + logs: none.
-Last pushed SHA: pending setup commit.
-Last RULES re-read UTC: 2026-11-17T05:26Z.
-Mailbox read offsets: BOARD 16, USER 5, INBOX-CXV 1; no STOP present.
+Last pushed SHA: ecb553f29 (V0 report checkpoint follows).
+Last RULES re-read UTC: 2026-11-17T05:32Z.
+Mailbox read offsets: BOARD 16, USER 5, INBOX-CXV 5; no STOP present.
+CXI owns spine/manifest-loader.ts + assets.ts + atlas-delivery.ts; expose registration API via vfx-registry.ts; scene.ts remains CXV.
+AG2 texture delivery b31ccd864 announced; inspect manifest read-only in /Users/bao/th-v5-ag2, never merge their branch.
 Owner: free tools preapproved when logged; no login/key/payment. No new dependency without CXI.
