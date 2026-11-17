@@ -480,3 +480,15 @@ All synthesized deterministically into WebM Opus + AAC M4A. Target: -18.0 LUFS +
    - Thread tension body: harmonic rise 180Hz + 360Hz sweeping to 520Hz/1040Hz, delay 80ms
    - Tension hold tail: 520Hz sine ring, delay 650ms
    - Duration: 0.96s, Measured: -16.7 LUFS, peak -5.5 dBFS, size 6,176 B.
+
+## R9/R10 Size Optimization & Calibration Pass (REV 4)
+Commands:
+- `node tools/v5audio/render.mjs --all` (evaluates and renders all synthesized sets)
+- `node tools/v5audio/cut_ranged_and_voices.mjs` (slices 144 ranged variants and 104 voice samples)
+- `node tools/v5audio/render.mjs --mix-pass` (full mix audit)
+
+Encoding Standards:
+- Standard SFX/UI/Emotes/Voice: WebM Opus @ 36 kbps mono (`-c:a libopus -b:a 36k -ac 1`), AAC @ 48 kbps fallback (`-c:a aac -b:a 48k -ac 1`).
+- Ambience/Stingers (> 1.5s): WebM Opus @ 40 kbps mono, AAC @ 56 kbps fallback.
+- Net size reduction: -1.025 MB (-20.03% total asset size), Opus streaming payload reduced to 1.62 MB (-22.7%).
+- All cues meet Sound Gate S1-S5 >= 5/5 with true peaks <= -1.0 dBTP.
