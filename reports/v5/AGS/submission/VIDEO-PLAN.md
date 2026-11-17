@@ -15,4 +15,4 @@
 | 2:15-2:30 | Outro | Team and Call to Action. |
 
 ## Voiceover Script
-"Taskbar Hero is a cozy cat card-RPG where you defend your café... [Walkthrough narration] ...with seamless Avalanche integration. Mint relics, craft items, and own your digital assets."
+"Taskbar Hero is a cozy cat card-RPG where you defend your café... [Walkthrough narration] ...with seamless desktop-integrated interaction. Mint relics, craft items, and own your digital assets."
