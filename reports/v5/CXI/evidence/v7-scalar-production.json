@@ -1,0 +1,275 @@
+{
+  "utc": "2026-11-17T16:41:18.024302+00:00",
+  "laneCommit": "50ec14e73",
+  "merge": "73bcdbed4",
+  "before": {
+    "utc": "2026-11-17T16:36:20.989Z",
+    "source": "ed2251e3517e32b61ab5d7be18694910f2bfcbd3",
+    "indexSha256": "6ffc6e77d8c5af4039e7772a141b46e8d9e2726fe7a2e58dff5325299a121f60",
+    "captureHarnessSha256": "90100ea3f896048867d05c65ba90d7842cdc4cd416ba2f82d80f5203bc757eff",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+    "pass": true,
+    "errors": [],
+    "runs": [
+      {
+        "rate": 1,
+        "elapsedMs": 32000.20000000298,
+        "wholeRun": {
+          "samples": 1907,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.700000000004366,
+            "p99": 16.80000000000109,
+            "max": 66.70000000000027
+          },
+          "submitCpuMs": {
+            "median": 4.5,
+            "p95": 6.399999998509884,
+            "p99": 24.099999994039536,
+            "max": 70.89999999850988
+          },
+          "over33": 1,
+          "over50": 1
+        },
+        "startup": {
+          "samples": 115,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.800000000000182,
+            "p99": 33.29999999999973,
+            "max": 66.70000000000027
+          },
+          "submitCpuMs": {
+            "median": 4.399999998509884,
+            "p95": 20,
+            "p99": 39.899999998509884,
+            "max": 70.89999999850988
+          },
+          "over33": 1,
+          "over50": 1
+        },
+        "steadyWindowStartMs": 2000,
+        "firstRenderLatencyMs": 14,
+        "identity": {
+          "indexSha256": "6ffc6e77d8c5af4039e7772a141b46e8d9e2726fe7a2e58dff5325299a121f60",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "identityAfter": {
+          "indexSha256": "6ffc6e77d8c5af4039e7772a141b46e8d9e2726fe7a2e58dff5325299a121f60",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "blockedRequests": [],
+        "presentations": 29,
+        "actorActions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      },
+      {
+        "rate": 4,
+        "elapsedMs": 32144,
+        "wholeRun": {
+          "samples": 982,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 50,
+            "p99": 133.29999999999927,
+            "max": 350
+          },
+          "submitCpuMs": {
+            "median": 20.600000001490116,
+            "p95": 30.200000002980232,
+            "p99": 103.79999999701977,
+            "max": 297
+          },
+          "over33": 104,
+          "over50": 39
+        },
+        "startup": {
+          "samples": 39,
+          "frameMs": {
+            "median": 33.40000000000009,
+            "p95": 150,
+            "p99": 350,
+            "max": 350
+          },
+          "submitCpuMs": {
+            "median": 22.399999998509884,
+            "p95": 130.09999999403954,
+            "p99": 297,
+            "max": 297
+          },
+          "over33": 13,
+          "over50": 8
+        },
+        "steadyWindowStartMs": 2000,
+        "firstRenderLatencyMs": 21.700000002980232,
+        "identity": {
+          "indexSha256": "6ffc6e77d8c5af4039e7772a141b46e8d9e2726fe7a2e58dff5325299a121f60",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "identityAfter": {
+          "indexSha256": "6ffc6e77d8c5af4039e7772a141b46e8d9e2726fe7a2e58dff5325299a121f60",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "blockedRequests": [],
+        "presentations": 29,
+        "actorActions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      }
+    ]
+  },
+  "after": {
+    "utc": "2026-11-17T16:38:14.005Z",
+    "source": "73bcdbed424815382c6cb8a9bcc5a4f32447ce6d",
+    "indexSha256": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+    "captureHarnessSha256": "90100ea3f896048867d05c65ba90d7842cdc4cd416ba2f82d80f5203bc757eff",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+    "pass": true,
+    "errors": [],
+    "runs": [
+      {
+        "rate": 1,
+        "elapsedMs": 32001.20000000298,
+        "wholeRun": {
+          "samples": 1916,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.800000000000182,
+            "max": 50
+          },
+          "submitCpuMs": {
+            "median": 4.399999998509884,
+            "p95": 6.200000002980232,
+            "p99": 19.19999999552965,
+            "max": 52.899999998509884
+          },
+          "over33": 1,
+          "over50": 0
+        },
+        "startup": {
+          "samples": 116,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.800000000000182,
+            "p99": 33.19999999999982,
+            "max": 50
+          },
+          "submitCpuMs": {
+            "median": 4.200000002980232,
+            "p95": 16.100000001490116,
+            "p99": 26.799999997019768,
+            "max": 52.899999998509884
+          },
+          "over33": 1,
+          "over50": 0
+        },
+        "steadyWindowStartMs": 2000,
+        "firstRenderLatencyMs": 8.899999998509884,
+        "identity": {
+          "indexSha256": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "identityAfter": {
+          "indexSha256": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "blockedRequests": [],
+        "presentations": 29,
+        "actorActions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      },
+      {
+        "rate": 4,
+        "elapsedMs": 32044.20000000298,
+        "wholeRun": {
+          "samples": 996,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 50,
+            "p99": 100.09999999999945,
+            "max": 216.69999999999982
+          },
+          "submitCpuMs": {
+            "median": 20.799999997019768,
+            "p95": 30.799999997019768,
+            "p99": 86.10000000149012,
+            "max": 183.29999999701977
+          },
+          "over33": 114,
+          "over50": 38
+        },
+        "startup": {
+          "samples": 44,
+          "frameMs": {
+            "median": 33.30000000000018,
+            "p95": 83.40000000000009,
+            "p99": 216.69999999999982,
+            "max": 216.69999999999982
+          },
+          "submitCpuMs": {
+            "median": 22.400000005960464,
+            "p95": 75.80000000447035,
+            "p99": 183.29999999701977,
+            "max": 183.29999999701977
+          },
+          "over33": 14,
+          "over50": 9
+        },
+        "steadyWindowStartMs": 2000,
+        "firstRenderLatencyMs": 20.5,
+        "identity": {
+          "indexSha256": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "identityAfter": {
+          "indexSha256": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+          "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+        },
+        "blockedRequests": [],
+        "presentations": 29,
+        "actorActions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      }
+    ]
+  },
+  "body": {
+    "source": "73bcdbed424815382c6cb8a9bcc5a4f32447ce6d",
+    "index": "c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8",
+    "cases": 4,
+    "samples": 26,
+    "maxSolid": 0,
+    "maxFringe": 0,
+    "errors": [],
+    "pass": true
+  },
+  "focusedTests": 14,
+  "testFiles": 3,
+  "buildTypecheck": 0,
+  "reviewedOnce": [
+    "work/v5/CXI/performance/v7-scalar-before/contact-1024.jpg",
+    "work/v5/CXI/performance/v7-scalar-after/contact-1024.jpg",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-scalar-after/wave3-idle.jpg",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-scalar-after/enemy-yarn-giant-basic.jpg",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-scalar-after/enemy-yarn-giant.jpg",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-scalar-after/panko-4.jpg"
+  ],
+  "limits": [
+    "4x CPU proxy still has p95 whole-run frame50ms.",
+    "No blanket60fps or all-effect no-overlap claim.",
+    "Full5261 suite predates the scalar math change;14 focused tests/build follow it."
+  ]
+}
