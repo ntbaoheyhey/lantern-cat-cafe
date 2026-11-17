@@ -1,7 +1,7 @@
 # Bản review desktop — v5-m1.6
 Mở [bản game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trong trình duyệt desktop trên máy này. Dùng đủ query string. Đây là preview production local, chưa phải deploy công khai.
 
-**Preview hiện tại là bản ứng viên chưa gắn tag:** ứng dụng `01f6fa17e`, index `23b636028aee6cf13e51fbaface831f734918977de453de9ca52438b6f09b3d9`. Đã kiểm tra riêng hiệu ứng trạng thái, đội chiến thắng và bố trí trận; còn lỗi đường nối khi Mochi chớp mắt. Ba phim bên dưới thuộc bản xanh m1.6, chưa thể đại diện cho các thay đổi mới. Xem [bằng chứng ứng viên](I-A-VEF.md).
+**Preview hiện tại là bản ứng viên chưa gắn tag:** ứng dụng `f9d92be0f`, index `b131c5edf4d4a5b5fc4e509b42f62665ef68a6000365c71d61c3f2e10f870948`. Đã kiểm tra riêng hiệu ứng trạng thái, đội chiến thắng, bố trí trận và ảnh AVIF nhẹ hơn; còn lỗi đường nối khi Mochi chớp mắt. Ba phim bên dưới thuộc bản xanh m1.6, chưa thể đại diện cho các thay đổi mới. Xem [bằng chứng ứng viên](I-A-VEF.md).
 
 Tag phát hành: v5-m1.6; mã ứng dụng được kiểm tra và quay: 6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb. Tag gồm thêm báo cáo. SHA256 index.html: ef21e23aa191d7b670782e9e53f0c198c679eb9e11971a1d023e1dfadcaf048f.
 

@@ -1,0 +1,90 @@
+{
+  "utc": "2026-11-17T15:57:39.551679+00:00",
+  "application": "f9d92be0f",
+  "indexSha256": "b131c5edf4d4a5b5fc4e509b42f62665ef68a6000365c71d61c3f2e10f870948",
+  "judgeUrl": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "encoderTotals": {
+    "vfx": 337103,
+    "portrait": 106267
+  },
+  "focusedTests": 11,
+  "build": 0,
+  "captures": {
+    "complete": true,
+    "errors": [],
+    "sheets": [
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/asset-review/v7-after/mochi-960.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/asset-review/v7-after/soot-960.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/asset-review/v7-after/clover-960.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/asset-review/v7-after/panko-960.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/asset-review/v7-after/home-1024.jpg"
+    ],
+    "allSheetsInspectedOnce": true
+  },
+  "stableTransfer": [
+    {
+      "fixture": "wave1",
+      "budgetPass": true,
+      "errors": [],
+      "bytes": 7909877,
+      "requests": 746
+    },
+    {
+      "fixture": "wave3",
+      "budgetPass": false,
+      "errors": [],
+      "bytes": 8471028,
+      "requests": 756
+    },
+    {
+      "fixture": "boss",
+      "budgetPass": true,
+      "errors": [],
+      "bytes": 7986395,
+      "requests": 740
+    }
+  ],
+  "transferMethodCorrection": "Await visible cafe portraits and decode before fixture entry. Earlier boss fixture injection could skip cafe requests; discard 7612287B as authoritative cold budget. All started responses still counted through completion.",
+  "route": {
+    "complete": true,
+    "steps": [
+      {
+        "name": "route menu visible",
+        "ms": 1964
+      },
+      {
+        "name": "fight available",
+        "ms": 2189
+      },
+      {
+        "name": "battle visible",
+        "ms": 2799
+      },
+      {
+        "name": "practice receipt visible",
+        "ms": 9653
+      }
+    ],
+    "errors": []
+  },
+  "nativeFallback": {
+    "complete": true,
+    "report": "work/v5/CXI/asset-fallback/v7-assets-ult/report.json",
+    "rows": [
+      {
+        "mode": "integrity",
+        "originals": 12,
+        "textured": 4,
+        "expectedFaultErrors": 24,
+        "unexpectedErrors": []
+      },
+      {
+        "mode": "decode",
+        "originals": 12,
+        "textured": 4,
+        "expectedFaultErrors": 0,
+        "unexpectedErrors": []
+      }
+    ]
+  }
+}

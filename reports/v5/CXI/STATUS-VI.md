@@ -6,5 +6,7 @@ Sửa tải màn hình thất bại/chậm: header/café còn hoạt động; Re
 Ba phim đúngbuild:30giây wave1/wave3/boss,gameplay1×+audio thật,0errors; xemREVIEW-VI.md. Fixture review tách khỏi guest/Fuji.
 Tải lạnh8.584.126 /9.145.394 /8.659.811B: vẫn vượt8MB. AGS audioeb2e2b25d bịREDO vìboss vẫnmono,thiếumanifest; AGV12AVIF+4portrait chưaREADY.
 Receipt nói rõ local/no transaction;5registry bytecode vàAnvil516ms không thay thế giao dịchFuji thật. Owner deploy/gửi Fuji theoNEEDS-USER-VI.md, ghimv5-m1.6.
-Preview hiện phục vụ ứng viên01f6fa17e: V-A3/V-E/V-F đã tích hợp,37testfocused/build+capture riêng đạt; lỗi đường nối khiMochi chớpmắt chặn tagm1.7. Phim bên trên vẫn thuộc m1.6. Benchmark4×CPU p95frame83,3→33,4ms,không phải cam kết60fps hay máy yếu thật.
+Preview hiện phục vụ ứng viênf9d92be0f: V-A3/V-E/V-F đã tích hợp,37testfocused/build+capture riêng đạt; lỗi đường nối khiMochi chớpmắt chặn tagm1.7. Phim bên trên vẫn thuộc m1.6. Benchmark4×CPU p95frame83,3→33,4ms,không phải cam kết60fps hay máy yếu thật.
 SUBMISSION-FACTS.md là bản facts đãkiểm tra; AGS sửa draft theoT7. Chưa gửi form hoặc dùnglaneID làm danh tính nhóm.
+
+T4/T6đãkiểmtra:12VFX337103B+4ảnhnhỏ106267B,alpha nguyênvẹn,11tests/build/fallback đạt. Coldđợi caféhiện:7.910/8.471/7.986MB;wave3vẫnFAIL8MB. BlinkREADY đangreview; chưa cóm1.7.
