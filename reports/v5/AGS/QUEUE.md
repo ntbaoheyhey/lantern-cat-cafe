@@ -5,7 +5,7 @@
 - [ ] CANCELLED: REFILL-R25 Web Audio latency benchmark (Worthless: judge never sees)
 - [x] S-A: Answer open REQs: CXI audio derivatives + CXV Q0b-F2 recheck.
 - [ ] S-B: Judge's-eye QA on newest tag: 1280x720 (Desktop only).
-- [ ] S-C: Submission pack: reports/v5/AGS/submission/SUBMISSION-DRAFT.md + README text.
-- [ ] S-D: Demo video plan (VIDEO-PLAN.md) + pitch outline (PITCH-OUTLINE.md).
-- [ ] S-E: Sound judge hears: play, fix loudness, wiring.
+- [x] S-C: Submission pack: reports/v5/AGS/submission/SUBMISSION-DRAFT.md + README text.
+- [x] S-D: Demo video plan (VIDEO-PLAN.md) + pitch outline (PITCH-OUTLINE.md).
+- [x] S-E: Sound judge hears: play, fix loudness, wiring.
 - [ ] S-F: Owner runbook check: reports/v5/AGS/OWNER-CHECKLIST-VI.md.
