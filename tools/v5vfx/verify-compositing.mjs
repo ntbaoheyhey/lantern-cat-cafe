@@ -19,7 +19,9 @@ try{
   });
  });
  const path=resolve(out,'pixels.png');await page.screenshot({path,clip:{x:0,y:0,width:340,height:100}});
- report.pixels=JSON.parse(execFileSync('python3',['-c',"from PIL import Image; import json,sys; im=Image.open(sys.argv[1]).convert('RGB'); print(json.dumps({mode:{'black':im.getpixel((i*120+75,75)),'color':im.getpixel((i*120+25,25))} for i,mode in enumerate(['normal','add','screen'])}))",path],{encoding:'utf8'}));
+ const pixels=execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-i',path,'-f','rawvideo','-pix_fmt','rgb24','pipe:1']);
+ const pixel=(x,y)=>Array.from(pixels.subarray((y*340+x)*3,(y*340+x)*3+3));
+ report.pixels=Object.fromEntries(['normal','add','screen'].map((mode,i)=>[mode,{black:pixel(i*120+75,75),color:pixel(i*120+25,25)}]));
  const expected={normal:{black:[0,0,0],color:[40,80,120]},add:{black:[80,64,48],color:[120,144,168]},screen:{black:[80,64,48],color:[107,124,145]}};
  report.pass=Object.entries(expected).every(([mode,points])=>Object.entries(points).every(([point,rgb])=>rgb.every((v,i)=>Math.abs(report.pixels[mode][point][i]-v)<=1)))&&errors.length===0;
  report.errors=errors;await writeFile(resolve(out,'pixels.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));if(!report.pass)process.exitCode=1;

@@ -1,21 +1,21 @@
 # CXV handoff — REV 4
-STATE: ACTIVE, owner REV4 restart; STOP files absent at 2026-11-17T06:36:19Z.
-Worktree: /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17.
-ACTIVE: V5 performance/reduced-motion + texture compositing; started07:15Z, 2h. Hero40 texture reviews delivered.
-NEXT 1: node tools/v5vfx/verify-compositing.mjs; fresh DOM textures and boss FPS gate.
-NEXT 2: Complete priority IMGJOB or fresh pending AGV REVIEW batches, <=30m/set; send independent G1-G5 scores.
-NEXT 3: Pending AGV REVIEW batches then V4 Q0b-F2 hit-stop QA, V5, refill R1-R10. Priority IMGJOB between steps.
-Last pushed SHA: 89daaaabd; Mochi report and review harness pushed.
-V4 DONE report V4.md; Q0b-F2 fix sent to AGS for external recheck. No unfinished runtime WIP.
-V0/V1/V2 DONE; V1 override regression fixed ed388eb30 focused8/8 + typecheck; V2 tests18/18, feet0px, shared-machine59.34fps.
-V3 native source + reaction/motion20/20 passed. Native source tests cover reduced-motion allocation, renderer restoration, reuse/disposal. Fresh six-sheet capture passed, V3.md records inspection.
-Judge URL: http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3 (dev=1 for deterministic fixture).
-Merged v5-m1 cleanly; current merge SHA da7159337. CXI will wire deferNativePixels next; do not duplicate.
-CXI granted single scene.ts loadSpineActor deferNativePixels argument; existing loader grants remain. Do not edit their loader paths.
-Pending legacy AG2 reviews reroute to AGV: soot, mochi-v2, clover, panko, ultimates, boss-enemy, crits, auras, status. No fresh score approval yet.
-AG1 Q0b-F2 ACK to AGS: verify current hit-stop/shake during V3, send evidence or fix.
-Processes: Vite PID21499 port6310; V5 gates PID7020 ended21 tests passed, two test-only casts failed tsc, corrected; next rerun.
-Mailbox read: USER through06:56; BOARD v5-m1; INBOX through06:59 CXI ACK. Initial PULSE and CXI/AGS ACK sent.
-RULES/LEARN read07:14Z; study06:58:29–07:14:30 complete, saved CXV-compositing-performance-20261117.md.
-Only explicit owned paths; ignored old ART evidence untouched. No deployments, transactions, submissions, or subagents.
-CXI narrow grants06:56: field-vfx/impact-strokes/impact-wake paintSourceRect + regression tests; player.test loader mocks. Await milestone.
+STATE: ACTIVE; STOP files absent07:30Z. Owner07:12 instruction is WD-only.
+Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17.
+ACTIVE: R1 texture integration/review07:34Z; V5 validation DONE.
+NEXT 1: Narrow oversized face mask; fresh re-review Mochi slash/Clover impact/Panko slash.
+NEXT 2: Fresh boss/enemy + aura/status/utility reviews; score to AGV, check revised hero hashes.
+NEXT 3: Approved texture integration then R2 four enemy variants and R3 numbers. IMGJOB has priority.
+Last pushed runtime SHA: cae14520b120fbc14b0e8ce427b2fd9de18d7f2d; this checkpoint adds V5 evidence/tools.
+V5:21/21 focused,tsc0,pixel gate0; one shared-machine boss58.67FPS,p95 16.8ms; V5.md.
+Nine V5 candidate sheets inspected;6 pass isolated proxy gate;3 lose visibility to face mask. REVIEW-V5-CANDIDATES.md.
+V0–V4 implementation DONE. V4 Q0b-F2 external AGS closure/M2 owner feedback remain pending.
+Hero40 review DONE; revisions requested. No blanket production texture approval.
+Judge URL http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; deterministic harness adds dev=1.
+Merged v5-m1; no later milestone announced. Do not merge producer branches or later CXI commits.
+CXI handles deferred-native scene wiring, sampled rect fixes/loader mocks,19 AVIF derivative pages. Scoped grants retained.
+CXI optional texture blend forwarding requested07:18; pending acknowledgment/integration.
+Processes: Vite PID21499 port6310 confirmed07:30; all captures/gates finished. No outstanding detached jobs.
+Mailbox read USER through07:12, INBOX through07:17; BOARD v5-m1. PULSE due07:35.
+RULES/LEARN/prompt excerpts reread07:30–07:34. Compositing research06:58–07:14 covers current mask/integration work.
+Explicit owned staging only; old untracked ART untouched. No deployment/transactions/submission/subagents.
+Overall DONE not met: R1–R10, pending reviews and external quality closure.

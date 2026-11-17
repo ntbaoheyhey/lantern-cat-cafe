@@ -4,7 +4,10 @@
 - [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
 - [x] V3 Enemies + boss — DONE; native source20/20; six fresh sheets, Yarn hand/target contact proven
 - [x] V4 current QA impact fixes — DONE a7d452167;12/12 + tsc0 + fresh sheets; AGS recheck/M2 feedback pending
-- [ ] V5 Performance + reduced motion — ACTIVE07:15Z, caps/compositing, 2h
+- [x] V5 Performance + reduced motion — DONE07:34Z;21/21,tsc0,pixel gate,9 sheets,boss58.67fps
+- [ ] R1 first integration pass — ACTIVE07:34Z; face mask visibility, remaining REVIEW sets, approved texture wiring
+- [ ] R2 enemy variants — QUEUED after R1
+- [ ] R3 damage numbers — QUEUED after R2
 
 ## REFILL LIST (append next three unfinished items when queue is empty)
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
