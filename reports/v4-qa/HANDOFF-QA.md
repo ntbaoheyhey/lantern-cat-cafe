@@ -1,13 +1,14 @@
-# QA execution anchor — 2026-11-17T01:15:57.643733+00:00
-ACTIVE: Q1 production attempt1 launched with load guard; both frozen installs PASS. Q2 runbook static checks and QA-1 complete.
-NEXT 1: Inspect Q1/build-1.json ready; when true detach nice15 node tools/v4qa/cold-run.mjs q1-cold-1 and record PID/log.
-NEXT 2: Review independent cold-run outputs/screenshots; complete Q1 findings+scorecard; no missing-submodule finding (Forge setup passed).
-NEXT 3: Run tools/v4qa/local-checks.py as detached nice15 after cold job completes; capture production artifact sizes and candidate withdrawal/funding checks.
-RUNNING: production PID13685 work/v4qa/jobs/production-1.log; cold-run PID14675 /Users/bao/taskbar-hero-qa/work/v4qa/jobs/q1-cold-1.log; max2/current2.
-LAST PUSH: c6be60677 checkpoint being verified; see work/v4qa/last-push.txt for full accepted SHA.
-TARGET SHIP: b1e4398a8844fa51d2784760e92ed24528d13d2b
-TARGET ART: 4109469bfef8 (origin fetched01:12UTC).
-CHECKPOINT: Q0 complete; noSTOP,QA INBOX has no user instruction. No DEPLOYED seen yet.
-LOAD: clone install deferred01:30:18UTC load1=11.85; next eligibility check01:35:18UTC; supervisor PID8110.
-NOTE: clone is permitted generated-output sandbox; product files in QA tree remain untouched. Q2 shares fresh clone install evidence.
-FIXTURE NOTE: build1 lacks package metadata post-step; do not mutate active preview. After cold run ends, run source tools/chain/economy-v3-metadata.mjs --out=/Users/bao/taskbar-hero-qa/work/v4qa/production-1/dist/relics; verify index/runtime hashes unchanged + HTTP metadata; preserve initial inventory. Future launcher now includes step.
+# QA execution anchor — 2026-11-17T01:45:59.901553+00:00
+ACTIVE: Q1 cold run active; first1440 desktop completed all7stages/18local receipts, raw FAIL transfer+layout; Q2 local checks pending.
+NEXT 1: Inspect existing PID14675 and Q1/q1-cold-1/results.json; do NOT launch duplicate cold run; preserve initial raw evidence.
+NEXT 2: Adjudicate6offscreen audio mixer inputs; finish viewport review + scorecard + transfer/action inventory; file independently reproduced findings.
+NEXT 3: After cold job ends, run metadata post-step against work/v4qa/production-1/dist/relics, preserving index/runtime hashes; then local-checks.py detached nice15 when load<=9.
+RUNNING: production PID13685 work/v4qa/jobs/production-1.log; cold PID14675 work/v4qa/jobs/q1-cold-1.log; max2/current2.
+LAST PUSH: 2026-11-17T01:43:11.345252+00:00 590ac4053f517cd9c611c6b2c1b5608ade8cfbb6
+TARGET SHIP runtime: b1e4398a8844fa51d2784760e92ed24528d13d2b; latest remote: 52aaaba399a38cf76de68866af6c8e6ed972cfdd; runtime/runbook paths unchanged.
+TARGET ART: 1aaa5b181fcae67c57f41f0ea506b660d4b25baa; sync1 still pending17Nov12UTC/latest14.
+FIXTURE: local API6201/Anvil6202/preview6200; frozen installs and Forge setup PASS; earlier submodule suspicion disproved.
+FIXTURE LIMIT: initial build lacks metadata post-step; active preview must not change midrun. Future launcher corrected.
+Q1: battle3130ms/receipt102179ms, shared-machine indicative; 29,653,929B battle-entry checkpoint; 27/27 battle imgs loaded.
+Q2: QA-1 names-only prerequisite finding remains open at latest tip; source+runbook unchanged. Withdrawal claim6 observed; runbook says12.
+CHECKPOINT: noSTOP/noQA pause/noactualDEPLOYED line; inspect before next checkpoint. Two-wallet public funding candidate remains unconfirmed.

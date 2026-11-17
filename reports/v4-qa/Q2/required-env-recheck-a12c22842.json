@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-17T01:45:59.901553+00:00",
+  "targetSha": "52aaaba399a38cf76de68866af6c8e6ed972cfdd",
+  "previousTargetSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "assertions": [
+    {
+      "name": "AUTH_JWT_SECRET",
+      "namedInRunbook": true,
+      "role": "required signing/session prerequisite"
+    },
+    {
+      "name": "VOUCHER_SIGNER_PRIVATE_KEY",
+      "namedInRunbook": true,
+      "role": "required signing/session prerequisite"
+    },
+    {
+      "name": "SPONSOR_PRIVATE_KEY",
+      "namedInRunbook": true,
+      "role": "optional dedicated sponsor; voucher signer fallback"
+    },
+    {
+      "name": "GAME_SEED_SECRET",
+      "namedInRunbook": true,
+      "role": "optional dedicated seed; JWT fallback"
+    }
+  ],
+  "runtimeAndRunbookChanged": true
+}
