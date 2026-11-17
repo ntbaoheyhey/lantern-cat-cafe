@@ -63,3 +63,6 @@ R2 visual debt remains open for R10; see R2.md.
 | heal | 4 | 4 | 4 | 4 | Green +36 and gentle pop stay distinct from damage. |
 | stack | 4 | 4 | 4 | 4 |21/34/55 values occupy separate nearby positions, no collision. |
 | critical-reduced | 4 | 4 | 4 | 4 | Full-size steady label; no scale/rise/accent motion. |
+
+## R4 contact pass
+14 catalog damage fixtures + heal/reduced;16 own sheets,16/16 exclusive shadows and correct dust timing. Ground detail4/3/4/4 for heroes/R2/boss; legacy synthetic self-hit scenes3/3/3/4. Full details and limitations:R4.md.

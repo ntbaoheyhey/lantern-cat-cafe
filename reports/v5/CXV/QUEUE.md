@@ -9,7 +9,7 @@
 - [x] R2 enemy variants — DONE implementation/gates;28/28+tsc0,8 final reviewed sheets; R10 visual debt R2.md
 - [x] R3 damage numbers — DONE;10/10+tsc0,5 fresh sheets, zero overlaps; R3.md
 
-- [ ] R4 ground shadows/dust — ACTIVE research since08:20:25; native/craft shadow audit ongoing
+- [x] R4 ground shadows/dust — DONE;11/11+tsc0,16 own sheets;R4.md
 - [ ] R5 status visuals — QUEUED
 - [ ] R6 outcome moments — QUEUED
 
@@ -17,7 +17,7 @@
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
 - [x] R2 Enemy variants: needle-moth, binding-thread, teacup-healer, kettle-knight (90m)
 - [x] R3 Damage numbers: pop, stack, crit flourish, distinct healing (45m)
-- [ ] R4 Ground contact shadows and impact dust under every unit (45m)
+- [x] R4 Ground contact shadows and impact dust under every unit (45m)
 - [ ] R5 Status visuals: burn, poison, stun, slow, shield (45m)
 - [ ] R6 Victory/defeat/level-up presentation moments (45m)
 - [ ] R7 Subtle ultimate camera push-in; disabled for reduced motion (45m)
@@ -41,6 +41,9 @@
 - [ ] AGS Q0b-F2 external recheck — fix delivered; request sent, latest QA closure pending
 
 - [x] R1 repeat reviews — impacts-alt,enemy-skills,victory DONE9 scores; revisions requested
-- [ ] R1 v2 support reviews — boss-enemy-v2,auras-status-v2,hitstop-vignettes-v2 ACK; capture next
+- [x] R1 v2 support reviews — DONE27 scores;REVIEW-R1-SUPPORT-V2.md
 - [x] CXI07:44 craft decode hooks — ACK/DONE narrow grant07:45; preserved dimensions/fallback/timing
 - [x] CXI07:45 sequence assertion — ACK/DONE narrow grant07:52; CXI owns test contract repair
+
+- [ ] R1 Kettle procedural accent regression — ACTIVE;CXI08:36, own6301 confirms masked draws
+- [ ] R1 v3/boss-intro/status-badges reviews — ACK;fresh capture after accent checkpoint

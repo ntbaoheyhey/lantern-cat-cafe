@@ -81,6 +81,7 @@ export class SpineScene {
  private bossPhase:BossPhase;
  private weather:BattleWeather;
  private postFx:BattlePostFx;readonly cinema:CinematicPlayer;private bodyFx:BodyFx;private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
+ private bodyBoxes=new Map<string,Rect>();private groundContacts=new Map<string,{x:number;y:number;scale:number;halfWidth:number}>();
  private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
  private visibility=()=>{this.last=0;this.dirty=true;};
  private pick=(event:PointerEvent)=>{const box=this.renderer.domElement.getBoundingClientRect(),x=event.clientX-box.left,y=event.clientY-box.top;for(const unit of this.sizeAudit().units){if(x>=unit.box.x&&x<=unit.box.x+unit.box.width&&y>=unit.box.y&&y<=unit.box.y+unit.box.height){this.onTarget(unit.id);break;}}};
@@ -483,7 +484,17 @@ export class SpineScene {
    view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:`/units/${bannerEntry.asset}/portrait.webp`,anchors:this.anchors}:undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
   this.audio.render(view);
-  this.bodyFx.render(view,time,width,height,new Map([...this.actors].map(([id,e])=>[id,this.bounds(e)])));this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
+  for(const id of this.groundContacts.keys())if(!this.actors.has(id)){this.groundContacts.delete(id);this.bodyBoxes.delete(id);}
+  for(const [id,e]of this.actors){
+   const box=this.bounds(e);this.bodyBoxes.set(id,box);
+   let point=this.groundContacts.get(id);if(!point){point={x:0,y:0,scale:1,halfWidth:0};this.groundContacts.set(id,point);}
+   const feet=e.craftLight?.audit.feet;
+   if(feet?.length){point.x=(feet[0]!.x+feet[1]!.x)/2;point.y=(feet[0]!.y+feet[1]!.y)/2;}
+   else{this.scratch.copy(e.shadow.position).project(this.camera);point.x=(this.scratch.x*.5+.5)*width;point.y=(.5-this.scratch.y*.5)*height;}
+   point.scale=box.height/195;
+   point.halfWidth=feet?.length?Math.abs(feet[1]!.x-feet[0]!.x)/2+3:Math.min(100,box.width*.3);
+  }
+  this.bodyFx.render(view,time,width,height,this.bodyBoxes,this.groundContacts);this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
   this.numbers.setAnchors(this.anchors);this.numbers.render(frame,view.cardPresentation,this.width,this.height,view.reducedMotion,true,view.fixedTime);
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
