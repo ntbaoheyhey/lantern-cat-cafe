@@ -1,19 +1,18 @@
-# CXI V6 continuation
-ACTIVE: I-C practice receipt/recovery fixed;58focused tests pass; fullsuite and desktop capture next.
-NEXT 1: Inspect v6-living pipeline+effects after CXV77bbef422 merge; publish next green tag.
-NEXT 2: Verify wide practice invitation card on current build; update owner runbook to next green tag.
-NEXT 3: I-B asset delivery/actual patrol timing; I-E films after IA..IC green. I-D/F docs done.
-Last pushed SHA:c44267f8cf3fb90b5f23e0336dfa0100970a5c79 (CXV living motion merge); green tagv5-m1.2.
-self-wake: CXI wake, every 15 min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T12:22:31Z.
-Last RULES re-read UTC:2026-11-17T13:01:26Z; STOP-ALL/STOP-CXI absent.
-ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
-PipelinePID20682:work/v5/CXI/jobs/v6-living-pipeline.log;fullsuite/build/transfer/effects onc44267f8c.
-PipelinePID17048:work/v5/CXI/jobs/v6-recovery-pipeline.log (fullsuite/build/journey);preview80797/6301.
-Last full suite88bd85cb8:typecheck0/web2902/root5202/build0; transfersFAIL8MB.
-Current88bd85cb8 transfers8,743,013/8,948,906/8,818,732B;all0errors,FAIL8MB. green tagv5-m1.2.
-Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox read INBOX136/DELIVERIES48/USER23/LEARN43 at2026-11-17T13:06:40Z; old WATCHDOG ignored.
-Owner override 2026-11-17T12:36:53Z: desktop only; all phone work removed from QUEUE and uncommitted sizing edits reverted.
-AGS residual legacy audio REQ09:03 remains; AGV approved12 AVIF REQ08:47 remains.
-R7 receipt mount committed; synthetic desktop capture passes. Fuji kit5tests+Anvil516ms pass; no keys/env file reads.
-R5 JS1,319,090->1,112,059B; R6 dist13posters removed1,395,314B.
+# CXI V7 continuation
+ACTIVE: I-A m1.5 validation complete; publishing; I-E3x30s real gameplay films next; assistant: AGS.
+NEXT 1: Push+tag v5-m1.5; update BOARD; create tools/v5int/record-review.mjs using existing audio capture tap.
+NEXT 2: I-B no-inline build/3cold/route pass;161.5KB saved, all>8MB; AGS4beds/AGV12AVIF open.
+NEXT 3: Measure load-to-first-hit desktop; I-D real/absent tx panels; I-E films+REVIEW-VI.
+Last pushed SHA:a2cbb3fb4; green v5-m1.4=173d854b1; route3 typecheck/web/root/build/transfer/route all0.
+self-wake: cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; edited2026-11-17T14:00:10Z.
+Last RULES re-read UTC:2026-11-17T14:09:07Z; STOP-ALL/STOP-CXI absent.
+ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
+Running jobs:none; PID43885 m15 complete all7steps0; preview parent80797/child80825 port6301.
+m15 suite:2924web;5224root=77Node+5147workspace,11skip/2expectedfail;typecheck/build0.
+Cold v7-m158583793/9144973/8659415B;0errors;FAIL8MB;route9348ms.
+I-C first hit20,849ms incl17,700ms reading8cards; enemy165->119;zeroerrors; firstprobe legacy selector invalid, no game bug.
+AGS open:T1 exactQA repro,T2/T3 REDO citations/placeholders,T5 4beds309KB; copy correction open.
+AGV T-CXI-4 top15+12AVIF exact target table in I-B-TOP15.md sent. CXV92542f545 mergeda2cbb3fb4; c0c8081a8 merged.
+Mailbox read INBOX-CXI154/INBOX-AGS71/USER23/LEARN50 at2026-11-17T14:16:32Z; ignore old watchdog.
+I-D public Fuji owner-only;5contracts checked;kit5tests+Anvil516ms;no real public tx claimed.
+I-E3x30s films/contact sheets+Vietnamese review open;I-F README/ARCHITECTURE verified, draft corrections open.

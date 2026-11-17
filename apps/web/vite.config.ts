@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), pixelPackingPlugin(), excludeUnusedPosters()],
   build: {
     chunkSizeWarningLimit: 1500, // Phaser is ~1.2 MB minified
+    // Catalog URL maps are eager; fetch only the images a scene actually displays.
+    assetsInlineLimit: (filePath) => /\/assets\/(?:cardrpg-look\/(?:icons|portraits|v3-portraits)|cardrpg-a6\/illustrations)\//.test(filePath.replace(/\\/g, '/')) ? false : undefined,
     rollupOptions: {
       output: {
         // Separate cacheable vendor chunks: an app-code change no longer re-downloads them.

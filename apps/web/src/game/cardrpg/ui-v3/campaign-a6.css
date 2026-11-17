@@ -1,4 +1,6 @@
 /* Original lantern-street route. Scoped to A6's campaign presentation. */
+.uv-app[data-a6=true] .a6-route-ready {max-width:640px;margin:20px auto;padding:24px}
+.uv-app[data-a6=true] .a6-route-ready .uv-fight {margin-top:18px}
 .uv-app[data-a6=true] .a6-campaign {
  .a6-chapter-picker {display:grid;grid-template-columns:minmax(0,1fr) 92px;align-items:stretch;gap:10px;margin-bottom:10px}
  .a6-route-total {display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;border:1px solid #b79760;border-radius:10px;background:linear-gradient(#fff5d8,#ead1a0);color:#765127}

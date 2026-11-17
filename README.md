@@ -35,7 +35,7 @@ Combat is a deterministic TypeScript simulation. In the configured chain mode, S
 
 - **Guest entry:** an ordinary browser EOA signs SIWE. The guest-drip service supplies test AVAX from a sponsor. This implementation uses funded EOAs, with no ERC-4337 EntryPoint/paymaster flow.
 - **Items and trading:** RelicNFT uses ERC-1155 signed vouchers. RelicMarketV2 supports AVAX/YARN trades; YarnToken is ERC-20; SeasonRewards settles signed claims. Features require their matching deployed services and build switches.
-- **Receipts:** a confirmed action displays its transaction hash, network, actual fee payer, AVAX fee, known confirmation duration and explorer link. Local receipts have a local label and no public explorer link. Synthetic UI captures are labelled separately.
+- **Receipts:** a confirmed action displays its transaction hash, network, actual fee payer, AVAX fee, known confirmation duration and explorer link. Local receipts have a local label and no public explorer link. Synthetic UI captures are labelled separately. Offline battle results link the deployed Fuji items contract and explicitly state that no transaction was sent.
 
 The [public read-only check](reports/v5/CXI/PUBLIC-FUJI.json) found bytecode at all five registry addresses on Fuji block **61,234,900**, 17 November 2026. This establishes code presence; public guest funding and the complete hosted chain journey still need the owner-run proof. The proof kit verifies the receipt, sender, recipient, exact funding amount and actual gas fee. Unknown confirmation timing stays unknown.
 
@@ -76,7 +76,7 @@ node --test tools/v5int/fuji-proof-kit.test.mjs
 
 Root `pnpm test` includes the workspace web tests. Contract tests are a separate read-only check: after installing Foundry and initializing submodules with `git submodule update --init --recursive`, run `forge test --root contracts`.
 
-The [desktop evidence record](reports/v5/CXI/I-C.md) separates passing suites, synthetic receipt presentation and real frontend play. Fresh cold combat entries measured **8.74–8.95 MB**, above the 8 MB target. The first practice result appears in about 10 seconds; an untrained first patrol took **66.3 seconds at 3×**, so the full 30-second patrol target remains open. These local measurements do not establish public network performance.
+The [desktop evidence record](reports/v5/CXI/I-C.md) separates passing suites, synthetic receipt presentation and real frontend play. Fresh cold combat entries measured **8.74–9.31 MB**, above the 8 MB target. The first practice invitation appears in about 9.35 seconds. The full guest journey through one normal level-up and the first patrol took **70.15 seconds at 3×** (66.3 seconds without the level-up), so the 30-second patrol target remains open. These local measurements do not establish public network performance.
 
 The [owner runbook](reports/v5/CXI/NEEDS-USER-VI.md) contains the isolated Anvil dry-run and explicit, environment-gated Fuji funding command. It also pins the green release for deployment. No private key is an input to that proof kit.
 
