@@ -1,0 +1,523 @@
+{
+  "utc": "2026-11-17T19:05:45.898636+00:00",
+  "decision": "Do not integrate this prototype. Fullgrid clone exact;all trimmed variants lose exact filtered GPU parity despite910retained-vertex/socket and276paintedbounds equality. Production2cell prototype yields10\u201312%median CPU gain and~1MBless active weights,but4xframep95unchanged66.7ms,longframes74\u219275,startup133.5\u2192134.4ms. Sixfresh review images inspectedonce. Preserve current runtime;investigate remaining cold/long frames with existing profiler evidence.",
+  "runs": [
+    {
+      "utc": "2026-11-17T19:01:17.630Z",
+      "ended": "2026-11-17T19:01:32.794Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "toolSha256": "5bf9953f92683fc761a250aff1e8a0ba2a140f87230801a8a5ef09060e45c73b",
+      "prototypeSha256": "9fd939866bd93373d1360f15a38b203cf52a9f1fc7f68c07f64c3ddd0507ed84",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pass": false,
+      "errors": [],
+      "raw": "work/v5/CXV/films/V7-F-mesh-outer-prototype/report.json",
+      "variant": "prototype",
+      "options": null,
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "motionCases": 420,
+          "motionExact": true,
+          "gpuCases": 128,
+          "gpuExact": 65,
+          "boundsExact": true,
+          "maxChangedPixels": 44,
+          "maxChannelDelta": 9,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 217.29999999701977,
+              "weightBytes": 2221560,
+              "vertices": 6534
+            },
+            {
+              "mode": "cut",
+              "medianMs": 125,
+              "weightBytes": 1244800,
+              "vertices": 3540
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "motionCases": 490,
+          "motionExact": true,
+          "gpuCases": 148,
+          "gpuExact": 66,
+          "boundsExact": true,
+          "maxChangedPixels": 95,
+          "maxChannelDelta": 10,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 255.60000000149012,
+              "weightBytes": 2700720,
+              "vertices": 7623
+            },
+            {
+              "mode": "cut",
+              "medianMs": 149.39999999850988,
+              "weightBytes": 1519120,
+              "vertices": 4234
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-17T19:02:35.199Z",
+      "ended": "2026-11-17T19:02:51.832Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "toolSha256": "c15f42ad2f9ed2ead8656b74d6d9b473bdbdd530886d3825f1a6182b976d6378",
+      "prototypeSha256": "7e932405c2ade471e340a2c9ebf89b1d63f5e9f62066c9284aff571a53843e24",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pass": true,
+      "errors": [],
+      "raw": "work/v5/CXV/films/V7-F-mesh-outer-control/report.json",
+      "variant": "control",
+      "options": null,
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "motionCases": 420,
+          "motionExact": true,
+          "gpuCases": 128,
+          "gpuExact": 128,
+          "boundsExact": true,
+          "maxChangedPixels": 0,
+          "maxChannelDelta": 0,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 217.39999999850988,
+              "weightBytes": 2221560,
+              "vertices": 6534
+            },
+            {
+              "mode": "cut",
+              "medianMs": 217.60000000149012,
+              "weightBytes": 2221560,
+              "vertices": 6534
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "motionCases": 490,
+          "motionExact": true,
+          "gpuCases": 148,
+          "gpuExact": 148,
+          "boundsExact": true,
+          "maxChangedPixels": 0,
+          "maxChannelDelta": 0,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 254.20000000298023,
+              "weightBytes": 2700720,
+              "vertices": 7623
+            },
+            {
+              "mode": "cut",
+              "medianMs": 253.79999999701977,
+              "weightBytes": 2700720,
+              "vertices": 7623
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-17T19:03:22.688Z",
+      "ended": "2026-11-17T19:03:37.868Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "toolSha256": "107e9d4ce172423115f2c832acb0cd936c54be1b16dfa7fb102747449e30d2a7",
+      "prototypeSha256": "7e932405c2ade471e340a2c9ebf89b1d63f5e9f62066c9284aff571a53843e24",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pass": false,
+      "errors": [],
+      "raw": "work/v5/CXV/films/V7-F-mesh-outer-no-mips-control/report.json",
+      "variant": "no-mips-control",
+      "options": {
+        "padding": 2,
+        "fullControl": false,
+        "noMipsControl": true
+      },
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "motionCases": 420,
+          "motionExact": true,
+          "gpuCases": 128,
+          "gpuExact": 128,
+          "boundsExact": true,
+          "maxChangedPixels": 0,
+          "maxChannelDelta": 0,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 217.89999999850988,
+              "weightBytes": 2221560,
+              "vertices": 6534
+            },
+            {
+              "mode": "cut",
+              "medianMs": 125.89999999850988,
+              "weightBytes": 1244800,
+              "vertices": 3540
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "motionCases": 490,
+          "motionExact": true,
+          "gpuCases": 148,
+          "gpuExact": 147,
+          "boundsExact": true,
+          "maxChangedPixels": 1,
+          "maxChannelDelta": 1,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 254.39999999850988,
+              "weightBytes": 2700720,
+              "vertices": 7623
+            },
+            {
+              "mode": "cut",
+              "medianMs": 149.5,
+              "weightBytes": 1519120,
+              "vertices": 4234
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-17T19:03:56.739Z",
+      "ended": "2026-11-17T19:04:12.659Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "toolSha256": "107e9d4ce172423115f2c832acb0cd936c54be1b16dfa7fb102747449e30d2a7",
+      "prototypeSha256": "7e932405c2ade471e340a2c9ebf89b1d63f5e9f62066c9284aff571a53843e24",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pass": false,
+      "errors": [],
+      "raw": "work/v5/CXV/films/V7-F-mesh-outer-pad4/report.json",
+      "variant": "pad4",
+      "options": {
+        "padding": 4,
+        "fullControl": false,
+        "noMipsControl": false
+      },
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "motionCases": 420,
+          "motionExact": true,
+          "gpuCases": 128,
+          "gpuExact": 71,
+          "boundsExact": true,
+          "maxChangedPixels": 37,
+          "maxChannelDelta": 9,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 222.79999999701977,
+              "weightBytes": 2221560,
+              "vertices": 6534
+            },
+            {
+              "mode": "cut",
+              "medianMs": 158.30000000447035,
+              "weightBytes": 1551720,
+              "vertices": 4455
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "motionCases": 490,
+          "motionExact": true,
+          "gpuCases": 148,
+          "gpuExact": 71,
+          "boundsExact": true,
+          "maxChangedPixels": 55,
+          "maxChannelDelta": 10,
+          "timing": [
+            {
+              "mode": "full",
+              "medianMs": 258.30000000447035,
+              "weightBytes": 2700720,
+              "vertices": 7623
+            },
+            {
+              "mode": "cut",
+              "medianMs": 188.79999999701977,
+              "weightBytes": 1929360,
+              "vertices": 5406
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "prototypeFiles": {
+    "tools/v5vfx/outer-cell-prototype.mjs": "7e932405c2ade471e340a2c9ebf89b1d63f5e9f62066c9284aff571a53843e24",
+    "tools/v5vfx/benchmark-boss-play.mjs": "0648b8533e9f4c6ed573badb2606df71f069e74c5fcde2d336f61ef49592592c"
+  },
+  "ordinaryPlay": [
+    {
+      "utc": "2026-11-17T19:05:02.884Z",
+      "ended": "2026-11-17T19:06:11.469Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "pass": true,
+      "errors": [],
+      "variant": "baseline",
+      "raw": "work/v5/CXV/films/V7-F-outer-play-baseline/report.json",
+      "runs": [
+        {
+          "rate": 1,
+          "cpu": {
+            "median": 4,
+            "p95": 5.5999999940395355,
+            "p99": 15.299999997019768,
+            "max": 28.80000000447035
+          },
+          "frame": {
+            "median": 16.69999999999891,
+            "p95": 16.700000000004366,
+            "p99": 16.80000000000291,
+            "max": 33.5
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.700000000000273,
+              "p99": 16.800000000000182,
+              "max": 49.899999999999636
+            },
+            "submitCpuMs": {
+              "median": 4,
+              "p95": 14.700000002980232,
+              "p99": 19,
+              "max": 40.5
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "over50": 0,
+          "weights": 2387088,
+          "actions": 26,
+          "ultimates": 6
+        },
+        {
+          "rate": 4,
+          "cpu": {
+            "median": 18.600000001490116,
+            "p95": 24.899999998509884,
+            "p99": 50,
+            "max": 128.80000000447035
+          },
+          "frame": {
+            "median": 33.29999999999927,
+            "p95": 66.69999999999982,
+            "p99": 83.40000000000146,
+            "max": 183.39999999999782
+          },
+          "startup": {
+            "samples": 55,
+            "frameMs": {
+              "median": 33.30000000000018,
+              "p95": 83.40000000000009,
+              "p99": 183.30000000000018,
+              "max": 183.30000000000018
+            },
+            "submitCpuMs": {
+              "median": 19.899999998509884,
+              "p95": 62.70000000298023,
+              "p99": 133.5,
+              "max": 133.5
+            },
+            "over33": 13,
+            "over50": 7
+          },
+          "over50": 74,
+          "weights": 2326104,
+          "actions": 25,
+          "ultimates": 5
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-17T19:06:29.932Z",
+      "ended": "2026-11-17T19:07:38.563Z",
+      "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "pass": true,
+      "errors": [],
+      "variant": "candidate",
+      "raw": "work/v5/CXV/films/V7-F-outer-play-candidate/report.json",
+      "runs": [
+        {
+          "rate": 1,
+          "cpu": {
+            "median": 3.5999999940395355,
+            "p95": 5,
+            "p99": 14.100000001490116,
+            "max": 27.299999997019768
+          },
+          "frame": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999995634,
+            "p99": 16.80000000000109,
+            "max": 33.30000000000109
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.799999999999727,
+              "p99": 16.800000000000182,
+              "max": 50
+            },
+            "submitCpuMs": {
+              "median": 3.5,
+              "p95": 14.700000002980232,
+              "p99": 21.200000002980232,
+              "max": 38.400000005960464
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "over50": 0,
+          "weights": 1338472,
+          "actions": 26,
+          "ultimates": 6
+        },
+        {
+          "rate": 4,
+          "cpu": {
+            "median": 16.400000005960464,
+            "p95": 23.600000001490116,
+            "p99": 48.599999994039536,
+            "max": 133.20000000298023
+          },
+          "frame": {
+            "median": 16.700000000000728,
+            "p95": 66.69999999999982,
+            "p99": 83.40000000000146,
+            "max": 200
+          },
+          "startup": {
+            "samples": 55,
+            "frameMs": {
+              "median": 33.29999999999973,
+              "p95": 100,
+              "p99": 200.0999999999999,
+              "max": 200.0999999999999
+            },
+            "submitCpuMs": {
+              "median": 18.600000001490116,
+              "p95": 66.10000000149012,
+              "p99": 134.39999999850988,
+              "max": 134.39999999850988
+            },
+            "over33": 13,
+            "over50": 8
+          },
+          "over50": 75,
+          "weights": 1310864,
+          "actions": 25,
+          "ultimates": 5
+        }
+      ]
+    }
+  ],
+  "ordinaryDecision": "Two-cell prototype lowers median CPU4.0\u21923.6ms normal and18.6\u219216.4ms4x;weights2.39\u21921.34MB. p95frames16.7/66.7\u219216.8/66.7;4xlongframes74\u219275;startup133.5\u2192134.4ms. Current material/topology unchanged outside browser. Fourfresh1024x576final views measured/inspectedonce. Still not exact GPU;no runtime acceptance.",
+  "primitiveSlotControl": {
+    "utc": "2026-11-17T19:08:02.961Z",
+    "ended": "2026-11-17T19:08:18.380Z",
+    "source": "246bf757a1f31c1d8a45caf99ad68b4202afefd1",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "toolSha256": "3c9fad9d164a973b76e87c02e76b87f92806578b82f93f46cc74ea31e04a99a5",
+    "prototypeSha256": "e327be769cd08cc4911a03bbbeeea05649f62f6cf50cae279818a3fafd0b4e5c",
+    "options": {
+      "padding": 2,
+      "fullControl": false,
+      "noMipsControl": false,
+      "preserveSlots": true
+    },
+    "pass": false,
+    "errors": [],
+    "raw": "work/v5/CXV/films/V7-F-mesh-outer-slots-control/report.json",
+    "fixtures": [
+      {
+        "fixture": "wave3",
+        "motion": 420,
+        "gpu": 128,
+        "differences": 54,
+        "timing": [
+          {
+            "mode": "full",
+            "medianMs": 219.19999999552965,
+            "weightBytes": 2221560,
+            "vertices": 6534
+          },
+          {
+            "mode": "cut",
+            "medianMs": 126.39999999850988,
+            "weightBytes": 1244800,
+            "vertices": 3540
+          }
+        ]
+      },
+      {
+        "fixture": "boss",
+        "motion": 490,
+        "gpu": 148,
+        "differences": 72,
+        "timing": [
+          {
+            "mode": "full",
+            "medianMs": 260.70000000298023,
+            "weightBytes": 2700720,
+            "vertices": 7623
+          },
+          {
+            "mode": "cut",
+            "medianMs": 151.29999999701977,
+            "weightBytes": 1519120,
+            "vertices": 4234
+          }
+        ]
+      }
+    ]
+  },
+  "finished": "2026-11-17T19:09:43.394895+00:00"
+}

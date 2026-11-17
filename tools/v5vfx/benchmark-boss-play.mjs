@@ -11,16 +11,19 @@ const {chromium,config,openFixture}=fixture;
 const runtimeEvidence=production?fixture.runtimeEvidence:candidateEvidence;
 const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
 const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
+const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 if(facePrototype&&facePrototype!=='compact')throw Error('CXV_FACE_PROTOTYPE must be compact');
 if(numberMetricsMode&&!['on','off'].includes(numberMetricsMode))throw Error('CXV_NUMBER_METRICS must be on or off');
 const report={numberMetricsMode,utc:new Date().toISOString(),source:execFileSync('git',production?['-C',integration,'rev-parse','HEAD']:['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),production,hardware:execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim(),viewport:{width:1280,height:720},method:'Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.',runs:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.facePrototype=facePrototype;
+report.outerPrototype=outerPrototype;
 try{
  for(const rate of process.env.CXV_PROFILE?[4]:[1,4]){
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false});
   const runIdentity=runtimeEvidence();
   if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
+  if(outerPrototype){const {installOuterCellPrototype}=await import('./outer-cell-prototype.mjs');report.outerPrototypeDetails=await installOuterCellPrototype(page);}
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
