@@ -1,0 +1,320 @@
+{
+  "started": "2026-11-17T02:52:42.583354+00:00",
+  "targetSha": "da3323ba9ce10ababc5519511d40dc9592febfe3",
+  "pid": 42832,
+  "snapshot": "/Users/bao/taskbar-hero-snapshot",
+  "phase": "archive-export",
+  "steps": [],
+  "scans": {},
+  "scope": "One local parent commit, no parent remote or push. Pinned public submodule histories are separate.",
+  "scanLimitations": [
+    "Default built-in gitleaks rules unless repository config is present.",
+    "No archive traversal; maximum recursive decode depth 5.",
+    "A scan result is not a guarantee that no sensitive material exists."
+  ],
+  "inventory": {
+    "blobCount": 95464,
+    "blobBytes": 31267821987,
+    "groups": [
+      {
+        "path": "reports",
+        "bytes": 29272128476,
+        "files": 84298
+      },
+      {
+        "path": "docs",
+        "bytes": 918138248,
+        "files": 1262
+      },
+      {
+        "path": "assets",
+        "bytes": 674013293,
+        "files": 3243
+      },
+      {
+        "path": "screenshots",
+        "bytes": 171336615,
+        "files": 847
+      },
+      {
+        "path": "apps",
+        "bytes": 139347536,
+        "files": 2193
+      },
+      {
+        "path": "tools",
+        "bytes": 57756929,
+        "files": 2260
+      },
+      {
+        "path": "art",
+        "bytes": 26125760,
+        "files": 495
+      },
+      {
+        "path": "packages",
+        "bytes": 5402494,
+        "files": 308
+      },
+      {
+        "path": "supabase",
+        "bytes": 1353566,
+        "files": 183
+      },
+      {
+        "path": "scripts",
+        "bytes": 1278992,
+        "files": 295
+      },
+      {
+        "path": "skills",
+        "bytes": 501479,
+        "files": 38
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "bytes": 226966,
+        "files": 1
+      },
+      {
+        "path": "contracts",
+        "bytes": 160143,
+        "files": 25
+      },
+      {
+        "path": ".gitignore",
+        "bytes": 13991,
+        "files": 1
+      },
+      {
+        "path": "tasks",
+        "bytes": 10951,
+        "files": 2
+      },
+      {
+        "path": ".github",
+        "bytes": 8898,
+        "files": 2
+      },
+      {
+        "path": "README.md",
+        "bytes": 7797,
+        "files": 1
+      },
+      {
+        "path": ".env.example",
+        "bytes": 3407,
+        "files": 1
+      },
+      {
+        "path": "package.json",
+        "bytes": 1836,
+        "files": 1
+      },
+      {
+        "path": "vercel.json",
+        "bytes": 1724,
+        "files": 1
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 1074,
+        "files": 1
+      },
+      {
+        "path": "CLAUDE.md",
+        "bytes": 690,
+        "files": 1
+      },
+      {
+        "path": ".gitattributes",
+        "bytes": 460,
+        "files": 1
+      },
+      {
+        "path": "tsconfig.base.json",
+        "bytes": 329,
+        "files": 1
+      },
+      {
+        "path": ".gitmodules",
+        "bytes": 275,
+        "files": 1
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "bytes": 55,
+        "files": 1
+      },
+      {
+        "path": ".nvmrc",
+        "bytes": 3,
+        "files": 1
+      }
+    ],
+    "largest": [
+      {
+        "bytes": 72484813,
+        "path": "reports/cardrpg-big/skills-v5/s6/on/metrics/results.json"
+      },
+      {
+        "bytes": 72363181,
+        "path": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+      },
+      {
+        "bytes": 65036750,
+        "path": "reports/v3-shell/b2/econ/SEARCH.json"
+      },
+      {
+        "bytes": 61523416,
+        "path": "reports/cardrpg-big/skills-v5/s6/off/metrics/results.json"
+      },
+      {
+        "bytes": 41139839,
+        "path": "reports/cardrpg-big/video/delivery/boss.webm"
+      },
+      {
+        "bytes": 39099277,
+        "path": "docs/cardrpg-a6/index.html"
+      },
+      {
+        "bytes": 38201825,
+        "path": "reports/cardrpg-big/skills-v5/s6/on/metrics/partial.json"
+      },
+      {
+        "bytes": 38078064,
+        "path": "reports/cardrpg-big/skills-v5/s5/selected/metrics/partial.json"
+      },
+      {
+        "bytes": 35287167,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 35183651,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1280x720-dpr2-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 34911221,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1280x720-dpr2-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 34758490,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 34689971,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1280x720-dpr1-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 34534606,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1280x720-dpr1-cpu4-trace.json.gz"
+      },
+      {
+        "bytes": 33760709,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1280x720-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33666334,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1280x720-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33664154,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1440x900-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33641906,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1440x900-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33479862,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1280x720-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33406430,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-2/2560x1440-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33381473,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33364291,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-2/2560x1440-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33340768,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1440x900-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33319355,
+        "path": "reports/cardrpg-look/validation/l7/cold-batch-1/1280x720-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33273766,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33238744,
+        "path": "reports/cardrpg-look/validation/l5/cold-batch-1/1440x900-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33188011,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33158660,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu1-trace.json.gz"
+      },
+      {
+        "bytes": 33149508,
+        "path": "reports/cardrpg-big/skills-v5/s6/off/metrics/partial.json"
+      },
+      {
+        "bytes": 32898805,
+        "path": "reports/cardrpg-look/validation/closure/cold-batch-2/2560x1440-dpr1-cpu1-trace.json.gz"
+      }
+    ],
+    "gitlinks": [
+      {
+        "path": "contracts/lib/forge-std",
+        "sha": "8987040ede9553cea20c95ad40d0455930f9c8e0",
+        "mode": "160000"
+      },
+      {
+        "path": "contracts/lib/openzeppelin-contracts",
+        "sha": "69c8def5f222ff96f2b5beff05dfba996368aa79",
+        "mode": "160000"
+      }
+    ],
+    "flaggedPaths": [
+      "reports/turn3d-polish/raw/balance-final.json.gz",
+      "reports/turn3d-polish/raw/balance-round-gear-initial.json.gz",
+      "reports/turn3d-polish/raw/base-build.exit",
+      "reports/turn3d-polish/raw/base-e2e.exit",
+      "reports/turn3d-polish/raw/base-lint.exit",
+      "reports/turn3d-polish/raw/base-test.exit",
+      "reports/turn3d-polish/raw/base-typecheck.exit",
+      "reports/turn3d-polish/raw/before-capture.exit",
+      "reports/turn3d-polish/raw/final-head-build.log.gz",
+      "reports/turn3d-polish/raw/final-head-isolation.log.gz",
+      "reports/turn3d-polish/raw/isolation-runtime-snapshot.json.gz",
+      "reports/turn3d-polish/raw/validation-logs.tar.gz",
+      "reports/turn3d/raw/balance-initial.json.gz",
+      "reports/turn3d/raw/balance-pressure.json.gz",
+      "reports/turn3d/raw/balance-third.json.gz",
+      "reports/turn3d/raw/balance.json.gz",
+      "reports/turn3d/raw/demo-logs-index.json",
+      "reports/turn3d/raw/demo-logs.tar.gz",
+      "reports/turn3d/raw/isolation-mismatched-build.json",
+      "reports/turn3d/raw/performance-before-optimization.json.gz",
+      "reports/turn3d/raw/test-logs-index.json",
+      "reports/turn3d/raw/test-logs.tar.gz"
+    ],
+    "diskFreeBefore": 270122151936
+  },
+  "exportProgress": {
+    "files": 25000,
+    "bytes": 6076765926,
+    "at": "2026-11-17T02:53:01.978967+00:00"
+  }
+}
