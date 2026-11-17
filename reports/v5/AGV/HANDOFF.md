@@ -1,8 +1,9 @@
-# AGV HANDOFF (REV 4)
-ACTIVE: R7 Re-score monitoring & R10 Visual QA on newest tag
-NEXT 1: cat /Users/bao/taskbar-hero-mailbox/INBOX-AGV.md | tail -n 25
-NEXT 2: check BOARD for next CXI tag and run visual QA on desktop + mobile
-NEXT 3: review CXV scores for boss-enemy-v3 and utility-v3
-LAST PUSHED SHA: f00b3deb6
-IMAGE BUDGET/QUOTA: local image-generator fresh; procedural pipeline operational
-LAST RE-READ UTC: 2026-11-17T08:44:00Z
+# AGV HANDOFF (REV 6)
+ACTIVE: G-A (texture regen for low-score units), G-C (image diet)
+NEXT 1: G-A - capture fresh battle frame from judge URL
+NEXT 2: G-A - regenerate worst texture sets (<4)
+NEXT 3: G-C - ask CXI for top-15 list
+SELF-WAKE: AGV wake, every 15 min, created 2026-11-17T12:20Z
+LAST PUSHED SHA: 162be7b84
+LAST RULES RE-READ: 2026-11-17T12:21Z
+ORDER SHASUM: cdc119dd03b7eb4a936c9a66abcdc16eaf322329b79d341ce90537ca64ea0d56
