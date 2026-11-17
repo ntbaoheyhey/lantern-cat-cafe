@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-17T00:24:53.623827+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/history-text-delta-digests-review.py",
+    "sha256": "dcf60190df54b6488c4b8916273b39bf41f2cf213e80ff3731877de9235abf2b"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-3-delta-digests-1.json.gz",
+      "sha256": "bccea277f6780f28c6c67cb698361cc3d0157408caae53090e9723935f3aa09f"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-delta-3.json.gz",
+      "sha256": "208d6538584a6ed148f20f5a8faa2cf28bbd19ef0ec605be637eb6434ac422b6"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix3-regression-1/check.json",
+      "sha256": "118c5b65789970e8c224ef5751e4e31039cfb53b209337cfc13455a90991f576"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix3-regression-1/log.jsonl.gz",
+      "sha256": "b75cf8b9a1140ccd168517440b98d8ae5a1349cd86619d39ab5d6e1662750f94"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix3-regression-1/parity-probe.json",
+      "sha256": "6ddc1b27c320c519bc4629d53ea474652d4e0d707ff6e6eab90ac5959d21c998"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/log.jsonl.gz",
+      "sha256": "a3aaf0970a018a93eb4564fb0a875f237f222c98b1b475478a45ed3be27cbe6e"
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-palette-production-regression-1/parity-probe.json",
+      "sha256": "fee1a123785d91a014d16e9b634528f7bdddaccee36914ca3be29dccc2095d59"
+    }
+  ],
+  "exactFindingLocations": 1717,
+  "newResolvedDigests": 353,
+  "unresolved": 14,
+  "inheritedClassifications": 1350,
+  "newEntries": 367,
+  "distinctLineLocations": 1280,
+  "duplicateLineEntriesPreserved": 437,
+  "newReportObjects": 37,
+  "newImmutableSourceReferences": 243,
+  "negativeControls": [
+    "removed-new-entry",
+    "added-new-entry",
+    "reordered-new-entries",
+    "wrong-new-mapping",
+    "wrong-new-filename",
+    "changed-inherited-classification",
+    "changed-inherited-source-reference"
+  ],
+  "originalFindingSetUnchanged": true,
+  "prior1350ClassificationsPreserved": true,
+  "newSourceDerivationsPass": true,
+  "sameSevenArtFailures": true,
+  "webSummary": [
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+    "Test Files  2 failed | 320 passed (322)",
+    "Tests  7 failed | 2697 passed (2704)"
+  ],
+  "parityRowsUnchanged": true,
+  "pass": true,
+  "gRegPass": false,
+  "fullPrefixFindingsPass": false,
+  "fullHistoryPass": false,
+  "limits": "Exact prior classifications and signed reviewed inputs are inherited without rescanning. Independent git-show derivation verifies only new complete JSON source digests; unsupported new locations stay unresolved. No captured values or matching digests are emitted; no source-content or full-history clearance."
+}
