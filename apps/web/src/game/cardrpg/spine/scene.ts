@@ -163,7 +163,8 @@ export class SpineScene {
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
   this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded;
  }
- private craftHandles(plan:EffectPlan|null){return this.craftLoaded&&!!plan&&!chargeEvent(plan)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
+ private craftHandles(plan:EffectPlan|null){return this.craftLoaded&&!!plan&&!chargeEvent(plan)&&
+  !this.effects.overrides.effects.has(plan.presentationId??plan.skillId)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
   if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());

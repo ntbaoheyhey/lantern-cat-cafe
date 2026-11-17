@@ -13,8 +13,9 @@ const report = {started: new Date().toISOString(), sourceCommit: execFileSync('g
   method: '12 exact simulation timestamps per sheet; irregular sampling, not a real-time FPS measurement. Skill slot 2 uses the explicit archive fixture.', sheets: []};
 const browser = await chromium.launch({headless: true, args: ['--use-angle=metal']});
 try {
-  const {page, errors} = await openFixture(browser, config.fixtures.find(f => f.id === 'boss'), {url, fixedClock: false});
+  const {page, errors, blockedRequests} = await openFixture(browser, config.fixtures.find(f => f.id === 'boss'), {url, fixedClock: false});
   report.url = page.url();
+  report.blockedRequests = blockedRequests;
   // Review external original textures without copying assets or merging a producer branch.
   if (process.env.CXV_REVIEW_ASSETS) {
     const assetRoot = resolve(process.env.CXV_REVIEW_ASSETS), manifest = JSON.parse(await readFile(resolve(assetRoot, 'manifest.json'), 'utf8'));

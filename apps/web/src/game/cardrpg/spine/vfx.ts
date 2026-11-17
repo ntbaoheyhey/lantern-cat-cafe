@@ -47,7 +47,7 @@ export class PaintedVfx {
  }
  private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
  cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors'],cues:readonly SpineCue[]){
-  if(this.timeline.handles(frame.plan)){this.stats.cues++;return;}
+  if(this.timeline.handles(frame.plan)&&!this.overrides.effects.has(frame.plan.presentationId??frame.plan.skillId)){this.stats.cues++;return;}
   if((frame.plan as SequencePlan).fixedTiming&&frame.plan.ultimate&&frame.elapsed<600)return;
   // A working designer export remains the highest-priority source. Failed paint
   // loads fall back to the established renderer instead of leaving a blank hit.
@@ -87,7 +87,8 @@ export class PaintedVfx {
   // All effects share one final protection pass. Nested clips multiply the
   // canvas compositing cost for every translucent layer in a team-wide ult.
   this.layered.stats.draws=0;this.layered.stats.active=0;
-  const v5=!!view.frame&&this.timeline.handles(view.frame.plan);
+  const explicitOverride=!!view.frame&&this.overrides.effects.has(view.frame.plan.presentationId??view.frame.plan.skillId);
+  const v5=!!view.frame&&this.timeline.handles(view.frame.plan)&&!explicitOverride;
   if(!v5&&!timelineOnly&&this.useLayered&&view.frame&&!this.overrides.effects.has(view.frame.plan.presentationId??view.frame.plan.skillId)){
    this.layered.render(c,view,width,height);this.stats.draws+=this.layered.stats.draws;this.stats.active+=this.layered.stats.active;
   }
@@ -128,7 +129,7 @@ export class PaintedVfx {
   // must not rescale the export; only the stage transform and camera do.
   if(!v5&&!timelineOnly)this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=v5||timelineOnly?0:this.overrides.stats.active;
   if(!v5&&!timelineOnly&&view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
-  this.timeline.render(c,view);this.stats.draws+=this.timeline.audit.draws;this.stats.active+=this.timeline.audit.particles;
+  this.timeline.render(c,view,!explicitOverride);this.stats.draws+=this.timeline.audit.draws;this.stats.active+=this.timeline.audit.particles;
   // Composite the effect-only bloom before the shared face protection pass.
   if(view.formationC2&&this.stats.draws)this.glow.render(this.canvas,c,view.quality==='low',view.reducedMotion);
   // A nonzero union removes overlapping masks once; unlike even-odd holes,

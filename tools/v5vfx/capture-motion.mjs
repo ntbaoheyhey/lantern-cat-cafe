@@ -10,8 +10,8 @@ const report={started:new Date().toISOString(),sourceCommit:execFileSync('git',[
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const consoleErrors=[];
- const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{url:process.env.CXV_URL??'http://127.0.0.1:6310',fixedClock:false,
-  setupPage:page=>{page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text());});}});
+ const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{url:process.env.CXV_URL??'http://127.0.0.1:6310',fixedClock:false,
+  setupPage:page=>{page.on('console',m=>{if(m.type()==='error')consoleErrors.push({text:m.text(),url:m.location().url});});}});
  report.url=page.url();
  for(const owner of ['mochi','soot','clover','panko']){
   const dir=resolve(out,owner);await mkdir(dir,{recursive:true});
@@ -70,9 +70,10 @@ try{
    }requestAnimationFrame(frame);
   });
  });
- report.errors=errors;report.consoleErrors=consoleErrors;report.finished=new Date().toISOString();
+ report.errors=errors;report.consoleErrors=consoleErrors;report.blockedRequests=blockedRequests;report.finished=new Date().toISOString();
  await writeFile(resolve(out,'capture.json'),JSON.stringify(report,null,2));
  process.stdout.write(`shared machine boss FPS ${report.fps.fps.toFixed(2)}; errors ${errors.length+consoleErrors.length}\n`);
- if(errors.length||consoleErrors.length)throw Error('Browser errors; see capture.json');
+ const unexpected=consoleErrors.filter(e=>!blockedRequests.some(b=>e.url&&b.url===e.url.split('?')[0]));
+ if(errors.length||unexpected.length)throw Error('Browser errors; see capture.json');
  if(report.fps.fps<55)throw Error('Boss FPS below 55; see capture.json');
 }finally{await browser.close();}
