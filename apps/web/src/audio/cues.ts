@@ -9,7 +9,7 @@ export const CUE_ALIASES: Readonly<Record<string,string>> = {
  'music.gacha':'music.home',
 };
 export const voiceProfiles=Object.fromEntries(Object.entries(authoredVoiceProfiles).map(([cat,p])=>[cat,{...p,pitch:2**(p.baseSemitones/12),timbre:String(p.source)}]));
-export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; processedVoice?:boolean; enveloped?:boolean; }
+export interface Sample { pack:string; start:number; duration:number; bus:Bus; loop?:boolean; variantId?:string; processedVoice?:boolean; enveloped?:boolean; gainDb?:number; }
 export type LayerEq = 'flat'|'high-pass-1800'|'low-shelf-180'|'high-pass-80';
 export interface CueLayer {
  role:string; variants:Sample[]; offsetMs:number; eq:LayerEq; gainDb:number;
@@ -21,11 +21,13 @@ export interface CueDesign {
  baked?:Array<{sample:Sample; layers:Array<{role:string;variantId:string;offsetMs:number}>}>;
 }
 export interface AudioManifest {
- version:number; packs:Record<string,{webm:string;mp3:string;preferredFormat?:'webm'|'mp3'}>; cues:Record<string,Sample[]>;
+ version:number; packs:Record<string,{webm?:string;mp3?:string;opus?:string;m4a?:string;preferredFormat?:'webm'|'mp3'|'opus'|'m4a'}>; cues:Record<string,Sample[]>;
  designs?:Record<string,CueDesign>; bindings?:Record<string,string>;
+ deliveredDesigns?:Record<string,CueDesign>;deliveredPacks?:string[];packSubstitutions?:Record<string,string[]>;
 }
 export function resolveDesign(id:string,manifest:AudioManifest,element='magic'):CueDesign|undefined {
  id=CUE_ALIASES[id]??id;
+ if(manifest.deliveredDesigns?.[id])return manifest.deliveredDesigns[id];
  let key=manifest.bindings?.[id]??id;
  if(id.startsWith('ult.'))key=`kit.${element}.${id.split('.').at(-1)}`;
  if(id.startsWith('skill.'))key=`kit.${element}.${id.endsWith('.cast')?'charge':'impact'}`;

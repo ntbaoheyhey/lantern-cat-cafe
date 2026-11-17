@@ -16,6 +16,7 @@ import {artPropsA6} from '../ui-v3/art-a6';
 import {PaintedButton} from './PaintedKit';
 import {audioEngine} from '../../../audio/engine';
 import {soundScene,ambienceScene} from '../../../audio/scene';
+import {queueEncounterPreload} from '../depth/encounter-preloader';
 import './demo-journey.css';
 
 type Phase='intro'|'intro-battle'|'reward'|'cafe'|'finale-battle'|'proof';
@@ -38,6 +39,7 @@ function Journey({m,token,address}:{m:DepthModel;token:string;address:Address}) 
     try{const saved=localStorage.getItem(key);return ['reward','cafe','proof'].includes(saved??'')?saved as Phase:'intro';}catch{return 'intro';}
   });
   const [config,setConfig]=useState<ChainConfig>(),[busy,setBusy]=useState(false),[error,setError]=useState(''),[hash,setHash]=useState<Hash>();
+  useEffect(()=>phase==='reward'?queueEncounterPreload([...crew,'yarn-giant']):undefined,[phase]);
   const {data:externalWallet}=useWalletClient(),lock=useRef(false),mounted=useRef(true);
   const runtime=useMemo(()=>{
     if(!config)return;

@@ -7,3 +7,26 @@
 2026-11-17T05:30:36Z I1 web 2781 pass, typecheck/build 0; root final web running. CXV ACK no assets/atlas/App edits; clarified loader ownership and requested AG2 schema.
 2026-11-17T05:31:11Z I1 DONE all four checks exit0; web 2781, root 5081 pass; build/typecheck pass; no code repairs.
 2026-11-17T05:31:11Z delivery queued for I3: AG2 hero flipbooks b31ccd864; schema to inspect before optional loader wiring.
+2026-11-17T05:32:30Z M0 tag a3c9cff0b47a170339920dd48b4b5914aeba534d pushed; BOARD M0 done; I2 begins immediately.
+2026-11-17T05:33:26Z I2a added reusable production CDP probe, reusing official fixtures and existing transfer/ready helpers; preview PID 17640.
+2026-11-17T05:33:26Z I2a baseline + three frames/fixture detached PID 17650; no auth/chain evidence claimed by fixture probe.
+2026-11-17T05:34:16Z I2a preview now HTTP200; first probe raced startup (ECONNREFUSED, no measurements); restarted PID 19245, original failed log retained. AG3 READY c706ebfb2, AG2 latest23bd54e6b, CXV V0 docs8c9bd134c.
+2026-11-17T05:35:01Z I2a first measured probe blocked shipped external font GETs (4 per fixture); marked incomplete and preserved. Permit only public font GETs as prior production probe did; new baseline-fonts PID 19721.
+2026-11-17T05:35:37Z I2a correction: only one blocked font GET; other three are default public Fuji RPC reads. Probe now permits explicit read-only method allowlist, still blocks signing/sends; baseline-complete PID 19923.
+2026-11-17T05:37:09Z I2a new request evidence identifies eth_getBlockByNumber in LiveCounters batch; second read-method allowlist correction includes block/log/receipt reads only; baseline-final PID 20862.
+2026-11-17T05:38:42Z I2a prior RPC batch now succeeds; subsequent Routescan testnet blocks GET revealed by live counters. Allow read-only indexer GET prefix; all other external writes remain blocked; baseline-public-reads PID 21673.
+2026-11-17T05:39:38Z I2a DONE valid baseline wave1=19127566 wave3=23117965 boss=13460944 bytes; zero errors. I2b result preload wired after scoped CXV ACK; AG3 fetched and86paths ownership check clean.
+2026-11-17T05:39:39Z I2b detached PID 22099, focused tests then build (includes typecheck), then same transfer script; max2jobs including preview.
+2026-11-17T05:40:56Z I2b DONE 7focused pass, build/typecheck0, cold transfer complete (wave1=19132303, wave3=22665272, boss=13465836); before sheets inspected; no initial reduction claimed.
+2026-11-17T05:41:54Z I2c merge732a316ec AG3 ad88f480f clean;87ownedpaths. Native delivered WebP allowlist wired with existing PNG decode fallback; accepted M0 sampled atlases preserved. Detached PID 23874 build/measure/full root suite.
+2026-11-17T05:47:48Z REV3 reconciled NO FREEZE/refill/DONE; I2c build+measure+suite0, root5083/web2783 pass; transfer above budget; half-depth next.
+2026-11-17T05:49:53Z I2d half-depth selected; build/typecheck and probe0; three sheets inspected no texture degradation;14.67/15.64/13.92MB fail budget; audio next.
+2026-11-17T05:53:31Z I2e AG4 e7c23401b merged ownership128/128; root suite0,5083 pass; runtime wiring active.
+2026-11-17T05:56:56Z I2e V5 audio loader tests59/pass, build/probe0; transfer14.19/15.15/13.44MB; full variant corrections requested; credits static link added.
+2026-11-17T06:00:50Z OWNER routing before:bare domain=>legacy. After:bare/tracking-only=>fullV5 demo flags; explicit legacy=1 preserved. Routing9 tests pass. AG3 root5091 pass; AVIF loader regeneration complete.
+2026-11-17T06:05:31Z I2g CXV7d48cef63 merged; root suite fails exactly3 designer override cue tests;2803 web pass. REQ sent CXV06:04; failing gate prevents build/tag. Owned deferred atlas helper continues independently.
+2026-11-17T06:19:01Z STOP-ALL honored: owned deferred-loader WIP committed+pushed 3eb66887388091b3b21c2d3be8f6a6190234511e; existing red CXV merge preserved; preview17640/17660 stopped; pipeline51177 absent; HANDOFF NEXT1 set to inspect pending CXV fix only after owner removes STOP. No new integrations/tests/builds/tags.
+2026-11-17T06:34:53Z R0 resumed REV4; STOP absent; five remote lane tips audited with zero ownership violations; restart from disk.
+2026-11-17T06:35:26Z R0 all five lane merges clean, audited old ownership; full four-check suite starting.
+2026-11-17T06:39:37Z R0 initial suite found3 audio compatibility failures from missing delivery gainDb/runtimeCueId; normalized absent gain0 and exact-variant key; rerunning four gates. Original VFX regressions not reported.
+2026-11-17T06:43:38Z R0 DONE gates0; web2821 root5044; v5-m1 checkpoint; I3 fulfilled by REV4, I2 resumed immediately.
