@@ -13,6 +13,8 @@ const runtimeEvidence=production||localProduction?fixture.runtimeEvidence:candid
 const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
 const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
 const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
+const transparentWorkPrototype=process.env.CXV_TRANSPARENT_WORK==='1';
+if(transparentWorkPrototype&&(production||localProduction||outerPrototype||facePrototype))throw Error('Transparent-vertex prototype requires isolated candidate Vite');
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
 const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
 const hudMode=process.env.CXV_HUD_MODE??null;
@@ -28,6 +30,7 @@ const report={numberMetricsMode,utc:new Date().toISOString(),source:execFileSync
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.facePrototype=facePrototype;
 report.outerPrototype=outerPrototype;
+report.transparentWorkPrototype=transparentWorkPrototype;
 report.pendingBatch=pendingBatch;
 report.focusProfile=focusProfile;
 report.hudMode=hudMode;
@@ -45,6 +48,7 @@ try{
   const runIdentity=runtimeEvidence();
   if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
   if(outerPrototype){const {installOuterCellPrototype}=await import('./outer-cell-prototype.mjs');report.outerPrototypeDetails=await installOuterCellPrototype(page);}
+  if(transparentWorkPrototype){const {installTransparentVertexPrototype}=await import('./transparent-vertex-prototype.mjs');report.transparentWorkDetails=await installTransparentVertexPrototype(page,{staticOnly:process.env.CXV_STATIC_VERTEX_WORK==='1'});}
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
