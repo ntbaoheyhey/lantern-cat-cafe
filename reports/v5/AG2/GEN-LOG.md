@@ -1,0 +1,18 @@
+# AG2 GENERATION LOG
+# UTC | Prompt ID | Output File | Status | Kept/Rejected + Reason
+2026-11-17T05:26:34Z | burst-gen-01 | work/v5/AG2/raw/impact-burst-gen.jpg | SUCCESS | KEPT (clean 4x4 expanding shockwave and sparks, converts cleanly to 38KB WebP)
+2026-11-17T05:31:28Z | boss-swirl-02 | work/v5/AG2/raw/yarn-vortex-gen.jpg | SUCCESS | KEPT (wool red and indigo yarn vortex study; procedural atlas integrated for precise frame timing)
+2026-11-17T05:49:22Z | mochi-impact-03 | work/v5/AG2/raw/mochi-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first impact burst, hot core to strawberry pink cotton shockwave, 64KB WebP)
+2026-11-17T05:49:38Z | mochi-slash-04 | work/v5/AG2/raw/mochi-slash-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first blade slash, razor cutting edge with trailing strawberry silk ribbon, 38KB WebP)
+2026-11-17T05:51:47Z | soot-impact-05 | work/v5/AG2/raw/soot-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first firecracker cinder burst, white-yellow core to fiery orange shockwave and charcoal smoke, 64KB WebP)
+2026-11-17T05:53:33Z | clover-impact-06 | work/v5/AG2/raw/clover-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first healing burst, incandescent white to emerald clover blossom and honey gold petals, 88KB WebP)
+2026-11-17T05:57:10Z | panko-impact-07 | work/v5/AG2/raw/panko-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first bakery butter slam impact explosion, hot white butter core, golden crumb shockwave, dissipating steam motes)
+2026-11-17T05:57:20Z | panko-slash-08 | work/v5/AG2/raw/panko-slash-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first cleaver slash arc, molten golden crescent with trailing toasted pastry crumbs and soft steam)
+2026-11-17T06:00:56Z | mochi-ult-charge-09 | work/v5/AG2/raw/mochi-ult-charge-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first stitched shield charge, strawberry ribbons and golden motes spiraling to white core)
+2026-11-17T06:00:57Z | mochi-ult-release-10 | work/v5/AG2/raw/mochi-ult-release-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first shield release explosion, quilted golden shockwave and strawberry silk waves)
+2026-11-17T06:01:21Z | soot-ult-charge-11 | work/v5/AG2/raw/soot-ult-charge-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first charcoal forge charge, inward smoke eddies and compressed white-hot cinder core)
+2026-11-17T06:01:22Z | soot-ult-release-12 | work/v5/AG2/raw/soot-ult-release-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first forge firecracker release explosion, white detonation flash, expanding orange flame ring and charcoal smoke)
+2026-11-17T06:01:20Z | clover-ult-charge-13 | work/v5/AG2/raw/clover-ult-charge-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first botanical clover charge, swirling petals and golden pollen vortex condensing to radiant bloom)
+2026-11-17T06:01:11Z | clover-ult-release-14 | work/v5/AG2/jobs/ultimates/clover_ult_release.png | 429 QUOTA_EXHAUSTED | SWITCH_PROCEDURAL (model quota limit hit; switched to procedural multi-stop botanical radial blossom generator)
+2026-11-17T06:01:17Z | panko-ult-charge-15 | work/v5/AG2/jobs/ultimates/panko_ult_charge.png | 429 QUOTA_EXHAUSTED | SWITCH_PROCEDURAL (model quota limit hit; switched to procedural molten butter vortex generator)
+2026-11-17T06:01:23Z | panko-ult-release-16 | work/v5/AG2/jobs/ultimates/panko_ult_release.png | 429 QUOTA_EXHAUSTED | SWITCH_PROCEDURAL (model quota limit hit; switched to procedural bakery butter explosion generator)

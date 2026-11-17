@@ -5,6 +5,8 @@ import { PAINT } from './style';
 import type { EffectPlan } from '../../squad/turn3d/effects';
 import { chargeEvent } from '../depth/card-action-plan';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
+export {V5_SKILL_TIMELINES, getV5Timeline} from '../vfx-layered/skill-timeline';
+export {registerV5Texture, clearV5Textures, getV5Texture, type V5DecodedTexture} from '../vfx-layered/skill-textures';
 export type Glyph='spark'|'leaf'|'flame'|'drop'|'ring'|'arc'|'shield'|'lantern'|'door'|'cup'|'thread'|'star'|'crown'|'petal'|'moon'|'bell'|'wave'|'sprout'|'slice'|'spore'|'bread'|'wing'|'button'|'teapot'|'heart'|'ink'|'wind'|'apron'|'needle'|'bow'|'oven'|'whisk'|'bobbin';
 export const GLYPHS:Glyph[]=['spark','leaf','flame','drop','ring','arc','shield','lantern','door','cup','thread','star','crown','petal','moon','bell','wave','sprout','slice','spore','bread','wing','button','teapot','heart','ink','wind','apron','needle','bow','oven','whisk','bobbin'];
 export const FX_COLORS=[PAINT.honey,PAINT.ember,PAINT.rose,PAINT.sage,PAINT.sky,PAINT.iris,PAINT.cream];
