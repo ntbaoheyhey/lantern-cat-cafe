@@ -14,7 +14,7 @@ if(!entries.length)throw Error('No textures in '+set);
 await mkdir(out,{recursive:true});
 const report={started:new Date().toISOString(),runtimeCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
  ...runtimeEvidence(),
- assetCommit:execFileSync('git',['-C',assetRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),set,
+ assetCommit:process.env.CXV_REVIEW_ASSET_REVISION??execFileSync('git',['-C',assetRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),set,
  method:'16 samples per texture. Left: actual DOM screenshot of production effect and blend canvases at idle battle sockets in isolated proxy timeline. Right: same texture at full alpha over a fresh battle-frame composite, half dimmed. Uses manifest blend; no production manifest wiring or approval implied.',textures:[]};
 const files=new Map(),hashes={};
 for(const [id,spec]of entries){const path=resolve(assetRoot,spec.file);if(!path.startsWith(assetRoot+'/'))throw Error('Invalid asset path');const data=await readFile(path);files.set(id,data);hashes[id]=createHash('sha256').update(data).digest('hex');}

@@ -1,26 +1,25 @@
-# CXV V5 operating rules — REV 4 paired visual lane
-1. Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; ports 6310–6319.
-2. Prompt read once 2026-11-17T05:49Z: /Users/bao/art/codex-prompts/PASTE-CODEX-V5-CXV-VFX-2026-11-17.txt. Read only current card excerpts later.
-3. Read RULES + HANDOFF after compaction/resume, before each card, every 60m; execute NEXT 1. Disk is truth.
-4. NO FREEZE / END TIME. Card/commit/job completion, compaction, empty queue, or pending dependency never ends work.
-5. DONE only with printed proof: no queued/active/BLOCKED cards; every refill DONE; every inbox REQ ACK+DONE; every hero skill/boss effect scores >=4/5 readability/impact/beauty/motion; latest AG1 QA has no open BLOCKER/MAJOR in owned paths.
-6. When no queued/active cards, append next 3 unfinished REFILL items and start first. R1/R10 repeat when needed.
-7. Final only DONE: queue, refill list, requests and quality gate complete <UTC>; STOP files require checkpoint then STOPPED: <file>. Never WAITING.
-8. Own public/vfx/v5/from-cx/** plus cardrpg/{battle-v3,spine,vfx-craft,vfx-layered,depth,stage}/**, game/rig/**, reports/v5/CXV/**, tools/v5vfx/**.
-9. CXI owns loaders/manifests/asset indexes, spine/{assets,atlas-delivery,manifest-loader}.ts, and narrow BattleResult preload hook in depth/Encounter.tsx. scene.ts remains CXV.
-10. Stage explicit owned paths only; never git add -A / git add . / commit -a. Leave ~500 old untracked ART files alone.
-11. Checkpoint every step/20m: commit v5 CXV <card> <step>; push branch; retry failures 10/20/40/80s. Fold bookkeeping into substantive commits.
-12. Mailbox only: append, never rewrite inboxes. Read new INBOX-CXV/BOARD/USER every checkpoint; USER wins; READY branch@sha + wiring; merge only CXI-announced v5-mN tags.
-13. >2m jobs detached nohup nice -n 10; max two; record PID/log in HANDOFF. Load >10: light work first.
-14. Output <=40 lines/command; inspect <=4 images at once; films through contact sheets; evidence in ignored work/v5/CXV/{jobs,learn,films}.
-15. Reports <=300KB/commit, <=6 committed JPG sheets/card, <=400KB each. Keep other evidence local.
-16. V0 75m, V1/V2 5h, V3/V4 4h, V5 2h; at timebox retain passing work/flag partial, revert failing remainder, log TIMEBOX, advance.
-17. Only card gates; no repository-wide scans, unchanged-SHA reverification, extra FPS studies/audio, or >2 same-fix attempts without a new idea.
-18. Original art only. Priority IMGJOB: own generation from words, never reference frames; from-cx/** only, WebP q85, <=30m/2 tries, honest G1-G5. AGV owns textures/manifests; CXV scores fresh composites + running game.
-19. Free tools preapproved after TOOL-PROPOSALS logging; self-install without account/key/payment/sudo. Dependencies require CXI REQ; owner handles login/key/payment.
-20. Never secrets/deploys/hosting vars/wallets/transactions/contracts/main/submission. Capture current build yourself; exact judge URL /?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; report URL + commit/tag + capture UTC; never judge old/committed screenshots.
-21. HANDOFF <=30 lines: ACTIVE, exact NEXT 1, NEXT 2/3, PIDs/logs, pushed SHA, last RULES read; STATUS-VI <=12 lines; PROGRESS one line/step.
-22. Before each NEW KIND: learn15–30m, Chinese AND English searches, >=3 primary URLs + concrete steps/numbers to LEARN/CXV-topic-date.md + INDEX (USER06:55/56). VISUAL pair AGV; SHIP CXI/AGS; AG1-4 retired. PULSE AGV hourly; read LEARN/INDEX before cards; append CXV notes/index. V1 gates: timeline/reduced-motion tests, typecheck, 12 reviewed sheets, AG4 cue list. V2: seeded 3s repeatability, feet <=1px, blink 2–6s, four hero idle/hit sheets, shared-machine boss >=55fps.
-23. V3: three enemy+boss sheets, Yarn weapon/target overlap, reaction tests. V4: severity-first AG1/owner fixes. V5: caps tests + boss >=55fps, pooling/reduced motion.
-24. REFILL R1 textures/scores; R2 four enemy variants (90m); R3 numbers; R4 shadows/dust; R5 statuses; R6 outcomes; R7 camera; R8 fidgets; R9 boss intro; R10 re-score/redo lowest three (60m). Others 45m.
-25. USER08:12: never idle-wait; mark dependencies BLOCKED-ON and work next unblocked/refill. QA targets newest green BOARD tag; CXI announces v5-m1.N green windows.
+# CXV V6 — teacher mode, 17 Nov 2026
+1. Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; ports6310–6319; mailbox /Users/bao/taskbar-hero-mailbox.
+2. Order saved verbatim ORDER-V6.txt; USER.md wins. Disk is truth; read RULES+HANDOFF on resume/wake/compaction, before assignments, hourly.
+3. ACTIVE work continues after steps/commits/jobs/compaction; update HANDOFF then execute NEXT1. Dependencies => BLOCKED-ON and other work.
+4. Stop only for STOP-ALL/STOP-CXV: commit+push owned WIP, final STOPPED: <file>. No freeze or end before submission.
+5. Exactly one same-chat heartbeat CXV wake every15m; check hourly, recreate only if missing; ignore wakes mid-task.
+6. Own cardrpg/{battle-v3,spine,vfx-craft,vfx-layered,depth,stage}/**, game/rig/**, public/vfx/v5/from-cx/**, reports/v5/CXV/**, tools/v5vfx/**.
+7. Respect OWNERSHIP.md: CXI loaders/manifests/asset indexes and existing narrow grants remain; coordinate edits outside ownership by REQ.
+8. USER12:36Z desktop only: drop all mobile/phone work. V-A living heroes; V-B actions/texture wiring; V-C enemies/boss; V-D AGV; V-E visible debts; V-F desktop performance/readability.
+9. DONE only after own fresh judge-URL captures, focused tests and typecheck green; send READY to CXI after every passing step.
+10. Judge URL includes ?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; BOARD exact host wins for integration. Own local6310 for implementation captures.
+11. Record URL, current commit/tag and capture UTC; never judge old captures. Reference videos teach principles only; small contact sheets <=1024px, <=4 images/look.
+12. Before new work kind read LEARN/INDEX and classmates; research Chinese+English, >=3 concrete primary sources; run one small experiment before build.
+13. Save own LEARN/CXV-topic-YYYYMMDD.md with numbers, application, failures and sources; append INDEX once; never edit classmates' notes.
+14. Compare against best reference at same size/speed. Apply learning to the judge's first3min; no unused research or invented gates/catalogs.
+15. Checkpoint every20m and step: explicit owned git add only; commit v6 CXV <assignment> <step>; push -u origin codex/v5-vfx-2026-11-17.
+16. Push failure retry10/20/40/80s; rejected push => git pull --no-rebase then push. Never git add -A, git add ., commit -a; leave unrelated WIP.
+17. >2m commands detached nohup nice -n10; max2 jobs; record PID/log. Every command <=40 output lines; measure first, inspect once.
+18. Films/frames/big sheets stay ignored work/v5/CXV/; reports <=300KB per commit. HANDOFF<=25 lines; STATUS-VI<=10; PROGRESS one line/step.
+19. Read new INBOX-CXV/DELIVERIES/BOARD/USER every checkpoint; ignore FROM WATCHDOG history; ACK every open REQ, DONE at completion.
+20. Mailbox only, one echo append/message <=300char text; PULSE AGV hourly; READY exact branch@sha+wiring; merge only CXI-announced tags.
+21. Original art only; IMGJOB uses built-in imagegen with own art/plain words, never reference frames; log tool+prompt+UTC immediately, small sheets in from-cx.
+22. Two failed attempts without new idea => PROGRESS lesson then sharper study or another assignment. Never idle on a classmate.
+23. Free tools preapproved after TOOL-PROPOSALS log; no sudo/account/keys/payment. New package dependencies through CXI.
+24. Never secrets/.env/private keys, deploys/hosting/prod DB, funded transactions, contracts edits/deploys, main merge, submission; no secret scans, exports, audio/FPS studies.

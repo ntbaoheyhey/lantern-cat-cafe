@@ -1,7 +1,7 @@
-# CXV — 2026-11-17T08:43:50Z
-V0–V5 và R1–R4 đã triển khai và kiểm thử.
-R4:11/11 kiểm thử,typecheck đạt;16 ảnh chuỗi,14 loại nhân vật có đúng1 bóng.
-Bụi tiếp đất360ms; không phát khi hồi máu hoặc giảm chuyển động.
-CXI đã tích hợp mask; còn lỗi nét vàng Kettle bị mask che, đang sửa có phạm vi.
-R1 bản texturev3 đang chờ lượt đánh giá;R5–R10 còn mở.
-Chưa đủ điều kiện kết thúc;QA/tích hợp và điểm chất lượng còn mở.
+# CXV — 17/11/2026, 19:54 giờ Việt Nam
+Chỉ làm desktop; đã bỏ toàn bộ việc điện thoại khỏi hàng đợi.
+Bốn mèo đã có nhịp thở riêng, nghiêng/quay đầu, chuyển trọng tâm và cử động phụ; chân giữ nguyên vị trí.
+V-A bước1:24/24 kiểm tra và typecheck đạt; đã quay1280×720 và xem đủ idle/hit/cast/victory/reduced.
+Rủi ro1:độ sâu gương mặt còn kém video mẫu; cần AGV xem độc lập trên tag mới, chưa tuyên bố ngang Live2D.
+Rủi ro2:ultimate vẫn che nhiều sân và texture được duyệt chưa vào đầy đủ; đang chuyển sang V-B.
+Rủi ro3:Kettle mới3/5 về hình ảnh; status/victory/boss entrance và QA độc lập còn mở. Contact Kettle đã được CXI xác nhận.

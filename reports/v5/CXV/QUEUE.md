@@ -1,49 +1,36 @@
-# CXV queue — REV 4, no freeze
-- [x] V0 Learn before build — DONE; report 8c9bd134c
-- [x] V1 Skill VFX timeline system — DONE; 16 timelines, twelve reviewed sheets, tests/typecheck, AG4 cues
-- [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
-- [x] V3 Enemies + boss — DONE; native source20/20; six fresh sheets, Yarn hand/target contact proven
-- [x] V4 current QA impact fixes — DONE a7d452167;12/12 + tsc0 + fresh sheets; AGS recheck/M2 feedback pending
-- [x] V5 Performance + reduced motion — DONE07:34Z;21/21,tsc0,pixel gate,9 sheets,boss58.67fps
-- [x] R1 first integration pass — DONE;46 texture scores,12 full-action sheets,12 selected hashes,19 tests/typecheck; production loader via CXI
-- [x] R2 enemy variants — DONE implementation/gates;28/28+tsc0,8 final reviewed sheets; R10 visual debt R2.md
-- [x] R3 damage numbers — DONE;10/10+tsc0,5 fresh sheets, zero overlaps; R3.md
+# CXV V6 assignments — judge's first three minutes
+- [ ] V-A: first living-motion step passes24/24+tsc0; fresh1280x720 idle/hit/cast/victory/reduced evidence in V6-A-LIVING.md. Independent current-tag reference review/facial-depth gap remains open.
+- [x] V-A1: four hero breath/turn/weight/seeded gestures delivered; headX1.33–1.95%H vs0%,feet0; sourceb064f41fc+patch7b989cc8; no Live2D-equivalence claim.
+- [ ] V-B:12 hero actions with anticipation/contact/reaction/finish; distinct readable ultimates; unblock approved texture compositing; fresh captures/tests/tsc.
+- [ ] V-C:enemy/boss telegraphs, hit/death and filmed entrance; preserve Yarn hand contact; fresh captures/tests/tsc.
+- [ ] V-D:pair AGV G1-G5 texture scores with exact fixes; answer everyIMGJOB using original art/plain words and immediate GEN-LOG; fresh composites.
+- [ ] V-E:close judge-visible Kettle beauty/contact, status visuals and outcome/victory; fresh captures/tests/tsc.
+- [ ] V-F:desktop only; smooth real boss fight on normal laptop with readable effects/numbers at1280x720; no standalone FPS gate studies; fresh captures/tests/tsc.
 
-- [x] R4 ground shadows/dust — DONE;11/11+tsc0,16 own sheets;R4.md
-- [ ] R5 status visuals — QUEUED
-- [ ] R6 outcome moments — QUEUED
+## Prior DONE work retained as baseline evidence
+- [x] V0 study8c9bd134c; V1 timelines7d48cef63/overrideed388eb30:16 timelines,12 sheets,focused tests+tsc.
+- [x] V2 secondary motion:18/18,4 sheets,feet0px,59.34fps; reports/v5/CXV/V2.md. V-A reopens comparison to reference, not unchanged tests.
+- [x] V3 native death/reactions9a8d8e768:20/20+tsc0,6 sheets,Yarn350ms contact; V3.md.
+- [x] V4 Q0b-F2 producer fix55cf1c8d7:12/12+tsc0,fresh sheets; V4.md. AGS independent closure remains open.
+- [x] V5 performance366fdbf81:21/21+tsc0,RGB composite check,9 sheets,boss58.67fps; V5.md.
+- [x] R1 initial4042b61c0:46 scores,12 selected keys/hashes,12 action sheets,19/19+tsc0; REVIEW-R1.md. Production wiring CXI-owned.
+- [x] R1 legacy-mask repairb19b99c3d:13 tests+tsc0,fresh sheets; broad mask retained.
+- [x] R1 support repeat reviews:9+27+23 scores; REVIEW-R1-SUPPORT-V2.md and later reports; no new approvals.
+- [x] R2 enemy variants82a6079dd:28/28+tsc0,8 sheets; R2.md; Kettle beauty/Binding coverage debt remains V-C/E.
+- [x] R3 numbers8665b1654:10/10+tsc0,5 sheets,zero overlap; R3.md.
+- [x] R4 ground19ffd3212:11/11+tsc0,16 sheets/14 units,360ms bounded dust; R4.md.
+- [x] R1 Kettle torso-anchor0f14e7497:21/21+tsc0,6 sheets; R1-KETTLE-CONTACT.md.
+- [x] All earlier loader/decode/lazy scope REQs ACK+DONE/granted; exact scope mailbox OWNERSHIP.md. Wrong-route AG1 Q0-F2/F3 retracted.
 
-## REFILL LIST (append next three unfinished items when queue is empty)
-- [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
-- [x] R2 Enemy variants: needle-moth, binding-thread, teacup-healer, kettle-knight (90m)
-- [x] R3 Damage numbers: pop, stack, crit flourish, distinct healing (45m)
-- [x] R4 Ground contact shadows and impact dust under every unit (45m)
-- [ ] R5 Status visuals: burn, poison, stun, slow, shield (45m)
-- [ ] R6 Victory/defeat/level-up presentation moments (45m)
-- [ ] R7 Subtle ultimate camera push-in; disabled for reduced motion (45m)
-- [ ] R8 Two idle fidgets per hero (45m)
-- [ ] R9 Boss entrance/name card/roar shake (45m)
-- [ ] R10 Re-score all effects; redo lowest three as R-cards (repeatable, 60m)
-
-## Requests and final proof
-- [x] CXI BattleResult preload hook ownership — ACK and DONE sent
-- [x] CXI 05:43Z compact charge/passive atlas contract — ACK/DONE scope granted; CXI owns implementation
-- [ ] Print proof: queue empty; refill DONE; every REQ ACK/DONE; SCORES >=4/5; latest AGS QA clear
-- [x] AGV Mochi REVIEW request — ACK + DONE review sent; beauty 3/5 requires revision before wiring
-
-- [x] AG1 Q0-F2/F3 — ACK/DONE; AG1 retracted wrong-route findings, Q0b pending
-- [x] CXI pose decode hook — ACK/DONE ownership + hidden mesh semantics sent
-- [x] AGV Clover/Panko/Mochi-v2 REVIEW — DONE40 texture scores sent; art revisions requested
-- [x] CXI VFX override regression — fixed; DONE ed388eb30; focused8/8 + typecheck + push
-- [x] CXI deferred native pixel third argument — ACK/DONE scoped wiring granted; CXI landed5a507c832, await next milestone
-- [x] AGV ultimate REVIEW — DONE8 fresh hero ultimate sheets scored; runtime compositor blocks wiring
-
-- [ ] AGS Q0b-F2 external recheck — fix delivered; request sent, latest QA closure pending
-
-- [x] R1 repeat reviews — impacts-alt,enemy-skills,victory DONE9 scores; revisions requested
-- [x] R1 v2 support reviews — DONE27 scores;REVIEW-R1-SUPPORT-V2.md
-- [x] CXI07:44 craft decode hooks — ACK/DONE narrow grant07:45; preserved dimensions/fallback/timing
-- [x] CXI07:45 sequence assertion — ACK/DONE narrow grant07:52; CXI owns test contract repair
-
-- [ ] R1 Kettle production closure — BLOCKED-ON CXI capture of torso-anchor fix; R10 beauty3 debt retained
-- [x] R1 v3/boss-intro/status-badges reviews — DONE23 scores; no new approvals; UI final-use still needed
+## Visible open dependencies and carried work
+- [x] Kettle production contact closure:CXI fresh v6-ia1 capture and green v5-m1.1@5fa814f5e confirm torso fix/broad mask; beauty3 remains V-C/E.
+- [ ] Kettle beauty3/5 and Binding coverage under V-C/E.
+- [ ] AGS Q0b-F2 independent recheck under V-B/C; producer fix delivered.
+- [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
+- [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
+- [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.
+- [x] V-D clover-particle-1 fresh reviewV6:composite3/3/1/2/4,runtime3/3/3/2/4; revision/no new approval; V6-REVIEW-CLOVER-PARTICLE-1.md.
+- [x] V-D Panko temp particle1 fresh review:C4/4/1/4/4,R2/3/3/2/4;4x4 collection mislabeled1x1 is BLOCKER; crop one128/256px crumb and resubmit. No approval.
+- [x] CXI12:27 lantern-requiem loader-only scope ACK/granted; material/draw/motion preserved, CXI owns implementation/check.
+- [x] CANCELLED obsolete REV4 timeboxes/refill quota/print-proof card: V6 prioritizes visible quality and current assignments over bookkeeping.
+- [x] CANCELLED extra FPS/audio/secret audit/repository-export work: no visible judge benefit and V6 explicitly excludes it.

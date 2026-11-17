@@ -70,7 +70,10 @@ try {
         return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
           modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
           eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand'),
-          casterRoot: s.actors.get(m.plan.actorId)?.actor.root.position.toArray(), pose: s.sampled.get(m.plan.actorId)?.name};
+          casterRoot: s.actors.get(m.plan.actorId)?.actor.root.position.toArray(), pose: s.sampled.get(m.plan.actorId)?.name,
+          heroStates: [...s.actors].filter(([,e])=>['mochi','soot','clover','panko'].includes(e.asset)).map(([actorId,e])=>({
+            owner:e.asset,pose:s.sampled.get(actorId)?.name,key:e.craftPose?.drawing.key,crowd:s.motionAudit.find(a=>a.id===actorId)?.crowd,
+            blink:e.craftPose?[e.craftPose.drawing.secondary.leftBlink,e.craftPose.drawing.secondary.rightBlink]:null}))};
       }, {ms, id});
       await page.screenshot({path: resolve(dir, `frame-${String(index).padStart(2, '0')}.png`)});
       samples.push({ms, ...audit});

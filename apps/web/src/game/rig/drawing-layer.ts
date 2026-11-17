@@ -76,18 +76,19 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const hold=clip==='attack'&&ms>=350&&ms<440?.35:(clip==='ult'||clip==='skill')&&ms>=1100&&ms<1190?1.1:clip==='hurt'&&ms<90?0:seconds;
   const motion=at?this.seekMotion:this.secondary;
   if(at)motion.sample(hold,clip,hold,reduced,0,clip==='hurt'?seconds:-1);
-  let lift=0,lean=0;
-  if(clip==='idle'||clip==='idle-phase2'||clip==='victory'){
-   lift=.018*motion.body;
-  }else if(clip==='attack'){
+  // The quiet body oscillator remains underneath actions; the held clock above
+  // freezes it at contact, while recovery blends idle gestures back in.
+  const resting=clip==='idle'||clip==='idle-phase2'||clip==='victory';
+  let lift=clip==='ko'?0:.018*motion.body*(resting?1:.24),lean=0;
+  if(clip==='attack'){
    // Hold the contact drawing completely still through 350–440ms hit-stop.
-   if(ms<270)lift=-.012*Math.sin(Math.min(1,ms/250)*Math.PI/2);
+   if(ms<270)lift+=-.012*Math.sin(Math.min(1,ms/250)*Math.PI/2);
    else if(ms<330)lean=.018*smooth((ms-270)/60);
-   else if(ms>=560&&ms<800){const t=(ms-560)/240;lift=.012*Math.sin(t*Math.PI*2)*(1-t);}
+   else if(ms>=560&&ms<800){const t=(ms-560)/240;lift+=.012*Math.sin(t*Math.PI*2)*(1-t);}
   }else if(clip==='ult'||clip==='skill'){
-   if(ms>=300&&ms<1100)lift=.008*Math.sin((ms-300)/800*Math.PI);
-   else if(ms>=1800&&ms<2200)lift=.012*Math.sin((ms-1800)/400*Math.PI*2)*(1-(ms-1800)/400);
-  }else if(clip==='hurt'&&ms>=180&&ms<400)lift=-.012*Math.sin((ms-180)/220*Math.PI);
+   if(ms>=300&&ms<1100)lift+=.008*Math.sin((ms-300)/800*Math.PI);
+   else if(ms>=1800&&ms<2200)lift+=.012*Math.sin((ms-1800)/400*Math.PI*2)*(1-(ms-1800)/400);
+  }else if(clip==='hurt'&&ms>=180&&ms<400)lift+=-.012*Math.sin((ms-180)/220*Math.PI);
   // Pose changes remain available with reduced motion; overlap is attenuated.
   if(reduced){lean=0;if(clip!=='idle')lift*=.25;}
   const frame=m.poses[key]!,[fx,fy,fw,fh]=frame.face;
@@ -99,16 +100,17 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
    const region=overlaps[index]!;
    const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];
    const weight=smooth(1-dx*dx-dy*dy)*guard;
-   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight;
+   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
   }
   // Ears/tufts are above the protected face, driven after the body with their own spring.
   if(!reduced&&clip!=='ko'){
    const ex=(x-fx-fw*.5)/(fw*.62),ey=(y-fy+fh*.20)/(fh*.65),ear=smooth(1-ex*ex-ey*ey)*guard;
-   ox+=(motion.ear*2.3+motion.hair*.5)*ear;oy+=(motion.earFlatten*fh*.12+motion.ear*1.6)*ear;
+   const flick=motion.earFlick*(x<fx+fw*.5?1:-.55);
+   ox+=(motion.ear*2.3+motion.hair*.5+flick*3.5)*ear;oy+=(motion.earFlatten*fh*.12+motion.ear*1.6+flick*4)*ear;
    const accessory=frame.sockets.mainHand;
    if(accessory){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65),weight=smooth(1-ax*ax-ay*ay)*guard;
-    ox+=motion.accessory*1.4*weight;oy+=motion.accessory*2*weight;}
+    ox+=motion.accessory*1.4*weight;oy+=(motion.accessory*2-motion.handLift*m.opaqueHeight*.008)*weight;}
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
   const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
@@ -116,8 +118,17 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   let planted=1;
   for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
   const head=motion.look*m.opaqueHeight*.008*smooth((py/height-.32)/.38)*this.pixelScale;
-  out.x=this.origin[0]+px+(px*smear+height*lean*upper+ox*factor*this.pixelScale+head)*planted;
-  out.y=this.origin[1]+py+(height*lift*upper-oy*factor*this.pixelScale)*planted;
+  // A neck pivot carries the outline. The inner face moves a little farther,
+  // producing a small turn without sliding the whole painted character.
+  const neckX=fx+fw*.5,neckY=fy+fh*1.13,neck=smooth((neckY-y)/(fh*.45));
+  const dx=x-neckX,dy=y-neckY;
+  const turnX=(dx*(motion.tiltCos-1)-dy*motion.tiltSin)*neck;
+  const turnY=(dx*motion.tiltSin+dy*(motion.tiltCos-1))*neck;
+  const face=smooth(1-((x-neckX)/(fw*.72))**2-((y-fy-fh*.55)/(fh*.9))**2);
+  const lifeX=(turnX+m.opaqueHeight*(motion.turn*(.004*neck+.014*face)+.009*motion.weight*upper))*this.pixelScale;
+  const lifeY=(-turnY+m.opaqueHeight*.006*motion.nod*neck)*this.pixelScale;
+  out.x=this.origin[0]+px+(px*smear+height*lean*upper+ox*factor*this.pixelScale+head+lifeX)*planted;
+  out.y=this.origin[1]+py+(height*lift*upper-oy*factor*this.pixelScale+lifeY)*planted;
   return out;
  }
  get frame(){return this.set.manifest.poses[this.key]!;}
