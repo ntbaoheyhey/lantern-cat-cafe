@@ -4,9 +4,9 @@ No deployment, login, production change or secret values were accessed.
 
 | Runbook step | Result so far | Evidence / exact wording proposal |
 |---|---|---|
-| 1 source branch and rollback | AMBIGUOUS | Fresh clone pinned;19Nov freeze tag intentionally absent before freeze. Save previous production URL manually. |
-| 1 frozen install | PASS QA tree; clone pending load guard | fresh-clone.json; pnpm10.28.0,Node24.22.2 match required versions. |
-| 1 tests/typecheck/build | PENDING | Fresh clone's two Foundry submodules are uninitialized; reproduce forge failure before remediation. |
+| 1 source branch and rollback | AMBIGUOUS | Fresh clone b1e4398a8844 pinned;19Nov freeze tag intentionally absent before freeze. Save previous production URL manually. |
+| 1 frozen install | PASS both fresh installs | fresh-clone.json; pnpm10.28.0,Node24.22.2 match required versions. |
+| 1 tests/typecheck/build | PENDING | Initial missing-submodule candidate NOT REPRODUCED: own production setup forge build succeeded and both pinned submodules became initialized. Full local command suite still pending. |
 | 2 Supabase login/link/migration/deploy | STATIC PASS paths; NOT EXECUTED | All25handler paths exist; installed CLI2.122.0 help confirms linked,dry-run,use-api,no-verify-jwt flags (cli-flags.json). Verify linked migration history manually on deployment day. |
 | 2/4 secret prerequisites | AMBIGUOUS / QA-1 | Add exact names AUTH_JWT_SECRET,VOUCHER_SIGNER_PRIVATE_KEY,optional SPONSOR_PRIVATE_KEY,GAME_SEED_SECRET; distinguish platform-injected SUPABASE_* variables. |
 | 3 bounded YARN budget | STATIC PASS script path; NOT EXECUTED | tools/chain/prepare-v3-demo.mjs exists; preserve historical start-block and ledger. No SQL/chain write run. |

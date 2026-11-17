@@ -10,7 +10,7 @@
     "api": 6201,
     "rpc": 6202
   },
-  "ready": false,
+  "ready": true,
   "publicBuildFlags": {
     "VITE_CHAIN_DEMO": "0",
     "VITE_ECONOMY_V3": "1",
@@ -30,5 +30,29 @@
     "VITE_FUJI_RPC_URL": "http://127.0.0.1:6202",
     "VITE_V3_START_BLOCK": "0",
     "VITE_CHAIN_STATS_URL": ""
-  }
+  },
+  "fixtureId": "1794879389582-13685",
+  "contracts": {
+    "fixtureId": "1794879389582-13685",
+    "RelicForge": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707",
+    "chainId": 43113,
+    "rpcUrl": "http://127.0.0.1:6202",
+    "RelicNFT": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "RelicMarket": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "YarnToken": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "RelicMarketV2": "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9",
+    "SeasonRewards": "0xdc64a140aa3e981100a9beca4e685f962f0cf6c9",
+    "treasury": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "startBlock": "0"
+  },
+  "originBinding": {
+    "status": 204,
+    "allowed": "http://127.0.0.1:6200"
+  },
+  "buildPid": 14147,
+  "buildExit": 0,
+  "output": "/Users/bao/taskbar-hero-qa/work/v4qa/production-1/dist",
+  "indexSha256": "3c80dd5e253b9d920477fb4f070f1d7864f120f4212c16034c14c00a123a04fd",
+  "previewPid": 14271,
+  "readyAt": "2026-11-17T01:36:35.870Z"
 }
