@@ -19,7 +19,8 @@ async function guard(label){
 }
 const raw=JSON.parse(readFileSync(resolve(reportRoot,'Q1/q1-cold-1/results.json'),'utf8'));
 assert(raw.ended&&raw.runs.length===3&&raw.runs.every(r=>r.ended),'Initial cold run must finish first');
-assert(!existsSync(resolve(reportRoot,'Q2/metadata-postbuild-check.json')),'Never overwrite completed evidence');
+const layoutOnly=process.argv.includes('--layout-only');
+assert(layoutOnly?existsSync(resolve(reportRoot,'Q2/metadata-postbuild-check.json')):!existsSync(resolve(reportRoot,'Q2/metadata-postbuild-check.json')),'Preserve completed metadata evidence');
 const hashes=()=>{
  const result={};
  const walk=dir=>{for(const entry of readdirSync(dir,{withFileTypes:true})){
@@ -34,6 +35,7 @@ async function command(cmd,args,cwd=source){
   child.on('error',rej);child.on('exit',code=>code===0?res():rej(Error(`${cmd} exit ${code}`)));
  });
 }
+if(!layoutOnly){
 await guard('unchanged metadata postbuild');
 const before=hashes();
 await command('node',[resolve(source,'tools/chain/economy-v3-metadata.mjs'),`--out=${dist}/relics`]);
@@ -54,6 +56,7 @@ const staticAssets=[];
 for(const path of ['/audio/LICENSES.json','/chain/star-thread.svg']){const r=await fetch('http://127.0.0.1:6200'+path);const bytes=await r.arrayBuffer();staticAssets.push({path,status:r.status,contentType:r.headers.get('content-type'),bytes:bytes.byteLength,valid:r.ok&&!r.headers.get('content-type')?.includes('text/html')});}
 save('Q2/metadata-postbuild-check.json',{at:new Date().toISOString(),sourceSha:raw.sourceSha,scope:'QA fixture omission corrected after initial run; initial cold run did not test these metadata files',runtimeIndexHashesUnchanged:unchanged,hashes:after,paddedMetadataFiles:padded.length,sampledHttp:http,staticAssets});
 assert(http.every(r=>r.valid)&&staticAssets.every(r=>r.valid),'Required artifact HTTP sample failed');
+}
 await guard('read-only closed-details adjudication');
 const require=createRequire(resolve(qa,'apps/web/package.json'));
 const {chromium}=require('@playwright/test');
@@ -66,7 +69,7 @@ try{
    const r=route.request();
    if(requestAllowed({url:r.url(),method:r.method(),body:r.postData(),local:true,allowGuestTx:false}))await route.continue();else await route.abort();
   });
-  const page=await context.newPage();await page.goto('http://127.0.0.1:6200',{waitUntil:'load',timeout:30000});
+  const page=await context.newPage();await page.goto('http://127.0.0.1:6200/?demo=1&squad=1&cardrpg2=1&a6=1',{waitUntil:'load',timeout:30000});
   await page.getByRole('button',{name:'Play free',exact:true}).waitFor();await page.evaluate(()=>document.fonts.ready);
   const inspect=()=>page.evaluate(()=>{
    const outside=[],ignored=[];

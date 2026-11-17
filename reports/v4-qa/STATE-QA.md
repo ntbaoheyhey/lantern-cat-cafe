@@ -26,3 +26,5 @@ Q2 source paths/env inventory | abf6438866f0 + b1e4398a | PASS inventory; QA-1 o
 Q2 QA-1 recheck | 52aaaba399a38cf76de68866af6c8e6ed972cfdd | fixed; unchanged runtime; names and fallback table now independently verified.
 
 Latest observed SHIPd029bc9c4 changes audio engine/test, while runtime preview remains b1e4398a. QA2/QA3 source-delta recheck stillopen (Q2/open-findings-recheck-d029bc9c4.json); exact newest transfer requires preview refresh.
+
+Q2 metadata postbuild HTTP PASS with unchanged runtime/index hashes (Q2/metadata-postbuild-check.json). First layout probe root-route setup failure; retry uses canonical demo query, preserves metadata check.
