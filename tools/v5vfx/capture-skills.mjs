@@ -1,6 +1,7 @@
 /** Deterministic contact sheets of the actual scene; no player save or rules mutation. */
 import {chromium, config, openFixture} from './browser-fixture.mjs';
-import {mkdir, writeFile} from 'node:fs/promises';
+import {mkdir, writeFile, readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
 
@@ -14,6 +15,29 @@ const browser = await chromium.launch({headless: true, args: ['--use-angle=metal
 try {
   const {page, errors} = await openFixture(browser, config.fixtures.find(f => f.id === 'boss'), {url, fixedClock: false});
   report.url = page.url();
+  // Review external original textures without copying assets or merging a producer branch.
+  if (process.env.CXV_REVIEW_ASSETS) {
+    const assetRoot = resolve(process.env.CXV_REVIEW_ASSETS), manifest = JSON.parse(await readFile(resolve(assetRoot, 'manifest.json'), 'utf8'));
+    const owners = new Set(ids.map(id => id.replace(/-[1-4]$/, ''))), entries = Object.entries(manifest).filter(([id]) => owners.has(id.replace(/-(anticipation|impact|slash|projectile|decal|particle-[123]|ult-charge|ult-release)$/, '')));
+    const files = new Map(), hashes = {};
+    for (const [, entry] of entries) {
+      const path = resolve(assetRoot, entry.file); if (!path.startsWith(assetRoot + '/')) throw Error('Invalid asset path');
+      const data = await readFile(path); files.set(entry.file, data); hashes[entry.file] = createHash('sha256').update(data).digest('hex');
+    }
+    await page.route('**/__cxv_review__/*', route => {
+      const data = files.get(decodeURIComponent(new URL(route.request().url()).pathname.split('/').at(-1)));
+      return data ? route.fulfill({body: data, contentType: 'image/webp'}) : route.abort();
+    });
+    await page.evaluate(async ({entries, root}) => {
+      const registry = await import('/@fs' + root + '/apps/web/src/game/cardrpg/spine/vfx-registry.ts');
+      registry.clearV5Textures();
+      for (const [key, spec] of entries) {
+        const image = new Image(); image.src = '/__cxv_review__/' + encodeURIComponent(spec.file); await image.decode();
+        if (!registry.registerV5Texture(key, {image, width: image.naturalWidth, height: image.naturalHeight, cols: spec.cols, rows: spec.rows, frameMs: spec.frameMs})) throw Error('Invalid review texture ' + key);
+      }
+    }, {entries, root});
+    report.reviewAssets = {path: assetRoot, sourceCommit: execFileSync('git', ['-C', assetRoot, 'rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(), sha256: hashes};
+  }
   for (const id of ids) {
     const dir = resolve(out, id); await mkdir(dir, {recursive: true});
     await page.evaluate(async ({id, root}) => {

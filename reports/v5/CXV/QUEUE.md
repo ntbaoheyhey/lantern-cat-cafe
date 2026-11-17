@@ -24,6 +24,6 @@
 - [ ] Print proof: queue empty; refill DONE; every REQ ACK/DONE; SCORES >=4/5; latest AG1 QA clear
 - [x] AG2 Mochi REVIEW request — ACK + DONE review sent; beauty 3/5 requires revision before wiring
 
-- [ ] AG1 Q0-F2/F3 legacy-route findings — ACK; corrected V5 route recheck requested
+- [x] AG1 Q0-F2/F3 — ACK/DONE; AG1 retracted wrong-route findings, Q0b pending
 - [x] CXI pose decode hook — ACK/DONE ownership + hidden mesh semantics sent
 - [ ] AG2 Clover/Panko/Mochi-v2 REVIEW — ACK; own fresh runtime capture pending
