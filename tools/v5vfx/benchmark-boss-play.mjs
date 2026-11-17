@@ -16,6 +16,8 @@ const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const transparentWorkPrototype=process.env.CXV_TRANSPARENT_WORK==='1';
 const drawingResetMode=process.env.CXV_DRAWING_RESET??null;
 const offlineNumberMode=process.env.CXV_OFFLINE_NUMBER??null;
+const cloverLeafMode=process.env.CXV_CLOVER_LEAF??null;
+if(cloverLeafMode&&(!['baseline','leaf'].includes(cloverLeafMode)||production||localProduction||offlineNumberMode||drawingResetMode||facePrototype||outerPrototype||transparentWorkPrototype))throw Error('Clover leaf study requires isolated candidate Vite');
 if(offlineNumberMode&&(!['baseline','baked'].includes(offlineNumberMode)||drawingResetMode||production))throw Error('Invalid offline-number study mode');
 if(drawingResetMode&&!['baseline','coalesced'].includes(drawingResetMode))throw Error('Invalid drawing-reset mode');
 if(transparentWorkPrototype&&(production||localProduction||outerPrototype||facePrototype))throw Error('Transparent-vertex prototype requires isolated candidate Vite');
@@ -43,9 +45,10 @@ report.hudMode=hudMode;
 report.layoutProfile=layoutProfile;
 report.localProduction=localProduction;
 report.labelSearchMode=labelSearchMode;report.labelSearchPaired=labelSearchPaired;
+report.cloverLeafMode=cloverLeafMode;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
-  let pendingOverride,hudOverride,labelSearchOverride,offlineNumberPreparation;
+  let pendingOverride,hudOverride,labelSearchOverride,offlineNumberPreparation,cloverLeafPreparation;
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:pendingBatch||hudMode||labelSearchMode?async page=>{
    if(pendingBatch){const {installPendingLabelOverride}=await import('./pending-label-override.mjs');pendingOverride=await installPendingLabelOverride(page,{batch:pendingBatch==='on'});}
    if(hudMode){const {installHudGeometryOverride}=await import('./hud-geometry-override.mjs');hudOverride=await installHudGeometryOverride(page,{mode:hudMode});}
@@ -59,6 +62,7 @@ try{
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
+  if(cloverLeafMode){const {installCloverLeafPrototype}=await import('./clover-leaf-prototype.mjs');cloverLeafPreparation=await installCloverLeafPrototype(page,{active:cloverLeafMode==='leaf'});}
   if(offlineNumberMode){
    const {installOfflineNumberPrototype}=await import('./offline-number-prototype.mjs');
    await cdp.send('Performance.enable');const before=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(r=>[r.name,r.value]));
@@ -119,6 +123,7 @@ try{
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   if(drawingResetMode){run.drawingReset=await page.evaluate(()=>window.__cxvDrawingReset.variants.map(({id,unit,drawingCalls,setupCalls,skipped,inActor})=>({id,unit,drawingCalls,setupCalls,skipped,inActor})));if(run.drawingReset.some(r=>r.inActor!==0))errors.push('Drawing-reset guard leaked');}
   if(offlineNumberMode){run.offlineNumberPreparation=offlineNumberPreparation;run.offlineNumber=await page.evaluate(()=>{const p=window.__cxvOfflineNumber;return{seeded:p.seeded,served:p.served,calls:p.calls};});if(offlineNumberMode==='baked'&&(!run.offlineNumber.seeded||!run.offlineNumber.served))errors.push('Offline number study did not activate');}
+  if(cloverLeafMode)run.cloverLeafPreparation=cloverLeafPreparation;
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   if(facePrototype)run.prototypeWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.__cxvFaceWeights?.size??0,bytes:[...(e.craftPose?.drawing.__cxvFaceWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});
