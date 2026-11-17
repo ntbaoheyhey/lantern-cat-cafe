@@ -1,13 +1,13 @@
 # CXI V6 continuation
 ACTIVE: I-G route recovery works; guest evidence condition fixed after fresh capture exposed offline=false. Two guest result regressions pass.
-NEXT 1: Launch v6-route3 pipeline; inspect fresh route/receipt and v6-route2 effects once; publish v5-m1.4 after green.
+NEXT 1: Inspect v6-route3 pipeline; inspect fresh route/receipt and v6-route2 effects once; publish v5-m1.4 after green.
 NEXT 2: Integrate AGV12AVIF/AGS residual audio READY deliveries; fullsuite then next green tag.
 NEXT 3: CXV pacing study pending for70.151s level-first patrol; I-E films when I-A..C green.
-Last pushed SHA:4519278d0; green tagv5-m1.3=04c913bc5; newer CXV merge and route fix require fullsuite.
+Last pushed SHA:b706346b6; green tagv5-m1.3=04c913bc5; newer CXV merge and route fix require fullsuite.
 self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T13:15:48Z.
 Last RULES re-read UTC:2026-11-17T13:35:30Z; STOP-ALL/STOP-CXI absent.
 ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
-PID29627 finished: typecheck/web/root/build/transfer/effects0; route1 missing guest deployment block. Retry v6-route3 prepared.
+RunningPID33189:work/v5/CXI/jobs/v6-route3-pipeline.log;statusv6-route3-status.json. PID29627 fullsuite0/route1 guest condition fixed.
 Production preview parent80797/child80825,port6301; currentdist4519278d0,indexf4e598bd6eee79c780eb79cd9916fc802dfda0bf5174a8c9a03697e78835503a.
 Fullsuite4519278d0:2914web;5214root=77Node+5137workspace,11skip/2expectedfail;typecheck/build0.
 Fresh cold04c913bc5 wave1/wave3/boss8,744,220/9,305,491/8,819,936B;0errors;FAIL8MB.
