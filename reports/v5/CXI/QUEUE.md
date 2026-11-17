@@ -1,10 +1,10 @@
 # CXI queue (UTC)
-R0 active 2026-11-17T06:34:53Z REV4 restructure: audit/merge five lane branches, green suite, v5-m1, BOARD and OWNERSHIP.
+R0 DONE 2026-11-17T06:43:38Z v5-m1; five audited lane merges, typecheck0/web2821/root5044/build0; reports/v5/CXI/R0.md.
 SETUP DONE 2026-11-17T05:24:59Z commit 2cd16cbf7 pushed; state files and mailbox read.
 I0 DONE 2026-11-17T05:26:08Z 315904a14; CLI 3/3 and web API 11/11 pass; git show --stat contains only nine authorized paths.
 I1 DONE 2026-11-17T05:31:11Z reports/v5/CXI/I1.md; four checks pass; v5-m0 follows report checkpoint.
-I2 queued (interrupted by owner restructure); previously active 2026-11-17T05:32:30Z; baseline/preload/full-WebP complete; half-depth next; six-hour box ends 11:32:30Z.
-I3 queued; fulfilled by R0 REV4 early v5-m1 merge window if suite passes.
+I2 active 2026-11-17T06:43:38Z resumed after R0; six-hour original box ends11:32:30Z; baseline v5-m1 then granted deferred pixels and loader reductions.
+I3 DONE 2026-11-17T06:43:38Z REV4 R0 supersedes original M1 time; v5-m1 merge window complete.
 I4 queued M2 review build ready 2026-11-18T08:00:00Z; 3 hour box.
 I5 queued Fuji proof kit, local dry run only; 90 minute box.
 I6 queued M3 2026-11-19T08:00:00Z; continue refill afterwards; NO FREEZE.

@@ -1,19 +1,20 @@
-# CXI handoff — REV4 R0 active
-ACTIVE: R0 restructure merge; started 2026-11-17T06:34:53Z; 90 minute box.
-NEXT 1: Monitor detached r0-suite checks; inspect failure logs or tag v5-m1 when all four exits are0.
-NEXT 2: Detached typecheck + web tests + root tests + build; fix only owned failures, tag v5-m1 only when green.
-NEXT 3: BOARD/tag notifications, adopt REV4 OWNERSHIP; resume I2 transfer reduction.
-STOP-ALL and STOP-CXI absent at restart; USER REV4 restart authorizes work.
-Last pushed SHA: e81dfa4da; no owned WIP at restart. Branch codex/v5-int-2026-11-17.
-Running PIDs/logs: suite PID72231 work/v5/CXI/jobs/r0-suite.log; per-check r0-{typecheck,web,root,build}.log/.exit.
-Ownership audit: work/v5/CXI/r0/ownership-audit.json; all five old lane path checks pass.
-Integration pre-R0 RED: three spine/vfx-cues tests; CXV fix ed388eb30 included in audited tip.
-I2 incomplete: deferred native pixels implemented but scene wiring pending CXV; current transfer ~13–15MB.
-Next loader work: exact V5 audio mappings; actor pose AVIF and compact craft atlas; no unapproved scene edits.
-Routing bare URL defaults V5; test passed at85530135f, browser check pending.
-QA open: Q0b-F1 390px patrol CTA overflow; legacy Q0-F1/F5 retracted.
-Newest milestone: v5-m0=a3c9cff0b47a170339920dd48b4b5914aeba534d.
-Mailbox read cursors: INBOX-CXI60; DELIVERIES30; USER14. Read at every checkpoint.
-Preserve unrelated work/history-*; no secrets, env values, deploys, funded Fuji, contracts, main merge/submission.
-Full demo: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Last RULES + HANDOFF + LEARN read UTC: 2026-11-17T06:34:53Z
+# CXI handoff — I2 active after R0
+ACTIVE: I2 transfer<=8MB; R0 and I3 done 2026-11-17T06:43:38Z; v5-m1 green.
+NEXT 1: Start owned6301 production preview and measure-transfer --label=m1 --capture=true on current build.
+NEXT 2: Scoped scene.ts third arg deferNativePixels:isCraftOwner(asset), then compact layered loader and optional V5 texture decode.
+NEXT 3: Voice-array integration, AGV pose AVIF deliveries; mobile Q0b-F1; continue I4/I5/I6 and refill.
+Running PIDs/logs: none; r0 suite PID72231 completed, all check exits0.
+Last pushed SHA:757c4a997; next checkpoint is report/tag only, tested runtime code unchanged.
+Green gates: typecheck0; web2821/2821; root5044 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
+R0 merged five old lane tips; all27 READY entries ancestry-confirmed; DELIVERY-LEDGER.md.
+OWNERSHIP rewritten REV4, scoped grants retained; new scene third-arg grant CXV06:35 recorded.
+Audio scalar normalization now replaces all144 ranged variants; exact voice arrays still need loading.
+I2 last measured13–15MB before R0; no claim8MB yet. New capture required.
+AGV asked for pose AVIF siblings; AGS asked remaining combat voice slices and judge/runbook checklist.
+Bare URL routing tested9cases; production browser confirmation pending.
+Q0b-F1 ACK:390px patrol CTA overflow; fix owned ui-v3 after R0.
+Next merge window <=3h after v5-m1; M2 review due18Nov08:00UTC.
+Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Mailbox cursors INBOX-CXI64, DELIVERIES30, USER14; read every checkpoint.
+Preserve unrelated work/history-*; no secrets/env values/deploys/funded Fuji/contracts/main merge/submission.
+Last RULES/HANDOFF/LEARN read:2026-11-17T06:43:38Z; reread before next card implementation.
