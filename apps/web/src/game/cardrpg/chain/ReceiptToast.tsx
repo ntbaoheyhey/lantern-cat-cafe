@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react';
 import type {ReceiptProof} from './receipt-proof';
 import {txLink} from './runtime';
+import './receipt-toast.css';
 const actions:Record<string,string>={mint:'Relic minted',seal:'YARN burned',safeBatchTransferFrom:'Fusion inputs sent',setApprovalForAll:'Market approved',claimTester:'Test YARN claimed',transfer:'YARN transferred',approve:'YARN approved',list:'Relic listed',buy:'Relic purchased',withdraw:'Sale proceeds claimed',claim:'Spool claimed'};
 export function ReceiptToast(){
  const [proof,setProof]=useState<ReceiptProof>();

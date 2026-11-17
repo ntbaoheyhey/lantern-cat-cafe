@@ -2,7 +2,7 @@
 1. Worktree /Users/bao/taskbar-hero-chain; branch codex/v5-int-2026-11-17; ports6300–6309.
 2. Disk wins: read RULES+HANDOFF before each assignment, resume/compaction/wake and hourly; ORDER-V6.txt is verbatim authority.
 3. RULES/HANDOFF<=25 lines; STATUS-VI<=10; QUEUE evidence; append PROGRESS each step.
-4. Work I-A..I-G by value: fresh green tag, <=8MB cold, reliable judge path, Fuji proof, owner films, docs, QA.
+4. Latest owner override: DESKTOP ONLY, no mobile/phone tasks. Work I-A..I-G by value: fresh green tag, <=8MB cold, reliable judge path, Fuji proof, owner films, docs, QA.
 5. STOP-ALL/STOP-CXI only: commit+push owned WIP first; final STOPPED: <file>. Otherwise continue NEXT1 in same turn.
 6. Exactly one current-chat CXI wake every15min; verify hourly; ignore wakes mid-task. Watchdog retired.
 7. Checkpoint each step and <=20min: explicit owned git add; commit v6 CXI <assignment> <step>; push -u origin branch.

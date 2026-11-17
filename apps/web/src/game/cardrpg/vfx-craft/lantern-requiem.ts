@@ -2,6 +2,7 @@
  * Opt-in while the full pilot is reviewed. No rules, action clock or camera owns this art.
  */
 import * as T from 'three';
+import {loadPoseTexture} from '../spine/pose-texture-loader';
 
 export interface CraftPoint {x:number;y:number}
 export interface CraftFace {x:number;y:number;width:number;height:number}
@@ -129,7 +130,7 @@ export class LanternRequiem {
   this.rear.name='Soot travelling lantern flame';this.front.name='Soot lantern contact';this.ground.name='Soot finite ground veins';
   for(let i=0;i<3;i++){this.gather.push(this.add('lantern-gather','strand',false));this.cast.push(this.add('cast-tongue','strand',true));}
   for(let i=0;i<3;i++){this.bodies.push(this.add('travelling-body','body',false));this.edges.push(this.add('golden-edge','strand',false));}
-  this.ready=new T.TextureLoader().loadAsync('/units/soot/poses/lantern-flame.webp').then(paint=>{
+  this.ready=loadPoseTexture('/units/soot/poses/lantern-flame.webp',1536,510).then(paint=>{
    if(this.disposed){paint.dispose();return;}paint.colorSpace=T.SRGBColorSpace;this.paint=paint;
    for(const mesh of [...this.bodies,...this.cast])mesh.material.uniforms.uPaint!.value=paint;
   });
