@@ -2,9 +2,9 @@
 ACTIVE V-F profiling; spatial cache measured, retained for scoped CXI review; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
 NEXT 1: Profile exact first Mochi contact startup;native hidden vertices validated43tests/tsc0+26body samples,fullrun mixed.
-NEXT 2: Send native scoped review with4x regression;spatial READY queued byCXI;merge only newly announced green.
+NEXT 2: Native scoped READY sent with4x regression;spatial READY queued byCXI;merge only newly announced green.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed push243baceec; announcedv5-m1.7 mergedb6300919b; scalar50ec14e73 integrated73bcdbed4 CXI ACCEPT16:41Z.
+Last confirmed pusha46e5255d; announcedv5-m1.7 mergedb6300919b; scalar50ec14e73 integrated73bcdbed4 CXI ACCEPT16:41Z.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
 V-C m1.7 own16:22Z4sheets0errors;arrival240/620ms,12recipientnet1280clear1640,Yarnsocket0/clear1760;normalmotion.
 V-B2 m1.7 own4sheets+32sloop:26actoractions+3status,6ults/all4heroes;leadIn0,2200/1100;statusvoice absent.
