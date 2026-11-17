@@ -14,15 +14,18 @@ assert(process.argv.slice(2).every(arg=>arg==='--check'),'Only --check is suppor
 const hash=bytes=>createHash('sha256').update(bytes).digest();
 const temp=await mkdtemp('/tmp/tbh-audio-delivery-');
 try{
+ const entry=resolve(temp,'entry.ts');
+ await writeFile(entry,`export {applyV5Audio} from ${JSON.stringify(resolve(root,'apps/web/src/audio/v5-manifest-loader.ts'))};\nexport {voicePreloadPacks} from ${JSON.stringify(resolve(root,'apps/web/src/audio/voice-preload.ts'))};\nexport {VOICE_CALLOUTS} from ${JSON.stringify(resolve(root,'apps/web/src/audio/callouts.ts'))};`);
  const {build}=await import(require.resolve('vite'));
  await build({configFile:false,root,envDir:false,publicDir:false,logLevel:'silent',
-  build:{outDir:temp,minify:false,lib:{entry:resolve(root,'apps/web/src/audio/v5-manifest-loader.ts'),formats:['es'],fileName:()=> 'loader.mjs'}}});
- const {applyV5Audio}=await import(pathToFileURL(resolve(temp,'loader.mjs')).href);
+  build:{outDir:temp,emptyOutDir:false,minify:false,lib:{entry,formats:['es'],fileName:()=> 'loader.mjs'}}});
+ const {applyV5Audio,voicePreloadPacks,VOICE_CALLOUTS}=await import(pathToFileURL(resolve(temp,'loader.mjs')).href);
  const read=async path=>JSON.parse(await readFile(resolve(publicRoot,path),'utf8'));
  const manifest=applyV5Audio(await read('audio/manifest.json'),await read('audio/v5/manifest.json'));
  const definitions=Object.entries(manifest.packSubstitutions).filter(([key])=>/^b2-(hits|motion|magic|ui)$|^v4-ranged-/.test(key));
  // Authored sounds are considered only when the entire group is already requested.
  definitions.push(['authored-combat',manifest.deliveredPacks]);
+ for(const unit of new Set(VOICE_CALLOUTS.map(row=>row.unitId)))definitions.push([`voice-${unit}`,voicePreloadPacks(manifest,[unit])]);
  const used=new Set(),groups=[],evidence=[];
  for(const [name,ids] of definitions.sort(([a],[b])=>a.localeCompare(b))){
   const paths=[...new Set(ids.map(id=>manifest.packs[id]?.opus).filter(Boolean))].sort();

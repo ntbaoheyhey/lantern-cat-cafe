@@ -1,6 +1,7 @@
 import type {AudioBridge,CueOptions} from '../game/cardrpg/contracts/audio-cues';
 import {BUS_NAMES,CUE_ALIASES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
-import {calloutForCast,voiceCallout,voiceUnit,VOICE_CALLOUTS} from './callouts';
+import {calloutForCast,voiceCallout,voiceUnit} from './callouts';
+import {voicePreloadPacks} from './voice-preload';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 import {installUiFeedback} from './feedback';
 import {rangedPacksForRoster} from './ranged-packs';
@@ -166,16 +167,9 @@ export class AudioEngine implements AudioBridge {
   this.voiceUnits=[...new Set(actors.map(voiceUnit).filter((id):id is string=>!!id))];
   if(!this.ctx)return;
   try{
-   const m=await this.loadManifest(),units=new Set(this.voiceUnits);
-   const packs=new Set(VOICE_CALLOUTS.filter(row=>units.has(row.unitId)).flatMap(row=>(m.cues[row.cueId]??[]).map(sample=>sample.pack)));
-   // LEARN/S11-audio.md: a boss terminal cue can resolve to the shared voice
-   // pack. Decode its existing choices before contact without playing a take.
-   for(const unit of units)for(const phase of ['hit','death']){
-    const id=`voice.${unit}.${phase}`,design=resolveDesign(id,m);
-    const samples=design?(design.baked?.map(v=>v.sample)??design.layers.flatMap(layer=>layer.variants)):resolveCue(id,m)??[];
-    for(const sample of samples)packs.add(sample.pack);
-   }
-   await Promise.all([...packs].map(pack=>this.buffer(pack,m)));
+   const m=await this.loadManifest(),packs=voicePreloadPacks(m,this.voiceUnits);
+   this.packaged?.allow(packs.flatMap(pack=>m.packs[pack]?.opus??[]));
+   await Promise.all(packs.map(pack=>this.buffer(pack,m)));
   }catch{/* playback can retry */}
  }
  private record(id:string,result:string,layers?:LayerPlayed[]){

@@ -1,6 +1,6 @@
 # Verified submission language — local desktop build
 
-This is preparation for the owner, not a submitted form or public deployment. Validated release tag: **v5-m1.8**. Use the current [desktop evidence](I-C.md), [review footage](REVIEW-VI.md) and [owner runbook](NEEDS-USER-VI.md) when updating this draft.
+This is preparation for the owner, not a submitted form or public deployment. Validated release tag: **v5-m1.9**. Use the current [desktop evidence](I-C.md), [review footage](REVIEW-VI.md) and [owner runbook](NEEDS-USER-VI.md) when updating this draft.
 
 ## Short description
 
@@ -10,7 +10,7 @@ Taskbar Hero is a cosy desktop cat card RPG: arrange a four-cat crew, defend a l
 
 | Claim | Evidence and boundary |
 | --- | --- |
-| Playable desktop battle | Ordinary fresh guest journey at 1280×720; first visible hit in 21.131 seconds including 17.7 seconds reading eight tutorial cards. No saved progress or speed change. [I-C](I-C.md) |
+| Playable desktop battle | Ordinary fresh guest journey at 1280×720; first visible hit in 21.078 seconds including 17.7 seconds reading eight tutorial cards. No saved progress or speed change. [I-C](I-C.md) |
 | Real gameplay footage | Three 30-second wave1/wave3/boss films at 1× with actual browser audio. These use labelled review fixtures, separate from the ordinary guest journey. [Review](REVIEW-VI.md) |
 | Avalanche contract presence | Five versioned Fuji registry addresses returned bytecode in the recorded public read-only check. This does not prove a completed player transaction or verified source equivalence. [Public check](PUBLIC-FUJI.json) |
 | Honest result screen | A local battle explicitly says no transaction was sent and links the deployed Fuji items contract. Confirmed chain actions have a separate receipt path for hash, fee, payer, network and explorer URL. [Architecture](../../../docs/ARCHITECTURE.md) |
@@ -27,7 +27,7 @@ Taskbar Hero is a cosy desktop cat card RPG: arrange a four-cat crew, defend a l
 ## Open facts before submission
 
 - Public hosting of this release and a funded Fuji transaction remain owner-only work; no public transaction hash is currently supplied by this evidence.
-- Cold battle transfer remains above 8 MB for wave3 (8,260,321 bytes); wave1 and boss pass, with 225,548 bytes of boss headroom. Do not claim a sub-8-MB build, fixed 60 fps, guaranteed zero gas cost or that every battle settles on-chain.
+- Cold battle transfer remains above 8 MB for wave3 (8,228,520 bytes); wave1 and boss pass, with 257,033 bytes of boss headroom. Do not claim a sub-8-MB build, fixed 60 fps, guaranteed zero gas cost or that every battle settles on-chain.
 - RelicForge has no public address in the versioned Fuji registry; do not present it as a proven public deployment.
 - Current combat presentation uses React with Three/Spine and authored artwork; older Phaser paths also remain in the repository.
 - Team names, eligibility and submission account details require the owner's factual input. Agent lane IDs are not verified human team identities.

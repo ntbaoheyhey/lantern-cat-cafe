@@ -1,6 +1,6 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản xanh **v5-m1.8**, ứng dụng **73bcdbed424815382c6cb8a9bcc5a4f32447ce6d**, source quay **f9d0171353e5b19ba141d318477a33c0d6bd81b0** (chỉ thêm báo cáo). Full suite 5.261 test pass, gồm 2.961 web, trên ddf02f9d2; sau đó đổi phép tính contour nhỏ, 14 test liên quan và build/typecheck đạt. Năm bước kiểm tra cuối gồm ba phim 30 giây đều đạt. [Bằng chứng desktop](I-C.md): đòn đầu 21,131 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB, hai fixture còn lại đạt. Chỉ thay tag trong lệnh dưới sau khi CXI công bố tag xanh tiếp theo trên BOARD.
+Bản xanh **v5-m1.9**, ứng dụng **4ae1c9580f91b816f6860a79420faa4edab59a99**, source quay **32814db72df8ae8821367831c91b19e2dd5d80f5** (chỉ thêm báo cáo). Full suite thành công: 5.269 passed, 11 skipped, hai expected failures; tổng 5.282 test gồm 2.969 web, bao gồm spatial/native/voice. Build/typecheck và chín bước kiểm tra cuối gồm ba phim 30 giây đạt; đối chiếu audio m1.8→m1.9 độc lập đạt. [Bằng chứng desktop](I-C.md): đòn đầu 21,078 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB 228.520 B, hai fixture còn lại đạt. Chỉ thay tag trong lệnh dưới sau khi CXI công bố tag xanh tiếp theo trên BOARD.
 
 Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.8'
+release_tag='v5-m1.9'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1
