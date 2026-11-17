@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-17T01:47:50.781553+00:00",
+  "sourceSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "rawEvidence": "Q1/q1-cold-1/results.json",
+  "uiStep": {
+    "name": "Withdraw Spool",
+    "atMs": 107693
+  },
+  "receipt": {
+    "hash": "0xee6f5e012078642c25fb7bcee4af77780c24ce959f64547e9cb6145a5536c078",
+    "wallet": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+    "payer": "0x6ee615370ae4e5be77d9c725ab2cd496e2949235",
+    "action": "claim",
+    "feeAvax": "0.00012059144215726",
+    "confirmationMs": 14.800000004470348,
+    "local": true,
+    "observedAt": 107652.60000000149,
+    "verification": {
+      "success": true,
+      "payerMatches": true,
+      "feeMatches": true,
+      "contract": "SeasonRewards",
+      "functionName": "claim",
+      "claimAmountWei": "6000000000000000000"
+    }
+  },
+  "netYarn": "6",
+  "grossSpoolFromSource": "8",
+  "retainedSpoolFromSource": "2",
+  "sourceReferences": [
+    "packages/game-rules/src/cardrpg/economy-v3.ts:7",
+    "apps/web/src/game/cardrpg/chain/journey-workshop.ts:133"
+  ],
+  "runbookText": "R\u00fat 16 Spool gi\u1eef 4, nh\u1eadn 12 YARN",
+  "scope": "6 YARN is independently ABI-decoded and receipt-verified from the visible Withdraw Spool action; 8 gross and 2 retained are corroborating source arithmetic, not a separately observed UI amount."
+}
