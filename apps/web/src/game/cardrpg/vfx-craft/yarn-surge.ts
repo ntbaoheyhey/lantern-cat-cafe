@@ -14,10 +14,11 @@ function material(noise:T.Texture){return new T.ShaderMaterial({transparent:true
  void main(){vec4 paint=texture2D(uTexture,vUv);
  if(uBurst>.5){
   vec2 q=(vUv-.5)*2.;float r=length(q),noise=texture2D(uNoise,vUv*2.7).r;
-  float head=.12+clamp(uTime/.22,0.,1.)*.75;
+  float head=.36+clamp(uTime/.16,0.,1.)*.5;
   float strands=pow(max(0.,cos(atan(q.y,q.x)*8.+noise*.8+r*1.7)),18.);
   float trail=smoothstep(head-.32,head-.12,r)*(1.-smoothstep(head-.03,head+.06,r));
-  paint=vec4(mix(vec3(.65,.27,.58),vec3(1.,.91,.72),pow(strands,2.)),strands*trail*(.6+.4*noise));
+  float core=exp(-r*r*80.)*(1.-clamp(uTime/.10,0.,1.));
+  paint=vec4(mix(vec3(.65,.27,.58),vec3(1.,.95,.81),max(core,pow(strands,2.))),max(core,strands*trail*(.6+.4*noise)));
  }
  float fibre=texture2D(uNoise,vUv*vec2(2.3,1.1)+vec2(-uTime*.018,uTime*.009)).r;
  float a=paint.a*uAlpha*smoothstep(uErode,uErode+.1,fibre+vUv.y*.10)*faceProtection();
@@ -62,7 +63,7 @@ export class YarnSurge {
   }
   if(age>=0&&age<220){
    const alpha=(f.reducedMotion?.3:.85)*(1-age/220);
-   this.place(this.contact,source.x,source.y,96*k,76*k,alpha,f.reducedMotion?40:age);
+   this.place(this.contact,source.x,source.y,132*k,104*k,alpha,f.reducedMotion?40:age);
   }
   for(const m of this.all){const u=m.material.uniforms;u.uFaceCount!.value=Math.min(16,f.faces.length);for(const [i,face]of f.faces.slice(0,16).entries())u.uFaces!.value[i].set((face.x+face.width/2)*px-f.worldWidth/2,f.worldHeight-(face.y+face.height/2)*px,(face.width/2+6)*px,(face.height/2+6)*px);}
   Object.assign(this.audit,{elapsed:ms,ultimate:f.ultimate,source:{...source},paintedTip:tip,socketError:Math.hypot(tip.x-source.x,tip.y-source.y),active:this.all.filter(m=>m.visible).length});

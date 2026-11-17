@@ -60,7 +60,7 @@ try{
      deathSource:!!material?.uniforms.uPaint.value,fragments:deathFx?.fragments.visible,amount:deathFx?.amount.value,
      hasCraftLight:!!entry?.craftLight,sourceTarget:deathFx?.sourceTarget?[deathFx.sourceTarget.width,deathFx.sourceTarget.height]:null,
      caster:caster?{bounds:s.bounds(caster),mainHand:s.socket(m.plan.actorId,'mainHand'),pose:{name:s.sampled.get(m.plan.actorId)?.name,at:s.sampled.get(m.plan.actorId)?.at},root:caster.actor.root.position.toArray()}:null,
-     target:target?{id:targetId,bounds:s.bounds(target)}:null};
+     target:target?{id:targetId,bounds:s.bounds(target)}:null,yarn:s.craftYarn?structuredClone(s.craftYarn.audit):null};
    },{sample,id,clip});
    await page.screenshot({path:resolve(dir,`frame-${String(index).padStart(2,'0')}.png`),...(clip?{clip}:{})});
    audits.push({...sample,...audit});
