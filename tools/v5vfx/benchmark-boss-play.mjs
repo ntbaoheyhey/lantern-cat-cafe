@@ -15,6 +15,7 @@ const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
 const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
 const hudMode=process.env.CXV_HUD_MODE??null;
+const layoutProfile=!!hudMode||process.env.CXV_LAYOUT_PROFILE==='1';
 if(hudMode&&production)throw Error('HUD module experiment requires candidate Vite');
 if(pendingBatch&&!['on','off'].includes(pendingBatch))throw Error('CXV_PENDING_BATCH must be on or off');
 if(pendingBatch&&production)throw Error('Pending-label module experiment requires the candidate Vite server');
@@ -27,6 +28,7 @@ report.outerPrototype=outerPrototype;
 report.pendingBatch=pendingBatch;
 report.focusProfile=focusProfile;
 report.hudMode=hudMode;
+report.layoutProfile=layoutProfile;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
   let pendingOverride,hudOverride;
@@ -42,7 +44,8 @@ try{
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   if(process.env.CXV_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start');}
   let layoutBefore;
-  if(hudMode){await cdp.send('Performance.enable');layoutBefore=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(row=>[row.name,row.value]));await page.evaluate(()=>{globalThis.__cxvHudAudit=[];});}
+  if(layoutProfile){await cdp.send('Performance.enable');layoutBefore=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(row=>[row.name,row.value]));}
+  if(hudMode)await page.evaluate(()=>{globalThis.__cxvHudAudit=[];});
   const run=await page.evaluate(async ({rate,methodProfile,numberMetricsMode,focusProfile})=>{
    const s=window.__depthScene,m=window.__depthReview,originalRender=s.render,originalBefore=s.beforeFrame;
    const intervals=[],cpu=[],calls=[],textures=[],plans=[],slowFrames=[],seen=new Set();
@@ -77,9 +80,11 @@ try{
    const windowStats=(frames,submit)=>({samples:frames.length,frameMs:stats(frames),submitCpuMs:stats(submit),over33:frames.filter(v=>v>33.5).length,over50:frames.filter(v=>v>50.5).length});
    return{rate,numberMetricsMode,focusEntries,focusEntryCpuMs:stats(focusEntries.map(e=>e.cpuMs)),focusEntryRenderCpuMs:stats(focusEntries.map(e=>e.renderCpuMs)),methodCosts:methodProfile?methodCosts:undefined,methodCostsNote:methodProfile?'Inclusive wall CPU timings with wrapper overhead; nested methods overlap. Use for attribution only.':undefined,elapsedMs,samples:intervals.length,frameMs:stats(intervals),submitCpuMs:stats(cpu),over33:intervals.filter(v=>v>33.5).length,over50:intervals.filter(v=>v>50.5).length,firstRenderLatencyMs,wholeRun:windowStats(allIntervals,allCpu),startup:windowStats(startupIntervals,startupCpu),steadyWindowStartMs:2000,calls:stats(calls),textures:stats(textures),slowFrames,initial,final:{round:m.battle.round,actors:m.battle.actors.map(a=>({id:a.id,hp:a.hp,charge:a.charge})),log:m.battle.log.length,result:m.battle.result,screen:m.screen},plans};
   },{rate,methodProfile:process.env.CXV_METHOD_PROFILE==='1',numberMetricsMode,focusProfile});
-  if(hudMode){
+  if(layoutProfile){
    const after=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(row=>[row.name,row.value]));
    run.layout=Object.fromEntries(['LayoutCount','LayoutDuration','RecalcStyleCount','RecalcStyleDuration','TaskDuration'].map(key=>[key,after[key]-layoutBefore[key]]));
+  }
+  if(hudMode){
    run.hud=await page.evaluate(()=>{const rows=globalThis.__cxvHudAudit;globalThis.__cxvHudAudit=null;const stats=v=>{const a=[...v].sort((x,y)=>x-y);return{calls:a.length,totalMs:a.reduce((x,y)=>x+y,0),median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],max:a.at(-1)};};return{canvas:stats(rows.map(v=>v[0])),labels:stats(rows.map(v=>v[1])),tail:stats(rows.map(v=>v[2]))};});
    run.hudOverride=hudOverride;
   }

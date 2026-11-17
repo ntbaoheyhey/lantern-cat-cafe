@@ -1,0 +1,208 @@
+{
+  "utc": "2026-11-17T19:52:16.166Z",
+  "source": "13659e2b4372f7ba327b43d5c7fb9b14fa1a0359",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "native": false,
+  "method": "Synthetic actual HUD state transitions at controlled wall clock: repeated same-value damage plans, expiry/re-entry, changed amount, external DOM correction and component remount. No timing/model change; no production acceptance.",
+  "modes": [
+    {
+      "mode": "baseline",
+      "override": {
+        "mode": "baseline",
+        "audit": false,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544"
+          }
+        }
+      },
+      "rows": [
+        {
+          "name": "before-hit",
+          "hidden": true,
+          "text": "0",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "first-hit",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "first-hold",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "same-amount-new-plan",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "new-plan-extends-expiry",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "expired",
+          "hidden": true,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "same-amount-after-expiry",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "changed-amount",
+          "hidden": false,
+          "text": "69",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "repairs-current-dom",
+          "hidden": false,
+          "text": "69",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "remounted-empty",
+          "hidden": true,
+          "text": "0",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "remounted-hit",
+          "hidden": false,
+          "text": "163",
+          "label": "Total skill damage",
+          "outputs": 1
+        }
+      ]
+    },
+    {
+      "mode": "text",
+      "override": {
+        "mode": "text",
+        "audit": false,
+        "modules": {
+          "hud": {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/BattleHud.tsx?t=1794943822739",
+            "sourceSha256": "cace9875272e80a2d966256e0981fcde08a40a73a42bc4003133094a6b1af544",
+            "overrideSha256": "1c248840509280bab4a1d48337b4d5b90b195340afde4c07c702840e4d6cd389"
+          }
+        }
+      },
+      "rows": [
+        {
+          "name": "before-hit",
+          "hidden": true,
+          "text": "0",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "first-hit",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "first-hold",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "same-amount-new-plan",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "new-plan-extends-expiry",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "expired",
+          "hidden": true,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "same-amount-after-expiry",
+          "hidden": false,
+          "text": "51",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "changed-amount",
+          "hidden": false,
+          "text": "69",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "repairs-current-dom",
+          "hidden": false,
+          "text": "69",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "remounted-empty",
+          "hidden": true,
+          "text": "0",
+          "label": "Total skill damage",
+          "outputs": 1
+        },
+        {
+          "name": "remounted-hit",
+          "hidden": false,
+          "text": "163",
+          "label": "Total skill damage",
+          "outputs": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "pass": true,
+  "identityAfter": {
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {}
+  },
+  "ended": "2026-11-17T19:52:20.911Z"
+}

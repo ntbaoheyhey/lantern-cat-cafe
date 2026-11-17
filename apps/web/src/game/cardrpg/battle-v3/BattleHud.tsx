@@ -60,7 +60,12 @@ export default function BattleHud({m}:{m:DepthModel}){
    if(skipButton.current)skipButton.current.hidden=!scene?.cinema?.audit.plate;
    const plan=m.plan,state=totalState.current,now=performance.now();
    if(plan&&(plan.ultimate||/-[23]$/.test(plan.presentationId??plan.skillId)||/^enemy:[^:]+$/.test(plan.presentationId??plan.skillId))&&m.impactVisible&&state.plan!==plan){state.plan=plan;state.amount=plan.events.filter(e=>e.type==='damage').reduce((n,e)=>n+e.amount,0);state.until=now+1000;}
-   if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}
+   if(total.current){
+    total.current.hidden=now>state.until||!state.amount;
+    const amount=total.current.querySelector('b')!,text=String(state.amount);
+    // Replacing an unchanged text node invalidates page styles every frame.
+    if(amount.textContent!==text)amount.textContent=text;
+   }
    raf=requestAnimationFrame(paint);
   };paint();return()=>{cancelAnimationFrame(raf);labelLayout.dispose();document.body.classList.remove('battle-v3-active','b3-cinema-occludes');};
  },[m]);

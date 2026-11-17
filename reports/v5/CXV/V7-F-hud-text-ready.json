@@ -1,0 +1,216 @@
+{
+  "utc": "2026-11-17T19:58:20.206555+00:00",
+  "source": "0ac228aaab9ce5ea24a38988127a04e806c0adca",
+  "runtimePatchSha256": "55656ba9d1a8571b2d5e1830c87a435ab0a4bf15019ca8bab845c937e6ca1b56",
+  "runtimeUntrackedSha256": {},
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "change": "BattleHud compares current total-damage textContent before assigning it. No canvas cache, hidden flag, model/plan/expiry or visual geometry change.",
+  "pass": true,
+  "prototype": {
+    "raw": "reports/v5/CXV/V7-F-hud-text-experiment.json",
+    "order": [
+      "baseline",
+      "text",
+      "text",
+      "baseline",
+      "baseline",
+      "text"
+    ],
+    "stableSource": true,
+    "summary": [
+      {
+        "rate": 1,
+        "mode": "baseline",
+        "trials": 3,
+        "samples": 1800,
+        "frameMedianMs": 16.69999999999891,
+        "frameP95Ms": 16.799999999999272,
+        "over50": 0,
+        "submitMedianMs": 4,
+        "canvasMedianMs": 0.19999999552965164,
+        "canvasTotalMs": 326.800000064075,
+        "labelsTotalMs": 262.2999998778105,
+        "tailTotalMs": 39.69999995082617,
+        "styleTotalMs": 2635.4959999999996,
+        "stylePerFrameMs": 1.373065625,
+        "layoutTotalMs": 165.14000000000001,
+        "focusMedianMs": 5.200000002980232
+      },
+      {
+        "rate": 1,
+        "mode": "text",
+        "trials": 3,
+        "samples": 1799,
+        "frameMedianMs": 16.69999999999891,
+        "frameP95Ms": 16.799999999999272,
+        "over50": 0,
+        "submitMedianMs": 3,
+        "canvasMedianMs": 0.19999999552965164,
+        "canvasTotalMs": 314.699999794364,
+        "labelsTotalMs": 263.6000000908971,
+        "tailTotalMs": 24.900000035762787,
+        "styleTotalMs": 674.1899999999999,
+        "stylePerFrameMs": 0.35150677789363916,
+        "layoutTotalMs": 105.886,
+        "focusMedianMs": 5.700000002980232
+      },
+      {
+        "rate": 4,
+        "mode": "baseline",
+        "trials": 3,
+        "samples": 1012,
+        "frameMedianMs": 33.29999999999927,
+        "frameP95Ms": 66.70000000000073,
+        "over50": 75,
+        "submitMedianMs": 18.599999994039536,
+        "canvasMedianMs": 0.7000000029802322,
+        "canvasTotalMs": 784.6999999135733,
+        "labelsTotalMs": 669.3000000566244,
+        "tailTotalMs": 98.79999993741512,
+        "styleTotalMs": 6819.804999999999,
+        "stylePerFrameMs": 6.386338345864662,
+        "layoutTotalMs": 403.28700000000003,
+        "focusMedianMs": 25.600000001490116
+      },
+      {
+        "rate": 4,
+        "mode": "text",
+        "trials": 3,
+        "samples": 1245,
+        "frameMedianMs": 16.700000000000728,
+        "frameP95Ms": 66.60000000000036,
+        "over50": 72,
+        "submitMedianMs": 13.700000002980232,
+        "canvasMedianMs": 0.7999999970197678,
+        "canvasTotalMs": 977.4000000879169,
+        "labelsTotalMs": 824.0000000149012,
+        "tailTotalMs": 84.5999999716878,
+        "styleTotalMs": 2308.486,
+        "stylePerFrameMs": 1.7718265151515153,
+        "layoutTotalMs": 373.97200000000004,
+        "focusMedianMs": 25.799999997019768
+      }
+    ]
+  },
+  "checks": "reports/v5/CXV/V7-F-hud-native-checks.json",
+  "native": {
+    "utc": "2026-11-17T19:56:21.252Z",
+    "ended": "2026-11-17T19:57:29.858Z",
+    "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-native-play/report.json",
+    "behavioralModuleOverrides": false,
+    "errors": [],
+    "runs": [
+      {
+        "rate": 1,
+        "samples": 1800,
+        "elapsedMs": 32002.29999999702,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.899999998509884,
+          "p95": 4.399999998509884,
+          "p99": 12,
+          "max": 21.799999997019768
+        },
+        "over33": 0,
+        "over50": 0,
+        "layout": {
+          "LayoutCount": 2745,
+          "LayoutDuration": 0.106387,
+          "RecalcStyleCount": 5658,
+          "RecalcStyleDuration": 0.667219,
+          "TaskDuration": 9.926031
+        },
+        "focusEntryCpuMs": {
+          "median": 5.399999998509884,
+          "p95": 5.9000000059604645,
+          "p99": 5.9000000059604645,
+          "max": 5.9000000059604645
+        },
+        "focusEntryRenderCpuMs": {
+          "median": 11.300000004470348,
+          "p95": 18,
+          "p99": 18,
+          "max": 18
+        },
+        "identity": {
+          "runtimePatchSha256": "55656ba9d1a8571b2d5e1830c87a435ab0a4bf15019ca8bab845c937e6ca1b56",
+          "runtimeUntrackedSha256": {}
+        },
+        "identityAfter": {
+          "runtimePatchSha256": "55656ba9d1a8571b2d5e1830c87a435ab0a4bf15019ca8bab845c937e6ca1b56",
+          "runtimeUntrackedSha256": {}
+        },
+        "actions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      },
+      {
+        "rate": 4,
+        "samples": 1277,
+        "elapsedMs": 32069.79999999702,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.60000000000036,
+          "p99": 83.39999999999782,
+          "max": 116.70000000000073
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 20,
+          "p99": 41.899999998509884,
+          "max": 63.70000000298023
+        },
+        "over33": 91,
+        "over50": 71,
+        "layout": {
+          "LayoutCount": 1926,
+          "LayoutDuration": 0.365009,
+          "RecalcStyleCount": 3993,
+          "RecalcStyleDuration": 2.223518,
+          "TaskDuration": 31.874422
+        },
+        "focusEntryCpuMs": {
+          "median": 25.80000000447035,
+          "p95": 29.400000005960464,
+          "p99": 29.400000005960464,
+          "max": 29.400000005960464
+        },
+        "focusEntryRenderCpuMs": {
+          "median": 48.399999998509884,
+          "p95": 63.70000000298023,
+          "p99": 63.70000000298023,
+          "max": 63.70000000298023
+        },
+        "identity": {
+          "runtimePatchSha256": "55656ba9d1a8571b2d5e1830c87a435ab0a4bf15019ca8bab845c937e6ca1b56",
+          "runtimeUntrackedSha256": {}
+        },
+        "identityAfter": {
+          "runtimePatchSha256": "55656ba9d1a8571b2d5e1830c87a435ab0a4bf15019ca8bab845c937e6ca1b56",
+          "runtimeUntrackedSha256": {}
+        },
+        "actions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      }
+    ]
+  },
+  "review": {
+    "utc": "2026-11-17T19:58:20.206987+00:00",
+    "controlledSheets": 4,
+    "ordinaryViews": 2,
+    "dimensions": "1024x576",
+    "inspectedOnce": true,
+    "finding": "Native controlled8RGBpairs exact;ordinary views retain hero silhouettes,statuslabels and readablelowercontrols. Normal/reduced effect distinctions unchanged."
+  },
+  "limits": "Candidate Vite build at6310;independent CXI6301 production review pending.4x CPU is a stress proxy. Normalframep95 unchanged16.8ms;4xslowtail~66.6ms/71longframes remains. CPU headroom does not mean allstutterresolved."
+}
