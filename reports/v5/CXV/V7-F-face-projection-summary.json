@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-17T18:31:24.517Z",
+  "source": "9c785519c579777fc02f9fe2f6fbe4e0ca9c1c2d",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "c55f18ff973fbbe50cf7aa4410c9320b1718fb544b1fada90a80832598dd1e9d",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only4Float64 static face projection values per vertex. Both baseline/candidate point functions are cloned from the same current browser method and share dispatch.910 real pose cases compare every vertex byte, arbitrary sockets, feet and face corners.7 alternating warmed blocks/mode/fixture at4x CPU, no renderer timing. Prototype retains baseline+extended arrays for comparison; report incremental cache and cold rebuild costs. This is not ordinary FPS, GPU parity, or runtime integration.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "pass": true,
+  "ended": "2026-11-17T18:31:37.997Z",
+  "raw": "work/v5/CXV/films/V7-F-face-projection-weights/report.json",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "motionCases": 420,
+      "differences": [],
+      "warmOriginalMedianMs": 239.10000000149012,
+      "warmFaceCacheMedianMs": 213.5,
+      "warmImprovementPercent": 10.71,
+      "coldRebuildOriginalMedianMs": 46.399999998509884,
+      "coldRebuildFaceCacheMedianMs": 50.30000000447035,
+      "additionalCpuCacheBytes": 1045440,
+      "additionalBytesPerPose": 34848
+    },
+    {
+      "id": "boss",
+      "motionCases": 490,
+      "differences": [],
+      "warmOriginalMedianMs": 274.19999999552965,
+      "warmFaceCacheMedianMs": 249.79999999701977,
+      "warmImprovementPercent": 8.9,
+      "coldRebuildOriginalMedianMs": 54.19999999552965,
+      "coldRebuildFaceCacheMedianMs": 57.600000001490116,
+      "additionalCpuCacheBytes": 1219680,
+      "additionalBytesPerPose": 34848
+    }
+  ],
+  "decision": "Prototype only. Warm geometry improvement justifies measuring ordinary play and considering smaller cache layout; cold rebuild and memory regress. No runtime edit or READY. Do not infer FPS or GPU memory from these timings."
+}
