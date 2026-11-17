@@ -23,3 +23,4 @@ Authoring>=50%;measurement/logging<=25%;<=8selectedJPG<=1280px/item;trackedV4rep
 No deploy/mainmerge/contracts/secrets. Ownports5990-5993;never SHIP5994-5998/8546;killownedPIDonly.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;afterfreezeDemoDayuntil29Nov12UTC.
 Re-read scoped rules at item/commit/newart/hour; pushretry3; no ART PR. Python tools/.venv/bin/python.
+QA each checkpoint: read /Users/bao/taskbar-hero-qa/reports/v4-qa/REQUESTS-TO-ART.md; prioritize own BLOCKER/MAJOR fixes; preserve other ownership lanes.

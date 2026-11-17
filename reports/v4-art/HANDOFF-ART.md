@@ -1,10 +1,10 @@
-# ART execution anchor - 2026-11-17T01:00:30.405335+00:00
+# ART execution anchor - 2026-11-17T01:20:53.513336+00:00
 ACTIVE: A11 banner runtimeR2 validationPASS:2701webtests/323files,typecheck,3F6,lane275,554DOMsamples;0intersections/loss/jump/mismatch.105hashes unchanged since0839ee2d3. Fresh films/900p/native review/receipt pending. R1 failed13contacts retained;A10 integrated transfer OPEN.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: open film-review.json unreviewed indices4..7 (4/83 complete), then continue83total without reopening. Native48/48+15sheets and3layout900 CLOSED. After all reviews explicitstage and receipt-banner-runtime.py --attempt r2.
+NEXT1: review film-review.json unreviewed indices36..39; 36/83 done. Native48/48+15sheets and3layout900 CLOSED. Finish83action sheets, explicitstage, receipt-banner-runtime.py --attempt r2.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: caster-identified banner private drills/comparison, then number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:97d041e38 verified(origin accepted); native48/48 and15sheets complete; original6crop failures retained. Runtime0839ee2d3/105hashes unchanged.
+LAST PUSH:4109469bf verified(origin accepted); fresh720p/900p capturePASS and3layout reviews saved. Runtime0839ee2d3/105hashes unchanged.
 RECEIPT: placement-runtime-r1/acceptance-receipt-r2.json now valid after9path staging;221lane pathsPASS/102runtimehashes unchanged. Original r1 receipt/audit/failure retained; full acceptance OPEN.
 LIVE: capture83097/900p84381 completePASS;3x30s720p/audio/2700markers+2799layout900samples. Native84888 complete. No capture job remains; Vite20416/5990 craftOFF. Logs remain local.
 STOP/INBOX checked 2026-11-17T00:56:14.283499+00:00: noSTOP; current user continuation active. SHIP latest16Nov18:25; no finalbaseline. Resume500grouped/729all status entries,index empty; inherited dirt retained.
@@ -20,7 +20,7 @@ Yarn livealpha720/900 area28.386/29.833%,faces<=2.525%,socket<=2.939px,occlusion
 BOSSSPAN actual720min79.350580% atf324 FAIL;900min77.945150% atsample293,100/946fail. wave1/wave3 bboxPASS bothsizes. Effects excluded from unit span.
 A9FORMATION: new5films5400frames and3x900p2799samples have0bbox failures; boss span min82.521452%/81.077955%. OriginalYarn79.35/77.95 failures retained; seeA9/r2/acceptance-receipt.json.
 YarnR1 contact lost to retaliation,R2 helperocclusion39.54%,R4 secondarygap4.5426% retained; R5holds90ms contact/immediateflash+recoil/giantrear/allrecipientedges. live-probe-r3 is duplicateR2; actual layer fixr3-layer.
-IMAGEOPENS:0afterrewrite;15native+atlas+3layout900+actionindices0..3 CLOSED; original6crop misses preserved. Native48/48, action4/83. No reopen. A10JPG8/8;A11selectedJPG0/8.
+IMAGEOPENS:0afterrewrite; all15native+atlas+3layout900+actionindices0..35 CLOSED; 36/83actions. Six originalcrop failures retained. A10JPG8/8;A11selectedJPG0/8.
 A9FOCUS:0encoded samples after600ms; originalYarnlatefocus retained. R2maxshake3.116674px/observed100ms; strictcontinuousduration/reducedmotionfilm OPEN. Textnamesreadable; backplatecollisionretained.
 Needle receipt ae1d5a76f/sourceb92cd2dc3; originalA5flightFAIL retained; same-sourceR2 fiveframesPASS. Neveroverwrite V4-A7-NEEDLE/FLIGHT-R2;25scoped24complete/5own/1ult;blind9/9.
 A6closedscoped:blind1=10/12FAILretained,attempt2=11/12;22hashes,3films,10windowsincl36sboss;2648/315/typecheck/3F6. Do not repeat closed reviews.
@@ -36,3 +36,4 @@ RULES<=30,HANDOFF<=40,STATE<=120,STATUS-VI<=25Vietnamese;output<=40lines/3KB,dif
 Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=1024wide<=4/look<=8/HANDOFF. Max4attempts/problem then change method, never gates.
 Learn6sources/1paper/3docs+ownexperiment;study->2drills->privatecomparison->production. Authoring>=50%,measurement/logging<=25% remains unproven; do not fabricate percentages.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC;authorizedthrough29Nov12UTC. No summary finals while active.
+QA: 2026-11-17T01:21:19.315025+00:00 REQUESTS-TO-ART.md read; no independently reproduced findings yet. Re-read each checkpoint and fix own BLOCKER/MAJOR. sha256=3b6eb2935fe8ee71670a6f3f3299d3a754f9cca4850fb82c11e0548022a4dc43
