@@ -1,7 +1,7 @@
 # ART execution anchor - 2026-11-17T01:20:53.513336+00:00
 ACTIVE: A11 banner runtimeR2 validationPASS:2701webtests/323files,typecheck,3F6,lane275,554DOMsamples;0intersections/loss/jump/mismatch.105hashes unchanged since0839ee2d3. Fresh films/900p/native review/receipt pending. R1 failed13contacts retained;A10 integrated transfer OPEN.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC->codex/v4-art-demoday-2026-11-19.
-NEXT1: review film-review.json unreviewed indices36..39; 36/83 done. Native48/48+15sheets and3layout900 CLOSED. Finish83action sheets, explicitstage, receipt-banner-runtime.py --attempt r2.
+NEXT1: fix QA-5 seven presentation contract tests in ART files; inspect QA Q2/test-failure-summary.json and own cat-presentation/outcome-labels tests. Then resume banner film-review first unreviewed rows; 40/83 reviewed; receipt-banner-runtime.py --attempt r2.
 NEXT2: A10scene-ready transfer18:25request: SHIP27,546,250-252B/8MB,images22,861,499B;imagebudget3,315,248B. Read S8/initial-transfer-decision-1.json and initial-transfer-2.json; original delivery savings remain separate.
 NEXT3: caster-identified banner private drills/comparison, then number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
 LAST PUSH:4109469bf verified(origin accepted); fresh720p/900p capturePASS and3layout reviews saved. Runtime0839ee2d3/105hashes unchanged.
@@ -37,3 +37,5 @@ Onebuiltin imagegenatatime;save raw+exactprompt+provenance;noCLI/Fal;reviews<=10
 Learn6sources/1paper/3docs+ownexperiment;study->2drills->privatecomparison->production. Authoring>=50%,measurement/logging<=25% remains unproven; do not fabricate percentages.
 Sync17/18Nov11:30UTC;finalprep19Nov09:30/push10:00;freeze19Nov12UTC;authorizedthrough29Nov12UTC. No summary finals while active.
 QA: 2026-11-17T01:21:19.315025+00:00 REQUESTS-TO-ART.md read; no independently reproduced findings yet. Re-read each checkpoint and fix own BLOCKER/MAJOR. sha256=3b6eb2935fe8ee71670a6f3f3299d3a754f9cca4850fb82c11e0548022a4dc43
+
+RESUME 2026-11-17T02:10:55.951219+00:00: current pasted order supersedes prior pause. No STOP. Designer inbox empty. QA-5 MAJOR open; transfer refreshed29,650,191B (SHIP). Preserve local untracked media/private refs; stage only own review/text work.
