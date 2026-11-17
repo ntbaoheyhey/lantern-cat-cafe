@@ -145,12 +145,14 @@ export class PaintedVfx {
  private protect(c:CanvasRenderingContext2D,view:SceneView,labels:readonly Rect[]){
   if(!this.faceMask){
    const mask=document.createElement('canvas');mask.width=mask.height=128;const m=mask.getContext('2d')!;
-   const fade=m.createRadialGradient(64,64,64*.18/.55,64,64,64);fade.addColorStop(0,'#000');fade.addColorStop(.25,'#000');fade.addColorStop(1,'#0000');
+   const fade=m.createRadialGradient(64,64,0,64,64,64);fade.addColorStop(0,'#000');fade.addColorStop(.6,'#000');fade.addColorStop(1,'#0000');
    m.fillStyle=fade;m.fillRect(0,0,128,128);this.faceMask=mask;
   }
   c.save();c.globalCompositeOperation='destination-out';c.globalAlpha=1;let count=0;
   for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
-   c.drawImage(this.faceMask,face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);count++;
+   // Protect the eyes/muzzle, with a soft elliptical edge. A body-sized circle
+   // also erased nearby hand-held slashes and support impacts entirely.
+   c.drawImage(this.faceMask,face.x-size*.25,face.y-size*.2,size*.5,size*.4);count++;
   }
   if(!view.formationC2){c.fillStyle='#000';for(const box of labels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();return count;
