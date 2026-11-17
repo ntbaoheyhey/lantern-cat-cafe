@@ -1,0 +1,168 @@
+{
+  "utc": "2026-11-17T18:38:57.647Z",
+  "ended": "2026-11-17T18:40:06.348Z",
+  "source": "afe352a131d7a1db15c321d906c0fcb204099458",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+  "pass": true,
+  "errors": [],
+  "facePrototype": "compact",
+  "facePrototypeDetails": {
+    "drawings": 7,
+    "slots": 2,
+    "note": "Tool-only compact override. Builds extended arrays lazily and retains baseline arrays; cold copy overhead and retained duplicate memory are diagnostic, not proposed runtime startup or memory."
+  },
+  "toolHashes": {
+    "tools/v5vfx/benchmark-boss-play.mjs": "59089ae77c690ff4ece861bdbb991295046c92bdb7298e0944bc16f89728765c",
+    "tools/v5vfx/face-projection-prototype.mjs": "22fdd5c1e3c17208a05610b057b742d2c9ea3944fd851bac6d71a481997122cc"
+  },
+  "raw": "work/v5/CXV/films/V7-F-face-play-prototype/report.json",
+  "comparison": [
+    {
+      "rate": 1,
+      "before": {
+        "submitCpuMs": {
+          "median": 4,
+          "p95": 5.5999999940395355,
+          "p99": 15,
+          "max": 28.799999997019768
+        },
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.400000000001455
+        },
+        "over50": 0,
+        "startup": {
+          "samples": 117,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.799999999999727,
+            "p99": 16.800000000000182,
+            "max": 49.90000000000009
+          },
+          "submitCpuMs": {
+            "median": 4,
+            "p95": 15.200000002980232,
+            "p99": 18.600000001490116,
+            "max": 42.5
+          },
+          "over33": 1,
+          "over50": 0
+        }
+      },
+      "prototype": {
+        "submitCpuMs": {
+          "median": 3.899999998509884,
+          "p95": 5.700000002980232,
+          "p99": 15.100000001490116,
+          "max": 31.899999998509884
+        },
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000291,
+          "max": 33.400000000001455
+        },
+        "over50": 0,
+        "startup": {
+          "samples": 117,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.700000000000273,
+            "p99": 16.800000000000182,
+            "max": 50.09999999999991
+          },
+          "submitCpuMs": {
+            "median": 4,
+            "p95": 14.299999997019768,
+            "p99": 19.899999998509884,
+            "max": 41.399999998509884
+          },
+          "over33": 1,
+          "over50": 0
+        }
+      },
+      "retainedBaselineBytes": 2387088,
+      "extendedDuplicateBytes": 2927232
+    },
+    {
+      "rate": 4,
+      "before": {
+        "submitCpuMs": {
+          "median": 18.399999998509884,
+          "p95": 26.100000001490116,
+          "p99": 48,
+          "max": 122.89999999850988
+        },
+        "frameMs": {
+          "median": 33.29999999999927,
+          "p95": 66.70000000000073,
+          "p99": 100,
+          "max": 183.39999999999782
+        },
+        "over50": 73,
+        "startup": {
+          "samples": 53,
+          "frameMs": {
+            "median": 33.30000000000018,
+            "p95": 100,
+            "p99": 183.29999999999973,
+            "max": 183.29999999999973
+          },
+          "submitCpuMs": {
+            "median": 20.100000001490116,
+            "p95": 57.899999998509884,
+            "p99": 132.10000000149012,
+            "max": 132.10000000149012
+          },
+          "over33": 13,
+          "over50": 8
+        }
+      },
+      "prototype": {
+        "submitCpuMs": {
+          "median": 18.100000001490116,
+          "p95": 25.80000000447035,
+          "p99": 49.100000001490116,
+          "max": 131.5
+        },
+        "frameMs": {
+          "median": 33.29999999999927,
+          "p95": 66.70000000000073,
+          "p99": 83.40000000000146,
+          "max": 216.6999999999971
+        },
+        "over50": 74,
+        "startup": {
+          "samples": 54,
+          "frameMs": {
+            "median": 33.30000000000018,
+            "p95": 83.40000000000009,
+            "p99": 183.4000000000001,
+            "max": 183.4000000000001
+          },
+          "submitCpuMs": {
+            "median": 19.100000001490116,
+            "p95": 59,
+            "p99": 136.60000000149012,
+            "max": 136.60000000149012
+          },
+          "over33": 13,
+          "over50": 9
+        }
+      },
+      "retainedBaselineBytes": 2326104,
+      "extendedDuplicateBytes": 2848824
+    }
+  ],
+  "review": "Two fresh1280x720 views measured then inspected once at1024x576. Faces/cards/status badges visible. Actual play clocks differ,not same-frame image parity.",
+  "decision": "Keep out of runtime: normal median submit4.0\u21923.9ms,4x18.4\u219218.1ms;framep95 unchanged16.7/66.7;4xlongframes73\u219274 and startup132.1\u2192136.6ms. Prototype retains/copies both arrays; actual direct allocation unmeasured. Evidence does not yet justify added0.52\u20130.61MB permanent CPUcache. Do not claim FPS improvement. Continue per-frame invariants experiment without per-vertex storage."
+}

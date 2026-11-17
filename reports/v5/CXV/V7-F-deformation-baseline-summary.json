@@ -1,0 +1,150 @@
+{
+  "utc": "2026-11-17T18:35:36.193Z",
+  "ended": "2026-11-17T18:36:45.180Z",
+  "source": "929a3c335bc9b61ec1f542227adbf906c8376400",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "hardware": "Apple M3 Pro",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+  "pass": true,
+  "errors": [],
+  "raw": "work/v5/CXV/films/V7-F-deformation-baseline/report.json",
+  "runs": [
+    {
+      "rate": 1,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 33.400000000001455
+      },
+      "submitCpuMs": {
+        "median": 4,
+        "p95": 5.5999999940395355,
+        "p99": 15,
+        "max": 28.799999997019768
+      },
+      "over33": 0,
+      "over50": 0,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.800000000000182,
+          "max": 49.90000000000009
+        },
+        "submitCpuMs": {
+          "median": 4,
+          "p95": 15.200000002980232,
+          "p99": 18.600000001490116,
+          "max": 42.5
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1913,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 49.90000000000009
+        },
+        "submitCpuMs": {
+          "median": 4,
+          "p95": 5.600000001490116,
+          "p99": 15.700000002980232,
+          "max": 42.5
+        },
+        "over33": 1,
+        "over50": 0
+      },
+      "samples": 1796,
+      "elapsedMs": 32000.89999999851,
+      "actions": 26,
+      "ultimates": 6,
+      "cpuCacheBytes": 2387088,
+      "cachedPoses": 31
+    },
+    {
+      "rate": 4,
+      "frameMs": {
+        "median": 33.29999999999927,
+        "p95": 66.70000000000073,
+        "p99": 100,
+        "max": 183.39999999999782
+      },
+      "submitCpuMs": {
+        "median": 18.399999998509884,
+        "p95": 26.100000001490116,
+        "p99": 48,
+        "max": 122.89999999850988
+      },
+      "over33": 92,
+      "over50": 73,
+      "startup": {
+        "samples": 53,
+        "frameMs": {
+          "median": 33.30000000000018,
+          "p95": 100,
+          "p99": 183.29999999999973,
+          "max": 183.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 20.100000001490116,
+          "p95": 57.899999998509884,
+          "p99": 132.10000000149012,
+          "max": 132.10000000149012
+        },
+        "over33": 13,
+        "over50": 8
+      },
+      "wholeRun": {
+        "samples": 1065,
+        "frameMs": {
+          "median": 33.29999999999927,
+          "p95": 66.70000000000073,
+          "p99": 100,
+          "max": 183.39999999999782
+        },
+        "submitCpuMs": {
+          "median": 18.5,
+          "p95": 26.80000000447035,
+          "p99": 53.600000001490116,
+          "max": 132.10000000149012
+        },
+        "over33": 105,
+        "over50": 81
+      },
+      "samples": 1012,
+      "elapsedMs": 32020.20000000298,
+      "actions": 25,
+      "ultimates": 5,
+      "cpuCacheBytes": 2326104,
+      "cachedPoses": 30
+    }
+  ],
+  "review": {
+    "utc": "2026-11-17T18:39:44.667686+00:00",
+    "views": [
+      "review-1x.png",
+      "review-4x.png"
+    ],
+    "size": [
+      1024,
+      576
+    ],
+    "sourceSize": [
+      1280,
+      720
+    ],
+    "inspectedOnce": true,
+    "findings": "All seven actors and four hero cards visible. Status badges and Panko shield number readable; Binding rings do not cover faces. Normal/4x final frame differs because actual gameplay progression differs. No same-frame visual or FPS-equivalence claim."
+  }
+}

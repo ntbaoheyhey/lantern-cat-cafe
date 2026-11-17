@@ -10,13 +10,17 @@ const fixture=await import(production?integration+'/tools/v5int/production-fixtu
 const {chromium,config,openFixture}=fixture;
 const runtimeEvidence=production?fixture.runtimeEvidence:candidateEvidence;
 const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
+const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
+if(facePrototype&&facePrototype!=='compact')throw Error('CXV_FACE_PROTOTYPE must be compact');
 if(numberMetricsMode&&!['on','off'].includes(numberMetricsMode))throw Error('CXV_NUMBER_METRICS must be on or off');
 const report={numberMetricsMode,utc:new Date().toISOString(),source:execFileSync('git',production?['-C',integration,'rev-parse','HEAD']:['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),production,hardware:execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim(),viewport:{width:1280,height:720},method:'Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.',runs:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+report.facePrototype=facePrototype;
 try{
  for(const rate of process.env.CXV_PROFILE?[4]:[1,4]){
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false});
   const runIdentity=runtimeEvidence();
+  if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
@@ -54,6 +58,7 @@ try{
   if(process.env.CXV_PROFILE){const {profile}=await cdp.send('Profiler.stop');await writeFile(resolve(out,'cpu.cpuprofile'),JSON.stringify(profile));}
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
+  if(facePrototype)run.prototypeWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.__cxvFaceWeights?.size??0,bytes:[...(e.craftPose?.drawing.__cxvFaceWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});
   run.identity=runIdentity;run.identityAfter=runtimeEvidence();run.blockedRequests=blockedRequests;
   if(production&&runIdentity.indexSha256!==run.identityAfter.indexSha256)errors.push('Production index changed during this run; do not use as stable paired evidence');
