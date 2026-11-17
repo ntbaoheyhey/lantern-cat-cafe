@@ -1,0 +1,65 @@
+/** Whole ultimate focus placement against the unchanged scene and CSS. */
+import assert from 'node:assert/strict';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {chromium,config,openFixture} from './browser-fixture.mjs';
+import {runtimeEvidence} from './runtime-evidence.mjs';
+import {installPendingLabelOverride} from './pending-label-override.mjs';
+const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-focus-label-batch');await mkdir(out,{recursive:true});
+const freezeCss=process.env.CXV_FREEZE_CSS==='1';
+const hash=x=>createHash('sha256').update(x).digest('hex');
+const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),toolSha256:hash(await readFile(new URL(import.meta.url))),overrideSha256:hash(await readFile(new URL('./pending-label-override.mjs',import.meta.url))),viewport:{width:1280,height:720},method:'Browser-only module override, actual scene/current CSS at fixed300ms ultimate focus. Compare original and batched current/pending footprints, placed labels, protected faces and title placement across4heroes, normal/reduced, current/empty/shield/wide/overflow/missing pending sources. No production acceptance or FPS claim. Screenshots follow geometry measurement.',modes:[],checks:[],errors:[]};
+const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+try{
+ for(const batch of [false,true]){
+  const mode={batch,rows:[]};let override;
+  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:async p=>{await p.addInitScript(()=>{Math.random=()=>.5;});override=await installPendingLabelOverride(p,{batch,audit:true});}});
+  report.url=page.url();await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
+  for(const hero of ['mochi','soot','clover','panko'])for(const reduced of [false,true]){
+   await page.evaluate(async({hero,reduced})=>{
+    const {pilotFixture}=await import('/src/game/cardrpg/vfx-layered/fixture.ts'),{configureSequence}=await import('/src/game/cardrpg/battle-v3/sequence.ts');
+    const f=pilotFixture(hero+'-4'),m=window.__depthReview,s=window.__depthScene;
+    Object.assign(m,{galleryBattle:f.battle,plan:configureSequence(f.plan),galleryId:hero+'-4',animationAt:300,paused:true,sceneStarted:true,labOpen:false});m.state.settings.reducedMotion=reduced;m.notify(false);s.ensureActors(s.view());cancelAnimationFrame(s.raf);
+   },{hero,reduced});
+   await page.waitForFunction(()=>window.__depthScene.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
+   await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));cancelAnimationFrame(window.__depthScene.raf);});
+   const rows=await page.evaluate(async()=>{
+    const {bindWorldStatusSource}=await import('/src/game/cardrpg/battle-v3/world-label-status.ts');
+    const s=window.__depthScene,m=window.__depthReview;cancelAnimationFrame(s.raf);s.phaseNoticeAt=-100;
+    s.render({...s.view(),fixedTime:20.3,paused:true,galleryPreview:true},0);
+    const nodes=[...document.querySelectorAll('.b3-world')],parents=[...new Set(nodes.map(n=>n.parentElement))];
+    const actual=()=>m.visualBattle.actors.map(a=>({id:a.id,shield:a.shield>0,stacks:a.statuses.map(v=>v.stacks)}));
+    const cases=[['current',actual()],['empty',nodes.map(n=>({id:n.dataset.actor,shield:false,stacks:[]}))],['shield',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[]}))],['wide',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[12345,99,3]}))],['overflow',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[12345,99,3,4,5]}))],['missing',[]]],result=[];
+    try{
+     for(const [name,pending]of cases){
+      for(const parent of parents)bindWorldStatusSource(parent,()=>pending);
+      const before=nodes.map(n=>n.outerHTML);globalThis.__cxvFullFocusInputs=[];s.cinema.identified.reset();
+      s.render({...s.view(),fixedTime:20.3,paused:true,galleryPreview:true},0);
+      const title=document.querySelector('.b3-focus-name'),r=title.getBoundingClientRect(),inputs=globalThis.__cxvFullFocusInputs;
+      result.push({name,inputs,placement:{x:r.x,y:r.y,width:r.width,height:r.height,style:title.getAttribute('style'),caster:title.dataset.caster,clear:title.dataset.placement,hidden:title.hidden,text:title.textContent},clean:JSON.stringify(before)===JSON.stringify(nodes.map(n=>n.outerHTML))&&!parents.some(p=>p.querySelector('[inert][aria-hidden="true"]'))});
+     }
+    }finally{for(const parent of parents)bindWorldStatusSource(parent,actual);delete globalThis.__cxvFullFocusInputs;}
+    s.cinema.identified.reset();s.render({...s.view(),fixedTime:20.3,paused:true,galleryPreview:true},0);return result;
+   });
+   const animations=freezeCss?await page.evaluate(async()=>{const animations=document.getAnimations();for(const animation of animations){animation.currentTime=300;animation.pause();}await Promise.all(animations.map(a=>a.ready));return animations.map(a=>({name:a.animationName??null,time:a.currentTime,state:a.playState}));}):undefined;
+   const capture=resolve(out,`${hero}-${reduced?'reduced':'normal'}-${batch?'batch':'single'}.png`);await page.screenshot({path:capture});
+   mode.rows.push({hero,reduced,rows,capture,animations});
+   console.log(`${batch?'batch':'single'} ${hero} ${reduced?'reduced':'normal'} ${rows.length} groups`);
+  }
+  mode.override=override;report.modes.push(mode);report.errors.push(...errors);await page.close();
+ }
+ const [single,batch]=report.modes;
+ for(let i=0;i<single.rows.length;i++)for(let j=0;j<single.rows[i].rows.length;j++){
+  const a=single.rows[i],b=batch.rows[i],x=a.rows[j],y=b.rows[j];let equal=true,detail;
+  try{assert.deepEqual(y,x);}catch(error){equal=false;detail=error.message;}
+  report.checks.push({hero:a.hero,reduced:a.reduced,name:x.name,equal,clean:x.clean&&y.clean,measured:x.inputs.length===1&&y.inputs.length===1,detail});
+ }
+ for(const hero of ['mochi','soot','clover','panko']){
+  const inputs=['normal-single','normal-batch','reduced-single','reduced-batch'].flatMap(k=>['-i',resolve(out,hero+'-'+k+'.png')]);
+  execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...inputs,'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',resolve(out,hero+'-comparison.jpg')]);
+ }
+ report.freezeCss=freezeCss;report.pass=!report.errors.length&&report.checks.length===48&&report.checks.every(c=>c.equal&&c.clean&&c.measured);
+}catch(error){report.pass=false;report.error=String(error);}
+finally{await browser.close();report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({out,pass:report.pass,error:report.error,errors:report.errors,checks:report.checks.length,failures:report.checks.filter(c=>!c.equal||!c.clean||!c.measured).map(({detail,...c})=>c)}));if(!report.pass)process.exitCode=1;}

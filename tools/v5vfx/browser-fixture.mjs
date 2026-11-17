@@ -4,10 +4,10 @@ export {chromium,config};
 const root=process.cwd();
 export async function openFixture(browser,fixture,{width=1280,height=720,url='http://127.0.0.1:6310',fixedClock=true,setupPage}={}){
  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
- if(setupPage)await setupPage(page);
  const errors=[],blockedRequests=[];page.on('pageerror',e=>errors.push(e.message));
  await page.addInitScript(()=>{localStorage.setItem('lantern.entered.v3','1');localStorage.setItem('lantern.coach.v3',JSON.stringify({disabled:true}));});
  await page.route('**/*',route=>{const u=new URL(route.request().url());if(['127.0.0.1','localhost'].includes(u.hostname)||['data:','blob:'].includes(u.protocol))return route.continue();blockedRequests.push({url:u.origin+u.pathname,type:route.request().resourceType()});return route.abort();});
+ if(setupPage)await setupPage(page);
  await page.goto(url+'/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1');
  await page.waitForFunction(()=>window.__depthReview,null,{timeout:90000});
  await page.evaluate(async({fixture,seed,root})=>{

@@ -13,3 +13,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T18:02:37.467431+00:00 Đã merge greenm1.10;wake15phút ACTIVE giữ nguyên. Pose crop có guard2px:130bounds/GPU giữ nguyên,80ảnh gốc/delivery đạt,96test+typecheck0. Startup thường47.6→39.8ms,4x160.7→130ms nhưng p95frame4x vẫn66.7ms;không kết luận hết giật.2ảnh mới rõ;gửi CXI kiểm độc lập. AGV aa2e04753 chỉ sửa HANDOFF báo hết việc sai;T-CXV-1/2 và T-CXI-9 vẫn mở.
 
 2026-11-17T18:09:51.138345+00:00 Tự kiểm bản6301 d69b9dc5c/indexaf3adbe2:14sheet+2ảnh mới,0lỗi;boss entrance,4hero ultimate,status/victory giữ hành vi. Trận32s mỗi mức CPU có26đòn+3status/6ultimate đủ4hero;voice lead-in0 cho đòn,status không có field voice. Đây là bản candidate đang được CXI xét,không gọi là posecrop đã duyệt.
+
+2026-11-17T19:23:42.853738+00:00 Wake15phút ACTIVE đã cập nhật đúng ORDER-V7. Không có WIP V-A3 mới;capture-arrival.mjs giữ nguyên. Thử gom đo nhãn DOM:52nhóm riêng+48nhóm focus đủ4hero cho kết quả vị trí/cleanup như cũ;4ảnh reduced trùng pixel. Đang đo6lượt trận thật trong fixture trước khi quyết định sửa runtime;không tuyên bố tăng FPS.
