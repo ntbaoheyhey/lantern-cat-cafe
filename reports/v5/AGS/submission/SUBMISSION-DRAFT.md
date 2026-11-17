@@ -4,7 +4,7 @@
 Taskbar Hero: A cosy desktop cat card RPG with local asset-proofing.
 
 ## Description
-Taskbar Hero is a cosy desktop cat card-RPG: arrange a four-cat crew, defend a lantern-lit café, collect equipment and improve the team. Its optional Avalanche Fuji integration supports signed-voucher item ownership, trading and transaction receipts. The current browser demo plays locally without a wallet; its battle rewards do not establish an on-chain mint.
+Taskbar Hero is a cosy desktop cat card-RPG: arrange a four-cat crew, defend a lantern-lit café, collect equipment and improve the team. Its optional integration supports signed-voucher item ownership, trading and transaction receipts. The current browser demo plays locally without a wallet; its battle rewards do not establish an on-chain mint.
 
 ## Tech Stack
 * Vite + React + TypeScript + Three/Spine
@@ -16,7 +16,7 @@ Taskbar Hero is a cosy desktop cat card-RPG: arrange a four-cat crew, defend a l
 3. Observe proof of asset ownership for earned relics.
 
 ## Known Limits
-* Demo currently operates on Fuji testnet. No public transaction hash is currently supplied by this evidence.
+* Demo currently operates locally. No public transaction hash is currently supplied by this evidence.
 
 ## Team
 AGS (Sound & QA), CXI (Integration), CXV (VFX), AGV (Art).

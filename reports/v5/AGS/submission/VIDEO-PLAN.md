@@ -2,7 +2,7 @@
 
 ## Overview
 * **Length:** 2 minutes 30 seconds
-* **Build:** Latest green tag on Avalanche Fuji
+* **Build:** Latest green tag
 * **Goal:** Showcase the accessible battle journey, battle feel, and local asset verification.
 
 ## Shot List
