@@ -4,7 +4,8 @@ import {readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
-const root=resolve(import.meta.dirname,'../..'),out=resolve(root,'work/v5/CXV/films/V7-F-victory-background-attribution');
+const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_BACKGROUND_OUT??resolve(root,'work/v5/CXV/films/V7-F-victory-background-attribution'));
+assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));
 const dest=resolve(out,'measurements.json');assert(!existsSync(dest));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const decode=p=>execFileSync('ffmpeg',['-v','error','-i',p,'-frames:v','1','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],{maxBuffer:20_000_000});
@@ -19,8 +20,9 @@ for(const t of trials){
 }
 const pairs=runs[0].captures.map(c=>({name:c.name,...compare(buffers.get('baseline/'+c.name),buffers.get('native/'+c.name))}));
 const sheets=[];
-for(const name of ['ordinary','decoded-png']){
- const frames=runs.flatMap(r=>[name==='ordinary'?'ordinary':'decoded-png',name==='ordinary'?'image-restored':'original-restored'].map(n=>r.captures.find(c=>c.name===n))),path=resolve(out,'review-'+name+'.jpg');assert(!existsSync(path));
+const frameSets=runs[0].blobTrials?.length ? [['all-bytes-blob-0','blob-restored-0'],['all-bytes-blob-1','blob-restored-1']] : [['ordinary','image-restored'],['decoded-png','original-restored']];
+for(const names of frameSets){
+ const frames=runs.flatMap(r=>names.map(n=>r.captures.find(c=>c.name===n))),path=resolve(out,'review-'+names[0]+'.jpg');assert(!existsSync(path));
  execFileSync('ffmpeg',['-v','error',...frames.flatMap(f=>['-i',f.path]),'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',path]);
  const meta=JSON.parse(execFileSync('ffprobe',['-v','error','-show_entries','stream=width,height','-of','json',path],{encoding:'utf8'})).streams[0];assert(meta.width<=1024&&meta.height<=1024);sheets.push({path,...meta,sha256:hash(readFileSync(path)),order:frames.map(f=>f.path)});
 }

@@ -6,7 +6,8 @@ import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
-const production=resolve(root,'work/v5/CXV/films/V7-F-victory-demand-production'),out=resolve(root,'work/v5/CXV/films/V7-F-victory-background-attribution');
+const production=resolve(root,'work/v5/CXV/films/V7-F-victory-demand-production'),out=resolve(process.env.CXV_BACKGROUND_OUT??resolve(root,'work/v5/CXV/films/V7-F-victory-background-attribution'));
+assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));
 assert(!existsSync(resolve(out,'provenance.json')));await mkdir(out,{recursive:true});
 const bytes=await readFile(resolve(production,'build.json')),build=JSON.parse(bytes),provenance={utc:new Date().toISOString(),buildManifest:resolve(production,'build.json'),buildManifestSha256:hash(bytes),tools:[],verifiedArtifacts:[]};
 for(const a of build.artifacts){for(const f of a.files){const b=await readFile(resolve(a.dist,f.path));assert.equal(b.length,f.bytes);assert.equal(hash(b),f.sha256);}provenance.verifiedArtifacts.push({mode:a.mode,files:a.files.length,indexSha256:a.indexSha256});}

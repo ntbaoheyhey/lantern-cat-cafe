@@ -45,6 +45,35 @@ try{
  await capture('after-readback');
  await page.evaluate(async()=>{const a=window.__cxvBackground;const i=new Image();i.src=a.decoded;await i.decode();document.querySelector('.uv-sheet').style.setProperty('--b2-scene',`url("${a.decoded}")`,'important');});await settle();await capture('decoded-png');
  await restore();await settle();await capture('original-restored');
+ if(process.env.CXV_BACKGROUND_BLOB==='1'){
+  report.blobTrials=[];
+  for(let trial=0;trial<2;trial++){
+   const info=await page.evaluate(async()=>{
+    const a=window.__cxvBackground,source=a.computed.match(/url\("?([^"\)]+)"?\)/)?.[1];
+    const response=await fetch(source),bytes=await response.arrayBuffer();if(!response.ok)throw Error('Background fetch failed');
+    const digest=await crypto.subtle.digest('SHA-256',bytes),sha256=Array.from(new Uint8Array(digest),v=>v.toString(16).padStart(2,'0')).join('');
+    const url=URL.createObjectURL(new Blob([bytes],{type:'image/webp'}));a.blob=url;
+    document.querySelector('.uv-sheet').style.setProperty('--b2-scene',`url("${url}")`,'important');
+    return{source,bytes:bytes.byteLength,sha256,url};
+   });
+   assert.equal(info.sha256,'f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001');
+   await page.waitForTimeout(1000);await capture('all-bytes-blob-'+trial);
+   await restore();await settle();await capture('blob-restored-'+trial);
+   await page.waitForTimeout(1000);await capture('blob-restored-settled-'+trial);
+   await page.evaluate(()=>{URL.revokeObjectURL(window.__cxvBackground.blob);delete window.__cxvBackground.blob;});report.blobTrials.push(info);
+  }
+ }
+ if(process.env.CXV_BACKGROUND_DECODE_CHOICES){
+  const manifestPath=resolve(process.env.CXV_BACKGROUND_DECODE_CHOICES);assert(manifestPath.includes('/work/v5/CXV/'));
+  const manifestBytes=await readFile(manifestPath),manifest=JSON.parse(manifestBytes);assert.equal(manifest.sourceSha256,'f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001');
+  report.decodeChoices={manifestPath,sha256:hash(manifestBytes),...manifest};
+  for(const choice of manifest.decodes){
+   const bytes=await readFile(choice.path);assert.equal(hash(bytes),choice.sha256);
+   const routePath='/__cxv_bg_'+choice.name+'.png';await page.route('**'+routePath,route=>route.fulfill({body:bytes,contentType:'image/png'}));
+   await page.evaluate(async path=>{const image=new Image();image.src=path;await image.decode();document.querySelector('.uv-sheet').style.setProperty('--b2-scene',`url("${path}")`,'important');},routePath);
+   await settle();await capture('decode-'+choice.name);await restore();await page.waitForTimeout(1000);await capture('decode-restored-'+choice.name);
+  }
+ }
  assert.equal((await state()).backgroundImage,originalState.backgroundImage);
  report.errors=errors;report.blockedRequests=blockedRequests;assert.equal(errors.length,0);assert.equal(blockedRequests.length,0);report.pass=true;
 }catch(error){report.error=String(error);process.exitCode=1;}finally{report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}

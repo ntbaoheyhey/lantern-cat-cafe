@@ -1,0 +1,1069 @@
+{
+  "utc": "2026-11-17T23:43:41.398Z",
+  "provenance": {
+    "utc": "2026-11-17T23:41:53.427Z",
+    "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+    "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+    "tools": [
+      {
+        "name": "run-victory-background.mjs",
+        "sha256": "9ce047b88e7874d82af60a7d646f31ab27751972bdace029a06ed23f0a172d76"
+      },
+      {
+        "name": "diagnose-victory-background.mjs",
+        "sha256": "26d0db295331316c47d9baa76de03764d2a85b0d75d75b1869389f59e4513da7"
+      },
+      {
+        "name": "production-candidate-fixture.mjs",
+        "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      }
+    ],
+    "verifiedArtifacts": [
+      {
+        "mode": "baseline",
+        "files": 3764,
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e"
+      },
+      {
+        "mode": "native",
+        "files": 3764,
+        "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "utc": "2026-11-17T23:41:55.471Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "artifactMode": "baseline",
+      "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+      "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+      "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Preserved artifact with unmodified crew scheduling. First2s settle and32s4x reproduce original capture ordering. Subsequent page-only sheet image removal/restoration and browser-canvas PNG substitution isolate background contribution. No application source changes or performance claim.",
+      "references": {
+        "baseline": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+        "variant": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+      },
+      "captures": [
+        {
+          "name": "ordinary",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/ordinary.png",
+          "utc": "2026-11-17T23:42:33.845Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "without-sheet-image",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/without-sheet-image.png",
+          "utc": "2026-11-17T23:42:34.009Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "6575b4909244ad37bd5a88e39fa69cc204b64189097938f2a91f2213092e0383",
+          "rgbSha256": "381d09641d321be0caa79641f8bbbfd7788befe184e13a8e98a16ed355b6bd4e",
+          "reference": "different",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), none",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 44.295169270833334,
+          "stdDev": 42.008578023554264,
+          "againstOriginalBaseline": {
+            "exact": false,
+            "changedPixels": 615250,
+            "maxChannel": 135,
+            "meanAbsoluteChannel": 9.411555627893518,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 615258,
+            "maxChannel": 135,
+            "meanAbsoluteChannel": 9.417458767361111,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "image-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/image-restored.png",
+          "utc": "2026-11-17T23:42:34.269Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "after-readback",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/after-readback.png",
+          "utc": "2026-11-17T23:42:34.689Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "decoded-png",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/decoded-png.png",
+          "utc": "2026-11-17T23:42:35.033Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/original-restored.png",
+          "utc": "2026-11-17T23:42:35.268Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        }
+      ],
+      "pass": true,
+      "browser": "156.0.8078.4",
+      "decodedBackground": {
+        "source": "http://127.0.0.1:6311/art/v3-shell/b2/backdrop-garden.webp",
+        "width": 2560,
+        "height": 1440,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/browser-decoded-background.png",
+        "bytes": 6333379,
+        "sha256": "f18426ff6b4e3372ac58cba40c3c70df399b5cc84f44dc40d70364352b092c33"
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "ended": "2026-11-17T23:42:35.270Z"
+    },
+    {
+      "utc": "2026-11-17T23:42:35.574Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7",
+      "artifactMode": "native",
+      "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+      "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+      "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Preserved artifact with unmodified crew scheduling. First2s settle and32s4x reproduce original capture ordering. Subsequent page-only sheet image removal/restoration and browser-canvas PNG substitution isolate background contribution. No application source changes or performance claim.",
+      "references": {
+        "baseline": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+        "variant": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+      },
+      "captures": [
+        {
+          "name": "ordinary",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/ordinary.png",
+          "utc": "2026-11-17T23:43:12.695Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "without-sheet-image",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/without-sheet-image.png",
+          "utc": "2026-11-17T23:43:12.839Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "6575b4909244ad37bd5a88e39fa69cc204b64189097938f2a91f2213092e0383",
+          "rgbSha256": "381d09641d321be0caa79641f8bbbfd7788befe184e13a8e98a16ed355b6bd4e",
+          "reference": "different",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), none",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 44.295169270833334,
+          "stdDev": 42.008578023554264,
+          "againstOriginalBaseline": {
+            "exact": false,
+            "changedPixels": 615250,
+            "maxChannel": 135,
+            "meanAbsoluteChannel": 9.411555627893518,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 615258,
+            "maxChannel": 135,
+            "meanAbsoluteChannel": 9.417458767361111,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "image-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/image-restored.png",
+          "utc": "2026-11-17T23:43:13.064Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "after-readback",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/after-readback.png",
+          "utc": "2026-11-17T23:43:13.482Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "decoded-png",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/decoded-png.png",
+          "utc": "2026-11-17T23:43:13.794Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/original-restored.png",
+          "utc": "2026-11-17T23:43:13.996Z",
+          "width": 1280,
+          "height": 720,
+          "pngSha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "reference": "baseline",
+          "state": {
+            "sheet": {
+              "x": 51.1875,
+              "y": 82,
+              "width": 1177.625,
+              "height": 620,
+              "top": 82,
+              "right": 1228.8125,
+              "bottom": 702,
+              "left": 51.1875
+            },
+            "crew": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "canvas": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461,
+              "height": 245,
+              "top": 263,
+              "right": 594.1875,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "animations": 0,
+            "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp\")",
+            "backgroundSize": "auto, cover",
+            "backgroundPosition": "0% 0%, 50% 50%",
+            "backgroundOrigin": "padding-box, padding-box",
+            "backgroundClip": "border-box, border-box",
+            "opacity": "1",
+            "transform": "none"
+          },
+          "mean": 53.29154116030092,
+          "stdDev": 42.49862380062293,
+          "againstOriginalBaseline": {
+            "exact": true,
+            "changedPixels": 0,
+            "maxChannel": 0,
+            "meanAbsoluteChannel": 0,
+            "bounds": null
+          },
+          "againstOriginalVariant": {
+            "exact": false,
+            "changedPixels": 182269,
+            "maxChannel": 12,
+            "meanAbsoluteChannel": 0.10948676215277778,
+            "bounds": [
+              51,
+              82,
+              1229,
+              702
+            ]
+          }
+        }
+      ],
+      "pass": true,
+      "browser": "156.0.8078.4",
+      "decodedBackground": {
+        "source": "http://127.0.0.1:6312/art/v3-shell/b2/backdrop-garden.webp",
+        "width": 2560,
+        "height": 1440,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/browser-decoded-background.png",
+        "bytes": 6333379,
+        "sha256": "f18426ff6b4e3372ac58cba40c3c70df399b5cc84f44dc40d70364352b092c33"
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "ended": "2026-11-17T23:43:13.998Z"
+    }
+  ],
+  "pairs": [
+    {
+      "name": "ordinary",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    },
+    {
+      "name": "without-sheet-image",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    },
+    {
+      "name": "image-restored",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    },
+    {
+      "name": "after-readback",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    },
+    {
+      "name": "decoded-png",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    },
+    {
+      "name": "original-restored",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanAbsoluteChannel": 0,
+      "bounds": null
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/review-ordinary.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4f89f19db2a546ba28bf46f90f2b16f28c1f7159f07920b42082fa4351f6c302",
+      "order": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/ordinary.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/image-restored.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/ordinary.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/image-restored.png"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/review-decoded-png.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4f89f19db2a546ba28bf46f90f2b16f28c1f7159f07920b42082fa4351f6c302",
+      "order": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/decoded-png.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/baseline/original-restored.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/decoded-png.png",
+        "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-background-attribution/native/original-restored.png"
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-17T23:44:25.838623+00:00",
+  "limits": "Reversible page-only background probes on preserved local artifacts. No performance or independent judge acceptance. Original exact-pixel failures remain retained. A substituted PNG is diagnostic, not permission to change background art or screenshot tolerance.",
+  "review": "Two fresh measured1024x576 sheets have identical content hashes;viewed this batch once. Four heroes,title,receipt,topHUD and Next remain readable. All6paired comparisons exact;10original/restored/readback/PNG frames match oldbaseline. No variant reproduced;attribution remains unresolved."
+}
