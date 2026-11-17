@@ -7,7 +7,6 @@ export const unusedPosters = ['biscuit','brioche','cinnamon','clover','inkcap','
   'marigold','mochi','panko','soot','sorrel','velvet','yarn-giant']
   .map(owner => `cinematics/${owner}-ult-poster.webp`);
 
-/** @returns {import('vite').Plugin} */
 export function excludeUnusedPosters() {
   let output;
   return {
