@@ -4,8 +4,8 @@ Q0 done. Q1 done02:05:57UTC. Q2 active through~03:23:48UTC; Q3/Q5/Q6 queued; Q4/
 Latest accepted push: work/v4qa/last-push.txt (b98756a306652b3a7e6d0aa1a5afae5f2ce83eed at resume).
 Runtime target b1e4398a8844fa51d2784760e92ed24528d13d2b; current pinned SHIP4b4c41114ea9795820aa9204023e0954a9810f84 differs in audio/App/CSS.
 ART8a256755d4178741dafb9e3faf1957885d1a6a1f differs from1aaa5b18 in reports only; no integration rehearsal yet.
-Production supervisor PID13685 alive, ports6200/6201/6202; one owned job. Cold14675/post-cold21099 completed, do not restart.
-Funding-fault shell launch PID28873 exited with empty log/no evidence. Retry detached Popen after load permits; no verdict yet.
+Production supervisor PID13685 alive, ports6200/6201/6202; two owned jobs including funding attempt2. Cold14675/post-cold21099 completed, do not restart.
+Funding attempt1 stopped before balance mutation on wrong31337 expectation; attempt2 PID33563 running with owned Anvil43113/client/process guards and rollback evidence.
 Load11.48 at02:17UTC; next heavy eligibility check>=02:22UTC. All timing shared-machine, indicative; no FPS/audio gates.
 Both frozen installs PASS; clone95,341tracked paths; Forge fixture and both submodules PASS; earlier submodule suspicion disproved.
 Q1 all three viewport journeys reached7stages and18successful local receipts each; zero console/network errors.
@@ -22,7 +22,7 @@ Q2 local checks PASS:typecheck/Supabase/Forge/icons/build. FAIL:root7presentatio
 Q2 root test totals7failed/2697passed across2failed/320passedfiles; QA5ART. Q2/test-failure-summary.json.
 Q2 manifest drift matches committed159input blobs with no worktree changes; QA6SHIP. Q2/manifest-triage.json.
 Q2 typography rejects10token declarations in3CSSfiles; no demonstrated readability defect; QA7SHIP. Q2/typography-triage.json.
-Q2 initial environment inventory110names/6dynamic sites; required names/fallback recheckPASS; optional/builtin classification ongoing.
+Q2 reconciled environment inventory123names: initial110 plus11frontend aliases and2dynamic backend names;10runtime omissions classified as4builtins/6optional-development-legacy settings.
 Q2 original deploy parser counted23 because it excluded equip/upgrade; corrected inventory25/25handlers documented, no missing paths.
 Q2/function-deploy-coverage-recheck-4b4c4111.json proves corrected coverage; no product finding for the parser defect.
 QA1fixed52aaaba39; QA3fixed4b4c4111 by current8Spool/2retained/6YARN wording vs independently decoded receipt.

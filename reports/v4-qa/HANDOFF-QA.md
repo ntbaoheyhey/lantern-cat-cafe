@@ -1,17 +1,19 @@
 # QA execution anchor — 2026-11-17T02:15:36.731104+00:00
-ACTIVE: Q2 local-safe runbook checks finished; triaging manifest/typography and local funding fault. Q1 complete.
-NEXT 1: Diagnose manifest against tracked blobs and typography declarations; reconcile 23 runbook deployment mentions against 25 handlers.
-NEXT 2: After load<=9 (next check>=02:22:11UTC), launch funding-fault through detached Popen/nohup/nice15; prior shell launch did not survive.
-NEXT 3: Finalize Q2 matrix/STATUS-VI/findings and checkpoint; start Q3 with LEARN/Q3.md and guarded snapshot export.
-RUNNING: production PID13685 work/v4qa/jobs/production-1.log; funding-fault launch PID28873 exited with empty log/no evidence; not running. max2/current1.
+ACTIVE: Q2 consolidated runbook matrix; reserve attempt2 running; refresh SHIP runtime after local rollback.
+NEXT 1: Inspect PID33563 funding-fault-3.log and Q2/reserve-fault-reproduction-2.json; require actual visible errors and rollbackVerified before classifying.
+NEXT 2: After funding ends, stop only owned production PID13685, fetch/pin clone to4b4c41114ea9795820aa9204023e0954a9810f84, rebuild as production2 under load guard; preserve production1 evidence.
+NEXT 3: Independently recheck QA2transfer/QA4phone on production2; finalize Q2 and checkpoint; then Q3 LEARN/export/scan.
+RUNNING: production PID13685 work/v4qa/jobs/production-1.log; funding-fault PID33563 work/v4qa/jobs/funding-fault-3.log; max2/current2.
 FINISHED: cold PID14675; post-cold PID21099 (completed02:09:07UTC); never relaunch or regenerate verified metadata.
-LAST PUSH: 2026-11-17T02:14:04.109757+00:00 b98756a306652b3a7e6d0aa1a5afae5f2ce83eed
+LAST PUSH: 2026-11-17T02:20:58.056672+00:00 89f2049340217f0cde3028d46ddaf8397d2a9e49
 TARGET SHIP runtime: b1e4398a8844fa51d2784760e92ed24528d13d2b; latest pinned SHIP 4b4c41114ea9795820aa9204023e0954a9810f84.
 TARGET ART: 8a256755d4178741dafb9e3faf1957885d1a6a1f. Q4 sync1 at17Nov12UTC/latest14.
-FIXTURE: owned production preview6200/API6201/Anvil6202 chain31337. Funding fault snapshots and restores this local fixture only.
+FIXTURE: owned production preview6200/API6201/Anvil6202 configured chain43113 (verified owned anvil/v1.8.6). Funding fault snapshots and restores this local fixture only.
 Q1 ENDED02:05:57UTC: three paths,54successful local receipts;12JPEGs; transferFAIL; phone attributionQA4; desktop closed-audio flags false positives.
 Q2 PASS: typecheck/Supabase/Forge/icons/build. FAIL: root7presentation tests (QA5ART), manifest, typography (triage ongoing).
 Q2 metadata final:7942files/248741169bytes; endpoints and runtime/index preservation verified; completed evidence pushed.
-OPEN: QA2 transfer, QA3 withdrawal wording, QA4 phone attribution (SHIP); QA5 presentation tests (ART). QA1fixed52aaaba39.
+OPEN: QA2transfer/QA4phone/QA6manifest/QA7typography SHIP; QA5tests ART. QA1fixed52aaaba39; QA3fixed4b4c4111.
 PUBLIC: reserve candidate unconfirmed; no public transaction. Vercel upload-size concern conditional on plan/packaging.
 CHECKPOINT: noSTOP/noQA pause/noactualDEPLOYED line at02:14UTC; inspect next checkpoint. Q2 timebox ends~03:23:48UTC.
+
+Prior reserve attempt1 stopped before mutation on incorrect31337 assumption; preserved Q2/reserve-fault-reproduction.json. Attempt2 verifies owned process, Anvil identity and local receipt before changing balance.

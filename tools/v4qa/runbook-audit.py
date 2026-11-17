@@ -18,6 +18,10 @@ for name in files:
     for no,line in enumerate(text.splitlines(),1):
         for pattern in patterns:
             for match in pattern.finditer(line):names[match.group(1)].append(f'{name}:{no}')
+        if name=='apps/web/src/game/cardrpg/chain/flags.ts':
+            for match in re.finditer(r'\benv\.(VITE_[A-Z0-9_]+)',line):names[match.group(1)].append(f'{name}:{no}')
+        if name=='supabase/functions/chain-items/index.ts' and 'Deno.env.get(body.action' in line:
+            for match in re.finditer(r"['\"](CHAIN_[A-Z0-9_]+)['\"]",line):names[match.group(1)].append(f'{name}:{no}')
         if re.search(r'(?:process|import\.meta)\.env\[[^\'\"]|Deno\.env\.get\([^\'\"]|Deno\.env\.toObject\(',line):dynamic.append(f'{name}:{no}')
 all_doc=set(re.findall(r'\b[A-Z][A-Z0-9_]{2,}\b',book))
 rows=[]

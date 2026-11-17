@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-17T02:24:52.070823+00:00",
+  "sources": [
+    "https://vercel.com/docs/limits",
+    "https://vercel.com/docs/cli/deploy#prebuilt"
+  ],
+  "documentedLimits": {
+    "cliUploadHobbyBytes": 100000000,
+    "cliUploadProBytes": 1000000000,
+    "cliSourceFileLimit": 15000
+  },
+  "localStaticOutput": {
+    "files": 7942,
+    "bytes": 248741169
+  },
+  "actualPrebuiltOutputMeasured": false,
+  "accountPlanVerified": false,
+  "packagingOrDeduplicationVerified": false,
+  "verdict": "Conditional upload-size concern; no deployment failure established",
+  "functionSizeScope": "No Vercel API function source found; backend Supabase Edge Functions. Static total is not traced function size."
+}
