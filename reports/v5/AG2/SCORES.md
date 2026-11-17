@@ -22,3 +22,10 @@
 | `soot-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
 | `soot-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
 | `soot-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
+| `clover-impact` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-impact.jpg | PASS |
+| `clover-projectile` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-projectile.jpg | PASS |
+| `clover-anticipation` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
+| `clover-decal` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-decal.jpg | PASS |
+| `clover-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
+| `clover-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
+| `clover-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
