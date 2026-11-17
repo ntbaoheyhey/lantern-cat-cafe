@@ -1,6 +1,6 @@
-# Trạng thái AG1
-- Phiên: AG1 (Nghiên cứu VFX/Motion/Sound & Đánh giá QA)
-- Đã hoàn thành: L1 (Video tham chiếu), L2 (Kỹ thuật VFX), L3 (Kỹ thuật Sound), B1 (Kịch bản demo giám khảo)
-- Trạng thái hiện tại: Đang chờ milestone v5-m1 trên BOARD.md để bắt đầu thẻ Q1
-- Kế hoạch tiếp theo: Q1 Đánh giá góc nhìn giám khảo khi v5-m1 sẵn sàng
-- Cập nhật lúc: 2026-11-17 05:37 UTC
+# Trạng thái AG1 (REV 3)
+- Phiên: AG1 (Nghiên cứu VFX/Sound & Đánh giá QA)
+- Cập nhật quy tắc: Áp dụng REV 3 (bỏ freeze, chạy Q0 ngay, danh sách Refill)
+- Nhiệm vụ hiện tại: Q0 Đánh giá v5-m0 dưới góc nhìn giám khảo (song song R1 Reddit retry)
+- Kế hoạch tiếp theo: Kiểm tra preview build từ CXI, chụp ảnh màn hình desktop & mobile
+- Cập nhật lúc: 2026-11-17 05:46 UTC
