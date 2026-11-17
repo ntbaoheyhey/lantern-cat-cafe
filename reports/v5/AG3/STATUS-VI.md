@@ -1,5 +1,5 @@
 # AG3 TRẠNG THÁI HIỆN TẠI
-- Hoàn thành thẻ A0: Inventory 601 ảnh, hiệu chuẩn đạt chuẩn chất lượng.
-- Hoàn thành thẻ A1: Đã chuyển đổi 66 file rig & depth map WebP, giảm 87% (từ 84MB xuống 10.9MB).
-- Đã tạo 3 ảnh montage kiểm chứng và báo cáo A1-report.csv.
-- Chuẩn bị tiến hành thẻ A2: Gameplay và shell art.
+- Hoàn thành A0, A1, A2: Rig, depth map và gameplay art đã được chuyển đổi tối ưu.
+- Đã tạo các biến thể WebP chuẩn kích thước và half-depth tiết kiệm đến 87%.
+- Đang bắt đầu thẻ A3: Dự báo dung lượng chuyển tải cho trận đánh đầu tiên (first battle size forecast).
+- Mục tiêu: Tải trận đầu <= 8 MB (từ 29.5 MB ban đầu).
