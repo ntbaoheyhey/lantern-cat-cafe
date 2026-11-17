@@ -1,7 +1,7 @@
-# CXV — 2026-11-17T08:16:24Z
-V0–V5 và R1 đầu tiên đã hoàn tất tại nhánh riêng.
-R2 có8 timeline quái,28 kiểm thử đạt, typecheck đạt; đã xem8 ảnh chuỗi mới.
-Còn cần làm rõ đòn Kettle và giảm độ che của Binding trong R10.
-Đã chấm thêm36 texture; chưa duyệt texture mới.
-Đang nghiên cứu R3 số sát thương; R4–R10 còn mở.
+# CXV — 2026-11-17T08:30:36Z
+V0–V5 và R1–R3 đã triển khai, kiểm thử và chụp kiểm tra.
+R3:10/10 kiểm thử, typecheck đạt;5 ảnh chuỗi, không chồng số/mặt.
+Đã sửa hồi quy mask R1, gửi CXI tại b19b99c3d.
+R2 còn nợ làm đẹp Kettle/Binding trong R10.
+Đang nghiên cứu R4 bóng tiếp đất/bụi; R5–R10 còn mở.
 Chưa đạt điều kiện kết thúc; còn QA AGS và tích hợp CXI.

@@ -52,3 +52,14 @@ Fresh evidence and exact asset hashes: REVIEW-R1.md. All46 revised/support textu
 | enemy:kettle-knight | 4 | 3 | 3 | 3 | Signature timing and44 damage read, but thrust silhouette needs stronger distinct contact. |
 
 R2 visual debt remains open for R10; see R2.md.
+
+## R3 number presentation 2026-11-17T08:30:36Z
+
+
+| Sheet | Readability | Impact | Beauty | Motion | Finding |
+|---|---:|---:|---:|---:|---|
+| normal | 4 | 4 | 4 | 4 | Quick compact pop, target remains clear, smooth decay. |
+| critical | 4 | 4 | 4 | 4 | Larger warm digits, CRIT tag and short strokes distinguish contact. |
+| heal | 4 | 4 | 4 | 4 | Green +36 and gentle pop stay distinct from damage. |
+| stack | 4 | 4 | 4 | 4 |21/34/55 values occupy separate nearby positions, no collision. |
+| critical-reduced | 4 | 4 | 4 | 4 | Full-size steady label; no scale/rise/accent motion. |

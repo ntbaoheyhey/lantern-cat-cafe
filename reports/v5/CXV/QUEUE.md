@@ -7,12 +7,16 @@
 - [x] V5 Performance + reduced motion — DONE07:34Z;21/21,tsc0,pixel gate,9 sheets,boss58.67fps
 - [x] R1 first integration pass — DONE;46 texture scores,12 full-action sheets,12 selected hashes,19 tests/typecheck; production loader via CXI
 - [x] R2 enemy variants — DONE implementation/gates;28/28+tsc0,8 final reviewed sheets; R10 visual debt R2.md
-- [ ] R3 damage numbers — ACTIVE research since08:02:36; audit existing numbers before refinement
+- [x] R3 damage numbers — DONE;10/10+tsc0,5 fresh sheets, zero overlaps; R3.md
+
+- [ ] R4 ground shadows/dust — ACTIVE research since08:20:25; native/craft shadow audit ongoing
+- [ ] R5 status visuals — QUEUED
+- [ ] R6 outcome moments — QUEUED
 
 ## REFILL LIST (append next three unfinished items when queue is empty)
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
 - [x] R2 Enemy variants: needle-moth, binding-thread, teacup-healer, kettle-knight (90m)
-- [ ] R3 Damage numbers: pop, stack, crit flourish, distinct healing (45m)
+- [x] R3 Damage numbers: pop, stack, crit flourish, distinct healing (45m)
 - [ ] R4 Ground contact shadows and impact dust under every unit (45m)
 - [ ] R5 Status visuals: burn, poison, stun, slow, shield (45m)
 - [ ] R6 Victory/defeat/level-up presentation moments (45m)
