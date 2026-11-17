@@ -14,9 +14,10 @@ export function excludeUnusedPosters() {
     apply: 'build',
     configResolved(config) {
       output = resolve(config.root, config.build.outDir);
-      // Never allow this output-only operation to point at source/public files.
+      // Trim only the standard production output. Custom outputs (including
+      // isolated wallet bundle tests) still build, without touching their files.
       if (output !== resolve(config.root, 'dist')) {
-        throw new Error('Poster exclusion requires the web dist output directory.');
+        output = undefined;
       }
     },
     async closeBundle() {

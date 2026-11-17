@@ -1,10 +1,10 @@
 # CXI V5 continuation
 ACTIVE: repair R6 output-only plugin regression blocking R3/I2 full gates; rules reread2026-11-17T08:56:09Z; STOP absent.
-NEXT 1: Skip poster exclusion for nonstandard build outDir; production wallet bundle tests use temporary directories.
+NEXT 1: Inspect pipelinePID15079 work/v5/CXI/jobs/r3-contexts-fixed-pipeline.log; typecheck/web/root/build/transfer.
 NEXT 2: Fresh typecheck/web/root/build/transfer; capture R7 receipt at390px.
 NEXT 3: Merge Kettle correction when READY, validate current12 AVIF derivatives, continue QA/proof/refill.
 Last pushed implementation e3960033748199f5517d8b36bac0982403e9e8b7.
-Pipeline6780 ended08:54:08 exit1: web2890pass/2failed, both wallet/prodBundle temporary-outDir builds.
+Active pipelinePID15079 work/v5/CXI/jobs/r3-contexts-fixed-pipeline.log; previous6780 ended08:54:08 exit1: web2890pass/2failed, both wallet/prodBundle temporary-outDir builds.
 Preview PID80797 work/v5/CXI/jobs/m1-preview.log; last completed build21e993c9c.
 Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
 Last transfer21e993c9c/r4-mobile:wave1=9371757,wave3=9883166,boss=9273352; allFAIL8MB,0errors.
