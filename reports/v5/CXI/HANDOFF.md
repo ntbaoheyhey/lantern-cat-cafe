@@ -1,9 +1,9 @@
 # CXI V7 continuation
-ACTIVE: I-A publish validated m1.6 release checkpoint; I-E films3/3 complete; assistant: AGS.
-NEXT 1: Commit/push owned release reports; tag v5-m1.6 without moving existing tags; publish BOARD exact SHA and QA messages.
-NEXT 2: Review CXV READY2847a7028+52c2f99f1 code, merge owned lane after m1.6, run new pipeline and own captures.
+ACTIVE: I-A m1.6 published; review CXV V-A3 READY for next integration; assistant: AGS.
+NEXT 1: Finish source review of2847a7028 face-depth/drawing-layer/tests; merge52c2f99f1 then run new production validation.
+NEXT 2: Fresh own V-A3 idle/gesture/contact/reduced-motion capture at full judge URL, then next green tag and films.
 NEXT 3: Integrate accepted AGS4beds+AGV12AVIF then3cold transfers; residual wave3 gap needs own loader work.
-Last pushed SHA:6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb; green v5-m1.5=6b972c409; candidate viewport fix untagged.
+Last pushed SHA:daee132151e0e62efce131c8c0903205bfc4d138; green v5-m1.6 same; app6bb96c69d; tag pushed successfully.
 self-wake:cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; verified14:51UTC; existing exact V7 prompt, no duplicate.
 Last RULES re-read UTC:2026-11-17T14:58:18.408251+00:00;STOP-ALL/STOP-CXI absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
