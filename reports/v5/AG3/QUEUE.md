@@ -6,5 +6,5 @@
 - [x] A3 Size forecast for the first battle [time box 45 min]
 - [x] A4 Revisions [done: CXI REQs answered, forecast estimate labeled, compact JPG sheets published]
 - [x] R1 pngquant / lossy-alpha variants for files where WebP saved < 30% [45 min]
-- [ ] R2 AVIF siblings for the top 40 by size, with SSIM table; tell CXI which beat WebP by > 20% [60 min]
+- [x] R2 AVIF siblings for the top 40 by size, with SSIM table; tell CXI which beat WebP by > 20% [60 min]
 - [ ] R3 Distant-enemy variants at 0.75x for enemy rig pages (only if SSIM at display size >= 0.98) [60 min]

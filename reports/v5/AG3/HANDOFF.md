@@ -1,7 +1,7 @@
 # AG3 HANDOFF
-- ACTIVE card: R2 AVIF siblings for top 40 by size
-- NEXT 1: Select top 40 PNGs by size, convert to AVIF (magick q60/q70), and measure SSIM
-- NEXT 2: Produce reports/v5/AG3/R2-report.md identifying files beating WebP by >20%
-- NEXT 3: Send READY/INFO to CXI and proceed to R3
+- ACTIVE card: R3 Distant-enemy variants at 0.75x
+- NEXT 1: Generate 0.75x variants for rear/distant enemy rig pages (rig-page-0.75x.webp)
+- NEXT 2: Evaluate SSIM at display scale and compile reports/v5/AG3/R3-report.md
+- NEXT 3: Send READY/INFO to CXI and proceed to R4
 - last pushed SHA: 5067dde6f
-- last re-read UTC: 2026-11-17T05:48:00Z
+- last re-read UTC: 2026-11-17T05:51:00Z
