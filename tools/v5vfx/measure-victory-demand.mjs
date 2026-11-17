@@ -12,7 +12,7 @@ const report={utc:new Date().toISOString(),source:raw.source,runtimePatchSha256:
  method:raw.method,raw:{path:rawPath,sha256:hash(readFileSync(rawPath))},pixelChecks:raw.pixelChecks,runs:[],captures:[],sheets:[],reviewedUtc:null,visualReview:null,pass:raw.pass,errors:raw.errors};
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const run of raw.runs){
- report.runs.push({mode:run.mode,url:run.url,override:run.override,cases:run.cases,disposed:run.disposed,pendingUnmount:run.pendingUnmount,errors:run.errors,blockedRequests:run.blockedRequests});
+ report.runs.push({mode:run.mode,url:run.url,override:run.override,cases:run.cases.map(({cpuMs,...row})=>({...row,instrumentedDrawElapsedMs:cpuMs})),disposed:run.disposed,pendingUnmount:run.pendingUnmount,errors:run.errors,blockedRequests:run.blockedRequests});
  for(const c of run.captures){
   const bytes=readFileSync(c.path),width=bytes.readUInt32BE(16),height=bytes.readUInt32BE(20);assert.equal(width,1280);assert.equal(height,720);
   const rgb=execFileSync('ffmpeg',['-v','error','-i',c.path,'-vf','scale=160:90','-frames:v','1','-f','rawvideo','-pix_fmt','rgb24','pipe:1']);
@@ -26,5 +26,5 @@ for(const run of raw.runs){
   report.sheets.push({mode:run.mode,part,path,...dimensions,sha256:hash(readFileSync(path)),frames:names});
  }
 }
-report.limits='Candidate browser experiment with audit counters and explicit result fixtures. Pixel equality applies to the cropped victory crew region at named states; full scenes contain unrelated UI. Frozen normal frames are not timing/performance evidence. CPU counters include instrumentation overhead. Independent production/judge acceptance remains separate.';
+report.limits='Candidate browser experiment with audit counters and explicit result fixtures. Pixel equality applies to the cropped victory crew region at named states; full scenes contain unrelated UI. Frozen normal frames are not timing/performance evidence. Draw durations are performance.now elapsed values including instrumentation overhead, not exclusive CPU. Independent production/judge acceptance remains separate.';
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({output,pass:report.pass,sheets:report.sheets.map(s=>s.path)}));

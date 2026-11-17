@@ -10,7 +10,7 @@ import {installVictoryDemandOverride,hash} from './victory-demand-source.mjs';
 const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-victory-demand-prototype'));
 const modes=(process.env.CXV_VICTORY_MODES??'baseline,demand').split(',');assert(modes.every(mode=>['baseline','demand','native'].includes(mode)));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));
 assert(!existsSync(resolve(out,'report.json')));await mkdir(out,{recursive:true});
-const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),viewport:{width:1280,height:720},method:'Browser-response overrides on candidate6310; rule-resolved wave1 result fixture. No application edit. Same audit instrumentation for both modes. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay.',runs:[],errors:[],pass:false};
+const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),viewport:{width:1280,height:720},method:(modes.every(mode=>mode==='native')?'Native application scheduling on candidate6310; browser-response audit instrumentation only.':'Browser-response scheduling overrides on candidate6310; no application edit.')+' Rule-resolved wave1 result fixture. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay. Historical cpuMs field measures performance.now elapsed instrumented draw duration, not exclusive CPU.',runs:[],errors:[],pass:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
@@ -61,5 +61,5 @@ try{
  if(oracle){assert(oracle.pass);report.oracle={source:oracle.source,raw:resolve(root,'work/v5/CXV/films/V7-F-victory-demand-prototype/report.json')};report.method+=' Native mode changes no scheduling code in the browser; audit counters only, compared against preserved baseline pixel hashes.';}
  const first=oracle?oracle.runs.find(r=>r.mode==='baseline'):report.runs[0],second=oracle?report.runs[0]:report.runs[1];assert(first.captures.length===second.captures.length);
  report.pixelChecks=first.captures.map((c,i)=>({name:c.name,equal:c.rgbSha256===second.captures[i].rgbSha256,hashes:[c.rgbSha256,second.captures[i].rgbSha256]}));
- report.ended=new Date().toISOString();report.pass=report.pixelChecks.every(p=>p.equal)&&!report.errors.length;await save();if(!report.pass)process.exitCode=1;
+ report.ended=new Date().toISOString();report.pass=report.pixelChecks.every(p=>p.equal)&&!report.errors.length&&report.runs.every(r=>!r.blockedRequests.length);await save();if(!report.pass)process.exitCode=1;
 }catch(error){report.errors.push(String(error));await save();throw error;}finally{await browser.close();}

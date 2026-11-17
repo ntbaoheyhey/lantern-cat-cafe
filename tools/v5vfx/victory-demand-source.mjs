@@ -34,7 +34,7 @@ export async function sources(root){
  return {original,candidate,originalSha256:hash(original),candidateSha256:hash(candidate)};
 }
 export async function installVictoryDemandOverride(page,{mode='baseline'}={}){
- assert(['baseline','demand'].includes(mode));const evidence={mode,modules:[]};
+ assert(['baseline','demand','native'].includes(mode));const evidence={mode,modules:[]};
  await page.route('**/VictoryCrew.tsx*',async route=>{
   const response=await route.fetch(),original=await response.text();let body=mode==='demand'?demandSource(original):original;body=auditSource(body);
   evidence.modules.push({url:route.request().url(),sourceSha256:hash(original),overrideSha256:hash(body)});
