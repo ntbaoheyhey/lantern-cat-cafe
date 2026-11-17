@@ -300,7 +300,12 @@ export class SpineScene {
    // Keep Yarn's authored contact visible through the fixed90ms impact hold.
    // Retaliation still flashes/recoils at impact; its guard drawing follows the hold.
    const drawingHitAge=entry.asset==='yarn-giant'&&unit.id===plan?.actorId&&damageAge!==undefined&&['attack','ult'].includes(name)?damageAge-.09:damageAge;
-   entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge);
+   const lookId=unit.id===plan?.actorId?plan.targetIds.find(id=>id!==unit.id):
+    view.actors.find(a=>a.id===plan?.actorId&&a.side!==unit.side)?.id??view.actors.find(a=>a.side!==unit.side&&a.hp>0)?.id;
+   const lookHome=this.homes.get(lookId??'')?.point;
+   const look=lookHome?(lookHome.x-home.point.x)/Math.max(1,width*.3)*spriteFacing(actor.unit.nativeFacing,unit.side):0;
+   const critAge=frame&&unit.id===plan?.actorId&&plan.events.some(e=>e.actorId===unit.id&&e.type==='damage'&&e.critical)?(frame.elapsed-plan.beats[2]!.start)/1000:-1;
+   entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge,worldTime+phaseOffset,look,critAge);
    entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
    if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();

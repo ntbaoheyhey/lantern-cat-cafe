@@ -18,7 +18,7 @@
 17. Only card gates; no repository-wide scans, unchanged-SHA reverification, extra FPS studies/audio, or >2 same-fix attempts without a new idea.
 18. Original procedural/AG2 art only; no image generation or tracing by CXV. Owner rejected old AG2 textures pending new quality gate; fallback remains necessary.
 19. Free tools preapproved after TOOL-PROPOSALS logging; self-install without account/key/payment/sudo. Dependencies require CXI REQ; owner handles login/key/payment.
-20. Never secrets, deploys, hosting env vars, wallets, Fuji transactions, contracts, main-branch edits, submission.
+20. Never secrets/deploys/hosting vars/wallets/transactions/contracts/main/submission. Capture current build yourself; exact judge URL /?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; report URL + commit/tag + capture UTC; never judge old/committed screenshots.
 21. HANDOFF <=30 lines: ACTIVE, exact NEXT 1, NEXT 2/3, PIDs/logs, pushed SHA, last RULES read; STATUS-VI <=12 lines; PROGRESS one line/step.
 22. V1 gates: timeline/reduced-motion tests, typecheck, 12 reviewed sheets, AG4 cue list. V2: seeded 3s repeatability, feet <=1px, blink 2–6s, four hero idle/hit sheets, shared-machine boss >=55fps.
 23. V3: three enemy+boss sheets, Yarn weapon/target overlap, reaction tests. V4: severity-first AG1/owner fixes. V5: caps tests + boss >=55fps, pooling/reduced motion.

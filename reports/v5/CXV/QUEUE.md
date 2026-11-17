@@ -23,3 +23,7 @@
 - [ ] CXI 05:43Z compact charge/passive atlas contract — ACK sent; CXI granted narrow player.ts loader-only ownership; scene API pending
 - [ ] Print proof: queue empty; refill DONE; every REQ ACK/DONE; SCORES >=4/5; latest AG1 QA clear
 - [x] AG2 Mochi REVIEW request — ACK + DONE review sent; beauty 3/5 requires revision before wiring
+
+- [ ] AG1 Q0-F2/F3 legacy-route findings — ACK; corrected V5 route recheck requested
+- [x] CXI pose decode hook — ACK/DONE ownership + hidden mesh semantics sent
+- [ ] AG2 Clover/Panko/Mochi-v2 REVIEW — ACK; own fresh runtime capture pending

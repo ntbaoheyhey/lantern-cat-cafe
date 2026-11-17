@@ -3,6 +3,8 @@
  */
 import * as T from 'three';
 import {usePaintedAtlasColor} from './atlas-color';
+import {SecondaryMotion} from './secondary-motion';
+import {drawingExpression} from './drawing-expression';
 export type DrawingKey='K0'|'K1'|'K2'|'K3'|'K4'|'K5'|'K6';
 export type DrawingPoint=readonly [number,number];
 export interface DrawingSample {clip:string;seconds:number;reduced:boolean}
@@ -27,18 +29,26 @@ export function drawingAt(name:string,seconds:number):DrawingKey {
  return 'K0';
 }
 const smooth=(t:number)=>{const x=Math.max(0,Math.min(1,t));return x*x*(3-2*x);};
+const NO_OVERLAP:readonly DrawingOverlap[]=[];
 export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  key:DrawingKey='K0';private seconds=0;private clip='idle';private reduced=false;
  private source:Float32Array;
+ readonly secondary:SecondaryMotion;
+ private seekMotion:SecondaryMotion;
+ private expression:ReturnType<typeof drawingExpression>;
+ private overlapValues:Float32Array;
+ private vertex:[number,number]=[0,0];private output={x:0,y:0};
  constructor(readonly set:DrawingSet,readonly origin:DrawingPoint,readonly pixelScale:number){
   const m=set.manifest;
   super(new T.PlaneGeometry(m.canvas[0],m.canvas[1],32,32),new T.MeshBasicMaterial({map:set.textures.K0,
    transparent:true,side:T.DoubleSide,forceSinglePass:true,depthTest:false,depthWrite:false,toneMapped:false}));
-  usePaintedAtlasColor(this.material,false);this.name=`${m.unit} drawn keys`;this.frustumCulled=false;
+  usePaintedAtlasColor(this.material,false);this.expression=drawingExpression(this.material);
+  this.secondary=new SecondaryMotion(m.unit);this.seekMotion=new SecondaryMotion(m.unit);this.overlapValues=new Float32Array(Math.max(0,...Object.values(m.poses).map(f=>f.overlap?.length??0)));
+  this.name=`${m.unit} drawn keys`;this.frustumCulled=false;
   this.source=Float32Array.from(this.geometry.attributes.position!.array);this.sample('idle',0,false);
  }
  /** Every call starts from source coordinates; backwards seeks never integrate drift. */
- sample(name:string,seconds:number,reduced:boolean,damageAge?:number){
+ sample(name:string,seconds:number,reduced:boolean,damageAge?:number,clock=seconds,target=0,critAge=-1){
   // A caster may take retaliation during its own action. Override only its
   // drawing for the contact interval; the action/cue clock keeps running.
   if(damageAge!==undefined&&damageAge>=0&&damageAge<.18){name='hurt';seconds=damageAge;}
@@ -46,20 +56,29 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const key=!reduced&&name==='attack'&&seconds>=.27&&seconds<.33?'K2':drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
   this.material.map=this.set.textures[this.key]!;
   const positions=this.geometry.attributes.position!,m=this.set.manifest;
+  const hold=name==='attack'&&seconds>=.35&&seconds<.44?.35:(name==='ult'||name==='skill')&&seconds>=1.1&&seconds<1.19?1.1:name==='hurt'&&seconds<.09?0:seconds;
+  this.secondary.sample(clock-seconds+hold,name,hold,reduced,target,damageAge??(name==='hurt'?seconds:-1),critAge);
+  const overlaps=this.frame.overlap??NO_OVERLAP;
+  for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
+  this.expression.sample(this.frame.face,m.canvas,this.secondary.leftBlink,this.secondary.rightBlink);
   for(let i=0;i<positions.count;i++){
-   const point=this.point([this.source[i*3]!+m.canvas[0]/2,m.canvas[1]/2-this.source[i*3+1]!]);
+   this.vertex[0]=this.source[i*3]!+m.canvas[0]/2;this.vertex[1]=m.canvas[1]/2-this.source[i*3+1]!;
+   const point=this.point(this.vertex,this.key,undefined,this.output);
    positions.setXYZ(i,point.x,point.y,.002);
   }
   positions.needsUpdate=true;
  }
- point([x,y]:DrawingPoint,key:DrawingKey=this.key,at?:DrawingSample){
+ point([x,y]:DrawingPoint,key:DrawingKey=this.key,at?:DrawingSample,out={x:0,y:0}){
   const seconds=at?.seconds??this.seconds,clip=at?.clip??this.clip,reduced=at?.reduced??this.reduced;
   const m=this.set.manifest,height=m.opaqueHeight*this.pixelScale;
   const px=(x-m.baseline[0])*this.pixelScale,py=(m.baseline[1]-y)*this.pixelScale;
   const upper=smooth((py/height-.08)/.52),ms=seconds*1000;
+  const hold=clip==='attack'&&ms>=350&&ms<440?.35:(clip==='ult'||clip==='skill')&&ms>=1100&&ms<1190?1.1:clip==='hurt'&&ms<90?0:seconds;
+  const motion=at?this.seekMotion:this.secondary;
+  if(at)motion.sample(hold,clip,hold,reduced,0,clip==='hurt'?seconds:-1);
   let lift=0,lean=0;
   if(clip==='idle'||clip==='idle-phase2'||clip==='victory'){
-   lift=.018*Math.sin(seconds/3.6*Math.PI*2)*(reduced?.25:1);
+   lift=.018*motion.body;
   }else if(clip==='attack'){
    // Hold the contact drawing completely still through 350–440ms hit-stop.
    if(ms<270)lift=-.012*Math.sin(Math.min(1,ms/250)*Math.PI/2);
@@ -74,18 +93,32 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const frame=m.poses[key]!,[fx,fy,fw,fh]=frame.face;
   const faceDistance=Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8));
   const guard=smooth((faceDistance-1)*3)*smooth((m.baseline[1]-y)/40);
-  const hold=clip==='attack'&&ms>=350&&ms<440?.35:(clip==='ult'||clip==='skill')&&ms>=1100&&ms<1190?1.1:clip==='hurt'&&ms<90?0:seconds;
-  const activity=clip==='attack'?Math.sin(Math.min(1,hold/.8)*Math.PI):clip==='hurt'?Math.sin(Math.min(1,hold/.4)*Math.PI):clip==='ko'?0:1;
   let ox=0,oy=0;
-  for(const region of frame.overlap??[]){
+  const overlaps=frame.overlap??NO_OVERLAP;
+  for(let index=0;index<overlaps.length;index++){
+   const region=overlaps[index]!;
    const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];
-   const weight=smooth(1-dx*dx-dy*dy)*guard,phase=hold*Math.PI*2/(clip==='idle'?2.6:1.1)+region.phase;
-   const wave=Math.sin(phase)*activity*(reduced?.25:1)*weight;
+   const weight=smooth(1-dx*dx-dy*dy)*guard;
+   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
+  }
+  // Ears/tufts are above the protected face, driven after the body with their own spring.
+  if(!reduced&&clip!=='ko'){
+   const ex=(x-fx-fw*.5)/(fw*.62),ey=(y-fy+fh*.20)/(fh*.65),ear=smooth(1-ex*ex-ey*ey)*guard;
+   ox+=(motion.ear*2.3+motion.hair*.5)*ear;oy+=(motion.earFlatten*fh*.12+motion.ear*1.6)*ear;
+   const accessory=frame.sockets.mainHand;
+   if(accessory){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65),weight=smooth(1-ax*ax-ay*ay)*guard;
+    ox+=motion.accessory*1.4*weight;oy+=motion.accessory*2*weight;}
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
   const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
-  return{x:this.origin[0]+px*(1+smear)+height*lean*upper+ox*factor*this.pixelScale,y:this.origin[1]+py+height*lift*upper-oy*factor*this.pixelScale};
+  // Smoothly pin the measured foot contacts, including feet just above the baseline.
+  let planted=1;
+  for(const foot of frame.feet){const distance=Math.hypot(x-foot[0],y-foot[1]);planted=Math.min(planted,smooth(distance/24));}
+  const head=motion.look*m.opaqueHeight*.008*smooth((py/height-.32)/.38)*this.pixelScale;
+  out.x=this.origin[0]+px+(px*smear+height*lean*upper+ox*factor*this.pixelScale+head)*planted;
+  out.y=this.origin[1]+py+(height*lift*upper-oy*factor*this.pixelScale)*planted;
+  return out;
  }
  get frame(){return this.set.manifest.poses[this.key]!;}
  faceCorners(){const [x,y,w,h]=this.frame.face;return[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(p=>this.point(p as [number,number]));}

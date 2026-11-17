@@ -1,5 +1,5 @@
 /** Deterministic contact sheets of the actual scene; no player save or rules mutation. */
-import {chromium, config, openFixture} from '../../scripts/v3feel/browser-fixture.mjs';
+import {chromium, config, openFixture} from './browser-fixture.mjs';
 import {mkdir, writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
@@ -13,6 +13,7 @@ const report = {started: new Date().toISOString(), sourceCommit: execFileSync('g
 const browser = await chromium.launch({headless: true, args: ['--use-angle=metal']});
 try {
   const {page, errors} = await openFixture(browser, config.fixtures.find(f => f.id === 'boss'), {url, fixedClock: false});
+  report.url = page.url();
   for (const id of ids) {
     const dir = resolve(out, id); await mkdir(dir, {recursive: true});
     await page.evaluate(async ({id, root}) => {
