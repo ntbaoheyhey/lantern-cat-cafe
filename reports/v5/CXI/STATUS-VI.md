@@ -1,6 +1,7 @@
 # CXI — 17/11/2026
-Đã bật lịch CXI wake mỗi15phút trong chat này; đã commit/push WIP khôi phục.
-Bộ kiểm thử gần nhất đã xanh; đang tích hợp sửa Kettle và tạo tag xanh mới.
-Rủi ro1: tải lạnh8,82–9,38MB còn vượt8MB.
-Rủi ro2: đội hình390px còn nhỏ; cần quay lại luồng khách→trận→biên nhận.
-Rủi ro3: chưa có giao dịch Fuji thật; owner chạy lệnh và deploy, CXI chuẩn bị bộ chứng minh local/runbook.
+Đã push tag xanh v5-m1.1; typecheck/build xanh,2892web/5192root pass.
+Theo chỉ đạo mới: chỉ làm desktop; đã gỡ việc điện thoại khỏi hàng đợi.
+Đang sửa biên nhận trên đường chơi chính, đường dẫn mặc định và tải AVIF cho lửa Soot.
+Rủi ro1: tải lạnh8,82–9,38MB còn vượt8MB; chờ bản ảnh/âm thanh đã yêu cầu.
+Rủi ro2: cần đo lại luồng desktop khách→trận→biên nhận trên build mới.
+Rủi ro3: Fuji thật/deploy do owner; local proof4tests+Anvil đã pass.

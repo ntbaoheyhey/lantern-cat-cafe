@@ -5,6 +5,7 @@ import {soundScene,ambienceScene} from '../../../audio/scene';
 import '../shell/shell.css';
 import {TextDietContext,HelpC2} from './TextDietC2';
 import {chainFlags} from '../chain/flags';
+import {ReceiptToast} from '../chain/ReceiptToast';
 import './text-diet-c2.css';
 import { FirstStepsA6, IntroductionA6, firstStepViewA6 } from './IntroductionA6';
 import type { EIP1193Provider } from 'viem';
@@ -52,7 +53,10 @@ const Recruit=lazy(()=>import('./RecruitV3'));
 const FeelLab=lazy(()=>import('../depth/FeelLab').then(m=>({default:m.FeelLab})));
 const labels:Partial<Record<Screen,string>>={tower:'Yarn Tower',bonds:'Bond Book',collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
 const dock:[Screen,string,IconName][]=[['team','Team','team'],['collection','Cats','cats'],['inventory','Bag','bag']];
-export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
+export default function ShellV3(props:{m:DepthModel;children:ReactNode}) {
+ return <><ReceiptToast/><CafeShellV3 {...props}/></>;
+}
+function CafeShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
  const isBoss=m.battle?.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')??false;
  const musicScene=soundScene(m.screen,m.showBattle,isBoss),ambientScene=ambienceScene(m.screen,m.showBattle,isBoss,m.battle?.initial.chapter??m.state.run?.chapter??1);
  const audioRoster=m.showBattle?m.battle?.actors.map(actor=>actor.catalogId).join('|'):undefined;
