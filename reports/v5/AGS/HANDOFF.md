@@ -1,7 +1,7 @@
 # AGS Handoff (REV 4)
-ACTIVE: REFILL-R1 / R2 QA review on newest tag v5-m2
-NEXT 1: When BOARD announces v5-m2: git fetch origin --tags && git merge --no-edit v5-m2
-NEXT 2: Run fresh live QA on demo URL with work/v5/AGS/qa_h2.mjs on port 6352
-NEXT 3: Re-verify open findings H2-F1 and H2-F2, close or reopen with evidence
-LAST_PUSHED_SHA: ec061d184
-LAST_REREAD_UTC: 2026-11-17T08:05:00Z
+ACTIVE: REFILL-R12 Standalone Fuji Contract Bytecode & State Verifier script
+NEXT 1: Create and run tools/v5audio/verify_fuji_contracts.mjs against Fuji RPC
+NEXT 2: REFILL-R13 Audio mixer bus ducking & priority spec in reports/v5/AGS/AUDIO-MIXER-SPEC.md
+NEXT 3: When CXI announces milestone tag v5-m1.N or v5-m2 on BOARD: run live QA
+LAST_PUSHED_SHA: 0232c11ab
+LAST_REREAD_UTC: 2026-11-17T08:25:00Z

@@ -22,5 +22,8 @@
 - [x] REFILL-R10 Cross-check README/landing copy for typos, broken links, unclear claims -> REQ to CXI [30 min]
 - [x] REFILL-R9 Vietnamese status summary for owner each new tag (STATUS-VI.md) [15 min]
 - [x] REFILL-R11 Judge walkthrough guide -> reports/v5/AGS/submission/JUDGE-WALKTHROUGH.md [30 min]
-- [ ] REFILL-R1 QA review on newest tag v5-m2 (1280x720 + 390x844, guest -> battle -> receipt) [60 min]
-- [ ] REFILL-R2 Re-verify every open finding on newest tag, close or reopen with evidence (repeatable)
+- [x] REFILL-R1 QA review on newest tag v5-m1 (1280x720 + 390x844, guest -> battle -> receipt) [60 min]
+- [x] REFILL-R2 Re-verify open findings H2-F1 and H2-F2 on v5-m1 with fresh evidence -> reports/v5/AGS/R2-REVERIFICATION.md [30 min]
+- [x] CXI-REQ-0805 Sliced 264 b2 variant slices (hits:113, ui:97, motion:36, magic:18) under audio/v5/b2 (-1MB monolithic preload eliminated) [45 min]
+- [ ] REFILL-R12 Standalone Fuji Contract Bytecode & State Verifier script -> tools/v5audio/verify_fuji_contracts.mjs [30 min]
+- [ ] REFILL-R13 Web Audio Bus Ducking & Priority Matrix Specification -> reports/v5/AGS/AUDIO-MIXER-SPEC.md [30 min]
