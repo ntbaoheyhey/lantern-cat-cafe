@@ -15,6 +15,8 @@ const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
 const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const transparentWorkPrototype=process.env.CXV_TRANSPARENT_WORK==='1';
 const drawingResetMode=process.env.CXV_DRAWING_RESET??null;
+const offlineNumberMode=process.env.CXV_OFFLINE_NUMBER??null;
+if(offlineNumberMode&&(!['baseline','baked'].includes(offlineNumberMode)||drawingResetMode||production))throw Error('Invalid offline-number study mode');
 if(drawingResetMode&&!['baseline','coalesced'].includes(drawingResetMode))throw Error('Invalid drawing-reset mode');
 if(transparentWorkPrototype&&(production||localProduction||outerPrototype||facePrototype))throw Error('Transparent-vertex prototype requires isolated candidate Vite');
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
@@ -34,6 +36,7 @@ report.facePrototype=facePrototype;
 report.outerPrototype=outerPrototype;
 report.transparentWorkPrototype=transparentWorkPrototype;
 report.drawingResetMode=drawingResetMode;
+report.offlineNumberMode=offlineNumberMode;
 report.pendingBatch=pendingBatch;
 report.focusProfile=focusProfile;
 report.hudMode=hudMode;
@@ -42,7 +45,7 @@ report.localProduction=localProduction;
 report.labelSearchMode=labelSearchMode;report.labelSearchPaired=labelSearchPaired;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
-  let pendingOverride,hudOverride,labelSearchOverride;
+  let pendingOverride,hudOverride,labelSearchOverride,offlineNumberPreparation;
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:pendingBatch||hudMode||labelSearchMode?async page=>{
    if(pendingBatch){const {installPendingLabelOverride}=await import('./pending-label-override.mjs');pendingOverride=await installPendingLabelOverride(page,{batch:pendingBatch==='on'});}
    if(hudMode){const {installHudGeometryOverride}=await import('./hud-geometry-override.mjs');hudOverride=await installHudGeometryOverride(page,{mode:hudMode});}
@@ -56,6 +59,15 @@ try{
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
+  if(offlineNumberMode){
+   const {installOfflineNumberPrototype}=await import('./offline-number-prototype.mjs');
+   await cdp.send('Performance.enable');const before=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(r=>[r.name,r.value]));
+   offlineNumberPreparation=await installOfflineNumberPrototype(page,{active:offlineNumberMode==='baked'});
+   const after=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(r=>[r.name,r.value]));
+   offlineNumberPreparation.taskElapsedMs=(after.TaskDuration-before.TaskDuration)*1000;
+   offlineNumberPreparation.scriptElapsedMs=(after.ScriptDuration-before.ScriptDuration)*1000;
+   offlineNumberPreparation.note='Prepared after matching CPU throttle; local intercepted asset request plus decode/canvas restoration precedes timed play. Task/script durations are elapsed renderer metrics, not exclusive CPU. Extra bytes/readiness must be evaluated separately before runtime adoption.';
+  }
   if(process.env.CXV_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start');}
   let layoutBefore;
   if(layoutProfile){await cdp.send('Performance.enable');layoutBefore=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(row=>[row.name,row.value]));}
@@ -106,6 +118,7 @@ try{
   if(process.env.CXV_PROFILE){const {profile}=await cdp.send('Profiler.stop');await writeFile(resolve(out,'cpu.cpuprofile'),JSON.stringify(profile));}
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   if(drawingResetMode){run.drawingReset=await page.evaluate(()=>window.__cxvDrawingReset.variants.map(({id,unit,drawingCalls,setupCalls,skipped,inActor})=>({id,unit,drawingCalls,setupCalls,skipped,inActor})));if(run.drawingReset.some(r=>r.inActor!==0))errors.push('Drawing-reset guard leaked');}
+  if(offlineNumberMode){run.offlineNumberPreparation=offlineNumberPreparation;run.offlineNumber=await page.evaluate(()=>{const p=window.__cxvOfflineNumber;return{seeded:p.seeded,served:p.served,calls:p.calls};});if(offlineNumberMode==='baked'&&(!run.offlineNumber.seeded||!run.offlineNumber.served))errors.push('Offline number study did not activate');}
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   if(facePrototype)run.prototypeWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.__cxvFaceWeights?.size??0,bytes:[...(e.craftPose?.drawing.__cxvFaceWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});

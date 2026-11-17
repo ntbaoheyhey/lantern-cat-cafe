@@ -1,0 +1,586 @@
+{
+  "roundtrips": [
+    {
+      "utc": "2026-11-17T22:59:17.655Z",
+      "source": "ecfabf85d3722648ebc5649c8a70f6460c807abc",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "toolSha256": "78be91073143b4ec785fe216efc59b80332c115f158f1aedd78d99e7dc3e83ef",
+      "numberSourceSha256": "4806900748faec4f357a5bad30fc0e81ea5912d8820649a1bc93ed164423ef25",
+      "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Export actual loaded-font runtime atlases to PNG, then decode in a fresh browser context and compare original canvas versus decoded image using unchanged runtime text drawing at fractional positions, several heights/alpha values and1x/2x canvas scale. Study only; no production assets or loader change.",
+      "pass": false,
+      "exportUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "indexSha256": "108694d1ee219773d49de451d3e45deb19d02e86aa38e22c97310fba91b63a3d",
+      "font": "\"Baloo 2\"",
+      "exportErrors": [],
+      "exportBlocked": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "roundtripUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "ended": "2026-11-17T22:59:22.135Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-r1/report.json",
+        "sha256": "2c262612e3e2999ff4a3533259285368f944fe63774a36d8bcb3517346f4b690"
+      },
+      "assetBytes": 557510,
+      "atlases": [
+        {
+          "color": "#55eb9b",
+          "decodeElapsedMs": 5,
+          "metricsExact": true,
+          "freshBaselineSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "exportedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "decodedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#83ddff",
+          "decodeElapsedMs": 2.9000000059604645,
+          "metricsExact": true,
+          "freshBaselineSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "exportedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "decodedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c1bfd1",
+          "decodeElapsedMs": 3.2000000029802322,
+          "metricsExact": true,
+          "freshBaselineSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "exportedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "decodedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ff903e",
+          "decodeElapsedMs": 7.700000002980232,
+          "metricsExact": true,
+          "freshBaselineSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "exportedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "decodedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffc86a",
+          "decodeElapsedMs": 4.799999997019768,
+          "metricsExact": true,
+          "freshBaselineSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "exportedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "decodedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c9adf3",
+          "decodeElapsedMs": 3.7000000029802322,
+          "metricsExact": true,
+          "freshBaselineSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "exportedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "decodedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffe0a2",
+          "decodeElapsedMs": 2.899999998509884,
+          "metricsExact": true,
+          "freshBaselineSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "exportedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "decodedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffad55",
+          "decodeElapsedMs": 3.2999999970197678,
+          "metricsExact": true,
+          "freshBaselineSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "exportedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "decodedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        }
+      ],
+      "scaledCases": 320,
+      "scaledFailures": 128,
+      "scaledMaxDelta": 126
+    },
+    {
+      "utc": "2026-11-17T23:00:22.732Z",
+      "source": "ecfabf85d3722648ebc5649c8a70f6460c807abc",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "toolSha256": "8349c0366ca4a4dfda5901aa83c50ea47bd854dfe9dc5a6491a44aafbccb3818",
+      "numberSourceSha256": "4806900748faec4f357a5bad30fc0e81ea5912d8820649a1bc93ed164423ef25",
+      "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Export actual loaded-font runtime atlases to PNG, then decode in a fresh browser context and compare original canvas versus decoded image using unchanged runtime text drawing at fractional positions, several heights/alpha values and1x/2x canvas scale. Study only; no production assets or loader change.",
+      "pass": true,
+      "sourceKind": "canvas",
+      "exportUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "indexSha256": "108694d1ee219773d49de451d3e45deb19d02e86aa38e22c97310fba91b63a3d",
+      "font": "\"Baloo 2\"",
+      "exportErrors": [],
+      "exportBlocked": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "roundtripUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "ended": "2026-11-17T23:00:26.884Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-r2/report.json",
+        "sha256": "0fe40834ea8ee69201adf904f98e1b4ee1f502dfae7f26dc22145564a31daef3"
+      },
+      "assetBytes": 557510,
+      "atlases": [
+        {
+          "color": "#55eb9b",
+          "decodeElapsedMs": 3,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "exportedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "decodedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#83ddff",
+          "decodeElapsedMs": 2.5,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "exportedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "decodedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c1bfd1",
+          "decodeElapsedMs": 2.899999998509884,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "exportedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "decodedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ff903e",
+          "decodeElapsedMs": 7.399999998509884,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "exportedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "decodedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffc86a",
+          "decodeElapsedMs": 5,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "exportedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "decodedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c9adf3",
+          "decodeElapsedMs": 4.100000001490116,
+          "canvasRestoreElapsedMs": 0.29999999701976776,
+          "metricsExact": true,
+          "freshBaselineSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "exportedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "decodedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffe0a2",
+          "decodeElapsedMs": 2.7000000029802322,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "exportedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "decodedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffad55",
+          "decodeElapsedMs": 3.4000000059604645,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "exportedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "decodedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        }
+      ],
+      "scaledCases": 320,
+      "scaledFailures": 0,
+      "scaledMaxDelta": 0
+    },
+    {
+      "utc": "2026-11-17T23:01:44.608Z",
+      "source": "ecfabf85d3722648ebc5649c8a70f6460c807abc",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "toolSha256": "3f5fe89430c87ede677b8d15ecd24f7981935023cae769d6a3ea2b2de62e1269",
+      "numberSourceSha256": "4806900748faec4f357a5bad30fc0e81ea5912d8820649a1bc93ed164423ef25",
+      "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Export actual loaded-font runtime atlases to PNG, then decode in a fresh browser context and compare original canvas versus decoded image using unchanged runtime text drawing at fractional positions, several heights/alpha values and1x/2x canvas scale. Study only; no production assets or loader change.",
+      "pass": false,
+      "sourceKind": "canvas",
+      "inputManifest": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-webp/manifest.json",
+        "sha256": "5dcd415c2a9048c754e523aab6ff93ed944d8c7d231bcac8ed60b530b962a181"
+      },
+      "font": "\"Baloo 2\"",
+      "exportErrors": [],
+      "exportBlocked": [],
+      "roundtripUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "ended": "2026-11-17T23:01:47.119Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-r3/report.json",
+        "sha256": "19b481e1d450f481f06ac3ac0d8be6a0cb8fc5bb9d79726b0d01e41dc57152c4"
+      },
+      "assetBytes": 321248,
+      "atlases": [
+        {
+          "color": "#55eb9b",
+          "decodeElapsedMs": 4.100000001490116,
+          "canvasRestoreElapsedMs": 0.7000000029802322,
+          "metricsExact": true,
+          "freshBaselineSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "exportedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "decodedSha256": "934e3626f3a7adf12ad1fe7385b51d7ef399fd62c048fc9be5723d4090997db2",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#83ddff",
+          "decodeElapsedMs": 4.299999997019768,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "exportedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "decodedSha256": "beb6d9e81a1ba3bda583f0e48aec017114413927bc349f804e2734de34ae21c0",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#c1bfd1",
+          "decodeElapsedMs": 3.5,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "exportedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "decodedSha256": "bc1fb8c4d01c59cdb641014f0bf92192f8659a8b09f523ba7ab38d806f9bd5fe",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#ff903e",
+          "decodeElapsedMs": 7.799999997019768,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "exportedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "decodedSha256": "c4b1be5f71a13c8c433457ee8b89452a768acf627a0adf4db574b583edc5ce24",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#ffc86a",
+          "decodeElapsedMs": 4,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "exportedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "decodedSha256": "53bdc54f562e515c739da01bbbe647f534ea67580377ae2f169b5c3a14cee264",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#c9adf3",
+          "decodeElapsedMs": 4,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "exportedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "decodedSha256": "695147130ba62d2fabe000d4bfe14db4be8d43974579e780082ef9c163210dc7",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#ffe0a2",
+          "decodeElapsedMs": 3,
+          "canvasRestoreElapsedMs": 0.29999999701976776,
+          "metricsExact": true,
+          "freshBaselineSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "exportedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "decodedSha256": "70ff7b3089abc47005cb9552a6b3bd6becb8de8e69410dca31faff9ab30c9d30",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        },
+        {
+          "color": "#ffad55",
+          "decodeElapsedMs": 3.1999999955296516,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "exportedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "decodedSha256": "a55e4e1d1d00a3fcd3a3a5c5c3580d49716e7f70d69bc668c0000f83b4434212",
+          "changedPixels": 5283,
+          "maxDelta": 42,
+          "alphaChanged": 0,
+          "exact": false
+        }
+      ],
+      "scaledCases": 320,
+      "scaledFailures": 320,
+      "scaledMaxDelta": 1
+    },
+    {
+      "utc": "2026-11-17T23:03:06.232Z",
+      "source": "ecfabf85d3722648ebc5649c8a70f6460c807abc",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "toolSha256": "3f5fe89430c87ede677b8d15ecd24f7981935023cae769d6a3ea2b2de62e1269",
+      "numberSourceSha256": "4806900748faec4f357a5bad30fc0e81ea5912d8820649a1bc93ed164423ef25",
+      "fontSha256": "3e36c57e37bda5b5f28cf10636d6d3aed4de5250df923f1b203b64ad857c79a7",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Export actual loaded-font runtime atlases to PNG, then decode in a fresh browser context and compare original canvas versus decoded image using unchanged runtime text drawing at fractional positions, several heights/alpha values and1x/2x canvas scale. Study only; no production assets or loader change.",
+      "pass": true,
+      "sourceKind": "canvas",
+      "inputManifest": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-png-deflate/manifest.json",
+        "sha256": "1d0dc466b2c121e8078d33c03f30527260d8cbc6f36648d6a38dae7b6347b79b"
+      },
+      "font": "\"Baloo 2\"",
+      "exportErrors": [],
+      "exportBlocked": [],
+      "roundtripUrl": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "ended": "2026-11-17T23:03:08.674Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-offline-number-atlas-r4/report.json",
+        "sha256": "a1f5725a943f783994763a91b11eb668a5a84c5d8393f47fc1e6d91fe237c802"
+      },
+      "assetBytes": 440232,
+      "atlases": [
+        {
+          "color": "#55eb9b",
+          "decodeElapsedMs": 5.600000001490116,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "exportedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "decodedSha256": "e6aa540963eb7822adf2f00b914219ae15fb9389cf7477b65114e4af3ae36c44",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#83ddff",
+          "decodeElapsedMs": 2.600000001490116,
+          "canvasRestoreElapsedMs": 0.5999999940395355,
+          "metricsExact": true,
+          "freshBaselineSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "exportedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "decodedSha256": "247304ab7cd9c81952fdd83f8fc51646922e48939a5c9c5c8dea64d9128b32bd",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c1bfd1",
+          "decodeElapsedMs": 3.1999999955296516,
+          "canvasRestoreElapsedMs": 0.4000000059604645,
+          "metricsExact": true,
+          "freshBaselineSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "exportedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "decodedSha256": "d03328b78186309c9d22cf163ba0a2dee4ad603289ec04588ee3b01ff1230d58",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ff903e",
+          "decodeElapsedMs": 8.600000001490116,
+          "canvasRestoreElapsedMs": 0.5,
+          "metricsExact": true,
+          "freshBaselineSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "exportedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "decodedSha256": "343fb6518f1cf6b9173986fc4bcd9f901ca21147d8064a07e14363c103217575",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffc86a",
+          "decodeElapsedMs": 4.9000000059604645,
+          "canvasRestoreElapsedMs": 0.29999999701976776,
+          "metricsExact": true,
+          "freshBaselineSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "exportedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "decodedSha256": "dee757a445caadf6768e63e6446354fe7fbc7497e7a7386947adc9e16672ccbe",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#c9adf3",
+          "decodeElapsedMs": 2.7000000029802322,
+          "canvasRestoreElapsedMs": 0.29999999701976776,
+          "metricsExact": true,
+          "freshBaselineSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "exportedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "decodedSha256": "496e7a112577f642ded0bd21cfd91e82a6315ea891b4c8699e4b3b77e69a9907",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffe0a2",
+          "decodeElapsedMs": 3.600000001490116,
+          "canvasRestoreElapsedMs": 0.3999999985098839,
+          "metricsExact": true,
+          "freshBaselineSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "exportedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "decodedSha256": "6c7849653bb1e669d8ae07a845c30412742a5d8f532bfd359b3de89fb2b6c0ce",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        },
+        {
+          "color": "#ffad55",
+          "decodeElapsedMs": 2.5999999940395355,
+          "canvasRestoreElapsedMs": 0.30000000447034836,
+          "metricsExact": true,
+          "freshBaselineSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "exportedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "decodedSha256": "1f9222f33fb93d32700207b25f6a76bb1f0eecfc20c943099e6b5afb21a8bfc1",
+          "changedPixels": 0,
+          "maxDelta": 0,
+          "alphaChanged": 0,
+          "exact": true
+        }
+      ],
+      "scaledCases": 320,
+      "scaledFailures": 0,
+      "scaledMaxDelta": 0
+    }
+  ],
+  "decision": "Only same-size canvas restoration of PNG passes. Direct images and lossless WebP are rejected. Eight palettes440232B rejected for current study;single54987B damage PNG remains a tool-only candidate. No runtime/loader/asset edit;notREADY."
+}
