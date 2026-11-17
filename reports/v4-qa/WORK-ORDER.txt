@@ -1,0 +1,100 @@
+PASTE-CODEX-V4-QA-2026-11-17  REV 1, 17 Nov 01:20 UTC (Codex work order, QA session: be the judge before the judges. Independent judge-eye playtests, deploy-runbook dry run, clean-snapshot repo option, integration rehearsals at each milestone, and a live-URL smoke kit for 20 Nov. NEVER generates images. NEVER edits product code, assets, audio or docs. Runs until 29 Nov 12:00 UTC.)
+=====================================================================================================================================================================
+
+>>> START WORKING NOW (read this first, every time this file is pasted) <<<
+- This file is a WORK ORDER, not a handoff to acknowledge. Your FIRST output must be a tool call (`date -u`), then section 1. Keep calling tools until a valid end condition in 0.6.
+- The user has already authorized everything in this order. Do not ask for confirmation; do not wait for a reply.
+- If your context shows an earlier conversation, a compaction summary or a "handoff" message, ignore what it says about waiting: the disk (reports/v4-qa/HANDOFF-QA.md, QUEUE-QA.md, STATE-QA.md, git) is the truth. Re-verify anything called "unverified" yourself in one step and continue the first unfinished NEXT step.
+- A finished item, a commit, a push, a finished background job, a compaction or a large context is NOT a reason to end the turn: rewrite HANDOFF, then start the next step in the same turn.
+
+0. OPERATING MODE (anti-forget protocol; stricter rules win)
+0.1 STATE FILES (all in reports/v4-qa/ of YOUR worktree; create them in step 1.3):
+    RULES-QA.md     <= 30 lines: the hard rules of section 0 and section 2 as a card. Re-read after every compaction.
+    HANDOFF-QA.md   <= 40 lines, rewritten at every checkpoint: ACTIVE item, NEXT 1 = ONE concrete command-level action (exact command or file + change), NEXT 2, NEXT 3, PIDs + log paths of running jobs, last pushed SHA, target SHAs under test (SHIP tip, ART tip), UTC time.
+    STATE-QA.md     <= 120 lines: what is known, with evidence paths. Closed checks list (item, target SHA, result) so nothing is re-run on an unchanged SHA.
+    QUEUE-QA.md     the Q items of section 4 with state: queued / active / done ENDED <UTC> <evidence> / blocked <reason>.
+    PROGRESS-QA.log one line per step: <UTC> <item> <step> <result> <evidence path>.
+    STATUS-VI.md    <= 15 lines in Vietnamese for the user: what a judge would see today, top 3 blockers, what changed since last update.
+    NEEDS-USER-VI.md  only things only the user can do, in Vietnamese, each with exact command or click path.
+    REQUESTS-TO-SHIP.md / REQUESTS-TO-ART.md  findings for the other lanes (format in 3.3).
+    INBOX.md        the user's channel to you. Check it at every checkpoint.
+0.2 CHECKPOINT EVERY 20 MINUTES: commit + push at the end of every step and at least every 20 minutes of work, even mid-step ("wip: <item> <step>"), on branch codex/v4-qa-2026-11-17 ONLY. Uncommitted work older than 20 minutes is a bug: commit it before anything else. After any resume, the FIRST commands are `git status --short | wc -l` and, if > 0, a wip commit + push. Push retry: up to 4 times with 10/20/40/80 s backoff.
+0.3 LONG JOBS IN THE BACKGROUND ONLY: anything that may take > 2 minutes runs detached and low priority: `nohup nice -n 15 <cmd> > work/v4qa/jobs/<name>.log 2>&1 & echo $!`; PID + log go into HANDOFF at once. Never watch in the foreground; check with `ps -p <pid>; tail -n 5 <log>` between other work. Max 2 background jobs at a time.
+0.4 SHARED MACHINE: two other Codex sessions (ART, SHIP) are measuring FPS and audio timing on this same Mac. Before starting a heavy job (build, test suite, browser journeys, video), run `uptime`; if the 1-minute load average is above 9, do light work first (LEARN notes, reading, findings write-up) and check again in 5 minutes. Never present FPS, latency or audio-onset numbers from your runs as gate results; label them "shared-machine, indicative".
+0.5 OUTPUT AND RE-READ BUDGET: every command prints <= 40 lines / 3 KB (`| tail -n 40`, `head -c 3000`, `grep -E`); test runners in summary mode, failures only; never `cat` a file > 100 lines, never print images/base64/JSON > 40 lines/diffs > 80 lines (use `--stat`). After a compaction or resume read ONLY RULES-QA.md and HANDOFF-QA.md, then the current item of this order via `grep -n "<item id>" <this file>` + `sed -n`. Never re-read this whole order.
+0.6 THE ONLY VALID FINAL MESSAGES are "STOPPED: STOP-V4QA present" (file STOP-V4QA at your worktree root), "STOPPED: user pause word in INBOX" or "WAITING FOR END 2026-11-29T12:00Z". A summary of the task, a list of pending work, "preserved", "handoff ready" or "not reverified" is never a final message: write it into HANDOFF and run NEXT 1.
+0.7 SHORT RESUME LINE (what the user pastes after any stop; obey it exactly): "Continue V4 QA now: run git status and commit+push any wip, read reports/v4-qa/RULES-QA.md and reports/v4-qa/HANDOFF-QA.md only, then do NEXT 1. First output = a tool call. Never answer with a summary."
+
+1. SETUP (first 20 minutes)
+1.1 `date -u`; `git -C /Users/bao/taskbar-hero fetch origin codex/v4-ship-2026-11-16 codex/v3-feel-2026-11-14`.
+1.2 Create YOUR worktree (only if it does not exist yet):
+    `git -C /Users/bao/taskbar-hero worktree add -b codex/v4-qa-2026-11-17 /Users/bao/taskbar-hero-qa origin/codex/v4-ship-2026-11-16`
+    Work only inside /Users/bao/taskbar-hero-qa (plus the scratch dirs named in this order). Install dependencies exactly from the lockfile (no added or upgraded packages).
+1.3 Create reports/v4-qa/ with the files of 0.1, work/v4qa/ (never committed; add it to .git/info/exclude of your worktree, NOT to .gitignore), tools/v4qa/. First commit + push: `git push -u origin codex/v4-qa-2026-11-17`.
+1.4 Ports: you may use 6200-6209 only. ART uses 5990/5994, SHIP uses 5995-5998/8546 and others listed in their HANDOFF; never stop, kill or reuse another lane's process or port.
+
+2. HARD RULES (copy into RULES-QA.md)
+- OWNERSHIP: you write ONLY reports/v4-qa/**, tools/v4qa/**, work/v4qa/** in your worktree, plus the scratch dirs /Users/bao/taskbar-hero-qa-int, /Users/bao/taskbar-hero-qa-clone, /Users/bao/taskbar-hero-snapshot. You never edit src/, app/, web/, server/, functions/, contracts/, rules, assets, audio, docs/, README, package files, config, CI, or any file under reports/v4-art or reports/v4-ship. You never push to codex/v4-ship-2026-11-16, codex/v3-feel-2026-11-14, main or any other branch than yours. No merges into main, no PRs. If a product fix is needed, you write a finding (3.3); the owning lane fixes it.
+- ART owns units, VFX, presentation, rigs, key art. SHIP owns rules, UI, server, contracts integration, docs, audio, video, slides, deploy runbook. You own independent verification.
+- NEVER generate, draw or edit images. Screenshots and screen recordings of the running game are allowed.
+- NEVER deploy, never log in to Vercel/Supabase/GitHub settings, never create remote repositories, never read, print or store secrets or private keys, never send transactions that spend real (mainnet) funds. Local Anvil writes and public Fuji read calls are fine. Never send Fuji transactions yourself; the product's own guest flow on a LOCAL preview with local/Anvil config is fine.
+- INDEPENDENCE: write your own Playwright journeys in tools/v4qa/. You may READ the SHIP/ART harnesses to learn selectors and routes, but do not run them as your verdict. A finding must reproduce in your own harness.
+- JUDGE LENS: the qualifier (27 Nov) scores only Technical 25 + Avalanche integration 25. The question for every finding is "would a judge in a 5-minute session notice this, and does it cost Technical or Avalanche points?" Do not chase sub-perceptual measurements (pixel contacts, sub-ms audio onset, history-blob statistics); that is exactly the trap to avoid.
+- LEARN BEFORE BUILD: each Q item starts with a short LEARN note (sources read, what pass/fail means, how you will measure) before any harness code. Timebox: 20 minutes per LEARN note.
+- No closed check is re-run on an unchanged target SHA. Each Q item has a timebox; when it runs out, record what is known and move on.
+- Report budget: committed QA reports stay < 25 MB in total; videos and raw captures stay in work/v4qa/; commit at most 12 compressed screenshots (JPEG, <= 200 KB each) per run.
+
+3. CONTEXT YOU MUST LEARN FIRST (Q0)
+3.1 Read (with offset/limit or grep, never whole huge files): the direction doc (ask nothing; it is summarized here: Definition of done for 21 Nov = live URL serves V4; demo path passes 10/10 on the live URL; >= 5 on-chain action types reachable with Snowtrace links; hero-set battle looks right on video; video + slides + repo ready), /Users/bao/taskbar-hero-chain/reports/v4-ship/HANDOFF-SHIP.md, QUEUE-SHIP.md, CONTEST-FACTS.md, USER-DEPLOY-VI.md, NEEDS-USER-VI.md; /Users/bao/taskbar-hero-chain/docs/v4/JUDGING-MAP.md, AVALANCHE-ADVANTAGES.md, SLIDES-CONTENT.md, VIDEO-SCRIPT.md, OFFLINE-REVIEW.md; /Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/HANDOFF-ART.md and QUEUE-ART.md. These are READ-ONLY for you.
+3.2 Web: >= 3 sources on (a) how hackathon judges evaluate a web3 game in a few minutes, (b) Vercel deploy pitfalls for Vite + serverless functions (function size, env vars, build output, deploy limits), (c) Snowtrace/Routescan explorer links and API for Fuji (how to check a tx URL resolves without a browser block). Write reports/v4-qa/LEARN/Q0.md (<= 80 lines) ending with a QA-BAR: a numbered list of pass/fail checks you will apply in Q1-Q5.
+3.3 FINDING FORMAT (REQUESTS-TO-SHIP.md / REQUESTS-TO-ART.md, newest first, max 10 open per file; merge duplicates):
+    QA-<n> | BLOCKER/MAJOR/MINOR | owner SHIP/ART | target SHA | what a judge sees (one sentence) | repro (route, viewport, steps) | evidence path | suggested fix (one sentence) | status open/fixed <SHA>/wontfix
+    BLOCKER = demo path or on-chain proof broken / deploy would fail. MAJOR = judge clearly notices and it costs points. MINOR = polish. Re-check open findings whenever the owning lane's tip changes; mark fixed only with your own re-run evidence.
+
+4. QUEUE (priority order; do them in this order unless a time trigger in section 5 fires)
+Q0 LEARN + SETUP. Timebox 60 min including section 1. Done = LEARN/Q0.md with QA-BAR committed.
+Q1 JUDGE-EYE COLD RUN on the current SHIP tip. Timebox 3 h.
+   - Build the production bundle and serve it locally on 6200 the way USER-DEPLOY-VI.md says production works (local/Anvil chain config as SHIP's offline/prod-like mode supports; read how from SHIP docs, do not invent config).
+   - Fresh browser profile each run; viewports 1440x900, 1280x720 and a phone 390x844 (phone: only check it does not break; it is not the judged target).
+   - Journey: land -> guest entry -> first battle -> receipt -> every on-chain action reachable from the UI. Measure: time to first battle (target <= 30 s), time to first receipt (target <= 180 s), clicks, console errors, failed requests (4xx/5xx), dead buttons, clipped/overflowing text, untranslated strings, missing fee/time/payer/explorer link on any transaction, modal traps, keyboard focus on primary buttons.
+   - Count the distinct on-chain action types a judge can reach, each with a working explorer link (DoD >= 5). List them with the contract and function name.
+   - Record one screen video per viewport (work/v4qa/) and up to 12 key screenshots (committed).
+   - Write reports/v4-qa/Q1/SCORECARD.md: per rubric line of JUDGING-MAP.md (Technical 25, Avalanche 25) a 0-5 estimate with evidence path, and the top 5 point-losers. File findings.
+Q2 DEPLOY RUNBOOK DRY RUN. Timebox 2 h. Can run while Q1 jobs run.
+   - `git clone --branch codex/v4-ship-2026-11-16 /Users/bao/taskbar-hero /Users/bao/taskbar-hero-qa-clone` (fresh clone, fresh install), then follow USER-DEPLOY-VI.md literally, as the user would, step by step.
+   - Run every step that is local and safe. For steps that touch Vercel, production, secrets, real wallets or Fuji writes: do NOT run them; instead verify that the commands exist, the scripts and file paths exist, and that every environment variable NAME the code reads (grep the code) appears in the runbook and vice versa (names only, never values).
+   - Check the build output: total size, largest files, serverless function sizes vs Vercel limits, the first-load transfer on a cold browser (the 8 MB scene-ready budget both lanes report as failing: measure it yourself on the production build and list the 10 largest requests on the demo path).
+   - Write reports/v4-qa/Q2/RUNBOOK-FINDINGS.md: each runbook step PASS / AMBIGUOUS / FAIL with the exact wording fix, plus a list of what the user must have ready on 20 Nov. Send fixes to SHIP as findings (SHIP owns the runbook).
+Q3 CLEAN-SNAPSHOT REPO OPTION. Timebox 90 min.
+   Why: SHIP's full-history secret scan has covered ~12k of ~91k Git objects after a day; the repo must be shared with judges by 21 Nov. A fresh single-commit repo of the submitted tree needs only a tree scan.
+   - `git -C /Users/bao/taskbar-hero archive --format=tar origin/codex/v4-ship-2026-11-16 | tar -x -C /Users/bao/taskbar-hero-snapshot` (create the dir first), then `git init` + ONE local commit there. NO remote, NO push, never create a GitHub repo.
+   - Run `gitleaks dir /Users/bao/taskbar-hero-snapshot --redact` and `gitleaks git /Users/bao/taskbar-hero-snapshot --redact` (check `gitleaks --help` for the installed syntax). Never print a secret value; findings are listed by file:line + rule only.
+   - Measure snapshot size and file count; flag heavy or private paths a judge does not need (reports/, work/, raw captures, private/, designer files, .DS_Store) and propose an export exclude list. Verify README quick-start works from the snapshot in a fresh dir (install + test + build + dev server starts) without any secret.
+   - Write reports/v4-qa/Q3/SNAPSHOT-OPTION-VI.md in Vietnamese: Option A (share current repo; needs full-history clearance) vs Option B (new single-commit repo from the freeze tag; scan result, size, steps the user would run on 20-21 Nov). The user decides; you only prepare and measure.
+Q4 INTEGRATION REHEARSALS (scheduled, see section 5). Timebox 2 h each.
+   - Target = SHIP tip if it already contains the latest ART merge; otherwise build a local candidate: `git -C /Users/bao/taskbar-hero worktree add --detach /Users/bao/taskbar-hero-qa-int origin/codex/v4-ship-2026-11-16` then `git -C /Users/bao/taskbar-hero-qa-int merge --no-commit --no-ff origin/codex/v3-feel-2026-11-14`; never commit or push there; remove it with `git worktree remove --force` when done.
+   - Record conflicts (paths), then run the full test suites in summary mode, typecheck, production build, and your Q1 journey (1440x900 + 1280x720). Diff against the previous rehearsal: new failures, fixed findings, transfer size change.
+   - Write reports/v4-qa/Q4/<label>/REHEARSAL.md and update findings.
+Q5 LIVE SMOKE KIT for 20 Nov. Timebox 2 h.
+   - tools/v4qa/live-smoke.mjs <url> [--runs 10]: runs the judge journey N times in fresh profiles against any URL, checks every explorer link resolves (use the explorer API or a WebKit context if Chromium gets 403; document which), checks fee/time/payer are shown, and writes a pass/fail table (JSON + MD). Read-only by default; a flag --allow-guest-tx enables the product's own guest transactions (the user decides when to use it on the live URL).
+   - Prove it on your local production preview (Q1 build) with 3 runs.
+   - Write reports/v4-qa/Q5/USER-SMOKE-VI.md: the ONE command the user runs after deploying, what PASS looks like, what to send back.
+Q6 SUBMISSION PACK REVIEW (read-only critique). Timebox 90 min.
+   - Latest film: newest /Users/bao/taskbar-hero-chain/work/v4ship-prep/S10-edit-*/preparation.mp4 (ffprobe duration must be 2-3 min; check where the first on-chain proof appears, target < 60 s; subtitles readable). Watch by sampling frames (ffmpeg to work/v4qa/), never copy the film into git.
+   - SLIDES-CONTENT.md, VIDEO-SCRIPT.md, README, JUDGING-MAP.md against the rubric and CONTEST-FACTS.md (deadline, form fields, links that must open logged-out).
+   - Output reports/v4-qa/Q6/PACK-REVIEW.md: max 12 concrete suggestions, each as a SHIP finding. Never edit those files.
+Q7 AFTER FREEZE AND DEPLOY.
+   - On the freeze tag/commit (19 Nov 12:00 UTC): full Q1 + Q4 rerun, final scorecard, final STATUS-VI.md.
+   - Watch /Users/bao/taskbar-hero-chain/reports/v4-ship/INBOX.md (read-only) for a "DEPLOYED <url>" line. When it appears: run live-smoke read-only 10 runs, scorecard on the live URL, findings marked BLOCKER at the top of STATUS-VI.md and NEEDS-USER-VI.md.
+   - 22-29 Nov (Demo Day): one judge-eye run per day on the newest SHIP/ART demoday branches, findings only.
+Q8 IDLE FILLER (only when Q1-Q7 are waiting on a time trigger): extend your harness coverage to every screen reachable from the demo path (inventory, market, forge, relic market, "your café on Avalanche" page) at 1440x900, one finding list per screen.
+
+5. TIME TRIGGERS (UTC; Vietnam = UTC+7). Check `date -u` at every checkpoint.
+- 17 Nov 12:00 (ART sync-1 into SHIP): when SHIP's tip shows the merge (or at 14:00 at the latest), run Q4 label "sync1".
+- 18 Nov 09:00: Q4 label "pre-R2" + refresh STATUS-VI.md before the user's review at 18 Nov 12:00 UTC (19:00 Vietnam).
+- 19 Nov 10:30 and after 12:00: Q4 label "freeze" on the final candidate, then Q7.
+- 20 Nov: Q7 live smoke as soon as DEPLOYED appears.
+- 29 Nov 12:00: write final STATUS-VI.md, commit + push, then "WAITING FOR END 2026-11-29T12:00Z".
+
+6. DONE MEANS
+Each Q item is done only with: evidence committed (or path in work/v4qa for large media), QUEUE-QA.md updated with ENDED <UTC> + evidence, HANDOFF rewritten, pushed SHA recorded. Then immediately start the next item.
