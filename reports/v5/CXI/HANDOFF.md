@@ -3,12 +3,12 @@ ACTIVE: Numbermetrics accepted; independent contour6ef304a9b review next; assist
 NEXT 1: Baselines complete; integrate contour6ef304a9b, run oracle/build, compare 130production bounds/GPU +910motion/130GPU, then ordinary boss checks.
 NEXT 2: Continue wave3 gap228520B using measured resource evidence; preserve exact audio/art and preload semantics.
 NEXT 3: Review AGS T1/T5/T7/T8 REDOs; maintain6useful open tasks and true UTC evidence.
-Last pushed:58a89cd72;green v5-m1.9@8724ab79832aeb527298991f0660a35b7fbf7d73.
-Application:4892934f453d16c3de37b943037ba50ac389c559;indexad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80;number accepted.
+Last pushed:375c7028a;green v5-m1.9@8724ab79832aeb527298991f0660a35b7fbf7d73.
+Application:2ee12c29e9980926b7c75de0111b5c78dbfd24fc contour candidate; served index recorded by pipeline after build; not accepted/released.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified17:34UTC;exact V7 prompt verified16:29UTC;no duplicate.
 Last RULES re-read UTC:2026-11-17T17:33:49.348395+00:00;STOPfiles absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none;PID15282 completed0. Own baseline work/v5/CXI/{contour-equivalence,drawing-equivalence}/v7-contour-before/report.json passed.
+Running:18303 /Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-contour-candidate.log;focused/build/130contours/910motion+130GPU/boss.
 Cold m1.9:7667250/8228520/7742967B;wave3FAIL228520B;bossheadroom257033B.
 I-C:m19firsthit21078ms incl17700ms reading8cards;HP165→119;0ordinaryerrors;route10503ms;recovery714/8664ms.
 Validation:m19full5282=77Node+5205workspace incl2969web;5269pass,11skip,2expectedfail;build/typecheck0;544encoded/nativePCMmatches.
