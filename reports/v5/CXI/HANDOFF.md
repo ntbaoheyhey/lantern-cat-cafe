@@ -1,9 +1,9 @@
 # CXI V7 continuation
 ACTIVE: I-A m17 held for own blink-seam finding; I-B chunk experiment; assistant: AGS.
-NEXT 1: Finish I-B source/import graph study; automatic-web3 estimate+4731B rejected. Original blink seam reproduced in A/B; CXV repair pending.
+NEXT 1: Run room-event build/3cold transfers;16existing tests pass. CXV blink fix pending; V-E source reviewed, merge after isolated measurement.
 NEXT 2: Review CXV V-A3 seam repair and queued V-E81ef11fb4; no m17 tag/films until accepted.
 NEXT 3: Integrate accepted AGS4beds+AGV12AVIF then3cold transfers; residual wave3 gap needs own loader work.
-Last pushed SHA:cffa74b815a2e1f7cc831e95d8ab555f0b2cb42f; CXV merge105986f69; greenv5-m1.6=daee13215 remains.
+Last pushed SHA:6880cccb0; CXV merge105986f69; greenv5-m1.6=daee13215 remains.
 self-wake:cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; verified14:51UTC; existing exact V7 prompt, no duplicate.
 Last RULES re-read UTC:2026-11-17T15:24:18.872149+00:00;STOP-ALL/STOP-CXI absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df

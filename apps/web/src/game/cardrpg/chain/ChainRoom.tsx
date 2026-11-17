@@ -30,14 +30,14 @@ import type {HistoryRow} from './history';
 import {readWalletHistory} from './chain-index';
 export const RELIC_IDS = [1n,2n,3n,4n];
 export const RELIC_NAMES = ['Paw Charm','Star Bell','Moon Collar','Golden Maneki'];
-export type Tab='Judge'|'Market'|'Bag'|'Seal'|'History'|'Style'|'Forge'|'Campaign'|'Café';
+import type {Tab} from './room-event';
+export {openChainRoom,type Tab} from './room-event';
 interface Voucher {player:Address;relicId:string;rarity:number;nonce:string;expiry:string;signature:Hex;used:boolean;source:string}
 interface Pass {vouchers:Voucher[];battle?:{won:boolean;rounds:number;log:unknown[]}}
 interface Reward {claim:{player:Address;amount:string;season:string;nonce:string;expiry:string};signature:Hex;used:boolean}
 const nameOf=(id:bigint|string)=>tradeRuleV3(Number(id))?.name??`#${id}`;
 const artOf=(id:bigint|string|number)=>Number(id)>=30001&&Number(id)<=33000?'/icons/deed-128.webp':Number(id)<10000?`/relics/${id}.svg`:Number(id)<20000?'/chain/star-thread.svg':'/chain/sealed-gear.svg';
 const localTreasures=(address:string)=>`taskbar-hero.fuji-treasure.v1:${address.toLowerCase()}`;
-export function openChainRoom(tab:Tab='Judge'){window.dispatchEvent(new CustomEvent('chain:open',{detail:tab}));}
 export function ChainRoom({initialTab='Judge',onClose}:{initialTab?:Tab;onClose?:()=>void}){
   const session=useSession(),{data:externalWallet}=useWalletClient(),flags=chainFlags();
   const [config,setConfig]=useState<ChainConfig>(),[tab,setTab]=useState<Tab>(initialTab);

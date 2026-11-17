@@ -3,7 +3,7 @@ import type {EconomyResponse} from '@taskbar-hero/chain/src/economy-v3';
 import {V3_DEED_IDS} from '@taskbar-hero/game-rules/src/cardrpg/trade';
 import {chainPost} from '../chain/api';
 import {loadChainConfig,publicChain,readHoldings} from '../chain/runtime';
-import {openChainRoom} from '../chain/ChainRoom';
+import {openChainRoom} from '../chain/room-event';
 import {useEffect,useState} from 'react';
 import {useSession} from '../../../wallet/WalletProvider';
 import {GameIcon} from '../../../ui/GameIcon';
