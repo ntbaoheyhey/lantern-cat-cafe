@@ -1,5 +1,4 @@
 # V4 SHIP rules
-1. Already authorized: implement, test, commit, push the named branches; no permission loop.
 2. Stop only STOP-V4SHIP, an explicit user pause, or after 29 Nov 12:00 UTC.
 3. Worktree /Users/bao/taskbar-hero-chain; branch codex/v4-ship-2026-11-16.
 5. ART owns units, VFX, battle presentation, rigs, v3feel scripts, v3craft-lab, provenance and ART reports; never edit these.

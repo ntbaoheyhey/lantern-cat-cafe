@@ -1,4 +1,4 @@
-REQUEST-SHIP.txt bytes=46223 sha256=76f6550e50769f5cbaeaf812fdea37c12a82b17453cbee5d605d89db9ee0f332 REV2
+REQUEST-SHIP.txt bytes=48895 sha256=44d764ed5c5ff1be49fe8d54a8900c52281cf4b1d2f07642d5892d6fdb9ffd54 REV3
 # State
 S0 STARTED 2026-11-16T04:44:21.272565+00:00; base 88fa5bdfd820609f054d174fce24248f35aa9575.
 Disk 119 GiB free (normal mode); shell clean; no salvage.
