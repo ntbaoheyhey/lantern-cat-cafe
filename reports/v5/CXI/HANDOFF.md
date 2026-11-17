@@ -1,9 +1,9 @@
 # CXI V7 continuation
-ACTIVE: I-A production portrait-clearance audit after f34877866 merge; blink K5 clarification pending; assistant: AGS.
-NEXT 1: Run focused layout/motion/Yarn/arrival tests, build, tools/v5int/audit-body-portraits.mjs v7-m17-margin; review four fresh sheets.
+ACTIVE: I-A blink+seat accepted; finalchecks/three realfilms next; assistant: AGS.
+NEXT 1: Run v7-m17-final detached transfer/firsthit/route/recovery+films job; inspect fresh3film sheets then tag/report.
 NEXT 2: Three30s realfilms from finalcandidate; tagonlyif checks+visualgreen, preserve latestgreenm1.6.
 NEXT 3: Reduce remainingwave3471028B; review AGS residualbeds/T7 and newmailbox; keepfiveAGStasksopen.
-Last pushed SHA:69e68a660; app69e68a660/indexc5e5a955503d9a471ca98f8be3ea5e11faf717fbe0854f0eece6ff00859f0bf7; latestgreenm1.6=daee13215.
+Last pushed SHA:0a3c6ab1a; app0a3c6ab1a/index2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd; latestgreenm1.6=daee13215.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f; exact V7 prompt verified15:41UTC; no duplicate.
 Last RULES re-read UTC:2026-11-17T16:07:19.752049+00:00; STOP files absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
