@@ -4,7 +4,7 @@ This document provides concrete, production-ready audio engineering guidelines f
 
 ---
 
-## 1. Source Catalogue (>= 8 Sources, >= 4 Chinese)
+## 1. Source Catalogue (11 Sources, 6 Chinese)
 
 ### Source 1: Gcores (机核网 - 游戏打击感音效的物理分层与心理声学)
 - **URL**: `https://www.gcores.com/articles/147281`
@@ -99,6 +99,24 @@ This document provides concrete, production-ready audio engineering guidelines f
   1. *Voice Budgeting*: Limit active concurrent SFX nodes to max 8 voices; steal oldest low-priority voice if exceeded.
   2. *Master Bus Limiter*: Place a DynamicsCompressorNode on destination input (`threshold = -1.0 dB`, `knee = 0`, `ratio = 20`, `attack = 0.001s`, `release = 0.05s`) to completely eliminate digital distortion during multi-skill overlapping.
 - **Applies to**: AG4 sound engine (runtime implementation)
+
+### Source 10: Bilibili (游戏音频动态混音与技能侧链压缩实战)
+- **URL**: `https://www.bilibili.com/video/BV1G4411C7zH/`
+- **Platform**: Bilibili [Chinese]
+- **Date**: 2023-07-19
+- **Concrete Techniques & Numbers**:
+  1. *Dynamic BGM Sidechain Ducking*: When a hero skill fires, trigger a sidechain gain envelope that drops background music by $-4\text{ dB}$ within 15 ms, holding for 250 ms, and recovering over 350 ms.
+  2. *Low-Pass Health Filter*: When hero HP drops below 20%, automate a resonant low-pass filter on master BGM/ambient bus down to 800 Hz while boosting heart/tension audio by $+3\text{ dB}$.
+- **Applies to**: AG4 sound engine / CXV combat audio
+
+### Source 11: Audiokinetic Wwise Community (HDR Audio & Combat Hierarchy)
+- **URL**: `https://www.audiokinetic.com/en/library/edge/?source=SDK&id=soundengine_hdr.html`
+- **Platform**: Audiokinetic Wwise Documentation [Global]
+- **Date**: 2024
+- **Concrete Techniques & Numbers**:
+  1. *High Dynamic Range (HDR) Window*: Set HDR audio threshold window to $18\text{ dB}$; loud sounds above $-6\text{ dBFS}$ push quiet ambient sounds below $-24\text{ dBFS}$ into virtual inaudibility, avoiding cluttered muddy mixes during battle.
+  2. *Transient Shaper Punch*: Emphasize initial attack by $+3.5\text{ dB}$ on $0-15\text{ ms}$ window to pierce through dense multi-unit spell audio.
+- **Applies to**: AG4 sound engine
 
 ---
 
