@@ -1,0 +1,549 @@
+{
+  "utc": "2026-11-17T18:03:09.031Z",
+  "source": "e1b1f58f5f00c08f85c4d1325291e44c1e1bdf33",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Frozen Mochi basic in the real scene at4x CPU. Instrumented canvas/WebGL submissions and CPU profile. First versus warmed same-pose cost attribution only; no FPS, GPU completion, ordinary progression or production claim.",
+  "samples": [
+    {
+      "tag": "idle",
+      "ms": 0,
+      "cpuMs": 38.399999998509884,
+      "costs": {
+        "native.pose": {
+          "calls": 10,
+          "totalMs": 0.8999999985098839,
+          "maxMs": 0.6999999955296516
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 9.699999988079071,
+          "maxMs": 3.600000001490116
+        },
+        "canvas.drawImage": {
+          "calls": 84,
+          "totalMs": 0.20000000298023224,
+          "maxMs": 0.10000000149011612
+        },
+        "gl.drawElements": {
+          "calls": 29,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "readbacks": [],
+      "calls": 22,
+      "textures": 21,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K0"
+        },
+        {
+          "id": "mochi",
+          "key": "K0"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "anticipation-first",
+      "ms": 50,
+      "cpuMs": 60.70000000298023,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0.20000000298023224,
+          "maxMs": 0.10000000149011612
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 12.99999999254942,
+          "maxMs": 6.5
+        },
+        "canvas.drawImage": {
+          "calls": 85,
+          "totalMs": 0.6000000014901161,
+          "maxMs": 0.6000000014901161
+        },
+        "canvas.getImageData": {
+          "calls": 1,
+          "totalMs": 9.899999998509884,
+          "maxMs": 9.899999998509884
+        },
+        "gl.drawElements": {
+          "calls": 29,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texImage2D": {
+          "calls": 1,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texSubImage2D": {
+          "calls": 1,
+          "totalMs": 10.600000001490116,
+          "maxMs": 10.600000001490116
+        }
+      },
+      "readbacks": [],
+      "calls": 22,
+      "textures": 22,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K0"
+        },
+        {
+          "id": "mochi",
+          "key": "K1"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "transition-first",
+      "ms": 300,
+      "cpuMs": 81.39999999850988,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 7.299999989569187,
+          "maxMs": 4
+        },
+        "canvas.drawImage": {
+          "calls": 106,
+          "totalMs": 8.399999998509884,
+          "maxMs": 5.600000001490116
+        },
+        "canvas.getImageData": {
+          "calls": 1,
+          "totalMs": 10.799999997019768,
+          "maxMs": 10.799999997019768
+        },
+        "gl.drawElements": {
+          "calls": 32,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texImage2D": {
+          "calls": 1,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texSubImage2D": {
+          "calls": 3,
+          "totalMs": 19.200000002980232,
+          "maxMs": 12.100000001490116
+        },
+        "gl.compileShader": {
+          "calls": 4,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.linkProgram": {
+          "calls": 2,
+          "totalMs": 0.6000000014901161,
+          "maxMs": 0.6000000014901161
+        }
+      },
+      "readbacks": [],
+      "calls": 25,
+      "textures": 25,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K0"
+        },
+        {
+          "id": "mochi",
+          "key": "K2"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "contact-first",
+      "ms": 350,
+      "cpuMs": 140,
+      "costs": {
+        "native.pose": {
+          "calls": 9,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 18.399999983608723,
+          "maxMs": 6.199999995529652
+        },
+        "canvas.drawImage": {
+          "calls": 117,
+          "totalMs": 6.300000004470348,
+          "maxMs": 2.8000000044703484
+        },
+        "canvas.getImageData": {
+          "calls": 21,
+          "totalMs": 40.099999994039536,
+          "maxMs": 12.699999995529652
+        },
+        "gl.texSubImage2D": {
+          "calls": 2,
+          "totalMs": 29.50000000745058,
+          "maxMs": 19.900000005960464
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "readbacks": [],
+      "calls": 23,
+      "textures": 27,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K4"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K4"
+        },
+        {
+          "id": "mochi",
+          "key": "K2"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "contact-warm",
+      "ms": 350,
+      "cpuMs": 23.5,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 8.800000004470348,
+          "maxMs": 3
+        },
+        "canvas.drawImage": {
+          "calls": 115,
+          "totalMs": 0.3999999985098839,
+          "maxMs": 0.29999999701976776
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0.10000000149011612,
+          "maxMs": 0.10000000149011612
+        }
+      },
+      "readbacks": [],
+      "calls": 23,
+      "textures": 27,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K4"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K4"
+        },
+        {
+          "id": "mochi",
+          "key": "K2"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "release",
+      "ms": 650,
+      "cpuMs": 37,
+      "costs": {
+        "native.pose": {
+          "calls": 10,
+          "totalMs": 0.20000000298023224,
+          "maxMs": 0.10000000149011612
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 11.300000004470348,
+          "maxMs": 3.899999998509884
+        },
+        "canvas.drawImage": {
+          "calls": 114,
+          "totalMs": 1.8999999985098839,
+          "maxMs": 1.2999999970197678
+        },
+        "gl.drawElements": {
+          "calls": 36,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "readbacks": [],
+      "calls": 29,
+      "textures": 27,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K4"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K0"
+        },
+        {
+          "id": "mochi",
+          "key": "K0"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "idle-return",
+      "ms": 799,
+      "cpuMs": 24.30000000447035,
+      "costs": {
+        "native.pose": {
+          "calls": 9,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 8.399999991059303,
+          "maxMs": 3.100000001490116
+        },
+        "canvas.drawImage": {
+          "calls": 114,
+          "totalMs": 1.2000000029802322,
+          "maxMs": 0.8999999985098839
+        },
+        "gl.drawElements": {
+          "calls": 35,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "readbacks": [],
+      "calls": 28,
+      "textures": 27,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K0"
+        },
+        {
+          "id": "mochi",
+          "key": "K0"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    },
+    {
+      "tag": "contact-return",
+      "ms": 350,
+      "cpuMs": 16.299999997019768,
+      "costs": {
+        "native.pose": {
+          "calls": 12,
+          "totalMs": 0.20000000298023224,
+          "maxMs": 0.10000000149011612
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 2.899999998509884,
+          "maxMs": 1.3000000044703484
+        },
+        "canvas.drawImage": {
+          "calls": 115,
+          "totalMs": 0.8000000044703484,
+          "maxMs": 0.8000000044703484
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0.8999999985098839,
+          "maxMs": 0.8999999985098839
+        }
+      },
+      "readbacks": [],
+      "calls": 23,
+      "textures": 27,
+      "keys": [
+        {
+          "id": "foe-1-binding-thread",
+          "key": "K4"
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "key": "K0"
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "key": "K4"
+        },
+        {
+          "id": "mochi",
+          "key": "K2"
+        },
+        {
+          "id": "soot",
+          "key": "K0"
+        },
+        {
+          "id": "clover",
+          "key": "K0"
+        },
+        {
+          "id": "panko",
+          "key": "K0"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "traceReadbacks": false,
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "ended": "2026-11-17T18:03:12.654Z",
+  "pass": true,
+  "comparisonNote": "Previous packed first-contact182ms/readbacks46.6ms/upload31ms vs current140/40.1/29.5. Separate instrumented runs,not controlled FPS proof. 21reads and2GPUuploads remain;glyphROI/whole-atlas alternatives already rejected."
+}

@@ -21,7 +21,7 @@ const {pilotFixture,configureSequence}=await import(pathToFileURL(resolve(compil
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const served=await(await fetch(url)).text(),built=await readFile(resolve(integration,'apps/web/dist/index.html'),'utf8');
 if(hash(served)!==hash(built))throw Error('BOARD host differs from integration dist');
-const report={utc:new Date().toISOString(),url,boardTag:board.match(/Latest green milestone:(.*)/)?.[1]?.trim(),indexSha256:hash(served),fixtureSource:execFileSync('git',['-C',integration,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),candidateSource:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),method:'Fresh 1280x720 BOARD production scene; existing fixture DTOs, exact presentation clock. Production pixels; not a normal-play or FPS claim.',rows:[],errors:[]};
+const report={utc:new Date().toISOString(),url,boardTag:board.match(/Latest green milestone:(.*)/)?.[1]?.trim(),indexSha256:hash(served),harnessSha256:hash(await readFile(import.meta.filename)),fixtureSource:execFileSync('git',['-C',integration,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),candidateSource:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),method:'Fresh 1280x720 BOARD production scene; existing fixture DTOs, exact presentation clock. Production pixels; not a normal-play or FPS claim.',rows:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});
@@ -66,6 +66,8 @@ try{
   if(!arrival&&plan.ultimate)for(const ms of [1760,2199])audit.push(await sample(ms));
   report.rows.push({id,arrivalMode,reducedMotion,impact,plan:plan?{duration:plan.duration,fixedTiming:plan.fixedTiming,speechLeadInMs:plan.speechLeadInMs,voiceWindows:plan.voiceWindows}:null,frames,sheet,audit});
  }
+}catch(error){
+ report.errors.push(error instanceof Error?error.message:String(error));
 }finally{
  await browser.close();report.ended=new Date().toISOString();report.indexSha256After=hash(await(await fetch(url)).text());
  if(report.indexSha256After!==report.indexSha256)report.errors.push('Production index changed during capture');

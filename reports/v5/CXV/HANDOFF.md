@@ -1,19 +1,19 @@
 # CXV V7 handoff
-ACTIVE V-F residual first-contact/transition profiling; V-C m1.9 arrival verified; assistant: AGV.
+ACTIVE V-F GPU-upload attribution study (started18:07Z);V-C/B2/E fresh servedcandidate verified;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Push guarded pose-crop checkpoint/READY to CXI; then frozen first-contact profile and fresh BOARD production V-C/B2/E verification;do not reopen two afterreviewJPGs.
-NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.9merged/pushed.
+NEXT 1: Checkpoint/push servedcandidate reports;trace actual first-contact upload sources,then tool-only preupload experiment including prep cost/memory. Study18:07Z;no runtime scheduling edit before study+evidence.
+NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.10 mergedbf9520741;packed/crop independent review pending.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed push5e5766932 (remote verified17:56Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
+Last confirmed pushe1b1f58f5 (push confirmed 18:03Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
-V-C m1.9 own17:22Z4fresharrival sheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms;priorrecipientnet/Yarnproof retained.
-V-B2 m1.7 own4sheets+32sloop:26actoractions+3status,6ults/all4heroes;leadIn0,2200/1100;statusvoice absent.
-V-E m1.7 own4sheets:status120/400ms thenexpiry,4drawncrew,reducedPNGexact/confetti0;rulefixturewin.
+V-C servedaf3adbe2 own18:04Z6sheets0errors;normal240/620ms,reducedfeetstable,actionyield160ms,incomingdx9dy-2;net12@1280clear1640,Yarnsocket0clear1760.
+V-B2 servedaf3adbe2 own18:04Z4sheets +18:06Zordinary32s/rate;26actor+3status/6ults all4heroes bothrates;actorleadIn0,2200/1100;statusvoice absent.
+V-E servedaf3adbe2 own18:05Z4sheets;status120/400thenexpiry1200,4drawncrew,reducedPNGexact/confetti0;rulefixturewin,notprogression.
 Spatial910motion+130GPUexact,40tests+tsc0;microcached274.5vs385.5ms;buffers2387088B/31posesnormal,2326104B/30poses4x.
 Spatialfullrun:normalstartup54→60.5ms,maxframe50→66.7;4xstartup205.4→174.5,p95frame99.9→83.3;no generalFPSclaim.
 Open TASKs:T-CXV-1auditREDO repeated17:12Z(updatedtable stillframe1/nohashes),T-CXV-2researchREDO17:16Z(genericlinks/unsourced5–10%);CXI ownscompletedT4/T6conversions;unrelatedlegacyart/captureWIP preserved.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDERtext refreshed17:56Z;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;neverdelete/duplicate.
-Running Vite21525 only;before/afterjobs complete;posecrop130GPUexact/80assetgate/96tests/tsc0;ordinary startup47.6→39.8normal,160.7→130ms4x;p95frame4x66.7unchanged.
-Mailbox INBOX-CXV192,USER23;BOARDread17:55Z;STOPabsent17:55Z;lastRULESreread17:54Z;AGV aa2e04753 idle-only checkpoint REDO18:02Z;T-CXV-1/2 +T-CXI-9 open.
-Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; no ownm1.10 productioncapture yet.
+Running Vite21525 only;production14sheets+2ordinaryviews measured/inspectedonce;all0errors on stableaf3adbe2;ordinary26actor+3status/6ults bothrates.
+Mailbox INBOX-CXV192,USER23;BOARDread18:08Z;STOPabsent18:03Z;lastRULESreread18:03Z;AGV aa2e04753 idle-only checkpoint REDO18:02Z;T-CXV-1/2 +T-CXI-9 open.
+Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; own16freshimages reviewedonce;do not reopen V7-judge-m110-candidate sheets/reviewJPGs.
