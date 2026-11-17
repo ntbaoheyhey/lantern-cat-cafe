@@ -1,34 +1,34 @@
-# Bản review desktop — v5-m1.6
-Mở [bản game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trong trình duyệt desktop trên máy này. Dùng đủ query string. Đây là preview production local, chưa phải deploy công khai.
+# Bản review desktop — v5-m1.7
+Mở [game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trên máy này, giữ đầy đủ query string. Đây là preview production local, chưa deploy công khai.
 
-**Preview hiện tại là bản ứng viên chưa gắn tag:** ứng dụng `f9d92be0f`, index `b131c5edf4d4a5b5fc4e509b42f62665ef68a6000365c71d61c3f2e10f870948`. Đã kiểm tra riêng hiệu ứng trạng thái, đội chiến thắng, bố trí trận và ảnh AVIF nhẹ hơn; còn lỗi đường nối khi Mochi chớp mắt. Ba phim bên dưới thuộc bản xanh m1.6, chưa thể đại diện cho các thay đổi mới. Xem [bằng chứng ứng viên](I-A-VEF.md).
-
-Tag phát hành: v5-m1.6; mã ứng dụng được kiểm tra và quay: 6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb. Tag gồm thêm báo cáo. SHA256 index.html: ef21e23aa191d7b670782e9e53f0c198c679eb9e11971a1d023e1dfadcaf048f.
+Ứng dụng build `0a3c6ab1a`; source lúc quay `be701d072d3e5d8457360a7bf79639277230b354` chỉ thêm báo cáo. SHA256 index: `2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd`. Tag m1.7 bổ sung bằng chứng, không thay source ứng dụng.
 
 ## Những gì đã đổi
 
-- Nếu tải màn hình thất bại, café/header vẫn hiện cùng **Reload page** và **Back to café**. Nếu tải quá 8 giây, phần hồi phục gọn thay hình minh họa lớn; cả hai nút nằm trong viewport, không cần cuộn. Không tự reload.
-- Thử cố ý chặn file JavaScript: màn hình hồi phục xuất hiện sau 1,138 giây; giữ request chưa trả về: 8,666 giây. Hai đường đều quay lại café; reload khôi phục Route. Đây là thử nghiệm có chèn lỗi, chưa xác định nguyên nhân lần AGS bị kẹt.
-- Đòn đầu giảm HP165→119 sau **20,501 giây**, gồm 17,7 giây đọc đủ 8 thẻ/59 từ. Không save sẵn, bỏ hướng dẫn hoặc đổi tốc độ. Route detour→receipt mất 9,864 giây khi không tính thời gian đọc.
-- Receipt ghi rõ “Avalanche Fuji testnet / Local battle · no transaction sent” và liên kết hợp đồng items đã deploy. Chưa có giao dịch Fuji thật trong bằng chứng này.
-- Typecheck/build thành công; **5.227 test pass**, gồm 2.927 web; 11 skip và 2 expected failure. Các hành trình thông thường không có lỗi console/page/HTTP.
+- 12 hiệu ứng AVIF tổng337.103 B và bốn ảnh nhỏ106.267 B đã được kiểm tra. Giữ ảnh gốc, alpha và đường fallback; nơi cần ảnh lớn vẫn dùng ảnh lớn.
+- Đã sửa đường nối khi Mochi chớp mắt.20 pose GPU giữ nguyên pixel lúc mở và alpha. CloverK5 có62→0 pixel iris khi nhắm kín; nhận xét ban đầu nghi còn mở là đọc sheet nhầm, không cần sửa thêm.
+- Vị trí hàng trước phía dưới được nâng21,6 px.26 mẫu không còn pixel nhân vật hoặc viền trong vùng portrait. Wave3 vẫn đông; chưa khẳng định mọi khoảnh khắc đều thoáng.
+- Tải màn hình lỗi/chậm giữ café và header, có **Reload page** và **Back to café** trong viewport. Thử chèn lỗi:637 ms; tải treo:8.696 ms. Chưa xác định trace gốc của báo cáo AGS.
+- Đòn đầu sau **20,882 giây**, gồm17,7 giây đọc đủ tám thẻ; HP165→119, không có lỗi thông thường. Route detour→receipt mất9,684 giây khi không tính đọc.
+- Full suite5.250 test pass, gồm2.950 web;11 skip,2 expected failure; typecheck0 trên69e68a660. Sau đó chỉ đổi ba giá trị vị trí:18 test liên quan và build đều pass. Bốn kiểm tra cuối và ba phim mới đều đạt.
+- Receipt ghi rõ Fuji/local/no transaction và liên kết hợp đồng items. Chưa có giao dịch Fuji thật trong bằng chứng.
 
-## Ba phim review của đúng build
+## Ba phim đúng build
 
-Gameplay thật chạy 1× tại1280×720, âm thanh thực từ browser, mỗi phim30.000 giây. Fixture seed71/cấp6 dùng API review có sẵn; bỏ query dev trước lúc quay. Đây là fixture review, tách khỏi hành trình guest và bằng chứng giao dịch. Không tạo footage/nhạc bằng AI. Audio/video căn theo đồng hồ thực gần đúng, chưa kiểm chứng đồng bộ từng frame.
+Gameplay thật1× tại1280×720, âm thanh từ browser, mỗi phim30.000 giây. Fixture seed71/cấp6 dùng API review có sẵn; query dev được bỏ trước khi quay. Không sinh footage hoặc sửa HP, damage, rage, kết quả. Fixture tách khỏi hành trình guest và chứng cứ chain. A/V căn theo đồng hồ gần đúng, chưa xác minh từng frame; kiểm tra tín hiệu chưa thay cho nghe chủ quan.
 
 | Cảnh | MP4 | Contact sheet | Capture UTC | Peak / mean dBFS |
 |---|---|---|---|---|
-| wave1 | [wave1 · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/wave1/wave1-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/wave1/contact-1024.jpg) | 2026-11-17T14:58:23.373Z | -2.5 / -22.2 |
-| wave3 | [wave3 · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/wave3/wave3-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/wave3/contact-1024.jpg) | 2026-11-17T14:59:00.803Z | -2.2 / -23.3 |
-| boss | [boss · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/boss/boss-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m16b-review/boss/contact-1024.jpg) | 2026-11-17T14:59:36.723Z | -2.2 / -21.4 |
+| wave1 | [wave1 · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave1/wave1-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave1/contact-1024.jpg) | 2026-11-17T16:11:44.913Z | -2.2 / -22.3 |
+| wave3 | [wave3 · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave3/wave3-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave3/contact-1024.jpg) | 2026-11-17T16:12:20.768Z | -2.1 / -23.1 |
+| boss | [boss · 30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/boss/boss-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/boss/contact-1024.jpg) | 2026-11-17T16:12:56.699Z | -1.8 / -21.5 |
 
-Cả ba phim có HP/round thay đổi thật, video+audio, 0 lỗi console/page/HTTP và peak dưới0dBFS. Phân tích tín hiệu chưa thay cho đánh giá nghe chủ quan. CXI đo rồi xem mỗi sheet đúng một lần: nhân vật, HP, đòn đánh và hồi máu hiện đủ; cụm địch wave3 vẫn chật gần HUD. Bốn frame mẫu mỗi phim không chứng minh mọi khoảnh khắc ultimate. [Manifest và hash MP4](evidence/v7-m16b-films.json).
+Cả ba có HP/round tiến triển, không có lỗi console/page/HTTP. CXI đo rồi xem mỗi sheet một lần. Bốn frame mỗi phim không chứng minh mọi ultimate. [Manifest và hash MP4](evidence/v7-m17-films.json).
 
-## Các điểm chưa đạt
+## Chưa đạt
 
-- Tải lạnh wave1=8.584.126B; wave3=9.145.394B; boss=8.659.811B: cả ba còn vượt8.000.000B. Audio/AVIF chưa được chấp nhận không được tính trước vào tiết kiệm.
-- Wave3 còn chật ở phía dưới; Yarn ultimate fan vẫn có nợ thị giác từ bản trước. V-A3 của CXV mới READY, chưa có trong m1.6.
-- Public hosting và hash/fee/payer của giao dịch Fuji thật chưa được xác minh. Owner làm theo [NEEDS-USER-VI.md](NEEDS-USER-VI.md); CXI chưa deploy hoặc gửi giao dịch có quỹ.
+- Tải lạnh:wave1=7.909.547 B;wave3=8.469.958 B;boss=7.984.401 B. Wave3 còn vượt469.958 B;boss chỉ dư15.599 B so với8 MB. Không tuyên bố tất cả dưới8 MB.
+- Benchmark hiệu năng chỉ đúng phạm vi đo. Chuyển pose khi CPU bị giảm tốc4× vẫn cần tối ưu; không cam kết60 fps hoặc máy yếu thật.
+- Hosting công khai và giao dịch Fuji có quỹ là owner-only. [NEEDS-USER-VI.md](NEEDS-USER-VI.md) ghim tag mới. Chưa có public hash, fee hoặc payer.
 
-Mở MP4 trên máy này để xem chuyển động và nghe đủ âm thanh. Media lớn ở work/v5/CXI/films/v7-m16b-review/, được git bỏ qua. Các phim m15/m16 cũ được giữ riêng, không dùng thay cho bằng chứng build này.
+Phim lớn ởwork/v5/CXI/films/v7-m17-final/, được git bỏ qua. Các phim cũ được giữ riêng.

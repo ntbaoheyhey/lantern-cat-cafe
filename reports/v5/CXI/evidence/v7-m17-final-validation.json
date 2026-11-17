@@ -1,0 +1,733 @@
+{
+  "reviewedUtc": "2026-11-17T16:15:27.654820+00:00",
+  "sourceCommit": "be701d072d3e5d8457360a7bf79639277230b354",
+  "applicationBuildCommit": "0a3c6ab1a92834c079518903fcd454adf43523bf",
+  "indexSha256": "2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd",
+  "tests": {
+    "fullSuiteSource": "69e68a660cbc72c437743a10890f7dbae3213f89",
+    "passed": 5250,
+    "node": 77,
+    "web": 2950,
+    "skipped": 11,
+    "expectedFail": 2,
+    "typecheckExit": 0,
+    "subsequentRuntimeDelta": "f34877866 changes only three stage/slots.json values; test comment updated",
+    "deltaFocusedTests": 18,
+    "deltaBuildExit": 0
+  },
+  "firstHit": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-17T16:10:56.274Z",
+    "sourceCommit": "be701d072d3e5d8457360a7bf79639277230b354",
+    "indexSha256": "2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold guest practice first visible damage, ordinary UI controls, all tutorial text retained with 200-word/minute reading allowance. No fixture, saved progress, speed change or public transaction.",
+    "readingWordsPerMinute": 200,
+    "steps": [
+      {
+        "name": "guest entered",
+        "ms": 569
+      },
+      {
+        "name": "prepare opened",
+        "ms": 928
+      },
+      {
+        "name": "battle visible",
+        "ms": 2318
+      },
+      {
+        "name": "tutorial card 1",
+        "ms": 4816
+      },
+      {
+        "name": "tutorial card 2",
+        "ms": 6650
+      },
+      {
+        "name": "tutorial card 3",
+        "ms": 8490
+      },
+      {
+        "name": "tutorial card 4",
+        "ms": 10638
+      },
+      {
+        "name": "tutorial card 5",
+        "ms": 13083
+      },
+      {
+        "name": "tutorial card 6",
+        "ms": 15238
+      },
+      {
+        "name": "tutorial card 7",
+        "ms": 17988
+      },
+      {
+        "name": "tutorial card 8",
+        "ms": 20444
+      },
+      {
+        "name": "first visible hit",
+        "ms": 20882
+      }
+    ],
+    "tutorial": [
+      {
+        "instruction": "Guardians hold front. Witches hit groups. Alchemists heal.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Front cats protect the back row.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "These portraits show who acts next.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "Read enemy intent. Choose targeting before battle.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Basics build rage. Full rage readies your Ultimate.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Status icons show shields, burns, and delays.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Pack supplies before battle. Your packed treat appears here.",
+        "words": 9,
+        "readingMs": 2700
+      },
+      {
+        "instruction": "Change speed here. Pause and Auto remain available.",
+        "words": 8,
+        "readingMs": 2400
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "enemyHpBefore": {
+      "foe-0-practice-cushion": 165
+    },
+    "firstHitMs": 20882,
+    "hit": {
+      "target": "foe-0-practice-cushion",
+      "name": "Practice Cushion HP",
+      "hpBefore": 165,
+      "hpAfter": 119,
+      "damage": 46
+    },
+    "readingAllowanceMs": 17700,
+    "budgetPass": true
+  },
+  "route": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-17T16:11:17.836Z",
+    "sourceCommit": "be701d072d3e5d8457360a7bf79639277230b354",
+    "indexSha256": "2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.",
+    "steps": [
+      {
+        "name": "route menu visible",
+        "ms": 1940
+      },
+      {
+        "name": "fight available",
+        "ms": 2171
+      },
+      {
+        "name": "battle visible",
+        "ms": 2821
+      },
+      {
+        "name": "practice receipt visible",
+        "ms": 9684
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "menu": "Your practice battle is ready\n\nMeet your crew in preparation, then choose Fight. Your first chapter opens after practice.\n\nReturn to preparation",
+    "buttons": [
+      {
+        "name": "Return to preparation",
+        "disabled": false
+      }
+    ],
+    "receipt": "Practice complete. A free invitation awaits.",
+    "deployment": {
+      "text": "Avalanche Fuji testnet\nLocal battle \u00b7 no transaction sent\nView deployed items contract \u2197",
+      "url": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    }
+  },
+  "recovery": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-17T16:11:27.962Z",
+    "sourceCommit": "be701d072d3e5d8457360a7bf79639277230b354",
+    "indexSha256": "2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Intentional route module abort and stalled download. Ordinary guest controls and real timers. These failures are injected and do not reproduce an identified AGS network trace.",
+    "rows": [
+      {
+        "mode": "reject",
+        "complete": true,
+        "intercepted": [
+          "/assets/EncounterV3-BpavIlu9.js",
+          "/assets/EncounterV3-BpavIlu9.js"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          "Failed to load resource: net::ERR_FAILED",
+          "Failed to load resource: net::ERR_FAILED",
+          "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:6301/assets/EncounterV3-BpavIlu9.js",
+          "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:6301/assets/EncounterV3-BpavIlu9.js"
+        ],
+        "blockedWrites": [],
+        "recoveryMs": 637,
+        "recoveryText": "Couldn\u2019t open Prepare\n\nReload the page to try again, or return to the caf\u00e9.\n\nReload page\nBack to caf\u00e9",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to caf\u00e9",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m17-final/reject-1024.jpg",
+        "returnedToCafe": true,
+        "reloadRestoredRoute": true
+      },
+      {
+        "mode": "stall",
+        "complete": true,
+        "intercepted": [
+          "/assets/EncounterV3-BpavIlu9.js"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedWrites": [],
+        "recoveryMs": 8696,
+        "recoveryText": "Opening Prepare\u2026\n\nThis is taking longer than expected.\n\nReload page\nBack to caf\u00e9",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to caf\u00e9",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m17-final/stall-1024.jpg",
+        "returnedToCafe": true
+      }
+    ],
+    "complete": true
+  },
+  "transfer": {
+    "at": "2026-11-17T16:10:44.816Z",
+    "sourceCommit": "be701d072d3e5d8457360a7bf79639277230b354",
+    "indexSha256": "2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd",
+    "harnessSha256": "bbed587083b4b81fb956ad42cfa7dcf672476f41ef9c8da4472a44ea32b77023",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Fresh Chromium context, service workers blocked, HTTP cache disabled. Count the full encoded response of every request started from navigation to visible battle-ready UI, including navigation and responses finishing after readiness. Production bundles only; unchanged official rules/fixtures are prepared outside the browser, then selected through the existing review interface.",
+    "limits": [
+      "These are cold combat fixture entries, not guest authentication, sponsored transaction, or campaign journey evidence.",
+      "No development server/source module is requested by the browser. The existing dev=1 review switch only selects the official fixture."
+    ],
+    "complete": true,
+    "budgetPass": false,
+    "rows": [
+      {
+        "fixture": "wave1",
+        "enemies": [
+          "button-guard",
+          "sock-skipper",
+          "teacup-healer",
+          "needle-moth"
+        ],
+        "errors": [],
+        "httpFailures": [],
+        "blocked": [],
+        "publicReads": [
+          "eth_chainId",
+          "eth_blockNumber",
+          "eth_call",
+          "eth_call",
+          "eth_getBlockByNumber",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_getBlockByNumber"
+        ],
+        "developmentPaths": [],
+        "complete": true,
+        "battleReadyMs": 3208,
+        "top15": [
+          {
+            "path": "/art/v3-shell/landing.avif",
+            "totalBytes": 208137,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/clover-healing-canopy-8789a708ee.avif",
+            "totalBytes": 172446,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/painted-cafe-c11-v1-Es-L8AOh.avif",
+            "totalBytes": 171277,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/v5/legacy/menu-home.opus",
+            "totalBytes": 161610,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/v5/legacy/score-battle.opus",
+            "totalBytes": 148426,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/teacup-healer-tea-canopy-75beb105a5.avif",
+            "totalBytes": 145405,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/scene-room.webm",
+            "totalBytes": 138442,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/clover-c1c0bc6fcc43-571d6481.avif",
+            "totalBytes": 138351,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/soot-ca02da5fbe8c-7f74b1a7.avif",
+            "totalBytes": 130717,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/panko-66720d11663a-77ff32d1.avif",
+            "totalBytes": 123960,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/mochi-f08a34979f8a-3fd68fc2.avif",
+            "totalBytes": 119108,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/web3-BXuhzNNJ.js",
+            "totalBytes": 114888,
+            "type": "Script",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/panko-oven-bastion-13e9d6d253.avif",
+            "totalBytes": 100561,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/menu-voices.webm",
+            "totalBytes": 98469,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/mochi-shield-crest-2edb2dcb5d.avif",
+            "totalBytes": 98456,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "budgetPass": true,
+        "transfer": {
+          "valid": true,
+          "requests": 744,
+          "bytesObservedAtBattle": 7908696,
+          "conservativeTransferBytes": 7909547,
+          "incomplete": [],
+          "failed": [],
+          "cached": []
+        }
+      },
+      {
+        "fixture": "wave3",
+        "enemies": [
+          "kettle-knight",
+          "spool-ram",
+          "pollen-scout",
+          "crumb-sentinel",
+          "needle-moth",
+          "teacup-healer"
+        ],
+        "errors": [],
+        "httpFailures": [],
+        "blocked": [],
+        "publicReads": [
+          "eth_chainId",
+          "eth_blockNumber",
+          "eth_call",
+          "eth_call",
+          "eth_getBlockByNumber",
+          "eth_call",
+          "eth_call",
+          "eth_call",
+          "eth_call"
+        ],
+        "developmentPaths": [],
+        "complete": true,
+        "battleReadyMs": 1978,
+        "top15": [
+          {
+            "path": "/art/v3-shell/landing.avif",
+            "totalBytes": 208137,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/clover-healing-canopy-8789a708ee.avif",
+            "totalBytes": 172446,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/painted-cafe-c11-v1-Es-L8AOh.avif",
+            "totalBytes": 171277,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/v5/legacy/menu-home.opus",
+            "totalBytes": 161610,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/v5/legacy/score-battle.opus",
+            "totalBytes": 148426,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/teacup-healer-tea-canopy-75beb105a5.avif",
+            "totalBytes": 145405,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/scene-workshop.webm",
+            "totalBytes": 142349,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/scene-room.webm",
+            "totalBytes": 138442,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/clover-c1c0bc6fcc43-571d6481.avif",
+            "totalBytes": 138351,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/soot-ca02da5fbe8c-7f74b1a7.avif",
+            "totalBytes": 130717,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/panko-66720d11663a-77ff32d1.avif",
+            "totalBytes": 123960,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/mochi-f08a34979f8a-3fd68fc2.avif",
+            "totalBytes": 119108,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/web3-BXuhzNNJ.js",
+            "totalBytes": 114888,
+            "type": "Script",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/panko-oven-bastion-13e9d6d253.avif",
+            "totalBytes": 100561,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/menu-voices.webm",
+            "totalBytes": 98469,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "budgetPass": false,
+        "transfer": {
+          "valid": true,
+          "requests": 753,
+          "bytesObservedAtBattle": 8469736,
+          "conservativeTransferBytes": 8469958,
+          "incomplete": [],
+          "failed": [],
+          "cached": []
+        }
+      },
+      {
+        "fixture": "boss",
+        "enemies": [
+          "yarn-giant",
+          "binding-thread",
+          "binding-thread"
+        ],
+        "errors": [],
+        "httpFailures": [],
+        "blocked": [],
+        "publicReads": [
+          "eth_chainId",
+          "eth_blockNumber",
+          "eth_call",
+          "eth_call",
+          "eth_getBlockByNumber",
+          "eth_call"
+        ],
+        "developmentPaths": [],
+        "complete": true,
+        "battleReadyMs": 1791,
+        "top15": [
+          {
+            "path": "/audio/score-boss.webm",
+            "totalBytes": 261256,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/score-dawn.webm",
+            "totalBytes": 237119,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/art/v3-shell/landing.avif",
+            "totalBytes": 208137,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/clover-healing-canopy-8789a708ee.avif",
+            "totalBytes": 172446,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/painted-cafe-c11-v1-Es-L8AOh.avif",
+            "totalBytes": 171277,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/v5/legacy/menu-home.opus",
+            "totalBytes": 161610,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/yarn-giant-braid-wave-80d66f4389.avif",
+            "totalBytes": 142173,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/scene-room.webm",
+            "totalBytes": 138442,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/clover-c1c0bc6fcc43-571d6481.avif",
+            "totalBytes": 138351,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/audio/scene-rain.webm",
+            "totalBytes": 135699,
+            "type": "Fetch",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/soot-ca02da5fbe8c-7f74b1a7.avif",
+            "totalBytes": 130717,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/panko-66720d11663a-77ff32d1.avif",
+            "totalBytes": 123960,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx/sampled-delivery/mochi-f08a34979f8a-3fd68fc2.avif",
+            "totalBytes": 119108,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/assets/web3-BXuhzNNJ.js",
+            "totalBytes": 114888,
+            "type": "Script",
+            "cached": false,
+            "failed": false
+          },
+          {
+            "path": "/vfx-delivery/craft/panko-oven-bastion-13e9d6d253.avif",
+            "totalBytes": 100561,
+            "type": "Image",
+            "cached": false,
+            "failed": false
+          }
+        ],
+        "budgetPass": true,
+        "transfer": {
+          "valid": true,
+          "requests": 735,
+          "bytesObservedAtBattle": 7982268,
+          "conservativeTransferBytes": 7984401,
+          "incomplete": [],
+          "failed": [],
+          "cached": []
+        }
+      }
+    ]
+  },
+  "visualReview": {
+    "guestSheets": [
+      "first-hit-1024.jpg",
+      "receipt-1024.jpg",
+      "reject-1024.jpg",
+      "stall-1024.jpg"
+    ],
+    "filmSheets": [
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave1/contact-1024.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/wave3/contact-1024.jpg",
+      "/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m17-final/boss/contact-1024.jpg"
+    ],
+    "result": "All seven measured1024x576 then inspected once. Visible46damage,truthfulFuji/no-transaction receipt,recoverybuttons fit. Realfilm sheets preserveactors/effects/HP;wave3crowding remains,not a blocker. No subjective listening or exactAVsync claimed."
+  }
+}

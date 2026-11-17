@@ -1,10 +1,9 @@
-# I-E production review films — v5-m1.6
-Completed 2026-11-17T15:02:16.484009+00:00
-Three30.000s1280×720 MP4s, actual1× gameplay and browser audio; no generated footage or time stepping.
-Exact capture URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Fixture setup URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1
-Source:6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb; index:ef21e23aa191d7b670782e9e53f0c198c679eb9e11971a1d023e1dfadcaf048f.
-All three complete with actual HP/round progression and0console/page/HTTP errors. Peaks-2.5/-2.2/-2.2dBFS; means-22.2/-23.3/-21.4dBFS. Signal/no-clipping checks do not establish subjective listening quality; A/V alignment approximate, not frame-exact.
-Evidence:evidence/v7-m16b-films.json; ignored media:work/v5/CXI/films/v7-m16b-review/.
-Three fresh contact sheets measured1024×576 then viewed once. No new blocker; knownwave3lower crowding and priorYarnfan remain. Four samples do not prove every effect interval.
-REVIEW-VI.md links all clips. Fixture films are separate from ordinary guest timing and public Fuji proof. Pre-fix m16 films are superseded evidence; originals retained.
+# I-E production review films — v5-m1.7
+Three30.000-second MP4s at1280×720 show actual1× gameplay with browser audio. They use official fixtures; no generated footage, time stepping or injected combat results.
+Capture URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Source: be701d072d3e5d8457360a7bf79639277230b354; application build0a3c6ab1a. Index SHA256: 2fc8f62365123da073fa54eab0683387a3de421788da0ba6e12fa39ea5c837fd.
+
+All three films show real HP/round progression and contain video plus audio, with zero console/page/HTTP errors. Peaks are−2.2/−2.1/−1.8 dBFS; means−22.3/−23.1/−21.5 dBFS. Signal checks do not establish subjective listening quality; A/V synchronization is approximate.
+Three fresh1024×576 contact sheets were measured, then inspected once. Actors, HP and attack/shield/heal effects remain readable. Wave3's lower field remains crowded. Four samples per film do not prove every effect interval.
+
+[Manifest and hashes](evidence/v7-m17-films.json). Media stays ignored under work/v5/CXI/films/v7-m17-final/. Earlier films remain intact and are superseded for the current review. [Vietnamese review](REVIEW-VI.md).
