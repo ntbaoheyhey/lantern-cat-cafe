@@ -12,8 +12,8 @@ Taskbar Hero is a cozy cat card-RPG where players defend their café from invade
 
 ## Avalanche Integration
 * **Foundry:** Used for smart contract development and testing on Fuji.
-* **Wagmi/Viem:** Handles on-chain interactions for secure and transparent gameplay.
-* **SIWE (Sign-In with Ethereum):** Used for secure authentication.
+* **Wagmi/Viem:** Handles on-chain interactions.
+* **Instant Guest Mode:** Users interact via an ephemeral guest wallet without extension installation or crypto knowledge required.
 * **Smart Contracts:** Manage relic minting, trading, and reward settlement on Avalanche.
 
 ## Tech Stack

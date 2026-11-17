@@ -3,8 +3,8 @@
 - [ ] CANCELLED: REFILL-R23 contract gas audit (Worthless: judge never sees)
 - [ ] CANCELLED: REFILL-R24 cat voice formant catalog (Worthless: judge never sees)
 - [ ] CANCELLED: REFILL-R25 Web Audio latency benchmark (Worthless: judge never sees)
-- [ ] S-A: Answer open REQs: CXI audio derivatives + CXV Q0b-F2 recheck.
-- [ ] S-B: Judge's-eye QA on newest tag: 1280x720 + 390x844.
+- [x] S-A: Answer open REQs: CXI audio derivatives + CXV Q0b-F2 recheck.
+- [ ] S-B: Judge's-eye QA on newest tag: 1280x720 (Desktop only).
 - [ ] S-C: Submission pack: reports/v5/AGS/submission/SUBMISSION-DRAFT.md + README text.
 - [ ] S-D: Demo video plan (VIDEO-PLAN.md) + pitch outline (PITCH-OUTLINE.md).
 - [ ] S-E: Sound judge hears: play, fix loudness, wiring.
