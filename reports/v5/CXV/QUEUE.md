@@ -3,8 +3,8 @@
 - [x] V1 Skill VFX timeline system — DONE; 16 timelines, twelve reviewed sheets, tests/typecheck, AG4 cues
 - [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
 - [x] V3 Enemies + boss — DONE; native source20/20; six fresh sheets, Yarn hand/target contact proven
-- [ ] V4 AGS QA + owner polish — ACTIVE 2026-11-17T06:42:03Z; Q0b-F2 and Yarn basic impact
-- [ ] V5 Performance + reduced motion — queued, 2h
+- [x] V4 current QA impact fixes — DONE a7d452167;12/12 + tsc0 + fresh sheets; AGS recheck/M2 feedback pending
+- [ ] V5 Performance + reduced motion — next after pending priority pair REVIEW checkpoint, 2h
 
 ## REFILL LIST (append next three unfinished items when queue is empty)
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
@@ -30,3 +30,5 @@
 - [x] CXI VFX override regression — fixed; DONE ed388eb30; focused8/8 + typecheck + push
 - [ ] CXI deferred native pixel third argument — ACK; wire when announced milestone supplies loader API
 - [ ] AGV ultimate REVIEW — ACK pending; own runtime capture required
+
+- [ ] AGS Q0b-F2 external recheck — fix delivered; request sent, latest QA closure pending

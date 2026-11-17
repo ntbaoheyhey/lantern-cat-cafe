@@ -7,8 +7,8 @@ Scores 1–5: readability / impact / beauty / motion. Only newly captured curren
 | needle-moth hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, wing silhouette and lavender fragments remain clear. |
 | kettle-knight hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, armor flash and brass fragments retain material. |
 | yarn-giant hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, clear hit drawing and woven dissolve. |
-| yarn-giant basic | 4 | 3 | 4 | 4 | V3 07c18407a, arm reaches Panko; local contact punctuation and explicit hit-stop still weak. |
-| yarn-giant ultimate | 4 | 4 | 4 | 4 | V3 07c18407a, rising weave builds before two contacts and settles. |
+| yarn-giant basic | 4 | 4 | 4 | 4 | V4 a7d452167, visible contact and explicit45ms hold; small camera impulse and local warm accent. |
+| yarn-giant ultimate | 4 | 4 | 4 | 4 | V4 a7d452167, rising weave, explicit70ms hold, two contacts, restrained decay. |
 
 Hero basic/skill/ultimate complete independent re-score is pending R10. Texture G1–G5 reviews are separate pair gates and remain pending for legacy AGV requests. Overall DONE gate is NOT met.
 
