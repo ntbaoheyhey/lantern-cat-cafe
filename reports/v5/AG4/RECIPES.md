@@ -314,3 +314,23 @@ Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -20.2 to -16.5 LUFS (avg 
   4. `panko`: hit 1-1 (14.12s, 1.21s), hit 1-2 (15.41s, 1.24s), death 1-1 (16.73s, 1.45s), death 1-2 (18.26s, 1.48s).
 - Total sizes: Opus 161.2 KB, M4A 181.5 KB (Replaces 919 KB whole cat voice packs for battle entry = 82% saving).
 - Mapping report: `reports/v5/AG4/VOICE-CUTS-MAPPING.json` and `reports/v5/AG4/VOICE-CUTS-REPORT.csv`.
+
+## R2: Ambience Loops (Cosy Workshop/Café and Battle Bed)
+Synthesis source: tools/v5audio/render.mjs (deterministic filtergraph execution via ffmpeg).
+Target loudness: -22.0 LUFS +/- 2 LU (calibrated background bed level sitting under combat SFX). Measured spread: -22.0 to -21.6 LUFS (0.4 LU spread). True peak <= -8.1 dBFS. Sizes <= 89 KB opus (well within <= 150 KB budget).
+
+1. `ambience.workshop.cosy` (`ambience-workshop-cosy`):
+   - Harmonic pad: C major pentatonic (C3 130.81Hz, G3 196.00Hz, E3 164.81Hz, C4 261.63Hz)
+   - Cat purr: 28Hz sub drone with 22Hz amplitude flutter
+   - Dust & crackle: pink noise lowpass 1200Hz, volume 0.12
+   - Wind chime reflections: soft periodic chimes at 1046.5Hz (C6) and 1567.98Hz (G6) every 3.5s
+   - Duration: 14.0s seamless loop
+   - Measured: -21.6 LUFS, peak -9.0 dBFS, opus 89,007 B (86.9 KB), m4a 116,039 B (113.3 KB).
+
+2. `ambience.battle.bed` (`ambience-battle-bed`):
+   - Dramatic pad: D minor chord (D2 73.42Hz, A2 110.00Hz, D3 146.83Hz, F3 174.61Hz)
+   - Heartbeat pulse: 52Hz sub pulse repeating every 1.0s (60 BPM)
+   - Tension wind: brown noise lowpass 450Hz, volume 0.18
+   - Metallic shimmer: white noise bandpass 2200Hz (w=600), volume 0.04
+   - Duration: 12.0s seamless loop
+   - Measured: -22.0 LUFS, peak -8.1 dBFS, opus 65,932 B (64.4 KB), m4a 100,166 B (97.8 KB).

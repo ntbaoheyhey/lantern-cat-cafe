@@ -6,7 +6,7 @@
 - [x] U3 Enemy + boss + UI set: hits x3, death x2, yarn-giant ult, receipt chime
 - [x] U4 Revisions: durationSeconds, bus, runtime aliases mapped in manifest.json & CXI-MAPPING.json
 - [x] R1 Variations: 2 extra takes per frequent cue (pitch +/-3%, layer swap: 20 cues, 40 files)
-- [ ] R2 Ambience loops: cosy workshop/café idle and battle bed (<=150KB each)
+- [x] R2 Ambience loops: cosy workshop/café idle and battle bed (<=150KB each)
 - [ ] R3 UI set: click, hover, confirm, cancel, card flip, coin, error (<=15KB each)
 
 ## Refill List Remaining

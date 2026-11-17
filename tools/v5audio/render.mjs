@@ -1208,6 +1208,147 @@ export function renderVariations() {
   return { results, spread, avgLufs };
 }
 
+/**
+ * R2: Ambience Loops Definitions (Cosy workshop/café and battle bed, seamless, <= 150 KB)
+ */
+export const AMBIENCE_DEFINITIONS = [
+  {
+    cueId: 'ambience.workshop.cosy',
+    name: 'ambience-workshop-cosy',
+    runtimeCueId: 'ambience.workshop.cosy',
+    aliases: ['music.home', 'ambience.workshop', 'bgm.cosy'],
+    durationSec: 14.0,
+    bus: 'bgm',
+    loop: true,
+    filtergraph: [
+      "aevalsrc=exprs='0.25*sin(2*PI*130.81*t)+0.20*sin(2*PI*196.00*t)+0.15*sin(2*PI*164.81*t)+0.10*sin(2*PI*261.63*t)':s=48000:d=14.0[pad]",
+      "aevalsrc=exprs='0.28*sin(2*PI*28*t)*(0.7+0.3*sin(2*PI*22*t))':s=48000:d=14.0[purr]",
+      "anoisesrc=c=pink:r=48000:d=14.0,lowpass=f=1200,volume=0.12[dust]",
+      "aevalsrc=exprs='0.08*(sin(2*PI*1046.5*t)*exp(-mod(t\\,3.5)/0.8)+sin(2*PI*1567.98*t)*exp(-mod(t+1.75\\,3.5)/0.8))':s=48000:d=14.0[chime]",
+      "[pad][purr][dust][chime]amix=inputs=4:dropout_transition=0:normalize=0,volume=0.36,alimiter=limit=0.85:level=false[mix]"
+    ].join(';')
+  },
+  {
+    cueId: 'ambience.battle.bed',
+    name: 'ambience-battle-bed',
+    runtimeCueId: 'ambience.battle.bed',
+    aliases: ['music.battle', 'ambience.battle', 'bgm.battle'],
+    durationSec: 12.0,
+    bus: 'bgm',
+    loop: true,
+    filtergraph: [
+      "aevalsrc=exprs='0.20*sin(2*PI*73.42*t)+0.15*sin(2*PI*110.00*t)+0.10*sin(2*PI*146.83*t)+0.08*sin(2*PI*174.61*t)':s=48000:d=12.0[pad]",
+      "aevalsrc=exprs='0.28*sin(2*PI*52*t)*exp(-mod(t\\,1.0)/0.18)':s=48000:d=12.0[heart]",
+      "anoisesrc=c=brown:r=48000:d=12.0,lowpass=f=450,volume=0.18[wind]",
+      "anoisesrc=c=white:r=48000:d=12.0,bandpass=f=2200:w=600,volume=0.04[shiver]",
+      "[pad][heart][wind][shiver]amix=inputs=4:dropout_transition=0:normalize=0,volume=0.60,alimiter=limit=0.85:level=false[mix]"
+    ].join(';')
+  }
+];
+
+export function renderAmbience() {
+  console.log(`Rendering ${AMBIENCE_DEFINITIONS.length} Ambience Loops (R2)...`);
+  const results = [];
+  const manifestCues = {};
+
+  for (const def of AMBIENCE_DEFINITIONS) {
+    const opusPath = path.join(AUDIO_V5_DIR, `${def.name}.opus`);
+    const m4aPath = path.join(AUDIO_V5_DIR, `${def.name}.m4a`);
+
+    // Render opus
+    runFfmpeg([
+      '-f', 'lavfi',
+      '-i', 'anullsrc=r=48000:cl=mono',
+      '-filter_complex', def.filtergraph,
+      '-map', '[mix]',
+      '-t', `${def.durationSec}`,
+      '-c:a', 'libopus',
+      '-b:a', '48k',
+      '-ac', '1',
+      '-f', 'webm',
+      opusPath
+    ]);
+
+    // Render m4a fallback
+    runFfmpeg([
+      '-i', opusPath,
+      '-c:a', 'aac',
+      '-b:a', '64k',
+      '-ac', '1',
+      m4aPath
+    ]);
+
+    const opusStat = fs.statSync(opusPath);
+    const m4aStat = fs.statSync(m4aPath);
+    const loudness = measureLoudness(opusPath);
+    const probe = probeAudio(opusPath);
+
+    const res = {
+      cueId: def.cueId,
+      name: def.name,
+      opusPath,
+      m4aPath,
+      opusBytes: opusStat.size,
+      m4aBytes: m4aStat.size,
+      duration: parseFloat(probe.format.duration),
+      integratedLUFS: loudness.integratedLUFS,
+      truePeakDb: loudness.truePeakDb,
+      bus: def.bus,
+      loop: def.loop
+    };
+
+    results.push(res);
+    manifestCues[def.cueId] = {
+      opus: `/audio/v5/${def.name}.opus`,
+      m4a: `/audio/v5/${def.name}.m4a`,
+      durationSeconds: def.durationSec,
+      bus: def.bus,
+      loop: def.loop,
+      runtimeCueId: def.runtimeCueId,
+      aliases: def.aliases
+    };
+
+    console.log(`- ${def.cueId}: ${res.integratedLUFS.toFixed(1)} LUFS, peak ${res.truePeakDb.toFixed(1)} dBFS, opus ${(res.opusBytes / 1024).toFixed(1)} KB, m4a ${(res.m4aBytes / 1024).toFixed(1)} KB, dur ${res.duration.toFixed(1)}s`);
+  }
+
+  // Write reports/v5/AG4/R2-loudness.csv
+  const csvLines = [
+    'cueId,name,opusPath,opusBytes,m4aBytes,durationSec,integratedLUFS,truePeakDbFS,bus,loop'
+  ];
+  for (const r of results) {
+    csvLines.push(`${r.cueId},${r.name},${r.opusPath},${r.opusBytes},${r.m4aBytes},${r.duration.toFixed(3)},${r.integratedLUFS.toFixed(1)},${r.truePeakDb.toFixed(1)},${r.bus},${r.loop}`);
+  }
+  const csvPath = path.join(REPORTS_DIR, 'R2-loudness.csv');
+  fs.writeFileSync(csvPath, csvLines.join('\n') + '\n', 'utf8');
+  console.log(`Wrote loudness report: ${csvPath}`);
+
+  // Update manifest.json
+  const manifestPath = path.join(AUDIO_V5_DIR, 'manifest.json');
+  let currentManifest = {};
+  if (fs.existsSync(manifestPath)) {
+    try {
+      currentManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    } catch (e) {
+      currentManifest = {};
+    }
+  }
+  const updatedManifest = {
+    ...currentManifest,
+    ...manifestCues
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(updatedManifest, null, 2) + '\n', 'utf8');
+  console.log(`Updated manifest: ${manifestPath}`);
+
+  const lufsValues = results.map(r => r.integratedLUFS);
+  const minLufs = Math.min(...lufsValues);
+  const maxLufs = Math.max(...lufsValues);
+  const avgLufs = lufsValues.reduce((a, b) => a + b, 0) / lufsValues.length;
+  const spread = maxLufs - minLufs;
+
+  console.log(`R2 Loudness spread: min=${minLufs.toFixed(1)}, max=${maxLufs.toFixed(1)}, avg=${avgLufs.toFixed(1)}, spread=${spread.toFixed(1)} LU`);
+  return { results, spread, avgLufs };
+}
+
 
 // CLI dispatcher
 const arg = process.argv[2];
@@ -1221,13 +1362,16 @@ if (arg === '--calibrate') {
   renderEnemyAndUi();
 } else if (arg === '--variations') {
   renderVariations();
+} else if (arg === '--ambience') {
+  renderAmbience();
 } else if (arg === '--all') {
   renderCalibration();
   renderHeroSkills();
   splitRangedImpacts();
   renderEnemyAndUi();
   renderVariations();
+  renderAmbience();
 } else if (arg === '--help' || !arg) {
-  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --all]');
+  console.log('Usage: node tools/v5audio/render.mjs [--calibrate | --hero-skills | --split-ranged | --enemy-ui | --variations | --ambience | --all]');
 }
 

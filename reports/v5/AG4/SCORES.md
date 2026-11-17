@@ -85,3 +85,9 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `voice.clover.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Soft fluttering purr-mew, -18.5 LUFS avg, 1.59-1.63s |
 | `voice.panko.hit` (2 takes) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Crumbly surprised squeak, -17.6 LUFS avg, 1.21-1.24s |
 | `voice.panko.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Sleepy breadloaf mew, -18.1 LUFS avg, 1.45-1.48s |
+
+## R2 Ambience Loops
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `ambience.workshop.cosy` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Warm C-major pad + purr + chime, -21.6 LUFS, 86.9 KB |
+| `ambience.battle.bed` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | D-minor tension + 60 BPM pulse, -22.0 LUFS, 64.4 KB |
