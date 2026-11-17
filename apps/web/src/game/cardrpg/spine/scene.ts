@@ -456,7 +456,10 @@ export class SpineScene {
   // actor tint; retain the actor, then place only local floor and inner-edge light.
   const groundOrder=Math.min(...[...this.actors.values()].map(e=>e.actor.root.renderOrder))-1;
   for(const [id,entry]of this.actors){
-   if(!entry.craftLight)continue;
+   if(!entry.craftLight){
+    entry.craftDeath?.captureNativeSource(this.renderer,this.camera,{width,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,box:this.bounds(entry)});
+    continue;
+   }
    const sample=this.sampled.get(id),acting=plan?.actorId===id,ms=acting?(frame?.elapsed??0):(view.model?sample?.at??0:0)*1000;
    const ultimate=acting?!!plan?.ultimate:sample?.name==='ult',end=ultimate?2200:800;
    const rise=ultimate?Math.max(0,Math.min(1,(ms-400)/700)):Math.max(0,Math.min(1,(ms-80)/270));

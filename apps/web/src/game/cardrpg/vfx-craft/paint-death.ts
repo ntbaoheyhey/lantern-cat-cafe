@@ -23,6 +23,11 @@ export class PaintDeath {
  private geometry=new T.BufferGeometry();
  private material:T.ShaderMaterial;
  private mesh:T.Mesh<T.BufferGeometry,T.ShaderMaterial>;
+ private sourceTarget?:T.WebGLRenderTarget;
+ private sourceCamera=new T.OrthographicCamera();
+ private sourceCrop=new T.Vector4();
+ private clear=new T.Color();
+ private reduced=false;
  constructor(readonly actor:SpineActor){
   this.range={value:new T.Vector2(actor.bounds.y,actor.bounds.height)};
   actor.root.traverse(node=>{
@@ -80,11 +85,12 @@ void main(){
  #include <colorspace_fragment>
 }`});
   this.mesh=new T.Mesh(this.geometry,this.material);this.mesh.frustumCulled=false;
-  this.fragments.name='Soot finite original-paint fragments';this.fragments.matrixAutoUpdate=false;this.fragments.add(this.mesh);this.fragments.visible=false;
+  this.fragments.name='Finite original-paint fragments';this.fragments.matrixAutoUpdate=false;this.fragments.add(this.mesh);this.fragments.visible=false;
  }
  setTime(seconds:number|null,reduced:boolean){
+  this.reduced=reduced;
   this.amount.value=seconds===null?-1:sampleReaction(-1,seconds*1000,reduced,this.reaction).dissolve;
-  this.fragments.visible=!reduced&&this.amount.value>0&&this.amount.value<1;
+  this.fragments.visible=!!this.material.uniforms.uPaint!.value&&!reduced&&this.amount.value>0&&this.amount.value<1;
  }
  withSourcePaint<TValue>(capture:()=>TValue):TValue{
   const amount=this.amount.value;this.amount.value=-1;
@@ -94,9 +100,32 @@ void main(){
   this.material.uniforms.uPaint!.value=texture;this.material.uniforms.uCrop!.value.copy(crop);
   this.fragments.matrix.copy(this.actor.root.matrixWorld);this.fragments.matrixWorldNeedsUpdate=true;
   this.fragments.renderOrder=this.actor.root.renderOrder+.3;
+  this.fragments.visible=!this.reduced&&this.amount.value>0&&this.amount.value<1;
+ }
+ /** Native actors have no PaintLight source. Allocate only during a visible death,
+  * and grow in blocks rather than reallocating for each animated pose. */
+ captureNativeSource(renderer:T.WebGLRenderer,camera:T.OrthographicCamera,f:{width:number;worldWidth:number;worldHeight:number;box:{x:number;y:number;width:number;height:number}}){
+  if(this.reduced||this.amount.value<=0||this.amount.value>=1||!this.actor.root.visible)return;
+  const target=this.sourceTarget??=new T.WebGLRenderTarget(1,1,{type:T.HalfFloatType,depthBuffer:false,stencilBuffer:false,minFilter:T.LinearFilter,magFilter:T.LinearFilter});
+  target.texture.colorSpace=T.LinearSRGBColorSpace;
+  const dpr=renderer.getPixelRatio(),px=f.worldWidth/f.width,pad=6;
+  const left=Math.floor((f.box.x-pad)*dpr)/dpr,top=Math.floor((f.box.y-pad)*dpr)/dpr;
+  const width=Math.max(target.width,Math.ceil((f.box.x+f.box.width+pad-left)*dpr/32)*32);
+  const height=Math.max(target.height,Math.ceil((f.box.y+f.box.height+pad-top)*dpr/32)*32);
+  if(target.width!==width||target.height!==height)target.setSize(width,height);
+  const right=left+width/dpr,bottom=top+height/dpr,c=this.sourceCamera;
+  c.copy(camera);c.left=left*px-f.worldWidth/2;c.right=right*px-f.worldWidth/2;
+  c.top=f.worldHeight-top*px;c.bottom=f.worldHeight-bottom*px;c.updateProjectionMatrix();c.updateMatrixWorld();
+  this.sourceCrop.set(c.left+camera.position.x,c.bottom+camera.position.y,(right-left)*px,(bottom-top)*px);
+  const previous=renderer.getRenderTarget(),alpha=renderer.getClearAlpha();renderer.getClearColor(this.clear);
+  this.withSourcePaint(()=>{
+   try{renderer.setRenderTarget(target);renderer.setClearColor(0,0);renderer.clear();renderer.render(this.actor.root,c);}
+   finally{renderer.setRenderTarget(previous);renderer.setClearColor(this.clear,alpha);}
+  });
+  this.setSource(target.texture,this.sourceCrop);
  }
  dispose(){
   for(const {material,hook,key}of this.saved){material.onBeforeCompile=hook;material.customProgramCacheKey=key;material.needsUpdate=true;}
-  this.noise.dispose();this.geometry.dispose();this.material.dispose();this.fragments.removeFromParent();
+  this.sourceTarget?.dispose();this.noise.dispose();this.geometry.dispose();this.material.dispose();this.fragments.removeFromParent();
  }
 }
