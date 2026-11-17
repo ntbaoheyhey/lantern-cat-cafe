@@ -1,5 +1,6 @@
 /** A9 original tea blossoms: overhead flowering canopy and three soft descending pours. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 export interface TeaFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
@@ -19,7 +20,7 @@ export class TeaBlossoms {
  constructor(private readonly tuning:{rise?:number;canopyWidth?:number;canopyHeight?:number;textureRoot?:string}={}){
   const add=(root:T.Group,front:boolean)=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise,front));m.frustumCulled=false;m.visible=false;root.add(m);this.all.push(m);return m;};
   this.canopy=add(this.rear,true);this.glint=add(this.front,true);for(let i=0;i<18;i++)this.sprigs.push(add(this.front,true));
-  const load=async(name:string)=>{const im=new Image();im.src=`${this.tuning.textureRoot??'/vfx/teacup-healer'}/${name}.webp`;await im.decode();if(this.disposed)return;const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
+  const load=async(name:string)=>{const im=await loadCraftImage(`${this.tuning.textureRoot??'/vfx/teacup-healer'}/${name}.webp`);if(this.disposed)return;const tex=new T.Texture(im);tex.colorSpace=T.SRGBColorSpace;tex.needsUpdate=true;this.textures.push(tex);return tex;};
   this.ready=Promise.all([load('tea-blossom'),load('tea-canopy')]).then(([sprig,canopy])=>{if(this.disposed)return;for(const m of this.all)m.material.uniforms.uTexture!.value=m===this.canopy?canopy:sprig;});this.hide();
  }
  private place(m:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2){

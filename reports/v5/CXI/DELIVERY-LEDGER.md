@@ -30,3 +30,8 @@ Updated 2026-11-17T06:36:32Z; ancestry verified against current integration.
 
 Historical AG2 rejection was superseded by qualified revised assets merged in R0; runtime decode remains pending CXI wiring.
 Inbox REQ pending: optional VFX decoder, Q0b-F1 mobile patrol; bare URL routing code done, browser confirmation pending. Historical preview/top-list requests answered in mailbox; legacy Q0-F1/F5 retracted.
+
+2026-11-17T07:42:02Z I2 incoming merges (no new tag yet): CXV366fdbf81175b9a1a73c83639c7ae6d2b767ac92, AGV6a83ae3eba1840c1b45b2b7f2bfc3d5c1f34b5b8, AGSc494478c82bd2a0b25ec0bfe4f5ad32fd99c5beb. Ownership audit0; covers all READY through07:34:30. Merged suite and fresh capture/transfer pending. Audit work/v5/CXI/i2-merge/audit-20261117T0739.json.
+
+2026-11-17T08:12:58Z merged audited CXV4042b61c0 + AGSb68d9270b (work/v5/CXI/i2-merge/audit-r1.json, zero violations). Approved12 texture files match exact REVIEW-R1 SHA256; static geometry/blend manifest and fetch integrity enforce production acceptance. Merged gates pending.
+2026-11-17T08:24:22Z merged CXV82a6079dd633beab87d2287dec274d3f18aa2723:15 audited owned paths,0violations; R2 enemy timelines, no new texture approval. Focused timeline tests passed; merged suite next.

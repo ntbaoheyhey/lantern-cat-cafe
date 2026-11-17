@@ -18,7 +18,7 @@ const AUDIO_DIR = path.join(ROOT_DIR, 'apps/web/public/audio');
 const AUDIO_V5_DIR = path.join(ROOT_DIR, 'apps/web/public/audio/v5');
 const LEGACY_DIR = path.join(AUDIO_V5_DIR, 'legacy');
 const VOICE_DIR = path.join(AUDIO_V5_DIR, 'voice');
-const REPORTS_DIR = path.join(ROOT_DIR, 'reports/v5/AG4');
+const REPORTS_DIR = path.join(ROOT_DIR, 'reports/v5/AGS');
 
 fs.mkdirSync(LEGACY_DIR, { recursive: true });
 fs.mkdirSync(VOICE_DIR, { recursive: true });
@@ -100,25 +100,25 @@ export function cutRangedVariants() {
       const opusOut = path.join(LEGACY_DIR, `${safeName}.opus`);
       const m4aOut = path.join(LEGACY_DIR, `${safeName}.m4a`);
 
-      // Slice opus
+      // Slice opus (optimized 36k)
       runFfmpeg([
         '-i', srcWebm,
         '-ss', start.toString(),
         '-t', duration.toString(),
         '-c:a', 'libopus',
-        '-b:a', '48k',
+        '-b:a', '36k',
         '-ac', '1',
         '-f', 'webm',
         opusOut
       ]);
 
-      // Slice m4a fallback
+      // Slice m4a fallback (optimized 48k)
       runFfmpeg([
         '-i', srcWebm,
         '-ss', start.toString(),
         '-t', duration.toString(),
         '-c:a', 'aac',
-        '-b:a', '64k',
+        '-b:a', '48k',
         '-ac', '1',
         m4aOut
       ]);
@@ -220,13 +220,14 @@ export function cutVoiceVariants() {
       throw new Error(`Cat pack not found: ${srcWebm}`);
     }
 
-    for (const phase of phases) {
-      const cueKey = `voice.${hero}.${phase}`;
-      const cueSamples = manifest.cues[cueKey];
-      if (!cueSamples || !cueSamples.length) {
-        throw new Error(`Cue ${cueKey} not found in manifest`);
-      }
+    // Find all voice cues in manifest for this hero
+    const heroCueKeys = Object.keys(manifest.cues).filter(k => k.startsWith(`voice.${hero}.`));
 
+    for (const cueKey of heroCueKeys) {
+      const cueSamples = manifest.cues[cueKey];
+      if (!cueSamples || !cueSamples.length) continue;
+
+      const phase = cueKey.replace(`voice.${hero}.`, '');
       voiceMapping[cueKey] = [];
 
       for (let idx = 0; idx < cueSamples.length; idx++) {
@@ -238,25 +239,25 @@ export function cutVoiceVariants() {
         const opusOut = path.join(VOICE_DIR, `${cleanName}.opus`);
         const m4aOut = path.join(VOICE_DIR, `${cleanName}.m4a`);
 
-        // Slice opus
+        // Slice opus (optimized 36k)
         runFfmpeg([
           '-i', srcWebm,
           '-ss', start.toString(),
           '-t', duration.toString(),
           '-c:a', 'libopus',
-          '-b:a', '48k',
+          '-b:a', '36k',
           '-ac', '1',
           '-f', 'webm',
           opusOut
         ]);
 
-        // Slice m4a
+        // Slice m4a (optimized 48k)
         runFfmpeg([
           '-i', srcWebm,
           '-ss', start.toString(),
           '-t', duration.toString(),
           '-c:a', 'aac',
-          '-b:a', '64k',
+          '-b:a', '48k',
           '-ac', '1',
           m4aOut
         ]);
@@ -377,7 +378,18 @@ export function updateV5Manifest(rangedMapping, voiceMapping) {
 }
 
 // Main execution
-const ranged = cutRangedVariants();
-const voice = cutVoiceVariants();
-updateV5Manifest(ranged.mappingEntries, voice.voiceMapping);
-console.log('=== All cuts and manifest updates completed successfully! ===');
+const arg = process.argv[2];
+if (arg === '--voices-only') {
+  const voice = cutVoiceVariants();
+  updateV5Manifest({}, voice.voiceMapping);
+  console.log('=== Voice cuts and manifest updates completed successfully! ===');
+} else if (arg === '--ranged-only') {
+  const ranged = cutRangedVariants();
+  updateV5Manifest(ranged.mappingEntries, {});
+  console.log('=== Ranged cuts and manifest updates completed successfully! ===');
+} else {
+  const ranged = cutRangedVariants();
+  const voice = cutVoiceVariants();
+  updateV5Manifest(ranged.mappingEntries, voice.voiceMapping);
+  console.log('=== All cuts and manifest updates completed successfully! ===');
+}

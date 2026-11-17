@@ -1,4 +1,4 @@
-import type {PackedPaint} from '../vfx-layered/atlas';
+import {paintSourceRect,type PackedPaint} from '../vfx-layered/atlas';
 
 /** Paint carried beyond contact by the strike, with distinct travelling edges. */
 export function paintImpactStrokes(c:CanvasRenderingContext2D,paint:PackedPaint,since:number,x:number,y:number,radius:number,direction:number,targets:number,tier:string,seed:number,reduced:boolean,low:boolean){
@@ -12,7 +12,7 @@ export function paintImpactStrokes(c:CanvasRenderingContext2D,paint:PackedPaint,
   c.translate(x+direction*radius*(travel*1.4-.3),y+Math.sin(angle)*radius*travel);
   c.rotate(angle);c.scale(direction,1);
   const w=radius*(1.7+travel*1.3),h=radius*(.95-p*.4);
-  c.drawImage(paint.image,paint.x+768,paint.y+256,256,256,-w*.5,-h*.5,w,h);
+  c.drawImage(paint.image,...paintSourceRect(paint,[768,256,256,256]),-w*.5,-h*.5,w,h);
   c.restore();draws++;
  }
  return draws;

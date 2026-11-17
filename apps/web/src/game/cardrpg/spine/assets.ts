@@ -15,6 +15,7 @@ import sampledAtlases from './sampled-atlases.json';
 import {loadAtlasImage} from './atlas-delivery';
 import {nativeRigDelivery} from './native-rig-loader';
 import {deferredRigFactory} from './deferred-atlas-loader';
+import {loadV5Textures} from './v5-texture-loader';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
@@ -116,6 +117,8 @@ export class SpineActor {
 function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet',options:{deferNativePixels?:boolean}={}):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
+ // Craft encounter preparation awaits approved effects; standalone rig previews keep their own loading contract.
+ if(options.deferNativePixels)await loadV5Textures(id);
  const designer=unit.designer,sequence=unit.sequence;
  if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
   const data=await loadNativeRig(id,options.deferNativePixels);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);

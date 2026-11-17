@@ -1,9 +1,10 @@
 import { pixelPackingPlugin } from '../../tools/cardrpg-big/pixel-packing.mjs';
+import { excludeUnusedPosters } from '../../tools/v5int/build-asset-exclusions.mjs';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react(), pixelPackingPlugin()],
+  plugins: [react(), pixelPackingPlugin(), excludeUnusedPosters()],
   build: {
     chunkSizeWarningLimit: 1500, // Phaser is ~1.2 MB minified
     rollupOptions: {

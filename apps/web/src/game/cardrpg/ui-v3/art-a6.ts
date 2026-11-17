@@ -3,7 +3,7 @@ import manifest from '../../../../../../assets/cardrpg-a6/illustrations/manifest
 import puppetManifest from '../../../../../../assets/cardrpg-look/v3-portraits/manifest.json';
 import { portraitProps as classicPortrait } from '../depth/assets';
 
-const images = import.meta.glob('../../../../../../assets/cardrpg-a6/illustrations/*.webp',
+const images = import.meta.glob('../../../../../../assets/cardrpg-a6/illustrations/*.{webp,avif}',
   { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
 const faces = import.meta.glob('../../../../../../assets/cardrpg-look/v3-portraits/*-face-*.webp',
   { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
@@ -18,15 +18,22 @@ export function artPropsA6(id: string, kind: 'art' | 'face' = 'art') {
   const entry = ART_A6[id];
   const face = kind === 'face' ? (puppetManifest.portraits as Record<string, { faceIcon?: { '1x': string; '2x': string } }>)[id]?.faceIcon : undefined;
   const faceOne = face && faceSources[face['1x']], faceTwo = face && faceSources[face['2x']];
-  const src = faceOne ?? (entry && sources[(kind === 'face' ? entry.face : undefined) ?? entry.art]);
+  const original = entry && sources[(kind === 'face' ? entry.face : undefined) ?? entry.art];
+  const avif = kind === 'art' && entry ? sources[entry.art.replace(/\.webp$/, '.avif')] : undefined;
+  const src = faceOne ?? avif ?? original;
   return {
     src: src ?? fallback.src,
     srcSet: faceOne && faceTwo ? `${faceOne} 1x, ${faceTwo} 2x` : src ? undefined : fallback.srcSet,
     onError: (event: SyntheticEvent<HTMLImageElement>) => {
       const image = event.currentTarget;
-      if (!src || image.dataset.artFallback) return;
-      image.dataset.artFallback = 'true';
+      if (!src || image.dataset.artFallback === 'classic') return;
       image.removeAttribute('srcset');
+      if (avif && original && !image.dataset.artFallback) {
+        image.dataset.artFallback = 'original';
+        image.src = original;
+        return;
+      }
+      image.dataset.artFallback = 'classic';
       if (fallback.src) image.src = fallback.src;
     },
   };

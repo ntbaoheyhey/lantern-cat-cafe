@@ -1,5 +1,6 @@
 /** A7 original knotted cord: late ranged throw and a local two-strand snare. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
 export interface ThreadFrame extends RequiemFrame {ultimate:boolean}
@@ -28,7 +29,7 @@ export class ThreadSnare {
   const add=()=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;this.front.add(m);this.all.push(m);return m;};
   this.knot=add();this.hand=add();for(let i=0;i<6;i++)this.wraps.push(add());
   for(let i=0;i<24;i++){const strand=add();strand.material.uniforms.uCordOnly!.value=1;this.front.remove(strand);this.rear.add(strand);this.net.push(strand);}
-  this.ready=(async()=>{const im=new Image();im.src=url;await im.decode();if(this.disposed)return;const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=texture;})();this.hide();
+  this.ready=(async()=>{const im=await loadCraftImage(url);if(this.disposed)return;const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=texture;})();this.hide();
  }
  private place(m:Ink,p:CraftPoint,w:number,angle:number,alpha:number,erode=-.2){
   m.visible=alpha>.002;m.position.set(p.x,p.y,0);m.scale.set(w,-w*139/768,1);m.rotation.z=angle;

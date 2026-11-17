@@ -5,6 +5,7 @@ import type {SpineActor} from '../spine/assets';
 import {type SpineSocket,type SpineAnimation} from '../spine/config';
 import {animationCues} from '../spine/events';
 import {unitCore} from '../stage/core';
+import {loadPoseImage} from '../spine/pose-image-loader';
 
 const cache=new Map<string,Promise<DrawingSet>>();
 export function loadDrawnPoseSet(unit:string):Promise<DrawingSet>{
@@ -16,7 +17,7 @@ export function loadDrawnPoseSet(unit:string):Promise<DrawingSet>{
   for(const key of ['K0','K1','K2','K4','K5'] as const)if(!manifest.poses[key])throw Error(`Missing drawing ${key}`);
   const textures:DrawingSet['textures']={};
   try{for(const [key,frame]of Object.entries(manifest.poses)){
-   const image=new Image();image.src=`/units/${unit}/poses/${frame.image}`;await image.decode();
+   const image=await loadPoseImage(`/units/${unit}/poses/${frame.image}`,manifest.canvas[0],manifest.canvas[1]);
    if(image.width!==manifest.canvas[0]||image.height!==manifest.canvas[1])throw Error(`Drawing canvas mismatch ${unit}/${key}`);
    const texture=new T.Texture(image);texture.colorSpace=T.NoColorSpace;texture.needsUpdate=true;textures[key as DrawingKey]=texture;
   }return{manifest,textures};}catch(error){for(const texture of Object.values(textures))texture.dispose();throw error;}

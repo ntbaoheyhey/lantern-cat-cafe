@@ -2,10 +2,63 @@ import {afterEach,describe,expect,it,vi} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {applyV5Audio,loadV5AudioManifest} from './v5-manifest-loader';
-import {resolveDesign,type AudioManifest} from './cues';
+import {resolveDesign,type AudioManifest,type Sample} from './cues';
 const read=(path:string)=>JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio',path),'utf8'));
 afterEach(()=>vi.unstubAllGlobals());
 describe('V5 audio delivery',()=>{
+ it('replaces every delivered B2 layer without changing its cue timing, mixing or variant identity',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  const seen=new Set<string>();
+  const check=(before:Sample,after:Sample)=>{
+   if(!/^b2-(hits|ui|motion|magic)$/.test(before.pack))return;
+   seen.add(before.variantId!);
+   expect(after).toEqual({...before,pack:expect.stringMatching(/^v5:b2\//),start:0,gainDb:0});
+  };
+  for(const [id,design] of Object.entries(base.designs??{})){
+   const delivered=next.designs![id]!;
+   for(const [i,layer] of design.layers.entries()){
+    expect({...delivered.layers[i],variants:[]}).toEqual({...layer,variants:[]});
+    layer.variants.forEach((sample,j)=>check(sample,delivered.layers[i]!.variants[j]!));
+   }
+   design.baked?.forEach((take,i)=>check(take.sample,delivered.baked![i]!.sample));
+  }
+  for(const [id,samples] of Object.entries(base.cues))samples.forEach((sample,i)=>check(sample,next.cues[id]![i]!));
+  expect(seen.size).toBe(264);
+  for(const pack of ['b2-hits','b2-ui','b2-motion','b2-magic']){
+   expect(next.packSubstitutions![pack]!.length).toBeGreaterThan(0);expect(next.packSubstitutions![pack]).not.toContain(pack);
+  }
+  expect(next.deliveredPacks?.some(pack=>pack.startsWith('v5:b2/'))).toBe(false);
+ });
+ it('retains the original B2 pack when one exact variant is absent',()=>{
+  const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json');
+  const missing=Object.values(delivery).flat().find((row:any)=>row.opus?.includes('/b2/b2-hits-')) as {variantId:string};
+  for(const [key,value] of Object.entries(delivery)){
+   const keep=(Array.isArray(value)?value:[value]).filter((row:any)=>row.variantId!==missing.variantId);
+   if(keep.length)delivery[key]=keep;else delete delivery[key];
+  }
+  const next=applyV5Audio(base,delivery);
+  expect(next.packSubstitutions!['b2-hits']).toContain('b2-hits');
+  expect(next.packSubstitutions!['b2-ui']).not.toContain('b2-ui');
+ });
+ it('retains B2 source offsets when delivery context does not match, and preserves sample gain on an exact match',()=>{
+  const base=read('manifest.json') as AudioManifest;
+  const sample=Object.values(base.designs!).flatMap(d=>d.layers.flatMap(l=>l.variants)).find(s=>s.pack==='b2-hits')!;
+  const exact={opus:'/audio/v5/b2/context.opus',m4a:'/audio/v5/b2/context.m4a',durationSeconds:sample.duration,
+   gainDb:0,bus:sample.bus,variantId:sample.variantId,sourcePack:sample.pack,start:sample.start,duration:sample.duration};
+  const fixture={...base,designs:{},cues:{check:[{...sample,gainDb:-3}]}};
+  for(const wrong of [{sourcePack:'b2-ui'},{start:sample.start+1},{duration:sample.duration+.1},{bus:'voice'}]){
+   expect(applyV5Audio(fixture,{slice:{...exact,...wrong}}).cues.check).toEqual(fixture.cues.check);
+  }
+  expect(applyV5Audio(fixture,{slice:exact}).cues.check![0]).toMatchObject({start:0,gainDb:-3,pack:'v5:b2/context'});
+ });
+ it('uses full-bed transcodes with unchanged loop cues and original-format fallback',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  for(const pack of ['menu-home','score-battle','scene-night']){
+   expect(next.packs[pack]!.opus).toBe(`/audio/v5/legacy/${pack}.opus`);
+   expect(next.packs[pack]!.webm).toBe(base.packs[pack]!.webm);
+   for(const [id,samples]of Object.entries(base.cues))if(samples.some(s=>s.pack===pack))expect(next.cues[id]).toEqual(samples);
+  }
+ });
  it('preserves every ranged take, its duration and constituent layers while replacing available files',()=>{
   const base=read('manifest.json') as AudioManifest,delivery=read('v5/manifest.json'),next=applyV5Audio(base,delivery);
   for(const key of ['kit.ranged-ember.impact','kit.ranged-heavy.impact','kit.ranged-shadow.impact','kit.ranged-tide.impact','kit.ranged-ice.impact']){
@@ -28,6 +81,24 @@ describe('V5 audio delivery',()=>{
    expect(replacements).not.toContain(`v4-ranged-${element}`);
   }
  });
+ it('matches every delivered voice take by identity while preserving bus, duration and processed voice treatment',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  for(const hero of ['mochi','soot','clover','panko'])for(const phase of ['hit','death']){
+   const key=`voice.${hero}.${phase}`;
+   expect(next.cues[key]).toHaveLength(base.cues[key]!.length);
+   base.cues[key]!.forEach((sample,index)=>{
+    const after=next.cues[key]![index]!;
+    expect(after).toMatchObject({duration:sample.duration,variantId:sample.variantId,bus:'voice',processedVoice:true,start:0,gainDb:0});
+    expect(after.pack).toMatch(/^v5:voice\//);expect(sample.pack).toBe(`cat-${hero}`);
+   });
+  }
+ });
+ it('keeps a missing voice variant on its original pack while using delivered peers',()=>{
+  const base=read('manifest.json') as AudioManifest,rows=read('v5/manifest.json')['voice.mochi.hit'];
+  const next=applyV5Audio(base,{'voice.mochi.hit':[rows[0]]});
+  expect(next.cues['voice.mochi.hit']![0]!.pack).toMatch(/^v5:voice\//);
+  expect(next.cues['voice.mochi.hit']![1]).toEqual(base.cues['voice.mochi.hit']![1]);
+ });
  it('resolves explicit hero cues before generic element bindings and does not double scheduled impact offsets',()=>{
   const base=read('manifest.json'),delivery=read('v5/manifest.json');
   for(const row of Object.values(delivery) as Array<{opus:string;gainDb:number}>)if(row.opus==='/audio/v5/hero-mochi-basic.opus')row.gainDb=-3;
@@ -35,7 +106,7 @@ describe('V5 audio delivery',()=>{
   expect(cue.layers).toHaveLength(1);expect(cue.layers[0]!.offsetMs).toBe(0);
   expect(cue.layers[0]!.gainDb).toBe(-3);expect(cue.layers[0]!.variants[0]!.start).toBe(0);
   expect(resolveDesign('ult.mochi.impact',next,'holy')!.layers[0]!.variants[0]!.pack).toContain('hero-mochi-ultimate');
-  expect(next.packSubstitutions!['v4-receipt']).toEqual(['v5:ui-receipt-confirmed']);
+  expect(next.packSubstitutions!['v4-receipt']).toEqual(['v5:chain-tx-confirmed']);
  });
  it('retains original packs for missing variants and ignores malformed or external entries',()=>{
   const base=read('manifest.json'),all=read('v5/manifest.json');

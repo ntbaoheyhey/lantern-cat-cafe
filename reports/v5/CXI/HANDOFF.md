@@ -1,20 +1,19 @@
-# CXI handoff — I2 active after R0
-ACTIVE: I2 transfer<=8MB; R0 and I3 done 2026-11-17T06:43:38Z; v5-m1 green.
-NEXT 1: Start owned6301 production preview and measure-transfer --label=m1 --capture=true on current build.
-NEXT 2: Scoped scene.ts third arg deferNativePixels:isCraftOwner(asset), then compact layered loader and optional V5 texture decode.
-NEXT 3: Voice-array integration, AGV pose AVIF deliveries; mobile Q0b-F1; continue I4/I5/I6 and refill.
-Running PIDs/logs: none; r0 suite PID72231 completed, all check exits0.
-Last pushed SHA:757c4a997; next checkpoint is report/tag only, tested runtime code unchanged.
-Green gates: typecheck0; web2821/2821; root5044 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
-R0 merged five old lane tips; all27 READY entries ancestry-confirmed; DELIVERY-LEDGER.md.
-OWNERSHIP rewritten REV4, scoped grants retained; new scene third-arg grant CXV06:35 recorded.
-Audio scalar normalization now replaces all144 ranged variants; exact voice arrays still need loading.
-I2 last measured13–15MB before R0; no claim8MB yet. New capture required.
-AGV asked for pose AVIF siblings; AGS asked remaining combat voice slices and judge/runbook checklist.
-Bare URL routing tested9cases; production browser confirmation pending.
-Q0b-F1 ACK:390px patrol CTA overflow; fix owned ui-v3 after R0.
-Next merge window <=3h after v5-m1; M2 review due18Nov08:00UTC.
-Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox cursors INBOX-CXI64, DELIVERIES30, USER14; read every checkpoint.
-Preserve unrelated work/history-*; no secrets/env values/deploys/funded Fuji/contracts/main merge/submission.
-Last RULES/HANDOFF/LEARN read:2026-11-17T06:43:38Z; reread before next card implementation.
+# CXI V6 continuation
+ACTIVE: I-A audit/merge all READY, run full suite, publish fresh v5-m1.N.
+NEXT 1: Inspect work/v5/CXI/jobs/v6-ia1-pipeline.log; on green publish v5-m1.1 and BOARD; meanwhile inspect I-B top15.
+NEXT 2: I-B measure current cold transfer and wire delivered image/audio derivatives with fresh captures.
+NEXT 3: I-C finish390px formation and guest->battle->receipt; I-D local proof kit then owner runbooks.
+Last pushed SHA:cb5f5b5fc (recovered Fuji-kit/R6 WIP checkpoint).
+self-wake: CXI wake, every 15 min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T12:22:31Z.
+Last RULES re-read UTC:2026-11-17T12:22:31Z; STOP-ALL/STOP-CXI absent.
+ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
+Jobs: pipelinePID4875 work/v5/CXI/jobs/v6-ia1-pipeline.log (typecheck/web/root/build/transfer); previousPID15079 all0.
+PreviewPID80797 serves6301; rebuild needed after integration.
+Last full suite588813d1d passed; cold wave1=8.82MB,wave3=9.38MB,boss=8.90MB FAIL8MB.
+Last green tagv5-m1=b26cf0e3c; stale BOARD will refresh after new suite.
+Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Mailbox read INBOX129/DELIVERIES47/USER23/LEARN39 at2026-11-17T12:22:31Z; old WATCHDOG ignored.
+Open owner QA:H2-F2 real proof,H2-F3 formation,H7 runbook,README current-source verification.
+AGS residual legacy audio REQ09:03 remains; AGV approved12 AVIF REQ08:47 remains.
+R7 receipt UI implemented,390px capture pending. Fuji kit checkpoint exists; validate only local Anvil, no keys/env file reads.
+R2 H2-F1 DONE21e993c9c; R5 JS1,319,090->1,112,059B; R6 dist13posters removed1,395,314B.

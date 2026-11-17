@@ -8,13 +8,14 @@ import {samplePaint,paintTime,validatePaint,type PaintTimeline} from './timeline
 import {paintSourceRect,type PackedPaint} from './atlas';
 import {loadAtlasImage} from '../spine/atlas-delivery';
 import sampledAtlases from './sampled-atlases.json';
+import deliveredAtlases from './vfx-atlas-manifest-loader.json';
 import type {SequencePlan} from '../battle-v3/sequence';
 import packedManifest from '../../../../../../assets/cardrpg-look/vfx-packed/manifest.json';
 
 const manifests=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.json',{eager:true,import:'default'}) as Record<string,PaintTimeline>;
 const textures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-layered/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const packedTextures=import.meta.glob('../../../../../../assets/cardrpg-look/vfx-packed/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
-const sampledPages=new Map(sampledAtlases.map(page=>[page.request,page]));
+const sampledPages=new Map([...deliveredAtlases,...sampledAtlases].map(page=>[page.request,page]));
 export const PAINT_TIMELINES=new Map(Object.values(manifests).map(t=>[t.id,validatePaint(t)]));
 type Point={x:number;y:number};
 export class LayeredVfx {

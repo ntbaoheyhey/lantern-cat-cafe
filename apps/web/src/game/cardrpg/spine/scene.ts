@@ -137,7 +137,7 @@ export class SpineScene {
    const request=Symbol(unit.id);this.pending.set(unit.id,request);this.ready=false;
    const occupied=[...this.lanes.values()].filter(a=>a.side===unit.side).map(a=>a.lane);let lane=unit.side==='party'?this.lanes.get(unit.id)!.lane:0;if(unit.side==='enemy')while(occupied.includes(lane))lane++;this.lanes.set(unit.id,{side:unit.side,lane});
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
-   void loadSpineActor(asset).then(async actor=>{
+   void loadSpineActor(asset,undefined,{deferNativePixels:isCraftOwner(asset)}).then(async actor=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     // Accepted designer skeletons/sequences take precedence over generated keys.
     const drawings=isCraftOwner(asset)&&actor.source!=='designer'&&actor.source!=='sequence'

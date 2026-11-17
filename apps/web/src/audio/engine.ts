@@ -120,7 +120,9 @@ export class AudioEngine implements AudioBridge {
    const m=await this.loadManifest(),musicPack=resolveCue(`music.${screen}`,m)?.[0]?.pack;
    const menuPacks=screen==='home'?['voice.guide.idle','voice.mochi.gear','voice.mochi.forge'].flatMap(id=>(m.cues[id]??[]).map(s=>s.pack)):[];
    const substitute=(pack:string)=>m.packSubstitutions?.[pack]??[pack];
-   const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic',...rangedPacks.flatMap(substitute),...(m.deliveredPacks??[])]:menuPacks),'b2-ui','b2-ui-baked',...substitute('v4-receipt'),...(musicPack?[musicPack]:[])];
+   const combat=screen==='battle'||screen==='boss';
+   const ids=[...(combat?['b2-hits','b2-motion','b2-magic',...rangedPacks]:menuPacks).flatMap(substitute),
+    ...['b2-ui','b2-ui-baked','v4-receipt'].flatMap(substitute),...(combat?m.deliveredPacks??[]:[]),...(musicPack?[musicPack]:[])];
    await Promise.all([...new Set(ids)].filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));
    if(screen==='home')await this.prepareForge(m);
   }catch{/* playback can retry */}

@@ -1,7 +1,7 @@
 import type {SceneView} from '../../squad/turn3d/scene';
 import type {ResolveSocket} from '../spine/vfx';
 import {sequenceAt,SIGNATURES,type SequencePlan} from './sequence';
-import type {PackedPaint} from '../vfx-layered/atlas';
+import {paintSourceRect,type PackedPaint} from '../vfx-layered/atlas';
 import {GroundPool,ElementParticlePool,type GroundMark} from './field-pool';
 import {paintImpactWake} from './impact-wake';
 import {paintImpactStrokes} from './impact-strokes';
@@ -71,9 +71,9 @@ export class FieldVfx {
     const swell=view.reducedMotion?1:since<0?.48+.52*progress:1+.30*Math.sin(Math.min(1,since/420)*Math.PI)-.32*clamp((since-420)/Math.max(1,tail-420));
     c.save();c.scale(swell,swell);
     c.globalCompositeOperation='source-over';c.globalAlpha=(damaging&&since>=0?Math.sqrt(release):release)*.95;
-    const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted.image,painted.x+256,painted.y,256,256,-extent/2,-extent/2,extent,extent);
+    const extent=r*(tier==='basic'?2.1:2.5);c.drawImage(painted.image,...paintSourceRect(painted,[256,0,256,256]),-extent/2,-extent/2,extent,extent);
     c.globalCompositeOperation='screen';c.globalAlpha=release*.42;
-    c.rotate((seed%2?1:-1)*.25);c.drawImage(painted.image,painted.x+512,painted.y,256,256,-r*1.4,-r*1.05,r*2.8,r*2.1);
+    c.rotate((seed%2?1:-1)*.25);c.drawImage(painted.image,...paintSourceRect(painted,[512,0,256,256]),-r*1.4,-r*1.05,r*2.8,r*2.1);
     c.restore();
     this.audit.layers.push('painted-core','painted-sweep');this.draws+=2;
    }else{c.globalAlpha=release*.8;c.strokeStyle=palette[0]!;c.fillStyle=palette[0]!;c.lineWidth=r*.025;this.motif(c,family,r*.68,Math.max(.3,progress),at/1000,view.reducedMotion);}
@@ -85,7 +85,7 @@ export class FieldVfx {
    const pose=Math.floor(since/(1000/30));
    if(pose>=0&&pose<12){
     const p=pose/12;c.save();c.translate(target.x,target.y);c.rotate(seed*.1+p*.3);c.globalAlpha=(1-p)*.86/Math.sqrt(targets.length);c.fillStyle=palette[0]!;
-    if(painted){const size=r*(1.1+p*.9);c.drawImage(painted.image,painted.x+768,painted.y,256,256,-size/2,-size/2,size,size);}
+    if(painted){const size=r*(1.1+p*.9);c.drawImage(painted.image,...paintSourceRect(painted,[768,0,256,256]),-size/2,-size/2,size,size);}
     else star(c,0,0,r*(.22+p*.25),4+seed%4);
     c.restore();this.draws++;this.audit.layers.push('twelve-frame-spark');
    }

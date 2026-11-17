@@ -1,5 +1,6 @@
 /** Mochi's original painted cut and shield crest. LEARN/A4.md; no rules clock. */
 import * as T from 'three';
+import {loadCraftImage} from '../spine/craft-image-loader';
 import {faceDeclarations,faceUniforms,flowingNoise,vertex,type RequiemFrame,type CraftPoint} from './lantern-requiem';
 export interface ShieldFrame extends RequiemFrame {ultimate:boolean;home:CraftPoint;casterFeet:CraftPoint}
 type Ink=T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
@@ -25,7 +26,7 @@ export class ShieldStrike {
   this.cut=add(this.front,true);this.crest=add(this.rear,false);
   for(let i=0;i<7;i++)this.shards.push(add(this.front,true));
   for(let i=0;i<4;i++)this.dust.push(add(this.ground,false));
-  const load=async(name:string)=>{const image=new Image();image.src=`/vfx/mochi/${name}.webp`;await image.decode();if(this.disposed)return;const texture=new T.Texture(image);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;this.textures.push(texture);return texture;};
+  const load=async(name:string)=>{const image=await loadCraftImage(`/vfx/mochi/${name}.webp`);if(this.disposed)return;const texture=new T.Texture(image);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;this.textures.push(texture);return texture;};
   this.ready=Promise.all([load('shield-cut'),load('shield-crest')]).then(([cut,crest])=>{if(this.disposed)return;for(const mesh of this.all)mesh.material.uniforms.uTexture!.value=mesh===this.crest?crest:cut;});this.hide();
  }
  private place(mesh:Ink,x:number,y:number,w:number,h:number,angle:number,alpha:number,ms:number,erode=-.2,heat=0){

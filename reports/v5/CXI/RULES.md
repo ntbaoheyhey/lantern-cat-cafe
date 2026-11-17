@@ -1,25 +1,24 @@
-# CXI V5 operating card
-1. Worktree /Users/bao/taskbar-hero-chain; branch codex/v5-int-2026-11-17; ports 6300-6309.
-2. Disk is truth. Read RULES + HANDOFF before each card, after resume/compaction, and every 60 min.
-3. Keep RULES <=25, HANDOFF <=30, STATUS-VI <=12 lines; QUEUE records timestamps/evidence; append PROGRESS.
-4. REV4: first R0 merge/restructure, then I2..I6 and REFILL R1..R10; BLOCKED cards move last; waiting triggers next three refill items.
-5. Checkpoint every step and <=20 min: explicit owned git add paths; commit; push branch.
-6. Push retries 10/20/40/80 seconds, max four retries; never git add -A, git add ., or commit -a.
-7. Jobs >2 min: nohup nice -n 10, logs work/v5/CXI/jobs/, max two; immediately record PID/log in HANDOFF.
-8. At load average >10 do light work first. Commands output <=40 lines; inspect max four images at once.
-9. Films: inspect contact sheets (fps=4,scale=480:-1,tile=4x3), not individual frames.
-10. Respect card time boxes; retain passing/flagged work, revert own failed changes, log TIMEBOX, move on.
-11. No extra gates/metrics, history secret scans, onset/latency measurements, snapshots/exports, FPS studies.
-12. Do not reverify unchanged verified SHAs; max two attempts at the same fix without a new idea.
-13. Only cross-session channel: /Users/bao/taskbar-hero-mailbox. README read at setup.
-14. Each checkpoint read new INBOX-CXI, DELIVERIES, USER lines; newest USER instruction wins.
-15. CXI alone rewrites BOARD/OWNERSHIP; other inbox messages are one echo >> line in README format.
-16. STOP-ALL/STOP-CXI: commit and push owned WIP, update HANDOFF; final STOPPED: <path>.
-17. Owner-only: secrets/keys/.env values, hosting env/deploys, production DB, funded Fuji, contracts/** edits/deploys, main merge, submission.
-18. Prepare owner commands in NEEDS-USER-VI.md; never read/print keys. Do not generate images.
-19. Ownership is mailbox OWNERSHIP.md; request changes outside owned paths; preserve all old untracked lane work/history-*.
-20. TOOL-PROPOSALS: log free tools before use; USER standing approval allows immediate use. No paid tools, login, account, key, payment, or sudo.
-21. Install locally/user-level only; CXI owns dependency edits. Never pass third-party/reference art to generators.
-22. Evidence in work/v5/CXI; reports small (<=300 KB/commit), <=6 contact JPGs/card, <=400 KB each.
-23. REV4 CXI+AGS SHIP, CXV+AGV VISUAL; read LEARN/INDEX each card, append own notes; PULSE AGS hourly. NO FREEZE/END TIME. Merge new READY branches at least every 3h; tag v5-mN; M1/M2/M3 remain merge points.
-24. DONE only with printed proof: queue empty incl BLOCKED, all refill DONE, all READY merged/rejected+REQ, all inbox REQ ACK+DONE, newest tag suite green and all transfer <=8MB; otherwise keep working. STOP rule above wins.
+# CXI V6 operating card — teacher mode
+1. Worktree /Users/bao/taskbar-hero-chain; branch codex/v5-int-2026-11-17; ports6300–6309.
+2. Disk wins: read RULES+HANDOFF before each assignment, resume/compaction/wake and hourly; ORDER-V6.txt is verbatim authority.
+3. RULES/HANDOFF<=25 lines; STATUS-VI<=10; QUEUE evidence; append PROGRESS each step.
+4. Work I-A..I-G by value: fresh green tag, <=8MB cold, reliable judge path, Fuji proof, owner films, docs, QA.
+5. STOP-ALL/STOP-CXI only: commit+push owned WIP first; final STOPPED: <file>. Otherwise continue NEXT1 in same turn.
+6. Exactly one current-chat CXI wake every15min; verify hourly; ignore wakes mid-task. Watchdog retired.
+7. Checkpoint each step and <=20min: explicit owned git add; commit v6 CXI <assignment> <step>; push -u origin branch.
+8. Push retry10/20/40/80s; rejected => git pull --no-rebase then push. Never add -A, add ., commit -a.
+9. Jobs>2min detached nohup nice10, logs under work/v5/CXI/jobs; record PID/log immediately; max2jobs.
+10. Commands<=40lines; measure before look; <=4images/look, <=1024px wide; never reopen a sheet.
+11. Reports<=300KB/commit; films/frames/big sheets ignored work/v5/CXI; fresh capture URL+SHA/tag+UTC.
+12. Check LEARN/INDEX each assignment; reuse classmates notes. New kind: Chinese+English research, >=3 concrete sources, small experiment, own note+INDEX line.
+13. Two failed attempts without a new idea => log lesson, sharper study or next unblocked assignment. Never idle-wait.
+14. Empty queue => play current judge URL, add judge-visible defect, study/fix. No freeze/end time before submission.
+15. Mailbox only /Users/bao/taskbar-hero-mailbox; checkpoint new INBOX/DELIVERIES/BOARD/USER; newest USER wins; ignore historical WATCHDOG.
+16. ACK every REQ and DONE when finished; append one echo line/message<=300chars; hourly PULSE to AGS.
+17. CXI alone merges READY owned-path diffs, full suite, tags v5-m1.N and rewrites BOARD/OWNERSHIP; INFO all active lanes.
+18. Own only paths/grants in OWNERSHIP.md; request other changes. No subagents and no image generation.
+19. Judge URL exactly BOARD; bare host should game, legacy only?legacy=1; never review old legacy shell.
+20. Owner-only: secrets/keys/.env values, hosting settings/deploys, production DB, funded Fuji, contracts/** edits/deploys, main merge, submission/signups/payments.
+21. Free tools standing-approved: log TOOL-PROPOSALS then install/use; no sudo/accounts/keys/paid tools. Vietnamese owner runbooks for owner-only actions.
+22. Never secret-scan history, snapshot/export repo, benchmark audio latency/FPS/gas/storage, invent gates, reverify unchanged SHA, or polish useless reports.
+23. Every task must improve what a judge sees/hears/reads in3minutes. DONE requires fresh printed proof; update HANDOFF then execute NEXT1.

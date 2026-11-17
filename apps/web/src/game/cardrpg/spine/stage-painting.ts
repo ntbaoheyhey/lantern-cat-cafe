@@ -1,16 +1,9 @@
-import cafeUrl from '../../../../../../assets/cardrpg-look/stage/painted-cafe-c11-v1.webp?url';
+import {loadStagePainting} from './stage-image-loader';
 import { PAINT } from './style';
 
-let source: Promise<HTMLImageElement> | undefined;
 /** Decode once across battle scenes; a failed request may retry on a later scene. */
 export function cafePainting() {
- return source ??= (() => {
-  const image = new Image();
-  const loaded = typeof image.decode==='function'
-   ? (image.src=cafeUrl,image.decode())
-   : new Promise<void>((resolve,reject)=>{image.onload=()=>resolve();image.onerror=()=>reject(new Error('Cafe painting unavailable'));image.src=cafeUrl;});
-  return loaded.then(() => image).catch((error: unknown) => { source = undefined; throw error; });
- })();
+ return loadStagePainting();
 }
 
 /** Extend the existing painted floor for the two raised formation seats. No new character art. */
