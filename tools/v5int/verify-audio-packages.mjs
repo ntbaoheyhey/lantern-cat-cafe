@@ -75,7 +75,7 @@ try{
    const engine=new AudioEngine(()=>0,'/audio/',async()=>manifest,loader);await engine.unlock();
    const start=performance.now();engine.play('hit.blunt');
    while(!engine.hits.length&&performance.now()-start<5000)await new Promise(resolve=>setTimeout(resolve,20));
-   const result={mode,result:engine.hits.at(-1)?.result,elapsedMs:Math.round(performance.now()-start),requested};engine.stopAll();return result;
+   const result={mode,result:engine.hits.at(-1)?.result,elapsedMs:Math.round(performance.now()-start),requested};engine.pause(true);return result;
   },{group:candidate,path,mode});
   assert.equal(row.result,'played',mode+' original fallback');assert(row.requested.includes(group.url));assert(row.requested.includes(path));
   assert(!row.requested.includes(path.replace(/\.opus$/,'.m4a')),'Native Opus should recover before the alternate codec');
