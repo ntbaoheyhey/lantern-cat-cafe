@@ -232,6 +232,16 @@ const sets = {
   'ambience-plates': [
     'ambience-dust-motes', 'ambience-light-shafts',
     'plate-damage-crit', 'plate-damage-normal', 'plate-heal-glow'
+  ],
+  'impacts-alt': [
+    'mochi-impact-alt', 'soot-impact-alt', 'clover-impact-alt', 'panko-impact-alt'
+  ],
+  'enemy-skills': [
+    'enemy-needle-moth-rain', 'enemy-binding-thread-knot',
+    'enemy-teacup-healer-refill', 'enemy-kettle-knight-jab'
+  ],
+  'victory': [
+    'victory-burst'
   ]
 };
 
