@@ -1,0 +1,460 @@
+{
+  "at": "2026-11-17T02:42:23.798Z",
+  "sourceSha": "4b4c41114ea9795820aa9204023e0954a9810f84",
+  "raw": "Q2/q2-current-build-2/results.json",
+  "scope": "Fresh local production profiles; no public Fuji writes",
+  "runs": [
+    {
+      "id": "1-1440x900",
+      "verdict": "FAIL",
+      "battleBytes": 29544948,
+      "inFlight": [],
+      "sceneReadyBytes": 29544948,
+      "sceneReadyMs": 4081,
+      "inFlightAtSceneReady": [],
+      "sceneReadyDefinition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate",
+      "firstBattleMs": 3328,
+      "firstReceiptMs": 100461,
+      "steps": [
+        "Play free",
+        "Start trial",
+        "Mint trial reward",
+        "Fund workshop",
+        "Seal Epic",
+        "Forge Legendary",
+        "List for 5 YARN",
+        "Buy with demo wallet",
+        "Withdraw Spool",
+        "Face the boss"
+      ],
+      "receipts": 18,
+      "proofReady": true,
+      "layouts": [
+        {
+          "label": "landing",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "trial-intro",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "battle",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "first-receipt",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Fund workshop",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Seal Epic",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Forge Legendary",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "List for 5 YARN",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Buy with demo wallet",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Withdraw Spool",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "wallet-proof",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "pageWidth": 1440,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": [
+        {
+          "name": "first_battle_within_30s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_receipt_within_180s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_battle_at_most_3clicks",
+          "pass": true
+        },
+        {
+          "name": "seven_step_journey_complete",
+          "pass": true
+        },
+        {
+          "name": "wallet_proof_loaded",
+          "pass": true
+        },
+        {
+          "name": "at_least_5_action_types",
+          "pass": true
+        },
+        {
+          "name": "receipts_success_fee_payer",
+          "pass": true
+        },
+        {
+          "name": "receipt_event_fields",
+          "pass": true
+        },
+        {
+          "name": "every_receipt_visibly_labeled",
+          "pass": true
+        },
+        {
+          "name": "no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "name": "primary_keyboard_access",
+          "pass": true
+        },
+        {
+          "name": "cold_visible_battle_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0
+        },
+        {
+          "name": "cold_scene_images_ready_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0,
+          "definition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate"
+        },
+        {
+          "name": "public_explorer_proof",
+          "pass": null,
+          "scope": "unverified on public chain; local hashes excluded"
+        }
+      ]
+    },
+    {
+      "id": "1-390x844",
+      "verdict": "FAIL",
+      "battleBytes": 29544949,
+      "inFlight": [],
+      "sceneReadyBytes": 29544949,
+      "sceneReadyMs": 3053,
+      "inFlightAtSceneReady": [],
+      "sceneReadyDefinition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate",
+      "firstBattleMs": 2587,
+      "firstReceiptMs": 95670,
+      "steps": [
+        "Play free",
+        "Start trial",
+        "Mint trial reward",
+        "Fund workshop",
+        "Seal Epic",
+        "Forge Legendary",
+        "List for 5 YARN",
+        "Buy with demo wallet",
+        "Withdraw Spool",
+        "Face the boss"
+      ],
+      "receipts": 18,
+      "proofReady": true,
+      "layouts": [
+        {
+          "label": "landing",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "trial-intro",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "battle",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "first-receipt",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Fund workshop",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Seal Epic",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Forge Legendary",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "List for 5 YARN",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Buy with demo wallet",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "Withdraw Spool",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        },
+        {
+          "label": "wallet-proof",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "assertions": [
+        {
+          "name": "first_battle_within_30s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_receipt_within_180s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_battle_at_most_3clicks",
+          "pass": true
+        },
+        {
+          "name": "seven_step_journey_complete",
+          "pass": true
+        },
+        {
+          "name": "wallet_proof_loaded",
+          "pass": true
+        },
+        {
+          "name": "at_least_5_action_types",
+          "pass": true
+        },
+        {
+          "name": "receipts_success_fee_payer",
+          "pass": true
+        },
+        {
+          "name": "receipt_event_fields",
+          "pass": true
+        },
+        {
+          "name": "every_receipt_visibly_labeled",
+          "pass": true
+        },
+        {
+          "name": "no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "name": "primary_keyboard_access",
+          "pass": true
+        },
+        {
+          "name": "cold_visible_battle_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0
+        },
+        {
+          "name": "cold_scene_images_ready_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0,
+          "definition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate"
+        },
+        {
+          "name": "public_explorer_proof",
+          "pass": null,
+          "scope": "unverified on public chain; local hashes excluded"
+        }
+      ]
+    }
+  ]
+}

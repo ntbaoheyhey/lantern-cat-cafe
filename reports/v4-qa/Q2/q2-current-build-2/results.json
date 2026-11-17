@@ -9319,7 +9319,7 @@
         "height": 844
       },
       "started": "2026-11-17T02:39:04.449Z",
-      "clicks": 9,
+      "clicks": 10,
       "errors": [],
       "failedRequests": [],
       "blockedRequests": [],
@@ -9359,6 +9359,10 @@
         {
           "name": "Withdraw Spool",
           "atMs": 106610
+        },
+        {
+          "name": "Face the boss",
+          "atMs": 107476
         }
       ],
       "layouts": [
@@ -9481,6 +9485,18 @@
           "clipped": [],
           "alerts": [],
           "nonEnglish": []
+        },
+        {
+          "label": "wallet-proof",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "pageWidth": 390,
+          "overflowX": false,
+          "clipped": [],
+          "alerts": [],
+          "nonEnglish": []
         }
       ],
       "focus": [
@@ -9495,9 +9511,571 @@
           "tabs": 2
         }
       ],
-      "receipts": [],
-      "renderedReceipts": [],
-      "explorer": [],
+      "receipts": [
+        {
+          "hash": "0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "action": "Guest funding",
+          "feeAvax": "0.000021869085588",
+          "confirmationMs": 509,
+          "local": true,
+          "observedAt": 94387.09999999404,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "unknown",
+            "functionName": null
+          }
+        },
+        {
+          "hash": "0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "mint",
+          "feeAvax": "0.000093574733399168",
+          "confirmationMs": 763.2999999970198,
+          "local": true,
+          "observedAt": 95159,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "claimTester",
+          "feeAvax": "0.00017387044548615",
+          "confirmationMs": 762.8999999985099,
+          "local": true,
+          "observedAt": 96484.39999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claimTester"
+          }
+        },
+        {
+          "hash": "0x1ebfe62a0a791cf851ae6ebb3c91f5517019b49558189b57275c7ade356b58ea",
+          "wallet": "0x3113E589Ef66dA7E4098603c1Eb5ade72F166fD9",
+          "payer": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "action": "Guest funding",
+          "feeAvax": "0.000021583772196",
+          "confirmationMs": 506,
+          "local": true,
+          "observedAt": 97011.59999999404,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "unknown",
+            "functionName": null
+          }
+        },
+        {
+          "hash": "0x68e62dfe90969c5ef670fe76f363389ce6d46436892e15d7162ba7ef4612dc44",
+          "wallet": "0x3113E589Ef66dA7E4098603c1Eb5ade72F166fD9",
+          "payer": "0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "action": "claimTester",
+          "feeAvax": "0.000155121266401959",
+          "confirmationMs": 762.1000000014901,
+          "local": true,
+          "observedAt": 97786.5,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claimTester"
+          }
+        },
+        {
+          "hash": "0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "wallet": "0x3113E589Ef66dA7E4098603c1Eb5ade72F166fD9",
+          "payer": "0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "action": "transfer",
+          "feeAvax": "0.000035905466893076",
+          "confirmationMs": 762,
+          "local": true,
+          "observedAt": 98554.69999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "transfer"
+          }
+        },
+        {
+          "hash": "0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "seal",
+          "feeAvax": "0.000083705311195644",
+          "confirmationMs": 759,
+          "local": true,
+          "observedAt": 99393.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "seal"
+          }
+        },
+        {
+          "hash": "0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "mint",
+          "feeAvax": "0.000132698442936895",
+          "confirmationMs": 761.7000000029802,
+          "local": true,
+          "observedAt": 100168,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "seal",
+          "feeAvax": "0.000066003528585344",
+          "confirmationMs": 763.2000000029802,
+          "local": true,
+          "observedAt": 100999.5,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "seal"
+          }
+        },
+        {
+          "hash": "0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "safeBatchTransferFrom",
+          "feeAvax": "0.000056761626464064",
+          "confirmationMs": 761.5,
+          "local": true,
+          "observedAt": 101768,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "safeBatchTransferFrom"
+          }
+        },
+        {
+          "hash": "0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "mint",
+          "feeAvax": "0.0001319976688546",
+          "confirmationMs": 760.7000000029802,
+          "local": true,
+          "observedAt": 102543.5,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "setApprovalForAll",
+          "feeAvax": "0.000047145906386278",
+          "confirmationMs": 760.4000000059605,
+          "local": true,
+          "observedAt": 103378.09999999404,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "setApprovalForAll"
+          }
+        },
+        {
+          "hash": "0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "list",
+          "feeAvax": "0.000237427341424974",
+          "confirmationMs": 763.2999999970198,
+          "local": true,
+          "observedAt": 104147.39999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "list"
+          }
+        },
+        {
+          "hash": "0xfe01496d2eb70dc7a563fa134d618df9bdeb92b4b612153a06b5af04d855facf",
+          "wallet": "0x3113E589Ef66dA7E4098603c1Eb5ade72F166fD9",
+          "payer": "0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "action": "approve",
+          "feeAvax": "0.000047299507130016",
+          "confirmationMs": 765.5,
+          "local": true,
+          "observedAt": 104989.29999999702,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "YarnToken",
+            "functionName": "approve"
+          }
+        },
+        {
+          "hash": "0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "wallet": "0x3113E589Ef66dA7E4098603c1Eb5ade72F166fD9",
+          "payer": "0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "action": "buy",
+          "feeAvax": "0.00018821813621476",
+          "confirmationMs": 760.8999999985099,
+          "local": true,
+          "observedAt": 105756.19999999553,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "buy"
+          }
+        },
+        {
+          "hash": "0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "withdraw",
+          "feeAvax": "0.00004469366660202",
+          "confirmationMs": 759.1000000014901,
+          "local": true,
+          "observedAt": 106522.89999999851,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicMarketV2",
+            "functionName": "withdraw"
+          }
+        },
+        {
+          "hash": "0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "mint",
+          "feeAvax": "0.00013121221801664",
+          "confirmationMs": 10.300000004470348,
+          "local": true,
+          "observedAt": 106611.5,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "RelicNFT",
+            "functionName": "mint"
+          }
+        },
+        {
+          "hash": "0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "wallet": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "payer": "0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "action": "claim",
+          "feeAvax": "0.000120579390043444",
+          "confirmationMs": 760.8000000044703,
+          "local": true,
+          "observedAt": 107393.59999999404,
+          "verification": {
+            "success": true,
+            "payerMatches": true,
+            "feeMatches": true,
+            "contract": "SeasonRewards",
+            "functionName": "claim",
+            "claimAmountWei": "6000000000000000000"
+          }
+        }
+      ],
+      "renderedReceipts": [
+        {
+          "hash": "0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d",
+          "text": "×\nGuest funding\nConfirmed locally\n0.51 s\nFee\n0.000021869085588 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d",
+          "payerTitle": "Transaction payer: 0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "text": "×\nRelic minted\nConfirmed locally\n0.76 s\nFee\n0.000093574733399168 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "text": "×\nTest YARN claimed\nConfirmed locally\n0.76 s\nFee\n0.00017387044548615 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x1ebfe62a0a791cf851ae6ebb3c91f5517019b49558189b57275c7ade356b58ea",
+          "text": "×\nGuest funding\nConfirmed locally\n0.51 s\nFee\n0.000021583772196 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x1ebfe62a0a791cf851ae6ebb3c91f5517019b49558189b57275c7ade356b58ea",
+          "payerTitle": "Transaction payer: 0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x68e62dfe90969c5ef670fe76f363389ce6d46436892e15d7162ba7ef4612dc44",
+          "text": "×\nTest YARN claimed\nConfirmed locally\n0.76 s\nFee\n0.000155121266401959 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x68e62dfe90969c5ef670fe76f363389ce6d46436892e15d7162ba7ef4612dc44",
+          "payerTitle": "Transaction payer: 0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "text": "×\nYARN transferred\nConfirmed locally\n0.76 s\nFee\n0.000035905466893076 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "payerTitle": "Transaction payer: 0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "text": "×\nYARN burned\nConfirmed locally\n0.76 s\nFee\n0.000083705311195644 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "text": "×\nRelic minted\nConfirmed locally\n0.76 s\nFee\n0.000132698442936895 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "text": "×\nYARN burned\nConfirmed locally\n0.76 s\nFee\n0.000066003528585344 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "text": "×\nFusion inputs sent\nConfirmed locally\n0.76 s\nFee\n0.000056761626464064 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "text": "×\nRelic minted\nConfirmed locally\n0.76 s\nFee\n0.0001319976688546 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "text": "×\nMarket approved\nConfirmed locally\n0.76 s\nFee\n0.000047145906386278 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "text": "×\nRelic listed\nConfirmed locally\n0.76 s\nFee\n0.000237427341424974 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xfe01496d2eb70dc7a563fa134d618df9bdeb92b4b612153a06b5af04d855facf",
+          "text": "×\nYARN approved\nConfirmed locally\n0.77 s\nFee\n0.000047299507130016 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xfe01496d2eb70dc7a563fa134d618df9bdeb92b4b612153a06b5af04d855facf",
+          "payerTitle": "Transaction payer: 0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "text": "×\nRelic purchased\nConfirmed locally\n0.76 s\nFee\n0.00018821813621476 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "payerTitle": "Transaction payer: 0x3113e589ef66da7e4098603c1eb5ade72f166fd9",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "text": "×\nSale proceeds claimed\nConfirmed locally\n0.76 s\nFee\n0.00004469366660202 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "text": "×\nRelic minted\nConfirmed locally\n0.01 s\nFee\n0.00013121221801664 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        },
+        {
+          "hash": "0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "text": "×\nSpool claimed\nConfirmed locally\n0.76 s\nFee\n0.000120579390043444 AVAX\nCafé paid gas\nSnowtrace receipt",
+          "href": "https://testnet.snowtrace.io/tx/0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "payerTitle": "Transaction payer: 0x43e6f18e23614182fd754d39cc087cd2c5966099",
+          "visible": true,
+          "withinViewport": true
+        }
+      ],
+      "explorer": [
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d",
+          "status": "LOCAL_ONLY",
+          "hash": "0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "status": "LOCAL_ONLY",
+          "hash": "0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "status": "LOCAL_ONLY",
+          "hash": "0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x1ebfe62a0a791cf851ae6ebb3c91f5517019b49558189b57275c7ade356b58ea",
+          "status": "LOCAL_ONLY",
+          "hash": "0x1ebfe62a0a791cf851ae6ebb3c91f5517019b49558189b57275c7ade356b58ea",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x68e62dfe90969c5ef670fe76f363389ce6d46436892e15d7162ba7ef4612dc44",
+          "status": "LOCAL_ONLY",
+          "hash": "0x68e62dfe90969c5ef670fe76f363389ce6d46436892e15d7162ba7ef4612dc44",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "status": "LOCAL_ONLY",
+          "hash": "0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "status": "LOCAL_ONLY",
+          "hash": "0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "status": "LOCAL_ONLY",
+          "hash": "0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "status": "LOCAL_ONLY",
+          "hash": "0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "status": "LOCAL_ONLY",
+          "hash": "0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "status": "LOCAL_ONLY",
+          "hash": "0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "status": "LOCAL_ONLY",
+          "hash": "0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "status": "LOCAL_ONLY",
+          "hash": "0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xfe01496d2eb70dc7a563fa134d618df9bdeb92b4b612153a06b5af04d855facf",
+          "status": "LOCAL_ONLY",
+          "hash": "0xfe01496d2eb70dc7a563fa134d618df9bdeb92b4b612153a06b5af04d855facf",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "status": "LOCAL_ONLY",
+          "hash": "0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "status": "LOCAL_ONLY",
+          "hash": "0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "status": "LOCAL_ONLY",
+          "hash": "0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        },
+        {
+          "url": "https://testnet.snowtrace.io/tx/0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "status": "LOCAL_ONLY",
+          "hash": "0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "reason": "Anvil hash is not public Fuji proof; public resolution not claimed"
+        }
+      ],
       "requests": [
         {
           "url": "http://127.0.0.1:6200/",
@@ -16806,14 +17384,1032 @@
           "mime": "image/webp",
           "bytes": 12588,
           "atMs": 107434
+        },
+        {
+          "url": "http://127.0.0.1:6201/functions/v1/chain-judge",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 107475
+        },
+        {
+          "url": "http://127.0.0.1:6201/functions/v1/chain-judge",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 40122,
+          "atMs": 107491
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/soot-1x-B-eVyKBz.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 35448,
+          "atMs": 107867
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mochi-1x-CkbkV-l6.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 49946,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/clover-1x-BBAlJAV3.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 45190,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/panko-1x-BkVihpdC.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 49236,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mochi-1-1x-0eO9HYpi.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 4532,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mochi-Dvp7yae4.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 134804,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/binding-thread-xFBSvJjL.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 28496,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mochi-4-1x-Cq_OpluA.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 4824,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/clover-2-1x-BzG82R-T.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 4386,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/clover-4-1x-DrUYIN-L.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 4880,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/icons/fight.svg",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/svg+xml",
+          "bytes": 877,
+          "atMs": 107868
+        },
+        {
+          "url": "http://127.0.0.1:6200/icons/clock.svg",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/svg+xml",
+          "bytes": 847,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/mochi/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 16222,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/art/v3-shell/b2/icon-boss-seal.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 10764,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/soot/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 16578,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/clover/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 14590,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/panko/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 14498,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/art/v3-shell/b2/icon-potion.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 9230,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/icons/menu.svg",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/svg+xml",
+          "bytes": 787,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/icons/refresh.svg",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/svg+xml",
+          "bytes": 605,
+          "atMs": 107869
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/biscuit-0-DpSB8rBh.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 639468,
+          "atMs": 107870
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/brioche-0-Cle3gWYa.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 792822,
+          "atMs": 107870
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/cinnamon-0-DIPZVf-3.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 826996,
+          "atMs": 107870
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/binding-thread-0-PEmTGcfi.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 275910,
+          "atMs": 107870
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/button-guard-0-MAHzIyUR.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 455284,
+          "atMs": 107870
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/clover-0-C1qh75or.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 704318,
+          "atMs": 107871
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/crumb-sentinel-0-CVniO6dz.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 458270,
+          "atMs": 107871
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/kettle-knight-0-DlR3dV_Z.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 239628,
+          "atMs": 107871
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/needle-moth-0-l3M7OZC0.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 212092,
+          "atMs": 107871
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/pantry-crown-0-BgSHEvD8.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 318414,
+          "atMs": 107871
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/pollen-scout-0-Qie5-jFC.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 250732,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/practice-cushion-0-D7hpj_8H.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 308854,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/rain-spool-0-KY9U9vi7.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 254994,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/sock-skipper-0-FF7wzY2F.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 248938,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/spool-ram-0-Db3h7EX9.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 284262,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/teacup-healer-0-DamYxlQo.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 335724,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/inkcap-0-BtGb_HO9.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 742288,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-0-Sj9YVSGD.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 311764,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mallow-0-D8kvql6I.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 749596,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/marigold-0-N12vppiw.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 803648,
+          "atMs": 107872
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/mochi-0-Dm68abJ-.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 727464,
+          "atMs": 107873
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/panko-0-CWKYqwim.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 862002,
+          "atMs": 107873
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/soot-0-CNUjObz1.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 661406,
+          "atMs": 107873
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/sorrel-0-JDSAnPWs.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 620072,
+          "atMs": 107873
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/velvet-0-BWKeMacQ.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 742072,
+          "atMs": 107873
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/yarn-giant/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 20304,
+          "atMs": 107874
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 109570
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 110472
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 114468
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 117503
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 118406
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 122389
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 124830
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 127173
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 134639
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 137673
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 138571
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 145383
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 147793
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 149306
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 156136
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 159169
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 160891
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 169814
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 172215
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 173775
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 174664
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 176314
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 181010
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 184109
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 184974
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 186628
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 188299
+        },
+        {
+          "url": "http://127.0.0.1:6200/assets/yarn-giant-CCu0tWKm.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "image/webp",
+          "bytes": 93126,
+          "atMs": 195068
+        },
+        {
+          "url": "http://127.0.0.1:6200/units/binding-thread/portrait.webp",
+          "type": "Image",
+          "status": 200,
+          "cached": false,
+          "mime": "text/html",
+          "bytes": 2063,
+          "atMs": 197440
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198802
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 184,
+          "atMs": 198806
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198806
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 184,
+          "atMs": 198808
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198809
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198809
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198812
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198812
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 182,
+          "atMs": 198814
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 245,
+          "atMs": 198814
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 50060,
+          "atMs": 198823
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198826
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198827
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198831
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198833
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198837
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198838
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198843
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198844
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198848
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198849
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 32311,
+          "atMs": 198854
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198855
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 12919,
+          "atMs": 198857
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198857
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Preflight",
+          "status": 204,
+          "cached": false,
+          "mime": "",
+          "bytes": 0,
+          "atMs": 198857
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 798,
+          "atMs": 198858
+        },
+        {
+          "url": "http://127.0.0.1:6202/",
+          "type": "Fetch",
+          "status": 200,
+          "cached": false,
+          "mime": "application/json",
+          "bytes": 1194,
+          "atMs": 198858
         }
       ],
-      "assertions": [],
+      "assertions": [
+        {
+          "name": "first_battle_within_30s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_receipt_within_180s",
+          "pass": true,
+          "indicative": true
+        },
+        {
+          "name": "first_battle_at_most_3clicks",
+          "pass": true
+        },
+        {
+          "name": "seven_step_journey_complete",
+          "pass": true
+        },
+        {
+          "name": "wallet_proof_loaded",
+          "pass": true
+        },
+        {
+          "name": "at_least_5_action_types",
+          "pass": true
+        },
+        {
+          "name": "receipts_success_fee_payer",
+          "pass": true
+        },
+        {
+          "name": "receipt_event_fields",
+          "pass": true
+        },
+        {
+          "name": "every_receipt_visibly_labeled",
+          "pass": true
+        },
+        {
+          "name": "no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "name": "primary_keyboard_access",
+          "pass": true
+        },
+        {
+          "name": "cold_visible_battle_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0
+        },
+        {
+          "name": "cold_scene_images_ready_transfer_under_8MB",
+          "pass": false,
+          "inFlight": 0,
+          "definition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate"
+        },
+        {
+          "name": "public_explorer_proof",
+          "pass": null,
+          "scope": "unverified on public chain; local hashes excluded"
+        }
+      ],
       "skipped": [],
       "screenshots": [
         "1-390x844-landing.jpg",
         "1-390x844-battle.jpg",
-        "1-390x844-first-receipt.jpg"
+        "1-390x844-first-receipt.jpg",
+        "1-390x844-wallet-proof.jpg"
       ],
       "firstBattleMs": 2587,
       "firstBattleClicks": 2,
@@ -17016,8 +18612,48 @@
         ]
       },
       "inFlightAtSceneReady": [],
-      "firstReceiptMs": 95670
+      "firstReceiptMs": 95670,
+      "walletProof": {
+        "ready": true,
+        "text": "My café on Avalanche\n\nYour owned items and transactions, verified for this wallet.\n\nWallet 0x43e6…6099\n11.75 YARN\nOwned items\nPaw Charm × 1\nCafé Deed #2 × 1\nTransactions · 15\nClaim · Block 43\nMint · Block 42\nWithdrawal · Block 41\nPurchase · Block 40\nListing · Block 38\nApproval · Block 37\nMint · Block 36\nBurn · Block 35\nBurn · Block 34\nMint · Block 33\nBurn · Block 32\nTransfer · Block 31\nClaim · Block 28\nMint · Block 27\nFunding · Block 26\nRefresh wallet proof\nPowered by Routescan.io APIs",
+        "transactionLinks": [
+          "https://testnet.snowtrace.io/tx/0x48bba8da063a225209be48cdebca0a12b75966825a7fa81f1c41ef5091fa4c94",
+          "https://testnet.snowtrace.io/tx/0xbcb8eaf3a25b5d385acb789c1ee27b52679d6da89c51b1689e92c4abc544cfeb",
+          "https://testnet.snowtrace.io/tx/0x3c56e6bea9df5f021d3b57f16c72b4201d87882f992b1135be0a695ad4e20f9c",
+          "https://testnet.snowtrace.io/tx/0x11e2448d6a1d554cc3c06af5a2a37cf5ea41ce77c263839fabc7889de00f8d54",
+          "https://testnet.snowtrace.io/tx/0xc0105f0890fb1cd8e1d7dbb48c4849a87bbe19a30978fe4b325c103824aee26f",
+          "https://testnet.snowtrace.io/tx/0x1524e2a78f2e1da216be219ee3254bccc7324f86208c168af1ae9a5086af21b9",
+          "https://testnet.snowtrace.io/tx/0x40e6c7e254ba4e3d9f256136760b4c02b6834313e2334b9af50e13bb411d4374",
+          "https://testnet.snowtrace.io/tx/0x83b7458a5cc3b9e3a7cba868e96ed10441413564cd9e5f49ef66d3151dacece7",
+          "https://testnet.snowtrace.io/tx/0x1922ecef0567957216d162c3fb200fe5f584621659b596dec29244abc674a5b0",
+          "https://testnet.snowtrace.io/tx/0xcf65a1eb3322ea66e093b3f28e56f0dd7501af04df2ee0f5b7dc4cb3db558731",
+          "https://testnet.snowtrace.io/tx/0x7de84cb7b4039feed485ea6d6fcf76f35a2af87c88631e4196c47b71e3c29e44",
+          "https://testnet.snowtrace.io/tx/0x59debfd32b2361df49369513889e3b0303627a58965842edd0d981fabb27fd0f",
+          "https://testnet.snowtrace.io/tx/0x49d9fcf9d8bd9977bef5864bd9c2890a331e1b73160a62f7ed16cfa6033835da",
+          "https://testnet.snowtrace.io/tx/0x0364bb7bc75aaf487ed5f2ec377d9c4ce4924b1f533602efcf877835948723b9",
+          "https://testnet.snowtrace.io/tx/0x66caf7987dcabe2f9139feff6d9392617c0d512a9727def2781123fc1aabf90d"
+        ]
+      },
+      "actionTypes": [
+        "unknown.Guest funding",
+        "RelicNFT.mint",
+        "SeasonRewards.claimTester",
+        "YarnToken.transfer",
+        "YarnToken.seal",
+        "RelicNFT.safeBatchTransferFrom",
+        "RelicNFT.setApprovalForAll",
+        "RelicMarketV2.list",
+        "YarnToken.approve",
+        "RelicMarketV2.buy",
+        "RelicMarketV2.withdraw",
+        "SeasonRewards.claim"
+      ],
+      "verdict": "FAIL",
+      "elapsedMs": 199217,
+      "ended": "2026-11-17T02:42:23.668Z",
+      "video": "/Users/bao/taskbar-hero-qa/work/v4qa/q2-current-build-2/videos/page@3cf878d76002a2ecad0c8a7f3e8de5a4.webm"
     }
   ],
-  "screenshots": 7
+  "screenshots": 8,
+  "ended": "2026-11-17T02:42:23.796Z"
 }
