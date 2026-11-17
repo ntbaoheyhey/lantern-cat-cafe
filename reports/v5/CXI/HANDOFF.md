@@ -5,7 +5,7 @@ NEXT 2: Detached typecheck + web tests + root tests + build; fix only owned fail
 NEXT 3: BOARD/tag notifications, adopt REV4 OWNERSHIP; resume I2 transfer reduction.
 STOP-ALL and STOP-CXI absent at restart; USER REV4 restart authorizes work.
 Last pushed SHA: e81dfa4da; no owned WIP at restart. Branch codex/v5-int-2026-11-17.
-Running PIDs/logs: suite PID70958 work/v5/CXI/jobs/r0-suite.log; per-check r0-{typecheck,web,root,build}.log/.exit.
+Running PIDs/logs: suite PID72231 work/v5/CXI/jobs/r0-suite.log; per-check r0-{typecheck,web,root,build}.log/.exit.
 Ownership audit: work/v5/CXI/r0/ownership-audit.json; all five old lane path checks pass.
 Integration pre-R0 RED: three spine/vfx-cues tests; CXV fix ed388eb30 included in audited tip.
 I2 incomplete: deferred native pixels implemented but scene wiring pending CXV; current transfer ~13–15MB.

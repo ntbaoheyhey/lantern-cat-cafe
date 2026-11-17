@@ -18,7 +18,14 @@ function valid(value:unknown):value is Delivery {
 /** Preserve scheduled contacts and baked variant identities; delivery offsets are descriptive only. */
 export function applyV5Audio(base:AudioManifest,input:unknown):AudioManifest {
  if(!input||typeof input!=='object'||Array.isArray(input))return base;
- const rows=Object.entries(input).filter((row):row is [string,Delivery]=>valid(row[1]));
+ // Exact per-variant slices have no cue alias or gain override in the delivery.
+ const rows=Object.entries(input).flatMap(([id,value]):Array<[string,Delivery]>=>{
+  if(!value||typeof value!=='object'||Array.isArray(value))return [];
+  const raw=value as Partial<Delivery>;
+  const delivery={...raw,gainDb:raw.gainDb===undefined?0:raw.gainDb,
+   runtimeCueId:raw.runtimeCueId===undefined?id:raw.runtimeCueId};
+  return valid(delivery)?[[id,delivery]]:[];
+ });
  if(!rows.length)return base;
  const byId=new Map(rows),packs={...base.packs},substitutions=new Map<string,Set<string>>();
  const packFor=(d:Delivery)=>{

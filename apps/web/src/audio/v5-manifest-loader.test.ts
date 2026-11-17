@@ -22,6 +22,11 @@ describe('V5 audio delivery',()=>{
    });
   }
   expect(base.packs['v5:legacy/ranged-ember-impact-0-0']).toBeUndefined();
+  for(const element of ['ember','heavy','shadow','tide']){
+   const replacements=next.packSubstitutions![`v4-ranged-${element}`]!;
+   expect(replacements).toHaveLength(36);
+   expect(replacements).not.toContain(`v4-ranged-${element}`);
+  }
  });
  it('resolves explicit hero cues before generic element bindings and does not double scheduled impact offsets',()=>{
   const base=read('manifest.json'),delivery=read('v5/manifest.json');
