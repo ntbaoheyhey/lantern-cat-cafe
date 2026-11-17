@@ -61,6 +61,11 @@ for (const line of invLines) {
     status = "REFERENCED_DYNAMIC";
     tier = "POSE_MANIFEST_LOADER";
     matchFile = "apps/web/public/units/*/poses/manifest.json";
+  } else if (publicRel.includes("sampled-delivery")) {
+    // Dynamic native rig manifest loader deliveries
+    status = "REFERENCED_DYNAMIC";
+    tier = "NATIVE_RIG_MANIFEST_LOADER";
+    matchFile = "native-rig-manifest-loader";
   } else if (publicRel.endsWith(".avif")) {
     // Check if counterpart .webp is referenced
     const webpRel = publicRel.replace(/\.avif$/, ".webp");

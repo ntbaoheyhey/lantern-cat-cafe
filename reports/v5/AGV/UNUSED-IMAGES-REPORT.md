@@ -8,14 +8,14 @@ Comprehensive scan cross-referencing all 601 inventory images against 1,231 sour
 ## Executive Summary
 
 - **Total Tracked Images in Scope**: 804 images (90.86 MB)
-- **Referenced (Direct, Dynamic, or Stem)**: 365 images (86.87 MB)
-- **Completely Unreferenced**: **439 images** (**3.99 MB**, **4.4% of total image payload**)
+- **Referenced (Direct, Dynamic, or Stem)**: 371 images (87.75 MB)
+- **Completely Unreferenced**: **433 images** (**3.11 MB**, **3.4% of total image payload**)
 
 ## Breakdown by Folder
 
 | Category | Total Files | Total Size | Unreferenced Files | Unreferenced Size | % Dead Payload |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| `units/` | 293 | 84.28 MB | **10** | **1.55 MB** | 1.8% |
+| `units/` | 293 | 84.28 MB | **4** | **0.68 MB** | 0.8% |
 | `art/` | 461 | 5.11 MB | **391** | **1.10 MB** | 21.5% |
 | `cinematics/` | 13 | 1.33 MB | **13** | **1.33 MB** | 100.0% |
 | `relics/` | 4 | 0.13 MB | **0** | **0.00 MB** | 0.0% |
@@ -42,30 +42,30 @@ Comprehensive scan cross-referencing all 601 inventory images against 1,231 sour
 | Rank | File Path | Resolution | Size (KB) | Alpha | Category |
 |:---:|:---|:---:|:---:|:---:|:---|
 | 1 | `units/yarn-giant/rig-page-0.75x.webp` | 1152x1152 | 270.2 KB | true | units |
-| 2 | `units/sampled-delivery/clover-eddc48d3c878-1e8112b9.avif` | 512x512 | 192.9 KB | true | units |
-| 3 | `units/sampled-delivery/panko-1a9e5df12fcb-dbd5595c.avif` | 2048x1024 | 181.6 KB | true | units |
-| 4 | `units/pantry-crown/rig-page-0.75x.webp` | 1152x1152 | 179.5 KB | true | units |
-| 5 | `units/sampled-delivery/yarn-giant-c7d59339e83a-5011b4da.avif` | 1024x1024 | 179.4 KB | true | units |
-| 6 | `units/sampled-delivery/mochi-fa125d28384c-62e8d488.avif` | 512x512 | 166.9 KB | true | units |
-| 7 | `units/rain-spool/rig-page-0.75x.webp` | 1152x1152 | 148.8 KB | true | units |
-| 8 | `cinematics/panko-ult-poster.webp` | 1280x720 | 125.9 KB | false | cinematics |
-| 9 | `cinematics/brioche-ult-poster.webp` | 1280x720 | 118.3 KB | false | cinematics |
-| 10 | `cinematics/yarn-giant-ult-poster.webp` | 1280x720 | 111.2 KB | false | cinematics |
-| 11 | `cinematics/marigold-ult-poster.webp` | 1280x720 | 110.2 KB | false | cinematics |
-| 12 | `cinematics/clover-ult-poster.webp` | 1280x720 | 108.2 KB | false | cinematics |
-| 13 | `cinematics/mochi-ult-poster.webp` | 1280x720 | 107.4 KB | false | cinematics |
-| 14 | `cinematics/soot-ult-poster.webp` | 1280x720 | 106.2 KB | false | cinematics |
-| 15 | `units/sampled-delivery/binding-thread-46347f4d0d83-eae8fc36.avif` | 1024x512 | 104.2 KB | true | units |
-| 16 | `cinematics/mallow-ult-poster.webp` | 1280x720 | 103.5 KB | false | cinematics |
-| 17 | `cinematics/velvet-ult-poster.webp` | 1280x720 | 101.9 KB | false | cinematics |
-| 18 | `cinematics/inkcap-ult-poster.webp` | 1280x720 | 99.2 KB | false | cinematics |
-| 19 | `cinematics/cinnamon-ult-poster.webp` | 1280x720 | 97.1 KB | false | cinematics |
-| 20 | `units/practice-cushion/rig-page-0.75x.webp` | 768x768 | 93.2 KB | true | units |
-| 21 | `cinematics/biscuit-ult-poster.webp` | 1280x720 | 90.0 KB | false | cinematics |
-| 22 | `cinematics/sorrel-ult-poster.webp` | 1280x720 | 83.5 KB | false | cinematics |
-| 23 | `art/v3-shell/b2/guide-celebrate.webp` | 512x640 | 76.4 KB | true | art |
-| 24 | `units/sampled-delivery/soot-5cc365e1a563-243ba3e8.avif` | 512x512 | 73.7 KB | true | units |
-| 25 | `art/v3-shell/b2/title-level-up.webp` | 768x256 | 72.2 KB | true | art |
+| 2 | `units/pantry-crown/rig-page-0.75x.webp` | 1152x1152 | 179.5 KB | true | units |
+| 3 | `units/rain-spool/rig-page-0.75x.webp` | 1152x1152 | 148.8 KB | true | units |
+| 4 | `cinematics/panko-ult-poster.webp` | 1280x720 | 125.9 KB | false | cinematics |
+| 5 | `cinematics/brioche-ult-poster.webp` | 1280x720 | 118.3 KB | false | cinematics |
+| 6 | `cinematics/yarn-giant-ult-poster.webp` | 1280x720 | 111.2 KB | false | cinematics |
+| 7 | `cinematics/marigold-ult-poster.webp` | 1280x720 | 110.2 KB | false | cinematics |
+| 8 | `cinematics/clover-ult-poster.webp` | 1280x720 | 108.2 KB | false | cinematics |
+| 9 | `cinematics/mochi-ult-poster.webp` | 1280x720 | 107.4 KB | false | cinematics |
+| 10 | `cinematics/soot-ult-poster.webp` | 1280x720 | 106.2 KB | false | cinematics |
+| 11 | `cinematics/mallow-ult-poster.webp` | 1280x720 | 103.5 KB | false | cinematics |
+| 12 | `cinematics/velvet-ult-poster.webp` | 1280x720 | 101.9 KB | false | cinematics |
+| 13 | `cinematics/inkcap-ult-poster.webp` | 1280x720 | 99.2 KB | false | cinematics |
+| 14 | `cinematics/cinnamon-ult-poster.webp` | 1280x720 | 97.1 KB | false | cinematics |
+| 15 | `units/practice-cushion/rig-page-0.75x.webp` | 768x768 | 93.2 KB | true | units |
+| 16 | `cinematics/biscuit-ult-poster.webp` | 1280x720 | 90.0 KB | false | cinematics |
+| 17 | `cinematics/sorrel-ult-poster.webp` | 1280x720 | 83.5 KB | false | cinematics |
+| 18 | `art/v3-shell/b2/guide-celebrate.webp` | 512x640 | 76.4 KB | true | art |
+| 19 | `art/v3-shell/b2/title-level-up.webp` | 768x256 | 72.2 KB | true | art |
+| 20 | `art/v3-shell/b2/guide-welcome.webp` | 512x640 | 69.8 KB | true | art |
+| 21 | `art/v3-shell/b2/guide-explain.webp` | 512x640 | 69.6 KB | true | art |
+| 22 | `art/v3-shell/b2/guide-shop.webp` | 512x640 | 69.2 KB | true | art |
+| 23 | `art/v3-shell/b2/guide-point.webp` | 512x640 | 69.2 KB | true | art |
+| 24 | `art/v3-shell/b2/guide-comfort.webp` | 512x640 | 60.1 KB | true | art |
+| 25 | `art/v3-shell/b2/ribbon-large.webp` | 960x240 | 40.0 KB | true | art |
 
 ## Recommendations for CXI
 

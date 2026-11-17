@@ -1,7 +1,7 @@
 # Visual QA Report: Milestone v5-m1
 
 **Target URL**: `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`
-**Capture Timestamp (UTC)**: 2026-11-17T07:44:07.720Z
+**Capture Timestamp (UTC)**: 2026-11-17T08:31:53.159Z
 **Resolutions Evaluated**:
 - Desktop: `1280x720` (landscape standard)
 - Mobile: `390x844` (iOS portrait viewport)
