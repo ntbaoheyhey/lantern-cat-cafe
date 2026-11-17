@@ -33,7 +33,7 @@ try{
     if(cost>20)slowFrames.push({wallMs:at-start,cpuMs:cost,skill:m.plan?.skillId,age:m.animationAt,drawCalls:s.stats.calls,textures:s.stats.textures});
     if(at-start>=2000&&last){intervals.push(rafNow-last);cpu.push(cost);calls.push(s.stats.calls);textures.push(s.stats.textures);}
     last=rafNow;
-    if(m.plan&&!seen.has(m.plan)){seen.add(m.plan);plans.push({wallMs:at-start,actorId:m.plan.actorId,skillId:m.plan.skillId,ultimate:m.plan.ultimate,duration:m.plan.duration,leadIn:m.plan.speechLeadInMs??null,fixedTiming:m.plan.fixedTiming??false,voiceWindows:m.plan.voiceWindows?.length??null});}
+    if(m.plan&&!seen.has(m.plan)){seen.add(m.plan);plans.push({wallMs:at-start,kind:m.plan.events.some(e=>e.type==='action_start'||e.type==='charge')?'action':'non-action',actorId:m.plan.actorId,skillId:m.plan.skillId,ultimate:m.plan.ultimate,duration:m.plan.duration,leadIn:m.plan.speechLeadInMs??null,fixedTiming:m.plan.fixedTiming??false,voiceWindows:m.plan.voiceWindows?.length??null});}
     return result;
    };
    cancelAnimationFrame(s.raf);m.paused=false;m.notify(false);s.raf=requestAnimationFrame(s.loop);
@@ -54,6 +54,6 @@ try{
  report.sourceMeaning=production?'Fixture source HEAD; served application identified by indexSha256 for each run':'Candidate application source HEAD plus runtime patch';
  report.ended=new Date().toISOString();report.pass=!report.errors.length&&report.runs.every(r=>r.samples>200&&r.plans.length>=8&&r.final.log>r.initial.log);
  await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));
- console.log(JSON.stringify({out,pass:report.pass,errors:report.errors,runs:report.runs.map(({plans,slowFrames,initial,final,...r})=>({...r,actions:plans.length,ultimates:plans.filter(p=>p.ultimate).length,logEvents:final.log-initial.log}))}));
+ console.log(JSON.stringify({out,pass:report.pass,errors:report.errors,runs:report.runs.map(({plans,slowFrames,initial,final,...r})=>({...r,presentations:plans.length,actions:plans.filter(p=>p.kind==='action').length,ultimates:plans.filter(p=>p.ultimate).length,logEvents:final.log-initial.log}))}));
  if(!report.pass)process.exitCode=1;
 }finally{await browser.close();}
