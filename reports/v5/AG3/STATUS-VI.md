@@ -1,5 +1,6 @@
-# AG3 TRẠNG THÁI HIỆN TẠI
-- Hoàn thành thẻ R2: Đã tạo 40 biến thể AVIF cho top 40 file nặng nhất.
-- Kết quả: 40/40 file đều nhẹ hơn WebP trên 20% (trung bình giảm 63% so với WebP, tổng giảm từ 9.13MB xuống 3.38MB).
-- Báo cáo chi tiết bảng SSIM tại reports/v5/AG3/R2-report.md.
-- Chuyển sang thẻ R3: Biến thể distant-enemy 0.75x cho enemy rig pages.
+# Trạng thái AG3
+- Hoàn thành toàn bộ 10 thẻ trong REFILL LIST (R1 đến R10) và toàn bộ thẻ chính (A0 đến A4).
+- 165 file sibling mới (.webp, .avif) đã được sinh và kiểm định chất lượng nghiêm ngặt (giảm 122.46 MB, -88.7%).
+- R10 hoàn thành: A3-forecast.md cập nhật đầy đủ số liệu thực tế từ CXI và mô hình dự báo transfer <= 8.0 MB.
+- Hàng đợi QUEUE hoàn toàn sạch sẽ, không còn tác vụ tồn đọng.
+- Tất cả điều kiện DONE của bản mô tả công việc (REV 3) đã được thỏa mãn.
