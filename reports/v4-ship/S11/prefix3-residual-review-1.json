@@ -1,0 +1,142 @@
+{
+  "at": "2026-11-17T00:45:12.336224+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/prefix3-residual-review.py",
+    "sha256": "f2e270aa81b504c53f208710ffb0af98785f4f2f02b53110c036ce574eb4756e"
+  },
+  "helper": {
+    "path": "tools/v4ship-lab/security/history-residual-review.py",
+    "sha256": "f040532730147695b6f587a0c63a5ac90323a8c3e3a2aa27cfb2420c5a33add6"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/prefix3-residual-3.json.gz",
+      "sha256": "6899e0c5ac88a23d7f120e2529c7106ff4746b73cb29dac4fcb31b793e3972d7"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-3-delta-digests-1.json.gz",
+      "sha256": "bccea277f6780f28c6c67cb698361cc3d0157408caae53090e9723935f3aa09f"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-public-contract-1.json",
+      "sha256": "bfd37f2130792dc3e2da68ebedfc83d6ec5af1e36693c51001174ce5e6f0e847"
+    },
+    {
+      "path": "reports/v4-ship/S11/prefix3-residual-regression-1/check.json",
+      "sha256": "dbe2f43b06d41dd50b6fec7fef75589d3a90f1a4f39be20b1d2794fe1c2e3491"
+    },
+    {
+      "path": "reports/v4-ship/S11/prefix3-residual-regression-1/log.jsonl.gz",
+      "sha256": "6f984821dd4a2986fe3355dac3362dc9b7c72b4469123f3f58193e8a6a1835d7"
+    },
+    {
+      "path": "reports/v4-ship/S11/prefix3-residual-regression-1/parity-probe.json",
+      "sha256": "da7ea06bb74b28580cd57e7b9024c6e708940c1af437ab8744bd87f8ee9fb50b"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix3-regression-1/log.jsonl.gz",
+      "sha256": "b75cf8b9a1140ccd168517440b98d8ae5a1349cd86619d39ab5d6e1662750f94"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix3-regression-1/parity-probe.json",
+      "sha256": "6ddc1b27c320c519bc4629d53ea474652d4e0d707ff6e6eab90ac5959d21c998"
+    }
+  ],
+  "pass": true,
+  "newlyReviewed": 14,
+  "inheritedClassificationsPreserved": 1703,
+  "findingEntries": 1717,
+  "classifications": {
+    "verified-source-digest": 797,
+    "verified-generated-case-identifier": 876,
+    "verified-source-predicate": 2,
+    "verified-public-contract-address": 5,
+    "verified-contract-type-identifier": 1,
+    "verified-config-property-path": 33,
+    "verified-public-anvil-fixture-key": 1,
+    "verified-contract-property-identifier": 1,
+    "verified-git-commit-identifier": 1
+  },
+  "unresolved": 0,
+  "duplicateLineEntriesPreserved": 437,
+  "negativeControls": [
+    "shifted-json-position-1380",
+    "changed-source-1380",
+    "wrong-json-property-1380",
+    "wrong-fixture-account",
+    "wrong-contract-position",
+    "wrong-contract-property",
+    "shifted-json-position-1418",
+    "changed-source-1418",
+    "wrong-json-property-1418",
+    "shifted-json-position-1419",
+    "changed-source-1419",
+    "wrong-json-property-1419",
+    "shifted-json-position-1449",
+    "changed-source-1449",
+    "wrong-json-property-1449",
+    "shifted-json-position-1451",
+    "changed-source-1451",
+    "wrong-json-property-1451",
+    "shifted-json-position-1513",
+    "malformed-commit-identifier",
+    "blob-is-not-commit",
+    "shifted-json-position-1514",
+    "changed-source-1514",
+    "wrong-json-property-1514",
+    "shifted-json-position-1569",
+    "changed-source-1569",
+    "wrong-json-property-1569",
+    "shifted-json-position-1570",
+    "changed-source-1570",
+    "wrong-json-property-1570",
+    "wrong-public-address",
+    "shifted-json-position-1602",
+    "changed-source-1602",
+    "wrong-json-property-1602",
+    "shifted-json-position-1686",
+    "changed-source-1686",
+    "changed-producer",
+    "wrong-public-chain",
+    "missing-public-code",
+    "removed-entry",
+    "extra-entry",
+    "reordered-residual-entries",
+    "wrong-residual-mapping",
+    "changed-inherited-classification",
+    "changed-inherited-source",
+    "missing-proof"
+  ],
+  "fixture": {
+    "method": "Independent Rust cast derivation",
+    "version": "cast Version: 1.8.6-Homebrew",
+    "path": "m/44'/60'/0'/0/0",
+    "matches": true,
+    "adjacentAccountRejected": true,
+    "noKeysPersisted": true
+  },
+  "publicRuntime": {
+    "chainId": 43113,
+    "block": 60940393,
+    "codeBytes": 8352,
+    "matchesPriorRuntime": true,
+    "readOnly": true
+  },
+  "sameSevenArtFailures": true,
+  "webSummary": [
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+    "Test Files  2 failed | 320 passed (322)",
+    "Tests  7 failed | 2697 passed (2704)"
+  ],
+  "parityRowsUnchanged": true,
+  "gRegPass": false,
+  "fullPrefixFindingsPass": true,
+  "fullHistoryPass": false,
+  "limits": "Independent exact-byte/lexical/Git-object/Rust/public-runtime derivation of only14 new classifications. Prior1703 records inherited unchanged, including multiplicity. No historical branch-correspondence, source-content, later-history or excluded-byte clearance. No match values or matching digests persisted."
+}

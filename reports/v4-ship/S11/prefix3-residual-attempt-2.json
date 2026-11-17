@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-17T00:37:24.704121+00:00",
+  "pass": false,
+  "failureType": "ValueError",
+  "frames": [
+    {
+      "file": "<stdin>",
+      "line": 5,
+      "function": "<module>"
+    },
+    {
+      "file": "prefix3-residual.py",
+      "line": 148,
+      "function": "main"
+    },
+    {
+      "file": "prefix3-residual.py",
+      "line": 24,
+      "function": "<lambda>"
+    },
+    {
+      "file": "pathlib.py",
+      "line": 682,
+      "function": "relative_to"
+    }
+  ],
+  "snapshots": [
+    "reports/v4-ship/S11/prefix3-residual-attempt-2-prefix3-residual.py.gz",
+    "reports/v4-ship/S11/prefix3-residual-attempt-2-prefix3-residual-node.mjs.gz"
+  ],
+  "rawValuesSuppressed": true
+}
