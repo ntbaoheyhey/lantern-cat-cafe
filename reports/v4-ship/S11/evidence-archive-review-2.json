@@ -1,0 +1,365 @@
+{
+  "at": "2026-11-17T00:18:06.074Z",
+  "mode": "installed",
+  "pass": true,
+  "files": 37,
+  "rawBytes": 5558103,
+  "storedBytes": 246058,
+  "savedBytes": 5312045,
+  "manifest": {
+    "path": "reports/v4-ship/S11/evidence-archive-1.json",
+    "sha256": "641c556b32660774533a0a2868cb31e814a78bda4599269536075820201abea1"
+  },
+  "archiveTool": {
+    "path": "tools/v4ship-lab/evidence-archive.py",
+    "sha256": "9f3adb57cd02d5b48d41844ea5392138c8b6910a77a25bc407e415eab19b14db"
+  },
+  "harness": {
+    "path": "tools/v4ship-lab/evidence-archive-review.mjs",
+    "sha256": "d48115f6da29a4137fbc73667e43fc453da0a1405da3a6ca88039d728a2f64db"
+  },
+  "controlHarness": {
+    "path": "tools/v4ship-lab/evidence-archive-controls.py",
+    "sha256": "a80bbe13fe97b2b91632a36b06d86b1b88b2daa2b6c89a344c45bb470660001f"
+  },
+  "study": {
+    "path": "reports/v4-ship/S11/evidence-archive-study-1.json",
+    "sha256": "f639f28fa8e666fd5e20d29b7aaed8801e5e0d15e0b106e4e358ba83b7d721ce"
+  },
+  "restore": {
+    "path": "work/v4ship-prep/evidence-archive-restore-2",
+    "files": 37,
+    "bytes": 5558103
+  },
+  "controls": {
+    "pass": true,
+    "rejected": [
+      "original-path-traversal",
+      "stored-path-traversal",
+      "candidate-path-traversal",
+      "duplicate-original",
+      "missing-original",
+      "unknown-codec",
+      "wrong-source-commit",
+      "noninteger-size",
+      "oversized-declaration",
+      "encoded-hash-mismatch",
+      "decoded-hash-mismatch",
+      "decoded-size-mismatch",
+      "truncated-gzip",
+      "extra-gzip-member",
+      "corrupted-gzip",
+      "bounded-decoding",
+      "existing-destination",
+      "symlink-destination",
+      "symlink-archive"
+    ],
+    "count": 19
+  },
+  "rows": [
+    {
+      "path": "reports/v4-ship/S11/audio-receipt-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6653,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/audio-startup-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/audio-terminal-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/demo-alias-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6648,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/evidence-refresh-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/film-audio-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/healer-endurance-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/healer-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6647,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/healer-validation-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-checkpoint-regression-3/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-checkpoint-regression-4/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-checkpoint-regression-5/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-checkpoint-regression-6/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-gzip-pipe-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-gzip-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6652,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-harness-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-path-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-png-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-svg-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6648,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-detector-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-prefix-triage-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6652,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/history-text-study-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6652,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/impact-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/modal-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-codec-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-http-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-delivery-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6648,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-evidence-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-integration-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6651,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ranged-playback-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6649,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/resume-evidence-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/scene-audio-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6653,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/secondary-panels-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/title-contrast-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6652,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ui-fix-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6652,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ui-focus-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6650,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    },
+    {
+      "path": "reports/v4-ship/S11/ui-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "storedBytes": 6648,
+      "originalGitBytesMatch": true,
+      "systemGzipMatches": true,
+      "restoredBytesMatch": true
+    }
+  ],
+  "historicalSignaturesRewritten": false,
+  "officialClassBaselineApproved": false,
+  "gateAcceptanceChanged": false,
+  "limits": [
+    "Original references identify decoded bytes; archived paths require catalogue lookup or explicit restoration.",
+    "Historical verifier inputs can be restored into a separate replay checkout; no source or failure result is rewritten.",
+    "G-REG and other shipping gates retain their existing failures."
+  ]
+}
