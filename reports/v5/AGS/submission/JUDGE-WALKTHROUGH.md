@@ -2,11 +2,11 @@
 
 **Project**: Taskbar Hero — Lantern Cat Café  
 **Target Environment**: `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`  
-**Estimated Review Time**: 3 to 5 minutes  
+**Estimated Review Time**: 3 minutes  
 
 ---
 
-## 1. Fast-Track 30-Second Journey (Judge Priority)
+## 1. Fast-Track Journey (Judge Priority)
 
 1. **Step 1: Open Game URL**
    - Navigate to `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`.
@@ -19,22 +19,18 @@
    - Click **Fight**.
    - Watch the 4-cat squad auto-attack. Actual gameplay speed.
 
-4. **Step 4: Victory & Voucher Claim**
-   - Upon victory, click **Claim trial voucher** (or Claim Relic).
+4. **Step 4: Battle Result**
+   - Observe the local result screen; explain that no transaction was sent.
 
 ---
 
-## 2. Deep-Dive Feature Inspection
+## 2. Feature Inspection
 
 ### A. The Café Hub & Workshop
-- Click **Café** in the navigation header.
-- Explore the Workshop crafting features.
+- Click **Café** in the navigation header to view team and crafting features.
 
-### B. Asset Proof
-- Click the wallet address in the top header.
-- Verifies local game state:
-  - Displays relic balances.
-  - Displays YARN token balance.
+### B. Chain Integration
+- Navigate to the deployed-contract link and explain which features require configured chain services. Show a public transaction only after an owner-run transaction has produced a verified hash.
 
 ---
 
