@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-17T02:18:47.886712+00:00",
+  "shipSha": "4b4c41114ea9795820aa9204023e0954a9810f84",
+  "artSha": "8a256755d4178741dafb9e3faf1957885d1a6a1f",
+  "runtimeSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "shipRuntimeChanges": [
+    "apps/web/src/audio/engine.test.ts",
+    "apps/web/src/audio/engine.ts",
+    "apps/web/src/game/cardrpg/depth/App.tsx",
+    "apps/web/src/game/cardrpg/shell/shell.css",
+    "scripts/audio/capture-page.mjs"
+  ],
+  "artSourceChanges": [],
+  "QA3": {
+    "status": "fixed",
+    "evidence": "Q2/withdrawal-reproduction.json",
+    "currentSmokeStep": "5. Fund workshop → Seal Epic → Forge Legendary → List for 5 YARN → Buy with demo wallet → Withdraw Spool. Mỗi giao dịch có receipt/chime. Ví dụ demo hiện tại theo hạn mức tuần: rút 8 Spool, giữ 2 trong pool, nhận 6 YARN; retention 25% không phải burn. Giữ nguyên hạn mức/cooldown, không sửa DB để làm smoke xanh.",
+    "matchesDecoded6Yarn": true
+  },
+  "QA2": "Runtime changed with lazy Hub import; requires fresh independent production measurement. Prior failure stays scoped to old runtime.",
+  "QA4": "Narrow-screen CSS fix present; browser verification pending.",
+  "QA5": "ART source unchanged, so prior independent root-test failure remains open; no redundant rerun."
+}

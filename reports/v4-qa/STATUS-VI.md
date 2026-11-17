@@ -1,10 +1,11 @@
-# V4 QA — 17/11/2026 01:52 UTC (08:52 Việt Nam)
-Hai lượt desktop 1440×900 và1280×720 đi hết7chặng, mỗi lượt18receipt local được kiểm tra độc lập; không có lỗi console/network.
-Battle đầu~2,7–3,1giây; receipt thưởng đầu~99–102giây; toàn hành trình~3,4phút. Máy dùng chung, chỉ tham khảo.
-Hình battle/receipt desktop đọc được; kiểm tra phone390×844 đang chờ tải máy giảm.
-Điểm trừ xác nhận: QA-2 tải~29,65MB tại mốc vào battle, vượt ngân sách8MB.
-QA-3: runbook ghi rút16Spool→12YARN; UI thực tế gửi claim6YARN theo cap hiện tại. Đã gửi đề nghị sửa lời hướng dẫn.
-QA-1 đã đóng: SHIP52aaaba39 bổ sung tên biến và phân loại bắt buộc/tùy chọn; QA tự kiểm tra lại.
-Chưa chốt: khả năng sponsor đủ cho2ví mới; đang chuẩn bị lỗi giả lập trên Anvil, không gửi giao dịch Fuji.
-Giới hạn fixture QA: build đầu thiếu bước metadata postbuild; sẽ bổ sung sau lượt phone, giữ nguyên bằng chứng ban đầu.
-Chưa có URL DEPLOYED; receipt local không phải bằng chứng explorer Fuji công khai. Chưa chấm PASS triển khai/live10/10.
+# V4 QA — 17/11/2026 02:20 UTC (09:20 Việt Nam)
+Ba viewport đều đi hết 7 chặng, mỗi lượt có 18 receipt Anvil được QA kiểm tra độc lập; không lỗi console/network.
+Battle đầu khoảng 2,6–3,1 giây; mốc receipt thưởng 95,6–102,2 giây. Máy dùng chung, chỉ tham khảo.
+Ba điểm cần xử lý: QA-2 tải 29,65 MB so với ngân sách 8 MB; QA-5 có 7 test trình bày lỗi; QA-6 manifest campaign lệch source đã commit.
+QA-7: kiểm tra typography từ runbook lỗi ở 3 CSS; chưa chứng minh lỗi dễ đọc trên giao diện.
+QA-3 đã đóng: hướng dẫn mới ghi đúng 8 Spool → 6 YARN, giữ lại 2. QA-1 tên biến/cơ chế dự phòng đã đạt.
+QA-4: SHIP đã sửa CSS cho attribution trên phone; đang chờ QA kiểm tra lại bundle mới.
+Đã hoàn tất metadata và build local: 7.942 file, 248,74 MB; chưa xác minh gói upload hoặc gói dịch vụ Vercel.
+Kiểm tra deploy đủ 25/25 handler; số 23 trước đó là lỗi bộ phân tích QA, đã sửa.
+Chưa chốt quỹ sponsor cho 2 ví; phép thử local chưa khởi chạy thành công, chờ tải máy giảm.
+Chưa có DEPLOYED URL; receipt local không phải bằng chứng Fuji. Chưa xác nhận live 10/10.

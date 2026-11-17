@@ -32,7 +32,7 @@ paths=re.findall(r'\b(?:tools|scripts|contracts|packages|apps|supabase)/[A-Za-z0
 path_checks=[{'path':p,'exists':(ROOT/p).exists()} for p in sorted(set(paths))]
 functionNames=[]
 deploy=re.search(r'supabase functions deploy\s+([\s\S]*?)--project-ref',book)
-if deploy:functionNames=[p for p in deploy.group(1).replace('\\',' ').split() if re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)+',p)]
+if deploy:functionNames=[p for p in deploy.group(1).replace('\\',' ').split() if re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',p)]
 function_checks=[{'name':name,'handlerExists':(ROOT/'supabase/functions'/name/'index.ts').is_file()} for name in functionNames]
 report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'sourceSha':subprocess.check_output((['git','rev-parse','HEAD'] if ROOT==CLONE else ['git','merge-base','HEAD','origin/codex/v4-ship-2026-11-16']),cwd=ROOT,text=True).strip(),'method':'Static identifiers only; no .env, secret stores, logins or remote writes. Dynamic access sites require manual review.','env':rows,'runbookOnlyNames':sorted(all_doc-set(names)),'dynamicAccessSites':dynamic,'paths':path_checks,'functionHandlers':function_checks,'vercelConfigs':configs,'vercelFunctionSourcePaths':[p for p in files if p.startswith(('api/','apps/web/api/'))]}
 (OUT/'runbook-static.json').write_text(json.dumps(report,indent=2)+'\n')

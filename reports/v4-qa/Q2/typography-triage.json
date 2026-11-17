@@ -1,0 +1,67 @@
+{
+  "bytes": 82456,
+  "errors": [
+    "apps/web/src/game/cardrpg/battle-v3/battle.css",
+    "apps/web/src/game/cardrpg/battle-v3/hud-details.css",
+    "apps/web/src/game/cardrpg/shell/demo-journey.css"
+  ],
+  "rule": "Rejects every font-family declaration outside typography.css and test files; no measured readability failure.",
+  "declarations": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/battle.css",
+      "matches": [
+        {
+          "line": 3,
+          "declaration": "font-family:var(--font-body)"
+        },
+        {
+          "line": 12,
+          "declaration": "font-family:var(--font-num)"
+        },
+        {
+          "line": 14,
+          "declaration": "font-family:var(--font-display)"
+        },
+        {
+          "line": 31,
+          "declaration": "font-family:var(--font-display)"
+        },
+        {
+          "line": 51,
+          "declaration": "font-family:var(--font-display)"
+        },
+        {
+          "line": 52,
+          "declaration": "font-family:var(--font-display)"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/hud-details.css",
+      "matches": [
+        {
+          "line": 3,
+          "declaration": "font-family:var(--font-num)"
+        },
+        {
+          "line": 23,
+          "declaration": "font-family:var(--font-num)"
+        },
+        {
+          "line": 25,
+          "declaration": "font-family:var(--font-display)"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/demo-journey.css",
+      "matches": [
+        {
+          "line": 1,
+          "declaration": "font-family:var(--font-body,sans-serif)"
+        }
+      ]
+    }
+  ],
+  "sourceSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b"
+}
