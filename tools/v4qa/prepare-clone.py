@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """One detached job: load-guarded lockfile installs and a fresh SHIP clone."""
 from pathlib import Path
-import datetime, json, os, subprocess, time
+import datetime, json, os, subprocess, time, sys
 
 ROOT=Path('/Users/bao/taskbar-hero-qa')
 CLONE=Path('/Users/bao/taskbar-hero-qa-clone')
 OUT=ROOT/'reports/v4-qa/Q2'
 OUT.mkdir(parents=True,exist_ok=True)
-report={'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'steps':[],'secretsRead':False}
+report=json.loads((OUT/'fresh-clone.json').read_text()) if '--resume' in sys.argv else {'started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'steps':[],'secretsRead':False}
+report['sourceTargetSha']=subprocess.check_output(['git','rev-parse','origin/codex/v4-ship-2026-11-16'],cwd=ROOT,text=True).strip()
 def save(): (OUT/'fresh-clone.json').write_text(json.dumps(report,indent=2)+'\n')
 def guarded(label):
     while os.getloadavg()[0]>9:
@@ -24,11 +25,15 @@ def run(label,cmd,cwd):
     save();print(f'END {label} exit={rc}',flush=True)
     if rc: raise SystemExit(rc)
 save()
-run('qa-lockfile-install',['pnpm','install','--frozen-lockfile','--reporter=append-only'],ROOT)
-assert not CLONE.exists(), 'Fresh clone must not overwrite existing evidence'
-run('fresh-ship-clone',['git','clone','--branch','codex/v4-ship-2026-11-16','/Users/bao/taskbar-hero',str(CLONE)],ROOT)
+if '--resume' not in sys.argv:
+    run('qa-lockfile-install',['pnpm','install','--frozen-lockfile','--reporter=append-only'],ROOT)
+    assert not CLONE.exists(), 'Fresh clone must not overwrite existing evidence'
+    run('fresh-ship-clone',['git','clone','--branch','codex/v4-ship-2026-11-16','/Users/bao/taskbar-hero',str(CLONE)],ROOT)
+else:
+    report['recovery']='Original clone succeeded; pin-race during checkout preserved in prepare-clone-attempt3.log'
+    save()
 report['clonedSha']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=CLONE,text=True).strip()
-report['sourceTargetSha']=subprocess.check_output(['git','rev-parse','origin/codex/v4-ship-2026-11-16'],cwd=ROOT,text=True).strip()
+subprocess.run(['git','fetch','origin',report['sourceTargetSha']],cwd=CLONE,check=True,stdout=subprocess.DEVNULL)
 subprocess.run(['git','checkout','--detach',report['sourceTargetSha']],cwd=CLONE,check=True,stdout=subprocess.DEVNULL)
 run('clone-lockfile-install',['pnpm','install','--frozen-lockfile','--reporter=append-only'],CLONE)
 report['ended']=datetime.datetime.now(datetime.timezone.utc).isoformat();save()

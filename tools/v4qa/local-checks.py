@@ -27,7 +27,8 @@ for name,cmd in steps:
         print(f'DEFER {name} load1={os.getloadavg()[0]:.2f}',flush=True);time.sleep(300)
     print(f'START {name} load1={os.getloadavg()[0]:.2f}',flush=True)
     started=datetime.datetime.now(datetime.timezone.utc).isoformat();log=ROOT/f'work/v4qa/jobs/q2-{name}.log'
-    with log.open('w') as f:\n+        child=subprocess.Popen(cmd,cwd=CLONE,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,errors='replace')
+    with log.open('w') as f:
+        child=subprocess.Popen(cmd,cwd=CLONE,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,errors='replace')
         report['active']={'name':name,'pid':child.pid,'log':str(log)};save()
         for line in child.stdout:
             if re.search(r'(?:private.?key|secret|bearer|authorization)\s*[:=]\s*[\'\"]?[A-Za-z0-9+/_=-]{16,}',line,re.I):line='[sensitive-like diagnostic omitted]\n'
