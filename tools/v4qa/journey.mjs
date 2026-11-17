@@ -7,7 +7,7 @@ import {requestAllowed} from './network-policy.mjs';
 
 const qa=resolve(import.meta.dirname,'../..');
 const source='/Users/bao/taskbar-hero-qa-clone';
-const require=createRequire(resolve(source,'apps/web/package.json'));
+const require=createRequire(resolve(qa,'apps/web/package.json'));
 const {chromium}=require('@playwright/test');
 const {decodeFunctionData,parseEther}=require('viem');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -56,7 +56,7 @@ async function verifyReceipts(rows,build){
     const [receipt,tx]=await Promise.all([rpc('eth_getTransactionReceipt',[row.hash]),rpc('eth_getTransactionByHash',[row.hash])]);
     row.verification={success:receipt?.status==='0x1',payerMatches:receipt?.from?.toLowerCase()===row.payer?.toLowerCase(),feeMatches:false,contract:addresses.get(tx?.to?.toLowerCase())??'unknown',functionName:null};
     if(receipt?.gasUsed&&receipt?.effectiveGasPrice&&typeof row.feeAvax==='string')row.verification.feeMatches=BigInt(receipt.gasUsed)*BigInt(receipt.effectiveGasPrice)===parseEther(row.feeAvax);
-    try{const name=row.verification.contract;const abi=JSON.parse(readFileSync(resolve(source,`contracts/out/${name}.sol/${name}.json`),'utf8')).abi;const decoded=decodeFunctionData({abi,data:tx.input});row.verification.functionName=decoded.functionName;if(decoded.functionName==='claim'&&decoded.args?.[0]?.amount!==undefined)row.verification.claimAmountWei=String(decoded.args[0].amount);}catch{/* Native transfers or unknown artifact remain explicit. */}
+    try{const name=row.verification.contract;const abi=JSON.parse(readFileSync(resolve(build.source??source,`contracts/out/${name}.sol/${name}.json`),'utf8')).abi;const decoded=decodeFunctionData({abi,data:tx.input});row.verification.functionName=decoded.functionName;if(decoded.functionName==='claim'&&decoded.args?.[0]?.amount!==undefined)row.verification.claimAmountWei=String(decoded.args[0].amount);}catch{/* Native transfers or unknown artifact remain explicit. */}
   }
 }
 
