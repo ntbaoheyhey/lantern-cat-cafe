@@ -43,15 +43,17 @@ const padded=readdirSync(resolve(dist,'relics')).filter(n=>/^[0-9a-f]{64}\.json$
 const quality=padded.find(n=>{const id=BigInt('0x'+n.slice(0,64));return id>4n&&id<30001n;});
 assert(quality,'Quality metadata sample absent');
 const qualityId=BigInt('0x'+quality.slice(0,64)).toString();
-const names=[quality,qualityId+'.json',(30001n).toString(16).padStart(64,'0')+'.json','30001.json'];
+const names=[quality,qualityId+'.json',(30001n).toString(16).padStart(64,'0')+'.json','30001.json',(33000n).toString(16).padStart(64,'0')+'.json','33000.json'];
 const http=[];
 for(const name of names){
  const response=await fetch(`http://127.0.0.1:6200/relics/${name}`);
  const text=await response.text();let metadata;try{metadata=JSON.parse(text);}catch{}
  http.push({path:'/relics/'+name,status:response.status,contentType:response.headers.get('content-type'),valid:response.ok&&!!metadata?.name&&!!metadata?.image});
 }
-save('Q2/metadata-postbuild-check.json',{at:new Date().toISOString(),sourceSha:raw.sourceSha,scope:'QA fixture omission corrected after initial run; initial cold run did not test these metadata files',runtimeIndexHashesUnchanged:unchanged,hashes:after,paddedMetadataFiles:padded.length,sampledHttp:http});
-assert(http.every(r=>r.valid),'Metadata HTTP sample failed');
+const staticAssets=[];
+for(const path of ['/audio/LICENSES.json','/chain/star-thread.svg']){const r=await fetch('http://127.0.0.1:6200'+path);const bytes=await r.arrayBuffer();staticAssets.push({path,status:r.status,contentType:r.headers.get('content-type'),bytes:bytes.byteLength,valid:r.ok&&!r.headers.get('content-type')?.includes('text/html')});}
+save('Q2/metadata-postbuild-check.json',{at:new Date().toISOString(),sourceSha:raw.sourceSha,scope:'QA fixture omission corrected after initial run; initial cold run did not test these metadata files',runtimeIndexHashesUnchanged:unchanged,hashes:after,paddedMetadataFiles:padded.length,sampledHttp:http,staticAssets});
+assert(http.every(r=>r.valid)&&staticAssets.every(r=>r.valid),'Required artifact HTTP sample failed');
 await guard('read-only closed-details adjudication');
 const require=createRequire(resolve(qa,'apps/web/package.json'));
 const {chromium}=require('@playwright/test');
