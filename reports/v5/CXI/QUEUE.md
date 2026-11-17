@@ -1,6 +1,6 @@
 # CXI queue (UTC)
-SETUP active 2026-11-17T05:23:31Z state files and mailbox read; 10 minute box.
-I0 queued QA-8 sponsor-budget fix; 30 minute box.
+SETUP DONE 2026-11-17T05:24:59Z commit 2cd16cbf7 pushed; state files and mailbox read.
+I0 DONE 2026-11-17T05:26:08Z 315904a14; CLI 3/3 and web API 11/11 pass; git show --stat contains only nine authorized paths.
 I1 queued SHIP+ART+QA-8 green suite / M0; 2 hour box.
 I2 queued battle-entry transfer <=8,000,000 bytes; 6 hour box.
 I3 queued M1 merge window 2026-11-17T18:00:00Z; 90 minute box.
