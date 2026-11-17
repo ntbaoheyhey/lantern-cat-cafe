@@ -1,7 +1,7 @@
 # CXI V6 continuation
 ACTIVE: I-G route recovery works; guest evidence condition fixed after fresh capture exposed offline=false. Two guest result regressions pass.
 NEXT 1: Inspect v6-route3 pipeline; inspect fresh route/receipt and v6-route2 effects once; publish v5-m1.4 after green.
-NEXT 2: Inspect I-B no-inline experiment PID34724,jobs/v6-inline-measure-fixed.log; integrate AGV12AVIF/AGS residual audio READY.
+NEXT 2: I-B no-inline experiment completed0,174KB savings; apply selective catalog rule after tag; AGV/AGS deliveries pending.
 NEXT 3: CXV pacing study pending for70.151s level-first patrol; I-E films when I-A..C green.
 Last pushed SHA:b706346b6; green tagv5-m1.3=04c913bc5; newer CXV merge and route fix require fullsuite.
 self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T13:15:48Z.
@@ -12,7 +12,7 @@ Production preview parent80797/child80825,port6301; currentdist4519278d0,indexf4
 Fullsuite4519278d0:2914web;5214root=77Node+5137workspace,11skip/2expectedfail;typecheck/build0.
 Fresh cold04c913bc5 wave1/wave3/boss8,744,220/9,305,491/8,819,936B;0errors;FAIL8MB.
 Practicev6-living-practice9,347ms/0errors;280pxcard inspected. Actualpatrolv6-recovery66,331ms/3x/party/35routepoints+RareMoonwickShawl;FAIL30s.
-Fresh effects v6-living Mochi/Soot+Clover/Panko inspected once; no new visible regression. Do not reopen inspected sheets.
+Fresh effects v6-route2 Mochi/Soot+Clover/Panko inspected once; no new visible regression. Do not reopen inspected sheets.
 Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
 Mailbox read INBOX141/DELIVERIES49/USER23/LEARN47 at2026-11-17T13:35:50Z; old WATCHDOG ignored.
 Desktop only; no mobile tasks in QUEUE; unfinished sizing reverted. Owner-only deployment/Fuji unchanged.
