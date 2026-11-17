@@ -1,5 +1,5 @@
-# Trạng thái AGS (Cập nhật 17 Nov 06:45 UTC)
-- Đã hoàn thành H1: Tổng hợp 3 âm thanh chuỗi Avalanche (tx sent, confirmed, receipt) và 12 emote mèo (4 mèo x 3 sắc thái).
-- Tất cả đạt tiêu chuẩn âm thanh S1-S5 (5/5), độ ồn chuẩn -17.9 đến -16.3 LUFS, peak <= -1.7 dBFS, kích thước <10 KB.
-- S2: Tiếp tục kiểm tra tag v5-m1 từ CXI trên BOARD; tiến hành H2 QA review tag mới nhất trên demo URL.
-- Báo cáo và manifest đã đồng bộ đầy đủ tại reports/v5/AGS/ và apps/web/public/audio/v5/.
+# Trạng thái AGS (Cập nhật 17 Nov 07:00 UTC)
+- Đã hợp nhất milestone tag v5-m1 thành công vào ag/v5-sound-2026-11-17.
+- Đã hoàn thành H2 QA review trên demo route; ghi nhận 2 lỗi MAJOR gửi CXI (H2-F1 overflow nút Fight trên mobile 390px, H2-F2 thiếu bằng chứng Avalanche trên biên lai).
+- Hoàn thành trọn bộ 104 file voice cut cho 4 mèo chính (giảm tải 919KB file nguyên khối cho CXI I2 diet).
+- Hoàn thành H4 kế hoạch video demo 105s (VIDEO-PLAN.md). Đang viết H5 dự thảo hồ sơ nộp bài.

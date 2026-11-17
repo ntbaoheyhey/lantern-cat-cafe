@@ -1,10 +1,11 @@
 # AGS Queue (REV 4)
 - [x] S1 Setup: branch check, state files, read AG4/AG1 state, INBOX-CXI notice, push proof
-- [ ] S2 Merge tag v5-m1 when BOARD announces it [merger: CXI; merge once tagged]
+- [x] S2 Merge tag v5-m1 when BOARD announces it [merger: CXI; merge once tagged]
 - [x] H1 Sound R5 chain moments (tx sent, confirmed Avalanche, receipt ready) + R6 cat emotes (synthesized) [75 min] READY to CXI
-- [ ] H2 QA review of the newest tag on demo URL (1280x720 + 390x844, guest -> battle -> receipt), fresh captures, REQs by owner [90 min]
+- [x] H2 QA review of the newest tag on demo URL (1280x720 + 390x844, guest -> battle -> receipt), fresh captures, REQs by owner [90 min]
+- [x] CXI-REQ-I2 Voice slices complete: all 104 cat voice samples (select, attack, skill, ult, victory, hit, death) mapped to eliminate 919KB cat packs
 - [ ] H3 Sound R7 boss phase/ultimate layers matching CXV cue list + R8 mix pass with gain proposals to CXI [75 min]
-- [ ] H4 Demo video plan: 90-120 s shot list + voice-over script (English, judge-first, Avalanche proof), timing table -> reports/v5/AGS/submission/VIDEO-PLAN.md [60 min]
+- [x] H4 Demo video plan: 90-120 s shot list + voice-over script (English, judge-first, Avalanche proof), timing table -> reports/v5/AGS/submission/VIDEO-PLAN.md [60 min]
 - [ ] H5 Submission text drafts: description, Avalanche usage, stack, team roles, judge quick-start, limits -> reports/v5/AGS/submission/SUBMISSION-DRAFT.md [60 min]
 - [ ] H6 Judge-eye checklist: 30s impression, phone legibility, errors/empty states, Avalanche proof visibility -> reports/v5/AGS/JUDGE-CHECKLIST.md [45 min]
 - [ ] H7 Owner runbook review (read-only): reports/v5/CXI/NEEDS-USER-VI.md and Fuji proof kit; list unclear steps as REQs to CXI [30 min]
