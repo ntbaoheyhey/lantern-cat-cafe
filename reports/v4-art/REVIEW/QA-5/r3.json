@@ -1,0 +1,116 @@
+{
+  "started": "2026-11-17T02:15:19.230468+00:00",
+  "pid": 28884,
+  "sourceCommit": "8a256755d4178741dafb9e3faf1957885d1a6a1f",
+  "rulesCommit": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "testHashes": {
+    "apps/web/src/game/cardrpg/spine/cat-presentation.test.ts": "d17e9f857d0a93c887df22f434f9593a4ac27b84493be8fda23aa7048041fb28",
+    "apps/web/src/game/cardrpg/spine/outcome-labels.test.ts": "5b8cc9eadf208e9f4b567513401ecc124b8057686537800d4ed440b46cef747a"
+  },
+  "steps": [
+    {
+      "name": "art-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-art-focused.log",
+      "started": "2026-11-17T02:15:19.388270+00:00",
+      "pid": 28890,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:15:20.524792+00:00",
+      "summary": [
+        "Test Files  2 passed (2)",
+        "Tests  13 passed (13)",
+        "Duration  749ms (environment 67%, transform 18%, import 12%, tests 3%)"
+      ]
+    },
+    {
+      "name": "ship-focused",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "--config",
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/v3craft-lab/v4-qa5/raw/r3/ship.config.mts",
+        "src/game/cardrpg/spine/cat-presentation.test.ts",
+        "src/game/cardrpg/spine/outcome-labels.test.ts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-ship-focused.log",
+      "started": "2026-11-17T02:15:20.525346+00:00",
+      "pid": 28902,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:15:21.750136+00:00",
+      "summary": [
+        "Test Files  2 passed (2)",
+        "Tests  13 passed (13)",
+        "Duration  879ms (transform 48%, environment 38%, import 11%, tests 3%)"
+      ]
+    },
+    {
+      "name": "art-web",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-art-web.log",
+      "started": "2026-11-17T02:15:21.750521+00:00",
+      "pid": 28914,
+      "exitCode": 0,
+      "finished": "2026-11-17T02:16:53.292274+00:00",
+      "summary": [
+        "Test Files  323 passed (323)",
+        "Tests  2703 passed (2703)",
+        "Duration  91.17s (environment 53%, tests 28%, import 16%, transform 2%)"
+      ]
+    },
+    {
+      "name": "ship-web",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "--reporter=dot",
+        "--config",
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/v3craft-lab/v4-qa5/raw/r3/ship.config.mts"
+      ],
+      "log": "reports/v4-art/jobs/qa5-r3-ship-web.log",
+      "started": "2026-11-17T02:16:53.292850+00:00",
+      "pid": 29937,
+      "exitCode": 1,
+      "finished": "2026-11-17T02:18:41.975169+00:00",
+      "summary": [
+        "FAIL  src/layout/HelpTab.keys.test.tsx > HelpTab key sources > first-clear line is hidden by default and shown when boss.firstClearKeys > 0",
+        "FAIL  src/layout/HelpTab.search.test.tsx > preserves every old answer string, including first-clear configuration and classic content",
+        "AssertionError: expected [ \u2026(6) ] to deeply equal [ \u2026(6) ]",
+        "FAIL  src/layout/boss/BossKeyHint.test.tsx > BossKeyHint > shows the first-clear line when boss.firstClearKeys > 0",
+        "AssertionError: expected [ 'daily', 'drop' ] to deeply equal [ 'daily', 'drop', 'firstClear' ]",
+        "FAIL  src/game/cardrpg/depth/GuideSettingsA6.test.tsx > uses current enemy mechanics and phase advice only in the A6 field guide",
+        "FAIL  src/game/cardrpg/ui-v3/battle-log-copy.test.ts > does not label an enemy support summary with its unused attack planning target",
+        "AssertionError: expected 'foe-1-button-guard' not to be 'foe-1-button-guard' // Object.is equality",
+        "FAIL  src/game/cardrpg/ui-v3/enemy-guide-a6.test.tsx > explains the healer refill on an odd round when rage is ready",
+        "AssertionError: expected true to be false // Object.is equality",
+        "FAIL  src/game/squad/turn3d/card-lab.test.ts > keeps natural lab playback and skip equal to the rules runner",
+        "AssertionError: expected { version: '0.7.0', seed: 4011, \u2026(17) } to deeply equal { version: '0.7.0', seed: 4011, \u2026(17) }",
+        "Test Files  7 failed | 316 passed (323)",
+        "Tests  7 failed | 2696 passed (2703)",
+        "Duration  107.10s (environment 48%, tests 30%, import 16%, transform 6%)"
+      ]
+    }
+  ],
+  "complete": true,
+  "pass": false,
+  "error": "ship-web failed; retained log: reports/v4-art/jobs/qa5-r3-ship-web.log",
+  "finished": "2026-11-17T02:18:41.976998+00:00"
+}

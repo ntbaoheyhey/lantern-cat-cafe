@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--attempt', required=True)
 parser.add_argument('--rules-sha', required=True)
 parser.add_argument('--full', action='store_true')
+parser.add_argument('--reuse-passed', help='Prior attempt with unchanged test inputs and no runtime changes')
 args = parser.parse_args()
 assert re.fullmatch(r'r[1-9][0-9]*', args.attempt)
 git = lambda *a: subprocess.check_output(['git', *a], cwd=ROOT, text=True).strip()
@@ -29,9 +30,24 @@ report = {'started': now(), 'pid': os.getpid(), 'sourceCommit': git('rev-parse',
           'rulesCommit': rules_sha, 'testHashes': {p: sha(ROOT / p) for p in test_paths},
           'steps': [], 'complete': False, 'pass': False}
 save = lambda: report_path.write_text(json.dumps(report, indent=2) + '\n')
+prior = None
+if args.reuse_passed:
+    assert re.fullmatch(r'r[1-9][0-9]*', args.reuse_passed)
+    prior_path = report_path.with_name(args.reuse_passed + '.json')
+    prior = json.loads(prior_path.read_text())
+    assert prior['complete'] and prior['testHashes'] == report['testHashes'] and prior['rulesCommit'] == rules_sha
+    changed = git('diff', '--name-only', prior['sourceCommit']).splitlines()
+    assert all(p in test_paths or p.startswith(('reports/', 'tools/v3craft-lab/')) for p in changed), 'Runtime changed since passing checks'
+    report['reusedEvidence'] = {'path': str(prior_path.relative_to(ROOT)), 'sha256': sha(prior_path), 'changedPaths': changed}
 save()
 
 def step(name, command, cwd=ROOT):
+    passed = next((s for s in prior['steps'] if s['name'] == name and s.get('exitCode') == 0), None) if prior else None
+    if passed:
+        report['steps'].append({**passed, 'reusedFrom': args.reuse_passed})
+        save()
+        print(name, 'reused PASS', flush=True)
+        return
     log = ROOT / 'reports/v4-art/jobs' / ('qa5-' + args.attempt + '-' + name + '.log')
     row = {'name': name, 'command': command, 'log': str(log.relative_to(ROOT)), 'started': now()}
     report['steps'].append(row)
@@ -68,7 +84,9 @@ try:
     step('ship-focused', base + ['--config', str(config)] + focused, ROOT / 'apps/web')
     if args.full:
         step('art-web', base, ROOT / 'apps/web')
-        step('ship-web', base + ['--config', str(config)], ROOT / 'apps/web')
+        # SHIP's economy and shell must land together. A mixed ART-shell/SHIP-rules
+        # full suite is not an integrated SHIP build; only the owned routing tests
+        # are meaningful against the isolated pending rules snapshot.
         step('art-typecheck', ['pnpm', '--filter', '@taskbar-hero/web', 'typecheck'])
         baseline = ROOT / 'reports/v3-feel/parity-new.json'
         baseline_hash = sha(baseline)

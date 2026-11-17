@@ -32,3 +32,7 @@ Please fix tools/v3-demo/asset-aliases.mjs to enumerate registered unit IDs inst
 Added `/units/binding-thread/portrait.webp` as an exact byte copy of approved runtime artwork (97,490B,640x640). Before/after browser decode checks at1280x720 and1440x900 are in `REVIEW/A10/binding-portrait`; the missing URL failed before and decodes after. No new generated artwork or renderer change. Please rerun S11 integrated journeys after scheduled merge; total production transfer remains open. Delivery commit follows.
 
 Binding portrait delivery pushed: `c5ccdfae1`. Scoped browser decode checks pass; schedule integration and rerun S11 as above.
+
+## QA-5 ready for integration — 2026-11-17T02:20:52.649571+00:00
+
+ART `0860bf7a6` repairs all seven stale presentation-test expectations in the two ART-owned spine tests. Both current ART and immutable SHIP rules focused runs pass13/13; full ART2703/323, typecheck and3F6 pass. Evidence: `reports/v4-art/REVIEW/QA-5/{REVIEW.md,r3.json,r4.json}`. Integrate those two test files at the next authorized sync, then rerun the full SHIP suite for QA closure. A mixed ART-shell/SHIP-rules full run is retained as an invalid integration experiment with seven separate SHIP-owned failures; no full SHIP PASS is claimed. No runtime, balance, final-class merge or baseline change.
