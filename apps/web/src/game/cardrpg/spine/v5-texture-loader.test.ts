@@ -4,7 +4,7 @@ class TestImage {
  src='';naturalWidth=512;naturalHeight=512;
  async decode(){urls.push(this.src);if(failDecode)throw Error('Unsupported image');}
 }
-const entry=(file:string)=>({file,cols:4,rows:4,frameMs:40});
+const entry=(file:string)=>({file,cols:4,rows:4,frameMs:40,blend:'screen'});
 beforeEach(()=>{vi.resetModules();urls=[];failDecode=false;vi.stubGlobal('Image',TestImage);});
 afterEach(()=>vi.unstubAllGlobals());
 it('shares manifest/decode work and requests only the current actor timeline',async()=>{
@@ -13,6 +13,7 @@ it('shares manifest/decode work and requests only the current actor timeline',as
  await Promise.all([loadV5Textures('mochi'),loadV5Textures('mochi')]);
  expect(fetcher).toHaveBeenCalledTimes(1);expect(urls).toEqual(['/vfx/v5/mochi-impact.webp']);
  const {getV5Texture}=await import('../vfx-layered/skill-textures');expect(getV5Texture('mochi-impact')?.cols).toBe(4);expect(getV5Texture('soot-impact')).toBeUndefined();
+ expect(getV5Texture('mochi-impact')?.blend).toBe('screen');
  await loadV5Textures('button-guard');expect(fetcher).toHaveBeenCalledTimes(1);
 });
 it('leaves procedural fallback intact after missing manifests and failed decoding, and allows retry',async()=>{

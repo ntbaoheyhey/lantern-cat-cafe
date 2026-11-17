@@ -53,7 +53,7 @@ describe('V5 audio delivery',()=>{
   expect(cue.layers).toHaveLength(1);expect(cue.layers[0]!.offsetMs).toBe(0);
   expect(cue.layers[0]!.gainDb).toBe(-3);expect(cue.layers[0]!.variants[0]!.start).toBe(0);
   expect(resolveDesign('ult.mochi.impact',next,'holy')!.layers[0]!.variants[0]!.pack).toContain('hero-mochi-ultimate');
-  expect(next.packSubstitutions!['v4-receipt']).toEqual(['v5:ui-receipt-confirmed']);
+  expect(next.packSubstitutions!['v4-receipt']).toEqual(['v5:chain-tx-confirmed']);
  });
  it('retains original packs for missing variants and ignores malformed or external entries',()=>{
   const base=read('manifest.json'),all=read('v5/manifest.json');
