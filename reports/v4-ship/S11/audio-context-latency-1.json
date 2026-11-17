@@ -1,0 +1,5557 @@
+{
+  "at": "2026-11-17T02:21:27.219Z",
+  "harnessSha256": "a6ae6d020b72c1b2cc88e62155756054f4fe1223f256f6ede9cbedc6836c6463",
+  "runtime": [
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "sha256": "7668d55498c04874d66f704a8ec8b06dbfc1c1435f76cfd069c4ccd11de1e816"
+    },
+    {
+      "path": "apps/web/public/audio/manifest.json",
+      "sha256": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8"
+    }
+  ],
+  "rows": [
+    {
+      "pair": 0,
+      "method": "default",
+      "sampleRate": 48000,
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.032,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 475.5,
+            "audioTime": 0.3253333333333333
+          },
+          "calledAt": 476,
+          "when": 0.3253333333333333,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.291947,
+            "performanceTime": 475.5
+          },
+          "estimatedOnsetMs": 33.38633333333331
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 597,
+            "audioTime": 0.44266666666666665
+          },
+          "calledAt": 597.1000000014901,
+          "when": 0.44266666666666665,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.40928333333333333,
+            "performanceTime": 592.7999999970198
+          },
+          "estimatedOnsetMs": 29.183333330353094
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 719,
+            "audioTime": 0.5653333333333334
+          },
+          "calledAt": 719.1000000014901,
+          "when": 0.5653333333333334,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.5319510000000001,
+            "performanceTime": 715.5
+          },
+          "estimatedOnsetMs": 29.882333333333236
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 839.6000000014901,
+            "audioTime": 0.688
+          },
+          "calledAt": 839.7000000029802,
+          "when": 0.688,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.6546336666666667,
+            "performanceTime": 838.1000000014901
+          },
+          "estimatedOnsetMs": 31.866333333333273
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 960.8999999985099,
+            "audioTime": 0.8106666666666666
+          },
+          "calledAt": 961,
+          "when": 0.8106666666666666,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.7772843333333334,
+            "performanceTime": 960.7999999970198
+          },
+          "estimatedOnsetMs": 33.28233333184312
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 1083.5,
+            "audioTime": 0.9333333333333333
+          },
+          "calledAt": 1083.6000000014901,
+          "when": 0.9333333333333333,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.89995,
+            "performanceTime": 1083.5
+          },
+          "estimatedOnsetMs": 33.38333333333321
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1205.7999999970198,
+            "audioTime": 1.0506666666666666
+          },
+          "calledAt": 1205.8999999985099,
+          "when": 1.0506666666666666,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0172833333333333,
+            "performanceTime": 1200.7999999970198
+          },
+          "estimatedOnsetMs": 28.383333333333212
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1328.8999999985099,
+            "audioTime": 1.1786666666666668
+          },
+          "calledAt": 1328.8999999985099,
+          "when": 1.1786666666666668,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.1452833333333334,
+            "performanceTime": 1328.7999999970198
+          },
+          "estimatedOnsetMs": 33.283333331843096
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1451.8999999985099,
+            "audioTime": 1.3013333333333332
+          },
+          "calledAt": 1451.8999999985099,
+          "when": 1.3013333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.267952,
+            "performanceTime": 1451.5
+          },
+          "estimatedOnsetMs": 32.981333334823375
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1574,
+            "audioTime": 1.4186666666666667
+          },
+          "calledAt": 1574.2000000029802,
+          "when": 1.4186666666666667,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.3906226666666668,
+            "performanceTime": 1574.1000000014901
+          },
+          "estimatedOnsetMs": 28.144000001489985
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1696.2999999970198,
+            "audioTime": 1.5413333333333334
+          },
+          "calledAt": 1696.3999999985099,
+          "when": 1.5413333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.507963,
+            "performanceTime": 1691.5
+          },
+          "estimatedOnsetMs": 28.57033333631375
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1819.2000000029802,
+            "audioTime": 1.664
+          },
+          "calledAt": 1819.2999999970198,
+          "when": 1.664,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.6306176666666667,
+            "performanceTime": 1814.1000000014901
+          },
+          "estimatedOnsetMs": 28.28233333184312
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1941.5,
+            "audioTime": 1.7866666666666666
+          },
+          "calledAt": 1941.6000000014901,
+          "when": 1.7866666666666666,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7532803333333333,
+            "performanceTime": 1936.7999999970198
+          },
+          "estimatedOnsetMs": 28.686333330353136
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 2063.89999999851,
+            "audioTime": 1.9093333333333333
+          },
+          "calledAt": 2064,
+          "when": 1.9093333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.875951,
+            "performanceTime": 2059.5
+          },
+          "estimatedOnsetMs": 28.98233333482358
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2185.89999999851,
+            "audioTime": 2.032
+          },
+          "calledAt": 2186,
+          "when": 2.032,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.998616666666667,
+            "performanceTime": 2182.10000000149
+          },
+          "estimatedOnsetMs": 29.583333336313444
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2307.39999999851,
+            "audioTime": 2.1546666666666665
+          },
+          "calledAt": 2307.39999999851,
+          "when": 2.1546666666666665,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.1212823333333333,
+            "performanceTime": 2304.7999999970198
+          },
+          "estimatedOnsetMs": 30.7843333318433
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2427.5,
+            "audioTime": 2.2773333333333334
+          },
+          "calledAt": 2427.60000000149,
+          "when": 2.2773333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.2439489999999997,
+            "performanceTime": 2427.39999999851
+          },
+          "estimatedOnsetMs": 33.284333331843754
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2549.60000000149,
+            "audioTime": 2.3946666666666667
+          },
+          "calledAt": 2549.60000000149,
+          "when": 2.3946666666666667,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.3612843333333333,
+            "performanceTime": 2544.7999999970198
+          },
+          "estimatedOnsetMs": 28.582333328863115
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2672.10000000149,
+            "audioTime": 2.517333333333333
+          },
+          "calledAt": 2672.2000000029802,
+          "when": 2.517333333333333,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.483951,
+            "performanceTime": 2667.5
+          },
+          "estimatedOnsetMs": 28.782333331843347
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2794.5,
+            "audioTime": 2.64
+          },
+          "calledAt": 2794.5,
+          "when": 2.64,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.6066166666666666,
+            "performanceTime": 2790.10000000149
+          },
+          "estimatedOnsetMs": 28.983333334823783
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 475.5,
+          "audioTime": 0.3253333333333333
+        },
+        {
+          "i": 1,
+          "time": 597,
+          "audioTime": 0.44266666666666665
+        },
+        {
+          "i": 2,
+          "time": 719,
+          "audioTime": 0.5653333333333334
+        },
+        {
+          "i": 3,
+          "time": 839.6000000014901,
+          "audioTime": 0.688
+        },
+        {
+          "i": 4,
+          "time": 960.8999999985099,
+          "audioTime": 0.8106666666666666
+        },
+        {
+          "i": 5,
+          "time": 1083.5,
+          "audioTime": 0.9333333333333333
+        },
+        {
+          "i": 6,
+          "time": 1205.7999999970198,
+          "audioTime": 1.0506666666666666
+        },
+        {
+          "i": 7,
+          "time": 1328.8999999985099,
+          "audioTime": 1.1786666666666668
+        },
+        {
+          "i": 8,
+          "time": 1451.8999999985099,
+          "audioTime": 1.3013333333333332
+        },
+        {
+          "i": 9,
+          "time": 1574,
+          "audioTime": 1.4186666666666667
+        },
+        {
+          "i": 10,
+          "time": 1696.2999999970198,
+          "audioTime": 1.5413333333333334
+        },
+        {
+          "i": 11,
+          "time": 1819.2000000029802,
+          "audioTime": 1.664
+        },
+        {
+          "i": 12,
+          "time": 1941.5,
+          "audioTime": 1.7866666666666666
+        },
+        {
+          "i": 13,
+          "time": 2063.89999999851,
+          "audioTime": 1.9093333333333333
+        },
+        {
+          "i": 14,
+          "time": 2185.89999999851,
+          "audioTime": 2.032
+        },
+        {
+          "i": 15,
+          "time": 2307.39999999851,
+          "audioTime": 2.1546666666666665
+        },
+        {
+          "i": 16,
+          "time": 2427.5,
+          "audioTime": 2.2773333333333334
+        },
+        {
+          "i": 17,
+          "time": 2549.60000000149,
+          "audioTime": 2.3946666666666667
+        },
+        {
+          "i": 18,
+          "time": 2672.10000000149,
+          "audioTime": 2.517333333333333
+        },
+        {
+          "i": 19,
+          "time": 2794.5,
+          "audioTime": 2.64
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882087733,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882087854,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882087976,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088097,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088218,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088341,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088463,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088586,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088709,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088831,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882088953,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089076,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089199,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089321,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089443,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089564,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089685,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089807,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882089929,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882090052,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 28.144000001489985,
+        "median": 29.583333336313444,
+        "max": 33.38633333333331,
+        "outside33ms": 5
+      }
+    },
+    {
+      "pair": 0,
+      "method": "numeric",
+      "sampleRate": 48000,
+      "baseLatency": 0.0026666666666666666,
+      "outputLatency": 0.024,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 372.09999999403954,
+            "audioTime": 0.33066666666666666
+          },
+          "calledAt": 372.59999999403954,
+          "when": 0.33066666666666666,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.305286,
+            "performanceTime": 371
+          },
+          "estimatedOnsetMs": 24.28066667262715
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 495.09999999403954,
+            "audioTime": 0.4533333333333333
+          },
+          "calledAt": 495.19999999552965,
+          "when": 0.4533333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.42795066666666665,
+            "performanceTime": 493.69999999552965
+          },
+          "estimatedOnsetMs": 23.982666668156753
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 618.0999999940395,
+            "audioTime": 0.576
+          },
+          "calledAt": 618.1999999955297,
+          "when": 0.576,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.5506193333333333,
+            "performanceTime": 616.3999999985099
+          },
+          "estimatedOnsetMs": 23.68066667113692
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 739.0999999940395,
+            "audioTime": 0.6986666666666667
+          },
+          "calledAt": 739.0999999940395,
+          "when": 0.6986666666666667,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.673283,
+            "performanceTime": 739
+          },
+          "estimatedOnsetMs": 25.28366667262719
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 861.0999999940395,
+            "audioTime": 0.8186666666666667
+          },
+          "calledAt": 861.2999999970198,
+          "when": 0.8186666666666667,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.793287,
+            "performanceTime": 859
+          },
+          "estimatedOnsetMs": 23.279666672627172
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 984.0999999940395,
+            "audioTime": 0.9413333333333334
+          },
+          "calledAt": 984.0999999940395,
+          "when": 0.9413333333333334,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.9159526666666666,
+            "performanceTime": 981.6999999955297
+          },
+          "estimatedOnsetMs": 22.9806666681568
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1106.3999999985099,
+            "audioTime": 1.064
+          },
+          "calledAt": 1106.5,
+          "when": 1.064,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0386203333333333,
+            "performanceTime": 1104.2999999970198
+          },
+          "estimatedOnsetMs": 23.279666665176592
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1228.3999999985099,
+            "audioTime": 1.1866666666666668
+          },
+          "calledAt": 1228.5999999940395,
+          "when": 1.1866666666666668,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.161286,
+            "performanceTime": 1227
+          },
+          "estimatedOnsetMs": 23.9806666681568
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1351.3999999985099,
+            "audioTime": 1.3093333333333332
+          },
+          "calledAt": 1351.5,
+          "when": 1.3093333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.2839546666666666,
+            "performanceTime": 1349.6999999955297
+          },
+          "estimatedOnsetMs": 23.6786666636865
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1472.3999999985099,
+            "audioTime": 1.432
+          },
+          "calledAt": 1472.5,
+          "when": 1.432,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.4066183333333333,
+            "performanceTime": 1472.2999999970198
+          },
+          "estimatedOnsetMs": 25.281666665176544
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1594.5999999940395,
+            "audioTime": 1.552
+          },
+          "calledAt": 1594.5999999940395,
+          "when": 1.552,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.5266173333333333,
+            "performanceTime": 1592.2999999970198
+          },
+          "estimatedOnsetMs": 23.082666669647097
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1717.3999999985099,
+            "audioTime": 1.6746666666666667
+          },
+          "calledAt": 1717.3999999985099,
+          "when": 1.6746666666666667,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.649284,
+            "performanceTime": 1715
+          },
+          "estimatedOnsetMs": 22.98266666815698
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1839.6999999955297,
+            "audioTime": 1.7973333333333332
+          },
+          "calledAt": 1839.7999999970198,
+          "when": 1.7973333333333332,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7719506666666667,
+            "performanceTime": 1837.6999999955297
+          },
+          "estimatedOnsetMs": 23.382666666666637
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 1961.2999999970198,
+            "audioTime": 1.92
+          },
+          "calledAt": 1961.2999999970198,
+          "when": 1.92,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.8946193333333334,
+            "performanceTime": 1960.3999999985099
+          },
+          "estimatedOnsetMs": 24.480666668156573
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2083.7999999970198,
+            "audioTime": 2.042666666666667
+          },
+          "calledAt": 2083.7999999970198,
+          "when": 2.042666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.017285,
+            "performanceTime": 2083
+          },
+          "estimatedOnsetMs": 24.581666669646893
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2205.6999999955297,
+            "audioTime": 2.1653333333333333
+          },
+          "calledAt": 2205.7999999970198,
+          "when": 2.1653333333333333,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.1399526666666664,
+            "performanceTime": 2205.5999999940395
+          },
+          "estimatedOnsetMs": 25.280666665176796
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2327.7999999970198,
+            "audioTime": 2.2853333333333334
+          },
+          "calledAt": 2327.7999999970198,
+          "when": 2.2853333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.2599526666666665,
+            "performanceTime": 2325.6999999955297
+          },
+          "estimatedOnsetMs": 23.280666665176796
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2450.6999999955297,
+            "audioTime": 2.408
+          },
+          "calledAt": 2450.6999999955297,
+          "when": 2.408,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.3826203333333336,
+            "performanceTime": 2448.39999999851
+          },
+          "estimatedOnsetMs": 23.079666669646485
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2573.0999999940395,
+            "audioTime": 2.530666666666667
+          },
+          "calledAt": 2573.0999999940395,
+          "when": 2.530666666666667,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.5052820000000002,
+            "performanceTime": 2571
+          },
+          "estimatedOnsetMs": 23.28466667262728
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2696.0999999940395,
+            "audioTime": 2.6533333333333333
+          },
+          "calledAt": 2696.0999999940395,
+          "when": 2.6533333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.6279536666666665,
+            "performanceTime": 2693.5999999940395
+          },
+          "estimatedOnsetMs": 22.879666666666708
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 372.09999999403954,
+          "audioTime": 0.33066666666666666
+        },
+        {
+          "i": 1,
+          "time": 495.09999999403954,
+          "audioTime": 0.4533333333333333
+        },
+        {
+          "i": 2,
+          "time": 618.0999999940395,
+          "audioTime": 0.576
+        },
+        {
+          "i": 3,
+          "time": 739.0999999940395,
+          "audioTime": 0.6986666666666667
+        },
+        {
+          "i": 4,
+          "time": 861.0999999940395,
+          "audioTime": 0.8186666666666667
+        },
+        {
+          "i": 5,
+          "time": 984.0999999940395,
+          "audioTime": 0.9413333333333334
+        },
+        {
+          "i": 6,
+          "time": 1106.3999999985099,
+          "audioTime": 1.064
+        },
+        {
+          "i": 7,
+          "time": 1228.3999999985099,
+          "audioTime": 1.1866666666666668
+        },
+        {
+          "i": 8,
+          "time": 1351.3999999985099,
+          "audioTime": 1.3093333333333332
+        },
+        {
+          "i": 9,
+          "time": 1472.3999999985099,
+          "audioTime": 1.432
+        },
+        {
+          "i": 10,
+          "time": 1594.5999999940395,
+          "audioTime": 1.552
+        },
+        {
+          "i": 11,
+          "time": 1717.3999999985099,
+          "audioTime": 1.6746666666666667
+        },
+        {
+          "i": 12,
+          "time": 1839.6999999955297,
+          "audioTime": 1.7973333333333332
+        },
+        {
+          "i": 13,
+          "time": 1961.2999999970198,
+          "audioTime": 1.92
+        },
+        {
+          "i": 14,
+          "time": 2083.7999999970198,
+          "audioTime": 2.042666666666667
+        },
+        {
+          "i": 15,
+          "time": 2205.6999999955297,
+          "audioTime": 2.1653333333333333
+        },
+        {
+          "i": 16,
+          "time": 2327.7999999970198,
+          "audioTime": 2.2853333333333334
+        },
+        {
+          "i": 17,
+          "time": 2450.6999999955297,
+          "audioTime": 2.408
+        },
+        {
+          "i": 18,
+          "time": 2573.0999999940395,
+          "audioTime": 2.530666666666667
+        },
+        {
+          "i": 19,
+          "time": 2696.0999999940395,
+          "audioTime": 2.6533333333333333
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882090588,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882090711,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882090834,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882090955,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091077,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091200,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091322,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091444,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091567,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091688,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091810,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882091933,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092056,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092177,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092300,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092422,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092544,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092667,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092789,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882092912,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 22.879666666666708,
+        "median": 23.6786666636865,
+        "max": 25.28366667262719,
+        "outside33ms": 0
+      }
+    },
+    {
+      "pair": 1,
+      "method": "numeric",
+      "sampleRate": 48000,
+      "baseLatency": 0.0026666666666666666,
+      "outputLatency": 0.024,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 366.5,
+            "audioTime": 0.336
+          },
+          "calledAt": 367.1000000014901,
+          "when": 0.336,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.3106173333333333,
+            "performanceTime": 366.5
+          },
+          "estimatedOnsetMs": 25.382666666666694
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 489.5,
+            "audioTime": 0.45866666666666667
+          },
+          "calledAt": 489.69999999552965,
+          "when": 0.45866666666666667,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.43328300000000003,
+            "performanceTime": 489.1000000014901
+          },
+          "estimatedOnsetMs": 24.98366666815673
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 611.6999999955297,
+            "audioTime": 0.5786666666666667
+          },
+          "calledAt": 611.7999999970198,
+          "when": 0.5786666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.553288,
+            "performanceTime": 609.1000000014901
+          },
+          "estimatedOnsetMs": 22.778666672627082
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 731.8999999985099,
+            "audioTime": 0.7013333333333334
+          },
+          "calledAt": 731.8999999985099,
+          "when": 0.7013333333333334,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.6759546666666667,
+            "performanceTime": 731.6999999955297
+          },
+          "estimatedOnsetMs": 25.178666663686386
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 853.8999999985099,
+            "audioTime": 0.8213333333333334
+          },
+          "calledAt": 854,
+          "when": 0.8213333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.7959526666666666,
+            "performanceTime": 851.6999999955297
+          },
+          "estimatedOnsetMs": 23.180666663686452
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 975.6000000014901,
+            "audioTime": 0.944
+          },
+          "calledAt": 975.6000000014901,
+          "when": 0.944,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.9186153333333333,
+            "performanceTime": 974.3999999985099
+          },
+          "estimatedOnsetMs": 24.184666663686357
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1098.1000000014901,
+            "audioTime": 1.0666666666666667
+          },
+          "calledAt": 1098.1999999955297,
+          "when": 1.0666666666666667,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0412860000000002,
+            "performanceTime": 1097.1000000014901
+          },
+          "estimatedOnsetMs": 24.380666666666457
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1221.1999999955297,
+            "audioTime": 1.1893333333333334
+          },
+          "calledAt": 1221.1999999955297,
+          "when": 1.1893333333333334,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.1639526666666669,
+            "performanceTime": 1219.7999999970198
+          },
+          "estimatedOnsetMs": 23.980666668156573
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1344.1000000014901,
+            "audioTime": 1.312
+          },
+          "calledAt": 1344.2999999970198,
+          "when": 1.312,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.2866183333333332,
+            "performanceTime": 1342.3999999985099
+          },
+          "estimatedOnsetMs": 23.681666663686656
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1465.1999999955297,
+            "audioTime": 1.4346666666666668
+          },
+          "calledAt": 1465.2999999970198,
+          "when": 1.4346666666666668,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.409284,
+            "performanceTime": 1465.1000000014901
+          },
+          "estimatedOnsetMs": 25.28266667262733
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1587.2999999970198,
+            "audioTime": 1.5546666666666666
+          },
+          "calledAt": 1587.3999999985099,
+          "when": 1.5546666666666666,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.529287,
+            "performanceTime": 1585.1000000014901
+          },
+          "estimatedOnsetMs": 23.17966667113683
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1708.1999999955297,
+            "audioTime": 1.6773333333333333
+          },
+          "calledAt": 1708.1999999955297,
+          "when": 1.6773333333333333,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.6519526666666668,
+            "performanceTime": 1707.6999999955297
+          },
+          "estimatedOnsetMs": 24.880666666666457
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1830.3999999985099,
+            "audioTime": 1.8
+          },
+          "calledAt": 1830.6000000014901,
+          "when": 1.8,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7746203333333332,
+            "performanceTime": 1830.3999999985099
+          },
+          "estimatedOnsetMs": 25.379666666666708
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 1953.3999999985099,
+            "audioTime": 1.9226666666666667
+          },
+          "calledAt": 1953.5,
+          "when": 1.9226666666666667,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.897284,
+            "performanceTime": 1953.1000000014901
+          },
+          "estimatedOnsetMs": 25.082666669647097
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2076.5,
+            "audioTime": 2.0453333333333332
+          },
+          "calledAt": 2076.60000000149,
+          "when": 2.0453333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.019954666666667,
+            "performanceTime": 2075.6999999955297
+          },
+          "estimatedOnsetMs": 24.5786666621957
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2198.5,
+            "audioTime": 2.168
+          },
+          "calledAt": 2198.5,
+          "when": 2.168,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.1426183333333335,
+            "performanceTime": 2198.39999999851
+          },
+          "estimatedOnsetMs": 25.281666665176544
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2320.60000000149,
+            "audioTime": 2.288
+          },
+          "calledAt": 2320.6999999955297,
+          "when": 2.288,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.2626153333333336,
+            "performanceTime": 2318.39999999851
+          },
+          "estimatedOnsetMs": 23.18466666368613
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2443.5,
+            "audioTime": 2.4106666666666667
+          },
+          "calledAt": 2443.60000000149,
+          "when": 2.4106666666666667,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.385286,
+            "performanceTime": 2441.10000000149
+          },
+          "estimatedOnsetMs": 22.980666668157028
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2565.7999999970198,
+            "audioTime": 2.533333333333333
+          },
+          "calledAt": 2565.89999999851,
+          "when": 2.533333333333333,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.507948666666667,
+            "performanceTime": 2563.6999999955297
+          },
+          "estimatedOnsetMs": 23.284666665176246
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2688.89999999851,
+            "audioTime": 2.656
+          },
+          "calledAt": 2688.89999999851,
+          "when": 2.656,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.6306173333333334,
+            "performanceTime": 2686.5
+          },
+          "estimatedOnsetMs": 22.98266666815698
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 366.5,
+          "audioTime": 0.336
+        },
+        {
+          "i": 1,
+          "time": 489.5,
+          "audioTime": 0.45866666666666667
+        },
+        {
+          "i": 2,
+          "time": 611.6999999955297,
+          "audioTime": 0.5786666666666667
+        },
+        {
+          "i": 3,
+          "time": 731.8999999985099,
+          "audioTime": 0.7013333333333334
+        },
+        {
+          "i": 4,
+          "time": 853.8999999985099,
+          "audioTime": 0.8213333333333334
+        },
+        {
+          "i": 5,
+          "time": 975.6000000014901,
+          "audioTime": 0.944
+        },
+        {
+          "i": 6,
+          "time": 1098.1000000014901,
+          "audioTime": 1.0666666666666667
+        },
+        {
+          "i": 7,
+          "time": 1221.1999999955297,
+          "audioTime": 1.1893333333333334
+        },
+        {
+          "i": 8,
+          "time": 1344.1000000014901,
+          "audioTime": 1.312
+        },
+        {
+          "i": 9,
+          "time": 1465.1999999955297,
+          "audioTime": 1.4346666666666668
+        },
+        {
+          "i": 10,
+          "time": 1587.2999999970198,
+          "audioTime": 1.5546666666666666
+        },
+        {
+          "i": 11,
+          "time": 1708.1999999955297,
+          "audioTime": 1.6773333333333333
+        },
+        {
+          "i": 12,
+          "time": 1830.3999999985099,
+          "audioTime": 1.8
+        },
+        {
+          "i": 13,
+          "time": 1953.3999999985099,
+          "audioTime": 1.9226666666666667
+        },
+        {
+          "i": 14,
+          "time": 2076.5,
+          "audioTime": 2.0453333333333332
+        },
+        {
+          "i": 15,
+          "time": 2198.5,
+          "audioTime": 2.168
+        },
+        {
+          "i": 16,
+          "time": 2320.60000000149,
+          "audioTime": 2.288
+        },
+        {
+          "i": 17,
+          "time": 2443.5,
+          "audioTime": 2.4106666666666667
+        },
+        {
+          "i": 18,
+          "time": 2565.7999999970198,
+          "audioTime": 2.533333333333333
+        },
+        {
+          "i": 19,
+          "time": 2688.89999999851,
+          "audioTime": 2.656
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882093441,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882093563,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882093685,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882093806,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882093928,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094049,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094172,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094295,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094418,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094539,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094661,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094782,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882094904,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095027,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095150,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095272,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095394,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095517,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095640,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882095763,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 22.778666672627082,
+        "median": 24.380666666666457,
+        "max": 25.382666666666694,
+        "outside33ms": 0
+      }
+    },
+    {
+      "pair": 1,
+      "method": "default",
+      "sampleRate": 48000,
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.024,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 367.6000000014901,
+            "audioTime": 0.3413333333333333
+          },
+          "calledAt": 368.1000000014901,
+          "when": 0.3413333333333333,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.310616,
+            "performanceTime": 364.6000000014901
+          },
+          "estimatedOnsetMs": 27.71733333333333
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 490.80000000447035,
+            "audioTime": 0.464
+          },
+          "calledAt": 490.8999999985099,
+          "when": 0.464,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.43328066666666665,
+            "performanceTime": 487.30000000447035
+          },
+          "estimatedOnsetMs": 27.21933333333334
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 613,
+            "audioTime": 0.5866666666666667
+          },
+          "calledAt": 613,
+          "when": 0.5866666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.5559483333333334,
+            "performanceTime": 609.8999999985099
+          },
+          "estimatedOnsetMs": 27.618333331843132
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 734,
+            "audioTime": 0.7093333333333334
+          },
+          "calledAt": 734,
+          "when": 0.7093333333333334,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.6786179999999999,
+            "performanceTime": 732.6000000014901
+          },
+          "estimatedOnsetMs": 29.31533333482355
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 855.3000000044703,
+            "audioTime": 0.832
+          },
+          "calledAt": 855.3999999985099,
+          "when": 0.832,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.8012826666666667,
+            "performanceTime": 855.2000000029802
+          },
+          "estimatedOnsetMs": 30.617333331843156
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 978,
+            "audioTime": 0.9546666666666667
+          },
+          "calledAt": 978.1000000014901,
+          "when": 0.9546666666666667,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.9239513333333333,
+            "performanceTime": 977.8999999985099
+          },
+          "estimatedOnsetMs": 30.615333331843203
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1100.3999999985099,
+            "audioTime": 1.072
+          },
+          "calledAt": 1100.5,
+          "when": 1.072,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0412836666666667,
+            "performanceTime": 1095.3000000044703
+          },
+          "estimatedOnsetMs": 25.61633333929376
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1223.3999999985099,
+            "audioTime": 1.2
+          },
+          "calledAt": 1223.3999999985099,
+          "when": 1.2,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.1692856666666667,
+            "performanceTime": 1223.3000000044703
+          },
+          "estimatedOnsetMs": 30.614333339293808
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1345.3999999985099,
+            "audioTime": 1.3173333333333332
+          },
+          "calledAt": 1345.6000000014901,
+          "when": 1.3173333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.286618,
+            "performanceTime": 1340.6000000014901
+          },
+          "estimatedOnsetMs": 25.915333336313324
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1467.1000000014901,
+            "audioTime": 1.44
+          },
+          "calledAt": 1467.2000000029802,
+          "when": 1.44,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.4092836666666668,
+            "performanceTime": 1463.3000000044703
+          },
+          "estimatedOnsetMs": 26.9163333363133
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1588.5,
+            "audioTime": 1.5626666666666666
+          },
+          "calledAt": 1588.6000000014901,
+          "when": 1.5626666666666666,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.5319503333333333,
+            "performanceTime": 1586
+          },
+          "estimatedOnsetMs": 28.216333333333296
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1710.6000000014901,
+            "audioTime": 1.6853333333333333
+          },
+          "calledAt": 1710.7000000029802,
+          "when": 1.6853333333333333,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.654623,
+            "performanceTime": 1708.6000000014901
+          },
+          "estimatedOnsetMs": 28.710333333333438
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1833,
+            "audioTime": 1.808
+          },
+          "calledAt": 1833.1000000014901,
+          "when": 1.808,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7772876666666666,
+            "performanceTime": 1831.3000000044703
+          },
+          "estimatedOnsetMs": 29.01233333780374
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 1955.3000000044703,
+            "audioTime": 1.9306666666666668
+          },
+          "calledAt": 1955.3999999985099,
+          "when": 1.9306666666666668,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.8999513333333333,
+            "performanceTime": 1954
+          },
+          "estimatedOnsetMs": 29.41533332886297
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2077.39999999851,
+            "audioTime": 2.0533333333333332
+          },
+          "calledAt": 2077.5,
+          "when": 2.0533333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.02262,
+            "performanceTime": 2076.60000000149
+          },
+          "estimatedOnsetMs": 29.913333336313826
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2199.3000000044703,
+            "audioTime": 2.176
+          },
+          "calledAt": 2199.39999999851,
+          "when": 2.176,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.1452836666666664,
+            "performanceTime": 2199.2000000029802
+          },
+          "estimatedOnsetMs": 30.616333331843634
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2321.39999999851,
+            "audioTime": 2.2933333333333334
+          },
+          "calledAt": 2321.39999999851,
+          "when": 2.2933333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.2626169999999997,
+            "performanceTime": 2316.60000000149
+          },
+          "estimatedOnsetMs": 25.916333336313983
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2444,
+            "audioTime": 2.416
+          },
+          "calledAt": 2444,
+          "when": 2.416,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.3852836666666666,
+            "performanceTime": 2439.3000000044703
+          },
+          "estimatedOnsetMs": 26.016333337803644
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2566.7000000029802,
+            "audioTime": 2.538666666666667
+          },
+          "calledAt": 2566.7000000029802,
+          "when": 2.538666666666667,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.5079523333333333,
+            "performanceTime": 2561.89999999851
+          },
+          "estimatedOnsetMs": 25.914333328862995
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2689,
+            "audioTime": 2.6613333333333333
+          },
+          "calledAt": 2689.10000000149,
+          "when": 2.6613333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.6306190000000003,
+            "performanceTime": 2684.60000000149
+          },
+          "estimatedOnsetMs": 26.314333334823004
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 367.6000000014901,
+          "audioTime": 0.3413333333333333
+        },
+        {
+          "i": 1,
+          "time": 490.80000000447035,
+          "audioTime": 0.464
+        },
+        {
+          "i": 2,
+          "time": 613,
+          "audioTime": 0.5866666666666667
+        },
+        {
+          "i": 3,
+          "time": 734,
+          "audioTime": 0.7093333333333334
+        },
+        {
+          "i": 4,
+          "time": 855.3000000044703,
+          "audioTime": 0.832
+        },
+        {
+          "i": 5,
+          "time": 978,
+          "audioTime": 0.9546666666666667
+        },
+        {
+          "i": 6,
+          "time": 1100.3999999985099,
+          "audioTime": 1.072
+        },
+        {
+          "i": 7,
+          "time": 1223.3999999985099,
+          "audioTime": 1.2
+        },
+        {
+          "i": 8,
+          "time": 1345.3999999985099,
+          "audioTime": 1.3173333333333332
+        },
+        {
+          "i": 9,
+          "time": 1467.1000000014901,
+          "audioTime": 1.44
+        },
+        {
+          "i": 10,
+          "time": 1588.5,
+          "audioTime": 1.5626666666666666
+        },
+        {
+          "i": 11,
+          "time": 1710.6000000014901,
+          "audioTime": 1.6853333333333333
+        },
+        {
+          "i": 12,
+          "time": 1833,
+          "audioTime": 1.808
+        },
+        {
+          "i": 13,
+          "time": 1955.3000000044703,
+          "audioTime": 1.9306666666666668
+        },
+        {
+          "i": 14,
+          "time": 2077.39999999851,
+          "audioTime": 2.0533333333333332
+        },
+        {
+          "i": 15,
+          "time": 2199.3000000044703,
+          "audioTime": 2.176
+        },
+        {
+          "i": 16,
+          "time": 2321.39999999851,
+          "audioTime": 2.2933333333333334
+        },
+        {
+          "i": 17,
+          "time": 2444,
+          "audioTime": 2.416
+        },
+        {
+          "i": 18,
+          "time": 2566.7000000029802,
+          "audioTime": 2.538666666666667
+        },
+        {
+          "i": 19,
+          "time": 2689,
+          "audioTime": 2.6613333333333333
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096292,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096414,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096536,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096657,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096779,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882096902,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097024,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097147,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097269,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097391,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097512,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097634,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097757,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882097879,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098001,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098123,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098245,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098368,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098490,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882098613,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 25.61633333929376,
+        "median": 28.216333333333296,
+        "max": 30.617333331843156,
+        "outside33ms": 0
+      }
+    },
+    {
+      "pair": 2,
+      "method": "default",
+      "sampleRate": 48000,
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.024,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 366.3999999985099,
+            "audioTime": 0.3413333333333333
+          },
+          "calledAt": 366.8999999985099,
+          "when": 0.3413333333333333,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.31061700000000003,
+            "performanceTime": 362.1000000014901
+          },
+          "estimatedOnsetMs": 26.416333336313528
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 489.30000000447035,
+            "audioTime": 0.464
+          },
+          "calledAt": 489.30000000447035,
+          "when": 0.464,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.43328666666666665,
+            "performanceTime": 484.80000000447035
+          },
+          "estimatedOnsetMs": 26.213333333333367
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 611.3999999985099,
+            "audioTime": 0.5866666666666667
+          },
+          "calledAt": 611.5,
+          "when": 0.5866666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.5559513333333334,
+            "performanceTime": 607.5
+          },
+          "estimatedOnsetMs": 26.815333334823436
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 732.7000000029802,
+            "audioTime": 0.7093333333333334
+          },
+          "calledAt": 732.7000000029802,
+          "when": 0.7093333333333334,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.6786139999999999,
+            "performanceTime": 730.1000000014901
+          },
+          "estimatedOnsetMs": 28.119333331843336
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 852.8999999985099,
+            "audioTime": 0.832
+          },
+          "calledAt": 852.8999999985099,
+          "when": 0.832,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.8012856666666667,
+            "performanceTime": 852.7000000029802
+          },
+          "estimatedOnsetMs": 30.51433333780369
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 975.5,
+            "audioTime": 0.9546666666666667
+          },
+          "calledAt": 975.5,
+          "when": 0.9546666666666667,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.9239503333333333,
+            "performanceTime": 975.3999999985099
+          },
+          "estimatedOnsetMs": 30.61633333184318
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1097.8000000044703,
+            "audioTime": 1.072
+          },
+          "calledAt": 1097.8000000044703,
+          "when": 1.072,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0412866666666667,
+            "performanceTime": 1092.8000000044703
+          },
+          "estimatedOnsetMs": 25.713333333333367
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1219.8999999985099,
+            "audioTime": 1.1946666666666668
+          },
+          "calledAt": 1220,
+          "when": 1.1946666666666668,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.1639483333333334,
+            "performanceTime": 1215.5
+          },
+          "estimatedOnsetMs": 26.318333334823592
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1342.5,
+            "audioTime": 1.3173333333333332
+          },
+          "calledAt": 1342.6000000014901,
+          "when": 1.3173333333333332,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.286618,
+            "performanceTime": 1338.1000000014901
+          },
+          "estimatedOnsetMs": 26.315333334823208
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1463.3000000044703,
+            "audioTime": 1.44
+          },
+          "calledAt": 1463.3999999985099,
+          "when": 1.44,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.4092836666666668,
+            "performanceTime": 1460.8000000044703
+          },
+          "estimatedOnsetMs": 28.21633333333307
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1583.5,
+            "audioTime": 1.5626666666666666
+          },
+          "calledAt": 1583.5,
+          "when": 1.5626666666666666,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.5319463333333332,
+            "performanceTime": 1583.3999999985099
+          },
+          "estimatedOnsetMs": 30.620333331843312
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1706.2000000029802,
+            "audioTime": 1.6853333333333333
+          },
+          "calledAt": 1706.2000000029802,
+          "when": 1.6853333333333333,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.654614,
+            "performanceTime": 1706.1000000014901
+          },
+          "estimatedOnsetMs": 30.61933333184311
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1828.5,
+            "audioTime": 1.8026666666666666
+          },
+          "calledAt": 1828.5,
+          "when": 1.8026666666666666,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7719483333333332,
+            "performanceTime": 1823.5
+          },
+          "estimatedOnsetMs": 25.718333333333476
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 1951.5,
+            "audioTime": 1.9306666666666668
+          },
+          "calledAt": 1951.5,
+          "when": 1.9306666666666668,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.8999523333333332,
+            "performanceTime": 1951.5
+          },
+          "estimatedOnsetMs": 30.71433333333357
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2073.5,
+            "audioTime": 2.048
+          },
+          "calledAt": 2073.60000000149,
+          "when": 2.048,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.017281666666667,
+            "performanceTime": 2068.8000000044703
+          },
+          "estimatedOnsetMs": 26.018333337803597
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2195.3000000044703,
+            "audioTime": 2.1706666666666665
+          },
+          "calledAt": 2195.3000000044703,
+          "when": 2.1706666666666665,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.1399483333333333,
+            "performanceTime": 2191.39999999851
+          },
+          "estimatedOnsetMs": 26.818333327372784
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2316.60000000149,
+            "audioTime": 2.2933333333333334
+          },
+          "calledAt": 2316.7000000029802,
+          "when": 2.2933333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.2626169999999997,
+            "performanceTime": 2314.10000000149
+          },
+          "estimatedOnsetMs": 28.21633333333375
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2438.8000000044703,
+            "audioTime": 2.416
+          },
+          "calledAt": 2438.89999999851,
+          "when": 2.416,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.385285666666667,
+            "performanceTime": 2436.7000000029802
+          },
+          "estimatedOnsetMs": 28.614333331842772
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2561.10000000149,
+            "audioTime": 2.538666666666667
+          },
+          "calledAt": 2561.10000000149,
+          "when": 2.538666666666667,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.507951333333333,
+            "performanceTime": 2559.5
+          },
+          "estimatedOnsetMs": 29.11533333184343
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2683.39999999851,
+            "audioTime": 2.6613333333333333
+          },
+          "calledAt": 2683.60000000149,
+          "when": 2.6613333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.630618,
+            "performanceTime": 2682.10000000149
+          },
+          "estimatedOnsetMs": 29.415333336313324
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 366.3999999985099,
+          "audioTime": 0.3413333333333333
+        },
+        {
+          "i": 1,
+          "time": 489.30000000447035,
+          "audioTime": 0.464
+        },
+        {
+          "i": 2,
+          "time": 611.3999999985099,
+          "audioTime": 0.5866666666666667
+        },
+        {
+          "i": 3,
+          "time": 732.7000000029802,
+          "audioTime": 0.7093333333333334
+        },
+        {
+          "i": 4,
+          "time": 852.8999999985099,
+          "audioTime": 0.832
+        },
+        {
+          "i": 5,
+          "time": 975.5,
+          "audioTime": 0.9546666666666667
+        },
+        {
+          "i": 6,
+          "time": 1097.8000000044703,
+          "audioTime": 1.072
+        },
+        {
+          "i": 7,
+          "time": 1219.8999999985099,
+          "audioTime": 1.1946666666666668
+        },
+        {
+          "i": 8,
+          "time": 1342.5,
+          "audioTime": 1.3173333333333332
+        },
+        {
+          "i": 9,
+          "time": 1463.3000000044703,
+          "audioTime": 1.44
+        },
+        {
+          "i": 10,
+          "time": 1583.5,
+          "audioTime": 1.5626666666666666
+        },
+        {
+          "i": 11,
+          "time": 1706.2000000029802,
+          "audioTime": 1.6853333333333333
+        },
+        {
+          "i": 12,
+          "time": 1828.5,
+          "audioTime": 1.8026666666666666
+        },
+        {
+          "i": 13,
+          "time": 1951.5,
+          "audioTime": 1.9306666666666668
+        },
+        {
+          "i": 14,
+          "time": 2073.5,
+          "audioTime": 2.048
+        },
+        {
+          "i": 15,
+          "time": 2195.3000000044703,
+          "audioTime": 2.1706666666666665
+        },
+        {
+          "i": 16,
+          "time": 2316.60000000149,
+          "audioTime": 2.2933333333333334
+        },
+        {
+          "i": 17,
+          "time": 2438.8000000044703,
+          "audioTime": 2.416
+        },
+        {
+          "i": 18,
+          "time": 2561.10000000149,
+          "audioTime": 2.538666666666667
+        },
+        {
+          "i": 19,
+          "time": 2683.39999999851,
+          "audioTime": 2.6613333333333333
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099141,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099263,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099385,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099507,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099627,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099750,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099872,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882099994,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100117,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100237,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100358,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100480,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100603,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100726,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100848,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882100969,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882101091,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882101213,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882101335,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882101457,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 25.713333333333367,
+        "median": 28.21633333333307,
+        "max": 30.71433333333357,
+        "outside33ms": 0
+      }
+    },
+    {
+      "pair": 2,
+      "method": "numeric",
+      "sampleRate": 48000,
+      "baseLatency": 0.0026666666666666666,
+      "outputLatency": 0.024,
+      "state": "running",
+      "starts": [
+        {
+          "request": {
+            "i": 0,
+            "time": 367,
+            "audioTime": 0.336
+          },
+          "calledAt": 367.6000000014901,
+          "when": 0.336,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 0.3106163333333333,
+            "performanceTime": 365.20000000298023
+          },
+          "estimatedOnsetMs": 23.583666669646902
+        },
+        {
+          "request": {
+            "i": 1,
+            "time": 490.40000000596046,
+            "audioTime": 0.45866666666666667
+          },
+          "calledAt": 490.5,
+          "when": 0.45866666666666667,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 0.433286,
+            "performanceTime": 487.90000000596046
+          },
+          "estimatedOnsetMs": 22.880666666666684
+        },
+        {
+          "request": {
+            "i": 2,
+            "time": 613.3000000044703,
+            "audioTime": 0.584
+          },
+          "calledAt": 613.4000000059605,
+          "when": 0.584,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.5586173333333334,
+            "performanceTime": 613.1000000014901
+          },
+          "estimatedOnsetMs": 25.18266666368629
+        },
+        {
+          "request": {
+            "i": 3,
+            "time": 735.4000000059605,
+            "audioTime": 0.704
+          },
+          "calledAt": 735.5,
+          "when": 0.704,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 0.6786193333333334,
+            "performanceTime": 733.2000000029802
+          },
+          "estimatedOnsetMs": 23.18066666368634
+        },
+        {
+          "request": {
+            "i": 4,
+            "time": 855.9000000059605,
+            "audioTime": 0.8266666666666667
+          },
+          "calledAt": 856,
+          "when": 0.8266666666666667,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 0.801284,
+            "performanceTime": 855.9000000059605
+          },
+          "estimatedOnsetMs": 25.382666666666637
+        },
+        {
+          "request": {
+            "i": 5,
+            "time": 978.9000000059605,
+            "audioTime": 0.9493333333333334
+          },
+          "calledAt": 979,
+          "when": 0.9493333333333334,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 0.9239496666666667,
+            "performanceTime": 978.5
+          },
+          "estimatedOnsetMs": 24.983666660706263
+        },
+        {
+          "request": {
+            "i": 6,
+            "time": 1099.8000000044703,
+            "audioTime": 1.0693333333333332
+          },
+          "calledAt": 1099.9000000059605,
+          "when": 1.0693333333333332,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.0439526666666668,
+            "performanceTime": 1098.5
+          },
+          "estimatedOnsetMs": 24.08066666219611
+        },
+        {
+          "request": {
+            "i": 7,
+            "time": 1222.6000000014901,
+            "audioTime": 1.192
+          },
+          "calledAt": 1222.7000000029802,
+          "when": 1.192,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.1666183333333333,
+            "performanceTime": 1221.2000000029802
+          },
+          "estimatedOnsetMs": 23.981666668156777
+        },
+        {
+          "request": {
+            "i": 8,
+            "time": 1345.6000000014901,
+            "audioTime": 1.3146666666666667
+          },
+          "calledAt": 1345.7000000029802,
+          "when": 1.3146666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.289283,
+            "performanceTime": 1343.8000000044703
+          },
+          "estimatedOnsetMs": 23.583666669646846
+        },
+        {
+          "request": {
+            "i": 9,
+            "time": 1466.6000000014901,
+            "audioTime": 1.4373333333333334
+          },
+          "calledAt": 1466.7000000029802,
+          "when": 1.4373333333333334,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 1.4119516666666667,
+            "performanceTime": 1466.5
+          },
+          "estimatedOnsetMs": 25.281666665176544
+        },
+        {
+          "request": {
+            "i": 10,
+            "time": 1588.8000000044703,
+            "audioTime": 1.5573333333333332
+          },
+          "calledAt": 1588.8000000044703,
+          "when": 1.5573333333333332,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 1.5319516666666666,
+            "performanceTime": 1586.5
+          },
+          "estimatedOnsetMs": 23.081666662196312
+        },
+        {
+          "request": {
+            "i": 11,
+            "time": 1711.6000000014901,
+            "audioTime": 1.68
+          },
+          "calledAt": 1711.6000000014901,
+          "when": 1.68,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 1.6546153333333333,
+            "performanceTime": 1709.2000000029802
+          },
+          "estimatedOnsetMs": 22.984666668156706
+        },
+        {
+          "request": {
+            "i": 12,
+            "time": 1833.9000000059605,
+            "audioTime": 1.8026666666666666
+          },
+          "calledAt": 1833.9000000059605,
+          "when": 1.8026666666666666,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 1.7772860000000001,
+            "performanceTime": 1831.8000000044703
+          },
+          "estimatedOnsetMs": 23.28066666517634
+        },
+        {
+          "request": {
+            "i": 13,
+            "time": 1956.9000000059605,
+            "audioTime": 1.9253333333333333
+          },
+          "calledAt": 1956.9000000059605,
+          "when": 1.9253333333333333,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 1.8999506666666668,
+            "performanceTime": 1954.5
+          },
+          "estimatedOnsetMs": 22.982666660706172
+        },
+        {
+          "request": {
+            "i": 14,
+            "time": 2079.9000000059605,
+            "audioTime": 2.050666666666667
+          },
+          "calledAt": 2079.9000000059605,
+          "when": 2.050666666666667,
+          "offset": 1.7737291666666666,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.025286,
+            "performanceTime": 2079.9000000059605
+          },
+          "estimatedOnsetMs": 25.38066666666691
+        },
+        {
+          "request": {
+            "i": 15,
+            "time": 2202,
+            "audioTime": 2.1706666666666665
+          },
+          "calledAt": 2202,
+          "when": 2.1706666666666665,
+          "offset": 0.9137291666666667,
+          "duration": 0.12,
+          "stamp": {
+            "contextTime": 2.145283,
+            "performanceTime": 2199.8000000044703
+          },
+          "estimatedOnsetMs": 23.18366667113696
+        },
+        {
+          "request": {
+            "i": 16,
+            "time": 2322.60000000149,
+            "audioTime": 2.2933333333333334
+          },
+          "calledAt": 2322.60000000149,
+          "when": 2.2933333333333334,
+          "offset": 1.1137291666666667,
+          "duration": 0.0544375,
+          "stamp": {
+            "contextTime": 2.267951666666667,
+            "performanceTime": 2322.60000000149
+          },
+          "estimatedOnsetMs": 25.38166666666666
+        },
+        {
+          "request": {
+            "i": 17,
+            "time": 2443.8000000044703,
+            "audioTime": 2.4133333333333336
+          },
+          "calledAt": 2443.8000000044703,
+          "when": 2.4133333333333336,
+          "offset": 1.2481666666666666,
+          "duration": 0.06639583333333333,
+          "stamp": {
+            "contextTime": 2.3879526666666666,
+            "performanceTime": 2442.5
+          },
+          "estimatedOnsetMs": 24.080666662196563
+        },
+        {
+          "request": {
+            "i": 18,
+            "time": 2566.2000000029802,
+            "audioTime": 2.536
+          },
+          "calledAt": 2566.3000000044703,
+          "when": 2.536,
+          "offset": 1.3945625,
+          "duration": 0.1103125,
+          "stamp": {
+            "contextTime": 2.5106203333333332,
+            "performanceTime": 2565.2000000029802
+          },
+          "estimatedOnsetMs": 24.379666666666708
+        },
+        {
+          "request": {
+            "i": 19,
+            "time": 2689.2000000029802,
+            "audioTime": 2.6586666666666665
+          },
+          "calledAt": 2689.3000000044703,
+          "when": 2.6586666666666665,
+          "offset": 1.584875,
+          "duration": 0.10885416666666667,
+          "stamp": {
+            "contextTime": 2.633284,
+            "performanceTime": 2687.9000000059605
+          },
+          "estimatedOnsetMs": 24.082666669646642
+        }
+      ],
+      "requests": [
+        {
+          "i": 0,
+          "time": 367,
+          "audioTime": 0.336
+        },
+        {
+          "i": 1,
+          "time": 490.40000000596046,
+          "audioTime": 0.45866666666666667
+        },
+        {
+          "i": 2,
+          "time": 613.3000000044703,
+          "audioTime": 0.584
+        },
+        {
+          "i": 3,
+          "time": 735.4000000059605,
+          "audioTime": 0.704
+        },
+        {
+          "i": 4,
+          "time": 855.9000000059605,
+          "audioTime": 0.8266666666666667
+        },
+        {
+          "i": 5,
+          "time": 978.9000000059605,
+          "audioTime": 0.9493333333333334
+        },
+        {
+          "i": 6,
+          "time": 1099.8000000044703,
+          "audioTime": 1.0693333333333332
+        },
+        {
+          "i": 7,
+          "time": 1222.6000000014901,
+          "audioTime": 1.192
+        },
+        {
+          "i": 8,
+          "time": 1345.6000000014901,
+          "audioTime": 1.3146666666666667
+        },
+        {
+          "i": 9,
+          "time": 1466.6000000014901,
+          "audioTime": 1.4373333333333334
+        },
+        {
+          "i": 10,
+          "time": 1588.8000000044703,
+          "audioTime": 1.5573333333333332
+        },
+        {
+          "i": 11,
+          "time": 1711.6000000014901,
+          "audioTime": 1.68
+        },
+        {
+          "i": 12,
+          "time": 1833.9000000059605,
+          "audioTime": 1.8026666666666666
+        },
+        {
+          "i": 13,
+          "time": 1956.9000000059605,
+          "audioTime": 1.9253333333333333
+        },
+        {
+          "i": 14,
+          "time": 2079.9000000059605,
+          "audioTime": 2.050666666666667
+        },
+        {
+          "i": 15,
+          "time": 2202,
+          "audioTime": 2.1706666666666665
+        },
+        {
+          "i": 16,
+          "time": 2322.60000000149,
+          "audioTime": 2.2933333333333334
+        },
+        {
+          "i": 17,
+          "time": 2443.8000000044703,
+          "audioTime": 2.4133333333333336
+        },
+        {
+          "i": 18,
+          "time": 2566.2000000029802,
+          "audioTime": 2.536
+        },
+        {
+          "i": 19,
+          "time": 2689.2000000029802,
+          "audioTime": 2.6586666666666665
+        }
+      ],
+      "hits": [
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882101986,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102109,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102232,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102354,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102475,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102598,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102719,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102842,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882102965,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103086,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103208,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103330,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103453,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103576,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103699,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover6:ui-audio/rollover6.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_002:interface-sounds/click_002.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103821,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover1:ui-audio/rollover1.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_003:interface-sounds/click_003.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882103941,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover2:ui-audio/rollover2.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_004:interface-sounds/click_004.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882104063,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover3:ui-audio/rollover3.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_005:interface-sounds/click_005.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882104185,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover4:ui-audio/rollover4.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:tick_001:interface-sounds/tick_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        },
+        {
+          "id": "ui.hover",
+          "result": "played",
+          "at": 1794882104308,
+          "layers": [
+            {
+              "role": "transient",
+              "variantId": "kenney:ui-audio:rollover5:ui-audio/rollover5.flac/transient",
+              "offsetMs": 0,
+              "pitch": 1,
+              "gainDb": 6
+            },
+            {
+              "role": "sweetener",
+              "variantId": "kenney:interface-sounds:click_001:interface-sounds/click_001.flac/sweetener",
+              "offsetMs": 12,
+              "pitch": 1,
+              "gainDb": 6
+            }
+          ],
+          "sfx": 0,
+          "voice": 0,
+          "duckDb": 0
+        }
+      ],
+      "errors": [],
+      "summary": {
+        "sources": 20,
+        "uniqueRequests": 20,
+        "min": 22.880666666666684,
+        "median": 24.08066666219611,
+        "max": 25.382666666666637,
+        "outside33ms": 0
+      }
+    }
+  ],
+  "complete": true,
+  "physicalOnsetVerified": false,
+  "scope": "Controlled buffering comparison only; unchanged native cue graph and mixer. No battle/audio gate claim."
+}

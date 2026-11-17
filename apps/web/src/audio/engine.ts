@@ -68,7 +68,8 @@ export class AudioEngine implements AudioBridge {
  private count(bus:Bus){let count=0;for(const p of this.active)if(p.bus===bus)count++;return count;}
  private remember(){try{localStorage.setItem(KEY,JSON.stringify({...this.preferences,muted:this.muted}));}catch{/* storage optional */}if(typeof window!=='undefined')window.dispatchEvent(new Event('audio:changed'));}
  async unlock(){
-  this.ctx??=new AudioContext();
+  // LEARN/S11-audio-latency.md: reserve less device buffering for visible contacts.
+  this.ctx??=new AudioContext({latencyHint:.001});
   if(!this.buses.size){
    const limiter=this.ctx.createDynamicsCompressor();limiter.threshold.value=-4;limiter.knee.value=6;limiter.ratio.value=20;limiter.attack.value=.002;limiter.release.value=.15;
    const headroom=this.ctx.createGain();headroom.gain.value=dbGain(-2.25);limiter.connect(headroom).connect(this.ctx.destination);

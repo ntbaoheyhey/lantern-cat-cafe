@@ -27,3 +27,5 @@
 2026-11-16T07:39Z S2b current required25% policy passes16/18 scenarios: burn/claims0.9968275<1 and Star source/sink1.1015424>1.10. Preserve failures and thresholds. Stopped owned sensitivity32753/32768 because base candidate is invalid. Fresh isolated class attack1.20 candidate uses the same shared attack/Power function, 200seeds/profile, unchanged25%policy; production stays1.15 until measured. First-loss/boss holdout must still pass before adopting.
 
 2026-11-17T02:12:21.584294+00:00 REV3 adopted verbatim; 20min checkpoints, detached long jobs, bounded output; recovered60files in 8f9ea3c3763672820d9aa2d188339d473a326c34. No gate change.
+
+2026-11-17T02:23:20.602874+00:00 S11 request AudioContext latencyHint0.001:6freshcontext/120source study improvesall3paired medians, numericmax25.383ms vs defaultmax33.386ms;45engine tests pass. Browser may ignore hint; fullmix/visual onset not yet validated. Evidence LEARN/S11-audio-latency.md; no gate/mix/assets change.

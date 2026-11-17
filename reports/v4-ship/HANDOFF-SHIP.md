@@ -4,8 +4,8 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everystep/<=20min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NOW ACTIVE: QA-2 measured29.54MB after109.5KB lazy-Hub saving; fullgateFAIL pendingART textures. QA-3 runbook8->6+2corrected; QA-4 wrapCSS selected after30measurements.
-NEXT 1: Stop production18 supervisor27998; nohup node tools/v4ship-lab/regression.mjs qa-cold-layout-regression-1 with detached session and log jobs/qa-cold-layout-regression-1.log; record PID. Then production19 layout verification.
+NOW ACTIVE: QA-3fixed;QA-4production19layout10/10;QA-2still29.54MB. Audio numericlatency study6contexts/120sources improvesmax33.386->25.383ms; one-line hint edit passes45engine tests; real mix check next.
+NEXT 1: Stop production19PID32438; detached capture --trial=latency-hint-1 --scenes=wave1,wave3,boss,forge --seconds=90, port5995. Record PID/log.
 NEXT 2: After QA priorities, revalidate remaining audio/UI/history/binary. Forge real6/6success/3of3speech/max6;288graphplans/576exactreplays;LRA5.8/5.4. Physical/listening/bagLRA/global gates open; no live scanner edits.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
 CHECKPOINT:Paletteproductionreview1 verifiesbefore7/8 againstoriginalGitobjects andcurrent9/10. Bothrollback/0errors,boss60FPS,mix-17.72/-17.76LUFS,8.8/8.6LRA,-1.63/-1.95peak. Transfer29649511/510BFAIL.
@@ -36,4 +36,5 @@ S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/c
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit3=169.833s/9,314,863B/-17.86LUFS/-2.22dBTP/5.2LRA;1927sourceframes/53EN-VIcues/13wholevoices+actualSnowtrace5s;film-verify-3.json. Preparationonly;oldattemptsretained.
 PNG:27892blobs/64003pairs/12.985GBverified;27466tEXt/3107uniquetexts/82017B/0findings. SixJPEGmetadata nowverified842227B/0COM/opaqueAPP;839835entropyBunscanned. Otherchunks/pixels/encodedopen;noimageopens.
-LAST PUSHED 9cbf42414e2bd16c3b7c26e7324c9926b78227c9; production18 supervisor27998 log jobs/production-18.log; scanners8488/43798 active. Updated 2026-11-17T02:16:28.672935+00:00.
+LAST PUSHED 4b4c41114ea9795820aa9204023e0954a9810f84; JOB production19PID32438 log reports/v4-ship/jobs/production-19.log; regression29889finished web7ARTfails/2701pass,otherspass; scanners8488/43798active.
+ART QA-5repair0860bf7a6 ready; integrate only next scheduled17Nov12UTC. NewQA-6/7 check current queues before nextitem.

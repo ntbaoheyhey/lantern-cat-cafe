@@ -18,6 +18,7 @@ const candidates={
  wrap:'@media(max-width:760px){.b-landing .b-live{flex-wrap:wrap}.b-landing .b-live>.b-index-credit{flex-basis:100%}}',
  grid:'@media(max-width:760px){.b-landing .b-live{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.b-landing .b-live>.b-index-credit{grid-column:1/-1}}',
 };
+if(process.env.V4_VERIFY_ONLY==='1'){delete candidates.wrap;delete candidates.grid;}
 const require=createRequire(resolve(root,'apps/web/package.json'));
 const {chromium}=require('@playwright/test');
 const browser=await chromium.launch({headless:true});
