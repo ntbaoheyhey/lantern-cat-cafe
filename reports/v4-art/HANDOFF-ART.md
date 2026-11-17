@@ -1,22 +1,22 @@
-# ART execution anchor — 2026-11-17T02:48:00Z
-ACTIVE: current user continuation reconciled requested historical queue; proceed production craft activation + scene-ready delivery. QA5 validated, independent integration/recheck open.
-Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14; freeze19Nov12UTC -> codex/v4-art-demoday-2026-11-19.
-PREVIOUS NEXT1: read apps/web/src/game/cardrpg/spine/scene.ts lines99..112,183..190,actor-loading pose selection and craftHandles; replace DEV+VITE_CRAFT_PILOT-only activation with safe production hero-set activation, accounting for encounter texture readiness and fallback, then validate actual build.
-BANNER CLOSED SCOPED: REVIEW/A11/banner-runtime-r2/acceptance-receipt-qa5-r2.json binds105unchangedruntimehashes,83actions/16ults,48native mappings/15sheets,2799layout900samples. qa5failure retained; exact requiredPROGRESS append-only exception. Full art/class/FX acceptanceOPEN.
-NEXT3: A10 transfer: read SHIP S8/initial-transfer-decision-1.json and initial-transfer-2.json; refreshed17Nov02:06 production17/d029bc9c4=29,650,191B, images22,861,499B; six active atlases8,328,716B alone exceed8MB. Initial imagebudget3,315,248B. Existing delivery projection7,966,311B is not integrated acceptance.
-NEXT4: caster identity private comparison/association; number-density/owner clarity and900pwave1f111glow attribution; reducedmotion/strictshake/activation/finalclasses/timesplit; postfreezeA12.
-LAST PUSH:5aa7c81aa verified HEAD=origin/codex/v3-feel-2026-11-14 on resume. This reconciliation checkpoint follows; use git log -1 + origin branch to verify.
-NEXT1: poll PID41105 and tail5 reports/v4-art/jobs/activation-r1-runner.log; then preview actual production build on5991 and verify authored poses/FX, readiness and failed-resource handling.
-LIVE VALIDATION: PID41105; log reports/v4-art/jobs/activation-r1-runner.log; fullweb/parity/productionbuild; preflight18tests+typecheckPASS, source hashes fixed.
-LIVE SERVER: Vite20416/5990; no capture job. CraftOFF. Max3 backgroundjobs. Poll owned PID only.
-REQUESTED JOBS:68961 and69950 absent17Nov02:42UTC. Historical HANDOFF cef9ccd92 identifies a6-final.log/a6-post.log; tails show PARITY/CAPTURE/REVIEW/BOSS900/REVIEW900 and LIVE/FACE/PERF exits0. Do not restart completed jobs.
-REQUESTED QUEUE:blind attempt2 already11/12 (first attempt10/12 retained); A6 receipt6dc737904 complete scoped; BindingK4-A2 accepted42655f111 and later scoped receipt22bca4f0b. Do not relabel known blind samples or redo reviewed sheets. Activation/composition/class limits remain OPEN.
-RESUME WIP:810individual status entries,5tracked changes; only logs+historical parity pointer tracked. No source WIP to stage. Preserve inherited media/raw/private/.DS_Store; explicit paths only. User requests skipping logs in commits.
-QA: REQUESTS-TO-ART read17Nov02:11; QA-5 seven stale support assumptions. Fix uses real allied heal/cleanse/shield and Soot hostile outcomes; same-row recovery fixtures support both catalogs. SHIP snapshot b1e4398a immutable/local/ignored.
-BANNER:105runtimehashes unchanged since0839ee2d3; prior2701web/323files,typecheck,3F6,lane275,554DOMsamples;0intersections/loss/jump/mismatch. Native48/48+15sheets and3layout900 CLOSED. Fresh720p/audio/2700markers+2799layout900samplesPASS. Eight more sheets saved; image counter reset at83/83 (last3 displayed once; previous load emitted none).
-CLARITY: reviewed Clover basic still paints enemy under legacy rules; no heal-only G-ROLE claim until final SHIPclass merge. Lower-row paired source/target result effects and numbers remain open; banner scoped only.
-RECEIPTS: placement-runtime-r1/acceptance-receipt-r2.json valid; original failures retained. A11/delivery-r1 scoped receipt complete. A7/yarn-giant/acceptance-receipt.json source3ac0f5a17; all inherited limitations in STATE/REVIEW.
-STOP: no STOP-V4ART; current pasted order supersedes16Novpause. Inbox later continuation present; no new notes. Designer mochi/soot/clover empty17Nov02:11. Final classes-landed SHA/baseline not announced; no SHIP merge allowed yet.
-DIRT: inherited489untracked groups=media/logs/private refs; do not bulk-add. Stage owned source/text/small evidence explicitly; preserve v3-demo log(otherlane), volatile serverlogs and references locally. No secrets.
-QA5 COMPLETE: r4.json PASS13+13focused/2703web323files/typecheck/3F6; immutableSHIPb1e4398a rules only; no full integratedSHIP claim. Reports+REQUESTS-TO-SHIP+RESPONSES-TO-QA written. No running validation job.
-
+# ART handoff — PAUSED 2026-11-17T03:04Z
+PAUSED: latest user says “lưu handoff và dừng”. Do not resume until a new user continuation. This supersedes all automatic NEXT/queue instructions.
+Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v3-feel-2026-11-14. Follow RULES-ART.md on a later authorized resume.
+LAST IMPLEMENTATION PUSH:9a21cc07c. Pause/evidence checkpoint follows this rewrite; verify HEAD against origin before resuming.
+NEXT1 ONLY AFTER RESUME: run existing tools/v3craft-lab/v4-clarity/live-probe.mjs r1 with ART_A9_REVIEW=reports/v4-art/REVIEW/activation/r1, detached; record PID/log immediately. Inspect Yarn basic contact before accepting melee motion.
+NEXT2: existing capture-review.py with same ART_A9_REVIEW and unique ART_A9_ATTEMPT=activation-r1, then all scoped action sheets/900p review. No new activation films exist yet.
+NEXT3: scene-ready transfer, designer idle coexistence, class integration, blind association, number ownership, reduced motion/strict shake. No gate relaxation.
+IMPLEMENTED: production authored poses/FX; encounter-only CraftEncounter readiness; late-decoding disposal guards. Nonhero renderer and accepted designer/sequence precedence retained.
+VALIDATION: REVIEW/activation/r1/validation.json PASS2713tests/324files,18focused,typecheck,3unchangedF6,productionbuild;78runtime hashes bind worktree predating implementation commit.
+PRODUCTION: production-smoke-r3.json PASS native C2 UI without devflag/review handle; visible canvas/no overlay. Separate dev=1 model-inspection cases cover8heroes/36actions,800/2200ms and350/1100ms. MissingMochiK2 blocks readiness with visible error.
+FAILURES RETAINED: smokeR1 requested hidden review handle; R2 used old-shell Fight selector. R3 corrected harness only. REVIEW.md records scope and limitations.
+FACE: front-face-probe-r3.json PASS16ultimate observations720/900; max scoped foreground coverage0.0035660661. Live alpha readback, not film acceptance.
+MOTION OPEN: Yarn basic X approach0; +9px at impact is retaliation, Y approach~50px. Inspect visual contact. Mochi/Panko basic X ranges120.87/218.91px; Soot/Binding basics planted.
+TRANSFER OPEN: smoke resource totals are AFTER actions, not readiness. Boss8,406,740B; wave1/wave3 large legacy enemy PNGs. No8MB PASS. SHIP S8/initial-transfer-2.json absent; decision-1.json available.
+JOBS:41105 validation,49119 smoke,49661 face completed; no active tests/captures. Logs under reports/v4-art/jobs/activation-*.log remain local.
+PREVIEW STOPPED: owned42566/42573,5991. Build retained tools/v3craft-lab/v4-activation/raw/production-r1.
+PREEXISTING SERVER RETAINED:20416/5990. Default source now authored; no pilot flag required. Never touch SHIP ports.
+OLD REQUESTS:68961/69950 finished exits0; blind attempt2=11/12; A6 receipt6dc737904; BindingK4-A2 selected42655f111/scoped receipt22bca4f0b. Do not redo.
+QA5: independent13/13 recheck ondfce473f accepted; fullSHIP integration pending. Final classes-landed SHA/baseline still not announced; do not merge checkpointdb35585a.
+A11:83/83 prior banner sheets/qa5-r2 receipt complete SCOPED. Not authored-production acceptance. Do not reopen reviewed sheets.
+No new images generated or visually reviewed. Designer inbox last checked02:11 empty; recheck later. Time-split compliance unproven.
+Preserve inherited logs/parity pointer/media/.DS_Store/raw/private. Explicit owned paths only; no log files in pause commit. No deploy/mainmerge/contracts/audio changes.
