@@ -1,0 +1,143 @@
+{
+  "utc": "2026-11-17T22:54:41.568Z",
+  "source": "626763de1e6bc754a572864872366802c6ea807c",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "7a6c3f5c1427f7d5331f21ea02bd7e98a7e1f238d6ed39e2d5e6fb3da5e165ce",
+  "prototypeSha256": "17fca8f0ca78c782b8ada2c3169b30afcd8c11fc62a1eb50b2c209b6cc5d0e44",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "pass": true,
+  "rowsExact": true,
+  "cuesExact": true,
+  "ended": "2026-11-17T22:54:45.125Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-setup-cache-semantics-r1/report.json",
+    "sha256": "4c559ce443b8976dd8350f59b6c3c946e4a55437ee9d4e34bbf31b3efbfe114b"
+  },
+  "runs": [
+    {
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "override": {
+        "mode": "baseline",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/rig/drawing-layer.ts?t=1794948987995",
+            "sourceSha256": "ae4aa73334c2cd40b421718fc1df619975647c530ac4792d6c8dc832e5f351b0",
+            "overrideSha256": "ae4aa73334c2cd40b421718fc1df619975647c530ac4792d6c8dc832e5f351b0"
+          }
+        ]
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "cache": [
+        {
+          "id": "foe-0-yarn-giant",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "mochi",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "soot",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "clover",
+          "bytes": 0,
+          "attributeMatches": true
+        },
+        {
+          "id": "panko",
+          "bytes": 0,
+          "attributeMatches": true
+        }
+      ],
+      "rows": 105,
+      "cues": 14
+    },
+    {
+      "mode": "cached",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "override": {
+        "mode": "cached",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/rig/drawing-layer.ts?t=1794948987995",
+            "sourceSha256": "ae4aa73334c2cd40b421718fc1df619975647c530ac4792d6c8dc832e5f351b0",
+            "overrideSha256": "8c5c3454e04432dc608586a0b182e18fedfc822171ef916075b12009bd9f228c"
+          }
+        ]
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "cache": [
+        {
+          "id": "foe-0-yarn-giant",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "mochi",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "soot",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "clover",
+          "bytes": 13068,
+          "attributeMatches": true
+        },
+        {
+          "id": "panko",
+          "bytes": 13068,
+          "attributeMatches": true
+        }
+      ],
+      "rows": 105,
+      "cues": 14
+    }
+  ],
+  "decision": "No application optimization: even complete skipped-reset prototype has negligible natural-play benefit. Canonical cache only proved reset/callback semantics; frozen GPU and production-cache experiments are not run."
+}

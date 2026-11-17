@@ -1,0 +1,1005 @@
+{
+  "utc": "2026-11-17T22:54:41.276Z",
+  "source": "26bf09756e73b4fde24d3a28679ed743b04133d4",
+  "order": [
+    "baseline",
+    "coalesced",
+    "coalesced",
+    "baseline",
+    "baseline",
+    "coalesced"
+  ],
+  "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+  "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+  "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+  "snapshots": [
+    {
+      "name": "run-drawing-reset-production.mjs",
+      "sha256": "1675bc0f85e9bf2bd7da6c5e0185d51af13d3d7125eb5f7a6d87af094a5a8884"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "3fdb82e67030ca60fd27b218d35390089e1ba85f361d2185cba218bf2475e1a4"
+    },
+    {
+      "name": "drawing-reset-prototype.mjs",
+      "sha256": "0cff74e6a13ee05e1fc78bae0d037b6c2c0a7ec856d026f2017bb6d7941e84ce"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+    }
+  ],
+  "pass": true,
+  "method": "Six sequential alternating natural32s/rate seeded boss trials using the identical preserved production artifact plus instance-only drawing-reset wrappers. Steady headline excludes first2s; startup and whole-run retained. CPU4x is a stress proxy.",
+  "limits": "Coalescing suppresses intermediate drawing state visible to arbitrary cue callbacks; rejected as a general runtime change. Timings bound the benefit available to a safer canonical vertex cache. No app edit or independent6301 judge acceptance.",
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "steadyRenderMedianMs": 2.7999999970197678,
+      "steadyFrameP95Ms": 16.700000000004366,
+      "wholeFrameP95Ms": 16.799999999995634,
+      "wholeLongFrames": 0,
+      "startupRenderMaxMs": 40,
+      "setupCalls": 218,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 1,
+      "mode": "coalesced",
+      "steadyRenderMedianMs": 2.8000000044703484,
+      "steadyFrameP95Ms": 16.700000000004366,
+      "wholeFrameP95Ms": 16.700000000004366,
+      "wholeLongFrames": 0,
+      "startupRenderMaxMs": 39.900000005960464,
+      "setupCalls": 219,
+      "skipped": 219,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "steadyRenderMedianMs": 13.100000001490116,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "wholeFrameP95Ms": 33.5,
+      "wholeLongFrames": 21,
+      "startupRenderMaxMs": 134.89999999850988,
+      "setupCalls": 214,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "mode": "coalesced",
+      "steadyRenderMedianMs": 13.199999995529652,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "wholeFrameP95Ms": 49.89999999999782,
+      "wholeLongFrames": 20,
+      "startupRenderMaxMs": 132.5,
+      "setupCalls": 214,
+      "skipped": 214,
+      "actions": 26,
+      "ultimates": 6
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/0-baseline/report.json",
+      "utc": "2026-11-17T22:47:20.639Z",
+      "ended": "2026-11-17T22:48:30.685Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "26bf09756e73b4fde24d3a28679ed743b04133d4",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.19999999553,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.299999997019768,
+        "p99": 12.100000001490116,
+        "max": 20.30000000447035
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 14.699999995529652,
+          "p99": 22.799999997019768,
+          "max": 40
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000291,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.300000004470348,
+          "p99": 13.800000004470348,
+          "max": 40
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 221,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/0-baseline/report.json",
+      "utc": "2026-11-17T22:47:20.639Z",
+      "ended": "2026-11-17T22:48:30.685Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "26bf09756e73b4fde24d3a28679ed743b04133d4",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32043.19999999553,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.099999999998545,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.100000001490116,
+        "p95": 19.899999998509884,
+        "p99": 42.399999998509884,
+        "max": 67.79999999701977
+      },
+      "startup": {
+        "samples": 59,
+        "frameMs": {
+          "median": 16.799999999999727,
+          "p95": 83.40000000000009,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 17,
+          "p95": 58.100000001490116,
+          "p99": 137.10000000149012,
+          "max": 137.10000000149012
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1398,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.5,
+          "p99": 66.69999999999982,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.200000002980232,
+          "p95": 21,
+          "p99": 45.399999998509884,
+          "max": 137.10000000149012
+        },
+        "over33": 68,
+        "over50": 20
+      },
+      "over50": 13,
+      "setupCalls": 213,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/1-coalesced/report.json",
+      "utc": "2026-11-17T22:48:30.972Z",
+      "ended": "2026-11-17T22:49:39.562Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32002.20000000298,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.8000000044703484,
+        "p95": 4.399999998509884,
+        "p99": 12.299999997019768,
+        "max": 20.899999998509884
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 16.800000000000182,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 14.599999994039536,
+          "p99": 20.899999998509884,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.5,
+          "p99": 14.799999997019768,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 219,
+      "skipped": 219,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/1-coalesced/report.json",
+      "utc": "2026-11-17T22:48:30.972Z",
+      "ended": "2026-11-17T22:49:39.562Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32039.5,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.100000000000364,
+        "max": 116.70000000000073
+      },
+      "submitCpuMs": {
+        "median": 13.100000001490116,
+        "p95": 19.700000002980232,
+        "p99": 43,
+        "max": 68.70000000298023
+      },
+      "startup": {
+        "samples": 61,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.70000000000027,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16.299999997019768,
+          "p95": 49,
+          "p99": 132.5,
+          "max": 132.5
+        },
+        "over33": 12,
+        "over50": 6
+      },
+      "wholeRun": {
+        "samples": 1397,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.69999999999709,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.199999995529652,
+          "p95": 20.299999997019768,
+          "p99": 45.399999998509884,
+          "max": 132.5
+        },
+        "over33": 66,
+        "over50": 18
+      },
+      "over50": 12,
+      "setupCalls": 214,
+      "skipped": 214,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/2-coalesced/report.json",
+      "utc": "2026-11-17T22:49:39.852Z",
+      "ended": "2026-11-17T22:50:48.471Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.09999999404,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.399999998509884,
+        "p99": 12.300000004470348,
+        "max": 20.600000001490116
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.19999999999982,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.100000001490116,
+          "p95": 14.299999997019768,
+          "p99": 20.399999998509884,
+          "max": 40.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.800000000000182,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.4000000059604645,
+          "p99": 14.100000001490116,
+          "max": 40.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 217,
+      "skipped": 217,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/2-coalesced/report.json",
+      "utc": "2026-11-17T22:49:39.852Z",
+      "ended": "2026-11-17T22:50:48.471Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32035.5,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.10000000000218,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.199999995529652,
+        "p95": 20.099999994039536,
+        "p99": 41.899999998509884,
+        "max": 65.5
+      },
+      "startup": {
+        "samples": 62,
+        "frameMs": {
+          "median": 16.799999999999955,
+          "p95": 66.70000000000027,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 16.100000001490116,
+          "p95": 49.100000001490116,
+          "p99": 136.20000000298023,
+          "max": 136.20000000298023
+        },
+        "over33": 13,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1387,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.89999999999782,
+          "p99": 66.59999999999991,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 13.200000002980232,
+          "p95": 20.899999998509884,
+          "p99": 44.099999994039536,
+          "max": 136.20000000298023
+        },
+        "over33": 71,
+        "over50": 20
+      },
+      "over50": 13,
+      "setupCalls": 212,
+      "skipped": 212,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/3-baseline/report.json",
+      "utc": "2026-11-17T22:50:48.765Z",
+      "ended": "2026-11-17T22:51:57.854Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32002.30000000447,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.899999998509884,
+        "p95": 4.399999998509884,
+        "p99": 12.600000001490116,
+        "max": 21.5
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 16.800000000000182,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 14.899999998509884,
+          "p99": 20.69999999552965,
+          "max": 38.600000001490116
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 4.5,
+          "p99": 14.799999997019768,
+          "max": 38.600000001490116
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 218,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/3-baseline/report.json",
+      "utc": "2026-11-17T22:50:48.765Z",
+      "ended": "2026-11-17T22:51:57.854Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32035.5,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999945,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.399999998509884,
+        "p95": 20.19999999552965,
+        "p99": 45,
+        "max": 69.69999999552965
+      },
+      "startup": {
+        "samples": 60,
+        "frameMs": {
+          "median": 16.800000000000182,
+          "p95": 83.40000000000009,
+          "p99": 166.80000000000018,
+          "max": 166.80000000000018
+        },
+        "submitCpuMs": {
+          "median": 15.700000002980232,
+          "p95": 47.70000000298023,
+          "p99": 134.89999999850988,
+          "max": 134.89999999850988
+        },
+        "over33": 14,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1374,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.900000000000546,
+          "p99": 66.70000000000073,
+          "max": 166.80000000000018
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 21,
+          "p99": 46.70000000298023,
+          "max": 134.89999999850988
+        },
+        "over33": 74,
+        "over50": 22
+      },
+      "over50": 15,
+      "setupCalls": 215,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/4-baseline/report.json",
+      "utc": "2026-11-17T22:51:58.144Z",
+      "ended": "2026-11-17T22:53:08.412Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.90000000596,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.7999999970197678,
+        "p95": 4.300000004470348,
+        "p99": 12.200000002980232,
+        "max": 21.100000001490116
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.100000001490116,
+          "p95": 14.600000001490116,
+          "p99": 21.899999998509884,
+          "max": 40.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.399999998509884,
+          "p99": 14.600000001490116,
+          "max": 40.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 218,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/4-baseline/report.json",
+      "utc": "2026-11-17T22:51:58.144Z",
+      "ended": "2026-11-17T22:53:08.412Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "79e8dc3177681a67a577187eb597c80dec244264",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32023.29999999702,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999854,
+        "max": 100.10000000000036
+      },
+      "submitCpuMs": {
+        "median": 13.100000001490116,
+        "p95": 19.600000001490116,
+        "p99": 43.29999999701977,
+        "max": 76.29999999701977
+      },
+      "startup": {
+        "samples": 65,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.69999999999982,
+          "p99": 166.60000000000036,
+          "max": 166.60000000000036
+        },
+        "submitCpuMs": {
+          "median": 15.700000002980232,
+          "p95": 47.5,
+          "p99": 134.5,
+          "max": 134.5
+        },
+        "over33": 10,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1404,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.69999999999982,
+          "max": 166.60000000000036
+        },
+        "submitCpuMs": {
+          "median": 13.200000002980232,
+          "p95": 20.299999997019768,
+          "p99": 44.399999998509884,
+          "max": 134.5
+        },
+        "over33": 67,
+        "over50": 21
+      },
+      "over50": 14,
+      "setupCalls": 214,
+      "skipped": 0,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/5-coalesced/report.json",
+      "utc": "2026-11-17T22:53:08.698Z",
+      "ended": "2026-11-17T22:54:17.246Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "626763de1e6bc754a572864872366802c6ea807c",
+      "rate": 1,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32001.40000000596,
+      "frameMs": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "submitCpuMs": {
+        "median": 2.8000000044703484,
+        "p95": 4.399999998509884,
+        "p99": 13,
+        "max": 21
+      },
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 15.099999994039536,
+          "p99": 21.30000000447035,
+          "max": 39.900000005960464
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.8000000044703484,
+          "p95": 4.4000000059604645,
+          "p99": 14.399999998509884,
+          "max": 39.900000005960464
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "over50": 0,
+      "setupCalls": 219,
+      "skipped": 219,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "mode": "coalesced",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/5-coalesced/report.json",
+      "utc": "2026-11-17T22:53:08.698Z",
+      "ended": "2026-11-17T22:54:17.246Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "source": "626763de1e6bc754a572864872366802c6ea807c",
+      "rate": 4,
+      "identity": {
+        "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+        "artifactMode": "baseline",
+        "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+        "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      },
+      "elapsedMs": 32033.10000000149,
+      "frameMs": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.69999999999982,
+        "max": 100
+      },
+      "submitCpuMs": {
+        "median": 13.400000005960464,
+        "p95": 20.200000002980232,
+        "p99": 42.29999999701977,
+        "max": 66.5
+      },
+      "startup": {
+        "samples": 60,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 83.29999999999973,
+          "p99": 166.70000000000027,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 16.19999999552965,
+          "p95": 45.79999999701977,
+          "p99": 131.79999999701977,
+          "max": 131.79999999701977
+        },
+        "over33": 13,
+        "over50": 8
+      },
+      "wholeRun": {
+        "samples": 1374,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.899999999999636,
+          "p99": 66.70000000000073,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 21,
+          "p99": 45.20000000298023,
+          "max": 131.79999999701977
+        },
+        "over33": 73,
+        "over50": 25
+      },
+      "over50": 17,
+      "setupCalls": 214,
+      "skipped": 214,
+      "actions": 26,
+      "ultimates": 6,
+      "logEvents": 171,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "reviewedUtc": "2026-11-17T22:56:15.592053+00:00",
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/review/0-baseline-1x.png",
+      "source": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/0-baseline/boss-1x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4915887289ff8c49def0327913a4494a819fb01951bdaed27a65fd72ef0a4eee",
+      "sourceSha256": "06c1893f7fcf24e30c2851787af389cde9d7b18ad928c81a89f94f6d79f55525"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/review/0-baseline-4x.png",
+      "source": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/0-baseline/boss-4x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "095eb54fe8b5861245fbd594a9ce0ae0af8913fd4674cfd7ba24ac68869a221d",
+      "sourceSha256": "ec3d18833235c0a01e85468f22519a4e2b1d64f0d8d19152833b02b1235a133c"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/review/1-coalesced-1x.png",
+      "source": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/1-coalesced/boss-1x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "b0a92eac35837dc7c2869f8c92751d7725570eb83143107ccfc83fc8b571df34",
+      "sourceSha256": "f003d98ff31e42b8b4850722deb66d4f1ba7be18ad4cbbd083efb531ba84a2f8"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/review/1-coalesced-4x.png",
+      "source": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-drawing-reset-production/trials/1-coalesced/boss-4x.png",
+      "width": 1024,
+      "height": 576,
+      "sha256": "bab497eb04254a2b99e030feb86e31b63e8361477b53b2fed73a7a3d894a3d84",
+      "sourceSha256": "619b4f0e1889eb5b2a938c87b84fb8c667357f63675340286015983ece5a04df"
+    }
+  ],
+  "visualReview": "Four measured1024x576 own frames inspected once: four heroes, Yarn and two binding foes, HP/status marks and telegraphs remain visible.32damage total visible in1x frames;4x snapshots show different natural action phases. No frame-pair equality or judge acceptance claim."
+}

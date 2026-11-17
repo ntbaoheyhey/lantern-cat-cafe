@@ -1,0 +1,11 @@
+# V7 V-F drawing-reset study: runtime change rejected
+
+Six sequential alternating natural32s/rate trials completed22:54:17Z on the unchanged preserved production artifact. Each runs26actions and6ultimates at1x/4x with0browser errors or blocked requests. Skipping a median218/214overwritten setup samples changes steady render2.8→2.8/13.1→13.2ms;steady framep95 stays16.7/33.4ms. Startup maximum40→39.9/134.9→132.5ms is a small shift, while whole-run4xp95 worsens33.5→49.9ms. This does not establish a useful performance gain.
+
+The suppression prototype is not a safe general runtime design: arbitrary cue callbacks can observe intermediate drawing state. A separate canonical idle0 vertex-cache tool preserves105state snapshots and14cue/throw snapshots across all7actors, including immediate setup/clearTracks, signed zero, nonfinite recovery, replacement attributes and custom point overrides. It costs13068B/actor (91476B for7). No further frozen-GPU/production-cache experiment or application adoption is justified by the upper-bound timings. The prepared frozen cache harness is unrun.
+
+Four fresh own1280x720 frames were measured and downscaled to1024x576, then inspected once. Four heroes, Yarn and two binding foes, HP/status marks and telegraphs remain visible;32damage total appears in the1x frames. Natural action phases differ, so these are not frame-pair pixel comparisons. Earlier144/144 frozen final-state/GPU suppression comparisons remain separate evidence.
+
+Provenance: local6311 full judge query, source artifact53f8c4a17419ab9c7f4f8126bc74b05dea778871,index033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e. Trial source26bf09756 is tool/report context; application runtime patch remains empty. Exact tool snapshots, per-trial identities/times and raw hashes are in V7-F-drawing-reset-production.json. Canonical cache source and semantic evidence are in V7-F-setup-cache-semantics.json. No6301 independent acceptance or FPS claim.
+
+No application source changed; noREADY. Keep both rejected prototypes for reproducibility. Drawing-reset study gate22:59:05Z remains a prohibition on early application edits, not a reason to force an optimization with no measured benefit.
