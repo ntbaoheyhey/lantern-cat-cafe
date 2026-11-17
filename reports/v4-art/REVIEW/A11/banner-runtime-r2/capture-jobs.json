@@ -170,9 +170,43 @@
       ],
       "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-banner-runtime-r2-layout900.log",
       "started": "2026-11-17T00:46:32.506617+00:00",
-      "pid": 84381
+      "pid": 84381,
+      "exitCode": 0,
+      "finished": "2026-11-17T00:59:18.854435+00:00"
+    },
+    {
+      "name": "layout-review",
+      "command": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/bin/python",
+        "tools/v3craft-lab/v4-transfer/review-900.py",
+        "--root",
+        "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/REVIEW/A11/banner-runtime-r2",
+        "--subdir",
+        "layout900"
+      ],
+      "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-banner-runtime-r2-layout-review.log",
+      "started": "2026-11-17T00:59:18.879900+00:00",
+      "pid": 87712,
+      "exitCode": 0,
+      "finished": "2026-11-17T00:59:19.654851+00:00"
+    },
+    {
+      "name": "action-sheets",
+      "command": [
+        "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/bin/python",
+        "scripts/v3feel/review-sheets.py",
+        "V4-A11-BANNER-R2"
+      ],
+      "log": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v4-art/jobs/a11-banner-runtime-r2-action-sheets.log",
+      "started": "2026-11-17T00:59:19.661387+00:00",
+      "pid": 87718,
+      "exitCode": 0,
+      "finished": "2026-11-17T00:59:24.104426+00:00"
     }
   ],
-  "complete": false,
-  "pass": false
+  "complete": true,
+  "pass": true,
+  "runtimeUnchanged": true,
+  "reviewSheets": 83,
+  "finished": "2026-11-17T00:59:27.228348+00:00"
 }

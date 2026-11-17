@@ -48,6 +48,16 @@ assert sum(f['ultimateWindows'] for f in native['fixtures']) == len({(m['fixture
 assert all(s['reviewed'] and s['observation'] for s in native['sheets'])
 assert native['finding'] and native['limitations']
 assert native['visualCoverageComplete'] and all(m.get('bannerFullyVisible') for m in native['mappings'])
+for index in native.get('originalMissingCaptionMappings', []):
+    mapping = native['mappings'][index]
+    assert mapping['originalCropFullyVisible'] is False
+    assert any(index in s['mappingIndices'] and s.get('coveragePass') is False
+               for s in native['sheets'] if not s.get('supplement'))
+    supplement = next(s for s in native['sheets'] if s['path'] == mapping['supplementalCoveragePath'])
+    assert supplement['supplement'] and supplement['reviewed'] and supplement['coveragePass']
+    binding = next(b for b in supplement['sourceBindings'] if b['mappingIndex'] == index)
+    assert binding['encodedFrame'] == mapping['encodedFrame']
+    assert sha(ROOT / binding['sourcePath']) == binding['sourceSha256']
 assert sha(ROOT / native['verificationPath']) == native['verificationSha256']
 assert read(ROOT / native['verificationPath'])['pass']
 fixtures = {'wave1', 'wave3', 'boss'}
@@ -123,6 +133,8 @@ receipt = {
                      'layout900Sheets': len(visual['sheets']), 'layout900Samples': sum(r['frames'] for r in layout['results']),
                      'scope': films['assessmentScope'], 'finding': films['finding'], 'limitations': films['limitations']},
     'nativeBannerReview': {'sheets': len(native['sheets']), 'semanticSamples': len(native['mappings']),
+                          'originalCropFailuresRetained': native.get('originalMissingCaptionMappings', []),
+                          'supplementSheets': sum(bool(s.get('supplement')) for s in native['sheets']),
                           'maxElapsedDifferenceMs': max(abs(m['elapsedDifferenceMs']) for m in native['mappings']),
                           'scope': native['scope'], 'finding': native['finding'], 'limitations': native['limitations']},
     'open': ['All original defects without exact reproduced evidence remain retained.',
