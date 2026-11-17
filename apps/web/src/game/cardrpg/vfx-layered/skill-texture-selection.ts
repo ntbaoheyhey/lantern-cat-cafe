@@ -11,6 +11,7 @@ export const V5_INTEGRATED_TEXTURES: ReadonlySet<string> = new Set([
   'panko-slash',
   'panko-ult-charge',
   'panko-ult-release',
+  'panko-particle-1',
   'soot-impact',
   'soot-ult-charge',
   'soot-ult-release',

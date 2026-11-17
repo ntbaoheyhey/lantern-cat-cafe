@@ -8,7 +8,10 @@ describe('V5 skill timeline contract', () => {
   it('keeps unreviewed atlas entries procedural and uses distinct ultimate art', () => {
     for (const timeline of V5_SKILL_TIMELINES.values()) for (const layer of timeline.layers) {
       if (layer.texture) expect(V5_INTEGRATED_TEXTURES.has(layer.texture)).toBe(true);
-      if (layer.shape === 'mote' || layer.shape === 'decal') expect(layer.texture).toBe('');
+      if (layer.shape === 'mote' || layer.shape === 'decal') {
+        const crumb = layer.shape === 'mote' && ['panko-1', 'panko-4'].includes(timeline.id);
+        expect(layer.texture).toBe(crumb ? 'panko-particle-1' : '');
+      }
     }
     for (const owner of ['mochi', 'clover', 'panko', 'soot']) {
       expect(getV5Timeline(owner+'-4')!.layers.find(l=>l.id==='burst')!.texture).toBe(owner+'-ult-release');

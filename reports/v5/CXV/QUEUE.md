@@ -48,4 +48,6 @@
 
 2026-11-17T20:57:42.241486+00:00 V-F ACTIVE native stationary-row sampling:42tests/TSC0,910geometry+380GPUexact,twofreshcaptures;production6trial gate pending.
 
-2026-11-17T21:10:34.090214+00:00 V-F stationary native production gate complete:12captures measured/4reviewed once,zeroerrors/blocks,42tests/TSC0 retained. READY pending checkpoint push;V-D crumb audit next.
+2026-11-17T21:10:34.090214+00:00 V-F stationary native production gate complete:12captures measured/4reviewed once,zeroerrors/blocks,42tests/TSC0 retained. READY sent after93772cb8e push21:11Z;V-D crumb audit followed.
+
+- [x] V-D original Panko crumb local gate 2026-11-17T21:22:38.121348+00:00:128px9048B,1x1normal,36tests/TSC0,32native full-action pairs/4freshsheets,G1-G5=4/4/4/4/4. Native selection only;CXI loader entry/independent acceptance pending. AGV manifest untouched.
