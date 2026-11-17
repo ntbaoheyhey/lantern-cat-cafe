@@ -1,5 +1,5 @@
 # AG2 QUEUE (REV 3)
-- [ ] Q1 LEARN + STYLE BIBLE [time box 60 min]
+- [x] Q1 LEARN + STYLE BIBLE [time box 60 min]
 - [ ] Q2 Mochi full set, generation-first [time box 75 min]
 - [ ] Q3 Soot full set [time box 75 min]
 - [ ] Q4 Clover full set [time box 75 min]

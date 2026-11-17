@@ -1,8 +1,8 @@
 # AG2 HANDOFF (REV 3)
-ACTIVE: Q1 LEARN + STYLE BIBLE
-NEXT 1: node tools/v5tex/research-bible.mjs && write reports/v5/AG2/STYLE-BIBLE.md
-NEXT 2: Q2 Mochi full set (generation-first)
+ACTIVE: Q2 Mochi full set (generation-first)
+NEXT 1: node tools/v5tex/gen-mochi.mjs && node tools/v5tex/check.mjs
+NEXT 2: composite mochi effects in reports/v5/AG2/comp/ and score G1-G5
 NEXT 3: Q3 Soot full set (generation-first)
-LAST PUSHED SHA: ef51b975f
+LAST PUSHED SHA: pending Q1 commit
 IMAGE BUDGET USED: 2 generated sheets
-LAST RE-READ UTC: 2026-11-17T05:46:00Z
+LAST RE-READ UTC: 2026-11-17T05:48:00Z
