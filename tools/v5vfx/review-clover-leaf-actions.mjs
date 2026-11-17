@@ -67,9 +67,10 @@ try{
    }
    samples.push(row);
   }
-  const sheet=resolve(out,name+'.jpg'),inputs=[1,3,4,7].flatMap(i=>['-i',samples[i].candidate.path]);
+  const sheet=resolve(out,name+'.jpg'),reviewFrames=native?[3,4].flatMap(i=>['baseline','candidate'].map(variant=>({i,variant}))):[1,3,4,7].map(i=>({i,variant:'candidate'}));
+  const inputs=reviewFrames.flatMap(({i,variant})=>['-i',samples[i][variant].path]);
   execFileSync('ffmpeg',['-v','error',...inputs,'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',sheet]);
-  report.cases.push({id,reduced,...setup,sheet,samples});await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
+  report.cases.push({id,reduced,...setup,sheet,reviewFrames,samples});await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
   assert(samples.some(r=>r.candidate.draws.length>0),'No leaf drawn '+name);console.log(name+' captured');
  }
  report.harnessSha256=harnessSha256;report.errors=errors;report.blockedRequests=blockedRequests;
