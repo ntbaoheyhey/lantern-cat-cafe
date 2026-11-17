@@ -102,11 +102,11 @@ it('returns from the practice route without starting a campaign under the lesson
  const practice=m.tutorialBattle,before=R.exportSave(m.state);
  function View(){useSyncExternalStore(m.subscribe,m.snapshot);return <ShellV3 m={m}>{null}</ShellV3>;}
  render(<View/>);
- await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Route',exact:true}));await vi.dynamicImportSettled();});
+ await act(async()=>{fireEvent.click(screen.getByRole('button',{name:'Route'}));await vi.dynamicImportSettled();});
  expect(screen.getByRole('region',{name:'Practice route'})).toBeTruthy();
  expect(screen.queryByRole('button',{name:/Chapter 1/})).toBeNull();
  fireEvent.click(screen.getByRole('button',{name:'Return to preparation'}));
- expect(await screen.findByRole('button',{name:'Fight',exact:true})).toBeTruthy();
+ expect(await screen.findByRole('button',{name:'Fight'})).toBeTruthy();
  expect(m.tutorialBattle).toBe(practice);expect(R.exportSave(m.state)).toBe(before);
 });
 
