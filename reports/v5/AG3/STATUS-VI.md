@@ -1,6 +1,5 @@
 # Trạng thái AG3
-- Hoàn thành thẻ R4: Quét toàn diện 601 ảnh phát hiện 411 ảnh không được tham chiếu (28.05 MB).
-- Điểm mấu chốt: Toàn bộ 22 file rig-page-0.png (26.88 MB) không hề được load bởi src do rig.json chỉ load rig-depth.png.
-- Thư mục cinematics/ (1.33 MB poster + 40 MB video) hoàn toàn không có component nào gọi tới.
-- Đang bắt đầu thẻ R5: Quét ảnh trùng lặp SHA-256 và gần trùng lặp (SSIM >= 0.995).
-- Đã báo cáo READY cho CXI.
+- Hoàn thành thẻ R5: Phát hiện 40 nhóm trùng lặp 100% SHA-256 (88 file) và 6 cặp gần trùng (SSIM >= 0.995).
+- Lãng phí lớn nhất: binding-thread portrait vs runtime trùng lặp 97.5 KB; 5 file foreground trùng byte.
+- Bắt đầu thẻ R6: Tối ưu hóa tài nguyên màn hình đầu tiên / Landing page (LCP), tạo montage đối chiếu.
+- Đã xuất R5-duplicates.csv và R5-duplicates.md, gửi READY cho CXI.
