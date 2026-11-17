@@ -100,25 +100,25 @@ export function cutRangedVariants() {
       const opusOut = path.join(LEGACY_DIR, `${safeName}.opus`);
       const m4aOut = path.join(LEGACY_DIR, `${safeName}.m4a`);
 
-      // Slice opus
+      // Slice opus (optimized 36k)
       runFfmpeg([
         '-i', srcWebm,
         '-ss', start.toString(),
         '-t', duration.toString(),
         '-c:a', 'libopus',
-        '-b:a', '48k',
+        '-b:a', '36k',
         '-ac', '1',
         '-f', 'webm',
         opusOut
       ]);
 
-      // Slice m4a fallback
+      // Slice m4a fallback (optimized 48k)
       runFfmpeg([
         '-i', srcWebm,
         '-ss', start.toString(),
         '-t', duration.toString(),
         '-c:a', 'aac',
-        '-b:a', '64k',
+        '-b:a', '48k',
         '-ac', '1',
         m4aOut
       ]);
@@ -239,25 +239,25 @@ export function cutVoiceVariants() {
         const opusOut = path.join(VOICE_DIR, `${cleanName}.opus`);
         const m4aOut = path.join(VOICE_DIR, `${cleanName}.m4a`);
 
-        // Slice opus
+        // Slice opus (optimized 36k)
         runFfmpeg([
           '-i', srcWebm,
           '-ss', start.toString(),
           '-t', duration.toString(),
           '-c:a', 'libopus',
-          '-b:a', '48k',
+          '-b:a', '36k',
           '-ac', '1',
           '-f', 'webm',
           opusOut
         ]);
 
-        // Slice m4a
+        // Slice m4a (optimized 48k)
         runFfmpeg([
           '-i', srcWebm,
           '-ss', start.toString(),
           '-t', duration.toString(),
           '-c:a', 'aac',
-          '-b:a', '64k',
+          '-b:a', '48k',
           '-ac', '1',
           m4aOut
         ]);
