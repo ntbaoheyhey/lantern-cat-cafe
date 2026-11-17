@@ -130,7 +130,7 @@ Trong Secrets đặt đúng `SIWE_DOMAIN=taskbarhero-eight.vercel.app` và `SIWE
 
 Xác nhận các điều kiện ở mục2 trước khi bật backend: khóa JWT hiệu lực dùng chung, `VOUCHER_SIGNER_PRIVATE_KEY` hiện có và sponsor hiệu lực. Guest drip chọn `SPONSOR_PRIVATE_KEY` trước, rồi mới tới `VOUCHER_SIGNER_PRIVATE_KEY`; thiếu cả hai thì trả503. Có sponsor riêng vẫn không thay thế voucher signer cho phần thưởng/hành động chain.
 
-Sponsor đã ghi nhận: **`0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000`**. Số dư tối thiểu cho lượt kế tiếp là **1 AVAX + tổng reservation đang chờ + 0,05 AVAX + 21.000 × gasPrice**. Gửi test AVAX từ Core/Fuji nếu thiếu; kiểm tra chain ID 43113 và địa chỉ trước khi gửi. Số dư đúng 1 AVAX không đủ.
+Sponsor đã ghi nhận: **`0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000`**. Một lượt demo mới cần **2 ví**: khách và ví mua. Kiểm tra cho cả lô: **1 AVAX + reservation đang chờ + số ví cần cấp mới × (0,05 AVAX + 21.000 × 200 gwei) + 0,1 AVAX dự phòng**. 200 gwei là trần gas hiện có của server; không đổi trần này. Khi chưa có pending: một lượt cần ít nhất **1,2084 AVAX**; ba lượt mới cần **1,4252 AVAX**. Số dư 1,075 AVAX chỉ có thể qua drip đầu, không đủ bảo đảm workshop. Gửi test AVAX từ Core/Fuji nếu thiếu; kiểm tra chain ID 43113 và địa chỉ trước khi gửi.
 
 Địa chỉ công khai này phải khớp khóa sponsor hiệu lực. Nếu cấu hình dùng sponsor khác, cập nhật cùng địa chỉ công khai trong cả truy vấn reservation và lệnh kiểm tra số dư dưới đây; không kiểm tra quỹ của địa chỉ cũ rồi bật sponsor mới.
 
@@ -155,20 +155,21 @@ export V4_SPONSOR_BALANCE_WEI="$(cast balance \
   0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000 \
   --rpc-url https://api.avax-test.network/ext/bc/C/rpc)"
 export V4_GAS_PRICE_WEI="$(cast gas-price --rpc-url https://api.avax-test.network/ext/bc/C/rpc)"
-python3 - <<'PY'
-import os
-pending=int(os.environ['V4_PENDING_WEI'])
-balance=int(os.environ['V4_SPONSOR_BALANCE_WEI'].split()[0])
-gas=int(os.environ['V4_GAS_PRICE_WEI'].split()[0])
-assert pending >= 0 and 0 < gas <= 200_000_000_000
-minimum=10**18 + pending + 50_000_000_000_000_000 + 21000*gas
-assert balance >= minimum, 'Sponsor cần bổ sung test AVAX'
-print('Sponsor đủ tại thời điểm đọc; minimum_wei=', minimum)
-PY
+export V4_DEMO_RUNS=3
+export V4_FUNDED_WALLETS=0
+node tools/chain/check-sponsor-budget.mjs \
+  --runs="$V4_DEMO_RUNS" --funded-wallets="$V4_FUNDED_WALLETS" \
+  --pending-wei="$V4_PENDING_WEI" \
+  --balance-wei="$V4_SPONSOR_BALANCE_WEI" \
+  --gas-price-wei="$V4_GAS_PRICE_WEI"
 )
 ```
 
-Reservation có thể đổi sau phép đọc; kiểm tra nguyên tử trong SQL vẫn quyết định cuối cùng. Sau khi xác minh đủ quỹ và gateway:
+Đặt `V4_DEMO_RUNS=1` nếu chỉ chạy một lượt; mặc định trên dự trù ba lượt. Chỉ tăng `V4_FUNDED_WALLETS` khi đã xác minh các ví đó còn đủ test gas cho lượt dự kiến; giữ0 để tính trường hợp mới hoàn toàn. Exit0 / `budgetPass:true` mới đạt kiểm tra quỹ. Đây là dự toán, không giữ chỗ toàn bộ hành trình: đọc lại pending/số dư trước mỗi lô; giao dịch SQL vẫn kiểm tra nguyên tử cho từng ví.
+
+Dự trù cả quota: một lượt mới dùng2slot/IP; ba lượt mới dùng6grant toàn hệ thống. Giới hạn vẫn là3ví/IP/24giờ và50ví/ngàyUTC. Ba lượt mới cùngIP không thể hoàn thành trong một ngày theo quota hiện tại; dùng ví đã được cấp đủ gas hoặc lịch thử phù hợp, không nới quota để làm smoke xanh. Các bài10/10 chạy ở fixture cô lập. Thông báo “Café gas is low. Ask the host to refill it.” là quỹ café thiếu; chủ demo bổ sung sponsor rồi kiểm tra lại, không bắt khách mở faucet.
+
+Sau khi xác minh đủ quỹ, quota và gateway:
 
 ```sh
 supabase secrets set --project-ref qoalewtxflagoprrxrgh \

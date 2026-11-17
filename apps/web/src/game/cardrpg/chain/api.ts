@@ -1,7 +1,7 @@
 const recoveryMessages: Record<string, string> = {
   daily_limit: 'Daily limit. Try tomorrow.',
   ip_limit: 'Guest limit. Try later.',
-  sponsor_low: 'No gas. Open faucet.',
+  sponsor_low: 'Café gas is low. Ask the host to refill it.',
   gas_unavailable: 'Gas unavailable. Retry.',
   no_item: 'Item unavailable. Refresh.',
   no_intent: 'Seal unavailable. Refresh.',
