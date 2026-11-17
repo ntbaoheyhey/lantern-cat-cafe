@@ -32,7 +32,7 @@ function convexHull(points:Point[]):Point[] {
 
 /** Cache painted-pixel contour weights, not the transparent geometry rectangle.
  * Each triangle is affine, so its convex contour retains every posed extremum.
- * Construction happens at asset load; subsequent frames only transform points.
+ * Construction happens on a pose's first measurement; later frames transform points.
  * Method and actual-pixel comparisons: reports/v3-feel/LEARN/Q2.md. */
 function samples(mesh:T.Mesh):Sample[] {
  const geometry=mesh.geometry,material=mesh.material;
@@ -49,18 +49,22 @@ function samples(mesh:T.Mesh):Sample[] {
   const [a,b,c]=ids.map(i=>[uv.getX(i)*width,(texture.flipY?1-uv.getY(i):uv.getY(i))*height] as Point) as [Point,Point,Point];
   const denominator=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);
   if(Math.abs(denominator)<1e-8)continue;
+  const bcY=b[1]-c[1],cbX=c[0]-b[0],caY=c[1]-a[1],acX=a[0]-c[0];
   const barycentric=(x:number,y:number):Triangle=>{
-   const u=((b[1]-c[1])*(x-c[0])+(c[0]-b[0])*(y-c[1]))/denominator;
-   const v=((c[1]-a[1])*(x-c[0])+(a[0]-c[0])*(y-c[1]))/denominator;
+   const u=(bcY*(x-c[0])+cbX*(y-c[1]))/denominator;
+   const v=(caY*(x-c[0])+acX*(y-c[1]))/denominator;
    return[u,v,1-u-v];
   };
   const x0=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(width-1,Math.ceil(Math.max(a[0],b[0],c[0])));
   const y0=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(height-1,Math.ceil(Math.max(a[1],b[1],c[1]))),edge:Point[]=[];
   for(let y=y0;y<=y1;y++){
-   let left=-1,right=-1;
+   let left=-1,right=-1;const py=y+.5-c[1];
    for(let x=x0;x<=x1;x++){
     if(rgba[(y*width+x)*4+3]!<128)continue;
-    if(barycentric(x+.5,y+.5).some(weight=>weight<-.000001))continue;
+    // Keep the exact containment tolerance without an array and callback for
+    // every painted pixel. Only retained contour vertices need weight arrays.
+    const px=x+.5-c[0],u=(bcY*px+cbX*py)/denominator,v=(caY*px+acX*py)/denominator;
+    if(u<-.000001||v<-.000001||1-u-v<-.000001)continue;
     if(left<0)left=x;right=x;
    }
    if(left>=0){edge.push([left+.5,y+.5]);if(right!==left)edge.push([right+.5,y+.5]);}
