@@ -56,8 +56,8 @@ export class V5SkillPlayer {
       const texture = layer.shape === 'flash' ? undefined : getV5Texture(layer.texture);
       const blend = texture?.blend ?? layer.blend;
       const c = texture && blends && blend !== 'normal' ? blends.context(blend) : base;
-      const glyph = layer.shape === 'charge' || layer.shape === 'decal' ? 'ring' :
-        layer.shape === 'flash' ? 'spark' : layer.shape === 'slash' ? 'arc' : timeline.motif;
+      const glyph = layer.glyph ?? (layer.shape === 'charge' || layer.shape === 'decal' ? 'ring' :
+        layer.shape === 'flash' ? 'spark' : layer.shape === 'slash' ? 'arc' : timeline.motif);
       const stamp = texture ? undefined : this.stamps.get(glyph, layer.shape === 'flash' ? PAINT.cream : timeline.color);
       if (!texture && !stamp) continue;
       if (texture) v5TextureRect(texture, sample.progress, rect);
@@ -75,13 +75,22 @@ export class V5SkillPlayer {
           layer.shape === 'mote' ? budget.motes - a.particles : budget.draws));
         a.dropped += requested - allowed + (count !== layer.count ? 1 : 0);
         for (let i = 0; i < allowed; i++) {
-          let x = point.x, y = point.y;
+          let x = point.x, y = point.y, travelRotation = 0;
           const angle = i * 2.399963 + (timeline.owner === 'soot' ? .4 : 0);
           if (layer.shape === 'projectile' || layer.shape === 'slash') {
             const flight = Math.max(0, Math.min(1, (at - layer.startMs) / (timeline.impactMs - layer.startMs)));
             if (!view.reducedMotion) {
               x = source.x + (point.x - source.x) * flight;
-              y = source.y + (point.y - source.y) * flight - Math.sin(flight * Math.PI) * unit * .12;
+              const envelope = Math.sin(flight * Math.PI);
+              const arc = layer.travel === 'rain' ? .32 : layer.travel === 'pour' ? .22 : layer.travel === 'thrust' ? .02 : .12;
+              const fan = (i - (allowed - 1) / 2) * unit * .10;
+              y = source.y + (point.y - source.y) * flight - envelope * unit * arc;
+              if (layer.travel === 'rain' || layer.travel === 'pour') x += envelope * fan;
+              if (layer.travel === 'weave') y += Math.sin(flight * Math.PI * 2) * unit * .06;
+              if (layer.travel === 'rain' || layer.travel === 'thrust') {
+                travelRotation = Math.atan2(point.y - source.y - Math.cos(flight * Math.PI) * Math.PI * unit * arc,
+                  point.x - source.x + (layer.travel === 'rain' ? Math.cos(flight * Math.PI) * Math.PI * fan : 0)) + Math.PI / 4;
+              }
             }
           } else if (layer.shape === 'mote') {
             const distance = view.reducedMotion ? .10 : .05 + sample.eased * .29;
@@ -91,7 +100,7 @@ export class V5SkillPlayer {
           const extent = unit * layer.size * sample.scale;
           c.save(); c.globalAlpha = sample.alpha;
           c.globalCompositeOperation = blend === 'add' ? 'lighter' : blend === 'screen' ? 'screen' : 'source-over';
-          c.translate(x, y); c.rotate(sample.rotation + (layer.shape === 'mote' ? angle : 0));
+          c.translate(x, y); c.rotate(sample.rotation + travelRotation + (layer.shape === 'mote' ? angle : 0));
           if (layer.anchor === 'ground') c.scale(1, .28);
           if (texture) {
             const h = extent * rect.height / rect.width;

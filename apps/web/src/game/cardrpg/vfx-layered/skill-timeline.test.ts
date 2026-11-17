@@ -16,7 +16,7 @@ describe('V5 skill timeline contract', () => {
     expect(getV5Timeline('mochi-1')!.layers.find(l=>l.id==='burst')!.texture).toBe('');
   });
   it('covers four heroes, including both skill slots, with ordered three-beat timelines', () => {
-    expect(V5_SKILL_TIMELINES.size).toBe(16);
+    expect([...V5_SKILL_TIMELINES.keys()].filter(id => !id.startsWith('enemy:'))).toHaveLength(16);
     for (const owner of ['mochi', 'soot', 'clover', 'panko']) for (const slot of [1, 2, 3, 4]) {
       const timeline = getV5Timeline(`${owner}-${slot}`)!;
       expect(validateSkillTimeline(timeline)).toBe(timeline);

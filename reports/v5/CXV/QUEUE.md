@@ -6,12 +6,12 @@
 - [x] V4 current QA impact fixes — DONE a7d452167;12/12 + tsc0 + fresh sheets; AGS recheck/M2 feedback pending
 - [x] V5 Performance + reduced motion — DONE07:34Z;21/21,tsc0,pixel gate,9 sheets,boss58.67fps
 - [x] R1 first integration pass — DONE;46 texture scores,12 full-action sheets,12 selected hashes,19 tests/typecheck; production loader via CXI
-- [ ] R2 enemy variants — ACTIVE research since07:39:14; implementation after indexed study
-- [ ] R3 damage numbers — QUEUED after R2
+- [x] R2 enemy variants — DONE implementation/gates;28/28+tsc0,8 final reviewed sheets; R10 visual debt R2.md
+- [ ] R3 damage numbers — ACTIVE research since08:02:36; audit existing numbers before refinement
 
 ## REFILL LIST (append next three unfinished items when queue is empty)
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
-- [ ] R2 Enemy variants: needle-moth, binding-thread, teacup-healer, kettle-knight (90m)
+- [x] R2 Enemy variants: needle-moth, binding-thread, teacup-healer, kettle-knight (90m)
 - [ ] R3 Damage numbers: pop, stack, crit flourish, distinct healing (45m)
 - [ ] R4 Ground contact shadows and impact dust under every unit (45m)
 - [ ] R5 Status visuals: burn, poison, stun, slow, shield (45m)
@@ -36,6 +36,7 @@
 
 - [ ] AGS Q0b-F2 external recheck — fix delivered; request sent, latest QA closure pending
 
-- [ ] R1 repeat reviews — impacts-alt, enemy-skills, victory requests07:46–07:48 ACK; fresh capture next
+- [x] R1 repeat reviews — impacts-alt,enemy-skills,victory DONE9 scores; revisions requested
+- [ ] R1 v2 support reviews — boss-enemy-v2,auras-status-v2,hitstop-vignettes-v2 ACK; capture next
 - [x] CXI07:44 craft decode hooks — ACK/DONE narrow grant07:45; preserved dimensions/fallback/timing
 - [x] CXI07:45 sequence assertion — ACK/DONE narrow grant07:52; CXI owns test contract repair
