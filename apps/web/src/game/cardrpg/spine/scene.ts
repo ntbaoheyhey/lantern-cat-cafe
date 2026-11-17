@@ -30,6 +30,7 @@ import {opaqueWorldBounds} from '../stage/opaque-pose-bounds';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
+import {getV5Timeline,skillPoseTime} from '../vfx-layered/skill-timeline';
 import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
@@ -238,6 +239,9 @@ export class SpineScene {
   this.motionAudit.length=0;this.trails.root.visible=false;
   const healed:string[]=[];
   const healingCast=!!plan&&this.craftHandles(plan)&&['clover','teacup-healer'].includes(this.actors.get(plan.actorId)?.asset??'');
+  const v5Timeline=plan?getV5Timeline(plan.presentationId??plan.skillId):undefined;
+  const motionElapsed=frame?skillPoseTime(v5Timeline,frame.elapsed,frame.plan.beats[2]!.start,
+   view.reducedMotion||!frame.plan.events.some(e=>e.actorId===frame.plan.actorId&&e.type==='damage')):0;
   if(plan&&healingCast)paintedTargets(plan,'heal',view.actors,healed);
   const healAge=frame?frame.elapsed-frame.plan.beats[2]!.start:-1;
   const healBright=healAge>=0&&healAge<180?1+.12*(1-healAge/180):1;
@@ -274,8 +278,8 @@ export class SpineScene {
     if(authored&&!chargeEvent(frame.plan))name=authored;
     if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':'attack';
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
-    at=entry.craftPose?.owns(name)?Math.min(duration,frame.elapsed/1000):(frame.plan as SequencePlan).fixedTiming
-     ?fixedActionClipTime(frame.elapsed,duration,hit,frame.plan.beats[2]!.start,frame.plan.duration,frame.plan.ultimate?600:0)
+    at=entry.craftPose?.owns(name)?Math.min(duration,motionElapsed/1000):(frame.plan as SequencePlan).fixedTiming
+     ?fixedActionClipTime(motionElapsed,duration,hit,frame.plan.beats[2]!.start,frame.plan.duration,frame.plan.ultimate?600:0)
      :retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
    }else if(unit.hp<=0){if(entry.koAt<0)entry.koAt=time;name='ko';key=entry.koAt;at=time-entry.koAt;}
    else if(time-entry.hurtAt<actor.duration('hurt')){name='hurt';key=entry.hurtAt;at=time-entry.hurtAt;}
@@ -302,7 +306,7 @@ export class SpineScene {
    const caster=plan?view.actors.find(a=>a.id===plan.actorId):undefined;
    const targetId=plan?.targetIds.find(id=>view.actors.some(a=>a.id===id&&a.side!==unit.side))??plan?.targetIds.find(id=>id!==unit.id);
    const target=this.homes.get(targetId??'')?.point??{...home.point,x:home.point.x+(unit.side==='enemy'?-1:1)*width*.30};
-   const input=frame?{plan:frame.plan,elapsed:frame.elapsed,asset:entry.asset,side:unit.side,home:home.point,target,width,height}:null;
+   const input=frame?{plan:frame.plan,elapsed:motionElapsed,asset:entry.asset,side:unit.side,home:home.point,target,width,height}:null;
    if(!view.reducedMotion&&!view.model&&!iced){
     if(input&&unit.id===plan?.actorId&&unit.hp>0)rootPose=actionPose(input);
     const damageSource=plan?.events.find(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id))?.actorId;
@@ -348,8 +352,8 @@ export class SpineScene {
      contact.x+=direction*24*height/720;
     }
     rootPose=corridor&&entry.asset==='panko'&&contact.y<home.point.y-height*.25
-     ?denseMeleeRoot(frame.elapsed,home.point,contact)
-     :meleeRoot(frame.elapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor||entry.asset==='yarn-giant'?0:(tallTarget?20:60)*height/720);
+     ?denseMeleeRoot(motionElapsed,home.point,contact)
+     :meleeRoot(motionElapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor||entry.asset==='yarn-giant'?0:(tallTarget?20:60)*height/720);
    }
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
@@ -439,7 +443,7 @@ export class SpineScene {
     faces:[...this.actors.values()].filter(e=>e.actor.root.visible).map(e=>this.faceBounds(e)),
     rearOrder:Math.min(...orders)-.5,frontOrder:Math.max(...orders)+1,reducedMotion:view.reducedMotion});
    else art.hide();
-   this.effects.clearFrame();
+   this.effects.render(view,time,this.width,this.height,this.labelAudit.cards,true);
   }else{this.craft?.hide();this.craftBasic?.hide();this.craftShield?.hide();this.craftHeal?.hide();this.craftOven?.hide();this.craftThread?.hide();this.craftTea?.hide();this.craftNeedle?.hide();this.craftYarn?.hide();this.effects.render(view,time,this.width,this.height,this.labelAudit.cards);}
   // D8 / X06 / X07: sample the final original pose after all transforms and
   // actor tint; retain the actor, then place only local floor and inner-edge light.
