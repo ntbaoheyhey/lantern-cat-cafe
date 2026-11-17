@@ -6,9 +6,10 @@ import {resolve} from 'node:path';
 const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-boss-play');
 await mkdir(out,{recursive:true});
 const production=process.env.CXV_PRODUCTION==='1',integration='/Users/bao/taskbar-hero-chain';
-const fixture=await import(production?integration+'/tools/v5int/production-fixture.mjs':'./browser-fixture.mjs');
+const localProduction=process.env.CXV_LOCAL_PRODUCTION==='1';
+const fixture=await import(localProduction?'./production-candidate-fixture.mjs':production?integration+'/tools/v5int/production-fixture.mjs':'./browser-fixture.mjs');
 const {chromium,config,openFixture}=fixture;
-const runtimeEvidence=production?fixture.runtimeEvidence:candidateEvidence;
+const runtimeEvidence=production||localProduction?fixture.runtimeEvidence:candidateEvidence;
 const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
 const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
 const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
@@ -16,9 +17,9 @@ const pendingBatch=process.env.CXV_PENDING_BATCH??null;
 const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
 const hudMode=process.env.CXV_HUD_MODE??null;
 const layoutProfile=!!hudMode||process.env.CXV_LAYOUT_PROFILE==='1';
-if(hudMode&&production)throw Error('HUD module experiment requires candidate Vite');
+if(hudMode&&(production||localProduction))throw Error('HUD module experiment requires candidate Vite');
 if(pendingBatch&&!['on','off'].includes(pendingBatch))throw Error('CXV_PENDING_BATCH must be on or off');
-if(pendingBatch&&production)throw Error('Pending-label module experiment requires the candidate Vite server');
+if(pendingBatch&&(production||localProduction))throw Error('Pending-label module experiment requires the candidate Vite server');
 if(facePrototype&&facePrototype!=='compact')throw Error('CXV_FACE_PROTOTYPE must be compact');
 if(numberMetricsMode&&!['on','off'].includes(numberMetricsMode))throw Error('CXV_NUMBER_METRICS must be on or off');
 const report={numberMetricsMode,utc:new Date().toISOString(),source:execFileSync('git',production?['-C',integration,'rev-parse','HEAD']:['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),production,hardware:execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim(),viewport:{width:1280,height:720},method:'Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.',runs:[],errors:[]};
@@ -29,6 +30,7 @@ report.pendingBatch=pendingBatch;
 report.focusProfile=focusProfile;
 report.hudMode=hudMode;
 report.layoutProfile=layoutProfile;
+report.localProduction=localProduction;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
   let pendingOverride,hudOverride;
@@ -95,12 +97,12 @@ try{
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});
   run.identity=runIdentity;run.identityAfter=runtimeEvidence();run.blockedRequests=blockedRequests;
   if(pendingOverride)run.pendingOverride=pendingOverride;
-  if(production&&runIdentity.indexSha256!==run.identityAfter.indexSha256)errors.push('Production index changed during this run; do not use as stable paired evidence');
+  if((production||localProduction)&&runIdentity.indexSha256!==run.identityAfter.indexSha256)errors.push('Production index changed during this run; do not use as stable paired evidence');
   report.runs.push(run);report.errors.push(...errors);await page.close();
  }
- if(production&&new Set(report.runs.map(r=>r.identity.indexSha256)).size>1)report.errors.push('Production changed between CPU rates; runs are individually identified but are not a paired build comparison');
+ if((production||localProduction)&&new Set(report.runs.map(r=>r.identity.indexSha256)).size>1)report.errors.push('Production changed between CPU rates; runs are individually identified but are not a paired build comparison');
  report.numberMetricsOverrideNote=numberMetricsMode?'Shared dispatch for on/off; off clears glyph metrics before atlas lookups to reproduce per-color measurement in the same runtime. Per-color atlas caching remains unchanged.':undefined;
- report.sourceMeaning=production?'Fixture source HEAD; served application identified by indexSha256 for each run':'Candidate application source HEAD plus runtime patch';
+ report.sourceMeaning=localProduction?'Local production artifact identified by buildSource, artifactMode, buildManifestSha256 and indexSha256 for each run':production?'Fixture source HEAD; served application identified by indexSha256 for each run':'Candidate application source HEAD plus runtime patch';
  report.ended=new Date().toISOString();report.pass=!report.errors.length&&report.runs.every(r=>r.samples>200&&r.plans.length>=8&&r.final.log>r.initial.log);
  await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));
  console.log(JSON.stringify({out,pass:report.pass,errors:report.errors,runs:report.runs.map(({plans,slowFrames,initial,final,...r})=>({...r,presentations:plans.length,actions:plans.filter(p=>p.kind==='action').length,ultimates:plans.filter(p=>p.ultimate).length,logEvents:final.log-initial.log}))}));
