@@ -69,27 +69,32 @@ export class V5SkillPlayer {
         const feet = this.socket(id, 'feet'), head = this.socket(id, 'head');
         if (!point || !feet || !head) continue;
         const unit = Math.max(1, Math.abs(feet.y - head.y) / .77);
+        // A contact accent meets the incoming side of the torso. Drawn pose
+        // vfxOrigin can be a weapon tip or the floor, so it is not a hit point.
+        const contact = layer.anchor === 'contact';
+        const targetX = contact ? (head.x + feet.x) / 2 + Math.sign(source.x - feet.x) * unit * .34 : point.x;
+        const targetY = contact ? feet.y + (head.y - feet.y) * .48 : point.y;
         const count = Number.isFinite(layer.count) ? Math.max(0, Math.min(SKILL_MAX_COUNT, Math.floor(layer.count))) : 0;
         const requested = view.reducedMotion ? Math.min(count, 3) : count;
         const allowed = Math.max(0, Math.min(requested, budget.draws - a.draws,
           layer.shape === 'mote' ? budget.motes - a.particles : budget.draws));
         a.dropped += requested - allowed + (count !== layer.count ? 1 : 0);
         for (let i = 0; i < allowed; i++) {
-          let x = point.x, y = point.y, travelRotation = 0;
+          let x = targetX, y = targetY, travelRotation = 0;
           const angle = i * 2.399963 + (timeline.owner === 'soot' ? .4 : 0);
           if (layer.shape === 'projectile' || layer.shape === 'slash') {
             const flight = Math.max(0, Math.min(1, (at - layer.startMs) / (timeline.impactMs - layer.startMs)));
             if (!view.reducedMotion) {
-              x = source.x + (point.x - source.x) * flight;
+              x = source.x + (targetX - source.x) * flight;
               const envelope = Math.sin(flight * Math.PI);
               const arc = layer.travel === 'rain' ? .32 : layer.travel === 'pour' ? .22 : layer.travel === 'thrust' ? .02 : .12;
               const fan = (i - (allowed - 1) / 2) * unit * .10;
-              y = source.y + (point.y - source.y) * flight - envelope * unit * arc;
+              y = source.y + (targetY - source.y) * flight - envelope * unit * arc;
               if (layer.travel === 'rain' || layer.travel === 'pour') x += envelope * fan;
               if (layer.travel === 'weave') y += Math.sin(flight * Math.PI * 2) * unit * .06;
               if (layer.travel === 'rain' || layer.travel === 'thrust') {
-                travelRotation = Math.atan2(point.y - source.y - Math.cos(flight * Math.PI) * Math.PI * unit * arc,
-                  point.x - source.x + (layer.travel === 'rain' ? Math.cos(flight * Math.PI) * Math.PI * fan : 0)) + Math.PI / 4;
+                travelRotation = Math.atan2(targetY - source.y - Math.cos(flight * Math.PI) * Math.PI * unit * arc,
+                  targetX - source.x + (layer.travel === 'rain' ? Math.cos(flight * Math.PI) * Math.PI * fan : 0)) + Math.PI / 4;
               }
             }
           } else if (layer.shape === 'mote') {

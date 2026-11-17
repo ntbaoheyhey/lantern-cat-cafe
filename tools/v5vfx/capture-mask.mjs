@@ -25,7 +25,7 @@ try{
   await page.evaluate(()=>document.fonts.ready);
   const contact=await page.evaluate(()=>window.__depthReview.plan.beats[2].start),samples=[];
   for(const [i,ms]of [contact-100,contact,contact+90,contact+220].entries()){
-   samples.push(await page.evaluate(ms=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=ms;s.render({...s.view(),fixedTime:20+ms/1000,paused:true},0);return{ms,skill:m.plan.skillId,draws:s.effects.stats.draws,timeline:s.effects.timeline.audit.id};},ms));
+   samples.push(await page.evaluate(ms=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.animationAt=ms;s.render({...s.view(),fixedTime:20+ms/1000,paused:true},0);return{ms,skill:m.plan.skillId,draws:s.effects.stats.draws,timeline:s.effects.timeline.audit.id,passes:s.effects.blendLayers.passes.map(p=>({blend:p.blend,active:p.active,style:p.canvas.style.cssText,pixels:p.context.getImageData(0,0,p.canvas.width,p.canvas.height).data.reduce((n,v,i)=>n+(i%4===3&&v>5?1:0),0)}))};},ms));
    await page.screenshot({path:resolve(dir,`frame-${i}.png`)});
   }
   const sheet=resolve(out,id+'.jpg');execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-framerate','6','-i',resolve(dir,'frame-%d.png'),'-vf','scale=640:-1,tile=2x2','-frames:v','1','-q:v','4',sheet]);report.rows.push({id,contact,samples,sheet});

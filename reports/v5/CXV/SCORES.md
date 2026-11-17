@@ -66,3 +66,5 @@ R2 visual debt remains open for R10; see R2.md.
 
 ## R4 contact pass
 14 catalog damage fixtures + heal/reduced;16 own sheets,16/16 exclusive shadows and correct dust timing. Ground detail4/3/4/4 for heroes/R2/boss; legacy synthetic self-hit scenes3/3/3/4. Full details and limitations:R4.md.
+
+R1 support-v3 2026-11-17T09:00:41Z: 23 independent composite/runtime scores in REVIEW-R1-SUPPORT-V3.md; no new approved keys. Badges/nameplate need final-use UI evaluation.

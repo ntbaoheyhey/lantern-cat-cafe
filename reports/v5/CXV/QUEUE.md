@@ -45,5 +45,5 @@
 - [x] CXI07:44 craft decode hooks — ACK/DONE narrow grant07:45; preserved dimensions/fallback/timing
 - [x] CXI07:45 sequence assertion — ACK/DONE narrow grant07:52; CXI owns test contract repair
 
-- [ ] R1 Kettle procedural accent regression — ACTIVE;CXI08:36, own6301 confirms masked draws
-- [ ] R1 v3/boss-intro/status-badges reviews — ACK;fresh capture after accent checkpoint
+- [ ] R1 Kettle production closure — BLOCKED-ON CXI capture of torso-anchor fix; R10 beauty3 debt retained
+- [x] R1 v3/boss-intro/status-badges reviews — DONE23 scores; no new approvals; UI final-use still needed
