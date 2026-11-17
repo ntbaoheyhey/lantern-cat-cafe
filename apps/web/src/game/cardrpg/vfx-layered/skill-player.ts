@@ -20,11 +20,11 @@ export class V5SkillPlayer {
     return !!getV5Timeline(plan.presentationId ?? plan.skillId) && plan.events.some(e => e.type === 'action_start');
   }
 
-  render(c: CanvasRenderingContext2D, view: SceneView): void {
+  render(c: CanvasRenderingContext2D, view: SceneView, enabled = true): void {
     const a = this.audit;
     a.id = ''; a.phase = ''; a.draws = 0; a.particles = 0; a.textured = 0; a.layers.length = 0;
     const frame = view.frame;
-    if (!frame || !this.handles(frame.plan)) return;
+    if (!enabled || !frame || !this.handles(frame.plan)) return;
     const plan = frame.plan, timeline = getV5Timeline(plan.presentationId ?? plan.skillId)!;
     const impact = plan.beats[2]!.start, at = frame.elapsed - impact + timeline.impactMs;
     a.id = timeline.id; a.impactMs = impact;

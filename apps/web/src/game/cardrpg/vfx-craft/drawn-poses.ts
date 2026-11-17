@@ -42,8 +42,8 @@ export class DrawnPoses {
   this.deform('idle',0,false);
  }
  owns(name:string){return name==='attack'||name==='ult'||name==='skill';}
- deform(name:string,time:number,reduced:boolean,damageAge?:number){
-  this.drawing.sample(name,time,reduced,damageAge);
+ deform(name:string,time:number,reduced:boolean,damageAge?:number,clock=time,target=0,critAge=-1){
+  this.drawing.sample(name,time,reduced,damageAge,clock,target,critAge);
   for(const [name,pixel]of Object.entries(this.drawing.frame.sockets)){
    const target=this.actor.sockets.get(name as SpineSocket);if(!target)continue;
    const p=this.drawing.point(pixel);target.position.set(p.x,p.y,1);

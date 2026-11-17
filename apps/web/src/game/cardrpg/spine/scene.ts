@@ -144,7 +144,7 @@ export class SpineScene {
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
     const craftLight=craftPose?new PaintLight(actor):undefined;if(craftLight)this.scene.add(craftLight.ground,craftLight.rim);
-    const craftDeath=craftPose?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
+    const craftDeath=actor.mesh?new PaintDeath(actor):undefined;if(craftDeath)this.scene.add(craftDeath.fragments);
     const shadow=new T.Mesh(this.geometry,new T.MeshBasicMaterial({map:this.shadowTexture,transparent:true,depthTest:false,depthWrite:false,toneMapped:false}));shadow.renderOrder=-10;
     const ring=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.honey,transparent:true,opacity:.6,depthTest:false,depthWrite:false,toneMapped:false}));ring.renderOrder=-5;
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
@@ -163,7 +163,8 @@ export class SpineScene {
   this.loading.completed=this.actors.size;this.loading.total=this.actors.size+this.pending.size+this.failed.size;this.stats.loaded=this.actors.size;
   this.ready=this.pending.size===0&&this.failed.size===0&&this.effectsLoaded;
  }
- private craftHandles(plan:EffectPlan|null){return this.craftLoaded&&!!plan&&!chargeEvent(plan)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
+ private craftHandles(plan:EffectPlan|null){return this.craftLoaded&&!!plan&&!chargeEvent(plan)&&
+  !this.effects.overrides.effects.has(plan.presentationId??plan.skillId)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
   if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
@@ -300,7 +301,12 @@ export class SpineScene {
    // Keep Yarn's authored contact visible through the fixed90ms impact hold.
    // Retaliation still flashes/recoils at impact; its guard drawing follows the hold.
    const drawingHitAge=entry.asset==='yarn-giant'&&unit.id===plan?.actorId&&damageAge!==undefined&&['attack','ult'].includes(name)?damageAge-.09:damageAge;
-   entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge);
+   const lookId=unit.id===plan?.actorId?plan.targetIds.find(id=>id!==unit.id):
+    view.actors.find(a=>a.id===plan?.actorId&&a.side!==unit.side)?.id??view.actors.find(a=>a.side!==unit.side&&a.hp>0)?.id;
+   const lookHome=this.homes.get(lookId??'')?.point;
+   const look=lookHome?(lookHome.x-home.point.x)/Math.max(1,width*.3)*spriteFacing(actor.unit.nativeFacing,unit.side):0;
+   const critAge=frame&&unit.id===plan?.actorId&&plan.events.some(e=>e.actorId===unit.id&&e.type==='damage'&&e.critical)?(frame.elapsed-plan.beats[2]!.start)/1000:-1;
+   entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge,worldTime+phaseOffset,look,critAge);
    entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
    if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();

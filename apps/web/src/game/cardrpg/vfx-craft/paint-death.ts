@@ -5,6 +5,7 @@
 import * as T from 'three';
 import type {SpineActor} from '../spine/assets';
 import {flowingNoise} from './lantern-requiem';
+import {sampleReaction,reactionSample} from '../battle-v3/reaction';
 
 const rankGLSL=`
 float paintRank(vec2 p){
@@ -16,6 +17,7 @@ export class PaintDeath {
  readonly fragments=new T.Group();
  private noise=flowingNoise();
  private amount={value:-1};
+ private reaction=reactionSample();
  private range:{value:T.Vector2};
  private saved:{material:T.MeshBasicMaterial;hook:T.Material['onBeforeCompile'];key:T.Material['customProgramCacheKey']}[]=[];
  private geometry=new T.BufferGeometry();
@@ -81,7 +83,7 @@ void main(){
   this.fragments.name='Soot finite original-paint fragments';this.fragments.matrixAutoUpdate=false;this.fragments.add(this.mesh);this.fragments.visible=false;
  }
  setTime(seconds:number|null,reduced:boolean){
-  this.amount.value=seconds===null?-1:Math.max(0,Math.min(1,seconds/.6));
+  this.amount.value=seconds===null?-1:sampleReaction(-1,seconds*1000,reduced,this.reaction).dissolve;
   this.fragments.visible=!reduced&&this.amount.value>0&&this.amount.value<1;
  }
  withSourcePaint<TValue>(capture:()=>TValue):TValue{

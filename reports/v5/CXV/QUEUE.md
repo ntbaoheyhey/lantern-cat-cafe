@@ -1,8 +1,8 @@
 # CXV queue — REV 3, no freeze
 - [x] V0 Learn before build — DONE; report 8c9bd134c
 - [x] V1 Skill VFX timeline system — DONE; 16 timelines, twelve reviewed sheets, tests/typecheck, AG4 cues
-- [ ] V2 Live2D-grade secondary motion — ACTIVE; started 2026-11-17T05:54:06Z, 5h
-- [ ] V3 Enemies + boss — queued, 4h
+- [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
+- [ ] V3 Enemies + boss — ACTIVE; started 2026-11-17T06:06:29Z, 4h
 - [ ] V4 AG1 QA + owner polish — queued, 4h
 - [ ] V5 Performance + reduced motion — queued, 2h
 
@@ -23,3 +23,10 @@
 - [ ] CXI 05:43Z compact charge/passive atlas contract — ACK sent; CXI granted narrow player.ts loader-only ownership; scene API pending
 - [ ] Print proof: queue empty; refill DONE; every REQ ACK/DONE; SCORES >=4/5; latest AG1 QA clear
 - [x] AG2 Mochi REVIEW request — ACK + DONE review sent; beauty 3/5 requires revision before wiring
+
+- [x] AG1 Q0-F2/F3 — ACK/DONE; AG1 retracted wrong-route findings, Q0b pending
+- [x] CXI pose decode hook — ACK/DONE ownership + hidden mesh semantics sent
+- [ ] AG2 Clover/Panko/Mochi-v2 REVIEW — ACK; own fresh runtime capture pending
+- [ ] CXI VFX override regression — fixed; focused8/8 pass; typecheck/push pending
+- [ ] CXI deferred native pixel third argument — ACK; wire when announced milestone supplies loader API
+- [ ] AG2 ultimate REVIEW — ACK pending; own runtime capture required
