@@ -1,5 +1,9 @@
 # Phone Screen Legibility & Mobile QA Audit (390x844 Viewport)
-- Audit Basis: Existing mobile captures in `apps/web/src/boss/screenshots/390-*.png` and `apps/web/src/market/screenshots/market-390.png`.
+> [!WARNING]
+> **STATUS: INVALID: legacy surface / stale images**
+> Evaluated committed screenshots from 24 Oct (`apps/web/src/boss/screenshots`, `market/screenshots`). RETRACTED per FRESHNESS RULE. Superseded by fresh live captures on the V5 demo route.
+
+- Audit Basis: Existing mobile captures in `apps/web/src/boss/screenshots/390-*.png` and `apps/web/src/market/screenshots/market-390.png` [STALE ARTIFACTS - RETRACTED].
 - Target Device: iPhone 14 / mobile webview (390 px logical width).
 
 ---

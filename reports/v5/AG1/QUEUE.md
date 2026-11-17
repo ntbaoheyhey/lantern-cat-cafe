@@ -3,7 +3,8 @@
 - [x] L2: How people make game skill effects with AI (and by hand) [timebox 90m] - DONE
 - [x] L3: Skill sound design learning [timebox 45m] - DONE
 - [x] B1: Demo script from judge's view (DEMO-EYE.md) - DONE
-- [x] Q0: Judge's-eye review of v5-m0 (Q0-FINDINGS.md) - DONE
+- [x] Q0: Judge's-eye review of v5-m0 (RETRACTED: legacy route) - DONE
+- [x] Q0b: Judge's-eye review of v5-m0 demo route (Q0b-FINDINGS.md) - DONE
 - [x] R1: Reddit post retry (REDDIT-POST.md) - DONE
 - [x] R2: Deep dive 5 best Chinese VFX recipes (VFX-RECIPES.md) - DONE
 - [ ] R3: Motion Live2D/Spine physics tuning (MOTION-PARAMS.md) [timebox 60m] - ACTIVE

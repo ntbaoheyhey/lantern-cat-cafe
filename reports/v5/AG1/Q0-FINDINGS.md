@@ -1,5 +1,9 @@
 # Q0: Judge's-Eye Review of v5-m0 Build
-- Preview URL: `http://127.0.0.1:6301` (v5-m0 baseline + I2 loader runtime)
+> [!WARNING]
+> **STATUS: INVALID: legacy surface / stale images**
+> Evaluated plain `http://127.0.0.1:6301` which loads legacy pixel shell (`legacy-entry.tsx`), not the V5 judge demo route. Findings Q0-F1 through Q0-F5 are RETRACTED. Superseded by Q0b on `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`.
+
+- Preview URL: `http://127.0.0.1:6301` (v5-m0 baseline + I2 loader runtime) [LEGACY SURFACE - INVALIDATED]
 - Review Viewports: Desktop 1280x720 & Mobile 390x844
 - Review Flow: Guest Onboarding -> Dashboard -> Boss Encounter -> Battle Resolution & Receipt
 
