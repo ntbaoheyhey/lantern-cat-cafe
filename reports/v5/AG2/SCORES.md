@@ -63,3 +63,8 @@
 | `status-burn-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-burn-loop.jpg | PASS |
 | `status-stun-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-stun-loop.jpg | PASS |
 | `status-slow-loop` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/status-slow-loop.jpg | PASS |
+| `hit-stop-flash-white` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/hit-stop-flash-white.jpg | PASS |
+| `hit-stop-flash-gold` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/hit-stop-flash-gold.jpg | PASS |
+| `vignette-damage-red` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/vignette-damage-red.jpg | PASS |
+| `vignette-heal-green` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/vignette-heal-green.jpg | PASS |
+| `vignette-ult-gold` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/vignette-ult-gold.jpg | PASS |

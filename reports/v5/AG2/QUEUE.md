@@ -11,6 +11,6 @@
 - [x] F1 Crit variants per hero (brighter core, extra sparks) [time box 45 min]
 - [x] F2 Shield / buff aura loops 4x4 per hero class [time box 60 min]
 - [x] F3 Status effects: poison, burn, stun, slow loops 4x4 [time box 60 min]
-- [/] F4 Hit-stop flash frames + screen-edge glow vignette [time box 45 min]
+- [x] F4 Hit-stop flash frames + screen-edge glow vignette [time box 45 min]
 - [ ] F5 Environmental ambience: floating dust motes, warm light shafts (loops) [time box 45 min]
 - [ ] F6 Damage-number glow plates (no digits) [time box 30 min]
