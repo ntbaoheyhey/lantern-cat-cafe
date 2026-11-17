@@ -42,7 +42,7 @@ await command('node',[resolve(source,'tools/chain/economy-v3-metadata.mjs'),`--o
 const after=hashes();
 const unchanged=JSON.stringify(before)===JSON.stringify(after);assert(unchanged,'Runtime/index assets changed unexpectedly');
 const padded=readdirSync(resolve(dist,'relics')).filter(n=>/^[0-9a-f]{64}\.json$/.test(n));
-const quality=padded.find(n=>{const id=BigInt('0x'+n.slice(0,64));return id>4n&&id<30001n;});
+const quality=padded.find(n=>JSON.parse(readFileSync(resolve(dist,'relics',n),'utf8')).attributes?.some(a=>a.trait_type==='Quality'));
 assert(quality,'Quality metadata sample absent');
 const qualityId=BigInt('0x'+quality.slice(0,64)).toString();
 const names=[quality,qualityId+'.json',(30001n).toString(16).padStart(64,'0')+'.json','30001.json',(33000n).toString(16).padStart(64,'0')+'.json','33000.json'];

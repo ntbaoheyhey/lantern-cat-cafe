@@ -1,0 +1,25 @@
+{
+  "started": "2026-11-17T02:00:45.656158+00:00",
+  "sourceSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "steps": [
+    {
+      "name": "typecheck",
+      "command": [
+        "pnpm",
+        "-r",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "started": "2026-11-17T02:00:45.664226+00:00",
+      "ended": "2026-11-17T02:01:01.397992+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-typecheck.log"
+    }
+  ],
+  "scope": "Local safe commands only; no Vercel/Supabase auth or deployment; diagnostic secret-like tokens redacted.",
+  "active": {
+    "name": "test",
+    "pid": 21309,
+    "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-test.log"
+  }
+}
