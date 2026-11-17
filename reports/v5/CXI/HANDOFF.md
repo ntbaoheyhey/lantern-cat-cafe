@@ -6,7 +6,7 @@ NEXT 3: Fresh transfer, merged gates; next unblocked QA/refill until all DONE co
 Local HEAD before checkpoint f8f004ec2 (AGS0232c11ab merged); checkpoint34bc227ef pushed; cfce3804d pushed.
 R3 focused61pass/3fail:70 sample contexts fail existing bus compatibility; no weakening tests.
 R5 DONE: finalJS1112059,focused8pass/build0; total9.47-10.15MB stillFAIL.
-Preview PID80797 work/v5/CXI/jobs/m1-preview.log serves7730532ea code; pipeline74628 completed0.
+Preview PID80797 work/v5/CXI/jobs/m1-preview.log serves7730532ea code; pipeline4707 completed0;21e993c9c built.
 Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
 Last transfer16823a7c6:wave1=10078148,wave3=10589555,boss=9915707; allFAIL8MB,0errors.
 Accepted tagv5-m1=b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3; no new acceptance claimed.
