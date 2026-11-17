@@ -1,0 +1,11 @@
+# CXV queue
+- [ ] V0 Learn before build — ACTIVE, 75 minutes
+- [ ] V1 Skill VFX timeline system — 5 hours
+- [ ] V2 Live2D-grade secondary motion — 5 hours
+- [ ] V3 Enemies + boss — 4 hours
+- [ ] V4 Polish from AG1 QA + owner review — 4 hours; owner notes after M2
+- [ ] V5 Performance + reduced motion — 2 hours
+- [ ] B1 Enemy skill variants — 45 minutes
+- [ ] B2 Damage-number pop/stack polish — 45 minutes
+- [ ] B3 Ground/contact shadows — 45 minutes
+- [ ] B4 Crit flourishes — 45 minutes
