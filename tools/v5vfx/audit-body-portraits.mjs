@@ -37,10 +37,11 @@ try{
    return{id,ms,portraits,units,totalSolid:units.reduce((v,u)=>v+u.totalSolid,0),totalFringe:units.reduce((v,u)=>v+u.totalFringe,0)};
   },{id,ms}));
   const worst=rows.reduce((a,b)=>b.totalSolid>a.totalSolid?b:a);
-  await page.evaluate(ms=>{const s=window.__depthScene,m=window.__depthReview;m.animationAt=ms;s.render({...s.view(),fixedTime:30+ms/1000,paused:true},0);},worst.ms);
+  const captureMs=worst.totalSolid?worst.ms:({'enemy:yarn-giant:basic':350,'enemy:yarn-giant':1280}[id]??0);
+  await page.evaluate(ms=>{const s=window.__depthScene,m=window.__depthReview;m.animationAt=ms;s.render({...s.view(),fixedTime:30+ms/1000,paused:true},0);},captureMs);
   const name=id.replaceAll(':','-');await page.screenshot({path:resolve(out,name+'.png')});
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-i',resolve(out,name+'.png'),'-vf','scale=1024:576','-frames:v','1','-q:v','3','-y',resolve(out,name+'.jpg')]);
-  report.rows.push({id,samples:rows,worstMs:worst.ms,sheet:resolve(out,name+'.jpg')});report.errors.push(...errors);await page.close();
+  report.rows.push({id,samples:rows,worstMs:worst.ms,captureMs,sheet:resolve(out,name+'.jpg')});report.errors.push(...errors);await page.close();
  }
  report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));
  console.log(JSON.stringify({out,errors:report.errors,worst:report.rows.map(r=>({id:r.id,ms:r.worstMs,units:r.samples.find(s=>s.ms===r.worstMs).units.map(u=>({id:u.id,painted:u.painted,bottom:u.bottom,overlap:u.totalSolid,fringe:u.totalFringe}))}))}));
