@@ -29,7 +29,7 @@ try{
   const countsAfter=await page.evaluate(()=>{const a=globalThis.__cxvNormalControl;cancelAnimationFrame(a.raf);return{draws:a.draws,frameTimes:a.frameTimes,now:performance.now()};}),after=await metrics();
   const deltas=Object.fromEntries(Object.entries(after).filter(([key])=>Number.isFinite(before[key])).map(([key,value])=>[key,value-before[key]]));
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
-  const crew=await page.locator('.b3-victory-crew').evaluate(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length}));
+  const crew=await page.locator('.b3-victory-crew').evaluate(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti i').length}));
   assert.equal(crew.ready,'true');assert.equal(crew.drawn,'4');assert(!crew.loadError);assert.equal(crew.confetti,32);
   const values=[...countsAfter.frameTimes].sort((a,b)=>a-b),quantile=q=>values[Math.floor((values.length-1)*q)];
   assert(values.length>1500&&countsAfter.draws-countsBefore.draws>6500);

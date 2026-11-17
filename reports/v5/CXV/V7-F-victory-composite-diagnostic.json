@@ -1,0 +1,299 @@
+{
+  "utc": "2026-11-17T22:00:22.033Z",
+  "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+  "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+  "runs": [
+    {
+      "utc": "2026-11-17T22:00:22.392Z",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+      "artifactMode": "baseline",
+      "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+      "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+      "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Production diagnostic with WebGL readback only on first full four-actor render and one explicit resize restoration. Not performance evidence. Native remains the preserved build-time variant. Page CSS probes are diagnostic only.",
+      "captures": [
+        {
+          "name": "ordinary",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/ordinary.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        },
+        {
+          "name": "background-only",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/background-only.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "698d3ec9e599fbb270159f8c513660b26d28c4d1b9f28e2097ae93825e87acd3",
+          "rgbSha256": "d4838c4c5caf6a1d6ba93fe0ac528aa97148c4c98e23f47bddf7ba08e351384c",
+          "stdDev": 13.461350016176882,
+          "mean": 49.31978089937274
+        },
+        {
+          "name": "solid-backing",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/solid-backing.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "b14296dea8a7acc374a32e906a03cc2cca96aa594d50e1f3f051ffbadd8a2dc8",
+          "rgbSha256": "52d816cf37e1fcf2c89b3a0a111c63e71c58379cf20b874a8a261d8a7a5444a6",
+          "stdDev": 58.4085825165536,
+          "mean": 65.67107812822098
+        },
+        {
+          "name": "animations-disabled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/animations-disabled.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        },
+        {
+          "name": "size-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/size-restored.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        }
+      ],
+      "errors": [],
+      "pass": true,
+      "initialGpu": {
+        "name": "initial",
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/initial.rgba",
+        "width": 461,
+        "height": 245,
+        "sha256": "6310424cd5ff504c0817ace13f67a52372f1c8c388966cb1d115e0bdd7ac6458",
+        "draws": 596,
+        "samples": 1
+      },
+      "style": {
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvasRect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvasStyle": "display: block; width: 461px; height: 245px;",
+        "animations": []
+      },
+      "restoredGpu": {
+        "name": "restored",
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/restored.rgba",
+        "width": 461,
+        "height": 245,
+        "sha256": "6310424cd5ff504c0817ace13f67a52372f1c8c388966cb1d115e0bdd7ac6458",
+        "draws": 8736,
+        "samples": 2
+      },
+      "blockedRequests": [],
+      "ended": "2026-11-17T22:01:03.863Z",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/baseline/report.json",
+      "rawSha256": "6203addebd971b213d0392b60edd242cfe23e28eba48ee0f6f854992cdecd56b"
+    },
+    {
+      "utc": "2026-11-17T22:01:04.157Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "indexSha256": "d1d4d79e6c3ebab8464b3b256e78d42c0d9fe4ee87b414fd088f7c3f852b55b7",
+      "artifactMode": "native",
+      "buildSource": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+      "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+      "harnessSha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Production diagnostic with WebGL readback only on first full four-actor render and one explicit resize restoration. Not performance evidence. Native remains the preserved build-time variant. Page CSS probes are diagnostic only.",
+      "captures": [
+        {
+          "name": "ordinary",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/ordinary.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        },
+        {
+          "name": "background-only",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/background-only.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "698d3ec9e599fbb270159f8c513660b26d28c4d1b9f28e2097ae93825e87acd3",
+          "rgbSha256": "d4838c4c5caf6a1d6ba93fe0ac528aa97148c4c98e23f47bddf7ba08e351384c",
+          "stdDev": 13.461350016176882,
+          "mean": 49.31978089937274
+        },
+        {
+          "name": "solid-backing",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/solid-backing.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "b14296dea8a7acc374a32e906a03cc2cca96aa594d50e1f3f051ffbadd8a2dc8",
+          "rgbSha256": "52d816cf37e1fcf2c89b3a0a111c63e71c58379cf20b874a8a261d8a7a5444a6",
+          "stdDev": 58.4085825165536,
+          "mean": 65.67107812822098
+        },
+        {
+          "name": "animations-disabled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/animations-disabled.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        },
+        {
+          "name": "size-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/size-restored.png",
+          "width": 462,
+          "height": 245,
+          "sha256": "f4cf09cdd9067ab6019c8a37a279d5a07390fe45cac506c0e7176f916fadc958",
+          "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+          "stdDev": 55.41864519190298,
+          "mean": 73.89627470035633
+        }
+      ],
+      "errors": [],
+      "pass": true,
+      "initialGpu": {
+        "name": "initial",
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/initial.rgba",
+        "width": 461,
+        "height": 245,
+        "sha256": "6310424cd5ff504c0817ace13f67a52372f1c8c388966cb1d115e0bdd7ac6458",
+        "draws": 8,
+        "samples": 1
+      },
+      "style": {
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvasRect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvasStyle": "display: block; width: 461px; height: 245px;",
+        "animations": []
+      },
+      "restoredGpu": {
+        "name": "restored",
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/restored.rgba",
+        "width": 461,
+        "height": 245,
+        "sha256": "6310424cd5ff504c0817ace13f67a52372f1c8c388966cb1d115e0bdd7ac6458",
+        "draws": 16,
+        "samples": 2
+      },
+      "blockedRequests": [],
+      "ended": "2026-11-17T22:01:44.077Z",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/native/report.json",
+      "rawSha256": "e749b4f91195602835d25acaf678132140d8c600b467fd14125790c5405dc7f6"
+    }
+  ],
+  "tools": [
+    {
+      "name": "run-victory-composite-diagnostic.mjs",
+      "sha256": "bf3e94ed4ca4442409bd74b7d870d26d882e325dd6c522c25b938be0333ec98a"
+    },
+    {
+      "name": "diagnose-victory-composite.mjs",
+      "sha256": "6d343465997ed5babba02718817ae58051321048a803a6ef356d9fdad6217424"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+    }
+  ],
+  "pass": true,
+  "gpuExact": true,
+  "compositionChecks": [
+    {
+      "name": "ordinary",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "background-only",
+      "equal": true,
+      "hashes": [
+        "d4838c4c5caf6a1d6ba93fe0ac528aa97148c4c98e23f47bddf7ba08e351384c",
+        "d4838c4c5caf6a1d6ba93fe0ac528aa97148c4c98e23f47bddf7ba08e351384c"
+      ]
+    },
+    {
+      "name": "solid-backing",
+      "equal": true,
+      "hashes": [
+        "52d816cf37e1fcf2c89b3a0a111c63e71c58379cf20b874a8a261d8a7a5444a6",
+        "52d816cf37e1fcf2c89b3a0a111c63e71c58379cf20b874a8a261d8a7a5444a6"
+      ]
+    },
+    {
+      "name": "animations-disabled",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "size-restored",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    }
+  ],
+  "ended": "2026-11-17T22:01:44.121Z",
+  "interpretation": "All four first/full and restored WebGL RGBA buffers are exact; all five paired CSS composition probes are exact in this diagnostic. This did not reproduce the two earlier production PNG discrepancies, so their cause remains unresolved. Diagnostic region captures lacked the original preceding full-page screenshot; investigate screenshot ordering without GPU readback next. No application edit.",
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-composite-diagnostic/report.json",
+  "rawSha256": "38628274ff413d6409f3e0a4d7cdd2e29c468512214200557ff3f9a31265a254"
+}
