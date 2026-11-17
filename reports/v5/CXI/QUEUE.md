@@ -1,5 +1,5 @@
 # CXI queue (UTC)
-R0 DONE 2026-11-17T06:43:38Z v5-m1; five audited lane merges, typecheck0/web2821/root5044/build0; reports/v5/CXI/R0.md.
+R0 DONE 2026-11-17T06:43:38Z v5-m1; five audited lane merges, typecheck0/web2821/root5121/build0; reports/v5/CXI/R0.md.
 SETUP DONE 2026-11-17T05:24:59Z commit 2cd16cbf7 pushed; state files and mailbox read.
 I0 DONE 2026-11-17T05:26:08Z 315904a14; CLI 3/3 and web API 11/11 pass; git show --stat contains only nine authorized paths.
 I1 DONE 2026-11-17T05:31:11Z reports/v5/CXI/I1.md; four checks pass; v5-m0 follows report checkpoint.

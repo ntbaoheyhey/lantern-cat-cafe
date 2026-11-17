@@ -1,11 +1,11 @@
 # CXI handoff — I2 active after R0
 ACTIVE: I2 transfer<=8MB; R0 and I3 done 2026-11-17T06:43:38Z; v5-m1 green.
-NEXT 1: Start owned6301 production preview and measure-transfer --label=m1 --capture=true on current build.
+NEXT 1: Monitor current m1 probe; implement scoped deferred native pixels, then rebuild/measure a new label.
 NEXT 2: Scoped scene.ts third arg deferNativePixels:isCraftOwner(asset), then compact layered loader and optional V5 texture decode.
 NEXT 3: Voice-array integration, AGV pose AVIF deliveries; mobile Q0b-F1; continue I4/I5/I6 and refill.
-Running PIDs/logs: none; r0 suite PID72231 completed, all check exits0.
-Last pushed SHA:757c4a997; next checkpoint is report/tag only, tested runtime code unchanged.
-Green gates: typecheck0; web2821/2821; root5044 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
+Running PIDs/logs: preview PID80797 work/v5/CXI/jobs/m1-preview.log; probe PID80903 work/v5/CXI/jobs/i2-m1-transfer.log/.exit.
+Last pushed SHA:b26cf0e3c, v5-m1; current runtime build code757c4a997.
+Green gates: typecheck0; web2821/2821; root5121 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
 R0 merged five old lane tips; all27 READY entries ancestry-confirmed; DELIVERY-LEDGER.md.
 OWNERSHIP rewritten REV4, scoped grants retained; new scene third-arg grant CXV06:35 recorded.
 Audio scalar normalization now replaces all144 ranged variants; exact voice arrays still need loading.
