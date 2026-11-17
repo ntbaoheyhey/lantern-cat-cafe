@@ -69,6 +69,7 @@ try {
           Object.assign(label.style, {position: 'fixed', bottom: '8px', left: '8px', color: '#fff4d8', background: '#21182dee', padding: '6px 10px', font: '16px monospace', zIndex: '999999'}); document.body.append(label);}
         label.textContent = `${id}${/-[23]$/.test(id) ? ' ARCHIVE' : ' LIVE'}${m.state.settings.reducedMotion ? ' REDUCED' : ''} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
         return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
+          craftAudit:structuredClone(id.startsWith('enemy:yarn-giant')?s.craftYarn?.audit:id.startsWith('enemy:binding-thread')?s.craftThread?.audit:undefined),
           modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
           eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand'),
           craftFootprint: (id.startsWith('mochi') ? [s.craftShield?.crest] : id.startsWith('clover') ? [s.craftHeal?.canopy] : id.startsWith('panko') ? s.craftOven?.doors : s.craft?.bodies)?.filter(Boolean).map(mesh=>({visible:mesh.visible,position:mesh.position.toArray(),scale:mesh.scale.toArray(),alpha:mesh.material.uniforms.uAlpha.value})),
@@ -88,7 +89,7 @@ try {
       '-map', '[v]', '-frames:v', '1', '-q:v', '4', sheet]);
     report.sheets.push({id, archive: /-[23]$/.test(id), ...info, sheet, samples});
     await writeFile(resolve(out, 'capture.json'), JSON.stringify(report, null, 2));
-    if (!samples.some(s => s.ms === info.impact && s.draws > 0)) throw Error(`Missing timeline contact: ${id}`);
+    if (!samples.some(s => s.ms === info.impact && (s.draws > 0 || s.craftAudit?.active > 0))) throw Error(`Missing rendered contact: ${id}`);
     process.stdout.write(`${id}: ${sheet}\n`);
   }
   report.errors = errors;

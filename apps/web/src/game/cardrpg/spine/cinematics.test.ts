@@ -3,6 +3,12 @@ import {cinematicBox,ultimateFocus,fitStageCamera} from './cinematics';
 import {intersects} from '../../squad/turn3d/label-layout';
 
 describe('Spine cinematic safety',()=>{
+ it('fits a short arrival name where the full phase banner has no safe space',()=>{
+  const protectedRects=[{x:0,y:0,width:1280,height:50},{x:0,y:110,width:700,height:610},{x:1030,y:60,width:250,height:660},{x:700,y:220,width:330,height:500}];
+  expect(cinematicBox(1280,720,protectedRects,true)).toBeNull();
+  const name=cinematicBox(1280,720,protectedRects,'arrival');
+  expect(name).not.toBeNull();expect(protectedRects.some(r=>intersects(name!,r,12))).toBe(false);
+ });
  it('fits an asymmetric full crew and outer enemy within a shared camera without shrinking units',()=>{
   const out={zoom:1,x:0},width=4800,left=-2000,right=2400,margin=36;
   expect(fitStageCamera(width,left,right,1.1,margin,out)).toBe(out);

@@ -28,7 +28,7 @@ export class ThreadSnare {
  constructor(private travel=150,url='/vfx/binding-thread/knotted-thread.webp'){
   const add=()=>{const m=new T.Mesh(new T.PlaneGeometry(1,1),material(this.noise));m.frustumCulled=false;m.visible=false;this.front.add(m);this.all.push(m);return m;};
   this.knot=add();this.hand=add();for(let i=0;i<6;i++)this.wraps.push(add());
-  for(let i=0;i<24;i++){const strand=add();strand.material.uniforms.uCordOnly!.value=1;this.front.remove(strand);this.rear.add(strand);this.net.push(strand);}
+  for(let i=0;i<12;i++){const strand=add();strand.material.uniforms.uCordOnly!.value=1;this.front.remove(strand);this.rear.add(strand);this.net.push(strand);}
   this.ready=(async()=>{const im=await loadCraftImage(url);if(this.disposed)return;const texture=this.texture=new T.Texture(im);texture.colorSpace=T.SRGBColorSpace;texture.needsUpdate=true;for(const m of this.all)m.material.uniforms.uTexture!.value=texture;})();this.hide();
  }
  private place(m:Ink,p:CraftPoint,w:number,angle:number,alpha:number,erode=-.2){
@@ -54,18 +54,20 @@ export class ThreadSnare {
   // A woven trap opens behind the victims. Each crossing is the original cord
   // painting, with open diamonds between strands; no opaque screen wash.
   if(f.ultimate&&alpha>0){
-   const spread=.45+.55*smooth(age/100),width=800*k*spread,height=440*k*spread;
-   const cx=Math.max(width/2+70*k,Math.min(f.width-width/2-70*k,target.x));
-   const cy=Math.max(height/2+90*k,Math.min(f.height-height/2-90*k,target.y-65*k));
-   for(let direction=0;direction<2;direction++)for(let i=0;i<12;i++){
-    const slope=(direction?-1:1)*height/width,offset=((i+.5)/12- .5)*height*1.8;
+   const recipients=f.targets.slice(0,3),xs=recipients.map(p=>p.x),ys=recipients.map(p=>p.y);
+   const left=Math.min(target.x,...xs),right=Math.max(target.x,...xs),top=Math.min(target.y,...ys),bottom=Math.max(target.y,...ys);
+   const spread=.45+.55*smooth(age/100),width=(380*k+right-left)*spread,height=(280*k+bottom-top)*spread;
+   const cx=(left+right)/2,cy=(top+bottom)/2;
+   const netAlpha=alpha*.9*(1-smooth((ms-1200)/440));
+   for(let direction=0;direction<2;direction++)for(let i=0;i<6;i++){
+    const slope=(direction?-1:1)*height/width,offset=((i+.5)/6- .5)*height*1.8;
     let x0=-width/2,x1=width/2;
     const a=(-height/2-offset)/slope,b=(height/2-offset)/slope;
     x0=Math.max(x0,Math.min(a,b));x1=Math.min(x1,Math.max(a,b));
     const y0=slope*x0+offset,y1=slope*x1+offset,length=Math.hypot(x1-x0,y1-y0);
-    const strand=this.net[direction*12+i]!;
-    this.place(strand,{x:cx+(x0+x1)/2,y:cy+(y0+y1)/2},length,Math.atan2(y1-y0,x1-x0)+(i%2?Math.PI:0),alpha*.92*smooth((age-i*6)/65),-.2+decay*.9);
-    strand.scale.y*=1.2;
+    const strand=this.net[direction*6+i]!;
+    this.place(strand,{x:cx+(x0+x1)/2,y:cy+(y0+y1)/2},length,Math.atan2(y1-y0,x1-x0)+(i%2?Math.PI:0),netAlpha*smooth((age-i*12)/65),-.2+decay*.9);
+    strand.scale.y=-18*k;
    }
   }
   for(const m of this.all){const u=m.material.uniforms;u.uFaceCount!.value=Math.min(16,f.faces.length);for(const [i,face]of f.faces.slice(0,16).entries())u.uFaces!.value[i].set((face.x+face.width/2)*px-f.worldWidth/2,f.worldHeight-(face.y+face.height/2)*px,(face.width/2+6)*px,(face.height/2+6)*px);}
