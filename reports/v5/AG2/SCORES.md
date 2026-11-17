@@ -55,3 +55,7 @@
 | `soot-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/soot-crit-burst.jpg | PASS |
 | `clover-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-crit-burst.jpg | PASS |
 | `panko-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-crit-burst.jpg | PASS |
+| `aura-shield-ward` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-shield-ward.jpg | PASS |
+| `aura-fire-buff` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-fire-buff.jpg | PASS |
+| `aura-heal-regen` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-heal-regen.jpg | PASS |
+| `aura-attack-buff` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/aura-attack-buff.jpg | PASS |
