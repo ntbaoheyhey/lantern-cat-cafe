@@ -4,8 +4,8 @@ LEARN BEFORE BUILD: >=6sources/formal+3web+measuredcomparison. No gate reduction
 I OWN ALL AUDIO; ART owns units/VFX/presentation/rigs. Never generate images; no subagents.
 NO NEW ECONOMY MECHANICS, CONTRACT EDITS, DEPLOYS OR MAIN MERGE. ART merges17/18Nov12:00,19Nov10:00UTC.
 NO SECRETS; commit+push everystep/<=20min; stop only STOP-V4SHIP,userpause,29Nov12:00UTC.
-NEXT 1: Stop production17 via S8/production-build-17.json supervisorPid; nohup node tools/v4ship-lab/rehearsal/start.mjs 18 >reports/v4-ship/jobs/production-18.log 2>&1 & record PID; measure initial-transfer4.
-NOW ACTIVE: QA-2 MAJOR cold battle transfer29.65MB vs8MB; investigate SHIP deferral and coordinate ART assets. QA-1 independently fixed52aaaba39. Native forge installed; admission/mix pass, onset33.178ms still fails.
+NOW ACTIVE: QA-2 measured29.54MB after109.5KB lazy-Hub saving; fullgateFAIL pendingART textures. QA-3 runbook8->6+2corrected; QA-4 wrapCSS selected after30measurements.
+NEXT 1: Stop production18 supervisor27998; nohup node tools/v4ship-lab/regression.mjs qa-cold-layout-regression-1 with detached session and log jobs/qa-cold-layout-regression-1.log; record PID. Then production19 layout verification.
 NEXT 2: After QA priorities, revalidate remaining audio/UI/history/binary. Forge real6/6success/3of3speech/max6;288graphplans/576exactreplays;LRA5.8/5.4. Physical/listening/bagLRA/global gates open; no live scanner edits.
 NEXT 3: S7ART17Nov12:00;S8tenproductionruns after ARTtransferfix;S10R2 18Nov12:00;S11fix/freeze19Nov12:00. DefinedS4/S6/S9workrecorded.
 CHECKPOINT:Paletteproductionreview1 verifiesbefore7/8 againstoriginalGitobjects andcurrent9/10. Bothrollback/0errors,boss60FPS,mix-17.72/-17.76LUFS,8.8/8.6LRA,-1.63/-1.95peak. Transfer29649511/510BFAIL.
@@ -27,7 +27,7 @@ G-PROOF Fuji4counters agedcache/outage/reload/recoverypass;6blockedrequests/zero
 S1 text700/3854/176reviewed;gzip1332/1332/1314reviewed;supplements81text/125gzip. Prefix3:12000blobs/4215611983B;6693text/1137433853B/7469pairs;5307excluded/3078178130B. All1717findingsreviewed/fullhistoryopen.
 REPORT BUDGET:149101448B measured2026-11-17T01:53:41.502085+00:00;limit150MB. Archive1 saves5312045B/37exact restores. S8screenshots6/8;S10 8/8;S11 5/8;imageopens8/8 unchanged.
 LAST ART MERGE88fa5bdfd820609f054d174fce24248f35aa9575;fetchedARTa1372f831 preflight2:1004ARTpaths/0conflicts/956SHIPpreserved;A9runtime77hashesmatch. OldA10receipt14/16matchesnewtip;notselectedgreen.
-SERVICES audio5995PID3393;production16/session80213 supervisor54985 preview55074ready5998/API5997/Anvil8546;fixturefree. Text99980/8488+37112active;newtext9122/43798active;gzipcomplete.
+SERVICES audio5995PID3393;production17 supervisor20209 stopped to rebuild18; ports5998/5997/8546 transitioning. Text99980/8488+37112active;newtext9122/43798active;gzipcomplete.
 UTC:ART17Nov12:00/R2 18Nov12:00/finalART19Nov10:00/freeze+tag+draftPR19Nov12:00;userdeploy20Nov;checklist21Nov12:00/deadlinelead16:59;DemoDayfinal29Nov12:00.
 STOP absent;USER RESUME. Healerproduction13 journeys3/4:32Clovercontactsonehealsource/noimpact,124/124causalcontacts each,36receipts/20controls/36chimesPASS;onsetmax102.556/98.063FAIL. Recognition7/12;humanunknown.
 S6 LEARN10/1formal/6web/2experiments;cleanclone2known7ARTfails. ExactSpinenotice installed/source/build5/HTTP5checksPASS;editorentitlementstillunverified. Audio120/120hashesmatch.
@@ -36,4 +36,4 @@ S10offline:work/v4ship-prep/S10-offline-4/index.html261404426B/localonly;build/c
 S10build1bootstrapregexfailed/check1retained;build2supersededuntested;build3/check2PASS2sizes;build4CSS-onlybannerfix/modules+packsidentical/layoutPASS. NoadditionalstaticcapturesallowedforS10.
 S10capture2PASS283.791s/5486frames/18RPCreceipts/0errors/rollbacktrue. Edit3=169.833s/9,314,863B/-17.86LUFS/-2.22dBTP/5.2LRA;1927sourceframes/53EN-VIcues/13wholevoices+actualSnowtrace5s;film-verify-3.json. Preparationonly;oldattemptsretained.
 PNG:27892blobs/64003pairs/12.985GBverified;27466tEXt/3107uniquetexts/82017B/0findings. SixJPEGmetadata nowverified842227B/0COM/opaqueAPP;839835entropyBunscanned. Otherchunks/pixels/encodedopen;noimageopens.
-LAST PUSHED 8f9ea3c3763672820d9aa2d188339d473a326c34; REV3 adopted 2026-11-17T02:12:21.584294+00:00; gates retain known7ARTfails/parity/class/economy/audio/load failures.
+LAST PUSHED 9cbf42414e2bd16c3b7c26e7324c9926b78227c9; production18 supervisor27998 log jobs/production-18.log; scanners8488/43798 active. Updated 2026-11-17T02:16:28.672935+00:00.

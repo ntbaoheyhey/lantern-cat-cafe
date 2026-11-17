@@ -102,3 +102,9 @@ dialog.b-modal{max-width:min(460px,calc(100vw - 40px));max-height:calc(100vh - 4
 dialog.b-page{max-width:calc(100vw - 40px);max-height:min(88vh,calc(100vh - 40px))}
 dialog.b-modal:not([open]),dialog.b-page:not([open]){display:none}
 dialog.b-modal::backdrop,dialog.b-page::backdrop{background:#0e0a1bd9;backdrop-filter:blur(6px)}
+
+/* Keep the data provider credit visible below the narrow landing counters. */
+@media (max-width:760px){
+ .b-landing .b-live{flex-wrap:wrap}
+ .b-landing .b-live>.b-index-credit{flex-basis:100%}
+}

@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-17T02:13:36.895Z",
+  "sourceCommit": "9cbf42414e2bd16c3b7c26e7324c9926b78227c9",
+  "sourceCheckout": "/Users/bao/taskbar-hero-chain",
+  "output": "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-18/dist",
+  "port": 5998,
+  "mode": "Production shipping Vite config + same-origin-bound local API/Anvil; no public writes",
+  "config": "tools/v4ship-lab/rehearsal/vite.config.mts",
+  "publicBuildFlags": {
+    "VITE_CHAIN_DEMO": "0",
+    "VITE_ECONOMY_V3": "1",
+    "VITE_GUEST_WALLET": "1",
+    "VITE_CHAIN_LOOP": "1",
+    "VITE_ITEM_TRADING": "1",
+    "VITE_YARN_TOKEN": "1",
+    "VITE_SHIP_JOURNEY": "1",
+    "VITE_UI_V3": "1",
+    "VITE_CHAIN_CAMPAIGN": "1",
+    "VITE_CHAIN_CAMPAIGN_REWARDS": "0",
+    "VITE_RELIC_FORGE": "0",
+    "VITE_YARN_COSMETICS": "0",
+    "VITE_ALLOW_MOCK_AUTH": "0",
+    "VITE_CHAIN_MODE": "local",
+    "VITE_SUPABASE_URL": "http://127.0.0.1:5997",
+    "VITE_FUJI_RPC_URL": "http://127.0.0.1:8546",
+    "VITE_V3_START_BLOCK": "0",
+    "VITE_CHAIN_STATS_URL": ""
+  },
+  "buildComplete": true,
+  "ready": true,
+  "supervisorPid": 27998,
+  "harness": [
+    {
+      "path": "tools/v4ship-lab/rehearsal/start.mjs",
+      "sha256": "7fc33891c3d9f4e0ea080d41cafd1a92aa67589d12a87efeb844f63e5fb6a35b"
+    },
+    {
+      "path": "tools/v4ship-lab/rehearsal/vite.config.mts",
+      "sha256": "b424d3dcf5e210176d3c1856cf2b9950c58764defb614878d9beb38c3e066c28"
+    }
+  ],
+  "fixtureId": "1794881617989-27998",
+  "localFixtureConfigSha256": "b3f24dfbdd193f71e06ad90b4055b34f52b6c9994f563c89e068e258d6310e0c",
+  "preflight": [
+    {
+      "origin": "http://127.0.0.1:5998",
+      "status": 204,
+      "allowedOrigin": "http://127.0.0.1:5998"
+    },
+    {
+      "origin": "http://127.0.0.1:5994",
+      "status": 403,
+      "allowedOrigin": null
+    }
+  ],
+  "buildCommand": [
+    "pnpm",
+    "exec",
+    "vite",
+    "build",
+    "--config",
+    "/Users/bao/taskbar-hero-chain/tools/v4ship-lab/rehearsal/vite.config.mts",
+    "--outDir",
+    "/Users/bao/taskbar-hero-chain/work/v4ship-prep/S8-production-18/dist"
+  ],
+  "exitCode": 0,
+  "buildSeconds": 1.548,
+  "log": {
+    "path": "reports/v4-ship/S8/production-build-18.log.gz",
+    "sha256": "2b5e4bd709916a10fabb076cfcbe8e8798bd2a78d2ffdd366c936e831c4ca2a8"
+  },
+  "indexSha256": "927f55d538fea9db10f3a497e4963ab437d1f2d58fa1cea7e74360b5fc33f5e3",
+  "previewLauncherPid": 28095
+}

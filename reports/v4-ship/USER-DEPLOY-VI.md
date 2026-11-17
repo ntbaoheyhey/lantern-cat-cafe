@@ -216,7 +216,7 @@ Mở profile mới ở `https://taskbarhero-eight.vercel.app/?demo=1&squad=1&car
 2. Play free → Start trial: không popup ví; battle ≤30 giây, ≤3 click.
 3. Chờ trận và nhận trial reward.
 4. Mint trial reward: receipt đầu ≤180 giây median, tối đa 240 giây; toast có thời gian, phí AVAX, payer và link Snowtrace mở được.
-5. Fund workshop → Seal Epic → Forge Legendary → List for 5 YARN → Buy with demo wallet → Withdraw Spool. Mỗi giao dịch có receipt/chime. Rút 16 Spool giữ 4, nhận 12 YARN; retention không phải burn. Giữ nguyên hạn mức/cooldown, không sửa DB để làm smoke xanh.
+5. Fund workshop → Seal Epic → Forge Legendary → List for 5 YARN → Buy with demo wallet → Withdraw Spool. Mỗi giao dịch có receipt/chime. Ví dụ demo hiện tại theo hạn mức tuần: rút 8 Spool, giữ 2 trong pool, nhận 6 YARN; retention 25% không phải burn. Giữ nguyên hạn mức/cooldown, không sửa DB để làm smoke xanh.
 6. Face the boss: healer không gây damage; nghe voice/SFX và kiểm tra mixer còn lưu khi reload.
 7. My café on Avalanche: đối chiếu giao dịch bằng ví, receipt và Snowtrace; reload tại workshop rồi tiếp tục không trả phí lại. Link proof phải khớp chain thật.
 
