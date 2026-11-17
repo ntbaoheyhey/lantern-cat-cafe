@@ -1,18 +1,17 @@
 # CXI V7 continuation
-ACTIVE: I-A m1.5 validation complete; publishing; I-E3x30s real gameplay films next; assistant: AGS.
-NEXT 1: Push+tag v5-m1.5; update BOARD; create tools/v5int/record-review.mjs using existing audio capture tap.
-NEXT 2: I-B no-inline build/3cold/route pass;161.5KB saved, all>8MB; AGS4beds/AGV12AVIF open.
-NEXT 3: Measure load-to-first-hit desktop; I-D real/absent tx panels; I-E films+REVIEW-VI.
-Last pushed SHA:a2cbb3fb4; green v5-m1.4=173d854b1; route3 typecheck/web/root/build/transfer/route all0.
-self-wake: cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; edited2026-11-17T14:00:10Z.
-Last RULES re-read UTC:2026-11-17T14:09:07Z; STOP-ALL/STOP-CXI absent.
+ACTIVE: I-A publish validated m1.6 release checkpoint; I-E films3/3 complete; assistant: AGS.
+NEXT 1: Commit/push owned release reports; tag v5-m1.6 without moving existing tags; publish BOARD exact SHA and QA messages.
+NEXT 2: Review CXV READY2847a7028+52c2f99f1 code, merge owned lane after m1.6, run new pipeline and own captures.
+NEXT 3: Integrate accepted AGS4beds+AGV12AVIF then3cold transfers; residual wave3 gap needs own loader work.
+Last pushed SHA:6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb; green v5-m1.5=6b972c409; candidate viewport fix untagged.
+self-wake:cxi-wake ACTIVE every15min currentchat01a1e9cc-440b-7233-82aa-9510796d311f; verified14:51UTC; existing exact V7 prompt, no duplicate.
+Last RULES re-read UTC:2026-11-17T14:58:18.408251+00:00;STOP-ALL/STOP-CXI absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running jobs:none; PID43885 m15 complete all7steps0; preview parent80797/child80825 port6301.
-m15 suite:2924web;5224root=77Node+5147workspace,11skip/2expectedfail;typecheck/build0.
-Cold v7-m158583793/9144973/8659415B;0errors;FAIL8MB;route9348ms.
-I-C first hit20,849ms incl17,700ms reading8cards; enemy165->119;zeroerrors; firstprobe legacy selector invalid, no game bug.
-AGS open:T1 exactQA repro,T2/T3 REDO citations/placeholders,T5 4beds309KB; copy correction open.
-AGV T-CXI-4 top15+12AVIF exact target table in I-B-TOP15.md sent. CXV92542f545 mergeda2cbb3fb4; c0c8081a8 merged.
-Mailbox read INBOX-CXI154/INBOX-AGS71/USER23/LEARN50 at2026-11-17T14:16:32Z; ignore old watchdog.
-I-D public Fuji owner-only;5contracts checked;kit5tests+Anvil516ms;no real public tx claimed.
-I-E3x30s films/contact sheets+Vietnamese review open;I-F README/ARCHITECTURE verified, draft corrections open.
+Running:none; m16b pipeline53983all7steps0; film57033complete3/3; all7new sheets inspected once,never reopen.
+Cold m16:8584126/9145394/8659811B;allFAIL8MB;route9864ms;0errors.
+I-C firsthit20501ms incl17700ms reading8cards;enemy165→119;0errors.5227pass incl2927web.
+AGS open:T1 exactQA,T2/T3 sourcedresearch,T5 eb2 mono/missingmanifest REDO,T7 accurate submission drafts; five tasks.
+AGV openT4 approved12AVIF,T6 four384w homeportraits; noREADY. CXV92542f545 mergeda2cbb3fb4.
+Mailbox read INBOX-CXI163/USER23/LEARN53;CXV READY queued;AGS eb2e2b25d reviewed REDO;no AVIF accepted.
+I-D no real public tx;owner-only Fuji/deploy;runbook releaseSHA correction committed0d20a53c9.
+I-E REVIEW-VI/I-E/evidence/v7-m16b-films.json;3x30s actualaudio,source6bb96c69d,indexef21e23a.

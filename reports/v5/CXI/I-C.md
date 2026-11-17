@@ -1,20 +1,16 @@
-# Desktop route and receipt evidence — 2026-11-17T13:12:32Z
-Green tag: v5-m1.3 at 04c913bc585ac028bed31f1e8ea901369acb6da2. Typecheck/build exit 0; web 2,912; root 5,212 passing (77 Node + 5,135 workspace), 11 skipped, 2 expected failures. Tests ran after CXV c44267f8c merge; the later 04c913bc5 changes were documentation, capture harness and desktop CSS. Production build/captures include that CSS.
-Judge URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Production index SHA256: 29be25fb0eac2a9f961cc75fbbb3aa8d350aea0e304d3bfd5e9a77a788d23802. Desktop 1280×720; fresh Chromium context/cache disabled.
+# Desktop evidence — v5-m1.6
+Application source:6bb96c69d4fd031c5e7a4e5ffe7be26f6d3929eb. The release tag includes the validated application plus reports.
+Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Production index SHA256:ef21e23aa191d7b670782e9e53f0c198c679eb9e11971a1d023e1dfadcaf048f. Desktop1280×720, fresh browser/cache disabled. Captured2026-11-17T14:55–14:56UTC.
 
-- Explicit legacy=1 is the only legacy entry; malformed/absent selectors enter the full game. ReceiptToast is mounted in the regular desktop shell, including during battle.
-- Practice invitation, cause-aware sign-in recovery, explicit low-sponsor messaging and stale-balance clearing on RPC failure: 58 focused tests passed before the full suite. A missing wallet is distinguished from RPC failure.
-- Fresh ordinary-control practice capture at 13:10:36Z: truthful invitation visible in 9,347ms, zero console/page/HTTP errors or blocked writes. The 280px desktop card is readable in the fresh 1024px view. This proves practice completion and free invitation availability, not a patrol reward or blockchain transaction.
-- Most recent full ordinary-control guest journey, v6-recovery: actual patrol rewards at 66,331ms using visible 3× playback; party won, 35 route points and one Rare Moonwick Shawl. No fabricated save, skipped battle, console/page/HTTP errors or blocked writes. The harness completed practice/free welcome but did not level a cat before patrol. The 30-second patrol budget remains OPEN; unchanged patrol was not repeated merely for the CSS check.
-- Earlier synthetic receipt presentation capture at 12:42:55Z: local/Fuji-shaped receipts, visible watermark, 340px wide and no overflow/errors. Fields: hash, payer, time, fee, network; Fuji-shaped fixture links to Snowtrace. This is UI evidence only.
-- Local Anvil proof: 0.05 local AVAX, 516ms, 0.000042AVAX fee, distinct payer and guest, no public explorer. The proof kit has 5 passing tests and separates observation time from service-supplied confirmation time. PUBLIC-FUJI.json proves bytecode presence at the five registry addresses, not a public game transaction.
-- Soot lantern remains same-size1536×510 AVIF with originalWebP fallback/disposal safety, saving80,039B. Fresh v6-living Mochi/Soot and Clover/Panko contact sheets show readable effects without new rendering errors. Facial-depth/reference quality gap remains CXV work; archive slots are not live gameplay casts.
-- Fresh cold fixture transfer at 13:07:54Z: wave1 8,744,220B / wave3 9,305,491B / boss 8,819,936B; ready1,850/1,669/1,464ms; zero errors. All FAIL8,000,000B. Fixture entry is not guest/chain journey evidence.
+- FIRST HIT PASS:20,501ms from cold navigation to visible enemy HP165→119, including17,700ms for59words across8tutorial cards at200wpm. Ordinary guest controls; no fixture/save injection, tutorial skip or speed change. Console/page/HTTP errors0.
+- PRACTICE ROUTE PASS: guest route detour→return to preparation→receipt9,864ms,0errors. This quick regression advances tutorial cards without the reading allowance; use the first-hit result for the judge timing claim.
+- RECOVERY PASS: deliberately rejected EncounterV3 download yields a usable sheet in1,138ms; stalled download offers recovery in8,666ms. Reload page and Back to café both fit entirely inside1280×720 without scrolling. Both paths return to café; explicit reload restores the route. No uncaught page errors; rejected-download console errors are expected injected failures, separate from ordinary journeys.
+- COLD BYTES OPEN:8,584,126 /9,145,394 /8,659,811B forwave1/wave3/boss; all>8,000,000B,0ordinary errors. No speculative audio/AVIF savings counted.
+- SUITES PASS:typecheck/build0;5,227root=77Node+5,150workspace,including2,927web;11skip,2expectedfail. Root suite includes web; no duplicate unchanged rerun.
+- AVALANCHE: local receipt explicitly says no transaction sent and links the deployed Fuji items contract. Five registry bytecode checks and an isolatedAnvil experiment are separate from a public player transaction; none is claimed.
+- VISUAL PASS: four new1024×576 sheets, measured then viewed once: reject,stall,first-hit,receipt. Header/café remains visible; recovery buttons fit, damage46 is visible, receipt wording is truthful.
 
-Raw evidence (ignored under work/v5/CXI/): jobs/v6-living-*.log; transfer/v6-living/all.json; effects/v6-living/capture.json, heroes-mochi-soot.jpg, heroes-clover-panko.jpg; journey/v6-living-practice/report.json and practice-1024.jpg; journey/v6-recovery/report.json; proof/v6-local-proof-timed.json.
-Next: reduce real cold bytes and measure normal progression through cat levelling before patrol. Public deployment and funded Fuji transaction remain owner-only. Desktop only.
-
-## V7 first actual hit — 2026-11-17T14:11:52Z
-Own ordinary guest practice on full judge URL1280x720:21,564ms to visible enemy health165->119 (46damage), including17,700ms reading59words across all8tutorialcards at200wpm. No tutorial skip, speed change, saved progress or fixture injection. Console/page/HTTP errors0;public writes0. Raw work/v5/CXI/first-hit/v7-reading-hud/report.json; source130360f6f; screenshot1024x576 measured then inspected once: damage46 visible at actual contact.
-Earlier70s metric was full level-first patrol receipt, not first hit. First probe failed because it observed retired DOM damage nodes; current renderer paints those on canvas, while its accessible enemy HP reflects visualBattle at impact. No product defect claimed from that invalid selector.
+Small reproducible evidence:[v7-m16b-validation.json](evidence/v7-m16b-validation.json). Raw captures/logs:work/v5/CXI/{first-hit,route,recovery,transfer}/v7-m16b/ and work/v5/CXI/jobs/v7-m16b-*.
+Final-build films:3×30.000s,actual1×gameplay+browseraudio,0errors,three measured1024×576 sheets visually reviewed once. SeeI-E.md/REVIEW-VI.md and evidence/v7-m16b-films.json.
+Earlier66–70s numbers measured the complete patrol receipt, not the V7 first-hit target. Prior m1.5 measurements remain in Git history and their labelled evidence directories.
