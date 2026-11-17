@@ -13,7 +13,7 @@ export async function installOutputCapture(page,path,stemPaths={}){
   let mixer,destination,recorder,pending=Promise.resolve();const stems=[];
   AudioNode.prototype.connect=function(target,...args){
    const result=connect.call(this,target,...args);
-   if(target===this.context.destination&&!tapped.has(this)){
+   if(typeof this.context.createMediaStreamDestination==='function'&&target===this.context.destination&&!tapped.has(this)){
     tapped.add(this);
     mixer??=new AudioContext();destination??=mixer.createMediaStreamDestination();
     let tee=contexts.get(this.context);

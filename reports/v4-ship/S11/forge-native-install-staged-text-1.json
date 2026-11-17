@@ -1,0 +1,387 @@
+{
+  "at": "2026-11-17T01:53:55.588121+00:00",
+  "harness": {
+    "path": "tools/v4ship-lab/security/staged-text-detector.py",
+    "sha256": "862ba081fc48e54237639f65ae9f7d5cd75f545803878935dcc7961125bed171"
+  },
+  "ready": {
+    "configSha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "module": "github.com/zricethezav/gitleaks/v8@v8.30.1",
+    "rawValuesEmitted": false,
+    "ready": true,
+    "rules": 222,
+    "wholeFragments": true
+  },
+  "files": [
+    {
+      "path": "apps/web/src/audio/engine.test.ts",
+      "bytes": 33755,
+      "sha256": "af50e82481e0754c9e251399223a26d54f8536830e1c21926f903e765bde43ed"
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "bytes": 28861,
+      "sha256": "7668d55498c04874d66f704a8ec8b06dbfc1c1435f76cfd069c4ccd11de1e816"
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6928,
+      "sha256": "7d9ae9a0c539c751c3f38db191aa7286ed6cda5a800d712dce0e853b9f684a7b"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-forge-admission.md",
+      "bytes": 11992,
+      "sha256": "e7591522fc57fd96400622242eab95636787e5cd59921f2db6b17162f156ad11"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-capture-tap-1.json",
+      "bytes": 1441,
+      "sha256": "dfde1d238c08d944edc990d9140008e6f4e5cf4d8265842226d5062bd30f1bf0"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-review-1.json",
+      "bytes": 5362,
+      "sha256": "253d6f1af5330447e32ea4feceec43dbed885321e41342871289531309dbd04e"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-study-1.json",
+      "bytes": 43942,
+      "sha256": "6e126ca71a112e39f4aa050675265a104a1b280013313a7812244e04827352cc"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-study-1.rows.json.gz",
+      "bytes": 3159,
+      "sha256": "f144f6ce6418997adf0f263c075ffd6433c5ad135dbd77c823264ccc83512c71"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-1.json",
+      "bytes": 524,
+      "sha256": "44ec838911b3ba544e4c627b0a80016afb6fefa89f2dae19d206c5af68541547"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-1.log.gz",
+      "bytes": 1836,
+      "sha256": "7a784ce73c988ef0469bb0b79bd005502620d021455899ae7e7b1a68399e4ff0"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-2.log.gz",
+      "bytes": 184,
+      "sha256": "c3454023ea72008dab52b3351000f55a966bcc821f0e38f907e82062b81747b7"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/check.json",
+      "bytes": 1449,
+      "sha256": "623f9f81e9011c15b2dc8a71e9670edcb245588e64ce8805c3535ba1e148f778"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/log.jsonl.gz",
+      "bytes": 16156,
+      "sha256": "11762d6304a8506b109cb43e73f321191718b672bc90ac7de806f502c0f2e38b"
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "0f7b43964f4cc0bd5a26435c9453fd70f5845e5788822e7d0c53f01615e2024a"
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/check.json",
+      "bytes": 40451,
+      "sha256": "182da1639c509dc7ea52f26cbd8b27abaa8c4ac0acf213b93bd341da649aeb4f"
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/forge-events.json.gz",
+      "bytes": 32363,
+      "sha256": "c50c40ef7dd67a52daf0a6265b0473baef1af94bd05a1bc9a8cba26ed59327bd"
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/validation.json",
+      "bytes": 1566,
+      "sha256": "2e7caf2b6562d1170ff39792638d5f8c6ff9b097e27052ea8f70bf747b61ea3b"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 32865,
+      "sha256": "509f2c00690d97775f7cf7b2298a4e7ed7972cb3840137b3709784d58ad5551d"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4730,
+      "sha256": "fc4a1040a0d9c836df936046cceb4b3de3e50f1d75a78f5c31f3dcb9d684b656"
+    },
+    {
+      "path": "scripts/audio/capture-page.mjs",
+      "bytes": 3406,
+      "sha256": "eee1156456b466c83ea47303a116cf92e8bb704abcac70600a2ca25a3704bd36"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-capture-tap-study.mjs",
+      "bytes": 3861,
+      "sha256": "2ca8f8a616bab21ef8adfdcf74c3e7fa0ed8d88cb68f145c15abd1ce5db33c0c"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-install-review.mjs",
+      "bytes": 7256,
+      "sha256": "7969c5ee87ed32adde58ffb7a1b530ae2820e7f7a797fbd95267018a56559eee"
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-install-study.mjs",
+      "bytes": 9077,
+      "sha256": "727c33c08f0c9ff55a2f4e6ba4664dac2647e67ccf50ad705efdbd4f08950715"
+    }
+  ],
+  "scans": [
+    {
+      "path": "apps/web/src/audio/engine.test.ts",
+      "representation": "raw",
+      "bytes": 33755,
+      "sha256": "af50e82481e0754c9e251399223a26d54f8536830e1c21926f903e765bde43ed",
+      "alias": "af50e82481e0754c9e251399223a26d54f8536830e1c21926f903e765bde43ed.txt",
+      "seconds": 0.012178042,
+      "findings": []
+    },
+    {
+      "path": "apps/web/src/audio/engine.ts",
+      "representation": "raw",
+      "bytes": 28861,
+      "sha256": "7668d55498c04874d66f704a8ec8b06dbfc1c1435f76cfd069c4ccd11de1e816",
+      "alias": "7668d55498c04874d66f704a8ec8b06dbfc1c1435f76cfd069c4ccd11de1e816.txt",
+      "seconds": 0.01824175,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "representation": "raw",
+      "bytes": 6928,
+      "sha256": "7d9ae9a0c539c751c3f38db191aa7286ed6cda5a800d712dce0e853b9f684a7b",
+      "alias": "7d9ae9a0c539c751c3f38db191aa7286ed6cda5a800d712dce0e853b9f684a7b.txt",
+      "seconds": 0.00224125,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-forge-admission.md",
+      "representation": "raw",
+      "bytes": 11992,
+      "sha256": "e7591522fc57fd96400622242eab95636787e5cd59921f2db6b17162f156ad11",
+      "alias": "e7591522fc57fd96400622242eab95636787e5cd59921f2db6b17162f156ad11.txt",
+      "seconds": 0.002993458,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-capture-tap-1.json",
+      "representation": "raw",
+      "bytes": 1441,
+      "sha256": "dfde1d238c08d944edc990d9140008e6f4e5cf4d8265842226d5062bd30f1bf0",
+      "alias": "dfde1d238c08d944edc990d9140008e6f4e5cf4d8265842226d5062bd30f1bf0.txt",
+      "seconds": 0.000119958,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-review-1.json",
+      "representation": "raw",
+      "bytes": 5362,
+      "sha256": "253d6f1af5330447e32ea4feceec43dbed885321e41342871289531309dbd04e",
+      "alias": "253d6f1af5330447e32ea4feceec43dbed885321e41342871289531309dbd04e.txt",
+      "seconds": 0.000133333,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-study-1.json",
+      "representation": "raw",
+      "bytes": 43942,
+      "sha256": "6e126ca71a112e39f4aa050675265a104a1b280013313a7812244e04827352cc",
+      "alias": "6e126ca71a112e39f4aa050675265a104a1b280013313a7812244e04827352cc.txt",
+      "seconds": 0.001603792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-install-study-1.rows.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 136182,
+      "sha256": "53520be38484a5d3b138fcff7af66baa9f3fd5d1b8fab17c0c900e0ecdd47f69",
+      "alias": "53520be38484a5d3b138fcff7af66baa9f3fd5d1b8fab17c0c900e0ecdd47f69.txt",
+      "seconds": 0.002621416,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-1.json",
+      "representation": "raw",
+      "bytes": 524,
+      "sha256": "44ec838911b3ba544e4c627b0a80016afb6fefa89f2dae19d206c5af68541547",
+      "alias": "44ec838911b3ba544e4c627b0a80016afb6fefa89f2dae19d206c5af68541547.txt",
+      "seconds": 8.525e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-1.log.gz",
+      "representation": "expanded-gzip",
+      "bytes": 18862,
+      "sha256": "00caacd7b989bce6a6feaabf9132787ecf499e468ff39d1da66a6218865bcc3a",
+      "alias": "00caacd7b989bce6a6feaabf9132787ecf499e468ff39d1da66a6218865bcc3a.txt",
+      "seconds": 0.003904458,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-2.log.gz",
+      "representation": "expanded-gzip",
+      "bytes": 217,
+      "sha256": "4f2b1ee482c774d561166f82e08bfebaec92ba7ec201828b319eb96b7601b271",
+      "alias": "4f2b1ee482c774d561166f82e08bfebaec92ba7ec201828b319eb96b7601b271.txt",
+      "seconds": 7.7792e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/check.json",
+      "representation": "raw",
+      "bytes": 1449,
+      "sha256": "623f9f81e9011c15b2dc8a71e9670edcb245588e64ce8805c3535ba1e148f778",
+      "alias": "623f9f81e9011c15b2dc8a71e9670edcb245588e64ce8805c3535ba1e148f778.txt",
+      "seconds": 8.0166e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/log.jsonl.gz",
+      "representation": "expanded-gzip",
+      "bytes": 104573,
+      "sha256": "47ca98b31683f6c1fa68bf2a5a77e24d44002ca4f2a8d23adb9f16d1607f373e",
+      "alias": "47ca98b31683f6c1fa68bf2a5a77e24d44002ca4f2a8d23adb9f16d1607f373e.txt",
+      "seconds": 0.028644583,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/parity-probe.json",
+      "representation": "raw",
+      "bytes": 150219,
+      "sha256": "0f7b43964f4cc0bd5a26435c9453fd70f5845e5788822e7d0c53f01615e2024a",
+      "alias": "0f7b43964f4cc0bd5a26435c9453fd70f5845e5788822e7d0c53f01615e2024a.txt",
+      "seconds": 0.000661459,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/check.json",
+      "representation": "raw",
+      "bytes": 40451,
+      "sha256": "182da1639c509dc7ea52f26cbd8b27abaa8c4ac0acf213b93bd341da649aeb4f",
+      "alias": "182da1639c509dc7ea52f26cbd8b27abaa8c4ac0acf213b93bd341da649aeb4f.txt",
+      "seconds": 0.001466792,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/forge-events.json.gz",
+      "representation": "expanded-gzip",
+      "bytes": 449798,
+      "sha256": "32aff85fc862f62868a35d38417de0525885bded0ea91fa5c39d1482c36bbc29",
+      "alias": "32aff85fc862f62868a35d38417de0525885bded0ea91fa5c39d1482c36bbc29.txt",
+      "seconds": 0.017039625,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/validation.json",
+      "representation": "raw",
+      "bytes": 1566,
+      "sha256": "2e7caf2b6562d1170ff39792638d5f8c6ff9b097e27052ea8f70bf747b61ea3b",
+      "alias": "2e7caf2b6562d1170ff39792638d5f8c6ff9b097e27052ea8f70bf747b61ea3b.txt",
+      "seconds": 6.8709e-05,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "representation": "raw",
+      "bytes": 32865,
+      "sha256": "509f2c00690d97775f7cf7b2298a4e7ed7972cb3840137b3709784d58ad5551d",
+      "alias": "509f2c00690d97775f7cf7b2298a4e7ed7972cb3840137b3709784d58ad5551d.txt",
+      "seconds": 0.0281905,
+      "findings": []
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "representation": "raw",
+      "bytes": 4730,
+      "sha256": "fc4a1040a0d9c836df936046cceb4b3de3e50f1d75a78f5c31f3dcb9d684b656",
+      "alias": "fc4a1040a0d9c836df936046cceb4b3de3e50f1d75a78f5c31f3dcb9d684b656.txt",
+      "seconds": 0.000244708,
+      "findings": []
+    },
+    {
+      "path": "scripts/audio/capture-page.mjs",
+      "representation": "raw",
+      "bytes": 3406,
+      "sha256": "eee1156456b466c83ea47303a116cf92e8bb704abcac70600a2ca25a3704bd36",
+      "alias": "eee1156456b466c83ea47303a116cf92e8bb704abcac70600a2ca25a3704bd36.txt",
+      "seconds": 0.0010235,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-capture-tap-study.mjs",
+      "representation": "raw",
+      "bytes": 3861,
+      "sha256": "2ca8f8a616bab21ef8adfdcf74c3e7fa0ed8d88cb68f145c15abd1ce5db33c0c",
+      "alias": "2ca8f8a616bab21ef8adfdcf74c3e7fa0ed8d88cb68f145c15abd1ce5db33c0c.txt",
+      "seconds": 0.000174333,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-install-review.mjs",
+      "representation": "raw",
+      "bytes": 7256,
+      "sha256": "7969c5ee87ed32adde58ffb7a1b530ae2820e7f7a797fbd95267018a56559eee",
+      "alias": "7969c5ee87ed32adde58ffb7a1b530ae2820e7f7a797fbd95267018a56559eee.txt",
+      "seconds": 0.000256292,
+      "findings": []
+    },
+    {
+      "path": "tools/v4ship-lab/audio/forge-install-study.mjs",
+      "representation": "raw",
+      "bytes": 9077,
+      "sha256": "727c33c08f0c9ff55a2f4e6ba4664dac2647e67ccf50ad705efdbd4f08950715",
+      "alias": "727c33c08f0c9ff55a2f4e6ba4664dac2647e67ccf50ad705efdbd4f08950715.txt",
+      "seconds": 0.003532583,
+      "findings": []
+    }
+  ],
+  "excluded": [
+    {
+      "path": "reports/v4-ship/S11/forge-install-study-1.rows.json.gz",
+      "representation": "raw",
+      "bytes": 3159,
+      "sha256": "f144f6ce6418997adf0f263c075ffd6433c5ad135dbd77c823264ccc83512c71",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-1.log.gz",
+      "representation": "raw",
+      "bytes": 1836,
+      "sha256": "7a784ce73c988ef0469bb0b79bd005502620d021455899ae7e7b1a68399e4ff0",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-focused-2.log.gz",
+      "representation": "raw",
+      "bytes": 184,
+      "sha256": "c3454023ea72008dab52b3351000f55a966bcc821f0e38f907e82062b81747b7",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S11/forge-native-install-regression-1/log.jsonl.gz",
+      "representation": "raw",
+      "bytes": 16156,
+      "sha256": "11762d6304a8506b109cb43e73f321191718b672bc90ac7de806f502c0f2e38b",
+      "utf8": false,
+      "containsNul": true
+    },
+    {
+      "path": "reports/v4-ship/S5/forge-native-install-1/forge-events.json.gz",
+      "representation": "raw",
+      "bytes": 32363,
+      "sha256": "c50c40ef7dd67a52daf0a6265b0473baef1af94bd05a1bc9a8cba26ed59327bd",
+      "utf8": false,
+      "containsNul": true
+    }
+  ],
+  "findings": [],
+  "unresolved": 0,
+  "pass": true,
+  "limits": "Full exact UTF-8/no-NUL staged bytes and expanded gzip; default content allowlists remain. Excluded binary bytes are not covered. Generated report checked separately."
+}

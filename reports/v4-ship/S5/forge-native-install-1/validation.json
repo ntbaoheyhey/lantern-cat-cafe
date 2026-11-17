@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-17T01:52:06.339Z",
+  "trial": "forge-native-install-1",
+  "rows": [
+    {
+      "name": "forge",
+      "seconds": 90.23099994659424,
+      "lufs": -17.42,
+      "lra": 5.8,
+      "peak": -1.92,
+      "sourceBudget": true,
+      "maxStartsPer100ms": 6,
+      "heldDuckDb": {
+        "min": -7.999999988978489,
+        "max": -7.999999988978489,
+        "samples": 226
+      },
+      "duckDepthPass": true,
+      "recoveryPass": true,
+      "recoverySamples": 3313,
+      "estimatedOutputLatencyMs": {
+        "min": 28.023999999997613,
+        "p95": 33.07433332886285,
+        "max": 33.17833333780345
+      },
+      "estimatedOnsetPass": false,
+      "pageErrors": [],
+      "voiceInterruptions": 0,
+      "rateLimitedRequests": 2
+    }
+  ],
+  "coverageSeconds": 90.23099994659424,
+  "continuousSingleSession": false,
+  "aggregate": {
+    "lufs": -17.42,
+    "lra": 5.8,
+    "peak": -1.92
+  },
+  "gates": {
+    "coverage30Minutes": false,
+    "loudness": true,
+    "truePeak": true,
+    "loudnessRange": true,
+    "sourceBudget": true,
+    "duckDepth": true,
+    "duckRecovery": true,
+    "zeroErrors": true
+  },
+  "physicalAudibleOnsetVerified": false,
+  "overallAudioGatePass": false,
+  "note": "Aggregate metrics concatenate unaltered scene recordings for representative coverage, not a continuous endurance session. Per-scene values remain visible. Output timestamps estimate device presentation; physical audible onset and listening are not proven. The independent12-line proxy and native UI/persistence evidence are required separately."
+}

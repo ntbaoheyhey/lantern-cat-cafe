@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-17T01:51:56.116Z",
+  "rows": [
+    {
+      "name": "server",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/supabase-tests",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 13.154
+    },
+    {
+      "name": "rules",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 24.865
+    },
+    {
+      "name": "web",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "exitCode": 1,
+      "seconds": 93.594
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 15.407
+    },
+    {
+      "name": "parity-probe",
+      "command": [
+        "node",
+        "tools/v4ship-lab/parity-probe.mjs",
+        "reports/v4-ship/S11/forge-native-install-regression-1/parity-probe.json"
+      ],
+      "exitCode": 0,
+      "seconds": 6.342
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 16.766
+    }
+  ],
+  "commandsPassed": false,
+  "complete": true,
+  "officialClassParityGate": false,
+  "log": {
+    "path": "reports/v4-ship/S11/forge-native-install-regression-1/log.jsonl.gz",
+    "sha256": "11762d6304a8506b109cb43e73f321191718b672bc90ac7de806f502c0f2e38b"
+  }
+}

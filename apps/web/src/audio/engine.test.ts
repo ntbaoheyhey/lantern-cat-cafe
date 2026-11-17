@@ -11,12 +11,22 @@ class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;lo
 class Gain extends Node {gain=new Param();}
 class Filter extends Node {type='';frequency=new Param();Q=new Param();gain=new Param();}
 class Context {
- static latest:Context;currentTime=10;state='running';destination=new Node();sources:Source[]=[];filters:Filter[]=[];
+ static latest:Context;currentTime=10;sampleRate=48000;state='running';destination=new Node();sources:Source[]=[];filters:Filter[]=[];
  constructor(){Context.latest=this;}
  createGain(){return new Gain();}createBufferSource(){const s=new Source();this.sources.push(s);return s;}
  createBiquadFilter(){const f=new Filter();this.filters.push(f);return f;}
  createDynamicsCompressor(){return Object.assign(new Node(),{threshold:new Param(),knee:new Param(),ratio:new Param(),attack:new Param(),release:new Param()});}
- async resume(){this.state='running';}async suspend(){this.state='suspended';}async decodeAudioData(){return {duration:20};}
+ async resume(){this.state='running';}async suspend(){this.state='suspended';}async decodeAudioData(){return {duration:20,numberOfChannels:1,sampleRate:this.sampleRate};}
+}
+class OfflineContext {
+ static instances:OfflineContext[]=[];static failAt=-1;
+ destination=new Node();sources:Source[]=[];filters:Filter[]=[];
+ createGain=Context.prototype.createGain;createBufferSource=Context.prototype.createBufferSource;createBiquadFilter=Context.prototype.createBiquadFilter;
+ constructor(readonly numberOfChannels:number,readonly length:number,readonly sampleRate:number){OfflineContext.instances.push(this);}
+ async startRendering(){
+  if(OfflineContext.instances.indexOf(this)===OfflineContext.failAt)throw Error('offline preparation unavailable');
+  return {numberOfChannels:this.numberOfChannels,length:this.length,sampleRate:this.sampleRate,duration:this.length/this.sampleRate};
+ }
 }
 const samples=(bus:Sample['bus']='sfx')=>Array.from({length:6},(_,i)=>({pack:'test',start:i,duration:.4,bus,variantId:String(i)}));
 const design:CueDesign={bus:'sfx',layers:['transient','body','tail','sweetener'].map((role,i)=>({role,variants:samples(),offsetMs:[0,7,18,23][i]!,eq:i===1?'low-shelf-180':i===3?'high-pass-1800':'flat',gainDb:-8})),pitchRange:[.94,1.06],gainRange:[-1.5,1.5],cooldownMs:30,priority:60};
@@ -25,6 +35,45 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>{vi.unstubAllGlobals();vi.restoreAllMocks();});
 describe('layered playback admission and variants',()=>{
+ const shippedForge=()=>{
+  const m=JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio/manifest.json'),'utf8')) as AudioManifest;
+  OfflineContext.instances=[];OfflineContext.failAt=-1;vi.stubGlobal('OfflineAudioContext',OfflineContext);
+  const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);return {m,fetcher};
+ };
+ it('prepares all forge pairs once across concurrent home preloads without live starts or new asset requests',async()=>{
+  const {fetcher}=shippedForge(),e=new AudioEngine(()=>.5);
+  await e.preload('home');expect(OfflineContext.instances).toHaveLength(0);
+  await e.unlock();await Promise.all([e.preload('home'),e.preload('home'),e.preload('home')]);
+  expect(e.diagnostics.forgeVariants).toBe(72);expect(OfflineContext.instances).toHaveLength(72);expect(Context.latest.sources).toHaveLength(0);
+  expect(OfflineContext.instances.every(c=>c.sources.length===2&&c.filters.length===1&&c.filters[0]?.frequency.value===1800)).toBe(true);
+  const urls=fetcher.mock.calls.map(([url])=>url);expect(new Set(urls).size).toBe(urls.length);expect(urls.some(url=>url.includes('native'))).toBe(false);
+  await e.preload('home');expect(OfflineContext.instances).toHaveLength(72);expect(fetcher.mock.calls).toHaveLength(urls.length);
+ });
+ it('admits forge feedback and speech in the six-source UI burst while generic confirmations stay layered',async()=>{
+  shippedForge();const e=new AudioEngine(()=>.5);await e.unlock();await e.preload('home');
+  for(const cue of ['ui.hover','ui.release','ui.click','ui.forge.hammer'])e.play(cue);
+  Context.latest.currentTime+=.016;e.play('ui.forge-success');e.play('voice.mochi.forge');
+  expect(Context.latest.sources).toHaveLength(6);expect(e.hits.every(h=>h.result==='played')).toBe(true);
+  expect(e.hits.filter(h=>h.id.startsWith('ui.forge')).every(h=>h.layers?.length===2)).toBe(true);
+  expect(Context.latest.sources.slice(3,5).every(s=>s.start.mock.calls[0]?.[1]===0)).toBe(true);
+  e.play('ui.confirm');expect(e.hits.at(-1)?.result).toBe('rate-limit');expect(Context.latest.sources).toHaveLength(6);
+  Context.latest.currentTime+=1;e.play('ui.confirm');expect(Context.latest.sources).toHaveLength(8);
+  Context.latest.currentTime+=1;e.play('ui.hammer');expect(Context.latest.sources).toHaveLength(10);
+ });
+ it('retains the original complete layers when preparation fails, then retries without refetching',async()=>{
+  const {fetcher}=shippedForge();OfflineContext.failAt=40;const e=new AudioEngine(()=>.5);await e.unlock();await e.preload('home');
+  expect(e.diagnostics.forgeVariants).toBe(0);e.play('ui.forge.hammer');expect(Context.latest.sources).toHaveLength(2);
+  const requests=fetcher.mock.calls.length;OfflineContext.failAt=-1;await e.preload('home');expect(e.diagnostics.forgeVariants).toBe(72);
+  expect(fetcher.mock.calls).toHaveLength(requests);Context.latest.currentTime+=1;e.play('ui.forge.hammer');expect(Context.latest.sources).toHaveLength(3);
+ });
+ it('keeps each authored layer variant pool and avoids a second envelope at the slow pitch boundary',async()=>{
+  shippedForge();const e=new AudioEngine(()=>0);await e.unlock();await e.preload('home');const ramp=vi.spyOn(Param.prototype,'linearRampToValueAtTime');
+  for(let n=0;n<6;n++){e.play('ui.forge.hammer',{pitch:.25});Context.latest.currentTime+=1;}
+  expect(Context.latest.sources).toHaveLength(6);expect(ramp).not.toHaveBeenCalled();
+  for(const index of [0,1])expect(new Set(e.hits.map(h=>h.layers?.[index]?.variantId)).size).toBe(6);
+  for(const source of Context.latest.sources){const [,,duration]=source.start.mock.calls[0]!;expect(duration/source.playbackRate.value).toBeLessThanOrEqual(.3+1e-9);}
+ });
  it.each([false,true])('uses a pack-selected MP3 first and retains WebM fallback (MP3 unavailable: %s)',async unavailable=>{
   const m={...fixture,packs:{test:{webm:'/test.webm',mp3:'/test.mp3',preferredFormat:'mp3' as const}}};
   const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:!(unavailable&&url.endsWith('.mp3')),arrayBuffer:async()=>new ArrayBuffer(8)});

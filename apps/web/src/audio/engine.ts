@@ -1,5 +1,5 @@
 import type {AudioBridge,CueOptions} from '../game/cardrpg/contracts/audio-cues';
-import {BUS_NAMES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
+import {BUS_NAMES,CUE_ALIASES,resolveCue,resolveDesign,voiceProfiles,type AudioManifest,type Bus,type Sample,type LayerEq,type CueDesign} from './cues';
 import {calloutForCast,voiceCallout,voiceUnit,VOICE_CALLOUTS} from './callouts';
 import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 import {installUiFeedback} from './feedback';
@@ -7,6 +7,27 @@ import {rangedPacksForRoster} from './ranged-packs';
 
 const KEY='tbh-audio-v3';
 const defaults:Record<Bus,number>={master:.7,music:.55,ambience:.3,sfx:.8,voice:.7,ui:.6};
+/** Shared by live playback and native forge preparation; no bus processing is baked. */
+function sourceGraph(ctx:BaseAudioContext,output:AudioNode,id:string,buffer:AudioBuffer,s:Sample,rate:number,volume:number,delay:number,eq:LayerEq,at:number){
+ const source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffer;source.playbackRate.value=rate;gain.gain.value=volume;
+ const sourceDuration=!s.loop&&(id.startsWith('ui.')||id.startsWith('tx.'))?Math.min(s.duration,Math.max(0,.3-delay)*rate):s.duration;
+ const now=at+delay,duration=sourceDuration/rate;source.connect(gain);
+ let filter:BiquadFilterNode|undefined;
+ if(eq!=='flat'){
+  filter=ctx.createBiquadFilter();filter.type=eq==='low-shelf-180'?'lowshelf':'highpass';
+  filter.frequency.value=eq==='low-shelf-180'?180:eq==='high-pass-1800'?1800:80;filter.Q.value=.7;filter.gain.value=eq==='low-shelf-180'?3:0;
+  gain.connect(filter).connect(output);
+ }else gain.connect(output);
+ if(s.loop){source.loop=true;source.loopStart=s.start;source.loopEnd=s.start+s.duration;}
+ else if(!s.enveloped){
+  const movement=id.startsWith('move.'),attack=Math.min(movement ? .035 : .003,duration*.3),release=Math.min(movement ? .04 : .015,duration*.3);
+  gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
+  gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
+ }
+ return {source,gain,filter,begin:()=>s.loop?source.start(now,s.start):source.start(now,s.start,sourceDuration)};
+}
+const nativePairKey=(samples:Sample[])=>JSON.stringify(samples.map(s=>[s.pack,s.start,s.duration]));
+interface NativeForgeTake {buffer:AudioBuffer;sample:Sample;}
 interface Playing {
  id:string; source:AudioBufferSourceNode; gain:GainNode; filter?:BiquadFilterNode;
  bus:Bus; priority:number; group:number; baseRate:number; ended:boolean; ducking:boolean;
@@ -22,6 +43,8 @@ export class AudioEngine implements AudioBridge {
  private voiceBody?:BiquadFilterNode;
  private buffers=new Map<string,Promise<AudioBuffer>>(); private manifest?:Promise<AudioManifest>;
  private decoded=new Map<string,AudioBuffer>(); private decodedManifest?:AudioManifest;
+ private forgePreparation?:Promise<void>;
+ private nativeForge=new Map<string,Map<string,NativeForgeTake>>();
  private sourceStarts:number[]=[];
  private voiceUnits:string[]=[];
  private rangedPacks:readonly string[]=rangedPacksForRoster();
@@ -41,7 +64,7 @@ export class AudioEngine implements AudioBridge {
  }
  get ready(){return this.ctx?.state==='running';}
  get settings(){return {...this.preferences};}
- get diagnostics(){return {active:this.active.size,sfx:this.count('sfx'),voice:this.count('voice'),packs:[...this.buffers.keys()]};}
+ get diagnostics(){return {active:this.active.size,sfx:this.count('sfx'),voice:this.count('voice'),packs:[...this.buffers.keys()],forgeVariants:[...this.nativeForge.values()].reduce((n,takes)=>n+takes.size,0)};}
  private count(bus:Bus){let count=0;for(const p of this.active)if(p.bus===bus)count++;return count;}
  private remember(){try{localStorage.setItem(KEY,JSON.stringify({...this.preferences,muted:this.muted}));}catch{/* storage optional */}if(typeof window!=='undefined')window.dispatchEvent(new Event('audio:changed'));}
  async unlock(){
@@ -96,7 +119,35 @@ export class AudioEngine implements AudioBridge {
    const menuPacks=screen==='home'?['voice.guide.idle','voice.mochi.gear','voice.mochi.forge'].flatMap(id=>(m.cues[id]??[]).map(s=>s.pack)):[];
    const ids=[...(screen==='battle'||screen==='boss'?['b2-hits','b2-motion','b2-magic',...rangedPacks]:menuPacks),'b2-ui','b2-ui-baked','v4-receipt',...(musicPack?[musicPack]:[])];
    await Promise.all([...new Set(ids)].filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));
+   if(screen==='home')await this.prepareForge(m);
   }catch{/* playback can retry */}
+ }
+ private prepareForge(m:AudioManifest):Promise<void>{
+  if(!this.ctx||typeof OfflineAudioContext==='undefined')return Promise.resolve();
+  return this.forgePreparation??=this.renderForge(m).catch(error=>{this.forgePreparation=undefined;throw error;});
+ }
+ private async renderForge(m:AudioManifest){
+  const prepared=new Map<string,Map<string,NativeForgeTake>>(),rate=this.ctx!.sampleRate;
+  for(const id of ['ui.forge.hammer','ui.forge.success']){
+   const design=resolveDesign(id,m);
+   if(!design||design.bus!=='ui'||design.baked||design.layers.length!==2||design.layers.some(l=>!l.variants.length||l.variants.some(s=>s.loop)))return;
+   const packs=[...new Set(design.layers.flatMap(l=>l.variants.map(s=>s.pack)))];
+   const buffers=new Map(await Promise.all(packs.map(async pack=>[pack,await this.buffer(pack,m)] as const))),takes=new Map<string,NativeForgeTake>();
+   for(const first of design.layers[0]!.variants)for(const second of design.layers[1]!.variants){
+    const samples=[first,second],channels=Math.max(...samples.map(s=>buffers.get(s.pack)!.numberOfChannels));
+    const length=Math.ceil((Math.max(...samples.map((s,i)=>s.duration+design.layers[i]!.offsetMs/1000))+.012)*rate);
+    const offline=new OfflineAudioContext(channels,length,rate);
+    for(const [i,sample] of samples.entries()){
+     const layer=design.layers[i]!;
+     sourceGraph(offline,offline.destination,id,buffers.get(sample.pack)!,sample,1,dbGain(layer.gainDb),layer.offsetMs/1000,layer.eq,0).begin();
+    }
+    const buffer=await offline.startRendering(),key=nativePairKey(samples);
+    takes.set(key,{buffer,sample:{pack:'native-forge',start:0,duration:buffer.duration,bus:'ui',enveloped:true,variantId:key}});
+   }
+   prepared.set(id,takes);
+  }
+  // Publish both complete sets together. A failed preparation leaves original layers usable.
+  this.nativeForge=prepared;
  }
  async preloadVoices(actors:readonly string[]){
   this.voiceUnits=[...new Set(actors.map(voiceUnit).filter((id):id is string=>!!id))];
@@ -199,8 +250,9 @@ export class AudioEngine implements AudioBridge {
    const requiredUltimate=voiceCallout(id)?.kind==='ultimate';
    if(bus==='voice'&&!requiredUltimate&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
    if(bus==='ambience'){this.ambience(id);return;}
-   const count=design?.baked?1:design?.layers.length??1;
-   const offsets=design&&!design.baked?design.layers.map(l=>l.offsetMs/1000):[0];
+   const native=this.nativeForge.get(CUE_ALIASES[id]??id);
+   const count=native||design?.baked?1:design?.layers.length??1;
+   const offsets=design&&!design.baked&&!native?design.layers.map(l=>l.offsetMs/1000):[0];
    const at=this.reserveStarts(offsets);
    if(at===undefined){this.record(id,'rate-limit');return;}
    if(!this.admit(bus,count,priority)){this.sourceStarts.splice(-offsets.length);this.record(id,'limit');return;}
@@ -210,7 +262,13 @@ export class AudioEngine implements AudioBridge {
    // Balance repeated movement beneath the strike and the spoken line.
    const cueTrimDb=bus==='voice'?(['music.battle','music.boss','music.forge','music.home'].includes(this.bedIds.music)?5:3):bus==='sfx'?(id.startsWith('move.')?-7:-4):id==='ui.hover'?6:0;
    const volume=(Number.isFinite(opts.volume)?Math.max(0,Math.min(2,opts.volume!)):1)*dbGain(cueTrimDb);
-   if(design?.baked){
+   if(native&&design){
+    // Keep each original variant pool; only pitch/gain variation is shared by the pair.
+    const samples=design.layers.map(layer=>this.pools.next(`${id}/${layer.role}`,layer.variants,s=>s.variantId??`${s.pack}:${s.start}`));
+    const take=native.get(nativePairKey(samples))!,pitch=userPitch*between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
+    this.start(id,take.buffer,take.sample,priority,pitch,volume*dbGain(gainDb),0,'flat',group,at,design.ducking);
+    played.push(...design.layers.map((l,i)=>({role:l.role,variantId:samples[i]!.variantId??`${samples[i]!.pack}:${samples[i]!.start}`,offsetMs:l.offsetMs,pitch,gainDb:l.gainDb+gainDb+cueTrimDb})));
+   }else if(design?.baked){
     const chosen=this.pools.next(`${id}/baked`,design.baked,v=>v.sample.variantId??`${v.sample.pack}:${v.sample.start}`),pitch=between(design.pitchRange,this.random),gainDb=between(design.gainRange,this.random);
     this.start(id,loaded.get(chosen.sample.pack)!,chosen.sample,priority,userPitch*pitch,volume*dbGain(gainDb),0,'flat',group,at,design.ducking);
     played.push(...chosen.layers.map(l=>({...l,pitch:userPitch*pitch,gainDb:gainDb+cueTrimDb})));
@@ -264,31 +322,11 @@ export class AudioEngine implements AudioBridge {
   }
  }
  private start(id:string,buffer:AudioBuffer,s:Sample,priority:number,baseRate:number,volume:number,delay:number,eq:LayerEq,group:number,at=this.ctx!.currentTime,ducking=false){
-  const ctx=this.ctx!,source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffer;
-  const rate=baseRate*(s.bus==='sfx'?this.rate:1);source.playbackRate.value=rate;gain.gain.value=volume;
-  // Primary interface feedback ends within 300 ms, including layer offset and pitch.
-  const sourceDuration=!s.loop&&(id.startsWith('ui.')||id.startsWith('tx.'))?Math.min(s.duration,Math.max(0,.3-delay)*rate):s.duration;
-  const now=at+delay,duration=sourceDuration/rate;source.connect(gain);
-  let filter:BiquadFilterNode|undefined;
-  if(eq!=='flat'){
-   filter=ctx.createBiquadFilter();filter.type=eq==='low-shelf-180'?'lowshelf':'highpass';
-   filter.frequency.value=eq==='low-shelf-180'?180:eq==='high-pass-1800'?1800:80;filter.Q.value=.7;filter.gain.value=eq==='low-shelf-180'?3:0;
-   gain.connect(filter).connect(this.buses.get(s.bus)!);
-  }else gain.connect(this.buses.get(s.bus)!);
+  const rate=baseRate*(s.bus==='sfx'?this.rate:1);
+  const {source,gain,filter,begin}=sourceGraph(this.ctx!,this.buses.get(s.bus)!,id,buffer,s,rate,volume,delay,eq,at);
   const p:Playing={id,source,gain,filter,bus:s.bus,priority,group,baseRate,ended:false,ducking:ducking||s.bus==='voice'||id.startsWith('ult.')};this.active.add(p);
   source.onended=()=>this.end(p,false);
-  if(s.loop){source.loop=true;source.loopStart=s.start;source.loopEnd=s.start+s.duration;source.start(now,s.start);}
-  else{
-   const movement=id.startsWith('move.');
-   const attack=Math.min(movement ? .035 : .003,duration*.3),release=Math.min(movement ? .04 : .015,duration*.3);
-   // LEARN/S11-receipts.md: rendered receipt layers retain their individual
-   // attack/release envelopes. Applying another envelope changes the chime.
-   if(!s.enveloped){
-    gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(volume,now+attack);
-    gain.gain.setValueAtTime(volume,now+duration-release);gain.gain.linearRampToValueAtTime(0,now+duration);
-   }
-   source.start(now,s.start,sourceDuration);
-  }
+  begin();
   if(p.ducking)this.duckMusic();
   return p;
  }

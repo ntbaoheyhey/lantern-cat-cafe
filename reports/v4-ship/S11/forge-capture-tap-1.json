@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-17T01:47:15.671Z",
+  "harness": {
+    "path": "tools/v4ship-lab/audio/forge-capture-tap-study.mjs",
+    "sha256": "2ca8f8a616bab21ef8adfdcf74c3e7fa0ed8d88cb68f145c15abd1ce5db33c0c"
+  },
+  "original": {
+    "path": "scripts/audio/capture-page.mjs",
+    "sha256": "c63ece34c4fad00870763ae27403557aaa3c307da501b61aca04637628f3463f"
+  },
+  "guardedSha256": "eee1156456b466c83ea47303a116cf92e8bb704abcac70600a2ca25a3704bd36",
+  "rows": [
+    {
+      "method": "original",
+      "offlineRendered": false,
+      "offlineError": "TypeError: this.context.createMediaStreamDestination is not a function",
+      "maximumSampleError": null,
+      "offlineMs": 0.4000000059604645,
+      "capture": {
+        "path": "work/v4ship-audio/forge-capture-tap-1/original.webm",
+        "bytes": 10274,
+        "sha256": "0ebb1e5427131493e2ebab330d6c77562e75d3bf737f0ec4dbace0386ade6c1a"
+      }
+    },
+    {
+      "method": "live-context-guard",
+      "offlineRendered": true,
+      "offlineError": null,
+      "maximumSampleError": 0,
+      "offlineMs": 5.399999998509884,
+      "capture": {
+        "path": "work/v4ship-audio/forge-capture-tap-1/live-context-guard.webm",
+        "bytes": 7731,
+        "sha256": "ef0dad0a49383d39e28a7f6080e780971e415b6a54420aa8ebb37676abe26a96"
+      }
+    }
+  ],
+  "originalFailurePreserved": true,
+  "liveRecordingBoth": true,
+  "offlineExactWithGuard": true,
+  "acousticGateThresholdsChanged": false
+}
