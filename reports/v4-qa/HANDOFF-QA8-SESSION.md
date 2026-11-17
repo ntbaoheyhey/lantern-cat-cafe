@@ -1,0 +1,18 @@
+# QA-8 session handoff — 2026-11-17T03:05:48.950666+00:00
+USER STOP: Owner requested “lưu handoff và dừng”. This chat must stop after saving/pushing this handoff; do not resume without a new instruction.
+SCOPE: /Users/bao/taskbar-hero-qa, branch codex/v4-qa-2026-11-17. Product/SHIP files were read only. This is a separate review from the active “q&a” chat, which owns the main QA queue and Q3 jobs.
+LAST VERIFIED PUSH before this handoff: 0a87f5dd00b7ce7346da9ac2aa5909aa06ff0f74. The handoff commit/push is recorded in work/v4qa/qa8-handoff-last-push.txt after success.
+PRESERVATION: c570950e6 saved existing Q3 WIP. The concurrent q&a checkpoint 7dc332d21 also preserved this session's QA-8 harness, LEARN note and JSON results. Commit0a87f5dd0 added the final candidate verdict and updated QA findings/status.
+QA-8 VERDICT: review finished; finding remains OPEN on committed SHIP da3323ba9ce10ababc5519511d40dc9592febfe3. SHIP calculator/API/runbook changes are still uncommitted; no fixed release/build was established.
+INDEPENDENT EVIDENCE: Q2/QA8-CANDIDATE-REVIEW.md, Q2/qa8-candidate-preflight-1.json, LEARN/QA-8-recheck.md, tools/v4qa/sponsor-preflight-review.mjs.
+RESULTS: all14 CLI cases passed, including1.075AVAX rejection, exact1.2084 one-run and1.4252 three-run boundaries, pending obligations, funded wallets and malformed inputs. Candidate hashes remained unchanged during the run.
+CAST BRIDGE: installed Cast1.8.6 balance/gas-price outputs fed the actual candidate CLI successfully via isolated read-only mock RPC6204. Only eth_getBalance/eth_gasPrice were requested; the server closed afterward.
+LIMITS: operator preflight only, no whole-journey reservation. Backend drip/SQL unchanged. Existing quotas remain3wallets/IP/day and50/day; three fresh same-IP runs cannot fit. No new UI journey, public transaction or production verdict.
+CLOSURE: after a SHIP commit exists, independently check the committed CLI/runbook, low-balance visible error, adequately funded positive journey and receipts/rollback on an owned local fixture. State pending/quota assumptions. Do not call uncommitted candidate checks a closed finding.
+OWN JOBS: PID43224 resume checkpoint,46423 candidate review and49243 review checkpoint all verified finished at this stop. No own ongoing fixture or browser.
+OTHER CHAT: q&a id01a1e70f-46af-7792-97ee-bcc3e955a456 was actively doing Q3. Its snapshot supervisor42832 and any children belong to that chat; not stopped or modified here. Shared HANDOFF-QA.md/QUEUE-QA.md were not taken over.
+SHARED WIP AT STOP: reports/v4-qa/Q3/snapshot-rehearsal.json is modified by the existing Q3 job; leave it to the q&a checkpoint. Commit only this handoff file for this stop.
+COORDINATION: optional question about dividing the shared QA queue had no answer before the stop. No authorization to take over or stop the other chat was inferred.
+Q6 READ-ONLY PREPARATION: newest film work/v4ship-prep/S10-edit-3/preparation.mp4 is169.833333s,1280x720,9,314,863bytes with audio. No frames inspected or Q6 verdict/report created. Correct content paths are docs/v4/SLIDES-CONTENT.md, VIDEO-SCRIPT.md and JUDGING-MAP.md. Contest facts are reports/v4-ship/CONTEST-FACTS.md.
+FUTURE RESUME: first inspect status and RULES-QA/HANDOFF-QA; establish which chat owns the queue before shared edits or new jobs. Preserve existing WIP. Do not restart Q3 or rerun closed unchanged-target checks.
+NO PRODUCT MUTATIONS: no image generation, deployment, contract edit, public-chain write, secrets, main merge or other-lane report edit occurred in this review.
