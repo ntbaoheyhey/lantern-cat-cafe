@@ -1,9 +1,10 @@
-# AGV HANDOFF (REV 6)
-ACTIVE: G-A (texture regen for low-score units), G-C (image diet)
-NEXT 1: G-A - clover-decal regeneration (in progress)
-NEXT 2: G-A - panko-anticipation regeneration
-NEXT 3: G-C - ask CXI for top-15 list
-SELF-WAKE: AGV wake, every 15 min, created 2026-11-17T12:20Z
-LAST PUSHED SHA: 8b9068637
-LAST RULES RE-READ: 2026-11-17T12:21Z
-ORDER SHASUM: cdc119dd03b7eb4a936c9a66abcdc16eaf322329b79d341ce90537ca64ea0d56
+ACTIVE: Orienting (STEP 1)
+NEXT 1: Read INBOX-AGV.md, BOARD.md, USER.md, LEARN/INDEX.md
+NEXT 2: Commit+Push WIP
+NEXT 3: Start oldest open TASK or B1
+Running PIDs: None
+TASKs: None open
+Last Pushed SHA: 2669796ee
+Wake Task ID: task-6
+RULES Re-read: 2026-11-17T13:58:15Z
+Order SHA: 21b1ad7f73a9945b13853af9d3ba294c7f4824763117993a32677a92d0a67d21
