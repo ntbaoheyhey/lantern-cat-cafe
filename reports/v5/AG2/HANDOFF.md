@@ -1,8 +1,8 @@
 # AG2 HANDOFF (REV 3)
-ACTIVE: Q8 Act on CXV/CXI/AG1 review REQs in INBOX-AG2.md
-NEXT 1: read INBOX-AG2.md, verify all REQs have ACK and DONE
-NEXT 2: apply REFILL RULE (append F1-F3 from REFILL LIST)
-NEXT 3: execute F1 Crit variants per hero (4x4 sheets)
-LAST PUSHED SHA: 6725f67ff
-IMAGE BUDGET USED: 12 generated sheets
-LAST RE-READ UTC: 2026-11-17T06:05:00Z
+ACTIVE: F2 Shield / buff aura loops 4x4 per hero class (60 min)
+NEXT 1: node tools/v5tex/gen-auras.mjs && node tools/v5tex/check.mjs
+NEXT 2: composite aura effects in reports/v5/AG2/comp/ and score G1-G5
+NEXT 3: F3 Status effects: poison, burn, stun, slow loops 3x3
+LAST PUSHED SHA: e447c8af4
+IMAGE BUDGET USED: 12 generated sheets (procedural pipeline active)
+LAST RE-READ UTC: 2026-11-17T06:07:00Z

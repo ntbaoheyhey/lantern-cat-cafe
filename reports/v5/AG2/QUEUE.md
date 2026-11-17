@@ -7,4 +7,7 @@
 - [x] Q5 Panko full set [time box 75 min]
 - [x] Q6 Ultimates: ult-charge + ult-release per hero [time box 2 h]
 - [x] Q7 Yarn-giant boss: swirl, shockwave, crack, sparks x3, dissolve [time box 2 h]
-- [/] Q8 Act on CXV/CXI/AG1 review REQs in INBOX-AG2.md [time box 60 min]
+- [x] Q8 Act on CXV/CXI/AG1 review REQs in INBOX-AG2.md [time box 60 min]
+- [x] F1 Crit variants per hero (brighter core, extra sparks) [time box 45 min]
+- [/] F2 Shield / buff aura loops 4x4 per hero class [time box 60 min]
+- [ ] F3 Status effects: poison, burn, stun, slow loops 3x3 [time box 60 min]

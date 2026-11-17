@@ -51,3 +51,7 @@
 | `enemy-hit-spark-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
 | `enemy-hit-spark-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
 | `enemy-death-dissolve` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/yarn-giant-charge-swirl.jpg | PASS |
+| `mochi-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/mochi-crit-burst.jpg | PASS |
+| `soot-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/soot-crit-burst.jpg | PASS |
+| `clover-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/clover-crit-burst.jpg | PASS |
+| `panko-crit-burst` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-crit-burst.jpg | PASS |
