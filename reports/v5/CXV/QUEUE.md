@@ -28,5 +28,7 @@
 - [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
 - [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
 - [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.
+- [x] V-D clover-particle-1 fresh reviewV6:composite3/3/1/2/4,runtime3/3/3/2/4; revision/no new approval; V6-REVIEW-CLOVER-PARTICLE-1.md.
+- [x] CXI12:27 lantern-requiem loader-only scope ACK/granted; material/draw/motion preserved, CXI owns implementation/check.
 - [x] CANCELLED obsolete REV4 timeboxes/refill quota/print-proof card: V6 prioritizes visible quality and current assignments over bookkeeping.
 - [x] CANCELLED extra FPS/audio/secret audit/repository-export work: no visible judge benefit and V6 explicitly excludes it.
