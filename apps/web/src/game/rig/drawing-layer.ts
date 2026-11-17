@@ -45,7 +45,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const m=set.manifest;
   super(new T.PlaneGeometry(m.canvas[0],m.canvas[1],32,32),new T.MeshBasicMaterial({map:set.textures.K0,
    transparent:true,side:T.DoubleSide,forceSinglePass:true,depthTest:false,depthWrite:false,toneMapped:false}));
-  usePaintedAtlasColor(this.material,false);this.expression=drawingExpression(this.material);
+  usePaintedAtlasColor(this.material,false);this.expression=drawingExpression(this.material,m.unit);
   this.secondary=new SecondaryMotion(m.unit);this.seekMotion=new SecondaryMotion(m.unit);this.overlapValues=new Float32Array(Math.max(0,...Object.values(m.poses).map(f=>f.overlap?.length??0)));
   this.name=`${m.unit} drawn keys`;this.frustumCulled=false;
   this.source=Float32Array.from(this.geometry.attributes.position!.array);this.sample('idle',0,false);
@@ -64,7 +64,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   this.faceDepth.sample(this.secondary.turn,this.secondary.nod);
   const overlaps=this.frame.overlap??NO_OVERLAP;
   for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
-  this.expression.sample(this.frame.face,m.canvas,eyeClosure(this.secondary.leftBlink,this.secondary.leftSoftness),eyeClosure(this.secondary.rightBlink,this.secondary.rightSoftness));
+  this.expression.sample(this.frame.face,m.canvas,eyeClosure(this.secondary.leftBlink,this.secondary.leftSoftness),eyeClosure(this.secondary.rightBlink,this.secondary.rightSoftness),this.key);
   for(let i=0;i<positions.count;i++){
    this.vertex[0]=this.source[i*3]!+m.canvas[0]/2;this.vertex[1]=m.canvas[1]/2-this.source[i*3+1]!;
    const point=this.point(this.vertex,this.key,undefined,this.output);

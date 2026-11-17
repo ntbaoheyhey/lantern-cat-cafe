@@ -22,11 +22,15 @@ try{
    return {id,owner:e.asset,offset,index,onset:fidgetStart(d.secondary.seed,index)-offset,clip:{x,y,width:Math.min(1280-x,Math.ceil(b.width+72)),height:Math.min(720-y,Math.ceil(b.height+60))}};
   });
  });
+ // The fixture can arrive during the real 900ms DOM wave intro. Let it finish
+ // before measuring onset frames; do not hide or modify product UI for evidence.
+ await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
+ report.waveIntroCleared=await page.locator('.b3-wave-intro').count()===0;
  for(const actor of actors.filter(a=>!process.env.CXV_HEROES||process.env.CXV_HEROES.split(',').includes(a.owner))){
   const dir=resolve(out,actor.owner);await mkdir(dir,{recursive:true});const samples=[];
   for(const [i,age]of [0,.2,.4,.6].entries()){
    samples.push(await page.evaluate(({id,time})=>{
-    const s=window.__depthScene;s.render({...s.view(),frame:null,fixedTime:time,paused:true,galleryPreview:true},0);
+    const s=window.__depthScene;s.phaseNoticeAt=-100;s.render({...s.view(),frame:null,fixedTime:time,paused:true,galleryPreview:true},0);
     const d=s.actors.get(id).craftPose.drawing,[fx,fy,fw,fh]=d.frame.face;
     const point=(x,y)=>{const p=d.point([x,y]);return s.screen(d.localToWorld(s.scratch.clone().set(p.x,p.y,0)));};
     return {worldTime:time,clock:d.secondary.clock,fidgetAge:d.secondary.fidgetAge,kind:d.secondary.fidgetKind,yawDegrees:d.faceDepth.yaw,pitchDegrees:d.faceDepth.pitch,leftSoftness:d.secondary.leftSoftness,rightSoftness:d.secondary.rightSoftness,blink:d.secondary.leftBlink,feet:d.contactPoints(),face:{left:point(fx,fy+fh*.52),right:point(fx+fw,fy+fh*.52),nose:point(fx+fw*.6,fy+fh*.64)}};

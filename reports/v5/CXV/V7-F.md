@@ -18,3 +18,5 @@ Lower wave3 Spool Ram/Kettle Knight feet moved.94→.86stageheight. Core-box/por
 
 Validation:22focused tests passed across Yarn,sequence,ground-impact,opaque-bounds,stage-layout; web typecheck EXIT0 after fixing test mock overload annotation. Own fresh normal/reduced Yarn sheets15:23:53/15:24:18UTC plus wave3 15:23:23UTC,zeroerrors,1024px review sheets inspected once. Runtime source81ef11fb4+patch6aab6eda8157665b1348ed5e048517a08302166f3f157f8da8cff505978a1c33 with untracked test hashes in reports. Candidate URL http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1.
 Evidence /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-{final-normal,final-reduced,coverage-r2,performance-before,performance-after,performance-cache,profile}/. No production acceptance claimed.
+
+Independent CXI acceptance15:35UTC: integrated01f6fa17e,37combined focused checks/build0 and7fresh production sheets/0errors. Reduced victory0pixelchange, Ram/Knight lower overlap0, Yarnclear1760ms. 4xCPU longframes27→0,p95frame83.3→33.4ms,p99CPUsubmit107.9→20.4ms. Latest green remainsm1.6 until blink repair/full pipeline; these are local production candidate results.

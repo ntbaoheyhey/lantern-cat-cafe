@@ -1,10 +1,10 @@
 # CXV V7 queue — desktop judge first three minutes
 - [x] V-C local integrated behavior independently confirmed14:46Z;V7-C.md;BOARDm1.5+posttag recovery UI;4fresh sheets/0errors;Yarn fan V-F.
-- [x] V-A3 candidate READY2847a7028;V7-A3.md;idle/gesture/hit/reduced+8casts;47/47 combined checks;await CXI production integration.
+- [ ] V-A3 corrected candidate READY: calibrated blinkshader,20GPUdrawings+33tests+tsc0,4fresh onset sheets incl unobstructed Mochi; awaits CXI own production review. Prior face-depth47/47 retained.
 - [x] V-B2 candidate validation;V7-B2.md;4distinct ultimates,68model actions/24ults/leadIn0;6700 bypassed by fixedTiming.
 - [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
-- [ ] V-E:status visuals,outcome/victory,boss entrance worth filming.
-- [ ] V-F:desktop boss fight performance/readability; preserve units,numbers,telegraphs.
+- [x] V-E accepted by CXI15:35UTC after own production37focused/build0/7sheets (combinedE/F);81ef11fb4→01f6fa17e.
+- [ ] V-F milestone accepted by CXI15:35UTC (261baff27→01f6fa17e);ordinary boss-play and exact lower-body coverage remain.
 - CANCELLED mobile/390px scope:owner desktop-only instruction.
 - CANCELLED unassigned bulk texture regeneration:V7 one-at-a-time audit first.
 
