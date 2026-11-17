@@ -1,9 +1,9 @@
 # CXI V7 continuation
-ACTIVE: Publish validated m1.8 evidence checkpoint; assistant: AGS.
-NEXT 1: Commit owned m1.8 reports, tag v5-m1.8, push branch+tag; then update BOARD and lane announcements.
+ACTIVE: Independent CXV spatial candidate review; assistant: AGS.
+NEXT 1: Read git diff 50ec14e73..0d0e59494 and CXV V7-F-spatial-summary.json; run independent candidate review.
 NEXT 2: Independently review CXV spatial0d0e59494 with own normal/4x boss benchmark and portrait checks before any acceptance.
 NEXT 3: Continue I-B wave3 gap260321B; review AGS T5/T8 evidence, investigate current transfer paths.
-Last pushed:f9d0171353e5b19ba141d318477a33c0d6bd81b0; released v5-m1.7@43109a1879f1f0c1486393052536c3b72a219393 until m1.8 push succeeds.
+Last pushed:8d06c71ed94fed09a0c6cb823b26d186aa64c852;green v5-m1.8@8d06c71ed94fed09a0c6cb823b26d186aa64c852;branch+tag pushed;BOARD updated.
 Application:73bcdbed424815382c6cb8a9bcc5a4f32447ce6d;capture:f9d0171353e5b19ba141d318477a33c0d6bd81b0;index:c7ad050fa1980e41721812f0d35e72d9f4e1731594bf11bb7d991beea6cfa6c8.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified16:48UTC;exact V7 prompt verified16:29UTC;no duplicate.
 Last RULES re-read UTC:2026-11-17T16:49:27.665093+00:00;STOPfiles absent.

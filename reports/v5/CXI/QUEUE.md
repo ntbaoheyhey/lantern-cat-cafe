@@ -1,5 +1,5 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: m1.8 application73bcdbed4 validated; release commit/tag/push next. Audio500 exact encoded/PCM pairs; scalar14focused+own play; final5steps and3films pass.
+I-A DONE/REPEAT: v5-m1.8@8d06c71ed pushed; application73bcdbed4 validated. Audio500 exact encoded/PCM pairs; scalar14focused+own play; final5steps and3films pass.
 I-B OPEN: m1.8 cold7696760/8260321/7774452B;wave3FAIL260321B,boss225548Bheadroom. Lossless transport accepted;AGS T5fourbeds REDO/T8sixfoecallouts remain open.
 I-C FIRST-HIT DONE:21131ms incl17700reading8cards,damage46,zeroerrors;route9558ms. Ordinary guest story retained.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
