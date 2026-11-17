@@ -39,6 +39,8 @@ try{
    else await page.getByText('This is taking longer than expected.',{exact:true}).waitFor({timeout:15000});
    row.recoveryMs=Math.round(performance.now()-start);assert(row.intercepted.length>0);
    row.recoveryText=await page.locator('.uv-sheet-content').innerText();assert(await page.getByRole('button',{name:'Reload page',exact:true}).isVisible());
+   row.controls=await page.getByRole('button',{name:/^(Reload page|Back to café)$/}).evaluateAll(buttons=>buttons.map(button=>{const b=button.getBoundingClientRect();return{name:button.textContent,x:b.x,y:b.y,width:b.width,height:b.height,inViewport:b.x>=0&&b.y>=0&&b.right<=innerWidth&&b.bottom<=innerHeight};}));
+   assert.equal(row.controls.length,2);assert(row.controls.every(button=>button.inViewport),'Both recovery controls must be visible without scrolling');
    row.sheet=resolve(dir,mode+'-1024.jpg');await sharp(await page.screenshot()).resize({width:1024}).jpeg({quality:82}).toFile(row.sheet);
    await page.getByRole('button',{name:'Back to café',exact:true}).click();await page.locator('.uv-sheet').waitFor({state:'hidden'});assert(await page.locator('.uv-patrol').isVisible());row.returnedToCafe=true;
    inject=false;release();

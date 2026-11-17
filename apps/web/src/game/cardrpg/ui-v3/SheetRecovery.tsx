@@ -20,5 +20,6 @@ export class SheetBoundary extends Component<RecoveryProps&{children:ReactNode},
 export function SheetLoading({title,onClose,illustrated}:{illustrated:boolean}&RecoveryProps){
  const [slow,setSlow]=useState(false);
  useEffect(()=>{const timer=window.setTimeout(()=>setSlow(true),8000);return()=>window.clearTimeout(timer);},[]);
- return <>{illustrated?<OpeningA6 message={`Opening ${title}…`}/>:<p role="status">Opening {title}…</p>}{slow&&<section className="uv-detail" role="status"><p>This is taking longer than expected.</p><RecoveryActions onClose={onClose}/></section>}</>;
+ if(slow)return <section className="uv-detail" role="status"><h2>Opening {title}…</h2><p>This is taking longer than expected.</p><RecoveryActions onClose={onClose}/></section>;
+ return illustrated?<OpeningA6 message={`Opening ${title}…`}/>:<p role="status">Opening {title}…</p>;
 }

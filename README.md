@@ -2,7 +2,7 @@
 
 A cosy desktop card RPG: arrange a four-cat crew, defend a lantern-lit café, collect gear and improve your team. Mochi and Panko guard the front, Soot attacks from range, and Clover heals. Optional Avalanche Fuji services add collectible ownership, trading and verifiable transaction receipts.
 
-**Current integration:** `codex/v5-int-2026-11-17`. [Current green tag and work state](reports/v5/CXI/HANDOFF.md) · [Desktop evidence](reports/v5/CXI/I-C.md) · [Architecture](docs/ARCHITECTURE.md) · [Owner deployment and Fuji proof](reports/v5/CXI/NEEDS-USER-VI.md).
+**Current integration:** `codex/v5-int-2026-11-17`. [Current green tag and work state](reports/v5/CXI/HANDOFF.md) · [Desktop evidence](reports/v5/CXI/I-C.md) · [Local review footage](reports/v5/CXI/REVIEW-VI.md) · [Architecture](docs/ARCHITECTURE.md) · [Owner deployment and Fuji proof](reports/v5/CXI/NEEDS-USER-VI.md).
 
 **Judge URL:** [Open the desktop production preview](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). This URL works on the preview host after the steps below. A public deployment of the current green tag has not yet been verified; the owner runbook describes how to publish it.
 
@@ -27,7 +27,7 @@ Use Node 24 (see `.nvmrc`) and pnpm 10.28.0. The frontend demo needs no wallet, 
 
 3. Open the judge URL above on desktop. Choose **Play free → Fight → Fight**, finish the short battle guide, then welcome your free cat. Follow the guide to level up a cat and start a patrol. The result shows your route points and gear. The visible speed button cycles 1×, 2× and 3×.
 
-The bare host also opens this game. `?legacy=1` explicitly opens the older shell. The demo stores campaign progress in the browser; the URL does not enable chain services. To develop locally, use `pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 6300 --strictPort`.
+Use the complete judge URL above for review. `?legacy=1` explicitly opens the older shell. The demo stores campaign progress in the browser; the URL does not enable chain services. To develop locally, use `pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 6300 --strictPort`.
 
 ## Where Avalanche is used
 
@@ -76,7 +76,7 @@ node --test tools/v5int/fuji-proof-kit.test.mjs
 
 Root `pnpm test` includes the workspace web tests. Contract tests are a separate read-only check: after installing Foundry and initializing submodules with `git submodule update --init --recursive`, run `forge test --root contracts`.
 
-The [desktop evidence record](reports/v5/CXI/I-C.md) separates passing suites, synthetic receipt presentation and real frontend play. Fresh cold combat entries measured **8.74–9.31 MB**, above the 8 MB target. The first practice invitation appears in about 9.35 seconds. The full guest journey through one normal level-up and the first patrol took **70.15 seconds at 3×** (66.3 seconds without the level-up), so the 30-second patrol target remains open. These local measurements do not establish public network performance.
+The [desktop evidence record](reports/v5/CXI/I-C.md) separates passing suites, fixture review and ordinary guest play. On **v5-m1.5**, the first visible enemy HP decrease occurs in **20.849 seconds**, including 17.7 seconds to read all eight tutorial cards; no saved progress, tutorial skipping or speed change was used. This passes the 30-second first-hit target. Earlier 66–70-second measurements timed the complete patrol receipt. Cold combat entries remain **8.584 / 9.145 / 8.659 MB** for wave1/wave3/boss, all above 8 MB. Three local 30-second review films show real 1× gameplay with actual browser audio; they use labelled battle fixtures. These local results establish neither public network performance nor a real Fuji transaction.
 
 The [owner runbook](reports/v5/CXI/NEEDS-USER-VI.md) contains the isolated Anvil dry-run and explicit, environment-gated Fuji funding command. It also pins the green release for deployment. No private key is an input to that proof kit.
 
