@@ -14,8 +14,8 @@ R1 refill pending: Merge all new READY, suite, next tag, BOARD + INFO; at least 
 R2 refill pending: Fix AGS / historical AG1 owned-code QA findings by severity.
 R3 BLOCKED-ON AGS B2 context/source metadata correction 2026-11-17T08:32:30Z:264 variant IDs collide across original pack/bus contexts; focused61pass/3fail, originals retained where unproven.
 R4 refill pending: Wire AGV / historical AG3 AVIF siblings with >20% savings vs WebP.
-R5 active 2026-11-17T08:32:30Z:FeelLab focused passed; final build/transfer pending; first split JS1319090->1169022 bytes.
-R6 refill pending: Exclude never-referenced assets from build using AGV / historical AG3 unused report.
+R5 DONE 2026-11-17T08:39:16Z cfce3804d: scoped loader splits+disposal tested,build0;JS1319090->1112059;reports/v5/CXI/R5.md.
+R6 active 2026-11-17T08:39:16Z:independently verified13 unused cinematic posters; exclude output only. Reject active sampled-delivery CSV false positives.
 R7 refill pending: 390px receipt clarity: tx, fee, payer, explorer.
 R8 refill pending: Three indicative cold guest-battle-receipt timing runs under30s.
 R9 refill pending: Friendly wallet-missing/RPC-down/sponsor-low states; no console errors.
