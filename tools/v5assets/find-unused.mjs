@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const rootDir = "/Users/bao/th-v5-ag3";
+const rootDir = process.cwd();
 
 function getAllFiles(dir, exts) {
   let res = [];
@@ -29,7 +29,7 @@ const scannables = srcFiles.concat(pubJsonFiles).map(f => ({
 
 console.log(`Scanning against ${scannables.length} files...`);
 
-const invLines = fs.readFileSync(path.join(rootDir, "reports/v5/AG3/inventory.csv"), "utf8").split("\n").slice(1).filter(Boolean);
+const invLines = fs.readFileSync(path.join(rootDir, "reports/v5/AGV/inventory.csv"), "utf8").split("\n").slice(1).filter(Boolean);
 
 const genericStems = new Set([
   "icon", "base", "depth", "page", "frame", "thumb", "small", "large", 
@@ -111,7 +111,7 @@ const csvRows = classified.map(c =>
   `${c.path},${c.folder},${c.bytes},${c.w},${c.h},${c.alpha},${c.status},${c.tier},${c.matchFile}`
 ).join("\n");
 
-fs.writeFileSync(path.join(rootDir, "reports/v5/AG3/R4-unused.csv"), csvHeader + csvRows + "\n");
+fs.writeFileSync(path.join(rootDir, "reports/v5/AGV/unused.csv"), csvHeader + csvRows + "\n");
 
 // Summary statistics
 const totalFiles = classified.length;
@@ -183,7 +183,7 @@ unrefList.slice(0, 25).forEach((u, i) => {
 md += `\n## Recommendations for CXI\n\n`;
 md += `1. **Verify \`rig-page-0.png\` Requirement**: Confirm whether the 3D depth shader ever requires the diffuse color rig page. If not, removing or archiving them immediately eliminates 26.88 MB of redundant assets.\n`;
 md += `2. **Cinematics Pruning**: If in-game video cinematics are postponed past V5 milestone builds, the 13 poster WebPs (and accompanying MP4/WebMs) can be safely excluded from the web bundle.\n`;
-md += `3. **Full Reference CSV**: See [R4-unused.csv](file:///Users/bao/th-v5-ag3/reports/v5/AG3/R4-unused.csv) for the exhaustive file-by-file classification.\n`;
+md += `3. **Full Reference CSV**: See [unused.csv](file:///Users/bao/th-v5-ag2/reports/v5/AGV/unused.csv) for the exhaustive file-by-file classification.\n`;
 
-fs.writeFileSync(path.join(rootDir, "reports/v5/AG3/R4-unused.md"), md);
-console.log("R4 report and CSV written successfully.");
+fs.writeFileSync(path.join(rootDir, "reports/v5/AGV/UNUSED-IMAGES-REPORT.md"), md);
+console.log("R6 unused report and CSV written successfully.");
