@@ -1,7 +1,7 @@
-ACTIVE: T-CXI-5 REDO (Residual Beds).
+ACTIVE: T-CXI-1 (QA).
 NEXT 1: T-CXI-7, T-CXI-1 (QA) [BLOCKED].
 PIDs: None.
-Open TASKS: T-CXI-5 REDO, T-CXI-7, T-CXI-1 [BLOCKED].
+Open TASKS: T-CXI-5 REDO, T-CXI-1 \[BLOCKED\].
 Last Pushed SHA: 890b78fa1.
 Wake ID: task-3.
 Last RULES re-read: 2026-11-18T00:00 UTC.
