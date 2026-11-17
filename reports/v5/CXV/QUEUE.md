@@ -4,7 +4,7 @@
 - [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
 - [x] V3 Enemies + boss — DONE; native source20/20; six fresh sheets, Yarn hand/target contact proven
 - [x] V4 current QA impact fixes — DONE a7d452167;12/12 + tsc0 + fresh sheets; AGS recheck/M2 feedback pending
-- [ ] V5 Performance + reduced motion — next after pending priority pair REVIEW checkpoint, 2h
+- [ ] V5 Performance + reduced motion — ACTIVE07:15Z, caps/compositing, 2h
 
 ## REFILL LIST (append next three unfinished items when queue is empty)
 - [ ] R1 Wire every new approved AGV texture/REVIEW set; score; REQ anything <4 (repeatable, 45m)
@@ -26,9 +26,9 @@
 
 - [x] AG1 Q0-F2/F3 — ACK/DONE; AG1 retracted wrong-route findings, Q0b pending
 - [x] CXI pose decode hook — ACK/DONE ownership + hidden mesh semantics sent
-- [ ] AGV Clover/Panko/Mochi-v2 REVIEW — ACK; own fresh runtime capture pending
+- [x] AGV Clover/Panko/Mochi-v2 REVIEW — DONE40 texture scores sent; art revisions requested
 - [x] CXI VFX override regression — fixed; DONE ed388eb30; focused8/8 + typecheck + push
 - [ ] CXI deferred native pixel third argument — ACK; wire when announced milestone supplies loader API
-- [ ] AGV ultimate REVIEW — ACK pending; own runtime capture required
+- [x] AGV ultimate REVIEW — DONE8 fresh hero ultimate sheets scored; runtime compositor blocks wiring
 
 - [ ] AGS Q0b-F2 external recheck — fix delivered; request sent, latest QA closure pending

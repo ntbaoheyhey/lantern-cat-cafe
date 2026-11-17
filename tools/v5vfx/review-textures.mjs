@@ -13,7 +13,7 @@ if(!entries.length)throw Error('No textures in '+set);
 await mkdir(out,{recursive:true});
 const report={started:new Date().toISOString(),runtimeCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
  assetCommit:execFileSync('git',['-C',assetRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),set,
- method:'16 samples per texture. Left: production V5SkillPlayer at actual idle battle sockets in isolated proxy timeline. Right: same texture at full alpha over a fresh battle-frame composite, half dimmed. Uses manifest blend; no production manifest wiring or approval implied.',textures:[]};
+ method:'16 samples per texture. Left: actual DOM screenshot of production effect and blend canvases at idle battle sockets in isolated proxy timeline. Right: same texture at full alpha over a fresh battle-frame composite, half dimmed. Uses manifest blend; no production manifest wiring or approval implied.',textures:[]};
 const files=new Map(),hashes={};
 for(const [id,spec]of entries){const path=resolve(assetRoot,spec.file);if(!path.startsWith(assetRoot+'/'))throw Error('Invalid asset path');const data=await readFile(path);files.set(id,data);hashes[id]=createHash('sha256').update(data).digest('hex');}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
@@ -31,7 +31,7 @@ try{
    const f=pilotFixture(owner+'-1'),m=window.__depthReview,s=window.__depthScene;
    m.galleryBattle=f.battle;m.plan=null;m.galleryId=owner+'-1';m.animationAt=0;m.paused=true;m.sceneStarted=true;m.labOpen=false;m.notify(false);cancelAnimationFrame(s.raf);s.ensureActors(s.view());
    const image=new Image();image.src='/__cxv_texture__/'+encodeURIComponent(id);await image.decode();clearV5Textures();
-   if(!registerV5Texture(id,{image,width:image.naturalWidth,height:image.naturalHeight,cols:spec.cols,rows:spec.rows,frameMs:spec.frameMs}))throw Error('Invalid texture geometry '+id);
+   if(!registerV5Texture(id,{image,width:image.naturalWidth,height:image.naturalHeight,cols:spec.cols,rows:spec.rows,frameMs:spec.frameMs,blend:spec.blend==='add'?'add':spec.blend==='screen'?'screen':'normal'}))throw Error('Invalid texture geometry '+id);
    const animated=spec.cols*spec.rows>1,particle=id.includes('particle')||id.startsWith('util-');
    const anchor=spec.anchor==='ground'?'ground':spec.anchor==='caster'?'caster':'target';
    const shape=id.includes('decal')?'decal':particle?'mote':id.includes('anticipation')||id.includes('charge')?'charge':id.includes('slash')?'slash':id.includes('projectile')?'projectile':'burst';
@@ -49,19 +49,22 @@ try{
   for(let i=0;i<16;i++){
    const audit=await page.evaluate(i=>{
     const s=window.__depthScene,r=window.__cxvTextureReview,progress=(i+.5)/16,ms=progress*800;cancelAnimationFrame(s.raf);s.render({...s.view(),frame:null,fixedTime:20+progress,paused:true},0);
-    const c=r.layer.getContext('2d');c.clearRect(0,0,r.layer.width,r.layer.height);const view={...s.view(),frame:r.sampleActionPlan(r.plan,ms,false),reducedMotion:false};s.effects.timeline.render(c,view);
+    const view={...s.view(),frame:r.sampleActionPlan(r.plan,ms,false),reducedMotion:false};s.effects.render(view,20+progress,s.width,s.height,[],true);
     const recipient=r.anchor==='caster'?r.plan.actorId:r.plan.targetIds[0];
     const point=s.socket(recipient,r.anchor==='ground'?'feet':r.anchor==='caster'?'mainHand':'vfxOrigin')??{x:s.width/2,y:s.height/2};
     const q=r.card.getContext('2d'),size=300,x=Math.max(0,Math.min(s.width-size,point.x-size/2)),y=Math.max(0,Math.min(s.height-size,point.y-size/2));
     q.globalCompositeOperation='source-over';q.globalAlpha=1;q.fillStyle='#21182d';q.fillRect(0,0,760,380);
-    q.drawImage(s.renderer.domElement,x,y,size,size,20,48,320,320);q.drawImage(r.layer,x,y,size,size,20,48,320,320);
+    q.drawImage(s.renderer.domElement,x,y,size,size,20,48,320,320);
     q.drawImage(s.renderer.domElement,x,y,size,size,420,48,320,320);q.fillStyle='#07091599';q.fillRect(420,48,160,320);
     const frame=Math.min(r.spec.cols*r.spec.rows-1,Math.floor(progress*r.spec.cols*r.spec.rows)),fw=r.image.naturalWidth/r.spec.cols,fh=r.image.naturalHeight/r.spec.rows;
     q.globalCompositeOperation=r.spec.blend==='add'?'lighter':r.spec.blend==='screen'?'screen':'source-over';
     const w=240,h=w*fh/fw;q.drawImage(r.image,frame%r.spec.cols*fw,Math.floor(frame/r.spec.cols)*fh,fw,fh,580-w/2,208-h/2,w,h);
     q.globalCompositeOperation='source-over';q.fillStyle='#fff4d8';q.font='15px monospace';q.fillText(r.id+' | '+(i+1)+'/16 | frame '+frame,12,21);q.font='13px monospace';q.fillText('Runtime at '+r.anchor+' socket',20,42);q.fillText('Fresh composite / full alpha',420,42);
-    return {ms,frame,textured:s.effects.timeline.audit.textured,timeline:s.effects.timeline.audit.id,phase:s.effects.timeline.audit.phase,point};
+    const bounds=s.renderer.domElement.getBoundingClientRect();r.card.style.visibility='hidden';
+    return {ms,frame,textured:s.effects.timeline.audit.textured,timeline:s.effects.timeline.audit.id,phase:s.effects.timeline.audit.phase,point,clip:{x:Math.round(bounds.x+x),y:Math.round(bounds.y+y),width:size,height:size},blends:s.effects.blendLayers.passes.filter(p=>p.active).map(p=>getComputedStyle(p.canvas).mixBlendMode)};
    },i);
+   const live=await page.screenshot({clip:audit.clip});
+   await page.evaluate(async src=>{const r=window.__cxvTextureReview,im=new Image();im.src=src;await im.decode();r.card.getContext('2d').drawImage(im,20,48,320,320);r.card.style.visibility='visible';},'data:image/png;base64,'+live.toString('base64'));
    await page.locator('[data-cxv-texture-review]').screenshot({path:resolve(dir,'frame-'+String(i).padStart(2,'0')+'.png')});samples.push(audit);
   }
   const sheet=resolve(out,id+'.jpg');execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-framerate','6','-i',resolve(dir,'frame-%02d.png'),'-vf','scale=480:-1,tile=4x4','-frames:v','1','-q:v','4',sheet]);

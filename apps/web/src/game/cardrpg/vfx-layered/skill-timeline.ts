@@ -1,5 +1,6 @@
 /** V5 timing is independent of texture availability and uses the rules action clock. */
 import {PAINT} from '../spine/style';
+import {SKILL_MAX_COUNT, SKILL_MAX_LAYERS} from './skill-budget';
 export type SkillBeat = 'anticipation' | 'impact' | 'dissipation';
 export type SkillShape = 'charge' | 'slash' | 'projectile' | 'flash' | 'burst' | 'mote' | 'decal';
 export interface SkillLayer {
@@ -40,12 +41,13 @@ const heroes = [
 export function validateSkillTimeline(timeline: SkillTimeline): SkillTimeline {
   const ids = new Set<string>();
   let previous = -Infinity, end = 0;
+  if (timeline.layers.length > SKILL_MAX_LAYERS) throw Error(`Too many skill layers: ${timeline.id}`);
   if (!Number.isFinite(timeline.impactMs) || timeline.impactMs <= 0 ||
       timeline.hitStopMs < 40 || timeline.hitStopMs > 80) throw Error(`Invalid skill timing: ${timeline.id}`);
   for (const layer of timeline.layers) {
     if (ids.has(layer.id) || layer.startMs < previous || layer.startMs < 0 || layer.durationMs <= 0 ||
         ![layer.startMs, layer.durationMs, layer.alpha, layer.size, layer.count].every(Number.isFinite) ||
-        layer.alpha < 0 || layer.alpha > 1 || layer.size <= 0 || !Number.isInteger(layer.count) || layer.count < 1 ||
+        layer.alpha < 0 || layer.alpha > 1 || layer.size <= 0 || !Number.isInteger(layer.count) || layer.count < 1 || layer.count > SKILL_MAX_COUNT ||
         layer.startMs + layer.durationMs > timeline.durationMs) throw Error(`Invalid skill layer: ${timeline.id}/${layer.id}`);
     ids.add(layer.id); previous = layer.startMs; end = Math.max(end, layer.startMs + layer.durationMs);
     if (layer.beat === 'anticipation' && (layer.durationMs < 120 || layer.durationMs > 250 ||

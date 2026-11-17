@@ -6,25 +6,35 @@ import {PAINT} from '../spine/style';
 import {getV5Timeline, getV5Texture, paintedTargets} from '../spine/vfx-registry';
 import {sampleSkillLayer, type SkillLayerSample} from './skill-timeline';
 import {v5TextureRect, type V5TextureRect} from './skill-textures';
+import {SKILL_BUDGETS, SKILL_MAX_COUNT, SKILL_MAX_LAYERS} from './skill-budget';
+import type {SkillBlendLayers} from './skill-blend-layers';
 
 /** Shares the existing effect canvas, socket resolver, stamps and final face masks. */
 export class V5SkillPlayer {
-  readonly audit = {id: '', phase: '', draws: 0, particles: 0, textured: 0, impactMs: 0, layers: [] as string[]};
+  readonly audit = {id: '', phase: '', draws: 0, particles: 0, textured: 0, dropped: 0, impactMs: 0, layers: [] as string[]};
   private sample: SkillLayerSample = {progress: 0, eased: 0, alpha: 0, scale: 1, rotation: 0};
   private rect: V5TextureRect = {x: 0, y: 0, width: 0, height: 0};
   private targets: string[] = [];
   private plan: EffectPlan | undefined;
+  private checkedPlan: EffectPlan | undefined;
+  private handled = false;
   constructor(private socket: ResolveSocket, private stamps: PaintedStamps) {}
 
   handles(plan: EffectPlan): boolean {
-    return !!getV5Timeline(plan.presentationId ?? plan.skillId) && plan.events.some(e => e.type === 'action_start');
+    if (this.checkedPlan !== plan) {
+      this.checkedPlan = plan; this.handled = false;
+      for (const event of plan.events) if (event.type === 'action_start') { this.handled = true; break; }
+    }
+    return this.handled && !!getV5Timeline(plan.presentationId ?? plan.skillId);
   }
 
-  render(c: CanvasRenderingContext2D, view: SceneView, enabled = true): void {
+  clear(): void { this.plan = this.checkedPlan = undefined; this.targets.length = 0; }
+
+  render(base: CanvasRenderingContext2D, view: SceneView, enabled = true, blends?: SkillBlendLayers): void {
     const a = this.audit;
-    a.id = ''; a.phase = ''; a.draws = 0; a.particles = 0; a.textured = 0; a.layers.length = 0;
+    a.id = ''; a.phase = ''; a.draws = 0; a.particles = 0; a.textured = 0; a.dropped = 0; a.layers.length = 0;
     const frame = view.frame;
-    if (!enabled || !frame || !this.handles(frame.plan)) return;
+    if (!enabled || !frame || !this.handles(frame.plan)) { this.clear(); return; }
     const plan = frame.plan, timeline = getV5Timeline(plan.presentationId ?? plan.skillId)!;
     const impact = plan.beats[2]!.start, at = frame.elapsed - impact + timeline.impactMs;
     a.id = timeline.id; a.impactMs = impact;
@@ -39,9 +49,13 @@ export class V5SkillPlayer {
     const source = this.socket(plan.actorId, 'mainHand');
     if (!source) return;
     const sample = this.sample, rect = this.rect;
-    for (const layer of timeline.layers) {
+    const budget = view.reducedMotion ? SKILL_BUDGETS.reduced : view.quality === 'low' ? SKILL_BUDGETS.low : SKILL_BUDGETS.high;
+    for (let l = 0; l < Math.min(timeline.layers.length, SKILL_MAX_LAYERS); l++) {
+      const layer = timeline.layers[l]!;
       if (!sampleSkillLayer(layer, at, view.reducedMotion, sample) || sample.alpha <= 0) continue;
       const texture = layer.shape === 'flash' ? undefined : getV5Texture(layer.texture);
+      const blend = texture?.blend ?? layer.blend;
+      const c = texture && blends && blend !== 'normal' ? blends.context(blend) : base;
       const glyph = layer.shape === 'charge' || layer.shape === 'decal' ? 'ring' :
         layer.shape === 'flash' ? 'spark' : layer.shape === 'slash' ? 'arc' : timeline.motif;
       const stamp = texture ? undefined : this.stamps.get(glyph, layer.shape === 'flash' ? PAINT.cream : timeline.color);
@@ -55,8 +69,12 @@ export class V5SkillPlayer {
         const feet = this.socket(id, 'feet'), head = this.socket(id, 'head');
         if (!point || !feet || !head) continue;
         const unit = Math.max(1, Math.abs(feet.y - head.y) / .77);
-        const count = view.reducedMotion ? Math.min(layer.count, 3) : layer.count;
-        for (let i = 0; i < count; i++) {
+        const count = Number.isFinite(layer.count) ? Math.max(0, Math.min(SKILL_MAX_COUNT, Math.floor(layer.count))) : 0;
+        const requested = view.reducedMotion ? Math.min(count, 3) : count;
+        const allowed = Math.max(0, Math.min(requested, budget.draws - a.draws,
+          layer.shape === 'mote' ? budget.motes - a.particles : budget.draws));
+        a.dropped += requested - allowed + (count !== layer.count ? 1 : 0);
+        for (let i = 0; i < allowed; i++) {
           let x = point.x, y = point.y;
           const angle = i * 2.399963 + (timeline.owner === 'soot' ? .4 : 0);
           if (layer.shape === 'projectile' || layer.shape === 'slash') {
@@ -72,7 +90,7 @@ export class V5SkillPlayer {
           }
           const extent = unit * layer.size * sample.scale;
           c.save(); c.globalAlpha = sample.alpha;
-          c.globalCompositeOperation = layer.blend === 'add' ? 'lighter' : layer.blend === 'screen' ? 'screen' : 'source-over';
+          c.globalCompositeOperation = blend === 'add' ? 'lighter' : blend === 'screen' ? 'screen' : 'source-over';
           c.translate(x, y); c.rotate(sample.rotation + (layer.shape === 'mote' ? angle : 0));
           if (layer.anchor === 'ground') c.scale(1, .28);
           if (texture) {
