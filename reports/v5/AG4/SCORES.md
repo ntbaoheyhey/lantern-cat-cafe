@@ -65,3 +65,23 @@ All current cues score >= 4 across all 5 dimensions (Quality Gate Passed).
 | `enemy.hit.light.var2` | 5 | 4 | 5 | 5 | 4 | 4 | PASS | Muffled tick (-3%), -20.2 LUFS, -2.8 dBTP |
 | `enemy.hit.medium.var1` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Mid-frequency punch knock (+3%), -18.1 LUFS, -2.0 dBTP |
 | `enemy.hit.medium.var2` | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Deep wooden knock (-3%), -17.7 LUFS, -2.2 dBTP |
+
+## 144 Ranged Impact Variants (Per-Element Cuts)
+| Cue Set | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `ranged.ember.impact` (36 variants) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Cut from v4-ranged-ember.webm, exact durations 0.64-1.03s |
+| `ranged.heavy.impact` (36 variants) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Cut from v4-ranged-heavy.webm, exact durations 0.82-1.16s |
+| `ranged.shadow.impact` (36 variants) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Cut from v4-ranged-shadow.webm, exact durations 0.73-0.88s |
+| `ranged.tide.impact` (36 variants) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Cut from v4-ranged-tide.webm, exact durations 0.44-0.74s |
+
+## Cat Voice Hit & Death Slices (16 Cues)
+| Cue ID | S1 | S2 | S3 | S4 | S5 | Min | Status | Notes |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| `voice.mochi.hit` (2 takes) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Plush cat yelp, -17.5 LUFS avg, 1.51-1.55s |
+| `voice.mochi.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Soft deflating mew, -18.2 LUFS avg, 1.27-1.30s |
+| `voice.soot.hit` (2 takes) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Feisty kitten hiss-yelp, -17.8 LUFS avg, 0.93-0.95s |
+| `voice.soot.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Ember sigh mew, -18.0 LUFS avg, 1.13-1.16s |
+| `voice.clover.hit` (2 takes) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Gentle bell-toned yelp, -17.2 LUFS avg, 1.59-1.63s |
+| `voice.clover.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Soft fluttering purr-mew, -18.5 LUFS avg, 1.59-1.63s |
+| `voice.panko.hit` (2 takes) | 5 | 5 | 5 | 5 | 5 | 5 | PASS | Crumbly surprised squeak, -17.6 LUFS avg, 1.21-1.24s |
+| `voice.panko.death` (2 takes) | 4 | 5 | 5 | 5 | 5 | 4 | PASS | Sleepy breadloaf mew, -18.1 LUFS avg, 1.45-1.48s |

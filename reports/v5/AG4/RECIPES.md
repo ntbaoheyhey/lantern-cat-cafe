@@ -290,3 +290,27 @@ Target loudness: -18.0 LUFS +/- 2 LU. Measured spread: -20.2 to -16.5 LUFS (avg 
     - Body: `aevalsrc=exprs='0.95*sin(2*PI*(126-53*(t/0.103))*t)*exp(-t/0.036)':s=48000:d=0.103` (delay 9ms)
     - Tail: `anoisesrc=c=pink:r=48000:d=0.29,bandpass=f=582:w=400,volume=0.28,afade=t=out:st=0.03:d=0.26` (delay 16ms)
     - Measured: -17.7 LUFS, peak -2.2 dBFS, size 2,655 B, dur 0.40s.
+
+## U2 & CXI Revision: 144 Ranged Impact Variants (Complete Per-Element Slices)
+- Source files: `apps/web/public/audio/v4-ranged-{ember,heavy,shadow,tide}.webm` (CC0-1.0 in LICENSES.json).
+- Extraction tool: `tools/v5audio/cut_ranged_and_voices.mjs` using exact `sample.start` and `sample.duration` from `apps/web/public/audio/manifest.json`.
+- Output: 144 `.opus` (WebM container, 48kHz mono, 48k) + 144 `.m4a` (AAC LC, 64k) in `apps/web/public/audio/v5/legacy/`.
+- Element breakdown:
+  1. `ember`: 36 variants (`ranged.ember.impact/0-0` to `5-5`), start 0.000s to 31.051s, durations 0.64s to 1.03s.
+  2. `heavy`: 36 variants (`ranged.heavy.impact/0-0` to `5-5`), start 0.000s to 35.888s, durations 0.82s to 1.16s.
+  3. `shadow`: 36 variants (`ranged.shadow.impact/0-0` to `5-5`), start 0.000s to 30.228s, durations 0.73s to 0.88s.
+  4. `tide`: 36 variants (`ranged.tide.impact/0-0` to `5-5`), start 0.000s to 25.568s, durations 0.44s to 0.74s.
+- Total sizes: Opus 695.4 KB, M4A 891.0 KB (Combined 1.58 MB vs original 3.0 MB monolith + 2.0 MB individual packs = 68% total saving).
+- Mapping report: `reports/v5/AG4/RANGED-144-MAPPING.json` and `reports/v5/AG4/RANGED-144-REPORT.csv`.
+
+## CXI Revision: Cat Voice Hit & Death Slices (16 Cues)
+- Source files: `apps/web/public/audio/cat-{mochi,soot,clover,panko}.webm` (LICENSES.json).
+- Extraction tool: `tools/v5audio/cut_ranged_and_voices.mjs` using exact `start` and `duration` offsets from `apps/web/public/audio/manifest.json`.
+- Output: 16 `.opus` + 16 `.m4a` files in `apps/web/public/audio/v5/voice/`.
+- Slices:
+  1. `mochi`: hit 1-1 (15.98s, 1.51s), hit 1-2 (17.57s, 1.55s), death 1-1 (19.20s, 1.27s), death 1-2 (20.55s, 1.30s).
+  2. `soot`: hit 1-1 (14.53s, 0.93s), hit 1-2 (15.54s, 0.95s), death 1-1 (16.57s, 1.13s), death 1-2 (17.79s, 1.16s).
+  3. `clover`: hit 1-1 (15.28s, 1.59s), hit 1-2 (16.95s, 1.63s), death 1-1 (18.67s, 1.59s), death 1-2 (20.34s, 1.63s).
+  4. `panko`: hit 1-1 (14.12s, 1.21s), hit 1-2 (15.41s, 1.24s), death 1-1 (16.73s, 1.45s), death 1-2 (18.26s, 1.48s).
+- Total sizes: Opus 161.2 KB, M4A 181.5 KB (Replaces 919 KB whole cat voice packs for battle entry = 82% saving).
+- Mapping report: `reports/v5/AG4/VOICE-CUTS-MAPPING.json` and `reports/v5/AG4/VOICE-CUTS-REPORT.csv`.
