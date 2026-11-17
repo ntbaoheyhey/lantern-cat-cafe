@@ -1,0 +1,227 @@
+{
+  "utc": "2026-11-17T22:14:56.183Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "033a28d5e00451bcda3e6fc2d18eceda02ff6f2ecb74c838ff07ddd1723f448e",
+  "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-17T22:12:18.761Z",
+  "ended": "2026-11-17T22:14:06.764Z",
+  "method": "Unchanged baseline production artifact. Browser-only wrapper parks every RAF callback, later resumes those callbacks. Test whether page-idle composition can reproduce the original candidate PNG variant. Freezing all RAF is diagnostic only; not a production proposal or performance test.",
+  "provenance": {
+    "utc": "2026-11-17T22:12:18.408Z",
+    "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+    "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+    "tools": [
+      {
+        "name": "run-victory-idle-composition.mjs",
+        "sha256": "adc9465df5b00530b2150c9196290a7b8974fb83129620200bc1bd605f09cb33"
+      },
+      {
+        "name": "diagnose-victory-idle-composition.mjs",
+        "sha256": "ed4e2841cd377811b6309e04b4346ba28cbdc2de1e2274ad8be91940b8760c39"
+      },
+      {
+        "name": "production-candidate-fixture.mjs",
+        "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+      }
+    ]
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/report.json",
+    "sha256": "b189f7fe35a7cff8cc0714302ab9859b227fd4d48a74a086f5441227524dca89"
+  },
+  "references": {
+    "baselineFullRgb": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+    "variantFullRgb": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+  },
+  "captures": [
+    {
+      "name": "active",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/active.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/active-crew.png",
+      "utc": "2026-11-17T22:12:57.393Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "calls": 2194,
+        "parked": 0,
+        "skipped": 0,
+        "ready": "true",
+        "drawn": "4",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "animations": 0
+      },
+      "width": 1280,
+      "height": 720,
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575,
+      "variant": "original-baseline"
+    },
+    {
+      "name": "frozen-1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/frozen-1.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/frozen-1-crew.png",
+      "utc": "2026-11-17T22:13:29.707Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": true,
+        "calls": 2200,
+        "parked": 1,
+        "skipped": 1,
+        "ready": "true",
+        "drawn": "4",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "animations": 0
+      },
+      "width": 1280,
+      "height": 720,
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575,
+      "variant": "original-baseline"
+    },
+    {
+      "name": "resumed-1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/resumed-1.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/resumed-1-crew.png",
+      "utc": "2026-11-17T22:13:32.041Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "calls": 2334,
+        "parked": 0,
+        "skipped": 1,
+        "ready": "true",
+        "drawn": "4",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "animations": 0
+      },
+      "width": 1280,
+      "height": 720,
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575,
+      "variant": "original-baseline"
+    },
+    {
+      "name": "frozen-2",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/frozen-2.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/frozen-2-crew.png",
+      "utc": "2026-11-17T22:14:04.339Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": true,
+        "calls": 2340,
+        "parked": 1,
+        "skipped": 2,
+        "ready": "true",
+        "drawn": "4",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "animations": 0
+      },
+      "width": 1280,
+      "height": 720,
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575,
+      "variant": "original-baseline"
+    },
+    {
+      "name": "resumed-2",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/resumed-2.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/resumed-2-crew.png",
+      "utc": "2026-11-17T22:14:06.674Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "fullRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "crewRgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "frozen": false,
+        "calls": 2474,
+        "parked": 0,
+        "skipped": 2,
+        "ready": "true",
+        "drawn": "4",
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "animations": 0
+      },
+      "width": 1280,
+      "height": 720,
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575,
+      "variant": "original-baseline"
+    }
+  ],
+  "frozenReproducesOriginalVariant": false,
+  "resumedMatchesOriginalBaseline": true,
+  "initialMatchesOriginalBaseline": true,
+  "pass": true,
+  "sheet": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-idle-composition/review.jpg",
+    "width": 1024,
+    "height": 576,
+    "sha256": "4e172c3df95b26142ccaffcca26224248c0d3fdb66c56afdba3685d22ddd465f",
+    "frames": [
+      "active",
+      "frozen-1",
+      "resumed-1",
+      "frozen-2"
+    ]
+  },
+  "reviewedUtc": "2026-11-17T22:17:38.373129+00:00",
+  "interpretation": "All five baseline full-frame and crew captures are RGB-exact to the original baseline. Two late RAF freezes did not reproduce the original candidate variant. Measured 1024x576 four-panel sheet inspected once: all four heroes, title, receipt, HUD and Next remain clear; no pose or layout change observed. Late idleness is not an established cause. Early loading/composition remains a distinct, untested hypothesis.",
+  "limits": "Freezing all RAF is a diagnostic browser intervention on the baseline. A matching original PNG variant would show that this change can occur without candidate source, but would not locate the exact browser compositing mechanism. No GPU/performance result is inferred from this deliberately paused run."
+}

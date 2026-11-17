@@ -1,0 +1,619 @@
+{
+  "utc": "2026-11-17T22:12:18.199Z",
+  "started": "2026-11-17T22:04:26.820Z",
+  "ended": "2026-11-17T22:11:50.106Z",
+  "source": "53f8c4a17419ab9c7f4f8126bc74b05dea778871",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "buildManifest": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-demand-production/build.json",
+  "buildManifestSha256": "acd12636b8163f9ff9d4bb34e3fad60579c6075e3876f613fe8c49c765a50c9b",
+  "baselineModuleSha256": "82f0b3350de27b80f92f4016ddccd2544ade8de50471131d20848b96211729a6",
+  "candidateModuleSha256": "d1d4c5606fe5f24cf2a095ae59cfa8b267b5af5fe2eb8aaed5479e414f15b479",
+  "snapshots": [
+    {
+      "name": "run-victory-normal-control.mjs",
+      "sha256": "7f845d3313b383297718b49648ec2c7ebcbecbb36d77f598e38afa912440e41c"
+    },
+    {
+      "name": "benchmark-victory-normal-control.mjs",
+      "sha256": "20695815bd4f9c83614bd91c78524ea2f3b5cb47d0a28aeed4294d9cef5bffdb"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "4fb45fd7b13be24935ec9b3ae25e0d4b9ae2088d22fed2e272114089ca27aa11"
+    }
+  ],
+  "order": [
+    "native",
+    "baseline",
+    "baseline",
+    "native",
+    "native",
+    "baseline"
+  ],
+  "durationMs": 32000,
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "comparisons": [
+    {
+      "rate": 1,
+      "baseline": {
+        "trials": [
+          1,
+          2,
+          5
+        ],
+        "taskElapsedMs": [
+          6283.139999999999,
+          4786.084,
+          6470.108
+        ],
+        "scriptElapsedMs": [
+          5512.385,
+          4119.943,
+          5747.273
+        ],
+        "threadCpuMs": [
+          6366.477,
+          4858.83,
+          6545.639
+        ],
+        "processCpuMs": [
+          7761.1449999999995,
+          6238.373,
+          7932.384000000001
+        ],
+        "medianTaskElapsedMs": 6283.139999999999,
+        "medianThreadCpuMs": 6366.477,
+        "medianProcessCpuMs": 7761.1449999999995,
+        "rafP95": [
+          16.700000000004366,
+          16.799999999995634,
+          16.700000000004366
+        ],
+        "rafMax": [
+          16.80000000000291,
+          16.80000000000291,
+          16.80000000000291
+        ],
+        "over33": [
+          0,
+          0,
+          0
+        ],
+        "draws": [
+          7680,
+          7684,
+          7684
+        ]
+      },
+      "native": {
+        "trials": [
+          0,
+          3,
+          4
+        ],
+        "taskElapsedMs": [
+          4603.6630000000005,
+          4784.886,
+          4121.119000000001
+        ],
+        "scriptElapsedMs": [
+          3906.502,
+          4069.61,
+          3504.135
+        ],
+        "threadCpuMs": [
+          4680.651,
+          4864.168000000001,
+          4183.026
+        ],
+        "processCpuMs": [
+          5992.346,
+          6291.892000000001,
+          5241.1449999999995
+        ],
+        "medianTaskElapsedMs": 4603.6630000000005,
+        "medianThreadCpuMs": 4680.651,
+        "medianProcessCpuMs": 5992.346,
+        "rafP95": [
+          16.700000000004366,
+          16.700000000004366,
+          16.700000000004366
+        ],
+        "rafMax": [
+          16.80000000000291,
+          16.80000000000291,
+          16.80000000000291
+        ],
+        "over33": [
+          0,
+          0,
+          0
+        ],
+        "draws": [
+          7684,
+          7684,
+          7680
+        ]
+      },
+      "taskChangePercent": -26.729899381519417,
+      "threadCpuChangePercent": -26.479731254821147,
+      "processCpuChangePercent": -22.79043878190654
+    },
+    {
+      "rate": 4,
+      "baseline": {
+        "trials": [
+          1,
+          2,
+          5
+        ],
+        "taskElapsedMs": [
+          7703.69,
+          7534.854,
+          8105.96
+        ],
+        "scriptElapsedMs": [
+          6101.943,
+          6002.1050000000005,
+          6553.781
+        ],
+        "threadCpuMs": [
+          26314.825000000004,
+          26284.769999999997,
+          26399.661
+        ],
+        "processCpuMs": [
+          27558.309999999998,
+          27547.22,
+          27714.563
+        ],
+        "medianTaskElapsedMs": 7703.69,
+        "medianThreadCpuMs": 26314.825000000004,
+        "medianProcessCpuMs": 27558.309999999998,
+        "rafP95": [
+          16.700000000004366,
+          16.700000000004366,
+          16.799999999999272
+        ],
+        "rafMax": [
+          33.400000000000546,
+          16.80000000000291,
+          33.399999999999636
+        ],
+        "over33": [
+          1,
+          0,
+          0
+        ],
+        "draws": [
+          7680,
+          7680,
+          7676
+        ]
+      },
+      "native": {
+        "trials": [
+          0,
+          3,
+          4
+        ],
+        "taskElapsedMs": [
+          7585.348,
+          7633.079,
+          7674.999
+        ],
+        "scriptElapsedMs": [
+          5989.28,
+          6156.728,
+          6105.384
+        ],
+        "threadCpuMs": [
+          26293.298,
+          26284.141000000003,
+          26329.127
+        ],
+        "processCpuMs": [
+          27513.191,
+          27546.488999999998,
+          27568.825999999997
+        ],
+        "medianTaskElapsedMs": 7633.079,
+        "medianThreadCpuMs": 26293.298,
+        "medianProcessCpuMs": 27546.488999999998,
+        "rafP95": [
+          16.700000000004366,
+          16.799999999999272,
+          16.799999999999272
+        ],
+        "rafMax": [
+          33.399999999999636,
+          16.80000000000291,
+          16.80000000000291
+        ],
+        "over33": [
+          0,
+          0,
+          0
+        ],
+        "draws": [
+          7680,
+          7684,
+          7684
+        ]
+      },
+      "taskChangePercent": -0.9165867266206162,
+      "threadCpuChangePercent": -0.08180559817518862,
+      "processCpuChangePercent": -0.042894502601942275
+    }
+  ],
+  "rows": [
+    {
+      "trial": 0,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:05:04.920Z",
+      "elapsedMs": 32005.80000000447,
+      "taskElapsedMs": 4603.6630000000005,
+      "scriptElapsedMs": 3906.502,
+      "threadCpuMs": 4680.651,
+      "processCpuMs": 5992.346,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/0-native/report.json",
+      "rawSha256": "3e5d078077c2281e4e2b2b235361773408c7238918ff94e8740cf5d46e5ec7d2"
+    },
+    {
+      "trial": 0,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:05:41.482Z",
+      "elapsedMs": 32005,
+      "taskElapsedMs": 7585.348,
+      "scriptElapsedMs": 5989.28,
+      "threadCpuMs": 26293.298,
+      "processCpuMs": 27513.191,
+      "draws": 7680,
+      "raf": {
+        "samples": 1919,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 33.399999999999636,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/0-native/report.json",
+      "rawSha256": "3e5d078077c2281e4e2b2b235361773408c7238918ff94e8740cf5d46e5ec7d2"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:06:18.215Z",
+      "elapsedMs": 32004.5,
+      "taskElapsedMs": 6283.139999999999,
+      "scriptElapsedMs": 5512.385,
+      "threadCpuMs": 6366.477,
+      "processCpuMs": 7761.1449999999995,
+      "draws": 7680,
+      "raf": {
+        "samples": 1919,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/1-baseline/report.json",
+      "rawSha256": "2dced11584c087f9266cd50b1ea99108ac5a73273ddea283fcbb832a7eedd844"
+    },
+    {
+      "trial": 1,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:06:54.832Z",
+      "elapsedMs": 32006,
+      "taskElapsedMs": 7703.69,
+      "scriptElapsedMs": 6101.943,
+      "threadCpuMs": 26314.825000000004,
+      "processCpuMs": 27558.309999999998,
+      "draws": 7680,
+      "raf": {
+        "samples": 1919,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 33.400000000000546,
+        "over33": 1,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/1-baseline/report.json",
+      "rawSha256": "2dced11584c087f9266cd50b1ea99108ac5a73273ddea283fcbb832a7eedd844"
+    },
+    {
+      "trial": 2,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:07:32.593Z",
+      "elapsedMs": 32003.89999999851,
+      "taskElapsedMs": 4786.084,
+      "scriptElapsedMs": 4119.943,
+      "threadCpuMs": 4858.83,
+      "processCpuMs": 6238.373,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.799999999995634,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/2-baseline/report.json",
+      "rawSha256": "25899a93ee166507de6c5baaa4690049cae02655a29c5e3f93f6a53f6c70066c"
+    },
+    {
+      "trial": 2,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:08:09.158Z",
+      "elapsedMs": 32005,
+      "taskElapsedMs": 7534.854,
+      "scriptElapsedMs": 6002.1050000000005,
+      "threadCpuMs": 26284.769999999997,
+      "processCpuMs": 27547.22,
+      "draws": 7680,
+      "raf": {
+        "samples": 1919,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/2-baseline/report.json",
+      "rawSha256": "25899a93ee166507de6c5baaa4690049cae02655a29c5e3f93f6a53f6c70066c"
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:08:45.911Z",
+      "elapsedMs": 32005.19999999553,
+      "taskElapsedMs": 4784.886,
+      "scriptElapsedMs": 4069.61,
+      "threadCpuMs": 4864.168000000001,
+      "processCpuMs": 6291.892000000001,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/3-native/report.json",
+      "rawSha256": "8d9803c77c3198b1d521891dfbb769d5fb8538f9aa3286c7804cd5a1361d89bf"
+    },
+    {
+      "trial": 3,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:09:22.496Z",
+      "elapsedMs": 32006.39999999851,
+      "taskElapsedMs": 7633.079,
+      "scriptElapsedMs": 6156.728,
+      "threadCpuMs": 26284.141000000003,
+      "processCpuMs": 27546.488999999998,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/3-native/report.json",
+      "rawSha256": "8d9803c77c3198b1d521891dfbb769d5fb8538f9aa3286c7804cd5a1361d89bf"
+    },
+    {
+      "trial": 4,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:09:59.715Z",
+      "elapsedMs": 32003.29999999702,
+      "taskElapsedMs": 4121.119000000001,
+      "scriptElapsedMs": 3504.135,
+      "threadCpuMs": 4183.026,
+      "processCpuMs": 5241.1449999999995,
+      "draws": 7680,
+      "raf": {
+        "samples": 1919,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/4-native/report.json",
+      "rawSha256": "2ae57ed15a54c5e4117a7bb7f1929679d0f5727296ff17d6ffdf924ece9715e5"
+    },
+    {
+      "trial": 4,
+      "mode": "native",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:10:36.300Z",
+      "elapsedMs": 32004.89999999851,
+      "taskElapsedMs": 7674.999,
+      "scriptElapsedMs": 6105.384,
+      "threadCpuMs": 26329.127,
+      "processCpuMs": 27568.825999999997,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000291,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/4-native/report.json",
+      "rawSha256": "2ae57ed15a54c5e4117a7bb7f1929679d0f5727296ff17d6ffdf924ece9715e5"
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 1,
+      "utc": "2026-11-17T22:11:13.524Z",
+      "elapsedMs": 32003.60000000149,
+      "taskElapsedMs": 6470.108,
+      "scriptElapsedMs": 5747.273,
+      "threadCpuMs": 6545.639,
+      "processCpuMs": 7932.384000000001,
+      "draws": 7684,
+      "raf": {
+        "samples": 1920,
+        "p50": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/5-baseline/report.json",
+      "rawSha256": "423a70a4c8fd482986db8c41a7683dcc2a16d890d90522bbb6753c7b0c3898c2"
+    },
+    {
+      "trial": 5,
+      "mode": "baseline",
+      "url": "http://127.0.0.1:6311/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "rate": 4,
+      "utc": "2026-11-17T22:11:50.064Z",
+      "elapsedMs": 32002.89999999851,
+      "taskElapsedMs": 8105.96,
+      "scriptElapsedMs": 6553.781,
+      "threadCpuMs": 26399.661,
+      "processCpuMs": 27714.563,
+      "draws": 7676,
+      "raf": {
+        "samples": 1918,
+        "p50": 16.69999999999891,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 33.399999999999636,
+        "over33": 0,
+        "over50": 0
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 32
+      },
+      "browserVersion": "156.0.8078.4",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-normal-control/trials/5-baseline/report.json",
+      "rawSha256": "423a70a4c8fd482986db8c41a7683dcc2a16d890d90522bbb6753c7b0c3898c2"
+    }
+  ],
+  "correctnessPass": true,
+  "limits": "Unmodified preserved local production artifacts; native is the build-time prototype. Normal-first ordering avoids preceding reduced work but does not establish the cause of any difference. ThreadTime and ProcessTime are CPU counters; task/script durations use elapsed timeTicks. RAF cadence measures callbacks, not screen presentation or gameplay FPS. Four-times stress is relative to this host. Three repeats per cell; no statistical-significance claim.",
+  "interpretation": "The reversed normal-first control does not reproduce the initial1x elapsed-task increase:1x median elapsed6283.14\u21924603.66ms and threadCPU6366.48\u21924680.65ms;4x elapsed7703.69\u21927633.08ms and threadCPU26314.83\u219226293.30ms. RAFp95 stays16.7\u201316.8ms,all1x maxima16.8ms and4x maxima33.4ms;no >50ms callbacks. Unthrottled baseline/candidate ranges overlap, sample count is3percell, and first-series direction differs. Do not claim a normal speedup or a proven cause for the earlier variation. Reduced rendering elimination is the intended benefit; normal motion shows no consistent regression across these trials. ThreadCPU measures the whole renderer thread in the throttling environment, not exclusive draw cost.",
+  "initialNormalRegressionReproduced": false,
+  "normalSpeedupClaim": false
+}
