@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-17T01:43:29.793905+00:00",
+  "scope": "Exact staged Git blobs including decompressed gzip contents; generated scan report verified separately. No blanket finding exceptions.",
+  "scanner": "8.30.1",
+  "files": [
+    {
+      "path": "reports/v4-ship/HANDOFF-SHIP.md",
+      "bytes": 6920,
+      "sha256": "bcecc02fd15b58d1bdfc8355d968b25b0b0ddfa7346e4479f35dfbd0122ef215"
+    },
+    {
+      "path": "reports/v4-ship/LEARN/S11-qa-prerequisites.md",
+      "bytes": 4361,
+      "sha256": "e556963cf999f1ce8c4c095219b7082b9fcd9c9b0b3dba76554383fc3537a2da"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-1.json",
+      "bytes": 7684,
+      "sha256": "8d537c79fdf21b83027f895e1aa24dc625d5f8f25134843248701c6a23d5b1ba"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-2.json",
+      "bytes": 7959,
+      "sha256": "796b8400db25bd1bbd2503d303cee939ec01811d988404dcb70715a4a473a754"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-regression-1/check.json",
+      "bytes": 1441,
+      "sha256": "3692c612d1e24a727bdc93189d5deaf12cf828c11ce8acc4622da759acb91ee4"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-regression-1/log.jsonl.gz",
+      "bytes": 16188,
+      "sha256": "03d88d1ea04a7055ef145da718128e92505de5054b5527bfa307679bc5563f8f"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-regression-1/parity-probe.json",
+      "bytes": 150219,
+      "sha256": "e143c710a8e5d2c27bb1d5e681b6ee087da23fe0caaf32e40219ed8535d77fec"
+    },
+    {
+      "path": "reports/v4-ship/S11/qa-prerequisites-review-1.json",
+      "bytes": 1952,
+      "sha256": "3ce3e7ea8530f911aeaa17762722b33a1fbfe71caf9a24193dbccaf56edc65de"
+    },
+    {
+      "path": "reports/v4-ship/STATE-SHIP.md",
+      "bytes": 32454,
+      "sha256": "a2efc3dbefb0e958ad05d02ed613af8bf58c923327245bb2c0951e28d7459832"
+    },
+    {
+      "path": "reports/v4-ship/STATUS-VI.md",
+      "bytes": 4732,
+      "sha256": "33bb23ffc2cbda0ff396f7b472c6f812f8f6758beb1d328823815ef7cd0ac92c"
+    },
+    {
+      "path": "reports/v4-ship/USER-DEPLOY-VI.md",
+      "bytes": 17614,
+      "sha256": "c0abf0f0d65bf0ec531c37fede33b29e8866a857d95ce6d4c45d956427a26a45"
+    },
+    {
+      "path": "tools/v4ship-lab/runbook-prerequisites-review.mjs",
+      "bytes": 3901,
+      "sha256": "209f1a1472181d0ca4d48b3de766d8aefdbe1a88383f1fde2d399fe31cd424ff"
+    },
+    {
+      "path": "tools/v4ship-lab/runbook-prerequisites.mjs",
+      "bytes": 5411,
+      "sha256": "a3fa0f656166fe45355a87ae3e9d848142b08df9793dd133c9a2f0fc3e166918"
+    }
+  ],
+  "expandedGzip": 1,
+  "findings": [
+    {
+      "file": "reports/v4-ship/USER-DEPLOY-VI.md",
+      "line": 160,
+      "type": "generic-api-key",
+      "classification": "unresolved"
+    }
+  ],
+  "unresolved": 1,
+  "pass": false
+}

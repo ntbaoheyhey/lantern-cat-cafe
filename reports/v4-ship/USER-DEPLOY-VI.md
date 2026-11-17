@@ -30,6 +30,22 @@ Tag chỉ được tạo khi freeze ngày 19/11; lệnh hiện tại sẽ chưa 
 
 Supabase project `qoalewtxflagoprrxrgh`. Dùng CLI đã kiểm tra `2.122.0`. Giữ voucher signer/JWT/SIWE/sponsor trong Supabase Secrets; không in giá trị hoặc đưa `.env*` vào Git. Duy trì cùng signer đã đăng ký trên hợp đồng.
 
+Trước migration/deploy, đối chiếu tên trong **Edge Function Secrets** và cấu hình runtime theo bảng dưới. Chỉ ghi nhận đã có/chưa có; bảng không chứa giá trị bí mật. [Supabase cung cấp các biến nền tảng và dành riêng tiền tố `SUPABASE_`](https://supabase.com/docs/guides/functions/secrets); không tự đặt biến mang tiền tố này bằng Secrets. Các khóa legacy mà source đang dùng phải còn khả dụng.
+
+| Tên thiết lập | Phân loại | Điều kiện và vai trò trong source hiện tại |
+|---|---|---|
+| `SUPABASE_URL` | Nền tảng cung cấp; bắt buộc | URL project mà các Edge Function dùng để kết nối dữ liệu. |
+| `SUPABASE_SERVICE_ROLE_KEY` | Nền tảng cung cấp; khóa legacy bắt buộc | Backend dùng để gọi DB/RPC. Giữ ở Edge Functions, không đưa vào client. |
+| `SUPABASE_JWT_SECRET` | Legacy nếu runtime đã cung cấp | Source ưu tiên tên này khi có. Không giả định nó luôn được nền tảng cấp; không tự thêm tên dành riêng vào Secrets. |
+| `AUTH_JWT_SECRET` | Bắt buộc khi thiếu `SUPABASE_JWT_SECRET` | Khóa ký/xác minh session SIWE của ứng dụng. Mọi handler phải dùng cùng khóa hiệu lực; tên này không ghi đè khóa legacy nếu khóa legacy đã có. |
+| `VOUCHER_SIGNER_PRIVATE_KEY` | Bắt buộc cho các hành động chain được bật | Dùng signer hiện có đã được hợp đồng chấp nhận; đồng thời là khóa dự phòng cho guest drip. Không tạo signer mới trong lần triển khai này. |
+| `SPONSOR_PRIVATE_KEY` | Tùy chọn | Khóa sponsor riêng được ưu tiên cho guest drip; nếu thiếu thì dùng `VOUCHER_SIGNER_PRIVATE_KEY`. Đối chiếu địa chỉ công khai và quỹ ở mục4. |
+| `GAME_SEED_SECRET` | Tùy chọn | Khóa seed riêng cho game/v2; nếu thiếu thì dùng khóa JWT hiệu lực ở trên. Giữ cấu hình đang dùng. |
+| `SIWE_DOMAIN` | Bắt buộc; cấu hình công khai | Domain xác minh đăng nhập, khớp host production ở mục4. |
+| `SIWE_ALLOWED_ORIGIN` | Bắt buộc cho luồng trình duyệt; cấu hình công khai | Danh sách origin được phép, phân cách bằng dấu phẩy; thiếu hoặc không khớp thì không có CORS cho origin đó. |
+
+Thứ tự dự phòng được đối chiếu tại [auth](../../supabase/functions/_shared/auth.ts), [game/v2](../../supabase/functions/_shared/v2/server.ts) và [guest drip](../../supabase/functions/guest-drip/index.ts). Các session hiện tại dùng HS256 của ứng dụng; API key không thay thế khóa ký session. Nếu thiếu thiết lập bắt buộc, giữ issuer tắt cho đến khi chủ project hoàn tất cấu hình trong Secrets; không lấy khóa từ log hoặc tài liệu. Đây là kiểm tra điều kiện triển khai, chưa xác nhận giá trị đang có trên hosted project.
+
 ```sh
 (
 set -e
@@ -96,7 +112,11 @@ open work/v3-shell/activate-demo.sql
 
 Trong Secrets đặt đúng `SIWE_DOMAIN=taskbarhero-eight.vercel.app` và `SIWE_ALLOWED_ORIGIN=https://taskbarhero-eight.vercel.app`, hoặc host/origin production thật nếu thay đổi. Kiểm tra proxy/gateway bảo đảm hop cuối `x-forwarded-for` đáng tin trước khi bật guest/judge. Giữ quota 3 ví/IP/ngày và 50 ví/ngày.
 
+Xác nhận các điều kiện ở mục2 trước khi bật backend: khóa JWT hiệu lực dùng chung, `VOUCHER_SIGNER_PRIVATE_KEY` hiện có và sponsor hiệu lực. Guest drip chọn `SPONSOR_PRIVATE_KEY` trước, rồi mới tới `VOUCHER_SIGNER_PRIVATE_KEY`; thiếu cả hai thì trả503. Có sponsor riêng vẫn không thay thế voucher signer cho phần thưởng/hành động chain.
+
 Sponsor đã ghi nhận: **`0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000`**. Số dư tối thiểu cho lượt kế tiếp là **1 AVAX + tổng reservation đang chờ + 0,05 AVAX + 21.000 × gasPrice**. Gửi test AVAX từ Core/Fuji nếu thiếu; kiểm tra chain ID 43113 và địa chỉ trước khi gửi. Số dư đúng 1 AVAX không đủ.
+
+Địa chỉ công khai này phải khớp khóa sponsor hiệu lực. Nếu cấu hình dùng sponsor khác, cập nhật cùng địa chỉ công khai trong cả truy vấn reservation và lệnh kiểm tra số dư dưới đây; không kiểm tra quỹ của địa chỉ cũ rồi bật sponsor mới.
 
 Lấy tổng chờ bằng SQL chỉ đọc:
 
