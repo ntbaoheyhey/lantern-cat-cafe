@@ -2,8 +2,8 @@
 - [x] V0 Learn before build — DONE; report 8c9bd134c
 - [x] V1 Skill VFX timeline system — DONE; 16 timelines, twelve reviewed sheets, tests/typecheck, AG4 cues
 - [x] V2 Live2D-grade secondary motion — DONE; tests18/18, four own sheets, feet0px, shared-machine59.34fps
-- [ ] V3 Enemies + boss — ACTIVE; started 2026-11-17T06:06:29Z, 4h
-- [ ] V4 AGS QA + owner polish — queued, 4h
+- [x] V3 Enemies + boss — DONE; native source20/20; six fresh sheets, Yarn hand/target contact proven
+- [ ] V4 AGS QA + owner polish — ACTIVE 2026-11-17T06:42:03Z; Q0b-F2 and Yarn basic impact
 - [ ] V5 Performance + reduced motion — queued, 2h
 
 ## REFILL LIST (append next three unfinished items when queue is empty)

@@ -1,8 +1,13 @@
-# CXV visual scores
-Scores are out of five. Final gate is NOT complete: V2–V5, full hero/boss scoring and latest AG1 QA are pending.
+# CXV independent effect scores
+Scores 1–5: readability / impact / beauty / motion. Only newly captured current-build evidence qualifies. Blank entries remain unreviewed, never inferred from old producer scores.
 
-| Candidate/evidence | Readability | Impact | Beauty | Motion | Decision |
-| --- | --- | --- | --- | --- | --- |
-| AG2 Mochi REVIEW: T1/mochi-montage.jpg + comp/mochi-impact.jpg | 4 | 4 | 3 | 4 | Revision requested; do not wire yet. Burst/crescent progression reads well, but flat concentric charge/particle/decal primitives clash with the painted setting and Mochi's honey/gold shield identity. Pink burst lacks a shield/cloth motif. |
+| Effect | Readability | Impact | Beauty | Motion | Fresh source / reason |
+|---|---:|---:|---:|---:|---|
+| button-guard hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, native original-paint breakup reads cleanly. |
+| needle-moth hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, wing silhouette and lavender fragments remain clear. |
+| kettle-knight hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, armor flash and brass fragments retain material. |
+| yarn-giant hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, clear hit drawing and woven dissolve. |
+| yarn-giant basic | 4 | 3 | 4 | 4 | V3 07c18407a, arm reaches Panko; local contact punctuation and explicit hit-stop still weak. |
+| yarn-giant ultimate | 4 | 4 | 4 | 4 | V3 07c18407a, rising weave builds before two contacts and settles. |
 
-V1 runtime readability judgments for all twelve sheets are in V1.md. These are separate from approval of newly supplied textures. Full four-axis runtime scores will follow secondary-motion and boss work; no unobserved effect is assigned a passing score.
+Hero basic/skill/ultimate complete independent re-score is pending R10. Texture G1–G5 reviews are separate pair gates and remain pending for legacy AGV requests. Overall DONE gate is NOT met.
