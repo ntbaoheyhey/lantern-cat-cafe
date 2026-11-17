@@ -1,0 +1,11 @@
+# Clover leaf study decision
+
+Runtime selection rejected. The original curled sage leaf is technically sound, but the existing protection mask removes its basic-action contribution completely. In the ultimate, the added detail is subtle within the established foliage and does not materially improve readability or Clover identity at the desktop judge size. Preserve the mask, timings, counts and procedural fallback.
+
+The study ran after the15-minute gate at23:32:11Z. Original source1254px, verified128px lossless export7970B, one static1x1cell, normal/source-over blend;no authored animation claim. Source alpha edge1;ordinary128/256px exports edge0 and one component. Prompt/source hashes remain in GEN-LOG and the study reports.
+
+Native candidate capture23:36:20–23:36:34Z at http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1;source0038fdcad18c96238cbeb8a7d047e42a09979ef4 plus patchf63f6a90d8abeec6a7ea3f9b8d2e12b1d8445b7d80356d037205f0d065b9db2b.32baseline/candidate action pairs,4fresh1024x576paired sheets measured before one review. Actor geometry identical;source-over/CSS normal;no leaf draws outside existing lifetime. Ultimate clears1700ms. Reduced basic is pixel-identical;normal basic differences include unrelated animated HUD/transient content. Zero browser errors/unexpected blocks;local Baloo2 loaded;one expected legacy Google Fonts block recorded. Native registration manually supplied the checked-in candidate asset and is not loader or judge acceptance.
+
+36focused tests across4files and full apps/web typecheck passed for the provisional candidate. Natural-play4alternating trials completed with0browsererrors;all8images measured and4views reviewed once. Seven32s runs reach26actions/6ultimates/171events;final4x baseline25/5/161. Ordered common prefix matches;finalstates differ. Normal steady render medians both2.75ms,4x12.75→12.65ms;these observations establish neither gameplay equivalence nor speedup. Full startup/steady/whole-run/preparation data and both rejected summary-audit assumptions are retained.
+
+Provisional allowlist/test edits restored exactly and only the newly copied production asset removed after hash verification. Original source,128/256exports and all evidence remain under ignored work/v5/CXV/films/V7-D-clover-leaf. No loader request or READY;no production change from this study.

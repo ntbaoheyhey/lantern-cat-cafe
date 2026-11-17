@@ -1,0 +1,615 @@
+{
+  "utc": "2026-11-17T23:38:01.872719+00:00",
+  "status": "REJECT_RUNTIME_SELECTION",
+  "reason": "Technically valid original static leaf, but basic is fully masked and ultimate adds insufficient judge-visible improvement over existing foliage. Preserve protection/timings/counts and procedural fallback.",
+  "source": "0038fdcad18c96238cbeb8a7d047e42a09979ef4",
+  "runtimePatchSha256": "f63f6a90d8abeec6a7ea3f9b8d2e12b1d8445b7d80356d037205f0d065b9db2b",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "started": "2026-11-17T23:36:20.122Z",
+  "finished": "2026-11-17T23:36:34.081Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "nativeRegistrationLimit": "Existing complete Clover basic/ultimate timelines and all loaded textures retained. Only motes texture substituted in prototype mode; native mode preserves current timeline selection and registers its checked-in asset directly. No size,timing,alpha,count,targets or choreography changes. Source-over; normal/reduced; draw instrumentation leaves behavior unchanged. Baseline disables only the leaf texture. Loader-manifest integration remains separate.",
+  "generatedSource": {
+    "source": "/Users/bao/.codex/generated_images/01a1e9cc-2dbe-7022-83de-f2d876839be5/exec-908249a1-7a4d-4790-b831-334c2fc11ab0.png",
+    "sourceSha256": "2abc1c26dd5f88d11086dd6de5f0557c8b44abfcd7d6e6bb06c8e68636ec90cd",
+    "asset": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/clover-leaf-v7-r1-128.webp",
+    "sha256": "ebafab6310de1f94bcbe9a213be20ec8530b52ab42eee1ec084f6244ec5bd7fc",
+    "bytes": 7970,
+    "cols": 1,
+    "rows": 1,
+    "frameCount": 1,
+    "blend": "normal",
+    "authoredProgression": false,
+    "prompt": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/prompt.txt"
+  },
+  "runtimeAssetAudit": {
+    "utc": "2026-11-17T23:21:37.209Z",
+    "input": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/clover-leaf-v7-r1-128.webp",
+    "bytes": 7970,
+    "sha256": "ebafab6310de1f94bcbe9a213be20ec8530b52ab42eee1ec084f6244ec5bd7fc",
+    "width": 128,
+    "height": 128,
+    "pixelFormat": "argb",
+    "grid": {
+      "cols": 1,
+      "rows": 1,
+      "frames": 1,
+      "kind": "single static particle; no temporal progression claim"
+    },
+    "transparentFraction": 0.72808837890625,
+    "paintedFraction": 0.26513671875,
+    "opaqueFraction": 0.245361328125,
+    "alphaBounds": [
+      22,
+      15,
+      112,
+      115
+    ],
+    "edgeMaxAlpha": 0,
+    "whiteFractionOfPainted": 0,
+    "alphaWeightedRgb": [
+      139.14523099219832,
+      148.17001948070282,
+      87.04816815516803
+    ],
+    "componentCount": 1,
+    "largestComponents": [
+      4344
+    ],
+    "largestComponentFraction": 1,
+    "pass": true,
+    "limits": "Alpha/shape structure only; hero fit, hierarchy and additive contrast require fresh runtime review."
+  },
+  "measurements": {
+    "utc": "2026-11-17T23:36:51.118Z",
+    "source": "0038fdcad18c96238cbeb8a7d047e42a09979ef4",
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "assetSha256": "ebafab6310de1f94bcbe9a213be20ec8530b52ab42eee1ec084f6244ec5bd7fc",
+    "cases": [
+      {
+        "id": "clover-1",
+        "reduced": false,
+        "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/native-actions/clover-1-normal.jpg",
+        "sheetSha256": "4f3c32ffe72d633dcf42783fde1d483ce313ee4401618c9977fc39111282c3d7",
+        "width": 1024,
+        "height": 576,
+        "samples": [
+          {
+            "ms": 349,
+            "active": false,
+            "draws": 0,
+            "changed": 4228,
+            "changedOver4": 1586,
+            "maxChannel": 218,
+            "bounds": [
+              330,
+              346,
+              737,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 2702,
+            "candidateSha256": "a71c8a16c829f9568a4d9ce2cdfaab7b80fb4ccb44f892cd3db40c88c3712549"
+          },
+          {
+            "ms": 350,
+            "active": false,
+            "draws": 0,
+            "changed": 8445,
+            "changedOver4": 2345,
+            "maxChannel": 234,
+            "bounds": [
+              326,
+              17,
+              1079,
+              720
+            ],
+            "topHud": 610,
+            "bottomHud": 3945,
+            "candidateSha256": "f1dbcccf8c8c144d667c6158119f58289b74b4eaa5ceeeddfe476da5554ccdbc"
+          },
+          {
+            "ms": 410,
+            "active": true,
+            "draws": 4,
+            "changed": 5519,
+            "changedOver4": 2412,
+            "maxChannel": 72,
+            "bounds": [
+              626,
+              616,
+              740,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 3422,
+            "candidateSha256": "6dc94ca413f7f312b1f7cba7239e14bd2d6ed9cd3303fac23b785cdefd95763f"
+          },
+          {
+            "ms": 470,
+            "active": true,
+            "draws": 4,
+            "changed": 4911,
+            "changedOver4": 2145,
+            "maxChannel": 94,
+            "bounds": [
+              631,
+              620,
+              737,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 3572,
+            "candidateSha256": "547a74a13c9ec2534b7869898a21f23404d23fcedec7075b4e61fe8f8e9d6383"
+          },
+          {
+            "ms": 590,
+            "active": true,
+            "draws": 4,
+            "changed": 6526,
+            "changedOver4": 374,
+            "maxChannel": 11,
+            "bounds": [
+              352,
+              474,
+              748,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 3369,
+            "candidateSha256": "0f55997e6ad64cf256d96f408884e230c7cf2e067c8d2b46f3261c53b17e470f"
+          },
+          {
+            "ms": 730,
+            "active": true,
+            "draws": 4,
+            "changed": 5522,
+            "changedOver4": 2568,
+            "maxChannel": 58,
+            "bounds": [
+              344,
+              464,
+              744,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 3186,
+            "candidateSha256": "199937e64be1dffc0adcc9577c51bcf4d92ed9e6c6aa425d35a80fa0313197ec"
+          },
+          {
+            "ms": 800,
+            "active": false,
+            "draws": 0,
+            "changed": 3760,
+            "changedOver4": 1096,
+            "maxChannel": 36,
+            "bounds": [
+              631,
+              620,
+              737,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 2498,
+            "candidateSha256": "fb2e3a3e84277e723ee7b6c98c14d4b6788d073ad71c020e3f4ea68af6c1e397"
+          },
+          {
+            "ms": 799,
+            "active": true,
+            "draws": 4,
+            "changed": 6875,
+            "changedOver4": 1861,
+            "maxChannel": 22,
+            "bounds": [
+              617,
+              606,
+              748,
+              720
+            ],
+            "topHud": 0,
+            "bottomHud": 3634,
+            "candidateSha256": "a84a1688be380a0e0b6827cbdb8272aaa28d8714f5f59cbff3b93f4bcbbd3bc8"
+          }
+        ]
+      },
+      {
+        "id": "clover-4",
+        "reduced": false,
+        "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/native-actions/clover-4-normal.jpg",
+        "sheetSha256": "c9127068e54d813e02479a916ff0af5dafd097dc5479efaa06466373b3890f74",
+        "width": 1024,
+        "height": 576,
+        "samples": [
+          {
+            "ms": 1099,
+            "active": false,
+            "draws": 0,
+            "changed": 358,
+            "changedOver4": 325,
+            "maxChannel": 227,
+            "bounds": [
+              279,
+              243,
+              708,
+              713
+            ],
+            "topHud": 0,
+            "bottomHud": 175,
+            "candidateSha256": "2e3adc576ac49f19287777a0231be6e0a56092ff0a4095a0466c651609520ca5"
+          },
+          {
+            "ms": 1100,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "69cc2021b09ec51d690b64b211669531f2557eecc7f4b2706e6974e3ab1561e0"
+          },
+          {
+            "ms": 1160,
+            "active": true,
+            "draws": 40,
+            "changed": 9785,
+            "changedOver4": 1811,
+            "maxChannel": 89,
+            "bounds": [
+              266,
+              137,
+              616,
+              380
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "a2ea5c3488661eb8e24a47fa1edb24e8d977ceda3b8b0b8c73e6d077db3d1fe7"
+          },
+          {
+            "ms": 1220,
+            "active": true,
+            "draws": 40,
+            "changed": 15953,
+            "changedOver4": 3119,
+            "maxChannel": 82,
+            "bounds": [
+              253,
+              129,
+              632,
+              381
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "9b44071340639c3b7d1e90f09b3033c9754ff6d24f3842e3c03c7089edd54a21"
+          },
+          {
+            "ms": 1340,
+            "active": true,
+            "draws": 40,
+            "changed": 20820,
+            "changedOver4": 2928,
+            "maxChannel": 50,
+            "bounds": [
+              233,
+              115,
+              652,
+              497
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "30df8cefd6881afa24076612358dad4f0e06b6104778ef431fc97663a1c5fcf5"
+          },
+          {
+            "ms": 1480,
+            "active": true,
+            "draws": 40,
+            "changed": 15036,
+            "changedOver4": 2176,
+            "maxChannel": 26,
+            "bounds": [
+              228,
+              106,
+              656,
+              488
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "fa2d1353d202b6bbb079d54e2da75c203048c52fc3f9440c46a6c0fbb6db1186"
+          },
+          {
+            "ms": 1700,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "b5f9016c1d141e180c354ef522a02457cce07c2d086e10221c164f2ecc86d35a"
+          },
+          {
+            "ms": 2199,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "00464febdb36dc72d56178d58de7c0c17f320dbca7c28872c17046ccf5782027"
+          }
+        ]
+      },
+      {
+        "id": "clover-1",
+        "reduced": true,
+        "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/native-actions/clover-1-reduced.jpg",
+        "sheetSha256": "3a40fc40b2b77c3482fd29fd81642541a3b6e5f3d622db43914f51b085896bc2",
+        "width": 1024,
+        "height": 576,
+        "samples": [
+          {
+            "ms": 349,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "e057905fddce6460dfcf7fe3fca9f3b9805f36aeaabfed5d4c5f464ec037986c"
+          },
+          {
+            "ms": 350,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "4b6ce5336f82b71532628ac595019e9b639abae13f1dda9b5ac749a832366320"
+          },
+          {
+            "ms": 410,
+            "active": true,
+            "draws": 3,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "d3d7a84d677f5a69943fc4f577c38df230fa1c6d510631cd86d223c2e1440e26"
+          },
+          {
+            "ms": 470,
+            "active": true,
+            "draws": 3,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "be3ba19d55cf2a3c013aa6b450f8b965dd8c9c52f20916c256351cdd717535c7"
+          },
+          {
+            "ms": 590,
+            "active": true,
+            "draws": 3,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "ad77d8e60eab2966365ee226c3a03dbd849b05a019c9da3ab915e4ecda5bc352"
+          },
+          {
+            "ms": 730,
+            "active": true,
+            "draws": 3,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "ede5dc769ff58c4e98afe9cd97a25ff5c17b61dd1ca7175d455023bd0615f3b9"
+          },
+          {
+            "ms": 800,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "5b2f4a8ed788f226a84220e08a02a6662d3a170135cbf4b5991097f262df97ed"
+          },
+          {
+            "ms": 799,
+            "active": true,
+            "draws": 3,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "cd05a84d58f77665ce343ba440830415e399160b23d0e8f6cebc77835cb485e0"
+          }
+        ]
+      },
+      {
+        "id": "clover-4",
+        "reduced": true,
+        "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-D-clover-leaf/native-actions/clover-4-reduced.jpg",
+        "sheetSha256": "53fcb82aee3e4585308e6af348b88e6b1ef42fdd9f89c36e39fea4b986ac1696",
+        "width": 1024,
+        "height": 576,
+        "samples": [
+          {
+            "ms": 1099,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "49362a5406e84174d0de4bdd93d7c2d4c952ff64ff556be49b6357d1a996cbc0"
+          },
+          {
+            "ms": 1100,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "38aef4be74fc2eb0403321b65f945bc0fd7589689517fa578794084b7339bec4"
+          },
+          {
+            "ms": 1160,
+            "active": true,
+            "draws": 8,
+            "changed": 998,
+            "changedOver4": 908,
+            "maxChannel": 81,
+            "bounds": [
+              282,
+              156,
+              597,
+              358
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "407cb2830620e596af8f08ea1fef1c57850210eac8095d69c37850b4340a68a8"
+          },
+          {
+            "ms": 1220,
+            "active": true,
+            "draws": 8,
+            "changed": 1013,
+            "changedOver4": 913,
+            "maxChannel": 67,
+            "bounds": [
+              281,
+              156,
+              597,
+              358
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "08ce001780bd5c4f99150d3d0dfdfa6e4072a0ac76c2c7369192f27a05dd2b1f"
+          },
+          {
+            "ms": 1340,
+            "active": true,
+            "draws": 8,
+            "changed": 1020,
+            "changedOver4": 873,
+            "maxChannel": 44,
+            "bounds": [
+              282,
+              156,
+              597,
+              358
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "3c99a46dc72bbc5bcdea263cacbdeb0447c92a49cccecded9d8cbb8514204d5b"
+          },
+          {
+            "ms": 1480,
+            "active": true,
+            "draws": 8,
+            "changed": 1004,
+            "changedOver4": 762,
+            "maxChannel": 22,
+            "bounds": [
+              282,
+              156,
+              597,
+              358
+            ],
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "4fbfed7f4f4174265dda7b4d4d7bf906a2f2b595b9512f262d205b9a21a68bf9"
+          },
+          {
+            "ms": 1700,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "f329cd0f61b585ded241ef035026f5b2675a8438612d7bde14b9a4a41c8d9e9b"
+          },
+          {
+            "ms": 2199,
+            "active": false,
+            "draws": 0,
+            "changed": 0,
+            "changedOver4": 0,
+            "maxChannel": 0,
+            "bounds": null,
+            "topHud": 0,
+            "bottomHud": 0,
+            "candidateSha256": "148cb872295756ef40c7c1d84633b021ff26716bcc5aad2b06127fd464092e2f"
+          }
+        ]
+      }
+    ],
+    "reviewedUtc": "2026-11-17T23:38:01.872719+00:00",
+    "limits": "Full-action browser substitution only; approved loader integration is separate. Pixel differences include replacing the procedural mote; masks do not infer subjective quality.",
+    "visualReview": "Four1024x576 paired baseline/candidate sheets reviewed once after measurement. Faces,HP,+36/+94 values and HUD remain legible. Basic candidate has no visual contribution after existing protection;normal basic full-page differences are unrelated animated HUD/transient content. Ultimate leaf is visible but subtle inside already dense foliage;reduced contribution is minimal. No material readability or hero-identity improvement at judge size. Retain study;reject runtime selection."
+  },
+  "fontEvidence": {
+    "numberFont": "\"Baloo 2\"",
+    "balooLoaded": true
+  },
+  "expectedFixtureBlocks": [
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "type": "stylesheet"
+    }
+  ],
+  "errors": [],
+  "unexpectedRequests": [],
+  "nativeChecksPassed": true,
+  "checks": {
+    "focusedTests": 36,
+    "focusedFiles": 4,
+    "focusedExitCode": 0,
+    "testLog": "work/v5/CXV/jobs/clover-leaf-focused-tests-r2.log",
+    "typecheckExitCode": 0,
+    "typecheckLog": "work/v5/CXV/jobs/clover-leaf-typecheck.log",
+    "initialTestLauncherError": "Root pnpm exec could not find vitest; corrected to apps/web dependency context; first log retained."
+  },
+  "naturalObservations": "reports/v5/CXV/V7-D-clover-leaf-natural.json",
+  "runtimeDisposition": "Provisional selection and test edit restored exactly;copied production asset removed after hash verification. Original generated source and verified exports retained in ignored study directory;no loader edit/entry/READY.",
+  "toolSha256": {
+    "review-clover-leaf-actions.mjs": "41b36f67750a7880fa826ddc2adef01e539ba50e96c6f84b0a7fa8ef86e551fb",
+    "measure-clover-leaf-actions.mjs": "dd50d00c911906b1931fe819f805c7bdc299934c4565dd0ef88d306add5f0746",
+    "summarize-clover-leaf-play.mjs": "40a9cb40417bdc4260aeae7c89953d4bf20fb3c6ae6d208476236ce8998e115e"
+  }
+}
