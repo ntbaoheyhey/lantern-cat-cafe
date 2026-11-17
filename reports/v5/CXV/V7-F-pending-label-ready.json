@@ -1,0 +1,233 @@
+{
+  "utc": "2026-11-17T19:33:09.982Z",
+  "ended": "2026-11-17T19:33:15.785Z",
+  "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+  "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+  "toolSha256": "8b0a4f2f2efa4ec71e52ffc237c0f29fd730be01e9fad2ff082e8c06ad78c492",
+  "overrideSha256": "134287a716f0a4bcbe20245af06da06d4ca5619e054fc60aaa9552183ddc14fb",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "native": true,
+  "method": "Native application batching, audit-only focus instrumentation. Compare current/pending footprints and banner placement against the preserved original48group baseline;CSS animations fixed at300ms for exact screenshot comparison. No behavioral module override;not production acceptance.",
+  "pass": true,
+  "errors": [],
+  "baseline": {
+    "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+    "utc": "2026-11-17T19:29:18.480Z",
+    "overrideSha256": "79eb4af44541b103b7ce95976dc50047fdcec4c2ee3fd026af0a00921c33053b"
+  },
+  "recordedUtc": "2026-11-17T19:34:16.823483+00:00",
+  "decision": "READY for independent CXI review: batch pending-label layout reads at ultimate entry. Scope is focus-entry CPU;overall framep95 remains16.8/66.7ms and4x stress remains open.",
+  "geometryGroups": 48,
+  "pixelPairs": [
+    {
+      "hero": "mochi",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "fcfbe2ce933f8032808dc84c4dab934bd37eb405bd67fe6fae549f6d4dbc77b4",
+        "fcfbe2ce933f8032808dc84c4dab934bd37eb405bd67fe6fae549f6d4dbc77b4"
+      ]
+    },
+    {
+      "hero": "mochi",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "9b61b20b1f7705000a7c59ab6d050368b2990d5b750722cc574c64aaab856a9d",
+        "9b61b20b1f7705000a7c59ab6d050368b2990d5b750722cc574c64aaab856a9d"
+      ]
+    },
+    {
+      "hero": "soot",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "f334ac76a22dbc4035ca07d29abaf2fd5fb9985ba2660ae8cde5441a00c3c365",
+        "f334ac76a22dbc4035ca07d29abaf2fd5fb9985ba2660ae8cde5441a00c3c365"
+      ]
+    },
+    {
+      "hero": "soot",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "78e79616a2db6181a81e8406616db844e18ea595a0f94a432a239553a540bbb4",
+        "78e79616a2db6181a81e8406616db844e18ea595a0f94a432a239553a540bbb4"
+      ]
+    },
+    {
+      "hero": "clover",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "320b2197d951caba1a90d739cfd8cbcd58466b036da11ca90fbd010a2ec318fb",
+        "320b2197d951caba1a90d739cfd8cbcd58466b036da11ca90fbd010a2ec318fb"
+      ]
+    },
+    {
+      "hero": "clover",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "aca8b64059638f3e078adcd8aa3d7db156a63e4b914136c3572e0ab9dd535344",
+        "aca8b64059638f3e078adcd8aa3d7db156a63e4b914136c3572e0ab9dd535344"
+      ]
+    },
+    {
+      "hero": "panko",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "4f00baafdd26b381ef4407e8e8ef7b4a6da5a093890786a90c741bc1e8e39ecd",
+        "4f00baafdd26b381ef4407e8e8ef7b4a6da5a093890786a90c741bc1e8e39ecd"
+      ]
+    },
+    {
+      "hero": "panko",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "0180ad3bef012937049d7ab680adac611523522548143ffcfed50d58c005770c",
+        "0180ad3bef012937049d7ab680adac611523522548143ffcfed50d58c005770c"
+      ]
+    }
+  ],
+  "moduleEvidence": {
+    "batch": true,
+    "audit": true,
+    "native": true,
+    "modules": {
+      "status": {
+        "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/world-label-status.ts?t=1794943822739",
+        "sourceSha256": "c5ec29feec17ab9163edcd9a5d125d0361dadd9be160b5edcbde410ce7b31397",
+        "overrideSha256": "c5ec29feec17ab9163edcd9a5d125d0361dadd9be160b5edcbde410ce7b31397"
+      },
+      "focus": {
+        "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/identified-focus.ts?t=1794943822741",
+        "sourceSha256": "096c0b21638e8f14a72db84b1fc00af85601ed09d5606206e77557dd2e20c8ff",
+        "overrideSha256": "58252ff9ea5ebeaccdc9bcdb1f39663059396f9e5449959b1e52156d4eac6f92"
+      }
+    }
+  },
+  "raw": {
+    "focus": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-native-r2/report.json",
+    "play": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-native-play/report.json"
+  },
+  "tests": {
+    "focused": 13,
+    "typecheckExit": 0,
+    "logs": [
+      "work/v5/CXV/jobs/pending-label-tests.log",
+      "work/v5/CXV/jobs/pending-label-typecheck.log"
+    ]
+  },
+  "sourceFiles": {
+    "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts": "f86428d851e735caa4b7b8e3c71f7e88ce260b2aa31f1bbc9c10d80dd7d32754",
+    "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts": "1c299306fedc21df4adab9c1b803601f40b43029f68774414aa6269ca7274154"
+  },
+  "nativeOrdinary": {
+    "utc": "2026-11-17T19:31:59.183Z",
+    "ended": "2026-11-17T19:33:07.848Z",
+    "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+    "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+    "pass": true,
+    "errors": [],
+    "behaviorOverride": false,
+    "rates": [
+      {
+        "rate": 1,
+        "focusEntryCpuMs": {
+          "median": 5.100000001490116,
+          "p95": 5.699999995529652,
+          "p99": 5.699999995529652,
+          "max": 5.699999995529652
+        },
+        "focusEntryRenderCpuMs": {
+          "median": 11.700000002980232,
+          "p95": 20.100000001490116,
+          "p99": 20.100000001490116,
+          "max": 20.100000001490116
+        },
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.400000000001455
+        },
+        "submitCpuMs": {
+          "median": 4,
+          "p95": 5.5,
+          "p99": 12.899999998509884,
+          "max": 21.30000000447035
+        },
+        "over50": 0,
+        "identity": {
+          "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+          "runtimeUntrackedSha256": {}
+        },
+        "identityAfter": {
+          "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+          "runtimeUntrackedSha256": {}
+        },
+        "actions": 26,
+        "ultimates": 6,
+        "logEvents": 171
+      },
+      {
+        "rate": 4,
+        "focusEntryCpuMs": {
+          "median": 24.399999998509884,
+          "p95": 28.600000001490116,
+          "p99": 28.600000001490116,
+          "max": 28.600000001490116
+        },
+        "focusEntryRenderCpuMs": {
+          "median": 50,
+          "p95": 71.20000000298023,
+          "p99": 71.20000000298023,
+          "max": 71.20000000298023
+        },
+        "frameMs": {
+          "median": 33.29999999999927,
+          "p95": 66.69999999999982,
+          "p99": 83.39999999999964,
+          "max": 133.3000000000011
+        },
+        "submitCpuMs": {
+          "median": 18.299999997019768,
+          "p95": 25.5,
+          "p99": 48.100000001490116,
+          "max": 71.20000000298023
+        },
+        "over50": 74,
+        "identity": {
+          "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+          "runtimeUntrackedSha256": {}
+        },
+        "identityAfter": {
+          "runtimePatchSha256": "5c449fdbe1f3c3c5e9d96f54dbd90e4a919a02e5991d8bacd4dfa32164668db7",
+          "runtimeUntrackedSha256": {}
+        },
+        "actions": 25,
+        "ultimates": 5,
+        "logEvents": 161
+      }
+    ]
+  },
+  "visualReview": {
+    "recordedUtc": "2026-11-17T19:34:16.824139+00:00",
+    "focusSheets": 4,
+    "ordinaryViews": 2,
+    "dimensions": [
+      1024,
+      576
+    ],
+    "inspections": 1,
+    "findings": "Current native focus positions remain identical and readable; no new overlap with faces/status/HUD. Ordinary snapshots keep units/numbers/status readable. Raw viewport1280x720. Normal/reduced frozen exact pixels are a diagnostic,not production acceptance."
+  },
+  "harnessCorrection": "First native synthetic status run bound a separate bare-URL module while Vite used a timestamp query. Corrected to obtain the binder imported by active focus;48cases and8pixelpairs pass. No runtime edit was needed for this test issue."
+}

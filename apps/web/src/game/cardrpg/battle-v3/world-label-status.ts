@@ -10,8 +10,8 @@ export function bindWorldStatusSource(layer:HTMLElement,source:StatusSource){
  return()=>{if(sources.get(layer)===source)sources.delete(layer);};
 }
 
-/** Size an invisible copy with the same CSS, including overflowing stack counters. */
-export function pendingLabelExtent(node:HTMLElement):LabelRect|null {
+/** Prepare the next visual status without changing the currently displayed label. */
+function pendingLabelClone(node:HTMLElement):HTMLElement|null {
  const snapshot=node.parentElement&&sources.get(node.parentElement)?.().find(row=>row.id===node.dataset.actor);
  if(!snapshot)return null;
  const clone=node.cloneNode(true) as HTMLElement;
@@ -30,11 +30,31 @@ export function pendingLabelExtent(node:HTMLElement):LabelRect|null {
  if(snapshot.shield)badge();
  for(const stack of snapshot.stacks.slice(0,3))badge(undefined,stack);
  if(snapshot.stacks.length>3)badge('+'+(snapshot.stacks.length-3));
- node.parentElement!.append(clone);
+ return clone;
+}
+
+/** Append all pending copies before measuring, then remove every copy together. */
+export function pendingLabelExtents(nodes:readonly HTMLElement[]):Map<HTMLElement,LabelRect|null> {
+ const extents=new Map<HTMLElement,LabelRect|null>();
+ const copies:{node:HTMLElement;parent:HTMLElement;clone:HTMLElement}[]=[];
  try{
-  const boxes=[clone,...clone.querySelectorAll('*')].map(n=>n.getBoundingClientRect()).filter(r=>r.width&&r.height);
-  if(!boxes.length)return null;
-  const left=Math.min(...boxes.map(r=>r.left)),top=Math.min(...boxes.map(r=>r.top));
-  return{x:left-(parseFloat(clone.style.left)||0),y:top-(parseFloat(clone.style.top)||0),width:Math.max(...boxes.map(r=>r.right))-left,height:Math.max(...boxes.map(r=>r.bottom))-top};
- }finally{clone.remove();}
+  for(const node of nodes){
+   extents.set(node,null);
+   const clone=pendingLabelClone(node),parent=node.parentElement;
+   if(clone&&parent)copies.push({node,parent,clone});
+  }
+  for(const {parent,clone}of copies)parent.append(clone);
+  for(const {node,clone}of copies){
+   const boxes=[clone,...clone.querySelectorAll('*')].map(n=>n.getBoundingClientRect()).filter(r=>r.width&&r.height);
+   if(!boxes.length)continue;
+   const left=Math.min(...boxes.map(r=>r.left)),top=Math.min(...boxes.map(r=>r.top));
+   extents.set(node,{x:left-(parseFloat(clone.style.left)||0),y:top-(parseFloat(clone.style.top)||0),width:Math.max(...boxes.map(r=>r.right))-left,height:Math.max(...boxes.map(r=>r.bottom))-top});
+  }
+  return extents;
+ }finally{for(const {clone}of copies)clone.remove();}
+}
+
+/** Size one pending label with the same CSS, including overflowing stack counters. */
+export function pendingLabelExtent(node:HTMLElement):LabelRect|null {
+ return pendingLabelExtents([node]).get(node)??null;
 }

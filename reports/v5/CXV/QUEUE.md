@@ -38,3 +38,6 @@
 - [x] CANCELLED V6 broad FPS/audio/secret audit/repository-export work;V7 explicitly reopens scoped boss-play smoothness under V-F.
 
 - V-F guarded pose crop scopedREADY 2026-11-17T18:02:37.467431+00:00:130GPU exact/80assets/96tests/tsc0;normalstartup47.6→39.8ms,4x160.7→130ms;p95frame4x66.7 unchanged.Independent review pending;summary V7-F-pose-crop-summary.json.
+
+- V-F pending-label batching 2026-11-17T19:34:51.745803+00:00:scopedREADY13tests+tsc0/48nativegeometrygroups/8PNGexact;focusentry13.5→5.0msnormal,80.5→24.3ms4x;globalframep95unchanged. Native ordinary5.1/24.4ms;independent CXI acceptance pending. V7-F-pending-label-ready.json.
+- V-A3 fresh production19:29/19:30Znormal/reduced eight600ms sheets:all4feetstable,reduceddepth0;source d69b9dc5c/indexaf3adbe2 unchanged;no new runtime change. V7-A3-current-production-summary.json.

@@ -3,18 +3,20 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {measurePendingLabelBatch} from './pending-label-prototype.mjs';
 const hash=text=>createHash('sha256').update(text).digest('hex');
-export async function installPendingLabelOverride(page,{batch=false,audit=false}={}){
- const evidence={batch,audit,modules:{}};
+export async function installPendingLabelOverride(page,{batch=false,audit=false,native=false}={}){
+ const evidence={batch,audit,native,modules:{}};
  await page.route('**/world-label-status.ts*',async route=>{
   const response=await route.fetch(),source=await response.text();
   assert(source.includes('const sources = new WeakMap()'),'Actual status source binding missing');
-  const body=source+'\n'+measurePendingLabelBatch.toString()+`\nexport function pendingLabelExtents(nodes){return measurePendingLabelBatch(nodes,node=>node.parentElement&&sources.get(node.parentElement)?.().find(row=>row.id===node.dataset.actor));}\n`;
+  if(native)assert(source.includes('export function pendingLabelExtents('),'Native batch export missing');
+  const body=native?source:source+'\n'+measurePendingLabelBatch.toString()+`\nexport function pendingLabelExtents(nodes){return measurePendingLabelBatch(nodes,node=>node.parentElement&&sources.get(node.parentElement)?.().find(row=>row.id===node.dataset.actor));}\n`;
   evidence.modules.status={url:route.request().url(),sourceSha256:hash(source),overrideSha256:hash(body)};
   await route.fulfill({response,body,contentType:'text/javascript'});
  });
  await page.route('**/identified-focus.ts*',async route=>{
   const response=await route.fetch(),source=await response.text();let body=source;
-  if(batch){
+  if(native)assert(source.includes('import { pendingLabelExtents }'),'Native batch focus import missing');
+  if(batch&&!native){
    assert(body.includes('import { pendingLabelExtent }'),'Original pending-label import missing');
    body=body.replace('import { pendingLabelExtent }','import { pendingLabelExtents }');
    assert(body.includes('const labels = [], pendingLabels = [];'),'Label arrays missing');
@@ -28,8 +30,11 @@ export async function installPendingLabelOverride(page,{batch=false,audit=false}
     ${marker}`);
   }
   if(audit){
+   const statusImport=body.match(/import \{ (pendingLabelExtents?) \} from ("[^"\n]+world-label-status\.ts[^"\n]*");/);
+   assert(statusImport,'Active status module import missing');
+   body=body.replace(statusImport[0],`import { ${statusImport[1]}, bindWorldStatusSource } from ${statusImport[2]};`);
    const marker='const title = rect(this.title.getBoundingClientRect());';assert(body.includes(marker),'Title measurement missing');
-   body=body.replace(marker,`globalThis.__cxvFullFocusInputs?.push({labels,pendingLabels,placed,pendingPlaced,faces,worldHud});\n${marker}`);
+   body=body.replace(marker,`globalThis.__cxvStatusSourceBinder=bindWorldStatusSource;\nglobalThis.__cxvFullFocusInputs?.push({labels,pendingLabels,placed,pendingPlaced,faces,worldHud});\n${marker}`);
   }
   evidence.modules.focus={url:route.request().url(),sourceSha256:hash(source),overrideSha256:hash(body)};
   await route.fulfill({response,body,contentType:'text/javascript'});

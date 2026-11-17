@@ -13,6 +13,7 @@ const numberMetricsMode=process.env.CXV_NUMBER_METRICS??null;
 const facePrototype=process.env.CXV_FACE_PROTOTYPE??null;
 const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
+const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
 if(pendingBatch&&!['on','off'].includes(pendingBatch))throw Error('CXV_PENDING_BATCH must be on or off');
 if(pendingBatch&&production)throw Error('Pending-label module experiment requires the candidate Vite server');
 if(facePrototype&&facePrototype!=='compact')throw Error('CXV_FACE_PROTOTYPE must be compact');
@@ -22,6 +23,7 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.facePrototype=facePrototype;
 report.outerPrototype=outerPrototype;
 report.pendingBatch=pendingBatch;
+report.focusProfile=focusProfile;
 try{
  for(const rate of process.env.CXV_PROFILE?[4]:[1,4]){
   let pendingOverride;
@@ -33,7 +35,7 @@ try{
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   if(process.env.CXV_PROFILE){await cdp.send('Profiler.enable');await cdp.send('Profiler.start');}
-  const run=await page.evaluate(async ({rate,methodProfile,numberMetricsMode,pendingBatch})=>{
+  const run=await page.evaluate(async ({rate,methodProfile,numberMetricsMode,focusProfile})=>{
    const s=window.__depthScene,m=window.__depthReview,originalRender=s.render,originalBefore=s.beforeFrame;
    const intervals=[],cpu=[],calls=[],textures=[],plans=[],slowFrames=[],seen=new Set();
    const allIntervals=[],allCpu=[],startupIntervals=[],startupCpu=[];let firstRenderLatencyMs=null;
@@ -41,7 +43,7 @@ try{
    let last=0,rafNow=0;const start=performance.now();
    const methodCosts={startup:{},steady:{}},restores=[];
    const focusEntries=[];let renderSerial=0;
-   if(pendingBatch){const focus=s.cinema.identified,paint=focus.paint;focus.paint=function(key,skill,owner){const entry=this.dirty||this.key!==key||this.viewport!==innerWidth+':'+innerHeight,begin=performance.now();try{return paint.call(this,key,skill,owner);}finally{if(entry)focusEntries.push({wallMs:begin-start,renderSerial,skillId:m.plan?.skillId,age:m.animationAt,cpuMs:performance.now()-begin});}};restores.push(()=>focus.paint=paint);}
+   if(focusProfile){const focus=s.cinema.identified,paint=focus.paint;focus.paint=function(key,skill,owner){const entry=this.dirty||this.key!==key||this.viewport!==innerWidth+':'+innerHeight,begin=performance.now();try{return paint.call(this,key,skill,owner);}finally{if(entry)focusEntries.push({wallMs:begin-start,renderSerial,skillId:m.plan?.skillId,age:m.animationAt,cpuMs:performance.now()-begin});}};restores.push(()=>focus.paint=paint);}
    if(numberMetricsMode){const numbers=s.numbers,atlas=numbers.atlas;numbers.atlas=function(...args){if(numberMetricsMode==='off')this.glyphMetrics=undefined;return atlas.apply(this,args);};restores.push(()=>numbers.atlas=atlas);}
    if(methodProfile){
     const instrument=(object,key,label)=>{if(!object||typeof object[key]!=='function')return;const original=object[key];object[key]=function(...args){const begin=performance.now();try{return original.apply(this,args);}finally{const elapsed=performance.now()-begin,window=methodCosts[begin-start<2000?'startup':'steady'],row=window[label]??(window[label]={calls:0,totalMs:0,maxMs:0});row.calls++;row.totalMs+=elapsed;row.maxMs=Math.max(row.maxMs,elapsed);}};restores.push(()=>object[key]=original);};
@@ -66,7 +68,7 @@ try{
    const stats=v=>{const a=[...v].sort((x,y)=>x-y);return{median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],p99:a[Math.floor(a.length*.99)],max:a.at(-1)};};
    const windowStats=(frames,submit)=>({samples:frames.length,frameMs:stats(frames),submitCpuMs:stats(submit),over33:frames.filter(v=>v>33.5).length,over50:frames.filter(v=>v>50.5).length});
    return{rate,numberMetricsMode,focusEntries,focusEntryCpuMs:stats(focusEntries.map(e=>e.cpuMs)),focusEntryRenderCpuMs:stats(focusEntries.map(e=>e.renderCpuMs)),methodCosts:methodProfile?methodCosts:undefined,methodCostsNote:methodProfile?'Inclusive wall CPU timings with wrapper overhead; nested methods overlap. Use for attribution only.':undefined,elapsedMs,samples:intervals.length,frameMs:stats(intervals),submitCpuMs:stats(cpu),over33:intervals.filter(v=>v>33.5).length,over50:intervals.filter(v=>v>50.5).length,firstRenderLatencyMs,wholeRun:windowStats(allIntervals,allCpu),startup:windowStats(startupIntervals,startupCpu),steadyWindowStartMs:2000,calls:stats(calls),textures:stats(textures),slowFrames,initial,final:{round:m.battle.round,actors:m.battle.actors.map(a=>({id:a.id,hp:a.hp,charge:a.charge})),log:m.battle.log.length,result:m.battle.result,screen:m.screen},plans};
-  },{rate,methodProfile:process.env.CXV_METHOD_PROFILE==='1',numberMetricsMode,pendingBatch});
+  },{rate,methodProfile:process.env.CXV_METHOD_PROFILE==='1',numberMetricsMode,focusProfile});
   if(process.env.CXV_PROFILE){const {profile}=await cdp.send('Profiler.stop');await writeFile(resolve(out,'cpu.cpuprofile'),JSON.stringify(profile));}
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));

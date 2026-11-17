@@ -9,13 +9,15 @@ import {runtimeEvidence} from './runtime-evidence.mjs';
 import {installPendingLabelOverride} from './pending-label-override.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-focus-label-batch');await mkdir(out,{recursive:true});
 const freezeCss=process.env.CXV_FREEZE_CSS==='1';
+const native=process.env.CXV_NATIVE_BATCH==='1';
 const hash=x=>createHash('sha256').update(x).digest('hex');
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),toolSha256:hash(await readFile(new URL(import.meta.url))),overrideSha256:hash(await readFile(new URL('./pending-label-override.mjs',import.meta.url))),viewport:{width:1280,height:720},method:'Browser-only module override, actual scene/current CSS at fixed300ms ultimate focus. Compare original and batched current/pending footprints, placed labels, protected faces and title placement across4heroes, normal/reduced, current/empty/shield/wide/overflow/missing pending sources. No production acceptance or FPS claim. Screenshots follow geometry measurement.',modes:[],checks:[],errors:[]};
+if(native)report.method='Native application batching, audit-only focus instrumentation. Compare current/pending footprints and banner placement against the preserved original48group baseline;CSS animations fixed at300ms for exact screenshot comparison. No behavioral module override;not production acceptance.';
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
- for(const batch of [false,true]){
+ for(const batch of native?[true]:[false,true]){
   const mode={batch,rows:[]};let override;
-  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:async p=>{await p.addInitScript(()=>{Math.random=()=>.5;});override=await installPendingLabelOverride(p,{batch,audit:true});}});
+  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:async p=>{await p.addInitScript(()=>{Math.random=()=>.5;});override=await installPendingLabelOverride(p,{batch,audit:true,native});}});
   report.url=page.url();await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   for(const hero of ['mochi','soot','clover','panko'])for(const reduced of [false,true]){
    await page.evaluate(async({hero,reduced})=>{
@@ -26,9 +28,9 @@ try{
    await page.waitForFunction(()=>window.__depthScene.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
    await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));cancelAnimationFrame(window.__depthScene.raf);});
    const rows=await page.evaluate(async()=>{
-    const {bindWorldStatusSource}=await import('/src/game/cardrpg/battle-v3/world-label-status.ts');
     const s=window.__depthScene,m=window.__depthReview;cancelAnimationFrame(s.raf);s.phaseNoticeAt=-100;
     s.render({...s.view(),fixedTime:20.3,paused:true,galleryPreview:true},0);
+    const bindWorldStatusSource=globalThis.__cxvStatusSourceBinder;if(!bindWorldStatusSource)throw Error('Active focus status source binder missing');
     const nodes=[...document.querySelectorAll('.b3-world')],parents=[...new Set(nodes.map(n=>n.parentElement))];
     const actual=()=>m.visualBattle.actors.map(a=>({id:a.id,shield:a.shield>0,stacks:a.statuses.map(v=>v.stacks)}));
     const cases=[['current',actual()],['empty',nodes.map(n=>({id:n.dataset.actor,shield:false,stacks:[]}))],['shield',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[]}))],['wide',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[12345,99,3]}))],['overflow',nodes.map(n=>({id:n.dataset.actor,shield:true,stacks:[12345,99,3,4,5]}))],['missing',[]]],result=[];
@@ -50,16 +52,23 @@ try{
   }
   mode.override=override;report.modes.push(mode);report.errors.push(...errors);await page.close();
  }
- const [single,batch]=report.modes;
+ const baseline=native?JSON.parse(await readFile(resolve(process.env.CXV_BASELINE??'work/v5/CXV/films/V7-F-focus-label-frozen/report.json'),'utf8')):null;
+ const [single,batch]=native?[baseline.modes[0],report.modes[0]]:report.modes;
  for(let i=0;i<single.rows.length;i++)for(let j=0;j<single.rows[i].rows.length;j++){
   const a=single.rows[i],b=batch.rows[i],x=a.rows[j],y=b.rows[j];let equal=true,detail;
   try{assert.deepEqual(y,x);}catch(error){equal=false;detail=error.message;}
   report.checks.push({hero:a.hero,reduced:a.reduced,name:x.name,equal,clean:x.clean&&y.clean,measured:x.inputs.length===1&&y.inputs.length===1,detail});
  }
  for(const hero of ['mochi','soot','clover','panko']){
-  const inputs=['normal-single','normal-batch','reduced-single','reduced-batch'].flatMap(k=>['-i',resolve(out,hero+'-'+k+'.png')]);
+  const inputs=[single.rows.find(r=>r.hero===hero&&!r.reduced),batch.rows.find(r=>r.hero===hero&&!r.reduced),single.rows.find(r=>r.hero===hero&&r.reduced),batch.rows.find(r=>r.hero===hero&&r.reduced)].flatMap(row=>['-i',row.capture]);
   execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...inputs,'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',resolve(out,hero+'-comparison.jpg')]);
  }
- report.freezeCss=freezeCss;report.pass=!report.errors.length&&report.checks.length===48&&report.checks.every(c=>c.equal&&c.clean&&c.measured);
+ report.pixelChecks=[];
+ if(freezeCss)for(let i=0;i<single.rows.length;i++){
+  const a=single.rows[i],b=batch.rows[i],pixels=[a,b].map(row=>execFileSync('ffmpeg',['-v','error','-i',row.capture,'-f','rawvideo','-pix_fmt','rgb24','-'],{maxBuffer:8*1024*1024}));
+  report.pixelChecks.push({hero:a.hero,reduced:a.reduced,equal:pixels[0].equals(pixels[1]),rgbSha256:pixels.map(hash)});
+ }
+ report.native=native;report.baseline=native?{source:baseline.source,utc:baseline.utc,overrideSha256:baseline.overrideSha256}:undefined;
+ report.freezeCss=freezeCss;report.pass=!report.errors.length&&report.checks.length===48&&report.checks.every(c=>c.equal&&c.clean&&c.measured)&&report.pixelChecks.every(c=>c.equal);
 }catch(error){report.pass=false;report.error=String(error);}
 finally{await browser.close();report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({out,pass:report.pass,error:report.error,errors:report.errors,checks:report.checks.length,failures:report.checks.filter(c=>!c.equal||!c.clean||!c.measured).map(({detail,...c})=>c)}));if(!report.pass)process.exitCode=1;}

@@ -1,0 +1,514 @@
+{
+  "utc": "2026-11-17T19:22:14.106Z",
+  "ended": "2026-11-17T19:29:07.688Z",
+  "recordedUtc": "2026-11-17T19:29:18.188Z",
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "order": [
+    "off",
+    "on",
+    "on",
+    "off",
+    "off",
+    "on"
+  ],
+  "method": "Six sequential alternating browser-only trials,32s at1x then4xCPU each. Same actual rule-selected boss play and common timing wrappers;three trials per mode. Aggregate medians are descriptive,not a confidence interval or physical laptop result. CPU submission is not GPU completion;fixture setup is not account progression.",
+  "pass": true,
+  "sourceCommits": [
+    "978c2cdb2eebd22cf2cc41436ff69e43a6d470e0",
+    "a5dafb3f997c4bcc99c810345e5c025eae79016a"
+  ],
+  "runtimePatchHashes": [
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  ],
+  "moduleSourceHashes": {
+    "status": [
+      "bff244645e8177185475e2b21ca19c8c66a3dc400f1decbdb39271f29efef23e"
+    ],
+    "focus": [
+      "f376f7e9daa7e65ad1486bf4d5b97ede35cf225ff7bfb58c6a69e5c8d694759d"
+    ]
+  },
+  "rates": [
+    {
+      "rate": 1,
+      "off": {
+        "runs": 3,
+        "entries": 18,
+        "entryCpuMedianMs": 13.5,
+        "entryCpuMaxMs": 14.799999997019768,
+        "entryFrameMedianMs": 20.24999999627471,
+        "entryFrameMaxMs": 28.100000001490116,
+        "perHero": {
+          "panko-4": {
+            "count": 6,
+            "cpuMedianMs": 14.050000000745058
+          },
+          "mochi-4": {
+            "count": 3,
+            "cpuMedianMs": 13.399999998509884
+          },
+          "soot-4": {
+            "count": 3,
+            "cpuMedianMs": 13.5
+          },
+          "clover-4": {
+            "count": 3,
+            "cpuMedianMs": 12.599999994039536
+          },
+          "yarnAttack": {
+            "count": 3,
+            "cpuMedianMs": 13.5
+          }
+        },
+        "frameP95MedianMs": 16.799999999999272,
+        "steadyCpuMedianMs": 4,
+        "long50Median": 0,
+        "wholeRunFrameMaxMedianMs": 50,
+        "startupCpuMaxMedianMs": 39.29999999701977,
+        "actions": [
+          26,
+          26,
+          26
+        ],
+        "ultimates": [
+          6,
+          6,
+          6
+        ],
+        "logEvents": [
+          171,
+          171,
+          171
+        ]
+      },
+      "on": {
+        "runs": 3,
+        "entries": 18,
+        "entryCpuMedianMs": 5,
+        "entryCpuMaxMs": 6.200000002980232,
+        "entryFrameMedianMs": 11.699999999254942,
+        "entryFrameMaxMs": 20,
+        "perHero": {
+          "panko-4": {
+            "count": 6,
+            "cpuMedianMs": 5.649999998509884
+          },
+          "mochi-4": {
+            "count": 3,
+            "cpuMedianMs": 5.899999998509884
+          },
+          "soot-4": {
+            "count": 3,
+            "cpuMedianMs": 4.699999995529652
+          },
+          "clover-4": {
+            "count": 3,
+            "cpuMedianMs": 4.600000001490116
+          },
+          "yarnAttack": {
+            "count": 3,
+            "cpuMedianMs": 4
+          }
+        },
+        "frameP95MedianMs": 16.799999999999272,
+        "steadyCpuMedianMs": 4,
+        "long50Median": 0,
+        "wholeRunFrameMaxMedianMs": 49.90000000000009,
+        "startupCpuMaxMedianMs": 39.399999998509884,
+        "actions": [
+          26,
+          26,
+          26
+        ],
+        "ultimates": [
+          6,
+          6,
+          6
+        ],
+        "logEvents": [
+          171,
+          171,
+          171
+        ]
+      }
+    },
+    {
+      "rate": 4,
+      "off": {
+        "runs": 3,
+        "entries": 15,
+        "entryCpuMedianMs": 80.5,
+        "entryCpuMaxMs": 88.09999999403954,
+        "entryFrameMedianMs": 105.69999999552965,
+        "entryFrameMaxMs": 133.30000000447035,
+        "perHero": {
+          "panko-4": {
+            "count": 6,
+            "cpuMedianMs": 82.19999999925494
+          },
+          "mochi-4": {
+            "count": 3,
+            "cpuMedianMs": 76.80000000447035
+          },
+          "soot-4": {
+            "count": 3,
+            "cpuMedianMs": 79.89999999850988
+          },
+          "clover-4": {
+            "count": 3,
+            "cpuMedianMs": 78.60000000149012
+          }
+        },
+        "frameP95MedianMs": 66.69999999999891,
+        "steadyCpuMedianMs": 18.30000000447035,
+        "long50Median": 75,
+        "wholeRunFrameMaxMedianMs": 200,
+        "startupCpuMaxMedianMs": 129.80000000447035,
+        "actions": [
+          25,
+          25,
+          25
+        ],
+        "ultimates": [
+          5,
+          5,
+          5
+        ],
+        "logEvents": [
+          161,
+          161,
+          161
+        ]
+      },
+      "on": {
+        "runs": 3,
+        "entries": 15,
+        "entryCpuMedianMs": 24.299999997019768,
+        "entryCpuMaxMs": 31.5,
+        "entryFrameMedianMs": 50.19999999552965,
+        "entryFrameMaxMs": 71.70000000298023,
+        "perHero": {
+          "panko-4": {
+            "count": 6,
+            "cpuMedianMs": 28
+          },
+          "mochi-4": {
+            "count": 3,
+            "cpuMedianMs": 23
+          },
+          "soot-4": {
+            "count": 3,
+            "cpuMedianMs": 24.19999999552965
+          },
+          "clover-4": {
+            "count": 3,
+            "cpuMedianMs": 23.80000000447035
+          }
+        },
+        "frameP95MedianMs": 66.69999999999891,
+        "steadyCpuMedianMs": 18.399999998509884,
+        "long50Median": 74,
+        "wholeRunFrameMaxMedianMs": 183.30000000000018,
+        "startupCpuMaxMedianMs": 131.39999999850988,
+        "actions": [
+          25,
+          25,
+          25
+        ],
+        "ultimates": [
+          5,
+          5,
+          5
+        ],
+        "logEvents": [
+          161,
+          161,
+          161
+        ]
+      }
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "off",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/0-off/report.json",
+      "source": "978c2cdb2eebd22cf2cc41436ff69e43a6d470e0",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 13.600000001490116,
+            "p95": 13.899999998509884,
+            "p99": 13.899999998509884,
+            "max": 13.899999998509884
+          },
+          "entryFrameCpu": {
+            "median": 20.600000001490116,
+            "p95": 27.899999998509884,
+            "p99": 27.899999998509884,
+            "max": 27.899999998509884
+          },
+          "frameP95": 16.799999999999272,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 80.5,
+            "p95": 88.09999999403954,
+            "p99": 88.09999999403954,
+            "max": 88.09999999403954
+          },
+          "entryFrameCpu": {
+            "median": 105.69999999552965,
+            "p95": 133.30000000447035,
+            "p99": 133.30000000447035,
+            "max": 133.30000000447035
+          },
+          "frameP95": 66.69999999999891,
+          "long50": 76
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "mode": "on",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/1-on/report.json",
+      "source": "978c2cdb2eebd22cf2cc41436ff69e43a6d470e0",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 5.200000002980232,
+            "p95": 6,
+            "p99": 6,
+            "max": 6
+          },
+          "entryFrameCpu": {
+            "median": 11.799999997019768,
+            "p95": 19.600000001490116,
+            "p99": 19.600000001490116,
+            "max": 19.600000001490116
+          },
+          "frameP95": 16.799999999999272,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 25,
+            "p95": 29.600000001490116,
+            "p99": 29.600000001490116,
+            "max": 29.600000001490116
+          },
+          "entryFrameCpu": {
+            "median": 50.19999999552965,
+            "p95": 71.70000000298023,
+            "p99": 71.70000000298023,
+            "max": 71.70000000298023
+          },
+          "frameP95": 66.69999999999891,
+          "long50": 73
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "on",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/2-on/report.json",
+      "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 5.0999999940395355,
+            "p95": 6.0999999940395355,
+            "p99": 6.0999999940395355,
+            "max": 6.0999999940395355
+          },
+          "entryFrameCpu": {
+            "median": 12.600000001490116,
+            "p95": 19.399999998509884,
+            "p99": 19.399999998509884,
+            "max": 19.399999998509884
+          },
+          "frameP95": 16.700000000004366,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 23.80000000447035,
+            "p95": 31.5,
+            "p99": 31.5,
+            "max": 31.5
+          },
+          "entryFrameCpu": {
+            "median": 49.399999998509884,
+            "p95": 69.79999999701977,
+            "p99": 69.79999999701977,
+            "max": 69.79999999701977
+          },
+          "frameP95": 66.69999999999891,
+          "long50": 74
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "off",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/3-off/report.json",
+      "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 13.5,
+            "p95": 14.799999997019768,
+            "p99": 14.799999997019768,
+            "max": 14.799999997019768
+          },
+          "entryFrameCpu": {
+            "median": 20.299999997019768,
+            "p95": 28.100000001490116,
+            "p99": 28.100000001490116,
+            "max": 28.100000001490116
+          },
+          "frameP95": 16.700000000004366,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 79.89999999850988,
+            "p95": 87,
+            "p99": 87,
+            "max": 87
+          },
+          "entryFrameCpu": {
+            "median": 112,
+            "p95": 125.79999999701977,
+            "p99": 125.79999999701977,
+            "max": 125.79999999701977
+          },
+          "frameP95": 66.69999999999891,
+          "long50": 73
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "off",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/4-off/report.json",
+      "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 13.300000004470348,
+            "p95": 14.5,
+            "p99": 14.5,
+            "max": 14.5
+          },
+          "entryFrameCpu": {
+            "median": 20.69999999552965,
+            "p95": 27.099999994039536,
+            "p99": 27.099999994039536,
+            "max": 27.099999994039536
+          },
+          "frameP95": 16.799999999999272,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 78.39999999850988,
+            "p95": 82.89999999850988,
+            "p99": 82.89999999850988,
+            "max": 82.89999999850988
+          },
+          "entryFrameCpu": {
+            "median": 105.39999999850988,
+            "p95": 127.10000000149012,
+            "p99": 127.10000000149012,
+            "max": 127.10000000149012
+          },
+          "frameP95": 66.69999999999982,
+          "long50": 75
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "on",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-label-play/5-on/report.json",
+      "source": "a5dafb3f997c4bcc99c810345e5c025eae79016a",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "errors": [],
+      "rates": [
+        {
+          "rate": 1,
+          "entries": 6,
+          "entryCpu": {
+            "median": 5.299999997019768,
+            "p95": 6.200000002980232,
+            "p99": 6.200000002980232,
+            "max": 6.200000002980232
+          },
+          "entryFrameCpu": {
+            "median": 14.200000002980232,
+            "p95": 20,
+            "p99": 20,
+            "max": 20
+          },
+          "frameP95": 16.799999999999272,
+          "long50": 0
+        },
+        {
+          "rate": 4,
+          "entries": 5,
+          "entryCpu": {
+            "median": 24.19999999552965,
+            "p95": 29.80000000447035,
+            "p99": 29.80000000447035,
+            "max": 29.80000000447035
+          },
+          "entryFrameCpu": {
+            "median": 52.20000000298023,
+            "p95": 67.69999999552965,
+            "p99": 67.69999999552965,
+            "max": 67.69999999552965
+          },
+          "frameP95": 66.69999999999891,
+          "long50": 75
+        }
+      ]
+    }
+  ],
+  "next": "Use only to decide the pending-label batching candidate after controlled pixel parity;application integration still requires focused tests,typecheck,fresh runtime captures and CXI independent acceptance."
+}
