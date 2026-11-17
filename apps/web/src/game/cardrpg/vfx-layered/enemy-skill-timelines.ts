@@ -17,7 +17,7 @@ export function createEnemySkillTimelines(): SkillTimeline[] {
     const strength = basic ? .8 : 1;
     const layer = (id: string, shape: SkillLayer['shape'], beat: SkillLayer['beat'], anchor: SkillLayer['anchor'],
       startMs: number, durationMs: number, size: number, alpha: number, glyph: SkillLayer['glyph'], count = 1): SkillLayer => ({
-      id, shape, beat, anchor, startMs, durationMs, size: size * strength, alpha, glyph, count,
+      id, shape, beat, anchor: enemy.travel === 'thrust' && anchor === 'target' ? 'contact' : anchor, startMs, durationMs, size: size * strength, alpha, glyph, count,
       texture: '', blend: shape === 'mote' || shape === 'decal' || shape === 'projectile' ? 'normal' : 'screen',
       easing: shape === 'charge' ? 'smooth' : 'outCubic',
     });
@@ -31,13 +31,14 @@ export function createEnemySkillTimelines(): SkillTimeline[] {
         layer('charge', 'charge', 'anticipation', 'caster', impactMs - charge, charge, .27, .48,
           support ? 'cup' : enemy.motif),
         {...layer('release', 'projectile', 'impact', 'target', impactMs - travelMs, travelMs + 60,
-          enemy.travel === 'pour' ? .38 : .52, .90,
+          enemy.travel === 'pour' ? .38 : enemy.travel === 'thrust' ? .66 : .52, .90,
           enemy.travel === 'rain' || enemy.travel === 'thrust' ? 'slice' : enemy.motif,
           basic || enemy.travel === 'weave' || enemy.travel === 'thrust' ? 1 : 3), travel: enemy.travel},
         layer('contact', support ? 'burst' : 'flash', 'impact', 'target', impactMs, support ? 180 : 60,
           support ? .28 : .18, support ? .36 : .48, support ? 'drop' : 'spark'),
         layer('material', 'burst', 'impact', 'target', impactMs, 250,
-          enemy.travel === 'weave' ? .48 : .30, .40, support ? 'cup' : enemy.motif),
+          enemy.travel === 'weave' ? .48 : enemy.travel === 'thrust' ? .52 : .30,
+          enemy.travel === 'thrust' ? .72 : .40, support ? 'cup' : enemy.travel === 'thrust' ? 'slice' : enemy.motif),
         layer('ground', 'decal', 'dissipation', 'ground', impactMs + 60, enemy.decay, .45, .16,
           enemy.travel === 'weave' ? 'thread' : 'wind'),
         layer('motes', 'mote', 'dissipation', 'target', impactMs + 60, enemy.decay, .055, .46,

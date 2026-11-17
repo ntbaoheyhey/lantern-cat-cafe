@@ -10,7 +10,7 @@ export interface SkillLayer {
   id: string;
   beat: SkillBeat;
   shape: SkillShape;
-  anchor: 'caster' | 'target' | 'ground';
+  anchor: 'caster' | 'target' | 'ground' | 'contact';
   startMs: number;
   durationMs: number;
   blend: 'normal' | 'screen' | 'add';

@@ -58,13 +58,14 @@ describe('enemy material variants', () => {
     const calls = vi.mocked(c.translate).mock.calls;
     expect(calls.length).toBeGreaterThan(0);
     const recipients = plan.events.filter(e => e.actorId === plan.actorId && (e.type === 'damage' || e.type === 'heal')).flatMap(e => e.targetIds);
-    const expectedX = new Set<number>(recipients.map(id => id === plan.actorId ? 500 : 100));
-    for (const [x, y] of calls) {expect([...expectedX].some(expected => Math.abs(x - expected) < 1e-6)).toBe(true); expect(y).toBeCloseTo(100);}
+    const expectedX = new Set<number>(recipients.map(id => id === plan.actorId ? 500 : owner === 'kettle-knight' ? 100 + 100 / .77 * .34 : 100));
+    const expectedY = owner === 'kettle-knight' ? 52 : 100;
+    for (const [x, y] of calls) {expect([...expectedX].some(expected => Math.abs(x - expected) < 1e-6)).toBe(true); expect(y).toBeCloseTo(expectedY);}
     vi.mocked(c.translate).mockClear(); vi.mocked(c.rotate).mockClear();
     view.reducedMotion = true; view.frame!.elapsed = release.startMs + 30;
     player.render(c, view);
     expect(vi.mocked(c.translate).mock.calls.length).toBeGreaterThan(0);
-    for (const [x, y] of vi.mocked(c.translate).mock.calls) {expect(expectedX.has(x)).toBe(true); expect(y).toBe(100);}
+    for (const [x, y] of vi.mocked(c.translate).mock.calls) {expect(expectedX.has(x)).toBe(true); expect(y).toBeCloseTo(expectedY);}
     expect(vi.mocked(c.rotate).mock.calls.every(([angle]) => angle === 0)).toBe(true);
   });
 });

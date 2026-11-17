@@ -1,19 +1,21 @@
 # CXV handoff — REV4
-STATE: ACTIVE; STOP files absent08:09Z. Owner07:12 is WD-only.
+STATE ACTIVE; STOP absent09:01Z. Owner07:12/08:45 are WD-only.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17.
-ACTIVE: R1 Kettle procedural accent follow-up; R4 complete.
-NEXT 1: Isolate small R2 procedural accents from broad legacy mask; focused pixel/capture proof.
-NEXT 2: Review AGV v3/boss-intro/status-badges on own fresh composites/runtime.
-NEXT 3: R5 status visuals then R6 outcomes; research each new kind first.
-Last pushed SHA8665b16541e8000e329d458c164e0406a957c046; verified remote08:33; R3 READY delivered.
-R2:28/28+tsc0,8 final sheets inspected; R2.md. Kettle contact/Binding coverage debt for R10.
-R1 repeat9+support27 reviews DONE; per-texture revision requests sent, no new approved keys.
-R1 first integration12 accepted textures/12 actions; production loader integration remains CXI-owned.
-V0–V5 implementation DONE. V5 boss58.67FPS,p9516.8ms; no extra FPS check needed.
+ACTIVE R5 bilingual status-visual research; started08:56Z, minimum through09:11Z.
+NEXT 1: Read status source/primary docs; save LEARN/CXV-status-visuals-20261117.md; implement after15m study.
+NEXT 2: R5 finite status motion, slow mapping and persistent badges; capture desktop/mobile/reduced/clear.
+NEXT 3: R6 outcome research then implementation; continue R7–R10.
+Kettle incoming torso contact fix21/21+tsc0,6 final sheets. R1-KETTLE-CONTACT.md; production CXI closure open.
+R1 v3 23 reviews DONE/sent; no new approvals. Static badges/nameplate need final-use evaluation.
+Retain broad legacy body mask b19b99c3d. Extra-pass experiment fully reverted08:49; do not restore it.
+R4 complete19ffd3212,11/11+tsc0,16 sheets. R3 complete8665b1654,10/10+tsc0,5 sheets.
+Last pushed19ffd3212; contact/reviews commit pending now.
+R2 implementation DONE28/28+tsc0; Kettle beauty/Binding coverage debt for R10.
+V0–V5 DONE locally. V5 boss58.67FPS,p9516.8ms; no extra FPS study.
 AGS Q0b-F2 closure and later M2 owner feedback remain open.
-Judge URL http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; deterministic harness adds dev=1.
-Merged v5-m1; BOARD no later tag. Never merge producer branches/later CXI commits.
-CXI08:05 loader mock grant ACK08:10; sequence assertion and craft decode-hook grants retained.
-No capture/gate jobs running. R4 final16/16+0errors,11/11+tsc0. VitePID21525 port6310.
-Last RULES/HANDOFF read08:33Z; PULSE08:34, next09:34. IMGJOB open0.
-Recheck STOP files before next checkpoint; read INBOX-CXV/BOARD/USER each step.
+Judge http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; harness adds dev=1.
+Merged v5-m1; no later BOARD tag. Merge only CXI-announced milestones.
+No capture/test jobs running. VitePID21525 log work/v5/CXV/jobs/vite-6310.log.
+CXI prior loader/sequence/mock/lazy-renderer grants remain.09:01 H2-F3 mobile FormationC2 sizing grant sent.
+Last RULES read08:52Z; PULSE08:34, next09:34; IMGJOB0.
+Recheck STOP,INBOX-CXV,BOARD,USER at checkpoints; never idle on dependencies.
