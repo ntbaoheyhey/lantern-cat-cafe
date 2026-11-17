@@ -2,8 +2,19 @@ import {describe, expect, it, afterEach} from 'vitest';
 import {V5_SKILL_TIMELINES, getV5Timeline, validateSkillTimeline, sampleSkillLayer, skillFeedback, skillPoseTime} from './skill-timeline';
 import {registerV5Texture, clearV5Textures, getV5Texture, v5TextureRect} from './skill-textures';
 import {FX_COLORS, GLYPHS} from '../spine/vfx-registry';
+import {V5_INTEGRATED_TEXTURES} from './skill-texture-selection';
 
 describe('V5 skill timeline contract', () => {
+  it('keeps unreviewed atlas entries procedural and uses distinct ultimate art', () => {
+    for (const timeline of V5_SKILL_TIMELINES.values()) for (const layer of timeline.layers) {
+      if (layer.texture) expect(V5_INTEGRATED_TEXTURES.has(layer.texture)).toBe(true);
+      if (layer.shape === 'mote' || layer.shape === 'decal') expect(layer.texture).toBe('');
+    }
+    for (const owner of ['mochi', 'clover', 'panko', 'soot']) {
+      expect(getV5Timeline(owner+'-4')!.layers.find(l=>l.id==='burst')!.texture).toBe(owner+'-ult-release');
+    }
+    expect(getV5Timeline('mochi-1')!.layers.find(l=>l.id==='burst')!.texture).toBe('');
+  });
   it('covers four heroes, including both skill slots, with ordered three-beat timelines', () => {
     expect(V5_SKILL_TIMELINES.size).toBe(16);
     for (const owner of ['mochi', 'soot', 'clover', 'panko']) for (const slot of [1, 2, 3, 4]) {

@@ -4,6 +4,7 @@ import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
+import {runtimeEvidence} from './runtime-evidence.mjs';
 const root=process.cwd(),set=process.env.CXV_REVIEW_SET??'mochi';
 const assetRoot=resolve(process.env.CXV_REVIEW_ASSETS??'/Users/bao/th-v5-ag2/apps/web/public/vfx/v5');
 const out=resolve(process.env.CXV_REVIEW_OUT??'work/v5/CXV/films/AGV-'+set);
@@ -12,6 +13,7 @@ const entries=Object.entries(manifest).filter(([id])=>set==='all'||set.split(','
 if(!entries.length)throw Error('No textures in '+set);
 await mkdir(out,{recursive:true});
 const report={started:new Date().toISOString(),runtimeCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
+ ...runtimeEvidence(),
  assetCommit:execFileSync('git',['-C',assetRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),set,
  method:'16 samples per texture. Left: actual DOM screenshot of production effect and blend canvases at idle battle sockets in isolated proxy timeline. Right: same texture at full alpha over a fresh battle-frame composite, half dimmed. Uses manifest blend; no production manifest wiring or approval implied.',textures:[]};
 const files=new Map(),hashes={};
@@ -27,17 +29,19 @@ try{
    const {V5_SKILL_TIMELINES,registerV5Texture,clearV5Textures}=await import('/src/game/cardrpg/spine/vfx-registry.ts');
    const {sampleActionPlan}=await import('/@fs'+root+'/apps/web/src/game/squad/turn3d/effects.ts');
    const {configureSequence}=await import('/src/game/cardrpg/battle-v3/sequence.ts');
-   const owner=['mochi','soot','clover','panko'].find(owner=>id.startsWith(owner+'-'))??'mochi';
-   const f=pilotFixture(owner+'-1'),m=window.__depthReview,s=window.__depthScene;
-   m.galleryBattle=f.battle;m.plan=null;m.galleryId=owner+'-1';m.animationAt=0;m.paused=true;m.sceneStarted=true;m.labOpen=false;m.notify(false);cancelAnimationFrame(s.raf);s.ensureActors(s.view());
+   const owner=['mochi','soot','clover','panko','yarn-giant'].find(owner=>id.startsWith(owner+'-'))??'mochi';
+   const fixtureId=owner==='yarn-giant'?'enemy:yarn-giant':owner+'-1';
+   const f=pilotFixture(fixtureId),m=window.__depthReview,s=window.__depthScene;
+   m.galleryBattle=f.battle;m.plan=null;m.galleryId=fixtureId;m.animationAt=0;m.paused=true;m.sceneStarted=true;m.labOpen=false;m.notify(false);cancelAnimationFrame(s.raf);s.ensureActors(s.view());
    const image=new Image();image.src='/__cxv_texture__/'+encodeURIComponent(id);await image.decode();clearV5Textures();
    if(!registerV5Texture(id,{image,width:image.naturalWidth,height:image.naturalHeight,cols:spec.cols,rows:spec.rows,frameMs:spec.frameMs,blend:spec.blend==='add'?'add':spec.blend==='screen'?'screen':'normal'}))throw Error('Invalid texture geometry '+id);
    const animated=spec.cols*spec.rows>1,particle=id.includes('particle')||id.startsWith('util-');
    const anchor=spec.anchor==='ground'?'ground':spec.anchor==='caster'?'caster':'target';
    const shape=id.includes('decal')?'decal':particle?'mote':id.includes('anticipation')||id.includes('charge')?'charge':id.includes('slash')?'slash':id.includes('projectile')?'projectile':'burst';
    const blend=spec.blend==='add'?'add':spec.blend==='screen'?'screen':'normal';
-   const timeline={...V5_SKILL_TIMELINES.get(owner+'-1'),id:'cxv-review',layers:[{id,beat:shape==='charge'?'anticipation':'impact',shape,anchor,startMs:0,durationMs:800,blend,easing:'outCubic',texture:id,size:Math.min(2.2,(spec.sizePx??256)/200),alpha:.85,count:particle?4:1}]};
-   V5_SKILL_TIMELINES.set('cxv-review',timeline);const plan={...configureSequence(f.plan),presentationId:'cxv-review'};
+   const plan={...configureSequence(f.plan),presentationId:'cxv-review'};
+   const timeline={...(V5_SKILL_TIMELINES.get(fixtureId)??V5_SKILL_TIMELINES.get('mochi-1')),id:'cxv-review',owner,impactMs:plan.beats[2].start,durationMs:800,layers:[{id,beat:shape==='charge'?'anticipation':'impact',shape,anchor,startMs:0,durationMs:800,blend,easing:'outCubic',texture:id,size:Math.min(2.2,(spec.sizePx??256)/200),alpha:.85,count:particle?4:1}]};
+   V5_SKILL_TIMELINES.set('cxv-review',timeline);
    if(!s.effects.timeline.handles(plan))throw Error('Review timeline is not bound to live registry');
    let card=document.querySelector('[data-cxv-texture-review]');if(!card){card=document.createElement('canvas');card.dataset.cxvTextureReview='true';card.width=760;card.height=380;Object.assign(card.style,{position:'fixed',left:'0',top:'0',width:'760px',height:'380px',zIndex:'999999'});document.body.append(card);}
    const layer=document.createElement('canvas');layer.width=s.width;layer.height=s.height;
@@ -45,6 +49,7 @@ try{
    return {owner,shape,anchor,blend,width:image.naturalWidth,height:image.naturalHeight,frames:spec.cols*spec.rows};
   },{root,id,spec});
   await page.waitForFunction(()=>window.__depthScene.ready&&window.__depthScene.actors.size===window.__depthReview.battle.actors.length,null,{timeout:90000});
+  await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   const samples=[];
   for(let i=0;i<16;i++){
    const audit=await page.evaluate(i=>{

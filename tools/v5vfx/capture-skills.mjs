@@ -4,12 +4,14 @@ import {mkdir, writeFile, readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
+import {runtimeEvidence} from './runtime-evidence.mjs';
 
 const root = process.cwd(), out = resolve(process.env.CXV_CAPTURE_OUT ?? 'work/v5/CXV/films/V1');
 const url = process.env.CXV_URL ?? 'http://127.0.0.1:6310';
 const ids = (process.env.CXV_SKILLS ?? 'mochi-1,mochi-2,mochi-4,soot-1,soot-2,soot-4,clover-1,clover-2,clover-4,panko-1,panko-2,panko-4').split(',');
 await mkdir(out, {recursive: true});
 const report = {started: new Date().toISOString(), sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
+  ...runtimeEvidence(),
   method: '12 exact simulation timestamps per sheet; irregular sampling, not a real-time FPS measurement. Skill slot 2 uses the explicit archive fixture.', sheets: []};
 const browser = await chromium.launch({headless: true, args: ['--use-angle=metal']});
 try {
@@ -34,7 +36,7 @@ try {
       registry.clearV5Textures();
       for (const [key, spec] of entries) {
         const image = new Image(); image.src = '/__cxv_review__/' + encodeURIComponent(spec.file); await image.decode();
-        if (!registry.registerV5Texture(key, {image, width: image.naturalWidth, height: image.naturalHeight, cols: spec.cols, rows: spec.rows, frameMs: spec.frameMs})) throw Error('Invalid review texture ' + key);
+        if (!registry.registerV5Texture(key, {image, width: image.naturalWidth, height: image.naturalHeight, cols: spec.cols, rows: spec.rows, frameMs: spec.frameMs, blend:spec.blend})) throw Error('Invalid review texture ' + key);
       }
     }, {entries, root});
     report.reviewAssets = {path: assetRoot, sourceCommit: execFileSync('git', ['-C', assetRoot, 'rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(), sha256: hashes};

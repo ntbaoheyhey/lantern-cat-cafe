@@ -1,6 +1,7 @@
 /** V5 timing is independent of texture availability and uses the rules action clock. */
 import {PAINT} from '../spine/style';
 import {SKILL_MAX_COUNT, SKILL_MAX_LAYERS} from './skill-budget';
+import {selectedSkillTexture} from './skill-texture-selection';
 export type SkillBeat = 'anticipation' | 'impact' | 'dissipation';
 export type SkillShape = 'charge' | 'slash' | 'projectile' | 'flash' | 'burst' | 'mote' | 'decal';
 export interface SkillLayer {
@@ -69,7 +70,7 @@ function createTimeline(hero: typeof heroes[number], action: number): SkillTimel
   const layer = (id: string, shape: SkillShape, beat: SkillBeat, anchor: SkillLayer['anchor'], startMs: number,
     durationMs: number, size: number, alpha: number, texture: string, count = 1): SkillLayer => ({
     id, shape, beat, anchor, startMs, durationMs, size: size * strength, alpha, count,
-    texture: `${hero.owner}-${texture}`, blend: shape === 'decal' || shape === 'mote' ? 'normal' : 'screen',
+    texture: selectedSkillTexture(`${hero.owner}-${texture}`), blend: shape === 'decal' || shape === 'mote' ? 'normal' : 'screen',
     easing: shape === 'charge' ? 'smooth' : 'outCubic',
   });
   return validateSkillTimeline({
@@ -77,10 +78,10 @@ function createTimeline(hero: typeof heroes[number], action: number): SkillTimel
     color: hero.color, motif: hero.motif, impactMs, durationMs: impactMs + 60 + fade,
     hitStopMs: ultimate ? 70 : basic ? 45 : 55, shakePx: ultimate ? 3 : basic ? 1.25 : 1.8,
     layers: [
-      layer('charge', 'charge', 'anticipation', 'caster', impactMs - charge, charge, .38, .48, 'anticipation'),
+      layer('charge', 'charge', 'anticipation', 'caster', impactMs - charge, charge, ultimate ? .65 : .38, .48, ultimate ? 'ult-charge' : 'anticipation'),
       layer('release', hero.ranged ? 'projectile' : 'slash', 'impact', 'target', impactMs - 100, 160, .32, .62, hero.ranged ? 'projectile' : 'slash'),
       layer('contact', 'flash', 'impact', 'target', impactMs, 60, .24, .65, 'impact'),
-      layer('burst', 'burst', 'impact', 'target', impactMs, ultimate ? 260 : 180, .5, .60, 'impact'),
+      layer('burst', 'burst', 'impact', 'target', impactMs, ultimate ? 320 : 280, ultimate ? .85 : .5, ultimate ? .48 : .60, ultimate ? 'ult-release' : 'impact'),
       layer('ground', 'decal', 'dissipation', 'ground', impactMs + 60, fade, .72, .26, 'decal'),
       layer('motes', 'mote', 'dissipation', 'target', impactMs + 60, fade, .075, .64, `particle-${action === 3 ? 3 : action === 2 ? 2 : 1}`, ultimate ? 10 : basic ? 4 : 7),
     ],
