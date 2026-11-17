@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-17T02:25:39.504937+00:00",
+  "attempt": "qa5",
+  "failure": "Lane checker blanket .log exclusion rejected the work-order-required PROGRESS-ART.log. No other lane violations, original-art changes or v3 modifications.",
+  "fix": "Allow only that exact progress file and prove the baseline content is an unchanged prefix; preserve all other exclusions. Two QA5 test files are separately bound to successful validation; all runtime hashes still required.",
+  "retainedAudit": "lane-audit-final-qa5.json"
+}

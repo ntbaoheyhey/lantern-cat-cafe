@@ -74,6 +74,19 @@ assert all(sha(ROOT / s['path']) == s['sha256'] for s in native['sheets'])
 assert all(sha(ROOT / r['video']) == r['videoSha256'] for r in capture['rows'])
 runtime_commit = validation['sourceCommit']
 runtime_delta = git('diff', '--name-only', runtime_commit, 'HEAD', '--', 'apps/web/src', 'apps/web/public').splitlines()
+test_validation = None
+test_delta = [p for p in runtime_delta if p in {
+    'apps/web/src/game/cardrpg/spine/cat-presentation.test.ts',
+    'apps/web/src/game/cardrpg/spine/outcome-labels.test.ts'}]
+if test_delta:
+    qa_path = ROOT / 'reports/v4-art/REVIEW/QA-5/r4.json'
+    qa = read(qa_path)
+    assert qa['complete'] and qa['pass'] and qa['parityPass']
+    assert all(sha(ROOT / p) == qa['testHashes'][p] for p in test_delta)
+    assert all(step['exitCode'] == 0 for step in qa['steps'])
+    test_validation = {'path': str(qa_path.relative_to(ROOT)), 'sha256': sha(qa_path),
+                       'changedTestFiles': test_delta, 'runtimeImpact': 'Tests only; all captured runtime hashes remain checked above'}
+    runtime_delta = [p for p in runtime_delta if p not in test_delta]
 assert not runtime_delta, runtime_delta
 parity = read(OUT / 'parity.json')
 assert parity['pass'] and parity['runtimeHashes'] == runtime
@@ -103,13 +116,18 @@ allowed = ('apps/web/public/units/', 'apps/web/public/vfx/', 'apps/web/src/game/
            'apps/web/src/game/cardrpg/spine/', 'apps/web/src/game/cardrpg/stage/',
            'apps/web/src/game/cardrpg/vfx-craft/', 'apps/web/src/game/cardrpg/vfx-layered/',
            'apps/web/src/game/rig/', 'tools/v3craft-lab/', 'scripts/v3feel/', 'reports/v4-art/', 'reports/v3-feel/')
+progress_path = 'reports/v4-art/PROGRESS-ART.log'
+progress_before = subprocess.check_output(['git', 'show', baseline + ':' + progress_path], cwd=ROOT)
+progress_append_only = (ROOT / progress_path).read_bytes().startswith(progress_before)
 violations = [p for p in files if not p.startswith(allowed) or 'audio' in p.lower()
-              or p.endswith(('.log', '.webm', '.mp4', '.DS_Store')) or '/raw/' in p or '/private/' in p]
+              or (p.endswith(('.log', '.webm', '.mp4', '.DS_Store')) and p != progress_path)
+              or (p == progress_path and not progress_append_only) or '/raw/' in p or '/private/' in p]
 originals = [p for p in files if p.startswith(('apps/web/public/units/', 'apps/web/public/vfx/')) and '/sampled-delivery/' not in p]
 v3_changes = [row for row in committed + staged if row[-1].startswith('reports/v3') and row[0] != 'A']
 audit = {'at': now, 'baseline': baseline, 'head': git('rev-parse', 'HEAD'), 'count': len(files), 'files': files,
          'scope': 'Committed ART paths, explicitly staged checkpoint paths and the two planned receipt outputs; inherited unstaged files excluded.',
          'pendingCheckpointPaths': [row[-1] for row in staged], 'plannedReceiptPaths': planned,
+         'requiredProgressLogAppendOnly': progress_append_only,
          'violations': violations, 'originalOrExactMapChanges': originals, 'v3NonAppendChanges': v3_changes,
          'pass': not (violations or originals or v3_changes)}
 (OUT / targets[0]).write_text(json.dumps(audit, indent=2) + '\n')
@@ -123,6 +141,7 @@ receipt = {
     'runtimeCommit': runtime_commit, 'captureSourceCommit': pipeline['sourceCommit'], 'receiptSourceCommit': git('rev-parse', 'HEAD'),
     'scriptSha256': sha(Path(__file__)), 'runtime': {'verifiedHashes': len(runtime), 'changesSinceInstalledRuntime': runtime_delta},
     'revision': args.revision or 'original',
+    'subsequentTestValidation': test_validation,
     'proofs': [{'path': str((OUT / p).relative_to(ROOT)), 'sha256': sha(OUT / p)} for p in proofs],
     'validation': {'fullWeb': validation['fullWebSummary'], 'typecheck': 'Source-matched preflight passed',
                    'explicitThreeFixtureParity': True, 'installedDomReplay': True, 'installedSamples': sum(len(c['samples']) for c in replay['cases']), 'lanePass': True},
