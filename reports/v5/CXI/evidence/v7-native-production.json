@@ -1,0 +1,258 @@
+{
+  "utc": "2026-11-17T17:02:04.410233+00:00",
+  "candidate": "a46e5255d68c946727fd0cdd78291466437d10cc",
+  "integration": "ed64c7b66d05fc11cbd2067f5fbac57d8002ddbd",
+  "disposition": "ACCEPT bounded hidden native vertex work deferral; no general60fps claim",
+  "before": {
+    "utc": "2026-11-17T16:55:15.965Z",
+    "source": "49b9f7539c2b2662452f37fcf302bfa70c28bf92",
+    "indexSha256": "90b4f427ae40007f212b49794c4e4e3c0fa42062dd9907498bb4f4d616ffc3d6",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "errors": [],
+    "ended": "2026-11-17T16:56:26.087Z",
+    "pass": true,
+    "runs": [
+      {
+        "rate": 1,
+        "wholeRun": {
+          "samples": 1911,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.80000000000109,
+            "max": 50
+          },
+          "submitCpuMs": {
+            "median": 4.899999998509884,
+            "p95": 7.199999995529652,
+            "p99": 22.100000001490116,
+            "max": 56.30000000447035
+          },
+          "over33": 1,
+          "over50": 0
+        },
+        "startup": {
+          "samples": 115,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.800000000000182,
+            "p99": 33.400000000000546,
+            "max": 50
+          },
+          "submitCpuMs": {
+            "median": 5,
+            "p95": 21.299999997019768,
+            "p99": 29.700000002980232,
+            "max": 56.30000000447035
+          },
+          "over33": 1,
+          "over50": 0
+        },
+        "blockedRequests": [],
+        "actions": 26,
+        "status": 3,
+        "ultimates": 6,
+        "events": 171
+      },
+      {
+        "rate": 4,
+        "wholeRun": {
+          "samples": 818,
+          "frameMs": {
+            "median": 33.30000000000291,
+            "p95": 66.70000000000073,
+            "p99": 116.70000000000027,
+            "max": 316.7000000000003
+          },
+          "submitCpuMs": {
+            "median": 24.599999994039536,
+            "p95": 40.29999999701977,
+            "p99": 96.10000000149012,
+            "max": 228.20000000298023
+          },
+          "over33": 187,
+          "over50": 72
+        },
+        "startup": {
+          "samples": 34,
+          "frameMs": {
+            "median": 33.40000000000009,
+            "p95": 116.70000000000027,
+            "p99": 316.7000000000003,
+            "max": 316.7000000000003
+          },
+          "submitCpuMs": {
+            "median": 28.599999994039536,
+            "p95": 102.79999999701977,
+            "p99": 228.20000000298023,
+            "max": 228.20000000298023
+          },
+          "over33": 14,
+          "over50": 8
+        },
+        "blockedRequests": [],
+        "actions": 25,
+        "status": 3,
+        "ultimates": 5,
+        "events": 161
+      }
+    ]
+  },
+  "after": {
+    "utc": "2026-11-17T16:59:16.660Z",
+    "source": "936f7791a9933459db2092dd212ca1b9c70d0a3d",
+    "indexSha256": "36f1be3d19d8c8b6a9d67f93043e8c154604524cc4ab5e27bbd162b6915d0d94",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "errors": [],
+    "ended": "2026-11-17T17:00:26.797Z",
+    "pass": true,
+    "runs": [
+      {
+        "rate": 1,
+        "wholeRun": {
+          "samples": 1911,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.80000000000109,
+            "max": 50.09999999999991
+          },
+          "submitCpuMs": {
+            "median": 4.299999997019768,
+            "p95": 6.600000001490116,
+            "p99": 20.100000001490116,
+            "max": 53.29999999701977
+          },
+          "over33": 2,
+          "over50": 0
+        },
+        "startup": {
+          "samples": 115,
+          "frameMs": {
+            "median": 16.699999999999818,
+            "p95": 16.800000000000182,
+            "p99": 50,
+            "max": 50.09999999999991
+          },
+          "submitCpuMs": {
+            "median": 4.100000001490116,
+            "p95": 18,
+            "p99": 53.099999994039536,
+            "max": 53.29999999701977
+          },
+          "over33": 2,
+          "over50": 0
+        },
+        "blockedRequests": [],
+        "actions": 26,
+        "status": 3,
+        "ultimates": 6,
+        "events": 171
+      },
+      {
+        "rate": 4,
+        "wholeRun": {
+          "samples": 972,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 50.100000000000364,
+            "p99": 116.69999999999982,
+            "max": 233.29999999999973
+          },
+          "submitCpuMs": {
+            "median": 20.100000001490116,
+            "p95": 31.80000000447035,
+            "p99": 93.40000000596046,
+            "max": 206.19999999552965
+          },
+          "over33": 130,
+          "over50": 46
+        },
+        "startup": {
+          "samples": 41,
+          "frameMs": {
+            "median": 33.30000000000018,
+            "p95": 116.70000000000027,
+            "p99": 233.29999999999973,
+            "max": 233.29999999999973
+          },
+          "submitCpuMs": {
+            "median": 22.700000002980232,
+            "p95": 93.40000000596046,
+            "p99": 206.19999999552965,
+            "max": 206.19999999552965
+          },
+          "over33": 13,
+          "over50": 9
+        },
+        "blockedRequests": [],
+        "actions": 26,
+        "status": 3,
+        "ultimates": 6,
+        "events": 171
+      }
+    ]
+  },
+  "equivalence": {
+    "motion": 910,
+    "gpu": 130,
+    "differences": 0,
+    "pass": true,
+    "source": "936f7791a9933459db2092dd212ca1b9c70d0a3d",
+    "indexSha256": "36f1be3d19d8c8b6a9d67f93043e8c154604524cc4ab5e27bbd162b6915d0d94",
+    "raw": "work/v5/CXI/drawing-equivalence/v7-native-after/report.json"
+  },
+  "body": {
+    "samples": 26,
+    "solid": 0,
+    "fringe": 0,
+    "errors": []
+  },
+  "checks": {
+    "focusedTests": 45,
+    "files": 6,
+    "buildTypecheck": 0,
+    "fullSuiteAfterNative": false,
+    "included": "Cutout restoration/bounds/24paired sample test, living motion, face depth, secondary motion and scoped stage/drawing tests"
+  },
+  "reviewedOnce": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-native-after/boss-1x-1024.jpg",
+      "sha256": "7cdc5a79527b3d5dc834ae66360b51f9e2394a37cdca2347da42fdd151566191"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-native-after/boss-4x-1024.jpg",
+      "sha256": "d3427445136a01e273e2b4a0de0f3bbd4d848c12bacb19f34bbb6982b5cfc71e"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-native-after/wave3-idle.jpg",
+      "sha256": "6862a591443719b1d9aab4ef2b7ba1314f5bc55d064f77570310d3c588cf1584"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-native-after/enemy-yarn-giant-basic.jpg",
+      "sha256": "d8ce1c219083681e864e8de2e0f723ed9083213ce4f9a390bd175eb7264cf7c0"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-native-after/enemy-yarn-giant.jpg",
+      "sha256": "14ba273c4ff4421e7e585ba7bd3d6c7c6ce11378ffdff9f5eadda15a88078974"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/body-portraits/v7-native-after/panko-4.jpg",
+      "sha256": "6dc474262653c9db0d50c3258ae2878e52d7097928b28a29d4aafeff2f4cc01f"
+    }
+  ],
+  "limits": [
+    "Single before/after pair on same physical host; no statistical claim.",
+    "At4x the candidate reaches26actor+3status/6ults/171events;baseline25actor+3status/5ults/161events, so work counts differ.",
+    "4x whole-run p9550.1ms remains above16.7ms; fixed60fps is not established.",
+    "m1.8 remains released green; next release validation pending."
+  ]
+}
