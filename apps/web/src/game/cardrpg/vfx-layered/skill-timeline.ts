@@ -2,6 +2,8 @@
 import {PAINT} from '../spine/style';
 import {SKILL_MAX_COUNT, SKILL_MAX_LAYERS} from './skill-budget';
 import {selectedSkillTexture} from './skill-texture-selection';
+import {createEnemySkillTimelines} from './enemy-skill-timelines';
+import type {Glyph} from '../spine/vfx-registry';
 export type SkillBeat = 'anticipation' | 'impact' | 'dissipation';
 export type SkillShape = 'charge' | 'slash' | 'projectile' | 'flash' | 'burst' | 'mote' | 'decal';
 export interface SkillLayer {
@@ -17,13 +19,15 @@ export interface SkillLayer {
   size: number;
   alpha: number;
   count: number;
+  glyph?: Glyph;
+  travel?: 'rain' | 'weave' | 'pour' | 'thrust';
 }
 export interface SkillTimeline {
   id: string;
   owner: string;
   tier: 'basic' | 'skill' | 'ultimate';
   color: string;
-  motif: 'shield' | 'lantern' | 'leaf' | 'bread';
+  motif: Glyph;
   impactMs: number;
   durationMs: number;
   hitStopMs: number;
@@ -89,7 +93,8 @@ function createTimeline(hero: typeof heroes[number], action: number): SkillTimel
 }
 
 export const V5_SKILL_TIMELINES: ReadonlyMap<string, SkillTimeline> = new Map(
-  heroes.flatMap(hero => [1, 2, 3, 4].map(action => { const timeline = createTimeline(hero, action); return [timeline.id, timeline] as const; })),
+  [...heroes.flatMap(hero => [1, 2, 3, 4].map(action => createTimeline(hero, action))),
+    ...createEnemySkillTimelines().map(validateSkillTimeline)].map(timeline => [timeline.id, timeline] as const),
 );
 export const getV5Timeline = (id: string) => V5_SKILL_TIMELINES.get(id);
 

@@ -29,8 +29,9 @@ try{
    const {V5_SKILL_TIMELINES,registerV5Texture,clearV5Textures}=await import('/src/game/cardrpg/spine/vfx-registry.ts');
    const {sampleActionPlan}=await import('/@fs'+root+'/apps/web/src/game/squad/turn3d/effects.ts');
    const {configureSequence}=await import('/src/game/cardrpg/battle-v3/sequence.ts');
-   const owner=['mochi','soot','clover','panko','yarn-giant'].find(owner=>id.startsWith(owner+'-'))??'mochi';
-   const fixtureId=owner==='yarn-giant'?'enemy:yarn-giant':owner+'-1';
+   const heroes=['mochi','soot','clover','panko'];
+   const owner=[...heroes,'yarn-giant','needle-moth','binding-thread','teacup-healer','kettle-knight'].find(owner=>id.startsWith(owner+'-')||id.startsWith('enemy-'+owner+'-'))??'mochi';
+   const fixtureId=heroes.includes(owner)?owner+'-1':'enemy:'+owner;
    const f=pilotFixture(fixtureId),m=window.__depthReview,s=window.__depthScene;
    m.galleryBattle=f.battle;m.plan=null;m.galleryId=fixtureId;m.animationAt=0;m.paused=true;m.sceneStarted=true;m.labOpen=false;m.notify(false);cancelAnimationFrame(s.raf);s.ensureActors(s.view());
    const image=new Image();image.src='/__cxv_texture__/'+encodeURIComponent(id);await image.decode();clearV5Textures();

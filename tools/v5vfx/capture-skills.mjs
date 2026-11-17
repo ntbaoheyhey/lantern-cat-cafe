@@ -54,7 +54,8 @@ try {
     }, {id, root});
     await page.waitForFunction(() => window.__depthScene.ready && window.__depthScene.actors.size === window.__depthReview.battle.actors.length, null, {timeout: 90000});
     const info = await page.evaluate(() => ({impact: window.__depthReview.plan.beats[2].start, duration: window.__depthReview.plan.duration}));
-    const times = info.impact > 500 ? [0, 600, 850, 1000, 1099, 1100, 1133, 1160, 1280, 1450, 1650, 2199] :
+    const times = process.env.CXV_TRAVEL_SAMPLES ? (info.impact > 500 ? [0, 850, 1000, 1050, 1099, 1100, 1133, 1160, 1280, 1450, 1650, 2199] :
+      [0, 150, 249, 300, 349, 350, 383, 410, 470, 550, 750, 799]) : info.impact > 500 ? [0, 600, 850, 1000, 1099, 1100, 1133, 1160, 1280, 1450, 1650, 2199] :
       [0, 150, 249, 349, 350, 383, 410, 470, 550, 650, 750, 799];
     const samples = [];
     for (let index = 0; index < times.length; index++) {

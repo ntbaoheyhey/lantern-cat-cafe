@@ -33,3 +33,22 @@ Fresh evidence and exact asset hashes: REVIEW-R1.md. All46 revised/support textu
 | soot-1 | 4 | 4 | 4 | 4 | Small warm impact sits on the boss chest; projectile path and damage number remain visible. |
 | soot-2 | 4 | 4 | 4 | 4 | Archived bolt shares a clear contact accent without obscuring the target. |
 | soot-4 | 4 | 4 | 4 | 4 | Warm contact accents fit the larger dragon presentation; faces, damage numbers and decay stay legible. |
+
+2026-11-17T08:00:29Z R1 repeat9 textures:all below gate; separate composite/runtime values and full hashes REVIEW-R1-REPEAT.md.
+
+2026-11-17T08:14:31Z R1 support-v2:27 revised textures reviewed; exact hashes and separate composite/runtime scores REVIEW-R1-SUPPORT-V2.md. No new texture approved.
+
+## R2 action scores 2026-11-17T08:16:24Z
+
+| Action | Readability | Impact | Beauty | Motion | Finding |
+|---|---:|---:|---:|---:|---|
+| enemy:needle-moth:basic | 4 | 4 | 3 | 4 | Filled purple travel is visible at249/300ms; painted body/contact read, small fallback is still simple. |
+| enemy:needle-moth | 4 | 4 | 4 | 4 | Three visible travel marks lead into the needle canopy and distinct group impact. |
+| enemy:binding-thread:basic | 4 | 3 | 3 | 4 | Recipient binding is clear; the small connecting strand remains subtle. |
+| enemy:binding-thread | 3 | 4 | 3 | 4 | Woven field and timing are distinct; large diagonal fabric obscures too much of the group. |
+| enemy:teacup-healer:basic | 4 | 4 | 4 | 4 | Green pour and local blossom support +35 healing with no damage flash/shake. |
+| enemy:teacup-healer | 3 | 4 | 4 | 4 | Refill bloom and +65 healing read; large flowers crowd the enemy group. |
+| enemy:kettle-knight:basic | 4 | 3 | 3 | 3 | Damage recipient is clear; short warm jab remains weak and attacker movement is restrained. |
+| enemy:kettle-knight | 4 | 3 | 3 | 3 | Signature timing and44 damage read, but thrust silhouette needs stronger distinct contact. |
+
+R2 visual debt remains open for R10; see R2.md.
