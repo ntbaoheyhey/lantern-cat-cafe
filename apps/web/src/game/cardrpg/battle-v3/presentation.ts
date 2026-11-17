@@ -22,11 +22,12 @@ export function presentationTier(plan:PresentedPlan):PresentationTier {
 /** One contact impulse for authored and fallback actions, on the same clock. */
 export function impactFeedback(plan:PresentedPlan,elapsed:number,reduced:boolean,healing=false){
  if(!plan.events.some(e=>e.type==='action_start'||e.type==='charge'))return {shake:0,flash:0};
+ const support=healing||!plan.events.some(e=>e.actorId===plan.actorId&&e.type==='damage');
  const timeline=getV5Timeline(plan.presentationId??plan.skillId);
  if(timeline){
-  const support=healing||!plan.events.some(e=>e.actorId===plan.actorId&&e.type==='damage');
   return {shake:skillFeedback(timeline,elapsed-plan.beats[2]!.start+timeline.impactMs,reduced,support).shake,flash:0};
  }
  const since=elapsed-plan.beats[2]!.start;
- return {shake:!healing&&!reduced&&presentationTier(plan)==='ultimate'&&since>=0&&since<120?4*(1-since/120):0,flash:0};
+ const amplitude=presentationTier(plan)==='ultimate'?4:1.5;
+ return {shake:!support&&!reduced&&since>=0&&since<120?amplitude*(1-since/120):0,flash:0};
 }

@@ -1,5 +1,6 @@
 /** V5 timing is independent of texture availability and uses the rules action clock. */
 import {PAINT} from '../spine/style';
+import {SKILL_MAX_COUNT, SKILL_MAX_LAYERS} from './skill-budget';
 export type SkillBeat = 'anticipation' | 'impact' | 'dissipation';
 export type SkillShape = 'charge' | 'slash' | 'projectile' | 'flash' | 'burst' | 'mote' | 'decal';
 export interface SkillLayer {
@@ -40,12 +41,13 @@ const heroes = [
 export function validateSkillTimeline(timeline: SkillTimeline): SkillTimeline {
   const ids = new Set<string>();
   let previous = -Infinity, end = 0;
+  if (timeline.layers.length > SKILL_MAX_LAYERS) throw Error(`Too many skill layers: ${timeline.id}`);
   if (!Number.isFinite(timeline.impactMs) || timeline.impactMs <= 0 ||
       timeline.hitStopMs < 40 || timeline.hitStopMs > 80) throw Error(`Invalid skill timing: ${timeline.id}`);
   for (const layer of timeline.layers) {
     if (ids.has(layer.id) || layer.startMs < previous || layer.startMs < 0 || layer.durationMs <= 0 ||
         ![layer.startMs, layer.durationMs, layer.alpha, layer.size, layer.count].every(Number.isFinite) ||
-        layer.alpha < 0 || layer.alpha > 1 || layer.size <= 0 || !Number.isInteger(layer.count) || layer.count < 1 ||
+        layer.alpha < 0 || layer.alpha > 1 || layer.size <= 0 || !Number.isInteger(layer.count) || layer.count < 1 || layer.count > SKILL_MAX_COUNT ||
         layer.startMs + layer.durationMs > timeline.durationMs) throw Error(`Invalid skill layer: ${timeline.id}/${layer.id}`);
     ids.add(layer.id); previous = layer.startMs; end = Math.max(end, layer.startMs + layer.durationMs);
     if (layer.beat === 'anticipation' && (layer.durationMs < 120 || layer.durationMs > 250 ||
@@ -73,7 +75,7 @@ function createTimeline(hero: typeof heroes[number], action: number): SkillTimel
   return validateSkillTimeline({
     id: `${hero.owner}-${action}`, owner: hero.owner, tier: ultimate ? 'ultimate' : basic ? 'basic' : 'skill',
     color: hero.color, motif: hero.motif, impactMs, durationMs: impactMs + 60 + fade,
-    hitStopMs: ultimate ? 70 : basic ? 45 : 55, shakePx: ultimate ? 3 : 0,
+    hitStopMs: ultimate ? 70 : basic ? 45 : 55, shakePx: ultimate ? 3 : basic ? 1.25 : 1.8,
     layers: [
       layer('charge', 'charge', 'anticipation', 'caster', impactMs - charge, charge, .38, .48, 'anticipation'),
       layer('release', hero.ranged ? 'projectile' : 'slash', 'impact', 'target', impactMs - 100, 160, .32, .62, hero.ranged ? 'projectile' : 'slash'),
@@ -115,9 +117,10 @@ export function skillFeedback(timeline: SkillTimeline, elapsedMs: number, reduce
 }
 
 /** Hold only the visual pose, then catch up smoothly; rules and event timestamps never move. */
-export function skillPoseTime(timeline: SkillTimeline | undefined, elapsedMs: number, impactMs: number, reduced: boolean): number {
-  if (!timeline || reduced || elapsedMs < impactMs) return elapsedMs;
-  const since = elapsedMs - impactMs, hold = timeline.hitStopMs;
+export function skillPoseTime(timeline: SkillTimeline | undefined, elapsedMs: number, impactMs: number, reduced: boolean, fallbackHoldMs = 0): number {
+  const hold = timeline?.hitStopMs ?? fallbackHoldMs;
+  if (hold <= 0 || reduced || elapsedMs < impactMs) return elapsedMs;
+  const since = elapsedMs - impactMs;
   if (since < hold) return impactMs;
   const catchUp = clamp((since - hold) / 140);
   return elapsedMs - hold * (1 - catchUp * catchUp * (3 - 2 * catchUp));

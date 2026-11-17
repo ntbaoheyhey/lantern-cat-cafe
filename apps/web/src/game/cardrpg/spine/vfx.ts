@@ -13,6 +13,8 @@ import {FieldVfx} from '../battle-v3/field-vfx';
 import {EffectGlow} from '../battle-v3/effect-glow';
 import type {SequencePlan} from '../battle-v3/sequence';
 import {V5SkillPlayer} from '../vfx-layered/skill-player';
+import {SkillBlendLayers} from '../vfx-layered/skill-blend-layers';
+const NO_STATUSES: readonly never[] = [];
 type Point={x:number;y:number};
 interface Particle {active:boolean;born:number;life:number;source:string;target:string;layer:PaintedLayer|null;recipe:PaintedRecipe|null;index:number;total:number;stamp:HTMLCanvasElement|null;origin:Point;end:Point;captured:boolean;impact:boolean}
 const floorLayer:PaintedLayer={glyph:'ring',motion:'expand',anchor:'caster',phase:'contact',socket:'feet',count:1,size:1.3,spread:.1,opacity:.5,accent:false,ground:true,turns:0,delay:0,life:.6};
@@ -26,11 +28,12 @@ export class PaintedVfx {
  readonly overrides=new DesignerVfx();readonly ready:Promise<void>;private disposed=false;
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
  readonly timeline:V5SkillPlayer;
+ readonly blendLayers:SkillBlendLayers;private faceMask:HTMLCanvasElement|undefined;
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
  private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private fallbackCast=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
  constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
-  this.timeline=new V5SkillPlayer(socket,this.stamps);
+  this.timeline=new V5SkillPlayer(socket,this.stamps);this.blendLayers=new SkillBlendLayers(host);
   this.field=new FieldVfx(socket,id=>this.layered.images.get(id));
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.layered=new LayeredVfx(socket);this.ready=this.overrides.prepare();
@@ -83,6 +86,7 @@ export class PaintedVfx {
  render(view:SceneView,time:number,width:number,height:number,protectedLabels:readonly Rect[],timelineOnly=false){
   const c=this.ctx,ratio=view.quality==='low'?.85:Math.min(devicePixelRatio||1,2),w=Math.round(width*ratio),h=Math.round(height*ratio);
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
+  this.blendLayers.begin(width,height,ratio);
   c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);c.save();this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;this.stats.maskedFaces=0;
   // All effects share one final protection pass. Nested clips multiply the
   // canvas compositing cost for every translucent layer in a team-wide ult.
@@ -100,8 +104,8 @@ export class PaintedVfx {
    let x=target.x,y=target.y,scale=1,rotation=0,alpha=Math.sin(Math.min(1,progress*5)*Math.PI/2)*(1-progress)**.6;
    const moving=!p.impact&&(layer.motion==='projectile'||layer.motion==='pour'||layer.motion==='converge');
    if(moving){const t=1-(1-progress)**2;x=p.origin.x+(target.x-p.origin.x)*t;y=p.origin.y+(target.y-p.origin.y)*t-Math.sin(t*Math.PI)*size*.35;rotation=Math.atan2(target.y-p.origin.y,target.x-p.origin.x);}
-   else if(['burst','emit','fall','rise','orbit'].includes(layer.motion)){const radius=layer.motion==='orbit'?spread:spread*Math.sqrt(progress);const a=angle+(layer.motion==='orbit'?progress*layer.turns*Math.PI*2:0);x+=Math.cos(a)*radius;y+=Math.sin(a)*radius*.5;if(layer.motion==='rise')y-=progress*size*.4;if(layer.motion==='fall')y+=progress*size*.3;rotation=angle*.3+progress*layer.turns;}
-   else if(['sweep','cross','crescent'].includes(layer.motion)){rotation=(progress-.5)*Math.PI*(layer.motion==='cross'?2:1)+angle;x+=Math.cos(angle)*spread*.25;}
+   else if((layer.motion==='burst'||layer.motion==='emit'||layer.motion==='fall'||layer.motion==='rise'||layer.motion==='orbit')){const radius=layer.motion==='orbit'?spread:spread*Math.sqrt(progress);const a=angle+(layer.motion==='orbit'?progress*layer.turns*Math.PI*2:0);x+=Math.cos(a)*radius;y+=Math.sin(a)*radius*.5;if(layer.motion==='rise')y-=progress*size*.4;if(layer.motion==='fall')y+=progress*size*.3;rotation=angle*.3+progress*layer.turns;}
+   else if((layer.motion==='sweep'||layer.motion==='cross'||layer.motion==='crescent')){rotation=(progress-.5)*Math.PI*(layer.motion==='cross'?2:1)+angle;x+=Math.cos(angle)*spread*.25;}
    if(layer.motion==='expand'||layer.motion==='pulse')scale=.5+Math.sin(progress*Math.PI/2)*.7;
    if(layer.motion==='shrink')scale=1-progress*.7;
    if(view.reducedMotion){rotation=0;if(!moving){x=target.x+Math.cos(angle)*spread*.4;y=target.y+Math.sin(angle)*spread*.2;}}
@@ -109,7 +113,7 @@ export class PaintedVfx {
    const extent=size*layer.size*scale;c.globalAlpha=alpha*layer.opacity;c.save();c.translate(x,y);c.rotate(rotation);c.scale(1,layer.ground?.24:1);c.drawImage(p.stamp,-extent/2,-extent/2,extent,extent);c.restore();this.stats.active++;this.stats.draws++;
   }
   // Persistent status keywords sit beside the foot, below faces and labels.
-  for(const actor of timelineOnly||view.formationC2?[]:view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??[];let index=0;
+  for(const actor of timelineOnly||view.formationC2?NO_STATUSES:view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??NO_STATUSES;let index=0;
    for(const entry of statuses){const id=typeof entry==='string'?entry:entry.id,spec=PAINTED_STATUSES.find(s=>s.id===id);if(!spec)continue;const stamp=this.stamps.get('status:'+id,spec.color);if(!stamp)continue;const n=statuses.length,extent=size*.19,x=feet.x+(index-(n-1)/2)*size*.17,y=feet.y-size*.09+(view.reducedMotion?0:Math.sin(time*2+index)*size*.012);c.globalAlpha=.85;c.drawImage(stamp,x-extent/2,y-extent/2,extent,extent);index++;this.stats.draws++;}
   }
   // Two authored 60Hz frames, measured on the same clock as particles. A paused
@@ -129,22 +133,30 @@ export class PaintedVfx {
   // must not rescale the export; only the stage transform and camera do.
   if(!v5&&!timelineOnly)this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=v5||timelineOnly?0:this.overrides.stats.active;
   if(!v5&&!timelineOnly&&view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
-  this.timeline.render(c,view,!explicitOverride);this.stats.draws+=this.timeline.audit.draws;this.stats.active+=this.timeline.audit.particles;
+  this.timeline.render(c,view,!explicitOverride,this.blendLayers);this.stats.draws+=this.timeline.audit.draws;this.stats.active+=this.timeline.audit.particles;
   // Composite the effect-only bloom before the shared face protection pass.
   if(view.formationC2&&this.stats.draws)this.glow.render(this.canvas,c,view.quality==='low',view.reducedMotion);
-  // A nonzero union removes overlapping masks once; unlike even-odd holes,
-  // intersecting protected regions cannot accidentally reveal a face again.
-  c.globalCompositeOperation='destination-out';c.globalAlpha=1;
-  if(this.stats.draws)for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
-   const mask=c.createRadialGradient(face.x,face.y,size*.18,face.x,face.y,size*.55);mask.addColorStop(0,'#000');mask.addColorStop(.25,'#000');mask.addColorStop(1,'#0000');c.fillStyle=mask;c.fillRect(face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);this.stats.maskedFaces++;
+  if(this.stats.draws){
+   this.stats.maskedFaces=this.protect(c,view,protectedLabels);
+   for(const pass of this.blendLayers.passes)if(pass.active)this.protect(pass.context,view,protectedLabels);
   }
-  // Battle bars already have an opaque HUD backing. Large text-lane cutouts made
-  // the new effects look like a checkerboard; legacy labels keep their masks.
-  if(!view.formationC2){c.fillStyle='#000';for(const box of protectedLabels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();c.globalAlpha=1;this.stats.peak=Math.max(this.stats.peak,this.stats.active);
  }
+ private protect(c:CanvasRenderingContext2D,view:SceneView,labels:readonly Rect[]){
+  if(!this.faceMask){
+   const mask=document.createElement('canvas');mask.width=mask.height=128;const m=mask.getContext('2d')!;
+   const fade=m.createRadialGradient(64,64,64*.18/.55,64,64,64);fade.addColorStop(0,'#000');fade.addColorStop(.25,'#000');fade.addColorStop(1,'#0000');
+   m.fillStyle=fade;m.fillRect(0,0,128,128);this.faceMask=mask;
+  }
+  c.save();c.globalCompositeOperation='destination-out';c.globalAlpha=1;let count=0;
+  for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
+   c.drawImage(this.faceMask,face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);count++;
+  }
+  if(!view.formationC2){c.fillStyle='#000';for(const box of labels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
+  c.restore();return count;
+ }
  /** An opt-in scene renderer owns this action's complete effect pass. */
- clearFrame(){this.ctx.setTransform(1,0,0,1,0,0);this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;}
- clear(){this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
- dispose(){this.disposed=true;this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.canvas.remove();}
+ clearFrame(){this.blendLayers.clear();this.ctx.setTransform(1,0,0,1,0,0);this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;}
+ clear(){this.timeline.clear();this.blendLayers.clear();this.overrides.clear();for(const p of this.pool)p.active=false;this.hitAt=-Infinity;this.plan=null;}
+ dispose(){this.disposed=true;this.clear();this.stamps.dispose();this.overrides.dispose();this.layered.dispose();this.glow.dispose();this.blendLayers.dispose();if(this.faceMask){this.faceMask.width=this.faceMask.height=1;this.faceMask=undefined;}this.canvas.remove();}
 }

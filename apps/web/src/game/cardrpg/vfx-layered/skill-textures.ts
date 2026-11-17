@@ -6,10 +6,13 @@ export interface V5DecodedTexture {
   cols: number;
   rows: number;
   frameMs: number;
+  /** Manifest composition contract. Omitted by older loaders: use authored layer blend. */
+  blend?: 'add' | 'screen' | 'normal';
 }
 const textures = new Map<string, Readonly<V5DecodedTexture>>();
 export function registerV5Texture(key: string, texture: V5DecodedTexture): boolean {
   if (!/^[a-z0-9-]+$/.test(key) || !texture.image ||
+      (texture.blend !== undefined && !['add', 'screen', 'normal'].includes(texture.blend)) ||
       ![texture.width, texture.height, texture.cols, texture.rows].every(n => Number.isInteger(n) && n > 0) ||
       !Number.isFinite(texture.frameMs) || texture.frameMs <= 0 || texture.cols * texture.rows > 256 ||
       texture.width % texture.cols !== 0 || texture.height % texture.rows !== 0) return false;

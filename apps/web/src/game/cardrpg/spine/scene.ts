@@ -242,7 +242,7 @@ export class SpineScene {
   const healingCast=!!plan&&this.craftHandles(plan)&&['clover','teacup-healer'].includes(this.actors.get(plan.actorId)?.asset??'');
   const v5Timeline=plan?getV5Timeline(plan.presentationId??plan.skillId):undefined;
   const motionElapsed=frame?skillPoseTime(v5Timeline,frame.elapsed,frame.plan.beats[2]!.start,
-   view.reducedMotion||!frame.plan.events.some(e=>e.actorId===frame.plan.actorId&&e.type==='damage')):0;
+   view.reducedMotion||!frame.plan.events.some(e=>e.actorId===frame.plan.actorId&&e.type==='damage'),frame.plan.ultimate?70:45):0;
   if(plan&&healingCast)paintedTargets(plan,'heal',view.actors,healed);
   const healAge=frame?frame.elapsed-frame.plan.beats[2]!.start:-1;
   const healBright=healAge>=0&&healAge<180?1+.12*(1-healAge/180):1;
@@ -456,7 +456,10 @@ export class SpineScene {
   // actor tint; retain the actor, then place only local floor and inner-edge light.
   const groundOrder=Math.min(...[...this.actors.values()].map(e=>e.actor.root.renderOrder))-1;
   for(const [id,entry]of this.actors){
-   if(!entry.craftLight)continue;
+   if(!entry.craftLight){
+    entry.craftDeath?.captureNativeSource(this.renderer,this.camera,{width,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,box:this.bounds(entry)});
+    continue;
+   }
    const sample=this.sampled.get(id),acting=plan?.actorId===id,ms=acting?(frame?.elapsed??0):(view.model?sample?.at??0:0)*1000;
    const ultimate=acting?!!plan?.ultimate:sample?.name==='ult',end=ultimate?2200:800;
    const rise=ultimate?Math.max(0,Math.min(1,(ms-400)/700)):Math.max(0,Math.min(1,(ms-80)/270));

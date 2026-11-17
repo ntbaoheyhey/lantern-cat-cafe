@@ -1,8 +1,17 @@
-# CXV visual scores
-Scores are out of five. Final gate is NOT complete: V2–V5, full hero/boss scoring and latest AG1 QA are pending.
+# CXV independent effect scores
+Scores 1–5: readability / impact / beauty / motion. Only newly captured current-build evidence qualifies. Blank entries remain unreviewed, never inferred from old producer scores.
 
-| Candidate/evidence | Readability | Impact | Beauty | Motion | Decision |
-| --- | --- | --- | --- | --- | --- |
-| AG2 Mochi REVIEW: T1/mochi-montage.jpg + comp/mochi-impact.jpg | 4 | 4 | 3 | 4 | Revision requested; do not wire yet. Burst/crescent progression reads well, but flat concentric charge/particle/decal primitives clash with the painted setting and Mochi's honey/gold shield identity. Pink burst lacks a shield/cloth motif. |
+| Effect | Readability | Impact | Beauty | Motion | Fresh source / reason |
+|---|---:|---:|---:|---:|---|
+| button-guard hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, native original-paint breakup reads cleanly. |
+| needle-moth hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, wing silhouette and lavender fragments remain clear. |
+| kettle-knight hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, armor flash and brass fragments retain material. |
+| yarn-giant hit/death | 4 | 4 | 4 | 4 | V3 07c18407a, clear hit drawing and woven dissolve. |
+| yarn-giant basic | 4 | 4 | 4 | 4 | V4 a7d452167, visible contact and explicit45ms hold; small camera impulse and local warm accent. |
+| yarn-giant ultimate | 4 | 4 | 4 | 4 | V4 a7d452167, rising weave, explicit70ms hold, two contacts, restrained decay. |
 
-V1 runtime readability judgments for all twelve sheets are in V1.md. These are separate from approval of newly supplied textures. Full four-axis runtime scores will follow secondary-motion and boss work; no unobserved effect is assigned a passing score.
+Hero basic/skill/ultimate complete independent re-score is pending R10. Texture G1–G5 reviews are separate pair gates and remain pending for legacy AGV requests. Overall DONE gate is NOT met.
+
+Historical texture decision retained (pre-freshness-policy, not current approval): AG2 original Mochi set scored4/4/3/4; revision required for flat concentric charge/particles/decal and pink burst lacking honey/gold shield-cloth identity. New mochi-v2 still requires fresh pair review.
+
+2026-11-17T07:34Z V5 candidate re-review:6 runtime G1–G5=4/4/4/4/4; Mochi slash/Clover impact G5=2 and Panko slash G5=3 from oversized mask. Full detail REVIEW-V5-CANDIDATES.md; no full-skill approval.
