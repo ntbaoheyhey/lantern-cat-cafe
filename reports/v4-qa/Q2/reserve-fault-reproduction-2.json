@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-17T02:27:03.398Z",
+  "sourceSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "scope": "Local Anvil fault injection only; not execution of public Fuji guest flow",
+  "raw": "Q2/q2-reserve-gap-2/results.json",
+  "localSetup": {
+    "scenario": "Sponsor1.075AVAX: between one-wallet and two-wallet reserves before pending obligations",
+    "sponsor": "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+    "chainId": "0xa869",
+    "clientVersion": "anvil/v1.8.6",
+    "rpcPid": 13692,
+    "parentPid": 13685,
+    "originalBalanceWei": "10000000000000000000000",
+    "balanceWei": "1075000000000000000",
+    "gasPriceWei": "1041385024",
+    "publicChainWrites": false
+  },
+  "restoredBalanceWei": "10000000000000000000000",
+  "rollbackVerified": true,
+  "steps": [
+    {
+      "name": "Play free",
+      "atMs": 801
+    },
+    {
+      "name": "Start trial",
+      "atMs": 1629
+    },
+    {
+      "name": "Mint trial reward",
+      "atMs": 98189
+    },
+    {
+      "name": "Fund workshop",
+      "atMs": 100021
+    }
+  ],
+  "errors": [
+    {
+      "status": 503,
+      "url": "http://127.0.0.1:6201/functions/v1/guest-drip"
+    }
+  ],
+  "failure": "page.waitForFunction: Timeout 90000ms exceeded.",
+  "visibleFailure": [
+    "Prepare your workshopEach demo wallet claims 20 YARN. Buyer gifts 12.Fund workshopNo gas. Open faucet.",
+    "No gas. Open faucet."
+  ],
+  "localFundingReceipts": 1,
+  "workshopReached": true,
+  "reserveFailureVisible": true
+}

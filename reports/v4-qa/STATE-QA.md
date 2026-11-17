@@ -39,3 +39,5 @@ Desktop audio details geometry | b1e4398a | false positives closed Q1/layout-adj
 Required environment names | 52aaaba39 | PASS Q2/required-env-recheck-52aaaba39.json.
 Withdrawal documentation | 4b4c4111 | fixed Q2/open-findings-recheck-4b4c4111.json.
 Q2 local suite | b1e4398a | complete mixed results Q2/local-checks-1.json; do not repeat unchanged source.
+
+Q2 reserve fault complete02:27:03UTC: one observed funding receipt, second guest-drip503, workshop blocked No gas; rollback balance verified. QA8SHIP. No independent RPC verification of fault-run receipt status before rollback; see Q2/RESERVE-FAULT.md.

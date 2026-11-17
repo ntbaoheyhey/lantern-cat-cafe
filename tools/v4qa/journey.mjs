@@ -60,7 +60,7 @@ async function verifyReceipts(rows,build){
   }
 }
 
-export async function runJourneys({url,viewports=[{width:1440,height:900},{width:1280,height:720},{width:390,height:844}],runs=1,allowGuestTx=false,label='q1-cold-1',buildPath=resolve(qa,'reports/v4-qa/Q1/build-1.json'),reportRoot=resolve(qa,'reports/v4-qa/Q1'),capture=true,guardLoad=true,beforeLocalJourney}={}){
+export async function runJourneys({url,viewports=[{width:1440,height:900},{width:1280,height:720},{width:390,height:844}],runs=1,allowGuestTx=false,label='q1-cold-1',buildPath=resolve(qa,'reports/v4-qa/Q1/build-1.json'),reportRoot=resolve(qa,'reports/v4-qa/Q1'),capture=true,guardLoad=true,beforeLocalJourney,measureSceneReady=false}={}){
   if(!/^[a-z0-9-]+$/i.test(label))throw Error('Safe unique label required');
   const target=new URL(url);const local=['127.0.0.1','localhost'].includes(target.hostname);
   if(local&&!['6200','6203'].includes(target.port))throw Error('Only owned QA preview ports allowed');
@@ -130,6 +130,13 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
           row.assetReadiness=await page.locator('.dp-battle:not(.dp-hidden)').evaluate(e=>{const imgs=[...e.querySelectorAll('img')];return {images:imgs.length,ready:imgs.filter(x=>x.complete&&x.naturalWidth>0).length};});
           row.transferAtBattle={bytes:row.requests.reduce((s,r)=>s+r.bytes,0),top10:[...row.requests].sort((a,b)=>b.bytes-a.bytes).slice(0,10),measurement:'CDP loadingFinished encodedDataLength by first visible battle; incomplete in-flight responses separately listed'};
           row.inFlightAtBattle=[...network.values()].filter(r=>!row.requests.some(x=>x.url===r.url)).map(r=>r.url).slice(0,20);
+          if(measureSceneReady){
+            await page.waitForFunction(()=>{const battle=document.querySelector('.dp-battle:not(.dp-hidden)');if(!battle)return false;const images=[...battle.querySelectorAll('img')];return images.length>0&&images.every(e=>e.complete&&e.naturalWidth>0);},{},{timeout:30000});
+            row.sceneReadyMs=Date.now()-began;
+            row.sceneReadyDefinition='First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate';
+            row.transferAtSceneReady={bytes:row.requests.reduce((s,r)=>s+r.bytes,0),top10:[...row.requests].sort((a,b)=>b.bytes-a.bytes).slice(0,10)};
+            row.inFlightAtSceneReady=[...network.values()].filter(r=>!row.requests.some(x=>x.url===r.url)).map(r=>r.url).slice(0,20);
+          }
           await shot('battle');row.layouts.push(await layout(page,'battle'));
           await page.getByRole('button',{name:'Mint trial reward',exact:true}).waitFor({state:'visible',timeout:180000});
           await click('Mint trial reward');await page.getByRole('button',{name:'Fund workshop',exact:true}).waitFor({timeout:90000});row.firstReceiptMs=Date.now()-began;
@@ -154,6 +161,7 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
           mark('every_receipt_visibly_labeled',row.receipts.every(r=>row.renderedReceipts.some(v=>v.hash===r.hash&&v.visible&&/Confirmed/.test(v.text)&&/Fee/.test(v.text)&&/paid gas/.test(v.text)&&v.payerTitle?.includes(r.payer)&&v.href?.endsWith(r.hash))));
           mark('no_horizontal_overflow',row.layouts.every(r=>!r.overflowX&&r.clipped.length===0));mark('primary_keyboard_access',row.focus.every(r=>r.reachable));
           mark('cold_visible_battle_transfer_under_8MB',row.transferAtBattle.bytes>8_000_000?false:row.inFlightAtBattle.length?null:true,{inFlight:row.inFlightAtBattle.length});
+          if(measureSceneReady)mark('cold_scene_images_ready_transfer_under_8MB',row.transferAtSceneReady.bytes>8_000_000?false:row.inFlightAtSceneReady.length?null:true,{inFlight:row.inFlightAtSceneReady.length,definition:row.sceneReadyDefinition});
           mark('public_explorer_proof',local?null:row.explorer.every(e=>e.apiReceiptMatches),{scope:local?'unverified on public chain; local hashes excluded':'public Fuji'});
           row.verdict=row.assertions.some(a=>a.pass===false)||row.errors.length||row.failedRequests.length?'FAIL':'PASS_LOCAL_ONLY';
         }

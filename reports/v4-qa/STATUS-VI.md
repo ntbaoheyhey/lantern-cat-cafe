@@ -7,5 +7,5 @@ QA-3 đã đóng: hướng dẫn mới ghi đúng 8 Spool → 6 YARN, giữ lạ
 QA-4: SHIP đã sửa CSS cho attribution trên phone; đang chờ QA kiểm tra lại bundle mới.
 Đã hoàn tất metadata và build local: 7.942 file, 248,74 MB; chưa xác minh gói upload hoặc gói dịch vụ Vercel.
 Kiểm tra deploy đủ 25/25 handler; số 23 trước đó là lỗi bộ phân tích QA, đã sửa.
-Chưa chốt quỹ sponsor cho 2 ví; phép thử local chưa khởi chạy thành công, chờ tải máy giảm.
+QA-8: trên Anvil, quỹ 1,075 AVAX đủ ví đầu nhưng ví workshop bị 503/No gas; đã khôi phục fixture. Không kết luận lỗi Fuji live.
 Chưa có DEPLOYED URL; receipt local không phải bằng chứng Fuji. Chưa xác nhận live 10/10.
