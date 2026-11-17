@@ -1,0 +1,1392 @@
+{
+  "at": "2026-11-17T01:23:03.165262+00:00",
+  "sourceSha": "abf6438866f0b5fcb9d09747d565c59cf6b35a3b",
+  "method": "Static identifiers only; no .env, secret stores, logins or remote writes. Dynamic access sites require manual review.",
+  "env": [
+    {
+      "name": "ACCEPT_TRIAL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/summarize-mix.mjs:38"
+      ]
+    },
+    {
+      "name": "AUDIO_EVIDENCE_DIR",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/check-settings.mjs:8",
+        "scripts/audio/check-settings.mjs:9"
+      ]
+    },
+    {
+      "name": "AUDIO_PYTHON",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/render-runtime.mjs:102"
+      ]
+    },
+    {
+      "name": "AUDIO_RUNTIME_ROOT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/audit-speech-cadence.mjs:63",
+        "scripts/audio/measure-current-cadence.mjs:9",
+        "scripts/audio/render-runtime.mjs:12",
+        "scripts/audio/review-scene-layers.mjs:10",
+        "scripts/audio/verify-render-callouts.mjs:15"
+      ]
+    },
+    {
+      "name": "AUDIO_SCENES",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/render-runtime.mjs:18"
+      ]
+    },
+    {
+      "name": "AUDIO_SECONDS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/measure-battle.mjs:9",
+        "scripts/audio/measure-callout-battle.mjs:10",
+        "scripts/audio/render-runtime.mjs:26"
+      ]
+    },
+    {
+      "name": "AUDIO_TRIAL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/measure-battle.mjs:9",
+        "scripts/audio/measure-callout-battle.mjs:10"
+      ]
+    },
+    {
+      "name": "AUDIO_URL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/check-settings.mjs:14",
+        "scripts/audio/measure-current-cadence.mjs:9",
+        "scripts/audio/render-runtime.mjs:13",
+        "scripts/audio/review-element-kits.mjs:18",
+        "scripts/audio/review-scene-layers.mjs:10"
+      ]
+    },
+    {
+      "name": "AUDIT_RESUME",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/audit-b2.mjs:12"
+      ]
+    },
+    {
+      "name": "AUTH_JWT_SECRET",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/auth.ts:44",
+        "supabase/functions/_shared/game-server.ts:20",
+        "supabase/functions/_shared/v2/server.ts:18",
+        "supabase/functions/chain-campaign-reward/index.ts:14",
+        "supabase/functions/chain-campaign/index.ts:12",
+        "supabase/functions/chain-cosmetics/index.ts:13",
+        "supabase/functions/chain-economy-v3/index.ts:13",
+        "supabase/functions/chain-items/index.ts:15",
+        "supabase/functions/chain-judge/index.ts:16",
+        "supabase/functions/guest-drip/index.ts:12"
+      ]
+    },
+    {
+      "name": "BARK_REVIEW_OUT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v3solo/bark-scheduler-review.mjs:6"
+      ]
+    },
+    {
+      "name": "BASE_URL",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/shared.tsx:7",
+        "apps/web/src/game/squad/turn3d/SkillCard.tsx:7",
+        "apps/web/src/game/squad/turn3d/UltimateCard.tsx:12",
+        "apps/web/src/game/squad/turn3d/assets.ts:37",
+        "scripts/check-contrast.mjs:13"
+      ]
+    },
+    {
+      "name": "BOT_PRICE_AVAX",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/bot-seller.mjs:54"
+      ]
+    },
+    {
+      "name": "BOT_PRICE_YARN",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/bot-seller.mjs:54"
+      ]
+    },
+    {
+      "name": "BOT_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/bot-seller.mjs:45",
+        "tools/chain/seed-market.mjs:30"
+      ]
+    },
+    {
+      "name": "CADENCE_OUT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/measure-current-cadence.mjs:11"
+      ]
+    },
+    {
+      "name": "CAPTURE_LABEL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:14",
+        "scripts/ui/q6-chain-capture.mjs:10"
+      ]
+    },
+    {
+      "name": "CAPTURE_RESUME",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:25"
+      ]
+    },
+    {
+      "name": "CAPTURE_RUNTIME_ROOT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:17"
+      ]
+    },
+    {
+      "name": "CAPTURE_URL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:17",
+        "scripts/ui/q6-capture.mjs:45",
+        "scripts/ui/q8-tutorial.mjs:19"
+      ]
+    },
+    {
+      "name": "CAPTURE_WIDTH",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:12",
+        "scripts/ui/rebuild-b2.mjs:7",
+        "scripts/ui/rebuild-chain-b2.mjs:4"
+      ]
+    },
+    {
+      "name": "CHAIN_CAMPAIGN_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-campaign/index.ts:16"
+      ]
+    },
+    {
+      "name": "CHAIN_CAMPAIGN_REWARDS_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-campaign-reward/index.ts:18",
+        "supabase/functions/chain-items/index.ts:31"
+      ]
+    },
+    {
+      "name": "CHAIN_COSMETICS_ENABLED",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-cosmetics/index.ts:17"
+      ]
+    },
+    {
+      "name": "CHAIN_ECONOMY_V3_DEMO",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-economy-v3/index.ts:20"
+      ]
+    },
+    {
+      "name": "CHAIN_ECONOMY_V3_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-campaign-reward/index.ts:9",
+        "supabase/functions/chain-campaign/index.ts:19",
+        "supabase/functions/chain-economy-v3/index.ts:14",
+        "supabase/functions/chain-items/index.ts:20",
+        "supabase/functions/chain-items/index.ts:31"
+      ]
+    },
+    {
+      "name": "CHAIN_JUDGE_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-judge/index.ts:15"
+      ]
+    },
+    {
+      "name": "CHAIN_LOCAL_API_PORT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:33",
+        "scripts/ui/q6-chain-capture.mjs:4",
+        "scripts/ui/q8-chain-tutorial.mjs:4",
+        "scripts/ui/q8-wallet-geometry-trace.mjs:5",
+        "tools/chain/economy-lab/sinks-browser.mjs:8",
+        "tools/chain/local.mjs:21"
+      ]
+    },
+    {
+      "name": "CHAIN_LOCAL_FIXTURE_ISOLATION",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-capture.mjs:39",
+        "scripts/ui/q6-chain-capture.mjs:6",
+        "scripts/ui/q8-chain-tutorial.mjs:6",
+        "scripts/ui/q8-wallet-geometry-trace.mjs:5",
+        "tools/chain/local.mjs:210"
+      ]
+    },
+    {
+      "name": "CHAIN_LOCAL_RPC_PORT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-chain-capture.mjs:5",
+        "scripts/ui/q8-chain-tutorial.mjs:5",
+        "scripts/ui/q8-wallet-geometry-trace.mjs:5",
+        "tools/chain/economy-lab/sinks-browser.mjs:9",
+        "tools/chain/local.mjs:21"
+      ]
+    },
+    {
+      "name": "CHAIN_LOCAL_WEB_PORT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q6-chain-capture.mjs:3",
+        "scripts/ui/q8-chain-tutorial.mjs:3",
+        "scripts/ui/q8-wallet-geometry-trace.mjs:5",
+        "tools/chain/economy-lab/sinks-browser.mjs:7",
+        "tools/chain/economy-lab/sinks-browser.mjs:20",
+        "tools/chain/local.mjs:21"
+      ]
+    },
+    {
+      "name": "CHAIN_SEAL_PRICE_TRIAL",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-items/index.ts:50",
+        "tools/chain/check-seal-trial.mjs:5",
+        "tools/chain/local.mjs:152"
+      ]
+    },
+    {
+      "name": "CHAIN_TESTER_BUDGET_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-items/index.ts:31"
+      ]
+    },
+    {
+      "name": "CRAWL_LIMIT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/crawl-ui.mjs:9"
+      ]
+    },
+    {
+      "name": "CRAWL_RESUME",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/crawl-ui.mjs:26"
+      ]
+    },
+    {
+      "name": "CRAWL_RETRY_FAILED",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/crawl-ui.mjs:29"
+      ]
+    },
+    {
+      "name": "DEV",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/audio/engine.ts:233",
+        "apps/web/src/cafe/CafeAdventure.tsx:172",
+        "apps/web/src/cafe/useCafe.ts:49",
+        "apps/web/src/game/cardrpg/App.tsx:13",
+        "apps/web/src/game/cardrpg/depth/App.tsx:82",
+        "apps/web/src/game/cardrpg/depth/preview-runtime.ts:99",
+        "apps/web/src/game/cardrpg/spine/scene.ts:82",
+        "apps/web/src/game/squad/SquadApp.tsx:21",
+        "apps/web/src/game/squad/SquadCanvas.tsx:31",
+        "apps/web/src/game/squad/SquadCanvas.tsx:39",
+        "apps/web/src/game/squad/turn3d/TurnApp.tsx:34",
+        "apps/web/src/game/stage/StageScene.ts:242",
+        "apps/web/src/game/stage/StageScene.ts:324",
+        "apps/web/src/game/stage/StageScene.ts:364",
+        "apps/web/src/game/stage/StageScene.ts:377",
+        "apps/web/src/game/stage/StageScene.ts:389",
+        "apps/web/src/game/v2/storeV2.ts:124",
+        "apps/web/src/inventory/demoItems.ts:15",
+        "apps/web/src/legacy-entry.tsx:13",
+        "apps/web/src/legacy-entry.tsx:15",
+        "apps/web/src/legacy-entry.tsx:17",
+        "scripts/audio/build-lab.mjs:6"
+      ]
+    },
+    {
+      "name": "DIAGNOSTIC_MUTE_BUSES",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/render-runtime.mjs:14"
+      ]
+    },
+    {
+      "name": "DIAGNOSTIC_STEMS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/render-runtime.mjs:15"
+      ]
+    },
+    {
+      "name": "DISTRIBUTOR_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/fund-rewards.mjs:17"
+      ]
+    },
+    {
+      "name": "E2E_PORT_API",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/local-server.mjs:30"
+      ]
+    },
+    {
+      "name": "E2E_PORT_SERVER",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/local-server.mjs:30"
+      ]
+    },
+    {
+      "name": "ECONOMY_EVIDENCE_DIR",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/economy-lab/native-cohort.mjs:11",
+        "tools/chain/economy-lab/native-sensitivity.mjs:14",
+        "tools/chain/economy-lab/sensitivity.mjs:12"
+      ]
+    },
+    {
+      "name": "ECONOMY_STOP_FILE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/economy-lab/native-cohort.mjs:27",
+        "tools/chain/economy-lab/native-sensitivity.mjs:42",
+        "tools/chain/economy-lab/native-sensitivity.mjs:50",
+        "tools/chain/economy-lab/sensitivity.mjs:50"
+      ]
+    },
+    {
+      "name": "FUJI_RPC_URL",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "scripts/check-live.mjs:13",
+        "supabase/functions/_shared/game-server.ts:144",
+        "supabase/functions/_shared/v2/server.ts:68",
+        "supabase/functions/chain-campaign-reward/index.ts:23",
+        "supabase/functions/chain-cosmetics/index.ts:19",
+        "supabase/functions/chain-economy-v3/index.ts:19",
+        "supabase/functions/chain-items/index.ts:22",
+        "supabase/functions/chain-judge/index.ts:23",
+        "supabase/functions/guest-drip/index.ts:32",
+        "tools/chain/bot-seller.mjs:47",
+        "tools/chain/diagnose-rewards.mjs:49",
+        "tools/chain/fuji-smoke.mjs:18",
+        "tools/chain/fund-rewards.mjs:11",
+        "tools/chain/seed-market.mjs:26"
+      ]
+    },
+    {
+      "name": "GAME_SEED_SECRET",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/game-server.ts:152",
+        "supabase/functions/_shared/v2/server.ts:69"
+      ]
+    },
+    {
+      "name": "GUEST_DRIP_ENABLED",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/guest-drip/index.ts:11"
+      ]
+    },
+    {
+      "name": "LABEL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q8-chain-tutorial.mjs:11",
+        "scripts/ui/q8-tutorial.mjs:8"
+      ]
+    },
+    {
+      "name": "MARKET_V2_ADDRESS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/bot-seller.mjs:54",
+        "tools/chain/fuji-smoke.mjs:18"
+      ]
+    },
+    {
+      "name": "MIX_TRIAL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/render-runtime.mjs:11",
+        "scripts/audio/voice-interruptions.mjs:5"
+      ]
+    },
+    {
+      "name": "MODE",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/stage/StageScene.ts:242",
+        "apps/web/src/game/stage/StageScene.ts:324",
+        "apps/web/src/game/stage/StageScene.ts:364",
+        "apps/web/src/game/stage/StageScene.ts:377",
+        "apps/web/src/game/stage/StageScene.ts:389",
+        "apps/web/src/game/v2/storeV2.ts:124"
+      ]
+    },
+    {
+      "name": "MOTION_CAPTURE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/motion-tour-b2.mjs:9"
+      ]
+    },
+    {
+      "name": "MOTION_QUICK",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/motion-tour-b2.mjs:9"
+      ]
+    },
+    {
+      "name": "MOTION_TRIAL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/motion-tour-b2.mjs:9"
+      ]
+    },
+    {
+      "name": "PROBE_METRIC",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/q5-room-probes.mjs:10"
+      ]
+    },
+    {
+      "name": "PROD",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/wallet/authApi.ts:94"
+      ]
+    },
+    {
+      "name": "REBUILD_RESUME",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/rebuild-b2.mjs:14"
+      ]
+    },
+    {
+      "name": "SCREENS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/crawl-ui.mjs:9",
+        "scripts/ui/q6-capture.mjs:13",
+        "scripts/ui/q6-chain-capture.mjs:10",
+        "scripts/ui/rebuild-b2.mjs:8"
+      ]
+    },
+    {
+      "name": "SEASON_REWARDS_ADDRESS",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-campaign-reward/index.ts:21",
+        "supabase/functions/chain-economy-v3/index.ts:20",
+        "supabase/functions/chain-items/index.ts:30",
+        "tools/chain/diagnose-rewards.mjs:48",
+        "tools/chain/fuji-smoke.mjs:18",
+        "tools/chain/fund-rewards.mjs:11"
+      ]
+    },
+    {
+      "name": "SITE_URL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/check-live.mjs:11"
+      ]
+    },
+    {
+      "name": "SIWE_ALLOWED_ORIGIN",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/auth.ts:51"
+      ]
+    },
+    {
+      "name": "SIWE_DOMAIN",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/auth.ts:46"
+      ]
+    },
+    {
+      "name": "SMOKE_BUYER_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/diagnose-rewards.mjs:64",
+        "tools/chain/fuji-smoke.mjs:20"
+      ]
+    },
+    {
+      "name": "SMOKE_SELLER_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/diagnose-rewards.mjs:64",
+        "tools/chain/fuji-smoke.mjs:20"
+      ]
+    },
+    {
+      "name": "SPONSOR_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/guest-drip/index.ts:19"
+      ]
+    },
+    {
+      "name": "SUPABASE_JWT_SECRET",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/auth.ts:44",
+        "supabase/functions/_shared/game-server.ts:20",
+        "supabase/functions/_shared/v2/server.ts:18",
+        "supabase/functions/chain-campaign-reward/index.ts:14",
+        "supabase/functions/chain-campaign/index.ts:12",
+        "supabase/functions/chain-cosmetics/index.ts:13",
+        "supabase/functions/chain-economy-v3/index.ts:13",
+        "supabase/functions/chain-items/index.ts:15",
+        "supabase/functions/chain-judge/index.ts:16",
+        "supabase/functions/guest-drip/index.ts:12"
+      ]
+    },
+    {
+      "name": "SUPABASE_SERVICE_ROLE_KEY",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/auth.ts:17",
+        "supabase/functions/_shared/game-server.ts:27",
+        "supabase/functions/_shared/v2/server.ts:24",
+        "supabase/functions/_shared/v2/server.ts:83",
+        "supabase/functions/chain-campaign-reward/index.ts:19",
+        "supabase/functions/chain-campaign/index.ts:17",
+        "supabase/functions/chain-cosmetics/index.ts:21",
+        "supabase/functions/chain-economy-v3/index.ts:17",
+        "supabase/functions/chain-items/index.ts:26",
+        "supabase/functions/chain-judge/index.ts:25",
+        "supabase/functions/guest-drip/index.ts:21"
+      ]
+    },
+    {
+      "name": "SUPABASE_URL",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "scripts/check-live.mjs:12",
+        "supabase/functions/_shared/auth.ts:17",
+        "supabase/functions/_shared/game-server.ts:27",
+        "supabase/functions/_shared/v2/server.ts:24",
+        "supabase/functions/_shared/v2/server.ts:83",
+        "supabase/functions/chain-campaign-reward/index.ts:19",
+        "supabase/functions/chain-campaign/index.ts:17",
+        "supabase/functions/chain-cosmetics/index.ts:21",
+        "supabase/functions/chain-economy-v3/index.ts:17",
+        "supabase/functions/chain-items/index.ts:26",
+        "supabase/functions/chain-judge/index.ts:25",
+        "supabase/functions/guest-drip/index.ts:21",
+        "tools/chain/diagnose-rewards.mjs:51",
+        "tools/chain/fuji-smoke.mjs:21",
+        "tools/chain/seed-market.mjs:27"
+      ]
+    },
+    {
+      "name": "T2_BANDS_OUT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "packages/game-rules/src/v2/sim/measure.mjs:15"
+      ]
+    },
+    {
+      "name": "T2_KILLS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "packages/game-rules/src/v2/sim/measure.mjs:18"
+      ]
+    },
+    {
+      "name": "T2_METADATA_ONLY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "packages/game-rules/src/v2/sim/measure.mjs:17"
+      ]
+    },
+    {
+      "name": "T2_SCENARIO",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "packages/game-rules/src/v2/sim/measure.mjs:17"
+      ]
+    },
+    {
+      "name": "TOPICS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q8-tutorial.mjs:8"
+      ]
+    },
+    {
+      "name": "V3SOLO_B_ROOT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v3solo/collect-q2.mjs:7"
+      ]
+    },
+    {
+      "name": "V4_AUDIO_TRACE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/journey-run.mjs:39"
+      ]
+    },
+    {
+      "name": "V4_BASE_URL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/demo-path.mjs:11",
+        "scripts/v4ship/parity.mjs:13"
+      ]
+    },
+    {
+      "name": "V4_BUILD_REPORT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/rehearsal-run.mjs:18"
+      ]
+    },
+    {
+      "name": "V4_CAPTURE_LIMIT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/rehearsal-run.mjs:15"
+      ]
+    },
+    {
+      "name": "V4_CONTRAST_COMPARE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/journey-run.mjs:92"
+      ]
+    },
+    {
+      "name": "V4_FAIL_FAST",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/journey-run.mjs:110",
+        "scripts/v4ship/rehearsal-run.mjs:98"
+      ]
+    },
+    {
+      "name": "V4_FFMPEG",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/bake-receipt.mjs:12"
+      ]
+    },
+    {
+      "name": "V4_ITEM",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/check-ship.mjs:29",
+        "scripts/v4ship/demo-path.mjs:12",
+        "scripts/v4ship/journey-run.mjs:12",
+        "scripts/v4ship/rehearsal-run.mjs:14"
+      ]
+    },
+    {
+      "name": "V4_JOURNEY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/demo-path.mjs:1"
+      ]
+    },
+    {
+      "name": "V4_PARITY_BASELINE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/parity.mjs:35"
+      ]
+    },
+    {
+      "name": "V4_PARITY_MODE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/parity.mjs:7"
+      ]
+    },
+    {
+      "name": "V4_PARITY_OUTPUT",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/parity.mjs:9"
+      ]
+    },
+    {
+      "name": "V4_RECOVERY",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/journey-run.mjs:76",
+        "scripts/v4ship/rehearsal-run.mjs:67"
+      ]
+    },
+    {
+      "name": "V4_RUNS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/demo-path.mjs:13",
+        "scripts/v4ship/journey-run.mjs:12",
+        "scripts/v4ship/rehearsal-run.mjs:14"
+      ]
+    },
+    {
+      "name": "V4_STABLE",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/journey-run.mjs:25",
+        "scripts/v4ship/journey-run.mjs:105",
+        "scripts/v4ship/rehearsal-run.mjs:33",
+        "scripts/v4ship/rehearsal-run.mjs:93"
+      ]
+    },
+    {
+      "name": "V4_WIDTHS",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/v4ship/demo-path.mjs:14",
+        "scripts/v4ship/journey-run.mjs:12",
+        "scripts/v4ship/rehearsal-run.mjs:14"
+      ]
+    },
+    {
+      "name": "VITE_ALLOW_MOCK_AUTH",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/wallet/authApi.ts:94"
+      ]
+    },
+    {
+      "name": "VITE_CHAIN_MODE",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:14"
+      ]
+    },
+    {
+      "name": "VITE_CHAIN_STATS_URL",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/shell/LiveCounters.tsx:67",
+        "apps/web/src/game/cardrpg/shell/LiveCounters.tsx:76"
+      ]
+    },
+    {
+      "name": "VITE_CRAFT_PILOT",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/spine/scene.ts:82"
+      ]
+    },
+    {
+      "name": "VITE_FUJI_RPC_URL",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:27",
+        "apps/web/src/wallet/config.ts:12",
+        "scripts/fuji-proof.mjs:33",
+        "scripts/onchain-proof.mjs:23"
+      ]
+    },
+    {
+      "name": "VITE_GAME_V2",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/layout/flag.ts:3",
+        "apps/web/src/legacy-entry.tsx:13",
+        "apps/web/src/legacy-entry.tsx:15",
+        "apps/web/src/legacy-entry.tsx:17"
+      ]
+    },
+    {
+      "name": "VITE_MARKET_V2_ADDRESS",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:29"
+      ]
+    },
+    {
+      "name": "VITE_RELIC_FORGE_ADDRESS",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:31"
+      ]
+    },
+    {
+      "name": "VITE_SEASON_REWARDS_ADDRESS",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:30"
+      ]
+    },
+    {
+      "name": "VITE_SUPABASE_ANON_KEY",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/api/SupabaseGameApi.ts:34",
+        "apps/web/src/api/SupabaseGameApiV2.ts:48",
+        "apps/web/src/game/store.ts:20",
+        "apps/web/src/game/v2/storeV2.ts:120"
+      ]
+    },
+    {
+      "name": "VITE_SUPABASE_URL",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/api/SupabaseGameApi.ts:32",
+        "apps/web/src/api/SupabaseGameApiV2.ts:46",
+        "apps/web/src/game/cardrpg/chain/api.ts:34",
+        "apps/web/src/game/store.ts:20",
+        "apps/web/src/game/v2/storeV2.ts:120",
+        "apps/web/src/wallet/authApi.ts:50",
+        "apps/web/src/wallet/authApi.ts:93"
+      ]
+    },
+    {
+      "name": "VITE_UI_V3",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/ui-v3/flag.ts:2"
+      ]
+    },
+    {
+      "name": "VITE_V3_START_BLOCK",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:32",
+        "apps/web/src/game/cardrpg/shell/LiveCounters.tsx:39",
+        "apps/web/src/game/cardrpg/shell/LiveCounters.tsx:76"
+      ]
+    },
+    {
+      "name": "VITE_YARN_ADDRESS",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "frontend",
+      "locations": [
+        "apps/web/src/game/cardrpg/chain/runtime.ts:29"
+      ]
+    },
+    {
+      "name": "VOICE_MATRIX_CASES",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/voice-matrix.mjs:26"
+      ]
+    },
+    {
+      "name": "VOICE_MATRIX_TRIAL",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/audio/voice-matrix.mjs:14"
+      ]
+    },
+    {
+      "name": "VOUCHER_SIGNER_PRIVATE_KEY",
+      "documentedByName": false,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/_shared/game-server.ts:135",
+        "supabase/functions/_shared/v2/server.ts:62",
+        "supabase/functions/chain-campaign-reward/index.ts:22",
+        "supabase/functions/chain-economy-v3/index.ts:20",
+        "supabase/functions/chain-items/index.ts:25",
+        "supabase/functions/chain-judge/index.ts:26",
+        "supabase/functions/guest-drip/index.ts:19"
+      ]
+    },
+    {
+      "name": "WEB_ORIGIN",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "tools/chain/diagnose-rewards.mjs:52",
+        "tools/chain/fuji-smoke.mjs:21",
+        "tools/chain/seed-market.mjs:28"
+      ]
+    },
+    {
+      "name": "WIDTH",
+      "documentedByName": false,
+      "runtime": false,
+      "category": "tooling-or-package",
+      "locations": [
+        "scripts/ui/q8-tutorial.mjs:8"
+      ]
+    },
+    {
+      "name": "YARN_TOKEN_ADDRESS",
+      "documentedByName": true,
+      "runtime": true,
+      "category": "backend",
+      "locations": [
+        "supabase/functions/chain-campaign-reward/index.ts:22",
+        "supabase/functions/chain-cosmetics/index.ts:18",
+        "supabase/functions/chain-economy-v3/index.ts:20",
+        "supabase/functions/chain-items/index.ts:24",
+        "tools/chain/fuji-smoke.mjs:18",
+        "tools/chain/fund-rewards.mjs:11"
+      ]
+    }
+  ],
+  "runbookOnlyNames": [
+    "AUDIO",
+    "AVAX",
+    "CHAIN_ITEMS_ENABLED",
+    "CHAIN_YARN_ENABLED",
+    "CLASS",
+    "CLI",
+    "DEPLOYED",
+    "HANDOFF",
+    "HEAD",
+    "HTTP",
+    "INBOX",
+    "JWT",
+    "LEARN",
+    "LICENSES",
+    "NFT",
+    "REPO",
+    "S11",
+    "S12",
+    "SFX",
+    "SHIP",
+    "SIWE",
+    "SQL",
+    "URI",
+    "URL",
+    "V3_POOL_WEI",
+    "V4_GAS_PRICE_WEI",
+    "V4_PENDING_WEI",
+    "V4_PREVIOUS_DEPLOYMENT",
+    "V4_SPONSOR_BALANCE_WEI",
+    "VITE_",
+    "VITE_CHAIN_CAMPAIGN",
+    "VITE_CHAIN_CAMPAIGN_REWARDS",
+    "VITE_CHAIN_DEMO",
+    "VITE_CHAIN_LOOP",
+    "VITE_ECONOMY_V3",
+    "VITE_GUEST_WALLET",
+    "VITE_ITEM_TRADING",
+    "VITE_RELIC_FORGE",
+    "VITE_SHIP_JOURNEY",
+    "VITE_YARN_COSMETICS",
+    "VITE_YARN_TOKEN",
+    "YARN"
+  ],
+  "dynamicAccessSites": [
+    "scripts/local-server.mjs:11",
+    "supabase/functions/_shared/auth.ts:10",
+    "supabase/functions/_shared/game-server.ts:13",
+    "supabase/functions/_shared/v2/server.ts:13",
+    "supabase/functions/chain-items/index.ts:21",
+    "tools/chain/local.mjs:17"
+  ],
+  "paths": [
+    {
+      "path": "apps/web",
+      "exists": true
+    },
+    {
+      "path": "packages/chain/deployments/43113.json",
+      "exists": true
+    },
+    {
+      "path": "scripts/ui/check-icons.mjs",
+      "exists": true
+    },
+    {
+      "path": "scripts/ui/check-typography.mjs",
+      "exists": true
+    },
+    {
+      "path": "tools/chain/campaign-manifest.mjs",
+      "exists": true
+    },
+    {
+      "path": "tools/chain/prepare-v3-demo.mjs",
+      "exists": true
+    }
+  ],
+  "functionHandlers": [
+    {
+      "name": "chain-economy-v3",
+      "handlerExists": true
+    },
+    {
+      "name": "chain-campaign",
+      "handlerExists": true
+    },
+    {
+      "name": "chain-campaign-reward",
+      "handlerExists": true
+    },
+    {
+      "name": "chain-items",
+      "handlerExists": true
+    },
+    {
+      "name": "chain-cosmetics",
+      "handlerExists": true
+    },
+    {
+      "name": "chain-judge",
+      "handlerExists": true
+    },
+    {
+      "name": "guest-drip",
+      "handlerExists": true
+    },
+    {
+      "name": "auth-nonce",
+      "handlerExists": true
+    },
+    {
+      "name": "auth-verify",
+      "handlerExists": true
+    },
+    {
+      "name": "game-state",
+      "handlerExists": true
+    },
+    {
+      "name": "idle-claim",
+      "handlerExists": true
+    },
+    {
+      "name": "boss-fight",
+      "handlerExists": true
+    },
+    {
+      "name": "relic-forge",
+      "handlerExists": true
+    },
+    {
+      "name": "relic-mint-report",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-choose-class",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-claim",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-equip",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-state",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-craft",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-salvage",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-lock",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-relic-forge",
+      "handlerExists": true
+    },
+    {
+      "name": "v2-boss-fight",
+      "handlerExists": true
+    }
+  ],
+  "vercelConfigs": [
+    {
+      "path": "vercel.json",
+      "keys": [
+        "$schema",
+        "git"
+      ],
+      "buildCommand": null,
+      "outputDirectory": null,
+      "framework": null,
+      "functions": null,
+      "rewrites": null,
+      "ignoreCommand": null,
+      "shipAutoDeploymentDisabled": true
+    },
+    {
+      "path": "apps/web/vercel.json",
+      "keys": [
+        "ignoreCommand",
+        "headers",
+        "git"
+      ],
+      "buildCommand": null,
+      "outputDirectory": null,
+      "framework": null,
+      "functions": null,
+      "rewrites": null,
+      "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ] || git diff --quiet HEAD^ HEAD -- . ../../packages ../../pnpm-lock.yaml",
+      "shipAutoDeploymentDisabled": true
+    }
+  ],
+  "vercelFunctionSourcePaths": []
+}

@@ -52,5 +52,8 @@
     }
   ],
   "observedConsequence": "Source guest-drip returns503 without sponsor or voucher signer; JWT auth wiring requires configured secret. This static audit does not assert hosted secrets are absent.",
-  "fix": "Add a names-only prerequisites table, distinguishing AUTH_JWT_SECRET fallback, existing VOUCHER_SIGNER_PRIVATE_KEY, optional dedicated SPONSOR_PRIVATE_KEY and GAME_SEED_SECRET. Verify existence in Supabase Secrets; never copy values into reports."
+  "fix": "Add a names-only prerequisites table, distinguishing AUTH_JWT_SECRET fallback, existing VOUCHER_SIGNER_PRIVATE_KEY, optional dedicated SPONSOR_PRIVATE_KEY and GAME_SEED_SECRET. Verify existence in Supabase Secrets; never copy values into reports.",
+  "recheckedTargetSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "recheckedAt": "2026-11-17T01:33:34.171343+00:00",
+  "allFindingNamesStillAbsent": true
 }
