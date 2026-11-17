@@ -221,6 +221,25 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual([]);
   await e.unlock();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual(['mochi','test']);
  });
+ it('packages only the selected hero voice boundary and preserves synchronous terminal playback',async()=>{
+  const publicRoot=resolve(import.meta.dirname,'../../public');
+  const read=(path:string)=>JSON.parse(readFileSync(resolve(publicRoot,path),'utf8'));
+  const manifest=read('audio/manifest.json'),delivery=read('audio/v5/manifest.json');
+  const fetcher=vi.fn(async(url:string)=>url.startsWith('/audio-delivery/')?{ok:true,json:async()=>read(url.slice(1))}
+   :url.endsWith('.json')?{ok:true,json:async()=>url.includes('/v5/')?delivery:manifest}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
+  vi.stubGlobal('fetch',fetcher);
+  const original=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await original.unlock();await original.preloadVoices(['party-mochi']);
+  const expected=original.diagnostics.packs;expect(expected).toHaveLength(11);fetcher.mockClear();
+  const packed=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest,new PackedAudioLoader());
+  await packed.unlock();await packed.preloadVoices(['party-mochi']);
+  expect(packed.diagnostics.packs).toEqual(expected);
+  const urls=fetcher.mock.calls.map(([url])=>url);
+  expect(urls.filter(url=>url.startsWith('/audio-delivery/'))).toEqual([expect.stringMatching(/^\/audio-delivery\/voice-mochi\.[a-f0-9]+\.json$/)]);
+  expect(urls.some(url=>url.endsWith('.opus')||url.endsWith('.m4a')||url.includes('soot'))).toBe(false);
+  const requests=fetcher.mock.calls.length;packed.play('voice.mochi.hit');
+  expect(Context.latest.sources).toHaveLength(1);expect(Context.latest.sources[0]!.start).toHaveBeenCalledOnce();
+  expect(fetcher.mock.calls).toHaveLength(requests);expect(packed.hits.at(-1)?.result).toBe('played');
+ });
  it.each(['hit','death'])('starts the first active boss %s voice synchronously after roster preload',async phase=>{
   const e=new AudioEngine(()=>.5);await e.unlock();const settings=e.settings;
   await e.preloadVoices(['foe-0-yarn-giant']);expect(Context.latest.sources).toHaveLength(0);
