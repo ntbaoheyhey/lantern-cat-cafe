@@ -16,7 +16,7 @@
 - [x] REFILL-R3 Accessibility: reduced motion, contrast, text size findings -> reports/v5/AGS/ACCESSIBILITY.md [45 min]
 - [x] REFILL-R4 Error/offline states test plan for CXI (wallet missing, RPC down, sponsor low) -> reports/v5/AGS/OFFLINE-TEST-PLAN.md [45 min]
 - [x] REFILL-R5 Slides outline (8-10 slides) in submission/SLIDES-OUTLINE.md [45 min]
-- [ ] REFILL-R6 FAQ for judges -> reports/v5/AGS/JUDGE-FAQ.md [45 min]
+- [x] REFILL-R6 FAQ for judges -> reports/v5/AGS/JUDGE-FAQ.md [45 min]
 - [ ] REFILL-R7 Ambience/music bed variations (3 distinct mood variations) [60 min]
 - [ ] REFILL-R8 Loudness table refresh for all v5 audio -> reports/v5/AGS/LOUDNESS-TABLE.md [30 min]
 

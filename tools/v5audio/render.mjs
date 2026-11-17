@@ -1251,6 +1251,52 @@ export const AMBIENCE_DEFINITIONS = [
       "anoisesrc=c=white:r=48000:d=12.0,bandpass=f=2200:w=600,volume=0.04[shiver]",
       "[pad][heart][wind][shiver]amix=inputs=4:dropout_transition=0:normalize=0,volume=0.60,alimiter=limit=0.85:level=false[mix]"
     ].join(';')
+  },
+  {
+    cueId: 'ambience.cafe.afternoon',
+    name: 'ambience-cafe-afternoon',
+    runtimeCueId: 'ambience.cafe.afternoon',
+    aliases: ['music.afternoon', 'bgm.cafe.afternoon', 'ambience.tea'],
+    durationSec: 12.0,
+    bus: 'bgm',
+    loop: true,
+    filtergraph: [
+      "aevalsrc=exprs='0.20*sin(2*PI*174.61*t)+0.15*sin(2*PI*220.00*t)+0.12*sin(2*PI*261.63*t)':s=48000:d=12.0[pad]",
+      "anoisesrc=c=pink:r=48000:d=12.0,bandpass=f=2400:w=1200,volume=0.08[steam]",
+      "aevalsrc=exprs='0.08*sin(2*PI*1318.51*t)*exp(-mod(t\\,3.0)/0.6)':s=48000:d=12.0[chime]",
+      "[pad][steam][chime]amix=inputs=3:dropout_transition=0:normalize=0,volume=0.45,alimiter=limit=0.85:level=false[mix]"
+    ].join(';')
+  },
+  {
+    cueId: 'ambience.battle.intense',
+    name: 'ambience-battle-intense',
+    runtimeCueId: 'ambience.battle.intense',
+    aliases: ['music.battle.intense', 'bgm.battle.climax', 'ambience.battle.urgency'],
+    durationSec: 10.0,
+    bus: 'bgm',
+    loop: true,
+    filtergraph: [
+      "aevalsrc=exprs='0.22*sin(2*PI*82.41*t)+0.18*sin(2*PI*123.47*t)+0.12*sin(2*PI*164.81*t)+0.10*sin(2*PI*196.00*t)':s=48000:d=10.0[pad]",
+      "aevalsrc=exprs='0.32*sin(2*PI*60*t)*exp(-mod(t\\,0.5)/0.09)':s=48000:d=10.0[beat]",
+      "anoisesrc=c=brown:r=48000:d=10.0,bandpass=f=350:w=200,volume=0.22[flame]",
+      "[pad][beat][flame]amix=inputs=3:dropout_transition=0:normalize=0,volume=0.48,alimiter=limit=0.85:level=false[mix]"
+    ].join(';')
+  },
+  {
+    cueId: 'ambience.boss.dread',
+    name: 'ambience-boss-dread',
+    runtimeCueId: 'ambience.boss.dread',
+    aliases: ['music.boss', 'bgm.boss.yarn', 'ambience.boss.dread'],
+    durationSec: 12.0,
+    bus: 'bgm',
+    loop: true,
+    filtergraph: [
+      "aevalsrc=exprs='0.25*sin(2*PI*69.30*t)+0.18*sin(2*PI*103.83*t)+0.14*sin(2*PI*138.59*t)':s=48000:d=12.0[pad]",
+      "aevalsrc=exprs='0.35*sin(2*PI*48*t)*(0.8+0.2*sin(2*PI*6*t))':s=48000:d=12.0[sub]",
+      "aevalsrc=exprs='0.04*(sin(2*PI*880*t)+sin(2*PI*925*t))*(0.5+0.5*sin(2*PI*0.3*t))':s=48000:d=12.0[ring]",
+      "anoisesrc=c=pink:r=48000:d=12.0,lowpass=f=250,volume=0.20[rumble]",
+      "[pad][sub][ring][rumble]amix=inputs=4:dropout_transition=0:normalize=0,volume=0.45,alimiter=limit=0.85:level=false[mix]"
+    ].join(';')
   }
 ];
 

@@ -1,7 +1,7 @@
 # AGS Handoff (REV 4)
-ACTIVE: REFILL-R6 FAQ for judges (JUDGE-FAQ.md)
-NEXT 1: Author comprehensive FAQ for hackathon judges in reports/v5/AGS/JUDGE-FAQ.md
-NEXT 2: REFILL-R7 Ambience/music bed variations
-NEXT 3: REFILL-R8 Loudness table refresh for all v5 audio
-LAST_PUSHED_SHA: 72145bf8a
-LAST_REREAD_UTC: 2026-11-17T07:49:00Z
+ACTIVE: REFILL-R7 Ambience/music bed variations (3 distinct mood variations)
+NEXT 1: Synthesize 3 distinct mood ambience variations in tools/v5audio/render.mjs
+NEXT 2: REFILL-R8 Loudness table refresh for all v5 audio
+NEXT 3: When BOARD announces v5-m2: merge tag and run full live QA review
+LAST_PUSHED_SHA: bc11c09d6
+LAST_REREAD_UTC: 2026-11-17T07:51:00Z
