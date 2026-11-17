@@ -13,4 +13,5 @@
 - [x] R6 Landing/first-screen images: smallest acceptable versions of the first screen's images (LCP), with a montage [45 min]
 - [x] R7 New images after every new tag on BOARD: convert any new heavy image (repeatable) [30 min]
 - [x] R8 In-game spot check: composite 10 random siblings over a battle frame at display size vs the PNG; REQ to CXI if any looks different [45 min]
-- [ ] R9 Write tools/v5assets/README.md: exact commands to redo every conversion [20 min]
+- [x] R9 Write tools/v5assets/README.md: exact commands to redo every conversion [20 min]
+- [x] R10 Re-run inventory and forecast on the newest tag; update A3-forecast.md (repeatable) [30 min]
