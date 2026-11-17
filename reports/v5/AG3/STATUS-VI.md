@@ -1,6 +1,6 @@
 # Trạng thái AG3
-- Hoàn thành thẻ R6: Tối ưu hóa các ảnh LCP màn hình đầu tiên (giảm 36.6% payload, tiết kiệm 311.3 KB).
-- Keyart landing.webp -> landing.avif giảm 24.1% (tiết kiệm 64 KB, SSIM hiển thị 0.9862).
-- Bộ 4 portrait tướng (mochi, panko, soot, clover) giảm trên 50% kích thước sang AVIF.
-- Nạp thêm R7, R8, R9 vào QUEUE theo REFILL RULE.
-- Đang kiểm tra tag mới từ BOARD (R7) và tiến hành R8 spot check.
+- Hoàn thành thẻ R7: Kiểm tra tag v5-m0 và branch remote; không có ảnh mới từ upstream chưa được xử lý.
+- Hoàn thành thẻ R8: Spot check 10 sibling ngẫu nhiên trên nền chiến đấu (#171326), 10/10 đạt SSIM >= 0.995.
+- Không có lỗi viền hay sai màu; hình ảnh đạt độ sắc nét tuyệt đối.
+- Đang bắt đầu thẻ R9: Viết tài liệu tools/v5assets/README.md hướng dẫn lệnh tái lập quy trình.
+- Đã xuất R8-spotcheck.md và montage hình ảnh.
