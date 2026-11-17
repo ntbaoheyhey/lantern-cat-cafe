@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.5=6b972c409, appa2cbb3fb4; typecheck/build0,5224root incl2924web,11skip/2expectedfail. Repeat after accepted READY code delivery.
-I-B OPEN: m1.5 cold8583793/9144973/8659415B,allFAIL8MB; exact no-inline saving161522–161528B. AGV12approvedAVIF(T-CXI-4) and AGS4residualbeds(T-CXI-5) remain unaccepted; no assumed savings.
-I-C FIRST-HIT DONE:20,849ms incl17,700ms reading8cards,damage46 visible,zeroerrors; routing/receipt/recovery pass; truthful wide practice invitation9.347s, zero errors. Actual patrol66.331s at3x returns35route points+Rare Moonwick Shawl, FAIL30s. V7 target load-to-FIRST HIT <=30s; old70.151s measured receipt, not first hit; desktop1280x720 only.
+I-A DONE/REPEAT: v5-m1.6 application6bb96c69d;typecheck/build0,5227pass incl2927web,11skip/2expectedfail;sevenchecks+freshvisual+3films pass. Next CXV V-A3 READY review.
+I-B OPEN: m1.6 cold8584126/9145394/8659811B,allFAIL8MB; no-inline saving161522–161528B retained. AGV12AVIF(T4),4portraits(T6) pending. AGS residual4beds(T5)eb2e2b25d REDO:stereo/manifest/hash/loop evidence.
+I-C FIRST-HIT DONE:20,501ms incl17,700ms reading8cards,damage46,zeroerrors;route detour9864ms. Old66–70s timed fullpatrol receipt, not30s firsthit target.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
-I-E DONE/REFRESH: m1.5 production3x30s films actual1x+actualaudio,1280x720,0errors,3fresh sheets inspected once;REVIEW-VI.md,I-E.md,evidence/v7-m15-films.json. Ignored media work/v5/CXI/films/v7-m15-review/.
-I-F DONE: current desktop README+docs/ARCHITECTURE.md,3-step6301preview,5registry/explorer addresses, EOA/SIWE/ERC1155 truth; primary EN/ZH study, scoped links+registry+case checks pass. Owner public deployment remains unverified.
-I-G ACTIVE:AGS alternate Night route lacks repro artifact; requested exact controls+capture; PLANNER/AGS route detour reproduced; practice isolated from campaign, explicit return to pending preparation;20focusedpass;route3 fullsuite/9.199s capture pass. AGV T-CXI-4 exact top15/12AVIF target table ready.
+I-E DONE/REFRESH: m1.6 production3x30s films actual1×+audio,1280×720,0errors,3fresh sheets inspected once;REVIEW-VI/I-E/evidence/v7-m16b-films.json.
+I-F ACTIVE: README/ARCHITECTURE/runbook current;SUBMISSION-FACTS verified; AGS T7 must correct unsupported chain/mint/Forge claims in draft/script.
+I-G DONE/REPEAT: sheet failure/stall recovery passes13focused and fullsuite; bothcontrols insideviewport; failed1138ms/stalled8666ms,caféreturn/reloadpass. AGS originalNight issue stillneeds exacttrace.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.

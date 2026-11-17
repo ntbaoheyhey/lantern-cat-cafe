@@ -6,3 +6,5 @@ Focused SheetRecovery + CampaignA6:13tests pass,4.02s. New production fault harn
 Primary source note: /Users/bao/taskbar-hero-mailbox/LEARN/CXI-lazy-panel-recovery-20261117.md.
 
 Initial3b21794de pipeline: all7steps0,5227tests. Freshvisual inspection found slow-state recovery controls below1280×720 viewport despite locator visibility/click success. This blocks the green tag. Replace large illustration with compact slow-state recovery; strengthen real-browser harness to require both buttons fully in viewport. Newvalidation labelv7-m16b; earlier m16films are pre-fix evidence only.
+
+Validated6bb96c69d (v7-m16b): all7pipeline steps0;5227tests incl2927web. Both controls bounds x124/243,y334,bottom380 within1280×720; rejected1138ms/stalled8666ms,return café both,explicit reload restoresroute. Fresh two recovery sheets1024×576 inspected once and pass. Ordinary firsthit20501ms/route9864ms have0errors; fault console errors remain injected evidence only. Final index:ef21e23aa191d7b670782e9e53f0c198c679eb9e11971a1d023e1dfadcaf048f.
