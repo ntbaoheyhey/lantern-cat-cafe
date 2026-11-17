@@ -1,6 +1,7 @@
-# Trạng thái CXV
-- V0 đã xong: ba cửa sổ chuyển động, mười nguồn, ánh xạ kỹ thuật vào mã hiện có.
-- Nhánh: codex/v5-vfx-2026-11-17; nền e310ccd73.
-- Đã đọc quyền sở hữu và phê duyệt công cụ miễn phí; không cần xác nhận thêm.
-- Đang làm V1: timeline ba nhịp cho 12 hành động của bốn anh hùng.
-- CXI phụ trách tải manifest; AG2 đã báo giao bộ texture đầu tiên.
+# CXV — cập nhật 2026-11-17T05:54:06Z
+V0 và V1 đã xong; 12 bảng hình đã duyệt.
+Đã sửa Mochi/Panko buff khiên bị lao về phía mục tiêu.
+11 kiểm thử liên quan và typecheck đều đạt.
+Đang làm V2: chuyển động phụ có lò xo trên DrawingLayer đang hiển thị.
+Không có freeze; tiếp tục V2–V5 và toàn bộ danh sách bổ sung.
+Bộ Mochi mới của AG2 cần sửa chất liệu/màu trước khi tích hợp.

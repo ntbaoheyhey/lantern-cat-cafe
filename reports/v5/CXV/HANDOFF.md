@@ -1,16 +1,15 @@
 # CXV handoff
-ACTIVE: V1 skill timeline (started 2026-11-17T05:32Z; deadline 10:32Z). V0 DONE.
-NEXT 1: Read REV 3 prompt once, refresh RULES/QUEUE and mailbox, then fix Mochi/Panko archived support casts using melee body travel.
-NEXT 2: Run focused support-motion checks and recapture those two actions; write all twelve explicit readability judgments in V1.md.
-NEXT 3: Commit/push V1, announce READY, then execute V2 visible DrawingLayer secondary motion.
-Processes: Vite last observed PID 21499 (vite-6310.log); capture r2 23714 completed; no tests running. Recheck before heavy work.
-Last pushed SHA: 49c98c3fd (V1 implementation; visual review pending).
-Last RULES re-read UTC: 2026-11-17T05:32Z.
-Mailbox read offsets: BOARD 16, USER 5, INBOX-CXV 5; no STOP present.
-CXI owns spine/manifest-loader.ts + assets.ts + atlas-delivery.ts; expose registration API via vfx-registry.ts; scene.ts remains CXV.
-AG2 texture delivery b31ccd864 announced; inspect manifest read-only in /Users/bao/th-v5-ag2, never merge their branch.
-Owner: free tools preapproved when logged; no login/key/payment. No new dependency without CXI.
-Merged announced v5-m0; CXI owns narrow BattleResult preload hook in depth/Encounter.tsx.
-First capture found unknown palette keys missing cached stamps; switched to existing PAINT colors and added cache-contract assertions.
-Capture r2 passed with twelve inspected sheets, no page errors, and nonzero exact-impact timeline draws; irregular simulation timestamps, not FPS evidence. Mochi-2/Panko-2 body travel needs correction; other ten sheets generally readable.
-Scoped tests 15/15; palette tests 5/5; post-palette typecheck exit 0. Local logs/evidence remain in work/v5/CXV. Resumed 2026-11-17T05:47Z; no freeze per latest user instruction.
+ACTIVE: V2 secondary motion (started 2026-11-17T05:54:06Z; 5h). V0/V1 DONE.
+NEXT 1: Add deterministic spring/blink/target/expression sampling to game/rig/secondary-motion.ts and visible DrawingLayer.
+NEXT 2: Wire continuous motion clock/target/crit/hit inputs in DrawnPoses and scene.ts; test repeatability, feet <=1px, blink 2–6s.
+NEXT 3: Four hero idle+hit sheets and one shared-machine boss FPS check; report/READY, then V3.
+Processes: Vite PID 21499 port 6310, work/v5/CXV/jobs/vite-6310.log. Support capture/tests/typecheck completed.
+Last pushed SHA: a5eeff65d; V1 final commit/push in progress.
+Last RULES re-read UTC: 2026-11-17T05:54:06Z; REV 3 no-freeze/refill policy; source prompt already read once.
+Mailbox offsets: INBOX-CXV 21, USER 7, BOARD 16; check STOP-ALL/STOP-CXV at checkpoints.
+CXI owns spine assets/atlas-delivery/manifest-loader, narrow BattleResult hook, and newly granted vfx-layered/player.ts loader-only prepare/loadPage edits. Scene/render logic remains CXV.
+CXI request: compact charge/passive loading; owner pages currently shared, cannot blindly omit craft owners. Requested API/contract before scene wiring.
+AG2 Mochi review completed: 4/4/3/4; revision requested for painted motif/palette and primitive ancillary assets. Old textures rejected by owner; procedural fallback remains.
+V1 final sheets: work/v5/CXV/films/V1-r2; support replacements in V1-support. Every impact draws; no page errors; support caster roots constant.
+V1 final checks: support tests11/11; final typecheck0. All twelve explicit readability judgments in V1.md; cues previously delivered to AG4.
+Original work remains isolated; no old ART files staged, no producer branches merged. Only announced v5-m0 merged.

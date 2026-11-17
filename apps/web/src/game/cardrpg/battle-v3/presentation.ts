@@ -4,6 +4,12 @@ import {getV5Timeline,skillFeedback} from '../vfx-layered/skill-timeline';
 export type PresentationTier='basic'|'active'|'ultimate';
 type PresentedPlan=EffectPlan&{sequence?:{tier:PresentationTier}};
 
+/** Retaliation from a recipient must not turn a support cast into a melee dash. */
+export function isSupportCast(plan:EffectPlan):boolean {
+ return plan.events.some(e=>e.actorId===plan.actorId&&(e.type==='heal'||e.type==='shield'))
+  &&!plan.events.some(e=>e.actorId===plan.actorId&&e.type==='damage');
+}
+
 /** Rules presentation IDs distinguish an enemy's signature from its basic. */
 export function presentationTier(plan:PresentedPlan):PresentationTier {
  if(plan.sequence)return plan.sequence.tier;

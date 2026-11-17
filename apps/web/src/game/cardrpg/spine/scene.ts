@@ -19,7 +19,7 @@ import {meleeContact,meleeRoot,denseMeleeRoot} from '../battle-v3/class-motion';
 import {BossPhase} from '../battle-v3/boss-phase';
 import {BattleWeather} from '../battle-v3/weather';
 import {crowdPose} from '../battle-v3/crowd';
-import {impactFeedback} from '../battle-v3/presentation';
+import {impactFeedback,isSupportCast} from '../battle-v3/presentation';
 import { loadSpineActor, type SpineActor, spineCacheStats } from './assets';
 import { SPINE_SKILLS, type SpineSocket } from './config';
 import { fixedActionClipTime,retimedClipTime, type SpineCue } from './events';
@@ -276,7 +276,8 @@ export class SpineScene {
     name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
     const authored=sequence?.seq.casterAnim.filter(k=>k.t<=frame.elapsed&&k.name).at(-1)?.name;
     if(authored&&!chargeEvent(frame.plan))name=authored;
-    if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':'attack';
+    if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':
+     ['mochi','panko'].includes(entry.asset)&&isSupportCast(frame.plan)?'skill':'attack';
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
     at=entry.craftPose?.owns(name)?Math.min(duration,motionElapsed/1000):(frame.plan as SequencePlan).fixedTiming
      ?fixedActionClipTime(motionElapsed,duration,hit,frame.plan.beats[2]!.start,frame.plan.duration,frame.plan.ultimate?600:0)
@@ -322,8 +323,8 @@ export class SpineScene {
    }
    // The pilot gesture already moves the trunk around planted feet. Applying
    // the old complete-card lean on top would undo that contact and deform the face.
-   if(entry.craftPose&&!iced&&['attack','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
-   if(['mochi','panko','yarn-giant'].includes(entry.asset)&&entry.craftPose&&frame&&unit.id===plan?.actorId&&(!plan.ultimate||entry.asset==='yarn-giant')&&unit.hp>0&&!iced&&!view.model&&!chargeEvent(plan)&&targetId&&this.actors.has(targetId)){
+   if(entry.craftPose&&!iced&&['attack','skill','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
+   if(['mochi','panko','yarn-giant'].includes(entry.asset)&&entry.craftPose&&frame&&unit.id===plan?.actorId&&(!plan.ultimate||entry.asset==='yarn-giant')&&unit.hp>0&&!iced&&!view.model&&!chargeEvent(plan)&&!isSupportCast(plan)&&targetId&&this.actors.has(targetId)){
     const m=entry.craftPose.drawing.set.manifest,b=m.poses[plan.ultimate?'K5':'K2']!.opaqueBounds!,direction=unit.side==='enemy'?-1:1;
     const face=spriteFacing(actor.unit.nativeFacing,unit.side),scale=home.point.core/m.opaqueHeight;
     const reach=direction>0?Math.max((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale:-Math.min((b[0]-m.baseline[0])*face,(b[2]-m.baseline[0])*face)*scale;

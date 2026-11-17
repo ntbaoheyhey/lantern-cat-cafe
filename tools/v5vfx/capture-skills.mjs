@@ -40,7 +40,8 @@ try {
         label.textContent = `${id} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
         return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
           modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
-          eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand')};
+          eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand'),
+          casterRoot: s.actors.get(m.plan.actorId)?.actor.root.position.toArray(), pose: s.sampled.get(m.plan.actorId)?.name};
       }, {ms, id});
       await page.screenshot({path: resolve(dir, `frame-${String(index).padStart(2, '0')}.png`)});
       samples.push({ms, ...audit});
