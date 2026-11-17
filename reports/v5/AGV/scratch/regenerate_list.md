@@ -1,0 +1,18 @@
+# Textures to regenerate
+- [ ] mochi-anticipation: 3/2/1/1/2
+- [ ] mochi-decal: 3/2/1/1/2
+- [ ] mochi-particle-1: 3/2/1/2/2
+- [ ] clover-anticipation: 3/2/1/2/2
+- [ ] clover-decal: 3/2/1/2/2
+- [ ] clover-particle-1: 2/2/1/2/2
+- [ ] clover-particle-2: 3/1/1/1/2
+- [ ] clover-particle-3: 2/1/1/2/2
+- [ ] panko-anticipation: 3/2/1/2/2
+- [ ] panko-decal: 3/2/1/2/2
+- [ ] panko-particle-1: 2/1/1/2/2
+- [ ] panko-particle-2: 3/2/1/2/2
+- [ ] panko-particle-3: 3/2/1/2/2
+- [ ] soot-anticipation: 3/2/1/1/2
+- [ ] soot-decal: 3/1/1/1/2
+- [ ] soot-particle-1: 2/1/1/2/2
+- [ ] soot-particle-3: 2/1/1/2/2
