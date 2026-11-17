@@ -1,7 +1,7 @@
 # CXI V6 continuation
 ACTIVE: I-G route recovery works; guest evidence condition fixed after fresh capture exposed offline=false. Two guest result regressions pass.
 NEXT 1: Inspect v6-route3 pipeline; inspect fresh route/receipt and v6-route2 effects once; publish v5-m1.4 after green.
-NEXT 2: Integrate AGV12AVIF/AGS residual audio READY deliveries; fullsuite then next green tag.
+NEXT 2: Inspect I-B no-inline experiment PID34724,jobs/v6-inline-measure-fixed.log; integrate AGV12AVIF/AGS residual audio READY.
 NEXT 3: CXV pacing study pending for70.151s level-first patrol; I-E films when I-A..C green.
 Last pushed SHA:b706346b6; green tagv5-m1.3=04c913bc5; newer CXV merge and route fix require fullsuite.
 self-wake: CXI wake, every15min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T13:15:48Z.
