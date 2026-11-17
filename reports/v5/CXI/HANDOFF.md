@@ -1,9 +1,9 @@
 # CXI V7 continuation
-ACTIVE: m1.9 release docs and tag preparation; assistant: AGS. All9pipeline steps exit0; no detached jobs.
-NEXT 1: Push release-doc commit and annotated v5-m1.9 tag; then update BOARD and announce verified tag/hash to lanes.
-NEXT 2: Independently review CXV e58ef974c numbermetrics with own production baseline/candidate and scoped performance/equivalence evidence.
-NEXT 3: Continue wave3 gap228520B and AGS T1/T5/T7/T8 REDOs; six useful open tasks remain.
-Last pushed:37d154c59;green v5-m1.8@8d06c71ed;validatedm1.9 release docs ready, not yet tagged.
+ACTIVE: Independent review of CXV numbermetrics e58ef974c; assistant: AGS. m1.9 released and announced.
+NEXT 1: Inspect e58ef974c scoped diff/tools; capture own m1.9 production baseline, then integrate/review candidate.
+NEXT 2: Continue wave3 gap228520B using measured resource evidence; preserve exact audio/art and preload semantics.
+NEXT 3: Review AGS T1/T5/T7/T8 REDOs; maintain6useful open tasks and true UTC evidence.
+Last pushed:8724ab79832aeb527298991f0660a35b7fbf7d73;green v5-m1.9 sameSHA;remoteannotatedtagverified;BOARD+3lanesannounced.
 Application:4ae1c9580f91b816f6860a79420faa4edab59a99;indexa7a8c615c0998065c2406a1eecc4c1612aaf868d14757ac7e4f3d10736c9e3b9.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified17:11UTC;exact V7 prompt verified16:29UTC;no duplicate.
 Last RULES re-read UTC:2026-11-17T17:17:43.982292+00:00;STOPfiles absent.
