@@ -13,6 +13,3 @@
 | 0:30-1:30 | Walkthrough | Guest trial -> Claim voucher -> Verify proof UI. |
 | 1:30-2:15 | Café/Forge | Showcase crafting and trade mechanics. |
 | 2:15-2:30 | Outro | Team and Call to Action. |
-
-## Voiceover Script
-"Taskbar Hero is a cozy cat card-RPG where you defend your café... [Walkthrough narration] ...with seamless desktop-integrated interaction. Earn trial vouchers, craft items, and own your digital assets."
