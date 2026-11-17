@@ -29,3 +29,10 @@
 | `clover-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
 | `clover-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
 | `clover-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/clover-anticipation.jpg | PASS |
+| `panko-impact` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-impact.jpg | PASS |
+| `panko-slash` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/panko-slash.jpg | PASS |
+| `panko-anticipation` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
+| `panko-decal` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-decal.jpg | PASS |
+| `panko-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
+| `panko-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |
+| `panko-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/panko-anticipation.jpg | PASS |

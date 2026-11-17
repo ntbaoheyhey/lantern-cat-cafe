@@ -1,5 +1,5 @@
 # TRẠNG THÁI AG2 (VFX TEXTURES - REV 3)
-- Hoàn thành Q4 Clover full set (generation-first): sinh ảnh AI cho clover-impact 4x4 (88KB), projectile phấn hoa vàng, decal vòng tiên thảo mộc.
-- Điểm G1-G5 toàn bộ đạt >= 4 (24-25/25), composite battle <= 148KB, đã gửi REVIEW tới CXV.
-- Nhận phản hồi từ CXV yêu cầu chỉnh sửa Mochi (R-mochi): đổi hoạ tiết vải khâu/khiên và dải màu mật ong/vàng ấm thay vì khối vector phẳng.
-- Đang tiến hành R-mochi và chuẩn bị sinh ảnh AI cho Q5 Panko full set.
+- Hoàn thành R-mochi: đã làm lại anticipation thành khiên vải thêu mật ong/vàng ấm, hạt may vá/mảnh vải/bông gòn, decal thảm khiên có viền chỉ. Đã gửi REVIEW mochi-v2.
+- Hoàn thành Q5 Panko full set (generation-first): sinh ảnh AI cho panko-impact 4x4 (72KB) và panko-slash 4x4 (46KB), decal bánh quế bơ nướng.
+- Toàn bộ điểm G1-G5 >= 4 (24-25/25), composite battle <= 147KB, đã gửi REVIEW tới CXV.
+- Bắt đầu thực hiện Q6 Ultimates: 8 sheets 4x4 (ult-charge và ult-release cho cả 4 hero Mochi, Soot, Clover, Panko).

@@ -1,8 +1,8 @@
 # AG2 HANDOFF (REV 3)
-ACTIVE: R-mochi (Revise Mochi ancillaries with stitch/shield motif & warm honey/gold palette)
-NEXT 1: node tools/v5tex/gen-mochi-ancillaries.mjs && node tools/v5tex/check.mjs
-NEXT 2: composite revised Mochi in reports/v5/AG2/comp/ and update reports/v5/AG2/T1/mochi-montage.jpg
-NEXT 3: Q5 Panko full set (generation-first bakery butter/crumb theme)
-LAST PUSHED SHA: 1d81a01bc
-IMAGE BUDGET USED: 5 generated sheets
-LAST RE-READ UTC: 2026-11-17T05:55:00Z
+ACTIVE: Q6 Ultimates (ult-charge + ult-release per hero, 4x4 sheets)
+NEXT 1: generate and process 4x4 sheets for <hero>-ult-charge and <hero>-ult-release (8 sheets)
+NEXT 2: add new IDs to manifest.json and validate with check.mjs
+NEXT 3: composite in reports/v5/AG2/comp/ and score G1-G5
+LAST PUSHED SHA: 37cab4722
+IMAGE BUDGET USED: 7 generated sheets
+LAST RE-READ UTC: 2026-11-17T05:59:00Z

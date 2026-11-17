@@ -6,3 +6,5 @@
 2026-11-17T05:49:38Z | mochi-slash-04 | work/v5/AG2/raw/mochi-slash-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first blade slash, razor cutting edge with trailing strawberry silk ribbon, 38KB WebP)
 2026-11-17T05:51:47Z | soot-impact-05 | work/v5/AG2/raw/soot-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first firecracker cinder burst, white-yellow core to fiery orange shockwave and charcoal smoke, 64KB WebP)
 2026-11-17T05:53:33Z | clover-impact-06 | work/v5/AG2/raw/clover-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first healing burst, incandescent white to emerald clover blossom and honey gold petals, 88KB WebP)
+2026-11-17T05:57:10Z | panko-impact-07 | work/v5/AG2/raw/panko-impact-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first bakery butter slam impact explosion, hot white butter core, golden crumb shockwave, dissipating steam motes)
+2026-11-17T05:57:20Z | panko-slash-08 | work/v5/AG2/raw/panko-slash-gen.jpg | SUCCESS | KEPT (16-frame 4x4 generation-first cleaver slash arc, molten golden crescent with trailing toasted pastry crumbs and soft steam)
