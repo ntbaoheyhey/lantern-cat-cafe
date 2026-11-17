@@ -15,3 +15,10 @@
 | `mochi-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
 | `mochi-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
 | `mochi-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/mochi-anticipation.jpg | PASS |
+| `soot-impact` | 5 | 5 | 5 | 5 | 5 | 25 | reports/v5/AG2/comp/soot-impact.jpg | PASS |
+| `soot-projectile` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-projectile.jpg | PASS |
+| `soot-anticipation` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
+| `soot-decal` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-decal.jpg | PASS |
+| `soot-particle-1` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
+| `soot-particle-2` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |
+| `soot-particle-3` | 5 | 5 | 4 | 5 | 5 | 24 | reports/v5/AG2/comp/soot-anticipation.jpg | PASS |

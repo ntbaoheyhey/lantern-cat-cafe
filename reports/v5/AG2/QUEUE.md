@@ -1,7 +1,7 @@
 # AG2 QUEUE (REV 3)
 - [x] Q1 LEARN + STYLE BIBLE [time box 60 min]
 - [x] Q2 Mochi full set, generation-first [time box 75 min]
-- [ ] Q3 Soot full set [time box 75 min]
+- [x] Q3 Soot full set [time box 75 min]
 - [ ] Q4 Clover full set [time box 75 min]
 - [ ] Q5 Panko full set [time box 75 min]
 - [ ] Q6 Ultimates: ult-charge + ult-release per hero [time box 2 h]
