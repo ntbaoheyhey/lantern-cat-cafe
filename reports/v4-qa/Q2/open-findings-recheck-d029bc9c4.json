@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-17T01:56:42.063637+00:00",
+  "targetSha": "d029bc9c448ba0c35672bcae132e02262d6e30c9",
+  "runtimeEvidenceSha": "b1e4398a8844fa51d2784760e92ed24528d13d2b",
+  "changedRuntimePaths": [
+    "apps/web/src/audio/engine.test.ts",
+    "apps/web/src/audio/engine.ts"
+  ],
+  "QA-2": {
+    "status": "open",
+    "recheck": "Source-delta recheck: only audio engine/test changed; game presentation, image assets and load routing unchanged. Original independent29.65MB reproduction retained. Exact latest-bundle bytes require next preview refresh.",
+    "newBrowserRun": false
+  },
+  "QA-3": {
+    "status": "open",
+    "runbookStillPromises12Yarn": true,
+    "withdrawalRuleOrUiChanged": false,
+    "evidence": "Q2/withdrawal-reproduction.json"
+  }
+}

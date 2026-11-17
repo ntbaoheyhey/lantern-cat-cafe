@@ -24,3 +24,5 @@ Q1 network policy | own fixture | PASS4safetytests Q1/network-policy-check.json.
 Q1 local fixture Forge build | b1e4398a | PASS Q1/build-1.json; no submodule blocker.
 Q2 source paths/env inventory | abf6438866f0 + b1e4398a | PASS inventory; QA-1 open.
 Q2 QA-1 recheck | 52aaaba399a38cf76de68866af6c8e6ed972cfdd | fixed; unchanged runtime; names and fallback table now independently verified.
+
+Latest observed SHIPd029bc9c4 changes audio engine/test, while runtime preview remains b1e4398a. QA2/QA3 source-delta recheck stillopen (Q2/open-findings-recheck-d029bc9c4.json); exact newest transfer requires preview refresh.
