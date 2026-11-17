@@ -1,0 +1,719 @@
+{
+  "at": "2026-11-17T05:47:49.591Z",
+  "purpose": "Explicit V5 audio mapping for CXI I2 integration",
+  "totalCues": 55,
+  "totalManifestKeysWithAliases": 105,
+  "cues": {
+    "hero.mochi.basic": {
+      "opus": "/audio/v5/hero-mochi-basic.opus",
+      "m4a": "/audio/v5/hero-mochi-basic.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.428,
+      "bus": "sfx",
+      "runtimeCueId": "skill.mochi.1.impact",
+      "aliases": [
+        "kit.holy.impact",
+        "mochi-1"
+      ]
+    },
+    "hero.mochi.skill": {
+      "opus": "/audio/v5/hero-mochi-skill.opus",
+      "m4a": "/audio/v5/hero-mochi-skill.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.658,
+      "bus": "sfx",
+      "runtimeCueId": "skill.mochi.2.impact",
+      "aliases": [
+        "mochi-2",
+        "mochi-3"
+      ]
+    },
+    "hero.mochi.ultimate": {
+      "opus": "/audio/v5/hero-mochi-ultimate.opus",
+      "m4a": "/audio/v5/hero-mochi-ultimate.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 1100,
+      "durationSeconds": 1.058,
+      "bus": "sfx",
+      "runtimeCueId": "ult.mochi.impact",
+      "aliases": [
+        "mochi-4",
+        "ult.mochi.release"
+      ]
+    },
+    "hero.soot.basic": {
+      "opus": "/audio/v5/hero-soot-basic.opus",
+      "m4a": "/audio/v5/hero-soot-basic.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.368,
+      "bus": "sfx",
+      "runtimeCueId": "skill.soot.1.impact",
+      "aliases": [
+        "kit.ranged-ember.impact",
+        "soot-1"
+      ]
+    },
+    "hero.soot.skill": {
+      "opus": "/audio/v5/hero-soot-skill.opus",
+      "m4a": "/audio/v5/hero-soot-skill.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.628,
+      "bus": "sfx",
+      "runtimeCueId": "skill.soot.2.impact",
+      "aliases": [
+        "soot-2",
+        "soot-3"
+      ]
+    },
+    "hero.soot.ultimate": {
+      "opus": "/audio/v5/hero-soot-ultimate.opus",
+      "m4a": "/audio/v5/hero-soot-ultimate.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 1100,
+      "durationSeconds": 1.108,
+      "bus": "sfx",
+      "runtimeCueId": "ult.soot.impact",
+      "aliases": [
+        "soot-4",
+        "ult.soot.release"
+      ]
+    },
+    "hero.clover.basic": {
+      "opus": "/audio/v5/hero-clover-basic.opus",
+      "m4a": "/audio/v5/hero-clover-basic.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.448,
+      "bus": "sfx",
+      "runtimeCueId": "skill.clover.1.impact",
+      "aliases": [
+        "hit.magic",
+        "clover-1"
+      ]
+    },
+    "hero.clover.skill": {
+      "opus": "/audio/v5/hero-clover-skill.opus",
+      "m4a": "/audio/v5/hero-clover-skill.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.728,
+      "bus": "sfx",
+      "runtimeCueId": "skill.clover.2.impact",
+      "aliases": [
+        "heal.medium",
+        "clover-2",
+        "clover-3"
+      ]
+    },
+    "hero.clover.ultimate": {
+      "opus": "/audio/v5/hero-clover-ultimate.opus",
+      "m4a": "/audio/v5/hero-clover-ultimate.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 1100,
+      "durationSeconds": 1.128,
+      "bus": "sfx",
+      "runtimeCueId": "ult.clover.impact",
+      "aliases": [
+        "clover-4",
+        "ult.clover.release"
+      ]
+    },
+    "hero.panko.basic": {
+      "opus": "/audio/v5/hero-panko-basic.opus",
+      "m4a": "/audio/v5/hero-panko-basic.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.388,
+      "bus": "sfx",
+      "runtimeCueId": "skill.panko.1.impact",
+      "aliases": [
+        "hit.blunt",
+        "panko-1"
+      ]
+    },
+    "hero.panko.skill": {
+      "opus": "/audio/v5/hero-panko-skill.opus",
+      "m4a": "/audio/v5/hero-panko-skill.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 350,
+      "durationSeconds": 0.658,
+      "bus": "sfx",
+      "runtimeCueId": "skill.panko.2.impact",
+      "aliases": [
+        "panko-2",
+        "panko-3"
+      ]
+    },
+    "hero.panko.ultimate": {
+      "opus": "/audio/v5/hero-panko-ultimate.opus",
+      "m4a": "/audio/v5/hero-panko-ultimate.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 1100,
+      "durationSeconds": 1.088,
+      "bus": "sfx",
+      "runtimeCueId": "ult.panko.impact",
+      "aliases": [
+        "panko-4",
+        "ult.panko.release"
+      ]
+    },
+    "ranged.ember.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-0.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 0,
+      "duration": 1.0325,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.04,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-1.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 1.1125,
+      "duration": 0.9134375,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.921,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-0-2.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 2.1059375,
+      "duration": 0.7096875,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.717,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-0.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 5.161041666666666,
+      "duration": 0.9134375,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.921,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-1.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 6.154479166666667,
+      "duration": 0.9134375,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.921,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-1-2.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 7.147916666666667,
+      "duration": 0.9134375,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.921,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-0.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 10.5109375,
+      "duration": 0.7096875,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.717,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-1.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 11.300625,
+      "duration": 0.9134375,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.921,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.ember.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-ember-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-ember-impact-2-2.m4a",
+      "gainDb": 0,
+      "element": "ember",
+      "originalStart": 12.2940625,
+      "duration": 0.7096875,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.717,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-ember.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-0.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 31.8025,
+      "duration": 1.16,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.168,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-1.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 33.0425,
+      "duration": 1.16,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.168,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-0-2.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 34.2825,
+      "duration": 1.0072708333333333,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.015,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-0.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 37.9625,
+      "duration": 1.16,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.168,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-1.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 39.2025,
+      "duration": 1.16,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.168,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-1-2.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 40.4425,
+      "duration": 1.0072708333333333,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.015,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-0.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 43.864270833333336,
+      "duration": 1.0072708333333333,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.015,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-1.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 44.95154166666667,
+      "duration": 1.16,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.168,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.heavy.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-heavy-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-heavy-impact-2-2.m4a",
+      "gainDb": 0,
+      "element": "heavy",
+      "originalStart": 46.191541666666666,
+      "duration": 1.0072708333333333,
+      "impactOffsetMs": 0,
+      "durationSeconds": 1.015,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-heavy.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-0.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 68.77875,
+      "duration": 0.8367916666666667,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.844,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-1.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 69.69554166666667,
+      "duration": 0.879125,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-0-2.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 70.65466666666667,
+      "duration": 0.8793958333333334,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-0.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 73.95758333333333,
+      "duration": 0.879125,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-1.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 74.91670833333333,
+      "duration": 0.879125,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-1-2.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 75.87583333333335,
+      "duration": 0.8793958333333334,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-0.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 79.28822916666667,
+      "duration": 0.8793958333333334,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-1.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 80.247625,
+      "duration": 0.879125,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.shadow.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-shadow-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-shadow-impact-2-2.m4a",
+      "gainDb": 0,
+      "element": "shadow",
+      "originalStart": 81.20675,
+      "duration": 0.8793958333333334,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.887,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-shadow.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/0-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-0.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 99.96533333333333,
+      "duration": 0.5483125,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.556,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/0-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-1.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 100.59364583333333,
+      "duration": 0.739,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.747,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/0-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-0-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-0-2.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 101.41264583333333,
+      "duration": 0.55425,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.562,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/1-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-0.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 104.09341666666666,
+      "duration": 0.739,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.747,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/1-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-1.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 104.91241666666666,
+      "duration": 0.739,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.747,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/1-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-1-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-1-2.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 105.73141666666666,
+      "duration": 0.55425,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.562,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/2-0": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-0.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-0.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 108.64366666666668,
+      "duration": 0.55425,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.562,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/2-1": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-1.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-1.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 109.27791666666667,
+      "duration": 0.739,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.747,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "ranged.tide.impact/2-2": {
+      "opus": "/audio/v5/legacy/ranged-tide-impact-2-2.opus",
+      "m4a": "/audio/v5/legacy/ranged-tide-impact-2-2.m4a",
+      "gainDb": 0,
+      "element": "tide",
+      "originalStart": 110.09691666666666,
+      "duration": 0.55425,
+      "impactOffsetMs": 0,
+      "durationSeconds": 0.562,
+      "bus": "sfx",
+      "runtimeCueId": "kit.ranged-tide.impact",
+      "aliases": []
+    },
+    "enemy.hit.light": {
+      "opus": "/audio/v5/enemy-hit-light.opus",
+      "m4a": "/audio/v5/enemy-hit-light.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 20,
+      "durationSeconds": 0.288,
+      "bus": "sfx",
+      "runtimeCueId": "hit.light",
+      "aliases": [
+        "hit.slash"
+      ]
+    },
+    "enemy.hit.medium": {
+      "opus": "/audio/v5/enemy-hit-medium.opus",
+      "m4a": "/audio/v5/enemy-hit-medium.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 25,
+      "durationSeconds": 0.388,
+      "bus": "sfx",
+      "runtimeCueId": "hit.medium",
+      "aliases": [
+        "hit.blunt"
+      ]
+    },
+    "enemy.hit.heavy": {
+      "opus": "/audio/v5/enemy-hit-heavy.opus",
+      "m4a": "/audio/v5/enemy-hit-heavy.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 30,
+      "durationSeconds": 0.528,
+      "bus": "sfx",
+      "runtimeCueId": "hit.heavy",
+      "aliases": [
+        "hit.crit"
+      ]
+    },
+    "enemy.death.small": {
+      "opus": "/audio/v5/enemy-death-small.opus",
+      "m4a": "/audio/v5/enemy-death-small.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 40,
+      "durationSeconds": 0.658,
+      "bus": "ui",
+      "runtimeCueId": "ui.death",
+      "aliases": [
+        "enemy.death"
+      ]
+    },
+    "enemy.death.boss": {
+      "opus": "/audio/v5/enemy-death-boss.opus",
+      "m4a": "/audio/v5/enemy-death-boss.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 60,
+      "durationSeconds": 1.158,
+      "bus": "ui",
+      "runtimeCueId": "boss.death",
+      "aliases": [
+        "ui.death.boss"
+      ]
+    },
+    "boss.yarn-giant.ultimate": {
+      "opus": "/audio/v5/boss-yarn-giant-ultimate.opus",
+      "m4a": "/audio/v5/boss-yarn-giant-ultimate.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 460,
+      "durationSeconds": 1.188,
+      "bus": "sfx",
+      "runtimeCueId": "boss.yarn-giant.ultimate",
+      "aliases": [
+        "ult.yarn-giant.impact",
+        "kit.heavy.charge"
+      ]
+    },
+    "ui.receipt.confirmed": {
+      "opus": "/audio/v5/ui-receipt-confirmed.opus",
+      "m4a": "/audio/v5/ui-receipt-confirmed.m4a",
+      "gainDb": 0,
+      "impactOffsetMs": 15,
+      "durationSeconds": 0.808,
+      "bus": "ui",
+      "runtimeCueId": "ui.receipt.confirmed",
+      "aliases": [
+        "tx.confirmed",
+        "chain.confirmed"
+      ]
+    }
+  }
+}
