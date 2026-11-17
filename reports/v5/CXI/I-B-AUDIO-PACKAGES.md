@@ -19,3 +19,6 @@ Native Chromium independently decoded all 544 entries and originals at 48 kHz: e
 Full suite succeeds: 5,269 passed, 11 skipped, two expected failures; 5,282 total = 77 Node + 5,205 workspace, including 2,969 web. The voice change also passed 71 focused tests across three files before this full run. Production build/typecheck pass. Three fresh actual gameplay films have browser audio; PCM identity is not a subjective listening or frame-exact A/V claim.
 
 [Original nine-group acceptance](evidence/v7-audio-packages.json) remains historical evidence. Raw latest data stays ignored in work/v5/CXI/audio-delivery/v7-voice-packages and transfer/v7-m19-final. I-B remains open until all three fixtures are at most 8,000,000 B.
+
+## m1.10 revalidation
+Renderer-only successor keeps all13groups/544encoded/nativePCM results and485/487/484expandedcoldpaths. Fresh fallback104/90/93/2088ms;all9release steps pass. Currentcold7669469/8228615/7743065B;wave3gap228615B.See[evidence](evidence/v7-m110-final-validation.json). Historicalm1.9attribution above remains unchanged.

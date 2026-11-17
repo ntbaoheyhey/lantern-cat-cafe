@@ -1,0 +1,48 @@
+{
+  "utc": "2026-11-17T17:46:11.093026+00:00",
+  "baselineIndex": "a7a8c615c0998065c2406a1eecc4c1612aaf868d14757ac7e4f3d10736c9e3b9",
+  "currentIndex": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+  "method": "Group hashed static asset filenames, compare summed encoded response bytes by path. Public read-only response variation remains counted in cold totals.",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "totalDeltaBytes": 2219,
+      "pathByteDeltas": {
+        "/": 1,
+        "/assets/Battle-[hash].js": 101,
+        "/assets/ShellV3-[hash].js": -3,
+        "/assets/assets-[hash].js": 22,
+        "/assets/entry-[hash].js": 2,
+        "/assets/index-[hash].js": -2,
+        "/ext/bc/C/rpc": 1251,
+        "/v2/network/testnet/evm/43113/blocks": 847
+      }
+    },
+    {
+      "fixture": "wave3",
+      "totalDeltaBytes": 95,
+      "pathByteDeltas": {
+        "/": 1,
+        "/assets/Battle-[hash].js": 101,
+        "/assets/ShellV3-[hash].js": -3,
+        "/assets/assets-[hash].js": 22,
+        "/assets/entry-[hash].js": 2,
+        "/assets/index-[hash].js": -2,
+        "/ext/bc/C/rpc": -26
+      }
+    },
+    {
+      "fixture": "boss",
+      "totalDeltaBytes": 98,
+      "pathByteDeltas": {
+        "/": 1,
+        "/assets/Battle-[hash].js": 101,
+        "/assets/ShellV3-[hash].js": -3,
+        "/assets/assets-[hash].js": 22,
+        "/assets/entry-[hash].js": 2,
+        "/assets/index-[hash].js": -2,
+        "/ext/bc/C/rpc": -23
+      }
+    }
+  ]
+}
