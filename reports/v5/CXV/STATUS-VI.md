@@ -1,7 +1,7 @@
-# CXV — 2026-11-17T08:43:50Z
-V0–V5 và R1–R4 đã triển khai và kiểm thử.
-R4:11/11 kiểm thử,typecheck đạt;16 ảnh chuỗi,14 loại nhân vật có đúng1 bóng.
-Bụi tiếp đất360ms; không phát khi hồi máu hoặc giảm chuyển động.
-CXI đã tích hợp mask; còn lỗi nét vàng Kettle bị mask che, đang sửa có phạm vi.
-R1 bản texturev3 đang chờ lượt đánh giá;R5–R10 còn mở.
-Chưa đủ điều kiện kết thúc;QA/tích hợp và điểm chất lượng còn mở.
+# CXV — 17/11/2026, 19:24 giờ Việt Nam
+Đã bật đúng một lịch CXV wake mỗi15 phút trong chat này; nhánh và máy chủ6310 hoạt động.
+Đã lưu nguyên văn lệnh V6; tiếp tục V-A: đo chuyển động video mẫu và so với bốn mèo trong game.
+Nền hiện có: timeline kỹ năng, chuyển động phụ, phản ứng địch, số sát thương và bụi chân đã qua kiểm tra trước đó.
+Rủi ro1:ultimate còn bị compositor chặn phần lớn texture; sẽ xử lý V-B.
+Rủi ro2:Kettle đẹp mới3/5, cần capture tích hợp củaCXI để đóng lỗi contact.
+Rủi ro3:status/victory/boss entrance và QA độc lập chưa hoàn tất; không dùng ảnh cũ làm bằng chứng V6.
