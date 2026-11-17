@@ -7,6 +7,34 @@ import {drawingAt,type DrawingManifest,type DrawingSet,type DrawingKey} from './
 import poseManifest from '../../../public/units/soot/poses/manifest.json';
 const native=JSON.parse(nativeJson) as CutoutData;
 
+it('defers hidden native vertex uploads while keeping bones, bounds and restoration exact',()=>{
+ const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
+ const shown=new CutoutMesh(native,[new T.Texture()]),hidden=new CutoutMesh(native,[new T.Texture()]);
+ const attributes=(mesh:CutoutMesh)=>mesh.children.filter((node):node is T.Mesh=>node instanceof T.Mesh).map(node=>node.geometry.attributes.position as T.BufferAttribute);
+ const buffers=attributes(hidden),reference=attributes(shown),vertices=(list:T.BufferAttribute[])=>list.map(buffer=>Array.from(buffer.array));
+ hidden.installDrawings(set,[0,0],1);
+ let blinkClock=0;while(blinkAt(blinkClock,native.face!.seed)<.5)blinkClock+=1/120;
+ for(const name of ['idle','attack','ult','hurt','ko','victory'])for(const at of [0,.35,.65,.09]){
+  const versions=buffers.map(buffer=>buffer.version);
+  shown.proceduralTime=hidden.proceduralTime=blinkClock+at;
+  shown.pose(at,name);hidden.pose(at,name);
+  expect(hidden.bones).toEqual(shown.bones);
+  expect(buffers.map(buffer=>buffer.version)).toEqual(versions);
+  // The sampled clock is retained even if the next procedural clock is staged.
+  hidden.proceduralTime=blinkClock+20;
+  expect(hidden.skeleton.getBoundsRect()).toEqual(shown.skeleton.getBoundsRect());
+  expect(vertices(buffers)).toEqual(vertices(reference));
+  const flushed=buffers.map(buffer=>buffer.version);
+  hidden.skeleton.getBoundsRect();expect(buffers.map(buffer=>buffer.version)).toEqual(flushed);
+ }
+ shown.proceduralTime=hidden.proceduralTime=blinkClock;
+ shown.pose(.26,'attack');hidden.pose(.26,'attack');
+ hidden.clearDrawings();expect(vertices(buffers)).toEqual(vertices(reference));
+ expect(hidden.children.every(node=>node.visible)).toBe(true);
+ shown.pose(.13,'hurt');hidden.pose(.13,'hurt');expect(vertices(buffers)).toEqual(vertices(reference));
+ shown.dispose();hidden.dispose();
+});
+
 it('shows exactly one private drawing while retaining shared texture ownership and restoring rig visibility',()=>{
  const set:DrawingSet={manifest:poseManifest as unknown as DrawingManifest,textures:Object.fromEntries(['K0','K1','K2','K4','K5'].map(k=>[k,new T.Texture()]))};
  const a=new CutoutMesh(native,[new T.Texture()]),b=new CutoutMesh(native,[new T.Texture()]);

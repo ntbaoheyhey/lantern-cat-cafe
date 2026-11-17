@@ -1,0 +1,114 @@
+[
+  {
+    "label": "before",
+    "utc": "2026-11-17T16:42:55.017Z",
+    "source": "243baceec292caaf896ac1b194fb87f165280dad",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "nativeCalls": 5545,
+    "nativeTotalMs": 1546.4000000581145,
+    "nativeMeanMs": 0.2788818755740513,
+    "methodCosts": {
+      "startup": {
+        "native.pose": {
+          "calls": 243,
+          "totalMs": 86.1000000089407,
+          "maxMs": 3.2000000029802322
+        },
+        "drawing.sample": {
+          "calls": 243,
+          "totalMs": 229.3000000193715,
+          "maxMs": 7.200000002980232
+        },
+        "actor.sample": {
+          "calls": 217,
+          "totalMs": 118.99999998509884,
+          "maxMs": 6.800000004470348
+        },
+        "craft.deform": {
+          "calls": 217,
+          "totalMs": 216.9000000357628,
+          "maxMs": 7.399999998509884
+        }
+      },
+      "steady": {
+        "native.pose": {
+          "calls": 5302,
+          "totalMs": 1460.3000000491738,
+          "maxMs": 6
+        },
+        "actor.sample": {
+          "calls": 5117,
+          "totalMs": 1741.1000001356006,
+          "maxMs": 10.699999995529652
+        },
+        "drawing.sample": {
+          "calls": 5302,
+          "totalMs": 4130.60000025481,
+          "maxMs": 14.5
+        },
+        "craft.deform": {
+          "calls": 5117,
+          "totalMs": 4145.100000150502,
+          "maxMs": 14.5
+        }
+      }
+    },
+    "note": "Inclusive instrumented timings; frames/call counts differ; not paired FPS evidence."
+  },
+  {
+    "label": "after",
+    "utc": "2026-11-17T16:47:02.391Z",
+    "source": "243baceec292caaf896ac1b194fb87f165280dad",
+    "runtimePatchSha256": "2ea2d1de650ad1b329d788fd8b0e472bf5bf55ae4ed2d2b69c4d15e1acd0111d",
+    "nativeCalls": 6680,
+    "nativeTotalMs": 172.9999999627471,
+    "nativeMeanMs": 0.02589820358723759,
+    "methodCosts": {
+      "startup": {
+        "native.pose": {
+          "calls": 313,
+          "totalMs": 9.69999997317791,
+          "maxMs": 0.7999999970197678
+        },
+        "drawing.sample": {
+          "calls": 313,
+          "totalMs": 265.80000007897615,
+          "maxMs": 8.699999995529652
+        },
+        "actor.sample": {
+          "calls": 285,
+          "totalMs": 49.69999998807907,
+          "maxMs": 7.200000002980232
+        },
+        "craft.deform": {
+          "calls": 285,
+          "totalMs": 243.90000005066395,
+          "maxMs": 8.699999995529652
+        }
+      },
+      "steady": {
+        "native.pose": {
+          "calls": 6367,
+          "totalMs": 163.2999999895692,
+          "maxMs": 1.7000000029802322
+        },
+        "actor.sample": {
+          "calls": 6176,
+          "totalMs": 446.1999999806285,
+          "maxMs": 12.199999995529652
+        },
+        "drawing.sample": {
+          "calls": 6367,
+          "totalMs": 4801.200000151992,
+          "maxMs": 18.100000001490116
+        },
+        "craft.deform": {
+          "calls": 6176,
+          "totalMs": 4779.900000177324,
+          "maxMs": 18.100000001490116
+        }
+      }
+    },
+    "note": "Inclusive instrumented timings; frames/call counts differ; not paired FPS evidence."
+  }
+]

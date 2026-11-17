@@ -1,8 +1,7 @@
-# CXV V7 — 2026-11-17T15:52:36Z
-CXV wake vẫn ACTIVE15phút,giữ nguyên nội dung ORDER-V7;không xoá.
-V-A3 đã sửa đường nối thẳng khi Mochi chớp mắt;ảnh mới đúng mốc600ms,4hero,20bản vẽ GPU đạt,33kiểm tra+typecheck0. Chờ CXI tự kiểm bản tích hợp.
-V-C đã xác minh bản6301 trước đó:boss tiếp đất240ms,lưới đúng mục tiêu;V-B2 68hành động/24ultimate,lead-in0.
-V-E/F đã được CXI chấp nhận trên01f6fa17e;blink vẫn cần tích hợp trước green mới.
-Tiếp tục đo trận boss thực1x và điểm ảnh che chân/portrait;stress1x/4x p95frame16.7/33.4ms,không có frame>50.5ms.
-
-2026-11-17T16:21:06.643078+00:00 V7: CXI đã chấp nhận nháy mắt Clover và vị trí chân. Tối ưu contour50ec14e73 giữ nguyên130mẫu bounds/GPU;19test+typecheck đạt. Đỉnh CPU đầu trận giảm71.3→51.3ms,throttle4x299.8→178.7ms;vẫn còn giật chuyển động ở4x,chưa kết luận60fps chung. Đang tự kiểm tra productionm1.7 cho V-C/B2/E.
+# CXV V7 — 2026-11-17T16:41:31.399225+00:00
+CXV wake ACTIVE mỗi15phút,đúng ORDER-V7;giữ nguyên,không xoá.
+V-A3 đã được CXI chấp nhận16:10UTC;giữ capture-arrival.mjs. V-C/B2/E đã tự kiểm productionm1.7 lúc16:22–16:23UTC:12ảnh mới,0lỗi;4hero ultimate rõ,ràng buộc đúng mục tiêu,trạng thái và chiến thắng đạt.
+V-F contour50ec14e73 đã được CXI tích hợp vào73bcdbed4;CXI đang tự kiểm,bản này chưa là green mới.
+Cache trọng số0d0e59494 giữ nguyên910mẫu chuyển động+130bounds/GPU;40test+typecheck đạt. Thử CPU cùng browser giảm385.5→274.5ms(28.8%),buffer2.39MB.
+Trận32s cho kết quả hỗn hợp:normal startup54→60.5ms chậm hơn;4x205.4→174.5ms,p95frame99.9→83.3ms. Chưa kết luận FPS chung hay hết giật. Tiếp tục profile trước khi sửa.
+2026-11-17T16:50:37.190559+00:00 Bỏ tính vertex của rig bị ẩn,giữ bone/socket và khôi phục chính xác:43test+typecheck0,26mẫu không che portrait,4ảnh mới đã xem. CPU native mỗi lần.2789→.0259ms;normal startup49→40.4ms,nhưng4x173.9→191.8ms và p95không cải thiện. Chỉ kết luận giảm việc ẩn,chưa kết luận FPS chung.

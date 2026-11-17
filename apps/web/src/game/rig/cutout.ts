@@ -40,10 +40,11 @@ export class CutoutMesh extends T.Group {
   this.traverse(node=>{if((node as T.Mesh).isMesh){this.drawingHidden.push({node,visible:node.visible});node.visible=false;}});
   this.drawing=new DrawingLayer(set,origin,scale);this.add(this.drawing);return this.drawing;
  }
- clearDrawings(){this.drawing?.dispose();this.drawing=undefined;for(const {node,visible}of this.drawingHidden)node.visible=visible;this.drawingHidden=[];}
+ clearDrawings(){this.updateNativeVertices();this.drawing?.dispose();this.drawing=undefined;for(const {node,visible}of this.drawingHidden)node.visible=visible;this.drawingHidden=[];}
  proceduralTime=0;
  readonly bones:CutoutBone[];private boneOrder:number[]=[];private local:number[][];private at=0;private clip='';private loop=false;
  private batches:{geometry:T.BufferGeometry;parts:{part:Part;offset:number}[];positions:Float32Array}[]=[];
+ private nativeDirty=false;private nativeAt=0;private nativeName='';private nativeClock=0;
  zOffset=.001;
  readonly state:{data:{defaultMix:number};setAnimation:(track:number,name:string,loop:boolean)=>void;clearTracks:()=>void;getCurrent:(track:number)=>{animation:{name:string}}|null};
  readonly skeleton:{data:CutoutData;setToSetupPose:()=>void;findBone:(name:string)=>CutoutBone|undefined;getBoundsRect:()=>CutoutData['bounds'];getBounds:(offset:T.Vector2,size:T.Vector2,vertices?:number[])=>void};
@@ -84,12 +85,20 @@ export class CutoutMesh extends T.Group {
    if(parent){b.worldX=parent.a*p[0]!+parent.b*p[1]!+parent.worldX;b.worldY=parent.c*p[0]!+parent.d*p[1]!+parent.worldY;b.a=parent.a*a+parent.b*c;b.b=parent.a*bb+parent.b*d;b.c=parent.c*a+parent.d*c;b.d=parent.c*bb+parent.d*d;}
    else Object.assign(b,{worldX:p[0],worldY:p[1],a,b:bb,c,d});
   }
+  // Drawn poses hide every native mesh, but sockets still need current bones.
+  // Defer only vertex skinning; bounds queries and restoration flush this pose.
+  this.nativeAt=at;this.nativeName=name;this.nativeClock=this.proceduralTime;this.nativeDirty=true;
+  if(!this.drawing)this.updateNativeVertices();
+ }
+ private updateNativeVertices(){
+  if(!this.nativeDirty)return;
+  const at=this.nativeAt,name=this.nativeName,clip=this.data.clips[name];
   const attachments=new Map<string,string|null>();for(const v of clip?.visibility??[]){let key:CutoutKey|undefined;for(const k of v.keys)if((k.time??0)<=at)key=k;else break;if(key)attachments.set(v.slot,key.name??null);}
-  if(this.data.face){const face=faceAt(name,at,clip?.duration??1,this.proceduralTime,this.data.face.seed);
+  if(this.data.face){const face=faceAt(name,at,clip?.duration??1,this.nativeClock,this.data.face.seed);
    for(const side of ['l','r'])attachments.set('eye_'+side,'eye_'+side+(face.closed?'_closed':''));
    attachments.set('mouth',face.mouth);
   }
-  const blink=this.data.blink,amount=blink?blinkAt(this.proceduralTime,blink.seed):0;
+  const blink=this.data.blink,amount=blink?blinkAt(this.nativeClock,blink.seed):0;
   for(const batch of this.batches){for(const {part,offset} of batch.parts){const visible=attachments.has(part.slot)?attachments.get(part.slot)===part.name:part.visible;
    for(let i=0;i<part.vertices.length;i++){let x=0,y=0;if(visible)for(const w of part.vertices[i]!){const b=this.bones[w.bone]!;x+=(b.a*w.x+b.b*w.y+b.worldX)*w.weight;y+=(b.c*w.x+b.d*w.y+b.worldY)*w.weight;}
     if(visible&&blink&&amount>0&&part.name===blink.part){const b=this.bones[blink.bone]!,det=b.a*b.d-b.b*b.c,dx=x-b.worldX,dy=y-b.worldY,lx=(b.d*dx-b.b*dy)/det;let ly=(-b.c*dx+b.a*dy)/det;
@@ -97,7 +106,8 @@ export class CutoutMesh extends T.Group {
      x=b.a*lx+b.b*ly+b.worldX;y=b.c*lx+b.d*ly+b.worldY;
     }batch.positions[(offset+i)*3]=x;batch.positions[(offset+i)*3+1]=y;}
   }batch.geometry.attributes.position!.needsUpdate=true;}
+  this.nativeDirty=false;
  }
- private bounds(){let x=Infinity,y=Infinity,right=-Infinity,top=-Infinity;for(const batch of this.batches)for(let i=0;i<batch.positions.length;i+=3){const px=batch.positions[i]!,py=batch.positions[i+1]!;if(px===0&&py===0)continue;x=Math.min(x,px);y=Math.min(y,py);right=Math.max(right,px);top=Math.max(top,py);}return Number.isFinite(x)?{x,y,width:right-x,height:top-y}:{...this.data.bounds};}
+ private bounds(){this.updateNativeVertices();let x=Infinity,y=Infinity,right=-Infinity,top=-Infinity;for(const batch of this.batches)for(let i=0;i<batch.positions.length;i+=3){const px=batch.positions[i]!,py=batch.positions[i+1]!;if(px===0&&py===0)continue;x=Math.min(x,px);y=Math.min(y,py);right=Math.max(right,px);top=Math.max(top,py);}return Number.isFinite(x)?{x,y,width:right-x,height:top-y}:{...this.data.bounds};}
  dispose(){this.clearDrawings();for(const node of this.children)if(node instanceof T.Mesh){node.geometry.dispose();(node.material as T.Material).dispose();}this.removeFromParent();}
 }
