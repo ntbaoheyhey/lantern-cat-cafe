@@ -11,8 +11,8 @@
 - [x] H7 Owner runbook review (read-only): reports/v5/CXI/NEEDS-USER-VI.md and Fuji proof kit; list unclear steps as REQs to CXI [30 min]
 - [x] H8 Hackathon judging research (AG1 R5): criteria, past winners' demo structure -> update reports/v5/AGS/DEMO-EYE.md [45 min]
 - [x] H9 Sound R9 size pass + R10 re-score and redo 3 lowest [60 min]
-- [ ] AG1-R3 Motion Live2D/Spine physics tuning -> reports/v5/AGS/MOTION-PARAMS.md [60 min]
-- [ ] AG1-R4 Hit feel numbers -> reports/v5/AGS/HIT-FEEL.md [45 min]
+- [x] AG1-R3 Motion Live2D/Spine physics tuning -> reports/v5/AGS/MOTION-PARAMS.md [60 min]
+- [x] AG1-R4 Hit feel numbers -> reports/v5/AGS/HIT-FEEL.md [45 min]
 
 ## Refill List
 - [ ] R1 QA on newest tag (repeatable)
