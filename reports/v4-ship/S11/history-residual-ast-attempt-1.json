@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-16T23:59:33.891399+00:00",
+  "pass": false,
+  "inventoryAccepted": false,
+  "predicatesAccepted": 2,
+  "harness": {
+    "path": "reports/v4-ship/S11/history-residual-ast-attempt-1.mjs.gz",
+    "sha256": "3282a8473391e0166c6d56e4605d56be51b619c0e9154287caf34c0152604963"
+  },
+  "diagnosisPending": false,
+  "rawDetailsSuppressed": true,
+  "diagnosis": "The copied inventory persists at a later commit whose source no longer matches every recorded initializer/line. Exact AST matching succeeds at original inventory commit5874d896 after verifying the identical inventory blob there. No gate or field comparison was removed.",
+  "originalSourceCommit": "b7fcbe16d8b703c880256d992a62d2d1494b369b",
+  "acceptedSourceCommit": "5874d896ad52190d7dc3de4322b4cc01971f1f08"
+}

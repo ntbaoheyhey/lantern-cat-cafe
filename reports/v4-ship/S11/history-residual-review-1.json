@@ -1,0 +1,184 @@
+{
+  "at": "2026-11-17T00:03:25.396155+00:00",
+  "pass": true,
+  "harness": {
+    "path": "tools/v4ship-lab/security/history-residual-review.py",
+    "sha256": "f040532730147695b6f587a0c63a5ac90323a8c3e3a2aa27cfb2420c5a33add6"
+  },
+  "astHarness": {
+    "path": "tools/v4ship-lab/security/history-residual-review-ast.mjs",
+    "sha256": "e264e4322f074f54fe73dfde73ad458dd5ca4048979844dfcf22fe5c00a534eb"
+  },
+  "inputs": [
+    {
+      "path": "reports/v4-ship/S11/history-residual-1.json.gz",
+      "sha256": "45ef998ff829405517e9efc4d4ac2d3f7ed53ca39ce968bf8e941c67e74c9471"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-case-keys-2.json.gz",
+      "sha256": "0aa58ce0edc7ce7901f8e68750c342d32f15de22be25d317f38a5ebb2b597836"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-residual-regression-1/check.json",
+      "sha256": "c283a4002467d9673be9df8640fb82fdc73ff4013a756d4d1d37b7d1e86f31e3"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-residual-regression-1/log.jsonl.gz",
+      "sha256": "3484967d21f09e8cfacab2460265f321ae8a4b647b96d09aab69b10a857e2a02"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-residual-regression-1/parity-probe.json",
+      "sha256": "680c48f66d8cc37c47997a04264ce9fb05af04b8c7088132fec23405e0ad3b1c"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-case-keys-regression-1/log.jsonl.gz",
+      "sha256": "d91daf650f99ea1e381086db568981c4aef356663df385c6a3de14dc106ae602"
+    },
+    {
+      "path": "reports/v4-ship/S11/history-case-keys-regression-1/parity-probe.json",
+      "sha256": "5536fca982de3e6595a510f15abbb2eeb4b2282f16291fd61362d717f0d9f67c"
+    }
+  ],
+  "findingEntries": 1350,
+  "previousEntriesPreserved": 1303,
+  "newlyReviewed": 47,
+  "unresolved": 0,
+  "classificationCounts": {
+    "verified-source-digest": 434,
+    "verified-generated-case-identifier": 876,
+    "verified-source-predicate": 2,
+    "verified-public-contract-address": 4,
+    "verified-contract-type-identifier": 1,
+    "verified-config-property-path": 33
+  },
+  "duplicateLineEntriesPreserved": 437,
+  "astReviews": [
+    {
+      "pass": true,
+      "kind": "inventory",
+      "verified": 33,
+      "enumeratedLeaves": 146,
+      "method": "Enumerate every source leaf, then join to inventory by independently reconstructed property path.",
+      "compilerVersion": "5.9.3"
+    },
+    {
+      "pass": true,
+      "kind": "predicates",
+      "verified": 2,
+      "rows": [
+        {
+          "line": 38,
+          "lexicalCodeOnly": true
+        },
+        {
+          "line": 51,
+          "lexicalCodeOnly": true
+        }
+      ],
+      "compilerVersion": "5.9.3"
+    },
+    {
+      "pass": true,
+      "kind": "solidity-type",
+      "verified": 1,
+      "exactIdentifierToken": true,
+      "typedTuplePosition": true,
+      "declarationMatched": true,
+      "compilerVersion": "5.9.3"
+    }
+  ],
+  "publicRuntimeReview": {
+    "chainId": 43113,
+    "block": 60940393,
+    "codeBytes": 8352,
+    "sameRuntimeBytesHash": true,
+    "readOnly": true
+  },
+  "negativeControls": [
+    {
+      "name": "removed-finding",
+      "rejected": true
+    },
+    {
+      "name": "extra-finding",
+      "rejected": true
+    },
+    {
+      "name": "wrong-chain",
+      "rejected": true
+    },
+    {
+      "name": "no-public-runtime",
+      "rejected": true
+    },
+    {
+      "name": "code-substituted-with-string",
+      "rejected": true
+    },
+    {
+      "name": "shifted-code-position",
+      "rejected": true
+    },
+    {
+      "name": "type-substituted-with-string",
+      "rejected": true
+    },
+    {
+      "name": "shifted-type-position",
+      "rejected": true
+    },
+    {
+      "name": "changed-property-same-line",
+      "rejected": true
+    },
+    {
+      "name": "changed-line",
+      "rejected": true
+    },
+    {
+      "name": "changed-value-expression",
+      "rejected": true
+    },
+    {
+      "name": "wrong-source-file",
+      "rejected": true
+    },
+    {
+      "name": "changed-source-bytes",
+      "rejected": true
+    },
+    {
+      "name": "wrong-public-address",
+      "rejected": true
+    },
+    {
+      "name": "changed-source-bytes-independent",
+      "rejected": true
+    },
+    {
+      "name": "wrong-address-independent",
+      "rejected": true
+    },
+    {
+      "name": "shifted-json-position-independent",
+      "rejected": true
+    }
+  ],
+  "sameSevenArtFailures": true,
+  "webSummary": [
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest ally",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > routes Clover recovery to the actual weakest self",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps a shield separate from Mochi damage and Cinnamon drain separate from its Burn",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (ally)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > keeps Marigold debuff contact visible without inventing damage (resist)",
+    "FAIL  src/game/cardrpg/spine/cat-presentation.test.ts > cat outcome presentation from current combat rules > ignores reflected damage, other casters and a same-side buff when routing hostile paint",
+    "FAIL  src/game/cardrpg/spine/outcome-labels.test.ts > keeps damage totals, failed status and applied status as separate rows",
+    "Test Files  2 failed | 320 passed (322)",
+    "Tests  7 failed | 2697 passed (2704)"
+  ],
+  "parityRowsUnchanged": true,
+  "gRegPass": false,
+  "fullPrefixFindingsPass": true,
+  "fullHistoryPass": false,
+  "limits": "Only1350 original findings in frozen6000-object prefix; excluded bytes/later history/global repository acceptance remain open."
+}
