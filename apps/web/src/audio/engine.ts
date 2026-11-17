@@ -5,6 +5,7 @@ import {VariantPools,SFX_LIMIT,between,dbGain} from './variants';
 import {installUiFeedback} from './feedback';
 import {rangedPacksForRoster} from './ranged-packs';
 import {loadV5AudioManifest} from './v5-manifest-loader';
+import {PackedAudioLoader} from './packed-audio-loader';
 
 const KEY='tbh-audio-v3';
 const defaults:Record<Bus,number>={master:.7,music:.55,ambience:.3,sfx:.8,voice:.7,ui:.6};
@@ -59,7 +60,7 @@ export class AudioEngine implements AudioBridge {
  private musicScopes:{key:symbol;id:string}[]=[];private musicScopeBase='';
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
- constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/',private readonly delivery?:(m:AudioManifest,url:(path:string)=>string)=>Promise<AudioManifest>){
+ constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/',private readonly delivery?:(m:AudioManifest,url:(path:string)=>string)=>Promise<AudioManifest>,private readonly packaged?:PackedAudioLoader){
   this.pools=new VariantPools(random);
   try{const p=JSON.parse(localStorage.getItem(KEY)??'null');for(const b of BUS_NAMES)if(Number.isFinite(p?.[b]))this.preferences[b]=Math.max(0,Math.min(1,p[b]));this.muted=p?.muted===true;}catch{/* storage optional */}
  }
@@ -103,7 +104,13 @@ export class AudioEngine implements AudioBridge {
   if(!this.buffers.has(pack))this.buffers.set(pack,(async()=>{
    const urls=m.packs[pack];if(!urls)throw new Error(`Unknown audio pack: ${pack}`);
    const formats=[...new Set([urls.preferredFormat??(urls.opus?'opus':'webm'),'opus','m4a','webm','mp3'] as const)];
-   for(const format of formats){const path=urls[format];if(!path)continue;try{const response=await fetch(this.assetUrl(path));if(!response.ok)continue;const buffer=await this.ctx!.decodeAudioData(await response.arrayBuffer());this.decoded.set(pack,buffer);return buffer;}catch{/* Retry the alternate encoded format. */}}
+   for(const format of formats){const path=urls[format];if(!path)continue;
+    if(this.packaged?.available(path)){
+     const packaged=await this.packaged.decode(path,bytes=>this.ctx!.decodeAudioData(bytes));
+     if(packaged){this.decoded.set(pack,packaged);return packaged;}
+    }
+    try{const response=await fetch(this.assetUrl(path));if(!response.ok)continue;const buffer=await this.ctx!.decodeAudioData(await response.arrayBuffer());this.decoded.set(pack,buffer);return buffer;}catch{/* Retry the alternate encoded format. */}
+   }
    throw new Error(`Audio pack ${pack} unavailable`);
   })().catch(e=>{this.buffers.delete(pack);throw e;}));return this.buffers.get(pack)!;
  }
@@ -123,6 +130,7 @@ export class AudioEngine implements AudioBridge {
    const combat=screen==='battle'||screen==='boss';
    const ids=[...(combat?['b2-hits','b2-motion','b2-magic',...rangedPacks]:menuPacks).flatMap(substitute),
     ...['b2-ui','b2-ui-baked','v4-receipt'].flatMap(substitute),...(combat?m.deliveredPacks??[]:[]),...(musicPack?[musicPack]:[])];
+   this.packaged?.allow(ids.flatMap(id=>m.packs[id]?.opus??[]));
    await Promise.all([...new Set(ids)].filter(p=>m.packs[p]).map(p=>this.buffer(p,m)));
    if(screen==='home')await this.prepareForge(m);
   }catch{/* playback can retry */}
@@ -384,7 +392,7 @@ export class AudioEngine implements AudioBridge {
   }catch{if(token===this.bedTokens[bus]){this.bedIds[bus]='';this.setSceneTone();}this.record(cue,'unavailable');}})();
  }
 }
-export const audioEngine=new AudioEngine(Math.random,'/audio/',loadV5AudioManifest);
+export const audioEngine=new AudioEngine(Math.random,'/audio/',loadV5AudioManifest,new PackedAudioLoader());
 export function installAudio(){
  if(typeof window==='undefined')return;window.__thAudio=audioEngine;
  const unlock=()=>{void audioEngine.unlock().catch(()=>{});};window.addEventListener('pointerdown',unlock,{once:true});window.addEventListener('keydown',unlock,{once:true});

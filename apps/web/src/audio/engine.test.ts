@@ -6,6 +6,7 @@ import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {ALL_RANGED_PACKS} from './ranged-packs';
 import {loadV5AudioManifest} from './v5-manifest-loader';
+import {PackedAudioLoader} from './packed-audio-loader';
 class Param {value=1;setTargetAtTime(v:number){this.value=v;}setValueAtTime(v:number){this.value=v;}linearRampToValueAtTime(v:number,_time?:number){this.value=v;}cancelScheduledValues(){}}
 class Node {connect(n:Node){return n;}disconnect(){}}
 class Source extends Node {buffer:unknown;playbackRate=new Param();loop=false;loopStart=0;loopEnd=0;onended?:()=>void;start=vi.fn();stop(){this.onended?.();}}
@@ -36,6 +37,21 @@ const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 beforeEach(()=>{localStorage.clear();vi.stubGlobal('AudioContext',Context);vi.stubGlobal('fetch',vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>fixture}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)}));});
 afterEach(()=>{vi.unstubAllGlobals();vi.restoreAllMocks();});
 describe('layered playback admission and variants',()=>{
+ it.each(['http','integrity','decode'])('retries the original Opus before alternate codecs after package %s failure',async failure=>{
+  const m={...fixture,packs:{test:{opus:'/test.opus',m4a:'/test.m4a',preferredFormat:'opus' as const}}};
+  const fetcher=vi.fn(async(url:string)=>{
+   if(url==='/audio-delivery/test.json'){
+    if(failure==='integrity')throw Error('Integrity mismatch');
+    return {ok:failure!=='http',json:async()=>({version:1,files:{'/test.opus':'AQID'}})};
+   }
+   return url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)};
+  });vi.stubGlobal('fetch',fetcher);
+  if(failure==='decode')vi.spyOn(Context.prototype,'decodeAudioData').mockRejectedValueOnce(Error('Decode failed'));
+  const packages=new PackedAudioLoader([{url:'/audio-delivery/test.json',integrity:'sha256-test',paths:['/test.opus']}]);packages.allow(['/test.opus']);
+  const e=new AudioEngine(()=>0,'/audio/',undefined,packages);await e.unlock();e.play('hit.blunt');
+  await vi.waitFor(()=>expect(e.hits.at(-1)?.result).toBe('played'));
+  expect(fetcher.mock.calls.map(c=>c[0])).toEqual(['/audio/manifest.json','/audio-delivery/test.json','/test.opus']);
+ });
  it.each(['http','decode'])('falls back from Opus to M4A after %s failure',async failure=>{
   const m={...fixture,packs:{test:{opus:'/test.opus',m4a:'/test.m4a',preferredFormat:'opus' as const}}};
   const fetcher=vi.fn(async(url:string)=>url.endsWith('.json')?{ok:true,json:async()=>m}:{ok:!(failure==='http'&&url.endsWith('.opus')),arrayBuffer:async()=>new ArrayBuffer(8)});
