@@ -1,0 +1,316 @@
+{
+  "utc": "2026-11-17T20:11:38.070410+00:00",
+  "source": "79d408c717e01f35241980f89c274155ae4e03b1",
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-hud-production/diagnostic-text",
+  "profileSha256": "199e2801202a863e78347fbab2fe1eb4f84b88e8fde2f6d962492f97e268ede4",
+  "sampleWallMs": 32502.313,
+  "samples": 22829,
+  "method": "Sum timeDeltas/1000 for each sampled node. Exclusive sampled wall time, not exact CPU execution; profiler overhead. No chronological correlation with individual slow frames is claimed.",
+  "sourceInspection": {
+    "assets-Gn9biVXY.js:35:4478": "DrawingLayer.point; prior coefficient/mesh experiments remain closed.",
+    "card-v4-presentation-BdTOX96F.js:1:3742": "squad/turn3d/label-layout.ts layoutLabels candidate collision search, verified by exact formula/order; bundled chunk name is not source-module identity. Outside CXV ownership.",
+    "assets-Gn9biVXY.js:35:21526": "opaque packed bounds traversal; already READY for independent acceptance."
+  },
+  "top": [
+    {
+      "selfSampleMs": 7608.228000000009,
+      "callFrame": {
+        "functionName": "(program)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 4624.691999999999,
+      "callFrame": {
+        "functionName": "point",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 4477
+      }
+    },
+    {
+      "selfSampleMs": 1651.6330000000007,
+      "callFrame": {
+        "functionName": "u",
+        "scriptId": "124",
+        "url": "http://127.0.0.1:6312/assets/card-v4-presentation-BdTOX96F.js",
+        "lineNumber": 0,
+        "columnNumber": 3741
+      }
+    },
+    {
+      "selfSampleMs": 1330.692999999999,
+      "callFrame": {
+        "functionName": "render",
+        "scriptId": "115",
+        "url": "http://127.0.0.1:6312/assets/Battle-u8gkumtf.js",
+        "lineNumber": 236,
+        "columnNumber": 11894
+      }
+    },
+    {
+      "selfSampleMs": 926.0330000000002,
+      "callFrame": {
+        "functionName": "getBoundingClientRect",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 743.9710000000006,
+      "callFrame": {
+        "functionName": "sample",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 2316
+      }
+    },
+    {
+      "selfSampleMs": 692.4159999999999,
+      "callFrame": {
+        "functionName": "offset",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 862
+      }
+    },
+    {
+      "selfSampleMs": 629.5710000000008,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 21525
+      }
+    },
+    {
+      "selfSampleMs": 355.4459999999999,
+      "callFrame": {
+        "functionName": "s.render",
+        "scriptId": "146",
+        "url": "",
+        "lineNumber": 15,
+        "columnNumber": 20
+      }
+    },
+    {
+      "selfSampleMs": 337.13399999999984,
+      "callFrame": {
+        "functionName": "(garbage collector)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 320.031,
+      "callFrame": {
+        "functionName": "querySelectorAll",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 288.0099999999997,
+      "callFrame": {
+        "functionName": "drawImage",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 248.27199999999988,
+      "callFrame": {
+        "functionName": "drawImage",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 238.18300000000005,
+      "callFrame": {
+        "functionName": "texSubImage2D",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 224.996,
+      "callFrame": {
+        "functionName": "i.current.e.sceneError",
+        "scriptId": "115",
+        "url": "http://127.0.0.1:6312/assets/Battle-u8gkumtf.js",
+        "lineNumber": 236,
+        "columnNumber": 40533
+      }
+    },
+    {
+      "selfSampleMs": 205.22899999999998,
+      "callFrame": {
+        "functionName": "getImageData",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 190.43399999999994,
+      "callFrame": {
+        "functionName": "m",
+        "scriptId": "124",
+        "url": "http://127.0.0.1:6312/assets/card-v4-presentation-BdTOX96F.js",
+        "lineNumber": 0,
+        "columnNumber": 3578
+      }
+    },
+    {
+      "selfSampleMs": 163.508,
+      "callFrame": {
+        "functionName": "paint",
+        "scriptId": "134",
+        "url": "http://127.0.0.1:6312/assets/BattleHudV3-BAsmezaD.js",
+        "lineNumber": 1,
+        "columnNumber": 10835
+      }
+    },
+    {
+      "selfSampleMs": 161.722,
+      "callFrame": {
+        "functionName": "(idle)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "selfSampleMs": 147.89900000000003,
+      "callFrame": {
+        "functionName": "projectAnchors",
+        "scriptId": "115",
+        "url": "http://127.0.0.1:6312/assets/Battle-u8gkumtf.js",
+        "lineNumber": 236,
+        "columnNumber": 32764
+      }
+    },
+    {
+      "selfSampleMs": 145.06499999999997,
+      "callFrame": {
+        "functionName": "pose",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 10730
+      }
+    },
+    {
+      "selfSampleMs": 143.49099999999999,
+      "callFrame": {
+        "functionName": "g",
+        "scriptId": "122",
+        "url": "http://127.0.0.1:6312/assets/three.module-DYVl4Dmj.js",
+        "lineNumber": 3740,
+        "columnNumber": 2337
+      }
+    },
+    {
+      "selfSampleMs": 140.966,
+      "callFrame": {
+        "functionName": "p",
+        "scriptId": "134",
+        "url": "http://127.0.0.1:6312/assets/BattleHudV3-BAsmezaD.js",
+        "lineNumber": 1,
+        "columnNumber": 10718
+      }
+    },
+    {
+      "selfSampleMs": 139.40000000000006,
+      "callFrame": {
+        "functionName": "updateMatrixWorld",
+        "scriptId": "54",
+        "url": "http://127.0.0.1:6312/assets/three.core-DH5FCTQa.js",
+        "lineNumber": 0,
+        "columnNumber": 70109
+      }
+    },
+    {
+      "selfSampleMs": 133.83399999999995,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "134",
+        "url": "http://127.0.0.1:6312/assets/BattleHudV3-BAsmezaD.js",
+        "lineNumber": 1,
+        "columnNumber": 11857
+      }
+    },
+    {
+      "selfSampleMs": 129.386,
+      "callFrame": {
+        "functionName": "multiplyMatrices",
+        "scriptId": "54",
+        "url": "http://127.0.0.1:6312/assets/three.core-DH5FCTQa.js",
+        "lineNumber": 0,
+        "columnNumber": 56032
+      }
+    },
+    {
+      "selfSampleMs": 125.38800000000005,
+      "callFrame": {
+        "functionName": "i",
+        "scriptId": "134",
+        "url": "http://127.0.0.1:6312/assets/BattleHudV3-BAsmezaD.js",
+        "lineNumber": 1,
+        "columnNumber": 15068
+      }
+    },
+    {
+      "selfSampleMs": 121.87899999999999,
+      "callFrame": {
+        "functionName": "g",
+        "scriptId": "122",
+        "url": "http://127.0.0.1:6312/assets/three.module-DYVl4Dmj.js",
+        "lineNumber": 3740,
+        "columnNumber": 2337
+      }
+    },
+    {
+      "selfSampleMs": 116.99400000000001,
+      "callFrame": {
+        "functionName": "setXYZ",
+        "scriptId": "54",
+        "url": "http://127.0.0.1:6312/assets/three.core-DH5FCTQa.js",
+        "lineNumber": 0,
+        "columnNumber": 101784
+      }
+    },
+    {
+      "selfSampleMs": 114.48799999999999,
+      "callFrame": {
+        "functionName": "point",
+        "scriptId": "129",
+        "url": "http://127.0.0.1:6312/assets/assets-Gn9biVXY.js",
+        "lineNumber": 34,
+        "columnNumber": 4477
+      }
+    }
+  ]
+}
