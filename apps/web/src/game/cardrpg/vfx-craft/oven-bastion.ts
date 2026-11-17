@@ -43,8 +43,8 @@ export class OvenBastion {
     this.place(m,s.x+Math.cos(a)*d,s.y+Math.sin(a)*d,(20+i*3)*k,(12+i*2)*k,a+.12*travel,envelope(ms,370+i*8,30,760+i*5,250)*.78,held,-.1+travel*.8);
    }
   }else{
-   const grow=smooth((held-600)/500),opened=smooth((held-720)/380),decay=smooth((held-1490)/610),w=760*k,h=460*k*(.35+.65*grow);
-   const cx=Math.max(w/2+16*k,Math.min(f.width-w/2-16*k,f.casterFeet.x)),bottom=Math.min(f.height*.93,f.casterFeet.y+40*k);
+   const grow=smooth((held-600)/500),opened=smooth((held-720)/380),decay=smooth((held-1200)/560),w=540*k,h=400*k*(.35+.65*grow);
+   const cx=Math.max(w/2+16*k,Math.min(f.width-w/2-16*k,f.casterFeet.x)),bottom=Math.min(f.height*.93,f.casterFeet.y+24*k);
    const slices=[[0,.30],[.30,.70],[.70,1]];
    for(const [i,m]of this.doors.entries()){
     const [a,b]=slices[i]!,q=(a!+b!)/2-.5,span=(b!-a!)*w*(i===1?1:.12+.88*opened);
