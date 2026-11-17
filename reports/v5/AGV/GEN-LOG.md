@@ -2,3 +2,9 @@
 
 | UTC | ID | Prompt / Generator | Result | Size | CXV Fallback | Notes |
 |---|---|---|---|---|---|---|
+| 2026-11-17T07:25Z | `mochi-ult-release`, `clover-ult-charge`, `clover-ult-release` | Subagents 5aa89fdf, aeb8280a, fa72287e | SUCCESS | 59-71 KB | None | Fresh quota, crisp 4x4 flipbooks on pure black |
+| 2026-11-17T07:50Z | 12 Core Hero Actions | Hybrid subagent + procedural | ACCEPTED | <= 86 KB | None | Pinned by CXV 4/4/4/4/4 in REVIEW-R1 |
+| 2026-11-17T08:00Z | `boss-intro-nameplate-frame`, `boss-intro-entrance-dust` | `gen-boss-intro.mjs` | SUCCESS | 2.8 KB, 13.9 KB | None | Antique filigree 512px + 4x4 256px billowing dust plume |
+| 2026-11-17T08:15Z | `icon-status-burn`, `icon-status-poison`, `icon-status-slow`, `icon-status-stun` | `gen-status-icons.mjs` | SUCCESS | 5.3-5.8 KB | None | High-contrast overhead status badges for 390px mobile |
+| 2026-11-17T08:25Z | 27 Support Textures Refinement | `refine-support-textures.mjs` | SUCCESS | 0.9-73.2 KB | None | Organic frayed fibers, wooden fault cracks, clover heal cross |
+2026-11-17T12:23:00Z | image-generator | clover-particle-1 regen | PROMPT: VFX animation sprite sheet, 4x4 grid of 16 sequential animation frames, emerald clover leaves with golden pollen glints, organic shape, painterly 2D cosy action game style. Pure pitch black background #000000, no borders, no text, no icons, no grid lines. | /Users/bao/th-v5-ag2/apps/web/public/vfx/v5/temp/clover-particle-1.webp
