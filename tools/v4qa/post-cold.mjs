@@ -64,7 +64,8 @@ try{
    const r=route.request();
    if(requestAllowed({url:r.url(),method:r.method(),body:r.postData(),local:true,allowGuestTx:false}))await route.continue();else await route.abort();
   });
-  const page=await context.newPage();await page.goto('http://127.0.0.1:6200',{waitUntil:'networkidle',timeout:30000});
+  const page=await context.newPage();await page.goto('http://127.0.0.1:6200',{waitUntil:'load',timeout:30000});
+  await page.getByRole('button',{name:'Play free',exact:true}).waitFor();await page.evaluate(()=>document.fonts.ready);
   const inspect=()=>page.evaluate(()=>{
    const outside=[],ignored=[];
    for(const e of document.querySelectorAll('button,a,input,h1,h2,p,dt,dd,figcaption')){
