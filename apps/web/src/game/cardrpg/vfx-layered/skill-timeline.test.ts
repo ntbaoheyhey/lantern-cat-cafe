@@ -1,6 +1,7 @@
 import {describe, expect, it, afterEach} from 'vitest';
 import {V5_SKILL_TIMELINES, getV5Timeline, validateSkillTimeline, sampleSkillLayer, skillFeedback, skillPoseTime} from './skill-timeline';
 import {registerV5Texture, clearV5Textures, getV5Texture, v5TextureRect} from './skill-textures';
+import {FX_COLORS, GLYPHS} from '../spine/vfx-registry';
 
 describe('V5 skill timeline contract', () => {
   it('covers four heroes, including both skill slots, with ordered three-beat timelines', () => {
@@ -8,6 +9,8 @@ describe('V5 skill timeline contract', () => {
     for (const owner of ['mochi', 'soot', 'clover', 'panko']) for (const slot of [1, 2, 3, 4]) {
       const timeline = getV5Timeline(`${owner}-${slot}`)!;
       expect(validateSkillTimeline(timeline)).toBe(timeline);
+      // The procedural renderer draws from the existing prewarmed stamp cache.
+      expect(FX_COLORS).toContain(timeline.color); expect(GLYPHS).toContain(timeline.motif);
       expect(timeline.layers.map(l => l.startMs)).toEqual(timeline.layers.map(l => l.startMs).sort((a, b) => a - b));
       expect(timeline.impactMs).toBe(slot === 4 ? 1100 : 350);
       expect(timeline.durationMs).toBe(slot === 4 ? 1700 : 800);

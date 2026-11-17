@@ -38,7 +38,9 @@ try {
         if (!label) {label = document.createElement('div'); label.dataset.cxvTimestamp = 'true';
           Object.assign(label.style, {position: 'fixed', bottom: '8px', left: '8px', color: '#fff4d8', background: '#21182dee', padding: '6px 10px', font: '16px monospace', zIndex: '999999'}); document.body.append(label);}
         label.textContent = `${id} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
-        return structuredClone(s.effects.timeline.audit);
+        return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
+          modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
+          eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand')};
       }, {ms, id});
       await page.screenshot({path: resolve(dir, `frame-${String(index).padStart(2, '0')}.png`)});
       samples.push({ms, ...audit});
@@ -46,9 +48,9 @@ try {
     const sheet = resolve(out, `${id}.jpg`);
     execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-framerate', '6', '-i', resolve(dir, 'frame-%02d.png'),
       '-vf', 'scale=480:-1,tile=4x3', '-frames:v', '1', '-q:v', '4', sheet]);
-    if (!samples.some(s => s.ms === info.impact && s.draws > 0)) throw Error(`Missing timeline contact: ${id}`);
     report.sheets.push({id, archive: /-[23]$/.test(id), ...info, sheet, samples});
     await writeFile(resolve(out, 'capture.json'), JSON.stringify(report, null, 2));
+    if (!samples.some(s => s.ms === info.impact && s.draws > 0)) throw Error(`Missing timeline contact: ${id}`);
     process.stdout.write(`${id}: ${sheet}\n`);
   }
   report.errors = errors;

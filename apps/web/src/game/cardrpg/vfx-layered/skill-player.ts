@@ -2,6 +2,7 @@ import type {SceneView} from '../../squad/turn3d/scene';
 import type {EffectPlan} from '../../squad/turn3d/effects';
 import type {ResolveSocket} from '../spine/vfx';
 import type {PaintedStamps} from '../spine/vfx-stamps';
+import {PAINT} from '../spine/style';
 import {getV5Timeline, getV5Texture, paintedTargets} from '../spine/vfx-registry';
 import {sampleSkillLayer, type SkillLayerSample} from './skill-timeline';
 import {v5TextureRect, type V5TextureRect} from './skill-textures';
@@ -43,7 +44,7 @@ export class V5SkillPlayer {
       const texture = layer.shape === 'flash' ? undefined : getV5Texture(layer.texture);
       const glyph = layer.shape === 'charge' || layer.shape === 'decal' ? 'ring' :
         layer.shape === 'flash' ? 'spark' : layer.shape === 'slash' ? 'arc' : timeline.motif;
-      const stamp = texture ? undefined : this.stamps.get(glyph, layer.shape === 'flash' ? '#fff3dc' : timeline.color);
+      const stamp = texture ? undefined : this.stamps.get(glyph, layer.shape === 'flash' ? PAINT.cream : timeline.color);
       if (!texture && !stamp) continue;
       if (texture) v5TextureRect(texture, sample.progress, rect);
       let drew = false;

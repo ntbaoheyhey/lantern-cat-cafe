@@ -1,4 +1,5 @@
 /** V5 timing is independent of texture availability and uses the rules action clock. */
+import {PAINT} from '../spine/style';
 export type SkillBeat = 'anticipation' | 'impact' | 'dissipation';
 export type SkillShape = 'charge' | 'slash' | 'projectile' | 'flash' | 'burst' | 'mote' | 'decal';
 export interface SkillLayer {
@@ -30,10 +31,10 @@ export interface SkillTimeline {
 export interface SkillLayerSample {progress: number; eased: number; alpha: number; scale: number; rotation: number}
 const clamp = (x: number) => Math.max(0, Math.min(1, x));
 const heroes = [
-  {owner: 'mochi', color: '#efc978', motif: 'shield', ranged: false},
-  {owner: 'soot', color: '#c5a0ef', motif: 'lantern', ranged: true},
-  {owner: 'clover', color: '#a6d6a0', motif: 'leaf', ranged: true},
-  {owner: 'panko', color: '#eeb782', motif: 'bread', ranged: false},
+  {owner: 'mochi', color: PAINT.honey, motif: 'shield', ranged: false},
+  {owner: 'soot', color: PAINT.iris, motif: 'lantern', ranged: true},
+  {owner: 'clover', color: PAINT.sage, motif: 'leaf', ranged: true},
+  {owner: 'panko', color: PAINT.ember, motif: 'bread', ranged: false},
 ] as const;
 
 export function validateSkillTimeline(timeline: SkillTimeline): SkillTimeline {
