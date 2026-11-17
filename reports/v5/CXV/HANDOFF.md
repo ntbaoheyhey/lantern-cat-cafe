@@ -1,10 +1,10 @@
 # CXV V7 handoff
-ACTIVE V-F GPU-upload scheduling study (started18:07Z),idle probe complete,no runtime proposal;V-C/B2/E fresh servedcandidate verified;assistant:AGV.
+ACTIVE V-F current ordinary-play CPU attribution;glyph endpoint scan rejected negligible gain;upload scheduling rejected without runtime change;V-C/B2/E fresh servedcandidate verified;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Trace collected18:11Z: YarnGiantK4+sharedBindingThreadK4. Preupload PASS16GPUhashes;actual4x idle callbacks0/32s. Finish study decision,then investigate remaining19glyph reads at contact. Study18:07Z;earliest runtime decision18:22Z;cb259a12f reports pushed.
+NEXT 1: Collect current4x ordinary32s CPU profile and rank self/inclusive cost;choose next measured hotspot. Glyph scan exact855but22.9→22.8ms rejected.
 NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.10 mergedbf9520741;packed/crop independent review pending.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed push990423aa0 (preupload experiment push confirmed18:20Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
+Last confirmed pushf4e8c1352 (idle probe push confirmed18:22Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
 V-C servedaf3adbe2 own18:04Z6sheets0errors;normal240/620ms,reducedfeetstable,actionyield160ms,incomingdx9dy-2;net12@1280clear1640,Yarnsocket0clear1760.
 V-B2 servedaf3adbe2 own18:04Z4sheets +18:06Zordinary32s/rate;26actor+3status/6ults all4heroes bothrates;actorleadIn0,2200/1100;statusvoice absent.
@@ -14,6 +14,6 @@ Spatialfullrun:normalstartup54→60.5ms,maxframe50→66.7;4xstartup205.4→174.5
 Open TASKs:T-CXV-1auditREDO repeated17:12Z(updatedtable stillframe1/nohashes),T-CXV-2researchREDO17:16Z(genericlinks/unsourced5–10%);CXI ownscompletedT4/T6conversions;unrelatedlegacyart/captureWIP preserved.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDERtext refreshed18:14Z;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;neverdelete/duplicate.
-Running Vite21525 only;idleBudget30075 finished18:20Z;preupload finished18:17Z;production14sheets+2ordinaryviews measured/inspectedonce;all0errors on stableaf3adbe2;ordinary26actor+3status/6ults bothrates.
+Running Vite21525 and battleProfile31132 work/v5/CXV/jobs/v7-current-battle-profile.log;glyph/idle probes complete;preupload finished18:17Z;production14sheets+2ordinaryviews measured/inspectedonce;all0errors on stableaf3adbe2;ordinary26actor+3status/6ults bothrates.
 Mailbox INBOX-CXV192,USER23;BOARDread18:14Z;STOPabsent18:13Z;lastRULESreread18:21Z;AGV aa2e04753 idle-only checkpoint REDO18:02Z;T-CXV-1/2 +T-CXI-9 open.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; own16freshimages reviewedonce;do not reopen V7-judge-m110-candidate sheets/reviewJPGs.

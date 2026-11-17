@@ -1,0 +1,554 @@
+{
+  "utc": "2026-11-17T18:23:04.807Z",
+  "ended": "2026-11-17T18:23:11.799Z",
+  "source": "f4e8c135278862e86f3b6058098d5c0b19688141",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "Current runtime atlas versus row endpoint alpha scan with unchanged96x144 readbacks, same-browser alternating builds at4xCPU. Five font families, eight opaque palette colors plus translucent fallback. Preserve glyph painting/order/cache and compare every glyph plus full atlas RGBA hash. Measurement only; no runtime edit or gameplay claim.",
+  "errors": [],
+  "pass": true,
+  "toolSha256": "0fc96766b321e8686e807ef93846cb63bded504b32721c6eb8d7d1caf581a37b",
+  "measurements": [
+    {
+      "family": "\"Baloo 2\"",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 22.899999998509884,
+      "endpointsMedianMs": 22.799999997019768,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 50.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 0,
+          "elapsedMs": 25.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 1,
+          "elapsedMs": 19.200000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 21.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 22.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 2,
+          "elapsedMs": 20.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 3,
+          "elapsedMs": 25.69999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 22.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 23.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 4,
+          "elapsedMs": 23.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 5,
+          "elapsedMs": 22.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 42.70000000298023,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 21.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 6,
+          "elapsedMs": 22.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        }
+      ]
+    },
+    {
+      "family": "monospace",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 22.200000002980232,
+      "endpointsMedianMs": 22.899999998509884,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 65.19999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 0,
+          "elapsedMs": 21.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 1,
+          "elapsedMs": 23.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 23.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 19.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 2,
+          "elapsedMs": 20.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 3,
+          "elapsedMs": 22.100000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 29.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 19.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 4,
+          "elapsedMs": 23.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 5,
+          "elapsedMs": 22.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 22.200000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 22,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 6,
+          "elapsedMs": 24.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        }
+      ]
+    },
+    {
+      "family": "serif",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 22.399999998509884,
+      "endpointsMedianMs": 20.799999997019768,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 74.10000000149012,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 0,
+          "elapsedMs": 20.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 1,
+          "elapsedMs": 20.69999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 20.400000005960464,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 23.100000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 2,
+          "elapsedMs": 19.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 3,
+          "elapsedMs": 20.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 21.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 22.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 4,
+          "elapsedMs": 20.80000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 5,
+          "elapsedMs": 21.69999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 20.80000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 23.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 6,
+          "elapsedMs": 23.099999994039536,
+          "reads": 38,
+          "readPixels": 525312
+        }
+      ]
+    },
+    {
+      "family": "Arial",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 22.19999999552965,
+      "endpointsMedianMs": 20.5,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 58.900000005960464,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 0,
+          "elapsedMs": 21.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 1,
+          "elapsedMs": 20.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 21.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 21.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 2,
+          "elapsedMs": 20.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 3,
+          "elapsedMs": 20.399999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 23.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 21.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 4,
+          "elapsedMs": 21.30000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 5,
+          "elapsedMs": 39.79999999701977,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 22.700000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 22.19999999552965,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 6,
+          "elapsedMs": 20.299999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        }
+      ]
+    },
+    {
+      "family": "\"Times New Roman\"",
+      "exact": true,
+      "differences": [],
+      "originalMedianMs": 22,
+      "endpointsMedianMs": 21.5,
+      "runs": [
+        {
+          "mode": "original",
+          "block": 0,
+          "elapsedMs": 49.80000000447035,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 0,
+          "elapsedMs": 21.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 1,
+          "elapsedMs": 22.299999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 1,
+          "elapsedMs": 21.899999998509884,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 2,
+          "elapsedMs": 20.299999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 2,
+          "elapsedMs": 20.600000001490116,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 3,
+          "elapsedMs": 20.400000005960464,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 3,
+          "elapsedMs": 37.599999994039536,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 4,
+          "elapsedMs": 22,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 4,
+          "elapsedMs": 22.200000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 5,
+          "elapsedMs": 22.5,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 5,
+          "elapsedMs": 22.200000002980232,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "original",
+          "block": 6,
+          "elapsedMs": 21.799999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        },
+        {
+          "mode": "endpoints",
+          "block": 6,
+          "elapsedMs": 21.299999997019768,
+          "reads": 38,
+          "readPixels": 525312
+        }
+      ]
+    }
+  ],
+  "decision": "Reject runtime change: current Baloo2 font22.9\u219222.8ms is negligible;monospace regresses22.2\u219222.9ms.855glyphs/45font-palette combinations exactly equal includingRGBA. No app edit."
+}
