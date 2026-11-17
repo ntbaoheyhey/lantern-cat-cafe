@@ -40,7 +40,72 @@
       "started": "2026-11-17T02:03:23.554993+00:00",
       "ended": "2026-11-17T02:03:34.746273+00:00",
       "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-supabase-test.log"
+    },
+    {
+      "name": "forge-test",
+      "command": [
+        "forge",
+        "test",
+        "--root",
+        "contracts",
+        "-q"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "started": "2026-11-17T02:08:34.758156+00:00",
+      "ended": "2026-11-17T02:08:44.501392+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-forge-test.log"
+    },
+    {
+      "name": "campaign-manifest",
+      "command": [
+        "node",
+        "tools/chain/campaign-manifest.mjs",
+        "--check"
+      ],
+      "exitCode": 1,
+      "status": "FAIL",
+      "started": "2026-11-17T02:08:44.501690+00:00",
+      "ended": "2026-11-17T02:08:44.566929+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-campaign-manifest.log"
+    },
+    {
+      "name": "icons",
+      "command": [
+        "node",
+        "scripts/ui/check-icons.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "started": "2026-11-17T02:08:44.567198+00:00",
+      "ended": "2026-11-17T02:08:44.634301+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-icons.log"
+    },
+    {
+      "name": "typography",
+      "command": [
+        "node",
+        "scripts/ui/check-typography.mjs"
+      ],
+      "exitCode": 1,
+      "status": "FAIL",
+      "started": "2026-11-17T02:08:44.634564+00:00",
+      "ended": "2026-11-17T02:08:44.748130+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-typography.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "started": "2026-11-17T02:08:44.748397+00:00",
+      "ended": "2026-11-17T02:09:07.207317+00:00",
+      "log": "/Users/bao/taskbar-hero-qa/work/v4qa/jobs/q2-build.log"
     }
   ],
-  "scope": "Local safe commands only; no Vercel/Supabase auth or deployment; diagnostic secret-like tokens redacted."
+  "scope": "Local safe commands only; no Vercel/Supabase auth or deployment; diagnostic secret-like tokens redacted.",
+  "ended": "2026-11-17T02:09:07.207632+00:00"
 }
