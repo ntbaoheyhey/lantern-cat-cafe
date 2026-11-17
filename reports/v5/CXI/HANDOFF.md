@@ -1,24 +1,19 @@
-# CXI V5 continuation
-ACTIVE: repair R6 output-only plugin regression blocking R3/I2 full gates; rules reread2026-11-17T08:56:09Z; STOP absent.
-NEXT 1: Inspect pipelinePID15079 work/v5/CXI/jobs/r3-contexts-fixed-pipeline.log; typecheck/web/root/build/transfer.
-NEXT 2: Fresh typecheck/web/root/build/transfer; capture R7 receipt at390px.
-NEXT 3: Merge Kettle correction when READY, validate current12 AVIF derivatives, continue QA/proof/refill.
-Last pushed implementation e3960033748199f5517d8b36bac0982403e9e8b7.
-Active pipelinePID15079 work/v5/CXI/jobs/r3-contexts-fixed-pipeline.log; previous6780 ended08:54:08 exit1: web2890pass/2failed, both wallet/prodBundle temporary-outDir builds.
-Preview PID80797 work/v5/CXI/jobs/m1-preview.log; last completed build21e993c9c.
-Last full gates4bb07e05d:typecheck0/web2855/root5155/build0.
-Last transfer21e993c9c/r4-mobile:wave1=9371757,wave3=9883166,boss=9273352; allFAIL8MB,0errors.
-Accepted tagv5-m1=b26cf0e3c2626c1f8a02e09e3cd447e4bf0507a3; no new acceptance claimed.
-Own08:34 captures restore Button/Spool;Kettle lacks former gold strokes. CXV08:49:26: R2 small thrust replaces legacy strokes; correction in progress.
-12 approved texture hashes pinned; native/procedural fallback and original-image decode preserved; AVIF12 requestedAGV08:47.
-R3:8aefbf1e9 merged;exact pack/bus/start/duration context lookup+3beds;59focused pass;transfer pending.
-R4:4portraits+cafe AVIF save264549bytes;9focused pass;own captures good;landing AVIF wired awaits build.
-R5 DONE:JS1319090->1112059;8focused pass/build0. R6:13 dist-only posters1395314bytes;custom output guard needs repair.
-R2:H2-F1 DONE mobile Fight x38/w314,click Prepare/battle succeeds;H2-F3 formation48.55px stillopen.
-R7:fullhash/actualpayer/fee/time/network visible;no local explorer;4focused pass;390px capture pending;H2-F2 genuine proof stillopen.
-Full demo URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Mailbox read through08:49:26; USER08:45(WD only);LEARN INDEX reread08:56.
-I5 localproof study began08:46;complete note/INDEX before implementation;never call startLocal or fuji-smoke --dry-run.
-Next green merge window by09:44:05UTC:v5-m1.N + BOARD;M2/M3 retain schedule.
-No secrets/env reads,fundedFuji,deployments/contracts edits,main merge,submission or subagents.
-WD restart completedPID99689 earlier;CXI restored07:35;do not resume WD monitoring.
+# CXI V6 continuation
+ACTIVE: I-A audit/merge all READY, run full suite, publish fresh v5-m1.N.
+NEXT 1: Audit unmerged READY commits, merge owned-path Kettle correction0f14e7497, launch full suite.
+NEXT 2: I-B measure current cold transfer and wire delivered image/audio derivatives with fresh captures.
+NEXT 3: I-C finish390px formation and guest->battle->receipt; I-D local proof kit then owner runbooks.
+Last pushed SHA:cb5f5b5fc (recovered Fuji-kit/R6 WIP checkpoint).
+self-wake: CXI wake, every 15 min, created2026-11-17T12:20Z; id=cxi-wake; verified2026-11-17T12:22:31Z.
+Last RULES re-read UTC:2026-11-17T12:22:31Z; STOP-ALL/STOP-CXI absent.
+ORDER-V6.txt sha256:9d8d095d8e64de35944001b1288c52ba87efb622c632d22ef304b615d0962348
+Jobs: none; previousPID15079 ended09:02:44, typecheck/web/root/build/transfer all exit0.
+PreviewPID80797 serves6301; rebuild needed after integration.
+Last full suite588813d1d passed; cold wave1=8.82MB,wave3=9.38MB,boss=8.90MB FAIL8MB.
+Last green tagv5-m1=b26cf0e3c; stale BOARD will refresh after new suite.
+Judge URL:http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+Mailbox read INBOX129/DELIVERIES47/USER23/LEARN39 at2026-11-17T12:22:31Z; old WATCHDOG ignored.
+Open owner QA:H2-F2 real proof,H2-F3 formation,H7 runbook,README current-source verification.
+AGS residual legacy audio REQ09:03 remains; AGV approved12 AVIF REQ08:47 remains.
+R7 receipt UI implemented,390px capture pending. Fuji kit checkpoint exists; validate only local Anvil, no keys/env file reads.
+R2 H2-F1 DONE21e993c9c; R5 JS1,319,090->1,112,059B; R6 dist13posters removed1,395,314B.
