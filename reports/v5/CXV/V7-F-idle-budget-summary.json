@@ -1,0 +1,91 @@
+{
+  "utc": "2026-11-17T18:19:18.565Z",
+  "ended": "2026-11-17T18:20:37.261Z",
+  "source": "9bb9cdeac1a09e51ca8a39fde216d9feed79a57a",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "bdb38b99bfbe5369ca451ae9a056be41a6247abab2c301781a6502677c0ce4e4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "Observe real requestIdleCallback deadlines with no timeout and no texture uploads:5s paused scene loop then32s actual rule-selected speed1 boss play per1x/4x CPU. Diagnostic sampling adds overhead. A reported budget is an estimate, not a guarantee that nonpreemptible GPU submission fits. Fixture setup is not account progression.",
+  "summary": [
+    {
+      "rate": 1,
+      "supported": true,
+      "paused": {
+        "count": 300,
+        "median": 12,
+        "p95": 13.5,
+        "max": 13.8,
+        "atLeast8": 299,
+        "atLeast12": 159,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "playing": {
+        "count": 1811,
+        "median": 9.6,
+        "p95": 11.2,
+        "max": 12.2,
+        "atLeast8": 1683,
+        "atLeast12": 3,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "preDamageContact": {
+        "count": 515,
+        "median": 9.6,
+        "p95": 11.2,
+        "max": 11.8,
+        "atLeast8": 461,
+        "atLeast12": 0,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "plans": 29,
+      "logEvents": 171
+    },
+    {
+      "rate": 4,
+      "supported": true,
+      "paused": {
+        "count": 296,
+        "median": 10.3,
+        "p95": 11.5,
+        "max": 12.6,
+        "atLeast8": 293,
+        "atLeast12": 4,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "playing": {
+        "count": 0,
+        "median": null,
+        "p95": null,
+        "max": null,
+        "atLeast8": 0,
+        "atLeast12": 0,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "preDamageContact": {
+        "count": 0,
+        "median": null,
+        "p95": null,
+        "max": null,
+        "atLeast8": 0,
+        "atLeast12": 0,
+        "atLeast20": 0,
+        "atLeast25": 0
+      },
+      "plans": 28,
+      "logEvents": 161
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "finding": "Normal pre-damage callbacks max11.8ms;4x active gameplay has zero idle callbacks over32s. Larger K4 upload takes15.3\u201317ms at4x. Forced timeout cannot claim idle scheduling. No runtime proposal; source study continues until at least18:22Z."
+}
