@@ -7,7 +7,7 @@ import {loadavg} from 'node:os';
 const qa=resolve(import.meta.dirname,'../..');
 const source='/Users/bao/taskbar-hero-qa-clone';
 const require=createRequire(resolve(source,'apps/web/package.json'));
-const {chromium}=require('playwright');
+const {chromium}=require('@playwright/test');
 const {decodeFunctionData,parseEther}=require('viem');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const publicUrl=url=>{try{const u=new URL(url);return u.origin+u.pathname;}catch{return 'invalid-url';}};
@@ -56,7 +56,7 @@ async function verifyReceipts(rows,build){
     const [receipt,tx]=await Promise.all([rpc('eth_getTransactionReceipt',[row.hash]),rpc('eth_getTransactionByHash',[row.hash])]);
     row.verification={success:receipt?.status==='0x1',payerMatches:receipt?.from?.toLowerCase()===row.payer?.toLowerCase(),feeMatches:false,contract:addresses.get(tx?.to?.toLowerCase())??'unknown',functionName:null};
     if(receipt?.gasUsed&&receipt?.effectiveGasPrice&&typeof row.feeAvax==='string')row.verification.feeMatches=BigInt(receipt.gasUsed)*BigInt(receipt.effectiveGasPrice)===parseEther(row.feeAvax);
-    try{const name=row.verification.contract;const abi=JSON.parse(readFileSync(resolve(source,`contracts/out/${name}.sol/${name}.json`),'utf8')).abi;row.verification.functionName=decodeFunctionData({abi,data:tx.input}).functionName;}catch{/* Native transfers or unknown artifact remain explicit. */}
+    try{const name=row.verification.contract;const abi=JSON.parse(readFileSync(resolve(source,`contracts/out/${name}.sol/${name}.json`),'utf8')).abi;const decoded=decodeFunctionData({abi,data:tx.input});row.verification.functionName=decoded.functionName;if(decoded.functionName==='claim'&&decoded.args?.[0]?.amount!==undefined)row.verification.claimAmountWei=String(decoded.args[0].amount);}catch{/* Native transfers or unknown artifact remain explicit. */}
   }
 }
 
@@ -154,7 +154,7 @@ export async function runJourneys({url,viewports=[{width:1440,height:900},{width
           mark('receipt_event_fields',row.receipts.length>0&&row.receipts.every(r=>r.confirmationMs!==null&&r.confirmationMs>=0&&r.feeAvax!==undefined&&/^0x[0-9a-f]{40}$/i.test(r.payer)));
           mark('every_receipt_visibly_labeled',row.receipts.every(r=>row.renderedReceipts.some(v=>v.hash===r.hash&&v.visible&&/Confirmed/.test(v.text)&&/Fee/.test(v.text)&&/paid gas/.test(v.text)&&v.payerTitle?.includes(r.payer)&&v.href?.endsWith(r.hash))));
           mark('no_horizontal_overflow',row.layouts.every(r=>!r.overflowX&&r.clipped.length===0));mark('primary_keyboard_access',row.focus.every(r=>r.reachable));
-          mark('cold_visible_battle_transfer_under_8MB',row.transferAtBattle.bytes<=8_000_000,{inFlight:row.inFlightAtBattle.length});
+          mark('cold_visible_battle_transfer_under_8MB',row.transferAtBattle.bytes>8_000_000?false:row.inFlightAtBattle.length?null:true,{inFlight:row.inFlightAtBattle.length});
           mark('public_explorer_proof',local?null:row.explorer.every(e=>e.apiReceiptMatches),{scope:local?'unverified on public chain; local hashes excluded':'public Fuji'});
           row.verdict=row.assertions.some(a=>a.pass===false)||row.errors.length||row.failedRequests.length?'FAIL':'PASS_LOCAL_ONLY';
         }
