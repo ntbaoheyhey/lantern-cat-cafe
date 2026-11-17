@@ -27,6 +27,7 @@
 - [x] Kettle production contact closure:CXI fresh v6-ia1 capture and green v5-m1.1@5fa814f5e confirm torso fix/broad mask; beauty3 remains V-C/E.
 - [ ] Kettle beauty3/5 and Binding coverage under V-C/E.
 - [ ] AGS Q0b-F2 independent recheck under V-B/C; producer fix delivered.
+- [ ] CXI13:28 pacing REQ: assess6700ms ultimate voice lead-in in actual desktop patrol; preserve voice/contact/rules, no latency audit.
 - [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
 - [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
 - [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.

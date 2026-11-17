@@ -4,7 +4,8 @@ import {runtimeEvidence} from './runtime-evidence.mjs';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
-const out=resolve('work/v5/CXV/films/V-C-experiment');await mkdir(out,{recursive:true});
+const revision=process.env.CXV_ENEMY_EXPERIMENT??'r1';
+const out=resolve('work/v5/CXV/films/V-C-experiment'+(revision==='r1'?'':'-'+revision));await mkdir(out,{recursive:true});
 const report={started:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),method:'Study-only browser transforms; baseline scene render first, original art unchanged. Not runtime delivery.',rows:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
@@ -26,7 +27,7 @@ try{
    if(prototype){
     const smooth=v=>{v=Math.max(0,Math.min(1,v));return v*v*(3-2*v);};
     const fade=1-smooth((ms-1200)/440);
-    for(const n of effect.net){n.position.x=targets.x+(n.position.x-cx)*.48;n.position.y=targets.y+(n.position.y-cy)*.48;n.scale.x*=.48;n.scale.y*=.14;n.material.uniforms.uAlpha.value*=fade*.78;}
+    for(const [index,n]of effect.net.entries()){n.position.x=targets.x+(n.position.x-cx)*.475;n.position.y=targets.y+(n.position.y-cy)*.636;n.scale.x*=.52;n.scale.y=-18*k;n.material.uniforms.uAlpha.value*=fade*.9;n.visible=index%2===0;}
    }
    s.renderer.render(s.scene,s.camera);return {ms,prototype,target:targets,net:effect.net.map(n=>({position:n.position.toArray(),scale:n.scale.toArray(),alpha:n.material.uniforms.uAlpha.value}))};
   },{ms,prototype});report.rows.push({kind:'binding',...audit});await page.screenshot({path:resolve(out,`binding-${i}-${prototype?'after':'before'}.png`)});
