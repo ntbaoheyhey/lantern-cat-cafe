@@ -1,0 +1,413 @@
+{
+  "utc": "2026-11-17T17:37:30.658955+00:00",
+  "applicationCommit": "2ee12c29e9980926b7c75de0111b5c78dbfd24fc",
+  "laneCommit": "6ef304a9b78a77fb4d19369ba7fedc17c239c2f8",
+  "disposition": "ACCEPT scoped contour scan work reduction; unreleased",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "focusedTests": 21,
+  "buildTypecheckExit": 0,
+  "checks": {
+    "contour-equivalence": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/contour-equivalence/v7-contour-after/report.json",
+      "sha256": "addbc34d7a8384e2311c1fa2dd9d262263fa72361017436f60ce1da4b7a25a4d",
+      "pass": true,
+      "utc": "2026-11-17T17:34:52.997Z",
+      "source": "c6e7a38183e9210995d19d4cdf9ce14641946562",
+      "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+      "exactMatchTo": "/Users/bao/taskbar-hero-chain/work/v5/CXI/contour-equivalence/v7-contour-before/report.json",
+      "errors": [],
+      "counts": {
+        "rows": 130,
+        "differences": 0
+      }
+    },
+    "drawing-equivalence": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/drawing-equivalence/v7-contour-after/report.json",
+      "sha256": "528c073d24859de919e1423f1ee6529c983d5211787028cf158c4968e739f364",
+      "pass": true,
+      "utc": "2026-11-17T17:34:59.794Z",
+      "source": "c6e7a38183e9210995d19d4cdf9ce14641946562",
+      "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+      "exactMatchTo": "/Users/bao/taskbar-hero-chain/work/v5/CXI/drawing-equivalence/v7-contour-before/report.json",
+      "errors": [],
+      "counts": {
+        "motion": 910,
+        "gpu": 130,
+        "differences": 0
+      }
+    }
+  },
+  "performance": {
+    "v7-number-after": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-number-after/report.json",
+      "sha256": "718850ac83a7bb9cf88e9772c3549274443dfe3a17ffd2986c473d61b8c539f4",
+      "pass": true,
+      "utc": "2026-11-17T17:23:07.486Z",
+      "source": "7e82950a74821f2f77f9b431f1aa09a7008f947d",
+      "indexSha256": "ad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80",
+      "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+      "errors": [],
+      "runs": [
+        {
+          "rate": 1,
+          "elapsedMs": 32001,
+          "samples": 1798,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.80000000000109,
+            "max": 33.29999999999927
+          },
+          "submitCpuMs": {
+            "median": 4.299999997019768,
+            "p95": 6.300000004470348,
+            "p99": 19.399999998509884,
+            "max": 28.899999998509884
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 6.5,
+          "wholeRun": {
+            "samples": 1915,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.799999999999272,
+              "p99": 16.80000000000109,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4.299999997019768,
+              "p95": 6.5,
+              "p99": 19.900000005960464,
+              "max": 53.29999999701977
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.799999999999727,
+              "p99": 16.800000000000182,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4.0999999940395355,
+              "p95": 16.299999997019768,
+              "p99": 26.900000005960464,
+              "max": 53.29999999701977
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "identity": {
+            "indexSha256": "ad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "identityAfter": {
+            "indexSha256": "ad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "blockedRequests": [],
+          "actorPresentations": 26,
+          "statusPresentations": 3,
+          "ults": 6,
+          "events": 171
+        },
+        {
+          "rate": 4,
+          "elapsedMs": 32043,
+          "samples": 987,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 50,
+            "p99": 83.39999999999964,
+            "max": 150.10000000000218
+          },
+          "submitCpuMs": {
+            "median": 19.600000001490116,
+            "p95": 27.19999999552965,
+            "p99": 65.89999999850988,
+            "max": 124.70000000298023
+          },
+          "over33": 85,
+          "over50": 29,
+          "firstRenderLatencyMs": 22,
+          "wholeRun": {
+            "samples": 1031,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 50,
+              "p99": 100,
+              "max": 250
+            },
+            "submitCpuMs": {
+              "median": 19.600000001490116,
+              "p95": 27.80000000447035,
+              "p99": 82,
+              "max": 196.5
+            },
+            "over33": 99,
+            "over50": 37
+          },
+          "startup": {
+            "samples": 44,
+            "frameMs": {
+              "median": 33.30000000000018,
+              "p95": 99.99999999999977,
+              "p99": 250,
+              "max": 250
+            },
+            "submitCpuMs": {
+              "median": 20.5,
+              "p95": 82,
+              "p99": 196.5,
+              "max": 196.5
+            },
+            "over33": 14,
+            "over50": 8
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 58
+          },
+          "identity": {
+            "indexSha256": "ad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "identityAfter": {
+            "indexSha256": "ad7c85b2e6b607a665156515e09976afe35a540761bad35e08f7321557840e80",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "blockedRequests": [],
+          "actorPresentations": 26,
+          "statusPresentations": 3,
+          "ults": 6,
+          "events": 171
+        }
+      ]
+    },
+    "v7-contour-after": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-contour-after/report.json",
+      "sha256": "4c8bd87d065f25fe496d49e309fb7961d94b14a49ab4b084e5b7a8d01d8a3ead",
+      "pass": true,
+      "utc": "2026-11-17T17:35:05.137Z",
+      "source": "c6e7a38183e9210995d19d4cdf9ce14641946562",
+      "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+      "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+      "errors": [],
+      "runs": [
+        {
+          "rate": 1,
+          "elapsedMs": 32000.69999999553,
+          "samples": 1796,
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272,
+            "p99": 16.80000000000109,
+            "max": 33.399999999999636
+          },
+          "submitCpuMs": {
+            "median": 4.100000001490116,
+            "p95": 6.5,
+            "p99": 17,
+            "max": 42.20000000298023
+          },
+          "over33": 0,
+          "over50": 0,
+          "firstRenderLatencyMs": 11.5,
+          "wholeRun": {
+            "samples": 1913,
+            "frameMs": {
+              "median": 16.69999999999891,
+              "p95": 16.799999999999272,
+              "p99": 16.80000000000109,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4.100000001490116,
+              "p95": 6.700000002980232,
+              "p99": 18,
+              "max": 47.600000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "startup": {
+            "samples": 117,
+            "frameMs": {
+              "median": 16.699999999999818,
+              "p95": 16.800000000000182,
+              "p99": 16.800000000000182,
+              "max": 49.90000000000009
+            },
+            "submitCpuMs": {
+              "median": 4,
+              "p95": 15.399999998509884,
+              "p99": 21.19999999552965,
+              "max": 47.600000001490116
+            },
+            "over33": 1,
+            "over50": 0
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 58,
+            "max": 70
+          },
+          "textures": {
+            "median": 53,
+            "p95": 57,
+            "p99": 58,
+            "max": 58
+          },
+          "identity": {
+            "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "identityAfter": {
+            "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "blockedRequests": [],
+          "actorPresentations": 26,
+          "statusPresentations": 3,
+          "ults": 6,
+          "events": 171
+        },
+        {
+          "rate": 4,
+          "elapsedMs": 32042.39999999851,
+          "samples": 987,
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 50,
+            "p99": 83.39999999999964,
+            "max": 166.5
+          },
+          "submitCpuMs": {
+            "median": 19.5,
+            "p95": 27,
+            "p99": 78.70000000298023,
+            "max": 125
+          },
+          "over33": 92,
+          "over50": 30,
+          "firstRenderLatencyMs": 25.399999998509884,
+          "wholeRun": {
+            "samples": 1036,
+            "frameMs": {
+              "median": 33.29999999999927,
+              "p95": 50,
+              "p99": 83.39999999999964,
+              "max": 200.0999999999999
+            },
+            "submitCpuMs": {
+              "median": 19.5,
+              "p95": 27.899999998509884,
+              "p99": 78.79999999701977,
+              "max": 167.29999999701977
+            },
+            "over33": 106,
+            "over50": 37
+          },
+          "startup": {
+            "samples": 49,
+            "frameMs": {
+              "median": 33.30000000000018,
+              "p95": 83.39999999999964,
+              "p99": 200.0999999999999,
+              "max": 200.0999999999999
+            },
+            "submitCpuMs": {
+              "median": 20,
+              "p95": 72.19999999552965,
+              "p99": 167.29999999701977,
+              "max": 167.29999999701977
+            },
+            "over33": 14,
+            "over50": 7
+          },
+          "steadyWindowStartMs": 2000,
+          "calls": {
+            "median": 24,
+            "p95": 35,
+            "p99": 55,
+            "max": 70
+          },
+          "textures": {
+            "median": 52,
+            "p95": 57,
+            "p99": 57,
+            "max": 58
+          },
+          "identity": {
+            "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "identityAfter": {
+            "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa",
+            "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4"
+          },
+          "blockedRequests": [],
+          "actorPresentations": 26,
+          "statusPresentations": 3,
+          "ults": 6,
+          "events": 171
+        }
+      ]
+    }
+  },
+  "images": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-contour-after/boss-1x-1024.jpg",
+      "sha256": "d701e8dc7b37924e30ccd7c05fd0232edae03843d469f84559df4dd2c4ebb2b3",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "reviewedOnceUTC": "2026-11-17T17:37:30.658955+00:00",
+      "finding": "Actor faces, health labels and bottom portraits visible; no obvious new clipping. Distinct normal/4x moments, not visual pixel equivalence evidence."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/performance/v7-contour-after/boss-4x-1024.jpg",
+      "sha256": "732943266b6e248a4b2a9b01bc213f5256ef77163f4f4ae496f03d0e73fabc01",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "reviewedOnceUTC": "2026-11-17T17:37:30.658955+00:00",
+      "finding": "Actor faces, health labels and bottom portraits visible; no obvious new clipping. Distinct normal/4x moments, not visual pixel equivalence evidence."
+    }
+  ],
+  "limits": "Single host paired runs: startup CPU max decreases53.3\u219247.6ms normal and196.5\u2192167.3ms at4x; ordinary frame p95 unchanged16.8/50ms;4x frames>50.5ms remain37. Steady maximum frame worsens150.1\u2192166.5ms at4x. Not 60fps closure; exact diagnostics carry no gameplay FPS claim."
+}

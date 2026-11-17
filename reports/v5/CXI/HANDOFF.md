@@ -1,19 +1,19 @@
 # CXI V7 continuation
-ACTIVE: m1.9 release docs and tag preparation; assistant: AGS. All9pipeline steps exit0; no detached jobs.
-NEXT 1: Push release-doc commit and annotated v5-m1.9 tag; then update BOARD and announce verified tag/hash to lanes.
-NEXT 2: Independently review CXV e58ef974c numbermetrics with own production baseline/candidate and scoped performance/equivalence evidence.
-NEXT 3: Continue wave3 gap228520B and AGS T1/T5/T7/T8 REDOs; six useful open tasks remain.
-Last pushed:37d154c59;green v5-m1.8@8d06c71ed;validatedm1.9 release docs ready, not yet tagged.
-Application:4ae1c9580f91b816f6860a79420faa4edab59a99;indexa7a8c615c0998065c2406a1eecc4c1612aaf868d14757ac7e4f3d10736c9e3b9.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified17:11UTC;exact V7 prompt verified16:29UTC;no duplicate.
-Last RULES re-read UTC:2026-11-17T17:17:43.982292+00:00;STOPfiles absent.
+ACTIVE: Numbermetrics+contour accepted with exact own output; full m1.10 release validation next; assistant: AGS. m1.9 stays green.
+NEXT 1: Allm1.10 checks/docs/dist ready;commit/tag/push and verify remote,then BOARD/announcements;next reviewpacked6f71118f1.
+NEXT 2: Wave3gap228520B;AGV T9fourvisible nativeAVIF>=90KB requested;AGSsixfoe161533B notaccepted. CXVpacked6f71118f1 queued afterrelease.
+NEXT 3: Review AGS T1/T5/T7/T8 REDOs; maintain6useful open tasks and true UTC evidence.
+Last pushed:ba2ded91c;green v5-m1.9@8724ab79832aeb527298991f0660a35b7fbf7d73.
+Application:2ee12c29e9980926b7c75de0111b5c78dbfd24fc accepted contour;index34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa;unreleased.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified17:34UTC;exact V7 prompt verified16:29UTC;no duplicate.
+Last RULES re-read UTC:2026-11-17T17:41:23.784473+00:00;STOPfiles absent.
 ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none;PID5248finished,all9steps0. Real m18→m19pathcomparepass; originalselfcompareexcluded.
-Cold m1.9:7667250/8228520/7742967B;wave3FAIL228520B;bossheadroom257033B.
-I-C:m19firsthit21078ms incl17700ms reading8cards;HP165→119;0ordinaryerrors;route10503ms;recovery714/8664ms.
-Validation:m19full5282=77Node+5205workspace incl2969web;5269pass,11skip,2expectedfail;build/typecheck0;544encoded/nativePCMmatches.
+Running:none;PID19641 completed all9steps0.
+Cold m1.10:7669469/8228615/7743065B;wave3FAIL228615B;bossheadroom256935B.
+I-C:m110firsthit20595ms incl17700reading8cards;HP165→119;0ordinaryerrors;route9854ms;recovery636/8677ms.
+Validation:m110full5290=77Node+5213workspace incl2977web;5277pass,11skip,2expectedfail;9steps/buildtypecheck0;544encodedPCMmatches.
 AGS open:T1exactQA,T2/T3research,T5fourbedsREDO,T7truthfulscript,T8sixfoecallouts;six useful tasks.
-Mailbox read INBOX-CXI200/USER23/LEARN58;CXVnumbermetricse58ef974cACK;T1reportlacksindex/trace;T7outlineREDO.
+Mailbox read INBOX-CXI208/USER23/LEARN59;contourACCEPT;AGS0c4169027REDO:4beds+45516B/6foes-161533B;docsfalse/QAunproven;owninboxDONE112-115reviewed.
 I-D:no publicFuji transaction;hosting/fundedFuji owner-only;runbookpreparedm1.9.
-I-E:m19three30.000sactual1xgameplay/browseraudio,0errors;hashesrechecked;no subjectivelistening/exactAVsyncclaim.
-Reviewed sheets:m19all8(firsthit,route2,recovery2,film3),spatial8,native6,m18prior;neverreopen. m18route menu remains uninspected.
+I-E:m110three30.000sactual1x/browseraudio,0errors;hashesrechecked;8freshimagesreviewedonce;no subjectivelistening/exactAVsyncclaim.
+Reviewed sheets:number6,m19all8,spatial8,native6,m18prior;neverreopen. Number-before images and m18route menu remain uninspected.;contour2inspectedonce. m110all8 reviewedonce;neverreopen.
