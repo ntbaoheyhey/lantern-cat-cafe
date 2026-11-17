@@ -16,10 +16,15 @@ it('reuses both alternating pose contours while still measuring current deformat
  geometry.dispose();material.dispose();a.dispose();b.dispose();
 });
 
-it.each([true,false])('retains every painted extremum through deformation and reflection (flipY=%s)',flipY=>{
+it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow'].map(pattern=>({flipY,pattern}))))('retains every painted extremum through deformation and reflection (flipY=$flipY, $pattern)',({flipY,pattern})=>{
  const image=document.createElement('canvas');image.width=8;image.height=6;
  const rgba=new Uint8ClampedArray(8*6*4);
- for(let y=0;y<6;y++)for(let x=0;x<8;x++)rgba[(y*8+x)*4+3]=(x+3*y)%5===0?128:(x*y)%7===3?255:127;
+ for(let y=0;y<6;y++)for(let x=0;x<8;x++){
+  const alpha=pattern==='sparse'?((x+3*y)%5===0?128:(x*y)%7===3?255:127):
+   pattern==='single'?(x===4&&y===3?128:0):pattern==='solid'?255:
+   pattern==='hollow'?(x===0||x===7||y===0||y===5?255:0):0;
+  rgba[(y*8+x)*4+3]=alpha;
+ }
  vi.spyOn(HTMLCanvasElement.prototype,'getContext').mockReturnValue({drawImage:()=>{},getImageData:()=>({data:rgba})} as unknown as ReturnType<HTMLCanvasElement['getContext']>);
  const texture=new Texture(image);texture.flipY=flipY;
  const geometry=new PlaneGeometry(8,6,2,2),positions=geometry.attributes.position!,uv=geometry.attributes.uv!,index=geometry.index!;
@@ -41,8 +46,11 @@ it.each([true,false])('retains every painted extremum through deformation and re
    expected.expandByPoint(world.applyMatrix4(mesh.matrixWorld));
   }
  }
- const actual=opaqueWorldBounds(mesh)!;
- expect(actual.x).toBeCloseTo(expected.min.x,10);expect(actual.y).toBeCloseTo(expected.min.y,10);
- expect(actual.width).toBeCloseTo(expected.max.x-expected.min.x,10);expect(actual.height).toBeCloseTo(expected.max.y-expected.min.y,10);
+ const actual=opaqueWorldBounds(mesh);
+ if(expected.isEmpty())expect(actual).toBeUndefined();
+ else{
+  expect(actual!.x).toBeCloseTo(expected.min.x,10);expect(actual!.y).toBeCloseTo(expected.min.y,10);
+  expect(actual!.width).toBeCloseTo(expected.max.x-expected.min.x,10);expect(actual!.height).toBeCloseTo(expected.max.y-expected.min.y,10);
+ }
  geometry.dispose();material.dispose();texture.dispose();
 });
