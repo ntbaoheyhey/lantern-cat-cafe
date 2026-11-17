@@ -2,9 +2,20 @@ import {expect,it} from 'vitest';
 import {ENEMY_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {pilotFixture} from '../vfx-layered/fixture';
 import {sampleActionPlan} from '../../squad/turn3d/effects';
-import {presentationTier,impactFeedback} from './presentation';
+import {presentationTier,impactFeedback,isSupportCast} from './presentation';
 import {configureSequence} from './sequence';
 import {CinematicPlayer} from './cinematic-player';
+it('keeps shield and healing casts planted without misclassifying damaging shield attacks',()=>{
+ for(const id of ['mochi-2','panko-2'])expect(isSupportCast(pilotFixture(id,false,true).plan)).toBe(true);
+ expect(isSupportCast(pilotFixture('clover-1').plan)).toBe(true);
+ for(const id of ['mochi-1','panko-1','soot-1'])expect(isSupportCast(pilotFixture(id).plan)).toBe(false);
+ const support=pilotFixture('mochi-2',false,true).plan;
+ const damage=pilotFixture('mochi-1').plan.events.find(e=>e.type==='damage')!;
+ support.events.push({...damage,actorId:'retaliating-recipient'});
+ expect(isSupportCast(support)).toBe(true);
+ support.events.push({...damage,actorId:support.actorId,amount:0});
+ expect(isSupportCast(support)).toBe(false);
+});
 it('gives enemies only Basic or Ultimate and limits shake to ultimate contact',()=>{
  for(const owner of Object.keys(ENEMY_BY_ID)){
   const ultimate=configureSequence(pilotFixture('enemy:'+owner).plan),basic=configureSequence(pilotFixture('enemy:'+owner+':basic').plan);
