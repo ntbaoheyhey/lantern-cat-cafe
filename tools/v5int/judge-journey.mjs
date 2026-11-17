@@ -6,8 +6,8 @@ import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
-const practiceOnly=process.argv[3]==='--practice-only';
-assert(process.argv[3]===undefined||practiceOnly,'Optional mode: --practice-only');
+const practiceOnly=process.argv[3]==='--practice-only',levelFirst=process.argv[3]==='--level-first';
+assert(process.argv[3]===undefined||practiceOnly||levelFirst,'Optional mode: --practice-only or --level-first');
 assert(/^[a-z0-9-]+$/.test(label??''),'Supply a fresh evidence label');
 for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
 const out=resolve(root,'work/v5/CXI/journey',label);assert(!existsSync(out),'Preserve earlier evidence');mkdirSync(out,{recursive:true});
@@ -58,6 +58,18 @@ try{
  await page.getByRole('group',{name:'Free welcome',exact:true}).getByRole('button',{name:'Welcome',exact:true}).click();
  await page.getByRole('heading',{name:'Welcome home',exact:true}).waitFor({timeout:remaining()});step('free friend welcomed');
  await page.locator('.uv-sheet-heading').getByRole('button',{name:'Close',exact:true}).click();
+ if(levelFirst){
+  await page.locator('[data-home-destination="Cats"]').click();
+  const detail=page.getByRole('complementary',{name:'Cat details',exact:true});
+  await detail.getByRole('button',{name:'Growth',exact:true}).click();
+  const growth=detail.locator('[data-growth="level"]');
+  report.training={cat:await detail.locator('h2').innerText(),before:await growth.innerText()};
+  await growth.getByRole('button',{name:'Level up',exact:true}).click();
+  await page.waitForFunction(before=>document.querySelector('[data-growth="level"]')?.innerText!==before,report.training.before);
+  report.training.after=await growth.innerText();step('levelled one friend through Growth');
+  await page.screenshot({path:resolve(out,'level.png')});
+  await page.locator('.uv-sheet-heading').getByRole('button',{name:'Close',exact:true}).click();
+ }
  await page.locator('.uv-patrol').click();
  await page.getByRole('button',{name:'Fight',exact:true}).click();step('patrol battle started');
  const speed=page.getByRole('button',{name:'Change playback speed',exact:true});
