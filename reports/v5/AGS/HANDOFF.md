@@ -1,4 +1,4 @@
-ACTIVE: T-CXI-1 (QA).
+ACTIVE: None (Idle).
 NEXT 1: T-CXI-7, T-CXI-1 (QA) [BLOCKED].
 PIDs: None.
 Open TASKS: T-CXI-5 REDO, T-CXI-1 \[BLOCKED\].
