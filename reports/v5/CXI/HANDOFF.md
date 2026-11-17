@@ -1,9 +1,9 @@
 # CXI handoff — I2 active after R0
 ACTIVE: I2 transfer<=8MB; R0 and I3 done 2026-11-17T06:43:38Z; v5-m1 green.
-NEXT 1: Monitor current m1 probe; implement scoped deferred native pixels, then rebuild/measure a new label.
+NEXT 1: Finish VFX before capture on existing deferred build; then build new19 sampled atlas delivery, measure and capture VFX after.
 NEXT 2: Scoped scene.ts third arg deferNativePixels:isCraftOwner(asset), then compact layered loader and optional V5 texture decode.
 NEXT 3: Voice-array integration, AGV pose AVIF deliveries; mobile Q0b-F1; continue I4/I5/I6 and refill.
-Running PIDs/logs: preview PID80797 work/v5/CXI/jobs/m1-preview.log; probe PID80903 work/v5/CXI/jobs/i2-m1-transfer.log/.exit.
+Running PIDs/logs: preview PID80797 work/v5/CXI/jobs/m1-preview.log; VFX before capture PID83309 work/v5/CXI/jobs/i2-effects-before.log/.exit.
 Last pushed SHA:b26cf0e3c, v5-m1; current runtime build code757c4a997.
 Green gates: typecheck0; web2821/2821; root5121 passes; build0. Logs work/v5/CXI/jobs/r0-*.log.
 R0 merged five old lane tips; all27 READY entries ancestry-confirmed; DELIVERY-LEDGER.md.
