@@ -73,7 +73,8 @@ try{
    await page.evaluate(async src=>{const r=window.__cxvTextureReview,im=new Image();im.src=src;await im.decode();r.card.getContext('2d').drawImage(im,20,48,320,320);r.card.style.visibility='visible';},'data:image/png;base64,'+live.toString('base64'));
    await page.locator('[data-cxv-texture-review]').screenshot({path:resolve(dir,'frame-'+String(i).padStart(2,'0')+'.png')});samples.push(audit);
   }
-  const sheet=resolve(out,id+'.jpg');execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-framerate','6','-i',resolve(dir,'frame-%02d.png'),'-vf','scale=480:-1,tile=4x4','-frames:v','1','-q:v','4',sheet]);
+  const sheet=resolve(out,id+'.jpg'),inputs=[1,5,9,13].flatMap(i=>['-i',resolve(dir,'frame-'+String(i).padStart(2,'0')+'.png')]);
+  execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y',...inputs,'-filter_complex','[0:v]scale=512:-1[a];[1:v]scale=512:-1[b];[2:v]scale=512:-1[c];[3:v]scale=512:-1[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','4',sheet]);
   report.textures.push({id,spec,...meta,sha256:hashes[id],sheet,samples});await writeFile(resolve(out,'review.json'),JSON.stringify(report,null,2));
   if(!samples.some(s=>s.textured>0))throw Error('No runtime texture draws '+id);process.stdout.write(id+' rendered\n');
  }

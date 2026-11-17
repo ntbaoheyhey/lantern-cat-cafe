@@ -1,23 +1,18 @@
-# CXV V6 handoff
-STATE ACTIVE; desktop-only scope; STOP files absent at13:08Z.
+# CXV V7 handoff
+ACTIVE V-A3 facial-depth study; assistant: AGV; V-C candidate READY16/16+tsc0.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17.
-ACTIVE V-C enemy/boss presentation study; V-B1 local pass; independent current-tag V-A/B review open.
-NEXT 1: Read LEARN/CXV-enemy-variants-20261117.md and current enemy/boss scene; capture fresh desktop baseline for Binding/Kettle/entrance, then bounded Chinese+English study.
-NEXT 2: Run one small enemy/boss experiment, apply only justified visible correction; focused checks+tsc and fresh1280x720 evidence; READY to CXI.
-NEXT 3: Revisit AGV V-A/B independent review after green tag; continue status/outcome V-E.
-V-A1:24/24+tsc0; films/V-A-r2,idle1280x720,hit/actions/reduced/ref-window; final sheets inspected; V6-A-LIVING.md.
-V-A current evidence sourceb064f41fc+runtime patch7b989cc8f5a07ad1e82463aba0561abcc8a09a22ba359323e6ba2021c209911c.
-Order ORDER-V6.txt SHA25620b4b533a98724c134aef95ffe27593b5b9e9837137913fa9c6e92e1426e80a0.
-self-wake:CXV wake,every15min,created2026-11-17T12:20:58.825Z,idcxv-wake,same chat; last checked12:34Z,next13:34Z.
-Last pushed79243bb60 at13:09Z; V-B1 checkpoint being committed; announcedv5-m1.2 merged.
-Last RULES re-read2026-11-17T13:08Z; next14:08Z.
-Judge local http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; captures healthy at12:52Z.
-BOARD greenv5-m1.2@8ff1f1d4f merged; integration preview6301; own captures6310.
-Vite6310 serving; no active jobs. V-B1 checks41/41+tsc0; final/reduced captures/film complete; evidence V6-B-SKILL-MOMENTS.md.
-Mailbox cursors INBOX131,DELIVERIES48,USER23,BOARD13; noIMGJOB; v5-m1.3 announced in INBOX, verify BOARD before merge.
-V-D Clover/Panko reviews complete/revision,no approval. Panko4x4 collection mislabeled1x1; ask for one128/256px crumb.
-Kettle production contact closed by CXI currentv6-ia1 capture; beauty3/5 remains V-C/E.
-R3 numbers/R4 ground and V0–V5 baseline retained; no extra FPS/audio studies.
-Broad legacy mask retained; reverted08:49 extra-pass experiment stays reverted.
-AGS Q0b-F2 independent closure,statuses/outcome/boss entrance remain open.
-Ownership exceptions in mailbox OWNERSHIP.md; CXI lantern loader grant active; leave unrelated ART/captures.
+NEXT 1: Read rig/drawing-layer.ts and drawing-expression.ts; quantify face yaw/parallax in600ms reference and current heroes.
+NEXT 2: Implement bounded four-hero face depth+expression, meaningful tests and fresh desktop captures.
+NEXT 3: Confirm V-C on next green BOARD build; V-B2 voice6700ms assessment.
+Open TASKs given:T-CXV-1 sheet audit;T-CXV-2 Chinese+English face-depth research. Open received:CXI ultimate6700ms lead-in assessment V-B2.
+Pending reviews:Mochi particle1,Clover anticipation; ACKed V6; no new texture approval.
+Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
+Self-wake idcxv-wake ACTIVE every15min currentchat01a1e9cc-2dbe-7022-83de-f2d876839be5 verified2026-11-17T13:59:33Z.
+Last pushed f8e4e7ab3; preserved staged V-C and capture fixes.
+Last RULES reread 2026-11-17T13:59:33Z; STOP absent.
+Running:Vite21525 jobs/vite-6310.log; no capture jobs; V-C checks and both capture jobs completed0.
+BOARD v5-m1.3@04c913bc585ac028bed31f1e8ea901369acb6da2; judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3.
+Candidate URL http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3.
+V-A1 24/24+tsc0,headX1.33-1.95%H,feet0;V-B1 41/41+tsc0,support clears1760ms;V6 reports retained.
+Mailbox cursors INBOX-CXV 143,USER 23; BOARD read14:00Z.
+Ownership grants in OWNERSHIP; leave unrelated art/captures; approved textures12 only.

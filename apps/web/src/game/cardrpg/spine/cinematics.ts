@@ -22,12 +22,13 @@ export function ultimateFocus(time:number,start:number,end:number,active:boolean
 }
 
 /** Reserve the upper wall, above the actors and below the fixed enemy rage row. */
-export function cinematicBox(width:number,height:number,protectedRects:readonly Rect[],compact=false):Rect|null {
- const sizes:readonly [number,number][]=compact?[[380,68]]:[[510,Math.min(134,height*.25)],[380,88]];
+export function cinematicBox(width:number,height:number,protectedRects:readonly Rect[],compact:boolean|'arrival'=false):Rect|null {
+ const arrival=compact==='arrival';
+ const sizes:readonly [number,number][]=arrival?[[244,50]]:compact?[[380,68]]:[[510,Math.min(134,height*.25)],[380,88]];
  for(const [desiredWidth,h] of sizes){
  const w=Math.min(desiredWidth,width*.43);
- if(w<260||h<88&&!compact)continue;
- for(const y of [62,88,112])for(const x of [24,width*.22,width-w-24]){
+ if(w<(arrival?220:260)||h<88&&!compact)continue;
+ for(const y of [62,88,112])for(const x of arrival?[width*.57,24,width*.22,width-w-24]:[24,width*.22,width-w-24]){
   const box={x,y,width:w,height:h};
   if(y+h>height-20||x+w>width-12)continue;
   if(!protectedRects.some(rect=>intersects(box,rect,12)))return box;

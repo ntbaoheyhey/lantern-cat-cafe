@@ -1,12 +1,12 @@
-# CXV V6 assignments — judge's first three minutes
-- [ ] V-A: first living-motion step passes24/24+tsc0; fresh1280x720 idle/hit/cast/victory/reduced evidence in V6-A-LIVING.md. Independent current-tag reference review/facial-depth gap remains open.
-- [x] V-A1: four hero breath/turn/weight/seeded gestures delivered; headX1.33–1.95%H vs0%,feet0; sourceb064f41fc+patch7b989cc8; no Live2D-equivalence claim.
-- [ ] V-B:V-B1 delivered; independent current-tag reference review remains open. Live kit is Basic+Ultimate; retired slot2 stays ARCHIVE.
-- [x] V-B1:smaller4hero ultimate silhouettes; support decay1200–1760ms;41/41+tsc0;8live+4archive+4reduced sheets,1x film; V6-B-SKILL-MOMENTS.md. Approved textures already visible; loader block disproved.
-- [ ] V-C ACTIVE:enemy/boss telegraphs, hit/death and filmed entrance; preserve Yarn hand contact; fresh captures/tests/tsc.
-- [ ] V-D:pair AGV G1-G5 texture scores with exact fixes; answer everyIMGJOB using original art/plain words and immediate GEN-LOG; fresh composites.
-- [ ] V-E:close judge-visible Kettle beauty/contact, status visuals and outcome/victory; fresh captures/tests/tsc.
-- [ ] V-F:desktop only; smooth real boss fight on normal laptop with readable effects/numbers at1280x720; no standalone FPS gate studies; fresh captures/tests/tsc.
+# CXV V7 queue — desktop judge first three minutes
+- [ ] V-C candidate READY:V7-C.md,16/16+tsc0,fresh4arrival+4effect sheets; BLOCKED-ON CXI green for integrated confirmation.
+- [ ] V-A3 ACTIVE:four-hero facial-depth yaw/tilt+expression atop idle; friend600ms side-by-side table.
+- [ ] V-B2:distinct readable four-hero ultimates; answer CXI6700ms voice lead-in with measured change or reasoned no.
+- [ ] V-D:AGV one texture/task exact grid/frame/progression/ramp/size/alpha,G1-G5; script-check before review; ACCEPT/REDO.
+- [ ] V-E:status visuals,outcome/victory,boss entrance worth filming.
+- [ ] V-F:desktop boss fight performance/readability; preserve units,numbers,telegraphs.
+- CANCELLED mobile/390px scope:owner desktop-only instruction.
+- CANCELLED unassigned bulk texture regeneration:V7 one-at-a-time audit first.
 
 ## Prior DONE work retained as baseline evidence
 - [x] V0 study8c9bd134c; V1 timelines7d48cef63/overrideed388eb30:16 timelines,12 sheets,focused tests+tsc.
@@ -27,6 +27,7 @@
 - [x] Kettle production contact closure:CXI fresh v6-ia1 capture and green v5-m1.1@5fa814f5e confirm torso fix/broad mask; beauty3 remains V-C/E.
 - [ ] Kettle beauty3/5 and Binding coverage under V-C/E.
 - [ ] AGS Q0b-F2 independent recheck under V-B/C; producer fix delivered.
+- [ ] CXI13:28 pacing REQ: assess6700ms ultimate voice lead-in in actual desktop patrol; preserve voice/contact/rules, no latency audit.
 - [ ] R5 statuses(burn/poison/stun/slow/shield) -> V-E; initial study not counted complete.
 - [ ] R6 outcome/victory -> V-E; R7 ultimate camera -> V-B if it helps clarity; R8 fidgets -> V-A; R9 boss intro -> V-C.
 - [ ] R10 low-score corrections -> assignment owning the visible defect; no artificial queue-empty completion gate.

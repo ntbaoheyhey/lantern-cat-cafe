@@ -37,6 +37,7 @@ import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
+import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
 
 interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
@@ -60,7 +61,7 @@ export class SpineScene {
  private width=1;private height=1;private worldWidth=1;private scratch=new T.Vector3();
  private plan:EffectPlan|null=null;private firstHit=false;private ultimate=false;private castAt=-100;private hitAt=-100;private currentView?:SceneView;private renderTime=0;
  private c2Seats=new Map<string,number>();private c2Capacity=4;
- private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;
+ private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;private phaseNoticeArrival=false;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private casterFocus=new CasterFocus();
  /** Q3.B authoring only. Normal builds retain the accepted scene until review. */
@@ -265,9 +266,10 @@ export class SpineScene {
    entry.shadow.position.set(position.x,position.y-8,-2);entry.shadow.scale.set(Math.min(actor.bounds.width,actor.unit.targetHeight)*position.scale*1.12,core.world.height*position.scale*.13,1);
    entry.ring.visible=unit.hp>0;entry.ring.position.copy(entry.shadow.position);entry.ring.scale.set(core.world.height*position.scale*.38,core.world.height*position.scale*.095,1);entry.ring.material.color.set(ELEMENT_COLORS[entry.asset]??PAINT.rose);
    const phase=view.bossPhases?.[unit.id]??1;
-   if(phase>entry.phase){entry.phase=phase;entry.phaseAt=time;this.phaseNoticeAt=time;this.cinematic.phaseText=`${unit.name} · Phase ${phase}`;this.effects.accent(unit.id,'phase',time,view.playbackSpeed??1);}
-   if(!entry.entranceDone&&(view.galleryPreview||time-entry.entered>=actor.duration('appear')*.8)){
+   if(phase>entry.phase){entry.phase=phase;entry.phaseAt=time;this.phaseNoticeAt=time;this.phaseNoticeArrival=false;this.cinematic.phaseText=`${unit.name} · Phase ${phase}`;this.effects.accent(unit.id,'phase',time,view.playbackSpeed??1);}
+   if(!entry.entranceDone&&(view.galleryPreview||time-entry.entered>=(boss?BOSS_LANDING_MS/1000:actor.duration('appear')*.8))){
     entry.entranceDone=true;if(!view.galleryPreview&&!view.reducedMotion)this.effects.accent(unit.id,'entrance',time,view.playbackSpeed??1);
+    if(boss&&!view.galleryPreview&&unit.hp>0&&phase===1){this.phaseNoticeAt=time;this.phaseNoticeArrival=true;this.cinematic.phaseText=unit.name;}
    }
    const worldTime=sequence&&frame?time-frame.elapsed/1000+sequenceWorldTime(sequence.seq,frame.elapsed)/1000:time;
    const phaseOffset=idlePhase(unit.id);
@@ -363,6 +365,12 @@ export class SpineScene {
      ?denseMeleeRoot(motionElapsed,home.point,contact)
      :meleeRoot(motionElapsed,plan.ultimate,home.point,contact,corridor?40*height/720:0,corridor||entry.asset==='yarn-giant'?0:(tallTarget?20:60)*height/720);
    }
+   const arrival=bossArrival((time-entry.entered)*1000,height,{
+    disabled:!boss||!entry.craftPose||!!view.galleryPreview||!!view.model||!!view.reducedMotion||unit.hp<=0||iced||statuses.includes('stun')||time-entry.hurtAt<actor.duration('hurt'),
+    actionElapsed:frame&&unit.id===plan?.actorId?frame.elapsed:undefined,
+    hitInMs:drawingDamage&&frame?frame.plan.beats[2]!.start-frame.elapsed:undefined,
+   });
+   if(arrival.phase!=='idle'){rootPose.x+=arrival.x;rootPose.y+=arrival.y;rootPose.sx*=arrival.sx;rootPose.sy*=arrival.sy;if(rootPose.phase==='idle')rootPose.phase=arrival.phase;}
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
    const facing=spriteFacing(actor.unit.nativeFacing,unit.side),footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;
@@ -372,7 +380,7 @@ export class SpineScene {
    actor.root.updateMatrixWorld(true);
    const opaque=opaqueWorldBounds(actor.root);
    if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2){
-    const target=core.world.height*position.scale;
+    const target=core.world.height*position.scale*arrival.sy;
     const factor=Math.max(target*.985,Math.min(target*1.015,opaque.height))/opaque.height;
     // Constrain size around the planted foot; preserve the authored pose shape.
     const pivotX=position.x+footX+dx*pixelsToWorld,pivotY=position.y+footY-dy*pixelsToWorld;
@@ -421,7 +429,7 @@ export class SpineScene {
   this.cinematic.box=this.cinematic.ultimateVisible?cinematicBox(width,height,protectedRects):null;
   this.cinematic.ultimateVisible&&=!!this.cinematic.box;
   this.cinematic.phaseVisible=time-this.phaseNoticeAt<PAINT.phaseSeconds&&!this.cinematic.ultimateVisible;
-  this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,true):null;
+  this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,this.phaseNoticeArrival?'arrival':true):null;
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
   if(this.craftHandles(plan)&&frame&&plan){
    const casterAsset=this.actors.get(plan.actorId)?.asset,shield=casterAsset==='mochi',oven=casterAsset==='panko',thread=casterAsset==='binding-thread',needle=casterAsset==='needle-moth',yarn=casterAsset==='yarn-giant';

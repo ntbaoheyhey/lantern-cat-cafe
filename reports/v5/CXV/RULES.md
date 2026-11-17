@@ -1,25 +1,20 @@
-# CXV V6 — teacher mode, 17 Nov 2026
-1. Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; ports6310–6319; mailbox /Users/bao/taskbar-hero-mailbox.
-2. Order saved verbatim ORDER-V6.txt; USER.md wins. Disk is truth; read RULES+HANDOFF on resume/wake/compaction, before assignments, hourly.
-3. ACTIVE work continues after steps/commits/jobs/compaction; update HANDOFF then execute NEXT1. Dependencies => BLOCKED-ON and other work.
-4. Stop only for STOP-ALL/STOP-CXV: commit+push owned WIP, final STOPPED: <file>. No freeze or end before submission.
-5. Exactly one same-chat heartbeat CXV wake every15m; check hourly, recreate only if missing; ignore wakes mid-task.
-6. Own cardrpg/{battle-v3,spine,vfx-craft,vfx-layered,depth,stage}/**, game/rig/**, public/vfx/v5/from-cx/**, reports/v5/CXV/**, tools/v5vfx/**.
-7. Respect OWNERSHIP.md: CXI loaders/manifests/asset indexes and existing narrow grants remain; coordinate edits outside ownership by REQ.
-8. USER12:36Z desktop only: drop all mobile/phone work. V-A living heroes; V-B actions/texture wiring; V-C enemies/boss; V-D AGV; V-E visible debts; V-F desktop performance/readability.
-9. DONE only after own fresh judge-URL captures, focused tests and typecheck green; send READY to CXI after every passing step.
-10. Judge URL includes ?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; BOARD exact host wins for integration. Own local6310 for implementation captures.
-11. Record URL, current commit/tag and capture UTC; never judge old captures. Reference videos teach principles only; small contact sheets <=1024px, <=4 images/look.
-12. Before new work kind read LEARN/INDEX and classmates; research Chinese+English, >=3 concrete primary sources; run one small experiment before build.
-13. Save own LEARN/CXV-topic-YYYYMMDD.md with numbers, application, failures and sources; append INDEX once; never edit classmates' notes.
-14. Compare against best reference at same size/speed. Apply learning to the judge's first3min; no unused research or invented gates/catalogs.
-15. Checkpoint every20m and step: explicit owned git add only; commit v6 CXV <assignment> <step>; push -u origin codex/v5-vfx-2026-11-17.
-16. Push failure retry10/20/40/80s; rejected push => git pull --no-rebase then push. Never git add -A, git add ., commit -a; leave unrelated WIP.
-17. >2m commands detached nohup nice -n10; max2 jobs; record PID/log. Every command <=40 output lines; measure first, inspect once.
-18. Films/frames/big sheets stay ignored work/v5/CXV/; reports <=300KB per commit. HANDOFF<=25 lines; STATUS-VI<=10; PROGRESS one line/step.
-19. Read new INBOX-CXV/DELIVERIES/BOARD/USER every checkpoint; ignore FROM WATCHDOG history; ACK every open REQ, DONE at completion.
-20. Mailbox only, one echo append/message <=300char text; PULSE AGV hourly; READY exact branch@sha+wiring; merge only CXI-announced tags.
-21. Original art only; IMGJOB uses built-in imagegen with own art/plain words, never reference frames; log tool+prompt+UTC immediately, small sheets in from-cx.
-22. Two failed attempts without new idea => PROGRESS lesson then sharper study or another assignment. Never idle on a classmate.
-23. Free tools preapproved after TOOL-PROPOSALS log; no sudo/account/keys/payment. New package dependencies through CXI.
-24. Never secrets/.env/private keys, deploys/hosting/prod DB, funded transactions, contracts edits/deploys, main merge, submission; no secret scans, exports, audio/FPS studies.
+# CXV V7 rules
+1. CXV lead VFX/motion; assistant: AGV; worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; ports6310-6319.
+2. Mailbox /Users/bao/taskbar-hero-mailbox; USER.md newest wins; OWNERSHIP.md grants apply; saved ORDER-V7.txt is source.
+3. Own apps/web/src/game/cardrpg/{battle-v3,spine,vfx-craft,vfx-layered,depth,stage}/** except CXI loaders; game/rig/**; public/vfx/v5/from-cx/**; reports/v5/CXV; tools/v5vfx.
+4. Stop rule: STOP-ALL or STOP-CXV only; commit/push owned WIP then final STOPPED: <absolute file>.
+5. Stop rule: finished item/commit/push/job never ends work; update HANDOFF and execute NEXT1.
+6. Stop rule: blocker => log REQ+PROGRESS once, BLOCKED-ON reason, next unblocked item same turn.
+7. Stop rule: never end while a job/browser runs; do independent work and check it; max2 detached jobs.
+8. Stop rule: wake mid-task => next tool call; otherwise read RULES+HANDOFF and new inbox/USER, then NEXT1.
+9. Stop rule: compaction never ends work; immediately re-read absolute RULES+HANDOFF and continue.
+10. Read RULES+HANDOFF before new item, each wake/compaction, hourly; HANDOFF<=20lines; reports on disk.
+11. One CXV wake heartbeat every15min, idcxv-wake; verify hourly; no duplicate or UI automation.
+12. Desktop1280x720 only; BOARD exact judgeURL query mandatory; own6310 for candidate build. DONE requires fresh own captures+focused tests+typecheck.
+13. Before new work kind read LEARN/INDEX; Chinese+English >=3 concrete primary sources, experiment, own LEARN note; original art only.
+14. AGV fewer than2open TASKs => assign useful next; TASK/ACK/DONE/ACCEPT/REDO via one echo append per mailbox line, text<=300chars.
+15. Every20min/step checkpoint explicit owned git add; commit v7 CXV item step; push -u origin codex/v5-vfx-2026-11-17; retry10/20/40/80s; rejected=>pull --no-rebase.
+16. Commands<=40output lines; inspect<=4images<=1024px; measure first/inspect once; films/big sheets ignored work/v5/CXV; reports<=300KB/commit.
+17. >2min jobs nohup nice -n10 to work/v5/CXV/jobs; PID/log in HANDOFF; two failed attempts=>new study or next item.
+18. Never secrets/.env/keys, deploys/hosting/prodDB, fundedwallet/Fuji transactions, contracts edits/deploys, main merge, submission, signup/payment; free tools log first.
+19. Valid final only STOPPED: <file>; WAKE CXV means continue tools, save progress on disk, no status final; READY to CXI after every passing step.
