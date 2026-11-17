@@ -1,0 +1,1 @@
+READY | 2026-11-17T12:28:00Z | ag/v5-sound-2026-11-17@7b2b8b789 | Legacy audio Opus/M4A substitutions for score-boss, score-dawn, scene-workshop, scene-rain in work/v5/AGS/legacy_conversion/ . Ready for wiring.
