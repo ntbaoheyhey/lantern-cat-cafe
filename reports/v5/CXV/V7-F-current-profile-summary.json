@@ -1,0 +1,3630 @@
+{
+  "numberMetricsMode": null,
+  "utc": "2026-11-17T18:24:44.108Z",
+  "source": "f4e8c135278862e86f3b6058098d5c0b19688141",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "production": false,
+  "hardware": "Apple M3 Pro",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.",
+  "runs": [
+    {
+      "rate": 4,
+      "numberMetricsMode": null,
+      "methodCosts": {
+        "startup": {
+          "native.pose": {
+            "calls": 384,
+            "totalMs": 10.300000004470348,
+            "maxMs": 1
+          },
+          "drawing.sample": {
+            "calls": 384,
+            "totalMs": 322.8000000193715,
+            "maxMs": 7.899999998509884
+          },
+          "actor.sample": {
+            "calls": 357,
+            "totalMs": 41.70000000298023,
+            "maxMs": 4.200000002980232
+          },
+          "craft.deform": {
+            "calls": 357,
+            "totalMs": 305.8000000268221,
+            "maxMs": 8
+          }
+        },
+        "steady": {
+          "native.pose": {
+            "calls": 7018,
+            "totalMs": 184.90000004321337,
+            "maxMs": 2.3000000044703484
+          },
+          "actor.sample": {
+            "calls": 6825,
+            "totalMs": 460.5000000372529,
+            "maxMs": 3.2999999970197678
+          },
+          "drawing.sample": {
+            "calls": 7018,
+            "totalMs": 5186.900000073016,
+            "maxMs": 17.599999994039536
+          },
+          "craft.deform": {
+            "calls": 6825,
+            "totalMs": 5204.100000143051,
+            "maxMs": 17.599999994039536
+          }
+        }
+      },
+      "methodCostsNote": "Inclusive wall CPU timings with wrapper overhead; nested methods overlap. Use for attribution only.",
+      "elapsedMs": 32042.40000000596,
+      "samples": 975,
+      "frameMs": {
+        "median": 33.29999999999927,
+        "p95": 66.70000000000073,
+        "p99": 99.90000000000055,
+        "max": 200
+      },
+      "submitCpuMs": {
+        "median": 19.100000001490116,
+        "p95": 26.599999994039536,
+        "p99": 49.80000000447035,
+        "max": 130.5
+      },
+      "over33": 95,
+      "over50": 76,
+      "firstRenderLatencyMs": 39,
+      "wholeRun": {
+        "samples": 1025,
+        "frameMs": {
+          "median": 33.29999999999927,
+          "p95": 83.20000000000073,
+          "p99": 100,
+          "max": 200
+        },
+        "submitCpuMs": {
+          "median": 19.100000001490116,
+          "p95": 27,
+          "p99": 55,
+          "max": 137.79999999701977
+        },
+        "over33": 107,
+        "over50": 86
+      },
+      "startup": {
+        "samples": 50,
+        "frameMs": {
+          "median": 33.30000000000018,
+          "p95": 100.09999999999991,
+          "p99": 183.19999999999982,
+          "max": 183.19999999999982
+        },
+        "submitCpuMs": {
+          "median": 20.600000001490116,
+          "p95": 71.60000000149012,
+          "p99": 137.79999999701977,
+          "max": 137.79999999701977
+        },
+        "over33": 12,
+        "over50": 10
+      },
+      "steadyWindowStartMs": 2000,
+      "calls": {
+        "median": 24,
+        "p95": 35,
+        "p99": 55,
+        "max": 70
+      },
+      "textures": {
+        "median": 52,
+        "p95": 57,
+        "p99": 57,
+        "max": 57
+      },
+      "slowFrames": [
+        {
+          "wallMs": 39,
+          "cpuMs": 36,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 21
+        },
+        {
+          "wallMs": 211.40000000596046,
+          "cpuMs": 44.5,
+          "skill": "mochi-1",
+          "age": 16.700000000000273,
+          "drawCalls": 22,
+          "textures": 21
+        },
+        {
+          "wallMs": 261.20000000298023,
+          "cpuMs": 71.79999999701977,
+          "skill": "mochi-1",
+          "age": 133.30000000000018,
+          "drawCalls": 24,
+          "textures": 24
+        },
+        {
+          "wallMs": 361.6000000014901,
+          "cpuMs": 21.30000000447035,
+          "skill": "mochi-1",
+          "age": 233.4000000000001,
+          "drawCalls": 24,
+          "textures": 24
+        },
+        {
+          "wallMs": 386.70000000298023,
+          "cpuMs": 20.100000001490116,
+          "skill": "mochi-1",
+          "age": 250,
+          "drawCalls": 24,
+          "textures": 24
+        },
+        {
+          "wallMs": 412.20000000298023,
+          "cpuMs": 71.60000000149012,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "drawCalls": 25,
+          "textures": 25
+        },
+        {
+          "wallMs": 513.7000000029802,
+          "cpuMs": 137.79999999701977,
+          "skill": "mochi-1",
+          "age": 383.4000000000001,
+          "drawCalls": 26,
+          "textures": 27
+        },
+        {
+          "wallMs": 710.7000000029802,
+          "cpuMs": 35.899999998509884,
+          "skill": "mochi-1",
+          "age": 566.5999999999999,
+          "drawCalls": 30,
+          "textures": 27
+        },
+        {
+          "wallMs": 754.3000000044703,
+          "cpuMs": 25.799999997019768,
+          "skill": "mochi-1",
+          "age": 616.7000000000003,
+          "drawCalls": 30,
+          "textures": 27
+        },
+        {
+          "wallMs": 785.7000000029802,
+          "cpuMs": 28,
+          "skill": "mochi-1",
+          "age": 650,
+          "drawCalls": 29,
+          "textures": 27
+        },
+        {
+          "wallMs": 894.7000000029802,
+          "cpuMs": 20.299999997019768,
+          "skill": "mochi-1",
+          "age": 766.7000000000003,
+          "drawCalls": 31,
+          "textures": 27
+        },
+        {
+          "wallMs": 919.6000000014901,
+          "cpuMs": 23.100000001490116,
+          "skill": "mochi-1",
+          "age": 783.3000000000002,
+          "drawCalls": 30,
+          "textures": 27
+        },
+        {
+          "wallMs": 1158.2000000029802,
+          "cpuMs": 25.600000001490116,
+          "skill": "soot-1",
+          "age": 16.59999999999991,
+          "drawCalls": 22,
+          "textures": 27
+        },
+        {
+          "wallMs": 1191.4000000059605,
+          "cpuMs": 55,
+          "skill": "soot-1",
+          "age": 83.29999999999973,
+          "drawCalls": 25,
+          "textures": 29
+        },
+        {
+          "wallMs": 1252.8000000044703,
+          "cpuMs": 20.299999997019768,
+          "skill": "soot-1",
+          "age": 149.89999999999964,
+          "drawCalls": 25,
+          "textures": 29
+        },
+        {
+          "wallMs": 1300.3000000044703,
+          "cpuMs": 21.399999998509884,
+          "skill": "soot-1",
+          "age": 199.89999999999964,
+          "drawCalls": 25,
+          "textures": 29
+        },
+        {
+          "wallMs": 1327.3000000044703,
+          "cpuMs": 21.69999999552965,
+          "skill": "soot-1",
+          "age": 233.30000000000018,
+          "drawCalls": 27,
+          "textures": 29
+        },
+        {
+          "wallMs": 1353.8000000044703,
+          "cpuMs": 22.69999999552965,
+          "skill": "soot-1",
+          "age": 250,
+          "drawCalls": 27,
+          "textures": 29
+        },
+        {
+          "wallMs": 1380.3000000044703,
+          "cpuMs": 46.899999998509884,
+          "skill": "soot-1",
+          "age": 283.3000000000002,
+          "drawCalls": 29,
+          "textures": 30
+        },
+        {
+          "wallMs": 1431.8000000044703,
+          "cpuMs": 20.299999997019768,
+          "skill": "soot-1",
+          "age": 333.3000000000002,
+          "drawCalls": 26,
+          "textures": 30
+        },
+        {
+          "wallMs": 1457,
+          "cpuMs": 25.200000002980232,
+          "skill": "soot-1",
+          "age": 350,
+          "drawCalls": 28,
+          "textures": 30
+        },
+        {
+          "wallMs": 1537.7000000029802,
+          "cpuMs": 22.700000002980232,
+          "skill": "soot-1",
+          "age": 433.3000000000002,
+          "drawCalls": 39,
+          "textures": 30
+        },
+        {
+          "wallMs": 1577.2000000029802,
+          "cpuMs": 23.200000002980232,
+          "skill": "soot-1",
+          "age": 466.59999999999945,
+          "drawCalls": 38,
+          "textures": 30
+        },
+        {
+          "wallMs": 1606.1000000014901,
+          "cpuMs": 22.30000000447035,
+          "skill": "soot-1",
+          "age": 499.89999999999964,
+          "drawCalls": 38,
+          "textures": 30
+        },
+        {
+          "wallMs": 1634,
+          "cpuMs": 20.600000001490116,
+          "skill": "soot-1",
+          "age": 533.3000000000002,
+          "drawCalls": 38,
+          "textures": 30
+        },
+        {
+          "wallMs": 1660.5,
+          "cpuMs": 20.200000002980232,
+          "skill": "soot-1",
+          "age": 566.5999999999995,
+          "drawCalls": 35,
+          "textures": 30
+        },
+        {
+          "wallMs": 1686,
+          "cpuMs": 20.100000001490116,
+          "skill": "soot-1",
+          "age": 583.3000000000002,
+          "drawCalls": 34,
+          "textures": 30
+        },
+        {
+          "wallMs": 1711.9000000059605,
+          "cpuMs": 21.399999998509884,
+          "skill": "soot-1",
+          "age": 616.5999999999995,
+          "drawCalls": 34,
+          "textures": 30
+        },
+        {
+          "wallMs": 1738.2000000029802,
+          "cpuMs": 22.299999997019768,
+          "skill": "soot-1",
+          "age": 633.3000000000002,
+          "drawCalls": 34,
+          "textures": 30
+        },
+        {
+          "wallMs": 1790.4000000059605,
+          "cpuMs": 21.799999997019768,
+          "skill": "soot-1",
+          "age": 683.3000000000002,
+          "drawCalls": 31,
+          "textures": 30
+        },
+        {
+          "wallMs": 1816.5,
+          "cpuMs": 20.200000002980232,
+          "skill": "soot-1",
+          "age": 716.5999999999995,
+          "drawCalls": 28,
+          "textures": 30
+        },
+        {
+          "wallMs": 1842.2000000029802,
+          "cpuMs": 20.600000001490116,
+          "skill": "soot-1",
+          "age": 749.8999999999996,
+          "drawCalls": 26,
+          "textures": 30
+        },
+        {
+          "wallMs": 1867.1000000014901,
+          "cpuMs": 21.5,
+          "skill": "soot-1",
+          "age": 766.5999999999995,
+          "drawCalls": 22,
+          "textures": 30
+        },
+        {
+          "wallMs": 2137.9000000059605,
+          "cpuMs": 20.299999997019768,
+          "skill": "clover-1",
+          "age": 16.600000000000364,
+          "drawCalls": 22,
+          "textures": 30
+        },
+        {
+          "wallMs": 2163.3000000044703,
+          "cpuMs": 48.79999999701977,
+          "skill": "clover-1",
+          "age": 99.90000000000055,
+          "drawCalls": 22,
+          "textures": 31
+        },
+        {
+          "wallMs": 2238.60000000149,
+          "cpuMs": 33.20000000298023,
+          "skill": "clover-1",
+          "age": 166.70000000000073,
+          "drawCalls": 23,
+          "textures": 33
+        },
+        {
+          "wallMs": 2275.8000000044703,
+          "cpuMs": 20.69999999552965,
+          "skill": "clover-1",
+          "age": 216.60000000000036,
+          "drawCalls": 23,
+          "textures": 33
+        },
+        {
+          "wallMs": 2343.9000000059605,
+          "cpuMs": 51.399999998509884,
+          "skill": "clover-1",
+          "age": 283.40000000000055,
+          "drawCalls": 23,
+          "textures": 34
+        },
+        {
+          "wallMs": 2586.7000000029802,
+          "cpuMs": 20.299999997019768,
+          "skill": "clover-1",
+          "age": 516.6000000000004,
+          "drawCalls": 25,
+          "textures": 34
+        },
+        {
+          "wallMs": 3078.8000000044703,
+          "cpuMs": 20.69999999552965,
+          "skill": "panko-1",
+          "age": 16.699999999999818,
+          "drawCalls": 22,
+          "textures": 34
+        },
+        {
+          "wallMs": 3104.10000000149,
+          "cpuMs": 46.399999998509884,
+          "skill": "panko-1",
+          "age": 83.30000000000018,
+          "drawCalls": 22,
+          "textures": 35
+        },
+        {
+          "wallMs": 3154.5,
+          "cpuMs": 28.600000001490116,
+          "skill": "panko-1",
+          "age": 133.39999999999964,
+          "drawCalls": 24,
+          "textures": 37
+        },
+        {
+          "wallMs": 3229.60000000149,
+          "cpuMs": 20.100000001490116,
+          "skill": "panko-1",
+          "age": 216.69999999999982,
+          "drawCalls": 24,
+          "textures": 37
+        },
+        {
+          "wallMs": 3324.2000000029802,
+          "cpuMs": 48.399999998509884,
+          "skill": "panko-1",
+          "age": 300,
+          "drawCalls": 25,
+          "textures": 38
+        },
+        {
+          "wallMs": 3483.3000000044703,
+          "cpuMs": 21.399999998509884,
+          "skill": "panko-1",
+          "age": 466.6999999999998,
+          "drawCalls": 29,
+          "textures": 38
+        },
+        {
+          "wallMs": 3568.10000000149,
+          "cpuMs": 20.899999998509884,
+          "skill": "panko-1",
+          "age": 550,
+          "drawCalls": 29,
+          "textures": 38
+        },
+        {
+          "wallMs": 3690.7000000029802,
+          "cpuMs": 20.700000002980232,
+          "skill": "panko-1",
+          "age": 666.6999999999998,
+          "drawCalls": 29,
+          "textures": 38
+        },
+        {
+          "wallMs": 3810.7000000029802,
+          "cpuMs": 20.600000001490116,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 38
+        },
+        {
+          "wallMs": 4066.2000000029802,
+          "cpuMs": 57.399999998509884,
+          "skill": "yarnAttack",
+          "age": 99.90000000000055,
+          "drawCalls": 22,
+          "textures": 39
+        },
+        {
+          "wallMs": 4128.5,
+          "cpuMs": 36.400000005960464,
+          "skill": "yarnAttack",
+          "age": 166.5,
+          "drawCalls": 23,
+          "textures": 41
+        },
+        {
+          "wallMs": 4256,
+          "cpuMs": 60.900000005960464,
+          "skill": "yarnAttack",
+          "age": 283.3000000000002,
+          "drawCalls": 24,
+          "textures": 42
+        },
+        {
+          "wallMs": 4342.30000000447,
+          "cpuMs": 43.100000001490116,
+          "skill": "yarnAttack",
+          "age": 383.3000000000002,
+          "drawCalls": 24,
+          "textures": 43
+        },
+        {
+          "wallMs": 4638.10000000149,
+          "cpuMs": 20.700000002980232,
+          "skill": "yarnAttack",
+          "age": 666.6000000000004,
+          "drawCalls": 23,
+          "textures": 43
+        },
+        {
+          "wallMs": 4690.10000000149,
+          "cpuMs": 20.700000002980232,
+          "skill": "yarnAttack",
+          "age": 716.5,
+          "drawCalls": 22,
+          "textures": 43
+        },
+        {
+          "wallMs": 4992.70000000298,
+          "cpuMs": 22.700000002980232,
+          "skill": "threadAttack",
+          "age": 16.600000000000364,
+          "drawCalls": 22,
+          "textures": 43
+        },
+        {
+          "wallMs": 5019.80000000447,
+          "cpuMs": 42.79999999701977,
+          "skill": "threadAttack",
+          "age": 83.19999999999982,
+          "drawCalls": 22,
+          "textures": 44
+        },
+        {
+          "wallMs": 5112.30000000447,
+          "cpuMs": 28.399999998509884,
+          "skill": "threadAttack",
+          "age": 183.30000000000018,
+          "drawCalls": 23,
+          "textures": 46
+        },
+        {
+          "wallMs": 5147.4000000059605,
+          "cpuMs": 21.299999997019768,
+          "skill": "threadAttack",
+          "age": 216.60000000000036,
+          "drawCalls": 24,
+          "textures": 46
+        },
+        {
+          "wallMs": 5200.9000000059605,
+          "cpuMs": 21.19999999552965,
+          "skill": "threadAttack",
+          "age": 266.60000000000036,
+          "drawCalls": 23,
+          "textures": 46
+        },
+        {
+          "wallMs": 5228.10000000149,
+          "cpuMs": 49.80000000447035,
+          "skill": "threadAttack",
+          "age": 299.89999999999964,
+          "drawCalls": 23,
+          "textures": 47
+        },
+        {
+          "wallMs": 5283.10000000149,
+          "cpuMs": 21.700000002980232,
+          "skill": "threadAttack",
+          "age": 349.89999999999964,
+          "drawCalls": 23,
+          "textures": 47
+        },
+        {
+          "wallMs": 5310.70000000298,
+          "cpuMs": 44.20000000298023,
+          "skill": "threadAttack",
+          "age": 383.3000000000002,
+          "drawCalls": 24,
+          "textures": 48
+        },
+        {
+          "wallMs": 5559.30000000447,
+          "cpuMs": 20.299999997019768,
+          "skill": "threadAttack",
+          "age": 616.5,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 5583.80000000447,
+          "cpuMs": 20.100000001490116,
+          "skill": "threadAttack",
+          "age": 649.8999999999996,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 6004.9000000059605,
+          "cpuMs": 23.799999997019768,
+          "skill": "threadAttack",
+          "age": 83.39999999999964,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 6100.5,
+          "cpuMs": 20.100000001490116,
+          "skill": "threadAttack",
+          "age": 183.39999999999964,
+          "drawCalls": 23,
+          "textures": 48
+        },
+        {
+          "wallMs": 6195.30000000447,
+          "cpuMs": 23.799999997019768,
+          "skill": "threadAttack",
+          "age": 283.39999999999964,
+          "drawCalls": 23,
+          "textures": 48
+        },
+        {
+          "wallMs": 6607,
+          "cpuMs": 20.30000000447035,
+          "skill": "threadAttack",
+          "age": 683.3999999999996,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 6632.30000000447,
+          "cpuMs": 20.69999999552965,
+          "skill": "threadAttack",
+          "age": 716.6999999999989,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 7154.5,
+          "cpuMs": 21.200000002980232,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 7416.30000000447,
+          "cpuMs": 20.100000001490116,
+          "skill": "mochi-1",
+          "age": 216.70000000000073,
+          "drawCalls": 24,
+          "textures": 48
+        },
+        {
+          "wallMs": 7555.20000000298,
+          "cpuMs": 21.200000002980232,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 48
+        },
+        {
+          "wallMs": 7634.30000000447,
+          "cpuMs": 20.299999997019768,
+          "skill": "mochi-1",
+          "age": 433.2999999999993,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 7687.60000000149,
+          "cpuMs": 20.80000000447035,
+          "skill": "mochi-1",
+          "age": 483.2999999999993,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 7714.4000000059605,
+          "cpuMs": 24.899999998509884,
+          "skill": "mochi-1",
+          "age": 516.7000000000007,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 7770.20000000298,
+          "cpuMs": 20.899999998509884,
+          "skill": "mochi-1",
+          "age": 566.7000000000007,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 7847.60000000149,
+          "cpuMs": 20.600000001490116,
+          "skill": "mochi-1",
+          "age": 650,
+          "drawCalls": 29,
+          "textures": 48
+        },
+        {
+          "wallMs": 7903.4000000059605,
+          "cpuMs": 20.299999997019768,
+          "skill": "mochi-1",
+          "age": 700,
+          "drawCalls": 29,
+          "textures": 48
+        },
+        {
+          "wallMs": 7955.80000000447,
+          "cpuMs": 21.5,
+          "skill": "mochi-1",
+          "age": 750,
+          "drawCalls": 29,
+          "textures": 48
+        },
+        {
+          "wallMs": 7983.30000000447,
+          "cpuMs": 20.600000001490116,
+          "skill": "mochi-1",
+          "age": 783.2999999999993,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 8515.80000000447,
+          "cpuMs": 21.69999999552965,
+          "skill": "soot-1",
+          "age": 366.60000000000036,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 8601.20000000298,
+          "cpuMs": 22.799999997019768,
+          "skill": "soot-1",
+          "age": 449.89999999999964,
+          "drawCalls": 38,
+          "textures": 48
+        },
+        {
+          "wallMs": 8630,
+          "cpuMs": 21.700000002980232,
+          "skill": "soot-1",
+          "age": 483.2999999999993,
+          "drawCalls": 38,
+          "textures": 48
+        },
+        {
+          "wallMs": 8712.80000000447,
+          "cpuMs": 21,
+          "skill": "soot-1",
+          "age": 566.6000000000004,
+          "drawCalls": 35,
+          "textures": 48
+        },
+        {
+          "wallMs": 8793.40000000596,
+          "cpuMs": 20.69999999552965,
+          "skill": "soot-1",
+          "age": 650,
+          "drawCalls": 33,
+          "textures": 48
+        },
+        {
+          "wallMs": 8819.80000000447,
+          "cpuMs": 21.19999999552965,
+          "skill": "soot-1",
+          "age": 666.6000000000004,
+          "drawCalls": 32,
+          "textures": 48
+        },
+        {
+          "wallMs": 8897.70000000298,
+          "cpuMs": 20.700000002980232,
+          "skill": "soot-1",
+          "age": 749.8999999999996,
+          "drawCalls": 26,
+          "textures": 48
+        },
+        {
+          "wallMs": 8924.60000000149,
+          "cpuMs": 21,
+          "skill": "soot-1",
+          "age": 766.6000000000004,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 8951.40000000596,
+          "cpuMs": 20.599999994039536,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 9073.90000000596,
+          "cpuMs": 20.69999999552965,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 9443.90000000596,
+          "cpuMs": 23.799999997019768,
+          "skill": "clover-1",
+          "age": 350,
+          "drawCalls": 26,
+          "textures": 48
+        },
+        {
+          "wallMs": 9627.80000000447,
+          "cpuMs": 21.399999998509884,
+          "skill": "clover-1",
+          "age": 533.3999999999996,
+          "drawCalls": 25,
+          "textures": 48
+        },
+        {
+          "wallMs": 9655.90000000596,
+          "cpuMs": 20.299999997019768,
+          "skill": "clover-1",
+          "age": 550,
+          "drawCalls": 25,
+          "textures": 48
+        },
+        {
+          "wallMs": 9913.10000000149,
+          "cpuMs": 20.200000002980232,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 48
+        },
+        {
+          "wallMs": 10149.20000000298,
+          "cpuMs": 126.29999999701977,
+          "skill": "panko-4",
+          "age": 16.69999999999891,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 10284.60000000149,
+          "cpuMs": 26,
+          "skill": "panko-4",
+          "age": 200,
+          "drawCalls": 30,
+          "textures": 48
+        },
+        {
+          "wallMs": 10390.80000000447,
+          "cpuMs": 52.399999998509884,
+          "skill": "panko-4",
+          "age": 300,
+          "drawCalls": 30,
+          "textures": 49
+        },
+        {
+          "wallMs": 10663,
+          "cpuMs": 21.30000000447035,
+          "skill": "panko-4",
+          "age": 583.2999999999993,
+          "drawCalls": 30,
+          "textures": 49
+        },
+        {
+          "wallMs": 10690.20000000298,
+          "cpuMs": 28.5,
+          "skill": "panko-4",
+          "age": 600,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 10965.20000000298,
+          "cpuMs": 20.700000002980232,
+          "skill": "panko-4",
+          "age": 883.3999999999996,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11205.40000000596,
+          "cpuMs": 23.799999997019768,
+          "skill": "panko-4",
+          "age": 1116.5999999999985,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11302.40000000596,
+          "cpuMs": 22.5,
+          "skill": "panko-4",
+          "age": 1216.699999999999,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11358.70000000298,
+          "cpuMs": 20.600000001490116,
+          "skill": "panko-4",
+          "age": 1283.2999999999993,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11386.30000000447,
+          "cpuMs": 20.19999999552965,
+          "skill": "panko-4",
+          "age": 1299.8999999999996,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11464.5,
+          "cpuMs": 21.600000001490116,
+          "skill": "panko-4",
+          "age": 1383.2999999999993,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11491.20000000298,
+          "cpuMs": 20.399999998509884,
+          "skill": "panko-4",
+          "age": 1400,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11664.80000000447,
+          "cpuMs": 21.799999997019768,
+          "skill": "panko-4",
+          "age": 1583.2999999999993,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11719.40000000596,
+          "cpuMs": 20.5,
+          "skill": "panko-4",
+          "age": 1633.199999999999,
+          "drawCalls": 25,
+          "textures": 50
+        },
+        {
+          "wallMs": 11893.70000000298,
+          "cpuMs": 21.200000002980232,
+          "skill": "panko-4",
+          "age": 1816.5999999999985,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 11946.90000000596,
+          "cpuMs": 20.599999994039536,
+          "skill": "panko-4",
+          "age": 1866.5999999999985,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 12526.10000000149,
+          "cpuMs": 23.600000001490116,
+          "skill": "yarnAttack",
+          "age": 33.30000000000109,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 12882,
+          "cpuMs": 42.20000000298023,
+          "skill": "yarnAttack",
+          "age": 433.3000000000011,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 12987.30000000447,
+          "cpuMs": 23.19999999552965,
+          "skill": "yarnAttack",
+          "age": 533.3000000000011,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13019.40000000596,
+          "cpuMs": 22.599999994039536,
+          "skill": "yarnAttack",
+          "age": 566.6000000000004,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13168.80000000447,
+          "cpuMs": 22.19999999552965,
+          "skill": "yarnAttack",
+          "age": 716.6000000000004,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13228.10000000149,
+          "cpuMs": 20.80000000447035,
+          "skill": "yarnAttack",
+          "age": 766.6000000000004,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13374.90000000596,
+          "cpuMs": 21,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13409.30000000447,
+          "cpuMs": 20.100000001490116,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13438.30000000447,
+          "cpuMs": 20.399999998509884,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13470.60000000149,
+          "cpuMs": 20.200000002980232,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13549.10000000149,
+          "cpuMs": 21.899999998509884,
+          "skill": "threadAttack",
+          "age": 33.399999999999636,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13581.10000000149,
+          "cpuMs": 21.5,
+          "skill": "threadAttack",
+          "age": 116.69999999999891,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 13671,
+          "cpuMs": 20.5,
+          "skill": "threadAttack",
+          "age": 200.10000000000036,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 13697.10000000149,
+          "cpuMs": 22.5,
+          "skill": "threadAttack",
+          "age": 233.3000000000011,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13726,
+          "cpuMs": 22.200000002980232,
+          "skill": "threadAttack",
+          "age": 266.6999999999989,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 13754.30000000447,
+          "cpuMs": 21,
+          "skill": "threadAttack",
+          "age": 283.39999999999964,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 13781.5,
+          "cpuMs": 21.400000005960464,
+          "skill": "threadAttack",
+          "age": 316.6999999999989,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 13811.5,
+          "cpuMs": 21.100000001490116,
+          "skill": "threadAttack",
+          "age": 350.0000000000018,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13896.60000000149,
+          "cpuMs": 22.200000002980232,
+          "skill": "threadAttack",
+          "age": 433.39999999999964,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13926.70000000298,
+          "cpuMs": 22.299999997019768,
+          "skill": "threadAttack",
+          "age": 466.6999999999989,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13955.5,
+          "cpuMs": 23.200000002980232,
+          "skill": "threadAttack",
+          "age": 483.3000000000011,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 13985,
+          "cpuMs": 21.700000002980232,
+          "skill": "threadAttack",
+          "age": 516.6999999999989,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14013.80000000447,
+          "cpuMs": 21.100000001490116,
+          "skill": "threadAttack",
+          "age": 550.0000000000018,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14041.5,
+          "cpuMs": 20.900000005960464,
+          "skill": "threadAttack",
+          "age": 566.6999999999989,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14069.40000000596,
+          "cpuMs": 21.69999999552965,
+          "skill": "threadAttack",
+          "age": 600.0000000000018,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14098.20000000298,
+          "cpuMs": 20.299999997019768,
+          "skill": "threadAttack",
+          "age": 633.3000000000011,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 14125.5,
+          "cpuMs": 21.5,
+          "skill": "threadAttack",
+          "age": 650.0000000000018,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 14250.80000000447,
+          "cpuMs": 21.5,
+          "skill": "threadAttack",
+          "age": 783.3000000000011,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 14640.5,
+          "cpuMs": 20.80000000447035,
+          "skill": "threadAttack",
+          "age": 183.39999999999782,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 14666.90000000596,
+          "cpuMs": 20.599999994039536,
+          "skill": "threadAttack",
+          "age": 216.70000000000073,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14693.90000000596,
+          "cpuMs": 21.19999999552965,
+          "skill": "threadAttack",
+          "age": 250,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 14720.90000000596,
+          "cpuMs": 20.5,
+          "skill": "threadAttack",
+          "age": 266.7000000000007,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 14772.20000000298,
+          "cpuMs": 20.299999997019768,
+          "skill": "threadAttack",
+          "age": 316.59999999999854,
+          "drawCalls": 23,
+          "textures": 50
+        },
+        {
+          "wallMs": 14798.90000000596,
+          "cpuMs": 20.599999994039536,
+          "skill": "threadAttack",
+          "age": 350,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14877.10000000149,
+          "cpuMs": 21,
+          "skill": "threadAttack",
+          "age": 433.2999999999993,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 14977.10000000149,
+          "cpuMs": 20.5,
+          "skill": "threadAttack",
+          "age": 533.2999999999993,
+          "drawCalls": 24,
+          "textures": 50
+        },
+        {
+          "wallMs": 15078.5,
+          "cpuMs": 20.30000000447035,
+          "skill": "threadAttack",
+          "age": 633.2999999999993,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15105.70000000298,
+          "cpuMs": 20.100000001490116,
+          "skill": "threadAttack",
+          "age": 650,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15130.80000000447,
+          "cpuMs": 20.299999997019768,
+          "skill": "threadAttack",
+          "age": 683.2999999999993,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15207.10000000149,
+          "cpuMs": 20.30000000447035,
+          "skill": "threadAttack",
+          "age": 750,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15233.40000000596,
+          "cpuMs": 22.899999998509884,
+          "skill": "threadAttack",
+          "age": 783.2999999999993,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15261.90000000596,
+          "cpuMs": 20.19999999552965,
+          "skill": "round-status",
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 50
+        },
+        {
+          "wallMs": 15814.90000000596,
+          "cpuMs": 114.19999999552965,
+          "skill": "mochi-4",
+          "age": 33.29999999999927,
+          "drawCalls": 30,
+          "textures": 50
+        },
+        {
+          "wallMs": 16010,
+          "cpuMs": 20.700000002980232,
+          "skill": "mochi-4",
+          "age": 283.2999999999993,
+          "drawCalls": 30,
+          "textures": 50
+        },
+        {
+          "wallMs": 16037,
+          "cpuMs": 47,
+          "skill": "mochi-4",
+          "age": 300,
+          "drawCalls": 30,
+          "textures": 51
+        },
+        {
+          "wallMs": 16115.5,
+          "cpuMs": 20.600000001490116,
+          "skill": "mochi-4",
+          "age": 383.40000000000146,
+          "drawCalls": 30,
+          "textures": 51
+        },
+        {
+          "wallMs": 16166.90000000596,
+          "cpuMs": 20.599999994039536,
+          "skill": "mochi-4",
+          "age": 433.2999999999993,
+          "drawCalls": 30,
+          "textures": 51
+        },
+        {
+          "wallMs": 16192.70000000298,
+          "cpuMs": 20.700000002980232,
+          "skill": "mochi-4",
+          "age": 466.59999999999854,
+          "drawCalls": 30,
+          "textures": 51
+        },
+        {
+          "wallMs": 16365.20000000298,
+          "cpuMs": 20.899999998509884,
+          "skill": "mochi-4",
+          "age": 633.2999999999993,
+          "drawCalls": 22,
+          "textures": 51
+        },
+        {
+          "wallMs": 16419,
+          "cpuMs": 20.400000005960464,
+          "skill": "mochi-4",
+          "age": 683.2999999999993,
+          "drawCalls": 22,
+          "textures": 51
+        },
+        {
+          "wallMs": 16521.30000000447,
+          "cpuMs": 21.899999998509884,
+          "skill": "mochi-4",
+          "age": 783.2999999999993,
+          "drawCalls": 22,
+          "textures": 51
+        },
+        {
+          "wallMs": 16548.70000000298,
+          "cpuMs": 30.899999998509884,
+          "skill": "mochi-4",
+          "age": 816.5999999999985,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16609.80000000447,
+          "cpuMs": 21,
+          "skill": "mochi-4",
+          "age": 883.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16684.90000000596,
+          "cpuMs": 20.799999997019768,
+          "skill": "mochi-4",
+          "age": 950,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16712,
+          "cpuMs": 20.700000002980232,
+          "skill": "mochi-4",
+          "age": 983.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16764.60000000149,
+          "cpuMs": 20.200000002980232,
+          "skill": "mochi-4",
+          "age": 1033.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16816.20000000298,
+          "cpuMs": 21.299999997019768,
+          "skill": "mochi-4",
+          "age": 1083.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16842.80000000447,
+          "cpuMs": 21.100000001490116,
+          "skill": "mochi-4",
+          "age": 1116.7000000000007,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16939.20000000298,
+          "cpuMs": 28.299999997019768,
+          "skill": "mochi-4",
+          "age": 1199.9000000000015,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 16976.40000000596,
+          "cpuMs": 22.599999994039536,
+          "skill": "mochi-4",
+          "age": 1250,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17006,
+          "cpuMs": 21.5,
+          "skill": "mochi-4",
+          "age": 1266.5999999999985,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17033,
+          "cpuMs": 22.900000005960464,
+          "skill": "mochi-4",
+          "age": 1299.9000000000015,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17063.30000000447,
+          "cpuMs": 23,
+          "skill": "mochi-4",
+          "age": 1333.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17095.10000000149,
+          "cpuMs": 23.30000000447035,
+          "skill": "mochi-4",
+          "age": 1366.7000000000007,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17126.10000000149,
+          "cpuMs": 21.30000000447035,
+          "skill": "mochi-4",
+          "age": 1400,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17155,
+          "cpuMs": 22.30000000447035,
+          "skill": "mochi-4",
+          "age": 1416.5999999999985,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17185.10000000149,
+          "cpuMs": 20.5,
+          "skill": "mochi-4",
+          "age": 1449.9000000000015,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17240.30000000447,
+          "cpuMs": 21.5,
+          "skill": "mochi-4",
+          "age": 1500,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17268.30000000447,
+          "cpuMs": 21.19999999552965,
+          "skill": "mochi-4",
+          "age": 1533.2000000000007,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17321.30000000447,
+          "cpuMs": 23.19999999552965,
+          "skill": "mochi-4",
+          "age": 1583.2000000000007,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17352,
+          "cpuMs": 21.100000001490116,
+          "skill": "mochi-4",
+          "age": 1616.5999999999985,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17381.30000000447,
+          "cpuMs": 21.69999999552965,
+          "skill": "mochi-4",
+          "age": 1650,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17409.70000000298,
+          "cpuMs": 24.299999997019768,
+          "skill": "mochi-4",
+          "age": 1683.2999999999993,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17443.30000000447,
+          "cpuMs": 20.399999998509884,
+          "skill": "mochi-4",
+          "age": 1699.9000000000015,
+          "drawCalls": 23,
+          "textures": 52
+        },
+        {
+          "wallMs": 17575.20000000298,
+          "cpuMs": 24.100000001490116,
+          "skill": "mochi-4",
+          "age": 1850,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17631.20000000298,
+          "cpuMs": 20.399999998509884,
+          "skill": "mochi-4",
+          "age": 1899.9000000000015,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17657.30000000447,
+          "cpuMs": 22,
+          "skill": "mochi-4",
+          "age": 1916.5999999999985,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17685.90000000596,
+          "cpuMs": 20.299999997019768,
+          "skill": "mochi-4",
+          "age": 1949.9000000000015,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17736.60000000149,
+          "cpuMs": 20.600000001490116,
+          "skill": "mochi-4",
+          "age": 1999.9000000000015,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17912.10000000149,
+          "cpuMs": 20.30000000447035,
+          "skill": "mochi-4",
+          "age": 2183.2999999999993,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 17964.60000000149,
+          "cpuMs": 22.80000000447035,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 52
+        },
+        {
+          "wallMs": 18198.70000000298,
+          "cpuMs": 130.5,
+          "skill": "soot-4",
+          "age": 16.700000000000728,
+          "drawCalls": 31,
+          "textures": 53
+        },
+        {
+          "wallMs": 18336.60000000149,
+          "cpuMs": 25.80000000447035,
+          "skill": "soot-4",
+          "age": 216.70000000000073,
+          "drawCalls": 33,
+          "textures": 53
+        },
+        {
+          "wallMs": 18368.20000000298,
+          "cpuMs": 24.100000001490116,
+          "skill": "soot-4",
+          "age": 250,
+          "drawCalls": 33,
+          "textures": 53
+        },
+        {
+          "wallMs": 18398.10000000149,
+          "cpuMs": 24.100000001490116,
+          "skill": "soot-4",
+          "age": 283.2999999999993,
+          "drawCalls": 33,
+          "textures": 53
+        },
+        {
+          "wallMs": 18427.30000000447,
+          "cpuMs": 48.79999999701977,
+          "skill": "soot-4",
+          "age": 316.7000000000007,
+          "drawCalls": 33,
+          "textures": 54
+        },
+        {
+          "wallMs": 18482.60000000149,
+          "cpuMs": 23.30000000447035,
+          "skill": "soot-4",
+          "age": 366.7000000000007,
+          "drawCalls": 33,
+          "textures": 54
+        },
+        {
+          "wallMs": 18511.90000000596,
+          "cpuMs": 27.299999997019768,
+          "skill": "soot-4",
+          "age": 400,
+          "drawCalls": 33,
+          "textures": 54
+        },
+        {
+          "wallMs": 18546.10000000149,
+          "cpuMs": 24.80000000447035,
+          "skill": "soot-4",
+          "age": 433.3999999999978,
+          "drawCalls": 33,
+          "textures": 54
+        },
+        {
+          "wallMs": 18575,
+          "cpuMs": 36.900000005960464,
+          "skill": "soot-4",
+          "age": 466.7000000000007,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18620.40000000596,
+          "cpuMs": 24.299999997019768,
+          "skill": "soot-4",
+          "age": 500,
+          "drawCalls": 35,
+          "textures": 55
+        },
+        {
+          "wallMs": 18648.80000000447,
+          "cpuMs": 24.5,
+          "skill": "soot-4",
+          "age": 533.2999999999993,
+          "drawCalls": 36,
+          "textures": 55
+        },
+        {
+          "wallMs": 18679.5,
+          "cpuMs": 25.600000001490116,
+          "skill": "soot-4",
+          "age": 566.7000000000007,
+          "drawCalls": 36,
+          "textures": 55
+        },
+        {
+          "wallMs": 18710.20000000298,
+          "cpuMs": 24.399999998509884,
+          "skill": "soot-4",
+          "age": 600,
+          "drawCalls": 28,
+          "textures": 55
+        },
+        {
+          "wallMs": 18742.90000000596,
+          "cpuMs": 41.69999999552965,
+          "skill": "soot-4",
+          "age": 633.2999999999993,
+          "drawCalls": 30,
+          "textures": 55
+        },
+        {
+          "wallMs": 18797,
+          "cpuMs": 25.600000001490116,
+          "skill": "soot-4",
+          "age": 683.3999999999978,
+          "drawCalls": 33,
+          "textures": 55
+        },
+        {
+          "wallMs": 18827.90000000596,
+          "cpuMs": 26.799999997019768,
+          "skill": "soot-4",
+          "age": 716.7000000000007,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18860.30000000447,
+          "cpuMs": 25.100000001490116,
+          "skill": "soot-4",
+          "age": 750,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18892.5,
+          "cpuMs": 29,
+          "skill": "soot-4",
+          "age": 766.5999999999985,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18927.30000000447,
+          "cpuMs": 24.69999999552965,
+          "skill": "soot-4",
+          "age": 816.7000000000007,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18962.90000000596,
+          "cpuMs": 24.19999999552965,
+          "skill": "soot-4",
+          "age": 850,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 18991.90000000596,
+          "cpuMs": 24.5,
+          "skill": "soot-4",
+          "age": 883.3999999999978,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19048.60000000149,
+          "cpuMs": 26.200000002980232,
+          "skill": "soot-4",
+          "age": 933.2999999999993,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19090.80000000447,
+          "cpuMs": 25.799999997019768,
+          "skill": "soot-4",
+          "age": 966.7000000000007,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19122.30000000447,
+          "cpuMs": 25.799999997019768,
+          "skill": "soot-4",
+          "age": 999.8999999999978,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19155.80000000447,
+          "cpuMs": 25.19999999552965,
+          "skill": "soot-4",
+          "age": 1033.2999999999993,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19187.40000000596,
+          "cpuMs": 26.099999994039536,
+          "skill": "soot-4",
+          "age": 1066.7000000000007,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19219.60000000149,
+          "cpuMs": 28.399999998509884,
+          "skill": "soot-4",
+          "age": 1100,
+          "drawCalls": 43,
+          "textures": 55
+        },
+        {
+          "wallMs": 19327.20000000298,
+          "cpuMs": 36.20000000298023,
+          "skill": "soot-4",
+          "age": 1200,
+          "drawCalls": 67,
+          "textures": 55
+        },
+        {
+          "wallMs": 19377.60000000149,
+          "cpuMs": 33.70000000298023,
+          "skill": "soot-4",
+          "age": 1266.7000000000007,
+          "drawCalls": 70,
+          "textures": 55
+        },
+        {
+          "wallMs": 19423.40000000596,
+          "cpuMs": 26.599999994039536,
+          "skill": "soot-4",
+          "age": 1300,
+          "drawCalls": 67,
+          "textures": 55
+        },
+        {
+          "wallMs": 19458,
+          "cpuMs": 27,
+          "skill": "soot-4",
+          "age": 1333.2999999999993,
+          "drawCalls": 67,
+          "textures": 55
+        },
+        {
+          "wallMs": 19496.60000000149,
+          "cpuMs": 25.700000002980232,
+          "skill": "soot-4",
+          "age": 1383.2999999999993,
+          "drawCalls": 67,
+          "textures": 55
+        },
+        {
+          "wallMs": 19529.80000000447,
+          "cpuMs": 27.399999998509884,
+          "skill": "soot-4",
+          "age": 1416.5999999999985,
+          "drawCalls": 58,
+          "textures": 55
+        },
+        {
+          "wallMs": 19564.80000000447,
+          "cpuMs": 28.5,
+          "skill": "soot-4",
+          "age": 1450,
+          "drawCalls": 58,
+          "textures": 55
+        },
+        {
+          "wallMs": 19600,
+          "cpuMs": 26.80000000447035,
+          "skill": "soot-4",
+          "age": 1483.2999999999993,
+          "drawCalls": 58,
+          "textures": 55
+        },
+        {
+          "wallMs": 19633.10000000149,
+          "cpuMs": 26.5,
+          "skill": "soot-4",
+          "age": 1516.7000000000007,
+          "drawCalls": 58,
+          "textures": 55
+        },
+        {
+          "wallMs": 19666.60000000149,
+          "cpuMs": 24.30000000447035,
+          "skill": "soot-4",
+          "age": 1550,
+          "drawCalls": 55,
+          "textures": 55
+        },
+        {
+          "wallMs": 19696.30000000447,
+          "cpuMs": 26.899999998509884,
+          "skill": "soot-4",
+          "age": 1583.2999999999993,
+          "drawCalls": 52,
+          "textures": 55
+        },
+        {
+          "wallMs": 19728.70000000298,
+          "cpuMs": 25.700000002980232,
+          "skill": "soot-4",
+          "age": 1616.5999999999985,
+          "drawCalls": 46,
+          "textures": 55
+        },
+        {
+          "wallMs": 19760.70000000298,
+          "cpuMs": 28.700000002980232,
+          "skill": "soot-4",
+          "age": 1650,
+          "drawCalls": 46,
+          "textures": 55
+        },
+        {
+          "wallMs": 19797.20000000298,
+          "cpuMs": 27.899999998509884,
+          "skill": "soot-4",
+          "age": 1683.2999999999993,
+          "drawCalls": 43,
+          "textures": 55
+        },
+        {
+          "wallMs": 19833.40000000596,
+          "cpuMs": 26.599999994039536,
+          "skill": "soot-4",
+          "age": 1716.5999999999985,
+          "drawCalls": 40,
+          "textures": 55
+        },
+        {
+          "wallMs": 19867.90000000596,
+          "cpuMs": 25,
+          "skill": "soot-4",
+          "age": 1750,
+          "drawCalls": 37,
+          "textures": 55
+        },
+        {
+          "wallMs": 19899.40000000596,
+          "cpuMs": 24.799999997019768,
+          "skill": "soot-4",
+          "age": 1783.2999999999993,
+          "drawCalls": 37,
+          "textures": 55
+        },
+        {
+          "wallMs": 19932.20000000298,
+          "cpuMs": 24.399999998509884,
+          "skill": "soot-4",
+          "age": 1816.5999999999985,
+          "drawCalls": 37,
+          "textures": 55
+        },
+        {
+          "wallMs": 19963.20000000298,
+          "cpuMs": 29.399999998509884,
+          "skill": "soot-4",
+          "age": 1849.8999999999978,
+          "drawCalls": 34,
+          "textures": 55
+        },
+        {
+          "wallMs": 19999.90000000596,
+          "cpuMs": 23.799999997019768,
+          "skill": "soot-4",
+          "age": 1883.2999999999993,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20030.80000000447,
+          "cpuMs": 23.899999998509884,
+          "skill": "soot-4",
+          "age": 1916.7000000000007,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20060.5,
+          "cpuMs": 25.100000001490116,
+          "skill": "soot-4",
+          "age": 1950,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20094,
+          "cpuMs": 24.100000001490116,
+          "skill": "soot-4",
+          "age": 1983.2999999999993,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20124.60000000149,
+          "cpuMs": 26.600000001490116,
+          "skill": "soot-4",
+          "age": 2016.5999999999985,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20158.10000000149,
+          "cpuMs": 24.200000002980232,
+          "skill": "soot-4",
+          "age": 2050,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20188.30000000447,
+          "cpuMs": 26.19999999552965,
+          "skill": "soot-4",
+          "age": 2066.5999999999985,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20223,
+          "cpuMs": 25,
+          "skill": "soot-4",
+          "age": 2100,
+          "drawCalls": 31,
+          "textures": 55
+        },
+        {
+          "wallMs": 20254.5,
+          "cpuMs": 24.200000002980232,
+          "skill": "soot-4",
+          "age": 2133.2999999999993,
+          "drawCalls": 22,
+          "textures": 55
+        },
+        {
+          "wallMs": 20285.5,
+          "cpuMs": 23.600000001490116,
+          "skill": "soot-4",
+          "age": 2166.5999999999985,
+          "drawCalls": 22,
+          "textures": 55
+        },
+        {
+          "wallMs": 20315.80000000447,
+          "cpuMs": 24.799999997019768,
+          "skill": "soot-4",
+          "age": 2199.899999999998,
+          "drawCalls": 22,
+          "textures": 55
+        },
+        {
+          "wallMs": 20601.10000000149,
+          "cpuMs": 109,
+          "skill": "clover-4",
+          "age": 33.400000000001455,
+          "drawCalls": 30,
+          "textures": 55
+        },
+        {
+          "wallMs": 20717.20000000298,
+          "cpuMs": 24.899999998509884,
+          "skill": "clover-4",
+          "age": 200,
+          "drawCalls": 30,
+          "textures": 55
+        },
+        {
+          "wallMs": 20816.40000000596,
+          "cpuMs": 45.5,
+          "skill": "clover-4",
+          "age": 300,
+          "drawCalls": 30,
+          "textures": 56
+        },
+        {
+          "wallMs": 20916.30000000447,
+          "cpuMs": 20.799999997019768,
+          "skill": "clover-4",
+          "age": 400,
+          "drawCalls": 30,
+          "textures": 56
+        },
+        {
+          "wallMs": 20989.80000000447,
+          "cpuMs": 20.19999999552965,
+          "skill": "clover-4",
+          "age": 466.7000000000007,
+          "drawCalls": 30,
+          "textures": 56
+        },
+        {
+          "wallMs": 21109.10000000149,
+          "cpuMs": 20.100000001490116,
+          "skill": "clover-4",
+          "age": 600,
+          "drawCalls": 22,
+          "textures": 56
+        },
+        {
+          "wallMs": 21323.40000000596,
+          "cpuMs": 38.099999994039536,
+          "skill": "clover-4",
+          "age": 800.1000000000022,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21366,
+          "cpuMs": 20.600000001490116,
+          "skill": "clover-4",
+          "age": 850,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21392.20000000298,
+          "cpuMs": 22.5,
+          "skill": "clover-4",
+          "age": 883.4000000000015,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21456.20000000298,
+          "cpuMs": 20.200000002980232,
+          "skill": "clover-4",
+          "age": 933.3000000000029,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21483.20000000298,
+          "cpuMs": 22.299999997019768,
+          "skill": "clover-4",
+          "age": 966.7000000000007,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21537.90000000596,
+          "cpuMs": 20.19999999552965,
+          "skill": "clover-4",
+          "age": 1016.7000000000007,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21587,
+          "cpuMs": 20.30000000447035,
+          "skill": "clover-4",
+          "age": 1066.7000000000007,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 21612.80000000447,
+          "cpuMs": 20.19999999552965,
+          "skill": "clover-4",
+          "age": 1100,
+          "drawCalls": 36,
+          "textures": 57
+        },
+        {
+          "wallMs": 21733,
+          "cpuMs": 21.400000005960464,
+          "skill": "clover-4",
+          "age": 1216.7000000000007,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21760,
+          "cpuMs": 21,
+          "skill": "clover-4",
+          "age": 1250,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21787.40000000596,
+          "cpuMs": 21.5,
+          "skill": "clover-4",
+          "age": 1266.6000000000022,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21839.80000000447,
+          "cpuMs": 20.5,
+          "skill": "clover-4",
+          "age": 1316.7000000000007,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21866.80000000447,
+          "cpuMs": 22.19999999552965,
+          "skill": "clover-4",
+          "age": 1350,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21894.30000000447,
+          "cpuMs": 20.100000001490116,
+          "skill": "clover-4",
+          "age": 1383.300000000003,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21945,
+          "cpuMs": 20.80000000447035,
+          "skill": "clover-4",
+          "age": 1433.300000000003,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 21971.10000000149,
+          "cpuMs": 20.5,
+          "skill": "clover-4",
+          "age": 1450,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22047.30000000447,
+          "cpuMs": 20.299999997019768,
+          "skill": "clover-4",
+          "age": 1533.300000000003,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22124.70000000298,
+          "cpuMs": 20.100000001490116,
+          "skill": "clover-4",
+          "age": 1600,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22148.70000000298,
+          "cpuMs": 22.899999998509884,
+          "skill": "clover-4",
+          "age": 1633.300000000003,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22177.80000000447,
+          "cpuMs": 23.5,
+          "skill": "clover-4",
+          "age": 1666.6000000000022,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22208,
+          "cpuMs": 22.30000000447035,
+          "skill": "clover-4",
+          "age": 1683.300000000003,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22236.70000000298,
+          "cpuMs": 22.200000002980232,
+          "skill": "clover-4",
+          "age": 1716.7000000000007,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 22264.60000000149,
+          "cpuMs": 22,
+          "skill": "clover-4",
+          "age": 1750,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 22293.80000000447,
+          "cpuMs": 20.69999999552965,
+          "skill": "clover-4",
+          "age": 1783.300000000003,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 22320.5,
+          "cpuMs": 20.5,
+          "skill": "clover-4",
+          "age": 1800,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 22396.30000000447,
+          "cpuMs": 20.799999997019768,
+          "skill": "clover-4",
+          "age": 1883.300000000003,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 22542.40000000596,
+          "cpuMs": 20.799999997019768,
+          "skill": "clover-4",
+          "age": 2033.300000000003,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 22684.5,
+          "cpuMs": 20.600000001490116,
+          "skill": "clover-4",
+          "age": 2166.600000000002,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 23110.70000000298,
+          "cpuMs": 21.399999998509884,
+          "skill": "panko-1",
+          "age": 249.90000000000146,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 23159.60000000149,
+          "cpuMs": 20.399999998509884,
+          "skill": "panko-1",
+          "age": 299.90000000000146,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 23208.30000000447,
+          "cpuMs": 21.5,
+          "skill": "panko-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 23305.70000000298,
+          "cpuMs": 26.600000001490116,
+          "skill": "panko-1",
+          "age": 433.3000000000029,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23345.30000000447,
+          "cpuMs": 21.69999999552965,
+          "skill": "panko-1",
+          "age": 483.3000000000029,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23375.80000000447,
+          "cpuMs": 21.100000001490116,
+          "skill": "panko-1",
+          "age": 516.6000000000022,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23404.10000000149,
+          "cpuMs": 20.30000000447035,
+          "skill": "panko-1",
+          "age": 533.2000000000007,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23431.90000000596,
+          "cpuMs": 20.299999997019768,
+          "skill": "panko-1",
+          "age": 566.6000000000022,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23459.20000000298,
+          "cpuMs": 21.600000001490116,
+          "skill": "panko-1",
+          "age": 599.9000000000015,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23487.20000000298,
+          "cpuMs": 20.100000001490116,
+          "skill": "panko-1",
+          "age": 616.6000000000022,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 23568.70000000298,
+          "cpuMs": 22.899999998509884,
+          "skill": "panko-1",
+          "age": 699.9000000000015,
+          "drawCalls": 28,
+          "textures": 57
+        },
+        {
+          "wallMs": 23625.30000000447,
+          "cpuMs": 21.799999997019768,
+          "skill": "panko-1",
+          "age": 766.6000000000022,
+          "drawCalls": 27,
+          "textures": 57
+        },
+        {
+          "wallMs": 23652.5,
+          "cpuMs": 20.5,
+          "skill": "panko-1",
+          "age": 783.3000000000029,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 23679.60000000149,
+          "cpuMs": 20.30000000447035,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 23836.80000000447,
+          "cpuMs": 21.399999998509884,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 24112.90000000596,
+          "cpuMs": 20.5,
+          "skill": "yarnAttack",
+          "age": 283.2999999999993,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 24493.20000000298,
+          "cpuMs": 22.399999998509884,
+          "skill": "yarnAttack",
+          "age": 666.5999999999985,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 24642.30000000447,
+          "cpuMs": 21.399999998509884,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 24968,
+          "cpuMs": 21,
+          "skill": "threadAttack",
+          "age": 166.60000000000218,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 24995.20000000298,
+          "cpuMs": 22.100000001490116,
+          "skill": "threadAttack",
+          "age": 200,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 25124.70000000298,
+          "cpuMs": 20.600000001490116,
+          "skill": "threadAttack",
+          "age": 333.40000000000146,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 25153.30000000447,
+          "cpuMs": 20.69999999552965,
+          "skill": "threadAttack",
+          "age": 350,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25262.10000000149,
+          "cpuMs": 22.600000001490116,
+          "skill": "threadAttack",
+          "age": 466.6000000000022,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25291.80000000447,
+          "cpuMs": 21.5,
+          "skill": "threadAttack",
+          "age": 500,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25318,
+          "cpuMs": 20.5,
+          "skill": "threadAttack",
+          "age": 516.6000000000022,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25345.20000000298,
+          "cpuMs": 20.5,
+          "skill": "threadAttack",
+          "age": 550,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25370.70000000298,
+          "cpuMs": 21.899999998509884,
+          "skill": "threadAttack",
+          "age": 566.7000000000007,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25398,
+          "cpuMs": 21.400000005960464,
+          "skill": "threadAttack",
+          "age": 599.9000000000015,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 25449.80000000447,
+          "cpuMs": 20.100000001490116,
+          "skill": "threadAttack",
+          "age": 650,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 25526.80000000447,
+          "cpuMs": 22.899999998509884,
+          "skill": "threadAttack",
+          "age": 733.2999999999993,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 25582.10000000149,
+          "cpuMs": 37.899999998509884,
+          "skill": "threadAttack",
+          "age": 783.2999999999993,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 25627.80000000447,
+          "cpuMs": 21.19999999552965,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 25712.5,
+          "cpuMs": 20.200000002980232,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 25875.60000000149,
+          "cpuMs": 21.399999998509884,
+          "skill": "threadAttack",
+          "age": 33.29999999999927,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 26139.70000000298,
+          "cpuMs": 21.700000002980232,
+          "skill": "threadAttack",
+          "age": 333.2999999999993,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 26276.60000000149,
+          "cpuMs": 20.200000002980232,
+          "skill": "threadAttack",
+          "age": 483.2999999999993,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 26327.30000000447,
+          "cpuMs": 20.69999999552965,
+          "skill": "threadAttack",
+          "age": 533.2999999999993,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 26379.20000000298,
+          "cpuMs": 20.700000002980232,
+          "skill": "threadAttack",
+          "age": 583.2999999999993,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 26406.40000000596,
+          "cpuMs": 20.299999997019768,
+          "skill": "threadAttack",
+          "age": 600,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 26456.70000000298,
+          "cpuMs": 22.100000001490116,
+          "skill": "threadAttack",
+          "age": 649.9000000000015,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 26561,
+          "cpuMs": 20.30000000447035,
+          "skill": "threadAttack",
+          "age": 766.6000000000022,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 27129.5,
+          "cpuMs": 21.30000000447035,
+          "skill": "mochi-1",
+          "age": 16.69999999999709,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 27182.30000000447,
+          "cpuMs": 20.19999999552965,
+          "skill": "mochi-1",
+          "age": 116.59999999999854,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 27257.60000000149,
+          "cpuMs": 20.100000001490116,
+          "skill": "mochi-1",
+          "age": 199.89999999999782,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 27283.60000000149,
+          "cpuMs": 21.899999998509884,
+          "skill": "mochi-1",
+          "age": 216.6999999999971,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 27311.10000000149,
+          "cpuMs": 23,
+          "skill": "mochi-1",
+          "age": 250,
+          "drawCalls": 24,
+          "textures": 57
+        },
+        {
+          "wallMs": 27414.30000000447,
+          "cpuMs": 20.600000001490116,
+          "skill": "mochi-1",
+          "age": 350,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 27604.30000000447,
+          "cpuMs": 20.69999999552965,
+          "skill": "mochi-1",
+          "age": 533.2999999999993,
+          "drawCalls": 30,
+          "textures": 57
+        },
+        {
+          "wallMs": 27657.20000000298,
+          "cpuMs": 20.200000002980232,
+          "skill": "mochi-1",
+          "age": 583.1999999999971,
+          "drawCalls": 30,
+          "textures": 57
+        },
+        {
+          "wallMs": 27709.20000000298,
+          "cpuMs": 20.899999998509884,
+          "skill": "mochi-1",
+          "age": 650,
+          "drawCalls": 29,
+          "textures": 57
+        },
+        {
+          "wallMs": 27867.80000000447,
+          "cpuMs": 20.69999999552965,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 28093.5,
+          "cpuMs": 21.200000002980232,
+          "skill": "soot-1",
+          "age": 33.400000000001455,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 28347.40000000596,
+          "cpuMs": 20.099999994039536,
+          "skill": "soot-1",
+          "age": 333.40000000000146,
+          "drawCalls": 26,
+          "textures": 57
+        },
+        {
+          "wallMs": 28464.60000000149,
+          "cpuMs": 21,
+          "skill": "soot-1",
+          "age": 450,
+          "drawCalls": 38,
+          "textures": 57
+        },
+        {
+          "wallMs": 28493,
+          "cpuMs": 20.30000000447035,
+          "skill": "soot-1",
+          "age": 483.40000000000146,
+          "drawCalls": 38,
+          "textures": 57
+        },
+        {
+          "wallMs": 28519.80000000447,
+          "cpuMs": 22.19999999552965,
+          "skill": "soot-1",
+          "age": 500.1000000000022,
+          "drawCalls": 38,
+          "textures": 57
+        },
+        {
+          "wallMs": 28574.70000000298,
+          "cpuMs": 23.200000002980232,
+          "skill": "soot-1",
+          "age": 566.7000000000007,
+          "drawCalls": 35,
+          "textures": 57
+        },
+        {
+          "wallMs": 28604.60000000149,
+          "cpuMs": 21.30000000447035,
+          "skill": "soot-1",
+          "age": 583.4000000000015,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 28632.5,
+          "cpuMs": 22.5,
+          "skill": "soot-1",
+          "age": 616.6000000000022,
+          "drawCalls": 34,
+          "textures": 57
+        },
+        {
+          "wallMs": 28661.20000000298,
+          "cpuMs": 21.299999997019768,
+          "skill": "soot-1",
+          "age": 650,
+          "drawCalls": 33,
+          "textures": 57
+        },
+        {
+          "wallMs": 28689.90000000596,
+          "cpuMs": 22.299999997019768,
+          "skill": "soot-1",
+          "age": 666.7000000000007,
+          "drawCalls": 32,
+          "textures": 57
+        },
+        {
+          "wallMs": 28801.20000000298,
+          "cpuMs": 20.700000002980232,
+          "skill": "soot-1",
+          "age": 783.2999999999993,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 28828.10000000149,
+          "cpuMs": 20.200000002980232,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 29251.20000000298,
+          "cpuMs": 22,
+          "skill": "clover-1",
+          "age": 266.6999999999971,
+          "drawCalls": 23,
+          "textures": 57
+        },
+        {
+          "wallMs": 29529.5,
+          "cpuMs": 20.100000001490116,
+          "skill": "clover-1",
+          "age": 550.0999999999985,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 29556.80000000447,
+          "cpuMs": 21.19999999552965,
+          "skill": "clover-1",
+          "age": 566.7999999999993,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 29733.40000000596,
+          "cpuMs": 20.099999994039536,
+          "skill": "clover-1",
+          "age": 750,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 29887.90000000596,
+          "cpuMs": 20.5,
+          "age": 0,
+          "drawCalls": 22,
+          "textures": 57
+        },
+        {
+          "wallMs": 30017.5,
+          "cpuMs": 105.70000000298023,
+          "skill": "panko-4",
+          "age": 33.30000000000291,
+          "drawCalls": 30,
+          "textures": 57
+        },
+        {
+          "wallMs": 30202.80000000447,
+          "cpuMs": 20.399999998509884,
+          "skill": "panko-4",
+          "age": 266.59999999999854,
+          "drawCalls": 30,
+          "textures": 57
+        },
+        {
+          "wallMs": 30229,
+          "cpuMs": 20.600000001490116,
+          "skill": "panko-4",
+          "age": 299.90000000000146,
+          "drawCalls": 30,
+          "textures": 57
+        },
+        {
+          "wallMs": 30575.80000000447,
+          "cpuMs": 39.29999999701977,
+          "skill": "panko-4",
+          "age": 649.9000000000015,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 30621.30000000447,
+          "cpuMs": 20.100000001490116,
+          "skill": "panko-4",
+          "age": 683.3000000000029,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 30671.5,
+          "cpuMs": 21.30000000447035,
+          "skill": "panko-4",
+          "age": 733.1999999999971,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 30813,
+          "cpuMs": 20.200000002980232,
+          "skill": "panko-4",
+          "age": 866.5,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31135.60000000149,
+          "cpuMs": 25.399999998509884,
+          "skill": "panko-4",
+          "age": 1199.9000000000015,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31244.10000000149,
+          "cpuMs": 20.100000001490116,
+          "skill": "panko-4",
+          "age": 1316.5,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31294.80000000447,
+          "cpuMs": 20.5,
+          "skill": "panko-4",
+          "age": 1366.5999999999985,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31520.10000000149,
+          "cpuMs": 20.600000001490116,
+          "skill": "panko-4",
+          "age": 1583.199999999997,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31571.5,
+          "cpuMs": 20.100000001490116,
+          "skill": "panko-4",
+          "age": 1633.199999999997,
+          "drawCalls": 25,
+          "textures": 57
+        },
+        {
+          "wallMs": 31650.90000000596,
+          "cpuMs": 20.299999997019768,
+          "skill": "panko-4",
+          "age": 1716.5,
+          "drawCalls": 25,
+          "textures": 57
+        }
+      ],
+      "initial": {
+        "round": 1,
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736,
+            "charge": 35
+          },
+          {
+            "id": "soot",
+            "hp": 568,
+            "charge": 35
+          },
+          {
+            "id": "clover",
+            "hp": 477,
+            "charge": 35
+          },
+          {
+            "id": "panko",
+            "hp": 753,
+            "charge": 35
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "hp": 1398,
+            "charge": 15
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "hp": 987,
+            "charge": 15
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "hp": 987,
+            "charge": 15
+          }
+        ],
+        "log": 0
+      },
+      "final": {
+        "round": 4,
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736,
+            "charge": 100
+          },
+          {
+            "id": "soot",
+            "hp": 568,
+            "charge": 100
+          },
+          {
+            "id": "clover",
+            "hp": 477,
+            "charge": 96
+          },
+          {
+            "id": "panko",
+            "hp": 753,
+            "charge": 48
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "hp": 797,
+            "charge": 100
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "hp": 689,
+            "charge": 100
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "hp": 845,
+            "charge": 100
+          }
+        ],
+        "log": 161,
+        "result": null,
+        "screen": "map"
+      },
+      "plans": [
+        {
+          "wallMs": 211.40000000596046,
+          "kind": "action",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 1158.2000000029802,
+          "kind": "action",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 2137.9000000059605,
+          "kind": "action",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 3078.8000000044703,
+          "kind": "action",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 4040.8000000044703,
+          "kind": "action",
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 4992.70000000298,
+          "kind": "action",
+          "actorId": "foe-1-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 5981.4000000059605,
+          "kind": "action",
+          "actorId": "foe-2-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 6709.70000000298,
+          "kind": "non-action",
+          "actorId": "",
+          "skillId": "round-status",
+          "ultimate": false,
+          "duration": 300,
+          "leadIn": null,
+          "fixedTiming": true,
+          "voiceWindows": null
+        },
+        {
+          "wallMs": 7279.20000000298,
+          "kind": "action",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 8222.60000000149,
+          "kind": "action",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 9170.5,
+          "kind": "action",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 10149.20000000298,
+          "kind": "action",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "ultimate": true,
+          "duration": 2200,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 12526.10000000149,
+          "kind": "action",
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 13549.10000000149,
+          "kind": "action",
+          "actorId": "foe-1-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 14515.90000000596,
+          "kind": "action",
+          "actorId": "foe-2-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 15261.90000000596,
+          "kind": "non-action",
+          "actorId": "",
+          "skillId": "round-status",
+          "ultimate": false,
+          "duration": 300,
+          "leadIn": null,
+          "fixedTiming": true,
+          "voiceWindows": null
+        },
+        {
+          "wallMs": 15814.90000000596,
+          "kind": "action",
+          "actorId": "mochi",
+          "skillId": "mochi-4",
+          "ultimate": true,
+          "duration": 2200,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 18198.70000000298,
+          "kind": "action",
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "ultimate": true,
+          "duration": 2200,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 20601.10000000149,
+          "kind": "action",
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "ultimate": true,
+          "duration": 2200,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 22946.60000000149,
+          "kind": "action",
+          "actorId": "panko",
+          "skillId": "panko-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 23915.40000000596,
+          "kind": "action",
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 24869.40000000596,
+          "kind": "action",
+          "actorId": "foe-1-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 25875.60000000149,
+          "kind": "action",
+          "actorId": "foe-2-binding-thread",
+          "skillId": "threadAttack",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 26611.10000000149,
+          "kind": "non-action",
+          "actorId": "",
+          "skillId": "round-status",
+          "ultimate": false,
+          "duration": 300,
+          "leadIn": null,
+          "fixedTiming": true,
+          "voiceWindows": null
+        },
+        {
+          "wallMs": 27129.5,
+          "kind": "action",
+          "actorId": "mochi",
+          "skillId": "mochi-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 28093.5,
+          "kind": "action",
+          "actorId": "soot",
+          "skillId": "soot-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 29057.40000000596,
+          "kind": "action",
+          "actorId": "clover",
+          "skillId": "clover-1",
+          "ultimate": false,
+          "duration": 800,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        },
+        {
+          "wallMs": 30017.5,
+          "kind": "action",
+          "actorId": "panko",
+          "skillId": "panko-4",
+          "ultimate": true,
+          "duration": 2200,
+          "leadIn": 0,
+          "fixedTiming": true,
+          "voiceWindows": 0
+        }
+      ],
+      "drawingWeights": [
+        {
+          "id": "foe-1-binding-thread",
+          "poses": 4,
+          "bytes": 313632
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "poses": 4,
+          "bytes": 313632
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "poses": 4,
+          "bytes": 243936
+        },
+        {
+          "id": "mochi",
+          "poses": 5,
+          "bytes": 392040
+        },
+        {
+          "id": "soot",
+          "poses": 4,
+          "bytes": 357192
+        },
+        {
+          "id": "clover",
+          "poses": 4,
+          "bytes": 313632
+        },
+        {
+          "id": "panko",
+          "poses": 5,
+          "bytes": 392040
+        }
+      ],
+      "identity": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "identityAfter": {
+        "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "runtimeUntrackedSha256": {}
+      },
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "sourceMeaning": "Candidate application source HEAD plus runtime patch",
+  "ended": "2026-11-17T18:25:20.030Z",
+  "pass": true,
+  "selfSamplesMs": [
+    {
+      "function": "render",
+      "url": "http://127.0.0.1:6310/src/game/cardrpg/spine/scene.ts?t=1794938289126",
+      "line": 467,
+      "ms": 6081.634
+    },
+    {
+      "function": "(program)",
+      "url": "",
+      "line": 0,
+      "ms": 5997.694
+    },
+    {
+      "function": "point",
+      "url": "http://127.0.0.1:6310/src/game/rig/drawing-layer.ts?t=1794938289126",
+      "line": 144,
+      "ms": 3858.749
+    },
+    {
+      "function": "exports.jsxDEV",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=7a2f8dac",
+      "line": 192,
+      "ms": 1812.561
+    },
+    {
+      "function": "consider",
+      "url": "http://127.0.0.1:6310/src/game/squad/turn3d/label-layout.ts",
+      "line": 35,
+      "ms": 1248.68
+    },
+    {
+      "function": "getBoundingClientRect",
+      "url": "",
+      "line": 0,
+      "ms": 972.039
+    },
+    {
+      "function": "offset",
+      "url": "http://127.0.0.1:6310/src/game/rig/face-depth.ts",
+      "line": 25,
+      "ms": 592.887
+    },
+    {
+      "function": "",
+      "url": "http://127.0.0.1:6310/src/game/cardrpg/stage/opaque-pose-bounds.ts?t=1794938289124",
+      "line": 136,
+      "ms": 587.574
+    },
+    {
+      "function": "sample",
+      "url": "http://127.0.0.1:6310/src/game/rig/drawing-layer.ts?t=1794938289126",
+      "line": 72,
+      "ms": 565.452
+    },
+    {
+      "function": "drawImage",
+      "url": "",
+      "line": 0,
+      "ms": 470.368
+    },
+    {
+      "function": "updateMatrixWorld",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/three.module-CL7ea-Hu.js?v=7a2f8dac",
+      "line": 10728,
+      "ms": 331.865
+    },
+    {
+      "function": "texSubImage2D",
+      "url": "",
+      "line": 0,
+      "ms": 312.5
+    },
+    {
+      "function": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "ms": 312.149
+    },
+    {
+      "function": "multiplyMatrices",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/three.module-CL7ea-Hu.js?v=7a2f8dac",
+      "line": 9000,
+      "ms": 291.816
+    },
+    {
+      "function": "s.render",
+      "url": "",
+      "line": 14,
+      "ms": 276.903
+    },
+    {
+      "function": "querySelectorAll",
+      "url": "",
+      "line": 0,
+      "ms": 233.552
+    },
+    {
+      "function": "getParameters",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/three.module-CL7ea-Hu.js?v=7a2f8dac",
+      "line": 44180,
+      "ms": 211.523
+    },
+    {
+      "function": "getImageData",
+      "url": "",
+      "line": 0,
+      "ms": 209.152
+    },
+    {
+      "function": "clone",
+      "url": "http://127.0.0.1:6310/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/internal.ts",
+      "line": 4,
+      "ms": 204.192
+    },
+    {
+      "function": "anchorPlates",
+      "url": "http://127.0.0.1:6310/src/game/cardrpg/depth/Battle.tsx?t=1794938289126",
+      "line": 188,
+      "ms": 192.121
+    },
+    {
+      "function": "getUtoTmapping",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/three.module-CL7ea-Hu.js?v=7a2f8dac",
+      "line": 22467,
+      "ms": 175.145
+    },
+    {
+      "function": "layoutLabels",
+      "url": "http://127.0.0.1:6310/src/game/squad/turn3d/label-layout.ts",
+      "line": 29,
+      "ms": 147.875
+    },
+    {
+      "function": "visible",
+      "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "line": 10,
+      "ms": 129.86
+    },
+    {
+      "function": "getProgram",
+      "url": "http://127.0.0.1:6310/node_modules/.vite/deps/three.module-CL7ea-Hu.js?v=7a2f8dac",
+      "line": 49401,
+      "ms": 114.824
+    },
+    {
+      "function": "position",
+      "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/world-label-dom.ts",
+      "line": 27,
+      "ms": 114.771
+    }
+  ],
+  "visualReview": {
+    "image": "work/v5/CXV/films/V7-F-current-battle-profile/review-4x.png",
+    "dimensions": [
+      1024,
+      576
+    ],
+    "inspectedOnce": true,
+    "finding": "Status badges, health bars, and all seven silhouettes remain readable; do not reopen."
+  },
+  "interpretation": "Instrumented attribution only: drawing point self3858.7ms,face offset592.9ms over32s;next prototype only conservative displacement clamp fast path, exact fallback retained. No general FPS inference."
+}
