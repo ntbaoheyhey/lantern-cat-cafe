@@ -1,0 +1,3180 @@
+{
+  "V7-F-pose-read-window": {
+    "utc": "2026-11-17T17:47:01.451Z",
+    "source": "36776601ad3089f95c7b7dfaf531019a9c0479c7",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Actual delivered alpha>=128 must fit existing pose metadata before any cropped measurement. Fresh contour caches per block, five alternating blocks/mode at4xCPU after warmup. Same posed meshes; compare exact world bounds. Includes cold readback/contour work, excludes pose sampling/GPU/frame timing. No runtime change.",
+    "fixtures": [
+      {
+        "id": "wave3",
+        "cases": 30,
+        "pixelProof": [
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              373,
+              447,
+              778,
+              855
+            ],
+            "measured": [
+              373,
+              447,
+              778,
+              855
+            ],
+            "painted": 60723,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              384,
+              447,
+              685,
+              854
+            ],
+            "measured": [
+              384,
+              447,
+              685,
+              854
+            ],
+            "painted": 39631,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "measured": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "painted": 51223,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "measured": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "painted": 51223,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              387,
+              447,
+              754,
+              855
+            ],
+            "measured": [
+              387,
+              447,
+              754,
+              855
+            ],
+            "painted": 49682,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "measured": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "painted": 91177,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "measured": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "painted": 109043,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "measured": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "painted": 135066,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "measured": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "painted": 100816,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "measured": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "painted": 71098,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K0",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              142,
+              193,
+              499,
+              599
+            ],
+            "measured": [
+              142,
+              193,
+              499,
+              600
+            ],
+            "painted": 75806,
+            "outside": 1
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K1",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "measured": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "painted": 87138,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K2",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              35,
+              193,
+              598,
+              600
+            ],
+            "measured": [
+              35,
+              194,
+              598,
+              600
+            ],
+            "painted": 89977,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K5",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "measured": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "painted": 98129,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K4",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "measured": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "painted": 97445,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "measured": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "painted": 64329,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "measured": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "painted": 96498,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "measured": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "painted": 112559,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              180,
+              320,
+              649,
+              729
+            ],
+            "measured": [
+              180,
+              320,
+              650,
+              729
+            ],
+            "painted": 99155,
+            "outside": 1
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "measured": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "painted": 76099,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              355,
+              447,
+              797,
+              856
+            ],
+            "measured": [
+              355,
+              447,
+              797,
+              856
+            ],
+            "painted": 77242,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              305,
+              448,
+              665,
+              857
+            ],
+            "measured": [
+              305,
+              448,
+              665,
+              857
+            ],
+            "painted": 78047,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "measured": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "painted": 84934,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "measured": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "painted": 84934,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              358,
+              446,
+              716,
+              855
+            ],
+            "measured": [
+              358,
+              446,
+              716,
+              855
+            ],
+            "painted": 78531,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "measured": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "painted": 86340,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "measured": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "painted": 120125,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "measured": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "painted": 107734,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "measured": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "painted": 101129,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "measured": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "painted": 98731,
+            "outside": 0
+          }
+        ],
+        "exact": false,
+        "reason": "Declared bounds exclude delivered painted pixels",
+        "runs": []
+      },
+      {
+        "id": "boss",
+        "cases": 35,
+        "pixelProof": [
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              312,
+              319,
+              584,
+              728
+            ],
+            "measured": [
+              312,
+              319,
+              584,
+              728
+            ],
+            "painted": 43677,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              355,
+              319,
+              651,
+              728
+            ],
+            "measured": [
+              355,
+              319,
+              651,
+              728
+            ],
+            "painted": 50494,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "measured": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "painted": 55354,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "measured": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "painted": 55354,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              315,
+              319,
+              577,
+              727
+            ],
+            "measured": [
+              315,
+              319,
+              577,
+              727
+            ],
+            "painted": 44907,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              351,
+              447,
+              801,
+              856
+            ],
+            "measured": [
+              351,
+              447,
+              801,
+              856
+            ],
+            "painted": 124630,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              405,
+              447,
+              921,
+              856
+            ],
+            "measured": [
+              405,
+              447,
+              921,
+              856
+            ],
+            "painted": 120524,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              128,
+              447,
+              895,
+              856
+            ],
+            "measured": [
+              128,
+              447,
+              895,
+              856
+            ],
+            "painted": 144495,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              289,
+              447,
+              960,
+              856
+            ],
+            "measured": [
+              289,
+              447,
+              960,
+              856
+            ],
+            "painted": 144178,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              413,
+              447,
+              745,
+              856
+            ],
+            "measured": [
+              413,
+              447,
+              745,
+              856
+            ],
+            "painted": 86090,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "measured": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "painted": 91177,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "measured": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "painted": 109043,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "measured": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "painted": 135066,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "measured": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "painted": 100816,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "measured": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "painted": 71098,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K0",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              142,
+              193,
+              499,
+              599
+            ],
+            "measured": [
+              142,
+              193,
+              499,
+              600
+            ],
+            "painted": 75806,
+            "outside": 1
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K1",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "measured": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "painted": 87138,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K2",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              35,
+              193,
+              598,
+              600
+            ],
+            "measured": [
+              35,
+              194,
+              598,
+              600
+            ],
+            "painted": 89977,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K5",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "measured": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "painted": 98129,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K4",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "measured": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "painted": 97445,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "measured": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "painted": 64329,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "measured": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "painted": 96498,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "measured": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "painted": 112559,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              180,
+              320,
+              649,
+              729
+            ],
+            "measured": [
+              180,
+              320,
+              650,
+              729
+            ],
+            "painted": 99155,
+            "outside": 1
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "measured": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "painted": 76099,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "measured": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "painted": 86340,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "measured": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "painted": 120125,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "measured": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "painted": 107734,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "measured": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "painted": 101129,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "measured": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "painted": 98731,
+            "outside": 0
+          }
+        ],
+        "exact": false,
+        "reason": "Declared bounds exclude delivered painted pixels",
+        "runs": []
+      }
+    ],
+    "errors": [],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "pass": false,
+    "ended": "2026-11-17T17:47:11.604Z",
+    "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-read-window/report.json"
+  },
+  "V7-F-pose-read-window-r2": {
+    "utc": "2026-11-17T17:48:40.400Z",
+    "source": "36776601ad3089f95c7b7dfaf531019a9c0479c7",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "padding": 2,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Actual delivered alpha>=128 must fit existing pose metadata plus the recorded guard band before any cropped measurement. Fresh contour caches per block, five alternating blocks/mode at4xCPU after warmup. Same posed meshes; compare exact world bounds. Includes cold readback/contour work, excludes pose sampling/GPU/frame timing. No runtime change.",
+    "fixtures": [
+      {
+        "id": "wave3",
+        "cases": 30,
+        "pixelProof": [
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              373,
+              447,
+              778,
+              855
+            ],
+            "region": [
+              371,
+              445,
+              780,
+              857
+            ],
+            "measured": [
+              373,
+              447,
+              778,
+              855
+            ],
+            "painted": 60723,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              384,
+              447,
+              685,
+              854
+            ],
+            "region": [
+              382,
+              445,
+              687,
+              856
+            ],
+            "measured": [
+              384,
+              447,
+              685,
+              854
+            ],
+            "painted": 39631,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "region": [
+              255,
+              445,
+              801,
+              857
+            ],
+            "measured": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "painted": 51223,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "region": [
+              255,
+              445,
+              801,
+              857
+            ],
+            "measured": [
+              257,
+              447,
+              799,
+              855
+            ],
+            "painted": 51223,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-4-needle-moth",
+            "asset": "needle-moth",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              387,
+              447,
+              754,
+              855
+            ],
+            "region": [
+              385,
+              445,
+              756,
+              857
+            ],
+            "measured": [
+              387,
+              447,
+              754,
+              855
+            ],
+            "painted": 49682,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              355,
+              447,
+              797,
+              856
+            ],
+            "region": [
+              353,
+              445,
+              799,
+              858
+            ],
+            "measured": [
+              355,
+              447,
+              797,
+              856
+            ],
+            "painted": 77242,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              305,
+              448,
+              665,
+              857
+            ],
+            "region": [
+              303,
+              446,
+              667,
+              859
+            ],
+            "measured": [
+              305,
+              448,
+              665,
+              857
+            ],
+            "painted": 78047,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "region": [
+              67,
+              446,
+              705,
+              859
+            ],
+            "measured": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "painted": 84934,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "region": [
+              67,
+              446,
+              705,
+              859
+            ],
+            "measured": [
+              69,
+              448,
+              703,
+              857
+            ],
+            "painted": 84934,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-5-teacup-healer",
+            "asset": "teacup-healer",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              358,
+              446,
+              716,
+              855
+            ],
+            "region": [
+              356,
+              444,
+              718,
+              857
+            ],
+            "measured": [
+              358,
+              446,
+              716,
+              855
+            ],
+            "painted": 78531,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K0",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              142,
+              193,
+              499,
+              599
+            ],
+            "region": [
+              140,
+              191,
+              501,
+              601
+            ],
+            "measured": [
+              142,
+              193,
+              499,
+              600
+            ],
+            "painted": 75806,
+            "outsideDeclared": 1,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K1",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "region": [
+              99,
+              190,
+              495,
+              600
+            ],
+            "measured": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "painted": 87138,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K2",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              35,
+              193,
+              598,
+              600
+            ],
+            "region": [
+              33,
+              191,
+              600,
+              602
+            ],
+            "measured": [
+              35,
+              194,
+              598,
+              600
+            ],
+            "painted": 89977,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K5",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "region": [
+              45,
+              191,
+              480,
+              601
+            ],
+            "measured": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "painted": 98129,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K4",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "region": [
+              113,
+              191,
+              536,
+              601
+            ],
+            "measured": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "painted": 97445,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "region": [
+              246,
+              317,
+              657,
+              730
+            ],
+            "measured": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "painted": 91177,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "region": [
+              182,
+              317,
+              671,
+              729
+            ],
+            "measured": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "painted": 109043,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "region": [
+              101,
+              318,
+              824,
+              731
+            ],
+            "measured": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "painted": 135066,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "region": [
+              151,
+              317,
+              640,
+              729
+            ],
+            "measured": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "painted": 100816,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "region": [
+              259,
+              317,
+              551,
+              730
+            ],
+            "measured": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "painted": 71098,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "region": [
+              294,
+              317,
+              627,
+              730
+            ],
+            "measured": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "painted": 64329,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "region": [
+              134,
+              317,
+              608,
+              731
+            ],
+            "measured": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "painted": 96498,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "region": [
+              159,
+              317,
+              840,
+              730
+            ],
+            "measured": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "painted": 112559,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              180,
+              320,
+              649,
+              729
+            ],
+            "region": [
+              178,
+              318,
+              651,
+              731
+            ],
+            "measured": [
+              180,
+              320,
+              650,
+              729
+            ],
+            "painted": 99155,
+            "outsideDeclared": 1,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "region": [
+              257,
+              316,
+              654,
+              729
+            ],
+            "measured": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "painted": 76099,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "region": [
+              266,
+              318,
+              631,
+              729
+            ],
+            "measured": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "painted": 86340,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "region": [
+              183,
+              318,
+              690,
+              729
+            ],
+            "measured": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "painted": 120125,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "region": [
+              177,
+              318,
+              763,
+              730
+            ],
+            "measured": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "painted": 107734,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "region": [
+              143,
+              318,
+              700,
+              730
+            ],
+            "measured": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "painted": 101129,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "region": [
+              248,
+              318,
+              658,
+              728
+            ],
+            "measured": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "painted": 98731,
+            "outsideDeclared": 0,
+            "outside": 0
+          }
+        ],
+        "exact": true,
+        "fullMedianMs": 682,
+        "croppedMedianMs": 279.29999999701977,
+        "runs": [
+          {
+            "variant": "full",
+            "block": 0,
+            "elapsedMs": 687,
+            "readbacks": 30,
+            "readPixels": 27361280,
+            "readbackMs": 139.40000000596046
+          },
+          {
+            "variant": "cropped",
+            "block": 0,
+            "elapsedMs": 263.1000000014901,
+            "readbacks": 30,
+            "readPixels": 5766440,
+            "readbackMs": 45.99999999254942
+          },
+          {
+            "variant": "cropped",
+            "block": 1,
+            "elapsedMs": 285.69999999552965,
+            "readbacks": 30,
+            "readPixels": 5766440,
+            "readbackMs": 45.400000005960464
+          },
+          {
+            "variant": "full",
+            "block": 1,
+            "elapsedMs": 685.3999999985099,
+            "readbacks": 30,
+            "readPixels": 27361280,
+            "readbackMs": 139.40000002086163
+          },
+          {
+            "variant": "full",
+            "block": 2,
+            "elapsedMs": 682,
+            "readbacks": 30,
+            "readPixels": 27361280,
+            "readbackMs": 137.79999999701977
+          },
+          {
+            "variant": "cropped",
+            "block": 2,
+            "elapsedMs": 294.6000000014901,
+            "readbacks": 30,
+            "readPixels": 5766440,
+            "readbackMs": 46.599999979138374
+          },
+          {
+            "variant": "cropped",
+            "block": 3,
+            "elapsedMs": 279.29999999701977,
+            "readbacks": 30,
+            "readPixels": 5766440,
+            "readbackMs": 43.80000000447035
+          },
+          {
+            "variant": "full",
+            "block": 3,
+            "elapsedMs": 675.3999999985099,
+            "readbacks": 30,
+            "readPixels": 27361280,
+            "readbackMs": 136.30000000447035
+          },
+          {
+            "variant": "full",
+            "block": 4,
+            "elapsedMs": 654.1000000014901,
+            "readbacks": 30,
+            "readPixels": 27361280,
+            "readbackMs": 137.90000000596046
+          },
+          {
+            "variant": "cropped",
+            "block": 4,
+            "elapsedMs": 278.70000000298023,
+            "readbacks": 30,
+            "readPixels": 5766440,
+            "readbackMs": 43.79999998211861
+          }
+        ]
+      },
+      {
+        "id": "boss",
+        "cases": 35,
+        "pixelProof": [
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K0",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              351,
+              447,
+              801,
+              856
+            ],
+            "region": [
+              349,
+              445,
+              803,
+              858
+            ],
+            "measured": [
+              351,
+              447,
+              801,
+              856
+            ],
+            "painted": 124630,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K1",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              405,
+              447,
+              921,
+              856
+            ],
+            "region": [
+              403,
+              445,
+              923,
+              858
+            ],
+            "measured": [
+              405,
+              447,
+              921,
+              856
+            ],
+            "painted": 120524,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K2",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              128,
+              447,
+              895,
+              856
+            ],
+            "region": [
+              126,
+              445,
+              897,
+              858
+            ],
+            "measured": [
+              128,
+              447,
+              895,
+              856
+            ],
+            "painted": 144495,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K5",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              289,
+              447,
+              960,
+              856
+            ],
+            "region": [
+              287,
+              445,
+              962,
+              858
+            ],
+            "measured": [
+              289,
+              447,
+              960,
+              856
+            ],
+            "painted": 144178,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-0-yarn-giant",
+            "asset": "yarn-giant",
+            "key": "K4",
+            "width": 1152,
+            "height": 1152,
+            "declared": [
+              413,
+              447,
+              745,
+              856
+            ],
+            "region": [
+              411,
+              445,
+              747,
+              858
+            ],
+            "measured": [
+              413,
+              447,
+              745,
+              856
+            ],
+            "painted": 86090,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              312,
+              319,
+              584,
+              728
+            ],
+            "region": [
+              310,
+              317,
+              586,
+              730
+            ],
+            "measured": [
+              312,
+              319,
+              584,
+              728
+            ],
+            "painted": 43677,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              355,
+              319,
+              651,
+              728
+            ],
+            "region": [
+              353,
+              317,
+              653,
+              730
+            ],
+            "measured": [
+              355,
+              319,
+              651,
+              728
+            ],
+            "painted": 50494,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "region": [
+              127,
+              317,
+              599,
+              730
+            ],
+            "measured": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "painted": 55354,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "region": [
+              127,
+              317,
+              599,
+              730
+            ],
+            "measured": [
+              129,
+              319,
+              597,
+              728
+            ],
+            "painted": 55354,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "foe-1-binding-thread",
+            "asset": "binding-thread",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              315,
+              319,
+              577,
+              727
+            ],
+            "region": [
+              313,
+              317,
+              579,
+              729
+            ],
+            "measured": [
+              315,
+              319,
+              577,
+              727
+            ],
+            "painted": 44907,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "region": [
+              246,
+              317,
+              657,
+              730
+            ],
+            "measured": [
+              248,
+              319,
+              655,
+              728
+            ],
+            "painted": 91177,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "region": [
+              182,
+              317,
+              671,
+              729
+            ],
+            "measured": [
+              184,
+              319,
+              669,
+              727
+            ],
+            "painted": 109043,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "region": [
+              101,
+              318,
+              824,
+              731
+            ],
+            "measured": [
+              103,
+              320,
+              822,
+              729
+            ],
+            "painted": 135066,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "region": [
+              151,
+              317,
+              640,
+              729
+            ],
+            "measured": [
+              153,
+              319,
+              638,
+              727
+            ],
+            "painted": 100816,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "mochi",
+            "asset": "mochi",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "region": [
+              259,
+              317,
+              551,
+              730
+            ],
+            "measured": [
+              261,
+              319,
+              549,
+              728
+            ],
+            "painted": 71098,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K0",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              142,
+              193,
+              499,
+              599
+            ],
+            "region": [
+              140,
+              191,
+              501,
+              601
+            ],
+            "measured": [
+              142,
+              193,
+              499,
+              600
+            ],
+            "painted": 75806,
+            "outsideDeclared": 1,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K1",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "region": [
+              99,
+              190,
+              495,
+              600
+            ],
+            "measured": [
+              101,
+              192,
+              493,
+              598
+            ],
+            "painted": 87138,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K2",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              35,
+              193,
+              598,
+              600
+            ],
+            "region": [
+              33,
+              191,
+              600,
+              602
+            ],
+            "measured": [
+              35,
+              194,
+              598,
+              600
+            ],
+            "painted": 89977,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K5",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "region": [
+              45,
+              191,
+              480,
+              601
+            ],
+            "measured": [
+              47,
+              193,
+              478,
+              599
+            ],
+            "painted": 98129,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "soot",
+            "asset": "soot",
+            "key": "K4",
+            "width": 640,
+            "height": 640,
+            "declared": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "region": [
+              113,
+              191,
+              536,
+              601
+            ],
+            "measured": [
+              115,
+              193,
+              534,
+              599
+            ],
+            "painted": 97445,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "region": [
+              294,
+              317,
+              627,
+              730
+            ],
+            "measured": [
+              296,
+              319,
+              625,
+              728
+            ],
+            "painted": 64329,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "region": [
+              134,
+              317,
+              608,
+              731
+            ],
+            "measured": [
+              136,
+              319,
+              606,
+              729
+            ],
+            "painted": 96498,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "region": [
+              159,
+              317,
+              840,
+              730
+            ],
+            "measured": [
+              161,
+              319,
+              838,
+              728
+            ],
+            "painted": 112559,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              180,
+              320,
+              649,
+              729
+            ],
+            "region": [
+              178,
+              318,
+              651,
+              731
+            ],
+            "measured": [
+              180,
+              320,
+              650,
+              729
+            ],
+            "painted": 99155,
+            "outsideDeclared": 1,
+            "outside": 0
+          },
+          {
+            "actorId": "clover",
+            "asset": "clover",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "region": [
+              257,
+              316,
+              654,
+              729
+            ],
+            "measured": [
+              259,
+              318,
+              652,
+              727
+            ],
+            "painted": 76099,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K0",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "region": [
+              266,
+              318,
+              631,
+              729
+            ],
+            "measured": [
+              268,
+              320,
+              629,
+              727
+            ],
+            "painted": 86340,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K1",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "region": [
+              183,
+              318,
+              690,
+              729
+            ],
+            "measured": [
+              185,
+              320,
+              688,
+              727
+            ],
+            "painted": 120125,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K2",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "region": [
+              177,
+              318,
+              763,
+              730
+            ],
+            "measured": [
+              179,
+              320,
+              761,
+              728
+            ],
+            "painted": 107734,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K5",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "region": [
+              143,
+              318,
+              700,
+              730
+            ],
+            "measured": [
+              145,
+              320,
+              698,
+              728
+            ],
+            "painted": 101129,
+            "outsideDeclared": 0,
+            "outside": 0
+          },
+          {
+            "actorId": "panko",
+            "asset": "panko",
+            "key": "K4",
+            "width": 896,
+            "height": 896,
+            "declared": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "region": [
+              248,
+              318,
+              658,
+              728
+            ],
+            "measured": [
+              250,
+              320,
+              656,
+              726
+            ],
+            "painted": 98731,
+            "outsideDeclared": 0,
+            "outside": 0
+          }
+        ],
+        "exact": true,
+        "fullMedianMs": 680.3999999985099,
+        "croppedMedianMs": 287.30000000447035,
+        "runs": [
+          {
+            "variant": "full",
+            "block": 0,
+            "elapsedMs": 680,
+            "readbacks": 30,
+            "readPixels": 24739840,
+            "readbackMs": 129.2999999821186
+          },
+          {
+            "variant": "cropped",
+            "block": 0,
+            "elapsedMs": 282.1000000014901,
+            "readbacks": 30,
+            "readPixels": 5734377,
+            "readbackMs": 45.89999998360872
+          },
+          {
+            "variant": "cropped",
+            "block": 1,
+            "elapsedMs": 286.5,
+            "readbacks": 30,
+            "readPixels": 5734377,
+            "readbackMs": 42.69999999552965
+          },
+          {
+            "variant": "full",
+            "block": 1,
+            "elapsedMs": 675.5,
+            "readbacks": 30,
+            "readPixels": 24739840,
+            "readbackMs": 124.59999997913837
+          },
+          {
+            "variant": "full",
+            "block": 2,
+            "elapsedMs": 709.3999999985099,
+            "readbacks": 30,
+            "readPixels": 24739840,
+            "readbackMs": 123.09999999403954
+          },
+          {
+            "variant": "cropped",
+            "block": 2,
+            "elapsedMs": 290.59999999403954,
+            "readbacks": 30,
+            "readPixels": 5734377,
+            "readbackMs": 46.60000001639128
+          },
+          {
+            "variant": "cropped",
+            "block": 3,
+            "elapsedMs": 287.30000000447035,
+            "readbacks": 30,
+            "readPixels": 5734377,
+            "readbackMs": 45.399999998509884
+          },
+          {
+            "variant": "full",
+            "block": 3,
+            "elapsedMs": 680.3999999985099,
+            "readbacks": 30,
+            "readPixels": 24739840,
+            "readbackMs": 126.69999999552965
+          },
+          {
+            "variant": "full",
+            "block": 4,
+            "elapsedMs": 684.2000000029802,
+            "readbacks": 30,
+            "readPixels": 24739840,
+            "readbackMs": 123
+          },
+          {
+            "variant": "cropped",
+            "block": 4,
+            "elapsedMs": 299.8999999985099,
+            "readbacks": 30,
+            "readPixels": 5734377,
+            "readbackMs": 47.099999994039536
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "pass": true,
+    "ended": "2026-11-17T17:49:01.823Z",
+    "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-read-window-r2/report.json"
+  },
+  "disposition": "Promising prototype only;no runtime edit. Raw metadata excludes1decodedAVIFpixel atSootK0 bottom andCloverK5 right.2pxguard tested onactualdelivery andoriginalfallback. FreshGPU/ordinarybaseline andruntime tests needed."
+}
