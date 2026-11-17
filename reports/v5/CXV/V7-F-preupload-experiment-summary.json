@@ -1,0 +1,531 @@
+{
+  "utc": "2026-11-17T18:16:31.108Z",
+  "ended": "2026-11-17T18:17:11.942Z",
+  "source": "9bb9cdeac1a09e51ca8a39fde216d9feed79a57a",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "e06ec3dabc5a67ed6096acfc7d801954f2390b14f74b301a561123af1ce12192",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "method": "Fresh boss fixtures at 1x/4x CPU; alternating mode order per repetition. Only Yarn Giant K4 and shared Binding Thread K4 are initialized early. Upfront includes both uploads before idle; staggered includes one after idle and one after anticipation. Combined CPU includes render and preparation. All frames and allocation counts retained. Timing passes have no screenshots, readPixels, or CPU profiler. Separate deterministic parity passes read full renderer RGBA after each frozen frame. Submission timings are not GPU completion, actual idle-budget scheduling, ordinary gameplay FPS, or production acceptance.",
+  "repeats": 3,
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "none",
+      "contactMedianMs": 39.69999999552965,
+      "maxCombinedMedianMs": 39.69999999552965,
+      "totalMedianMs": 125,
+      "prepMedianMs": 0,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 10
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 17.899999998509884
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 31.600000001490116
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 39.69999999552965
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 5.699999995529652
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 11.700000002980232
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 5.299999997019768
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 4
+        }
+      ]
+    },
+    {
+      "rate": 1,
+      "mode": "upfront",
+      "contactMedianMs": 31.19999999552965,
+      "maxCombinedMedianMs": 31.19999999552965,
+      "totalMedianMs": 122,
+      "prepMedianMs": 10.300000004470348,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 20.200000002980232
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 18.299999997019768
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 29.30000000447035
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 31.19999999552965
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 5.200000002980232
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 9.100000001490116
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 6.299999997019768
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 3.600000001490116
+        }
+      ]
+    },
+    {
+      "rate": 1,
+      "mode": "staggered",
+      "contactMedianMs": 32.100000001490116,
+      "maxCombinedMedianMs": 32.100000001490116,
+      "totalMedianMs": 123.79999999701977,
+      "prepMedianMs": 10,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 15.200000002980232
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 21.5
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 29.899999998509884
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 32.100000001490116
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 5.399999998509884
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 9.699999995529652
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 6.100000001490116
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 3.899999998509884
+        }
+      ]
+    },
+    {
+      "rate": 4,
+      "mode": "none",
+      "contactMedianMs": 130.29999999701977,
+      "maxCombinedMedianMs": 130.29999999701977,
+      "totalMedianMs": 386.5,
+      "prepMedianMs": 0,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 31.5
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 55.399999998509884
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 74.39999999850988
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 130.29999999701977
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 19.399999998509884
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 34.600000001490116
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 20.899999998509884
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 16.600000001490116
+        }
+      ]
+    },
+    {
+      "rate": 4,
+      "mode": "upfront",
+      "contactMedianMs": 99.5,
+      "maxCombinedMedianMs": 99.5,
+      "totalMedianMs": 376.79999999701977,
+      "prepMedianMs": 26.200000002980232,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 61.70000000298023
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 54.5
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 76
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 99.5
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 19.200000002980232
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 30.399999998509884
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 20.400000005960464
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 16.799999997019768
+        }
+      ]
+    },
+    {
+      "rate": 4,
+      "mode": "staggered",
+      "contactMedianMs": 101.80000000447035,
+      "maxCombinedMedianMs": 101.80000000447035,
+      "totalMedianMs": 381.5,
+      "prepMedianMs": 26.700000002980232,
+      "frames": [
+        {
+          "tag": "idle",
+          "combinedMedianMs": 46.899999998509884
+        },
+        {
+          "tag": "anticipation",
+          "combinedMedianMs": 63.70000000298023
+        },
+        {
+          "tag": "transition",
+          "combinedMedianMs": 74
+        },
+        {
+          "tag": "contact",
+          "combinedMedianMs": 101.80000000447035
+        },
+        {
+          "tag": "contact-warm",
+          "combinedMedianMs": 20.30000000447035
+        },
+        {
+          "tag": "release",
+          "combinedMedianMs": 30.100000001490116
+        },
+        {
+          "tag": "idle-return",
+          "combinedMedianMs": 22.19999999552965
+        },
+        {
+          "tag": "contact-return",
+          "combinedMedianMs": 16.5
+        }
+      ]
+    }
+  ],
+  "parityChecks": [
+    {
+      "mode": "upfront",
+      "tag": "idle",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "anticipation",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "transition",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "contact",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "contact-warm",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "release",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "idle-return",
+      "equal": true
+    },
+    {
+      "mode": "upfront",
+      "tag": "contact-return",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "idle",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "anticipation",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "transition",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "contact",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "contact-warm",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "release",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "idle-return",
+      "equal": true
+    },
+    {
+      "mode": "staggered",
+      "tag": "contact-return",
+      "equal": true
+    }
+  ],
+  "idempotent": true,
+  "errors": [],
+  "pass": true,
+  "targetInfo": [
+    {
+      "ids": [
+        "foe-0-yarn-giant"
+      ],
+      "asset": "yarn-giant",
+      "key": "K4",
+      "width": 1152,
+      "height": 1152,
+      "generateMipmaps": true,
+      "estimatedRGBA8MipBytes": 7077864
+    },
+    {
+      "ids": [
+        "foe-1-binding-thread",
+        "foe-2-binding-thread"
+      ],
+      "asset": "binding-thread",
+      "key": "K4",
+      "width": 896,
+      "height": 896,
+      "generateMipmaps": true,
+      "estimatedRGBA8MipBytes": 4281660
+    }
+  ],
+  "allocationRows": [
+    {
+      "mode": "none",
+      "initial": 21,
+      "frames": [
+        {
+          "tag": "idle",
+          "texturesBefore": 21,
+          "texturesAfter": 21
+        },
+        {
+          "tag": "anticipation",
+          "texturesBefore": 21,
+          "texturesAfter": 22
+        },
+        {
+          "tag": "transition",
+          "texturesBefore": 22,
+          "texturesAfter": 25
+        },
+        {
+          "tag": "contact",
+          "texturesBefore": 25,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-warm",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "release",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "idle-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        }
+      ]
+    },
+    {
+      "mode": "upfront",
+      "initial": 21,
+      "frames": [
+        {
+          "tag": "idle",
+          "texturesBefore": 21,
+          "texturesAfter": 23
+        },
+        {
+          "tag": "anticipation",
+          "texturesBefore": 23,
+          "texturesAfter": 24
+        },
+        {
+          "tag": "transition",
+          "texturesBefore": 24,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-warm",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "release",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "idle-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        }
+      ]
+    },
+    {
+      "mode": "staggered",
+      "initial": 21,
+      "frames": [
+        {
+          "tag": "idle",
+          "texturesBefore": 21,
+          "texturesAfter": 22
+        },
+        {
+          "tag": "anticipation",
+          "texturesBefore": 22,
+          "texturesAfter": 24
+        },
+        {
+          "tag": "transition",
+          "texturesBefore": 24,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-warm",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "release",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "idle-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        },
+        {
+          "tag": "contact-return",
+          "texturesBefore": 27,
+          "texturesAfter": 27
+        }
+      ]
+    }
+  ],
+  "interpretation": "Frozen first-contact submission improves; work and allocations move earlier. Full deterministic GPU parity 16/16, same eventual 27 textures, idempotent repeat. Runtime scheduling decision deferred until actual idle-budget measurement and study window complete. Estimated incremental early RGBA8 mip storage 11359524B, not measured VRAM.",
+  "visualReview": {
+    "utc": "2026-11-17T18:20:03Z",
+    "source": "work/v5/CXV/films/V7-F-contact-preupload/parity-upfront.png",
+    "review": "work/v5/CXV/films/V7-F-contact-preupload/review-upfront.png",
+    "dimensions": [
+      1024,
+      576
+    ],
+    "inspectedOnce": true,
+    "finding": "Clear contact pose, damage labels and target silhouettes; full-render GPU parity across modes. Do not reopen this review."
+  }
+}
