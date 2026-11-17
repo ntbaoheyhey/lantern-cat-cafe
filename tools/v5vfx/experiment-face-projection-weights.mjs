@@ -7,19 +7,22 @@ import {resolve} from 'node:path';
 import {chromium,config,openFixture} from './browser-fixture.mjs';
 import {runtimeEvidence} from './runtime-evidence.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-face-projection-weights');await mkdir(out,{recursive:true});
+const slots=Number(process.env.CXV_FACE_CACHE_SLOTS??4);assert([2,4].includes(slots));
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),toolSha256:createHash('sha256').update(await readFile(new URL(import.meta.url))).digest('hex'),viewport:{width:1280,height:720},method:'Tool-only4Float64 static face projection values per vertex. Both baseline/candidate point functions are cloned from the same current browser method and share dispatch.910 real pose cases compare every vertex byte, arbitrary sockets, feet and face corners.7 alternating warmed blocks/mode/fixture at4x CPU, no renderer timing. Prototype retains baseline+extended arrays for comparison; report incremental cache and cold rebuild costs. This is not ordinary FPS, GPU parity, or runtime integration.',fixtures:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+report.slots=slots;report.method=report.method.replace('4Float64',`${slots}Float64`);
 try{
  for(const id of ['wave3','boss']){
   const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id===id),{fixedClock:false});report.url=page.url();
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
-  const result=await page.evaluate(async id=>{
+  const result=await page.evaluate(async ({id,slots})=>{
    const s=window.__depthScene;cancelAnimationFrame(s.raf);
    const drawings=[...s.actors].filter(([,e])=>e.craftPose?.drawing).map(([actorId,e])=>({actorId,d:e.craftPose.drawing}));
    const original=drawings[0].d.point,source=String(original);
    const anchor='const projected = depth.offset(x, y, frame.face, this.faceOffset);';
    if(!source.includes(anchor))throw Error('Current face projection anchor changed');
-   const candidate=source.replace(anchor,'const shapeOffset=offset+7+overlaps.length; const projected=weights?depth.__cxvProject(weights[shapeOffset],weights[shapeOffset+1],weights[shapeOffset+2],weights[shapeOffset+3],this.faceOffset):depth.offset(x,y,frame.face,this.faceOffset);');
+   const shape=slots===4?'weights[shapeOffset],weights[shapeOffset+1],weights[shapeOffset+2],weights[shapeOffset+3]':'x-fx-fw*.55,y-fy-fh*.52,weights[shapeOffset],weights[shapeOffset+1]';
+   const candidate=source.replace(anchor,`const shapeOffset=offset+7+overlaps.length; const projected=weights?depth.__cxvProject(${shape},this.faceOffset):depth.offset(x,y,frame.face,this.faceOffset);`);
    const compile=body=>new Function('smooth','NO_OVERLAP','return ({'+body+'}).point;')(t=>{const x=Math.max(0,Math.min(1,t));return x*x*(3-2*x);},[]);
    const implementations=[compile(source),compile(candidate)];let active=0;
    const dispatch=function(...args){return implementations[active].apply(this,args);};
@@ -29,13 +32,13 @@ try{
    const extended=function(key){
     const base=originalWeights.call(this,key);if(active===0)return base;
     const cache=faceCaches.get(this),cached=cache.get(key);if(cached)return cached;
-    const stride=base.stride+4,count=this.source.length/3,data=new Float64Array(count*stride),m=this.set.manifest;
+    const stride=base.stride+slots,count=this.source.length/3,data=new Float64Array(count*stride),m=this.set.manifest;
     const [fx,fy,w,h]=m.poses[key].face;
     for(let i=0;i<count;i++){
      data.set(base.data.subarray(i*base.stride,(i+1)*base.stride),i*stride);
      const x=this.source[i*3]+m.canvas[0]/2,y=m.canvas[1]/2-this.source[i*3+1],dx=x-fx-w*.55,dy=y-fy-h*.52;
      const dome=smooth(1-(dx/(w*.62))**2-(dy/(h*.78))**2),muzzle=smooth(1-((x-fx-w*.60)/(w*.22))**2-((y-fy-h*.64)/(h*.28))**2);
-     const at=i*stride+base.stride;data[at]=dx;data[at+1]=dy;data[at+2]=dome;data[at+3]=w*(.22*dome+.06*muzzle);
+     const at=i*stride+base.stride;if(slots===4){data[at]=dx;data[at+1]=dy;}data[at+slots-2]=dome;data[at+slots-1]=w*(.22*dome+.06*muzzle);
     }
     const result={data,stride};cache.set(key,result);return result;
    };
@@ -68,9 +71,9 @@ try{
      cold.push({...run(mode,1),block});
     }
     const median=mode=>timing.filter(r=>r.mode===mode).map(r=>r.ms).sort((a,b)=>a-b)[3];
-    return{id,rows,differences,timing,memory,cold,originalMedianMs:median('original'),faceCacheMedianMs:median('face-cache'),prototype: 'dx,dy,dome,depth in4Float64 slots appended after existing weights;preserve projection arithmetic'};
+    return{id,rows,differences,timing,memory,cold,originalMedianMs:median('original'),faceCacheMedianMs:median('face-cache'),prototype: `${slots===4?'dx,dy,dome,depth':'dome,depth'} in${slots}Float64 slots appended after existing weights;preserve projection arithmetic`};
    }finally{for(const {d}of drawings){d.point=original;d.weightsFor=originalWeights;delete d.faceDepth.__cxvProject;delete d.seekFaceDepth.__cxvProject;}}
-  },id);
+  },{id,slots});
   report.fixtures.push(result);report.errors.push(...errors);await page.close();
   await writeFile(resolve(out,'report.partial.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({id,rows:result.rows.length,differences:result.differences.length,extraBytes:result.memory.reduce((sum,v)=>sum+v.extraBytes,0),originalMedianMs:result.originalMedianMs,faceCacheMedianMs:result.faceCacheMedianMs,errors}));
  }

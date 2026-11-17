@@ -1,0 +1,45 @@
+{
+  "utc": "2026-11-17T18:37:12.471Z",
+  "source": "929a3c335bc9b61ec1f542227adbf906c8376400",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "e3d1ccec8fa90db06db441c6ce9e28004db779d578d2366d1a1b8a92ea15f422",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only2Float64 static face projection values per vertex. Both baseline/candidate point functions are cloned from the same current browser method and share dispatch.910 real pose cases compare every vertex byte, arbitrary sockets, feet and face corners.7 alternating warmed blocks/mode/fixture at4x CPU, no renderer timing. Prototype retains baseline+extended arrays for comparison; report incremental cache and cold rebuild costs. This is not ordinary FPS, GPU parity, or runtime integration.",
+  "errors": [],
+  "slots": 2,
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "pass": true,
+  "ended": "2026-11-17T18:37:25.402Z",
+  "raw": "work/v5/CXV/films/V7-F-face-projection-compact/report.json",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "motionCases": 420,
+      "differences": [],
+      "warmOriginalMedianMs": 236.40000000596046,
+      "warmFaceCacheMedianMs": 214.90000000596046,
+      "warmImprovementPercent": 9.09,
+      "coldRebuildOriginalMedianMs": 47.600000001490116,
+      "coldRebuildFaceCacheMedianMs": 50,
+      "additionalCpuCacheBytes": 522720,
+      "additionalBytesPerPose": 17424
+    },
+    {
+      "id": "boss",
+      "motionCases": 490,
+      "differences": [],
+      "warmOriginalMedianMs": 274.3999999985099,
+      "warmFaceCacheMedianMs": 249.10000000149012,
+      "warmImprovementPercent": 9.22,
+      "coldRebuildOriginalMedianMs": 54.399999998509884,
+      "coldRebuildFaceCacheMedianMs": 57.5,
+      "additionalCpuCacheBytes": 609840,
+      "additionalBytesPerPose": 17424
+    }
+  ],
+  "decision": "Prefer compact two-slot candidate for ordinary-play measurement after study.910exact;about9%warm geometry improvement while halving extra memory vs four slots. Cold rebuild is diagnostic copy overhead, not startup. No runtime edit, GPU parity or READY yet."
+}
