@@ -1,0 +1,299 @@
+{
+  "utc": "2026-11-17T17:38:16.985Z",
+  "source": "6f71118f104eb831b7e1496f701ab92ee5ae199e",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Frozen Mochi basic in the real scene at4x CPU. Instrumented canvas/WebGL submissions and CPU profile. First versus warmed same-pose cost attribution only; no FPS, GPU completion, ordinary progression or production claim.",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "ended": "2026-11-17T17:38:20.576Z",
+  "pass": true,
+  "samples": [
+    {
+      "tag": "idle",
+      "ms": 0,
+      "cpuMs": 39.79999999701977,
+      "costs": {
+        "native.pose": {
+          "calls": 10,
+          "totalMs": 1.7000000029802322,
+          "maxMs": 0.8000000044703484
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 11.900000005960464,
+          "maxMs": 4.399999998509884
+        },
+        "canvas.drawImage": {
+          "calls": 84,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.drawElements": {
+          "calls": 29,
+          "totalMs": 0.10000000149011612,
+          "maxMs": 0.10000000149011612
+        }
+      },
+      "calls": 22,
+      "textures": 21
+    },
+    {
+      "tag": "anticipation-first",
+      "ms": 50,
+      "cpuMs": 69.80000000447035,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0.3999999985098839,
+          "maxMs": 0.20000000298023224
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 13.400000005960464,
+          "maxMs": 6.399999998509884
+        },
+        "canvas.drawImage": {
+          "calls": 85,
+          "totalMs": 2.5,
+          "maxMs": 2.5
+        },
+        "canvas.getImageData": {
+          "calls": 1,
+          "totalMs": 12.300000004470348,
+          "maxMs": 12.300000004470348
+        },
+        "gl.drawElements": {
+          "calls": 29,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texImage2D": {
+          "calls": 1,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texSubImage2D": {
+          "calls": 1,
+          "totalMs": 15.5,
+          "maxMs": 15.5
+        }
+      },
+      "calls": 22,
+      "textures": 22
+    },
+    {
+      "tag": "transition-first",
+      "ms": 300,
+      "cpuMs": 92.90000000596046,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0.5,
+          "maxMs": 0.3999999985098839
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 6.899999998509884,
+          "maxMs": 4
+        },
+        "canvas.drawImage": {
+          "calls": 106,
+          "totalMs": 7.5,
+          "maxMs": 4.300000004470348
+        },
+        "canvas.getImageData": {
+          "calls": 1,
+          "totalMs": 13.399999998509884,
+          "maxMs": 13.399999998509884
+        },
+        "gl.drawElements": {
+          "calls": 32,
+          "totalMs": 0.09999999403953552,
+          "maxMs": 0.09999999403953552
+        },
+        "gl.texImage2D": {
+          "calls": 1,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.texSubImage2D": {
+          "calls": 3,
+          "totalMs": 21.700000002980232,
+          "maxMs": 13.100000001490116
+        },
+        "gl.compileShader": {
+          "calls": 4,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "gl.linkProgram": {
+          "calls": 2,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "calls": 25,
+      "textures": 25
+    },
+    {
+      "tag": "contact-first",
+      "ms": 350,
+      "cpuMs": 182,
+      "costs": {
+        "native.pose": {
+          "calls": 9,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 18,
+          "maxMs": 7.200000002980232
+        },
+        "canvas.drawImage": {
+          "calls": 117,
+          "totalMs": 7.800000004470348,
+          "maxMs": 2.7999999970197678
+        },
+        "canvas.getImageData": {
+          "calls": 21,
+          "totalMs": 46.599999986588955,
+          "maxMs": 18.299999997019768
+        },
+        "gl.texSubImage2D": {
+          "calls": 2,
+          "totalMs": 31,
+          "maxMs": 19.799999997019768
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "calls": 23,
+      "textures": 27
+    },
+    {
+      "tag": "contact-warm",
+      "ms": 350,
+      "cpuMs": 24.600000001490116,
+      "costs": {
+        "native.pose": {
+          "calls": 7,
+          "totalMs": 0.8999999985098839,
+          "maxMs": 0.7999999970197678
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 8.299999997019768,
+          "maxMs": 3
+        },
+        "canvas.drawImage": {
+          "calls": 115,
+          "totalMs": 2.5,
+          "maxMs": 0.8999999985098839
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0.10000000149011612,
+          "maxMs": 0.10000000149011612
+        }
+      },
+      "calls": 23,
+      "textures": 27
+    },
+    {
+      "tag": "release",
+      "ms": 650,
+      "cpuMs": 52.399999998509884,
+      "costs": {
+        "native.pose": {
+          "calls": 10,
+          "totalMs": 0.7000000029802322,
+          "maxMs": 0.5
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 11.100000008940697,
+          "maxMs": 3.7000000029802322
+        },
+        "canvas.drawImage": {
+          "calls": 114,
+          "totalMs": 1.6999999955296516,
+          "maxMs": 1
+        },
+        "gl.drawElements": {
+          "calls": 36,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "calls": 29,
+      "textures": 27
+    },
+    {
+      "tag": "idle-return",
+      "ms": 799,
+      "cpuMs": 26.5,
+      "costs": {
+        "native.pose": {
+          "calls": 9,
+          "totalMs": 0.20000000298023224,
+          "maxMs": 0.10000000149011612
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 9.799999997019768,
+          "maxMs": 3.600000001490116
+        },
+        "canvas.drawImage": {
+          "calls": 114,
+          "totalMs": 0.9999999925494194,
+          "maxMs": 0.6999999955296516
+        },
+        "gl.drawElements": {
+          "calls": 35,
+          "totalMs": 0,
+          "maxMs": 0
+        }
+      },
+      "calls": 28,
+      "textures": 27
+    },
+    {
+      "tag": "contact-return",
+      "ms": 350,
+      "cpuMs": 24.69999999552965,
+      "costs": {
+        "native.pose": {
+          "calls": 12,
+          "totalMs": 0,
+          "maxMs": 0
+        },
+        "craft.deform": {
+          "calls": 7,
+          "totalMs": 7.599999979138374,
+          "maxMs": 3.399999998509884
+        },
+        "canvas.drawImage": {
+          "calls": 115,
+          "totalMs": 0.29999999701976776,
+          "maxMs": 0.10000000149011612
+        },
+        "gl.drawElements": {
+          "calls": 30,
+          "totalMs": 0.10000000149011612,
+          "maxMs": 0.10000000149011612
+        }
+      },
+      "calls": 23,
+      "textures": 27
+    }
+  ]
+}

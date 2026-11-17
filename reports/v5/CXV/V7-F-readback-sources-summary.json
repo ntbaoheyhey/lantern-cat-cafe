@@ -1,0 +1,89 @@
+{
+  "utc": "2026-11-17T17:38:46.019Z",
+  "source": "6f71118f104eb831b7e1496f701ab92ee5ae199e",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Frozen Mochi basic in the real scene at4x CPU. Instrumented canvas/WebGL submissions and CPU profile. First versus warmed same-pose cost attribution only; no FPS, GPU completion, ordinary progression or production claim. Readback stack collection adds overhead; use this run for source attribution only.",
+  "errors": [],
+  "traceReadbacks": true,
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "ended": "2026-11-17T17:38:51.912Z",
+  "pass": true,
+  "groups": [
+    {
+      "tag": "idle",
+      "readbacks": []
+    },
+    {
+      "tag": "anticipation-first",
+      "readbacks": [
+        {
+          "width": 896,
+          "height": 896,
+          "source": "    at pixels (http://127.0.0.1:6310/src/game/cardrpg/stage/opaque-pose-bounds.ts?t=1794936695619:16:17)",
+          "calls": 1,
+          "ms": 15
+        }
+      ]
+    },
+    {
+      "tag": "transition-first",
+      "readbacks": [
+        {
+          "width": 896,
+          "height": 896,
+          "source": "    at pixels (http://127.0.0.1:6310/src/game/cardrpg/stage/opaque-pose-bounds.ts?t=1794936695619:16:17)",
+          "calls": 1,
+          "ms": 14.100000001490116
+        }
+      ]
+    },
+    {
+      "tag": "contact-first",
+      "readbacks": [
+        {
+          "width": 1152,
+          "height": 1152,
+          "source": "    at pixels (http://127.0.0.1:6310/src/game/cardrpg/stage/opaque-pose-bounds.ts?t=1794936695619:16:17)",
+          "calls": 1,
+          "ms": 22.200000002980232
+        },
+        {
+          "width": 896,
+          "height": 896,
+          "source": "    at pixels (http://127.0.0.1:6310/src/game/cardrpg/stage/opaque-pose-bounds.ts?t=1794936695619:16:17)",
+          "calls": 1,
+          "ms": 11
+        },
+        {
+          "width": 96,
+          "height": 144,
+          "source": "    at http://127.0.0.1:6310/src/game/cardrpg/battle-v3/numbers.ts?t=1794934879403:78:17",
+          "calls": 19,
+          "ms": 29.30000001192093
+        }
+      ]
+    },
+    {
+      "tag": "contact-warm",
+      "readbacks": []
+    },
+    {
+      "tag": "release",
+      "readbacks": []
+    },
+    {
+      "tag": "idle-return",
+      "readbacks": []
+    },
+    {
+      "tag": "contact-return",
+      "readbacks": []
+    }
+  ],
+  "interpretation": "Stack instrumentation adds overhead; counts/attribution only. First contact:1152square Yarn pose +896square hero pose, and19number glyph reads96x144. Rejected whole-atlas batching remains slower; next experiment measures smaller glyph read rectangles using actual font metrics with conservative stroke padding."
+}
