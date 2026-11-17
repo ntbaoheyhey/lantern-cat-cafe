@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-17T02:39:45.010321+00:00",
+  "sourceSha": "4b4c41114ea9795820aa9204023e0954a9810f84",
+  "run": "1-1440x900",
+  "completed": "2026-11-17T02:34:04.207Z",
+  "receiptCount": 18,
+  "independentLocalRpcVerified": true,
+  "walletProofReady": true,
+  "walletProofScreenshotInspected": true,
+  "visualObservation": "Loaded11.75YARN, owned Paw Charm/Cafe Deed, transaction count15 and visible receipt labels. Battle hero set and primary controls visibly unclipped.",
+  "errors": [],
+  "failedRequests": [],
+  "failedAssertions": [
+    {
+      "name": "cold_visible_battle_transfer_under_8MB",
+      "pass": false,
+      "inFlight": 0
+    },
+    {
+      "name": "cold_scene_images_ready_transfer_under_8MB",
+      "pass": false,
+      "inFlight": 0,
+      "definition": "First observed visible battle with every contained DOM image loaded and naturalWidth>0; not an animation/FPS gate"
+    }
+  ],
+  "scope": "Local Anvil; public Fuji proof not claimed"
+}

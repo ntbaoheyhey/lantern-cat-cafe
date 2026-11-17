@@ -12,9 +12,10 @@ FIXTURE: owned production preview6200/API6201/Anvil6202 configured chain43113 (v
 Q1 ENDED02:05:57UTC: three paths,54successful local receipts;12JPEGs; transferFAIL; phone attributionQA4; desktop closed-audio flags false positives.
 Q2 PASS: typecheck/Supabase/Forge/icons/build. FAIL: root7presentation tests (QA5ART), manifest, typography (triage ongoing).
 Q2 metadata final:7942files/248741169bytes; endpoints and runtime/index preservation verified; completed evidence pushed.
-OPEN: QA2transfer/QA4phone/QA6manifest/QA7typography SHIP; QA5tests ART. QA1fixed52aaaba39; QA3fixed4b4c4111.
+OPEN: QA2transfer/QA4phone/QA7typography/QA8reserve SHIP; QA5tests ART. QA1fixed52aaaba39; QA3fixed4b4c4111; QA6fixed46e4768b.
 PUBLIC: reserve candidate unconfirmed; no public transaction. Vercel upload-size concern conditional on plan/packaging.
 CHECKPOINT: noSTOP/noQA pause/noactualDEPLOYED line at02:14UTC; inspect next checkpoint. Q2 timebox ends~03:23:48UTC.
 
 Prior reserve attempt1 stopped before mutation on incorrect31337 assumption; preserved Q2/reserve-fault-reproduction.json. Attempt2 verifies owned process, Anvil identity and local receipt before changing balance.
 LATEST SHIP source46e4768b: QA6 manifest fixed by own exact-script rerun; audio latency changed, runtime stays4b4c4111. New-tip source review Q2/open-findings-recheck-46e4768b.json.
+ART QA5 next: after desktop/phone run ends, stop owned production2 before switching scratch clone to5aa7c81aa83a4bcca7219dcec52607f97b80ebf7; run prepared tools/v4qa/recheck-art-tests.py detached nice15. Lockfile/web package dependencies unchanged; root scripts differ only. No ART verdict used.

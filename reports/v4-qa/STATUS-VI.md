@@ -1,4 +1,4 @@
-# V4 QA — 17/11/2026 02:20 UTC (09:20 Việt Nam)
+# V4 QA — 17/11/2026 02:41 UTC (09:41 Việt Nam)
 Ba viewport đều đi hết 7 chặng, mỗi lượt có 18 receipt Anvil được QA kiểm tra độc lập; không lỗi console/network.
 Battle đầu khoảng 2,6–3,1 giây; mốc receipt thưởng 95,6–102,2 giây. Máy dùng chung, chỉ tham khảo.
 Ba điểm cần xử lý: QA-2 bundle mới vẫn tải 29,54 MB so với ngân sách 8 MB; QA-5 có 7 test trình bày lỗi; QA-8 dự toán chỉ một ví có thể làm kẹt workshop.
