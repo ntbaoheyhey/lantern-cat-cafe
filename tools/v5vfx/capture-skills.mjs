@@ -9,10 +9,11 @@ import {runtimeEvidence} from './runtime-evidence.mjs';
 const root = process.cwd(), out = resolve(process.env.CXV_CAPTURE_OUT ?? 'work/v5/CXV/films/V1');
 const url = process.env.CXV_URL ?? 'http://127.0.0.1:6310';
 const reducedMotion = process.env.CXV_REDUCED === '1';
+const yarnPrototype=process.env.CXV_YARN_PROTOTYPE==='1';
 const ids = (process.env.CXV_SKILLS ?? 'mochi-1,mochi-2,mochi-4,soot-1,soot-2,soot-4,clover-1,clover-2,clover-4,panko-1,panko-2,panko-4').split(',');
 await mkdir(out, {recursive: true});
 const report = {started: new Date().toISOString(), sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8'}).trim(),
-  ...runtimeEvidence(), reducedMotion,
+  ...runtimeEvidence(), reducedMotion,yarnPrototype,
   method: '12 exact simulation timestamps per sheet; irregular sampling, not a real-time FPS measurement. Skill slot 2 uses the explicit archive fixture.', sheets: []};
 const browser = await chromium.launch({headless: true, args: ['--use-angle=metal']});
 try {
@@ -54,6 +55,11 @@ try {
       const s = window.__depthScene; cancelAnimationFrame(s.raf); s.ensureActors(s.view());
     }, {id, reducedMotion});
     await page.waitForFunction(() => window.__depthScene.ready && window.__depthScene.actors.size === window.__depthReview.battle.actors.length, null, {timeout: 90000});
+    if(yarnPrototype&&id==='enemy:yarn-giant')await page.evaluate(()=>{
+      const yarn=window.__depthScene.craftYarn,render=yarn.render.bind(yarn);yarn.tuning.width=860;yarn.tuning.height=268;
+      yarn.render=f=>{render(f);const p=Math.max(0,Math.min(1,(f.elapsed-1280)/480)),fade=1-p*p*(3-2*p);
+        for(const mesh of [yarn.wave,yarn.echo]){mesh.material.uniforms.uAlpha.value*=fade;mesh.visible&&=mesh.material.uniforms.uAlpha.value>.002;}};
+    });
     const info = await page.evaluate(() => ({impact: window.__depthReview.plan.beats[2].start, duration: window.__depthReview.plan.duration}));
     const times = process.env.CXV_TRAVEL_SAMPLES ? (info.impact > 500 ? [0, 850, 1000, 1050, 1099, 1100, 1133, 1160, 1280, 1550, 1760, 2199] :
       [0, 150, 249, 300, 349, 350, 383, 410, 470, 550, 750, 799]) : info.impact > 500 ? [0, 600, 850, 1000, 1099, 1100, 1133, 1160, 1280, 1550, 1760, 2199] :
@@ -70,6 +76,7 @@ try {
         label.textContent = `${id}${/-[23]$/.test(id) ? ' ARCHIVE' : ' LIVE'}${m.state.settings.reducedMotion ? ' REDUCED' : ''} · ${ms} ms · ${s.effects.timeline.audit.phase}`;
         return {...structuredClone(s.effects.timeline.audit), viewSkill: s.view().frame?.plan.skillId ?? null,
           craftAudit:structuredClone(id.startsWith('enemy:yarn-giant')?s.craftYarn?.audit:id.startsWith('enemy:binding-thread')?s.craftThread?.audit:undefined),
+          yarnFootprint:id==='enemy:yarn-giant'?{position:s.craftYarn.wave.position.toArray(),scale:s.craftYarn.wave.scale.toArray(),alpha:s.craftYarn.wave.material.uniforms.uAlpha.value,visible:s.craftYarn.wave.visible}:undefined,
           modelSkill: m.plan?.skillId ?? null, presentationId: m.plan?.presentationId ?? null,
           eventTypes: m.plan?.events.map(e => e.type), source: s.socket(m.plan.actorId, 'mainHand'),
           craftFootprint: (id.startsWith('mochi') ? [s.craftShield?.crest] : id.startsWith('clover') ? [s.craftHeal?.canopy] : id.startsWith('panko') ? s.craftOven?.doors : s.craft?.bodies)?.filter(Boolean).map(mesh=>({visible:mesh.visible,position:mesh.position.toArray(),scale:mesh.scale.toArray(),alpha:mesh.material.uniforms.uAlpha.value})),
