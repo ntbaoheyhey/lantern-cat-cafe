@@ -41,3 +41,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T23:38:01.872719+00:00 Clover: không tích hợp texture mới.36tests+typecheck+32cặp ảnh đạt kỹ thuật, nhưng đòn thường bị mask che hết và ulti cải thiện quá ít. Đã hoàn tác riêng phần thử nghiệm, giữ ảnh gốc/bằng chứng. Tiếp tục tìm nguồn sai khác pixel màn kết quả giảm chuyển động.
 
 2026-11-17T23:52:28.909684+00:00 V-E/F:36ảnh đo/18cặp chính xác,3ảnh ghép mới đãxem,0lỗi. Biến thể nền mới xuất hiện ở cảhai build và tồn tại sau1giây;chưa giải thích sai khác gốc. Giữ BLOCKED,không sửa ứngdụng. Wake15phút ACTIVE;V-A3 đãpush,capture-arrival giữnguyên. Tiếp tục đo startup.
+
+2026-11-17T23:59:19.887636+00:00 V-F:loại alpha mask.80mẫu đúng tuyệt đối nhưng cảhai cách đọc không tăng hiệu năng;thêm19823B gzip cho4nguồn ảnh nên không đáng. Không sửa ứngdụng. Bước kế:trận đầyđủ ở4xCPU để kiểm đoạncuối/chiêu cuối trên URLjudge.

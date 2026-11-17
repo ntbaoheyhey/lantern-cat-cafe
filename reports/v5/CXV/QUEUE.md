@@ -54,3 +54,5 @@
 
 2026-11-17T23:14:42.217522+00:00 - [x] V-F offline damage atlas rejected:160scene/320scaled exact but six production trials show no useful benefit with54987B added;12captures measured/4 reviewed;V7-F-offline-number-production.md. V-D remaining texture quality next.
 - V-D original Clover leaf study closed: native32pairs/36tests/TSC0 pass, runtime selection rejected for insufficient judge-visible improvement;V7-D-clover-leaf.md.
+
+- [x] V-F pose alpha mask rejected:80exact source exports,65bounds/rate exact,seven alternating blocks;RGBA expansion not useful/directbitaccess slower;no appedit. V7-F-pose-alpha.md.

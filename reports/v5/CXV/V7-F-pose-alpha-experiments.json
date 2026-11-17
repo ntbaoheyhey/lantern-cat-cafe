@@ -1,0 +1,4360 @@
+{
+  "utc": "2026-11-17T23:59:19.887636+00:00",
+  "decision": "REJECT_RUNTIME",
+  "runs": [
+    {
+      "utc": "2026-11-17T23:56:18.954Z",
+      "source": "a936e33280388b5fb76ec93458b751637e0e8536",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Fresh module caches in alternating isolated bounds runs; module parse/import measured separately and included in total. Mask atob and RGBA expansion remain in cold bounds work. Same posed geometry, threshold and contour algorithm. Eight exact URL variants cover four first-contact sources including original fallback. Source file bytes reverified before prototype; this is not a production asset-integrity design or general FPS result.",
+      "exportReportSha256": "08a4da1e8b304870aad41330313fe83ab2c69f991ed75852287106391b63f34d",
+      "selected": [
+        "/units/binding-thread/poses/K4.avif",
+        "/units/binding-thread/poses/K4.webp",
+        "/units/mochi/poses/K1.avif",
+        "/units/mochi/poses/K1.webp",
+        "/units/mochi/poses/K2.avif",
+        "/units/mochi/poses/K2.webp",
+        "/units/yarn-giant/poses/K4.avif",
+        "/units/yarn-giant/poses/K4.webp"
+      ],
+      "packaging": {
+        "raw": 251105,
+        "gzip": 19823,
+        "brotli": 8986
+      },
+      "sources": {
+        "baseline": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/baseline.mjs",
+          "sha256": "35e555a403dd86b00e0b9c604f91d351a9611e8a42bc10d963da5d231c591e93",
+          "bytes": 9236
+        },
+        "mask": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/mask.mjs",
+          "sha256": "76794160ee1ba74655f6afff3568f906b7b097a905c91ccf0dbfcd8b263ee9f6",
+          "bytes": 261441
+        },
+        "missing": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/missing.mjs",
+          "sha256": "db022385ac765c5ab17c8c4ab87a928ce5c820df98e4f78261a821593a87bba8",
+          "bytes": 10185
+        },
+        "wrongSize": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/wrongSize.mjs",
+          "sha256": "0ec4a0121daa38f5db1026d6ba7d595fa1d2a67054f08b0df01fccae7b8b4271",
+          "bytes": 261441
+        },
+        "truncated": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/truncated.mjs",
+          "sha256": "f4ddb3fb417d51ab6d6534ec3149a12897386cdf1434eb5b5405fe9d4616c193",
+          "bytes": 11985
+        }
+      },
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "runs": [
+            {
+              "rate": 1,
+              "cases": 30,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 2.5,
+                  "boundsMs": 85.8999999910593,
+                  "totalMs": 88.3999999910593,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 1.300000011920929,
+                  "boundsMs": 72.59999999403954,
+                  "totalMs": 73.90000000596046,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 87.90000000596046,
+                  "totalMs": 89,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 1.3999999910593033,
+                  "boundsMs": 69.5,
+                  "totalMs": 70.8999999910593,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 82.5,
+                  "totalMs": 83.20000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 0.7999999970197678,
+                  "boundsMs": 75.40000000596046,
+                  "totalMs": 76.20000000298023,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 1.2999999970197678,
+                  "boundsMs": 72.90000000596046,
+                  "totalMs": 74.20000000298023,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 0.800000011920929,
+                  "boundsMs": 70.29999999701977,
+                  "totalMs": 71.1000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 86.8999999910593,
+                  "totalMs": 87.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 1.300000011920929,
+                  "boundsMs": 79.29999999701977,
+                  "totalMs": 80.6000000089407,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 1.1000000089406967,
+                  "boundsMs": 78.69999998807907,
+                  "totalMs": 79.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 74.5,
+                  "totalMs": 75.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 1.2999999970197678,
+                  "boundsMs": 69.6000000089407,
+                  "totalMs": 70.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 1.9000000059604645,
+                  "boundsMs": 77.5,
+                  "totalMs": 79.40000000596046,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 92.8999999910593,
+                  "totalMs": 93.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 71.79999999701977,
+                  "totalMs": 73,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 1.1000000089406967,
+                  "boundsMs": 77.5,
+                  "totalMs": 78.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 74.5,
+                  "totalMs": 75.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440
+                },
+                "mask": {
+                  "setupMs": 1.2999999970197678,
+                  "boundsMs": 77.5,
+                  "totalMs": 79.40000000596046,
+                  "reads": 28,
+                  "readPixels": 5266373
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 920.2771748629402,
+                    "y": 878.2224533656465,
+                    "width": 583.7425719880141,
+                    "height": 578.0125402009103
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 936.1711545049644,
+                    "y": 879.6673607076087,
+                    "width": 433.4722114094383,
+                    "height": 580.0587062046285
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.7412860987927
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 940.5058762255165,
+                    "y": 878.2224533656465,
+                    "width": 528.8361085315872,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 889.4826709157209,
+                    "y": 234.72087989925438,
+                    "width": 634.4820027102011,
+                    "height": 597.0107458786119
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 816.0603169070323,
+                    "y": 233.2791195054565,
+                    "width": 517.5919816792707,
+                    "height": 585.5019924682513
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 477.2331110717315,
+                    "y": 233.2791195054565,
+                    "width": 911.2060861488486,
+                    "height": 590.2106383152833
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 477.0377396671687,
+                    "y": 233.2791195054565,
+                    "width": 911.4014575534114,
+                    "height": 590.3436375708158
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 892.4736199191287,
+                    "y": 236.16264029305228,
+                    "width": 514.708466396611,
+                    "height": 590.3436365513832
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1376.972401269013,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1436.3108409365484,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1535.9174162494323,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1517.5782260723583,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1414.2346743558232,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -755.7356845707975,
+                    "y": 1131.7509168704157,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673887
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -852.9666310878465,
+                    "y": 1133.252750611247,
+                    "width": 727.1323720992632,
+                    "height": 608.0630337367722
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -974.7280248946583,
+                    "y": 1130.2490831295845,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -899.6363378530937,
+                    "y": 1133.252750611247,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104855
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -737.6549462065756,
+                    "y": 1131.7509168704157,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489282
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1284.6467058828814,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1523.9226388356503,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1486.6013134878244,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596432,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1458.4085681858155,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1339.7682413701614,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            },
+            {
+              "rate": 4,
+              "cases": 30,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 3.5,
+                  "boundsMs": 262.3999999910593,
+                  "totalMs": 265.8999999910593,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 4,
+                  "boundsMs": 273.29999999701977,
+                  "totalMs": 277.29999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 4.299999997019768,
+                  "boundsMs": 295.09999999403954,
+                  "totalMs": 299.3999999910593,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 5.399999991059303,
+                  "boundsMs": 263,
+                  "totalMs": 268.3999999910593,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 5.200000002980232,
+                  "boundsMs": 260.40000000596046,
+                  "totalMs": 265.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 261.40000000596046,
+                  "totalMs": 265.30000001192093,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 3.1000000089406967,
+                  "boundsMs": 265.59999999403954,
+                  "totalMs": 268.70000000298023,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 292.70000000298023,
+                  "totalMs": 296.5,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 5.600000008940697,
+                  "boundsMs": 261.19999998807907,
+                  "totalMs": 266.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 261.29999999701977,
+                  "totalMs": 265.20000000298023,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 3.4000000059604645,
+                  "boundsMs": 266.8999999910593,
+                  "totalMs": 270.29999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 2.7000000029802322,
+                  "boundsMs": 260.59999999403954,
+                  "totalMs": 263.29999999701977,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 3.4000000059604645,
+                  "boundsMs": 314.90000000596046,
+                  "totalMs": 318.30000001192093,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 4.799999997019768,
+                  "boundsMs": 259.30000001192093,
+                  "totalMs": 264.1000000089407,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 4.9000000059604645,
+                  "boundsMs": 259.79999999701977,
+                  "totalMs": 264.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 4,
+                  "boundsMs": 256.6000000089407,
+                  "totalMs": 260.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 3.8999999910593033,
+                  "boundsMs": 258.1000000089407,
+                  "totalMs": 262,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "d048d57147363e9f9976dad6b0bb23e71c558a2184106043d147d74ff4310f5b"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 262.3999999910593,
+                  "totalMs": 266.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5766440
+                },
+                "mask": {
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 265.59999999403954,
+                  "totalMs": 268.70000000298023,
+                  "reads": 28,
+                  "readPixels": 5266373
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 920.2771748629402,
+                    "y": 878.2224533656465,
+                    "width": 583.7425719880141,
+                    "height": 578.0125402009103
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 936.1711545049644,
+                    "y": 879.6673607076087,
+                    "width": 433.4722114094383,
+                    "height": 580.0587062046285
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.7412860987927
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 940.5058762255165,
+                    "y": 878.2224533656465,
+                    "width": 528.8361085315872,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 889.4826709157209,
+                    "y": 234.72087989925438,
+                    "width": 634.4820027102011,
+                    "height": 597.0107458786119
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 816.0603169070323,
+                    "y": 233.2791195054565,
+                    "width": 517.5919816792707,
+                    "height": 585.5019924682513
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 477.2331110717315,
+                    "y": 233.2791195054565,
+                    "width": 911.2060861488486,
+                    "height": 590.2106383152833
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 477.0377396671687,
+                    "y": 233.2791195054565,
+                    "width": 911.4014575534114,
+                    "height": 590.3436375708158
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 892.4736199191287,
+                    "y": 236.16264029305228,
+                    "width": 514.708466396611,
+                    "height": 590.3436365513832
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1376.972401269013,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1436.3108409365484,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1535.9174162494323,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1517.5782260723583,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1414.2346743558232,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -755.7356845707975,
+                    "y": 1131.7509168704157,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673887
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -852.9666310878465,
+                    "y": 1133.252750611247,
+                    "width": 727.1323720992632,
+                    "height": 608.0630337367722
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -974.7280248946583,
+                    "y": 1130.2490831295845,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -899.6363378530937,
+                    "y": 1133.252750611247,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104855
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -737.6549462065756,
+                    "y": 1131.7509168704157,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489282
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1284.6467058828814,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1523.9226388356503,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1486.6013134878244,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596432,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1458.4085681858155,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1339.7682413701614,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": [],
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "runs": [
+            {
+              "rate": 1,
+              "cases": 35,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 0.8999999910593033,
+                  "boundsMs": 93.80000001192093,
+                  "totalMs": 94.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 3.7000000029802322,
+                  "boundsMs": 75.5,
+                  "totalMs": 79.20000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 2.4000000059604645,
+                  "boundsMs": 76.8999999910593,
+                  "totalMs": 79.29999999701977,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 98.09999999403954,
+                  "totalMs": 98.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 0.8999999910593033,
+                  "boundsMs": 74.6000000089407,
+                  "totalMs": 75.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 1,
+                  "boundsMs": 77.40000000596046,
+                  "totalMs": 78.40000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 75.5,
+                  "totalMs": 76.59999999403954,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 1.7000000029802322,
+                  "boundsMs": 79.20000000298023,
+                  "totalMs": 80.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 89.6000000089407,
+                  "totalMs": 90.30000001192093,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 77.20000000298023,
+                  "totalMs": 78.29999999701977,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 0.800000011920929,
+                  "boundsMs": 79.59999999403954,
+                  "totalMs": 80.40000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 0.9000000059604645,
+                  "boundsMs": 71.59999999403954,
+                  "totalMs": 72.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 76.6000000089407,
+                  "totalMs": 77.30000001192093,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 101.59999999403954,
+                  "totalMs": 102.69999998807907,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 72.80000001192093,
+                  "totalMs": 73.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 1.3999999910593033,
+                  "boundsMs": 81.20000000298023,
+                  "totalMs": 82.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 0.7999999970197678,
+                  "boundsMs": 78.40000000596046,
+                  "totalMs": 79.20000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 0.8999999910593033,
+                  "boundsMs": 79.20000000298023,
+                  "totalMs": 80.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5734377
+                },
+                "mask": {
+                  "setupMs": 1.0999999940395355,
+                  "boundsMs": 77.20000000298023,
+                  "totalMs": 79.20000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -71.9312539359338,
+                    "y": 313.2014676164792,
+                    "width": 1079.413500130459,
+                    "height": 981.9028308783841
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 58.323299976807334,
+                    "y": 313.2014676164792,
+                    "width": 1237.3453002905903,
+                    "height": 973.761240181376
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -607.2953909432599,
+                    "y": 313.2014676164792,
+                    "width": 1840.6534278741865,
+                    "height": 980.8612090963679
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -220.46051180950633,
+                    "y": 313.2014676164792,
+                    "width": 1610.009252302214,
+                    "height": 980.8360931056998
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 77.54677642259782,
+                    "y": 313.2014676164792,
+                    "width": 795.3711801546576,
+                    "height": 961.7551564268226
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 293.2509168704156,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 293.2509168704156,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783478
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 293.2509168704156,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900672
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 293.2509168704156,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 294.75275061124694,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912112
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 1170.7509168704157,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 1170.7509168704157,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783479
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 1170.7509168704157,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900671
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 1170.7509168704157,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 1172.252750611247,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912113
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -703.7356845707975,
+                    "y": 878.2509168704156,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673886
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -800.9666310878465,
+                    "y": 879.7527506112469,
+                    "width": 727.1323720992632,
+                    "height": 608.063033736772
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -922.7280248946583,
+                    "y": 876.7490831295843,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -847.6363378530937,
+                    "y": 879.7527506112469,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104853
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -685.6549462065756,
+                    "y": 878.2509168704156,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489281
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1411.6390679356796,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1470.977507603215,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1570.5840829160989,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1552.2448927390249,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1448.9013410224898,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1353.9800392162147,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1593.2559721689836,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1555.934646821158,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596434,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1527.7419015191488,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1409.1015747034946,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            },
+            {
+              "rate": 4,
+              "cases": 35,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 4.700000002980232,
+                  "boundsMs": 278.20000000298023,
+                  "totalMs": 282.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 3.5,
+                  "boundsMs": 317.20000000298023,
+                  "totalMs": 320.70000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 6,
+                  "boundsMs": 276.59999999403954,
+                  "totalMs": 282.59999999403954,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 3.5999999940395355,
+                  "boundsMs": 282.79999999701977,
+                  "totalMs": 286.3999999910593,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 3.2000000029802322,
+                  "boundsMs": 277.29999999701977,
+                  "totalMs": 280.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 3.6000000089406967,
+                  "boundsMs": 312.79999999701977,
+                  "totalMs": 316.40000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 4.4000000059604645,
+                  "boundsMs": 282.20000000298023,
+                  "totalMs": 286.6000000089407,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 4.4000000059604645,
+                  "boundsMs": 279.09999999403954,
+                  "totalMs": 283.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 4.5,
+                  "boundsMs": 281.09999999403954,
+                  "totalMs": 285.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 281.6000000089407,
+                  "totalMs": 285.40000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 277.59999999403954,
+                  "totalMs": 281.3999999910593,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 3.5999999940395355,
+                  "boundsMs": 321.70000000298023,
+                  "totalMs": 325.29999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 7,
+                  "boundsMs": 295.20000000298023,
+                  "totalMs": 302.20000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 283.5,
+                  "totalMs": 287.29999999701977,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 2.6000000089406967,
+                  "boundsMs": 287,
+                  "totalMs": 289.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 3,
+                  "boundsMs": 284.6000000089407,
+                  "totalMs": 287.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 4.799999997019768,
+                  "boundsMs": 308.70000000298023,
+                  "totalMs": 313.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "0e522cea76b415779fc17527e1908c61871aab1c0713b3eda4549c09a60d835f"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 4.4000000059604645,
+                  "boundsMs": 281.09999999403954,
+                  "totalMs": 285.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5734377
+                },
+                "mask": {
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 282.20000000298023,
+                  "totalMs": 286.6000000089407,
+                  "reads": 26,
+                  "readPixels": 4985950
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -71.9312539359338,
+                    "y": 313.2014676164792,
+                    "width": 1079.413500130459,
+                    "height": 981.9028308783841
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 58.323299976807334,
+                    "y": 313.2014676164792,
+                    "width": 1237.3453002905903,
+                    "height": 973.761240181376
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -607.2953909432599,
+                    "y": 313.2014676164792,
+                    "width": 1840.6534278741865,
+                    "height": 980.8612090963679
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -220.46051180950633,
+                    "y": 313.2014676164792,
+                    "width": 1610.009252302214,
+                    "height": 980.8360931056998
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 77.54677642259782,
+                    "y": 313.2014676164792,
+                    "width": 795.3711801546576,
+                    "height": 961.7551564268226
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 293.2509168704156,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 293.2509168704156,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783478
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 293.2509168704156,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900672
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 293.2509168704156,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 294.75275061124694,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912112
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 1170.7509168704157,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 1170.7509168704157,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783479
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 1170.7509168704157,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900671
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 1170.7509168704157,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 1172.252750611247,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912113
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -703.7356845707975,
+                    "y": 878.2509168704156,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673886
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -800.9666310878465,
+                    "y": 879.7527506112469,
+                    "width": 727.1323720992632,
+                    "height": 608.063033736772
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -922.7280248946583,
+                    "y": 876.7490831295843,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -847.6363378530937,
+                    "y": 879.7527506112469,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104853
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -685.6549462065756,
+                    "y": 878.2509168704156,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489281
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1411.6390679356796,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1470.977507603215,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1570.5840829160989,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1552.2448927390249,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1448.9013410224898,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1353.9800392162147,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1593.2559721689836,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1555.934646821158,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596434,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1527.7419015191488,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1409.1015747034946,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": [],
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ]
+        }
+      ],
+      "pass": true,
+      "ended": "2026-11-17T23:56:36.911Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold/report.json",
+        "sha256": "50a9fcddb9dcb531914c2859e48b918ee4ea98a1866d860a6f8e01549c728a2e"
+      }
+    },
+    {
+      "utc": "2026-11-17T23:57:18.590Z",
+      "source": "a936e33280388b5fb76ec93458b751637e0e8536",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runtimeUntrackedSha256": {},
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "method": "Fresh module caches in alternating isolated bounds runs; module parse/import measured separately and included in total. Mask atob and packed-byte initialization remain in cold bounds work. Same posed geometry, threshold and contour algorithm. Eight exact URL variants cover four first-contact sources including original fallback. Source file bytes reverified before prototype; this is not a production asset-integrity design or general FPS result.",
+      "exportReportSha256": "08a4da1e8b304870aad41330313fe83ab2c69f991ed75852287106391b63f34d",
+      "selected": [
+        "/units/binding-thread/poses/K4.avif",
+        "/units/binding-thread/poses/K4.webp",
+        "/units/mochi/poses/K1.avif",
+        "/units/mochi/poses/K1.webp",
+        "/units/mochi/poses/K2.avif",
+        "/units/mochi/poses/K2.webp",
+        "/units/yarn-giant/poses/K4.avif",
+        "/units/yarn-giant/poses/K4.webp"
+      ],
+      "packaging": {
+        "raw": 251105,
+        "gzip": 19823,
+        "brotli": 8986
+      },
+      "sources": {
+        "baseline": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/baseline.mjs",
+          "sha256": "35e555a403dd86b00e0b9c604f91d351a9611e8a42bc10d963da5d231c591e93",
+          "bytes": 9236
+        },
+        "mask": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/mask.mjs",
+          "sha256": "53a35c110ec21528eaf7214c846128091e16a21b7354e57d7bd42a770a01dbad",
+          "bytes": 261557
+        },
+        "missing": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/missing.mjs",
+          "sha256": "8cd790d0d2db7efaf512d39ee650ab4fe28fd6735f4afadfea80a37a6b2c6b34",
+          "bytes": 10301
+        },
+        "wrongSize": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/wrongSize.mjs",
+          "sha256": "ce3e5d493cb9b880749b512bb0543369153dc2c991b772d0db598b77cd8afb19",
+          "bytes": 261557
+        },
+        "truncated": {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/truncated.mjs",
+          "sha256": "63959d4c9d75df9547191365a2bf3fea1708b72719fd461c9b044146bc0ded23",
+          "bytes": 12101
+        }
+      },
+      "fixtures": [
+        {
+          "fixture": "wave3",
+          "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "runs": [
+            {
+              "rate": 1,
+              "cases": 30,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 2.3999999910593033,
+                  "boundsMs": 79.29999999701977,
+                  "totalMs": 81.69999998807907,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 1.2999999970197678,
+                  "boundsMs": 87.5,
+                  "totalMs": 88.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 1.2999999970197678,
+                  "boundsMs": 88.09999999403954,
+                  "totalMs": 89.3999999910593,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 0.6000000089406967,
+                  "boundsMs": 89.29999999701977,
+                  "totalMs": 89.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 0.7999999970197678,
+                  "boundsMs": 70.20000000298023,
+                  "totalMs": 71,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 1.1000000089406967,
+                  "boundsMs": 81.3999999910593,
+                  "totalMs": 82.5,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 89.09999999403954,
+                  "totalMs": 90.29999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 0.9000000059604645,
+                  "boundsMs": 75.79999999701977,
+                  "totalMs": 76.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 0.9000000059604645,
+                  "boundsMs": 87,
+                  "totalMs": 87.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 87.29999999701977,
+                  "totalMs": 88.5,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 1,
+                  "boundsMs": 75.5,
+                  "totalMs": 76.5,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 75.20000000298023,
+                  "totalMs": 75.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 0.800000011920929,
+                  "boundsMs": 88.09999999403954,
+                  "totalMs": 88.90000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 1.7999999970197678,
+                  "boundsMs": 100,
+                  "totalMs": 101.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 0.7999999970197678,
+                  "boundsMs": 79.40000000596046,
+                  "totalMs": 80.20000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 1,
+                  "boundsMs": 81.1000000089407,
+                  "totalMs": 82.1000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 0.699999988079071,
+                  "boundsMs": 73.90000000596046,
+                  "totalMs": 74.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 0.800000011920929,
+                  "boundsMs": 79.29999999701977,
+                  "totalMs": 81.69999998807907,
+                  "reads": 30,
+                  "readPixels": 5766440
+                },
+                "mask": {
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 87.5,
+                  "totalMs": 88.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 920.2771748629402,
+                    "y": 878.2224533656465,
+                    "width": 583.7425719880141,
+                    "height": 578.0125402009103
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 936.1711545049644,
+                    "y": 879.6673607076087,
+                    "width": 433.4722114094383,
+                    "height": 580.0587062046285
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.7412860987927
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 940.5058762255165,
+                    "y": 878.2224533656465,
+                    "width": 528.8361085315872,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 889.4826709157209,
+                    "y": 234.72087989925438,
+                    "width": 634.4820027102011,
+                    "height": 597.0107458786119
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 816.0603169070323,
+                    "y": 233.2791195054565,
+                    "width": 517.5919816792707,
+                    "height": 585.5019924682513
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 477.2331110717315,
+                    "y": 233.2791195054565,
+                    "width": 911.2060861488486,
+                    "height": 590.2106383152833
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 477.0377396671687,
+                    "y": 233.2791195054565,
+                    "width": 911.4014575534114,
+                    "height": 590.3436375708158
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 892.4736199191287,
+                    "y": 236.16264029305228,
+                    "width": 514.708466396611,
+                    "height": 590.3436365513832
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -755.7356845707975,
+                    "y": 1131.7509168704157,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673887
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -852.9666310878465,
+                    "y": 1133.252750611247,
+                    "width": 727.1323720992632,
+                    "height": 608.0630337367722
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -974.7280248946583,
+                    "y": 1130.2490831295845,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -899.6363378530937,
+                    "y": 1133.252750611247,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104855
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -737.6549462065756,
+                    "y": 1131.7509168704157,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489282
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1376.972401269013,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1436.3108409365484,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1535.9174162494323,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1517.5782260723583,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1414.2346743558232,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1284.6467058828814,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1523.9226388356503,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1486.6013134878244,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596432,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1458.4085681858155,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1339.7682413701614,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            },
+            {
+              "rate": 4,
+              "cases": 30,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 5,
+                  "boundsMs": 314,
+                  "totalMs": 319,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 3.8999999910593033,
+                  "boundsMs": 296.29999999701977,
+                  "totalMs": 300.19999998807907,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 5.600000008940697,
+                  "boundsMs": 285.19999998807907,
+                  "totalMs": 290.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 3.8999999910593033,
+                  "boundsMs": 273.90000000596046,
+                  "totalMs": 277.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 3.7000000029802322,
+                  "boundsMs": 262.69999998807907,
+                  "totalMs": 266.3999999910593,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 3.0999999940395355,
+                  "boundsMs": 319.5,
+                  "totalMs": 322.59999999403954,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 4.9000000059604645,
+                  "boundsMs": 279.09999999403954,
+                  "totalMs": 284,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 5.0999999940395355,
+                  "boundsMs": 266.09999999403954,
+                  "totalMs": 271.19999998807907,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 3.2000000029802322,
+                  "boundsMs": 269.90000000596046,
+                  "totalMs": 273.1000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 3,
+                  "boundsMs": 287,
+                  "totalMs": 290,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 293.70000000298023,
+                  "totalMs": 297.6000000089407,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 4.5,
+                  "boundsMs": 341.1000000089407,
+                  "totalMs": 345.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 7.5999999940395355,
+                  "boundsMs": 310.09999999403954,
+                  "totalMs": 317.69999998807907,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 4.4000000059604645,
+                  "boundsMs": 382.3999999910593,
+                  "totalMs": 386.79999999701977,
+                  "reads": 28,
+                  "readPixels": 5266373,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 5.700000002980232,
+                  "boundsMs": 315,
+                  "totalMs": 320.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 4.700000002980232,
+                  "boundsMs": 311.79999999701977,
+                  "totalMs": 316.5,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 3.7999999970197678,
+                  "boundsMs": 303.6000000089407,
+                  "totalMs": 307.40000000596046,
+                  "reads": 30,
+                  "readPixels": 5766440,
+                  "boundsSha256": "7abdcd24a69aa0e749d77db19aadb5127982d3c8be244933518f632349df8bcf"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 4.5,
+                  "boundsMs": 273.90000000596046,
+                  "totalMs": 277.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5766440
+                },
+                "mask": {
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 293.70000000298023,
+                  "totalMs": 297.6000000089407,
+                  "reads": 28,
+                  "readPixels": 5266373
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 920.2771748629402,
+                    "y": 878.2224533656465,
+                    "width": 583.7425719880141,
+                    "height": 578.0125402009103
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 936.1711545049644,
+                    "y": 879.6673607076087,
+                    "width": 433.4722114094383,
+                    "height": 580.0587062046285
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.7412860987927
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 752.6679350015945,
+                    "y": 878.2224533656465,
+                    "width": 781.6948630789987,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-4-needle-moth",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 940.5058762255165,
+                    "y": 878.2224533656465,
+                    "width": 528.8361085315872,
+                    "height": 585.6617525498593
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 889.4826709157209,
+                    "y": 234.72087989925438,
+                    "width": 634.4820027102011,
+                    "height": 597.0107458786119
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 816.0603169070323,
+                    "y": 233.2791195054565,
+                    "width": 517.5919816792707,
+                    "height": 585.5019924682513
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 477.2331110717315,
+                    "y": 233.2791195054565,
+                    "width": 911.2060861488486,
+                    "height": 590.2106383152833
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 477.0377396671687,
+                    "y": 233.2791195054565,
+                    "width": 911.4014575534114,
+                    "height": 590.3436375708158
+                  }
+                },
+                {
+                  "actorId": "foe-5-teacup-healer",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 892.4736199191287,
+                    "y": 236.16264029305228,
+                    "width": 514.708466396611,
+                    "height": 590.3436365513832
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -755.7356845707975,
+                    "y": 1131.7509168704157,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673887
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -852.9666310878465,
+                    "y": 1133.252750611247,
+                    "width": 727.1323720992632,
+                    "height": 608.0630337367722
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -974.7280248946583,
+                    "y": 1130.2490831295845,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -899.6363378530937,
+                    "y": 1133.252750611247,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104855
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -737.6549462065756,
+                    "y": 1131.7509168704157,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489282
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1376.972401269013,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1436.3108409365484,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1535.9174162494323,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1517.5782260723583,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1414.2346743558232,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1284.6467058828814,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1523.9226388356503,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1486.6013134878244,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596432,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1458.4085681858155,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1339.7682413701614,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": [],
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ]
+        },
+        {
+          "fixture": "boss",
+          "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "runs": [
+            {
+              "rate": 1,
+              "cases": 35,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 3.4000000059604645,
+                  "boundsMs": 94.3999999910593,
+                  "totalMs": 97.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 2.1000000089406967,
+                  "boundsMs": 90.79999999701977,
+                  "totalMs": 92.90000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 1,
+                  "boundsMs": 85.40000000596046,
+                  "totalMs": 86.40000000596046,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 72.40000000596046,
+                  "totalMs": 73.1000000089407,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 0.699999988079071,
+                  "boundsMs": 75.40000000596046,
+                  "totalMs": 76.09999999403954,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 97.8999999910593,
+                  "totalMs": 99.09999999403954,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 88,
+                  "totalMs": 89.20000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 1,
+                  "boundsMs": 74.70000000298023,
+                  "totalMs": 75.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 1.2000000029802322,
+                  "boundsMs": 76.5,
+                  "totalMs": 77.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 0.7999999970197678,
+                  "boundsMs": 83.20000000298023,
+                  "totalMs": 84,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 1,
+                  "boundsMs": 89.3999999910593,
+                  "totalMs": 90.3999999910593,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 90.40000000596046,
+                  "totalMs": 91.1000000089407,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 79.90000000596046,
+                  "totalMs": 80.6000000089407,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 1,
+                  "boundsMs": 84.20000000298023,
+                  "totalMs": 85.20000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 71.5,
+                  "totalMs": 72.20000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 0.9000000059604645,
+                  "boundsMs": 75.90000000596046,
+                  "totalMs": 76.80000001192093,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 0.8999999910593033,
+                  "boundsMs": 95.90000000596046,
+                  "totalMs": 96.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 0.7000000029802322,
+                  "boundsMs": 76.5,
+                  "totalMs": 77.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377
+                },
+                "mask": {
+                  "setupMs": 1,
+                  "boundsMs": 88,
+                  "totalMs": 89.20000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 293.2509168704156,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 293.2509168704156,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783478
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 293.2509168704156,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900672
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 293.2509168704156,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 294.75275061124694,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912112
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 1170.7509168704157,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 1170.7509168704157,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783479
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 1170.7509168704157,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900671
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 1170.7509168704157,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 1172.252750611247,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912113
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -71.9312539359338,
+                    "y": 313.2014676164792,
+                    "width": 1079.413500130459,
+                    "height": 981.9028308783841
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 58.323299976807334,
+                    "y": 313.2014676164792,
+                    "width": 1237.3453002905903,
+                    "height": 973.761240181376
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -607.2953909432599,
+                    "y": 313.2014676164792,
+                    "width": 1840.6534278741865,
+                    "height": 980.8612090963679
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -220.46051180950633,
+                    "y": 313.2014676164792,
+                    "width": 1610.009252302214,
+                    "height": 980.8360931056998
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 77.54677642259782,
+                    "y": 313.2014676164792,
+                    "width": 795.3711801546576,
+                    "height": 961.7551564268226
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -703.7356845707975,
+                    "y": 878.2509168704156,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673886
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -800.9666310878465,
+                    "y": 879.7527506112469,
+                    "width": 727.1323720992632,
+                    "height": 608.063033736772
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -922.7280248946583,
+                    "y": 876.7490831295843,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -847.6363378530937,
+                    "y": 879.7527506112469,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104853
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -685.6549462065756,
+                    "y": 878.2509168704156,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489281
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1411.6390679356796,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1470.977507603215,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1570.5840829160989,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1552.2448927390249,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1448.9013410224898,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1353.9800392162147,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1593.2559721689836,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1555.934646821158,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596434,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1527.7419015191488,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1409.1015747034946,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            },
+            {
+              "rate": 4,
+              "cases": 35,
+              "exact": true,
+              "runs": [
+                {
+                  "mode": "baseline",
+                  "block": 0,
+                  "setupMs": 4.299999997019768,
+                  "boundsMs": 283.29999999701977,
+                  "totalMs": 287.59999999403954,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 0,
+                  "setupMs": 3.800000011920929,
+                  "boundsMs": 310.29999999701977,
+                  "totalMs": 314.1000000089407,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 1,
+                  "setupMs": 5.100000008940697,
+                  "boundsMs": 331.5,
+                  "totalMs": 336.6000000089407,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 1,
+                  "setupMs": 5.199999988079071,
+                  "boundsMs": 297.70000000298023,
+                  "totalMs": 302.8999999910593,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 2,
+                  "setupMs": 3.6000000089406967,
+                  "boundsMs": 324.20000000298023,
+                  "totalMs": 327.80000001192093,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 2,
+                  "setupMs": 4,
+                  "boundsMs": 313.3999999910593,
+                  "totalMs": 317.3999999910593,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 3,
+                  "setupMs": 3.5,
+                  "boundsMs": 332.59999999403954,
+                  "totalMs": 336.09999999403954,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 3,
+                  "setupMs": 4.4000000059604645,
+                  "boundsMs": 296.3999999910593,
+                  "totalMs": 300.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 4,
+                  "setupMs": 3.5,
+                  "boundsMs": 294,
+                  "totalMs": 297.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 4,
+                  "setupMs": 4,
+                  "boundsMs": 312.29999999701977,
+                  "totalMs": 316.29999999701977,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 5,
+                  "setupMs": 3.4000000059604645,
+                  "boundsMs": 358.09999999403954,
+                  "totalMs": 361.5,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 5,
+                  "setupMs": 4.700000002980232,
+                  "boundsMs": 271,
+                  "totalMs": 275.70000000298023,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "baseline",
+                  "block": 6,
+                  "setupMs": 4.0999999940395355,
+                  "boundsMs": 279.70000000298023,
+                  "totalMs": 283.79999999701977,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "mask",
+                  "block": 6,
+                  "setupMs": 2.2000000029802322,
+                  "boundsMs": 301.5,
+                  "totalMs": 303.70000000298023,
+                  "reads": 26,
+                  "readPixels": 4985950,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                }
+              ],
+              "fallbacks": [
+                {
+                  "mode": "missing",
+                  "block": 0,
+                  "setupMs": 3.9000000059604645,
+                  "boundsMs": 284.09999999403954,
+                  "totalMs": 288,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "wrongSize",
+                  "block": 0,
+                  "setupMs": 2.1000000089406967,
+                  "boundsMs": 324.8999999910593,
+                  "totalMs": 327,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                },
+                {
+                  "mode": "truncated",
+                  "block": 0,
+                  "setupMs": 6.4000000059604645,
+                  "boundsMs": 276.09999999403954,
+                  "totalMs": 282.5,
+                  "reads": 30,
+                  "readPixels": 5734377,
+                  "boundsSha256": "4c056aa79366b394d5737c44f4763c3186cd0c0a2cdfa87b49d3464e444db0e5"
+                }
+              ],
+              "medians": {
+                "baseline": {
+                  "setupMs": 4.299999997019768,
+                  "boundsMs": 294,
+                  "totalMs": 297.5,
+                  "reads": 30,
+                  "readPixels": 5734377
+                },
+                "mask": {
+                  "setupMs": 3.800000011920929,
+                  "boundsMs": 313.3999999910593,
+                  "totalMs": 317.3999999910593,
+                  "reads": 26,
+                  "readPixels": 4985950
+                }
+              },
+              "referenceBounds": [
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 293.2509168704156,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 293.2509168704156,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783478
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 293.2509168704156,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900672
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 293.2509168704156,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-1-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 294.75275061124694,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912112
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K0",
+                  "bounds": {
+                    "x": 1099.0169280708617,
+                    "y": 1170.7509168704157,
+                    "width": 407.7330590347826,
+                    "height": 610.313061757156
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 1164.3318887422463,
+                    "y": 1170.7509168704157,
+                    "width": 442.3047906453321,
+                    "height": 607.8311674783479
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K2",
+                  "bounds": {
+                    "x": 824.4819671250747,
+                    "y": 1170.7509168704157,
+                    "width": 701.791860247535,
+                    "height": 612.3915621900671
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K5",
+                  "bounds": {
+                    "x": 824.1812033357215,
+                    "y": 1170.7509168704157,
+                    "width": 702.0926240368882,
+                    "height": 612.1637216320426
+                  }
+                },
+                {
+                  "actorId": "foe-2-binding-thread",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 1104.2585461990157,
+                    "y": 1172.252750611247,
+                    "width": 391.9786021756736,
+                    "height": 610.6618878912113
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -71.9312539359338,
+                    "y": 313.2014676164792,
+                    "width": 1079.413500130459,
+                    "height": 981.9028308783841
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K1",
+                  "bounds": {
+                    "x": 58.323299976807334,
+                    "y": 313.2014676164792,
+                    "width": 1237.3453002905903,
+                    "height": 973.761240181376
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -607.2953909432599,
+                    "y": 313.2014676164792,
+                    "width": 1840.6534278741865,
+                    "height": 980.8612090963679
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -220.46051180950633,
+                    "y": 313.2014676164792,
+                    "width": 1610.009252302214,
+                    "height": 980.8360931056998
+                  }
+                },
+                {
+                  "actorId": "foe-0-yarn-giant",
+                  "key": "K4",
+                  "bounds": {
+                    "x": 77.54677642259782,
+                    "y": 313.2014676164792,
+                    "width": 795.3711801546576,
+                    "height": 961.7551564268226
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -703.7356845707975,
+                    "y": 878.2509168704156,
+                    "width": 609.504304311328,
+                    "height": 619.0099701673886
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -800.9666310878465,
+                    "y": 879.7527506112469,
+                    "width": 727.1323720992632,
+                    "height": 608.063033736772
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -922.7280248946583,
+                    "y": 876.7490831295843,
+                    "width": 1078.3166259168704,
+                    "height": 614.4986338347271
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -847.6363378530937,
+                    "y": 879.7527506112469,
+                    "width": 726.7189559843255,
+                    "height": 612.8287971104853
+                  }
+                },
+                {
+                  "actorId": "mochi",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -685.6549462065756,
+                    "y": 878.2509168704156,
+                    "width": 431.24293598184386,
+                    "height": 605.2966166489281
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1411.6390679356796,
+                    "y": 1198.493534507592,
+                    "width": 540.3830602841765,
+                    "height": 602.3526826991333
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1470.977507603215,
+                    "y": 1201.5193966787263,
+                    "width": 593.0459114588332,
+                    "height": 606.4246379149356
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1570.5840829160989,
+                    "y": 1198.493534507592,
+                    "width": 850.915497689587,
+                    "height": 610.7201528743867
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1552.2448927390249,
+                    "y": 1200.006465593159,
+                    "width": 651.0237231647764,
+                    "height": 610.6408689277107
+                  }
+                },
+                {
+                  "actorId": "soot",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1448.9013410224898,
+                    "y": 1200.006465593159,
+                    "width": 632.4051704648555,
+                    "height": 606.1157322595734
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -1353.9800392162147,
+                    "y": 585.7509168704156,
+                    "width": 494.24963942996453,
+                    "height": 610.697381696258
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1593.2559721689836,
+                    "y": 584.2490831295843,
+                    "width": 705.2315962346083,
+                    "height": 609.4089334557868
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1555.934646821158,
+                    "y": 585.7509168704156,
+                    "width": 1016.3356987596434,
+                    "height": 612.3186106171178
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1527.7419015191488,
+                    "y": 584.2490831295843,
+                    "width": 705.7982101813507,
+                    "height": 612.5109322340393
+                  }
+                },
+                {
+                  "actorId": "clover",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -1409.1015747034946,
+                    "y": 587.2527506112469,
+                    "width": 590.1615508473591,
+                    "height": 608.118578590449
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K0",
+                  "bounds": {
+                    "x": -917.0507702699426,
+                    "y": 234.75512704421052,
+                    "width": 544.3563232421612,
+                    "height": 610.0189258537325
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K1",
+                  "bounds": {
+                    "x": -1042.6690303997234,
+                    "y": 234.75512704421052,
+                    "width": 758.1150201963402,
+                    "height": 608.1492989440547
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K2",
+                  "bounds": {
+                    "x": -1052.0446384340794,
+                    "y": 233.24487297118333,
+                    "width": 877.457627833091,
+                    "height": 613.6002764396408
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K5",
+                  "bounds": {
+                    "x": -1103.3932523330077,
+                    "y": 233.24487297118333,
+                    "width": 833.6602259180794,
+                    "height": 613.776253480009
+                  }
+                },
+                {
+                  "actorId": "panko",
+                  "key": "K4",
+                  "bounds": {
+                    "x": -944.8165888659884,
+                    "y": 236.26538111723772,
+                    "width": 611.6529069163237,
+                    "height": 609.678102789368
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": [],
+          "blockedRequests": [
+            {
+              "url": "https://fonts.googleapis.com/css2",
+              "type": "stylesheet"
+            }
+          ]
+        }
+      ],
+      "pass": true,
+      "implementation": "packed",
+      "ended": "2026-11-17T23:57:37.802Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-pose-alpha-cold-r2/report.json",
+        "sha256": "30a4a245a9bd07ea91ed8bc5d7705aa86f2c419d5950c31215dd172cc4019ac8"
+      }
+    }
+  ],
+  "limits": "No performance READY. Isolated module/cold-bounds measurements on local candidate; no ordinary-play speedup claim, images or application mutations. Both raw result directories and source variants retained."
+}
