@@ -73,7 +73,7 @@ function createTimeline(hero: typeof heroes[number], action: number): SkillTimel
   return validateSkillTimeline({
     id: `${hero.owner}-${action}`, owner: hero.owner, tier: ultimate ? 'ultimate' : basic ? 'basic' : 'skill',
     color: hero.color, motif: hero.motif, impactMs, durationMs: impactMs + 60 + fade,
-    hitStopMs: ultimate ? 70 : basic ? 45 : 55, shakePx: ultimate ? 3 : 0,
+    hitStopMs: ultimate ? 70 : basic ? 45 : 55, shakePx: ultimate ? 3 : basic ? 1.25 : 1.8,
     layers: [
       layer('charge', 'charge', 'anticipation', 'caster', impactMs - charge, charge, .38, .48, 'anticipation'),
       layer('release', hero.ranged ? 'projectile' : 'slash', 'impact', 'target', impactMs - 100, 160, .32, .62, hero.ranged ? 'projectile' : 'slash'),
@@ -115,9 +115,10 @@ export function skillFeedback(timeline: SkillTimeline, elapsedMs: number, reduce
 }
 
 /** Hold only the visual pose, then catch up smoothly; rules and event timestamps never move. */
-export function skillPoseTime(timeline: SkillTimeline | undefined, elapsedMs: number, impactMs: number, reduced: boolean): number {
-  if (!timeline || reduced || elapsedMs < impactMs) return elapsedMs;
-  const since = elapsedMs - impactMs, hold = timeline.hitStopMs;
+export function skillPoseTime(timeline: SkillTimeline | undefined, elapsedMs: number, impactMs: number, reduced: boolean, fallbackHoldMs = 0): number {
+  const hold = timeline?.hitStopMs ?? fallbackHoldMs;
+  if (hold <= 0 || reduced || elapsedMs < impactMs) return elapsedMs;
+  const since = elapsedMs - impactMs;
   if (since < hold) return impactMs;
   const catchUp = clamp((since - hold) / 140);
   return elapsedMs - hold * (1 - catchUp * catchUp * (3 - 2 * catchUp));

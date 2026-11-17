@@ -242,7 +242,7 @@ export class SpineScene {
   const healingCast=!!plan&&this.craftHandles(plan)&&['clover','teacup-healer'].includes(this.actors.get(plan.actorId)?.asset??'');
   const v5Timeline=plan?getV5Timeline(plan.presentationId??plan.skillId):undefined;
   const motionElapsed=frame?skillPoseTime(v5Timeline,frame.elapsed,frame.plan.beats[2]!.start,
-   view.reducedMotion||!frame.plan.events.some(e=>e.actorId===frame.plan.actorId&&e.type==='damage')):0;
+   view.reducedMotion||!frame.plan.events.some(e=>e.actorId===frame.plan.actorId&&e.type==='damage'),frame.plan.ultimate?70:45):0;
   if(plan&&healingCast)paintedTargets(plan,'heal',view.actors,healed);
   const healAge=frame?frame.elapsed-frame.plan.beats[2]!.start:-1;
   const healBright=healAge>=0&&healAge<180?1+.12*(1-healAge/180):1;

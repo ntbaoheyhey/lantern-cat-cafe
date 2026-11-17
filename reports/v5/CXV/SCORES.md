@@ -11,3 +11,5 @@ Scores 1–5: readability / impact / beauty / motion. Only newly captured curren
 | yarn-giant ultimate | 4 | 4 | 4 | 4 | V3 07c18407a, rising weave builds before two contacts and settles. |
 
 Hero basic/skill/ultimate complete independent re-score is pending R10. Texture G1–G5 reviews are separate pair gates and remain pending for legacy AGV requests. Overall DONE gate is NOT met.
+
+Historical texture decision retained (pre-freshness-policy, not current approval): AG2 original Mochi set scored4/4/3/4; revision required for flat concentric charge/particles/decal and pink burst lacking honey/gold shield-cloth identity. New mochi-v2 still requires fresh pair review.

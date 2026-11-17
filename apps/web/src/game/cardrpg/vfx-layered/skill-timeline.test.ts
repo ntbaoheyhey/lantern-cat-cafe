@@ -57,6 +57,15 @@ describe('V5 skill timeline contract', () => {
     }
   });
 
+  it('holds native enemy contact without a hero texture timeline and bypasses reduced motion', () => {
+    expect(skillPoseTime(undefined, 349, 350, false, 45)).toBe(349);
+    expect(skillPoseTime(undefined, 383, 350, false, 45)).toBe(350);
+    expect(skillPoseTime(undefined, 535, 350, false, 45)).toBe(535);
+    expect(skillPoseTime(undefined, 1133, 1100, false, 70)).toBe(1100);
+    expect(skillPoseTime(undefined, 383, 350, true, 45)).toBe(383);
+    expect(skillPoseTime(undefined, 383, 350, false)).toBe(383);
+  });
+
   it('rejects unsorted layers, bad timing and a missing dissipation beat', () => {
     const timeline = getV5Timeline('soot-4')!;
     expect(() => validateSkillTimeline({...timeline, layers: [...timeline.layers].reverse()})).toThrow();

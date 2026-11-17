@@ -59,7 +59,7 @@ try{
     return {camera:s.audit().camera,root:entry?.actor.root.position.toArray(),visible:entry?.actor.root.visible,
      deathSource:!!material?.uniforms.uPaint.value,fragments:deathFx?.fragments.visible,amount:deathFx?.amount.value,
      hasCraftLight:!!entry?.craftLight,sourceTarget:deathFx?.sourceTarget?[deathFx.sourceTarget.width,deathFx.sourceTarget.height]:null,
-     caster:caster?{bounds:s.bounds(caster),mainHand:s.socket(m.plan.actorId,'mainHand'),pose:s.sampled.get(m.plan.actorId),root:caster.actor.root.position.toArray()}:null,
+     caster:caster?{bounds:s.bounds(caster),mainHand:s.socket(m.plan.actorId,'mainHand'),pose:{name:s.sampled.get(m.plan.actorId)?.name,at:s.sampled.get(m.plan.actorId)?.at},root:caster.actor.root.position.toArray()}:null,
      target:target?{id:targetId,bounds:s.bounds(target)}:null};
    },{sample,id,clip});
    await page.screenshot({path:resolve(dir,`frame-${String(index).padStart(2,'0')}.png`),...(clip?{clip}:{})});
@@ -70,7 +70,7 @@ try{
   report.sheets.push({id,path,samples:audits});await writeFile(resolve(out,'capture.json'),JSON.stringify(report,null,2));
   process.stdout.write(id+': '+path+'\n');return audits;
  }
- for(const asset of ['button-guard','needle-moth','kettle-knight','yarn-giant']){
+ for(const asset of (process.env.CXV_REACTION_ASSETS??'button-guard,needle-moth,kettle-knight,yarn-giant').split(',').filter(Boolean)){
   const f=await fixture(asset,true);
   const samples=[-1,0,33,60,120,300].map(t=>({phase:'hit',ms:f.impact+t,actorId:f.id}));
   samples.push(...[0,100,200,350,500,600].map(ms=>({phase:'death',ms,actorId:f.id})));
