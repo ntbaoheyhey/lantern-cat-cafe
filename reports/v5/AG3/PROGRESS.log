@@ -1,0 +1,15 @@
+2026-11-17T05:24:00Z | SETUP | S1 initialized, dirs and initial reports created
+2026-11-17T05:28:00Z | A0 | Inventory completed (601 images, 74.22MB), calibration done (WebP q90 SSIM 0.99611, 84.1% savings), A0.md and montage generated
+2026-11-17T05:32:00Z | A1 | Rig pages + depth maps converted (66 siblings, 87.05% net reduction from 84.03MB to 10.89MB), A1-report.csv and 3 montages generated
+2026-11-17T05:34:00Z | A2 | Top 80 gameplay/shell art processed, converted eligible portraits (82.55% reduction), A2-report.csv and montage generated
+2026-11-17T05:38:00Z | A3 | Size forecast completed based on CXI baseline network capture (all.json): current 29.50MB -> with-siblings 12.16MB -> with-half-depth 7.82MB (<=8MB gate passed), top 10 dominating files identified in A3-forecast.md
+2026-11-17T05:41:00Z | A4 | Backlog: spot-checked 10 random siblings (10/10 match dims, SSIM >= 0.992), 2 montages generated; enhanced convert.mjs with lossless fallback for indexed art (converted squad + gameplay art, +38KB net savings); CSVs tidied
+2026-11-17T05:46:00Z | A4 | Acted on CXI REQ lines: labeled A3 forecast as estimate pending runtime measurement; replaced report PNGs (4.28MB) with compact JPG sheets (102KB total) and preserved raw montages in work/v5/AG3
+2026-11-17T05:48:00Z | R1 | Evaluated 32 skipped art files with pngquant and AVIF: container header overhead makes sub-2.5KB sprites unviable for 30% reduction; qualified and created shade.avif (31.7% saving, SSIM 0.9956); R1-report.md written
+2026-11-17T05:50:00Z | R2 | Top 40 PNG assets converted to AVIF: 40 of 40 beat WebP by >20% (average 63% smaller than WebP, 93.4% smaller than PNG, SSIM >= 0.985); R2-report.md and R2-report.csv generated
+2026-11-17T05:55:31Z R3 complete: 4 distant-enemy 0.75x variants generated (pantry-crown, yarn-giant, rain-spool, practice-cushion); 9 failed SSIM >= 0.98; R3-report.csv and R3-report.md created.
+2026-11-17T05:59:36Z R4 complete: 411 unreferenced images identified (28.05 MB total, 26.88 MB from rig-page-0.png); R4-unused.csv and R4-unused.md published.
+2026-11-17T06:03:05Z R5 complete: 40 exact duplicate groups (88 files, 110.8 KB wasted) and 6 near-duplicate pairs (SSIM >= 0.995) documented in R5-duplicates.csv and R5-duplicates.md.
+2026-11-17T06:06:41Z R6 complete: Landing / LCP images optimized (-36.6% payload, 311.3 KB saved across landing.avif, backdrop-garden.avif, and 4 hero portraits); R6-lcp.csv, R6-lcp.md, and R6-montage.jpg published.
+2026-11-17T06:08:24Z R7 complete: verified tag v5-m0; zero unhandled new upstream images. R8 complete: 10/10 composite spot-checks passed (SSIM 0.99507 - 1.00000); R8-spotcheck.md and R8-spotcheck-montage.jpg published.
+2026-11-17T06:10:29Z R9 complete: tools/v5assets/README.md written. R10 complete: inventory refreshed (766 images), A3-forecast.md updated with latest CXI runtime numbers and AVIF transfer projections (<= 8.0 MB achieved). All queue and refill cards DONE.

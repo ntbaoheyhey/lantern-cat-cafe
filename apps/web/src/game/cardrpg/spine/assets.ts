@@ -13,6 +13,8 @@ import {opaqueWorldBounds,type OpaqueWorldBounds} from '../stage/opaque-pose-bou
 import losslessAtlases from './lossless-atlases.json';
 import sampledAtlases from './sampled-atlases.json';
 import {loadAtlasImage} from './atlas-delivery';
+import {nativeRigDelivery} from './native-rig-loader';
+import {deferredRigFactory} from './deferred-atlas-loader';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
@@ -31,31 +33,36 @@ const templateStyles=import.meta.glob('../../../../../../art/units/*/style.json'
 const templateIds=new Set(Object.keys(templateStyles).map(p=>p.split('/').at(-2)!));
 const designerIds=new Set(['mochi','soot','clover']);
 /** Native JSON with normalized UVs; no third-party animation runtime. */
-export function loadNativeRig(id:string):Promise<SkeletonAsset>{
- const key='native:'+id,cached=skeletonCache.get(key);if(cached)return cached;
+export function loadNativeRig(id:string,deferPixels=false):Promise<SkeletonAsset>{
+ const key='native:'+id+(deferPixels?':drawn':''),cached=skeletonCache.get(key);if(cached)return cached;
  const pending=(async()=>{
   const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
   const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
-  const textures:T.Texture[]=[];
-  try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,loaded=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path));textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
-   const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
-   return{data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
-  }catch(e){textures.forEach(t=>t.dispose());throw e;}
+  const decode=async()=>{const textures:T.Texture[]=[];
+   try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,loaded=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path)??nativeRigDelivery(path));textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}return textures;
+   }catch(e){textures.forEach(t=>t.dispose());throw e;}
+  };
+  const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
+  const textures=deferPixels?undefined:await decode();
+  return{data,bounds:data.bounds,clips,create:textures?()=>new CutoutMesh(data,textures):deferredRigFactory(data,decode)};
  })().catch(e=>{skeletonCache.delete(key);throw e;});skeletonCache.set(key,pending);return pending;
 }
 export const spineCacheStats=()=>({skeletons:skeletonCache.size,sequences:sequenceCache.size});
-export function loadSkeleton(spec:AcceptedSkeleton):Promise<SkeletonAsset>{
- const key=`${spec.skeleton}:${spec.scale}`;let cached=skeletonCache.get(key);if(cached)return cached;
+export function loadSkeleton(spec:AcceptedSkeleton,deferPixels=false):Promise<SkeletonAsset>{
+ const key=`${spec.skeleton}:${spec.scale}${deferPixels?':drawn':''}`;let cached=skeletonCache.get(key);if(cached)return cached;
  cached=(async()=>{
   if(spec.skeleton.endsWith('.skel'))throw Error('Export JSON and convert with scripts/art/convert-spine.mjs; binary Spine runtime is not shipped');
   const atlasText=await (await response(spec.atlas)).text(),source=await (await response(spec.skeleton)).json();
-  const data=withRigContract(importSkeleton(source,atlasText,spec.scale)),textures:T.Texture[]=[];
-  try {
-   const folder=spec.atlas.slice(0,spec.atlas.lastIndexOf('/')+1);
-   for(const page of data.pages){if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');const loaded=await image(folder+page.name);textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}
-   const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
-   return {data,bounds:data.bounds,clips,create:()=>new CutoutMesh(data,textures)};
-  }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
+  const data=withRigContract(importSkeleton(source,atlasText,spec.scale));
+  for(const page of data.pages)if(page.width>SPINE_CONFIG.atlasMax||page.height>SPINE_CONFIG.atlasMax)throw Error('Oversized atlas');
+  const decode=async()=>{const textures:T.Texture[]=[];
+   try{const folder=spec.atlas.slice(0,spec.atlas.lastIndexOf('/')+1);
+    for(const page of data.pages){const loaded=await image(folder+page.name);textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}return textures;
+   }catch(error){textures.forEach(texture=>texture.dispose());throw error;}
+  };
+  const clips=new Map(Object.entries(data.clips).map(([name,clip])=>[name,{duration:clip.duration,cues:animationCues(name as SpineAnimation,clip.duration,clip.events)}]));
+  const textures=deferPixels?undefined:await decode();
+  return{data,bounds:data.bounds,clips,create:textures?()=>new CutoutMesh(data,textures):deferredRigFactory(data,decode)};
  })().catch(error=>{
   // Keep successful data shared, but let a later actor request recover from
   // a temporary fetch/decode failure instead of pinning its fallback forever.
@@ -107,11 +114,11 @@ export class SpineActor {
  dispose(){this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
 }
 function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
-export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet'):Promise<SpineActor>{
+export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet',options:{deferNativePixels?:boolean}={}):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
  const designer=unit.designer,sequence=unit.sequence;
  if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
-  const data=await loadNativeRig(id);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);
+  const data=await loadNativeRig(id,options.deferNativePixels);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);
   for(const [name,clip] of data.clips)actor.clips.set(name,clip);
   for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing native socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}
   return measuredActor(actor);
@@ -132,7 +139,7 @@ export async function loadSpineActor(id:string,preference?:'placeholder'|'design
    for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)) {const xy=data.manifest.sockets[bone];if(xy)actor.sockets.get(name as SpineSocket)!.position.set(xy[0]*scale,xy[1]*scale,1);}return measuredActor(actor);
   }catch(error){errors.push(String(error));}
  }
- for(const candidate of candidates)try{const data=await loadSkeleton(candidate.spec);actor.mesh=data.create();actor.mesh.zOffset=.001;actor.mesh.state.data.defaultMix=SPINE_CONFIG.mixSeconds;actor.root.add(actor.mesh);actor.source=candidate.source;Object.assign(actor.bounds,data.bounds);for(const [k,v] of data.clips)actor.clips.set(k,v);for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}return measuredActor(actor);}catch(error){actor.mesh?.dispose();actor.mesh?.removeFromParent();actor.mesh=undefined;errors.push(String(error));}
+ for(const candidate of candidates)try{const data=await loadSkeleton(candidate.spec,candidate.source==='placeholder'&&!!options.deferNativePixels);actor.mesh=data.create();actor.mesh.zOffset=.001;actor.mesh.state.data.defaultMix=SPINE_CONFIG.mixSeconds;actor.root.add(actor.mesh);actor.source=candidate.source;Object.assign(actor.bounds,data.bounds);for(const [k,v] of data.clips)actor.clips.set(k,v);for(const [name,bone] of Object.entries(SPINE_CONFIG.sockets)){const ref=actor.mesh.skeleton.findBone(bone);if(!ref)throw Error(`Missing socket ${bone}`);actor.boneRefs.set(name as SpineSocket,ref);}return measuredActor(actor);}catch(error){actor.mesh?.dispose();actor.mesh?.removeFromParent();actor.mesh=undefined;errors.push(String(error));}
  // Last fallback uses accepted old pixels and motion, normalized to the same unit contract.
  const {scene}=await loadPuppetModel(id);actor.puppet=scene;actor.root.add(scene);const rig=scene.userData.paintedRig,measurement=fallbackScale(rig),bodyHeight=(measurement.max[1]!-measurement.min[1]!);
  const scale=unit.targetHeight/bodyHeight;scene.scale.set(scale*measurement.widthScale,scale,scale);

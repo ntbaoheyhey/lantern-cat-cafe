@@ -12,6 +12,7 @@ import { LayeredVfx } from '../vfx-layered/player';
 import {FieldVfx} from '../battle-v3/field-vfx';
 import {EffectGlow} from '../battle-v3/effect-glow';
 import type {SequencePlan} from '../battle-v3/sequence';
+import {V5SkillPlayer} from '../vfx-layered/skill-player';
 type Point={x:number;y:number};
 interface Particle {active:boolean;born:number;life:number;source:string;target:string;layer:PaintedLayer|null;recipe:PaintedRecipe|null;index:number;total:number;stamp:HTMLCanvasElement|null;origin:Point;end:Point;captured:boolean;impact:boolean}
 const floorLayer:PaintedLayer={glyph:'ring',motion:'expand',anchor:'caster',phase:'contact',socket:'feet',count:1,size:1.3,spread:.1,opacity:.5,accent:false,ground:true,turns:0,delay:0,life:.6};
@@ -24,10 +25,12 @@ export class PaintedVfx {
  readonly layered:LayeredVfx;useLayered=false;
  readonly overrides=new DesignerVfx();readonly ready:Promise<void>;private disposed=false;
  readonly canvas=document.createElement('canvas');private ctx:CanvasRenderingContext2D;readonly stamps=new PaintedStamps();
+ readonly timeline:V5SkillPlayer;
  readonly stats={active:0,peak:0,dropped:0,draws:0,impacts:0,cues:0,allocated:PAINT.fxPool,maskedFaces:0,override:0};
  private pool:Particle[]=Array.from({length:PAINT.fxPool},()=>({active:false,born:0,life:0,source:'',target:'',layer:null,recipe:null,index:0,total:0,stamp:null,origin:{x:0,y:0},end:{x:0,y:0},captured:false,impact:false}));
  private cursor=0;private plan:unknown;private hitAt=-Infinity;private prepared=false;private fallbackCast=false;private targets:string[]=[];private damageTargets:string[]=[];private healTargets:string[]=[];private shieldTargets:string[]=[];
  constructor(private host:HTMLElement,private socket:ResolveSocket,private unitPixels:(id:string)=>number|undefined){
+  this.timeline=new V5SkillPlayer(socket,this.stamps);
   this.field=new FieldVfx(socket,id=>this.layered.images.get(id));
   const context=this.canvas.getContext('2d');if(!context)throw Error('Painted effects canvas unavailable');this.ctx=context;
   this.canvas.dataset.paintedVfx='true';this.canvas.setAttribute('aria-hidden','true');Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'2'});host.appendChild(this.canvas);this.layered=new LayeredVfx(socket);this.ready=this.overrides.prepare();
@@ -44,6 +47,7 @@ export class PaintedVfx {
  }
  private recipients(layer:PaintedLayer){return layer.recipients==='heal'?this.healTargets:layer.recipients==='shield'?this.shieldTargets:this.targets;}
  cue(cue:SpineCue,frame:EffectFrame,time:number,speed:number,actors:SceneView['actors'],cues:readonly SpineCue[]){
+  if(this.timeline.handles(frame.plan)&&!this.overrides.effects.has(frame.plan.presentationId??frame.plan.skillId)){this.stats.cues++;return;}
   if((frame.plan as SequencePlan).fixedTiming&&frame.plan.ultimate&&frame.elapsed<600)return;
   // A working designer export remains the highest-priority source. Failed paint
   // loads fall back to the established renderer instead of leaving a blank hit.
@@ -76,18 +80,20 @@ export class PaintedVfx {
   const recipe=kind==='phase'?phase:entrance;
   for(const layer of recipe.layers)for(let i=0;i<layer.count;i++)this.spawn(recipe,layer,id,id,time,i,layer.count,speed);
  }
- render(view:SceneView,time:number,width:number,height:number,protectedLabels:readonly Rect[]){
+ render(view:SceneView,time:number,width:number,height:number,protectedLabels:readonly Rect[],timelineOnly=false){
   const c=this.ctx,ratio=view.quality==='low'?.85:Math.min(devicePixelRatio||1,2),w=Math.round(width*ratio),h=Math.round(height*ratio);
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
   c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);c.save();this.stats.active=0;this.stats.draws=0;this.stats.impacts=0;this.stats.maskedFaces=0;
   // All effects share one final protection pass. Nested clips multiply the
   // canvas compositing cost for every translucent layer in a team-wide ult.
   this.layered.stats.draws=0;this.layered.stats.active=0;
-  if(this.useLayered&&view.frame&&!this.overrides.effects.has(view.frame.plan.presentationId??view.frame.plan.skillId)){
+  const explicitOverride=!!view.frame&&this.overrides.effects.has(view.frame.plan.presentationId??view.frame.plan.skillId);
+  const v5=!!view.frame&&this.timeline.handles(view.frame.plan)&&!explicitOverride;
+  if(!v5&&!timelineOnly&&this.useLayered&&view.frame&&!this.overrides.effects.has(view.frame.plan.presentationId??view.frame.plan.skillId)){
    this.layered.render(c,view,width,height);this.stats.draws+=this.layered.stats.draws;this.stats.active+=this.layered.stats.active;
   }
   for(const p of this.pool){
-   if(!p.active)continue;const age=time-p.born;if(age>p.life){p.active=false;continue;}if(age<0)continue;
+   if(!p.active)continue;const age=time-p.born;if(age>p.life){p.active=false;continue;}if(age<0||v5||timelineOnly)continue;
    const layer=p.layer!,recipe=p.recipe!,origin=this.socket(p.source,recipe.origin),target=this.socket(p.target,layer.socket),feet=this.socket(p.target,'feet'),head=this.socket(p.target,'head');if(!origin||!target||!feet||!head||!p.stamp)continue;
    if(!p.captured){p.origin.x=origin.x;p.origin.y=origin.y;p.end.x=target.x;p.end.y=target.y;p.captured=true;}
    const progress=Math.min(1,age/p.life),size=Math.max(1,Math.abs(feet.y-head.y)/.77),angle=p.index/Math.max(1,p.total)*Math.PI*2,spread=layer.spread*size;
@@ -103,13 +109,13 @@ export class PaintedVfx {
    const extent=size*layer.size*scale;c.globalAlpha=alpha*layer.opacity;c.save();c.translate(x,y);c.rotate(rotation);c.scale(1,layer.ground?.24:1);c.drawImage(p.stamp,-extent/2,-extent/2,extent,extent);c.restore();this.stats.active++;this.stats.draws++;
   }
   // Persistent status keywords sit beside the foot, below faces and labels.
-  for(const actor of view.formationC2?[]:view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??[];let index=0;
+  for(const actor of timelineOnly||view.formationC2?[]:view.actors){if(actor.hp<=0)continue;const feet=this.socket(actor.id,'feet'),head=this.socket(actor.id,'head');if(!feet||!head)continue;const size=Math.abs(feet.y-head.y)/.77,statuses=view.cardStatuses?.[actor.id]??[];let index=0;
    for(const entry of statuses){const id=typeof entry==='string'?entry:entry.id,spec=PAINTED_STATUSES.find(s=>s.id===id);if(!spec)continue;const stamp=this.stamps.get('status:'+id,spec.color);if(!stamp)continue;const n=statuses.length,extent=size*.19,x=feet.x+(index-(n-1)/2)*size*.17,y=feet.y-size*.09+(view.reducedMotion?0:Math.sin(time*2+index)*size*.012);c.globalAlpha=.85;c.drawImage(stamp,x-extent/2,y-extent/2,extent,extent);index++;this.stats.draws++;}
   }
   // Two authored 60Hz frames, measured on the same clock as particles. A paused
   // redraw holds its flash; advancing gallery samples must still let it expire.
   const sinceHit=time-this.hitAt;
-  if(sinceHit>=0&&sinceHit<PAINT.impactSeconds-1e-6&&view.frame&&view.frame.plan===this.plan){
+  if(!v5&&!timelineOnly&&sinceHit>=0&&sinceHit<PAINT.impactSeconds-1e-6&&view.frame&&view.frame.plan===this.plan){
    const recipe=paintedRecipe(view.frame.plan.presentationId??view.frame.plan.skillId,view.frame.plan);
    if(recipe&&!recipe.friendly){
     const stamp=this.stamps.get('spark',PAINT.cream)!;
@@ -121,8 +127,9 @@ export class PaintedVfx {
   }
   // Export bounds are Spine/world units. Head motion and species proportions
   // must not rescale the export; only the stage transform and camera do.
-  this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=this.overrides.stats.active;
-  if(view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
+  if(!v5&&!timelineOnly)this.overrides.render(time,(image,id,spec)=>{const point=this.socket(id,spec.socket),unit=this.unitPixels(id);if(!point||unit===undefined)return;const extent=unit*(spec.format==='spine'?Math.max(spec.height,spec.width):spec.height)*spec.scale,aspect=spec.format==='spine'?1:spec.width/spec.height;c.globalAlpha=1;c.drawImage(image,point.x-extent*aspect/2,point.y-extent/2,extent*aspect,extent);this.stats.draws++;});this.stats.override=v5||timelineOnly?0:this.overrides.stats.active;
+  if(!v5&&!timelineOnly&&view.formationC2){this.field.render(c,view,width,height,time);this.stats.draws+=this.field.draws;}
+  this.timeline.render(c,view,!explicitOverride);this.stats.draws+=this.timeline.audit.draws;this.stats.active+=this.timeline.audit.particles;
   // Composite the effect-only bloom before the shared face protection pass.
   if(view.formationC2&&this.stats.draws)this.glow.render(this.canvas,c,view.quality==='low',view.reducedMotion);
   // A nonzero union removes overlapping masks once; unlike even-odd holes,
