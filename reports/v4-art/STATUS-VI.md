@@ -11,3 +11,4 @@ Cụm số wave3 vẫn dày; không chồng hộp mực chưa đủ để nghi�
 A10 truyền tải production vẫn mở: 27,55 MB/8 MB; dự toán 7.966.311 byte chưa tính JS placement.
 Reduced-motion, rung liên tục, class cuối, activation và tỷ lệ thời gian vẫn mở.
 554 mẫu focus riêng đạt; tiếp theo fullweb, parity, DOM và phim mới theo 104 hash runtime.
+Fullweb 2.699/322 và 3 fixture parity đạt; DOM thất bại 13 mẫu Soot chạm nhãn Clover ở 720p. Đang truy nguyên nhân; chưa quay phim mới.
