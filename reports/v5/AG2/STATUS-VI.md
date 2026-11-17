@@ -1,6 +1,6 @@
 # TRẠNG THÁI AG2 (VFX TEXTURES)
-- Đã hoàn thành T3 Shared utility textures (noise tile, glow dots, star sparkle 4x4, heal plus, leaf, shield hex ripple 4x4).
-- Tổng 44 entries trong manifest.json, dung lượng toàn bộ 275.5 KB / 2.5 MB (<11% ngân sách).
-- check.mjs xác thực 100% (6ms), montage lưu tại reports/v5/AG2/T3/.
-- Đã gửi READY vào DELIVERIES.md và INFO vào INBOX-CXV.md.
-- Chuyển sang T4 Revisions: kiểm tra yêu cầu REQ mới trong hòm thư, nâng cao chất lượng texture, và duy trì các chỉ số chuẩn.
+- T4 Revisions và Backlog hoàn tất: nâng cấp 5 texture trọng yếu, bổ sung 2 hiệu ứng chí mạng (crit-impact-burst, crit-spark-flare).
+- Toàn bộ 46 textures được định nghĩa và kiểm tra trong manifest.json, dung lượng chỉ 287.7 KB / 2.5 MB tối đa (<12%).
+- check.mjs xác thực 100% trong 5ms, CATALOG.md đã hoàn thành đầy đủ thông số cho CXV/CXI.
+- Đã đồng bộ với CXV và CXI qua mailbox, sẵn sàng cho các mốc tích hợp M1/M2/FREEZE.
+- Toàn bộ QUEUE hoàn thành. Chờ đóng băng hoặc yêu cầu tiếp theo từ USER.

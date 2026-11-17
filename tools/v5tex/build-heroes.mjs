@@ -177,7 +177,7 @@ function buildImpactFlipbook(heroKey) {
 }
 
 // ----------------------------------------------------------------------
-// 3. TRAIL / SLASH OR PROJECTILE
+// 3. TRAIL / SLASH OR PROJECTILE (Enhanced V5 Quality)
 // ----------------------------------------------------------------------
 function buildSlashOrProjectile(heroKey) {
   const h = HEROES[heroKey];
@@ -194,22 +194,46 @@ function buildSlashOrProjectile(heroKey) {
       const framePng = path.join(heroWork, `f_${String(i).padStart(2, '0')}.png`);
       const draws = [];
 
-      // Sweeping arc from -45 deg to +135 deg
-      const startDeg = -40 + t * 90;
-      const arcLen = 30 + 70 * Math.sin(Math.min(Math.PI, t * Math.PI));
+      // Sweeping arc from -40 deg to +140 deg
+      const startDeg = -40 + t * 95;
+      const arcLen = 35 + 75 * Math.sin(Math.min(Math.PI, t * Math.PI));
       const endDeg = startDeg + arcLen;
-      const alpha = Math.max(0, 1 - Math.pow(t, 1.4));
+      const alpha = Math.max(0, 1 - Math.pow(t, 1.3));
 
-      if (alpha > 0.05) {
-        // Arc ribbon
-        const strokeW = Math.max(2, 6 * Math.sin(t * Math.PI));
-        draws.push(`stroke "${h.primaryFade(alpha.toFixed(2))}" stroke-width ${strokeW.toFixed(1)} fill none arc 15,15 113,113 ${startDeg.toFixed(0)},${endDeg.toFixed(0)}`);
-        // Leading sharp edge
-        draws.push(`stroke "${h.secondaryFade((alpha * 0.9).toFixed(2))}" stroke-width 2 fill none arc 20,20 108,108 ${(startDeg + arcLen * 0.5).toFixed(0)},${endDeg.toFixed(0)}`);
+      if (alpha > 0.04) {
+        // Broad outer ribbon glow
+        const strokeW = Math.max(3, 8 * Math.sin(t * Math.PI));
+        draws.push(`stroke "${h.primaryFade((alpha * 0.75).toFixed(2))}" stroke-width ${strokeW.toFixed(1)} fill none arc 12,12 116,116 ${startDeg.toFixed(0)},${endDeg.toFixed(0)}`);
+
+        // Concentric inner ribbon blade
+        draws.push(`stroke "${h.primaryFade(alpha.toFixed(2))}" stroke-width ${(strokeW * 0.5).toFixed(1)} fill none arc 18,18 110,110 ${(startDeg + 4).toFixed(0)},${(endDeg - 2).toFixed(0)}`);
+
+        // Leading razor edge (cream / butter gold)
+        draws.push(`stroke "${h.secondaryFade((alpha * 0.95).toFixed(2))}" stroke-width 2 fill none arc 22,22 106,106 ${(startDeg + arcLen * 0.45).toFixed(0)},${endDeg.toFixed(0)}`);
+
+        // Trailing hero-specific sparkles (thread stitches for Mochi, crumbs for Panko)
+        const nTrailing = 6;
+        for (let s = 0; s < nTrailing; s++) {
+          const sparkProg = s / nTrailing;
+          const sDeg = startDeg + arcLen * sparkProg * 0.7;
+          const sRad = (sDeg * Math.PI) / 180;
+          const r = 44 + (s % 3) * 6;
+          const sx = 64 + Math.cos(sRad) * r;
+          const sy = 64 + Math.sin(sRad) * r;
+          const sAlpha = alpha * (1 - sparkProg) * 0.85;
+
+          if (sAlpha > 0.05 && sx >= 0 && sx < 128 && sy >= 0 && sy < 128) {
+            if (heroKey === 'mochi') {
+              draws.push(`stroke "${h.primaryFade(sAlpha.toFixed(2))}" stroke-width 1.5 line ${(sx - 2).toFixed(1)},${sy.toFixed(1)} ${(sx + 2).toFixed(1)},${sy.toFixed(1)} line ${sx.toFixed(1)},${(sy - 2).toFixed(1)} ${sx.toFixed(1)},${(sy + 2).toFixed(1)}`);
+            } else {
+              draws.push(`fill "${h.primaryFade(sAlpha.toFixed(2))}" circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 2).toFixed(1)},${sy.toFixed(1)}`);
+            }
+          }
+        }
       }
 
       const drawArg = draws.length > 0 ? `-draw '${draws.join(' ')}'` : '';
-      run(`magick -size 128x128 xc:black ${drawArg} -blur 0x0.8 "${framePng}"`);
+      run(`magick -size 128x128 xc:black ${drawArg} -blur 0x0.7 "${framePng}"`);
     }
 
     const atlasPng = path.join(workBase, `${heroKey}_slash_atlas.png`);
@@ -223,25 +247,28 @@ function buildSlashOrProjectile(heroKey) {
     const outWebp = path.join(vfxDir, `${heroKey}-projectile.webp`);
     const draws = [];
 
-    // Core projectile head at (180, 128)
-    const hx = 180, hy = 128;
-    draws.push(`fill "${h.secondaryFade(0.95)}" circle ${hx},${hy} ${hx + 18},${hy}`);
-    draws.push(`fill "${h.primaryFade(0.85)}" circle ${hx},${hy} ${hx + 32},${hy}`);
-    draws.push(`fill "${h.primaryFade(0.4)}" circle ${hx},${hy} ${hx + 50},${hy}`);
+    // Core projectile head at (185, 128)
+    const hx = 185, hy = 128;
+    draws.push(`fill "${h.secondaryFade(0.98)}" circle ${hx},${hy} ${hx + 18},${hy}`);
+    draws.push(`fill "${h.primaryFade(0.85)}" circle ${hx},${hy} ${hx + 34},${hy}`);
+    draws.push(`fill "${h.primaryFade(0.35)}" circle ${hx},${hy} ${hx + 54},${hy}`);
 
     // Streamline tails flowing left
-    for (let yOff of [-12, -6, 0, 6, 12]) {
-      const len = 120 + Math.abs(yOff) * -5;
-      const alpha = 0.8 - Math.abs(yOff) * 0.04;
-      draws.push(`stroke "${h.primaryFade(alpha.toFixed(2))}" stroke-width 3 fill none line ${(hx - 15)},${(hy + yOff)} ${(hx - len)},${(hy + yOff * 0.5)}`);
+    for (let yOff of [-16, -10, -5, 0, 5, 10, 16]) {
+      const len = 135 + Math.abs(yOff) * -4;
+      const alpha = 0.85 - Math.abs(yOff) * 0.035;
+      draws.push(`stroke "${h.primaryFade(alpha.toFixed(2))}" stroke-width 3.5 fill none line ${(hx - 15)},${(hy + yOff)} ${(hx - len)},${(hy + yOff * 0.45)}`);
     }
 
-    // Sparkles along tail
-    for (let s = 0; s < 12; s++) {
-      const sx = hx - 20 - s * 11;
-      const sy = hy + (Math.sin(s * 1.5) * 18);
-      const sa = (1 - s / 12) * 0.9;
+    // Trailing spark motes
+    for (let s = 0; s < 18; s++) {
+      const sx = hx - 18 - s * 9;
+      const sy = hy + (Math.sin(s * 1.3) * (14 + s * 0.8));
+      const sa = (1 - s / 18) * 0.95;
       draws.push(`fill "${h.secondaryFade(sa.toFixed(2))}" circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 2.5).toFixed(1)},${sy.toFixed(1)}`);
+      if (s % 3 === 0) {
+        draws.push(`fill "white" circle ${sx.toFixed(1)},${sy.toFixed(1)} ${(sx + 1.2).toFixed(1)},${sy.toFixed(1)}`);
+      }
     }
 
     run(`magick -size 256x256 xc:black -draw '${draws.join(' ')}' -blur 0x1.0 "${outPng}"`);

@@ -95,7 +95,7 @@ function buildHitSpark3() {
 }
 
 // ----------------------------------------------------------------------
-// 2. DEATH DISSOLVE NOISE (512x512 tileable texture, fabric weave noise)
+// 2. DEATH DISSOLVE NOISE (512x512 tileable texture, enhanced yarn fabric weave)
 // ----------------------------------------------------------------------
 function buildDeathDissolve() {
   const outPng = path.join(workBase, 'enemy_death_dissolve.png');
@@ -105,7 +105,6 @@ function buildDeathDissolve() {
   // Generate periodic 2D value noise on a 16x16 grid with bicubic interpolation
   const GRID_SZ = 16;
   const grid = [];
-  // Seedable pseudo-random
   let seed = 42;
   function rnd() {
     seed = (seed * 16807) % 2147483647;
@@ -142,13 +141,15 @@ function buildDeathDissolve() {
       const u = (x / SZ) * GRID_SZ;
       const v = (y / SZ) * GRID_SZ;
 
-      // Octave 1
-      let n = sampleGrid(u, v) * 0.55;
-      // Octave 2 (wrapped)
-      n += sampleGrid(u * 2, v * 2) * 0.30;
-      // High frequency woven cloth fiber texture
-      const weave = Math.sin((x * Math.PI) / 4) * Math.cos((y * Math.PI) / 4) * 0.15;
-      n += weave;
+      // Base smooth noise octaves
+      let n = sampleGrid(u, v) * 0.45;
+      n += sampleGrid(u * 2, v * 2) * 0.25;
+
+      // Multi-scale textile weave: warp & weft fibers
+      const weaveWarp = Math.sin((x * Math.PI) / 4) * 0.12;
+      const weaveWeft = Math.cos((y * Math.PI) / 4) * 0.12;
+      const yarnTwist = Math.sin((x * 0.8 + y * 0.4) * Math.PI / 8) * 0.08 + Math.cos((y * 0.8 - x * 0.4) * Math.PI / 8) * 0.08;
+      n += weaveWarp + weaveWeft + yarnTwist;
 
       const val = Math.min(255, Math.max(0, Math.floor(n * 255)));
       rawBytes[y * SZ + x] = val;
@@ -157,7 +158,6 @@ function buildDeathDissolve() {
 
   const rawPath = path.join(workBase, 'dissolve.gray');
   fs.writeFileSync(rawPath, rawBytes);
-  // Convert raw grayscale to PNG
   run(`magick -size ${SZ}x${SZ} -depth 8 gray:"${rawPath}" "${outPng}"`);
   toWebP(outPng, outWebp);
   console.log(`  -> ${outWebp}`);
@@ -223,7 +223,7 @@ function buildYarnGiantChargeSwirl() {
 }
 
 // ----------------------------------------------------------------------
-// 4. YARN GIANT SHOCKWAVE RING (4x4 flipbook = 512x512 atlas, 16 frames of 128x128)
+// 4. YARN GIANT SHOCKWAVE RING (Enhanced V5 Quality: Braided Ring Loops)
 // ----------------------------------------------------------------------
 function buildYarnGiantShockwaveRing() {
   const shockWork = path.join(workBase, 'shock_frames');
@@ -247,22 +247,34 @@ function buildYarnGiantShockwaveRing() {
       draws.push(`stroke "rgba(225, 45, 65, ${(alpha * 0.9).toFixed(2)})" stroke-width ${(4.5 * (1 - t * 0.6)).toFixed(1)} fill none circle ${C},${C} ${(C + ringR).toFixed(1)},${C}`);
       // Indigo trailing tension ring
       if (ringR > 8) {
-        draws.push(`stroke "rgba(70, 95, 230, ${(alpha * 0.75).toFixed(2)})" stroke-width 2 fill none circle ${C},${C} ${(C + ringR * 0.9).toFixed(1)},${C}`);
+        draws.push(`stroke "rgba(70, 95, 230, ${(alpha * 0.75).toFixed(2)})" stroke-width 2.2 fill none circle ${C},${C} ${(C + ringR * 0.9).toFixed(1)},${C}`);
       }
       // White fiery leading edge
-      if (t < 0.5) {
-        draws.push(`stroke "rgba(255, 240, 245, ${(alpha * 0.9).toFixed(2)})" stroke-width 1.5 fill none circle ${C},${C} ${(C + ringR * 0.97).toFixed(1)},${C}`);
+      if (t < 0.55) {
+        draws.push(`stroke "rgba(255, 240, 245, ${(alpha * 0.95).toFixed(2)})" stroke-width 1.8 fill none circle ${C},${C} ${(C + ringR * 0.98).toFixed(1)},${C}`);
+      }
+
+      // Braided loop stitches along the perimeter
+      const nLoops = 14;
+      for (let l = 0; l < nLoops; l++) {
+        const ang = (l * Math.PI * 2) / nLoops + t * 0.5;
+        const lx = C + Math.cos(ang) * ringR;
+        const ly = C + Math.sin(ang) * ringR;
+        const lAlpha = alpha * 0.85;
+        if (lx >= 0 && lx < 128 && ly >= 0 && ly < 128) {
+          draws.push(`stroke "rgba(255, 220, 230, ${lAlpha.toFixed(2)})" stroke-width 1.5 fill none circle ${lx.toFixed(1)},${ly.toFixed(1)} ${(lx + 2).toFixed(1)},${ly.toFixed(1)}`);
+        }
       }
     }
 
     // Tangled wool yarn fragments blasting outward
-    const nBursts = 12;
+    const nBursts = 14;
     for (let b = 0; b < nBursts; b++) {
       const ang = (b * (Math.PI * 2)) / nBursts + Math.sin(b * 3);
-      const dist = 48 * Math.pow(t, 0.7);
+      const dist = 50 * Math.pow(t, 0.7);
       const bx = C + Math.cos(ang) * dist;
       const by = C + Math.sin(ang) * dist;
-      const bAlpha = Math.max(0, (1 - t * 1.1) * 0.85);
+      const bAlpha = Math.max(0, (1 - t * 1.05) * 0.9);
 
       if (bAlpha > 0.05 && bx >= 0 && bx < 128 && by >= 0 && by < 128) {
         const isRed = b % 2 === 0;
