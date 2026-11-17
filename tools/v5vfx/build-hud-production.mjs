@@ -13,27 +13,33 @@ export const root=resolve(import.meta.dirname,'../..'),appRoot=resolve(root,'app
 export const require=createRequire(resolve(appRoot,'package.json'));
 const hash=value=>createHash('sha256').update(value).digest('hex');
 export async function buildHudArtifacts(out){
- out=resolve(out);assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'),'Output must remain in owned ignored work');
  const hudPath='apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx',hud=await readFile(resolve(root,hudPath),'utf8');
  const before=execFileSync('git',['show','0ac228aaa:'+hudPath],{cwd:root,encoding:'utf8'});
  const guarded="   if(total.current){\n    total.current.hidden=now>state.until||!state.amount;\n    const amount=total.current.querySelector('b')!,text=String(state.amount);\n    // Replacing an unchanged text node invalidates page styles every frame.\n    if(amount.textContent!==text)amount.textContent=text;\n   }";
  const original="   if(total.current){total.current.hidden=now>state.until||!state.amount;total.current.querySelector('b')!.textContent=String(state.amount);}";
  assert.equal(hud.split(guarded).length,2,'Guard block must occur exactly once');
  assert.equal(hud.replace(guarded,original),before,'Baseline may differ only by the measured text guard');
+ return buildProductionComparison(out,{modulePath:hudPath,currentSource:hud,variants:{baseline:before,text:hud},metadata:{candidateHudSha256:hash(hud),baselineHudSha256:hash(before),baselineSource:'0ac228aaa:'+hudPath}});
+}
+export async function buildProductionComparison(out,{modulePath,currentSource,variants,metadata={}}){
+ out=resolve(out);assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'),'Output must remain in owned ignored work');
+ assert.equal(await readFile(resolve(root,modulePath),'utf8'),currentSource,'Source changed before comparison build');
+ assert.equal(Object.keys(variants).length,2);assert(Object.keys(variants).every(mode=>/^[a-z]+$/.test(mode)));
  const {build,loadConfigFromFile}=await import(require.resolve('vite'));
- const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),configSha256:hash(await readFile(resolve(appRoot,'vite.config.ts'))),candidateHudSha256:hash(hud),baselineHudSha256:hash(before),baselineSource:'0ac228aaa:'+hudPath,envDir:false,artifacts:[]};
+ const report={...metadata,utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),configSha256:hash(await readFile(resolve(appRoot,'vite.config.ts'))),envDir:false,artifacts:[]};
  await mkdir(out,{recursive:true});
- for(const mode of ['baseline','text']){
+ for(const [mode,variantSource]of Object.entries(variants)){
   const dist=resolve(out,mode);assert(!existsSync(resolve(dist,'index.html')),'Preserve prior artifact;choose a fresh output directory');
   const loaded=await loadConfigFromFile({command:'build',mode:'production'},resolve(appRoot,'vite.config.ts'),appRoot,'error');
   assert(loaded,'Existing Vite config did not load');let transformed=0;
-  const baselinePlugin={name:'cxv-hud-baseline-only',enforce:'pre',transform(source,id){
-   if(id.split('?')[0].replaceAll('\\','/')!==resolve(root,hudPath))return;
-   assert.equal(source,hud,'Baseline transform must see the unmodified source before JSX compilation');transformed++;
-   return{code:before,map:null};
+  const transformNeeded=variantSource!==currentSource;
+  const comparisonPlugin={name:'cxv-comparison-module-only',enforce:'pre',transform(source,id){
+   if(id.split('?')[0].replaceAll('\\','/')!==resolve(root,modulePath))return;
+   assert.equal(source,currentSource,'Comparison transform must see the unmodified source before compilation');transformed++;
+   return{code:variantSource,map:null};
   }};
-  await build({...loaded.config,root:appRoot,configFile:false,envDir:false,mode:'production',logLevel:'error',plugins:mode==='baseline'?[baselinePlugin,...loaded.config.plugins]:loaded.config.plugins,build:{...loaded.config.build,outDir:dist,emptyOutDir:true}});
-  assert.equal(transformed,mode==='baseline'?1:0);
+  await build({...loaded.config,root:appRoot,configFile:false,envDir:false,mode:'production',logLevel:'error',plugins:transformNeeded?[comparisonPlugin,...loaded.config.plugins]:loaded.config.plugins,build:{...loaded.config.build,outDir:dist,emptyOutDir:true}});
+  assert.equal(transformed,transformNeeded?1:0);
   // The shipping exclusion plugin intentionally skips custom outputs; mirror its generated-output trim here.
   for(const path of unusedPosters){assert(!path.includes('..'));try{await unlink(resolve(dist,path));}catch(e){if(e.code!=='ENOENT')throw e;}}
   const files=[];

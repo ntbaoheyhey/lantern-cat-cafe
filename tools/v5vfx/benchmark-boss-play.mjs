@@ -16,6 +16,8 @@ const outerPrototype=process.env.CXV_OUTER_PROTOTYPE==='1';
 const pendingBatch=process.env.CXV_PENDING_BATCH??null;
 const focusProfile=!!pendingBatch||process.env.CXV_FOCUS_PROFILE==='1';
 const hudMode=process.env.CXV_HUD_MODE??null;
+const labelSearchMode=process.env.CXV_LABEL_SEARCH??null,labelSearchPaired=process.env.CXV_LABEL_SEARCH_PAIRED==='1';
+if(labelSearchMode&&(!['baseline','pruned'].includes(labelSearchMode)||production||localProduction))throw Error('Label-search prototype requires baseline/pruned mode on candidate Vite');
 const layoutProfile=!!hudMode||process.env.CXV_LAYOUT_PROFILE==='1';
 if(hudMode&&(production||localProduction))throw Error('HUD module experiment requires candidate Vite');
 if(pendingBatch&&!['on','off'].includes(pendingBatch))throw Error('CXV_PENDING_BATCH must be on or off');
@@ -31,12 +33,14 @@ report.focusProfile=focusProfile;
 report.hudMode=hudMode;
 report.layoutProfile=layoutProfile;
 report.localProduction=localProduction;
+report.labelSearchMode=labelSearchMode;report.labelSearchPaired=labelSearchPaired;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
-  let pendingOverride,hudOverride;
-  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:pendingBatch||hudMode?async page=>{
+  let pendingOverride,hudOverride,labelSearchOverride;
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:pendingBatch||hudMode||labelSearchMode?async page=>{
    if(pendingBatch){const {installPendingLabelOverride}=await import('./pending-label-override.mjs');pendingOverride=await installPendingLabelOverride(page,{batch:pendingBatch==='on'});}
    if(hudMode){const {installHudGeometryOverride}=await import('./hud-geometry-override.mjs');hudOverride=await installHudGeometryOverride(page,{mode:hudMode});}
+   if(labelSearchMode){const {installLabelSearchOverride}=await import('./label-search-prototype.mjs');labelSearchOverride=await installLabelSearchOverride(page,{mode:labelSearchMode,paired:labelSearchPaired});}
   }:undefined});
   const runIdentity=runtimeEvidence();
   if(facePrototype){const {installFaceProjectionPrototype}=await import('./face-projection-prototype.mjs');report.facePrototypeDetails=await installFaceProjectionPrototype(page);}
@@ -48,6 +52,7 @@ try{
   let layoutBefore;
   if(layoutProfile){await cdp.send('Performance.enable');layoutBefore=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(row=>[row.name,row.value]));}
   if(hudMode)await page.evaluate(()=>{globalThis.__cxvHudAudit=[];});
+  if(labelSearchMode)await page.evaluate(()=>{const a=globalThis.__cxvLabelSearch;if(!a)throw Error('Label-search module override missing');Object.assign(a,{calls:0,totalCpuMs:0,pairedCalls:0,baselineCpuMs:0,prunedCpuMs:0,mismatches:[],cases:[]});});
   const run=await page.evaluate(async ({rate,methodProfile,numberMetricsMode,focusProfile})=>{
    const s=window.__depthScene,m=window.__depthReview,originalRender=s.render,originalBefore=s.beforeFrame;
    const intervals=[],cpu=[],calls=[],textures=[],plans=[],slowFrames=[],seen=new Set();
@@ -97,6 +102,7 @@ try{
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});
   run.identity=runIdentity;run.identityAfter=runtimeEvidence();run.blockedRequests=blockedRequests;
   if(pendingOverride)run.pendingOverride=pendingOverride;
+  if(labelSearchMode){run.labelSearch=await page.evaluate(()=>globalThis.__cxvLabelSearch);run.labelSearchOverride=labelSearchOverride;if(!run.labelSearch?.calls||run.labelSearch.mismatches.length)errors.push('Label-search oracle failed or had no calls');}
   if((production||localProduction)&&runIdentity.indexSha256!==run.identityAfter.indexSha256)errors.push('Production index changed during this run; do not use as stable paired evidence');
   report.runs.push(run);report.errors.push(...errors);await page.close();
  }

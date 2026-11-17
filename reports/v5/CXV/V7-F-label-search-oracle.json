@@ -1,0 +1,124 @@
+{
+  "utc": "2026-11-17T20:20:26.216331+00:00",
+  "source": "42fbeaa6fab84c460938a70f8ccf9ee3fac73996",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "pass": true,
+  "micro": {
+    "utc": "2026-11-17T20:16:10.729Z",
+    "pass": true,
+    "cases": 1006,
+    "sourcePath": "apps/web/src/game/squad/turn3d/label-layout.ts",
+    "baselineRef": "42fbeaa6f",
+    "originalSha256": "b82acb7824644b774061ab1a27809df5f199874db09272923002788964c75b08",
+    "prunedSha256": "f280e87971083d00a97bf5f8c19fdf66c4163f1f38518a072a728a7d4f0b8f6e",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "timings": [
+      {
+        "mode": "baseline",
+        "ms": 1023.940958,
+        "placed": 17055
+      },
+      {
+        "mode": "pruned",
+        "ms": 436.25625000000014,
+        "placed": 17055
+      },
+      {
+        "mode": "pruned",
+        "ms": 436.5959579999999,
+        "placed": 17055
+      },
+      {
+        "mode": "baseline",
+        "ms": 1022.3373750000001,
+        "placed": 17055
+      },
+      {
+        "mode": "baseline",
+        "ms": 1018.0620830000003,
+        "placed": 17055
+      },
+      {
+        "mode": "pruned",
+        "ms": 437.5394579999993,
+        "placed": 17055
+      }
+    ],
+    "baselineMedianMs": 1022.3373750000001,
+    "prunedMedianMs": 436.5959579999999,
+    "limits": "Deterministic exact oracle and Node microbenchmark only; no browser/ordinary-play gain established. Inputs use numeric records; source remains unchanged."
+  },
+  "live": [
+    {
+      "rate": 1,
+      "calls": 3836,
+      "pairedCalls": 3836,
+      "mismatches": 0,
+      "retainedCases": 143,
+      "labelWidths": [
+        110,
+        150
+      ],
+      "maxLabels": 7,
+      "maxObstacles": 14,
+      "moduleEvidence": {
+        "mode": "baseline",
+        "paired": true,
+        "sourcePath": "apps/web/src/game/squad/turn3d/label-layout.ts",
+        "baselineRef": "42fbeaa6f",
+        "originalSha256": "b82acb7824644b774061ab1a27809df5f199874db09272923002788964c75b08",
+        "prunedSha256": "f280e87971083d00a97bf5f8c19fdf66c4163f1f38518a072a728a7d4f0b8f6e",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/squad/turn3d/label-layout.ts",
+            "sourceSha256": "7bae243523068769992b1b134a2baf781c782a0a3a12d0befabde3d0b16985f2",
+            "overrideSha256": "e3e80efba9459e5166622b0631217f9ff9a8a605ed1008505c4839558320ada0"
+          }
+        ]
+      },
+      "actions": 26,
+      "ultimates": 6
+    },
+    {
+      "rate": 4,
+      "calls": 2582,
+      "pairedCalls": 2582,
+      "mismatches": 0,
+      "retainedCases": 100,
+      "labelWidths": [
+        110,
+        150
+      ],
+      "maxLabels": 7,
+      "maxObstacles": 14,
+      "moduleEvidence": {
+        "mode": "baseline",
+        "paired": true,
+        "sourcePath": "apps/web/src/game/squad/turn3d/label-layout.ts",
+        "baselineRef": "42fbeaa6f",
+        "originalSha256": "b82acb7824644b774061ab1a27809df5f199874db09272923002788964c75b08",
+        "prunedSha256": "f280e87971083d00a97bf5f8c19fdf66c4163f1f38518a072a728a7d4f0b8f6e",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/squad/turn3d/label-layout.ts",
+            "sourceSha256": "7bae243523068769992b1b134a2baf781c782a0a3a12d0befabde3d0b16985f2",
+            "overrideSha256": "e3e80efba9459e5166622b0631217f9ff9a8a605ed1008505c4839558320ada0"
+          }
+        ]
+      },
+      "actions": 25,
+      "ultimates": 5
+    }
+  ],
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-label-search",
+  "retainedInputSha256": "660830f1f8fb9c1ac4cf4794f9364930272e37f836f2501bb0935636df068397",
+  "limits": "Browser module prototype only; both algorithms execute on every real call and return the baseline result. Paired timings are not whole-game performance evidence. Shared application source is untouched; scope grant pending."
+}

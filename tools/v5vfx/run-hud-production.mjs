@@ -15,7 +15,7 @@ try{
  for(const [index,mode]of report.order.entries()){
   const dir=resolve(out,'trials',index+'-'+mode),log=await open(resolve(out,index+'-'+mode+'.log'),'w');
   const env={...process.env,CXV_LOCAL_PRODUCTION:'1',CXV_PRODUCTION_OUT:out,CXV_ARTIFACT_MODE:mode,CXV_CAPTURE_OUT:dir,CXV_LAYOUT_PROFILE:'1',CXV_FOCUS_PROFILE:'1'};
-  for(const key of ['CXV_PRODUCTION','CXV_HUD_MODE','CXV_PROFILE','CXV_STRESS_ONLY','CXV_PENDING_BATCH','CXV_FACE_PROTOTYPE','CXV_OUTER_PROTOTYPE','CXV_NUMBER_METRICS'])delete env[key];
+  for(const key of ['CXV_LABEL_SEARCH','CXV_LABEL_SEARCH_PAIRED','CXV_PRODUCTION','CXV_HUD_MODE','CXV_PROFILE','CXV_STRESS_ONLY','CXV_PENDING_BATCH','CXV_FACE_PROTOTYPE','CXV_OUTER_PROTOTYPE','CXV_NUMBER_METRICS'])delete env[key];
   let code;
   try{code=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,['tools/v5vfx/benchmark-boss-play.mjs'],{cwd:root,env,stdio:['ignore',log.fd,log.fd]});child.once('error',reject);child.once('exit',resolve);});}finally{await log.close();}
   assert.equal(code,0,'Production trial failed;see '+resolve(out,index+'-'+mode+'.log'));
