@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-17T18:42:48.072Z",
+  "source": "f3b0ea03c3f34e0c3133cc0705d68f49d0985c99",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "a157cd7a74faf708496f0d07c8ef600644e53347b3ab278bdb7ea44902624409",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only sample-invariant lift/lean prototype; shared point dispatch and sample invalidation in both modes.910 exact motion/vertex/socket cases;7alternating warmed4x blocks. No extra pervertex storage, allocation perframe, renderer timing, FPS or runtime claim",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "prototype": {
+    "drawings": 7,
+    "valuesPerDrawing": 2,
+    "method": "Tool-only lift/lean computed once per sample, invalidated before every sample. Weighted mesh path only; arbitrary points and explicit seeks keep the original arithmetic. Shared point dispatch in both modes; no per-vertex storage or per-frame allocation."
+  },
+  "pass": true,
+  "ended": "2026-11-17T18:43:00.641Z",
+  "raw": "work/v5/CXV/films/V7-F-drawing-frame/report.json",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "cases": 420,
+      "differences": [],
+      "originalMedianMs": 237,
+      "candidateMedianMs": 227.20000000298023
+    },
+    {
+      "id": "boss",
+      "cases": 490,
+      "differences": [],
+      "originalMedianMs": 277.80000000447035,
+      "candidateMedianMs": 267.19999999552965
+    }
+  ],
+  "decision": "Tool-only4.1/3.8% warm geometry improvement. Continue examining per-frame derived scalar products and smear;no runtime edit or READY."
+}

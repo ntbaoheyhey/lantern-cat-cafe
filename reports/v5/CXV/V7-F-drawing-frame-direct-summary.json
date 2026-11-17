@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-17T18:45:06.853Z",
+  "source": "f3b0ea03c3f34e0c3133cc0705d68f49d0985c99",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "toolSha256": "85d385bb35c64e2973be619051a88a0d376f3ffcfc189ff1a1cbffad5b751df0",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Tool-only sample-invariant lift/lean prototype; shared point dispatch and sample invalidation in both modes.910 exact motion/vertex/socket cases;7alternating warmed4x blocks. No extra pervertex storage, allocation perframe, renderer timing, FPS or runtime claim",
+  "errors": [],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "prototype": {
+    "drawings": 7,
+    "valuesPerDrawing": 14,
+    "extended": true,
+    "method": "Tool-only sample invariants, invalidated before every sample. Weighted mesh path only; arbitrary points and explicit seeks keep the original arithmetic. Shared point dispatch in both modes; no per-vertex storage or per-frame allocation."
+  },
+  "pass": true,
+  "ended": "2026-11-17T18:45:19.366Z",
+  "raw": "work/v5/CXV/films/V7-F-drawing-frame-direct/report.json",
+  "fixtures": [
+    {
+      "id": "wave3",
+      "cases": 420,
+      "differences": [],
+      "originalMedianMs": 234.19999999552965,
+      "candidateMedianMs": 224.09999999403954
+    },
+    {
+      "id": "boss",
+      "cases": 490,
+      "differences": [],
+      "originalMedianMs": 279.70000000298023,
+      "candidateMedianMs": 265
+    }
+  ]
+}

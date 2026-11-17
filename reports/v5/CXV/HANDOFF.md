@@ -1,10 +1,10 @@
 # CXV V7 handoff
-ACTIVE V-F current ordinary-play CPU attribution;glyph endpoint scan rejected negligible gain;upload scheduling rejected without runtime change;V-C/B2/E fresh servedcandidate verified;assistant:AGV.
+ACTIVE V-F deformation study;no app edits from clamp/face/frame prototypes;glyph endpoint scan rejected negligible gain;upload scheduling rejected without runtime change;V-C/B2/E fresh servedcandidate verified;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Face cache ordinary gain weak;keep out of runtime. Tool-only per-sample lift/lean invariant prototype next;baseline910motion/130GPU+ordinary available. Study18:27Z;no runtime before18:43Z.
+NEXT 1: Checkpoint scalar prototypes;frame coefficients910exact but only4–5%warm gain,not integrated. Begin mesh-density quality/performance study with measured GPU differences before any app edit.
 NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.10 mergedbf9520741;packed/crop independent review pending.
 NEXT 3: Review AGV audit/research DONE; retain12approvedtextures; no unsourced timings or duplicate CXI conversion.
-Last confirmed pushafe352a13 (compact prototype push confirmed18:38Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
+Last confirmed pushf3b0ea03c (ordinary face prototype push confirmed18:42Z); announced v5-m1.10@659d0d6f7 merged bf9520741 without conflicts; trackedWIP clean beforemerge.
 V-A3 CXI ACCEPT16:10Z;20GPUdrawings/33tests/tsc0;CloverROI62→0;capture-arrival.mjs retained.
 V-C servedaf3adbe2 own18:04Z6sheets0errors;normal240/620ms,reducedfeetstable,actionyield160ms,incomingdx9dy-2;net12@1280clear1640,Yarnsocket0clear1760.
 V-B2 servedaf3adbe2 own18:04Z4sheets +18:06Zordinary32s/rate;26actor+3status/6ults all4heroes bothrates;actorleadIn0,2200/1100;statusvoice absent.
