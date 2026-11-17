@@ -7,6 +7,8 @@ import ts from '../../apps/web/node_modules/typescript/lib/typescript.js';
 import {chromium,config,openFixture} from './browser-fixture.mjs';
 import {runtimeEvidence} from './runtime-evidence.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT??'work/v5/CXV/films/V7-F-bounds-evaluation');await mkdir(out,{recursive:true});
+const cycles=Number(process.env.CXV_BOUNDS_CYCLES??60),blocks=Number(process.env.CXV_BOUNDS_BLOCKS??7);
+assert(Number.isInteger(cycles)&&cycles>=12&&cycles<=240&&Number.isInteger(blocks)&&blocks>=3&&blocks<=15,'Invalid experiment size');
 const baselineSourceRef=process.env.CXV_BOUNDS_SOURCE_REF??'ad293561dc9c10e45bef6b4604cdb480e80e0339';
 const source=execFileSync('git',['show',baselineSourceRef+':apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts'],{encoding:'utf8'});
 const original=`   for(let j=0;j<3;j++){
@@ -26,13 +28,13 @@ assert(source.includes(original)&&source.includes(anchor),'Bounds evaluator chan
 const candidate=source.replace(anchor,anchor+"\n  const packed=positions.itemSize===3&&!positions.normalized&&!('isInterleavedBufferAttribute' in positions)&&(positions.array instanceof Float32Array||positions.array instanceof Float64Array)?positions.array:null;").replace(original,packed);
 const compile=s=>ts.transpileModule(s,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText;
 const sources={original:compile(source),packed:compile(candidate)};
-const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),baselineSourceRef,...runtimeEvidence(),viewport:{width:1280,height:720},method:'Interleaved warmed contour evaluation on65original posed meshes at4xCPU. Twelve cycles per block,three blocks/mode after warmup; vary root rotation/translation percycle. Same arithmetic order with direct Float32position reads; original fallback remains. Excludes construction/GPU/frame timing; exact bounds required.',fixtures:[],errors:[]};
+const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),baselineSourceRef,...runtimeEvidence(),viewport:{width:1280,height:720},cycles,blocks,method:'Alternate warmed contour evaluation on65original posed meshes at4xCPU. First12cycles retain exact bounds for parity/warmup; timed blocks use configured cycles and checksum, excluding diagnostic result-array allocations. Vary root rotation/translation percycle. Same arithmetic order including initial zero; direct Float32/64 reads with getter fallback. Excludes construction/GPU/frame timing.',fixtures:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const id of ['wave3','boss']){
   const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id===id),{fixedClock:false});report.url=page.url();
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
-  const result=await page.evaluate(async({sources,id})=>{
+  const result=await page.evaluate(async({sources,id,cycles,blocks})=>{
    const T=await import('/node_modules/.vite/deps/three.js'),s=window.__depthScene;cancelAnimationFrame(s.raf);const cases=[],modules={};
    for(const [variant,source]of Object.entries(sources)){const url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));try{modules[variant]=await import(url);}finally{URL.revokeObjectURL(url);}}
    for(const [actorId,e]of s.actors){
@@ -42,22 +44,23 @@ try{
      const mesh=new T.Mesh(d.geometry.clone(),d.material.clone());cases.push({actorId,key,mesh});
     }
    }
-   const run=(variant,block,cycles=12)=>{
-    const bounds=[],measure=modules[variant].opaqueWorldBounds,start=performance.now();
+   const run=(variant,block,cycles,retainBounds=false)=>{
+    const bounds=retainBounds?[]:undefined,measure=modules[variant].opaqueWorldBounds,start=performance.now();let checksum=0;
     for(let cycle=0;cycle<cycles;cycle++)for(const {actorId,key,mesh}of cases){
      mesh.rotation.z=cycle*.013;mesh.position.set(cycle*.7,-cycle*.3,0);mesh.scale.set(cycle%2?-1.1:.9,.8,1);
-     bounds.push({cycle,actorId,key,bounds:measure(mesh)});
+     const value=measure(mesh);checksum+=value.x+value.y+value.width+value.height;
+     if(bounds)bounds.push({cycle,actorId,key,bounds:value});
     }
-    return{variant,block,cycles,elapsedMs:performance.now()-start,bounds};
+    return{variant,block,cycles,elapsedMs:performance.now()-start,checksum,bounds};
    };
    try{
-    run('original',-1,3);run('packed',-1,3);const runs=[];
-    for(let block=0;block<3;block++)for(const variant of block%2?['packed','original']:['original','packed'])runs.push(run(variant,block));
-    const expected=JSON.stringify(runs[0].bounds),exact=runs.every(r=>JSON.stringify(r.bounds)===expected);
-    const median=variant=>runs.filter(r=>r.variant===variant).map(r=>r.elapsedMs).sort((a,b)=>a-b)[1];
-    return{id,cases:cases.length,samplesPerBlock:cases.length*12,exact,originalMedianMs:median('original'),packedMedianMs:median('packed'),runs};
+    const parity=[run('original',-1,12,true),run('packed',-1,12,true)],runs=[];
+    for(let block=0;block<blocks;block++)for(const variant of block%2?['packed','original']:['original','packed'])runs.push(run(variant,block,cycles));
+    const exact=JSON.stringify(parity[0].bounds)===JSON.stringify(parity[1].bounds)&&runs.every(r=>r.checksum===runs[0].checksum);
+    const median=variant=>runs.filter(r=>r.variant===variant).map(r=>r.elapsedMs).sort((a,b)=>a-b)[Math.floor(blocks/2)];
+    return{id,cases:cases.length,exactParitySamples:cases.length*12,samplesPerBlock:cases.length*cycles,exact,originalMedianMs:median('original'),packedMedianMs:median('packed'),runs};
    }finally{for(const {mesh}of cases){mesh.geometry.dispose();mesh.material.dispose();}}
-  },{sources,id});
+  },{sources,id,cycles,blocks});
   report.fixtures.push(result);report.errors.push(...errors);await page.close();
  }
  report.pass=!report.errors.length&&report.fixtures.every(r=>r.exact);report.ended=new Date().toISOString();

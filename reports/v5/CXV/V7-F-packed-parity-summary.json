@@ -1,0 +1,45 @@
+{
+  "before": {
+    "utc": "2026-11-17T17:26:53.035Z",
+    "source": "ad293561dc9c10e45bef6b4604cdb480e80e0339",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Frozen original drawn K0/K1/K2/K5/K4 at two life clocks. Exact world opacity bounds and SHA256 of isolated1280x720 GPU RGBA. Diagnostic pose sampling, not ordinary gameplay.",
+    "errors": [],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "pass": true,
+    "ended": "2026-11-17T17:26:58.082Z"
+  },
+  "after": {
+    "utc": "2026-11-17T17:33:29.200Z",
+    "source": "c79f50b7140a6d9ac83443b90b0de7da7e7b1043",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Frozen original drawn K0/K1/K2/K5/K4 at two life clocks. Exact world opacity bounds and SHA256 of isolated1280x720 GPU RGBA. Diagnostic pose sampling, not ordinary gameplay.",
+    "errors": [],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "differences": [],
+    "exactMatchTo": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-packed-gpu-before/report.json",
+    "pass": true,
+    "ended": "2026-11-17T17:33:35.670Z"
+  },
+  "rowCount": 130,
+  "focusedTests": 51,
+  "typecheckExit": 0,
+  "representations": [
+    "Float32",
+    "Float64",
+    "normalized Int16",
+    "interleaved stride5 offset1",
+    "Float16"
+  ],
+  "oracle": "All painted pixels transformed with Three triangle interpolation; sparse/single/empty/solid/hollow \u00d7 flipY true/false \u00d7 5position representations. Updated tests include x/y/z root rotations to exercise transformed z."
+}

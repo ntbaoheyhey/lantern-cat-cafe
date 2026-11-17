@@ -16,7 +16,7 @@ it('reuses both alternating pose contours while still measuring current deformat
  geometry.dispose();material.dispose();a.dispose();b.dispose();
 });
 
-it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow'].flatMap(pattern=>['float32','float64','normalized-int16','interleaved','float16'].map(format=>({flipY,pattern,format})))) )('retains every painted extremum through deformation and reflection (flipY=$flipY, $pattern, $format)',({flipY,pattern,format})=>{
+it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow'].flatMap(pattern=>['float32','float64','normalized-int16','interleaved','float16'].map(format=>({flipY,pattern,format})))) )('retains every painted extremum through 3D deformation and reflection (flipY=$flipY, $pattern, $format)',({flipY,pattern,format})=>{
  const image=document.createElement('canvas');image.width=8;image.height=6;
  const rgba=new Uint8ClampedArray(8*6*4);
  for(let y=0;y<6;y++)for(let x=0;x<8;x++){
@@ -40,7 +40,7 @@ it.each([true,false].flatMap(flipY=>['sparse','single','empty','solid','hollow']
   geometry.setAttribute('position',converted);positions=converted;
  }
  const material=new MeshBasicMaterial({map:texture}),mesh=new Mesh(geometry,material);
- mesh.scale.set(-1.4,.8,1);mesh.rotation.z=.23;mesh.position.set(7,-3,2);mesh.updateMatrixWorld(true);
+ mesh.scale.set(-1.4,.8,1);mesh.rotation.set(.17,-.21,.23);mesh.position.set(7,-3,2);mesh.updateMatrixWorld(true);
  // Independent oracle: transform every painted pixel through Three's triangle
  // interpolation, without row endpoints or convex-hull reduction.
  const expected=new Box3(),point=new Vector3(),weights=new Vector3(),world=new Vector3();
