@@ -38,6 +38,9 @@ try{
  await page.locator('.uv-patrol').click();step('prepare opened');
  await page.getByRole('button',{name:'Fight',exact:true}).click();await page.locator('.dp-battle').waitFor();step('battle visible');
  const tutorial=page.getByRole('dialog',{name:'Tutorial',exact:true});await tutorial.waitFor();
+ const enemyMeters=page.locator('.b3-world[data-side="enemy"] .b3-hp');
+ report.enemyHpBefore=await enemyMeters.evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.closest('[data-actor]').getAttribute('data-actor'),Number(element.getAttribute('aria-valuenow'))])));
+ assert(Object.keys(report.enemyHpBefore).length>0,'Visible enemy HUD must be present');
  for(let i=0;i<12&&await tutorial.isVisible();i++){
   const instruction=await tutorial.locator('p').innerText(),words=instruction.trim().split(/\s+/).length;
   const readingMs=Math.max(1000,Math.ceil(words*60000/report.readingWordsPerMinute));
@@ -46,10 +49,16 @@ try{
  }
  assert(!await tutorial.isVisible(),'All tutorial cards must be completed');
  assert(report.tutorial.length>0,'Tutorial must not be skipped');
- const damage=page.locator('.dp-float-number:visible .dp-number-damage').first();await damage.waitFor({state:'visible',timeout:15000});step('first visible hit');
+ const hitHandle=await page.waitForFunction(before=>{
+  for(const element of document.querySelectorAll('.b3-world[data-side="enemy"] .b3-hp')){
+   const actor=element.closest('[data-actor]'),target=actor?.getAttribute('data-actor'),hp=Number(element.getAttribute('aria-valuenow')),rect=element.getBoundingClientRect();
+   if(target&&before[target]>hp&&rect.width>0&&rect.height>0&&getComputedStyle(actor).visibility!=='hidden')return {target,name:element.getAttribute('aria-label'),hpBefore:before[target],hpAfter:hp,damage:before[target]-hp};
+  }
+  return false;
+ },report.enemyHpBefore,{timeout:15000,polling:'raf'});step('first visible hit');
  report.firstHitMs=report.steps.at(-1).ms;
- report.hit=await damage.evaluate(element=>({text:element.textContent,description:element.closest('[data-number-target]')?.getAttribute('aria-label'),target:element.closest('[data-number-target]')?.getAttribute('data-number-target')}));
- assert(/damage [1-9]\d*/.test(report.hit.description??''),'Visible hit must report positive damage');
+ report.hit=await hitHandle.jsonValue();await hitHandle.dispose();
+ assert(report.hit.damage>0,'Visible enemy health must decrease');
  report.readingAllowanceMs=report.tutorial.reduce((total,card)=>total+card.readingMs,0);
  await sharp(await page.screenshot()).resize({width:1024}).jpeg({quality:84}).toFile(resolve(out,'first-hit-1024.jpg'));
  report.complete=!report.errors.length&&!report.httpFailures.length&&!report.blocked.length;
