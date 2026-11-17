@@ -1,7 +1,7 @@
 /** Encode only integrity-approved originals. Study first; publish explicitly after review. */
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir,access} from 'node:fs/promises';
-import {resolve,basename} from 'node:path';
+import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import sharp from 'sharp';
@@ -10,7 +10,7 @@ const root=resolve(import.meta.dirname,'../..');
 const args=Object.fromEntries(process.argv.slice(2).map(arg=>{
  const match=/^--([a-z-]+)=(.*)$/.exec(arg);assert(match,'Use --name=value');return [match[1],match[2]];
 }));
-assert(Object.keys(args).every(k=>['label','publish','vfx-quality','portrait-quality','speed'].includes(k)));
+assert(Object.keys(args).every(k=>['label','publish','vfx-quality','portrait-quality','speed','target-from'].includes(k)));
 assert(/^[a-z0-9-]+$/.test(args.label??''),'Choose a fresh evidence label');
 const out=resolve(root,'work/v5/CXI/asset-delivery',args.label),reportPath=resolve(out,'report.json');
 const hash=b=>createHash('sha256').update(b).digest('hex');
@@ -40,8 +40,11 @@ try{await access(reportPath);throw Error('Preserve prior evidence; use a fresh l
 await mkdir(out,{recursive:true});sharp.concurrency(2);
 const quality={vfx:Number(args['vfx-quality']??40),portrait:Number(args['portrait-quality']??55)};
 const speed=Number(args.speed??4);assert(Number.isInteger(speed)&&speed>=0&&speed<=10);
+if(args['target-from'])assert(/^[a-z0-9-]+$/.test(args['target-from']));
+const targetBase=args['target-from']?JSON.parse(await readFile(resolve(root,'work/v5/CXI/asset-delivery',args['target-from'],'report.json'))):null;
+const targetTotals={vfx:340000,portrait:106000};
 for(const q of Object.values(quality))assert(Number.isInteger(q)&&q>0&&q<=100);
-const report={utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),versions:{sharp:sharp.versions,avifenc:execFileSync('avifenc',['--version'],{encoding:'utf8'}).trim()},method:'Original source SHA256, sRGB, VFX original dimensions, portraits proportional384w Lanczos3; AVIF444/full/CICP1-13-6, qalpha100, speed4,2workers. Composite error measured over black and white against original or lossless resized original. Metrics are not visual acceptance.',rows:[],complete:false};
+const report={utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),versions:{sharp:sharp.versions,avifenc:execFileSync('avifenc',['--version'],{encoding:'utf8'}).trim()},method:'Original source SHA256, sRGB, VFX original dimensions, portraits proportional384w Lanczos3; AVIF444/full/CICP1-13-6, qalpha100, recorded speed,2workers. Composite error measured over black and white against original or lossless resized original. Metrics are not visual acceptance.',rows:[],complete:false};
 const inputs=[...Object.entries(approved).map(([id,row])=>({id,kind:'vfx',source:'apps/web/public/vfx/v5/'+row.file,approved:row})),...['mochi','soot','clover','panko'].map(id=>({id,kind:'portrait',source:`assets/cardrpg-a6/illustrations/${id}.webp`}))];
 for(const item of inputs){
  await stop();const source=await readFile(resolve(root,item.source)),sourceMeta=await sharp(source).metadata();
@@ -50,8 +53,9 @@ for(const item of inputs){
  const png=resolve(out,item.id+'.png');await input.clone().png().toFile(png);
  const {data:a,info}=await sharp(png).ensureAlpha().raw().toBuffer({resolveWithObject:true});
  const studyFile=item.id+'.avif',output=resolve(out,studyFile),start=performance.now();
- const encoderArgs=['--no-overwrite','--qcolor',String(quality[item.kind]),'--qalpha','100','--speed',String(speed),'--jobs','2','--yuv','444','--range','full','--cicp','1/13/6',png,output];
- execFileSync('avifenc',encoderArgs,{stdio:'pipe'});
+ const targetBytes=targetBase?Math.floor(targetBase.rows.find(r=>r.kind===item.kind&&r.id===item.id).bytes*targetTotals[item.kind]/targetBase.totals[item.kind]):null;
+ const encoderArgs=['--no-overwrite',...(targetBytes?['--target-size',String(targetBytes)]:['--qcolor',String(quality[item.kind])]),'--qalpha','100','--speed',String(speed),'--jobs','2','--yuv','444','--range','full','--cicp','1/13/6',png,output];
+ const encoderLog=execFileSync('avifenc',encoderArgs,{encoding:'utf8'});await writeFile(resolve(out,item.id+'-encoder.log'),encoderLog);
  const encodeMs=performance.now()-start,encoded=await readFile(output),meta=await sharp(encoded).metadata();
  assert.equal(meta.width,info.width);assert.equal(meta.height,info.height);assert.equal(meta.hasAlpha,sourceMeta.hasAlpha);
  if(item.kind==='vfx'){assert.equal(meta.width,sourceMeta.width);assert.equal(meta.height,sourceMeta.height);assert.equal(meta.width%item.approved.cols,0);assert.equal(meta.height%item.approved.rows,0);}
@@ -62,9 +66,11 @@ for(const item of inputs){
  assert.equal(alphaMaxError,0,'Alpha must match every source sample');
  const rmse=Math.sqrt(sum/(a.length/4*6)),sha256=hash(encoded),file=`${item.id}-${sha256.slice(0,12)}.avif`;
  const row={id:item.id,kind:item.kind,source:item.source,sourceSha256:hash(source),sourceBytes:source.length,sourceWidth:sourceMeta.width,sourceHeight:sourceMeta.height,width:meta.width,height:meta.height,alpha:meta.hasAlpha,alphaMaxError,alphaChangedPixels,quality:quality[item.kind],chromaSubsampling:'4:4:4',alphaQuality:100,bytes:encoded.length,sha256,integrity:integrity(encoded),url:item.kind==='vfx'?'/vfx/v5/'+file:'/art/v5-delivery/home-portraits/'+file,studyFile,compositeRmse:rmse,compositePsnr:20*Math.log10(255/rmse),compositeMaxError:max,encodeMs,decodeMs};
+ row.speed=speed;row.targetBytes=targetBytes;if(targetBytes)row.quality=null;
  report.rows.push(row);console.log(JSON.stringify({id:row.id,kind:row.kind,bytes:row.bytes,alphaMaxError,compositePsnr:row.compositePsnr}));
  await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
 }
 report.totals=Object.fromEntries(['vfx','portrait'].map(kind=>[kind,report.rows.filter(r=>r.kind===kind).reduce((s,r)=>s+r.bytes,0)]));
 report.budgetPass=report.totals.vfx<=350000&&report.totals.portrait<=110000;report.complete=true;
+report.encoderSettings={speed,yuv:'444',range:'full',cicp:'1/13/6',alphaQuality:100,targetFrom:args['target-from']??null};
 await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({complete:true,budgetPass:report.budgetPass,totals:report.totals,reportPath}));
