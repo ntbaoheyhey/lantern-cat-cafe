@@ -19,8 +19,11 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const rate of [1,4]){
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr});await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
-  const densityBefore=await desktopDensity(page,desktopDpr);
-  const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
+  const cdp=await page.context().newCDPSession(page);
+  // Chromium's screenshot scale uses this session's metrics, not another session's override.
+  await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:desktopDpr,mobile:false});
+  await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
+  const densityBefore=await desktopDensity(page,desktopDpr);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:1000});
   await cdp.send('Tracing.start',{categories:'devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline.stack',transferMode:'ReturnAsStream'});await cdp.send('Profiler.start');
   const run=await page.evaluate(async({rate,durationMs,shaderAudit})=>{
