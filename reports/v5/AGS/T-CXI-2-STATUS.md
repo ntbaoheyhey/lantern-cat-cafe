@@ -1,3 +1,3 @@
-# T-CXI-2: Award Verification (OPEN)
-- Status: OPEN (Contract/tx evidence pending).
-- Note: Github/Dorahacks home links do not prove award.
+# T-CXI-2: Winners Report Verification (OPEN)
+- Status: Verifying GitHub links and contract/tx evidence.
+- Note: Awaiting final demo duration data.
