@@ -1,4 +1,3 @@
-# T-M5 Final Audit Report (OPEN)
-- Status: Independent verification of trial artifacts pending.
-- GOP intervals: 1s, 2s.
-- Findings: Trial execution confirmed by CXI. Awaiting independent packet/segment and quality verification.
+# T-M5 Final Audit Status
+- Status: OPEN (Awaiting audit of existing CXI artifacts).
+- Note: CXI trial artifacts exist at /work/v5/CXI/batch-m/short-gop-r1/report.json. Independent audit of packet/segment and quality metrics is required.
