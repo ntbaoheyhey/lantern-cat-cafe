@@ -19,16 +19,19 @@ async function pinned(path,expected){
  evidence.push({path,sha256:hash,bytes:bytes.length});return bytes;
 }
 async function json(path,expected){return JSON.parse(await pinned(path,expected));}
-const nativeReview=await json(resolve(root,'reports/v5/CXI/evidence/v8-clover-q21-native-review.json'));
+const studyLabel=process.env.CXI_CLOVER_STUDY??'clover-four-plane-q21-r1';
+assert(['clover-four-plane-q21-r1','clover-direct-rgb-q21-r1','clover-full-matte-q21-r1'].includes(studyLabel));
+const nativeReview=await json(resolve(root,studyLabel==='clover-four-plane-q21-r1'?'reports/v5/CXI/evidence/v8-clover-q21-native-review.json':`reports/v5/CXI/evidence/v8-${studyLabel}-native-review.json`));
 const native=await json(nativeReview.raw.path,nativeReview.raw.sha256);
 assert(native.runs.length===2&&native.runs.every(r=>r.numericPass&&r.samples.length===300&&r.loopWrapped));
-const offline=await json(resolve(root,'work/v5/CXI/batch-m/clover-four-plane-q21-r1/report.json'));
+const offline=await json(resolve(root,`work/v5/CXI/batch-m/${studyLabel}/report.json`));
 const trial=offline.trials.find(t=>t.mode==='ycrcb');assert(trial.numericPass);
 const video=await pinned(trial.video,trial.sha256);assert.equal(sha(video),native.video.sha256);
-assert.deepEqual(offline.logicalSize,[212,260]); // Bytes are report-only under OWNER INBOX-CXI386.
+assert([[212,260],[318,390]].some(([w,h])=>offline.logicalSize[0]===w&&offline.logicalSize[1]===h)); // Bytes report-only.
 const source=await pinned(offline.sourceRgba,offline.sourceRgbaSha256);
 assert.equal(sha(source),native.sourceRgbaSha256);
-const w=212,h=260,ratio=2/3,scaled=xy=>xy.map(v=>v*ratio);
+const [w,h]=offline.logicalSize,ratio=h/390,opaqueHeight=384*ratio,scaled=xy=>xy.map(v=>v*ratio);
+assert.equal(w,318*ratio);assert.equal(offline.opaqueHeight,opaqueHeight);
 assert.equal(source.length,300*w*h*4);
 const base=await json(resolve(root,'reports/v5/CXI/evidence/v8-m-clover-provisional-sockets.json'));
 const hip=await json('/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-socket-delivery-R1.json');
@@ -50,7 +53,7 @@ for(let p=3;p<rgba.length;p+=4)assert.equal(decoded[p],rgba[p],'Poster alpha mus
 let left=w,top=h,right=0,bottom=0;
 for(let p=3;p<source.length;p+=4)if(source[p]>=16){const i=((p-3)/4)%(w*h),x=i%w,y=Math.floor(i/w);left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);}
 const sockets=Object.fromEntries(Object.entries(base.provisionalSockets).map(([k,v])=>[k,scaled(v.xy)]));
-Object.assign(sockets,{root:foot,'hp-anchor':[foot[0],foot[1]-1.12*256]});
+Object.assign(sockets,{root:foot,'hp-anchor':[foot[0],foot[1]-1.12*opaqueHeight]});
 const socketTracks={},socketChannels={};
 for(const partial of [hip.partialManifest,spout.partialManifest]){
  Object.assign(sockets,Object.fromEntries(Object.entries(partial.sockets).map(([k,v])=>[k,scaled(v)])));
@@ -73,12 +76,12 @@ if(authored){
   socketTracks[channel]=payload.partialManifest.socketTracks[channel].map(scaled);
   socketChannels[socket]=channel;
   authoredBindings.push({path,sha256:reviewed.artifactHashes[path],channel,socket,scale:ratio,
-   convention:'Scale both socket coordinates/offsets and the existing foot/opaque-height contract by2/3;world-relative coordinates remain unchanged. Native decoded alignment remains required.'});
+   convention:`Scale socket coordinates/offsets and foot/opaqueHeight together by${ratio};world-relative coordinates unchanged. Native decoded alignment remains required.`});
  }
 }
 const manifest={version:1,id:'clover',format:'h264-ycrcb-alpha-four-plane',
  video:`/units/clover/designer-idle-${sha(video).slice(0,16)}.mp4`,poster:`/units/clover/designer-idle-${sha(poster).slice(0,16)}.webp`,
- width:w,height:h,opaqueHeight:256,foot,opaqueBounds:[left,top,right,bottom],faceROI:scaled([135,60,90,90]),
+ width:w,height:h,opaqueHeight,foot,opaqueBounds:[left,top,right,bottom],faceROI:scaled([135,60,90,90]),
  duration:10,fps:30,frames:300,sourceSha256:base.sourceSha256,videoSha256:sha(video),posterSha256:sha(poster),videoBytes:video.length,sockets,socketTracks,socketChannels};
 const ssr=await createServer({root:app,configFile:false,server:{middlewareMode:true},logLevel:'error'});
 try{const {validateDesignerIdle}=await ssr.ssrLoadModule(resolve(app,'src/game/cardrpg/spine/designer-idle-loader.ts'));validateDesignerIdle(manifest,'clover');}finally{await ssr.close();}
@@ -100,10 +103,10 @@ await build({root:app,configFile:resolve(app,'vite.config.ts'),envFile:false,plu
 assert(injected>0);assert.equal(sha(await readFile(registryPath)),sha(registryBefore));
 const files=[];
 for(const [url,data] of payloads){const path=resolve(dist,url.slice(1));await mkdir(resolve(path,'..'),{recursive:true});await writeFile(path,data);files.push({url,path,bytes:data.length,sha256:sha(data)});}
-const report={utc:new Date().toISOString(),sourceCommit,sourceKind:'Committed application source plus explicit ignored Mochi+Clover study registry override',
+const report={utc:new Date().toISOString(),sourceCommit,sourceKind:'Committed application source plus explicit ignored Mochi+Clover study registry override',studyLabel,
  toolSha256:sha(await readFile(import.meta.filename)),dist,indexSha256:sha(await readFile(resolve(dist,'index.html'))),registryOverride,
  productionRegistrySha256:sha(registryBefore),productionRegistryChanged:false,runtimeSources,evidence,files,authoredBindings,
- clover:{scale:ratio,logicalSize:[w,h],opaqueHeight:256,foot,opaqueBounds:manifest.opaqueBounds,faceROI:manifest.faceROI,sockets,socketChannels,
+ clover:{scale:ratio,logicalSize:[w,h],opaqueHeight,foot,opaqueBounds:manifest.opaqueBounds,faceROI:manifest.faceROI,sockets,socketChannels,
   provisional:authored?['faceROI','head/freePaw native decoded alignment']:['head','off-hand','faceROI','hp-anchor native centering/readability'],hpFormula:'[footX,footY-1.12*opaqueHeight]; no track',
   opaqueBoundsBasis:'Union of all300 resized source masks at alpha>=16; right/bottom exclusive',
   unresolved:['original matte/fringe/halo','tail loop seam','anatomy','decoded scene/cast','performance'],bytePolicy:'report-only'},
