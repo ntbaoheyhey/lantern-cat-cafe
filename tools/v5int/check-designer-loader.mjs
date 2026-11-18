@@ -11,17 +11,39 @@ const root=resolve(import.meta.dirname,'../..'),app=resolve(root,'apps/web');
 const require=createRequire(resolve(app,'package.json'));
 const {createServer}=await import(require.resolve('vite'));
 const engines=require('@playwright/test');
-const work=resolve(root,'work/v5/CXI/batch-m/loader');await mkdir(work,{recursive:true});
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const candidateMode=process.argv.includes('--candidate-mochi');
+const fourIndex=process.argv.indexOf('--four-plane-study'),fourPlaneLabel=fourIndex<0?null:process.argv[fourIndex+1];
+const runIndex=process.argv.indexOf('--run-label'),runLabel=runIndex<0?'r1':process.argv[runIndex+1];
+assert(fourIndex<0||(/^[a-z0-9-]+$/.test(fourPlaneLabel??'')&&!candidateMode));assert(/^[a-z0-9-]+$/.test(runLabel??''));
+const oneCatMode=candidateMode||!!fourPlaneLabel;
+const work=resolve(root,'work/v5/CXI/batch-m',fourPlaneLabel?`${fourPlaneLabel}/runtime-native-${runLabel}`:runIndex<0?'loader':`loader-${runLabel}`);
+if(fourPlaneLabel||runIndex>=0)assert(!existsSync(work),'Preserve prior runtime evidence');await mkdir(work,{recursive:true});
 const study=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-m-delivery-study.json')));
 const manifests={},routes=new Map();
+let fourPlaneReceipt;
+if(fourPlaneLabel){
+ fourPlaneReceipt=JSON.parse(await readFile(resolve(root,'work/v5/CXI/batch-m',fourPlaneLabel,'report.json')));
+ const trial=fourPlaneReceipt.trials.find(t=>t.mode==='ycrcb');assert(trial?.numericPass);
+ const video=await readFile(trial.video);assert.equal(sha(video),trial.sha256);
+ const source=await readFile(fourPlaneReceipt.sourceRgba);assert.equal(sha(source),fourPlaneReceipt.sourceRgbaSha256);
+ const prior=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-m-mochi-candidate.json')));
+ const m=JSON.parse(await readFile(prior.files.find(f=>f.path.endsWith('.json')).path));
+ const w=312,h=260,ratio=w/m.width;assert.equal(h/m.height,ratio);assert.equal(source.length,300*w*h*4);
+ const rgba=Buffer.from(source.subarray(0,w*h*4));for(let p=0;p<rgba.length;p+=4)for(let c=0;c<3;c++)rgba[p+c]=rgba[p+3]?Math.min(255,Math.round(rgba[p+c]*255/rgba[p+3])):0;
+ const poster=await sharp(rgba,{raw:{width:w,height:h,channels:4}}).webp({lossless:true}).toBuffer();
+ const vp=`/units/mochi/designer-idle-${sha(video).slice(0,16)}.mp4`,pp=`/units/mochi/designer-idle-${sha(poster).slice(0,16)}.webp`;
+ routes.set(vp,{data:video,type:'video/mp4'});routes.set(pp,{data:poster,type:'image/webp'});
+ const scaled=xy=>xy.map(v=>v*ratio);
+ manifests.mochi={...m,format:'h264-ycrcb-alpha-four-plane',video:vp,poster:pp,width:w,height:h,opaqueHeight:256,foot:scaled(m.foot),opaqueBounds:scaled(m.opaqueBounds),faceROI:scaled(m.faceROI),videoSha256:sha(video),videoBytes:video.length,posterSha256:sha(poster),sockets:Object.fromEntries(Object.entries(m.sockets).map(([k,v])=>[k,scaled(v)])),socketTracks:Object.fromEntries(Object.entries(m.socketTracks??{}).map(([k,v])=>[k,v.map(scaled)]))};
+ await writeFile(resolve(work,'manifest.json'),JSON.stringify(manifests.mochi,null,2)+'\n');await writeFile(resolve(work,'poster.webp'),poster);
+}
 if(candidateMode){
  const receipt=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-m-mochi-candidate.json')));
  const manifest=JSON.parse(await readFile(receipt.files.find(f=>f.path.endsWith('.json')).path));manifests.mochi=manifest;
  for(const file of receipt.files){const data=await readFile(file.path);assert.equal(sha(data),file.sha256);routes.set(`/units/mochi/${file.path.split('/').at(-1)}`,{data,type:file.path.endsWith('.mp4')?'video/mp4':file.path.endsWith('.webp')?'image/webp':'application/json'});}
 }
-for(const {measurement:m} of candidateMode?[]:study.trials){
+for(const {measurement:m} of oneCatMode?[]:study.trials){
  const id=m.cat,folder=resolve(root,`work/v5/CXI/batch-m/experiments/${id}-384`);
  const video=await readFile(resolve(folder,'premul-mask-256-crf28-srgb.mp4'));
  const [w,h]=id==='mochi'?[312,260]:[212,260];
@@ -45,6 +67,7 @@ window.control=async()=>{
  geometry.dispose();material.dispose();renderer.dispose();return {stockThree:true};
 };
 window.run=async (m,mode='normal')=>{
+ if(mode==='bad-metadata')m={...m,width:m.width+2};
  const wait=ms=>new Promise(r=>setTimeout(r,ms));
  const until=async(test,label)=>{const end=performance.now()+6500;while(!test()){if(performance.now()>end)throw Error(label);await wait(20);}};
  const checks=[];const check=(name,pass,detail)=>checks.push({name,pass:!!pass,detail});
@@ -75,13 +98,19 @@ window.run=async (m,mode='normal')=>{
  check('off-DOM-video',!media.video.isConnected);
  const seek=async(time,reduced=false)=>{media.sample({worldTime:time,paused:true,fixedTime:true,frozen:false},reduced);await until(()=>!media.video.seeking&&designerDrift(media.video.currentTime,reduced?0:time)<.04,'seek did not settle');await wait(80);render();};
  await seek(2.5);
- const c=document.createElement('canvas');c.width=m.width;c.height=m.height*2;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(media.video,0,0);const native=ctx.getImageData(0,0,c.width,c.height).data;
+ const c=document.createElement('canvas');c.width=media.video.videoWidth;c.height=media.video.videoHeight;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(media.video,0,0);const native=ctx.getImageData(0,0,c.width,c.height).data;
  const out=document.createElement('canvas');out.width=m.width;out.height=m.height;const oc=out.getContext('2d');oc.drawImage(renderer.domElement,0,0);const gpu=oc.getImageData(0,0,m.width,m.height).data;
  const lin=x=>x<=.04045?x/12.92:Math.pow((x+.055)/1.055,2.4),srgb=x=>x<=.0031308?12.92*x:1.055*Math.pow(x,1/2.4)-.055;
  const bg=[238,244,232],diff=[];let transparent=0,opaque=0;
  for(let p=0;p<m.width*m.height;p++){
-  const a=native[(p+m.width*m.height)*4]/255;if(a<.02)transparent++;if(a>.98)opaque++;
-  for(let k=0;k<3;k++){const straight=Math.min(1,native[p*4+k]/255/Math.max(a,.001));const expected=srgb(lin(straight)*a+lin(bg[k]/255)*(1-a))*255;diff.push(Math.abs(expected-gpu[p*4+k]));}
+  let a,rgb;
+  if(m.format==='h264-ycrcb-alpha-four-plane'){
+   const x=p%m.width,y=Math.floor(p/m.width),at=(x,y)=>native[(y*c.width+x)*4]/255;
+   const luma=at(x,y),cr=at(x+m.width,y)-128/255,cb=at(x,y+m.height)-128/255;
+   a=at(x+m.width,y+m.height);rgb=[luma+1.403*cr,luma-.714*cr-.344*cb,luma+1.773*cb].map(v=>Math.max(0,Math.min(1,v)));
+  }else{a=native[(p+m.width*m.height)*4]/255;rgb=[0,1,2].map(k=>native[p*4+k]/255);}
+  if(a<.02)transparent++;if(a>.98)opaque++;
+  for(let k=0;k<3;k++){const straight=Math.min(1,rgb[k]/Math.max(a,.001));const expected=srgb(lin(straight)*a+lin(bg[k]/255)*(1-a))*255;diff.push(Math.abs(expected-gpu[p*4+k]));}
  }
  diff.sort((a,b)=>a-b);const pixel={mae:diff.reduce((a,b)=>a+b,0)/diff.length,p95:diff[Math.floor(diff.length*.95)],transparent,opaque};
  check('shader-matches-native-mask',pixel.mae<3&&pixel.p95<8&&transparent>100&&opaque>100,pixel);
@@ -124,7 +153,7 @@ try{for(const engine of ['chromium','webkit']){
  if(!existsSync(engines[engine].executablePath())){report.runs.push({engine,unavailable:true});continue;}
  const browser=await engines[engine].launch({headless:true,...(engine==='chromium'?{args:['--use-angle=metal']}: {})});
  try{if(controlOnly){const page=await browser.newPage(),errors=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await page.goto(report.url);await page.waitForFunction(()=>window.harnessReady);await page.evaluate(()=>window.control());await page.waitForTimeout(100);report.runs.push({engine,errors});await page.close();continue;}
- for(const [cat,manifest] of Object.entries(manifests))for(const mode of ['normal','reject','dispose-early']){
+ for(const [cat,manifest] of Object.entries(manifests))for(const mode of (fourPlaneLabel?['normal','reject','dispose-early','bad-metadata']:['normal','reject','dispose-early'])){
   const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
   try{await page.goto(report.url);await page.waitForFunction(()=>window.harnessReady);const row=await page.evaluate(({manifest,mode})=>window.run(manifest,mode),{manifest,mode});
    for(const key of ['capture','castCapture'])if(row[key]){const png=Buffer.from(row[key].split(',')[1],'base64');delete row[key];const file=resolve(work,`${candidateMode?'candidate-':''}${engine}-${cat}-${key}.png`);await writeFile(file,png);row[key+'Image']={path:file,sha256:sha(png),...await sharp(png).metadata()};delete row[key+'Image'].icc;}
@@ -132,9 +161,11 @@ try{for(const engine of ['chromium','webkit']){
   }catch(e){report.runs.push({engine,cat,mode,error:String(e),errors});console.log(engine,cat,mode,String(e));}finally{await page.close();}
  }}finally{await browser.close();}
 }}finally{await server.close();}
-report.pass=report.runs.length===(candidateMode?6:12)&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
+report.pass=report.runs.length===(fourPlaneLabel?8:candidateMode?6:12)&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
 report.candidate=candidateMode;report.adapterSha256=sha(await readFile(resolve(app,'src/game/cardrpg/spine/designer-idle-actor-loader.ts')));
 if(candidateMode)report.purpose='Actual384px candidate isolated native loader+cast; gameplay, cold bytes and art acceptance remain separate';
-await writeFile(resolve(root,'reports/v5/CXI/evidence/'+(controlOnly?'v8-m-loader-control.json':candidateMode?'v8-m-mochi-native.json':'v8-m-loader-native.json')),JSON.stringify(report,null,2)+'\n');
+if(fourPlaneLabel){report.purpose='Actual four-plane candidate through production loader; rescaled study anchors only, not anatomy or judge-scene acceptance';report.fourPlane={label:fourPlaneLabel,sourceRgbaSha256:fourPlaneReceipt.sourceRgbaSha256,videoSha256:manifests.mochi.videoSha256,videoBytes:manifests.mochi.videoBytes};report.harnessSha256=sha(await readFile(import.meta.filename));await writeFile(resolve(work,'report.json'),JSON.stringify(report,null,2)+'\n');}
+const reportName=fourPlaneLabel?`v8-m-four-plane-runtime-${runLabel}`:controlOnly?'v8-m-loader-control':candidateMode?'v8-m-mochi-native':'v8-m-loader-native';
+await writeFile(resolve(root,`reports/v5/CXI/evidence/${reportName}${!fourPlaneLabel&&runIndex>=0?'-'+runLabel:''}.json`),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({pass:report.pass,runs:report.runs.length,failures:report.runs.flatMap(r=>(r.checks??[]).filter(c=>!c.pass).map(c=>({engine:r.engine,cat:r.cat,...c})))}));
 process.exitCode=report.pass?0:1;

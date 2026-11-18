@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: implement explicit h264-ycrcb-alpha-four-plane runtimeformat in designer-media loader with tests;registry stays emptyuntilsceneacceptance.
+NEXT 1: prepare ignored Mochifourplane scene candidate using acceptedscoped sockets;coordinateCXV capture/buildlease;registryproductionempty.
 NEXT 2: review AGS M1/M2/M3 newDONEs;AGVlandingR3 REDO detailsoft/MAE3.7501;audioT5 stillneeds provenance/listening.
 NEXT 3: AGVqualitylanding+Cloverhead/off/vfx unresolved;Cloverhip/grip actualadapter3000PASS;fullreleasegates afterbytepass.
-Last pushed27d96dd04;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no new release.
+Last pushed20b7ba123;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 native7 source85cb62233d016faf5c5235ffe178408df1682af3/indexd75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84;build/typecheck0;unreleased.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified07:01Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T07:01:43.072880+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:CXI none;nativeq22PID4614complete;ChromiumMAE2.96984/WebKit2.92294PASS;no appenrollment.
-Mailboxread INBOX-CXI192;USER24;LEARN94;AGSnewM1/M2/M3DONEawaitexactreview;timestamps7hahead,useownUTC.
+Last RULES read2026-11-18T07:06:38.869854+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:CXI none;fourplane64nativechecks+legacy92nativechecks+15focused+TSC0PASS;noappenrollment.
+Mailboxread INBOX-CXI196;USER24;LEARN94;newAGS M1/M2/M3 stillREDO;useownUTC.
 AGS OPEN:T-M1REDO license/sourcecosts,T-M2REDO finalproofexactV4duplicate,T-M3REDO axes/runtimewording,T-CXI-5provenance/listening;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
@@ -17,4 +17,4 @@ Deferredm1.14 script work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py requires
 DeferredCXV11paths:offline2800geometry/80posemaskPASS;ownHUDtoolsyntaxchecked/notrun;Panko separate;do not alter Soot inBatchM.
 OwnedWIPreconciled:fourplaneveryslow22offlinePASS931787B;CloverDISreject277folds;foreign3submission+2QAuntouched;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875.
 Savedm1.13artifact290253430B;native7cold7674869/8141786/7750558B;wave3FAIL141786B;publicFuji absent;owner-only retained.
-Neverreopen priorreviewedimages inclq22native4justviewed;native/packed/context/m113/toast/nativehalf/notice/CloverR6/socketgrid ledgers inwork.
+Neverreopen reviewedimages inclq22decoder4+runtime4;othernative/packed/context/m113/toast/nativehalf/notice/CloverR6/socketgrid ledgers inwork.

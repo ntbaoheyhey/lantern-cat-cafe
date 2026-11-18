@@ -3,8 +3,9 @@ import * as T from 'three';
 
 export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern'] as const;
 export type DesignerSocketChannel=typeof DESIGNER_SOCKET_CHANNELS[number];
+export type DesignerIdleFormat='h264-rgb-mask'|'h264-ycrcb-alpha-four-plane';
 export interface DesignerIdleManifest {
- version:1;id:'mochi'|'clover';format:'h264-rgb-mask';video:string;poster:string;
+ version:1;id:'mochi'|'clover';format:DesignerIdleFormat;video:string;poster:string;
  width:number;height:number;opaqueHeight:number;foot:[number,number];duration:10;fps:30;frames:300;
  sourceSha256:string;videoSha256:string;posterSha256:string;videoBytes:number;
  sockets:Record<string,[number,number]>;
@@ -17,7 +18,7 @@ export interface DesignerIdleClock {
 }
 export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManifest {
  const m=value as DesignerIdleManifest;
- if(!m||!['mochi','clover'].includes(id)||m.id!==id||m.version!==1||m.format!=='h264-rgb-mask')throw Error('Invalid designer idle identity');
+ if(!m||!['mochi','clover'].includes(id)||m.id!==id||m.version!==1||!['h264-rgb-mask','h264-ycrcb-alpha-four-plane'].includes(m.format))throw Error('Invalid designer idle identity');
  if(m.duration!==10||m.fps!==30||m.frames!==300)throw Error('Designer idle must preserve 300 frames at 30fps');
  for(const size of [m.width,m.height,m.opaqueHeight])if(!Number.isInteger(size)||size<1||size>1024)throw Error('Invalid designer dimensions');
  if(m.width%2||m.height%2||m.opaqueHeight>m.height)throw Error('Invalid packed video dimensions');
@@ -42,17 +43,35 @@ export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManife
 export const designerPhase=(time:number,duration=10)=>((time%duration)+duration)%duration;
 export const designerDrift=(actual:number,target:number,duration=10)=>Math.abs(((actual-target+duration*1.5)%duration)-duration*.5);
 
-/** Same shader works for a straight-alpha poster and the one-stream premultiplied video. */
-export function designerMapChunk(){return `
- #ifdef USE_MAP
-  vec4 sampledDiffuseColor;
-  if (designerPacked > 0.5) {
+/** Logical dimensions never include the packed data planes. Mask coordinates use video top-left. */
+export function designerVideoLayout(m:Pick<DesignerIdleManifest,'format'|'width'|'height'>){
+ const four=m.format==='h264-ycrcb-alpha-four-plane';
+ return {width:m.width*(four?2:1),height:m.height*2,maskX:four?m.width:0,maskY:m.height};
+}
+
+/** Poster pixels and decoded video both reach Three as straight sRGB before lighting/blending. */
+export function designerMapChunk(format:DesignerIdleFormat='h264-rgb-mask'){
+ const decode=format==='h264-ycrcb-alpha-four-plane'?`
+   vec2 q=clamp(vMapUv*0.5,designerTexel*0.5,vec2(0.5)-designerTexel*0.5);
+   float y=texture2D(map,q+vec2(0.0,0.5)).r;
+   float cr=texture2D(map,q+vec2(0.5,0.5)).r-128.0/255.0;
+   float cb=texture2D(map,q).r-128.0/255.0;
+   float a=texture2D(map,q+vec2(0.5,0.0)).r;
+   vec3 premul=clamp(vec3(y+1.403*cr,y-0.714*cr-0.344*cb,y+1.773*cb),0.0,1.0);
+   sampledDiffuseColor=vec4(clamp(premul/max(a,0.001),0.0,1.0),a);
+ `:`
    float x=clamp(vMapUv.x,designerTexel.x*0.5,1.0-designerTexel.x*0.5);
    vec2 colorUv=vec2(x,clamp(0.5+vMapUv.y*0.5,0.5+designerTexel.y*0.5,1.0-designerTexel.y*0.5));
    vec2 maskUv=vec2(x,clamp(vMapUv.y*0.5,designerTexel.y*0.5,0.5-designerTexel.y*0.5));
    float a=texture2D(map,maskUv).r;
    vec3 premul=texture2D(map,colorUv).rgb;
    sampledDiffuseColor=vec4(premul/max(a,0.001),a);
+ `;
+ return `
+ #ifdef USE_MAP
+  vec4 sampledDiffuseColor;
+  if (designerPacked > 0.5) {
+   ${decode}
   } else { sampledDiffuseColor=texture2D(map,vMapUv);sampledDiffuseColor.rgb/=max(sampledDiffuseColor.a,0.001); }
   sampledDiffuseColor.rgb=sRGBTransferEOTF(sampledDiffuseColor).rgb;
   diffuseColor*=sampledDiffuseColor;
@@ -91,8 +110,9 @@ export class DesignerIdleMedia {
   this.video=document.createElement('video');this.video.muted=true;this.video.playsInline=true;this.video.loop=true;this.video.preload='auto';this.video.crossOrigin='anonymous';
   this.videoTexture=new T.VideoTexture(this.video);this.videoTexture.colorSpace=T.NoColorSpace;
   this.material=new T.MeshBasicMaterial({map:this.posterTexture,transparent:true,depthWrite:false,depthTest:false,toneMapped:false});
-  this.material.onBeforeCompile=shader=>{shader.uniforms.designerPacked=this.packed;shader.uniforms.designerTexel={value:new T.Vector2(1/manifest.width,1/(manifest.height*2))};shader.fragmentShader='uniform float designerPacked;\nuniform vec2 designerTexel;\n'+shader.fragmentShader.replace('#include <map_fragment>',designerMapChunk());};
-  this.material.customProgramCacheKey=()=> 'designer-rgb-mask-v1';
+  const layout=designerVideoLayout(manifest);
+  this.material.onBeforeCompile=shader=>{shader.uniforms.designerPacked=this.packed;shader.uniforms.designerTexel={value:new T.Vector2(1/layout.width,1/layout.height)};shader.fragmentShader='uniform float designerPacked;\nuniform vec2 designerTexel;\n'+shader.fragmentShader.replace('#include <map_fragment>',designerMapChunk(manifest.format));};
+  this.material.customProgramCacheKey=()=> `designer-${manifest.format}-v2`;
   const scale=512/manifest.opaqueHeight;
   this.geometry=new T.PlaneGeometry(manifest.width*scale,manifest.height*scale,24,24);
   this.geometry.translate((manifest.width/2-manifest.foot[0])*scale,(manifest.foot[1]-manifest.height/2)*scale,0);
@@ -113,7 +133,8 @@ export class DesignerIdleMedia {
  private readonly error=()=>this.fail(`Designer video decode error ${this.video.error?.code??'unknown'}`);
  private readonly loaded=()=>{
   if(this.disposed||this.failure||this.started)return;this.started=true;
-  if(this.video.videoWidth!==this.manifest.width||this.video.videoHeight!==this.manifest.height*2||Math.abs(this.video.duration-10)>1/30){this.fail('Designer video metadata mismatch');return;}
+  const layout=designerVideoLayout(this.manifest);
+  if(this.video.videoWidth!==layout.width||this.video.videoHeight!==layout.height||Math.abs(this.video.duration-10)>1/30){this.fail('Designer video metadata mismatch');return;}
   this.watchFrames();
   void this.video.play().then(()=>{if(this.disposed||this.failure)this.video.pause();}).catch(error=>this.fail(`Designer video play rejected: ${String(error)}`));
  };
@@ -138,7 +159,8 @@ export class DesignerIdleMedia {
   // Validate a decoded mask once before replacing the source-derived poster.
   try{
    const c=document.createElement('canvas');c.width=16;c.height=16;const ctx=c.getContext('2d',{willReadFrequently:true});if(!ctx)throw Error('No designer decode canvas');
-   ctx.drawImage(this.video,0,this.manifest.height,this.manifest.width,this.manifest.height,0,0,16,16);
+   const layout=designerVideoLayout(this.manifest);
+   ctx.drawImage(this.video,layout.maskX,layout.maskY,this.manifest.width,this.manifest.height,0,0,16,16);
    const pixels=ctx.getImageData(0,0,16,16).data;let low=255,high=0;
    for(let i=0;i<pixels.length;i+=4){low=Math.min(low,pixels[i]!);high=Math.max(high,pixels[i]!);}
    if(low>16||high<200)throw Error('Designer decoded mask is empty or opaque');
