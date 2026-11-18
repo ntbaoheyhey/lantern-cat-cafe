@@ -1,0 +1,1663 @@
+{
+  "utc": "2026-11-18T02:49:36.485Z",
+  "source": "e4963cc773c9cb25b6333a323da5cbcd9d07d902",
+  "servedSource": "f991fb117356bf579db37a6c09a98ddb41eed756",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "indexSha256": "504981aa25b6c42eb0fda2285d1feb4da051e8a6972825f6a23d142bdd060217",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "buildManifestSha256": "7135ec47c005f5e5c9bedd193b5dbf6ff6a335f40eff8bc36f4c0460769db1f2",
+  "captureUtc": "2026-11-18T02:49:01.152Z",
+  "captureEnded": "2026-11-18T02:49:11.057Z",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/report.json",
+    "sha256": "6298b453874a0dfb89f10d4da80651c812007d5e359c4f23dd144ddd8669b8ae"
+  },
+  "method": "Untransformed production. Actual rules resolve a seeded wave1 battle before result mount. Native WEBGL_lose_context extension loses/restores the result canvas; real events and computed original fallback visibility measured. CSS animations paused for captures. Failure injection is not hardware incidence or a performance comparison. During loss only, diagnostic DOM control sets data-ready=false and hides the lost canvas to test original fallback occlusion; both values are restored before native recovery.",
+  "toolSnapshotsVerified": 2,
+  "reproduced": false,
+  "runs": [
+    {
+      "mode": "normal",
+      "loaded": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 44,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "lost": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 44,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "restored": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 204,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "blankDuringLoss": false,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "loaded": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "lost": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "restored": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 4,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "blankDuringLoss": false,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/normal/loaded.png",
+      "utc": "2026-11-18T02:49:05.611Z",
+      "sha256": "828f952f43b488882933d36b1d4b79f71a2d853632bbab616c51321c75adeaf9",
+      "before": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 44,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 932362,
+      "mean": 53.79857421875,
+      "stdDev": 42.7888160087939
+    },
+    {
+      "mode": "normal",
+      "name": "lost",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/normal/lost.png",
+      "utc": "2026-11-18T02:49:06.050Z",
+      "sha256": "7d97daa0e45ec0136c4f271cd864cee234330bf844c154baa7df1b29850aee0b",
+      "before": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 44,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 44,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 948456,
+      "mean": 53.446541160300924,
+      "stdDev": 41.59375715073805
+    },
+    {
+      "mode": "normal",
+      "name": "restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/normal/restored.png",
+      "utc": "2026-11-18T02:49:06.718Z",
+      "sha256": "7027c8aabffcad46a4d7d0bd41f2020dda9438fd6b53563614b9e40d105b0284",
+      "before": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 168,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 204,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 932115,
+      "mean": 53.707857349537036,
+      "stdDev": 42.644989592314516
+    },
+    {
+      "mode": "reduced",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/reduced/loaded.png",
+      "utc": "2026-11-18T02:49:09.900Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "before": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148
+    },
+    {
+      "mode": "reduced",
+      "name": "lost",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/reduced/lost.png",
+      "utc": "2026-11-18T02:49:10.364Z",
+      "sha256": "7d97daa0e45ec0136c4f271cd864cee234330bf844c154baa7df1b29850aee0b",
+      "before": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "false",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "hidden",
+        "connected": true,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 0,
+        "fallbackVisible": true,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 948456,
+      "mean": 53.446541160300924,
+      "stdDev": 41.59375715073805
+    },
+    {
+      "mode": "reduced",
+      "name": "restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/reduced/restored.png",
+      "utc": "2026-11-18T02:49:11.049Z",
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "before": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 4,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "after": {
+        "ready": "true",
+        "drawn": "4",
+        "loadError": null,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "width": 461,
+          "height": 245
+        },
+        "canvasVisibility": "visible",
+        "connected": true,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 4,
+        "fallbackVisible": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 768,
+            "height": 841
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 853
+          },
+          {
+            "complete": true,
+            "width": 664,
+            "height": 896
+          },
+          {
+            "complete": true,
+            "width": 768,
+            "height": 868
+          }
+        ],
+        "result": "party",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 736
+          },
+          {
+            "id": "soot",
+            "hp": 568
+          },
+          {
+            "id": "clover",
+            "hp": 477
+          },
+          {
+            "id": "panko",
+            "hp": 753
+          },
+          {
+            "id": "foe-0-button-guard",
+            "hp": 0
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "hp": 0
+          },
+          {
+            "id": "foe-2-teacup-healer",
+            "hp": 0
+          },
+          {
+            "id": "foe-3-needle-moth",
+            "hp": 0
+          }
+        ]
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "mean": 53.76775028935185,
+      "stdDev": 42.73845877240148
+    }
+  ],
+  "restoredPixels": [
+    {
+      "mode": "normal",
+      "changedPixels": 28215,
+      "crewChangedPixels": 28215,
+      "maxChannel": 219,
+      "fullFrameExact": false,
+      "crewExact": false,
+      "limitation": "Animated normal poses are not synchronized."
+    },
+    {
+      "mode": "reduced",
+      "changedPixels": 0,
+      "crewChangedPixels": 0,
+      "maxChannel": 0,
+      "fullFrameExact": true,
+      "crewExact": true,
+      "limitation": "Same retained page and buffer size; report exact values without tolerance."
+    }
+  ],
+  "sheets": [
+    {
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/review/normal.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "5d0b6fff56bef16c2b4d1434eaae3df9e8c70fc49fd6d3bb24a5d9e1371510f9",
+      "frames": [
+        "loaded",
+        "lost",
+        "restored"
+      ]
+    },
+    {
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-occlusion/review/reduced.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "96b75086057679ae1315e75df55b71717fffd176cb97666f747ffbb4f6248180",
+      "frames": [
+        "loaded",
+        "lost",
+        "restored"
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:50:12.197169+00:00",
+  "visualReview": {
+    "reviewedOnce": true,
+    "sheets": 2,
+    "pass": true,
+    "observations": [
+      "Hiding only the lost canvas exposes all four complete original cat images.",
+      "Recovery restores the animated crew; reduced full-frame RGB matches the loaded native state exactly."
+    ],
+    "scope": "Native DOM occlusion control; candidate application still unchanged."
+  },
+  "pass": true,
+  "limitations": "Injected native context loss on local artifact, not hardware frequency, independent acceptance, speedup, or public-chain proof. Fresh visual review remains required."
+}

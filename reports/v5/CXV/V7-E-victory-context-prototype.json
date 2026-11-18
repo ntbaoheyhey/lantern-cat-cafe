@@ -1,0 +1,361 @@
+{
+  "utc": "2026-11-18T02:47:41.806Z",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "source": "e4963cc773c9cb25b6333a323da5cbcd9d07d902",
+  "baselineModuleSha256": "48ce7e9aa920abf049ebb92ff032761a20d1389fa6ae94730f3304d7fc97dba2",
+  "candidateModuleSha256": "2fd1c2c714472fd245160feb1689971a4d72d7aa2db7e27d0b39215647956c88",
+  "runtimePatchSha256": "1259952fd60383e96b1efe6c1225ad9ba3c405aa5632197d1368212a66a1df53",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Browser-response prototype only; same retained result/decoded background. Real WEBGL_lose_context events. Native control exposes existing fallback with its data-ready flag while lost. Compare loaded/fallback/restored full-frame RGB exactly at fixed750ms normal pose or native reduced pose. Separate real-RAF lifecycle covers resize,density,motion and cleanup; no speedup or hardware-incidence claim.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/report.json",
+    "sha256": "f51d7241f4c9e556b8c5dff0ce651a6d39e9c830fcdf7bb466d43c0b931f1220"
+  },
+  "captureUtc": "2026-11-18T02:46:59.336Z",
+  "captureEnded": "2026-11-18T02:47:12.694Z",
+  "runs": [
+    {
+      "mode": "normal",
+      "override": {
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794968840976",
+            "originalSha256": "4edd7850b4ba559bb3bb9e4120e6d0b32a75cad36d4610528ed9a532b74b7eaf",
+            "overrideSha256": "0d28c65c8b895a3820287e8f873ac9624ae138247b4a919a64009bf85510863e"
+          }
+        ]
+      },
+      "rows": [
+        {
+          "phase": "loaded",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-loaded.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-loaded.png"
+        },
+        {
+          "phase": "fallback",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-fallback.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-fallback.png"
+        },
+        {
+          "phase": "restored",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-restored.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-restored.png"
+        }
+      ],
+      "lifecycle": {
+        "lostDraws": 0,
+        "notificationsWhileLostDraws": 0,
+        "restoredDraws": 1,
+        "latestDensity": 1.5,
+        "cleanup": {
+          "before": 72,
+          "after": 72,
+          "disposed": true,
+          "connected": false
+        }
+      },
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "override": {
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794968840976",
+            "originalSha256": "4edd7850b4ba559bb3bb9e4120e6d0b32a75cad36d4610528ed9a532b74b7eaf",
+            "overrideSha256": "0d28c65c8b895a3820287e8f873ac9624ae138247b4a919a64009bf85510863e"
+          }
+        ]
+      },
+      "rows": [
+        {
+          "phase": "loaded",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-loaded.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-loaded.png"
+        },
+        {
+          "phase": "fallback",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-fallback.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-fallback.png"
+        },
+        {
+          "phase": "restored",
+          "nativeRgbExact": true,
+          "geometryAndRulesExact": true,
+          "control": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-restored.png",
+          "prototype": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-restored.png"
+        }
+      ],
+      "lifecycle": {
+        "lostDraws": 0,
+        "notificationsWhileLostDraws": 0,
+        "restoredDraws": 1,
+        "latestDensity": 1.5,
+        "cleanup": {
+          "before": 11,
+          "after": 11,
+          "disposed": true,
+          "connected": false
+        }
+      },
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "name": "control-loaded",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-loaded.png",
+      "utc": "2026-11-18T02:47:03.314Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937975,
+      "sha256": "cb1b32f08d34182b3f77a6dec492a0ca2ad64405a182cda0fc7b23eac5ff69c2",
+      "mean": 53.289722222222224,
+      "stdDev": 36.50552401015768
+    },
+    {
+      "name": "control-fallback",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-fallback.png",
+      "utc": "2026-11-18T02:47:03.705Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 784529,
+      "sha256": "fddf2e4b34a3d6184544d6e65c8c6112f3f8622487c9d4e482fb5120c732fcd7",
+      "mean": 75.29921296296297,
+      "stdDev": 73.10933345523699
+    },
+    {
+      "name": "control-restored",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-control-restored.png",
+      "utc": "2026-11-18T02:47:04.187Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937975,
+      "sha256": "cb1b32f08d34182b3f77a6dec492a0ca2ad64405a182cda0fc7b23eac5ff69c2",
+      "mean": 53.289722222222224,
+      "stdDev": 36.50552401015768
+    },
+    {
+      "name": "prototype-loaded",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-loaded.png",
+      "utc": "2026-11-18T02:47:04.486Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937975,
+      "sha256": "cb1b32f08d34182b3f77a6dec492a0ca2ad64405a182cda0fc7b23eac5ff69c2",
+      "mean": 53.289722222222224,
+      "stdDev": 36.50552401015768
+    },
+    {
+      "name": "prototype-fallback",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-fallback.png",
+      "utc": "2026-11-18T02:47:04.793Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 784529,
+      "sha256": "fddf2e4b34a3d6184544d6e65c8c6112f3f8622487c9d4e482fb5120c732fcd7",
+      "mean": 75.29921296296297,
+      "stdDev": 73.10933345523699
+    },
+    {
+      "name": "prototype-restored",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/normal-prototype-restored.png",
+      "utc": "2026-11-18T02:47:05.272Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937975,
+      "sha256": "cb1b32f08d34182b3f77a6dec492a0ca2ad64405a182cda0fc7b23eac5ff69c2",
+      "mean": 53.289722222222224,
+      "stdDev": 36.50552401015768
+    },
+    {
+      "name": "control-loaded",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-loaded.png",
+      "utc": "2026-11-18T02:47:09.585Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "name": "control-fallback",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-fallback.png",
+      "utc": "2026-11-18T02:47:09.898Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 784529,
+      "sha256": "fddf2e4b34a3d6184544d6e65c8c6112f3f8622487c9d4e482fb5120c732fcd7",
+      "mean": 75.29921296296297,
+      "stdDev": 73.10933345523699
+    },
+    {
+      "name": "control-restored",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-control-restored.png",
+      "utc": "2026-11-18T02:47:10.334Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "name": "prototype-loaded",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-loaded.png",
+      "utc": "2026-11-18T02:47:10.611Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "name": "prototype-fallback",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-fallback.png",
+      "utc": "2026-11-18T02:47:10.946Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 784529,
+      "sha256": "fddf2e4b34a3d6184544d6e65c8c6112f3f8622487c9d4e482fb5120c732fcd7",
+      "mean": 75.29921296296297,
+      "stdDev": 73.10933345523699
+    },
+    {
+      "name": "prototype-restored",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/reduced-prototype-restored.png",
+      "utc": "2026-11-18T02:47:11.400Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/review/review-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "control-loaded",
+          "mode": "normal"
+        },
+        {
+          "name": "control-fallback",
+          "mode": "normal"
+        },
+        {
+          "name": "control-restored",
+          "mode": "normal"
+        }
+      ],
+      "sha256": "8b1a58972124c8a51c728b00b254d9e9305698627a5d4953727de39aa5db5831"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/review/review-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "prototype-loaded",
+          "mode": "normal"
+        },
+        {
+          "name": "prototype-fallback",
+          "mode": "normal"
+        },
+        {
+          "name": "prototype-restored",
+          "mode": "normal"
+        }
+      ],
+      "sha256": "8b1a58972124c8a51c728b00b254d9e9305698627a5d4953727de39aa5db5831"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/review/review-2.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "control-loaded",
+          "mode": "reduced"
+        },
+        {
+          "name": "control-fallback",
+          "mode": "reduced"
+        },
+        {
+          "name": "control-restored",
+          "mode": "reduced"
+        }
+      ],
+      "sha256": "2824ed2da89466b91db46621481c6cdb3a1476185ba2fb0961fb881e97943429"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-prototype/review/review-3.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "prototype-loaded",
+          "mode": "reduced"
+        },
+        {
+          "name": "prototype-fallback",
+          "mode": "reduced"
+        },
+        {
+          "name": "prototype-restored",
+          "mode": "reduced"
+        }
+      ],
+      "sha256": "2824ed2da89466b91db46621481c6cdb3a1476185ba2fb0961fb881e97943429"
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:49:00.407889+00:00",
+  "visualReview": {
+    "reviewedOnce": true,
+    "sheets": 4,
+    "pass": false,
+    "observations": [
+      "Loaded and restored crew match native controls.",
+      "Lost-state control and prototype match exactly but display an opaque white rectangle with a small broken-renderer indicator over the original fallback region.",
+      "Computed fallback visibility and exact native-control RGB alone are insufficient to prove visible cat artwork."
+    ],
+    "nextExperiment": "Measure native DOM fallback with the lost canvas hidden; preserve these failed captures."
+  },
+  "pass": false,
+  "numericalPass": true
+}

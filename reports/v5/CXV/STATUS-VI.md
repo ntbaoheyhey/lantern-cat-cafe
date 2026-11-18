@@ -68,3 +68,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T02:39:00.433255+00:00 V-E/F full battle-to-victory density nativef991fb117 passed:6battle+4outcome transitions;68actions24ults/82apply46expire each;exact seeded control rules/logs/final state;zeroerrors/blocks;16captures measured/4freshsheets reviewed once. Natural99.755/99.277s,p9533.4ms both;no speedup claim. IndependentCXI pending.
 
 2026-11-18T02:43:08.002741+00:00 V-E native context-loss defect reproducedf991fb117:both motion modes ready=true hide original fallback while GPUbuffer lost;real restoration recovers, reduced fullRGBexact.6captures measured/2freshsheets reviewed once;0errors/blocks. Tools-only prototype next;no applicationedit.
+
+2026-11-18T02:54:15.165647+00:00 V-E context-loss prototype localPASS28tests/TSC0/6exactRGBpairs/2lifecycles;original fallback visible only after hiding lostcanvas,12frames/4freshreviews. Earlier whitecanvas prototype retainedvisualFAIL. Nativeadoption BLOCKED-ON CXI densityaudit sourcehold;verifier/runner prepared. m1.11green merged1d83dcba7.
