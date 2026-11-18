@@ -240,7 +240,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
       {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{battle.initial.formationC2?'':m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
-      {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
+      {m.sceneError && <div className="dp-loading dp-scene-error" role="status"><span>{m.sceneError}</span></div>}
       {battle.actors.filter(candidate => (candidate.side === 'enemy'||m.state.formationC2) && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
         const phase = displayedBossPhase(battle, enemy);
