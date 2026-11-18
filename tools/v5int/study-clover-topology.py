@@ -17,7 +17,9 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / 'work/v5/CXI/batch-m'
 parser = argparse.ArgumentParser()
 parser.add_argument('--endpoint', action='store_true')
+parser.add_argument('--refine-once', action='store_true')
 args = parser.parse_args()
+assert not args.refine_once or args.endpoint
 saved = BASE / 'clover-dis-endpoint-r1'
 flow = np.load(saved / 'flow.npy').astype(np.float64)
 mask = np.load(saved / 'mask.npy').astype(np.float64)
@@ -80,18 +82,37 @@ report = {
     'sequenceChanged': False, 'runtimeRegistered': False,
 }
 if args.endpoint:
-    out = BASE / 'clover-exp-endpoint-r1'
+    out = BASE / ('clover-exp-residual-endpoint-r1' if args.refine_once else 'clover-exp-endpoint-r1')
     out.mkdir(exist_ok=False)
-    velocity = cv2.GaussianBlur(flow, (0, 0), 1.0)*mask[..., None]
+    source = BASE/'matte-r2/clover-premul.rgba'
+    raw = np.memmap(source, np.uint8, 'r', shape=(300, h, w, 4))
+    first, last = raw[0], raw[299]
+    update = flow
+    if args.refine_once:
+        prior = BASE/'clover-exp-endpoint-r1'
+        previous = np.load(prior/'displacement.npy')
+        aligned = np.frombuffer((prior/'endpoint.rgba').read_bytes(), np.uint8).reshape(h, w, 4)
+        def tail_gray(frame):
+            r, g, b = np.moveaxis(frame[:, :, :3].astype(np.float32), -1, 0)
+            warm = (r > g*1.035) & (r > b*1.15) & (frame[:, :, 3] > 48)
+            return np.ascontiguousarray(cv2.cvtColor(frame[:, :, :3], cv2.COLOR_RGB2GRAY)*warm.astype(np.uint8))
+        dis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)
+        dis.setFinestScale(0)
+        dis.setGradientDescentIterations(25)
+        dis.setVariationalRefinementIterations(10)
+        update = dis.calc(tail_gray(first), tail_gray(aligned), None).astype(np.float64)
+        np.save(out/'residual-flow.npy', update)
+        report['priorDisplacementSha256'] = hashlib.sha256((prior/'displacement.npy').read_bytes()).hexdigest()
+    velocity = cv2.GaussianBlur(update, (0, 0), 1.0)*mask[..., None]
     n = max(0, math.ceil(math.log2(max(np.linalg.norm(velocity, axis=-1).max()/.5, 1))))
     displacement = velocity / (2**n)
     stages = [audit(displacement)]
     for _ in range(n):
         displacement = displacement + bilinear(displacement, identity+displacement)
         stages.append(audit(displacement))
-    source = BASE/'matte-r2/clover-premul.rgba'
-    raw = np.memmap(source, np.uint8, 'r', shape=(300, h, w, 4))
-    first, last = raw[0], raw[299]
+    if args.refine_once:
+        displacement = displacement + bilinear(previous, identity+displacement)
+        stages.append(audit(displacement))
     endpoint = cv2.remap(last, (xx+displacement[..., 0]).astype(np.float32), (yy+displacement[..., 1]).astype(np.float32), cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
     region = np.clip((yy-232)/15, 0, 1)*np.clip((358-yy)/16, 0, 1)*np.clip((118-xx)/28, 0, 1)
     roi = (region > .5) & (xx < 100)
@@ -108,10 +129,13 @@ if args.endpoint:
         'foldedCellsAnywhere': int(np.any(corners(displacement) <= 0, axis=0).sum()),
     }
     trial['numericPromising'] = (trial['seamMAE'] < 14.3279247284 and trial['iou'] > .8804168952 and stages[-1]['maxDisplacement'] < 40 and trial['foldedCellsAnywhere'] == trial['zeroMaskPixelsChanged'] == trial['outsideRegionPixelsChanged'] == 0)
+    if args.refine_once:
+        trial['method'] = 'One residual DIS correspondence update; sigma1/unchanged mask; bounded exponentiation followed by oldMap(updateMap(p)). No additional iterations, sequence rewrite or runtime enrollment.'
+        trial['numericPromising'] = trial['numericPromising'] and trial['seamMAE'] < 11.882933795156928 and trial['iou'] > .9047009328699469
     np.save(out/'displacement.npy', displacement)
     (out/'endpoint.rgba').write_bytes(endpoint.tobytes())
     report['endpoint'] = trial
     (out/'report.json').write_text(json.dumps(report, indent=2)+'\n')
-name = 'v8-m-clover-exp-endpoint-r1.json' if args.endpoint else 'v8-m-clover-dis-topology-audit.json'
+name = 'v8-m-clover-exp-residual-endpoint-r1.json' if args.refine_once else 'v8-m-clover-exp-endpoint-r1.json' if args.endpoint else 'v8-m-clover-dis-topology-audit.json'
 (ROOT/'reports/v5/CXI/evidence'/name).write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps(report))
