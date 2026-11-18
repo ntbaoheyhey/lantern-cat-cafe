@@ -30,3 +30,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T10:18:50.245184+00:00: Kênh vòi ấm Clover đã thêm riêng và qua 27 kiểm tra/TypeScript; 1500 mẫu đổi tọa độ sai số tối đa 1,18e-6. Chưa bật Clover: mép ảnh, vòng đuôi, mốc mặt/tay và dung lượng còn mở. Brotli chỉ tiết kiệm 29.651 byte và Chromium hiện tại không hỗ trợ giải nén JS; không đưa vào game. Bản phát hành vẫn v5-m1.13.
 
 2026-11-18T10:40:30.312159+00:00 — Clover Q21 đã chạy trong bản thử cục bộ cùng Mochi: video 817.118 byte, cả gói 897.635 byte; 300 frame ở Chromium/WebKit đạt ngưỡng nén. 26 mẫu hành động và 4 lượt thường/giảm chuyển động đúng trạng thái game, không lỗi console; đã xem đúng 2 ảnh mới. Thanh HP cạnh mặt/ấm đang được đo lại; đuôi nối vòng, matte, mốc mặt/tay và ngân sách còn mở. Chưa phát hành, tag vẫn v5-m1.13. Âm thanh giữ nguyên 49 hash; không chấp nhận thay thế sáu callout.
+
+2026-11-18T10:56:58.744362+00:00 — Đã sửa vị trí thanh HP của Clover: 56 trạng thái kiểm tra không che mặt/vòi ấm/thân hoặc nhãn khác; 2 ảnh mới đã xem. Chưa phát hành: đường viền, nối vòng hoạt ảnh, dung lượng tải và hiệu năng còn chưa đạt.

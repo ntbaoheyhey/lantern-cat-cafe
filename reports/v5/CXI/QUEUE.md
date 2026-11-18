@@ -31,3 +31,5 @@ Preload closure160actualsourcecases:fiveenemy atlases needed by20/40A6default ac
 Current6301 ignoreddualcat546ec5252/index0b0a76b7;MochiR6payload exact;CXVdecodedspout/HP review active. Sixcallout hashes unchanged49artifacts/6sources;not accepted.
 
 DualcatR1 cold9276444/9743370/9353970B FAIL8MB;own50rowspout+10glint arithmeticPASS;7DOMHPoverlapsFAIL;CXV HP patch/decoded-frame fence pending. Staged delivery study active;no preload filtering.
+
+HP R2 source93498388c installed,index6afd6640;24focused/TSC0/3833protected unchanged. Own56rows/4actions/10glints/2freshviews HPclearancePASS;minimum19.30px bodygap,<=0.016px center error;callback<=1/30s. Art/loop/bytes/performance remainOPEN.
