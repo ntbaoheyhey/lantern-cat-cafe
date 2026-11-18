@@ -2,7 +2,7 @@
 
 ## 1. Capabilities
 - Browser: Chromium 156.0.8078.4 (Mac declaration)
-- AV1 MP4 Support: Unverified (True, lacking raw proof)
+- AV1 MP4 Support: Unverified (Claimed True, raw proof missing)
 
 ## 2. Evidence
 | Field | Evidence | Status |
