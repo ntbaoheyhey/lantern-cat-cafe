@@ -1,3 +1,5 @@
+Batch M đang ưu tiên: đã xác minh hai clip gốc và đo thử các định dạng. Chưa đổi runtime/chưa phát hành idle mới. Bản thử H.264 màu+mặt nạ ở chiều cao mèo 256 px khoảng 502 KB/cặp; 384 px khoảng 895 KB/cặp. VP9 alpha khoảng 2,46 MB/cặp. Hai engine giải mã và lặp được, nhưng còn kiểm tra màu, viền và nối đuôi Clover. Soot: 3.833 đường dẫn gốc chưa đổi. Lịch CXI wake vẫn hoạt động 15 phút.
+
 # CXI — desktop18/11/2026 UTC
 Bản green gần nhất vẫn là v5-m1.13; release4e5fe161a/tagobject2fc64b7c8 đã xác minh remote. Artifact cũ còn nguyên trong work/v5/CXI/releases/v5-m1.13-dist.
 Live6301 đang chạy candidate chưa phát hành: ứng dụngf1aa8f49bac2abe757150d591a4b1d1a9b9c56db; indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6.

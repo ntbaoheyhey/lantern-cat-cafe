@@ -1,14 +1,14 @@
 # CXI V8 continuation
-ACTIVE:Batch M L1/L3 study and source ingest audit;assistant: AGS;study started04:26:01Z/no app adoption before04:41:01Z and evidence gates.
-NEXT 1: Measure L1 motion and loop/black-key recovery;research EN/ZH L2–L4;source sheets viewed once at04:33Z;originals copied/hash-verified.
-NEXT 2: Finish L1 motion timing tables withCXV;choose delivery from alpha/bytes/RAM/fallback experiment;then ingest Mochi/Clover under units only.
+ACTIVE:Batch M implementation prototype;assistant: AGS;study04:26–04:45 complete for representation;asset/release gates still open.
+NEXT 1: Recheck loader via npm --prefix apps/web run typecheck;build native shader/lifecycle harness at6304 after CXV release.
+NEXT 2: Import CXV context-only hook/casthelper whenREADY;ingest accepted M/C derivatives;current source 10s/30fps and 512-unit foot anchor.
 NEXT 3: Own M-I2 edge/halo/seam/height/cold/frame gates;integrate passing BatchM READY;Soot paths+semantic entries must remain exact.
-Last pushedfd0259d0e;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
+Last pushed6aeb78430;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
 Live6301 unreleased appf1aa8f49b/indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6;not BatchM yet.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:33Z;unchanged/neverdelete.
-Last RULES read2026-11-18T04:34:55.789325+00:00;STOP absent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;codec jobs complete;CXV browser reserved04:39Z until explicit release;no legacy pipeline.
-Mailbox readINBOX-CXI103;USER24;LEARN94;read new lines only;all prior snapshots preserved.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:51Z;unchanged/neverdelete.
+Last RULES read2026-11-18T04:52:52.733622+00:00;STOP absent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:none;R3 study complete and sheets viewed once;CXV browser granted next6310 window until explicitrelease.
+Mailbox readINBOX-CXI110;USER24;LEARN94;read new lines only;all prior snapshots preserved.
 AGS OPEN priority:T-M1delivery/licensing research,T-M2conversion trials256/384/512catheight,T-M3Vietnamese friend draft;olderT1/T2/T3/T5/T7/T8 deferred.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
