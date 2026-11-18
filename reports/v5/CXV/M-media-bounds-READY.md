@@ -5,3 +5,5 @@ Packed media now uses its measured logical envelope clipped through posed UV tri
 98 focused tests and typecheck pass. Chromium reproduces the old zero-width IndexSizeError; the new helper passes 20 cast cases, exact idle/recovery/poster bounds, and height 511.99999733154687 within 0.000244140625 Float32 tolerance. Zero page errors; only the fixture intentional Google Fonts block. R1/R2 failures retained.
 
 3,833 Soot path hashes and capture-arrival.mjs remain unchanged. This is a posed static envelope, not a decoded silhouette. Full production scene/art/height/socket/seam/byte acceptance remains with CXI.
+
+Fresh post-commit rerun of the unchanged historical Soot sampler also passes: 301 samples and 11 mesh snapshots in each mode exactly match the prior hashes; zero page errors. No Soot source or test was edited.

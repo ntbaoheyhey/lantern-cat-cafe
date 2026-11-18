@@ -318,5 +318,30 @@
     "Measured static intake envelope deformed through actual UV triangles; not a decoded per-frame silhouette.",
     "Same Mochi descriptor used for both IDs in detached probe. No Clover media acceptance.",
     "Production complete scene, art, cast, socket, seam and byte gates remain open."
-  ]
+  ],
+  "sharedBehaviorVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-bounds-existing-parity.json",
+    "sha256": "6f72b7446c07c812873c6722517f48abe06d09a90975887f6add4d53d79cf990",
+    "utc": "2026-11-18T07:30:56.755Z",
+    "sourceCommit": "5fbbc3435830b2945bb63e5c108b538614321085",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "method": "Unchanged historical Soot sampling section from capture-native-living.mjs after media routing repair; no Soot source or test edits.",
+    "samplingHarnessSha256": "94eb9c209ef4061e6083a0060c51f0126e21f0e858e22c4e64bfb5a4cc07341a",
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "sootParity": [
+      {
+        "reduced": false,
+        "exact": true,
+        "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+      },
+      {
+        "reduced": true,
+        "exact": true,
+        "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+      }
+    ],
+    "errors": [],
+    "pass": true
+  }
 }
