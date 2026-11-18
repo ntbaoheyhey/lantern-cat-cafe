@@ -1,6 +1,6 @@
 # CXV V8 queue — Batch M first
 - OWNER override12:09:40Z: byte cap removed;all historical byte-budget failures are report-only and never block release/art. No new byte optimization required.
-- ACTIVE labelpairR1:20cases/200PNGs,controls exact;Clover+5 clears10cases;Mochi ownHP/rage56/340/93 newpixels keeps overallFAIL. Three freshviews frozen;R3GPU600globalrefs/24matches independentPASS scope. Next authoredMochi hpAnchor assessment,then fresh source gates.
+- ACTIVE labelpairR1:20cases/200PNGs,controls exact;Clover+5 clears10cases;Mochi ownHP/rage56/340/93 newpixels keeps overallFAIL. Three freshviews frozen;R3GPU600globalrefs/24matches independentPASS scope. AuthoredMochi hpAnchor geometry10casesPASS baselineerror<=.014899CSSpx;sourcecandidate then fresh legal/status gates pending.
 - HISTORICAL static stage remedy:1089 integer shifts on frozen5phase R6 masks;nearest5CSSpx (-3,+4)/(0,+5). No sourcechange/native guarantee;request fresh6301 candidate+heldouts after CXI GPU study. Independent projection audit9analyticcontrolsPASS;live samples pending.
 - READY scoped dual-labelR6:5phases,35main+15preconditionPNG,15exactRGBcontrols;5views once. Only32cross tail/statusbadge pixels(7>4),own/HP/rage0. Initial rasterdelta preserved;natural rectangleFAIL stays. Nextdecoded texture/anchor phase audit requestedCXI13:19:51Z.
 - READY scoped current native9: six fresh wins on0b669/index3e7d27,normal/reduced rules exact,0errors,12fresh sheets reviewedonce;dense effects noted,no all-frame claim. 6301 released aftercapture;M-native-nine-current-R1.json.

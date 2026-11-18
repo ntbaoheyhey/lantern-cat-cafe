@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-18T13:54:50.215446+00:00",
+  "task": "T-M1",
+  "input": "/Users/bao/th-v5-ag2/reports/v5/AGV/M-L1-TIMING.md",
+  "sha256": "ba3ddfa01780126e7427b6c662b2d7a3c3a6be2a7519fe35dea1e0d55b92e8b3",
+  "decision": "REDO",
+  "observations": [
+    "Only six samples F6 through F131; full 300-frame cycle absent.",
+    "No original MP4/source-frame hashes, raw frames, or source-coordinate/crop mapping.",
+    "Bounds all 80x60 with +5,+5 increments; no independent annotation artifact supports those values.",
+    "Bounds midpoint is called centroid without a silhouette mass definition.",
+    "Manual +/-5px bound lacks derivation; it is not a confidence interval."
+  ],
+  "acceptance": false,
+  "otherOpenTask": "T-M2 remains REDO for 3ZH+3EN primary citations and supported values."
+}
