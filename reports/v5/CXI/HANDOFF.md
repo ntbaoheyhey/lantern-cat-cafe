@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:Batch M L1/L3 study and source ingest audit;assistant: AGS;study started04:26:01Z/no app adoption before04:41:01Z and evidence gates.
-NEXT 1: Copy designerMP4s into ignored work/v5/CXI/batch-m/sources;record hashes/ffprobe and inspect measured contact sheets;research EN/ZH L3.
+NEXT 1: Measure L1 motion and loop/black-key recovery;research EN/ZH L2–L4;source sheets viewed once at04:33Z;originals copied/hash-verified.
 NEXT 2: Finish L1 motion timing tables withCXV;choose delivery from alpha/bytes/RAM/fallback experiment;then ingest Mochi/Clover under units only.
 NEXT 3: Own M-I2 edge/halo/seam/height/cold/frame gates;integrate passing BatchM READY;Soot paths+semantic entries must remain exact.
-Last pushed1a5eead60;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
+Last pushed85fcdb9ca;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
 Live6301 unreleased appf1aa8f49b/indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6;not BatchM yet.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:26Z;unchanged/neverdelete.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:33Z;unchanged/neverdelete.
 Last RULES read2026-11-18T04:27:54.586278+00:00;STOP absent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;CXV holds browser;old m1.14 browser request withdrawn for BatchM priority;no automatic pipeline launch.
-Mailbox readINBOX-CXI96;USER24;LEARN92;read new lines only;all prior snapshots preserved.
+Running:none;CXV browser RELEASED04:29Z;no automatic m1.14 pipeline launch.
+Mailbox readINBOX-CXI97;USER24;LEARN92;read new lines only;all prior snapshots preserved.
 AGS OPEN priority:T-M1delivery/licensing research,T-M2conversion trials256/384/512catheight,T-M3Vietnamese friend draft;olderT1/T2/T3/T5/T7/T8 deferred.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
