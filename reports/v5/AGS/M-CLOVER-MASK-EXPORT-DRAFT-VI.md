@@ -1,9 +1,10 @@
-# Clover Mask Export Research (T-CXI-12 - VI Draft)
+# Clover Mask Export Research (T-CXI-12 - Finalized)
 
 ## 1. Yêu cầu xuất (Export Requirements)
-- Clover Tail: Xuất bằng Live2D Cubism Editor [EN](https://help.live2d.com/en/) / [ZH](https://help.live2d.com/zh/).
-- Pale Underskirt/Hand: Các lớp được tái tạo (reconstructed) không được hỗ trợ xuất trực tiếp.
+- Clover Tail: [Live2D Export (EN)](https://help.live2d.com/en/) / [Live2D Export (ZH)](https://help.live2d.com/zh/).
+- Pale Underskirt/Hand: Các lớp (layers) được tái tạo thủ công, không hỗ trợ xuất từ model gốc.
 
 ## 2. Phân biệt tài nguyên (Asset Distinction)
-- Model3/Moc3/Textures/Motion: Cần thiết để ánh xạ (map) mask.
-- Visible-mask versus Hidden-anatomy: Cần phân biệt rõ trong Texture Atlas.
+- Model3/Moc3/Textures: Dùng để xác định mask.
+- Visible-mask: Phần hiển thị cần xuất mask.
+- Hidden-anatomy: Phần bị che khuất không xuất mask.

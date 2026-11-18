@@ -1,10 +1,10 @@
-# Audio Preload Inventory (T-CXI-11 R2 - Finalized)
+# Audio Preload Inventory (T-CXI-11 R2 - Corrected)
 
 ## Audio Reachability Table
 | Artifact | Source File/Line | Runtime Condition | Uncertainty |
 | :--- | :--- | :--- | :--- |
-| scene-room | ShellV3.tsx:61-65 | SceneActive | None |
-| scene-workshop | scene.ts:3-13 | SceneActive | None |
-| scene-rain | engine.ts:368-384 | WeatherActive | None |
-| score-boss | packed-audio-loader.ts:12 | BossEncounter | None |
-| score-dawn | packed-audio-loader.ts:15 | DawnEncounter | None |
+| scene-room | audio-manager.ts:112 | SceneActive | None |
+| scene-workshop | audio-manager.ts:115 | SceneActive | None |
+| scene-rain | weather-effects.ts:88 | WeatherActive | None |
+| score-boss | battle-orchestrator.ts:204 | BossEncounter | None |
+| score-dawn | battle-orchestrator.ts:207 | DawnEncounter | None |
