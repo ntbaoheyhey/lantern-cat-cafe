@@ -38,7 +38,13 @@ try{
      for(let c=0;c<Math.min(a.numberOfChannels,b.numberOfChannels);c++){
       const x=a.getChannelData(c),y=b.getChannelData(c),n=Math.min(x.length,y.length);let xx=0,yy=0,xy=0,error=0;
       for(let i=0;i<n;i++){xx+=x[i]*x[i];yy+=y[i]*y[i];xy+=x[i]*y[i];error+=(x[i]-y[i])**2;}
-      comparisons.push({correlation:xy/Math.sqrt(xx*yy),rmsGainDb:10*Math.log10(yy/xx),leastSquaresGain:xy/xx,snrDb:10*Math.log10(xx/error),comparedFrames:n});
+      const score=(lag,stride)=>{let xx=0,yy=0,xy=0;for(let i=960;i<n-960;i+=stride){const u=x[i+lag],v=y[i];xx+=u*u;yy+=v*v;xy+=u*v;}return xy/Math.sqrt(xx*yy);};
+      let bestLag=0,bestScore=-Infinity;
+      for(let lag=-960;lag<=960;lag+=8){const v=score(lag,32);if(v>bestScore){bestScore=v;bestLag=lag;}}
+      const coarse=bestLag;for(let lag=Math.max(-960,coarse-8);lag<=Math.min(960,coarse+8);lag++){const v=score(lag,16);if(v>bestScore){bestScore=v;bestLag=lag;}}
+      let axx=0,ayy=0,axy=0,ae=0,count=0;
+      for(let i=Math.max(0,-bestLag);i<Math.min(y.length,x.length-bestLag);i++){const u=x[i+bestLag],v=y[i];axx+=u*u;ayy+=v*v;axy+=u*v;ae+=(u-v)**2;count++;}
+      comparisons.push({correlation:xy/Math.sqrt(xx*yy),rmsGainDb:10*Math.log10(yy/xx),leastSquaresGain:xy/xx,snrDb:10*Math.log10(xx/error),comparedFrames:n,alignment:{sourceOffsetSamples:bestLag,searchRangeSamples:960,correlation:axy/Math.sqrt(axx*ayy),rmsGainDb:10*Math.log10(ayy/axx),snrDb:10*Math.log10(axx/ae),comparedFrames:count}});
      }
      rows[name].vsSource={frameDelta:b.length-a.length,channelsMatch:b.numberOfChannels===a.numberOfChannels,comparisons};
     }

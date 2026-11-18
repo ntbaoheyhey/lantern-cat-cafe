@@ -1,6 +1,6 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: v5-m1.10@659d0d6f7 pushed/remoteverified;numbermetrics+contour accepted;full5290/5277pass/11skip/2expectedfail,3actual30sfilms. Next CXVpacked6f71118f1 independent review using current contour-after baselines.
-I-B OPEN: m1.10 cold7669469/8228615/7743065B;wave3FAIL228615B,boss256935Bheadroom. AGV T9four-native>=90000B requested;AGS T5/T8REDO, no rejected audio integrated.
+I-A DONE/REPEAT: v5-m1.10@659d0d6f7 pushed/remoteverified;numbermetrics+contour accepted;full5290/5277pass/11skip/2expectedfail,3actual30sfilms. Packed6f71118f1 independently accepted for bounded CPU; fullm1.11pipeline/films next.
+I-B OPEN: m1.10 cold7669469/8228615/7743065B;wave3FAIL228615B,boss256935Bheadroom. AGV T9four-native>=90000B requested;AGS T5grows235633B/T8native264sample shift REDO; no rejected audio integrated.
 I-C FIRST-HIT DONE:20595ms incl17700reading8cards,HP165→119,0errors;route9854ms excludesreading.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact transaction/deploy commands. Desktop presentation pass; kit5tests+Anvil516ms/0.000042AVAX pass; NEEDS-USER-VI commands+syntax/links pass. H7 corrected; actual public Fuji still owner-only.
 I-E DONE/REFRESH: m1.10 three30.000sactual1xgameplay+browseraudio,1280x720,0errors;8freshimagesreviewedonce;REVIEW-VI/evidence v7-m110-films.json.
