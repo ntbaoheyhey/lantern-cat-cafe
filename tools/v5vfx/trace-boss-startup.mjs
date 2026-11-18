@@ -3,10 +3,14 @@ import assert from 'node:assert/strict';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
-import {chromium,config,openFixture,runtimeEvidence,judgeUrl} from './production-candidate-fixture.mjs';
+const production=process.env.CXV_TRACE_JUDGE==='1';
+const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(production?'/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs':'./production-candidate-fixture.mjs');
 import {hash} from './victory-demand-source.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT);assert(!existsSync(resolve(out,'report.json')));await mkdir(out,{recursive:true});
+const durationMs=Number(process.env.CXV_TRACE_DURATION_MS??6000);assert([6000,32000].includes(durationMs));
 const report={utc:new Date().toISOString(),url:judgeUrl,...runtimeEvidence(),viewport:{width:1280,height:720},method:'Preserved current-runtime baseline artifact; seeded boss then6s normal speed1 automatic rule-selected play at1x/4x. Inclusive elapsed method/submission wrappers, CPU sampling and timeline traces add overhead. User-timing marks align render intervals to profiler samples. Attribution only; no FPS, exclusive-CPU, physical-laptop or judge-acceptance claim.',runs:[],errors:[],pass:false};
+report.production=production;report.durationMs=durationMs;report.method=report.method.replace('Preserved current-runtime baseline artifact',production?'Current served judge artifact':'Preserved current-runtime baseline artifact').replace('then6s','then'+durationMs/1000+'s');
+if(production){const board=await readFile('/Users/bao/taskbar-hero-mailbox/BOARD.md','utf8');report.servedSource=board.match(/Currently served candidate:([a-f0-9]{40})/)[1];assert.equal(report.indexSha256,board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)[1]);}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const rate of [1,4]){
@@ -14,7 +18,7 @@ try{
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:1000});
   await cdp.send('Tracing.start',{categories:'devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline.stack',transferMode:'ReturnAsStream'});await cdp.send('Profiler.start');
-  const run=await page.evaluate(async rate=>{
+  const run=await page.evaluate(async({rate,durationMs})=>{
    const s=window.__depthScene,m=window.__depthReview,render=s.render,before=s.beforeFrame,restores=[],frames=[],plans=[],seen=new Set();
    let frame=null,serial=0,rafTime=0,lastRaf=null;const uploads=[];
    const sourceLabels=new Map();for(const [id,e]of s.actors)for(const [key,t]of Object.entries(e.craftPose?.drawing.set.textures??{})){const labels=sourceLabels.get(t.image)??[];labels.push({id,key});sourceLabels.set(t.image,labels);}
@@ -35,9 +39,9 @@ try{
     }
    };
    const initial={round:m.battle.round,log:m.battle.log.length};cancelAnimationFrame(s.raf);m.paused=false;m.notify(false);s.raf=requestAnimationFrame(s.loop);
-   await new Promise(done=>setTimeout(done,6000));m.paused=true;m.notify(false);cancelAnimationFrame(s.raf);s.render=render;s.beforeFrame=before;for(const restore of restores)restore();performance.mark('cxv-startup-end');
+   await new Promise(done=>setTimeout(done,durationMs));m.paused=true;m.notify(false);cancelAnimationFrame(s.raf);s.render=render;s.beforeFrame=before;for(const restore of restores)restore();performance.mark('cxv-startup-end');
    return{rate,startPerformanceMs:start,timeOrigin:performance.timeOrigin,elapsedMs:performance.now()-start,frames,uploads,plans,initial,final:{round:m.battle.round,log:m.battle.log.length,result:m.battle.result}};
-  },rate);
+  },{rate,durationMs});
   const {profile}=await cdp.send('Profiler.stop');const profilePath=resolve(out,`${rate}x.cpuprofile`);await writeFile(profilePath,JSON.stringify(profile));
   const complete=new Promise(done=>cdp.once('Tracing.tracingComplete',done));await cdp.send('Tracing.end');const {stream}=await complete;assert(stream);let trace='';
   for(;;){const chunk=await cdp.send('IO.read',{handle:stream});trace+=chunk.base64Encoded?Buffer.from(chunk.data,'base64').toString('utf8'):chunk.data;if(chunk.eof)break;}await cdp.send('IO.close',{handle:stream});
