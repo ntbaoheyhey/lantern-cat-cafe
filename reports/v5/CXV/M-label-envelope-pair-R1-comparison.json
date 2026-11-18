@@ -1,0 +1,1248 @@
+{
+  "utc": "2026-11-18T14:25:52.257314+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/baseline/analysis.json",
+      "sha256": "4b847ea0130e69ddac7735cbe8c514b76f2744c09d24be757822ecff0cfcb527"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/candidate/analysis.json",
+      "sha256": "5ea581fdd0dd8a272b6a36851127680d2967ed83beb8ad039e1f173519562962"
+    }
+  ],
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/compare-label-target-pair.py",
+    "sha256": "edd370af214293fc4e0f2ac1ec1c31851753bb55076a6f077994d967c6814acc"
+  },
+  "cases": [
+    {
+      "mode": "normal",
+      "sourceFrame": 0,
+      "expectedFrames": {
+        "mochi": 191,
+        "clover": 0
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 6,
+      "expectedFrames": {
+        "mochi": 197,
+        "clover": 6
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 31,
+      "expectedFrames": {
+        "mochi": 222,
+        "clover": 31
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 72,
+      "expectedFrames": {
+        "mochi": 263,
+        "clover": 72
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 104,
+      "expectedFrames": {
+        "mochi": 295,
+        "clover": 104
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 158,
+      "expectedFrames": {
+        "mochi": 49,
+        "clover": 158
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 197,
+      "expectedFrames": {
+        "mochi": 88,
+        "clover": 197
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 248,
+      "expectedFrames": {
+        "mochi": 139,
+        "clover": 248
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 281,
+      "expectedFrames": {
+        "mochi": 172,
+        "clover": 281
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 297,
+      "expectedFrames": {
+        "mochi": 188,
+        "clover": 297
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 17,
+          "bbox": [
+            363,
+            351,
+            369,
+            357
+          ],
+          "sampleXY": [
+            [
+              363,
+              351
+            ],
+            [
+              364,
+              351
+            ],
+            [
+              365,
+              351
+            ],
+            [
+              366,
+              351
+            ],
+            [
+              365,
+              352
+            ],
+            [
+              366,
+              352
+            ],
+            [
+              367,
+              352
+            ],
+            [
+              364,
+              353
+            ]
+          ]
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 17,
+          "bbox": [
+            363,
+            351,
+            369,
+            357
+          ],
+          "sampleXY": [
+            [
+              363,
+              351
+            ],
+            [
+              364,
+              351
+            ],
+            [
+              365,
+              351
+            ],
+            [
+              366,
+              351
+            ],
+            [
+              365,
+              352
+            ],
+            [
+              366,
+              352
+            ],
+            [
+              367,
+              352
+            ],
+            [
+              364,
+              353
+            ]
+          ]
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "reduced",
+      "sourceFrame": 0,
+      "expectedFrames": {
+        "mochi": 0,
+        "clover": 0
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true,
+        "nativeBodyRectanglesClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": -12.0,
+          "y": 19.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    }
+  ],
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "expectedCloverShift": {
+    "x": -12,
+    "y": 19,
+    "width": 0,
+    "height": 0
+  },
+  "pairValid": true,
+  "sampledCommissionedPaintClear": true,
+  "limits": [
+    "The recorded paused case list includes regression/heldout poses and reduced F0; no all-frame or cast clearance.",
+    "Outside-Clover pixel isolation uses the union of both DOM bounds expanded by4CSSpx, not exact DOM containment.",
+    "Reversible target offset on unchanged application source, not an accepted source change.",
+    "Only commissioned media contributions isolated; native-body paint and source seam/matte remain open.",
+    "Conservative body-rectangle results are retained; no natural-play acceptance."
+  ]
+}
