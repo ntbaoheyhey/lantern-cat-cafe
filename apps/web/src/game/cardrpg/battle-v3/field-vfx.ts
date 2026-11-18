@@ -7,6 +7,7 @@ import {paintImpactWake} from './impact-wake';
 import {paintImpactStrokes} from './impact-strokes';
 import {paintImpactDebris} from './impact-debris';
 import {presentationTier} from './presentation';
+import {nativeUltimateField} from './native-ultimate-field';
 
 const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 const random=(n:number)=>{const v=Math.sin(n*127.1+317.7)*43758.5453;return v-Math.floor(v);};
@@ -38,13 +39,14 @@ export class FieldVfx {
   const damaging=plan.events.some(e=>e.type==='damage');
   // Spoken releases can outlast the old 620 ms fade. Carry their painted
   // energy through a bounded resolve, keeping contact and ground life intact.
-  const tail=tier==='basic'?620:Math.max(620,Math.min(tier==='ultimate'?1450:1000,plan.duration-contact));
+  const clearance=nativeUltimateField(plan);
+  const tail=clearance?.releaseMs??(tier==='basic'?620:Math.max(620,Math.min(tier==='ultimate'?1450:1000,plan.duration-contact)));
   const resolve=clamp(since/tail);
   const release=since<0?Math.sin(progress*Math.PI*.5):1-resolve;
   if(at<castStart||release<=0)return;
   const shader=seq?.vfx.find(t=>t.type==='shader'),family=shader?.source??plan.shape;
   const seed=[...owner].reduce((n,ch)=>n+ch.charCodeAt(0),0),viewportHeight=Math.max(height,typeof window==='undefined'?height:window.innerHeight);
-  const radius=Math.sqrt(width*viewportHeight*(tier==='basic'?.05:.15)/Math.PI)*(tier==='basic'?(owner==='velvet'?2.2:seq?1.5:1.8):1.65);
+  const radius=Math.sqrt(width*viewportHeight*(tier==='basic'?.05:.15)/Math.PI)*(tier==='basic'?(owner==='velvet'?2.2:seq?1.5:1.8):1.65)*(clearance?.radiusScale??1);
   const targets=plan.targetIds.length?plan.targetIds:[plan.actorId];
   Object.assign(this.audit,{skill:plan.presentationId??plan.skillId,tier});
   if(tier!=='basic')this.castField(c,owner,width,height,at/1000,release,palette,seed,view.reducedMotion);
