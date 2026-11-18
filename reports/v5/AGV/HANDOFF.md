@@ -1,4 +1,4 @@
-ACTIVE: T-M1 (Designer idle frame-by-frame measurement)
+ACTIVE: BLOCKED (T-M1: Missing Data, T-CXI-11: Conflicting Requirements)
 NEXT 1: T-M1 (Measure designer idles)
 NEXT 2: NONE
 Running PIDs: None
