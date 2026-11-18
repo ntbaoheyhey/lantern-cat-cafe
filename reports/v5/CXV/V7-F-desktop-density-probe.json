@@ -1,0 +1,533 @@
+{
+  "utc": "2026-11-18T01:39:10.564Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/build.json",
+    "sha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8"
+  },
+  "verifiedArtifactFiles": 3764,
+  "snapshots": [
+    {
+      "name": "probe-desktop-density.mjs",
+      "sha256": "4bbca5fe42284bcfbcb71ec71a82ffe0bfce04e9ce0f1a241978510a0775c366"
+    },
+    {
+      "name": "desktop-density.mjs",
+      "sha256": "975caa1c159664052871f72045576455f42190ac4738f9b43413cea14f44b690"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "method": "Paused actual native boss fixture,normal/reduced fixed20.3s pose,three native desktop deviceScaleFactors. No renderer overrides;CSS1280x720 screenshot scale css. Compare all seven world/core/face bounds,camera and HUD placement across ratios. Different raster densities are not expected to have identical RGB. Geometry-only coverage;ordinary-play timing follows separately.",
+  "captures": [
+    {
+      "name": "1x-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1x-normal.png",
+      "ratio": 1,
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+      "rgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+      "mean": 114.9068337673611,
+      "stdDev": 50.372213463601625
+    },
+    {
+      "name": "1x-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1x-reduced.png",
+      "ratio": 1,
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "6f312046c06f166aeb96efe6678296d4f898244fd031a52b620b15789ac08d31",
+      "rgbSha256": "ae786852cce9a0f65d7d78cce9e841ba8b0abba5de96c1cff8c199b742e613ad",
+      "mean": 114.97279405381944,
+      "stdDev": 50.415399671723925
+    },
+    {
+      "name": "2x-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/2x-normal.png",
+      "ratio": 2,
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+      "rgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+      "mean": 114.93989330150463,
+      "stdDev": 50.45184111563406
+    },
+    {
+      "name": "2x-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/2x-reduced.png",
+      "ratio": 2,
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "bbf109146487df240115136295b71ca6f128b69ecfe0d10989009e15c1dda422",
+      "rgbSha256": "0d4de1c60ca7d197c6ee4163319b8ccc31eb6a95ac97275c8f4eecc17401ed80",
+      "mean": 115.00479600694445,
+      "stdDev": 50.4892186748682
+    },
+    {
+      "name": "1.5x-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1.5x-normal.png",
+      "ratio": 1.5,
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "3136c0b6dbeb809b9cf38dd032106c5840d9a92161571f35a87c7c7a2e49f076",
+      "rgbSha256": "4d6742d381e33ef87ad6bbc52984e452a95789e956d5dc57cec76ac090415d1d",
+      "mean": 114.90555302372685,
+      "stdDev": 50.430240569614824
+    },
+    {
+      "name": "1.5x-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1.5x-reduced.png",
+      "ratio": 1.5,
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "c335da13b27cef38c17820df92101db1b13e8e81311d14258f2ae96ef327b080",
+      "rgbSha256": "a55536d5d3b4de401c1b713d94662c598bc81066a927f64b66cf89947aa41a56",
+      "mean": 114.9733546730324,
+      "stdDev": 50.47445590404966
+    }
+  ],
+  "reviews": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1x-normal-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "0379932ecae6c2d1b704e98a372c7600cb5924a8056f50e1b8233a78b69a9294"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/1x-reduced-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "d62ff61915612c783b9dfdfe178d2e586274385ed65bfb7a4b1fca91e781cd2a"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/2x-normal-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "3faf34b75144fdb0cb43a0309917394e3a8cfdff05ba31a1982efef22a91476a"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/2x-reduced-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "e603a7223e0dbe044a180472dea5291c08b885cc17928dcbe78dcf6eb0fae4e7"
+    }
+  ],
+  "ended": "2026-11-18T01:39:23.334Z",
+  "runs": [
+    {
+      "ratio": 1,
+      "reduced": false,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-0-yarn-giant",
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 1,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 1,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 1280,
+          "height": 720
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 1280,
+            "height": 720
+          },
+          "output": {
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "ratio": 1,
+      "reduced": true,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-0-yarn-giant",
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 1,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 1,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 1280,
+          "height": 720
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 1280,
+            "height": 720
+          },
+          "output": {
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "ratio": 2,
+      "reduced": false,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "foe-0-yarn-giant",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 2,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 2,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 2560,
+          "height": 1440
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 2560,
+            "height": 1440
+          },
+          "output": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "ratio": 2,
+      "reduced": true,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "foe-0-yarn-giant",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 2,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 2,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 2560,
+          "height": 1440
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 2560,
+            "height": 1440
+          },
+          "output": {
+            "width": 2560,
+            "height": 1440
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "ratio": 1.5,
+      "reduced": false,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "foe-0-yarn-giant",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 1.5,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 1.5,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 1920,
+          "height": 1080
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 1920,
+            "height": 1080
+          },
+          "output": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "ratio": 1.5,
+      "reduced": true,
+      "keyedGeometryExact": true,
+      "rawActorOrder": [
+        "foe-1-binding-thread",
+        "foe-2-binding-thread",
+        "foe-0-yarn-giant",
+        "mochi",
+        "soot",
+        "clover",
+        "panko"
+      ],
+      "density": {
+        "devicePixelRatio": 1.5,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 1.5,
+        "sceneSize": {
+          "width": 1280,
+          "height": 720
+        },
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 1920,
+          "height": 1080
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 1920,
+            "height": 1080
+          },
+          "output": {
+            "width": 1920,
+            "height": 1080
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    }
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-probe/report.json",
+    "sha256": "9b87ee8c3f8ea7f8db98721e10f255605bce47a880c78f2d934685cd935e7526"
+  },
+  "originalRawPass": false,
+  "failureAttribution": "Unordered actor Map insertion follows asynchronous asset arrival. Compare the exact same keyed records sorted by stable actor id; all geometry/state/camera/HUD fields are exactly equal. No value tolerance or ignored fields. Original raw failure preserved.",
+  "pass": true,
+  "reviewedUtc": "2026-11-18T01:40:54.476140+00:00",
+  "visualReview": "Four measured1024x576 views inspected once:seven actors retain their formation,faces and feet;four card controls and HP/shield/status rows remain readable in normal/reduced atDPR1/2. DPR1.5 measured structurally;no claim of reviewing its frame. Raster detail changes are expected across native densities;no RGB equality claim."
+}

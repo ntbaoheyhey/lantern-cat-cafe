@@ -77,3 +77,5 @@
 2026-11-18T01:26:47.812489+00:00 V-F shader attribution native3050ee5ae:16links/16program-log queries per32s;logelapsed30.2/31.3ms,max3.1/4.1ms. Checks enabled,0failedstatus/logerrors,0browser/networkerrors;2freshviews reviewed once. Bounded target only;toolcompileAsync preparation probe423 next.
 
 2026-11-18T01:36:49.399418+00:00 V-F shader prep REJECTED:6trials exactbehavior/0errors,12captures4reviews,p95unchanged16.8/33.4ms,totalTask9220.024->9514.761/31834.392->31849.722ms,programs17->21;no nativeedit. DesktopDPR study next;gate01:50:40Z.
+
+2026-11-18T01:40:54.476140+00:00 DesktopDPR probe native3050ee5ae passes6keyed geometry/state sets at1/2/1.5;buffers1280x720/2560x1440/1920x1080.6capturesmeasured4viewsreviewed. RawMap-orderfailure preserved;stable-ID comparison exact,no tolerance.6trials3113running.

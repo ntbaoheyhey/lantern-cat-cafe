@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V7 V-F: shader preparation rejected; desktopDPR1/2 coverage study active;assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Add isolatedDPR1/1.5/2 fixture/probe;verify buffer+CSS geometry,then6alternatingDPR1/2 ordinary32s/rate trials on unchanged3050ee5ae. Study gate01:50:40Z;no appedit proposed.
+NEXT 1: Poll desktopdensity6trials PID3113;no livefixture/benchmark/helper edits. Probe6stable-ID geometrysets exact,rawMap-orderfailure retained;4freshviews reviewed 2026-11-18T01:40:54.476140+00:00.
 NEXT 2: Measure fresh1280x720CSS captures before reviewing4newviews;compare actual ratios,logicalstate,tasktime,startup/steady/full tails. No simultaneousbrowserwork.
 NEXT 3: Follow CXI integration96d1e75c3/focus3050ee5ae/Pankoloader;reject unchangedshader/upload/readback experiments. Independent6301acceptance pending.
-Last confirmed push5c54ac6c5; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+Last confirmed pushce656bfba; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
@@ -15,6 +15,6 @@ Pending CXI: fallbackd4491cbb5;toast;labels2fd7665b4;posecrope1b1f58f5;HUD79d408
 Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDER refreshed01:32Z and verified;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running: Vite21525;shader prep1135ended/pass01:35:37Z;no detachedbrowserjobs. Shader6trials report reviewed 2026-11-18T01:36:49.399418+00:00.
+Running: Vite21525;DPR6trials PID3113 log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/desktop-density-production.log;probe2905 ended;one detachedjob.
 Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread01:35Z. capture-arrival SHA1f1d220e unchanged.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.

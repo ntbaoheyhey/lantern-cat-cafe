@@ -17,10 +17,11 @@ assert(artifact&&artifact.dist===resolve(parent,mode));
 export const judgeUrl='http://127.0.0.1:'+(mode==='baseline'?6311:6312)+'/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
 const hash=value=>createHash('sha256').update(value).digest('hex');
 export function runtimeEvidence(){return{indexSha256:hash(readFileSync(resolve(artifact.dist,'index.html'))),artifactMode:mode,buildSource:built.source,buildRuntimePatchSha256:built.runtimePatchSha256,buildManifestSha256:hash(readFileSync(resolve(parent,'build.json'))),harnessSha256:hash(readFileSync(import.meta.filename))};}
-export async function openFixture(browser,fixture,{setupPage}={}){
+export async function openFixture(browser,fixture,{setupPage,deviceScaleFactor=1}={}){
+ assert([1,1.5,2].includes(deviceScaleFactor),'Desktop density fixture supports1,1.5,2 only');
  for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
  assert.equal(hash(Buffer.from(await(await fetch(judgeUrl)).arrayBuffer())),artifact.indexSha256);
- const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1}),errors=[],blockedRequests=[];
+ const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor}),errors=[],blockedRequests=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  page.on('response',r=>{if(r.status()>=400)errors.push('HTTP '+r.status()+' '+new URL(r.url()).pathname);});
  await page.route('**/*',route=>{
