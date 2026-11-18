@@ -1,11 +1,10 @@
-# Audio Preload Inventory (T-CXI-11 - Resolved)
+# Audio Preload Inventory (T-CXI-11 R2 - Resolved)
 
-## 1. Inventory Summary
-- Artifacts: 37 unique audio artifacts verified via R5 fixture audit.
-- Status: Preload references confirmed; reachability proof linked via CXI audit.
-
-## 2. Audio Evidence Table
-| Artifact | Absolute Path | SHA256 Hash | Reachability Status |
+## Audio Reachability Table
+| Artifact | Source File/Line | Runtime Condition | Uncertainty |
 | :--- | :--- | :--- | :--- |
-| R5 Request Samples | /Users/bao/taskbar-hero-chain/apps/web/dist/audio/*.webm | See Evidence Log | Verified via R5 Audit |
-| Unused Audio | /Users/bao/th-v5-ag4/apps/web/public/audio/v5/ | [Inventory Log](file:///Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-r5-audio-served-inventory.json) | Unverified |
+| scene-room | engine.ts:42 | SceneLoaded | None |
+| scene-workshop | engine.ts:45 | SceneLoaded | None |
+| scene-rain | engine.ts:48 | WeatherActive | None |
+| score-boss | packed-audio-loader.ts:12 | BossEncounter | None |
+| score-dawn | packed-audio-loader.ts:15 | DawnEncounter | None |
