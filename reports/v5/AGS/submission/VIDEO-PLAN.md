@@ -14,3 +14,6 @@
 | 1:30-2:00 | Boss | Current green boss film, 1×. |
 | 2:00-2:35 | Result | Actual local result wording; no transaction sent. |
 | 2:35-3:00 | Outro | README quick start, architecture, evidence; end on game. |
+
+## Narration
+(Follow the verified demo script in `DEMO-SCRIPT-VERIFIED.md`).
