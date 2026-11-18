@@ -11,11 +11,13 @@ const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPT
 const modes=(process.env.CXV_VICTORY_MODES??'baseline,demand').split(',');assert(modes.every(mode=>['baseline','demand','native'].includes(mode)));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));
 assert(!existsSync(resolve(out,'report.json')));await mkdir(out,{recursive:true});
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),viewport:{width:1280,height:720},method:(modes.every(mode=>mode==='native')?'Native application scheduling on candidate6310; browser-response audit instrumentation only.':'Browser-response scheduling overrides on candidate6310; no application edit.')+' Rule-resolved wave1 result fixture. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay. Historical cpuMs field measures performance.now elapsed instrumented draw duration, not exclusive CPU.',runs:[],errors:[],pass:false};
+const backdrop=process.env.CXV_VICTORY_BUFFERED_BACKDROP==='1'?await readFile(resolve(root,'apps/web/public/art/v3-shell/b2/backdrop-garden.webp')):null;
+report.bufferedBackdrop=backdrop?{sha256:hash(backdrop),bytes:backdrop.length,method:'Complete original bytes provided before CSS decoding; source-free response buffering to control the proven delivery confound.'}:null;
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
  for(const mode of modes){
-  let override;const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'),{fixedClock:false,setupPage:async page=>{override=await installVictoryDemandOverride(page,{mode});}});
+  let override;const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'),{fixedClock:false,setupPage:async page=>{override=await installVictoryDemandOverride(page,{mode});if(backdrop)await page.route('**/backdrop-garden.webp',route=>route.fulfill({status:200,contentType:'image/webp',headers:{'cache-control':'no-store'},body:backdrop}));}});
   const dir=resolve(out,mode);await mkdir(dir,{recursive:true});
   await page.addStyleTag({content:'*,*::before,*::after{animation:none!important;transition:none!important}'});
   await page.evaluate(()=>{const m=window.__depthReview,R=window.__v3a2.R;m.state.settings.reducedMotion=true;R.playBattle(m.battle,'auto');globalThis.__cxvVictoryBattle=structuredClone(m.battle);globalThis.__cxvVictoryLoadDelay=500;m.showResult();});

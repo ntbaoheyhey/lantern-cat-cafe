@@ -15,6 +15,21 @@
       "restored reduced scene remains continuously scheduled"
     ]
   },
-  "native": null,
-  "status": "Prototype matched-delivery exactfullframe gate passed; native adoption pending study time and checks. Original errors and raw comparisons retained."
+  "native": {
+    "appliedUtc": "2026-11-18T00:43:01.094Z",
+    "componentSha256": "1a39f3a4f2aa80a2a91994380a18ac55b3466cf5ee46beb33ec0e62b5bafd6aa",
+    "tests": {
+      "passed": 12,
+      "failed": 0,
+      "log": "work/v5/CXV/jobs/victory-scheduling-test-native.log"
+    },
+    "typecheck": {
+      "passed": true,
+      "diagnostics": 0,
+      "command": "tsc --noEmit -p apps/web/tsconfig.json",
+      "log": "work/v5/CXV/jobs/victory-scheduling-tsc-native.log"
+    },
+    "captures": null
+  },
+  "status": "Native12tests/fullwebTSC pass; native delivery/lifecycle/production captures pending. Not yet READY."
 }
