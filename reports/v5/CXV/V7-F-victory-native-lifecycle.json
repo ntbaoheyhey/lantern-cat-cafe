@@ -1,0 +1,413 @@
+{
+  "utc": "2026-11-18T00:45:18.551Z",
+  "source": "96d1e75c38e3a8d03dc7ea76efc2adcb7210175d",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-18T00:44:14.906Z",
+  "ended": "2026-11-18T00:44:38.392Z",
+  "method": "Native application scheduling on candidate6310; browser-response audit instrumentation only. Rule-resolved wave1 result fixture. Captures only outside timing windows. Frozen renderer comparisons are not ordinary gameplay. Historical cpuMs field measures performance.now elapsed instrumented draw duration, not exclusive CPU. Native mode changes no scheduling code in the browser; audit counters only, compared against preserved baseline pixel hashes.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/report.json",
+    "sha256": "4f7dd926e1da295fd9f18a82d70e681f19e441b69f99f3aa19d813849d52093a"
+  },
+  "pixelChecks": [
+    {
+      "name": "loaded",
+      "equal": true,
+      "hashes": [
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+        "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9"
+      ]
+    },
+    {
+      "name": "idle",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "resized",
+      "equal": true,
+      "hashes": [
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+        "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc"
+      ]
+    },
+    {
+      "name": "restored-size",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "restored-context",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "os-reduced",
+      "equal": true,
+      "hashes": [
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+        "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87"
+      ]
+    },
+    {
+      "name": "normal-frozen-1000",
+      "equal": true,
+      "hashes": [
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+        "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c"
+      ]
+    },
+    {
+      "name": "normal-frozen-1600",
+      "equal": true,
+      "hashes": [
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+        "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821"
+      ]
+    },
+    {
+      "name": "normal-frozen-2800",
+      "equal": true,
+      "hashes": [
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+        "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "mode": "native",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "override": {
+        "mode": "native",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794962581229",
+            "sourceSha256": "9b1b230bd728206c06049f7f5a2e7634eae65aeeb9dd56a2f0087224e5d9a932",
+            "overrideSha256": "d346a79c181712ff80d231a03b036ac34805ea5fd9b233a1f0bf57f44cf146e2"
+          }
+        ]
+      },
+      "cases": [
+        {
+          "name": "reduced-steady",
+          "ms": 5000,
+          "draws": 0,
+          "instrumentedDrawElapsedMs": 0
+        },
+        {
+          "name": "normal-steady",
+          "ms": 3000,
+          "draws": 180,
+          "instrumentedDrawElapsedMs": 483.3000001311302
+        },
+        {
+          "name": "os-reduced-steady",
+          "ms": 1500,
+          "draws": 0,
+          "instrumentedDrawElapsedMs": 0
+        },
+        {
+          "name": "os-normal-resumed",
+          "ms": 1500,
+          "draws": 91,
+          "instrumentedDrawElapsedMs": 218.19999998807907
+        }
+      ],
+      "disposed": [
+        {
+          "draws": 8,
+          "disposed": true,
+          "connected": false
+        },
+        {
+          "draws": 310,
+          "disposed": true,
+          "connected": false
+        }
+      ],
+      "pendingUnmount": {
+        "draws": 1,
+        "cpuMs": 4.200000002980232,
+        "actors": 1,
+        "drawings": 1,
+        "disposed": true,
+        "width": 461,
+        "height": 245,
+        "ready": "false"
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "mode": "native",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/loaded.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/loaded-crew.png",
+      "rgbSha256": "e5299217f4b48bc7eae7f266653853b753a0793015e8f6fae95371d25567ffd9",
+      "state": {
+        "draws": 5,
+        "cpuMs": 49.70000001788139,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "native",
+      "name": "idle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/idle.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/idle-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 5,
+        "cpuMs": 49.70000001788139,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "native",
+      "name": "resized",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/resized.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/resized-crew.png",
+      "rgbSha256": "bb6b75a95ea5e2b518d5790a1341d25db67d3bd654a95f28cb58ecba772f6dcc",
+      "state": {
+        "draws": 6,
+        "cpuMs": 52.30000002682209,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 320,
+        "height": 190,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 936504,
+      "sha256": "7f52621f172ca165beaf7070ee54520b49c4d9a2daae9e4278553ce5c13f5eb9",
+      "mean": 53.34444444444444,
+      "stdDev": 36.25670648903594
+    },
+    {
+      "mode": "native",
+      "name": "restored-size",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/restored-size.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/restored-size-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 7,
+        "cpuMs": 54.90000003576279,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "native",
+      "name": "restored-context",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/restored-context.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/restored-context-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 8,
+        "cpuMs": 79.20000003278255,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "native",
+      "name": "os-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/os-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/os-reduced-crew.png",
+      "rgbSha256": "b60818b9cb873b255306855c51d9765c62da03e6f7b809be2b120cbfc8744a87",
+      "state": {
+        "draws": 202,
+        "cpuMs": 553.2000001370907,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 938360,
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "mean": 53.24659722222222,
+      "stdDev": 36.418184560213575
+    },
+    {
+      "mode": "native",
+      "name": "normal-frozen-1000",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-1000.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-1000-crew.png",
+      "rgbSha256": "9a9e4f3f20b9bb59977d5d44ab20480c3cb18bb89d36a51928335b4ba44ed33c",
+      "state": {
+        "draws": 308,
+        "cpuMs": 790.7000001519918,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937993,
+      "sha256": "41ba44ea8f2deb310b1969892f017885df8caeca2b2680e00911805ec08f0667",
+      "mean": 53.25553240740741,
+      "stdDev": 36.42778757786986
+    },
+    {
+      "mode": "native",
+      "name": "normal-frozen-1600",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-1600.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-1600-crew.png",
+      "rgbSha256": "2b975d4833a7ce9fcd90fb724ce0fc26d93e63e8cf18c3b5ed049a3624539821",
+      "state": {
+        "draws": 309,
+        "cpuMs": 791.4000001549721,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937724,
+      "sha256": "d351257b4a2a76efb273974d5965413ca424b99099c308834b9875193bbfb566",
+      "mean": 53.29125,
+      "stdDev": 36.51499358853437
+    },
+    {
+      "mode": "native",
+      "name": "normal-frozen-2800",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-2800.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/native/normal-frozen-2800-crew.png",
+      "rgbSha256": "32f09f3a71160239aa933f5d52bf954f990a06549e27c90bb4d0d432c3be639e",
+      "state": {
+        "draws": 310,
+        "cpuMs": 792.8000001609325,
+        "actors": 4,
+        "drawings": 4,
+        "disposed": false,
+        "width": 461,
+        "height": 245,
+        "ready": "true"
+      },
+      "width": 1280,
+      "height": 720,
+      "bytes": 937982,
+      "sha256": "5f9677dc085a08228e7a9cb77f26431ac77d8f9741b7b294b463d2fa0b28d888",
+      "mean": 53.20997685185185,
+      "stdDev": 36.37065434776337
+    }
+  ],
+  "sheets": [
+    {
+      "mode": "native",
+      "part": "lifecycle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/review/native-lifecycle.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "5a5c0d5f2086bfe46a41ed0763ca6eee5233733fa91c755e5cfa4764963629ce",
+      "frames": [
+        "loaded",
+        "resized",
+        "restored-context",
+        "os-reduced"
+      ]
+    },
+    {
+      "mode": "native",
+      "part": "poses",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/lifecycle/review/native-poses.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "cdcf3ca699f9a87e1fbd70b245229c4f8cc5d022fe0e000ead27af3469a493b4",
+      "frames": [
+        "idle",
+        "normal-frozen-1000",
+        "normal-frozen-1600",
+        "normal-frozen-2800"
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T00:45:48.140630+00:00",
+  "visualReview": "Measured first, reviewed once: one settled delivery sheet and two lifecycle/pose sheets. Four cats, labels and result controls remain readable. Container resize, restored context, OS reduced mode and fixed normal poses match the preserved reference. Raw Google Fonts block failure remains explicit.",
+  "pass": false,
+  "behaviorPass": true,
+  "rawHarnessPass": false,
+  "bufferedBackdrop": {
+    "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001",
+    "bytes": 465026,
+    "method": "Complete original bytes provided before CSS decoding; source-free response buffering to control the proven delivery confound."
+  },
+  "networkLimit": "Original harness rejected fixture-blocked Google Fonts CSS. Pixel and lifecycle gates pass; failed raw status preserved.",
+  "errors": [],
+  "limits": "Candidate browser experiment with audit counters and explicit result fixtures. Pixel equality applies to the cropped victory crew region at named states; full scenes contain unrelated UI. Frozen normal frames are not timing/performance evidence. Draw durations are performance.now elapsed values including instrumentation overhead, not exclusive CPU. Independent production/judge acceptance remains separate."
+}

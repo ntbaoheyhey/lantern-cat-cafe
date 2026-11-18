@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-18T00:44:48.339566+00:00",
+  "source": "96d1e75c38e3a8d03dc7ea76efc2adcb7210175d",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "method": "Native application scheduler with browser audit counters only; compare all controlled fullframe RGB against pre-adoption continuous renderer, matched complete/delayed image delivery. No scheduling transform in native mode. Original bytes unchanged.",
+  "nativeReport": "reports/v5/CXV/V7-F-victory-native-delivery.json",
+  "nativeReportSha256": "53219547bd51d0df946e00b9843b8175423e991c249b2ef8969072c8861daca1",
+  "checks": [
+    {
+      "name": "1-complete-intermediate",
+      "exact": true,
+      "nativeRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "baselineRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "name": "1-complete-settled",
+      "exact": true,
+      "nativeRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "baselineRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "name": "2-delayed-intermediate",
+      "exact": true,
+      "nativeRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "baselineRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "name": "2-delayed-settled",
+      "exact": true,
+      "nativeRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "baselineRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "name": "3-delayed-intermediate",
+      "exact": true,
+      "nativeRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "baselineRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "name": "3-delayed-settled",
+      "exact": true,
+      "nativeRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "baselineRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "name": "4-complete-intermediate",
+      "exact": true,
+      "nativeRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "baselineRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "name": "4-complete-settled",
+      "exact": true,
+      "nativeRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "baselineRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-18T00:45:48.140630+00:00",
+  "visualReview": "Measured first, reviewed once: one settled delivery sheet and two lifecycle/pose sheets. Four cats, labels and result controls remain readable. Container resize, restored context, OS reduced mode and fixed normal poses match the preserved reference. Raw Google Fonts block failure remains explicit."
+}

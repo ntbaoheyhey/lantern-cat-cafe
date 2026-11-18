@@ -1,0 +1,2116 @@
+{
+  "utc": "2026-11-18T00:43:56.025Z",
+  "source": "96d1e75c38e3a8d03dc7ea76efc2adcb7210175d",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "asset": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+    "bytes": 465026,
+    "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+  },
+  "harnessSha256": "dd68f9f7ea2c4560963b37282f0d36f88b5c9ad34aa34c4f467226ec2e45a4a2",
+  "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+  "method": "Source-free transport diagnostic on one retained candidate result page, reduced static pose. Same original WebP bytes, Content-Length, Content-Type and Cache-Control; unique URLs. Complete/delayed-half/delayed-half/complete. The delayed response remains incomplete through an intermediate screenshot, then completes before the settled frame. Decode traces are diagnostic and are not performance measurements. No application/art replacement or acceptance waiver. Browser-response scheduling mode native with audit counters; exact transformed module hashes recorded. Known Google Fonts stylesheet is blocked by the local fixture, retained explicitly; all other blocked requests fail.",
+  "runs": [
+    {
+      "name": "1-complete",
+      "mode": "complete",
+      "url": "http://127.0.0.1:6313/1-complete.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:44:07.249Z",
+        "firstHalfUtc": null,
+        "completeUtc": "2026-11-18T00:44:07.250Z",
+        "intermediateUtc": "2026-11-18T00:44:08.108Z"
+      },
+      "intermediate": "1-complete-intermediate",
+      "settled": "1-complete-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/1-complete.webp",
+          "entryType": "resource",
+          "startTime": 10771.40000000596,
+          "duration": 5.4000000059604645,
+          "navigationId": 6453,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 10771.40000000596,
+          "domainLookupStart": 10774.60000000894,
+          "domainLookupEnd": 10774.70000000298,
+          "connectStart": 10774.70000000298,
+          "secureConnectionStart": 0,
+          "connectEnd": 10774.800000011921,
+          "requestStart": 10774.90000000596,
+          "responseStart": 10776.300000011921,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 10776.300000011921,
+          "responseEnd": 10776.800000011921,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "93550.1541",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/1-complete.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 70420.594893,
+          "wallTime": 1794962647.24561,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "93550.1541",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "timestamp": 70420.600581,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/1-complete.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:44:07 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": false,
+            "connectionId": 5628,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 70420.597946,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": 0.181,
+              "dnsEnd": 0.338,
+              "connectStart": 0.338,
+              "connectEnd": 0.437,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.483,
+              "sendEnd": 0.523,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 1.984,
+              "receiveHeadersEnd": 2.013
+            },
+            "responseTime": 1794962647250.63,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1541",
+          "timestamp": 70420.600616,
+          "dataLength": 465026,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1541",
+          "timestamp": 70420.600855,
+          "dataLength": 0,
+          "encodedDataLength": 465026
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "93550.1541",
+          "timestamp": 70420.600388,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/1-complete.trace.json",
+        "bytes": 1623367,
+        "sha256": "c3ea99654235f0c21a509ebd781b0e313fb7ba19a5831474508266b62bfdc624",
+        "events": 7497,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/1-complete.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 20,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18,
+            "tid": 3066380,
+            "ts": 70420612398,
+            "tts": 834941
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 508
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70420612417,
+            "tts": 834959
+          }
+        ],
+        "imageIds": [
+          508
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 508
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 28640,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28371,
+            "tid": 3066390,
+            "ts": 70420613870,
+            "tts": 338183
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 13,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 12,
+            "tid": 3066393,
+            "ts": 70420613657,
+            "tts": 26836
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 5,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 4,
+            "tid": 3066390,
+            "ts": 70420613847,
+            "tts": 338162
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 28641,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28371,
+            "tid": 3066390,
+            "ts": 70420613869,
+            "tts": 338183
+          }
+        ],
+        "attributable": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 28641,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28371,
+            "tid": 3066390,
+            "ts": 70420613869,
+            "tts": 338183
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "2-delayed",
+      "mode": "delayed",
+      "url": "http://127.0.0.1:6313/2-delayed.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:44:08.852Z",
+        "firstHalfUtc": "2026-11-18T00:44:08.852Z",
+        "completeUtc": "2026-11-18T00:44:09.662Z",
+        "intermediateUtc": "2026-11-18T00:44:09.662Z"
+      },
+      "intermediate": "2-delayed-intermediate",
+      "settled": "2-delayed-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/2-delayed.webp",
+          "entryType": "resource",
+          "startTime": 12375.60000000894,
+          "duration": 813.0999999940395,
+          "navigationId": 6453,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 12375.60000000894,
+          "domainLookupStart": 12375.60000000894,
+          "domainLookupEnd": 12375.60000000894,
+          "connectStart": 12375.60000000894,
+          "secureConnectionStart": 0,
+          "connectEnd": 12375.60000000894,
+          "requestStart": 12377.90000000596,
+          "responseStart": 12378.40000000596,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 12378.40000000596,
+          "responseEnd": 13188.70000000298,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "93550.1542",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/2-delayed.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 70422.199249,
+          "wallTime": 1794962648.849969,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "93550.1542",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "timestamp": 70422.202387,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/2-delayed.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:44:08 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5628,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 70422.201342,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.135,
+              "sendEnd": 0.257,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.663,
+              "receiveHeadersEnd": 0.681
+            },
+            "responseTime": 1794962648852.707,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1542",
+          "timestamp": 70422.202419,
+          "dataLength": 232513,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1542",
+          "timestamp": 70423.012324,
+          "dataLength": 65536,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1542",
+          "timestamp": 70423.01235,
+          "dataLength": 131072,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1542",
+          "timestamp": 70423.012369,
+          "dataLength": 35905,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1542",
+          "timestamp": 70423.012548,
+          "dataLength": 0,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "93550.1542",
+          "timestamp": 70423.012377,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/2-delayed.trace.json",
+        "bytes": 1447213,
+        "sha256": "ce71454e7498be9fd8ddafd4365ba0f2ee7f4de9edfa2e68d8e7224fe7817b66",
+        "events": 6717,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/2-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 15,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 13,
+            "tid": 3066380,
+            "ts": 70422212064,
+            "tts": 850602
+          },
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/2-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 14,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 12,
+            "tid": 3066380,
+            "ts": 70423012776,
+            "tts": 853665
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 530
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70422212079,
+            "tts": 850615
+          },
+          {
+            "args": {
+              "LazyPixelRef": 530
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70423012789,
+            "tts": 853677
+          }
+        ],
+        "imageIds": [
+          530
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 530
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 14681,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14498,
+            "tid": 3066386,
+            "ts": 70422212593,
+            "tts": 387611
+          },
+          {
+            "args": {
+              "LazyPixelRef": 530
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 18723,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18571,
+            "tid": 3066390,
+            "ts": 70423013311,
+            "tts": 371831
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 14684,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14500,
+            "tid": 3066386,
+            "ts": 70422212590,
+            "tts": 387609
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18724,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18572,
+            "tid": 3066390,
+            "ts": 70423013310,
+            "tts": 371830
+          }
+        ],
+        "attributable": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 14684,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14500,
+            "tid": 3066386,
+            "ts": 70422212590,
+            "tts": 387609
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18724,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18572,
+            "tid": 3066390,
+            "ts": 70423013310,
+            "tts": 371830
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "3-delayed",
+      "mode": "delayed",
+      "url": "http://127.0.0.1:6313/3-delayed.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:44:10.404Z",
+        "firstHalfUtc": "2026-11-18T00:44:10.404Z",
+        "completeUtc": "2026-11-18T00:44:11.214Z",
+        "intermediateUtc": "2026-11-18T00:44:11.214Z"
+      },
+      "intermediate": "3-delayed-intermediate",
+      "settled": "3-delayed-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/3-delayed.webp",
+          "entryType": "resource",
+          "startTime": 13928.10000000894,
+          "duration": 812.5999999940395,
+          "navigationId": 6453,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 13928.10000000894,
+          "domainLookupStart": 13928.10000000894,
+          "domainLookupEnd": 13928.10000000894,
+          "connectStart": 13928.10000000894,
+          "secureConnectionStart": 0,
+          "connectEnd": 13928.10000000894,
+          "requestStart": 13930.10000000894,
+          "responseStart": 13930.60000000894,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 13930.60000000894,
+          "responseEnd": 14740.70000000298,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "93550.1543",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/3-delayed.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 70423.751639,
+          "wallTime": 1794962650.402362,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "93550.1543",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "timestamp": 70423.75471,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/3-delayed.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:44:10 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5628,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 70423.753525,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.145,
+              "sendEnd": 0.208,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.692,
+              "receiveHeadersEnd": 0.711
+            },
+            "responseTime": 1794962650404.924,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1543",
+          "timestamp": 70423.754743,
+          "dataLength": 232513,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1543",
+          "timestamp": 70424.564151,
+          "dataLength": 131072,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1543",
+          "timestamp": 70424.564218,
+          "dataLength": 65536,
+          "encodedDataLength": 65536
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1543",
+          "timestamp": 70424.564287,
+          "dataLength": 35905,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1543",
+          "timestamp": 70424.564572,
+          "dataLength": 0,
+          "encodedDataLength": 166977
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "93550.1543",
+          "timestamp": 70424.564296,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/3-delayed.trace.json",
+        "bytes": 1449720,
+        "sha256": "de22784c89720eade065bcfe32f021ea4a07c8f49ab1d69a5a36af25237b114d",
+        "events": 6723,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/3-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 13,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 11,
+            "tid": 3066380,
+            "ts": 70423762025,
+            "tts": 861650
+          },
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/3-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 17,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 15,
+            "tid": 3066380,
+            "ts": 70424564885,
+            "tts": 865121
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 533
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70423762037,
+            "tts": 861661
+          },
+          {
+            "args": {
+              "LazyPixelRef": 533
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70424564901,
+            "tts": 865136
+          }
+        ],
+        "imageIds": [
+          533
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 533
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 14947,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14821,
+            "tid": 3066390,
+            "ts": 70423762554,
+            "tts": 394989
+          },
+          {
+            "args": {
+              "LazyPixelRef": 533
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 18811,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18599,
+            "tid": 3066390,
+            "ts": 70424565509,
+            "tts": 413867
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 14948,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14822,
+            "tid": 3066390,
+            "ts": 70423762553,
+            "tts": 394988
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18813,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18600,
+            "tid": 3066390,
+            "ts": 70424565508,
+            "tts": 413866
+          }
+        ],
+        "attributable": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 14948,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 14822,
+            "tid": 3066390,
+            "ts": 70423762553,
+            "tts": 394988
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18813,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 18600,
+            "tid": 3066390,
+            "ts": 70424565508,
+            "tts": 413866
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "4-complete",
+      "mode": "complete",
+      "url": "http://127.0.0.1:6313/4-complete.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:44:11.952Z",
+        "firstHalfUtc": null,
+        "completeUtc": "2026-11-18T00:44:11.952Z",
+        "intermediateUtc": "2026-11-18T00:44:12.804Z"
+      },
+      "intermediate": "4-complete-intermediate",
+      "settled": "4-complete-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/4-complete.webp",
+          "entryType": "resource",
+          "startTime": 15476.10000000894,
+          "duration": 2.5,
+          "navigationId": 6453,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 15476.10000000894,
+          "domainLookupStart": 15476.10000000894,
+          "domainLookupEnd": 15476.10000000894,
+          "connectStart": 15476.10000000894,
+          "secureConnectionStart": 0,
+          "connectEnd": 15476.10000000894,
+          "requestStart": 15477.90000000596,
+          "responseStart": 15478.300000011921,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 15478.300000011921,
+          "responseEnd": 15478.60000000894,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "93550.1544",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/4-complete.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 70425.299621,
+          "wallTime": 1794962651.95035,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "93550.1544",
+          "loaderId": "3D5BE3BCBA8D9C0F2DEA1C2683EA63DE",
+          "timestamp": 70425.302396,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/4-complete.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:44:11 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5628,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 70425.301379,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.122,
+              "sendEnd": 0.17,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.555,
+              "receiveHeadersEnd": 0.586
+            },
+            "responseTime": 1794962651952.643,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "BEDD755FFED6EDFDEAAA23780E7BD16B"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1544",
+          "timestamp": 70425.30242,
+          "dataLength": 465026,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "93550.1544",
+          "timestamp": 70425.302592,
+          "dataLength": 0,
+          "encodedDataLength": 465026
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "93550.1544",
+          "timestamp": 70425.302224,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/4-complete.trace.json",
+        "bytes": 1187258,
+        "sha256": "9e58be2d32468696614a41e80d32e17aab7ec57baddbd2af6f528835ed9be446",
+        "events": 5386,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "BEDD755FFED6EDFDEAAA23780E7BD16B",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/4-complete.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 14,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 13,
+            "tid": 3066380,
+            "ts": 70425312009,
+            "tts": 873037
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 536
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 93550,
+            "s": "t",
+            "tid": 3066380,
+            "ts": 70425312022,
+            "tts": 873050
+          }
+        ],
+        "imageIds": [
+          536
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 536
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 28347,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28139,
+            "tid": 3066390,
+            "ts": 70425312688,
+            "tts": 436532
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 14,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 13,
+            "tid": 3066393,
+            "ts": 70425312437,
+            "tts": 44566
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 4,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 3,
+            "tid": 3066390,
+            "ts": 70425312657,
+            "tts": 436503
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 28350,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28139,
+            "tid": 3066390,
+            "ts": 70425312687,
+            "tts": 436532
+          }
+        ],
+        "attributable": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 28350,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 93550,
+            "tdur": 28139,
+            "tid": 3066390,
+            "ts": 70425312687,
+            "tts": 436532
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    }
+  ],
+  "captures": [
+    {
+      "name": "original",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/original.png",
+      "utc": "2026-11-18T00:44:07.220Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "1-complete-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/1-complete-intermediate.png",
+      "utc": "2026-11-18T00:44:08.108Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/1-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "1-complete-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/1-complete-settled.png",
+      "utc": "2026-11-18T00:44:08.777Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/1-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "2-delayed-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/2-delayed-intermediate.png",
+      "utc": "2026-11-18T00:44:09.662Z",
+      "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/2-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "reference": null
+    },
+    {
+      "name": "2-delayed-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/2-delayed-settled.png",
+      "utc": "2026-11-18T00:44:10.340Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/2-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "reference": "originalVariant"
+    },
+    {
+      "name": "3-delayed-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/3-delayed-intermediate.png",
+      "utc": "2026-11-18T00:44:11.214Z",
+      "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/3-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "reference": null
+    },
+    {
+      "name": "3-delayed-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/3-delayed-settled.png",
+      "utc": "2026-11-18T00:44:11.889Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/3-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "reference": "originalVariant"
+    },
+    {
+      "name": "4-complete-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/4-complete-intermediate.png",
+      "utc": "2026-11-18T00:44:12.804Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/4-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "4-complete-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/4-complete-settled.png",
+      "utc": "2026-11-18T00:44:13.461Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/4-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "original-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/original-restored.png",
+      "utc": "2026-11-18T00:44:13.686Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    }
+  ],
+  "pass": true,
+  "scheduler": "native",
+  "browser": "156.0.8078.4",
+  "override": {
+    "mode": "native",
+    "modules": [
+      {
+        "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794962581229",
+        "sourceSha256": "9b1b230bd728206c06049f7f5a2e7634eae65aeeb9dd56a2f0087224e5d9a932",
+        "overrideSha256": "d346a79c181712ff80d231a03b036ac34805ea5fd9b233a1f0bf57f44cf146e2"
+      }
+    ]
+  },
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "errors": [],
+  "blockedRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "type": "stylesheet"
+    }
+  ],
+  "initial": {
+    "sheet": {
+      "x": 51.1875,
+      "y": 82,
+      "width": 1177.625,
+      "height": 620,
+      "top": 82,
+      "right": 1228.8125,
+      "bottom": 702,
+      "left": 51.1875
+    },
+    "crew": {
+      "x": 133.1875,
+      "y": 263,
+      "width": 461.21875,
+      "height": 245,
+      "top": 263,
+      "right": 594.40625,
+      "bottom": 508,
+      "left": 133.1875
+    },
+    "canvas": {
+      "x": 133.1875,
+      "y": 263,
+      "width": 461,
+      "height": 245,
+      "top": 263,
+      "right": 594.1875,
+      "bottom": 508,
+      "left": 133.1875
+    },
+    "ready": "true",
+    "drawn": "4",
+    "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+    "backgroundSize": "auto, cover",
+    "backgroundPosition": "0% 0%, 50% 50%",
+    "animations": 0
+  },
+  "reducedSteady": {
+    "durationMs": 2000,
+    "draws": 0,
+    "elapsedDrawMs": 0
+  },
+  "traceCategories": "blink,cc,skia,devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline,disabled-by-default-devtools.timeline.frame,disabled-by-default-skia,disabled-by-default-cc.debug",
+  "ended": "2026-11-18T00:44:13.717Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/report.json",
+    "sha256": "a3b5ae48a493a8c342814c91b5a2dd45522ee50a6f744ca1933a03d4f65807b6"
+  },
+  "references": {
+    "originalBaseline": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+    "originalVariant": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+  },
+  "measuredUtc": "2026-11-18T00:44:14.680Z",
+  "comparisons": [
+    {
+      "a": "original",
+      "b": "original-restored",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "original",
+      "b": "1-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "original",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "2-delayed-settled",
+      "b": "3-delayed-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "2-delayed-settled",
+      "b": "4-complete-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "original",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "3-delayed-settled",
+      "b": "4-complete-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "original",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "1-complete-intermediate",
+      "b": "1-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "2-delayed-intermediate",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 345833,
+      "maxChannel": 128,
+      "meanChannelAbsolute": 3.375629340277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 351,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "3-delayed-intermediate",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 345833,
+      "maxChannel": 128,
+      "meanChannelAbsolute": 3.375629340277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 351,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "4-complete-intermediate",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/review-1.jpg",
+      "width": 1024,
+      "height": 288,
+      "sha256": "d33e56150024a765f1a4dbc8f91dd1e2fca1a9ae662214d3cfdf514e208014d9",
+      "captures": [
+        "original",
+        "original-restored"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/review-2.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+      "captures": [
+        "1-complete-settled",
+        "2-delayed-settled",
+        "3-delayed-settled",
+        "4-complete-settled"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-scheduling-native/delivery/review-3.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4b70c07bc97f20e3d317ed6eae6b7cfee147cf61bf8f3b2e21bb65fadfd57da5",
+      "captures": [
+        "1-complete-intermediate",
+        "2-delayed-intermediate",
+        "3-delayed-intermediate",
+        "4-complete-intermediate"
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T00:45:48.140630+00:00",
+  "visualReview": "Measured first, reviewed once: one settled delivery sheet and two lifecycle/pose sheets. Four cats, labels and result controls remain readable. Container resize, restored context, OS reduced mode and fixed normal poses match the preserved reference. Raw Google Fonts block failure remains explicit.",
+  "interpretation": null
+}

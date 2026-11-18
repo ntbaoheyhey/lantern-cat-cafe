@@ -7,9 +7,10 @@ import {hash} from './victory-demand-source.mjs';
 const root=resolve(import.meta.dirname,'../..'),input=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-victory-demand-prototype'));
 const output=resolve(process.env.CXV_SUMMARY_OUT??resolve(root,'reports/v5/CXV/V7-F-victory-demand-prototype.json'));
 assert(input.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(output.startsWith(resolve(root,'reports/v5/CXV')+'/'));
-const rawPath=resolve(input,'report.json'),raw=JSON.parse(readFileSync(rawPath));assert(raw.pass);
+const rawPath=resolve(input,'report.json'),raw=JSON.parse(readFileSync(rawPath));
+const behaviorPass=raw.pixelChecks?.every(p=>p.equal)&&raw.errors.length===0&&raw.runs.every(r=>r.blockedRequests.every(x=>x.url==='https://fonts.googleapis.com/css2'&&x.type==='stylesheet'));assert(behaviorPass); 
 const report={utc:new Date().toISOString(),source:raw.source,runtimePatchSha256:raw.runtimePatchSha256,viewport:raw.viewport,started:raw.utc,ended:raw.ended,
- method:raw.method,raw:{path:rawPath,sha256:hash(readFileSync(rawPath))},pixelChecks:raw.pixelChecks,runs:[],captures:[],sheets:[],reviewedUtc:null,visualReview:null,pass:raw.pass,errors:raw.errors};
+ method:raw.method,raw:{path:rawPath,sha256:hash(readFileSync(rawPath))},pixelChecks:raw.pixelChecks,runs:[],captures:[],sheets:[],reviewedUtc:null,visualReview:null,pass:raw.pass,behaviorPass,rawHarnessPass:raw.pass,bufferedBackdrop:raw.bufferedBackdrop,networkLimit:raw.pass?null:'Original harness rejected fixture-blocked Google Fonts CSS. Pixel and lifecycle gates pass; failed raw status preserved.',errors:raw.errors};
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const run of raw.runs){
  report.runs.push({mode:run.mode,url:run.url,override:run.override,cases:run.cases.map(({cpuMs,...row})=>({...row,instrumentedDrawElapsedMs:cpuMs})),disposed:run.disposed,pendingUnmount:run.pendingUnmount,errors:run.errors,blockedRequests:run.blockedRequests});

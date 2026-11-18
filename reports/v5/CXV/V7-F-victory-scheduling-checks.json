@@ -29,7 +29,17 @@
       "command": "tsc --noEmit -p apps/web/tsconfig.json",
       "log": "work/v5/CXV/jobs/victory-scheduling-tsc-native.log"
     },
-    "captures": null
+    "captures": {
+      "fullframeMatchedDeliveryExact": 8,
+      "lifecycleCrewExact": 9,
+      "freshSheetsReviewedOnce": 3,
+      "reviewedUtc": "2026-11-18T00:45:48.140630+00:00",
+      "reducedSteadyDraws": 0,
+      "osReducedDraws": 0,
+      "normal3sDraws": 180,
+      "osNormalResumed1_5sDraws": 91,
+      "networkLimit": "Native lifecycle raw harness pass=false solely for fixture-blocked Google Fonts CSS; all behavior/pixel gates pass; original status preserved."
+    }
   },
-  "status": "Native12tests/fullwebTSC pass; native delivery/lifecycle/production captures pending. Not yet READY."
+  "status": "Native12tests/TSC0 and8fullframe+9lifecycle pixel checks pass;3freshsheetsreviewed. Unmodified production validation pending; not yet READY."
 }
