@@ -1,0 +1,531 @@
+{
+  "utc": "2026-11-18T11:51:51.934240+00:00",
+  "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+  "sourceSha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e",
+  "observationsSha256": "5730943e33425bbea3856ca76c06ae1462ef354a496c61f43c6f1923409221d2",
+  "modelPreregistration": {
+    "utc": "2026-11-18T11:51:19.486984+00:00",
+    "frozenObservations": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/frozen-observations.json",
+    "frozenObservationsSha256": "5730943e33425bbea3856ca76c06ae1462ef354a496c61f43c6f1923409221d2",
+    "model": "scipy.interpolate.PchipInterpolator;independent X/Y;one fixed model for eyeLineCenterSourcePx and visiblePawCenterSourcePx",
+    "trainingOnly": true,
+    "periodFrames": 300,
+    "construction": "Repeat all24training knots at frame-300,frame,frame+300;evaluate middle cycle. No smoothing,frequency,harmonic or parameter search.",
+    "gate": {
+      "trainingMaxAbsErrorPx": 1e-08,
+      "holdoutsPerAxisSourcePx": {
+        "eyeLineCenterSourcePx": 8,
+        "visiblePawCenterSourcePx": 6
+      },
+      "periodicValueMaxAbsPx": 1e-08,
+      "periodicDerivativeMaxAbsPxPerFrame": 1e-08,
+      "allFiniteRequired": true
+    },
+    "diagnostics": [
+      "300 integer-frame positions and velocities",
+      "max adjacent-frame step,including299to0",
+      "training range and output range",
+      "per-holdout errors without averaging away failures"
+    ],
+    "decision": "All gates needed for source-only presentation model;failure preserved,no export. Passing does not establish continuous source truth,anatomy,scene or release readiness.",
+    "reviewedHoldoutsBeforeModelChoice": true,
+    "limitation": "All observations were frozen before fitting, but the same human observed training and holdouts. This is an authored approximation audit,not blinded statistical validation."
+  },
+  "modelPreregistrationSha256": "db2d3a1fe33a429dea841f9d99e84856c5af5f89f26de51a9404811c208aea14",
+  "toolSha256": "583e8070518d1ebbd7a5288e0a781c54ccec04cc7fda074a9f178ab0697ae0e4",
+  "versions": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/model-output.json",
+    "sha256": "44041ce9ec39403aff2185af758ef103c27cb7791a4a061af091585aa10c4f85"
+  },
+  "channels": {
+    "eyeLineCenterSourcePx": {
+      "decision": "REJECT unchanged observation-bound gate",
+      "checks": {
+        "finite": true,
+        "trainingExact": true,
+        "heldoutBounds": false,
+        "periodicValue": true,
+        "periodicDerivative": true
+      },
+      "trainingCount": 24,
+      "holdoutCount": 12,
+      "heldoutPassCount": 11,
+      "heldoutBoundPerAxisSourcePx": 8,
+      "maxHeldoutAbsErrorSourcePx": [
+        1.3227208765528644,
+        12.96242430587165
+      ],
+      "trainingMaxErrorSourcePx": 0.0,
+      "periodicValueErrorSourcePx": 0.0,
+      "periodicDerivativeErrorSourcePxPerFrame": 0.0,
+      "maximumAdjacentStepSourcePx": 1.845040030546181,
+      "seamAdjacentStepSourcePx": 0.25260421114326187,
+      "trainingRange": [
+        [
+          288.0357,
+          139.1071
+        ],
+        [
+          313.9286,
+          164.4643
+        ]
+      ],
+      "outputRange": [
+        [
+          288.0357,
+          139.1071
+        ],
+        [
+          313.9286,
+          164.4643
+        ]
+      ],
+      "holdouts": [
+        {
+          "frame": 5,
+          "observed": [
+            294.1071,
+            146.9643
+          ],
+          "predicted": [
+            295.3666483687616,
+            147.9868145399894
+          ],
+          "errorSourcePx": [
+            1.2595483687616138,
+            1.0225145399894018
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 30,
+          "observed": [
+            312.1428,
+            156.4286
+          ],
+          "predicted": [
+            311.3864701781914,
+            156.98178050801448
+          ],
+          "errorSourcePx": [
+            -0.7563298218086061,
+            0.553180508014492
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 55,
+          "observed": [
+            309.1072,
+            147.3214
+          ],
+          "predicted": [
+            308.45102804926177,
+            146.12740704945244
+          ],
+          "errorSourcePx": [
+            -0.6561719507382122,
+            -1.1939929505475675
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 80,
+          "observed": [
+            290.1785,
+            150.8929
+          ],
+          "predicted": [
+            289.8723018604338,
+            150.73174539282945
+          ],
+          "errorSourcePx": [
+            -0.30619813956616326,
+            -0.16115460717054475
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 105,
+          "observed": [
+            289.6428,
+            141.0714
+          ],
+          "predicted": [
+            289.584696084419,
+            140.14881013077604
+          ],
+          "errorSourcePx": [
+            -0.058103915581000365,
+            -0.9225898692239696
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 130,
+          "observed": [
+            295.3571,
+            145.0
+          ],
+          "predicted": [
+            295.647139813498,
+            145.04681399088406
+          ],
+          "errorSourcePx": [
+            0.2900398134979696,
+            0.04681399088406124
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 155,
+          "observed": [
+            301.7857,
+            152.8572
+          ],
+          "predicted": [
+            301.71363171539883,
+            154.45714724624486
+          ],
+          "errorSourcePx": [
+            -0.07206828460118686,
+            1.5999472462448523
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 180,
+          "observed": [
+            302.6786,
+            146.4286
+          ],
+          "predicted": [
+            301.9643,
+            151.6989914226024
+          ],
+          "errorSourcePx": [
+            -0.714300000000037,
+            5.270391422602415
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 205,
+          "observed": [
+            302.5,
+            159.1071
+          ],
+          "predicted": [
+            301.90965834843274,
+            146.14467569412835
+          ],
+          "errorSourcePx": [
+            -0.5903416515672575,
+            -12.96242430587165
+          ],
+          "passBound": false
+        },
+        {
+          "frame": 230,
+          "observed": [
+            303.75,
+            143.3929
+          ],
+          "predicted": [
+            303.5131002683203,
+            142.42941950537997
+          ],
+          "errorSourcePx": [
+            -0.23689973167972767,
+            -0.963480494620029
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 255,
+          "observed": [
+            290.5357,
+            157.3214
+          ],
+          "predicted": [
+            291.8584208765529,
+            154.71161412702713
+          ],
+          "errorSourcePx": [
+            1.3227208765528644,
+            -2.6097858729728785
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 280,
+          "observed": [
+            291.7857,
+            151.4286
+          ],
+          "predicted": [
+            291.8995888682806,
+            151.3700084152251
+          ],
+          "errorSourcePx": [
+            0.11388886828058276,
+            -0.058591584774887906
+          ],
+          "passBound": true
+        }
+      ]
+    },
+    "visiblePawCenterSourcePx": {
+      "decision": "PASS sparse presentation controls only",
+      "checks": {
+        "finite": true,
+        "trainingExact": true,
+        "heldoutBounds": true,
+        "periodicValue": true,
+        "periodicDerivative": true
+      },
+      "trainingCount": 24,
+      "holdoutCount": 12,
+      "heldoutPassCount": 12,
+      "heldoutBoundPerAxisSourcePx": 6,
+      "maxHeldoutAbsErrorSourcePx": [
+        2.144116186594445,
+        1.8014234287970226
+      ],
+      "trainingMaxErrorSourcePx": 0.0,
+      "periodicValueErrorSourcePx": 0.0,
+      "periodicDerivativeErrorSourcePxPerFrame": 0.0,
+      "maximumAdjacentStepSourcePx": 3.5006177337206448,
+      "seamAdjacentStepSourcePx": 0.26748515913772736,
+      "trainingRange": [
+        [
+          105.5,
+          341.0
+        ],
+        [
+          148.0,
+          389.0
+        ]
+      ],
+      "outputRange": [
+        [
+          105.5,
+          341.0
+        ],
+        [
+          148.0,
+          389.0
+        ]
+      ],
+      "holdouts": [
+        {
+          "frame": 5,
+          "observed": [
+            116.5,
+            363.0
+          ],
+          "predicted": [
+            116.82170751526762,
+            361.4090360898118
+          ],
+          "errorSourcePx": [
+            0.32170751526761876,
+            -1.5909639101881794
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 30,
+          "observed": [
+            110.0,
+            353.0
+          ],
+          "predicted": [
+            109.97228811525542,
+            352.96557727693954
+          ],
+          "errorSourcePx": [
+            -0.02771188474457631,
+            -0.03442272306045879
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 55,
+          "observed": [
+            106.5,
+            342.0
+          ],
+          "predicted": [
+            105.99698374066314,
+            341.2649382076297
+          ],
+          "errorSourcePx": [
+            -0.5030162593368601,
+            -0.7350617923702885
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 80,
+          "observed": [
+            110.0,
+            352.0
+          ],
+          "predicted": [
+            112.14411618659445,
+            353.801423428797
+          ],
+          "errorSourcePx": [
+            2.144116186594445,
+            1.8014234287970226
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 105,
+          "observed": [
+            148.5,
+            385.5
+          ],
+          "predicted": [
+            146.70192400356424,
+            384.8470707767904
+          ],
+          "errorSourcePx": [
+            -1.798075996435756,
+            -0.6529292232095827
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 130,
+          "observed": [
+            123.0,
+            368.0
+          ],
+          "predicted": [
+            122.46904689692383,
+            367.97639566042375
+          ],
+          "errorSourcePx": [
+            -0.5309531030761718,
+            -0.023604339576252187
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 155,
+          "observed": [
+            107.5,
+            348.5
+          ],
+          "predicted": [
+            107.58005502702763,
+            349.06395084205735
+          ],
+          "errorSourcePx": [
+            0.08005502702762612,
+            0.563950842057352
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 180,
+          "observed": [
+            137.0,
+            380.0
+          ],
+          "predicted": [
+            135.9392852029653,
+            380.78513555334456
+          ],
+          "errorSourcePx": [
+            -1.0607147970347057,
+            0.7851355533445599
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 205,
+          "observed": [
+            146.5,
+            386.0
+          ],
+          "predicted": [
+            145.84335400068085,
+            386.80432417840166
+          ],
+          "errorSourcePx": [
+            -0.6566459993191529,
+            0.8043241784016573
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 230,
+          "observed": [
+            111.0,
+            353.5
+          ],
+          "predicted": [
+            112.85402817217421,
+            353.8398353149752
+          ],
+          "errorSourcePx": [
+            1.8540281721742105,
+            0.3398353149751756
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 255,
+          "observed": [
+            108.5,
+            349.5
+          ],
+          "predicted": [
+            107.59488919616798,
+            348.7795996458123
+          ],
+          "errorSourcePx": [
+            -0.9051108038320166,
+            -0.7204003541876887
+          ],
+          "passBound": true
+        },
+        {
+          "frame": 280,
+          "observed": [
+            112.0,
+            357.0
+          ],
+          "predicted": [
+            111.82864461438552,
+            355.5935493437944
+          ],
+          "errorSourcePx": [
+            -0.1713553856144756,
+            -1.4064506562056067
+          ],
+          "passBound": true
+        }
+      ]
+    }
+  },
+  "passSparseControls": false,
+  "runtimeExported": false,
+  "limits": [
+    "Single-observer approximate visible presentation anchors; bounds are stated manual tolerance,not empirical confidence intervals.",
+    "Eye endpoint is the visible eyelid/aperture join; fading inner contour is approximate.",
+    "No hidden anatomy,full-cycle correspondence,source-alpha,scene or release acceptance.",
+    "Old R1/R2/R3 data and failures unchanged.",
+    "All observations were frozen before fitting, but the same human observed training and holdouts. This is an authored approximation audit,not blinded statistical validation.",
+    "All gates needed for source-only presentation model;failure preserved,no export. Passing does not establish continuous source truth,anatomy,scene or release readiness."
+  ]
+}
