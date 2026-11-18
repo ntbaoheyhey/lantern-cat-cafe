@@ -54,3 +54,5 @@ AGS566/568 REDO:V3/FINAL allblankPTS;twoTASKtracking restored;futureZ timestamps
 M-I3 MOCHI-ONLY ENROLLMENT PASS 2026-11-18T17:10:54.687921+00:00:installed3795files/291925344B,sourcebf01/indexe66485f9;2pages8states/3payloads exact;Cloverplaceholder,Panko/Mallowtemplate.2viewswavebannerobscuresMochi,noartacceptance.
 M-I2 CONTROLS AUDITED:50hashes/1700statechecks/160pixelstats;untouched/sham exact5/5,firstconceal4persistentdiffs. strictRGB0 unchanged. CXV20freshpages4arms lease17:09:38–17:17:38Z ANDrelease.
 AGS573 REDO config-only/blankPTS/no newwork;T-CXI14 PTSfieldstudy assigned,keepQA+M5OPEN.
+
+M-I2 MOCHI IDLE REVIEW 2026-11-18T17:19:49.603790+00:00:300hashes/PTS/root/bannerPASS,227pxheight;3freshpreviewsviewedonce. PosecomparisonACCEPTonly;labelcrop/alpha/performance limits retained. CXV579lowerproposalREJECT;20caseauditNEXT.

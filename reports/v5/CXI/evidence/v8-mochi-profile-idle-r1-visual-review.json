@@ -1,0 +1,67 @@
+{
+  "utc": "2026-11-18T17:19:49.603790+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "captureUTC": "2026-11-18T17:15:45.533175+00:00",
+  "viewport": [
+    1280,
+    720
+  ],
+  "numericReceipt": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-profile-idle-r1-numeric-review.json",
+  "imagesViewedOnce": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-profile-idle-r1/comparison-90.png",
+      "sha256": "16fb199fd68e68efae6f7b3852cfea9d522e89019703c823e2586370db1d0f70",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 203602,
+      "mean": 39.032131053783274,
+      "stdev": 44.63765826122609,
+      "viewed": true,
+      "viewedUTC": "2026-11-18T17:19:49.603790+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-profile-idle-r1/comparison-299.png",
+      "sha256": "9bb0ce47ee32a24e9801850db510dfae3baea3205260fb26857048a30750fe02",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 207706,
+      "mean": 39.35131948965567,
+      "stdev": 45.117097839913455,
+      "viewed": true,
+      "viewedUTC": "2026-11-18T17:19:49.603790+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-profile-idle-r1/comparison-contact.png",
+      "sha256": "fd4befcbf1e42cefa66352edb7a28a95a1281de86a892b0b8a53e9ae912d9c94",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 244965,
+      "mean": 39.22892196090133,
+      "stdev": 44.223262465912754,
+      "viewed": true,
+      "viewedUTC": "2026-11-18T17:19:49.603790+00:00"
+    }
+  ],
+  "observations": [
+    "At frames90/299 and four contact poses, source and native Mochi silhouette and prop positions visibly correspond at measured227px body height.",
+    "Wave-entry banner absent; character and feet visible within crop. No large black background rectangle.",
+    "Warm scene background and bright contours leave edge/halo fidelity unresolved against unknown source alpha.",
+    "Label text is cropped in this comparison; it cannot establish label ownership, full-scene clearance, or action-trajectory acceptance."
+  ],
+  "disposition": "ACCEPT unobscured equal-height source-pose comparison only; art, seam, label and real-time performance gates remain OPEN",
+  "artAcceptance": false,
+  "productionAcceptance": false,
+  "group71037Empty": true,
+  "limits": [
+    "Deterministic reconstructed30fps is not actual laptop playback/FPS.",
+    "Black-composited original is not source-alpha truth;matte/seam/halo/labelacceptance separate."
+  ]
+}
