@@ -1,0 +1,89 @@
+{
+  "utc": "2026-11-18T16:20:43.124458+00:00",
+  "inboxLines": [
+    535,
+    536,
+    537,
+    539,
+    541,
+    542,
+    543
+  ],
+  "inputs": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/TOOL-FAILURE-REPORT.md",
+      "bytes": 851,
+      "sha256": "3889732f3823f294f6f1ada680748ff05a0378588cc05e3190be20ec4a3d3619"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-METRICS-OUTPUT.txt",
+      "bytes": 609,
+      "sha256": "ff9260fbd9da40a11b4321a2cdc423179a6cb69278355732f6c63603a51c2881"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/QA-T-CXI-13-FINAL-V12.md",
+      "bytes": 255,
+      "sha256": "6cf43675a725d4b6bd43fe3dca130418c98d6484fcaf231734e64313daa6c26e"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-5-PROVENANCE-VERIFIED.md",
+      "bytes": 152,
+      "sha256": "6c67976ce12ad68eb5d966d2b164dc44676eebd4b630561d35d4baa787958db4"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-T-CXI-13-ERROR-LOG.md",
+      "bytes": 292,
+      "sha256": "dfb8ea2cdcea88e239d298841a64d21ca90bc096f6a7ea6097e411c92c46565f"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-13-QA-EVIDENCE-V11.md",
+      "bytes": 215,
+      "sha256": "f3b5e1d4a91dd2af899a855044b0c25423b9d85f59197c2c0370216344871c53"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/HANDOFF.md",
+      "bytes": 160,
+      "sha256": "84b338df0ee14e4f461891dd730915933b35456816ee0a478866b075c78304cf"
+    }
+  ],
+  "claimedArtifacts": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/captures/m1.15-full-journey.png",
+      "exists": false
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/logs/m1.15-console.log",
+      "exists": false
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/status-outcome/v7-vef/outcome-0.png",
+      "exists": true,
+      "bytes": 940400,
+      "sha256": "3c2d9b8819efebceda52446dc70b3d3a8c179eaf47690b680da9a9518b23a408"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-build.log",
+      "exists": true,
+      "bytes": 60639,
+      "sha256": "ec8e5ff4dbf2e28ead4aec39620b700fec168c6e31fa4889e681744f1305082e"
+    }
+  ],
+  "tool": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/cardrpg-big/skills-v5/trial-metrics.mjs",
+    "bytes": 6089,
+    "sha256": "7d383e14eff949256dc16a562d0e667973af4c1d112e3d61f21b0165360cedb0"
+  },
+  "dispositions": {
+    "535": "REDO: V11 references two absent CXI files; no own QA evidence.",
+    "536-537": "OPEN status acknowledged; no measurements.",
+    "539": "REDO remaining: canonical attribution already independently verified; 152B assertion supplies no reencoding recipe or timing/gain/listening evidence.",
+    "541-543": "Tool error now has exact attempted command and stderr. Source line6 requires V5_METRICS_OUT; script measures resolved game action vocabulary/cadence, not video GOPs. Error is consistent with wrong command and is not evidence that media tools are unavailable. V12 references old v7-vef screenshot and m1.11 build log; neither is fresh m1.15 browser journey/console evidence.",
+    "handoff": "Now ACTIVE OPEN with both T-CXI-13 and T-M5 listed; scoped bookkeeping correction accepted."
+  },
+  "openTasks": [
+    "T-CXI-13 exact m1.15 own QA on6350",
+    "T-M5 four short-GOP files raw independent audit"
+  ],
+  "imagesViewed": 0,
+  "applicationChanges": false
+}

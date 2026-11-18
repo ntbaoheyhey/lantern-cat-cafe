@@ -1,6 +1,6 @@
 # Mochi và Clover — bản thử R7, chưa phát hành
 
-Cập nhật 2026-11-18T15:46Z. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
+Cập nhật 2026-11-18T16:21:01.618137+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
 
 R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67`. Kiểm tra BOARD trước khi mở vì cổng6301 còn dùng cho nghiên cứu. Artifact xanh được giữ riêng tại `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist`.
 
@@ -34,3 +34,5 @@ Bằng chứng: [nhãn và110hành động](/Users/bao/taskbar-hero-chain/report
 Bổ sung chẩn đoán: [vùng bao toàn vòng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-media-envelope-r1-review.json), [11cặp đối chứng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-envelope-pair-r1-review.json), [5status mở rộng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-envelope-expanded-status-r1-review.json). Kiểm tra ngoài nhãn dùng vùng hợp4px; vẫn ghi riêng512pixel thay đổi nằm ngoài DOM chính xác, không gọi đó là không thay đổi ngoài DOM.
 
 Bổ sung mới: [R3 recovery độc lập](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-action-recovery-r3-disposition.json), [8ảnh còn lại](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-own-visual-review-r2.json), [dịch nhãn bị loại](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-action-label-translation-r1-review.json). Chờ hai HUD frame là giới hạn lấy mẫu, không phải bản sửa runtime.
+
+Kiểm tra mới:598hash/56đối chứng/134.456phép đếm tái lập vị trí Clover(-28,+14) duy nhất trên lưới phát triển. Đây chỉ là cơ sở cho pilot render cố định, không phải bằng chứng phát hành. Cần đối chứng toàn ảnh, khoảng hở của cả bóng nhãn, trạng thái idle/status mới và ảnh liên kết nhãn với mèo. Giữ nguyên các lỗi hồi quy cũ; chưa đổi bản6301 hay đăng ký media.

@@ -30,3 +30,6 @@ M-I2 ACTIONR2 PILOT:exactGit1rule replayPASS;242hashes/18stable states/32counts.
 M-I2 ACTIONR2 FULL:437hashes/288states/512counts,16exactGit rule replays,normal/reduced parity.14valid contacts;Mochi/Panko1340/1302FAIL;2Mallowults13514controlpixels invalid. Offset-onlyREJECT;nativeguardstudy next.
 
 M-I2 STAGING:own2fresh0/800ms association scopedPASS. Full16/1500geometry/34cases complete;rules parity+1534layouts/10738labels PASS. Fullcontrols33/34:normalPanko350 pre-restored differs10pixels topHUD. 628hashes/4292framechecks/1088DOMcounts0;3264marginchecksFAIL/5validClover shadowhits. Invalidcontrol retained. No sourceadoption.
+
+M-I2 FULLPAINT GRID:598hashes/56exactcontrols/134456integercounts reproduce sole Clover(-28,+14);development evidence only. FrozenCXVpilot lease until2026-11-18T16:32:03.028081+00:00 AND explicitrelease. No sourceadoption;regression/fullpaint/newidle/status/association gates open.
+M-I2 AGS535-543:ownreview rejects absent/oldQAartifacts;exactstderr accepted as wrong-tool evidence only;twoTASKs stillOPEN;HANDOFF list corrected. Audio canonical assertion adds no recipe/listening.
