@@ -1,9 +1,9 @@
 # CXI V7 continuation
 ACTIVE: m1.13 published/remoteverified; fixing result toast overlap and reviewing remaining CXV work; assistant: AGS.
-NEXT 1: Read toast baseline work/v5/CXI/presentation/v7-toast-baseline/report.json; narrow result-only screen-skin.css fix; coordinate CXV browser window.
+NEXT 1: Check CXV browser release, then build toast CSS candidate and run work/v5/CXI/jobs/probe-toast.mjs; meanwhile review pending11path sources.
 NEXT 2: Validate own toast geometry/capture, review CXV T-CXI-10 failure-notice fix and pending11path manifest; import only accepted scope.
 NEXT 3: Continue I-B wave3gap230950B;review AGS/AGV deliveries;maintain six useful AGS TASKs.
-Last pushed4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
+Last pushedaa9a1788b;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
 Serving app13fb390e9b4007f985577a2e0320f81b464aa11b;index1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726;capture6fe2a0340483960d112cf06655277c0b0e3a4270.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified03:32Z;neverdelete/duplicate.
 Last RULES read2026-11-18T03:46:00.371832+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
