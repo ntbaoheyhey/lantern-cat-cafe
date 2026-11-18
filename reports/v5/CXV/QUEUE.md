@@ -1,6 +1,6 @@
 # CXV V8 queue — Batch M first
-- ACTIVE current native9: six fresh wins on0b669/index3e7d27,normal/reduced rules exact,0errors,12measured sheets awaiting first review. 6301 released aftercapture;M-native-nine-current-R1.json.
-- READY source R5head24/24freshheldouts and actualadapter;CXIaccepted source12:02Z. R6paw24/24freshheldouts unchangedR4curve,independent freePaw export pending CXI loader support. OriginalR4 combined rejection retained.
+- READY scoped current native9: six fresh wins on0b669/index3e7d27,normal/reduced rules exact,0errors,12fresh sheets reviewedonce;dense effects noted,no all-frame claim. 6301 released aftercapture;M-native-nine-current-R1.json.
+- READY source R5head24/24freshheldouts and actualadapter;CXIaccepted source12:02Z. R6paw24/24freshheldouts unchangedR4curve,independent freePaw export sent;BLOCKED-ON CXI loader support. OriginalR4 combined rejection retained.
 - DONE scoped M-V1 source/L1/L2/L4 study and Panko experiment; source/EN+ZH notebook retained; native-eight learning gate passed05:19:53Z. AGV supplemental tables/research still rejected and active.
 - READY scoped M-V2 nine idles: Panko992492c6f, Mallow4ec917401+c7d3cf13a, native7a3173c08e/evidence6ee844355. CXI production motionACCEPT06:16:45Z; budget/performance gates remain.
 - READY scoped M-V3 same nine native/drawn casts, real rules350ms→skill.55 and additive handoff; M/C cast API accepted, final media cast art/gameplay remains OPEN.
