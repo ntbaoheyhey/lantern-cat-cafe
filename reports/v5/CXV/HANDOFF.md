@@ -1,14 +1,14 @@
 # CXV V8 handoff
 ACTIVE Batch M: R6 lifecycle/natural gates passed; review landingR9 then Clover/art/budget. assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Finish landingR9 capture/measure with tools/v5vfx/measure-landing-delivery.py; inspect freshcandidate/detail once; release6301.
-NEXT 2: Send R6 natural scoped READY with measured report; review CXI/AGV new deliveries and Clover support/domain limits.
+NEXT 1: Read CXI R6 acceptance and Clover layer/domain study; keep accepted hip/mainHand and unsupported head/off/vfx static; no ROI/threshold tuning.
+NEXT 2: Sharpen unresolved BatchM study from current failures; review AGV methodlimits/rawtiming deliverables before more art candidates.
 NEXT 3: Clover motion/art/budget and AGV deliveries; legacy after Batch M. Existing captures must never be overwritten or reopened.
-Last confirmed push46256ff13; R6 sourceadb526a86/indexf9a00162; lifecycle+natural acceptance receipts ready.
+Last confirmed pushd9eff4295 naturalacceptance verifiedremote. R6 sourceadb526a86/indexf9a00162.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified09:14Z with app view+TOML; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
 Running Vite21525/6310 only;allCXVcapturejobsdone. 6301+timing explicitlyreleased2026-11-18T09:19:01.582435+00:00.
-AGV active T-CXI-11 landingR9intake149496B/58371Bsaving,visualpending + T-M1 REDO902B incomplete/hashplaceholder;T-M2deferred.
+AGV active T-CXI-11 landingR9REDO2freshviews/2hashreuse149496B,58371Bsaving;methodlimitsrequested + T-M1 rawtimingREDO;T-M2deferred.
 R6 lifecycle84samples PASS:retainedscene hide/pausedreturn/resume bothmodes;28simulatedvisibility samples separate,nativevisibility unproven.
 NaturalR3:bothwins47actions/19ults/8captures each,0errors,exactrules,p9516.7ms localM3Pro. Postresult paused/suspended clock+quality constant,0latecallbacks.
 R6phase:1059 action samples>=200ms,0portrait overlaps;unopposedportrait+aura retained. Four freshsheets inspectedonce,scopedPASS.
