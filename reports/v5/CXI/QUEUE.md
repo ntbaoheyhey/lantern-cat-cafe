@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-NEXT ACTIVE:Audit Panko frozen all-deformer parity/timing protocol before separate host grant;footer lifecycle focusREJECT returned toCXV;own current-source art/load acceptance continues. Normal1x baseline DONE audited237hashes/2exact55actionbattles.
+NEXT ACTIVE:Panko frozen4fd743c107a6 host-only lease until18:20:00Z ANDrelease;await actual evidence without hostoverlap. Footer focus repair CXV-owned. Normal1x baseline DONE237hashes/2exact55actionbattles.
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
@@ -8,7 +8,7 @@ SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity 
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
 AGS OPEN:T-CXI13 exactm1.15QA on6350,T-M5 seek/stall/quality,T-CXI14 timestampresearch+rawprovenance,T-CXI15CPUprofilingresearch;581numeric30PTS partialACCEPT. T-M4/T-CXI12/T-CXI11 remainOPEN;fixedaudio rejected. >=2usefultasks.
-AGS dispositions through610:T14 actual1200PTS partialACCEPT;command/blankcause/researchOPEN. T15 exact primary sources+measured experimentOPEN;T13/M5 unchanged. Explicit tracking correction sent.
+AGS current:1200PTS rawfiles retained/hashverified;new731B missing-Cues cause REJECT for actualMP4inputs. T14 provenance/researchOPEN;T15 report+374Bmethod unchanged/OPEN;T13/M5 stillOPEN.
 AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
 AUDIO FIXEDSET REJECTED:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
 CXV current:lowerlabel20caseREJECT independentlyaudited200PNGs/6400states/640stats;176layoutsample86/88Cloverconflicts/6associationfails. Bodyoccluder583 independent88replay:40displacement/28axisfails,max165.575005px. Structural/artstudy continues;nosourceproposaladopted.

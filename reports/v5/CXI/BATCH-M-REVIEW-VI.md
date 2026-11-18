@@ -52,3 +52,6 @@ Kiểm tra mới:598hash/56đối chứng/134.456phép đếm tái lập vị tr
 2026-11-18T17:57:04.341926+00:00 — Hai trận Mochi-only không giảm tốc CPU đã kiểm chứng237 tệp:55 hành động/21 ultimate mỗi trận,luật và kế hoạch trùng khớp. p95 khung hình16,8/16,7ms;video bỏ11/2425 và6/2424 khung. Chỉ là số đo trên M3 Pro,không chứng nhận laptop phổ thông. Đã nhả timing;CXV thử footer riêng,không nhập mã. Bản xanh vẫn v5-m1.15.
 
 2026-11-18T18:05:43.697097+00:00 — Thử nhóm HP/trạng thái có tên Mochi ở footer:kiểm chứng120ảnh/240trạng thái/4hành động của CXV;thêm2ảnh mới tự chụp và xem một lần cho thấy tên rõ,không đè thân/control tại hai mốc. Đối chứng phục hồi còn sai1015/409/1010/943pixel;nhánh không hiệu ứng,fallback,cả chuỗi chuyển động chưa đủ. Chưa nhập prototype hay phát hành media;v5-m1.15 vẫn bản xanh.
+
+
+2026-11-18T18:16:05.588473+00:00 — Footer lifecycle kiểmtoán259hash/32ảnh/64trạngthái/16cặp và4hànhđộng:No effects đúng,24lầngiátrị khớp. FocusBurn còn6/6 ở đối chứng nhưng prototype rơi vềBODY tại350/600/800ms;đã trảCXV sửa,không nhập app. Sai khác CSS/trail trong đối chứng vẫn giữ nguyên. Panko chỉ được thử parity+timing synthetic với lease riêng;không suy ra FPS hoặc phát hành.
