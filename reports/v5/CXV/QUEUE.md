@@ -97,3 +97,5 @@
 - [x] V-E native victory density production f991fb117 passes6transitions/four32s DPR2 CPU1x/4x;reduced0draws0uploads,normal7676calls,0errors.12full+4crewcaptures/3freshreviews;scopedREADY pending independentCXI.
 
 2026-11-18T02:39:00.433255+00:00 V-E/F full battle-to-victory density nativef991fb117 passed:6battle+4outcome transitions;68actions24ults/82apply46expire each;exact seeded control rules/logs/final state;zeroerrors/blocks;16captures measured/4freshsheets reviewed once. Natural99.755/99.277s,p9533.4ms both;no speedup claim. IndependentCXI pending.
+
+2026-11-18T02:43:08.002741+00:00 V-E native context-loss defect reproducedf991fb117:both motion modes ready=true hide original fallback while GPUbuffer lost;real restoration recovers, reduced fullRGBexact.6captures measured/2freshsheets reviewed once;0errors/blocks. Tools-only prototype next;no applicationedit.
