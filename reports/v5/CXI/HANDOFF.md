@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: audit CXV sparseholdout labels against own endpoint segmentation and rigid-map support; no image reopen.
-NEXT 2: only observed-pixel seam hypothesis after92core unsupported destinations resolved; no hidden texture invention.
+NEXT 1: diagnose rigid-map boundary support numerically; distinguish observed contour mismatch from unknown occlusion.
+NEXT 2: implement a bounded tail-contour hypothesis only after coverage/strain proof; no hidden texture invention.
 NEXT 3: AGS T5/T11 R2 evidence; real media/texture/audio savings; full current candidate release gates stayOPEN.
-Last pushed4cc168a56;green v5-m1.13@4e5fe161a;no newrelease.
+Last pushedeb30eb65e;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 ignoredMochiR6 sourceadb526a869012cecef2da673f1bc6d86e42d8a5d/indexf9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0;source registryempty;releasefalse.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified09:45Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T09:45:13.209329+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Last RULES read2026-11-18T09:46:37.353722+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
 Running:none;6301/timing CXI lease RELEASED09:25Z;no active browser/capture jobs.
-Mailboxread INBOX-CXI304;USER24;LEARN98;CXV sparseholdouts READY;AGS302T5/T11 claims need rawverification.
+Mailboxread INBOX-CXI306;USER24;LEARN98;CXV sparseholdouts numericACCEPT18hashes;AGS306 R2pendingaudit.
 AGS OPEN:T-CXI5R2generation/listening,T-CXI11R2fivebedrefs,T-CXI12maskexportdraft;T-M1/T-CXI10 remainopen;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.

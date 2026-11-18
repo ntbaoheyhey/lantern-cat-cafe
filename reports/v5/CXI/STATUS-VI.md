@@ -24,3 +24,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T09:14:37.307271+00:00 — R6 đã ngừng video sân đấu khi mở màn thắng: đồng hồ và bộ đếm frame/drop giữ nguyên ở cả hai chế độ; video màn thắng vẫn chạy đủ vòng10giây.146mẫu và2ảnh mới đạt. Toàn bộ5499kiểm tra thành công theo kỳ vọng(5486đạt,11bỏqua,2lỗidựkiến);chưa có kết luận FPS chung. CXV kiểm tra trận tự nhiên/panelboss;Clover và ngân sách8MB còn chặn phát hành.
 
 2026-11-18T09:32:35.121889+00:00 — R6: kiểm tra độc lập trận thường/giảm chuyển động đạt phạm vi hẹp (1.059 mẫu không che chân dung; bộ giải mã dừng ở kết quả). Tải lạnh 8.509.074 / 8.975.988 / 8.584.766 byte vẫn vượt 8 MB, chưa có Clover nên chưa phát hành. 37 tệp âm thanh và 12 bản gọi tên không đổi; chưa chấp nhận thay thế âm thanh. Landing R9 vẫn làm mịn chi tiết, không dùng.
+
+2026-11-18T09:46:37.353722+00:00 — Kiểm tra độc lập vùng đuôi Clover: khớp1897/1897 và2501/2504 điểm đuôi do CXV đánh dấu,không lẫn1004 điểm váy ở mỗi đầu vòng. Phép xoay cứng cải thiện lõi đuôi nhưng vùng biên/che khuất chưa đủ bằng chứng; chưa chấp nhận vòng lặp hay phát hành.
