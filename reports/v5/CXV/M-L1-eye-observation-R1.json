@@ -1,0 +1,139 @@
+{
+  "utc": "2026-11-18T17:28:10.790400+00:00",
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r1/measurement.json",
+    "sha256": "0d2a826d5438dc55292e2ef03d63447a6b9a1a8253f7ce6f782df2033fd5a1db"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-L1-eye-observation-R1-preregistration.json",
+    "sha256": "a6688855cc0cb3b3cdea2642280aaadbd335fa563c7574ba02de6bfdc30da387"
+  },
+  "sources": {
+    "mochi": {
+      "path": "/Users/bao/Downloads/Scene1.mp4",
+      "sha256": "1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524"
+    },
+    "clover": {
+      "path": "/Users/bao/Downloads/clover.mp4",
+      "sha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150"
+    }
+  },
+  "imageLedger": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r1/mochi-eye-event1.png",
+      "sha256": "f390a9ed4c1c76745856fa27cfaf82f61384ba194bb20e08b9b0beda904a3a8b",
+      "dimensions": [
+        1024,
+        864
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:28:10.790400+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r1/clover-eye-event1.png",
+      "sha256": "509bb1a9c528e54e3335c272a81fd6a99dd75da087833a69c2279e569049986c",
+      "dimensions": [
+        1024,
+        720
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:28:10.790400+00:00"
+    }
+  ],
+  "observations": {
+    "mochi": {
+      "visibleBoth": [
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64
+      ],
+      "shutBoth": [
+        36,
+        38
+      ],
+      "uncertainBoth": [
+        40,
+        42,
+        44,
+        46,
+        48
+      ],
+      "comment": "F28 still has two narrow teal apertures; F36/F38 show joined dark lids. F40-48 contain tiny cyan traces/unequal slits whose per-eye closure is unresolved at240px crop width. F50 has two visible apertures.",
+      "firstFullClosureFrameBracket": {
+        "exclusiveLower": 28,
+        "inclusiveUpper": 36
+      },
+      "firstBilateralReopeningFrameBracket": {
+        "exclusiveLower": 38,
+        "inclusiveUpper": 50
+      },
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "classification": "Bilateral closure observed in first event; no claim for other events or absent winks.",
+      "uncertainty": "Sampling brackets, not confidence intervals; source30fps quantization at least1frame. Ambiguous apertures retained."
+    },
+    "clover": {
+      "visibleBoth": [
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        41
+      ],
+      "shutBoth": [
+        21
+      ],
+      "uncertainBoth": [
+        25
+      ],
+      "comment": "Two apertures remain visible atF17, both lids join atF21. F25 has a thin left green slit while the far-eye aperture is uncertain. F27 shows two apertures.",
+      "firstFullClosureFrameBracket": {
+        "exclusiveLower": 17,
+        "inclusiveUpper": 21
+      },
+      "firstBilateralReopeningFrameBracket": {
+        "exclusiveLower": 21,
+        "inclusiveUpper": 27
+      },
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "classification": "Bilateral closure observed in first event; no claim for other events or absent winks.",
+      "uncertainty": "Sampling brackets, not confidence intervals; source30fps quantization at least1frame. Ambiguous apertures retained."
+    }
+  },
+  "counts": {
+    "sourceCrops": 40,
+    "sheets": 2,
+    "viewedOnce": 2
+  },
+  "decision": "ACCEPT sampled first-event eye-state observations only. Earlier iris windows retained as visibility thresholds, not semantic event boundaries. No motion/source asset changes."
+}
