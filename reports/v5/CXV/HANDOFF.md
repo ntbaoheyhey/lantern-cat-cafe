@@ -1,10 +1,10 @@
 # CXV V8 handoff
 ACTIVE lower-Mochi label diagnostic:76geometry/46paintcases clear;fresh native progression/association required;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Extend tools/v5vfx/probe-action-labels.mjs with optional preregistered lower-body target and dense progression; obtain explicit CXI6301lease before capture.
+NEXT 1: After explicit CXI6301lease, run normal-Panko pilot via run-media-action-labels.py with M-label-staging-native-R1-preregistration.json.
 NEXT 2: Fresh candidate pilot, then16actions/fullprogression plusidle/status; measure controls/paint/association before anysourceedit.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push393391639;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+Last confirmed pushf19c7c435;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T15:06:01.794381+00:00;preserve unchanged.
 Jobs:none;R3browserclosed14:50:28Z;explicit6301/timing release14:54:45Z (mailbox authoritative).

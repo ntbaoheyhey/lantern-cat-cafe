@@ -11,3 +11,22 @@ export const installLabelTargetShift=({dx,dy})=>{
  globalThis.__cxvLabelTargetShift={dx,dy,original};
  s.projectAnchors=function(...args){const result=original.apply(this,args),anchor=this.anchors.find(a=>a.id==='clover');if(anchor?.labelTarget){anchor.labelTarget.x+=dx;anchor.labelTarget.y+=dy;}return result;};
 };
+
+/** Diagnostic only: place the complete Mochi label below its rendered body. */
+export const installLowerBodyLabel=()=>{
+ const s=window.__depthScene,original=s.projectAnchors;
+ if(typeof original!=='function')throw Error('Missing projectAnchors diagnostic boundary');
+ window.__cxvLowerBodyLabel={original,skipped:0,last:null};
+ s.projectAnchors=function(...args){
+  const result=original.apply(this,args),anchor=this.anchors.find(a=>a.id==='mochi');
+  const node=document.querySelector('.b3-world[data-actor="mochi"]');
+  if(!anchor?.labelTarget||!node){window.__cxvLowerBodyLabel.skipped++;return result;}
+  const boxes=[node,...node.querySelectorAll('*')].map(n=>n.getBoundingClientRect()).filter(r=>r.width&&r.height);
+  if(!boxes.length){window.__cxvLowerBodyLabel.skipped++;return result;}
+  const offsetY=Math.min(...boxes.map(r=>r.top))-node.getBoundingClientRect().y+new DOMMatrix(getComputedStyle(node).transform).m42;
+  const bodyBottom=anchor.body.y+anchor.body.height,top=Math.max(bodyBottom,anchor.footY)+6;
+  anchor.labelTarget.y=top-offsetY;
+  window.__cxvLowerBodyLabel.last={bodyBottom,footY:anchor.footY,top,offsetY,targetY:anchor.labelTarget.y};
+  return result;
+ };
+};

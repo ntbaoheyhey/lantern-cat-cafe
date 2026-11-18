@@ -5,7 +5,7 @@ import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {chromium,config,openFixture,runtimeEvidence,judgeUrl,waitForDecodedMediaFrame} from './media-production-fixture.mjs';
-import {sample,installLabelTargetShift} from './action-label-observation.mjs';
+import {sample,installLabelTargetShift,installLowerBodyLabel} from './action-label-observation.mjs';
 import {loadRules} from '/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load.mjs';
 
 const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??''),sha=b=>createHash('sha256').update(b).digest('hex');
@@ -18,12 +18,13 @@ const hiddenStyle='.b3-world { visibility: hidden !important; }';
 const cats=['mochi','clover','panko','mallow'];
 const recovery=process.env.CXV_ACTION_LABEL_SUITE==='recovery';
 const plannedActions=['normal','reduced'].flatMap(mode=>cats.flatMap(cat=>[1,4].map(skill=>({mode,cat,skill})))).filter(x=>(!recovery||(x.cat==='panko'&&x.skill===1)||(x.cat==='mallow'&&x.skill===4))&&(!process.env.CXV_ACTION_LABEL_PILOT||`${x.mode}-${x.cat}-${x.skill}`===process.env.CXV_ACTION_LABEL_PILOT));assert(plannedActions.length);
-const plannedPixelCases=plannedActions.flatMap(x=>(recovery&&x.cat==='panko'?[0,175,250,350,600,799.9999,800]:[x.skill===1?350:1100]).map(ms=>({...x,ms,key:`${x.mode}-${x.cat}-${x.skill}-${ms}`})));
+const plannedPixelCases=plannedActions.flatMap(x=>(prereg.pixelTimes?.[`${x.cat}-${x.skill}`]??(recovery&&x.cat==='panko'?[0,175,250,350,600,799.9999,800]:[x.skill===1?350:1100])).map(ms=>({...x,ms,key:`${x.mode}-${x.cat}-${x.skill}-${ms}`})));
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,
  build:{path:buildPath,sha256:sha(await readFile(buildPath))},preregistration:{path:preregPath,sha256:sha(await readFile(preregPath))},
  harnessSha256:sha(await readFile(import.meta.filename)),helperSha256:sha(await readFile(resolve(root,'tools/v5vfx/action-label-observation.mjs'))),fixture:runtimeEvidence(),
  runtimeSourceSubstitutions:[],runtimeDiagnostic:{labelTarget:{dx:-12,dy:19,wrapperSha256:sha(installLabelTargetShift.toString())},hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle)},
  plannedActions,plannedPixelCases,actions:[],rows:[],cases:[],errors:[],blockedRequests:[],pass:false};
+if(prereg.lowerBodyLabel)report.runtimeDiagnostic.lowerBodyLabel={wrapperSha256:sha(installLowerBodyLabel.toString()),scope:'Mochi complete label top=max(bodyBottom,feet)+6; original constrained layout unchanged. Native body margins are measurement gates, not injected solver obstacles.'};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),name);};
 const modules=await loadRules(),R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');
@@ -100,6 +101,7 @@ try{
   stop();const {mode,cat,skill}=actionCase,reduced=mode==='reduced',f=fixture(mode,cat,skill);
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(x=>x.id==='boss'));activePage=page;
   await page.evaluate(installLabelTargetShift,{dx:-12,dy:19});await page.evaluate(installBodyIsolation);
+  if(prereg.lowerBodyLabel)await page.evaluate(installLowerBodyLabel);
   await page.evaluate(({state,battle})=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state=state;Object.assign(m,{tutorialBattle:battle,galleryBattle:null,replay:null,plan:null,roundPlan:null,watching:true,paused:true,sceneStarted:true,screen:'map',beforeImpact:null,afterImpact:null,animationAt:0});m.notify(false);},f);
   await page.waitForFunction(()=>{const s=window.__depthScene,m=window.__depthReview;return s.ready&&['mochi','clover'].every(id=>s.actors.get(id)?.actor?.designerMedia?.media.state.ready)&&s.view().actors.every(a=>a.hp===m.visualBattle.actors.find(b=>b.id===a.id)?.hp);});
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
@@ -109,7 +111,9 @@ try{
   assert.deepEqual(action.battle,f.expected);assert.equal(action.plan.contact,skill===4?1100:350);
   report.actions.push({...actionCase,choice:f.choice,initialBattle:f.battle,expectedBattle:f.expected,observedBattle:action.battle,plan:action.plan,rulesEqual:true});await save();
   let previous=0;
-  const times=[...new Set([0,175,250,350,600,1100,action.plan.duration-.0001,action.plan.duration].filter(t=>t<=action.plan.duration))].sort((a,b)=>a-b);
+  const dense=prereg.geometryHz?Array.from({length:Math.floor(action.plan.duration*prereg.geometryHz/1000)+1},(_,i)=>Number((i*1000/prereg.geometryHz).toFixed(6))):[];
+  const pixels=plannedPixelCases.filter(c=>c.mode===mode&&c.cat===cat&&c.skill===skill).map(c=>c.ms);
+  const times=[...new Set([...dense,...pixels,0,175,250,350,600,1100,action.plan.duration-.0001,action.plan.duration].filter(t=>t<=action.plan.duration))].sort((a,b)=>a-b);
   for(const ms of times){
    await page.evaluate(({previous,ms})=>{const m=window.__depthReview;let at=previous,now=100000+previous;m.tick(0,now);m.paused=false;while(at<ms-1e-8){const delta=Math.min(16,ms-at);now+=delta;at+=delta;m.tick(delta,now);}m.paused=true;m.notify(false);},{previous,ms});previous=ms;
    const fixedTime=70+ms/1000;await renderDecoded(page,fixedTime,reduced);

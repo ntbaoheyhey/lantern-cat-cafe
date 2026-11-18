@@ -1,5 +1,6 @@
 /** Native paint attribution only: ordinary baseline plus explicit reversible isolation controls. */
 import assert from 'node:assert/strict';
+import {installLowerBodyLabel} from './action-label-observation.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
@@ -40,6 +41,7 @@ const installIsolation=()=>{
 };
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,build:{path:buildPath,sha256:sha(await readFile(buildPath))},harnessSha256:sha(await readFile(import.meta.filename)),fixture:runtimeEvidence(),runtimeSourceSubstitutions:[],runtimeDiagnostic:{wrapperSha256:sha(installIsolation.toString()),hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle),scope:'Hide one media plane only during existing postFx draw;restore immediately. Hide DOM label paint only for marked screenshots. Never an application candidate.'},plannedCases,cases:[],errors:[],blockedRequests:[],pass:false};
 report.runtimeDiagnostic.labelTarget={dx:targetDx,dy:targetDy,wrapperSha256:targetDx||targetDy?sha(installLabelTargetShift.toString()):null,scope:'Temporary Clover labelTarget.x/y offset after projectAnchors; no application source edit or production acceptance.'};
+if(process.env.CXV_LOWER_BODY_LABEL==='1')report.runtimeDiagnostic.lowerBodyLabel={wrapperSha256:sha(installLowerBodyLabel.toString()),scope:'Mochi complete label below max(bodyBottom,feet)+6; original constrained layout; no application edit.'};
 report.runtimeDiagnostic.statusFixture={name:statusFixture,wrapperSha256:statusFixture==='expanded'?sha(installExpandedStatusFixture.toString()):null,scope:'Expanded badge stress fixture only: commissioned cats shield80, four statuses and a five-digit counter. This synthetic state is not a legal-action or natural gameplay claim.'};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP '+name);};
@@ -55,6 +57,7 @@ try{
   stop();const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));report.errors.push(...errors);report.blockedRequests.push(...blockedRequests);
   activePage=page;const reduced=condition.mode==='reduced';
   if(targetDx||targetDy)await page.evaluate(installLabelTargetShift,{dx:targetDx,dy:targetDy});
+  if(process.env.CXV_LOWER_BODY_LABEL==='1')await page.evaluate(installLowerBodyLabel);
   await page.evaluate(reduced=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state.settings.reducedMotion=false;m.paused=true;m.notify(false);},reduced);
   if(statusFixture==='expanded'){
    await page.evaluate(installExpandedStatusFixture);
