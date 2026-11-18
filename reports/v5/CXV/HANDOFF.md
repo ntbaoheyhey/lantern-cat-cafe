@@ -1,12 +1,12 @@
 # CXV V8 handoff
 ACTIVE Batch M: Mochi idlefilm300frames PASS; mediaultimatecontact fix31focused/TSC0, production rerun pending. assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: Checkpoint scoped3file mediaClipContact candidate and request CXI build; production1100ms must sample authored1.1, not1.21.
-NEXT 2: Review new sameheightMochi comparison4previews; capture corrected realcast films, then Clovermedia and gallerycontract scope.
+NEXT 1: CXI imported contact42189833e/27focused+TSC PASS; await announced R3 source/index+lease while preparing actual-model castfilm harness.
+NEXT 2: Run fresh actualbasic/ult numeric+castfilm on R3; require1100ms→authored1.1s, unchangedbasic/rules and smooth idle handoff.
 NEXT 3: M/C media+casts; Mochi931787B full300frames Chromium/WebKit passed07:04Z;no enrollment. AGV landing/T-M1 refinement; legacy afterM.
-Last confirmed push36e1269c3; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push42189833e; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
-Wake cxv-wake ACTIVE15min preserved/viewed07:28Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
+Wake cxv-wake ACTIVE15min preserved/viewed07:49Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
 Running Vite21525/6310 only; idlefilm/castprobe jobsdone. 6301 released07:43Z; fd70cf41e/index9fb4 media study.
 AGV active T-CXI-11 landingR3REDO92117B +T-M1REDO1255B unsupportedindependence/uncertainty; T-M2deferred;T-M3/T-M4queued.
 CXI owns M/C ingest/loaders/budget/release; accepted mediaAPI9deee558a,eae267416,b543af3fb; source=media; M/C24x24mesh and512footy0.
@@ -15,5 +15,5 @@ Soot fresh3833paths unchanged + postmedia5fbbc301samples/11meshes exactbothmodes
 Panko root concern retracted:85b3c2fb7 revertsd419002a4; never import d419 alone. CXI actualproduction feet/root0; originalREADY valid.
 Mochi R3hip/wrist/lantern adapterACCEPT06:21Z; Clover hip/mainHandR1 adapterACCEPT06:30:35Z,3000checks/overlayPASS. Unsupportedchannels and M/C art/seam/budget remainopen.
 Legacy V-F pair248c3667/2e92e22d built,series unstarted; pending6groups11paths; V-E172c317d4/T10accepted;capture-arrival hash1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6.
-Mailbox consumed INBOX-CXV311/USER24; STOP absent; RULES reread2026-11-18T07:28:25.032331+00:00. R1field4images viewedonce, neverreopen.
+Mailbox consumed INBOX-CXV318/USER24; STOP absent; RULES reread2026-11-18T07:48:36.638762+00:00. Neverreopen reviewedimages.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; experimental6310 addsdev=1.

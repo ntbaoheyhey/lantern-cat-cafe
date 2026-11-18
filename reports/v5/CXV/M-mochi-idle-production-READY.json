@@ -1,0 +1,223 @@
+{
+  "utc": "2026-11-18T07:45:56.275237+00:00",
+  "status": "ACCEPT scoped Mochi media idle motion/placement comparison",
+  "sourceCommit": "fd70cf41e0da0afcda09d698623cd56aefc6090b",
+  "indexSha256": "9fb4ca0af25173942fe9df91b3db9c2ee3c89299e8423a18eede77e4201f5aab",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "registryOverride": {
+    "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json"
+  },
+  "viewport": [
+    1280,
+    720
+  ],
+  "capture": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/report.json",
+    "sha256": "4db6d8305c52ecf7b66cc9ac85c004db3962642377308c6cb5e443efda28914d",
+    "samples": 304,
+    "frames": 300,
+    "maxIdleFootDelta": 0,
+    "loopRootDelta": 0,
+    "maximumDecoderPhaseErrorSeconds": 1.6666666642350947e-06,
+    "errors": [],
+    "blockedRequests": []
+  },
+  "comparison": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/comparison.json",
+    "sha256": "9e1bbf5bf9b89d3eca7b3789fb8c472655ff5a51fb07794f7d47131d62cb50ef",
+    "utc": "2026-11-18T07:43:57.087143+00:00",
+    "cat": "mochi",
+    "sourceCommit": "fd70cf41e0da0afcda09d698623cd56aefc6090b",
+    "indexSha256": "9fb4ca0af25173942fe9df91b3db9c2ee3c89299e8423a18eede77e4201f5aab",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "capture": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/report.json",
+    "captureSha256": "4db6d8305c52ecf7b66cc9ac85c004db3962642377308c6cb5e443efda28914d",
+    "sourceFrames": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/mochi-frames.npy",
+    "sourceCrop": [
+      43,
+      34,
+      562,
+      465
+    ],
+    "sourcePhase": "frames0..299/30Hz",
+    "candidatePhase": "native decoder0..299, phase offset removed",
+    "sameBodyHeightPx": 227,
+    "candidateMeasuredBodyHeight": 226.79999881795854,
+    "crop": [
+      313,
+      145,
+      635,
+      420
+    ],
+    "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/mochi-source-vs-production-1280x720.mp4",
+    "videoSha256": "7f297b1614b09001e182cbc4d30bd78757b56c3f95b210a1839b42b009fda208",
+    "frames": 300,
+    "fps": 30,
+    "durationSeconds": 10,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "previews": [
+      {
+        "frame": 0,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/comparison-000.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 61889,
+        "rgbMean": [
+          44.725314670138886,
+          39.0616709391276,
+          34.897552490234375
+        ],
+        "sha256": "97d35aec02178d8a4b3f314f6a6df3336df5ba8fe09c10625a86a0c51a83e9c7",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T07:45:56.275237+00:00",
+        "finding": "At matched227px height, native source phase tracks head, tail, shield and independent lantern. No black rectangle or visible dark fringe at this battle size; source/candidate keep their own labelled backgrounds. Source seam near-clean; no new visual seam discontinuity inferred from these snapshots."
+      },
+      {
+        "frame": 99,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/comparison-099.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 61662,
+        "rgbMean": [
+          44.5445302327474,
+          38.923133002387154,
+          34.80212910970052
+        ],
+        "sha256": "80c9fe2d2160d3f90dbbe396b0285eaec566a27abdb5adaba3cb5529e2907843",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T07:45:56.275237+00:00",
+        "finding": "At matched227px height, native source phase tracks head, tail, shield and independent lantern. No black rectangle or visible dark fringe at this battle size; source/candidate keep their own labelled backgrounds. Source seam near-clean; no new visual seam discontinuity inferred from these snapshots."
+      },
+      {
+        "frame": 199,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/comparison-199.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 61580,
+        "rgbMean": [
+          44.56564161512587,
+          38.911866929796005,
+          34.841098361545136
+        ],
+        "sha256": "45f2bf1ec0b5044ca65ca97c88be6fb2170fcdb4f4592af97ecd80ff79c78cc3",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T07:45:56.275237+00:00",
+        "finding": "At matched227px height, native source phase tracks head, tail, shield and independent lantern. No black rectangle or visible dark fringe at this battle size; source/candidate keep their own labelled backgrounds. Source seam near-clean; no new visual seam discontinuity inferred from these snapshots."
+      },
+      {
+        "frame": 299,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/comparison-299.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 61891,
+        "rgbMean": [
+          44.71576436360677,
+          39.036234537760414,
+          34.8707021077474
+        ],
+        "sha256": "0885359f32710647f55ac2ca3ee9979473e390450e3f7cd0e87e354e43e7e04d",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T07:45:56.275237+00:00",
+        "finding": "At matched227px height, native source phase tracks head, tail, shield and independent lantern. No black rectangle or visible dark fringe at this battle size; source/candidate keep their own labelled backgrounds. Source seam near-clean; no new visual seam discontinuity inferred from these snapshots."
+      }
+    ],
+    "limits": "Equal-height motion comparison, not an alpha reconstruction or realtime FPS test. Source black background is retained and labelled.",
+    "contactSheet": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-mochi-idle-production-R1/contact-sheet-1024.jpg",
+      "sha256": "70ce722dbc6c73597c172257b817b5d3b2d0d74fc8733ebe37e6719c72470fec",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "review": "Generated from four reviewed previews; not reopened."
+    },
+    "visualAccepted": true
+  },
+  "timingVsL1": [
+    {
+      "channel": "body",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        3.6419999599456787,
+        0.06599999964237213
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    },
+    {
+      "channel": "head",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        1.8380000591278076,
+        2.1089999675750732
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    },
+    {
+      "channel": "earLeft",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        14.315999984741211,
+        3.7769999504089355
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    },
+    {
+      "channel": "tail",
+      "sourcePeriodSeconds": 10.0,
+      "sourceRangePctHeight": [
+        40.68299865722656,
+        33.52000045776367
+      ],
+      "quality": "REJECT unstable",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    },
+    {
+      "channel": "prop",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        8.001999855041504,
+        18.016000747680664
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    },
+    {
+      "channel": "cloth",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        6.333000183105469,
+        0.4779999852180481
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Same decoded clip phase verified, no independent production amplitude fit."
+    }
+  ],
+  "sourceTimingReport": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-V1-source-study.json",
+    "sha256": "2b7b7038e99d80126550c2f49c8bf23096ee0a42ef8b6f4aa45a8d1cc2d49781"
+  },
+  "limits": [
+    "Deterministic30Hz source0..299/currentdecoder0..299; 10.0s video; not realtime FPS evidence.",
+    "Pose bounds are static intake envelope, not measured per-frame silhouette.",
+    "Full corrected cast, unsupported sockets, Clover media and cold byte budget remain open.",
+    "No production registry enrollment or release acceptance; ignored Mochi candidate only."
+  ]
+}
