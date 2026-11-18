@@ -9,3 +9,5 @@ Panko đã nối kỹ năng1giây với trạng thái chờ liên tục: đầu/
 M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và mối nối mesh đúng0;diện tích tam giác nhỏ nhất0.622. Đã xem4ảnh so sánh227px một lần. Chuyển động còn nhẹ; cần bỏ lắc toàn thân cũ và kiểm tra cast/reduced trước READY.
 
 2026-11-18T05:32:21.924808+00:00 Mallow: idle10giây và cast1giây đã qua kiểm tra6310;31test/TSC0. Chân và đường nối vòng lặp không dịch; hit350ms khớp.55s ở cả hai chế độ. R1cast bị sai attack, R2 đã sửa/đo lại. READY phạm vi motion, chưa phải nghiệm thu bản judge; vùng HUD còn chạm cây đánh trứng.
+
+2026-11-18T05:48:35.367558+00:00 Sorrel: idle10giây/cast1giây đã qua capture6310; chân và vòng lặp0dịch, hit350ms→.55s cả2chếđộ;60test/TSC0. Đã xem4ảnhmới, phimso sánh1×cùngchiềucao. Chưa nghiệmthu bảnjudge/tốcđộ.

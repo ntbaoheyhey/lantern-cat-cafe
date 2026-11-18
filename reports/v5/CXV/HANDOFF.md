@@ -4,10 +4,10 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; des
 NEXT 1: Launch node tools/v5vfx/capture-native-cats.mjs detached;7cats sequential; measure/view fresh sheets once.
 NEXT 2: Review completed native7 captures as they arrive; then independent own Panko worldprobe if sourcecomposition differs.
 NEXT 3: Native7 per-cat review/READY; M/C socketR3 hip+wrist+lantern valid,head/offHand unresolved; media still rejected byCXI.
-Last confirmed push d419002a4; speculative Panko rootfix being narrowly reverted; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push 85b3c2fb7; Panko proposal retracted; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min exactV8 verified05:30Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; preserved.
-Running Vite21525/6310 only; MallowR2 PID78126 completed05:30:59Z; log work/v5/CXV/jobs/m-mallow-cast-r2.log; browser RELEASED.
+Running Vite21525/6310 + native7 PID82317; log work/v5/CXV/jobs/m-native-seven-r1.log; browserGRANT05:44:07Z;explicitrelease after.
 AGV active T-M1 L1 timing and T-M2 sourced L2/L4; queued T-M3 own-art ideas/T-M4 READY captures; oldT-CXV-1/2 andT-CXI-11 deferred.
 CXI owns M/C ingest,loaders,budget/release; ACK coordination sent; M/C24x24grid/basepositions and512footy0 accepted;optionalM/C-only sample context agreed.
 Native-eight gate passed05:19:53Z; Mallow actualcastR2PASS; native7profiles minarea.5534,zerofoot/seam/boundaries; no native7art acceptance yet.
