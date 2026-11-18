@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-18T08:16:31.230216+00:00",
+  "sources": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/AGS-BATCH-M-EVIDENCE-TABLE.md",
+      "sha256": "a189eaa0af754d0cecbe2d95f0e9b6df648da8c379093279bfe0c1cdc64b9357",
+      "text": "# AGS Batch M Evidence Table (Final Correction)\n\n## T-M1: License & Source\n| Field | Evidence |\n| :--- | :--- |\n| Clause A | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Non-SDK content not covered |\n| Clause B | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Publisher annual sales exemption |\n| 300-Frame Cost | 825143 bytes (Verified hash: 232e5ed3...) |\n| Receipt | [RECEIPTS-FINAL.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt) |\n\n## T-M2: Matte & Metrics\n| Field | Evidence |\n| :--- | :--- |\n| Source Hash | 232e5ed3... (Verified) |\n| Opaque Height | 214px (Mochi), 240px (Clover) |\n| Opaque Proof | Unavailable (No raw derivation) |\n| Alpha Mean | Unavailable (Raw calculation FAILED) |\n| Mask Layout | Packed Luminance Mask (Unverified/Unavailable) |\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AV1-SUPPORT.md",
+      "sha256": "cca863a017688373c1d452f67bde7cae0609ee1ec90c5fc5ade60e043682d01b",
+      "text": "# AV1 Four-Plane Support Study (Draft)\n\n## 1. Capabilities\n- Browser: Chromium 156.0.8078.4 / WebKit 27.2\n- AV1 MP4 Support: True (Verified at 624x520/30fps).\n- H264 Fallback: Required for older Mac architectures.\n\n## 2. Cost/Support Table\n| Field | Evidence |\n| :--- | :--- |\n| AV1 Support | Available |\n| H264 Fallback | Required |\n| Decoding Proof | Unavailable |\n"
+    }
+  ],
+  "M2": "ACCEPT scoped negative provenance inventory; originalreportedheights unverified, rawalpha/layout unavailable. No image/mediaqualityapproval.",
+  "M1": "Scope correctionsACK;videoonly825143B is not completepackage/nativebrowserreceipt;REDOcompletion.",
+  "CXI10": "Declarationonly and decodeunavailableACK;needs exact attributedrawreceipt/hash and primaryEN/ZH URLs;REDO."
+}
