@@ -1,7 +1,7 @@
 """Run a fresh native media battle pair with source, harness and host-load receipts."""
 from pathlib import Path
 import argparse,datetime,hashlib,json,os,subprocess,sys,urllib.request
-p=argparse.ArgumentParser();p.add_argument('--build',required=True);p.add_argument('--out',required=True);p.add_argument('--cat',choices=['mochi','clover','both'],default=os.environ.get('CXV_MEDIA_CAT','mochi'));p.add_argument('--capture',choices=['actions'],default='actions');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--build',required=True);p.add_argument('--out',required=True);p.add_argument('--cat',choices=['mochi','clover','both'],default=os.environ.get('CXV_MEDIA_CAT','mochi'));p.add_argument('--capture',choices=['actions','idle'],default='actions');args=p.parse_args()
 r=Path(__file__).resolve().parents[2];build=Path(args.build).resolve();out=Path(args.out).resolve()
 assert out.is_relative_to(r/'work/v5/CXV') and not out.exists(),'Preserve earlier evidence'
 for name in ['STOP-ALL','STOP-CXV']:assert not Path('/Users/bao/taskbar-hero-mailbox',name).exists(),name
@@ -33,13 +33,13 @@ assert verified['sourceFiles'] and verified['mediaFiles'] and verified['artifact
 (out/'artifact-verification.json').write_text(json.dumps(verified,indent=2)+'\n')
 print(json.dumps(dict(verifiedSourceFiles=len(verified['sourceFiles']),verifiedMediaFiles=len(verified['mediaFiles']),verifiedArtifacts=len(verified['artifacts']),cat=args.cat)),flush=True)
 provenance=[]
-names=['hud-meter-observation.mjs','verify-label-fullpaint.py','verify-lower-label-native.mjs','probe-action-labels.mjs','action-label-observation.mjs','measure-action-labels.py','run-media-action-labels.py','media-production-fixture.mjs','capture-full-battle-production.mjs','measure-media-battle.py','run-media-natural.py','measure-dual-media-battle.py','verify-media-battle-rules.mjs','probe-dual-media-labels.mjs','measure-dual-media-labels.py']
+names=['verify-fixed-label-layout.mjs','probe-label-staging-idle.mjs','hud-meter-observation.mjs','verify-label-fullpaint.py','verify-lower-label-native.mjs','probe-action-labels.mjs','action-label-observation.mjs','measure-action-labels.py','run-media-action-labels.py','media-production-fixture.mjs','capture-full-battle-production.mjs','measure-media-battle.py','run-media-natural.py','measure-dual-media-battle.py','verify-media-battle-rules.mjs','probe-dual-media-labels.mjs','measure-dual-media-labels.py']
 for name in names:
  data=(r/'tools/v5vfx'/name).read_bytes();(out/name).write_bytes(data);provenance.append(dict(name=name,sha256=hashlib.sha256(data).hexdigest()))
 (out/'harness-provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
 (out/'host-load.txt').write_bytes(subprocess.check_output(['ps','-axo','pid,pcpu,etime,comm']))
 print(json.dumps(dict(startedUTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),source=d['sourceCommit'],index=d['indexSha256'],out=str(out))),flush=True)
-capture_script='probe-action-labels.mjs'
+capture_script='probe-label-staging-idle.mjs' if args.capture=='idle' else 'probe-action-labels.mjs'
 assert args.cat=='both'
 result=subprocess.run(['node','tools/v5vfx/'+capture_script],cwd=r,env=env)
 (out/'host-load-after.txt').write_bytes(subprocess.check_output(['ps','-axo','pid,pcpu,etime,comm']))

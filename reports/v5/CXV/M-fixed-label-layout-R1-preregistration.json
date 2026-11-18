@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-18T16:08:22.459647+00:00",
+  "candidate": {
+    "relativeR7": [
+      -28,
+      14
+    ],
+    "mochi": "label top=max(bodyBottom,footY)+6"
+  },
+  "scope": "Additional rejection guards frozen before any new native capture;no fitting.",
+  "gates": {
+    "replayToleranceCSSpx": 0.015625,
+    "otherNonCommissionedLabelsUnchangedCSSpx": 0.015625,
+    "cloverFallbackMaximumCSSpx": 0.015625,
+    "cloverR7DisplacementMaximumCSSpx": 32,
+    "cloverAuthoredAxisInsideLabel": true,
+    "mochiFallbackMaximumCSSpx": 12,
+    "mochiGapCSSpx": [
+      6,
+      18
+    ]
+  },
+  "basis": "Reconstruct pinned original R7 layout with both diagnostic changes removed; compare all noncommissioned labels. Clover target must remain unadjusted by layout. Bounds are design constraints,not confidence intervals.",
+  "productionAcceptance": false
+}

@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-18T16:08:22.459647+00:00",
+  "scope": "Tool regression on already-frozen development data;no new captures/views/source changes.",
+  "checks": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/fullpaint-regression-1604.json",
+      "sha256": "8bd82e62340f154047c47573e26fad5733f040b41d502520ef03266988acec09",
+      "result": {
+        "cases": 10,
+        "validControls": 10,
+        "comparisons": 960,
+        "pass": false
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/fixed-layout-regression-1608.json",
+      "sha256": "ac2d6e64aa4789baf56a4e76feba4f2bb89976b5ca2334125552db65400c9e64",
+      "result": {
+        "samples": 67,
+        "pass": true,
+        "maxOtherLabelError": 0.014788945770817463,
+        "maxCloverFallback": 0.015086915979054538,
+        "maxCloverDisplacement": 22.475325246411575
+      }
+    }
+  ]
+}

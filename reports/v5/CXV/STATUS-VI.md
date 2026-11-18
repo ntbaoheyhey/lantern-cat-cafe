@@ -13,3 +13,5 @@ R6 GPU:648 file,600 tham chiếu,24 khung GPU và168 socket khớp pha0, gồm h
 Đầu CloverR5/tayR6 đạt24/24 heldout mỗi loại; native sai số decoded tối đa0,728/0,320px. Bằng chứng saiR2/R3/R4 cũ giữ nguyên.
 Vòng lặp Clover vẫn REJECT:11,1581 so với trung vị2,2484. Crossfade15frame bị loại:4149 pixel trộn/3434 vùng đuôi-vải và chu kỳ còn9,5s; chưa xuất art. Viền/halo và laptop thường còn mở.
 Chủ dự án bỏ giới hạn8MB lúc12:09:40Z; byte chỉ báo cáo. AGV T-M1/T-M2 còn mở. Wake cxv-wake ACTIVE mỗi15phút đã kiểm tra2026-11-18T15:06:01.794381+00:00;pushfce2f47d4 đã xác nhận trên remote.
+
+2026-11-18T16:08:22.459647+00:00 Đã chốt thử nghiệm Clover(-28,+14) và nhãn Mochi dưới thân; bộ đo tính cả bóng đổ, chờ HUD tự ổn định và so control toàn ảnh. Kiểm tra lại67 bố cục cũ đạt nhưng10 ca bóng cũ vẫn FAIL. Đã chuẩn bị10 idle/5 status mới;chưa có lease mới nên chưa capture hoặc sửa app. Wake vẫn ACTIVE15phút.
