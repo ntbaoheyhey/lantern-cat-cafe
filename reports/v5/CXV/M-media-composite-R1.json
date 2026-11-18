@@ -1,0 +1,258 @@
+{
+  "utc": "2026-11-18T12:19:32.824378+00:00",
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-media-composite.py",
+    "sha256": "8c04c9b81e86796c18d989851d3687fa0a834c4be1f7450fbfd73b64c8a32e9a"
+  },
+  "loader": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/designer-idle-loader.snapshot.ts",
+    "sha256": "94c4124c8c1b306b516b2b113f3509d0753dcbd4f0ca8d00df97c9e337890617"
+  },
+  "scope": "CPU arithmetic on unchanged raw matte pixels. No codec/native/framebuffer/alpha-truth/halo acceptance, no implementation change.",
+  "controlRows": [
+    {
+      "input": [
+        80,
+        40,
+        20,
+        255
+      ],
+      "encodedBlack": [
+        80.0,
+        40.0,
+        20.0
+      ],
+      "unclampedEncodedBlack": [
+        80.0,
+        40.0,
+        20.0
+      ],
+      "linearBufferControlBlack": [
+        80.0,
+        40.0,
+        20.0
+      ]
+    },
+    {
+      "input": [
+        40,
+        20,
+        10,
+        128
+      ],
+      "encodedBlack": [
+        40.0,
+        20.0,
+        10.0
+      ],
+      "unclampedEncodedBlack": [
+        40.0,
+        20.0,
+        10.0
+      ],
+      "linearBufferControlBlack": [
+        56.29463416837735,
+        26.396830525359768,
+        11.447928703850978
+      ]
+    },
+    {
+      "input": [
+        120,
+        60,
+        10,
+        32
+      ],
+      "encodedBlack": [
+        31.999999999999993,
+        31.999999999999993,
+        10.0
+      ],
+      "unclampedEncodedBlack": [
+        120.0,
+        60.0,
+        10.0
+      ],
+      "linearBufferControlBlack": [
+        99.27069012010578,
+        99.27069012010578,
+        25.440560302501304
+      ]
+    },
+    {
+      "input": [
+        60,
+        20,
+        0,
+        0
+      ],
+      "encodedBlack": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unclampedEncodedBlack": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "linearBufferControlBlack": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "input": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "encodedBlack": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unclampedEncodedBlack": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "linearBufferControlBlack": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "cats": [
+    {
+      "cat": "mochi",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/local-color-matte-all-r1/source.rgba",
+        "sha256": "56f0d02e74e385f4f3e048e087af59c130931fa4afdb74bd6e391fa51eb8c1d6"
+      },
+      "sourceReceipt": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/four-plane-local-vslow-q22-r1/report.json",
+        "sha256": "b4b32a848d575ceb54ab7aa393d0893d612a5f07502bfdfce6895b6905854b2b"
+      },
+      "shape": [
+        300,
+        260,
+        312,
+        4
+      ],
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/mochi-rows.json",
+        "sha256": "1992ca7bfd31f7c19b17bd8f6bba855b1679440362ed49601f06fa9f970f2432"
+      },
+      "affectedPixelsTotal": 142176,
+      "affectedPixelsPerFrameRange": [
+        361,
+        588
+      ],
+      "maxExcess": 32.99999999999999,
+      "zeroAlphaColorPixels": 8236,
+      "strata": {
+        "all": {
+          "pixels": 24336000,
+          "encodedBlackMAE": 0.006480426802543359,
+          "unclampedEncodedBlackMAE": 0.00022553692746116855,
+          "linearBufferControlBlackMAE": 1.451327357739864,
+          "rawLinearReferenceBlackMAE": 1.1314173551243665e-15
+        },
+        "edge": {
+          "pixels": 1538050,
+          "encodedBlackMAE": 0.09896882416046514,
+          "unclampedEncodedBlackMAE": 2.175403667435128e-15,
+          "linearBufferControlBlackMAE": 22.960250909457184,
+          "rawLinearReferenceBlackMAE": 1.660789032458724e-15
+        },
+        "opaque": {
+          "pixels": 9365015,
+          "encodedBlackMAE": 2.667352501083388e-15,
+          "unclampedEncodedBlackMAE": 2.667352501083388e-15,
+          "linearBufferControlBlackMAE": 2.667352501083388e-15,
+          "rawLinearReferenceBlackMAE": 2.667352501083388e-15
+        },
+        "zeroAlpha": {
+          "pixels": 13432935,
+          "encodedBlackMAE": 0.00040859772392754613,
+          "unclampedEncodedBlackMAE": 0.00040859772392754613,
+          "linearBufferControlBlackMAE": 0.00040859772392754613,
+          "rawLinearReferenceBlackMAE": 0.0
+        }
+      },
+      "midGrayClampDeltaMAE": 0.006254211867192648
+    },
+    {
+      "cat": "clover",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/source.rgba",
+        "sha256": "21fd9e6e159cbb1390c96dfc1b3dab4dffaa96d1ecb16ed7a97b0cbfcdecb7ac"
+      },
+      "sourceReceipt": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/report.json",
+        "sha256": "8bfb6feb15a70efb27c4e5e6b58779e5670a362aca204322d0c5e7699e268067"
+      },
+      "shape": [
+        300,
+        260,
+        212,
+        4
+      ],
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/clover-rows.json",
+        "sha256": "76658f9bf6475ace25ec7f660dd1629909cd057159bf9a91c3f6e6851cb2ee03"
+      },
+      "affectedPixelsTotal": 115635,
+      "affectedPixelsPerFrameRange": [
+        316,
+        466
+      ],
+      "maxExcess": 3.0000000000000036,
+      "zeroAlphaColorPixels": 9196,
+      "strata": {
+        "all": {
+          "pixels": 16536000,
+          "encodedBlackMAE": 0.003641952910822105,
+          "unclampedEncodedBlackMAE": 0.0003833454281580118,
+          "linearBufferControlBlackMAE": 1.547853274903569,
+          "rawLinearReferenceBlackMAE": 1.232450069252541e-15
+        },
+        "edge": {
+          "pixels": 784737,
+          "encodedBlackMAE": 0.06866546796357918,
+          "unclampedEncodedBlackMAE": 2.237592983407257e-15,
+          "linearBufferControlBlackMAE": 32.60832961081918,
+          "rawLinearReferenceBlackMAE": 1.593297721636941e-15
+        },
+        "opaque": {
+          "pixels": 6490415,
+          "encodedBlackMAE": 2.947342299525656e-15,
+          "unclampedEncodedBlackMAE": 2.947342299525656e-15,
+          "linearBufferControlBlackMAE": 2.947342299525656e-15,
+          "rawLinearReferenceBlackMAE": 2.947342299525656e-15
+        },
+        "zeroAlpha": {
+          "pixels": 9260848,
+          "encodedBlackMAE": 0.0006844945516868434,
+          "unclampedEncodedBlackMAE": 0.0006844945516868434,
+          "linearBufferControlBlackMAE": 0.0006844945516868434,
+          "rawLinearReferenceBlackMAE": 0.0
+        }
+      },
+      "midGrayClampDeltaMAE": 0.003258607482664097
+    }
+  ],
+  "controlsPass": true,
+  "imagesViewed": 0,
+  "limits": [
+    "RGB>alpha does not prove emission;the alpha estimator may be wrong.",
+    "Dropping the clamp alone cannot preserve nonzero RGB at exactly zero alpha through straight blending.",
+    "The linear-buffer scenario is a control,not the production framebuffer claim.",
+    "Any runtime change needs CXI ownership,isolated actual shader/native controls and fresh judge evidence."
+  ],
+  "conclusion": "Raw-matte clamp difference is numerically small on average:encoded-black whole-frame MAE0.00648Mochi/0.00364Clover and edgeMAE0.09897/0.06867 of255. Mochi isolated maximum33,Clover3. This does not explain broad matte failure or establish lost halos;do not change loader from this diagnostic alone."
+}
