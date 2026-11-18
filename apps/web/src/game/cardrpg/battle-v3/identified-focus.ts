@@ -2,7 +2,7 @@ import {layoutFocusBanner,type BannerPlacement} from './banner-layout';
 import {layoutWorldLabels,type LabelRect,type WorldLabel} from './world-label-layout';
 import {pendingLabelExtent} from './world-label-status';
 
-interface BannerAnchor {id:string;visible:boolean;labelX:number;labelY:number;body?:LabelRect;face?:LabelRect}
+interface BannerAnchor {id:string;visible:boolean;labelX:number;labelY:number;body?:LabelRect;face?:LabelRect;labelTarget?:{x:number;y:number;avoid:LabelRect}}
 export interface FocusIdentity {id:string;name:string;portrait:string;anchors:readonly BannerAnchor[]}
 const rect=(r:DOMRect):LabelRect=>({x:r.x,y:r.y,width:r.width,height:r.height});
 const visible=(node:HTMLElement)=>!node.hidden&&getComputedStyle(node).display!=='none'&&getComputedStyle(node).visibility!=='hidden';
@@ -52,9 +52,13 @@ export class IdentifiedFocusBanner {
     labels.push({id:anchor.id,side:node.dataset.side==='enemy'?'enemy':'party',rect:{
      x:offset.x+anchor.labelX+left-(parseFloat(node.style.left)||0),y:offset.y+anchor.labelY+top-(parseFloat(node.style.top)||0),
      width:Math.max(...boxes.map(r=>r.right))-left,height:Math.max(...boxes.map(r=>r.bottom))-top}});
+    const current=labels[labels.length-1]!,target=anchor.labelTarget;
+    if(target)current.anchorPlacement={rect:{...current.rect,x:current.rect.x+target.x-anchor.labelX,y:current.rect.y+target.y-anchor.labelY},avoid:project(target.avoid)};
     const pending=pendingLabelExtent(node);
-    pendingLabels.push(pending?{id:anchor.id,side:node.dataset.side==='enemy'?'enemy':'party',rect:{...pending,
-     x:offset.x+anchor.labelX+pending.x,y:offset.y+anchor.labelY+pending.y}}:labels[labels.length-1]!);
+    const label:WorldLabel=pending?{id:anchor.id,side:node.dataset.side==='enemy'?'enemy':'party',rect:{...pending,
+     x:offset.x+anchor.labelX+pending.x,y:offset.y+anchor.labelY+pending.y}}:current;
+    if(target&&pending)label.anchorPlacement={rect:{...pending,x:offset.x+target.x+pending.x,y:offset.y+target.y+pending.y},avoid:project(target.avoid)};
+    pendingLabels.push(label);
    }
    const worldHud=hudNodes.filter(n=>!n.classList.contains('b3-party')).map(n=>rect(n.getBoundingClientRect())).filter(r=>r.width&&r.height);
    const placed=layoutWorldLabels(labels,innerWidth,innerHeight,worldHud,faces);
