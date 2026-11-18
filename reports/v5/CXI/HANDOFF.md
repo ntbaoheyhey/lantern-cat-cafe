@@ -1,15 +1,15 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: inspect new CXV decoded Clover spout+HP receipt after333;measure own fresh HP issue if needed,keep candidate stable duringlease.
-NEXT 2: after CXV lease release,run fresh dualcat cold transfer with explicit clover-spout-q21-r1/build.json;retain8MB gate.
-NEXT 3: review AGS T5/T11/T12 receipts and AGV deliveries; byte/performance/film/release gates remain OPEN.
-Last pushed1f8eebcd1;green v5-m1.13@4e5fe161a;no newrelease.
+NEXT 1: learn staged H264 delivery (official EN+ZH,15min) before bounded MSE/native-range experiment;AGS T-M4 research assigned.
+NEXT 2: inspect CXV HP scoped fix,import and own native review with fresh decoded-frame proof;current50row spout arithmeticaccepted/HPfailed.
+NEXT 3: audit AGS T-M4/T11/T12 and AGV receipts;dualcat9.276/9.743/9.354MB fails,releaseheld.
+Last pushedb6893f06d;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 ignoredMochiR6+CloverQ21spout source546ec5252af7e87bde026e8cc51dce8404493b3d/index0b0a76b72a9adb0cbe9aa144a4f0ffde139c18099b79990c245ac27d518277b9;registryempty;releasefalse.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified10:30Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T10:40:30.312159+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;CXV6301nativelease actual10:38:18Z;ownClover26rows+2viewsPASSscoped/HPconcern;no newbrowserjobs.
-Mailboxread INBOX-CXI333;USER24;LEARN98;audio49hashes+6sources exactprior;AGS>=2openTASKs;v7-ags-0046 preserved.
-AGS OPEN:T-CXI5R2generation/listening,T-CXI11R2fivebedrefs,T-CXI12maskexportdraft;T-M1/T-CXI10 remainopen;>=2useful.
+Running:none;all3dualcatcoldFAIL8MB;6301lease releasedCXV;HPpatchpending;web__run unavailable404,discoverfallback.
+Mailboxread INBOX-CXI335;USER24;LEARN98;spout50row+10glint arithmeticPASS/HP7overlapsFAIL;AGS>=2openTASKs;0046preserved.
+AGS OPEN:T-M4stagedvideoresearch,T-CXI12officialmaskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;T10rawunverified.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
 Deferredm1.14:toast/T9fourhalfAVIF/T10notice ACCEPT;build+fullsuite5374=5361pass+11skip+2expectedfail;nativefallback2modes;finalbrowsergates unrun.
