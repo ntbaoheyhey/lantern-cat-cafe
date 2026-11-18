@@ -9,13 +9,17 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const prototype=process.env.CXV_FIELD_PROTOTYPE==='1';
+const bodyPrototype=process.env.CXV_BODY_PROTOTYPE==='1';
 const out=resolve(process.env.CXV_CAPTURE_OUT||'work/v5/CXV/films/M-native-ultimate-occlusion-R1');
 assert(!existsSync(out),'Never overwrite prior evidence');
 await mkdir(out,{recursive:true});
-const owners=['mallow','sorrel','biscuit','cinnamon','brioche'];
+const allowed=['mallow','sorrel','biscuit','cinnamon','brioche'];
+const owners=process.env.CXV_NATIVE_OWNERS?.split(',')||allowed;
+const reviewOwners=process.env.CXV_REVIEW_OWNERS?.split(',')||['mallow','cinnamon'];
+assert(owners.every(x=>allowed.includes(x))&&reviewOwners.every(x=>owners.includes(x)));
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),
  runnerSha256:hash(await readFile(new URL(import.meta.url))),scope:'6310 fixed-clock attribution, 1280x720; no production acceptance. Rectangular body coverage is a diagnostic bound, not an exact silhouette mask.',
- runtimeExperiment:'Temporarily suppress only this browser instance FieldVfx.render for attribution; restore immediately. No application files changed.',prototype,sourceSubstitutions:[],rows:[],captures:[]};
+ runtimeExperiment:'Temporarily suppress only this browser instance FieldVfx.render for attribution; restore immediately. No application files changed.',prototype,bodyPrototype,sourceSubstitutions:[],rows:[],captures:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:prototype?async page=>{
@@ -31,6 +35,23 @@ try{
    await route.fulfill({response,body:after});
   });
  }:undefined});report.url=page.url();
+ if(bodyPrototype)await page.evaluate(()=>{
+  const painter=window.__depthScene.effects,original=painter.protect;
+  const skills=new Set(['mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold'].map(x=>x+'-4'));
+  painter.protect=function(c,view,labels,narrow=false){
+   const count=original.call(this,c,view,labels,narrow),plan=view.frame?.plan;
+   if(!narrow&&plan?.ultimate&&skills.has(plan.presentationId??plan.skillId)){
+    c.save();c.globalCompositeOperation='destination-out';c.globalAlpha=1;
+    for(const actor of view.actors){
+     if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;
+     const size=Math.abs(feet.y-face.y)/.77;
+     c.drawImage(this.legacyMask,face.x-size*.45,face.y-size*.1,size*.9,size*1.2);
+    }
+    c.restore();
+   }
+   return count;
+  };
+ });
  for(const owner of owners)for(const reduced of [false,true]){
   for(const stop of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+stop),'STOP '+stop);
   await page.evaluate(async({owner,reduced})=>{
@@ -70,7 +91,7 @@ try{
     return{owner,reduced,ms,skill:m.plan.skillId,targets:m.plan.targetIds,events:m.plan.events,actorIds:view.actors.map(x=>x.catalogId),audit,full,noField,stats:structuredClone(s.effects.stats),url:location.href};
    },{owner,reduced,ms});
    assert(!row.actorIds.includes('soot'));report.rows.push(row);
-   if(ms===1280&&['mallow','cinnamon'].includes(owner)){
+   if(ms===1280&&reviewOwners.includes(owner)){
     const name=owner+'-'+(reduced?'reduced':'normal'),path=resolve(out,name+'.png');await page.screenshot({path});
     const preview=resolve(out,name+'-1024.jpg');execFileSync('ffmpeg',['-v','error','-i',path,'-vf','scale=1024:576','-q:v','2',preview]);
     report.captures.push({owner,reduced,ms,path,sha256:hash(await readFile(path)),preview,previewSha256:hash(await readFile(preview)),utc:new Date().toISOString(),reviewed:false,views:0});

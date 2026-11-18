@@ -35,3 +35,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T06:45:21.855595+00:00 Điểm phát hiệu ứng ấm Clover vẫn chưa đủ bằng chứng: vùng gốm có 10 góc theo dõi nhưng tỷ lệ đồng thuận 0,6; kiểm tra mẫu độc lập chỉ 0,7704 và lệch 2,7436 px. Giữ nguyên hông/tay đã đạt, không dùng chuyển động tay thay cho ấm.
 
 2026-11-18T06:47:47.119780+00:00 Ảnh landing R2 108.498 B đã kiểm tra mới ở 1280×720: tốt hơn R1 nhưng chi tiết lông/viền khiên/gạch vẫn bị làm mịn, cần sửa. Tiết kiệm 99.369 B, riêng ảnh này vẫn thiếu 42.417 B so với ngân sách trận 3. Chưa tích hợp.
+
+2026-11-18T06:55:31.285324+00:00 Thử nghiệm hiệu ứng riêng: thu nhỏ vùng và kết thúc dư sáng sớm chưa đủ; thêm lớp bảo vệ thân giúp Mallow/Cinnamon giữ rõ chân, áo và đạo cụ khi trúng đòn. Đã xem 4 ảnh mới, 50 mẫu giữ đúng luật/hình học. Chưa áp dụng; còn Sorrel/Biscuit/Brioche và kiểm tra production.
