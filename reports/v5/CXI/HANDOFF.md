@@ -3,12 +3,12 @@ ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats LIVE v5-m1.14;Mochi/Clover commis
 NEXT 1: audit CXV authored/resampling receipts;prepare controlled direct-RGB resampling comparison preserving alpha before any newmedia.
 NEXT 2: nativeR4 existing art gate remains open;CXV ordinary1x wave-banner investigation requested;R12quality accepted/copied source only.
 NEXT 3: AGS T-M4/T-M5 REDO precise evidence;T-CXI13 latesttagQA open;maintain>=2 useful tasks.
-Last pushed20646cc1e;green v5-m1.14@254ad41d6;atomicremote/tag95cd80dd verified.
+Last pushed6d748d620;green v5-m1.14@254ad41d6;atomicremote/tag95cd80dd verified.
 Live6301 dualcatR4 source854ce6eec/index9e39c7d7;build work/v5/CXI/batch-m/clover-authored-q21-r4/build.json;registry{};nativeR2fullpreserved.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified12:29Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T12:33:40.103238+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;CXVexplicit6301release12:35:28Z;CXIlease;liveR4unchanged;R12landing sourceprepared fornextbuild.
-Mailboxread INBOX-CXI408;USER24;LEARN103;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
+Running:2291:v8-clover-direct-rgb-r1.log/status inwork/v5/CXI/jobs;offlineonly;CXVexclusive6301 until12:48:39Z+release;liveR4unchanged.
+Mailboxread INBOX-CXI411;USER24;LEARN104;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
 AGS OPEN:T-CXI13QA-m114,T-M5shortGOP,T-M4stagedvideoresearch,T-CXI12officialmaskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;T10rawunverified.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
