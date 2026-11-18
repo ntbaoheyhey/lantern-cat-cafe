@@ -489,7 +489,7 @@ export class SpineScene {
    const casterAsset=this.actors.get(plan.actorId)?.asset,shield=casterAsset==='mochi',oven=casterAsset==='panko',thread=casterAsset==='binding-thread',needle=casterAsset==='needle-moth',yarn=casterAsset==='yarn-giant';
    const art=healingCast?(casterAsset==='teacup-healer'?this.craftTea!:this.craftHeal!):shield?this.craftShield!:oven?this.craftOven!:thread?this.craftThread!:needle?this.craftNeedle!:yarn?this.craftYarn!:(plan.ultimate?this.craft!:this.craftBasic!);
    for(const other of [this.craft,this.craftBasic,this.craftShield,this.craftHeal,this.craftOven,this.craftThread,this.craftTea,this.craftNeedle,this.craftYarn])if(other!==art)other?.hide();
-   const source=this.socket(plan.actorId,this.actors.get(plan.actorId)?.craftPose?'vfxOrigin':'mainHand'),home=this.homes.get(plan.actorId);
+   const source=this.craftSource(plan.actorId),home=this.homes.get(plan.actorId);
    const entry=this.actors.get(plan.actorId);
    const drawnSocket=(key:'K1'|'K2'|'K5')=>{const p=entry?.craftPose?.socketFor(key,'vfxOrigin');return p?this.screen(entry!.actor.root.localToWorld(this.scratch.set(p.x,p.y,1))):undefined;};
    // A released projectile retains its K1@200ms home socket, independent of
@@ -530,7 +530,7 @@ export class SpineScene {
    const light=(acting||view.model)&&['attack','ult'].includes(sample?.name??'')?.8*rise*fall:0;
    const death=sample?.name==='ko',opacity=death?Math.max(0,1-(sample?.at??0)/.6):entry.shadow.material.opacity;
    const capture=()=>entry.craftLight!.render(this.renderer,this.camera,{width,height,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight,
-    box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.socket(id,entry.craftPose?'vfxOrigin':'mainHand')??this.homes.get(id)!.point,
+    box:this.bounds(entry),face:this.faceBounds(entry),lightSource:this.craftSource(id)??this.homes.get(id)!.point,
     lightColour:entry.asset==='mochi'?'#ffe3a1':entry.asset==='clover'?'#dcefb1':entry.asset==='panko'?'#ffd4a3':'#bc72ed',light,brightness:acting?1:focusLight,opacity,groundOrder});
    if(entry.craftDeath){
     entry.craftDeath.withSourcePaint(capture);const source=entry.craftLight.source;entry.craftDeath.setSource(source.texture,source.crop);
@@ -610,6 +610,11 @@ export class SpineScene {
    anchor.labelY=Math.max(18,b.y-9);anchor.visible=view.actors.some(u=>u.id===anchor.id&&u.hp>0);
   }
   this.onAnchors(this.anchors);
+ }
+ private craftSource(actorId:string){
+  const entry=this.actors.get(actorId);
+  const spout=entry?.asset==='clover'&&hasDesignerIdleBody(entry.asset,entry.actor);
+  return this.socket(actorId,entry?.craftPose||spout?'vfxOrigin':'mainHand');
  }
  socket(actorId:string,name:SpineSocket){const entry=this.actors.get(actorId);return entry?this.screen(entry.actor.socket(name,this.scratch)):undefined;}
  pixelsPerUnit(actorId:string){const entry=this.actors.get(actorId);return entry?this.height*this.camera.zoom/(this.camera.top-this.camera.bottom)*Math.abs(entry.actor.root.scale.y):undefined;}
