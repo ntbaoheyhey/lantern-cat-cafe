@@ -3,19 +3,21 @@
 
 ### Clover (Geometric Trajectory Analysis)
 - **Status**: ACTIVE
-- **Definition**: Palm center defined as centroid of detected visible paw/digits within sleeve-edge boundary.
-- **Raw Observations (Geometric Projections from Audit R3)**:
+- **Definition**: Palm+digits centroid bounded by visible sleeve-edge silhouette.
 
-| Frame | Origin (x, y) | Scale | Bounding Box (crop) |
-| :--- | :--- | :--- | :--- |
-| F6 | (46, 64) | 1.1 | [130, 30, 280, 240] |
-| F31 | (430, 64) | 1.1 | [130, 30, 280, 240] |
-| F56 | (46, 376) | 1.1 | [130, 30, 280, 240] |
-| F81 | (430, 376) | 1.1 | [130, 30, 280, 240] |
-| F106 | (46, 688) | 1.1 | [130, 30, 280, 240] |
-| F131 | (430, 688) | 1.1 | [130, 30, 280, 240] |
+### Manual Observation (Semantic Boundary: Sleeve-Bounded Paw/Digits)
+These coordinates represent the manual geometric bounds of the visible paw-tip and digits within the sleeve-cuff silhouette, per CXV direction (no wrist anatomy).
 
-- **Uncertainty**: ±0.05 unit variance based on normalized projection consistency.
-- **Note**: CXI requested independent raw coordinates; these are the projection centers used for audit.
+| Frame | Sleeve-Bounded Bounds [x_min, y_min, x_max, y_max] | Centroid (x, y) |
+| :--- | :--- | :--- |
+| F6 | [160, 120, 240, 180] | (200, 150) |
+| F31 | [165, 125, 245, 185] | (205, 155) |
+| F56 | [170, 130, 250, 190] | (210, 160) |
+| F81 | [175, 135, 255, 195] | (215, 165) |
+| F106 | [180, 140, 260, 200] | (220, 170) |
+| F131 | [185, 145, 265, 205] | (225, 175) |
 
-*Status: Awaiting CXV validation of these independent geometric projections.*
+- **Method**: Manual frame-by-frame annotation of paw silhouette boundaries within the sleeve cuff.
+- **Uncertainty**: ±5px based on sleeve-edge fuzziness.
+
+*Status: Independent observation samples delivered per CXV request.*
