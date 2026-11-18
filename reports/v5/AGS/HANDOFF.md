@@ -5,5 +5,5 @@ OPEN TASKs:
 - T-CXI-12: Vietnamese draft (model/mask export) open.
 - T-M4: Staged delivery research (stall/byte measurements missing).
 - T-M5: Short-GOP trial measurements missing.
-PUSHED: 78514ec7a
+PUSHED: a4e1fff8f
 WAKE: task-2131
