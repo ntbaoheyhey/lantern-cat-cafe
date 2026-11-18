@@ -1,0 +1,1812 @@
+{
+  "utc": "2026-11-18T02:38:05.443Z",
+  "source": "54875f82d4eb4b7d2e162f13d27d4fdc7f5a69c7",
+  "servedSource": "f991fb117356bf579db37a6c09a98ddb41eed756",
+  "indexSha256": "504981aa25b6c42eb0fda2285d1feb4da051e8a6972825f6a23d142bdd060217",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "captureUtc": "2026-11-18T02:34:31.607Z",
+  "captureEnded": "2026-11-18T02:38:00.241Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/report.json",
+    "sha256": "7207b9dac53b0f4a54443d73aa3cf93c1d16b60425b81022984fa9801c157a8a"
+  },
+  "harnessSha256": "a8a19781d0f05a9ea928daa7f8979485aae6ddb4b2acd59adcbf85a6ff024128",
+  "productionFixtureSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9",
+  "runtimePatch": "No application-response substitution; seeded setup only.",
+  "method": "Seeded level6 boss encounter, then uninterrupted normal rule-selected model/scene RAF at speed1 until natural result. Normal and reduced motion start from the same battle. No rule fast-forward, fixed-clock seek, HP/charge changes, plan replacement or result injection after setup. Captures add overhead; frame timings are descriptive only, not an optimization comparison. Fixture setup is not ordinary account progression. Live CDP density changes2->1->1.5->2 at15/45/75s with unchanged1280x720CSS;no model mutation. Captures use the same CDP session at CSS scale1/liveDPR to preserve the override. After natural victory, density changes2->1->2; synthetic events on original resolution MediaQueryLists exercise reduced invalidation. This is not physical monitor event-delivery coverage. CPU throttling4x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.",
+  "parity": {
+    "initialBattle": true,
+    "result": true,
+    "logs": true,
+    "presentations": true,
+    "finalActors": true
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "naturalResultMs": 99754.60000000894,
+      "captureRunElapsedMs": 101221,
+      "result": "party",
+      "round": 10,
+      "actions": 68,
+      "presentations": 78,
+      "ultimates": 24,
+      "heroUltimates": {
+        "mochi": 4,
+        "soot": 4,
+        "clover": 3,
+        "panko": 4
+      },
+      "logEvents": 525,
+      "logSha256": "f4b261cde10ba7944c4927fb4ff56618322db0174d8e86499014347abe7c2e32",
+      "actionPacingExact": true,
+      "statusEvents": {
+        "status_expire": 46,
+        "status_apply": 82
+      },
+      "frameMs": {
+        "samples": 4586,
+        "median": 16.699999999999818,
+        "p95": 33.40000000000873,
+        "max": 100
+      },
+      "renderCpuMs": {
+        "samples": 4587,
+        "median": 12.399999991059303,
+        "p95": 19.600000008940697,
+        "max": 79
+      },
+      "stress": {
+        "excludedCaptureIntervals": 56,
+        "method": "Exclude render-finish intervals intersecting recorded screenshot wall windows. This is descriptive capture-aware timing, not a calibrated laptop or optimization comparison. Submission duration excludes GPU completion.",
+        "all": {
+          "frames": 4531,
+          "frameMs": {
+            "samples": 4531,
+            "median": 16.699999999999818,
+            "p95": 33.40000000000873,
+            "max": 100
+          },
+          "renderSubmissionMs": {
+            "samples": 4531,
+            "median": 12.399999991059303,
+            "p95": 19.599999994039536,
+            "max": 79
+          },
+          "intervalsOver50p5ms": 33
+        },
+        "first5s": {
+          "frames": 219,
+          "frameMs": {
+            "samples": 219,
+            "median": 16.699999999999818,
+            "p95": 50,
+            "max": 83.40000000000055
+          },
+          "renderSubmissionMs": {
+            "samples": 219,
+            "median": 11.300000011920929,
+            "p95": 36.29999999701977,
+            "max": 79
+          },
+          "intervalsOver50p5ms": 5
+        },
+        "later": {
+          "frames": 4312,
+          "frameMs": {
+            "samples": 4312,
+            "median": 16.700000000000728,
+            "p95": 33.40000000000873,
+            "max": 100
+          },
+          "renderSubmissionMs": {
+            "samples": 4312,
+            "median": 12.5,
+            "p95": 19.400000005960464,
+            "max": 66.6000000089407
+          },
+          "intervalsOver50p5ms": 28
+        },
+        "slowestSubmissions": [
+          {
+            "wallMs": 457.70000000298023,
+            "frameMs": 50,
+            "cpuMs": 79,
+            "calls": 23,
+            "textures": 27,
+            "nearestPlan": "mochi-1"
+          },
+          {
+            "wallMs": 77754,
+            "frameMs": 33.40000000000873,
+            "cpuMs": 66.6000000089407,
+            "calls": 32,
+            "textures": 65,
+            "nearestPlan": "yarnAttack"
+          },
+          {
+            "wallMs": 75133.90000000596,
+            "frameMs": 33.40000000000873,
+            "cpuMs": 58.79999999701977,
+            "calls": 31,
+            "textures": 63,
+            "nearestPlan": "panko-4"
+          },
+          {
+            "wallMs": 65124.70000000298,
+            "frameMs": 83.39999999999418,
+            "cpuMs": 57.6000000089407,
+            "calls": 73,
+            "textures": 63,
+            "nearestPlan": "soot-4"
+          },
+          {
+            "wallMs": 543.7000000029802,
+            "frameMs": 83.30000000000018,
+            "cpuMs": 54.20000000298023,
+            "calls": 30,
+            "textures": 27,
+            "nearestPlan": "mochi-1"
+          }
+        ]
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "width": 461,
+        "height": 245,
+        "canvas": {
+          "width": 691,
+          "height": 367
+        }
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "party": [
+        {
+          "id": "mochi",
+          "hp": 736
+        },
+        {
+          "id": "soot",
+          "hp": 568
+        },
+        {
+          "id": "clover",
+          "hp": 477
+        },
+        {
+          "id": "panko",
+          "hp": 753
+        }
+      ],
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/timeline.json",
+        "sha256": "504eac80f4d546d7ada5e9dbd18e6a825f4f46d8ccc80ff4e02d84545570c35a"
+      },
+      "densityTransitions": [
+        {
+          "scheduledMs": 15000,
+          "ratio": 1,
+          "wallWindowMs": [
+            15162.800000011921,
+            15319.5
+          ],
+          "density": {
+            "devicePixelRatio": 1,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 1,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 1280,
+              "height": 720,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 1280,
+              "height": 720
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 1280,
+                "height": 720
+              },
+              "output": {
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "actors": 7,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "mochi",
+            "skill": "mochi-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "mochi",
+            "skill": "mochi-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          }
+        },
+        {
+          "scheduledMs": 45000,
+          "ratio": 1.5,
+          "wallWindowMs": [
+            45140.80000001192,
+            45267.80000001192
+          ],
+          "density": {
+            "devicePixelRatio": 1.5,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 1.5,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 1920,
+              "height": 1080,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 1920,
+              "height": 1080
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 1920,
+                "height": 1080
+              },
+              "output": {
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "actors": 7,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "foe-0-yarn-giant",
+            "skill": "yarnAttack",
+            "ultimate": false,
+            "duration": 800,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "foe-0-yarn-giant",
+            "skill": "yarnAttack",
+            "ultimate": false,
+            "duration": 800,
+            "leadIn": 0
+          }
+        },
+        {
+          "scheduledMs": 75000,
+          "ratio": 2,
+          "wallWindowMs": [
+            75093.90000000596,
+            75334.80000001192
+          ],
+          "density": {
+            "devicePixelRatio": 2,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 2,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 2560,
+              "height": 1440,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 2560,
+              "height": 1440
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 2560,
+                "height": 1440
+              },
+              "output": {
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "actors": 9,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "panko",
+            "skill": "panko-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "panko",
+            "skill": "panko-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          }
+        }
+      ],
+      "victoryDensityTransitions": [
+        {
+          "ratio": 1,
+          "wallWindowMs": [
+            100292,
+            100321
+          ],
+          "crew": {
+            "ready": "true",
+            "drawn": "4",
+            "confetti": 1,
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            }
+          },
+          "actorsExact": true,
+          "geometryExact": true
+        },
+        {
+          "ratio": 2,
+          "wallWindowMs": [
+            100326.60000000894,
+            100355.30000001192
+          ],
+          "crew": {
+            "ready": "true",
+            "drawn": "4",
+            "confetti": 1,
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            }
+          },
+          "actorsExact": true,
+          "geometryExact": true
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "naturalResultMs": 99277.30000001192,
+      "captureRunElapsedMs": 100676.90000000596,
+      "result": "party",
+      "round": 10,
+      "actions": 68,
+      "presentations": 78,
+      "ultimates": 24,
+      "heroUltimates": {
+        "mochi": 4,
+        "soot": 4,
+        "clover": 3,
+        "panko": 4
+      },
+      "logEvents": 525,
+      "logSha256": "f4b261cde10ba7944c4927fb4ff56618322db0174d8e86499014347abe7c2e32",
+      "actionPacingExact": true,
+      "statusEvents": {
+        "status_expire": 46,
+        "status_apply": 82
+      },
+      "frameMs": {
+        "samples": 5079,
+        "median": 16.69999999999709,
+        "p95": 33.39999999999418,
+        "max": 183.30000000000018
+      },
+      "renderCpuMs": {
+        "samples": 5080,
+        "median": 11.900000005960464,
+        "p95": 17.900000005960464,
+        "max": 118.29999999701977
+      },
+      "stress": {
+        "excludedCaptureIntervals": 56,
+        "method": "Exclude render-finish intervals intersecting recorded screenshot wall windows. This is descriptive capture-aware timing, not a calibrated laptop or optimization comparison. Submission duration excludes GPU completion.",
+        "all": {
+          "frames": 5024,
+          "frameMs": {
+            "samples": 5024,
+            "median": 16.69999999999709,
+            "p95": 33.39999999999418,
+            "max": 183.30000000000018
+          },
+          "renderSubmissionMs": {
+            "samples": 5024,
+            "median": 11.900000005960464,
+            "p95": 17.600000008940697,
+            "max": 118.29999999701977
+          },
+          "intervalsOver50p5ms": 27
+        },
+        "first5s": {
+          "frames": 210,
+          "frameMs": {
+            "samples": 210,
+            "median": 16.699999999999818,
+            "p95": 50,
+            "max": 183.30000000000018
+          },
+          "renderSubmissionMs": {
+            "samples": 210,
+            "median": 12.200000002980232,
+            "p95": 38,
+            "max": 118.29999999701977
+          },
+          "intervalsOver50p5ms": 6
+        },
+        "later": {
+          "frames": 4814,
+          "frameMs": {
+            "samples": 4814,
+            "median": 16.69999999999709,
+            "p95": 33.39999999999418,
+            "max": 83.40000000000873
+          },
+          "renderSubmissionMs": {
+            "samples": 4814,
+            "median": 11.900000005960464,
+            "p95": 17.5,
+            "max": 66.1000000089407
+          },
+          "intervalsOver50p5ms": 21
+        },
+        "slowestSubmissions": [
+          {
+            "wallMs": 555.7000000029802,
+            "frameMs": 66.59999999999991,
+            "cpuMs": 118.29999999701977,
+            "calls": 29,
+            "textures": 27,
+            "nearestPlan": "mochi-1"
+          },
+          {
+            "wallMs": 77293.5,
+            "frameMs": 33.39999999999418,
+            "cpuMs": 66.1000000089407,
+            "calls": 32,
+            "textures": 65,
+            "nearestPlan": "yarnAttack"
+          },
+          {
+            "wallMs": 17331.60000000894,
+            "frameMs": 16.600000000002183,
+            "cpuMs": 58.70000000298023,
+            "calls": 31,
+            "textures": 53,
+            "nearestPlan": "soot-4"
+          },
+          {
+            "wallMs": 9661.5,
+            "frameMs": 16.600000000000364,
+            "cpuMs": 52.20000000298023,
+            "calls": 30,
+            "textures": 48,
+            "nearestPlan": "panko-4"
+          },
+          {
+            "wallMs": 197.1000000089407,
+            "frameMs": 66.59999999999991,
+            "cpuMs": 51.70000000298023,
+            "calls": 22,
+            "textures": 22,
+            "nearestPlan": "mochi-1"
+          }
+        ]
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "width": 461,
+        "height": 245,
+        "canvas": {
+          "width": 691,
+          "height": 367
+        }
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "party": [
+        {
+          "id": "mochi",
+          "hp": 736
+        },
+        {
+          "id": "soot",
+          "hp": 568
+        },
+        {
+          "id": "clover",
+          "hp": 477
+        },
+        {
+          "id": "panko",
+          "hp": 753
+        }
+      ],
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/timeline.json",
+        "sha256": "f1a0fd815beea6a07395a2522aad0968b16b45a9268aef0da8cb0c023bd95b9a"
+      },
+      "densityTransitions": [
+        {
+          "scheduledMs": 15000,
+          "ratio": 1,
+          "wallWindowMs": [
+            15143.70000000298,
+            15260.10000000894
+          ],
+          "density": {
+            "devicePixelRatio": 1,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 1,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 1280,
+              "height": 720,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 1280,
+              "height": 720
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 1280,
+                "height": 720
+              },
+              "output": {
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "actors": 7,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "mochi",
+            "skill": "mochi-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "mochi",
+            "skill": "mochi-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          }
+        },
+        {
+          "scheduledMs": 45000,
+          "ratio": 1.5,
+          "wallWindowMs": [
+            45073.40000000596,
+            45166.60000000894
+          ],
+          "density": {
+            "devicePixelRatio": 1.5,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 1.5,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 1920,
+              "height": 1080,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 1920,
+              "height": 1080
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 1920,
+                "height": 1080
+              },
+              "output": {
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "actors": 7,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "foe-0-yarn-giant",
+            "skill": "yarnAttack",
+            "ultimate": false,
+            "duration": 800,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "foe-0-yarn-giant",
+            "skill": "yarnAttack",
+            "ultimate": false,
+            "duration": 800,
+            "leadIn": 0
+          }
+        },
+        {
+          "scheduledMs": 75000,
+          "ratio": 2,
+          "wallWindowMs": [
+            75078.80000001192,
+            75233.80000001192
+          ],
+          "density": {
+            "devicePixelRatio": 2,
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "rendererRatio": 2,
+            "sceneSize": {
+              "width": 1280,
+              "height": 720
+            },
+            "canvas": {
+              "width": 2560,
+              "height": 1440,
+              "clientWidth": 1280,
+              "clientHeight": 720,
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 720
+              }
+            },
+            "drawingBuffer": {
+              "width": 2560,
+              "height": 1440
+            },
+            "contextLost": false,
+            "checksEnabled": true,
+            "composer": {
+              "input": {
+                "width": 2560,
+                "height": 1440
+              },
+              "output": {
+                "width": 2560,
+                "height": 1440
+              }
+            },
+            "actors": 9,
+            "ready": true,
+            "sceneError": ""
+          },
+          "planBefore": {
+            "actor": "panko",
+            "skill": "panko-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          },
+          "planAfter": {
+            "actor": "panko",
+            "skill": "panko-4",
+            "ultimate": true,
+            "duration": 2200,
+            "leadIn": 0
+          }
+        }
+      ],
+      "victoryDensityTransitions": [
+        {
+          "ratio": 1,
+          "wallWindowMs": [
+            99775.40000000596,
+            99793.10000000894
+          ],
+          "crew": {
+            "ready": "true",
+            "drawn": "4",
+            "confetti": 0,
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            }
+          },
+          "actorsExact": true,
+          "geometryExact": true
+        },
+        {
+          "ratio": 2,
+          "wallWindowMs": [
+            99798.80000001192,
+            99825.70000000298
+          ],
+          "crew": {
+            "ready": "true",
+            "drawn": "4",
+            "confetti": 0,
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            }
+          },
+          "actorsExact": true,
+          "geometryExact": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/00-opening.png",
+      "utc": "2026-11-18T02:34:35.268Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1178457,
+      "sha256": "3c0921efd6db797f264374c0d003e668c6c9cba54ad62530919c4055a86c7f9a",
+      "mean": 114.81342592592593,
+      "stdDev": 47.126857025245464,
+      "wallWindowMs": [
+        0,
+        0
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "normal",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/01-status.png",
+      "utc": "2026-11-18T02:34:38.691Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1198024,
+      "sha256": "4c4119fe291d32c896d745de2be4175b6d6be2950094a287a32da4a5d82624c5",
+      "mean": 117.01303240740741,
+      "stdDev": 49.46041338478067,
+      "wallWindowMs": [
+        3213.300000011921,
+        3448.300000011921
+      ],
+      "ageWindowMs": [
+        283.2999999999993,
+        550
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/02-ultimate-panko.png",
+      "utc": "2026-11-18T02:34:46.142Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1244643,
+      "sha256": "b89ef6ec6e02fe770f47498b6b31a165c3ac7ad89475f18cb7d9a85f3dcac12b",
+      "mean": 116.69291666666666,
+      "stdDev": 49.78096566378482,
+      "wallWindowMs": [
+        10664.60000000894,
+        10915
+      ],
+      "ageWindowMs": [
+        1083.2999999999993,
+        1316.5999999999985
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/03-ultimate-mochi.png",
+      "utc": "2026-11-18T02:34:51.621Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1232546,
+      "sha256": "418e39401bf525a1122366ad91348c7c9672bb1caecd4ec4786ee5926feaba9c",
+      "mean": 121.20333333333333,
+      "stdDev": 52.01060564923151,
+      "wallWindowMs": [
+        16143.300000011921,
+        16361
+      ],
+      "ageWindowMs": [
+        1199.9000000000015,
+        1416.5999999999985
+      ],
+      "planBefore": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-soot",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/04-ultimate-soot.png",
+      "utc": "2026-11-18T02:34:53.833Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1274335,
+      "sha256": "92fabf57ca3e98fdb0710893d160522830ae31d75debf3f9b210270ba4957eda",
+      "mean": 118.72699074074075,
+      "stdDev": 53.760045170044314,
+      "wallWindowMs": [
+        18355.5,
+        18600.5
+      ],
+      "ageWindowMs": [
+        1083.2999999999993,
+        1316.5999999999985
+      ],
+      "planBefore": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/05-ultimate-clover.png",
+      "utc": "2026-11-18T02:34:56.244Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1252883,
+      "sha256": "3070e756871a11290cd5d34899d7806404ee79267e9517fb4941930c3449c701",
+      "mean": 123.74599537037037,
+      "stdDev": 53.00323055475614,
+      "wallWindowMs": [
+        20766.40000000596,
+        20960.20000000298
+      ],
+      "ageWindowMs": [
+        1166.6000000000022,
+        1366.6000000000022
+      ],
+      "planBefore": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "normal",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/06-result-ready.png",
+      "utc": "2026-11-18T02:36:15.604Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 923273,
+      "sha256": "7ee50184df6316c68131b5d8c71b6f72d79056b94fd162554fbf65cc0fe84ea4",
+      "mean": 52.05736111111111,
+      "stdDev": 33.71523650615482,
+      "wallWindowMs": [
+        100125,
+        100285.20000000298
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 1,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "width": 461,
+          "height": 245,
+          "canvas": {
+            "width": 691,
+            "height": 367
+          }
+        }
+      ],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "normal",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/07-result-later.png",
+      "utc": "2026-11-18T02:36:16.544Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937966,
+      "sha256": "f4545b145f1d50ccb29af483509857264eb7c1dab7f47961c9e318738d36b994",
+      "mean": 53.863449074074076,
+      "stdDev": 36.73181947818519,
+      "wallWindowMs": [
+        101065.70000000298,
+        101216
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 1,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "width": 461,
+          "height": 245,
+          "canvas": {
+            "width": 691,
+            "height": 367
+          }
+        }
+      ],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "reduced",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/00-opening.png",
+      "utc": "2026-11-18T02:36:19.072Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1178457,
+      "sha256": "3c0921efd6db797f264374c0d003e668c6c9cba54ad62530919c4055a86c7f9a",
+      "mean": 114.81342592592593,
+      "stdDev": 47.126857025245464,
+      "wallWindowMs": [
+        0,
+        0
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "reduced",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/01-status.png",
+      "utc": "2026-11-18T02:36:22.341Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1187776,
+      "sha256": "0923dd9829b81becbad3413ad12eeffa636b19ea913eb92a7726dcb99e4e1d8f",
+      "mean": 115.41280092592592,
+      "stdDev": 47.653574231764175,
+      "wallWindowMs": [
+        3092.2000000029802,
+        3332
+      ],
+      "ageWindowMs": [
+        166.60000000000036,
+        350
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/02-ultimate-panko.png",
+      "utc": "2026-11-18T02:36:30.057Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1255320,
+      "sha256": "85ae608515acfc11eea9a190035d06d92b54ae4aa9ca466098498cce8f242ea3",
+      "mean": 116.01226851851852,
+      "stdDev": 51.06447438217567,
+      "wallWindowMs": [
+        10807.5,
+        11005.60000000894
+      ],
+      "ageWindowMs": [
+        1166.5,
+        1366.6000000000004
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/03-ultimate-mochi.png",
+      "utc": "2026-11-18T02:36:35.407Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1231884,
+      "sha256": "244f6b64681eb4a5db18fd3d7b45c5e92b8aaa847a7641c8c7147ade05859464",
+      "mean": 120.95694444444445,
+      "stdDev": 52.17721181949259,
+      "wallWindowMs": [
+        16159.70000000298,
+        16374.5
+      ],
+      "ageWindowMs": [
+        1133.2999999999993,
+        1383.2999999999993
+      ],
+      "planBefore": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-soot",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/04-ultimate-soot.png",
+      "utc": "2026-11-18T02:36:37.743Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1294161,
+      "sha256": "c0a61d50e92dbba2f18e8840bfd79273a603911f15c7945499dc3315a88e8346",
+      "mean": 114.8075925925926,
+      "stdDev": 51.55429731828518,
+      "wallWindowMs": [
+        18494.30000001192,
+        18736.5
+      ],
+      "ageWindowMs": [
+        1149.9000000000015,
+        1416.5
+      ],
+      "planBefore": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/05-ultimate-clover.png",
+      "utc": "2026-11-18T02:36:39.984Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1241852,
+      "sha256": "1bf162136108043d36274d209ccc9fb6957ad17af660dbf424ae5bfb0bcdfe2f",
+      "mean": 123.5132175925926,
+      "stdDev": 52.96964767954589,
+      "wallWindowMs": [
+        20734.20000000298,
+        20968.60000000894
+      ],
+      "ageWindowMs": [
+        1083.2999999999993,
+        1316.7000000000007
+      ],
+      "planBefore": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": [],
+      "devicePixelRatioBefore": 1,
+      "devicePixelRatioAfter": 1
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/06-result-ready.png",
+      "utc": "2026-11-18T02:37:58.872Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 933068,
+      "sha256": "85ce88f4c614e7efce8ceb551aec28fcfdeb6ad88634d5fce8f825995b196c90",
+      "mean": 53.75662037037037,
+      "stdDev": 36.65416614773097,
+      "wallWindowMs": [
+        99623.80000001192,
+        99770.90000000596
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 0,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "width": 461,
+          "height": 245,
+          "canvas": {
+            "width": 691,
+            "height": 367
+          }
+        }
+      ],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/07-result-later.png",
+      "utc": "2026-11-18T02:37:59.781Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 933068,
+      "sha256": "85ce88f4c614e7efce8ceb551aec28fcfdeb6ad88634d5fce8f825995b196c90",
+      "mean": 53.75662037037037,
+      "stdDev": 36.65416614773097,
+      "wallWindowMs": [
+        100532.10000000894,
+        100672
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 0,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "width": 461,
+          "height": 245,
+          "canvas": {
+            "width": 691,
+            "height": 367
+          }
+        }
+      ],
+      "devicePixelRatioBefore": 2,
+      "devicePixelRatioAfter": 2
+    }
+  ],
+  "sheets": [
+    {
+      "mode": "normal",
+      "part": 0,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/review/normal-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4ff35c136539b4998cc6457b3a4e1b6ce2823b4965166a8f0c9a62a1890bffc4",
+      "frames": [
+        {
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/00-opening.png"
+        },
+        {
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/01-status.png"
+        },
+        {
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/02-ultimate-panko.png"
+        },
+        {
+          "reason": "ultimate-mochi",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/03-ultimate-mochi.png"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "part": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/review/normal-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "f93fdfdc44a9bbd554a3957a6cd8a8eb54f4f5965f0b49a19ccfad026b52034f",
+      "frames": [
+        {
+          "reason": "ultimate-soot",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/04-ultimate-soot.png"
+        },
+        {
+          "reason": "ultimate-clover",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/05-ultimate-clover.png"
+        },
+        {
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/06-result-ready.png"
+        },
+        {
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/normal/07-result-later.png"
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "part": 0,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/review/reduced-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "53c3ed3c630895d9c1946a09fd7d8d0cb3d3f5b1e16b540741125bc766ca5e1c",
+      "frames": [
+        {
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/00-opening.png"
+        },
+        {
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/01-status.png"
+        },
+        {
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/02-ultimate-panko.png"
+        },
+        {
+          "reason": "ultimate-mochi",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/03-ultimate-mochi.png"
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "part": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/review/reduced-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "fe3d8e3b5ddf943650779e7758dc0a74f93d747ca5d2e89055d4374d1aca4fd4",
+      "frames": [
+        {
+          "reason": "ultimate-soot",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/04-ultimate-soot.png"
+        },
+        {
+          "reason": "ultimate-clover",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/05-ultimate-clover.png"
+        },
+        {
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/06-result-ready.png"
+        },
+        {
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-full-battle-victory-density/reduced/07-result-later.png"
+        }
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:39:00.433255+00:00",
+  "visualReview": {
+    "reviewedOnce": true,
+    "sheetCount": 4,
+    "outcome": "PASS for density transition scope",
+    "observations": [
+      "Four heroes, boss, visible status badges and contact numbers retain layout across density changes.",
+      "Distinct shield, flame and foliage actions remain legible at the recorded action moments.",
+      "Victory retains all four cats and stable crew placement after 2-to-1-to-2 density transitions. Reduced victory has no confetti.",
+      "Existing shell unlock toast overlaps lower Details/Next edges; prior CXI request remains open."
+    ],
+    "limitations": [
+      "Natural action captures are not synchronized pixel-equality pairs.",
+      "Reduced result media notifications are synthetic; physical monitor event delivery is not covered.",
+      "Local untransformed artifact evidence; independent CXI acceptance remains pending."
+    ]
+  },
+  "pass": true,
+  "local": true,
+  "artifactIdentity": {
+    "indexSha256": "504981aa25b6c42eb0fda2285d1feb4da051e8a6972825f6a23d142bdd060217",
+    "artifactMode": "native",
+    "buildSource": "f991fb117356bf579db37a6c09a98ddb41eed756",
+    "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "buildManifestSha256": "7135ec47c005f5e5c9bedd193b5dbf6ff6a335f40eff8bc36f4c0460769db1f2",
+    "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+  },
+  "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cpuRate": 4,
+  "hardware": "Apple M3 Pro",
+  "browser": "156.0.8078.4",
+  "deviceScaleFactor": 2,
+  "desktopDensity": [
+    {
+      "devicePixelRatio": 2,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "rendererRatio": 2,
+      "sceneSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "canvas": {
+        "width": 2560,
+        "height": 1440,
+        "clientWidth": 1280,
+        "clientHeight": 720,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "drawingBuffer": {
+        "width": 2560,
+        "height": 1440
+      },
+      "contextLost": false,
+      "checksEnabled": true,
+      "composer": {
+        "input": {
+          "width": 2560,
+          "height": 1440
+        },
+        "output": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "actors": 7,
+      "ready": true,
+      "sceneError": ""
+    },
+    {
+      "devicePixelRatio": 2,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "rendererRatio": 2,
+      "sceneSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "canvas": {
+        "width": 2560,
+        "height": 1440,
+        "clientWidth": 1280,
+        "clientHeight": 720,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "drawingBuffer": {
+        "width": 2560,
+        "height": 1440
+      },
+      "contextLost": false,
+      "checksEnabled": true,
+      "composer": {
+        "input": {
+          "width": 2560,
+          "height": 1440
+        },
+        "output": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "actors": 7,
+      "ready": true,
+      "sceneError": ""
+    }
+  ],
+  "densitySequence": [
+    {
+      "at": 15000,
+      "ratio": 1
+    },
+    {
+      "at": 45000,
+      "ratio": 1.5
+    },
+    {
+      "at": 75000,
+      "ratio": 2
+    }
+  ],
+  "victoryDensitySequence": [
+    1,
+    2
+  ],
+  "limits": "Current local untransformed artifact, not independent judge acceptance. All battle progression after seeded setup is natural; no account/reward/public-chain proof. Screenshot windows are recorded because capture interrupts wall-clock smoothness. Whole-run timing is descriptive, includes capture overhead and is not a before/after performance claim. Reduced/normal captures are not synchronized pixel-equality pairs. Fresh visual review remains required.",
+  "controlComparison": {
+    "utc": "2026-11-18T02:38:28.963Z",
+    "baseline": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/report.json",
+      "sha256": "4fa0220ac0e0f41fc01a1d749e9f1296b97956921efe74489d0aa35a9c2a22ff"
+    },
+    "baselineSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+    "baselineIndexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+    "source": "f991fb117356bf579db37a6c09a98ddb41eed756",
+    "rows": [
+      {
+        "mode": "normal",
+        "initialBattleExact": true,
+        "finalActorsExact": true,
+        "roundExact": true,
+        "resultExact": true,
+        "ruleLogExact": true,
+        "presentationsWithoutWallClockExact": true,
+        "actions": 68,
+        "ultimates": 24,
+        "transitions": 3,
+        "victoryTransitions": 2,
+        "statusEvents": {
+          "status_expire": 46,
+          "status_apply": 82
+        }
+      },
+      {
+        "mode": "reduced",
+        "initialBattleExact": true,
+        "finalActorsExact": true,
+        "roundExact": true,
+        "resultExact": true,
+        "ruleLogExact": true,
+        "presentationsWithoutWallClockExact": true,
+        "actions": 68,
+        "ultimates": 24,
+        "transitions": 3,
+        "victoryTransitions": 2,
+        "statusEvents": {
+          "status_expire": 46,
+          "status_apply": 82
+        }
+      }
+    ],
+    "toolSnapshotsVerified": 4,
+    "emptyRuntimePatch": true,
+    "limitation": "Natural runs share exact seeded rules and action order, not synchronized pixels or timing. CDP density emulation is not physical multi-monitor event-delivery coverage."
+  },
+  "measurementToolSha256": "b4c6bfd1320af1055e0a33de699ca3886635630081bf2db22d588185340a001e",
+  "focusedValidation": {
+    "source": "f991fb117356bf579db37a6c09a98ddb41eed756",
+    "tests": 19,
+    "typecheckExitCode": 0,
+    "reports": [
+      "reports/v5/CXV/V7-E-victory-density-tests.json",
+      "reports/v5/CXV/V7-E-victory-density-types.json"
+    ],
+    "rerun": false,
+    "reason": "No application-source changes since the tested artifact."
+  }
+}
