@@ -11,7 +11,9 @@ import numpy as np
 cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT/'work/v5/CXI/batch-m'
-OUT = BASE/'clover-four-plane-q22-r1'
+quality = int(sys.argv[1]) if len(sys.argv) > 1 else 22
+assert quality in [21, 22]
+OUT = BASE/f'clover-four-plane-q{quality}-r1'
 OUT.mkdir(exist_ok=False)
 sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
 source = BASE/'matte-r2/clover-premul.rgba'
@@ -25,7 +27,8 @@ for i in range(300):
 resized.flush()
 baseline = json.loads((BASE/'four-plane-local-vslow-q22-r1/report.json').read_text())
 command = list(baseline['trials'][0]['command'])
-video = OUT/'ycrcb-crf22.mp4'
+video = OUT/f'ycrcb-crf{quality}.mp4'
+command[command.index('-crf')+1] = str(quality)
 command[command.index('-video_size')+1] = f'{w*2}x{h*2}'
 command[command.index('-vf')+1] = f'addroi=0:0:{w}:{h}:-0.12,addroi={w}:{h}:{w}:{h}:-0.04'
 command[-1] = str(video)
@@ -62,5 +65,5 @@ report = dict(utc=datetime.now(timezone.utc).isoformat(), cat='clover', status='
               sourceSize=[318, 390], logicalSize=[w, h], opaqueHeight=256, frames=300, fps=30, duration=10, scale=2/3, resize='INTER_AREA on premultiplied RGBA', trials=[trial],
               nativeAssetAcceptance=False, loopAccepted=False, imagesViewed=0, limits='Compression error measured against resized pinned matte only. Original alpha/fringe quality, downsampling loss, tail seam and provisional head/palm sockets remain unaccepted. No runtime or registry change.')
 (OUT/'report.json').write_text(json.dumps(report, indent=2)+'\n')
-(ROOT/'reports/v5/CXI/evidence/v8-clover-four-plane-q22-review.json').write_text(json.dumps(report, indent=2)+'\n')
+(ROOT/f'reports/v5/CXI/evidence/v8-clover-four-plane-q{quality}-review.json').write_text(json.dumps(report, indent=2)+'\n')
 print(json.dumps({k: v for k, v in trial.items() if k != 'command'}))

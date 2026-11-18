@@ -1,0 +1,93 @@
+{
+  "utc": "2026-11-18T10:25:52.352209+00:00",
+  "cat": "clover",
+  "status": "STUDY_ONLY",
+  "sourceRgba": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/source.rgba",
+  "sourceRgbaSha256": "21fd9e6e159cbb1390c96dfc1b3dab4dffaa96d1ecb16ed7a97b0cbfcdecb7ac",
+  "originalMatte": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+  },
+  "sourceSize": [
+    318,
+    390
+  ],
+  "logicalSize": [
+    212,
+    260
+  ],
+  "opaqueHeight": 256,
+  "frames": 300,
+  "fps": 30,
+  "duration": 10,
+  "scale": 0.6666666666666666,
+  "resize": "INTER_AREA on premultiplied RGBA",
+  "trials": [
+    {
+      "mode": "ycrcb",
+      "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/ycrcb-crf21.mp4",
+      "bytes": 817118,
+      "sha256": "57027d5aa9db1c26ec02a0c1b139e8662119a641d6de76288f0236d07936f0a0",
+      "encodedDimensions": [
+        424,
+        520
+      ],
+      "foregroundWhiteMAE": 2.7859157293662276,
+      "foregroundBlackMAE": 2.5503237591208334,
+      "edgeFrameMax": 8.438243110924605,
+      "maskMAE": 0.4719560353168844,
+      "command": [
+        "ffmpeg",
+        "-y",
+        "-nostdin",
+        "-v",
+        "error",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "yuv420p",
+        "-video_size",
+        "424x520",
+        "-framerate",
+        "30",
+        "-color_range",
+        "pc",
+        "-i",
+        "-",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-threads",
+        "2",
+        "-preset",
+        "veryslow",
+        "-crf",
+        "21",
+        "-pix_fmt",
+        "yuv420p",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "iec61966-2-1",
+        "-colorspace",
+        "smpte170m",
+        "-color_range",
+        "pc",
+        "-bsf:v",
+        "h264_metadata=colour_primaries=1:transfer_characteristics=13:matrix_coefficients=6:video_full_range_flag=1",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "addroi=0:0:212:260:-0.12,addroi=212:260:212:260:-0.04",
+        "-psy",
+        "0",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/ycrcb-crf21.mp4"
+      ],
+      "numericPass": true
+    }
+  ],
+  "nativeAssetAcceptance": false,
+  "loopAccepted": false,
+  "imagesViewed": 0,
+  "limits": "Compression error measured against resized pinned matte only. Original alpha/fringe quality, downsampling loss, tail seam and provisional head/palm sockets remain unaccepted. No runtime or registry change."
+}
