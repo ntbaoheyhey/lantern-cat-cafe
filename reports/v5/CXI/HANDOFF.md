@@ -1,13 +1,13 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: launch node tools/v5int/build-clover-scene-candidate.mjs clover-spout-q21-r1 detached, then install ignored candidate and own cast review.
+NEXT 1: finish preload closure audit (passive/idle/charge/override) while CXV reviews decoded Clover spout+HP;do not claim atlas removals yet.
 NEXT 2: finish VFX preload reachability (idle/charge/override);grant conditional on proof;Soot kept unchanged.
 NEXT 3: review AGS T5/T11/T12 receipts and AGV deliveries; byte/performance/film/release gates remain OPEN.
-Last pushed4699ba668;green v5-m1.13@4e5fe161a;no newrelease.
-Live6301 ignoredMochiR6 sourceadb526a869012cecef2da673f1bc6d86e42d8a5d/indexf9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0;source registryempty;releasefalse.
+Last pushed546ec5252;green v5-m1.13@4e5fe161a;no newrelease.
+Live6301 ignoredMochiR6+CloverQ21spout source546ec5252af7e87bde026e8cc51dce8404493b3d/index0b0a76b72a9adb0cbe9aa144a4f0ffde139c18099b79990c245ac27d518277b9;registryempty;releasefalse.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified10:30Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T10:29:29.664669+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;Q21nativePASS,24emissionfocused+TSC0;exactCXVc00501f imported;no6301lease.
+Running:none;ownClover26rows/4actions2modesPASS+2freshviews;6301lease releasedCXV;HPnativeclearance flagged.
 Mailboxread INBOX-CXI331;USER24;LEARN98;AGS1034REDO/T10correctionACK;>=2openTASKs;v7-ags-0046 preserved.
 AGS OPEN:T-CXI5R2generation/listening,T-CXI11R2fivebedrefs,T-CXI12maskexportdraft;T-M1/T-CXI10 remainopen;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
@@ -17,4 +17,4 @@ Deferredm1.14 script work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py requires
 DeferredCXV11paths:offline2800geometry/80posemaskPASS;ownHUDtoolsyntaxchecked/notrun;Panko separate;do not alter Soot inBatchM.
 Owned:R6 retaineddecoder/victory146samples+2fresh1024viewsPASS;fullsuite5499=5486pass+11skip+2expected;3833Sootpathsunchanged;foreign5/0046preserved.
 ColdR6 8509074/8975988/8584766B FAIL8MB;v8-r6-cold-review.json corrects captureHEAD7bc vs servedadb;future measure-transfer requires --build-descriptor for sourceproof.
-Neverreopen:allR2idle4/R3cast4+isolatedult3 and priorledgers;isolatedbasic unviewed;Clovercontrol812x420 viewedonce ledgercorrected;noCXVimages reopened.;R4focus2views once. R5victory2views once. R6victory2views once. CloverboundaryF15/285860x980once. SeededF15/285860x570once. Endpointlabels0/299860x570once.
+Neverreopen:allR2idle4/R3cast4+isolatedult3 and priorledgers;isolatedbasic unviewed;Clovercontrol812x420 viewedonce ledgercorrected;noCXVimages reopened.;R4focus2views once. R5victory2views once. R6victory2views once. CloverboundaryF15/285860x980once. SeededF15/285860x570once. Endpointlabels0/299860x570once. CloverR1 basic350+ult533 2fresh1024views once.
