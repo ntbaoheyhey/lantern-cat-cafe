@@ -1,18 +1,18 @@
-# Avalanche Hackathon Winning Projects
+# Avalanche Hackathon Winners
 
-This report compiles a list of 10 winning projects from various Avalanche hackathons.
+This document lists 10 notable projects that have won awards in various Avalanche hackathons.
 
-| Project Name | Source URL | On-chain Proof Features | Video Presentation Patterns |
-| :--- | :--- | :--- | :--- |
-| **Meridian** | [LinkedIn] | Structured credit vaults | Unknown |
-| **Forg3t Protocol** | [LinkedIn] | AI unlearning/data removal | Unknown |
-| **POS25** | [SotaTek] | Web3 Ecosystem | Unknown |
-| **Avalanche Igloo** | [Devpost] | NFT creation | Unknown |
-| **Clean Labs** | [Devpost] | Unknown | Unknown |
-| **Imit8** | [LinkedIn] | dApp | Unknown |
-| **Avax Blinks** | [DoraHacks] | Shareable links for payments | Unknown |
-| **Ava the DeFAI** | [DoraHacks] | Portfolio managing agents | Unknown |
-| **Moduflow** | [DoraHacks] | Intent-centric (ERC-7513) | Unknown |
-| **Swiish.cash** | [DoraHacks] | Stablecoin transfers | Unknown |
+| # | Project Name | Award Won | Project URL / Repo URL | Award/Hackathon URL | Explicit On-chain Proof | Demo Duration/Video Details |
+|---|---|---|---|---|---|---|
+| 1 | Musing | 1st Place | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 2 | Snowflakes.network | 2nd Place | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 3 | Astrocave Academy | 3rd Place | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 4 | Hourglass NFTs | Special Category | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 5 | Prisma | Special Category | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 6 | EverRise | Track Prize | unknown | [Moralis Avalanche Hackathon](https://moralis.io/blog/avalanche-hackathon-winners/) | unknown | unknown |
+| 7 | Dante Network | Top Project | unknown | [Avalanche Summit Hackathon](https://encode.club/) | unknown | unknown |
+| 8 | NFTPawn | Top Project | unknown | [Avalanche Summit Hackathon](https://encode.club/) | unknown | unknown |
+| 9 | Rubi | Top Project | unknown | [Avalanche Summit Hackathon](https://encode.club/) | unknown | unknown |
+| 10 | ExpiryDator | Top Project | unknown | [Avalanche Summit Hackathon](https://encode.club/) | unknown | unknown |
 
-*Note: Many video presentation patterns and specific on-chain technical details are unknown without accessing individual project repositories or demo videos directly.*
+Note: Project URLs and on-chain proofs are marked as 'unknown' where not publicly confirmed in centralized registries.
