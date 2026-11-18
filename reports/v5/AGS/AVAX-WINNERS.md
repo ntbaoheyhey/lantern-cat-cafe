@@ -2,15 +2,13 @@
 
 | Project Name | Primary URL/Repository | Primary Award/Project URL | On-Chain Proof | Video/README Observation |
 | :--- | :--- | :--- | :--- | :--- |
-| **Musing** | Unknown | Unknown | Unknown | Unknown |
-| **Sneagle Network** | Unknown | Unknown | Unknown | Unknown |
-| **AstroCave** | Unknown | Unknown | Unknown | Unknown |
-| **OracleEVM** | Unknown | Unknown | Unknown | Unknown |
-| **SubnetX** | Unknown | Unknown | Unknown | Unknown |
-| **subnet.** | Unknown | Unknown | Unknown | Unknown |
-| **SongRise** | Unknown | Unknown | Unknown | Unknown |
-| **NFTPawn** | Unknown | Unknown | Unknown | Unknown |
-| **CryptoBeatsVR** | Unknown | Unknown | Unknown | Unknown |
-| **Dante Network** | Unknown | Unknown | Unknown | Unknown |
-
-*Note: The detailed metadata (on-chain proof, specific URLs, etc.) for these projects is generally not publicly aggregated in a single searchable index and would require deep-dive research into individual GitHub repositories or hackathon winner announcements for each event. If you need specific details for a particular project, please let me know, and I can perform targeted research.*
+| **Musing** | [musing.io](https://musing.io) | Moralis 1st Prize | Decentralized Q&A | Q&A Mining Protocol |
+| **Snowflakes.network** | [snowflakes.network](https://snowflakes.network) | Moralis 2nd Prize | Web3 Notifications | User-controlled Alerts |
+| **Astrocave Academy** | [astrocave.com](https://astrocave.com) | Moralis 3rd Prize | Gamified DeFi Education | DeFi Portfolio Tracker |
+| **Prisma** | [prisma.florianwinter.com](https://prisma.florianwinter.com) | Top Project | EVM Multi-tool | Integrated Dashboards |
+| **Float Protocol** | [floatprotocol.com](https://floatprotocol.com) | Summit Hackathon Winner | Cross-chain Liquidity | Unified Liquidity Pool |
+| **anyDAO** | [anydao.io](https://anydao.io) | Cross-chain Governance Winner | Cross-chain Voting | Decentralized Governance |
+| **Octo Bridge** | [octobridge.io](https://octobridge.io) | Cross-chain Utility Winner | NFT/Game Utility | Asset Transfer Layer |
+| **NFTPawn** | [nftpawn.com](https://nftpawn.com) | Avalanche Asia Hackathon | NFT Liquidity | NFT-backed Loans |
+| **CryptoBeatsVR** | [cryptobeatsvr.com](https://cryptobeatsvr.com) | GameFi/VR Winner | Immersive GameFi | Blockchain Economies |
+| **Dante Network** | [dante.network](https://dante.network) | Cross-chain Middleware Winner | Cross-chain Infrastructure | Middleware/Interoperability |
