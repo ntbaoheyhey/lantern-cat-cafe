@@ -11,7 +11,8 @@ import {loadRules} from '/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load
 const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??''),sha=b=>createHash('sha256').update(b).digest('hex');
 assert.equal(process.env.CXV_MEDIA_CAT,'both');assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')));
 const buildPath=process.env.CXV_MEDIA_BUILD,build=JSON.parse(await readFile(buildPath));
-const preregPath=resolve(root,'reports/v5/CXV/M-action-label-R1-preregistration.json'),prereg=JSON.parse(await readFile(preregPath));
+const preregPath=resolve(process.env.CXV_ACTION_LABEL_PREREG??resolve(root,'reports/v5/CXV/M-action-label-R2-preregistration.json')),prereg=JSON.parse(await readFile(preregPath));
+assert(prereg.hudPortraitPause?.enabled);
 assert.equal(build.sourceCommit,prereg.sourceCommit);assert.equal(build.indexSha256,prereg.indexSha256);
 const hiddenStyle='.b3-world { visibility: hidden !important; }';
 const cats=['mochi','clover','panko','mallow'];
@@ -60,13 +61,20 @@ async function renderDecoded(page,fixedTime,reduced){
 
 async function captureCase(page,condition,fixedTime){
  const folder=resolve(out,condition.key);await mkdir(folder,{recursive:false});
+ const hudPortraitPause=await page.evaluate(async()=>{
+  const animations=document.getAnimations().filter(a=>a.effect?.target?.closest('.b3-bottom')&&a.effect.target.matches('.b3-portrait,.b3-portrait-shine')&&!Number.isFinite(a.effect.getComputedTiming().endTime));
+  const records=animations.map(a=>({target:a.effect.target.className,rect:a.effect.target.getBoundingClientRect().toJSON(),observedTime:a.currentTime,duration:a.effect.getComputedTiming().duration}));
+  for(const a of animations){if(!Number.isFinite(a.currentTime))throw Error('Unresolved HUD animation');a.pause();}
+  await Promise.all(animations.map(a=>a.ready));
+  return animations.map((a,i)=>{if(a.playState!=='paused')throw Error('HUD pause not settled');return{...records[i],pausedTime:a.currentTime,playState:a.playState};});
+ });
  const precondition=[];
  for(const variant of ['initial','hidden','restored']){
   const path=resolve(folder,'precondition-'+variant+'.png');await page.screenshot({path,scale:'css',...(variant==='hidden'?{style:hiddenStyle}:{})});
   precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString()});
  }
  const before=await page.evaluate(sample),expectedFrames=Object.fromEntries(['mochi','clover'].map(cat=>[cat,Math.round(before.media[cat].decoded.mediaTime*30)]));
- const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,before,precondition,captures:[]};report.cases.push(entry);await save();
+ const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,hudPortraitPause,before,precondition,captures:[]};report.cases.push(entry);await save();
  assert(before.paused&&before.plan?.skillId===condition.cat+'-'+condition.skill);
  for(const variant of ['baseline','baseline-repeat','labels-hidden','labels-hidden-repeat',...cats.map(cat=>'without-'+cat),'restored']){
   const hidden=variant.startsWith('without-')?variant.slice(8):null,hideLabels=variant.startsWith('labels-hidden')||!!hidden;

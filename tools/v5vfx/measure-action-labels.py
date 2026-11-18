@@ -36,7 +36,8 @@ def stable(state,initial,fixed):
            'rules':state['battle']==initial['battle'],'labels':state['labels']==initial['labels'],
            'paint':state['labelPaintState']==initial['labelPaintState'],
            'clock':state['sceneTime']==initial['sceneTime'] and state['renderTime']==fixed,
-           'host':state['host']==initial['host'],'anchors':state['anchors']==initial['anchors'],'hud':state['hud']==initial['hud']}
+           'host':state['host']==initial['host'],'anchors':state['anchors']==initial['anchors'],'hud':state['hud']==initial['hud'],
+           'animations':state['animations']==initial['animations']}
     for cat in MEDIA:
         a,b=state['media'][cat],initial['media'][cat]
         gates[cat]=bool(a['state']['ready'] and not a['state'].get('failure') and not a['state']['disposed'] and not a['state']['seeking'] and a['planeVisible'] and a['rootVisible'] and a['state']['currentTime']==b['state']['currentTime'] and a['decoded']['mediaTime']==b['decoded']['mediaTime'])
@@ -70,7 +71,7 @@ def main():
             p=Path(cap['path']);assert p.is_relative_to(base) and sha(p)==cap['sha256']
             img=cv2.imread(str(p));assert img.shape==(720,1280,3);assert cap['variant'] not in images;images[cap['variant']]=img
             for when in ('before','after'):state_gates.append({'variant':cap['variant'],'when':when,'gates':stable(cap[when],initial,case['fixedTime'])})
-        row={k:case[k] for k in ('key','mode','cat','skill','ms','frame','fixedTime','expectedFrames')};row.update(controls={},stateGates=state_gates,complete=set(images)==set(VARIANTS),labels=[]);result['cases'].append(row)
+        row={k:case[k] for k in ('key','mode','cat','skill','ms','frame','fixedTime','expectedFrames')};row.update(hudPortraitPause=case.get('hudPortraitPause',[]),controls={},stateGates=state_gates,complete=set(images)==set(VARIANTS),labels=[]);result['cases'].append(row)
         if not row['complete']:row['valid']=False;continue
         for name,a,b in [('baselineRepeat','baseline','baseline-repeat'),('hiddenRepeat','labels-hidden','labels-hidden-repeat'),('restored','baseline','restored')]:row['controls'][name]=stats(delta(images[a],images[b])>0)
         row['valid']=all(x['count']==0 for x in row['controls'].values()) and all(all(s['gates'].values()) for s in state_gates)

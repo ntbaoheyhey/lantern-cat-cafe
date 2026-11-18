@@ -13,7 +13,7 @@
     "relativeTo": "R7",
     "applicationSourceUnchanged": true
   },
-  "pilot": "normal-panko-1:8state samples and one contactpaint case;require exact controls/rules before full16actions. Pixel failures remain outcomes,not capturefailures.",
+  "pilot": "normal-panko-1:7 state samples (0,175,250,350,600,799.9999,800ms) and one contact-paint case; require exact controls/rules before full16actions. Pixel failures remain outcomes,not capturefailures.",
   "fullActions": {
     "cats": [
       "mochi",
@@ -42,5 +42,11 @@
     "Measure M/C labelpaint againstallfourbody contributions atthreshold0/1/2/4;preserve nativeandmedia rectanglefailures.",
     "Review atmost4fresh1024wide sheets after hashduplicate check;no revisits."
   ],
-  "productionAcceptance": false
+  "productionAcceptance": false,
+  "sampleCountCorrection": {
+    "utc": "2026-11-18T14:33:52.285182+00:00",
+    "previousSha256": "a0699952b223bc2213df531bf2d2f82216934b45b663a0d6f8298cf6189b31f4",
+    "frozenPrevious": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-preregistration-original.json",
+    "reason": "Pre-launch arithmetic correction: filtering 1100ms out of an800ms basic leaves7 unique samples; no capture has run."
+  }
 }

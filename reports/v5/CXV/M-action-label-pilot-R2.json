@@ -1,0 +1,806 @@
+{
+  "utc": "2026-11-18T14:35:50.406209+00:00",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "viewport": [
+    1280,
+    720
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r2-143527/report.json",
+    "sha256": "308a3781647cac7728d11d4403bce276462618e3e6ab076a81fc1118119a408d"
+  },
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r2-143527/artifact-verification.json",
+    "sha256": "cf40f44cad5968e2461f3e7145b84dac043fd7f144b791795edb7adb5ddd5910"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r2-143527/harness-provenance.json",
+    "sha256": "a085b09cc65d635b529d38e66f9a1dac1db6a86ce8441d054c0d41e94836f15f"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-action-labels.py",
+    "sha256": "c2ec871c66b42c30cc924aad35e1cf9f13f3329884057c9d5e9270af5d04a9e7"
+  },
+  "runtimeDiagnostic": {
+    "labelTarget": {
+      "dx": -12,
+      "dy": 19,
+      "wrapperSha256": "f4fcfe113d7507d6e87e7fe4a0694f42275f60c2fc75cf3c9744a892673de010"
+    },
+    "hiddenLabelCss": ".b3-world { visibility: hidden !important; }",
+    "hiddenLabelCssSha256": "85522b6a33ec22cac09b1563d7d7b58babc5f0c9404c3953d63d4957099d9873",
+    "bodyIsolation": {
+      "wrapperSha256": "bacd43ac77a4b3c4c0d74ebf48f10ccae18ef6090703810b4cb19b3fb3021efa",
+      "scope": "Hide commissioned media plane or native actor root only during postFx draw,then restore. Native shadow/effects are not isolated."
+    }
+  },
+  "actions": 1,
+  "geometryRows": 7,
+  "capturePass": true,
+  "captureFailure": null,
+  "rulesEqual": true,
+  "cases": [
+    {
+      "key": "normal-panko-1-350",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "frame": 155,
+      "fixedTime": 70.35,
+      "expectedFrames": {
+        "mochi": 47,
+        "clover": 155
+      },
+      "hudPortraitPause": [
+        {
+          "target": "b3-portrait",
+          "rect": {
+            "x": 647,
+            "y": 636.796875,
+            "width": 72,
+            "height": 80,
+            "top": 636.796875,
+            "right": 719,
+            "bottom": 716.796875,
+            "left": 647
+          },
+          "observedTime": 2149.995000007027,
+          "duration": 1200,
+          "pausedTime": 2166.5950000070266,
+          "playState": "paused"
+        },
+        {
+          "target": "b3-portrait-shine",
+          "rect": {
+            "x": 649,
+            "y": 638.796875,
+            "width": 68,
+            "height": 76,
+            "top": 638.796875,
+            "right": 717,
+            "bottom": 714.796875,
+            "left": 649
+          },
+          "observedTime": 2149.995000007027,
+          "duration": 2400,
+          "pausedTime": 2166.5950000070266,
+          "playState": "paused"
+        }
+      ],
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "stateGates": [
+        {
+          "variant": "baseline",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline-repeat",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline-repeat",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden-repeat",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden-repeat",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mochi",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mochi",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-clover",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-clover",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-panko",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-panko",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mallow",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mallow",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "restored",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "restored",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "mochi": true,
+            "clover": true
+          }
+        }
+      ],
+      "complete": true,
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 451.46875,
+            "y": 105.703125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1340,
+                "bbox": [
+                  451,
+                  105,
+                  509,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1266,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1261,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1252,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 313.53125,
+            "y": 370.25,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ],
+      "valid": true,
+      "decodedExact": true,
+      "pixelDifferences": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r2-143527/action-review-143550405847/normal-panko-1-350-differences.npz",
+        "sha256": "fbdd12aa5f2ca9b272be3569293b012076118baa4a3a3e498e5448a51fea8018"
+      },
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 1340,
+        "bbox": [
+          451,
+          105,
+          509,
+          140
+        ]
+      }
+    }
+  ],
+  "geometryFailures": [
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 0,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 175,
+      "labelId": "mochi",
+      "bodies": [
+        {
+          "id": "panko",
+          "area": 113.99003343856202
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 175,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 250,
+      "labelId": "mochi",
+      "bodies": [
+        {
+          "id": "panko",
+          "area": 2176.0
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 250,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "labelId": "mochi",
+      "bodies": [
+        {
+          "id": "panko",
+          "area": 2176.0
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1011.3807012298375
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 600,
+      "labelId": "mochi",
+      "bodies": [
+        {
+          "id": "panko",
+          "area": 768.50267681765
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 600,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 799.9999,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 800,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r2-143527/action-review-143550405847/normal-panko-1-350.png",
+      "sha256": "29fc55a9149eff2de7065146be9a4d4dc579c433885da352aec0557c0420faa4",
+      "dimensions": [
+        1024,
+        600
+      ],
+      "caseKey": "normal-panko-1-350",
+      "views": 0,
+      "reviewed": false
+    }
+  ],
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "limits": [
+    "Seeded setup modifies HP/charge/queue,then real legalChoices/act and model.tick;not a naturally reached state.",
+    "Pixel isolation hides the commissioned media plane or native actor root,excluding native shadows and separate VFX.",
+    "Unchanged application source plus explicit Clover(-12,+19) diagnostic. No ordinary-play,seam,matte or laptop acceptance."
+  ],
+  "attributionValid": true,
+  "sampledPaintClear": false
+}

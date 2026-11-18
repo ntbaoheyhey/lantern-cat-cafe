@@ -1,5 +1,6 @@
 # CXV V8 queue — Batch M first
 - OWNER override12:09:40Z: byte cap removed;all historical byte-budget failures are report-only and never block release/art. No new byte optimization required.
+- ACTIVE legal-action R2:pilot1/7rows exactrules+allRGBcontrols;1340Mochilabel/Panko bodypixels at350ms,placement notREADY. Full16 capture now;R1HUDanimation-control failure retained.
 - ACTIVE envelopecandidate:600decodedreferenceframes fullalpha>0support contains912708contributionpixels/18frozenlayouts. Fresh11paired+5expanded validpaint0,actual(-12,+19),allotherlabels/HUD/canvas unchanged;3views once. Noapplicationedit;R7failures retained;legalaction/nativebody next. M-label-envelope-pair-R1.json.
 - ACTIVE R7 native-R1 COMPLETE/FAIL:18valid controls/own0;F297 cross17,synthetic208/69/74. Natural2wins110actions/24ults independent rules exact/0errors;conservative HP failures persist.7fresh sheets viewedonce. Released6301/timing14:13:52Z. Full-body candidate18clear/ordinaryunchanged but57–160px+sideflip=>do notadopt. NEXT conservative fullcycle media envelope+nativeguards study before sourcechange.
 - HISTORICAL static stage remedy:1089 integer shifts on frozen5phase R6 masks;nearest5CSSpx (-3,+4)/(0,+5). No sourcechange/native guarantee;request fresh6301 candidate+heldouts after CXI GPU study. Independent projection audit9analyticcontrolsPASS;live samples pending.
