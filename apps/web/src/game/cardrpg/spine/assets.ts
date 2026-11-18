@@ -16,6 +16,7 @@ import {loadAtlasImage} from './atlas-delivery';
 import {nativeRigDelivery} from './native-rig-loader';
 import {deferredRigFactory} from './deferred-atlas-loader';
 import {loadV5Textures} from './v5-texture-loader';
+import {loadDesignerIdleActor,type DesignerIdleActorMedia} from './designer-idle-actor-loader';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
@@ -84,7 +85,8 @@ export interface DesignerMediaSampleContext {worldTime:number;paused:boolean;fix
 export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
- readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'='puppet';
+ readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'|'media'='puppet';
+ designerIdle?:boolean;designerMedia?:DesignerIdleActorMedia;
  opaqueWorld:OpaqueWorldBounds|undefined;
  faceRegion?:{x:number;y:number;width:number;height:number};
  private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
@@ -105,6 +107,7 @@ export class SpineActor {
   if(this.mesh){this.mesh.update(Math.max(0,at-this.at));this.setOrder(this.order);for(const [socket,bone] of this.boneRefs)this.sockets.get(socket)!.position.set(bone.worldX,bone.worldY,1);}
   if(this.puppet){const clip=({attack:'attack',skill:'cast',ult:'ultimate',hurt:'hit',ko:'KO',appear:'idle','idle-phase2':'idle',enrage:'cast'} as Record<string,string>)[name]??name;animateIllustrated(this.puppet,camera,time,clip,at/duration,reduced,!['idle','idle-phase2','victory'].includes(name),name==='ult');}
   if(this.sequence&&this.plane){const clip=this.sequence.manifest.animations[name]!;this.plane.material.map=this.sequence.textures.get(clip.frames[Math.min(clip.frames.length-1,Math.floor(at*(clip.fps??this.sequence.manifest.fps??24)))]!)!;}
+  this.designerMedia?.sample(this,name,at,duration,reduced,_mediaContext??{worldTime:time,paused:false,fixedTime:false,frozen:false});
   if(!['idle','idle-phase2','victory'].includes(name))this.cursor.advance(this.cues(name),at,this.onCue);
   this.at=at;this.root.updateMatrixWorld(true);void delta;
  }
@@ -116,13 +119,14 @@ export class SpineActor {
   const b=this.poseBounds;b.x=this.boundsOffset.x;b.y=this.boundsOffset.y;b.width=this.boundsSize.x;b.height=this.boundsSize.y;
   return Number.isFinite(b.x+b.y+b.width+b.height)?b:this.bounds;
  }
- dispose(){this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
+ dispose(){this.designerMedia?.dispose();this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
 }
 function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet',options:{deferNativePixels?:boolean}={}):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
  // Craft encounter preparation awaits approved effects; standalone rig previews keep their own loading contract.
  if(options.deferNativePixels)await loadV5Textures(id);
+ if(!preference&&(id==='mochi'||id==='clover'))try{if(await loadDesignerIdleActor(actor))return actor;}catch(error){errors.push(String(error));}
  const designer=unit.designer,sequence=unit.sequence;
  if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
   const data=await loadNativeRig(id,options.deferNativePixels);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);

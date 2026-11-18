@@ -13,9 +13,15 @@ const {createServer}=await import(require.resolve('vite'));
 const engines=require('@playwright/test');
 const work=resolve(root,'work/v5/CXI/batch-m/loader');await mkdir(work,{recursive:true});
 const sha=x=>createHash('sha256').update(x).digest('hex');
+const candidateMode=process.argv.includes('--candidate-mochi');
 const study=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-m-delivery-study.json')));
 const manifests={},routes=new Map();
-for(const {measurement:m} of study.trials){
+if(candidateMode){
+ const receipt=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-m-mochi-candidate.json')));
+ const manifest=JSON.parse(await readFile(receipt.files.find(f=>f.path.endsWith('.json')).path));manifests.mochi=manifest;
+ for(const file of receipt.files){const data=await readFile(file.path);assert.equal(sha(data),file.sha256);routes.set(`/units/mochi/${file.path.split('/').at(-1)}`,{data,type:file.path.endsWith('.mp4')?'video/mp4':file.path.endsWith('.webp')?'image/webp':'application/json'});}
+}
+for(const {measurement:m} of candidateMode?[]:study.trials){
  const id=m.cat,folder=resolve(root,`work/v5/CXI/batch-m/experiments/${id}-384`);
  const video=await readFile(resolve(folder,'premul-mask-256-crf28-srgb.mp4'));
  const [w,h]=id==='mochi'?[312,260]:[212,260];
@@ -28,6 +34,8 @@ for(const {measurement:m} of study.trials){
 const html=`<!doctype html><style>body{margin:0;background:#eef4e8}canvas{display:block}</style><script type="module">
 import * as T from '/@fs/${app}/node_modules/three/build/three.module.js';
 import {DesignerIdleMedia,validateDesignerIdle,designerDrift} from '/src/game/cardrpg/spine/designer-idle-loader.ts';
+import {DesignerIdleActorMedia} from '/src/game/cardrpg/spine/designer-idle-actor-loader.ts';
+import {SPINE_CONFIG} from '/src/game/cardrpg/spine/config.ts';
 window.control=async()=>{
  const renderer=new T.WebGLRenderer({preserveDrawingBuffer:true});renderer.setSize(64,64);document.body.append(renderer.domElement);
  const geometry=new T.PlaneGeometry(),material=new T.MeshBasicMaterial({color:'red'}),plane=new T.Mesh(geometry,material),scene=new T.Scene();scene.add(plane);
@@ -78,6 +86,17 @@ window.run=async (m,mode='normal')=>{
  diff.sort((a,b)=>a-b);const pixel={mae:diff.reduce((a,b)=>a+b,0)/diff.length,p95:diff[Math.floor(diff.length*.95)],transparent,opaque};
  check('shader-matches-native-mask',pixel.mae<3&&pixel.p95<8&&transparent>100&&opaque>100,pixel);
  const capture=renderer.domElement.toDataURL('image/png');
+ let castCapture;
+ if(m.faceROI){
+  const adapter=new DesignerIdleActorMedia(media),actor={unit:{id:m.id},sockets:new Map(Object.keys(SPINE_CONFIG.sockets).map(k=>[k,new T.Object3D()]))};
+  const clock={worldTime:2.5,paused:true,fixedTime:true,frozen:false},time=media.video.currentTime;
+  adapter.sample(actor,'skill',.31,1,false,clock);render();castCapture=renderer.domElement.toDataURL('image/png');
+  check('cast-moves-single-media-mesh',initial.some((v,i)=>Math.abs(v-media.geometry.attributes.position.array[i])>.1));
+  check('cast-feet-locked',actor.sockets.get('feet').position.length()===1,actor.sockets.get('feet').position.toArray());
+  check('cast-preserves-decoded-clock',media.video.currentTime===time);
+  check('face-region-finite',Object.values(actor.faceRegion).every(Number.isFinite)&&actor.faceRegion.width>0,actor.faceRegion);
+  adapter.sample(actor,'skill',1,1,false,clock);render();check('cast-exit-exact',initial.every((v,i)=>v===media.geometry.attributes.position.array[i]));
+ }
  await seek(7,true);check('reduced-holds-zero',media.video.currentTime<.04&&media.video.paused,media.state);
  await seek(3);media.sample({worldTime:8,paused:false,fixedTime:false,frozen:true},false);const frozen=media.video.currentTime;await wait(220);check('frozen-holds',Math.abs(media.video.currentTime-frozen)<.002&&media.video.paused);
  const beforeEvents=events;media.sample({worldTime:3,paused:false,fixedTime:false,frozen:false,playbackRate:1},false);const one=media.video.currentTime;await wait(420);check('normal-playback',media.video.currentTime-one>.25,media.video.currentTime-one);check('frame-invalidations',events-beforeEvents>=5,events-beforeEvents);
@@ -90,7 +109,7 @@ window.run=async (m,mode='normal')=>{
  extension?.loseContext();await until(()=>lost,'context-loss timeout');extension.restoreContext();await until(()=>restored,'context-restore timeout');render();check('context-recovered',renderer.info.render.calls===1&&media.packed.value===1);check('restored-pixels-exact',renderer.domElement.toDataURL('image/png')===beforeRestore);
  check('immutable-base',initial.every((v,i)=>v===media.basePositions[i]));
  media.dispose();media.dispose();render();check('dispose-src',media.state.disposed&&!media.video.getAttribute('src')&&media.video.paused);check('dispose-gpu',renderer.info.memory.textures===0&&renderer.info.memory.geometries===0,renderer.info.memory);renderer.dispose();
- return {mode,checks,capture};
+ return {mode,checks,capture,castCapture};
 };window.harnessReady=true;
 </script>`;
 const server=await createServer({configFile:false,envFile:false,root:app,publicDir:false,appType:'custom',logLevel:'error',server:{host:'127.0.0.1',port:6304,strictPort:true,fs:{allow:[root]}},plugins:[{name:'designer-harness',configureServer(s){s.middlewares.use((req,res,next)=>{
@@ -108,12 +127,14 @@ try{for(const engine of ['chromium','webkit']){
  for(const [cat,manifest] of Object.entries(manifests))for(const mode of ['normal','reject','dispose-early']){
   const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
   try{await page.goto(report.url);await page.waitForFunction(()=>window.harnessReady);const row=await page.evaluate(({manifest,mode})=>window.run(manifest,mode),{manifest,mode});
-   if(row.capture){const png=Buffer.from(row.capture.split(',')[1],'base64');delete row.capture;const file=resolve(work,`${engine}-${cat}.png`);await writeFile(file,png);row.image={path:file,sha256:sha(png),...await sharp(png).metadata()};delete row.image.icc;}
+   for(const key of ['capture','castCapture'])if(row[key]){const png=Buffer.from(row[key].split(',')[1],'base64');delete row[key];const file=resolve(work,`${candidateMode?'candidate-':''}${engine}-${cat}-${key}.png`);await writeFile(file,png);row[key+'Image']={path:file,sha256:sha(png),...await sharp(png).metadata()};delete row[key+'Image'].icc;}
    report.runs.push({engine,cat,...row,errors});console.log(engine,cat,mode,row.checks.filter(c=>!c.pass));
   }catch(e){report.runs.push({engine,cat,mode,error:String(e),errors});console.log(engine,cat,mode,String(e));}finally{await page.close();}
  }}finally{await browser.close();}
 }}finally{await server.close();}
-report.pass=report.runs.length===12&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
-await writeFile(resolve(root,'reports/v5/CXI/evidence/'+(controlOnly?'v8-m-loader-control.json':'v8-m-loader-native.json')),JSON.stringify(report,null,2)+'\n');
+report.pass=report.runs.length===(candidateMode?6:12)&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
+report.candidate=candidateMode;report.adapterSha256=sha(await readFile(resolve(app,'src/game/cardrpg/spine/designer-idle-actor-loader.ts')));
+if(candidateMode)report.purpose='Actual384px candidate isolated native loader+cast; gameplay, cold bytes and art acceptance remain separate';
+await writeFile(resolve(root,'reports/v5/CXI/evidence/'+(controlOnly?'v8-m-loader-control.json':candidateMode?'v8-m-mochi-native.json':'v8-m-loader-native.json')),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({pass:report.pass,runs:report.runs.length,failures:report.runs.flatMap(r=>(r.checks??[]).filter(c=>!c.pass).map(c=>({engine:r.engine,cat:r.cat,...c})))}));
 process.exitCode=report.pass?0:1;

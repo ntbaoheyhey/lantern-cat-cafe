@@ -34,6 +34,7 @@ import {getV5Timeline,skillPoseTime} from '../vfx-layered/skill-timeline';
 import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
+import {hasDesignerIdleBody} from './designer-idle-body';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
@@ -152,8 +153,10 @@ export class SpineScene {
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset,undefined,{deferNativePixels:isCraftOwner(asset)}).then(async actor=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
-    // Accepted designer skeletons/sequences take precedence over generated keys.
-    const drawings=isCraftOwner(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
+    // The media loader marks only a successfully prepared commissioned body.
+    // Failed/unregistered media still uses the existing drawing fallback.
+    const mediaBody=hasDesignerIdleBody(asset,actor);
+    const drawings=!mediaBody&&isCraftOwner(asset)&&actor.source!=='designer'&&actor.source!=='sequence'
      ?await loadDrawnPoseSet(asset).catch(error=>{actor.dispose();throw error;}):undefined;
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
     const craftPose=drawings?new DrawnPoses(actor,drawings):undefined;
@@ -351,7 +354,7 @@ export class SpineScene {
     reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
-    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun'))rootPose=idlePose(worldTime,unit.id);
+    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun')&&!hasDesignerIdleBody(entry.asset,actor))rootPose=idlePose(worldTime,unit.id);
     // A hit hold must also stop the recipient's brace/idle root, otherwise
     // their independent motion adds displacement to the bounded recoil.
     if(damageAge!==undefined&&damageAge>=0&&damageAge<.3)rootPose=neutralPose();

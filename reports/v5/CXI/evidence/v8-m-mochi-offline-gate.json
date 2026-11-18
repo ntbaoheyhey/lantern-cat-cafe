@@ -1,0 +1,109 @@
+{
+  "utc": "2026-11-18T05:25:30.874067+00:00",
+  "kind": "offline-only",
+  "cat": "mochi",
+  "crf": 23,
+  "manifestSha256": "5d09fe4893d74992840137dd3157b39d04fc7f9ba1068d0e94943418837137fe",
+  "checks": [
+    {
+      "name": "hash designer-idle-d315b4bcf78fd068.mp4",
+      "pass": true,
+      "value": 865184
+    },
+    {
+      "name": "hash designer-idle-a19a04def64626b2.webp",
+      "pass": true,
+      "value": 36922
+    },
+    {
+      "name": "hash designer-idle-5d09fe4893d74992.json",
+      "pass": true,
+      "value": 10969
+    },
+    {
+      "name": "ten seconds 300 frames 30fps",
+      "pass": true,
+      "value": {
+        "width": 468,
+        "height": 780,
+        "pix_fmt": "yuv420p",
+        "color_space": "smpte170m",
+        "color_transfer": "iec61966-2-1",
+        "r_frame_rate": "30/1",
+        "duration": "10.000000",
+        "nb_frames": "300"
+      }
+    },
+    {
+      "name": "packed dimensions",
+      "pass": true,
+      "value": [
+        468,
+        780
+      ]
+    },
+    {
+      "name": "video intake <=1MB",
+      "pass": true,
+      "value": 865184
+    },
+    {
+      "name": "explicit BT601 sRGB metadata",
+      "pass": true,
+      "value": {
+        "width": 468,
+        "height": 780,
+        "pix_fmt": "yuv420p",
+        "color_space": "smpte170m",
+        "color_transfer": "iec61966-2-1",
+        "r_frame_rate": "30/1",
+        "duration": "10.000000",
+        "nb_frames": "300"
+      }
+    },
+    {
+      "name": "mask mean <=2 levels",
+      "pass": true,
+      "value": 1.1815235769748689
+    },
+    {
+      "name": "foreground white-composite mean <=3 levels",
+      "pass": false,
+      "value": 4.742779040336609
+    },
+    {
+      "name": "edge frame maximum <=15 levels",
+      "pass": true,
+      "value": 10.931300163269043
+    },
+    {
+      "name": "face loop <=1.5x adjacentP95 +1",
+      "pass": true,
+      "value": {
+        "seamMAE": 4.712237358093262,
+        "adjacentP95": 4.641204738616943,
+        "ratio": 1.0153047804345485
+      }
+    },
+    {
+      "name": "tail loop <=1.5x adjacentP95 +1",
+      "pass": true,
+      "value": {
+        "seamMAE": 9.418103218078613,
+        "adjacentP95": 8.092596244812011,
+        "ratio": 1.1637925497786148
+      }
+    },
+    {
+      "name": "prop loop <=1.5x adjacentP95 +1",
+      "pass": true,
+      "value": {
+        "seamMAE": 3.862969398498535,
+        "adjacentP95": 15.781541347503662,
+        "ratio": 0.2447777003169328
+      }
+    }
+  ],
+  "pass": false,
+  "nativeAssetAcceptance": false
+}

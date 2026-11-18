@@ -6,6 +6,9 @@ export interface DesignerIdleManifest {
  width:number;height:number;opaqueHeight:number;foot:[number,number];duration:10;fps:30;frames:300;
  sourceSha256:string;videoSha256:string;posterSha256:string;videoBytes:number;
  sockets:Record<string,[number,number]>;
+ opaqueBounds?:[number,number,number,number];faceROI?:[number,number,number,number];
+ socketTracks?:Partial<Record<'head'|'prop',[number,number][]>>;
+ socketChannels?:Record<string,'head'|'prop'>;
 }
 export interface DesignerIdleClock {
  worldTime:number;paused:boolean;fixedTime:boolean;frozen:boolean;playbackRate?:number;
@@ -23,6 +26,15 @@ export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManife
  for(const key of ['root','hip','head','hp-anchor','vfx-origin','main-hand','off-hand']){
   const xy=m.sockets?.[key];if(!Array.isArray(xy)||xy.length!==2||!xy.every(Number.isFinite))throw Error(`Missing designer socket ${key}`);
  }
+ for(const [name,rect]of [['opaqueBounds',m.opaqueBounds],['faceROI',m.faceROI]] as const){
+  if(rect&&(!Array.isArray(rect)||rect.length!==4||!rect.every(Number.isFinite)||rect[0]<0||rect[1]<0||rect[2]<=0||rect[3]<=0))throw Error(`Invalid designer ${name}`);
+ }
+ if(m.opaqueBounds&&(m.opaqueBounds[2]<=m.opaqueBounds[0]||m.opaqueBounds[3]<=m.opaqueBounds[1]||m.opaqueBounds[2]>m.width||m.opaqueBounds[3]>m.height))throw Error('Invalid designer opaque bounds');
+ if(m.faceROI&&(m.faceROI[0]+m.faceROI[2]>m.width||m.faceROI[1]+m.faceROI[3]>m.height))throw Error('Invalid designer face ROI');
+ for(const [channel,frames]of Object.entries(m.socketTracks??{})){
+  if(!['head','prop'].includes(channel)||!Array.isArray(frames)||frames.length!==300||frames.some(xy=>!Array.isArray(xy)||xy.length!==2||!xy.every(Number.isFinite)))throw Error('Invalid designer socket track');
+ }
+ for(const [socket,channel]of Object.entries(m.socketChannels??{}))if(!m.sockets[socket]||!m.socketTracks?.[channel])throw Error('Invalid designer socket channel');
  return m;
 }
 export const designerPhase=(time:number,duration=10)=>((time%duration)+duration)%duration;

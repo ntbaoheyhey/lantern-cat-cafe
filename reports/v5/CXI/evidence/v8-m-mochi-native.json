@@ -1,0 +1,650 @@
+{
+  "utc": "2026-11-18T05:25:51.675Z",
+  "source": "e88a971c4af85dcb4477180937ee2f664980edb1",
+  "loaderSha256": "1ab51861041be71240c7264783ee43d15a35792b0e0b7b42978278453d5fcc40",
+  "url": "http://127.0.0.1:6304/",
+  "viewport": [
+    1280,
+    720
+  ],
+  "purpose": "Actual384px candidate isolated native loader+cast; gameplay, cold bytes and art acceptance remain separate",
+  "runs": [
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.0583,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 0.27532074294138326,
+            "p95": 0.20948568901377485,
+            "transparent": 104233,
+            "opaque": 72340
+          }
+        },
+        {
+          "name": "cast-moves-single-media-mesh",
+          "pass": true
+        },
+        {
+          "name": "cast-feet-locked",
+          "pass": true,
+          "detail": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "cast-preserves-decoded-clock",
+          "pass": true
+        },
+        {
+          "name": "face-region-finite",
+          "pass": true,
+          "detail": {
+            "x": -114.43332858832834,
+            "y": 283.95859320435505,
+            "width": 263.6983192932342,
+            "height": 181.15015174859366
+          }
+        },
+        {
+          "name": "cast-exit-exact",
+          "pass": true
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.4222999999999999
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 13
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.7046999999999999
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.1382,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "captureImage": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/candidate-chromium-mochi-capture.png",
+        "sha256": "397f19d388144d6d0f6da8cca798048b37d3c912c80aadefea4b18a65277d81c",
+        "format": "png",
+        "size": 210473,
+        "width": 468,
+        "height": 390,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 468,
+          "height": 390
+        }
+      },
+      "castCaptureImage": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/candidate-chromium-mochi-castCapture.png",
+        "sha256": "8fca45fca4d0baed7a67360af3022066f3714c9dbfa01febee9015aa557f022c",
+        "format": "png",
+        "size": 209348,
+        "width": 468,
+        "height": 390,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 468,
+          "height": 390
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.008927541994755723,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 0.8433594057530924,
+            "p95": 4,
+            "transparent": 104233,
+            "opaque": 72340
+          }
+        },
+        {
+          "name": "cast-moves-single-media-mesh",
+          "pass": true
+        },
+        {
+          "name": "cast-feet-locked",
+          "pass": true,
+          "detail": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "cast-preserves-decoded-clock",
+          "pass": true
+        },
+        {
+          "name": "face-region-finite",
+          "pass": true,
+          "detail": {
+            "x": -114.43332858832834,
+            "y": 283.95859320435505,
+            "width": 263.6983192932342,
+            "height": 181.15015174859366
+          }
+        },
+        {
+          "name": "cast-exit-exact",
+          "pass": true
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.41440337466155786
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 11
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.6254602919914731
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.11906637433564643,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "captureImage": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/candidate-webkit-mochi-capture.png",
+        "sha256": "8a7b3308d8d22a7b186361d801206ad978ec9915fa77238e9d396b9fb08734bd",
+        "format": "png",
+        "size": 193068,
+        "width": 468,
+        "height": 390,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 468,
+          "height": 390
+        },
+        "exif": {
+          "type": "Buffer",
+          "data": [
+            77,
+            77,
+            0,
+            42,
+            0,
+            0,
+            0,
+            8,
+            0,
+            1,
+            135,
+            105,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            160,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            160,
+            2,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            212,
+            160,
+            3,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            134,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "castCaptureImage": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/candidate-webkit-mochi-castCapture.png",
+        "sha256": "a2f2e3f6514c645b79909c00f4423aca57bb79d3aee50f603413aee607ccbe41",
+        "format": "png",
+        "size": 190390,
+        "width": 468,
+        "height": 390,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 468,
+          "height": 390
+        },
+        "exif": {
+          "type": "Buffer",
+          "data": [
+            77,
+            77,
+            0,
+            42,
+            0,
+            0,
+            0,
+            8,
+            0,
+            1,
+            135,
+            105,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            160,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            160,
+            2,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            212,
+            160,
+            3,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            134,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "pass": true,
+  "candidate": true,
+  "adapterSha256": "9f213e409ebe78dcff0a3d6577834e46440e3d13129712edddfa4c7c362f7bca"
+}
