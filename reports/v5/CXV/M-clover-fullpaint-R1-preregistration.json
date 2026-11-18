@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-18T15:45:26.333842+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "observation": "Clover drop-shadow reaches5px beyondDOM in new10phase pilot. Strict painted support fails even when exactDOM labels clear. Fullpaint followsCSSalpha,notborderbox. Retain all failures.",
+  "inputs": [
+    "work/v5/CXV/batch-m/action-label-full-r2-143611",
+    "work/v5/CXV/batch-m/action-label-recovery-r3-144918",
+    "work/v5/CXV/batch-m/label-envelope-pair-r1-142325/candidate",
+    "work/v5/CXV/batch-m/label-envelope-pair-r1-142325/expanded-status",
+    "work/v5/CXV/batch-m/label-staging-pilot-r2-151636"
+  ],
+  "observationPass": "Before fitting, hash all masks, report paint outside all labels withpadding0..10. Require all paint within10px and disjoint Clover padded10 from otherlabel padded10;otherwise no fit.",
+  "grid": {
+    "additionalDx": [
+      -24,
+      24
+    ],
+    "additionalDy": [
+      -24,
+      24
+    ],
+    "candidates": 2401,
+    "relativeTo": "existing Clover(-12,+19) relativeR7",
+    "totalOffsetLimitCSSpx": 32
+  },
+  "gate": "Complete Clover labelPaint fromDOM+10 crop,threshold0 with2px dilation of all available bodies. Actual paint boundingbox must clear HUD/faces/otherlabel painted bounds/nativebody+6/viewport. Keep Mochi below max(bodyBottom,feet)+6 and otherlabels unchanged.",
+  "rank": "squared additional displacement,then absolute dy,dx,dy. No grid expansion after failure.",
+  "preserve": "All56validdevelopmentcases used;no independent validation claim. CXI full16 raw/audits reserved;do not consume forfitting. No sourceedit,images or capture inthis study.",
+  "next": "Frozen winner requires unchanged-layout replay, unseen action/idle/status paint withcomplete support and nativeguards onnew6301lease. Retain failure if no solution."
+}
