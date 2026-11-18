@@ -17,6 +17,7 @@ const transparentWorkPrototype=process.env.CXV_TRANSPARENT_WORK==='1';
 const drawingResetMode=process.env.CXV_DRAWING_RESET??null;
 const offlineNumberMode=process.env.CXV_OFFLINE_NUMBER??null;
 const cloverLeafMode=process.env.CXV_CLOVER_LEAF??null;
+const shaderPreparationMode=process.env.CXV_SHADER_PREPARE??null;
 if(cloverLeafMode&&(!['baseline','leaf'].includes(cloverLeafMode)||production||localProduction||offlineNumberMode||drawingResetMode||facePrototype||outerPrototype||transparentWorkPrototype))throw Error('Clover leaf study requires isolated candidate Vite');
 if(offlineNumberMode&&(!['baseline','baked'].includes(offlineNumberMode)||drawingResetMode||production))throw Error('Invalid offline-number study mode');
 if(drawingResetMode&&!['baseline','coalesced'].includes(drawingResetMode))throw Error('Invalid drawing-reset mode');
@@ -32,6 +33,7 @@ if(pendingBatch&&!['on','off'].includes(pendingBatch))throw Error('CXV_PENDING_B
 if(pendingBatch&&(production||localProduction))throw Error('Pending-label module experiment requires the candidate Vite server');
 if(facePrototype&&facePrototype!=='compact')throw Error('CXV_FACE_PROTOTYPE must be compact');
 if(numberMetricsMode&&!['on','off'].includes(numberMetricsMode))throw Error('CXV_NUMBER_METRICS must be on or off');
+if(shaderPreparationMode&&(!['baseline','compile'].includes(shaderPreparationMode)||!localProduction||production||numberMetricsMode||facePrototype||outerPrototype||transparentWorkPrototype||drawingResetMode||offlineNumberMode||cloverLeafMode||pendingBatch||hudMode||labelSearchMode))throw Error('Shader preparation requires the unchanged local production artifact');
 const report={numberMetricsMode,utc:new Date().toISOString(),source:execFileSync('git',production?['-C',integration,'rev-parse','HEAD']:['rev-parse','HEAD'],{encoding:'utf8'}).trim(),...runtimeEvidence(),production,hardware:execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim(),viewport:{width:1280,height:720},method:'Seeded level6 boss fixture, then normal automatic rule-selected play at speed1 with actual scene/model requestAnimationFrame loop;32s wall time per CPU rate. No plan replay, fixed clock, synthesized events, or accelerated model steps. Fixture setup is not ordinary account progression. 4x CPU is a stress proxy, not another physical laptop. CPU render submission excludes GPU completion. Screenshots taken only after measurement.',runs:[],errors:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.facePrototype=facePrototype;
@@ -46,9 +48,10 @@ report.layoutProfile=layoutProfile;
 report.localProduction=localProduction;
 report.labelSearchMode=labelSearchMode;report.labelSearchPaired=labelSearchPaired;
 report.cloverLeafMode=cloverLeafMode;
+report.shaderPreparationMode=shaderPreparationMode;
 try{
  for(const rate of process.env.CXV_PROFILE||process.env.CXV_STRESS_ONLY==='1'?[4]:[1,4]){
-  let pendingOverride,hudOverride,labelSearchOverride,offlineNumberPreparation,cloverLeafPreparation;
+  let pendingOverride,hudOverride,labelSearchOverride,offlineNumberPreparation,cloverLeafPreparation,shaderPreparation;
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:pendingBatch||hudMode||labelSearchMode?async page=>{
    if(pendingBatch){const {installPendingLabelOverride}=await import('./pending-label-override.mjs');pendingOverride=await installPendingLabelOverride(page,{batch:pendingBatch==='on'});}
    if(hudMode){const {installHudGeometryOverride}=await import('./hud-geometry-override.mjs');hudOverride=await installHudGeometryOverride(page,{mode:hudMode});}
@@ -62,6 +65,11 @@ try{
   report.url=page.url();const cdp=await page.context().newCDPSession(page);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   await cdp.send('Emulation.setCPUThrottlingRate',{rate});
+  if(shaderPreparationMode){
+   const {prepareShaderPrograms}=await import('./shader-preparation-prototype.mjs');await cdp.send('Performance.enable');const before=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(r=>[r.name,r.value]));
+   shaderPreparation=await prepareShaderPrograms(page,{active:shaderPreparationMode==='compile'});
+   const after=Object.fromEntries((await cdp.send('Performance.getMetrics')).metrics.map(r=>[r.name,r.value]));shaderPreparation.taskElapsedMs=(after.TaskDuration-before.TaskDuration)*1000;shaderPreparation.scriptElapsedMs=(after.ScriptDuration-before.ScriptDuration)*1000;
+  }
   if(cloverLeafMode){const {installCloverLeafPrototype}=await import('./clover-leaf-prototype.mjs');cloverLeafPreparation=await installCloverLeafPrototype(page,{active:cloverLeafMode==='leaf'});}
   if(offlineNumberMode){
    const {installOfflineNumberPrototype}=await import('./offline-number-prototype.mjs');
@@ -124,6 +132,7 @@ try{
   if(drawingResetMode){run.drawingReset=await page.evaluate(()=>window.__cxvDrawingReset.variants.map(({id,unit,drawingCalls,setupCalls,skipped,inActor})=>({id,unit,drawingCalls,setupCalls,skipped,inActor})));if(run.drawingReset.some(r=>r.inActor!==0))errors.push('Drawing-reset guard leaked');}
   if(offlineNumberMode){run.offlineNumberPreparation=offlineNumberPreparation;run.offlineNumber=await page.evaluate(()=>{const p=window.__cxvOfflineNumber;return{seeded:p.seeded,served:p.served,calls:p.calls};});if(offlineNumberMode==='baked'&&(!run.offlineNumber.seeded||!run.offlineNumber.served))errors.push('Offline number study did not activate');}
   if(cloverLeafMode)run.cloverLeafPreparation=cloverLeafPreparation;
+  if(shaderPreparationMode){const {finishShaderPrograms}=await import('./shader-preparation-prototype.mjs');run.shaderPreparation=shaderPreparation;run.shaderPlay=await finishShaderPrograms(page);if(!run.shaderPlay.checksEnabled||run.shaderPlay.calls.some(c=>[0x8B81,0x8B82].includes(c.parameter)&&c.result===false||c.name.endsWith('InfoLog')&&c.result?.length>0))errors.push('Shader diagnostics failed');}
   run.drawingWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.vertexWeights?.size??0,bytes:[...(e.craftPose?.drawing.vertexWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   if(facePrototype)run.prototypeWeights=await page.evaluate(()=>[...window.__depthScene.actors].map(([id,e])=>({id,poses:e.craftPose?.drawing.__cxvFaceWeights?.size??0,bytes:[...(e.craftPose?.drawing.__cxvFaceWeights?.values()??[])].reduce((sum,w)=>sum+w.data.byteLength,0)})));
   await page.screenshot({path:resolve(out,`boss-${rate}x.png`)});

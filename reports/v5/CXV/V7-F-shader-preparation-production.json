@@ -1,0 +1,3103 @@
+{
+  "utc": "2026-11-18T01:36:01.422Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "method": "Six sequential alternating trials; one native unchanged production artifact; actual seeded boss rule-selected play at speed1 for32s/rate. compileAsync is invoked only by the harness while paused before play. Both modes retain shader diagnostics and wrappers. 1x/4x CPU;4x is a stress proxy. Three-trial group medians.",
+  "limits": "TaskDuration is main-thread elapsed task time, not exclusive CPU or GPU completion. Preparation and play windows include protocol overhead; fixture loading is outside both. Frame headline excludes first2000ms; startup and whole-run tails retained. Screenshots after measurement. No independent judge acceptance or native proposal.",
+  "series": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/series.json",
+    "sha256": "ab2a04063fc48fc0389b6ba37654de57dc9cbc1dddd1fff53174e6d639346248",
+    "utc": "2026-11-18T01:28:38.650Z",
+    "ended": "2026-11-18T01:35:37.540Z",
+    "order": [
+      "baseline",
+      "compile",
+      "compile",
+      "baseline",
+      "baseline",
+      "compile"
+    ]
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/build.json",
+    "sha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8"
+  },
+  "artifactFilesVerified": 3764,
+  "verifiedToolSnapshots": [
+    {
+      "name": "run-shader-preparation-production.mjs",
+      "sha256": "3fa48de6787505cfe347ba8f0691079f3c4d290ee26b708d04fac86fc3d2a19e"
+    },
+    {
+      "name": "shader-preparation-prototype.mjs",
+      "sha256": "89a407f38ced796649331b2b6ad5c46b24c90008c8dcd4158f38045fb1ee9a49"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "a0d406c6f75d4021af47998dd605ad879412bfa3a8375bc2575cf05d08b2716e"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+    }
+  ],
+  "behavior": {
+    "initial": {
+      "round": 1,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 736,
+          "charge": 35
+        },
+        {
+          "id": "soot",
+          "hp": 568,
+          "charge": 35
+        },
+        {
+          "id": "clover",
+          "hp": 477,
+          "charge": 35
+        },
+        {
+          "id": "panko",
+          "hp": 753,
+          "charge": 35
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 1398,
+          "charge": 15
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "hp": 987,
+          "charge": 15
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "hp": 987,
+          "charge": 15
+        }
+      ],
+      "log": 0
+    },
+    "final": {
+      "round": 4,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 736,
+          "charge": 100
+        },
+        {
+          "id": "soot",
+          "hp": 568,
+          "charge": 100
+        },
+        {
+          "id": "clover",
+          "hp": 477,
+          "charge": 96
+        },
+        {
+          "id": "panko",
+          "hp": 753,
+          "charge": 58
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 765,
+          "charge": 52
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "hp": 689,
+          "charge": 100
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "hp": 845,
+          "charge": 100
+        }
+      ],
+      "log": 171,
+      "result": null,
+      "screen": "map"
+    },
+    "plans": [
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      }
+    ]
+  },
+  "summary": [
+    {
+      "rate": 1,
+      "mode": "baseline",
+      "trials": 3,
+      "preparationCallMs": 0,
+      "preparationWallMs": 0,
+      "preparationTaskMs": 1.3989999999999998,
+      "preparationPlusPlayTaskMs": 9220.024000000001,
+      "playTaskMs": 9218.977,
+      "programsAdded": 0,
+      "programsAfterPlay": 17,
+      "playProgramLogMs": 34.10000002384186,
+      "playProgramLogCount": 16,
+      "startupFrameP95Ms": 16.800000000000182,
+      "startupFrameMaxMs": 33.40000000000009,
+      "startupSubmitMaxMs": 39.70000000298023,
+      "startupOver50": 0,
+      "wholeFrameP95Ms": 16.799999999995634,
+      "wholeOver50": 0,
+      "steadyFrameP95Ms": 16.799999999995634,
+      "steadyOver50": 0,
+      "submitMedianMs": 2.7000000029802322,
+      "focusMedianMs": 4,
+      "focusRenderMedianMs": 10.399999991059303
+    },
+    {
+      "rate": 1,
+      "mode": "compile",
+      "trials": 3,
+      "preparationCallMs": 5.0999999940395355,
+      "preparationWallMs": 16.299999997019768,
+      "preparationTaskMs": 6.901999999999999,
+      "preparationPlusPlayTaskMs": 9514.761,
+      "playTaskMs": 9504.949,
+      "programsAdded": 14,
+      "programsAfterPlay": 21,
+      "playProgramLogMs": 13.599999949336052,
+      "playProgramLogCount": 16,
+      "startupFrameP95Ms": 16.799999999999727,
+      "startupFrameMaxMs": 33.30000000000018,
+      "startupSubmitMaxMs": 39.70000000298023,
+      "startupOver50": 0,
+      "wholeFrameP95Ms": 16.799999999995634,
+      "wholeOver50": 0,
+      "steadyFrameP95Ms": 16.799999999995634,
+      "steadyOver50": 0,
+      "submitMedianMs": 2.800000011920929,
+      "focusMedianMs": 4,
+      "focusRenderMedianMs": 10.399999991059303
+    },
+    {
+      "rate": 4,
+      "mode": "baseline",
+      "trials": 3,
+      "preparationCallMs": 0,
+      "preparationWallMs": 0,
+      "preparationTaskMs": 2.4699999999999998,
+      "preparationPlusPlayTaskMs": 31834.392,
+      "playTaskMs": 31831.922,
+      "programsAdded": 0,
+      "programsAfterPlay": 17,
+      "playProgramLogMs": 28.399999991059303,
+      "playProgramLogCount": 16,
+      "startupFrameP95Ms": 66.59999999999991,
+      "startupFrameMaxMs": 166.69999999999982,
+      "startupSubmitMaxMs": 126.29999999701977,
+      "startupOver50": 4,
+      "wholeFrameP95Ms": 33.400000000001455,
+      "wholeOver50": 17,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "steadyOver50": 13,
+      "submitMedianMs": 12.400000005960464,
+      "focusMedianMs": 18.80000001192093,
+      "focusRenderMedianMs": 42
+    },
+    {
+      "rate": 4,
+      "mode": "compile",
+      "trials": 3,
+      "preparationCallMs": 15.899999991059303,
+      "preparationWallMs": 26.700000002980232,
+      "preparationTaskMs": 21.996,
+      "preparationPlusPlayTaskMs": 31849.722,
+      "playTaskMs": 31825.955,
+      "programsAdded": 14,
+      "programsAfterPlay": 21,
+      "playProgramLogMs": 16.100000008940697,
+      "playProgramLogCount": 16,
+      "startupFrameP95Ms": 66.69999999999982,
+      "startupFrameMaxMs": 166.69999999999982,
+      "startupSubmitMaxMs": 130,
+      "startupOver50": 5,
+      "wholeFrameP95Ms": 33.400000000001455,
+      "wholeOver50": 15,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "steadyOver50": 10,
+      "submitMedianMs": 12.599999994039536,
+      "focusMedianMs": 19.799999997019768,
+      "focusRenderMedianMs": 42.3999999910593
+    }
+  ],
+  "trials": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-18T01:28:38.974Z",
+      "ended": "2026-11-18T01:29:49.255Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline/report.json",
+      "rawSha256": "cc6f148ebf1cf0b6e6c9ca1b5d59b0d7ab6d0b6b6f79f030a757d52af90b1498",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32000.90000000596,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 1.0470000000000002,
+        "scriptElapsedMs": 0.13699999999999998
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 39.39999997615814,
+            "maxMs": 3.3999999910593033
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 2.000000014901161,
+            "maxMs": 0.10000000894069672
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 1.2999999821186066,
+            "maxMs": 0.10000000894069672
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9220.024000000001,
+      "playTaskMs": 9218.977,
+      "layout": {
+        "LayoutCount": 2743,
+        "LayoutDuration": 0.094528,
+        "RecalcStyleCount": 5681,
+        "RecalcStyleDuration": 0.58087,
+        "TaskDuration": 9.218977
+      },
+      "firstRenderLatencyMs": 14,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 16.800000000000182,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 13.599999994039536,
+          "p99": 20.899999991059303,
+          "max": 38.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.299999997019768,
+          "p99": 13.599999994039536,
+          "max": 38.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.699999988079071,
+          "p95": 4.200000002980232,
+          "p99": 12.5,
+          "max": 20.5
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 3.7999999970197678,
+        "p95": 5.700000002980232,
+        "p99": 5.700000002980232,
+        "max": 5.700000002980232
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10,
+        "p95": 17,
+        "p99": 17,
+        "max": 17
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9356.79999999702,
+          "renderSerial": 560,
+          "skillId": "panko-4",
+          "age": 16.600000000000364,
+          "cpuMs": 5.700000002980232,
+          "renderCpuMs": 15.5
+        },
+        {
+          "wallMs": 14635.20000000298,
+          "renderSerial": 877,
+          "skillId": "mochi-4",
+          "age": 16.599999999998545,
+          "cpuMs": 3.7999999970197678,
+          "renderCpuMs": 9.699999988079071
+        },
+        {
+          "wallMs": 16943.40000000596,
+          "renderSerial": 1015,
+          "skillId": "soot-4",
+          "age": 16.700000000000728,
+          "cpuMs": 3.7000000029802322,
+          "renderCpuMs": 17
+        },
+        {
+          "wallMs": 19219.40000000596,
+          "renderSerial": 1152,
+          "skillId": "clover-4",
+          "age": 16.599999999998545,
+          "cpuMs": 3.7000000029802322,
+          "renderCpuMs": 9.5
+        },
+        {
+          "wallMs": 28067.29999999702,
+          "renderSerial": 1683,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.700000002980232,
+          "renderCpuMs": 10
+        },
+        {
+          "wallMs": 30367.60000000894,
+          "renderSerial": 1821,
+          "skillId": "yarnAttack",
+          "age": 16.69999999999709,
+          "cpuMs": 3.3999999910593033,
+          "renderCpuMs": 9.899999991059303
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-18T01:28:38.974Z",
+      "ended": "2026-11-18T01:29:49.255Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline/report.json",
+      "rawSha256": "cc6f148ebf1cf0b6e6c9ca1b5d59b0d7ab6d0b6b6f79f030a757d52af90b1498",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32025.59999999404,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 6.311,
+        "scriptElapsedMs": 1.443
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 1,
+            "maxMs": 1
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 30.299999967217445,
+            "maxMs": 3.2000000029802322
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 5.899999991059303,
+            "maxMs": 1
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 4.200000017881393,
+            "maxMs": 0.8999999910593033
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31818.258,
+      "playTaskMs": 31811.947,
+      "layout": {
+        "LayoutCount": 2146,
+        "LayoutDuration": 0.409122,
+        "RecalcStyleCount": 4487,
+        "RecalcStyleDuration": 2.295881,
+        "TaskDuration": 31.811947
+      },
+      "firstRenderLatencyMs": 21.5,
+      "startup": {
+        "samples": 67,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.59999999999991,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 15.200000002980232,
+          "p95": 45,
+          "p99": 126.29999999701977,
+          "max": 126.29999999701977
+        },
+        "over33": 11,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1504,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999991,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 12.400000005960464,
+          "p95": 19.5,
+          "p99": 41.900000005960464,
+          "max": 126.29999999701977
+        },
+        "over33": 53,
+        "over50": 19
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1437,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.10000000000218,
+          "max": 99.90000000000146
+        },
+        "submitCpuMs": {
+          "median": 12.299999997019768,
+          "p95": 18.899999991059303,
+          "p99": 41,
+          "max": 57.3999999910593
+        },
+        "over33": 42,
+        "over50": 14
+      },
+      "focusEntryCpuMs": {
+        "median": 18.700000002980232,
+        "p95": 22.100000008940697,
+        "p99": 22.100000008940697,
+        "max": 22.100000008940697
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 42,
+        "p95": 57.3999999910593,
+        "p99": 57.3999999910593,
+        "max": 57.3999999910593
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9730.39999999106,
+          "renderSerial": 429,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 22.100000008940697,
+          "renderCpuMs": 54.400000005960464
+        },
+        {
+          "wallMs": 15137.59999999404,
+          "renderSerial": 699,
+          "skillId": "mochi-4",
+          "age": 16.599999999998545,
+          "cpuMs": 18.700000002980232,
+          "renderCpuMs": 42
+        },
+        {
+          "wallMs": 17497.09999999404,
+          "renderSerial": 810,
+          "skillId": "soot-4",
+          "age": 16.69999999999709,
+          "cpuMs": 18.400000005960464,
+          "renderCpuMs": 57.3999999910593
+        },
+        {
+          "wallMs": 19819.09999999404,
+          "renderSerial": 895,
+          "skillId": "clover-4",
+          "age": 16.700000000000728,
+          "cpuMs": 17,
+          "renderCpuMs": 38.6000000089407
+        },
+        {
+          "wallMs": 28855.29999999702,
+          "renderSerial": 1342,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 20.200000002980232,
+          "renderCpuMs": 38.29999999701977
+        },
+        {
+          "wallMs": 31183.09999999404,
+          "renderSerial": 1463,
+          "skillId": "yarnAttack",
+          "age": 16.69999999999709,
+          "cpuMs": 17.400000005960464,
+          "renderCpuMs": 36.20000000298023
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "mode": "compile",
+      "rate": 1,
+      "utc": "2026-11-18T01:29:49.520Z",
+      "ended": "2026-11-18T01:30:58.626Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile/report.json",
+      "rawSha256": "be25dade1cbc37267c593d91c47d18cabdd79ea322f34c48dfa5e9d46068cbb6",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32001.09999999404,
+      "preparation": {
+        "active": true,
+        "callMs": 7.100000008940697,
+        "elapsedMs": 17.900000005960464,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 9.812,
+        "scriptElapsedMs": 0.28400000000000003
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 155,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 13.599999949336052,
+            "maxMs": 2.0999999940395355
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 1.9000000804662704,
+            "maxMs": 0.20000000298023224
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 0.5,
+            "maxMs": 0.10000000894069672
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9514.761,
+      "playTaskMs": 9504.949,
+      "layout": {
+        "LayoutCount": 2749,
+        "LayoutDuration": 0.093599,
+        "RecalcStyleCount": 5679,
+        "RecalcStyleDuration": 0.59527,
+        "TaskDuration": 9.504949
+      },
+      "firstRenderLatencyMs": 4.0999999940395355,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 14.900000005960464,
+          "p99": 19.899999991059303,
+          "max": 38.20000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.800000000000182,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.399999991059303,
+          "p99": 14.200000002980232,
+          "max": 38.20000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.800000000000182,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.299999997019768,
+          "p99": 11.299999997019768,
+          "max": 19.700000002980232
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 4,
+        "p95": 5.799999997019768,
+        "p99": 5.799999997019768,
+        "max": 5.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.400000005960464,
+        "p95": 15.099999994039536,
+        "p99": 15.099999994039536,
+        "max": 15.099999994039536
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9295.40000000596,
+          "renderSerial": 556,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 5.799999997019768,
+          "renderCpuMs": 15.099999994039536
+        },
+        {
+          "wallMs": 14543.5,
+          "renderSerial": 871,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.4000000059604645,
+          "renderCpuMs": 10.400000005960464
+        },
+        {
+          "wallMs": 16848,
+          "renderSerial": 1009,
+          "skillId": "soot-4",
+          "age": 16.69999999999709,
+          "cpuMs": 4,
+          "renderCpuMs": 14.799999997019768
+        },
+        {
+          "wallMs": 19125.79999999702,
+          "renderSerial": 1146,
+          "skillId": "clover-4",
+          "age": 16.599999999998545,
+          "cpuMs": 3.2999999970197678,
+          "renderCpuMs": 8.800000011920929
+        },
+        {
+          "wallMs": 27958.20000000298,
+          "renderSerial": 1676,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 3.8999999910593033,
+          "renderCpuMs": 9
+        },
+        {
+          "wallMs": 30258.79999999702,
+          "renderSerial": 1814,
+          "skillId": "yarnAttack",
+          "age": 16.700000000000728,
+          "cpuMs": 3.5,
+          "renderCpuMs": 10.099999994039536
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "mode": "compile",
+      "rate": 4,
+      "utc": "2026-11-18T01:29:49.520Z",
+      "ended": "2026-11-18T01:30:58.626Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile/report.json",
+      "rawSha256": "be25dade1cbc37267c593d91c47d18cabdd79ea322f34c48dfa5e9d46068cbb6",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32037,
+      "preparation": {
+        "active": true,
+        "callMs": 14.599999994039536,
+        "elapsedMs": 25.700000002980232,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 19.737000000000002,
+        "scriptElapsedMs": 1.428
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 40,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 16.100000008940697,
+            "maxMs": 2
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 4.899999961256981,
+            "maxMs": 0.7000000029802322
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 2.0999999940395355,
+            "maxMs": 0.7000000029802322
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31869.491,
+      "playTaskMs": 31849.754,
+      "layout": {
+        "LayoutCount": 2099,
+        "LayoutDuration": 0.383091,
+        "RecalcStyleCount": 4385,
+        "RecalcStyleDuration": 2.31803,
+        "TaskDuration": 31.849754
+      },
+      "firstRenderLatencyMs": 18.900000005960464,
+      "startup": {
+        "samples": 67,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.70000000000027,
+          "p99": 166.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 15.299999997019768,
+          "p95": 44.3999999910593,
+          "p99": 130,
+          "max": 130
+        },
+        "over33": 10,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1469,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999854,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 12.799999997019768,
+          "p95": 20.099999994039536,
+          "p99": 42.3999999910593,
+          "max": 130
+        },
+        "over33": 58,
+        "over50": 15
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1402,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.099999999998545,
+          "max": 83.39999999999964
+        },
+        "submitCpuMs": {
+          "median": 12.700000002980232,
+          "p95": 19.200000002980232,
+          "p99": 40.29999999701977,
+          "max": 55.79999999701977
+        },
+        "over33": 48,
+        "over50": 10
+      },
+      "focusEntryCpuMs": {
+        "median": 19.200000002980232,
+        "p95": 25.099999994039536,
+        "p99": 25.099999994039536,
+        "max": 25.099999994039536
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 42.3999999910593,
+        "p95": 55.79999999701977,
+        "p99": 55.79999999701977,
+        "max": 55.79999999701977
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9737.5,
+          "renderSerial": 418,
+          "skillId": "panko-4",
+          "age": 16.799999999999272,
+          "cpuMs": 25.099999994039536,
+          "renderCpuMs": 55.79999999701977
+        },
+        {
+          "wallMs": 15164.79999999702,
+          "renderSerial": 684,
+          "skillId": "mochi-4",
+          "age": 16.599999999998545,
+          "cpuMs": 19.200000002980232,
+          "renderCpuMs": 42.3999999910593
+        },
+        {
+          "wallMs": 17532.40000000596,
+          "renderSerial": 790,
+          "skillId": "soot-4",
+          "age": 16.600000000002183,
+          "cpuMs": 18.19999998807907,
+          "renderCpuMs": 55.70000000298023
+        },
+        {
+          "wallMs": 19866.59999999404,
+          "renderSerial": 875,
+          "skillId": "clover-4",
+          "age": 16.700000000000728,
+          "cpuMs": 18.30000001192093,
+          "renderCpuMs": 37.400000005960464
+        },
+        {
+          "wallMs": 28913.40000000596,
+          "renderSerial": 1313,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 21.19999998807907,
+          "renderCpuMs": 40.29999999701977
+        },
+        {
+          "wallMs": 31235.40000000596,
+          "renderSerial": 1430,
+          "skillId": "yarnAttack",
+          "age": 16.599999999998545,
+          "cpuMs": 17,
+          "renderCpuMs": 34.599999994039536
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "mode": "compile",
+      "rate": 1,
+      "utc": "2026-11-18T01:30:58.895Z",
+      "ended": "2026-11-18T01:32:07.936Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/2-compile/report.json",
+      "rawSha256": "9635b4431e6b1b13f18255b8b067f2af8edbe59b1fdfb201d52a6db0bbfb9dcf",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32002.89999999106,
+      "preparation": {
+        "active": true,
+        "callMs": 5.0999999940395355,
+        "elapsedMs": 16.299999997019768,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 6.901999999999999,
+        "scriptElapsedMs": 0.27399999999999997
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 155,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 13.69999997317791,
+            "maxMs": 1.9000000059604645
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 2.19999997317791,
+            "maxMs": 0.20000000298023224
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 0.699999988079071,
+            "maxMs": 0.10000000894069672
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9501.045,
+      "playTaskMs": 9494.143,
+      "layout": {
+        "LayoutCount": 2744,
+        "LayoutDuration": 0.095866,
+        "RecalcStyleCount": 5679,
+        "RecalcStyleDuration": 0.598062,
+        "TaskDuration": 9.494143
+      },
+      "firstRenderLatencyMs": 4.399999991059303,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3.1000000089406967,
+          "p95": 13.899999991059303,
+          "p99": 20.099999994039536,
+          "max": 39.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.8999999910593033,
+          "p95": 4.4000000059604645,
+          "p99": 13.899999991059303,
+          "max": 39.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1801,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.800000011920929,
+          "p95": 4.299999997019768,
+          "p99": 10.399999991059303,
+          "max": 20.100000008940697
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 4.4000000059604645,
+        "p95": 5.0999999940395355,
+        "p99": 5.0999999940395355,
+        "max": 5.0999999940395355
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.399999991059303,
+        "p95": 15.599999994039536,
+        "p99": 15.599999994039536,
+        "max": 15.599999994039536
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9311.79999999702,
+          "renderSerial": 557,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 5.0999999940395355,
+          "renderCpuMs": 14.599999994039536
+        },
+        {
+          "wallMs": 14574.699999988079,
+          "renderSerial": 873,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.4000000059604645,
+          "renderCpuMs": 10.399999991059303
+        },
+        {
+          "wallMs": 16880.5,
+          "renderSerial": 1011,
+          "skillId": "soot-4",
+          "age": 16.600000000002183,
+          "cpuMs": 3.8999999910593033,
+          "renderCpuMs": 15.599999994039536
+        },
+        {
+          "wallMs": 19174.09999999404,
+          "renderSerial": 1149,
+          "skillId": "clover-4",
+          "age": 16.600000000002183,
+          "cpuMs": 4.4000000059604645,
+          "renderCpuMs": 9.799999997019768
+        },
+        {
+          "wallMs": 28005.59999999404,
+          "renderSerial": 1679,
+          "skillId": "panko-4",
+          "age": 16.599999999998545,
+          "cpuMs": 4.5999999940395355,
+          "renderCpuMs": 9.900000005960464
+        },
+        {
+          "wallMs": 30304.09999999404,
+          "renderSerial": 1817,
+          "skillId": "yarnAttack",
+          "age": 16.599999999998545,
+          "cpuMs": 3.2999999970197678,
+          "renderCpuMs": 8.900000005960464
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "mode": "compile",
+      "rate": 4,
+      "utc": "2026-11-18T01:30:58.895Z",
+      "ended": "2026-11-18T01:32:07.936Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/2-compile/report.json",
+      "rawSha256": "9635b4431e6b1b13f18255b8b067f2af8edbe59b1fdfb201d52a6db0bbfb9dcf",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32003.89999999106,
+      "preparation": {
+        "active": true,
+        "callMs": 16.100000008940697,
+        "elapsedMs": 26.700000002980232,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 21.996,
+        "scriptElapsedMs": 1.0859999999999999
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0.7999999970197678,
+            "maxMs": 0.7999999970197678
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "getProgramParameter": {
+            "count": 36,
+            "elapsedMs": 0.29999999701976776,
+            "maxMs": 0.29999999701976776
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 16.30000002682209,
+            "maxMs": 2.800000011920929
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 4.799999997019768,
+            "maxMs": 0.9000000059604645
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 1.800000011920929,
+            "maxMs": 0.7000000029802322
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31813.338,
+      "playTaskMs": 31791.342,
+      "layout": {
+        "LayoutCount": 2132,
+        "LayoutDuration": 0.404021,
+        "RecalcStyleCount": 4453,
+        "RecalcStyleDuration": 2.270035,
+        "TaskDuration": 31.791342
+      },
+      "firstRenderLatencyMs": 20.099999994039536,
+      "startup": {
+        "samples": 67,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 66.69999999999982,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 14.800000011920929,
+          "p95": 51.5,
+          "p99": 126.59999999403954,
+          "max": 126.59999999403954
+        },
+        "over33": 11,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1498,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000218,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 12.599999994039536,
+          "p95": 19.900000005960464,
+          "p99": 41.30000001192093,
+          "max": 126.59999999403954
+        },
+        "over33": 56,
+        "over50": 17
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1431,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 12.5,
+          "p95": 18.900000005960464,
+          "p99": 39.6000000089407,
+          "max": 55.6000000089407
+        },
+        "over33": 45,
+        "over50": 10
+      },
+      "focusEntryCpuMs": {
+        "median": 19.799999997019768,
+        "p95": 23.5,
+        "p99": 23.5,
+        "max": 23.5
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.900000005960464,
+        "p95": 55.6000000089407,
+        "p99": 55.6000000089407,
+        "max": 55.6000000089407
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9751.5,
+          "renderSerial": 432,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 23.5,
+          "renderCpuMs": 53
+        },
+        {
+          "wallMs": 15184.89999999106,
+          "renderSerial": 699,
+          "skillId": "mochi-4",
+          "age": 16.799999999999272,
+          "cpuMs": 19.799999997019768,
+          "renderCpuMs": 41.900000005960464
+        },
+        {
+          "wallMs": 17544.19999998808,
+          "renderSerial": 806,
+          "skillId": "soot-4",
+          "age": 16.599999999998545,
+          "cpuMs": 17.5,
+          "renderCpuMs": 55.6000000089407
+        },
+        {
+          "wallMs": 19866.5,
+          "renderSerial": 892,
+          "skillId": "clover-4",
+          "age": 16.700000000000728,
+          "cpuMs": 15.5,
+          "renderCpuMs": 35.20000000298023
+        },
+        {
+          "wallMs": 29074,
+          "renderSerial": 1347,
+          "skillId": "panko-4",
+          "age": 16.599999999998545,
+          "cpuMs": 19.899999991059303,
+          "renderCpuMs": 37.70000000298023
+        },
+        {
+          "wallMs": 31396,
+          "renderSerial": 1468,
+          "skillId": "yarnAttack",
+          "age": 16.700000000004366,
+          "cpuMs": 14.099999994039536,
+          "renderCpuMs": 31.900000005960464
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-18T01:32:08.213Z",
+      "ended": "2026-11-18T01:33:18.996Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/3-baseline/report.json",
+      "rawSha256": "e6f455aaec260ddee076ef22252f816431d8f94f0dbcac5177cde7b55e64fa04",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32004.20000000298,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 1.4529999999999998,
+        "scriptElapsedMs": 0
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 31.700000047683716,
+            "maxMs": 3.7000000029802322
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 2.299999952316284,
+            "maxMs": 0.20000000298023224
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 0.8000000268220901,
+            "maxMs": 0.20000000298023224
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9335.449,
+      "playTaskMs": 9333.996000000001,
+      "layout": {
+        "LayoutCount": 2740,
+        "LayoutDuration": 0.100976,
+        "RecalcStyleCount": 5672,
+        "RecalcStyleDuration": 0.609545,
+        "TaskDuration": 9.333996
+      },
+      "firstRenderLatencyMs": 7.600000008940697,
+      "startup": {
+        "samples": 116,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 13.300000011920929,
+          "p99": 20.100000008940697,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000291,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.299999997019768,
+          "p99": 13.300000011920929,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1801,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.7999999970197678,
+          "p95": 4.200000002980232,
+          "p99": 11.299999997019768,
+          "max": 20.400000005960464
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 4.4000000059604645,
+        "p95": 5.5,
+        "p99": 5.5,
+        "max": 5.5
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.5,
+        "p95": 17.899999991059303,
+        "p99": 17.899999991059303,
+        "max": 17.899999991059303
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9361.10000000894,
+          "renderSerial": 559,
+          "skillId": "panko-4",
+          "age": 16.600000000000364,
+          "cpuMs": 4.5999999940395355,
+          "renderCpuMs": 13.5
+        },
+        {
+          "wallMs": 14624.90000000596,
+          "renderSerial": 875,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.0999999940395355,
+          "renderCpuMs": 10.200000002980232
+        },
+        {
+          "wallMs": 16931,
+          "renderSerial": 1013,
+          "skillId": "soot-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.4000000059604645,
+          "renderCpuMs": 17.899999991059303
+        },
+        {
+          "wallMs": 19224.30000001192,
+          "renderSerial": 1151,
+          "skillId": "clover-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.199999988079071,
+          "renderCpuMs": 9.799999997019768
+        },
+        {
+          "wallMs": 28089.80000001192,
+          "renderSerial": 1683,
+          "skillId": "panko-4",
+          "age": 16.600000000002183,
+          "cpuMs": 5.5,
+          "renderCpuMs": 10.5
+        },
+        {
+          "wallMs": 30388.40000000596,
+          "renderSerial": 1821,
+          "skillId": "yarnAttack",
+          "age": 16.700000000004366,
+          "cpuMs": 3.5999999940395355,
+          "renderCpuMs": 9
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-18T01:32:08.213Z",
+      "ended": "2026-11-18T01:33:18.996Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/3-baseline/report.json",
+      "rawSha256": "e6f455aaec260ddee076ef22252f816431d8f94f0dbcac5177cde7b55e64fa04",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32022.09999999404,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 2.196,
+        "scriptElapsedMs": 0
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 27.900000005960464,
+            "maxMs": 2.4000000059604645
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 5.100000008940697,
+            "maxMs": 0.7999999970197678
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 4.300000011920929,
+            "maxMs": 0.800000011920929
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31836.367,
+      "playTaskMs": 31834.171,
+      "layout": {
+        "LayoutCount": 2126,
+        "LayoutDuration": 0.394021,
+        "RecalcStyleCount": 4451,
+        "RecalcStyleDuration": 2.326293,
+        "TaskDuration": 31.834170999999998
+      },
+      "firstRenderLatencyMs": 18.899999991059303,
+      "startup": {
+        "samples": 68,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.59999999999991,
+          "p99": 166.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 14.700000002980232,
+          "p95": 48.69999998807907,
+          "p99": 126.09999999403954,
+          "max": 126.09999999403954
+        },
+        "over33": 10,
+        "over50": 4
+      },
+      "wholeRun": {
+        "samples": 1495,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999991,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 12.5,
+          "p95": 19.600000008940697,
+          "p99": 43.70000000298023,
+          "max": 126.09999999403954
+        },
+        "over33": 60,
+        "over50": 17
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1427,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.099999999999454,
+          "max": 99.90000000000146
+        },
+        "submitCpuMs": {
+          "median": 12.400000005960464,
+          "p95": 18.80000001192093,
+          "p99": 41.5,
+          "max": 61.20000000298023
+        },
+        "over33": 50,
+        "over50": 13
+      },
+      "focusEntryCpuMs": {
+        "median": 19.599999994039536,
+        "p95": 24.799999997019768,
+        "p99": 24.799999997019768,
+        "max": 24.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.6000000089407,
+        "p95": 57.6000000089407,
+        "p99": 57.6000000089407,
+        "max": 57.6000000089407
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9728.09999999404,
+          "renderSerial": 430,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 24.799999997019768,
+          "renderCpuMs": 53.599999994039536
+        },
+        {
+          "wallMs": 15121.699999988079,
+          "renderSerial": 695,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 18.900000005960464,
+          "renderCpuMs": 41.6000000089407
+        },
+        {
+          "wallMs": 17480,
+          "renderSerial": 803,
+          "skillId": "soot-4",
+          "age": 16.700000000000728,
+          "cpuMs": 19.599999994039536,
+          "renderCpuMs": 57.6000000089407
+        },
+        {
+          "wallMs": 19792.89999999106,
+          "renderSerial": 887,
+          "skillId": "clover-4",
+          "age": 16.599999999998545,
+          "cpuMs": 19,
+          "renderCpuMs": 38.599999994039536
+        },
+        {
+          "wallMs": 28869.59999999404,
+          "renderSerial": 1333,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 19.700000002980232,
+          "renderCpuMs": 38.099999994039536
+        },
+        {
+          "wallMs": 31205.19999998808,
+          "renderSerial": 1454,
+          "skillId": "yarnAttack",
+          "age": 16.69999999999709,
+          "cpuMs": 14.5,
+          "renderCpuMs": 33
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 1,
+      "utc": "2026-11-18T01:33:19.268Z",
+      "ended": "2026-11-18T01:34:28.207Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/4-baseline/report.json",
+      "rawSha256": "2dd34d8a0299273a5021b278741b41e8f7bf7c558f1383427544e960c158c34c",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32000.40000000596,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 1.3989999999999998,
+        "scriptElapsedMs": 0.154
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 34.10000002384186,
+            "maxMs": 3.8999999910593033
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 1.9999999850988388,
+            "maxMs": 0.20000000298023224
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 1.4999999850988388,
+            "maxMs": 0.20000000298023224
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9187.134,
+      "playTaskMs": 9185.735,
+      "layout": {
+        "LayoutCount": 2747,
+        "LayoutDuration": 0.095529,
+        "RecalcStyleCount": 5675,
+        "RecalcStyleDuration": 0.5846680000000001,
+        "TaskDuration": 9.185735000000001
+      },
+      "firstRenderLatencyMs": 13.600000008940697,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.29999999999973,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 13.600000008940697,
+          "p99": 20.900000005960464,
+          "max": 39.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.299999997019768,
+          "p99": 13.600000008940697,
+          "max": 39.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999995634,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.200000002980232,
+          "p99": 11.799999997019768,
+          "max": 20.099999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 4,
+        "p95": 5.199999988079071,
+        "p99": 5.199999988079071,
+        "max": 5.199999988079071
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.399999991059303,
+        "p95": 18.5,
+        "p99": 18.5,
+        "max": 18.5
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9274.10000000894,
+          "renderSerial": 554,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 5.199999988079071,
+          "renderCpuMs": 14.200000002980232
+        },
+        {
+          "wallMs": 14554.60000000894,
+          "renderSerial": 871,
+          "skillId": "mochi-4",
+          "age": 16.599999999998545,
+          "cpuMs": 4,
+          "renderCpuMs": 10.399999991059303
+        },
+        {
+          "wallMs": 16863.40000000596,
+          "renderSerial": 1009,
+          "skillId": "soot-4",
+          "age": 16.700000000000728,
+          "cpuMs": 3.8999999910593033,
+          "renderCpuMs": 18.5
+        },
+        {
+          "wallMs": 19154.29999999702,
+          "renderSerial": 1147,
+          "skillId": "clover-4",
+          "age": 16.80000000000291,
+          "cpuMs": 3.800000011920929,
+          "renderCpuMs": 9.599999994039536
+        },
+        {
+          "wallMs": 27986.20000000298,
+          "renderSerial": 1677,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4.9000000059604645,
+          "renderCpuMs": 9.899999991059303
+        },
+        {
+          "wallMs": 30285.10000000894,
+          "renderSerial": 1815,
+          "skillId": "yarnAttack",
+          "age": 16.700000000000728,
+          "cpuMs": 3.5999999940395355,
+          "renderCpuMs": 8.900000005960464
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "utc": "2026-11-18T01:33:19.268Z",
+      "ended": "2026-11-18T01:34:28.207Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/4-baseline/report.json",
+      "rawSha256": "2dd34d8a0299273a5021b278741b41e8f7bf7c558f1383427544e960c158c34c",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32019.29999999702,
+      "preparation": {
+        "active": false,
+        "callMs": 0,
+        "elapsedMs": 0,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 6,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 2.4699999999999998,
+        "scriptElapsedMs": 0
+      },
+      "programsAfterPlay": 17,
+      "shaderCalls": {
+        "preparation": {},
+        "play": {
+          "compileShader": {
+            "count": 32,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "linkProgram": {
+            "count": 16,
+            "elapsedMs": 0.29999999701976776,
+            "maxMs": 0.10000000894069672
+          },
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 28.399999991059303,
+            "maxMs": 3
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 5.500000014901161,
+            "maxMs": 1
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 2.7999999821186066,
+            "maxMs": 0.5999999940395355
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31834.392,
+      "playTaskMs": 31831.922,
+      "layout": {
+        "LayoutCount": 2136,
+        "LayoutDuration": 0.390157,
+        "RecalcStyleCount": 4445,
+        "RecalcStyleDuration": 2.29222,
+        "TaskDuration": 31.831922
+      },
+      "firstRenderLatencyMs": 19.799999997019768,
+      "startup": {
+        "samples": 68,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 50,
+          "p99": 166.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 15.100000008940697,
+          "p95": 46.79999999701977,
+          "p99": 129.8999999910593,
+          "max": 129.8999999910593
+        },
+        "over33": 11,
+        "over50": 3
+      },
+      "wholeRun": {
+        "samples": 1494,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.10000000000218,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 12.5,
+          "p95": 20,
+          "p99": 42.20000000298023,
+          "max": 129.8999999910593
+        },
+        "over33": 59,
+        "over50": 14
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1426,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.099999999998545,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 12.5,
+          "p95": 19.5,
+          "p99": 40.70000000298023,
+          "max": 59.6000000089407
+        },
+        "over33": 48,
+        "over50": 11
+      },
+      "focusEntryCpuMs": {
+        "median": 18.80000001192093,
+        "p95": 23.799999997019768,
+        "p99": 23.799999997019768,
+        "max": 23.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 42.20000000298023,
+        "p95": 59.6000000089407,
+        "p99": 59.6000000089407,
+        "max": 59.6000000089407
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9779.39999999106,
+          "renderSerial": 434,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 23.799999997019768,
+          "renderCpuMs": 53.8999999910593
+        },
+        {
+          "wallMs": 15154.29999999702,
+          "renderSerial": 702,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 18,
+          "renderCpuMs": 42.20000000298023
+        },
+        {
+          "wallMs": 17528.19999998808,
+          "renderSerial": 810,
+          "skillId": "soot-4",
+          "age": 16.599999999998545,
+          "cpuMs": 18.80000001192093,
+          "renderCpuMs": 59.6000000089407
+        },
+        {
+          "wallMs": 19849.5,
+          "renderSerial": 894,
+          "skillId": "clover-4",
+          "age": 16.599999999998545,
+          "cpuMs": 18.099999994039536,
+          "renderCpuMs": 37.5
+        },
+        {
+          "wallMs": 29050.79999999702,
+          "renderSerial": 1346,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 20.700000002980232,
+          "renderCpuMs": 40.70000000298023
+        },
+        {
+          "wallMs": 31366,
+          "renderSerial": 1463,
+          "skillId": "yarnAttack",
+          "age": 16.69999999999709,
+          "cpuMs": 17.69999998807907,
+          "renderCpuMs": 35.5
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "mode": "compile",
+      "rate": 1,
+      "utc": "2026-11-18T01:34:28.481Z",
+      "ended": "2026-11-18T01:35:37.499Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/5-compile/report.json",
+      "rawSha256": "e48cef2f53796dfa0e8f44d2106fe292c383f96898122b408a278e725d111bb1",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32003.59999999404,
+      "preparation": {
+        "active": true,
+        "callMs": 3.8999999910593033,
+        "elapsedMs": 14.700000002980232,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 5.572000000000001,
+        "scriptElapsedMs": 0.23800000000000002
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "getProgramParameter": {
+            "count": 135,
+            "elapsedMs": 0.09999999403953552,
+            "maxMs": 0.09999999403953552
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 12.600000008940697,
+            "maxMs": 1.7000000029802322
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 2.199999988079071,
+            "maxMs": 0.29999999701976776
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 0.4000000059604645,
+            "maxMs": 0.10000000894069672
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 9592.250000000002,
+      "playTaskMs": 9586.678000000002,
+      "layout": {
+        "LayoutCount": 2751,
+        "LayoutDuration": 0.094539,
+        "RecalcStyleCount": 5684,
+        "RecalcStyleDuration": 0.593943,
+        "TaskDuration": 9.586678000000001
+      },
+      "firstRenderLatencyMs": 4.5999999940395355,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.800000000000182,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 14.700000002980232,
+          "p99": 20.399999991059303,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1919,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.8999999910593033,
+          "p95": 4.4000000059604645,
+          "p99": 14.5,
+          "max": 39.70000000298023
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1801,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000000728,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.8999999910593033,
+          "p95": 4.399999991059303,
+          "p99": 11.799999997019768,
+          "max": 20
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "focusEntryCpuMs": {
+        "median": 4,
+        "p95": 5.799999997019768,
+        "p99": 5.799999997019768,
+        "max": 5.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 9.899999991059303,
+        "p95": 14.899999991059303,
+        "p99": 14.899999991059303,
+        "max": 14.899999991059303
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9309.5,
+          "renderSerial": 558,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 5.799999997019768,
+          "renderCpuMs": 14.899999991059303
+        },
+        {
+          "wallMs": 14573.20000000298,
+          "renderSerial": 874,
+          "skillId": "mochi-4",
+          "age": 16.700000000000728,
+          "cpuMs": 3.7000000029802322,
+          "renderCpuMs": 9.899999991059303
+        },
+        {
+          "wallMs": 16879.5,
+          "renderSerial": 1012,
+          "skillId": "soot-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4,
+          "renderCpuMs": 14.600000008940697
+        },
+        {
+          "wallMs": 19174.09999999404,
+          "renderSerial": 1150,
+          "skillId": "clover-4",
+          "age": 16.599999999998545,
+          "cpuMs": 4.300000011920929,
+          "renderCpuMs": 9.600000008940697
+        },
+        {
+          "wallMs": 27989.59999999404,
+          "renderSerial": 1679,
+          "skillId": "panko-4",
+          "age": 16.700000000000728,
+          "cpuMs": 4,
+          "renderCpuMs": 9.200000002980232
+        },
+        {
+          "wallMs": 30287.79999999702,
+          "renderSerial": 1817,
+          "skillId": "yarnAttack",
+          "age": 16.700000000000728,
+          "cpuMs": 2.9000000059604645,
+          "renderCpuMs": 8.400000005960464
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "mode": "compile",
+      "rate": 4,
+      "utc": "2026-11-18T01:34:28.481Z",
+      "ended": "2026-11-18T01:35:37.499Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/5-compile/report.json",
+      "rawSha256": "e48cef2f53796dfa0e8f44d2106fe292c383f96898122b408a278e725d111bb1",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+      },
+      "elapsedMs": 32026.29999999702,
+      "preparation": {
+        "active": true,
+        "callMs": 15.899999991059303,
+        "elapsedMs": 26.899999991059303,
+        "stateExact": true,
+        "programsBefore": 6,
+        "programsAfter": 20,
+        "parallelSupported": true,
+        "checksEnabled": true,
+        "taskElapsedMs": 23.767,
+        "scriptElapsedMs": 2.0349999999999997
+      },
+      "programsAfterPlay": 21,
+      "shaderCalls": {
+        "preparation": {
+          "compileShader": {
+            "count": 28,
+            "elapsedMs": 0,
+            "maxMs": 0
+          },
+          "linkProgram": {
+            "count": 14,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "getProgramParameter": {
+            "count": 40,
+            "elapsedMs": 0,
+            "maxMs": 0
+          }
+        },
+        "play": {
+          "getProgramInfoLog": {
+            "count": 16,
+            "elapsedMs": 15.699999958276749,
+            "maxMs": 2.5
+          },
+          "getShaderInfoLog": {
+            "count": 32,
+            "elapsedMs": 5.799999982118607,
+            "maxMs": 0.7999999970197678
+          },
+          "getProgramParameter": {
+            "count": 48,
+            "elapsedMs": 1.6000000089406967,
+            "maxMs": 0.800000011920929
+          },
+          "compileShader": {
+            "count": 12,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          },
+          "linkProgram": {
+            "count": 6,
+            "elapsedMs": 0.10000000894069672,
+            "maxMs": 0.10000000894069672
+          }
+        }
+      },
+      "preparationPlusPlayTaskMs": 31849.722,
+      "playTaskMs": 31825.955,
+      "layout": {
+        "LayoutCount": 2115,
+        "LayoutDuration": 0.368042,
+        "RecalcStyleCount": 4425,
+        "RecalcStyleDuration": 2.321237,
+        "TaskDuration": 31.825955
+      },
+      "firstRenderLatencyMs": 19.5,
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.59999999999991,
+          "p99": 166.70000000000027,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 15.700000002980232,
+          "p95": 43.20000000298023,
+          "p99": 133.29999999701977,
+          "max": 133.29999999701977
+        },
+        "over33": 14,
+        "over50": 4
+      },
+      "wholeRun": {
+        "samples": 1487,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999945,
+          "max": 166.70000000000027
+        },
+        "submitCpuMs": {
+          "median": 12.600000008940697,
+          "p95": 19.799999997019768,
+          "p99": 43.19999998807907,
+          "max": 133.29999999701977
+        },
+        "over33": 66,
+        "over50": 15
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1423,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.099999999998545,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 12.599999994039536,
+          "p95": 19.299999997019768,
+          "p99": 40.70000000298023,
+          "max": 59.8999999910593
+        },
+        "over33": 52,
+        "over50": 11
+      },
+      "focusEntryCpuMs": {
+        "median": 19.900000005960464,
+        "p95": 23.700000002980232,
+        "p99": 23.700000002980232,
+        "max": 23.700000002980232
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 43.70000000298023,
+        "p95": 56.3999999910593,
+        "p99": 56.3999999910593,
+        "max": 56.3999999910593
+      },
+      "focusEntries": [
+        {
+          "wallMs": 9827.29999999702,
+          "renderSerial": 427,
+          "skillId": "panko-4",
+          "age": 16.69999999999891,
+          "cpuMs": 23.700000002980232,
+          "renderCpuMs": 53.900000005960464
+        },
+        {
+          "wallMs": 15228.39999999106,
+          "renderSerial": 691,
+          "skillId": "mochi-4",
+          "age": 16.600000000002183,
+          "cpuMs": 20.200000002980232,
+          "renderCpuMs": 43.70000000298023
+        },
+        {
+          "wallMs": 17603.5,
+          "renderSerial": 800,
+          "skillId": "soot-4",
+          "age": 16.69999999999709,
+          "cpuMs": 17,
+          "renderCpuMs": 56.3999999910593
+        },
+        {
+          "wallMs": 19896.89999999106,
+          "renderSerial": 880,
+          "skillId": "clover-4",
+          "age": 16.600000000002183,
+          "cpuMs": 16.799999997019768,
+          "renderCpuMs": 37.599999994039536
+        },
+        {
+          "wallMs": 29022.59999999404,
+          "renderSerial": 1331,
+          "skillId": "panko-4",
+          "age": 16.599999999998545,
+          "cpuMs": 19.900000005960464,
+          "renderCpuMs": 37.79999999701977
+        },
+        {
+          "wallMs": 31353.5,
+          "renderSerial": 1454,
+          "skillId": "yarnAttack",
+          "age": 16.700000000004366,
+          "cpuMs": 16.099999994039536,
+          "renderCpuMs": 34.3999999910593
+        }
+      ],
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "checksEnabled": true,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "7baf9369768d5abd70efb7b9bf08a45562e862219001453e4ebb874e86fa9ae8",
+      "rgbSha256": "51eae136d4f89412e57945ac903fd7a06d12094e6091ab74eff8963db4527972",
+      "mean": 113.14033600983797,
+      "stdDev": 51.94283584928126
+    },
+    {
+      "index": 0,
+      "mode": "baseline",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "563fbf1134bcda7301538962239905cc4a6d71ebbcf8226322894be433c48c82",
+      "rgbSha256": "4fa98e1143ab1bfed234b4a27584cbf8d1e61dfc38f17d99005e7df8c2c66326",
+      "mean": 114.16145941840277,
+      "stdDev": 51.814891258236244
+    },
+    {
+      "index": 1,
+      "mode": "compile",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "1499061e66c7fb18c74d1813e3320c04ccb5970daa1bb40cdbd321ea7b3d09b8",
+      "rgbSha256": "d0a1f05c5fe2c9cb6f2c0d6ed622342205f6640cfcee75f59f88873947565312",
+      "mean": 113.25016565393518,
+      "stdDev": 52.20118802296475
+    },
+    {
+      "index": 1,
+      "mode": "compile",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "906ca437b2ef2bd4edeb0cbf84594be139b97c86dbb62c2449e1c34e8b8f21fe",
+      "rgbSha256": "25996fabe2bb3af6a79888d9bb284a925c741d89169455212747df8b6e67dad0",
+      "mean": 114.08630172164352,
+      "stdDev": 51.809057830054236
+    },
+    {
+      "index": 2,
+      "mode": "compile",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/2-compile/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "0b26a2d8feb17ca398b52a53d9b8beae3e4692dcb2b899d26d294274f45100a4",
+      "rgbSha256": "0e04ae1eb95974a365024a2d725011edb9e53cbdea6e3fd6f8ea20fad7533ea1",
+      "mean": 113.20012152777778,
+      "stdDev": 52.10251918698383
+    },
+    {
+      "index": 2,
+      "mode": "compile",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/2-compile/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "2cc8f13513a0e37dcc2849842b0bbfb2f0e4b44dbab00664eaafd5cd5601397d",
+      "rgbSha256": "354144bf5b1fea51fcbcfbbead6ae3f194d260af267c84f0d21f5cb86bbe0a0f",
+      "mean": 114.60880570023149,
+      "stdDev": 51.85231199535389
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/3-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d50f6883b46fd0e81f75018910cb0f3f4afc0112be2b59e8de69e647ff79eb85",
+      "rgbSha256": "d433133901021a1e3d7be5999ac536eb06a20444a23b7ad11c4f1542bab6552f",
+      "mean": 113.13828956886574,
+      "stdDev": 51.92160218810603
+    },
+    {
+      "index": 3,
+      "mode": "baseline",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/3-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f2651597fe376c369855c620f134c0f3d3aac487450a06d4a6ac3832793ac4e9",
+      "rgbSha256": "3ed866f1e25e7d796b0f771a27d784f73af01b083925e4b1ee5703673ff5dbf9",
+      "mean": 114.1327123119213,
+      "stdDev": 51.82658390082442
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/4-baseline/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b773dff29aeca2a979d57930ea30758acc617bcf5df75c41317e5ad0616d8295",
+      "rgbSha256": "3b309aeecace13949f7882f318b31a200575bb52771a412fc598afbd62c7142b",
+      "mean": 113.23819661458333,
+      "stdDev": 52.17008355221663
+    },
+    {
+      "index": 4,
+      "mode": "baseline",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/4-baseline/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "3738cd2e785b9b7f8d28bff157efd658f067d34e5b6dae2ba3b1e27a21120e6f",
+      "rgbSha256": "f4cd4adbc8a1f90f72e2ef65dfb65d9de7ab1f4858d179462b42e47f060917e6",
+      "mean": 114.27342520254629,
+      "stdDev": 51.76572598688917
+    },
+    {
+      "index": 5,
+      "mode": "compile",
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/5-compile/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6df44782309a0e5fb08017da7554e7564fbe71235a185d503441997cd6b39743",
+      "rgbSha256": "4655c0a39879c5a8b387658923b12df74dd6e2f93da27f0a02853709d580a40c",
+      "mean": 113.2269165943287,
+      "stdDev": 52.16531983299129
+    },
+    {
+      "index": 5,
+      "mode": "compile",
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/5-compile/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f4ef8783752f3850cce32e22d703e4e9a1b683e8c33435d2256764434b07aa8a",
+      "rgbSha256": "33569f1874f1f4294c67359dc702fb9f6b22fb53f96066faddd17b551123cde7",
+      "mean": 114.26956886574074,
+      "stdDev": 51.76933590096829
+    }
+  ],
+  "reviews": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline-1x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "6f935fa062e6aa21e8989f7259f17eea85f6eadc2c0646caa46b92056b10adbc"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/0-baseline-4x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "35414904d92114ccc509c1c0bc286038ab34beeb2093e3acee081a1b85a16802"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile-1x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "c85d630f5845f9a9970f86bb4bcb5e420ca811811458633aa8995e084ec26df6"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-shader-preparation-production/1-compile-4x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "8e27179c649ea5ea8b1faa5c2be7ad5d7d294c837ade7f838243146f093bdd3d"
+    }
+  ],
+  "reviewedUtc": "2026-11-18T01:36:49.399418+00:00",
+  "interpretation": "Reject native compileAsync preparation. Whole-run p95 unchanged16.8/33.4ms; preparation-plus-play median9220.024->9514.761ms at1x and31834.392->31849.722ms at4x. Fourteen additional preparation programs and21vs17programs after play. Faster program-log queries do not establish an overall benefit. Startup4x late intervals4->5,whole-run17->15 is a mixed small sample. Lifecycle hypothesis remains untested because performance gate failed; no native change or loader request.",
+  "pass": true,
+  "visualReview": "Four measured1024x576 views inspected once. All seven units, status rows, boss bar, four card controls and visible hit/ground effects remain readable. Distinct ordinary-play sample times are not a pixel-parity claim; exact frozen pairs remain in the prior probe."
+}

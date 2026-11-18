@@ -1,20 +1,20 @@
 # CXV V7 handoff
-ACTIVE V7 V-F: focus3050ee5ae passes native/fullbattle; shader first-use attribution running;assistant: AGV.
+ACTIVE V7 V-F: shader preparation rejected; desktopDPR1/2 coverage study active;assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Poll shader preparation probe;validate identity/diagnostics/fullRGB and measure addedprograms/prep before natural trials;study gate01:36:53Z.
-NEXT 2: Only if current evidence supports it,test tool-only compileAsync preparation with checks enabled/countallprep. Study gate01:36:53Z;no native shader changes.
-NEXT 3: Keep original upload/readback experiments rejected; follow CXI integration of scheduling96d1e75c3 + tests6d94a279d; no repeated judge claims.
-Last confirmed push5b358aab3; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+NEXT 1: Add isolatedDPR1/1.5/2 fixture/probe;verify buffer+CSS geometry,then6alternatingDPR1/2 ordinary32s/rate trials on unchanged3050ee5ae. Study gate01:50:40Z;no appedit proposed.
+NEXT 2: Measure fresh1280x720CSS captures before reviewing4newviews;compare actual ratios,logicalstate,tasktime,startup/steady/full tails. No simultaneousbrowserwork.
+NEXT 3: Follow CXI integration96d1e75c3/focus3050ee5ae/Pankoloader;reject unchangedshader/upload/readback experiments. Independent6301acceptance pending.
+Last confirmed push5c54ac6c5; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
 V-C fresh18:04Z six sheets:240/620ms arrival,160ms action yield,netclear1640/Yarn1760;0errors. V-B2 contact1100/duration2200/leadIn0 reasoned no change.
 V-E/F judge6301 source d69b9dc5c/indexaf3adbe2 natural wins97.5/97.2s;68actions24ults,82apply46expire each,exactgameparity,0errors/blocks;53f8c4a17READY.
 V-F current nativefullbattle4x3050ee5ae wins99.420/98.951s;68actions24ults,82apply46expire,exactgameparity,0errors/blocks;p9533.4msboth,late35/25.16captures/4sheetsreviewedonce 2026-11-18T01:23:33.707185+00:00.
-Pending CXI: fallbackd4491cbb5; toast lower-edge repair; labels2fd7665b4; packedc79f50b71+6f71118f1; posecrope1b1f58f5; HUD79d408c71; stationary4c5f0fa55/evidence93772cb8e; Pankoaddba7446 loader entry.
+Pending CXI: fallbackd4491cbb5;toast;labels2fd7665b4;posecrope1b1f58f5;HUD79d408c71;stationary4c5f0fa55;Pankoaddba7446loader;focus3050ee5ae;victory96d1e75c3. Packedintegration7ed0ce4f0 already in d69b9dc5c;independentgreenpending.
 Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
-Wake cxv-wake ACTIVE15min exactORDER text refreshed 2026-11-18T01:14:33.046297+00:00;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running: Vite21525; shader preparation probe PID423 log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/shader-preparation-probe.log;attribution99654ended01:24:02Z/pass;one detached job.
-Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread 2026-11-18T01:18:47.778328+00:00.
+Wake cxv-wake ACTIVE15min exactORDER refreshed01:32Z and verified;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
+Running: Vite21525;shader prep1135ended/pass01:35:37Z;no detachedbrowserjobs. Shader6trials report reviewed 2026-11-18T01:36:49.399418+00:00.
+Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread01:35Z. capture-arrival SHA1f1d220e unchanged.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.
