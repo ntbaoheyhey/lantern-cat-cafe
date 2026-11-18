@@ -1,11 +1,9 @@
-HANDOFF.md
 ACTIVE: IDLE.
-NEXT 1: None.
-NEXT 2: None.
-NEXT 3: None.
-RUNNING:
-OPEN TASKs: T-CXI-1, T-CXI-2, T-CXI-3, T-CXI-5, T-CXI-7, T-CXI-8, T-M1, T-M2, T-M3.
-PUSHED: 737b3ec93
-WAKE: task-3
-RULES RE-READ: 2026-11-18T05:24:34Z
-ORDER-V8.txt SHA: e7f5a10e2a97644b15d2b294b90e5c3e2bdead95366e38883ecef67a6112d2c6
+OPEN TASKs: 
+- T-CXI-5: Awaiting generation provenance records.
+- T-CXI-11: Reachability audit open (data unavailable).
+- T-CXI-12: Vietnamese draft (model/mask export) open.
+- T-M4: Staged delivery research (stall/byte measurements missing).
+- T-M5: Short-GOP trial measurements missing.
+PUSHED: 78514ec7a
+WAKE: task-2131
