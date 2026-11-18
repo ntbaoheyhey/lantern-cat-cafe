@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T10:18:59.381427+00:00",
+  "artifact": {
+    "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing-R12.avif",
+    "sha256": "2ad09491f08985cc6c24203e023918168999095af0b9ef793b6d8dc0d46e4fa7",
+    "bytes": 242887,
+    "codec_name": "av1",
+    "width": 1440,
+    "height": 810
+  },
+  "source": {
+    "path": "/Users/bao/th-v5-ag2/apps/web/public/art/v3-shell/landing.webp",
+    "sha256": "6a363ca4e6a8d078b4c2a60a6e29e469bc4f2b0a3505d1cc745fb6e4ded678d5"
+  },
+  "sameBytesAsRejectedR6": true,
+  "priorReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-landing-delivery-R6.json",
+    "sha256": "0f1cf0228a7937768cc78e6eb6fe55b5bd916c3d33d6c16718dbf21b499b298d"
+  },
+  "servedBaselineBytes": 207867,
+  "byteSaving": -35020,
+  "imagesViewed": 0,
+  "decision": "REDO: actual bytes and hash now reported correctly, but artifact is identical to rejected R6 and grows35020B over served baseline. No new quality evidence; no adoption."
+}
