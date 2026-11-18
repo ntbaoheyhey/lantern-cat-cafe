@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-18T17:10:40.256988+00:00",
+  "capturePreregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-label-controls-R1-preregistration.json",
+    "sha256": "a4ad29ffabd89d91013474d8db4255f6fbaf0c217d67ed3a6adc35f1ce70fcf7"
+  },
+  "hypothesis": "Unchanged lower-Mochi+6 candidate preserves all other labels and body poses, uses zero/limited fallback and remains clear of HUD, faces, native bodies including placeholder Clover plus6, and other labels.",
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/verify-mochi-label-controls-layout.mjs",
+    "sha256": "ed74147004ba180f321ce6e8cad46cf9375a30b3bc0848ca7c29b7cc907dd5d1"
+  },
+  "designBounds": {
+    "nativeBodyPadding": 6,
+    "maxFallback": 12,
+    "minGap": 6,
+    "epsilon": 0.015625
+  },
+  "data": "All fresh method-study rows and cases; development, not heldout. Preserve baseline and every candidate failure.",
+  "acceptance": "Pinned solver reconstruction<=1/64; exact paired rules/plan/body; other label geometry<=1/64; candidate no rectangle intersection and owneraxis within label. Paint and perception remain separate unproven gates.",
+  "imagesViewed": 0,
+  "productionAcceptance": false
+}
