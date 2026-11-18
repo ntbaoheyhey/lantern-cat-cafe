@@ -87,3 +87,5 @@
 
 - [x] V-F native desktop density repairc0373a1d9 scopedREADY:18tests/TSC0,16exactnativeRGB/control+16geometry,4lifecycles,22captures6freshreviews;ordinaryDPR2/1x4x exactbehavior,0errors. IndependentCXI acceptance pending.
 - [ ] V-F live density-transition fullbattle stress on currentnative;natural normal/reduced progression and outcome parity.
+
+- [x] V-F live desktop-density full battles: six correct transitions; exact rules/logs/final parity vs staticDPR2,68actions24ults each;16captures/4sheets reviewed once. Local coverage; independentCXI pending.

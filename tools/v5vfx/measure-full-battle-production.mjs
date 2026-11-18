@@ -23,6 +23,7 @@ const report={utc:new Date().toISOString(),source:raw.source,servedSource:raw.se
 report.local=raw.local??false;report.artifactIdentity=raw.artifactIdentity??null;report.buildRuntimePatchSha256=raw.artifactIdentity?.buildRuntimePatchSha256??null;
 report.cpuRate=raw.cpuRate??1;report.hardware=raw.hardware??null;report.browser=raw.browser??null;
 report.deviceScaleFactor=raw.deviceScaleFactor??1;report.desktopDensity=raw.runs.map(r=>r.desktopDensity??null);
+if(raw.densitySequence)report.densitySequence=raw.densitySequence;
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const [index,run]of raw.runs.entries()){
  const timeline=timelines[index],actions=timeline.plans.filter(p=>p.events.some(e=>e.type==='action_start'||e.type==='charge'));
@@ -41,13 +42,27 @@ for(const [index,run]of raw.runs.entries()){
   actions:run.actions,presentations:run.presentations,ultimates:run.ultimates.length,heroUltimates,logEvents:run.logEvents,logSha256:hash(JSON.stringify(timeline.log)),
   actionPacingExact:pacing,statusEvents,frameMs:run.frameMs,renderCpuMs:run.renderCpuMs,stress,crew,errors:run.errors,blockedRequests:run.blockedRequests,
   party:run.final.actors.filter(a=>a.side==='party').map(a=>({id:a.catalogId,hp:a.hp})),timeline:{path:resolve(input,run.mode,'timeline.json'),sha256:hash(readFileSync(resolve(input,run.mode,'timeline.json')))}});
+ if(raw.densitySequence){
+  assert.equal(run.densityTransitions.length,raw.densitySequence.length);
+  report.runs.at(-1).densityTransitions=run.densityTransitions.map((t,i)=>{
+   const expected=raw.densitySequence[i],d=t.density,size={width:1280*t.ratio,height:720*t.ratio};
+   assert.equal(t.scheduledMs,expected.at);assert.equal(t.ratio,expected.ratio);
+   assert.equal(t.before.result,null);assert.equal(t.after.result,null);assert(t.before.wallMs>=t.scheduledMs&&t.after.wallMs>=t.before.wallMs);
+   assert.equal(t.before.devicePixelRatio,i?raw.densitySequence[i-1].ratio:raw.deviceScaleFactor);assert.equal(t.after.devicePixelRatio,t.ratio);
+   assert.equal(d.devicePixelRatio,t.ratio);assert.equal(d.rendererRatio,t.ratio);assert.deepEqual(d.viewport,raw.viewport);assert.deepEqual(d.sceneSize,raw.viewport);
+   assert.deepEqual(d.drawingBuffer,size);assert.deepEqual(d.composer.input,size);assert.deepEqual(d.composer.output,size);
+   assert.equal(d.canvas.width,size.width);assert.equal(d.canvas.height,size.height);assert.equal(d.contextLost,false);assert.equal(d.sceneError,'');assert(d.ready&&d.checksEnabled);
+   return{scheduledMs:t.scheduledMs,ratio:t.ratio,wallWindowMs:[t.before.wallMs,t.after.wallMs],density:d,planBefore:t.before.plan,planAfter:t.after.plan};
+  });
+ }
  for(const capture of run.captures){
   const bytes=readFileSync(capture.path),width=bytes.readUInt32BE(16),height=bytes.readUInt32BE(20);assert.equal(width,1280);assert.equal(height,720);
   const rgb=execFileSync('ffmpeg',['-v','error','-i',capture.path,'-vf','scale=160:90','-frames:v','1','-f','rawvideo','-pix_fmt','rgb24','pipe:1']);
   assert.equal(rgb.length,160*90*3);const mean=rgb.reduce((a,b)=>a+b,0)/rgb.length,stdDev=Math.sqrt(rgb.reduce((a,b)=>a+(b-mean)**2,0)/rgb.length);assert(stdDev>10);
   report.captures.push({mode:run.mode,reason:capture.reason,path:capture.path,utc:capture.utc,width,height,bytes:bytes.length,sha256:hash(bytes),mean,stdDev,
    wallWindowMs:[capture.before.wallMs,capture.after.wallMs],ageWindowMs:[capture.before.age,capture.after.age],planBefore:capture.before.plan,planAfter:capture.after.plan,
-   crew:capture.after.crew});
+   crew:capture.after.crew,...(raw.densitySequence?{devicePixelRatioBefore:capture.before.devicePixelRatio,devicePixelRatioAfter:capture.after.devicePixelRatio}:{})});
+  if(raw.densitySequence)assert.equal(capture.before.devicePixelRatio,capture.after.devicePixelRatio,'Capture must preserve live density');
  }
  for(let part=0;part<2;part++){
   const frames=run.captures.slice(part*4,part*4+4),path=resolve(review,`${run.mode}-${part}.jpg`);assert(!existsSync(path),'Preserve prior review; never reopen inspected sheets');

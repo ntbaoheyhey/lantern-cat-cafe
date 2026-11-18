@@ -56,3 +56,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T01:54:11.513985+00:00 DPR2/CPU4x:hai trận thắng tự nhiên100.141/100.252s,cùng68đòn/24ulti;log và trạng thái cuối chính xác,không lỗi.16ảnh đo/4ảnh mới xem một lần;p95=33.4ms,40/41khoảng>50.5ms. Giữ chất lượng;đang thử sửa chuyển mật độ màn hình;chưa đổi mã game. Wake15phút ACTIVE.
 
 2026-11-18T02:09:49.151028+00:00 Sửa chuyển mật độ màn hình c0373a1d9 đãpush:18kiểm thử/typecheck0. Khi dừng,đổi DPR vẫn cập nhật canvas/composer;giữ giới hạn2x. Prototype16cặpRGB chính xác với nativeAPI,4vòng đời đạt. Build native mới đãqua20ảnh/16cặpRGB;đang chạy32s ởCPU1x/4x,DPR2;chưa gửiREADY.
+
+2026-11-18T02:18:02.904281+00:00: Đã kiểm tra hai trận đầy đủ CPU4× với DPR2→1→1.5→2; 6 lần đổi mật độ đúng bộ đệm, logic và kết quả trùng đối chứng, không lỗi. 16 ảnh/4 bảng đã xem một lần; toast vẫn chờ CXI; tiếp tục kiểm tra mật độ màn thắng.

@@ -11,6 +11,8 @@ const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(fixtur
 const root=resolve(import.meta.dirname,'../..');
 const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpuRate),'Full-battle CPU rate must be1 or4');
 const desktopDpr=Number(process.env.CXV_FULL_DPR??1);assert([1,1.5,2].includes(desktopDpr)&&(!process.env.CXV_FULL_DPR||local),'Explicit desktop density is local-only');
+const liveDensity=process.env.CXV_FULL_DENSITY_TRANSITIONS==='1';assert(!liveDensity||(local&&desktopDpr===2),'Live density transitions require the local DPR2 artifact');
+const densitySequence=liveDensity?[{at:15000,ratio:1},{at:45000,ratio:1.5},{at:75000,ratio:2}]:[];
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-judge'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')),'Preserve earlier evidence');
 await mkdir(out,{recursive:true});
@@ -27,6 +29,7 @@ const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.cpuRate=cpuRate;report.browser=browser.version();report.hardware=execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim();
 report.deviceScaleFactor=desktopDpr;
+if(liveDensity){report.densitySequence=densitySequence;report.method+=' Live CDP density changes2->1->1.5->2 at15/45/75s with unchanged1280x720CSS;no model mutation. Captures use the same CDP session at CSS scale1/liveDPR to preserve the override.';}
 report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.';
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
@@ -35,21 +38,25 @@ try{
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr});
   assert.equal(page.url(),judgeUrl);const identity=runtimeEvidence();
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpuRate});
+  if(liveDensity)await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:desktopDpr,mobile:false});
   await page.evaluate(reduced=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.notify(false);},reduced);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   const initial=await page.evaluate(()=>{const m=window.__depthReview;return{battle:structuredClone(m.battle),speed:m.state.settings.speed,reduced:m.state.settings.reducedMotion};});
   const run={mode,utc:new Date().toISOString(),identity,initialBattleSha256:hash(JSON.stringify(initial.battle)),speed:initial.speed,captures:[],errors,blockedRequests};
+  if(liveDensity)run.densityTransitions=[];
   if(process.env.CXV_FULL_DPR)run.desktopDensity=await(await import('./desktop-density.mjs')).desktopDensity(page,desktopDpr);
   assert.equal(initial.speed,1);await writeFile(resolve(dir,'initial.json'),JSON.stringify(initial,null,2));
   const snapshot=()=>page.evaluate(()=>{
    const m=window.__depthReview,s=window.__depthScene;
-   return{wallMs:globalThis.__cxvFull?performance.now()-globalThis.__cxvFull.start:0,screen:m.screen,result:m.battle?.result??null,round:m.battle?.round,age:m.animationAt,
+   return{wallMs:globalThis.__cxvFull?performance.now()-globalThis.__cxvFull.start:0,devicePixelRatio,screen:m.screen,result:m.battle?.result??null,round:m.battle?.round,age:m.animationAt,
     plan:m.plan?{actor:m.plan.actorId,skill:m.plan.skillId,ultimate:m.plan.ultimate,duration:m.plan.duration,contact:m.plan.contact,leadIn:m.plan.speechLeadInMs??null}:null,
     actors:m.battle?.actors.map(a=>({id:a.id,catalogId:a.catalogId,side:a.side,hp:a.hp,shield:a.shield,statuses:a.statuses})),
     scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
     crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON()}))};
   });
-  const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();await page.screenshot({path,scale:'css'});const after=await snapshot();run.captures.push({reason,path,utc,before,after});};
+  const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();
+   if(liveDensity){const bytes=Buffer.from((await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,clip:{x:0,y:0,width:1280,height:720,scale:1/before.devicePixelRatio}})).data,'base64');assert.equal(bytes.readUInt32BE(16),1280);assert.equal(bytes.readUInt32BE(20),720);await writeFile(path,bytes);}else await page.screenshot({path,scale:'css'});
+   const after=await snapshot();if(liveDensity)assert.equal(after.devicePixelRatio,before.devicePixelRatio);run.captures.push({reason,path,utc,before,after});};
   await capture('opening');
   await page.evaluate(()=>{
    const s=window.__depthScene,m=window.__depthReview,render=s.render,beforeFrame=s.beforeFrame,seen=new Set(),captured=new Set();
@@ -68,12 +75,20 @@ try{
   });
   const deadline=Date.now()+180000;let reachedResult=false;
   while(Date.now()<deadline){
-   stop();const state=await page.evaluate(()=>({screen:window.__depthReview.screen,signal:globalThis.__cxvFull.signals.shift(),result:window.__depthReview.battle?.result}));
+   stop();const state=await page.evaluate(()=>({wallMs:performance.now()-globalThis.__cxvFull.start,screen:window.__depthReview.screen,signal:globalThis.__cxvFull.signals.shift(),result:window.__depthReview.battle?.result}));
+   const change=liveDensity?densitySequence[run.densityTransitions.length]:null;
+   if(change&&state.wallMs>=change.at){
+    const before=await snapshot();await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:change.ratio,mobile:false});
+    await page.waitForFunction(r=>devicePixelRatio===r&&window.__depthScene?.renderer.getPixelRatio()===r,change.ratio,{timeout:5000});
+    const density=await(await import('./desktop-density.mjs')).desktopDensity(page,change.ratio),after=await snapshot();for(const b of Object.values(density.composer))assert.deepEqual(b,density.drawingBuffer);
+    run.densityTransitions.push({scheduledMs:change.at,ratio:change.ratio,before,after,density});
+   }
    if(state.signal&&run.captures.length<6)await capture(state.signal);
    if(state.screen==='result'){reachedResult=true;break;}
    await page.waitForTimeout(150);
   }
   run.reachedResult=reachedResult;run.final=await snapshot();
+  if(liveDensity)assert.equal(run.densityTransitions.length,3,'Battle must exercise all three density changes');
   if(reachedResult){
    await page.waitForSelector('.c2-result');
    if(run.final.result==='party')await page.waitForSelector('.b3-victory-crew[data-ready=true]',{timeout:60000});

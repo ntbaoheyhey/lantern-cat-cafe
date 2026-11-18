@@ -1,10 +1,10 @@
 # CXV V7 handoff
-ACTIVE V7 V-F: native desktop density repairc0373a1d9 READY; complete live-transition battle stress next; assistant: AGV.
+ACTIVE V7 V-F: native desktop density repairc0373a1d9 READY; complete live-transition battles pass; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Extend owned fullbattle capture to apply liveDPR2->1->1.5->2 at fixed battle times using same-CDP CSS capture;run currentnative c0373a1d9 normal/reducedCPU4x sequentially.
-NEXT 2: Verify natural rules/actions/logs/final parity,transition buffers,errors;measure16captures then4new review sheets once;checkpoint/push.
+NEXT 1: Read VictoryCrew.tsx and existing density study; probe desktop DPR changes after outcome without modifying application source.
+NEXT 2: If victory density defect is reproduced, preserve zero-idle reduced rendering; exact native control/lifecycle checks before any repair.
 NEXT 3: Follow CXI integration and AGV2openTASKs;continue visible V-E/F debt. No repeat of rejected shader/scalar/clamp/facecache/number/reset experiments.
-Last confirmed pushc0373a1d9; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application densityc0373a1d9/focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+Last confirmed push6d4324dc3; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application densityc0373a1d9/focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
@@ -14,7 +14,7 @@ V-F DPR2/CPU4x fullbattle3050ee5ae100.141/100.252s;68actions24ults;82apply46expi
 Pending CXI: fallbackd4491cbb5;toast;labels2fd7665b4;posecrope1b1f58f5;HUD79d408c71;stationary4c5f0fa55;Pankoaddba7446loader;focus3050ee5ae;victory96d1e75c3. Packedintegration7ed0ce4f0 already in d69b9dc5c;independentgreenpending.
 Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
-Wake cxv-wake ACTIVE15min exactORDER refreshed01:53Z verified;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running: Vite21525 only;native7605 completed;22captures/6views reviewed once 2026-11-18T02:10:42.597663+00:00.
-Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread02:05Z. capture-arrival SHA1f1d220e unchanged.
+Wake cxv-wake ACTIVE15min exactORDER refreshed02:16Z verified;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
+Running: Vite21525;fullbattle density transition8473 completed02:16:04Z;zero detached jobs.16captures4sheets reviewed once 2026-11-18T02:18:02.904281+00:00.
+Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread02:15Z. capture-arrival SHA1f1d220e unchanged.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.
