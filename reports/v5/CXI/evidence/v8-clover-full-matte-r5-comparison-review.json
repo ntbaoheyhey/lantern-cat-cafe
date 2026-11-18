@@ -1,0 +1,62 @@
+{
+  "utc": "2026-11-18T12:59:04.307938+00:00",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/comparison-own-r1/report.json",
+    "sha256": "26ddc695f536ae9ea3c1fa73519a04ab477dce0e3376c8066985cc18292536b0"
+  },
+  "measurements": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/comparison-own-r1/comparison-measurements.json",
+    "sha256": "72a6a0907b0cc3a7f407ab0f7d815dc863e729fbec3c739ad595a7773a455376"
+  },
+  "video": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/comparison-own-r1/clover-source-vs-native-1x.mp4",
+    "sha256": "518457c8901fd2544c8bcfc0ebb694fdc8735740f94a28b75772722225ed9395",
+    "frames": 300,
+    "fps": 30,
+    "duration": 10,
+    "dimensions": [
+      1280,
+      720
+    ]
+  },
+  "frames": 300,
+  "sourceDisplayedHeight": 227,
+  "maxHeightMismatch": 0.20000078394437537,
+  "imagesViewed": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/comparison-own-r1/comparison-90.png",
+      "sha256": "681afa107edf4caf4d409a5367e37533cf97d2b7f28ca1a3fbe6f82c74968d7a",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 166196,
+      "mean": 35.56733534071181,
+      "stdev": 39.09082527086472,
+      "viewed": true,
+      "views": 1,
+      "viewedUTC": "2026-11-18T12:59:04.307938+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/comparison-own-r1/comparison-299.png",
+      "sha256": "127fb25205e3e557df5869a5e9f92a1c71eb27a2d92731226a7dadd8d1846f96",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 167928,
+      "mean": 35.73784326623987,
+      "stdev": 39.43770650941524,
+      "viewed": true,
+      "views": 1,
+      "viewedUTC": "2026-11-18T12:59:04.307938+00:00"
+    }
+  ],
+  "visualObservation": "Two fresh same-height source/native views show matching head, eye, dress, free paw and teapot poses at frames90/299; selected silhouettes remain readable on scene brown. No gross crop or alignment discrepancy. Stills do not establish seamless playback or original alpha/halo recovery.",
+  "decision": "PASS scoped 1x native/source capture and selected alignment. Matte/halo/seam/performance remain open; not release acceptance.",
+  "imagesNotReopened": true,
+  "subjectivePlaybackPerformed": false
+}

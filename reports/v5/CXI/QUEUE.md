@@ -1,6 +1,6 @@
 # CXI V8 — Batch M first
 M-I1 ACTIVE: R5 fullmatte318x390 source8aef40187/index82f08611 installed;own696anchors/348rows/4actions/4freshviews scopedPASS;10emissions error0;MochiR6 retained;registry{}.
-M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;current seam REJECT MAE10.515464 vs adjacentmedian1.991725. Bytes report-only per OWNER INBOX386.
+M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.14@254ad41d6;sourcec4108923c/indexfe8bdd;5552checks/7browser gates/3actual30sfilms. No commissioned media accepted.
 LIVE6301: fullmatteR5 source8aef40187/index82f08611;CXIcomparison capture lease;fullR4/nativeR2/m1.14 preserved.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
@@ -21,3 +21,4 @@ SUPERSEDED all historical m1.13/currentnativeR1/oldV7m1.14pipeline status: actua
 PRESERVED: allprior media/native artifacts, report receipts and v7-ags-0046-review.json hash7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875;originalDownloads untouched.
 
 M-I2 RESAMPLING: directRGB and fullmatte300frames/bothenginesPASS recomputed;fullmatte148824000RGBA exact/no secondresize;own compact receipts. Neither changes seam/alpha acceptance.
+M-I2 R5 COMPARISON:300nativeframes/10s film227pxbody mismatch0.2px;2freshsameheightviews. Native source trajectory remains aligned;lowerleft seam persists,bodyrectfixed. No alpha/laptop claim.
