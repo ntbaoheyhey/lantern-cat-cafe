@@ -2,7 +2,7 @@
 
 A cosy desktop card RPG: arrange a four-cat crew, defend a lantern-lit café, collect gear and improve your team. Mochi and Panko guard the front, Soot attacks from range, and Clover heals. Optional Avalanche Fuji services add collectible ownership, trading and verifiable transaction receipts.
 
-**Current integration:** `codex/v5-int-2026-11-17`. [Current green tag and work state](reports/v5/CXI/HANDOFF.md) · [Desktop evidence](reports/v5/CXI/I-C.md) · [Local review footage](reports/v5/CXI/REVIEW-VI.md) · [Architecture](docs/ARCHITECTURE.md) · [Owner deployment and Fuji proof](reports/v5/CXI/NEEDS-USER-VI.md).
+**Latest verified release:** [v5-m1.15](reports/v5/CXI/RELEASE-v5-m1.15.md), commit `59f5f3c57`. Integration branch: `codex/v5-int-2026-11-17`. [Publication proof](reports/v5/CXI/evidence/v8-m115-publication.json) · [Desktop evidence](reports/v5/CXI/I-C.md) · [Local review footage](reports/v5/CXI/REVIEW-VI.md) · [Architecture](docs/ARCHITECTURE.md) · [Owner deployment and Fuji proof](reports/v5/CXI/NEEDS-USER-VI.md).
 
 **Judge URL:** [Open the desktop production preview](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). This URL works on the preview host after the steps below. A public deployment of the current green tag has not yet been verified; the owner runbook describes how to publish it.
 
@@ -10,10 +10,10 @@ A cosy desktop card RPG: arrange a four-cat crew, defend a lantern-lit café, co
 
 Use Node 24 (see `.nvmrc`) and pnpm 10.28.0. The frontend demo needs no wallet, account or test tokens.
 
-1. Get the integration branch and install dependencies:
+1. Get the verified release and install dependencies:
 
    ```sh
-   git clone --branch codex/v5-int-2026-11-17 https://github.com/ntbaoheyhey/taskbar-hero.git
+   git clone --branch v5-m1.15 https://github.com/ntbaoheyhey/taskbar-hero.git
    cd taskbar-hero
    pnpm install --frozen-lockfile
    ```
@@ -76,7 +76,9 @@ node --test tools/v5int/fuji-proof-kit.test.mjs
 
 Root `pnpm test` includes the workspace web tests. Contract tests are a separate read-only check: after installing Foundry and initializing submodules with `git submodule update --init --recursive`, run `forge test --root contracts`.
 
-The [desktop evidence record](reports/v5/CXI/I-C.md) separates ordinary guest play, fixture review and chain evidence. On **v5-m1.13**, the first visible enemy HP decrease occurs in **20.448 seconds**, including 17.7 seconds to read eight tutorial cards, with no saved progress, skipping or speed change. Cold combat entries are **7,667,824 / 8,230,950 / 7,743,499 bytes** for wave1/wave3/boss: wave3 exceeds 8 MB by 230,950 bytes. Thirteen audio packages preserve 544 encoded files and native PCM. Desktop density/victory fallback repairs remain; paused battles now redraw after native GPU restoration while preserving resource errors. Independent recovery checks pass both motion modes, repeated loss, exact restored frames and cleanup. Packed bounds reduce bounded CPU work; ordinary timing is mixed and stress remains open. Full suite: 5,361 passed, 11 skipped and two expected failures, including 3,061 web tests. Three local 30-second films show real 1× gameplay with browser audio using labelled fixtures; a [verified narration draft](reports/v5/CXI/DEMO-SCRIPT-VERIFIED.md) separates local play from optional chain services. These local results establish neither public network performance nor a real Fuji transaction.
+The [v5-m1.15 desktop evidence](reports/v5/CXI/I-C.md) records a first enemy HP decrease in **21.163 seconds**, including 17.7 seconds to read eight tutorial cards, with no saved progress, skipping or speed change. Seven fresh browser gates pass, including route recovery and exact GPU restoration in both motion modes. The inherited suite contains **5,543 passed, 11 skipped and two expected failures** (3,243 web tests); application source matches that passing suite except the reviewed landing texture. Cold wave1/wave3/boss transfers are **7,626,520 / 8,065,984 / 7,661,355 bytes**, reported without a release size cap.
+
+Nine native cats have the new idle and cast motions: Panko, Mallow, Sorrel, Biscuit, Inkcap, Cinnamon, Brioche, Velvet and Marigold. Commissioned Mochi/Clover video idles remain excluded while their art gates are open. Three local 30-second films contain real 1× gameplay and browser audio using labelled fixtures; the [review](reports/v5/CXI/REVIEW-VI.md) identifies their exact source. Six existing callouts remain served; replacement audio was not adopted. A [verified narration draft](reports/v5/CXI/DEMO-SCRIPT-VERIFIED.md) separates local play from optional chain services. These local results establish neither ordinary-laptop performance nor a public Fuji transaction.
 
 The [owner runbook](reports/v5/CXI/NEEDS-USER-VI.md) contains the isolated Anvil dry-run and explicit, environment-gated Fuji funding command. It also pins the green release for deployment. No private key is an input to that proof kit.
 
