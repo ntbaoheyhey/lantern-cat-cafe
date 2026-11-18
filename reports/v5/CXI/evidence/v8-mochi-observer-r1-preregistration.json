@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-18T16:46:18.769371+00:00",
+  "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-observer-r1",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-label-r7/build.json",
+    "sha256": "16c9a4e4ae7c190ea490d71aa666a30680758087e9a07b592d565ceb8451ab3c"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "cpuRate": 4,
+  "roster": [
+    "mochi",
+    "panko",
+    "mallow",
+    "sorrel"
+  ],
+  "priorCapture": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-performance-r1/run.json",
+    "sha256": "9c7442c7aec5df7b5cfe079f64fbf13ef92933e0715a1ab84aaaa2c23a3dbb94"
+  },
+  "helpers": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-observer-r1/media-production-fixture.mjs",
+      "sha256": "0b002702b36b8a1cb5a141697c3d13ece8cd5e48450ab9c150e37381c7bce499"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-observer-r1/capture-full-battle-production.mjs",
+      "sha256": "2a46d75474b497af288f9f242173c153e1b4baf2004338f6273eda338b7b43b2"
+    }
+  ],
+  "runnerSha256": "ea5ef8c94e44c6c5b01f33600ad568e1c16804e59b62d338f72632c6117bc841",
+  "leaseDeadline": "2026-11-18T16:57:18.769371+00:00",
+  "trials": [
+    {
+      "name": "01-full",
+      "observer": "full"
+    },
+    {
+      "name": "02-counters",
+      "observer": "counters"
+    },
+    {
+      "name": "03-counters",
+      "observer": "counters"
+    },
+    {
+      "name": "04-full",
+      "observer": "full"
+    }
+  ],
+  "question": "Does repeated DOM geometry observation materially contribute to CPU4 stress timing in this unchanged Mochi/native squad?",
+  "method": "Fixed ABBA,normal-only,fresh browser for each run. Only sampler mode differs. Full observes DOM geometry/scene view at10Hz; counters retains media state/quality and callback events at the same cadence. Eight capture events and rule/scene instrumentation remain identical. No runtime/media/style edits.",
+  "checks": [
+    "All4 natural party outcomes; independent rule replay and exact initial/final/log/untimed-plan parity.",
+    "Recompute frame/renderCPU distributions excluding each capture window; report both full and counters repetitions individually.",
+    "Retain all drop intervals,wraps,missed callbacks and wait events,including failures.",
+    "Describe per-run host snapshots;do not infer continuous utilization or claim isolated hardware."
+  ],
+  "limits": [
+    "ABBA balances linear order drift but is not randomized or a population sample;n=2 each.",
+    "No claim that counters-only is zero-overhead or GPU profiling.",
+    "CPU4 is host-relative stress;not ordinary-laptop certification.",
+    "No art/label/seam/halo or production acceptance."
+  ]
+}
