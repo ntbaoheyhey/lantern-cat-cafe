@@ -66,7 +66,7 @@ def stable_state(state, initial, fixed_time):
 def main():
     base, output = (Path(p).resolve() for p in sys.argv[1:3])
     assert base.is_relative_to(ROOT / 'work/v5/CXV')
-    assert output.is_relative_to(ROOT / 'reports/v5/CXV') and not output.exists()
+    assert (output.is_relative_to(ROOT / 'reports/v5/CXV') or output.is_relative_to(ROOT / 'work/v5/CXV')) and not output.exists()
     raw_path = base / 'report.json'
     raw = json.loads(raw_path.read_text())
     verification = json.loads((base / 'artifact-verification.json').read_text())
@@ -188,7 +188,8 @@ def main():
     output.write_text(json.dumps(result, separators=(',', ':')) + '\n')
     for case, row, baseline, hidden, own, cross in images_to_make:
         sheet = np.zeros((600, 1024, 3), dtype=np.uint8)
-        for image, left, title in [(baseline, 0, 'Ordinary paused baseline'),
+        baseline_title = 'Diagnostic label target +5px' if raw['runtimeDiagnostic'].get('labelTarget', {}).get('dy') else 'Ordinary paused baseline'
+        for image, left, title in [(baseline, 0, baseline_title),
                                     (hidden, 512, 'Diagnostic: labels hidden')]:
             sheet[26:314, left:left+512] = cv2.resize(image, (512, 288), interpolation=cv2.INTER_AREA)
             cv2.putText(sheet, title, (left + 8, 18), cv2.FONT_HERSHEY_SIMPLEX, .45, (240, 240, 240), 1)
