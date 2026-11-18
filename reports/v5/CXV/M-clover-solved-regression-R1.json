@@ -1,0 +1,251 @@
+{
+  "utc": "2026-11-18T16:45:46.952586+00:00",
+  "decision": "Reject fixed rigid-translation proof and conservative solved-translation guard; actual native target paint remains unmeasured. No refit or application change.",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "candidateRelativeR7": [
+    -28,
+    14
+  ],
+  "lowerMochi": "unchanged",
+  "evidence": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/layout.json",
+      "sha256": "6740ea28ef2d5b63a36921e05ec6b24d59ec3cfc60f77a0d0f53c9de43a57831"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/solver-trace.json",
+      "sha256": "e1e717aadac3270add7f392c2250d4f99ccbc947d42d2d818b66ef913d418020"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/paint.json",
+      "sha256": "634abdb0a3e6e7223fc164b6466a25890b2ecb481b103ca806e1961e4e0354c3"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/solved-paint.json",
+      "sha256": "78f90500b71545cf1be080d5c35d95e50bf8525cbdfacda5c2f5f4f6d4cbf1cd"
+    }
+  ],
+  "layout": {
+    "samples": 1534,
+    "maxBaselineError": 0.015580714705720311,
+    "maxUnchangedError": 0.015551199475112298,
+    "maxFallback": 11.385870217124591,
+    "maxRigidError": 10.691868649401044,
+    "layoutSourceSha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "solverCause": {
+    "failedLayouts": 198,
+    "candidateOwnAvoidIntersections": 81,
+    "baselineOwnAvoidRemovedByCandidate": 117,
+    "otherBlockerCategories": [],
+    "interpretation": "All 81 candidate-target intersections are with own avoid. Remaining117 had baseline own-avoid fallback removed by the candidate. Not all198 targets were displaced; this is not an application defect finding."
+  },
+  "paint": {
+    "originalFourControlsValid": {
+      "validCases": 33,
+      "guard2Failures": 15,
+      "directIntersectionFailures": 0,
+      "failedCases": [
+        {
+          "key": "normal-mochi-1-350",
+          "actualDelta": [
+            -15.995334056170748,
+            -4.9849130840209455
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            25
+          ]
+        },
+        {
+          "key": "normal-mochi-4-1100",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            23
+          ]
+        },
+        {
+          "key": "normal-clover-1-350",
+          "actualDelta": [
+            -15.999685884019641,
+            4.106165264232288
+          ],
+          "maxPixelsByMargin": [
+            0,
+            4,
+            23
+          ]
+        },
+        {
+          "key": "normal-clover-4-1100",
+          "actualDelta": [
+            -15.995634562770306,
+            4.778501398640685
+          ],
+          "maxPixelsByMargin": [
+            0,
+            3,
+            26
+          ]
+        },
+        {
+          "key": "normal-panko-1-0",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            23
+          ]
+        },
+        {
+          "key": "normal-panko-1-125",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            23
+          ]
+        },
+        {
+          "key": "normal-panko-1-225",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            24
+          ]
+        },
+        {
+          "key": "normal-panko-1-250",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            18
+          ]
+        },
+        {
+          "key": "normal-panko-1-325",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            25
+          ]
+        },
+        {
+          "key": "normal-panko-1-475",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            18
+          ]
+        },
+        {
+          "key": "normal-panko-1-625",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            17
+          ]
+        },
+        {
+          "key": "normal-panko-1-775",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            16
+          ]
+        },
+        {
+          "key": "normal-panko-1-800",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            23
+          ]
+        },
+        {
+          "key": "normal-panko-4-1100",
+          "actualDelta": [
+            -15.995832253886078,
+            -4.999919689119224
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            23
+          ]
+        },
+        {
+          "key": "normal-mallow-1-350",
+          "actualDelta": [
+            -15.995234416627738,
+            -4.994411763001267
+          ],
+          "maxPixelsByMargin": [
+            0,
+            0,
+            25
+          ]
+        }
+      ]
+    },
+    "newFiveControlsValid": {
+      "validCases": 2,
+      "guard2Failures": 0,
+      "directIntersectionFailures": 0,
+      "failedCases": []
+    }
+  },
+  "imagesViewed": 0,
+  "applicationSourceChanged": false,
+  "productionAcceptance": false,
+  "limits": [
+    "Paint differences are background-dependent;translated support can only reject or support a hypothesis,not prove actualnewpaint.",
+    "Do not refit candidate against any new failure.",
+    "No browser,sourceedit,images viewed or production acceptance.",
+    "Reserved full16 includes earlier poses: regression, not wholly heldout.",
+    "Floor/ceil translations are conservative diagnostic predictions, not browser subpixel repaint.",
+    "Original four controls and added initial-equality gate are distinct protocols; preserve both results."
+  ]
+}
