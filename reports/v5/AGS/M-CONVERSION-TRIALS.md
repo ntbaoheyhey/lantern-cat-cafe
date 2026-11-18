@@ -1,18 +1,16 @@
-# M-CONVERSION-TRIALS Data
+# M-CONVERSION-TRIALS Data (Batch M)
 
-Trial results for opaque cat height conversions.
+Trial results for opaque cat height conversions (Packed RGB+Mask).
 
-| Cat | Height | Filename | Bytes | Denoising |
+| Cat | Height | Filename | Bytes (Opaque) | Bytes (Packed) |
 | :--- | :--- | :--- | :--- | :--- |
-| Mochi | 256px | mochi_256.mp4 | 249K | No |
-| Mochi | 384px | mochi_384.mp4 | 447K | No |
-| Mochi | 384px | mochi_384_hq.mp4 | 635K | Yes |
-| Mochi | 512px | mochi_512.mp4 | 681K | No |
-| Clover | 256px | clover_256.mp4 | 258K | No |
-| Clover | 384px | clover_384.mp4 | 451K | No |
-| Clover | 384px | clover_384_hq.mp4 | 649K | Yes |
-| Clover | 512px | clover_512.mp4 | 685K | No |
+| Mochi | 256px | mochi_256.mp4 | 249K | 643K |
+| Mochi | 384px | mochi_384.mp4 | 447K | 1184K |
+| Mochi | 512px | mochi_512.mp4 | 681K | 1834K |
+| Clover | 256px | clover_256.mp4 | 258K | 677K |
+| Clover | 384px | clover_384.mp4 | 451K | 1216K |
+| Clover | 512px | clover_512.mp4 | 685K | 1856K |
 
-Note: HQ versions use `hqdn3d` and CRF 20 for better quality; sizes are significantly higher.
-Metrics: 10s duration, 30fps, libx264.
+Note: Packed versions use hstack (RGB+Mask).
+Metrics: 10s duration, 30fps, CRF 20, libx264.
 EOF
