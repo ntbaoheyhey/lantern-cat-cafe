@@ -63,3 +63,5 @@
 2026-11-18T00:52:28.000344+00:00 V-F native victory production reviewed once: reduced1x/4x0draws/0uploads and exactRGB, normal7680GLcalls/window,4actors allruns,zeroerrors/blocks. Independent integration pending; current-artifact32s boss attribution next.
 
 2026-11-18T00:56:00.718596+00:00 V-F current-native32s attribution:1x0lateRender/RAF;4x4/8. Entry layout reads remain after pending-clone cleanup. New same-paint geometry reuse study next; no source change or benefit claim.
+
+2026-11-18T01:00:51.783621+00:00 V-F focus read-order prototype passes80geometry+8RGBpairs/4freshsheets;first harness audit-array failure retained;unprofiled production and native gates remain.
