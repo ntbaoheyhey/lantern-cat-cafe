@@ -1,0 +1,663 @@
+{
+  "utc": "2026-11-18T05:50:44.108Z",
+  "cat": "brioche",
+  "sourceCommit": "53dc1f66bc5cbd7fc05334d4ca38d1488f66f57c",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 350,
+        "y": 137,
+        "width": 246,
+        "height": 291,
+        "body": {
+          "x": 382.8601884308149,
+          "y": 169.09579364591372,
+          "width": 181.7561568207525,
+          "height": 226.56675359395246
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 350,
+        "y": 136,
+        "width": 247,
+        "height": 291,
+        "body": {
+          "x": 382.6547485478113,
+          "y": 168.86761416924728,
+          "width": 182.9875319917545,
+          "height": 226.7949330706189
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "c1906e0424090c67e5682333de494dbea6f3241cb8a31b46ffd566ea2d5bbcf6",
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "brioche-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.5695652173913043
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.608695652173913
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.6478260869565217
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.6869565217391304
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 6.075000000000003
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 6.108333333333334
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 6.141666666666666
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 6.174999999999997
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 6.208333333333336
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 6.241666666666667
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 6.274999999999999
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 6.308333333333337
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 6.341666666666669
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:51:59.068Z",
+  "visualReview": {
+    "utc": "2026-11-18T05:52:45.839091+00:00",
+    "cat": "brioche",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/report.json",
+    "captureReportSha256": "2fce13804d4332163eb4bc8dd162cab5f69e2aafcbb48196d18bf338f0764132",
+    "comparison": {
+      "utc": "2026-11-18T05:52:04.469311+00:00",
+      "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/brioche-vs-mochi-1280x720.mp4",
+      "sha256": "dba3076d83d03dcb9ded19f63909dab32eaacfa18babb3334a719db18d0b8e0d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frames": 300,
+      "fps": 30,
+      "durationSeconds": 10,
+      "sameBodyHeightPx": 227,
+      "sourceHeightPx": 431,
+      "cat": "brioche",
+      "candidateMeasuredHeight": 226.7949330706189,
+      "sourcePhase": "F0..299",
+      "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+      "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/report.json",
+      "captureReportSha256": "2fce13804d4332163eb4bc8dd162cab5f69e2aafcbb48196d18bf338f0764132",
+      "reviews": [
+        {
+          "frame": 15,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-15.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "44ff80f38ded18e9cc16e0c4f852022ce9afce140139efcf4214ae511ac4e037"
+        },
+        {
+          "frame": 75,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-75.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "9890bc8503bd3c1f5399f11ab0fafc5dbe4c06e4590ca6e6c4339abf7e9b8338"
+        },
+        {
+          "frame": 165,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-165.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "9b90112bcf415c337d58c18b4019a9da1343bdd2463a33805106fc9a6cf1b86a"
+        },
+        {
+          "frame": 255,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-255.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "4de55211fd445478021455fe228667ae534e70387c33083c48df5d9703585576"
+        }
+      ],
+      "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+    },
+    "rangesPercentH": {
+      "leg_l": [
+        0.0,
+        0.0
+      ],
+      "leg_r": [
+        0.0,
+        0.0
+      ],
+      "head": [
+        1.4022783876619846,
+        1.4741998417406754
+      ],
+      "tail_3": [
+        2.1145734322448373,
+        0.27063054341160964
+      ],
+      "weapon": [
+        0.4340234529661924,
+        0.7584270275116267
+      ],
+      "torso": [
+        0.23436455816110222,
+        0.749801480521739
+      ]
+    },
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-255.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 50261,
+        "sha256": "4de55211fd445478021455fe228667ae534e70387c33083c48df5d9703585576",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:53:09.627435+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/comparison-75.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 49499,
+        "sha256": "9890bc8503bd3c1f5399f11ab0fafc5dbe4c06e4590ca6e6c4339abf7e9b8338",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:53:09.627435+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/candidate/blink-sheet.jpg",
+        "dimensions": [
+          1024,
+          224
+        ],
+        "bytes": 44206,
+        "sha256": "9a9de43e9bd8aec9b376b5e0a8b16432af03627eea3f612bdbaf1e51dd68b821",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:53:09.627435+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/cast/cast-sheet.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 80433,
+        "sha256": "bccc1b82d1ad3782b44b3d9f2219bfc43708627c11860cfc445872f0b0db767c",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:53:09.627435+00:00",
+        "views": 1
+      }
+    ],
+    "scope": "Fresh candidate body/style/blink/cast review at desktop1280x720; no integrated judge or performance claim.",
+    "assessment": {
+      "motion": "Brioche has a small head sway, relaxed basket arm and delayed skirt/tail follow-through; the soft open-hand cast keeps the basket silhouette instead of using an exaggerated swing.",
+      "quality": "The idle extremes preserve hand/basket and dress seams. The blink strip has a long clean closure and gentle reopening. The cast sheet retains a recognizable face and garment silhouette while the familiar support effect blooms; heal and shield values remain readable.",
+      "limits": "The basket moves much less than the designer shield/lantern, so this is a restrained style match. The existing health bar sits at the right cheek/hand level and the support flare temporarily hides the lower skirt. Integrated layout and performance remain separate gates."
+    },
+    "status": "Scoped motion evidence passes; pending integrated judge acceptance.",
+    "filmProbe": {
+      "width": 1280,
+      "height": 720,
+      "avg_frame_rate": "30/1",
+      "duration": "10.000000",
+      "nb_frames": "300"
+    }
+  },
+  "geometry": [
+    {
+      "cat": "brioche",
+      "reduced": false,
+      "profile": {
+        "idea": "regal night watch",
+        "neck": 3,
+        "tilt": 0.8,
+        "breath": 0.8,
+        "ear": 0.75,
+        "tail": 1,
+        "prop": 0.8,
+        "cloth": 0.9,
+        "face": 0.85,
+        "offset": 2.7,
+        "blink": 0.3,
+        "lag": 1.25,
+        "castX": 1.05,
+        "castY": 0.65,
+        "castArm": 0.8,
+        "castRight": 0.6,
+        "castProp": 0.7
+      },
+      "rigSha256": "1051539d4ea6fce12a70867b42962d17c25eb398797b67255619912d9c573e3c",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.5533955065084197,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9952012629302851,
+        "idle:body": 0.9814123408088646,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:hidden-tail": 0.9999998307109617,
+        "idle:tail": 0.6180742569017168,
+        "idle:weapon": 0.9952012158422721,
+        "idle:hidden-arm-l": 0.9952015564040868,
+        "idle:arm-l": 0.9639232609795163,
+        "idle:arm-r": 0.9403918880754392,
+        "idle:head": 0.9450142706447606,
+        "skill:hidden-body": 0.9953068405326422,
+        "skill:body": 0.9566256818091958,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:hidden-tail": 0.9999997696902329,
+        "skill:tail": 0.5692789002070264,
+        "skill:weapon": 0.9953068861164323,
+        "skill:hidden-arm-l": 0.9953066851259749,
+        "skill:arm-l": 0.8235934326543133,
+        "skill:arm-r": 0.5533955065084197,
+        "skill:head": 0.9290436034622978
+      },
+      "worst": {
+        "clip": "skill",
+        "part": "arm-r",
+        "clock": 1.1,
+        "at": 0.31666666666666665,
+        "triangle": 110
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          1.4022783876619846,
+          1.4741998417406754
+        ],
+        "tail_3": [
+          2.1145734322448373,
+          0.27063054341160964
+        ],
+        "weapon": [
+          0.4340234529661924,
+          0.7584270275116267
+        ],
+        "torso": [
+          0.23436455816110222,
+          0.749801480521739
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    },
+    {
+      "cat": "brioche",
+      "reduced": true,
+      "profile": {
+        "idea": "regal night watch",
+        "neck": 3,
+        "tilt": 0.8,
+        "breath": 0.8,
+        "ear": 0.75,
+        "tail": 1,
+        "prop": 0.8,
+        "cloth": 0.9,
+        "face": 0.85,
+        "offset": 2.7,
+        "blink": 0.3,
+        "lag": 1.25,
+        "castX": 1.05,
+        "castY": 0.65,
+        "castArm": 0.8,
+        "castRight": 0.6,
+        "castProp": 0.7
+      },
+      "rigSha256": "1051539d4ea6fce12a70867b42962d17c25eb398797b67255619912d9c573e3c",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.9957248230415544,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9988963617759774,
+        "idle:body": 0.9957248230415544,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:hidden-tail": 1,
+        "idle:tail": 1,
+        "idle:weapon": 0.9988963580692038,
+        "idle:hidden-arm-l": 0.9988963746457825,
+        "idle:arm-l": 0.9988956745208641,
+        "idle:arm-r": 0.9988947484114576,
+        "idle:head": 0.9988912322420228,
+        "skill:hidden-body": 0.9989205979366991,
+        "skill:body": 0.9958188858505462,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:hidden-tail": 1,
+        "skill:tail": 1,
+        "skill:weapon": 0.9989206328824212,
+        "skill:hidden-arm-l": 0.9989206059409849,
+        "skill:arm-l": 0.9989201956258728,
+        "skill:arm-r": 0.9989194008632467,
+        "skill:head": 0.998914823045384
+      },
+      "worst": {
+        "clip": "idle",
+        "part": "body",
+        "clock": 2.933333333333333,
+        "at": 0,
+        "triangle": 48
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          0,
+          0.3390659636003601
+        ],
+        "tail_3": [
+          0,
+          0
+        ],
+        "weapon": [
+          0,
+          0.16508063474738877
+        ],
+        "torso": [
+          0,
+          0.17245434052000075
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    }
+  ],
+  "checks": {
+    "focused": 60,
+    "files": 4,
+    "typecheckExit": 0,
+    "runtimeEquivalentTo": "a3173c08e",
+    "logs": [
+      "work/v5/CXV/jobs/m-native-eight-tests-r2.log",
+      "work/v5/CXV/jobs/m-native-eight-typecheck-r2.log"
+    ]
+  }
+}
