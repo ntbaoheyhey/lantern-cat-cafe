@@ -6,7 +6,7 @@ SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parit
 CXV ACCEPT: all9nativecats scoped motion; FIELD5 R2; Mochi304sample idle/300hashes/equal227px; R4cast290samples/280frames+focusalpha. Do not reopen reviewed views.
 CXV VICTORY: exact6eb22f242 two-file import; ownR5 146samples+2freshviews PASS; fullsuite5471=5458passed+11skipped+2expectedfail,exit0. CXV native140/reduced-restore ACCEPT11verifiedhashes/fullPNGexact.
 CXV LEASE:6301 explicitlyreleased08:59:52Z;R5 naturalPhase2 960rows confirms portrait conflict;ccb209d07 exactimport;R6served09:10;CXVreleased09:19;CXIcoldcompleted09:21;naturalR3 numeric audit ACCEPT;images hashonly,6normal battle drops,local descriptive timing.
-AGS OPEN:T-M1 sourced licenses/packagecosts,T-CXI-5 listening/provenance,T-CXI-10 AV1 receipts/EN+ZH sources,T-CXI-11 real audio inventory;>=2useful.
+AGS OPEN:T-M4 staged delivery research,T-CXI-12 official mask draft,T-CXI-5 provenance/listening,T-CXI-11 five exact cue conditions,T-CXI-10 unsupported AV1 declaration. Through339 reviewed;>=2useful.
 AGS DONE scoped:T-M2 negative provenance inventory only,214/240px unverified;T-M3 ownerdraft only. Through300 dispositions;AGS299unverifiedACK;T5/T11narrow R2TASKs issued. R5 audio37artifacts ownhashes verified;request is not audible-use proof.
 AGV landingR12 REDO:242887B same rejectedR6,35020B larger thanserved;5hashes verified,noimage/adoption. R9finegrain smoothing remainsrejected.
 CLOVER DIAGNOSTIC:unmasked0visible folds/protected216alltransition;unmasked stretchmin.450872/moves113372protectedpixels. Noadoption;unmaskedlayer supportonly64.0443%warm,14.5471%empty/9.3862%green/12.0224%unknown. Colorlabels unverified;actualboundary ownership needed.
@@ -29,3 +29,5 @@ VFXpreload:whole-owner removal unsafe until cross-actor passive presentationCues
 
 Preload closure160actualsourcecases:fiveenemy atlases needed by20/40A6default actions;override fallback usesall10. No filter. Sourcepassive/gallery/round closure and nativeproof stillOPEN.
 Current6301 ignoreddualcat546ec5252/index0b0a76b7;MochiR6payload exact;CXVdecodedspout/HP review active. Sixcallout hashes unchanged49artifacts/6sources;not accepted.
+
+DualcatR1 cold9276444/9743370/9353970B FAIL8MB;own50rowspout+10glint arithmeticPASS;7DOMHPoverlapsFAIL;CXV HP patch/decoded-frame fence pending. Staged delivery study active;no preload filtering.
