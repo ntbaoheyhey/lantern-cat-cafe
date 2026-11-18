@@ -126,7 +126,7 @@ def main():
                                         changedPixels=int(np.count_nonzero(diff)),
                                         maxRgbDifference=int(diff.max()),
                                         bbox=pixels(diff > 0)['bbox'])
-        row['valid'] = (all(x['exact'] for x in row['controls'].values()) and
+        row['valid'] = (not case.get('errors') and not case.get('blockedRequests') and all(x['exact'] for x in row['controls'].values()) and
                         all(all(x['gates'].values()) for x in row['stateGates']) and
                         all(abs(initial['media'][cat]['decoded']['mediaTime'] -
                                 case['frame'] / 30) < 1e-5 for cat in CATS))

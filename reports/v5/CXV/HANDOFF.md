@@ -1,10 +1,10 @@
 # CXV V8 handoff
 ACTIVE BatchM dualmedia R1 scoped rules/lifecyclePASS;HP rectangle overlapFAIL,painted-pixel attribution next;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Finish/commit tools/v5vfx/measure-dual-media-labels.py + probe;explicit R5/6301lease required before runner --capture labels.
+NEXT 1: On explicit R5/6301lease launch run-media-natural.py --cat both --capture labels;then measure-dual-media-labels.py before any review.
 NEXT 2: Review higher-sampling Clover trial on explicitcandidate+lease after native gates;loop/matte/performance stillopen.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push4b34524a1;GREENv5-m1.14@254ad41d6 merged;current nativeR3 b9b6f1728/indexfedad6e2;R5 preserved.
+Last confirmed pushd3da65ab5;GREENv5-m1.14@254ad41d6 merged;current nativeR3 b9b6f1728/indexfedad6e2;R5 preserved.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T13:11Z app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 Jobs:none;6301/timing RELEASED13:02:42Z;CXI nativeR3 all7gates pass,release/tag then exactR5lease promised13:07:45Z.

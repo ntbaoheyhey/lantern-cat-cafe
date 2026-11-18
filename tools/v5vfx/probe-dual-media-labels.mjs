@@ -42,7 +42,7 @@ try{
   await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
   await waitForDecodedMediaFrame(page,{sourceFrame:condition.frame,reduced});
   await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
-  const before=await page.evaluate(sample),entry={...condition,fixedTime,before,captures:[]};report.cases.push(entry);await save();
+  const before=await page.evaluate(sample),entry={...condition,fixedTime,before,errors,blockedRequests,captures:[]};report.cases.push(entry);await save();
   assert(before.paused&&!before.plan);assert.equal(before.url,judgeUrl);
   for(const m of Object.values(before.media)){assert(m.state.ready&&!m.state.failure&&!m.state.disposed);assert(m.planeVisible&&m.rootVisible);assert(Math.abs(m.decoded.mediaTime-condition.frame/30)<1e-5);}
   await page.evaluate(installIsolation);
