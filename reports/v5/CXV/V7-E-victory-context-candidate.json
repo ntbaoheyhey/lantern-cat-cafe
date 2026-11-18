@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-18T02:54:54.510651+00:00",
+  "originalSha256": "48ce7e9aa920abf049ebb92ff032761a20d1389fa6ae94730f3304d7fc97dba2",
+  "capturedCandidateSha256": "a51cc28ce939309de14f02d809fac78a4bfc173f4daa80f8fde7b56ba326ab9f",
+  "normalizedCandidateSha256": "adaec017f79251580a399db2200295fbf476fc2e1d0f49ea58b0911ad94a6dc5",
+  "normalization": {
+    "&&!(contextLost)": "&&!contextLost",
+    "disposed||(contextLost)": "disposed||contextLost",
+    "!((contextLost||restoring))": "!contextLost&&!restoring",
+    "if(true){event.preventDefault();contextLost=true;restoring=false;element.dataset.ready='false';renderer.domElement.style.visibility='hidden';cancelAnimationFrame(raf);raf=0;}": "event.preventDefault();contextLost=true;restoring=false;element.dataset.ready='false';renderer.domElement.style.visibility='hidden';cancelAnimationFrame(raf);raf=0;",
+    "if(true){contextLost=false;restoring=true;}": "contextLost=false;restoring=true;"
+  },
+  "patchBytes": 13869,
+  "applicationSourceChanged": false
+}

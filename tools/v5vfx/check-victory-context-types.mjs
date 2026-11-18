@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {hash,victoryModule} from './victory-demand-source.mjs';
 import {victoryContextSource} from './victory-context-source.mjs';
 const root=resolve(import.meta.dirname,'../..'),app=resolve(root,'apps/web'),require=createRequire(resolve(app,'package.json')),ts=require('typescript');
-const target=resolve(root,victoryModule),original=readFileSync(target,'utf8'),prototype=process.env.CXV_CONTEXT_TEST==='1',source=prototype?victoryContextSource(original):original;
+const target=resolve(root,victoryModule),original=readFileSync(target,'utf8'),prototype=process.env.CXV_CONTEXT_TEST==='1',source=prototype?(process.env.CXV_CONTEXT_CANDIDATE?readFileSync(resolve(process.env.CXV_CONTEXT_CANDIDATE),'utf8'):victoryContextSource(original)):original;
 const config=ts.readConfigFile(resolve(app,'tsconfig.json'),ts.sys.readFile);assert(!config.error);const parsed=ts.parseJsonConfigFileContent(config.config,ts.sys,app,{noEmit:true},resolve(app,'tsconfig.json'));
 const host=ts.createCompilerHost(parsed.options),getSourceFile=host.getSourceFile;host.getCurrentDirectory=()=>app;
 if(prototype)host.getSourceFile=(path,languageVersion,onError,create)=>resolve(path)===target?ts.createSourceFile(path,source,languageVersion,true):getSourceFile(path,languageVersion,onError,create);

@@ -1,0 +1,166 @@
+--- a/apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx
++++ b/apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx
+@@ -20,8 +20,9 @@
+   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=T.SRGBColorSpace;camera.position.z=100;
+   renderer.domElement.setAttribute('aria-hidden','true');element.append(renderer.domElement);
+   let disposed=false,raf=0,start=0,width=0,height=0;
++  let contextLost=false,restoring=false;
+   const media=window.matchMedia('(prefers-reduced-motion: reduce)');
+-  const requestDraw=()=>{if(!disposed&&!raf)raf=requestAnimationFrame(draw);};
++  const requestDraw=()=>{if(!disposed&&!raf&&!contextLost)raf=requestAnimationFrame(draw);};
+   let densityMedia=window.matchMedia('(resolution: '+(devicePixelRatio||1)+'dppx)');
+   const densityChanged=()=>{
+    if(disposed)return;
+@@ -32,7 +33,7 @@
+   };
+   densityMedia.addEventListener('change',densityChanged);
+   const draw=(now:number)=>{ raf=0;
+-   if(disposed)return;if(!start)start=now;
++   if(disposed||contextLost)return;if(!start)start=now;
+    const density=Math.min(devicePixelRatio||1,1.5);
+    if(renderer.getPixelRatio()!==density)renderer.setPixelRatio(density);
+    const w=Math.max(1,element.clientWidth),h=Math.max(1,element.clientHeight);
+@@ -50,7 +51,7 @@
+     actor.root.position.set(x-width/2+(cat.alive?pose.x:0)-(cos*footX*sx-sin*footY*sy),y-(sin*footX*sx+cos*footY*sy)-(cat.alive?pose.y:0),0);
+     if(!cat.alive)actor.root.traverse(node=>{if(node instanceof T.Mesh){const m=node.material as T.MeshBasicMaterial;m.opacity=.35;m.color.set('#9b8d9f');}});
+    }
+-   renderer.render(scene,camera);if(!calm)requestDraw();
++   renderer.render(scene,camera);if(restoring&&!renderer.getContext().isContextLost()){restoring=false;renderer.domElement.style.visibility='';element.dataset.ready=String(actors.size===cats.length);}if(!calm)requestDraw();
+   };
+   cats.forEach((cat,i)=>void loadSpineActor(cat.id,undefined,{deferNativePixels:isCraftOwner(cat.id)}).then(async actor=>{
+    try{
+@@ -58,12 +59,18 @@
+     const set=isCraftOwner(cat.id)&&actor.source!=='designer'&&actor.source!=='sequence'?await loadDrawnPoseSet(cat.id):undefined;
+     if(disposed){actor.dispose();return;}
+     if(set)drawings.set(i,new DrawnPoses(actor,set));
+-    actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(actors.size===cats.length);element.dataset.drawn=String(drawings.size);requestDraw();
++    actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(!contextLost&&!restoring&&actors.size===cats.length);element.dataset.drawn=String(drawings.size);requestDraw();
+    }catch(error){actor.dispose();throw error;}
+   }).catch(()=>{if(!disposed)element.dataset.loadError='true';}));
++  const contextLostHandler=(event:Event)=>{
++   if(disposed)return;
++   event.preventDefault();contextLost=true;restoring=false;element.dataset.ready='false';renderer.domElement.style.visibility='hidden';cancelAnimationFrame(raf);raf=0;
++  };
++  const contextRestored=()=>{if(disposed)return;contextLost=false;restoring=true;requestDraw();};
++  renderer.domElement.addEventListener('webglcontextlost',contextLostHandler);
+   const resizeObserver=new ResizeObserver(requestDraw);resizeObserver.observe(element);
+-  media.addEventListener("change",requestDraw);renderer.domElement.addEventListener("webglcontextrestored",requestDraw);
+-  requestDraw();return()=>{disposed=true;densityMedia.removeEventListener('change',densityChanged);resizeObserver.disconnect();media.removeEventListener("change",requestDraw);renderer.domElement.removeEventListener("webglcontextrestored",requestDraw);cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
++  media.addEventListener("change",requestDraw);renderer.domElement.addEventListener("webglcontextrestored",contextRestored);
++  requestDraw();return()=>{disposed=true;densityMedia.removeEventListener('change',densityChanged);resizeObserver.disconnect();media.removeEventListener("change",requestDraw);renderer.domElement.removeEventListener("webglcontextrestored",contextRestored);renderer.domElement.removeEventListener("webglcontextlost",contextLostHandler);cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
+  // Cat identity, survival and reduced motion are the complete rendering inputs.
+  },[key,reduced]);
+  return <div className="b3-victory-crew" ref={host} role="img" aria-label={cats.filter(c=>c.alive).map(c=>`${c.name}: ${VICTORY_GESTURES[c.id]?.name??'victory'}`).join(', ')}>
+--- /dev/null
++++ b/apps/web/src/game/cardrpg/battle-v3/VictoryCrew.context.test.tsx
+@@ -0,0 +1,99 @@
++import {act,cleanup,render} from '@testing-library/react';
++import {afterEach,beforeEach,expect,it,vi} from 'vitest';
++import {Group} from 'three';
++import {VictoryCrew} from './VictoryCrew';
++
++const {construct,load}=vi.hoisted(()=>({construct:vi.fn(),load:vi.fn()}));
++vi.mock('three',async original=>({...await original<typeof import('three')>(),WebGLRenderer:class {
++ domElement=document.createElement('canvas');lost=false;ratio=1;width=1;height=1;
++ render=vi.fn();dispose=vi.fn();forceContextLoss=vi.fn();
++ getContext=()=>({isContextLost:()=>this.lost});getPixelRatio=()=>this.ratio;
++ setSize(w:number,h:number){this.width=w;this.height=h;this.domElement.width=Math.floor(w*this.ratio);this.domElement.height=Math.floor(h*this.ratio);}
++ setPixelRatio(ratio:number){this.ratio=ratio;this.setSize(this.width,this.height);}
++ constructor(){construct(this);}
++}}));
++vi.mock('../spine/assets',()=>({loadSpineActor:load}));
++vi.mock('../vfx-craft/encounter',()=>({isCraftOwner:()=>true}));
++vi.mock('../vfx-craft/drawn-poses',()=>({loadDrawnPoseSet:async()=>({}),DrawnPoses:class {deform=vi.fn();}}));
++vi.mock('../stage/core',()=>({unitCore:()=>({world:{x:0,y:0,width:100,height:100}})}));
++vi.mock('../ui-v3/art-a6',()=>({artPropsA6:(id:string)=>({src:`/${id}.webp`})}));
++const cats=['mochi','soot','clover','panko'].map(id=>({id,name:id,alive:true}));
++const actor=()=>({root:new Group(),source:'native',bounds:{x:0,y:0,width:100,height:100},sample:vi.fn(),duration:()=>1,setOrder:vi.fn(),dispose:vi.fn()});
++type Renderer={domElement:HTMLCanvasElement;lost:boolean;render:ReturnType<typeof vi.fn>;dispose:ReturnType<typeof vi.fn>;getPixelRatio:()=>number};
++let frames:Map<number,FrameRequestCallback>,nextFrame:number,media:EventTarget&{matches:boolean},queries:EventTarget[],resize:Array<()=>void>;
++const renderer=()=>construct.mock.calls.at(-1)![0] as Renderer;
++const flush=async()=>{await act(async()=>{await Promise.resolve();});};
++const step=async(now=1000)=>{const callbacks=[...frames.values()];frames.clear();await act(async()=>{callbacks.forEach(callback=>callback(now));});};
++const loss=(r=renderer())=>{r.lost=true;const event=new Event('webglcontextlost',{cancelable:true});r.domElement.dispatchEvent(event);return event;};
++const restore=(r=renderer())=>{r.lost=false;r.domElement.dispatchEvent(new Event('webglcontextrestored'));};
++const mount=async(reduced=false)=>{const view=render(<VictoryCrew cats={cats} reduced={reduced}/>),host=view.container.firstElementChild as HTMLElement;
++ Object.defineProperties(host,{clientWidth:{value:200,configurable:true},clientHeight:{value:120,configurable:true}});await flush();await step();return{view,host};};
++beforeEach(()=>{
++ frames=new Map();nextFrame=0;queries=[];resize=[];media=Object.assign(new EventTarget(),{matches:false});
++ construct.mockReset();load.mockReset().mockImplementation(async()=>actor());
++ vi.stubGlobal('requestAnimationFrame',vi.fn((callback:FrameRequestCallback)=>{frames.set(++nextFrame,callback);return nextFrame;}));
++ vi.stubGlobal('cancelAnimationFrame',vi.fn((id:number)=>frames.delete(id)));
++ vi.stubGlobal('devicePixelRatio',1);vi.stubGlobal('matchMedia',vi.fn((query:string)=>{if(query.includes('prefers-reduced-motion'))return media;const target=new EventTarget();queries.push(target);return target;}));
++ vi.stubGlobal('ResizeObserver',class {disconnect=vi.fn();observe=vi.fn();constructor(callback:()=>void){resize.push(callback);}});
++});
++afterEach(()=>{cleanup();vi.unstubAllGlobals();});
++
++it('exposes the fallback during normal loss and restores readiness only after a draw',async()=>{
++ const {host}=await mount(),r=renderer(),oldFrame=[...frames.values()][0]!;expect(host.dataset.ready).toBe('true');
++ expect(loss().defaultPrevented).toBe(true);expect(host.dataset.ready).toBe('false');expect(r.domElement.style.visibility).toBe('hidden');expect(frames.size).toBe(0);
++ oldFrame(1200);expect(r.render).toHaveBeenCalledTimes(1);expect(frames.size).toBe(0);
++ restore();expect(host.dataset.ready).toBe('false');expect(r.domElement.style.visibility).toBe('hidden');expect(frames.size).toBe(1);await step(1300);
++ expect(host.dataset.ready).toBe('true');expect(r.domElement.style.visibility).toBe('');expect(r.render).toHaveBeenCalledTimes(2);expect(frames.size).toBe(1);
++});
++
++it('keeps reduced loss idle through resize, density and motion notifications',async()=>{
++ const {host}=await mount(true),r=renderer();loss();
++ Object.defineProperties(host,{clientWidth:{value:320,configurable:true},clientHeight:{value:180,configurable:true}});
++ vi.stubGlobal('devicePixelRatio',2);queries.at(-1)!.dispatchEvent(new Event('change'));
++ resize.forEach(callback=>callback());media.dispatchEvent(new Event('change'));
++ expect(frames.size).toBe(0);expect(r.render).toHaveBeenCalledTimes(1);expect(host.dataset.ready).toBe('false');
++ restore();restore();expect(frames.size).toBe(1);await step(2000);
++ expect(r.getPixelRatio()).toBe(1.5);expect(r.domElement.width).toBe(480);expect(r.domElement.height).toBe(270);
++ expect(host.dataset.ready).toBe('true');expect(r.render).toHaveBeenCalledTimes(2);expect(frames.size).toBe(0);
++});
++
++it('does not hide fallback when a pending actor completes during loss',async()=>{
++ let resolve!:(value:ReturnType<typeof actor>)=>void;load.mockImplementationOnce(()=>new Promise(done=>{resolve=done;}));
++ const {host}=await mount(true);expect(host.dataset.ready).toBe('false');loss();
++ await act(async()=>resolve(actor()));expect(host.dataset.ready).toBe('false');expect(frames.size).toBe(0);
++ restore();expect(host.dataset.ready).toBe('false');await step(2000);expect(host.dataset.ready).toBe('true');expect(frames.size).toBe(0);
++});
++
++it('handles another loss before the queued restored frame',async()=>{
++ const {host}=await mount(true),r=renderer();loss();restore();const queued=[...frames.values()][0]!;
++ loss();queued(1800);expect(host.dataset.ready).toBe('false');expect(r.render).toHaveBeenCalledTimes(1);expect(frames.size).toBe(0);
++ restore();await step(2000);expect(host.dataset.ready).toBe('true');expect(r.render).toHaveBeenCalledTimes(2);
++});
++
++it('retains fallback if the GPU is lost again inside the restoration render',async()=>{
++ const {host}=await mount(true),r=renderer();loss();restore();r.render.mockImplementationOnce(()=>{r.lost=true;});
++ await step(2000);expect(host.dataset.ready).toBe('false');expect(r.domElement.style.visibility).toBe('hidden');loss();restore();await step(2100);expect(host.dataset.ready).toBe('true');expect(r.domElement.style.visibility).toBe('');
++});
++
++it('ignores queued restoration and removed event listeners after unmount',async()=>{
++ const {view,host}=await mount(true),r=renderer();loss();restore();const queued=[...frames.values()][0]!;view.unmount();
++ const ready=host.dataset.ready;queued(2000);loss(r);restore(r);resize.forEach(callback=>callback());media.dispatchEvent(new Event('change'));
++ expect(frames.size).toBe(0);expect(r.render).toHaveBeenCalledTimes(1);expect(host.dataset.ready).toBe(ready);expect(r.domElement.isConnected).toBe(false);expect(r.dispose).toHaveBeenCalledOnce();
++});
++
++it('starts a fresh renderer when motion props change during loss',async()=>{
++ const {view,host}=await mount(),old=renderer();loss();view.rerender(<VictoryCrew cats={cats} reduced/>);await flush();await step(2000);
++ expect(renderer()).not.toBe(old);expect(old.domElement.isConnected).toBe(false);expect(host.dataset.ready).toBe('true');
++ loss(old);restore(old);expect(frames.size).toBe(0);expect(host.dataset.ready).toBe('true');
++});
++
++it('disposes a late actor after unmount while the context is lost',async()=>{
++ let resolve!:(value:ReturnType<typeof actor>)=>void;load.mockImplementationOnce(()=>new Promise(done=>{resolve=done;}));
++ const {view}=await mount(true);loss();view.unmount();const late=actor();await act(async()=>resolve(late));
++ expect(late.dispose).toHaveBeenCalledOnce();expect(frames.size).toBe(0);
++});
++
++it('honors the current OS motion preference after restoration',async()=>{
++ await mount();loss();media.matches=true;media.dispatchEvent(new Event('change'));restore();await step(2000);expect(frames.size).toBe(0);
++ loss();media.matches=false;media.dispatchEvent(new Event('change'));restore();await step(2100);expect(frames.size).toBe(1);
++});
+--- a/apps/web/src/game/cardrpg/battle-v3/VictoryCrew.scheduling.test.tsx
++++ b/apps/web/src/game/cardrpg/battle-v3/VictoryCrew.scheduling.test.tsx
+@@ -5,7 +5,7 @@
+ 
+ const {construct,load}=vi.hoisted(()=>({construct:vi.fn(),load:vi.fn()}));
+ vi.mock('three',async original=>({...await original<typeof import('three')>(),WebGLRenderer:class {
+- domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();getPixelRatio=()=>1;dispose=vi.fn();forceContextLoss=vi.fn();
++ domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();getPixelRatio=()=>1;getContext=()=>({isContextLost:()=>false});dispose=vi.fn();forceContextLoss=vi.fn();
+  setSize(w:number,h:number){this.domElement.width=w;this.domElement.height=h;}
+  constructor(){construct(this);}
+ }}));

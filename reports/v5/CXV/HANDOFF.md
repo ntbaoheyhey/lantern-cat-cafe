@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V7 V-E/F: visible context-loss prototype localPASS;source adoption BLOCKED-ON CXI02:51density audit;assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Finish reviewable context-loss repair bundle;28tests/TSC0/6exactRGBpairs/4freshreviews pass;source held48ce7e9a until CXIaudit clears.
+NEXT 1: Context patch+normalizedcandidateadaec017 ready28tests/TSC0;check new INBOX-CXV after198 and follow CXI sourcehold;browser/perf window requested.
 NEXT 2: On CXIclear,adopt normalized tested candidate,28tests/TSC0,checkpoint;launch run-victory-context-native.mjs then verifier;study gate02:54Z.
 NEXT 3: Follow CXI integration and AGV2openTASKs;continue visible V-E/F debt. No repeat of rejected shader/scalar/clamp/facecache/number/reset experiments.
-Last confirmed pushe4963cc77; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application densityc0373a1d9/focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+Last confirmed push60276602c; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application densityc0373a1d9/focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
