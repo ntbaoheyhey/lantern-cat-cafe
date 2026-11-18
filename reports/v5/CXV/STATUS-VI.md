@@ -1,11 +1,13 @@
 # CXV — Batch M: mèo sống động
-Cập nhật: 2026-11-18T14:14:44.809834+00:00
+Cập nhật: 2026-11-18T14:30:59.164893+00:00
 Tag xanh v5-m1.15 đã nhập; chín mèo native đã nhận, hai video Mochi/Clover chưa đăng ký production. Soot và capture-arrival.mjs được giữ nguyên.
 R7 đã nhập đúng hai thay đổi nhãn từ93f3637f2: Mochi/Clover dùng neo HP authored, Clover thêm5px.25 kiểm tra tập trung và typecheck đạt; chưa READY nhãn.
 Capture R7 nguồn bf01d462a/index eb93ee0d tại6301 hoàn tất14:12:48Z.18 ca attribution đều hợp lệ, nhãn không đè hình của chính mèo; nhưng F297 Clover/F188 Mochi còn17 pixel đuôi chạm huy hiệu Clover. Ba ca status tổng hợp còn208/69/74 pixel giao; đây là stress giả lập, không phải trạng thái luật đã chứng minh.
 Hai trận tự nhiên thắng,110 hành động,24 ultimate; luật/trạng thái/log/diễn biến khớp độc lập, không lỗi. Hộp nhãn/thân mèo khác còn giao: Mochi47/48 mẫu, Clover749/766 mẫu (normal/reduced); hộp bao có vùng trong suốt nên chưa suy ra tất cả là che pixel.
 P95 khung16,8ms cả hai chế độ trênM3 Pro; chỉ mô tả máy này. Decoder chạy/dừng sau thắng đúng, không callback muộn; không suy ra laptop thường đạt.
-Ba ảnh attribution và bốn ảnh ghép trận được đo trước, xem đúng một lần. Mặt còn nhận ra; lửa/lá/sóng khiên vẫn che vùng thân và số khiên chồng. Giữ lỗi, không gọi toàn bộ hiệu ứng thông thoáng.
+R7 vẫn chưa đạt nhãn. Thử dùng toàn hộp thân của mọi mèo bị loại: Clover phải dịch57–160px và đổi phía khi status dài. Đã đo600 frame GPU và chiếu hỗ trợ alpha toàn chu kỳ lên18 cảnh idle:bao hết912.708 pixel đóng góp,không pixel thoát.
+Ứng viên dịch Clover(-12,+19) so vớiR7:11 cặp cảnh idle và5 status tổng hợp đều khớp control/không giao pixel;nhãn khác/HUD/canvas không đổi.3 ảnh mới xem một lần;thấy khoảng hở giữa đuôi/huy hiệu.2 chú thích ảnh cũ ghi+5 đã đính chính trong receipt,ảnh gốc giữ nguyên. Chưa sửa mã app;đã trả6301/timing14:26:37Z.
+Đã chuẩn bị probe16 hành động hợp lệ M/C/Panko/Mallow,normal/reduced:đối chiếu toàn trạng thái luật và tách paint thân native. Thử một Panko basic trước;đang xin lease mới. State khởi tạo có chỉnh HP/charge/queue,không gọi là trận tự nhiên.
 Đã trả6301/timing14:13:52Z sau khi job và browser đóng. Không còn job CXV đang chạy. Tiếp theo: đo giả thuyết bố trí nhãn tính cả đuôi mèo lân cận/status mở rộng trên dữ liệu đóng băng trước khi sửa mã.
 R6 GPU:648 file,600 tham chiếu,24 khung GPU và168 socket khớp pha0, gồm hai mẫu seeking; phạm vi controlled draw, không chứng minh toàn bộ chơi thường.
 Đầu CloverR5/tayR6 đạt24/24 heldout mỗi loại; native sai số decoded tối đa0,728/0,320px. Bằng chứng saiR2/R3/R4 cũ giữ nguyên.
