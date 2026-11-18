@@ -27,11 +27,12 @@ function fixture(reduced,skill){
 }
 try{
  stop();assert.equal(execFileSync('git',['diff',build.sourceCommit,'--','packages/game-rules/src'],{cwd:'/Users/bao/taskbar-hero-chain',encoding:'utf8'}),'','Rules match candidate source');assert.equal(runtimeEvidence().indexSha256,build.indexSha256);assert.equal(hash(Buffer.from(await(await fetch(judgeUrl)).arrayBuffer())),build.indexSha256);
- browser=await chromium.launch({headless:true,args:['--use-angle=metal']});const{page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));
+ browser=await chromium.launch({headless:true,args:['--use-angle=metal']});const errors=[],blockedRequests=[];
  // A6 exposes only the basic card and ultimate. Legacy -2/-3 cards belong
  // to the compiled gallery contract, not legal judge-facing actions.
  for(const reduced of [false,true])for(const skill of [1,4]){
   stop();const f=fixture(reduced,skill);
+  const opened=await openFixture(browser,config.fixtures.find(f=>f.id==='boss')),page=opened.page;
   await page.evaluate(({state,battle})=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state=state;Object.assign(m,{tutorialBattle:battle,galleryBattle:null,replay:null,plan:null,roundPlan:null,watching:true,paused:true,sceneStarted:true,screen:'map',beforeImpact:null,afterImpact:null,animationAt:0});m.notify(false);},f);
   await page.waitForFunction(cat=>{const s=window.__depthScene,m=window.__depthReview,a=[...s.actors.values()].find(e=>e.asset===cat)?.actor;return s.ready&&a?.source==='media'&&a.designerMedia.media.state.ready&&s.view().actors.every(a=>a.hp===m.visualBattle.actors.find(b=>b.id===a.id)?.hp);},cat,{timeout:90000});
   await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:30,paused:true},0);});
@@ -51,16 +52,16 @@ try{
     let maxMeshDelta=0,minTriangleRatio=Infinity;for(let i=0;i<positions.array.length;i++)maxMeshDelta=Math.max(maxMeshDelta,Math.abs(positions.array[i]-base[i]));
     for(let i=0;i<index.count;i+=3){const ids=[index.getX(i),index.getX(i+1),index.getX(i+2)],area=get=>{const[x,y,z]=ids.map(get);return(y[0]-x[0])*(z[1]-x[1])-(y[1]-x[1])*(z[0]-x[0]);},before=area(j=>[base[j*3],base[j*3+1]]),after=area(j=>[positions.getX(j),positions.getY(j)]);if(before)minTriangleRatio=Math.min(minTriangleRatio,after/before);}
     const worldFoot=a.root.position.clone().set(0,0,0);a.root.localToWorld(worldFoot);const projected=worldFoot.clone().project(s.camera);
-    return{cat,reduced,skill,ms,fixedTime,currentPlan:m.plan?.skillId??null,sampled:{name:s.sampled.get(id)?.name,at:s.sampled.get(id)?.at},maxMeshDelta,minTriangleRatio,worldFoot:worldFoot.toArray(),screenFoot:[(projected.x+1)*s.width/2,(1-projected.y)*s.height/2],root:a.root.matrixWorld.toArray(),opaqueWorld:a.opaqueWorld,box:s.sizeAudit().units.find(u=>u.id===id),media:{...media.state},manifest:ms===0?media.manifest:undefined,source:a.source,url:location.href};
+    return{cat,reduced,skill,ms,fixedTime,currentPlan:m.plan?.skillId??null,sampled:{name:s.sampled.get(id)?.name,at:s.sampled.get(id)?.at},maxMeshDelta,minTriangleRatio,worldFoot:worldFoot.toArray(),screenFoot:[(projected.x+1)*s.width/2,(1-projected.y)*s.height/2],root:a.root.matrixWorld.toArray(),opaqueWorld:a.opaqueWorld,box:s.sizeAudit().units.find(u=>u.id===id),media:{...media.state},manifest:ms===0?media.manifest:undefined,source:a.source,bossPhaseAudit:{...s.bossPhase.audit},bossPhases:s.view().bossPhases,scenePlan:s.view().frame?.plan.skillId??null,url:location.href};
    },{cat,reduced,skill,ms,fixedTime});assert.equal(row.url,judgeUrl);assert.equal(row.source,'media');assert(row.minTriangleRatio>0);report.rows.push(row);
    if((!reduced&&((skill===1&&ms===350)||(skill===4&&(ms===1100||ms===2200-.0001))))||(reduced&&skill===4&&ms===1100)){const path=resolve(out,`cast-${skill}-${reduced?'reduced':'normal'}-${ms}.png`);await page.screenshot({path});report.captures.push({path,sha256:hash(await readFile(path)),utc:new Date().toISOString(),skill,reduced,ms});}
   }
-  await save();
+  errors.push(...opened.errors);blockedRequests.push(...opened.blockedRequests);await page.close();await save();
  }
  report.errors=errors;report.blockedRequests=blockedRequests;assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);assert.equal(runtimeEvidence().indexSha256,build.indexSha256);
  report.routingPass=report.rows.filter(r=>r.ms<(r.skill===4?2200:800)).every(r=>r.sampled.name===(r.skill===4?'ult':'attack'));
  report.hitPass=report.rows.filter(r=>r.ms===(r.skill===4?1100:350)).every(r=>Math.abs(r.sampled.at-(r.skill===4?1.1:.35))<1e-8);
  report.mediaCastPass=report.rows.some(r=>r.skill===4&&!r.reduced&&r.maxMeshDelta>0)&&report.rows.filter(r=>r.reduced).every(r=>r.maxMeshDelta===0);
- report.pass=report.routingPass&&report.hitPass&&report.mediaCastPass;report.limits='Actual A6 basic/ultimate actions only; -2/-3 are not legal judge cards and are excluded. Four fresh desktop stills saved for separate measured review; no art acceptance, final enrollment or FPS claim. Static intake bounds are not per-frame silhouette.';assert.equal(report.pass,true,'Production media routing/contact/deformation gate failed');
+ report.pass=report.routingPass&&report.hitPass&&report.mediaCastPass;report.limits='Actual A6 basic/ultimate actions only; -2/-3 are not legal judge cards and are excluded. Each action has a fresh page to isolate prior boss phase state. Four fresh desktop stills saved for separate measured review; no art acceptance, final enrollment or FPS claim. Static intake bounds are not per-frame silhouette.';assert.equal(report.pass,true,'Production media routing/contact/deformation gate failed');
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,routingPass:report.routingPass,hitPass:report.hitPass,rows:report.rows.length,failure:report.failure}));}

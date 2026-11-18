@@ -12,3 +12,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18 07:19Z: Mochi bốn mặt phẳng 931.787 byte đạt kiểm tra 300 khung trên Chromium/WebKit; loader đạt64 kiểm tra và đường cũ92 kiểm tra. Chưa đưa vào game: phép đo khung hình sân đấu đọc sai video, đã khôi phục và nhờ CXV sửa đúng phạm vi. Bản local mới901430f2b chỉ thêm hiệu ứng5 ultimate đã nhập, kiểm tra trận mở được/0 lỗi; chờ kiểm tra hình thật, chưa tag.
 
 2026-11-18T07:33:54.918019+00:00 — Bản sửa đo khung video đã nhập đúng3file;80kiểm tra tập trung và TypeScript đạt,3833đường dẫn bảo vệ không đổi. Thử đuôi Clover mới hết gập nhưng còn bóp hình nên chưa chấp nhận; chưa đăng ký media hay phát hành. Bản nháp yêu cầu xuất alpha của AGS đã đủ trường; chỉ để chủ dự án xem.
+
+2026-11-18T07:54:21.891704+00:00 — Bản thử R3 đã sửa mốc ultimate media Mochi/Clover đúng1,1giây;42test tập trung,TypeScript và toàn bộ5465test đạt(5452pass,11bỏqua,2lỗi dự kiến). Mochi thử4hànhđộng/24mẫu ở2chếđộ đúng mốc;3ảnh mới sau khi tách fixture không còn panel boss cũ. Idle Mochi304mẫu/300hash phim được xác minh;chưa đăng ký vào bản chính vì tải lạnh vượt8MB,Clover/sockets/hiệu năng còn mở.
