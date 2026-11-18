@@ -2,7 +2,7 @@
 
 Bản đã kiểm tra **v5-m1.13**, ứng dụng **13fb390e9b4007f985577a2e0320f81b464aa11b**, source quay **6fe2a0340483960d112cf06655277c0b0e3a4270** (chỉ thêm báo cáo). Full suite 5.361 passed, 11 skipped, hai expected failures; tổng 5.374 test, gồm 3.061 web. Build/typecheck,44 test tập trung và bảy bước cuối đạt. Paused-battle recovery đã kiểm native độc lập; audio source giữ nguyên, paths m1.12→m1.13 khớp. [Bằng chứng](I-C.md): đòn đầu 20,448 giây gồm17,7giây đọc; wave3 vượt8MB 230.950B. Chỉ dùng tag sau khi BOARD xác nhận remote.
 
-Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
+Cổng6301 hiện chạy ứng viên V8 chưa phát hành (source85cb62233); tag xanh gần nhất vẫn là v5-m1.13. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
