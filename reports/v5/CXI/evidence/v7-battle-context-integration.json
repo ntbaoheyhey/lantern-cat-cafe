@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-18T03:36:02.978102+00:00",
+  "delivery": "172c317d4",
+  "paths": [
+    "apps/web/src/game/cardrpg/spine/scene.ts",
+    "apps/web/src/game/cardrpg/spine/scene-context.test.ts"
+  ],
+  "beforeSceneSha256": "3b1ab0ecce9911dabb697bc1844962442c05765a69192583bcfb3d7763634218",
+  "candidateSceneSha256": "01826fc7c13e470d7d52b8800d9a1b72b97356b01a1544701c77acc2523289c3",
+  "baseline": {
+    "source": "f8d41daba7a36a099e7e86ff3f3bb6a6dc6a4f24",
+    "index": "ce3d3585df78137adfe8fc34420a1cf2b4be2a2121a9bc74aedcaa077a66be73",
+    "runs": [
+      {
+        "mode": "normal",
+        "reproduced": true,
+        "lostDraws": 29,
+        "restoredDraws": 29,
+        "persistentError": "The cafe canvas needs a reload. Battle controls remain available."
+      },
+      {
+        "mode": "reduced",
+        "reproduced": true,
+        "lostDraws": 29,
+        "restoredDraws": 29,
+        "persistentError": "The cafe canvas needs a reload. Battle controls remain available."
+      }
+    ]
+  },
+  "disposition": "Scoped import for independent candidate validation; not yet accepted",
+  "rawBaseline": "work/v5/CXI/context/v7-battle-context-baseline/report.json"
+}
