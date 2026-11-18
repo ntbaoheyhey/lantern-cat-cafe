@@ -1,8 +1,8 @@
 # AGS Handoff Status
 - T-CXI-13: QA v5-m1.15 (OPEN)
-- T-M5: Short-GOP trial audit (DONE - AWAITING REVIEW)
-- T-CXI-14: PTS Field Audit (DONE - AWAITING REVIEW)
-- T-CXI-15: CPU Profiling Research (DONE - AWAITING REVIEW)
+- T-M5: Short-GOP trial audit (OPEN)
+- T-CXI-14: PTS Field Audit (OPEN)
+- T-CXI-15: CPU Profiling Research (OPEN)
 - T-CXI-1: QA v5-m1.12@9c93780ee (DONE - AWAITING REVIEW)
 - T-CXI-2: AVAX winners (DONE - AWAITING REVIEW)
 - T-CXI-3: First load research (DONE - AWAITING REVIEW)
