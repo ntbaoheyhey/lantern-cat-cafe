@@ -21,3 +21,5 @@ Chủ dự án bỏ giới hạn8MB lúc12:09:40Z; byte chỉ báo cáo. AGV T-M
 2026-11-18T17:05:11.922962+00:00: Kiểm tra phương pháp chụp hoàn tất: 50 ảnh xác minh hash, trạng thái ổn định; 4/5 trường hợp đổi pixel sau thao tác ẩn nhãn. Chưa đủ bằng chứng duyệt hình ảnh sản xuất; tiếp tục phạm vi Mochi riêng. Không đổi mã ứng dụng.
 
 2026-11-18T17:15:40.595299+00:00: Phương án nhãn Mochi phía dưới bị loại trong bản chỉ có Mochi: giao vùng bảo vệ Clover ở86/88 mẫu;6 mẫu vượt giới hạn liên kết. Cả hai cách ẩn nhãn đều không khôi phục pixel y nguyên. Giữ mã nguồn hiện tại, nghiên cứu bố cục tiếp.
+
+2026-11-18T17:49:26.597529+00:00 Kiểm tra xuất canvas không ẩn nhãn đạt:30ảnh xác minh hash,20 cặp pixel và60 trạng thái giữ nguyên. Hai khung chỉ số160x72 vừa khoảng trống footer, dư33px;chưa dựng nội dung hoặc duyệt liên kết nhân vật. Chênh lệch ảnh màn hình/canvas ngoài vùng nhãn vẫn còn7351–24743pixel nên chưa dùng để kết luận nhãn che mèo. Không sửa app.

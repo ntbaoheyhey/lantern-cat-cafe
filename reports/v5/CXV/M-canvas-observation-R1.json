@@ -1,0 +1,883 @@
+{
+  "utc": "2026-11-18T17:48:30.205010+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/canvas-observation-r1-174752/report.json",
+    "sha256": "372322caba2901335eef5a799d4f9c77ebf7aca210e68b16bfafc0205e6a164b"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-canvas-observation-R1-preregistration.json",
+    "sha256": "1c6f65c255cb91ae21351d41910bbb914a350eee22f2609f5e877ea0da75917b"
+  },
+  "artifact": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/canvas-observation-r1-174752/artifact-verification.json",
+    "sha256": "b2a5c967f165bc832928a3e8caf1bb5c54e7cdc951c592117c93f9344e8ad2ae"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/canvas-observation-measurement.py",
+    "sha256": "9274b6f7994b7a930a71933aed1dad4ba0f9804f2c923ec1bd4a960d7cfb6e3f"
+  },
+  "capturePass": true,
+  "hashes": 30,
+  "rulesExact": true,
+  "methodPass": true,
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/canvas-observation-r1-174752/canvas-observation-measurement.json",
+    "sha256": "6e26bb86fd86d6fe846d9cd336e606e21de5b8de503b28b8b50bb3fc2700bedf"
+  },
+  "release": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/canvas-observation-r1-174752/release.json",
+    "sha256": "63289e5523caff56f31ef8daab1035b5b54f265c83494a2619b9cd7ab7b88282"
+  },
+  "fullStateSnapshots": 60,
+  "inheritedChecks": 840,
+  "cases": [
+    {
+      "key": "untouched-normal-mochi-1-350",
+      "repeatPass": true,
+      "statePass": true,
+      "repeatComparisons": [
+        {
+          "a": "screen0",
+          "b": "screen1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "screen0",
+          "b": "screen2",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas2",
+          "pixels": 0,
+          "bbox": null
+        }
+      ],
+      "screenCanvas": {
+        "supportedMapping": true,
+        "allPixels": {
+          "pixels": 143598,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "insideLabelHudGuard": {
+          "pixels": 118855,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "outsideLabelHudGuard": {
+          "pixels": 24743,
+          "bbox": [
+            1,
+            46,
+            1280,
+            631
+          ]
+        },
+        "canvasAlphaValues": [
+          255
+        ],
+        "interpretation": "Descriptive difference only; DOM paint, compositor/color management or other causes are not distinguished. No release/art gate."
+      },
+      "footerCapacity": {
+        "panels": [
+          {
+            "x": 102,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          },
+          {
+            "x": 270,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 633.609375,
+          "width": 1280,
+          "height": 86.390625,
+          "top": 633.609375,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "speed": {
+          "x": 20,
+          "y": 649.796875,
+          "width": 70,
+          "height": 54,
+          "top": 649.796875,
+          "right": 90,
+          "bottom": 703.796875,
+          "left": 20
+        },
+        "party": {
+          "x": 475,
+          "y": 636.796875,
+          "width": 330,
+          "height": 80,
+          "top": 636.796875,
+          "right": 805,
+          "bottom": 716.796875,
+          "left": 475
+        },
+        "actions": {
+          "x": 1099.65625,
+          "y": 654.796875,
+          "width": 160.34375,
+          "height": 44,
+          "top": 654.796875,
+          "right": 1260,
+          "bottom": 698.796875,
+          "left": 1099.65625
+        },
+        "rightSlack": 33,
+        "contained": true,
+        "bodyConflicts": [],
+        "controlConflicts": [],
+        "nominalBoxPass": true,
+        "limit": "Outer computed boxes only; complete portrait glow/focus paint and actual panel content/association not implemented or accepted."
+      },
+      "arenaAfter": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "class": "dp-arena chapter-3  ",
+          "actor": null,
+          "pseudo": "::after",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720,
+            "top": 0,
+            "right": 1280,
+            "bottom": 720,
+            "left": 0
+          },
+          "style": {
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "filter": "none",
+            "backdropFilter": "none",
+            "mixBlendMode": "screen",
+            "isolation": "auto",
+            "position": "absolute",
+            "zIndex": "auto",
+            "overflow": "visible",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "border": "0px none rgb(255, 242, 216)",
+            "boxShadow": "none",
+            "textShadow": "none",
+            "color": "rgb(255, 242, 216)",
+            "font": "800 14px / 20.3px \"Baloo 2\"",
+            "clipPath": "none",
+            "maskImage": "none"
+          }
+        }
+      ]
+    },
+    {
+      "key": "untouched-normal-panko-1-125",
+      "repeatPass": true,
+      "statePass": true,
+      "repeatComparisons": [
+        {
+          "a": "screen0",
+          "b": "screen1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "screen0",
+          "b": "screen2",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas2",
+          "pixels": 0,
+          "bbox": null
+        }
+      ],
+      "screenCanvas": {
+        "supportedMapping": true,
+        "allPixels": {
+          "pixels": 124983,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "insideLabelHudGuard": {
+          "pixels": 117219,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "outsideLabelHudGuard": {
+          "pixels": 7764,
+          "bbox": [
+            0,
+            46,
+            1280,
+            631
+          ]
+        },
+        "canvasAlphaValues": [
+          255
+        ],
+        "interpretation": "Descriptive difference only; DOM paint, compositor/color management or other causes are not distinguished. No release/art gate."
+      },
+      "footerCapacity": {
+        "panels": [
+          {
+            "x": 102,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          },
+          {
+            "x": 270,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 633.609375,
+          "width": 1280,
+          "height": 86.390625,
+          "top": 633.609375,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "speed": {
+          "x": 20,
+          "y": 649.796875,
+          "width": 70,
+          "height": 54,
+          "top": 649.796875,
+          "right": 90,
+          "bottom": 703.796875,
+          "left": 20
+        },
+        "party": {
+          "x": 475,
+          "y": 636.796875,
+          "width": 330,
+          "height": 80,
+          "top": 636.796875,
+          "right": 805,
+          "bottom": 716.796875,
+          "left": 475
+        },
+        "actions": {
+          "x": 1099.65625,
+          "y": 654.796875,
+          "width": 160.34375,
+          "height": 44,
+          "top": 654.796875,
+          "right": 1260,
+          "bottom": 698.796875,
+          "left": 1099.65625
+        },
+        "rightSlack": 33,
+        "contained": true,
+        "bodyConflicts": [],
+        "controlConflicts": [],
+        "nominalBoxPass": true,
+        "limit": "Outer computed boxes only; complete portrait glow/focus paint and actual panel content/association not implemented or accepted."
+      },
+      "arenaAfter": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "class": "dp-arena chapter-3  ",
+          "actor": null,
+          "pseudo": "::after",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720,
+            "top": 0,
+            "right": 1280,
+            "bottom": 720,
+            "left": 0
+          },
+          "style": {
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "filter": "none",
+            "backdropFilter": "none",
+            "mixBlendMode": "screen",
+            "isolation": "auto",
+            "position": "absolute",
+            "zIndex": "auto",
+            "overflow": "visible",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "border": "0px none rgb(255, 242, 216)",
+            "boxShadow": "none",
+            "textShadow": "none",
+            "color": "rgb(255, 242, 216)",
+            "font": "800 14px / 20.3px \"Baloo 2\"",
+            "clipPath": "none",
+            "maskImage": "none"
+          }
+        }
+      ]
+    },
+    {
+      "key": "untouched-normal-panko-1-225",
+      "repeatPass": true,
+      "statePass": true,
+      "repeatComparisons": [
+        {
+          "a": "screen0",
+          "b": "screen1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "screen0",
+          "b": "screen2",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas2",
+          "pixels": 0,
+          "bbox": null
+        }
+      ],
+      "screenCanvas": {
+        "supportedMapping": true,
+        "allPixels": {
+          "pixels": 127359,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "insideLabelHudGuard": {
+          "pixels": 117331,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "outsideLabelHudGuard": {
+          "pixels": 10028,
+          "bbox": [
+            0,
+            46,
+            1280,
+            631
+          ]
+        },
+        "canvasAlphaValues": [
+          255
+        ],
+        "interpretation": "Descriptive difference only; DOM paint, compositor/color management or other causes are not distinguished. No release/art gate."
+      },
+      "footerCapacity": {
+        "panels": [
+          {
+            "x": 102,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          },
+          {
+            "x": 270,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 633.609375,
+          "width": 1280,
+          "height": 86.390625,
+          "top": 633.609375,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "speed": {
+          "x": 20,
+          "y": 649.796875,
+          "width": 70,
+          "height": 54,
+          "top": 649.796875,
+          "right": 90,
+          "bottom": 703.796875,
+          "left": 20
+        },
+        "party": {
+          "x": 475,
+          "y": 636.796875,
+          "width": 330,
+          "height": 80,
+          "top": 636.796875,
+          "right": 805,
+          "bottom": 716.796875,
+          "left": 475
+        },
+        "actions": {
+          "x": 1099.65625,
+          "y": 654.796875,
+          "width": 160.34375,
+          "height": 44,
+          "top": 654.796875,
+          "right": 1260,
+          "bottom": 698.796875,
+          "left": 1099.65625
+        },
+        "rightSlack": 33,
+        "contained": true,
+        "bodyConflicts": [],
+        "controlConflicts": [],
+        "nominalBoxPass": true,
+        "limit": "Outer computed boxes only; complete portrait glow/focus paint and actual panel content/association not implemented or accepted."
+      },
+      "arenaAfter": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "class": "dp-arena chapter-3  ",
+          "actor": null,
+          "pseudo": "::after",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720,
+            "top": 0,
+            "right": 1280,
+            "bottom": 720,
+            "left": 0
+          },
+          "style": {
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "filter": "none",
+            "backdropFilter": "none",
+            "mixBlendMode": "screen",
+            "isolation": "auto",
+            "position": "absolute",
+            "zIndex": "auto",
+            "overflow": "visible",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "border": "0px none rgb(255, 242, 216)",
+            "boxShadow": "none",
+            "textShadow": "none",
+            "color": "rgb(255, 242, 216)",
+            "font": "800 14px / 20.3px \"Baloo 2\"",
+            "clipPath": "none",
+            "maskImage": "none"
+          }
+        }
+      ]
+    },
+    {
+      "key": "untouched-reduced-panko-1-125",
+      "repeatPass": true,
+      "statePass": true,
+      "repeatComparisons": [
+        {
+          "a": "screen0",
+          "b": "screen1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "screen0",
+          "b": "screen2",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas2",
+          "pixels": 0,
+          "bbox": null
+        }
+      ],
+      "screenCanvas": {
+        "supportedMapping": true,
+        "allPixels": {
+          "pixels": 124377,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "insideLabelHudGuard": {
+          "pixels": 117026,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "outsideLabelHudGuard": {
+          "pixels": 7351,
+          "bbox": [
+            18,
+            46,
+            1280,
+            631
+          ]
+        },
+        "canvasAlphaValues": [
+          255
+        ],
+        "interpretation": "Descriptive difference only; DOM paint, compositor/color management or other causes are not distinguished. No release/art gate."
+      },
+      "footerCapacity": {
+        "panels": [
+          {
+            "x": 102,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          },
+          {
+            "x": 270,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 633.609375,
+          "width": 1280,
+          "height": 86.390625,
+          "top": 633.609375,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "speed": {
+          "x": 20,
+          "y": 649.796875,
+          "width": 70,
+          "height": 54,
+          "top": 649.796875,
+          "right": 90,
+          "bottom": 703.796875,
+          "left": 20
+        },
+        "party": {
+          "x": 475,
+          "y": 636.796875,
+          "width": 330,
+          "height": 80,
+          "top": 636.796875,
+          "right": 805,
+          "bottom": 716.796875,
+          "left": 475
+        },
+        "actions": {
+          "x": 1099.65625,
+          "y": 654.796875,
+          "width": 160.34375,
+          "height": 44,
+          "top": 654.796875,
+          "right": 1260,
+          "bottom": 698.796875,
+          "left": 1099.65625
+        },
+        "rightSlack": 33,
+        "contained": true,
+        "bodyConflicts": [],
+        "controlConflicts": [],
+        "nominalBoxPass": true,
+        "limit": "Outer computed boxes only; complete portrait glow/focus paint and actual panel content/association not implemented or accepted."
+      },
+      "arenaAfter": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "class": "dp-arena chapter-3  ",
+          "actor": null,
+          "pseudo": "::after",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720,
+            "top": 0,
+            "right": 1280,
+            "bottom": 720,
+            "left": 0
+          },
+          "style": {
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "filter": "none",
+            "backdropFilter": "none",
+            "mixBlendMode": "screen",
+            "isolation": "auto",
+            "position": "absolute",
+            "zIndex": "auto",
+            "overflow": "visible",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "border": "0px none rgb(255, 242, 216)",
+            "boxShadow": "none",
+            "textShadow": "none",
+            "color": "rgb(255, 242, 216)",
+            "font": "800 14px / 20.3px \"Baloo 2\"",
+            "clipPath": "none",
+            "maskImage": "none"
+          }
+        }
+      ]
+    },
+    {
+      "key": "untouched-reduced-panko-1-225",
+      "repeatPass": true,
+      "statePass": true,
+      "repeatComparisons": [
+        {
+          "a": "screen0",
+          "b": "screen1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "screen0",
+          "b": "screen2",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas1",
+          "pixels": 0,
+          "bbox": null
+        },
+        {
+          "a": "canvas0",
+          "b": "canvas2",
+          "pixels": 0,
+          "bbox": null
+        }
+      ],
+      "screenCanvas": {
+        "supportedMapping": true,
+        "allPixels": {
+          "pixels": 125713,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "insideLabelHudGuard": {
+          "pixels": 117030,
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "outsideLabelHudGuard": {
+          "pixels": 8683,
+          "bbox": [
+            18,
+            46,
+            1280,
+            631
+          ]
+        },
+        "canvasAlphaValues": [
+          255
+        ],
+        "interpretation": "Descriptive difference only; DOM paint, compositor/color management or other causes are not distinguished. No release/art gate."
+      },
+      "footerCapacity": {
+        "panels": [
+          {
+            "x": 102,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          },
+          {
+            "x": 270,
+            "y": 640.609375,
+            "width": 160,
+            "height": 72
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 633.609375,
+          "width": 1280,
+          "height": 86.390625,
+          "top": 633.609375,
+          "right": 1280,
+          "bottom": 720,
+          "left": 0
+        },
+        "speed": {
+          "x": 20,
+          "y": 649.796875,
+          "width": 70,
+          "height": 54,
+          "top": 649.796875,
+          "right": 90,
+          "bottom": 703.796875,
+          "left": 20
+        },
+        "party": {
+          "x": 475,
+          "y": 636.796875,
+          "width": 330,
+          "height": 80,
+          "top": 636.796875,
+          "right": 805,
+          "bottom": 716.796875,
+          "left": 475
+        },
+        "actions": {
+          "x": 1099.65625,
+          "y": 654.796875,
+          "width": 160.34375,
+          "height": 44,
+          "top": 654.796875,
+          "right": 1260,
+          "bottom": 698.796875,
+          "left": 1099.65625
+        },
+        "rightSlack": 33,
+        "contained": true,
+        "bodyConflicts": [],
+        "controlConflicts": [],
+        "nominalBoxPass": true,
+        "limit": "Outer computed boxes only; complete portrait glow/focus paint and actual panel content/association not implemented or accepted."
+      },
+      "arenaAfter": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "class": "dp-arena chapter-3  ",
+          "actor": null,
+          "pseudo": "::after",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720,
+            "top": 0,
+            "right": 1280,
+            "bottom": 720,
+            "left": 0
+          },
+          "style": {
+            "display": "block",
+            "visibility": "visible",
+            "opacity": "1",
+            "transform": "none",
+            "filter": "none",
+            "backdropFilter": "none",
+            "mixBlendMode": "screen",
+            "isolation": "auto",
+            "position": "absolute",
+            "zIndex": "auto",
+            "overflow": "visible",
+            "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+            "border": "0px none rgb(255, 242, 216)",
+            "boxShadow": "none",
+            "textShadow": "none",
+            "color": "rgb(255, 242, 216)",
+            "font": "800 14px / 20.3px \"Baloo 2\"",
+            "clipPath": "none",
+            "maskImage": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "decision": "PASS observation repeatability only: all30 hashes,20 image repeats,60 full-state snapshots exact. Both160x72 panel outer boxes fit with33px horizontal slack; no sampled control/body box conflicts. Screen/raw-canvas differences outside label/HUD+2px remain in all5 cases; no label-paint attribution, conceal-control repair, actual content/association or production acceptance.",
+  "limits": [
+    "Five fixed development cases, not heldouts or fulltrajectory acceptance.",
+    "Native Clover remains existing placeholder; only Mochi commissioned media.",
+    "Outer control rectangles omit portrait glow/focus paint; no panel prototype or content was rendered.",
+    "Prior20 conceal/restoration failures and every rejected offset remain rejected.",
+    "No images viewed; raw artifacts retained."
+  ]
+}
