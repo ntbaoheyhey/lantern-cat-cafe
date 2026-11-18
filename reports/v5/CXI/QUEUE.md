@@ -1,10 +1,10 @@
 # CXI V8 — Batch M first
-M-I1 OPEN: Mochi931787B four-plane codec/native300frames PASS;64new+92legacy runtime checks. Scoped media posed-bounds fix imported/80focused/TSC0; fresh production scene gate next. Registry empty. Clover DIS/exp endpoint unaccepted; source originals unchanged.
+M-I1 OPEN: Mochi931787B four-plane codec/native300frames PASS;64new+92legacy runtime checks. Scoped media posed-bounds fix imported/80focused/TSC0; production scene303PASS/coldFAIL all3. Registry empty. Clover residualendpoint4folds rejected; source originals unchanged.
 M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
 M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
 SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
 AGS priorityOPEN:T-M1correct sourced license/real receipts,T-M2raw mask provenance,T-CXI-5audio provenance/listening. T-M3 ownerdraftACCEPT only; maintain>=2useful tasks.
-CXV coordinationOPEN: all9native scoped motionACCEPT; FIELD5 correctedR2 production capture done/visualreviewpending; Mochi scene/height/casts next. AGV landingR3qualityREDO;wave3 historicalgap141786B.
+CXV coordinationOPEN: all9native scoped motionACCEPT; FIELD5 correctedR2 productionACCEPT350sceneHUDchecks;Mochi idle303PASS/castcontactfix pending. AGV landingR3qualityREDO;currentwave3gap975066B.
 
 Deferred V7 work and retained evidence
 # CXI V7 assignments — evidence required

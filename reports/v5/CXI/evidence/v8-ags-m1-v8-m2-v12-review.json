@@ -1,0 +1,69 @@
+{
+  "utc": "2026-11-18T07:43:19.697162+00:00",
+  "inputs": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/AGS-batch-m-delivery-20261118.md",
+      "bytes": 579,
+      "sha256": "69f565d296b615e4c0caa01e41b9e99f7fb67cbaafbd5e1886c21953546e7516"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS.txt",
+      "bytes": 142,
+      "sha256": "0d2f465fa34059d06be9e9d92fc2d6f393d2ba813a712530efde49ff735be31e"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CONVERSION-MATTE-REASONING.md",
+      "bytes": 433,
+      "sha256": "6a76aa6cb70f2746f201453198d4d73b2d849807b834912061baca51ec2ffd89"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-ALPHA-RAW-METRICS-V12.txt",
+      "bytes": 2424,
+      "sha256": "8ccd52b8622013cbe65239ceee23e7f9b6097032af5376abffda9e85385e9eab"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4",
+      "bytes": 825143,
+      "sha256": "232e5ed359e043af521b7c7eccbe3c72191e6af938e620d8ed9a707852b7698a"
+    }
+  ],
+  "video": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 256,
+        "pix_fmt": "yuvj420p",
+        "duration": "10.000000",
+        "nb_frames": "300"
+      }
+    ]
+  },
+  "sources": [
+    "https://help.live2d.com/en/sdk/sdk_001/",
+    "https://help.live2d.com/zh-CHS/sdk/sdk_001/"
+  ],
+  "M1": {
+    "disposition": "REDO",
+    "ack": "RECEIPTS.txt now contains the matching 64-digit video SHA256.",
+    "issues": [
+      "Two labelled quotations are not present verbatim on the official EN/ZH page.",
+      "Non-SDK exported content and publisher annual-sales exceptions are separate. Application revenue is not the scope stated by the source.",
+      "Embedding exported video alone does not establish SDK use; always-runtime agreement claim unsupported.",
+      "Measured browser/300-frame cost table absent; unit-test count is not native browser acceptance."
+    ]
+  },
+  "M2": {
+    "disposition": "REDO",
+    "rawMeasurementSucceeded": false,
+    "issues": [
+      "extractplanes failed: unavailable planes; zero output frames and no successful measured alpha.",
+      "Alpha >240 claimed despite failed transcript.",
+      "yuvj420p has no alpha channel; packed mask requires documented layout/ROI and source provenance."
+    ]
+  },
+  "runtimeChanges": false,
+  "imagesViewed": 0
+}

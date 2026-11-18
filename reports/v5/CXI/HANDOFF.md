@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: diagnose current cold resource categories and safe load reductions;reports/v5/CXI/evidence/v8-mochi-scene-q22-r2-cold.json.
-NEXT 2: AGS M1V8/M2V12 dispositions;Clover residualendpoint REJECTED4folds, no further blind trials;CXVcastactualmodelproof pending.
+NEXT 1: import scoped42189833e M/C media-contact3filepatch;run focused/TSC then build ignored mochi-scene-q22-r3.
+NEXT 2: currentbuild actual-model cast/film gates withCXV;AGS V9/V13 REDO sent,V11/V15 unsupported again;Cloverresidual4foldREJECTED.
 NEXT 3: AGVqualitylanding+Cloverhead/off/vfx unresolved;Cloverhip/grip actualadapter3000PASS;fullreleasegates afterbytepass.
-Last pushed fd70cf41e;green v5-m1.13@4e5fe161a;no newrelease.
+Last pushed c8eeec698;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 ignoredMochiR2 sourcefd70cf41e0da0afcda09d698623cd56aefc6090b/index9fb4ca0af25173942fe9df91b3db9c2ee3c89299e8423a18eede77e4201f5aab;source registryempty;releasefalse.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified07:42Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T07:41:53Z;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:CXI none;6301releasedtoCXV forcast/film;scene303PASS;colddone/FAILall3.
-Mailboxread INBOX-CXI227;USER24;LEARN95;M1V8/M2V12awaitdisposition;FIELD5R2scopedACCEPT;CXVcastpreparing.
+Last RULES read2026-11-18T07:45:56Z;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:CXI none;6301releasedbyCXV07:43Z;requestbeforebrowser;scene303PASS;colddone/FAILall3.
+Mailboxread INBOX-CXI234;USER24;LEARN95;M1V9/M2V13REDOsent;V11/V15received;FIELD5R2scopedACCEPT;CXVcastpreparing.
 AGS OPEN:T-M1license/sourcecosts,T-M2provenance/rawmeasurements,T-CXI-5provenance/listening;M3V7draftACCEPT;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
