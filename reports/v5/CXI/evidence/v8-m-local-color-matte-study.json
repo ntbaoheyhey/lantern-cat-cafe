@@ -1,0 +1,94 @@
+{
+  "utc": "2026-11-18T06:46:45.079997+00:00",
+  "status": "STUDY_ONLY",
+  "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/packed-vp9-256-r1/source.rgba",
+  "sourceSha256": "f278c3fd7ef5d4c3d40a018f341f0478fa6dfd9b0b63d932280df5ae6f807fc3",
+  "method": "Estimate boundary alpha from nearest confident foreground RGB on black. RGB unchanged. Alpha never increases. Opaque interior and lantern rectangle protected. This is a prior, not recovered true alpha.",
+  "rows": [
+    {
+      "frame": 0,
+      "bandPixels": 6421,
+      "changedPixels": 2238,
+      "meanChangedAlphaReduction": 20.175603217158177,
+      "maximumAlphaReduction": 235.0,
+      "opaqueInteriorChanged": 0,
+      "lanternChanged": 0,
+      "blackRGBDelta": 0,
+      "heightBefore": 256,
+      "heightAfter": 256
+    },
+    {
+      "frame": 30,
+      "bandPixels": 5870,
+      "changedPixels": 1859,
+      "meanChangedAlphaReduction": 18.643356643356643,
+      "maximumAlphaReduction": 227.0,
+      "opaqueInteriorChanged": 0,
+      "lanternChanged": 0,
+      "blackRGBDelta": 0,
+      "heightBefore": 249,
+      "heightAfter": 249
+    },
+    {
+      "frame": 150,
+      "bandPixels": 6146,
+      "changedPixels": 2052,
+      "meanChangedAlphaReduction": 18.579922027290447,
+      "maximumAlphaReduction": 198.0,
+      "opaqueInteriorChanged": 0,
+      "lanternChanged": 0,
+      "blackRGBDelta": 0,
+      "heightBefore": 249,
+      "heightAfter": 249
+    },
+    {
+      "frame": 299,
+      "bandPixels": 6461,
+      "changedPixels": 2328,
+      "meanChangedAlphaReduction": 20.286941580756015,
+      "maximumAlphaReduction": 223.0,
+      "opaqueInteriorChanged": 0,
+      "lanternChanged": 0,
+      "blackRGBDelta": 0,
+      "heightBefore": 255,
+      "heightAfter": 255
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/local-color-matte-r1/comparison-0.png",
+      "width": 936,
+      "height": 520,
+      "sha256": "134fdfe6496ceef75d9fc95b31f68cb12db033d0ef399428d49455c2cb53bccb",
+      "columns": [
+        "old white",
+        "estimated white",
+        "unchanged black"
+      ],
+      "frames": [
+        0,
+        30
+      ],
+      "reviewed": true,
+      "reviewedUTC": "2026-11-18T06:48:00.420446+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/local-color-matte-r1/comparison-1.png",
+      "width": 936,
+      "height": 520,
+      "sha256": "fc15d189abb458d2de7f5d13363fd96a7dbffc1e581137eec9760573a5cc26d7",
+      "columns": [
+        "old white",
+        "estimated white",
+        "unchanged black"
+      ],
+      "frames": [
+        150,
+        299
+      ],
+      "reviewed": true,
+      "reviewedUTC": "2026-11-18T06:48:00.420446+00:00"
+    }
+  ],
+  "disposition": "PROMISING_OFFLINE_DIRECTION_ONLY: thinner clean outline across four frames, no body fade, black appearance/lantern/height protected. Residual tiny dots remain; temporal and decoded/native evidence pending."
+}
