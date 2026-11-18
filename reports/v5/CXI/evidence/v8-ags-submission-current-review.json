@@ -1,0 +1,47 @@
+{
+  "utc": "2026-11-18T14:13:05.782028+00:00",
+  "decision": "REDO; foreign WIP preserved and not staged",
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/AGS/submission/JUDGE-WALKTHROUGH.md",
+      "sha256": "17f88d7bfbb2e885df5a4886344ef8aa1eaaa72a7023759e7d51f08c49cc469c"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/AGS/submission/SUBMISSION-DRAFT.md",
+      "sha256": "46f51825839d6e7ade3382ed69e56732f0629ec81a40d59fb123da2719a4183e"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/AGS/submission/VIDEO-PLAN.md",
+      "sha256": "ef8c2be376fd1a22ba72d659449e9a8c161acccbede0f23af1c43a1b95a69b96"
+    }
+  ],
+  "findings": [
+    {
+      "file": "SUBMISSION-DRAFT.md",
+      "line": 28,
+      "issue": "Claims every battle/quest/craftedrelic/deed is minted; contradicts local-only no fundedFuji receipt."
+    },
+    {
+      "file": "SUBMISSION-DRAFT.md",
+      "line": 28,
+      "issue": "Universal60FPS/mobile/under8MB claims unsupported; m1.15wave3=8065984B,bytes report-only."
+    },
+    {
+      "file": "VIDEO-PLAN.md",
+      "line": 21,
+      "issue": "Mobile390x844 shot violates current desktop-only1280x720 scope."
+    },
+    {
+      "file": "VIDEO-PLAN.md",
+      "line": 35,
+      "issue": "Transaction placeholder is not available real proof; current capture must use honest localresult and deployedcontractlinks."
+    },
+    {
+      "file": "SUBMISSION-DRAFT.md",
+      "line": 17,
+      "issue": "127.0.0.1 is a localpreview,not a publicjudgeURL;owner deploy pending.6301now unacceptedR7;publishedartifactm1.15 should be explicit."
+    }
+  ],
+  "releaseEvidence": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m115-publication.json",
+  "noForeignFileEdits": true
+}

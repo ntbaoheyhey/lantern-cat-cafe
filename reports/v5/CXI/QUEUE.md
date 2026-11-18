@@ -2,7 +2,7 @@
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
-LIVE6301: labelR7 sourcebf01d462ac32233ab11475605d571aea691f96bf/indexeb93ee0d;3809files/294424887B,6payloadsR5exact. CXVlease14:20Z AND explicitrelease;freshlabel/status/actions pending. PriorR6/fullrelease preserved.
+LIVE6301: labelR7 sourcebf01d462ac32233ab11475605d571aea691f96bf/indexeb93ee0d;3809files/294424887B,6payloadsR5exact. CXVlease14:20Z AND explicitrelease;Independent18poses3744counts/110naturalactions audited;paintFAIL17heldout+208/69/0/74expanded;nativebodyrectFAIL. Ownvisualnext. PriorR6/fullrelease preserved.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
