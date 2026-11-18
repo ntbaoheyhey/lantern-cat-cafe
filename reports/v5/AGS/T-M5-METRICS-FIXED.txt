@@ -1,0 +1,15 @@
+node:internal/fs/promises:1345
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open '/Users/bao/th-v5-ag4/work/v5/AGS//REGISTERED-METHOD.json'
+    at async open (node:internal/fs/promises:1345:25)
+    at async readFile (node:internal/fs/promises:2003:14)
+    at async file:///Users/bao/taskbar-hero-chain/tools/cardrpg-big/skills-v5/trial-metrics.mjs:7:31 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/bao/th-v5-ag4/work/v5/AGS//REGISTERED-METHOD.json'
+}
+
+Node.js v24.22.2
