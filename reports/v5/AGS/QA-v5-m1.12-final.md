@@ -1,13 +1,13 @@
-# QA Report: Taskbar Hero (v5-m1.12) (Final)
+# QA Report: v5-m1.12 - FINAL
 
-## Build Info
-- **Index HTML SHA256 (from BOARD/curl)**: ce3d3585df78137adfe8fc34420a1cf2b4be2a2121a9bc74aedcaa077a66be73
-- **UTC Timestamp of Access**: 2026-11-18T10:35:10Z
-- **URL**: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
+- **Date**: 2026-11-18
+- **Status**: Completed
+- **Build Index SHA**: Dj5-zNpM
+- **Journey**: Guest -> Fight -> Prepare -> Route (Success)
 
-## Network Trace
-- No failed or pending requests observed.
+## Observations
+- **Console Errors**: Unable to access logs.
+- **Timestamp**: Journey performed approx 18:21Z.
 
-## Click Sequence (Battle Journey)
-1. **Trigger Battle ("Fight")**: 2026-11-18T10:34:30Z
-2. **Transition/Receipt Screen**: 2026-11-18T10:34:35Z (Confirmed no transaction sent)
+## Screenshot
+![Receipt Screen](file:///Users/bao/.gemini/antigravity/brain/b273a190-503a-4317-9d7c-d853d82c06e5/browser_evidence/39f5192b-5f85-4ed0-be64-402dfc4a8c28/final_step_18.png)
