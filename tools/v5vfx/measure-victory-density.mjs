@@ -19,9 +19,10 @@ for(const c of raw.captures){
  report.captures.push({name:c.name,mode:c.mode,path:c.path,utc:c.utc,width,height,bytes:bytes.length,sha256:hash(bytes),mean,stdDev});
 }
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
-for(let start=0;start<report.captures.length;start+=4){
- const captures=report.captures.slice(start,start+4);assert.equal(captures.length,4);
- const path=resolve(review,'review-'+(start/4)+'.jpg');assert(!existsSync(path));
+const groups=raw.reviewGroups??Array.from({length:Math.ceil(report.captures.length/4)},(_,i)=>[i*4,i*4+1,i*4+2,i*4+3]);assert(groups.length<=6);
+for(const [index,group]of groups.entries()){
+ const captures=group.map(i=>report.captures[i]);assert.equal(captures.length,4);assert(captures.every(Boolean));
+ const path=resolve(review,'review-'+index+'.jpg');assert(!existsSync(path));
  execFileSync('ffmpeg',['-v','error',...captures.flatMap(c=>['-i',c.path]),'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',path]);
  const dimensions=JSON.parse(execFileSync('ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=width,height','-of','json',path],{encoding:'utf8'})).streams[0];assert.equal(dimensions.width,1024);assert.equal(dimensions.height,576);
  report.sheets.push({path,...dimensions,frames:captures.map(c=>({name:c.name,mode:c.mode})),sha256:hash(readFileSync(path))});

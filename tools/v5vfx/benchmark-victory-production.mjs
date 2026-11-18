@@ -6,12 +6,15 @@ import {loadRules} from '../cardrpg-big/a4-load.mjs';
 import {chromium,config,openFixture,runtimeEvidence,judgeUrl} from './production-candidate-fixture.mjs';
 import {hash} from './victory-demand-source.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT),durationMs=32000;await mkdir(out,{recursive:true});
+const deviceScaleFactor=Number(process.env.CXV_VICTORY_DPR??1);assert([1,1.5,2].includes(deviceScaleFactor));
 const report={utc:new Date().toISOString(),url:judgeUrl,...runtimeEvidence(),viewport:{width:1280,height:720},durationMs,
  method:'Rule-resolved wave1 result fixture. Real RAF for32s per normal/reduced preference at1x/4x CPU. CDP whole-page metrics and victory WebGL draw counters; counter wrappers add small overhead. No profiled function timings, screenshots during measurement or gameplay-FPS claim. Same assets; scheduling-only module variant.',runs:[],errors:[],pass:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+report.deviceScaleFactor=deviceScaleFactor;
+if(report.artifactMode==='native')report.method=report.method.replace('except the isolated scheduling variant','').replace('Same assets; scheduling-only module variant.','Untransformed native application; no response substitution.');
 try{
  for(const rate of [1,4])for(const reduced of [true,false]){
-  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'));
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'),{deviceScaleFactor});
   const modules=await loadRules();let battle;
   try{const R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');battle=await page.evaluate(()=>window.__depthReview.battle);R.playBattle(battle,'auto');}finally{await modules.vite.close();}
   await page.evaluate(({battle,reduced})=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.tutorialBattle=battle;m.showResult();},{battle,reduced});
@@ -32,7 +35,7 @@ try{
   const deltas=Object.fromEntries(['TaskDuration','ScriptDuration','LayoutDuration','RecalcStyleDuration','LayoutCount','RecalcStyleCount'].map(k=>[k,after[k]-before[k]]));
   await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
   const name=`${rate}x-${reduced?'reduced':'normal'}`,path=resolve(out,name+'.png'),crewPath=resolve(out,name+'-crew.png');
-  await page.screenshot({path});await page.locator('.b3-victory-crew').screenshot({path:crewPath});
+  await page.screenshot({path,scale:'css'});await page.locator('.b3-victory-crew').screenshot({path:crewPath,scale:'css'});
   const crew=await page.locator('.b3-victory-crew').evaluate(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,width:e.clientWidth,height:e.clientHeight}));
   assert.equal(crew.ready,'true');assert.equal(crew.drawn,'4');assert(!crew.loadError);
   if(reduced&&report.artifactMode==='native')assert.equal(counters.draws,0,'Reduced candidate must remain idle after settling');else assert(counters.draws>200,'Expected continuously rendered victory');

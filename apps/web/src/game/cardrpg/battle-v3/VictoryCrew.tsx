@@ -22,8 +22,19 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
   let disposed=false,raf=0,start=0,width=0,height=0;
   const media=window.matchMedia('(prefers-reduced-motion: reduce)');
   const requestDraw=()=>{if(!disposed&&!raf)raf=requestAnimationFrame(draw);};
+  let densityMedia=window.matchMedia('(resolution: '+(devicePixelRatio||1)+'dppx)');
+  const densityChanged=()=>{
+   if(disposed)return;
+   densityMedia.removeEventListener('change',densityChanged);
+   densityMedia=window.matchMedia('(resolution: '+(devicePixelRatio||1)+'dppx)');
+   densityMedia.addEventListener('change',densityChanged);
+   if(renderer.getPixelRatio()!==Math.min(devicePixelRatio||1,1.5))requestDraw();
+  };
+  densityMedia.addEventListener('change',densityChanged);
   const draw=(now:number)=>{ raf=0;
    if(disposed)return;if(!start)start=now;
+   const density=Math.min(devicePixelRatio||1,1.5);
+   if(renderer.getPixelRatio()!==density)renderer.setPixelRatio(density);
    const w=Math.max(1,element.clientWidth),h=Math.max(1,element.clientHeight);
    if(w!==width||h!==height){width=w;height=h;renderer.setSize(w,h);camera.left=-w/2;camera.right=w/2;camera.top=h;camera.bottom=0;camera.updateProjectionMatrix();}
    const calm=reduced||media.matches,seconds=calm?.75:(now-start)/1000;
@@ -52,7 +63,7 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
   }).catch(()=>{if(!disposed)element.dataset.loadError='true';}));
   const resizeObserver=new ResizeObserver(requestDraw);resizeObserver.observe(element);
   media.addEventListener("change",requestDraw);renderer.domElement.addEventListener("webglcontextrestored",requestDraw);
-  requestDraw();return()=>{disposed=true;resizeObserver.disconnect();media.removeEventListener("change",requestDraw);renderer.domElement.removeEventListener("webglcontextrestored",requestDraw);cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
+  requestDraw();return()=>{disposed=true;densityMedia.removeEventListener('change',densityChanged);resizeObserver.disconnect();media.removeEventListener("change",requestDraw);renderer.domElement.removeEventListener("webglcontextrestored",requestDraw);cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
  // Cat identity, survival and reduced motion are the complete rendering inputs.
  },[key,reduced]);
  return <div className="b3-victory-crew" ref={host} role="img" aria-label={cats.filter(c=>c.alive).map(c=>`${c.name}: ${VICTORY_GESTURES[c.id]?.name??'victory'}`).join(', ')}>

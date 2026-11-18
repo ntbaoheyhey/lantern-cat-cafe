@@ -5,7 +5,7 @@ import {VictoryCrew} from './VictoryCrew';
 
 const {construct,load}=vi.hoisted(()=>({construct:vi.fn(),load:vi.fn()}));
 vi.mock('three',async original=>({...await original<typeof import('three')>(),WebGLRenderer:class {
- domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();dispose=vi.fn();forceContextLoss=vi.fn();
+ domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();getPixelRatio=()=>1;dispose=vi.fn();forceContextLoss=vi.fn();
  setSize(w:number,h:number){this.domElement.width=w;this.domElement.height=h;}
  constructor(){construct(this);}
 }}));
@@ -25,7 +25,7 @@ beforeEach(()=>{
  construct.mockReset();load.mockReset().mockImplementation(async()=>actor());
  vi.stubGlobal('requestAnimationFrame',vi.fn((callback:FrameRequestCallback)=>{frames.set(++nextFrame,callback);return nextFrame;}));
  vi.stubGlobal('cancelAnimationFrame',vi.fn((id:number)=>frames.delete(id)));
- vi.stubGlobal('matchMedia',vi.fn(()=>media));vi.stubGlobal('devicePixelRatio',1);
+ vi.stubGlobal('matchMedia',vi.fn((query:string)=>query.includes('prefers-reduced-motion')?media:Object.assign(new EventTarget(),{matches:true})));vi.stubGlobal('devicePixelRatio',1);
  vi.stubGlobal('ResizeObserver',class {
   disconnect=vi.fn();observe=vi.fn();unobserve=vi.fn();notify:()=>void;
   constructor(callback:()=>void){this.notify=()=>callback();observers.push(this);}
