@@ -1,0 +1,156 @@
+{
+  "utc": "2026-11-18T03:31:26.468856+00:00",
+  "source": "025b39546e8be8cc40cf3e0d5a7c94cd2ea57cda",
+  "baseTag": "v5-m1.12",
+  "baseCommit": "9c93780eec11b5df017a13a13ae11f3e80575032",
+  "status": "Local READY; independent acceptance and integration pending. No general FPS claim.",
+  "entries": [
+    {
+      "name": "Pose readback",
+      "commit": "e1b1f58f5f00c08f85c4d1325291e44c1e1bdf33",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-pose-crop-summary.json",
+      "reportSha256": "7ea3d762d3ebbe3db91325192bea9830d1dde93dd32c092d1386de3c370a765c",
+      "note": "130 GPU pairs/80 assets;96 tests/TSC0. Apply before stationary rows.",
+      "paths": [
+        {
+          "path": "apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts",
+          "currentSha256": "df90874d54c51422b1d057aa152758fa95a0de5a71375854e91d63f562dc4b42"
+        },
+        {
+          "path": "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts",
+          "currentSha256": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+        },
+        {
+          "path": "apps/web/src/game/rig/drawing-layer.ts",
+          "currentSha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+        }
+      ]
+    },
+    {
+      "name": "Pending labels",
+      "commit": "2fd7665b464897a80a16d3fb94c6792fee5bdc0b",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-pending-label-ready.json",
+      "reportSha256": "648e384e7c4a56c216964ea1d9e307bb141ced6068614a252aa10be7d5d2b0ae",
+      "note": "48 geometry groups/8 exact PNG pairs;13 tests/TSC0. Apply before same-paint focus reads.",
+      "paths": [
+        {
+          "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+          "currentSha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45"
+        },
+        {
+          "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts",
+          "currentSha256": "62e9f25907fce1e7293953ad669f6fc88f954ab7439fbaf325ad37124b2b925e"
+        },
+        {
+          "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts",
+          "currentSha256": "f86428d851e735caa4b7b8e3c71f7e88ce260b2aa31f1bbc9c10d80dd7d32754"
+        }
+      ]
+    },
+    {
+      "name": "HUD text",
+      "commit": "79d408c717e01f35241980f89c274155ae4e03b1",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-hud-text-ready.json",
+      "reportSha256": "2d4092b6e21526071fce6ad6a2600636a06f4a842f5f42f99385b6b84df695bf",
+      "note": "Retains unchanged damage text;native correctness/lifecycle plus production addendum.",
+      "paths": [
+        {
+          "path": "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+          "currentSha256": "c749831df8272ce32f60a0fd3892e768e8f09b63aead2073e1f431721935db99"
+        }
+      ]
+    },
+    {
+      "name": "Stationary rows",
+      "commit": "4c5f0fa55995e45f43d5a8a0ebdb29ff50fc661e",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-static-native-production.json",
+      "reportSha256": "115c4b32a0833b89d55ace9e8f1d0364a61a145289e0a1ae3a719b2ba6856f74",
+      "note": "910 geometry/380 GPU checks;42 tests/TSC0;native production evidence.",
+      "paths": [
+        {
+          "path": "apps/web/src/game/rig/drawing-layer-static.test.ts",
+          "currentSha256": "d6a6de217094f14cba059c70f01960a601e58e45b8c950e2d360d4e429340848"
+        },
+        {
+          "path": "apps/web/src/game/rig/drawing-layer.ts",
+          "currentSha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+        }
+      ]
+    },
+    {
+      "name": "Original Panko crumb",
+      "commit": "addba74467636d49d4277e24d0e7ba3d0b2e4bb5",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-D-panko-crumb.md",
+      "reportSha256": "9f1318e4bd11cbad4cda76d944e9d2f4b2f53012a5317d6817ccbc9cb5e66635",
+      "note": "9048B original1x1 asset;36 tests/TSC0/32 native pairs. Needs CXI loader entry;AGV manifest untouched.",
+      "paths": [
+        {
+          "path": "apps/web/public/vfx/v5/from-cx/panko-crumb-v7-r1.webp",
+          "currentSha256": "ed6826915dff02f904968c5e0a730085b37518152877444429a8d76a07171425"
+        },
+        {
+          "path": "apps/web/src/game/cardrpg/vfx-layered/skill-texture-selection.ts",
+          "currentSha256": "84ab4d3970b970d3e72a17e7fa7a5fe8b946e9b91d3dfce72074265406df4fe8"
+        },
+        {
+          "path": "apps/web/src/game/cardrpg/vfx-layered/skill-timeline.test.ts",
+          "currentSha256": "d9d8f07b677d53718731d3539551333094dd853de765acd3876d7f6d7dc396da"
+        }
+      ]
+    },
+    {
+      "name": "Same-paint focus reads",
+      "commit": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-focus-read-native-production.json",
+      "reportSha256": "8a301511af3424797b55776e193bca1c060f82ed5b476d2b22c7c02351ff05d6",
+      "note": "80 geometry/8 RGB checks;13 tests/TSC0;native production26actions/6ults.",
+      "paths": [
+        {
+          "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+          "currentSha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45"
+        }
+      ]
+    }
+  ],
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-pending-integration-m112.patch",
+    "sha256": "996bb6653946dccb9cdfb09cd19585b55b7b6d7b2712e2ecd8487c7ebc100c83",
+    "bytes": 48353,
+    "paths": [
+      "apps/web/public/vfx/v5/from-cx/panko-crumb-v7-r1.webp",
+      "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+      "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts",
+      "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts",
+      "apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts",
+      "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts",
+      "apps/web/src/game/cardrpg/vfx-layered/skill-texture-selection.ts",
+      "apps/web/src/game/cardrpg/vfx-layered/skill-timeline.test.ts",
+      "apps/web/src/game/rig/drawing-layer-static.test.ts",
+      "apps/web/src/game/rig/drawing-layer.ts"
+    ]
+  },
+  "separatePausedBattle": {
+    "commit": "172c317d424e51c8215cb12ac1cb7225a83c5506",
+    "paths": [
+      "apps/web/src/game/cardrpg/spine/scene-context.test.ts",
+      "apps/web/src/game/cardrpg/spine/scene.ts"
+    ],
+    "evidence": "V7-F-battle-context-native-verified.json"
+  },
+  "completeApplicationDelta": [
+    "apps/web/public/vfx/v5/from-cx/panko-crumb-v7-r1.webp",
+    "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+    "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+    "apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts",
+    "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts",
+    "apps/web/src/game/cardrpg/spine/scene-context.test.ts",
+    "apps/web/src/game/cardrpg/spine/scene.ts",
+    "apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts",
+    "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts",
+    "apps/web/src/game/cardrpg/vfx-layered/skill-texture-selection.ts",
+    "apps/web/src/game/cardrpg/vfx-layered/skill-timeline.test.ts",
+    "apps/web/src/game/rig/drawing-layer-static.test.ts",
+    "apps/web/src/game/rig/drawing-layer.ts"
+  ]
+}
