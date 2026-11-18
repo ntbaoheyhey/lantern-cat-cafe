@@ -1,5 +1,5 @@
 /** Source-free cloned-data experiment. Never writes a shipped rig or enrolls an actor. */
-export function nativeLivingExperiment(original){
+export function nativeLivingExperiment(original,options={}){
  const r=structuredClone(original),node=name=>r.nodes.findIndex(n=>n.name===name),head=node('head');delete r.face;
  const tracks=[],visibility=[],duration=10,w=Math.PI*2/duration;
  const smooth=n=>{const t=Math.max(0,Math.min(1,n));return t*t*t*(t*(t*6-15)+10);};
@@ -11,12 +11,12 @@ export function nativeLivingExperiment(original){
  const move=(name,fn)=>add(name,'translate',t=>{const [x,y]=fn(t);return{x:round(x),y:round(y)};});
  move('torso',t=>[.6*Math.sin(w*t+.2),2.4*Math.sin(3*w*t+.4)]);
  add('torso','scale',t=>({x:1,y:round(1+.006*Math.sin(3*w*t+.4))}));
- move('neck',t=>[1.6*Math.sin(w*t+.4),1.8*Math.sin(3*w*(t-.1)+.4)]);
+ move('neck',t=>[(options.neckX??1.6)*Math.sin(w*t+.4),1.8*Math.sin(3*w*(t-.1)+.4)]);
  rotate('head',t=>1.6*Math.sin(w*t+.8)+.3*Math.sin(2*w*t-.3));
  add('head','scale',t=>({x:round(1-.008*(1-Math.cos(w*t+.4))),y:1}));
  rotate('ear_l',t=>1.6*Math.sin(3*w*(t-.045)+.4)+.9*Math.sin(2*w*t));
  rotate('ear_r',t=>-1.2*Math.sin(3*w*(t-.07)+.7)-.7*Math.sin(2*w*t));
- rotate('tail_1',t=>4.5*Math.sin(w*(t-.12)) +2*Math.sin(3*w*(t-.12)));
+ rotate('tail_1',t=>(options.tail??4.5)*Math.sin(w*(t-.12)) +2*Math.sin(3*w*(t-.12)));
  rotate('tail_2',t=>-3.5*Math.sin(w*(t-.24)) +2*Math.sin(3*w*(t-.2)));
  rotate('tail_3',t=>7*Math.sin(w*(t-.36)) +3*Math.sin(3*w*(t-.28)));
  rotate('arm_upper_l',t=>-.7*Math.sin(3*w*(t-.06)+.4));

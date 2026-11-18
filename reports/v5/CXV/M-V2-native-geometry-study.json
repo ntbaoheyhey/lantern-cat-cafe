@@ -1,0 +1,658 @@
+{
+  "utc": "2026-11-18T05:17:02.592Z",
+  "cutoutSha256": "645053883ba53d1e24e4eb83b512c90846ed73a90ae1184fde5195ae4baae95b",
+  "method": "Actual native CPU skinning; shader/drawing imports stubbed. Compare triangle orientation to setup geometry, 301samples10s.",
+  "rows": [
+    {
+      "cat": "mallow",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015235681832,
+        "body": 0.9767294266286375,
+        "foot-r": 1,
+        "foot-l": 1,
+        "hidden-tail": 0.9999998172754503,
+        "tail": 0.6703248529369897,
+        "hidden-arm-l": 0.9940017144727146,
+        "arm-l": 0.9453396627937521,
+        "weapon": 0.9940015440917933,
+        "hidden-arm-r": 0.9940011245089803,
+        "arm-r": 0.9716770601160426,
+        "head": 0.9272639621115347
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.90491
+        ],
+        "tail_3": [
+          1.40112,
+          2.14876
+        ],
+        "weapon": [
+          0.58892,
+          1.4388
+        ]
+      }
+    },
+    {
+      "cat": "mallow",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015235681832,
+        "body": 0.9767294266286375,
+        "foot-r": 1,
+        "foot-l": 1,
+        "hidden-tail": 0.99999982566449,
+        "tail": 0.6703244006557769,
+        "hidden-arm-l": 0.9940017144727146,
+        "arm-l": 0.9453396627937521,
+        "weapon": 0.9940015440917933,
+        "hidden-arm-r": 0.9940011245089803,
+        "arm-r": 0.9716770601160426,
+        "head": 0.9272629905892082
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.90491
+        ],
+        "tail_3": [
+          1.86315,
+          2.85734
+        ],
+        "weapon": [
+          0.58892,
+          1.4388
+        ]
+      }
+    },
+    {
+      "cat": "sorrel",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.994001658627965,
+        "body": 0.9795858207092437,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.7137899511486884,
+        "hidden-arm-l": 0.9940014491063596,
+        "arm-l": 0.9514598542415748,
+        "weapon": 0.9940014911720748,
+        "hidden-arm-r": 0.9940015228817947,
+        "arm-r": 0.9805309789261232,
+        "head": 0.9187344069805358
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.90477
+        ],
+        "tail_3": [
+          1.10325,
+          1.7151
+        ],
+        "weapon": [
+          1.13814,
+          1.51192
+        ]
+      }
+    },
+    {
+      "cat": "sorrel",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.994001658627965,
+        "body": 0.9795858207092437,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.71378947295996,
+        "hidden-arm-l": 0.9940014491063596,
+        "arm-l": 0.9514598542415748,
+        "weapon": 0.9940014911720748,
+        "hidden-arm-r": 0.9940015228817947,
+        "arm-r": 0.9805309789261232,
+        "head": 0.9187344069805358
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.90477
+        ],
+        "tail_3": [
+          1.46706,
+          2.28067
+        ],
+        "weapon": [
+          1.13814,
+          1.51192
+        ]
+      }
+    },
+    {
+      "cat": "biscuit",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940021185252268,
+        "body": 0.9766190680145038,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.7334129745398758,
+        "weapon": 0.9940015922962198,
+        "hidden-arm-l": 0.9940016696029506,
+        "arm-l": 0.924382962004806,
+        "head": 0.9287300728915485,
+        "arm-r": 0.8897968702961386,
+        "off_weapon": 0.994001583956712
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.86512
+        ],
+        "tail_3": [
+          1.32107,
+          1.81654
+        ],
+        "weapon": [
+          0.30154,
+          1.0028
+        ]
+      }
+    },
+    {
+      "cat": "biscuit",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940021185252268,
+        "body": 0.9766190680145038,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.733413753745321,
+        "weapon": 0.9940015922962198,
+        "hidden-arm-l": 0.9940016696029506,
+        "arm-l": 0.924382962004806,
+        "head": 0.9287282515793137,
+        "arm-r": 0.8897968702961386,
+        "off_weapon": 0.994001583956712
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.86512
+        ],
+        "tail_3": [
+          1.75671,
+          2.41556
+        ],
+        "weapon": [
+          0.30154,
+          1.0028
+        ]
+      }
+    },
+    {
+      "cat": "inkcap",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015058094308,
+        "body": 0.9771413781260125,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.7035263697654943,
+        "arm-l": 0.9417437731239626,
+        "weapon": 0.9940015361933076,
+        "hidden-arm-r": 0.9940015234920081,
+        "arm-r": 0.9179232567592179,
+        "head": 0.908520980696156
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.87775
+        ],
+        "tail_3": [
+          1.33004,
+          1.22491
+        ],
+        "weapon": [
+          0.65647,
+          1.54405
+        ]
+      }
+    },
+    {
+      "cat": "inkcap",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015058094308,
+        "body": 0.9771413781260125,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.6550604978758257,
+        "arm-l": 0.9417437731239626,
+        "weapon": 0.9940015361933076,
+        "hidden-arm-r": 0.9940015234920081,
+        "arm-r": 0.9179232567592179,
+        "head": 0.908520980696156
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.87775
+        ],
+        "tail_3": [
+          1.76863,
+          1.62884
+        ],
+        "weapon": [
+          0.65647,
+          1.54405
+        ]
+      }
+    },
+    {
+      "cat": "cinnamon",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015594363286,
+        "body": 0.9770303186825381,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.695827814000243,
+        "weapon": 0.9940015583702922,
+        "arm-l": 0.9700181482980126,
+        "off_weapon": 0.9940015787210701,
+        "arm-r": 0.9813028364719356,
+        "head": 0.9272586443239723
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.91889
+        ],
+        "tail_3": [
+          1.36602,
+          1.05722
+        ],
+        "weapon": [
+          0.34955,
+          1.10251
+        ]
+      }
+    },
+    {
+      "cat": "cinnamon",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015594363286,
+        "body": 0.9770303186825381,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.6686151116794926,
+        "weapon": 0.9940015583702922,
+        "arm-l": 0.9700181482980126,
+        "off_weapon": 0.9940015787210701,
+        "arm-r": 0.9813028364719356,
+        "head": 0.9272587130750097
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.91889
+        ],
+        "tail_3": [
+          1.81648,
+          1.40585
+        ],
+        "weapon": [
+          0.34955,
+          1.10251
+        ]
+      }
+    },
+    {
+      "cat": "brioche",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015730240161,
+        "body": 0.97676537162827,
+        "foot-r": 1,
+        "foot-l": 1,
+        "hidden-tail": 0.9999997668000417,
+        "tail": 0.6345993489428156,
+        "weapon": 0.9940015333396316,
+        "hidden-arm-l": 0.9940017293347612,
+        "arm-l": 0.9549056688340927,
+        "arm-r": 0.9253895412340315,
+        "head": 0.9274917481815289
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.84692
+        ],
+        "tail_3": [
+          1.57997,
+          0.20221
+        ],
+        "weapon": [
+          0.48515,
+          0.94666
+        ]
+      }
+    },
+    {
+      "cat": "brioche",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940015730240161,
+        "body": 0.97676537162827,
+        "foot-r": 1,
+        "foot-l": 1,
+        "hidden-tail": 0.9999997145773392,
+        "tail": 0.6187429156666455,
+        "weapon": 0.9940015333396316,
+        "hidden-arm-l": 0.9940017293347612,
+        "arm-l": 0.9549056688340927,
+        "arm-r": 0.9253895412340315,
+        "head": 0.9274917481815289
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.84692
+        ],
+        "tail_3": [
+          2.10098,
+          0.26889
+        ],
+        "weapon": [
+          0.48515,
+          0.94666
+        ]
+      }
+    },
+    {
+      "cat": "velvet",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940014683754098,
+        "body": 0.9769025053852775,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.6923482351953562,
+        "arm-l": 0.9022054992832041,
+        "weapon": 0.9940015505021222,
+        "hidden-arm-r": 0.9940018055887911,
+        "arm-r": 0.8721267051766376,
+        "head": 0.9285796145198738
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.96966
+        ],
+        "tail_3": [
+          0.43713,
+          1.37984
+        ],
+        "weapon": [
+          0.96819,
+          1.29929
+        ]
+      }
+    },
+    {
+      "cat": "velvet",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.9940014683754098,
+        "body": 0.9769025053852775,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.6923476781552343,
+        "arm-l": 0.9022054992832041,
+        "weapon": 0.9940015505021222,
+        "hidden-arm-r": 0.9940018055887911,
+        "arm-r": 0.8721267051766376,
+        "head": 0.9285784575011534
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.96966
+        ],
+        "tail_3": [
+          0.58127,
+          1.83485
+        ],
+        "weapon": [
+          0.96819,
+          1.29929
+        ]
+      }
+    },
+    {
+      "cat": "marigold",
+      "variant": "R1",
+      "minTriangleByPart": {
+        "hidden-body": 0.994001484259263,
+        "body": 0.9767874962961081,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.744378898238673,
+        "hidden-arm-l": 0.9940014896718422,
+        "arm-l": 0.9190360614295294,
+        "weapon": 0.9940016769915901,
+        "arm-r": 0.9757632081626874,
+        "head": 0.9310537590618082
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          0.85592,
+          1.93286
+        ],
+        "tail_3": [
+          2.46793,
+          1.87815
+        ],
+        "weapon": [
+          0.69102,
+          1.75603
+        ]
+      }
+    },
+    {
+      "cat": "marigold",
+      "variant": "expressive",
+      "minTriangleByPart": {
+        "hidden-body": 0.994001484259263,
+        "body": 0.9767874962961081,
+        "foot-r": 1,
+        "foot-l": 1,
+        "tail": 0.744379181833505,
+        "hidden-arm-l": 0.9940014896718422,
+        "arm-l": 0.9190360614295294,
+        "weapon": 0.9940016769915901,
+        "arm-r": 0.9757632081626874,
+        "head": 0.9310527834689427
+      },
+      "maxFootDelta": 0,
+      "seamDelta": 0,
+      "ranges": {
+        "leg_l": [
+          0,
+          0
+        ],
+        "leg_r": [
+          0,
+          0
+        ],
+        "head": [
+          1.63659,
+          1.93286
+        ],
+        "tail_3": [
+          3.28176,
+          2.49748
+        ],
+        "weapon": [
+          0.69102,
+          1.75603
+        ]
+      }
+    }
+  ],
+  "limitation": "Source-free CPU geometry experiment; no nativecat enrollment or final acceptance. Shader/drawing imports stubbed; Mallow browser study recorded separately."
+}
