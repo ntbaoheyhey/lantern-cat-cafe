@@ -188,8 +188,9 @@ def main():
     output.write_text(json.dumps(result, separators=(',', ':')) + '\n')
     for case, row, baseline, hidden, own, cross in images_to_make:
         sheet = np.zeros((600, 1024, 3), dtype=np.uint8)
+        shift = raw['runtimeDiagnostic'].get('labelTarget', {})
         baseline_title = ('Synthetic expanded status fixture' if raw['runtimeDiagnostic'].get('statusFixture', {}).get('name') == 'expanded'
-                          else 'Diagnostic label target +5px' if raw['runtimeDiagnostic'].get('labelTarget', {}).get('dy') else 'Ordinary paused baseline')
+                          else f"Diagnostic target dx{shift.get('dx', 0):+g} dy{shift.get('dy', 0):+g}px" if shift.get('dx') or shift.get('dy') else 'Ordinary paused baseline')
         for image, left, title in [(baseline, 0, baseline_title),
                                     (hidden, 512, 'Diagnostic: labels hidden')]:
             sheet[26:314, left:left+512] = cv2.resize(image, (512, 288), interpolation=cv2.INTER_AREA)
