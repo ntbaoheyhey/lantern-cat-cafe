@@ -17,6 +17,15 @@ const cat=process.env.CXV_MEDIA_CAT??'mochi';assert(['mochi','clover'].includes(
 const group=0;assert(Number.isInteger(group)&&squads[group]);
 assert.equal(execFileSync('git',['diff',source,'--','packages/game-rules/src'],{cwd:root,encoding:'utf8'}),'','Production rules must match source');
 export function runtimeEvidence(){return{indexSha256:hash(readFileSync(resolve(root,'apps/web/dist/index.html'))),harnessSha256:hash(readFileSync(import.meta.filename)),servedSource:source,roster:squads[group],group,buildPath,buildSha256:hash(readFileSync(buildPath)),registryOverride:build.registryOverride};}
+/** A completed seek can precede frame presentation. Require native callback evidence too. */
+export async function waitForDecodedMediaFrame(page,{sourceFrame,reduced=false}={}){
+ await page.waitForFunction(({cat,sourceFrame,reduced})=>{
+  const media=[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state,decoded=window.__cxvMediaAudit?.decoded.at(-1);
+  if(!media.ready||media.failed||media.seeking||!decoded)return false;
+  const expected=reduced?0:sourceFrame!==undefined?sourceFrame/30:media.desired;
+  return Math.abs(media.currentTime-media.desired)<=1/60&&Math.abs(decoded.mediaTime-expected)<=(reduced||sourceFrame!==undefined?1e-5:1/30+1e-6);
+ },{cat,sourceFrame,reduced},{timeout:10000});
+}
 export async function openFixture(browser,fixture,{setupPage}={}){
  for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
  assert.equal(runtimeEvidence().indexSha256,index);

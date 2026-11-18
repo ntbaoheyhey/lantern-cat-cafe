@@ -1,0 +1,63 @@
+{
+  "utc": "2026-11-18T10:49:07.958945+00:00",
+  "status": "CALLBACK FENCE PASS; OLD HP FAILURE RETAINED",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "546ec5252af7e87bde026e8cc51dce8404493b3d",
+  "indexSha256": "0b0a76b72a9adb0cbe9aa144a4f0ffde139c18099b79990c245ac27d518277b9",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r3-104807/report.json",
+    "sha256": "df33fc4d9bdb5f75ef090d388e8b07ae38348df99c6c32fc8cb806b4cb035b77"
+  },
+  "harnessSha256": "f22d89b4ad9e7bd1ce62580e161b425524eedcc806da109ad3005f359ac8af90",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-preregistration.json",
+    "sha256": "0fc2ed7f796eabb53c8c3c35169285a42a10a914c6d55cf7a1c94b2d2a151812"
+  },
+  "rows": 50,
+  "actions": 4,
+  "emissionSamples": 10,
+  "maxEmissionError": 0,
+  "maxCallbackDelta": 0.033333000000002944,
+  "idleFrames": [
+    {
+      "source": 0,
+      "callback": 0
+    },
+    {
+      "source": 37,
+      "callback": 1.233333
+    },
+    {
+      "source": 75,
+      "callback": 2.5
+    },
+    {
+      "source": 112,
+      "callback": 3.733333
+    },
+    {
+      "source": 150,
+      "callback": 5
+    },
+    {
+      "source": 187,
+      "callback": 6.233333
+    },
+    {
+      "source": 225,
+      "callback": 7.5
+    },
+    {
+      "source": 262,
+      "callback": 8.733333
+    },
+    {
+      "source": 299,
+      "callback": 9.966667
+    }
+  ],
+  "errors": [],
+  "blockedRequests": [],
+  "imagesViewed": 0,
+  "limits": "Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Native callback must match each requested idle source frame; action callback may precede continuous socket time by at most one30Hz frame. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, head/offHand, source loop, budget, native physical visibility and general laptop FPS remain open. Current HP failure retained; R3 captures unviewed; this run isolates decoded callback gating before the HP rebuild."
+}
