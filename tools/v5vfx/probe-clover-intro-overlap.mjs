@@ -41,11 +41,12 @@ try{
   for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name));
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(x=>x.id==='boss'),{setupPage:p=>p.emulateMedia({reducedMotion:mode.os})});
   await page.waitForFunction(()=>!document.querySelector('.b3-wave-intro'),null,{timeout:10000});
+  const f=fixture(mode.reduced);
   const before=await page.evaluate(({state,battle,live})=>{
    const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state=state;
    Object.assign(m,{tutorialBattle:battle,galleryBattle:null,replay:null,plan:null,roundPlan:null,watching:true,paused:!live,sceneStarted:true,screen:'map',beforeImpact:null,afterImpact:null,animationAt:0});
    window.__cxvIntroStart=performance.now();m.notify(false);return JSON.stringify(m.battle);
-  },{...fixture(mode.reduced),live:mode.live});
+  },{...f,live:mode.live});
   await page.waitForFunction(()=>window.__depthScene.view().actors.every(a=>a.hp===window.__depthReview.visualBattle.actors.find(b=>b.id===a.id)?.hp));
   await page.evaluate(live=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);if(live)s.raf=requestAnimationFrame(s.loop);else s.render({...s.view(),fixedTime:30,paused:true},0);},mode.live);
   for(const target of [0,60,180,250,500,850,1050,1200]){
@@ -63,22 +64,29 @@ try{
      bossPhase:{...s.bossPhase.audit},cinematic:{...s.cinematic},media:{...entry[1].actor.designerMedia.media.state},paused:window.__depthReview.paused,plan:window.__depthReview.plan};
    },{mode,target});
    report.rows.push(row);await save();
-   assert(row.media.ready&&!row.media.failure&&!row.media.disposed);assert.equal(row.paused,!mode.live);assert(!row.plan);
+   assert(row.media.ready&&!row.media.failure&&!row.media.disposed);assert.equal(row.paused,!mode.live);if(!mode.live)assert(!row.plan);
    if(!mode.live&&(target===250||target===1200)){
     const path=resolve(out,mode.name+'-'+target+'.png');await page.screenshot({path});const bytes=await readFile(path);
     assert.equal(bytes.readUInt32BE(16),1280);assert.equal(bytes.readUInt32BE(20),720);
     report.captures.push({path,sha256:sha(bytes),mode:mode.name,target,row:report.rows.length-1,utc:new Date().toISOString()});await save();
    }
   }
-  const after=await page.evaluate(()=>JSON.stringify(window.__depthReview.battle));assert.equal(after,before);
+  const after=await page.evaluate(()=>JSON.stringify(window.__depthReview.battle));
+  const actual=JSON.parse(after),control=structuredClone(f.battle);let legalActions=0;
+  while(control.log.length<actual.log.length&&legalActions<20){
+   const actor=R.currentActor(control);assert(actor);
+   assert(actor.side==='enemy'?R.enemyAct(control):R.act(control,R.chooseAction(control,'auto')));legalActions++;
+  }
+  assert.deepEqual(control.log,actual.log);assert.deepEqual(control.actors,actual.actors);assert.deepEqual(control.queue,actual.queue);assert.equal(control.round,actual.round);
+  if(!mode.live){assert.equal(after,before);assert.equal(legalActions,0);}else assert(legalActions>0,'Ordinary opening must retain automatic legal action flow');
   const caseRows=report.rows.filter(r=>r.mode===mode.name),sceneAdvance=caseRows.at(-1).sceneTime-caseRows[0].sceneTime;
   if(mode.live)assert(sceneAdvance>0,'Ordinary unpaused scene clock must advance');
-  report.cases.push({...mode,beforeHash:sha(before),afterHash:sha(after),unchanged:true,sceneAdvance});
+  report.cases.push({...mode,beforeHash:sha(before),afterHash:sha(after),unchanged:before===after,rulesReplayPass:true,legalActions,sceneAdvance});
   report.errors.push(...errors);report.blockedRequests.push(...blockedRequests);assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);await page.close();
  }
  assert.equal(report.rows.length,40);assert.equal(report.captures.length,6);
  for(const f of sourceFiles)assert.equal(sha(await readFile(f.path)),f.sha256);
  assert.equal(runtimeEvidence().indexSha256,build.indexSha256);report.pass=true;
- report.limits='Observational timing/DOM attribution on current candidate. Three paused fixtures plus two ordinary unpaused1x openings before the first chosen action;not a complete battle or laptop performance. Geometric overlap is conservative;alpha/text coverage is judged separately. No source substitutions,UI hiding or animation retiming.';
+ report.limits='Observational timing/DOM attribution on current candidate. Three paused fixtures plus two ordinary unpaused1x openings with actual automatic legal actions independently replayed;not a complete battle or laptop performance. Geometric overlap is conservative;alpha/text coverage is judged separately. No source substitutions,UI hiding or animation retiming. Original R1 failed a mistaken no-action assumption and is preserved separately.';
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,rows:report.rows.length,captures:report.captures.length,failure:report.failure}));}
