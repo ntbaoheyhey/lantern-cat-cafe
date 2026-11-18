@@ -16,3 +16,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T07:54:21.891704+00:00 — Bản thử R3 đã sửa mốc ultimate media Mochi/Clover đúng1,1giây;42test tập trung,TypeScript và toàn bộ5465test đạt(5452pass,11bỏqua,2lỗi dự kiến). Mochi thử4hànhđộng/24mẫu ở2chếđộ đúng mốc;3ảnh mới sau khi tách fixture không còn panel boss cũ. Idle Mochi304mẫu/300hash phim được xác minh;chưa đăng ký vào bản chính vì tải lạnh vượt8MB,Clover/sockets/hiệu năng còn mở.
 
 2026-11-18T08:12:21.936836+00:00 Batch M: Đã sửa nền vàng chữ nhật khi Mochi thi triển kỹ năng; 26 mẫu kiểm tra và 2 ảnh mới ở cả hai chế độ đều đạt. Bộ kiểm thử đầy đủ chạy thành công; chưa phát hành vì tải lạnh còn 8,51/8,98/8,58 MB, Clover chưa tích hợp và kiểm tra chuyển động toàn cảnh còn mở.
+
+2026-11-18T08:40:07.963404+00:00 — Bản thử R5 đã sửa màn thắng cho Mochi video: 146 mẫu hai chế độ, vòng10giây liên tục và khung đứng khi giảm chuyển động; hai ảnh tự chụp đã xem. Bộ kiểm tra5471 mục thành công theo kỳ vọng (5458 đạt,11 bỏ qua,2 lỗi dự kiến). Chưa phát hành: lượt đầu8.51/8.98/8.58MB đều vượt8MB, chưa có Clover; kiểm tra chơi thường do CXV tiếp tục.
