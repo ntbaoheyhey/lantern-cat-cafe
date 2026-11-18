@@ -16,6 +16,8 @@ Hai ảnh mới do CXI tự chụp ở0/800ms cho thấy nhãn dưới thân đ�
 
 Kiểm toán đầy đủ đã xác minh628hash,4.292kiểm tra frame và1.088phép so sánh trong DOM. Các số đếm trong DOM bằng0, nhưng mẫu lỗi đối chứng không được dùng làm chứng cứ sạch. Trong3.264phép so sánh mở rộng, năm mẫu có đối chứng hợp lệ vẫn có bóng nhãn chạm thân Clover với sai khác RGB trên4: ba ultimate và Panko775/800ms. [Kết quả đầy đủ và các tệp gốc](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-staging-full-own-r1-review.json) giữ rõ phần đạt, phần không hợp lệ và phần còn lỗi.
 
+Pilot sửa cách quan sát HUD đã có10/10đối chứng hợp lệ. Ở350ms, thanh HP boss còn chờ cập nhật dù chưa có animation hữu hạn đang chạy; quan sát tự nhiên cần395,8ms để ổn định. Rules,67layout và320phép so sánh trong DOM đạt;960phép so sánh mở rộng vẫn phát hiện lỗi bóng Clover. Kết quả này chỉ duyệt phương pháp lấy mẫu, không thay thế lượt hồi quy cũ hay duyệt đồ họa. [Biên bản pilot](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-review.json).
+
 **Chưa đạt để phát hành:**
 
 - Nhãn R7 vẫn chưa đạt: pose giữ riêng có17pixel chạm, stress status208/69/74pixel. Wrapper Clover(-12,+19) sạch ở11pose+5status nhưng chưa nhập source. R3 đã sửa cách lấy mẫu:46snapshot/322nhãn khớp trong1/64CSSpx;16đối chứng ảnh đều hợp lệ. Tuy vậy nhãn Mochi chạm Panko ở250ms (1.479pixel cả hai chế độ) và350ms (1.340/1.302pixel). Hai ultimate Mallow sạch chỉ sau khi badgeΣ213 tự hết hạn; không suy ra toàn bộ hành động sạch. Dịch Mochi(0,-53) cũng bị loại vì6mẫu đèHUD. Chưa có R8 hoặc thay đổi source được chấp nhận.

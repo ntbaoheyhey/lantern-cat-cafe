@@ -5,17 +5,24 @@ import hashlib
 import json
 import math
 import sys
+import argparse
 import cv2
 import numpy as np
 
-prior_path,output=map(Path,sys.argv[1:])
+parser=argparse.ArgumentParser()
+parser.add_argument('prior',type=Path)
+parser.add_argument('output',type=Path)
+parser.add_argument('--diagnostic-invalid-controls',action='store_true')
+args=parser.parse_args()
+prior_path,output=args.prior,args.output
 assert not output.exists()
 sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 prior=json.loads(prior_path.read_text())
-assert prior['completeAttributionValid']
+assert prior['completeAttributionValid'] or args.diagnostic_invalid_controls, 'Invalid controls require explicit diagnostic mode'
 raw_path=Path(prior['raw']['path'])
 assert sha(raw_path)==prior['raw']['sha256']
 raw=json.loads(raw_path.read_text())
+assert [c['key'] for c in raw['cases']]==[c['key'] for c in prior['cases']]
 
 def read(cap):
     assert sha(cap['path'])==cap['sha256']
@@ -36,7 +43,7 @@ def metric(mask,paint,body=None):
                 maxBodyDelta=int(body[mask].max()) if len(pts) and body is not None else None)
 
 rows=[]
-for case in raw['cases']:
+for case,prior_case in zip(raw['cases'],prior['cases']):
     caps={c['variant']:c for c in case['captures']}
     baseline,hidden,without=map(read,[caps['baseline'],caps['labels-hidden'],caps['without-clover']])
     paint=np.abs(baseline-hidden).max(2)
@@ -50,13 +57,15 @@ for case in raw['cases']:
         padding.append(dict(padding=pad,**metric((paint>0)&~union,paint)))
     clover_support=box(clover['rect'],10)
     intersections=[dict(threshold=t,**metric(clover_support&(paint>t)&(body>t),paint,body)) for t in (0,1,2,4,8,16)]
-    rows.append(dict(key=case['key'],filters=filters,cloverRect=clover['rect'],outsideAllLabelsByPadding=padding,
+    rows.append(dict(key=case['key'],attributionValid=prior_case['attributionValid'],filters=filters,cloverRect=clover['rect'],outsideAllLabelsByPadding=padding,
                      cloverBodyIntersectionsWithinTenPixelSupport=intersections))
 result=dict(utc=datetime.now(timezone.utc).isoformat(),priorAudit=dict(path=str(prior_path.resolve()),sha256=sha(prior_path)),
             raw=prior['raw'],sourceCommit=raw['sourceCommit'],indexSha256=raw['indexSha256'],url=raw['url'],toolSha256=sha(__file__),
-            cases=len(rows),rows=rows,productionAcceptance=False,imagesViewed=0,
+            cases=len(rows),rows=rows,completeControlsInherited=prior['completeAttributionValid'],diagnosticInvalidControls=args.diagnostic_invalid_controls,
+            invalidControlCases=[r['key'] for r in rows if not r['attributionValid']],productionAcceptance=False,imagesViewed=0,
             interpretation='Observed CSS drop-shadow extends beyond the prior four-pixel support assumption. Broader localization does not erase prior failure or accept overlaps.',
-            limits=['Uses pinned control-valid RGB contributions; no new captures or subjective view.',
+            limits=['Uses pinned RGB differences; invalid-control cases are arithmetic only, never attribution or clearance.',
+                    'No new captures or subjective view.',
                     'A ten-pixel neighborhood localizes existing paint; it is not a new clearance tolerance.',
                     'No inferred alpha value from RGB change and no all-frame claim.'])
 with output.open('x') as f:
