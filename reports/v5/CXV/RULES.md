@@ -17,3 +17,4 @@ Two failures without new idea=>log and sharpen study or next item. Merge only an
 Designer files are commissioned art: copy originals; never move/rename. No reference-video inputs to generation.
 Never secrets/.env/keys, hosting/deploys/prodDB, funded wallets/Fuji, contracts edits/deploys, main merge, submission, signup/payment/licence acceptance; free tools log first.
 READY to CXI only after focused tests/typecheck/fresh own evidence. Preserve shared Soot behavior exactly.
+OWNER override2026-11-18T12:09:40Z: no8MB/first-battle byte cap;bytes report-only,never blockrelease or art;ORDER-V8-NOTES.md.
