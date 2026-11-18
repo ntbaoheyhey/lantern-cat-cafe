@@ -1,0 +1,133 @@
+{
+  "utc": "2026-11-18T11:42:19.374007+00:00",
+  "sourceCommit": "7625b028f2e129d6f9b6a9e8c4a0096f7a0223b0",
+  "indexSha256": "e24cfdf171df18f2cbc004206ead31224de41750be8468270af2edcebd0d2d50",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "capturedUTC": [
+    "2026-11-18T11:40:01.304Z",
+    "2026-11-18T11:40:19.042Z"
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-art-r2-114001/report.json",
+    "sha256": "93b5d3b2221ffb61327a54b4e30453fe5bfae7e7ad69ef62da80c89a79673101"
+  },
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeSourceSubstitutions": [],
+  "nativeFrames": 65,
+  "nativeCallbacksExact": true,
+  "maxFootDelta": 0,
+  "nativeBodyHeight": 226.7999994135608,
+  "sourceFilm": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-art-r2-114001/clover-native-loop-window-1280x720.mp4",
+    "sha256": "6e5b9d54090b00a2b86b0a154c9561e7de6c999ce23b6be747340d2299ee65fc"
+  },
+  "seamMetrics": {
+    "fullMediaQuad": {
+      "seamRGBMAE": 2.997576574065471,
+      "ordinaryMedianRGBMAE": 1.1847455789897487,
+      "ordinaryP95RGBMAE": 1.7478947938926568,
+      "ordinaryMaxRGBMAE": 1.8185682430549104,
+      "seamToMedian": 2.5301437095224717,
+      "seamToP95": 1.7149639580936706
+    },
+    "lowerLeftStudyRegion": {
+      "seamRGBMAE": 10.515463917525773,
+      "ordinaryMedianRGBMAE": 1.991725447639718,
+      "ordinaryP95RGBMAE": 2.781185567010309,
+      "ordinaryMaxRGBMAE": 2.866160245975764,
+      "seamToMedian": 5.279575018729142,
+      "seamToP95": 3.7809285515707534
+    },
+    "sceneControl": {
+      "seamRGBMAE": 0.0006349206349206349,
+      "ordinaryMedianRGBMAE": 0.0006746031746031747,
+      "ordinaryP95RGBMAE": 0.0021626984126984117,
+      "ordinaryMaxRGBMAE": 0.0027380952380952383,
+      "seamToMedian": 0.9411764705882352,
+      "seamToP95": 0.2935779816513763
+    }
+  },
+  "pairMetrics": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-art-r2-114001/adjacent-frame-metrics.json",
+    "sha256": "487d1601636a10de63d1122cb54ff38c2e0b13fbd01a2d164843f7bac7cfc02b"
+  },
+  "keyedMatteSource": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/source.rgba",
+    "sha256": "21fd9e6e159cbb1390c96dfc1b3dab4dffaa96d1ecb16ed7a97b0cbfcdecb7ac",
+    "seamRGBAMAE": 4.909882982583454,
+    "ordinaryMedianRGBAMAE": 1.7880669448476052,
+    "ordinaryP95RGBAMAE": 2.70425888969521
+  },
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-art-r2-114001/review/quarters.jpg",
+      "sha256": "eabb3d84003c164f31803ea60325ca34ff6b4bfde66eed44356dcdd1ce218a5c",
+      "dimensions": [
+        800,
+        1000
+      ],
+      "frames": [
+        75,
+        150,
+        225
+      ],
+      "nativeCrop": [
+        376,
+        164,
+        196,
+        237
+      ],
+      "inspectionScale": 2,
+      "interpolation": "nearest",
+      "views": 1,
+      "bytes": 188646,
+      "reviewUTC": "2026-11-18T11:43:46.891576+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-art-r2-114001/review/seam.jpg",
+      "sha256": "5c45b78857307e8cf7dfee603f7983535412567ed41085e56210fa7fbea6e416",
+      "dimensions": [
+        800,
+        1000
+      ],
+      "frames": [
+        295,
+        299,
+        300,
+        304
+      ],
+      "nativeCrop": [
+        376,
+        164,
+        196,
+        237
+      ],
+      "inspectionScale": 2,
+      "interpolation": "nearest",
+      "views": 1,
+      "bytes": 249356,
+      "reviewUTC": "2026-11-18T11:43:46.891576+00:00"
+    }
+  ],
+  "visualReviewed": true,
+  "limits": [
+    "Native RGB regions contain actual scene background;lower-left rectangle is not an independently labelled tail mask.",
+    "Keyed RGBA source is the already rejected/unaccepted original matte,not true commissioned alpha ground truth.",
+    "Two-times nearest inspection adds no native detail;original viewport remains1280x720.",
+    "65deterministic frames and2second loop window do not prove realtime FPS,entire-cycle matte,or release acceptance."
+  ],
+  "preservedAttempt": "clover-art-r1-113910:zero captures;harness logicalSize property corrected to manifest width/height;application unchanged",
+  "decision": "REJECT seamless-loop claim;matte/fringe/halo acceptance remains OPEN",
+  "visualFindings": [
+    "Two fresh800x1000 sheets viewed once;native227px body shown at2x nearest for inspection.",
+    "Tail contour changes abruptly between sourceF299 andF0;the adjacentF295/F299 andF0/F4 pairs change more gradually. No body-root/foot jump is measured.",
+    "Current stage is visible around hair,tail and hem;no broad black background rectangle is present in these sampled poses.",
+    "Fine fur and embroidered details are soft at native delivery height. The bright teapot remains visible,but original halo preservation cannot be proved from the black-composited MP4.",
+    "No full-cycle no-fringe/no-halo-loss acceptance;decoded codec fidelity and keyed-source alpha correctness are separate claims."
+  ],
+  "loopConclusion": "Native lower-left region seam RGBMAE10.515464 versus ordinary median1.991725/p952.781186;scene control seam0.000635. The keyed RGBA source also has a4.909883 seam versus1.788067 median. This confirms an inherited visual discontinuity,not a new codec or root-motion regression."
+}
