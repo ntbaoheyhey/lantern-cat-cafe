@@ -30,7 +30,8 @@ def save():report.write_text(json.dumps(receipt,indent=2)+'\n')
 def run(name,command,env):
     for stop in ('STOP-ALL','STOP-CXV'):assert not Path('/Users/bao/taskbar-hero-mailbox',stop).exists()
     started=now();log=out/(name+'.log')
-    with log.open('w') as f:\n+        result=subprocess.run(command,cwd=ROOT,env=env,stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT)
+    with log.open('w') as f:
+        result=subprocess.run(command,cwd=ROOT,env=env,stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT)
     stage=dict(name=name,startedUTC=started,completedUTC=now(),exit=result.returncode,log=dict(path=str(log),sha256=sha(log)))
     receipt['stages'].append(stage);save();print(json.dumps(stage),flush=True)
     assert result.returncode==0,name
