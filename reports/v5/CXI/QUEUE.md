@@ -1,11 +1,11 @@
 # CXI V8 — Batch M first
 M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover seam topology/strain and head/off/vfx sockets unresolved; no sequence adoption.
-M-I2 OPEN: loader suspension9bcbce1d5+scene00903 imported45f0d8c73;40focused/TSC0;R6 own146sample retained-decoder/victory gatePASS,2freshviews;naturalphase/visibility withCXV. R6 cold8509074/8975988/8584766B FAIL8MB; Clover absent. Ordinary1x/performance and media performance require verified receipts.
+M-I2 OPEN: loader suspension9bcbce1d5+scene00903 imported45f0d8c73;40focused/TSC0;R6 own146sample retained-decoder/victory gatePASS,2freshviews;naturalR3 numericACCEPT35hashes/1059actionrows/28postresult;nativevisibilityOPEN. R6 cold8509074/8975988/8584766B FAIL8MB; Clover absent. Ordinary1x/performance and media performance require verified receipts.
 M-I3 OPEN: release only after byte/quality/performance/journey/film gates; latest green milestone v5-m1.13; R6 untagged,fullsuite5499exit0.
 SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parity retained. Never import retractedPanko d419002a4.
 CXV ACCEPT: all9nativecats scoped motion; FIELD5 R2; Mochi304sample idle/300hashes/equal227px; R4cast290samples/280frames+focusalpha. Do not reopen reviewed views.
 CXV VICTORY: exact6eb22f242 two-file import; ownR5 146samples+2freshviews PASS; fullsuite5471=5458passed+11skipped+2expectedfail,exit0. CXV native140/reduced-restore ACCEPT11verifiedhashes/fullPNGexact.
-CXV LEASE:6301 explicitlyreleased08:59:52Z;R5 naturalPhase2 960rows confirms portrait conflict;ccb209d07 exactimport;R6served09:10;CXVreleased09:19;CXIcoldcompleted09:21;naturalR3 independent audit pending.
+CXV LEASE:6301 explicitlyreleased08:59:52Z;R5 naturalPhase2 960rows confirms portrait conflict;ccb209d07 exactimport;R6served09:10;CXVreleased09:19;CXIcoldcompleted09:21;naturalR3 numeric audit ACCEPT;images hashonly,6normal battle drops,local descriptive timing.
 AGS OPEN:T-M1 sourced licenses/packagecosts,T-CXI-5 listening/provenance,T-CXI-10 AV1 receipts/EN+ZH sources,T-CXI-11 real audio inventory;>=2useful.
 AGS DONE scoped:T-M2 negative provenance inventory only,214/240px unverified;T-M3 ownerdraft only. Through293 dispositions committed;297 pending. R5 audio37artifacts ownhashes verified;request is not audible-use proof.
 AGV landingR6 REJECT:242887B vs served207867B;35020B growth,claimed213293B wrong;hash verified,no view/adoption. R4finegrain rejection retained.
