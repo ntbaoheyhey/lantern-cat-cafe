@@ -1,0 +1,130 @@
+{
+  "utc": "2026-11-18T18:25:51.168167+00:00",
+  "study": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-label-identity-v8-20261118.md",
+  "prior": "M-footer-lifecycle-R2.json",
+  "classification": "Expanded selected development cases, not heldouts",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-only-profile-r1/build.json",
+    "sha256": "f6db611441d33815deddfdfe9aa04b068de567abb6b15adcb493f7d81d203b07"
+  },
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 1,
+      "statusCase": "empty"
+    },
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "normal",
+      "cat": "clover",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 1,
+      "statusCase": "empty"
+    },
+    {
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 4,
+      "statusCase": "capacity"
+    }
+  ],
+  "arms": [
+    "original",
+    "prototype"
+  ],
+  "freshPages": 16,
+  "geometryHz": 60,
+  "boundaryMs": [
+    0,
+    175,
+    250,
+    349.9999,
+    350,
+    350.0001,
+    600,
+    1099.9999,
+    1100,
+    1100.0001,
+    1300,
+    2199.9999,
+    2200
+  ],
+  "maxPNGs": 128,
+  "prototypeSha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+  "harnessSha256": "e4cb74d49983ddf64091d78c0048b0a9a423842374def3731777bdad87937249",
+  "toolHashes": {
+    "footer-identity-stable-prototype.mjs": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+    "probe-footer-trajectory-r1.mjs": "e4cb74d49983ddf64091d78c0048b0a9a423842374def3731777bdad87937249",
+    "run-footer-trajectory-r1.py": "5ebebe89b994b1ab755a462ba43fe4b2b9a91067cac8f4fb0ea63b5f252dae86",
+    "measure-footer-trajectory-r1.py": "e71a50f4fdb3ac9eb81affc41871b2337e4764492b6c3f7d17728f712f79a281",
+    "mochi-label-observation.mjs": "6fae63b553cb354fb9282e364b459118a6d2a27a74171d3c9f16a7d3195dbabb",
+    "hud-meter-observation.mjs": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a",
+    "mochi-label-production-fixture.mjs": "1cc672c1e6bc6995de9ed99b179f15c81f18bbb9bd2835a6d30e1f6da7a1e493",
+    "media-production-fixture.mjs": "cc946d20c0082a183716c90f7f947810b93991501288a39fcdc2e70048805136"
+  },
+  "hypotheses": [
+    "Unchanged R2 named panel retains all original Mochi values and native label/control geometry through all chosen actions.",
+    "The fixed160x72 panel and all glyph/stack boxes remain within existing footer and clear existing control/body boxes for every visible sample.",
+    "Original/prototype endpoint rawcanvas and repeated captures are exact under frozen endpoint observation."
+  ],
+  "gates": [
+    "All16pages complete;independent exact rule replay for every action;zero console/network errors.",
+    "Every60Hz+exactboundary sample captured;atomic complete before/sync/after scene/world/control equality.",
+    "Panel name/role/size/emptylabel/value transfer correct;no measured content/control/bodybox conflicts.",
+    "Endpoint repeat image hashes/states pass;all16crossarm rawcanvas pairs exact.",
+    "Screen differences remain descriptive;no completepaint or restoration claims."
+  ],
+  "focus": "No Tab/focus intervention;CXI separately owns removed/reordered focus heldouts.",
+  "capture": "Initial/final screen and rawcanvas,2repeats each=128PNG max. Measure before any new optionalviews;never reopen historical images.",
+  "hudPortraitPause": "Same scoped two existing infinite footer animations as R1;pause at observed time,await ready,no blanket timer disabling.",
+  "hudMeterSettlement": {
+    "timeoutMs": 2500,
+    "stableFrames": 3,
+    "inlinePercentTolerance": 1e-06,
+    "widthToleranceCSSpx": 0.015625
+  },
+  "frozenScope": "Existing R2 presentation unchanged;manually synced after React/model updates;full values copied synchronously;no source edit or automatic callback.",
+  "limits": [
+    "Sampled60Hz trajectory,not every possible continuous intermediate or completepaint.",
+    "Mochi commissioned stream only;Clover placeholder in this build.",
+    "No dualmedia,faultfallback,native lifecycle,ordinary-laptop or production acceptance.",
+    "R1 failures retained;no mask tuning or refit."
+  ],
+  "productionAcceptance": false
+}
