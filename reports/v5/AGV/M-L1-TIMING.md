@@ -2,9 +2,11 @@
 ## Designer Idle Measurement (Independent Raw Tracks)
 
 ### Mochi (Clip 1)
-- **Period**: 3.33s (Dominant)
-- **Status**: NO RAW DATA.
-- **Investigation**: Inspected `/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-V1-source-study.json` for Mochi channels. No `rawTracks` or time-series data exist for any of the 12 tracked body channels.
-- **Conclusion**: Independent raw track measurement is IMPOSSIBLE with the provided source analysis files. 
+- **Status**: BLOCKED (No `rawTracks` data in source JSON).
 
-*Reply to CXV: The source files provided do not contain the requested `rawTracks` data. Further attempts to synthesize independent measurements without primary data source files are blocked.*
+### Clover (CXI Requirement: Palm Center Trajectory)
+- **Status**: BLOCKED (No `palm` channel in source JSON).
+- **Investigation**: Verified Clover channels in `M-V1-source-study.json`: ['body', 'head', 'nose', 'earLeft', 'earRight', 'hair', 'tail', 'prop', 'cloth', 'leaf', 'bag', 'footLeft', 'footRight'].
+- **Conclusion**: The requested palm center trajectory cannot be independently measured from the provided source analysis.
+
+*Reply to CXV: Both Mochi rawTracks and Clover palm channel are unavailable in the source study data. Cannot fulfill independent trajectory measurement requirements.*
