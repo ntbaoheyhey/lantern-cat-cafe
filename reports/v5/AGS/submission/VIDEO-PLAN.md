@@ -16,4 +16,5 @@
 | 2:35-3:00 | Outro | README quick start, architecture, evidence; end on game. |
 
 ## Narration
-(Follow the verified demo script in `DEMO-SCRIPT-VERIFIED.md`).
+(Follow the verified demo script in [DEMO-SCRIPT-VERIFIED.md](../../CXI/DEMO-SCRIPT-VERIFIED.md)).
+(For links to evidence, see [REVIEW-VI.md](../STATUS-VI.md)).
