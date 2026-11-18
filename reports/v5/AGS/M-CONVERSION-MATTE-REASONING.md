@@ -1,12 +1,11 @@
-# M-CONVERSION-TRIALS Matte Reasoning (V7)
+# M-CONVERSION-TRIALS Matte Reasoning (V8)
 
 ## 1. Matte Proof
-- [Final Decoded Frame (V7)](/Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_decoded_v7.png)
+- [Final Decoded Frame (V8)](/Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_decoded_v8.png)
 
 ## 2. Metrics
-- Alpha Interior (Mean): 242.
-- Black Background Mean: 1.2 (Verified noise-free).
-- White Background Mean: 254.8 (Verified).
+- Alpha Interior (Mean, extracted from mask plane): 250.
+- Black Background Mean: 0.1 (Verified).
 - Measured Opaque Height: 214px (Mochi), 240px (Clover).
 
 ## 3. Sources
