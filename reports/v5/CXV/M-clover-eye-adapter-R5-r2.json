@@ -1,0 +1,72 @@
+{
+  "utc": "2026-11-18T12:02:33.838Z",
+  "payload": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-eye-delivery-R5.json",
+    "sha256": "c1b2669cb55a90e1c6bad63a92abac5b015419ab265f1a49f43a3b1fb36ce213"
+  },
+  "sourceFiles": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-loader.ts",
+      "sha256": "94c4124c8c1b306b516b2b113f3509d0753dcbd4f0ca8d00df97c9e337890617"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-actor-loader.ts",
+      "sha256": "ead187c024ad071d650d8d3ba2c23beb2172ea9426bad3b03c093f168e554d30"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/living-cat-cast.ts",
+      "sha256": "b3c0ea8a3d185a3a2e89958b646852c7247b0032c809d1b2b74a8e38334edf6b"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/config.ts",
+      "sha256": "84d35ed500f0de848d4d32591b4298e58cc62362cd854d188023258dad1d18d5"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-registry.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    }
+  ],
+  "scope": "Read-only actual CXI adapter arithmetic. Mock video clock/no decode, provisional other anchors, empty registry. No production scene/cast/loop/budget acceptance.",
+  "samples": 2100,
+  "castSamples": 3600,
+  "crossChannelIsolationSamples": 300,
+  "maxIdleWorldError": 0.0000011421966163993602,
+  "maxCastMeshError": 0.000029683482011932938,
+  "pass": true,
+  "wrapAndFallback": [
+    {
+      "time": 10,
+      "reduced": false,
+      "failure": null,
+      "error": 4.841831469093449e-7
+    },
+    {
+      "time": 20,
+      "reduced": false,
+      "failure": null,
+      "error": 4.841831469093449e-7
+    },
+    {
+      "time": -0.01,
+      "reduced": false,
+      "failure": null,
+      "error": 3.164655808518546e-7
+    },
+    {
+      "time": 6.7,
+      "reduced": true,
+      "failure": null,
+      "error": 4.841831469093449e-7
+    },
+    {
+      "time": 7.4,
+      "reduced": false,
+      "failure": "decode",
+      "error": 4.841831469093449e-7
+    }
+  ],
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-clover-eye-adapter.mjs",
+    "sha256": "358ca36a90fe8a6e1911e634f2175ae361da6db7b27326a2cf948c2a115b1450"
+  }
+}
