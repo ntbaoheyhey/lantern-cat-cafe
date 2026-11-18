@@ -108,6 +108,8 @@ async function observe(page,fixedTime,metadata){
    hpObstacles:label?{allBodyOverlapArea:s.anchors.filter(x=>x.visible).reduce((sum,x)=>sum+overlap(label,x.body),0),otherLabelOverlapArea:[...document.querySelectorAll('.b3-world')].filter(n=>n!==plate).map(measure).filter(Boolean).reduce((sum,x)=>sum+overlap(label,x),0)}:null,
    hpLocalClearance:localHp.y-localTop,hpScreenGapAboveFullPlane:top-hp.y,minTriangleRatio,maxMeshDelta,foot:s.socket(id,'feet'),root:a.root.matrixWorld.toArray()};
  },{fixedTime,metadata,prereg});
+ // Retain the actual observation even when a preregistered gate fails.
+ report.rows.push(row);await save();
  assert.equal(row.url,judgeUrl);assert.equal(row.source,'media');assert(row.media.ready&&!row.media.failed);assert(row.minTriangleRatio>0);
  assert(row.decodedMeshPoint,'Decoded source spout must lie inside the rendered media mesh');
  for(const key of ['head','offHand']){const p=row.authored[key];assert(p.continuous&&p.decodedPoint,key+' inside rendered mesh');assert(p.continuousError<=prereg.gate.maxContinuousMeshAttachmentCSSPx,key+' continuous attachment');assert(p.decodedError<=prereg.gate.maxDecodedMeshAttachmentCSSPx,key+' decoded attachment');}
@@ -116,7 +118,7 @@ async function observe(page,fixedTime,metadata){
  if(metadata.reduced){assert(Math.abs(row.media.currentTime)<1/60);assert.equal(row.maxMeshDelta,0);}
  if(row.manifest){assert.equal(row.manifest.socketChannels.head,'head');assert.equal(row.manifest.socketChannels['off-hand'],'freePaw');assert.equal(row.manifest.socketChannels['vfx-origin'],'spout');assert.notEqual(row.manifest.socketChannels['main-hand'],'spout');}
  if(metadata.phase==='action'&&row.glint?.visible){assert(row.emissionError<1e-6);assert(row.glintPlacementError<1e-6);}
- report.rows.push(row);await save();return row;
+ return row;
 }
 async function capture(page,name,row){
  const path=resolve(out,name+'.png');await page.screenshot({path});const bytes=await readFile(path);

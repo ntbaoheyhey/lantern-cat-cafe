@@ -361,14 +361,19 @@
   },
   "harness": {
     "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-clover-authored-production.mjs",
-    "sha256": "e97867387af9db8011d053a417e7364588187bfe1338b0faa5b927edab50876d"
+    "sha256": "969514ae66de830fcc6d526c3e174002d9d326c4c5f6b329a7f2e6d3c3e292f0"
   },
-  "state": "PREPARED_NOT_RUN; depends on CXI freePaw support and explicit6301 lease",
+  "state": "PREPARED_NOT_RUN; R4installed854ce6eec/index9e39c7d7; exclusive6301lease pending",
   "expectedIdleSamples": 305,
   "expectedActions": 4,
   "expectedCaptures": 16,
   "preExecutionMetadataAddition": {
     "utc": "2026-11-18T12:23:49.485083+00:00",
     "change": "Record canvas host rectangle for unambiguous screenshot crop coordinates;no requestedframes/gates/sourcecurves changed. Native harness still never run."
+  },
+  "preExecutionFailureRetention": {
+    "utc": "2026-11-18T12:31:55.785192+00:00",
+    "change": "Persist each numerical observation before asserting fixed gates, so a failing row is retained. No requested frames, source curves or tolerances changed. Harness has not run.",
+    "previousHarnessSha256": "e97867387af9db8011d053a417e7364588187bfe1338b0faa5b927edab50876d"
   }
 }
