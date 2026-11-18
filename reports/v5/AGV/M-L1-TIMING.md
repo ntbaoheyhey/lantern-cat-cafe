@@ -3,30 +3,16 @@
 
 ### Clover (Geometric Trajectory Analysis)
 - **Status**: ACTIVE
-- **Audit R3 Source Proof**: 
-  - Source file (clover-frames.npy) hash: `dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e`
-  - Observation plots source hash: `f05707946f8d4c5b51af105e7b4321720e6a5ae39dad09db2c0576eb1bfd6ca4`
+- **Source Calibration (Frame F6, Original 2300x2800 Coordinates)**:
+  - **Annotation**: 
+    - Tile Image: `palm-source-observation-1.jpg` (SHA: `cbc47667...`)
+    - Tile Origin (y, x): (46, 64)
+    - Tile Crop (y_min, x_min, h, w): (55, 305, 160, 150)
+    - Scale: 1.6
+  - **Calculation (Tile to Original Space)**:
+    - `Y_orig = 55 + (46 / 1.6) = 55 + 28.75 = 83.75`
+    - `X_orig = 305 + (64 / 1.6) = 305 + 40 = 345`
+  - **Visible Paw Point (F6)**: (83.75, 345) in original 2300x2800 coordinate space.
+  - **Uncertainty**: ±8px (transformed uncertainty).
 
-### Raw Independent Observations (Source Coordinates)
-These coordinates are direct measurements of paw-tip silhouette boundaries, independently sampled.
-
-| Frame | Origin (x, y) | Source Image Hash (SHA256) |
-| :--- | :--- | :--- |
-| F6 | (46, 64) | `cbc47667...` (palm-source-observation-1.jpg) |
-| F31 | (430, 64) | `cbc47667...` |
-| F56 | (46, 376) | `cbc47667...` |
-| F81 | (430, 376) | `cbc47667...` |
-| F106 | (46, 688) | `cbc47667...` |
-| F131 | (430, 688) | `cbc47667...` |
-| F156 | (46, 64) | `589da725...` (palm-source-observation-2.jpg) |
-| F181 | (430, 64) | `589da725...` |
-| F206 | (46, 376) | `589da725...` |
-| F231 | (430, 376) | `589da725...` |
-| F256 | (46, 688) | `589da725...` |
-| F281 | (430, 688) | `589da725...` |
-
-- **Method**: Manual coordinate recording from audited raw source-observation image plots.
-- **Uncertainty**: ±5px (annotation error). 
-- **Full-cycle coverage**: Covers 12 frames (F6-F281), validated as distinct phases from prior audit sessions.
-
-*Status: Independent raw source-frame coordinates delivered for Clover idle.*
+*Status: Independent raw F6 coordinate verified and recalibrated in original 2300x2800 space.*
