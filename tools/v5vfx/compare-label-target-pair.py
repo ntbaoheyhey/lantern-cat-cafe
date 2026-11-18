@@ -45,13 +45,16 @@ def main():
         assert sha(analysis['raw']['path']) == analysis['raw']['sha256']
         raw.append(load(analysis['raw']['path']))
     assert aa['sourceCommit'] == bb['sourceCommit'] and aa['indexSha256'] == bb['indexSha256']
-    assert [a['runtimeDiagnostic']['labelTarget']['dy'] for a in (aa, bb)] == [0, 5]
+    targets = [a['runtimeDiagnostic']['labelTarget'] for a in (aa, bb)]
+    assert targets[0].get('dx', 0) == targets[0]['dy'] == 0
+    expected_shift = dict(x=targets[1].get('dx', 0), y=targets[1]['dy'], width=0, height=0)
+    assert (expected_shift['x'], expected_shift['y']) in ((0, 5), (-12, 19))
     assert raw[0]['plannedCases'] == raw[1]['plannedCases']
     result = dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   sourceCommit=aa['sourceCommit'], indexSha256=aa['indexSha256'], url=aa['url'],
                   inputs=[dict(path=str(p.resolve()), sha256=sha(p)) for p in (ap, bp)],
                   harness=dict(path=str(Path(__file__)), sha256=sha(__file__)), cases=[],
-                  productionAcceptance=False, imagesViewed=0)
+                  productionAcceptance=False, imagesViewed=0, expectedCloverShift=expected_shift)
     assert len(aa['cases']) == len(bb['cases']) == len(raw[0]['cases']) == len(raw[1]['cases'])
     for a, b, ar, br in zip(aa['cases'], bb['cases'], raw[0]['cases'], raw[1]['cases']):
         assert (a['mode'], a['sourceFrame']) == (b['mode'], b['sourceFrame'])
@@ -62,7 +65,7 @@ def main():
         for key in labels_a:
             r, s = labels_a[key]['rect'], labels_b[key]['rect']
             deltas[key] = {k: s[k] - r[k] for k in ('x', 'y', 'width', 'height')}
-        expected_delta = all(all(abs(v - (5 if cat == 'clover' and k == 'y' else 0)) <= 1/64
+        expected_delta = all(all(abs(v - (expected_shift[k] if cat == 'clover' else 0)) <= 1/64
                                 for k, v in delta.items()) for cat, delta in deltas.items())
         no_labels_a, no_labels_b = image(a, 'labels-hidden'), image(b, 'labels-hidden')
         canvas_changed = int(np.count_nonzero(np.any(no_labels_a != no_labels_b, axis=2)))
@@ -83,6 +86,9 @@ def main():
                      hudUnchanged=x['hud'] == y['hud'], actualLabelDisplacement=expected_delta,
                      canvasExact=canvas_changed == 0, outsideCloverExact=outside_changed == 0,
                      facesHudOtherLabelsClear=not any(overlap(rect, r) for r in faces+hud+other))
+        native_bodies = [v['body'] for v in y['anchors'] if v.get('visible') and v.get('body') and v['id'] not in ('mochi', 'clover')]
+        if expected_shift['x']:
+            gates['nativeBodyRectanglesClear'] = not any(overlap(rect, r) for r in native_bodies)
         row = dict(mode=a['mode'], sourceFrame=a['sourceFrame'], expectedFrames=a['expectedFrames'],
                    gates=gates, labelDeltas=deltas, canvasChangedPixels=canvas_changed,
                    outsideCloverChangedPixels=outside_changed, baseline=a['threshold0Union'], candidate=b['threshold0Union'],
@@ -92,7 +98,8 @@ def main():
                            len(result['cases']) == len(raw[0]['plannedCases']) and
                            all(all(c['gates'].values()) for c in result['cases']))
     result['sampledCommissionedPaintClear'] = result['pairValid'] and all(c['candidate']['all']['count'] == 0 for c in result['cases'])
-    result['limits'] = ['Fitted baseline F0 plus eight new paused idle poses and reduced F0; no all-frame or cast clearance.',
+    result['limits'] = ['The recorded paused case list includes regression/heldout poses and reduced F0; no all-frame or cast clearance.',
+                        'Outside-Clover pixel isolation uses the union of both DOM bounds expanded by4CSSpx, not exact DOM containment.',
                         'Reversible target offset on unchanged application source, not an accepted source change.',
                         'Only commissioned media contributions isolated; native-body paint and source seam/matte remain open.',
                         'Conservative body-rectangle results are retained; no natural-play acceptance.']

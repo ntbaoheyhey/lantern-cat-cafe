@@ -9,16 +9,16 @@ const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPT
 assert.equal(process.env.CXV_MEDIA_CAT,'both');assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')));await mkdir(out,{recursive:true});
 const buildPath=process.env.CXV_MEDIA_BUILD,build=JSON.parse(await readFile(buildPath)),verified=JSON.parse(await readFile(resolve(out,'artifact-verification.json')));
 assert.equal(verified.indexSha256,build.indexSha256);assert.equal(verified.sourceCommit,build.sourceCommit);
-const frames=(process.env.CXV_LABEL_FRAMES??'0,90,180,270').split(',').map(Number),targetDy=Number(process.env.CXV_LABEL_TARGET_DY??0);
+const frames=(process.env.CXV_LABEL_FRAMES??'0,90,180,270').split(',').map(Number),targetDy=Number(process.env.CXV_LABEL_TARGET_DY??0),targetDx=Number(process.env.CXV_LABEL_TARGET_DX??0);
 const statusFixture=process.env.CXV_LABEL_STATUS_FIXTURE??'none';assert(['none','expanded'].includes(statusFixture));
-assert(frames.length>0&&frames.length<=300&&new Set(frames).size===frames.length&&frames.every(f=>Number.isInteger(f)&&f>=0&&f<300));assert([0,5].includes(targetDy));
+assert(frames.length>0&&frames.length<=300&&new Set(frames).size===frames.length&&frames.every(f=>Number.isInteger(f)&&f>=0&&f<300));assert([[0,0],[0,5],[-12,19]].some(([x,y])=>x===targetDx&&y===targetDy));
 const plannedCases=[...frames.map(frame=>({mode:'normal',frame})),{mode:'reduced',frame:0}].filter(c=>!process.env.CXV_LABEL_PILOT||c.mode+'-'+c.frame===process.env.CXV_LABEL_PILOT);assert(plannedCases.length);
 const hiddenStyle='.b3-world { visibility: hidden !important; }';
-const installLabelTargetShift=dy=>{
+const installLabelTargetShift=({dx,dy})=>{
  const s=window.__depthScene,original=s.projectAnchors;
  if(typeof original!=='function')throw Error('Missing projectAnchors diagnostic boundary');
- globalThis.__cxvLabelTargetShift={dy,original};
- s.projectAnchors=function(...args){const result=original.apply(this,args),anchor=this.anchors.find(a=>a.id==='clover');if(anchor?.labelTarget)anchor.labelTarget.y+=dy;return result;};
+ globalThis.__cxvLabelTargetShift={dx,dy,original};
+ s.projectAnchors=function(...args){const result=original.apply(this,args),anchor=this.anchors.find(a=>a.id==='clover');if(anchor?.labelTarget){anchor.labelTarget.x+=dx;anchor.labelTarget.y+=dy;}return result;};
 };
 const installExpandedStatusFixture=()=>{
  const m=window.__depthReview;
@@ -39,7 +39,7 @@ const installIsolation=()=>{
  };
 };
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,build:{path:buildPath,sha256:sha(await readFile(buildPath))},harnessSha256:sha(await readFile(import.meta.filename)),fixture:runtimeEvidence(),runtimeSourceSubstitutions:[],runtimeDiagnostic:{wrapperSha256:sha(installIsolation.toString()),hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle),scope:'Hide one media plane only during existing postFx draw;restore immediately. Hide DOM label paint only for marked screenshots. Never an application candidate.'},plannedCases,cases:[],errors:[],blockedRequests:[],pass:false};
-report.runtimeDiagnostic.labelTarget={dy:targetDy,wrapperSha256:targetDy?sha(installLabelTargetShift.toString()):null,scope:'Temporary Clover labelTarget.y offset after projectAnchors; no application source edit or production acceptance.'};
+report.runtimeDiagnostic.labelTarget={dx:targetDx,dy:targetDy,wrapperSha256:targetDx||targetDy?sha(installLabelTargetShift.toString()):null,scope:'Temporary Clover labelTarget.x/y offset after projectAnchors; no application source edit or production acceptance.'};
 report.runtimeDiagnostic.statusFixture={name:statusFixture,wrapperSha256:statusFixture==='expanded'?sha(installExpandedStatusFixture.toString()):null,scope:'Expanded badge stress fixture only: commissioned cats shield80, four statuses and a five-digit counter. This synthetic state is not a legal-action or natural gameplay claim.'};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP '+name);};
@@ -54,7 +54,7 @@ try{
  for(const condition of plannedCases){
   stop();const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));report.errors.push(...errors);report.blockedRequests.push(...blockedRequests);
   activePage=page;const reduced=condition.mode==='reduced';
-  if(targetDy)await page.evaluate(installLabelTargetShift,targetDy);
+  if(targetDx||targetDy)await page.evaluate(installLabelTargetShift,{dx:targetDx,dy:targetDy});
   await page.evaluate(reduced=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state.settings.reducedMotion=false;m.paused=true;m.notify(false);},reduced);
   if(statusFixture==='expanded'){
    await page.evaluate(installExpandedStatusFixture);

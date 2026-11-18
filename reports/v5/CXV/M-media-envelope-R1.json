@@ -1,0 +1,180 @@
+{
+  "utc": "2026-11-18T14:20:53.247600+00:00",
+  "gpu": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r6-135609/report.json",
+    "sha256": "938f464374ff43222e080361f1197a3b7b4d0e316bc4b9812e0bd29ff5964e58"
+  },
+  "artifact": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/regression-heldouts/artifact-verification.json",
+    "sha256": "41acb966882d0ab352d3ee60bff732599e4d3db8723b0cb37e09105d93aaedf4"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-envelope-R1-preregistration.json",
+    "sha256": "94951256b39be12539a25a0b68998709e4d31e0866bc070d0434aec5df176410"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/assess-media-envelope.py",
+    "sha256": "98d9d7531c2485bcd2dfa8424669fa8cd408a3bfd40676b31c0cb90bde38fa21"
+  },
+  "files": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-envelope-r1/verified-files.json",
+    "sha256": "97d161181b07cf9de7225c11da965e09553a56be0b94f90b33537e0946140d3b"
+  },
+  "sourceSupport": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-envelope-r1/source-support.npz",
+    "sha256": "d56fab1e6db600944de6621b790e9641961d78ab2f2f40636b56ac12daa01b4b"
+  },
+  "projectedSupport": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-envelope-r1/projected-support.npz",
+    "sha256": "f23b6376f7909c0591e8c2a0e26755c7574195cdea56c61dff1864cfa02e6ab0"
+  },
+  "rows": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-envelope-r1/rows.json",
+    "sha256": "217bef3dca74c866a13eeb0af7b33ef4c27e3366032660f347461a965f9dcdf9"
+  },
+  "sources": {
+    "mochi": {
+      "frames": 300,
+      "logicalSize": [
+        312,
+        260
+      ],
+      "supportPixels": {
+        "0": 58027,
+        "1": 56467,
+        "2": 55705,
+        "4": 54713
+      }
+    },
+    "clover": {
+      "frames": 300,
+      "logicalSize": [
+        318,
+        390
+      ],
+      "supportPixels": {
+        "0": 84436,
+        "1": 81961,
+        "2": 80834,
+        "4": 79475
+      }
+    }
+  },
+  "verifiedFrames": 600,
+  "cases": 18,
+  "offsetsPerCase": 103041,
+  "projectionContainsObservedContribution": true,
+  "maxEscapedPixels": 0,
+  "stableOffsets": {
+    "mochi": {
+      "count": 22980,
+      "nearest": [
+        {
+          "dx": 0,
+          "dy": 0,
+          "distanceCSSpx": 0.0
+        },
+        {
+          "dx": -1,
+          "dy": 0,
+          "distanceCSSpx": 1.0
+        },
+        {
+          "dx": 1,
+          "dy": 0,
+          "distanceCSSpx": 1.0
+        },
+        {
+          "dx": 0,
+          "dy": -1,
+          "distanceCSSpx": 1.0
+        },
+        {
+          "dx": 0,
+          "dy": 1,
+          "distanceCSSpx": 1.0
+        },
+        {
+          "dx": -1,
+          "dy": -1,
+          "distanceCSSpx": 1.4142135623730951
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "distanceCSSpx": 1.4142135623730951
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "distanceCSSpx": 1.4142135623730951
+        }
+      ]
+    },
+    "clover": {
+      "count": 3219,
+      "nearest": [
+        {
+          "dx": -12,
+          "dy": 19,
+          "distanceCSSpx": 22.47220505424423
+        },
+        {
+          "dx": -13,
+          "dy": 19,
+          "distanceCSSpx": 23.021728866442675
+        },
+        {
+          "dx": -14,
+          "dy": 19,
+          "distanceCSSpx": 23.600847442411894
+        },
+        {
+          "dx": -15,
+          "dy": 19,
+          "distanceCSSpx": 24.20743687382041
+        },
+        {
+          "dx": -16,
+          "dy": 19,
+          "distanceCSSpx": 24.839484696748443
+        },
+        {
+          "dx": -17,
+          "dy": 19,
+          "distanceCSSpx": 25.495097567963924
+        },
+        {
+          "dx": -19,
+          "dy": 18,
+          "distanceCSSpx": 26.1725046566048
+        },
+        {
+          "dx": -18,
+          "dy": 19,
+          "distanceCSSpx": 26.1725046566048
+        }
+      ]
+    }
+  },
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Complete300frame texture alpha support,projected onto18frozen idlelayouts only.",
+    "Mask support uses bilinear source dilation+oneCSSpixel margin;projection must contain observed contributions before interpretation.",
+    "Integer translation is a fitted hypothesis;actual label raster/layout,legal casts,camera,performance,fringe and seamless loop remain unverified."
+  ],
+  "candidateHypothesis": {
+    "cat": "clover",
+    "relativeToR7": {
+      "dx": -12,
+      "dy": 19
+    },
+    "sourceTargetIfEventuallyAdopted": {
+      "dx": -12,
+      "dy": 24
+    },
+    "basis": "Nearest translation jointly feasible for all18frozen layouts against300frame alpha>0 support forbothmedia,nativebody rectangles,faces,HUD andotherlabels. Not acceptance.",
+    "mochi": "unchanged"
+  }
+}
