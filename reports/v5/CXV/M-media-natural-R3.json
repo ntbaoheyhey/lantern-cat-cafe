@@ -1,0 +1,608 @@
+{
+  "utc": "2026-11-18T09:17:58.647120+00:00",
+  "sourceCommit": "adb526a869012cecef2da673f1bc6d86e42d8a5d",
+  "indexSha256": "f9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/report.json",
+    "sha256": "0bedaebae647a05727c0b0f9c3dfe8720c3f4de0e7777ab609818f46a78a07ce"
+  },
+  "browser": "156.0.8078.4",
+  "hardware": "Apple M3 Pro",
+  "cpuRate": 1,
+  "roster": [
+    "mochi",
+    "panko",
+    "mallow",
+    "sorrel"
+  ],
+  "harnessSha256": "64ddf7b25db6410911b00b5a1071ec4090291278c7546c5c2c0542fc5080f385",
+  "fixtureSha256": "3468caea2addd467b5f7c21b6f46708c30a472351860e49755a490188f0b2243",
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/harness-provenance.json",
+    "sha256": "f5cabb4d433d247a23641d545c5a66807d75d685418eb3683ca1ca13b0b0765d"
+  },
+  "hostLoad": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/host-load.txt",
+    "sha256": "5e81ca65f9eb2831906f1653c9b521a0945dae2986b023075d77199b26482d97"
+  },
+  "runtimeSourceSubstitutions": [],
+  "parity": {
+    "initial": true,
+    "result": true,
+    "logs": true,
+    "presentations": true,
+    "finalActors": true
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "result": "party",
+      "naturalResultMs": 70843.40000000596,
+      "actions": 47,
+      "ultimates": {
+        "mochi": 3,
+        "panko": 4,
+        "mallow": 3,
+        "sorrel": 2
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 4182,
+        "median": 16.69999999999709,
+        "p95": 16.70000000001164,
+        "max": 49.899999999999636
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 4182,
+        "median": 4.399999991059303,
+        "p95": 5.299999997019768,
+        "max": 49.8999999910593
+      },
+      "excludedFrameIntervals": 64,
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "samples": 684,
+        "firstSampleMs": 58.70000000298023,
+        "lastSampleMs": 70789.30000000299,
+        "sampleGapsMs": {
+          "samples": 683,
+          "median": 100.0,
+          "p95": 116.60000000000582,
+          "max": 116.70000000001164
+        },
+        "runningSamples": 684,
+        "seekingSamples": 2,
+        "nonseekingRunningClockDriftSeconds": {
+          "samples": 682,
+          "median": 0.10879999999990453,
+          "p95": 0.13290000000147906,
+          "max": 0.14020000000282273
+        },
+        "allClockDriftSeconds": {
+          "samples": 684,
+          "median": 0.10879999999990453,
+          "p95": 0.13290000000147906,
+          "max": 0.14020000000282273
+        },
+        "callbacks": 2111,
+        "decodedIntervalsRunningWithoutCaptureMs": {
+          "samples": 2067,
+          "median": 33.30000000000291,
+          "p95": 50.0,
+          "max": 66.59999999999945
+        },
+        "observedTenSecondWraps": [
+          {
+            "before": 9.966667,
+            "after": 0.033333,
+            "at": 8808.400000002981
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 18808.00000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0.033333,
+            "at": 28824.30000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 38823.90000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0.033333,
+            "at": 48840.10000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 58839.80000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0.033333,
+            "at": 68856.00000000298
+          }
+        ],
+        "events": {
+          "pause": 1,
+          "playing": 8,
+          "seeked": 7,
+          "seeking": 7,
+          "waiting": 7
+        },
+        "qualityFirst": {
+          "totalVideoFrames": 46,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 2168,
+          "droppedVideoFrames": 6,
+          "corruptedVideoFrames": 0
+        },
+        "gates": {
+          "noFailures": true,
+          "sampledThroughResult": true,
+          "normalFramesAdvance": true,
+          "reducedClockStatic": true
+        },
+        "failures": []
+      },
+      "postResultMedia": {
+        "samples": 14,
+        "stableSamples": 11,
+        "qualityFirst": {
+          "totalVideoFrames": 2169,
+          "droppedVideoFrames": 6,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 2169,
+          "droppedVideoFrames": 6,
+          "corruptedVideoFrames": 0
+        },
+        "callbacksAfterSettledPause": 0,
+        "gates": {
+          "observed": true,
+          "allPaused": true,
+          "allSuspended": true,
+          "stoppedClock": true,
+          "stoppedDecoder": true
+        }
+      },
+      "bossPhase": {
+        "samples": 684,
+        "actionSamplesAfter200ms": 528,
+        "overlaps": [],
+        "gates": {
+          "observed": true,
+          "phaseAuraRetained": true,
+          "unopposedPortraitRetained": true,
+          "actorFieldClear": true
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/timeline.json",
+        "sha256": "d3987613a76f34a87d41707528150f6d0931068938bb6945ae2a973d30e8be2a"
+      }
+    },
+    {
+      "mode": "reduced",
+      "result": "party",
+      "naturalResultMs": 70697.79999999702,
+      "actions": 47,
+      "ultimates": {
+        "mochi": 3,
+        "panko": 4,
+        "mallow": 3,
+        "sorrel": 2
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 4170,
+        "median": 16.69999999999709,
+        "p95": 16.70000000001164,
+        "max": 50.100000000000364
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 4170,
+        "median": 4.300000011920929,
+        "p95": 5.299999997019768,
+        "max": 47.400000005960464
+      },
+      "excludedFrameIntervals": 64,
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "samples": 681,
+        "firstSampleMs": 97.69999999701986,
+        "lastSampleMs": 70628.19999999701,
+        "sampleGapsMs": {
+          "samples": 680,
+          "median": 100.0,
+          "p95": 116.69999999999709,
+          "max": 116.70000000000437
+        },
+        "runningSamples": 0,
+        "seekingSamples": 0,
+        "nonseekingRunningClockDriftSeconds": {
+          "samples": 0
+        },
+        "allClockDriftSeconds": {
+          "samples": 681,
+          "median": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "callbacks": 1,
+        "decodedIntervalsRunningWithoutCaptureMs": {
+          "samples": 0
+        },
+        "observedTenSecondWraps": [],
+        "events": {
+          "seeked": 1,
+          "seeking": 1
+        },
+        "qualityFirst": {
+          "totalVideoFrames": 49,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 49,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "gates": {
+          "noFailures": true,
+          "sampledThroughResult": true,
+          "normalFramesAdvance": true,
+          "reducedClockStatic": true
+        },
+        "failures": []
+      },
+      "postResultMedia": {
+        "samples": 14,
+        "stableSamples": 11,
+        "qualityFirst": {
+          "totalVideoFrames": 49,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 49,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "callbacksAfterSettledPause": 0,
+        "gates": {
+          "observed": true,
+          "allPaused": true,
+          "allSuspended": true,
+          "stoppedClock": true,
+          "stoppedDecoder": true
+        }
+      },
+      "bossPhase": {
+        "samples": 681,
+        "actionSamplesAfter200ms": 531,
+        "overlaps": [],
+        "gates": {
+          "observed": true,
+          "phaseAuraRetained": true,
+          "unopposedPortraitRetained": true,
+          "actorFieldClear": true
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/timeline.json",
+        "sha256": "f4a6ba09e8b7e65756e5c0a022797be7ed2ffe7422aac93cf56f54daa6517bc2"
+      }
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/00-opening.png",
+      "sha256": "223e35ef6546680e83817ddbfe67077f4b3e09d9af6d053a55b3f423644c9949",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:21.213Z",
+      "rgbMean": 111.65712420428241,
+      "rgbStdDev": 48.7114997714903
+    },
+    {
+      "mode": "normal",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/01-status.png",
+      "sha256": "cc0a922aaf24321c1f1254e7374a4e88e7ed9b549a3a5b6033cc9d2ff2cbf803",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:24.523Z",
+      "rgbMean": 117.03640299479167,
+      "rgbStdDev": 53.91294909108152
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/02-ultimate-panko.png",
+      "sha256": "5398e7a56d9707066ec1632bb23ed8d367e03f794a6992da121a9c1577de1bc2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:30.127Z",
+      "rgbMean": 112.17459888599537,
+      "rgbStdDev": 52.89467055929937
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/03-ultimate-mallow.png",
+      "sha256": "757dde321fa0a1510d62b1a4a56ccb65d11120bf5b3f06a67957af534e283890",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:32.325Z",
+      "rgbMean": 131.6065133101852,
+      "rgbStdDev": 62.70835817271886
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-foe-0-yarn-giant",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/04-ultimate-foe-0-yarn-giant.png",
+      "sha256": "2f70c77de04dbaa283bc0e273ecbe8e9fe2bb36718e383b7b75ee5eaedf6f422",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:35.618Z",
+      "rgbMean": 110.0288038917824,
+      "rgbStdDev": 50.28154110310558
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/05-ultimate-mochi.png",
+      "sha256": "94eedfbb183bd3694c00514808fd8b5ad8b5b1dbfd35a026acea7352e9fab043",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:15:39.986Z",
+      "rgbMean": 124.57286458333333,
+      "rgbStdDev": 58.82679115351411
+    },
+    {
+      "mode": "normal",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/06-result-ready.png",
+      "sha256": "b29bf6c5daffd6be4ecc6e8cdd2717767af8db58d6e511f82d1ba542ed9f6cd9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:32.623Z",
+      "rgbMean": 52.02416124131945,
+      "rgbStdDev": 38.524771198263004
+    },
+    {
+      "mode": "normal",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/normal/07-result-later.png",
+      "sha256": "e4e529c6fb5ad62a3a92ad4cec9fe2556685c94d93847f3d93777ad72b7ae9cf",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:33.510Z",
+      "rgbMean": 53.42339662905093,
+      "rgbStdDev": 41.79083223427454
+    },
+    {
+      "mode": "reduced",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/00-opening.png",
+      "sha256": "223e35ef6546680e83817ddbfe67077f4b3e09d9af6d053a55b3f423644c9949",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:36.311Z",
+      "rgbMean": 111.65712420428241,
+      "rgbStdDev": 48.7114997714903
+    },
+    {
+      "mode": "reduced",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/01-status.png",
+      "sha256": "c6eee50e8797681ad5d61260b04f7f988cf655c3c35015747bf3bf50e350b035",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:39.610Z",
+      "rgbMean": 113.68585828993055,
+      "rgbStdDev": 51.05464361918006
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/02-ultimate-panko.png",
+      "sha256": "a7b4bc8fd191cc272bf5c7e17ff643e4bd34fb77dee4cb7608ca3b21aac230db",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:45.073Z",
+      "rgbMean": 112.03894350405092,
+      "rgbStdDev": 53.07998765700645
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/03-ultimate-mallow.png",
+      "sha256": "b5f3c5571954431b0de09d7b20b06e26a7821472cfb9c7cf09d6596fab147e8c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:47.430Z",
+      "rgbMean": 121.24472547743055,
+      "rgbStdDev": 58.14343408396769
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-foe-0-yarn-giant",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/04-ultimate-foe-0-yarn-giant.png",
+      "sha256": "38c5cf4cd22212e7a5342b7758f098d864b6ee80fe8faa326a2aa343855a7eb9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:50.577Z",
+      "rgbMean": 112.25614040798611,
+      "rgbStdDev": 50.66947751197152
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/05-ultimate-mochi.png",
+      "sha256": "65a35548a02148c4457c5a82184aabd911c536221eeeb2a9ff5256c12f0ee130",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:16:54.940Z",
+      "rgbMean": 116.4295974392361,
+      "rgbStdDev": 53.195208775056024
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/06-result-ready.png",
+      "sha256": "a0c9495148eb8fa259607d15f4e40502bf4a0195348fc656d00e5a7de71b993b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:17:47.556Z",
+      "rgbMean": 53.29141963252315,
+      "rgbStdDev": 41.58681287824724
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/reduced/07-result-later.png",
+      "sha256": "a0c9495148eb8fa259607d15f4e40502bf4a0195348fc656d00e5a7de71b993b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T09:17:48.423Z",
+      "rgbMean": 53.29141963252315,
+      "rgbStdDev": 41.58681287824724
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/review/normal-0.jpg",
+      "sha256": "cc9342808d2b817928bf18611fc2ad86dcbba16988ae44315bab5f8b49574b03",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-panko",
+        "ultimate-mallow"
+      ],
+      "bytes": 226138,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:18:45.011924+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/review/normal-1.jpg",
+      "sha256": "0b9f48dd3cb8379baf8994136796886fe8c94ec318ec556ae4ef4309669d8c96",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "ultimate-foe-0-yarn-giant",
+        "ultimate-mochi",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 219929,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:18:45.011924+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/review/reduced-0.jpg",
+      "sha256": "bda84219d8aca4cb2444232d65dd79082fef94fa696c097674e5278e90b27e1b",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-panko",
+        "ultimate-mallow"
+      ],
+      "bytes": 224818,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:18:45.011924+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-full-battle-R3/review/reduced-1.jpg",
+      "sha256": "adf4698a8805d8577b9e57470eec243cbdbd6f4f2125f9cb6594ac8a6c04c2c3",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "ultimate-foe-0-yarn-giant",
+        "ultimate-mochi",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 219205,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:18:45.011924+00:00"
+    }
+  ],
+  "visualReviewed": true,
+  "limits": "Local M3 Pro descriptive timing under recorded background load. Seeded setup and timer wrappers; no ordinary account-progression, calibrated laptop, cold-byte, enrollment, or source-code optimization claim. Capture intervals excluded from frame statistics and explicitly counted. Decoder intervals use100ms sampled running state plus pause/seek/stall events. Callbacks measure presented media, not GPU pixel equality.",
+  "postResultDecoderPaused": true,
+  "phaseYieldNumericPass": true,
+  "numericPass": true,
+  "visualReviewUTC": "2026-11-18T09:18:45.011924+00:00",
+  "visualScopedPass": true,
+  "acceptedScope": "Seeded natural normal/reduced R6 battle: post-result retained decoder stops; BossPhase portrait yields to actor actions while retaining phase aura/unopposed portrait. Not enrollment, cold-byte, calibrated laptop, physical visibility, or Clover acceptance.",
+  "visualAssessment": "Four fresh 1024px sheets inspected once. Mochi ultimate is visible in both modes without the former right-side Phase2 portrait plate; party silhouettes and shield values remain legible. Boss action remains distinct. Result crew retains all four actors and reduced stillness. Existing strong normal shield bloom remains part of accepted skill art; no new whole-art claim.",
+  "passScoped": true
+}
