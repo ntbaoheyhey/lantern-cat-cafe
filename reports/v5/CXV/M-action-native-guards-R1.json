@@ -1,0 +1,726 @@
+{
+  "utc": "2026-11-18T14:43:14.293Z",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "input": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/report.json",
+    "sha256": "5b2fe00edec843e1c1e1f09295eb91da69ff66d07c21895c740bad97d67d309c"
+  },
+  "analysis": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/analysis.json",
+    "sha256": "09922a0ef65fc235ad036330de6828cf70d6fec3f7fc02455bb3f9a17537d3da"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-native-guards-R1-preregistration.json",
+    "sha256": "026513934f5b0b0b923490a715a9153445ecb394a6e5f0a98720d0ccaee6261d"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/assess-action-native-guards.mjs",
+    "sha256": "d24301d7d83e2b11faab8d9341746322d4733f5432b082037e6095dbefaea3ad"
+  },
+  "layoutSource": {
+    "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+    "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "rows": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-native-guards-r1/rows.json",
+    "sha256": "07ea92e35d36af209fa3f46f18cc331b013eb2f7aca54d6e079a8298ed8d6f7e"
+  },
+  "stateSamples": 120,
+  "pixelSnapshots": 16,
+  "validPixelSnapshots": 14,
+  "maxBaselineErrorCSSpx": 128.3848888110782,
+  "baselineReproduced": false,
+  "ordinaryUnchanged": true,
+  "candidateGeometryClear": true,
+  "maxDisplacementCSSpx": 165.72303725170357,
+  "associationRiskCount": 4,
+  "changed": [
+    {
+      "key": "state-31",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 175,
+      "baselineError": 0.009294764275296075,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 88.26421815800848,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 465.80577304231065,
+            "y": 88.26421815800848,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 15.346398042310682,
+          "fromTargetCSSpx": 28.90279496211681,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    },
+    {
+      "key": "state-32",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 250,
+      "baselineError": 0.01283467255495907,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 89.8009975993771,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 557.5867659043464,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 109.5592145588355,
+          "fromTargetCSSpx": 107.12739090434644,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": true
+        }
+      ]
+    },
+    {
+      "key": "state-33",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "baselineError": 0.01508691597757661,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 451.475498197718,
+            "y": 105.70570877263975,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 617.0505035487246,
+            "y": 112.70875660509685,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 451.475498197718,
+            "y": 112.70875660509685,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 165.72303725170357,
+          "fromTargetCSSpx": 165.57500535100655,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": true
+        }
+      ]
+    },
+    {
+      "key": "state-34",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 600,
+      "baselineError": 0.010901860007606956,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 83.59962843578164,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 485.05614490640147,
+            "y": 83.59962843578164,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 34.596769906401505,
+          "fromTargetCSSpx": 45.24428216908225,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    },
+    {
+      "key": "state-91",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 175,
+      "baselineError": 0.008175616270818864,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 87.30847094826824,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 465.7926427645648,
+            "y": 87.30847094826824,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 15.333267764564823,
+          "fromTargetCSSpx": 29.710243334675027,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    },
+    {
+      "key": "state-92",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 250,
+      "baselineError": 0.008175616270818864,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 88.57422217510651,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 557.5732614451897,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 109.80963135862412,
+          "fromTargetCSSpx": 107.11388644518973,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": true
+        }
+      ]
+    },
+    {
+      "key": "state-93",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "baselineError": 0.00823194614440581,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 106.49709926962828,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 450.45937499999997,
+            "y": 50,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 56.49709926962828,
+          "fromTargetCSSpx": 62.75625000000002,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    },
+    {
+      "key": "state-94",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 600,
+      "baselineError": 0.00823194614440581,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 85.57528017516306,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 484.873328932783,
+            "y": 85.57528017516306,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 34.413953932783045,
+          "fromTargetCSSpx": 43.85345306707798,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    },
+    {
+      "key": "normal-panko-1-350",
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "pixelCase": true,
+      "attributionValid": true,
+      "baselineError": 0.01508691597757661,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 313.5359159438319,
+            "y": 370.2650869159776,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 451.475498197718,
+            "y": 105.70570877263975,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 617.0505035487246,
+            "y": 112.70875660509685,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 451.475498197718,
+            "y": 112.70875660509685,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 165.72303725170357,
+          "fromTargetCSSpx": 165.57500535100655,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": true
+        }
+      ]
+    },
+    {
+      "key": "reduced-panko-1-350",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 350,
+      "pixelCase": true,
+      "attributionValid": true,
+      "baselineError": 0.00823194614440581,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 312.5197927461139,
+            "y": 370.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 0,
+          "fromTargetCSSpx": 0,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 106.49709926962828,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 450.45937499999997,
+            "y": 50,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "fromBaselineCSSpx": 56.49709926962828,
+          "fromTargetCSSpx": 62.75625000000002,
+          "nativeIntersections": [],
+          "ownBodyClear": true,
+          "facesHudOtherLabelsClear": true,
+          "associationRisk": false
+        }
+      ]
+    }
+  ],
+  "productionAcceptance": false,
+  "limits": [
+    "Frozen geometry only; no rendered candidate or new action evidence.",
+    "Existing six-CSS-pixel label-lane gap reused as native guard margin; no all-frame support proof.",
+    "Ordinary labels fixed; commissioned neighbors not added as full-body rectangles.",
+    "Two Mallow ultimate pixel controls remain invalid; geometry alone cannot clear them."
+  ],
+  "disposition": "REJECT for source adoption:136snapshots only116 reproduced <=1/64px;all16contact snapshots reproduce but20noncontact rows do not. Candidate changes up to165.723px and flags4 association risks. Native full-body guards are too coarse.",
+  "noncontactReproductionFailures": 20,
+  "pixelSnapshotsReproduced": true,
+  "sourceAdoption": false
+}

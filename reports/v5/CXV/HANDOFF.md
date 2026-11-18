@@ -4,10 +4,10 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;deskt
 NEXT 1: Reproduce frozen14valid action layouts;measure native-body containment/guards before sourceedit;diagnose Mallow13514px controldelta.
 NEXT 2: Temporal15frame crossfade REJECT4149mixedopacitypixels/3434ROI;9.5svs10s;noart exported. Continue other BatchM gates or legacy while source-loop remedy blocked.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push5253fe14c;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+Last confirmed push28efe1012;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T14:33:52.285182+00:00;preserve unchanged.
-Jobs:none;fullR2PID31570exit0/browserclosed14:38:06Z;6301/timing explicitlyreleased14:38:54Z.
+Jobs:none;fullR2PID31570exit0/browserclosed14:38:06Z;6301/timing explicitlyreleased14:38:53Z.
 Authored capture work/v5/CXV/batch-m/clover-authored-native-r1-123433:343rows/4legalactions/16PNGs;headdecoded.727542,paw.319577CSSpx.
 AGVactive2:T-M1 independent fullcycle sleeve-bounded visiblepaw;T-M2 resumed primary L2/L4 study;T-CXI-11CANCELLED ownerbytecapremoved.
 R5head24/24freshheldouts+actualadapterPASS;native343samples maxcontinuous.011724/decoded.727542CSSpx;scopedPASS.
