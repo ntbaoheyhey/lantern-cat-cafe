@@ -36,7 +36,7 @@ def stable(state,initial,fixed):
            'rules':state['battle']==initial['battle'],'labels':state['labels']==initial['labels'],
            'paint':state['labelPaintState']==initial['labelPaintState'],
            'clock':state['sceneTime']==initial['sceneTime'] and state['renderTime']==fixed,
-           'host':state['host']==initial['host'],'anchors':state['anchors']==initial['anchors'],'hud':state['hud']==initial['hud'],
+           'hudPaint':state.get('hudPaintState')==initial.get('hudPaintState'),'host':state['host']==initial['host'],'anchors':state['anchors']==initial['anchors'],'hud':state['hud']==initial['hud'],
            'animations':state['animations']==initial['animations'],
            'totalBadge':state.get('totalBadge')==initial.get('totalBadge') and state.get('totalBadge',{'hidden':True})['hidden']}
     for cat in MEDIA:

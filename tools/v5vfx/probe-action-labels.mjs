@@ -14,6 +14,8 @@ const buildPath=process.env.CXV_MEDIA_BUILD,build=JSON.parse(await readFile(buil
 const preregPath=resolve(process.env.CXV_ACTION_LABEL_PREREG??resolve(root,'reports/v5/CXV/M-action-label-R3-preregistration.json')),prereg=JSON.parse(await readFile(preregPath));
 assert(prereg.hudPortraitPause?.enabled);
 assert.equal(build.sourceCommit,prereg.sourceCommit);assert.equal(build.indexSha256,prereg.indexSha256);
+const targetShift={dx:prereg.candidate.cloverDx,dy:prereg.candidate.cloverDy};
+assert(Number.isFinite(targetShift.dx)&&Number.isFinite(targetShift.dy));
 const hiddenStyle='.b3-world { visibility: hidden !important; }';
 const cats=['mochi','clover','panko','mallow'];
 const recovery=process.env.CXV_ACTION_LABEL_SUITE==='recovery';
@@ -22,7 +24,7 @@ const plannedPixelCases=plannedActions.flatMap(x=>(prereg.pixelTimes?.[`${x.cat}
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,
  build:{path:buildPath,sha256:sha(await readFile(buildPath))},preregistration:{path:preregPath,sha256:sha(await readFile(preregPath))},
  harnessSha256:sha(await readFile(import.meta.filename)),helperSha256:sha(await readFile(resolve(root,'tools/v5vfx/action-label-observation.mjs'))),fixture:runtimeEvidence(),
- runtimeSourceSubstitutions:[],runtimeDiagnostic:{labelTarget:{dx:-12,dy:19,wrapperSha256:sha(installLabelTargetShift.toString())},hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle)},
+ runtimeSourceSubstitutions:[],runtimeDiagnostic:{labelTarget:{...targetShift,wrapperSha256:sha(installLabelTargetShift.toString())},hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle)},
  plannedActions,plannedPixelCases,actions:[],rows:[],cases:[],errors:[],blockedRequests:[],pass:false};
 if(prereg.lowerBodyLabel)report.runtimeDiagnostic.lowerBodyLabel={wrapperSha256:sha(installLowerBodyLabel.toString()),scope:'Mochi complete label top=max(bodyBottom,feet)+6; original constrained layout unchanged. Native body margins are measurement gates, not injected solver obstacles.'};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
@@ -77,8 +79,8 @@ async function captureCase(page,condition,fixedTime){
  });
  const precondition=[];
  for(const variant of ['initial','hidden','restored']){
-  const path=resolve(folder,'precondition-'+variant+'.png');await page.screenshot({path,scale:'css',...(variant==='hidden'?{style:hiddenStyle}:{})});
-  precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString()});
+  const beforeHud=(await page.evaluate(sample)).hudPaintState,path=resolve(folder,'precondition-'+variant+'.png');await page.screenshot({path,scale:'css',...(variant==='hidden'?{style:hiddenStyle}:{})});
+  precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString(),beforeHud,afterHud:(await page.evaluate(sample)).hudPaintState});
  }
  const before=await page.evaluate(sample),expectedFrames=Object.fromEntries(['mochi','clover'].map(cat=>[cat,Math.round(before.media[cat].decoded.mediaTime*30)]));
  const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,totalLifecycle:{before:totalBefore,after:totalAfter},hudPortraitPause,before,precondition,captures:[]};report.cases.push(entry);await save();
@@ -100,7 +102,7 @@ try{
  for(const actionCase of plannedActions){
   stop();const {mode,cat,skill}=actionCase,reduced=mode==='reduced',f=fixture(mode,cat,skill);
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(x=>x.id==='boss'));activePage=page;
-  await page.evaluate(installLabelTargetShift,{dx:-12,dy:19});await page.evaluate(installBodyIsolation);
+  await page.evaluate(installLabelTargetShift,targetShift);await page.evaluate(installBodyIsolation);
   if(prereg.lowerBodyLabel)await page.evaluate(installLowerBodyLabel);
   await page.evaluate(({state,battle})=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state=state;Object.assign(m,{tutorialBattle:battle,galleryBattle:null,replay:null,plan:null,roundPlan:null,watching:true,paused:true,sceneStarted:true,screen:'map',beforeImpact:null,afterImpact:null,animationAt:0});m.notify(false);},f);
   await page.waitForFunction(()=>{const s=window.__depthScene,m=window.__depthReview;return s.ready&&['mochi','clover'].every(id=>s.actors.get(id)?.actor?.designerMedia?.media.state.ready)&&s.view().actors.every(a=>a.hp===m.visualBattle.actors.find(b=>b.id===a.id)?.hp);});
