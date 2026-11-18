@@ -361,10 +361,14 @@
   },
   "harness": {
     "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-clover-authored-production.mjs",
-    "sha256": "3b67a469c763c42dc8a7ad363cf632e8ba9f5127ebee707b063ae1a6423c7d86"
+    "sha256": "e97867387af9db8011d053a417e7364588187bfe1338b0faa5b927edab50876d"
   },
   "state": "PREPARED_NOT_RUN; depends on CXI freePaw support and explicit6301 lease",
   "expectedIdleSamples": 305,
   "expectedActions": 4,
-  "expectedCaptures": 16
+  "expectedCaptures": 16,
+  "preExecutionMetadataAddition": {
+    "utc": "2026-11-18T12:23:49.485083+00:00",
+    "change": "Record canvas host rectangle for unambiguous screenshot crop coordinates;no requestedframes/gates/sourcecurves changed. Native harness still never run."
+  }
 }
