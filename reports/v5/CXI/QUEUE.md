@@ -6,7 +6,7 @@ LIVE6301: R7 sourcebf01d462ac32233ab11475605d571aea691f96bf/indexeb93ee0d;CXVrel
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
-AGS OPEN:T-CXI-13 exactm1.15QA on6350,T-M5 independentactualtrials,T-M4 stageddeliveryEN+ZH,T-CXI-12 maskdraft,T-CXI-11 cueconditions,T-CXI-5 provenance/listening. >=2 useful tasks;line392/399/401/402audited;M4/M5 REDO.
+AGS OPEN:T-CXI-13 exactm1.15QA on6350,T-M5 independentactualtrials,T-M4 stageddeliveryEN+ZH,T-CXI-12 maskdraft,T-CXI-11 cueconditions,T-CXI-5 fixedset rejected/reopenonlynewproof. >=2 useful tasks;line392/399/401/402audited;M4/M5 REDO.
 AGS DISPOSITIONS through532:528codec/dimensions/bytes partialACCEPT;529docfix/531rawclaims unsupportedREDO;530route/532toolerrors pendingexactproof. Sharedqa-toolchain import/browser/SharpPASS fromAGS cwd;twoTASKs remainOPEN.
 AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
 AUDIO FIXEDSET REJECTED:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
@@ -35,3 +35,4 @@ M-I2 FULLPAINT GRID:598hashes/56exactcontrols/134456integercounts reproduce sole
 M-I2 AGS535-543:ownreview rejects absent/oldQAartifacts;exactstderr accepted as wrong-tool evidence only;twoTASKs stillOPEN;HANDOFF list corrected. Audio canonical assertion adds no recipe/listening.
 M-I2 FIXED CLOVER REJECT:own1534layoutreplays/198failures;maxfallback11.385870/rigid10.691869px;81failures directly intersect ownavoid,117need sourcecause. Grid remains developmental only. No browser launched;CXVexplicitrelease16:23:31Z.
 AUDIO CURRENTSET REVIEW COMPLETE:exact30a1six296493B tied to historicalnative evidence;all36canonical cues still matchm1.15,−264frames each/gain changes. Retain canonical. No releaseblocker and no repeat unchanged audit;reopen on actual new evidence.
+M-I3 R7 RELEASE GATE:existing native-only runner rejects diagnosticregistry before browser/status creation(exit1 expected);R7 is not green. No passing browsergate rerun;oldhardcoded Mochiofflinegate notexecuted/no immutableoutput overwritten.
