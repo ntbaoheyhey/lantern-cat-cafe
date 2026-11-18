@@ -1,6 +1,6 @@
 # Verified submission language — local desktop build
 
-This is preparation for the owner, not a submitted form or public deployment. Validated release tag: **v5-m1.12**. Use the current [desktop evidence](I-C.md), [review footage](REVIEW-VI.md) and [owner runbook](NEEDS-USER-VI.md) when updating this draft.
+This is preparation for the owner, not a submitted form or public deployment. Validated release tag: **v5-m1.13**. Use the current [desktop evidence](I-C.md), [review footage](REVIEW-VI.md) and [owner runbook](NEEDS-USER-VI.md) when updating this draft.
 
 ## Short description
 
@@ -27,7 +27,7 @@ Taskbar Hero is a cosy desktop cat card RPG: arrange a four-cat crew, defend a l
 ## Open facts before submission
 
 - Public hosting of this release and a funded Fuji transaction remain owner-only work; no public transaction hash is currently supplied by this evidence.
-- Cold battle transfer remains above 8 MB for wave3 (8,228,854 bytes); wave1 and boss pass, with 254,704 bytes of boss headroom. Do not claim a sub-8-MB build, fixed 60 fps, guaranteed zero gas cost or that every battle settles on-chain.
+- Cold battle transfer remains above 8 MB for wave3 (8,230,950 bytes); wave1 and boss pass, with 256,501 bytes of boss headroom. Do not claim a sub-8-MB build, fixed 60 fps, guaranteed zero gas cost or that every battle settles on-chain.
 - RelicForge has no public address in the versioned Fuji registry; do not present it as a proven public deployment.
 - Current combat presentation uses React with Three/Spine and authored artwork; older Phaser paths also remain in the repository.
 - Team names, eligibility and submission account details require the owner's factual input. Agent lane IDs are not verified human team identities.

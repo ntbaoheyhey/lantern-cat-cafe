@@ -1,16 +1,16 @@
 # CXI V7 continuation
-ACTIVE: m1.12 validated; publish DPR/context candidate now; assistant: AGS.
-NEXT 1: Commit explicit owned release docs/evidence; create absent v5-m1.12 annotated tag; atomic push and remoteverify; updateBOARD.
-NEXT 2: Review new AGS T1/T2/T5/T7 commits and CXV pausedbattle prototype; keep2+ AGS TASKs.
-NEXT 3: Continue I-B wave3 gap228854B;review AGV T9;fix observed lowerNext/toast overlap after coordinated browser window.
-Last pushed6cd895e58;previousgreen v5-m1.11@b58fd0a150d19a1c5d5e46c181e812276b9ad86f.
-Serving app8b8d0b8cad8fcc0feba3110e18de099d89df9e14;indexce3d3585df78137adfe8fc34420a1cf2b4be2a2121a9bc74aedcaa077a66be73;capture6cd895e5871e7e79f03623c836fc069e6f977134.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified03:06Z;neverdelete/duplicate.
-Last RULES read2026-11-18T03:19:13.425486+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
-Running:none;29311completed8steps0 at03:16:01Z;priorbuild0;browser released03:16:30Z toCXV.
+ACTIVE: Paused-battle recovery ACCEPT44tests/build/native2modes; preparing m1.13 final validation; assistant: AGS.
+NEXT 1: Commit explicit m1.13 owned docs/evidence; tag v5-m1.13, atomic push branch+tag, verify remote and update BOARD.
+NEXT 2: Fix measured toast/Next overlap134.95x15px in owned screen-skin.css; browserCXV released03:44Z, coordinate next window.
+NEXT 3: Review CXV pending11path manifest+T10 notice fix; continue I-B wave3gap230950B/AGS+AGV deliveries.
+Last pushed8fb14aed2;latest green remainsm1.12 until atomic m1.13 publication.
+Serving candidate13fb390e9;index1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726;capture6fe2a0340;green remainsm1.12.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified03:32Z;neverdelete/duplicate.
+Last RULES read2026-11-18T03:42:44.211103+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
+Running:none;38282completed7steps0;browserreleased toCXV03:44:15Z.
 ContextACCEPT:35focused/native2modes×3lossrestores;lostdraws0/reducedidle0/cleanup;6images4fresh+2hashmatches.
-Mailbox readINBOX-CXI63;USER23;LEARN87;oldreplacement snapshots preserved;append-only correction sent.
-AGS OPEN:T1exactQA,T2verifiedwinners,T3sourcedloading,T5beds,T7remainingreviewlink,T8sixfoes;new03:18/19DONE queuedreview.
+Mailbox readINBOX-CXI76;USER23;LEARN88;oldreplacement snapshots preserved;append-only correction sent.
+AGS OPEN:T1exactQA,T2verifiedwinners,T3sourcedloading,T5beds,T7remainingreviewlink,T8sixfoes;60169/75c7/1473 dispositions sent;T2three awards PART accepted.
 Audio30a1 six−264samples/all36cueendsfit/sourcehashesmismatch;REDO. e33bossstereofixed/all4+24samples/−24alignment/workshop−0.98,rain−1.27dB;REDO/nointegration.
 AGV T9OPEN at3bc27db67;fourhalfAVIFs absent;originals/manifests/style preserved.
 Foreign3submission+2QAfiles unchanged;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875 preserved;reconcile snapshots retained.

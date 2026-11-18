@@ -1,0 +1,520 @@
+{
+  "utc": "2026-11-18T03:43:42.417643+00:00",
+  "release": "v5-m1.13",
+  "applicationCommit": "13fb390e9b4007f985577a2e0320f81b464aa11b",
+  "captureSource": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+  "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726",
+  "judgeUrl": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "fullSuite": {
+    "command": "pnpm test",
+    "exit": 0,
+    "total": 5374,
+    "passed": 5361,
+    "node": 77,
+    "workspace": 5297,
+    "web": 3061,
+    "skipped": 11,
+    "expectedFailures": 2,
+    "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-suite.log"
+  },
+  "build": {
+    "command": "pnpm --filter @taskbar-hero/web build",
+    "exit": 0,
+    "includesTypecheck": true,
+    "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-battle-context-build.log",
+    "reuse": "Exact unchanged runtime built before owncontext probe;not rebuilt during finalpipeline"
+  },
+  "pipeline": [
+    {
+      "step": "suite",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-suite.log"
+    },
+    {
+      "step": "transfer",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-transfer.log"
+    },
+    {
+      "step": "audio-paths",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-audio-paths.log"
+    },
+    {
+      "step": "first-hit",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-first-hit.log"
+    },
+    {
+      "step": "route",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-route.log"
+    },
+    {
+      "step": "recovery",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-recovery.log"
+    },
+    {
+      "step": "films",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m113-final-films.log"
+    }
+  ],
+  "audio": {
+    "inheritedNativeParityFrom": "v5-m1.12; unchanged source verified by git diff",
+    "groups": 13,
+    "encodedAndNativeDecodedFiles": 544,
+    "sampleRates": [
+      48000
+    ],
+    "fallback": [
+      {
+        "mode": "http",
+        "result": "played",
+        "elapsedMs": 119,
+        "requested": [
+          "/audio/manifest.json",
+          "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "/audio/v5/b2/b2-hits-000-transient.opus"
+        ],
+        "injectedErrors": [
+          "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+        ]
+      },
+      {
+        "mode": "integrity",
+        "result": "played",
+        "elapsedMs": 131,
+        "requested": [
+          "/audio/manifest.json",
+          "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "/audio/v5/b2/b2-hits-000-transient.opus"
+        ],
+        "injectedErrors": [
+          "Failed to find a valid digest in the 'integrity' attribute for resource 'http://127.0.0.1:6301/audio-delivery/b2-hits.69f566877ed6baef.json' with computed SHA-256 integrity 'RBNvo1WzZ4oRRq0W9+hknpT7T8If536DEMBg9hyq/4o='. The resource has been blocked.",
+          "Fetch API cannot load http://127.0.0.1:6301/audio-delivery/b2-hits.69f566877ed6baef.json. SRI's integrity checks failed."
+        ]
+      },
+      {
+        "mode": "decode",
+        "result": "played",
+        "elapsedMs": 153,
+        "requested": [
+          "/audio/manifest.json",
+          "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "/audio/v5/b2/b2-hits-000-transient.opus"
+        ],
+        "injectedErrors": []
+      },
+      {
+        "mode": "stall",
+        "result": "played",
+        "elapsedMs": 2093,
+        "requested": [
+          "/audio/manifest.json",
+          "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.routescan.io/v2/network/testnet/evm/43113/blocks?limit=1",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "https://api.avax-test.network/ext/bc/C/rpc",
+          "/audio/v5/b2/b2-hits-000-transient.opus"
+        ],
+        "injectedErrors": []
+      }
+    ],
+    "exactPathComparison": {
+      "utc": "2026-11-18T03:40:59.240Z",
+      "before": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m112-final/all.json",
+        "source": "6cd895e5871e7e79f03623c836fc069e6f977134",
+        "indexSha256": "ce3d3585df78137adfe8fc34420a1cf2b4be2a2121a9bc74aedcaa077a66be73"
+      },
+      "after": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m113-final/all.json",
+        "source": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+        "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726"
+      },
+      "method": "Expand each requested package into every encoded member, then compare complete audio path sets including original manifest requests.",
+      "rows": [
+        {
+          "fixture": "wave1",
+          "originalCount": 485,
+          "currentCount": 485,
+          "missing": [],
+          "extra": []
+        },
+        {
+          "fixture": "wave3",
+          "originalCount": 487,
+          "currentCount": 487,
+          "missing": [],
+          "extra": []
+        },
+        {
+          "fixture": "boss",
+          "originalCount": 484,
+          "currentCount": 484,
+          "missing": [],
+          "extra": []
+        }
+      ],
+      "pass": true
+    }
+  },
+  "firstHit": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-18T03:40:59.552Z",
+    "sourceCommit": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+    "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold guest practice first visible damage, ordinary UI controls, all tutorial text retained with 200-word/minute reading allowance. No fixture, saved progress, speed change or public transaction.",
+    "readingWordsPerMinute": 200,
+    "steps": [
+      {
+        "name": "guest entered",
+        "ms": 606
+      },
+      {
+        "name": "prepare opened",
+        "ms": 970
+      },
+      {
+        "name": "battle visible",
+        "ms": 1948
+      },
+      {
+        "name": "tutorial card 1",
+        "ms": 4417
+      },
+      {
+        "name": "tutorial card 2",
+        "ms": 6248
+      },
+      {
+        "name": "tutorial card 3",
+        "ms": 8086
+      },
+      {
+        "name": "tutorial card 4",
+        "ms": 10235
+      },
+      {
+        "name": "tutorial card 5",
+        "ms": 12682
+      },
+      {
+        "name": "tutorial card 6",
+        "ms": 14816
+      },
+      {
+        "name": "tutorial card 7",
+        "ms": 17567
+      },
+      {
+        "name": "tutorial card 8",
+        "ms": 20007
+      },
+      {
+        "name": "first visible hit",
+        "ms": 20448
+      }
+    ],
+    "tutorial": [
+      {
+        "instruction": "Guardians hold front. Witches hit groups. Alchemists heal.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Front cats protect the back row.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "These portraits show who acts next.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "Read enemy intent. Choose targeting before battle.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Basics build rage. Full rage readies your Ultimate.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Status icons show shields, burns, and delays.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Pack supplies before battle. Your packed treat appears here.",
+        "words": 9,
+        "readingMs": 2700
+      },
+      {
+        "instruction": "Change speed here. Pause and Auto remain available.",
+        "words": 8,
+        "readingMs": 2400
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "enemyHpBefore": {
+      "foe-0-practice-cushion": 165
+    },
+    "firstHitMs": 20448,
+    "hit": {
+      "target": "foe-0-practice-cushion",
+      "name": "Practice Cushion HP",
+      "hpBefore": 165,
+      "hpAfter": 119,
+      "damage": 46
+    },
+    "readingAllowanceMs": 17700,
+    "budgetPass": true
+  },
+  "route": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-18T03:41:20.662Z",
+    "sourceCommit": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+    "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.",
+    "steps": [
+      {
+        "name": "route menu visible",
+        "ms": 2140
+      },
+      {
+        "name": "fight available",
+        "ms": 2390
+      },
+      {
+        "name": "battle visible",
+        "ms": 3418
+      },
+      {
+        "name": "practice receipt visible",
+        "ms": 10037
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "menu": "Your practice battle is ready\n\nMeet your crew in preparation, then choose Fight. Your first chapter opens after practice.\n\nReturn to preparation",
+    "buttons": [
+      {
+        "name": "Return to preparation",
+        "disabled": false
+      }
+    ],
+    "receipt": "Practice complete. A free invitation awaits.",
+    "deployment": {
+      "text": "Avalanche Fuji testnet\nLocal battle · no transaction sent\nView deployed items contract ↗",
+      "url": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    }
+  },
+  "recovery": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-18T03:41:31.148Z",
+    "sourceCommit": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+    "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Intentional route module abort and stalled download. Ordinary guest controls and real timers. These failures are injected and do not reproduce an identified AGS network trace.",
+    "rows": [
+      {
+        "mode": "reject",
+        "complete": true,
+        "intercepted": [
+          "/assets/EncounterV3-CGFYa4fk.js",
+          "/assets/EncounterV3-CGFYa4fk.js"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          "Failed to load resource: net::ERR_FAILED",
+          "Failed to load resource: net::ERR_FAILED",
+          "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:6301/assets/EncounterV3-CGFYa4fk.js",
+          "TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:6301/assets/EncounterV3-CGFYa4fk.js"
+        ],
+        "blockedWrites": [],
+        "recoveryMs": 635,
+        "recoveryText": "Couldn’t open Prepare\n\nReload the page to try again, or return to the café.\n\nReload page\nBack to café",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to café",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m113-final/reject-1024.jpg",
+        "returnedToCafe": true,
+        "reloadRestoredRoute": true
+      },
+      {
+        "mode": "stall",
+        "complete": true,
+        "intercepted": [
+          "/assets/EncounterV3-CGFYa4fk.js"
+        ],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "blockedWrites": [],
+        "recoveryMs": 8677,
+        "recoveryText": "Opening Prepare…\n\nThis is taking longer than expected.\n\nReload page\nBack to café",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to café",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m113-final/stall-1024.jpg",
+        "returnedToCafe": true
+      }
+    ],
+    "complete": true
+  },
+  "transfer": [
+    {
+      "fixture": "wave1",
+      "enemies": [
+        "button-guard",
+        "sock-skipper",
+        "teacup-healer",
+        "needle-moth"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 3162,
+      "budgetPass": true,
+      "valid": true,
+      "requests": 285,
+      "bytesObservedAtBattle": 7665665,
+      "conservativeTransferBytes": 7667824
+    },
+    {
+      "fixture": "wave3",
+      "enemies": [
+        "kettle-knight",
+        "spool-ram",
+        "pollen-scout",
+        "crumb-sentinel",
+        "needle-moth",
+        "teacup-healer"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 1789,
+      "budgetPass": false,
+      "valid": true,
+      "requests": 298,
+      "bytesObservedAtBattle": 8229707,
+      "conservativeTransferBytes": 8230950
+    },
+    {
+      "fixture": "boss",
+      "enemies": [
+        "yarn-giant",
+        "binding-thread",
+        "binding-thread"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 1804,
+      "budgetPass": true,
+      "valid": true,
+      "requests": 277,
+      "bytesObservedAtBattle": 7741354,
+      "conservativeTransferBytes": 7743499
+    }
+  ],
+  "packedAcceptance": "reports/v5/CXI/evidence/v7-packed-acceptance.json",
+  "densityAcceptance": "reports/v5/CXI/evidence/v7-density-acceptance.json",
+  "contextAcceptance": "reports/v5/CXI/evidence/v7-context-acceptance.json",
+  "pausedBattleAcceptance": "reports/v5/CXI/evidence/v7-battle-context-acceptance.json",
+  "filmManifest": "reports/v5/CXI/evidence/v7-m113-films.json",
+  "filmHashesRechecked": true,
+  "imageReview": "reports/v5/CXI/evidence/v7-m113-image-review.json",
+  "reviewSummary": "PASS8 measured/6fresh/2exact-hash reused;three actual30sfilms hashes/streams verified.",
+  "savedArtifact": {
+    "utc": "2026-11-18T03:43:42.417643+00:00",
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.13-dist",
+    "bytes": 290253430,
+    "indexSha256": "1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726",
+    "applicationCommit": "13fb390e9b4007f985577a2e0320f81b464aa11b",
+    "captureSource": "6fe2a0340483960d112cf06655277c0b0e3a4270",
+    "sourceUnchanged": true
+  },
+  "rawEvidence": {
+    "first-hit": "/Users/bao/taskbar-hero-chain/work/v5/CXI/first-hit/v7-m113-final/report.json",
+    "route": "/Users/bao/taskbar-hero-chain/work/v5/CXI/route/v7-m113-final/report.json",
+    "recovery": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m113-final/report.json",
+    "films": "/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/report.json",
+    "audio": "/Users/bao/taskbar-hero-chain/work/v5/CXI/audio-delivery/v7-m112-native/report.json",
+    "transfer": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m113-final/all.json"
+  },
+  "limits": [
+    "Wave3 cold budget remains open;functionalgreen does not establish all8MBgoal.",
+    "No publicFuji transaction;owner-only hosting/funding/contracts/main/submission.",
+    "No subjectivelistening/frameexactAVsync/fixedFPS/generalperformance claim.",
+    "Prior packed timing mixed;new density/context nativeprobes bounded.",
+    "Paused-battle native recovery independently accepted; existing loss-notice/HP overlap and victory toast border overlap remain layout debt."
+  ],
+  "reviewUtc": "2026-11-18T03:44:25.642935+00:00"
+}
