@@ -1,0 +1,2111 @@
+{
+  "utc": "2026-11-18T00:35:37.453Z",
+  "source": "b4ef98bfceefad6158285bc1c4e525a272304d94",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "asset": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+    "bytes": 465026,
+    "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+  },
+  "harnessSha256": "0978aa8c5f0c963c96189f302b220224ea50bb0f9f6741d44d9c9e36fd2aeb3f",
+  "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+  "method": "Source-free transport diagnostic on one retained candidate result page, reduced static pose. Same original WebP bytes, Content-Length, Content-Type and Cache-Control; unique URLs. Complete/delayed-half/delayed-half/complete. The delayed response remains incomplete through an intermediate screenshot, then completes before the settled frame. Decode traces are diagnostic and are not performance measurements. No application/art replacement or acceptance waiver.",
+  "runs": [
+    {
+      "name": "1-complete",
+      "mode": "complete",
+      "url": "http://127.0.0.1:6313/1-complete.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:35:46.409Z",
+        "firstHalfUtc": null,
+        "completeUtc": "2026-11-18T00:35:46.410Z",
+        "intermediateUtc": "2026-11-18T00:35:47.319Z"
+      },
+      "intermediate": "1-complete-intermediate",
+      "settled": "1-complete-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/1-complete.webp",
+          "entryType": "resource",
+          "startTime": 8743.5,
+          "duration": 6.199999988079071,
+          "navigationId": 2367,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 8743.5,
+          "domainLookupStart": 8746.59999999404,
+          "domainLookupEnd": 8746.699999988079,
+          "connectStart": 8746.699999988079,
+          "secureConnectionStart": 0,
+          "connectEnd": 8747,
+          "requestStart": 8747,
+          "responseStart": 8749,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 8749,
+          "responseEnd": 8749.699999988079,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "92002.1541",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/1-complete.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 69919.755351,
+          "wallTime": 1794962146.404963,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "92002.1541",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "timestamp": 69919.761375,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/1-complete.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:35:46 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": false,
+            "connectionId": 5631,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 69919.758274,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": 0.177,
+              "dnsEnd": 0.324,
+              "connectStart": 0.324,
+              "connectEnd": 0.643,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.678,
+              "sendEnd": 0.706,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 2.61,
+              "receiveHeadersEnd": 2.64
+            },
+            "responseTime": 1794962146410.475,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1541",
+          "timestamp": 69919.761399,
+          "dataLength": 326978,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1541",
+          "timestamp": 69919.76158,
+          "dataLength": 65328,
+          "encodedDataLength": 326978
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1541",
+          "timestamp": 69919.761593,
+          "dataLength": 65536,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1541",
+          "timestamp": 69919.761602,
+          "dataLength": 7184,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1541",
+          "timestamp": 69919.761799,
+          "dataLength": 0,
+          "encodedDataLength": 138048
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "92002.1541",
+          "timestamp": 69919.761607,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/1-complete.trace.json",
+        "bytes": 11103150,
+        "sha256": "9f1df7a07ca3b54d746c642784a51fc6cc0b685029d351a6e477f6182194ad94",
+        "events": 36678,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/1-complete.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 16,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 13,
+            "tid": 3050941,
+            "ts": 69919772815,
+            "tts": 1805086
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 509
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69919772830,
+            "tts": 1805099
+          }
+        ],
+        "imageIds": [
+          509
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 509
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 30059,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29507,
+            "tid": 3050965,
+            "ts": 69919774023,
+            "tts": 306237
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 21,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 20,
+            "tid": 3050968,
+            "ts": 69919773752,
+            "tts": 228093
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 15,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 14,
+            "tid": 3050965,
+            "ts": 69919773993,
+            "tts": 306208
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 30059,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29507,
+            "tid": 3050965,
+            "ts": 69919774023,
+            "tts": 306237
+          }
+        ],
+        "attributable": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 30059,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29507,
+            "tid": 3050965,
+            "ts": 69919774023,
+            "tts": 306237
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "2-delayed",
+      "mode": "delayed",
+      "url": "http://127.0.0.1:6313/2-delayed.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:35:48.592Z",
+        "firstHalfUtc": "2026-11-18T00:35:48.592Z",
+        "completeUtc": "2026-11-18T00:35:49.465Z",
+        "intermediateUtc": "2026-11-18T00:35:49.464Z"
+      },
+      "intermediate": "2-delayed-intermediate",
+      "settled": "2-delayed-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/2-delayed.webp",
+          "entryType": "resource",
+          "startTime": 10927.5,
+          "duration": 876.2999999970198,
+          "navigationId": 2367,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 10927.5,
+          "domainLookupStart": 10927.5,
+          "domainLookupEnd": 10927.5,
+          "connectStart": 10927.5,
+          "secureConnectionStart": 0,
+          "connectEnd": 10927.5,
+          "requestStart": 10930.89999999106,
+          "responseStart": 10931.699999988079,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 10931.699999988079,
+          "responseEnd": 11803.79999999702,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "92002.1542",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/2-delayed.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 69921.939399,
+          "wallTime": 1794962148.589015,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "92002.1542",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "timestamp": 69921.944028,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/2-delayed.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:35:48 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5631,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 69921.94256,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.207,
+              "sendEnd": 0.289,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.999,
+              "receiveHeadersEnd": 1.027
+            },
+            "responseTime": 1794962148593.155,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1542",
+          "timestamp": 69921.944054,
+          "dataLength": 232513,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1542",
+          "timestamp": 69922.815637,
+          "dataLength": 196608,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1542",
+          "timestamp": 69922.81567,
+          "dataLength": 35905,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1542",
+          "timestamp": 69922.815854,
+          "dataLength": 0,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "92002.1542",
+          "timestamp": 69922.815663,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/2-delayed.trace.json",
+        "bytes": 10872850,
+        "sha256": "90d3706de919614894b20280811474502c151e902f109433bafe492e3de814ea",
+        "events": 35896,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/2-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 14,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 12,
+            "tid": 3050941,
+            "ts": 69921956344,
+            "tts": 2040111
+          },
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/2-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 15,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 14,
+            "tid": 3050941,
+            "ts": 69922822378,
+            "tts": 2148840
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 531
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69921956357,
+            "tts": 2040123
+          },
+          {
+            "args": {
+              "LazyPixelRef": 531
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69922822392,
+            "tts": 2148853
+          }
+        ],
+        "imageIds": [
+          531
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 531
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 15891,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 15517,
+            "tid": 3050965,
+            "ts": 69921957498,
+            "tts": 345308
+          },
+          {
+            "args": {
+              "LazyPixelRef": 531
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 19186,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18638,
+            "tid": 3050965,
+            "ts": 69922822962,
+            "tts": 365347
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 15893,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 15518,
+            "tid": 3050965,
+            "ts": 69921957496,
+            "tts": 345307
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 19187,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18639,
+            "tid": 3050965,
+            "ts": 69922822961,
+            "tts": 365346
+          }
+        ],
+        "attributable": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 15893,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 15518,
+            "tid": 3050965,
+            "ts": 69921957496,
+            "tts": 345307
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 19187,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18639,
+            "tid": 3050965,
+            "ts": 69922822961,
+            "tts": 365346
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "3-delayed",
+      "mode": "delayed",
+      "url": "http://127.0.0.1:6313/3-delayed.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:35:50.709Z",
+        "firstHalfUtc": "2026-11-18T00:35:50.709Z",
+        "completeUtc": "2026-11-18T00:35:51.582Z",
+        "intermediateUtc": "2026-11-18T00:35:51.582Z"
+      },
+      "intermediate": "3-delayed-intermediate",
+      "settled": "3-delayed-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/3-delayed.webp",
+          "entryType": "resource",
+          "startTime": 13043.89999999106,
+          "duration": 877.2999999970198,
+          "navigationId": 2367,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 13043.89999999106,
+          "domainLookupStart": 13043.89999999106,
+          "domainLookupEnd": 13043.89999999106,
+          "connectStart": 13043.89999999106,
+          "secureConnectionStart": 0,
+          "connectEnd": 13043.89999999106,
+          "requestStart": 13047.39999999106,
+          "responseStart": 13047.79999999702,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 13047.79999999702,
+          "responseEnd": 13921.199999988079,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "92002.1543",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/3-delayed.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 69924.055702,
+          "wallTime": 1794962150.705324,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "92002.1543",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "timestamp": 69924.06021,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/3-delayed.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:35:50 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5631,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 69924.059101,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.135,
+              "sendEnd": 0.181,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.602,
+              "receiveHeadersEnd": 0.618
+            },
+            "responseTime": 1794962150709.303,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1543",
+          "timestamp": 69924.060235,
+          "dataLength": 232513,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1543",
+          "timestamp": 69924.933105,
+          "dataLength": 130864,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1543",
+          "timestamp": 69924.933151,
+          "dataLength": 101649,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1543",
+          "timestamp": 69924.933423,
+          "dataLength": 0,
+          "encodedDataLength": 232513
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "92002.1543",
+          "timestamp": 69924.933148,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/3-delayed.trace.json",
+        "bytes": 11053406,
+        "sha256": "30bfcbbaa3ce0f171d4fab73c929a44a1b6586dc8445c79a6836388749a70a6c",
+        "events": 36636,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/3-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 15,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 14,
+            "tid": 3050941,
+            "ts": 69924072891,
+            "tts": 2258101
+          },
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/3-delayed.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 16,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 15,
+            "tid": 3050941,
+            "ts": 69924938736,
+            "tts": 2366075
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 546
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69924072906,
+            "tts": 2258115
+          },
+          {
+            "args": {
+              "LazyPixelRef": 546
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69924938751,
+            "tts": 2366089
+          }
+        ],
+        "imageIds": [
+          546
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 546
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 16504,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 16179,
+            "tid": 3050961,
+            "ts": 69924074052,
+            "tts": 555788
+          },
+          {
+            "args": {
+              "LazyPixelRef": 546
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 18745,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18388,
+            "tid": 3050965,
+            "ts": 69924939279,
+            "tts": 389085
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 16507,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 16181,
+            "tid": 3050961,
+            "ts": 69924074049,
+            "tts": 555786
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18747,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18389,
+            "tid": 3050965,
+            "ts": 69924939278,
+            "tts": 389084
+          }
+        ],
+        "attributable": [
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 16507,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 16181,
+            "tid": 3050961,
+            "ts": 69924074049,
+            "tts": 555786
+          },
+          {
+            "args": {
+              "client_id": 2,
+              "frame index": 0
+            },
+            "cat": "blink",
+            "dur": 18747,
+            "name": "DecodingImageGenerator::getPixels",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 18389,
+            "tid": 3050965,
+            "ts": 69924939278,
+            "tts": 389084
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    },
+    {
+      "name": "4-complete",
+      "mode": "complete",
+      "url": "http://127.0.0.1:6313/4-complete.webp",
+      "delivery": {
+        "requests": 1,
+        "requestUtc": "2026-11-18T00:35:52.859Z",
+        "firstHalfUtc": null,
+        "completeUtc": "2026-11-18T00:35:52.860Z",
+        "intermediateUtc": "2026-11-18T00:35:53.773Z"
+      },
+      "intermediate": "4-complete-intermediate",
+      "settled": "4-complete-settled",
+      "resource": [
+        {
+          "name": "http://127.0.0.1:6313/4-complete.webp",
+          "entryType": "resource",
+          "startTime": 15193.79999999702,
+          "duration": 5.299999997019768,
+          "navigationId": 2367,
+          "initiatorType": "css",
+          "deliveryType": "",
+          "nextHopProtocol": "http/1.1",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "",
+          "contentEncoding": "",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 15193.79999999702,
+          "domainLookupStart": 15193.79999999702,
+          "domainLookupEnd": 15193.79999999702,
+          "connectStart": 15193.79999999702,
+          "secureConnectionStart": 0,
+          "connectEnd": 15193.79999999702,
+          "requestStart": 15197.79999999702,
+          "responseStart": 15198.29999999702,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 15198.29999999702,
+          "responseEnd": 15199.09999999404,
+          "transferSize": 465326,
+          "encodedBodySize": 465026,
+          "decodedBodySize": 465026,
+          "responseStatus": 0,
+          "serverTiming": []
+        }
+      ],
+      "network": [
+        {
+          "event": "requestWillBeSent",
+          "requestId": "92002.1544",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "documentURL": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+          "request": {
+            "url": "http://127.0.0.1:6313/4-complete.webp",
+            "method": "GET",
+            "headers": {
+              "sec-ch-ua-platform": "\"macOS\"",
+              "Referer": "http://127.0.0.1:6310/",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+              "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"HeadlessChrome\";v=\"156\"",
+              "sec-ch-ua-mobile": "?0"
+            },
+            "mixedContentType": "none",
+            "initialPriority": "Low",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "isSameSite": true
+          },
+          "timestamp": 69926.205666,
+          "wallTime": 1794962152.855291,
+          "initiator": {
+            "type": "other"
+          },
+          "redirectHasExtraInfo": false,
+          "type": "Image",
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C",
+          "hasUserGesture": true
+        },
+        {
+          "event": "responseReceived",
+          "requestId": "92002.1544",
+          "loaderId": "309CEE6446D0C5A012E489724F4A83A4",
+          "timestamp": 69926.211237,
+          "type": "Image",
+          "response": {
+            "url": "http://127.0.0.1:6313/4-complete.webp",
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "Cache-Control": "no-store",
+              "Timing-Allow-Origin": "*",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Length": "465026",
+              "Keep-Alive": "timeout=5",
+              "Date": "Wed, 18 Nov 2026 00:35:52 GMT",
+              "Content-Type": "image/webp"
+            },
+            "mimeType": "image/webp",
+            "charset": "",
+            "connectionReused": true,
+            "connectionId": 5631,
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 6313,
+            "fromDiskCache": false,
+            "fromServiceWorker": false,
+            "fromPrefetchCache": false,
+            "encodedDataLength": 234,
+            "timing": {
+              "requestTime": 69926.209617,
+              "proxyStart": -1,
+              "proxyEnd": -1,
+              "dnsStart": -1,
+              "dnsEnd": -1,
+              "connectStart": -1,
+              "connectEnd": -1,
+              "sslStart": -1,
+              "sslEnd": -1,
+              "workerStart": -1,
+              "workerReady": -1,
+              "workerFetchStart": -1,
+              "workerRespondWithSettled": -1,
+              "sendStart": 0.138,
+              "sendEnd": 0.183,
+              "pushStart": 0,
+              "pushEnd": 0,
+              "receiveHeadersStart": 0.64,
+              "receiveHeadersEnd": 0.706
+            },
+            "responseTime": 1794962152859.861,
+            "protocol": "http/1.1",
+            "alternateProtocolUsage": "unspecifiedReason",
+            "securityState": "secure"
+          },
+          "hasExtraInfo": true,
+          "frameId": "931E237BBEEDD3299E7278D82BA27E9C"
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1544",
+          "timestamp": 69926.211266,
+          "dataLength": 465026,
+          "encodedDataLength": 0
+        },
+        {
+          "event": "dataReceived",
+          "requestId": "92002.1544",
+          "timestamp": 69926.211464,
+          "dataLength": 0,
+          "encodedDataLength": 465026
+        },
+        {
+          "event": "loadingFinished",
+          "requestId": "92002.1544",
+          "timestamp": 69926.210956,
+          "encodedDataLength": 465260
+        }
+      ],
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/4-complete.trace.json",
+        "bytes": 11013113,
+        "sha256": "0e78a9092eb5cc57ff00d08c9db310529f2cfe315e209f8d00ea31a471d8f069",
+        "events": 36060,
+        "matchingPaints": [
+          {
+            "args": {
+              "data": {
+                "frame": "931E237BBEEDD3299E7278D82BA27E9C",
+                "height": 620,
+                "isCSS": true,
+                "nodeId": 74,
+                "nodeName": "SECTION class='uv-sheet'",
+                "srcHeight": 1440,
+                "srcWidth": 2560,
+                "url": "http://127.0.0.1:6313/4-complete.webp",
+                "width": 1177.625,
+                "x": 51.1875,
+                "y": 82
+              }
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 13,
+            "name": "PaintImage",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 11,
+            "tid": 3050941,
+            "ts": 69926223345,
+            "tts": 2480761
+          }
+        ],
+        "targetDraws": [
+          {
+            "args": {
+              "LazyPixelRef": 573
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "name": "Draw LazyPixelRef",
+            "ph": "I",
+            "pid": 92002,
+            "s": "t",
+            "tid": 3050941,
+            "ts": 69926223357,
+            "tts": 2480772
+          }
+        ],
+        "imageIds": [
+          573
+        ],
+        "targetLazy": [
+          {
+            "args": {
+              "LazyPixelRef": 573
+            },
+            "cat": "disabled-by-default-devtools.timeline",
+            "dur": 30314,
+            "name": "Decode LazyPixelRef",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29742,
+            "tid": 3050965,
+            "ts": 69926223859,
+            "tts": 412193
+          }
+        ],
+        "decoderEvents": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 11,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 8,
+            "tid": 3050968,
+            "ts": 69926223665,
+            "tts": 514880
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 6,
+            "name": "DecodingImageGenerator::QueryYUVAInfo",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 4,
+            "tid": 3050965,
+            "ts": 69926223831,
+            "tts": 412168
+          },
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 30314,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29742,
+            "tid": 3050965,
+            "ts": 69926223859,
+            "tts": 412193
+          }
+        ],
+        "attributable": [
+          {
+            "args": {},
+            "cat": "blink",
+            "dur": 30314,
+            "name": "DecodingImageGenerator::GetYUVAPlanes",
+            "ph": "X",
+            "pid": 92002,
+            "tdur": 29742,
+            "tid": 3050965,
+            "ts": 69926223859,
+            "tts": 412193
+          }
+        ],
+        "correlation": "PaintImage target URL contains Draw LazyPixelRef on the same thread; link its ID to Decode LazyPixelRef nested inside the same-thread decoder event."
+      }
+    }
+  ],
+  "captures": [
+    {
+      "name": "original",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/original.png",
+      "utc": "2026-11-18T00:35:46.366Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "1-complete-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/1-complete-intermediate.png",
+      "utc": "2026-11-18T00:35:47.319Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/1-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "1-complete-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/1-complete-settled.png",
+      "utc": "2026-11-18T00:35:48.037Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/1-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "2-delayed-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/2-delayed-intermediate.png",
+      "utc": "2026-11-18T00:35:49.464Z",
+      "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/2-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "reference": null
+    },
+    {
+      "name": "2-delayed-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/2-delayed-settled.png",
+      "utc": "2026-11-18T00:35:50.185Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/2-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "reference": "originalVariant"
+    },
+    {
+      "name": "3-delayed-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/3-delayed-intermediate.png",
+      "utc": "2026-11-18T00:35:51.582Z",
+      "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/3-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "reference": null
+    },
+    {
+      "name": "3-delayed-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/3-delayed-settled.png",
+      "utc": "2026-11-18T00:35:52.304Z",
+      "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/3-delayed.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "reference": "originalVariant"
+    },
+    {
+      "name": "4-complete-intermediate",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/4-complete-intermediate.png",
+      "utc": "2026-11-18T00:35:53.773Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/4-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "4-complete-settled",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/4-complete-settled.png",
+      "utc": "2026-11-18T00:35:54.482Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6313/4-complete.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    },
+    {
+      "name": "original-restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/original-restored.png",
+      "utc": "2026-11-18T00:35:55.209Z",
+      "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+      "width": 1280,
+      "height": 720,
+      "state": {
+        "sheet": {
+          "x": 51.1875,
+          "y": 82,
+          "width": 1177.625,
+          "height": 620,
+          "top": 82,
+          "right": 1228.8125,
+          "bottom": 702,
+          "left": 51.1875
+        },
+        "crew": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "canvas": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461,
+          "height": 245,
+          "top": 263,
+          "right": 594.1875,
+          "bottom": 508,
+          "left": 133.1875
+        },
+        "ready": "true",
+        "drawn": "4",
+        "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+        "backgroundSize": "auto, cover",
+        "backgroundPosition": "0% 0%, 50% 50%",
+        "animations": 0
+      },
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "reference": "originalBaseline"
+    }
+  ],
+  "pass": false,
+  "browser": "156.0.8078.4",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "errors": [],
+  "blockedRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "type": "stylesheet"
+    }
+  ],
+  "initial": {
+    "sheet": {
+      "x": 51.1875,
+      "y": 82,
+      "width": 1177.625,
+      "height": 620,
+      "top": 82,
+      "right": 1228.8125,
+      "bottom": 702,
+      "left": 51.1875
+    },
+    "crew": {
+      "x": 133.1875,
+      "y": 263,
+      "width": 461.21875,
+      "height": 245,
+      "top": 263,
+      "right": 594.40625,
+      "bottom": 508,
+      "left": 133.1875
+    },
+    "canvas": {
+      "x": 133.1875,
+      "y": 263,
+      "width": 461,
+      "height": 245,
+      "top": 263,
+      "right": 594.1875,
+      "bottom": 508,
+      "left": 133.1875
+    },
+    "ready": "true",
+    "drawn": "4",
+    "backgroundImage": "linear-gradient(rgba(20, 19, 42, 0.4), rgba(23, 21, 43, 0.91)), url(\"http://127.0.0.1:6310/art/v3-shell/b2/backdrop-garden.webp\")",
+    "backgroundSize": "auto, cover",
+    "backgroundPosition": "0% 0%, 50% 50%",
+    "animations": 0
+  },
+  "traceCategories": "blink,cc,skia,devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline,disabled-by-default-devtools.timeline.frame,disabled-by-default-skia,disabled-by-default-cc.debug",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(!blockedRequests.length)\n\n    at file:///Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-image-delivery-decode.mjs:61:102",
+  "ended": "2026-11-18T00:35:55.246Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/report.json",
+    "sha256": "328db0802f5e045185b08810fa52d3a7fe3d9f0248b5a02fcb903520c40d059d"
+  },
+  "references": {
+    "originalBaseline": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+    "originalVariant": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+  },
+  "measuredUtc": "2026-11-18T00:36:16.407Z",
+  "comparisons": [
+    {
+      "a": "original",
+      "b": "original-restored",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "original",
+      "b": "1-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "1-complete-settled",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "original",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "2-delayed-settled",
+      "b": "3-delayed-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "2-delayed-settled",
+      "b": "4-complete-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "original",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "3-delayed-settled",
+      "b": "4-complete-settled",
+      "exact": false,
+      "changedPixels": 182269,
+      "maxChannel": 12,
+      "meanChannelAbsolute": 0.10948676215277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 82,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "original",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "1-complete-intermediate",
+      "b": "1-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    },
+    {
+      "a": "2-delayed-intermediate",
+      "b": "2-delayed-settled",
+      "exact": false,
+      "changedPixels": 345833,
+      "maxChannel": 128,
+      "meanChannelAbsolute": 3.375629340277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 351,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "3-delayed-intermediate",
+      "b": "3-delayed-settled",
+      "exact": false,
+      "changedPixels": 345833,
+      "maxChannel": 128,
+      "meanChannelAbsolute": 3.375629340277778,
+      "outsideSheet": 0,
+      "bounds": {
+        "minX": 51,
+        "minY": 351,
+        "maxX": 1228,
+        "maxY": 701
+      }
+    },
+    {
+      "a": "4-complete-intermediate",
+      "b": "4-complete-settled",
+      "exact": true,
+      "changedPixels": 0,
+      "maxChannel": 0,
+      "meanChannelAbsolute": 0,
+      "outsideSheet": 0,
+      "bounds": null
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/review-1.jpg",
+      "width": 1024,
+      "height": 288,
+      "sha256": "d33e56150024a765f1a4dbc8f91dd1e2fca1a9ae662214d3cfdf514e208014d9",
+      "captures": [
+        "original",
+        "original-restored"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/review-2.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+      "captures": [
+        "1-complete-settled",
+        "2-delayed-settled",
+        "3-delayed-settled",
+        "4-complete-settled"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-image-delivery-decode-r3/review-3.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4b70c07bc97f20e3d317ed6eae6b7cfee147cf61bf8f3b2e21bb65fadfd57da5",
+      "captures": [
+        "1-complete-intermediate",
+        "2-delayed-intermediate",
+        "3-delayed-intermediate",
+        "4-complete-intermediate"
+      ]
+    }
+  ],
+  "reviewedUtc": null,
+  "visualReview": null,
+  "interpretation": {
+    "diagnosticFinding": "All10fullRGBhashes and both target decoder branches repeat R2 exactly. The terminal failed assertion is the single Google Fonts CSS block deliberately enforced by the local fixture; no page errors. Original failed status retained.",
+    "reviewReuse": "No repeat image was opened. Its10RGBhashes match the already reviewed R2 captures; four subsequent scheduler matrix sheets received a fresh own review."
+  }
+}

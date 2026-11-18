@@ -21,7 +21,8 @@ const flush=async()=>{await act(async()=>{await Promise.resolve();});};
 beforeEach(()=>{
  construct.mockReset();load.mockReset().mockImplementation(async()=>actor());
  vi.stubGlobal('requestAnimationFrame',vi.fn(()=>1));vi.stubGlobal('cancelAnimationFrame',vi.fn());
- vi.stubGlobal('matchMedia',vi.fn(()=>({matches:false})));vi.stubGlobal('devicePixelRatio',1);
+ vi.stubGlobal('matchMedia',vi.fn(()=>({matches:false,addEventListener:vi.fn(),removeEventListener:vi.fn()})));
+ vi.stubGlobal('ResizeObserver',class {observe=vi.fn();disconnect=vi.fn();});vi.stubGlobal('devicePixelRatio',1);
 });
 afterEach(()=>{cleanup();vi.unstubAllGlobals();});
 

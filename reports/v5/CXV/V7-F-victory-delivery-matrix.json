@@ -1,0 +1,1096 @@
+{
+  "utc": "2026-11-18T00:38:36.105Z",
+  "method": "Four scheduler trials in baseline/demand/demand/baseline order. Every trial uses identical source WebP with complete/delayed/delayed/complete delivery, trace-linked to YUV/RGB decoding. Compare exact full-viewport RGB at matched delivery, including intermediate partial paints. Known remote Google Fonts CSS remains blocked by fixture in every trial; no external stylesheet is fetched. Original failed experiments remain preserved. Counts measure static redundant draws; traced wall time is not a performance benchmark.",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "runs": [
+    {
+      "name": "1-baseline",
+      "mode": "baseline",
+      "source": "b4ef98bfceefad6158285bc1c4e525a272304d94",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utc": "2026-11-18T00:36:56.705Z",
+      "ended": "2026-11-18T00:37:16.997Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "browser": "156.0.8078.4",
+      "asset": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+        "bytes": 465026,
+        "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+      },
+      "harnessSha256": "dd68f9f7ea2c4560963b37282f0d36f88b5c9ad34aa34c4f467226ec2e45a4a2",
+      "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+      "override": {
+        "mode": "baseline",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794961021162",
+            "sourceSha256": "dfdad4bae4cbf0b1e27f0ecba725d27a0a06c7644aa23f23b34f9ee4f5e87e8e",
+            "overrideSha256": "ae9a4fd69d6c546ed1e7354e1ffdcde995acba0a5164fc4fcc7f4f60dc9a1422"
+          }
+        ]
+      },
+      "reducedSteady": {
+        "durationMs": 2000,
+        "draws": 120,
+        "elapsedDrawMs": 254.30000011622906
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "measured": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline-measured.json",
+        "sha256": "6f5d185fdd48eccedb985435d339a0a4e19ade144e63a68edf8928a0649fa947"
+      },
+      "captures": [
+        {
+          "name": "original",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/original.png",
+          "utc": "2026-11-18T00:37:08.013Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/1-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:08.971Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/1-complete-settled.png",
+          "utc": "2026-11-18T00:37:09.683Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/2-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:11.128Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/2-delayed-settled.png",
+          "utc": "2026-11-18T00:37:11.850Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/3-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:13.277Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/3-delayed-settled.png",
+          "utc": "2026-11-18T00:37:14.003Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/4-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:15.484Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/4-complete-settled.png",
+          "utc": "2026-11-18T00:37:16.219Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/original-restored.png",
+          "utc": "2026-11-18T00:37:16.958Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "decoderChecks": [
+        {
+          "name": "1-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:08.056Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:08.057Z",
+            "intermediateUtc": "2026-11-18T00:37:08.971Z"
+          },
+          "imageIds": [
+            508
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/1-complete.trace.json",
+          "traceSha256": "81f5091ef09f48042f5f36e840a27fb5d17163665d9e3ecd4b2f66f8d6a22a58"
+        },
+        {
+          "name": "2-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:10.255Z",
+            "firstHalfUtc": "2026-11-18T00:37:10.255Z",
+            "completeUtc": "2026-11-18T00:37:11.129Z",
+            "intermediateUtc": "2026-11-18T00:37:11.128Z"
+          },
+          "imageIds": [
+            534
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/2-delayed.trace.json",
+          "traceSha256": "fab49c55e61fde7f6d0eacf47161632d441f5ace73b6b0f89230d1bc093408d1"
+        },
+        {
+          "name": "3-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:12.404Z",
+            "firstHalfUtc": "2026-11-18T00:37:12.404Z",
+            "completeUtc": "2026-11-18T00:37:13.277Z",
+            "intermediateUtc": "2026-11-18T00:37:13.277Z"
+          },
+          "imageIds": [
+            549
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/3-delayed.trace.json",
+          "traceSha256": "7376925ecd1d2a94f190d03fd012cffd13c68aab0a4c8aff1842f5fa89421111"
+        },
+        {
+          "name": "4-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:14.569Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:14.570Z",
+            "intermediateUtc": "2026-11-18T00:37:15.484Z"
+          },
+          "imageIds": [
+            564
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/4-complete.trace.json",
+          "traceSha256": "8f46fa826f358f0137a658395b37aeffd3067ae7ec38408e1cf1c7b437c5d6e2"
+        }
+      ],
+      "sheet": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/1-baseline/review-2.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+        "captures": [
+          "1-complete-settled",
+          "2-delayed-settled",
+          "3-delayed-settled",
+          "4-complete-settled"
+        ]
+      }
+    },
+    {
+      "name": "2-demand",
+      "mode": "demand",
+      "source": "b4ef98bfceefad6158285bc1c4e525a272304d94",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utc": "2026-11-18T00:37:18.499Z",
+      "ended": "2026-11-18T00:37:36.075Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "browser": "156.0.8078.4",
+      "asset": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+        "bytes": 465026,
+        "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+      },
+      "harnessSha256": "dd68f9f7ea2c4560963b37282f0d36f88b5c9ad34aa34c4f467226ec2e45a4a2",
+      "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+      "override": {
+        "mode": "demand",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794961021162",
+            "sourceSha256": "dfdad4bae4cbf0b1e27f0ecba725d27a0a06c7644aa23f23b34f9ee4f5e87e8e",
+            "overrideSha256": "b65b513a16f9c437b4d7f9905997c1f2efcdcc609b9f344e3f6a934ff89e62f7"
+          }
+        ]
+      },
+      "reducedSteady": {
+        "durationMs": 2000,
+        "draws": 0,
+        "elapsedDrawMs": 0
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "measured": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand-measured.json",
+        "sha256": "fa28208efe7d029683f87c8f918109b324b97fe8869fa6414f76c3e8d4f7b6f7"
+      },
+      "captures": [
+        {
+          "name": "original",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/original.png",
+          "utc": "2026-11-18T00:37:29.505Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/1-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:30.401Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/1-complete-settled.png",
+          "utc": "2026-11-18T00:37:31.065Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/2-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:31.956Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/2-delayed-settled.png",
+          "utc": "2026-11-18T00:37:32.627Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/3-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:33.520Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/3-delayed-settled.png",
+          "utc": "2026-11-18T00:37:34.210Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/4-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:35.148Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/4-complete-settled.png",
+          "utc": "2026-11-18T00:37:35.813Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/original-restored.png",
+          "utc": "2026-11-18T00:37:36.039Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "decoderChecks": [
+        {
+          "name": "1-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:29.537Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:29.537Z",
+            "intermediateUtc": "2026-11-18T00:37:30.401Z"
+          },
+          "imageIds": [
+            508
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/1-complete.trace.json",
+          "traceSha256": "17b0c9612a5244fed80e44233d720b78562aad0ca7d46f521b33964cd086e5ae"
+        },
+        {
+          "name": "2-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:31.141Z",
+            "firstHalfUtc": "2026-11-18T00:37:31.141Z",
+            "completeUtc": "2026-11-18T00:37:31.956Z",
+            "intermediateUtc": "2026-11-18T00:37:31.956Z"
+          },
+          "imageIds": [
+            530
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/2-delayed.trace.json",
+          "traceSha256": "01c83e62bb4f9e0617cb2e6f611019f75b95337fa9847b45903d9a44e12c51ab"
+        },
+        {
+          "name": "3-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:32.696Z",
+            "firstHalfUtc": "2026-11-18T00:37:32.696Z",
+            "completeUtc": "2026-11-18T00:37:33.521Z",
+            "intermediateUtc": "2026-11-18T00:37:33.520Z"
+          },
+          "imageIds": [
+            533
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/3-delayed.trace.json",
+          "traceSha256": "8475b4e6d4cd3d942596bc8162c7a87bca338cf18394d73743d343957c81c1b0"
+        },
+        {
+          "name": "4-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:34.277Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:34.278Z",
+            "intermediateUtc": "2026-11-18T00:37:35.148Z"
+          },
+          "imageIds": [
+            536
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/4-complete.trace.json",
+          "traceSha256": "610de2d17522a41cec6428c51707faa3a33660f571203b342e8bca9540a08554"
+        }
+      ],
+      "sheet": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/2-demand/review-2.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+        "captures": [
+          "1-complete-settled",
+          "2-delayed-settled",
+          "3-delayed-settled",
+          "4-complete-settled"
+        ]
+      }
+    },
+    {
+      "name": "3-demand",
+      "mode": "demand",
+      "source": "b4ef98bfceefad6158285bc1c4e525a272304d94",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utc": "2026-11-18T00:37:37.370Z",
+      "ended": "2026-11-18T00:37:54.858Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "browser": "156.0.8078.4",
+      "asset": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+        "bytes": 465026,
+        "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+      },
+      "harnessSha256": "dd68f9f7ea2c4560963b37282f0d36f88b5c9ad34aa34c4f467226ec2e45a4a2",
+      "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+      "override": {
+        "mode": "demand",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794961021162",
+            "sourceSha256": "dfdad4bae4cbf0b1e27f0ecba725d27a0a06c7644aa23f23b34f9ee4f5e87e8e",
+            "overrideSha256": "b65b513a16f9c437b4d7f9905997c1f2efcdcc609b9f344e3f6a934ff89e62f7"
+          }
+        ]
+      },
+      "reducedSteady": {
+        "durationMs": 2000,
+        "draws": 0,
+        "elapsedDrawMs": 0
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "measured": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand-measured.json",
+        "sha256": "c1a5f71cc072d50896be0a34bad011294a965b44ee413d8b7a266c51c60ea619"
+      },
+      "captures": [
+        {
+          "name": "original",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/original.png",
+          "utc": "2026-11-18T00:37:48.349Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/1-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:49.247Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/1-complete-settled.png",
+          "utc": "2026-11-18T00:37:49.913Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/2-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:50.809Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/2-delayed-settled.png",
+          "utc": "2026-11-18T00:37:51.469Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/3-delayed-intermediate.png",
+          "utc": "2026-11-18T00:37:52.357Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/3-delayed-settled.png",
+          "utc": "2026-11-18T00:37:53.019Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/4-complete-intermediate.png",
+          "utc": "2026-11-18T00:37:53.945Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/4-complete-settled.png",
+          "utc": "2026-11-18T00:37:54.601Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/original-restored.png",
+          "utc": "2026-11-18T00:37:54.823Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "decoderChecks": [
+        {
+          "name": "1-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:48.379Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:48.379Z",
+            "intermediateUtc": "2026-11-18T00:37:49.247Z"
+          },
+          "imageIds": [
+            509
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/1-complete.trace.json",
+          "traceSha256": "3d3c9eb6454e72655b719993b923937cb4c1ca909392a9807a2a4a82abf3880a"
+        },
+        {
+          "name": "2-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:49.988Z",
+            "firstHalfUtc": "2026-11-18T00:37:49.988Z",
+            "completeUtc": "2026-11-18T00:37:50.809Z",
+            "intermediateUtc": "2026-11-18T00:37:50.809Z"
+          },
+          "imageIds": [
+            531
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/2-delayed.trace.json",
+          "traceSha256": "4a64b57ed51839f6733298cf0e24492279a5f145a2bd0999a282ebb3d95676c7"
+        },
+        {
+          "name": "3-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:51.534Z",
+            "firstHalfUtc": "2026-11-18T00:37:51.534Z",
+            "completeUtc": "2026-11-18T00:37:52.358Z",
+            "intermediateUtc": "2026-11-18T00:37:52.357Z"
+          },
+          "imageIds": [
+            534
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/3-delayed.trace.json",
+          "traceSha256": "4b6c821a857dcd63310ad00e128e0d6616041f47b70c5d1eae76da5b5f45c346"
+        },
+        {
+          "name": "4-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:37:53.085Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:37:53.085Z",
+            "intermediateUtc": "2026-11-18T00:37:53.945Z"
+          },
+          "imageIds": [
+            537
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/4-complete.trace.json",
+          "traceSha256": "aa8acd07cf041513ed6f8c2151d3190d547e5d4a6838f8c1c8ea6f0dee3e487e"
+        }
+      ],
+      "sheet": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/3-demand/review-2.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+        "captures": [
+          "1-complete-settled",
+          "2-delayed-settled",
+          "3-delayed-settled",
+          "4-complete-settled"
+        ]
+      }
+    },
+    {
+      "name": "4-baseline",
+      "mode": "baseline",
+      "source": "b4ef98bfceefad6158285bc1c4e525a272304d94",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "utc": "2026-11-18T00:37:56.145Z",
+      "ended": "2026-11-18T00:38:15.899Z",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "browser": "156.0.8078.4",
+      "asset": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/public/art/v3-shell/b2/backdrop-garden.webp",
+        "bytes": 465026,
+        "sha256": "f0ff3c94111ee34caee444e5c66b51000edc232561344b641a4ca0021b93d001"
+      },
+      "harnessSha256": "dd68f9f7ea2c4560963b37282f0d36f88b5c9ad34aa34c4f467226ec2e45a4a2",
+      "fixtureSha256": "801eb68ce9204e08db485e13a9ced85bc581bdf6366f5ed392961856019a59f1",
+      "override": {
+        "mode": "baseline",
+        "modules": [
+          {
+            "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/VictoryCrew.tsx?t=1794961021162",
+            "sourceSha256": "dfdad4bae4cbf0b1e27f0ecba725d27a0a06c7644aa23f23b34f9ee4f5e87e8e",
+            "overrideSha256": "ae9a4fd69d6c546ed1e7354e1ffdcde995acba0a5164fc4fcc7f4f60dc9a1422"
+          }
+        ]
+      },
+      "reducedSteady": {
+        "durationMs": 2000,
+        "draws": 120,
+        "elapsedDrawMs": 221.4000000357628
+      },
+      "errors": [],
+      "blockedRequests": [
+        {
+          "url": "https://fonts.googleapis.com/css2",
+          "type": "stylesheet"
+        }
+      ],
+      "measured": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline-measured.json",
+        "sha256": "b1dfc97adddbd57ceefd625797a1e94558f2733bf110dfcf5143957d4e8f267c"
+      },
+      "captures": [
+        {
+          "name": "original",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/original.png",
+          "utc": "2026-11-18T00:38:07.076Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/1-complete-intermediate.png",
+          "utc": "2026-11-18T00:38:08.031Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "1-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/1-complete-settled.png",
+          "utc": "2026-11-18T00:38:08.749Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/2-delayed-intermediate.png",
+          "utc": "2026-11-18T00:38:10.174Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "2-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/2-delayed-settled.png",
+          "utc": "2026-11-18T00:38:10.881Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/3-delayed-intermediate.png",
+          "utc": "2026-11-18T00:38:12.274Z",
+          "sha256": "0f5f39e5e4807e3e8f23e2b03677e69e4b62cdb91a6af81f3f02421ce8c8e583",
+          "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "3-delayed-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/3-delayed-settled.png",
+          "utc": "2026-11-18T00:38:12.980Z",
+          "sha256": "90d9628202f3bd88e6b8bb8426e9e11d2dca2e9113ef9e93ac4324ea25367975",
+          "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-intermediate",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/4-complete-intermediate.png",
+          "utc": "2026-11-18T00:38:14.415Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "4-complete-settled",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/4-complete-settled.png",
+          "utc": "2026-11-18T00:38:15.136Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "name": "original-restored",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/original-restored.png",
+          "utc": "2026-11-18T00:38:15.863Z",
+          "sha256": "d928e0ad0fc845d424a66bfab3d9f1756ef7b194268734f4ba885e65f2dcf87a",
+          "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "decoderChecks": [
+        {
+          "name": "1-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:38:07.122Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:38:07.122Z",
+            "intermediateUtc": "2026-11-18T00:38:08.031Z"
+          },
+          "imageIds": [
+            521
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/1-complete.trace.json",
+          "traceSha256": "adb5c45f64b10935a26e8db69de4dfe5cc5dc70f23677da95e4b6ee8564e37b4"
+        },
+        {
+          "name": "2-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:38:09.305Z",
+            "firstHalfUtc": "2026-11-18T00:38:09.306Z",
+            "completeUtc": "2026-11-18T00:38:10.174Z",
+            "intermediateUtc": "2026-11-18T00:38:10.174Z"
+          },
+          "imageIds": [
+            531
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/2-delayed.trace.json",
+          "traceSha256": "abecab8570ed85993ccc548b2cb3025475b335cbcdfaf4bc4d2c99da6391bae0"
+        },
+        {
+          "name": "3-delayed",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:38:11.404Z",
+            "firstHalfUtc": "2026-11-18T00:38:11.404Z",
+            "completeUtc": "2026-11-18T00:38:12.275Z",
+            "intermediateUtc": "2026-11-18T00:38:12.274Z"
+          },
+          "imageIds": [
+            546
+          ],
+          "decoder": "DecodingImageGenerator::getPixels",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/3-delayed.trace.json",
+          "traceSha256": "a12187b641fc312df8e0ae37881d944b34e9f0bbbd07f6857bea822f5cf48c8f"
+        },
+        {
+          "name": "4-complete",
+          "delivery": {
+            "requests": 1,
+            "requestUtc": "2026-11-18T00:38:13.503Z",
+            "firstHalfUtc": null,
+            "completeUtc": "2026-11-18T00:38:13.504Z",
+            "intermediateUtc": "2026-11-18T00:38:14.415Z"
+          },
+          "imageIds": [
+            561
+          ],
+          "decoder": "DecodingImageGenerator::GetYUVAPlanes",
+          "tracePath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/4-complete.trace.json",
+          "traceSha256": "b7b346e964edd7047bc46b2e7ae68cbcb595d42ee673fa6bbefc5f52aa946110"
+        }
+      ],
+      "sheet": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-victory-delivery-matrix/4-baseline/review-2.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "bdff51284bd74c6b2c426b4e398712fd2e9416f3e604faeb13c9fef35774b4e8",
+        "captures": [
+          "1-complete-settled",
+          "2-delayed-settled",
+          "3-delayed-settled",
+          "4-complete-settled"
+        ]
+      }
+    }
+  ],
+  "pixelChecks": [
+    {
+      "trial": "1-baseline",
+      "frame": "1-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "1-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "2-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "2-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "3-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "3-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "4-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "1-baseline",
+      "frame": "4-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "1-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "1-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "2-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "2-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "3-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "3-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "4-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "2-demand",
+      "frame": "4-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "1-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "1-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "2-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "2-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "3-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "3-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "4-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "3-demand",
+      "frame": "4-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "1-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "1-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "2-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "2-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "3-delayed-intermediate",
+      "exact": true,
+      "rgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3",
+      "controlRgbSha256": "c69ecbaaa1d4b5b9bfebcf491bf6d85088d0115e07c81584b61eafefad20dcb3"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "3-delayed-settled",
+      "exact": true,
+      "rgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612",
+      "controlRgbSha256": "9030c0a75fafc212d4f4c91986dd2d01daaca04d4d7078afa75af944e8fa6612"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "4-complete-intermediate",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    },
+    {
+      "trial": "4-baseline",
+      "frame": "4-complete-settled",
+      "exact": true,
+      "rgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a",
+      "controlRgbSha256": "905463b64c4fec1052de0ad6b12ec58c13c75faafb59387b0d0d3e672cb61b1a"
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-18T00:38:58.549027+00:00",
+  "visualReview": {
+    "sheets": 4,
+    "inspectionsEach": 1,
+    "finding": "Four newly measured settled sheets reviewed once. All cats, receipt, frame, background and controls remain stable and readable across both schedulers and both traced decoder paths. Matched fullframe exactness includes all eight controlled frames per trial."
+  },
+  "limits": "Diagnostic local candidate with response scheduling transforms, not native application adoption or independent judge acceptance."
+}

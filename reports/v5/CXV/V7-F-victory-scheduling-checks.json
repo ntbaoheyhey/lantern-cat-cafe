@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-18T00:40:14.589895+00:00",
+  "studyGate": "2026-11-18T00:42:07.436855Z",
+  "componentBeforeSha256": "efc9c39e4d96240054913ed90e5560e2eb6a46e950fe61880c37e320a905eafc",
+  "red": {
+    "failed": 5,
+    "passed": 7,
+    "log": "work/v5/CXV/jobs/victory-scheduling-test-red-final.log",
+    "logSha256": "737a7f3f2a45bc62cee0e68911fec7a6a227d1f605cff382ccef8ea416c92f0c",
+    "expectedFailures": [
+      "reduced scene continuously queues another frame",
+      "late actor case remains continuously scheduled",
+      "resized reduced scene remains continuously scheduled",
+      "OS reduced preference does not stop frame loop",
+      "restored reduced scene remains continuously scheduled"
+    ]
+  },
+  "native": null,
+  "status": "Prototype matched-delivery exactfullframe gate passed; native adoption pending study time and checks. Original errors and raw comparisons retained."
+}
