@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V7 V-E victory fallback restart study;assistant: AGV. Full4xstress measured/reviewed/committed68actions24ults/0errors bothmodes. Opacity masks and Clover rejected;originalvictorypixelB unresolved.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Analyze completed judge32s/rate trace (PID87414 ended00:08:45Z), new output only. Fallback3sheets reviewed00:07:41Z;nativefix gated2026-11-18T00:16:43.634070Z.
+NEXT 1: After00:16:43.634070Z apply minimal VictoryCrew readiness-reset before renderer construction;fresh native failure/recovery captures+focusedtests+TSC. Trace analyzed/reviewed once00:11Z;labels/HUD pending integration explain layout hotspot.
 NEXT 2: Numbermetrics e58ef974c CXI ACCEPT17:27Z;contour6ef304a9b CXI ACCEPT17:37Z integrated2ee12c29e;packedACK17:38Z afterm1.10pipeline;greenm1.10 mergedbf9520741;packed/crop independent review pending.
 NEXT 3: Panko local gate passed21:22Z;128px9048B,1x1normal,4native sheets reviewedonce,36tests/TSC0. CXI loader entry pending;AGVmanifest untouched. Study gate21:18:42Z elapsed.
-Last confirmed push3e86c9cfb;V-A3WIP13659e2b4 already pushed;capture-arrivalSHA1f1d220e unchanged23:51Z;fullbattle53f8c4a17;Panko addba7446;READYsentCXI;stationaryREADY4c5f0fa55/evidence93772cb8e. HUD79d408c71 READY19:59Z; greenm1.10 merge bf9520741 retained.
+Last confirmed push7728063bf;V-A3WIP13659e2b4 already pushed;capture-arrivalSHA1f1d220e unchanged23:51Z;fullbattle53f8c4a17;Panko addba7446;READYsentCXI;stationaryREADY4c5f0fa55/evidence93772cb8e. HUD79d408c71 READY19:59Z; greenm1.10 merge bf9520741 retained.
 V-A3 own6301 normal/reduced fresh19:29/19:30Z8sheets inspectedonce;4heroesfeetstable,reduceddepth0;source d69b9dc5c/indexaf3adbe2. CXI ACCEPT16:10 retained;capture-arrival unchanged.
 V-C servedaf3adbe2 own18:04Z6sheets0errors;normal240/620ms,reducedfeetstable,actionyield160ms,incomingdx9dy-2;net12@1280clear1640,Yarnsocket0clear1760.
 V-B2/E/F natural served6301 d69b9dc5c/indexaf3adbe2 21:32–21:36Z normal/reducedwin97.5/97.2s,68actions24ults (15hero/9enemy),82statusapply46expire each;logs/order/finalactors exact,4freshsheets clear,0errors/blocked,reducedresultPNGexact. 53f8c4a17 READY sentCXI.
