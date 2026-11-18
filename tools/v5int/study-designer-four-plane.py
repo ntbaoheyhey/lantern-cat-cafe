@@ -6,14 +6,17 @@ import json,subprocess,hashlib,sys
 import cv2
 import numpy as np
 cv2.setNumThreads(2)
-ROOT=Path(__file__).resolve().parents[2];BASE=ROOT/'work/v5/CXI/batch-m';quality=int(sys.argv[1]) if len(sys.argv)>1 else 23;assert quality in [20,23]
-roi='--roi' in sys.argv;assert not roi or quality==23
+ROOT=Path(__file__).resolve().parents[2];BASE=ROOT/'work/v5/CXI/batch-m';quality=float(sys.argv[1]) if len(sys.argv)>1 else 23.0;assert quality in [20,22.5,23];quality=int(quality) if quality.is_integer() else quality
+roi='--roi' in sys.argv;assert not roi or quality in [22.5,23]
 vp9='--vp9' in sys.argv;assert not vp9 or (quality==23 and not roi)
 full='--full-range' in sys.argv;assert not full or (roi and not vp9)
-label='four-plane-roi-full-r1' if full else ('four-plane-vp9-r1' if vp9 else ('four-plane-roi-r1' if roi else ('four-plane-r1' if quality==23 else 'four-plane-q20')));OUT=BASE/label;OUT.mkdir(exist_ok=True)
+no_psy='--no-psy' in sys.argv;assert not no_psy or full
+local='--local-matte' in sys.argv;assert not local or (no_psy and quality==22.5);assert quality!=22.5 or local
+label='four-plane-local-q225-r1' if local else ('four-plane-roi-full-nopsy-r1' if no_psy else ('four-plane-roi-full-r1' if full else ('four-plane-vp9-r1' if vp9 else ('four-plane-roi-r1' if roi else ('four-plane-r1' if quality==23 else 'four-plane-q20')))));OUT=BASE/label;OUT.mkdir(exist_ok=True)
 assert not (OUT/'report.json').exists(), 'Preserve prior study evidence'
-w,h=312,260;raw=np.memmap(BASE/'packed-vp9-256-r1/source.rgba',np.uint8,'r',shape=(300,h,w,4))
+w,h=312,260;source=BASE/('local-color-matte-all-r1/source.rgba' if local else 'packed-vp9-256-r1/source.rgba');raw=np.memmap(source,np.uint8,'r',shape=(300,h,w,4))
 report={'utc':datetime.now(timezone.utc).isoformat(),'status':'STUDY_ONLY','hypothesis':'Full-resolution four-plane luma avoids YUV420 chroma loss; compare direct and decorrelated color at fixed quality.','opaqueHeight':256,'frames':300,'fps':30,'duration':10,'matteUnchanged':True,'nativeAssetAcceptance':False,'trials':[]}
+report.update(sourceRgba=str(source),sourceRgbaSha256=hashlib.sha256(source.read_bytes()).hexdigest(),matteUnchanged=not local)
 for mode in (['rgba','ycrcb'] if quality==23 and not roi and not vp9 else ['ycrcb']):
  name=mode+f'-crf{quality}';video=OUT/(name+('.webm' if vp9 else '.mp4'));decoded_path=OUT/(name+'.rgb')
  command=['ffmpeg','-y','-nostdin','-v','error','-f','rawvideo','-pixel_format','yuv420p','-video_size',f'{w*2}x{h*2}','-framerate','30','-i','-','-an','-c:v','libx264','-threads','2','-preset','slow','-crf',str(quality),'-pix_fmt','yuv420p','-color_primaries','bt709','-color_trc','iec61966-2-1','-colorspace','smpte170m','-color_range','tv','-bsf:v','h264_metadata=colour_primaries=1:transfer_characteristics=13:matrix_coefficients=6:video_full_range_flag=0','-movflags','+faststart',str(video)]
@@ -22,6 +25,7 @@ for mode in (['rgba','ycrcb'] if quality==23 and not roi and not vp9 else ['ycrc
   command[command.index('-i'):command.index('-i')]=['-color_range','pc']
   command=[x.replace('video_full_range_flag=0','video_full_range_flag=1') for x in command]
   command[command.index('-color_range',command.index('-i'))+1]='pc'
+ if no_psy:command[-1:-1]=['-psy','0']
  if vp9:
   command=['ffmpeg','-y','-nostdin','-v','error','-f','rawvideo','-pixel_format','yuv420p','-video_size',f'{w*2}x{h*2}','-framerate','30','-i','-','-an','-c:v','libvpx-vp9','-profile:v','0','-threads','2','-row-mt','1','-cpu-used','2','-b:v','0','-crf',str(quality),'-pix_fmt','yuv420p','-color_primaries','bt709','-color_trc','iec61966-2-1','-colorspace','smpte170m','-color_range','tv',str(video)]
  p=subprocess.Popen(command,stdin=subprocess.PIPE)
@@ -43,5 +47,5 @@ for mode in (['rgba','ycrcb'] if quality==23 and not roi and not vp9 else ['ycrc
  trial['numericPass']=trial['bytes']<=1000000 and trial['foregroundWhiteMAE']<=3 and trial['edgeFrameMax']<=15 and trial['maskMAE']<=2
  report['trials'].append(trial);(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in trial.items() if k!='command'}),flush=True)
 report['completedUTC']=datetime.now(timezone.utc).isoformat();(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n')
-name='v8-m-four-plane-roi-full-study.json' if full else ('v8-m-four-plane-vp9-study.json' if vp9 else ('v8-m-four-plane-roi-study.json' if roi else ('v8-m-four-plane-study.json' if quality==23 else 'v8-m-four-plane-q20-study.json')))
+name='v8-m-four-plane-local-q225-study.json' if local else ('v8-m-four-plane-roi-full-nopsy-study.json' if no_psy else ('v8-m-four-plane-roi-full-study.json' if full else ('v8-m-four-plane-vp9-study.json' if vp9 else ('v8-m-four-plane-roi-study.json' if roi else ('v8-m-four-plane-study.json' if quality==23 else 'v8-m-four-plane-q20-study.json')))))
 (ROOT/'reports/v5/CXI/evidence'/name).write_text(json.dumps(report,indent=2)+'\n')
