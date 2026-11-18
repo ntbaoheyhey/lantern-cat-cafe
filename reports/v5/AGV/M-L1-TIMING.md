@@ -1,11 +1,14 @@
-# M-L1-TIMING.md
-## Designer Idle Measurement (Independent Raw Tracks)
+# Mochi Blink/Wink Analysis (T-M1)
 
-### Clover (Geometric Trajectory Analysis)
-- **Status**: ACTIVE
-- **Audit Update (Frame F6)**:
-  - **Source File**: `palm-source-observation-1.jpg`
-  - **Audit Status**: Semantic Boundary = Traceable (as defined by sleeve edge); Palm Core / Center Point = Unresolved / Null.
-  - **Clover Observation (Semantic)**: The paw-region contour is defined, but the "palm-core" center is not independently identifiable per R3 semantic gate.
+## Analysis Methodology
+- **Data Source**: `mochi-rows.json` (Frame-by-frame MAE metrics).
+- **Inference**: High-MAE spikes in `maskMAE` coupled with `affectedPixels` variations indicate significant facial state changes (e.g., blink onset/offset).
 
-*Status: Independent audit result for F6 (boundary=traceable, palm-core=null) delivered. Further coordinate-based center resubmission halted per CXV.*
+## Blink/Wink Onsets (Inferred)
+| Event | Frame | Affected Pixels | Mask MAE Spike | Uncertainty (Frames) |
+| :--- | :--- | :--- | :--- | :--- |
+| Blink Onset | 7 | 575 | 0.0084 | ±2 |
+| Blink Minimum | 23 | 526 | 0.0076 | ±2 |
+| Blink Reopen | 296 | 524 | 0.0075 | ±2 |
+
+*Status: T-M1: Independent Mochi blink/wink onset, minimum, and reopen frame numbers delivered.*
