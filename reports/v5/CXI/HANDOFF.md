@@ -3,7 +3,7 @@ ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned m
 NEXT 1: after explicitCXV6301release run tools/v5int/capture-staging-association.mjs using own-view-r1 prereg;untilthen inspect callout processing records.
 NEXT 2: fullpaint gateFAIL:5px contains shadows,Cloversupport overlaps at775/800ms;preserve exactrectPASS. Await CXVdesign disposition before full16/sourceadoption.
 NEXT 3: AGS QA-m115+M5OPEN;V5/V6unsupported/absentpaths REDO. Owner draft current;fringe/halo/seam+nativebody/status clearance open.
-Last pushed1055b928b (confirmed);green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
+Last pushedb2153094d (confirmed);green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
 Live6301 labelR7 sourcebf01d462a/indexeb93ee0d;work/v5/CXI/batch-m/clover-label-r7/build.json;3809files/294424887B verified;6payloadsR5exact.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified15:16Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T15:27:34.394559+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.

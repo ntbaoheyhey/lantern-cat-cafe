@@ -1,5 +1,5 @@
 # V8 Batch M
-Hiện tại 2026-11-18T14:57:34.545784+00:00: chín mèo native đã phát hành ở v5-m1.15. Bản thử Mochi/Clover R7 chưa đăng ký và chưa phát hành. Đã xem đủ12 ảnh riêng của CXI; R3 xác nhận thanh Mochi chồng hình Panko ở250/350ms dù đồng bộ HUD đã đạt. Viền/halo, seam đuôi Clover và hiệu năng laptop thường còn mở. Dung lượng chỉ báo cáo theo owner; không khẳng định đã nghe hoặc sửa sáu callout.
+Hiện tại 2026-11-18T15:28:14.888627+00:00: chín mèo native vẫn ở v5-m1.15; media Mochi/Clover R7 chưa phát hành. Thử nhãn Mochi dưới thân có57mốc/10ảnh đối chứng Panko hợp lệ, rules và67layout khớp; thanh trong DOM sạch. Kiểm tra phần bóng ngoài DOM phát hiện chạm Clover ở775/800ms nên chưa chấp nhận toàn bộ nét vẽ. Chưa xem ảnh mới cho phương án này; còn seam đuôi/viền/halo/laptop thường. Byte chỉ báo cáo; sáu callout thay thế vẫn bị loại.
 
 2026-11-18T05:47:08.972148+00:00 — Panko đã kiểm tra trên bản production: chân và gốc không trôi trong vòng10giây ở cả hai chế độ; skill350ms khớp mốc.55,ult1100ms khớp1.1. Phim so sánh cùng chiều cao/tốc độ và5ảnh mới đã duyệt. Chưa phát hành vì còn ngân sách tải/hiệu năng. Mallow nhập có giới hạn,16test+typecheck đạt;2464ca so sánh mã dùng chung khớp,3833đường dẫn bảo vệ không đổi.
 

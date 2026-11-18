@@ -28,3 +28,5 @@ M-I2 R7 playback:1536eligible recordedcallback/sourceFrame pairs within0.000334m
 M-I2 ACTIONR2 PILOT:exactGit1rule replayPASS;242hashes/18stable states/32counts. Mochilabel vsPankobody1340paintpixels=>FAIL;initialhidden20topHUDpixels retained;postconceal3RGBcontrols exact. Full16 next;no sourceadoption.
 
 M-I2 ACTIONR2 FULL:437hashes/288states/512counts,16exactGit rule replays,normal/reduced parity.14valid contacts;Mochi/Panko1340/1302FAIL;2Mallowults13514controlpixels invalid. Offset-onlyREJECT;nativeguardstudy next.
+
+M-I2 STAGING:76frozen layouts/46paint cases scopedPASS;freshR2pilot57geometry/10validcontrols/320counts exactDOMclear/494decodedchecks/67layouts otherlabelsunchanged. FullpaintFAIL:5pxneeded,775/800ms Clover shadow/body overlap;ownview prereg ready BLOCKED-ON explicitCXV6301release. No R8/sourceadoption.
