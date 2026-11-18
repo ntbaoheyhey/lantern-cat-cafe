@@ -1,0 +1,1081 @@
+{
+  "utc": "2026-11-18T05:02:13.608Z",
+  "sourceCommit": "eae267416984fc5f506cb0891cfb781bbe0c5358",
+  "runtimePatchSha256": "c817a75d8ea35451c7ed883c6bb2b4167d1d65cbc80cc76820f787197e95596c",
+  "runtimeUntrackedSha256": {
+    "apps/web/src/game/rig/living-cast.ts": "f8a4720535f4153b0e5adda16fc1a00f37e698b545870989c29433240ab9bf99"
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Real scene with explicit rules archive Panko support fixture; simulation sampled30Hz, not FPS evidence.",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "ac7647ad98b19172e15d399d8f6f90f36ea6290a1194d626124605acef3835f6",
+  "boundaries": {
+    "skillDuration": 1,
+    "ultDuration": 2.2,
+    "skillCues": [
+      {
+        "name": "cast",
+        "time": 0.25,
+        "fallback": false
+      },
+      {
+        "name": "hit",
+        "time": 0.55,
+        "fallback": false
+      }
+    ],
+    "rows": [
+      {
+        "reduced": false,
+        "clock": 20.4,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": false,
+        "clock": 20.4,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": false,
+        "clock": 21.3,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": false,
+        "clock": 21.3,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": false,
+        "clock": 23.8,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": false,
+        "clock": 23.8,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 20.4,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 20.4,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 21.3,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 21.3,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 23.8,
+        "seconds": 0,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      },
+      {
+        "reduced": true,
+        "clock": 23.8,
+        "seconds": 1,
+        "textureExact": true,
+        "maxVertexDelta": 0
+      }
+    ]
+  },
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:02:40.388Z",
+  "runs": [
+    {
+      "name": "panko-2-normal",
+      "duration": 800,
+      "impact": 350,
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V3-panko-cast-R1/panko-2-normal.jpg",
+      "selectedSamples": [
+        {
+          "ms": 0,
+          "pose": "skill",
+          "at": 0,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 35.61776028647607,
+            "y": 356.81176204038445
+          },
+          "hand": {
+            "x": 193.08185040314495,
+            "y": 218.6417846273788
+          },
+          "clock": 25.428,
+          "body": {
+            "x": 300.69960139106297,
+            "y": 408.90700461892516,
+            "width": 199.89522032345053,
+            "height": 224.41437129920018
+          },
+          "events": [],
+          "draws": 0
+        },
+        {
+          "ms": 333.3333333333333,
+          "pose": "skill",
+          "at": 0.5238095238095238,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 37.09045116628559,
+            "y": 357.45932716487573
+          },
+          "hand": {
+            "x": 192.4672141401754,
+            "y": 221.73445450704838
+          },
+          "clock": 25.761333333333333,
+          "body": {
+            "x": 300.12051918478573,
+            "y": 408.779456984576,
+            "width": 200.4222884054745,
+            "height": 224.54191857003116
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 166.66666666666666
+            }
+          ],
+          "draws": 3
+        },
+        {
+          "ms": 800,
+          "pose": "idle",
+          "at": 1.028000000000001,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 37.51991083678427,
+            "y": 358.8944947849209
+          },
+          "hand": {
+            "x": 193.02844000590233,
+            "y": 220.57794367011434
+          },
+          "clock": 26.228,
+          "body": {
+            "x": 299.90204401352827,
+            "y": 407.8436615079993,
+            "width": 200.56514233757468,
+            "height": 225.47771441012605
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 166.66666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 366.6666666666667
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 1100,
+          "pose": "idle",
+          "at": 1.3280000000000016,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 37.32303373669561,
+            "y": 362.45569302976105
+          },
+          "hand": {
+            "x": 195.4361515573152,
+            "y": 219.20833493528497
+          },
+          "clock": 26.528000000000002,
+          "body": {
+            "x": 300.6651362295712,
+            "y": 406.61465660544,
+            "width": 200.31288832720588,
+            "height": 226.70671931268532
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 166.66666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 366.6666666666667
+            }
+          ],
+          "draws": 0
+        }
+      ],
+      "sheetSha256": "40d3a2a32bf332e15c5a1072e7eeab755bda8bb8e0fabc5b264d822a3163b7c8",
+      "viewedOnceUTC": "2026-11-18T05:04:11.567423+00:00"
+    },
+    {
+      "name": "panko-4-normal",
+      "duration": 2200,
+      "impact": 1100,
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V3-panko-cast-R1/panko-4-normal.jpg",
+      "selectedSamples": [
+        {
+          "ms": 0,
+          "pose": "ult",
+          "at": 0,
+          "key": "K1",
+          "feet": [
+            {
+              "x": -156.96947269434386,
+              "y": 0.375
+            },
+            {
+              "x": 257.1705764457053,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 168.4826410131303,
+            "y": 375.6728096940222
+          },
+          "hand": {
+            "x": 243.2425744093965,
+            "y": 191.81820475935805
+          },
+          "clock": 25.428,
+          "body": {
+            "x": 254.431431238511,
+            "y": 407.3983102596508,
+            "width": 279.9839076771457,
+            "height": 225.9230656584745
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 166.66666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 366.6666666666667
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 1100,
+          "pose": "ult",
+          "at": 1.1,
+          "key": "K5",
+          "feet": [
+            {
+              "x": -156.34293706780824,
+              "y": -0.8780712530712531
+            },
+            {
+              "x": 172.58826686339572,
+              "y": -0.8780712530712531
+            }
+          ],
+          "head": {
+            "x": 28.934931278780518,
+            "y": 371.42642549171484
+          },
+          "hand": {
+            "x": 209.6102867290174,
+            "y": 243.65595436168127
+          },
+          "clock": 26.528000000000002,
+          "body": {
+            "x": 232.69755450977996,
+            "y": 406.26463194903204,
+            "width": 307.6009749917424,
+            "height": 227.61399212716265
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 366.6666666666667
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-start",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 100
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 566.6666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            }
+          ],
+          "draws": 2
+        },
+        {
+          "ms": 2200,
+          "pose": "idle",
+          "at": 2.4279999999999995,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 37.44622787034544,
+            "y": 368.51538587625964
+          },
+          "hand": {
+            "x": 200.96520082635732,
+            "y": 214.1867850199723
+          },
+          "clock": 27.628,
+          "body": {
+            "x": 300.95268325356875,
+            "y": 404.9965447190229,
+            "width": 201.36097639644845,
+            "height": 228.32483119910245
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 566.6666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 2500,
+          "pose": "idle",
+          "at": 2.728,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 37.84846962038562,
+            "y": 365.9259382706456
+          },
+          "hand": {
+            "x": 199.28907025260253,
+            "y": 214.92757445686286
+          },
+          "clock": 27.928,
+          "body": {
+            "x": 300.931682806576,
+            "y": 405.9766932947496,
+            "width": 200.9784911391314,
+            "height": 227.34468262337572
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 566.6666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            }
+          ],
+          "draws": 0
+        }
+      ],
+      "sheetSha256": "13b086e04946b4b67d3eb6965bdf60c0c20d5888690d558595e75c8d45e684f3",
+      "viewedOnceUTC": "2026-11-18T05:04:11.567423+00:00"
+    },
+    {
+      "name": "panko-2-reduced",
+      "duration": 800,
+      "impact": 350,
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V3-panko-cast-R1/panko-2-reduced.jpg",
+      "selectedSamples": [
+        {
+          "ms": 0,
+          "pose": "skill",
+          "at": 0,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 361.3330603292748
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 215.04188513759752
+          },
+          "clock": 25.428,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 407.6031738550523,
+            "width": 200.6093390027214,
+            "height": 225.71820206307302
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 566.6666666666666
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 350,
+          "pose": "skill",
+          "at": 0.55,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 361.30512549752524
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 215.02148531728963
+          },
+          "clock": 25.778000000000002,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 407.6155841243968,
+            "width": 200.6093390027214,
+            "height": 225.70579179372857
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 175
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 350
+            }
+          ],
+          "draws": 4
+        },
+        {
+          "ms": 799,
+          "pose": "skill",
+          "at": 0.9988260869565218,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 361.98782909643234
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 215.52003962633634
+          },
+          "clock": 26.227,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 407.31199310302736,
+            "width": 200.6093390027214,
+            "height": 226.00938281509798
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 175
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 350
+            }
+          ],
+          "draws": 8
+        },
+        {
+          "ms": 1100,
+          "pose": "idle",
+          "at": 1.3280000000000016,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 362.68700476863995
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 216.03062290833122
+          },
+          "clock": 26.528000000000002,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 407.0010674959071,
+            "width": 200.6093390027214,
+            "height": 226.32030842221826
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 175
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 350
+            }
+          ],
+          "draws": 0
+        }
+      ],
+      "sheetSha256": "436d23bd879a0645d4f3f772712e3f8d38b0d40fd8b75be8cfa4413eb04ee18b",
+      "viewedOnceUTC": "2026-11-18T05:04:11.567423+00:00"
+    },
+    {
+      "name": "panko-4-reduced",
+      "duration": 2200,
+      "impact": 1100,
+      "sheet": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V3-panko-cast-R1/panko-4-reduced.jpg",
+      "selectedSamples": [
+        {
+          "ms": 0,
+          "pose": "ult",
+          "at": 0,
+          "key": "K1",
+          "feet": [
+            {
+              "x": -156.96947269434386,
+              "y": 0.375
+            },
+            {
+              "x": 257.1705764457053,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 165.28734135003495,
+            "y": 375.47633361370845
+          },
+          "hand": {
+            "x": 244.56195274899875,
+            "y": 192.5143367661236
+          },
+          "clock": 25.428,
+          "body": {
+            "x": 254.9874720853918,
+            "y": 407.1127114509135,
+            "width": 279.738575295841,
+            "height": 226.20866446721186
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 1233.3333333333333
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2100
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 175
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 350
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 1100,
+          "pose": "ult",
+          "at": 1.1,
+          "key": "K5",
+          "feet": [
+            {
+              "x": -156.34293706780824,
+              "y": -0.8780712530712531
+            },
+            {
+              "x": 172.58826686339572,
+              "y": -0.8780712530712531
+            }
+          ],
+          "head": {
+            "x": 28.934931278780518,
+            "y": 369.71040904939036
+          },
+          "hand": {
+            "x": 209.6102867290174,
+            "y": 242.19350460376327
+          },
+          "clock": 26.528000000000002,
+          "body": {
+            "x": 232.69755450977996,
+            "y": 407.0277548217773,
+            "width": 307.6009749917424,
+            "height": 226.85086925441738
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": false,
+              "skillId": "panko-2",
+              "elapsed": 350
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-start",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 550
+            },
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 550
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            }
+          ],
+          "draws": 2
+        },
+        {
+          "ms": 2199,
+          "pose": "ult",
+          "at": 2.199,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 362.5893352754309
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 215.95929832943676
+          },
+          "clock": 27.626999999999995,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 407.0445018633675,
+            "width": 200.6093390027214,
+            "height": 226.27687405475785
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 550
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2199
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2199
+            }
+          ],
+          "draws": 0
+        },
+        {
+          "ms": 2500,
+          "pose": "idle",
+          "at": 2.728,
+          "key": "K0",
+          "feet": [
+            {
+              "x": -55.47070119557236,
+              "y": 0.375
+            },
+            {
+              "x": 124.97155924668809,
+              "y": 0.375
+            }
+          ],
+          "head": {
+            "x": 41.64232091744975,
+            "y": 362.96201373883935
+          },
+          "hand": {
+            "x": 198.27622755135638,
+            "y": 216.2314522394478
+          },
+          "clock": 27.928,
+          "body": {
+            "x": 301.2390736837948,
+            "y": 406.8787685798196,
+            "width": 200.6093390027214,
+            "height": 226.44260733830572
+          },
+          "events": [
+            {
+              "actorId": "panko",
+              "name": "cast",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 550
+            },
+            {
+              "actorId": "panko",
+              "name": "ult_release",
+              "fallback": false,
+              "skillId": "panko-4",
+              "elapsed": 1100
+            },
+            {
+              "actorId": "panko",
+              "name": "hit",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2199
+            },
+            {
+              "actorId": "panko",
+              "name": "ult-end",
+              "fallback": true,
+              "skillId": "panko-4",
+              "elapsed": 2199
+            }
+          ],
+          "draws": 0
+        }
+      ],
+      "sheetSha256": "57ccae07d31b650e6435fcccfd49f273f59583701d7e21ad95b6c6c63404aca5",
+      "viewedOnceUTC": "2026-11-18T05:04:11.567423+00:00"
+    }
+  ],
+  "validation": {
+    "focused": 39,
+    "extendedActualMesh": 4,
+    "typecheck": 0,
+    "zeroPageErrors": true
+  },
+  "review": "Support cast retains idle pixels, planted feet and readable shield response. Existing ultimate poses and oven effect remain readable in both modes; duration2.2s/contact1.1s preserved. Four1024px sheets viewed once. Geometry continuity proven at exact cast endpoints; simulation film is not performance evidence."
+}

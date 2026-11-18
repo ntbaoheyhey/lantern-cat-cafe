@@ -4,7 +4,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const require=createRequire(resolve('apps/web/package.json')),ts=require('typescript'),T=require('three');
-const file='apps/web/src/game/cardrpg/spine/living-cat-cast.ts',source=await readFile(file,'utf8');
+const file='apps/web/src/game/rig/living-cast.ts',source=await readFile(file,'utf8');
 const code=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
 const {sampleLivingCatCast,livingCatCastOffset,applyLivingCatCast}=await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
 const geometry=new T.PlaneGeometry(560,544,24,24).translate(0,256,0),base=new Float32Array(geometry.attributes.position.array),target=new Float32Array(base.length),indices=geometry.index.array;

@@ -23,8 +23,9 @@ it('retains positive triangle orientation throughout stronger local followers',(
   const indices=base.index!.array,source=base.attributes.position!.array;
   const area=(a:ArrayLike<number>,i:number)=>{const x=indices[i]!*3,y=indices[i+1]!*3,z=indices[i+2]!*3;return(a[y]!-a[x]!)*(a[z+1]!-a[x+1]!)-(a[y+1]!-a[x+1]!)*(a[z]!-a[x]!);};
   let minimum=Infinity;
-  for(let f=0;f<=100;f++){
-   d.sample('idle',f/10%3.6,false,undefined,f/10,0);const a=d.geometry.attributes.position!.array;
+  for(const clip of ['idle','skill'])for(let f=0;f<=100;f++){
+   const time=clip==='idle'?f/10:f/100;
+   d.sample(clip,time,false,undefined,time,0);const a=d.geometry.attributes.position!.array;
    for(let i=0;i<indices.length;i+=3)minimum=Math.min(minimum,area(a,i)/area(source,i));
   }
   expect(minimum).toBeGreaterThan(.45);
@@ -37,4 +38,13 @@ it('keeps the long expressive closure smooth and fully shut without a cycle-boun
   const e=.0001,left=(pankoBlink(t)-pankoBlink(t-e))/e,right=(pankoBlink(t+e)-pankoBlink(t))/e;
   expect(Math.abs(right-left)).toBeLessThan(.01);
  }
+});
+it('joins the one-second Panko skill to the continuously running idle without a mesh or texture pop',()=>{
+ const d=make();try{
+  for(const reduced of [false,true])for(const clock of [20.4,21.3,23.8])for(const seconds of [0,1]){
+   d.sample('idle',clock%3.6,reduced,undefined,clock,0);const expected=vertices(d),map=d.material.map;
+   d.sample('skill',seconds,reduced,undefined,clock,0);
+   expect(d.material.map).toBe(map);expect(vertices(d)).toEqual(expected);
+  }
+ }finally{d.dispose();}
 });

@@ -1,5 +1,5 @@
 # CXV V8 queue — Batch M first
-- [ ] M-V1 ACTIVE: source audit/L1 tables/8primarysources complete;15min studygate passed04:44:08Z;Panko source-freeR1 comparison shows tail/propgap;nativePankoR3 normal/reduced44tests/tsc0/feet0/seam0/Sootexact;pilot WIP checkpoint. Resolve actionhandoff/prop before scaling.
+- [ ] M-V1 ACTIVE: source audit/L1 tables/8primarysources complete;15min studygate passed04:44:08Z;Panko source-freeR1 comparison shows tail/propgap;nativePankoR3 normal/reduced44tests/tsc0/feet0/seam0/Sootexact;pilot WIP checkpoint. Panko1s additivecast boundary nowexact;39focused/tsc0/native two modes pass;per-cat timing documented. Eight native rigs need different enrollment.
 - [ ] M-V2: panko,mallow,sorrel,biscuit,inkcap,cinnamon,brioche,velvet,marigold idles; planted feet and seamless loops; per-cat personality.
 - [ ] M-V3: those nine + Mochi/Clover skill casts; verify contract event units and handoff to skill moments/idle.
 - [ ] M-V4: per-cat films/contact sheets/timing comparison; focused checks/typecheck; empty Soot diff and shared-behavior proof; STATUS-VI; scoped READY.

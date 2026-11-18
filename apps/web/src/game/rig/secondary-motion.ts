@@ -1,4 +1,4 @@
-import {samplePankoIdle,pankoPhase} from './panko-living';
+import {samplePankoIdle,pankoPhase,isPankoLivingClip} from './panko-living';
 /** Absolute-time damped springs: seeking and frame-rate changes cannot accumulate drift. */
 export interface SpringSpec {stiffness:number;damping:number;delay:number}
 export const SECONDARY_SPRINGS={
@@ -66,9 +66,9 @@ export class SecondaryMotion {
  sample(clock:number,clip:string,poseTime:number,reduced:boolean,look=0,hitAge=-1,critAge=-1){
   this.clock=clock;this.clip=clip;this.poseTime=poseTime;this.hitAge=hitAge;this.amount=reduced?0:1;
   const phase=random(this.seed,31)*Math.PI*2;
-  this.period=this.pankoLiving&&(clip==='idle'||clip==='idle-phase2')?10/3:this.profile?.breath??3.6;
+  this.period=this.pankoLiving&&isPankoLivingClip(clip)?10/3:this.profile?.breath??3.6;
   this.body=Math.sin(clock*Math.PI*2/this.period+phase)*(reduced?.25:1);
-  this.look=reduced?0:Math.max(-1,Math.min(1,look))*(clip==='idle'||clip==='idle-phase2'?1:clamp(poseTime/.18));
+  this.look=reduced?0:Math.max(-1,Math.min(1,look))*(clip==='idle'||clip==='idle-phase2'||this.pankoLiving&&clip==='skill'?1:clamp(poseTime/.18));
   const blink=clip==='ko'?clamp(poseTime/.2):seededBlink(clock,this.seed);
   this.leftBlink=Math.max(blink,critAge>=0?blinkEnvelope(critAge*.6):0);this.rightBlink=blink;
   this.earFlatten=reduced||hitAge<0?0:(1-clamp(hitAge/.32));
@@ -80,7 +80,7 @@ export class SecondaryMotion {
   this.turn=this.tilt=this.nod=this.weight=this.earFlick=this.handLift=this.tailSweep=0;
   this.leftSoftness=this.rightSoftness=0;
   this.tiltSin=0;this.tiltCos=1;this.overlapGain=this.profile?1.6:1;this.fidgetAge=-1;
-  if(this.pankoLiving&&(this.clip==='idle'||this.clip==='idle-phase2')){samplePankoIdle(this,this.clock,reduced);return;}
+  if(this.pankoLiving&&isPankoLivingClip(this.clip)){samplePankoIdle(this,this.clock,reduced);return;}
   if(!this.profile||reduced||this.clip==='ko')return;
   const index=Math.max(0,Math.floor((this.clock-1.45)/8.5));
   const age=this.clock-fidgetStart(this.seed,index),previous=index>0&&age<0?index-1:index;
@@ -105,7 +105,7 @@ export class SecondaryMotion {
  layer(part:string,phase:number){
   if(!this.amount||this.clip==='ko')return 0;
   const spec=springForPart(part),frequency=Math.PI*2/this.period;
-  if(this.pankoLiving&&(this.clip==='idle'||this.clip==='idle-phase2')){
+  if(this.pankoLiving&&isPankoLivingClip(this.clip)){
    const t=pankoPhase(this.clock),w=2*Math.PI/10;
    return .72*springWave(t,w*3,.4,spec)+.22*springWave(t,w,0,spec);
   }

@@ -2,6 +2,7 @@
  * Ten-second periodic family; these are calibrated design values, not Cubism keys.
  * No other actor is enrolled by this helper. */
 export const PANKO_IDLE_SECONDS=10;
+export const isPankoLivingClip=(clip:string)=>clip==='idle'||clip==='idle-phase2'||clip==='skill';
 export const pankoPhase=(time:number)=>((time%PANKO_IDLE_SECONDS)+PANKO_IDLE_SECONDS)%PANKO_IDLE_SECONDS;
 const smooth=(n:number)=>{const t=Math.max(0,Math.min(1,n));return t*t*t*(t*(t*6-15)+10);};
 export function pankoBlink(time:number){

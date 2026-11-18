@@ -6,6 +6,7 @@ import {type SpineSocket,type SpineAnimation} from '../spine/config';
 import {animationCues} from '../spine/events';
 import {unitCore} from '../stage/core';
 import {loadPoseImage} from '../spine/pose-image-loader';
+import {LIVING_CAT_SKILL_EVENTS,LIVING_CAT_SKILL_SECONDS} from '../../rig/living-cast';
 
 const cache=new Map<string,Promise<DrawingSet>>();
 export function loadDrawnPoseSet(unit:string):Promise<DrawingSet>{
@@ -36,13 +37,14 @@ export class DrawnPoses {
   const left=Math.min(...frames.map(f=>f.opaqueBounds?.[0]??0));
   const right=Math.max(...frames.map(f=>f.opaqueBounds?.[2]??m.canvas[0]));
   this.layoutExtents={leftExtent:(m.baseline[0]-left)/m.opaqueHeight*1.12+.025,rightExtent:(right-m.baseline[0])/m.opaqueHeight*1.12+.025};
-  for(const [name,duration]of [['attack',.8],['ult',2.2],['skill',2.2],['hurt',.4],['ko',.6],['idle',3.6]] as const){
-   const events=name==='attack'?[{name:'hit',time:.35}]:name==='ult'||name==='skill'?[{name:'ult_release',time:1.1}]:[];
+  for(const [name,legacyDuration]of [['attack',.8],['ult',2.2],['skill',2.2],['hurt',.4],['ko',.6],['idle',3.6]] as const){
+   const pankoSkill=m.unit==='panko'&&name==='skill',duration=pankoSkill?LIVING_CAT_SKILL_SECONDS:legacyDuration;
+   const events=pankoSkill?[...LIVING_CAT_SKILL_EVENTS]:name==='attack'?[{name:'hit',time:.35}]:name==='ult'||name==='skill'?[{name:'ult_release',time:1.1}]:[];
    actor.clips.set(name,{duration,cues:animationCues(name as SpineAnimation,duration,events)});
   }
   this.deform('idle',0,false);
  }
- owns(name:string){return name==='attack'||name==='ult'||name==='skill';}
+ owns(name:string){return (name==='attack'||name==='ult'||name==='skill')&&!(this.drawing.set.manifest.unit==='panko'&&name==='skill');}
  deform(name:string,time:number,reduced:boolean,damageAge?:number,clock=time,target=0,critAge=-1){
   this.drawing.sample(name,time,reduced,damageAge,clock,target,critAge);
   for(const [name,pixel]of Object.entries(this.drawing.frame.sockets)){

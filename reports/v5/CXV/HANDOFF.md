@@ -1,13 +1,13 @@
 # CXV V8 handoff
 ACTIVE M-V1 Panko pilot validated normal/reduced, action handoff refinement before rollout; assistant: AGV. All older work deferred behind Batch M.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: Diagnose Panko idle/action boundary with direct mesh samples; preserve ult2.2s/contact1.1s.
+NEXT 1: Study eight native cutout rigs (no pose manifests); Mallow native pilot before nine-cat rollout.
 NEXT 2: M/C cast helper integration+face bounds when CXI supplies assetmetadata;mediahook9deee558a ACCEPTED.
 NEXT 3: Nine idles then eleven casts and per-cat scoped READY/tests/typecheck; preserve Soot paths and shared behavior.
-Last confirmed push 2d7aa1325; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1; no m1.14 green.
+Last confirmed push eae267416; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1; no m1.14 green.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min exact V8 text verified04:50Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; never edit/delete/pause absentSTOP.
-Running Vite21525/6310 only; nativePankoR3 complete04:53:39Z, no pageerrors/Soot exact. Browser RELEASED; comparison/metric review offline.
+Running Vite21525/6310 only;PankoCastR1 reviewednormal/reduced/ult;12boundaries/Sootbothmodes pass. Browser RELEASED.
 AGV active T-M1 L1 timing and T-M2 sourced L2/L4; queued T-M3 own-art ideas/T-M4 READY captures; oldT-CXV-1/2 andT-CXI-11 deferred.
 CXI owns M/C ingest,loaders,budget/release; ACK coordination sent; M/C24x24grid/basepositions and512footy0 accepted;optionalM/C-only sample context agreed.
 Study started04:29:08Z; minimum15min gate04:44:08Z; actual research/experiment required, elapsed time alone insufficient.
