@@ -8,9 +8,10 @@ import {root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
 import {installDesktopDensityPrototype} from './desktop-density-prototype.mjs';
 import {desktopDensity} from './desktop-density.mjs';
-const production=resolve(root,'work/v5/CXV/films/V7-F-focus-read-native-production'),out=resolve(process.env.CXV_DENSITY_PROBE_OUT??resolve(root,'work/v5/CXV/films/V7-F-desktop-density-prototype'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));
+const nativeMode=process.env.CXV_DENSITY_NATIVE==='1';
+const production=resolve(process.env.CXV_DENSITY_PRODUCTION??resolve(root,'work/v5/CXV/films/V7-F-focus-read-native-production')),out=resolve(process.env.CXV_DENSITY_PROBE_OUT??resolve(root,'work/v5/CXV/films/V7-F-desktop-density-prototype'));assert(production.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));
 const manifest=await readFile(resolve(production,'build.json')),built=JSON.parse(manifest),artifact=built.artifacts.find(a=>a.mode==='native');assert.equal(artifact.transformed,0);
-const controlPath=resolve(root,'work/v5/CXV/films/V7-F-density-roundtrip-matched/report.json'),controlBytes=await readFile(controlPath),control=JSON.parse(controlBytes);assert(control.pass);assert.equal(control.source,built.source);assert.equal(control.indexSha256,artifact.indexSha256);
+const controlPath=resolve(root,'work/v5/CXV/films/V7-F-density-roundtrip-matched/report.json'),controlBytes=await readFile(controlPath),control=JSON.parse(controlBytes);assert(control.pass);if(!nativeMode){assert.equal(control.source,built.source);assert.equal(control.indexSha256,artifact.indexSha256);}
 for(const f of artifact.files)assert.equal(hash(await readFile(resolve(artifact.dist,f.path))),f.sha256);
 await mkdir(out,{recursive:true});const snapshots=[];
 for(const name of ['probe-desktop-density-prototype.mjs','desktop-density-prototype.mjs','desktop-density.mjs','production-candidate-fixture.mjs']){const bytes=await readFile(resolve(root,'tools/v5vfx',name));await writeFile(resolve(out,name),bytes);snapshots.push({name,sha256:hash(bytes)});}
@@ -20,6 +21,8 @@ const {preview}=await import(require.resolve('vite')),server=await preview({root
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 const report={utc:new Date().toISOString(),source:built.source,runtimePatchSha256:built.runtimePatchSha256,indexSha256:artifact.indexSha256,url:judgeUrl,viewport:{width:1280,height:720},buildManifest:{path:resolve(production,'build.json'),sha256:hash(manifest)},artifactFilesVerified:artifact.files.length,snapshots,
  nativeControl:{path:controlPath,sha256:hash(controlBytes)},method:'Paused actual native boss fixture at fixed20.3s,normal/reduced,initialDPR1/2. A tool-only render/loop wrapper synchronizes native pixel ratio only when changed and dirties a paused scene. CDP density sequence at fixed1280x720CSS. No manual render after each change:existing RAF drives refresh. Same-CDP-session CSS capture preserves emulation. All16 full-frame RGB comparisons use unwrapped native API controls with identical buffer sizes and sequence;original origin equality failures remain recorded because unchanged native buffer recreation reproduces them exactly. Exact keyed geometry,stable-frame allocation and disposal checks. No performance claim or native adoption.',runs:[],captures:[],reviews:[],pass:false};
+report.mode=nativeMode?'native':'prototype';
+if(nativeMode)report.method=report.method.replace('A tool-only render/loop wrapper synchronizes native pixel ratio only when changed and dirties a paused scene.','Native source synchronizes density;the observer only counts setPixelRatio calls and does not replace render or loop.').replace('No performance claim or native adoption.','Untransformed local native build,not independent judge acceptance or an optimization claim.');
 const capture=async(page,cdp,name)=>{
  const before=await page.evaluate(name=>{globalThis.__cxvDensityPhase='capture:'+name;return{devicePixelRatio,resizes:globalThis.__cxvDensityPrototype?.resizes??[]};},name);
  const path=resolve(out,name+'.png');
@@ -38,7 +41,7 @@ try{
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:initialRatio,mobile:false});
   // BattleHud has its own RAF; let it consume the initial frozen scene anchors.
   await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
-  const initialGeometry=await geometry(page),native=await capture(page,cdp,name+'-native');await installDesktopDensityPrototype(page);
+  const initialGeometry=await geometry(page),native=await capture(page,cdp,name+'-native');await installDesktopDensityPrototype(page,{native:nativeMode});
   const expected=control.runs.find(r=>r.initial===initialRatio&&r.reduced===reduced);assert(expected?.rows.length===4);assert.equal(native.rgbSha256,expected.rows[0].screenshotRgbSha256);
   await page.evaluate(()=>{const s=window.__depthScene;s.raf=requestAnimationFrame(s.loop);});
   const rows=[];

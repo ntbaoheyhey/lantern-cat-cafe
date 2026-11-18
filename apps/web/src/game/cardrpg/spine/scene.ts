@@ -188,13 +188,24 @@ export class SpineScene {
   this.beforeFrame?.(now);
   const delta=this.last?Math.min(.1,(now-this.last)/1000):0;this.last=now;const view=this.view();
   if(document.hidden||view.suspended){this.stats.hiddenFrames++;this.raf=requestAnimationFrame(this.loop);return;}
+  // Display changes can alter density without a CSS resize, including while paused.
+  if(this.renderer.getPixelRatio()!==Math.min(devicePixelRatio||1,2))this.dirty=true;
   this.ensureActors(view);if(!view.paused&&this.ready)this.time+=delta*(view.playbackSpeed??1);
   if(!view.paused||this.dirty){this.render(view,delta);this.dirty=false;}
   this.raf=requestAnimationFrame(this.loop);
  };
+ private resizeViewport(width:number,height:number){
+  if(this.disposed)return;
+  const ratio=Math.min(devicePixelRatio||1,2),densityChanged=this.renderer.getPixelRatio()!==ratio;
+  const sizeChanged=width!==this.width||height!==this.height;
+  if(densityChanged)this.renderer.setPixelRatio(ratio);
+  if(sizeChanged){this.width=width;this.height=height;this.renderer.setSize(width,height);this.worldWidth=PAINT.worldHeight*width/height;}
+  if(densityChanged||sizeChanged)this.postFx.resize(width,height);
+ }
  render(view:SceneView,delta=0){
+  if(this.disposed)return;
   const width=Math.max(1,this.host.clientWidth),height=Math.max(1,this.host.clientHeight);
-  if(width!==this.width||height!==this.height){this.width=width;this.height=height;this.renderer.setSize(width,height);this.postFx.resize(width,height);this.worldWidth=PAINT.worldHeight*width/height;}
+  this.resizeViewport(width,height);
   const time=view.fixedTime??this.time,frame=view.frame,plan=frame?.plan??null;this.currentView=view;this.renderTime=time;
   const sequence=frame?sequenceAt(frame.plan,frame.elapsed,view.reducedMotion):null;
   this.effects.useLayered=!!view.formationC2&&view.layeredVfx!==false;
