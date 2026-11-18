@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-18T12:32:19.497700+00:00",
+  "inboxLines": [
+    392,
+    399,
+    401,
+    402
+  ],
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-STAGED-VIDEO-DELIVERY.md",
+      "sha256": "d85568b40ba740762adae8dd84e5ad241790a0ad752667ca2597f790945c20a4",
+      "bytes": 635
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/short-gop-trials/T-M5-STATUS.md",
+      "sha256": "d5fedb18f24a57960f67ecafe5b7eef6afd22d956efcdd325aa734b74781eb9d",
+      "bytes": 185
+    }
+  ],
+  "observations": [
+    "M4 now contains a Chinese MDN link;prior missing-ZH finding corrected.",
+    "Claims smoother MSE looping and significant native H264 seek overhead still lack specific section, measured result, or supplied trial comparison.",
+    "M5 directory still contains only status markdown;independent audit of supplied four CXI trials absent.",
+    "T-CXI-13 added/execution-log status is not a completed QA delivery."
+  ],
+  "decision": "REDO T-M4/T-M5;T-CXI-13 remains open.",
+  "openUsefulTasks": [
+    "T-CXI-13",
+    "T-M4",
+    "T-M5"
+  ],
+  "bytePolicy": "report-only"
+}
