@@ -1,0 +1,80 @@
+{
+  "utc": "2026-11-18T18:32:15.276099+00:00",
+  "study": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-label-identity-v8-20261118.md",
+  "classification": "Selected diagnosis of known heldout failure, not heldouts",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-label-r7/build.json",
+    "sha256": "16c9a4e4ae7c190ea490d71aa666a30680758087e9a07b592d565ceb8451ab3c"
+  },
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity"
+    }
+  ],
+  "arms": [
+    "original",
+    "prototype"
+  ],
+  "freshPages": 4,
+  "sampleMs": [
+    0,
+    175,
+    250,
+    350,
+    600,
+    1100,
+    1300,
+    2199,
+    "duration"
+  ],
+  "maxPNGs": 32,
+  "prototypeSha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+  "harnessSha256": "ce616977c7f987177983ade58f7f0d2eb7f5c8e1695759211cd09b30527c9624",
+  "toolHashes": {
+    "animation-target-observation.mjs": "5aec1ba003b31730da61973ed9969226015de1886edba88b9e5e683c711d6243",
+    "footer-dual-observation.mjs": "bde335e4ed4efb31a6cb4c5211273d4afd9162fb6e0b7899042df371e2ee42b2",
+    "footer-identity-stable-prototype.mjs": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+    "probe-footer-animation-r1.mjs": "ce616977c7f987177983ade58f7f0d2eb7f5c8e1695759211cd09b30527c9624",
+    "run-footer-animation-r1.py": "f5e72c83d9756ca8c3406ee47528600c48b48fb683b72b40f0d4548a9906f663",
+    "measure-footer-animation-r1.py": "7bf19ab90028cb9d932ab8c7b4ec982f0100106b4fb85d0fe22be4f325f6341b",
+    "media-production-fixture.mjs": "cc946d20c0082a183716c90f7f947810b93991501288a39fcdc2e70048805136",
+    "hud-meter-observation.mjs": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  },
+  "hudPortraitPause": "Same scoped two existing infinite footer animations as R1;pause at observed time,await ready,no blanket timer disabling.",
+  "hudMeterSettlement": {
+    "timeoutMs": 2500,
+    "stableFrames": 3,
+    "inlinePercentTolerance": 1e-06,
+    "widthToleranceCSSpx": 0.015625
+  },
+  "hypothesis": "At1100ms the new300ms animation is an actual CSSTransition of width on the Mochi named-panel rage child,with all pre-existing animation objects and properties unchanged by sync. Its actual bar may lag original by manual-sync time;measure that difference,do not repair clocks.",
+  "method": [
+    "Complete prior scene/info/panel fields preserved;dualmedia scene field includes both actual streams.",
+    "Add weak-map object IDs,target ancestry,CSSTransition transitionProperty,keyframes and computed meter widths. No effect/currentTime writes,cancellation,extra pauses or CSS changes.",
+    "Atomic structuredClone before/sync/after snapshots;report whole strict equality separately and retain every failure.",
+    "Initial/final exact repeat screen/canvas and state controls;max32PNGs,no images viewed before measurement."
+  ],
+  "interpretation": [
+    "If target hypothesis matches, accept attribution only;full strict gate remains FAIL.",
+    "Unchanged values do not prove matching visual transition clocks;report computed-width differences.",
+    "Any changed/removed original animation,unexpected addition or failure retained without exclusions.",
+    "No application/native lifecycle/fullpaint/fault or alltrajectory acceptance."
+  ],
+  "productionAcceptance": false
+}

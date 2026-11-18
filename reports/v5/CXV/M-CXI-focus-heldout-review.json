@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-18T18:28:52.052058+00:00",
+  "peerReport": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-footer-focus-heldouts-r1-review.json",
+    "sha256": "a41c362113e0fc72be4f26ccac74a915fe7585fcb33684f092a1a0543f9542a2"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-focus-heldouts-r1/report.json",
+    "sha256": "a9d527cb9f81d8aac10ed68d99b8d3c3263f17d68d99eda5764064ebddabb4ac"
+  },
+  "verifiedHashes": 261,
+  "focusComparisons": 18,
+  "focusExact": true,
+  "strictTransferPass": false,
+  "failures": [
+    {
+      "key": "normal-bitter-prototype",
+      "ms": 1100
+    }
+  ],
+  "addedAnimation": {
+    "target": "",
+    "playState": "running",
+    "currentTime": 0,
+    "timing": {
+      "delay": 0,
+      "direction": "normal",
+      "duration": 300,
+      "easing": "ease",
+      "endDelay": 0,
+      "fill": "backwards",
+      "iterationStart": 0,
+      "iterations": 1,
+      "activeDuration": 300,
+      "currentIteration": 0,
+      "endTime": 300,
+      "localTime": 0,
+      "progress": 0
+    }
+  },
+  "sourceInference": "Hypothesis only: hud-details.css:13 sets .b3-rage i transition width .3s ease;two original world/portrait instances can animate. Raw empty target class is insufficient identity proof;record target ancestry and transitionProperty before attributing.",
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "disposition": "Accept focus only; retain strict transition failure; fulltrajectory unchanged can measure bounds but cannot claim allgate pass.",
+  "sourceReference": "apps/web/src/game/cardrpg/battle-v3/hud-details.css:13"
+}
