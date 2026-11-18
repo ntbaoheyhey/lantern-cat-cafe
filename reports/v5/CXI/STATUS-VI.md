@@ -56,3 +56,5 @@ Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hàn
 2026-11-18T13:45:44.320467+00:00 — Phép đo GPU có kiểm soát đã qua: 8 đối chứng, 600 khung tham chiếu native, 24 khung đang chạy nhận dạng duy nhất; 653 tệp được băm lại. CXV tái dựng đúng 168 socket. Pha socket hiện chạy theo currentTime nên có thể lệch lớn trong lúc seek; đang chuẩn bị sửa theo khung đã giải mã. Chưa chứng nhận gameplay tự nhiên, hiệu năng, seam hay chất lượng alpha; media vẫn chưa bật.
 
 2026-11-18T13:59:40.271008+00:00 — Bản thử phaseR6 sửa thời điểm socket theo khung hình video đã giải mã. 3.247 kiểm thử web đạt; 24/24 mẫu GPU khớp chính xác với socket, kể cả khi seek; 600 khung tham chiếu kiểm tra độc lập. Đang kiểm tra vòng đời trình duyệt và hành động hợp lệ. Chưa đưa Mochi/Clover vào bản phát hành vì viền/halo/điểm nối vòng và nhãn vẫn chưa đạt. v5-m1.15 vẫn là bản xanh.
+
+2026-11-18T14:08:00.189344+00:00 — R7 đã cài,3.250web đạt;nhãn mới đang kiểm tra browser theo leaseCXV. Bản phát hành vẫnv5-m1.15;Mochi/Clover chưa đăng ký vì cổng art còn mở.
