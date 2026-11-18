@@ -1,0 +1,123 @@
+{
+  "preregisteredUTC": "2026-11-18T17:16:19.202725+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/report.json",
+    "sha256": "30156284c3577de5ef03de9d83090f59a02c3460fd4c72ce2d4bb40c5a263f1e"
+  },
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/mochi-controls-measurement.json",
+    "sha256": "e60b0d2efa2d6c6ab6918fa93c62e0c36bbabbcd9fea472ebf6a91ab9dcc9e00"
+  },
+  "hypothesis": "Compare original versus lower Mochi HP/name association during Mochi350ms and Panko125ms. Reject if displaced label reads as belonging to neighboring Clover, overlaps visible character detail, or loses clear owner connection. Existing numerical rejection remains regardless of appearance.",
+  "scope": "Qualitative inspection of four fresh untouched native screenshots only. No paint equality, full-trajectory, ordinary gameplay, matte or performance acceptance.",
+  "hashAudit": {
+    "files": 502,
+    "priorHashCount": 3079,
+    "allSourcesAndPreviewsNewToReceipts": true
+  },
+  "images": [
+    {
+      "case": "baseline-opacity-normal-mochi-1-350",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/baseline-opacity-normal-mochi-1-350/untouched-2.png",
+        "sha256": "74d3a0256e5113f860d289a0d9607c335f396f4bd643bd2153ec45bacacc6e03",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "utc": "2026-11-18T17:11:55.041Z"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/association-review-r1/1-baseline-opacity-normal-mochi-1-350.png",
+      "sha256": "8d83d0b389a5e8dd9859116ce26e0d545e3a8fed52adbcd7f7affab79b6c5249",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "meanRGB": 116.57815212673611,
+      "stdRGB": 53.03160837701445,
+      "bytes": 886602,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T17:17:26.479689+00:00",
+      "observation": "Original Mochi350ms: health/status remains above Mochi head and reads as its own at this frame. No complete-trajectory or paint-clearance claim."
+    },
+    {
+      "case": "candidate-opacity-normal-mochi-1-350",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/candidate-opacity-normal-mochi-1-350/untouched-2.png",
+        "sha256": "77d48c6dc34b2c00c1383eeb5ed0546ee0c93eb7ea5bc983c0f2ff177632631d",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "utc": "2026-11-18T17:11:19.001Z"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/association-review-r1/2-candidate-opacity-normal-mochi-1-350.png",
+      "sha256": "b1e70d28e9371d2050f8a6188c235859f9d03e512a4970bed941c5cb3905339b",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "meanRGB": 116.55899612991898,
+      "stdRGB": 53.03107715416623,
+      "bytes": 886189,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T17:17:26.479689+00:00",
+      "observation": "Lower candidate Mochi350ms: two closely stacked health/status bars sit over Clover; Mochi ownership is ambiguous. Reject qualitative association."
+    },
+    {
+      "case": "baseline-opacity-normal-panko-1-125",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/baseline-opacity-normal-panko-1-125/untouched-2.png",
+        "sha256": "5ad05dba2be1e2038052164806662abd3b2dff47b460ea5d68f699fda0b6ace6",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "utc": "2026-11-18T17:12:02.440Z"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/association-review-r1/3-baseline-opacity-normal-panko-1-125.png",
+      "sha256": "31e69f835c7319ca18973a46d94a5c390f11f0b7f032a14d715ede6a5b098c8b",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "meanRGB": 114.11349487304688,
+      "stdRGB": 50.20190130321893,
+      "bytes": 876074,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T17:17:26.479689+00:00",
+      "observation": "Original Panko125ms: Mochi health/status sits above its head, separate from Clover; this one frame does not establish clearance through Panko approach."
+    },
+    {
+      "case": "candidate-opacity-normal-panko-1-125",
+      "source": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/candidate-opacity-normal-panko-1-125/untouched-2.png",
+        "sha256": "d5d4175df0a35277258b9cfe077338ee21cc26d4cd03d4656af256b28226f3bf",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "utc": "2026-11-18T17:11:25.567Z"
+      },
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/association-review-r1/4-candidate-opacity-normal-panko-1-125.png",
+      "sha256": "26af92108493152f84f97f22df1712a2aff28416fe7679142ad3ab25bbd2a86c",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "meanRGB": 114.08007247359664,
+      "stdRGB": 50.19710597010522,
+      "bytes": 875465,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T17:17:26.479689+00:00",
+      "observation": "Lower candidate Panko125ms: Mochi health/status sits near Clover head above Clover bar, suggesting a double bar for Clover. Reject qualitative association."
+    }
+  ],
+  "imagesViewed": 4,
+  "productionAcceptance": false,
+  "reviewedUTC": "2026-11-18T17:17:26.479689+00:00",
+  "decision": "REJECT lower-label candidate on qualitative owner association in both inspected pairs. Original labels look associated in these two isolated frames only. Existing geometric and strict paint-control rejection remains. No production acceptance."
+}
