@@ -1,14 +1,18 @@
-# Avalanche Hackathon Winners Research
+# Avalanche Hackathon Winning Projects
 
-| Project Name | Primary URL/Repository | Primary Award/Project URL | On-Chain Proof | Video/README Observation |
-| :--- | :--- | :--- | :--- | :--- |
-| **Musing** | [musing.io](https://musing.io) | Moralis 1st Prize | Decentralized Q&A | Q&A Mining Protocol |
-| **Snowflakes.network** | [snowflakes.network](https://snowflakes.network) | Moralis 2nd Prize | Web3 Notifications | User-controlled Alerts |
-| **Astrocave Academy** | [astrocave.com](https://astrocave.com) | Moralis 3rd Prize | Gamified DeFi Education | DeFi Portfolio Tracker |
-| **Prisma** | [prisma.florianwinter.com](https://prisma.florianwinter.com) | Top Project | EVM Multi-tool | Integrated Dashboards |
-| **Float Protocol** | [floatprotocol.com](https://floatprotocol.com) | Summit Hackathon Winner | Cross-chain Liquidity | Unified Liquidity Pool |
-| **anyDAO** | [anydao.io](https://anydao.io) | Cross-chain Governance Winner | Cross-chain Voting | Decentralized Governance |
-| **Octo Bridge** | [octobridge.io](https://octobridge.io) | Cross-chain Utility Winner | NFT/Game Utility | Asset Transfer Layer |
-| **NFTPawn** | [nftpawn.com](https://nftpawn.com) | Avalanche Asia Hackathon | NFT Liquidity | NFT-backed Loans |
-| **CryptoBeatsVR** | [cryptobeatsvr.com](https://cryptobeatsvr.com) | GameFi/VR Winner | Immersive GameFi | Blockchain Economies |
-| **Dante Network** | [dante.network](https://dante.network) | Cross-chain Middleware Winner | Cross-chain Infrastructure | Middleware/Interoperability |
+This report compiles a list of 10 winning projects from various Avalanche hackathons.
+
+| Project Name | Source URL | On-chain Proof Features | Video Presentation Patterns |
+| :--- | :--- | :--- | :--- |
+| **Meridian** | [LinkedIn] | Structured credit vaults | Unknown |
+| **Forg3t Protocol** | [LinkedIn] | AI unlearning/data removal | Unknown |
+| **POS25** | [SotaTek] | Web3 Ecosystem | Unknown |
+| **Avalanche Igloo** | [Devpost] | NFT creation | Unknown |
+| **Clean Labs** | [Devpost] | Unknown | Unknown |
+| **Imit8** | [LinkedIn] | dApp | Unknown |
+| **Avax Blinks** | [DoraHacks] | Shareable links for payments | Unknown |
+| **Ava the DeFAI** | [DoraHacks] | Portfolio managing agents | Unknown |
+| **Moduflow** | [DoraHacks] | Intent-centric (ERC-7513) | Unknown |
+| **Swiish.cash** | [DoraHacks] | Stablecoin transfers | Unknown |
+
+*Note: Many video presentation patterns and specific on-chain technical details are unknown without accessing individual project repositories or demo videos directly.*
