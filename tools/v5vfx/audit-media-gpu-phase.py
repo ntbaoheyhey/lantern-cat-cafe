@@ -5,6 +5,7 @@ partial reference window is never promoted to an unambiguous whole-cycle frame.
 """
 from pathlib import Path
 import datetime
+import gzip
 import hashlib
 import importlib.util
 import json
@@ -31,19 +32,27 @@ def check_record(row, verified):
     assert row['gl']['restored'] and all(row['gl']['restored'].values())
     assert row['textureVersion'] == row['uploadedVersion'] and row['materialUsesVideo']
     assert row['state']['ready'] and not row['state'].get('failure')
-    for path_key, hash_key in [('path', 'sha256'), ('canvasPath', 'canvasSha256'), ('screenPath', 'screenBeforeSha256')]:
+    rgba = None
+    if row.get('path'):
+        path = Path(row['path']);stored = path.read_bytes()
+        assert row.get('encoding', 'raw') in ('raw', 'gzip')
+        rgba = gzip.decompress(stored) if row.get('encoding') == 'gzip' else stored
+        digest = hashlib.sha256(rgba).hexdigest()
+        assert digest == row['sha256']
+        verified[str(path)] = dict(storedSha256=hashlib.sha256(stored).hexdigest(), rgbaSha256=digest)
+    for path_key, hash_key in [('canvasPath', 'canvasSha256'), ('screenPath', 'screenBeforeSha256')]:
         if row.get(path_key):
             path = Path(row[path_key]);digest = sha(path)
             assert digest == row[hash_key], str(path)
             verified[str(path)] = digest
     width, height = row['videoSize']
     assert row['bytes'] == width * height * 4
-    if row.get('path'):
-        assert Path(row['path']).stat().st_size == row['bytes']
+    if rgba is not None:
+        assert len(rgba) == row['bytes']
     if row.get('screenBeforeSha256'):
         assert row['screenBeforeSha256'] == row['screenAfterSha256']
     if row.get('canvasPath'):
-        gpu = np.fromfile(row['path'], dtype=np.uint8).reshape(height, width, 4).astype(np.int16)
+        gpu = np.frombuffer(rgba, dtype=np.uint8).reshape(height, width, 4).astype(np.int16)
         canvas = np.fromfile(row['canvasPath'], dtype=np.uint8).reshape(height, width, 4).astype(np.int16)
         measured = dict(direct=float(np.abs(gpu[:, :, :3] - canvas[:, :, :3]).mean()),
                         flipped=float(np.abs(gpu[::-1, :, :3] - canvas[:, :, :3]).mean()))
@@ -135,8 +144,17 @@ def main():
     receipt['arithmeticValid'] = (len(controls) == 8 and all(c['exact'] for c in controls) and len(details) == 24 and
                                   all(s['samplerReproduced'] and s['maxWorldError'] <= 1e-6 and s['maxParentError'] <= 1e-6 for s in receipt['samples']))
     receipt['allFramesGloballyIdentified'] = len(details) == 24 and all(d['globallyIdentified'] for d in details)
+    receipt['controlledDrawAttributionValid'] = (receipt['arithmeticValid'] and receipt['allFramesGloballyIdentified'] and raw['pass'] and
+                                                not any(d['actionActive'] for d in details))
     receipt['idlePhaseAttributionAccepted'] = (receipt['arithmeticValid'] and receipt['allFramesGloballyIdentified'] and raw['pass'] and
                                               not any(d['seeking'] or d['actionActive'] for d in details))
+    receipt['subsetMaxima'] = {}
+    for subset, include in [('settled', lambda d: not d['seeking']), ('seeking', lambda d: d['seeking'])]:
+        receipt['subsetMaxima'][subset] = {}
+        for cat in ('mochi', 'clover'):
+            rows = [d for d in details if d['cat'] == cat and include(d) and len(d['nativeMatches']) == 1]
+            receipt['subsetMaxima'][subset][cat] = dict(count=len(rows), actionActive=sum(d['actionActive'] for d in rows),
+                cssPhaseMax=max((s['cssPhaseDelta'] for d in rows for s in d['audit']['sockets'].values()), default=None))
     receipt['limits'] = ['Partial-window unique native hashes are conditional, not whole-cycle frame identities.',
                          'Independent arithmetic does not certify source anchors, art, loop seam or performance.',
                          'GPU state/canvas controls are checked against the recorded instrumentation; no duplicate browser run.']
