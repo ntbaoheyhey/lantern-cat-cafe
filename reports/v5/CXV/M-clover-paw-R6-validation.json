@@ -1,0 +1,425 @@
+{
+  "utc": "2026-11-18T12:04:52.474429+00:00",
+  "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+  "sourceSha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e",
+  "model": {
+    "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-presentation-R4-model.json",
+    "reportSha256": "f42774dc95b3a880988d9b4aa4e906efafdda62d9d2c6c72ac17603252b1d7d4",
+    "raw": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/model-output.json",
+      "sha256": "44041ce9ec39403aff2185af758ef103c27cb7791a4a061af091585aa10c4f85"
+    },
+    "field": "visiblePawCenterSourcePx",
+    "fitProhibited": true
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/preregistration.json",
+    "sha256": "d6413afcf57f9b591483032847f1ce2f0cb3715a3c9cfddcbf0c2899176c56c1"
+  },
+  "observations": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/frozen-observations.json",
+    "sha256": "90f05a9f9538053779ca52450aecfaecf701fc50b3fc93cbdbd007bfdf7edb56"
+  },
+  "toolSha256": "4b2d3a360aabc076f9b252ee41349ffb3a743ae671d5686aed7ae7ee125ef2ae",
+  "observationsFrozenBeforePredictions": true,
+  "fitPerformed": false,
+  "freshHeldoutCount": 24,
+  "passCount": 24,
+  "maxAbsErrorSourcePx": [
+    1.7908433702697835,
+    1.949267518664783
+  ],
+  "passSparseControls": true,
+  "rows": [
+    {
+      "frame": 1,
+      "observed": [
+        116.5,
+        364.0
+      ],
+      "predicted": [
+        117.30837784932605,
+        363.1748946427822
+      ],
+      "errorSourcePx": [
+        0.8083778493260496,
+        -0.825105357217808
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 12,
+      "observed": [
+        115.0,
+        361.0
+      ],
+      "predicted": [
+        115.53999814123212,
+        359.11310999114016
+      ],
+      "errorSourcePx": [
+        0.5399981412321182,
+        -1.8868900088598366
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 25,
+      "observed": [
+        111.5,
+        355.5
+      ],
+      "predicted": [
+        111.19515679345005,
+        356.275291101085
+      ],
+      "errorSourcePx": [
+        -0.3048432065499469,
+        0.7752911010849743
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 39,
+      "observed": [
+        108.0,
+        346.5
+      ],
+      "predicted": [
+        108.44639756129021,
+        346.7935961856046
+      ],
+      "errorSourcePx": [
+        0.4463975612902118,
+        0.2935961856045992
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 52,
+      "observed": [
+        106.5,
+        343.0
+      ],
+      "predicted": [
+        106.57919765370006,
+        341.6369188836868
+      ],
+      "errorSourcePx": [
+        0.0791976537000636,
+        -1.3630811163131966
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 68,
+      "observed": [
+        107.0,
+        343.5
+      ],
+      "predicted": [
+        106.5029523289818,
+        343.03154890707816
+      ],
+      "errorSourcePx": [
+        -0.49704767101819414,
+        -0.46845109292183906
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 83,
+      "observed": [
+        113.5,
+        356.5
+      ],
+      "predicted": [
+        114.92235685115263,
+        358.41175419826345
+      ],
+      "errorSourcePx": [
+        1.422356851152628,
+        1.911754198263452
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 96,
+      "observed": [
+        138.5,
+        383.0
+      ],
+      "predicted": [
+        139.89157750354335,
+        383.5475008631759
+      ],
+      "errorSourcePx": [
+        1.3915775035433455,
+        0.5475008631759124
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 109,
+      "observed": [
+        148.5,
+        385.0
+      ],
+      "predicted": [
+        147.94282549938546,
+        384.99378282648905
+      ],
+      "errorSourcePx": [
+        -0.5571745006145363,
+        -0.006217173510947305
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 123,
+      "observed": [
+        139.0,
+        378.0
+      ],
+      "predicted": [
+        138.7560458574637,
+        378.14601140857746
+      ],
+      "errorSourcePx": [
+        -0.2439541425362961,
+        0.14601140857746486
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 136,
+      "observed": [
+        113.0,
+        360.0
+      ],
+      "predicted": [
+        112.77366735972244,
+        359.9971772167148
+      ],
+      "errorSourcePx": [
+        -0.22633264027756184,
+        -0.002822783285182595
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 148,
+      "observed": [
+        108.0,
+        350.5
+      ],
+      "predicted": [
+        107.93042068454865,
+        351.14273099681384
+      ],
+      "errorSourcePx": [
+        -0.06957931545134954,
+        0.6427309968138388
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 163,
+      "observed": [
+        109.5,
+        350.0
+      ],
+      "predicted": [
+        108.64815147164394,
+        350.1541824459791
+      ],
+      "errorSourcePx": [
+        -0.851848528356058,
+        0.1541824459790746
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 175,
+      "observed": [
+        126.5,
+        372.0
+      ],
+      "predicted": [
+        124.70915662973022,
+        370.0507324813352
+      ],
+      "errorSourcePx": [
+        -1.7908433702697835,
+        -1.949267518664783
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 188,
+      "observed": [
+        147.0,
+        389.5
+      ],
+      "predicted": [
+        145.2458644438723,
+        387.8200131438246
+      ],
+      "errorSourcePx": [
+        -1.754135556127693,
+        -1.6799868561753897
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 199,
+      "observed": [
+        148.0,
+        388.5
+      ],
+      "predicted": [
+        147.84547300941313,
+        388.84010640884975
+      ],
+      "errorSourcePx": [
+        -0.15452699058687358,
+        0.3401064088497492
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 212,
+      "observed": [
+        139.5,
+        382.5
+      ],
+      "predicted": [
+        140.99972263809738,
+        382.28309462018444
+      ],
+      "errorSourcePx": [
+        1.4997226380973814,
+        -0.21690537981555735
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 223,
+      "observed": [
+        122.0,
+        365.0
+      ],
+      "predicted": [
+        121.69461029796787,
+        365.5242947787854
+      ],
+      "errorSourcePx": [
+        -0.3053897020321301,
+        0.5242947787854177
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 236,
+      "observed": [
+        109.5,
+        349.0
+      ],
+      "predicted": [
+        109.28945399468411,
+        348.7132381154327
+      ],
+      "errorSourcePx": [
+        -0.21054600531589074,
+        -0.2867618845672837
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 248,
+      "observed": [
+        108.0,
+        347.5
+      ],
+      "predicted": [
+        107.9411012863297,
+        347.04188291571205
+      ],
+      "errorSourcePx": [
+        -0.05889871367030253,
+        -0.45811708428794873
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 261,
+      "observed": [
+        108.0,
+        350.5
+      ],
+      "predicted": [
+        107.52290054771211,
+        350.1108267956618
+      ],
+      "errorSourcePx": [
+        -0.47709945228788797,
+        -0.38917320433819214
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 273,
+      "observed": [
+        110.0,
+        352.0
+      ],
+      "predicted": [
+        109.72813473472362,
+        351.2233546164477
+      ],
+      "errorSourcePx": [
+        -0.2718652652763751,
+        -0.7766453835523066
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 286,
+      "observed": [
+        113.5,
+        360.0
+      ],
+      "predicted": [
+        113.84773607652477,
+        359.5148397871273
+      ],
+      "errorSourcePx": [
+        0.3477360765247681,
+        -0.4851602128726995
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 298,
+      "observed": [
+        117.5,
+        364.5
+      ],
+      "predicted": [
+        117.4869900673255,
+        363.9401169598768
+      ],
+      "errorSourcePx": [
+        -0.013009932674506786,
+        -0.5598830401232249
+      ],
+      "passBound": true
+    }
+  ],
+  "runtimeExported": false,
+  "limits": [
+    "Standalone validation of unchanged paw channel;combined R4 rejection remains unchanged.",
+    "Manual single-observer approximate visible geometry;not independent annotation or continuous correspondence.",
+    "Sparse source acceptance only;adapter,native decoded source alignment,independent review and release gates separate."
+  ]
+}

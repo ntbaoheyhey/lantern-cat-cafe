@@ -1,0 +1,597 @@
+{
+  "utc": "2026-11-18T12:03:40.071618+00:00",
+  "preregistration": {
+    "utc": "2026-11-18T12:03:40.071618+00:00",
+    "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+    "sourceSha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e",
+    "frames": [
+      1,
+      12,
+      25,
+      39,
+      52,
+      68,
+      83,
+      96,
+      109,
+      123,
+      136,
+      148,
+      163,
+      175,
+      188,
+      199,
+      212,
+      223,
+      236,
+      248,
+      261,
+      273,
+      286,
+      298
+    ],
+    "regions": [
+      [
+        "visible-paw",
+        [
+          55,
+          305,
+          160,
+          150
+        ],
+        1.6
+      ]
+    ],
+    "definition": "Midpoint of axis-aligned visible paw+digits bounding rectangle clipped at the visible sleeve opening;include all visible exposed appendage between sleeve and digits. Occluding cloth clips the visible extent;never infer hidden wrist/palm anatomy.",
+    "observationBoundSourcePxPerAxis": 6,
+    "excludedReviewedFrames": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      9,
+      10,
+      14,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      35,
+      37,
+      42,
+      46,
+      47,
+      50,
+      51,
+      55,
+      56,
+      60,
+      65,
+      67,
+      72,
+      75,
+      80,
+      81,
+      84,
+      85,
+      89,
+      90,
+      92,
+      97,
+      103,
+      105,
+      106,
+      110,
+      112,
+      117,
+      120,
+      121,
+      122,
+      125,
+      130,
+      131,
+      135,
+      140,
+      142,
+      145,
+      147,
+      150,
+      155,
+      156,
+      159,
+      160,
+      161,
+      162,
+      164,
+      165,
+      167,
+      168,
+      169,
+      171,
+      172,
+      173,
+      174,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      185,
+      187,
+      190,
+      192,
+      196,
+      197,
+      198,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      214,
+      215,
+      217,
+      222,
+      225,
+      230,
+      231,
+      234,
+      235,
+      239,
+      240,
+      242,
+      247,
+      253,
+      255,
+      256,
+      260,
+      262,
+      267,
+      271,
+      272,
+      275,
+      280,
+      281,
+      285,
+      290,
+      292,
+      297,
+      299
+    ],
+    "fixedModel": {
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-presentation-R4-model.json",
+      "reportSha256": "f42774dc95b3a880988d9b4aa4e906efafdda62d9d2c6c72ac17603252b1d7d4",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/model-output.json",
+        "sha256": "44041ce9ec39403aff2185af758ef103c27cb7791a4a061af091585aa10c4f85"
+      },
+      "field": "visiblePawCenterSourcePx",
+      "fitProhibited": true
+    },
+    "gate": {
+      "all24ObservableRequired": true,
+      "all24WithinBoundPerAxisSourcePx": 6,
+      "allSourceModelHashesUnchanged": true
+    },
+    "scope": "New standalone paw validation of existing immutable R4 curve,not export of failed combined R4 model. No changed training,algorithm,bounds or source data.",
+    "rules": [
+      "All24rectangles frozen before evaluating fixedmodel at their phases.",
+      "One view of four fresh source-only sheets;never reopen earlier images.",
+      "Unknown bounds remain null and fail coverage;no hidden wrist or cloth-covered anatomy.",
+      "Passing validates only these sparse presentation observations;independent/native/continuous sourceproof remain separate.",
+      "R4combined failure and R5head remain unchanged."
+    ]
+  },
+  "preregistrationSha256": "d6413afcf57f9b591483032847f1ce2f0cb3715a3c9cfddcbf0c2899176c56c1",
+  "plots": [
+    {
+      "name": "visible-paw",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/visible-paw-source-observation-1.jpg",
+      "sha256": "b692ac81da497e52339a454838bb09463c7e5382ee9f21e03e4b418eb24b3036",
+      "dimensions": [
+        768,
+        980
+      ],
+      "bytes": 148127,
+      "cells": [
+        {
+          "frame": 1,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            64
+          ]
+        },
+        {
+          "frame": 12,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            64
+          ]
+        },
+        {
+          "frame": 25,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            376
+          ]
+        },
+        {
+          "frame": 39,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            376
+          ]
+        },
+        {
+          "frame": 52,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            688
+          ]
+        },
+        {
+          "frame": 68,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            688
+          ]
+        }
+      ],
+      "views": 0
+    },
+    {
+      "name": "visible-paw",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/visible-paw-source-observation-2.jpg",
+      "sha256": "0f61e70c2ceb5374622d3c2723e590c396f0747cc0bb9dd9a3e66ff4fc8e5fa1",
+      "dimensions": [
+        768,
+        980
+      ],
+      "bytes": 137597,
+      "cells": [
+        {
+          "frame": 83,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            64
+          ]
+        },
+        {
+          "frame": 96,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            64
+          ]
+        },
+        {
+          "frame": 109,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            376
+          ]
+        },
+        {
+          "frame": 123,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            376
+          ]
+        },
+        {
+          "frame": 136,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            688
+          ]
+        },
+        {
+          "frame": 148,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            688
+          ]
+        }
+      ],
+      "views": 0
+    },
+    {
+      "name": "visible-paw",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/visible-paw-source-observation-3.jpg",
+      "sha256": "1f6981cf748d54836b7ab99ec704d0353e42761a398e24b322afedcfbd034eb6",
+      "dimensions": [
+        768,
+        980
+      ],
+      "bytes": 137111,
+      "cells": [
+        {
+          "frame": 163,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            64
+          ]
+        },
+        {
+          "frame": 175,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            64
+          ]
+        },
+        {
+          "frame": 188,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            376
+          ]
+        },
+        {
+          "frame": 199,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            376
+          ]
+        },
+        {
+          "frame": 212,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            688
+          ]
+        },
+        {
+          "frame": 223,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            688
+          ]
+        }
+      ],
+      "views": 0
+    },
+    {
+      "name": "visible-paw",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-paw-validation-R6/visible-paw-source-observation-4.jpg",
+      "sha256": "dcccefc748a15f920d58a3d8ee051b6936418df5e621217a806175d048f896b7",
+      "dimensions": [
+        768,
+        980
+      ],
+      "bytes": 146804,
+      "cells": [
+        {
+          "frame": 236,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            64
+          ]
+        },
+        {
+          "frame": 248,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            64
+          ]
+        },
+        {
+          "frame": 261,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            376
+          ]
+        },
+        {
+          "frame": 273,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            376
+          ]
+        },
+        {
+          "frame": 286,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            46,
+            688
+          ]
+        },
+        {
+          "frame": 298,
+          "crop": [
+            55,
+            305,
+            160,
+            150
+          ],
+          "scale": 1.6,
+          "origin": [
+            430,
+            688
+          ]
+        }
+      ],
+      "views": 0
+    }
+  ]
+}
