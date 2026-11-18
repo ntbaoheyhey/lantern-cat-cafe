@@ -31,7 +31,7 @@ for case in raw['cases']:
         maxFaceOverlapArea=max(r['faceOverlapArea'] for r in rows),
         spoutInsideRows=sum(r['spoutInside'] for r in rows),
         lastObservedPresentMs=max((r['wallMs'] for r in present), default=None),
-        firstObservedAbsentMs=min((r['wallMs'] for r in absent if r['target'] >= 850), default=None),
+        firstObservedAbsentMs=min((r['wallMs'] for r in absent if r['wallMs'] > max((v['wallMs'] for v in present), default=-1)), default=None),
         terminalIntroAbsent=rows[-1]['intro'] is None,
         sampledAnimationNames=sorted(set(r['intro']['animationName'] for r in present))))
 panels = []
