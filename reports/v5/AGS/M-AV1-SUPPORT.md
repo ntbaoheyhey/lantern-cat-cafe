@@ -1,13 +1,14 @@
-# AV1 Four-Plane Support Study (Draft)
+# AV1 Four-Plane Support Study (Final)
 
 ## 1. Capabilities
-- Browser: Chromium 156.0.8078.4 / WebKit 27.2
-- AV1 MP4 Support: True (Verified at 624x520/30fps).
-- H264 Fallback: Required for older Mac architectures.
+- Browser: Chromium 156.0.8078.4 / WebKit 27.2 (on this Mac).
+- AV1 MP4 Support: True (624x520/30fps).
+- H264 Fallback: Required.
 
-## 2. Cost/Support Table
+## 2. Evidence
 | Field | Evidence |
 | :--- | :--- |
 | AV1 Support | Available |
 | H264 Fallback | Required |
-| Decoding Proof | Unavailable |
+| Attribution | [CXI-four-plane-av1](file:///Users/bao/taskbar-hero-mailbox/LEARN/CXI-four-plane-av1-20261118.md) |
+| Decode Proof | Unavailable |
