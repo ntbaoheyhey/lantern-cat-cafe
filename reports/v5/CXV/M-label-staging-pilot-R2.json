@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-18T15:44:00.194585+00:00",
+  "decision": "SCOPED lowerMochi numeric/oneview PASS;fullscene fullpaint FAIL",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "capture": {
+    "report.json": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/report.json",
+      "sha256": "bb8eb0a7842b6f685869c9f6e521627144e2ab14df07a3058f7ce5179ea4b7ee"
+    },
+    "analysis.json": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/analysis.json",
+      "sha256": "ef0830074502a78e4c2213ff7de054ef071998a98c08c7ac8fcfd275205f6c0a"
+    },
+    "layout-analysis.json": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/layout-analysis.json",
+      "sha256": "223cd1ccd769382cc5f9412247638dc0b138e516d3082061a736bb0326f99535"
+    },
+    "paint-margin.json": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/paint-margin.json",
+      "sha256": "0c9c42805502478192ca669a1c49af0a17c058200cbbd862aff1a245144bd6f4"
+    },
+    "review-selection.json": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/review-selection.json",
+      "sha256": "642ad7506fedfa6f0c70d65d492ab24b58e2f5b0aaf236999313db6e12aa7467"
+    }
+  },
+  "actions": 1,
+  "rows": 57,
+  "paintCases": 10,
+  "exactControls": true,
+  "rulesEqual": true,
+  "layoutSamples": 67,
+  "maxReplayError": 0.015086915979054538,
+  "otherLabelsUnchanged": true,
+  "maxDrift": 0.018343695482061703,
+  "paintInsideExactRectsClear": true,
+  "twoPixelBodyMarginClear": false,
+  "marginFailures": "Clover label against its own body:16..28pixels atthreshold0,2pxdilation;Mochiclear.",
+  "fullPaint": "CXI independently localized drop-shadow beyond4px;5pxcontains current10cases. Actual Cloverpaint>4/body>4 intersects1pixel775ms/3pixels800ms. Retain failure.",
+  "imagesViewed": 1,
+  "productionAcceptance": false
+}
