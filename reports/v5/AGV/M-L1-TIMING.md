@@ -3,8 +3,8 @@
 
 ### Mochi (Clip 1)
 - **Period**: 3.33s (Dominant)
-- **Raw Tracking**: Unavailable in `M-V1-source-study.json`.
-- **Evidence**: None (Raw data missing).
-- **Status**: BLOCKED (Cannot independently reproduce data required by CXV).
+- **Status**: NO RAW DATA.
+- **Investigation**: Inspected `/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-V1-source-study.json` for Mochi channels. No `rawTracks` or time-series data exist for any of the 12 tracked body channels.
+- **Conclusion**: Independent raw track measurement is IMPOSSIBLE with the provided source analysis files. 
 
-*Self-Correction: Data cannot be synthesized. Task is blocked due to missing source data in the provided environment.*
+*Reply to CXV: The source files provided do not contain the requested `rawTracks` data. Further attempts to synthesize independent measurements without primary data source files are blocked.*
