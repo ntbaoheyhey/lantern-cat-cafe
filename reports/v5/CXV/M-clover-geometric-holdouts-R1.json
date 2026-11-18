@@ -1,0 +1,258 @@
+{
+  "utc": "2026-11-18T10:14:46.800167+00:00",
+  "state": "HOLDOUTS FROZEN; training/fitting unstarted",
+  "annotationsPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/holdout-annotations.json",
+  "annotationsSha256": "d0027a6605308aed890775b2487a2ea0046a1dde6ed262f7787671bae11be0e9",
+  "annotations": {
+    "utc": "2026-11-18T10:11:22.984573+00:00",
+    "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+    "purpose": "Frozen geometric presentation-anchor holdouts, observed before any fitted curve; not recovered material points or bones",
+    "definition": {
+      "face": "Visual center of rounded facial oval from forehead to chin, excluding ears and collar",
+      "palm": "Visible palm core between wrist, thumb base and finger roots; exclude finger tips, cuff and any overlapping tail"
+    },
+    "holdouts": {
+      "face": [
+        {
+          "frame": 0,
+          "xy": [
+            267,
+            151
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 37,
+          "xy": [
+            280,
+            149
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 75,
+          "xy": [
+            273,
+            155
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 112,
+          "xy": [
+            270,
+            135
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 150,
+          "xy": [
+            283,
+            149
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 187,
+          "xy": [
+            281,
+            149
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 225,
+          "xy": [
+            278,
+            164
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 262,
+          "xy": [
+            266,
+            157
+          ],
+          "uncertaintyPxPerAxis": 8
+        },
+        {
+          "frame": 299,
+          "xy": [
+            270,
+            154
+          ],
+          "uncertaintyPxPerAxis": 8
+        }
+      ],
+      "palm": [
+        {
+          "frame": 0,
+          "xy": [
+            111,
+            358
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 37,
+          "xy": [
+            100,
+            344
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 75,
+          "xy": [
+            104,
+            343
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 112,
+          "xy": [
+            144,
+            391
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 150,
+          "xy": [
+            104,
+            352
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 187,
+          "xy": [
+            143,
+            393
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 225,
+          "xy": [
+            110,
+            357
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 262,
+          "xy": [
+            106,
+            343
+          ],
+          "uncertaintyPxPerAxis": 6
+        },
+        {
+          "frame": 299,
+          "xy": [
+            112,
+            358
+          ],
+          "uncertaintyPxPerAxis": 6
+        }
+      ]
+    },
+    "trainingFrames": [
+      9,
+      28,
+      46,
+      65,
+      84,
+      103,
+      121,
+      140,
+      159,
+      178,
+      196,
+      215,
+      234,
+      253,
+      271,
+      290
+    ],
+    "predeclaredModel": {
+      "kind": "Periodic least-squares Fourier curve from manual training centers only",
+      "periodFrames": 300,
+      "maxHarmonic": 6,
+      "parametersPerAxis": 13,
+      "trainingSamples": 16,
+      "noUseOfHoldoutValuesDuringFit": true,
+      "gate": "Every fitted training and heldout coordinate must lie within its predeclared per-axis observation bounds; any failure remains rejected. Scene/cast and alpha/occlusion acceptance remain separate."
+    },
+    "limits": "These bounds reflect source-view resolution and ambiguous geometric-center definition; they are not statistical confidence or material correspondence. Sparse passing controls cannot prove the full trajectory. Old rigid/TPS and nose appearance failures remain."
+  },
+  "plots": [
+    {
+      "utc": "2026-11-18T10:07:34.835693+00:00",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/face-controls.png",
+      "sha256": "26750c84e51c091d0b83bcae024ebd41e8f156735733342b0aba9302ec035ecf",
+      "dimensions": [
+        780,
+        685
+      ],
+      "bytes": 704723,
+      "frames": [
+        0,
+        37,
+        75,
+        112,
+        150,
+        187,
+        225,
+        262,
+        299
+      ],
+      "crop": [
+        100,
+        45,
+        330,
+        240
+      ],
+      "scale": 0.75,
+      "views": 1,
+      "scope": "Independent source observations of geometric presentation-anchor semantics; no bone or material-point claim",
+      "reviewedUTC": "2026-11-18T10:11:22.984573+00:00"
+    },
+    {
+      "utc": "2026-11-18T10:07:34.852326+00:00",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/palm-controls.png",
+      "sha256": "a9ecad0a896cfea79cfa7d91857ad02a42c32096a50d21b79d46754e2cf2ee58",
+      "dimensions": [
+        780,
+        775
+      ],
+      "bytes": 640295,
+      "frames": [
+        0,
+        37,
+        75,
+        112,
+        150,
+        187,
+        225,
+        262,
+        299
+      ],
+      "crop": [
+        55,
+        315,
+        155,
+        140
+      ],
+      "scale": 1.5,
+      "views": 1,
+      "scope": "Independent source observations of geometric presentation-anchor semantics; no bone or material-point claim",
+      "reviewedUTC": "2026-11-18T10:11:22.984573+00:00"
+    }
+  ],
+  "noRuntimeChange": true
+}
