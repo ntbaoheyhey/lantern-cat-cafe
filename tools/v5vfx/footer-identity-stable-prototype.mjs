@@ -61,7 +61,7 @@ export function installFooterIdentity(){
     let badge=record.badges.get(key);if(!badge){badge=originalBadges[index].cloneNode(true);record.badges.set(key,badge);}else syncElement(badge,originalBadges[index]);
     const current=record.statuses.children[index];if(current!==badge)record.statuses.insertBefore(badge,current??null);
    });
-   record.statuses.style.display=keys.length?'':'none';record.none.hidden=keys.length>0;
+   record.statuses.style.display=keys.length?'':'none';if(keys.length)record.none.remove();else if(!record.none.isConnected)node.append(record.none);
    world.dataset.cxvFooterIdentity='true';
   });
   return eligible.map(x=>x.actor.id);

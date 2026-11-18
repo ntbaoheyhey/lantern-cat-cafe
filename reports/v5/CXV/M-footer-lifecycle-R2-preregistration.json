@@ -4,7 +4,7 @@
   "prior": "M-footer-lifecycle-R1.json",
   "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
   "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
-  "prototypeSha256": "75f283ce9c82407ad1ad6e6f18bdd62baf021bf904f99f74904a2968621dd451",
+  "prototypeSha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
   "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
   "viewport": [
     1280,
@@ -69,8 +69,17 @@
     "inlinePercentTolerance": 1e-06,
     "widthToleranceCSSpx": 0.015625
   },
-  "toolingFrozenUTC": "2026-11-18T18:15:29.157719+00:00",
+  "toolingFrozenUTC": "2026-11-18T18:17:28.922079+00:00",
   "classification": "Selected regression/development afterR1 failure;not heldouts",
   "prototypeChange": "Stable keyed shield/status-id/overflow spans;in-place attributes/children update,never focus() restoration;all originalR1 styling unchanged.",
-  "observerChange": "One synchronous page evaluation reads complete before state,invokes sync,reads complete after state. No await/timer mutation/excluded fields. R1 strict failures retained."
+  "observerChange": "One synchronous page evaluation reads complete before state,invokes sync,reads complete after state. No await/timer mutation/excluded fields. R1 strict failures retained.",
+  "preEvaluationRefinement": "No effects node absent when nonempty,matching original information observer semantics;R2focus gate explicitly requires sameNode and isConnected;no R2 evaluation yet.",
+  "toolHashes": {
+    "footer-identity-stable-prototype.mjs": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+    "probe-footer-lifecycle-r2.mjs": "2d975fae113955fc4d794341e55c4007c08098576382d3402d1271a6fb142c03",
+    "run-footer-lifecycle-r2.py": "e6acefaccb48b987ecf2e542cb28f3ce562067466761364aaae0575fcb9598e8",
+    "measure-footer-lifecycle-r2.py": "3318bd9eb0dd26245448e834814d4a10a17f3f19c023d3612a82fd089f2cfa2d",
+    "mochi-label-observation.mjs": "6fae63b553cb354fb9282e364b459118a6d2a27a74171d3c9f16a7d3195dbabb",
+    "hud-meter-observation.mjs": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  }
 }
