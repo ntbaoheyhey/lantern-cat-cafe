@@ -2,7 +2,7 @@
 M-I1 ACTIVE: R5 fullmatte318x390 source8aef40187/index82f08611 installed;own696anchors/348rows/4actions/4freshviews scopedPASS;10emissions error0;MochiR6 retained;registry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
-LIVE6301: exactfullR5 source8aef40187/index82f08611 restored;full3809fileinventory/6payloads/indexverified;nativeR3/m1.15 preserved. CXV pixel diagnostic next.
+LIVE6301: exactfullR5 source8aef40187/index82f08611 restored;full3809fileinventory/6payloads/indexverified;nativeR3/m1.15 preserved. CXVR6 independently audited:274hashes/70states/1040counts;32/13/7/7Mochi→Cloverbadge pixels atRGB>0/1/2/4 inF191/F0;other4phaseszero. ActualGPUphase diagnostic next.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
@@ -12,7 +12,7 @@ AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources
 AUDIO OPEN:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
 CXV: introR2 audited16artifacts/40rows;transientWave1/1 with0sampled ordinary actionoverlap. New dualcat ordinary/lifecycle/art lease after R5 own capture.
 CXV ACCEPT scoped:nativeR1 63hashes/48PNGs/6wins/270actions/all9/exactnormalreduced rules;noimagesviewed/nolaptopclaim. SourceR5head/R6paw21artifacts/24freshcontrols/1500conversioneach;oldcombinedR4reject retained.
-I-C DONE currentnativeR2:firsthit20880ms including17700ms8cardreading;HP165→119;route9740ms;recovery632/8684ms;bothmotion GPUrestore exact.
+I-C DONE currentnativeR3/m1.15:firsthit21163ms including17700ms8cardreading;route9766ms;recovery640/8707ms;bothmotion GPUrestore exact.
 I-D IMPLEMENTATION DONE/OWNER-ONLY:honestAvalanche receipt/5bytecodechecks/localAnvil516ms;publicfundedFuji unperformed;NEEDS-USER-VI exact.
 I-E DONE/REFRESH:m1.15 three1280x720/30sfilms+browseraudio;14imagesmeasured/6freshviewsonce;no subjectiveAVsync/listening claim. Retain all imageledgers.
 I-F DONE/REPEAT:README/architecture/submissionfacts throughm1.15;preserveforeignAGSdrafts;REFRESHaftermeaningfultag.

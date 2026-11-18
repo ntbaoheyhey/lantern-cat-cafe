@@ -50,3 +50,5 @@ Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hàn
 2026-11-18T13:12:32.940502+00:00 — Đã xác minh phát hành v5-m1.15 trên nhánh và tag từ xa (59f5f3c57): 9 mèo native, landing R12 đã duyệt. Hai media commissioned chưa được bật; khôi phục bản thử R5 để đo phần nhãn HP thực sự che hình. Wake vẫn hoạt động mỗi15phút.
 
 2026-11-18T13:19:51.102134+00:00 — Kiểm tra độc lập log trậnR5: video Mochi bỏ15/2430khung,Clover19/2431khung;không được tuyên bố zero-drop. Mỗi video có8lần nối vòng. Chưa xác nhận hiệu năng laptop phổ thông;đang tách thời gian video thực tế khỏi pha socket trước khi đề xuất sửa loader.
+
+2026-11-18T13:31:23.896989+00:00 — Đã tính độc lập R6:274hash,70trạng thái,1040phép đếm khớp. Ở1/5pha,32pixel Mochi chạm nhãn khiên Clover (7pixel ở ngưỡngRGB>4);thanh HP/rage và nhãn của chính mèo không bị che trong5pha. Đây chỉ là phép đo tạm dừng sauẩn/hiện nhãn;chưa gỡ lỗi seam/matte hay duyệt media vào bảnphát hành.
