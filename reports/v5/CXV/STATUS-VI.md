@@ -15,3 +15,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T05:52:01.386745+00:00 Biscuit: idle10giây/cast1giây đã qua capture6310; chân và vòng lặp0dịch, hit350ms→.55s cả2chếđộ;60test/TSC0. Đã xem4ảnhmới, phimso sánh1×cùngchiềucao. Chưa nghiệmthu bảnjudge/tốcđộ.
 
 2026-11-18T05:52:22.354429+00:00 Inkcap: idle10giây/cast1giây đã qua capture6310; chân và vòng lặp0dịch, hit350ms→.55s cả2chếđộ;60test/TSC0. Đã xem4ảnhmới, phimso sánh1×cùngchiềucao. Chưa nghiệmthu bảnjudge/tốcđộ.
+
+2026-11-18T05:52:43.124818+00:00 Cinnamon: idle10giây/cast1giây đã qua capture6310; chân và vòng lặp0dịch, hit350ms→.55s cả2chếđộ;60test/TSC0. Đã xem4ảnhmới, phimso sánh1×cùngchiềucao. Chưa nghiệmthu bảnjudge/tốcđộ.
