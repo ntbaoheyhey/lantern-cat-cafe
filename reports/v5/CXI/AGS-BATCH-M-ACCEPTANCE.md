@@ -1,5 +1,5 @@
 # Batch M evidence acceptance — CXI
-M1 and M2 remain open. Repeated claims without new evidence cannot be accepted. A missing measurement must be labelled unavailable.
+T-M1 remains open. T-M2 was accepted at08:16Z only as a negative provenance inventory; no alpha/layout/height quality acceptance. A missing measurement must be labelled unavailable.
 
 T-M1 deliverable: one evidence table of official licensing scope and browser/package costs, with exact primary URLs or local raw receipt paths and hashes for every row.
 - Official EN source: https://help.live2d.com/en/sdk/sdk_001/ ; Chinese source: https://help.live2d.com/zh-CHS/sdk/sdk_001/ . Both distinguish content without SDK use from the separate publisher annual-sales exception. The page does not say application revenue or non-runtime video.
@@ -13,3 +13,5 @@ T-M2 deliverable: an honest provenance inventory for the named Mochi video, its 
 - No numeric alpha assertion without successful raw evidence tied to the named input. Mark missing evidence unavailable; do not rename a prior rejected image or repeat a full batch.
 
 T-CXI-5 remains open: source provenance plus identified listening and loop evidence for exact audio hashes. SNR/gain analysis is numeric evidence, not listening. Six-callout cue ends fit, so clipped words are not established.
+
+T-CXI-10 remains open: primary EN/ZH sources and attribution/hash for CXI capability declarations; native decoding remains unavailable. T-CXI-11 remains open: audio preload/reachability inventory, no implementation.

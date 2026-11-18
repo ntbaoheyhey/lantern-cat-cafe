@@ -1,0 +1,53 @@
+{
+  "utc": "2026-11-18T08:25:07.844704+00:00",
+  "mailboxLine": 254,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/AGS-BATCH-M-EVIDENCE-TABLE.md",
+      "bytes": 755,
+      "sha256": "21de6b3e591aa88e9fb80bf4af6716004d73201a46dd51e7143900dc754ed9b6",
+      "text": "# AGS Batch M Evidence Table (Final Review Revision)\n\n## T-M1: License & Source\n| Field | Evidence |\n| :--- | :--- |\n| Clause A | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Non-SDK content not covered |\n| Clause B | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Publisher annual sales exemption |\n| 300-Frame Cost | 825143 bytes (Verified hash: 232e5ed3...) |\n| Receipt | [RECEIPTS-FINAL.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt) |\n\n## T-M2: Matte & Metrics\n| Field | Evidence |\n| :--- | :--- |\n| Source Hash | 232e5ed3... (Verified) |\n| Opaque Height | 214px (Mochi), 240px (Clover) |\n| Opaque Proof | Unavailable (No raw derivation) |\n| Alpha Mean | Unavailable (Raw calculation FAILED) |\n| Mask Layout | Unavailable |\n",
+      "sameHashAs0816": false,
+      "diffFrom0816": [
+        "--- ",
+        "+++ ",
+        "@@ -1,4 +1,4 @@",
+        "-# AGS Batch M Evidence Table (Final Correction)",
+        "+# AGS Batch M Evidence Table (Final Review Revision)",
+        " ",
+        " ## T-M1: License & Source",
+        " | Field | Evidence |",
+        "@@ -15,4 +15,4 @@",
+        " | Opaque Height | 214px (Mochi), 240px (Clover) |",
+        " | Opaque Proof | Unavailable (No raw derivation) |",
+        " | Alpha Mean | Unavailable (Raw calculation FAILED) |",
+        "-| Mask Layout | Packed Luminance Mask (Unverified/Unavailable) |",
+        "+| Mask Layout | Unavailable |"
+      ]
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt",
+      "bytes": 142,
+      "sha256": "0d2f465fa34059d06be9e9d92fc2d6f393d2ba813a712530efde49ff735be31e",
+      "text": "232e5ed359e043af521b7c7eccbe3c72191e6af938e620d8ed9a707852b7698a  /Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4\n",
+      "sameHashAs0816": null
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AV1-SUPPORT.md",
+      "bytes": 367,
+      "sha256": "cca863a017688373c1d452f67bde7cae0609ee1ec90c5fc5ade60e043682d01b",
+      "text": "# AV1 Four-Plane Support Study (Draft)\n\n## 1. Capabilities\n- Browser: Chromium 156.0.8078.4 / WebKit 27.2\n- AV1 MP4 Support: True (Verified at 624x520/30fps).\n- H264 Fallback: Required for older Mac architectures.\n\n## 2. Cost/Support Table\n| Field | Evidence |\n| :--- | :--- |\n| AV1 Support | Available |\n| H264 Fallback | Required |\n| Decoding Proof | Unavailable |\n",
+      "sameHashAs0816": true
+    }
+  ],
+  "dispositions": {
+    "T-M1": "REDO unchanged video-only cost; complete manifest/poster/video and browser receipt attribution still absent",
+    "T-M2": "Retain earlier negative-provenance inventory ACCEPT; no asset-quality acceptance",
+    "T-CXI-10": "REDO unchanged missing primary EN/ZH citations and capability receipt/hash",
+    "T-CXI-11": "No delivery yet; inventory task open"
+  },
+  "imagesViewed": 0,
+  "runtimeChanged": false,
+  "correction": "The table hash changed: title now Final Review Revision and Mask Layout now Unavailable. AV1 draft hash is unchanged. RECEIPTS-FINAL was absent from08:16 snapshot; its hash matches08:03 receipt. Only unresolved deliverable findings are unchanged.",
+  "receiptSameHashAs0803": true
+}
