@@ -1,0 +1,638 @@
+{
+  "utc": "2026-11-18T05:56:06.338Z",
+  "cat": "mallow",
+  "sourceCommit": "97047efa564813ba568883b97d5af7e096585c6b",
+  "indexSha256": "9d9b76c8d1bbe6f759a9f36d22928979fe31601c969ea317db8e186d00e07065",
+  "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 337,
+        "y": 137,
+        "width": 272,
+        "height": 291,
+        "body": {
+          "x": 369.64784306349884,
+          "y": 169.5220858251574,
+          "width": 207.8992229099115,
+          "height": 226.37217685147843
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 337,
+        "y": 136,
+        "width": 271,
+        "height": 292,
+        "body": {
+          "x": 369.2668295840299,
+          "y": 168.2969427182304,
+          "width": 206.94129048390437,
+          "height": 227.59731995840542
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "sharedCodeParity": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m-mallow-import.json",
+    "sha256": "89e1c6cc9a84573ee5ec8bb5ec72053b479db2c97c03c123224cb2d0ccff2891",
+    "utc": "2026-11-18T05:46:00.757Z",
+    "baseline": "162efac4c",
+    "imported": [
+      "4ec917401",
+      "c7d3cf13a"
+    ],
+    "cases": 2464,
+    "perUnit": {
+      "mochi": 224,
+      "soot": 224,
+      "clover": 224,
+      "panko": 224,
+      "sorrel": 224,
+      "biscuit": 224,
+      "inkcap": 224,
+      "cinnamon": 224,
+      "brioche": 224,
+      "velvet": 224,
+      "marigold": 224
+    },
+    "protectedDiff": [],
+    "protectedPaths": 3833,
+    "pass": true,
+    "completedUTC": "2026-11-18T05:46:02.035Z"
+  },
+  "buildSource": "d1192596cee2d6fcbf2d92542f8e1809d57e8d6f",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "artifactSha256": "9d9b76c8d1bbe6f759a9f36d22928979fe31601c969ea317db8e186d00e07065",
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "mallow-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.5832257534224868
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.639572010869565
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.686934239922677
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 2.240000000000002
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 2.2733333333333334
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 2.3066666666666684
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 2.34
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 2.373333333333335
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 2.40666666666667
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 2.4400000000000013
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 2.4733333333333363
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 2.5066666666666677
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:57:22.937Z",
+  "comparison": {
+    "utc": "2026-11-18T06:02:17.711046+00:00",
+    "cat": "mallow",
+    "captureUTC": "2026-11-18T05:56:06.338Z",
+    "captureCompletedUTC": "2026-11-18T05:57:22.937Z",
+    "sourceCommit": "d1192596cee2d6fcbf2d92542f8e1809d57e8d6f",
+    "indexSha256": "9d9b76c8d1bbe6f759a9f36d22928979fe31601c969ea317db8e186d00e07065",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "sameHeightPx": 228,
+    "sourceUnion600x480": [
+      41,
+      32,
+      527,
+      436
+    ],
+    "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/mallow-vs-designer-10s.mp4",
+    "videoSha256": "7b30013726a8bb44caed21ad61818cad7743bd50d1f9a293310f7fef6ec42f65",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000"
+      }
+    },
+    "channels": [
+      {
+        "mode": "reduced",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              0.0,
+              2.243220849176282
+            ],
+            "rangePercentH": [
+              0.0,
+              0.4381290721047426
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              0.0,
+              1.2796452160339982
+            ],
+            "rangePercentH": [
+              0.0,
+              0.24993070625664027
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              0.0,
+              1.1037077793280332
+            ],
+            "rangePercentH": [
+              0.0,
+              0.2155679256500065
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      },
+      {
+        "mode": "candidate",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              8.379347713664144,
+              9.753134126853354
+            ],
+            "rangePercentH": [
+              1.636591350325028,
+              1.9049090091510457
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              9.539333185966115,
+              14.629563896761084
+            ],
+            "rangePercentH": [
+              1.8631510128840068,
+              2.857336698586149
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              10.0
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              3.0152772833242807,
+              7.366667968195259
+            ],
+            "rangePercentH": [
+              0.5889213443992736,
+              1.4388023375381365
+            ],
+            "dominantPeriodSeconds": [
+              3.3333333333333335,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              1.1999465377848433,
+              4.798729475339144
+            ],
+            "rangePercentH": [
+              0.23436455816110222,
+              0.9372518506521765
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      }
+    ],
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 52428,
+        "sha256": "95a86a60a4c02ca3dc7716b76a3f9e96efe2f284efde168c42094155d3f85f08",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:03:08.988121+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 51228,
+        "sha256": "a6a908118912c40acbb4d895712ce2f39de182f24aed443b9ddaca7a1f56086c",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:03:08.988121+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/candidate/blink-sheet.jpg",
+        "width": 1024,
+        "height": 224,
+        "bytes": 40578,
+        "sha256": "4c56017e81d13aad89541c7296a86312a5be7309c0cdb63f2c5805caae9d22ce",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:03:08.988121+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mallow-production-r1/cast/cast-sheet.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 80526,
+        "sha256": "5dd3b21e6abe986b4f733d98be852c38cba3fa481bed179e8b06f5fbe6f9764f",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:03:08.988121+00:00"
+      }
+    ],
+    "limits": "Deterministic scene samples and 1x encoded comparison; no continuously watched film or real-time FPS claim.",
+    "visualDisposition": "ACCEPT scene motion: planted feet, continuous measured loop, legible slow head/ear/tail and blink, additive cast. Reference prop range remains broader; existing status bar crosses raised hand; no new foot clipping observed in four fresh samples.",
+    "reviewedImages": 4,
+    "budgetDisposition": "FAIL wave3 8141046 >8000000; release held"
+  },
+  "disposition": "ACCEPT_MALLOW_SCENE_MOTION_ONLY",
+  "releaseReady": false
+}

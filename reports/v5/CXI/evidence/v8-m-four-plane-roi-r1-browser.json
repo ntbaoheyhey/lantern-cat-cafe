@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-18T06:40:07.269Z",
+  "purpose": "Standalone decoder/WebGL study, not judge-scene acceptance or general FPS certification",
+  "viewport": [
+    1280,
+    720
+  ],
+  "video": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/four-plane-roi-r1/ycrcb-crf23.mp4",
+    "sha256": "2c92d016716f78742f797c53d027f65841fd8fd39de9cb470b9f5a7890a3f366",
+    "bytes": 931879
+  },
+  "sourceRgbaSha256": "f278c3fd7ef5d4c3d40a018f341f0478fa6dfd9b0b63d932280df5ae6f807fc3",
+  "harnessSha256": "326d1f3ffae02883b15a12ef57551a66e41d7fdf704f147d65cc18f599d004e3",
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "error": "Error: page.evaluate: Error: ERROR: 0:1: 'packed' : Illegal use of reserved word\nERROR: 0:1: 'packed' : syntax error\n\n    at shader (eval at evaluate (:370:30), <anonymous>:7:159)\n    at eval (eval at evaluate (:370:30), <anonymous>:9:29)\n    at async <anonymous>:396:30"
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "error": "Error: page.evaluate: Error: ERROR: 0:1: 'packed' : Illegal use of reserved word\nERROR: 0:1: 'packed' : syntax error\n"
+    }
+  ],
+  "images": []
+}

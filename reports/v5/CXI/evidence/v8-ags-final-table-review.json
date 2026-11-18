@@ -1,0 +1,39 @@
+{
+  "utc": "2026-11-18T08:03:18.085393+00:00",
+  "sourceFiles": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/AGS-BATCH-M-EVIDENCE-TABLE.md",
+      "bytes": 629,
+      "sha256": "792fbb18845838925379ad7ea8b2568f921316b67f16ba7d6c46a086a996794b",
+      "text": "# AGS Batch M Evidence Table (Final)\n\n## T-M1: License & Source\n| Field | Evidence |\n| :--- | :--- |\n| Source Clauses | sdk_001 (EN/ZH: https://help.live2d.com/en/sdk/sdk_001/) |\n| 300-Frame Cost | 650-1900 kb/s |\n| Receipt | [RECEIPTS-FINAL.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt) |\n| Runtime Integration | SDK agreement compliance required |\n\n## T-M2: Matte & Metrics\n| Field | Evidence |\n| :--- | :--- |\n| Source Hash | 232e5ed3... (See RECEIPTS-FINAL.txt) |\n| Opaque Height | 214px (Mochi), 240px (Clover) |\n| Alpha Mean | Unavailable (Raw calculation FAILED) |\n| Mask Layout | Packed mask (Luminance) |\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt",
+      "bytes": 142,
+      "sha256": "0d2f465fa34059d06be9e9d92fc2d6f393d2ba813a712530efde49ff735be31e",
+      "text": "232e5ed359e043af521b7c7eccbe3c72191e6af938e620d8ed9a707852b7698a  /Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4\n"
+    }
+  ],
+  "video": {
+    "path": "/Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4",
+    "bytes": 825143,
+    "sha256": "232e5ed359e043af521b7c7eccbe3c72191e6af938e620d8ed9a707852b7698a"
+  },
+  "acceptedPartial": [
+    "M2 now honestly labels numeric alpha unavailable because calculation failed.",
+    "Receipt full SHA256 matches named 825143B video."
+  ],
+  "disposition": "REDO remaining evidence; tasks remain open",
+  "findings": [
+    "M1 has no separate quoted or accurately paraphrased official clauses; generic SDK compliance does not establish video-only scope.",
+    "Bitrate range is not actual total 300-frame package bytes with browser-version/raw-receipt attribution.",
+    "M2 packed-luminance claim has no coordinate ROI, derivation or successful extraction receipt.",
+    "M2 opaque heights lack pinned measurement transcript; shortened hash only resolved through separate receipt."
+  ],
+  "primarySources": [
+    "https://help.live2d.com/en/sdk/sdk_001/",
+    "https://help.live2d.com/zh-CHS/sdk/sdk_001/"
+  ],
+  "referenceParaphrase": "Non-SDK content exception is separate from publisher annual sales exception; video playback alone adds no SDK dependency (engineering inference).",
+  "newArtifactsGenerated": false
+}

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-18T09:15:48.102627+00:00",
+  "inboxLine": 290,
+  "report": {
+    "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AUDIO-PRELOAD-INVENTORY.md",
+    "sha256": "eb4f4becb0768440e4640a172df505b4885a2b33405b9c8a4804f586a5295b1a",
+    "bytes": 436
+  },
+  "inventory": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-r5-audio-served-inventory.json",
+    "sha256": "6cd6db3bd7ed0aa3b771437a900173323f3e4841f5381a1df144221c2a24fe07"
+  },
+  "ack": "Now names actual R5 inventory and its37artifacts. Attribution correction only.",
+  "redo": "Sample Source Hash613c54b4 is not the source inventory SHA256 or an artifact SHA256; it referred to a rejected placeholder draft. No artifact rows/bytes/source reachability were delivered. Existing CXI JSON already supplies inventory; AGS should deliver the missing source-linked reachability analysis instead of duplicating it.",
+  "taskOpen": "T-CXI-11; also T-M1,T-CXI-5,T-CXI-10 remainopen"
+}

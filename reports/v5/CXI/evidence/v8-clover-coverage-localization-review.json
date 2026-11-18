@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-18T09:48:49.548412+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-holdout-audit-r2/report.json",
+    "sha256": "b7961fb3fdac7123abe0d7c933c551eb858923b3fb443e8ccb28dc1d5b7883c8"
+  },
+  "unresolvedRigidBoundary": {
+    "corePixels": 2549,
+    "unsupportedCorePixels": 92,
+    "components": [
+      {
+        "pixels": 92,
+        "bbox": [
+          64,
+          305,
+          10,
+          13
+        ],
+        "sourceCoordinateBounds": [
+          [
+            73.11293675005436,
+            315.46993117034435
+          ],
+          [
+            84.13693346083164,
+            327.271590039134
+          ]
+        ],
+        "targetInsideSparseTail": 40,
+        "sparseSourceMean": {
+          "unknown": 0.9160958745051401,
+          "annotatedTail": 0.08390412549485993,
+          "annotatedCloth": 0.0,
+          "alphaEmpty": 0.0,
+          "outsideRaster": 0.0
+        },
+        "sourceNearestDistanceOutsideSegmentedTail": {
+          "max": 8.602325439453125,
+          "mean": 2.95548939704895
+        }
+      }
+    ]
+  },
+  "decision": "REJECT endpoint adoption:92core destinations cluster at64,305,10x13;40are in independent tail target. Source91.61%unknown by sparse labels; max8.60px beyond diagnostic source tail. Do not relabel unknown or infer hidden texture.",
+  "next": "Need observed source coverage or corrected visible contour/material correspondence before repair. Existing sparse core acceptance is narrower than full-domain coverage."
+}

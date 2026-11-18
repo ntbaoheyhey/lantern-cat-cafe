@@ -1,0 +1,197 @@
+{
+  "utc": "2026-11-18T08:49:51.216810+00:00",
+  "question": "Are visible tail folds intrinsic to the seven-control rigid MLS map or introduced by protection-mask blending?",
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-rigid-endpoint-r1/report.json",
+      "sha256": "f11d84b2c527d595eb0c3c293e7bbbe54fc7afb99905892cdfe1092a1f420081"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-dis-endpoint-r1/mask.npy",
+      "sha256": "50744fec83b0552a8651184b4455cab2dc94b3db6e8407e4387620270af5e8f8"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-rigid-endpoint-r1/mapping.npy",
+      "sha256": "2b6ebe61c6c57b2678d011218475b7de8283e2b03f3f858a8f4e6a8644b4be37"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/tools/v5int/study-clover-rigid-endpoint.py",
+      "sha256": "98f589b55a17f5745737a0e808157a2ba8580e9bd23d771cfb9f302e902bd3df"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/tools/v5int/study-clover-domain.py",
+      "sha256": "6f755e2b20f55fb170fbd875a724f58308fac1126c512e60ccb89a77c917820e"
+    }
+  ],
+  "dimensions": [
+    318,
+    390
+  ],
+  "exactMaskedReproduction": true,
+  "domainDefinition": "Same warm largest component at target frame0 as prior tool; visible-domain labels remain hypotheses, not verified physical correspondences. Four bilinear corner Jacobians and stretches per cell.",
+  "controlResidualMaximum": 2.2737367544323206e-13,
+  "metrics": {
+    "unmasked": {
+      "active": {
+        "cells": 10524,
+        "foldedCells": 0,
+        "minimumCorner": 0.4952338677770774,
+        "minimumStretch": 0.45087174931453056,
+        "stretchP01": 0.6428990464962784,
+        "stretchMedian": 0.928401963908518,
+        "maximumStretch": 1.8618689039512395,
+        "maximumAnisotropy": 2.4725299510437497
+      },
+      "visibleAnyCorner": {
+        "cells": 3226,
+        "foldedCells": 0,
+        "minimumCorner": 0.4952338677770774,
+        "minimumStretch": 0.45087174931453056,
+        "stretchP01": 0.582814456616607,
+        "stretchMedian": 0.8893686134533527,
+        "maximumStretch": 1.7245878235345395,
+        "maximumAnisotropy": 2.4725299510437497
+      },
+      "visibleAllCorners": {
+        "cells": 2793,
+        "foldedCells": 0,
+        "minimumCorner": 0.5258589839878457,
+        "minimumStretch": 0.4679686990907464,
+        "stretchP01": 0.5879195468460185,
+        "stretchMedian": 0.8856752565227798,
+        "maximumStretch": 1.7122236402707531,
+        "maximumAnisotropy": 2.4725299510437497
+      },
+      "visibleFullMask": {
+        "cells": 2847,
+        "foldedCells": 0,
+        "minimumCorner": 0.5870216913684959,
+        "minimumStretch": 0.4954800302994433,
+        "stretchP01": 0.6100863594013909,
+        "stretchMedian": 0.8849465145539335,
+        "maximumStretch": 1.7245878235345395,
+        "maximumAnisotropy": 2.4725299510437497
+      },
+      "visibleTransition": {
+        "cells": 379,
+        "foldedCells": 0,
+        "minimumCorner": 0.4952338677770774,
+        "minimumStretch": 0.45087174931453056,
+        "stretchP01": 0.5134419110634517,
+        "stretchMedian": 0.9282925553161073,
+        "maximumStretch": 1.6062023962808085,
+        "maximumAnisotropy": 2.4361514784597373
+      },
+      "nonVisibleTransition": {
+        "cells": 4128,
+        "foldedCells": 0,
+        "minimumCorner": 0.4962909009515246,
+        "minimumStretch": 0.45559810147111657,
+        "stretchP01": 0.6619045607525675,
+        "stretchMedian": 0.9357276519849989,
+        "maximumStretch": 1.8618689039512395,
+        "maximumAnisotropy": 2.3909610514712485
+      },
+      "protectedAllCorners": {
+        "cells": 112516,
+        "foldedCells": 0,
+        "minimumCorner": 0.6318648965768171,
+        "minimumStretch": 0.5688006899322556,
+        "stretchP01": 0.9242432940658889,
+        "stretchMedian": 0.9899745395607791,
+        "maximumStretch": 1.728508451270778,
+        "maximumAnisotropy": 1.9590340474941288
+      },
+      "protectedPixelsMoved": 113372,
+      "maximumDisplacement": 231.30610326632586
+    },
+    "masked": {
+      "active": {
+        "cells": 10524,
+        "foldedCells": 1574,
+        "minimumCorner": -3.4700614452777874,
+        "minimumStretch": 1.0410680464634082e-05,
+        "stretchP01": 0.027532942258753308,
+        "stretchMedian": 0.87654015818232,
+        "maximumStretch": 8.997731919908187,
+        "maximumAnisotropy": 209167.2402502678
+      },
+      "visibleAnyCorner": {
+        "cells": 3226,
+        "foldedCells": 216,
+        "minimumCorner": -3.4700614452777874,
+        "minimumStretch": 0.0003515112326686995,
+        "stretchP01": 0.06008040973010031,
+        "stretchMedian": 0.8767966712127324,
+        "maximumStretch": 5.895540875570139,
+        "maximumAnisotropy": 9420.426327359897
+      },
+      "visibleAllCorners": {
+        "cells": 2793,
+        "foldedCells": 196,
+        "minimumCorner": -3.4700614452777874,
+        "minimumStretch": 0.0003515112326686995,
+        "stretchP01": 0.08570950189173428,
+        "stretchMedian": 0.8728361931614215,
+        "maximumStretch": 5.472309086401942,
+        "maximumAnisotropy": 9420.426327359897
+      },
+      "visibleFullMask": {
+        "cells": 2847,
+        "foldedCells": 0,
+        "minimumCorner": 0.5870216913684959,
+        "minimumStretch": 0.4954800302994433,
+        "stretchP01": 0.6100863594013909,
+        "stretchMedian": 0.8849465145539335,
+        "maximumStretch": 1.7245878235345395,
+        "maximumAnisotropy": 2.4725299510437497
+      },
+      "visibleTransition": {
+        "cells": 379,
+        "foldedCells": 216,
+        "minimumCorner": -3.4700614452777874,
+        "minimumStretch": 0.0003515112326686995,
+        "stretchP01": 0.005925958178071233,
+        "stretchMedian": 0.4037567295924641,
+        "maximumStretch": 5.895540875570139,
+        "maximumAnisotropy": 9420.426327359897
+      },
+      "nonVisibleTransition": {
+        "cells": 4128,
+        "foldedCells": 1367,
+        "minimumCorner": -2.781100403038951,
+        "minimumStretch": 1.0410680464634082e-05,
+        "stretchP01": 0.012901175515670561,
+        "stretchMedian": 0.568797729194175,
+        "maximumStretch": 8.997731919908187,
+        "maximumAnisotropy": 209167.2402502678
+      },
+      "protectedAllCorners": {
+        "cells": 112516,
+        "foldedCells": 0,
+        "minimumCorner": 1.0,
+        "minimumStretch": 1.0,
+        "stretchP01": 1.0,
+        "stretchMedian": 1.0,
+        "maximumStretch": 1.0,
+        "maximumAnisotropy": 1.0
+      },
+      "protectedPixelsMoved": 0,
+      "maximumDisplacement": 65.4148150493962
+    }
+  },
+  "finding": "Unmasked map has 0 folded visible cells; protected map has 216. Neither map is adopted.",
+  "runtimeChanged": false,
+  "sequenceChanged": false,
+  "imagesCreated": 0,
+  "limits": "Diagnostic only. Positive determinants cannot establish correct art correspondence or acceptable strain; removing protection may distort dress. No threshold was relaxed and no endpoint was rendered.",
+  "rawReceipt": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-domain-r1/report.json",
+    "sha256": "3a3ef91e0bd62d8932410dfe55a2322a3451e7b200d16ef50d655fe431b163cf"
+  },
+  "disposition": "Diagnostic accepted; no adoption. All visible folds are introduced in protection transition; unmasked map still has strain and moves protected cloth."
+}

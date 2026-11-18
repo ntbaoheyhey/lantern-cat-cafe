@@ -1,8 +1,8 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã kiểm tra **v5-m1.13**, ứng dụng **13fb390e9b4007f985577a2e0320f81b464aa11b**, source quay **6fe2a0340483960d112cf06655277c0b0e3a4270** (chỉ thêm báo cáo). Full suite 5.361 passed, 11 skipped, hai expected failures; tổng 5.374 test, gồm 3.061 web. Build/typecheck,44 test tập trung và bảy bước cuối đạt. Paused-battle recovery đã kiểm native độc lập; audio source giữ nguyên, paths m1.12→m1.13 khớp. [Bằng chứng](I-C.md): đòn đầu 20,448 giây gồm17,7giây đọc; wave3 vượt8MB 230.950B. Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra **v5-m1.14**, source ứng dụng/quay **c4108923c25a9c982b0831318e16a93cc991f8e7**. Full suite5.539passed,11skipped,2expected failures; tổng5.552, gồm3.239web.24test tập trung,TypeScript/build và7bước browser đạt; đòn đầu20,880giây gồm17,7giây đọc. Chín mèo native đã nhận; commissioned media Mochi/Clover chưa bật. Owner đã bỏ8MB:byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-atlas-r2-release-review.json). Chỉ dùng tag sau khi BOARD xác nhận remote.
 
-Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
+Cổng6301 đang dùng nativeR2/sourcec4108923c; preview có thể chuyển sang nghiên cứu Mochi/Clover sau khi phát hành. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.13'
+release_tag='v5-m1.14'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1
@@ -85,6 +85,16 @@ unset PROOF_GUEST_TOKEN PROOF_CONFIRM_FUJI
 
 `owner-fuji.json` thành công chứa network `Avalanche Fuji`, hash, guest, payer, fundingWei `50000000000000000`, feeWei/feeAvax, block và explorer. `observationMs` là thời gian kit quan sát; `confirmationMs` chỉ có khi service cung cấp phép đo, còn lại null với `timingSource=unavailable`. Guest-drip có thể trả lại hash đã xác nhận từ trước; thời gian đọc lại receipt không phải tốc độ xác nhận giao dịch. Chỉ chia sẻ file này cùng UTC/URL/tag; không chia sẻ token. Mở explorer để đối chiếu sender, recipient, value và status. Nếu sponsor thấp, owner cấp test AVAX cho sponsor rồi thử lại; nếu session hết hạn, đăng nhập lại. Không biến lỗi hoặc timeout thành receipt xác nhận.
 
+## Batch M: bản nháp xin file tiếp theo
+
+Chưa gửi cho người thiết kế. Hai MP4 gốc Mochi/Clover đều 10 giây, 300 frame, 30 fps, H.264 không alpha, dung lượng 18,66/18,72 MB; bản gốc được giữ nguyên.
+
+Chủ dự án có thể xin bản xuất nền trong suốt (PNG RGBA theo frame hoặc ProRes 4444), giữ 30 fps/10 giây, chân cùng mốc và đầu–cuối vòng lặp nối mượt; kèm bản xem trên nền sáng để kiểm tra viền và ánh đèn. Phần mèo trong bản giao có thể cao 512–1024 px; nhóm tự tạo bản chạy 256/384/512 px và đo ngân sách. Nếu có bộ runtime Cubism, xin model3/moc3, textures, motion3, physics3 và phiên bản xuất để đánh giá riêng. Nhóm chưa chấp thuận giấy phép SDK hay tải lên dịch vụ nào. Skill mong muốn dài 1 giây, cast ở 250 ms và hit ở 550 ms, giữ chân, có chuẩn bị và thu động tác. Mọi yêu cầu gửi bạn, chấp thuận điều khoản và upload do chủ dự án thực hiện.
+
+Riêng Clover: đuôi cuối vòng hiện lệch so với đầu; các phép nắn một lớp làm gập vùng tiếp giáp váy. Nếu bạn thiết kế có thể xuất bổ sung, chủ dự án có thể xin lớp đuôi/váy và matte riêng, cùng khung hình/mốc chân, hoặc sửa vòng trong file Cubism rồi xuất nền trong suốt. Đây là gợi ý bản nháp; nhóm chưa liên hệ hay tự vẽ phần bị che. Hai MP4 gốc 18,66/18,72 MB vẫn giữ nguyên.
+
 ## 4. Giới hạn của bằng chứng hiện tại
 
 Receipt ở I-C đến từ hành trình practice qua UI thường và ghi rõ local/no transaction. Các phim dùng fixture review, không phải bằng chứng chain. Anvil là chain local. [PUBLIC-FUJI.json](PUBLIC-FUJI.json) xác minh **có bytecode** ở năm địa chỉ registry tại block 61.234.900; không xác minh code tương đương source và không thay thế giao dịch guest thật. Guest hiện là EOA ký SIWE và nhận test gas từ sponsor; không có bằng chứng cho ERC-4337/paymaster. RelicNFT là ERC-1155. Chỉ dùng các mô tả này trong submission cho đến khi có bằng chứng mới.
+
+Cập nhật kỹ thuật Clover 2026-11-18T09:53:09.423465+00:00: nếu người thiết kế đã có mô hình và công cụ xuất, có thể xin mask theo Part/ArtMesh cho đuôi,váy xanh,váy lót sáng và tay,giữ cùng300frame/30fps/canvas; mask theo alpha hoặc thang xám chỉ mô tả phần đang nhìn thấy,không tự khôi phục đuôi bị che. Tốt nhất là sửa nối vòng trong mô hình rồi xuất RGBA. Tài liệu chính thức: https://docs.live2d.com/en/cubism-editor-manual/cubism-ae-plugin-mask/ và https://docs.live2d.com/zh-CHS/cubism-editor-manual/cubism-ae-plugin-mask/ . Đây vẫn là bản nháp; nhóm chưa liên hệ,mua/cài AE hay chấp thuận điều khoản.

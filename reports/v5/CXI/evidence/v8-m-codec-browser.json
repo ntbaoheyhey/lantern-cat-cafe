@@ -1,0 +1,880 @@
+{
+  "utc": "2026-11-18T04:37:00.194Z",
+  "purpose": "Standalone native codec/alpha packing experiment; not gameplay or final browser support certification",
+  "viewport": [
+    1280,
+    720
+  ],
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "available": true,
+      "cat": "mochi",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+      "loadMs": 76.90000000596046,
+      "dimensions": [
+        312,
+        520
+      ],
+      "samples": [
+        {
+          "seconds": 0,
+          "actual": 0,
+          "clear": 42625,
+          "opaque": 31683,
+          "alphaMean": 0.429769211432104,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                176,
+                103,
+                39
+              ],
+              "alpha": 1,
+              "overWhite": [
+                176,
+                103,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 1,
+          "actual": 1,
+          "clear": 43358,
+          "opaque": 31761,
+          "alphaMean": 0.4250770100939812,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                121,
+                58,
+                15
+              ],
+              "alpha": 1,
+              "overWhite": [
+                121,
+                58,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 5,
+          "actual": 5,
+          "clear": 42079,
+          "opaque": 32690,
+          "alphaMean": 0.43788524384113187,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                169,
+                91,
+                25
+              ],
+              "alpha": 1,
+              "overWhite": [
+                169,
+                91,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 9.95,
+          "actual": 9.95,
+          "clear": 42576,
+          "opaque": 31699,
+          "alphaMean": 0.42957313300074135,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                163,
+                91,
+                32
+              ],
+              "alpha": 1,
+              "overWhite": [
+                163,
+                91,
+                32
+              ]
+            }
+          ]
+        }
+      ],
+      "startTime": 9.95,
+      "endTime": 0.646,
+      "loopWrapped": true,
+      "callbacks": 21,
+      "times": [
+        9.966667,
+        0.033333,
+        0.066667,
+        0.1,
+        0.133333,
+        0.166667,
+        0.2,
+        0.233333,
+        0.266667,
+        0.3,
+        0.333333,
+        0.366667,
+        0.4,
+        0.433333,
+        0.466667,
+        0.5,
+        0.533333,
+        0.566667,
+        0.6,
+        0.633333,
+        0.666667
+      ],
+      "quality": {
+        "total": 267,
+        "dropped": 0
+      }
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "available": true,
+      "cat": "clover",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+      "loadMs": 9.400000005960464,
+      "dimensions": [
+        212,
+        520
+      ],
+      "samples": [
+        {
+          "seconds": 0,
+          "actual": 0,
+          "clear": 29512,
+          "opaque": 21439,
+          "alphaMean": 0.4256405987648964,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                156,
+                169,
+                123
+              ],
+              "alpha": 1,
+              "overWhite": [
+                156,
+                169,
+                123
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 1,
+          "actual": 1,
+          "clear": 30277,
+          "opaque": 20692,
+          "alphaMean": 0.409190358291356,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                185,
+                182,
+                138
+              ],
+              "alpha": 1,
+              "overWhite": [
+                185,
+                182,
+                138
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 5,
+          "actual": 5,
+          "clear": 29139,
+          "opaque": 21448,
+          "alphaMean": 0.42583205270497526,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                195,
+                183,
+                138
+              ],
+              "alpha": 1,
+              "overWhite": [
+                195,
+                183,
+                138
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 9.95,
+          "actual": 9.95,
+          "clear": 29025,
+          "opaque": 21470,
+          "alphaMean": 0.4253899513361267,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                168,
+                181,
+                131
+              ],
+              "alpha": 1,
+              "overWhite": [
+                168,
+                181,
+                131
+              ]
+            }
+          ]
+        }
+      ],
+      "startTime": 9.95,
+      "endTime": 0.6474,
+      "loopWrapped": true,
+      "callbacks": 21,
+      "times": [
+        9.966667,
+        0.033333,
+        0.066667,
+        0.1,
+        0.133333,
+        0.166667,
+        0.2,
+        0.233333,
+        0.266667,
+        0.3,
+        0.333333,
+        0.366667,
+        0.4,
+        0.433333,
+        0.466667,
+        0.5,
+        0.533333,
+        0.566667,
+        0.6,
+        0.633333,
+        0.666667
+      ],
+      "quality": {
+        "total": 267,
+        "dropped": 0
+      }
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "available": true,
+      "cat": "mochi",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+      "loadMs": 132,
+      "dimensions": [
+        312,
+        520
+      ],
+      "samples": [
+        {
+          "seconds": 0,
+          "actual": 0,
+          "clear": 43258,
+          "opaque": 30556,
+          "alphaMean": 0.4308080500444781,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                183,
+                115,
+                35
+              ],
+              "alpha": 1,
+              "overWhite": [
+                183,
+                115,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 1,
+          "actual": 1,
+          "clear": 43958,
+          "opaque": 31146,
+          "alphaMean": 0.42603632478633474,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                129,
+                69,
+                8
+              ],
+              "alpha": 1,
+              "overWhite": [
+                129,
+                69,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 5,
+          "actual": 5,
+          "clear": 42617,
+          "opaque": 32232,
+          "alphaMean": 0.4389983853502056,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                176,
+                104,
+                10
+              ],
+              "alpha": 1,
+              "overWhite": [
+                176,
+                104,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 9.95,
+          "actual": 9.95,
+          "clear": 43102,
+          "opaque": 31230,
+          "alphaMean": 0.430711316084628,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                171,
+                104,
+                24
+              ],
+              "alpha": 1,
+              "overWhite": [
+                171,
+                104,
+                24
+              ]
+            }
+          ]
+        }
+      ],
+      "startTime": 9.95,
+      "endTime": 0.4936074169987232,
+      "loopWrapped": true,
+      "callbacks": 20,
+      "times": [
+        9.966666666666667,
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6
+      ],
+      "quality": {
+        "total": 214,
+        "dropped": 0
+      }
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "available": true,
+      "cat": "clover",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+      "loadMs": 23,
+      "dimensions": [
+        212,
+        520
+      ],
+      "samples": [
+        {
+          "seconds": 0,
+          "actual": 0,
+          "clear": 29789,
+          "opaque": 20900,
+          "alphaMean": 0.42657431913257954,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                166,
+                177,
+                134
+              ],
+              "alpha": 1,
+              "overWhite": [
+                166,
+                177,
+                134
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 1,
+          "actual": 1,
+          "clear": 30605,
+          "opaque": 20326,
+          "alphaMean": 0.4100898574233745,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                191,
+                191,
+                149
+              ],
+              "alpha": 1,
+              "overWhite": [
+                191,
+                191,
+                149
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 5,
+          "actual": 5,
+          "clear": 29543,
+          "opaque": 20926,
+          "alphaMean": 0.42677672955975215,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                199,
+                192,
+                148
+              ],
+              "alpha": 1,
+              "overWhite": [
+                199,
+                192,
+                148
+              ]
+            }
+          ]
+        },
+        {
+          "seconds": 9.95,
+          "actual": 9.95,
+          "clear": 29486,
+          "opaque": 21131,
+          "alphaMean": 0.4263891260422953,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                106,
+                130
+              ],
+              "premul": [
+                176,
+                189,
+                142
+              ],
+              "alpha": 1,
+              "overWhite": [
+                176,
+                189,
+                142
+              ]
+            }
+          ]
+        }
+      ],
+      "startTime": 9.95,
+      "endTime": 0.4915944583301526,
+      "loopWrapped": true,
+      "callbacks": 20,
+      "times": [
+        9.966666666666667,
+        0,
+        0.03333333333333333,
+        0.06666666666666667,
+        0.1,
+        0.13333333333333333,
+        0.16666666666666666,
+        0.2,
+        0.23333333333333334,
+        0.26666666666666666,
+        0.3,
+        0.3333333333333333,
+        0.36666666666666664,
+        0.4,
+        0.43333333333333335,
+        0.4666666666666667,
+        0.5,
+        0.5333333333333333,
+        0.5666666666666667,
+        0.6
+      ],
+      "quality": {
+        "total": 211,
+        "dropped": 0
+      }
+    },
+    {
+      "engine": "firefox",
+      "available": false
+    }
+  ]
+}

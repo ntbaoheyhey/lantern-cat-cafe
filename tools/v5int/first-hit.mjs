@@ -5,6 +5,7 @@ import {mkdirSync,readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
+import {readBuildIdentity} from './build-identity.mjs';
 
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
 assert(/^[a-z0-9-]+$/.test(label??''),'Supply a fresh evidence label');
@@ -16,7 +17,7 @@ const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const indexSha256=hash(readFileSync(resolve(root,'apps/web/dist/index.html')));
 assert.equal(hash(Buffer.from(await (await fetch(url)).arrayBuffer())),indexSha256,'Preview differs from current build');
 const req=createRequire(resolve(root,'apps/web/package.json')),{chromium}=req('@playwright/test'),sharp=req('sharp');
-const report={url,utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256,viewport:{width:1280,height:720},scope:'Cold guest practice first visible damage, ordinary UI controls, all tutorial text retained with 200-word/minute reading allowance. No fixture, saved progress, speed change or public transaction.',readingWordsPerMinute:200,steps:[],tutorial:[],errors:[],httpFailures:[],blocked:[],complete:false};
+const report={url,utc:new Date().toISOString(),...readBuildIdentity(root,indexSha256),indexSha256,viewport:{width:1280,height:720},scope:'Cold guest practice first visible damage, ordinary UI controls, all tutorial text retained with 200-word/minute reading allowance. No fixture, saved progress, speed change or public transaction.',readingWordsPerMinute:200,steps:[],tutorial:[],errors:[],httpFailures:[],blocked:[],complete:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});let page;
 try{
  const context=await browser.newContext({viewport:report.viewport,deviceScaleFactor:1,serviceWorkers:'block'});page=await context.newPage();

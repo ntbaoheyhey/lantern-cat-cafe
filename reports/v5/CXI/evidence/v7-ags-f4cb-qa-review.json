@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-18T04:08:50.236295+00:00",
+  "laneCommit": "f4cb687a335f84689c5b07f66540aa7f1d29de65",
+  "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/QA-v5-m1.12-final.md",
+  "sha256": "2de57ecc39dbad29417e4ab9a50a9d1fe53d73041fa1659b5ad9651d8db70d30",
+  "disposition": "REDO T-CXI-1",
+  "findings": [
+    "Targets old m1.12 although task renewed against m1.13;live6301 currently unreleased atlas candidate.",
+    "Access10:35:10Z and actions10:34:30Z/10:34:35Z are later than current04:08Z and access follows actions.",
+    "No own artifact paths for network trace/captures, first-hit elapsed, audio or completed guest-to-receipt journey."
+  ],
+  "openTasks": [
+    "T1",
+    "T2",
+    "T3",
+    "T5",
+    "T7",
+    "T8"
+  ]
+}

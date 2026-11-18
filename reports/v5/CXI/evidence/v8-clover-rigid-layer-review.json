@@ -1,0 +1,94 @@
+{
+  "utc": "2026-11-18T09:42:07.730111+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-rigid-layer-r1/report.json",
+    "sha256": "8ddae921494aabeac23b946d836474590a7b5981075ccdaa1efd2d72e4e73be9"
+  },
+  "result": {
+    "utc": "2026-11-18T09:40:33.530252+00:00",
+    "source": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+    },
+    "priorLabels": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-endpoint-labels-r1/report.json",
+      "sha256": "1c2b1696b1bc109094160046801c4bb12bbed51df1fd38e5c9a38e6b6fd95c26"
+    },
+    "toolSha256": "bc162d68db81297b3571ba2643d3fa1e2a5ed92b4c71013508de3791f6d91cdc",
+    "method": "One centroid-initialized Euclidean ECC of binary tail labels; 100 iterations, epsilon1e-6, Gaussian5",
+    "initialMatrix": [
+      [
+        1.0,
+        0.0,
+        7.670605182647705
+      ],
+      [
+        0.0,
+        1.0,
+        14.72482967376709
+      ]
+    ],
+    "matrix": [
+      [
+        0.9834715723991394,
+        0.181062713265419,
+        -45.05337142944336
+      ],
+      [
+        -0.181062713265419,
+        0.9834715723991394,
+        28.728679656982422
+      ]
+    ],
+    "eccScore": 0.9690112824285677,
+    "determinant": 1.000000039852271,
+    "singularValues": [
+      1.0000000199261354,
+      1.0000000199261354
+    ],
+    "maxTailDomainDisplacement": 22.11465921333677,
+    "shape": {
+      "rawIoU": 0.5244348762109795,
+      "rigidIoU": 0.9006711409395973,
+      "targetPixels": 3570,
+      "sourcePixels": 3511,
+      "warpedPixels": 3510
+    },
+    "support": {
+      "visibleTail": {
+        "pixels": 3570,
+        "meanWeights": {
+          "emptyAlpha": 0.011559421335584734,
+          "segmentedTail": 0.9382876583156834,
+          "otherVisible": 0.050152920348732005,
+          "outside": 0.0
+        },
+        "fullyTailSupportedPixels": 3243,
+        "pixelsTouchingOtherVisible": 210,
+        "pixelsTouchingEmpty": 123,
+        "premulRgbMAEOnFullySupported": 8.515823715763704
+      },
+      "eroded3pxCore": {
+        "pixels": 2549,
+        "meanWeights": {
+          "emptyAlpha": 0.0,
+          "segmentedTail": 0.9685272508599667,
+          "otherVisible": 0.03147274914003335,
+          "outside": 0.0
+        },
+        "fullyTailSupportedPixels": 2457,
+        "pixelsTouchingOtherVisible": 92,
+        "pixelsTouchingEmpty": 0,
+        "premulRgbMAEOnFullySupported": 4.101881078551873
+      }
+    },
+    "imagesCreated": 0,
+    "runtimeChanged": false,
+    "limits": [
+      "Rigid fitting label silhouettes does not prove material correspondence or texture alignment.",
+      "Masks are diagnostic; uncertain occlusion/alpha ownership remains.",
+      "No endpoint RGB raster, sequence, hidden texture or runtime asset generated."
+    ]
+  },
+  "disposition": "Rigid pose hypothesis improves shape without strain, but does not resolve source coverage:92eroded-core destinations touch other visible pixels. No endpoint/sequence accepted."
+}

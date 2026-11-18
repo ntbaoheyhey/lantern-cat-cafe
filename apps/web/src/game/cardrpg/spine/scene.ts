@@ -1,4 +1,5 @@
 import {CraftEncounter,isCraftOwner} from '../vfx-craft/encounter';
+import {canNarrowBattleAtlases,prepareBattleAtlases} from './effect-preload-selection';
 import {CasterFocus,FocusBannerAnchor} from '../battle-v3/focus';
 import {BattlePostFx} from '../battle-v3/post-fx';
 import {BattleAudio} from '../battle-v3/battle-audio';
@@ -137,10 +138,11 @@ export class SpineScene {
   }
   const owners=[...new Set(view.actors.map(unit=>view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi'))].sort();
   // The persistent field also samples these atlases when primary layers are off.
-  const layered=!!view.formationC2,key=JSON.stringify([layered,owners]);
+  const layered=!!view.formationC2,narrow=canNarrowBattleAtlases(view);
+  const key=JSON.stringify([layered,owners,narrow,narrow&&this.effects.overrides.effects.size>0]);
   if(key!==this.effectsKey){
    const request=Symbol(key);this.effectsRequest=request;this.effectsKey=key;this.effectsLoaded=owners.length===0;
-   if(owners.length)void Promise.all([this.effects.prepare(owners,layered),this.craftEffects.prepare(owners)]).then(()=>{
+   if(owners.length)void Promise.all([narrow?prepareBattleAtlases(this.effects,owners,layered,true):this.effects.prepare(owners,layered),this.craftEffects.prepare(owners)]).then(()=>{
     if(this.disposed||this.effectsRequest!==request)return;
     this.effectsLoaded=true;this.refreshLoading();this.invalidate();
    }).catch(error=>{

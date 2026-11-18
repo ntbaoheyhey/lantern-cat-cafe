@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-18T11:16:44.790783+00:00",
+  "decision": "Scoped preload implementation for native evaluation; not served or accepted as release.",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "f2ba5a329a56029b8b048da13438a7c92bb9bd2413589cc36467f4d31ff684e2"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/effect-preload-selection.ts",
+      "sha256": "45ab4728926e57c7761d4425275c50f8720c92baf5417c3f7a80eb8dd23b0b5d"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/effect-preload-selection.test.ts",
+      "sha256": "18eba9cefefebc378bc58a0b57f8dfe8394697713bd267d7d5e28cdfba84e240"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene-effect-preload.test.ts",
+      "sha256": "cca3b6871d993383ca5b796ce675043910b28ea359f124346f51f384641caa50"
+    },
+    {
+      "path": "tools/v5int/audit-vfx-atlas-policy.mjs",
+      "sha256": "e34a79570e34776b9235ad7f50dceaa61b0161131b1e4bb02a9815fefe627ec0"
+    }
+  ],
+  "checks": {
+    "focusedTests": 51,
+    "testFiles": 7,
+    "typecheckExit": 0,
+    "protectedPathsUnchanged": 3833,
+    "sourceCases": 2272,
+    "atlasSamples": 33792
+  },
+  "logs": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-atlas-focused-r3.log",
+      "sha256": "349487711b76d6130182f5e9863368c69b58c67e68f9ccb59e1be902b5e4d1cd"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-atlas-scene-tests-r3.log",
+      "sha256": "8ed5c0d75312ca0026307df060921b9f6c36236a9eb674342826aa089a72a0ef"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-atlas-typecheck-r4.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "nativeParity": "pending",
+  "coldGate": "pending",
+  "lease": "CXV retains current HP R2 on6301",
+  "grant": "INBOX-CXI348: narrow scene prepare/cache-key; conservative fallback and native proof required"
+}

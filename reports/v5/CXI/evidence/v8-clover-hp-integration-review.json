@@ -1,0 +1,73 @@
+{
+  "utc": "2026-11-18T10:53:50.195369+00:00",
+  "laneCommit": "04462a098def59af0621ee3e2dc4c37713eb7cbe",
+  "files": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "1f2ea53da34b001c2b5aeb927d49b6d7efea13cf1121cbbeb70d449261226ef0",
+      "bytes": 59189
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts",
+      "sha256": "2ac0c93d48a3463841c0328618798df456a99957539f80267e60903611648db3",
+      "bytes": 3990
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+      "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a",
+      "bytes": 2913
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene-clover-hud.test.ts",
+      "sha256": "5a8ab6aee8f8b22ade5f8e74f0a478fe39bdf4dfdcb2bff1d147523bb419c991",
+      "bytes": 2046
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-anchor.test.ts",
+      "sha256": "5871217a18e0c4c2301560687f38b924ce0cf46e219ff2a2591bce4644904df7",
+      "bytes": 2815
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus-anchor.test.ts",
+      "sha256": "a6ac40905a6218bced08eb5192aaa88ce3b054a35ddb3c02b3cd7cb648239db8",
+      "bytes": 1807
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/clover-hud-fixtures.json",
+      "sha256": "d7028762aa679f3aaefc7f5a97846415987cbaefaf47e4a988adbde2cb1bd9d1",
+      "bytes": 24776
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "sha256": "904ebf382f779951a467e6baf15f047360617e90e70c77cc3cf8da1a143df04c",
+      "portedPatchSha256": "543c7df6ab7f3bd3ecb26a5c4e15998c9509c9d47d9a11f4c5ff52af62e68c66"
+    }
+  ],
+  "nativeAcceptance": false,
+  "focusedChecks": {
+    "passed": 24,
+    "files": 7,
+    "typecheckExit": 0,
+    "logs": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-focused.log",
+        "sha256": "cd17166d3f50ef48457491dba818f36cc3e0157f61b3f9c468f6f3f757cd79e3"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-existing.log",
+        "sha256": "fd666deaff7893f3b2813889616c74b6175680ec83e696c96ceb9c2f78362b1a"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-typecheck.log",
+        "sha256": "ff18b5a37377e72874b511ed6e05de3ff2b2b6c6df5c23f9bbd54dd071028c34"
+      }
+    ]
+  },
+  "limits": "Import only authored Clover HP placement; original face-side default and other labels preserved. No old focus perf patch imported.",
+  "protectedSoot": {
+    "baseline": "c4bd12552",
+    "pathCount": 3833,
+    "changed": [],
+    "scope": "All baseline paths containing soot, plus no new Soot runtime/asset/test paths; own new baseline report allowed."
+  }
+}

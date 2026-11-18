@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-18T07:32:12.859928+00:00",
+  "sourceCommit": "5fbbc3435830b2945bb63e5c108b538614321085",
+  "method": "Three-file patch only; mixed lane commit not cherry-picked",
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/M-media-bounds-5fbbc3435.patch",
+    "sha256": "09983e5996fbb5334fc43836ae2f3459c3489a8f341e66f5d5df7a656e5aca7e"
+  },
+  "ready": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-bounds-READY.json",
+    "sha256": "54519f5dbc1e808f938aa4c90b25c4e65f7f5d4e7aed3e0615a7de5ece1bc61b"
+  },
+  "files": {
+    "apps/web/src/game/cardrpg/spine/scene.ts": "1feda93b0a28d61aa8ef96fd89fb02b29be76b9a69e95de334f864d715bd0039",
+    "apps/web/src/game/cardrpg/stage/media-pose-bounds.test.ts": "2b4834d01d2855f2eaaf0c6c911e5679627c31a69de19668c3a6b214d68fbcc7",
+    "apps/web/src/game/cardrpg/stage/media-pose-bounds.ts": "6afcbf20f38496c637da027d458992eb68f6efeaa43b27799b38ca8df1ee4ac5"
+  },
+  "ordinaryScannerSha256": "13d290c8e93736edde719c45ac6b70e1a42319d36763e778f11ff4d126f0aa5d",
+  "ordinaryScannerUnchanged": true,
+  "nativeProbeHashVerified": true,
+  "sharedBehaviorReceiptHashVerified": true,
+  "limits": [
+    "Measured static intake envelope deformed through actual UV triangles; not a decoded per-frame silhouette.",
+    "Same Mochi descriptor used for both IDs in detached probe. No Clover media acceptance.",
+    "Production complete scene, art, cast, socket, seam and byte gates remain open."
+  ],
+  "status": "SCOPED_CODE_CHECKS_PASS; production scene/asset acceptance pending",
+  "ownFocused": {
+    "passed": 80,
+    "files": 6,
+    "logs": [
+      "work/v5/CXI/jobs/v8-media-bounds-focused-r1.log",
+      "work/v5/CXI/jobs/v8-media-bounds-scene-focused-r1.log"
+    ],
+    "note": "One unmatched historical test filename selected no file; actual4+2files reported, never counted as a pass."
+  },
+  "typecheckExit": 0,
+  "protectedPaths": 3833,
+  "protectedDiff": []
+}

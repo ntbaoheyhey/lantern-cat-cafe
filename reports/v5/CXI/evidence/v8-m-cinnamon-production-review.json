@@ -1,0 +1,632 @@
+{
+  "utc": "2026-11-18T06:09:58.183Z",
+  "cat": "cinnamon",
+  "sourceCommit": "e797d99d8be267d696e8ccf703df9830911e8620",
+  "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 35,
+        "y": 18,
+        "width": 237,
+        "height": 291,
+        "body": {
+          "x": 67.63834979156321,
+          "y": 50.23228993283229,
+          "width": 172.20783780150896,
+          "height": 226.564808784216
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 36,
+        "y": 16,
+        "width": 235,
+        "height": 293,
+        "body": {
+          "x": 68.2368244955503,
+          "y": 48.33580538523957,
+          "width": 170.57986134212462,
+          "height": 228.46129333180875
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "sharedCodeParity": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m-native-seven-import.json",
+    "sha256": "9a54961f803f17d98f40d4a3d973dd026b4e66cc8f78ee7bc03c7a28ef95d82c",
+    "utc": "2026-11-18T06:03:08.038Z",
+    "baseline": "d1192596c",
+    "imported": [
+      "a3173c08e"
+    ],
+    "cases": 1120,
+    "perUnit": {
+      "mochi": 224,
+      "soot": 224,
+      "clover": 224,
+      "panko": 224,
+      "mallow": 224
+    },
+    "protectedDiff": [],
+    "mallowMaxBoneDelta": 1.7763568394002505e-15,
+    "protectedPaths": 3833,
+    "pass": true,
+    "completedUTC": "2026-11-18T06:03:09.028Z"
+  },
+  "buildSource": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "artifactSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "cinnamon-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.5695652173913043
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.608695652173913
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.6478260869565217
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.6869565217391304
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 6.096
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 6.1293333333333315
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 6.1626666666666665
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 6.195999999999998
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 6.229333333333333
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 6.262666666666668
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 6.295999999999999
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 6.329333333333334
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 6.362666666666666
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3557992566475457e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3557992566475457e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T06:11:12.570Z",
+  "comparison": {
+    "utc": "2026-11-18T06:11:20.492493+00:00",
+    "cat": "cinnamon",
+    "captureUTC": "2026-11-18T06:09:58.183Z",
+    "captureCompletedUTC": "2026-11-18T06:11:12.570Z",
+    "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+    "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "sameHeightPx": 228,
+    "sourceUnion600x480": [
+      41,
+      32,
+      527,
+      436
+    ],
+    "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/cinnamon-vs-designer-10s.mp4",
+    "videoSha256": "7b8101376e999001145833d8c814b925a69f300f7542a207b06f4337c3cdf2c3",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000"
+      }
+    },
+    "channels": [
+      {
+        "mode": "reduced",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              0.0,
+              2.370832721473107
+            ],
+            "rangePercentH": [
+              0.0,
+              0.4630532659127162
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              0.0,
+              1.355434287677383
+            ],
+            "rangePercentH": [
+              0.0,
+              0.2647332593119889
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              0.0,
+              1.1588931682944121
+            ],
+            "rangePercentH": [
+              0.0,
+              0.22634632193250237
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      },
+      {
+        "mode": "candidate",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              7.579559467774288,
+              10.307968354230866
+            ],
+            "rangePercentH": [
+              1.4803827085496657,
+              2.013275069185716
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              7.46548081302538,
+              5.777845190236178
+            ],
+            "rangePercentH": [
+              1.4581017212940195,
+              1.1284853887180035
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              10.0
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              1.8780121829980203,
+              5.933538113417569
+            ],
+            "rangePercentH": [
+              0.36679925449180084,
+              1.158894162776869
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              1.1999465377848433,
+              5.0386659491060755
+            ],
+            "rangePercentH": [
+              0.23436455816110222,
+              0.9841144431847804
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      }
+    ],
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 53252,
+        "sha256": "bd64ea263183253bfabc250cf46f50f348522a4b3c6b6e8f82cbfde054d1be59",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:12:28.416731+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 52128,
+        "sha256": "a006315a69c2f802a2092292eb08a9e8d0dac7494b4dd394dde29a080c4623bf",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:12:28.416731+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/candidate/blink-sheet.jpg",
+        "width": 1024,
+        "height": 224,
+        "bytes": 45181,
+        "sha256": "678ed93fe36575760903ee707f36b7aab600e29b82165b6a1e3e337de0fb960a",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:12:28.416731+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/cinnamon-production-r1/cast/cast-sheet.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 81879,
+        "sha256": "e3700a46bc6739ebf7d54b10db80cad6bf986bde008f3fe58196fd6e8b0d6006",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:12:28.416731+00:00"
+      }
+    ],
+    "limits": "Deterministic scene samples and 1x encoded comparison; no continuously watched film or real-time FPS claim.",
+    "visualDisposition": "ACCEPT_SCOPED_SCENE_MOTION",
+    "observation": "The head tilt, ear separation, blink and tail remain coherent; serving-hand recovery stays attached. Upper-row hair has limited headroom and the existing health bar overlaps the forward hand. The healing glow obscures recipients briefly. No new foot clipping or deformed silhouette appears in the four samples.",
+    "reviewedImages": 4
+  },
+  "disposition": "ACCEPT_SCOPED_SCENE_MOTION",
+  "releaseReady": false
+}

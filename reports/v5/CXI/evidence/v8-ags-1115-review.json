@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-18T11:14:40.635862+00:00",
+  "inboxThrough": 348,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-STAGED-VIDEO-DELIVERY.md",
+      "sha256": "2328ab1cdf33dfb9ff072715dd0a550a0a94fbfe2cd6ccd2ae51cb4255516899",
+      "text": "# Staged Video Delivery Research (T-M4 - Finalized)\n- MSE fMP4 / Range Loading: Standardized browser delivery docs only.\n- Random phase/seek/loop/stall/bytes: Unmeasured/Unknown.\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CLOVER-MASK-EXPORT-DRAFT-VI.md",
+      "sha256": "fb33658512ceaebbc1c567428e41818e00fd5f511f33f440ef77fe7677b6ed2d",
+      "text": "# Clover Mask Export Research (T-CXI-12 - Finalized)\n- Export Requirements: Live2D Export (EN/ZH).\n- Asset Distinction:\n  - Model Structure/Masks: Available.\n  - Reconstructed layers: Unsupported/Unknown.\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AUDIO-PRELOAD-INVENTORY.md",
+      "sha256": "0677ca4c259b36cc8b91257a08701d55db6f1fa78597132c82bcb175eba9c9b9",
+      "text": "# Audio Preload Inventory (T-CXI-11 R3 - Finalized)\n| Artifact | Source File/Line | Runtime Condition |\n| :--- | :--- | :--- |\n| scene-room | Unavailable | Unavailable |\n| scene-workshop | Unavailable | Unavailable |\n| scene-rain | Unavailable | Unavailable |\n| score-boss | Unavailable | Unavailable |\n| score-dawn | Unavailable | Unavailable |\n"
+    }
+  ],
+  "shortGopPathExists": false,
+  "dispositions": {
+    "T-M4": "REDO: two homepages do not support specific seek/fragment/loop tradeoffs. Own study complete; task remains sourcing work.",
+    "T-M5": "OPEN: assigned trial directory absent; no measured encode delivery.",
+    "T-CXI-12": "REDO: available model and masks still unsupported; only MP4 files verified.",
+    "T-CXI-11": "ACK unavailable only; no audio acceptance."
+  }
+}

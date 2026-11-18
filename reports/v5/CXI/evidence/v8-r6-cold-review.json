@@ -1,0 +1,73 @@
+{
+  "utc": "2026-11-18T09:27:59.451608+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v8-mochi-scene-q22-r6/all.json",
+    "sha256": "995ba95f609a10a7b9f66a28bee7599348ff77cc1434c2fbd25023da77482d5b"
+  },
+  "buildDescriptor": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/build.json",
+    "sha256": "0c6ff4f005842e39fa74f60918b8613b77744ea48608be690ce67ad14c14c06d"
+  },
+  "servedSourceCommit": "adb526a869012cecef2da673f1bc6d86e42d8a5d",
+  "captureCheckoutCommit": "7bc69c693a3fef82065fe4e0a8e1c0986beed8f4",
+  "rawSourceCommitMeaning": "The old harness recorded capture checkout HEAD. This is not the served source commit.",
+  "indexSha256": "f9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0",
+  "registryOverride": {
+    "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json"
+  },
+  "captureHarnessSha256": "bbed587083b4b81fb956ad42cfa7dcf672476f41ef9c8da4472a44ea32b77023",
+  "unchangedBetweenServedAndCaptureCheckout": {
+    "paths": [
+      "apps",
+      "packages",
+      "tools/v5int/measure-transfer.mjs",
+      "tools/cardrpg-big/a4-load.mjs",
+      "tools/v4ship-lab/rehearsal/metrics.mjs",
+      "tools/v4ship-lab/rehearsal/battle-ready.mjs",
+      "scripts/v3a2/fixtures.json"
+    ],
+    "diff": []
+  },
+  "rows": [
+    {
+      "fixture": "wave1",
+      "bytes": 8509074,
+      "overBudgetBytes": 509074,
+      "budgetPass": false,
+      "requests": 282,
+      "battleReadyMs": 3166,
+      "errors": 0
+    },
+    {
+      "fixture": "wave3",
+      "bytes": 8975988,
+      "overBudgetBytes": 975988,
+      "budgetPass": false,
+      "requests": 292,
+      "battleReadyMs": 1774,
+      "errors": 0
+    },
+    {
+      "fixture": "boss",
+      "bytes": 8584766,
+      "overBudgetBytes": 584766,
+      "budgetPass": false,
+      "requests": 274,
+      "battleReadyMs": 1655,
+      "errors": 0
+    }
+  ],
+  "disposition": "FAIL 8000000-byte gate in all three fixtures",
+  "limits": [
+    "Clover absent; ignored Mochi override only; no release acceptance.",
+    "Raw receipt preserved without edits; wrapper corrects source attribution.",
+    "battleReadyMs is seeded fixture readiness, not ordinary guest first-hit journey."
+  ],
+  "nextRunProvenanceFix": {
+    "tool": "tools/v5int/measure-transfer.mjs",
+    "buildDescriptorArgument": "--build-descriptor=work/v5/CXI/batch-m/mochi-scene-q22-r6/build.json",
+    "checks": "4 node tests pass; node syntax pass; real R6 descriptor replay pass; owned diff check pass",
+    "behavior": "Explicit descriptor is checked against served index; capture checkout distinct; missing descriptor has null served source; alternate rules root or changed fixture input is rejected.",
+    "measurementRerun": false
+  }
+}

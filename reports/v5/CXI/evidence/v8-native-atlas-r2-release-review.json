@@ -1,0 +1,243 @@
+{
+  "utc": "2026-11-18T12:18:38.998008+00:00",
+  "releaseCandidate": "v5-m1.14",
+  "sourceCommit": "c4108923c25a9c982b0831318e16a93cc991f8e7",
+  "indexSha256": "fe8bdd0096a5dba4817b7c559b0a238c700fd37a453ee93f7e8b1e6e5f577c6e",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "bytePolicy": {
+    "mode": "report-only",
+    "releaseBlocking": false,
+    "authority": "OWNER INBOX-CXI386 2026-11-18T12:09:40Z",
+    "formerReferenceBytes": 8000000
+  },
+  "cold": [
+    {
+      "fixture": "wave1",
+      "bytes": 7591445,
+      "priorBytes": 7599894,
+      "observedReduction": 8449,
+      "sharedRigResources": [
+        {
+          "path": "/units/teacup-healer/rig-shared-c30ea0e9f2b0ed2c.json",
+          "totalBytes": 20333,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/rig-delivery/shared-384225f71a2b922d.json",
+          "totalBytes": 27651,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/units/needle-moth/rig-shared-db14de1aae858c67.json",
+          "totalBytes": 21464,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "fixture": "wave3",
+      "bytes": 8030924,
+      "priorBytes": 8039216,
+      "observedReduction": 8292,
+      "sharedRigResources": [
+        {
+          "path": "/units/needle-moth/rig-shared-db14de1aae858c67.json",
+          "totalBytes": 21464,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/rig-delivery/shared-384225f71a2b922d.json",
+          "totalBytes": 27651,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/units/teacup-healer/rig-shared-c30ea0e9f2b0ed2c.json",
+          "totalBytes": 20333,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "fixture": "boss",
+      "bytes": 7624476,
+      "priorBytes": 7629873,
+      "observedReduction": 5397,
+      "sharedRigResources": [
+        {
+          "path": "/units/yarn-giant/rig-shared-c7a5ad2eea5fb96e.json",
+          "totalBytes": 19836,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/rig-delivery/shared-384225f71a2b922d.json",
+          "totalBytes": 27651,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/units/binding-thread/rig-shared-97ec9a8749db7429.json",
+          "totalBytes": 20093,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "firstHitMs": 20880,
+  "readingAllowanceMs": 17700,
+  "tutorialCards": 8,
+  "ordinaryErrors": [],
+  "routeReceiptMs": 9740,
+  "lifecycleModes": 2,
+  "exactRestoredRGB": true,
+  "fullSuite": {
+    "passed": 5539,
+    "skipped": 11,
+    "expectedFailures": 2,
+    "total": 5552,
+    "webPassed": 3239,
+    "exit": 0
+  },
+  "focusedPassed": 24,
+  "typecheckExit": 0,
+  "nativeRigFaultCases": 18,
+  "protectedBase": "c4bd12552",
+  "protectedPaths": 3833,
+  "protectedChanges": [],
+  "nativeCats": [
+    "panko",
+    "mallow",
+    "sorrel",
+    "biscuit",
+    "inkcap",
+    "cinnamon",
+    "brioche",
+    "velvet",
+    "marigold"
+  ],
+  "designerRegistry": {},
+  "browserSteps": [
+    {
+      "step": "transfer",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-transfer.log",
+      "utc": "2026-11-18T12:14:36.641975+00:00"
+    },
+    {
+      "step": "audio-paths",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-audio-paths.log",
+      "utc": "2026-11-18T12:14:36.728904+00:00"
+    },
+    {
+      "step": "first-hit",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-first-hit.log",
+      "utc": "2026-11-18T12:14:58.383521+00:00"
+    },
+    {
+      "step": "route",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-route.log",
+      "utc": "2026-11-18T12:15:08.782177+00:00"
+    },
+    {
+      "step": "recovery",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-recovery.log",
+      "utc": "2026-11-18T12:15:23.338439+00:00"
+    },
+    {
+      "step": "lifecycle",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-lifecycle.log",
+      "utc": "2026-11-18T12:15:34.096617+00:00"
+    },
+    {
+      "step": "films",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-films.log",
+      "utc": "2026-11-18T12:17:21.173664+00:00"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/native-atlas-r2/build.json",
+      "sha256": "08962b5f4b8832e1cc36f4021b2fce9853ef11873f815df30c04d7ae69035e03",
+      "bytes": 795
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-rig-data-suite-r1.log",
+      "sha256": "4075c6c194bef54c83ab166150a4bcac5eb0f46cc6c4a7fbc9971ae96cc25dd0",
+      "bytes": 10001
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-native-r2-final-status.json",
+      "sha256": "7989e082e9c4b65088ccf18292b7943e03435d7d8999e96226a4c163ec6f1ceb",
+      "bytes": 1310
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v8-native-r2-final/all.json",
+      "sha256": "50f9bed5fc3abbd2ea38c130d43227018015ae0b7ae48efc8590bd197d867efb",
+      "bytes": 184689
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/first-hit/v8-native-r2-final/report.json",
+      "sha256": "782d1da15a17504a1848bd2fcc2eae6bf594142e85e4d997a48f8a2433da7d58",
+      "bytes": 3204
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/route/v8-native-r2-final/report.json",
+      "sha256": "c9fe8416aeb0e1ed08278f9a97922f574b4be8adeac97fd3b70c94a5408e8497",
+      "bytes": 1836
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v8-native-r2-final/report.json",
+      "sha256": "7a353de8e56f55573ce6b6f31086d5f9bfcc784975d885fa28c3b8dd4a56ffb5",
+      "bytes": 3271
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/context/v8-native-r2-final/report.json",
+      "sha256": "f459a7ed23d61bcb15cab160beff993ace13920c0cad41cb63a087bf435f8d6a",
+      "bytes": 121830
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/report.json",
+      "sha256": "17a94fd87e78e26652e7a364a53e1f16bb5dda48cfae5ffaa80ea45bf6ac4218",
+      "bytes": 9889
+    }
+  ],
+  "artifact": "/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.14-dist",
+  "artifactBytes": 293731858,
+  "imagesMeasured": 14,
+  "freshImagesViewed": 9,
+  "priorImageHashReuse": 3,
+  "withinRunDuplicateReuse": 2,
+  "decision": "PASS native-only release gates;Mochi/Clover commissioned media remains excluded. Byte totals are report-only.",
+  "limits": [
+    "Local native capture timing is not calibrated normal-laptop performance.",
+    "Film sound has measured signal;no subjective listening or frame-exact AV-sync claim.",
+    "No public Fuji transaction or hosting deployment.",
+    "AGV R12 quality remains unreviewed after byte-only rejection was superseded;no adoption."
+  ]
+}

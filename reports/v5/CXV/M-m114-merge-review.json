@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-18T12:26:29.871614+00:00",
+  "announcedTag": "v5-m1.14",
+  "tagCommit": "254ad41d6500daf4093727e880d6f8991f77c660",
+  "announcement": "BOARD.md 2026-11-18T12:24:03Z",
+  "conflict": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+  "resolution": "Retained existing CXV batched pending-label extents plus authored current/pending HP placements. Resolved file is byte-identical to pre-merge CXV HEAD;no whole-file transfer into CXI.",
+  "focusSourceSha256": "69bb7f91032710b5ca26bdea1149102a03c4aec9855d2f847e688da0d4bbed55",
+  "focusTests": 17,
+  "typecheckExit": 0,
+  "protectedReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/merge-m114-protected.json",
+    "sha256": "08d03c6978e9efa6e568c812574f6fd07e29e1a6ccce74fb4ee4a53472259ae2"
+  },
+  "limits": "Imports announced GREEN only. Existing local legacy candidate files remain unaccepted by CXI;this merge makes no production claim for those pending changes.",
+  "preloadTests": {
+    "files": 2,
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/merge-m114-preload-tests.log"
+  }
+}

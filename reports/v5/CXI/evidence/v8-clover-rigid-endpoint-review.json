@@ -1,0 +1,242 @@
+{
+  "utc": "2026-11-18T08:05:48.840665+00:00",
+  "endpoint": {
+    "utc": "2026-11-18T08:05:14.549363+00:00",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sourceSha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "toolSha256": "98f589b55a17f5745737a0e808157a2ba8580e9bd23d771cfb9f302e902bd3df",
+    "runtimeChanged": false,
+    "sequenceChanged": false,
+    "method": "Rigid MLS inverse map on seven tip-based absolute arclength controls 0..90px; excludes occluded root; unchanged protection mask. One endpoint only.",
+    "controls": [
+      [
+        71.0,
+        278.0
+      ],
+      [
+        63.48528137423857,
+        269.0
+      ],
+      [
+        49.51471862576143,
+        269.4852813742386
+      ],
+      [
+        43.0,
+        281.7867965644036
+      ],
+      [
+        41.0,
+        295.1299423149112
+      ],
+      [
+        46.04163056034265,
+        308.04163056034264
+      ],
+      [
+        57.52691193458123,
+        316.5269119345812
+      ]
+    ],
+    "targets": [
+      [
+        65.0,
+        281.0
+      ],
+      [
+        52.63603896932108,
+        287.3639610306789
+      ],
+      [
+        48.0,
+        300.44365081389594
+      ],
+      [
+        49.849242404917504,
+        313.8492424049175
+      ],
+      [
+        57.62741699796954,
+        325.62741699796953
+      ],
+      [
+        63.991378028648484,
+        337.9913780286485
+      ],
+      [
+        76.5735931288072,
+        341.0
+      ]
+    ],
+    "metrics": {
+      "sourceMAE": 43.555980919393555,
+      "candidateMAE": 33.09944398869747,
+      "sourceIoU": 0.657034969627319,
+      "candidateIoU": 0.7357949755521834,
+      "foldedActiveCells": 1574,
+      "minimumCorner": -3.4700614452777874,
+      "maximumDisplacement": 65.4148150493962,
+      "zeroMaskPixelsChanged": 0,
+      "tailMinimumStretch": 0.008113772125664269,
+      "tailStretchP01": 0.08510513225491562,
+      "tailMaximumStretch": 5.446641136748021
+    },
+    "numericPass": false,
+    "strainAcceptance": "Separate visual/strain review; no threshold relaxation.",
+    "decision": "REJECTED: four-corner folds, displacement, seam quality and strain fail. No image view or sequence/runtime adoption."
+  },
+  "correspondence": {
+    "utc": "2026-11-18T08:04:58.678297+00:00",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sourceSha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "toolSha256": "98f589b55a17f5745737a0e808157a2ba8580e9bd23d771cfb9f302e902bd3df",
+    "runtimeChanged": false,
+    "sequenceChanged": false,
+    "rows": [
+      {
+        "frame": 25,
+        "tip": [
+          72.0,
+          241.0
+        ],
+        "occludedEnd": [
+          73.0,
+          287.0
+        ],
+        "length": 106.05382386916227,
+        "componentArea": 2477,
+        "controls": [
+          [
+            72.0,
+            241.0
+          ],
+          [
+            65.65685424949238,
+            234.0
+          ],
+          [
+            51.48528137423857,
+            236.0
+          ],
+          [
+            40.443650813895935,
+            245.55634918610406
+          ],
+          [
+            40.0,
+            258.71572875253815
+          ],
+          [
+            49.28427124746194,
+            269.28427124746196
+          ],
+          [
+            61.648232278140874,
+            275.6482322781409
+          ]
+        ]
+      },
+      {
+        "frame": 150,
+        "tip": [
+          62.0,
+          246.0
+        ],
+        "occludedEnd": [
+          77.0,
+          276.0
+        ],
+        "length": 131.56854249492372,
+        "componentArea": 3291,
+        "controls": [
+          [
+            62.0,
+            246.0
+          ],
+          [
+            54.242640687119284,
+            239.0
+          ],
+          [
+            39.46446609406726,
+            239.53553390593274
+          ],
+          [
+            27.393398282201776,
+            246.6066017177982
+          ],
+          [
+            26.0,
+            260.2010101267767
+          ],
+          [
+            30.384776310850263,
+            273.38477631085027
+          ],
+          [
+            40.87005768508885,
+            282.87005768508885
+          ]
+        ]
+      },
+      {
+        "frame": 275,
+        "tip": [
+          71.0,
+          288.0
+        ],
+        "occludedEnd": [
+          101.0,
+          336.0
+        ],
+        "length": 154.71067811865473,
+        "componentArea": 3396,
+        "controls": [
+          [
+            71.0,
+            288.0
+          ],
+          [
+            63.89949493661167,
+            288.0
+          ],
+          [
+            50.97056274847715,
+            283.0
+          ],
+          [
+            39.322330470336304,
+            289.6776695296637
+          ],
+          [
+            36.0,
+            303.301515190165
+          ],
+          [
+            39.0,
+            317.05887450304573
+          ],
+          [
+            47.52691193458122,
+            328.5269119345812
+          ]
+        ]
+      }
+    ],
+    "image": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-correspondence-r1/correspondence-midframes.png",
+      "dimensions": [
+        954,
+        390
+      ],
+      "sha256": "0ab8fe233088fceabab552d87a6d12629ada3d97c0839abda55cc29a29d69d6d",
+      "viewed": true,
+      "viewedUTC": "2026-11-18T08:05:14.380609+00:00"
+    },
+    "limits": [
+      "Upper-tip/lower-occlusion interpretation needs fresh view.",
+      "Skeleton is color/shape evidence, not recovered physical rig."
+    ],
+    "observation": "One fresh954x390 sheet: upper endpoint is free curled tail tip; lower cyan endpoint disappears behind dress. Root visibility changes with pose; exclude final30px from endpoint controls. Mid-sequence skeleton lengths vary106..155px, so no all-frame correspondence claim."
+  }
+}

@@ -5,6 +5,7 @@ import {mkdirSync,readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
+import {readBuildIdentity} from './build-identity.mjs';
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
 assert(/^[a-z0-9-]+$/.test(label??''),'Supply a fresh evidence label');
 for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
@@ -13,7 +14,7 @@ const url='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex'),indexSha256=hash(readFileSync(resolve(root,'apps/web/dist/index.html')));
 assert.equal(hash(Buffer.from(await (await fetch(url)).arrayBuffer())),indexSha256,'Preview differs from current build');
 const req=createRequire(resolve(root,'apps/web/package.json')),{chromium}=req('@playwright/test');
-const report={url,utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256,viewport:{width:1280,height:720},scope:'Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.',steps:[],errors:[],httpFailures:[],blocked:[],complete:false};
+const report={url,utc:new Date().toISOString(),...readBuildIdentity(root,indexSha256),indexSha256,viewport:{width:1280,height:720},scope:'Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.',steps:[],errors:[],httpFailures:[],blocked:[],complete:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 let page;
 try{

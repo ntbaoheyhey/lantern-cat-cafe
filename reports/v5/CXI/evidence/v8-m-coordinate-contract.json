@@ -1,0 +1,90 @@
+{
+  "utc": "2026-11-18T05:10:22.495974+00:00",
+  "status": "Provisional coordinate contract; face ROI conservative and requires native placement review",
+  "units": {
+    "mochi": {
+      "width": 468,
+      "height": 390,
+      "opaqueHeight": 384,
+      "opaqueBounds": [
+        3,
+        3,
+        465,
+        387
+      ],
+      "foot": [
+        247.25,
+        387
+      ],
+      "footMethod": "Median across300 frames of paired silhouette centers in anatomical windows belowy350",
+      "footWindows": [
+        [
+          140,
+          225
+        ],
+        [
+          275,
+          345
+        ]
+      ],
+      "footXRange": [
+        242.25,
+        252.25
+      ],
+      "footYRange": [
+        386,
+        387
+      ],
+      "faceROI": [
+        150,
+        48,
+        197,
+        133
+      ],
+      "faceROIFormat": "top-left pixel x,y,width,height",
+      "worldConversion": "s=512/384; xWorld=(x-footX)*s; yWorld=(footY-y)*s"
+    },
+    "clover": {
+      "width": 318,
+      "height": 390,
+      "opaqueHeight": 384,
+      "opaqueBounds": [
+        2,
+        3,
+        315,
+        387
+      ],
+      "foot": [
+        157.75,
+        387
+      ],
+      "footMethod": "Median across300 frames of paired silhouette centers in anatomical windows belowy350",
+      "footWindows": [
+        [
+          80,
+          145
+        ],
+        [
+          165,
+          225
+        ]
+      ],
+      "footXRange": [
+        150.75,
+        160.5
+      ],
+      "footYRange": [
+        385,
+        387
+      ],
+      "faceROI": [
+        75,
+        45,
+        172,
+        114
+      ],
+      "faceROIFormat": "top-left pixel x,y,width,height",
+      "worldConversion": "s=512/384; xWorld=(x-footX)*s; yWorld=(footY-y)*s"
+    }
+  }
+}

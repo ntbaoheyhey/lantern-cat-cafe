@@ -1,0 +1,66 @@
+{
+  "landingReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-landing-delivery-R4.json",
+    "sha256": "0548e1b77fc5352b813f5173864ef7d92290f0840a41d6a881abfd03a5f08704"
+  },
+  "captureHashesVerified": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/served.png",
+      "sha256": "d6d89a49a785c680559c2739f1c9424f15a04e5cc8bc37618a73013a92b9bfce"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/served-1024.jpg",
+      "sha256": "c4d8d9f63320d1eaaa49958977015982438499d021e8d46ab1d68b44fa0ea6a5"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/original.png",
+      "sha256": "27a362878cef0a8d84ec911541602822589389b744ba76c9b416c840ffca40eb"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/original-1024.jpg",
+      "sha256": "3ca2aab7dcd64bae7ea27049891927d0ee11cc8ce14363e675aee7b447ad0883"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/candidate.png",
+      "sha256": "8bad393acd6842ac9c4cf2b48dcc641ad45df8e5ccfd66d3f4f6d23a2e058ac5"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R4/candidate-1024.jpg",
+      "sha256": "58a6f605f321cb8460db7f329dec41e270e6e10bf97f7592061b2655c2afa6c2"
+    }
+  ],
+  "decision": "REDO visible fine-detail smoothing; no adoption",
+  "assessment": "Two fresh views once; original/served reused exact prior hashes. R4 improves overall detail, but native comparison still loses fine cheek/fur grain, shield-rim brush detail and dress/masonry texture. Saving69863B leaves905203B of prior wave3 deficit; no-visible-desktop-loss gate remains unmet.",
+  "bytes": 138004,
+  "saving": 69863,
+  "adopted": false,
+  "ownNewImageViews": 0,
+  "sootReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-contact-production-existing-parity-R3.json",
+    "sha256": "98c1250effcc9da7e3a19e5c17d7751a6edbc9011b1a8b4d7ee8c3e99a58616a",
+    "report": {
+      "utc": "2026-11-18T07:55:20.302Z",
+      "sourceCommit": "521bf4f4af9f70d68528a6edb6beb8411a50491d",
+      "indexSha256": "1376064444266635bbb1da3058be5f81ff1aa9f423f345a974f0228894315813",
+      "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+      "method": "Unchanged historical Soot sampling section from capture-native-living.mjs after media contact repair, current production candidate; no Soot source or test edits.",
+      "samplingHarnessSha256": "94eb9c209ef4061e6083a0060c51f0126e21f0e858e22c4e64bfb5a4cc07341a",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "errors": [],
+      "pass": true
+    }
+  },
+  "limits": "Lane evidence verified; no new CXI production capture or measurement asserted."
+}

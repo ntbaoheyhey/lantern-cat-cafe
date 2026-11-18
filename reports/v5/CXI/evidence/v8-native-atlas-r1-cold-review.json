@@ -1,0 +1,35 @@
+{
+  "utc": "2026-11-18T11:44:51.763652+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v8-native-atlas-r1/all.json",
+    "sha256": "3ce775b75e6e1710572929a65b9d941c1005de9bb5852b1f2692b215aeaa874a"
+  },
+  "sourceCommit": "0b669ecc7cf802cccdbae4a740431c3546e998e4",
+  "indexSha256": "3e7d27a1321983ef655f4dfe5b3f4113e68736034e6d7b332aaa7e6bf086e8ae",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "bytes": 7599894,
+      "complete": true,
+      "budgetPass": true,
+      "errors": []
+    },
+    {
+      "fixture": "wave3",
+      "bytes": 8039216,
+      "complete": true,
+      "budgetPass": false,
+      "errors": []
+    },
+    {
+      "fixture": "boss",
+      "bytes": 7629873,
+      "complete": true,
+      "budgetPass": true,
+      "errors": []
+    }
+  ],
+  "budgetBytes": 8000000,
+  "decision": "FAIL release:wave3 remains39216 bytes over. Wave1/boss pass. No tag.",
+  "limits": "Native-only default registry; commissioned video trials are preserved separately and are not enrolled."
+}

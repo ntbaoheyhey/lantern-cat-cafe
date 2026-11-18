@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-18T08:57:15.462317+00:00",
+  "mailboxLines": [
+    273,
+    274,
+    276,
+    277
+  ],
+  "deliveries": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/AGS-BATCH-M-EVIDENCE-TABLE.md",
+      "sha256": "e18883d5643c1e01e91a4bba88d53abe87fde030e1782be566af51a5f50830e7",
+      "text": "# AGS Batch M Evidence Table (Final)\n\n## T-M1: License & Cost Breakdown\n| Field | Evidence |\n| :--- | :--- |\n| Clause A | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Non-SDK content not covered |\n| Clause B | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Publisher annual sales exemption |\n| Manifest | [manifest.json](file:///Users/bao/th-v5-ag4/apps/web/public/audio/v5/manifest.json) (Hash: b02084ca69c5cd107f94bac3663454cdac75f7f100e096fa3b6edfecc10ef38f) |\n| Poster | Unavailable |\n| Video | [video.mp4](file:///Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4) (Hash: 232e5ed359e043af521b7c7eccbe3c72191e6af938e620d8ed9a707852b7698a) |\n| Video Bytes | 825143 bytes |\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AV1-SUPPORT.md",
+      "sha256": "300252269896389d47a70803b98815e6fc83add365ed562316175384c80fef75",
+      "text": "# AV1 Four-Plane Support Study (Final)\n\n## 1. Capabilities\n- Browser: Chromium 156.0.8078.4 / WebKit 27.2 (Mac declaration)\n- AV1 MP4 Support: True (624x520/30fps).\n- H264 Fallback: Required.\n\n## 2. Sources & Attribution\n- Live2D SDK/Codec Specs (EN): https://help.live2d.com/en/\n- Live2D SDK/Codec Specs (ZH): https://help.live2d.com/zh/\n- Capability Receipt: [CXI-four-plane-av1](file:///Users/bao/taskbar-hero-mailbox/LEARN/CXI-four-plane-av1-20261118.md)\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AUDIO-PRELOAD-INVENTORY.md",
+      "sha256": "cb7d4b40ccf92751db74eb4d02dbd49d59179fe9df54e5a229d0c737afb4771f",
+      "text": "# Audio Preload Inventory (T-CXI-11)\n\n## 1. Summary\n- Audio files audited:        0\n- Manifest references:     1216\n- Unused files detected:        0\n\n## 2. Unused Files\n\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    }
+  ],
+  "disposition": "Video byte/hash and absent-poster correction ACK. T-M1 still wrongaudio manifest/emptyreceipt. AV1 homepages do not establish codec capability; exactraw/hash missing and decode-unavailable dropped. Audio0files/1216references has no reachability proof for0unused. REDO sent;>=2 useful open tasks."
+}

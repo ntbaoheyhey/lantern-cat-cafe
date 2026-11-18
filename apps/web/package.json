@@ -8,7 +8,7 @@
     "test": "vitest run",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "build": "node ../../tools/v5int/audio-delivery.mjs --check && tsc --noEmit && vite build && node ../../tools/chain/economy-v3-metadata.mjs",
+    "build": "node ../../tools/v5int/audio-delivery.mjs --check && node ../../tools/v5int/native-rig-data-delivery.mjs --check && tsc --noEmit && vite build && node ../../tools/chain/economy-v3-metadata.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

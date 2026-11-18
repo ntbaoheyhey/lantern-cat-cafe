@@ -1,0 +1,311 @@
+{
+  "utc": "2026-11-18T04:38:23.822094+00:00",
+  "decision": "UNSELECTED: study incomplete; source alpha estimate and seams need gates",
+  "trials": [
+    {
+      "measurement": {
+        "utc": "2026-11-18T04:35:01.558558+00:00",
+        "cat": "mochi",
+        "sourceSha256": "1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524",
+        "sourceDuration": 10,
+        "fps": 30,
+        "frames": 300,
+        "studyCanvas": [
+          640,
+          512
+        ],
+        "sourceBoundsAtStudy": [
+          43,
+          34,
+          562,
+          465
+        ],
+        "targetCatHeight": 384,
+        "deliveryCanvas": [
+          468,
+          390
+        ],
+        "packedCanvas": [
+          468,
+          780
+        ],
+        "bytes": 2899184,
+        "rgbaSequenceBytesNoMipmaps": 219024000,
+        "rgbaSequenceBytesWithMipmaps": 292032000,
+        "packedTextureBytesNoMipmaps": 1460160,
+        "decodeSurfacesNote": "GPU texture only; browser codec surfaces and CPU copies require separate measurement.",
+        "sourceSeamMAE": 4.234516620635986,
+        "adjacentMAEMedian": 3.936122179031372,
+        "adjacentMAEP95": 5.987932395935056,
+        "seamToAdjacentP95": 0.707175088267632,
+        "footYRange": [
+          386,
+          386
+        ],
+        "matteReconstructionOverBlackMAEMax": 0.038190897554159164,
+        "encodedMaskMAEMean": 1.1110744392871856,
+        "encodedCompositionOverWhiteMAEMean": 1.8366727077960967,
+        "contact": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/edge-estimate-contact.jpg",
+          "dimensions": [
+            1024,
+            639
+          ],
+          "sha256": "117bd62907d52bed277c493073bf8d1c65d28d8e4b0cf909824ac3abeebf41f5",
+          "stdev": [
+            96.6064224243164,
+            77.72254943847656,
+            72.52035522460938
+          ]
+        },
+        "warnings": [
+          "Offline experiment only, not runtime accepted.",
+          "Black-composited source cannot prove original alpha; edge/halo quality must be viewed.",
+          "Source seam unrepaired in this experiment.",
+          "GPU footprint excludes codec queues and application copies."
+        ]
+      },
+      "codecs": [
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-256-crf23.mp4",
+          "catHeight": 256,
+          "canvas": [
+            312,
+            260
+          ],
+          "crf": 23,
+          "bytes": 490429,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-256-crf28.mp4",
+          "catHeight": 256,
+          "canvas": [
+            312,
+            260
+          ],
+          "crf": 28,
+          "bytes": 287765,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-256-crf32.mp4",
+          "catHeight": 256,
+          "canvas": [
+            312,
+            260
+          ],
+          "crf": 32,
+          "bytes": 194755,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-384-crf23.mp4",
+          "catHeight": 384,
+          "canvas": [
+            468,
+            390
+          ],
+          "crf": 23,
+          "bytes": 880436,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-384-crf28.mp4",
+          "catHeight": 384,
+          "canvas": [
+            468,
+            390
+          ],
+          "crf": 28,
+          "bytes": 516398,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-384-crf32.mp4",
+          "catHeight": 384,
+          "canvas": [
+            468,
+            390
+          ],
+          "crf": 32,
+          "bytes": 350408,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        }
+      ]
+    },
+    {
+      "measurement": {
+        "utc": "2026-11-18T04:35:06.064182+00:00",
+        "cat": "clover",
+        "sourceSha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150",
+        "sourceDuration": 10,
+        "fps": 30,
+        "frames": 300,
+        "studyCanvas": [
+          421,
+          512
+        ],
+        "sourceBoundsAtStudy": [
+          1,
+          5,
+          406,
+          499
+        ],
+        "targetCatHeight": 384,
+        "deliveryCanvas": [
+          318,
+          390
+        ],
+        "packedCanvas": [
+          318,
+          780
+        ],
+        "bytes": 2140602,
+        "rgbaSequenceBytesNoMipmaps": 148824000,
+        "rgbaSequenceBytesWithMipmaps": 198432000,
+        "packedTextureBytesNoMipmaps": 992160,
+        "decodeSurfacesNote": "GPU texture only; browser codec surfaces and CPU copies require separate measurement.",
+        "sourceSeamMAE": 5.343710899353027,
+        "adjacentMAEMedian": 2.8476078510284424,
+        "adjacentMAEP95": 5.627185344696044,
+        "seamToAdjacentP95": 0.9496241143700361,
+        "footYRange": [
+          385,
+          387
+        ],
+        "matteReconstructionOverBlackMAEMax": 0.1285833716392517,
+        "encodedMaskMAEMean": 1.0838623905181886,
+        "encodedCompositionOverWhiteMAEMean": 1.7960220781962077,
+        "contact": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/edge-estimate-contact.jpg",
+          "dimensions": [
+            1024,
+            942
+          ],
+          "sha256": "7c6595faf99aa97b7a0bbdf171ef3b2662099996f227d55f98b33a003a6c0a52",
+          "stdev": [
+            93.32892608642578,
+            75.58845520019531,
+            68.60222625732422
+          ]
+        },
+        "warnings": [
+          "Offline experiment only, not runtime accepted.",
+          "Black-composited source cannot prove original alpha; edge/halo quality must be viewed.",
+          "Source seam unrepaired in this experiment.",
+          "GPU footprint excludes codec queues and application copies."
+        ]
+      },
+      "codecs": [
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-256-crf23.mp4",
+          "catHeight": 256,
+          "canvas": [
+            212,
+            260
+          ],
+          "crf": 23,
+          "bytes": 377185,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-256-crf28.mp4",
+          "catHeight": 256,
+          "canvas": [
+            212,
+            260
+          ],
+          "crf": 28,
+          "bytes": 213951,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-256-crf32.mp4",
+          "catHeight": 256,
+          "canvas": [
+            212,
+            260
+          ],
+          "crf": 32,
+          "bytes": 141083,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-384-crf23.mp4",
+          "catHeight": 384,
+          "canvas": [
+            318,
+            390
+          ],
+          "crf": 23,
+          "bytes": 665210,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-384-crf28.mp4",
+          "catHeight": 384,
+          "canvas": [
+            318,
+            390
+          ],
+          "crf": 28,
+          "bytes": 378845,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-384-crf32.mp4",
+          "catHeight": 384,
+          "canvas": [
+            318,
+            390
+          ],
+          "crf": 32,
+          "bytes": 250444,
+          "format": "H264 premultiplied RGB top, alpha grayscale bottom; alpha estimate, no seam repair"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "sourceSheets": "viewed once",
+    "reference5s": "viewed once; parameter controls, fading1000ms and Clover visible",
+    "estimatedEdgeSheets": "viewed once at<=1024px; artwork preserved but sparse dark edge speckles and unrepaired Clover tail seam remain",
+    "noReopen": true
+  },
+  "limitations": [
+    "Global MAE is insufficient for local tail seam",
+    "No current-build Batch M media yet",
+    "Source black composite cannot uniquely recover original alpha"
+  ],
+  "alphaTrials": [
+    [
+      {
+        "cat": "mochi",
+        "variant": "bt709-srgb",
+        "bytes": 286492,
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-256-crf28-bt709-srgb.mp4"
+      },
+      {
+        "cat": "mochi",
+        "variant": "vp9-alpha",
+        "bytes": 1365054,
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/mochi-384/premul-mask-256-crf28-vp9-alpha.webm"
+      }
+    ],
+    [
+      {
+        "cat": "clover",
+        "variant": "bt709-srgb",
+        "bytes": 214079,
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-256-crf28-bt709-srgb.mp4"
+      },
+      {
+        "cat": "clover",
+        "variant": "vp9-alpha",
+        "bytes": 1097003,
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/premul-mask-256-crf28-vp9-alpha.webm"
+      }
+    ]
+  ]
+}

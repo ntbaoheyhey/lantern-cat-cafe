@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T12:14:46.635948+00:00",
+  "inboxLine": 389,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-STAGED-VIDEO-DELIVERY.md",
+      "sha256": "71bcbdb15d0ff687600a3fd155ac084c6eac50332835e9e344ce2e647e086ba6",
+      "bytes": 567
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/short-gop-trials/T-M5-STATUS.md",
+      "sha256": "d5fedb18f24a57960f67ecafe5b7eef6afd22d956efcdd325aa734b74781eb9d",
+      "bytes": 185
+    }
+  ],
+  "observations": [
+    "M4 still calls MSE smoother without measurements and has no Chinese source.",
+    "M5 directory contains only status markdown; no independent audit of supplied CXI trial records.",
+    "The new Finalized line does not change either disposition.",
+    "Inbox timestamp19:15Z is future to actual12:14Z."
+  ],
+  "decision": "REDO; T-M4 and T-M5 remain open.",
+  "bytePolicy": "Report-only per owner; no additional compression required to satisfy a cap."
+}

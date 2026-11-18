@@ -1,20 +1,20 @@
-# CXI V7 continuation
-ACTIVE: Paused-battle recovery ACCEPT44tests/build/native2modes; preparing m1.13 final validation; assistant: AGS.
-NEXT 1: Commit explicit m1.13 owned docs/evidence; tag v5-m1.13, atomic push branch+tag, verify remote and update BOARD.
-NEXT 2: Fix measured toast/Next overlap134.95x15px in owned screen-skin.css; browserCXV released03:44Z, coordinate next window.
-NEXT 3: Review CXV pending11path manifest+T10 notice fix; continue I-B wave3gap230950B/AGS+AGV deliveries.
-Last pushed8fb14aed2;latest green remainsm1.12 until atomic m1.13 publication.
-Serving candidate13fb390e9;index1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726;capture6fe2a0340;green remainsm1.12.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified03:32Z;neverdelete/duplicate.
-Last RULES read2026-11-18T03:42:44.211103+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
-Running:none;38282completed7steps0;browserreleased toCXV03:44:15Z.
-ContextACCEPT:35focused/native2modes×3lossrestores;lostdraws0/reducedidle0/cleanup;6images4fresh+2hashmatches.
-Mailbox readINBOX-CXI76;USER23;LEARN88;oldreplacement snapshots preserved;append-only correction sent.
-AGS OPEN:T1exactQA,T2verifiedwinners,T3sourcedloading,T5beds,T7remainingreviewlink,T8sixfoes;60169/75c7/1473 dispositions sent;T2three awards PART accepted.
-Audio30a1 six−264samples/all36cueendsfit/sourcehashesmismatch;REDO. e33bossstereofixed/all4+24samples/−24alignment/workshop−0.98,rain−1.27dB;REDO/nointegration.
-AGV T9OPEN at3bc27db67;fourhalfAVIFs absent;originals/manifests/style preserved.
-Foreign3submission+2QAfiles unchanged;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875 preserved;reconcile snapshots retained.
-m1.12 full5365=5352pass+11skip+2expectedfail;3052web;cold7667601/8228854/7745296B;wave3gap228854B;static+57B.
-Firsthit21167ms incl17700reading;route9747ms;recovery1138/8676ms;ordinary0errors;3actual30sfilms;8images6fresh+2hashmatches.
-Saved work/v5/CXI/releases/v5-m1.12-dist290252715B;publicFuji absent;hosting/fundedFuji/contracts/main/submission owner-only.
-Neverreopen priorlists/packed2/m111seven/density8/context4fresh/m112six;exacthash menu/stall/reducedcontext not reopened.
+# CXI V8 continuation
+ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
+NEXT 1: tag/push v5-m1.14 after owned checkpoint;then add independent freePaw loader channel and test for dualcat art slot.
+NEXT 2: build dualcat study with audited R5head/R6paw converted318x390→212x260;native adapter gate then explicit CXVlease.
+NEXT 3: review new AGS T-M5 trial artifacts and CXV art receipts; preserve two useful open AGS TASKs.
+Last pushedc4108923c;green v5-m1.13@4e5fe161a;no newrelease.
+Live6301 native-only sourcec4108923c/indexfe8bdd;build work/v5/CXI/batch-m/native-atlas-r2/build.json;registryempty;nativeR1+dualcatR3 preserved.
+self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified12:09Z;neverdelete/pause/edit.
+Last RULES read2026-11-18T12:09:46.628354+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:none;nativeR2 sevenstepsPASS/5539pass+11skip+2expected;6301 CXIlease;9freshviews recorded,neverreopen.
+Mailboxread INBOX-CXI393;USER24;LEARN101;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
+AGS OPEN:T-M5shortGOP,T-M4stagedvideoresearch,T-CXI12officialmaskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;T10rawunverified.
+BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
+Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
+Deferredm1.14:toast/T9fourhalfAVIF/T10notice ACCEPT;build+fullsuite5374=5361pass+11skip+2expectedfail;nativefallback2modes;finalbrowsergates unrun.
+Deferredm1.14 script work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py requires explicitlease;prepare-m114-evidence.py unrun;scope8paths only.
+DeferredCXV11paths:offline2800geometry/80posemaskPASS;ownHUDtoolsyntaxchecked/notrun;Panko separate;do not alter Soot inBatchM.
+CloverR3 ordinary:243hashes verified,2naturalwins/56actions25ults each;27postresult paused/0latecallbacks,1339actionrows0bossPortraitOverlap;unopposedportrait uncovered/aggregateFALSE.
+ColdAtlasR3 9199107/9638539/9227294B FAIL8MB;removedatlases77850/105348/125389B;v8-clover-atlas-{native,cold,fullsuite}-review.json;source7625b/indexe24c.
+Neverreopen:priorR2-R6/Cloverledgers plus AtlasR3 wave1-needle-moth-600 and boss-yarn-giant-600 review1024 images (2views total);Cloverlane images hashonly. Retain all old ledgers.

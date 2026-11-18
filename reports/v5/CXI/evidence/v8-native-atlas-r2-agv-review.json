@@ -1,0 +1,35 @@
+{
+  "utc": "2026-11-18T12:17:35.686739+00:00",
+  "laneReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-landing-delivery-R12-intake.json",
+    "sha256": "60978a919f26fc9a2ed870df5081f24d102340b41e45807d412b1e9e863df3fb"
+  },
+  "artifact": {
+    "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing-R12.avif",
+    "sha256": "2ad09491f08985cc6c24203e023918168999095af0b9ef793b6d8dc0d46e4fa7",
+    "bytes": 242887,
+    "codec_name": "av1",
+    "width": 1440,
+    "height": 810
+  },
+  "source": {
+    "path": "/Users/bao/th-v5-ag2/apps/web/public/art/v3-shell/landing.webp",
+    "sha256": "6a363ca4e6a8d078b4c2a60a6e29e469bc4f2b0a3505d1cc745fb6e4ded678d5"
+  },
+  "served": {
+    "path": "/Users/bao/taskbar-hero-chain/apps/web/dist/art/v3-shell/landing.avif",
+    "sha256": "edc6c8d756ea4962f06be480d96020041945d1e6935c745a2770582570b9b567",
+    "bytes": 207867
+  },
+  "candidateMinusServedBytes": 35020,
+  "unchangedRejectedR6": true,
+  "imagesViewed": 0,
+  "decision": "BYTE REJECTION SUPERSEDED by OWNER INBOX386. Same R12/R6 artifact; all4hashes exact. No fresh quality evidence exists, so quality is UNREVIEWED and adoption remains pending. Its35020B growth is report-only. No images reopened.",
+  "prior": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-native-atlas-r1-agv-review.json",
+    "sha256": "13e79e0790abb454759cede1682a3c4c76dd46b32570d6d2fda67c7fe4c3d2b2"
+  },
+  "currentIndexSha256": "fe8bdd0096a5dba4817b7c559b0a238c700fd37a453ee93f7e8b1e6e5f577c6e",
+  "bytePolicy": "report-only",
+  "qualityDecision": "UNREVIEWED"
+}

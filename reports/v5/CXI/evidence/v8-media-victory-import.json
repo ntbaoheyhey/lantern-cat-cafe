@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-18T08:33:20.215840+00:00",
+  "laneCommit": "6eb22f242",
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-6eb22f242.patch",
+    "sha256": "ea2c6b6d965a2a00a763d4cca2b13309d853a1cb40dcc1e0eb131bee8d9bbb39"
+  },
+  "laneReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-victory-import.json",
+    "sha256": "5606ad160b78a4642778fd9cc9f55a89bd2e02096188beaa65aab730d166a757"
+  },
+  "files": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx",
+      "sha256": "478dd1037ee4fdf5dd2c642545e9e382cddb998858e973101138db610cb96bf4"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.media.test.tsx",
+      "sha256": "b54dbb45614a059ae8b6e3ad4673023a28a2300facc707d087f3977169534e72"
+    }
+  ],
+  "baseCommit": "4d06f753aeb5a94e188c82d4de73bbe162017042",
+  "focused": {
+    "passed": 36,
+    "files": 6,
+    "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-media-victory-focused.log",
+    "sha256": "e478243b29a78f6a0c823da88a58d1eeea098cf47d2822d1fe66e98a56a53a9f"
+  },
+  "typecheck": {
+    "exit": 0,
+    "receiptSha256": "5bc232b82de377a5655a39a2af9d7ae0fc868de5b9df957e18905cb914606c88"
+  },
+  "protected": {
+    "baseline": "c4bd12552",
+    "paths": 3833,
+    "changed": []
+  },
+  "guard": "Only prepared Mochi/Clover media changes route. Existing ordinary six-argument sample and drawing fallback retained.",
+  "nativeAcceptance": false
+}

@@ -1,0 +1,42 @@
+{
+  "utc": "2026-11-18T10:25:47.019631+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q22-r1/native-all-r1/report.json",
+    "sha256": "0490340784d2685a1f4dd7df735708918fdbc8c79ea30144e1b9af3a16f515cf"
+  },
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "dimensions": [
+        212,
+        260
+      ],
+      "loopWrapped": true,
+      "foregroundMean": 3.0431490479442775,
+      "maskMean": 0.5119200532172232,
+      "edgeFrameMax": 9.008812421317668,
+      "numericPass": false,
+      "scope": "All300 decoded frames; same mean foreground/mask and max edge thresholds as offline gate",
+      "samples": 300
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "dimensions": [
+        212,
+        260
+      ],
+      "loopWrapped": true,
+      "foregroundMean": 2.993501454266741,
+      "maskMean": 0.5171788219641992,
+      "edgeFrameMax": 9.010910616869491,
+      "numericPass": true,
+      "scope": "All300 decoded frames; same mean foreground/mask and max edge thresholds as offline gate",
+      "samples": 300
+    }
+  ],
+  "decision": "REJECT Chromium foregroundMean3.043149 exceeds frozen3 gate; WebKit passes. No images reviewed or scene candidate built.",
+  "nextHypothesis": "One CRF21 trial spends part of274210B remaining per-clip margin to reduce quantization error; thresholds unchanged.",
+  "imagesViewed": 0
+}

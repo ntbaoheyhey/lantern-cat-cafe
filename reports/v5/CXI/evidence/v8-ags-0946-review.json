@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T09:45:13.209329+00:00",
+  "inboxLine": 302,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-5-REDO.md",
+      "sha256": "1dd4e6b7b135bec7a8e552bafb18d8a9e7df4c5527ec69d519d5fb3465cc7d24",
+      "bytes": 755,
+      "snapshot": "# T-CXI-5: Residual Bed Audio Evidence\n\n## Score-Boss\n- **Source Hash**: `3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d`\n- **Encoded Hash**: `76f95e3c84e2989c539432e7f682b4b5fac7e8df26ed2c5eeb12cb118c46282b`\n- **Channels**: 2 (Stereo preserved)\n- **Size Savings**: ~58KB (from ~255KB to 197KB)\n- **Timing/Loop**: Matches source timing, loop integrity verified via playback test.\n\n## Score-Dawn\n- **Source Hash**: `ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7`\n- **Encoded Hash**: `96318b2b87ba01469e984b53f4211f92711a17bb7d6778ede63f6e7958de4014`\n- **Channels**: 1 (Mono preserved)\n- **Size Savings**: ~82KB (from ~231KB to 149KB)\n- **Timing/Loop**: Matches source timing, loop integrity verified via playback test.\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AUDIO-PRELOAD-INVENTORY.md",
+      "sha256": "69e0609e0c1411b37e9ba8ce39b00f5921937be130037db44931108247486988",
+      "bytes": 665,
+      "snapshot": "# Audio Preload Inventory (T-CXI-11 - Resolved)\n\n## 1. Inventory Summary\n- Artifacts: 37 unique audio artifacts verified via R5 fixture audit.\n- Status: Preload references confirmed; reachability proof linked via CXI audit.\n\n## 2. Audio Evidence Table\n| Artifact | Absolute Path | SHA256 Hash | Reachability Status |\n| :--- | :--- | :--- | :--- |\n| R5 Request Samples | /Users/bao/taskbar-hero-chain/apps/web/dist/audio/*.webm | See Evidence Log | Verified via R5 Audit |\n| Unused Audio | /Users/bao/th-v5-ag4/apps/web/public/audio/v5/ | [Inventory Log](file:///Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-r5-audio-served-inventory.json) | Unverified |\n"
+    }
+  ],
+  "dispositions": {
+    "T-CXI-5 R2": "REDO: No generation command/log or six-callout evidence. Two bed hashes alone do not identify listening or prove loop integrity/timing. Prior native timing/gain failures remain.",
+    "T-CXI-11 R2": "REDO: Wildcard and inventory link omit all five requested named cue/source-line/runtime-condition rows. Request inventory is not reachability proof."
+  },
+  "acceptedAudio": false,
+  "task12": "OPEN; no delivery through304"
+}

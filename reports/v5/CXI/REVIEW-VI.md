@@ -1,31 +1,29 @@
-# Bản review desktop — v5-m1.13
-Mở [game1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trên máy này, giữ đầy đủ query string. Đây là preview production local, chưa deploy công khai.
-Ứng dụng `13fb390e9b4007f985577a2e0320f81b464aa11b`; source quay `6fe2a0340483960d112cf06655277c0b0e3a4270` chỉ thêm báo cáo. SHA256 index `1b43effd51f9dc3970af2264468c7549b5c1e900fbd72e5749396940cac9b726`. Tag chỉ bổ sung tài liệu/bằng chứng; xác minh publication ở BOARD.
+# Bản review desktop — v5-m1.14
 
-## Thay đổi và kiểm tra
+Mở [game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trên máy này, giữ đầy đủ query string. Đây là preview local; chưa deploy công khai. Xác minh tag đã push ở BOARD trước khi dùng runbook.
 
-- Sửa battle đang pause không vẽ lại sau khi GPU context phục hồi. Thông báo mất context chỉ xóa sau một draw thành công; lỗi tài nguyên vẫn giữ. Hai chế độ motion đều đạt năm lần loss/bốn lần restore, kể cả mất lại ngay trong draw, đổi DPR2/chiều rộng và unmount. RGB sau phục hồi khớp hoàn toàn ảnh trước loss; luật/trạng thái pause giữ nguyên.
-- 44 test tập trung, build/typecheck và bảy bước pipeline cuối đạt. Full suite: 5.361 passed, 11 skipped, hai expected failures; tổng 5.374, gồm 3.061 web.
-- Đòn đầu 20,448 giây gồm17,7 giây đọc tám thẻ; HP 165→119. Route detour→receipt 10,037 giây không tính đọc. Recovery chèn lỗi 635/8.677 ms. Không lỗi trong hành trình thường.
-- Audio không đổi từm1.12:13 gói/544Opus giữ encoded byte và PCM48kHz; paths browser m1.12→m1.13 khớp. Không tích hợp audio AGS bị từ chối. DPR/victory fallback và packed bounds đã nhận trước đó vẫn giữ; chưa kết luận FPS tăng.
-- Receipt ghi rõ local/no transaction và có link contractFuji; chưa có giao dịchFuji thật.
+Ứng dụng và phim cùng source `c4108923c25a9c982b0831318e16a93cc991f8e7`; index SHA256 `fe8bdd0096a5dba4817b7c559b0a238c700fd37a453ee93f7e8b1e6e5f577c6e`. Artifact đầy đủ: `work/v5/CXI/releases/v5-m1.14-dist` (293.731.858 byte). Tag thêm tài liệu, không đổi ứng dụng đã quay.
+
+## Thay đổi đã kiểm tra
+
+- Chín mèo native có idle/cast theo Batch M: Panko, Mallow, Sorrel, Biscuit, Inkcap, Cinnamon, Brioche, Velvet, Marigold. 3.833 đường dẫn được bảo vệ không đổi; Soot ngoài phạm vi. Media được đặt hàng cho Mochi/Clover vẫn chưa bật, vì kiểm tra mép ảnh/halo/vòng đuôi còn mở.
+- Giữ bản sửa toast/Next, thông báo mất context, bốn halfAVIF đã nhận và atlas preload có điều kiện. Chia sẻ các cây JSON rig trùng nhau, phục hồi đầy đủ từng trường; không bỏ geometry hoặc làm tròn số. 24 test tập trung, TypeScript, build và 18 ca HTTP/SRI/stall ở Chromium/WebKit đạt.
+- Toàn bộ 5.539 test đạt, 11 bỏ qua, 2 expected failures: tổng 5.552, gồm 3.239 web. Bảy bước browser cuối đạt. Đòn đầu 20,880 giây gồm 17,7 giây đọc tám thẻ, HP165→119; route→receipt9,740 giây. Recovery chèn lỗi632/8.684ms. Hai chế độ khôi phục GPU có RGB khớp tuyệt đối và giữ luật/trạng thái.
+- Tải lạnh wave1/wave3/boss: 7.591.445 / 8.030.924 / 7.624.476 byte, tính cả public reads. Owner bỏ giới hạn8MB lúc12:09Z: các số này chỉ báo cáo. Giảm thực đo so với nativeR1 là8.449/8.292/5.397byte; không dùng ước lượng84KB làm kết quả.
+- Âm thanh đang dùng không đổi:49 artifact/10 nguồn gốc rehash đúng, đường audio ba cảnh khớp. Sáu bộ thay thế AGS chưa được nhận vì timing/gain/provenance/listening còn mở. Receipt ghi đúng local/no transaction và có link contractFuji.
 
 ## Ba phim đúng build
 
-Gameplay thật1×,1280×720, âm thanh browser, mỗi phim30.000giây. Fixture seed71/cấp6 qua API review có sẵn; querydev bỏ trước khi quay. Không sinh footage hoặc sửa HP/damage/rage/kết quả. Fixture tách khỏi hành trình guest và bằng chứngchain.
+Gameplay thật1×,1280×720, âm thanh browser; mỗi phim30.000giây. Fixture seed71/cấp6 qua API review, bỏ querydev trước khi quay. Không sửa HP/damage/rage/kết quả; đây không phải bằng chứng giao dịchFuji.
 
-| Cảnh | MP4 | Contact sheet | Capture UTC | Peak / mean dBFS |
+| Cảnh | Phim | Contact sheet | Capture UTC | Peak / mean dBFS |
 | --- | --- | --- | --- | --- |
-| wave1 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/wave1/wave1-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/wave1/contact-1024.jpg) | 2026-11-18T03:41:48.137Z | -2.1 / -22.3 |
-| wave3 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/wave3/wave3-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/wave3/contact-1024.jpg) | 2026-11-18T03:42:24.056Z | -2.1 / -23 |
-| boss | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/boss/boss-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v7-m113-final/boss/contact-1024.jpg) | 2026-11-18T03:42:59.043Z | -2.3 / -21.4 |
+| wave1 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave1/wave1-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave1/contact-1024.jpg) | 2026-11-18T12:15:36.600Z | -2.4 / -22 |
+| wave3 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave3/wave3-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave3/contact-1024.jpg) | 2026-11-18T12:16:11.882Z | -2.2 / -23.2 |
+| boss | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/boss/boss-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/boss/contact-1024.jpg) | 2026-11-18T12:16:47.076Z | -2.3 / -21.3 |
 
-Ba phim có HP/round tiến triển và không lỗi console/page/HTTP; hash, stream và duration đã kiểm lại. Tám ảnh đo: 6 xem một lần, 2 cùng hash ảnh đã review nên không mở lại. [Manifest](evidence/v7-m113-films.json). Chưa xác minh nghe chủ quan hoặc sync từng frame. [Kịch bản327từ/180giây dự kiến](DEMO-SCRIPT-VERIFIED.md) chưa phải voiceover/phim dựng hoàn tất.
+Ba phim có HP/round tiến triển và không lỗi console/page/HTTP.14ảnh đo;9ảnh mới xem một lần,3ảnh dùng lại hash đã review,2ảnh phục hồi trùng hệt ảnh tải ban đầu. Chưa xác minh nghe chủ quan hoặc sync từng frame. [Bằng chứng tổng hợp](evidence/v8-native-atlas-r2-release-review.json).
 
 ## Còn mở
 
-- Tải lạnh wave1/wave3/boss: 7.667.824/8.230.950/7.743.499 B. Wave3 vượt 230.950 B; boss dư 256.501 B. Public reads vẫn tính đầy đủ.
-- Bằng chứng packed m1.11 chỉ xác nhận chi phí bounds riêng giảm; ordinary timing lẫn lộn và stress/startup còn mở. Không cam kết60fps.
-- Toast unlock chạm viền dưới Next; HP boss che một phần thông báo khi chèn GPU loss. Đây là lỗi layout riêng còn theo dõi.
-- AGS T1/T2/T3/T5/T7/T8 còn mở; ba thứ hạng giải thưởng và sửa stereo/hash nguồn chỉ được nhận một phần. Bốn halfAVIF của AGV chưa có. Không nhận số benchmark chưa có nguồn.
-- Hosting/fundedFuji là owner-only. [Runbook](NEEDS-USER-VI.md) ghim m1.13; chưa có public hash/fee/payer. Green không đồng nghĩa đạt budget hay publicchain.
+Mochi/Clover cần mốc mặt/tay mới, chất lượng matte/halo và nối vòng Clover; hai video chưa nằm trong release. R12 của AGV không còn bị chặn vì dung lượng, nhưng chưa có review chất lượng nên chưa thay hình. Kết quả timing ở Apple M3 Pro là mô tả máy local, không cam kết60fps hoặc hiệu năng mọi laptop. Hosting, giao dịch Fuji có tiền và submission vẫn do owner thực hiện; [runbook](NEEDS-USER-VI.md) không xác nhận public transaction đã tồn tại.
