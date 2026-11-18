@@ -1,0 +1,466 @@
+{
+  "utc": "2026-11-18T02:46:22.505959+00:00",
+  "release": "v5-m1.11",
+  "applicationCommit": "7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e",
+  "captureSource": "dd020e520c4beed53910cd10aabc5a8b21ae177e",
+  "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+  "judgeUrl": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "fullSuite": {
+    "command": "pnpm test",
+    "exit": 0,
+    "total": 5330,
+    "passed": 5317,
+    "node": 77,
+    "workspace": 5253,
+    "web": 3017,
+    "skipped": 11,
+    "expectedFailures": 2,
+    "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-suite.log"
+  },
+  "build": {
+    "command": "pnpm --filter @taskbar-hero/web build",
+    "exit": 0,
+    "includesTypecheck": true
+  },
+  "pipeline": [
+    {
+      "step": "suite",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-suite.log"
+    },
+    {
+      "step": "build",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-build.log"
+    },
+    {
+      "step": "native-audio",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-native-audio.log"
+    },
+    {
+      "step": "transfer",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-transfer.log"
+    },
+    {
+      "step": "audio-paths",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-audio-paths.log"
+    },
+    {
+      "step": "first-hit",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-first-hit.log"
+    },
+    {
+      "step": "route",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-route.log"
+    },
+    {
+      "step": "recovery",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-recovery.log"
+    },
+    {
+      "step": "films",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-films.log"
+    }
+  ],
+  "audio": {
+    "groups": 13,
+    "encodedAndNativeDecodedFiles": 544,
+    "sampleRates": [
+      48000
+    ],
+    "fallback": [
+      {
+        "mode": "http",
+        "result": "played",
+        "elapsedMs": 118
+      },
+      {
+        "mode": "integrity",
+        "result": "played",
+        "elapsedMs": 112
+      },
+      {
+        "mode": "decode",
+        "result": "played",
+        "elapsedMs": 110
+      },
+      {
+        "mode": "stall",
+        "result": "played",
+        "elapsedMs": 2095
+      }
+    ],
+    "exactPathComparison": {
+      "utc": "2026-11-18T02:38:36.109Z",
+      "before": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m110-final/all.json",
+        "source": "1919b4dc1aec216163b8180287db2133edff1d5e",
+        "indexSha256": "34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa"
+      },
+      "after": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m111-final/all.json",
+        "source": "dd020e520c4beed53910cd10aabc5a8b21ae177e",
+        "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf"
+      },
+      "method": "Expand each requested package into every encoded member, then compare complete audio path sets including original manifest requests.",
+      "rows": [
+        {
+          "fixture": "wave1",
+          "originalCount": 485,
+          "currentCount": 485,
+          "missing": [],
+          "extra": []
+        },
+        {
+          "fixture": "wave3",
+          "originalCount": 487,
+          "currentCount": 487,
+          "missing": [],
+          "extra": []
+        },
+        {
+          "fixture": "boss",
+          "originalCount": 484,
+          "currentCount": 484,
+          "missing": [],
+          "extra": []
+        }
+      ],
+      "pass": true
+    }
+  },
+  "firstHit": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-18T02:38:36.384Z",
+    "sourceCommit": "dd020e520c4beed53910cd10aabc5a8b21ae177e",
+    "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold guest practice first visible damage, ordinary UI controls, all tutorial text retained with 200-word/minute reading allowance. No fixture, saved progress, speed change or public transaction.",
+    "readingWordsPerMinute": 200,
+    "steps": [
+      {
+        "name": "guest entered",
+        "ms": 549
+      },
+      {
+        "name": "prepare opened",
+        "ms": 904
+      },
+      {
+        "name": "battle visible",
+        "ms": 2232
+      },
+      {
+        "name": "tutorial card 1",
+        "ms": 4720
+      },
+      {
+        "name": "tutorial card 2",
+        "ms": 6571
+      },
+      {
+        "name": "tutorial card 3",
+        "ms": 8423
+      },
+      {
+        "name": "tutorial card 4",
+        "ms": 10572
+      },
+      {
+        "name": "tutorial card 5",
+        "ms": 13024
+      },
+      {
+        "name": "tutorial card 6",
+        "ms": 15174
+      },
+      {
+        "name": "tutorial card 7",
+        "ms": 17917
+      },
+      {
+        "name": "tutorial card 8",
+        "ms": 20387
+      },
+      {
+        "name": "first visible hit",
+        "ms": 20828
+      }
+    ],
+    "tutorial": [
+      {
+        "instruction": "Guardians hold front. Witches hit groups. Alchemists heal.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Front cats protect the back row.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "These portraits show who acts next.",
+        "words": 6,
+        "readingMs": 1800
+      },
+      {
+        "instruction": "Read enemy intent. Choose targeting before battle.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Basics build rage. Full rage readies your Ultimate.",
+        "words": 8,
+        "readingMs": 2400
+      },
+      {
+        "instruction": "Status icons show shields, burns, and delays.",
+        "words": 7,
+        "readingMs": 2100
+      },
+      {
+        "instruction": "Pack supplies before battle. Your packed treat appears here.",
+        "words": 9,
+        "readingMs": 2700
+      },
+      {
+        "instruction": "Change speed here. Pause and Auto remain available.",
+        "words": 8,
+        "readingMs": 2400
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "enemyHpBefore": {
+      "foe-0-practice-cushion": 165
+    },
+    "firstHitMs": 20828,
+    "hit": {
+      "target": "foe-0-practice-cushion",
+      "name": "Practice Cushion HP",
+      "hpBefore": 165,
+      "hpAfter": 119,
+      "damage": 46
+    },
+    "readingAllowanceMs": 17700,
+    "budgetPass": true
+  },
+  "route": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "utc": "2026-11-18T02:38:57.853Z",
+    "sourceCommit": "dd020e520c4beed53910cd10aabc5a8b21ae177e",
+    "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "scope": "Cold desktop practice-route detour, return to preparation, battle and invitation receipt. No patrol reward or public transaction claimed.",
+    "steps": [
+      {
+        "name": "route menu visible",
+        "ms": 1970
+      },
+      {
+        "name": "fight available",
+        "ms": 2189
+      },
+      {
+        "name": "battle visible",
+        "ms": 3205
+      },
+      {
+        "name": "practice receipt visible",
+        "ms": 9817
+      }
+    ],
+    "errors": [],
+    "httpFailures": [],
+    "blocked": [],
+    "complete": true,
+    "menu": "Your practice battle is ready\n\nMeet your crew in preparation, then choose Fight. Your first chapter opens after practice.\n\nReturn to preparation",
+    "buttons": [
+      {
+        "name": "Return to preparation",
+        "disabled": false
+      }
+    ],
+    "receipt": "Practice complete. A free invitation awaits.",
+    "deployment": {
+      "text": "Avalanche Fuji testnet\nLocal battle · no transaction sent\nView deployed items contract ↗",
+      "url": "https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+    }
+  },
+  "recovery": {
+    "utc": "2026-11-18T02:39:08.108Z",
+    "scope": "Intentional route module abort and stalled download. Ordinary guest controls and real timers. These failures are injected and do not reproduce an identified AGS network trace.",
+    "complete": true,
+    "rows": [
+      {
+        "mode": "reject",
+        "complete": true,
+        "pageErrors": [],
+        "blockedWrites": [],
+        "recoveryMs": 634,
+        "recoveryText": "Couldn’t open Prepare\n\nReload the page to try again, or return to the café.\n\nReload page\nBack to café",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to café",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m111-final/reject-1024.jpg",
+        "returnedToCafe": true,
+        "reloadRestoredRoute": true
+      },
+      {
+        "mode": "stall",
+        "complete": true,
+        "pageErrors": [],
+        "blockedWrites": [],
+        "recoveryMs": 8712,
+        "recoveryText": "Opening Prepare…\n\nThis is taking longer than expected.\n\nReload page\nBack to café",
+        "controls": [
+          {
+            "name": "Reload page",
+            "x": 124.1875,
+            "y": 334.09375,
+            "width": 108.34375,
+            "height": 46.09375,
+            "inViewport": true
+          },
+          {
+            "name": "Back to café",
+            "x": 242.53125,
+            "y": 334.09375,
+            "width": 110.390625,
+            "height": 46.09375,
+            "inViewport": true
+          }
+        ],
+        "sheet": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m111-final/stall-1024.jpg",
+        "returnedToCafe": true
+      }
+    ]
+  },
+  "transfer": [
+    {
+      "fixture": "wave1",
+      "enemies": [
+        "button-guard",
+        "sock-skipper",
+        "teacup-healer",
+        "needle-moth"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 1884,
+      "budgetPass": true,
+      "valid": true,
+      "requests": 285,
+      "bytesObservedAtBattle": 7665437,
+      "conservativeTransferBytes": 7667563
+    },
+    {
+      "fixture": "wave3",
+      "enemies": [
+        "kettle-knight",
+        "spool-ram",
+        "pollen-scout",
+        "crumb-sentinel",
+        "needle-moth",
+        "teacup-healer"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 1840,
+      "budgetPass": false,
+      "valid": true,
+      "requests": 295,
+      "bytesObservedAtBattle": 8226686,
+      "conservativeTransferBytes": 8228802
+    },
+    {
+      "fixture": "boss",
+      "enemies": [
+        "yarn-giant",
+        "binding-thread",
+        "binding-thread"
+      ],
+      "errors": [],
+      "httpFailures": [],
+      "blocked": [],
+      "developmentPaths": [],
+      "complete": true,
+      "battleReadyMs": 1734,
+      "budgetPass": true,
+      "valid": true,
+      "requests": 280,
+      "bytesObservedAtBattle": 7743858,
+      "conservativeTransferBytes": 7744933
+    }
+  ],
+  "packedAcceptance": "reports/v5/CXI/evidence/v7-packed-acceptance.json",
+  "filmManifest": "reports/v5/CXI/evidence/v7-m111-films.json",
+  "filmHashesRechecked": true,
+  "imageReview": "reports/v5/CXI/evidence/v7-m111-image-review.json",
+  "reviewSummary": "8 fresh captures measured;7 visually inspected once,1 exact-hash stall capture uses previous own pixel review without reopening.",
+  "savedArtifact": {
+    "utc": "2026-11-18T02:42:36.775316+00:00",
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.11-dist",
+    "bytes": 290251318,
+    "indexSha256": "af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf",
+    "applicationCommit": "7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e",
+    "captureSource": "dd020e520c4beed53910cd10aabc5a8b21ae177e",
+    "sourceUnchanged": true
+  },
+  "rawEvidence": {
+    "audio": "/Users/bao/taskbar-hero-chain/work/v5/CXI/audio-delivery/v7-m111-native/report.json",
+    "firstHit": "/Users/bao/taskbar-hero-chain/work/v5/CXI/first-hit/v7-m111-final/report.json",
+    "route": "/Users/bao/taskbar-hero-chain/work/v5/CXI/route/v7-m111-final/report.json",
+    "recovery": "/Users/bao/taskbar-hero-chain/work/v5/CXI/recovery/v7-m111-final/report.json",
+    "transfer": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m111-final/all.json",
+    "pipeline": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v7-m111-final-status.json"
+  },
+  "limits": [
+    "Wave3 exceeds 8000000B by 228802B; I-B remains open.",
+    "Packed benefit applies to bounded bounds evaluation; ordinary startup/max-frame timing remains mixed.",
+    "No fixed gameplay-FPS, subjective listening or frame-exact synchronization claim.",
+    "Localhost results are not public-host performance or real Fuji transaction proof.",
+    "AGS replacement callouts/beds and AGV T9 siblings are not accepted or integrated.",
+    "CXV DPR proposals remain queued for independent review."
+  ]
+}

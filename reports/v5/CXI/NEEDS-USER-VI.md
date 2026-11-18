@@ -1,6 +1,6 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản xanh **v5-m1.10**, ứng dụng **2ee12c29e9980926b7c75de0111b5c78dbfd24fc**, source quay **1919b4dc1aec216163b8180287db2133edff1d5e** (chỉ thêm báo cáo). Full suite có 5.277 passed, 11 skipped và hai expected failures; tổng 5.290 test, gồm 2.977 web, bao gồm number metrics và contour. Build/typecheck cùng chín bước kiểm tra cuối, gồm ba phim 30 giây, đều đạt. So sánh audio m1.9→m1.10 đạt. [Bằng chứng desktop](I-C.md): đòn đầu 20,595 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB 228.615 B, hai fixture còn lại đạt. Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra **v5-m1.11**, ứng dụng **7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e**, source quay **dd020e520c4beed53910cd10aabc5a8b21ae177e** (chỉ thêm tools/báo cáo). Full suite có 5.317 passed, 11 skipped và hai expected failures; tổng 5.330 test, gồm 3.017 web, bao gồm packed bounds. Build/typecheck cùng chín bước kiểm tra cuối, gồm ba phim 30 giây, đều đạt. So sánh audio m1.10→m1.11 đạt. [Bằng chứng desktop](I-C.md): đòn đầu 20,828 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB 228.802 B, hai fixture còn lại đạt. Chỉ dùng tag sau khi BOARD xác nhận remote.
 
 Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.10'
+release_tag='v5-m1.11'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1
@@ -87,4 +87,4 @@ unset PROOF_GUEST_TOKEN PROOF_CONFIRM_FUJI
 
 ## 4. Giới hạn của bằng chứng hiện tại
 
-Receipt chụp ở I-C là fixture có watermark synthetic. Anvil là chain local. [PUBLIC-FUJI.json](PUBLIC-FUJI.json) xác minh **có bytecode** ở năm địa chỉ registry tại block 61.234.900; không xác minh code tương đương source và không thay thế giao dịch guest thật. Guest hiện là EOA ký SIWE và nhận test gas từ sponsor; không có bằng chứng cho ERC-4337/paymaster. RelicNFT là ERC-1155. Chỉ dùng các mô tả này trong submission cho đến khi có bằng chứng mới.
+Receipt ở I-C đến từ hành trình practice qua UI thường và ghi rõ local/no transaction. Các phim dùng fixture review, không phải bằng chứng chain. Anvil là chain local. [PUBLIC-FUJI.json](PUBLIC-FUJI.json) xác minh **có bytecode** ở năm địa chỉ registry tại block 61.234.900; không xác minh code tương đương source và không thay thế giao dịch guest thật. Guest hiện là EOA ký SIWE và nhận test gas từ sponsor; không có bằng chứng cho ERC-4337/paymaster. RelicNFT là ERC-1155. Chỉ dùng các mô tả này trong submission cho đến khi có bằng chứng mới.

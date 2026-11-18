@@ -1,12 +1,12 @@
-# CXI — desktop 17/11/2026 UTC
-Bản xanh v5-m1.10; ứng dụng `2ee12c29e9980926b7c75de0111b5c78dbfd24fc`; index `34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa`. Tag 659d0d6f7 đã push và xác minh remote; BOARD đã cập nhật.
+# CXI — desktop 18/11/2026 UTC
+Bản đã kiểm tra v5-m1.11; ứng dụng `7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e`; index `af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf`. Trạng thái tag remote xem /Users/bao/taskbar-hero-mailbox/BOARD.md.
 URL: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3
-Full suite: 5.277 passed / 11 skipped / hai expected failures; tổng 5.290, gồm 2.977 web. Chín bước pipeline và build/typecheck đạt.
-Number: 171 glyph / 9 atlas khớp; 171→38 readbacks; atlas 4× 62,4→25,5 ms. Contour: 130 bounds/root/GPU và 910 motion / 130 GPU khớp.
-Contour startup 53,3→47,6 ms thường / 196,5→167,3 ms ở 4×. Frame p95 không đổi 16,8/50 ms; 37 long frames ở 4× còn nguyên. Chưa cam kết 60 fps.
-Audio: 13 gói / 544 file encoded và native PCM khớp; expanded paths 485/487/484 khớp m1.9.
-Đòn đầu 20,595 giây gồm 17,7 giây đọc tám thẻ; route 9,854 giây; recovery 636/8.677 ms; không lỗi thường.
-Tải lạnh 7.669.469/8.228.615/7.743.065 B; wave3 vượt 228.615 B. I-B còn mở. AGV T9 yêu cầu format delivery cho bốn native atlas; giữ texture nhìn thấy.
-Ba phim 30 giây, 1×, audio thật; tám ảnh mới đo rồi xem một lần; hash đã kiểm. Chưa xác minh nghe chủ quan hoặc sync từng frame.
-Kịch bản đúng có 327 từ / 180 giây dự kiến cùng claim links; chưa có voiceover/phim dựng đầy đủ. AGS còn sáu task; CXV packed bounds chưa merge.
-Chưa có giao dịch Fuji thật. Hosting/funded Fuji owner-only; runbook ghim m1.10. Green không đồng nghĩa đạt budget hoặc public chain.
+Full suite: 5.317 passed / 11 skipped / hai expected failures; tổng 5.330, gồm 3.017 web. Chín bước pipeline và build/typecheck đạt.
+Packed bounds:65 độc lập+130 production/910 motion/130 GPU khớp; cost ratio 4×0,715/0,689 wave3/boss. Chỉ nhận tối ưu chi phí riêng.
+CPU median 4,1→4,0 / 19,5→18,6 ms; frame p95 16,8/50 ms không đổi. Startup max 47,6→50,4 / 167,3→173,4 ms; long frames 4×37→38; stress còn mở.
+Audio:13 gói/544 file encoded và native PCM khớp; expanded paths485/487/484 khớp m1.10. Không nhận AGS replacement.
+Đòn đầu20,828 giây gồm17,7 giây đọc tám thẻ; route9,817 giây; recovery634/8.712ms; không lỗi thường.
+Tải lạnh7.667.563/8.228.802/7.744.933B;wave3 vượt228.802B.I-B còn mở.AGV T9 chưa giao bốn native sibling đúng yêu cầu.
+Ba phim30giây1×audio thật;tám ảnh mới đo,bảy xem một lần,một stall cùng hash ảnh cũ nên không mở lại. Chưa xác minh nghe chủ quan hoặc sync từng frame.
+Kịch bản327từ/180giây dự kiến chưa phải voiceover/phim dựng đầy đủ.AGS sáu task mở;CXV DPR chưa tích hợp.
+Chưa có giao dịch Fuji thật.Hosting/fundedFuji owner-only;runbook ghim m1.11.Green không đồng nghĩa đạt budget hoặc public chain.
