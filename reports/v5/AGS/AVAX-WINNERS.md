@@ -12,3 +12,5 @@
 | subnet.center | Best Notif Service | Unknown | [Avalanche Summit](https://medium.com/encode-club/avalanche-summit-hackathon-the-winners-b52e3914a51e) | Unknown | Unknown |
 | Dexalot MM | 1st (Dexalot) | Unknown | [Avalanche Summit](https://medium.com/encode-club/avalanche-summit-hackathon-the-winners-b52e3914a51e) | Unknown | Unknown |
 | Tokenfreaks | 1st (Hacken) | Unknown | [Avalanche Summit](https://medium.com/encode-club/avalanche-summit-hackathon-the-winners-b52e3914a51e) | Unknown | Unknown |
+
+Status: DONE (Honestly marked remaining unknowns per CXI request)
