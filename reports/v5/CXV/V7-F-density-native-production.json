@@ -1,0 +1,358 @@
+{
+  "utc": "2026-11-18T02:10:05.254Z",
+  "source": "c0373a1d97b6c991888bb66e259142ed4efe3635",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "6c93080042b25bfa98bdf699fb081e2af41ccc8c890ef2ee30a2b36c3982a635",
+  "nativeDensitySha256": "3b1ab0ecce9911dabb697bc1844962442c05765a69192583bcfb3d7763634218",
+  "artifactTransforms": 0,
+  "envDir": false,
+  "artifactFiles": 3764,
+  "snapshots": [
+    {
+      "name": "run-density-native-production.mjs",
+      "sha256": "cabf614de9c8a3671c9f44ad65a3dfa9a96f888c657ab84dbd7f80d5aeca002e"
+    },
+    {
+      "name": "build-hud-production.mjs",
+      "sha256": "ed0207338f9a07a6cdd74cd1728251a41608f6a43ac73ebf78064c2fd4fa45a2"
+    },
+    {
+      "name": "probe-desktop-density-prototype.mjs",
+      "sha256": "fc9fa70e6e2d29870e8756a9c35896fbf2d2222a04e8a8987de153a96f013192"
+    },
+    {
+      "name": "desktop-density-prototype.mjs",
+      "sha256": "c5b8987b7b27c3e1b27dbd0343bb40a66dd5ff3ed3c34fc2efe553fa004449b8"
+    },
+    {
+      "name": "desktop-density.mjs",
+      "sha256": "975caa1c159664052871f72045576455f42190ac4738f9b43413cea14f44b690"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "1fa44c8981a2f5ad7289e58b5ed50462d755b6f4f02be4a30df704185bc920c8"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "probe": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/probe/report.json",
+    "sha256": "a02edccd6bbe7dcf2d7a4d4b9a6dfb367e590b29a817b48b3463e942bc8ea1f8",
+    "exactRgbPairs": 16,
+    "geometrySets": 16,
+    "lifecycles": 4
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/trial/report.json",
+    "sha256": "c1078f3e6066baedb8e7fbf9ea4e2e394036263e79672218d47bcfb1d17685fc"
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/build.json",
+    "sha256": "8e349e5c1caa8f401e64d5d98f7b4195aff8923c68efc29cc3d1493d2fcd433c"
+  },
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "deviceScaleFactor": 2,
+  "started": "2026-11-18T02:08:55.586Z",
+  "ended": "2026-11-18T02:10:04.991Z",
+  "pass": true,
+  "runs": [
+    {
+      "rate": 1,
+      "elapsedMs": 32003.60000000894,
+      "actions": 26,
+      "ultimates": 6,
+      "frame": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "density": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "blockedRequests": []
+    },
+    {
+      "rate": 4,
+      "elapsedMs": 32023.59999999404,
+      "actions": 26,
+      "ultimates": 6,
+      "frame": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50,
+        "max": 99.90000000000146
+      },
+      "density": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "blockedRequests": []
+    }
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/trial/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "884d30fee8f9d9a54a336e8e64be10cef73ce1847071d89a73c3caff28bca47b",
+      "rgbSha256": "9b57bf4aafcb0cd3360a855b36d3ad51ecefd50a9852cbe724feb85a9924bb4b",
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/1x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "d567c87b3a1d6706300a1d672281c484265eb2f97ada453c5e541cb4a7bf0d60"
+      },
+      "mean": 113.26431749131945,
+      "stdDev": 52.2398283814521
+    },
+    {
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/trial/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8e622f82a7d440bde280ea4361e07e2a09b268ea3e96f4013b4f9c6f5323fab6",
+      "rgbSha256": "9d5dc3fa7a9ece75dfd73e58657514a981b8d3a46daea7a9ce8efe9ed4cca5b3",
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/4x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "4fa36523253a1dd9b47c7ca2919ebea6a39054214a069f15c3068547e35d0aa8"
+      },
+      "mean": 114.14149486400463,
+      "stdDev": 51.92020055485457
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:10:42.597663+00:00",
+  "limits": "Untransformed local build;no independent judge acceptance or before/after performance claim. Density transitions use CDP emulation,not a physical monitor. Host-relative4x is not physical laptop equivalence.",
+  "exactBehavior": true,
+  "behaviorControl": {
+    "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-2/report.json"
+  },
+  "reviews": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/probe/1-normal-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "41ab056b4cd765114efc8bd9811b8fade9a7739653833f5416f24f683fbea406"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/probe/1-reduced-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "9fd5e8780e6511e043d15e8629dcf8144022e6a369a40e9ee50f0230cdaf0236"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/probe/2-normal-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "3faf34b75144fdb0cb43a0309917394e3a8cfdff05ba31a1982efef22a91476a"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/probe/2-reduced-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "e603a7223e0dbe044a180472dea5291c08b885cc17928dcbe78dcf6eb0fae4e7"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/1x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "d567c87b3a1d6706300a1d672281c484265eb2f97ada453c5e541cb4a7bf0d60"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-native-production/4x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "4fa36523253a1dd9b47c7ca2919ebea6a39054214a069f15c3068547e35d0aa8"
+    }
+  ],
+  "verifiedUtc": "2026-11-18T02:10:26.214Z",
+  "verification": {
+    "artifactFiles": 3764,
+    "toolSnapshots": 7,
+    "exactNativePixelPairs": 16,
+    "exactGeometrySets": 16,
+    "stableAndDisposedLifecycles": 4,
+    "capturesMeasured": 22
+  },
+  "visualReview": "Six fresh1024x576 views reviewed once after22captures measured. Four frozen normal/reduced density-origin views retain all7actors,clearfaces/feet and HUD;two ordinary1x/4x shots show readable party/foes and numbers.16fullRGB pairs exact to native resize controls,all lifecycle checks pass. No visible density regression."
+}

@@ -84,3 +84,6 @@
 
 - [x] V-F DPR2/CPU4x full battles native3050ee5ae: exact game parity,68actions/24ults,0errors/blocks;16captures/4freshsheets reviewed. V7-F-full-battle-desktop-density.json. Local configuration coverage only.
 - [ ] V-F desktop density transition: native4stale buffers/8exactgeometrysets;mediaevents0 CDPfidelity limit. Browser-only correction probe prepared;native adoption requires exact pixels/lifecycle and focused checks.
+
+- [x] V-F native desktop density repairc0373a1d9 scopedREADY:18tests/TSC0,16exactnativeRGB/control+16geometry,4lifecycles,22captures6freshreviews;ordinaryDPR2/1x4x exactbehavior,0errors. IndependentCXI acceptance pending.
+- [ ] V-F live density-transition fullbattle stress on currentnative;natural normal/reduced progression and outcome parity.
