@@ -1,27 +1,25 @@
 # CXI V8 — Batch M first
-M-I1 OPEN: Mochi931787B four-plane codec/native300frames PASS;64new+92legacy runtime checks. Scoped media posed-bounds fix imported/80focused/TSC0; production scene303PASS/coldFAIL all3. Registry empty. Clover residualendpoint4folds rejected; source originals unchanged.
-M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
-M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
-SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
-AGS priorityOPEN:T-M1correct sourced license/real receipts,T-M2raw mask provenance,T-CXI-5audio provenance/listening. T-M3 ownerdraftACCEPT only; maintain>=2useful tasks.
-CXV coordinationOPEN: all9native scoped motionACCEPT; FIELD5 correctedR2 productionACCEPT350sceneHUDchecks;Mochi idle303PASS/castcontactfix pending. AGV landingR3qualityREDO;currentwave3gap975066B.
+M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover seam topology/strain and head/off/vfx sockets unresolved; no sequence adoption.
+M-I2 OPEN: R5 cold8508596/8975543/8584317B FAIL8MB; Clover absent. Ordinary1x/performance and media reduced-context restoration require verified receipts.
+M-I3 OPEN: release only after byte/quality/performance/journey/film gates; latest green milestone v5-m1.13; R5 untagged.
+SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parity retained. Never import retractedPanko d419002a4.
+CXV ACCEPT: all9nativecats scoped motion; FIELD5 R2; Mochi304sample idle/300hashes/equal227px; R4cast290samples/280frames+focusalpha. Do not reopen reviewed views.
+CXV VICTORY: exact6eb22f242 two-file import; ownR5 146samples+2freshviews PASS; fullsuite5471=5458passed+11skipped+2expectedfail,exit0. CXV native140/reduced-restore receipt awaits hash audit.
+CXV LEASE:6301/timing remainsCXV after08:40:58Z claim; ordinaryR2 running; no CXI heavy work until explicitrelease.
+AGS OPEN:T-M1 sourced licenses/packagecosts,T-CXI-5 listening/provenance,T-CXI-10 AV1 receipts/EN+ZH sources,T-CXI-11 real audio inventory;>=2useful.
+AGS DONE scoped:T-M2 negative provenance inventory only,214/240px unverified;T-M3 ownerdraft only. New268/270 DONE lines pendingaudit,prior claims unaccepted.
+AGV landingR6 REJECT:242887B vs served207867B;35020B growth,claimed213293B wrong;hash verified,no view/adoption. R4finegrain rejection retained.
+CLOVER NEXT:domain diagnostic distinguishes unmasked visible-tail strain from protected-cloth transition folds; build on LEARN/CXI-clover-domain-20261118.md; no blind DIS/MLS retry.
+CODEC REJECT:compact-planeq20 1054572B/whiteMAE3.646272/edge6.882252/mask.453090;AV1 1106676B. No browser/loader adoption; retainH264fallback.
+AUDIO OPEN:36cue ends fit; full/small6sets296493/156500B hashverified. Listening/timing/gain/provenance and beds not accepted. R5requested audio2220984/2436071/2455547B does not establish safe removal.
 
-Deferred V7 work and retained evidence
-# CXI V7 assignments — evidence required
-I-A DONE/REPEAT:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;v5-m1.13@4e5fe161a atomicpush+remoteverified.
-I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;4halfAVIFACCEPT94340B saving+nativefallbackPASS;d119candidatecold7674113/8141046/7749827B,remainingwave3gap141046B;AGVT11landing assigned;AGS audioREDO/nointegration.
-I-C FIRST-HIT DONE:20448ms incl17700reading8cards;HP165→119;route10037ms excludesreading;ordinary0errors.
-I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
-I-E DONE/REFRESH:m1.13 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.
-I-F DONE/REPEAT:docs currentm1.13;327word180s narrationdraft unrecorded;AGS T2threeawards/T5stereo+sources PART accepted;T1/T2remainder/T3/T5remainder/T7/T8 OPEN.
-I-G OPEN/REPEAT:paused-battle recoveryACCEPT;toast/Nextoverlap fixed+own2modevalidated; T10lossnoticeACCEPT2modes0overlap/10hits/exactRGBrestore. Recovery635/8677ms;T1exactQA unresolved.
-
-Preserved DONE evidence
-SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.
-R5 DONE:cfce3804d; lazy runtime splits+disposal focused tests; JS1,319,090->1,112,059B; reports/v5/CXI/R5.md.
-R6 DONE:588813d1d fixes custom output;13poster exclusions1,395,314B; fullsuite0;reports/v5/CXI/R6.md.
-R3 B2/3beds DONE:8aefbf1e9 merged+loader59focusedpass/fullsuite588813d1d; residual audio isI-B.
-Old I4/I6 time-based M2/M3 queue CANCELLED: V6 refreshes review build immediately whenI-A..C green, no artificial date wait.
-Old R1/R4/R7/R8/R9/R10 duplicate cards CANCELLED: concrete work retained inI-A/B/C/D/E/F, not separate refill catalog.
-
-Mobile/phone items CANCELLED: owner desktop-only.
+Deferred V7 work; Batch M remains priority1
+I-A DONE/REPEAT:v5-m1.13@4e5fe161a atomicpush verified; paused-battle recovery; full5374 exit0.
+I-B OPEN: m1.13cold7667824/8230950/7743499B; 4halfAVIF accepted94340B saving/nativefallback; currentMochi gap wave3975543B.
+I-C FIRST-HIT DONE priorbuild:20448ms including17700ms reading8cards; HP165→119; freshcandidate verification required.
+I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms; no publictransaction; Vietnamese runbook exact.
+I-E DONE/REFRESH:m1.13 threeactual1x30sfilms/audio1280x720;8images measured/reviewed; newrelease requires freshfilms.
+I-F DONE/REPEAT:README/architecture/submissionfacts verified throughm1.13; preserve foreignAGS drafts; narration draft327words/180s unrecorded.
+I-G OPEN/REPEAT:toast/Nextoverlap andT10notice accepted bothmodes; remainingCXV11paths require nativeacceptance. Do not launch stale m1.14pipeline automatically.
+PRESERVED:R0/5121tests,R5lazy split1.319→1.112MB,R6poster exclusions1.395MB,R3beds8aefbf1e9; originalreports retained.
+CANCELLED:olderduplicate/time-based queues and mobilecaptures;V8 desktop1280x720 governs. T-M2 synthesis attempts closed as negative inventory,not artacceptance.
