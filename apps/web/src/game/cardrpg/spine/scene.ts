@@ -461,7 +461,8 @@ export class SpineScene {
   }
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
   this.stage.update(this.worldWidth,PAINT.worldHeight,0,1-focusLight,view.formationC2);
-  this.casterFocus.render(plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?.color??'#ffd892',focus,pixelsToWorld);
+  const focusActor=plan?this.actors.get(plan.actorId):undefined;
+  this.casterFocus.render(focusActor?.actor.root,plan?.color??'#ffd892',focus,pixelsToWorld,!!focusActor&&hasDesignerIdleBody(focusActor.asset,focusActor.actor));
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
   this.weather.render(view,time,width,height,this.labelAudit.heads);
   const protectedRects=this.cinematicRects;

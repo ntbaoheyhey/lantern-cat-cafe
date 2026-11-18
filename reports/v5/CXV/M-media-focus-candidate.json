@@ -1,0 +1,186 @@
+{
+  "utc": "2026-11-18T08:02:55.485633+00:00",
+  "sourceBeforePatch": "3b56ea3e9cbd278283710374388ec6a21831dd3a",
+  "status": "Candidate ready for scoped import and fresh production verification",
+  "files": {
+    "apps/web/src/game/cardrpg/battle-v3/focus.ts": "9a98047aa6afc12b6440baf24de6c86d50f193642e488b552347b901e7ea37e8",
+    "apps/web/src/game/cardrpg/battle-v3/focus.test.ts": "5ac8b10fc586c3aeb268e4d8a621bc5e9fe3c7320450e5bee085844ced626749",
+    "apps/web/src/game/cardrpg/spine/scene.ts": "bb31a65a3ff64aeb81407be865f6399734a32851d00a6a72013bd2b341b6014f"
+  },
+  "reproduction": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-cast-production-R1.json",
+    "sha256": "1260e556edcbf09e009ce3afee4be3facfd8757f432ec5ea3cae64987816e668",
+    "phaseMilliseconds": 533.3333333333334,
+    "modes": [
+      "normal",
+      "reduced"
+    ],
+    "finding": "Yellow rectangle behind caster; source focus loses packed alpha decoder."
+  },
+  "gpu": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-media-focus-gpu-R1/report.json",
+    "sha256": "cb783f183d273ce9f59e3cc9991d0ab83089ade089902178476b65ccf274e5f3",
+    "rows": [
+      {
+        "format": "h264-rgb-mask",
+        "label": "before",
+        "mode": "packed",
+        "outside": 255,
+        "inside": 255,
+        "covered": 10752,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "before",
+        "mode": "poster",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "before",
+        "mode": "packed-restored",
+        "outside": 255,
+        "inside": 255,
+        "covered": 10752,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "before",
+        "disposal": true,
+        "textureDisposed": 0,
+        "geometryDisposed": 0
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "fixed",
+        "mode": "packed",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-rgb-mask-v2"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "fixed",
+        "mode": "poster",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-rgb-mask-v2"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "fixed",
+        "mode": "packed-restored",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-rgb-mask-v2"
+      },
+      {
+        "format": "h264-rgb-mask",
+        "label": "fixed",
+        "disposal": true,
+        "textureDisposed": 0,
+        "geometryDisposed": 0
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "before",
+        "mode": "packed",
+        "outside": 255,
+        "inside": 255,
+        "covered": 10752,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "before",
+        "mode": "poster",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "before",
+        "mode": "packed-restored",
+        "outside": 255,
+        "inside": 255,
+        "covered": 10752,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "before",
+        "disposal": true,
+        "textureDisposed": 0,
+        "geometryDisposed": 0
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "fixed",
+        "mode": "packed",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-ycrcb-alpha-four-plane-v2"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "fixed",
+        "mode": "poster",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-ycrcb-alpha-four-plane-v2"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "fixed",
+        "mode": "packed-restored",
+        "outside": 0,
+        "inside": 255,
+        "covered": 2864,
+        "copyCount": 8,
+        "cacheKey": "v3-feel-caster-outline:designer-h264-ycrcb-alpha-four-plane-v2"
+      },
+      {
+        "format": "h264-ycrcb-alpha-four-plane",
+        "label": "fixed",
+        "disposal": true,
+        "textureDisposed": 0,
+        "geometryDisposed": 0
+      }
+    ],
+    "pass": true,
+    "errors": [],
+    "limits": "Actual CXI decoder function with synthetic circle mask in packed opaque texture. Pre-fix and patched focus share Three and data. GPU pixels only; no production or art acceptance."
+  },
+  "validation": {
+    "beforeFixRegression": "1failed/2passed; missing source decoder reproduced",
+    "focused": "19tests/3files PASS",
+    "typecheck": "tsc --noEmit; empty log",
+    "sootPathsUnchanged": 3833,
+    "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6"
+  },
+  "scope": "Only marked Mochi/Clover focus preserves source shader. Ordinary hook/cachekey unchanged. Live uniforms, map changes and resource ownership tested; no loader edit or enrollment.",
+  "productionVerification": "Pending; synthetic GPU proof is not production art acceptance."
+}
