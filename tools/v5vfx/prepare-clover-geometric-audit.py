@@ -24,8 +24,8 @@ frames = np.load(source, mmap_mode='r')
 assert frames.shape == (300, 640, 526, 3)
 assert not (OUT / 'plots.json').exists()
 plots = []
-for name, crop, scale in [('face', [130, 30, 280, 240], 1.1), ('palm', [55, 305, 160, 150], 1.6)]:
-    for batch in range(2):
+for name, crop, scale in config.get('regions', [('face', [130, 30, 280, 240], 1.1), ('palm', [55, 305, 160, 150], 1.6)]):
+    for batch in range((len(config['frames'])+5)//6):
         selected = config['frames'][batch*6:(batch+1)*6]
         canvas = np.full((980, 768, 3), 244, np.uint8)
         cv2.putText(canvas, f'{name} SOURCE OBSERVATIONS {batch+1} | no fitted marks', (12, 20), cv2.FONT_HERSHEY_SIMPLEX, .48, (20, 20, 20), 1, cv2.LINE_AA)
