@@ -1,0 +1,130 @@
+{
+  "utc": "2026-11-18T06:25:11.390037+00:00",
+  "status": "REDO visual quality and public sibling; size/decode pass",
+  "candidate": {
+    "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing.avif",
+    "sha256": "01fc1469f44982b7cad17d434e0735d04ab5b8326387e6e64aaecd06c98d4352",
+    "bytes": 63006
+  },
+  "sourceOriginal": {
+    "path": "/Users/bao/taskbar-hero-chain/apps/web/public/art/v3-shell/landing.webp",
+    "sha256": "6a363ca4e6a8d078b4c2a60a6e29e469bc4f2b0a3505d1cc745fb6e4ded678d5",
+    "bytes": 273768
+  },
+  "servedBaseline": {
+    "sha256": "edc6c8d756ea4962f06be480d96020041945d1e6935c745a2770582570b9b567",
+    "bytes": 207867
+  },
+  "savingVsServedBytes": 144861,
+  "lastMeasuredWave3GapBytes": 141046,
+  "arithmeticHeadroomBeforeRemeasureBytes": 3815,
+  "judgeURL": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "runnerSha256": "abbdf5af20560fa32ae7b9fb620ffaf902e062dbcb6f04bc12d331e0f0e7f29f",
+  "runtimePatch": "None in baseline; original/candidate substitute only the landing image response in isolated browser contexts. No app/source/style edits.",
+  "capture": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R1/capture.json",
+  "captureSha256": "b29a27ad54354941947f107fd5c7ad893d4bf2304710a99fbd61e0cfdb18a32c",
+  "review": {
+    "utc": "2026-11-18T06:24:24.681655+00:00",
+    "captureJsonSha256": "b29a27ad54354941947f107fd5c7ad893d4bf2304710a99fbd61e0cfdb18a32c",
+    "images": [
+      {
+        "mode": "served",
+        "rawSize": [
+          1280,
+          720
+        ],
+        "previewSize": [
+          1024,
+          576
+        ],
+        "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R1/served-1024.jpg",
+        "previewSha256": "c4d8d9f63320d1eaaa49958977015982438499d021e8d46ab1d68b44fa0ea6a5",
+        "meanRGB": [
+          88.018,
+          60.808,
+          61.076
+        ],
+        "pageErrors": []
+      },
+      {
+        "mode": "original",
+        "rawSize": [
+          1280,
+          720
+        ],
+        "previewSize": [
+          1024,
+          576
+        ],
+        "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R1/original-1024.jpg",
+        "previewSha256": "3ca2aab7dcd64bae7ea27049891927d0ee11cc8ce14363e675aee7b447ad0883",
+        "meanRGB": [
+          88.07,
+          60.818,
+          60.973
+        ],
+        "pageErrors": []
+      },
+      {
+        "mode": "candidate",
+        "rawSize": [
+          1280,
+          720
+        ],
+        "previewSize": [
+          1024,
+          576
+        ],
+        "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R1/candidate-1024.jpg",
+        "previewSha256": "1fce82a106c8738062aaed0867e2c7fc1cc3b4305433af58a272cb9712ac1994",
+        "meanRGB": [
+          87.957,
+          60.798,
+          61.064
+        ],
+        "pageErrors": []
+      }
+    ],
+    "metrics": {
+      "served": {
+        "artRoi": [
+          640,
+          100,
+          640,
+          500
+        ],
+        "maeVsOriginal": 2.1001979166666667,
+        "rmseVsOriginal": 3.1215757906331008,
+        "psnrVsOriginal": 38.24332593078676
+      },
+      "candidate": {
+        "artRoi": [
+          640,
+          100,
+          640,
+          500
+        ],
+        "maeVsOriginal": 4.8008927083333335,
+        "rmseVsOriginal": 6.913822130944166,
+        "psnrVsOriginal": 31.336439559984086
+      }
+    },
+    "detail": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-landing-delivery-R1/desktop-detail-1000.jpg",
+      "sha256": "f07d9f1bb2d83ee468dec6cbc8fb806e7feed347274e59669d4a49ab2acc1d65",
+      "dimensions": [
+        1000,
+        500
+      ]
+    },
+    "reviewed": true,
+    "scope": "Three own1280x720 captures on currentjudge source85cb62233; image-only substitution; no byte-budget acceptance inferred.",
+    "reviewedUTC": "2026-11-18T06:25:11.390037+00:00",
+    "viewsPerImage": 1,
+    "verdict": "REJECT_VISUAL_R1",
+    "assessment": "Faces,props,lettering and overall composition remain readable. Candidate visibly smooths fur, dress seams/texture and background masonry in native desktop crop; it does not meet the requested no-visible-desktop-loss gate. Bytes/dimensions/decode pass only."
+  },
+  "limits": "Not adopted. No whole-first-battle budget claim. Three fresh desktop captures and one fresh native-pixel detail sheet reviewed once; no reopening."
+}
