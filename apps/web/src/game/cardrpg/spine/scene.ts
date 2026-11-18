@@ -35,6 +35,7 @@ import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {hasDesignerIdleBody} from './designer-idle-body';
+import {mediaClipContact} from './media-clip-contact';
 import {animationCues} from './events';
 import {LIVING_CAT_SKILL_EVENTS} from '../../rig/living-cast';
 import {paintedTargets} from './vfx-registry';
@@ -319,7 +320,7 @@ export class SpineScene {
     if(actor.mesh?.livingCat&&!frame.plan.ultimate&&SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation==='skill')name='skill';
     if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':
      ['mochi','panko'].includes(entry.asset)&&isSupportCast(frame.plan)?'skill':'attack';
-    const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
+    const duration=actor.duration(name),hit=mediaClipContact(entry.asset,actor,name,duration);
     at=entry.craftPose?.owns(name)?Math.min(duration,motionElapsed/1000):(frame.plan as SequencePlan).fixedTiming
      ?fixedActionClipTime(motionElapsed,duration,hit,frame.plan.beats[2]!.start,frame.plan.duration,frame.plan.ultimate?600:0)
      :retimedClipTime(frame.actionProgress,duration,hit,frame.plan.beats[2]!.start/frame.plan.duration);
