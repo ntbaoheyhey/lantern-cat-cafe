@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: review CXV next placement hypothesis;R7own52rows/8actions/12captures/4freshviews complete,clearance/artREJECT retained.
-NEXT 2: R7independent18poses3744counts/253naturalhashes+110actions exact;clearanceFAIL17heldout+208/69/0/74expanded;own dualcast8actions/52rows next.
-NEXT 3: keep AGS QA-m115+M5open;owner draft current;media seam/matte rejected;localdrop0.6173%/0.7816%,not laptopproof.
-Last pusheddaddd30d7;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
+NEXT 1: review CXV authored-only all-visible-body placement study18frozenlayouts;R7ownvisual done,clearance/artFAIL retained.
+NEXT 2: keep current R7 pinned;natural1536callback samples consistentwithin0.000334ms,notGPUproof;drops19/2429M,28/2428C,localM3Proonly.
+NEXT 3: AGS QA-m115+M5OPEN;V5/V6unsupported/absentpaths REDO. Owner draft current;fringe/halo/seam+nativebody/status clearance open.
+Last pushed91ff2bd85;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
 Live6301 labelR7 sourcebf01d462a/indexeb93ee0d;work/v5/CXI/batch-m/clover-label-r7/build.json;3809files/294424887B verified;6payloadsR5exact.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified14:07Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T14:14:00.573792+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
 Running:noCXIjobs;own dualcastPID26362 exited0/browserclosed14:14:47Z;6301/timing explicitlyreleased toCXV;R7unchanged.
-Mailboxread INBOX-CXI480;USER24;LEARN110;AGS478V5 rejected5absentpaths;QA+M5OPEN;0046preserved.
+Mailboxread INBOX-CXI481;USER24;LEARN110;AGS480V6rejected5absentpaths;QA+M5OPEN;0046preserved.
 AGS OPEN:T-CXI13QA-m115,T-M5independenttrialaudit,T-M4stagedvideoresearch,T-CXI12maskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;>=2useful TASKs.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.

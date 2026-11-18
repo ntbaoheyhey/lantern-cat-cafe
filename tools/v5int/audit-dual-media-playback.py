@@ -1,5 +1,6 @@
 """Recompute existing natural-play counters; never launch a browser or alter media."""
 import bisect
+import argparse
 import hashlib
 import json
 import math
@@ -8,9 +9,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = Path('/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906')
-PRIOR = ROOT / 'reports/v5/CXI/evidence/v8-cxv-dual-r5-natural-review.json'
-OUTPUT = ROOT / 'reports/v5/CXI/evidence/v8-dual-r5-playback-review.json'
+parser = argparse.ArgumentParser()
+parser.add_argument('--base', required=True, type=Path)
+parser.add_argument('--prior', required=True, type=Path)
+parser.add_argument('--output', required=True, type=Path)
+args = parser.parse_args()
+BASE, PRIOR, OUTPUT = args.base.resolve(), args.prior.resolve(), args.output.resolve()
+assert OUTPUT.is_relative_to(ROOT/'reports/v5/CXI')
 assert not OUTPUT.exists(), 'Evidence is immutable; choose a new output for a new study.'
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 prior = json.loads(PRIOR.read_text())
@@ -114,7 +119,10 @@ for run in raw['runs']:
         manifest_path = Path(build['dist'])/build['registryOverride'][cat].lstrip('/')
         manifest = json.loads(manifest_path.read_text())
         receipt['inputs'].append(verified(manifest_path))
-        track_errors = {}
+        track_errors, adapter_track_errors = {}, {}
+        adapter_pairs = [(s, d) for s, d in phase_pairs
+                         if s['state'].get('presentationClock') == 'callback'
+                         and isinstance(s['state'].get('sourceFrame'), (int, float))]
         for channel, track in manifest.get('socketTracks', {}).items():
             assert len(track) == 300
             errors = []
@@ -123,6 +131,12 @@ for run in raw['runs']:
                 b = point(track, d['mediaTime'])
                 errors.append(math.hypot(a[0]-b[0], a[1]-b[1])*512/manifest['opaqueHeight'])
             track_errors[channel] = stats(errors)
+            adapter_errors = []
+            for s, d in adapter_pairs:
+                a = point(track, s['state']['sourceFrame']/30)
+                b = point(track, d['mediaTime'])
+                adapter_errors.append(math.hypot(a[0]-b[0], a[1]-b[1])*512/manifest['opaqueHeight'])
+            adapter_track_errors[channel] = stats(adapter_errors)
         presented = [b['presentedFrames']-a['presentedFrames'] for a, b in zip(callbacks, callbacks[1:])]
         assert all(x > 0 for x in presented)
         row['media'][cat] = {'qualityFirst': first, 'qualityLast': last, 'totalFrameDelta': total,
@@ -134,6 +148,9 @@ for run in raw['runs']:
                                                                if d.get('processingDuration') is not None]),
                             'sampleClockMinusLatestCallbackAbsMs': stats([abs(delta(s['state']['currentTime'], d['mediaTime']))*1000 for s, d in phase_pairs]),
                             'potentialTrackDifferenceCanonicalPixels': track_errors,
+                            'recordedCallbackAdapterSamples': len(adapter_pairs),
+                            'adapterSourceFrameMinusLatestCallbackAbsMs': stats([abs(delta(s['state']['sourceFrame']/30, d['mediaTime']))*1000 for s, d in adapter_pairs]),
+                            'adapterTrackDifferenceCanonicalPixels': adapter_track_errors,
                             'runtimeErrors': sum(e['event'] == 'error' for e in events)}
     receipt['runs'].append(row)
 receipt['limits'] = [
@@ -141,6 +158,7 @@ receipt['limits'] = [
     'Capture/DOM sampling overhead remains. Counter intervals identify temporal coincidence, not causality.',
     'Dropped video frames differ from missed JavaScript callbacks; processingDuration is not CPU decode time.',
     'Latest callback is a recorded presentation, not proof of the exact texture read at a later scene draw.',
+    'CurrentTime potential-track diagnostic is not the corrected loader clock; callback sourceFrame diagnostics are separate and still do not identify GPU texels.',
     'Track mismatch is a sampled potential difference before cast/world projection, not a measured painted-pixel error.',
     'Decoder loop timing cannot repair the spatial source seam or waive HP/body and matte failures.']
 receipt['imagesViewed'] = 0
@@ -151,5 +169,6 @@ for row in receipt['runs']:
     print(json.dumps({'mode': row['mode'], 'raf': row['frameMsWithoutCapture'], 'media': {
         cat: {k: d[k] for k in ('totalFrameDelta', 'droppedFrameDelta', 'dropFraction',
                                 'unobservedPresentedCallbacks', 'sampleClockMinusLatestCallbackAbsMs',
-                                'potentialTrackDifferenceCanonicalPixels')} for cat, d in row['media'].items()}}))
+                                'potentialTrackDifferenceCanonicalPixels', 'recordedCallbackAdapterSamples',
+                                'adapterSourceFrameMinusLatestCallbackAbsMs', 'adapterTrackDifferenceCanonicalPixels')} for cat, d in row['media'].items()}}))
 print(str(OUTPUT))
