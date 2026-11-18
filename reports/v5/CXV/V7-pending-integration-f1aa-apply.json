@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-18T04:20:45.120469+00:00",
+  "integrationSource": "0e9ae734ebbf4126045b422629a2319ae2096830",
+  "target": "b6496a0ea6b5a18e94535032f9c8546e843a6d4a",
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-pending-integration-m112.patch",
+    "sha256": "996bb6653946dccb9cdfb09cd19585b55b7b6d7b2712e2ecd8487c7ebc100c83"
+  },
+  "files": [
+    {
+      "path": "apps/web/public/vfx/v5/from-cx/panko-crumb-v7-r1.webp",
+      "integrationBeforeSha256": null,
+      "afterSha256": "ed6826915dff02f904968c5e0a730085b37518152877444429a8d76a07171425"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+      "integrationBeforeSha256": "c9f7b1c0057b8700928e44ad60aa41d95626ffda75c55175e055c8b255469d71",
+      "afterSha256": "c749831df8272ce32f60a0fd3892e768e8f09b63aead2073e1f431721935db99"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "integrationBeforeSha256": "0a6de9b7c5c4cb809bb68e88c18d93e31204e68ceeda0f8317554947496380ae",
+      "afterSha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts",
+      "integrationBeforeSha256": "14eec83a034697cfbbe4ec9a2ca6a814444907c1709b7e23d8c55153535f2148",
+      "afterSha256": "62e9f25907fce1e7293953ad669f6fc88f954ab7439fbaf325ad37124b2b925e"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts",
+      "integrationBeforeSha256": "043e1ad523c0dc75c67a6ff12d29f1b391cb2fb09d452179de298cd610d9b38d",
+      "afterSha256": "f86428d851e735caa4b7b8e3c71f7e88ce260b2aa31f1bbc9c10d80dd7d32754"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts",
+      "integrationBeforeSha256": "13d290c8e93736edde719c45ac6b70e1a42319d36763e778f11ff4d126f0aa5d",
+      "afterSha256": "df90874d54c51422b1d057aa152758fa95a0de5a71375854e91d63f562dc4b42"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts",
+      "integrationBeforeSha256": null,
+      "afterSha256": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/vfx-layered/skill-texture-selection.ts",
+      "integrationBeforeSha256": "c97fa73a8cb1e294b0ab4d24d8b12ca0bc015e17d4a24dc8229ea2d2d8d011d2",
+      "afterSha256": "84ab4d3970b970d3e72a17e7fa7a5fe8b946e9b91d3dfce72074265406df4fe8"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/vfx-layered/skill-timeline.test.ts",
+      "integrationBeforeSha256": "114177ae9070a7bff02c021f9103820e8043730da681a0c8e4b784fa2d0ee743",
+      "afterSha256": "d9d8f07b677d53718731d3539551333094dd853de765acd3876d7f6d7dc396da"
+    },
+    {
+      "path": "apps/web/src/game/rig/drawing-layer-static.test.ts",
+      "integrationBeforeSha256": null,
+      "afterSha256": "d6a6de217094f14cba059c70f01960a601e58e45b8c950e2d360d4e429340848"
+    },
+    {
+      "path": "apps/web/src/game/rig/drawing-layer.ts",
+      "integrationBeforeSha256": "bf3a64c4701f3945157751db052404bcd02d6052b8d9bd824aacbedaee584634",
+      "afterSha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+    }
+  ],
+  "groups": 6,
+  "pass": true,
+  "method": "Apply original11path patch in isolated nested git repository copied from current integration;every resulting file equals current CXV byte-for-byte. Integration files untouched.",
+  "limits": "Current candidate applicability only;independent acceptance and Panko loader wiring still pending. New focus transaction remains experimental and absent from this patch."
+}
