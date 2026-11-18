@@ -1,0 +1,39 @@
+--- a/apps/web/src/game/cardrpg/spine/scene.ts
++++ b/apps/web/src/game/cardrpg/spine/scene.ts
+@@ -45,7 +45,7 @@
+ import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
+ 
+ interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
+-interface SceneAnchor extends Anchor {labelTarget?:{x:number;y:number;avoid:Rect}}
++interface SceneAnchor extends Anchor {labelTarget?:{x:number;y:number;avoid:Rect;alignY?:'top'}}
+ /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
+ export class SpineScene {
+  private audio=new BattleAudio();
+@@ -593,7 +593,7 @@
+    const actor=entry.actor,hp=this.screen(actor.socket('hpAnchor',this.scratch)),face=this.screen(actor.socket('head',this.scratch)),foot=this.screen(actor.socket('feet',this.scratch)),body=this.bounds(entry);
+    const anchor:SceneAnchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,body,face:this.faceBounds(entry),visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
+    // Authored HP sockets clear the commissioned props; Clover's badge also needs the measured tail clearance.
+-   if(view.formationC2&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body};
++   if(view.formationC2&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget=entry.asset==='mochi'?{x:hp.x,y:Math.max(body.y+body.height,foot.y)+6,avoid:body,alignY:'top'}:{x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body};
+    if(unit.hp>0)bodies.push(body);
+    if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:view.formationC2?40:52,head:body});
+    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});
+--- a/apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts
++++ b/apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts
+@@ -1,6 +1,6 @@
+ import {layoutWorldLabels,type LabelRect,type WorldLabel} from './world-label-layout';
+ 
+-interface WorldAnchor {id:string;visible:boolean;labelX:number;labelY:number;face?:LabelRect;labelTarget?:{x:number;y:number;avoid:LabelRect}}
++interface WorldAnchor {id:string;visible:boolean;labelX:number;labelY:number;face?:LabelRect;labelTarget?:{x:number;y:number;avoid:LabelRect;alignY?:'top'}}
+ 
+ /** Cache glyph extents; moving an actor should not measure every descendant each frame. */
+ export function createWorldLabelLayout(nodes:Map<string,HTMLDivElement>){
+@@ -44,7 +44,7 @@
+    const labels:WorldLabel[]=active.flatMap(({anchor,node,x,y})=>{
+     const box=extents.get(node),target=anchor.labelTarget;
+     return box?[{id:anchor.id,side:node.dataset.side==='enemy'?'enemy' as const:'party' as const,rect:{...box,x:x+box.x,y:y+box.y},
+-     ...(target?{anchorPlacement:{rect:{...box,x:canvas.left+target.x+box.x,y:canvas.top+target.y+box.y},avoid:{...target.avoid,x:canvas.left+target.avoid.x,y:canvas.top+target.avoid.y}}}:{})}]:[];
++     ...(target?{anchorPlacement:{rect:{...box,x:canvas.left+target.x+box.x,y:canvas.top+target.y+(target.alignY==='top'?0:box.y)},avoid:{...target.avoid,x:canvas.left+target.avoid.x,y:canvas.top+target.avoid.y}}}:{})}]:[];
+    });
+    const faces=anchors.flatMap(a=>a.visible&&a.face?[{...a.face,id:a.id,x:a.face.x+canvas.left,y:a.face.y+canvas.top}]:[]);
+    for(const placed of layoutWorldLabels(labels,viewportWidth,viewportHeight,obstacles,faces)){
