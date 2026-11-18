@@ -1,14 +1,14 @@
 # CXV V8 queue — Batch M first
-- [ ] M-V1 ACTIVE: source audit/L1 tables/8primarysources complete;15min studygate passed04:44:08Z;Panko source-freeR1 comparison shows tail/propgap;nativePankoR3 normal/reduced44tests/tsc0/feet0/seam0/Sootexact;pilot WIP checkpoint. Panko1s additivecast boundary nowexact;39focused/tsc0/native two modes pass;per-cat timing documented. Eight native rigs need different enrollment.
-- [ ] M-V2: panko,mallow,sorrel,biscuit,inkcap,cinnamon,brioche,velvet,marigold idles; planted feet and seamless loops; per-cat personality.
-- [ ] M-V3: those nine + Mochi/Clover skill casts; verify contract event units and handoff to skill moments/idle.
-- [ ] M-V4: per-cat films/contact sheets/timing comparison; focused checks/typecheck; empty Soot diff and shared-behavior proof; STATUS-VI; scoped READY.
-- AGV active T-M1 timing tables, T-M2 L2/L4 research; T-M3 own-art ideas and T-M4 READY capture checks queued. Old tasks deferred.
-- DEFERRED V-F transaction performance R2: pair build complete; series not started. R1 failure/artifacts preserved. No app optimization adopted.
-- DONE T-CXI-10 battle notice independently ACCEPTED04:18:41Z; e570e63a36 +20e3db82b;40tests/TSC0/native two modes exact restoration.
-- DONE V-E paused recovery172c317d4 independently accepted/integratedm1.13. V-A3 accepted; V-C and V-B2 verified in prior evidence below.
-- PENDING legacy6groups11paths independent integration: pose crop,pendinglabels,HUDtext,stationaryrows,Panko crumb,focus reads; defer behindM.
-- CANCELLED old active V7 performance/notice next-step pointers: replaced by Batch M priority; completed evidence retained below.
+- DONE scoped M-V1 source/L1/L2/L4 study and Panko experiment; source/EN+ZH notebook retained; native-eight learning gate passed05:19:53Z. AGV supplemental tables/research still rejected and active.
+- READY scoped M-V2 nine idles: Panko992492c6f, Mallow4ec917401+c7d3cf13a, native7a3173c08e/evidence6ee844355. Integrated judge/performance acceptance remains CXI gate.
+- READY scoped M-V3 same nine native/drawn casts, real rules350ms→skill.55 and additive handoff; M/C cast API accepted, final media cast art/gameplay remains OPEN.
+- READY scoped M-V4 native7:60focused/TSC0,7films/28freshimages,feet/seam0,Soot3833unchanged; M-native-seven-READY.json. Mallow/Panko individual reports retained. M/C final comparisons OPEN.
+- ACTIVE M/C socket follow-up: Mochi hip/shieldwrist/independentlanternR3 accepted; head/offHand unsupported; Clover channels/coordinates pending. No media registration until CXI art/edge/seam/budget gates.
+- AGV active T-M1 independent timing evidence,T-M2 primary EN/ZH L2/L4; T-M3/T-M4 queued. Original drafts and latest increment rejected; no inferred physics lag adopted.
+- DEFERRED V-F transaction performance R2: pair248c3667/2e92e22d built,series unstarted; no app optimization adopted.
+- DONE T-CXI-10 e570e63a36+20e3db82b; V-E172c317d4 integratedm1.13. HistoricalV-A3/V-C/V-B2 evidence retained.
+- PENDING legacy6groups11paths: posecrop,labels,HUD,stationaryrows,Panko crumb,focusreads; afterBatchM.
+- CANCELLED earlier V7 active pointers; completed evidence remains below. Panko proposedrootfixd419002a4 REVERTED85b3c2fb7; never import alone.
 
 ## Historical V7 queue (evidence only; active instructions superseded)
 # CXV V7 queue — desktop judge first three minutes
