@@ -51,3 +51,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T08:02:55.485633+00:00 Mochi: mốc350/1100ms đạt,290mẫu/280khung,4phim/16ảnh; chuyển về idle không nhảy. Phát hiện nền vàng do viềnfocus bỏ bộ giải alpha video. Bản sửa Mochi/Clover đạt19kiểm thử,TypeScript và16mẫu GPU; cần production. Soot3.833tệp và301mẫu giữ nguyên. LandingR4 còn mất hạt/vân nhỏ, chưa duyệt.
 
 2026-11-18T08:09:28.814774+00:00 Batch M: phép nội suy phi tuyến cho đầu Clover không đủ bằng chứng (điểm nằm ngoài vùng theo dõi, lệch vòng lặp3,06px); giữ nguyên dữ liệu đã nhận. CXI đã nhận bản sửa viền vàng Mochi, đang kiểm tra bản dựng mới.
+
+2026-11-18T08:15:46.130648+00:00 Mochi: bản dựng R4 đã hết khung vàng; kiểm tra290mẫu/280khung hình,16ảnh mới, thời điểm chạm350/1100ms và chuyển về nghỉ đều đạt. Chưa phát hành: dung lượng tải và Clover còn mở.
