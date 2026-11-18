@@ -1,0 +1,625 @@
+{
+  "utc": "2026-11-18T11:35:31.239984+00:00",
+  "sourceCommit": "7625b028f2e129d6f9b6a9e8c4a0096f7a0223b0",
+  "indexSha256": "e24cfdf171df18f2cbc004206ead31224de41750be8468270af2edcebd0d2d50",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/report.json",
+    "sha256": "1f7025883dba7879e34fffcf7b7151b51013a3f42240feb634f29c6415c7b8e8"
+  },
+  "browser": "156.0.8078.4",
+  "hardware": "Apple M3 Pro",
+  "cpuRate": 1,
+  "roster": [
+    "clover",
+    "panko",
+    "mallow",
+    "sorrel"
+  ],
+  "harnessSha256": "64ddf7b25db6410911b00b5a1071ec4090291278c7546c5c2c0542fc5080f385",
+  "fixtureSha256": "31d7b7caf12df2881997a1023bf59c873ee5882bdd7e20a83c498b40e660dbd2",
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/harness-provenance.json",
+    "sha256": "94a58776b7678cd206c42f34b7cce5f3c6198951ade53311db9d4626b7e6cb64"
+  },
+  "hostLoad": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/host-load.txt",
+    "sha256": "280e1f6f53356062d06b41e23b983c27cb8ceb2bdfb9e4b59b78758587f72d7b"
+  },
+  "runtimeSourceSubstitutions": [],
+  "parity": {
+    "initial": true,
+    "result": true,
+    "logs": true,
+    "presentations": true,
+    "finalActors": true
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "result": "party",
+      "naturalResultMs": 87517.20000000298,
+      "actions": 56,
+      "ultimates": {
+        "clover": 3,
+        "panko": 5,
+        "mallow": 4,
+        "sorrel": 3
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 5165,
+        "median": 16.69999999999709,
+        "p95": 16.79999999998836,
+        "max": 33.40000000000873
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 5165,
+        "median": 4.300000011920929,
+        "p95": 5.700000002980232,
+        "max": 31.5
+      },
+      "excludedFrameIntervals": 65,
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "samples": 849,
+        "firstSampleMs": 10.100000002979868,
+        "lastSampleMs": 87506.70000000298,
+        "sampleGapsMs": {
+          "samples": 848,
+          "median": 100.0,
+          "p95": 116.60000000000582,
+          "max": 116.70000000001164
+        },
+        "runningSamples": 847,
+        "seekingSamples": 0,
+        "nonseekingRunningClockDriftSeconds": {
+          "samples": 847,
+          "median": 0.10690000000022337,
+          "p95": 0.1407000000062606,
+          "max": 0.1502000000069863
+        },
+        "allClockDriftSeconds": {
+          "samples": 849,
+          "median": 0.10690000000022337,
+          "p95": 0.1407000000062606,
+          "max": 0.1502000000069863
+        },
+        "callbacks": 2609,
+        "decodedIntervalsRunningWithoutCaptureMs": {
+          "samples": 2564,
+          "median": 33.30000000000291,
+          "p95": 50.0,
+          "max": 66.69999999999709
+        },
+        "observedTenSecondWraps": [
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 5176.5000000029795
+          },
+          {
+            "before": 9.966667,
+            "after": 0.033333,
+            "at": 15192.900000002981
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 25192.40000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 35192.10000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 45208.30000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 55208.00000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 65224.20000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 75223.70000000298
+          },
+          {
+            "before": 9.966667,
+            "after": 0,
+            "at": 85240.10000000297
+          }
+        ],
+        "events": {
+          "pause": 1,
+          "playing": 10,
+          "seeked": 9,
+          "seeking": 9,
+          "waiting": 9
+        },
+        "qualityFirst": {
+          "totalVideoFrames": 158,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 2780,
+          "droppedVideoFrames": 20,
+          "corruptedVideoFrames": 0
+        },
+        "gates": {
+          "noFailures": true,
+          "sampledThroughResult": true,
+          "normalFramesAdvance": true,
+          "reducedClockStatic": true
+        },
+        "failures": []
+      },
+      "postResultMedia": {
+        "samples": 14,
+        "stableSamples": 11,
+        "qualityFirst": {
+          "totalVideoFrames": 2780,
+          "droppedVideoFrames": 20,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 2780,
+          "droppedVideoFrames": 20,
+          "corruptedVideoFrames": 0
+        },
+        "callbacksAfterSettledPause": 0,
+        "gates": {
+          "observed": true,
+          "allPaused": true,
+          "allSuspended": true,
+          "stoppedClock": true,
+          "stoppedDecoder": true
+        }
+      },
+      "bossPhase": {
+        "samples": 849,
+        "actionSamplesAfter200ms": 672,
+        "overlaps": [],
+        "gates": {
+          "observed": true,
+          "phaseAuraRetained": true,
+          "unopposedPortraitRetained": false,
+          "actorFieldClear": true
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/timeline.json",
+        "sha256": "ec7f6ecf56a661011f81eb5fb35748f6cd3918758f82ff5cd9e57b57a9c9be29"
+      }
+    },
+    {
+      "mode": "reduced",
+      "result": "party",
+      "naturalResultMs": 87802,
+      "actions": 56,
+      "ultimates": {
+        "clover": 3,
+        "panko": 5,
+        "mallow": 4,
+        "sorrel": 3
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 5177,
+        "median": 16.69999999999709,
+        "p95": 16.799999999995634,
+        "max": 33.40000000000873
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 5177,
+        "median": 4.299999997019768,
+        "p95": 5.299999997019768,
+        "max": 30.900000005960464
+      },
+      "excludedFrameIntervals": 64,
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "samples": 843,
+        "firstSampleMs": 76.30000000000018,
+        "lastSampleMs": 87706.1,
+        "sampleGapsMs": {
+          "samples": 842,
+          "median": 100,
+          "p95": 116.69999999999709,
+          "max": 116.70000000001164
+        },
+        "runningSamples": 0,
+        "seekingSamples": 0,
+        "nonseekingRunningClockDriftSeconds": {
+          "samples": 0
+        },
+        "allClockDriftSeconds": {
+          "samples": 843,
+          "median": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "callbacks": 1,
+        "decodedIntervalsRunningWithoutCaptureMs": {
+          "samples": 0
+        },
+        "observedTenSecondWraps": [],
+        "events": {
+          "seeked": 1,
+          "seeking": 1
+        },
+        "qualityFirst": {
+          "totalVideoFrames": 158,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 158,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "gates": {
+          "noFailures": true,
+          "sampledThroughResult": true,
+          "normalFramesAdvance": true,
+          "reducedClockStatic": true
+        },
+        "failures": []
+      },
+      "postResultMedia": {
+        "samples": 13,
+        "stableSamples": 10,
+        "qualityFirst": {
+          "totalVideoFrames": 158,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "qualityLast": {
+          "totalVideoFrames": 158,
+          "droppedVideoFrames": 0,
+          "corruptedVideoFrames": 0
+        },
+        "callbacksAfterSettledPause": 0,
+        "gates": {
+          "observed": true,
+          "allPaused": true,
+          "allSuspended": true,
+          "stoppedClock": true,
+          "stoppedDecoder": true
+        }
+      },
+      "bossPhase": {
+        "samples": 843,
+        "actionSamplesAfter200ms": 667,
+        "overlaps": [],
+        "gates": {
+          "observed": true,
+          "phaseAuraRetained": true,
+          "unopposedPortraitRetained": false,
+          "actorFieldClear": true
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/timeline.json",
+        "sha256": "4df3d46432be7ba1b1cb4b243b0cca1625adc762118fe03fee4108e887d61517"
+      }
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/00-opening.png",
+      "sha256": "f3712e51c8fc495b023e5c33013fe75944fec14cc86d9aa7e79a415eed8b6067",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:29.115Z",
+      "rgbMean": 111.62989293981481,
+      "rgbStdDev": 48.12011555978832
+    },
+    {
+      "mode": "normal",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/01-status.png",
+      "sha256": "420670eb180ad122ec9a5ff95dc07a8f1ace17bc45adb6a1653e773aa2a9d7d5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:32.397Z",
+      "rgbMean": 118.89280526620371,
+      "rgbStdDev": 55.189629550800184
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/02-ultimate-panko.png",
+      "sha256": "a3874ae922130b205d6988c179c73407ad68d6792447a3d9031fad8cc726442f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:37.966Z",
+      "rgbMean": 113.69846824363425,
+      "rgbStdDev": 51.64269665296405
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/03-ultimate-mallow.png",
+      "sha256": "362e0570eff47993974809b597473797ea57b09b3271b7cb0487155ca9f0a2d7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:40.299Z",
+      "rgbMean": 129.22962492766203,
+      "rgbStdDev": 62.70804724842179
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-foe-0-yarn-giant",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/04-ultimate-foe-0-yarn-giant.png",
+      "sha256": "de57aee5e25f80184bf23092142d19c9953031c81dff0b0965addb1adafbc1d1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:43.419Z",
+      "rgbMean": 117.09210467303241,
+      "rgbStdDev": 54.35063555367663
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/05-ultimate-clover.png",
+      "sha256": "f148ab0c60ca6c666e88013fea0c5a68b265a1dd4fb0afa9b937f406f6b28f28",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:31:47.802Z",
+      "rgbMean": 119.13676432291666,
+      "rgbStdDev": 52.917420837028004
+    },
+    {
+      "mode": "normal",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/06-result-ready.png",
+      "sha256": "6a11040de090eb1601d3a885bb461a9ba351a4ae75ac4fc5338ae10d04431de2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:32:57.188Z",
+      "rgbMean": 51.548455222800925,
+      "rgbStdDev": 37.5084759446108
+    },
+    {
+      "mode": "normal",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/normal/07-result-later.png",
+      "sha256": "0e7685543607a75f20c79ce8da9b9f9b89c668b807badf3a8038aac48c3bcb60",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:32:58.062Z",
+      "rgbMean": 53.14255533854167,
+      "rgbStdDev": 41.2336048307903
+    },
+    {
+      "mode": "reduced",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/00-opening.png",
+      "sha256": "d6951a79e8d013aca065dd4de8ee8fc2434988bc6a7f4b840a373ee0bf4795f8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:01.099Z",
+      "rgbMean": 111.64228117766204,
+      "rgbStdDev": 48.13771763166997
+    },
+    {
+      "mode": "reduced",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/01-status.png",
+      "sha256": "3aeef6f74de9ad3d1f9946b350771a1e886fc09915d511020d029380e2c88885",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:04.390Z",
+      "rgbMean": 113.69081669560185,
+      "rgbStdDev": 50.49261460923411
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/02-ultimate-panko.png",
+      "sha256": "8f11ec078d49421dde4e0f27d541a314d05e53151ecc86ec2cd37000fb42fba6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:09.970Z",
+      "rgbMean": 112.14074833622685,
+      "rgbStdDev": 52.49079489011173
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/03-ultimate-mallow.png",
+      "sha256": "7d415a8c74d3bbcc11b324d35f49b67c16e1757a4efc4f4c68447bd0745a2fbe",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:12.155Z",
+      "rgbMean": 123.1702293113426,
+      "rgbStdDev": 58.254484928748056
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-foe-0-yarn-giant",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/04-ultimate-foe-0-yarn-giant.png",
+      "sha256": "8404013ee1ebd0071f134e6950a4eea34de9bb9e273405b2a5850f211314d22d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:15.441Z",
+      "rgbMean": 109.94248517071759,
+      "rgbStdDev": 49.63391846274367
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/05-ultimate-clover.png",
+      "sha256": "fb8f910c7ca2b16807b919a012673a2304530c6bcd9bb2df5e72bb82da4643a4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:33:19.796Z",
+      "rgbMean": 119.77499385127315,
+      "rgbStdDev": 53.548094517117676
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/06-result-ready.png",
+      "sha256": "4d35702b4387218a31e8dca7e12512e4c50264df68da1ef0dc7196736c56ec80",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:34:29.438Z",
+      "rgbMean": 53.035853949652775,
+      "rgbStdDev": 41.0737525136944
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/reduced/07-result-later.png",
+      "sha256": "4d35702b4387218a31e8dca7e12512e4c50264df68da1ef0dc7196736c56ec80",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T11:34:30.283Z",
+      "rgbMean": 53.035853949652775,
+      "rgbStdDev": 41.0737525136944
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/review/normal-0.jpg",
+      "sha256": "070afca9ba2f570054c87fe89182be08ddf95bf619d414eeff59c5ee70eea5fa",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-panko",
+        "ultimate-mallow"
+      ],
+      "bytes": 221622,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T11:36:16.304555+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/review/normal-1.jpg",
+      "sha256": "b521b2e11e63170f2e3cb195d4c16e7d68f92a6321cf6e88f1d9ef531d69cd33",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "ultimate-foe-0-yarn-giant",
+        "ultimate-clover",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 220921,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T11:36:16.304555+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/review/reduced-0.jpg",
+      "sha256": "5f6aa3268ac0b2fb2f2496360df41b1901b2e7f3c346bc401fcd5183fcfc664f",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-panko",
+        "ultimate-mallow"
+      ],
+      "bytes": 224195,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T11:36:16.304555+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/review/reduced-1.jpg",
+      "sha256": "83166f03c583ce7c3203afa192b3189026d41e8f16805cc310993db56880a840",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "ultimate-foe-0-yarn-giant",
+        "ultimate-clover",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 220333,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T11:36:16.304555+00:00"
+    }
+  ],
+  "visualReviewed": true,
+  "limits": "Local M3 Pro descriptive timing under recorded background load. Seeded setup and timer wrappers; no ordinary account-progression, calibrated laptop, cold-byte, enrollment, or source-code optimization claim. Capture intervals excluded from frame statistics and explicitly counted. Decoder intervals use100ms sampled running state plus pause/seek/stall events. Callbacks measure presented media, not GPU pixel equality.",
+  "postResultDecoderPaused": true,
+  "phaseYieldNumericPass": false,
+  "numericPass": false,
+  "visualFindings": [
+    "Four fresh1024x576 sheets viewed once;1280x720 originals measured first.",
+    "Clover,companions and boss remain identifiable;HP lanes and sampled damage/healing numerals remain legible in selected action frames.",
+    "Normal/reduced natural victory composites render and practice controls are visible.",
+    "These reduced full-viewport sheets cannot establish subtle fringe/halo or loop-seam quality;dedicated native art evidence still needed."
+  ],
+  "disposition": "Runtime media/rules/result checks pass;aggregate numeric gate remains false because unopposedPortraitRetained was not observed. Eligibility diagnosis pending;do not erase this original gate.",
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-natural-r1-113123/artifact-verification.json",
+    "sha256": "0cec8ac1ca5a05e5fcce1f0e54eacc085a3eeea6a98361859104f5641438e2b5"
+  },
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

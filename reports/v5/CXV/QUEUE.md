@@ -137,3 +137,6 @@
 
 - ACTIVE Clover face/palm semantic evidence and art/loop/bytes gates;native idle/cast scopedREADY M-clover-production-READY.json (304idle/290cast,20views once);ordinary-play/performance pending.
 - REJECTED rigid tail:92core failures reproduced;new28px visiblecloth contaminates27core/7independenttail targets;no material/hiddenlayer correspondence. M-clover-rigid-occlusion-R1.json.
+
+- SCOPED Clover native ordinaryR1:2wins/56actions25ults each/exactrules/0errors/27postresult paused/1339actionrows0overlap;4views once. AggregateFALSE unopposedportrait coverage retained;4phasechanges actionoccupied. M-clover-natural-production-R1.md.
+- ACTIVE new presentation anchors perCXI11:32Z:eye-line midpoint and visible paw+digits bounded by sleeve;old geometric definitions/failures frozen. Dedicated currentR3 artgate next;6301lease CXV.

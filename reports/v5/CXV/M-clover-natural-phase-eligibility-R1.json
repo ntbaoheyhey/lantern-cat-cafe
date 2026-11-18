@@ -1,0 +1,94 @@
+{
+  "utc": "2026-11-18T11:36:38.853652+00:00",
+  "sourceCommit": "7625b028f2e129d6f9b6a9e8c4a0096f7a0223b0",
+  "sourcePath": "apps/web/src/game/cardrpg/battle-v3/boss-phase.ts",
+  "sourceSha256": "4bed5574784a4a73dc491d7f90da4b0ffeaac0a8f135d6288f3aebeb61e84725",
+  "rawMeasurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-natural-production-R1.json",
+    "sha256": "f746eb379c79b3871872ef42e0d750b7738d824f227d152036327d65877679b3"
+  },
+  "transitions": [
+    {
+      "mode": "normal",
+      "phase": 2,
+      "fullAt": 24192.50000000298,
+      "frame": {
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "elapsed": 449.8999999999978
+      },
+      "bossPhase": {
+        "visible": false,
+        "phase": 2,
+        "age": 0.08329999999999416,
+        "aura": true,
+        "portrait": "yarn-giant",
+        "opacity": 0,
+        "yielding": true
+      }
+    },
+    {
+      "mode": "normal",
+      "phase": 3,
+      "fullAt": 56807.90000000298,
+      "frame": {
+        "actorId": "mallow",
+        "skillId": "mallow-4",
+        "elapsed": 1200
+      },
+      "bossPhase": {
+        "visible": false,
+        "phase": 3,
+        "age": 0.08330000000000837,
+        "aura": true,
+        "portrait": "yarn-giant",
+        "opacity": 0,
+        "yielding": true
+      }
+    },
+    {
+      "mode": "reduced",
+      "phase": 2,
+      "fullAt": 24175.3,
+      "frame": {
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "elapsed": 433.2999999999993
+      },
+      "bossPhase": {
+        "visible": false,
+        "phase": 2,
+        "age": 0.06669999999999376,
+        "aura": true,
+        "portrait": "yarn-giant",
+        "opacity": 0,
+        "yielding": true
+      }
+    },
+    {
+      "mode": "reduced",
+      "phase": 3,
+      "fullAt": 56874,
+      "frame": {
+        "actorId": "mallow",
+        "skillId": "mallow-4",
+        "elapsed": 1133.2000000000044
+      },
+      "bossPhase": {
+        "visible": false,
+        "phase": 3,
+        "age": 0,
+        "aura": true,
+        "portrait": "yarn-giant",
+        "opacity": 0,
+        "yielding": true
+      }
+    }
+  ],
+  "unopposedPortraitObservations": 0,
+  "originalAggregateNumericPass": false,
+  "interpretation": "All four observed phase transitions occur inside active actions and are immediately yielding. That matches the existing action-first policy;this fixture does not cover an unopposed portrait. Preserve the aggregate false gate and report scoped media/rules/result/action-clearance acceptance separately.100ms sampling is not exact transition timing.",
+  "applicationChanged": false,
+  "measureGateChanged": false,
+  "imagesViewed": 0
+}
