@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
-I-A DONE/REPEAT: m1.12 app8b8d0b8ca DPR/context;full5365=5352pass+11skip+2expectedfail;8finalsteps+priorbuild0;v5-m1.12@9c93780ee atomicpush+remoteverified.
-I-B OPEN:m1.12 cold7667601/8228854/7745296B;wave3FAIL228854B;AGV4halfAVIFabsent;AGS e33headersstereo corrected,native/listening pending.No rejectedreplacements integrated.
-I-C FIRST-HIT DONE:21167ms incl17700reading8cards;HP165→119;route9747ms excludesreading;ordinary0errors.
+I-A VALIDATED/PUBLISH:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;publish and remoteverify.
+I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;AGV4halfAVIFabsent;AGS audioREDO/nointegration.
+I-C FIRST-HIT DONE:20448ms incl17700reading8cards;HP165→119;route10037ms excludesreading;ordinary0errors.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
-I-E DONE/REFRESH:m1.12 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.
-I-F DONE/REPEAT:docs currentm1.12;327word180s narrationdraft unrecorded.AGS T7wording/link partialACCEPT;remaining reviewlinkREDO;T2/T3unsupportedclaimsREDO.
-I-G OPEN/REPEAT:DPR/contextACCEPT;pausedbattle contextloss assignedCXV;unlocktoast touches lowerNextborder,center clear. Recovery1138/8676ms;T1exactQA unresolved.
+I-E DONE/REFRESH:m1.13 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.
+I-F DONE/REPEAT:docs currentm1.13;327word180s narrationdraft unrecorded;AGS T2threeawards/T5stereo+sources PART accepted;T1/T2remainder/T3/T5remainder/T7/T8 OPEN.
+I-G OPEN/REPEAT:paused-battle recoveryACCEPT;unlocktoast/Nextborder and lossnotice/bossHP overlaps remain. Recovery635/8677ms;T1exactQA unresolved.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.
