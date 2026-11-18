@@ -1,10 +1,10 @@
 # CXV V8 handoff
 ACTIVE BatchM labelsR6 scopedattributionPASS;32cross tail/badgepixels(7at>4),HP/rage/own0;naturalrectangleFAIL retained;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Quantify minimal Clover label translation against retained R6 paint masks;source world-label-dom.ts;no sourcechange before scope assessment.
+NEXT 1: Prepare native label candidate+heldout capture after CXI GPU study;static fivecase minimum5px only;no sourcechange;lease requested13:35Z.
 NEXT 2: Audit CXI GPU draw samples with tools/v5vfx/media-phase-projection.py;9analyticcontrols PASS;independent texture identity required.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push7ca771c2c;GREENv5-m1.15@59f5f3c57 merged;exactR5 study remains;latestnative release preserved.
+Last confirmed push3803bf12b;GREENv5-m1.15@59f5f3c57 merged;exactR5 study remains;latestnative release preserved.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T13:33Z app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 Jobs:none;R6PID12596 completed13:23:42Z;6301/timing explicitlyRELEASED13:24:19Z;allcapture failures retained.
