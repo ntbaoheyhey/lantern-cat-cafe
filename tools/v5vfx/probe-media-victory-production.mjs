@@ -47,6 +47,19 @@ try{
    assert(!run.exceptions.some(e=>e.data?.description?.includes('Drawing swaps require an accepted cut-out rig')));
   }
   run.final=await snapshot();run.capture=resolve(out,run.mode+'.png');await page.screenshot({path:run.capture,scale:'css'});run.captureSha256=hash(await readFile(run.capture));
+  if(reduced&&!failure){
+   await page.evaluate(()=>{const canvas=document.querySelector('.b3-victory-crew>canvas'),gl=canvas.getContext('webgl2')??canvas.getContext('webgl');globalThis.__cxvMediaVictoryContext={canvas,gl,extension:gl.getExtension('WEBGL_lose_context')};});
+   const contextState=()=>page.evaluate(()=>{const a=globalThis.__cxvMediaVictoryContext,e=document.querySelector('.b3-victory-crew');return{ready:e.dataset.ready,loadError:e.dataset.loadError??null,rect:e.getBoundingClientRect().toJSON(),lost:a.gl.isContextLost(),visibility:getComputedStyle(a.canvas).visibility,canvas:{width:a.canvas.width,height:a.canvas.height}};});
+   run.context={before:await contextState()};
+   await page.evaluate(()=>globalThis.__cxvMediaVictoryContext.extension.loseContext());
+   await page.waitForFunction(()=>document.querySelector('.b3-victory-crew').dataset.ready==='false');await page.waitForTimeout(300);
+   run.context.lost=await contextState();assert(run.context.lost.lost);assert.equal(run.context.lost.visibility,'hidden');
+   await page.evaluate(()=>globalThis.__cxvMediaVictoryContext.extension.restoreContext());
+   await page.waitForFunction(()=>document.querySelector('.b3-victory-crew').dataset.ready==='true');await page.waitForTimeout(300);
+   run.context.restored=await contextState();assert(!run.context.restored.lost);assert.equal(run.context.restored.visibility,'visible');assert.deepEqual(run.context.restored.rect,run.context.before.rect);
+   run.context.capture=resolve(out,'reduced-restored.png');await page.screenshot({path:run.context.capture,scale:'css'});run.context.captureSha256=hash(await readFile(run.context.capture));run.context.media=await snapshot();
+   assert(run.context.media.videos.every(v=>v.readyState>=2&&v.paused&&!v.error));assert.equal(errors.length,0);
+  }
   await save();await page.close();
  }
  report.identityAfter=runtimeEvidence();assert.equal(report.identityAfter.indexSha256,report.identity.indexSha256);report.pass=true;
