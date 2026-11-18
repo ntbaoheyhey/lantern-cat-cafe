@@ -11,3 +11,5 @@ AGV: R10 bị loại trước khi xem vì tăng 65.160 byte so với bản đang
 3.833 đường dẫn Soot và capture-arrival.mjs giữ nguyên. Bản tự nhắc cxv-wake được giữ nguyên. Công việc V7 tiếp tục sau Batch M; các bằng chứng cũ còn trong Git và báo cáo riêng.
 
 2026-11-18T10:17:50.683531+00:00: Điểm neo mặt/bàn tay Clover thử đường cong tuần hoàn từ16khung riêng: không đạt kiểm tra độc lập (mặt8/9,bàn tay4/9). Giữ nguyên ngưỡng và bằng chứng; chưa đưa vào game. Điểm vòi ấm đã gửi CXI để kiểm tra bộ nạp.
+
+2026-11-18T10:26:39.812063+00:00: Neo HP Clover theo quy ước chiều cao hiện có đạt khoảng cách an toàn trong hình học: kiểm tra6006tư thế, tối thiểu52.87đơn vị; cận bảo thủ48.51. Chưa kết luận độ rõ trong cảnh1280×720. Vòi ấm đạt kiểm tra adapter riêng; chờ ứng viên giải mã để tự quay kiểm chứng.

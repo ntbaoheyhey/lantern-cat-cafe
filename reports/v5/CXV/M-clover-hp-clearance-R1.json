@@ -1,0 +1,172 @@
+{
+  "utc": "2026-11-18T10:25:22.167Z",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-hp-clearance-R1/preregistration.json",
+    "sha256": "519144c069a336aa705264c787d1bb6c06aea55d7cf5727b7c8a50b62ab61f2c"
+  },
+  "sources": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-loader.ts",
+      "sha256": "94c4124c8c1b306b516b2b113f3509d0753dcbd4f0ca8d00df97c9e337890617"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/rig/living-cast.ts",
+      "sha256": "f8a4720535f4153b0e5adda16fc1a00f37e698b545870989c29433240ab9bf99"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/assets.ts",
+      "sha256": "8dd2d7c5cf553d202bf325ea5909e789480f31dde61701198be24027c5381755"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "5e1e0d4e7555e8a1341346689a3c04ba147201546390b0e565f2b4e33d15b3ef"
+    }
+  ],
+  "candidateDeliveryXY": [
+    155.3,
+    -43.08000000000004
+  ],
+  "candidateWorldXY": [
+    0,
+    573.44
+  ],
+  "geometry": {
+    "width": 318,
+    "height": 390,
+    "opaqueHeight": 384,
+    "foot": [
+      155.3,
+      387
+    ],
+    "segments": [
+      24,
+      24
+    ]
+  },
+  "vertexCount": 625,
+  "groups": [
+    {
+      "animation": "idle",
+      "reduced": false,
+      "samples": 1001,
+      "minClearanceWorld": 57.440000000000055,
+      "maxClearanceWorld": 57.440000000000055,
+      "worst": {
+        "phase": 0,
+        "pose": {
+          "lean": 0,
+          "lift": 0,
+          "tilt": 0,
+          "follow": 0
+        },
+        "meshTop": 516
+      }
+    },
+    {
+      "animation": "idle",
+      "reduced": true,
+      "samples": 1001,
+      "minClearanceWorld": 57.440000000000055,
+      "maxClearanceWorld": 57.440000000000055,
+      "worst": {
+        "phase": 0,
+        "pose": {
+          "lean": 0,
+          "lift": 0,
+          "tilt": 0,
+          "follow": 0
+        },
+        "meshTop": 516
+      }
+    },
+    {
+      "animation": "skill",
+      "reduced": false,
+      "samples": 1001,
+      "minClearanceWorld": 52.87204964698674,
+      "maxClearanceWorld": 57.440030469776275,
+      "worst": {
+        "phase": 0.312,
+        "pose": {
+          "lean": 0.017999979259094124,
+          "lift": 0.02199997465000393,
+          "tilt": 0.020999975802276482,
+          "follow": 0.007015156661242242
+        },
+        "meshTop": 532.674560546875
+      }
+    },
+    {
+      "animation": "skill",
+      "reduced": true,
+      "samples": 1001,
+      "minClearanceWorld": 57.440000000000055,
+      "maxClearanceWorld": 57.440000000000055,
+      "worst": {
+        "phase": 0,
+        "pose": {
+          "lean": 0,
+          "lift": 0,
+          "tilt": 0,
+          "follow": 0
+        },
+        "meshTop": 516
+      }
+    },
+    {
+      "animation": "ult",
+      "reduced": false,
+      "samples": 1001,
+      "minClearanceWorld": 52.87206719705125,
+      "maxClearanceWorld": 57.4400300321488,
+      "worst": {
+        "phase": 0.311,
+        "pose": {
+          "lean": 0.01799999615803255,
+          "lift": 0.021999995304262002,
+          "tilt": 0.020999995517704644,
+          "follow": 0.006985171224549413
+        },
+        "meshTop": 532.6707153320312
+      }
+    },
+    {
+      "animation": "ult",
+      "reduced": true,
+      "samples": 1001,
+      "minClearanceWorld": 57.440000000000055,
+      "maxClearanceWorld": 57.440000000000055,
+      "worst": {
+        "phase": 0,
+        "pose": {
+          "lean": 0,
+          "lift": 0,
+          "tilt": 0,
+          "follow": 0
+        },
+        "meshTop": 516
+      }
+    }
+  ],
+  "limits": "Local canonical media mesh envelope only. Full plane includes transparent corners, so this is conservative; no alpha correctness is assumed. Scene root transforms, camera, hp centering and label readability remain separate native gates. No application or registry writes.",
+  "pass": true,
+  "continuousLocalBound": {
+    "poseBounds": {
+      "lift": 0.045000000000000005,
+      "follow": 0.012,
+      "tilt": 0.04095000000000001
+    },
+    "float32SafetyWorld": 0.001,
+    "minimumClearanceWorld": 48.50990861161158,
+    "worstVertex": 24,
+    "derivation": "hpY-y -512|lift|(1-upper) -512|follow||.25-upper(1-.75head)| -|x head|sin(maxTilt) -|hpDy-dy head|(1-cos(maxTilt)) -.001. All triangle interiors lie in their vertex convex hull."
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-hp-clearance-R1/samples.json",
+    "sha256": "b181b234401a1663b09d00d3e13c322fb4dc97e29c6ad66f816ac872ae455bde"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-clover-hp-clearance.mjs",
+    "sha256": "8b3eb9a2e5d6209ac2ad0565b7160dffcecf66587fb9290be2f9dd4afc0df859"
+  }
+}
