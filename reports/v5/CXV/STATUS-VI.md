@@ -25,3 +25,5 @@ Chủ dự án bỏ giới hạn8MB lúc12:09:40Z; byte chỉ báo cáo. AGV T-M
 2026-11-18T17:49:26.597529+00:00 Kiểm tra xuất canvas không ẩn nhãn đạt:30ảnh xác minh hash,20 cặp pixel và60 trạng thái giữ nguyên. Hai khung chỉ số160x72 vừa khoảng trống footer, dư33px;chưa dựng nội dung hoặc duyệt liên kết nhân vật. Chênh lệch ảnh màn hình/canvas ngoài vùng nhãn vẫn còn7351–24743pixel nên chưa dùng để kết luận nhãn che mèo. Không sửa app.
 
 2026-11-18T18:02:56.522424+00:00 — Thử bảng tên Mochi ở chân màn hình: 120 ảnh, 80 cặp lặp và 240 trạng thái khớp; focus bàn phím nằm trong bảng. Khôi phục ảnh màn hình còn sai khác; chưa chấp nhận bản sản xuất, chưa đổi mã ứng dụng.
+
+2026-11-18T18:21:46.235771+00:00 R2 giữ nguyên nút Burn đang có tiêu điểm qua cả6mốc mỗi bản;4trang/32PNG kiểm tra lặp đạt. Đây là kiểm tra hồi quy, chưa duyệt dùng trong game; còn vòng đời tự động, hai mèo, lỗi video và toàn bộ vùng vẽ.

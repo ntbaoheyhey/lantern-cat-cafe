@@ -1,0 +1,111 @@
+{
+  "utc": "2026-11-18T18:21:46.235771+00:00",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "classification": "Selected regression/development after R1 failure, not heldouts",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-footer-lifecycle-R2-preregistration.json",
+    "sha256": "13452d96d3666503dfdb8c43a0b0dd882f6d6ade8c3a8f5501f1d1dd9e2024c1"
+  },
+  "evidence": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/footer-lifecycle-r2-182010",
+  "rawSha256": "8240424f111c9c7885c149523be9b1a452a1e7aeffd365aa7db5742e0f026c95",
+  "measurementSha256": "21f78fa7187bc0ab375126e9cce63c2f76a9eb3e404a95abbd45162f19630ac0",
+  "pages": 4,
+  "pngHashes": 32,
+  "repeatPairs": 16,
+  "fullStateSnapshots": 64,
+  "legalActions": 4,
+  "valueTransferRows": 24,
+  "focusSamplesPerArm": 6,
+  "sameFocusedNodeRetained": true,
+  "emptyInitialCorrect": true,
+  "rawCanvasCrossArmExact": 4,
+  "repeatStatePass": true,
+  "synchronousTransferPass": true,
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "screenCrossArm": [
+    {
+      "statusCase": "empty",
+      "phase": "initial",
+      "rawCanvas": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "screen": {
+        "pixels": 15856,
+        "bbox": [
+          102,
+          131,
+          562,
+          720
+        ]
+      }
+    },
+    {
+      "statusCase": "empty",
+      "phase": "final",
+      "rawCanvas": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "screen": {
+        "pixels": 16302,
+        "bbox": [
+          102,
+          111,
+          562,
+          720
+        ]
+      }
+    },
+    {
+      "statusCase": "capacity",
+      "phase": "initial",
+      "rawCanvas": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "screen": {
+        "pixels": 18566,
+        "bbox": [
+          102,
+          106,
+          738,
+          720
+        ]
+      }
+    },
+    {
+      "statusCase": "capacity",
+      "phase": "final",
+      "rawCanvas": {
+        "pixels": 0,
+        "bbox": null
+      },
+      "screen": {
+        "pixels": 18565,
+        "bbox": [
+          102,
+          106,
+          738,
+          720
+        ]
+      }
+    }
+  ],
+  "retainedFailures": [
+    "R1 focused node removed at350ms; original failure remains",
+    "R1 asynchronous strict controls remain failures",
+    "Earlier conceal/restoration paint failures are not repaired by this check"
+  ],
+  "open": [
+    "Removed/reordered focused status",
+    "Native lifecycle rather than manually invoked sync",
+    "Full action trajectory",
+    "Real network/media fallback",
+    "Dual media layout and capacity",
+    "Complete paint and ordinary laptop acceptance"
+  ]
+}

@@ -1,5 +1,6 @@
 # CXV V8 queue — Batch M first
 - OWNER override12:09:40Z: byte cap removed;all historical byte-budget failures are report-only and never block release/art. No new byte optimization required.
+- ACTIVE footer identity R2 selectedregression PASS4pages/32PNG/16repeatpairs/64states/24exacttransfers/12same-node focus;0views. R1failures retained;native/fulltrajectory/dualmedia/fallback/fullpaint OPEN. M-footer-lifecycle-R2.json.
 - REJECTED fixed Clover(-28,+14) proof REJECTED:1534layouts/198rigidmismatches (81candidateownavoid,117baselinefallbackremoved);solvedpaint15/33originalvalid guard2failures,0directhits. Newfivecontrols2valid/0fails is separate protocol. Actualnative target unmeasured;no refit/sourceadoption. Resolvecontrols;assess lowerMochi-only scope.
 - REJECTED authored-only bodyoccluders/originaltarget:88geometryclear,40displacementfails,28axisloss,max165.575px. Noappchange/refit;labelpresentation requiresnewdesign,commissionedart work continues. M-mochi-body-occluders-R1.json.
 - REJECTED Mochi-only+6:86/88nativeClover bounds conflicts,6association failures;all20visibility/opacity controlsRGBfail despite6400statechecks. M-mochi-label-controls-R1.json;no sourceadoption.
