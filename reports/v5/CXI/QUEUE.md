@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-M-I1 BLOCKED-ON new matte/seam evidence: Mochi384CRF23 isolated56PASS but native4images show edge speckles; CloverR5/R6 rejected/unaccepted. Panko own production scene ACCEPT; release budgets still open. Mallow scoped import validated.
+M-I1 BLOCKED-ON new matte/seam evidence: Mochi384CRF23 isolated56PASS but native4images show edge speckles; CloverR5/R6 rejected/unaccepted. Panko own production scene ACCEPT; release budgets still open. Mallow own production scene ACCEPT4freshimages/10scomparison. Native7 scopedimport85cb62233,66focused/1120parityPASS;own7catcapture running.
 M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
 M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
 SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
@@ -9,7 +9,7 @@ CXV coordinationOPEN:L1/L2/L4,rig/stage hooks and11catcast/9othercatidle;AGVT11l
 Deferred V7 work and retained evidence
 # CXI V7 assignments — evidence required
 I-A DONE/REPEAT:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;v5-m1.13@4e5fe161a atomicpush+remoteverified.
-I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;4halfAVIFACCEPT94340B saving+nativefallbackPASS;candidatecoldpending;AGVT11landing assigned;AGS audioREDO/nointegration.
+I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;4halfAVIFACCEPT94340B saving+nativefallbackPASS;d119candidatecold7674113/8141046/7749827B,remainingwave3gap141046B;AGVT11landing assigned;AGS audioREDO/nointegration.
 I-C FIRST-HIT DONE:20448ms incl17700reading8cards;HP165→119;route10037ms excludesreading;ordinary0errors.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
 I-E DONE/REFRESH:m1.13 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.

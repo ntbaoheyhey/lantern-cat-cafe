@@ -1,0 +1,632 @@
+{
+  "utc": "2026-11-18T06:05:38.291Z",
+  "cat": "sorrel",
+  "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 27,
+        "y": 18,
+        "width": 254,
+        "height": 291,
+        "body": {
+          "x": 59.13079057527533,
+          "y": 50.82938864300392,
+          "width": 189.00409941972976,
+          "height": 226.1953843698877
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 26,
+        "y": 19,
+        "width": 255,
+        "height": 290,
+        "body": {
+          "x": 58.10364272684943,
+          "y": 51.89841590257465,
+          "width": 190.30751130733586,
+          "height": 225.12635711031697
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "sharedCodeParity": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m-native-seven-import.json",
+    "sha256": "9a54961f803f17d98f40d4a3d973dd026b4e66cc8f78ee7bc03c7a28ef95d82c",
+    "utc": "2026-11-18T06:03:08.038Z",
+    "baseline": "d1192596c",
+    "imported": [
+      "a3173c08e"
+    ],
+    "cases": 1120,
+    "perUnit": {
+      "mochi": 224,
+      "soot": 224,
+      "clover": 224,
+      "panko": 224,
+      "mallow": 224
+    },
+    "protectedDiff": [],
+    "mallowMaxBoneDelta": 1.7763568394002505e-15,
+    "protectedPaths": 3833,
+    "pass": true,
+    "completedUTC": "2026-11-18T06:03:09.028Z"
+  },
+  "buildSource": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "artifactSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "sorrel-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.5832257534224868
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.639572010869565
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.686934239922677
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 1.998000000000001
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 2.0313333333333325
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 2.0646666666666675
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 2.097999999999999
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 2.131333333333334
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 2.164666666666669
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 2.1980000000000004
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 2.2313333333333354
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 2.264666666666667
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T06:06:59.598Z",
+  "comparison": {
+    "utc": "2026-11-18T06:07:08.708175+00:00",
+    "cat": "sorrel",
+    "captureUTC": "2026-11-18T06:05:38.291Z",
+    "captureCompletedUTC": "2026-11-18T06:06:59.598Z",
+    "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+    "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "sameHeightPx": 225,
+    "sourceUnion600x480": [
+      41,
+      32,
+      527,
+      436
+    ],
+    "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/sorrel-vs-designer-10s.mp4",
+    "videoSha256": "8cdf5f06c31d65fd9493678769a4987139c2e742da5f84740dd610a7b9f04eca",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000"
+      }
+    },
+    "channels": [
+      {
+        "mode": "reduced",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              0.0,
+              1.8370705461099988
+            ],
+            "rangePercentH": [
+              0.0,
+              0.35880284103710913
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              0.0,
+              1.0517551996946963
+            ],
+            "rangePercentH": [
+              0.0,
+              0.20542093744037038
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              0.0,
+              0.9050403790489554
+            ],
+            "rangePercentH": [
+              0.0,
+              0.1767656990329991
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      },
+      {
+        "mode": "candidate",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              7.379612406301817,
+              7.987263243956477
+            ],
+            "rangePercentH": [
+              1.4413305481058236,
+              1.5600123523352494
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              6.036673699897534,
+              9.38453499154673
+            ],
+            "rangePercentH": [
+              1.1790378320112371,
+              1.8329169905364706
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              10.0
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              7.441798043076801,
+              7.490364591005402
+            ],
+            "rangePercentH": [
+              1.4534761802884377,
+              1.4629618341807427
+            ],
+            "dominantPeriodSeconds": [
+              3.3333333333333335,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              1.1999465377848433,
+              3.934958169778099
+            ],
+            "rangePercentH": [
+              0.23436455816110222,
+              0.768546517534785
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      }
+    ],
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 53237,
+        "sha256": "844541d82e90daa96897b8946c45a89cb4f12c1a2975995c519afe30a5018b91",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:08:14.863524+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 52155,
+        "sha256": "923c8d91e838aaa63272c71d3c000ac4a7ec96c1f9ef5ce3b68fabf069aca9bb",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:08:14.863524+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/candidate/blink-sheet.jpg",
+        "width": 1024,
+        "height": 224,
+        "bytes": 47277,
+        "sha256": "6d8939184621d03b9e3ec4b7ebea2463399559453f1fb46fd0ec3a656d2d09f9",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:08:14.863524+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sorrel-production-r1/cast/cast-sheet.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 82448,
+        "sha256": "725dfbd70daa2df7ecbd0e1906ab0daa3dfbfe54b4b4bcd13a6ef12afe45edd4",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:08:14.863524+00:00"
+      }
+    ],
+    "limits": "Deterministic scene samples and 1x encoded comparison; no continuously watched film or real-time FPS claim.",
+    "visualDisposition": "ACCEPT_SCOPED_SCENE_MOTION",
+    "observation": "Planted silhouette and soft face closure are legible. Staff and tail motion are restrained relative to the designer shield/lantern. Existing health/status bars cross the raised hand/staff; no new detached limb, foot clipping or seam jump is visible in the four samples.",
+    "reviewedImages": 4
+  },
+  "disposition": "ACCEPT_SCOPED_SCENE_MOTION",
+  "releaseReady": false
+}
