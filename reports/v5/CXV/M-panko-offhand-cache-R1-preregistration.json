@@ -30,7 +30,17 @@
     ],
     "exclude": "Soot paths/tests untouched",
     "cases": "Forward/backward,normal/reduced,idle/skill/attack/ult/hurt/ko/victory boundaries;all5Panko poses;nonfinite recovery;all Float32 vertices,UV/index bytes,feet/face/arbitrary sockets/map references exact against original.",
-    "sampling": "Development deterministic cases;not motion heldouts or production acceptance."
+    "sampling": "Development deterministic cases;not motion heldouts or production acceptance.",
+    "drawingFixtures": [
+      "panko",
+      "mochi",
+      "clover",
+      "teacup-healer",
+      "binding-thread",
+      "needle-moth",
+      "yarn-giant"
+    ],
+    "fixtureNote": "Other8 native cats have no DrawingLayer pose manifest;do not fabricate one. Check all7existing drawing fixtures except protected Soot;no Soot test/path edits. Added before first evaluation."
   },
   "memory": {
     "bytesPerPose": 8712,
@@ -41,5 +51,8 @@
     "requires": "Fresh explicit CXI host timing grant;no browser or benchmark while another lease active",
     "decision": "First compare all-deformer warmed/cold work,not the isolated ellipse only. Advance to native unprofiled ABBA full battles only if correctness exact and useful stable gain warrants integration complexity. No FPS or causal claim from prior10.3percent sample share."
   },
-  "productionAcceptance": false
+  "productionAcceptance": false,
+  "toolingFrozenUTC": "2026-11-18T18:10:41.849971+00:00",
+  "harnessSha256": "83a6e36207aba91ab83c96c5eac1413ce1903b1e68bc8ae0561ed388e0aacb8d",
+  "transformSha256": "d938f394500f34848093b238a87663e866d6260208dcaff3370233c82c70c8f2"
 }
