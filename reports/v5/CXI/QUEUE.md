@@ -64,3 +64,5 @@ AGS581 PARTIAL ACCEPT30PTS;T14command/rawJSON/EN+ZHsources missing;T13/M5/T15 re
 M-I2 LOCALIZATION:25,338firstconcealdiffpixels allwithinlabelrects+2px;no browsercause inferred. Crossmethodpages notRGBidentical in normalmotion;all20initialcontrols stillREJECTED.
 
 M-I2 AGS588 REVIEW 2026-11-18T17:38:29.859484+00:00:twoENofficiallinks verified;InfoQ unverified,requestedreport missing,no rawexperiment. PartialACCEPT links/tasktracking,REDO15;13/M5/14/15 OPEN.
+
+M-I2 CPU COUNT AUDIT 2026-11-18T17:45:49.949503+00:00:all4rules/plans/outcomes exact;202source/serveditems;261artifacthashes;2profiles58776/59447samples.5negative1us intervals retained,count-only estimates;off/on/on/offRAF p95~50msCPU4. Generatedrender~19%,drawingpoint~10.3% sample share;source correspondence inferred,not causal. No laptop/art/release acceptance.
