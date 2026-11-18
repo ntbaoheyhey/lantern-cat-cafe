@@ -3,16 +3,16 @@
 
 ### Clover (Geometric Trajectory Analysis)
 - **Status**: ACTIVE
-- **Source Calibration (Frame F6, Original 2300x2800 Coordinates)**:
-  - **Annotation**: 
-    - Tile Image: `palm-source-observation-1.jpg` (SHA: `cbc47667...`)
-    - Tile Origin (y, x): (46, 64)
-    - Tile Crop (y_min, x_min, h, w): (55, 305, 160, 150)
-    - Scale: 1.6
-  - **Calculation (Tile to Original Space)**:
-    - `Y_orig = 55 + (46 / 1.6) = 55 + 28.75 = 83.75`
-    - `X_orig = 305 + (64 / 1.6) = 305 + 40 = 345`
-  - **Visible Paw Point (F6)**: (83.75, 345) in original 2300x2800 coordinate space.
-  - **Uncertainty**: ±8px (transformed uncertainty).
+- **Semantic Boundary Audit (Frame F6)**:
+  - **Audit Source**: `palm-observations.json` (SHA: `dcc06d16...`)
+  - **F6 Audit Results**:
+    - `thumbAndDigitsVisible`: True
+    - `cuffVisible`: True
+    - `wristPalmTransition`: "Smooth shading and contour, without an independently identifiable wrist boundary"
+    - `palmCoreExtents`: `null` (Audit Gate: "UNRESOLVED: cuff edge is visible but is not the wrist")
+    - `geometricCenter`: `null`
+    - `uncertaintyBoundSourcePxPerAxis`: 6px
 
-*Status: Independent raw F6 coordinate verified and recalibrated in original 2300x2800 space.*
+- **Note**: Per semantic audit, an independently identifiable palm core/wrist center does not exist for F6. The requested silhouette geometry (cuff-bounded paw) is trackable as a boundary, but not as a central coordinate.
+
+*Status: Independent audit result for F6 (boundary=traceable, palm-core=null) delivered.*
