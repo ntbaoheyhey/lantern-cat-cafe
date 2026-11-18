@@ -606,5 +606,47 @@
   "complete": true,
   "finishedUtc": "2026-11-18T04:04:14.098Z",
   "disposition": "ACCEPT scoped four halfAVIF deliveries at desktop1280x720; every native source alpha sample and isolated GPU alpha match; own visual review passed. Existing12loader tests/build pass. Native failure injection and cold transfer remain release gates.",
-  "sizeEvidence": "v7-native-half-candidate.json"
+  "sizeEvidence": "v7-native-half-candidate.json",
+  "geometryParity": [
+    {
+      "mode": "normal",
+      "asset": "kettle-knight",
+      "geometryExact": true
+    },
+    {
+      "mode": "normal",
+      "asset": "spool-ram",
+      "geometryExact": true
+    },
+    {
+      "mode": "normal",
+      "asset": "pollen-scout",
+      "geometryExact": true
+    },
+    {
+      "mode": "normal",
+      "asset": "crumb-sentinel",
+      "geometryExact": true
+    },
+    {
+      "mode": "reduced",
+      "asset": "spool-ram",
+      "geometryExact": true
+    },
+    {
+      "mode": "reduced",
+      "asset": "kettle-knight",
+      "geometryExact": true
+    },
+    {
+      "mode": "reduced",
+      "asset": "pollen-scout",
+      "geometryExact": true
+    },
+    {
+      "mode": "reduced",
+      "asset": "crumb-sentinel",
+      "geometryExact": true
+    }
+  ]
 }

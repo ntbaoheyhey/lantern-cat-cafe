@@ -1,0 +1,91 @@
+{
+  "utc": "2026-11-18T04:07:21.176Z",
+  "source": "7d311ae4d5008f29e73c07956ec3de92ad3fd55b",
+  "path": "apps/web/src/game/rig/drawing-layer.ts",
+  "pins": {
+    "baseline": {
+      "ref": "v5-m1.13",
+      "sha256": "bf3a64c4701f3945157751db052404bcd02d6052b8d9bd824aacbedaee584634"
+    },
+    "candidate": {
+      "ref": "1157eaafb",
+      "sha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+    }
+  },
+  "toolSha256": "5f8eb2122b6c98b42684a3e42968bcd4283acfe3b53f979af92af929c7622e55",
+  "method": "Two pinned DrawingLayer implementations bundled with the same unchanged dependencies. Compare every Float32 position against original full sampling across all authored pose manifests, motion boundaries, both motion modes, two scales, reverse seeks, retaliation and recovery after invalid input. Offline component evidence, not native GPU/ordinary gameplay/FPS acceptance.",
+  "rows": [
+    {
+      "file": "apps/web/public/units/binding-thread/poses/manifest.json",
+      "sha256": "567028f67291c9295f4965e05e784ee605fe15a9b9f91c5ee1ff77810dae6378",
+      "unit": "binding-thread",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/clover/poses/manifest.json",
+      "sha256": "b2fe784c6b02d5a29d3846fb639455a79871b2d92d93975e372ff4420ed1a87b",
+      "unit": "clover",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/mochi/poses/manifest.json",
+      "sha256": "d5f1e844f2e111311466dbd7191a678c7417f391cb9cffb8612f3b5026f385c6",
+      "unit": "mochi",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/needle-moth/poses/manifest.json",
+      "sha256": "b3576467fbcce63a7034579c9097aadbab1d58af4bf9c05e8a2ad12e48d270b0",
+      "unit": "needle-moth",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/panko/poses/manifest.json",
+      "sha256": "7de7d4012829e70c2ad6698418bee84a7147997198223ae65f5f795fe9ace3c2",
+      "unit": "panko",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/soot/poses/manifest.json",
+      "sha256": "dce7e5ffe357cb5a65fd3ecea31c04a4977088fb705cfc8d21b2402848d66554",
+      "unit": "soot",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/teacup-healer/poses/manifest.json",
+      "sha256": "0b50254a4836f99bfaf9a88b56ac0b2fb35ca2718a78bb2a86bf3a3b6149d5ba",
+      "unit": "teacup-healer",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    },
+    {
+      "file": "apps/web/public/units/yarn-giant/poses/manifest.json",
+      "sha256": "0b5eb6b5bf2e5350f056caa20e28ad5322b92664de1526f495e314d38c87b829",
+      "unit": "yarn-giant",
+      "comparisons": 350,
+      "vertices": 381150,
+      "invalidRecoveries": 6
+    }
+  ],
+  "complete": true,
+  "totals": {
+    "manifests": 8,
+    "comparisons": 2800,
+    "vertices": 3049200,
+    "invalidRecoveries": 48
+  },
+  "finishedUtc": "2026-11-18T04:07:21.865Z"
+}
