@@ -1,6 +1,8 @@
 # CXV — Batch M: mèo sống động
-Cập nhật: 2026-11-18T15:44:00.194585+00:00
+Cập nhật: 2026-11-18T16:52:19.216528+00:00
 Tag xanh v5-m1.15 đã nhập; chín mèo native đã nhận, hai video Mochi/Clover chưa đăng ký production. Soot và capture-arrival.mjs được giữ nguyên.
+Ứng viên Clover(-28,+14) chưa đạt:198/1534 bố cục sai giả thuyết dịch cứng;81 chạm vùng tránh thân,117 bỏ fallback cũ.15/33 ca control gốc vi phạm khoảng hở2px,không có giao trực tiếp;chưa đo paint native tại vị trí mới.
+Control ban đầu/khôi phục khác32/34 ca,toàn bộ29.719 pixel trong nhãn/HUD;không đủ dữ liệu để kết luận nguyên nhân.Đã chuẩn bị5 ca có ảnh lặp trước che/hiện. Phương án Mochi riêng còn cần capture với Clover native,nhãn/alpha/seam và laptop;chưa sửa app.
 R7 đã nhập đúng hai thay đổi nhãn từ93f3637f2: Mochi/Clover dùng neo HP authored, Clover thêm5px.25 kiểm tra tập trung và typecheck đạt; chưa READY nhãn.
 Capture R7 nguồn bf01d462a/index eb93ee0d tại6301 hoàn tất14:12:48Z.18 ca attribution đều hợp lệ, nhãn không đè hình của chính mèo; nhưng F297 Clover/F188 Mochi còn17 pixel đuôi chạm huy hiệu Clover. Ba ca status tổng hợp còn208/69/74 pixel giao; đây là stress giả lập, không phải trạng thái luật đã chứng minh.
 Hai trận tự nhiên thắng,110 hành động,24 ultimate; luật/trạng thái/log/diễn biến khớp độc lập, không lỗi. Hộp nhãn/thân mèo khác còn giao: Mochi47/48 mẫu, Clover749/766 mẫu (normal/reduced); hộp bao có vùng trong suốt nên chưa suy ra tất cả là che pixel.

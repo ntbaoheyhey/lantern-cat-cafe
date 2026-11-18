@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-18T16:51:51.112260+00:00",
+  "decision": "Mochi-only is a narrower viable investigation, NOT READY for source adoption or release. Clover seam/layout failures are independent, but native Clover changes the geometry and paint environment.",
+  "candidate": {
+    "scope": "Only Mochi when formationC2 and hasDesignerIdleBody; all native paths, Soot, and Clover behavior unchanged.",
+    "completeLabelTop": "max(projectedBody.y+projectedBody.height,projectedFootY)+6 CSSpx",
+    "horizontal": "Existing authored hpAnchor x",
+    "sourceProposal": "Add optional labelTarget vertical alignment top. Scene provides desired complete-label top; world-label-dom uses target.y directly for the target rectangle when aligned top, then converts result to existing node position. Keep current box.y behavior for every other label. Layout solver is unchanged; retain own-body avoidance.",
+    "forbidden": "No (-28,+14) or other rejected Clover offset adopted; no shadow/paint threshold removal; no generic native-body obstacles or replacement solver."
+  },
+  "retainedEvidence": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-idle-production-READY.json",
+      "sha256": "6461ac80cf2cd50a7afbabc6ba74c2bbc3343eb300b9a0877b27dd0a12d823ac"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-cast-production-READY.md",
+      "sha256": "a8ba4f3783e47a8c7aecb835dae36f18356d867c571cc808d03f78ad48397cc6"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-natural-R3.json",
+      "sha256": "412f23685c38ebc9e664527dfaa26f2af9597a6a38802c9f655e3f73e0336ef3"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-staging-full-own-r1-layout-review.json",
+      "sha256": "354a0c192e0c8827c0c99eb9cdb99566c10480aff1867e0dcb6d6731ebc94021"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-solved-regression-R1.json",
+      "sha256": "3fc095921bfe734fbadf16af6c3ba7bd84cc2c0de1be2a350aa3a74558426b54"
+    }
+  ],
+  "requiredBeforeScopedLabelReady": [
+    "Fresh current-build Mochi-only roster with native Clover: source/index/media hashes, independently legal basic/ultimate/full trajectory, normal/reduced rules parity.",
+    "Full state and exact RGB control protocol validated separately. Native four-body complete label paint, zero threshold plus2px dilation; HUD/faces/nativebody6/otherlabel10 margins, viewport and feasibility checks.",
+    "Mochi full10s idle and expanded-status cases; maximum label-target fallback12px, horizontal anchor inside label, bottom gap6..18 are explicit design bounds,not confidence intervals.",
+    "Fresh once-only association view after measurements: reject owner confusion with native Clover.",
+    "Proposed source change gets focused placement/status/native parity tests+typecheck and own compiled native verification before final adoption."
+  ],
+  "remainingArtAndPerformance": [
+    "Prior scoped motion comparison accepted; it does not establish current-build full alpha/halo/seam acceptance. Carry exact prior limitations and pin unchanged artifact hashes before reuse.",
+    "Normal-laptop smoothness is unproven. M3Pro observations and4xCPU stress cannot identify ordinary hardware performance. CXI observer comparison pending.",
+    "Designer source exports/licence decisions remain owner-only;production registry remains empty until appropriate gates pass."
+  ],
+  "bytes": "Owner removed cap2026-11-18T12:09:40Z;report only.",
+  "applicationSourceChanged": false,
+  "productionAcceptance": false,
+  "imagesViewed": 0
+}

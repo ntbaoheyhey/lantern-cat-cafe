@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-18T16:49:17.822899+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/report.json",
+    "sha256": "95adc6f239c6bd92bcebbc24fbf2ef1f6ee04c738cc1de220f55da738bcb057f"
+  },
+  "analysis": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-conditioning-r1/report.json",
+    "sha256": "1b95224afd011749f674f7d24e49f16b15fa74c2466b3b546f746aa3ce66584b"
+  },
+  "cases": 34,
+  "hashes": 170,
+  "changedCases": 32,
+  "threshold0": {
+    "changed": 29719,
+    "labelBoxes": 29169,
+    "hudBoxes": 550,
+    "outsideBoth": 0,
+    "conditionedLabelSupport": 29042
+  },
+  "decision": "Retain both protocols. Initial equality failure is unresolved: no before-state or no-conceal repeat exists. Need a frozen sham-before-conceal protocol; do not relax gates or claim a compositor defect.",
+  "limits": [
+    "Initial precondition states were not recorded; cannot attribute change causally to conceal/restore, pending CSS, media or browser rasterization.",
+    "Keep original four-control validity33/34 and additional five-control validity2/34 as separate results.",
+    "Do not use masks to excuse full-image equality failures.",
+    "No reviewed-image reopens or image views."
+  ],
+  "imagesViewed": 0
+}
