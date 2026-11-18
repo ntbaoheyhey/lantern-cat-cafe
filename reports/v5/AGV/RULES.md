@@ -4,3 +4,4 @@
 - Stop rules: 1. No reply as report. 2. Log blockers, move on. 3. Never end turn during job. 4. Wake answer = tool call. 5. Use absolute paths. 6. Compaction/handoff logic. 7. TASKs first.
 - Final: STOPPED: <file> OR IDLE AGV <UTC>.
 - Wake: WAKE AGV. (15m, background task).
+- Byte cap: REMOVED (Override I-B, reporting only).

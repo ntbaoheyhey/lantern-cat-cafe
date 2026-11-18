@@ -1,4 +1,4 @@
-ACTIVE: BLOCKED (T-M1: Missing Data, T-CXI-11: Conflicting Requirements)
+ACTIVE: BLOCKED (T-M1: Missing Data)
 NEXT 1: T-M1 (Measure designer idles)
 NEXT 2: NONE
 Running PIDs: None
