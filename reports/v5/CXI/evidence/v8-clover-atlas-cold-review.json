@@ -1,0 +1,120 @@
+{
+  "utc": "2026-11-18T11:28:50.246387+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v8-clover-atlas-q21-r3/all.json",
+    "sha256": "119847e9d6311e42ebe13e48655af970b64b2d1b7798d2822ea5454a50eff9b8"
+  },
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-atlas-q21-r3/build.json",
+    "sha256": "8154cf82c0ed7f168b375b712fb9da24a6bf672a144ad39c92364c199e07dbb3"
+  },
+  "sourceCommit": "7625b028f2e129d6f9b6a9e8c4a0096f7a0223b0",
+  "indexSha256": "e24cfdf171df18f2cbc004206ead31224de41750be8468270af2edcebd0d2d50",
+  "budgetBytes": 8000000,
+  "pass": false,
+  "rows": [
+    {
+      "fixture": "wave1",
+      "before": 9276444,
+      "after": 9199107,
+      "delta": -77337,
+      "overBudget": 1199107,
+      "categoryDeltas": {
+        "document": 1,
+        "bundle": 515,
+        "other": -3,
+        "vfxAtlas": -77850
+      },
+      "removedAtlases": [
+        {
+          "path": "/vfx-delivery/v5/needle-moth-0-b8e2b416fc.avif",
+          "before": 33906,
+          "after": 0,
+          "delta": -33906
+        },
+        {
+          "path": "/vfx-delivery/v5/teacup-healer-0-d2a38d0c1d.avif",
+          "before": 43944,
+          "after": 0,
+          "delta": -43944
+        }
+      ],
+      "complete": true,
+      "battleReadyMs": 2101
+    },
+    {
+      "fixture": "wave3",
+      "before": 9743370,
+      "after": 9638539,
+      "delta": -104831,
+      "overBudget": 1638539,
+      "categoryDeltas": {
+        "document": 1,
+        "bundle": 515,
+        "other": 1,
+        "vfxAtlas": -105348
+      },
+      "removedAtlases": [
+        {
+          "path": "/vfx-delivery/v5/kettle-knight-0-c0b2fedcfc.avif",
+          "before": 27498,
+          "after": 0,
+          "delta": -27498
+        },
+        {
+          "path": "/vfx-delivery/v5/needle-moth-0-b8e2b416fc.avif",
+          "before": 33906,
+          "after": 0,
+          "delta": -33906
+        },
+        {
+          "path": "/vfx-delivery/v5/teacup-healer-0-d2a38d0c1d.avif",
+          "before": 43944,
+          "after": 0,
+          "delta": -43944
+        }
+      ],
+      "complete": true,
+      "battleReadyMs": 1777
+    },
+    {
+      "fixture": "boss",
+      "before": 9353970,
+      "after": 9227294,
+      "delta": -126676,
+      "overBudget": 1227294,
+      "categoryDeltas": {
+        "document": 1,
+        "bundle": 515,
+        "other": -1803,
+        "vfxAtlas": -125389
+      },
+      "removedAtlases": [
+        {
+          "path": "/vfx/sampled-delivery/binding-thread-6c635ee1c73b-281503ba.avif",
+          "before": 58044,
+          "after": 0,
+          "delta": -58044
+        },
+        {
+          "path": "/vfx/sampled-delivery/yarn-giant-e93a46f3812c-da7e1b08.avif",
+          "before": 67345,
+          "after": 0,
+          "delta": -67345
+        }
+      ],
+      "complete": true,
+      "battleReadyMs": 1797
+    }
+  ],
+  "resourceDeltaDetail": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-atlas-q21-r3/cold-resource-deltas.json",
+    "sha256": "6bf83be56390b410ba33e397c1faf2c3df3befa96323fdd6f39f41bcae5f35bd"
+  },
+  "limits": [
+    "Comparison is against dual-cat spout R1, not an isolated atlas-only rebuild: intervening HP placement/bundle changes are included.",
+    "Public network variance is counted in conservative totals and isolated in other delta.",
+    "No ordinary journey or frame-time claim."
+  ],
+  "decision": "FAIL release byte gate; retain Atlas R3 as an untagged study candidate"
+}

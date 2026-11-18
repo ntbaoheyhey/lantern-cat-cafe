@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: node tools/v5int/build-clover-scene-candidate.mjs clover-atlas-q21-r3 detached;keep6301pinned for CXV.
-NEXT 2: own native atlas pixel parity and cold gate after CXV releases6301; do not accept from source-only audit.
-NEXT 3: review actual AGS T-M5 files/T-M4 sources and CXV art readiness; current release gates remain open.
-Last pushed0b5707100;green v5-m1.13@4e5fe161a;no newrelease.
-Live6301 ignoredHP R2 source93498388c/index6afd6640;build work/v5/CXI/batch-m/clover-hp-q21-r2/build.json;registryempty;releasefalse.
-self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified11:04Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T11:05:43.124287+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;atlas2272sourcecases/33792samples PASS;48focused+3scene checks pass,TSC0;6301leaseCXV.
-Mailboxread INBOX-CXI348;USER24;LEARN100;HPown+lane corroborated;audio49+6inherited;AGS>=2openTASKs;0046preserved.
+NEXT 1: fresh Atlas R3 audio hash inheritance; then inspect actual byte candidates and existing media quality gates.
+NEXT 2: continue current-build matte/halo/seam and native performance acceptance; release only after all gates pass.
+NEXT 3: review new AGS T-M5 trial artifacts and CXV art receipts; preserve two useful open AGS TASKs.
+Last pushed7625b028f;green v5-m1.13@4e5fe161a;no newrelease.
+Live6301 ignoredAtlas R3 source7625b028f/indexe24cfdf1;build work/v5/CXI/batch-m/clover-atlas-q21-r3/build.json;HP R2 preserved;registryempty.
+self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified11:28Z;neverdelete/pause/edit.
+Last RULES read2026-11-18T11:29:36.486895+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:none;native6runs672rows756surfacesPASS;fullsuite5519pass+11skip+2expected;outerexit unpersisted;6301leaseCXI released via inbox.
+Mailboxread INBOX-CXI354;USER24;LEARN100;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
 AGS OPEN:T-M5shortGOP,T-M4stagedvideoresearch,T-CXI12officialmaskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;T10rawunverified.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
@@ -16,5 +16,5 @@ Deferredm1.14:toast/T9fourhalfAVIF/T10notice ACCEPT;build+fullsuite5374=5361pass
 Deferredm1.14 script work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py requires explicitlease;prepare-m114-evidence.py unrun;scope8paths only.
 DeferredCXV11paths:offline2800geometry/80posemaskPASS;ownHUDtoolsyntaxchecked/notrun;Panko separate;do not alter Soot inBatchM.
 Owned:R6 retaineddecoder/victory146samples+2fresh1024viewsPASS;fullsuite5499=5486pass+11skip+2expected;3833Sootpathsunchanged;foreign5/0046preserved.
-ColdR6 8509074/8975988/8584766B FAIL8MB;v8-r6-cold-review.json corrects captureHEAD7bc vs servedadb;future measure-transfer requires --build-descriptor for sourceproof.
-Neverreopen:allR2idle4/R3cast4+isolatedult3 and priorledgers;isolatedbasic unviewed;Clovercontrol812x420 viewedonce ledgercorrected;noCXVimages reopened.;R4focus2views once. R5victory2views once. R6victory2views once. CloverboundaryF15/285860x980once. SeededF15/285860x570once. Endpointlabels0/299860x570once. CloverR1 basic350+ult533 2fresh1024views once;HP R2 idle225/focus2fresh1024once.
+ColdAtlasR3 9199107/9638539/9227294B FAIL8MB;removedatlases77850/105348/125389B;v8-clover-atlas-{native,cold,fullsuite}-review.json;source7625b/indexe24c.
+Neverreopen:priorR2-R6/Cloverledgers plus AtlasR3 wave1-needle-moth-600 and boss-yarn-giant-600 review1024 images (2views total);Cloverlane images hashonly. Retain all old ledgers.

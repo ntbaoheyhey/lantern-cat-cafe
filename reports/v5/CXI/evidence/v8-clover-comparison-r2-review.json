@@ -1,0 +1,83 @@
+{
+  "utc": "2026-11-18T11:25:32.669093+00:00",
+  "readyPath": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-production-READY.json",
+  "readySha256": "9a833a2f7226876c60bbae579373979082a38d1215a51c141a6e2c5865c24356",
+  "laneSourceCommit": "93498388c5fd89fd8db45086503e0bfdbef9055a",
+  "laneIndexSha256": "6afd6640d8b35dd24f9caa8eca40891bf7c92ba6ddb9324b6edc55f080f9904d",
+  "verifiedArtifactCount": 629,
+  "verifiedManifest": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-atlas-q21-r3/clover-lane-artifacts-verified.json",
+    "sha256": "c751622a25faa3a8e55670e86a4d99be86789a66b7d93d690b9574087a44f06b"
+  },
+  "idleRows": 304,
+  "idleCaptureHashes": 300,
+  "castRows": 290,
+  "castCaptureHashes": 280,
+  "normalIdleCallbackFrameErrorMaxSeconds": 3.333333342681044e-07,
+  "idleFootDelta": 0.0,
+  "loopRootDelta": 0.0,
+  "castCallbackDeltaMaxSeconds": 0.02500033333333429,
+  "actions": 4,
+  "comparisonFilmStreams": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/clover-source-vs-production-1280x720.mp4",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "30/1",
+      "duration": "10.000000",
+      "nb_frames": "300",
+      "nominalFrameDurationSeconds": 10.0,
+      "containerDurationDeltaSeconds": 0.0
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/clover-1-normal-source-comparison-1280x720.mp4",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "30/1",
+      "duration": "1.633008",
+      "nb_frames": "49",
+      "nominalFrameDurationSeconds": 1.6333333333333333,
+      "containerDurationDeltaSeconds": -0.0003253333333332886
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/clover-4-normal-source-comparison-1280x720.mp4",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "30/1",
+      "duration": "3.033008",
+      "nb_frames": "91",
+      "nominalFrameDurationSeconds": 3.033333333333333,
+      "containerDurationDeltaSeconds": -0.0003253333333330666
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/clover-1-reduced-source-comparison-1280x720.mp4",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "30/1",
+      "duration": "1.633008",
+      "nb_frames": "49",
+      "nominalFrameDurationSeconds": 1.6333333333333333,
+      "containerDurationDeltaSeconds": -0.0003253333333332886
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/clover-4-reduced-source-comparison-1280x720.mp4",
+      "width": 1280,
+      "height": 720,
+      "r_frame_rate": "30/1",
+      "duration": "3.033008",
+      "nb_frames": "91",
+      "nominalFrameDurationSeconds": 3.033333333333333,
+      "containerDurationDeltaSeconds": -0.0003253333333330666
+    }
+  ],
+  "imagesViewed": 0,
+  "decision": "ACCEPT scoped numerical idle phase and cast return on HP R2; same media retained in atlas R3. Five 30Hz comparison films verified; four cast containers are 0.325333ms shorter than nominal frame-count duration. No art, seam, ordinary performance or release acceptance.",
+  "limits": [
+    "Ignored candidate registry override; no release enrollment.",
+    "Deterministic30Hz captures; no ordinary-play or normal-laptop FPS claim.",
+    "Original matte/fringe/halo, downsample detail, source tail loop seam, anatomy/head/offHand and cold bytes remain open.",
+    "Cast left panel is commissioned idle; no designer cast was delivered. Comparison checks style, not exact cast matching.",
+    "Clover A6 basic preserves idle and spout cue; only ultimate has nonzero cast mesh deformation.",
+    "Ultimate text clipped by comparison crop; separate native HP/full-viewport review supplies caption evidence."
+  ]
+}
