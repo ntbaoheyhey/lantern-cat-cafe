@@ -1,0 +1,88 @@
+{
+  "utc": "2026-11-18T18:00:01.668695+00:00",
+  "trigger": "Read-only checkpoint review of actual17:51 updated files; no new DONE line yet",
+  "artifacts": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CPU-PROFILING.md",
+      "sha256": "9e775c702c206f3ae24f3f21fc1f6245fe2fead826978155debd2177aa8b5e1e",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-1751-review/M-CPU-PROFILING.md",
+      "bytes": 3042
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CPU-PROFILING-EXPERIMENT.md",
+      "sha256": "df02506d61e44881f05a9d4424eae4151a6a4d1f6a63dc304cebdafb68ad2b71",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-1751-review/M-CPU-PROFILING-EXPERIMENT.md",
+      "bytes": 374
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-14-PTS-FIELD-AUDIT.json",
+      "sha256": "bea909014a0019102ee79bc0ecc0622858240081885dd52ce2253dff0d576105",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-1751-review/T-CXI-14-PTS-FIELD-AUDIT.json",
+      "bytes": 29150
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/HANDOFF.md",
+      "sha256": "87292585db78bbceb5f9c7a5f03a2989c7bfc19ad24a424d8f9693a147910b14",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-1751-review/HANDOFF.md",
+      "bytes": 458
+    }
+  ],
+  "ptsComparisons": [
+    {
+      "name": "clover-1s",
+      "numericFrames": 300,
+      "equalPriorNoGenptsPacketPTS": true
+    },
+    {
+      "name": "clover-2s",
+      "numericFrames": 300,
+      "equalPriorNoGenptsPacketPTS": true
+    },
+    {
+      "name": "mochi-1s",
+      "numericFrames": 300,
+      "equalPriorNoGenptsPacketPTS": true
+    },
+    {
+      "name": "mochi-2s",
+      "numericFrames": 300,
+      "equalPriorNoGenptsPacketPTS": true
+    }
+  ],
+  "cpuReportUrls": [
+    "https://wonderlandengine.com",
+    "https://web.dev",
+    "https://threejs.org",
+    "https://csdn.net",
+    "https://juejin.cn",
+    "https://tencent.com"
+  ],
+  "accepted": [
+    "Requested M-CPU-PROFILING.md now exists",
+    "Four current300-value PTS arrays equal prior independently audited no-genpts packet data",
+    "Four useful TASKs remain explicitly OPEN in AGS HANDOFF"
+  ],
+  "open": [
+    "All six CPU source links point only to domain roots; no exact primary EN/ZH supporting passages",
+    "Experiment file remains a374-byte generic method, with no executed trace/profile, command, build/browser or measured result",
+    "Presence of Layout/RecalculateStyle events alone does not establish that the canvas caused layout thrashing; actual causal evidence absent",
+    "New PTS summary claims +genpts resolved blankfields, but gives no command/version/absoluteIDs/hashes or before/after evidence; no cause established",
+    "T13/M5/14/15 remain OPEN"
+  ],
+  "sourceVerification": [
+    {
+      "url": "https://ffmpeg.org/ffmpeg-formats.html",
+      "finding": "genpts generates missing PTS when DTS is present; existing no-genpts packetPTS already cover all1200 values. This does not identify the original blank-field cause."
+    },
+    {
+      "url": "https://developer.chrome.com/docs/devtools/performance/reference?hl=zh-cn",
+      "finding": "Official localized feature reference exists; supplied domain-root list is not a passage-level source record"
+    }
+  ],
+  "historicalFindingsPreserved": [
+    "v8-ags-585-review.json mocked-file finding",
+    "v8-ags-581-review.json30keyframes acceptance",
+    "v8-ags-593-review.json1200rawPTS partial acceptance"
+  ],
+  "productionAcceptance": false
+}
