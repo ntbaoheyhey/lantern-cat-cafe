@@ -2,7 +2,7 @@
 
 Bản đã kiểm tra **v5-m1.14**, source ứng dụng/quay **c4108923c25a9c982b0831318e16a93cc991f8e7**. Full suite5.539passed,11skipped,2expected failures; tổng5.552, gồm3.239web.24test tập trung,TypeScript/build và7bước browser đạt; đòn đầu20,880giây gồm17,7giây đọc. Chín mèo native đã nhận; commissioned media Mochi/Clover chưa bật. Owner đã bỏ8MB:byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-atlas-r2-release-review.json). Chỉ dùng tag sau khi BOARD xác nhận remote.
 
-Cổng6301 đang dùng nativeR2/sourcec4108923c; preview có thể chuyển sang nghiên cứu Mochi/Clover sau khi phát hành. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
+Cổng6301 đang dùng bản thử Mochi/Clover R4, source854ce6eec/index9e39c7d7; bản này chưa được phát hành vì viền/halo và vòng đuôi còn mở. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
@@ -89,7 +89,7 @@ unset PROOF_GUEST_TOKEN PROOF_CONFIRM_FUJI
 
 Chưa gửi cho người thiết kế. Hai MP4 gốc Mochi/Clover đều 10 giây, 300 frame, 30 fps, H.264 không alpha, dung lượng 18,66/18,72 MB; bản gốc được giữ nguyên.
 
-Chủ dự án có thể xin bản xuất nền trong suốt (PNG RGBA theo frame hoặc ProRes 4444), giữ 30 fps/10 giây, chân cùng mốc và đầu–cuối vòng lặp nối mượt; kèm bản xem trên nền sáng để kiểm tra viền và ánh đèn. Phần mèo trong bản giao có thể cao 512–1024 px; nhóm tự tạo bản chạy 256/384/512 px và đo ngân sách. Nếu có bộ runtime Cubism, xin model3/moc3, textures, motion3, physics3 và phiên bản xuất để đánh giá riêng. Nhóm chưa chấp thuận giấy phép SDK hay tải lên dịch vụ nào. Skill mong muốn dài 1 giây, cast ở 250 ms và hit ở 550 ms, giữ chân, có chuẩn bị và thu động tác. Mọi yêu cầu gửi bạn, chấp thuận điều khoản và upload do chủ dự án thực hiện.
+Chủ dự án có thể xin bản xuất nền trong suốt (PNG RGBA theo frame hoặc ProRes 4444), giữ 30 fps/10 giây, chân cùng mốc và đầu–cuối vòng lặp nối mượt; kèm bản xem trên nền sáng để kiểm tra viền và ánh đèn. Phần mèo trong bản giao có thể cao 512–1024 px; nhóm tự tạo bản chạy 256/384/512 px và đo dung lượng/hiệu năng; dung lượng chỉ báo cáo, không có giới hạn8MB. Nếu có bộ runtime Cubism, xin model3/moc3, textures, motion3, physics3 và phiên bản xuất để đánh giá riêng. Nhóm chưa chấp thuận giấy phép SDK hay tải lên dịch vụ nào. Skill mong muốn dài 1 giây, cast ở 250 ms và hit ở 550 ms, giữ chân, có chuẩn bị và thu động tác. Mọi yêu cầu gửi bạn, chấp thuận điều khoản và upload do chủ dự án thực hiện.
 
 Riêng Clover: đuôi cuối vòng hiện lệch so với đầu; các phép nắn một lớp làm gập vùng tiếp giáp váy. Nếu bạn thiết kế có thể xuất bổ sung, chủ dự án có thể xin lớp đuôi/váy và matte riêng, cùng khung hình/mốc chân, hoặc sửa vòng trong file Cubism rồi xuất nền trong suốt. Đây là gợi ý bản nháp; nhóm chưa liên hệ hay tự vẽ phần bị che. Hai MP4 gốc 18,66/18,72 MB vẫn giữ nguyên.
 

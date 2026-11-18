@@ -1,5 +1,5 @@
 # V8 Batch M
-Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập trung và TypeScript;5120 ca so sánh giữ nguyên chuyển động/mesh dùng chung,3833 đường dẫn Soot không đổi. Chưa bật Batch M trên bản đang mở. Mochi/Clover còn kiểm tra viền, vòng lặp, vị trí và dung lượng; sửa đuôi Clover R6 bị loại, R5 chưa được chấp nhận.
+Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hành ởv5-m1.14. Bản thử Mochi/Clover R4 đạt348mẫu/696so sánh đầu-tay/4hành động, HP không chồng hình và10nguồn hiệu ứng đúng;4ảnh mới đã xem. Chưa phát hành media vì matte/halo và vòng đuôi còn mở. Dung lượng chỉ báo cáo; các dòng lịch sử có giới hạn8MB đã bị thay thế bởi lệnh owner12:09:40Z.
 
 2026-11-18T05:47:08.972148+00:00 — Panko đã kiểm tra trên bản production: chân và gốc không trôi trong vòng10giây ở cả hai chế độ; skill350ms khớp mốc.55,ult1100ms khớp1.1. Phim so sánh cùng chiều cao/tốc độ và5ảnh mới đã duyệt. Chưa phát hành vì còn ngân sách tải/hiệu năng. Mallow nhập có giới hạn,16test+typecheck đạt;2464ca so sánh mã dùng chung khớp,3833đường dẫn bảo vệ không đổi.
 
