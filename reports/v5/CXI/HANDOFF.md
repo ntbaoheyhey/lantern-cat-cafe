@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: Finish EN+ZH CPUprofiling study started17:15:34Z;no pilot implementation before17:30:34Z;then own small experiment/LEARN.
-NEXT 2: Preregister samebuild Mochi-only profiling with profiler-on/off control,exact gameplay parity/source/index and hostload;coordinate timinglease.
+NEXT 1: Poll work/v5/CXI/jobs/v8-mochi-cpu-r1.log and batch-m/mochi-cpu-r1/run.json;then audit4runs/2rawprofiles/metrics/rules;preserve failures.
+NEXT 2: Review CXV586structural/587L1;AGS588method-only REDO;no sourcechange or otherbrowser during ownCPUlease.
 NEXT 3: Review CXV structural alternative and AGS research/desktopQA;strictRGB0/2pxguard;commissionedmedia staysunreleased.
-Last pushed819be49c0 confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
+Last pushed426da18b3 confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
 Live6301 Mochi-only sourcebf01d462a/indexe66485f9;work/v5/CXI/batch-m/mochi-only-profile-r1/build.json;3795files/291925344B exact;productionregistry{}.
-self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified17:19Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T17:22:53Z;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;CXI timingreserved17:30:34–17:48:34Z ANDrelease forCPU pilot+4nativebattles;CXV584 no competingrequest. 6301 unchanged.
-Mailboxread INBOX-CXI584;USER24;LEARN115;579/582/583rejectverified;AGS581partial30PTS;0046exact. CPUresearch6primarysources.
+self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified17:37Z;neverdelete/pause/edit.
+Last RULES read2026-11-18T17:37:16Z;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:CPUstudyPID/PGID75283;logwork/v5/CXI/jobs/v8-mochi-cpu-r1.log;childgroups inrun.json;leaseuntil17:48:34Z ANDrelease;CXV589ACK.
+Mailboxread INBOX-CXI590;USER24;LEARN118;AGS585mockJSONREJECT/IDsaccepted;588CPUexperimentmissing REDO. Pilot4exact/523samplesPASS;0046kept.
 AGS OPEN:T-CXI13desktopQA,T-M5trialaudit,T-CXI14PTSfieldstudy,T-CXI15CPUresearch,T-M4videoresearch,T-CXI12mask,T-CXI11bed;fixedsixREJECTED.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.

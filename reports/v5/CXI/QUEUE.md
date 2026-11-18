@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-NEXT ACTIVE:Finish currentCPUprofiling research/known-workload pilot after17:30:34Z;then leased samebuild normal4x attribution with profilercontrol. Raw/notes under work/v5/CXI/batch-m/cpu-profile-study-r1;no runtimechange.
+NEXT ACTIVE:Audit running samebuild Mochi-only CPU4 ABBA trials;parent75283,deadline17:48:34Z AND explicit release. Pilot passed4exact outputs/523samples;2profiles expected. No runtimechange.
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
@@ -62,3 +62,5 @@ M-I2 CONTROL/LAYOUT AUDIT 2026-11-18T17:22:53.556032+00:00:200hashes/6400states/
 AGS581 PARTIAL ACCEPT30PTS;T14command/rawJSON/EN+ZHsources missing;T13/M5/T15 remainOPEN. Profilingstudy active since17:15:34Z,implementation after17:30:34Z.
 
 M-I2 LOCALIZATION:25,338firstconcealdiffpixels allwithinlabelrects+2px;no browsercause inferred. Crossmethodpages notRGBidentical in normalmotion;all20initialcontrols stillREJECTED.
+
+M-I2 AGS588 REVIEW 2026-11-18T17:38:29.859484+00:00:twoENofficiallinks verified;InfoQ unverified,requestedreport missing,no rawexperiment. PartialACCEPT links/tasktracking,REDO15;13/M5/14/15 OPEN.
