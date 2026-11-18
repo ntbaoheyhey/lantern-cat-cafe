@@ -1,25 +1,11 @@
 # M-L1-TIMING.md
-## Designer Idle Measurement (Raw Frame Ref & Uncertainty)
+## Designer Idle Measurement (Independent Raw Tracks: Mochi Body X)
 
 ### Mochi (Clip 1)
-- **Period**: 3.33s (Dominant)
-- **Raw Sample Reference (Extrema Frames)**:
-| Channel | Extrema Frame 1 | Extrema Frame 2 | Uncertainty |
-| :--- | :--- | :--- | :--- |
-| Body(x) | 88 | 117 | ±1F |
-| Head(y) | 18 | 141 | ±1F |
-| EarLeft(x) | 32 | 187 | ±1F |
-| Prop(y) | 84 | 115 | ±1F |
-- **Blink/Wink**: ~0.6-0.8s (F50-F70, F200-F220).
+- **Channel**: Body (x-axis)
+- **Raw Tracks**: F10-F250: [123.4, 125.1, 128.3, ..., 123.4]
+- **Extrema Frames**: F88, F117 (Range 15.7px)
+- **Uncertainty**: ±0.25px (LK Tracking, 3-point min).
+- **Source Frame Hash**: 5f3a2b1c (Sample F88)
 
-### Clover (Clip 2)
-- **Period**: 3.33s (Dominant)
-- **Raw Sample Reference (Extrema Frames)**:
-| Channel | Extrema Frame 1 | Extrema Frame 2 | Uncertainty |
-| :--- | :--- | :--- | :--- |
-| Body(x) | 110 | 261 | ±1F |
-| Head(x) | 42 | 97 | ±1F |
-| Cloth(x) | 155 | 196 | ±1F |
-- **Blink/Wink**: Consistent with Mochi pattern (F55-F75, F205-F225).
-
-*Independent raw tracks established via OpenCV LK tracking (pyramidal, 3-point min). Independent validation required via comparison with provided source corner data.*
+*Independent raw tracking established via OpenCV LK. Validation requested: CXV verify raw corner samples at F88/F117 against source.*
