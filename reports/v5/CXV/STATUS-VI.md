@@ -1,6 +1,7 @@
 # CXV — Batch M: mèo sống động
-Cập nhật: 2026-11-18T12:51:23.303331+00:00
-Tag xanh v5-m1.14 đã được nhập và đẩy tại93db99267; chín mèo native có idle/cast. Hai video Mochi/Clover vẫn chưa đăng ký phát hành.
+Cập nhật: 2026-11-18T13:26:27.636344+00:00
+Tag xanh v5-m1.15 đã nhập/đẩy tại1a78aab2f;7kiểm tra tập trung+TSC0;3.833đường dẫn bảo vệ/Soot và capture-arrival nguyên vẹn. Chín mèo native đã nhận;hai video Mochi/Clover chưa đăng ký.
+Kiểm tra nhãn R6 trên bản thử R5:5pha/35ảnh chính+15ảnh kiểm soát;15cặp RGB giống hệt,5ảnh ghép xem một lần. Chỉ32pixel giao giữa đuôi Mochi và góc huy hiệu khiên Clover ở một pha(7pixel ngưỡng>4);thanh HP/rage và nhãn đè mèo của chính nó đều0. Lỗi hộp bao ở trận tự nhiên vẫn giữ,không suy ra mọi khung đều sạch;chưa sửa ứng dụng.
 Sáu trận R1 trên0b669/index3e7d27 thắng,270 hành động,luật/diễn biến/trạng thái khớp hai chế độ,không lỗi.48 ảnh đo và12 ảnh ghép xem đúng một lần;không gọi chúng là ảnh mới của m1.14. Vài hiệu ứng vẫn dày.
 Đầu Clover R5 và tay tự do R6 đạt24/24 điểm mới mỗi loại. Bộ chuyển tọa độ thực của CXI đạt2.100 idle/3.600 cast/600 kiểm tra cách ly; sai số thế giới tối đa1,20e-6. Đây là neo trình bày xấp xỉ,không phải chân lý giải phẫu.
 Bản thử authored R4 nguồn854ce6eec/index9e39c7d7:305 mẫu idle+38 mẫu hành động,4 hành động hợp lệ,16 ảnh đạt kiểm tra native;4 ảnh ghép xem đúng một lần. Sai số neo đầu/tay so với hình giải mã tối đa0,728/0,320px. R2 xác định bảng Wave1/1 thoáng qua: khi pause biến mất ở mẫu1,06s; chơi1x bảng đã mất khi hành động đầu ở194ms,không có mẫu chồng hành động. Không sửa ứng dụng;không suy ra mọi khung đều không che.

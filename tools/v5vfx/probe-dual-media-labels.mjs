@@ -51,7 +51,9 @@ try{
   await page.waitForFunction(expected=>Object.entries(expected).every(([cat,frame])=>{const m=[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state,d=window.__cxvMediaAudits[cat].decoded.at(-1);return m.ready&&!m.seeking&&!m.failure&&d&&Math.abs(m.currentTime-m.desired)<=1/60&&Math.abs(d.mediaTime-frame/30)<1e-5;}),expectedFrames,{timeout:10000});
   await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
   const settle=await page.evaluate(async()=>{const a=document.getAnimations().filter(a=>a.effect?.target?.closest('.b3-world')&&Number.isFinite(a.effect.getComputedTiming().endTime));const before=a.map(a=>({playState:a.playState,currentTime:a.currentTime,timing:a.effect.getComputedTiming()}));await Promise.all(a.map(a=>a.finished));await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));return before;});
-  const before=await page.evaluate(sample),entry={...condition,fixedTime,phaseOffsets,primer,expectedFrames,settle,before,errors,blockedRequests,captures:[]};report.cases.push(entry);await save();
+  const precondition=[];
+  for(const variant of ['initial','hidden','restored']){const path=resolve(out,condition.mode+'-'+condition.frame+'-precondition-'+variant+'.png');await page.screenshot({path,scale:'css',...(variant==='hidden'?{style:hiddenStyle}:{})});precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString()});}
+  const before=await page.evaluate(sample),entry={...condition,fixedTime,phaseOffsets,primer,expectedFrames,settle,precondition,before,errors,blockedRequests,captures:[]};report.cases.push(entry);await save();
   assert(before.paused&&!before.plan);assert.equal(before.url,judgeUrl);
   for(const [cat,m] of Object.entries(before.media)){assert(m.state.ready&&!m.state.failure&&!m.state.disposed);assert(m.planeVisible&&m.rootVisible);assert(Math.abs(m.decoded.mediaTime-expectedFrames[cat]/30)<1e-5);}
   await page.evaluate(installIsolation);

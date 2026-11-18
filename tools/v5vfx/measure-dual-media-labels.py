@@ -102,8 +102,10 @@ def main():
         row = dict(mode=case['mode'], sourceFrame=case['frame'], fixedTime=case['fixedTime'], expectedFrames=case['expectedFrames'],
                    decoded={cat:initial['media'][cat]['decoded'] for cat in CATS},
                    rulesSha256=hashlib.sha256(initial['battle'].encode()).hexdigest(),
-                   controls={}, stateGates=[], captures=[], labels=[], complete=False)
+                   controls={}, stateGates=[], captures=[], labels=[], complete=False, precondition=case.get('precondition', []))
         result['cases'].append(row)
+        for control in case.get('precondition', []):
+            assert sha(control['path']) == control['sha256']
         images = {}
         for capture in case['captures']:
             path = Path(capture['path'])
