@@ -1,16 +1,14 @@
-# Danh sách kiểm tra gửi cho Designer (Batch M)
+# Friend Delivery Checklist (Draft - Vietnamese)
+Status: Draft (2026-11-18T05:58Z)
 
-## 1. Định dạng & Thông số
-- Định dạng: H.264 MP4 (Alpha channel hỗ trợ qua Mask hoặc WebM).
-- Kích thước: Đề xuất 256px chiều cao (chiều rộng tùy theo tỉ lệ).
-- Tỉ lệ khung hình: 30 FPS.
-- Thời lượng: 10 giây (yêu cầu lặp lại liền mạch - Seamless Loop).
+## 1. Specifications
+- **Duration:** 10s total (full idle duration).
+- **Format:** Lossless transparent master (runtime files).
+- **Frame Count:** 300 frames (30fps).
+- **Naming Convention:** <hero>_<action>_<height>.mov (transparent).
+- **Anchors:** Foot origin (0,0).
+- **Events:** Cast event at .25s, Hit event at .55s.
 
-## 2. Yêu cầu chuyển động
-- Không lặp lại 10s: Vui lòng tách Idle (2-3s) và Skill-cast (1s).
-- Chuyển động: Phải giữ được sự mềm mại (soft/slow) của các layer (tóc, vải, phụ kiện).
-- Sự kiện animation: Cần đánh dấu frame quan trọng cho Skill-cast (Anticipation, Cast, Hit, Recover).
-
-## 3. Lưu ý kỹ thuật
-- Tránh viền đen (black fringe) do nền đen cũ gây ra khi xử lý alpha.
-- Đảm bảo điểm neo (anchors) cố định.
+## 2. Requirements
+- Provide transparent master for alpha/motion event verification.
+- Opaque derivatives (for conversion trials) must meet height requirements.
