@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-18T16:10:54.961405+00:00",
+  "source": "https://docs.live2d.com/zh-CHS/cubism-sdk-manual/breath/",
+  "scope": "Analytic control using official example constants at zero phase. Not a measurement or reconstruction of either commissioned model. SDK phase/time integration, additive starting state and clamping are outside this control.",
+  "rows": [
+    {
+      "sampleParameter": "AngleX",
+      "periodSeconds": 6.5345,
+      "amplitude": 15,
+      "weight": 0.5,
+      "cyclesIn10Seconds": 1.530338970081873,
+      "normalizedSineEndpointDeltaAt10Seconds": -0.18947297502910335,
+      "weightedSineEndpointDelta": -1.421047312718275
+    },
+    {
+      "sampleParameter": "AngleY",
+      "periodSeconds": 3.5345,
+      "amplitude": 8,
+      "weight": 0.5,
+      "cyclesIn10Seconds": 2.829254491441505,
+      "normalizedSineEndpointDeltaAt10Seconds": -0.8785536734437006,
+      "weightedSineEndpointDelta": -3.5142146937748024
+    },
+    {
+      "sampleParameter": "AngleZ",
+      "periodSeconds": 5.5345,
+      "amplitude": 10,
+      "weight": 0.5,
+      "cyclesIn10Seconds": 1.8068479537446922,
+      "normalizedSineEndpointDeltaAt10Seconds": -0.9368843369530826,
+      "weightedSineEndpointDelta": -4.684421684765413
+    },
+    {
+      "sampleParameter": "BodyAngleX",
+      "periodSeconds": 15.5345,
+      "amplitude": 4,
+      "weight": 0.5,
+      "cyclesIn10Seconds": 0.6437284753291062,
+      "normalizedSineEndpointDeltaAt10Seconds": -0.7852331952689648,
+      "weightedSineEndpointDelta": -1.5704663905379297
+    },
+    {
+      "sampleParameter": "BreathTypeScript",
+      "periodSeconds": 3.2345,
+      "amplitude": 0.5,
+      "weight": 1,
+      "cyclesIn10Seconds": 3.0916679548616477,
+      "normalizedSineEndpointDeltaAt10Seconds": 0.5446458231697398,
+      "weightedSineEndpointDelta": 0.2723229115848699
+    }
+  ],
+  "conclusion": "Arbitrary example periods are not guaranteed to close after10s. Preserve the measured commissioned cycle and require source endpoint/physics verification;do not substitute sample periods or diagnose exporter settings from MP4.",
+  "productionAcceptance": false
+}

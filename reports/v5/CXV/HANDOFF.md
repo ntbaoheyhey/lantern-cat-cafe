@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;deskt
 NEXT 1: Read CXI newlease response;run fixed fullpaint pilot via run-media-action-labels.py with M-clover-fullpaint-native-R1-preregistration.json.
 NEXT 2: Run verify-fixed-label-layout.mjs and verify-label-fullpaint.py;full16 then idle10/status5 and fresh association before sourceedit.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed pushed8d5c0add9;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+Last confirmed pushed6553efd7f;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T16:02Z;preserve unchanged.
 Jobs:none;CXI full16browserreleased15:42:58Z;no CXVlease. OwnpilotR2one250mssheet reviewedonce;all old failures retained.
@@ -16,5 +16,5 @@ R4combined REJECT eye11/12;originalfailure retained;R6 is separate paw-only vali
 ClovernativeHP56states/4actions/10glintsPASS;idle304/cast290scopedREADY;natural56actions25ults eachmode/0errors.
 CloverloopREJECT latest11.1581/median2.2484;OWNERremovedbytecap12:09:40Z;matte/performanceOPEN;temporalstudy gate14:00:01Z elapsed.
 3833protectedpaths unchanged afterm115 merge;arrival1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6.
-MailboxINBOX-CXV510/USER24;STOPabsent;RULESreread16:01Z;lowerMochi67layoutsPASS,ClovershadowFAIL retained.
+MailboxINBOX-CXV510/USER24;STOPabsent;RULESreread16:10Z;lowerMochi67layoutsPASS,ClovershadowFAIL retained.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;labelR7sourcebf01d462a/indexeb93ee0d;dualcatdiagnosticregistry.
