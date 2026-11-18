@@ -22,7 +22,7 @@ const {preview}=await import(require.resolve('vite'));
 const server=await preview({root:appRoot,configFile:false,envDir:false,logLevel:'error',build:{outDir:artifact.dist},preview:{host:'127.0.0.1',port:6312,strictPort:true}});
 const report={utc:new Date().toISOString(),source:build.source,indexSha256:artifact.indexSha256,...runtimeEvidence(),url:judgeUrl,viewport:{width:1280,height:720},deviceScaleFactor:2,native,
  buildManifest:{path:resolve(production,'build.json'),sha256:hash(manifest)},verifiedArtifactFiles:artifact.files.length,noticeCssSha256:hash(noticeCss),
- method:'Native WebGL loss in paused boss; same-session DPR2 metrics and 1280x720 capture. Experiment mode patches only notice class/span/CSS after baseline; native mode does not. Longer resource notification is synthetic. HUD buttons are hit-tested, guide and menu opened/closed through UI; rules/plan/age and restored RGB must remain exact.',snapshots:[],runs:[],captures:[],pass:false,reviewedUtc:null};
+ method:'Native WebGL loss in paused boss; same-session DPR2 metrics and 1280x720 capture. Experiment mode patches only notice class/span/CSS after baseline; native mode does not. Initial guide/menu repaint is matched before loaded capture; unchanged-artifact control proves19 RGB pixels change before any loss. Longer resource notification is synthetic. HUD buttons are hit-tested, guide and menu opened/closed through UI; rules/plan/age and restored RGB must remain exact.',snapshots:[],runs:[],captures:[],pass:false,reviewedUtc:null};
 for(const name of ['probe-battle-notice-layout.mjs','battle-notice-layout.mjs','production-candidate-fixture.mjs']){const bytes=await readFile(resolve(root,'tools/v5vfx',name));await writeFile(resolve(out,name),bytes);report.snapshots.push({name,sha256:hash(bytes)});}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
@@ -63,7 +63,14 @@ try{
   };
   const stateEqual=(a,b)=>{assert.deepEqual(a.battle,b.battle);assert.deepEqual(a.plan,b.plan);assert.equal(a.age,b.age);assert(a.paused&&b.paused);};
   const clear=state=>{assert(state.notice);assert.equal(state.notice.intersections.length,0);assert(state.notice.glyphs.length);for(const r of state.notice.glyphs){assert(r.x>=24&&r.right<=1256&&r.y>=44&&r.bottom<=610);}assert(state.buttons.length>=8&&state.buttons.every(b=>b.hit));};
-  await page.waitForTimeout(500);const loaded=await capture('loaded');assert.equal(loaded.after.sceneError,'');
+  const exerciseControls=async()=>{
+  await page.getByRole('button',{name:'Read battle guide',exact:true}).click();await page.locator('dialog[open]').waitFor();
+  await page.locator('dialog[open] button').first().click();await page.locator('dialog[open]').waitFor({state:'hidden'});
+  const menu=page.getByRole('button',{name:'More battle options',exact:true});await menu.click();await page.locator('.b3-menu').waitFor();await page.keyboard.press('Escape');await page.locator('.b3-menu').waitFor({state:'hidden'});
+  };
+  // An unchanged-artifact control proves the first guide/menu repaint changes19 HUD pixels before any loss.
+  // Match that interaction history on both sides; keep the full-frame exact RGB assertion.
+  await page.waitForTimeout(500);await exerciseControls();const loaded=await capture('loaded');assert.equal(loaded.after.sceneError,'');
   await page.evaluate(()=>globalThis.__cxvNotice.extension.loseContext());await page.waitForFunction(()=>globalThis.__cxvNotice.lost===1);await page.waitForTimeout(300);
   const lost=await capture(native?'lost':'baseline-lost');assert(lost.after.contextLost&&lost.after.sceneError);stateEqual(loaded.after,lost.after);
   let adjusted=lost;
@@ -72,9 +79,7 @@ try{
    adjusted=await capture('candidate-lost');assert(lost.after.notice.intersections.length>0,'Baseline must reproduce the assigned overlap');
   }
   clear(adjusted.after);stateEqual(loaded.after,adjusted.after);
-  await page.getByRole('button',{name:'Read battle guide',exact:true}).click();await page.locator('dialog[open]').waitFor();
-  await page.locator('dialog[open] button').first().click();await page.locator('dialog[open]').waitFor({state:'hidden'});
-  const menu=page.getByRole('button',{name:'More battle options',exact:true});await menu.click();await page.locator('.b3-menu').waitFor();await page.keyboard.press('Escape');await page.locator('.b3-menu').waitFor({state:'hidden'});
+  await exerciseControls();
   const controls=await measure();stateEqual(loaded.after,controls);clear(controls);
   await page.evaluate(()=>{const m=window.__depthReview;globalThis.__cxvNotice.savedError=m.sceneError;m.sceneError='Battle preview unavailable. A required scene resource could not be restored. The battle controls remain available while the scene recovers. Resource: '+('original-scene-resource-'.repeat(8))+'.webp';m.notify(false);});
   // React owns the wrapper only in native mode; the experiment patches the longer message identically.
