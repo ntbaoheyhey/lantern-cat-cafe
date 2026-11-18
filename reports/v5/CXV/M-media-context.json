@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-18T04:53:06.154506+00:00",
+  "scope": "M/C-only optional sample context and decoded-frame invalidation hook; no media lifecycle implementation",
+  "files": [
+    "apps/web/src/game/cardrpg/spine/assets.ts",
+    "apps/web/src/game/cardrpg/spine/scene.ts",
+    "apps/web/src/game/cardrpg/spine/scene-designer-media.test.ts"
+  ],
+  "context": [
+    "worldTime + phaseOffset",
+    "paused",
+    "fixedTime",
+    "frozen",
+    "playbackRate ?? 1"
+  ],
+  "focused": {
+    "existingPlusPilot": 44,
+    "newCallback": 3
+  },
+  "typecheck": "passed after explicit SpineScene test fixture annotation",
+  "nativeReview": "callback lifecycle belongs to CXI loader; integration capture pending there",
+  "soot": "No Soot source or tests modified; scene passes original six arguments for all other actors."
+}
