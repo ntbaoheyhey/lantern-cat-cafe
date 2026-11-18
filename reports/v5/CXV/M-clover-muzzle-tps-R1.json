@@ -1,0 +1,52 @@
+{
+  "utc": "2026-11-18T08:08:32.294231+00:00",
+  "cat": "clover",
+  "socket": "head",
+  "sourceSha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150",
+  "spec": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-head-support-R1/spec.json",
+    "sha256": "3821bc11bbeaa811c8ae7ec69dcf0d0e4a9efc4dd28e632dd815455d1b7f85f8"
+  },
+  "runnerSha256": "c11b319be275b6614b976367736e13547e61cedb1396f2c4056b9b789cf0dc92",
+  "sourceRoi": [
+    282,
+    157,
+    55,
+    40
+  ],
+  "sourcePoint": [
+    292.7666681605641,
+    167.86538461538458
+  ],
+  "method": "Fixed regularized TPS on same sequential LK support; interior leave-one-out and local Jacobian diagnostics; no runtime export.",
+  "normalizationPx": 40.0,
+  "regularization": 0.001,
+  "solverAffineError": 2.842170943040401e-14,
+  "tracked": 13,
+  "survivors": 7,
+  "interiorHeldOut": 2,
+  "heldOutMaxErrorPx": 0.8449781118751147,
+  "heldOutMinInlierFraction": 1.0,
+  "minJacobianDet": null,
+  "seamDeliveryPx": 3.0649149378579525,
+  "rangeDeliveryPx": [
+    20.922092994534637,
+    12.241497955986796
+  ],
+  "gates": {
+    "sixSurvivors": true,
+    "targetInsideHull": false,
+    "threeInteriorHeldOut": false,
+    "heldOut70Percent": true,
+    "heldOutMax2px": true,
+    "positiveJacobian": false,
+    "seam2DeliveryPx": false
+  },
+  "diagnosticPass": false,
+  "accepted": false,
+  "limits": "Independent fixed-F0 appearance gate remains failed. This experiment cannot authorize export, anatomy, or full head transform.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-muzzle-tps-R1/raw.json",
+    "sha256": "43bcc5b575183ea9958f771d64d15e1f5f4be25011f66f7aa82cd2a4f5b84d2e"
+  }
+}

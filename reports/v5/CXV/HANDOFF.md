@@ -1,10 +1,10 @@
 # CXV V8 handoff
 ACTIVE Batch M: focusrectangle fix19focused/TSC+GPU16PASS; productionverify pending. OwnR3cast290samples/280frames/16views; visualHOLD. assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: Read new INBOX-CXV lines after325 for focusimport/build/6301release; patch7f1bafd8+receipts sent08:03/08:04Z. Capture freshfilmR2 afterrelease.
+NEXT 1: Await explicitCXI6301release via newINBOX lines after325; focusimportACK08:06Z and R4buildb352eff42 observed. Capture freshfilmR2 once released.
 NEXT 2: Run tools/v5vfx/capture-designer-cast-production.mjs with new CXV_MEDIA_BUILD/CXV_CAPTURE_OUT; compare bothmodes533ms/contact/return; retainR1rejection.
-NEXT 3: M/C media+casts; Mochi931787B full300frames Chromium/WebKit passed07:04Z;no enrollment. AGV landing/T-M1 refinement; legacy afterM.
-Last confirmed push34fdaf1a3; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+NEXT 3: CloverheadTPS rejected(outsidehull,2heldouts,seam3.0649px); noexport. M/C media+casts/budget and AGVlanding/T-M1; legacy afterM.
+Last confirmed push69a10d3a5; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min preserved/viewed08:07Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
 Running Vite21525/6310 only; pipeline20852done.6301 released07:55Z; R3source521bf4f4a/index13760644 retained.
