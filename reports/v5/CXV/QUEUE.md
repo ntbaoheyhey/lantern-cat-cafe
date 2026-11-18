@@ -4,7 +4,7 @@
 - READY scoped M-V3 same nine native/drawn casts, real rules350ms→skill.55 and additive handoff; M/C cast API accepted, final media cast art/gameplay remains OPEN.
 - READY scoped M-V4 native7:60focused/TSC0,7films/28freshimages,feet/seam0,Soot3833unchanged; M-native-seven-READY.json. Mallow/Panko individual reports retained. M/C final comparisons OPEN.
 - ACTIVE M/C socket follow-up: Mochi hip/shieldwrist/independentlanternR3 accepted; head/offHand unsupported; Clover provisionalhip/mainHandR1 passed localtracking/4freshphases; deliverypayload3000fractionalchecks ready. Head/off/vfx remainunsupported. No media registration until CXI art/edge/seam/budget gates.
-- AGV active T-CXI-11 landingR2 candidate108498B/cb52a365 pending own fresh review; R1visualREDO retained; currentdelivery207867B +T-M1 independent timing; T-M2 deferred/rejected,T-M3/T-M4 queued. No inferred physics lag adopted.
+- AGV active T-CXI-11 landingR2visualREDO108498B/cb52a365,2freshviews+2hashreuse; R1visualREDO retained; currentdelivery207867B +T-M1 independent timing; T-M2 deferred/rejected,T-M3/T-M4 queued. No inferred physics lag adopted.
 - DONE scoped native9 full battles:6naturalwins/3normal-reducedpairs/exactrules/0errors,48captures/12viewedonce; framep95 16.7–16.8ms. Effects-readability OPEN: Mallow/Sorrel/Cinnamon/Brioche large bursts and Biscuit overlap. M-native-nine-full-battle-R1.json.
 - DEFERRED V-F transaction performance R2: pair248c3667/2e92e22d built,series unstarted; no app optimization adopted.
 - DONE T-CXI-10 e570e63a36+20e3db82b; V-E172c317d4 integratedm1.13. HistoricalV-A3/V-C/V-B2 evidence retained.

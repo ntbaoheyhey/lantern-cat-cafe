@@ -31,3 +31,7 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T06:26:31.921851+00:00 Clover: điểm hông và tay cầm ấm đã qua theo dõi 300 khung hình, xem mới 4 pha, đổi tọa độ 3000 lần sai số dưới 0,000001. Chưa đạt đầu/tay còn lại/điểm phát hiệu ứng và bản media cuối. Ảnh landing 63.006 B đạt dung lượng nhưng mờ chi tiết, đã yêu cầu AGV sửa.
 
 2026-11-18T06:42:43.917656+00:00 Đã kiểm tra 6 trận production của 9 mèo native: kết quả và chuỗi hành động khớp ở 2 chế độ, không lỗi; 48 ảnh đo, 12 ảnh xem đúng một lần. Khôi phục sổ 4 ảnh đã xem, không mở lại. Hiệu ứng Mallow/Sorrel/Cinnamon/Brioche che thân/đạo cụ; Biscuit có chồng lấn. Chưa nghiệm thu độ rõ hiệu ứng, media Mochi/Clover hoặc ngân sách.
+
+2026-11-18T06:45:21.855595+00:00 Điểm phát hiệu ứng ấm Clover vẫn chưa đủ bằng chứng: vùng gốm có 10 góc theo dõi nhưng tỷ lệ đồng thuận 0,6; kiểm tra mẫu độc lập chỉ 0,7704 và lệch 2,7436 px. Giữ nguyên hông/tay đã đạt, không dùng chuyển động tay thay cho ấm.
+
+2026-11-18T06:47:47.119780+00:00 Ảnh landing R2 108.498 B đã kiểm tra mới ở 1280×720: tốt hơn R1 nhưng chi tiết lông/viền khiên/gạch vẫn bị làm mịn, cần sửa. Tiết kiệm 99.369 B, riêng ảnh này vẫn thiếu 42.417 B so với ngân sách trận 3. Chưa tích hợp.

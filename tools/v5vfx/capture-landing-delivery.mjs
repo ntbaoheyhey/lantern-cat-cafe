@@ -4,11 +4,13 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const url='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
-const dir=resolve('work/v5/CXV/films/M-landing-delivery-R1');
+const revision=process.argv[3]||'R1';
+if(!/^R[1-9][0-9]*$/.test(revision))throw Error('Expected a new R-number evidence directory');
+const dir=resolve(`work/v5/CXV/films/M-landing-delivery-${revision}`);
 try{await access(dir);throw Error('Refusing prior evidence overwrite');}catch(error){if(error.code!=='ENOENT')throw error;}
 await mkdir(dir,{recursive:true});
 const hash=b=>createHash('sha256').update(b).digest('hex');
-const candidatePath='/Users/bao/th-v5-ag2/work/v5/AGV/landing.avif';
+const candidatePath=resolve(process.argv[2]||'/Users/bao/th-v5-ag2/work/v5/AGV/landing.avif');
 const originalPath='/Users/bao/taskbar-hero-chain/apps/web/public/art/v3-shell/landing.webp';
 const candidate=await readFile(candidatePath),original=await readFile(originalPath);
 const index=Buffer.from(await (await fetch(url)).arrayBuffer());
