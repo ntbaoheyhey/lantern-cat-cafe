@@ -24,3 +24,5 @@ M-I2 RESAMPLING: directRGB and fullmatte300frames/bothenginesPASS recomputed;ful
 M-I2 R5 COMPARISON:300nativeframes/10s film227pxbody mismatch0.2px;2freshsameheightviews. Native source trajectory remains aligned;lowerleft seam persists,bodyrectfixed. No alpha/laptop claim.
 
 M-I2 R7 playback:1536eligible recordedcallback/sourceFrame pairs within0.000334ms;canonicaltrackmax9.26733e-5px. Drops19/2429Mochi,28/2428Clover;reduced0;RAFp9516.8mslocalM3Pro. No newGPU/allframe/laptop/artacceptance.
+
+M-I2 ACTIONR2 PILOT:exactGit1rule replayPASS;242hashes/18stable states/32counts. Mochilabel vsPankobody1340paintpixels=>FAIL;initialhidden20topHUDpixels retained;postconceal3RGBcontrols exact. Full16 next;no sourceadoption.

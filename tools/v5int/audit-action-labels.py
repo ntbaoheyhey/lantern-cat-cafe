@@ -125,6 +125,12 @@ def main():
         assert delivered['key'] == case['key'] and case['ms'] == (1100 if case['skill']==4 else 350)
         initial = case['before']
         assert initial['paused'] and initial['plan']['skillId'] == case['cat']+'-'+str(case['skill'])
+        hud_pause = case.get('hudPortraitPause', [])
+        for paused in hud_pause:
+            assert paused['target'] in ('b3-portrait','b3-portrait-shine')
+            assert paused['playState'] == 'paused' and math.isfinite(paused['pausedTime'])
+            assert paused['rect']['y'] >= 600
+        assert all(a['playState'] == 'paused' for a in initial['animations'])
         images = {cap['variant']:image(cap) for cap in case['captures']}
         pre = {cap['variant']:image(cap) for cap in case['precondition']}
         assert len(case['captures']) == len(images) == 9 and set(images) == {'baseline','baseline-repeat','labels-hidden','labels-hidden-repeat','restored',*('without-'+c for c in CATS)}
@@ -135,7 +141,7 @@ def main():
             for when in ('before','after'):
                 state = cap[when]
                 assert state['paused'] and state['renderTime'] == case['fixedTime']
-                for key in ('plan','battle','labels','labelPaintState','sceneTime','host','anchors','hud'):
+                for key in ('plan','battle','labels','labelPaintState','sceneTime','host','anchors','hud','animations'):
                     assert state[key] == initial[key], (case['key'],cap['variant'],when,key)
                 for cat in MEDIA:
                     a,b = state['media'][cat],initial['media'][cat]
@@ -150,7 +156,10 @@ def main():
             controls[name] = stats(difference(images[left],images[right]) > 0)
             assert controls[name] == delivered['controls'][name] and controls[name]['count'] == 0
         assert np.array_equal(pre['restored'],images['baseline'])
-        assert np.array_equal(pre['hidden'],images['labels-hidden'])
+        # The first conceal is the recorded precondition, not a controlled sample.
+        # Its top-HUD raster may differ even when all later full-image controls
+        # are exact. Preserve that difference separately, never erase or reuse it.
+        pre_hidden_delta = difference(pre['hidden'],images['labels-hidden']) > 0
         paint = difference(images['baseline'],images['labels-hidden'])
         contributions = {cat:difference(images['labels-hidden'],images['without-'+cat]) for cat in CATS}
         saved = np.load(verify(delivered['pixelDifferences']))
@@ -159,6 +168,8 @@ def main():
             assert np.array_equal(saved[cat+'Contribution'],contributions[cat])
         union = np.zeros((720,1280),bool)
         hits = []
+        assert len(delivered['labels']) == 2
+        assert {x['id'] for x in delivered['labels']} == set(MEDIA)
         for label,claim in zip([x for x in initial['labels'] if x['id'] in MEDIA],delivered['labels']):
             assert label['id'] == claim['id'] and label['rect'] == claim['rect']
             box = region_mask(label['rect'])
@@ -176,7 +187,9 @@ def main():
         assert delivered['valid'] and delivered['complete'] and delivered['decodedExact']
         initial_delta = difference(pre['initial'],pre['restored']) > 0
         pre_regions = {label['id']:{name:int((initial_delta & region_mask(rect)).sum()) for name,rect in label['regions'].items() if rect is not None} for label in initial['labels'] if label['id'] in MEDIA}
-        rows.append(dict(key=case['key'],frames=case['expectedFrames'],controls=controls,paint=stats(union),nonzero=hits,preconditionChangedPixels=int(initial_delta.sum()),preconditionRegions=pre_regions))
+        rows.append(dict(key=case['key'],frames=case['expectedFrames'],controls=controls,paint=stats(union),nonzero=hits,
+                         hudPortraitPause=hud_pause,preconditionHiddenVsControlled=stats(pre_hidden_delta),
+                         preconditionChangedPixels=int(initial_delta.sum()),preconditionRegions=pre_regions))
     assert d['attributionValid'] and d['sampledPaintClear'] == all(row['paint']['count']==0 for row in rows)
     result = dict(utc=datetime.now(timezone.utc).isoformat(),delivery=dict(path=str(args.delivery),sha256=sha(args.delivery)),
                   rulesAudit=dict(path=str(args.rules_audit),sha256=sha(args.rules_audit)),toolSha256=sha(__file__),helperSha256=sha(helper_path),
