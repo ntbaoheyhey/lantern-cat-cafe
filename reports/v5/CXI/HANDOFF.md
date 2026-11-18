@@ -1,9 +1,9 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: review CXV authored-only all-visible-body placement study18frozenlayouts;R7ownvisual done,clearance/artFAIL retained.
+NEXT 1: CXV deriving fullcycle GPU paint-envelope;allbody rectangle remedy REJECT57–160px. Review projected envelope scope before source import;R7unchanged.
 NEXT 2: keep current R7 pinned;natural1536callback samples consistentwithin0.000334ms,notGPUproof;drops19/2429M,28/2428C,localM3Proonly.
 NEXT 3: AGS QA-m115+M5OPEN;V5/V6unsupported/absentpaths REDO. Owner draft current;fringe/halo/seam+nativebody/status clearance open.
-Last pushedb22163c6c;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
+Last pushedd9b865500;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
 Live6301 labelR7 sourcebf01d462a/indexeb93ee0d;work/v5/CXI/batch-m/clover-label-r7/build.json;3809files/294424887B verified;6payloadsR5exact.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified14:07Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T14:14:00.573792+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
