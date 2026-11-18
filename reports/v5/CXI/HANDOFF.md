@@ -1,13 +1,13 @@
 # CXI V8 continuation
-ACTIVE:V8 BatchM;assistant:AGS;Panko own scene ACCEPT,worldfeet/root0,4cast+1comparison reviewed;Mallow scopedimport16focused/typecheck0/parity2464.
-NEXT 1: checkpoint Mallow import+Panko own evidence; build new candidate detached; review latest AGS M1/M2 delivery while CXV6310 lease runs.
+ACTIVE:V8 BatchM;assistant:AGS;Mallow production build+suite0;own capture prepared pending CXVbrowserrelease. Panko ownscene ACCEPT.
+NEXT 1: inspect CXVlease/newmail;run node tools/v5int/capture-batch-m-native.mjs after explicitrelease;ratecontrol2trials rejected,registryempty.
 NEXT 2: own Mallow production acceptance after CXVrelease;measure cold/performance/journey/audio/films before release.
 NEXT 3: M-I1 BLOCKED-ON new edge/seam evidence; Mochi384CRF23 speckles+MAE4.74>3, CloverR5/R6 unaccepted; registry empty.
-Last pushed162efac4c;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
-Live6301 production source912a457c6;indexdc53a0e5c036e1ec014c2a6a4a3608070f09a47221fe3a02741df7835aee02b8 HTTP exact05:40Z;Panko active,M/C registry empty.
+Last pushedd1192596c;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
+Live6301 source d1192596c/index9d9b76c8d1bbe6f759a9f36d22928979fe31601c969ea317db8e186d00e07065 HTTPexact2026-11-18T05:52:31.735772+00:00;Panko+Mallowcandidate,unreleased.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified05:40Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T05:47:08.972148+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:no CXIjobs;CXV6310 seven-cat lease granted05:44Z until explicitrelease;own Panko capture/worldprobe finished.
+Running:no CXIjobs;build/suite0 and2ratecontroltrials finished;CXV6310 seven-catlease still active.
 Mailboxread INBOX-CXI150;USER24;LEARN94;0046 preserved.
 AGS OPEN:T-M1REDO sources/contradictions,T-M2REDO3heighttable+edges,T-M3REDO10s/alpha/master checklist;latestM1/M2DONE pendingreview.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
