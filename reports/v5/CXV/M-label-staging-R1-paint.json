@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-18T15:09:43.861211+00:00",
+  "geometry": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-staging-R1.json",
+    "sha256": "3d961dac257a43595f6f64147e0d2b1bc24a95bbac5cf89ec17c1990300a6414"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-label-staging.py",
+    "sha256": "b90421cab68e3112fc5f067d6943aac7b8f40b56182f00f8203a6f275d13a016"
+  },
+  "paint": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-r1/paint.json",
+    "sha256": "012523e9a118259ba6a5ca9c5098829c70b1630906d60594c6ef8083127efd91"
+  },
+  "cases": 46,
+  "countComparisons": 7296,
+  "allClear": true,
+  "failures": [],
+  "limits": [
+    "Frozen diagnostic only; no newly rendered label.",
+    "Both floor and ceil translations checked; fresh actual subpixel raster controls still required.",
+    "Contributions are visible RGB differences, not alpha reconstruction.",
+    "Idle cases isolate commissioned bodies only; native bodies guarded geometrically.",
+    "These inputs are development data, not held-out evidence."
+  ],
+  "productionAcceptance": false
+}

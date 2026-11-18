@@ -1,0 +1,71 @@
+{
+  "utc": "2026-11-18T15:08:54.800Z",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-staging-R1-preregistration.json",
+    "sha256": "a5803b922b940f688fb5afd79a6cb047202f0ddea6c6a838763c46c016447eb0"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/assess-label-staging.mjs",
+    "sha256": "42a63c7023c85160a5cd08d25d8979eb507688765c9b8c7cd924b2ee353ef731"
+  },
+  "layoutSource": {
+    "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+    "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/report.json",
+      "sha256": "5b2fe00edec843e1c1e1f09295eb91da69ff66d07c21895c740bad97d67d309c",
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/analysis.json",
+        "sha256": "09922a0ef65fc235ad036330de6828cf70d6fec3f7fc02455bb3f9a17537d3da"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-recovery-r3-144918/report.json",
+      "sha256": "8388439ef2ab2312269017a1bcbaf639723ca0905013484ec1a92b3a83b5cd06",
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-recovery-r3-144918/analysis.json",
+        "sha256": "0b924f64b394e5cb495ae9ca5623bf807bb69f273c1e68c538cdc822d9b31cd3"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/candidate/report.json",
+      "sha256": "df5d181d68b34e9340c646c15c19b92c57ac01389dbeda57361a89197d3d79c8",
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/candidate/analysis.json",
+        "sha256": "5ea581fdd0dd8a272b6a36851127680d2967ed83beb8ad039e1f173519562962"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/expanded-status/report.json",
+      "sha256": "e628f8b8b4c9741359a0f4e9c57adf76a08d74840d7b199fcf14b9b2d56b5c52",
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-envelope-pair-r1-142325/expanded-status/analysis.json",
+        "sha256": "404ededd30d6186aa38d91afb504508aaaf4ff11f593936c76262fec512b7a68"
+      }
+    }
+  ],
+  "rows": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-r1/rows.json",
+    "sha256": "895d34edd3714a965d2fb759bd8703c1e9b4171e8b223eb437a346a38aefddac"
+  },
+  "count": 76,
+  "maxBaselineError": 0.015390915259843041,
+  "baselineReproduced": true,
+  "geometryClear": true,
+  "associationBounded": true,
+  "maxDrift": 0,
+  "rejected": [],
+  "productionAcceptance": false,
+  "limits": [
+    "Existing frozen samples are development evidence, not holdouts or all-frame proof.",
+    "No rendered candidate or painted clearance claim.",
+    "Native six-pixel guard remains conservative. Commissioned neighbor paint is not replaced with its full rectangle.",
+    "Association constraints are authored design bounds, not a user-study result.",
+    "All non-Mochi labels remain their existing baseline placement; Clover retains its previously measured (-12,+19) diagnostic."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-18T15:08:54.208118+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "hypothesis": "Mochi HP/status directly below its own projected body/feet stays outside Panko travel and remains visibly associated.",
+  "candidate": "Keep authored horizontal axis and exact observed width/height. Set rectangle top=max(footY,bodyBottom)+6 CSSpx. Constrain with existing layout solver, HUD/faces/other labels/ownbody and native body+6. Preserve Clover(-12,+19) and every other label.",
+  "association": "No label flip; target axis remains within label width; solver displacement<=12px and vertical gap in[6,18]. These are design bounds,not statistical confidence or proved user association.",
+  "inputs": [
+    {
+      "path": "work/v5/CXV/batch-m/action-label-full-r2-143611/report.json",
+      "states": false
+    },
+    {
+      "path": "work/v5/CXV/batch-m/action-label-recovery-r3-144918/report.json",
+      "states": true
+    },
+    {
+      "path": "work/v5/CXV/batch-m/label-envelope-pair-r1-142325/candidate/report.json",
+      "states": false
+    },
+    {
+      "path": "work/v5/CXV/batch-m/label-envelope-pair-r1-142325/expanded-status/report.json",
+      "states": false
+    }
+  ],
+  "gates": [
+    "Reproduce observed baseline <=1/64 CSSpx; exclude invalid paint cases and old stale R2 state rows.",
+    "Evaluate all listed development rows without grid fit/refit; retain failures.",
+    "Then resample actual painted label to candidate within rounding uncertainty; require threshold0 with2px body dilation,report all thresholds.",
+    "If offline gates pass, request new6301lease for actual constrained layout, unseen progression, idle/status, exactrules/controls and fresh hash-dedup view.",
+    "No application adoption or acceptance from offline geometry."
+  ]
+}
