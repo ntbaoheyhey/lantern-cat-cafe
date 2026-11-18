@@ -1,0 +1,50 @@
+{
+  "utc": "2026-11-18T09:09:21.810368+00:00",
+  "status": "NUMERIC_INTAKE_ONLY_VISUAL_PENDING",
+  "original": {
+    "path": "/Users/bao/taskbar-hero-chain/apps/web/public/art/v3-shell/landing.webp",
+    "sha256": "6a363ca4e6a8d078b4c2a60a6e29e469bc4f2b0a3505d1cc745fb6e4ded678d5"
+  },
+  "rows": [
+    {
+      "name": "served",
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/public/art/v3-shell/landing.avif",
+      "bytes": 207867,
+      "sha256": "edc6c8d756ea4962f06be480d96020041945d1e6935c745a2770582570b9b567",
+      "dimensions": [
+        1440,
+        810
+      ],
+      "mae": 2.7161279721079103,
+      "psnr": 35.66197321133515
+    },
+    {
+      "name": "R4",
+      "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing-v5.avif",
+      "bytes": 138004,
+      "sha256": "c1f3a209c0859d48223d34f93fcc9768ef16e111c4e1247b4a535290b7daac1d",
+      "dimensions": [
+        1440,
+        810
+      ],
+      "mae": 3.480760173754001,
+      "psnr": 33.58888614456974
+    },
+    {
+      "name": "R9",
+      "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing-R9.avif",
+      "bytes": 149496,
+      "sha256": "c0941381699ef0a4f5fda059951535203f7429a715d351e788ba2862f7f5c436",
+      "dimensions": [
+        1440,
+        810
+      ],
+      "mae": 3.330835048010974,
+      "psnr": 33.9647580484703
+    }
+  ],
+  "savingBytes": 58371,
+  "imagesViewed": 0,
+  "decode": "ffmpeg -v error -threads 1 -i <file> -f rawvideo -pix_fmt rgb24 pipe:1",
+  "limits": "Offline decoded-image metrics do not prove no visible loss. OpenCV AVIF read unsupported; no metrics were inferred from its failure. R9 current judge comparison and NEW public sibling remain required. No asset adopted. These raw FFmpeg metrics are not directly comparable with earlier browser screenshot MAE."
+}

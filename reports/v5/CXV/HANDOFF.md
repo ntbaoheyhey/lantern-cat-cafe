@@ -4,11 +4,11 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; des
 NEXT 1: Prepare native suspension/visibility probe; CXI importing00903a3e3+ccb209d07 and building R6. New natural R3 harness prepared.
 NEXT 2: Obtain new6301 lease; verify suspend/resume/visibility/result and natural Phase2 readability with fresh evidence directories.
 NEXT 3: Clover motion/art/budget and AGV deliveries; legacy after Batch M. Existing captures must never be overwritten or reopened.
-Last confirmed pushccb209d07 BossPhase; scene00903a3e3 exactimport CXI40focused/TSC0 acknowledged09:03:28Z.
+Last confirmed push478db797d lifecycle harness; sourceccb209d07+00903a3e3 exactimports CXIACK09:08Z. R6 build/gate CXI.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified08:51Z with app view; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
 Running Vite21525/6310 only; phaseprobe38255 finished960rows;6301 explicitly released08:59:51Z.
-AGV active T-CXI-11 landingR6numericREDO242887B + T-M1 REDO481B placeholders; T-M2deferred;T-M3/T-M4queued.
+AGV active T-CXI-11 landingR9intake149496B/58371Bsaving,visualpending + T-M1 REDO902B incomplete/hashplaceholder;T-M2deferred.
 CXI loader9bcbce1d5 setSuspended(bool):17focused/TSC0 and10isolatednativePASS. CXV scene patch42focused/TSC0; native pending.
 NaturalR2 normal/reduced:47actions/19ults/8captures each,0errors,rulesexact,p9516.8ms localM3Pro only. NumericPASS;visual and postresultFAIL.
 NaturalphaseR1 confirms128overlap rows eachmode,12/13contact;patch yields160ms and retains aura. Native confirmation pending.
