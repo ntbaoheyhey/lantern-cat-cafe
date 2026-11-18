@@ -1,0 +1,117 @@
+{
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "hudPortraitPause": {
+    "enabled": true,
+    "targets": [
+      ".b3-bottom .b3-portrait",
+      ".b3-bottom .b3-portrait-shine"
+    ],
+    "basis": "R1 controls differed only readiness portrait area617..749x606..720. Recorded infinite1200ms ready and2400ms shine kept advancing; all world-state gates exact.",
+    "method": "Pause these existing infinite HUD animations at their observed currentTime; await ready and require paused. Record targets/times/rects. Do not hide HUD or alter labels; no blanket animation disabling.",
+    "scope": "Additional diagnostic only;no natural presentation acceptance. Preserve R1invalid result."
+  },
+  "hudMeterSettlement": {
+    "timeoutMs": 2500,
+    "stableFrames": 3,
+    "inlinePercentTolerance": 1e-06,
+    "widthToleranceCSSpx": 0.015625,
+    "scope": "Natural five visible boss/bottom HUD meter convergence plus finite animation completion; CXI independently validated pilot; no timer/style mutations.",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-control-pilot-r1/hud-meter-observation.mjs",
+    "sourceSha256": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  },
+  "displayedFrameGate": true,
+  "utc": "2026-11-18T17:52:39.823995+00:00",
+  "study": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-label-identity-v8-20261118.md",
+  "implementationNotBeforeUTC": "2026-11-18T17:44:46Z",
+  "captureRequires": "Fresh explicit CXI grant and predecessor job release",
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 1,
+      "ms": 350,
+      "statusCase": "ordinary"
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 225,
+      "statusCase": "ordinary"
+    },
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 1,
+      "ms": 350,
+      "statusCase": "capacity"
+    },
+    {
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 225,
+      "statusCase": "capacity"
+    }
+  ],
+  "sequence": [
+    "screen0",
+    "canvas0",
+    "screen1",
+    "canvas1",
+    "screen2",
+    "canvas2"
+  ],
+  "screenDimensions": [
+    1280,
+    720
+  ],
+  "mutations": "After baseline repeats, apply the frozen DOM prototype once, keeping world-label rectangles reserved. No renderer change. Focus first/last actual status controls using keyboard navigation. Dispose once and record restored controls; retain known restoration failures. No retry/refit.",
+  "gates": {
+    "baselineAndCandidate": "Each phase3screens/3canvas exactrepeat and fullsample equality; inherited scene/state legality exact",
+    "underlyingBody": "Raw canvas RGBA baseline/candidate/focus/restored identical; no redraw during phase observation",
+    "layout": "All existing world-label rectangles, anchors and original footer controls unchanged; prototype children+stack/focus paint fit160x72,clear existingcontrols and bodies",
+    "information": "Exact original HP/rage/shield/status aria values/titles/stacktext/overflow; always visible name; No effects for zero statuses; no dropped/fallback/Soot labels",
+    "screen": "Compare full baseline/candidate outside intended Mochi old-label+panel bounding union, threshold0,retain all counts. This is change-localization, not a conceal-paint acceptance gate. Baseline/restored exact comparison retained separately and may fail.",
+    "focus": "First/last real status controls focused via keyboard; computed focus paint stays inside panel. Original portrait controls retained.",
+    "association": "Inspect at most4 new measured <=1024px previews once; no adoption from geometry alone"
+  },
+  "crossMethod": "Raw screen/canvas delta remains descriptive per phase1; no label paint attribution.",
+  "footerCapacity": {
+    "mode": "Read-only unchanged baseline geometry; no panel injection",
+    "panelWidth": 160,
+    "panelHeight": 72,
+    "panelGap": 8,
+    "controlClearance": 12,
+    "topOffset": 7,
+    "count": 2,
+    "left": "speed.right+12",
+    "rightLimit": "party.left-12",
+    "need": "Both rectangles entirely inside existing footer and zero overlap with controls, portrait paint or body bounds. Does not establish actual content or owner association."
+  },
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "priorRejectionsRetained": true,
+  "phase1": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-canvas-observation-R1.json",
+    "sha256": "54659c0124515464521dbf3fd493c9031b6736d530758499aaef87cd126d076e"
+  },
+  "candidate": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-footer-identity-R1-preregistration.json",
+    "sha256": "b42618a9059c0505731f728770e6d60a97b9e65e66748da278a9605cd0387772"
+  },
+  "phases": [
+    "baseline",
+    "candidate",
+    "focus-first",
+    "focus-last",
+    "restored"
+  ],
+  "pilot": "Four fresh pages; seed legal battle and compare independent rules. Capacity precondition adds shield and four statuses to Mochi before rules calculation; explicitly synthetic capacity, not natural reachability. Only successfully prepared Mochi gets panel; native Clover remains unchanged."
+}
