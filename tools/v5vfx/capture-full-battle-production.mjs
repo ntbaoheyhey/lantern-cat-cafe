@@ -7,6 +7,7 @@ import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {chromium,config,openFixture,runtimeEvidence,judgeUrl} from '/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs';
 const root=resolve(import.meta.dirname,'../..');
+const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpuRate),'Full-battle CPU rate must be1 or4');
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-judge'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')),'Preserve earlier evidence');
 await mkdir(out,{recursive:true});
@@ -20,12 +21,15 @@ const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse
  harnessSha256:hash(await readFile(import.meta.filename)),productionFixtureSha256:hash(await readFile('/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs')),
  url:judgeUrl,viewport:{width:1280,height:720},method:'Seeded level6 boss encounter, then uninterrupted normal rule-selected model/scene RAF at speed1 until natural result. Normal and reduced motion start from the same battle. No rule fast-forward, fixed-clock seek, HP/charge changes, plan replacement or result injection after setup. Captures add overhead; frame timings are descriptive only, not an optimization comparison. Fixture setup is not ordinary account progression.',runs:[],errors:[],pass:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+report.cpuRate=cpuRate;report.browser=browser.version();report.hardware=execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim();
+report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.';
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
  for(const reduced of [false,true]){
   stop();const mode=reduced?'reduced':'normal',dir=resolve(out,mode);await mkdir(dir,{recursive:true});
   const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));
   assert.equal(page.url(),judgeUrl);const identity=runtimeEvidence();
+  const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpuRate});
   await page.evaluate(reduced=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.notify(false);},reduced);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   const initial=await page.evaluate(()=>{const m=window.__depthReview;return{battle:structuredClone(m.battle),speed:m.state.settings.speed,reduced:m.state.settings.reducedMotion};});
