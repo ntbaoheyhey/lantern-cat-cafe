@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;deskt
 NEXT 1: Obtain next validated dualcat descriptor+explicit6301lease;run run-media-natural.py --cat both;rules replay+measure before views.
 NEXT 2: Review higher-sampling Clover trial on explicitcandidate+lease after native gates;loop/matte/performance stillopen.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push75354e810 (push observed12:55Z); GREENv5-m1.14@254ad41d6 merged; R1 captures0b669/index3e7d27 are not freshm114.
+Last confirmed push99a95e991 (push observed); GREENv5-m1.14@254ad41d6 merged; R1 captures0b669/index3e7d27 are not freshm114.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T12:50Z app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 Jobs:none.IntroR2PID2595 done12:46:27Z;6301 explicitlyreleased12:46Z;R1failed noaction assumption retained.
@@ -16,5 +16,5 @@ R4combined REJECT eye11/12;originalfailure retained;R6 is separate paw-only vali
 ClovernativeHP56states/4actions/10glintsPASS;idle304/cast290scopedREADY;natural56actions25ults eachmode/0errors.
 CloverloopREJECT seamMAE10.515464 vsmedian1.991725;OWNERremovedbytecap12:09:40Z;bytesreportonly;matte/performanceOPEN.
 3833protectedpaths unchanged afterm114 merge;arrival1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6.
-MailboxINBOX-CXV429/USER24;STOPabsent;RULESreread2026-11-18T12:50:16Z;authored4sheets+intro1sheet views1each.
+MailboxINBOX-CXV429/USER24;STOPabsent;RULESreread2026-11-18T12:55Z;authored4sheets+intro1sheet views1each.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;R5fullmatte source8aef40187/index82f08611;dualcat registryoverride explicit in descriptor;production registryempty.
