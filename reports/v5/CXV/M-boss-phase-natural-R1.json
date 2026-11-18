@@ -1,0 +1,158 @@
+{
+  "utc": "2026-11-18T09:01:46.510000+00:00",
+  "status": "CONFIRMED_NATURAL_PHASE_OVERLAP",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-phase-natural-R1/report.json",
+    "sha256": "1c02c1479947024be1538d794ee65984542850a121d0fe30a1b3dd717c05b47f"
+  },
+  "source": {
+    "indexSha256": "89496027162400994a9dd118d2461c6024aa9d249f9bb3ed41ddf24ca9018725",
+    "harnessSha256": "d2ccbc79d8240ab7ca7d4d993c882f766157b2f37f3f51020c61f196efdf5276",
+    "servedSource": "93440d3090d456f2e86e887d5e333bbdc19cc1e2",
+    "roster": [
+      "mochi",
+      "panko",
+      "mallow",
+      "sorrel"
+    ],
+    "group": 0,
+    "buildPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r5/build.json",
+    "buildSha256": "4e9c1def81086522cb66c12dd3a232aac465c90367705e9e3925d3af7a47f415",
+    "registryOverride": {
+      "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json"
+    }
+  },
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "runtimePatchSha256": null,
+  "harnessSha256": "31162ef4cdfa2ec34dba77ef6b53bcc032a847754a7f85f161a5d4d7a06f1fd1",
+  "initialEqual": true,
+  "actionEventsEqual": true,
+  "runs": [
+    {
+      "mode": "normal",
+      "rows": 480,
+      "overlapRows": 128,
+      "contactOverlapRows": 12,
+      "firstContactOverlap": {
+        "wallMs": 18383.79999999702,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 1.3832999999999558,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "elapsed": 1016.6000000000022
+      },
+      "lastContactOverlap": {
+        "wallMs": 18567.69999998808,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 1.5665999999999443,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "elapsed": 1199.9000000000015
+      },
+      "transition": {
+        "wallMs": 17002.39999999106,
+        "sceneTime": 17.08269999999992,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 0,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "plan": {
+          "actorId": "",
+          "skillId": "round-status",
+          "ultimate": false,
+          "elapsed": 16.700000000000728,
+          "duration": 300
+        }
+      },
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "rows": 480,
+      "overlapRows": 128,
+      "contactOverlapRows": 13,
+      "firstContactOverlap": {
+        "wallMs": 18364.79999999702,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 1.3666999999999945,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "elapsed": 1000.0999999999985
+      },
+      "lastContactOverlap": {
+        "wallMs": 18565.79999999702,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 1.566599999999994,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "elapsed": 1200
+      },
+      "transition": {
+        "wallMs": 17000.5,
+        "sceneTime": 17.082599999999868,
+        "phase": {
+          "visible": true,
+          "phase": 2,
+          "age": 0,
+          "aura": true,
+          "portrait": "yarn-giant"
+        },
+        "plan": {
+          "actorId": "",
+          "skillId": "round-status",
+          "ultimate": false,
+          "elapsed": 16.700000000000728,
+          "duration": 300
+        }
+      },
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "visualReview": "No new image viewed; earlier R2 four-sheet visual evidence remains reviewed once. This fresh numeric run isolates actual BossPhase audit, not scene.cinematic.phaseVisible.",
+  "diagnosis": "Round-status starts a 2.5s portrait; next actor begins~.4s later and renderer has no yield. This is natural monotonic play, distinct from earlier isolated-probe clock rewinds.",
+  "candidate": {
+    "files": [
+      {
+        "path": "apps/web/src/game/cardrpg/battle-v3/boss-phase.ts",
+        "sha256": "4bed5574784a4a73dc491d7f90da4b0ffeaac0a8f135d6288f3aebeb61e84725"
+      },
+      {
+        "path": "apps/web/src/game/cardrpg/battle-v3/boss-phase.test.ts",
+        "sha256": "4afece20349ff018c1cf82e4db5d4ccfcf76a2f19e73da10782acc6f6723ec61"
+      }
+    ],
+    "behavior": "Keep phase aura/full unopposed portrait; fade outgoing plate over160ms of the actual actor action. In-action phase changes never flash or revive after action completion.",
+    "before": {
+      "fail": 4,
+      "pass": 3,
+      "logSha256": "cb9ca9caa739b47cf788e6b29573898eadb515520f1926e328b7966387df2307"
+    },
+    "after": {
+      "tests": 24,
+      "files": 3,
+      "typecheckExit": 0
+    },
+    "productionAcceptance": false
+  }
+}

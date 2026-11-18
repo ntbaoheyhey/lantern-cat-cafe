@@ -9,7 +9,7 @@ STOP-ALL or STOP-CXV: commit/push owned WIP then only final STOPPED: <absolute f
 Finished item/commit/push/job/compaction means update HANDOFF and execute NEXT1; blockers log once then next unblocked item.
 Read absolute RULES+HANDOFF each wake/compaction/new item/hour; each <=20lines. Reports on disk.
 Desktop1280x720 only; full BOARD judge URL; fresh own capture URL/source/artifact/patch hashes/UTC; measure before viewing, <=4images<=1024px, inspect once.
-Study new work15–30min; LEARN/INDEX first, Chinese+English >=3 concrete primary sources, experiment and own note before scaling.
+Study new work: LEARN/INDEX and existing notes first; Chinese+English >=3 concrete primary sources, measured experiment and own note before building.
 Keep2 AGV tasks; one echo append per mailbox line, text<=300chars; review DONE with ACCEPT/REDO; coordinate with CXI.
 Checkpoint eachstep/20min: explicit owned git add; commit v8 CXV <item> <step>; push -u origin codex/v5-vfx-2026-11-17; retry10/20/40/80s; rejected=>pull --no-rebase.
 Commands<=40lines; reports<=300KB/commit; big evidence ignored work/v5/CXV; >2min jobs detached nice10, max2, PID/log in HANDOFF.

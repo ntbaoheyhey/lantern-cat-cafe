@@ -4,24 +4,34 @@ const clamp=(n:number)=>Math.max(0,Math.min(1,n));
 /** Phase pips and the original boss painting stay outside the fixed HUD. */
 export class BossPhase {
  readonly canvas=document.createElement('canvas');
- readonly audit={visible:false,phase:1,age:0,aura:false,portrait:'yarn-giant'};
+ readonly audit={visible:false,phase:1,age:0,aura:false,portrait:'yarn-giant',opacity:0,yielding:false};
  private c:CanvasRenderingContext2D;private image=new Image();private seen=new Map<string,number>();
  private battleKey:unknown;private started=-100;private id='';private phase=1;
+ private takeoverAt:number|undefined;private takeoverOpacity=0;
  constructor(host:HTMLElement){
   this.c=this.canvas.getContext('2d')!;this.image.src='/units/yarn-giant/portrait.webp';
   this.canvas.dataset.bossPhase='true';this.canvas.setAttribute('aria-hidden','true');
   Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'18'});host.append(this.canvas);
  }
  render(view:SceneView,time:number,width:number,height:number,bounds:(id:string)=>Rect|undefined){
-  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.seen.clear();this.started=-100;}
+  if(view.battleKey!==this.battleKey){this.battleKey=view.battleKey;this.seen.clear();this.started=-100;this.takeoverAt=undefined;}
   const bossId=Object.keys(view.bossPhases??{})[0],portrait=bossId?view.models?.[bossId]??'yarn-giant':'yarn-giant';
   if(portrait!==this.audit.portrait){this.audit.portrait=portrait;this.image.src=`/units/${portrait}/${portrait==='yarn-giant'?'portrait':'runtime'}.webp`;}
   for(const [id,phase] of Object.entries(view.bossPhases??{})){
-   const previous=this.seen.get(id);if(previous!==undefined&&phase>previous){this.started=time;this.id=id;this.phase=phase;}this.seen.set(id,phase);
+   const previous=this.seen.get(id);if(previous!==undefined&&phase>previous){this.started=time;this.id=id;this.phase=phase;this.takeoverAt=undefined;}this.seen.set(id,phase);
   }
   const live=[...this.seen].filter(([id,p])=>p>1&&view.actors.some(a=>a.id===id&&a.hp>0));
-  const age=time-this.started,visible=age>=0&&age<2.5&&live.some(([id])=>id===this.id);
-  Object.assign(this.audit,{visible,phase:this.phase,age,aura:live.length>0});this.canvas.hidden=!visible&&!live.length;
+  const age=time-this.started;
+  // Round status may announce a phase, but the next actor owns the field.
+  // Capture the outgoing opacity once so an ended action cannot revive it.
+  if(view.frame?.plan.actorId&&this.takeoverAt===undefined&&age>=0&&age<2.5){
+   const actionAge=Math.max(0,view.frame.elapsed/1000),startAge=age-actionAge;
+   this.takeoverAt=time-actionAge;this.takeoverOpacity=clamp(startAge/.18)*clamp((2.5-startAge)/.3);
+  }
+  const yielding=this.takeoverAt!==undefined;
+  const opacity=yielding?this.takeoverOpacity*(1-clamp((time-this.takeoverAt!)/.16)):clamp(age/.18)*clamp((2.5-age)/.3);
+  const visible=age>=0&&age<2.5&&live.some(([id])=>id===this.id)&&(!yielding||opacity>0);
+  Object.assign(this.audit,{visible,phase:this.phase,age,aura:live.length>0,opacity:visible?opacity:0,yielding});this.canvas.hidden=!visible&&!live.length;
   if(this.canvas.hidden)return;
   const ratio=Math.min(devicePixelRatio||1,view.quality==='low'?1:2),w=Math.round(width*ratio),h=Math.round(height*ratio);
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
@@ -36,7 +46,7 @@ export class BossPhase {
     for(let i=0;i<18;i++){const p=(time*.7+i/18)%1,x=b.x+b.width*(.05+i%7/7*.9),y=b.y+b.height*(1-p);c.globalAlpha=Math.sin(p*Math.PI)*.65;c.beginPath();c.moveTo(x,y+12);c.lineTo(x+Math.sin(i+time)*6,y-10);c.stroke();}c.restore();}
   }
   if(!visible)return;
-  const enter=clamp(age/.18),leave=clamp((2.5-age)/.3),opacity=enter*leave,slide=view.reducedMotion?0:(1-enter)*width*.18;
+  const enter=clamp(age/.18),slide=view.reducedMotion?0:(1-enter)*width*.18;
   c.save();c.globalAlpha=opacity;c.translate(slide,0);
   const left=width*.57,back=c.createLinearGradient(left-50,0,width,0);
   back.addColorStop(0,'#25102d00');back.addColorStop(.22,'#25102de8');back.addColorStop(1,this.phase>=3?'#5b2334f5':'#38254ff5');
