@@ -19,3 +19,5 @@ Chủ dự án bỏ giới hạn8MB lúc12:09:40Z; byte chỉ báo cáo. AGV T-M
 2026-11-18T16:08:22.459647+00:00 Đã chốt thử nghiệm Clover(-28,+14) và nhãn Mochi dưới thân; bộ đo tính cả bóng đổ, chờ HUD tự ổn định và so control toàn ảnh. Kiểm tra lại67 bố cục cũ đạt nhưng10 ca bóng cũ vẫn FAIL. Đã chuẩn bị10 idle/5 status mới;chưa có lease mới nên chưa capture hoặc sửa app. Wake vẫn ACTIVE15phút.
 
 2026-11-18T17:05:11.922962+00:00: Kiểm tra phương pháp chụp hoàn tất: 50 ảnh xác minh hash, trạng thái ổn định; 4/5 trường hợp đổi pixel sau thao tác ẩn nhãn. Chưa đủ bằng chứng duyệt hình ảnh sản xuất; tiếp tục phạm vi Mochi riêng. Không đổi mã ứng dụng.
+
+2026-11-18T17:15:40.595299+00:00: Phương án nhãn Mochi phía dưới bị loại trong bản chỉ có Mochi: giao vùng bảo vệ Clover ở86/88 mẫu;6 mẫu vượt giới hạn liên kết. Cả hai cách ẩn nhãn đều không khôi phục pixel y nguyên. Giữ mã nguồn hiện tại, nghiên cứu bố cục tiếp.

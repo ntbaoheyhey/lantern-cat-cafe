@@ -1,0 +1,1831 @@
+{
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/report.json",
+    "sha256": "30156284c3577de5ef03de9d83090f59a02c3460fd4c72ce2d4bb40c5a263f1e"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-label-controls-R1-preregistration.json",
+    "sha256": "a4ad29ffabd89d91013474d8db4255f6fbaf0c217d67ed3a6adc35f1ce70fcf7"
+  },
+  "artifact": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/artifact-verification.json",
+    "sha256": "ff985a6721be03274b3cf424984045ca4a7ac72ed237d57ac810408e4beda7d1"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/harness-provenance.json",
+    "sha256": "71b7d04ad3f07aa24053ad8249a65a1c975260744f2ff5aca91a317a40aa1b9b"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-mochi-label-controls.py",
+    "sha256": "a4de051c515e6523387fd34d5a5ad6eeb9d5bfd77fdcb7f9c696d058527ccf2e"
+  },
+  "stateVerifierSha256": "ec50fa7383e505d653e02aebef676dcc454866e086a1d1ebc6d6a81ebaac0c0f",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "hashes": 200,
+  "capturePass": true,
+  "rulesExact": true,
+  "utc": "2026-11-18T17:15:40.595299+00:00",
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/mochi-controls-measurement.json",
+    "sha256": "e60b0d2efa2d6c6ab6918fa93c62e0c36bbabbcd9fea472ebf6a91ab9dcc9e00"
+  },
+  "layout": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/layout.json",
+    "sha256": "874a1f72f6de44084c8c3f0b942b4d45c53999a246cd65124123d2964920f66d",
+    "summary": {
+      "samples": 176,
+      "candidateSamples": 88,
+      "maxReplayError": 0.015316532490118107,
+      "candidateGeometryFailures": 86,
+      "candidateAssociationFailures": 6,
+      "pairedFailures": 0
+    },
+    "preregistration": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-label-layout-R1-preregistration.json",
+      "sha256": "250a4346892c36a038ab9e7add69fefaed6aeba6a8928f3729dd9ef48cd38784"
+    }
+  },
+  "stateChecks": 6400,
+  "cases": [
+    {
+      "key": "baseline-visibility-normal-mochi-1-350",
+      "arm": "baseline-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1764,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1764,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-visibility-normal-panko-1-125",
+      "arm": "baseline-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1516,
+            "1": 128,
+            "2": 86,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1516,
+            "1": 128,
+            "2": 86,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-visibility-normal-panko-1-225",
+      "arm": "baseline-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-visibility-reduced-panko-1-125",
+      "arm": "baseline-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1608,
+            "1": 233,
+            "2": 161,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1608,
+            "1": 233,
+            "2": 161,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-visibility-reduced-panko-1-225",
+      "arm": "baseline-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-opacity-normal-mochi-1-350",
+      "arm": "candidate-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1599,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1599,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-opacity-normal-panko-1-125",
+      "arm": "candidate-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1226,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1226,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-opacity-normal-panko-1-225",
+      "arm": "candidate-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-opacity-reduced-panko-1-125",
+      "arm": "candidate-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-opacity-reduced-panko-1-225",
+      "arm": "candidate-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-opacity-normal-mochi-1-350",
+      "arm": "baseline-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1764,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1764,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-opacity-normal-panko-1-125",
+      "arm": "baseline-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1516,
+            "1": 128,
+            "2": 86,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1516,
+            "1": 128,
+            "2": 86,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-opacity-normal-panko-1-225",
+      "arm": "baseline-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-opacity-reduced-panko-1-125",
+      "arm": "baseline-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1608,
+            "1": 233,
+            "2": 161,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1608,
+            "1": 233,
+            "2": 161,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline-opacity-reduced-panko-1-225",
+      "arm": "baseline-opacity",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-visibility-normal-mochi-1-350",
+      "arm": "candidate-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1599,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1599,
+            "1": 133,
+            "2": 87,
+            "4": 45
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-visibility-normal-panko-1-125",
+      "arm": "candidate-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1226,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1226,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-visibility-normal-panko-1-225",
+      "arm": "candidate-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 501,
+            "1": 130,
+            "2": 89,
+            "4": 38
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-visibility-reduced-panko-1-125",
+      "arm": "candidate-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    },
+    {
+      "key": "candidate-visibility-reduced-panko-1-225",
+      "arm": "candidate-visibility",
+      "allStateExact": true,
+      "allRgbExact": false,
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "counts": {
+            "0": 1318,
+            "1": 235,
+            "2": 164,
+            "4": 81
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "counts": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "4": 0
+          }
+        }
+      ]
+    }
+  ],
+  "decision": "REJECT unchanged Mochi-only lower-label proposal:86/88 candidate samples intersect native Clover body+6 bounds;6 association failures, including31.958607px displacement at250ms and1.628043px body gap at350ms in normal Mochi basic. Exact body/rules/other-label pairs preserved. These are conservative geometry failures, not established painted-body intersections. Both conceal methods fail ordinary RGB restoration in all20cases, despite identical untouched/sham/repeat controls and6400statechecks. No method advantage or source adoption.",
+  "process": {
+    "pid": 69941,
+    "exit": 0,
+    "completedUTC": "2026-11-18T17:13:15.372397+00:00",
+    "groupEmptyUTC": "2026-11-18T17:13:20.073326+00:00",
+    "explicitLeaseReleasedUTC": "2026-11-18T17:13:34Z"
+  },
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "limits": [
+    "All176samples include156geometryrows+20capturestates;88candidate includes duplicatecase times. Six association failures are not six independent encounters.",
+    "Fresh method-development data, not heldout acceptance.",
+    "Native Clover is existing placeholder, not commissioned media.",
+    "All strict paint thresholds and prior failures retained.",
+    "Two conceal methods failed:stop method switching without sharper study."
+  ],
+  "next": "Inspect four new measured untouched preview images for qualitative owner association, preserve rejection;then study structural placement constraint rather than refit offsets."
+}
