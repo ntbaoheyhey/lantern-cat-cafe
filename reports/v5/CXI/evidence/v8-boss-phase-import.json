@@ -1,0 +1,47 @@
+{
+  "utc": "2026-11-18T09:07:41.782442+00:00",
+  "laneCommit": "ccb209d07",
+  "receipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-boss-phase-natural-R1.json",
+    "sha256": "1c242afbbf922e5b8a6bc793c8917e630df6e1b30ae4a6fb7400d967af8da830"
+  },
+  "rawVerified": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-phase-natural-R1/report.json",
+    "sha256": "1c02c1479947024be1538d794ee65984542850a121d0fe30a1b3dd717c05b47f"
+  },
+  "exactFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/boss-phase.ts",
+      "sha256": "4bed5574784a4a73dc491d7f90da4b0ffeaac0a8f135d6288f3aebeb61e84725",
+      "parentMatched": true
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/boss-phase.test.ts",
+      "sha256": "4afece20349ff018c1cf82e4db5d4ccfcf76a2f19e73da10782acc6f6723ec61",
+      "parentMatched": true
+    }
+  ],
+  "review": "160ms outgoing portrait yield follows actual actor age; round-status and persistent aura retained; later phase and battle reset clear yield history. No per-cat motion change. Natural source conflict evidence verified; production acceptance pending.",
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "kind": "focused",
+      "passed": 28,
+      "files": 3,
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-r6-focused.log",
+      "sha256": "92c92b7a85c591d4578d5eb11938858e092fd5bff58e4d7222bb6fd55a136f0b"
+    },
+    {
+      "kind": "typecheck",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-r6-typecheck.log",
+      "sha256": "ff18b5a37377e72874b511ed6e05de3ff2b2b6c6df5c23f9bbd54dd071028c34"
+    }
+  ],
+  "protected": {
+    "baseline": "c4bd12552",
+    "paths": 3833,
+    "changed": []
+  }
+}
