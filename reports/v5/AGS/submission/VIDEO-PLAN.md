@@ -11,6 +11,6 @@
 | 0:00-0:30 | Hook | Fresh desktop landing → Play free → Fight → Fight; record the real guide. |
 | 0:30-1:00 | Wave 1 | Current green wave1 film, actual 1× gameplay with browser audio; label review fixture. |
 | 1:00-1:30 | Wave 3 | Current green wave3 film, 1×; preserve its audio and frame timing. |
-| 1:30-2:00 | Boss | Current green boss film, 1×; no fabricated chain overlays. |
-| 2:00-2:35 | Result | Actual local result wording → deployed Fuji items link → README registry. No transaction panel unless a public receipt is verified. |
-| 2:35-3:00 | Outro | README quick start, architecture, evidence and owner runbook; end on game. |
+| 1:30-2:00 | Boss | Current green boss film, 1×. |
+| 2:00-2:35 | Result | Actual local result wording; no transaction sent. |
+| 2:35-3:00 | Outro | README quick start, architecture, evidence; end on game. |

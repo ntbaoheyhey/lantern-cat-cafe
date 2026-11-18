@@ -29,9 +29,6 @@
 ### A. The Café Hub & Workshop
 - Click **Café** in the navigation header to view team and crafting features.
 
-### B. Chain Integration
-- Navigate to the deployed-contract link and explain which features require configured chain services. Show a public transaction only after an owner-run transaction has produced a verified hash.
-
 ---
 
 ## 3. Network Verification Checklist
@@ -39,4 +36,4 @@
 | Test Item | Expected Result | How to Verify |
 | :--- | :--- | :--- |
 | **Guest Mode** | Play locally | Click "Play free". |
-| **Integration** | Optional signed-voucher | Configure services as documented. |
+| **Integration** | Optional integration | None (Local only). |
