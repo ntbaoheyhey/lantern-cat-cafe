@@ -7,3 +7,5 @@ Tự nhắc CXV vẫn ACTIVE mỗi15phút, giữ nguyên nội dung. V7 đã ho�
 Panko đã nối kỹ năng1giây với trạng thái chờ liên tục: đầu/cuối lưới và ảnh khớp tuyệt đối, mốc cast250/hit550ms được khớp vào va chạm luật350ms. Chiêu cuối2.2giây vẫn giữ nguyên. Đã gửi CXI kiểm tra độc lập; tám mèo còn lại dùng bộ xương khác nên đang nghiên cứu riêng.
 
 M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và mối nối mesh đúng0;diện tích tam giác nhỏ nhất0.622. Đã xem4ảnh so sánh227px một lần. Chuyển động còn nhẹ; cần bỏ lắc toàn thân cũ và kiểm tra cast/reduced trước READY.
+
+2026-11-18T05:32:21.924808+00:00 Mallow: idle10giây và cast1giây đã qua kiểm tra6310;31test/TSC0. Chân và đường nối vòng lặp không dịch; hit350ms khớp.55s ở cả hai chế độ. R1cast bị sai attack, R2 đã sửa/đo lại. READY phạm vi motion, chưa phải nghiệm thu bản judge; vùng HUD còn chạm cây đánh trứng.
