@@ -6,12 +6,13 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {loadRules} from '../cardrpg-big/a4-load.mjs';
 import {waitForBattleReady} from '../v4ship-lab/rehearsal/battle-ready.mjs';
+import {readBuildIdentity} from './build-identity.mjs';
 const root=resolve(import.meta.dirname,'../..'),req=createRequire(resolve(root,'apps/web/package.json'));
 export const {chromium}=req('@playwright/test');
 export const config=JSON.parse(readFileSync(resolve(root,'scripts/v3a2/fixtures.json')));
 export const judgeUrl='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
 const hash=data=>createHash('sha256').update(data).digest('hex');
-export function runtimeEvidence(){return{indexSha256:hash(readFileSync(resolve(root,'apps/web/dist/index.html'))),harnessSha256:hash(readFileSync(import.meta.filename))};}
+export function runtimeEvidence(){const indexSha256=hash(readFileSync(resolve(root,'apps/web/dist/index.html')));return{indexSha256,...readBuildIdentity(root,indexSha256),harnessSha256:hash(readFileSync(import.meta.filename))};}
 export async function openFixture(browser,fixture,{setupPage}={}){
  for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
  assert.equal(hash(Buffer.from(await(await fetch(judgeUrl)).arrayBuffer())),runtimeEvidence().indexSha256);

@@ -1,5 +1,15 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {resolve} from 'node:path';
+
+/** Optional shared descriptor for browser gates whose existing CLI takes positional arguments. */
+export function readBuildIdentity(root,indexSha256) {
+ const descriptorPath=process.env.CXI_BUILD_DESCRIPTOR?resolve(root,process.env.CXI_BUILD_DESCRIPTOR):undefined;
+ return buildIdentity({indexSha256,descriptorPath,descriptorBytes:descriptorPath?readFileSync(descriptorPath):undefined,
+  captureCheckoutCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim()});
+}
 
 /** A checkout HEAD is not proof of the source used by an older served build. */
 export function buildIdentity({captureCheckoutCommit,indexSha256,descriptorBytes,descriptorPath}) {

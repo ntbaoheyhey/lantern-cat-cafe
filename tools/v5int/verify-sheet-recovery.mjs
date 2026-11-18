@@ -5,6 +5,7 @@ import {mkdirSync,readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
+import {readBuildIdentity} from './build-identity.mjs';
 const root=resolve(import.meta.dirname,'../..'),label=process.argv[2];
 assert(/^[a-z0-9-]+$/.test(label??''),'Use a fresh evidence label');
 const stop=()=>{for(const file of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+file),'STOP: '+file);};stop();
@@ -12,7 +13,7 @@ const dir=resolve(root,'work/v5/CXI/recovery',label);assert(!existsSync(dir));mk
 const url='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3',hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const indexSha256=hash(readFileSync(resolve(root,'apps/web/dist/index.html')));
 assert.equal(hash(Buffer.from(await (await fetch(url)).arrayBuffer())),indexSha256);
-const report={url,utc:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256,viewport:{width:1280,height:720},scope:'Intentional route module abort and stalled download. Ordinary guest controls and real timers. These failures are injected and do not reproduce an identified AGS network trace.',rows:[],complete:false};
+const report={url,utc:new Date().toISOString(),...readBuildIdentity(root,indexSha256),indexSha256,viewport:{width:1280,height:720},scope:'Intentional route module abort and stalled download. Ordinary guest controls and real timers. These failures are injected and do not reproduce an identified AGS network trace.',rows:[],complete:false};
 const save=()=>writeFileSync(resolve(dir,'report.json'),JSON.stringify(report,null,2)+'\n');
 const require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test'),sharp=require('sharp');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});

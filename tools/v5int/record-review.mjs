@@ -5,6 +5,7 @@ import {mkdirSync,readFileSync,writeFileSync,existsSync,statSync} from 'node:fs'
 import {resolve} from 'node:path';
 import {execFileSync,spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
+import {readBuildIdentity} from './build-identity.mjs';
 import {loadRules} from '../cardrpg-big/a4-load.mjs';
 import {waitForBattleReady} from '../v4ship-lab/rehearsal/battle-ready.mjs';
 import {installOutputCapture} from '../../scripts/audio/capture-page.mjs';
@@ -18,7 +19,7 @@ const url='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3',setupUrl
 const index=readFileSync(resolve(root,'apps/web/dist/index.html'));assert.equal(hash(Buffer.from(await (await fetch(url)).arrayBuffer())),hash(index),'Preview differs from built artifact');
 const req=createRequire(resolve(root,'apps/web/package.json')),{chromium}=req('@playwright/test');
 const config=JSON.parse(readFileSync(resolve(root,'scripts/v3a2/fixtures.json'))),modules=await loadRules(),R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');
-const report={utc:new Date().toISOString(),url,setupUrl,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),indexSha256:hash(index),viewport:{width:1280,height:720},seconds,method:'Real-time 1x browser gameplay. Official seed71 level6 squad fixtures selected through existing review API, then dev query removed before recording; no injected HP, damage, rage, result, frame stepping or generated footage. Actual browser audio output tee; native viewport video, trimmed at approximate wall-clock playback start (not frame-exact sync). Fixtures are not the ordinary guest journey or real Fuji proof.',rows:[],complete:false};
+const report={utc:new Date().toISOString(),url,setupUrl,...readBuildIdentity(root,hash(index)),indexSha256:hash(index),viewport:{width:1280,height:720},seconds,method:'Real-time 1x browser gameplay. Official seed71 level6 squad fixtures selected through existing review API, then dev query removed before recording; no injected HP, damage, rage, result, frame stepping or generated footage. Actual browser audio output tee; native viewport video, trimmed at approximate wall-clock playback start (not frame-exact sync). Fixtures are not the ordinary guest journey or real Fuji proof.',rows:[],complete:false};
 const save=()=>writeFileSync(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
