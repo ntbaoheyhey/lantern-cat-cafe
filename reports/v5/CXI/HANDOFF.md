@@ -1,9 +1,9 @@
 # CXI V7 continuation
 ACTIVE: toast accepted; four scoped native halfAVIF conversions and remaining CXV review; assistant: AGS.
-NEXT 1: Apply verified T10 two-file patch;build combined candidate;run own T9 fallback and T10 notice probes.
+NEXT 1: Build scoped T10 + nativehalf candidate;run own T9 fallback and T10 notice probes;release browser toCXV.
 NEXT 2: Pending11path source reviewed;own offline stationary2800pairs and80posemasks PASS;native production parity still needed before imports.
 NEXT 3: Continue I-B wave3gap230950B;review AGS/AGV deliveries;maintain six useful AGS TASKs.
-Last pushed09f9ad794;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
+Last pushed8dc3354c3;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
 Serving unreleasednativehalf appe8909ffac;index84dcbf2677fb271f0c0b9f9c303c0e404ab6879884b99a9d053a0440769b10a9;savedm1.13 intact.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:13Z;neverdelete/duplicate.
 Last RULES read2026-11-18T04:14:52.508146+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
