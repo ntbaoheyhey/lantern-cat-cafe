@@ -8,7 +8,8 @@ import {createHash} from 'node:crypto';
 import sharp from 'sharp';
 const root=resolve(import.meta.dirname,'../..'),req=createRequire(resolve(root,'apps/web/package.json')),engines=req('@playwright/test');
 const label=process.argv[2]??'four-plane-roi-r1';assert(/^[a-z0-9-]+$/.test(label));
-const folder=resolve(root,'work/v5/CXI/batch-m',label),out=resolve(folder,'native');
+const nativeLabel=process.argv[3]??'native';assert(/^[a-z0-9-]+$/.test(nativeLabel));
+const folder=resolve(root,'work/v5/CXI/batch-m',label),out=resolve(folder,nativeLabel);
 try{await access(out);throw Error('Preserve prior native evidence');}catch(e){if(e.code!=='ENOENT')throw e;}await mkdir(out,{recursive:true});
 const study=JSON.parse(await readFile(resolve(folder,'report.json'))),trial=study.trials.find(t=>t.mode==='ycrcb');assert(trial);
 const data=await readFile(trial.video),source=await readFile(resolve(root,'work/v5/CXI/batch-m/packed-vp9-256-r1/source.rgba'));
@@ -35,7 +36,7 @@ try{
     const gl=canvas.getContext('webgl',{alpha:false,antialias:false,preserveDrawingBuffer:true});if(!gl)throw Error('WebGL unavailable');
     const shader=(kind,text)=>{const s=gl.createShader(kind);gl.shaderSource(s,text);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;};
     const program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,'attribute vec2 pos;void main(){gl_Position=vec4(pos,0.,1.);}'));
-    gl.attachShader(program,shader(gl.FRAGMENT_SHADER,`precision highp float;uniform sampler2D packed;uniform vec2 size;uniform float mode;void main(){vec2 q=vec2(gl_FragCoord.x/size.x,1.-gl_FragCoord.y/size.y)*.5;float y=texture2D(packed,q).r;float cr=texture2D(packed,q+vec2(.5,0.)).r-128./255.;float cb=texture2D(packed,q+vec2(0.,.5)).r-128./255.;float a=texture2D(packed,q+vec2(.5,.5)).r;vec3 rgb=clamp(vec3(y+1.403*cr,y-.714*cr-.344*cb,y+1.773*cb),0.,1.);gl_FragColor=vec4(mode>1.5?vec3(a):clamp(rgb+vec3(mode)*(1.-a),0.,1.),1.);}`));
+    gl.attachShader(program,shader(gl.FRAGMENT_SHADER,`precision highp float;uniform sampler2D mediaTex;uniform vec2 size;uniform float mode;void main(){vec2 q=vec2(gl_FragCoord.x/size.x,1.-gl_FragCoord.y/size.y)*.5;float y=texture2D(mediaTex,q).r;float cr=texture2D(mediaTex,q+vec2(.5,0.)).r-128./255.;float cb=texture2D(mediaTex,q+vec2(0.,.5)).r-128./255.;float a=texture2D(mediaTex,q+vec2(.5,.5)).r;vec3 rgb=clamp(vec3(y+1.403*cr,y-.714*cr-.344*cb,y+1.773*cb),0.,1.);gl_FragColor=vec4(mode>1.5?vec3(a):clamp(rgb+vec3(mode)*(1.-a),0.,1.),1.);}`));
     gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));gl.useProgram(program);
     const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);const at=gl.getAttribLocation(program,'pos');gl.enableVertexAttribArray(at);gl.vertexAttribPointer(at,2,gl.FLOAT,false,0,0);
     const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL,gl.NONE);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,false);gl.uniform2f(gl.getUniformLocation(program,'size'),w,h);gl.viewport(0,0,w,h);
@@ -65,5 +66,5 @@ try{
    row.numericPass=row.loopWrapped&&row.samples.every(s=>s.foregroundWhiteMAE<=3&&s.edgeMAE<=15&&s.maskMAE<=2);report.runs.push(row);
   }catch(error){report.runs.push({engine,version:browser.version(),error:String(error)});}finally{await browser.close();}
  }
-}finally{await new Promise(r=>server.close(r));await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');await writeFile(resolve(root,`reports/v5/CXI/evidence/v8-m-${label}-browser.json`),JSON.stringify(report,null,2)+'\n');}
+}finally{await new Promise(r=>server.close(r));await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');await writeFile(resolve(root,`reports/v5/CXI/evidence/v8-m-${label}-browser${nativeLabel==='native'?'':'-'+nativeLabel}.json`),JSON.stringify(report,null,2)+'\n');}
 console.log(JSON.stringify({report:resolve(out,'report.json'),runs:report.runs}));
