@@ -33,7 +33,7 @@ assert verified['sourceFiles'] and verified['mediaFiles'] and verified['artifact
 (out/'artifact-verification.json').write_text(json.dumps(verified,indent=2)+'\n')
 print(json.dumps(dict(verifiedSourceFiles=len(verified['sourceFiles']),verifiedMediaFiles=len(verified['mediaFiles']),verifiedArtifacts=len(verified['artifacts']),cat=args.cat)),flush=True)
 provenance=[]
-names=['probe-action-labels.mjs','action-label-observation.mjs','measure-action-labels.py','run-media-action-labels.py','media-production-fixture.mjs','capture-full-battle-production.mjs','measure-media-battle.py','run-media-natural.py','measure-dual-media-battle.py','verify-media-battle-rules.mjs','probe-dual-media-labels.mjs','measure-dual-media-labels.py']
+names=['hud-meter-observation.mjs','verify-label-fullpaint.py','verify-lower-label-native.mjs','probe-action-labels.mjs','action-label-observation.mjs','measure-action-labels.py','run-media-action-labels.py','media-production-fixture.mjs','capture-full-battle-production.mjs','measure-media-battle.py','run-media-natural.py','measure-dual-media-battle.py','verify-media-battle-rules.mjs','probe-dual-media-labels.mjs','measure-dual-media-labels.py']
 for name in names:
  data=(r/'tools/v5vfx'/name).read_bytes();(out/name).write_bytes(data);provenance.append(dict(name=name,sha256=hashlib.sha256(data).hexdigest()))
 (out/'harness-provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')

@@ -6,6 +6,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {chromium,config,openFixture,runtimeEvidence,judgeUrl,waitForDecodedMediaFrame} from './media-production-fixture.mjs';
 import {sample,installLabelTargetShift,installLowerBodyLabel} from './action-label-observation.mjs';
+import {settleHudMeters} from './hud-meter-observation.mjs';
 import {loadRules} from '/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load.mjs';
 
 const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??''),sha=b=>createHash('sha256').update(b).digest('hex');
@@ -27,6 +28,7 @@ const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sour
  runtimeSourceSubstitutions:[],runtimeDiagnostic:{labelTarget:{...targetShift,wrapperSha256:sha(installLabelTargetShift.toString())},hiddenLabelCss:hiddenStyle,hiddenLabelCssSha256:sha(hiddenStyle)},
  plannedActions,plannedPixelCases,actions:[],rows:[],cases:[],errors:[],blockedRequests:[],pass:false};
 if(prereg.lowerBodyLabel)report.runtimeDiagnostic.lowerBodyLabel={wrapperSha256:sha(installLowerBodyLabel.toString()),scope:'Mochi complete label top=max(bodyBottom,feet)+6; original constrained layout unchanged. Native body margins are measurement gates, not injected solver obstacles.'};
+if(prereg.hudMeterSettlement)report.runtimeDiagnostic.hudMeterSettlement={...prereg.hudMeterSettlement,observerSha256:sha(settleHudMeters.toString()),fileSha256:sha(await readFile(resolve(root,'tools/v5vfx/hud-meter-observation.mjs')))};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),name);};
 const modules=await loadRules(),R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');
@@ -77,13 +79,14 @@ async function captureCase(page,condition,fixedTime){
   await Promise.all(animations.map(a=>a.ready));
   return animations.map((a,i)=>{if(a.playState!=='paused')throw Error('HUD pause not settled');return{...records[i],pausedTime:a.currentTime,playState:a.playState};});
  });
+ const hudMeterSettlement=prereg.hudMeterSettlement?await page.evaluate(settleHudMeters,prereg.hudMeterSettlement):null;
  const precondition=[];
  for(const variant of ['initial','hidden','restored']){
   const beforeHud=(await page.evaluate(sample)).hudPaintState,path=resolve(folder,'precondition-'+variant+'.png');await page.screenshot({path,scale:'css',...(variant==='hidden'?{style:hiddenStyle}:{})});
   precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString(),beforeHud,afterHud:(await page.evaluate(sample)).hudPaintState});
  }
  const before=await page.evaluate(sample),expectedFrames=Object.fromEntries(['mochi','clover'].map(cat=>[cat,Math.round(before.media[cat].decoded.mediaTime*30)]));
- const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,totalLifecycle:{before:totalBefore,after:totalAfter},hudPortraitPause,before,precondition,captures:[]};report.cases.push(entry);await save();
+ const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,totalLifecycle:{before:totalBefore,after:totalAfter},hudPortraitPause,hudMeterSettlement,before,precondition,captures:[]};report.cases.push(entry);await save();
  assert(before.paused&&(before.plan?.skillId??null)===condition.expectedPlan);
  for(const variant of ['baseline','baseline-repeat','labels-hidden','labels-hidden-repeat',...cats.map(cat=>'without-'+cat),'restored']){
   const hidden=variant.startsWith('without-')?variant.slice(8):null,hideLabels=variant.startsWith('labels-hidden')||!!hidden;

@@ -64,6 +64,8 @@ def main():
             if label['id'] not in MEDIA:continue
             overlaps=[{'id':a['id'],'area':area(label['rect'],a['body'])} for a in s['anchors'] if a['visible'] and a.get('body') and area(label['rect'],a['body'])>0]
             if overlaps:result['geometryFailures'].append({k:row[k] for k in ('mode','cat','skill','ms')}|{'labelId':label['id'],'bodies':overlaps})
+    shift=raw['runtimeDiagnostic']['labelTarget']
+    result['limits'][-1]=f"Unchanged application source; Clover R7-relative ({shift['dx']:+g},{shift['dy']:+g}) diagnostic. No ordinary-play,seam,matte or laptop acceptance."
     images_to_make=[]
     for case in raw['cases']:
         initial=case['before'];images={};state_gates=[]
@@ -75,6 +77,9 @@ def main():
         row={k:case[k] for k in ('key','mode','cat','skill','ms','frame','fixedTime','expectedFrames')};row.update(totalLifecycle=case.get('totalLifecycle'),hudPortraitPause=case.get('hudPortraitPause',[]),controls={},stateGates=state_gates,complete=set(images)==set(VARIANTS),labels=[]);result['cases'].append(row)
         if not row['complete']:row['valid']=False;continue
         for name,a,b in [('baselineRepeat','baseline','baseline-repeat'),('hiddenRepeat','labels-hidden','labels-hidden-repeat'),('restored','baseline','restored')]:row['controls'][name]=stats(delta(images[a],images[b])>0)
+        preimages={x['variant']:cv2.imread(x['path']) for x in case['precondition']}
+        row['controls']['preconditionRestoredToBaseline']=stats(delta(preimages['restored'],images['baseline'])>0)
+        row['controls']['preconditionInitialToRestored']=stats(delta(preimages['initial'],preimages['restored'])>0)
         row['valid']=all(x['count']==0 for x in row['controls'].values()) and all(all(s['gates'].values()) for s in state_gates)
         row['decodedExact']=all(abs(initial['media'][cat]['decoded']['mediaTime']-case['expectedFrames'][cat]/30)<1e-5 for cat in MEDIA);row['valid']&=row['decodedExact']
         paint=delta(images['baseline'],images['labels-hidden']);contributions={cat:delta(images['labels-hidden'],images['without-'+cat]) for cat in CATS};union=np.zeros((720,1280),bool)
@@ -97,7 +102,7 @@ def main():
     output.write_text(json.dumps(result,indent=2)+'\n')
     for case,row,baseline,hidden,union in sorted(images_to_make,key=lambda x:(-x[1]['commissionedLabelsAgainstAllFourBodies']['count'],x[0]['key']))[:4]:
         sheet=np.zeros((600,1024,3),np.uint8)
-        title='Diagnostic Mochi below body; Clover(-12,+19)' if raw.get('runtimeDiagnostic',{}).get('lowerBodyLabel') else 'Diagnostic Clover dx-12 dy+19px'
+        title=f"Clover({shift['dx']:+g},{shift['dy']:+g});"+(' Mochi below body' if raw.get('runtimeDiagnostic',{}).get('lowerBodyLabel') else ' R7 diagnostic')
         for img,left,title in [(baseline,0,title),(hidden,512,'Diagnostic: labels hidden')]:
             sheet[26:314,left:left+512]=cv2.resize(img,(512,288),interpolation=cv2.INTER_AREA);cv2.putText(sheet,title,(left+8,18),cv2.FONT_HERSHEY_SIMPLEX,.45,(240,240,240),1)
         annotated=baseline.copy();annotated[union]=(255,0,255);pts=np.argwhere(union)
