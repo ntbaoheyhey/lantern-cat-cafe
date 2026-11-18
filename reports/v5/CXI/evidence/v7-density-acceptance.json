@@ -1,0 +1,78 @@
+{
+  "utc": "2026-11-18T02:57:09.310449+00:00",
+  "applicationCommit": "13363d063016f74bdf9c9b4ddb949a4699e52df8",
+  "indexSha256": "620de9a84798370b046b379e6adff5d7abed2262c10be8bd42661ab6dddec3e6",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "scope": [
+    "c0373a1d9 battle density",
+    "d4491cbb5 renderer restart fallback",
+    "96d1e75c3 reduced drawing",
+    "f991fb117 victory density"
+  ],
+  "focusedTests": 26,
+  "buildAndTypecheck": 0,
+  "nativeProbe": "work/v5/CXI/density/v7-density-candidate/report.json",
+  "nativeProbeComplete": true,
+  "geometry": "All six battle transition keyed actor/camera/CSS comparisons exact within each motion mode.",
+  "runs": [
+    {
+      "reduced": false,
+      "battleStale": 0,
+      "victoryStale": 0,
+      "idleDraws500ms": 120,
+      "disposed": {
+        "connected": false,
+        "draws": 488
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "victoryTransitionDraws": [
+        {
+          "ratio": 2,
+          "drawsAfterInjectedEvents": 36
+        },
+        {
+          "ratio": 1.5,
+          "drawsAfterInjectedEvents": 36
+        },
+        {
+          "ratio": 1,
+          "drawsAfterInjectedEvents": 36
+        }
+      ]
+    },
+    {
+      "reduced": true,
+      "battleStale": 0,
+      "victoryStale": 0,
+      "idleDraws500ms": 0,
+      "disposed": {
+        "connected": false,
+        "draws": 8
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "victoryTransitionDraws": [
+        {
+          "ratio": 2,
+          "drawsAfterInjectedEvents": 4
+        },
+        {
+          "ratio": 1.5,
+          "drawsAfterInjectedEvents": 0
+        },
+        {
+          "ratio": 1,
+          "drawsAfterInjectedEvents": 4
+        }
+      ]
+    }
+  ],
+  "disposition": "ACCEPT bounded density/idle behavior; full release validation pending.",
+  "limits": [
+    "Reduced resolution callbacks use synthetic events; physical multi-monitor event delivery is not proven.",
+    "No general-FPS or GPU-time claim from GL draw counts.",
+    "Context-loss blank fallback remains a separate known issue under CXV repair.",
+    "Rule-resolved victory fixture is not an ordinary play-through or chain transaction."
+  ]
+}
