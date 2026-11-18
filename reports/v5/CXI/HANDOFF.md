@@ -1,20 +1,20 @@
-# CXI V7 continuation
-ACTIVE: T9fallback and T10notice accepted;preparing m1.14 validation;assistant: AGS.
-NEXT 1: After CXV explicitbrowserrelease record lease and launch work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py.
-NEXT 2: Pending11path:offline2800pairs/80posemasksPASS;nativeHUD tool syntaxchecked,notrun;after m1.14 use own drawing/contour/HUD baseline.
-NEXT 3: I-B m1.13 gap230950B/candidateunmeasured;AGVT11landing<=65000B assigned;keep six AGS TASKs open.
-Last pushedc4bd12552;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
-Serving combinedcandidate appf1aa8f49b;indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6;savedm1.13 intact.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:13Z;neverdelete/duplicate.
-Last RULES read2026-11-18T04:19:03.526105+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
-Running:none;suitePASS5374total/5361pass;browserCXV paired trials;ownfinalbrowser pipeline prepared pending explicitrelease.
-BattlecontextACCEPT:44focused/build/native2modes×5loss4restore;exactRGB/DPR2/resource retention/cleanup;6images4fresh+2hashreuse.
-Mailbox readINBOX-CXI95;USER23;LEARN92;oldreplacement snapshots preserved;append-only correction sent.
-AGS OPEN:T1exactQA,T2winners,T3loading,T5beds,T7link,T8sixcallouts;60169/75c7/1473/df8 dispositions sent;T2three awardsPARTaccepted.
-Audio30a1 unchanged6hashes/−264samples/all36cueendsfit/sourcehashesmismatch;REDO. e33stereo fixed/+24samples/−24alignment/gain differences;REDO/nointegration.
-T9 fourhalfAVIF ACCEPT94340B file saving/nativeexactalpha/2modes;originals/manifests/style preserved;fallbackPASS;final releasegates pending.
-Foreign3submission+2QAfiles unchanged;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875 preserved;reconcile0336+0354+0416 snapshots retained.
-m1.13 full5374=5361pass+11skip+2expectedfail;3061web;cold7667824/8230950/7743499B;wave3gap230950B;staticdelta172/172/173B.
-Firsthit20448ms incl17700reading;route10037ms;recovery635/8677ms;ordinary0errors;3actual30sfilms;8images6fresh+2hashreuse.
-Saved work/v5/CXI/releases/v5-m1.13-dist290253430B;publicFuji absent;hosting/fundedFuji/contracts/main/submission owner-only.
-Neverreopen prior packed2/m111seven/density8/context4/m112six/battlecontext4/m113six;exactduplicates not reopened;toast2 freshviewedonce and accepted;zero overlap/clicks pass;notice4+2diagnostic freshviewedonce.
+# CXI V8 continuation
+ACTIVE:Batch M L1/L3 study and source ingest audit;assistant: AGS;study started04:26:01Z/no app adoption before04:41:01Z and evidence gates.
+NEXT 1: Copy designerMP4s into ignored work/v5/CXI/batch-m/sources;record hashes/ffprobe and inspect measured contact sheets;research EN/ZH L3.
+NEXT 2: Finish L1 motion timing tables withCXV;choose delivery from alpha/bytes/RAM/fallback experiment;then ingest Mochi/Clover under units only.
+NEXT 3: Own M-I2 edge/halo/seam/height/cold/frame gates;integrate passing BatchM READY;Soot paths+semantic entries must remain exact.
+Last pushed1a5eead60;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
+Live6301 unreleased appf1aa8f49b/indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6;not BatchM yet.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified04:26Z;unchanged/neverdelete.
+Last RULES read2026-11-18T04:27:54.586278+00:00;STOP absent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:none;CXV holds browser;old m1.14 browser request withdrawn for BatchM priority;no automatic pipeline launch.
+Mailbox readINBOX-CXI96;USER24;LEARN92;read new lines only;all prior snapshots preserved.
+AGS OPEN priority:T-M1delivery/licensing research,T-M2conversion trials256/384/512catheight,T-M3Vietnamese friend draft;olderT1/T2/T3/T5/T7/T8 deferred.
+BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
+Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
+Deferredm1.14:toast/T9fourhalfAVIF/T10notice ACCEPT;build+fullsuite5374=5361pass+11skip+2expectedfail;nativefallback2modes;finalbrowsergates unrun.
+Deferredm1.14 script work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py requires explicitlease;prepare-m114-evidence.py unrun;scope8paths only.
+DeferredCXV11paths:offline2800geometry/80posemaskPASS;ownHUDtoolsyntaxchecked/notrun;Panko separate;do not alter Soot inBatchM.
+Foreign3submission+2QAfiles preserved;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875;reconcile0336+0354+0416.
+Savedm1.13artifact290253430B;oldcold7667824/8230950/7743499B;newcandidatecoldunmeasured;publicFuji absent;owner-only boundaries retained.
+Neverreopen prior packed/m111/density/context/m112/battlecontext/m113/toast/nativehalf/notice reviewed images;raw histories on disk.

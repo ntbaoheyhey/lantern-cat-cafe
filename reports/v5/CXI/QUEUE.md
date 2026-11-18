@@ -1,3 +1,12 @@
+# CXI V8 — Batch M first
+M-I1 ACTIVE:learnL1/L3/sourceaudit,then Mochi+Clover transparentdesigner idle ingest;no app adoption before04:41:01Z+study/evidence.
+M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
+M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
+SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
+AGS priorityOPEN:T-M1L3research,T-M2threeheighttrials,T-M3frienddraft;older6tasks deferred.
+CXV coordinationOPEN:L1/L2/L4,rig/stage hooks and11catcast/9othercatidle;AGVT11landing afterBatchM.
+
+Deferred V7 work and retained evidence
 # CXI V7 assignments — evidence required
 I-A DONE/REPEAT:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;v5-m1.13@4e5fe161a atomicpush+remoteverified.
 I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;4halfAVIFACCEPT94340B saving+nativefallbackPASS;candidatecoldpending;AGVT11landing assigned;AGS audioREDO/nointegration.
