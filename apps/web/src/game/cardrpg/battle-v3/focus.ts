@@ -5,23 +5,27 @@ import type {Rect} from '../../squad/turn3d/label-layout';
 export class CasterFocus {
  readonly root=new T.Group();
  private source?:T.Group;
+ private preserveSourceShader=false;
  private copies:{source:T.Mesh;mesh:T.Mesh;dx:number;dy:number;alpha:number}[]=[];
  private tint=new T.Color();
  constructor(){this.root.name='caster-focus-outline';}
- render(source:T.Group|undefined,color:string,amount:number,pixelsToWorld:number){
+ render(source:T.Group|undefined,color:string,amount:number,pixelsToWorld:number,preserveSourceShader=false){
   if(!source||amount<=0){this.root.visible=false;return;}
-  if(this.source!==source){
-   this.clear();this.source=source;
+  if(this.source!==source||this.preserveSourceShader!==preserveSourceShader){
+   this.clear();this.source=source;this.preserveSourceShader=preserveSourceShader;
    source.traverse(node=>{if(!(node instanceof T.Mesh))return;
     for(const [dx,dy,alpha] of [[-4,0,.18],[4,0,.18],[0,-4,.18],[0,4,.18],[-2,0,.8],[2,0,.8],[0,-2,.8],[0,2,.8]]){
-     const material=(node.material as T.MeshBasicMaterial).clone();
+     const sourceMaterial=node.material as T.MeshBasicMaterial,material=sourceMaterial.clone();
      material.transparent=true;material.depthWrite=false;material.depthTest=false;
-     material.onBeforeCompile=shader=>{
+     material.onBeforeCompile=(shader,renderer)=>{
+      // Commissioned media reconstructs alpha from packed opaque video planes.
+      // Preserve that decoder before replacing only the outline's final color.
+      if(preserveSourceShader)sourceMaterial.onBeforeCompile(shader,renderer);
       shader.uniforms.focusTint={value:this.tint};
       shader.fragmentShader='uniform vec3 focusTint;\n'+shader.fragmentShader;
       shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>','outgoingLight = focusTint;\n#include <opaque_fragment>');
      };
-     material.customProgramCacheKey=()=> 'v3-feel-caster-outline';
+     material.customProgramCacheKey=()=> preserveSourceShader?`v3-feel-caster-outline:${sourceMaterial.customProgramCacheKey()}`:'v3-feel-caster-outline';
      const mesh=new T.Mesh(node.geometry,material);mesh.matrixAutoUpdate=false;mesh.frustumCulled=false;
      this.root.add(mesh);this.copies.push({source:node,mesh,dx:dx!,dy:dy!,alpha:alpha!});
     }
