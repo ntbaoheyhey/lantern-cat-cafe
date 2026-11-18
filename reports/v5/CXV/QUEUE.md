@@ -135,5 +135,5 @@
 2026-11-18T04:19:24.904675+00:00 [x] T-CXI-10 independently ACCEPTED e570e63a3 onCXIcombinedf1aa8f49b;nativeown40tests/TSC0+CXI2modefreshreview/exactRGB. V7-F-battle-notice-accepted.json.
 2026-11-18T04:21:34.142541+00:00 [ ] V-F transaction actualCSS prototype PASS80geometry/8RGB/throwcleanup/15tests/TSC0;production pairedseries next afterCXIfullsuite exit,04:26:01Zadoptiongate.
 
-- ACTIVE Clover spout source300frames PASS (.93766mincorr/.1603pxseam,9manualcontrols), two freshplots once; independentdelivery/scene next. Head/off/hp geometry perCXI09:50; nosefixedtemplate.5778REJECT retained.
+- ACTIVE Clover full idle/cast comparisons on93498388c;nativeHP/spout scopedPASS56states/4actions/10glints,5sheets reviewedonce;M-clover-hp-native-R1.json.
 - REJECTED rigid tail:92core failures reproduced;new28px visiblecloth contaminates27core/7independenttail targets;no material/hiddenlayer correspondence. M-clover-rigid-occlusion-R1.json.

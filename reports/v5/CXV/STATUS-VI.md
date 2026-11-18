@@ -13,3 +13,5 @@ AGV: R10 bị loại trước khi xem vì tăng 65.160 byte so với bản đang
 2026-11-18T10:17:50.683531+00:00: Điểm neo mặt/bàn tay Clover thử đường cong tuần hoàn từ16khung riêng: không đạt kiểm tra độc lập (mặt8/9,bàn tay4/9). Giữ nguyên ngưỡng và bằng chứng; chưa đưa vào game. Điểm vòi ấm đã gửi CXI để kiểm tra bộ nạp.
 
 2026-11-18T10:26:39.812063+00:00: Neo HP Clover theo quy ước chiều cao hiện có đạt khoảng cách an toàn trong hình học: kiểm tra6006tư thế, tối thiểu52.87đơn vị; cận bảo thủ48.51. Chưa kết luận độ rõ trong cảnh1280×720. Vòi ấm đạt kiểm tra adapter riêng; chờ ứng viên giải mã để tự quay kiểm chứng.
+
+2026-11-18T11:11:49.273583+00:00: Clover đã đạt kiểm tra riêng điểm phát sáng và nhãn HP trên bản93498388c:56mẫu,4hành động,10đốm sáng,không lỗi;không che thân hay nhãn khác,khoảng cách nhỏ nhất19,30px. Cả5ảnh ghép mới đã xem một lần. Chưa nghiệm thu toàn bộ idle/cast,viền,đuôi,vòng lặp,ngân sách hoặc hiệu năng.
