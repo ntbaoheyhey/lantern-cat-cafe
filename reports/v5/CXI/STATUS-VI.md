@@ -1,5 +1,5 @@
 # V8 Batch M
-Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập trung và TypeScript;5120 ca so sánh giữ nguyên chuyển động/mesh dùng chung,3833 đường dẫn Soot không đổi. Chưa bật Batch M trên bản đang mở. Mochi/Clover còn kiểm tra viền, vòng lặp, vị trí và dung lượng; sửa đuôi Clover R6 bị loại, R5 chưa được chấp nhận.
+Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hành ởv5-m1.14. Bản thử Mochi/Clover R4 đạt348mẫu/696so sánh đầu-tay/4hành động, HP không chồng hình và10nguồn hiệu ứng đúng;4ảnh mới đã xem. Chưa phát hành media vì matte/halo và vòng đuôi còn mở. Dung lượng chỉ báo cáo; các dòng lịch sử có giới hạn8MB đã bị thay thế bởi lệnh owner12:09:40Z.
 
 2026-11-18T05:47:08.972148+00:00 — Panko đã kiểm tra trên bản production: chân và gốc không trôi trong vòng10giây ở cả hai chế độ; skill350ms khớp mốc.55,ult1100ms khớp1.1. Phim so sánh cùng chiều cao/tốc độ và5ảnh mới đã duyệt. Chưa phát hành vì còn ngân sách tải/hiệu năng. Mallow nhập có giới hạn,16test+typecheck đạt;2464ca so sánh mã dùng chung khớp,3833đường dẫn bảo vệ không đổi.
 
@@ -40,3 +40,9 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T11:53:03.364738+00:00: Bản thử chỉ có 9 mèo native đang chạy ở6301;Mochi/Clover chưa bật trong bản phát hành. Wave1/boss đạt8MB,wave3 còn vượt39.216byte. Đã kiểm chứng lại65khung Clover:điểm nối đuôi vẫn nhảy,không do chân/gốc bị dịch;chưa chấp nhận chất lượng viền/halo. Nghiên cứu nén dữ liệu rig không mất số liệu;chưa tích hợp. Bản phát hành vẫn v5-m1.13.
 
 2026-11-18T12:19:33.429998+00:00 — NativeR2 qua5.552kiểm tra(5.539đạt,11bỏqua,2lỗi dự kiến),7bước browser và3phim thật30giây;đòn đầu20,880giây.9ảnh mới đã xem. Chuẩn bị tagv5-m1.14 cho9mèo native;Mochi/Clover commissioned chưa bật. Owner bỏ8MB nên tải7.591.445/8.030.924/7.624.476byte chỉ báo cáo.
+
+2026-11-18T12:52:08.533839+00:00 — Bản phát hành v5-m1.14 giữ nguyên 9 mèo native. Hai thử nghiệm lấy mẫu Clover đạt300khung trên Chromium/WebKit; bản318×390 giữ nguyên148.824.000byteRGBA, chuẩn bị kiểm tra trong sân đấu. Chưa chấp nhận viền/halo/nối đuôi. LandingR12 đã duyệt hình và đưa vào nguồn; dung lượng chỉ báo cáo.
+
+2026-11-18T13:00:45.058553+00:00 — Clover R5 giữ nguyên matte318×390: 696 kiểm tra mốc mặt/tay và10nguồn hiệu ứng đạt;4ảnh sân đấu mới đã xem. Phim đối chiếu300khung/10giây/30fps cao227px hoàn thành;2ảnh đối chiếu đã xem. Nối đuôi vẫn lỗi: MAE 11.158 so với trung vị lân cận 2.248; chưa phát hành media.
+
+2026-11-18T13:09:01.623723+00:00 — NativeR3 đạt7cổng browser mới, đòn đầu21,163giây,3phim30giây và6ảnh mới xem một lần. Chuẩn bị v5-m1.15 với landingR12; bộ5.556kiểm tra được kế thừa vì mã ứng dụng chỉ khác texture đã duyệt. Media Mochi/Clover vẫn chưa phát hành;59hash âm thanh và3.833đường dẫn bảo vệ không đổi.

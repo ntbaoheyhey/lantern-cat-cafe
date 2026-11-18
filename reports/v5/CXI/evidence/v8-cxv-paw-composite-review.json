@@ -1,0 +1,97 @@
+{
+  "utc": "2026-11-18T12:32:19.497700+00:00",
+  "sources": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-paw-adapter-R6-r1.json",
+      "sha256": "6e296ebdece76d13f8474ddc641552b381f5220bf0a208c1c2f6bcedaaea4661"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-composite-R1.json",
+      "sha256": "f2bcf584699c4c857dd5827832266848ef2199c6067e951d637d88ffa2227129"
+    }
+  ],
+  "verifiedArtifacts": {
+    "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-paw-delivery-R6.json": "0b67087d18f3b8c8008dab6131036fd588e528811e27464be76de8e87e47ca54",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-loader.ts": "fd8fbd113b4d4aed445632b57316c8d7daa9778df2b78388f225929e884172c5",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-actor-loader.ts": "ead187c024ad071d650d8d3ba2c23beb2172ea9426bad3b03c093f168e554d30",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/living-cat-cast.ts": "b3c0ea8a3d185a3a2e89958b646852c7247b0032c809d1b2b74a8e38334edf6b",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/config.ts": "84d35ed500f0de848d4d32591b4298e58cc62362cd854d188023258dad1d18d5",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-registry.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-clover-paw-adapter.mjs": "aa3587501d4bb85e1f5b6e1320116669d3f0c4338452ad3419bfbc31916b200c",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-media-composite.py": "8c04c9b81e86796c18d989851d3687fa0a834c4be1f7450fbfd73b64c8a32e9a",
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/designer-idle-loader.snapshot.ts": "94c4124c8c1b306b516b2b113f3509d0753dcbd4f0ca8d00df97c9e337890617",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/local-color-matte-all-r1/source.rgba": "56f0d02e74e385f4f3e048e087af59c130931fa4afdb74bd6e391fa51eb8c1d6",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/four-plane-local-vslow-q22-r1/report.json": "b4b32a848d575ceb54ab7aa393d0893d612a5f07502bfdfce6895b6905854b2b",
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/mochi-rows.json": "1992ca7bfd31f7c19b17bd8f6bba855b1679440362ed49601f06fa9f970f2432",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/source.rgba": "21fd9e6e159cbb1390c96dfc1b3dab4dffaa96d1ecb16ed7a97b0cbfcdecb7ac",
+    "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/report.json": "8bfb6feb15a70efb27c4e5e6b58779e5670a362aca204322d0c5e7699e268067",
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-composite-R1/clover-rows.json": "76658f9bf6475ace25ec7f660dd1629909cd057159bf9a91c3f6e6851cb2ee03"
+  },
+  "artifactCount": 15,
+  "paw": {
+    "decision": "ACCEPT scoped arithmetic receipt;independent CXI adapter already passes;native gate separate",
+    "idle": 2100,
+    "cast": 3600,
+    "isolationEachDirection": 300
+  },
+  "composite": {
+    "decision": "ACCEPT raw numerical diagnostic only;no shader/art acceptance",
+    "independentMethod": "Integer max(RGB-alpha,0) over all600frames;compare each reported stratum and affected count. No lane script executed.",
+    "cats": [
+      {
+        "cat": "mochi",
+        "affectedPixels": 142176,
+        "zeroAlphaColorPixels": 8236,
+        "maxExcess": 33,
+        "strata": {
+          "all": {
+            "pixels": 24336000,
+            "encodedBlackMAE": 0.006480426802542187
+          },
+          "edge": {
+            "pixels": 1538050,
+            "encodedBlackMAE": 0.09896882416046292
+          },
+          "opaque": {
+            "pixels": 9365015,
+            "encodedBlackMAE": 0.0
+          },
+          "zeroAlpha": {
+            "pixels": 13432935,
+            "encodedBlackMAE": 0.00040859772392754575
+          }
+        }
+      },
+      {
+        "cat": "clover",
+        "affectedPixels": 115635,
+        "zeroAlphaColorPixels": 9196,
+        "maxExcess": 3,
+        "strata": {
+          "all": {
+            "pixels": 16536000,
+            "encodedBlackMAE": 0.0036419529108208354
+          },
+          "edge": {
+            "pixels": 784737,
+            "encodedBlackMAE": 0.06866546796357675
+          },
+          "opaque": {
+            "pixels": 6490415,
+            "encodedBlackMAE": 0.0
+          },
+          "zeroAlpha": {
+            "pixels": 9260848,
+            "encodedBlackMAE": 0.0006844945516868434
+          }
+        }
+      }
+    ]
+  },
+  "imagesViewed": 0,
+  "bytePolicy": "report-only",
+  "limitations": [
+    "RGB>alpha cannot distinguish glow from alpha-estimation error.",
+    "Aggregate clamp loss does not establish anatomy/matte/fringe/halo/native performance."
+  ]
+}

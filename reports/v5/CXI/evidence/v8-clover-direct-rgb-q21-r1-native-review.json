@@ -1,0 +1,58 @@
+{
+  "utc": "2026-11-18T12:52:08.533839+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-direct-rgb-q21-r1/native-all-r1/report.json",
+    "sha256": "c562bf83774546e2c4c0ad42937f51ef8ea800cf4f23c9e40cd16e9dfe7263f1"
+  },
+  "video": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-direct-rgb-q21-r1/ycrcb-crf21.mp4",
+    "sha256": "82b5827a86f607ef2832e6f9d36f0ecb81c5c7fecaa3f34f1ba3e32264761a7b",
+    "bytes": 881462
+  },
+  "sourceRgbaSha256": "d7ca11f497e9ba28fa78f1f7cbd9a676eedc7db3fed08d028b01415b9e7ef267",
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "frames": 300,
+      "uniqueOrderedFrames": true,
+      "loopWrapped": true,
+      "dimensions": [
+        212,
+        260
+      ],
+      "foregroundMean": 2.9568721483545604,
+      "maskMean": 0.46764985486211913,
+      "edgeFrameMax": 8.861519093579522,
+      "numericPass": true
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "frames": 300,
+      "uniqueOrderedFrames": true,
+      "loopWrapped": true,
+      "dimensions": [
+        212,
+        260
+      ],
+      "foregroundMean": 2.9042568998744516,
+      "maskMean": 0.47234137639090507,
+      "edgeFrameMax": 8.861379213876067,
+      "numericPass": true
+    }
+  ],
+  "thresholds": {
+    "foregroundMeanMax": 3,
+    "maskMeanMax": 2,
+    "edgeFrameMax": 15
+  },
+  "independentlyRecomputed": true,
+  "imagesMeasured": 4,
+  "imagesViewed": 0,
+  "decision": "PASS standalone decoder compression only; authorize isolated scene study",
+  "artAccepted": false,
+  "loopArtAccepted": false,
+  "bytePolicy": "report-only",
+  "limits": "Compression is compared to pinned matte; no recovered alpha, fringe, halo, anatomy, seam or laptop performance claim."
+}

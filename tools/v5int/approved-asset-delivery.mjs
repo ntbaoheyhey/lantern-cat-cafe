@@ -21,7 +21,7 @@ const stop=async()=>{for(const name of ['STOP-ALL','STOP-CXI']){let exists=true;
 await stop();
 
 if(args.publish==='yes'){
- const report=JSON.parse(await readFile(reportPath));assert(report.complete&&report.budgetPass);
+ const report=JSON.parse(await readFile(reportPath));assert(report.complete); // OWNER INBOX-CXI386: bytes never block acceptance.
  const vfx={},portraits={};
  for(const row of report.rows){
   const source=await readFile(resolve(root,row.source)),encoded=await readFile(resolve(out,row.studyFile));
@@ -71,6 +71,7 @@ for(const item of inputs){
  await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');
 }
 report.totals=Object.fromEntries(['vfx','portrait'].map(kind=>[kind,report.rows.filter(r=>r.kind===kind).reduce((s,r)=>s+r.bytes,0)]));
-report.budgetPass=report.totals.vfx<=350000&&report.totals.portrait<=110000;report.complete=true;
+report.bytePolicy={mode:"report-only",releaseBlocking:false,authority:"OWNER INBOX-CXI386 2026-11-18T12:09:40Z"};
+report.withinFormerBudget=report.totals.vfx<=350000&&report.totals.portrait<=110000;report.complete=true;
 report.encoderSettings={speed,yuv:'444',range:'full',cicp:'1/13/6',alphaQuality:100,targetFrom:args['target-from']??null};
-await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({complete:true,budgetPass:report.budgetPass,totals:report.totals,reportPath}));
+await writeFile(reportPath,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({complete:true,withinFormerBudget:report.withinFormerBudget,bytePolicy:report.bytePolicy,totals:report.totals,reportPath}));

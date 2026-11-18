@@ -23,7 +23,7 @@ for name,pix,quality in trials:
   mask_errors.append(float(np.abs(alpha-f[:,:,3]).mean()));original=np.clip(f[:,:,:3]+255-f[:,:,3:4],0,255);actual=np.clip(color+255-alpha[:,:,None],0,255);errors=np.abs(actual-original)
   color_errors.append(float(errors[f[:,:,3]>16].mean()));edge_errors.append(float(errors[(f[:,:,3]>4)&(f[:,:,3]<250)].mean()))
  trial={'name':name,'video':str(video),'bytes':video.stat().st_size,'sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'foregroundMAE':float(np.mean(color_errors)),'edgeFrameMax':max(edge_errors),'maskMAE':float(np.mean(mask_errors)),'command':command}
- trial['numericPass']=trial['bytes']<=1000000 and trial['foregroundMAE']<=3 and trial['edgeFrameMax']<=15 and trial['maskMAE']<=2
+ trial['numericPass']=trial['foregroundMAE']<=3 and trial['edgeFrameMax']<=15 and trial['maskMAE']<=2
  report['trials'].append(trial);(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in trial.items() if k!='command'}),flush=True)
 report['completedUTC']=datetime.now(timezone.utc).isoformat();(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 (ROOT/'reports/v5/CXI/evidence/v8-m-codec-floor-256-study.json').write_text(json.dumps(report,indent=2)+'\n')

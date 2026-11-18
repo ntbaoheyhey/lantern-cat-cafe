@@ -56,7 +56,7 @@ for i in range(300):
     edge.append(float(error[(f[:, :, 3] > 4) & (f[:, :, 3] < 250)].mean()))
     mask.append(float(np.abs(alpha-f[:, :, 3]).mean()))
 metrics = dict(bytes=video.stat().st_size, saving=trial['bytes']-video.stat().st_size, foregroundWhiteMAE=float(np.mean(white)), foregroundBlackMAE=float(np.mean(black)), edgeFrameMax=max(edge), maskMAE=float(np.mean(mask)))
-numeric_pass = metrics['bytes'] <= 1000000 and metrics['foregroundWhiteMAE'] <= 3 and metrics['edgeFrameMax'] <= 15 and metrics['maskMAE'] <= 2
+numeric_pass = metrics['foregroundWhiteMAE'] <= 3 and metrics['edgeFrameMax'] <= 15 and metrics['maskMAE'] <= 2
 report = dict(utc=datetime.now(timezone.utc).isoformat(), source=dict(path=str(source), sha256=sha(source)),
               baseline=dict(path=str(baseline_path), sha256=sha(baseline_path), bytes=trial['bytes']),
               video=dict(path=str(video), sha256=sha(video)), harnessSha256=sha(__file__), command=command,

@@ -94,10 +94,10 @@ for cat, source_report in [('mochi', BASE/'four-plane-local-vslow-q22-r1/report.
         trial.update(video=str(video), bytes=video.stat().st_size, sha256=sha(video), streams=stream, keyframes=keys,
                      metricsPath=str(metrics_path), metricsSha256=sha(metrics_path), decodeCommand=decode_command, decodedSha256=sha(decoded_path),
                      foregroundWhiteMAE=white, edgeFrameMax=edge_max, maskMAE=mask, qualityPass=white<=3 and edge_max<=15 and mask<=2,
-                     priorVideoBytes=previous['bytes'], videoIntakePass=video.stat().st_size<=1000000,
+                     bytePolicy='report-only', priorVideoBytes=previous['bytes'], withinFormer1MB=video.stat().st_size<=1000000,
                      fragmentPath=str(fragment), fragmentSha256=sha(fragment), remuxCommand=remux_command, packetPayloadsExact=True,
                      maxRemuxPtsDelta=max(abs(float(a['pts_time'])-float(b['pts_time'])) for a,b in zip(original_packets, remux_packets)),
                      initBytes=len(init), initSha256=sha(folder/'init.mp4'), segments=segments,
                      initialSegmentBytesMax=len(init)+max(s['bytes'] for s in segments), complete=True, completedUTC=now())
-        save(); print(json.dumps({k: trial[k] for k in ['cat','gopSeconds','bytes','foregroundWhiteMAE','edgeFrameMax','maskMAE','qualityPass','videoIntakePass','initialSegmentBytesMax']}), flush=True)
+        save(); print(json.dumps({k: trial[k] for k in ['cat','gopSeconds','bytes','foregroundWhiteMAE','edgeFrameMax','maskMAE','qualityPass','withinFormer1MB','initialSegmentBytesMax']}), flush=True)
 report.update(complete=True, completedUTC=now()); save()

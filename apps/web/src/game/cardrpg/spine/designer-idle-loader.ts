@@ -1,7 +1,7 @@
 /** Bounded, per-actor designer video delivery. Only explicitly registered M/C assets use it. */
 import * as T from 'three';
 
-export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern','spout'] as const;
+export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern','spout','freePaw'] as const;
 export type DesignerSocketChannel=typeof DESIGNER_SOCKET_CHANNELS[number];
 export type DesignerIdleFormat='h264-rgb-mask'|'h264-ycrcb-alpha-four-plane';
 export interface DesignerIdleManifest {
@@ -23,7 +23,7 @@ export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManife
  for(const size of [m.width,m.height,m.opaqueHeight])if(!Number.isInteger(size)||size<1||size>1024)throw Error('Invalid designer dimensions');
  if(m.width%2||m.height%2||m.opaqueHeight>m.height)throw Error('Invalid packed video dimensions');
  if(!Array.isArray(m.foot)||m.foot.length!==2||!m.foot.every(Number.isFinite)||m.foot[0]<0||m.foot[0]>m.width||m.foot[1]<0||m.foot[1]>m.height)throw Error('Invalid designer foot anchor');
- if(!Number.isInteger(m.videoBytes)||m.videoBytes<1||m.videoBytes>1_000_000)throw Error('Designer clip exceeds per-clip intake budget');
+ if(!Number.isSafeInteger(m.videoBytes)||m.videoBytes<1)throw Error('Invalid designer clip byte count');
  for(const hash of [m.sourceSha256,m.videoSha256,m.posterSha256])if(!/^[a-f0-9]{64}$/.test(hash))throw Error('Missing designer content hash');
  for(const [path,ext] of [[m.video,'mp4'],[m.poster,'webp']])if(typeof path!=='string'||!new RegExp(`^/units/${id}/designer-idle-[a-f0-9]+\\.${ext}$`).test(path))throw Error('Designer asset escapes its owned folder');
  for(const key of ['root','hip','head','hp-anchor','vfx-origin','main-hand','off-hand']){
@@ -37,7 +37,11 @@ export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManife
  for(const [channel,frames]of Object.entries(m.socketTracks??{})){
   if(!DESIGNER_SOCKET_CHANNELS.includes(channel as DesignerSocketChannel)||!Array.isArray(frames)||frames.length!==300||frames.some(xy=>!Array.isArray(xy)||xy.length!==2||!xy.every(Number.isFinite)))throw Error('Invalid designer socket track');
  }
- for(const [socket,channel]of Object.entries(m.socketChannels??{}))if(!DESIGNER_SOCKET_CHANNELS.includes(channel)||!m.sockets[socket]||!m.socketTracks?.[channel])throw Error('Invalid designer socket channel');
+ for(const [socket,channel]of Object.entries(m.socketChannels??{})){
+  if(!DESIGNER_SOCKET_CHANNELS.includes(channel)||!m.sockets[socket]||!m.socketTracks?.[channel])throw Error('Invalid designer socket channel');
+  if(channel==='freePaw'&&(id!=='clover'||socket!=='off-hand'))throw Error('Invalid free paw socket binding');
+ }
+ if(m.socketTracks?.freePaw&&(id!=='clover'||m.socketChannels?.['off-hand']!=='freePaw'))throw Error('Invalid free paw socket binding');
  return m;
 }
 export const designerPhase=(time:number,duration=10)=>((time%duration)+duration)%duration;

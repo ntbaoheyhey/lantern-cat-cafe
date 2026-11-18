@@ -1,29 +1,22 @@
-# Bản review desktop — v5-m1.14
+# Bản review desktop — v5-m1.15
 
-Mở [game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trên máy này, giữ đầy đủ query string. Đây là preview local; chưa deploy công khai. Xác minh tag đã push ở BOARD trước khi dùng runbook.
+Bản nativeR3 đã qua các cổng phát hành, source `b9b6f172824a7daa4ba95836081cade7c472ffb6`, index `fedad6e26829f235b1a6dcda2cfc30aa7d4a90f17df9f8ab7f925352a32d265b`. Xác minh tag đã push trên BOARD trước khi dùng. Artifact đầy đủ: `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist` (293,767,093 byte). Preview6301 có thể chuyển sang thử nghiệm Mochi/Clover sau khi xuất bản; luôn đối chiếu BOARD.
 
-Ứng dụng và phim cùng source `c4108923c25a9c982b0831318e16a93cc991f8e7`; index SHA256 `fe8bdd0096a5dba4817b7c559b0a238c700fd37a453ee93f7e8b1e6e5f577c6e`. Artifact đầy đủ: `work/v5/CXI/releases/v5-m1.14-dist` (293.731.858 byte). Tag thêm tài liệu, không đổi ứng dụng đã quay.
+Mở [game1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Đây là preview local; chưa deploy công khai.
 
-## Thay đổi đã kiểm tra
+- LandingR12 đã được duyệt3ảnh desktop+3chi tiết và fallback gốc; bản này có đúng hash2ad09491f. Bản native giữ9mèo BatchM; Soot ngoài phạm vi,3.833đường dẫn bảo vệ không đổi.
+- Mochi/Clover commissioned chưa bật. R5 giữ matte318×390 và300frame/10giây, nhưng nối đuôi Clover vẫn lỗi và hình chữ nhật HP/body của đội hai media chưa đạt. Không dùng các bản thử làm bằng chứng phát hành.
+- Bộ test kế thừa từ R4 có5.543đạt+11bỏqua+2expected=5.556. Nguồn ứng dụng/test/package/assets trùng chính xác, chỉ landingAVIF thay đổi; không tuyên bố chạy lại. Bảy bước browser mới đều đạt.
+- Đòn đầu21,163giây gồm17,7giây đọc8thẻ; route→receipt9,766giây. Recovery từ chối640ms/stall8.707ms; hai chế độ khôi phụcGPU có RGB trùng tuyệt đối.
+- Tải lạnh wave1/wave3/boss7.626.520/8.065.984/7.661.355byte; chỉ báo cáo, không có giới hạn8MB. Âm thanh59artifact/hash không đổi, đường âm thanh3cảnh khớp; chưa nhận6callout thay thế.
+- Receipt ghi rõ local/no transaction và dẫn hợp đồngFuji. Chưa có giao dịchFuji thật, triển khaihosting hay nộp bài.
 
-- Chín mèo native có idle/cast theo Batch M: Panko, Mallow, Sorrel, Biscuit, Inkcap, Cinnamon, Brioche, Velvet, Marigold. 3.833 đường dẫn được bảo vệ không đổi; Soot ngoài phạm vi. Media được đặt hàng cho Mochi/Clover vẫn chưa bật, vì kiểm tra mép ảnh/halo/vòng đuôi còn mở.
-- Giữ bản sửa toast/Next, thông báo mất context, bốn halfAVIF đã nhận và atlas preload có điều kiện. Chia sẻ các cây JSON rig trùng nhau, phục hồi đầy đủ từng trường; không bỏ geometry hoặc làm tròn số. 24 test tập trung, TypeScript, build và 18 ca HTTP/SRI/stall ở Chromium/WebKit đạt.
-- Toàn bộ 5.539 test đạt, 11 bỏ qua, 2 expected failures: tổng 5.552, gồm 3.239 web. Bảy bước browser cuối đạt. Đòn đầu 20,880 giây gồm 17,7 giây đọc tám thẻ, HP165→119; route→receipt9,740 giây. Recovery chèn lỗi632/8.684ms. Hai chế độ khôi phục GPU có RGB khớp tuyệt đối và giữ luật/trạng thái.
-- Tải lạnh wave1/wave3/boss: 7.591.445 / 8.030.924 / 7.624.476 byte, tính cả public reads. Owner bỏ giới hạn8MB lúc12:09Z: các số này chỉ báo cáo. Giảm thực đo so với nativeR1 là8.449/8.292/5.397byte; không dùng ước lượng84KB làm kết quả.
-- Âm thanh đang dùng không đổi:49 artifact/10 nguồn gốc rehash đúng, đường audio ba cảnh khớp. Sáu bộ thay thế AGS chưa được nhận vì timing/gain/provenance/listening còn mở. Receipt ghi đúng local/no transaction và có link contractFuji.
+Ba phim gameplay thật1×,1280×720, mỗi phim30giây với âm thanh browser. Fixture seed71/cấp6 qua API review rồi bỏ querydev; không sửa HP/damage/rage/kết quả. Không phải bằng chứng chain; tín hiệu âm thanh đã đo, chưa nghe chủ quan hoặc xác nhận đồng bộ từng frame.
 
-## Ba phim đúng build
+| Cảnh | Phim | Contact sheet | Capture UTC | Peak/mean dBFS |
+|---|---|---|---|---|
+| wave1 | [Phim](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/wave1/wave1-30s.mp4) | [Sheet](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/wave1/contact-1024.jpg) | 2026-11-18T13:05:32.058Z | -2.6/-22.2 |
+| wave3 | [Phim](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/wave3/wave3-30s.mp4) | [Sheet](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/wave3/contact-1024.jpg) | 2026-11-18T13:06:07.182Z | -1.6/-23.2 |
+| boss | [Phim](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/boss/boss-30s.mp4) | [Sheet](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r3-final/boss/contact-1024.jpg) | 2026-11-18T13:06:42.156Z | -2.1/-21.4 |
 
-Gameplay thật1×,1280×720, âm thanh browser; mỗi phim30.000giây. Fixture seed71/cấp6 qua API review, bỏ querydev trước khi quay. Không sửa HP/damage/rage/kết quả; đây không phải bằng chứng giao dịchFuji.
-
-| Cảnh | Phim | Contact sheet | Capture UTC | Peak / mean dBFS |
-| --- | --- | --- | --- | --- |
-| wave1 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave1/wave1-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave1/contact-1024.jpg) | 2026-11-18T12:15:36.600Z | -2.4 / -22 |
-| wave3 | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave3/wave3-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/wave3/contact-1024.jpg) | 2026-11-18T12:16:11.882Z | -2.2 / -23.2 |
-| boss | [30 giây](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/boss/boss-30s.mp4) | [1024×576](/Users/bao/taskbar-hero-chain/work/v5/CXI/films/v8-native-r2-final/boss/contact-1024.jpg) | 2026-11-18T12:16:47.076Z | -2.3 / -21.3 |
-
-Ba phim có HP/round tiến triển và không lỗi console/page/HTTP.14ảnh đo;9ảnh mới xem một lần,3ảnh dùng lại hash đã review,2ảnh phục hồi trùng hệt ảnh tải ban đầu. Chưa xác minh nghe chủ quan hoặc sync từng frame. [Bằng chứng tổng hợp](evidence/v8-native-atlas-r2-release-review.json).
-
-## Còn mở
-
-Mochi/Clover cần mốc mặt/tay mới, chất lượng matte/halo và nối vòng Clover; hai video chưa nằm trong release. R12 của AGV không còn bị chặn vì dung lượng, nhưng chưa có review chất lượng nên chưa thay hình. Kết quả timing ở Apple M3 Pro là mô tả máy local, không cam kết60fps hoặc hiệu năng mọi laptop. Hosting, giao dịch Fuji có tiền và submission vẫn do owner thực hiện; [runbook](NEEDS-USER-VI.md) không xác nhận public transaction đã tồn tại.
+Sáu ảnh mới đã xem đúng một lần; tám ảnh recovery/context khớp hash đã xem trước nên không mở lại. Bằng chứng: [nativeR3 release](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-native-r3-release-review.json).

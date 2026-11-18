@@ -19,6 +19,20 @@ const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sour
   build:{path:buildPath,sha256:sha(await readFile(buildPath))},runtimePatch:build.registryOverride,preregistration:{path:preregPath,sha256:sha(await readFile(preregPath))},
   harnessSha256:sha(await readFile(import.meta.filename)),fixtureSha256:sha(await readFile(resolve(root,'tools/v5int/production-fixture.mjs'))),
   harnessDerivedFrom:{"path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-clover-spout-production.mjs", "sha256": "733136531bf7a4b1ec890f5d99df7bd70e9ef5f26cdbbbe5cf0d9bc89b651584"},runtimeSourceSubstitutions:[],requireHPClearance:process.env.CXI_REQUIRE_HP_CLEARANCE==='1',rows:[],actions:[],captures:[],errors:[],blockedRequests:[],pass:false};
+const authored=process.env.CXI_REQUIRE_AUTHORED_BINDINGS==='1',channels=[];
+if(authored){
+ const frozen=JSON.parse(await readFile(resolve(root,'reports/v5/CXI/evidence/v8-clover-authored-bindings-review.json')));
+ const refs=[];
+ async function pinned(path,hash){const bytes=await readFile(path);assert.equal(sha(bytes),hash);refs.push({path,sha256:hash});return JSON.parse(bytes);}
+ for(const [file,channel,socket]of [['M-clover-eye-delivery-R5.json','head','head'],['M-clover-paw-delivery-R6.json','freePaw','offHand']]){
+  const path='/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/'+file,payload=await pinned(path,frozen.artifactHashes[path]);
+  const source=await pinned(payload.sourceReport.path,payload.sourceReport.sha256),ref=channel==='head'?source.raw:source.model.raw,raw=await pinned(ref.path,ref.sha256);
+  channels.push({channel,socket,points:channel==='head'?raw.centers:raw[source.model.field].centers,foot:payload.foot.xy});
+ }
+ report.authoredGate={refs,channels:channels.map(x=>x.channel),sampleChecks:0,maxLocalMeshError:0,maxScreenMeshError:0,maxDecodedScreenOffset:0,meshInterpolationBoundCanonicalPx:.75,
+  basis:'Frozen source centers -> source pixel-center resize/crop -> canonical foot-relative point -> barycentric actual rendered mesh. No adapter point/cast function used. Continuous clock alignment and decoded-frame displacement are separate.',
+  limit:'Source models have sparse independent observations; this does not establish all-frame anatomy, matte, halo or seam quality.'};
+}
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP '+name);};
 const modules=await loadRules(),R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');
@@ -39,10 +53,10 @@ async function observe(page,fixedTime,metadata){
  await page.waitForFunction(metadata=>{
   const media=[...window.__depthScene.actors.values()].find(e=>e.asset==='clover').actor.designerMedia.media.state,decoded=window.__cxvMediaAudit?.decoded.at(-1);
   if(!decoded)return false;
-  const expected=metadata.reduced?0:metadata.phase==='idle'?metadata.sourceFrame/30:media.desired;
+  const expected=metadata.reduced?0:metadata.phase==='idle'?(metadata.sourceFrame%300)/30:media.desired;
   return Math.abs(decoded.mediaTime-expected)<=(metadata.reduced||metadata.phase==='idle'?1e-5:1/30+1e-6);
  },metadata,{timeout:10000});
- const row=await page.evaluate(({fixedTime,metadata})=>{
+ const row=await page.evaluate(({fixedTime,metadata,channels})=>{
   const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);
   const [id,entry]=[...s.actors].find(([,e])=>e.asset==='clover'),a=entry.actor,media=a.designerMedia.media;
   const spout=s.socket(id,'vfxOrigin'),grip=s.socket(id,'mainHand'),hp=s.socket(id,'hpAnchor'),head=s.socket(id,'head');
@@ -62,20 +76,41 @@ async function observe(page,fixedTime,metadata){
   const anchor=s.anchors.find(x=>x.id===id),body=anchor?.body;
   const overlap=(p,q)=>Math.max(0,Math.min(p.x+p.width,q.x+q.width)-Math.max(p.x,q.x))*Math.max(0,Math.min(p.y+p.height,q.y+q.height)-Math.max(p.y,q.y));
   const decoded=window.__cxvMediaAudit?.decoded.at(-1);
+  const authoredSamples=channels.map(channel=>{
+   function rawPoint(time){const phase=((time%10)+10)%10*30,i=Math.floor(phase),f=phase-i,p=channel.points[i].map((v,axis)=>v+(channel.points[(i+1)%300][axis]-v)*f);
+    const x=(p[0]+.5)*421/526*318/409-.5,y=((p[1]+.5)*512/640-2)*390/500-.5;
+    return[(x-channel.foot[0])*512/384,(channel.foot[1]-y)*512/384];}
+   function meshPoint(point){
+    for(let k=0;k<index.count;k+=3){const ids=[index.getX(k),index.getX(k+1),index.getX(k+2)],v=ids.map(i=>[base[i*3],base[i*3+1]]),[x,y]=point;
+     const den=(v[1][1]-v[2][1])*(v[0][0]-v[2][0])+(v[2][0]-v[1][0])*(v[0][1]-v[2][1]);if(Math.abs(den)<1e-10)continue;
+     const u=((v[1][1]-v[2][1])*(x-v[2][0])+(v[2][0]-v[1][0])*(y-v[2][1]))/den,w=((v[2][1]-v[0][1])*(x-v[2][0])+(v[0][0]-v[2][0])*(y-v[2][1]))/den,weights=[u,w,1-u-w];
+     if(weights.every(w=>w>=-1e-6)){const p=[0,0,0];ids.forEach((i,j)=>{p[0]+=weights[j]*position.getX(i);p[1]+=weights[j]*position.getY(i);});p[2]=1;return{local:p,screen:screenLocal(...p)};}
+    }throw Error('Authored source point outside actual rendered mesh '+channel.channel);
+   }
+   const actual=a.sockets.get(channel.socket).position.toArray(),screen=s.socket(id,channel.socket),time=metadata.reduced?0:media.video.currentTime;
+   const expected=meshPoint(rawPoint(time)),decodedExpected=meshPoint(rawPoint(metadata.reduced?0:decoded.mediaTime));
+   return{channel:channel.channel,socket:channel.socket,videoTime:time,sourcePoint:rawPoint(time),decodedSourcePoint:rawPoint(metadata.reduced?0:decoded.mediaTime),actual,screen,expected,decodedExpected,
+    localMeshError:Math.hypot(actual[0]-expected.local[0],actual[1]-expected.local[1]),screenMeshError:Math.hypot(screen.x-expected.screen.x,screen.y-expected.screen.y),decodedScreenOffset:Math.hypot(screen.x-decodedExpected.screen.x,screen.y-decodedExpected.screen.y)};
+  });
   return{...metadata,fixedTime,url:location.href,source:a.source,media:{...media.state},decoded,decodedClockDelta:decoded?Math.abs(decoded.mediaTime-media.state.desired):null,
-   manifest:metadata.includeManifest?media.manifest:undefined,spout,grip,hp,head,localSpout:localSpout.toArray(),localHp:localHp.toArray(),
+   authoredSamples,manifest:metadata.includeManifest?media.manifest:undefined,spout,grip,hp,head,localSpout:localSpout.toArray(),localHp:localHp.toArray(),
    renderedSource:actual?{...actual}:null,emissionError:delta(actual,spout),gripDistance:delta(spout,grip),glint:glint?{visible:glint.visible,position:glint.position.toArray(),alpha:glint.material.uniforms.uAlpha.value}:null,
    glintPlacementError:glint?delta({x:glint.position.x,y:glint.position.y},spout):null,paintLightPresent:!!entry.craftLight,lightSource:light?.toArray()??null,
    sampled:{...s.sampled.get(id)},body,anchor,label,labelMetrics:label?{centerX:label.x+label.width/2,centerOffsetFromHead:label.x+label.width/2-head.x,centerOffsetFromHP:label.x+label.width/2-hp.x,gapAboveFullPlane:top-label.y-label.height,gapAboveBody:body.y-label.y-label.height,bodyOverlapArea:overlap(label,body),faceOverlapArea:overlap(label,anchor.face),spoutInside:spout.x>=label.x&&spout.x<=label.x+label.width&&spout.y>=label.y&&spout.y<=label.y+label.height}:null,labelAudit:{overlaps:s.labelAudit.overlaps,missing:[...s.labelAudit.missing]},
    hpObstacles:label?{allBodyOverlapArea:s.anchors.filter(x=>x.visible).reduce((sum,x)=>sum+overlap(label,x.body),0),otherLabelOverlapArea:[...document.querySelectorAll('.b3-world')].filter(n=>n!==plate).map(measure).filter(Boolean).reduce((sum,x)=>sum+overlap(label,x),0)}:null,
    hpLocalClearance:localHp.y-localTop,hpScreenGapAboveFullPlane:top-hp.y,minTriangleRatio,maxMeshDelta,foot:s.socket(id,'feet'),root:a.root.matrixWorld.toArray()};
- },{fixedTime,metadata});
+ },{fixedTime,metadata,channels});
  assert.equal(row.url,judgeUrl);assert.equal(row.source,'media');assert(row.media.ready&&!row.media.failed);assert(row.minTriangleRatio>0);
  assert(row.label?.width>0&&row.label?.height>0&&!row.label.hidden,'Actual battle-v3 HUD label must have measurable geometry');
  if(process.env.CXI_REQUIRE_HP_CLEARANCE==='1'){assert(row.anchor.labelTarget,'Prepared Clover must supply its authored HP target');assert.equal(row.hpObstacles.allBodyOverlapArea,0);assert.equal(row.hpObstacles.otherLabelOverlapArea,0);assert.equal(row.labelMetrics.spoutInside,false);}
  if(metadata.reduced){assert(Math.abs(row.media.currentTime)<1/60);assert.equal(row.maxMeshDelta,0);}
  if(row.manifest){assert.equal(row.manifest.socketChannels['vfx-origin'],'spout');assert.notEqual(row.manifest.socketChannels['main-hand'],'spout');}
  if(metadata.phase==='action'&&row.glint?.visible){assert(row.emissionError<1e-6);assert(row.glintPlacementError<1e-6);}
+ if(authored){
+  if(row.manifest){assert.equal(row.manifest.socketChannels.head,'head');assert.equal(row.manifest.socketChannels['off-hand'],'freePaw');}
+  for(const sample of row.authoredSamples){assert(sample.localMeshError<report.authoredGate.meshInterpolationBoundCanonicalPx,`${sample.channel} actual mesh drift ${sample.localMeshError}`);
+   report.authoredGate.sampleChecks++;report.authoredGate.maxLocalMeshError=Math.max(report.authoredGate.maxLocalMeshError,sample.localMeshError);report.authoredGate.maxScreenMeshError=Math.max(report.authoredGate.maxScreenMeshError,sample.screenMeshError);report.authoredGate.maxDecodedScreenOffset=Math.max(report.authoredGate.maxDecodedScreenOffset,sample.decodedScreenOffset);}
+ }
  report.rows.push(row);await save();return row;
 }
 async function capture(page,name,row){
@@ -94,7 +129,7 @@ try{
   await page.evaluate(()=>{const video=[...window.__depthScene.actors.values()].find(e=>e.asset==='clover').actor.designerMedia.media.video;const data=window.__cxvMediaAudit={decoded:[]};const onFrame=(now,meta)=>{data.decoded.push({at:now,mediaTime:meta.mediaTime,presentedFrames:meta.presentedFrames});video.requestVideoFrameCallback(onFrame);};video.requestVideoFrameCallback(onFrame);});
   await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:30,paused:true},0);});
   const phaseOffset=await page.evaluate(()=>[...window.__depthScene.actors.values()].find(e=>e.asset==='clover').actor.designerMedia.media.state.desired);
-  if(skill===1)for(const sourceFrame of prereg.idleSourceFrames){
+  if(skill===1)for(const sourceFrame of authored?(reduced?[0,37,205,225,299,300,600]:[...Array(300).keys(),300,301,600]):prereg.idleSourceFrames){
    const row=await observe(page,50+(sourceFrame+.25)/30-phaseOffset,{phase:'idle',sourceFrame,reduced,skill,includeManifest:sourceFrame===0});
    if([37,225].includes(sourceFrame))await capture(page,`idle-${sourceFrame}-${reduced?'reduced':'normal'}`,row);
   }
@@ -115,6 +150,6 @@ try{
  assert(glints.some(x=>!x.reduced&&x.skill===1)&&glints.some(x=>!x.reduced&&x.skill===4),'Both legal cards must actually render their source glint');
  report.emissionSamples=glints.length;report.maxEmissionError=Math.max(...glints.map(x=>x.emissionError));
  assert.equal(runtimeEvidence().indexSha256,build.indexSha256);report.pass=true;
- report.limits='Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Native callback must match each requested idle source frame; action callback may precede continuous socket time by at most one30Hz frame. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, head/offHand, source loop, budget, native physical visibility and general laptop FPS remain open.';
+ report.limits='Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Native callback must match each requested idle source frame; action callback may precede continuous socket time by at most one30Hz frame. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, source loop, native physical visibility and general laptop FPS remain open. Bytes report-only; optional authored gate checks head/offHand source trajectories against actual rendered mesh, not all-frame anatomical truth.';
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,rows:report.rows.length,captures:report.captures.length,maxEmissionError:report.maxEmissionError,failure:report.failure}));}
