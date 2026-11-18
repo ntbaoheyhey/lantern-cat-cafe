@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-18T06:09:51.339618+00:00",
+  "build": {
+    "source": "85cb62233d016faf5c5235ffe178408df1682af3",
+    "kind": "build",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "build"
+    ],
+    "started": "2026-11-18T06:04:51.193090+00:00",
+    "exit": 0,
+    "ended": "2026-11-18T06:05:12.715970+00:00",
+    "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+  },
+  "suite": {
+    "source": "85cb62233d016faf5c5235ffe178408df1682af3",
+    "kind": "suite",
+    "command": [
+      "pnpm",
+      "test"
+    ],
+    "started": "2026-11-18T06:04:51.193077+00:00",
+    "exit": 0,
+    "ended": "2026-11-18T06:07:56.726931+00:00"
+  },
+  "focused": {
+    "files": 5,
+    "passed": 66,
+    "log": "work/v5/CXI/jobs/v8-native-seven-focused-r2.log"
+  },
+  "vitestSummary": {
+    "passed": 5347,
+    "skipped": 11,
+    "expectedFailures": 2,
+    "webPassed": 3124
+  },
+  "scope": "Sum of six Vitest package summaries only; other root checks passed with suite exit0."
+}

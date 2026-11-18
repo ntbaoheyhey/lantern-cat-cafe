@@ -1,0 +1,633 @@
+{
+  "utc": "2026-11-18T06:07:08.955Z",
+  "cat": "biscuit",
+  "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "harnessSha256": "af05796cbd218918f8b584021056be75f8cd5bda2cf15576b00db71feff2cdb4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 346,
+        "y": 137,
+        "width": 255,
+        "height": 291,
+        "body": {
+          "x": 378.5430790650375,
+          "y": 169.37666804237656,
+          "width": 190.31481431459173,
+          "height": 226.28391694369307
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 345,
+        "y": 136,
+        "width": 256,
+        "height": 291,
+        "body": {
+          "x": 377.28475259092676,
+          "y": 168.67906759327676,
+          "width": 191.86254397982412,
+          "height": 226.98151739279288
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "sharedCodeParity": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m-native-seven-import.json",
+    "sha256": "9a54961f803f17d98f40d4a3d973dd026b4e66cc8f78ee7bc03c7a28ef95d82c",
+    "utc": "2026-11-18T06:03:08.038Z",
+    "baseline": "d1192596c",
+    "imported": [
+      "a3173c08e"
+    ],
+    "cases": 1120,
+    "perUnit": {
+      "mochi": 224,
+      "soot": 224,
+      "clover": 224,
+      "panko": 224,
+      "mallow": 224
+    },
+    "protectedDiff": [],
+    "mallowMaxBoneDelta": 1.7763568394002505e-15,
+    "protectedPaths": 3833,
+    "pass": true,
+    "completedUTC": "2026-11-18T06:03:09.028Z"
+  },
+  "buildSource": "85cb62233d016faf5c5235ffe178408df1682af3",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "artifactSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "biscuit-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.5695652173913043
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.608695652173913
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.6478260869565217
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.6869565217391304
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 1.0820000000000007
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 1.1153333333333322
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 1.1486666666666672
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 1.1819999999999986
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 1.2153333333333336
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 1.2486666666666686
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 1.282
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 1.315333333333335
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 1.3486666666666665
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3524762192538016e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3524762192538016e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T06:08:25.665Z",
+  "comparison": {
+    "utc": "2026-11-18T06:08:33.937778+00:00",
+    "cat": "biscuit",
+    "captureUTC": "2026-11-18T06:07:08.955Z",
+    "captureCompletedUTC": "2026-11-18T06:08:25.665Z",
+    "sourceCommit": "85cb62233d016faf5c5235ffe178408df1682af3",
+    "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "sameHeightPx": 227,
+    "sourceUnion600x480": [
+      41,
+      32,
+      527,
+      436
+    ],
+    "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/biscuit-vs-designer-10s.mp4",
+    "videoSha256": "c4ce0300cd20ba3950b51ba6f97bf766e357250d9bc307afdb94aa6e171113ab",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000"
+      }
+    },
+    "channels": [
+      {
+        "mode": "reduced",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              0.0,
+              1.9733265395902322
+            ],
+            "rangePercentH": [
+              0.0,
+              0.3854153397637172
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              0.0,
+              1.0510942709234996
+            ],
+            "rangePercentH": [
+              0.0,
+              0.20529184978974602
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              0.0,
+              0.9933370013952185
+            ],
+            "rangePercentH": [
+              0.0,
+              0.19401113308500362
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      },
+      {
+        "mode": "candidate",
+        "channels": [
+          {
+            "name": "leg_l",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "leg_r",
+            "rangePx": [
+              0.0,
+              0.0
+            ],
+            "rangePercentH": [
+              0.0,
+              0.0
+            ],
+            "dominantPeriodSeconds": [
+              null,
+              null
+            ]
+          },
+          {
+            "name": "head",
+            "rangePx": [
+              6.180590341474591,
+              8.579680606914224
+            ],
+            "rangePercentH": [
+              1.207146551069256,
+              1.6757188685379343
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "tail_3",
+            "rangePx": [
+              5.882311814808986,
+              8.088494672447041
+            ],
+            "rangePercentH": [
+              1.14888902632988,
+              1.5797841157123127
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              10.0
+            ]
+          },
+          {
+            "name": "weapon",
+            "rangePx": [
+              1.42178607383849,
+              4.617082599999975
+            ],
+            "rangePercentH": [
+              0.2776925925465801,
+              0.9017739453124951
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          },
+          {
+            "name": "torso",
+            "rangePx": [
+              1.199946537784843,
+              4.318856527805224
+            ],
+            "rangePercentH": [
+              0.23436455816110216,
+              0.8435266655869578
+            ],
+            "dominantPeriodSeconds": [
+              10.0,
+              3.3333333333333335
+            ]
+          }
+        ],
+        "footWorldDrift": 0,
+        "meshSeam": 0,
+        "rootSeam": 0
+      }
+    ],
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 52331,
+        "sha256": "587bcda5530ec01771d80eea1bf0c8f7333cbbc2fc0d1d1c534099562b0b85c8",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:09:51.339618+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 51389,
+        "sha256": "733528f4efd26fa841ca0e2efa9b85e50fa5929bc5593bc7596778c2f5727ece",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:09:51.339618+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/candidate/blink-sheet.jpg",
+        "width": 1024,
+        "height": 224,
+        "bytes": 43640,
+        "sha256": "4ab1ec81b296d3baae7633b43f0f476a2602c69a13c3ad7ac92b3f5aeb7eb7a4",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:09:51.339618+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/biscuit-production-r1/cast/cast-sheet.jpg",
+        "width": 1024,
+        "height": 576,
+        "bytes": 80486,
+        "sha256": "5a822c4df04f3f6463abe2712fb55d26f89790ca772b7614b924271e18158672",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T06:09:51.339618+00:00"
+      }
+    ],
+    "limits": "Deterministic scene samples and 1x encoded comparison; no continuously watched film or real-time FPS claim.",
+    "visualDisposition": "ACCEPT_SCOPED_SCENE_MOTION",
+    "observation": "Feet and shield-bearing silhouette stay coherent through the sampled blink and cast. The motion is suitably restrained for a shield brace. Existing health/status bars cross the upper shield, and impact light briefly obscures lower detail; no new limb separation or foot clipping appears in these samples.",
+    "reviewedImages": 4,
+    "observedAfterImageReturnUTC": "2026-11-18T06:09:51.339618+00:00"
+  },
+  "disposition": "ACCEPT_SCOPED_SCENE_MOTION",
+  "releaseReady": false
+}
