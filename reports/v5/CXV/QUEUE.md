@@ -133,3 +133,6 @@
 2026-11-18T04:17:33.229110+00:00 [ ] V-F focus transaction study:pending clones and title/current geometry in one lifetime;15prototype tests/TSC0,actualCSS parity+pairednaturaltrials pending;no application change.
 2026-11-18T04:19:24.904675+00:00 [x] T-CXI-10 independently ACCEPTED e570e63a3 onCXIcombinedf1aa8f49b;nativeown40tests/TSC0+CXI2modefreshreview/exactRGB. V7-F-battle-notice-accepted.json.
 2026-11-18T04:21:34.142541+00:00 [ ] V-F transaction actualCSS prototype PASS80geometry/8RGB/throwcleanup/15tests/TSC0;production pairedseries next afterCXIfullsuite exit,04:26:01Zadoptiongate.
+
+- ACTIVE Clover spout source300frames PASS (.93766mincorr/.1603pxseam,9manualcontrols), two freshplots once; independentdelivery/scene next. Head/off/hp geometry perCXI09:50; nosefixedtemplate.5778REJECT retained.
+- REJECTED rigid tail:92core failures reproduced;new28px visiblecloth contaminates27core/7independenttail targets;no material/hiddenlayer correspondence. M-clover-rigid-occlusion-R1.json.

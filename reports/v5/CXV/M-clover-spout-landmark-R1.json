@@ -1,0 +1,224 @@
+{
+  "utc": "2026-11-18T09:58:28.635158+00:00",
+  "source": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-frames.npy",
+    "sha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e"
+  },
+  "annotations": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-spout-landmark-R1/annotations.json",
+    "sha256": "992d547a4c9a09f11e730d9b9769ab116dd6cf5f63a868ea17cccbce9451a564"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-clover-spout-landmark.py",
+    "sha256": "e4be8b1fd3481a672b74abbf72576c53c43f441ab8c2149e4ba867b856aeebce"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-spout-landmark-R1/tracks.json",
+    "sha256": "d81caff0dd43eeff02401280cfa4569646a78a7f16be601c006b88fc574648c8"
+  },
+  "syntheticTranslationErrorPx": 0.0011460356280899291,
+  "texturelessControlRejected": true,
+  "centerForwardFBMaxSourcePx": 0.006996583193540573,
+  "centerReverseFBMaxSourcePx": 0.004012017045170069,
+  "allProbeForwardSurvivors": 5,
+  "allProbeReverseSurvivors": 5,
+  "fixedTemplateMinCorrelation": 0.9376614093780518,
+  "fixedTemplateMaxDisagreementDeliveryPx": 0.5060526438317589,
+  "independentReverseMaxDeliveryPx": 0.44428495653480676,
+  "seamDeliveryPx": 0.160334057217216,
+  "rangeDeliveryPx": [
+    13.33416738826378,
+    23.540041992187497
+  ],
+  "manualControls": [
+    {
+      "frame": 0,
+      "observed": [
+        501,
+        223.5
+      ],
+      "predicted": [
+        501.0,
+        223.5
+      ],
+      "centerErrorSourcePx": 0.0,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 37,
+      "observed": [
+        504,
+        220
+      ],
+      "predicted": [
+        504.6448974609375,
+        218.7101287841797
+      ],
+      "centerErrorSourcePx": 1.442102800956092,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 75,
+      "observed": [
+        499.5,
+        206.5
+      ],
+      "predicted": [
+        500.2868957519531,
+        206.0617218017578
+      ],
+      "centerErrorSourcePx": 0.9007178823007191,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 112,
+      "observed": [
+        484.5,
+        225.5
+      ],
+      "predicted": [
+        484.69610595703125,
+        226.28684997558594
+      ],
+      "centerErrorSourcePx": 0.8109194969062792,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 150,
+      "observed": [
+        506,
+        225
+      ],
+      "predicted": [
+        505.62384033203125,
+        223.7830352783203
+      ],
+      "centerErrorSourcePx": 1.2737736178847792,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 187,
+      "observed": [
+        488.5,
+        237.5
+      ],
+      "predicted": [
+        488.41204833984375,
+        237.38832092285156
+      ],
+      "centerErrorSourcePx": 0.14215382793638429,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 225,
+      "observed": [
+        499,
+        215.5
+      ],
+      "predicted": [
+        498.4684753417969,
+        216.00230407714844
+      ],
+      "centerErrorSourcePx": 0.731319251898849,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 262,
+      "observed": [
+        506,
+        225.5
+      ],
+      "predicted": [
+        505.7324523925781,
+        224.37020874023438
+      ],
+      "centerErrorSourcePx": 1.1610383339407737,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 299,
+      "observed": [
+        500.5,
+        224
+      ],
+      "predicted": [
+        500.74346923828125,
+        223.52389526367188
+      ],
+      "centerErrorSourcePx": 0.5347457245675982,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    }
+  ],
+  "gates": {
+    "allForwardCenterValid": true,
+    "allReverseCenterValid": true,
+    "manualCentersWithin2SourcePx": true,
+    "manualBoxesContainPredictions": true,
+    "fixedTemplateCorrelationAtLeast08": true,
+    "templateDisagreementAtMost2DeliveryPx": true,
+    "independentReverseWithin2DeliveryPx": true,
+    "seamAtMost2DeliveryPx": true
+  },
+  "diagnosticPass": true,
+  "socketAccepted": false,
+  "runtimeChanged": false,
+  "limits": "Only the visible terminal spout lip is tracked. Sparse manual observations have +/-2sourcepx per-axis uncertainty and are not full trajectory ground truth. No full-part transform or runtime export is authorized by numerical diagnostics alone. Existing rejected socket studies remain rejected.",
+  "sourceVisualReview": {
+    "utc": "2026-11-18T10:00:24.667533+00:00",
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-spout-landmark-R1/track-extrema.png",
+    "sha256": "a36ae3e86bac709704cd36ed1285e7aa3829daf54d51e58ce424ca02620ba1e7",
+    "dimensions": [
+      928,
+      340
+    ],
+    "bytes": 141765,
+    "frames": [
+      194,
+      54,
+      78,
+      178
+    ],
+    "trackedPoints": [
+      [
+        484.42010498046875,
+        232.5770721435547
+      ],
+      [
+        505.8473205566406,
+        216.8704376220703
+      ],
+      [
+        498.97125244140625,
+        205.66831970214844
+      ],
+      [
+        498.9615783691406,
+        243.3927459716797
+      ]
+    ],
+    "views": 1,
+    "purpose": "Check actual terminal lip attachment at independently selected trajectory extrema; not decoded media or production scene acceptance.",
+    "reviewedUTC": "2026-11-18T10:02:04.340308+00:00",
+    "observation": "Tracked point follows the visible terminal spout lip at all four fresh source extrema; no liquid/wrist substitution and no apparent departure from silhouette. Source evidence only.",
+    "sourceFrameBGRHashes": [
+      "5946b2393639ba7ede00be4ea1efa0d65c30ca20e3c230e996949118ca7216ef",
+      "da528d2f2edf04f0616a05e3ca41c1665a7e6eeb84f749b286e86a75bb360ebd",
+      "01f9946bc7c0332e6b655f4ac02d511fe022b031ae32e64f681bee299bf01edf",
+      "182f7c8907608fb13f25c183e627d9f2abc96c82ca2cfdbfbdd10c532c44f534"
+    ]
+  },
+  "sourceVisualReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-spout-landmark-R1/extrema.json",
+    "sha256": "29240d73c0da5339b937ef9f62b8a78a7f34ca5de716c1cfe8de12246601ab95"
+  },
+  "status": "SCOPED_SOURCE_LANDMARK_CANDIDATE; delivery units, decoded media and scene/cast acceptance pending"
+}

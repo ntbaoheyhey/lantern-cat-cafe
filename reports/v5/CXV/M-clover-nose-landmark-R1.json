@@ -1,0 +1,176 @@
+{
+  "utc": "2026-11-18T09:51:34.027675+00:00",
+  "source": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-frames.npy",
+    "sha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e"
+  },
+  "annotations": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-nose-landmark-R1/annotations.json",
+    "sha256": "414be4898e9f445e1b575021ff8758cc58af455fc87a18fcb48ccb684fa06223"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-clover-nose-landmark.py",
+    "sha256": "075bdfe4368138d14575a88acfe4264c4624ac295585ae66088447eff046d5f1"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-nose-landmark-R1/tracks.json",
+    "sha256": "ea4b44a63da5b9fa9d7129f79adbe97324406f058132d1600ae83bc18796995d"
+  },
+  "syntheticTranslationErrorPx": 0.0013126106669681743,
+  "texturelessControlRejected": true,
+  "centerForwardFBMaxSourcePx": 0.007949814200401306,
+  "centerReverseFBMaxSourcePx": 0.007465587463229895,
+  "allProbeForwardSurvivors": 5,
+  "allProbeReverseSurvivors": 5,
+  "fixedTemplateMinCorrelation": 0.5777818560600281,
+  "fixedTemplateMaxDisagreementDeliveryPx": 0.5705780607923705,
+  "independentReverseMaxDeliveryPx": 0.43570250971480856,
+  "seamDeliveryPx": 0.11468207456524034,
+  "rangeDeliveryPx": [
+    21.053975495144243,
+    11.780913574218744
+  ],
+  "manualControls": [
+    {
+      "frame": 0,
+      "observed": [
+        313.5,
+        173
+      ],
+      "predicted": [
+        313.5,
+        173.0
+      ],
+      "centerErrorSourcePx": 0.0,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 37,
+      "observed": [
+        345,
+        180
+      ],
+      "predicted": [
+        343.5283203125,
+        180.82321166992188
+      ],
+      "centerErrorSourcePx": 1.6862735709533194,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 75,
+      "observed": [
+        313,
+        178
+      ],
+      "predicted": [
+        312.97442626953125,
+        179.11215209960938
+      ],
+      "centerErrorSourcePx": 1.112446092336896,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 112,
+      "observed": [
+        313,
+        164
+      ],
+      "predicted": [
+        312.5802917480469,
+        164.58001708984375
+      ],
+      "centerErrorSourcePx": 0.7159433226648326,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 150,
+      "observed": [
+        319.5,
+        183
+      ],
+      "predicted": [
+        318.45465087890625,
+        183.22352600097656
+      ],
+      "centerErrorSourcePx": 1.0689801953656812,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 187,
+      "observed": [
+        319,
+        175
+      ],
+      "predicted": [
+        318.424072265625,
+        174.88528442382812
+      ],
+      "centerErrorSourcePx": 0.5872413631878853,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 225,
+      "observed": [
+        338,
+        168
+      ],
+      "predicted": [
+        337.2492370605469,
+        167.5289764404297
+      ],
+      "centerErrorSourcePx": 0.88628899627976,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 262,
+      "observed": [
+        312,
+        180
+      ],
+      "predicted": [
+        312.0004577636719,
+        181.0178985595703
+      ],
+      "centerErrorSourcePx": 1.017898662501772,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    },
+    {
+      "frame": 299,
+      "observed": [
+        314,
+        173
+      ],
+      "predicted": [
+        313.3197326660156,
+        173.03817749023438
+      ],
+      "centerErrorSourcePx": 0.6813377770583435,
+      "outsideManualBoxSourcePx": 0.0,
+      "declaredUncertaintyPxPerAxis": 2
+    }
+  ],
+  "gates": {
+    "allForwardCenterValid": true,
+    "allReverseCenterValid": true,
+    "manualCentersWithin2SourcePx": true,
+    "manualBoxesContainPredictions": true,
+    "fixedTemplateCorrelationAtLeast08": false,
+    "templateDisagreementAtMost2DeliveryPx": true,
+    "independentReverseWithin2DeliveryPx": true,
+    "seamAtMost2DeliveryPx": true
+  },
+  "diagnosticPass": false,
+  "socketAccepted": false,
+  "runtimeChanged": false,
+  "limits": "Only a visible nose apex is tracked. Sparse manual observations have +/-2sourcepx per-axis uncertainty and are not full trajectory ground truth. No six-corner transform or cheek/head socket substitution is authorized. Existing rejected socket studies remain rejected.",
+  "assessment": "REJECTED as a complete landmark gate: fixed-F0 correlation .5778 < .8. Nine frozen manual centers agree within1.6863sourcepx, reverse agreement .4357deliverypx and seam .1147px; no head/socket export. Template failure preserved, not recast as pass."
+}

@@ -1,0 +1,482 @@
+{
+  "utc": "2026-11-18T10:01:19.101304+00:00",
+  "observation": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-rigid-occlusion-R1/report.json",
+    "sha256": "6db401985616d65c61a947a3b6ca35f357e4b1a26c9fee9184b4905abb3e973a"
+  },
+  "rigidSource": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-rigid-layer-r1/report.json",
+    "sha256": "8ddae921494aabeac23b946d836474590a7b5981075ccdaa1efd2d72e4e73be9"
+  },
+  "maskSource": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-endpoint-labels-r1/report.json",
+    "sha256": "1c2b1696b1bc109094160046801c4bb12bbed51df1fd38e5c9a38e6b6fd95c26"
+  },
+  "independentSparseLabels": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/sparse-labels-F0.npy",
+    "sha256": "f5359095e4bb5966bc06de70f6ae7db45e97d919c83b05e59afa91908d348f60"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-clover-rigid-occlusion.py",
+    "sha256": "ea69e28b5659dd3f06b795c78fd3eb22fe84c820d30dd902ef24ec7aeecf8a04"
+  },
+  "newClothPixels": 28,
+  "reproducedRigidCoreFailures": 92,
+  "reproducedIndependentTailFailures": 40,
+  "identityAndOutsideControlsPassed": true,
+  "rows": [
+    {
+      "domain": "allSegmentedTargetTail",
+      "pixels": 3570,
+      "pixelsTouchingNewCloth": 41,
+      "meanNewClothWeight": 0.007837362823593536,
+      "totalNewClothWeight": 27.97938528022892,
+      "destinationsTouchingNewCloth": [
+        [
+          72,
+          305
+        ],
+        [
+          73,
+          305
+        ],
+        [
+          74,
+          305
+        ],
+        [
+          71,
+          306
+        ],
+        [
+          72,
+          306
+        ],
+        [
+          73,
+          306
+        ],
+        [
+          74,
+          306
+        ],
+        [
+          75,
+          306
+        ],
+        [
+          71,
+          307
+        ],
+        [
+          72,
+          307
+        ],
+        [
+          73,
+          307
+        ],
+        [
+          74,
+          307
+        ],
+        [
+          75,
+          307
+        ],
+        [
+          71,
+          308
+        ],
+        [
+          72,
+          308
+        ],
+        [
+          73,
+          308
+        ],
+        [
+          74,
+          308
+        ],
+        [
+          75,
+          308
+        ],
+        [
+          71,
+          309
+        ],
+        [
+          72,
+          309
+        ],
+        [
+          73,
+          309
+        ],
+        [
+          74,
+          309
+        ],
+        [
+          75,
+          309
+        ],
+        [
+          71,
+          310
+        ],
+        [
+          72,
+          310
+        ],
+        [
+          73,
+          310
+        ],
+        [
+          74,
+          310
+        ],
+        [
+          75,
+          310
+        ],
+        [
+          70,
+          311
+        ],
+        [
+          71,
+          311
+        ],
+        [
+          72,
+          311
+        ],
+        [
+          73,
+          311
+        ],
+        [
+          74,
+          311
+        ],
+        [
+          70,
+          312
+        ],
+        [
+          71,
+          312
+        ],
+        [
+          72,
+          312
+        ],
+        [
+          73,
+          312
+        ],
+        [
+          74,
+          312
+        ],
+        [
+          72,
+          313
+        ],
+        [
+          73,
+          313
+        ],
+        [
+          74,
+          313
+        ]
+      ]
+    },
+    {
+      "domain": "eroded3pxCore",
+      "pixels": 2549,
+      "pixelsTouchingNewCloth": 27,
+      "meanNewClothWeight": 0.007693260925460257,
+      "totalNewClothWeight": 19.610122098998197,
+      "destinationsTouchingNewCloth": [
+        [
+          72,
+          305
+        ],
+        [
+          73,
+          305
+        ],
+        [
+          71,
+          306
+        ],
+        [
+          72,
+          306
+        ],
+        [
+          73,
+          306
+        ],
+        [
+          71,
+          307
+        ],
+        [
+          72,
+          307
+        ],
+        [
+          73,
+          307
+        ],
+        [
+          71,
+          308
+        ],
+        [
+          72,
+          308
+        ],
+        [
+          73,
+          308
+        ],
+        [
+          71,
+          309
+        ],
+        [
+          72,
+          309
+        ],
+        [
+          73,
+          309
+        ],
+        [
+          71,
+          310
+        ],
+        [
+          72,
+          310
+        ],
+        [
+          73,
+          310
+        ],
+        [
+          70,
+          311
+        ],
+        [
+          71,
+          311
+        ],
+        [
+          72,
+          311
+        ],
+        [
+          73,
+          311
+        ],
+        [
+          70,
+          312
+        ],
+        [
+          71,
+          312
+        ],
+        [
+          72,
+          312
+        ],
+        [
+          73,
+          312
+        ],
+        [
+          72,
+          313
+        ],
+        [
+          73,
+          313
+        ]
+      ]
+    },
+    {
+      "domain": "rigidOtherVisibleFailures",
+      "pixels": 92,
+      "pixelsTouchingNewCloth": 27,
+      "meanNewClothWeight": 0.21315350107606737,
+      "totalNewClothWeight": 19.610122098998197,
+      "destinationsTouchingNewCloth": [
+        [
+          72,
+          305
+        ],
+        [
+          73,
+          305
+        ],
+        [
+          71,
+          306
+        ],
+        [
+          72,
+          306
+        ],
+        [
+          73,
+          306
+        ],
+        [
+          71,
+          307
+        ],
+        [
+          72,
+          307
+        ],
+        [
+          73,
+          307
+        ],
+        [
+          71,
+          308
+        ],
+        [
+          72,
+          308
+        ],
+        [
+          73,
+          308
+        ],
+        [
+          71,
+          309
+        ],
+        [
+          72,
+          309
+        ],
+        [
+          73,
+          309
+        ],
+        [
+          71,
+          310
+        ],
+        [
+          72,
+          310
+        ],
+        [
+          73,
+          310
+        ],
+        [
+          70,
+          311
+        ],
+        [
+          71,
+          311
+        ],
+        [
+          72,
+          311
+        ],
+        [
+          73,
+          311
+        ],
+        [
+          70,
+          312
+        ],
+        [
+          71,
+          312
+        ],
+        [
+          72,
+          312
+        ],
+        [
+          73,
+          312
+        ],
+        [
+          72,
+          313
+        ],
+        [
+          73,
+          313
+        ]
+      ]
+    },
+    {
+      "domain": "independentTailAmongFailures",
+      "pixels": 40,
+      "pixelsTouchingNewCloth": 7,
+      "meanNewClothWeight": 0.08041797953935352,
+      "totalNewClothWeight": 3.216719181574141,
+      "destinationsTouchingNewCloth": [
+        [
+          70,
+          311
+        ],
+        [
+          71,
+          311
+        ],
+        [
+          72,
+          311
+        ],
+        [
+          70,
+          312
+        ],
+        [
+          71,
+          312
+        ],
+        [
+          72,
+          312
+        ],
+        [
+          72,
+          313
+        ]
+      ]
+    }
+  ],
+  "imagesCreated": 0,
+  "runtimeChanged": false,
+  "repairAccepted": false,
+  "decision": "The frozen rigid tail map samples independently observed visible cloth within its previously unknown source region. Reject remains; no texture synthesis or correspondence is inferred.",
+  "limits": "Targeted analyst label after the failure was known, not independent held-out segmentation ground truth. Only 28 visible source pixels are labelled; all remaining unknowns stay unknown. This does not recover hidden tail or establish material correspondences.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-rigid-occlusion-R1/comparison.json",
+    "sha256": "64bb9766513d4825f8a326b47f1ec0045d391cb9352a1c9cfc50edce427f3932"
+  }
+}
