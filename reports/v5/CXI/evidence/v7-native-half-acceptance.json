@@ -1,0 +1,610 @@
+{
+  "utc": "2026-11-18T04:04:07.286Z",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "source": "e8909ffac0b0086f4afe512e6f19efcc97f7370e",
+  "indexSha256": "84dcbf2677fb271f0c0b9f9c303c0e404ab6879884b99a9d053a0440769b10a9",
+  "harnessSha256": "919c87817a2a6d1091f17318fc28d6e51d274c0d3ea91c3d9f6cba163a708029",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Own production wave3, normal/reduced at frozen30s. Actual selected atlas URLs and every source alpha sample verified with native Image/Canvas. Full game captures plus isolated native GPU actor RGBA for bounded image comparison; no source imports, response substitutions or ordinary gameplay/performance claim.",
+  "runs": [
+    {
+      "mode": "normal",
+      "rows": [
+        {
+          "actorId": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/kettle-knight/rig-depth.half.avif",
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "body": {
+            "x": 807.031671980148,
+            "y": 430.38031355693096,
+            "width": 199.62533038430536,
+            "height": 187.84483200000005
+          },
+          "matrix": [
+            0.8161400892929803,
+            0.019628481869685705,
+            0,
+            0,
+            -0.019952156975731165,
+            0.8295982992403238,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            728.0177775379389,
+            272.260821010134,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/spool-ram/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 522.7657391717069,
+            "y": 435.5875591397911,
+            "width": 282.35965558052635,
+            "height": 184.01354392207156
+          },
+          "matrix": [
+            0.8172665739602302,
+            0.020780062847369902,
+            0,
+            0,
+            -0.020686961284050957,
+            0.8136049490535641,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            70.2728878813282,
+            273.03076999438287,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/pollen-scout/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 1044.1947410725088,
+            "y": 59.1414114916067,
+            "width": 165.78844684965748,
+            "height": 143.64604799999995
+          },
+          "matrix": [
+            0.8264723454773506,
+            0.01483143308868938,
+            0,
+            0,
+            -0.015147028049495269,
+            0.8440586775545244,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1317.3477535846775,
+            1403.1964405004096,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/crumb-sentinel/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 827.7199899146976,
+            "y": 306.58985083036157,
+            "width": 210.73617988652904,
+            "height": 182.29276799999997
+          },
+          "matrix": [
+            0.8399861665335214,
+            0.02070599743328307,
+            0,
+            0,
+            -0.019864922694312653,
+            0.8058660451516692,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            797.3465367190319,
+            623.4643744463925,
+            0,
+            1
+          ]
+        }
+      ],
+      "decode": [
+        {
+          "asset": "kettle-knight",
+          "url": "http://127.0.0.1:6301/units/kettle-knight/rig-depth.half.avif",
+          "width": 1024,
+          "height": 1024,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "spool-ram",
+          "url": "http://127.0.0.1:6301/units/spool-ram/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "pollen-scout",
+          "url": "http://127.0.0.1:6301/units/pollen-scout/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "crumb-sentinel",
+          "url": "http://127.0.0.1:6301/units/crumb-sentinel/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        }
+      ],
+      "requests": [
+        {
+          "path": "/units/kettle-knight/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/spool-ram/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/pollen-scout/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/crumb-sentinel/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/kettle-knight/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/spool-ram/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/pollen-scout/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/crumb-sentinel/rig-depth.half.webp",
+          "status": 200
+        }
+      ],
+      "isolated": [
+        {
+          "actorId": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal-foe-0-kettle-knight.rgba",
+          "sha256": "764c9e71d66c97001f6c6b42df651c8972748ed62f474d35d112989ef05de0f3",
+          "comparison": {
+            "priorSha256": "9c534729f31e43bb497ff08bf6b1f12c2c98d0a3b9c4364c39f0a167b2666d17",
+            "visibleRgbRmse": 4.046252158528354,
+            "visibleRgbMax": 33,
+            "alphaMaxError": 0,
+            "visiblePixels": 24779
+          }
+        },
+        {
+          "actorId": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal-foe-1-spool-ram.rgba",
+          "sha256": "06042fc936b74de850a6684b4e82f74b13c2e77daf46ab6ef6713a3c0bb77d56",
+          "comparison": {
+            "priorSha256": "d8b40ca200aa9725a35362f126990861174e4f48199b65dce219a8a285167e6f",
+            "visibleRgbRmse": 5.480079216599291,
+            "visibleRgbMax": 41,
+            "alphaMaxError": 0,
+            "visiblePixels": 35446
+          }
+        },
+        {
+          "actorId": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal-foe-2-pollen-scout.rgba",
+          "sha256": "9088522f48e0a56fa1dafd0dafe177b213eec31babf1bdc78d8f8082e260f535",
+          "comparison": {
+            "priorSha256": "8910ba005946a15f1d3bf7f2e4b2afec9618f1aa6009a4d8ad54949169a493b6",
+            "visibleRgbRmse": 3.7516576053477766,
+            "visibleRgbMax": 25,
+            "alphaMaxError": 0,
+            "visiblePixels": 12651
+          }
+        },
+        {
+          "actorId": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal-foe-3-crumb-sentinel.rgba",
+          "sha256": "048ded9b71ff0a0566ad7767f4e6f3f2bf0cb748fbb1227bcd54c0d5eb0c981e",
+          "comparison": {
+            "priorSha256": "018865ca53c6b0d635d6c9b15f0ea5e455c5838f33b518727cf160061c8b9186",
+            "visibleRgbRmse": 5.264604183975311,
+            "visibleRgbMax": 35,
+            "alphaMaxError": 0,
+            "visiblePixels": 26800
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "rows": [
+        {
+          "actorId": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/spool-ram/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 522.7657391717069,
+            "y": 435.5875591397911,
+            "width": 282.35965558052635,
+            "height": 184.01354392207156
+          },
+          "matrix": [
+            0.8172665739602302,
+            0.020780062847369902,
+            0,
+            0,
+            -0.020686961284050957,
+            0.8136049490535641,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            70.2728878813282,
+            273.03076999438287,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/kettle-knight/rig-depth.half.avif",
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "body": {
+            "x": 807.031671980148,
+            "y": 430.38031355693096,
+            "width": 199.62533038430536,
+            "height": 187.84483200000005
+          },
+          "matrix": [
+            0.8161400892929803,
+            0.019628481869685705,
+            0,
+            0,
+            -0.019952156975731165,
+            0.8295982992403238,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            728.0177775379389,
+            272.260821010134,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/pollen-scout/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 1044.1947410725088,
+            "y": 59.1414114916067,
+            "width": 165.78844684965748,
+            "height": 143.64604799999995
+          },
+          "matrix": [
+            0.8264723454773506,
+            0.01483143308868938,
+            0,
+            0,
+            -0.015147028049495269,
+            0.8440586775545244,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1317.3477535846775,
+            1403.1964405004096,
+            0,
+            1
+          ]
+        },
+        {
+          "actorId": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "images": [
+            {
+              "url": "http://127.0.0.1:6301/units/crumb-sentinel/rig-depth.half.avif",
+              "width": 1024,
+              "height": 512
+            }
+          ],
+          "body": {
+            "x": 827.7199899146976,
+            "y": 306.58985083036157,
+            "width": 210.73617988652904,
+            "height": 182.29276799999997
+          },
+          "matrix": [
+            0.8399861665335214,
+            0.02070599743328307,
+            0,
+            0,
+            -0.019864922694312653,
+            0.8058660451516692,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            797.3465367190319,
+            623.4643744463925,
+            0,
+            1
+          ]
+        }
+      ],
+      "decode": [
+        {
+          "asset": "spool-ram",
+          "url": "http://127.0.0.1:6301/units/spool-ram/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "kettle-knight",
+          "url": "http://127.0.0.1:6301/units/kettle-knight/rig-depth.half.avif",
+          "width": 1024,
+          "height": 1024,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "pollen-scout",
+          "url": "http://127.0.0.1:6301/units/pollen-scout/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        },
+        {
+          "asset": "crumb-sentinel",
+          "url": "http://127.0.0.1:6301/units/crumb-sentinel/rig-depth.half.avif",
+          "width": 1024,
+          "height": 512,
+          "alphaMaxError": 0,
+          "alphaChangedPixels": 0
+        }
+      ],
+      "requests": [
+        {
+          "path": "/units/spool-ram/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/kettle-knight/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/pollen-scout/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/crumb-sentinel/rig-depth.half.avif",
+          "status": 200
+        },
+        {
+          "path": "/units/spool-ram/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/kettle-knight/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/pollen-scout/rig-depth.half.webp",
+          "status": 200
+        },
+        {
+          "path": "/units/crumb-sentinel/rig-depth.half.webp",
+          "status": 200
+        }
+      ],
+      "isolated": [
+        {
+          "actorId": "foe-1-spool-ram",
+          "asset": "spool-ram",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced-foe-1-spool-ram.rgba",
+          "sha256": "06042fc936b74de850a6684b4e82f74b13c2e77daf46ab6ef6713a3c0bb77d56",
+          "comparison": {
+            "priorSha256": "d8b40ca200aa9725a35362f126990861174e4f48199b65dce219a8a285167e6f",
+            "visibleRgbRmse": 5.480079216599291,
+            "visibleRgbMax": 41,
+            "alphaMaxError": 0,
+            "visiblePixels": 35446
+          }
+        },
+        {
+          "actorId": "foe-0-kettle-knight",
+          "asset": "kettle-knight",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced-foe-0-kettle-knight.rgba",
+          "sha256": "764c9e71d66c97001f6c6b42df651c8972748ed62f474d35d112989ef05de0f3",
+          "comparison": {
+            "priorSha256": "9c534729f31e43bb497ff08bf6b1f12c2c98d0a3b9c4364c39f0a167b2666d17",
+            "visibleRgbRmse": 4.046252158528354,
+            "visibleRgbMax": 33,
+            "alphaMaxError": 0,
+            "visiblePixels": 24779
+          }
+        },
+        {
+          "actorId": "foe-2-pollen-scout",
+          "asset": "pollen-scout",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced-foe-2-pollen-scout.rgba",
+          "sha256": "9088522f48e0a56fa1dafd0dafe177b213eec31babf1bdc78d8f8082e260f535",
+          "comparison": {
+            "priorSha256": "8910ba005946a15f1d3bf7f2e4b2afec9618f1aa6009a4d8ad54949169a493b6",
+            "visibleRgbRmse": 3.7516576053477766,
+            "visibleRgbMax": 25,
+            "alphaMaxError": 0,
+            "visiblePixels": 12651
+          }
+        },
+        {
+          "actorId": "foe-3-crumb-sentinel",
+          "asset": "crumb-sentinel",
+          "width": 1280,
+          "height": 720,
+          "rgbaPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced-foe-3-crumb-sentinel.rgba",
+          "sha256": "048ded9b71ff0a0566ad7767f4e6f3f2bf0cb748fbb1227bcd54c0d5eb0c981e",
+          "comparison": {
+            "priorSha256": "018865ca53c6b0d635d6c9b15f0ea5e455c5838f33b518727cf160061c8b9186",
+            "visibleRgbRmse": 5.264604183975311,
+            "visibleRgbMax": 35,
+            "alphaMaxError": 0,
+            "visiblePixels": 26800
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal-1024.jpg",
+      "rawPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/normal.png",
+      "sha256": "acb0e1e74adab5bc192879ec5a82749b7856075f8942da16d0df67fe6290d1b8",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "stdev": [
+        48.17836289201596,
+        45.49251161548046,
+        39.939090096490546
+      ],
+      "utc": "2026-11-18T04:04:11.120Z",
+      "reviewMethod": "Own measured current-build1024x576 capture viewed once",
+      "reviewedUtc": "2026-11-18T04:05:08.891565+00:00",
+      "observation": "At desktop review size, the four target enemies retain distinct silhouettes, face/weapon detail and clean transparent edges. No material visible regression in this fixed frame; encoded color is lossy and this does not prove every motion frame."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced-1024.jpg",
+      "rawPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half-review/v7-native-half-candidate/reduced.png",
+      "sha256": "acb0e1e74adab5bc192879ec5a82749b7856075f8942da16d0df67fe6290d1b8",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "stdev": [
+        48.17836289201596,
+        45.49251161548046,
+        39.939090096490546
+      ],
+      "utc": "2026-11-18T04:04:13.601Z",
+      "reviewMethod": "Exact duplicate hash reused without reopening",
+      "reviewedUtc": "2026-11-18T04:05:08.891757+00:00",
+      "observation": "At desktop review size, the four target enemies retain distinct silhouettes, face/weapon detail and clean transparent edges. No material visible regression in this fixed frame; encoded color is lossy and this does not prove every motion frame."
+    }
+  ],
+  "complete": true,
+  "finishedUtc": "2026-11-18T04:04:14.098Z",
+  "disposition": "ACCEPT scoped four halfAVIF deliveries at desktop1280x720; every native source alpha sample and isolated GPU alpha match; own visual review passed. Existing12loader tests/build pass. Native failure injection and cold transfer remain release gates.",
+  "sizeEvidence": "v7-native-half-candidate.json"
+}

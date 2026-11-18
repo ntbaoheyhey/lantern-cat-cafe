@@ -1,18 +1,18 @@
 # CXI V7 continuation
 ACTIVE: toast accepted; four scoped native halfAVIF conversions and remaining CXV review; assistant: AGS.
-NEXT 1: Build nativehalf candidate, then after explicitCXV release run probe-native-half.mjs v7-native-half-candidate work/v5/CXI/native-half-review/v7-native-half-baseline.
+NEXT 1: Prepare/run native T9 decode-failure fallback after explicit CXV release;review T10 delivery and validate next release.
 NEXT 2: Review CXV T-CXI-10 delivery and independently validate pending11path manifest; import accepted scope only.
 NEXT 3: Continue I-B wave3gap230950B;review AGS/AGV deliveries;maintain six useful AGS TASKs.
-Last pushed150bcad02;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
-Serving unreleasedtoast app7f84c0a04;capturea1cddd6bf;index6fd63d408f7db748342251f650197b4f8e891edf05f88d65ad4d283ddd02d1be;savedm1.13 intact.
+Last pushede8909ffac;green v5-m1.13;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;remoteverified;BOARD updated.
+Serving unreleasednativehalf appe8909ffac;index84dcbf2677fb271f0c0b9f9c303c0e404ab6879884b99a9d053a0440769b10a9;savedm1.13 intact.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified03:52Z;neverdelete/duplicate.
 Last RULES read2026-11-18T03:55:49.384112+00:00;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
-Running:none;baseline46410PASS/1fresh+1hashreuse;browserreleasedCXV;candidate4AVIFs+4loaderURLs prepared.
+Running:none;T9candidate2modesPASS/1fresh+1hashreuse;browserreleased04:04Z toCXV T10.
 BattlecontextACCEPT:44focused/build/native2modes×5loss4restore;exactRGB/DPR2/resource retention/cleanup;6images4fresh+2hashreuse.
 Mailbox readINBOX-CXI84;USER23;LEARN90;oldreplacement snapshots preserved;append-only correction sent.
 AGS OPEN:T1exactQA,T2winners,T3loading,T5beds,T7link,T8sixcallouts;60169/75c7/1473/df8 dispositions sent;T2three awardsPARTaccepted.
 Audio30a1 unchanged6hashes/−264samples/all36cueendsfit/sourcehashesmismatch;REDO. e33stereo fixed/+24samples/−24alignment/gain differences;REDO/nointegration.
-AGV T9 takeovergrantedCXV03:50:43Z;CXI fourhalfAVIF conversions only;originals/manifests/style preserved.
+T9 fourhalfAVIF ACCEPT94340B file saving/nativeexactalpha/2modes;originals/manifests/style preserved;releasegates pending.
 Foreign3submission+2QAfiles unchanged;0046sha7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875 preserved;reconcile0336+0354 snapshots retained.
 m1.13 full5374=5361pass+11skip+2expectedfail;3061web;cold7667824/8230950/7743499B;wave3gap230950B;staticdelta172/172/173B.
 Firsthit20448ms incl17700reading;route10037ms;recovery635/8677ms;ordinary0errors;3actual30sfilms;8images6fresh+2hashreuse.

@@ -77,5 +77,7 @@
     "Pose alpha readback uses validated metadata crop plus2px guard; original coordinate system retained; native asset-mask coverage must be independently checked.",
     "Stationary vertex rows require finite inputs/metadata; full refresh after invalid motion. Full geometry/motion/native parity remains pending.",
     "Panko original crumb is a separate visual change; needs owned loader mapping and fresh visual acceptance, not implied by source hash."
-  ]
+  ],
+  "completedSourceReview": "No blocking source issue found in five rendering groups. HUD text avoids same-value writes; pending-label clones removed in finally; same-paint reads avoid cross-frame cache; croppedalpha keeps source coordinate system; stationary rows stay below baseline/face deformation region and refresh after nonfinite inputs. Source review alone does not accept behavior.",
+  "nativePlan": "Use own production geometry/socket/GPU diagnostic harness before and after scoped import; own native mask audit for all delivered+original poses; fresh normal/reduced focus/label geometry and HUD text-write observation. Panko crumb remains a separate visual acceptance."
 }
