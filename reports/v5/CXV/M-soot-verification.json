@@ -1,9 +1,13 @@
 {
-  "utc": "2026-11-18T05:36:23.677768+00:00",
+  "utc": "2026-11-18T05:56:49.333610+00:00",
   "baseCommit": "5aa25d2e52660dae8f2f920269b26918cf9220d5",
   "verifiedPaths": 3833,
   "changedSootPaths": [],
   "namedSootAppDiff": [],
   "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
-  "sharedBehavior": "MallowR2 actualscene Soot301 samples/11mesh snapshots in bothmodes match prior baseline exactly. Remaining native7 capture will repeat parity."
+  "excludedAuditReports": [
+    "reports/v5/CXV/M-soot-baseline.json",
+    "reports/v5/CXV/M-soot-verification.json"
+  ],
+  "sharedBehavior": "All seven actual-scene captures: Soot301 samples/11 mesh snapshots exactly match baseline in both modes."
 }

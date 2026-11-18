@@ -1,0 +1,313 @@
+{
+  "utc": "2026-11-18T05:56:49.333610+00:00",
+  "status": "READY for scoped integration; integrated judge and performance acceptance pending",
+  "runtimeEquivalentTo": "a3173c08e",
+  "appDiffEmpty": true,
+  "liveArtifactSha256": "c1906e0424090c67e5682333de494dbea6f3241cb8a31b46ffd566ea2d5bbcf6",
+  "runtimeFileSha256": {
+    "apps/web/src/game/rig/native-living.ts": "e83ca56480a4b8ad9412da82296a54ab5b860ebe2c11fbe531eeb28a42a88dc4",
+    "apps/web/src/game/rig/cutout.ts": "63eb33c4bd57dca8533bd741528d6867eecdd4cdbd624b424d87babfa0b899a6",
+    "apps/web/src/game/rig/native-living.test.ts": "6ba6304b3b5e9c85d20e022e512fe68430ae5d9399cf30af01875f3f38692430",
+    "apps/web/src/game/cardrpg/spine/scene.ts": "bca8b58c2144e34c24fe51e5e9623a883f10da1d518b63abb9fb2d57f6168306"
+  },
+  "dependency": "After existing Mallow4ec917401+c7d3cf13a: apply only a3173c08e hunks in rig/native-living.ts, rig/cutout.ts and rig/native-living.test.ts. Never apply reverted Panko d419002a4.",
+  "priorChecks": {
+    "focusedTests": 60,
+    "files": 4,
+    "typecheckExit": 0,
+    "reuse": "Application sources unchanged from a3173c08e; existing checks reused, not rerun.",
+    "logs": [
+      "work/v5/CXV/jobs/m-native-eight-tests-r2.log",
+      "work/v5/CXV/jobs/m-native-eight-typecheck-r2.log"
+    ]
+  },
+  "soot": {
+    "utc": "2026-11-18T05:56:49.333610+00:00",
+    "baseCommit": "5aa25d2e52660dae8f2f920269b26918cf9220d5",
+    "verifiedPaths": 3833,
+    "changedSootPaths": [],
+    "namedSootAppDiff": [],
+    "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+    "excludedAuditReports": [
+      "reports/v5/CXV/M-soot-baseline.json",
+      "reports/v5/CXV/M-soot-verification.json"
+    ],
+    "sharedBehavior": "All seven actual-scene captures: Soot301 samples/11 mesh snapshots exactly match baseline in both modes."
+  },
+  "cats": [
+    {
+      "cat": "sorrel",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-sorrel-native-R1.json",
+      "reportSha256": "8ffb29e44bbaf7b6382c4a8e8a2648702ec9d17272de5bc32bf7061f264f1fa2",
+      "sourceCommit": "85b3c2fb7b39dd943d0de048c30009f36f5a9373",
+      "captureUTC": "2026-11-18T05:45:14.625Z",
+      "reviewedUTC": "2026-11-18T05:48:35.367558+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.4413305481058236,
+        1.5600123523352494
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 3.0517578125e-05,
+      "maxHandoffRoot": 1.3508208016047761e-14,
+      "minTriangleRatio": 0.7124606611919246,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-sorrel-native-R1/sorrel-vs-mochi-1280x720.mp4",
+      "filmSha256": "ebf003032f4a5796913717d04704473222ff4dcb5bad01dae6c3093ffcc24b69",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "Reference lantern/shield motion remains broader; Sorrel's staff is intentionally restrained. Existing HUD partly overlaps the upper staff/hand."
+    },
+    {
+      "cat": "biscuit",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-biscuit-native-R1.json",
+      "reportSha256": "d58c05a89e2c17f07efee392f6c6410440f1c30e2d2a6c49731920ca4cb4d20a",
+      "sourceCommit": "85b3c2fb7b39dd943d0de048c30009f36f5a9373",
+      "captureUTC": "2026-11-18T05:46:35.949Z",
+      "reviewedUTC": "2026-11-18T05:52:01.386745+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.207146551069256,
+        1.6757188685379343
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 6.103515625e-05,
+      "maxHandoffRoot": 1.3524762192538016e-14,
+      "minTriangleRatio": 0.6038619969130621,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-biscuit-native-R1/biscuit-vs-mochi-1280x720.mp4",
+      "filmSha256": "8686d98f65988a011ec271d880a2f6e04c58f02cc19e2bf5cf923e94efbe95a2",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "Existing health/status HUD crosses the upper shield; the contact flare briefly covers lower body detail. Four static reviews plus measured temporal geometry do not establish continuously watched film or integrated gameplay acceptance."
+    },
+    {
+      "cat": "inkcap",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-inkcap-native-R1.json",
+      "reportSha256": "11bab452e538e0c91f46e4edfe573a2c13237e29fd5c5d448c3f75b7ad0f2ea5",
+      "sourceCommit": "85b3c2fb7b39dd943d0de048c30009f36f5a9373",
+      "captureUTC": "2026-11-18T05:47:58.140Z",
+      "reviewedUTC": "2026-11-18T05:52:22.354429+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.7927999921003916,
+        1.7850390681699912
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 6.103515625e-05,
+      "maxHandoffRoot": 1.3508208016047761e-14,
+      "minTriangleRatio": 0.5752517695096513,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/inkcap-vs-mochi-1280x720.mp4",
+      "filmSha256": "6a610498a08f99cf4107fca2e2fc807a1b86ce5dd249981878ab6007a63457e5",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "Existing health/status HUD crosses the raised hand area. The magical hit obscures some target detail at contact; no new claim about the older effect or full-battle readability. Static samples and numeric geometry are separate from continuous-film or integrated acceptance."
+    },
+    {
+      "cat": "cinnamon",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-cinnamon-native-R1.json",
+      "reportSha256": "ed2a13c26324ff164b363104481390e4679e998a8cfca00a3cf10153f47e8d75",
+      "sourceCommit": "53dc1f66bc5cbd7fc05334d4ca38d1488f66f57c",
+      "captureUTC": "2026-11-18T05:49:22.404Z",
+      "reviewedUTC": "2026-11-18T05:52:43.124818+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.4803827085496657,
+        2.013275069185716
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 6.103515625e-05,
+      "maxHandoffRoot": 1.3557992566475457e-14,
+      "minTriangleRatio": 0.6617123258960549,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-cinnamon-native-R1/cinnamon-vs-mochi-1280x720.mp4",
+      "filmSha256": "e40d0155b934234ab844e4c2fb9417ee5765c19a8c45dda0bf30c1421cbebeba",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "The upper-row placement gives the hair little headroom under the top HUD, and the health bar crosses the forward hand. The large healing glow hides some recipient detail at contact. This sampled motion review does not accept integrated layout or general performance."
+    },
+    {
+      "cat": "brioche",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-brioche-native-R1.json",
+      "reportSha256": "0bac40444b6ad50ba851b172a485173b28f112c1949b10aa02cd8a8164cad954",
+      "sourceCommit": "53dc1f66bc5cbd7fc05334d4ca38d1488f66f57c",
+      "captureUTC": "2026-11-18T05:50:44.108Z",
+      "reviewedUTC": "2026-11-18T05:53:09.627435+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.4022783876619846,
+        1.4741998417406754
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 3.0517578125e-05,
+      "maxHandoffRoot": 1.3508208016047761e-14,
+      "minTriangleRatio": 0.5533955065084197,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-brioche-native-R1/brioche-vs-mochi-1280x720.mp4",
+      "filmSha256": "dba3076d83d03dcb9ded19f63909dab32eaacfa18babb3334a719db18d0b8e0d",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "The basket moves much less than the designer shield/lantern, so this is a restrained style match. The existing health bar sits at the right cheek/hand level and the support flare temporarily hides the lower skirt. Integrated layout and performance remain separate gates."
+    },
+    {
+      "cat": "velvet",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-velvet-native-R1.json",
+      "reportSha256": "4350eb73825b06db6c9e972088662a2323e83ccc0c5b1564bdccbb2de6583172",
+      "sourceCommit": "1859cb5994badc8b3bfd7bbb64c20aa1fd2fdee9",
+      "captureUTC": "2026-11-18T05:52:04.683Z",
+      "reviewedUTC": "2026-11-18T05:54:05.172722+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.8709043129880727,
+        1.6698033398200085
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 3.0517578125e-05,
+      "maxHandoffRoot": 1.3491694314316654e-14,
+      "minTriangleRatio": 0.5639897183969379,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/velvet-vs-mochi-1280x720.mp4",
+      "filmSha256": "d99d2e4292786bbd5f1227a2a74d3c456ab977c8bb841429c7b0de6118a3fdc4",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "The health/status HUD overlaps the upper prop; the large target ribbons hide some enemy detail at impact. This review covers Velvet's motion in a fixed experimental scene and does not establish full-battle effect or integrated performance acceptance."
+    },
+    {
+      "cat": "marigold",
+      "report": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-marigold-native-R1.json",
+      "reportSha256": "61e92413b669d0f086301a9f70819474510d091e0c04b797295e8726c6147890",
+      "sourceCommit": "74f2440943038073cfaa4fa8c8d2ce383e5efd43",
+      "captureUTC": "2026-11-18T05:53:25.015Z",
+      "reviewedUTC": "2026-11-18T05:55:30.538141+00:00",
+      "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+      "headRangePercentH": [
+        1.6756435107688694,
+        2.1235926934205396
+      ],
+      "footDrift": 0,
+      "loopSeam": 0,
+      "castHit": {
+        "ms": 350,
+        "pose": "skill",
+        "at": 0.55
+      },
+      "maxHandoffMesh": 6.103515625e-05,
+      "maxHandoffRoot": 1.3524762192538016e-14,
+      "minTriangleRatio": 0.6708113400914274,
+      "film": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/marigold-vs-mochi-1280x720.mp4",
+      "filmSha256": "fd182b2b48920d7ba8c03a4492b2f7ba9d9c146fad72da8fdcdebee2f7974282",
+      "reviewedImages": 4,
+      "sootParity": [
+        {
+          "reduced": false,
+          "exact": true,
+          "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+        },
+        {
+          "reduced": true,
+          "exact": true,
+          "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+        }
+      ],
+      "limitations": "The health bar crosses the upper cup and the top-row pose has limited headroom. The pre-existing group healing glow covers substantial recipient body detail at contact; no blanket effect-readability or integrated-build acceptance is implied by this motion review."
+    }
+  ],
+  "limits": "Seven deterministic experimental6310 captures at1280x720. Films generated and stream/hash verified; four fresh static images per cat reviewed once. No claim of continuously watched films, integrated6301 approval or laptop performance. Mochi/Clover media acceptance remains open."
+}
