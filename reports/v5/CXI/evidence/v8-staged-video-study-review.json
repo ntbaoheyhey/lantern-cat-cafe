@@ -1,0 +1,201 @@
+{
+  "utc": "2026-11-18T11:05:10.101711+00:00",
+  "decision": "Research accepted; current long-GOP staging is insufficient for the cold budget. No production adoption.",
+  "rawPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staged-video-study-r1/browser-final-r5.json",
+  "rawSha256": "fb7e5e87fc47dc9efec52b153db797e6419802f7fa8e2f15bb2764fa1314dc93",
+  "harnessSha256": "0b750d22b259418e43f40f7da2d08e0a6d63c53585a056afeeeade4b413ab997",
+  "remuxSha256": "77f7592f8cdd436671a5a62344c18ba4fe9e61348ea1a73fba47da1f0f4f4db4",
+  "sourceBuild": "546ec5252af7e87bde026e8cc51dce8404493b3d",
+  "currentServedMediaHashesExact": true,
+  "scenarioCount": 20,
+  "pixelComparisons": 60,
+  "errors": 0,
+  "rows": [
+    {
+      "id": "chromium-mochi-native-auto-5.133333333333333",
+      "firstBodyBytes": 557056,
+      "deliveredBodyBytes": 931787,
+      "firstFrameMs": 2367.9000000059605,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-mochi-native-metadata-5.133333333333333",
+      "firstBodyBytes": 557056,
+      "deliveredBodyBytes": 997323,
+      "firstFrameMs": 2317.3999999910593,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-mochi-mse-0.5",
+      "firstBodyBytes": 790382,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 3442.0999999940395,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-mochi-mse-5.133333333333333",
+      "firstBodyBytes": 790382,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 3472.8999999910593,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-mochi-mse-9.5",
+      "firstBodyBytes": 141367,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 755.1999999880791,
+      "sampledPixelsExact": true,
+      "loop": {
+        "wraps": 2,
+        "callbacks": 343,
+        "maxCallbackGapMs": 72.29999999701977
+      }
+    },
+    {
+      "id": "chromium-clover-native-auto-5.133333333333333",
+      "firstBodyBytes": 458752,
+      "deliveredBodyBytes": 817118,
+      "firstFrameMs": 1933.6000000089407,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-clover-native-metadata-5.133333333333333",
+      "firstBodyBytes": 458752,
+      "deliveredBodyBytes": 882654,
+      "firstFrameMs": 1928.2000000029802,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-clover-mse-0.5",
+      "firstBodyBytes": 698750,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 3005.5999999940395,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-clover-mse-5.133333333333333",
+      "firstBodyBytes": 698750,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 3071.5999999940395,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "chromium-clover-mse-9.5",
+      "firstBodyBytes": 118513,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 686.2999999970198,
+      "sampledPixelsExact": true,
+      "loop": {
+        "wraps": 2,
+        "callbacks": 343,
+        "maxCallbackGapMs": 70.69999998807907
+      }
+    },
+    {
+      "id": "webkit-mochi-native-auto-5.133333333333333",
+      "firstBodyBytes": 540674,
+      "deliveredBodyBytes": 931789,
+      "firstFrameMs": 2392,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-mochi-native-metadata-5.133333333333333",
+      "firstBodyBytes": 540674,
+      "deliveredBodyBytes": 931789,
+      "firstFrameMs": 2313,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-mochi-mse-0.5",
+      "firstBodyBytes": 790382,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 3423,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-mochi-mse-5.133333333333333",
+      "firstBodyBytes": 790382,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 3482,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-mochi-mse-9.5",
+      "firstBodyBytes": 141367,
+      "deliveredBodyBytes": 930946,
+      "firstFrameMs": 757,
+      "sampledPixelsExact": true,
+      "loop": {
+        "wraps": 2,
+        "callbacks": 343,
+        "maxCallbackGapMs": 67
+      }
+    },
+    {
+      "id": "webkit-clover-native-auto-5.133333333333333",
+      "firstBodyBytes": 458754,
+      "deliveredBodyBytes": 817120,
+      "firstFrameMs": 1982,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-clover-native-metadata-5.133333333333333",
+      "firstBodyBytes": 458754,
+      "deliveredBodyBytes": 817120,
+      "firstFrameMs": 1985,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-clover-mse-0.5",
+      "firstBodyBytes": 698750,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 3012,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-clover-mse-5.133333333333333",
+      "firstBodyBytes": 698750,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 3097,
+      "sampledPixelsExact": true,
+      "loop": null
+    },
+    {
+      "id": "webkit-clover-mse-9.5",
+      "firstBodyBytes": 118513,
+      "deliveredBodyBytes": 816461,
+      "firstFrameMs": 690,
+      "sampledPixelsExact": true,
+      "loop": {
+        "wraps": 2,
+        "callbacks": 343,
+        "maxCallbackGapMs": 66
+      }
+    }
+  ],
+  "firstOrdinaryFragmentsBytes": 1489132,
+  "savingAgainstOriginalVideos": 259773,
+  "historicalWave3OverageBytes": 1743370,
+  "limitations": [
+    "First-frame bytes count HTTP response bodies only and are not game cold-transfer totals.",
+    "Three sampled phases per case are not all-frame codec certification.",
+    "Loops began after all segments were downloaded; stall-free staged playback is unproven.",
+    "No general FPS or laptop-performance claim.",
+    "FFprobe packet-time shift is not an MSE timestampOffset: raw fragment timestamps start at zero. Offset zero gave matching decoded samples."
+  ]
+}
