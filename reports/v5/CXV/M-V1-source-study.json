@@ -1,0 +1,1216 @@
+{
+  "utc": "2026-11-18T04:34:32.843605+00:00",
+  "sourceCommit": "bbf137259600ed4472af942f80ab78bb42af7922",
+  "sourceFiles": [
+    {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2250,
+          "height": 1800,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "duration": "10.000000",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000",
+        "size": "18660725"
+      },
+      "source": "/Users/bao/Downloads/Scene1.mp4",
+      "copy": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/Scene1.mp4",
+      "sha256": "1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524",
+      "copySha256": "1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524"
+    },
+    {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 2300,
+          "height": 2800,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "duration": "10.000000",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "10.000000",
+        "size": "18722251"
+      },
+      "source": "/Users/bao/Downloads/clover.mp4",
+      "copy": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover.mp4",
+      "sha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150",
+      "copySha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150"
+    }
+  ],
+  "analysis": {
+    "utc": "2026-11-18T04:32:21.551202+00:00",
+    "method": "OpenCV pyramidal LK sequential tracks of frame0 corners in manual anatomical ROIs; forward/back error<=1px, >=3 points retained; median displacement from frame0. Frequencies fitted 1-4 harmonics of 10s; periods are dominant components, not unique physical cycles. Phase lag of matching harmonic vs body; uncertainty >=1frame and .25px. Black boundary not treated as alpha.",
+    "clips": {
+      "mochi": {
+        "frames": 300,
+        "channels": {
+          "body": {
+            "roi": [
+              292,
+              248,
+              54,
+              44
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 24,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              15.696000099182129,
+              0.28299999237060547
+            ],
+            "xyRangePctHeight": [
+              3.6419999599456787,
+              0.06599999964237213
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.729,
+            "phaseRadians": -1.4885047674179077,
+            "extremaFrames": [
+              88,
+              117
+            ],
+            "maxSpeedPxPerS": 30.680721282958984,
+            "seamDeltaPx": [
+              -0.03799999877810478,
+              -0.004000000189989805
+            ],
+            "lagVsBodySameHarmonicMs": -0.0
+          },
+          "head": {
+            "roi": [
+              285,
+              106,
+              58,
+              29
+            ],
+            "trackedPoints": 8,
+            "survivingPoints": 7,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              7.920000076293945,
+              9.09000015258789
+            ],
+            "xyRangePctHeight": [
+              1.8380000591278076,
+              2.1089999675750732
+            ],
+            "dominantAxis": "y",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.823,
+            "phaseRadians": -2.6640539169311523,
+            "extremaFrames": [
+              18,
+              141
+            ],
+            "maxSpeedPxPerS": 45.281612396240234,
+            "seamDeltaPx": [
+              0.07500000298023224,
+              0.2680000066757202
+            ],
+            "lagVsBodySameHarmonicMs": 623.6
+          },
+          "nose": {
+            "roi": [
+              362,
+              161,
+              27,
+              26
+            ],
+            "trackedPoints": 7,
+            "survivingPoints": 7,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              10.288000106811523,
+              0.7910000085830688
+            ],
+            "xyRangePctHeight": [
+              2.38700008392334,
+              0.18400000035762787
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.281,
+            "phaseRadians": -2.484440565109253,
+            "extremaFrames": [
+              182,
+              25
+            ],
+            "maxSpeedPxPerS": 47.72184371948242,
+            "seamDeltaPx": [
+              -0.367000013589859,
+              -0.03200000151991844
+            ],
+            "lagVsBodySameHarmonicMs": 528.4
+          },
+          "earLeft": {
+            "roi": [
+              238,
+              39,
+              36,
+              45
+            ],
+            "trackedPoints": 15,
+            "survivingPoints": 15,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              61.702999114990234,
+              16.277000427246094
+            ],
+            "xyRangePctHeight": [
+              14.315999984741211,
+              3.7769999504089355
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.952,
+            "phaseRadians": 0.6031039953231812,
+            "extremaFrames": [
+              32,
+              187
+            ],
+            "maxSpeedPxPerS": 87.60811614990234,
+            "seamDeltaPx": [
+              2.3610000610351562,
+              -0.03200000151991844
+            ],
+            "lagVsBodySameHarmonicMs": -1109.6
+          },
+          "earRight": {
+            "roi": [
+              367,
+              43,
+              30,
+              49
+            ],
+            "trackedPoints": 10,
+            "survivingPoints": 10,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              47.72600173950195,
+              19.965999603271484
+            ],
+            "xyRangePctHeight": [
+              11.072999954223633,
+              4.632999897003174
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.978,
+            "phaseRadians": -2.5389082431793213,
+            "extremaFrames": [
+              93,
+              33
+            ],
+            "maxSpeedPxPerS": 92.4193344116211,
+            "seamDeltaPx": [
+              -0.5759999752044678,
+              0.8190000057220459
+            ],
+            "lagVsBodySameHarmonicMs": 557.3
+          },
+          "hair": {
+            "roi": [
+              308,
+              75,
+              38,
+              28
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 24,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              0.03999999910593033,
+              0.014999999664723873
+            ],
+            "xyRangePctHeight": [
+              0.008999999612569809,
+              0.004000000189989805
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.31,
+            "phaseRadians": 0.3852703273296356,
+            "extremaFrames": [
+              142,
+              0
+            ],
+            "maxSpeedPxPerS": 0.8423926830291748,
+            "seamDeltaPx": [
+              -0.009999999776482582,
+              -0.014000000432133675
+            ],
+            "lagVsBodySameHarmonicMs": -994.1
+          },
+          "tail": {
+            "roi": [
+              120,
+              229,
+              48,
+              36
+            ],
+            "trackedPoints": 3,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              175.34300231933594,
+              144.47000122070312
+            ],
+            "xyRangePctHeight": [
+              40.68299865722656,
+              33.52000045776367
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 1,
+            "dominantPeriodS": 10.0,
+            "dominantPowerFraction": 0.358,
+            "phaseRadians": 1.749051809310913,
+            "extremaFrames": [
+              106,
+              299
+            ],
+            "maxSpeedPxPerS": 1663.7882080078125,
+            "seamDeltaPx": [
+              66.84700012207031,
+              -100.24299621582031
+            ],
+            "lagVsBodySameHarmonicMs": -4897.1
+          },
+          "prop": {
+            "roi": [
+              446,
+              277,
+              29,
+              60
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 11,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              34.48899841308594,
+              77.6510009765625
+            ],
+            "xyRangePctHeight": [
+              8.001999855041504,
+              18.016000747680664
+            ],
+            "dominantAxis": "y",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.516,
+            "phaseRadians": 1.7205054759979248,
+            "extremaFrames": [
+              115,
+              84
+            ],
+            "maxSpeedPxPerS": 140.34104919433594,
+            "seamDeltaPx": [
+              -0.27399998903274536,
+              -1.559999942779541
+            ],
+            "lagVsBodySameHarmonicMs": 1630.9
+          },
+          "lantern": {
+            "roi": [
+              499,
+              293,
+              31,
+              52
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 24,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              54.64400100708008,
+              136.61000061035156
+            ],
+            "xyRangePctHeight": [
+              12.678000450134277,
+              31.695999145507812
+            ],
+            "dominantAxis": "y",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.47,
+            "phaseRadians": 1.7618528604507446,
+            "extremaFrames": [
+              115,
+              83
+            ],
+            "maxSpeedPxPerS": 235.12338256835938,
+            "seamDeltaPx": [
+              0.12600000202655792,
+              0.27300000190734863
+            ],
+            "lagVsBodySameHarmonicMs": 1609.0
+          },
+          "cloth": {
+            "roi": [
+              290,
+              327,
+              53,
+              26
+            ],
+            "trackedPoints": 4,
+            "survivingPoints": 4,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              27.29400062561035,
+              2.061000108718872
+            ],
+            "xyRangePctHeight": [
+              6.333000183105469,
+              0.4779999852180481
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.688,
+            "phaseRadians": -1.5121843814849854,
+            "extremaFrames": [
+              264,
+              38
+            ],
+            "maxSpeedPxPerS": 69.52931213378906,
+            "seamDeltaPx": [
+              -0.15700000524520874,
+              -0.14000000059604645
+            ],
+            "lagVsBodySameHarmonicMs": 12.6
+          },
+          "footLeft": {
+            "roi": [
+              231,
+              435,
+              38,
+              25
+            ],
+            "trackedPoints": 9,
+            "survivingPoints": 9,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              21.358999252319336,
+              0.05700000002980232
+            ],
+            "xyRangePctHeight": [
+              4.955999851226807,
+              0.013000000268220901
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.695,
+            "phaseRadians": -1.5096362829208374,
+            "extremaFrames": [
+              172,
+              38
+            ],
+            "maxSpeedPxPerS": 50.739898681640625,
+            "seamDeltaPx": [
+              -0.06300000101327896,
+              0.02199999988079071
+            ],
+            "lagVsBodySameHarmonicMs": 11.2
+          },
+          "footRight": {
+            "roi": [
+              361,
+              435,
+              37,
+              26
+            ],
+            "trackedPoints": 10,
+            "survivingPoints": 10,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              8.371999740600586,
+              0.6050000190734863
+            ],
+            "xyRangePctHeight": [
+              1.9420000314712524,
+              0.14000000059604645
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 4,
+            "dominantPeriodS": 2.5,
+            "dominantPowerFraction": 0.157,
+            "phaseRadians": -0.17599397897720337,
+            "extremaFrames": [
+              118,
+              1
+            ],
+            "maxSpeedPxPerS": 27.23672866821289,
+            "seamDeltaPx": [
+              -0.11299999803304672,
+              -0.026000000536441803
+            ],
+            "lagVsBodySameHarmonicMs": 818.3
+          }
+        }
+      },
+      "clover": {
+        "frames": 300,
+        "channels": {
+          "body": {
+            "roi": [
+              234,
+              323,
+              60,
+              35
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 24,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              34.308998107910156,
+              14.395999908447266
+            ],
+            "xyRangePctHeight": [
+              5.560999870300293,
+              2.3329999446868896
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.677,
+            "phaseRadians": 2.916810989379883,
+            "extremaFrames": [
+              110,
+              261
+            ],
+            "maxSpeedPxPerS": 56.52627944946289,
+            "seamDeltaPx": [
+              0.009999999776482582,
+              0.061000000685453415
+            ],
+            "lagVsBodySameHarmonicMs": -0.0
+          },
+          "head": {
+            "roi": [
+              252,
+              95,
+              43,
+              24
+            ],
+            "trackedPoints": 9,
+            "survivingPoints": 8,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              53.560001373291016,
+              23.222999572753906
+            ],
+            "xyRangePctHeight": [
+              8.680999755859375,
+              3.7639999389648438
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 2,
+            "dominantPeriodS": 5.0,
+            "dominantPowerFraction": 0.561,
+            "phaseRadians": -1.7375653982162476,
+            "extremaFrames": [
+              97,
+              42
+            ],
+            "maxSpeedPxPerS": 109.47809600830078,
+            "seamDeltaPx": [
+              -0.28600001335144043,
+              -0.032999999821186066
+            ],
+            "lagVsBodySameHarmonicMs": 1311.8
+          },
+          "nose": {
+            "roi": [
+              298,
+              156,
+              26,
+              29
+            ],
+            "trackedPoints": 9,
+            "survivingPoints": 5,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              33.04199981689453,
+              18.91200065612793
+            ],
+            "xyRangePctHeight": [
+              5.355000019073486,
+              3.065000057220459
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 2,
+            "dominantPeriodS": 5.0,
+            "dominantPowerFraction": 0.499,
+            "phaseRadians": -2.0556702613830566,
+            "extremaFrames": [
+              92,
+              42
+            ],
+            "maxSpeedPxPerS": 46.36583709716797,
+            "seamDeltaPx": [
+              -0.04600000008940697,
+              0.03400000184774399
+            ],
+            "lagVsBodySameHarmonicMs": 1564.9
+          },
+          "earLeft": {
+            "roi": [
+              154,
+              29,
+              32,
+              51
+            ],
+            "trackedPoints": 6,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              91.55400085449219,
+              48.856998443603516
+            ],
+            "xyRangePctHeight": [
+              14.83899974822998,
+              7.918000221252441
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 2,
+            "dominantPeriodS": 5.0,
+            "dominantPowerFraction": 0.468,
+            "phaseRadians": -1.3555691242218018,
+            "extremaFrames": [
+              248,
+              211
+            ],
+            "maxSpeedPxPerS": 395.2060241699219,
+            "seamDeltaPx": [
+              -7.623000144958496,
+              -0.8799999952316284
+            ],
+            "lagVsBodySameHarmonicMs": 1007.8
+          },
+          "earRight": {
+            "roi": [
+              336,
+              29,
+              27,
+              52
+            ],
+            "trackedPoints": 10,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              94.16999816894531,
+              32.986000061035156
+            ],
+            "xyRangePctHeight": [
+              15.262999534606934,
+              5.3460001945495605
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 1,
+            "dominantPeriodS": 10.0,
+            "dominantPowerFraction": 0.463,
+            "phaseRadians": -2.373511791229248,
+            "extremaFrames": [
+              255,
+              159
+            ],
+            "maxSpeedPxPerS": 302.9349670410156,
+            "seamDeltaPx": [
+              -60.33599853515625,
+              6.771999835968018
+            ],
+            "lagVsBodySameHarmonicMs": 3555.2
+          },
+          "hair": {
+            "roi": [
+              251,
+              75,
+              40,
+              27
+            ],
+            "trackedPoints": 14,
+            "survivingPoints": 13,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              58.22600173950195,
+              20.066999435424805
+            ],
+            "xyRangePctHeight": [
+              9.437000274658203,
+              3.252000093460083
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 2,
+            "dominantPeriodS": 5.0,
+            "dominantPowerFraction": 0.605,
+            "phaseRadians": -1.587827205657959,
+            "extremaFrames": [
+              97,
+              45
+            ],
+            "maxSpeedPxPerS": 155.79161071777344,
+            "seamDeltaPx": [
+              -0.2759999930858612,
+              -0.4320000112056732
+            ],
+            "lagVsBodySameHarmonicMs": 1192.6
+          },
+          "tail": {
+            "roi": [
+              66,
+              419,
+              41,
+              29
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              107.25399780273438,
+              189.25999450683594
+            ],
+            "xyRangePctHeight": [
+              17.382999420166016,
+              30.673999786376953
+            ],
+            "dominantAxis": "y",
+            "dominantHarmonic": 1,
+            "dominantPeriodS": 10.0,
+            "dominantPowerFraction": 0.429,
+            "phaseRadians": 2.3902416229248047,
+            "extremaFrames": [
+              58,
+              91
+            ],
+            "maxSpeedPxPerS": 1241.3404541015625,
+            "seamDeltaPx": [
+              68.50499725341797,
+              30.70800018310547
+            ],
+            "lagVsBodySameHarmonicMs": -4026.6
+          },
+          "prop": {
+            "roi": [
+              425,
+              219,
+              41,
+              56
+            ],
+            "trackedPoints": 15,
+            "survivingPoints": 15,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              20.138999938964844,
+              35.18299865722656
+            ],
+            "xyRangePctHeight": [
+              3.2639999389648438,
+              5.702000141143799
+            ],
+            "dominantAxis": "y",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.466,
+            "phaseRadians": -0.09062930196523666,
+            "extremaFrames": [
+              73,
+              181
+            ],
+            "maxSpeedPxPerS": 97.37906646728516,
+            "seamDeltaPx": [
+              0.12800000607967377,
+              0.45500001311302185
+            ],
+            "lagVsBodySameHarmonicMs": 1595.5
+          },
+          "cloth": {
+            "roi": [
+              211,
+              507,
+              70,
+              28
+            ],
+            "trackedPoints": 17,
+            "survivingPoints": 11,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              94.5999984741211,
+              24.0049991607666
+            ],
+            "xyRangePctHeight": [
+              15.331999778747559,
+              3.8910000324249268
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.675,
+            "phaseRadians": 2.9509708881378174,
+            "extremaFrames": [
+              196,
+              155
+            ],
+            "maxSpeedPxPerS": 165.85275268554688,
+            "seamDeltaPx": [
+              -2.0250000953674316,
+              -0.21199999749660492
+            ],
+            "lagVsBodySameHarmonicMs": -18.1
+          },
+          "leaf": {
+            "roi": [
+              198,
+              235,
+              54,
+              30
+            ],
+            "trackedPoints": 12,
+            "survivingPoints": 12,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              12.220999717712402,
+              10.32800006866455
+            ],
+            "xyRangePctHeight": [
+              1.9809999465942383,
+              1.6740000247955322
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.784,
+            "phaseRadians": 2.939476728439331,
+            "extremaFrames": [
+              195,
+              153
+            ],
+            "maxSpeedPxPerS": 27.90142059326172,
+            "seamDeltaPx": [
+              -0.5260000228881836,
+              0.33500000834465027
+            ],
+            "lagVsBodySameHarmonicMs": -12.0
+          },
+          "bag": {
+            "roi": [
+              207,
+              376,
+              36,
+              47
+            ],
+            "trackedPoints": 24,
+            "survivingPoints": 24,
+            "quality": "usable projection, not rig parameter",
+            "xyRangePx": [
+              42.222999572753906,
+              19.402999877929688
+            ],
+            "xyRangePctHeight": [
+              6.8429999351501465,
+              3.1449999809265137
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.686,
+            "phaseRadians": 2.9826817512512207,
+            "extremaFrames": [
+              195,
+              154
+            ],
+            "maxSpeedPxPerS": 81.56238555908203,
+            "seamDeltaPx": [
+              -0.15700000524520874,
+              -0.3610000014305115
+            ],
+            "lagVsBodySameHarmonicMs": -34.9
+          },
+          "footLeft": {
+            "roi": [
+              167,
+              591,
+              34,
+              26
+            ],
+            "trackedPoints": 7,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              27.36199951171875,
+              8.085000038146973
+            ],
+            "xyRangePctHeight": [
+              4.434999942779541,
+              1.309999942779541
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 3,
+            "dominantPeriodS": 3.3333333333333335,
+            "dominantPowerFraction": 0.646,
+            "phaseRadians": 2.880410671234131,
+            "extremaFrames": [
+              174,
+              154
+            ],
+            "maxSpeedPxPerS": 141.0863800048828,
+            "seamDeltaPx": [
+              0.03700000047683716,
+              5.008999824523926
+            ],
+            "lagVsBodySameHarmonicMs": 19.3
+          },
+          "footRight": {
+            "roi": [
+              296,
+              591,
+              35,
+              25
+            ],
+            "trackedPoints": 7,
+            "survivingPoints": 0,
+            "quality": "REJECT unstable",
+            "xyRangePx": [
+              4.4770002365112305,
+              2.828000068664551
+            ],
+            "xyRangePctHeight": [
+              0.7260000109672546,
+              0.4580000042915344
+            ],
+            "dominantAxis": "x",
+            "dominantHarmonic": 4,
+            "dominantPeriodS": 2.5,
+            "dominantPowerFraction": 0.378,
+            "phaseRadians": -0.3180377781391144,
+            "extremaFrames": [
+              195,
+              174
+            ],
+            "maxSpeedPxPerS": 13.307320594787598,
+            "seamDeltaPx": [
+              -0.03799999877810478,
+              0.18199999630451202
+            ],
+            "lagVsBodySameHarmonicMs": 42.3
+          }
+        }
+      }
+    }
+  },
+  "blinkEvents": {
+    "mochi": [
+      {
+        "side": "left",
+        "p90IrisArea": 394.1,
+        "closureThreshold": 78.82000000000001,
+        "closureWindows": [
+          {
+            "startFrame": 30,
+            "endFrame": 48,
+            "durationMs": 633.3,
+            "minimumFrame": 34
+          },
+          {
+            "startFrame": 133,
+            "endFrame": 150,
+            "durationMs": 600.0,
+            "minimumFrame": 137
+          },
+          {
+            "startFrame": 233,
+            "endFrame": 254,
+            "durationMs": 733.3,
+            "minimumFrame": 238
+          }
+        ]
+      },
+      {
+        "side": "right",
+        "p90IrisArea": 190.10000000000002,
+        "closureThreshold": 38.02,
+        "closureWindows": [
+          {
+            "startFrame": 29,
+            "endFrame": 49,
+            "durationMs": 700.0,
+            "minimumFrame": 32
+          },
+          {
+            "startFrame": 131,
+            "endFrame": 151,
+            "durationMs": 700.0,
+            "minimumFrame": 135
+          },
+          {
+            "startFrame": 232,
+            "endFrame": 255,
+            "durationMs": 800.0,
+            "minimumFrame": 236
+          }
+        ]
+      }
+    ],
+    "clover": [
+      {
+        "side": "left",
+        "p90IrisArea": 528.0,
+        "closureThreshold": 105.60000000000001,
+        "closureWindows": [
+          {
+            "startFrame": 18,
+            "endFrame": 26,
+            "durationMs": 300.0,
+            "minimumFrame": 22
+          },
+          {
+            "startFrame": 166,
+            "endFrame": 173,
+            "durationMs": 266.7,
+            "minimumFrame": 170
+          },
+          {
+            "startFrame": 203,
+            "endFrame": 207,
+            "durationMs": 166.7,
+            "minimumFrame": 205
+          }
+        ]
+      },
+      {
+        "side": "right",
+        "p90IrisArea": 254.0,
+        "closureThreshold": 50.800000000000004,
+        "closureWindows": [
+          {
+            "startFrame": 17,
+            "endFrame": 27,
+            "durationMs": 366.7,
+            "minimumFrame": 19
+          },
+          {
+            "startFrame": 163,
+            "endFrame": 176,
+            "durationMs": 466.7,
+            "minimumFrame": 165
+          },
+          {
+            "startFrame": 202,
+            "endFrame": 208,
+            "durationMs": 233.3,
+            "minimumFrame": 203
+          }
+        ]
+      }
+    ]
+  },
+  "imagesReviewed": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/mochi-overview.jpg",
+      "sha256": "d78943b1874395870a29f4827c2c19a015c435f67b43272555ab802cc1a06a33",
+      "dimensions": [
+        1024,
+        256
+      ],
+      "reviewedOnce": true
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/mochi-frame0.png",
+      "sha256": "e8b5cd787fd0e8a77f719f8ecc3dbf88ed9f85029027f19d084d518608a58a97",
+      "dimensions": [
+        640,
+        512
+      ],
+      "reviewedOnce": true
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-overview.jpg",
+      "sha256": "afec3098f419cb6ba5e9034cef8648601c4eb5995623270c714f00e6daab1944",
+      "dimensions": [
+        1024,
+        256
+      ],
+      "reviewedOnce": true
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-frame0.png",
+      "sha256": "38e5181df31dc57425441d35b42a49fc75e710fb718893590f09683532220a13",
+      "dimensions": [
+        526,
+        640
+      ],
+      "reviewedOnce": true
+    }
+  ],
+  "limit": "Rejected optical tracks remain explicit; no runtime modification yet; full raw arrays ignored.",
+  "blinkMethod": "HSV iris area in upper face, connected components split at tracked nose X; apparent closure if <20% side p90 area. Area is visibility, not eye-open parameter. Tail measured silhouette band outside torso; extent only, no inferred joint lag.",
+  "rejectedMethods": [
+    "R2 Mochi nose-relative window clips open iris; use full-face R3.",
+    "R1 Clover leaf color contaminates left iris and yaw falsepositive F39; R3 nose-relative window plus aperture filter fixes.",
+    "Tail silhouette ROI is clipped in all frames; extent is descriptive only, not amplitude/lag."
+  ],
+  "sameAxisCorrelation": {
+    "method": "Same-axisX correlation, signed, +/-500ms search; boundary and low correlation not interpreted as lag. Not a causal physics estimate.",
+    "clips": {
+      "mochi": {
+        "head": {
+          "lagMs": 500.0,
+          "correlation": 0.511,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "nose": {
+          "lagMs": 500.0,
+          "correlation": 0.526,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "earLeft": {
+          "lagMs": 500.0,
+          "correlation": -0.83,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "earRight": {
+          "lagMs": 500.0,
+          "correlation": 0.823,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "hair": {
+          "lagMs": -500.0,
+          "correlation": 0.511,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "tail": {
+          "lagMs": -366.7,
+          "correlation": -0.609,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "prop": {
+          "lagMs": -166.7,
+          "correlation": 0.812,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "lantern": {
+          "lagMs": -33.3,
+          "correlation": 0.867,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "cloth": {
+          "lagMs": 0.0,
+          "correlation": 0.989,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "footLeft": {
+          "lagMs": 0.0,
+          "correlation": 0.991,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "footRight": {
+          "lagMs": 0.0,
+          "correlation": -0.473,
+          "atSearchBoundary": false,
+          "validForInference": false
+        }
+      },
+      "clover": {
+        "head": {
+          "lagMs": -466.7,
+          "correlation": 0.409,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "nose": {
+          "lagMs": -500.0,
+          "correlation": 0.471,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "earLeft": {
+          "lagMs": 0.0,
+          "correlation": 0.057,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "earRight": {
+          "lagMs": -500.0,
+          "correlation": -0.221,
+          "atSearchBoundary": true,
+          "validForInference": false
+        },
+        "hair": {
+          "lagMs": -400.0,
+          "correlation": 0.363,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "tail": {
+          "lagMs": 233.3,
+          "correlation": -0.386,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "prop": {
+          "lagMs": 0.0,
+          "correlation": 0.977,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "cloth": {
+          "lagMs": 0.0,
+          "correlation": 0.998,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "leaf": {
+          "lagMs": 0.0,
+          "correlation": 0.959,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "bag": {
+          "lagMs": -33.3,
+          "correlation": 0.999,
+          "atSearchBoundary": false,
+          "validForInference": true
+        },
+        "footLeft": {
+          "lagMs": -33.3,
+          "correlation": 0.672,
+          "atSearchBoundary": false,
+          "validForInference": false
+        },
+        "footRight": {
+          "lagMs": -33.3,
+          "correlation": 0.139,
+          "atSearchBoundary": false,
+          "validForInference": false
+        }
+      }
+    }
+  }
+}
