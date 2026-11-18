@@ -1,6 +1,6 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã kiểm tra **v5-m1.11**, ứng dụng **7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e**, source quay **dd020e520c4beed53910cd10aabc5a8b21ae177e** (chỉ thêm tools/báo cáo). Full suite có 5.317 passed, 11 skipped và hai expected failures; tổng 5.330 test, gồm 3.017 web, bao gồm packed bounds. Build/typecheck cùng chín bước kiểm tra cuối, gồm ba phim 30 giây, đều đạt. So sánh audio m1.10→m1.11 đạt. [Bằng chứng desktop](I-C.md): đòn đầu 20,828 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB 228.802 B, hai fixture còn lại đạt. Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra **v5-m1.12**, ứng dụng **8b8d0b8cad8fcc0feba3110e18de099d89df9e14**, source quay **6cd895e5871e7e79f03623c836fc069e6f977134** (chỉ thêm tools/báo cáo). Full suite có 5.352 passed, 11 skipped và hai expected failures; tổng 5.365 test, gồm 3.052 web, bao gồm DPR/context loss và packed bounds. Build/typecheck cùng tám bước kiểm tra cuối và build trên cùng source, gồm ba phim 30 giây, đều đạt. So sánh audio m1.11→m1.12 đạt. [Bằng chứng desktop](I-C.md): đòn đầu 21,167 giây gồm 17,7 giây đọc; wave3 còn vượt 8 MB 228.854 B, hai fixture còn lại đạt. Chỉ dùng tag sau khi BOARD xác nhận remote.
 
 Preview đã kiểm tra là [bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3), không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.11'
+release_tag='v5-m1.12'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1

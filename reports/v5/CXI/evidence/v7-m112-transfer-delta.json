@@ -1,0 +1,56 @@
+{
+  "utc": "2026-11-18T03:16:12.447509+00:00",
+  "before": "work/v5/CXI/transfer/v7-m111-final/all.json",
+  "after": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v7-m112-final/all.json",
+  "publicPathDefinition": "/ext/bc/ or /v2/network/; all responses remain counted",
+  "rows": [
+    {
+      "fixture": "wave1",
+      "before": {
+        "total": 7667563,
+        "staticResponseBytes": 7664521,
+        "publicResponseBytes": 3042
+      },
+      "after": {
+        "total": 7667601,
+        "staticResponseBytes": 7664578,
+        "publicResponseBytes": 3023
+      },
+      "totalDelta": 38,
+      "staticDelta": 57,
+      "publicDelta": -19
+    },
+    {
+      "fixture": "wave3",
+      "before": {
+        "total": 8228802,
+        "staticResponseBytes": 8225790,
+        "publicResponseBytes": 3012
+      },
+      "after": {
+        "total": 8228854,
+        "staticResponseBytes": 8225847,
+        "publicResponseBytes": 3007
+      },
+      "totalDelta": 52,
+      "staticDelta": 57,
+      "publicDelta": -5
+    },
+    {
+      "fixture": "boss",
+      "before": {
+        "total": 7744933,
+        "staticResponseBytes": 7740232,
+        "publicResponseBytes": 4701
+      },
+      "after": {
+        "total": 7745296,
+        "staticResponseBytes": 7740289,
+        "publicResponseBytes": 5007
+      },
+      "totalDelta": 363,
+      "staticDelta": 57,
+      "publicDelta": 306
+    }
+  ]
+}

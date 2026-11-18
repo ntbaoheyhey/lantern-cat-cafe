@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
-I-A VALIDATED/PUBLISH: m1.11 packed application7ed0ce4f; all9steps0;5330total/5317pass/11skip/2expectedfail;3real30sfilms; publish branch+annotated tag then remoteverify/BOARD.
-I-B OPEN: m1.11 cold7667563/8228802/7744933B;wave3FAIL228802B,boss255067Bheadroom.AGV T9four-native>=90000B still absent;AGS T5larger/T8provenance-native-listening REDO;no rejected audio integrated.
-I-C FIRST-HIT DONE:20828ms incl17700reading8cards,HP165→119,0errors;route9817ms excludesreading.
-I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY: truthful receipt hash/fee/payer/network/explorer + env-gated Fuji kit/local Anvil proof + NEEDS-USER-VI exact commands;kit5tests+Anvil516ms/0.000042AVAX pass;actual public Fuji absent.
-I-E DONE/REFRESH: m1.11 three30.000s actual1xgameplay+browseraudio1280x720,0errors;8freshimages measured,7viewedonce,1exacthash prior stall review;films evidence v7-m111-films.json.
-I-F DONE/REPEAT: README/ARCHITECTURE/runbook/facts currentm1.11.CXI verified327word/180s narration draft not recorded.AGS T7 REDO localfundingclaim/brokenlinks;T2/T3need sourced evidence.
-I-G DONE/REPEAT: reject/stall recovery634/8712ms,controlsfit,cafe/reloadpass.AGS Nightreport lacks own exact trace.T1REDO.CXV DPR c0373a1d9/f991fb117+fullflow a95824c98 queued;contextloss scoped repair requested.
+I-A VALIDATED/PUBLISH: m1.12 app8b8d0b8ca DPR/context;full5365=5352pass+11skip+2expectedfail;8finalsteps+priorbuild0;publishbranch/tag thenremoteverify.
+I-B OPEN:m1.12 cold7667601/8228854/7745296B;wave3FAIL228854B;AGV4halfAVIFabsent;AGS e33headersstereo corrected,native/listening pending.No rejectedreplacements integrated.
+I-C FIRST-HIT DONE:21167ms incl17700reading8cards;HP165→119;route9747ms excludesreading;ordinary0errors.
+I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
+I-E DONE/REFRESH:m1.12 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.
+I-F DONE/REPEAT:docs currentm1.12;327word180s narrationdraft unrecorded.AGS T7wording/link partialACCEPT;remaining reviewlinkREDO;T2/T3unsupportedclaimsREDO.
+I-G OPEN/REPEAT:DPR/contextACCEPT;pausedbattle contextloss assignedCXV;unlocktoast touches lowerNextborder,center clear. Recovery1138/8676ms;T1exactQA unresolved.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.

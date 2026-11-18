@@ -1,0 +1,615 @@
+{
+  "utc": "2026-11-18T03:01:57.111393+00:00",
+  "disposition": "REDO;not integrated",
+  "audits": [
+    {
+      "label": "v7-callouts-30a1-native",
+      "sourceRef": "v5-m1.11",
+      "candidateRef": "30a1f22a8",
+      "raw": "work/v5/CXI/audio/v7-callouts-30a1-native/report.json",
+      "rows": [
+        {
+          "name": "callout-spool-ram",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-spool-ram.webm",
+              "bytes": 62022,
+              "sha256": "13ef450711c6fd80a925e78ea61f9fa249d83fd3ce63a603790e9277b95a0ce6",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-spool-ram.opus",
+              "bytes": 37566,
+              "sha256": "6bee969f512d26283e345a99e0f79fce70df5ef280a3085b4ad8a7724b06ce28",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 300820,
+          "candidateFrames": 300556,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": 0.10496651192376615,
+                "rmsGainDb": -0.17308573711976954,
+                "leastSquaresGain": 0.10289552296807475,
+                "snrDb": -2.443113267711727,
+                "comparedFrames": 300556,
+                "alignment": {
+                  "sourceOffsetSamples": 266,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9873750873528199,
+                  "rmsGainDb": -0.17273689894541447,
+                  "snrDb": 15.996284870463509,
+                  "comparedFrames": 300554
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 24456
+        },
+        {
+          "name": "callout-needle-moth",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-needle-moth.webm",
+              "bytes": 84027,
+              "sha256": "c262162cf5debca5810339c8299381e867534904c737e4a774329990f24ffb94",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-needle-moth.opus",
+              "bytes": 56730,
+              "sha256": "bad33aa79802954a2ff2d60a060a3b1c4698255c8c9e244f57ed66c6b484491a",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 447136,
+          "candidateFrames": 446872,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": -0.01492252190532703,
+                "rmsGainDb": -0.3807602259241315,
+                "leastSquaresGain": -0.014282499376878845,
+                "snrDb": -2.8883589149701834,
+                "comparedFrames": 446872,
+                "alignment": {
+                  "sourceOffsetSamples": 265,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9520946526078474,
+                  "rmsGainDb": -0.38054727679978145,
+                  "snrDb": 10.289972250201673,
+                  "comparedFrames": 446871
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 27297
+        },
+        {
+          "name": "callout-teacup-healer",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-teacup-healer.webm",
+              "bytes": 65403,
+              "sha256": "2fa2b79dd176fcc551b4adb3904e77625cceaa5804b8a87301495c2634d2fa92",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-teacup-healer.opus",
+              "bytes": 42809,
+              "sha256": "8198137f874ff4dfe0a43e3dd6de5febb7dd21c0cb52846f190d4458d6277a58",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 349704,
+          "candidateFrames": 349440,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": -0.039607477724672935,
+                "rmsGainDb": -0.350900776289304,
+                "leastSquaresGain": -0.03803926771261847,
+                "snrDb": -3.006951625065364,
+                "comparedFrames": 349440,
+                "alignment": {
+                  "sourceOffsetSamples": 265,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9305991675204246,
+                  "rmsGainDb": -0.350873801960639,
+                  "snrDb": 8.700723186510487,
+                  "comparedFrames": 349439
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 22594
+        },
+        {
+          "name": "callout-kettle-knight",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-kettle-knight.webm",
+              "bytes": 84128,
+              "sha256": "449ca1d594a7df73a6bf141408060f69f37cc5604b40eef93e604981c413b2ba",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-kettle-knight.opus",
+              "bytes": 55975,
+              "sha256": "a0ba89779e2da3d470aa6d483fe4499d03aad9eaebce1e8c6e181f616f5c6b9f",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 445736,
+          "candidateFrames": 445472,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": 0.05570851155004307,
+                "rmsGainDb": -0.49512680695933264,
+                "leastSquaresGain": 0.05262174122448527,
+                "snrDb": -2.5212651726614994,
+                "comparedFrames": 445472,
+                "alignment": {
+                  "sourceOffsetSamples": 265,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9322809962421148,
+                  "rmsGainDb": -0.49497741558145114,
+                  "snrDb": 8.827152023518215,
+                  "comparedFrames": 445471
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 28153
+        },
+        {
+          "name": "callout-pollen-scout",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-pollen-scout.webm",
+              "bytes": 75230,
+              "sha256": "cf75dc40316844c8ec5ec1175adc0a7a3e575c7a7e11225e7a67b2c9e03e15cb",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-pollen-scout.opus",
+              "bytes": 49851,
+              "sha256": "afb973362499a5da67e7c7b5d7f0212dd2ceea4c09ab60c43d2e482bb1386bca",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 399020,
+          "candidateFrames": 398756,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": 0.00026274603791560523,
+                "rmsGainDb": -0.5824758000600261,
+                "leastSquaresGain": 0.0002457040899833242,
+                "snrDb": -2.72768127391776,
+                "comparedFrames": 398756,
+                "alignment": {
+                  "sourceOffsetSamples": 265,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9340884702232168,
+                  "rmsGainDb": -0.5823109389145504,
+                  "snrDb": 8.945583839834915,
+                  "comparedFrames": 398755
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 25379
+        },
+        {
+          "name": "callout-crumb-sentinel",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/callout-crumb-sentinel.webm",
+              "bytes": 87216,
+              "sha256": "cfdb0b847b76e5ca11a4cf852cf3adeccee117945bcdcb5573ed5c4a5764d28a",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 24000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "30a1f22a8",
+              "path": "apps/web/public/audio/v5/voice_reencoded/callout-crumb-sentinel.opus",
+              "bytes": 53562,
+              "sha256": "f88c838689e635ba6bb61435d9603b3d89fcffd383e0c062eca1094cc257cf36",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 430702,
+          "candidateFrames": 430438,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": -264,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": -0.09241646138757734,
+                "rmsGainDb": -0.39803164671836916,
+                "leastSquaresGain": -0.08827703809000292,
+                "snrDb": -3.1993394108577062,
+                "comparedFrames": 430438,
+                "alignment": {
+                  "sourceOffsetSamples": 265,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9429998701877722,
+                  "rmsGainDb": -0.39788615139254796,
+                  "snrDb": 9.55065715410522,
+                  "comparedFrames": 430437
+                }
+              }
+            ]
+          },
+          "cueCount": 6,
+          "missingCueFrames": 0,
+          "savingBytes": 33654
+        }
+      ]
+    },
+    {
+      "label": "v7-beds-6923-native",
+      "sourceRef": "v5-m1.11",
+      "candidateRef": "6923d4eeb",
+      "raw": "work/v5/CXI/audio/v7-beds-6923-native/report.json",
+      "rows": [
+        {
+          "name": "score-boss",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/score-boss.webm",
+              "bytes": 260986,
+              "sha256": "3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d",
+              "opusHeader": {
+                "channels": 2,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "6923d4eeb",
+              "path": "apps/web/public/audio/v5/legacy/score-boss.opus",
+              "bytes": 168909,
+              "sha256": "9b1096b7fb268ef5a55088cc76e81f26b5bde1c3892dd0940d71448fee6713f3",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 1474536,
+          "candidateFrames": 1474560,
+          "channels": [
+            2,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": 24,
+            "channelsMatch": false,
+            "comparisons": [
+              {
+                "correlation": 0.6232459260458191,
+                "rmsGainDb": 2.7252182020240956,
+                "leastSquaresGain": 0.8529436856203292,
+                "snrDb": -0.6708715977762976,
+                "comparedFrames": 1474536,
+                "alignment": {
+                  "sourceOffsetSamples": -24,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9514413037517541,
+                  "rmsGainDb": 2.7252432387432917,
+                  "snrDb": 5.706627830640288,
+                  "comparedFrames": 1474536
+                }
+              }
+            ]
+          },
+          "cueCount": 1,
+          "missingCueFrames": 0,
+          "savingBytes": 92077
+        },
+        {
+          "name": "score-dawn",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/score-dawn.webm",
+              "bytes": 236849,
+              "sha256": "ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "6923d4eeb",
+              "path": "apps/web/public/audio/v5/legacy/score-dawn.opus",
+              "bytes": 214634,
+              "sha256": "aa6ac9f75398eebc87d32ae9e8991ad922e45d08a8a0a49d986b9d5c47d21549",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 1474536,
+          "candidateFrames": 1474560,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": 24,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": 0.4216966950107979,
+                "rmsGainDb": -0.00035123676088096576,
+                "leastSquaresGain": 0.4216796429421296,
+                "snrDb": -0.6316810873276515,
+                "comparedFrames": 1474536,
+                "alignment": {
+                  "sourceOffsetSamples": -24,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.999694545533216,
+                  "rmsGainDb": -0.0003327442696912159,
+                  "snrDb": 32.14039118353132,
+                  "comparedFrames": 1474536
+                }
+              }
+            ]
+          },
+          "cueCount": 1,
+          "missingCueFrames": 0,
+          "savingBytes": 22215
+        },
+        {
+          "name": "scene-workshop",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/scene-workshop.webm",
+              "bytes": 142079,
+              "sha256": "4553f39e2e6545ef30494d41d8295146eaa278faad56645dd59ace28b96354a7",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "6923d4eeb",
+              "path": "apps/web/public/audio/v5/legacy/scene-workshop.opus",
+              "bytes": 135320,
+              "sha256": "c6ad36b9cc9765acd5d1c36edc2018386718c191a15af10250a8fca7f3770ef0",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 1151976,
+          "candidateFrames": 1152000,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": 24,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": 0.630792639345064,
+                "rmsGainDb": -0.7405211503263627,
+                "leastSquaresGain": 0.5792426869321481,
+                "snrDb": 1.644691067970544,
+                "comparedFrames": 1151976,
+                "alignment": {
+                  "sourceOffsetSamples": -24,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.983895205948281,
+                  "rmsGainDb": -0.7405377197364581,
+                  "snrDb": 14.406184691592195,
+                  "comparedFrames": 1151976
+                }
+              }
+            ]
+          },
+          "cueCount": 7,
+          "missingCueFrames": 0,
+          "savingBytes": 6759
+        },
+        {
+          "name": "scene-rain",
+          "files": {
+            "source": {
+              "ref": "v5-m1.11",
+              "path": "apps/web/public/audio/scene-rain.webm",
+              "bytes": 135429,
+              "sha256": "01302f0900d343f6a3ff9da0424b934d79a655faeabce5d26e648d1daf48b85e",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            },
+            "candidate": {
+              "ref": "6923d4eeb",
+              "path": "apps/web/public/audio/v5/legacy/scene-rain.opus",
+              "bytes": 129921,
+              "sha256": "543d7cd026c5fdcc30fb0c1b157abf4ac449903a6fae606720fc5e404bb82d2c",
+              "opusHeader": {
+                "channels": 1,
+                "preSkip": 312,
+                "inputRate": 48000,
+                "outputGainQ78": 0
+              }
+            }
+          },
+          "sourceFrames": 1151976,
+          "candidateFrames": 1152000,
+          "channels": [
+            1,
+            1
+          ],
+          "vsSource": {
+            "frameDelta": 24,
+            "channelsMatch": true,
+            "comparisons": [
+              {
+                "correlation": -0.1676617316141312,
+                "rmsGainDb": -1.0538582085865458,
+                "leastSquaresGain": -0.14850498656250682,
+                "snrDb": -3.183864980127785,
+                "comparedFrames": 1151976,
+                "alignment": {
+                  "sourceOffsetSamples": -24,
+                  "searchRangeSamples": 960,
+                  "correlation": 0.9685662719282386,
+                  "rmsGainDb": -1.0540296831812215,
+                  "snrDb": 11.627766737773907,
+                  "comparedFrames": 1151976
+                }
+              }
+            ]
+          },
+          "cueCount": 2,
+          "missingCueFrames": 0,
+          "savingBytes": 5508
+        }
+      ]
+    }
+  ],
+  "calloutFinding": "Pinned30a1 voice_reencoded sixfiles save161533B. All264frames shorter/5.5ms;align to source offsets265\u2013266. Aligned RMS shifts\u22120.1727 to\u22120.5823dB. All36cue ends fit;no clipped-word claim. Metadata/source provenance,mapping/fallback and listening proof still absent.",
+  "bedFinding": "Pinned6923 fourbeds save126559B butboss2\u21921channels. All decoded lengths+24frames/+0.5ms and offset\u221224. Dawn alignedRMS\u22120.0003dB,workshop\u22120.7405,rain\u22121.0540. Boss first-channel comparison not stereo fidelity. Loop/listening/mapping proof absent.",
+  "limits": "Objective native sample audit;no subjective intelligibility,loop audibility or quality acceptance."
+}
