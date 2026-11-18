@@ -1,0 +1,248 @@
+{
+  "capture": {
+    "utc": "2026-11-18T04:39:11.919Z",
+    "sourceCommit": "07b60cae891030d5183b5af57fb54a0a038d568c",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "prototypeSha256": "de463cb5e7de1b770a85e89ec9955f5224fe5d89b07163f3c99fe7b1c82aca5c",
+    "method": "Source-free Panko-only dev-page prototype; deterministic fullroute1280x720 samples. No production or gameplay/FPS claim.",
+    "modes": [
+      {
+        "mode": "baseline",
+        "sootSha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40",
+        "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/baseline/measure.json",
+        "box": {
+          "x": 268,
+          "y": 377,
+          "width": 265,
+          "height": 289,
+          "body": {
+            "x": 300.69064296946806,
+            "y": 409.08732031429525,
+            "width": 200.727674964456,
+            "height": 224.2340556038301
+          }
+        }
+      },
+      {
+        "mode": "candidate",
+        "sootSha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40",
+        "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/candidate/measure.json",
+        "box": {
+          "x": 268,
+          "y": 376,
+          "width": 265,
+          "height": 289,
+          "body": {
+            "x": 300.9653952430276,
+            "y": 408.90700461892516,
+            "width": 200.7964936873493,
+            "height": 224.41437129920018
+          }
+        }
+      }
+    ],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "artifactSha256": "5eb40e0bb53397960c758262a278c502cdf8016c620fcacab5225bc491e46605",
+    "prototype": {
+      "cat": "panko",
+      "cycleSeconds": 10,
+      "breathSeconds": 3.3333333333333335,
+      "blinkStarts": [
+        1,
+        4.333333333333,
+        7.666666666667
+      ],
+      "blinkDuration": 0.9,
+      "method": "Instance-local sample and layer override; no source or loader edit"
+    },
+    "sootExact": true,
+    "errors": [],
+    "blockedRequests": [
+      {
+        "url": "https://fonts.googleapis.com/css2",
+        "type": "stylesheet"
+      }
+    ],
+    "completedUTC": "2026-11-18T04:40:13.053Z"
+  },
+  "geometry": {
+    "modes": {
+      "baseline": {
+        "height": 510,
+        "rangePctH": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            4.132615263895785,
+            3.9209104397840697
+          ],
+          [
+            1.5964532856102331,
+            2.424243380883918
+          ],
+          [
+            1.348592352427165,
+            1.1168117062358975
+          ]
+        ],
+        "seamPx": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.6189978260615305,
+            -4.22597681625939
+          ],
+          [
+            3.133330018839075,
+            2.857875628560322
+          ],
+          [
+            -1.7219910550940938,
+            1.6364214138279038
+          ]
+        ],
+        "labels": [
+          "footLeft",
+          "footRight",
+          "head",
+          "tail tip",
+          "apron hem"
+        ],
+        "sootSha": "87d15366197024ade3712e7e542c04590237478966f7e164c62bc60b95a355bb"
+      },
+      "candidate": {
+        "height": 510,
+        "rangePctH": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            4.146615002439991,
+            2.6668842908159216
+          ],
+          [
+            2.0113876196468676,
+            2.470469412643085
+          ],
+          [
+            1.5546662273060146,
+            1.4115556987125815
+          ]
+        ],
+        "seamPx": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "labels": [
+          "footLeft",
+          "footRight",
+          "head",
+          "tail tip",
+          "apron hem"
+        ],
+        "sootSha": "87d15366197024ade3712e7e542c04590237478966f7e164c62bc60b95a355bb"
+      }
+    }
+  },
+  "comparison": {
+    "utc": "2026-11-18T04:41:14.023229+00:00",
+    "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/panko-vs-mochi-1280x720.mp4",
+    "sha256": "f74e8dfd67c192abf698c07c24e89391dd24884fb83ce8af8621c7ceff8bff94",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "frames": 300,
+    "fps": 30,
+    "durationSeconds": 10,
+    "sameBodyHeightPx": 224,
+    "sourceHeightPx": 431,
+    "pankoMeasuredHeight": 224.41437129920018,
+    "sourcePhase": "F0..299",
+    "pankoPhase": "simulation20+n/30 plus existing per-actor idle offset",
+    "reviews": [
+      {
+        "frame": 15,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "c6562ee88032912811cf0a4c36953f48a42bde6a2286341dd832ed531da92bbe"
+      },
+      {
+        "frame": 75,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/comparison-75.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "d3d0d7fbdbe579858f01df213c46df41cb19e00117fcffcebf5944e520b5b645"
+      },
+      {
+        "frame": 165,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "5af175ce341493750dbcfb7ee411b145e3554fe3f5b482deeb01015aab4d3a1a"
+      },
+      {
+        "frame": 255,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V1-panko-R1/comparison-255.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "8512fb955bdd7b519709e1300a1ec36ca93b55dc5da26c9cedd77302f0160ffb"
+      }
+    ],
+    "limitation": "Source-free experiment only; no final runtime, alpha, or performance claim."
+  },
+  "review": {
+    "utc": "2026-11-18T04:42:17.146644+00:00",
+    "imagesViewedOnce": [
+      "baseline/cat-sheet.jpg",
+      "candidate/cat-sheet.jpg",
+      "comparison-15.jpg",
+      "comparison-75.jpg",
+      "comparison-165.jpg",
+      "comparison-255.jpg"
+    ],
+    "verdict": "Soft periodic Panko baseline proved: reduced vertical bob, exact10s seam, feet fixed, same-height1x source comparison. Tail/prop remain far quieter than reference; full style match NOT claimed. M-V2 must improve local follower visibility and evaluate action handoff before READY."
+  },
+  "applicationChanged": false
+}
