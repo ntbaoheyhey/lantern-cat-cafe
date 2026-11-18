@@ -86,6 +86,7 @@ export class SpineActor {
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
  readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'='puppet';
  opaqueWorld:OpaqueWorldBounds|undefined;
+ faceRegion?:{x:number;y:number;width:number;height:number};
  private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
  mesh?:CutoutMesh;puppet?:T.Group;sequence?:SequenceAsset;plane?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  private animation='';private key:unknown;private at=0;private order=0;

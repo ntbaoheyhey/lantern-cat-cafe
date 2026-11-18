@@ -547,7 +547,8 @@ export class SpineScene {
   return{x:left,y:top,width:right-left,height:bottom-top};
  }
  private faceBounds(entry:DisplayActor):Rect{
-  const region=unitFace(entry.asset,entry.actor.bounds),corners=entry.craftPose?.faceCorners(region);
+  const measuredFace=entry.asset==='mochi'||entry.asset==='clover'?entry.actor.faceRegion:undefined;
+  const region=measuredFace??unitFace(entry.asset,entry.actor.bounds),corners=entry.craftPose?.faceCorners(region);
   if(!corners)return this.bounds(entry,region);
   let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
   for(const corner of corners){
