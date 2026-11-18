@@ -91,6 +91,8 @@ Chưa gửi cho người thiết kế. Hai MP4 gốc Mochi/Clover đều 10 giâ
 
 Chủ dự án có thể xin bản xuất nền trong suốt (PNG RGBA theo frame hoặc ProRes 4444), giữ 30 fps/10 giây, chân cùng mốc và đầu–cuối vòng lặp nối mượt; kèm bản xem trên nền sáng để kiểm tra viền và ánh đèn. Phần mèo trong bản giao có thể cao 512–1024 px; nhóm tự tạo bản chạy 256/384/512 px và đo ngân sách. Nếu có bộ runtime Cubism, xin model3/moc3, textures, motion3, physics3 và phiên bản xuất để đánh giá riêng. Nhóm chưa chấp thuận giấy phép SDK hay tải lên dịch vụ nào. Skill mong muốn dài 1 giây, cast ở 250 ms và hit ở 550 ms, giữ chân, có chuẩn bị và thu động tác. Mọi yêu cầu gửi bạn, chấp thuận điều khoản và upload do chủ dự án thực hiện.
 
+Riêng Clover: đuôi cuối vòng hiện lệch so với đầu; các phép nắn một lớp làm gập vùng tiếp giáp váy. Nếu bạn thiết kế có thể xuất bổ sung, chủ dự án có thể xin lớp đuôi/váy và matte riêng, cùng khung hình/mốc chân, hoặc sửa vòng trong file Cubism rồi xuất nền trong suốt. Đây là gợi ý bản nháp; nhóm chưa liên hệ hay tự vẽ phần bị che. Hai MP4 gốc 18,66/18,72 MB vẫn giữ nguyên.
+
 ## 4. Giới hạn của bằng chứng hiện tại
 
 Receipt ở I-C đến từ hành trình practice qua UI thường và ghi rõ local/no transaction. Các phim dùng fixture review, không phải bằng chứng chain. Anvil là chain local. [PUBLIC-FUJI.json](PUBLIC-FUJI.json) xác minh **có bytecode** ở năm địa chỉ registry tại block 61.234.900; không xác minh code tương đương source và không thay thế giao dịch guest thật. Guest hiện là EOA ký SIWE và nhận test gas từ sponsor; không có bằng chứng cho ERC-4337/paymaster. RelicNFT là ERC-1155. Chỉ dùng các mô tả này trong submission cho đến khi có bằng chứng mới.

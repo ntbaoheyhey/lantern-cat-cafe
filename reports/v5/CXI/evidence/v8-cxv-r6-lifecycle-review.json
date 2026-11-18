@@ -1,0 +1,118 @@
+{
+  "utc": "2026-11-18T09:17:55.744857+00:00",
+  "receipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-media-scene-lifecycle-R1.json",
+    "sha256": "eafeb877772ac8cb1697278331fe87128174f00d422be0744bb04ad4616c9851"
+  },
+  "verified": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-scene-lifecycle-R1/report.json",
+      "sha256": "92426c0c869020c7ad50f64bbf000cbe480825de4c0db46ff606866132bbafe1"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/build.json",
+      "sha256": "0c6ff4f005842e39fa74f60918b8613b77744ea48608be690ce67ad14c14c06d"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-media-scene-lifecycle.mjs",
+      "sha256": "c31d391b72fbea1b7905fa1473a6e4a50175d2290d2a1ecf7ccfc8c265b5d8f7"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-production-fixture.mjs",
+      "sha256": "3468caea2addd467b5f7c21b6f46708c30a472351860e49755a490188f0b2243"
+    }
+  ],
+  "sourceCommit": "adb526a869012cecef2da673f1bc6d86e42d8a5d",
+  "indexSha256": "f9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0",
+  "nativeRetainedSamples": 56,
+  "simulatedVisibilitySamples": 28,
+  "rows": [
+    {
+      "mode": "normal",
+      "stage": "active",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": false
+    },
+    {
+      "mode": "normal",
+      "stage": "retained-hidden",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "normal",
+      "stage": "return-while-paused",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "normal",
+      "stage": "resumed-active",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": false
+    },
+    {
+      "mode": "normal",
+      "stage": "simulated-document-hidden",
+      "samples": 7,
+      "evidenceType": "simulated-document-visibility",
+      "stopped": true
+    },
+    {
+      "mode": "normal",
+      "stage": "visibility-return",
+      "samples": 7,
+      "evidenceType": "simulated-document-visibility",
+      "stopped": false
+    },
+    {
+      "mode": "reduced",
+      "stage": "active",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "reduced",
+      "stage": "retained-hidden",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "reduced",
+      "stage": "return-while-paused",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "reduced",
+      "stage": "resumed-active",
+      "samples": 7,
+      "evidenceType": "native-retained-scene",
+      "stopped": true
+    },
+    {
+      "mode": "reduced",
+      "stage": "simulated-document-hidden",
+      "samples": 7,
+      "evidenceType": "simulated-document-visibility",
+      "stopped": true
+    },
+    {
+      "mode": "reduced",
+      "stage": "visibility-return",
+      "samples": 7,
+      "evidenceType": "simulated-document-visibility",
+      "stopped": true
+    }
+  ],
+  "nativeDocumentVisibilityAccepted": false,
+  "imagesViewed": 0,
+  "disposition": "ACCEPT scoped retained-scene hide/paused return/resume56samples with exactidentity+nativeclock/counters. ACK28 simulated document-visibility samples as simulation only. No natural-play,window-visibility or performance acceptance."
+}

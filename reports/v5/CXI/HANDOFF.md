@@ -3,12 +3,12 @@ ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;M
 NEXT 1: study Clover layer-domain ambiguity/coverage diagnostic in tools/v5int;no next endpoint until taildomain/protectedcloth proved.
 NEXT 2: review CXV R6 naturalphase/suspension READY againstadb526a86/f9a00162;R6 ownretaineddecoder146samples/2views ACCEPT.
 NEXT 3: Clover occlusion/topology+head/off/vfx; budget/audio evidence; compactplaneFAIL,no browser/loader changes.
-Last pushedadb526a869012cecef2da673f1bc6d86e42d8a5d;green v5-m1.13@4e5fe161a;no newrelease.
+Last pushed09a5da52a;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 ignoredMochiR6 sourceadb526a869012cecef2da673f1bc6d86e42d8a5d/indexf9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0;source registryempty;releasefalse.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified09:07Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T09:14:37.307271+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
 Running:CXI none;fullsuite/probe exit0;6301+timingreleasedtoCXV2026-11-18T09:13:43Z forR6naturalphase/suspension.
-Mailboxread INBOX-CXI288;USER24;LEARN97;CXVphaseimport28focusedPASS;AGS281/283/286 REDO0909receipt.
+Mailboxread INBOX-CXI294;USER24;LEARN97;CXV56native lifecycleACCEPT/28simACK;AGS290/293 REDOreceiptssent.
 AGS OPEN:T-M1source/packagecosts,T-CXI-5provenance/listening,T-CXI-10AV1attribution,T-CXI-11audiopreload;M2negativeinventoryACCEPT;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
