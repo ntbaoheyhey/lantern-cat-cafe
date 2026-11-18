@@ -151,6 +151,11 @@ def main():
                                                 not any(d['actionActive'] for d in details))
     receipt['idlePhaseAttributionAccepted'] = (receipt['arithmeticValid'] and receipt['allFramesGloballyIdentified'] and raw['pass'] and
                                               not any(d['seeking'] or d['actionActive'] for d in details))
+    receipt['idlePhaseAttributionAcceptedMeaning'] = 'Legacy whole-trace gate: requires no seeking and no actions in any recorded draw. False does not reject separately verified seeking draws.'
+    receipt['sampledDrawSocketPhaseMatches'] = (receipt['controlledDrawAttributionValid'] and
+        all(d['nativeMatches'] == [d['audit']['adapterFrame']] and
+            all(s['cssPhaseDelta'] <= 1e-6 for s in d['audit']['sockets'].values()) for d in details))
+    receipt['acceptanceScope'] = 'Controlled recorded draws only, including seeking samples. Not an uninterrupted idle trace, ordinary gameplay, source-art or performance acceptance.'
     receipt['subsetMaxima'] = {}
     for subset, include in [('settled', lambda d: not d['seeking']), ('seeking', lambda d: d['seeking'])]:
         receipt['subsetMaxima'][subset] = {}

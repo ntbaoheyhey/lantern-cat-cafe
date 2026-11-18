@@ -147,3 +147,5 @@
 
 - SCOPED Clover native ordinaryR1:2wins/56actions25ults each/exactrules/0errors/27postresult paused/1339actionrows0overlap;4views once. AggregateFALSE unopposedportrait coverage retained;4phasechanges actionoccupied. M-clover-natural-production-R1.md.
 - SUPERSEDED historical R4 pointer: eye/paw observations reviewed once;R4 combined rejected, R5head/R6paw separately pass source+adapter;native R4 candidate gate pending explicit6301lease.
+
+- REJECT simple temporal crossfade15frames:4149mixedopacitypixels(3434ROI),9.5s versus original10s;lower boundary error does not repair art. M-clover-temporal-blend-R1.json;no candidate raster/video/runtime exported.

@@ -617,12 +617,22 @@
   },
   "harnesses": [
     {
-      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-media-gpu-phase.py",
-      "sha256": "8a811145852943410230bca60f878dfbad4134664d3910d514ae9dbef7afd040"
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/gpu-phase-R6-audit-frozen/audit-media-gpu-phase.py",
+      "sha256": "8a811145852943410230bca60f878dfbad4134664d3910d514ae9dbef7afd040",
+      "originalPath": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-media-gpu-phase.py",
+      "sourceCommit": "8e237c8d4"
     },
     {
       "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-phase-projection.py",
       "sha256": "3a596269cbdcf1b3a7f6183aafb7eeeaba692e44fd8d82ab5652e82f5e93eb75"
     }
-  ]
+  ],
+  "idlePhaseAttributionAcceptedMeaning": "Legacy whole-trace gate: requires no seeking and no actions in any recorded draw. False does not reject separately verified seeking draws.",
+  "sampledDrawSocketPhaseMatches": true,
+  "acceptanceScope": "Controlled24 recorded draws, including2 seeking samples, match actual globally identified GPUframes exactly. Not uninterrupted idle,ordinary gameplay,sourceart or performance acceptance.",
+  "scopeClarifiedUTC": "2026-11-18T14:04:06.299202+00:00",
+  "beforeScopeClarification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/gpu-phase-R6-audit-frozen/receipt-before-scope-clarification.json",
+    "sha256": "ae52067e2c9b269f577108b91e0912c7d164fd4ee44215fc33f073f5ec60c7b7"
+  }
 }

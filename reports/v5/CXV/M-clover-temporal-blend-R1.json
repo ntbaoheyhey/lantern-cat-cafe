@@ -1,0 +1,570 @@
+{
+  "utc": "2026-11-18T14:04:45.417360+00:00",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-temporal-blend-R1-preregistration.json",
+    "sha256": "72a8c09e73066cca4bcfff607761faea5d8909f9c3e4e5ba8ebd27d01e07f59f"
+  },
+  "source": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "shape": [
+      300,
+      390,
+      318,
+      4
+    ]
+  },
+  "harnessSha256": "cf2bc36e77ca5d6c38462ef73a9d12b2516a4065fab7fdb83bd8e6b0c76306eb",
+  "analyticControls": true,
+  "outputFrames": 285,
+  "outputSeconds": 9.5,
+  "originalSeconds": 10.0,
+  "cycleDurationChangePercent": -5.0,
+  "regions": {
+    "whole": {
+      "originalAdjacent": {
+        "rgbMAE": {
+          "count": 299,
+          "minimum": 0.3233582675457001,
+          "median": 6.51769495010376,
+          "p95": 12.751767635345457,
+          "maximum": 15.552098274230957
+        },
+        "alphaMAE": {
+          "count": 299,
+          "minimum": 0.25713494420051575,
+          "median": 3.9864959716796875,
+          "p95": 8.592353534698486,
+          "maximum": 11.879705429077148
+        },
+        "opposedOpaqueVacantPixels": {
+          "count": 299,
+          "minimum": 0.0,
+          "median": 186.0,
+          "p95": 840.0,
+          "maximum": 1485.0
+        },
+        "supportPixels": {
+          "count": 299,
+          "minimum": 49400.0,
+          "median": 53279.0,
+          "p95": 54746.2,
+          "maximum": 55306.0
+        }
+      },
+      "originalSeam": {
+        "rgbMAE": 11.668163299560547,
+        "alphaMAE": 10.661802291870117,
+        "opposedOpaqueVacantPixels": 1820,
+        "supportPixels": 55234
+      },
+      "candidateTransition": {
+        "rgbMAE": {
+          "count": 15,
+          "minimum": 4.0116376876831055,
+          "median": 5.103210926055908,
+          "p95": 6.340700340270995,
+          "maximum": 6.560611248016357
+        },
+        "alphaMAE": {
+          "count": 15,
+          "minimum": 1.9200137853622437,
+          "median": 3.6388611793518066,
+          "p95": 5.261728811264038,
+          "maximum": 5.587099075317383
+        },
+        "opposedOpaqueVacantPixels": {
+          "count": 15,
+          "minimum": 0.0,
+          "median": 1.0,
+          "p95": 107.8,
+          "maximum": 112.0
+        },
+        "supportPixels": {
+          "count": 15,
+          "minimum": 54048.0,
+          "median": 56022.0,
+          "p95": 56408.2,
+          "maximum": 56467.0
+        }
+      },
+      "candidateBoundary": {
+        "rgbMAE": 7.01522159576416,
+        "alphaMAE": 3.610280990600586,
+        "opposedOpaqueVacantPixels": 135,
+        "supportPixels": 54003
+      },
+      "transitionRows": [
+        {
+          "sourceFrames": [
+            285,
+            0
+          ],
+          "weight": 0.0,
+          "opposedOpaqueVacantPixels": 4231,
+          "mixedOpacityPixels": 0,
+          "mixedOpacityRange": null
+        },
+        {
+          "sourceFrames": [
+            286,
+            1
+          ],
+          "weight": 0.0032650086273576483,
+          "opposedOpaqueVacantPixels": 3985,
+          "mixedOpacityPixels": 8,
+          "mixedOpacityRange": [
+            25.750951766967773,
+            229.32412719726562
+          ]
+        },
+        {
+          "sourceFrames": [
+            287,
+            2
+          ],
+          "weight": 0.023264116142083652,
+          "opposedOpaqueVacantPixels": 3772,
+          "mixedOpacityPixels": 45,
+          "mixedOpacityRange": [
+            25.001785278320312,
+            229.69577026367188
+          ]
+        },
+        {
+          "sourceFrames": [
+            288,
+            3
+          ],
+          "weight": 0.06947997858035342,
+          "opposedOpaqueVacantPixels": 3590,
+          "mixedOpacityPixels": 112,
+          "mixedOpacityRange": [
+            25.16155433654785,
+            227.97740173339844
+          ]
+        },
+        {
+          "sourceFrames": [
+            289,
+            4
+          ],
+          "weight": 0.144701612423395,
+          "opposedOpaqueVacantPixels": 3512,
+          "mixedOpacityPixels": 3512,
+          "mixedOpacityRange": [
+            33.2813720703125,
+            221.7186279296875
+          ]
+        },
+        {
+          "sourceFrames": [
+            290,
+            5
+          ],
+          "weight": 0.2463631225084786,
+          "opposedOpaqueVacantPixels": 3454,
+          "mixedOpacityPixels": 3454,
+          "mixedOpacityRange": [
+            56.663516998291016,
+            198.33648681640625
+          ]
+        },
+        {
+          "sourceFrames": [
+            291,
+            6
+          ],
+          "weight": 0.367882429939906,
+          "opposedOpaqueVacantPixels": 3475,
+          "mixedOpacityPixels": 3475,
+          "mixedOpacityRange": [
+            84.61296081542969,
+            170.38705444335938
+          ]
+        },
+        {
+          "sourceFrames": [
+            292,
+            7
+          ],
+          "weight": 0.5,
+          "opposedOpaqueVacantPixels": 3720,
+          "mixedOpacityPixels": 3720,
+          "mixedOpacityRange": [
+            115.5,
+            140.0
+          ]
+        },
+        {
+          "sourceFrames": [
+            293,
+            8
+          ],
+          "weight": 0.6321175700600941,
+          "opposedOpaqueVacantPixels": 3962,
+          "mixedOpacityPixels": 3962,
+          "mixedOpacityRange": [
+            84.98084259033203,
+            170.38705444335938
+          ]
+        },
+        {
+          "sourceFrames": [
+            294,
+            9
+          ],
+          "weight": 0.7536368774915215,
+          "opposedOpaqueVacantPixels": 4115,
+          "mixedOpacityPixels": 4115,
+          "mixedOpacityRange": [
+            56.663516998291016,
+            198.33648681640625
+          ]
+        },
+        {
+          "sourceFrames": [
+            295,
+            10
+          ],
+          "weight": 0.8552983875766048,
+          "opposedOpaqueVacantPixels": 4149,
+          "mixedOpacityPixels": 4149,
+          "mixedOpacityRange": [
+            33.2813720703125,
+            221.7186279296875
+          ]
+        },
+        {
+          "sourceFrames": [
+            296,
+            11
+          ],
+          "weight": 0.9305200214196468,
+          "opposedOpaqueVacantPixels": 4372,
+          "mixedOpacityPixels": 104,
+          "mixedOpacityRange": [
+            25.16155433654785,
+            228.9079132080078
+          ]
+        },
+        {
+          "sourceFrames": [
+            297,
+            12
+          ],
+          "weight": 0.9767358838579168,
+          "opposedOpaqueVacantPixels": 4605,
+          "mixedOpacityPixels": 27,
+          "mixedOpacityRange": [
+            25.46706771850586,
+            229.53292846679688
+          ]
+        },
+        {
+          "sourceFrames": [
+            298,
+            13
+          ],
+          "weight": 0.9967349913726419,
+          "opposedOpaqueVacantPixels": 4828,
+          "mixedOpacityPixels": 7,
+          "mixedOpacityRange": [
+            25.750951766967773,
+            229.24903869628906
+          ]
+        },
+        {
+          "sourceFrames": [
+            299,
+            14
+          ],
+          "weight": 1.0,
+          "opposedOpaqueVacantPixels": 5053,
+          "mixedOpacityPixels": 0,
+          "mixedOpacityRange": null
+        }
+      ],
+      "maxMixedOpacityPixels": 4149
+    },
+    "observationROI": {
+      "originalAdjacent": {
+        "rgbMAE": {
+          "count": 299,
+          "minimum": 0.3353624641895294,
+          "median": 8.382049560546875,
+          "p95": 24.81393203735351,
+          "maximum": 36.55253601074219
+        },
+        "alphaMAE": {
+          "count": 299,
+          "minimum": 0.2969479560852051,
+          "median": 6.657649040222168,
+          "p95": 22.089128875732413,
+          "maximum": 36.74130630493164
+        },
+        "opposedOpaqueVacantPixels": {
+          "count": 299,
+          "minimum": 0.0,
+          "median": 65.0,
+          "p95": 664.1999999999999,
+          "maximum": 1385.0
+        },
+        "supportPixels": {
+          "count": 299,
+          "minimum": 8712.0,
+          "median": 11332.0,
+          "p95": 12761.9,
+          "maximum": 12928.0
+        }
+      },
+      "originalSeam": {
+        "rgbMAE": 39.293235778808594,
+        "alphaMAE": 41.775360107421875,
+        "opposedOpaqueVacantPixels": 1820,
+        "supportPixels": 13052
+      },
+      "candidateTransition": {
+        "rgbMAE": {
+          "count": 15,
+          "minimum": 5.285911560058594,
+          "median": 9.129205703735352,
+          "p95": 10.185791778564454,
+          "maximum": 10.191643714904785
+        },
+        "alphaMAE": {
+          "count": 15,
+          "minimum": 3.7135794162750244,
+          "median": 9.097542762756348,
+          "p95": 11.660050964355468,
+          "maximum": 11.772785186767578
+        },
+        "opposedOpaqueVacantPixels": {
+          "count": 15,
+          "minimum": 0.0,
+          "median": 0.0,
+          "p95": 106.89999999999999,
+          "maximum": 109.0
+        },
+        "supportPixels": {
+          "count": 15,
+          "minimum": 12198.0,
+          "median": 13780.0,
+          "p95": 14008.5,
+          "maximum": 14019.0
+        }
+      },
+      "candidateBoundary": {
+        "rgbMAE": 10.227605819702148,
+        "alphaMAE": 8.286458969116211,
+        "opposedOpaqueVacantPixels": 127,
+        "supportPixels": 12466
+      },
+      "transitionRows": [
+        {
+          "sourceFrames": [
+            285,
+            0
+          ],
+          "weight": 0.0,
+          "opposedOpaqueVacantPixels": 3507,
+          "mixedOpacityPixels": 0,
+          "mixedOpacityRange": null
+        },
+        {
+          "sourceFrames": [
+            286,
+            1
+          ],
+          "weight": 0.0032650086273576483,
+          "opposedOpaqueVacantPixels": 3429,
+          "mixedOpacityPixels": 1,
+          "mixedOpacityRange": [
+            25.750951766967773,
+            25.750951766967773
+          ]
+        },
+        {
+          "sourceFrames": [
+            287,
+            2
+          ],
+          "weight": 0.023264116142083652,
+          "opposedOpaqueVacantPixels": 3356,
+          "mixedOpacityPixels": 18,
+          "mixedOpacityRange": [
+            25.001785278320312,
+            229.53292846679688
+          ]
+        },
+        {
+          "sourceFrames": [
+            288,
+            3
+          ],
+          "weight": 0.06947997858035342,
+          "opposedOpaqueVacantPixels": 3280,
+          "mixedOpacityPixels": 49,
+          "mixedOpacityRange": [
+            25.16155433654785,
+            227.97740173339844
+          ]
+        },
+        {
+          "sourceFrames": [
+            289,
+            4
+          ],
+          "weight": 0.144701612423395,
+          "opposedOpaqueVacantPixels": 3241,
+          "mixedOpacityPixels": 3241,
+          "mixedOpacityRange": [
+            33.2813720703125,
+            221.7186279296875
+          ]
+        },
+        {
+          "sourceFrames": [
+            290,
+            5
+          ],
+          "weight": 0.2463631225084786,
+          "opposedOpaqueVacantPixels": 3215,
+          "mixedOpacityPixels": 3215,
+          "mixedOpacityRange": [
+            56.663516998291016,
+            198.0901336669922
+          ]
+        },
+        {
+          "sourceFrames": [
+            291,
+            6
+          ],
+          "weight": 0.367882429939906,
+          "opposedOpaqueVacantPixels": 3197,
+          "mixedOpacityPixels": 3197,
+          "mixedOpacityRange": [
+            84.98084259033203,
+            170.38705444335938
+          ]
+        },
+        {
+          "sourceFrames": [
+            292,
+            7
+          ],
+          "weight": 0.5,
+          "opposedOpaqueVacantPixels": 3248,
+          "mixedOpacityPixels": 3248,
+          "mixedOpacityRange": [
+            115.5,
+            140.0
+          ]
+        },
+        {
+          "sourceFrames": [
+            293,
+            8
+          ],
+          "weight": 0.6321175700600941,
+          "opposedOpaqueVacantPixels": 3305,
+          "mixedOpacityPixels": 3305,
+          "mixedOpacityRange": [
+            84.98084259033203,
+            170.38705444335938
+          ]
+        },
+        {
+          "sourceFrames": [
+            294,
+            9
+          ],
+          "weight": 0.7536368774915215,
+          "opposedOpaqueVacantPixels": 3374,
+          "mixedOpacityPixels": 3374,
+          "mixedOpacityRange": [
+            57.40260696411133,
+            198.33648681640625
+          ]
+        },
+        {
+          "sourceFrames": [
+            295,
+            10
+          ],
+          "weight": 0.8552983875766048,
+          "opposedOpaqueVacantPixels": 3434,
+          "mixedOpacityPixels": 3434,
+          "mixedOpacityRange": [
+            33.2813720703125,
+            221.7186279296875
+          ]
+        },
+        {
+          "sourceFrames": [
+            296,
+            11
+          ],
+          "weight": 0.9305200214196468,
+          "opposedOpaqueVacantPixels": 3554,
+          "mixedOpacityPixels": 57,
+          "mixedOpacityRange": [
+            25.16155433654785,
+            228.9079132080078
+          ]
+        },
+        {
+          "sourceFrames": [
+            297,
+            12
+          ],
+          "weight": 0.9767358838579168,
+          "opposedOpaqueVacantPixels": 3661,
+          "mixedOpacityPixels": 12,
+          "mixedOpacityRange": [
+            25.46706771850586,
+            225.62599182128906
+          ]
+        },
+        {
+          "sourceFrames": [
+            298,
+            13
+          ],
+          "weight": 0.9967349913726419,
+          "opposedOpaqueVacantPixels": 3744,
+          "mixedOpacityPixels": 2,
+          "mixedOpacityRange": [
+            229.24903869628906,
+            229.24903869628906
+          ]
+        },
+        {
+          "sourceFrames": [
+            299,
+            14
+          ],
+          "weight": 1.0,
+          "opposedOpaqueVacantPixels": 3818,
+          "mixedOpacityPixels": 0,
+          "mixedOpacityRange": null
+        }
+      ],
+      "maxMixedOpacityPixels": 3434
+    }
+  },
+  "imagesViewed": 0,
+  "candidateArtExported": false,
+  "runtimeChanged": false,
+  "productionAcceptance": false,
+  "opaqueSilhouettesPreserved": false,
+  "originalCycleDurationPreserved": false,
+  "disposition": "REJECT simple crossfade for delivery; numerical smoothness does not preserve opacity or cycle duration.",
+  "limits": [
+    "Premultiplied RGBA code-value calculation, not linear-light color validation or a packed-video decoder gate.",
+    "Opposed opacity is a same-coordinate silhouette diagnostic, not anatomical correspondence or a recovered alpha layer.",
+    "ROI contains tail and cloth; no dense semantic mask or perceptual double-contour verdict.",
+    "No motion retiming, repaired frame, video, atlas, application source or registry was exported."
+  ]
+}
