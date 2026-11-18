@@ -62,3 +62,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T02:21:48.960645+00:00: Phát hiện màn thắng giữ bộ đệm cũ ở DPR2/1.5 dù đã resize/vẽ lại. Chế độ giảm chuyển động vẫn không vẽ khi nghỉ. Đã đo8ảnh/xem2bảng; chuẩn bị thử sửa qua sự kiện, chưa đổi mã ứng dụng.
 
 2026-11-18T02:29:37.260848+00:00: Đã sửa mật độ canvas màn thắng; 19 kiểm thử đạt, TypeScript0lỗi. 16 cặp ảnh toàn khung và hình học trùng đối chứng; giảm chuyển động chỉ vẽ khi mật độ thay đổi. Đang chuẩn bị kiểm tra bản build thật.
+
+2026-11-18T02:34:04.130815+00:00: Bản production màn thắng vượt6lần đổi mật độ và4lượt32giây DPR2/CPU1×,4×; giảm chuyển động0lệnh vẽ/0upload, không lỗi. Đã đo16ảnh/xem3bảng; tiếp tục kiểm tra trọn trận tới màn thắng.

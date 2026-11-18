@@ -83,13 +83,15 @@
 2026-11-18T01:48:46.002528+00:00 DesktopDPR6trials pass:exactrules/state,0errors/blocks,12captures4reviews;1x/4xp95same16.8/33.4ms,DPR2normalTask+4.9%,4xflat;preservequality. Transition4354running,nextcompleteDPR2battle.
 
 - [x] V-F DPR2/CPU4x full battles native3050ee5ae: exact game parity,68actions/24ults,0errors/blocks;16captures/4freshsheets reviewed. V7-F-full-battle-desktop-density.json. Local configuration coverage only.
-- [ ] V-F desktop density transition: native4stale buffers/8exactgeometrysets;mediaevents0 CDPfidelity limit. Browser-only correction probe prepared;native adoption requires exact pixels/lifecycle and focused checks.
+- [x] V-F desktop density transition: defect reproduced then repairedc0373a1d9;18tests/TSC0,16exactRGB/native control,6live fullbattle transitions passed. CDPmedia-event delivery limitation retained.
 
 - [x] V-F native desktop density repairc0373a1d9 scopedREADY:18tests/TSC0,16exactnativeRGB/control+16geometry,4lifecycles,22captures6freshreviews;ordinaryDPR2/1x4x exactbehavior,0errors. IndependentCXI acceptance pending.
-- [ ] V-F live density-transition fullbattle stress on currentnative;natural normal/reduced progression and outcome parity.
+- [x] V-F live density-transition fullbattle stress completedfb35576ae;natural normal/reduced parity,6correctbuffer transitions,16captures/4freshreviews.
 
 - [x] V-F live desktop-density full battles: six correct transitions; exact rules/logs/final parity vs staticDPR2,68actions24ults each;16captures/4sheets reviewed once. Local coverage; independentCXI pending.
 
-- [ ] V-E victory density defect reproduced:4stale buffers after actual resize/draw;nativeprobe V7-E-victory-density-probe.json. Preserve reduced0idle draw;event-driven correction requires exact pixels/lifecycle.
+- [x] V-E victory density defect reproduced and sourcef991fb117 repaired:4stale originalbuffers;19tests/TSC0/16exactRGBpairs. Native production job13126 is the remaining local gate.
 
 - [x] V-E victory density source repair:19tests/TSC0,16exact native-control RGB pairs/16geometry/4lifecycles;32captures4freshreviews. Native production and independent acceptance pending.
+
+- [x] V-E native victory density production f991fb117 passes6transitions/four32s DPR2 CPU1x/4x;reduced0draws0uploads,normal7676calls,0errors.12full+4crewcaptures/3freshreviews;scopedREADY pending independentCXI.

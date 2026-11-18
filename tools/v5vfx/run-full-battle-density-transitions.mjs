@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {spawn} from 'node:child_process';
 import {root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
-const production=resolve(root,'work/v5/CXV/films/V7-F-density-native-production'),out=resolve(root,'work/v5/CXV/films/V7-F-full-battle-density-transitions');assert(!existsSync(out));
+const production=resolve(process.env.CXV_FULL_TRANSITIONS_PRODUCTION??resolve(root,'work/v5/CXV/films/V7-F-density-native-production')),out=resolve(process.env.CXV_FULL_TRANSITIONS_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-density-transitions'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));
 const bytes=await readFile(resolve(production,'build.json')),built=JSON.parse(bytes),artifact=built.artifacts.find(a=>a.mode==='native');assert.equal(artifact.transformed,0);assert.equal(built.runtimePatchSha256,hash(''));
 for(const f of artifact.files)assert.equal(hash(await readFile(resolve(artifact.dist,f.path))),f.sha256);
 await mkdir(out,{recursive:true});const provenance=[];

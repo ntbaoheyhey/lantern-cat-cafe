@@ -6,8 +6,9 @@ import {createHash} from 'node:crypto';
 const root=resolve(import.meta.dirname,'../..');
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
-const out=resolve(root,'work/v5/CXV/films/V7-F-full-battle-density-transitions');
-const reportPath=resolve(root,'reports/v5/CXV/V7-F-full-battle-density-transitions.json');
+const out=resolve(process.env.CXV_FULL_INPUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-density-transitions'));
+const reportPath=resolve(process.env.CXV_FULL_REPORT??resolve(root,'reports/v5/CXV/V7-F-full-battle-density-transitions.json'));
+assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(reportPath.startsWith(resolve(root,'reports/v5/CXV')+'/'));
 const report=await read(reportPath),raw=await read(resolve(out,'report.json'));
 const baseline=await read(resolve(root,'reports/v5/CXV/V7-F-full-battle-desktop-density.json'));
 const prior=await read(baseline.raw.path),priorRoot=resolve(baseline.raw.path,'..');
@@ -45,7 +46,7 @@ for(const run of raw.runs){
  const measured=report.runs.find(r=>r.mode===run.mode);assert.equal(measured.densityTransitions.length,3);
  rows.push({mode:run.mode,initialBattleExact:true,finalActorsExact:true,roundExact:true,resultExact:true,
   ruleLogExact:true,presentationsWithoutWallClockExact:true,actions:run.actions,ultimates:run.ultimates.length,
-  transitions:run.densityTransitions.length,statusEvents:measured.statusEvents});
+  transitions:run.densityTransitions.length,victoryTransitions:run.victoryDensityTransitions?.length??0,statusEvents:measured.statusEvents});
 }
 report.controlComparison={utc:new Date().toISOString(),baseline:baseline.raw,baselineSource:prior.servedSource,
  baselineIndexSha256:prior.indexSha256,source:raw.servedSource,rows,

@@ -24,6 +24,7 @@ report.local=raw.local??false;report.artifactIdentity=raw.artifactIdentity??null
 report.cpuRate=raw.cpuRate??1;report.hardware=raw.hardware??null;report.browser=raw.browser??null;
 report.deviceScaleFactor=raw.deviceScaleFactor??1;report.desktopDensity=raw.runs.map(r=>r.desktopDensity??null);
 if(raw.densitySequence)report.densitySequence=raw.densitySequence;
+if(raw.victoryDensitySequence)report.victoryDensitySequence=raw.victoryDensitySequence;
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const [index,run]of raw.runs.entries()){
  const timeline=timelines[index],actions=timeline.plans.filter(p=>p.events.some(e=>e.type==='action_start'||e.type==='charge'));
@@ -53,6 +54,15 @@ for(const [index,run]of raw.runs.entries()){
    assert.deepEqual(d.drawingBuffer,size);assert.deepEqual(d.composer.input,size);assert.deepEqual(d.composer.output,size);
    assert.equal(d.canvas.width,size.width);assert.equal(d.canvas.height,size.height);assert.equal(d.contextLost,false);assert.equal(d.sceneError,'');assert(d.ready&&d.checksEnabled);
    return{scheduledMs:t.scheduledMs,ratio:t.ratio,wallWindowMs:[t.before.wallMs,t.after.wallMs],density:d,planBefore:t.before.plan,planAfter:t.after.plan};
+  });
+ }
+ if(raw.victoryDensitySequence){
+  assert.equal(run.victoryDensityTransitions.length,raw.victoryDensitySequence.length);
+  report.runs.at(-1).victoryDensityTransitions=run.victoryDensityTransitions.map((t,i)=>{
+   assert.equal(t.ratio,raw.victoryDensitySequence[i]);const crew=t.after.crew[0];assert(crew);
+   assert.equal(t.after.devicePixelRatio,t.ratio);assert.deepEqual(crew.canvas,{width:Math.floor(crew.width*Math.min(t.ratio,1.5)),height:Math.floor(crew.height*Math.min(t.ratio,1.5))});
+   assert.deepEqual(crew.rect,t.before.crew[0].rect);assert.deepEqual(t.after.actors,t.before.actors);assert.equal(t.after.result,'party');assert.equal(crew.ready,'true');assert.equal(crew.drawn,'4');
+   return{ratio:t.ratio,wallWindowMs:[t.before.wallMs,t.after.wallMs],crew,actorsExact:true,geometryExact:true};
   });
  }
  for(const capture of run.captures){

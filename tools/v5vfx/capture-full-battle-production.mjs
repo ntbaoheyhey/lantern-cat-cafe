@@ -13,6 +13,7 @@ const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpu
 const desktopDpr=Number(process.env.CXV_FULL_DPR??1);assert([1,1.5,2].includes(desktopDpr)&&(!process.env.CXV_FULL_DPR||local),'Explicit desktop density is local-only');
 const liveDensity=process.env.CXV_FULL_DENSITY_TRANSITIONS==='1';assert(!liveDensity||(local&&desktopDpr===2),'Live density transitions require the local DPR2 artifact');
 const densitySequence=liveDensity?[{at:15000,ratio:1},{at:45000,ratio:1.5},{at:75000,ratio:2}]:[];
+const resultDensity=process.env.CXV_FULL_RESULT_DENSITY==='1';assert(!resultDensity||liveDensity);
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-judge'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')),'Preserve earlier evidence');
 await mkdir(out,{recursive:true});
@@ -30,12 +31,13 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.cpuRate=cpuRate;report.browser=browser.version();report.hardware=execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim();
 report.deviceScaleFactor=desktopDpr;
 if(liveDensity){report.densitySequence=densitySequence;report.method+=' Live CDP density changes2->1->1.5->2 at15/45/75s with unchanged1280x720CSS;no model mutation. Captures use the same CDP session at CSS scale1/liveDPR to preserve the override.';}
+if(resultDensity){report.victoryDensitySequence=[1,2];report.method+=' After natural victory, density changes2->1->2; synthetic events on original resolution MediaQueryLists exercise reduced invalidation. This is not physical monitor event-delivery coverage.';}
 report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.';
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
  for(const reduced of [false,true]){
   stop();const mode=reduced?'reduced':'normal',dir=resolve(out,mode);await mkdir(dir,{recursive:true});
-  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr});
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr,setupPage:resultDensity?async p=>p.addInitScript(()=>{const original=window.matchMedia;globalThis.__cxvResolutionQueries=[];window.matchMedia=function(query){const media=original.call(this,query);if(query.startsWith('(resolution:'))globalThis.__cxvResolutionQueries.push(media);return media;};}):undefined});
   assert.equal(page.url(),judgeUrl);const identity=runtimeEvidence();
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpuRate});
   if(liveDensity)await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:desktopDpr,mobile:false});
@@ -44,6 +46,7 @@ try{
   const initial=await page.evaluate(()=>{const m=window.__depthReview;return{battle:structuredClone(m.battle),speed:m.state.settings.speed,reduced:m.state.settings.reducedMotion};});
   const run={mode,utc:new Date().toISOString(),identity,initialBattleSha256:hash(JSON.stringify(initial.battle)),speed:initial.speed,captures:[],errors,blockedRequests};
   if(liveDensity)run.densityTransitions=[];
+  if(resultDensity)run.victoryDensityTransitions=[];
   if(process.env.CXV_FULL_DPR)run.desktopDensity=await(await import('./desktop-density.mjs')).desktopDensity(page,desktopDpr);
   assert.equal(initial.speed,1);await writeFile(resolve(dir,'initial.json'),JSON.stringify(initial,null,2));
   const snapshot=()=>page.evaluate(()=>{
@@ -52,7 +55,7 @@ try{
     plan:m.plan?{actor:m.plan.actorId,skill:m.plan.skillId,ultimate:m.plan.ultimate,duration:m.plan.duration,contact:m.plan.contact,leadIn:m.plan.speechLeadInMs??null}:null,
     actors:m.battle?.actors.map(a=>({id:a.id,catalogId:a.catalogId,side:a.side,hp:a.hp,shield:a.shield,statuses:a.statuses})),
     scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
-    crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON()}))};
+    crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON(),width:e.clientWidth,height:e.clientHeight,canvas:{width:e.querySelector('canvas')?.width??0,height:e.querySelector('canvas')?.height??0}}))};
   });
   const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();
    if(liveDensity){const bytes=Buffer.from((await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,clip:{x:0,y:0,width:1280,height:720,scale:1/before.devicePixelRatio}})).data,'base64');assert.equal(bytes.readUInt32BE(16),1280);assert.equal(bytes.readUInt32BE(20),720);await writeFile(path,bytes);}else await page.screenshot({path,scale:'css'});
@@ -92,7 +95,17 @@ try{
   if(reachedResult){
    await page.waitForSelector('.c2-result');
    if(run.final.result==='party')await page.waitForSelector('.b3-victory-crew[data-ready=true]',{timeout:60000});
-   await capture('result-ready');await page.waitForTimeout(700);await capture('result-later');
+   await capture('result-ready');
+   if(resultDensity){
+    assert.equal(run.final.result,'party');
+    for(const ratio of report.victoryDensitySequence){
+     const before=await snapshot();await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:ratio,mobile:false});
+     await page.evaluate(()=>{const query=globalThis.__cxvResolutionQueries.at(-1);if(!query)throw Error('Native victory density query missing');query.dispatchEvent(new Event('change'));});
+     await page.waitForFunction(r=>{const e=document.querySelector('.b3-victory-crew'),c=e?.querySelector('canvas'),scale=Math.min(r,1.5);return devicePixelRatio===r&&c?.width===Math.floor(e.clientWidth*scale)&&c?.height===Math.floor(e.clientHeight*scale);},ratio,{timeout:5000});
+     const after=await snapshot();assert.deepEqual(after.crew[0].rect,before.crew[0].rect);assert.deepEqual(after.actors,before.actors);run.victoryDensityTransitions.push({ratio,before,after});
+    }
+   }
+   await page.waitForTimeout(700);await capture('result-later');
   }else await capture('timeout');
   const data=await page.evaluate(()=>{const d=globalThis.__cxvFull,m=window.__depthReview;d.scene.render=d.render;d.scene.beforeFrame=d.beforeFrame;m.paused=true;m.notify(false);return{elapsedMs:performance.now()-d.start,frames:d.frames,plans:d.plans,log:m.battle?.log};});
   await writeFile(resolve(dir,'timeline.json'),JSON.stringify(data));

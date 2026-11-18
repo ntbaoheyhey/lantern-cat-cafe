@@ -1,0 +1,844 @@
+{
+  "utc": "2026-11-18T02:33:03.512Z",
+  "source": "f991fb117356bf579db37a6c09a98ddb41eed756",
+  "indexSha256": "504981aa25b6c42eb0fda2285d1feb4da051e8a6972825f6a23d142bdd060217",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "componentSha256": "48ce7e9aa920abf049ebb92ff032761a20d1389fa6ae94730f3304d7fc97dba2",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-18T02:29:58.847Z",
+  "ended": "2026-11-18T02:32:38.658Z",
+  "artifactFilesVerified": 3764,
+  "toolSnapshotsVerified": 5,
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/build.json",
+    "sha256": "7135ec47c005f5e5c9bedd193b5dbf6ff6a335f40eff8bc36f4c0460769db1f2"
+  },
+  "probe": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/report.json",
+    "sha256": "5dd7f000cad9200814dcefdf057f914b7c40ef9285b8d24e75458adb4b75729c",
+    "transitions": 6,
+    "captures": 8
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/report.json",
+    "sha256": "4fcf55db5bfe89c897a129e65450dd7944fc2b88df4301c92e37c59b97482e50"
+  },
+  "transitions": [
+    {
+      "mode": "normal",
+      "transitions": [
+        {
+          "ratio": 2,
+          "beforeRedraw": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 88,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 124,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": false
+        },
+        {
+          "ratio": 1.5,
+          "beforeRedraw": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 212,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 248,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": false
+        },
+        {
+          "ratio": 1,
+          "beforeRedraw": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 336,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 372,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 461,
+            "height": 245
+          },
+          "stale": false
+        }
+      ],
+      "idleDraws": 120,
+      "cleanup": {
+        "connected": false,
+        "draws": 532
+      },
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "transitions": [
+        {
+          "ratio": 2,
+          "beforeRedraw": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 0,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 4,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": false
+        },
+        {
+          "ratio": 1.5,
+          "beforeRedraw": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 4,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 4,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": false
+        },
+        {
+          "ratio": 1,
+          "beforeRedraw": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 691,
+              "height": 367
+            },
+            "drawingBuffer": {
+              "width": 691,
+              "height": 367
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 4,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "after": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 8,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": []
+          },
+          "expected": {
+            "width": 461,
+            "height": 245
+          },
+          "stale": false
+        }
+      ],
+      "idleDraws": 0,
+      "cleanup": {
+        "connected": false,
+        "draws": 8
+      },
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "runs": [
+    {
+      "rate": 1,
+      "reduced": true,
+      "utc": "2026-11-18T02:30:48.345Z",
+      "elapsedMs": 32003.79999999702,
+      "counters": {
+        "draws": 0,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 0.117855,
+        "ScriptDuration": 0.005662,
+        "LayoutDuration": 0.000785,
+        "RecalcStyleDuration": 0.007079,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 2
+      },
+      "heapBefore": 36035460,
+      "heapAfter": 24655388,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-reduced-crew.png",
+      "crewSha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "rate": 1,
+      "reduced": false,
+      "utc": "2026-11-18T02:31:24.885Z",
+      "elapsedMs": 32002.59999999404,
+      "counters": {
+        "draws": 7676,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 3.6629959999999997,
+        "ScriptDuration": 3.142747,
+        "LayoutDuration": 0.000331,
+        "RecalcStyleDuration": 0.021053,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 146
+      },
+      "heapBefore": 39101856,
+      "heapAfter": 44756984,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-normal.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-normal-crew.png",
+      "crewSha256": "743e39e1274ae1c2628f200b8f16b317a56225f18d1b3e84576b72cd3deb6d18"
+    },
+    {
+      "rate": 4,
+      "reduced": true,
+      "utc": "2026-11-18T02:32:01.632Z",
+      "elapsedMs": 32001.70000000298,
+      "counters": {
+        "draws": 0,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 0.170827,
+        "ScriptDuration": 0.0075,
+        "LayoutDuration": 0.001619,
+        "RecalcStyleDuration": 0.008866,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 2
+      },
+      "heapBefore": 34060608,
+      "heapAfter": 24920800,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-reduced-crew.png",
+      "crewSha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "rate": 4,
+      "reduced": false,
+      "utc": "2026-11-18T02:32:38.650Z",
+      "elapsedMs": 32002.09999999404,
+      "counters": {
+        "draws": 7676,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 7.742589,
+        "ScriptDuration": 6.246398,
+        "LayoutDuration": 0.00102,
+        "RecalcStyleDuration": 0.05749,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 120
+      },
+      "heapBefore": 35247924,
+      "heapAfter": 38821804,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-normal.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-normal-crew.png",
+      "crewSha256": "506a722458758cac7a37f1537675e3ce30a1a171da284e4d323b7eb317722294"
+    }
+  ],
+  "fullCaptures": [
+    {
+      "mode": "normal",
+      "name": "initial-dpr1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/normal/initial-dpr1.png",
+      "utc": "2026-11-18T02:30:03.482Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8baf5080b1f0a3da69bf3c434b214eecc6ed4e3341faeb332115949e5ce069fe",
+      "mean": 53.83881944444445,
+      "stdDev": 36.681246690801295
+    },
+    {
+      "mode": "normal",
+      "name": "dpr2",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/normal/dpr2.png",
+      "utc": "2026-11-18T02:30:03.998Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "c7680b14c34a2bf9b10c3befed67dd131a7cd48afc5374fd7a5cd6adcbda8b93",
+      "mean": 53.819398148148146,
+      "stdDev": 36.6769420401367
+    },
+    {
+      "mode": "normal",
+      "name": "dpr1.5",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/normal/dpr1.5.png",
+      "utc": "2026-11-18T02:30:04.520Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9a2f3540ba9574fc54f6506b422e148b5c2e5dd27a0b25e7723ef1417b7b16e5",
+      "mean": 53.80916666666667,
+      "stdDev": 36.62354875458799
+    },
+    {
+      "mode": "normal",
+      "name": "dpr1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/normal/dpr1.png",
+      "utc": "2026-11-18T02:30:05.035Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6feab301c620d275b2e22b59371441faa239c37aaa101d705701603a54ca9982",
+      "mean": 53.728125,
+      "stdDev": 36.47725947743478
+    },
+    {
+      "mode": "reduced",
+      "name": "initial-dpr1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/reduced/initial-dpr1.png",
+      "utc": "2026-11-18T02:30:08.870Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "54ed6e4a43d218e562fcc7acc10904b0fa2f0a7889d42e097b155b75a0f71201",
+      "mean": 53.74018518518518,
+      "stdDev": 36.57644576979745
+    },
+    {
+      "mode": "reduced",
+      "name": "dpr2",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/reduced/dpr2.png",
+      "utc": "2026-11-18T02:30:09.376Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9ba57faad17f38b82bdfa53d00ed95653ebace9a95e644313cdeeda04b10cdc2",
+      "mean": 53.78319444444445,
+      "stdDev": 36.660100863896545
+    },
+    {
+      "mode": "reduced",
+      "name": "dpr1.5",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/reduced/dpr1.5.png",
+      "utc": "2026-11-18T02:30:09.910Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9ba57faad17f38b82bdfa53d00ed95653ebace9a95e644313cdeeda04b10cdc2",
+      "mean": 53.78319444444445,
+      "stdDev": 36.660100863896545
+    },
+    {
+      "mode": "reduced",
+      "name": "dpr1",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/probe/reduced/dpr1.png",
+      "utc": "2026-11-18T02:30:10.421Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "54ed6e4a43d218e562fcc7acc10904b0fa2f0a7889d42e097b155b75a0f71201",
+      "mean": 53.74018518518518,
+      "stdDev": 36.57644576979745
+    },
+    {
+      "mode": "reduced",
+      "name": "1x-32s",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-reduced.png",
+      "utc": "2026-11-18T02:30:48.345Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6df9386e9cb63a9fb989cf3e86e631bdfd3e97fd2dfd1feaa155cc49feccfa5b",
+      "mean": 53.289212962962964,
+      "stdDev": 36.50230604499974
+    },
+    {
+      "mode": "normal",
+      "name": "1x-32s",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-normal.png",
+      "utc": "2026-11-18T02:31:24.885Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "3b2db362554590883a063bdfe9feec0a5c4b294482df7ebc35644883aca1fbdf",
+      "mean": 53.27949074074074,
+      "stdDev": 36.5016639108301
+    },
+    {
+      "mode": "reduced",
+      "name": "4x-32s",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-reduced.png",
+      "utc": "2026-11-18T02:32:01.632Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6df9386e9cb63a9fb989cf3e86e631bdfd3e97fd2dfd1feaa155cc49feccfa5b",
+      "mean": 53.289212962962964,
+      "stdDev": 36.50230604499974
+    },
+    {
+      "mode": "normal",
+      "name": "4x-32s",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-normal.png",
+      "utc": "2026-11-18T02:32:38.650Z",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d5310eb8d6c7cbe2787bc400e9a7756b0bc7bcab83a38fad3e24d6002a4e91d1",
+      "mean": 53.300046296296294,
+      "stdDev": 36.53162024569345
+    }
+  ],
+  "crewCaptures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-reduced-crew.png",
+      "width": 462,
+      "height": 245,
+      "sha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/1x-normal-crew.png",
+      "width": 462,
+      "height": 245,
+      "sha256": "743e39e1274ae1c2628f200b8f16b317a56225f18d1b3e84576b72cd3deb6d18"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-reduced-crew.png",
+      "width": 462,
+      "height": 245,
+      "sha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/trial/4x-normal-crew.png",
+      "width": 462,
+      "height": 245,
+      "sha256": "506a722458758cac7a37f1537675e3ce30a1a171da284e4d323b7eb317722294"
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/review/native-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "eea120a5653a2918657abf6803972eeff3d2c26ebaaf918318e07d36cbb6543c",
+      "frames": [
+        {
+          "name": "initial-dpr1",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr2",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr1.5",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr1",
+          "mode": "normal"
+        }
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/review/native-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "1027fb1283fa2d60ac3a9b64d011e907b23e76c1e440a10f32d9c915cf4c1c24",
+      "frames": [
+        {
+          "name": "initial-dpr1",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr2",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr1.5",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr1",
+          "mode": "reduced"
+        }
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-native-production/review/native-2.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "bb07415e413d37d52220bd074935df938a3e79b9666b52cc77a8ab8127152fef",
+      "frames": [
+        {
+          "name": "1x-32s",
+          "mode": "reduced"
+        },
+        {
+          "name": "1x-32s",
+          "mode": "normal"
+        },
+        {
+          "name": "4x-32s",
+          "mode": "reduced"
+        },
+        {
+          "name": "4x-32s",
+          "mode": "normal"
+        }
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:34:04.130815+00:00",
+  "visualReview": "Three fresh measured 1024x576 sheets reviewed once. All four cats, victory header, reward content and Next/Details controls remain present; density changes show no blank canvas, crop or displacement. Normal motion retains distinct poses and reduced mode remains still. This fixture review does not establish physical monitor event delivery or independent judge acceptance.",
+  "pass": true,
+  "limits": "Native local artifact; independent judge acceptance pending. Synthetic media events exercise reduced invalidation because CDP is not physical monitor delivery. Ordinary32s normal/reduced CPU1x/4x coverage is descriptive, not a calibrated laptop or before/after benchmark."
+}
