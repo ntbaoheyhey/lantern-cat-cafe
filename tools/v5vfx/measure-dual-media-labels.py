@@ -50,10 +50,11 @@ def stable_state(state, initial, fixed_time):
                  labels=state['labels'] == initial['labels'],
                  renderTime=state['renderTime'] == fixed_time,
                  sceneTime=state['sceneTime'] == initial['sceneTime'],
-                 host=state['host'] == initial['host'])
+                 host=state['host'] == initial['host'],
+                 labelPaint=state.get('labelPaintState') == initial.get('labelPaintState'))
     for cat in CATS:
         a, b = state['media'][cat], initial['media'][cat]
-        gates[cat] = (a['state']['ready'] and not a['state']['failure'] and
+        gates[cat] = (a['state']['ready'] and not a['state'].get('failure') and
                       not a['state']['disposed'] and not a['state']['seeking'] and
                       a['state']['currentTime'] == b['state']['currentTime'] and
                       a['decoded']['mediaTime'] == b['decoded']['mediaTime'] and
@@ -77,9 +78,8 @@ def main():
     assert raw['runtimeSourceSubstitutions'] == []
     for item in provenance:
         assert sha(base / item['name']) == item['sha256'], item['name']
-    assert sha(__file__) == next(x['sha256'] for x in provenance
-                                if x['name'] == Path(__file__).name)
-    review = base / 'label-review'
+    captured_analyzer = next(x['sha256'] for x in provenance if x['name'] == Path(__file__).name)
+    review = base / ('label-review-' + datetime.datetime.now(datetime.timezone.utc).strftime('%H%M%S%f'))
     review.mkdir(exist_ok=False)
     result = dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   url=raw['url'], sourceCommit=raw['sourceCommit'],
@@ -90,6 +90,8 @@ def main():
                   provenance=dict(path=str(base / 'harness-provenance.json'),
                                   sha256=sha(base / 'harness-provenance.json')),
                   runtimeDiagnostic=raw['runtimeDiagnostic'], thresholds=list(THRESHOLDS),
+                  analysisHarness=dict(path=str(Path(__file__).resolve()), sha256=sha(__file__),
+                                       capturedVersionSha256=captured_analyzer),
                   interpretation='Visible RGB contribution under label paint; not recovered alpha, anatomy, or an ordinary gameplay capture. No natural rectangle failure is waived.',
                   capturePass=raw['pass'], captureFailure=raw.get('failure'),
                   cases=[], reviewImages=[], visualReviewed=False,
@@ -174,14 +176,14 @@ def main():
         row['valid'] = row['valid'] and row['overlappingLabelBoxPixels'] == 0
         row['threshold0Union'] = dict(all=pixels(union), own=pixels(own), cross=pixels(cross))
         images_to_make.append((case, row, images['baseline'], images['labels-hidden'], own, cross))
-    expected = [('normal', 0), ('normal', 90), ('normal', 180), ('normal', 270), ('reduced', 0)]
+    expected = [(c['mode'], c['frame']) for c in raw.get('plannedCases', [{'mode':'normal','frame':x} for x in (0,90,180,270)]+[{'mode':'reduced','frame':0}])]
     result['attributionValid'] = bool(raw['pass'] and not raw['errors'] and not raw['blockedRequests'] and
         [(c['mode'], c['sourceFrame']) for c in result['cases']] == expected and
         all(c.get('valid', False) for c in result['cases']))
     result['zeroPaintOverlap'] = bool(result['attributionValid'] and
         all(c['threshold0Union']['all']['count'] == 0 for c in result['cases']))
     # Freeze numerical observations before constructing any human-review images.
-    output.write_text(json.dumps(result, indent=2) + '\n')
+    output.write_text(json.dumps(result, separators=(',', ':')) + '\n')
     for case, row, baseline, hidden, own, cross in images_to_make:
         sheet = np.zeros((600, 1024, 3), dtype=np.uint8)
         for image, left, title in [(baseline, 0, 'Ordinary paused baseline'),
@@ -208,7 +210,7 @@ def main():
         assert not dest.exists() and cv2.imwrite(str(dest), sheet)
         result['reviewImages'].append(dict(path=str(dest), sha256=sha(dest), dimensions=[1024, 600],
                                           mode=case['mode'], sourceFrame=case['frame'], reviewed=False, views=0))
-    output.write_text(json.dumps(result, indent=2) + '\n')
+    output.write_text(json.dumps(result, separators=(',', ':')) + '\n')
     print(json.dumps(dict(output=str(output), attributionValid=result['attributionValid'],
         zeroPaintOverlap=result['zeroPaintOverlap'], cases=[{k:c[k] for k in ('mode','sourceFrame','controls','complete')} |
         {k:c.get(k) for k in ('valid','threshold0Union')} for c in result['cases']],

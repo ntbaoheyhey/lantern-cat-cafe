@@ -1,0 +1,293 @@
+{
+  "utc": "2026-11-18T13:16:13.026Z",
+  "finishedUTC": "2026-11-18T13:16:26.939Z",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "pass": false,
+  "failure": "page.waitForFunction: Timeout 10000ms exceeded.\n    at waitForDecodedMediaFrame (/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-production-fixture.mjs:22:13)\n    at /Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-dual-media-labels.mjs:40:9",
+  "failureSample": {
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "screen": "map",
+    "paused": true,
+    "plan": null,
+    "battle": "{\"version\":\"0.7.0\",\"seed\":71,\"rng\":798478386,\"chapter\":3,\"actors\":[{\"shield\":8,\"charge\":35,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"setEffects\":[\"defend-shield\"],\"bonuses\":{\"critBp\":800,\"critDamageBp\":5000,\"healingBp\":400,\"shieldBp\":0},\"turns\":0,\"id\":\"mochi\",\"catalogId\":\"mochi\",\"name\":\"Mochi\",\"side\":\"party\",\"role\":\"guardian\",\"combatClass\":\"melee\",\"row\":\"front\",\"flavour\":\"hearth\",\"hp\":732,\"maxHp\":732,\"attack\":81,\"defense\":43,\"initiative\":9,\"effectHit\":0,\"effectResist\":0,\"breakCap\":6,\"skills\":[\"mochi-1\",\"mochi-4\"]},{\"shield\":8,\"charge\":35,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"setEffects\":[\"healing-cleanse\"],\"bonuses\":{\"critBp\":500,\"critDamageBp\":5000,\"healingBp\":400,\"shieldBp\":0},\"turns\":0,\"id\":\"clover\",\"catalogId\":\"clover\",\"name\":\"Clover\",\"side\":\"party\",\"role\":\"healer\",\"combatClass\":\"healer\",\"row\":\"front\",\"flavour\":\"garden\",\"hp\":475,\"maxHp\":475,\"attack\":50,\"defense\":25,\"initiative\":8,\"effectHit\":0,\"effectResist\":0,\"breakCap\":6,\"skills\":[\"clover-1\",\"clover-4\"]},{\"shield\":0,\"charge\":35,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[],\"setEffects\":[],\"bonuses\":{\"critBp\":800,\"critDamageBp\":5000,\"healingBp\":900,\"shieldBp\":0},\"turns\":0,\"id\":\"panko\",\"catalogId\":\"panko\",\"name\":\"Panko\",\"side\":\"party\",\"role\":\"guardian\",\"combatClass\":\"melee\",\"row\":\"rear\",\"flavour\":\"garden\",\"hp\":748,\"maxHp\":748,\"attack\":78,\"defense\":43,\"initiative\":7,\"effectHit\":0,\"effectResist\":0,\"breakCap\":6,\"skills\":[\"panko-1\",\"panko-4\"]},{\"shield\":0,\"charge\":35,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[],\"setEffects\":[],\"bonuses\":{\"critBp\":1200,\"critDamageBp\":5000,\"healingBp\":400,\"shieldBp\":500},\"turns\":0,\"id\":\"mallow\",\"catalogId\":\"mallow\",\"name\":\"Mallow\",\"side\":\"party\",\"role\":\"striker\",\"combatClass\":\"melee\",\"row\":\"rear\",\"flavour\":\"ember\",\"hp\":560,\"maxHp\":560,\"attack\":98,\"defense\":28,\"initiative\":6,\"effectHit\":0,\"effectResist\":500,\"breakCap\":6,\"skills\":[\"mallow-1\",\"mallow-4\"]},{\"shield\":0,\"charge\":15,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[],\"setEffects\":[],\"bonuses\":{},\"turns\":0,\"id\":\"foe-0-yarn-giant\",\"catalogId\":\"yarn-giant\",\"name\":\"Yarn Giant\",\"side\":\"enemy\",\"role\":\"yarn\",\"combatClass\":\"melee\",\"row\":\"front\",\"flavour\":\"garden\",\"hp\":1398,\"maxHp\":1398,\"attack\":58,\"defense\":22,\"initiative\":5,\"effectHit\":0,\"effectResist\":1200,\"breakCap\":7,\"skills\":[]},{\"shield\":0,\"charge\":15,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[],\"setEffects\":[],\"bonuses\":{},\"turns\":0,\"id\":\"foe-1-binding-thread\",\"catalogId\":\"binding-thread\",\"name\":\"Binding Thread\",\"side\":\"enemy\",\"role\":\"thread\",\"combatClass\":\"ranged\",\"row\":\"rear\",\"flavour\":\"moon\",\"hp\":987,\"maxHp\":987,\"attack\":18,\"defense\":0,\"initiative\":4,\"effectHit\":0,\"effectResist\":500,\"breakCap\":2,\"skills\":[],\"linkedBossId\":\"foe-0-yarn-giant\"},{\"shield\":0,\"charge\":15,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[],\"setEffects\":[],\"bonuses\":{},\"turns\":0,\"id\":\"foe-2-binding-thread\",\"catalogId\":\"binding-thread\",\"name\":\"Binding Thread\",\"side\":\"enemy\",\"role\":\"thread\",\"combatClass\":\"ranged\",\"row\":\"rear\",\"flavour\":\"moon\",\"hp\":987,\"maxHp\":987,\"attack\":18,\"defense\":0,\"initiative\":3,\"effectHit\":0,\"effectResist\":500,\"breakCap\":2,\"skills\":[],\"linkedBossId\":\"foe-0-yarn-giant\"}],\"round\":1,\"queue\":[\"mochi\",\"clover\",\"panko\",\"mallow\",\"foe-0-yarn-giant\",\"foe-1-binding-thread\",\"foe-2-binding-thread\"],\"acted\":[],\"energy\":0,\"maxEnergy\":0,\"intents\":[{\"actorId\":\"foe-0-yarn-giant\",\"targetId\":\"clover\",\"label\":\"Yarn Giant \u00b7 Basic\",\"counter\":\"Cleanse the crew; Daze stops its signature.\",\"power\":100,\"signature\":false,\"interrupted\":false},{\"actorId\":\"foe-1-binding-thread\",\"targetId\":\"mochi\",\"label\":\"Binding Thread \u00b7 Basic\",\"counter\":\"Defeat the thread to release its knot or Cleanse.\",\"power\":100,\"signature\":false,\"interrupted\":false},{\"actorId\":\"foe-2-binding-thread\",\"targetId\":\"mochi\",\"label\":\"Binding Thread \u00b7 Basic\",\"counter\":\"Defeat the thread to release its knot or Cleanse.\",\"power\":100,\"signature\":false,\"interrupted\":false}],\"log\":[],\"choices\":[],\"result\":null,\"firstDeath\":null,\"procRounds\":{},\"boons\":{},\"mutator\":\"\",\"initial\":{\"seed\":71,\"chapter\":3,\"cats\":[{\"id\":\"mochi\",\"stats\":{\"hp\":732,\"attack\":70,\"defense\":43,\"critBp\":800,\"critDamageBp\":5000,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"shieldBp\":0,\"initiative\":8},\"skills\":[\"mochi-1\",\"mochi-4\"],\"row\":\"front\",\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"effects\":[\"defend-shield\"],\"bonuses\":{}},{\"id\":\"clover\",\"stats\":{\"hp\":475,\"attack\":50,\"defense\":25,\"critBp\":500,\"critDamageBp\":5000,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"shieldBp\":0,\"initiative\":4},\"skills\":[\"clover-1\",\"clover-4\"],\"row\":\"front\",\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"effects\":[\"healing-cleanse\"],\"bonuses\":{}},{\"id\":\"panko\",\"stats\":{\"hp\":748,\"attack\":68,\"defense\":43,\"critBp\":800,\"critDamageBp\":5000,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":900,\"shieldBp\":0,\"initiative\":8},\"skills\":[\"panko-1\",\"panko-4\"],\"row\":\"rear\",\"equipment\":[],\"effects\":[],\"bonuses\":{}},{\"id\":\"mallow\",\"stats\":{\"hp\":560,\"attack\":85,\"defense\":28,\"critBp\":1200,\"critDamageBp\":5000,\"effectHitBp\":0,\"effectResistBp\":500,\"healingBp\":400,\"shieldBp\":500,\"initiative\":6},\"skills\":[\"mallow-1\",\"mallow-4\"],\"row\":\"rear\",\"equipment\":[],\"effects\":[],\"bonuses\":{}}],\"enemies\":[\"yarn-giant\",\"binding-thread\",\"binding-thread\"],\"gameplayV4\":true,\"skillsV5\":true,\"gameplayA6\":true,\"formationC2\":true,\"plan\":{\"focus\":\"finish\",\"care\":\"steady\"},\"enemyStats\":{\"button-guard\":{\"hp\":480,\"attack\":19,\"defense\":18},\"sock-skipper\":{\"hp\":701,\"attack\":22,\"defense\":8},\"spool-ram\":{\"hp\":1050,\"attack\":30,\"defense\":16},\"needle-moth\":{\"hp\":659,\"attack\":17,\"defense\":6},\"teacup-healer\":{\"hp\":765,\"attack\":14,\"defense\":10},\"kettle-knight\":{\"hp\":1190,\"attack\":25,\"defense\":35},\"yarn-giant\":{\"hp\":1292,\"attack\":32,\"defense\":22},\"binding-thread\":{\"hp\":383,\"attack\":10,\"defense\":0},\"practice-cushion\":{\"hp\":230,\"attack\":14,\"defense\":0},\"pollen-scout\":{\"hp\":945,\"attack\":22,\"defense\":10},\"rain-spool\":{\"hp\":3675,\"attack\":58,\"defense\":24},\"crumb-sentinel\":{\"hp\":1260,\"attack\":27,\"defense\":22},\"pantry-crown\":{\"hp\":4270,\"attack\":60,\"defense\":25}}},\"v4\":{\"version\":1,\"plan\":{\"focus\":\"finish\",\"care\":\"steady\"},\"events\":[{\"kind\":\"crew-active\",\"crew\":\"door\",\"marks\":6,\"contributors\":[\"mochi\",\"clover\",\"panko\",\"mallow\"],\"threshold\":4,\"text\":\"Door team: +6% maximum HP; front cats start with 8 shield.\",\"sequence\":0,\"round\":0,\"version\":2,\"actionId\":0,\"stage\":\"setup\",\"logIndex\":0},{\"kind\":\"crew-active\",\"crew\":\"kettle\",\"marks\":3,\"contributors\":[\"mochi\",\"clover\"],\"threshold\":2,\"text\":\"Kettle team: +4% healing.\",\"sequence\":1,\"round\":0,\"version\":2,\"actionId\":0,\"stage\":\"setup\",\"logIndex\":0},{\"kind\":\"crew-active\",\"crew\":\"table\",\"marks\":3,\"contributors\":[\"panko\",\"mallow\"],\"threshold\":2,\"text\":\"Table team: +3% direct attack.\",\"sequence\":2,\"round\":0,\"version\":2,\"actionId\":0,\"stage\":\"setup\",\"logIndex\":0}],\"committed\":true}}",
+    "sceneTime": 0,
+    "renderTime": 30,
+    "host": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "top": 0,
+      "right": 1280,
+      "bottom": 720,
+      "left": 0
+    },
+    "media": {
+      "mochi": {
+        "state": {
+          "ready": true,
+          "desired": 1.222999999999999,
+          "currentTime": 1.223,
+          "seeking": false,
+          "paused": true,
+          "suspended": false,
+          "disposed": false
+        },
+        "planeVisible": true,
+        "rootVisible": true,
+        "body": {
+          "x": 337.1656294533051,
+          "y": 169.2000008188987,
+          "width": 272.8687508977014,
+          "height": 226.79999881795854
+        },
+        "face": {
+          "x": 423.98749999999995,
+          "y": 195.77812500000005,
+          "width": 116.35312499999998,
+          "height": 78.55312499999991
+        }
+      },
+      "clover": {
+        "state": {
+          "ready": true,
+          "desired": 4.8430000000000035,
+          "currentTime": 4.843,
+          "seeking": false,
+          "paused": true,
+          "suspended": false,
+          "disposed": false
+        },
+        "planeVisible": true,
+        "rootVisible": true,
+        "body": {
+          "x": 265.8585498227243,
+          "y": 406.80000054310375,
+          "width": 185.08290162477772,
+          "height": 226.79999921605548
+        },
+        "face": {
+          "x": 346.87471219110876,
+          "y": 444.2244516903731,
+          "width": 52.88082901554401,
+          "height": 52.88082901554395
+        }
+      }
+    },
+    "labels": [
+      {
+        "id": "mochi",
+        "rect": {
+          "x": 546.34375,
+          "y": 218.0625,
+          "width": 64,
+          "height": 34
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 546.34375,
+            "y": 239.0625,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 546.34375,
+            "y": 249.0625,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": {
+            "x": 546.34375,
+            "y": 218.0625,
+            "width": 64,
+            "height": 18
+          }
+        }
+      },
+      {
+        "id": "clover",
+        "rect": {
+          "x": 324.515625,
+          "y": 346.3125,
+          "width": 64,
+          "height": 34
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 324.515625,
+            "y": 367.3125,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 324.515625,
+            "y": 377.3125,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": {
+            "x": 324.515625,
+            "y": 346.3125,
+            "width": 64,
+            "height": 18
+          }
+        }
+      },
+      {
+        "id": "panko",
+        "rect": {
+          "x": 306.359375,
+          "y": 113.515625,
+          "width": 64,
+          "height": 16
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 306.359375,
+            "y": 116.515625,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 306.359375,
+            "y": 126.515625,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": null
+        }
+      },
+      {
+        "id": "mallow",
+        "rect": {
+          "x": 194.421875,
+          "y": 327.03125,
+          "width": 64,
+          "height": 16
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 194.421875,
+            "y": 330.03125,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 194.421875,
+            "y": 340.03125,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": null
+        }
+      },
+      {
+        "id": "foe-0-yarn-giant",
+        "rect": {
+          "x": 646.734375,
+          "y": 332.5,
+          "width": 64,
+          "height": 34
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 646.734375,
+            "y": 353.5,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 646.734375,
+            "y": 363.5,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": {
+            "x": 646.734375,
+            "y": 332.5,
+            "width": 64,
+            "height": 18
+          }
+        }
+      },
+      {
+        "id": "foe-1-binding-thread",
+        "rect": {
+          "x": 1018.4375,
+          "y": 428.28125,
+          "width": 64,
+          "height": 34
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 1018.4375,
+            "y": 449.28125,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 1018.4375,
+            "y": 459.28125,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": {
+            "x": 1018.4375,
+            "y": 428.28125,
+            "width": 64,
+            "height": 18
+          }
+        }
+      },
+      {
+        "id": "foe-2-binding-thread",
+        "rect": {
+          "x": 1018.453125,
+          "y": 101.5,
+          "width": 64,
+          "height": 34
+        },
+        "text": "",
+        "regions": {
+          "hp": {
+            "x": 1018.453125,
+            "y": 122.5,
+            "width": 64,
+            "height": 7
+          },
+          "rage": {
+            "x": 1018.453125,
+            "y": 132.5,
+            "width": 64,
+            "height": 3
+          },
+          "name": null,
+          "status": {
+            "x": 1018.453125,
+            "y": 101.5,
+            "width": 64,
+            "height": 18
+          }
+        }
+      }
+    ]
+  },
+  "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-labels-r2-131612/report.json",
+  "rawSha256": "4ec25b2225c30cb1fd4af5bd0752edc0131938f4cec7a5d6f4d8e06e88398e0a",
+  "captures": 0,
+  "interpretation": "Observer starts after initial presentation; fixed30 repeats same per-cat clocks and produces no fresh callbacks. R3 force-seeks distinct31.25 before target."
+}
