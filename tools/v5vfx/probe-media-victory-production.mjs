@@ -35,7 +35,7 @@ try{
   run.initial=await snapshot();
   if(failure){assert.equal(run.initial.loadError,'true');assert.notEqual(run.initial.ready,'true');assert(run.exceptions.some(e=>e.data?.description?.includes('Drawing swaps require an accepted cut-out rig')));}
   else{
-   assert.equal(run.initial.ready,'true');assert.equal(run.initial.drawn,'3');assert.equal(run.initial.loadError,null);
+   assert.equal(run.initial.ready,'true');assert.equal(run.initial.drawn,'1');assert.equal(run.initial.loadError,null);
    await page.waitForFunction(()=>{const v=globalThis.__cxvVictoryVideos.slice(globalThis.__cxvVictoryVideoStart);return v.length===1&&v[0].readyState>=2&&!v[0].seeking;},null,{timeout:15000});
    for(let i=0;i<(reduced?20:120);i++){await page.waitForTimeout(100);run.samples.push(await snapshot());}
    assert(run.samples.every(s=>s.videos.length===1&&s.videos[0].readyState>=2&&!s.videos[0].error));

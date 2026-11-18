@@ -1,0 +1,255 @@
+{
+  "utc": "2026-11-18T08:43:10.935150+00:00",
+  "status": "Scoped Mochi production victory PASS; natural play and Clover remain separate",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/report.json",
+    "sha256": "b0c76c88b19ca908aa02d85f570030ba2acd957ab9ff4e7d7802c2a7ca692584"
+  },
+  "source": "93440d3090d456f2e86e887d5e333bbdc19cc1e2",
+  "indexSha256": "89496027162400994a9dd118d2461c6024aa9d249f9bb3ed41ddf24ca9018725",
+  "buildPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r5/build.json",
+  "buildSha256": "4e9c1def81086522cb66c12dd3a232aac465c90367705e9e3925d3af7a47f415",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "runtimeSourceSubstitutions": [],
+  "harnessSha256": "c367b3603e9af3d7b993e9bde972d5eeafc91e31bc6bdee60ccb2f2a5398b9bc",
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/harness-provenance.json",
+    "sha256": "3bc58c4b534f214a4b7acd466b258bf6e077c37f513e06279aa759a4670c8cc7"
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "samples": 120,
+      "clock": {
+        "min": 0.0718,
+        "max": 9.9793,
+        "wraps": 1,
+        "maxForward": 0.11639999999999995
+      },
+      "ready": "true",
+      "drawn": "1",
+      "loadError": null,
+      "errors": [],
+      "blockedRequests": [],
+      "caughtExceptionCounts": {
+        "Error: Save code has an unsupported or damaged structure.": 1,
+        "Se: Need 10 matching shards.": 12,
+        "Promise": 2,
+        "Error: Minified React error #460; visit https://react.dev/errors/460 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.": 2
+      },
+      "qualityFirst": {
+        "totalVideoFrames": 12,
+        "droppedVideoFrames": 0,
+        "corruptedVideoFrames": 0
+      },
+      "qualityLast": {
+        "totalVideoFrames": 388,
+        "droppedVideoFrames": 0,
+        "corruptedVideoFrames": 0
+      },
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/normal.png",
+        "sha256": "fd85954f79b5b3cc99ce1b069109e1f3a41f8c7fd127fc4329dd37768c9d750f",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "rgbMean": 52.57634403935185,
+        "rgbStdDev": 41.13927815049634
+      }
+    },
+    {
+      "mode": "reduced",
+      "samples": 20,
+      "clock": {
+        "min": 0.0155,
+        "max": 0.0155,
+        "wraps": 0,
+        "maxForward": 0
+      },
+      "ready": "true",
+      "drawn": "1",
+      "loadError": null,
+      "errors": [],
+      "blockedRequests": [],
+      "caughtExceptionCounts": {
+        "Error: Save code has an unsupported or damaged structure.": 1,
+        "Se: Need 10 matching shards.": 12,
+        "Promise": 2,
+        "Error: Minified React error #460; visit https://react.dev/errors/460 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.": 2
+      },
+      "qualityFirst": {
+        "totalVideoFrames": 5,
+        "droppedVideoFrames": 0,
+        "corruptedVideoFrames": 0
+      },
+      "qualityLast": {
+        "totalVideoFrames": 5,
+        "droppedVideoFrames": 0,
+        "corruptedVideoFrames": 0
+      },
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/reduced.png",
+        "sha256": "ae4132957db400cdba57232ff88e052cae81d9e6645f5f929285a6f9981eb157",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "rgbMean": 53.29145941840278,
+        "rgbStdDev": 41.58693427341107
+      },
+      "context": {
+        "before": {
+          "ready": "true",
+          "loadError": null,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "lost": false,
+          "visibility": "visible",
+          "canvas": {
+            "width": 461,
+            "height": 245
+          }
+        },
+        "lost": {
+          "ready": "false",
+          "loadError": null,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "lost": true,
+          "visibility": "hidden",
+          "canvas": {
+            "width": 461,
+            "height": 245
+          }
+        },
+        "restored": {
+          "ready": "true",
+          "loadError": null,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          },
+          "lost": false,
+          "visibility": "visible",
+          "canvas": {
+            "width": 461,
+            "height": 245
+          }
+        },
+        "capture": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/reduced-restored.png",
+        "captureSha256": "ae4132957db400cdba57232ff88e052cae81d9e6645f5f929285a6f9981eb157",
+        "crop": [
+          133,
+          263,
+          595,
+          508
+        ],
+        "changedChannels": 0,
+        "maxChannelDifference": 0,
+        "meanAbsoluteDifference": 0.0,
+        "fullPngHashEqual": true,
+        "media": {
+          "at": 5164.5,
+          "ready": "true",
+          "drawn": "1",
+          "loadError": null,
+          "videos": [
+            {
+              "currentTime": 0.0155,
+              "duration": 10,
+              "paused": true,
+              "seeking": false,
+              "readyState": 4,
+              "error": null,
+              "source": "http://127.0.0.1:6301/units/mochi/designer-idle-3f92069b2aa15723.mp4",
+              "quality": {
+                "totalVideoFrames": 5,
+                "droppedVideoFrames": 0,
+                "corruptedVideoFrames": 0
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "reviewImages": [
+    {
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/review/normal.jpg",
+      "sha256": "72dfdf8f118369245c851de90af6877f4254dd45a2091b1a8f298b88a294f49e",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 172530,
+      "reviewed": true,
+      "views": 1,
+      "viewStartedUTC": "2026-11-18T08:43:23.023308+00:00",
+      "reviewedUTC": "2026-11-18T08:43:58.815137+00:00",
+      "observations": "All four cats visible; Mochi silhouette and lantern render cleanly with transparent background, comparable height, no yellow rectangle or failed-body gap. Victory text and buttons remain readable."
+    },
+    {
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-after-R2/review/reduced.jpg",
+      "sha256": "ab3fc312674f0df1727ea1ba9301f1d5a2fde5b17a164d2393f70104e0af8bc5",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 173557,
+      "reviewed": true,
+      "views": 1,
+      "viewStartedUTC": "2026-11-18T08:43:23.023308+00:00",
+      "reviewedUTC": "2026-11-18T08:43:58.815137+00:00",
+      "observations": "All four cats visible; Mochi silhouette and lantern render cleanly with transparent background, comparable height, no yellow rectangle or failed-body gap. Victory text and buttons remain readable."
+    }
+  ],
+  "numericPass": true,
+  "visualReviewed": true,
+  "limits": "Mochi prepared media on R5 only; Clover unit regression is not Clover visual acceptance. Rule-resolved result fixture, not natural play or laptop/byte/enrollment acceptance. Unrelated caught app/framework exceptions retained. afterR1 harness expected3drawings incorrectly; corrected1 is fixed squad Panko, with native Mallow/Sorrel.",
+  "pass": true,
+  "restoredImageReuse": {
+    "reason": "Full restored PNG SHA256 exactly equals newly reviewed reduced capture; not reopened.",
+    "sha256": "ae4132957db400cdba57232ff88e052cae81d9e6645f5f929285a6f9981eb157"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx",
+      "sha256": "478dd1037ee4fdf5dd2c642545e9e382cddb998858e973101138db610cb96bf4",
+      "integratedExact": true
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.media.test.tsx",
+      "sha256": "b54dbb45614a059ae8b6e3ad4673023a28a2300facc707d087f3977169534e72",
+      "integratedExact": true
+    }
+  ]
+}
