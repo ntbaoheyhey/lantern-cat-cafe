@@ -97,7 +97,8 @@ def main():
     output.write_text(json.dumps(result,indent=2)+'\n')
     for case,row,baseline,hidden,union in sorted(images_to_make,key=lambda x:(-x[1]['commissionedLabelsAgainstAllFourBodies']['count'],x[0]['key']))[:4]:
         sheet=np.zeros((600,1024,3),np.uint8)
-        for img,left,title in [(baseline,0,'Diagnostic Clover dx-12 dy+19px'),(hidden,512,'Diagnostic: labels hidden')]:
+        title='Diagnostic Mochi below body; Clover(-12,+19)' if raw.get('runtimeDiagnostic',{}).get('lowerBodyLabel') else 'Diagnostic Clover dx-12 dy+19px'
+        for img,left,title in [(baseline,0,title),(hidden,512,'Diagnostic: labels hidden')]:
             sheet[26:314,left:left+512]=cv2.resize(img,(512,288),interpolation=cv2.INTER_AREA);cv2.putText(sheet,title,(left+8,18),cv2.FONT_HERSHEY_SIMPLEX,.45,(240,240,240),1)
         annotated=baseline.copy();annotated[union]=(255,0,255);pts=np.argwhere(union)
         if len(pts):y0,x0=np.maximum(pts.min(axis=0)-24,0);y1,x1=np.minimum(pts.max(axis=0)+25,[720,1280])

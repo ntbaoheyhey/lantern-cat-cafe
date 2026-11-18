@@ -33,6 +33,9 @@ assert verified['sourceFiles'] and verified['mediaFiles'] and verified['artifact
 (out/'artifact-verification.json').write_text(json.dumps(verified,indent=2)+'\n')
 print(json.dumps(dict(verifiedSourceFiles=len(verified['sourceFiles']),verifiedMediaFiles=len(verified['mediaFiles']),verifiedArtifacts=len(verified['artifacts']),cat=args.cat)),flush=True)
 provenance=[]
+helper=r/'tools/v5vfx/action-label-observation.mjs'
+if args.capture=='labels':
+ data=helper.read_bytes();(out/helper.name).write_bytes(data);provenance.append(dict(name=helper.name,sha256=sha(data)))
 names=['media-production-fixture.mjs','capture-full-battle-production.mjs','measure-media-battle.py','run-media-natural.py','measure-dual-media-battle.py','verify-media-battle-rules.mjs','probe-dual-media-labels.mjs','measure-dual-media-labels.py']
 for name in names:
  data=(r/'tools/v5vfx'/name).read_bytes();(out/name).write_bytes(data);provenance.append(dict(name=name,sha256=hashlib.sha256(data).hexdigest()))

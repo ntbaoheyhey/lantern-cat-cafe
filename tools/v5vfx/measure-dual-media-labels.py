@@ -191,6 +191,8 @@ def main():
         shift = raw['runtimeDiagnostic'].get('labelTarget', {})
         baseline_title = ('Synthetic expanded status fixture' if raw['runtimeDiagnostic'].get('statusFixture', {}).get('name') == 'expanded'
                           else f"Diagnostic target dx{shift.get('dx', 0):+g} dy{shift.get('dy', 0):+g}px" if shift.get('dx') or shift.get('dy') else 'Ordinary paused baseline')
+        if raw['runtimeDiagnostic'].get('lowerBodyLabel'):
+            baseline_title='Mochi below body; '+('synthetic statuses' if raw['runtimeDiagnostic'].get('statusFixture',{}).get('name')=='expanded' else 'Clover(-12,+19)')
         for image, left, title in [(baseline, 0, baseline_title),
                                     (hidden, 512, 'Diagnostic: labels hidden')]:
             sheet[26:314, left:left+512] = cv2.resize(image, (512, 288), interpolation=cv2.INTER_AREA)
