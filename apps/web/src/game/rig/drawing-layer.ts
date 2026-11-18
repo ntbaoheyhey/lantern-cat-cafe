@@ -170,7 +170,8 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
    const region=overlaps[index]!;
    let weight=weights?.[offset+Weight.Count+index];
    if(weight===undefined){const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];weight=smooth(1-dx*dx-dy*dy)*guard;}
-   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain;
+   const follower=m.unit==='panko'&&(clip==='idle'||clip==='idle-phase2')?(/tail/.test(region.part)?3:/apron/.test(region.part)?1.6:1):1;
+   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain*follower;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
   }
   // Ears/tufts are above the protected face, driven after the body with their own spring.
@@ -183,6 +184,12 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
    if(accessory){let weight=weights?.[offset+Weight.Accessory];
     if(weight===undefined){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65);weight=smooth(1-ax*ax-ay*ay)*guard;}
     ox+=motion.accessory*1.4*weight;oy+=(motion.accessory*2-motion.handLift*m.opaqueHeight*.008)*weight;}
+  }
+  if(m.unit==='panko'&&(clip==='idle'||clip==='idle-phase2')&&!reduced){
+   // The bread shield follows the torso locally; the feet and protected face stay fixed.
+   const hand=frame.sockets.offHand;
+   if(hand){const ax=(x-hand[0])/(fw*.42),ay=(y-hand[1])/(fh*.80),weight=smooth(1-ax*ax-ay*ay)*guard;
+    ox+=motion.accessory*6*weight;oy+=motion.accessory*8*weight;}
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
   const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
