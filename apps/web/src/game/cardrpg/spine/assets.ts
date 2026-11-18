@@ -79,6 +79,8 @@ function loadSequence(spec:AcceptedSequence):Promise<SequenceAsset>{
   }return {manifest,textures,clips};}catch(error){textures.forEach(t=>t.dispose());throw error;}
  })().catch(error=>{if(sequenceCache.get(key)===cached)sequenceCache.delete(key);throw error;});sequenceCache.set(key,cached);return cached;
 }
+/** Independent media clock for the two commissioned designer idles only. */
+export interface DesignerMediaSampleContext {worldTime:number;paused:boolean;fixedTime:boolean;frozen:boolean;playbackRate?:number}
 export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
@@ -88,12 +90,13 @@ export class SpineActor {
  mesh?:CutoutMesh;puppet?:T.Group;sequence?:SequenceAsset;plane?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
  private animation='';private key:unknown;private at=0;private order=0;
  onCue:(cue:SpineCue)=>void=()=>{};
+ onMediaFrame?:()=>void;
  constructor(readonly unit:SpineUnit){for(const name of Object.keys(SPINE_CONFIG.sockets) as SpineSocket[]){const socket=new T.Object3D();socket.name=name;this.sockets.set(name,socket);this.root.add(socket);}}
  duration(name:string){return this.clips.get(name)?.duration??1;}
  cues(name=this.animation){return this.clips.get(name)?.cues??[];}
  setOrder(order:number){this.order=order;this.root.traverse(child=>{child.renderOrder=order;child.frustumCulled=false;});}
  /** A stable action key resets a clip only once, including consecutive casts of the same skill. */
- sample(name:string,key:unknown,time:number,delta:number,camera:T.Camera,reduced:boolean){
+ sample(name:string,key:unknown,time:number,delta:number,camera:T.Camera,reduced:boolean,_mediaContext?:DesignerMediaSampleContext){
   if(!this.clips.has(name))name='idle';
   const changed=this.animation!==name||this.key!==key||time<this.at;
   if(changed){this.animation=name;this.key=key;this.at=0;this.cursor.reset();if(this.mesh){this.mesh.skeleton.setToSetupPose();this.mesh.state.setAnimation(0,name,false);}}

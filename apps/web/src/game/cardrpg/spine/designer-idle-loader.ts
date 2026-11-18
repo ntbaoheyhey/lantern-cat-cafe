@@ -59,8 +59,17 @@ export class DesignerIdleMedia {
  failure:string|undefined;
  private disposed=false;private playing=false;private started=false;private firstFrame=false;
  private desired=0;private frozenAt:number|undefined;private lastSeek=-Infinity;private callback:number|undefined;
+ private animationFrame:number|undefined;private fallbackFrameTime=-1;private queuedSeek:number|undefined;
  private timer:ReturnType<typeof setTimeout>|undefined;
  private finish:((ok:boolean)=>void)|undefined;
+ private readonly canvases=new Set<HTMLCanvasElement>();
+ private readonly contextLost=()=>{
+  if(this.disposed)return;
+  // Release old-context listeners while GL is lost, before Three creates new caches.
+  // CPU media/vertices remain available for the first restored draw.
+  this.videoTexture.dispose();this.posterTexture.dispose();this.geometry.dispose();this.material.dispose();
+ };
+ private readonly contextRestored=()=>{if(!this.disposed){this.videoTexture.needsUpdate=true;this.posterTexture.needsUpdate=true;this.onFrame();}};
  private readonly visibility=()=>{if(document.hidden)this.video.pause();};
  constructor(readonly manifest:DesignerIdleManifest,poster:HTMLImageElement){
   validateDesignerIdle(manifest,manifest.id);
@@ -75,6 +84,10 @@ export class DesignerIdleMedia {
   this.geometry.translate((manifest.width/2-manifest.foot[0])*scale,(manifest.foot[1]-manifest.height/2)*scale,0);
   this.basePositions=new Float32Array(this.geometry.attributes.position!.array as Float32Array);
   this.plane=new T.Mesh(this.geometry,this.material);this.plane.frustumCulled=false;
+  this.plane.onBeforeRender=renderer=>{
+   const canvas=renderer.domElement;if(this.canvases.has(canvas))return;
+   canvas.addEventListener('webglcontextlost',this.contextLost);canvas.addEventListener('webglcontextrestored',this.contextRestored);this.canvases.add(canvas);
+  };
   this.ready=new Promise(resolve=>{this.finish=resolve;});
   this.video.addEventListener('error',this.error);
   this.video.addEventListener('loadeddata',this.loaded);
@@ -87,10 +100,24 @@ export class DesignerIdleMedia {
  private readonly loaded=()=>{
   if(this.disposed||this.failure||this.started)return;this.started=true;
   if(this.video.videoWidth!==this.manifest.width||this.video.videoHeight!==this.manifest.height*2||Math.abs(this.video.duration-10)>1/30){this.fail('Designer video metadata mismatch');return;}
-  if(this.video.requestVideoFrameCallback){this.callback=this.video.requestVideoFrameCallback(()=>{this.callback=undefined;this.acceptFrame();});}
-  else this.acceptFrame();
+  this.watchFrames();
   void this.video.play().then(()=>{if(this.disposed||this.failure)this.video.pause();}).catch(error=>this.fail(`Designer video play rejected: ${String(error)}`));
  };
+ private watchFrames(){
+  if(this.disposed||this.failure)return;
+  const decoded=()=>{
+   if(this.disposed||this.failure)return;
+   if(!this.firstFrame)this.acceptFrame();
+   else{this.videoTexture.needsUpdate=true;this.onFrame();}
+   this.watchFrames();
+  };
+  if(this.video.requestVideoFrameCallback)this.callback=this.video.requestVideoFrameCallback(()=>{this.callback=undefined;decoded();});
+  else this.animationFrame=requestAnimationFrame(()=>{
+   this.animationFrame=undefined;
+   if(this.video.readyState>=2&&this.video.currentTime!==this.fallbackFrameTime){this.fallbackFrameTime=this.video.currentTime;decoded();}
+   else this.watchFrames();
+  });
+ }
  private acceptFrame(){
   if(this.disposed||this.failure)return;
   // loadeddata alone produced an empty frame in a measured WebKit probe.
@@ -106,11 +133,18 @@ export class DesignerIdleMedia {
    if(this.timer)clearTimeout(this.timer);this.timer=undefined;this.finish?.(true);this.finish=undefined;this.onFrame();
   }catch(error){this.fail(String(error));}
  }
- private readonly seeked=()=>{if(this.disposed||this.failure)return;this.videoTexture.needsUpdate=true;this.onFrame();};
+ private readonly seeked=()=>{
+  if(this.disposed||this.failure)return;
+  const queued=this.queuedSeek;this.queuedSeek=undefined;
+  if(queued!==undefined&&designerDrift(this.video.currentTime,queued)>(this.playing?.2:1/60)){this.video.currentTime=queued;return;}
+  this.videoTexture.needsUpdate=true;this.onFrame();
+ };
  private fail(reason:string){
   if(this.disposed||this.failure)return;this.failure=reason;this.video.pause();this.playing=false;this.material.map=this.posterTexture;this.packed.value=0;
   if(this.timer)clearTimeout(this.timer);this.timer=undefined;
   if(this.callback!==undefined)this.video.cancelVideoFrameCallback?.(this.callback);this.callback=undefined;
+  if(this.animationFrame!==undefined)cancelAnimationFrame(this.animationFrame);this.animationFrame=undefined;
+  this.queuedSeek=undefined;this.videoTexture.dispose();
   this.video.removeAttribute('src');this.video.load();
   this.finish?.(false);this.finish=undefined;this.onFrame();
  }
@@ -123,6 +157,7 @@ export class DesignerIdleMedia {
   this.desired=target;
   if(!this.firstFrame){this.playing=running;return;}
   const now=performance.now(),drift=designerDrift(this.video.currentTime,target);
+  if(this.video.seeking)this.queuedSeek=target;
   if(!this.video.seeking&&drift>(running?.2:1/60)&&(!running||now-this.lastSeek>500)){
    this.lastSeek=now;this.video.currentTime=target;
   }
@@ -130,13 +165,15 @@ export class DesignerIdleMedia {
   if(!running){this.video.pause();this.playing=false;}
   else if(!this.playing||this.video.paused){this.playing=true;void this.video.play().catch(error=>this.fail(`Designer video play rejected: ${String(error)}`));}
  }
- get state(){return {ready:this.firstFrame,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,disposed:this.disposed};}
+ get state(){return {ready:this.firstFrame&&!this.failure&&!this.disposed,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,disposed:this.disposed};}
  dispose(){
   if(this.disposed)return;this.disposed=true;
   if(this.timer)clearTimeout(this.timer);
   if(this.callback!==undefined)this.video.cancelVideoFrameCallback?.(this.callback);
+  if(this.animationFrame!==undefined)cancelAnimationFrame(this.animationFrame);
   this.finish?.(false);this.finish=undefined;
   document.removeEventListener('visibilitychange',this.visibility);
+  for(const canvas of this.canvases){canvas.removeEventListener('webglcontextlost',this.contextLost);canvas.removeEventListener('webglcontextrestored',this.contextRestored);}this.canvases.clear();
   this.video.removeEventListener('error',this.error);this.video.removeEventListener('loadeddata',this.loaded);this.video.removeEventListener('seeked',this.seeked);
   this.video.pause();this.video.removeAttribute('src');this.video.load();this.video.remove();
   this.videoTexture.dispose();this.posterTexture.dispose();this.geometry.dispose();this.material.dispose();this.plane.removeFromParent();

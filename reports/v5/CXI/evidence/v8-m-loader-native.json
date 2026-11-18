@@ -1,0 +1,928 @@
+{
+  "utc": "2026-11-18T04:57:39.325Z",
+  "source": "4f3669586bb269ced9c7eb1fb9e59f6efbba4961",
+  "loaderSha256": "ba1beb2ea9a50734761a24dd947529aa49e0c568471d7eb0b65fe5a69e90cbf7",
+  "url": "http://127.0.0.1:6304/",
+  "viewport": [
+    1280,
+    720
+  ],
+  "purpose": "Isolated native loader checks; approximate anchors; no game integration or asset acceptance",
+  "runs": [
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.026,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 0.5864506331022451,
+            "p95": 0.8586475487570056,
+            "transparent": 45530,
+            "opaque": 31341
+          }
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.42079999999999984
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 13
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.7025000000000006
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.1353,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "image": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/chromium-mochi.png",
+        "sha256": "64d050378effcc84ffc27c34597f52389ab8d6b4509abe659bcc7382847d86a1",
+        "format": "png",
+        "size": 102471,
+        "width": 312,
+        "height": 260,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 312,
+          "height": 260
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "mochi",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "clover",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.0105,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 0.24440507630238628,
+            "p95": 0.7103489850589995,
+            "transparent": 30021,
+            "opaque": 21784
+          }
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.42110000000000003
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 13
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.7050999999999998
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.1366,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "image": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/chromium-clover.png",
+        "sha256": "f51a64c7e092f8feb87add3d7af48eaceabaef8672e058ee1ec1dd1853f00cc3",
+        "format": "png",
+        "size": 75419,
+        "width": 212,
+        "height": 260,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 212,
+          "height": 260
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "clover",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "cat": "clover",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.012696666333750255,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 1.1671509486744231,
+            "p95": 4.133345793340055,
+            "transparent": 45530,
+            "opaque": 31341
+          }
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.4133780420042079
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 11
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.6245081669958825
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.11677458333237656,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "image": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/webkit-mochi.png",
+        "sha256": "6f4c2c03bdf9da91f26a2a571fefb8e3c6c9f7683160d33a6ee408a9cb6ba7e0",
+        "format": "png",
+        "size": 94635,
+        "width": 312,
+        "height": 260,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 312,
+          "height": 260
+        },
+        "exif": {
+          "type": "Buffer",
+          "data": [
+            77,
+            77,
+            0,
+            42,
+            0,
+            0,
+            0,
+            8,
+            0,
+            1,
+            135,
+            105,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            160,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            160,
+            2,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            56,
+            160,
+            3,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            4,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "mochi",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "clover",
+      "mode": "normal",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0.01099999966214913,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "off-DOM-video",
+          "pass": true
+        },
+        {
+          "name": "shader-matches-native-mask",
+          "pass": true,
+          "detail": {
+            "mae": 0.7020752731835653,
+            "p95": 3,
+            "transparent": 30021,
+            "opaque": 21784
+          }
+        },
+        {
+          "name": "reduced-holds-zero",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "frozen-holds",
+          "pass": true
+        },
+        {
+          "name": "normal-playback",
+          "pass": true,
+          "detail": 0.4117457500009314
+        },
+        {
+          "name": "frame-invalidations",
+          "pass": true,
+          "detail": 9
+        },
+        {
+          "name": "double-speed",
+          "pass": true,
+          "detail": 0.623886333339871
+        },
+        {
+          "name": "native-loop-crossing",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 9.899999999999999,
+            "currentTime": 0.11904783300460911,
+            "seeking": false,
+            "paused": false,
+            "disposed": false
+          }
+        },
+        {
+          "name": "latest-seek-wins",
+          "pass": true,
+          "detail": {
+            "ready": true,
+            "desired": 8,
+            "currentTime": 8,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "context-recovered",
+          "pass": true
+        },
+        {
+          "name": "restored-pixels-exact",
+          "pass": true
+        },
+        {
+          "name": "immutable-base",
+          "pass": true
+        },
+        {
+          "name": "dispose-src",
+          "pass": true
+        },
+        {
+          "name": "dispose-gpu",
+          "pass": true,
+          "detail": {
+            "geometries": 0,
+            "textures": 0
+          }
+        }
+      ],
+      "image": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/loader/webkit-clover.png",
+        "sha256": "086f3e41aed8fd697e93cddf7c1237c83126f3d4b0434dc86a7d815225345091",
+        "format": "png",
+        "size": 69320,
+        "width": 212,
+        "height": 260,
+        "space": "srgb",
+        "channels": 4,
+        "depth": "uchar",
+        "density": 72,
+        "isProgressive": false,
+        "isPalette": false,
+        "bitsPerSample": 8,
+        "hasProfile": false,
+        "hasAlpha": true,
+        "autoOrient": {
+          "width": 212,
+          "height": 260
+        },
+        "exif": {
+          "type": "Buffer",
+          "data": [
+            77,
+            77,
+            0,
+            42,
+            0,
+            0,
+            0,
+            8,
+            0,
+            1,
+            135,
+            105,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            160,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            160,
+            2,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            212,
+            160,
+            3,
+            0,
+            4,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            4,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "clover",
+      "mode": "reject",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "ready-result",
+          "pass": true,
+          "detail": {
+            "ready": false,
+            "failure": "Designer video play rejected: Error: injected autoplay rejection",
+            "desired": 0,
+            "currentTime": 0,
+            "seeking": false,
+            "paused": true,
+            "disposed": false
+          }
+        },
+        {
+          "name": "failure-retains-poster",
+          "pass": true,
+          "detail": "Designer video play rejected: Error: injected autoplay rejection"
+        },
+        {
+          "name": "failure-releases-decoder",
+          "pass": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "cat": "clover",
+      "mode": "dispose-early",
+      "checks": [
+        {
+          "name": "poster-before-decode",
+          "pass": true
+        },
+        {
+          "name": "early-disposal-resolves",
+          "pass": true
+        },
+        {
+          "name": "early-src-released",
+          "pass": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "pass": true
+}

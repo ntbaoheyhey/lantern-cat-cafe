@@ -164,7 +164,9 @@ export class SpineScene {
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
     lane=this.lanes.get(unit.id)?.lane??lane;
     const entry={actor,craftPose,craftLight,craftDeath,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
-    actor.onCue=cue=>this.onCue(unit.id,cue);this.scene.add(actor.root,shadow,ring,hit);
+    actor.onCue=cue=>this.onCue(unit.id,cue);
+    if(asset==='mochi'||asset==='clover')actor.onMediaFrame=()=>this.invalidate();
+    this.scene.add(actor.root,shadow,ring,hit);
     this.invalidate();
    }).catch(error=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id))return;
@@ -321,7 +323,9 @@ export class SpineScene {
    if(iced&&unit.hp>0&&previous){name=previous.name;key=previous.key;at=previous.at;}
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime+phaseOffset;
-   actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
+   if(entry.asset==='mochi'||entry.asset==='clover')actor.sample(name,key,at,delta,this.camera,view.reducedMotion,
+    {worldTime:worldTime+phaseOffset,paused:!!view.paused,fixedTime:view.fixedTime!==undefined,frozen,playbackRate:view.playbackSpeed??1});
+   else actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    const drawingDamage=unit.hp>0&&frame?.plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id));
    const damageAge=drawingDamage&&frame?(frame.elapsed-frame.plan.beats[2]!.start)/1000:undefined;
    // Keep Yarn's authored contact visible through the fixed90ms impact hold.

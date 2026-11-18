@@ -11,3 +11,5 @@ Số đo m1.13 cũ:7.667.824/8.230.950/7.743.499B;wave3 vượt230.950B. Không 
 Audio source/engine không đổi từm1.13:13gói/544Opus có parity48kHz kế thừa. Sáu fullcallout296.493B/sáu small156.500B của AGS vẫn nguyên hash;264frame48k ngắn hơn nhưng36cueends đều đủ. Không kết luận cắt lời;provenance,timing/gain,mapping/fallback/listening vẫn REDO.
 AGS còn sáu TASK hữu ích:T1/T2/T3/T5/T7/T8. AGV12original trên integration khớp approvedhash;12file khác ở lane không được nhập. T-CXV-1/2 vẫn thuộc cặp visual.
 Chưa có publicFuji;hosting/fundedFuji/contracts/main/submission là owner-only. Wake cxi-wake ACTIVE mỗi15phút;không xóa hoặc tạo bản trùng.
+
+2026-11-18T04:59:35.456916+00:00 Loader thử nghiệm đã qua92 kiểm tra native trên Chromium/WebKit, không lỗi console; sửa callback mỗi khung, seek liên tiếp và dọn GPU khi mất context. Chưa bật trong game: viền lấm tấm và điểm nối đuôi vẫn chưa đạt.
