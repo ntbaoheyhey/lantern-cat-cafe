@@ -1,8 +1,8 @@
-ACTIVE: NONE
-NEXT 1: NONE
+ACTIVE: T-M2, T-M4
+NEXT 1: T-M2
 NEXT 2: NONE
 Running PIDs: None
-TASKs: NONE
+TASKs: T-M2, T-M4
 Blocked: B4 (Video generation failed: tools only support static images)
 Last Pushed SHA: af0361775
 Wake Task ID: task-6
