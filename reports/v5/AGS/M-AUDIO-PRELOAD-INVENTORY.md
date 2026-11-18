@@ -1,10 +1,10 @@
 # Audio Preload Inventory (T-CXI-11 R2 - Finalized)
 
 ## Audio Reachability Table
-| Artifact | Source File/Line | Runtime Condition |
-| :--- | :--- | :--- |
-| scene-room | Unavailable | SceneActive |
-| scene-workshop | Unavailable | SceneActive |
-| scene-rain | Unavailable | WeatherActive |
-| score-boss | Unavailable | BossEncounter |
-| score-dawn | Unavailable | DawnEncounter |
+| Artifact | Source File/Line | Runtime Condition | Uncertainty |
+| :--- | :--- | :--- | :--- |
+| scene-room | Unavailable | Unavailable | Unavailable |
+| scene-workshop | Unavailable | Unavailable | Unavailable |
+| scene-rain | Unavailable | Unavailable | Unavailable |
+| score-boss | Unavailable | Unavailable | Unavailable |
+| score-dawn | Unavailable | Unavailable | Unavailable |

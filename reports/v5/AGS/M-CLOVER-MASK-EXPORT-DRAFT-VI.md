@@ -2,7 +2,7 @@
 
 ## 1. Yêu cầu xuất (Export Requirements)
 - Clover Tail Mask: [Live2D Export (EN)](https://help.live2d.com/en/) / [Live2D Export (ZH)](https://help.live2d.com/zh/).
-- Pale Underskirt/Hand: Lớp reconstructed, không hỗ trợ xuất.
+- Pale Underskirt/Hand: Lớp reconstructed (Unsupported/Unknown).
 
 ## 2. Phân biệt tài nguyên (Asset Distinction)
 - Model Structure: Available.
