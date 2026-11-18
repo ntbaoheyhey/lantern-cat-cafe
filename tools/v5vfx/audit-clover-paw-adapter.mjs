@@ -28,7 +28,7 @@ const sourceFiles = await Promise.all(relativeSources.map(p => ref(resolve(app, 
 assert.deepEqual(JSON.parse(await readFile(sourceFiles.at(-1).path)), {});
 const out = resolve(root, 'work/v5/CXV/batch-m/clover-paw-adapter-R6-r1');
 await mkdir(out, {recursive: true});
-const server = await createServer({root: app, configFile: false, cacheDir: resolve(out, 'vite-cache'),
+const server = await createServer({root: app, configFile: false, envDir: false, cacheDir: resolve(out, 'vite-cache'),
   server: {middlewareMode: true, watch: null, fs: {allow: [root, integration]}}, resolve: {dedupe: ['three']}, logLevel: 'error'});
 const report = {utc: new Date().toISOString(), payload: await ref(payloadPath), sourceFiles,
   scope: 'Read-only actual CXI adapter arithmetic. Mock video clock/no decode, provisional other anchors, empty registry. No production scene/cast/loop acceptance. Bytes report-only under owner override.',
