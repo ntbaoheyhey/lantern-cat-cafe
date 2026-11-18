@@ -1,0 +1,1103 @@
+{
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-controls-native-r1-170049/report.json",
+    "sha256": "5773a001570e940e0a30634f35a916d539d7e0220d987d80f6b1d2fef01ce35d"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-controls-native-R1-preregistration.json",
+    "sha256": "c6bcea18d3aefbb8f1c3ebbadab147d73fcae7c3e94c778795a810e36581ea83"
+  },
+  "artifact": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-controls-native-r1-170049/artifact-verification.json",
+    "sha256": "e7b2ba6b11a343e7a294341258bbd015cf508c360193f950f08536605f5fc08c"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-controls-native-r1-170049/harness-provenance.json",
+    "sha256": "316d6c427b3ebb82424bec2be70292eaed7b95c72591d7266100ac37d2f0edd6"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-label-controls.py",
+    "sha256": "349825d21b6ef4e1bbd31837b4d3b533496416a2d986bc112626f9dc91a98ae1"
+  },
+  "stateVerifierSha256": "ec50fa7383e505d653e02aebef676dcc454866e086a1d1ebc6d6a81ebaac0c0f",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "hashes": 50,
+  "capturePass": true,
+  "captureFailure": null,
+  "rulesExact": true,
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Historical lowerMochi+Clover(-12,+19) remains shadow-clearance rejected.",
+    "Current fixed(-28,+14) proof remains rejected;not evaluated here.",
+    "No native target,ordinary gameplay,performance or production acceptance.",
+    "Browser launch requires explicit new CXI6301/timing lease."
+  ],
+  "utc": "2026-11-18T17:05:11.922962+00:00",
+  "captureUTC": {
+    "start": "2026-11-18T17:00:50.500Z",
+    "end": "2026-11-18T17:01:16.835Z"
+  },
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-controls-native-r1-170049/controls-measurement.json",
+    "sha256": "115372a2010ec16f5aab40479d4c008120edd370342146cdb161875f1423415a"
+  },
+  "process": {
+    "pid": 66988,
+    "exit": 0,
+    "processGroupEmpty": true,
+    "leaseReleasedUTC": "2026-11-18T17:03:56Z"
+  },
+  "cases": [
+    {
+      "key": "normal-mochi-1-350",
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "thresholds": {
+            "0": {
+              "count": 1612,
+              "bbox": [
+                195,
+                117,
+                1061,
+                457
+              ]
+            },
+            "1": {
+              "count": 126,
+              "bbox": [
+                200,
+                127,
+                1061,
+                457
+              ]
+            },
+            "2": {
+              "count": 80,
+              "bbox": [
+                207,
+                127,
+                1061,
+                457
+              ]
+            },
+            "4": {
+              "count": 38,
+              "bbox": [
+                217,
+                127,
+                1061,
+                457
+              ]
+            }
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "thresholds": {
+            "0": {
+              "count": 1612,
+              "bbox": [
+                195,
+                117,
+                1061,
+                457
+              ]
+            },
+            "1": {
+              "count": 126,
+              "bbox": [
+                200,
+                127,
+                1061,
+                457
+              ]
+            },
+            "2": {
+              "count": 80,
+              "bbox": [
+                207,
+                127,
+                1061,
+                457
+              ]
+            },
+            "4": {
+              "count": 38,
+              "bbox": [
+                217,
+                127,
+                1061,
+                457
+              ]
+            }
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        }
+      ],
+      "allStateExact": true,
+      "allRgbExact": false
+    },
+    {
+      "key": "normal-panko-1-125",
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "thresholds": {
+            "0": {
+              "count": 1074,
+              "bbox": [
+                195,
+                105,
+                1060,
+                457
+              ]
+            },
+            "1": {
+              "count": 123,
+              "bbox": [
+                201,
+                340,
+                1060,
+                457
+              ]
+            },
+            "2": {
+              "count": 82,
+              "bbox": [
+                206,
+                340,
+                1060,
+                457
+              ]
+            },
+            "4": {
+              "count": 31,
+              "bbox": [
+                216,
+                340,
+                1060,
+                457
+              ]
+            }
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "thresholds": {
+            "0": {
+              "count": 1074,
+              "bbox": [
+                195,
+                105,
+                1060,
+                457
+              ]
+            },
+            "1": {
+              "count": 123,
+              "bbox": [
+                201,
+                340,
+                1060,
+                457
+              ]
+            },
+            "2": {
+              "count": 82,
+              "bbox": [
+                206,
+                340,
+                1060,
+                457
+              ]
+            },
+            "4": {
+              "count": 31,
+              "bbox": [
+                216,
+                340,
+                1060,
+                457
+              ]
+            }
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        }
+      ],
+      "allStateExact": true,
+      "allRgbExact": false
+    },
+    {
+      "key": "normal-panko-1-225",
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "thresholds": {
+            "0": {
+              "count": 725,
+              "bbox": [
+                501,
+                104,
+                1060,
+                159
+              ]
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "thresholds": {
+            "0": {
+              "count": 725,
+              "bbox": [
+                501,
+                104,
+                1060,
+                159
+              ]
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        }
+      ],
+      "allStateExact": true,
+      "allRgbExact": false
+    },
+    {
+      "key": "reduced-panko-1-125",
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "thresholds": {
+            "0": {
+              "count": 1127,
+              "bbox": [
+                195,
+                106,
+                1062,
+                455
+              ]
+            },
+            "1": {
+              "count": 179,
+              "bbox": [
+                201,
+                119,
+                1062,
+                455
+              ]
+            },
+            "2": {
+              "count": 130,
+              "bbox": [
+                206,
+                119,
+                1062,
+                455
+              ]
+            },
+            "4": {
+              "count": 69,
+              "bbox": [
+                216,
+                119,
+                1062,
+                455
+              ]
+            }
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "thresholds": {
+            "0": {
+              "count": 1127,
+              "bbox": [
+                195,
+                106,
+                1062,
+                455
+              ]
+            },
+            "1": {
+              "count": 179,
+              "bbox": [
+                201,
+                119,
+                1062,
+                455
+              ]
+            },
+            "2": {
+              "count": 130,
+              "bbox": [
+                206,
+                119,
+                1062,
+                455
+              ]
+            },
+            "4": {
+              "count": 69,
+              "bbox": [
+                216,
+                119,
+                1062,
+                455
+              ]
+            }
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        }
+      ],
+      "allStateExact": true,
+      "allRgbExact": false
+    },
+    {
+      "key": "reduced-panko-1-225",
+      "comparisons": [
+        {
+          "a": "untouched-0",
+          "b": "untouched-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-1",
+          "b": "untouched-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-style",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "sham-restored",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "restored-1",
+          "b": "restored-repeat-1",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "untouched-2",
+          "b": "restored-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        },
+        {
+          "a": "hidden-1",
+          "b": "hidden-2",
+          "thresholds": {
+            "0": {
+              "count": 0,
+              "bbox": null
+            },
+            "1": {
+              "count": 0,
+              "bbox": null
+            },
+            "2": {
+              "count": 0,
+              "bbox": null
+            },
+            "4": {
+              "count": 0,
+              "bbox": null
+            }
+          }
+        }
+      ],
+      "allStateExact": true,
+      "allRgbExact": true
+    }
+  ],
+  "stateChecks": 1700,
+  "decision": "All five cases have exact untouched repeats, sham-style shots, recorded state and post-conceal repeats. Four differ from untouched only after first conceal: 1612,1074,725,1127 RGB pixels; reduced Panko225ms remains exact. First conceal is associated with persistent raster change; browser cause is unresolved. Ordinary-paint attribution remains rejected in four cases. No threshold relaxation, offset adoption, source change, or production acceptance.",
+  "next": "Use independent conservative complete-paint bounds for Mochi-only scope; investigate visibility versus opacity intervention only under a new frozen control protocol and explicit lease. Existing four-control33/34 and five-control2/34 historical findings retained separately."
+}
