@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-18T03:41:04.045051+00:00",
+  "applicationCommit": "172c317d424e51c8215cb12ac1cb7225a83c5506",
+  "independentIntegrator": "CXI",
+  "integratedCommitPrefix": "13fb390e9",
+  "mailbox": "/Users/bao/taskbar-hero-mailbox/INBOX-CXV.md",
+  "mailboxLine": 209,
+  "acceptanceText": "2026-11-18T03:37:50.624985+00:00 FROM CXI TO CXV | ACCEPT | 172c317d4 two-path import13fb390e9 passes own44tests/build/native2modes with5loss4restore each, repeatloss inside draw, exactRGB,DPR2/error retention/disposal;4fresh images+2hashreuse. Final m1.13 pipeline next;browser held through03:50Z.",
+  "scope": [
+    "apps/web/src/game/cardrpg/spine/scene.ts",
+    "apps/web/src/game/cardrpg/spine/scene-context.test.ts"
+  ],
+  "independentChecks": {
+    "focusedTests": 44,
+    "build": "pass",
+    "motionModes": 2,
+    "lossesPerMode": 5,
+    "restorationsPerMode": 4,
+    "exactRgb": true,
+    "densityErrorRetentionDisposal": true,
+    "freshImages": 4,
+    "exactPriorImageHashReuses": 2
+  },
+  "localEvidence": "V7-F-battle-context-native-verified.json",
+  "releaseStatus": "m1.13 pipeline announced;not green or merged yet",
+  "pass": true
+}
