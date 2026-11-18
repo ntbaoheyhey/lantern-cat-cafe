@@ -100,7 +100,18 @@ export class SpineScene {
  }
  private lost=(event:Event)=>{if(this.disposed)return;event.preventDefault();this.contextChanged(true);};
  private restored=()=>this.contextChanged(false);
- private visibility=()=>{this.last=0;this.dirty=true;};
+ private mediaSuspended=false;
+ private syncMediaSuspension(view:SceneView){
+  if(this.disposed)return;
+  const suspended=document.hidden||!!view.suspended;let managed=false;
+  for(const {asset,actor} of this.actors.values())if(hasDesignerIdleBody(asset,actor)){
+   // Optional structural hook keeps the unregistered/native actor API unchanged.
+   const media=(actor as SpineActor&{designerMedia?:{setSuspended?:(value:boolean)=>void}}).designerMedia;
+   if(media?.setSuspended){media.setSuspended(suspended);managed=true;}
+  }
+  if(managed&&this.mediaSuspended!==suspended){this.mediaSuspended=suspended;this.invalidate();}
+ }
+ private visibility=()=>{this.last=0;this.dirty=true;this.syncMediaSuspension(this.view());};
  private pick=(event:PointerEvent)=>{const box=this.renderer.domElement.getBoundingClientRect(),x=event.clientX-box.left,y=event.clientY-box.top;for(const unit of this.sizeAudit().units){if(x>=unit.box.x&&x<=unit.box.x+unit.box.width&&y>=unit.box.y&&y<=unit.box.y+unit.box.height){this.onTarget(unit.id);break;}}};
  constructor(private host:HTMLElement,readonly view:()=>SceneView,private onAnchors:(anchors:Anchor[])=>void,private onTarget:(id:string)=>void,private onFailure:(message:string)=>void){
   this.renderer=new T.WebGLRenderer({antialias:true,alpha:false,powerPreference:'low-power',preserveDrawingBuffer:true});
@@ -115,7 +126,7 @@ export class SpineScene {
   this.ensureActors(this.view());this.raf=requestAnimationFrame(this.loop);
  }
  invalidate(){this.dirty=true;}
- prepare(view=this.view()){this.ensureActors(view);this.invalidate();}
+ prepare(view=this.view()){this.ensureActors(view);this.syncMediaSuspension(view);this.invalidate();}
  private ensureActors(view:SceneView){
   if(this.disposed)return;
   if(view.battleKey!==undefined&&view.battleKey!==this.battleKey){
@@ -174,6 +185,7 @@ export class SpineScene {
     const hit=new T.Mesh(this.ringGeometry,new T.MeshBasicMaterial({color:PAINT.cream,transparent:true,opacity:0,depthTest:false,depthWrite:false,toneMapped:false}));hit.renderOrder=80;
     lane=this.lanes.get(unit.id)?.lane??lane;
     const entry={actor,craftPose,craftLight,craftDeath,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
+    this.syncMediaSuspension(this.view());
     actor.onCue=cue=>this.onCue(unit.id,cue);
     if(asset==='mochi'||asset==='clover')actor.onMediaFrame=()=>this.invalidate();
     this.scene.add(actor.root,shadow,ring,hit);
@@ -211,6 +223,7 @@ export class SpineScene {
   if(this.disposed)return;
   this.beforeFrame?.(now);
   const delta=this.last?Math.min(.1,(now-this.last)/1000):0;this.last=now;const view=this.view();
+  this.syncMediaSuspension(view);
   if(document.hidden||view.suspended){this.stats.hiddenFrames++;this.raf=requestAnimationFrame(this.loop);return;}
   // Display changes can alter density without a CSS resize, including while paused.
   if(this.renderer.getPixelRatio()!==Math.min(devicePixelRatio||1,2))this.dirty=true;

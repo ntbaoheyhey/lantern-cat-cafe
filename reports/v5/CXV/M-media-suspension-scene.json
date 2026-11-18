@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-18T08:58:32.096881+00:00",
+  "status": "SCENE_CANDIDATE_NATIVE_PENDING",
+  "parentCommit": "fc0d16039422fa2836397851d4fd00575e9bc5ca",
+  "loaderContract": {
+    "owner": "CXI",
+    "commit": "9bcbce1d5",
+    "api": "prepared M/C actor.designerMedia?.setSuspended(boolean)",
+    "resume": "false releases suspension only; next sample decides whether to run"
+  },
+  "files": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "5e1e0d4e7555e8a1341346689a3c04ba147201546390b0e565f2b4e33d15b3ef"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene-media-suspension.test.ts",
+      "sha256": "dc709f87def601e91dd8c528048c2e65bd3d607eaa07ad904c62b2e080fe798b"
+    }
+  ],
+  "before": {
+    "failed": 7,
+    "passed": 5,
+    "log": "work/v5/CXV/jobs/m-media-suspension-before.log",
+    "logSha256": "c0f01d3e8510b6f6d9d6643d21b1fa8f8c74bf2822a137624b3e87b465ad5370"
+  },
+  "after": {
+    "tests": 42,
+    "files": 5,
+    "typecheckExit": 0,
+    "testLogSha256": "4b467c9737208db82ce739d244ae6128856ee2df988627ff4a346b7a1b3fe297",
+    "typecheckLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "coverage": [
+    "prepare suspended retained battle without sample/dispose",
+    "visibilitychange before any RAF",
+    "beforeFrame hidden transition and paused resume redraw",
+    "late completion uses latest hidden/suspended state",
+    "removed request disposes without resuming",
+    "ordinary/unprepared M/C and native actor parity",
+    "disposal rejects callbacks"
+  ],
+  "guard": "hasDesignerIdleBody restricts to prepared mochi/clover; optional structural hook leaves native assets and loader source untouched",
+  "protected": {
+    "baseline": "5aa25d2e52660dae8f2f920269b26918cf9220d5",
+    "paths": 3833,
+    "changed": [],
+    "arrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6"
+  },
+  "limits": [
+    "Native integrated production lifecycle/visibility/natural-result verification pending; unit tests do not establish decoder health.",
+    "No BossPhase application fix in this patch.",
+    "Before test captured seven regressions; after adds an active-frame precondition to the beforeFrame transition test."
+  ]
+}

@@ -1,15 +1,15 @@
 # CXV V8 handoff
 ACTIVE Batch M: fix retained hidden media; diagnose natural Phase2/Mochi overlap. assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Read CXI suspension signature; add failing scene hidden/suspended/loading/resume regressions and wire owned scene.
+NEXT 1: Checkpoint scene suspension patch (42focused/TSC0); poll natural Phase2 numeric probe and preserve evidence.
 NEXT 2: Inspect battle-v3/boss-phase.ts; numeric audit of natural R2 before any choreography patch. Obtain fresh6301 lease for new evidence.
 NEXT 3: Clover motion/art/budget and AGV deliveries; legacy after Batch M. Existing captures must never be overwritten or reopened.
-Last confirmed push044cf05c9; victory6eb22f242 independently ACCEPTED08:47:50Z; naturalR2 evidence checkpoint next.
+Last confirmed pushfc0d16039 naturalR2 blockers; victory6eb22f242 independently ACCEPTED08:47:50Z.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified08:51Z with app view; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
-Running Vite21525/6310 only; natural34557exit0 at08:45:11Z;6301/timing released08:46:13Z,CXIACK08:47:50Z.
+Running phaseprobe38255,work/v5/CXV/jobs/m-mochi-phase-natural-r1.log;Vite21525/6310. R5 numeric6301 lease granted08:57:15Z.
 AGV active T-CXI-11 landingR6numericREDO242887B + T-M1 REDO481B placeholders; T-M2deferred;T-M3/T-M4queued.
-CXI ACK08:50:33Z owns loader pause/resume API; exact signature pending. CXV owns scene wiring; loaders excluded.
+CXI loader9bcbce1d5 setSuspended(bool):17focused/TSC0 and10isolatednativePASS. CXV scene patch42focused/TSC0; native pending.
 NaturalR2 normal/reduced:47actions/19ults/8captures each,0errors,rulesexact,p9516.8ms localM3Pro only. NumericPASS;visual and postresultFAIL.
 After victory14normal samples retain playing video and43additional droppedframes;large Yarn portrait overlaps Mochiult in both modes.
 Natural16captures/4freshsheets measured+reviewed once; no reopen. Victory120normal+20reduced/contextPNGexact independently accepted.
