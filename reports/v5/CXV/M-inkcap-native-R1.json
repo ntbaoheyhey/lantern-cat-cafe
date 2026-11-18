@@ -1,0 +1,659 @@
+{
+  "utc": "2026-11-18T05:47:58.140Z",
+  "cat": "inkcap",
+  "sourceCommit": "85b3c2fb7b39dd943d0de048c30009f36f5a9373",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 30,
+        "y": 18,
+        "width": 247,
+        "height": 291,
+        "body": {
+          "x": 62.28119916702596,
+          "y": 50.14524135122266,
+          "width": 182.35793794719854,
+          "height": 226.90084540386457
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 30,
+        "y": 17,
+        "width": 246,
+        "height": 292,
+        "body": {
+          "x": 62.875879446485925,
+          "y": 49.33515834069354,
+          "width": 181.7523237847672,
+          "height": 227.7109284143937
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "c1906e0424090c67e5682333de494dbea6f3241cb8a31b46ffd566ea2d5bbcf6",
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "inkcap-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.5832257534224868
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.639572010869565
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.686934239922677
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 6.164999999999999
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 6.198333333333331
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 6.231666666666669
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 6.265000000000001
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 6.298333333333332
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 6.3316666666666706
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 6.365000000000002
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 6.398333333333333
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 6.431666666666665
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 1.3508208016047761e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:49:16.051Z",
+  "visualReview": {
+    "utc": "2026-11-18T05:52:04.094464+00:00",
+    "cat": "inkcap",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/report.json",
+    "captureReportSha256": "26bca5cf6ff89a9d604e09d479071a583a6ad0ee3c75dc53a746d6f65ba2dd4d",
+    "comparison": {
+      "utc": "2026-11-18T05:49:22.161135+00:00",
+      "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/inkcap-vs-mochi-1280x720.mp4",
+      "sha256": "6a610498a08f99cf4107fca2e2fc807a1b86ce5dd249981878ab6007a63457e5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frames": 300,
+      "fps": 30,
+      "durationSeconds": 10,
+      "sameBodyHeightPx": 228,
+      "sourceHeightPx": 431,
+      "cat": "inkcap",
+      "candidateMeasuredHeight": 227.7109284143937,
+      "sourcePhase": "F0..299",
+      "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+      "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/report.json",
+      "captureReportSha256": "26bca5cf6ff89a9d604e09d479071a583a6ad0ee3c75dc53a746d6f65ba2dd4d",
+      "reviews": [
+        {
+          "frame": 15,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-15.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "1cfdc3fa9d4c41a742c33e714f3b3e3bed0e524e30d47920646343461dd91f66"
+        },
+        {
+          "frame": 75,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-75.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "b6eed571800aabee9fa51b127fc2ef0fbef2894ffff4dd3a787d7745974a385a"
+        },
+        {
+          "frame": 165,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-165.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "14c770dc5a59a8a7b5153105cdbe37694c90691c46ce5aad7ed37998cac688fb"
+        },
+        {
+          "frame": 255,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-255.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "b93b83961dd22a3eaaa0a26ea13540b1bbbf1022e3337294d90f2be0fdd2d486"
+        }
+      ],
+      "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+    },
+    "rangesPercentH": {
+      "leg_l": [
+        0.0,
+        0.0
+      ],
+      "leg_r": [
+        0.0,
+        0.0
+      ],
+      "head": [
+        1.7927999921003916,
+        1.7850390681699912
+      ],
+      "tail_3": [
+        1.9397334761063867,
+        1.7864174971840647
+      ],
+      "weapon": [
+        0.741490123263211,
+        1.593012473474642
+      ],
+      "torso": [
+        0.23436455816110216,
+        0.8903892581195727
+      ]
+    },
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-15.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 51450,
+        "sha256": "1cfdc3fa9d4c41a742c33e714f3b3e3bed0e524e30d47920646343461dd91f66",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:52:22.354429+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/comparison-165.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 50350,
+        "sha256": "14c770dc5a59a8a7b5153105cdbe37694c90691c46ce5aad7ed37998cac688fb",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:52:22.354429+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/candidate/blink-sheet.jpg",
+        "dimensions": [
+          1024,
+          224
+        ],
+        "bytes": 48899,
+        "sha256": "f57a255e78740060c1484490b0eb9e5a1433bd0d7ca9660c409b236c709ff577",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:52:22.354429+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-inkcap-native-R1/cast/cast-sheet.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 81637,
+        "sha256": "3978d40cea438958d2dc554ec4625eb92cf55e96df173466b75e77c92b970d2e",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:52:22.354429+00:00",
+        "views": 1
+      }
+    ],
+    "scope": "Fresh candidate body/style/blink/cast review at desktop1280x720; no integrated judge or performance claim.",
+    "assessment": {
+      "motion": "Quiet head lean and delayed cape/tail motion suit Inkcap's watchful caster stance; the hand and bottle stay restrained while the cast reaches toward the established projectile moment.",
+      "quality": "The selected extremes preserve face and hat silhouette with stable feet. Blink strip shows full closure followed by a soft reopen without a visible eye-edge gap. Cast samples retain coherent shoulder/cape joins and a readable caster silhouette while the projectile travels to the target.",
+      "limits": "Existing health/status HUD crosses the raised hand area. The magical hit obscures some target detail at contact; no new claim about the older effect or full-battle readability. Static samples and numeric geometry are separate from continuous-film or integrated acceptance."
+    },
+    "status": "Scoped motion evidence passes; pending integrated judge acceptance.",
+    "filmProbe": {
+      "width": 1280,
+      "height": 720,
+      "avg_frame_rate": "30/1",
+      "duration": "10.000000",
+      "nb_frames": "300"
+    }
+  },
+  "geometry": [
+    {
+      "cat": "inkcap",
+      "reduced": false,
+      "profile": {
+        "idea": "buoyant mushroom glyph",
+        "neck": 4,
+        "tilt": 1.1,
+        "breath": 0.95,
+        "ear": 1.1,
+        "tail": 1.1,
+        "prop": 1.2,
+        "cloth": 1.1,
+        "face": 1.1,
+        "offset": 1.6,
+        "blink": -0.18,
+        "lag": 0.9,
+        "castX": 1.12,
+        "castY": 1.05,
+        "castArm": 1.15,
+        "castRight": 0.45,
+        "castProp": 1.2
+      },
+      "rigSha256": "72d44770c74ab53ac350a32c5383466ef0fcde8e1897b564796112008363e8d2",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.5752517695096513,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9943015213806707,
+        "idle:body": 0.9782842478857487,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 0.6211225935559463,
+        "idle:arm-l": 0.9315681232613737,
+        "idle:weapon": 0.9943013958085276,
+        "idle:hidden-arm-r": 0.9943015452974148,
+        "idle:arm-r": 0.9000001785120072,
+        "idle:head": 0.8989676584705223,
+        "skill:hidden-body": 0.9945130497460202,
+        "skill:body": 0.9412599102829607,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 0.5780544910283514,
+        "skill:arm-l": 0.6791836760005922,
+        "skill:weapon": 0.9945129561147203,
+        "skill:hidden-arm-r": 0.9945130752175904,
+        "skill:arm-r": 0.5752517695096513,
+        "skill:head": 0.8983768025062546
+      },
+      "worst": {
+        "clip": "skill",
+        "part": "arm-r",
+        "clock": 2.5,
+        "at": 0.3333333333333333,
+        "triangle": 120
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          1.7927999921003916,
+          1.7850390681699912
+        ],
+        "tail_3": [
+          1.9397334761063867,
+          1.7864174971840647
+        ],
+        "weapon": [
+          0.741490123263211,
+          1.593012473474642
+        ],
+        "torso": [
+          0.23436455816110216,
+          0.8903892581195727
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    },
+    {
+      "cat": "inkcap",
+      "reduced": true,
+      "profile": {
+        "idea": "buoyant mushroom glyph",
+        "neck": 4,
+        "tilt": 1.1,
+        "breath": 0.95,
+        "ear": 1.1,
+        "tail": 1.1,
+        "prop": 1.2,
+        "cloth": 1.1,
+        "face": 1.1,
+        "offset": 1.6,
+        "blink": -0.18,
+        "lag": 0.9,
+        "castX": 1.12,
+        "castY": 1.05,
+        "castArm": 1.15,
+        "castRight": 0.45,
+        "castProp": 1.2
+      },
+      "rigSha256": "72d44770c74ab53ac350a32c5383466ef0fcde8e1897b564796112008363e8d2",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.9950057771786186,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9986893207413199,
+        "idle:body": 0.9950057771786186,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 1,
+        "idle:arm-l": 0.9986880080811967,
+        "idle:weapon": 0.99868932569043,
+        "idle:hidden-arm-r": 0.9986894088510883,
+        "idle:arm-r": 0.9986883735451226,
+        "idle:head": 0.9986821775879305,
+        "skill:hidden-body": 0.9987381009361181,
+        "skill:body": 0.9951909700095319,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 1,
+        "skill:arm-l": 0.9987373114836109,
+        "skill:weapon": 0.9987381071416759,
+        "skill:hidden-arm-r": 0.9987380792597605,
+        "skill:arm-r": 0.9987369182518644,
+        "skill:head": 0.998736702429803
+      },
+      "worst": {
+        "clip": "idle",
+        "part": "body",
+        "clock": 0.7,
+        "at": 0,
+        "triangle": 48
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          0,
+          0.4105589856790881
+        ],
+        "tail_3": [
+          0,
+          0
+        ],
+        "weapon": [
+          0,
+          0.22818101102229926
+        ],
+        "torso": [
+          0,
+          0.2047895293674995
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    }
+  ],
+  "checks": {
+    "focused": 60,
+    "files": 4,
+    "typecheckExit": 0,
+    "runtimeEquivalentTo": "a3173c08e",
+    "logs": [
+      "work/v5/CXV/jobs/m-native-eight-tests-r2.log",
+      "work/v5/CXV/jobs/m-native-eight-typecheck-r2.log"
+    ]
+  }
+}
