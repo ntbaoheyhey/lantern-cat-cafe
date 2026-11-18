@@ -2,7 +2,7 @@
 import type {SpineActor,DesignerMediaSampleContext} from './assets';
 import {SPINE_CONFIG,type SpineAnimation,type SpineSocket} from './config';
 import {animationCues} from './events';
-import {DesignerIdleMedia,validateDesignerIdle,designerPhase,type DesignerIdleManifest,type DesignerSocketChannel} from './designer-idle-loader';
+import {DesignerIdleMedia,validateDesignerIdle,type DesignerIdleManifest,type DesignerSocketChannel} from './designer-idle-loader';
 import {sampleLivingCatCast,livingCatCastOffset,applyLivingCatCast,LIVING_CAT_SKILL_EVENTS,LIVING_CAT_SKILL_SECONDS} from './living-cat-cast';
 import registry from './designer-idle-registry.json';
 
@@ -18,7 +18,7 @@ export class DesignerIdleActorMedia {
  }
  sample(actor:SpineActor,name:string,time:number,duration:number,reduced:boolean,clock:DesignerMediaSampleContext){
   this.media.sample(clock,reduced);
-  this.frame=reduced||this.media.failure?0:designerPhase(this.media.video.currentTime)*30;
+  this.frame=this.media.failure?0:this.media.sourceFrame;
   sampleLivingCatCast(actor.unit.id,name,time/duration,reduced,this.pose);
   applyLivingCatCast(this.media.basePositions,this.media.geometry.attributes.position!.array as Float32Array,512,this.pose);
   this.media.geometry.attributes.position!.needsUpdate=true;

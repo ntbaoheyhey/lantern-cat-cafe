@@ -7,7 +7,7 @@ import {validateDesignerIdle,type DesignerIdleManifest,type DesignerIdleMedia} f
 const manifest=():DesignerIdleManifest=>({version:1,id:'mochi',format:'h264-rgb-mask',video:'/units/mochi/designer-idle-ab.mp4',poster:'/units/mochi/designer-idle-cd.webp',width:64,height:64,opaqueHeight:60,foot:[32,62],duration:10,fps:30,frames:300,sourceSha256:'a'.repeat(64),videoSha256:'b'.repeat(64),posterSha256:'c'.repeat(64),videoBytes:1000,faceROI:[16,10,32,20],opaqueBounds:[2,2,62,62],sockets:Object.fromEntries(['root','hip','head','hp-anchor','vfx-origin','main-hand','off-hand'].map(k=>[k,[32,k==='root'?62:20]])),socketTracks:{head:Array.from({length:300},(_,i)=>[i/100,0])},socketChannels:{head:'head'}});
 const make=()=>{
  const m=manifest(),geometry=new T.PlaneGeometry(64*512/60,64*512/60,24,24);geometry.translate(0,30*512/60,0);
- const sample=vi.fn(),media={manifest:m,geometry,basePositions:new Float32Array(geometry.attributes.position!.array),video:{currentTime:2.5},sample,failure:undefined} as unknown as DesignerIdleMedia;
+ const sample=vi.fn(),media={manifest:m,geometry,basePositions:new Float32Array(geometry.attributes.position!.array),video:{currentTime:2.5},sourceFrame:75,sample,failure:undefined} as unknown as DesignerIdleMedia;
  const actor={unit:{id:'mochi'},sockets:new Map(Object.keys(SPINE_CONFIG.sockets).map(k=>[k,new T.Object3D()]))} as unknown as SpineActor;
  return {adapter:new DesignerIdleActorMedia(media),media,actor,sample,geometry};
 };
@@ -26,12 +26,12 @@ it('uses decoded media time across cast resets and preserves the planted foot',(
   expect(actor.sockets.get('head')!.position.x).toBeCloseTo(.75*512/60,10);
  }finally{geometry.dispose();}
 });
-it('interpolates the last decoded frame through the ten-second wrap and freezes reduced motion',()=>{
+it('preserves fallback interpolation through wrap and accepts the decoded reduced frame',()=>{
  const {adapter,media,actor,geometry}=make();try{
-  media.video.currentTime=299.5/30;const clock={worldTime:9,paused:true,fixedTime:true,frozen:false};
+  Object.assign(media,{sourceFrame:299.5});media.video.currentTime=299.5/30;const clock={worldTime:9,paused:true,fixedTime:true,frozen:false};
   adapter.sample(actor,'idle',0,10,false,clock);
   expect(actor.sockets.get('head')!.position.x).toBeCloseTo(1.495*512/60,8);
-  adapter.sample(actor,'skill',.31,1,true,clock);
+  Object.assign(media,{sourceFrame:0});adapter.sample(actor,'skill',.31,1,true,clock);
   expect(actor.sockets.get('head')!.position.x).toBe(0);
   expect(Array.from(geometry.attributes.position!.array)).toEqual(Array.from(media.basePositions));
  }finally{geometry.dispose();}
@@ -47,7 +47,7 @@ it('keeps hip, shield wrist and lantern independent through fractional frames an
   m.socketTracks.hip![299]=[6,-7];m.socketTracks.shieldWrist![299]=[-9,15];m.socketTracks.lantern![299]=[21,-23];
   m.socketChannels={...m.socketChannels,hip:'hip','main-hand':'shieldWrist','vfx-origin':'lantern'};
   expect(validateDesignerIdle(m,'mochi')).toBe(m);
-  media.video.currentTime=299.5/30;const clock={worldTime:1,paused:false,fixedTime:false,frozen:false};
+  Object.assign(media,{sourceFrame:299.5});media.video.currentTime=299.5/30;const clock={worldTime:1,paused:false,fixedTime:false,frozen:false};
   adapter.sample(actor,'idle',0,10,false,clock);
   const s=512/60;
   for(const [key,x,y]of [['chest',4,47],['mainHand',-7,31],['vfxOrigin',16,60]] as const){
@@ -55,7 +55,7 @@ it('keeps hip, shield wrist and lantern independent through fractional frames an
    expect(actor.sockets.get(key)!.position.y).toBeCloseTo(y*s,8);
   }
   expect(actor.sockets.get('feet')!.position.toArray()).toEqual([0,0,1]);
-  adapter.sample(actor,'idle',0,10,true,clock);
+  Object.assign(media,{sourceFrame:0});adapter.sample(actor,'idle',0,10,true,clock);
   expect(actor.sockets.get('chest')!.position.x).toBeCloseTo(2*s,8);
   expect(actor.sockets.get('mainHand')!.position.x).toBeCloseTo(-5*s,8);
   expect(actor.sockets.get('vfxOrigin')!.position.x).toBeCloseTo(11*s,8);
@@ -71,4 +71,16 @@ it('rejects unknown, missing and malformed independent socket channels',()=>{
 });
 it('never fetches or enrolls Soot',async()=>{
  const fetch=vi.spyOn(globalThis,'fetch');try{expect(await loadDesignerIdleActor({unit:{id:'soot'}} as SpineActor)).toBe(false);expect(fetch).not.toHaveBeenCalled();}finally{fetch.mockRestore();}
+});
+
+it('holds sockets on the decoded frame while the seek target and reduced mode change',()=>{
+ const {adapter,media,actor,geometry}=make();try{
+  const clock={worldTime:8,paused:true,fixedTime:true,frozen:false};
+  media.video.currentTime=8;adapter.sample(actor,'idle',0,10,false,clock);
+  expect(actor.sockets.get('head')!.position.x).toBeCloseTo(.75*512/60,10);
+  media.video.currentTime=0;adapter.sample(actor,'idle',0,10,true,clock);
+  expect(actor.sockets.get('head')!.position.x).toBeCloseTo(.75*512/60,10);
+  Object.assign(media,{sourceFrame:0});adapter.sample(actor,'idle',0,10,true,clock);
+  expect(actor.sockets.get('head')!.position.x).toBe(0);
+ }finally{geometry.dispose();}
 });

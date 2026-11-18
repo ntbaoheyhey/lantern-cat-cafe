@@ -112,8 +112,13 @@ def main():
         groups[cat] = {}
         for label, seeking in [('seeking', True), ('steady', False)]:
             selected = [s for s in samples if s['cat'] == cat and s['seeking'] == seeking]
-            groups[cat][label] = dict(count=len(selected), maxAbsoluteFrameError=max(abs(s['frameError']) for s in selected),
+            groups[cat][label] = dict(count=len(selected), maxAbsoluteFrameError=max((abs(s['frameError']) for s in selected), default=None),
                                      callbacksMatch=all(s['callbackMatchesGPU'] for s in selected))
+    phase_candidate = raw.get('phaseCandidate', False)
+    phase_gate = all(s['frameError'] == 0 and s['callbackMatchesGPU'] for s in samples)
+    if phase_candidate:
+        assert phase_gate and raw['phaseGate']
+        assert all(c['adapterFrame'] == c['referenceFrame'] for c in raw['controls'])
     result = dict(utc=datetime.now(timezone.utc).isoformat(), raw=dict(path=str(args.raw), sha256=sha(args.raw.read_bytes())),
                   toolSha256=sha(Path(__file__).read_bytes()), sourceCommit=raw['sourceCommit'], indexSha256=raw['indexSha256'],
                   url=raw['url'], viewport=raw['viewport'], verifiedFiles=len(verified),
@@ -121,10 +126,11 @@ def main():
                   controls=8, nativeReferenceFrames=600, globallyUniqueActualMatches=24,
                   distinctNativeFrameHashes={k:len(set(v.values())) for k,v in native.items()},
                   groups=groups, samples=samples, rulesSha256=raw['rulesSha256'],
-                  diagnosticAccepted=True, productionAcceptance=False, imagesViewed=0,
+                  diagnosticAccepted=True, phaseCandidate=phase_candidate, phaseGate=phase_gate,
+                  productionAcceptance=False, imagesViewed=0,
                   limits=[raw['runningFixture'], '12controlled draws percat,not an allframe/action temporal guarantee.',
-                          'Two seek transients are preserved separately from22steady samples.',
-                          'Source anchors/art/loop/performance remain separate;no loaderfix acceptance.'])
+                          'Seeking and steady samples are retained separately;counts depend on the observed run.',
+                          'Source anchors/art/loop/performance and remaining lifecycle/native gates remain separate.'])
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps({k:result[k] for k in ('verifiedFiles','controls','nativeReferenceFrames','globallyUniqueActualMatches','distinctNativeFrameHashes','groups')}))
 

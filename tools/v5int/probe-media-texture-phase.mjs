@@ -11,7 +11,9 @@ const buildPath=process.env.CXI_BUILD_DESCRIPTOR,out=resolve(process.env.CXI_CAP
 assert(buildPath&&out.startsWith(root+'/work/v5/CXI/')&&!existsSync(out));
 assert(Date.now()>=Date.parse('2026-11-18T13:36:14.927586Z'),'Study gate');
 const build=JSON.parse(await readFile(buildPath));
-assert.equal(build.sourceCommit,'8aef40187d03fbc6651d5239e7a93907e973284a');
+const expectedSource=process.env.CXI_EXPECT_SOURCE??'8aef40187d03fbc6651d5239e7a93907e973284a';
+assert(/^[a-f0-9]{40}$/.test(expectedSource));assert.equal(build.sourceCommit,expectedSource);
+const phaseCandidate=process.env.CXI_PHASE_CANDIDATE==='1';
 await mkdir(out,{recursive:true});await copyFile(import.meta.filename,resolve(out,'probe-media-texture-phase.mjs'));
 const fixtureSource='/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-production-fixture.mjs';
 const frozenFixture=resolve(out,'media-production-fixture.mjs');await copyFile(fixtureSource,frozenFixture);
@@ -20,7 +22,7 @@ const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(pathTo
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,
  indexSha256:build.indexSha256,build:{path:buildPath,sha256:sha(await readFile(buildPath))},
  harnessSha256:sha(await readFile(import.meta.filename)),fixture:{path:frozenFixture,sha256:sha(await readFile(frozenFixture))},
- controls:[],running:[],references:[],matches:[],errors:[],blockedRequests:[],pass:false,
+ controls:[],running:[],references:[],matches:[],errors:[],blockedRequests:[],pass:false,phaseCandidate,
  scope:'Paused/native texture identity and draw-time sockets; GPU readbacks stall. No performance, natural art or release acceptance.',imagesViewed:0};
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXI'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP '+name);};
@@ -184,10 +186,12 @@ try{
  report.rulesSha256=sha(report.rulesBefore);delete report.rulesBefore;delete report.rulesAfter;
  assert.equal(report.references.length,600);
  report.allMatched=report.matches.every(x=>x.uniqueAcrossAll300Frames);
- report.pass=report.controlsPass&&report.allMatched&&!report.errors.length&&!report.blockedRequests.length;
+ report.phaseGate=report.allMatched&&report.matches.every(x=>x.adapterFrame===x.gpuFrame)&&report.controls.every(x=>x.adapterFrame===x.referenceFrame);
+ report.pass=report.controlsPass&&report.allMatched&&(!phaseCandidate||report.phaseGate)&&!report.errors.length&&!report.blockedRequests.length;
+ if(phaseCandidate)assert(report.phaseGate,'Candidate sockets do not match actual GPU frames');
  report.limits=['All300 native frames per cat are retained;identity accepted only for one exact fullRGBA hash match.',
   'GPU readbacks stall: not a performance run. Idle diagnostic only; no legal action or art acceptance.',
-  'No application/registry/assets/originals/Soot changes.'];
+  phaseCandidate?'Explicit committed loader candidate; registry/assets/originals/Soot unchanged by probe.':'No application/registry/assets/originals/Soot changes.'];
 }catch(error){report.failure=String(error.stack??error);process.exitCode=1;}
 finally{
  if(page&&!page.isClosed())try{await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);if(globalThis.__cxiGpu){s.postFx.render=__cxiGpu.original;if(__cxiGpu.originalView)s.view=__cxiGpu.originalView;__cxiGpu.active=false;}});}catch{}
