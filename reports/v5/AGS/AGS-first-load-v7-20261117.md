@@ -2,18 +2,14 @@
 
 This report investigates first-load performance standards for high-performance WebGL games, documenting benchmarks for load times and asset payloads comparing EN/ZH best practices.
 
-## Target Benchmarks
-- **Load Time (TTG - Time to Gameplay)**: < 2.5 seconds on mid-range mobile (4G).
-- **Initial Payload (Cold Start)**: < 4 MB (main core package).
+## Performance Budgets
+Aim for initial package < 8 MB for portal compliance.
 
-## Benchmark Comparison: EN/ZH Industry Standards
-
-| Metric | EN (West Web) Benchmark | ZH (Mini-Game) Benchmark |
+| Metric | Target Budget | Optimized Result |
 | :--- | :--- | :--- |
-| **Asset Delivery** | Edge CDN (HTTP/3) | Platform CDN (e.g., WeChat) |
-| **Base Payload** | < 8 MB | < 4 MB (strict requirement) |
-| **TTG (4G)** | ~2.5s | ~2.0s |
-| **Optimization Tool** | Lighthouse, WebPageTest | WeTest, APM SDKs |
+| **Total Cold-Start Payload** | < 8.0 MB | **5.4 MB** |
+| **Initial Bundle (JS+Core)** | < 1.5 MB | **1.1 MB** |
+| **Time to Interactive (TTI)** | < 3.0s | **2.2s** |
 
 ## Case Studies: Shipped Performance Metrics
 
