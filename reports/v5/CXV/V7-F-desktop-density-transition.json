@@ -1,0 +1,547 @@
+{
+  "utc": "2026-11-18T01:48:15.808Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/build.json",
+    "sha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8"
+  },
+  "artifactFilesVerified": 3764,
+  "snapshots": [
+    {
+      "name": "probe-desktop-density-transition.mjs",
+      "sha256": "1f6238a1699757419168799a102a82931c99c20f25738b392605aebc2b94b145"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "method": "Native paused actual boss fixture. CDP setDeviceMetricsOverride changes only physical pixel density at fixed1280x720CSS and mobilefalse. Test1->2->1.5->1 and2->1->1.5->2 in separate pages;record browser media events,native buffer,all unit/face/core bounds and HUD after event settling and after an explicit normal render. No renderer override or application-response transform. This diagnoses emulated display transitions,not their real-world frequency or GPU performance.",
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-0-to1.png",
+      "initialRatio": 1,
+      "step": 0,
+      "ratio": 1,
+      "width": 1280,
+      "height": 720,
+      "sha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+      "rgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+      "mean": 114.9068337673611,
+      "stdDev": 50.372213463601625
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-1-to2.png",
+      "initialRatio": 1,
+      "step": 1,
+      "ratio": 2,
+      "width": 1280,
+      "height": 720,
+      "sha256": "206388b15f3b5a24c7e083ff0c936bc8b44315c5a77d6b57213919c9d58d2bd1",
+      "rgbSha256": "341f8cfa0c05fac090fbe248ac4cd7f0cea3253c08dc6d4e44aa24b236db94aa",
+      "mean": 114.90698097511574,
+      "stdDev": 50.372089088122884
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-2-to1.5.png",
+      "initialRatio": 1,
+      "step": 2,
+      "ratio": 1.5,
+      "width": 1280,
+      "height": 720,
+      "sha256": "206388b15f3b5a24c7e083ff0c936bc8b44315c5a77d6b57213919c9d58d2bd1",
+      "rgbSha256": "341f8cfa0c05fac090fbe248ac4cd7f0cea3253c08dc6d4e44aa24b236db94aa",
+      "mean": 114.90698097511574,
+      "stdDev": 50.372089088122884
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-3-to1.png",
+      "initialRatio": 1,
+      "step": 3,
+      "ratio": 1,
+      "width": 1280,
+      "height": 720,
+      "sha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+      "rgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+      "mean": 114.9068337673611,
+      "stdDev": 50.372213463601625
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-0-to2.png",
+      "initialRatio": 2,
+      "step": 0,
+      "ratio": 2,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+      "rgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+      "mean": 114.93989330150463,
+      "stdDev": 50.45184111563406
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-1-to1.png",
+      "initialRatio": 2,
+      "step": 1,
+      "ratio": 1,
+      "width": 1280,
+      "height": 720,
+      "sha256": "ac76e5cf6260e88321252d6e76e79ffffbcbea66ff586f66983b14d70094caa0",
+      "rgbSha256": "5f77f178409fae66d5453d318820ccf5b33ac3a632751c542548c35942be9696",
+      "mean": 114.93974934895833,
+      "stdDev": 50.451965870881324
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-2-to1.5.png",
+      "initialRatio": 2,
+      "step": 2,
+      "ratio": 1.5,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+      "rgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+      "mean": 114.93989330150463,
+      "stdDev": 50.45184111563406
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-3-to2.png",
+      "initialRatio": 2,
+      "step": 3,
+      "ratio": 2,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+      "rgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+      "mean": 114.93989330150463,
+      "stdDev": 50.45184111563406
+    }
+  ],
+  "reviews": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-0-to1-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "0379932ecae6c2d1b704e98a372c7600cb5924a8056f50e1b8233a78b69a9294"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/1-1-to2-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "6119b0325cf9f5724df34dc10c385516d384b5b229d16c837a9cadf881bdc9f7"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-0-to2-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "3faf34b75144fdb0cb43a0309917394e3a8cfdff05ba31a1982efef22a91476a"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/2-1-to1-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "32161791f233c644140d0d5623812679f22456698e62da679e32ba11e709bd1f"
+    }
+  ],
+  "pass": true,
+  "ended": "2026-11-18T01:48:24.271Z",
+  "runs": [
+    {
+      "initialRatio": 1,
+      "step": 0,
+      "ratio": 1,
+      "afterEvents": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": false,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 1,
+      "step": 1,
+      "ratio": 2,
+      "afterEvents": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": true,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 1,
+      "step": 2,
+      "ratio": 1.5,
+      "afterEvents": {
+        "devicePixelRatio": 1.5,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 1.5,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": true,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 1,
+      "step": 3,
+      "ratio": 1,
+      "afterEvents": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 1,
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": false,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 2,
+      "step": 0,
+      "ratio": 2,
+      "afterEvents": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": false,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 2,
+      "step": 1,
+      "ratio": 1,
+      "afterEvents": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 1,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": true,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 2,
+      "step": 2,
+      "ratio": 1.5,
+      "afterEvents": {
+        "devicePixelRatio": 1.5,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 1.5,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": true,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    },
+    {
+      "initialRatio": 2,
+      "step": 3,
+      "ratio": 2,
+      "afterEvents": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "afterRender": {
+        "devicePixelRatio": 2,
+        "rendererRatio": 2,
+        "canvas": {
+          "width": 2560,
+          "height": 1440,
+          "clientWidth": 1280,
+          "clientHeight": 720
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checksEnabled": true,
+        "contextLost": false
+      },
+      "events": [],
+      "staleDensity": false,
+      "geometryExact": true,
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      }
+    }
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-transition/report.json",
+    "sha256": "bfb72f41e5a505cf2784c1cb52b8b76011bc43a17dd21f5c3b33f29ddd5f6246"
+  },
+  "reviewedUtc": "2026-11-18T01:49:40.520106+00:00",
+  "visualReview": "Four measured1024x576 views inspected once;all seven units and HUD remain visible through1->2 and2->1 emulated transitions. No subjective sharpness or real-monitor event claim from downscaled review sheets.",
+  "nativeDensityCorrect": false,
+  "interpretation": "Renderer keeps constructor ratio on all four changed-density samples,including after explicit normal render.1->2 leaves1280x720instead of2560x1440;2->1 retains4x buffer area. Eight exact keyed geometry/state sets. CDP changed reported devicePixelRatio but recorded zero resolution-media events;this emulation does not establish actual OS-display event delivery. No application edit yet;prototype must cover paused/active renderer invalidation without relying on media events."
+}

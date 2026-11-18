@@ -1,0 +1,1138 @@
+{
+  "utc": "2026-11-18T01:53:29.104Z",
+  "source": "f1da291addcf78a29003d76b5deaf3429b595b82",
+  "servedSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "captureUtc": "2026-11-18T01:49:41.206Z",
+  "captureEnded": "2026-11-18T01:53:10.522Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/report.json",
+    "sha256": "4fa0220ac0e0f41fc01a1d749e9f1296b97956921efe74489d0aa35a9c2a22ff"
+  },
+  "harnessSha256": "1165e39b8ad17d9c2da9202d428801f3332179fd8494a1b5cb3ce4114250d71c",
+  "productionFixtureSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9",
+  "runtimePatch": "No application-response substitution; seeded setup only.",
+  "method": "Seeded level6 boss encounter, then uninterrupted normal rule-selected model/scene RAF at speed1 until natural result. Normal and reduced motion start from the same battle. No rule fast-forward, fixed-clock seek, HP/charge changes, plan replacement or result injection after setup. Captures add overhead; frame timings are descriptive only, not an optimization comparison. Fixture setup is not ordinary account progression. CPU throttling4x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.",
+  "parity": {
+    "initialBattle": true,
+    "result": true,
+    "logs": true,
+    "presentations": true,
+    "finalActors": true
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "naturalResultMs": 100140.79999999702,
+      "captureRunElapsedMs": 101648,
+      "result": "party",
+      "round": 10,
+      "actions": 68,
+      "presentations": 78,
+      "ultimates": 24,
+      "heroUltimates": {
+        "mochi": 4,
+        "soot": 4,
+        "clover": 3,
+        "panko": 4
+      },
+      "logEvents": 525,
+      "logSha256": "f4b261cde10ba7944c4927fb4ff56618322db0174d8e86499014347abe7c2e32",
+      "actionPacingExact": true,
+      "statusEvents": {
+        "status_expire": 46,
+        "status_apply": 82
+      },
+      "frameMs": {
+        "samples": 4040,
+        "median": 16.700000000004366,
+        "p95": 33.40000000000873,
+        "max": 166.5999999999999
+      },
+      "renderCpuMs": {
+        "samples": 4041,
+        "median": 14.100000008940697,
+        "p95": 20.599999994039536,
+        "max": 128.20000000298023
+      },
+      "stress": {
+        "excludedCaptureIntervals": 66,
+        "method": "Exclude render-finish intervals intersecting recorded screenshot wall windows. This is descriptive capture-aware timing, not a calibrated laptop or optimization comparison. Submission duration excludes GPU completion.",
+        "all": {
+          "frames": 3975,
+          "frameMs": {
+            "samples": 3975,
+            "median": 16.700000000004366,
+            "p95": 33.40000000000873,
+            "max": 166.5999999999999
+          },
+          "renderSubmissionMs": {
+            "samples": 3975,
+            "median": 14.099999994039536,
+            "p95": 20.200000002980232,
+            "max": 128.20000000298023
+          },
+          "intervalsOver50p5ms": 40
+        },
+        "first5s": {
+          "frames": 164,
+          "frameMs": {
+            "samples": 164,
+            "median": 16.700000000000728,
+            "p95": 66.59999999999945,
+            "max": 166.5999999999999
+          },
+          "renderSubmissionMs": {
+            "samples": 164,
+            "median": 14.5,
+            "p95": 43,
+            "max": 128.20000000298023
+          },
+          "intervalsOver50p5ms": 9
+        },
+        "later": {
+          "frames": 3811,
+          "frameMs": {
+            "samples": 3811,
+            "median": 16.700000000004366,
+            "p95": 33.40000000000873,
+            "max": 100
+          },
+          "renderSubmissionMs": {
+            "samples": 3811,
+            "median": 14.099999994039536,
+            "p95": 19.80000001192093,
+            "max": 68.8999999910593
+          },
+          "intervalsOver50p5ms": 31
+        },
+        "slowestSubmissions": [
+          {
+            "wallMs": 470.79999999701977,
+            "frameMs": 66.69999999999982,
+            "cpuMs": 128.20000000298023,
+            "calls": 23,
+            "textures": 27,
+            "nearestPlan": "mochi-1"
+          },
+          {
+            "wallMs": 78124.60000000894,
+            "frameMs": 33.39999999999418,
+            "cpuMs": 68.8999999910593,
+            "calls": 32,
+            "textures": 65,
+            "nearestPlan": "yarnAttack"
+          },
+          {
+            "wallMs": 4147.5,
+            "frameMs": 16.600000000000364,
+            "cpuMs": 67.6000000089407,
+            "calls": 24,
+            "textures": 42,
+            "nearestPlan": "yarnAttack"
+          },
+          {
+            "wallMs": 392.5,
+            "frameMs": 33.40000000000009,
+            "cpuMs": 61.79999999701977,
+            "calls": 25,
+            "textures": 25,
+            "nearestPlan": "mochi-1"
+          },
+          {
+            "wallMs": 17582.20000000298,
+            "frameMs": 33.39999999999782,
+            "cpuMs": 61.099999994039536,
+            "calls": 31,
+            "textures": 53,
+            "nearestPlan": "soot-4"
+          }
+        ]
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        }
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "party": [
+        {
+          "id": "mochi",
+          "hp": 736
+        },
+        {
+          "id": "soot",
+          "hp": 568
+        },
+        {
+          "id": "clover",
+          "hp": 477
+        },
+        {
+          "id": "panko",
+          "hp": 753
+        }
+      ],
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/timeline.json",
+        "sha256": "eb2b0d54be1be93ec8e4dd56341c0846a3907d7e44ee2f1bf2a8a6170cb3c451"
+      }
+    },
+    {
+      "mode": "reduced",
+      "naturalResultMs": 100251.79999999702,
+      "captureRunElapsedMs": 101611,
+      "result": "party",
+      "round": 10,
+      "actions": 68,
+      "presentations": 78,
+      "ultimates": 24,
+      "heroUltimates": {
+        "mochi": 4,
+        "soot": 4,
+        "clover": 3,
+        "panko": 4
+      },
+      "logEvents": 525,
+      "logSha256": "f4b261cde10ba7944c4927fb4ff56618322db0174d8e86499014347abe7c2e32",
+      "actionPacingExact": true,
+      "statusEvents": {
+        "status_expire": 46,
+        "status_apply": 82
+      },
+      "frameMs": {
+        "samples": 4648,
+        "median": 16.69999999999891,
+        "p95": 33.400000000001455,
+        "max": 150
+      },
+      "renderCpuMs": {
+        "samples": 4649,
+        "median": 13.299999997019768,
+        "p95": 19.700000002980232,
+        "max": 127.90000000596046
+      },
+      "stress": {
+        "excludedCaptureIntervals": 73,
+        "method": "Exclude render-finish intervals intersecting recorded screenshot wall windows. This is descriptive capture-aware timing, not a calibrated laptop or optimization comparison. Submission duration excludes GPU completion.",
+        "all": {
+          "frames": 4576,
+          "frameMs": {
+            "samples": 4576,
+            "median": 16.69999999999891,
+            "p95": 33.400000000001455,
+            "max": 150
+          },
+          "renderSubmissionMs": {
+            "samples": 4576,
+            "median": 13.200000002980232,
+            "p95": 19.5,
+            "max": 127.90000000596046
+          },
+          "intervalsOver50p5ms": 41
+        },
+        "first5s": {
+          "frames": 192,
+          "frameMs": {
+            "samples": 192,
+            "median": 16.699999999999818,
+            "p95": 50,
+            "max": 150
+          },
+          "renderSubmissionMs": {
+            "samples": 192,
+            "median": 13.700000002980232,
+            "p95": 41.8999999910593,
+            "max": 127.90000000596046
+          },
+          "intervalsOver50p5ms": 8
+        },
+        "later": {
+          "frames": 4384,
+          "frameMs": {
+            "samples": 4384,
+            "median": 16.69999999999709,
+            "p95": 33.400000000001455,
+            "max": 100.10000000000582
+          },
+          "renderSubmissionMs": {
+            "samples": 4384,
+            "median": 13.200000002980232,
+            "p95": 19.200000002980232,
+            "max": 69
+          },
+          "intervalsOver50p5ms": 33
+        },
+        "slowestSubmissions": [
+          {
+            "wallMs": 508.3999999910593,
+            "frameMs": 66.69999999999982,
+            "cpuMs": 127.90000000596046,
+            "calls": 29,
+            "textures": 27,
+            "nearestPlan": "mochi-1"
+          },
+          {
+            "wallMs": 78058.69999998808,
+            "frameMs": 33.39999999999418,
+            "cpuMs": 69,
+            "calls": 32,
+            "textures": 65,
+            "nearestPlan": "yarnAttack"
+          },
+          {
+            "wallMs": 17509.69999998808,
+            "frameMs": 16.69999999999709,
+            "cpuMs": 60.900000005960464,
+            "calls": 31,
+            "textures": 53,
+            "nearestPlan": "soot-4"
+          },
+          {
+            "wallMs": 88453.19999998808,
+            "frameMs": 16.59999999999127,
+            "cpuMs": 55,
+            "calls": 37,
+            "textures": 65,
+            "nearestPlan": "soot-4"
+          },
+          {
+            "wallMs": 9750.199999988079,
+            "frameMs": 16.69999999999891,
+            "cpuMs": 54.20000000298023,
+            "calls": 30,
+            "textures": 48,
+            "nearestPlan": "panko-4"
+          }
+        ]
+      },
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "rect": {
+          "x": 133.1875,
+          "y": 263,
+          "width": 461.21875,
+          "height": 245,
+          "top": 263,
+          "right": 594.40625,
+          "bottom": 508,
+          "left": 133.1875
+        }
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "party": [
+        {
+          "id": "mochi",
+          "hp": 736
+        },
+        {
+          "id": "soot",
+          "hp": 568
+        },
+        {
+          "id": "clover",
+          "hp": 477
+        },
+        {
+          "id": "panko",
+          "hp": 753
+        }
+      ],
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/timeline.json",
+        "sha256": "582eaba4a970be94d2641c4d9767de4926601686776081ab0625bbde36613817"
+      }
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/00-opening.png",
+      "utc": "2026-11-18T01:49:44.411Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1178457,
+      "sha256": "3c0921efd6db797f264374c0d003e668c6c9cba54ad62530919c4055a86c7f9a",
+      "mean": 114.81342592592593,
+      "stdDev": 47.126857025245464,
+      "wallWindowMs": [
+        0,
+        0
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/01-status.png",
+      "utc": "2026-11-18T01:49:47.701Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1186563,
+      "sha256": "584366857a37cace3f0de9a6540a1091a6568942d42c3a4a97d004431cc6b4a6",
+      "mean": 115.355625,
+      "stdDev": 47.66334378791059,
+      "wallWindowMs": [
+        3099.1000000089407,
+        3403.4000000059605
+      ],
+      "ageWindowMs": [
+        116.79999999999927,
+        433.39999999999964
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/02-ultimate-panko.png",
+      "utc": "2026-11-18T01:49:55.585Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1255880,
+      "sha256": "e9588324d751a415cd934c6636be9f43a6ee22684446192f8eaf375ab92d9ec7",
+      "mean": 115.93263888888889,
+      "stdDev": 50.72828626412961,
+      "wallWindowMs": [
+        10982.29999999702,
+        11306.60000000894
+      ],
+      "ageWindowMs": [
+        1166.6000000000004,
+        1483.300000000001
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/03-ultimate-mochi.png",
+      "utc": "2026-11-18T01:50:00.920Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1272301,
+      "sha256": "64232c29dbde4186be0ff14545fd4e9eaa540f69b2a3dec5a8ca5a028f6a6f71",
+      "mean": 120.05018518518519,
+      "stdDev": 50.915338043793874,
+      "wallWindowMs": [
+        16317.10000000894,
+        16710.5
+      ],
+      "ageWindowMs": [
+        1099.8999999999978,
+        1499.8999999999978
+      ],
+      "planBefore": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-soot",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/04-ultimate-soot.png",
+      "utc": "2026-11-18T01:50:03.242Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1304018,
+      "sha256": "813daa17809ad17a4b55b6e8255746f543c58d4a6fbf025de70d2f00b3052347",
+      "mean": 114.37495370370371,
+      "stdDev": 49.69064915478334,
+      "wallWindowMs": [
+        18639.70000000298,
+        19051.90000000596
+      ],
+      "ageWindowMs": [
+        1083.2999999999993,
+        1500
+      ],
+      "planBefore": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/05-ultimate-clover.png",
+      "utc": "2026-11-18T01:50:05.667Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1278039,
+      "sha256": "febe1637c2fecaf4bd26f4c30e9f7e36549c3acf510bf9c647002449e5d3035e",
+      "mean": 123.77768518518519,
+      "stdDev": 52.69687883628485,
+      "wallWindowMs": [
+        21063.70000000298,
+        21375.90000000596
+      ],
+      "ageWindowMs": [
+        1200,
+        1516.5999999999985
+      ],
+      "planBefore": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "normal",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/06-result-ready.png",
+      "utc": "2026-11-18T01:51:25.209Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 934575,
+      "sha256": "9a13b67ffea5979652f80a74cf9c553619b99a0492027a19320f2449eacfb4d1",
+      "mean": 52.918819444444445,
+      "stdDev": 35.10889221401306,
+      "wallWindowMs": [
+        100605.10000000894,
+        100773.90000000596
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 1,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          }
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/07-result-later.png",
+      "utc": "2026-11-18T01:51:26.082Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 938128,
+      "sha256": "5c40bd5603c850add898ee2eb4ab3b3e27ce63c286ee9d54b9fb2a7b6537ea82",
+      "mean": 53.8612037037037,
+      "stdDev": 36.72551142314844,
+      "wallWindowMs": [
+        101480.40000000596,
+        101639.40000000596
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 1,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          }
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/00-opening.png",
+      "utc": "2026-11-18T01:51:28.408Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1178457,
+      "sha256": "3c0921efd6db797f264374c0d003e668c6c9cba54ad62530919c4055a86c7f9a",
+      "mean": 114.81342592592593,
+      "stdDev": 47.126857025245464,
+      "wallWindowMs": [
+        0,
+        0
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/01-status.png",
+      "utc": "2026-11-18T01:51:31.641Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1187820,
+      "sha256": "5328cd953ccf938ae93ecb6c946adace9fd2e85a1be40e717bdcb484a6de2cd9",
+      "mean": 115.41180555555556,
+      "stdDev": 47.65620999795904,
+      "wallWindowMs": [
+        3041.699999988079,
+        3381.3999999910593
+      ],
+      "ageWindowMs": [
+        116.69999999999982,
+        433.3000000000002
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/02-ultimate-panko.png",
+      "utc": "2026-11-18T01:51:39.454Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1256030,
+      "sha256": "9549bf74d34f82817c43acc0973b55ce9eea6a9e867649e5dc5159ef5c178aff",
+      "mean": 115.39212962962964,
+      "stdDev": 50.552040779241175,
+      "wallWindowMs": [
+        10853.29999999702,
+        11162.199999988079
+      ],
+      "ageWindowMs": [
+        1100,
+        1433.2999999999993
+      ],
+      "planBefore": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "panko",
+        "skill": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/03-ultimate-mochi.png",
+      "utc": "2026-11-18T01:51:44.809Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1270623,
+      "sha256": "a2e4f8dbceac9bb46cba67f8db11e6ce2026c989e97b8219278475efe1626901",
+      "mean": 120.90256944444444,
+      "stdDev": 52.019825039130026,
+      "wallWindowMs": [
+        16209.39999999106,
+        16560.79999999702
+      ],
+      "ageWindowMs": [
+        1066.5999999999985,
+        1416.5999999999985
+      ],
+      "planBefore": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "mochi",
+        "skill": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-soot",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/04-ultimate-soot.png",
+      "utc": "2026-11-18T01:51:47.262Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1299099,
+      "sha256": "905c0e8648b2c170ec66dadf25da15c39fc4f9d4a11369cbf42369713f606612",
+      "mean": 114.30810185185184,
+      "stdDev": 49.838290622148634,
+      "wallWindowMs": [
+        18662.09999999404,
+        18993.39999999106
+      ],
+      "ageWindowMs": [
+        1150,
+        1499.8999999999978
+      ],
+      "planBefore": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "soot",
+        "skill": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/05-ultimate-clover.png",
+      "utc": "2026-11-18T01:51:49.626Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 1280844,
+      "sha256": "7718a72c25745f498f7bf7665b4dc1e92a188207a4e3dda986826036d8140f52",
+      "mean": 123.26807870370371,
+      "stdDev": 52.459426204425,
+      "wallWindowMs": [
+        21025.29999999702,
+        21323.69999998808
+      ],
+      "ageWindowMs": [
+        1199.9000000000015,
+        1483.2999999999993
+      ],
+      "planBefore": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "planAfter": {
+        "actor": "clover",
+        "skill": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0
+      },
+      "crew": []
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/06-result-ready.png",
+      "utc": "2026-11-18T01:53:09.218Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 933068,
+      "sha256": "85ce88f4c614e7efce8ceb551aec28fcfdeb6ad88634d5fce8f825995b196c90",
+      "mean": 53.75662037037037,
+      "stdDev": 36.65416614773097,
+      "wallWindowMs": [
+        100617.29999999702,
+        100756
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 0,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          }
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/07-result-later.png",
+      "utc": "2026-11-18T01:53:10.061Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 933068,
+      "sha256": "85ce88f4c614e7efce8ceb551aec28fcfdeb6ad88634d5fce8f825995b196c90",
+      "mean": 53.75662037037037,
+      "stdDev": 36.65416614773097,
+      "wallWindowMs": [
+        101462,
+        101605.29999999702
+      ],
+      "ageWindowMs": [
+        0,
+        0
+      ],
+      "planBefore": null,
+      "planAfter": null,
+      "crew": [
+        {
+          "ready": "true",
+          "drawn": "4",
+          "confetti": 0,
+          "rect": {
+            "x": 133.1875,
+            "y": 263,
+            "width": 461.21875,
+            "height": 245,
+            "top": 263,
+            "right": 594.40625,
+            "bottom": 508,
+            "left": 133.1875
+          }
+        }
+      ]
+    }
+  ],
+  "sheets": [
+    {
+      "mode": "normal",
+      "part": 0,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/review/normal-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "79f413b488cd2167149663683dae6795285f4df306acdec4993d19be632c2fe4",
+      "frames": [
+        {
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/00-opening.png"
+        },
+        {
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/01-status.png"
+        },
+        {
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/02-ultimate-panko.png"
+        },
+        {
+          "reason": "ultimate-mochi",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/03-ultimate-mochi.png"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "part": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/review/normal-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "2b812b1c7056623b638fecc72524673810826e1cba3d950ce123296768f6f932",
+      "frames": [
+        {
+          "reason": "ultimate-soot",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/04-ultimate-soot.png"
+        },
+        {
+          "reason": "ultimate-clover",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/05-ultimate-clover.png"
+        },
+        {
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/06-result-ready.png"
+        },
+        {
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/normal/07-result-later.png"
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "part": 0,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/review/reduced-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "7992e44f59f91ce7e8b4b1d0422a0edb4ae530d89d9b918503e3e47c7cee429e",
+      "frames": [
+        {
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/00-opening.png"
+        },
+        {
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/01-status.png"
+        },
+        {
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/02-ultimate-panko.png"
+        },
+        {
+          "reason": "ultimate-mochi",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/03-ultimate-mochi.png"
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "part": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/review/reduced-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "8c08e276c9d1ea7748bf5802f7c34b59cc71aa9bae66f9f7241cb38bfc549958",
+      "frames": [
+        {
+          "reason": "ultimate-soot",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/04-ultimate-soot.png"
+        },
+        {
+          "reason": "ultimate-clover",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/05-ultimate-clover.png"
+        },
+        {
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/06-result-ready.png"
+        },
+        {
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/reduced/07-result-later.png"
+        }
+      ]
+    }
+  ],
+  "reviewedUtc": "2026-11-18T01:54:11.513985+00:00",
+  "visualReview": "Four fresh 1024x576 sheets reviewed once after measuring all sixteen 1280x720 captures. All four hero effects and numbers remain legible; actor faces and boss silhouette remain recognizable. Both victory crews appear. Existing unlock toast still overlaps the lower Next/Details edges; prior CXI request remains open. No new density-specific visual defect.",
+  "pass": true,
+  "local": true,
+  "artifactIdentity": {
+    "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+    "artifactMode": "native",
+    "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+    "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+    "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+  },
+  "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cpuRate": 4,
+  "hardware": "Apple M3 Pro",
+  "browser": "156.0.8078.4",
+  "deviceScaleFactor": 2,
+  "desktopDensity": [
+    {
+      "devicePixelRatio": 2,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "rendererRatio": 2,
+      "sceneSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "canvas": {
+        "width": 2560,
+        "height": 1440,
+        "clientWidth": 1280,
+        "clientHeight": 720,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "drawingBuffer": {
+        "width": 2560,
+        "height": 1440
+      },
+      "contextLost": false,
+      "checksEnabled": true,
+      "composer": {
+        "input": {
+          "width": 2560,
+          "height": 1440
+        },
+        "output": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "actors": 7,
+      "ready": true,
+      "sceneError": ""
+    },
+    {
+      "devicePixelRatio": 2,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "rendererRatio": 2,
+      "sceneSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "canvas": {
+        "width": 2560,
+        "height": 1440,
+        "clientWidth": 1280,
+        "clientHeight": 720,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "drawingBuffer": {
+        "width": 2560,
+        "height": 1440
+      },
+      "contextLost": false,
+      "checksEnabled": true,
+      "composer": {
+        "input": {
+          "width": 2560,
+          "height": 1440
+        },
+        "output": {
+          "width": 2560,
+          "height": 1440
+        }
+      },
+      "actors": 7,
+      "ready": true,
+      "sceneError": ""
+    }
+  ],
+  "limits": "Current local untransformed artifact, not independent judge acceptance. All battle progression after seeded setup is natural; no account/reward/public-chain proof. Screenshot windows are recorded because capture interrupts wall-clock smoothness. Whole-run timing is descriptive, includes capture overhead and is not a before/after performance claim. Reduced/normal captures are not synchronized pixel-equality pairs. Fresh visual review remains required.",
+  "toolProvenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-full-battle-desktop-density/tool-provenance.json",
+    "sha256": "047ccf58ed9cae7d75f21be93b478dbe840a77ee285fd6e77c43ab2bce0f8a9e",
+    "artifactFilesVerified": 3764,
+    "snapshotsVerified": 4
+  }
+}

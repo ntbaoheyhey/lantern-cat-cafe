@@ -81,3 +81,6 @@
 2026-11-18T01:40:54.476140+00:00 DesktopDPR probe native3050ee5ae passes6keyed geometry/state sets at1/2/1.5;buffers1280x720/2560x1440/1920x1080.6capturesmeasured4viewsreviewed. RawMap-orderfailure preserved;stable-ID comparison exact,no tolerance.6trials3113running.
 
 2026-11-18T01:48:46.002528+00:00 DesktopDPR6trials pass:exactrules/state,0errors/blocks,12captures4reviews;1x/4xp95same16.8/33.4ms,DPR2normalTask+4.9%,4xflat;preservequality. Transition4354running,nextcompleteDPR2battle.
+
+- [x] V-F DPR2/CPU4x full battles native3050ee5ae: exact game parity,68actions/24ults,0errors/blocks;16captures/4freshsheets reviewed. V7-F-full-battle-desktop-density.json. Local configuration coverage only.
+- [ ] V-F desktop density transition: native4stale buffers/8exactgeometrysets;mediaevents0 CDPfidelity limit. Browser-only correction probe prepared;native adoption requires exact pixels/lifecycle and focused checks.
