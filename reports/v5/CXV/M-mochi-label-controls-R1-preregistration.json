@@ -1,0 +1,157 @@
+{
+  "utc": "2026-11-18T17:08:23.421672+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "candidate": {
+    "scope": "Authored Mochi only; existing Clover placeholder untouched",
+    "completeLabelTop": "max(bodyBottom,footY)+6 CSSpx",
+    "horizontal": "existing authored x",
+    "applicationSourceUnchanged": true
+  },
+  "pilot": "Four fixed arms x five cases; fresh page per case. Method development, not heldout acceptance.",
+  "fullActions": {
+    "actions": [
+      "normal-mochi-1",
+      "normal-panko-1",
+      "reduced-panko-1"
+    ],
+    "count": 20,
+    "cases": 20,
+    "uniqueActions": 3
+  },
+  "seededSetup": "Level6 roster as naturalpair;HP65%,castercharge100/turns3/queuefront;legalChoices/act onactualrules. Modified initialstate is not naturalreachability. Preserve initial/expected/observed fullbattle.",
+  "controls": [
+    "Verify unchanged pinned served/source/media hashes and independent legal action battle/plan.",
+    "Natural HUD settlement and existing portrait/time/media-frame controls. The only placement diagnostic is the frozen authored-Mochi lower target in candidate arms; CSS conceal varies by preregistered arm.",
+    "Record full sample before and after every screenshot, plus all visible meter inline/computed widths, document font status.",
+    "Fixed shot order: untouched0,untouched1,untouched2,sham-style,sham-restored,hidden1,restored1,restored-repeat1,hidden2,restored2. Sham CSS html{} has no declarations.",
+    "Compare RGB untouched0/1/2,untouched2/sham-style/sham-restored/restored1/restored-repeat1/restored2,hidden1/hidden2. Never mask or loosen thresholds.",
+    "Keep all shots and state differences;do not retry-until-pass. No images viewed unless a separately frozen followup requires it."
+  ],
+  "productionAcceptance": false,
+  "priorPreregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-controls-native-R1-preregistration.json",
+    "sha256": "c6bcea18d3aefbb8f1c3ebbadab147d73fcae7c3e94c778795a810e36581ea83"
+  },
+  "hudPortraitPause": {
+    "enabled": true,
+    "targets": [
+      ".b3-bottom .b3-portrait",
+      ".b3-bottom .b3-portrait-shine"
+    ],
+    "basis": "R1 controls differed only readiness portrait area617..749x606..720. Recorded infinite1200ms ready and2400ms shine kept advancing; all world-state gates exact.",
+    "method": "Pause these existing infinite HUD animations at their observed currentTime; await ready and require paused. Record targets/times/rects. Do not hide HUD or alter labels; no blanket animation disabling.",
+    "scope": "Additional diagnostic only;no natural presentation acceptance. Preserve R1invalid result."
+  },
+  "hudPublication": {
+    "method": "After decoded scene render,await two requestAnimationFrame callbacks for existing HUD label painter before sampling;preserve scene/source clocks and rules.",
+    "failureRetained": "R2twenty noncontact geometry snapshots did not reproduce; all16contact ones did. This tests publication timing,not a productfix."
+  },
+  "totalBadge": {
+    "source": "Pinned BattleHud.tsx sets totalState.until=performance.now()+1000; independent rAF painter updates hidden.",
+    "method": "Record visible/text/rect/wallclock before waiting;wait actual hidden property naturally true (timeout2500ms),then record expiry. Do not hide/patch badge,clock orHUD. Require hidden/text/rect unchanged across pairedcaptures.",
+    "limit": "Post-expiry pausedpaint only;totalbadge ordinarypresentation not accepted."
+  },
+  "lowerBodyLabel": true,
+  "geometryHz": 0,
+  "pixelTimes": {
+    "mochi-1": [
+      350
+    ],
+    "panko-1": [
+      125,
+      225
+    ]
+  },
+  "displayedFrameGate": true,
+  "decodeGate": "Require settled paused media:currentTime within1/60s of desired;decoded callbackframe equals floor((currentTime+1e-6)*30),and media.sourceFrame equals that frame. Reducedmustframe0. No seeking,clockoverride,video mutation or tolerance expansion. Original desired-relative one-frame gate failed at125ms when8.334ms deadband plus26.333ms PTSfloor exceeded33.334ms. Retain original failure.",
+  "parent": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-staging-native-R2-preregistration.json",
+    "sha256": "3c79251f2045fb66a251a4db15f9231eebe1a8972f855ff37e0a0095e174ea50"
+  },
+  "scope": "Mochi-only profile with existing Clover placeholder. Compare original versus lower Mochi diagnostic, and visibility versus opacity concealment. No source adoption or ordinary paint acceptance.",
+  "hudMeterSettlement": {
+    "timeoutMs": 2500,
+    "stableFrames": 3,
+    "inlinePercentTolerance": 1e-06,
+    "widthToleranceCSSpx": 0.015625,
+    "scope": "Natural five visible boss/bottom HUD meter convergence plus finite animation completion; CXI independently validated pilot; no timer/style mutations.",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-control-pilot-r1/hud-meter-observation.mjs",
+    "sourceSha256": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  },
+  "conditioningStudy": {
+    "shots": [
+      "untouched-0",
+      "untouched-1",
+      "untouched-2",
+      "sham-style",
+      "sham-restored",
+      "hidden-1",
+      "restored-1",
+      "restored-repeat-1",
+      "hidden-2",
+      "restored-2"
+    ],
+    "interpretation": "Within each fresh page: initial/sham stability versus conceal-associated differences. Different fresh-page arms compare methods/placements, not randomized causal or ordinary presentation proof."
+  },
+  "limits": [
+    "This profile differs from prior dual-media profile; never merge their outcomes as the same native population.",
+    "Historical Clover offsets and dual-lower-label rejection retained, no Clover adaptation.",
+    "Method diagnostic only; all cases are development, not heldout paint/association/performance acceptance.",
+    "Every case uses a fresh page to avoid preceding conceal-cycle conditioning.",
+    "Exact RGB0 and full-state checks retained; failed arms preserved, no threshold/shot selection.",
+    "Explicit CXI6301/timing lease required; profile must stay pinned."
+  ],
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-mochi-label-controls.mjs",
+    "sha256": "253d96a5c4aa2e6d56926d1f1f0e99944026320bce567dfd0826f8558b8bd26c"
+  },
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-mochi-label-controls.py",
+    "sha256": "a4de051c515e6523387fd34d5a5ad6eeb9d5bfd77fdcb7f9c696d058527ccf2e"
+  },
+  "runnerSha256": "96c8fa88fa10bc10b61af9cd4ac67bd9ae6da289e995048c40136e97066c0b9c",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-only-profile-r1/build.json",
+    "sha256": "f6db611441d33815deddfdfe9aa04b068de567abb6b15adcb493f7d81d203b07"
+  },
+  "arms": [
+    {
+      "id": "baseline-visibility",
+      "placement": "baseline",
+      "method": "visibility",
+      "hiddenStyle": ".b3-world { visibility: hidden !important; }"
+    },
+    {
+      "id": "candidate-opacity",
+      "placement": "candidate",
+      "method": "opacity",
+      "hiddenStyle": ".b3-world { opacity: 0 !important; }"
+    },
+    {
+      "id": "baseline-opacity",
+      "placement": "baseline",
+      "method": "opacity",
+      "hiddenStyle": ".b3-world { opacity: 0 !important; }"
+    },
+    {
+      "id": "candidate-visibility",
+      "placement": "candidate",
+      "method": "visibility",
+      "hiddenStyle": ".b3-world { visibility: hidden !important; }"
+    }
+  ],
+  "fixture": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/mochi-label-production-fixture.mjs",
+    "sha256": "1cc672c1e6bc6995de9ed99b179f15c81f18bbb9bd2835a6d30e1f6da7a1e493"
+  },
+  "observation": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/mochi-label-observation.mjs",
+    "sha256": "6fae63b553cb354fb9282e364b459118a6d2a27a74171d3c9f16a7d3195dbabb"
+  }
+}
