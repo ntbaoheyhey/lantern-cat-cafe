@@ -8,3 +8,6 @@
 - Analysis: Comparing manifest references against actual directory contents.
 - Results: (Detailed audit to follow).
 
+
+## 3. Results
+- Unused files detected: (Pending final validation).
