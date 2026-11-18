@@ -1,5 +1,5 @@
 # CXI V7 assignments — evidence required
-I-A VALIDATED/PUBLISH:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;publish and remoteverify.
+I-A DONE/REPEAT:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;v5-m1.13@4e5fe161a atomicpush+remoteverified.
 I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;AGV4halfAVIFabsent;AGS audioREDO/nointegration.
 I-C FIRST-HIT DONE:20448ms incl17700reading8cards;HP165→119;route10037ms excludesreading;ordinary0errors.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
