@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;deskt
 NEXT 1: Read CXI newlease response;run fixed fullpaint pilot via run-media-action-labels.py with M-clover-fullpaint-native-R1-preregistration.json.
 NEXT 2: Run verify-fixed-label-layout.mjs and verify-label-fullpaint.py;full16 then idle10/status5 and fresh association before sourceedit.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed pushed6553efd7f;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+Last confirmed pushed565a96fee;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T16:02Z;preserve unchanged.
 Jobs:none;CXI full16browserreleased15:42:58Z;no CXVlease. OwnpilotR2one250mssheet reviewedonce;all old failures retained.

@@ -31,7 +31,19 @@ def area(a,b):
     return max(0,min(a['x']+a['width'],b['x']+b['width'])-max(a['x'],b['x']))*max(0,min(a['y']+a['height'],b['y']+b['height'])-max(a['y'],b['y']))
 
 
-def stable(state,initial,fixed):
+def displayed_frame_gate(state,reduced):
+    checks={}
+    for cat in MEDIA:
+        m=state['media'][cat];video=m['state'];decoded=m['decoded']['mediaTime']*30
+        frame=math.floor((video['currentTime']+1e-6)*30)
+        checks[cat]=bool(video['ready'] and not video.get('failure') and not video['seeking'] and not video['disposed']
+                         and abs(video['currentTime']-video['desired'])<=1/60
+                         and round(decoded)==frame and abs(video['sourceFrame']-frame)<1e-5
+                         and (not reduced or frame==0))
+    return checks
+
+
+def stable(state,initial,fixed,reduced=False):
     gates={'paused':state['paused'],'samePlan':state['plan']==initial['plan'],
            'rules':state['battle']==initial['battle'],'labels':state['labels']==initial['labels'],
            'paint':state['labelPaintState']==initial['labelPaintState'],
@@ -42,6 +54,7 @@ def stable(state,initial,fixed):
     for cat in MEDIA:
         a,b=state['media'][cat],initial['media'][cat]
         gates[cat]=bool(a['state']['ready'] and not a['state'].get('failure') and not a['state']['disposed'] and not a['state']['seeking'] and a['planeVisible'] and a['rootVisible'] and a['state']['currentTime']==b['state']['currentTime'] and a['decoded']['mediaTime']==b['decoded']['mediaTime'])
+    gates['displayedFrameExact']=all(displayed_frame_gate(state,reduced).values())
     return gates
 
 
@@ -56,10 +69,11 @@ def main():
             'raw':{'path':str(raw_path),'sha256':sha(raw_path)},'artifactVerification':{'path':str(artifact_path),'sha256':sha(artifact_path)},'provenance':{'path':str(provenance_path),'sha256':sha(provenance_path)},
             'harness':{'path':str(Path(__file__)),'sha256':sha(__file__)},'runtimeDiagnostic':raw['runtimeDiagnostic'],'actions':len(raw['actions']),'geometryRows':len(raw['rows']),
             'capturePass':raw['pass'],'captureFailure':raw.get('failure'),'rulesEqual':bool(raw['actions']) and all(a['rulesEqual'] and a['observedBattle']==a['expectedBattle'] for a in raw['actions']),
-            'cases':[],'geometryFailures':[],'reviewImages':[],'imagesViewed':0,'productionAcceptance':False,
+            'cases':[],'decodeChecks':[],'geometryFailures':[],'reviewImages':[],'imagesViewed':0,'productionAcceptance':False,
             'limits':['Seeded setup modifies HP/charge/queue,then real legalChoices/act and model.tick;not a naturally reached state.','Pixel isolation hides the commissioned media plane or native actor root,excluding native shadows and separate VFX.','Unchanged application source plus explicit Clover(-12,+19) diagnostic. No ordinary-play,seam,matte or laptop acceptance.']}
     for row in raw['rows']:
         s=row['snapshot']
+        result['decodeChecks'].append({'key':f"{row['mode']}-{row['cat']}-{row['skill']}-{row['ms']}",'gates':displayed_frame_gate(s,row['mode']=='reduced')})
         for label in s['labels']:
             if label['id'] not in MEDIA:continue
             overlaps=[{'id':a['id'],'area':area(label['rect'],a['body'])} for a in s['anchors'] if a['visible'] and a.get('body') and area(label['rect'],a['body'])>0]
@@ -73,7 +87,7 @@ def main():
         for cap in case['captures']:
             p=Path(cap['path']);assert p.is_relative_to(base) and sha(p)==cap['sha256']
             img=cv2.imread(str(p));assert img.shape==(720,1280,3);assert cap['variant'] not in images;images[cap['variant']]=img
-            for when in ('before','after'):state_gates.append({'variant':cap['variant'],'when':when,'gates':stable(cap[when],initial,case['fixedTime'])})
+            for when in ('before','after'):state_gates.append({'variant':cap['variant'],'when':when,'gates':stable(cap[when],initial,case['fixedTime'],case['mode']=='reduced')})
         row={k:case[k] for k in ('key','mode','cat','skill','ms','frame','fixedTime','expectedFrames')};row.update(totalLifecycle=case.get('totalLifecycle'),hudPortraitPause=case.get('hudPortraitPause',[]),controls={},stateGates=state_gates,complete=set(images)==set(VARIANTS),labels=[]);result['cases'].append(row)
         if not row['complete']:row['valid']=False;continue
         for name,a,b in [('baselineRepeat','baseline','baseline-repeat'),('hiddenRepeat','labels-hidden','labels-hidden-repeat'),('restored','baseline','restored')]:row['controls'][name]=stats(delta(images[a],images[b])>0)
@@ -97,7 +111,7 @@ def main():
             row['labels'].append(item)
         row['commissionedLabelsAgainstAllFourBodies']=stats(union)
         images_to_make.append((case,row,images['baseline'],images['labels-hidden'],union))
-    result['attributionValid']=bool(raw['pass'] and not raw['errors'] and not raw['blockedRequests'] and [c['key'] for c in raw['cases']]==[c['key'] for c in raw['plannedPixelCases']] and all(c.get('valid') for c in result['cases']))
+    result['attributionValid']=bool(raw['pass'] and not raw['errors'] and not raw['blockedRequests'] and [c['key'] for c in raw['cases']]==[c['key'] for c in raw['plannedPixelCases']] and all(c.get('valid') for c in result['cases']) and all(all(c['gates'].values()) for c in result['decodeChecks']))
     result['sampledPaintClear']=result['attributionValid'] and all(c['commissionedLabelsAgainstAllFourBodies']['count']==0 for c in result['cases'])
     output.write_text(json.dumps(result,indent=2)+'\n')
     for case,row,baseline,hidden,union in sorted(images_to_make,key=lambda x:(-x[1]['commissionedLabelsAgainstAllFourBodies']['count'],x[0]['key']))[:4]:
