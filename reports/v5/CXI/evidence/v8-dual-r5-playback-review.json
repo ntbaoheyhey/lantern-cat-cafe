@@ -1,0 +1,830 @@
+{
+  "utc": "2026-11-18T13:19:07.924032+00:00",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "browser": "156.0.8078.4",
+  "hardware": "Apple M3 Pro",
+  "cpuRate": 1,
+  "priorAudit": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-cxv-dual-r5-natural-review.json",
+    "sha256": "11d8176d0f7d16468156373d2f1fc4f8dc290455b2215a286662da58f0ff970d"
+  },
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/report.json",
+      "sha256": "7dfc0e512416efa204e0f177d101681cc63627696008c12e4a76cf64c0f6fa02",
+      "bytes": 549220
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/timeline.json",
+      "sha256": "76e5b8fd5ce7ebedc83d2efbc53a7b4b745196554641fdf13abb93cff169d0f6",
+      "bytes": 4791047
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+      "sha256": "4b74f34091bdc1f1f7669919c246682346c19c6c6fe65a7c1c1cd52f650b0704",
+      "bytes": 32138
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/clover/designer-idle-35abb7ac2be87a45.json",
+      "sha256": "35abb7ac2be87a45cbca33d2ead0cbb326d70b58ff2740099a402f61b0d129cb",
+      "bytes": 32195
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/timeline.json",
+      "sha256": "0ade8ba497c766ca1038cf02c86244d194c5c98a7f55f0d15e17baa1b463a348",
+      "bytes": 3703035
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+      "sha256": "4b74f34091bdc1f1f7669919c246682346c19c6c6fe65a7c1c1cd52f650b0704",
+      "bytes": 32138
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/clover/designer-idle-35abb7ac2be87a45.json",
+      "sha256": "35abb7ac2be87a45cbca33d2ead0cbb326d70b58ff2740099a402f61b0d129cb",
+      "bytes": 32195
+    }
+  ],
+  "harnessSha256": "ed55c64e6d0a675a64c8f1118babf4c12e6e1c1832fb46e6b2840d634613fb6d",
+  "runs": [
+    {
+      "mode": "normal",
+      "naturalResultMs": 81116,
+      "frameMsWithoutCapture": {
+        "count": 4773,
+        "min": 16.5,
+        "median": 16.69999999999709,
+        "p95": 16.70000000001164,
+        "p99": 16.80000000000291,
+        "max": 50
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 4773,
+        "min": 2,
+        "median": 4.100000008940697,
+        "p95": 5.100000008940697,
+        "p99": 8.099999994039536,
+        "max": 49.3999999910593
+      },
+      "media": {
+        "mochi": {
+          "qualityFirst": {
+            "totalVideoFrames": 46,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 2476,
+            "droppedVideoFrames": 15,
+            "corruptedVideoFrames": 0
+          },
+          "totalFrameDelta": 2430,
+          "droppedFrameDelta": 15,
+          "dropFraction": 0.006172839506172839,
+          "dropCounterIntervals": [
+            {
+              "fromMs": 341.20000000894106,
+              "toMs": 491.1000000089407,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 1824.4000000089409,
+              "toMs": 1924.4000000089409,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 2124.400000008941,
+              "toMs": 2224.400000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 2224.400000008941,
+              "toMs": 2324.400000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 3141.0000000089403,
+              "toMs": 3241.0000000089403,
+              "dropped": 1,
+              "captureOverlap": true,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 3941.0000000089403,
+              "toMs": 4057.6000000089407,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 24673.500000008942,
+              "toMs": 24773.500000008942,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 26956.70000000894,
+              "toMs": 27056.70000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 33323.10000000894,
+              "toMs": 33423.20000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 42206.10000000894,
+              "toMs": 42306.10000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 46306.00000000894,
+              "toMs": 46406.00000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 48572.50000000894,
+              "toMs": 48672.50000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 52072.40000000894,
+              "toMs": 52172.40000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 55205.60000000894,
+              "toMs": 55305.60000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 57505.50000000894,
+              "toMs": 57605.50000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            }
+          ],
+          "callbacks": 2416,
+          "unobservedPresentedCallbacks": 8,
+          "wraps": [
+            {
+              "fromMs": 8757.40000000894,
+              "toMs": 8807.40000000894,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0.033333,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 18757.10000000894,
+              "toMs": 18807.000000008942,
+              "callbackGapMs": 49.900000000001455,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 28773.30000000894,
+              "toMs": 28806.70000000894,
+              "callbackGapMs": 33.39999999999782,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 38772.90000000894,
+              "toMs": 38822.90000000894,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 48789.20000000894,
+              "toMs": 48822.50000000894,
+              "callbackGapMs": 33.30000000000291,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 58772.10000000894,
+              "toMs": 58838.80000000894,
+              "callbackGapMs": 66.69999999999709,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 68788.40000000894,
+              "toMs": 68855.10000000894,
+              "callbackGapMs": 66.69999999999709,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0.033333,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 78804.70000000895,
+              "toMs": 78854.70000000895,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            }
+          ],
+          "waitingEvents": [
+            {
+              "atMs": 8790.70000000298,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 27.0,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 18796.79999999702,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 4.800000011920929,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 28802.10000000894,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 4.5999999940395355,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 38813,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 4.4000000059604645,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 48820.10000000894,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 11.299999997019768,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 58830.29999999702,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 4.800000011920929,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 68837.20000000298,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 8.200000002980232,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 78845.90000000596,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 4.700000002980232,
+              "captureOverlap": false
+            }
+          ],
+          "processingDurationSeconds": {
+            "count": 2416,
+            "min": 0.0011,
+            "median": 0.0997,
+            "p95": 0.2677,
+            "p99": 0.2987,
+            "max": 1.4548
+          },
+          "sampleClockMinusLatestCallbackAbsMs": {
+            "count": 769,
+            "min": 0.03300000000017178,
+            "median": 9.73299999999977,
+            "p95": 32.43299999999927,
+            "p99": 39.16699999999995,
+            "max": 45.232999999999635
+          },
+          "potentialTrackDifferenceCanonicalPixels": {
+            "hip": {
+              "count": 769,
+              "min": 3.0535467676282325e-06,
+              "median": 0.15972187871600432,
+              "p95": 0.7223287667446352,
+              "p99": 1.4016594923391548,
+              "max": 2.6007317894254665
+            },
+            "shieldWrist": {
+              "count": 769,
+              "min": 0.0007402578045200382,
+              "median": 0.4342051595796459,
+              "p95": 1.9573293388406596,
+              "p99": 3.5036580080142508,
+              "max": 5.945651496401649
+            },
+            "lantern": {
+              "count": 769,
+              "min": 0.0017254185092995798,
+              "median": 0.8592392713196564,
+              "p95": 3.75073545572788,
+              "p99": 6.691200300857603,
+              "max": 10.610575060418354
+            }
+          },
+          "runtimeErrors": 0
+        },
+        "clover": {
+          "qualityFirst": {
+            "totalVideoFrames": 154,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 2585,
+            "droppedVideoFrames": 19,
+            "corruptedVideoFrames": 0
+          },
+          "totalFrameDelta": 2431,
+          "droppedFrameDelta": 19,
+          "dropFraction": 0.00781571369806664,
+          "dropCounterIntervals": [
+            {
+              "fromMs": 341.20000000894106,
+              "toMs": 491.1000000089407,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 1824.4000000089409,
+              "toMs": 1924.4000000089409,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 2124.400000008941,
+              "toMs": 2224.400000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 2224.400000008941,
+              "toMs": 2324.400000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 3741.0000000089403,
+              "toMs": 3841.0000000089403,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 4790.90000000894,
+              "toMs": 4890.90000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 9307.40000000894,
+              "toMs": 9407.50000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 11590.700000008941,
+              "toMs": 11707.300000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 11907.300000008941,
+              "toMs": 12007.300000008941,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 20890.30000000894,
+              "toMs": 20990.30000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 26956.70000000894,
+              "toMs": 27056.70000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 32173.20000000894,
+              "toMs": 32306.500000008942,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 33323.10000000894,
+              "toMs": 33423.20000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 42106.10000000894,
+              "toMs": 42206.10000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 46306.00000000894,
+              "toMs": 46406.00000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 48572.50000000894,
+              "toMs": 48672.50000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 52072.40000000894,
+              "toMs": 52172.40000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 57505.50000000894,
+              "toMs": 57605.50000000894,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            },
+            {
+              "fromMs": 78538.00000000893,
+              "toMs": 78638.00000000893,
+              "dropped": 1,
+              "captureOverlap": false,
+              "eventsInInterval": []
+            }
+          ],
+          "callbacks": 2415,
+          "unobservedPresentedCallbacks": 8,
+          "wraps": [
+            {
+              "fromMs": 5157.600000008941,
+              "toMs": 5174.200000008941,
+              "callbackGapMs": 16.600000000000364,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 15123.90000000894,
+              "toMs": 15190.500000008942,
+              "callbackGapMs": 66.60000000000218,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 25156.80000000894,
+              "toMs": 25206.80000000894,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 35173.00000000894,
+              "toMs": 35223.00000000894,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0.033333,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 45172.70000000894,
+              "toMs": 45222.60000000894,
+              "callbackGapMs": 49.900000000001455,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 55188.90000000894,
+              "toMs": 55255.60000000894,
+              "callbackGapMs": 66.69999999999709,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0.033333,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 65171.90000000894,
+              "toMs": 65238.500000008935,
+              "callbackGapMs": 66.59999999999127,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0,
+              "captureOverlap": false
+            },
+            {
+              "fromMs": 75204.80000000894,
+              "toMs": 75254.80000000894,
+              "callbackGapMs": 50.0,
+              "beforeMediaTime": 9.966667,
+              "afterMediaTime": 0.033333,
+              "captureOverlap": false
+            }
+          ],
+          "waitingEvents": [
+            {
+              "atMs": 5171.4000000059605,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 11.599999994039536,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 15183.60000000894,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 6.0999999940395355,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 25195.70000000298,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 5.799999997019768,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 35204.29999999702,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 8.600000008940697,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 45213.70000000298,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 6.5,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 55235.90000000596,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 34.5,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 65229.79999999702,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 5.700000002980232,
+              "captureOverlap": false
+            },
+            {
+              "atMs": 75237.79999999702,
+              "currentTime": 0,
+              "nextEvent": "playing",
+              "toNextEventMs": 8.600000008940697,
+              "captureOverlap": false
+            }
+          ],
+          "processingDurationSeconds": {
+            "count": 2415,
+            "min": 0.0014,
+            "median": 0.0996,
+            "p95": 0.2673,
+            "p99": 0.3002,
+            "max": 1.4064
+          },
+          "sampleClockMinusLatestCallbackAbsMs": {
+            "count": 767,
+            "min": 0.0,
+            "median": 9.966999999999615,
+            "p95": 25.49999999999919,
+            "p99": 41.46700000000081,
+            "max": 42.73300000000013
+          },
+          "potentialTrackDifferenceCanonicalPixels": {
+            "hip": {
+              "count": 767,
+              "min": 0.0,
+              "median": 0.13360874977586146,
+              "p95": 0.7124686128949037,
+              "p99": 1.0717223776713167,
+              "max": 1.5650898641006652
+            },
+            "prop": {
+              "count": 767,
+              "min": 0.0,
+              "median": 0.09523047440922879,
+              "p95": 0.7694769355486778,
+              "p99": 1.1670885705376761,
+              "max": 1.609494462629182
+            },
+            "spout": {
+              "count": 767,
+              "min": 0.0,
+              "median": 0.09876148693079173,
+              "p95": 0.7211376522077523,
+              "p99": 1.206070258575685,
+              "max": 1.8362481280115712
+            },
+            "head": {
+              "count": 767,
+              "min": 0.0,
+              "median": 0.12256404147999984,
+              "p95": 0.6661033443440957,
+              "p99": 1.3767258598109393,
+              "max": 1.7539403902833781
+            },
+            "freePaw": {
+              "count": 767,
+              "min": 0.0,
+              "median": 0.12915310805358798,
+              "p95": 1.1917845401253946,
+              "p99": 1.6485274004994916,
+              "max": 2.2532705195424363
+            }
+          },
+          "runtimeErrors": 0
+        }
+      }
+    },
+    {
+      "mode": "reduced",
+      "naturalResultMs": 81166,
+      "frameMsWithoutCapture": {
+        "count": 4783,
+        "min": 16.5,
+        "median": 16.69999999999709,
+        "p95": 16.79999999998836,
+        "p99": 16.80000000000291,
+        "max": 50
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 4783,
+        "min": 1.7999999970197678,
+        "median": 4.0999999940395355,
+        "p95": 5,
+        "p99": 7.699999988079071,
+        "max": 54.3999999910593
+      },
+      "media": {
+        "mochi": {
+          "qualityFirst": {
+            "totalVideoFrames": 49,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 49,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "totalFrameDelta": 0,
+          "droppedFrameDelta": 0,
+          "dropFraction": null,
+          "dropCounterIntervals": [],
+          "callbacks": 1,
+          "unobservedPresentedCallbacks": 0,
+          "wraps": [],
+          "waitingEvents": [],
+          "processingDurationSeconds": {
+            "count": 1,
+            "min": 0.0053,
+            "median": 0.0053,
+            "p95": 0.0053,
+            "p99": 0.0053,
+            "max": 0.0053
+          },
+          "sampleClockMinusLatestCallbackAbsMs": {
+            "count": 0
+          },
+          "potentialTrackDifferenceCanonicalPixels": {
+            "hip": {
+              "count": 0
+            },
+            "shieldWrist": {
+              "count": 0
+            },
+            "lantern": {
+              "count": 0
+            }
+          },
+          "runtimeErrors": 0
+        },
+        "clover": {
+          "qualityFirst": {
+            "totalVideoFrames": 162,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 162,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "totalFrameDelta": 0,
+          "droppedFrameDelta": 0,
+          "dropFraction": null,
+          "dropCounterIntervals": [],
+          "callbacks": 1,
+          "unobservedPresentedCallbacks": 0,
+          "wraps": [],
+          "waitingEvents": [],
+          "processingDurationSeconds": {
+            "count": 1,
+            "min": 0.0025,
+            "median": 0.0025,
+            "p95": 0.0025,
+            "p99": 0.0025,
+            "max": 0.0025
+          },
+          "sampleClockMinusLatestCallbackAbsMs": {
+            "count": 0
+          },
+          "potentialTrackDifferenceCanonicalPixels": {
+            "hip": {
+              "count": 0
+            },
+            "prop": {
+              "count": 0
+            },
+            "spout": {
+              "count": 0
+            },
+            "head": {
+              "count": 0
+            },
+            "freePaw": {
+              "count": 0
+            }
+          },
+          "runtimeErrors": 0
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Re-analysis of existing lane records, not a new capture or ordinary-laptop certification.",
+    "Capture/DOM sampling overhead remains. Counter intervals identify temporal coincidence, not causality.",
+    "Dropped video frames differ from missed JavaScript callbacks; processingDuration is not CPU decode time.",
+    "Latest callback is a recorded presentation, not proof of the exact texture read at a later scene draw.",
+    "Track mismatch is a sampled potential difference before cast/world projection, not a measured painted-pixel error.",
+    "Decoder loop timing cannot repair the spatial source seam or waive HP/body and matte failures."
+  ],
+  "imagesViewed": 0,
+  "runtimeChanged": false,
+  "artAccepted": false
+}
