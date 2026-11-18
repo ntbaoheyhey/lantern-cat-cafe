@@ -21,25 +21,29 @@ export async function buildHudArtifacts(out){
  assert.equal(hud.replace(guarded,original),before,'Baseline may differ only by the measured text guard');
  return buildProductionComparison(out,{modulePath:hudPath,currentSource:hud,variants:{baseline:before,text:hud},metadata:{candidateHudSha256:hash(hud),baselineHudSha256:hash(before),baselineSource:'0ac228aaa:'+hudPath}});
 }
-export async function buildProductionComparison(out,{modulePath,currentSource,variants,metadata={}}){
+export async function buildProductionComparison(out,{modulePath,currentSource,variants,additionalModules=[],metadata={}}){
  out=resolve(out);assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'),'Output must remain in owned ignored work');
  assert.equal(await readFile(resolve(root,modulePath),'utf8'),currentSource,'Source changed before comparison build');
  assert([1,2].includes(Object.keys(variants).length));assert(Object.keys(variants).every(mode=>/^[a-z]+$/.test(mode)));
+ const modules=[{modulePath,currentSource,variants},...additionalModules];
+ assert.equal(new Set(modules.map(m=>m.modulePath)).size,modules.length);
+ for(const module of modules){assert.equal(await readFile(resolve(root,module.modulePath),'utf8'),module.currentSource);assert.deepEqual(Object.keys(module.variants),Object.keys(variants));}
  const {build,loadConfigFromFile}=await import(require.resolve('vite'));
- const report={...metadata,utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),configSha256:hash(await readFile(resolve(appRoot,'vite.config.ts'))),envDir:false,artifacts:[]};
+ const report={...metadata,comparisonModules:modules.map(m=>({path:m.modulePath,currentSha256:hash(m.currentSource),variants:Object.fromEntries(Object.entries(m.variants).map(([mode,source])=>[mode,hash(source)]))})),utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),configSha256:hash(await readFile(resolve(appRoot,'vite.config.ts'))),envDir:false,artifacts:[]};
  await mkdir(out,{recursive:true});
  for(const [mode,variantSource]of Object.entries(variants)){
   const dist=resolve(out,mode);assert(!existsSync(resolve(dist,'index.html')),'Preserve prior artifact;choose a fresh output directory');
   const loaded=await loadConfigFromFile({command:'build',mode:'production'},resolve(appRoot,'vite.config.ts'),appRoot,'error');
   assert(loaded,'Existing Vite config did not load');let transformed=0;
-  const transformNeeded=variantSource!==currentSource;
+  const transforms=new Map(modules.filter(m=>m.variants[mode]!==m.currentSource).map(m=>[resolve(root,m.modulePath),m]));
+  const transformNeeded=transforms.size>0;
   const comparisonPlugin={name:'cxv-comparison-module-only',enforce:'pre',transform(source,id){
-   if(id.split('?')[0].replaceAll('\\','/')!==resolve(root,modulePath))return;
-   assert.equal(source,currentSource,'Comparison transform must see the unmodified source before compilation');transformed++;
-   return{code:variantSource,map:null};
+   const module=transforms.get(id.split('?')[0].replaceAll('\\','/'));if(!module)return;
+   assert.equal(source,module.currentSource,'Comparison transform must see the unmodified source before compilation');transformed++;
+   return{code:module.variants[mode],map:null};
   }};
   await build({...loaded.config,root:appRoot,configFile:false,envDir:false,mode:'production',logLevel:'error',plugins:transformNeeded?[comparisonPlugin,...loaded.config.plugins]:loaded.config.plugins,build:{...loaded.config.build,outDir:dist,emptyOutDir:true}});
-  assert.equal(transformed,transformNeeded?1:0);
+  assert.equal(transformed,transforms.size);
   // The shipping exclusion plugin intentionally skips custom outputs; mirror its generated-output trim here.
   for(const path of unusedPosters){assert(!path.includes('..'));try{await unlink(resolve(dist,path));}catch(e){if(e.code!=='ENOENT')throw e;}}
   const files=[];
