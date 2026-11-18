@@ -29,8 +29,16 @@ try {
     assert.deepEqual(battle, a.actual);
     rows.push({key: run.key, exact: true, resultSha256: sha(JSON.stringify(battle))});
   }
-  for (const status of ['empty', 'capacity']) {
-    const [a, b] = raw.runs.filter(r => r.statusCase === status);
+  const pairs = new Map();
+  for (const run of raw.runs) {
+    const key = [run.mode, run.cat, run.skill, run.statusCase, run.focusStatusId ?? ''].join('|');
+    if (!pairs.has(key)) pairs.set(key, []);
+    pairs.get(key).push(run);
+  }
+  for (const pair of pairs.values()) {
+    assert.equal(pair.length, 2);
+    const [a, b] = pair;
+    assert.deepEqual([a.arm, b.arm], ['original', 'prototype']);
     for (const key of ['initial', 'choice', 'expected', 'actual', 'duration']) assert.deepEqual(a.action[key], b.action[key]);
   }
   await writeFile(output, JSON.stringify({utc: new Date().toISOString(), raw: {path: input, sha256: sha(bytes)},
