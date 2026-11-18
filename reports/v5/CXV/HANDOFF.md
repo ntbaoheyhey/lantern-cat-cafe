@@ -1,10 +1,10 @@
 # CXV V8 handoff
-ACTIVE BatchM authored-label geometry10casesPASS;prepare narrow Mochi/Clover scene candidate,then fresh native+legalstatus gates;assistant:AGV.
+ACTIVE BatchM authored-label sourcecandidate25focused/TSC0;freshnative/legalstatus validation pending;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Patch owned spine/scene.ts:prepared Mochi authored hpAnchor;Clover target+5CSSpx;update routing/layout tests and typecheck.
-NEXT 2: Coordinate source candidate with CXI decodedPTS loader;new descriptor+explicit6301lease before paired/native legal-action/status capture;no diagnostic doubleoffset.
+NEXT 1: Send narrow source candidate toCXI;prepare fresh label+legalstatus capture using new source/index and explicit6301lease,diagnosticdy0.
+NEXT 2: Independently audit forthcoming decodedPTS loaderGPU evidence;no candidate installation/result yet.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push996c888ef;GREENv5-m1.15@59f5f3c57 merged;geometry receipt checkpoint pending;production registryempty.
+Last confirmed push0bcc07e53;GREENv5-m1.15@59f5f3c57 merged;sourcecandidate checkpointpending;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T13:53:56Z app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 Jobs:none;6301/timing RELEASED13:48:47Z,CXIACK13:51:22Z;refresh candidate before any capture.

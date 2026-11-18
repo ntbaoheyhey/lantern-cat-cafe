@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-18T13:56:31.974997+00:00",
+  "baseCommit": "0bcc07e53f96248030a57c95a3adc01aca8f91d9",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "ffeb33801e1b66aa255a71104d863fad871a41a3da80b085c9923d2980cc14c0"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene-clover-hud.test.ts",
+      "sha256": "bed53d8a9ecadb62dff13d747a269395b181d58432fe37c14990d65b74efc794"
+    }
+  ],
+  "behavior": "Only prepared commissioned Mochi/Clover in formation: existing authored hpAnchor, Clover +5 CSSpx. Other routing unchanged.",
+  "geometryReceipt": "M-authored-media-label-geometry-R1.json",
+  "validation": {
+    "focusedFiles": 5,
+    "focusedTestsPassed": 25,
+    "typecheckExit": 0,
+    "logs": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/authored-label-r1-tests.log",
+        "sha256": "57d33ea65223045d952223760d3253521e8843f867a93d6e8cbced273d3cf0d2"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/authored-label-r1-typecheck.log",
+        "sha256": "d44be8e88f77a369daa08b8242839b4504f901af4a10846ec9243da87e6fba40"
+      }
+    ]
+  },
+  "sootScope": {
+    "modifiedSootPaths": [],
+    "designerIdleBodyGateUnchanged": true,
+    "guard": "/** Only a successfully prepared commissioned media body opts out of legacy motion. */\nexport function hasDesignerIdleBody(asset:string,actor:object){\n return (asset==='mochi'||asset==='clover')&&'designerIdle' in actor&&actor.designerIdle===true;\n}\n"
+  },
+  "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+  "productionAcceptance": false,
+  "pending": [
+    "fresh judge artifact and explicit capture lease",
+    "native paused failures and fresh heldout paint attribution",
+    "legal actions and expanded-status layout",
+    "decoded-PTS loader candidate audit"
+  ]
+}
