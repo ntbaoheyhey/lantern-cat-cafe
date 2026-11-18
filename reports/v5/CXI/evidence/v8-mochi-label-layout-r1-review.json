@@ -1,0 +1,45 @@
+{
+  "utc": "2026-11-18T17:22:17.850Z",
+  "claim": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/layout.json",
+    "sha256": "874a1f72f6de44084c8c3f0b942b4d45c53999a246cd65124123d2964920f66d"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/report.json",
+    "sha256": "30156284c3577de5ef03de9d83090f59a02c3460fd4c72ce2d4bb40c5a263f1e"
+  },
+  "source": {
+    "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+    "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "auditor": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/v5int/audit-mochi-label-layout.mjs",
+    "sha256": "7f3593e12854530087f6fb3291674a50cb0f39f31023ebaafee0f049e683d22b"
+  },
+  "summary": {
+    "samples": 176,
+    "candidateSamples": 88,
+    "maxReplayError": 0.015316532490118107,
+    "candidateGeometryFailures": 86,
+    "candidateAssociationFailures": 6,
+    "pairedFailures": 0
+  },
+  "pairedComparisons": 10,
+  "candidateMaxDrift": 31.958607166011195,
+  "candidateMinGap": 1.628043175581638,
+  "candidateCollisionOwners": [
+    "clover"
+  ],
+  "numericAudit": "PASS",
+  "proposalDisposition": "REJECT",
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Bounds and replay audit only; shadow paint and perceptual label ownership remain separate.",
+    "Fresh development population includes existing native Clover; do not pool with R7 dual-media.",
+    "No source proposal applied; strict pixel threshold0 and2pxguard retained."
+  ]
+}

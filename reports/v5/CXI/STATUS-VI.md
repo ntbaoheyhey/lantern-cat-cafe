@@ -60,3 +60,5 @@ Hiện tại 2026-11-18T17:10:54.687921+00:00: bản xanh vẫn v5-m1.15. Previe
 2026-11-18T14:08:00.189344+00:00 — R7 đã cài,3.250web đạt;nhãn mới đang kiểm tra browser theo leaseCXV. Bản phát hành vẫnv5-m1.15;Mochi/Clover chưa đăng ký vì cổng art còn mở.
 
 2026-11-18T14:16:12.501064+00:00 — R7:8skill hợp lệ/52mốc đạt,12ảnh mới đo và4ảnh xem một lần. Nhãn vẫn chạm17pixel tại pose giữ riêng;status stress208/69/74pixel. Khôngpháthành media;native9vẫnv5-m1.15.
+
+2026-11-18T17:22:53.556032+00:00: Đã kiểm tra 300 khung Mochi và xem 3 ảnh mới đúng một lần: hình dáng khớp ở cùng chiều cao227px, không còn banner che. Chỉ chấp nhận bằng chứng so sánh; chưa chấp nhận viền/halo, nhãn hay hiệu năng laptop. Kiểm tra độc lập200ảnh/6400trạng thái: cả20đối chứng màu vẫn thất bại; phương án hạ nhãn xung đột Clover86/88mẫu, không áp dụng. AGS có30mốc PTS đúng nhưng QA và nghiên cứu chưa đủ. Bản xanh vẫn v5-m1.15.

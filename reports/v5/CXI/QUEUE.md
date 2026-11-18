@@ -56,3 +56,6 @@ M-I2 CONTROLS AUDITED:50hashes/1700statechecks/160pixelstats;untouched/sham exac
 AGS573 REDO config-only/blankPTS/no newwork;T-CXI14 PTSfieldstudy assigned,keepQA+M5OPEN.
 
 M-I2 MOCHI IDLE REVIEW 2026-11-18T17:19:49.603790+00:00:300hashes/PTS/root/bannerPASS,227pxheight;3freshpreviewsviewedonce. PosecomparisonACCEPTonly;labelcrop/alpha/performance limits retained. CXV579lowerproposalREJECT;20caseauditNEXT.
+
+M-I2 CONTROL/LAYOUT AUDIT 2026-11-18T17:22:53.556032+00:00:200hashes/6400states/640counts exact;20RGBfail;176layoutsreplayed,86/88Cloverconflicts,6associationfails. LowerproposalREJECT.
+AGS581 PARTIAL ACCEPT30PTS;T14command/rawJSON/EN+ZHsources missing;T13/M5/T15 remainOPEN. Profilingstudy active since17:15:34Z,implementation after17:30:34Z.
