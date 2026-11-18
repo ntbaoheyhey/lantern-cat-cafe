@@ -22,3 +22,7 @@ AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
 }
 
 Node.js v24.22.2
+
+- T-M5 (Trial Metrics - Retry 2):
+  - Error: AssertionError [ERR_ASSERTION]: offset mismatch (expected [0,20000,30000,40000]).
+  - Status: OPEN (Blocker: Missing compatible REGISTERED-METHOD.json for short-gop-r1).
