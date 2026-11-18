@@ -1,0 +1,29 @@
+{
+  "utc": "2026-11-18T14:20:14.292001+00:00",
+  "delivery": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-neighbor-geometry-R1.json",
+    "sha256": "25efe58309b389942192e89734ffd98318dd12a4c4652a08e082d73e2d5e5d81"
+  },
+  "verified": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-neighbor-geometry-R1-preregistration.json",
+      "sha256": "8efed4f919358cafe6594709a117c9f673baeb14900c2e829809e1495da51018"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/assess-label-neighbor-geometry.mjs",
+      "sha256": "9a463a2ca6388b3398a8ea7b8a233b3203f7d8a55a3752cf2fc8be087c80ae74"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-neighbor-geometry-r1/rows.json",
+      "sha256": "c759004ed59a62d43989968d46c8cc190e38841b2bc6c6018cac4d8587a2501b"
+    }
+  ],
+  "cases": 18,
+  "recomputedDisplacements": 36,
+  "maxDisplacementCSSpx": 159.68009644851494,
+  "reportedAssociationRiskCount": 4,
+  "decision": "RETAIN REJECT full-body rectangle placement; large moves/side changes lack visual association acceptance. Study only, no source imported.",
+  "scope": "Displacement arithmetic and identities checked; solver and collision results not independently rerun.",
+  "imagesViewed": 0,
+  "productionAcceptance": false
+}
