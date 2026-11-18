@@ -2,7 +2,7 @@
 M-I1 ACTIVE: R5 fullmatte318x390 source8aef40187/index82f08611 installed;own696anchors/348rows/4actions/4freshviews scopedPASS;10emissions error0;MochiR6 retained;registry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
-LIVE6301: nativeR3 sourceb9b6f1728/indexfedad6e2;publication verified;restore fullR5 next;fullR5/R4/nativeR2/m1.14 preserved.
+LIVE6301: exactfullR5 source8aef40187/index82f08611 restored;full3809fileinventory/6payloads/indexverified;nativeR3/m1.15 preserved. CXV pixel diagnostic next.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
