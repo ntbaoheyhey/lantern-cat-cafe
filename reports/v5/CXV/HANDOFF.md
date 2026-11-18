@@ -4,12 +4,12 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;deskt
 NEXT 1: Read CXI newlease response;run fixed fullpaint pilot via run-media-action-labels.py with M-clover-fullpaint-native-R1-preregistration.json.
 NEXT 2: Run verify-fixed-label-layout.mjs and verify-label-fullpaint.py;full16 then idle10/status5 and fresh association before sourceedit.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed pushed565a96fee;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+Last confirmed pushed751847fdf;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T16:02Z;preserve unchanged.
 Jobs:none;CXI full16browserreleased15:42:58Z;no CXVlease. OwnpilotR2one250mssheet reviewedonce;all old failures retained.
 Authored capture work/v5/CXV/batch-m/clover-authored-native-r1-123433:343rows/4legalactions/16PNGs;headdecoded.727542,paw.319577CSSpx.
-AGVactive2:T-M1 independent fullcycle sleeve-bounded visiblepaw;T-M2 resumed primary L2/L4 study;T-CXI-11CANCELLED ownerbytecapremoved.
+AGVactive2:T-M1 blocked on independent sourcehand annotation,origin-only rejected;T-M2 values corroborated,URLs/3ZH+3EN open;budgettaskCANCELLED.
 R5head24/24freshheldouts+actualadapterPASS;native343samples maxcontinuous.011724/decoded.727542CSSpx;scopedPASS.
 R6paw24/24freshheldouts unchangedR4curve+actualadapterPASS;native343samples maxcontinuous.000572/decoded.319577CSSpx;scopedPASS.
 R4combined REJECT eye11/12;originalfailure retained;R6 is separate paw-only validation,no refit.
