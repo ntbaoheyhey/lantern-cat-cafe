@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 const local=process.env.CXV_FULL_LOCAL==='1';
-const fixturePath=local?'./production-candidate-fixture.mjs':'/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs';
+const fixturePath=process.env.CXV_FULL_FIXTURE??(local?'./production-candidate-fixture.mjs':'/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs');
 const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(fixturePath);
 const root=resolve(import.meta.dirname,'../..');
 const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpuRate),'Full-battle CPU rate must be1 or4');
@@ -21,8 +21,9 @@ const hash=data=>createHash('sha256').update(data).digest('hex');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);};
 const board=await readFile('/Users/bao/taskbar-hero-mailbox/BOARD.md','utf8');
 const artifactIdentity=runtimeEvidence();
-const servedSource=local?artifactIdentity.buildSource:board.match(/Currently served candidate:([a-f0-9]{40})/)[1];
-const expectedIndex=local?artifactIdentity.indexSha256:board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)[1];
+const servedSource=local?artifactIdentity.buildSource:(process.env.CXV_SERVED_SOURCE??board.match(/Currently served candidate:([a-f0-9]{40})/)?.[1]);
+const expectedIndex=local?artifactIdentity.indexSha256:(process.env.CXV_EXPECTED_INDEX??board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)?.[1]);
+assert(/^[a-f0-9]{40}$/.test(servedSource)&&/^[a-f0-9]{64}$/.test(expectedIndex),'Explicit valid production source/index identity required');
 assert.equal(runtimeEvidence().indexSha256,expectedIndex);
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),servedSource,indexSha256:expectedIndex,
  harnessSha256:hash(await readFile(import.meta.filename)),productionFixtureSha256:hash(await readFile(local?resolve(root,'tools/v5vfx/production-candidate-fixture.mjs'):fixturePath)),local,artifactIdentity,
