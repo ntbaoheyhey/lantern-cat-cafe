@@ -154,8 +154,12 @@ def main():
         controls = {}
         for name,left,right in [('baselineRepeat','baseline','baseline-repeat'),('hiddenRepeat','labels-hidden','labels-hidden-repeat'),('restored','baseline','restored')]:
             controls[name] = stats(difference(images[left],images[right]) > 0)
-            assert controls[name] == delivered['controls'][name] and controls[name]['count'] == 0
-        assert np.array_equal(pre['restored'],images['baseline'])
+            assert controls[name] == delivered['controls'][name]
+        valid = all(control['count'] == 0 for control in controls.values())
+        assert valid == delivered['valid']
+        pre_restored_delta = difference(pre['restored'],images['baseline']) > 0
+        if valid:
+            assert not pre_restored_delta.any()
         # The first conceal is the recorded precondition, not a controlled sample.
         # Its top-HUD raster may differ even when all later full-image controls
         # are exact. Preserve that difference separately, never erase or reuse it.
@@ -184,27 +188,34 @@ def main():
                     if threshold == 0:
                         union |= pixels
         assert stats(union) == delivered['commissionedLabelsAgainstAllFourBodies']
-        assert delivered['valid'] and delivered['complete'] and delivered['decodedExact']
+        assert delivered['complete'] and delivered['decodedExact']
         initial_delta = difference(pre['initial'],pre['restored']) > 0
         pre_regions = {label['id']:{name:int((initial_delta & region_mask(rect)).sum()) for name,rect in label['regions'].items() if rect is not None} for label in initial['labels'] if label['id'] in MEDIA}
         rows.append(dict(key=case['key'],frames=case['expectedFrames'],controls=controls,paint=stats(union),nonzero=hits,
+                         attributionValid=valid,paintCountsAcceptedAsAttribution=valid,
                          hudPortraitPause=hud_pause,preconditionHiddenVsControlled=stats(pre_hidden_delta),
+                         preconditionRestoredVsControlled=stats(pre_restored_delta),
                          preconditionChangedPixels=int(initial_delta.sum()),preconditionRegions=pre_regions))
-    assert d['attributionValid'] and d['sampledPaintClear'] == all(row['paint']['count']==0 for row in rows)
+    all_valid = all(row['attributionValid'] for row in rows)
+    assert d['attributionValid'] == all_valid
+    assert d['sampledPaintClear'] == (all_valid and all(row['paint']['count']==0 for row in rows))
     result = dict(utc=datetime.now(timezone.utc).isoformat(),delivery=dict(path=str(args.delivery),sha256=sha(args.delivery)),
                   rulesAudit=dict(path=str(args.rules_audit),sha256=sha(args.rules_audit)),toolSha256=sha(__file__),helperSha256=sha(helper_path),
                   sourceCommit=raw['sourceCommit'],indexSha256=raw['indexSha256'],url=raw['url'],viewport=raw['viewport'],
                   verifiedHashes=len(hashes),verifiedHashDigest=hashlib.sha256(json.dumps(hashes,sort_keys=True).encode()).hexdigest(),
                   actions=len(expected),geometryRows=len(expected_rows),geometryFailures=geometries,
                   stateSnapshots=state_checks,independentCountComparisons=comparisons,cases=rows,
-                  numericalEvidenceAccepted=True,sampledPaintClear=d['sampledPaintClear'],productionAcceptance=False,imagesViewed=0,
+                  numericalEvidenceAccepted=True,attributionValidCases=sum(row['attributionValid'] for row in rows),
+                  attributionInvalidCases=[row['key'] for row in rows if not row['attributionValid']],
+                  completeAttributionValid=all_valid,sampledPaintClear=d['sampledPaintClear'],productionAcceptance=False,imagesViewed=0,
                   limits=['Seeded legal actions, not natural reachability or every action phase.',
                           'Contact-time M/C label paint versus four isolated body contributions; native shadows and separate VFX excluded.',
                           'Post-conceal raster controls; initial paint discontinuities retained separately.',
+                          'Counts with failed full-image controls are reproduced only as arithmetic, never accepted as body attribution or clearance.',
                           'Unchanged R7 application with a temporary label offset; no actual source candidate acceptance.',
                           'No anatomy, fringe/halo, seam or ordinary-laptop acceptance.'])
     args.output.write_text(json.dumps(result,indent=2)+'\n')
-    print(json.dumps({k:result[k] for k in ('verifiedHashes','actions','geometryRows','stateSnapshots','independentCountComparisons','numericalEvidenceAccepted','sampledPaintClear')}))
+    print(json.dumps({k:result[k] for k in ('verifiedHashes','actions','geometryRows','stateSnapshots','independentCountComparisons','numericalEvidenceAccepted','attributionValidCases','attributionInvalidCases','sampledPaintClear')}))
 
 
 if __name__ == '__main__':
