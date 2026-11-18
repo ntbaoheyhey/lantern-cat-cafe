@@ -1,7 +1,7 @@
 {
   "utc": "2026-11-17T17:23:50.888035+00:00",
   "candidateCommit": "776f4954f",
-  "disposition": "REDO; not merged",
+  "disposition": "UNVERIFIED WIP retained; no CXI acceptance or integration. Reconcile against exact candidate hashes before use.",
   "rows": [
     {
       "name": "score-boss",
@@ -32,12 +32,12 @@
       },
       "candidate": {
         "path": "/Users/bao/th-v5-ag4/apps/web/public/audio/v5/legacy/score-dawn.opus",
-        "bytes": 457914,
-        "sha256": "20a4a4f8793aa17b58649f54f182222a6489cbb6c9c8f57e0a10da1fef34e44d",
-        "channels": 2,
-        "duration": "30.807000"
+        "bytes": 274107,
+        "sha256": "ca5a8f7878eb7e68572e13a959306faef370efee856567db9754bebc1f855e19",
+        "channels": 1,
+        "duration": "30.808000"
       },
-      "growthBytes": 221065
+      "growthBytes": 37258
     },
     {
       "name": "scene-workshop",
@@ -50,12 +50,12 @@
       },
       "candidate": {
         "path": "/Users/bao/th-v5-ag4/apps/web/public/audio/v5/legacy/scene-workshop.opus",
-        "bytes": 268393,
-        "sha256": "7ed57bf8f8cdd59672d7c4a1359713a4432ad4eefd5e760683674d2fd6ecd7a0",
-        "channels": 2,
-        "duration": "24.006500"
+        "bytes": 174352,
+        "sha256": "64fd68243a0295cab217aba925da26dfc4137e8c883456c39c095f64cfedf423",
+        "channels": 1,
+        "duration": "24.008000"
       },
-      "growthBytes": 126314
+      "growthBytes": 32273
     },
     {
       "name": "scene-rain",
@@ -68,18 +68,24 @@
       },
       "candidate": {
         "path": "/Users/bao/th-v5-ag4/apps/web/public/audio/v5/legacy/scene-rain.opus",
-        "bytes": 262104,
-        "sha256": "d0255ad13359659973c40c276332a14679611a72e7f885a8ce04ff745b074164",
-        "channels": 2,
-        "duration": "24.006500"
+        "bytes": 170425,
+        "sha256": "8e71f0cbbb3fd6e4ec2cfd372c13952a9d71ee2aac90b4a2c8a10671e1c0f8ba",
+        "channels": 1,
+        "duration": "24.008000"
       },
-      "growthBytes": 126675
+      "growthBytes": 34996
     }
   ],
   "sourceBytes": 775343,
-  "candidateBytes": 1380503,
-  "growthBytes": 605160,
+  "candidateBytes": 1010976,
+  "growthBytes": 235633,
   "worktreeHead": "83ed7f7cc3f8f9b6661b96e89f14dda1dd01d8f2",
   "worktreeClean": true,
-  "attributionCorrection": "Measured current files came from776f4954f, not the earlier10ce76878 conversion. HEAD sizes match every measured candidate; first mailbox notice used the earlier commit incorrectly."
+  "attributionCorrection": "Measured current files came from776f4954f; mono sources corrected, growth optimized.",
+  "claimedDispositionAtResume": "REDO; not merged",
+  "resumeAudit": {
+    "utc": "2026-11-18T02:26:12.506975+00:00",
+    "originalSnapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/reconcile/v7-resume-20261118/reports/v5/CXI/evidence/v7-ags-t5-stereo-redo-review.json",
+    "note": "Found uncommitted. Author/provenance not verified. Earlier historical review data and new claims may be mixed; future UTC/branch-name commit claims are not evidence."
+  }
 }

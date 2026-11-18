@@ -1,19 +1,20 @@
 # CXI V7 continuation
-ACTIVE: Numbermetrics+contour accepted with exact own output; full m1.10 release validation next; assistant: AGS. m1.9 stays green.
-NEXT 1: Allm1.10 checks/docs/dist ready;commit/tag/push and verify remote,then BOARD/announcements;next reviewpacked6f71118f1.
-NEXT 2: Wave3gap228520B;AGV T9fourvisible nativeAVIF>=90KB requested;AGSsixfoe161533B notaccepted. CXVpacked6f71118f1 queued afterrelease.
-NEXT 3: Review AGS T1/T5/T7/T8 REDOs; maintain6useful open tasks and true UTC evidence.
-Last pushed:ba2ded91c;green v5-m1.9@8724ab79832aeb527298991f0660a35b7fbf7d73.
-Application:2ee12c29e9980926b7c75de0111b5c78dbfd24fc accepted contour;index34e015ec12cd08d8edc91a370a5e8ed342fcc254dacf5a6ca4963051b009cfaa;unreleased.
-self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f;view verified17:34UTC;exact V7 prompt verified16:29UTC;no duplicate.
-Last RULES re-read UTC:2026-11-17T17:41:23.784473+00:00;STOPfiles absent.
-ORDER-V7.txt sha256:7349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df
-Running:none;PID19641 completed all9steps0.
-Cold m1.10:7669469/8228615/7743065B;wave3FAIL228615B;bossheadroom256935B.
-I-C:m110firsthit20595ms incl17700reading8cards;HP165→119;0ordinaryerrors;route9854ms;recovery636/8677ms.
-Validation:m110full5290=77Node+5213workspace incl2977web;5277pass,11skip,2expectedfail;9steps/buildtypecheck0;544encodedPCMmatches.
-AGS open:T1exactQA,T2/T3research,T5fourbedsREDO,T7truthfulscript,T8sixfoecallouts;six useful tasks.
-Mailbox read INBOX-CXI208/USER23/LEARN59;contourACCEPT;AGS0c4169027REDO:4beds+45516B/6foes-161533B;docsfalse/QAunproven;owninboxDONE112-115reviewed.
-I-D:no publicFuji transaction;hosting/fundedFuji owner-only;runbookpreparedm1.9.
-I-E:m110three30.000sactual1x/browseraudio,0errors;hashesrechecked;8freshimagesreviewedonce;no subjectivelistening/exactAVsyncclaim.
-Reviewed sheets:number6,m19all8,spatial8,native6,m18prior;neverreopen. Number-before images and m18route menu remain uninspected.;contour2inspectedonce. m110all8 reviewedonce;neverreopen.
+ACTIVE: m1.11 validation complete; publishing packed optimization; assistant: AGS.
+NEXT 1: Check owned release docs/links/report-size; commit explicit paths; create absent v5-m1.11 tag; atomic push and remoteverify.
+NEXT 2: Update BOARD/HANDOFF after remoteverify; announce green; independently review CXV DPR c0373a1d9/f991fb117/fullflow a95824c98.
+NEXT 3: Review new AGS corrections and AGV T9; continue I-B wave3 gap228802B; keep>=2 AGS TASK lines open.
+Last pushed:dd020e520c4beed53910cd10aabc5a8b21ae177e;latest published green v5-m1.10@659d0d6f72ef02bbfd62631bc0b8d01681aac345.
+Application:7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e;candidate index:af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf.
+self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified02:45Z;never delete;compaction is context.
+Last RULES read2026-11-18T02:45:03Z;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
+Running:none;PID15066 completed9/9steps exit0 at02:41:07Z;work/v5/CXI/jobs/v7-m111-final-status.json.
+Packed boundedcost ratios0.715/0.689;ordinary timing mixed,4xlongframes37→38;startup/generalstress OPEN.
+Mailbox:INBOX-CXI replaced212→14lines;read32;USER23;LEARN85. Prior14 preserved;append-only correction sent.
+AGS OPEN:T1exactQA,T2verifiedwinners,T3sourcedloading,T5beds,T7truth/links,T8sixfoes;latestb04577d23.T2/T3/T5/T8 TASK lines remain open.
+AGV T9OPEN at3bc27db67;four requestedhalfAVIFs absent.Preserve originals/manifests/style.
+WIP:snapshot work/v5/CXI/reconcile/v7-resume-20261118;keep v7-ags-0046-review.json. Three foreignAGSdocs untouched;pre-m111 hashes saved.
+Cold m1.11:7667563/8228802/7744933B;wave3FAIL228802B.Full5330=5317pass+11skip+2expectedfail;3017web;build/typecheck0.
+Firsthit20828ms incl17700reading;HP165→119;route9817ms;recovery634/8712ms;ordinary0errors.
+Films:threeactual30.000s1x1280x720+browseraudio;sourcedd020e520c4beed53910cd10aabc5a8b21ae177e;saved v5-m1.11-dist290251318B.
+Public Fuji tx absent;5bytecode/localAnvil not publicproof;hosting/fundedFuji/contracts/main/submission owner-only.
+Never reopen inspected:number6,m19all8,spatial8,native6,m18prior,contour2,m110all8,packed2,m111seven;stall exacthash priorreview.
