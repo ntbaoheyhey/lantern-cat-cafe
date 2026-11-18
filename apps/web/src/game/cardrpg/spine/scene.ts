@@ -37,6 +37,7 @@ import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {hasDesignerIdleBody} from './designer-idle-body';
 import {animationCues} from './events';
 import {LIVING_CAT_SKILL_EVENTS} from '../../rig/living-cast';
+import {isPankoLivingClip} from '../../rig/panko-living';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
@@ -349,6 +350,9 @@ export class SpineScene {
    const look=lookHome?(lookHome.x-home.point.x)/Math.max(1,width*.3)*spriteFacing(actor.unit.nativeFacing,unit.side):0;
    const critAge=frame&&unit.id===plan?.actorId&&plan.events.some(e=>e.actorId===unit.id&&e.type==='damage'&&e.critical)?(frame.elapsed-plan.beats[2]!.start)/1000:-1;
    entry.craftPose?.deform(name,at,view.reducedMotion,drawingHitAge,worldTime+phaseOffset,look,critAge);
+   // Panko already plants both feet inside its periodic drawing deformation.
+   // Preserve the original basic/ultimate choreography outside living clips.
+   const plantedPanko=entry.asset==='panko'&&!!entry.craftPose&&isPankoLivingClip(name);
    entry.craftDeath?.setTime(name==='ko'?at:null,view.reducedMotion);
    if(entry.craftDeath&&name==='ko')actor.root.visible=at<.6;
    let rootPose=neutralPose(),reaction=neutralPose();
@@ -363,7 +367,7 @@ export class SpineScene {
     reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
-    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun')&&!hasDesignerIdleBody(entry.asset,actor)&&!actor.mesh?.livingCat)rootPose=idlePose(worldTime,unit.id);
+    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun')&&!hasDesignerIdleBody(entry.asset,actor)&&!actor.mesh?.livingCat&&!plantedPanko)rootPose=idlePose(worldTime,unit.id);
     // A hit hold must also stop the recipient's brace/idle root, otherwise
     // their independent motion adds displacement to the bounded recoil.
     if(damageAge!==undefined&&damageAge>=0&&damageAge<.3)rootPose=neutralPose();
@@ -418,7 +422,7 @@ export class SpineScene {
    actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
    actor.root.updateMatrixWorld(true);
    const opaque=opaqueWorldBounds(actor.root);
-   if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2&&!actor.mesh?.livingCat){
+   if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2&&!actor.mesh?.livingCat&&!plantedPanko){
     const target=core.world.height*position.scale*arrival.sy;
     const factor=Math.max(target*.985,Math.min(target*1.015,opaque.height))/opaque.height;
     // Constrain size around the planted foot; preserve the authored pose shape.

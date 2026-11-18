@@ -2,9 +2,9 @@
 ACTIVE M-V2 native7 ready for capture; Panko legacy scene-root audit added; assistant: AGV; Mallow scopedREADY.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
 NEXT 1: After explicit new6310 browser grant, launch node tools/v5vfx/capture-native-cats.mjs detached;7cats sequential; measure/view fresh sheets once.
-NEXT 2: Panko world-foot/10s-root audit via tools/v5vfx/verify-panko-world.mjs; legacyidlePose analyticallynonperiodic; CXI ownprobe running.
+NEXT 2: Panko rootfix actualcapture via tools/v5vfx/verify-panko-world.mjs; pending explicitlease after CXI probe; basic/ult unchanged.
 NEXT 3: Native7 per-cat review/READY; M/C socketR3 hip+wrist+lantern valid,head/offHand unresolved; media still rejected byCXI.
-Last confirmed push 88317a5ce; socketR3 committed; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push f5a0ca1a0; Panko world audit committed; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min exactV8 verified05:30Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; preserved.
 Running Vite21525/6310 only; MallowR2 PID78126 completed05:30:59Z; log work/v5/CXV/jobs/m-mallow-cast-r2.log; browser RELEASED.
