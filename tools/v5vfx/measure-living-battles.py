@@ -1,7 +1,10 @@
 """Verify natural-rule parity and measure production evidence before visual review."""
 from pathlib import Path
-import json,hashlib,datetime,math,subprocess,struct,collections
+import json,hashlib,datetime,math,subprocess,struct,collections,sys
 root=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(root/'work/v5/CXV/python'))
+import cv2,numpy as np
+cv2.setNumThreads(2)
 base=root/'work/v5/CXV/films/M-native-nine-full-battle-R1'
 out=root/'reports/v5/CXV/M-native-nine-full-battle-R1.json'
 assert not out.exists(),'Never overwrite finalized evidence'
@@ -10,6 +13,8 @@ stable=lambda v:json.dumps(v,sort_keys=True,separators=(',',':'))
 stats=lambda a:dict(samples=len(a),median=sorted(a)[len(a)//2] if a else None,p95=sorted(a)[min(len(a)-1,math.floor(.95*len(a)))] if a else None,max=max(a) if a else None)
 expected={'panko','mallow','sorrel','biscuit','inkcap','cinnamon','brioche','velvet','marigold'}
 report={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'groups':[],'reviewed':False,'pass':False,'scope':'Native9 natural seeded battles on current production at1280x720, normal/reduced motion, local1x descriptive frame intervals. Not calibrated laptop coverage, no optimization comparison, no cold-start or Mochi/Clover media acceptance.'}
+provenance=base/'harness-provenance/provenance.json'
+report['harnessProvenance']={'path':str(provenance),'sha256':sha(provenance),'detail':json.loads(provenance.read_text())}
 covered=set()
 for group in range(3):
     path=base/f'group-{group}'/'report.json';raw=json.loads(path.read_text())
@@ -38,7 +43,8 @@ for group in range(3):
         g['runs'].append({'mode':run['mode'],'result':run['final']['result'],'naturalResultMs':run['final']['wallMs'],'actions':run['actions'],'ultimates':ultimates,'logSha256':hashlib.sha256(stable(timeline['log']).encode()).hexdigest(),'frameMsWithoutCaptureWindows':stats([f['frameMs'] for f in clean]),'submissionMsWithoutCaptureWindows':stats([f['cpuMs'] for f in clean]),'excludedIntervals':len(timeline['frames'])-len(clean),'intervalsOver50p5ms':sum(f['frameMs']>50.5 for f in clean),'timeline':{'path':str(path.parent/run['mode']/'timeline.json'),'sha256':sha(path.parent/run['mode']/'timeline.json')},'errors':run['errors'],'blockedRequests':run['blockedRequests']})
         for c in run['captures']:
             p=Path(c['path']);data=p.read_bytes();assert struct.unpack('>II',data[16:24])==(1280,720)
-            g['captures'].append({'mode':run['mode'],'reason':c['reason'],'path':str(p),'sha256':sha(p),'dimensions':[1280,720],'utc':c['utc'],'bytes':len(data)})
+            im=cv2.imread(str(p));assert im.shape==(720,1280,3) and float(im.std())>10
+            g['captures'].append({'mode':run['mode'],'reason':c['reason'],'path':str(p),'sha256':sha(p),'dimensions':[1280,720],'utc':c['utc'],'bytes':len(data),'rgbMean':float(im.mean()),'rgbStdDev':float(im.std())})
         for part in range(2):
             images=run['captures'][part*4:part*4+4];dest=review/f'{run["mode"]}-{part}.jpg';assert not dest.exists()
             args=['ffmpeg','-v','error']

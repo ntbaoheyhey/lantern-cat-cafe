@@ -29,3 +29,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T06:21:50.274153+00:00 CXI đã nghiệm thu chuyển động 9 mèo native trên bản production; Soot giữ nguyên. Chẩn đoán CPU 32 trường hợp đạt, tối đa trung vị 0,038617 ms/pose; chưa kết luận FPS. Mochi/Clover, dung lượng và hiệu năng toàn trận còn mở.
 
 2026-11-18T06:26:31.921851+00:00 Clover: điểm hông và tay cầm ấm đã qua theo dõi 300 khung hình, xem mới 4 pha, đổi tọa độ 3000 lần sai số dưới 0,000001. Chưa đạt đầu/tay còn lại/điểm phát hiệu ứng và bản media cuối. Ảnh landing 63.006 B đạt dung lượng nhưng mờ chi tiết, đã yêu cầu AGV sửa.
+
+2026-11-18T06:42:43.917656+00:00 Đã kiểm tra 6 trận production của 9 mèo native: kết quả và chuỗi hành động khớp ở 2 chế độ, không lỗi; 48 ảnh đo, 12 ảnh xem đúng một lần. Khôi phục sổ 4 ảnh đã xem, không mở lại. Hiệu ứng Mallow/Sorrel/Cinnamon/Brioche che thân/đạo cụ; Biscuit có chồng lấn. Chưa nghiệm thu độ rõ hiệu ứng, media Mochi/Clover hoặc ngân sách.

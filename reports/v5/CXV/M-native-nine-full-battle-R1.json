@@ -1,0 +1,1270 @@
+{
+  "utc": "2026-11-18T06:36:42.971229+00:00",
+  "groups": [
+    {
+      "group": 0,
+      "roster": [
+        "mallow",
+        "sorrel",
+        "biscuit",
+        "inkcap"
+      ],
+      "source": "85cb62233d016faf5c5235ffe178408df1682af3",
+      "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T06:29:12.057Z",
+      "captureEnded": "2026-11-18T06:31:19.517Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/report.json",
+        "sha256": "0c424d2d40191a0f11da58491727e4b56c62385a1030d7d0aa33f1e7e9e16150"
+      },
+      "harnessSha256": "aef41ea2540e24023f041cb0680a7bc280c3363d7598dde3b9122b168cb70359",
+      "fixtureSha256": "ed383ba8cc2943003d4dddd51f5bda7d32d23d253cfe1ddb6ada3d83520a915e",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 58621.5,
+          "actions": 40,
+          "ultimates": {
+            "mallow": 3,
+            "sorrel": 3,
+            "biscuit": 3,
+            "inkcap": 2
+          },
+          "logSha256": "876f7ecd63dedd9a6490917a4d90c306aea28447491e10d3350af83c11755ffe",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3434,
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634,
+            "max": 50
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3434,
+            "median": 4.299999997019768,
+            "p95": 5.399999991059303,
+            "max": 49.29999999701977
+          },
+          "excludedIntervals": 70,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/timeline.json",
+            "sha256": "e6ebc4a880ad87b630c6b31520b2e2b73721675f35ae9f472a5e6265771aa4f7"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 58598.59999999404,
+          "actions": 40,
+          "ultimates": {
+            "mallow": 3,
+            "sorrel": 3,
+            "biscuit": 3,
+            "inkcap": 2
+          },
+          "logSha256": "876f7ecd63dedd9a6490917a4d90c306aea28447491e10d3350af83c11755ffe",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3439,
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634,
+            "max": 50
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3439,
+            "median": 4.299999997019768,
+            "p95": 5.0999999940395355,
+            "max": 46.099999994039536
+          },
+          "excludedIntervals": 65,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/timeline.json",
+            "sha256": "76f18cb7111ad79cf2e8e2d390e15b0ecc2f1fa8c8850011322d90e47758445d"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/00-opening.png",
+          "sha256": "91783cf0b1d89cbb9d431fe97b225f5e804a39788aa22f4b43697fcabfb53954",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:16.791Z",
+          "bytes": 1181907,
+          "rgbMean": 107.73844509548611,
+          "rgbStdDev": 46.36223446627776
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/01-status.png",
+          "sha256": "dda09a72edb23ba7011febe49df344f3e5068d1c1230e0c265d83032d31a0fc8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:20.076Z",
+          "bytes": 1173496,
+          "rgbMean": 115.28059534143519,
+          "rgbStdDev": 54.79621936270182
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/02-ultimate-mallow.png",
+          "sha256": "c2299539417123824b20357d9d3c8b1992600809a6b86c35a3828854b274ca79",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:24.759Z",
+          "bytes": 1136559,
+          "rgbMean": 152.36906358506945,
+          "rgbStdDev": 74.05623812046969
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-sorrel",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/03-ultimate-sorrel.png",
+          "sha256": "5f41726678ccb7985bc5f1585c48e72507451f26a0f3cb92d7605aee7fb32075",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:26.921Z",
+          "bytes": 1230849,
+          "rgbMean": 145.3885185185185,
+          "rgbStdDev": 63.77234480044527
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/04-ultimate-biscuit.png",
+          "sha256": "67145f5e10ab7362c65a6d4a29e5d96af7014b8f07c46c83848680e44e843877",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:29.290Z",
+          "bytes": 1289993,
+          "rgbMean": 150.165869140625,
+          "rgbStdDev": 67.86095297657866
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "5788583a22f9992677dd1b498d2d2b60d0349426ce5fc3466af9a4704bdcc9b9",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:29:32.420Z",
+          "bytes": 1309090,
+          "rgbMean": 106.8012427662037,
+          "rgbStdDev": 47.87480630812017
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/06-result-ready.png",
+          "sha256": "6669cf19f962f0cee8a2171989e95ac0f02970b7aa45446195dc11e99caba77f",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:15.845Z",
+          "bytes": 919756,
+          "rgbMean": 50.288991608796294,
+          "rgbStdDev": 34.94097423669387
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/normal/07-result-later.png",
+          "sha256": "b45309d99f307450f3a75559752065fcbcd7aef1779d4aee6f6bdc835af25943",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:16.721Z",
+          "bytes": 940162,
+          "rgbMean": 52.427757523148145,
+          "rgbStdDev": 39.76341658522725
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/00-opening.png",
+          "sha256": "91783cf0b1d89cbb9d431fe97b225f5e804a39788aa22f4b43697fcabfb53954",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:19.322Z",
+          "bytes": 1181907,
+          "rgbMean": 107.73844509548611,
+          "rgbStdDev": 46.36223446627776
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/01-status.png",
+          "sha256": "808be461eaf434e755120b6778f4f7757a3bfdf98f9dbd735191a418853ac4d9",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:22.635Z",
+          "bytes": 1174815,
+          "rgbMean": 111.31060510706018,
+          "rgbStdDev": 50.74988578231755
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/02-ultimate-mallow.png",
+          "sha256": "11c123493e6d66f41159b043e362d5c75922e9308d0505c55bfb98b73c69ae02",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:27.154Z",
+          "bytes": 1212660,
+          "rgbMean": 132.09092954282409,
+          "rgbStdDev": 66.78931702728381
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-sorrel",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/03-ultimate-sorrel.png",
+          "sha256": "e73a3d48e6b1b4a96cbe1d01d3a892388d6384256224002e4d1459492fd90221",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:29.529Z",
+          "bytes": 1290454,
+          "rgbMean": 132.06918800636575,
+          "rgbStdDev": 51.47119089802884
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/04-ultimate-biscuit.png",
+          "sha256": "302edc3af9e7412312013d15e9ec2d6ba85f283c6bc45c071af1fc858a02fed4",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:31.902Z",
+          "bytes": 1314372,
+          "rgbMean": 131.11582103587963,
+          "rgbStdDev": 60.09855805466862
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "8c1622e27f633ae46758043d653afa75a1a026ca47c49e54f015e360d945775f",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:30:35.038Z",
+          "bytes": 1294440,
+          "rgbMean": 108.21387405960648,
+          "rgbStdDev": 48.484587041216976
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/06-result-ready.png",
+          "sha256": "6277a2443341f1a2f866056cbba02a331bb5966f4dc55752479c7ca9e4ea8015",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:18.361Z",
+          "bytes": 935220,
+          "rgbMean": 52.326693793402775,
+          "rgbStdDev": 39.61274766540982
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/reduced/07-result-later.png",
+          "sha256": "6277a2443341f1a2f866056cbba02a331bb5966f4dc55752479c7ca9e4ea8015",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:19.222Z",
+          "bytes": 935220,
+          "rgbMean": 52.326693793402775,
+          "rgbStdDev": 39.61274766540982
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/review/normal-0.jpg",
+          "sha256": "6dd256be37ac376d8be1e7390d5216fd4ac206d7b27bd451921eaeb461725e0c",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 206328,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-mallow",
+            "ultimate-sorrel"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:37:42.164855+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/review/normal-1.jpg",
+          "sha256": "d974945142bfe57624210b863d02bfc304a3c82bce177b632d9ce62b778dd95c",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 227476,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:37:42.165030+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/review/reduced-0.jpg",
+          "sha256": "90c94981a6badf0d5f9484f662b06391ffb10e6bb2143771a1bf1e85d438b512",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 208244,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-mallow",
+            "ultimate-sorrel"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:37:42.165031+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-0/review/reduced-1.jpg",
+          "sha256": "486b77f38ed094536b3886351f73855c19115afd52399e7f9d9675846b440576",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 228180,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:37:42.165033+00:00"
+        }
+      ],
+      "visualAssessment": "Four sheets reviewed once: all four native cats present at stable scale, feet/props coherent, HUD/numbers/next buttons readable, four native victory actors visible. Strong normal flame/heal bursts obscure body detail at contact; reduced bursts smaller. Native motion/renderer scope passes; whole-effects occlusion gate remains open.",
+      "readabilityConcern": "Normal group0 first sheet lower panels: field flame and healing highlights obscure portions of party/body detail. Measure exact skill and footprint before any change."
+    },
+    {
+      "group": 1,
+      "roster": [
+        "cinnamon",
+        "brioche",
+        "velvet",
+        "marigold"
+      ],
+      "source": "85cb62233d016faf5c5235ffe178408df1682af3",
+      "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T06:31:19.810Z",
+      "captureEnded": "2026-11-18T06:34:08.360Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/report.json",
+        "sha256": "ef2e49ea2887e2c6168ca018c009c8eed7ab434b1143795ac6b52103d6edc29e"
+      },
+      "harnessSha256": "aef41ea2540e24023f041cb0680a7bc280c3363d7598dde3b9122b168cb70359",
+      "fixtureSha256": "8eaaff58fb990a2d6d07d9133a9b7c4c0c33568b75c90b5ce2d3e68b0c680f50",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 80179.70000000298,
+          "actions": 54,
+          "ultimates": {
+            "cinnamon": 4,
+            "brioche": 3,
+            "velvet": 4,
+            "marigold": 2
+          },
+          "logSha256": "59ff19bcd1ab7d39d5cd8a7dfe31e17fb40f7bfa31f992f411d8ef6325b43a9d",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 4736,
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634,
+            "max": 33.30000000000109
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 4736,
+            "median": 4.199999988079071,
+            "p95": 5,
+            "max": 35.20000000298023
+          },
+          "excludedIntervals": 64,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/timeline.json",
+            "sha256": "e6130d0a3e0980a06f17f70af1bb7707bce2f152c56aa69218c90bb306b28d96"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 80108.70000000298,
+          "actions": 54,
+          "ultimates": {
+            "cinnamon": 4,
+            "brioche": 3,
+            "velvet": 4,
+            "marigold": 2
+          },
+          "logSha256": "59ff19bcd1ab7d39d5cd8a7dfe31e17fb40f7bfa31f992f411d8ef6325b43a9d",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 4729,
+            "median": 16.69999999999709,
+            "p95": 16.70000000001164,
+            "max": 33.40000000000873
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 4729,
+            "median": 4.399999991059303,
+            "p95": 5.199999988079071,
+            "max": 32.8999999910593
+          },
+          "excludedIntervals": 65,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/timeline.json",
+            "sha256": "439b0db925bec4d5792cd3860b2567b7c02e88f6d979781f687a1d8321272f78"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/00-opening.png",
+          "sha256": "db9d87e42db8dbaeb40b1fdd538acdce7f2890c008f68ff2c15b2b57017f8f8a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:22.495Z",
+          "bytes": 1170501,
+          "rgbMean": 108.07142975983797,
+          "rgbStdDev": 46.76153427109947
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/01-status.png",
+          "sha256": "28407169ca2c123a0d17295ba9b75326aae66a1b7a35825020fa683f46e3af56",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:25.769Z",
+          "bytes": 1179758,
+          "rgbMean": 111.95441080729167,
+          "rgbStdDev": 50.92094885864049
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-velvet",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/02-ultimate-velvet.png",
+          "sha256": "7deb633e40c0f461515713e6d403077a22e0ce7f97b568595df131cc0f639a03",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:32.144Z",
+          "bytes": 1287904,
+          "rgbMean": 129.98833405671297,
+          "rgbStdDev": 54.52951070970891
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/03-ultimate-foe-0-yarn-giant.png",
+          "sha256": "b88dc722fa3bc3c8dc1aeb67ee95e38818a643508795156be0955faa658a6ec9",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:35.433Z",
+          "bytes": 1259405,
+          "rgbMean": 106.98990849247686,
+          "rgbStdDev": 48.463007409575525
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-cinnamon",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/04-ultimate-cinnamon.png",
+          "sha256": "feb7de903fcb669a2e70ecb58862a5ffd933ef53962140c1ac6f47f97eb84d01",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:39.798Z",
+          "bytes": 1160421,
+          "rgbMean": 146.24967845775464,
+          "rgbStdDev": 70.66316240229966
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-brioche",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/05-ultimate-brioche.png",
+          "sha256": "d5c47324b8b52193170b29fa18ee8b7bd5cc4e882913f32ae4665707ebd80ec6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:31:42.010Z",
+          "bytes": 1157100,
+          "rgbMean": 152.2671195023148,
+          "rgbStdDev": 70.50830540622243
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/06-result-ready.png",
+          "sha256": "d44d12bf7effbfe23fc64cf5635fb1344719b63b9a3f3069d348953f07c62ce1",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:43.093Z",
+          "bytes": 911206,
+          "rgbMean": 49.892291666666665,
+          "rgbStdDev": 34.63806540268749
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/normal/07-result-later.png",
+          "sha256": "b1a8535df5dffbc685b9e12767dd78d214e62fcce0ed4c149c58a9d574a0de82",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:43.947Z",
+          "bytes": 938454,
+          "rgbMean": 52.36316044560185,
+          "rgbStdDev": 39.79953965591721
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/00-opening.png",
+          "sha256": "db9d87e42db8dbaeb40b1fdd538acdce7f2890c008f68ff2c15b2b57017f8f8a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:46.605Z",
+          "bytes": 1170501,
+          "rgbMean": 108.07142975983797,
+          "rgbStdDev": 46.76153427109947
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/01-status.png",
+          "sha256": "c52e2ea0c7659a32e3e64cbecf58507a26bf01093c39dc152c5756704e4379ce",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:49.903Z",
+          "bytes": 1180552,
+          "rgbMean": 110.83592845775463,
+          "rgbStdDev": 49.368743509076886
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-velvet",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/02-ultimate-velvet.png",
+          "sha256": "ecfe062fd1215fb4e5eceb93d4dbbaeab6bea731e9dfb8de6bd3f2dfa1f51023",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:56.287Z",
+          "bytes": 1285797,
+          "rgbMean": 120.72538302951389,
+          "rgbStdDev": 51.693527561533784
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/03-ultimate-foe-0-yarn-giant.png",
+          "sha256": "0ce4bd972587c4747b7142d2739fd8e37caedb9b7d72e4f8759ff661cf824167",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:32:59.415Z",
+          "bytes": 1296142,
+          "rgbMean": 107.52750542534723,
+          "rgbStdDev": 48.27895663937373
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-cinnamon",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/04-ultimate-cinnamon.png",
+          "sha256": "0c764c07e78681dbc83737b3260432a5bdeb9289da3d66206d0f1544f0e069cf",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:33:03.913Z",
+          "bytes": 1205089,
+          "rgbMean": 135.50123589409722,
+          "rgbStdDev": 65.1566240546177
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-brioche",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/05-ultimate-brioche.png",
+          "sha256": "340c0aa062f50629d46790454c8673fa2fd95ab5467a0ec6638f7c2290261ebb",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:33:06.120Z",
+          "bytes": 1261384,
+          "rgbMean": 146.15075520833332,
+          "rgbStdDev": 68.44562497226549
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/06-result-ready.png",
+          "sha256": "cf66de7a3376e4d82644b0bdb8857759cc3fd3d2216dd179e4f92f82e2d111f8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:07.193Z",
+          "bytes": 933716,
+          "rgbMean": 52.24557978877315,
+          "rgbStdDev": 39.63580525014202
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/reduced/07-result-later.png",
+          "sha256": "cf66de7a3376e4d82644b0bdb8857759cc3fd3d2216dd179e4f92f82e2d111f8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:08.037Z",
+          "bytes": 933716,
+          "rgbMean": 52.24557978877315,
+          "rgbStdDev": 39.63580525014202
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/review/normal-0.jpg",
+          "sha256": "d44e4f505f1522df0df9459200920b4413013c766bb71d850f41421608ca10f8",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 217508,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-velvet",
+            "ultimate-foe-0-yarn-giant"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:38:22.383727+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/review/normal-1.jpg",
+          "sha256": "3082bd5ac3852490a0627fa9a19a5195d337c92ed7a0cbbad5e8f621de58fc71",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 206797,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-cinnamon",
+            "ultimate-brioche",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:38:22.383951+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/review/reduced-0.jpg",
+          "sha256": "fa941c957171da59f646ba5eb3270ff0277762aa7f7288843a466669ea589e36",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 217133,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-velvet",
+            "ultimate-foe-0-yarn-giant"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:38:22.383953+00:00"
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-1/review/reduced-1.jpg",
+          "sha256": "c03e040b069c10fa846f2ea8d98447204ca3439bcf217f06210ec33a3c89515a",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 218799,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-cinnamon",
+            "ultimate-brioche",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": "2026-11-18T06:38:22.383954+00:00"
+        }
+      ],
+      "visualAssessment": "Four sheets reviewed once: Cinnamon/Brioche/Velvet/Marigold all present with coherent feet/props and four native victory actors; controls remain legible. Large gold-white support bursts cover substantial torso/prop detail in both modes, especially normal. Reduced freezes motion but retains large luminous coverage. Native actor rendering passes; full effects readability fails pending scoped measurement.",
+      "readabilityConcern": "Normal/reduced second sheets upper panels: large golden cup/flower bursts obscure native-cat torsos, clothing and held props. Identify exact skill and overlap before adopting any correction."
+    },
+    {
+      "group": 2,
+      "roster": [
+        "panko",
+        "mallow",
+        "sorrel",
+        "biscuit"
+      ],
+      "source": "85cb62233d016faf5c5235ffe178408df1682af3",
+      "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T06:34:08.646Z",
+      "captureEnded": "2026-11-18T06:36:21.784Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/report.json",
+        "sha256": "a8b43ebbe9060f92cc72633176758f21fbae655a67eba9dc947a139d886a4f4c"
+      },
+      "harnessSha256": "aef41ea2540e24023f041cb0680a7bc280c3363d7598dde3b9122b168cb70359",
+      "fixtureSha256": "8eaaff58fb990a2d6d07d9133a9b7c4c0c33568b75c90b5ce2d3e68b0c680f50",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 62309.70000000298,
+          "actions": 41,
+          "ultimates": {
+            "panko": 3,
+            "mallow": 3,
+            "sorrel": 2,
+            "biscuit": 3
+          },
+          "logSha256": "a9f66f5fb81df0a812837a20ba66138faf38c2220a0a9d2404019fbbec5dd74b",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3668,
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366,
+            "max": 33.40000000000009
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3668,
+            "median": 4.4000000059604645,
+            "p95": 5.300000011920929,
+            "max": 32.5
+          },
+          "excludedIntervals": 64,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/timeline.json",
+            "sha256": "c1291d877596381a7e5229ff9f71838ec78629371861852206256144d8f1bfc4"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 62443.59999999404,
+          "actions": 41,
+          "ultimates": {
+            "panko": 3,
+            "mallow": 3,
+            "sorrel": 2,
+            "biscuit": 3
+          },
+          "logSha256": "a9f66f5fb81df0a812837a20ba66138faf38c2220a0a9d2404019fbbec5dd74b",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3674,
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634,
+            "max": 33.40000000000009
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3674,
+            "median": 4.299999997019768,
+            "p95": 5.4000000059604645,
+            "max": 32.20000000298023
+          },
+          "excludedIntervals": 63,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/timeline.json",
+            "sha256": "473fcd98e26e369030f6ab73d63c671e24f271e4be93a6873972230940dbaad0"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/00-opening.png",
+          "sha256": "7828990272c23a28309788efbb5b7575d6ef2fdb515fdb75fc22351212ca70b6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:11.447Z",
+          "bytes": 1169436,
+          "rgbMean": 110.25446867766203,
+          "rgbStdDev": 47.77426683450635
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/01-status.png",
+          "sha256": "473d8c0385cc4425a2c1808c47eb780c8dfcb46d72fc44283c7f19229fbdb39a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:14.745Z",
+          "bytes": 1220609,
+          "rgbMean": 117.5040675636574,
+          "rgbStdDev": 53.910813683149264
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/02-ultimate-panko.png",
+          "sha256": "b57c8665af14e6c73561f591685d082b7860922a96cc76204eac9eee1353b812",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:19.452Z",
+          "bytes": 1261843,
+          "rgbMean": 111.02867078993056,
+          "rgbStdDev": 52.67579354283302
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/03-ultimate-mallow.png",
+          "sha256": "eed7ef80258106af40096bfb8e8bdbef4c13cfdde9ebef18655378a4f71c913c",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:21.638Z",
+          "bytes": 1166540,
+          "rgbMean": 146.92675925925926,
+          "rgbStdDev": 72.00757136981235
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/04-ultimate-biscuit.png",
+          "sha256": "6a657b17cb1ef8cbbdbdf0d30b9e817804c24386435f78ec29c628c60d987ea0",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:24.926Z",
+          "bytes": 1263967,
+          "rgbMean": 141.0779564525463,
+          "rgbStdDev": 67.21441005491256
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "e72212e5361eb663d4b01e0c76fbfdd34aee7aa2caafd90d0609eeead941e679",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:34:27.125Z",
+          "bytes": 1294663,
+          "rgbMean": 109.34501374421296,
+          "rgbStdDev": 49.25892194909373
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/06-result-ready.png",
+          "sha256": "f7dbb0eb3d6771546d83544939a719d564ed2b19a648472f93547feacc761808",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:14.270Z",
+          "bytes": 912329,
+          "rgbMean": 50.613876953125,
+          "rgbStdDev": 36.11556519764481
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/normal/07-result-later.png",
+          "sha256": "cc0f8657141153c93c86dbdfc2e32f906d0c4ecc485214e459547b5ad07ff1d1",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:15.130Z",
+          "bytes": 939427,
+          "rgbMean": 53.085375795717596,
+          "rgbStdDev": 41.047804939219965
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/00-opening.png",
+          "sha256": "7828990272c23a28309788efbb5b7575d6ef2fdb515fdb75fc22351212ca70b6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:17.766Z",
+          "bytes": 1169436,
+          "rgbMean": 110.25446867766203,
+          "rgbStdDev": 47.77426683450635
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/01-status.png",
+          "sha256": "5b2f6baf3a9bd31625e7522e19f87965e1cd72265644794cfa187b811faf4565",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:21.043Z",
+          "bytes": 1197746,
+          "rgbMean": 114.15812102141204,
+          "rgbStdDev": 51.00441529245624
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/02-ultimate-panko.png",
+          "sha256": "d7e41927d9cc4ab6bf140090454d725ffd9d43f5269f0dd06a2a27adf0d47f94",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:25.721Z",
+          "bytes": 1245976,
+          "rgbMean": 112.75296513310185,
+          "rgbStdDev": 51.939415323145326
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/03-ultimate-mallow.png",
+          "sha256": "92192b7aba9a656592d71ba0fc2410e6fe7c66cc1a306cb0cc0b29d542f6aa55",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:28.067Z",
+          "bytes": 1207370,
+          "rgbMean": 137.66904441550926,
+          "rgbStdDev": 68.51737864123508
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/04-ultimate-biscuit.png",
+          "sha256": "58c1221a30291bee698158800fb27898ccbc972636e63a68bd524a2df0ddadc5",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:31.190Z",
+          "bytes": 1296741,
+          "rgbMean": 128.09195131655093,
+          "rgbStdDev": 59.52355853544184
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "89e6229015e8793f7637d79ebe7bb8c8b4371f00019ee4936df15a9cf038796b",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:35:33.549Z",
+          "bytes": 1255317,
+          "rgbMean": 108.53098668981481,
+          "rgbStdDev": 49.383109190026964
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/06-result-ready.png",
+          "sha256": "5ef5ef16d20c9d786cc8dcb4cb9c39626d2a319b974ca91ae819b3b90420f40d",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:36:20.628Z",
+          "bytes": 934442,
+          "rgbMean": 52.967957175925925,
+          "rgbStdDev": 40.88318318059995
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/reduced/07-result-later.png",
+          "sha256": "5ef5ef16d20c9d786cc8dcb4cb9c39626d2a319b974ca91ae819b3b90420f40d",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T06:36:21.488Z",
+          "bytes": 934442,
+          "rgbMean": 52.967957175925925,
+          "rgbStdDev": 40.88318318059995
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/review/normal-0.jpg",
+          "sha256": "94969dc505d273365cecd68d5fa8a573ec97e3c333a45fbffb87955aa2efc790",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 216611,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-panko",
+            "ultimate-mallow"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": null,
+          "ledgerRepairedUTC": "2026-11-18T06:42:43.917656+00:00",
+          "reviewProvenance": "Viewed once before the prior finalization command failed at Python parse time. Recovered from supplied conversation record; exact review time unavailable. Hash verified only; not reopened."
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/review/normal-1.jpg",
+          "sha256": "e807bfccbb0143964f8a941d7fc7a266bdd6fb0f1fe3f76efd508c3b44c00f83",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 220672,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": null,
+          "ledgerRepairedUTC": "2026-11-18T06:42:43.917656+00:00",
+          "reviewProvenance": "Viewed once before the prior finalization command failed at Python parse time. Recovered from supplied conversation record; exact review time unavailable. Hash verified only; not reopened."
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/review/reduced-0.jpg",
+          "sha256": "6b3e41ea04ff627c85690b198d7d01c4fab849b4020b5fcb06267f84efe648c7",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 215598,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-panko",
+            "ultimate-mallow"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": null,
+          "ledgerRepairedUTC": "2026-11-18T06:42:43.917656+00:00",
+          "reviewProvenance": "Viewed once before the prior finalization command failed at Python parse time. Recovered from supplied conversation record; exact review time unavailable. Hash verified only; not reopened."
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/group-2/review/reduced-1.jpg",
+          "sha256": "ef55fcb936094db8c9694ca6c6a9ba84eb181cf907e850e008288c2e103a3f8f",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 224543,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": true,
+          "views": 1,
+          "reviewedUTC": null,
+          "ledgerRepairedUTC": "2026-11-18T06:42:43.917656+00:00",
+          "reviewProvenance": "Viewed once before the prior finalization command failed at Python parse time. Recovered from supplied conversation record; exact review time unavailable. Hash verified only; not reopened."
+        }
+      ],
+      "visualAssessment": "Four sheets viewed once in prior context. Panko/Mallow/Sorrel/Biscuit, feet, props, controls and victory crews remain coherent. Panko shield is clearly behind Panko. Mallow flame and some Biscuit overlap obscure body/prop detail; reduced motion retains substantial luminous coverage. Ledger repaired without reopening images.",
+      "readabilityConcern": "Mallow-4 large flame and Biscuit-4 overlap; earlier groups also show Sorrel-4 healing, Cinnamon-4 cup and Brioche-4 flower occlusion. Effects-readability gate remains open."
+    }
+  ],
+  "reviewed": true,
+  "pass": false,
+  "scope": "Native9 natural seeded battles on current production at1280x720, normal/reduced motion, local1x descriptive frame intervals. Not calibrated laptop coverage, no optimization comparison, no cold-start or Mochi/Clover media acceptance.",
+  "harnessProvenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-nine-full-battle-R1/harness-provenance/provenance.json",
+    "sha256": "017296d73a00787995fbf0e50dfde222c7eb0edbec60ca29272b0a9f685cff78",
+    "detail": {
+      "utc": "2026-11-18T06:32:35.184428+00:00",
+      "group0LoadedFixtureSha256": "ed383ba8cc2943003d4dddd51f5bda7d32d23d253cfe1ddb6ada3d83520a915e",
+      "laterGroupsLoadedFixtureSha256": "8eaaff58fb990a2d6d07d9133a9b7c4c0c33568b75c90b5ce2d3e68b0c680f50",
+      "explanation": "Before later processes started, the enrollment assertion changed from nonexistent entry.side/drawing.livingCat to roster-filter and drawing presence for Panko. Group0 already loaded the original module; its four native cats follow the identical original path in both variants. Group0 runtimeEvidence reads disk again, so its later harnessHash differs; top-level productionFixtureSha256 records actual loaded source. Both exact source snapshots preserved. Application/source/index frozen throughout."
+    }
+  },
+  "numericPass": true,
+  "coveredCats": [
+    "biscuit",
+    "brioche",
+    "cinnamon",
+    "inkcap",
+    "mallow",
+    "marigold",
+    "panko",
+    "sorrel",
+    "velvet"
+  ],
+  "nativeActorVisualPass": true,
+  "effectsReadabilityPass": false,
+  "finalizedUTC": "2026-11-18T06:42:43.917656+00:00",
+  "reviewLedgerRepair": "Group2 review flags recovered from prior viewed-once evidence after a parse-time SyntaxError prevented disk finalization; no image reopened.",
+  "status": "Scoped native9 battle timing/parity and actor rendering pass; full effects readability incomplete."
+}
