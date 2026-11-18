@@ -1,6 +1,6 @@
 # Mochi và Clover — bản thử R7, chưa phát hành
 
-Cập nhật 2026-11-18T14:33:59.661689+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
+Cập nhật 2026-11-18T15:05:59.336415+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
 
 R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67`. Kiểm tra BOARD trước khi mở vì cổng6301 còn dùng cho nghiên cứu. Artifact xanh được giữ riêng tại `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist`.
 
@@ -8,11 +8,11 @@ R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb5
 
 - Sửa đồng bộ socket với frame mà video callback báo đã trình bày. Thử GPU có24mẫu đã khớp; không suy rộng thành bảo đảm mọi frame của toàn trận.
 - 3.250 bài kiểm tra web đạt. Hai trận tự nhiên hoàn tất110hành động, rules khớp giữa normal và reduced motion; không thấy lỗi decoder trong mẫu đã ghi.
-- CXI tự chụp12ảnh từ8skill hợp lệ ở52mốc; đo cả12 rồi xem4ảnh một lần. Hai mèo có tỷ lệ sân khấu phù hợp trong các ảnh này, không hiện ô video nền đen; các thanh HP/rage được xem không che mặt chính mèo đó.
+- CXI tự chụp12ảnh từ8skill hợp lệ ở52mốc; đo cả12 rồi xem đủ12ảnh, mỗi ảnh một lần. Hai mèo có tỷ lệ sân khấu phù hợp trong các ảnh này, không hiện ô video nền đen; các thanh HP/rage được xem không che mặt chính mèo đó.
 
 **Chưa đạt để phát hành:**
 
-- Nhãn Clover vẫn đè lên17pixel được vẽ của Mochi ở một pose giữ riêng. Bộ stress status tổng hợp còn208/69/74pixel chạm. Việc đặt nhãn tránh toàn bộ hình chữ nhật đã bị loại vì nhãn nhảy57–160CSSpx, gây khó xác định mèo tương ứng. CXI đã kiểm tra600frame GPU: toàn bộ912.708pixel quan sát nằm trong vùng bao. Dịch nhãn Clover(-12,+19)CSSpx so với R7 đã sạch ở11pose và5trường hợp status mở rộng, nhưng đây chỉ là wrapper chẩn đoán, chưa nhập source. Pilot mới đã xác nhận1.340pixel nhãn Mochi chạm cơ thể Panko khi đánh thường; ba đối chứng ảnh sau bước chuẩn bị đều khớp tuyệt đối. Đã kiểm tra đủ16hành động: rules khớp hoàn toàn;14mẫu tiếp xúc có đối chứng hợp lệ. Panko normal/reduced chạm1.340/1.302pixel;2mẫu ultimate Mallow có13.514pixel đối chứng sai nên không được coi là sạch. Offset idle chưa đủ để nhập source hoặc phát hành.
+- Nhãn R7 vẫn chưa đạt: pose giữ riêng có17pixel chạm, stress status208/69/74pixel. Wrapper Clover(-12,+19) sạch ở11pose+5status nhưng chưa nhập source. R3 đã sửa cách lấy mẫu:46snapshot/322nhãn khớp trong1/64CSSpx;16đối chứng ảnh đều hợp lệ. Tuy vậy nhãn Mochi chạm Panko ở250ms (1.479pixel cả hai chế độ) và350ms (1.340/1.302pixel). Hai ultimate Mallow sạch chỉ sau khi badgeΣ213 tự hết hạn; không suy ra toàn bộ hành động sạch. Dịch Mochi(0,-53) cũng bị loại vì6mẫu đèHUD. Chưa có R8 hoặc thay đổi source được chấp nhận.
 - Viền/halo và nối đuôi Clover chưa được duyệt. Crossfade15frame bị loại vì tạo bóng kép bán trong suốt và rút vòng10giây xuống9,5giây.
 - Hiệu năng laptop phổ thông chưa được chứng minh. Trên máyM3Pro đang dùng, số frame video rơi ghi nhận là19/2429 cho Mochi và28/2428 cho Clover; đây là số đo local có chi phí quan sát.
 - Sáu callout thay thế vẫn bị loại. 59artifact audio hiện tại giữ nguyên hash; chưa có duyệt nghe chủ quan hay chứng nhận đồng bộ âm thanh/hình ảnh theo từng frame.
@@ -24,3 +24,5 @@ Chủ dự án có thể dùng [bản nháp xin export](/Users/bao/taskbar-hero-
 Bằng chứng: [nhãn và110hành động](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-disposition.json), [ảnh mới doCXI chụp](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-own-visual-review.json), [playback local](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-playback-review.json), [audio giữ nguyên](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-audio-review.json), [release xanh](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-m115-publication.json).
 
 Bổ sung chẩn đoán: [vùng bao toàn vòng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-media-envelope-r1-review.json), [11cặp đối chứng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-envelope-pair-r1-review.json), [5status mở rộng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-envelope-expanded-status-r1-review.json). Kiểm tra ngoài nhãn dùng vùng hợp4px; vẫn ghi riêng512pixel thay đổi nằm ngoài DOM chính xác, không gọi đó là không thay đổi ngoài DOM.
+
+Bổ sung mới: [R3 recovery độc lập](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-action-recovery-r3-disposition.json), [8ảnh còn lại](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-r7-own-visual-review-r2.json), [dịch nhãn bị loại](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-action-label-translation-r1-review.json). Chờ hai HUD frame là giới hạn lấy mẫu, không phải bản sửa runtime.
