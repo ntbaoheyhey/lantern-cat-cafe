@@ -1,3 +1,16 @@
+# CXV V8 queue — Batch M first
+- [ ] M-V1 ACTIVE: verify/copy designer files; L1 measurements; L2/L4 sourced study; Panko softness experiment and same-height/speed comparison before scaling.
+- [ ] M-V2: panko,mallow,sorrel,biscuit,inkcap,cinnamon,brioche,velvet,marigold idles; planted feet and seamless loops; per-cat personality.
+- [ ] M-V3: those nine + Mochi/Clover skill casts; verify contract event units and handoff to skill moments/idle.
+- [ ] M-V4: per-cat films/contact sheets/timing comparison; focused checks/typecheck; empty Soot diff and shared-behavior proof; STATUS-VI; scoped READY.
+- AGV active T-M1 timing tables, T-M2 L2/L4 research; T-M3 own-art ideas and T-M4 READY capture checks queued. Old tasks deferred.
+- DEFERRED V-F transaction performance R2: pair build complete; series not started. R1 failure/artifacts preserved. No app optimization adopted.
+- DONE T-CXI-10 battle notice independently ACCEPTED04:18:41Z; e570e63a36 +20e3db82b;40tests/TSC0/native two modes exact restoration.
+- DONE V-E paused recovery172c317d4 independently accepted/integratedm1.13. V-A3 accepted; V-C and V-B2 verified in prior evidence below.
+- PENDING legacy6groups11paths independent integration: pose crop,pendinglabels,HUDtext,stationaryrows,Panko crumb,focus reads; defer behindM.
+- CANCELLED old active V7 performance/notice next-step pointers: replaced by Batch M priority; completed evidence retained below.
+
+## Historical V7 queue (evidence only; active instructions superseded)
 # CXV V7 queue — desktop judge first three minutes
 - [ ] T-CXI-10 ACTIVE: native recovery notice overlaps boss world HP. EN/ZH study recorded; isolated probe prepared; application unchanged. Adoption after04:05:43Z and own fresh1280x720 experiment;CXI browser release required.
 - [x] V-C servedcandidate d69b9dc5c/indexaf3adbe2 verified18:04Z;6freshsheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms;recipientnetclear1640/Yarnclear1760. Candidate is newer than greenm1.10, not the green tag.
