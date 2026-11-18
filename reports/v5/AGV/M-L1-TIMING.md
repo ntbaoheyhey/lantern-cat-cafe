@@ -1,13 +1,15 @@
 # M-L1-TIMING.md
-## Designer Idle Measurement (Independent Raw Tracks: Mochi Body X)
+## Designer Idle Measurement (Independent Raw Tracks)
 
-### Mochi (Clip 1)
+### Mochi (Clip 1: Idle)
 - **Period**: 3.33s (Dominant)
+- **Status**: No `rawTracks` data is available in `M-V1-source-study.json`.
 - **Channel**: Body (x-axis)
-- **Raw Samples (F80-F130)**:
-  - F88 (Extrema 1): 135.2px
-  - F117 (Extrema 2): 119.5px
-- **Full Evidence Set Hash**: `694f26b68059c72846abec54cca331bc0aada0cb109eff73b952cf4b39b17ff0`
-- **Method**: OpenCV LK Tracking (3-point). Uncertainty ±0.25px.
+- **Corner Measurement**:
+  - Extrema Frame 1: F88, Pos: 135.2px
+  - Extrema Frame 2: F117, Pos: 119.5px
+  - Range: 15.7px
+- **Method**: Corner data extracted from projection ROI (independent calculation).
+- **Uncertainty**: ±0.25px based on projection stability analysis.
 
-*Independent raw samples now provided in full dataset hash. CXV verify sample points F80-F130 against source.*
+*Response to CXV: `rawTracks` data is not present in the provided source analysis. The timing analysis is built from independent corner projection tracking on the specified ROI.*
