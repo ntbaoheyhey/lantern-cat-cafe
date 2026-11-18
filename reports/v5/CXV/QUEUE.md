@@ -6,7 +6,7 @@
 - ACTIVE M/C socket follow-up: Mochi hip/shieldwrist/independentlanternR3 accepted; head/offHand unsupported; Clover hip/mainHandR1 CXIaccepted06:30:35Z/3000fractionalchecks. Head/off/vfx remainunsupported. No media registration until CXI art/edge/seam/budget gates.
 - AGV active T-CXI-11 landingR3visualREDO92117B/3c739428,2freshviews+2hashreuse; R1/R2visualREDO retained; currentdelivery207867B +T-M1 independent timing; T-M2 deferred/rejected,T-M3/T-M4 queued. No inferred physics lag adopted.
 - DONE scoped native9 full battles:6naturalwins/3normal-reducedpairs/exactrules/0errors,48captures/12viewedonce; framep95 16.7–16.8ms. Effects-readability OPEN: Mallow/Sorrel/Cinnamon/Brioche large bursts and Biscuit overlap. M-native-nine-full-battle-R1.json.
-- ACTIVE native-five field readability: R3 prototype10freshviews PASS; exact5skill radius.62/tail660/bodymask adopted17tests/TSC0. Nativeuntransformed50samples+CXIproduction acceptance pending. Soot source audit next.
+- READY scoped native-five field readability: R3 prototype10freshviews PASS; exact5skill radius.62/tail660/bodymask adopted17tests/TSC0. Native50samples/10captures/6newreviews+4hashreuse pass;3833Sootpaths+301actualsamples exact. CXIproduction acceptance pending.
 - DEFERRED V-F transaction performance R2: pair248c3667/2e92e22d built,series unstarted; no app optimization adopted.
 - DONE T-CXI-10 e570e63a36+20e3db82b; V-E172c317d4 integratedm1.13. HistoricalV-A3/V-C/V-B2 evidence retained.
 - PENDING legacy6groups11paths: posecrop,labels,HUD,stationaryrows,Panko crumb,focusreads; afterBatchM.

@@ -1,0 +1,952 @@
+{
+  "utc": "2026-11-18T07:08:18.615144+00:00",
+  "status": "READY for scoped CXI integration; actual6301 production acceptance pending",
+  "sourceCommit": "33fd55ef55c119dd59ae2edf5789bfb55dc961a4",
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "captureUTC": "2026-11-18T07:05:11.669Z",
+  "completedUTC": "2026-11-18T07:05:19.501Z",
+  "viewport": [
+    1280,
+    720
+  ],
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "sourceSubstitutions": [],
+  "prototypeFlags": false,
+  "sourceManifest": {
+    "utc": "2026-11-18T07:05:11.399538+00:00",
+    "sourceCommit": "33fd55ef55c119dd59ae2edf5789bfb55dc961a4",
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "indexSha256": "dc434f979205f300fa0671e272e8dfd9db216fa7c5350be9f2e813c69016b124",
+    "files": {
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.ts": "a6612b63ef54959357ed18e7e60a4ba79c0af898ad5c5cdfcfc61db0ed53c0b3",
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.test.ts": "dacb78a7a3be3fbe05bc939e1b79c76038273e2cdb391124c51f0f7cc7ebc1c9",
+      "apps/web/src/game/cardrpg/battle-v3/field-vfx.ts": "fbbd063aca142afafbcd804c7f2205f839ba46c005857687a8ed9e3e6d687539",
+      "apps/web/src/game/cardrpg/spine/vfx.ts": "527427832c72ea96346e9f37626b9c2372a3004c6a274db0c2c89b8d1c5577f4"
+    },
+    "prototypeFlags": false
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/report.json",
+    "sha256": "a1fae5335514dfb71b110df2224e2f97f500224ba34150b26863c92defd9e12d"
+  },
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/M-native-ultimate-field-33fd55ef5.patch",
+    "sha256": "c9b5ded93a896ff4ff5c0db0507b9aac61028ca18c9c4a8cc62d6a37272db643",
+    "files": [
+      "apps/web/src/game/cardrpg/battle-v3/field-vfx.ts",
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.test.ts",
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.ts",
+      "apps/web/src/game/cardrpg/spine/vfx.ts"
+    ]
+  },
+  "validation": {
+    "focusedTests": 17,
+    "focusedTestFiles": 4,
+    "typecheckExit": 0,
+    "testsLog": "work/v5/CXV/jobs/m-native-field-focused.log",
+    "typecheckLog": "work/v5/CXV/jobs/m-native-field-typecheck.log"
+  },
+  "comparisons": [
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.23804359794231977,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.20674867621809304,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.3018621444585129,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.0044766762701679095,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.18389366729734372,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.1677422522928667,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.19849135335653842,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.0019342419828930564,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": false,
+      "maxBodyMeanAlpha": 0.36990586627666355,
+      "maxBodyMeanAlphaDifference": 0.0001627166144466674
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.375079551471271,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.26298559802695354,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.00514687886902197,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.3022754653365171,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.2845044600476043,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.14718495373790372,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.0025751873587001955,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.21969372654723107,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.1901116094949125,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.18993401063875404,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.004121451409421441,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.1279957544540905,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.12430066227202852,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.13873157900137612,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.0018825883929820613,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.2552317531708473,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.20994910590498475,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.1288939338789564,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.00455109879003184,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.24932648668206764,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.23108922193299206,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.11629742583948652,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.002644585808487711,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.39650549224927023,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.426473840096352,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.31026281757339835,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.005587239512610224,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 1100,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.29247332092626566,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 1280,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.28204363295809964,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 1550,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.14410827709189755,
+      "maxBodyMeanAlphaDifference": 0.0
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 1760,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0.0026172885144282614,
+      "maxBodyMeanAlphaDifference": 0
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 2199,
+      "eventsExact": true,
+      "geometryExact": true,
+      "fieldMetricsExact": true,
+      "maxBodyMeanAlpha": 0,
+      "maxBodyMeanAlphaDifference": 0
+    }
+  ],
+  "captures": [
+    {
+      "owner": "mallow",
+      "reduced": false,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/mallow-normal.png",
+      "sha256": "93a871c99daf944b5550dd803a7bbc059a54d278b191ab225d61834f1e2a74b2",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/mallow-normal-1024.jpg",
+      "previewSha256": "390bc778d81e29c5bd6984942e654932eb4c41165d612a989f1da29379512d7d",
+      "utc": "2026-11-18T07:05:13.959Z",
+      "reviewed": true,
+      "views": 0,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3.json",
+      "priorReportSha256": "d3e962b5dfff82721bf43077244c772e1f0352795c7810b6718f66afa0010998",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3/mallow-normal.png",
+      "priorSha256": "93a871c99daf944b5550dd803a7bbc059a54d278b191ab225d61834f1e2a74b2",
+      "priorReviewedUTC": "2026-11-18T06:54:52.418678+00:00",
+      "exactHashReuse": true,
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "Exact reviewed raw+preview hash reuse; no image reopened"
+    },
+    {
+      "owner": "mallow",
+      "reduced": true,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/mallow-reduced.png",
+      "sha256": "3cf3ae2d8959d51ae22da2122ef4b86d8c74e8294760534b045d781945d906e9",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/mallow-reduced-1024.jpg",
+      "previewSha256": "8f077d8c7dc223377f97b850e82e8076823a5057f3540879c83b5541b4df8c5d",
+      "utc": "2026-11-18T07:05:14.566Z",
+      "reviewed": true,
+      "views": 0,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3.json",
+      "priorReportSha256": "d3e962b5dfff82721bf43077244c772e1f0352795c7810b6718f66afa0010998",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3/mallow-reduced.png",
+      "priorSha256": "3cf3ae2d8959d51ae22da2122ef4b86d8c74e8294760534b045d781945d906e9",
+      "priorReviewedUTC": "2026-11-18T06:54:52.418678+00:00",
+      "exactHashReuse": true,
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "Exact reviewed raw+preview hash reuse; no image reopened"
+    },
+    {
+      "owner": "sorrel",
+      "reduced": false,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/sorrel-normal.png",
+      "sha256": "07dda716c66ffeab4de29d1cc15b9844fe6642fd5251bf0840ddb179bb0cd9e2",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/sorrel-normal-1024.jpg",
+      "previewSha256": "25db0e974e5124f09ca4500178dd5411e05e7498b9e01727d9b397395e67a06c",
+      "utc": "2026-11-18T07:05:15.175Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/sorrel-normal.png",
+      "priorSha256": "ac77ed226f94fc3dbd2311d3b9d41c3b9a449bf63b522749b76eff13c560467f",
+      "priorReviewedUTC": "2026-11-18T06:57:18.274820+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.3618648726851852,
+        "maximum": 234,
+        "changedPixels": 3635,
+        "bbox": [
+          194,
+          17,
+          1082,
+          713
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    },
+    {
+      "owner": "sorrel",
+      "reduced": true,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/sorrel-reduced.png",
+      "sha256": "14c8b50b15d01fd2fc09b9ef3be809c6f1c2ddb468870aef80dd667fb9691628",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/sorrel-reduced-1024.jpg",
+      "previewSha256": "3ee176aecb1d19371edc6ef4de5f5a8921f5ec91875eee2afced47fa1d1c5f38",
+      "utc": "2026-11-18T07:05:15.774Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/sorrel-reduced.png",
+      "priorSha256": "37615c0ec5c6f2ccda11de38267a72f4bff2bb6d52be8c0e80e95e9f88833945",
+      "priorReviewedUTC": "2026-11-18T06:57:18.274820+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.030824652777777777,
+        "maximum": 227,
+        "changedPixels": 2283,
+        "bbox": [
+          189,
+          102,
+          1072,
+          493
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    },
+    {
+      "owner": "biscuit",
+      "reduced": false,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/biscuit-normal.png",
+      "sha256": "0d2062bdb9a7cd178ac699c6302e69e77debcb950819a9bc3d68ed84cebe6546",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/biscuit-normal-1024.jpg",
+      "previewSha256": "093fb63a0ad5d56b0e5d6e61cb7f47a93349fd6717eedb1efc2ee2bd3eec8873",
+      "utc": "2026-11-18T07:05:16.385Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/biscuit-normal.png",
+      "priorSha256": "121c57b5a9d80a14c6d125192515020b2eebe77e440f50232a04394b2b69c77b",
+      "priorReviewedUTC": "2026-11-18T06:57:32.758835+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.0019784432870370372,
+        "maximum": 180,
+        "changedPixels": 288,
+        "bbox": [
+          479,
+          132,
+          1086,
+          713
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    },
+    {
+      "owner": "biscuit",
+      "reduced": true,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/biscuit-reduced.png",
+      "sha256": "b153553f1736bc49199934e2ba9c384b6e6da7d25b3c365dee7bc032225b1535",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/biscuit-reduced-1024.jpg",
+      "previewSha256": "3ff8b29a97647d45eafea8d49063bcdef8cd13a73725e60bd748d9d6f43a6136",
+      "utc": "2026-11-18T07:05:16.962Z",
+      "reviewed": true,
+      "views": 0,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/biscuit-reduced.png",
+      "priorSha256": "b153553f1736bc49199934e2ba9c384b6e6da7d25b3c365dee7bc032225b1535",
+      "priorReviewedUTC": "2026-11-18T06:57:32.758835+00:00",
+      "exactHashReuse": true,
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "Exact reviewed raw+preview hash reuse; no image reopened"
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": false,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/cinnamon-normal.png",
+      "sha256": "16f2ce19794a1e44ee0e0e48d772abee01846a80026628fb7ff18fac2fd7c269",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/cinnamon-normal-1024.jpg",
+      "previewSha256": "0bad0169785500812376cba581dfcc41c9c851b64f8f3c2b2a75acc163fdd2f9",
+      "utc": "2026-11-18T07:05:17.603Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3.json",
+      "priorReportSha256": "d3e962b5dfff82721bf43077244c772e1f0352795c7810b6718f66afa0010998",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3/cinnamon-normal.png",
+      "priorSha256": "452e5ccf91c5893bbf8b2e715b232adede54b43faffd24e4450460b2a2b6e63c",
+      "priorReviewedUTC": "2026-11-18T06:54:52.418678+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.0016532841435185186,
+        "maximum": 179,
+        "changedPixels": 535,
+        "bbox": [
+          204,
+          80,
+          280,
+          341
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    },
+    {
+      "owner": "cinnamon",
+      "reduced": true,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/cinnamon-reduced.png",
+      "sha256": "88d490b2e924136cf63143ed6c401336cdbc78f7200125d805a398e9a4ac53e9",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/cinnamon-reduced-1024.jpg",
+      "previewSha256": "55cd4b36511723e1d9e9846146c60c53188d7dbbc9ec845dd3c8ee90c9451157",
+      "utc": "2026-11-18T07:05:18.134Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3.json",
+      "priorReportSha256": "d3e962b5dfff82721bf43077244c772e1f0352795c7810b6718f66afa0010998",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3/cinnamon-reduced.png",
+      "priorSha256": "d7fb60b7161f7c7383dd4b4640b5396567da3ec278a4478ea73a46482edf33dc",
+      "priorReviewedUTC": "2026-11-18T06:54:52.418678+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.0016532841435185186,
+        "maximum": 179,
+        "changedPixels": 535,
+        "bbox": [
+          185,
+          103,
+          258,
+          363
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    },
+    {
+      "owner": "brioche",
+      "reduced": false,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/brioche-normal.png",
+      "sha256": "d37d97f69edd44ad2453538e29509e1d754df1e5baf19890ead701ab1cb7d5fa",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/brioche-normal-1024.jpg",
+      "previewSha256": "87162758c692e9c76b816f05b2bd0850ecb155c68c97fc07055f338b1b9e271e",
+      "utc": "2026-11-18T07:05:18.760Z",
+      "reviewed": true,
+      "views": 0,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/brioche-normal.png",
+      "priorSha256": "d37d97f69edd44ad2453538e29509e1d754df1e5baf19890ead701ab1cb7d5fa",
+      "priorReviewedUTC": "2026-11-18T06:57:18.274820+00:00",
+      "exactHashReuse": true,
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "Exact reviewed raw+preview hash reuse; no image reopened"
+    },
+    {
+      "owner": "brioche",
+      "reduced": true,
+      "ms": 1280,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/brioche-reduced.png",
+      "sha256": "9aaf23b1faf4b8a9d6e570a5ce4b50cef177730153eea8034be2b2397c62801d",
+      "preview": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-native-R1/brioche-reduced-1024.jpg",
+      "previewSha256": "1f7cc47df9d621e64bc21570eabb7135bd5505d4ef56ac926634583d16ac70d1",
+      "utc": "2026-11-18T07:05:19.344Z",
+      "reviewed": true,
+      "views": 1,
+      "rawDimensions": [
+        1280,
+        720
+      ],
+      "dimensions": [
+        1024,
+        576
+      ],
+      "priorReport": "reports/v5/CXV/M-native-ultimate-occlusion-R3-other.json",
+      "priorReportSha256": "2caec96f181356362d18de00186ae8226e9991c08464bc2eb5fa01ff0b3582f6",
+      "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-native-ultimate-occlusion-R3-other/brioche-reduced.png",
+      "priorSha256": "ecef6df46387b1ececda5f0b68d7cde73ab66eae1dd539c28531e7f378eb74d6",
+      "priorReviewedUTC": "2026-11-18T06:57:18.274820+00:00",
+      "exactHashReuse": false,
+      "pixelDiff": {
+        "mae": 0.0016710069444444444,
+        "maximum": 227,
+        "changedPixels": 7,
+        "bbox": [
+          498,
+          480,
+          499,
+          487
+        ]
+      },
+      "reviewedUTC": "2026-11-18T07:08:18.615144+00:00",
+      "reviewMethod": "New1024x576 preview viewed once after numeric dimensions/hash/pixel comparison"
+    }
+  ],
+  "sourcePreservation": {
+    "utc": "2026-11-18T07:05:29.337603+00:00",
+    "source": "33fd55ef55c119dd59ae2edf5789bfb55dc961a4",
+    "verifiedPaths": 3833,
+    "changedSootPaths": [],
+    "namedSootAppDiff": [],
+    "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+    "baselineManifestSha256": "ad03c48d83ea4a209f3ff7ddf82d6475f53a40d84c7058600d323a6d38314860",
+    "appDelta": [
+      "apps/web/src/game/cardrpg/battle-v3/field-vfx.ts",
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.test.ts",
+      "apps/web/src/game/cardrpg/battle-v3/native-ultimate-field.ts",
+      "apps/web/src/game/cardrpg/spine/vfx.ts"
+    ],
+    "sharedMotionFilesUnchanged": true,
+    "scope": "Source preservation audit only; prior actual-scene motion evidence remains historical. New effect clearing is limited to five named skill IDs."
+  },
+  "sharedMotionPreservation": {
+    "utc": "2026-11-18T07:07:14.109Z",
+    "sourceCommit": "33fd55ef55c119dd59ae2edf5789bfb55dc961a4",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "method": "Rerun unchanged Soot sampling section from existing capture-native-living.mjs; no Soot file/test edits.",
+    "samplingHarnessSha256": "94eb9c209ef4061e6083a0060c51f0126e21f0e858e22c4e64bfb5a4cc07341a",
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "sootParity": [
+      {
+        "reduced": false,
+        "exact": true,
+        "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+      },
+      {
+        "reduced": true,
+        "exact": true,
+        "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+      }
+    ],
+    "errors": [],
+    "pass": true
+  },
+  "errors": [],
+  "blockedRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "type": "stylesheet"
+    }
+  ],
+  "reviewed": true,
+  "pass": true,
+  "productionAccepted": false,
+  "assessment": "Five measured ultimate skills preserve bodies, feet, held props and numbers at1280ms. Four exact prior-image hashes reused and six genuinely new images reviewed once. Sorrel/Brioche still cast strong surrounding light. All50 event/geometry comparisons exact;49 field metrics exact. Sorrel normal1100ms has small diagnostic body-alpha difference<=0.000163, retained without an exact-pixel claim. At/after1760ms maximum body mean alpha0.00558724.",
+  "limits": "Experimental6310 fixed-clock captures, not production acceptance or performance evidence. Rectangular body alpha is diagnostic, not silhouette occlusion. Attribution briefly suppresses FieldVfx and restores it before screenshots; no source substitution or prototype flags. Expected external font CSS block retained."
+}

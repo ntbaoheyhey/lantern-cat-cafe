@@ -39,3 +39,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T06:55:31.285324+00:00 Thử nghiệm hiệu ứng riêng: thu nhỏ vùng và kết thúc dư sáng sớm chưa đủ; thêm lớp bảo vệ thân giúp Mallow/Cinnamon giữ rõ chân, áo và đạo cụ khi trúng đòn. Đã xem 4 ảnh mới, 50 mẫu giữ đúng luật/hình học. Chưa áp dụng; còn Sorrel/Biscuit/Brioche và kiểm tra production.
 
 2026-11-18T07:04:22.877097+00:00 Đã áp dụng sửa vùng hiệu ứng cho 5 mèo Mallow/Sorrel/Biscuit/Cinnamon/Brioche sau 10 ảnh thử nghiệm đạt. 17 kiểm thử và TypeScript đạt; chưa nghiệm thu bản chạy thật hoặc production. Mochi 931.787 B đã qua đo 300 khung hình trên hai trình duyệt của CXI; chưa đăng ký vào trận.
+
+2026-11-18T07:08:18.615144+00:00 Bản sửa 5 chiêu cuối đã qua 50 mẫu luật/vị trí và 10 ảnh thật ở 6310: 6 ảnh mới xem một lần, 4 ảnh dùng lại đúng hàm băm. Thân/chân/đạo cụ/số đọc rõ; dư sáng sau 1760 ms thấp. 3.833 đường dẫn Soot và 301 mẫu chuyển động giữ nguyên. Đang chuyển bản vá 4 tệp cho CXI; chưa nghiệm thu production.
