@@ -10,3 +10,4 @@ Analysis of legacy conversion beds. All files verified for channel preservation,
 | scene-rain.opus | 1 | 24.01 | a6e78621... | Yes |
 
 Listening proof: All loops play continuously without audible clicks or gaps.
+Status: DONE (Delivered to legacy/)
