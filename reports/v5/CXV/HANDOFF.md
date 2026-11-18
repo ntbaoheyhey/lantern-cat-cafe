@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V7 V-F: native desktop density coverage passed; transition correction prototype next; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Run tools/v5vfx/probe-desktop-density-prototype.mjs detached;no other browser job running;out work/v5/CXV/films/V7-F-desktop-density-prototype.
+NEXT 1: Inspect native pixel control;prototype4thfailure344pixels differmax1onoriginreturn. Preserve failures;no tolerance/nativeadoption.
 NEXT 2: Verify probe ratio/composer sizes,16geometrysets,8originRGBchecks,stable/disposal behavior;measure20captures then review4freshviews once. Preserve any failure.
 NEXT 3: Only adopt native transition repair after prototype passes;focused tests/TSC and fresh native capture/provenance. Study gate01:50:40Z passed;time alone never authorizes adoption.
-Last confirmed pushf1da291ad; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+Last confirmed push31b291e79; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
@@ -15,6 +15,6 @@ Pending CXI: fallbackd4491cbb5;toast;labels2fd7665b4;posecrope1b1f58f5;HUD79d408
 Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDER refreshed01:53Z verified;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running: Vite21525;fullbattle4562 ended01:53:10Z. Zero detached jobs;prototype unrun. Transition4views already reviewed;do not reopen.
+Running: Vite21525;native pixel control PID6426 log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/density-roundtrip-pixels.log;one detached job. Transition4views already reviewed;do not reopen.
 Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread01:52Z. capture-arrival SHA1f1d220e unchanged.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.
