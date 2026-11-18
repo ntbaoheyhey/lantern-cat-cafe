@@ -1,0 +1,84 @@
+{
+  "utc": "2026-11-18T17:50:17.151996+00:00",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-only-profile-r1/build.json",
+    "sha256": "f6db611441d33815deddfdfe9aa04b068de567abb6b15adcb493f7d81d203b07"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "roster": [
+    "mochi",
+    "clover",
+    "panko",
+    "mallow"
+  ],
+  "mediaCats": [
+    "mochi"
+  ],
+  "artifact": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/mochi-label-controls-r1-171041/artifact-verification.json",
+    "sha256": "ff985a6721be03274b3cf424984045ca4a7ac72ed237d57ac810408e4beda7d1"
+  },
+  "helpers": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/media-production-fixture.mjs",
+      "sha256": "8955838da7f8f0a11adb895a9a308c71ab9a36cd552c9a5bdaa8a536900ff90c"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/capture-full-battle-production.mjs",
+      "sha256": "912364908846d73f916898289ee3b254b70175773c891db8d9a8b6f72ff624a3"
+    }
+  ],
+  "runnerSha256": "71e12611d24ad37c25c7c3266afb14dc95a1d2413614a6217188bcb225df7116",
+  "research": {
+    "path": "/Users/bao/taskbar-hero-mailbox/LEARN/CXI-mochi-cpu-attribution-20261118.md",
+    "sha256": "821ce5bb5ba1289c9dcaddd4632c03dba8eb28679957baacfb6c5f90bda8d51f"
+  },
+  "pilot": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-cpu-profiler-pilot-r1-review.json",
+    "sha256": "fb954ec744c9f6d70a2fd7a63c1cfd6c32632751f39b15fe4d43a0e879cf2489"
+  },
+  "trials": [
+    {
+      "name": "01-off",
+      "sampling": "off"
+    },
+    {
+      "name": "02-off",
+      "sampling": "off"
+    }
+  ],
+  "cpuRate": 1,
+  "samplingIntervalUs": 1000,
+  "observer": "counters",
+  "leaseStart": "2026-11-18T17:50:17.151996+00:00",
+  "leaseDeadline": "2026-11-18T17:58:17.151996+00:00",
+  "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1",
+  "gates": [
+    "Pinned source/index+197servedassets exact",
+    "Two natural full battles;initial/final/log/plans and independent rules exact",
+    "No CPU samples or screenshots during gameplaywindow",
+    "Zero console/page/blockedwrite errors;counter frame metrics retained"
+  ],
+  "limits": [
+    "Two repetitions on this Apple M3 Pro are descriptive,not ordinary-laptop proof.",
+    "No source/registry/art/label change or release acceptance.",
+    "Do not pool with prior dualmedia or Sorrel populations.",
+    "Counters observer still has overhead;CPU4comparison is host-relative only."
+  ],
+  "productionAcceptance": false,
+  "reason": "Current Mochi-only/native-Clover roster has4x diagnostic data but no matching unthrottled counter-only baseline. Newpopulation baseline,not recapture of old Sorrel/dualmedia results.",
+  "priorCpu4Review": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-cpu-r1-review.json",
+    "sha256": "d59c0915f42eb113919150be77970c059d617ac38d2b1ddc83bb8f2c8aeac386"
+  },
+  "priorPeerRelease": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/canvas-observation-r1-174752/release.json",
+    "sha256": "63289e5523caff56f31ef8daab1035b5b54f265c83494a2619b9cd7ab7b88282"
+  }
+}
