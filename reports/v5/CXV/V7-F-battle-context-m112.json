@@ -1,0 +1,20 @@
+{
+  "utc": "2026-11-18T03:25:39.681123+00:00",
+  "merge": "16e18b352b4280a52b4d91e01572a1e0056785c3",
+  "greenTag": "v5-m1.12",
+  "greenCommit": "9c93780eec11b5df017a13a13ae11f3e80575032",
+  "repairCommit": "172c317d424e51c8215cb12ac1cb7225a83c5506",
+  "applicationDeltaFromRepair": [],
+  "sceneSha256": "01826fc7c13e470d7d52b8800d9a1b72b97356b01a1544701c77acc2523289c3",
+  "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+  "priorNativeTests": 35,
+  "priorNativeTypesDiagnostics": 0,
+  "checksReusedReason": "Merge changes no application source or public assets; scene is byte-identical to tested native repair. Fresh untransformed production gate follows.",
+  "wake": {
+    "id": "cxv-wake",
+    "status": "ACTIVE",
+    "intervalMinutes": 15,
+    "preserved": true
+  },
+  "pass": true
+}
