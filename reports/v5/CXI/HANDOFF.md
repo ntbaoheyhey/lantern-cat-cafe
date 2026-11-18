@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;Mochi/Clover media still unregistered;releaseheld.
-NEXT 1: package provisional Clover sockets;inspect R3 delivery-pixel payload and extend owned loader channels independently.
-NEXT 2: test actual Chromium/WebKit VP9 profile1 decode/pixels/seek/loop;do not blind-tune codecs before result.
+NEXT 1: audit AGS packedV2 plus revised M1/M3;record precise dispositions;maintain>=2openTASKs.
+NEXT 2: investigate support-constrained matte cleaning/H264 quality;VP9profile1 installedWebKit27.2 loadeddata timeout;no further tuning.
 NEXT 3: review AGV landing and AGS corrections;fresh cold/performance/journey/audio gates;wave3 lastFAIL141046B.
-Last pushed3b9d4bba7;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no new release.
+Last pushed393dfbc71;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no new release.
 Live6301 native7 source85cb62233d016faf5c5235ffe178408df1682af3/indexd75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84;build/typecheck0;unreleased.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified06:16Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T06:16:49.105781+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;native7browser89843 complete0 all14steps;fullsuite0;CXI6301lease released after captures.
-Mailboxread INBOX-CXI162;USER24;LEARN94;R3channels/Cloverprovisional requestsACK;AGS3MtasksOPEN;latestM2 claim pending audit.
+Running:none;isolatedVP9probe complete;Chromiumdecode/seek/loopPASS,WebKit27.2 loadeddata timeout;6301released.
+Mailboxread INBOX-CXI165;USER24;LEARN94;Cloverprovisional sent/R3adapter4500PASS;AGS revisedM1/M2/M3 auditnext.
 AGS OPEN:T-M1REDO primarysources/license,T-M2REDO actualopaqueheight+packedmask+quality,T-M3REDO10s transparentmaster checklist;latestM2same artifacts audited.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.

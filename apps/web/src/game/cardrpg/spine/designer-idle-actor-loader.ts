@@ -2,7 +2,7 @@
 import type {SpineActor,DesignerMediaSampleContext} from './assets';
 import {SPINE_CONFIG,type SpineAnimation,type SpineSocket} from './config';
 import {animationCues} from './events';
-import {DesignerIdleMedia,validateDesignerIdle,designerPhase,type DesignerIdleManifest} from './designer-idle-loader';
+import {DesignerIdleMedia,validateDesignerIdle,designerPhase,type DesignerIdleManifest,type DesignerSocketChannel} from './designer-idle-loader';
 import {sampleLivingCatCast,livingCatCastOffset,applyLivingCatCast,LIVING_CAT_SKILL_EVENTS,LIVING_CAT_SKILL_SECONDS} from './living-cat-cast';
 import registry from './designer-idle-registry.json';
 
@@ -10,7 +10,7 @@ export class DesignerIdleActorMedia {
  private readonly pose={lean:0,lift:0,tilt:0,follow:0};private readonly offset={x:0,y:0};
  private frame=0;
  constructor(readonly media:DesignerIdleMedia){}
- point(x:number,y:number,channel?:'head'|'prop'){
+ point(x:number,y:number,channel?:DesignerSocketChannel){
   const m=this.media.manifest,track=channel?m.socketTracks?.[channel]:undefined;
   if(track){const i=Math.floor(this.frame),t=this.frame-i,a=track[i]!,b=track[(i+1)%300]!;x+=a[0]+(b[0]-a[0])*t;y+=a[1]+(b[1]-a[1])*t;}
   const scale=512/m.opaqueHeight,px=(x-m.foot[0])*scale,py=(m.foot[1]-y)*scale;

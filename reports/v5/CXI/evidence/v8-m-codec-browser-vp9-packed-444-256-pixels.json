@@ -1,0 +1,262 @@
+{
+  "utc": "2026-11-18T06:20:24.254Z",
+  "variant": "vp9-packed-444-256",
+  "purpose": "Standalone native codec/alpha packing experiment; not gameplay or final browser support certification",
+  "viewport": [
+    1280,
+    720
+  ],
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "available": true,
+      "cat": "mochi",
+      "nativeAlpha": false,
+      "support": {
+        "genericVP9": "probably",
+        "profile1": "probably"
+      },
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+      "loadMs": 31.700000002980232,
+      "dimensions": [
+        312,
+        520
+      ],
+      "samples": [
+        {
+          "seconds": 0,
+          "actual": 0,
+          "clear": 44166,
+          "opaque": 32905,
+          "alphaMean": 0.4284220907297842,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                182,
+                97,
+                44
+              ],
+              "alpha": 1,
+              "overWhite": [
+                182,
+                97,
+                44
+              ]
+            }
+          ],
+          "capture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/packed-vp9-256-r1/native-pixels/vp9-packed-444-256/chromium-mochi-0.png"
+        },
+        {
+          "seconds": 1,
+          "actual": 1,
+          "clear": 44555,
+          "opaque": 32406,
+          "alphaMean": 0.42469505356383225,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                115,
+                59,
+                26
+              ],
+              "alpha": 1,
+              "overWhite": [
+                115,
+                59,
+                26
+              ]
+            }
+          ],
+          "capture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/packed-vp9-256-r1/native-pixels/vp9-packed-444-256/chromium-mochi-1.png"
+        },
+        {
+          "seconds": 5,
+          "actual": 5,
+          "clear": 43325,
+          "opaque": 33190,
+          "alphaMean": 0.4364366515837114,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                184,
+                95,
+                39
+              ],
+              "alpha": 1,
+              "overWhite": [
+                184,
+                95,
+                39
+              ]
+            }
+          ],
+          "capture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/packed-vp9-256-r1/native-pixels/vp9-packed-444-256/chromium-mochi-5.png"
+        },
+        {
+          "seconds": 9.95,
+          "actual": 9.95,
+          "clear": 43886,
+          "opaque": 32371,
+          "alphaMean": 0.42810704064663435,
+          "points": [
+            {
+              "xy": [
+                0,
+                0
+              ],
+              "premul": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0,
+              "overWhite": [
+                255,
+                255,
+                255
+              ]
+            },
+            {
+              "xy": [
+                156,
+                130
+              ],
+              "premul": [
+                182,
+                90,
+                40
+              ],
+              "alpha": 1,
+              "overWhite": [
+                182,
+                90,
+                40
+              ]
+            }
+          ],
+          "capture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/packed-vp9-256-r1/native-pixels/vp9-packed-444-256/chromium-mochi-9.95.png"
+        }
+      ],
+      "startTime": 9.95,
+      "endTime": 0.6472,
+      "loopWrapped": true,
+      "callbacks": 21,
+      "times": [
+        9.967,
+        0,
+        0.033,
+        0.067,
+        0.1,
+        0.133,
+        0.167,
+        0.2,
+        0.233,
+        0.267,
+        0.3,
+        0.333,
+        0.367,
+        0.4,
+        0.433,
+        0.467,
+        0.5,
+        0.533,
+        0.567,
+        0.6,
+        0.633
+      ],
+      "quality": {
+        "total": 132,
+        "dropped": 0
+      }
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "error": "Error: page.evaluate: Error: video timeout: loadeddata",
+      "diagnostic": {
+        "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+        "videos": [
+          {
+            "src": "http://127.0.0.1:6308/vp9-444-crf28.webm",
+            "currentTime": 0,
+            "readyState": 1,
+            "networkState": 1,
+            "width": 312,
+            "height": 520,
+            "error": null,
+            "profile1": ""
+          }
+        ]
+      }
+    },
+    {
+      "engine": "firefox",
+      "available": false
+    }
+  ],
+  "crossEngine": []
+}

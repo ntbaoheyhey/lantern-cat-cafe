@@ -40,6 +40,35 @@ it('rejects incomplete tracks and an out-of-canvas face before allocating media'
  const m=manifest();m.socketTracks!.head!.pop();expect(()=>validateDesignerIdle(m,'mochi')).toThrow('socket track');
  const n=manifest();n.faceROI=[40,10,32,20];expect(()=>validateDesignerIdle(n,'mochi')).toThrow('face ROI');
 });
+it('keeps hip, shield wrist and lantern independent through fractional frames and wrap',()=>{
+ const {adapter,media,actor,geometry}=make();try{
+  const m=media.manifest;
+  m.socketTracks={...m.socketTracks,hip:Array.from({length:300},()=>[2,-3]),shieldWrist:Array.from({length:300},()=>[-5,7]),lantern:Array.from({length:300},()=>[11,-13])};
+  m.socketTracks.hip![299]=[6,-7];m.socketTracks.shieldWrist![299]=[-9,15];m.socketTracks.lantern![299]=[21,-23];
+  m.socketChannels={...m.socketChannels,hip:'hip','main-hand':'shieldWrist','vfx-origin':'lantern'};
+  expect(validateDesignerIdle(m,'mochi')).toBe(m);
+  media.video.currentTime=299.5/30;const clock={worldTime:1,paused:false,fixedTime:false,frozen:false};
+  adapter.sample(actor,'idle',0,10,false,clock);
+  const s=512/60;
+  for(const [key,x,y]of [['chest',4,47],['mainHand',-7,31],['vfxOrigin',16,60]] as const){
+   expect(actor.sockets.get(key)!.position.x).toBeCloseTo(x*s,8);
+   expect(actor.sockets.get(key)!.position.y).toBeCloseTo(y*s,8);
+  }
+  expect(actor.sockets.get('feet')!.position.toArray()).toEqual([0,0,1]);
+  adapter.sample(actor,'idle',0,10,true,clock);
+  expect(actor.sockets.get('chest')!.position.x).toBeCloseTo(2*s,8);
+  expect(actor.sockets.get('mainHand')!.position.x).toBeCloseTo(-5*s,8);
+  expect(actor.sockets.get('vfxOrigin')!.position.x).toBeCloseTo(11*s,8);
+  media.failure='decode';adapter.sample(actor,'idle',0,10,false,clock);
+  expect(actor.sockets.get('vfxOrigin')!.position.x).toBeCloseTo(11*s,8);
+ }finally{geometry.dispose();}
+});
+it('rejects unknown, missing and malformed independent socket channels',()=>{
+ const unknown=manifest();Object.assign(unknown.socketChannels!,{head:'constructor'});expect(()=>validateDesignerIdle(unknown,'mochi')).toThrow('socket channel');
+ const missing=manifest();missing.socketChannels!['main-hand']='shieldWrist';expect(()=>validateDesignerIdle(missing,'mochi')).toThrow('socket channel');
+ const malformed=manifest();malformed.socketTracks!.lantern=Array.from({length:300},()=>[0,NaN]);expect(()=>validateDesignerIdle(malformed,'mochi')).toThrow('socket track');
+ const track=manifest();Object.assign(track.socketTracks!,{arbitrary:Array.from({length:300},()=>[0,0])});expect(()=>validateDesignerIdle(track,'mochi')).toThrow('socket track');
+});
 it('never fetches or enrolls Soot',async()=>{
  const fetch=vi.spyOn(globalThis,'fetch');try{expect(await loadDesignerIdleActor({unit:{id:'soot'}} as SpineActor)).toBe(false);expect(fetch).not.toHaveBeenCalled();}finally{fetch.mockRestore();}
 });

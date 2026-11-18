@@ -6,10 +6,11 @@ import {existsSync} from 'node:fs';
 import {createServer} from 'node:http';
 import {resolve,sep} from 'node:path';
 import sharp from 'sharp';
-const root=resolve(import.meta.dirname,'../..'),base=resolve(root,'work/v5/CXI/batch-m/experiments');
+const variant=process.argv[2]??'untagged';assert(/^[a-z0-9-]+$/.test(variant));
+const packed444=variant==='vp9-packed-444-256';
+const root=resolve(import.meta.dirname,'../..'),base=resolve(root,`work/v5/CXI/batch-m/${packed444?'packed-vp9-256-r1':'experiments'}`);
 const require=createRequire(resolve(root,'apps/web/package.json'));
 const engines=require('@playwright/test');
-const variant=process.argv[2]??'untagged';assert(/^[a-z0-9-]+$/.test(variant));
 const capture=process.argv.includes('--pixels'),pixelDir=resolve(base,'native-pixels',variant);
 if(capture)await mkdir(pixelDir,{recursive:true});
 const server=createServer(async(req,res)=>{try{
@@ -28,18 +29,19 @@ try{
   if(!existsSync(engines[name].executablePath())){report.runs.push({engine:name,available:false});continue;}
   const browser=await engines[name].launch({headless:true,...(name==='chromium'?{args:['--use-angle=metal']}: {})});
   try{const page=await browser.newPage({viewport:{width:1280,height:720}});await page.goto('http://127.0.0.1:6308/');
-   for(const cat of ['mochi','clover']){
-    const row=await page.evaluate(async ({cat,variant,capture})=>{
-     const timeout=(promise,ms)=>Promise.race([promise,new Promise((_,reject)=>setTimeout(()=>reject(Error('video timeout')),ms))]);
+   for(const cat of packed444?['mochi']:['mochi','clover']){
+    const row=await page.evaluate(async ({cat,variant,capture,packed444})=>{
+     const timeout=(promise,ms,phase)=>Promise.race([promise,new Promise((_,reject)=>setTimeout(()=>reject(Error(`video timeout: ${phase}`)),ms))]);
      const v=document.createElement('video');v.muted=true;v.playsInline=true;v.loop=true;v.preload='auto';document.body.append(v);
      const ready=new Promise((r,j)=>{v.addEventListener('loadeddata',r,{once:true});v.addEventListener('error',()=>j(Error(String(v.error?.code))),{once:true});});
      const nativeAlpha=variant==='vp9-alpha';
-     const started=performance.now();v.src=`/${cat}-384/premul-mask-256-crf28${variant==='untagged'?'':'-'+variant}.${nativeAlpha?'webm':'mp4'}`;await timeout(ready,10000);
+     const support={genericVP9:v.canPlayType('video/webm; codecs="vp9"'),profile1:v.canPlayType('video/webm; codecs="vp09.01.10.08"')};
+     const started=performance.now();v.src=packed444?'/vp9-444-crf28.webm':`/${cat}-384/premul-mask-256-crf28${variant==='untagged'?'':'-'+variant}.${nativeAlpha?'webm':'mp4'}`;await timeout(ready,10000,'loadeddata');
      const loadMs=performance.now()-started,w=v.videoWidth,h=v.videoHeight/(nativeAlpha?1:2);
      const canvas=document.createElement('canvas');canvas.width=w;canvas.height=v.videoHeight;const ctx=canvas.getContext('2d',{willReadFrequently:true});
      const samples=[];
      for(const seconds of [0,1,5,9.95]){
-      if(seconds>0){const seek=new Promise(r=>v.addEventListener('seeked',r,{once:true}));v.currentTime=seconds;await timeout(seek,5000);}
+      if(seconds>0){const seek=new Promise(r=>v.addEventListener('seeked',r,{once:true}));v.currentTime=seconds;await timeout(seek,5000,`seek ${seconds}`);}
       ctx.clearRect(0,0,w,v.videoHeight);ctx.drawImage(v,0,0);const packed=ctx.getImageData(0,0,w,v.videoHeight).data;
       let clear=0,opaque=0,sum=0;const points=[];
       for(let y=0;y<h;y++)for(let x=0;x<w;x++){const i=(y*w+x)*4,a=packed[nativeAlpha?i+3:(h*w+y*w+x)*4]/255;if(a<.01)clear++;if(a>.99)opaque++;sum+=a;
@@ -50,14 +52,14 @@ try{
      const startTime=v.currentTime,times=[];let callbacks=0;
      const cb=(_now,meta)=>{times.push(meta.mediaTime);callbacks++;if(callbacks<40)v.requestVideoFrameCallback(cb);};
      if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(cb);
-     await timeout(v.play(),5000);await new Promise(r=>setTimeout(r,700));v.pause();
+     await timeout(v.play(),5000,'play');await new Promise(r=>setTimeout(r,700));v.pause();
      const endTime=v.currentTime,quality=v.getVideoPlaybackQuality?.();v.removeAttribute('src');v.load();v.remove();
-     return {cat,nativeAlpha,ua:navigator.userAgent,loadMs,dimensions:[w,canvas.height],samples,startTime,endTime,loopWrapped:endTime<startTime,callbacks,times,quality:quality?{total:quality.totalVideoFrames,dropped:quality.droppedVideoFrames}:null};
-    },{cat,variant,capture});
+     return {cat,nativeAlpha,support,ua:navigator.userAgent,loadMs,dimensions:[w,canvas.height],samples,startTime,endTime,loopWrapped:endTime<startTime,callbacks,times,quality:quality?{total:quality.totalVideoFrames,dropped:quality.droppedVideoFrames}:null};
+    },{cat,variant,capture,packed444});
     if(capture)for(const sample of row.samples){sample.capture=resolve(pixelDir,`${name}-${cat}-${sample.seconds}.png`);await writeFile(sample.capture,Buffer.from(sample.png.split(',')[1],'base64'));delete sample.png;}
     report.runs.push({engine:name,version:browser.version(),available:true,...row});
    }
-  }catch(error){report.runs.push({engine:name,error:String(error)});}finally{await browser.close();}
+  }catch(error){const page=browser.contexts()[0]?.pages()[0];const diagnostic=page?await page.evaluate(()=>({ua:navigator.userAgent,videos:[...document.querySelectorAll('video')].map(v=>({src:v.src,currentTime:v.currentTime,readyState:v.readyState,networkState:v.networkState,width:v.videoWidth,height:v.videoHeight,error:v.error?{code:v.error.code,message:v.error.message}:null,profile1:v.canPlayType('video/webm; codecs="vp09.01.10.08"')}))})):null;report.runs.push({engine:name,version:browser.version(),error:String(error),diagnostic});}finally{await browser.close();}
  }
  if(capture){report.crossEngine=[];for(const cat of ['mochi','clover']){
    const a=report.runs.find(r=>r.engine==='chromium'&&r.cat===cat),b=report.runs.find(r=>r.engine==='webkit'&&r.cat===cat);if(!a||!b)continue;

@@ -1,14 +1,16 @@
 /** Bounded, per-actor designer video delivery. Only explicitly registered M/C assets use it. */
 import * as T from 'three';
 
+export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern'] as const;
+export type DesignerSocketChannel=typeof DESIGNER_SOCKET_CHANNELS[number];
 export interface DesignerIdleManifest {
  version:1;id:'mochi'|'clover';format:'h264-rgb-mask';video:string;poster:string;
  width:number;height:number;opaqueHeight:number;foot:[number,number];duration:10;fps:30;frames:300;
  sourceSha256:string;videoSha256:string;posterSha256:string;videoBytes:number;
  sockets:Record<string,[number,number]>;
  opaqueBounds?:[number,number,number,number];faceROI?:[number,number,number,number];
- socketTracks?:Partial<Record<'head'|'prop',[number,number][]>>;
- socketChannels?:Record<string,'head'|'prop'>;
+ socketTracks?:Partial<Record<DesignerSocketChannel,[number,number][]>>;
+ socketChannels?:Record<string,DesignerSocketChannel>;
 }
 export interface DesignerIdleClock {
  worldTime:number;paused:boolean;fixedTime:boolean;frozen:boolean;playbackRate?:number;
@@ -32,9 +34,9 @@ export function validateDesignerIdle(value:unknown,id:string):DesignerIdleManife
  if(m.opaqueBounds&&(m.opaqueBounds[2]<=m.opaqueBounds[0]||m.opaqueBounds[3]<=m.opaqueBounds[1]||m.opaqueBounds[2]>m.width||m.opaqueBounds[3]>m.height))throw Error('Invalid designer opaque bounds');
  if(m.faceROI&&(m.faceROI[0]+m.faceROI[2]>m.width||m.faceROI[1]+m.faceROI[3]>m.height))throw Error('Invalid designer face ROI');
  for(const [channel,frames]of Object.entries(m.socketTracks??{})){
-  if(!['head','prop'].includes(channel)||!Array.isArray(frames)||frames.length!==300||frames.some(xy=>!Array.isArray(xy)||xy.length!==2||!xy.every(Number.isFinite)))throw Error('Invalid designer socket track');
+  if(!DESIGNER_SOCKET_CHANNELS.includes(channel as DesignerSocketChannel)||!Array.isArray(frames)||frames.length!==300||frames.some(xy=>!Array.isArray(xy)||xy.length!==2||!xy.every(Number.isFinite)))throw Error('Invalid designer socket track');
  }
- for(const [socket,channel]of Object.entries(m.socketChannels??{}))if(!m.sockets[socket]||!m.socketTracks?.[channel])throw Error('Invalid designer socket channel');
+ for(const [socket,channel]of Object.entries(m.socketChannels??{}))if(!DESIGNER_SOCKET_CHANNELS.includes(channel)||!m.sockets[socket]||!m.socketTracks?.[channel])throw Error('Invalid designer socket channel');
  return m;
 }
 export const designerPhase=(time:number,duration=10)=>((time%duration)+duration)%duration;
