@@ -1,0 +1,237 @@
+{
+  "utc": "2026-11-18T17:34:31.163617+00:00",
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r2/measurement.json",
+    "sha256": "d95916ec45404faba24faba1e603378dd964bd81eef61c1defcd8e3d383e48f9"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-L1-eye-observation-R2-preregistration.json",
+    "sha256": "a166054c61191460db4947eb6a52c9c6f39acab5862e6380637f4f1e146001c3"
+  },
+  "tool": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/observe-designer-eyes.py",
+    "sha256": "9022c102bc300d6e5eed3065ce7dfc66f78dad49dfa1395a3722b852e1e4a3a3"
+  },
+  "scopeCorrection": "Raw measurement limit string inherited first-event template. R2 preregistration and actual clip groups cover events2/3; raw evidence unchanged.",
+  "imageLedger": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r2/mochi-event2-eye-observation.png",
+      "sha256": "aaa36f0f70aa24c910349c06561c67f3e22a3cb542f8ad7204af6a0f4775cc49",
+      "dimensions": [
+        1024,
+        864
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:34:31.163617+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r2/mochi-event3-eye-observation.png",
+      "sha256": "fc21c8606ab27df2bcaae0384fa65ac4c947e9c0292d3f40e0fefa622c00528e",
+      "dimensions": [
+        1024,
+        864
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:34:31.163617+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r2/clover-event2-eye-observation.png",
+      "sha256": "3a402f58f48d973e09a4260642ce9b5d999a9662869e13b467f0dce8426ff077",
+      "dimensions": [
+        1024,
+        864
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:34:31.163617+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/l1-eye-observation-r2/clover-event3-eye-observation.png",
+      "sha256": "7141efb8359a4148bb4549a1cc3630e6d21e8a63ddbac22e61c371dd6e30f577",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "reviewedOnce": true,
+      "reviewedUTC": "2026-11-18T17:34:31.163617+00:00"
+    }
+  ],
+  "observations": {
+    "mochi-event2": {
+      "shutBoth": [
+        140,
+        142
+      ],
+      "uncertainBoth": [
+        134,
+        136,
+        138,
+        144,
+        146,
+        148
+      ],
+      "closureBracket": [
+        132,
+        140
+      ],
+      "reopeningBracket": [
+        142,
+        152
+      ],
+      "note": "Both apertures remain visible atF132; both lids joined atF140/142. Tiny inner-corner traces keep intervening/restoring samples uncertain; two apertures clear again atF152.",
+      "visibleBoth": [
+        116,
+        118,
+        120,
+        122,
+        126,
+        130,
+        132,
+        152,
+        154,
+        156,
+        158,
+        160,
+        162,
+        164,
+        166
+      ],
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "intervalConvention": "(earlier,last-known state; later,first definite state], sampling bracket,not confidence interval",
+      "uncertainty": "At least30fps frame quantization; ambiguous240px displayed apertures retained."
+    },
+    "mochi-event3": {
+      "shutBoth": [
+        242,
+        244
+      ],
+      "uncertainBoth": [
+        234,
+        240,
+        246,
+        248,
+        250,
+        252,
+        254
+      ],
+      "closureBracket": [
+        232,
+        242
+      ],
+      "reopeningBracket": [
+        244,
+        256
+      ],
+      "note": "Two narrow apertures atF232; clearly joined lids atF242/244; tiny inner-corner traces/slits unresolved throughF254; two apertures evident atF256.",
+      "visibleBoth": [
+        216,
+        218,
+        220,
+        222,
+        224,
+        226,
+        230,
+        232,
+        256,
+        258,
+        260,
+        262,
+        264,
+        266,
+        268
+      ],
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "intervalConvention": "(earlier,last-known state; later,first definite state], sampling bracket,not confidence interval",
+      "uncertainty": "At least30fps frame quantization; ambiguous240px displayed apertures retained."
+    },
+    "clover-event2": {
+      "shutBoth": [
+        169,
+        171
+      ],
+      "uncertainBoth": [
+        167,
+        173
+      ],
+      "closureBracket": [
+        163,
+        169
+      ],
+      "reopeningBracket": [
+        171,
+        175
+      ],
+      "note": "Both apertures visibleF163; near-contact slits atF167 ambiguous; joined lidsF169/171; both visibly open byF175.",
+      "visibleBoth": [
+        147,
+        149,
+        151,
+        153,
+        155,
+        157,
+        159,
+        161,
+        163,
+        175,
+        177,
+        179,
+        181,
+        183,
+        185,
+        187,
+        189
+      ],
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "intervalConvention": "(earlier,last-known state; later,first definite state], sampling bracket,not confidence interval",
+      "uncertainty": "At least30fps frame quantization; ambiguous240px displayed apertures retained."
+    },
+    "clover-event3": {
+      "shutBoth": [],
+      "uncertainBoth": [],
+      "closureBracket": null,
+      "reopeningBracket": null,
+      "note": "All15 sampled frames retain visible apertures,including the thin green slits atF207. Previously sampled minimaF203/205 were deliberately excluded; no full-closure claim for this event follows from R2.",
+      "visibleBoth": [
+        191,
+        193,
+        195,
+        197,
+        199,
+        201,
+        207,
+        209,
+        211,
+        213,
+        215,
+        217,
+        219,
+        221,
+        223
+      ],
+      "authoredClosingOnset": null,
+      "parameterMinimum": null,
+      "fullyOpenRestoration": null,
+      "continuousClosedDuration": null,
+      "separateWinkEstablished": false,
+      "intervalConvention": "(earlier,last-known state; later,first definite state], sampling bracket,not confidence interval",
+      "uncertainty": "At least30fps frame quantization; ambiguous240px displayed apertures retained."
+    }
+  },
+  "counts": {
+    "sourceCrops": 83,
+    "sheets": 4,
+    "viewedOnce": 4
+  },
+  "decision": "ACCEPT observed states only. Both remaining Mochi events and Clover event2 include bilateral full closure; Clover event3 full closure not established by these selected frames. No separate wink established. No code/art timing changes."
+}

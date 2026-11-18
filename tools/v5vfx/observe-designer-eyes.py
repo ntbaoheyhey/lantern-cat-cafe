@@ -1,9 +1,9 @@
 """Render frozen source-eye observations without changing old evidence."""
 from pathlib import Path
+import argparse
 import datetime
 import hashlib
 import json
-import math
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -26,6 +26,13 @@ def sha_file(path):
 
 
 def main():
+    global PRE, OUT
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--prereg', type=Path, default=PRE)
+    parser.add_argument('--out', type=Path, default=OUT)
+    args = parser.parse_args()
+    PRE, OUT = args.prereg.resolve(), args.out.resolve()
+    assert str(OUT).startswith(str(ROOT / 'work/v5/CXV') + '/')
     prereg = json.loads(PRE.read_text())
     assert not OUT.exists(), 'Preserve previous evidence; never overwrite a run.'
     OUT.mkdir(parents=True)
@@ -40,7 +47,10 @@ def main():
         'clips': {}, 'imagesReviewed': [],
         'limit': 'First-event development observation. No parameter recovery or native acceptance.'
     }
-    for cat, indices in prereg['frames'].items():
+    groups = prereg.get('groups') or [{'key': cat, 'cat': cat, 'frames': indices}
+                                    for cat, indices in prereg['frames'].items()]
+    for group in groups:
+        cat, key, indices = group['cat'], group['key'], group['frames']
         source = Path('/Users/bao/Downloads') / ('Scene1.mp4' if cat == 'mochi' else 'clover.mp4')
         source_hash = sha_file(source)
         assert source_hash == prereg['sourceHashes'][cat]
@@ -64,7 +74,7 @@ def main():
                 continue
             left, top, right, bottom = crop_box
             crop = frame[top:bottom, left:right]
-            crop_path = OUT / f'{cat}-f{index:03d}-crop.png'
+            crop_path = OUT / f'{key}-f{index:03d}-crop.png'
             assert cv2.imwrite(str(crop_path), crop)
             small = cv2.resize(crop, (240, 120), interpolation=cv2.INTER_AREA)
             tile = np.full((144, 256, 3), 24, np.uint8)
@@ -84,18 +94,19 @@ def main():
         sheet = np.concatenate([np.concatenate(tiles[n:n + 4], axis=1)
                                 for n in range(0, len(tiles), 4)], axis=0)
         assert max(sheet.shape[:2]) <= 1024
-        sheet_path = OUT / (cat + '-eye-event1.png')
+        sheet_path = OUT / (key + '-eye-observation.png')
         assert cv2.imwrite(str(sheet_path), sheet)
         sheet_hash = sha_file(sheet_path)
         assert sheet_hash not in old_hashes
-        report['clips'][cat] = {
+        report['clips'][key] = {
+            'cat': cat,
             'source': str(source), 'sourceSha256': source_hash,
             'originalDimensions': [width, height], 'referenceDimensions': [ref_w, ref_h],
             'originalCropLTRB': crop_box, 'frames': frames,
             'sheet': {'path': str(sheet_path), 'sha256': sheet_hash,
                       'dimensions': [sheet.shape[1], sheet.shape[0]], 'reviewedOnce': False}
         }
-        print(cat, len(frames), 'frames;', sheet.shape[1], sheet.shape[0], 'sheet;', sheet_hash, flush=True)
+        print(key, len(frames), 'frames;', sheet.shape[1], sheet.shape[0], 'sheet;', sheet_hash, flush=True)
     (OUT / 'measurement.json').write_text(json.dumps(report, indent=2) + '\n')
     print('Recorded source/crop/frame hashes before any visual review.', flush=True)
 
