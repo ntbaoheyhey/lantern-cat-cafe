@@ -1,10 +1,10 @@
 # CXV V7 handoff
 ACTIVE V7 V-F: focus3050ee5ae passes native/fullbattle; shader first-use attribution running;assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Poll shader-first-use-attribution PID99654;measure/review2freshframes;quantify shader log/link call costs before any preparation prototype.
+NEXT 1: Poll shader preparation probe;validate identity/diagnostics/fullRGB and measure addedprograms/prep before natural trials;study gate01:36:53Z.
 NEXT 2: Only if current evidence supports it,test tool-only compileAsync preparation with checks enabled/countallprep. Study gate01:36:53Z;no native shader changes.
 NEXT 3: Keep original upload/readback experiments rejected; follow CXI integration of scheduling96d1e75c3 + tests6d94a279d; no repeated judge claims.
-Last confirmed push402c4d188; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
+Last confirmed push5b358aab3; nativefocus0f1a74b4fc4 now13tests/TSC0/80geometry/8RGB; application focus3050ee5ae; V-A3WIP13659e2b4 pushed; capture-arrival SHA1f1d220e unchanged.
 Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
 Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
 V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
@@ -15,6 +15,6 @@ Pending CXI: fallbackd4491cbb5; toast lower-edge repair; labels2fd7665b4; packed
 Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDER text refreshed 2026-11-18T01:14:33.046297+00:00;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running: Vite21525; shader attribution PID99654 log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/shader-first-use-attribution.log;fullbattle98972 ended01:22:15Z/pass;one detached job.
+Running: Vite21525; shader preparation probe PID423 log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/shader-preparation-probe.log;attribution99654ended01:24:02Z/pass;one detached job.
 Mailbox INBOX-CXV192/USER23 unchanged;STOP absent;RULES reread 2026-11-18T01:18:47.778328+00:00.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.

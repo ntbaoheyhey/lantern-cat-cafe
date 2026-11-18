@@ -73,3 +73,5 @@
 2026-11-18T01:18:31.104836+00:00 V-F nativefocus production pass:source3050ee5ae/index45f38b93,3764artifactfiles exact,26actions/6ultimates each32s,zeroerrors/blocks,2freshviewsreviewed. Nativefocus4.3/18.8ms;global4xp9533.4ms. ScopedREADY follows push;fullbattle next.
 
 2026-11-18T01:23:33.707185+00:00 V-F focusfullbattle4x pass:source3050ee5ae/index45f38b93;normal/reducedwin99.420/98.951s,68actions24ults,82apply46expire exactparity,0errors/blocks.16capturesmeasured4sheetsreviewed;p9533.4msboth/late35,25;toastCXIpending. Shaderattribution99654next;gate01:36:53Z.
+
+2026-11-18T01:26:47.812489+00:00 V-F shader attribution native3050ee5ae:16links/16program-log queries per32s;logelapsed30.2/31.3ms,max3.1/4.1ms. Checks enabled,0failedstatus/logerrors,0browser/networkerrors;2freshviews reviewed once. Bounded target only;toolcompileAsync preparation probe423 next.
