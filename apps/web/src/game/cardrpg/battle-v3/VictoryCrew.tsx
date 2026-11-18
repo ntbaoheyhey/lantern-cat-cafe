@@ -11,16 +11,30 @@ export interface VictoryCat {id:string;name:string;alive:boolean}
 export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
  const host=useRef<HTMLDivElement>(null),key=cats.map(c=>`${c.id}:${c.alive}`).join(',');
  useEffect(()=>{
-  const element=host.current!;let renderer:T.WebGLRenderer;
+  const element=host.current!;
+  // React retains this host when an effect restarts; construction can fail.
+  delete element.dataset.ready;delete element.dataset.drawn;delete element.dataset.loadError;
+  let renderer:T.WebGLRenderer;
   try{renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});}catch{return;}
   const scene=new T.Scene(),camera=new T.OrthographicCamera(-1,1,1,0,.1,1000),actors=new Map<number,SpineActor>(),drawings=new Map<number,DrawnPoses>();
-  delete element.dataset.ready;delete element.dataset.loadError;
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=T.SRGBColorSpace;camera.position.z=100;
   renderer.domElement.setAttribute('aria-hidden','true');element.append(renderer.domElement);
   let disposed=false,raf=0,start=0,width=0,height=0;
   const media=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const draw=(now:number)=>{
+  const requestDraw=()=>{if(!disposed&&!raf)raf=requestAnimationFrame(draw);};
+  let densityMedia=window.matchMedia('(resolution: '+(devicePixelRatio||1)+'dppx)');
+  const densityChanged=()=>{
+   if(disposed)return;
+   densityMedia.removeEventListener('change',densityChanged);
+   densityMedia=window.matchMedia('(resolution: '+(devicePixelRatio||1)+'dppx)');
+   densityMedia.addEventListener('change',densityChanged);
+   if(renderer.getPixelRatio()!==Math.min(devicePixelRatio||1,1.5))requestDraw();
+  };
+  densityMedia.addEventListener('change',densityChanged);
+  const draw=(now:number)=>{ raf=0;
    if(disposed)return;if(!start)start=now;
+   const density=Math.min(devicePixelRatio||1,1.5);
+   if(renderer.getPixelRatio()!==density)renderer.setPixelRatio(density);
    const w=Math.max(1,element.clientWidth),h=Math.max(1,element.clientHeight);
    if(w!==width||h!==height){width=w;height=h;renderer.setSize(w,h);camera.left=-w/2;camera.right=w/2;camera.top=h;camera.bottom=0;camera.updateProjectionMatrix();}
    const calm=reduced||media.matches,seconds=calm?.75:(now-start)/1000;
@@ -36,7 +50,7 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
     actor.root.position.set(x-width/2+(cat.alive?pose.x:0)-(cos*footX*sx-sin*footY*sy),y-(sin*footX*sx+cos*footY*sy)-(cat.alive?pose.y:0),0);
     if(!cat.alive)actor.root.traverse(node=>{if(node instanceof T.Mesh){const m=node.material as T.MeshBasicMaterial;m.opacity=.35;m.color.set('#9b8d9f');}});
    }
-   renderer.render(scene,camera);raf=requestAnimationFrame(draw);
+   renderer.render(scene,camera);if(!calm)requestDraw();
   };
   cats.forEach((cat,i)=>void loadSpineActor(cat.id,undefined,{deferNativePixels:isCraftOwner(cat.id)}).then(async actor=>{
    try{
@@ -44,11 +58,12 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
     const set=isCraftOwner(cat.id)&&actor.source!=='designer'&&actor.source!=='sequence'?await loadDrawnPoseSet(cat.id):undefined;
     if(disposed){actor.dispose();return;}
     if(set)drawings.set(i,new DrawnPoses(actor,set));
-    actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(actors.size===cats.length);element.dataset.drawn=String(drawings.size);
+    actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(actors.size===cats.length);element.dataset.drawn=String(drawings.size);requestDraw();
    }catch(error){actor.dispose();throw error;}
   }).catch(()=>{if(!disposed)element.dataset.loadError='true';}));
-  raf=requestAnimationFrame(draw);
-  return()=>{disposed=true;cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
+  const resizeObserver=new ResizeObserver(requestDraw);resizeObserver.observe(element);
+  media.addEventListener("change",requestDraw);renderer.domElement.addEventListener("webglcontextrestored",requestDraw);
+  requestDraw();return()=>{disposed=true;densityMedia.removeEventListener('change',densityChanged);resizeObserver.disconnect();media.removeEventListener("change",requestDraw);renderer.domElement.removeEventListener("webglcontextrestored",requestDraw);cancelAnimationFrame(raf);for(const actor of actors.values())actor.dispose();renderer.dispose();renderer.forceContextLoss();renderer.domElement.remove();};
  // Cat identity, survival and reduced motion are the complete rendering inputs.
  },[key,reduced]);
  return <div className="b3-victory-crew" ref={host} role="img" aria-label={cats.filter(c=>c.alive).map(c=>`${c.name}: ${VICTORY_GESTURES[c.id]?.name??'victory'}`).join(', ')}>
