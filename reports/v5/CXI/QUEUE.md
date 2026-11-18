@@ -50,3 +50,7 @@ M-I3 PATCH CHECK:zero-context proposal passes --unidiff-zero;not stale-source an
 M-I2 CONDITIONING AUDITED:2026-11-18T17:05:40.320889+00:00 170imagehashes/1666counts exact;32initialdiffs/29719pixels. Cause unresolved,original33/34 vs initialequality2/34 unchanged.
 M-I3 ENROLLMENT PREREG:mochi-only nativeClover8rows/2freshstills;install after17:07:17Z;CXV570released. No labels/sourceadopted.
 AGS566/568 REDO:V3/FINAL allblankPTS;twoTASKtracking restored;futureZ timestamps unreliable.
+
+M-I3 MOCHI-ONLY ENROLLMENT PASS 2026-11-18T17:10:54.687921+00:00:installed3795files/291925344B,sourcebf01/indexe66485f9;2pages8states/3payloads exact;Cloverplaceholder,Panko/Mallowtemplate.2viewswavebannerobscuresMochi,noartacceptance.
+M-I2 CONTROLS AUDITED:50hashes/1700statechecks/160pixelstats;untouched/sham exact5/5,firstconceal4persistentdiffs. strictRGB0 unchanged. CXV20freshpages4arms lease17:09:38–17:17:38Z ANDrelease.
+AGS573 REDO config-only/blankPTS/no newwork;T-CXI14 PTSfieldstudy assigned,keepQA+M5OPEN.

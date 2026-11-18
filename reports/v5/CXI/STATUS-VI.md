@@ -1,5 +1,5 @@
 # V8 Batch M
-Hiện tại 2026-11-18T17:00:31.362868+00:00: bản xanh vẫn v5-m1.15;media Mochi/Clover chưa phát hành. Profile chỉ Mochi tạo và kiểm tra xong:3.795tệp/291.925.344B,index e66485f9;3payload nguyên vẹn,Clover media không nằm trong bundle. Chưa cài. CXV đang có lượt đối chứng R7 đến17:07:17Z và phải nhả lease rõ ràng. Đề xuất nhãn không lỗi nguồn:patch không có context nên cần --unidiff-zero để kiểm tra;chưa áp dụng.
+Hiện tại 2026-11-18T17:10:54.687921+00:00: bản xanh vẫn v5-m1.15. Preview6301 đã chuyển sang profile chỉMochi,nguồn bf01/index e66485f9;không đổi registry production. Hai trang/tám mẫu xác nhận Mochi dùng video,Clover dùng bộ xương cũ,Panko/Mallow dùng rig native;ba payload đúnghash,không lỗi. Hai ảnh mới còn banner đầu wave che mặtMochi nên chưa duyệt art. Đối chứng5ca đã kiểmtoán50hash/1.700trạngthái:4ca đổi pixel sau thao tác ẩn/hiện nhãn;giữ tiêu chuẩn0. CXV đang kiểm tra20trang mới để tách phươngpháp và vịtrí.
 
 2026-11-18T05:47:08.972148+00:00 — Panko đã kiểm tra trên bản production: chân và gốc không trôi trong vòng10giây ở cả hai chế độ; skill350ms khớp mốc.55,ult1100ms khớp1.1. Phim so sánh cùng chiều cao/tốc độ và5ảnh mới đã duyệt. Chưa phát hành vì còn ngân sách tải/hiệu năng. Mallow nhập có giới hạn,16test+typecheck đạt;2464ca so sánh mã dùng chung khớp,3833đường dẫn bảo vệ không đổi.
 
