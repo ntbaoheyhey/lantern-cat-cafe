@@ -1,0 +1,141 @@
+{
+  "utc": "2026-11-18T03:59:26.094Z",
+  "sourceCommit": "150bcad02f51bfcd83c16f1f52c7e90fb1d7bb80",
+  "toolSha256": "08e84b82c278ef0a1af8fb5444cdc41e2b0ca853f40d7f984bdcb2902a46d4c3",
+  "method": "Pinned existing half-WebP decoded to same-size sRGB PNG, AVIF444/full/CICP1-13-6 with lossless alpha; composite errors on black and white. Numeric fidelity and size gates do not establish visual acceptance.",
+  "encoder": "Version: 1.4.2 (dav1d [dec]:1.5.4, aom [enc/dec]:3.15.3)\nlibyuv : unavailable",
+  "settings": {
+    "quality": null,
+    "alphaQuality": 100,
+    "speed": 2,
+    "jobs": 2,
+    "yuv": "444",
+    "range": "full",
+    "cicp": "1/13/6",
+    "targetFrom": "v7-native-half-q40s2",
+    "targetTotal": 145000,
+    "targets": {
+      "kettle-knight": 42575,
+      "crumb-sentinel": 36365,
+      "pollen-scout": 36420,
+      "spool-ram": 29638
+    }
+  },
+  "rows": [
+    {
+      "id": "kettle-knight",
+      "source": "apps/web/public/units/kettle-knight/rig-depth.half.webp",
+      "sourceSha256": "3b3110cb3728bad05a062f7d3ab9fe1c1558ef88a5f5e49660cbc80bc6ded2e6",
+      "sourceBytes": 72238,
+      "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half/v7-native-half-target145/kettle-knight.avif",
+      "sha256": "b47cb72745b68eb5e382454a97541ad4a03701488dc87f38b4df80b0f0db0fde",
+      "bytes": 42699,
+      "saving": 29539,
+      "width": 1024,
+      "height": 1024,
+      "alphaMaxError": 0,
+      "alphaChangedPixels": 0,
+      "visiblePixels": 190637,
+      "compositeRmse": 3.8534825117599776,
+      "visibleCompositeRmse": 9.037529990765751,
+      "visibleCompositePsnr": 29.009808578721493,
+      "compositeMaxError": 95.24705882352941,
+      "encodeMs": 11989.462
+    },
+    {
+      "id": "crumb-sentinel",
+      "source": "apps/web/public/units/crumb-sentinel/rig-depth.half.webp",
+      "sourceSha256": "32a284e838ae5ea9ccdbccadbf37feed698dad0632e818f10871c97d88bd6a27",
+      "sourceBytes": 64362,
+      "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half/v7-native-half-target145/crumb-sentinel.avif",
+      "sha256": "113c62a9a28890f9937b9c5bb9443e6546fbd1622888a877eae103e8292345d6",
+      "bytes": 36306,
+      "saving": 28056,
+      "width": 1024,
+      "height": 512,
+      "alphaMaxError": 0,
+      "alphaChangedPixels": 0,
+      "visiblePixels": 129560,
+      "compositeRmse": 4.9172967336418605,
+      "visibleCompositeRmse": 9.891813182839769,
+      "visibleCompositePsnr": 28.225285495387148,
+      "compositeMaxError": 102.1921568627451,
+      "encodeMs": 7383.820958999999
+    },
+    {
+      "id": "pollen-scout",
+      "source": "apps/web/public/units/pollen-scout/rig-depth.half.webp",
+      "sourceSha256": "c80ee3edf82207697b9f9060927a89ef6a7430eb877d458d9ce0fcf544ca5fbd",
+      "sourceBytes": 57578,
+      "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half/v7-native-half-target145/pollen-scout.avif",
+      "sha256": "455febf955e24f80c7c95196a96a8703a0245edc4549a38d9dc5fe163e21af18",
+      "bytes": 36705,
+      "saving": 20873,
+      "width": 1024,
+      "height": 512,
+      "alphaMaxError": 0,
+      "alphaChangedPixels": 0,
+      "visiblePixels": 106405,
+      "compositeRmse": 4.403605917365275,
+      "visibleCompositeRmse": 9.774901446837184,
+      "visibleCompositePsnr": 28.32855586033493,
+      "compositeMaxError": 82.34901960784313,
+      "encodeMs": 6962.6468749999985
+    },
+    {
+      "id": "spool-ram",
+      "source": "apps/web/public/units/spool-ram/rig-depth.half.webp",
+      "sourceSha256": "2ed024f8c69dd785994c84f56d916edf61aa07f2944540a44d823b4e802099e8",
+      "sourceBytes": 45678,
+      "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/native-half/v7-native-half-target145/spool-ram.avif",
+      "sha256": "34256f4aa66953c073f8c2a32ca96d955cfdebc24d87af6b47292cb4417f2b9c",
+      "bytes": 29806,
+      "saving": 15872,
+      "width": 1024,
+      "height": 512,
+      "alphaMaxError": 0,
+      "alphaChangedPixels": 0,
+      "visiblePixels": 87727,
+      "compositeRmse": 3.521365046030799,
+      "visibleCompositeRmse": 8.608537363848344,
+      "visibleCompositePsnr": 29.43221623296216,
+      "compositeMaxError": 84,
+      "encodeMs": 6519.973167
+    }
+  ],
+  "complete": true,
+  "totals": {
+    "source": 239856,
+    "candidate": 145516,
+    "saving": 94340
+  },
+  "sizePass": true,
+  "finishedUtc": "2026-11-18T03:59:59.216Z",
+  "loaderUpdates": [
+    {
+      "path": "apps/web/public/units/kettle-knight/rig-depth.half.avif",
+      "from": "/units/kettle-knight/rig-depth.half.webp",
+      "to": "/units/kettle-knight/rig-depth.half.avif",
+      "sha256": "b47cb72745b68eb5e382454a97541ad4a03701488dc87f38b4df80b0f0db0fde"
+    },
+    {
+      "path": "apps/web/public/units/crumb-sentinel/rig-depth.half.avif",
+      "from": "/units/crumb-sentinel/rig-depth.half.webp",
+      "to": "/units/crumb-sentinel/rig-depth.half.avif",
+      "sha256": "113c62a9a28890f9937b9c5bb9443e6546fbd1622888a877eae103e8292345d6"
+    },
+    {
+      "path": "apps/web/public/units/pollen-scout/rig-depth.half.avif",
+      "from": "/units/pollen-scout/rig-depth.half.webp",
+      "to": "/units/pollen-scout/rig-depth.half.avif",
+      "sha256": "455febf955e24f80c7c95196a96a8703a0245edc4549a38d9dc5fe163e21af18"
+    },
+    {
+      "path": "apps/web/public/units/spool-ram/rig-depth.half.avif",
+      "from": "/units/spool-ram/rig-depth.half.webp",
+      "to": "/units/spool-ram/rig-depth.half.avif",
+      "sha256": "34256f4aa66953c073f8c2a32ca96d955cfdebc24d87af6b47292cb4417f2b9c"
+    }
+  ],
+  "disposition": "Prepared candidate only; own native decode/GPU/visual acceptance pending. Originals/manifests owned by AGV preserved."
+}
