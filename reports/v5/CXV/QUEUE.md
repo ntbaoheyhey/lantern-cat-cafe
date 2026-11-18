@@ -1,9 +1,9 @@
 # CXV V8 queue — Batch M first
 - DONE scoped M-V1 source/L1/L2/L4 study and Panko experiment; source/EN+ZH notebook retained; native-eight learning gate passed05:19:53Z. AGV supplemental tables/research still rejected and active.
-- READY scoped M-V2 nine idles: Panko992492c6f, Mallow4ec917401+c7d3cf13a, native7a3173c08e/evidence6ee844355. Integrated judge/performance acceptance remains CXI gate.
+- READY scoped M-V2 nine idles: Panko992492c6f, Mallow4ec917401+c7d3cf13a, native7a3173c08e/evidence6ee844355. CXI production motionACCEPT06:16:45Z; budget/performance gates remain.
 - READY scoped M-V3 same nine native/drawn casts, real rules350ms→skill.55 and additive handoff; M/C cast API accepted, final media cast art/gameplay remains OPEN.
 - READY scoped M-V4 native7:60focused/TSC0,7films/28freshimages,feet/seam0,Soot3833unchanged; M-native-seven-READY.json. Mallow/Panko individual reports retained. M/C final comparisons OPEN.
-- ACTIVE M/C socket follow-up: Mochi hip/shieldwrist/independentlanternR3 accepted; head/offHand unsupported; Clover channels/coordinates pending. No media registration until CXI art/edge/seam/budget gates.
+- ACTIVE M/C socket follow-up: Mochi hip/shieldwrist/independentlanternR3 accepted; head/offHand unsupported; Clover beltproxy passed; CXI provisional coordinates06:18Z require validation. No media registration until CXI art/edge/seam/budget gates.
 - AGV active T-CXI-11 landing<=65000B1440x810 to close BatchM141046B budget gap +T-M1 independent timing; T-M2 deferred/rejected,T-M3/T-M4 queued. No inferred physics lag adopted.
 - DEFERRED V-F transaction performance R2: pair248c3667/2e92e22d built,series unstarted; no app optimization adopted.
 - DONE T-CXI-10 e570e63a36+20e3db82b; V-E172c317d4 integratedm1.13. HistoricalV-A3/V-C/V-B2 evidence retained.

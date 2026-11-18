@@ -25,3 +25,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T05:55:30.538141+00:00 Marigold: idle10giây/cast1giây đã qua capture6310; chân và vòng lặp0dịch, hit350ms→.55s cả2chếđộ;60test/TSC0. Đã xem4ảnhmới, phimso sánh1×cùngchiềucao. Chưa nghiệmthu bảnjudge/tốcđộ.
 
 2026-11-18T05:57:48.284002+00:00 Nhóm7mèo Sorrel/Biscuit/Inkcap/Cinnamon/Brioche/Velvet/Marigold đã qua kiểmtra chuyểnđộng riêng:7phim/28ảnhmới,60test/TSC0,3833đườngdẫn Soot giữnguyên. READY cho CXI tíchhợp; chưanâng thành nghiệmthu judge6301 hay hiệu năng.
+
+2026-11-18T06:21:50.274153+00:00 CXI đã nghiệm thu chuyển động 9 mèo native trên bản production; Soot giữ nguyên. Chẩn đoán CPU 32 trường hợp đạt, tối đa trung vị 0,038617 ms/pose; chưa kết luận FPS. Mochi/Clover, dung lượng và hiệu năng toàn trận còn mở.
