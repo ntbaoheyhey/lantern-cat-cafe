@@ -1,0 +1,601 @@
+{
+  "utc": "2026-11-18T13:41:14.997527+00:00",
+  "input": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r2-133847/report.json",
+    "sha256": "1669fb4b540bd8af0cdf8e438fab5750958724b2d01cd0899e1dad9982e91eae"
+  },
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "manifests": [
+    {
+      "cat": "mochi",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+      "sha256": "4b74f34091bdc1f1f7669919c246682346c19c6c6fe65a7c1c1cd52f650b0704",
+      "videoSha256": "3f92069b2aa15723277749c5833fb8e3a254cdf728b66fafbeb6fad785ae2949"
+    },
+    {
+      "cat": "clover",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-authored-r5/dist/units/clover/designer-idle-35abb7ac2be87a45.json",
+      "sha256": "35abb7ac2be87a45cbca33d2ead0cbb326d70b58ff2740099a402f61b0d129cb",
+      "videoSha256": "6ac1c3d45c70bbc3fb29628bb56daa8a94fe28b5db63c12d984065b982538196"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/designer-idle-loader.ts",
+      "sha256": "fd8fbd113b4d4aed445632b57316c8d7daa9778df2b78388f225929e884172c5"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/designer-idle-actor-loader.ts",
+      "sha256": "ead187c024ad071d650d8d3ba2c23beb2172ea9426bad3b03c093f168e554d30"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/assets.ts",
+      "sha256": "25f38b72e49afca868cc672489fddf0f8758248659431813206bc4e465445dec"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "f2ba5a329a56029b8b048da13438a7c92bb9bd2413589cc36467f4d31ff684e2"
+    },
+    {
+      "path": "apps/web/src/game/rig/living-cast.ts",
+      "sha256": "f8a4720535f4153b0e5adda16fc1a00f37e698b545870989c29433240ab9bf99"
+    }
+  ],
+  "verifiedFiles": 182,
+  "controls": [
+    {
+      "cat": "mochi",
+      "frame": 0,
+      "exact": true
+    },
+    {
+      "cat": "mochi",
+      "frame": 90,
+      "exact": true
+    },
+    {
+      "cat": "mochi",
+      "frame": 180,
+      "exact": true
+    },
+    {
+      "cat": "mochi",
+      "frame": 270,
+      "exact": true
+    },
+    {
+      "cat": "clover",
+      "frame": 0,
+      "exact": true
+    },
+    {
+      "cat": "clover",
+      "frame": 90,
+      "exact": true
+    },
+    {
+      "cat": "clover",
+      "frame": 180,
+      "exact": true
+    },
+    {
+      "cat": "clover",
+      "frame": 270,
+      "exact": true
+    }
+  ],
+  "samples": [
+    {
+      "cat": "mochi",
+      "label": "running-0",
+      "nativeMatches": [
+        161
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": true,
+      "actionActive": false,
+      "adapterFrame": 37.03496999999999,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-0",
+      "nativeMatches": [
+        270
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": true,
+      "actionActive": false,
+      "adapterFrame": 145.63497,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-1",
+      "nativeMatches": [
+        62
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": false,
+      "adapterFrame": 62.15399999999999,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-1",
+      "nativeMatches": [
+        169
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": false,
+      "adapterFrame": 169.119,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-2",
+      "nativeMatches": [
+        88
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 88.16100000000003,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-2",
+      "nativeMatches": [
+        195
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 195.11700000000005,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-3",
+      "nativeMatches": [
+        114
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 114.15299999999999,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-3",
+      "nativeMatches": [
+        221
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 221.118,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-4",
+      "nativeMatches": [
+        140
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 140.16899999999998,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-4",
+      "nativeMatches": [
+        247
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 247.13400000000001,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-5",
+      "nativeMatches": [
+        166
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 166.161,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-5",
+      "nativeMatches": [
+        273
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 273.1290000000001,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-6",
+      "nativeMatches": [
+        192
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 192.156,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-6",
+      "nativeMatches": [
+        299
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 299.12100000000004,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-7",
+      "nativeMatches": [
+        218
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 218.15999999999997,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-7",
+      "nativeMatches": [
+        24
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 24.852000000000007,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-8",
+      "nativeMatches": [
+        244
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 244.14900000000003,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-8",
+      "nativeMatches": [
+        50
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 50.84100000000003,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-9",
+      "nativeMatches": [
+        270
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 270.15600000000006,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-9",
+      "nativeMatches": [
+        76
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 76.84199999999997,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-10",
+      "nativeMatches": [
+        296
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 296.17500000000007,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-10",
+      "nativeMatches": [
+        102
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 102.86700000000002,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "mochi",
+      "label": "running-11",
+      "nativeMatches": [
+        22
+      ],
+      "referenceFrameCount": 68,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 21.953999999999994,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    },
+    {
+      "cat": "clover",
+      "label": "running-11",
+      "nativeMatches": [
+        129
+      ],
+      "referenceFrameCount": 66,
+      "globallyIdentified": false,
+      "conditionalOnPartialReferenceWindow": true,
+      "seeking": false,
+      "actionActive": true,
+      "adapterFrame": 128.83499999999998,
+      "samplerReproduced": true,
+      "maxLocalError": 0.0,
+      "maxWorldError": 0.0,
+      "maxParentError": 0.0
+    }
+  ],
+  "projectionMaxima": {
+    "mochi": {
+      "hpAnchor": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "head": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "vfxOrigin": {
+        "canonicalPhaseDelta": 164.22903958503957,
+        "worldPhaseDelta": 197.02673352560643,
+        "cssPhaseDelta": 72.74833237868545
+      },
+      "mainHand": {
+        "canonicalPhaseDelta": 87.85023527241806,
+        "worldPhaseDelta": 105.39454495328678,
+        "cssPhaseDelta": 38.91490890582897
+      },
+      "offHand": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "feet": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "chest": {
+        "canonicalPhaseDelta": 28.596160134805373,
+        "worldPhaseDelta": 34.30701438047696,
+        "cssPhaseDelta": 12.667205309714552
+      }
+    },
+    "clover": {
+      "hpAnchor": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "head": {
+        "canonicalPhaseDelta": 6.639301734252877,
+        "worldPhaseDelta": 7.923946418908293,
+        "cssPhaseDelta": 2.9257648315968963
+      },
+      "vfxOrigin": {
+        "canonicalPhaseDelta": 0.5804825516552885,
+        "worldPhaseDelta": 0.6928006619577388,
+        "cssPhaseDelta": 0.2558033213382473
+      },
+      "mainHand": {
+        "canonicalPhaseDelta": 0.8359994221776664,
+        "worldPhaseDelta": 0.9977577300634362,
+        "cssPhaseDelta": 0.3684028541772759
+      },
+      "offHand": {
+        "canonicalPhaseDelta": 1.3302715141383141,
+        "worldPhaseDelta": 1.5876669900766829,
+        "cssPhaseDelta": 0.5862155040282889
+      },
+      "feet": {
+        "canonicalPhaseDelta": 0.0,
+        "worldPhaseDelta": 0.0,
+        "cssPhaseDelta": 0.0
+      },
+      "chest": {
+        "canonicalPhaseDelta": 0.6582996369589571,
+        "worldPhaseDelta": 0.799568754313991,
+        "cssPhaseDelta": 0.29522538620821775
+      }
+    }
+  },
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "upstreamPass": false,
+  "upstreamFailure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '{\"version\":\"0.7.0\",\"seed\":71,\"rng\":798478386,\"chapter\":3,\"actors\":[{\"shield\":8,\"charge\":35,\"break\":0,\"statuses\":[],\"cooldowns\":{},\"passiveUsed\":false,\"phase\":1,\"equipment\":[\"hearthloom-weapon-common\",\"heart",
+  "arithmeticValid": true,
+  "allFramesGloballyIdentified": false,
+  "idlePhaseAttributionAccepted": false,
+  "limits": [
+    "Partial-window unique native hashes are conditional, not whole-cycle frame identities.",
+    "Independent arithmetic does not certify source anchors, art, loop seam or performance.",
+    "GPU state/canvas controls are checked against the recorded instrumentation; no duplicate browser run."
+  ],
+  "details": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/M-gpu-phase-R2-independent-details.json",
+    "sha256": "6e8a09bfc3dd7551cd5012ec2e8eddea192207a73a2540b9738435f3e606434e"
+  },
+  "harnesses": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/audit-media-gpu-phase.py",
+      "sha256": "776012fbf3e25c97b14179cb98a85eae0f45aad322fb0b1d8c922469d1aff5e7"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-phase-projection.py",
+      "sha256": "3a596269cbdcf1b3a7f6183aafb7eeeaba692e44fd8d82ab5652e82f5e93eb75"
+    }
+  ]
+}

@@ -52,7 +52,8 @@ def main():
                   inputs=[dict(path=str(p.resolve()), sha256=sha(p)) for p in (ap, bp)],
                   harness=dict(path=str(Path(__file__)), sha256=sha(__file__)), cases=[],
                   productionAcceptance=False, imagesViewed=0)
-    for a, b, ar, br in zip(aa['cases'], bb['cases'], raw[0]['cases'], raw[1]['cases'], strict=True):
+    assert len(aa['cases']) == len(bb['cases']) == len(raw[0]['cases']) == len(raw[1]['cases'])
+    for a, b, ar, br in zip(aa['cases'], bb['cases'], raw[0]['cases'], raw[1]['cases']):
         assert (a['mode'], a['sourceFrame']) == (b['mode'], b['sourceFrame'])
         x, y = ar['before'], br['before']
         labels_a = {v['id']: v for v in x['labels']}
