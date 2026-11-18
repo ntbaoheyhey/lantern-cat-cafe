@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: independently audit full16action report when CXV releases;R2pilot validated242hashes/32counts/1340Mochilabel-Pankopixels=>FAIL.
-NEXT 2: audit CXV16action delivery after explicitrelease;paused offset numericallyaccepted only;no R8source/build yet.
+NEXT 1: full16 exactGit rulesPASS;independent pixel audit when CXVanalysis delivered at reports/v5/CXV/M-action-label-full-R2.json (verify path).
+NEXT 2: request bounded motionclearance remedy;pilot1340Mochi/PankopixelsFAIL despiteidleclear;no R8source/build or registryadoption.
 NEXT 3: AGS QA-m115+M5OPEN;V5/V6unsupported/absentpaths REDO. Owner draft current;fringe/halo/seam+nativebody/status clearance open.
-Last pushed106a68dc2;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
+Last pushedb92c662bd;green v5-m1.15@59f5f3c57;remote tag226cc4425/peeled59f5f3c57 verified.
 Live6301 labelR7 sourcebf01d462a/indexeb93ee0d;work/v5/CXI/batch-m/clover-label-r7/build.json;3809files/294424887B verified;6payloadsR5exact.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified14:31Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T14:32:59.033074+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:noCXIjobs;PID30403 completed0 at14:31:31Z. CXVexclusive6301/timing now–14:40Z AND explicitrelease;pilotthen16actions.
-Mailboxread INBOX-CXI493;USER24;LEARN110;AGS488REDOwrongdimensions/durations+unsupportedQA;QA+M5remainOPEN;0046preserved.
+Last RULES read2026-11-18T14:40:10.644863+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:noCXIjobs;CXVreleased6301/timing14:38:53Z afterfull16;rawwork/v5/CXV/batch-m/action-label-full-r2-143611/report.json.
+Mailboxread INBOX-CXI494;USER24;LEARN110;AGS488REDOwrongdimensions/durations+unsupportedQA;QA+M5remainOPEN;0046preserved.
 AGS OPEN:T-CXI13QA-m115,T-M5independenttrialaudit,T-M4stagedvideoresearch,T-CXI12maskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;>=2useful TASKs.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
