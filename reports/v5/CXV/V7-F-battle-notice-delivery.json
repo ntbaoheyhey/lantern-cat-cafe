@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-18T04:09:51.117607+00:00",
+  "source": "e570e63a36b2d9184e1ad3c15520a86f705c971f",
+  "integrationHead": "09f9ad794161dd026c3950771868c274048a26bf",
+  "patch": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-battle-notice.patch",
+    "sha256": "a46be0b07329bf8cf2450f7419ab7544b92522a711ce4ab6ab393c4c351aa829",
+    "bytes": 2385
+  },
+  "files": {
+    "apps/web/src/game/cardrpg/depth/Battle.tsx": {
+      "integrationWorkingSha256": "f7c262f62b62ed5f349aae4330d577d89960dd9b2c602ebfe66357f7799d4191",
+      "afterPatchSha256": "829c4871481cecad02e1da9fb264c8ec51238a2c22f0f99389751824e061effd"
+    },
+    "apps/web/src/game/cardrpg/depth/depth.css": {
+      "integrationWorkingSha256": "15c78a70aa1c23e3a022c0fd59747472b68a3cf2105588015ba14c003ef31fca",
+      "afterPatchSha256": "9f5c92731c59da0f3bdef12d426e680c0d55622d99c6e769f61ccb01bd9193a1"
+    }
+  },
+  "pass": true,
+  "scope": "Narrow two-file patch applies to an isolated copy of current integration files including concurrent toast change. No integration files changed; applicability is not independent acceptance.",
+  "method": "Nested isolated git repository prevents git apply from silently skipping paths outside its invocation prefix; changed hashes and exact inserted source asserted."
+}

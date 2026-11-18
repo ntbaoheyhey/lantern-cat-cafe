@@ -1,0 +1,101 @@
+{
+  "utc": "2026-11-18T04:09:29.906Z",
+  "source": "e570e63a36b2d9184e1ad3c15520a86f705c971f",
+  "indexSha256": "248c3667ea4c965398a48bfde2b86246678a5d3943258481dc2edd981b0a87eb",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifactTransforms": 0,
+  "artifactFiles": 3764,
+  "snapshots": [
+    {
+      "name": "run-battle-notice-native.mjs",
+      "sha256": "45d5e95d0f7169a2d666798a805c3bda6ac5ed07d7737e8bf6130c1972b0ae71"
+    },
+    {
+      "name": "build-hud-production.mjs",
+      "sha256": "ed0207338f9a07a6cdd74cd1728251a41608f6a43ac73ebf78064c2fd4fa45a2"
+    },
+    {
+      "name": "probe-battle-notice-layout.mjs",
+      "sha256": "d9cc51c8aab0b860b6861ff4833ef59c443cb0fae6f6919d5c23a2d6153accdb"
+    },
+    {
+      "name": "measure-battle-notice-layout.mjs",
+      "sha256": "8acacc88a427d6bc2e42c1db0d0ce391b066b5783527e64c46173ee33022d5ac"
+    },
+    {
+      "name": "battle-notice-layout.mjs",
+      "sha256": "ad1f6d9c7331c0f46a7ce9b83118e89826eb6040c2e6cfba039d09889745ceed"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "report": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-battle-notice-native.json",
+    "sha256": "be52e1408f255d3d32077d653e6589a66156be0a1f32f88712ab933168069333"
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-native-production/build.json",
+    "sha256": "8fa5806346a3cd7f32f56edb2135c58379d9a4adfd73437796a12d073f1042a7"
+  },
+  "checks": {
+    "utc": "2026-11-18T04:06:43.390Z",
+    "tests": 40,
+    "failedTests": 0,
+    "typeErrors": 0,
+    "files": {
+      "apps/web/src/game/cardrpg/depth/Battle.tsx": "829c4871481cecad02e1da9fb264c8ec51238a2c22f0f99389751824e061effd",
+      "apps/web/src/game/cardrpg/depth/depth.css": "9f5c92731c59da0f3bdef12d426e680c0d55622d99c6e769f61ccb01bd9193a1"
+    },
+    "vitest": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/notice-checks/vitest.json",
+      "sha256": "85baa1f89ac062a9ce9ce4c63200d703d9bd4ca2e0985addda107d3a1af729dc"
+    },
+    "scope": "Existing scene context/density/loading/bounds, playback clock, battle scene loader and battle controls suites; full web tsconfig semantic check without emit or dotenv.",
+    "pass": true
+  },
+  "preservedNormalPixels": {
+    "modes": 2,
+    "frames": 4,
+    "comparisonSource": "9efabfa865f95cb4f020b9a68bba6b9f388356da",
+    "exactFullRgb": true
+  },
+  "pass": true,
+  "reviewedUtc": "2026-11-18T04:10:33.607796+00:00",
+  "visualPass": true,
+  "visualReview": {
+    "method": "Exact SHA256 identity with previously reviewed experiment previews; images were not reopened. Fresh native captures were measured first; full RGB loaded/restored matches untouched artifact.",
+    "verifiedUtc": "2026-11-18T04:10:33.607796+00:00",
+    "freshCaptures": 8,
+    "newImagesViewed": 0,
+    "reusedImages": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-native-production/context/normal-lost-review.jpg",
+        "sha256": "e36c3754e07e6297bcea3e9cc46598efb199d52e4ab40291f13cdad54e40b9bf",
+        "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-experiment/normal-candidate-lost-review.jpg",
+        "priorReviewedUtc": "2026-11-18T04:01:41.901172+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-native-production/context/normal-long-notice-review.jpg",
+        "sha256": "20bc1c2b51cdba6a91b2bc828549531361478ddd840ae52915fa1eec2ff0a97f",
+        "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-experiment/normal-long-notice-review.jpg",
+        "priorReviewedUtc": "2026-11-18T04:01:41.901172+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-native-production/context/reduced-lost-review.jpg",
+        "sha256": "6a4825ed5da9f1b4b74b1ff9c391e546f80600d2141e89357dc28adb4c262ae0",
+        "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-experiment/reduced-candidate-lost-review.jpg",
+        "priorReviewedUtc": "2026-11-18T04:01:41.901172+00:00"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-native-production/context/reduced-long-notice-review.jpg",
+        "sha256": "755c3ccd098d58fb6dcd2339e62dd9834423cfb19b0bd6391b394107a2ee641c",
+        "priorPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-notice-experiment/reduced-long-notice-review.jpg",
+        "priorReviewedUtc": "2026-11-18T04:01:41.901172+00:00"
+      }
+    ],
+    "priorReport": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-battle-notice-experiment.json",
+    "priorReportSha256": "7240f3aeb7f6719f125ffc173124dc1ae91199559a89906f985b54915a937d7d"
+  }
+}
