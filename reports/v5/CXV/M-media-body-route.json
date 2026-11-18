@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-18T05:15:33.998482+00:00",
+  "baseCommit": "8a46328d6caaa445d6013e94321b3dd5364d3678",
+  "files": {
+    "apps/web/src/game/cardrpg/spine/scene.ts": "d36333add01cc59ddb11ddfd8f0c6b24844d53a9070309ed1eb95af58fea7c27",
+    "apps/web/src/game/cardrpg/spine/designer-idle-body.ts": "6bf8e75d22d21939cd8ad6e8dcb8f60b7837168f3cd4f97da4c8c4d9323796ee",
+    "apps/web/src/game/cardrpg/spine/scene-media-body.test.ts": "37bd8679cb9703c9ec1cf3fc6c2becbec12b78bbf8ee871b9c272052bbda887e"
+  },
+  "scope": "Successful M/C designerIdle===true skips generated drawing preload/body and legacy idle root sway; preserves existing craft effect prepare, damage/cast choreography, marker-absent fallback and every other asset. Loader marker owned by CXI.",
+  "checks": {
+    "focusedTests": 21,
+    "typecheckExit": 0,
+    "sootPathsUnchanged": 3833
+  },
+  "limitation": "API preparation tests; actual final media pixels, socket maps, gameplay capture and budget remain CXI integration work. Mallow remains source-free experiment."
+}

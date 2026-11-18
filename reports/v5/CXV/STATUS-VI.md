@@ -5,3 +5,5 @@
 Panko đã có chuyển động thử trong mã: chu kỳ10giây, chân giữ nguyên, biên chu kỳ khớp, chớp mắt mềm;44kiểm thử và TypeScript đạt. Phim cùng chiều cao224px/tốc độ1x đã đối chiếu. Chế độ giảm chuyển động ổn định; cần hoàn thiện đạo cụ và chuyển tiếp khi thi triển trước khi nhân rộng. Soot bị loại hoàn toàn khỏi BatchM;3833đường dẫn đã có dấu vân tay và sẽ so sánh cả đầu ra mã dùng chung.
 Tự nhắc CXV vẫn ACTIVE mỗi15phút, giữ nguyên nội dung. V7 đã hoàn thành vẫn giữ bằng chứng; các thử nghiệm hiệu năng cũ chuyển sauBatchM.
 Panko đã nối kỹ năng1giây với trạng thái chờ liên tục: đầu/cuối lưới và ảnh khớp tuyệt đối, mốc cast250/hit550ms được khớp vào va chạm luật350ms. Chiêu cuối2.2giây vẫn giữ nguyên. Đã gửi CXI kiểm tra độc lập; tám mèo còn lại dùng bộ xương khác nên đang nghiên cứu riêng.
+
+M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và mối nối mesh đúng0;diện tích tam giác nhỏ nhất0.622. Đã xem4ảnh so sánh227px một lần. Chuyển động còn nhẹ; cần bỏ lắc toàn thân cũ và kiểm tra cast/reduced trước READY.

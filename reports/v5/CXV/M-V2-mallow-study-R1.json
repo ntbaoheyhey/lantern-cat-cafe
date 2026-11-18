@@ -1,0 +1,179 @@
+{
+  "utc": "2026-11-18T05:14:49.592556+00:00",
+  "capture": {
+    "utc": "2026-11-18T05:11:24.962Z",
+    "cat": "mallow",
+    "sourceCommit": "8a46328d6caaa445d6013e94321b3dd5364d3678",
+    "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeUntrackedSha256": {},
+    "sourceRigSha256": "0509ed6613f86d73fb2e662257bd650ddfd1c51a0d55629d16249a81c3177583",
+    "prototypeRigSha256": "158bba214b0e3ab432bd0a3c7396c31a33c47e7fa4b84ba7fa24b7cf9d0ebb8c",
+    "prototypeCodeSha256": "16d0d435acc09dcfacce8aba3f002cc0b95b4ea86313d0587ff3a0ee3fe3ef10",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "method": "Isolated cloned rig response, shipped code/art unchanged. Deterministic10s30Hz study, not runtime/performance acceptance.",
+    "modes": [
+      {
+        "mode": "baseline",
+        "box": {
+          "x": 333,
+          "y": 139,
+          "width": 269,
+          "height": 291,
+          "body": {
+            "x": 365.1188476545225,
+            "y": 171.87635864972626,
+            "width": 204.6642447447839,
+            "height": 226.10636399333546
+          }
+        },
+        "errors": [],
+        "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/baseline/measure.json",
+        "minTriangleRatio": 0.14445249894260967
+      },
+      {
+        "mode": "candidate",
+        "box": {
+          "x": 333,
+          "y": 138,
+          "width": 268,
+          "height": 292,
+          "body": {
+            "x": 365.1869256728884,
+            "y": 170.6148834599583,
+            "width": 203.20582819386163,
+            "height": 227.36783918310343
+          }
+        },
+        "errors": [],
+        "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/candidate/measure.json",
+        "minTriangleRatio": 0.6221519706466513
+      }
+    ],
+    "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+    "artifactSha256": "ac7647ad98b19172e15d399d8f6f90f36ea6290a1194d626124605acef3835f6",
+    "pass": true,
+    "completedUTC": "2026-11-18T05:12:20.539Z"
+  },
+  "measurements": {
+    "baseline": {
+      "duration": 1.8,
+      "rangePercentH": {
+        "leg_l": [
+          0.0,
+          0.0
+        ],
+        "leg_r": [
+          0.0,
+          0.0
+        ],
+        "head": [
+          0.0,
+          1.37028
+        ],
+        "tail_3": [
+          3.52971,
+          6.03995
+        ],
+        "weapon": [
+          0.0,
+          0.31134
+        ],
+        "torso": [
+          0.0,
+          0.0
+        ]
+      },
+      "seamVertexDelta": 19.860870361328125,
+      "minTriangleRatio": 0.14445249894260967,
+      "errors": []
+    },
+    "candidate": {
+      "duration": 10,
+      "rangePercentH": {
+        "leg_l": [
+          0.0,
+          0.0
+        ],
+        "leg_r": [
+          0.0,
+          0.0
+        ],
+        "head": [
+          0.85592,
+          1.90491
+        ],
+        "tail_3": [
+          1.40112,
+          2.14876
+        ],
+        "weapon": [
+          0.58892,
+          1.4388
+        ],
+        "torso": [
+          0.23436,
+          0.93725
+        ]
+      },
+      "seamVertexDelta": 0.0,
+      "minTriangleRatio": 0.6221519706466513,
+      "errors": []
+    }
+  },
+  "comparison": {
+    "utc": "2026-11-18T05:13:03.513684+00:00",
+    "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/mallow-vs-mochi-1280x720.mp4",
+    "sha256": "09012c4dc29c4e0d1344fe8ca07f8265b9cef8d1ba3bae0473f1a63e5da636b3",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "frames": 300,
+    "fps": 30,
+    "durationSeconds": 10,
+    "sameBodyHeightPx": 227,
+    "sourceHeightPx": 431,
+    "cat": "mallow",
+    "candidateMeasuredHeight": 227.36783918310343,
+    "sourcePhase": "F0..299",
+    "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/report.json",
+    "captureReportSha256": "2a8610a763fed50b923101b24607ccab817bfb8a2a1aa1c4804153c83d28a555",
+    "reviews": [
+      {
+        "frame": 15,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "9121c5835febc36c491a67444365970ef48bc26b7f97824d4cef63b0d72fe03f"
+      },
+      {
+        "frame": 75,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/comparison-75.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "39c4368c8f11e96f0985f7d08bb4ce8bd7f47d73d2252d324dbf51b86acac181"
+      },
+      {
+        "frame": 165,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "3b11227f33ba4866f9b0e1e8f41092b7c47e9d2246965374a3c87acd6d99e34d"
+      },
+      {
+        "frame": 255,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-study-R1/comparison-255.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "327dc416a9c84235661925ca4d71f288cd6d48de73af05984378db7b3faed95d"
+      }
+    ],
+    "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+  },
+  "review": "Four fresh1024x576 comparison images viewed once. Planted stance, stable face/weapon attachments; prototype reads much quieter than Mochi. No obvious limb tear at sampled phases. Legacy scene idle root remains layered over prototype and is nonperiodic10s: remove for enrolled body before runtime acceptance. No reduced/cast acceptance yet.",
+  "baselineSeamNote": "Baseline duration1.8s is not a10s loop; its10s delta is not a seam fault. Candidate10s delta0 is a valid endpoint check."
+}
