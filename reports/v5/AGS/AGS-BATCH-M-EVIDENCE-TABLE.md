@@ -1,10 +1,10 @@
-# AGS Batch M Evidence Table (Final Review)
+# AGS Batch M Evidence Table (Final Correction)
 
 ## T-M1: License & Source
 | Field | Evidence |
 | :--- | :--- |
-| Clause A | Non-runtime video exports (Editor) are not subject to SDK agreements |
-| Clause B | Application revenue < 10,000,000 JPY is Publisher Scope exemption |
+| Clause A | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Non-SDK content not covered |
+| Clause B | [sdk_001](https://help.live2d.com/en/sdk/sdk_001/): Publisher annual sales exemption |
 | 300-Frame Cost | 825143 bytes (Verified hash: 232e5ed3...) |
 | Receipt | [RECEIPTS-FINAL.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS-FINAL.txt) |
 
@@ -13,5 +13,6 @@
 | :--- | :--- |
 | Source Hash | 232e5ed3... (Verified) |
 | Opaque Height | 214px (Mochi), 240px (Clover) |
+| Opaque Proof | Unavailable (No raw derivation) |
 | Alpha Mean | Unavailable (Raw calculation FAILED) |
 | Mask Layout | Packed Luminance Mask (Unverified/Unavailable) |
