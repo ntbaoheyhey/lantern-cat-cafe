@@ -6,6 +6,8 @@ import {usePaintedAtlasColor} from './atlas-color';
 import {SecondaryMotion} from './secondary-motion';
 import {drawingExpression,eyeClosure} from './drawing-expression';
 import {FaceDepth} from './face-depth';
+import {isPankoLivingClip} from './panko-living';
+import {sampleLivingCatCast,livingCatCastOffset} from './living-cast';
 export type DrawingKey='K0'|'K1'|'K2'|'K3'|'K4'|'K5'|'K6';
 export type DrawingPoint=readonly [number,number];
 export interface DrawingSample {clip:string;seconds:number;reduced:boolean}
@@ -37,6 +39,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
  key:DrawingKey='K0';private seconds=0;private clip='idle';private reduced=false;
  private source:Float32Array;
  readonly secondary:SecondaryMotion;
+ private readonly castPose={lean:0,lift:0,tilt:0,follow:0};private readonly seekCastPose={lean:0,lift:0,tilt:0,follow:0};private readonly castPoint={x:0,y:0};
  readonly faceDepth=new FaceDepth();private seekFaceDepth=new FaceDepth();
  private faceOffset={x:0,y:0};
  private seekMotion:SecondaryMotion;
@@ -59,11 +62,13 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   // drawing for the contact interval; the action/cue clock keeps running.
   if(damageAge!==undefined&&damageAge>=0&&damageAge<.18){name='hurt';seconds=damageAge;}
   this.seconds=seconds;this.clip=name;this.reduced=reduced;
-  const key=!reduced&&name==='attack'&&seconds>=.27&&seconds<.33?'K2':drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
+  const pankoSkill=this.set.manifest.unit==='panko'&&name==='skill';
+  const key=pankoSkill?'K0':!reduced&&name==='attack'&&seconds>=.27&&seconds<.33?'K2':drawingAt(name,seconds);this.key=this.set.manifest.poses[key]?key:'K0';
   this.material.map=this.set.textures[this.key]!;
   const positions=this.geometry.attributes.position!,m=this.set.manifest;
   const hold=name==='attack'&&seconds>=.35&&seconds<.44?.35:(name==='ult'||name==='skill')&&seconds>=1.1&&seconds<1.19?1.1:name==='hurt'&&seconds<.09?0:seconds;
   this.secondary.sample(clock-seconds+hold,name,hold,reduced,target,damageAge??(name==='hurt'?seconds:-1),critAge);
+  if(pankoSkill)sampleLivingCatCast('panko','skill',seconds,reduced,this.castPose);
   this.faceDepth.sample(this.secondary.turn,this.secondary.nod);
   const overlaps=this.frame.overlap??NO_OVERLAP;
   for(let i=0;i<overlaps.length;i++)this.overlapValues[i]=this.secondary.layer(overlaps[i]!.part,overlaps[i]!.phase);
@@ -112,19 +117,20 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   if(at)motion.sample(hold,clip,hold,reduced,0,clip==='hurt'?seconds:-1);
   // The quiet body oscillator remains underneath actions; the held clock above
   // freezes it at contact, while recovery blends idle gestures back in.
-  const resting=clip==='idle'||clip==='idle-phase2'||clip==='victory';
+  const pankoSkill=m.unit==='panko'&&clip==='skill';
+  const resting=clip==='idle'||clip==='idle-phase2'||clip==='victory'||pankoSkill;
   let lift=clip==='ko'?0:.018*motion.body*(resting?1:.24),lean=0;
   if(clip==='attack'){
    // Hold the contact drawing completely still through 350–440ms hit-stop.
    if(ms<270)lift+=-.012*Math.sin(Math.min(1,ms/250)*Math.PI/2);
    else if(ms<330)lean=.018*smooth((ms-270)/60);
    else if(ms>=560&&ms<800){const t=(ms-560)/240;lift+=.012*Math.sin(t*Math.PI*2)*(1-t);}
-  }else if(clip==='ult'||clip==='skill'){
+  }else if(clip==='ult'||clip==='skill'&&!pankoSkill){
    if(ms>=300&&ms<1100)lift+=.008*Math.sin((ms-300)/800*Math.PI);
    else if(ms>=1800&&ms<2200)lift+=.012*Math.sin((ms-1800)/400*Math.PI*2)*(1-(ms-1800)/400);
   }else if(clip==='hurt'&&ms>=180&&ms<400)lift+=-.012*Math.sin((ms-180)/220*Math.PI);
   // Pose changes remain available with reduced motion; overlap is attenuated.
-  if(reduced){lean=0;if(clip!=='idle')lift*=.25;}
+  if(reduced){lean=0;if(clip!=='idle'&&!pankoSkill)lift*=.25;}
   const frame=m.poses[key]!,[fx,fy,fw,fh]=frame.face;
   const guard=weights?.[offset+Weight.Guard]??smooth((Math.max(Math.abs(x-fx-fw/2)/(fw/2+8),Math.abs(y-fy-fh/2)/(fh/2+8))-1)*3)*smooth((m.baseline[1]-y)/40);
   let ox=0,oy=0;
@@ -133,7 +139,8 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
    const region=overlaps[index]!;
    let weight=weights?.[offset+Weight.Count+index];
    if(weight===undefined){const dx=(x-region.center[0])/region.radius[0],dy=(y-region.center[1])/region.radius[1];weight=smooth(1-dx*dx-dy*dy)*guard;}
-   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain;
+   const follower=m.unit==='panko'&&isPankoLivingClip(clip)?(/tail/.test(region.part)?3:/apron/.test(region.part)?1.6:1):1;
+   const wave=(at?motion.layer(region.part,region.phase):this.overlapValues[index]??0)*weight*motion.overlapGain*follower;
    ox+=region.travel[0]*wave;oy+=region.travel[1]*wave;
   }
   // Ears/tufts are above the protected face, driven after the body with their own spring.
@@ -146,6 +153,12 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
    if(accessory){let weight=weights?.[offset+Weight.Accessory];
     if(weight===undefined){const ax=(x-accessory[0])/(fw*.35),ay=(y-accessory[1])/(fh*.65);weight=smooth(1-ax*ax-ay*ay)*guard;}
     ox+=motion.accessory*1.4*weight;oy+=(motion.accessory*2-motion.handLift*m.opaqueHeight*.008)*weight;}
+  }
+  if(m.unit==='panko'&&isPankoLivingClip(clip)&&!reduced){
+   // The bread shield follows the torso locally; the feet and protected face stay fixed.
+   const hand=frame.sockets.offHand;
+   if(hand){const ax=(x-hand[0])/(fw*.42),ay=(y-hand[1])/(fh*.80),weight=smooth(1-ax*ax-ay*ay)*guard;
+    ox+=motion.accessory*6*weight;oy+=motion.accessory*8*weight;}
   }
   const limit=m.opaqueHeight*.025,factor=Math.min(1,limit/Math.max(.001,Math.hypot(ox,oy)));
   const smear=clip==='attack'&&!reduced&&ms>=270&&ms<330?.12*Math.sin((ms-270)/60*Math.PI)*guard:0;
@@ -165,6 +178,7 @@ export class DrawingLayer extends T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial> {
   const lifeY=(-turnY-projected.y+m.opaqueHeight*.006*motion.nod*neck)*this.pixelScale;
   out.x=this.origin[0]+px+(px*smear+height*lean*upper+ox*factor*this.pixelScale+head+lifeX)*planted;
   out.y=this.origin[1]+py+(height*lift*upper-oy*factor*this.pixelScale+lifeY)*planted;
+  if(pankoSkill){const pose=at?sampleLivingCatCast('panko','skill',seconds,reduced,this.seekCastPose):this.castPose;const cast=livingCatCastOffset(px,py,height,pose,this.castPoint);out.x+=cast.x*planted;out.y+=cast.y*planted;}
   return out;
  }
  get frame(){return this.set.manifest.poses[this.key]!;}

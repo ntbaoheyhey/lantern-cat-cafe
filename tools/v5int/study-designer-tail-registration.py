@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 cv2.setNumThreads(2)
 root=Path(__file__).resolve().parents[2];base=root/'work/v5/CXI/batch-m/matte-r2';w,h=318,390
-variant=sys.argv[1] if len(sys.argv)>1 else 'r4';assert variant in ['r4','r5']
+variant=sys.argv[1] if len(sys.argv)>1 else 'r4';assert variant in ['r4','r5','r6']
 src=np.memmap(base/'clover-premul.rgba',dtype=np.uint8,mode='r',shape=(300,h,w,4));out=src.copy()
 x0,y0,x1,y1=5,240,112,350
 yy,xx=np.mgrid[:h,:w].astype(np.float32)
@@ -15,7 +15,8 @@ def warm_gray(f):
  r,g,b=np.moveaxis(f[:,:,:3].astype(np.float32),-1,0)
  mask=(r>g*1.035)&(r>b*1.15)&(f[:,:,3]>48)
  return cv2.GaussianBlur(cv2.cvtColor(f[:,:,:3],cv2.COLOR_RGB2GRAY)*mask.astype(np.uint8),(5,5),0)[y0:y1,x0:x1]
-score,local=cv2.findTransformECC(warm_gray(src[0]),warm_gray(src[-1]),np.eye(2,3,dtype=np.float32),cv2.MOTION_EUCLIDEAN,(cv2.TERM_CRITERIA_EPS|cv2.TERM_CRITERIA_COUNT,200,1e-6),None,5)
+score,local=cv2.findTransformECC(warm_gray(src[0]),warm_gray(src[-1]),np.eye(2,3,dtype=np.float32),cv2.MOTION_AFFINE if variant=='r6' else cv2.MOTION_EUCLIDEAN,(cv2.TERM_CRITERIA_EPS|cv2.TERM_CRITERIA_COUNT,200,1e-6),None,5)
+assert .7<float(np.linalg.det(local[:,:2]))<1.3
 matrix=local.copy();matrix[0,2]+=x0-local[0,0]*x0-local[0,1]*y0;matrix[1,2]+=y0-local[1,0]*x0-local[1,1]*y0
 dx=matrix[0,0]*xx+matrix[0,1]*yy+matrix[0,2]-xx;dy=matrix[1,0]*xx+matrix[1,1]*yy+matrix[1,2]-yy
 region=np.clip((yy-232)/15,0,1)*np.clip((358-yy)/16,0,1)*np.clip((118-xx)/28,0,1)
@@ -59,5 +60,5 @@ for row,frames in enumerate([src,out]):
   sheet[row*286+22:row*286+282,col*250:col*250+250]=crop
   cv2.putText(sheet,('original' if row==0 else 'ECC single warp')+f' F{i}',(col*250+5,row*286+16),cv2.FONT_HERSHEY_SIMPLEX,.44,(0,0,0),1,cv2.LINE_AA)
 image=base/f'clover-tail-ecc-{variant}-diagnostic.png';cv2.imwrite(str(image),cv2.cvtColor(sheet,cv2.COLOR_RGB2BGR))
-report={'utc':datetime.now(timezone.utc).isoformat(),'cat':'clover','method':'Endpoint Euclidean ECC on isolated warm tail; single inverse warp on final18 frames; green cloth protected','correlation':float(score),'matrix':matrix.tolist(),'sourceSeamMAE':mae(src[299],src[0]),'candidateSeamMAE':mae(out[299],out[0]),'sourceTailAlphaIoU':iou(src[299],src[0]),'candidateTailAlphaIoU':iou(out[299],out[0]),'adjacentMAEP95':float(np.percentile(adjacent,95)),'candidateAdjacentMAEP95':float(np.percentile(fixed_adjacent,95)),'outsideROIChangedPixels':int(np.any(out[:,region==0]!=src[:,region==0],axis=2).sum()),'first282FramesExact':bool(np.array_equal(src[:282],out[:282])),'accepted':False,'output':str(output),'diagnostic':{'path':str(image),'dimensions':[1000,572],'sha256':hashlib.sha256(image.read_bytes()).hexdigest()}}
+report={'utc':datetime.now(timezone.utc).isoformat(),'cat':'clover','method':f'Endpoint {"affine" if variant=="r6" else "Euclidean"} ECC on isolated warm tail; single inverse warp on final18 frames; contiguous dress protection inR5+','correlation':float(score),'matrix':matrix.tolist(),'sourceSeamMAE':mae(src[299],src[0]),'candidateSeamMAE':mae(out[299],out[0]),'sourceTailAlphaIoU':iou(src[299],src[0]),'candidateTailAlphaIoU':iou(out[299],out[0]),'adjacentMAEP95':float(np.percentile(adjacent,95)),'candidateAdjacentMAEP95':float(np.percentile(fixed_adjacent,95)),'outsideROIChangedPixels':int(np.any(out[:,region==0]!=src[:,region==0],axis=2).sum()),'first282FramesExact':bool(np.array_equal(src[:282],out[:282])),'accepted':False,'output':str(output),'diagnostic':{'path':str(image),'dimensions':[1000,572],'sha256':hashlib.sha256(image.read_bytes()).hexdigest()}}
 (root/f'reports/v5/CXI/evidence/v8-m-tail-registration-{variant}.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-18T05:08:38.024204+00:00",
+  "cat": "clover",
+  "method": "Endpoint affine ECC on isolated warm tail; single inverse warp on final18 frames; contiguous dress protection inR5+",
+  "correlation": 0.9032901024318962,
+  "matrix": [
+    [
+      0.896023690700531,
+      0.07213328033685684,
+      -11.099845886230469
+    ],
+    [
+      -0.18659277260303497,
+      0.9872952103614807,
+      26.46303367614746
+    ]
+  ],
+  "sourceSeamMAE": 43.55598068237305,
+  "candidateSeamMAE": 15.473672866821289,
+  "sourceTailAlphaIoU": 0.657034969627319,
+  "candidateTailAlphaIoU": 0.8692279942279942,
+  "adjacentMAEP95": 19.338176918029774,
+  "candidateAdjacentMAEP95": 19.338176918029774,
+  "outsideROIChangedPixels": 0,
+  "first282FramesExact": true,
+  "accepted": false,
+  "output": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-tail-ecc-r6-premul.rgba",
+  "diagnostic": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-tail-ecc-r6-diagnostic.png",
+    "dimensions": [
+      1000,
+      572
+    ],
+    "sha256": "3065057319757d694b47a5266d5abd7c162ff878989e4f7e2865e5a26e38eb2e"
+  },
+  "review": "REJECTED numerically before viewing: affine worsens seam MAE15.47 vsR5 14.33 and IoU.869 vs.880. R6 diagnostic never viewed. R5 remains unaccepted for native seam study."
+}
