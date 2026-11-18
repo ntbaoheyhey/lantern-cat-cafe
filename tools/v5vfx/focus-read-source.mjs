@@ -13,7 +13,7 @@ export function reuseFocusReads(source,{browser=false}={}){
  let result=source.replace(hud,'const hudRects=hudNodes.map(node=>({node,box:rect(node.getBoundingClientRect())}));\n   const hud=hudRects.map(row=>row.box).filter(r=>r.width&&r.height);');
  result=result.replace(world,"const worldHud=hudRects.filter(row=>!row.node.classList.contains('b3-party')).map(row=>row.box).filter(r=>r.width&&r.height);");
  result=result.replace(title,'').replace(pending,'// Read before temporary pending labels invalidate layout on removal.\n   '+title+'\n   '+pending);
- return result;
+ return result.replace(/\n[ \t]+\n/g,'\n\n');
 }
 export async function focusReadSources(root){
  const baseline=await readFile(resolve(root,focusPath),'utf8'),candidate=reuseFocusReads(baseline);

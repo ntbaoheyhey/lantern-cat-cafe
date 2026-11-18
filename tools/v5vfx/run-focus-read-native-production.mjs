@@ -9,7 +9,8 @@ import {focusPath} from './focus-read-source.mjs';
 import {hash} from './victory-demand-source.mjs';
 const out=resolve(root,'work/v5/CXV/films/V7-F-focus-read-native-production');assert(!existsSync(out));
 const previous=JSON.parse(await readFile(resolve(root,'work/v5/CXV/films/V7-F-focus-read-production/build.json'),'utf8'));
-const current=await readFile(resolve(root,focusPath),'utf8');assert.equal(hash(current),previous.candidateFocusSha256);
+const prototype=await readFile(resolve(root,'work/v5/CXV/films/V7-F-focus-read-production/identified-focus-prototype.ts'),'utf8');assert.equal(hash(prototype),previous.candidateFocusSha256);
+const current=await readFile(resolve(root,focusPath),'utf8');assert.equal(current,prototype.replace(/\n[ \t]+\n/g,'\n\n')); // Normalize blank-line whitespace only.
 await mkdir(out,{recursive:true});const snapshots=[];
 for(const name of ['run-focus-read-native-production.mjs','build-hud-production.mjs','benchmark-boss-play.mjs','production-candidate-fixture.mjs']){const bytes=await readFile(resolve(root,'tools/v5vfx',name));await writeFile(resolve(out,name),bytes);snapshots.push({name,sha256:hash(bytes)});}
 const built=await buildProductionComparison(out,{modulePath:focusPath,currentSource:current,variants:{native:current},metadata:{nativeFocusSha256:hash(current)}}),artifact=built.artifacts[0];assert.equal(artifact.transformed,0);
