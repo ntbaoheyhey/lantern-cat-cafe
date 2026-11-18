@@ -1,0 +1,14 @@
+{
+  "utc": "2026-11-18T03:19:07.427070+00:00",
+  "pass": false,
+  "scope": "Probe fixture failure; application candidate not changed",
+  "phase": "navigate-and-dispose",
+  "reason": "watching=false hides battle activity but App.tsx keeps BattleView mounted while sceneStarted remains true. The timeout did not exercise disposal. Retry uses the actual go(hub) navigation path, which clears sceneStarted when no run is active.",
+  "sourceEvidence": [
+    "apps/web/src/game/cardrpg/depth/App.tsx:101",
+    "apps/web/src/game/cardrpg/depth/model.ts:192"
+  ],
+  "log": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-lifecycle/failure.log",
+  "logSha256": "a73eee66eb1bf404db4ddefe2d1f4ab132e2b29088c5f6541229552e498d7c73",
+  "snapshot": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-lifecycle/probe-battle-context-lifecycle.mjs"
+}

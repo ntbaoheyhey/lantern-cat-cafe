@@ -1,0 +1,387 @@
+{
+  "utc": "2026-11-18T03:19:34.013Z",
+  "indexSha256": "6f27065a021e115c3acec1e7c985d690af7fea26d4bdd6f6248b8ac595bc353d",
+  "artifactMode": "native",
+  "buildSource": "ff14e83c08d41599ab5d08f9ed18999903690ea0",
+  "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "buildManifestSha256": "1e5cf357b07f1f74613a73f2c9b47951c4b4d3d22c1bd94f9ad78c8a694ec14e",
+  "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "candidateSceneSha256": "01826fc7c13e470d7d52b8800d9a1b72b97356b01a1544701c77acc2523289c3",
+  "native": false,
+  "method": "Isolated candidate. Actual WEBGL_lose_context cycles on paused boss in both motion modes. Change desktop density/CSS width/motion settings while lost, preserve a synthetic resource-error notification, then unmount during a third loss. Track actual listener identities. Error notifications and display changes are synthetic controls; GPU events are native. No gameplay-policy or performance claim.",
+  "snapshots": [
+    {
+      "name": "probe-battle-context-lifecycle.mjs",
+      "sha256": "66af58ffcbcb55968f290203076ea3b3830a5f44facc3daaae8b2fb953b350e8"
+    },
+    {
+      "name": "desktop-density.mjs",
+      "sha256": "975caa1c159664052871f72045576455f42190ac4738f9b43413cea14f44b690"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "runs": [
+    {
+      "mode": "normal",
+      "loaded": {
+        "lost": 0,
+        "restored": 0,
+        "contextLost": false,
+        "sceneError": "",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": false,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "changedLost": {
+        "lost": 1,
+        "restored": 0,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": true,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "changedRestored": {
+        "lost": 1,
+        "restored": 1,
+        "contextLost": false,
+        "sceneError": "",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": true,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "density": {
+        "devicePixelRatio": 2,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 2,
+        "sceneSize": {
+          "width": 1200,
+          "height": 720
+        },
+        "canvas": {
+          "width": 2400,
+          "height": 1440,
+          "clientWidth": 1200,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1200,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 2400,
+          "height": 1440
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 2400,
+            "height": 1440
+          },
+          "output": {
+            "width": 2400,
+            "height": 1440
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "failedResource": {
+        "lost": 2,
+        "restored": 2,
+        "contextLost": false,
+        "sceneError": "Synthetic resource failure for recovery retention",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": true,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "disposed": {
+        "lost": 3,
+        "restored": 2,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": true,
+        "connected": false,
+        "paused": true,
+        "motion": true,
+        "lossListener": false,
+        "restoreListener": false,
+        "actorIds": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "late": {
+        "lost": 3,
+        "restored": 3,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": true,
+        "connected": false,
+        "paused": true,
+        "motion": true,
+        "lossListener": false,
+        "restoreListener": false,
+        "actorIds": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "loaded": {
+        "lost": 0,
+        "restored": 0,
+        "contextLost": false,
+        "sceneError": "",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": true,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "changedLost": {
+        "lost": 1,
+        "restored": 0,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": false,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "changedRestored": {
+        "lost": 1,
+        "restored": 1,
+        "contextLost": false,
+        "sceneError": "",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": false,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "density": {
+        "devicePixelRatio": 2,
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "rendererRatio": 2,
+        "sceneSize": {
+          "width": 1200,
+          "height": 720
+        },
+        "canvas": {
+          "width": 2400,
+          "height": 1440,
+          "clientWidth": 1200,
+          "clientHeight": 720,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1200,
+            "height": 720
+          }
+        },
+        "drawingBuffer": {
+          "width": 2400,
+          "height": 1440
+        },
+        "contextLost": false,
+        "checksEnabled": true,
+        "composer": {
+          "input": {
+            "width": 2400,
+            "height": 1440
+          },
+          "output": {
+            "width": 2400,
+            "height": 1440
+          }
+        },
+        "actors": 7,
+        "ready": true,
+        "sceneError": ""
+      },
+      "failedResource": {
+        "lost": 2,
+        "restored": 2,
+        "contextLost": false,
+        "sceneError": "Synthetic resource failure for recovery retention",
+        "disposed": false,
+        "connected": true,
+        "paused": true,
+        "motion": false,
+        "lossListener": true,
+        "restoreListener": true,
+        "actorIds": [
+          "clover",
+          "foe-0-yarn-giant",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread",
+          "mochi",
+          "panko",
+          "soot"
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "disposed": {
+        "lost": 3,
+        "restored": 2,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": true,
+        "connected": false,
+        "paused": true,
+        "motion": false,
+        "lossListener": false,
+        "restoreListener": false,
+        "actorIds": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "late": {
+        "lost": 3,
+        "restored": 3,
+        "contextLost": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "disposed": true,
+        "connected": false,
+        "paused": true,
+        "motion": false,
+        "lossListener": false,
+        "restoreListener": false,
+        "actorIds": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "pass": true,
+  "ended": "2026-11-18T03:19:41.491Z"
+}

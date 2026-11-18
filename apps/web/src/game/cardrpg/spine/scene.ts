@@ -83,14 +83,26 @@ export class SpineScene {
  private weather:BattleWeather;
  private postFx:BattlePostFx;readonly cinema:CinematicPlayer;private bodyFx:BodyFx;private shadowTexture:T.CanvasTexture;private geometry=new T.PlaneGeometry(1,1);private ringGeometry=new T.RingGeometry(.87,1,48);
  private bodyBoxes=new Map<string,Rect>();private groundContacts=new Map<string,{x:number;y:number;scale:number;halfWidth:number}>();
- private lost=(event:Event)=>{event.preventDefault();this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');};
+ private contextLost=false;private restoringContext=false;private failureMessage='';
+ private reportFailure(message:string){if(this.disposed)return;this.failureMessage=message;this.onFailure(message);}
+ private contextChanged(lost:boolean){
+  if(this.disposed)return;
+  this.contextLost=lost;this.restoringContext=!lost;
+  if(lost)this.onFailure('The cafe canvas needs a reload. Battle controls remain available.');else this.invalidate();
+ }
+ private finishContextRecovery(){
+  if(this.disposed||this.contextLost||!this.restoringContext||this.renderer.getContext().isContextLost())return;
+  this.restoringContext=false;this.onFailure(this.failureMessage);
+ }
+ private lost=(event:Event)=>{if(this.disposed)return;event.preventDefault();this.contextChanged(true);};
+ private restored=()=>this.contextChanged(false);
  private visibility=()=>{this.last=0;this.dirty=true;};
  private pick=(event:PointerEvent)=>{const box=this.renderer.domElement.getBoundingClientRect(),x=event.clientX-box.left,y=event.clientY-box.top;for(const unit of this.sizeAudit().units){if(x>=unit.box.x&&x<=unit.box.x+unit.box.width&&y>=unit.box.y&&y<=unit.box.y+unit.box.height){this.onTarget(unit.id);break;}}};
  constructor(private host:HTMLElement,readonly view:()=>SceneView,private onAnchors:(anchors:Anchor[])=>void,private onTarget:(id:string)=>void,private onFailure:(message:string)=>void){
   this.renderer=new T.WebGLRenderer({antialias:true,alpha:false,powerPreference:'low-power',preserveDrawingBuffer:true});
   this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.NoToneMapping;this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
   this.renderer.setClearColor(PAINT.wall);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Painted 2D cafe battlefield');this.renderer.domElement.dataset.lookSpine='true';
-  this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
+  this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('webglcontextrestored',this.restored);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
   this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.bossPhase=new BossPhase(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root,this.trails.root,this.casterFocus.root);this.postFx=new BattlePostFx(this.renderer,this.scene,this.camera);this.cinema=new CinematicPlayer(host);
   this.weather=new BattleWeather(host);
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
@@ -117,7 +129,7 @@ export class SpineScene {
     this.effectsLoaded=true;this.refreshLoading();this.invalidate();
    }).catch(error=>{
     if(this.disposed||this.effectsRequest!==request)return;
-    this.onFailure(`Could not prepare battle effects: ${String(error)}`);this.refreshLoading();
+    this.reportFailure(`Could not prepare battle effects: ${String(error)}`);this.refreshLoading();
    });
   }
   const ids=new Set(view.actors.map(a=>a.id));
@@ -156,7 +168,7 @@ export class SpineScene {
     this.invalidate();
    }).catch(error=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id))return;
-    this.failed.add(unit.id);this.onFailure(`Could not prepare ${asset}: ${String(error)}`);
+    this.failed.add(unit.id);this.reportFailure(`Could not prepare ${asset}: ${String(error)}`);
    }).finally(()=>{if(this.pending.get(unit.id)===request)this.pending.delete(unit.id);if(!this.disposed)this.refreshLoading();});
   }
   this.refreshLoading();
@@ -497,6 +509,7 @@ export class SpineScene {
   }
   this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
+  if(this.restoringContext)this.finishContextRecovery();
   const bannerActor=plan?.ultimate?view.actors.find(a=>a.id===plan.actorId):undefined,bannerEntry=bannerActor?this.actors.get(bannerActor.id):undefined;
   this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,
    !view.formationC2&&plan?.ultimate&&bannerEntry?this.focusBanner.place(plan,this.bounds(bannerEntry),width,height,this.cinematicRects):undefined,
@@ -571,5 +584,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craftEffects.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('webglcontextrestored',this.restored);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craftEffects.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }

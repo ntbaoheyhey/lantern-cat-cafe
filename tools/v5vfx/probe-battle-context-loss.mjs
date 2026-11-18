@@ -8,6 +8,7 @@ import {root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
 
 const candidate=process.env.CXV_BATTLE_CONTEXT_CANDIDATE==='1';
+const repair=candidate||process.env.CXV_BATTLE_CONTEXT_REPAIR==='1';
 const production=resolve(process.env.CXV_BATTLE_CONTEXT_PRODUCTION??resolve(root,'work/v5/CXV/films/V7-E-victory-context-native-production'));
 const out=resolve(process.env.CXV_BATTLE_CONTEXT_OUT??resolve(root,'work/v5/CXV/films/V7-F-battle-context-loss'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));
@@ -20,7 +21,7 @@ const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import('./pro
 const {preview}=await import(require.resolve('vite'));
 const server=await preview({root:appRoot,configFile:false,envDir:false,logLevel:'error',build:{outDir:artifact.dist},preview:{host:'127.0.0.1',port:6312,strictPort:true}});
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),url:judgeUrl,viewport:{width:1280,height:720},
- buildManifest:{path:resolve(production,'build.json'),sha256:hash(manifest)},verifiedArtifactFiles:artifact.files.length,candidate,artifactTransforms:artifact.transformed,
+ buildManifest:{path:resolve(production,'build.json'),sha256:hash(manifest)},verifiedArtifactFiles:artifact.files.length,candidate,repair,artifactTransforms:artifact.transformed,
  method:(candidate?'Isolated scene-source candidate. ':'Untransformed native artifact. ')+'Boss fixture paused through actual native loss/restoration. Native scene RAF resumed after fixture setup; no render/view/error overrides at runtime. CSS animations paused, existing scene time set20.3 before initial native draw. Measure native GPU events, draw deltas and error overlay. Failure injection, not incidence or a gameplay-policy proposal.',snapshots:[],runs:[],captures:[],pass:false,reviewedUtc:null};
 for(const name of ['probe-battle-context-loss.mjs','production-candidate-fixture.mjs']){const bytes=await readFile(resolve(root,'tools/v5vfx',name));await writeFile(resolve(out,name),bytes);report.snapshots.push({name,sha256:hash(bytes)});}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
@@ -60,7 +61,7 @@ try{
   await page.evaluate(()=>globalThis.__cxvBattleLoss.extension.restoreContext());await page.waitForFunction(()=>globalThis.__cxvBattleLoss.restored===1);await page.waitForTimeout(1000);
   const restored=await capture('restored');assert(!restored.contextLost);assert.deepEqual(restored.battle,loaded.battle);assert.deepEqual(restored.plan,loaded.plan);assert.equal(restored.age,loaded.age);
   assert.deepEqual(restored.units,loaded.units);assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);
-  if(candidate){
+  if(repair){
    assert.equal(restored.sceneError,'');assert.equal(restored.overlays.length,0);assert(restored.draws>lost.draws);assert(restored.paused&&!restored.canAct);
    const frames=report.captures.filter(c=>c.mode===mode);assert.equal(frames.find(c=>c.name==='loaded').rgbSha256,frames.find(c=>c.name==='restored').rgbSha256,'Paused restored frame must be full RGB exact');
   }
@@ -71,6 +72,6 @@ try{
  const rawPath=resolve(out,'report.json'),raw=JSON.stringify(report,null,2)+'\n';await writeFile(rawPath,raw);
  const compact=state=>({...state,battle:undefined,plan:undefined,units:undefined,battleSha256:hash(JSON.stringify(state.battle)),planSha256:hash(JSON.stringify(state.plan)),unitsSha256:hash(JSON.stringify(state.units))});
  const summary={...report,raw:{path:rawPath,sha256:hash(raw)},runs:report.runs.map(r=>({...r,loaded:compact(r.loaded),lost:compact(r.lost),restored:compact(r.restored)})),captures:report.captures.map(({before,after,...c})=>c)};
- await writeFile(resolve(root,'reports/v5/CXV/V7-F-battle-context-'+(candidate?'prototype':'loss')+'.json'),JSON.stringify(summary,null,2)+'\n');
+ await writeFile(resolve(root,'reports/v5/CXV/V7-F-battle-context-'+(candidate?'prototype':repair?'native':'loss')+'.json'),JSON.stringify(summary,null,2)+'\n');
  console.log(JSON.stringify({out,pass:report.pass,reproduced:report.reproduced,runs:report.runs.map(r=>({mode:r.mode,restoredDraws:r.restored.draws-r.lost.draws,error:r.restored.sceneError}))}));
 }finally{await browser.close();await new Promise(resolve=>server.httpServer.close(resolve));}
