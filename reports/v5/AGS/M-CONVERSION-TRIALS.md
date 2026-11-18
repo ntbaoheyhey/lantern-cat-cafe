@@ -15,3 +15,4 @@ Trial results for opaque cat height conversions.
 
 Note: HQ versions use `hqdn3d` and CRF 20 for better quality; sizes are significantly higher.
 Metrics: 10s duration, 30fps, libx264.
+EOF
