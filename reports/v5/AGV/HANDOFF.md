@@ -1,8 +1,9 @@
 ACTIVE: BLOCKED (T-M1: Missing Data)
 NEXT 1: T-M1 (Measure designer idles)
-NEXT 2: NONE
+NEXT 2: T-M2 (Research Living Cats V8)
+NEXT 3: NONE
 Running PIDs: None
-TASKs: T-M1
+TASKs: T-M1, T-M2
 Blocked: B4 (Video generation failed: tools only support static images)
 Last Pushed SHA: 8c877f832
 Wake Task ID: task-6
