@@ -1,8 +1,8 @@
 # CXI V8 — Batch M first
-M-I1 ACTIVE: R5 fullmatte318x390 source8aef40187/index82f08611 installed;own696anchors/348rows/4actions/4freshviews scopedPASS;10emissions error0;MochiR6 retained;registry{}.
+M-I1 ACTIVE: decodedPTS loadercandidate ae1e69fb5 installed in phaseR6;29focused/3247web/TSC0. ActualGPU8controls+24matches against600refs PASS;independent653hashes,zero frameerror includingtwo seek transients. Native lifecycle/casts running;media registry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
-LIVE6301: exactfullR5 source8aef40187/index82f08611 restored;full3809fileinventory/6payloads/indexverified;nativeR3/m1.15 preserved. CXVR6 independently audited:274hashes/70states/1040counts;32/13/7/7Mochi→Cloverbadge pixels atRGB>0/1/2/4 inF191/F0;other4phaseszero. ActualGPUphase diagnostic next.
+LIVE6301: phaseR6 sourceae1e69fb5/indexa4ecc76d;full3809files/294424882B verified,6payloadsR5exact,59audiohashes unchanged. FullR5 andnative m1.15 preserved. Labelpair4160counts/10pairs acceptedscoped;Clover+5 clear,3Mochi ownbars fail;427changedpixels outsideDOMwithin4px margin eachpair.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.

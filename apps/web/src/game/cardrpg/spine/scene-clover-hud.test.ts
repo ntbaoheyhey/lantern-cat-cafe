@@ -13,10 +13,10 @@ function fixture(asset:string,prepared:boolean,formation=true){
  scene.projectAnchors({actors:[{id:'unit',hp:100,side:'party'}],formationC2:formation} as unknown as SceneView);
  const p=hp.getWorldPosition(new T.Vector3()).project(camera);return{anchor:scene.anchors[0]!,body,projected:{x:(p.x+1)*640,y:(1-p.y)*360}};
 }
-it('carries the prepared Clover HP socket and body independently from its face-side legacy anchor',()=>{
- const f=fixture('clover',true);expect(f.anchor.labelTarget).toEqual({...f.projected,avoid:f.body});
+it.each([['clover',5],['mochi',0]] as const)('carries the prepared %s HP socket and body independently from its face-side legacy anchor',(asset,tailClearance)=>{
+ const f=fixture(asset,true);expect(f.anchor.labelTarget).toEqual({x:f.projected.x,y:f.projected.y+tailClearance,avoid:f.body});
  expect(f.anchor.labelX).toBe(f.anchor.x);expect(f.anchor.labelY).toBe(f.body.y-9);
 });
-it.each([['clover',false,true],['mochi',true,true],['clover',true,false]] as const)('retains ordinary label routing for %s prepared=%s formation=%s',(asset,prepared,formation)=>{
+it.each([['clover',false,true],['mochi',false,true],['clover',true,false],['mochi',true,false],['panko',true,true]] as const)('retains ordinary label routing for %s prepared=%s formation=%s',(asset,prepared,formation)=>{
  expect(fixture(asset,prepared,formation).anchor.labelTarget).toBeUndefined();
 });

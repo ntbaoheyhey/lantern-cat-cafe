@@ -592,7 +592,8 @@ export class SpineScene {
   for(const unit of view.actors){const entry=this.actors.get(unit.id);if(!entry)continue;
    const actor=entry.actor,hp=this.screen(actor.socket('hpAnchor',this.scratch)),face=this.screen(actor.socket('head',this.scratch)),foot=this.screen(actor.socket('feet',this.scratch)),body=this.bounds(entry);
    const anchor:SceneAnchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,body,face:this.faceBounds(entry),visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
-   if(view.formationC2&&entry.asset==='clover'&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y,avoid:body};
+   // Authored HP sockets clear the commissioned props; Clover's badge also needs the measured tail clearance.
+   if(view.formationC2&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body};
    if(unit.hp>0)bodies.push(body);
    if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:view.formationC2?40:52,head:body});
    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});
