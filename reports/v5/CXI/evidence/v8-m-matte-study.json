@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-18T05:02:19.763103+00:00",
+  "status": "STUDY ONLY: source alpha remains ambiguous; seam unmodified",
+  "cats": [
+    {
+      "cat": "mochi",
+      "canvas": [
+        468,
+        390
+      ],
+      "opaqueUnionAlphaGT24": [
+        2,
+        2,
+        466,
+        388
+      ],
+      "footYRange": [
+        387,
+        388
+      ],
+      "weakOpaqueBeforeMax": 475,
+      "weakOpaqueAfterMax": 0,
+      "changedSolidInteriorMax": 0,
+      "blackReconstructionMAEMax": 0.04204836115241051,
+      "rawPremul": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/mochi-premul.rgba",
+      "diagnostic": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/mochi-matte-tail-diagnostic.png",
+        "dimensions": [
+          960,
+          320
+        ],
+        "sha256": "a6ff05a7ca3de2f0b76eef07b2aaacb96212fd299c3e9906833ac3f8f3d26645"
+      },
+      "seamRepaired": false
+    },
+    {
+      "cat": "clover",
+      "canvas": [
+        318,
+        390
+      ],
+      "opaqueUnionAlphaGT24": [
+        1,
+        2,
+        316,
+        388
+      ],
+      "footYRange": [
+        386,
+        388
+      ],
+      "weakOpaqueBeforeMax": 174,
+      "weakOpaqueAfterMax": 0,
+      "changedSolidInteriorMax": 0,
+      "blackReconstructionMAEMax": 0.1144600361585617,
+      "rawPremul": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "diagnostic": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-matte-tail-diagnostic.png",
+        "dimensions": [
+          960,
+          320
+        ],
+        "sha256": "aa6bf51eb02a8c9ddc565b6e3622714b108452acb6ae88f1b32c22514356881c"
+      },
+      "seamRepaired": false
+    }
+  ],
+  "diagnosticsViewedOnce": true,
+  "review": "Matte visually improved in two fresh measured diagnostics; offline only. General warm-color tail segmentation REJECTED: clips lower tails and merges arm at intermediate frames. Restrict next registration to endpoint window with explicit tail/cloth separation."
+}

@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-M-I1 ACTIVE:learnL1/L3/sourceaudit,then Mochi+Clover transparentdesigner idle ingest;no app adoption before04:41:01Z+study/evidence.
+M-I1 ACTIVE:study/sourceaudit complete;unregistered packedH264 loader native92 PASS;context/callback hooks imported;matte/seam unaccepted.
 M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
 M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
 SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
