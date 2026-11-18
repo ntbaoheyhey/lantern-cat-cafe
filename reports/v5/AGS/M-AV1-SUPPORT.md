@@ -5,7 +5,9 @@
 - AV1 MP4 Support: True (624x520/30fps).
 - H264 Fallback: Required.
 
-## 2. Sources & Attribution
-- Live2D SDK/Codec Specs (EN): https://help.live2d.com/en/
-- Live2D SDK/Codec Specs (ZH): https://help.live2d.com/zh/
-- Capability Receipt: [CXI-four-plane-av1](file:///Users/bao/taskbar-hero-mailbox/LEARN/CXI-four-plane-av1-20261118.md)
+## 2. Evidence
+| Field | Evidence |
+| :--- | :--- |
+| Codec Source | Unavailable (Live2D FAQ does not document browser AV1) |
+| Capability Hash | Unavailable |
+| Decode Proof | Unavailable |
