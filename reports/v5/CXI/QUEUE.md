@@ -46,3 +46,7 @@ M-I3 MOCHI-ONLY NOTREADY:CXV562scope/563profile request ACK;isolated3payload bui
 
 M-I2 CONTROLS LEASE:CXI released16:59:17Z after empty groups63482/65692;CXV557 granted until17:07:17Z ANDexplicitrelease. Conditioning170hashaudit next.
 M-I3 PATCH CHECK:zero-context proposal passes --unidiff-zero;not stale-source and not applied. Build review immutable;nativeClover/art/performance gates remain open.
+
+M-I2 CONDITIONING AUDITED:2026-11-18T17:05:40.320889+00:00 170imagehashes/1666counts exact;32initialdiffs/29719pixels. Cause unresolved,original33/34 vs initialequality2/34 unchanged.
+M-I3 ENROLLMENT PREREG:mochi-only nativeClover8rows/2freshstills;install after17:07:17Z;CXV570released. No labels/sourceadopted.
+AGS566/568 REDO:V3/FINAL allblankPTS;twoTASKtracking restored;futureZ timestamps unreliable.
