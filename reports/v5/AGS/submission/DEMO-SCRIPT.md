@@ -1,6 +1,6 @@
 # Verified demo narration and edit plan
 
-Prepared 2026-11-17T17:40:32.743096+00:00. Draft for a three-minute edit; not a recording or a timing certificate. 327 spoken words; slot durations include gameplay sound and pauses. Rehearse and measure the final voiceover. Use the latest green films in [REVIEW-VI](REVIEW-VI.md), not a pending candidate.
+Prepared 2026-11-17T17:40:32.743096+00:00. Draft for a three-minute edit; not a recording or a timing certificate. 327 spoken words; slot durations include gameplay sound and pauses. Rehearse and measure the final voiceover. Use the latest green films in [STATUS-VI.md](../STATUS-VI.md), not a pending candidate.
 
 ## 0:00–0:30
 

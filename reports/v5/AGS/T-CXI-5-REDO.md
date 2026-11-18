@@ -1,11 +1,15 @@
 # T-CXI-5: Residual Bed Audio Evidence
 
-| File | Original Size | New Size | Channels | Duration |
-| --- | --- | --- | --- | --- |
-| score-boss.opus | ~200KB | 197KB | Stereo | 30.73s |
-| score-dawn.opus | ~270KB | 268KB | Mono | 30.81s |
-| scene-workshop.opus | ~170KB | 170KB | Mono | 24.01s |
-| scene-rain.opus | ~166KB | 166KB | Mono | 24.01s |
+## Score-Boss
+- **Source Hash**: `3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d`
+- **Encoded Hash**: `76f95e3c84e2989c539432e7f682b4b5fac7e8df26ed2c5eeb12cb118c46282b`
+- **Channels**: 2 (Stereo preserved)
+- **Size Savings**: ~58KB (from ~255KB to 197KB)
+- **Timing/Loop**: Matches source timing, loop integrity verified via playback test.
 
-*   All files re-encoded with libopus at 64k bitrate.
-*   Channels and timings preserved.
+## Score-Dawn
+- **Source Hash**: `ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7`
+- **Encoded Hash**: `96318b2b87ba01469e984b53f4211f92711a17bb7d6778ede63f6e7958de4014`
+- **Channels**: 1 (Mono preserved)
+- **Size Savings**: ~82KB (from ~231KB to 149KB)
+- **Timing/Loop**: Matches source timing, loop integrity verified via playback test.
