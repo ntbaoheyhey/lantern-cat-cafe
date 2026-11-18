@@ -1,0 +1,41 @@
+{
+  "utc": "2026-11-18T08:54:53.799942+00:00",
+  "api": "actor.designerMedia?.setSuspended(boolean)",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/designer-idle-loader.ts",
+      "sha256": "b7b76787eb279947b3c78c35ba58f35ac23937d628d034dd09e6a8e58dd4c74d"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/designer-idle-actor-loader.ts",
+      "sha256": "ead187c024ad071d650d8d3ba2c23beb2172ea9426bad3b03c093f168e554d30"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/designer-idle-suspension.test.ts",
+      "sha256": "6d84ef24c60e4f8288448757a8544496036c1937f321bc5b652bb51a1eb61c5f"
+    }
+  ],
+  "checks": [
+    {
+      "name": "focused",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-media-suspend-focused.log",
+      "sha256": "44e31b3ddbeb5f6606307bf505e4bbf2d9178964c18b8abbc478004dbf68be5b"
+    },
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "log": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-media-suspend-typecheck.log",
+      "sha256": "ff18b5a37377e72874b511ed6e05de3ff2b2b6c6df5c23f9bbd54dd071028c34"
+    }
+  ],
+  "focusedPassed": 17,
+  "scope": "Mochi/Clover prepared media only. Stop playback/watch/timeouts without disposing. False does not resume ready playback until sample. Pause generation handles stale promises.",
+  "protected": {
+    "baseline": "c4bd12552",
+    "paths": 3833,
+    "changed": []
+  },
+  "nativeAcceptance": false,
+  "sceneWiring": "CXV owns scene integration; pending exact patch."
+}

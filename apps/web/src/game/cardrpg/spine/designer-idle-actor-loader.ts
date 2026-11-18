@@ -30,6 +30,7 @@ export class DesignerIdleActorMedia {
   const left=Math.min(...points.map(p=>p.x)),bottom=Math.min(...points.map(p=>p.y));
   actor.faceRegion={x:left,y:bottom,width:Math.max(...points.map(p=>p.x))-left,height:Math.max(...points.map(p=>p.y))-bottom};
  }
+ setSuspended(suspended:boolean){this.media.setSuspended(suspended);}
  dispose(){this.media.dispose();}
 }
 

@@ -90,7 +90,8 @@ export class DesignerIdleMedia {
  readonly ready:Promise<boolean>;
  onFrame:()=>void=()=>{};
  failure:string|undefined;
- private disposed=false;private playing=false;private started=false;private firstFrame=false;
+ private disposed=false;private playing=false;private started=false;private firstFrame=false;private suspended=false;
+ private playbackGeneration=0;
  private desired=0;private frozenAt:number|undefined;private lastSeek=-Infinity;private callback:number|undefined;
  private animationFrame:number|undefined;private fallbackFrameTime=-1;private queuedSeek:number|undefined;
  private timer:ReturnType<typeof setTimeout>|undefined;
@@ -103,7 +104,7 @@ export class DesignerIdleMedia {
   this.videoTexture.dispose();this.posterTexture.dispose();this.geometry.dispose();this.material.dispose();
  };
  private readonly contextRestored=()=>{if(!this.disposed){this.videoTexture.needsUpdate=true;this.posterTexture.needsUpdate=true;this.onFrame();}};
- private readonly visibility=()=>{if(document.hidden)this.video.pause();};
+ private readonly visibility=()=>{if(document.hidden){this.playbackGeneration++;this.playing=false;this.video.pause();}};
  constructor(readonly manifest:DesignerIdleManifest,poster:HTMLImageElement){
   validateDesignerIdle(manifest,manifest.id);
   this.posterTexture=new T.Texture(poster);this.posterTexture.colorSpace=T.NoColorSpace;this.posterTexture.premultiplyAlpha=true;this.posterTexture.generateMipmaps=false;this.posterTexture.minFilter=T.LinearFilter;this.posterTexture.needsUpdate=true;
@@ -135,13 +136,44 @@ export class DesignerIdleMedia {
   if(this.disposed||this.failure||this.started)return;this.started=true;
   const layout=designerVideoLayout(this.manifest);
   if(this.video.videoWidth!==layout.width||this.video.videoHeight!==layout.height||Math.abs(this.video.duration-10)>1/30){this.fail('Designer video metadata mismatch');return;}
-  this.watchFrames();
-  void this.video.play().then(()=>{if(this.disposed||this.failure)this.video.pause();}).catch(error=>this.fail(`Designer video play rejected: ${String(error)}`));
+  this.startDecoding();
  };
+ private startDecoding(){
+  if(this.disposed||this.failure||this.suspended)return;
+  this.watchFrames();
+  if(!this.firstFrame)this.playVideo(true);
+ }
+ private playVideo(bootstrap=false){
+  const generation=this.playbackGeneration;
+  void this.video.play().then(()=>{
+   if(this.disposed||this.failure||this.suspended||document.hidden||(!bootstrap&&!this.playing))this.video.pause();
+  }).catch(error=>{
+   // pause() rejects an outstanding play promise with AbortError. A later resume
+   // must not inherit that obsolete rejection or switch a good decoder to poster.
+   if(generation!==this.playbackGeneration||this.disposed||this.failure||this.suspended||document.hidden)return;
+   this.fail(`Designer video play rejected: ${String(error)}`);
+  });
+ }
+ private stopFrames(){
+  if(this.callback!==undefined)this.video.cancelVideoFrameCallback?.(this.callback);this.callback=undefined;
+  if(this.animationFrame!==undefined)cancelAnimationFrame(this.animationFrame);this.animationFrame=undefined;
+ }
+ /** Keep prepared media allocated while its owning scene skips all sampling. */
+ setSuspended(suspended:boolean){
+  if(this.disposed||this.failure||this.suspended===suspended)return;
+  this.suspended=suspended;
+  if(suspended){
+   this.playbackGeneration++;this.playing=false;this.video.pause();this.queuedSeek=undefined;this.stopFrames();
+   if(this.timer)clearTimeout(this.timer);this.timer=undefined;
+  }else{
+   if(!this.firstFrame)this.timer=setTimeout(()=>this.fail('Designer video first-frame timeout'),5000);
+   if(this.started)this.startDecoding();
+  }
+ }
  private watchFrames(){
-  if(this.disposed||this.failure)return;
+  if(this.disposed||this.failure||this.suspended||this.callback!==undefined||this.animationFrame!==undefined)return;
   const decoded=()=>{
-   if(this.disposed||this.failure)return;
+   if(this.disposed||this.failure||this.suspended)return;
    if(!this.firstFrame)this.acceptFrame();
    else{this.videoTexture.needsUpdate=true;this.onFrame();}
    this.watchFrames();
@@ -165,12 +197,12 @@ export class DesignerIdleMedia {
    for(let i=0;i<pixels.length;i+=4){low=Math.min(low,pixels[i]!);high=Math.max(high,pixels[i]!);}
    if(low>16||high<200)throw Error('Designer decoded mask is empty or opaque');
    this.firstFrame=true;this.material.map=this.videoTexture;this.packed.value=1;this.videoTexture.needsUpdate=true;
-   if(!this.playing)this.video.pause();
+   if(!this.playing){this.playbackGeneration++;this.video.pause();}
    if(this.timer)clearTimeout(this.timer);this.timer=undefined;this.finish?.(true);this.finish=undefined;this.onFrame();
   }catch(error){this.fail(String(error));}
  }
  private readonly seeked=()=>{
-  if(this.disposed||this.failure)return;
+  if(this.disposed||this.failure||this.suspended)return;
   const queued=this.queuedSeek;this.queuedSeek=undefined;
   if(queued!==undefined&&designerDrift(this.video.currentTime,queued)>(this.playing?.2:1/60)){this.video.currentTime=queued;return;}
   this.videoTexture.needsUpdate=true;this.onFrame();
@@ -178,14 +210,13 @@ export class DesignerIdleMedia {
  private fail(reason:string){
   if(this.disposed||this.failure)return;this.failure=reason;this.video.pause();this.playing=false;this.material.map=this.posterTexture;this.packed.value=0;
   if(this.timer)clearTimeout(this.timer);this.timer=undefined;
-  if(this.callback!==undefined)this.video.cancelVideoFrameCallback?.(this.callback);this.callback=undefined;
-  if(this.animationFrame!==undefined)cancelAnimationFrame(this.animationFrame);this.animationFrame=undefined;
+  this.stopFrames();
   this.queuedSeek=undefined;this.videoTexture.dispose();
   this.video.removeAttribute('src');this.video.load();
   this.finish?.(false);this.finish=undefined;this.onFrame();
  }
  sample(clock:DesignerIdleClock,reduced:boolean){
-  if(this.disposed||this.failure)return;
+  if(this.disposed||this.failure||this.suspended)return;
   if(clock.frozen&&this.frozenAt===undefined)this.frozenAt=this.video.currentTime;
   if(!clock.frozen)this.frozenAt=undefined;
   const target=reduced?0:clock.frozen?this.frozenAt!:designerPhase(Number.isFinite(clock.worldTime)?clock.worldTime:0);
@@ -198,15 +229,14 @@ export class DesignerIdleMedia {
    this.lastSeek=now;this.video.currentTime=target;
   }
   const rate=clock.playbackRate??1;this.video.playbackRate=Number.isFinite(rate)?Math.max(.25,Math.min(4,rate)):1;
-  if(!running){this.video.pause();this.playing=false;}
-  else if(!this.playing||this.video.paused){this.playing=true;void this.video.play().catch(error=>this.fail(`Designer video play rejected: ${String(error)}`));}
+  if(!running){this.playbackGeneration++;this.video.pause();this.playing=false;}
+  else if(!this.playing||this.video.paused){this.playing=true;this.playVideo();}
  }
- get state(){return {ready:this.firstFrame&&!this.failure&&!this.disposed,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,disposed:this.disposed};}
+ get state(){return {ready:this.firstFrame&&!this.failure&&!this.disposed,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,suspended:this.suspended,disposed:this.disposed};}
  dispose(){
   if(this.disposed)return;this.disposed=true;
   if(this.timer)clearTimeout(this.timer);
-  if(this.callback!==undefined)this.video.cancelVideoFrameCallback?.(this.callback);
-  if(this.animationFrame!==undefined)cancelAnimationFrame(this.animationFrame);
+  this.stopFrames();
   this.finish?.(false);this.finish=undefined;
   document.removeEventListener('visibilitychange',this.visibility);
   for(const canvas of this.canvases){canvas.removeEventListener('webglcontextlost',this.contextLost);canvas.removeEventListener('webglcontextrestored',this.contextRestored);}this.canvases.clear();
