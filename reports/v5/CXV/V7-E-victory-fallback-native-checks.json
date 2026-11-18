@@ -1,7 +1,6 @@
 {
   "utc": "2026-11-18T00:14:31.668786+00:00",
   "studyGate": "2026-11-18T00:16:43.634070Z",
-  "componentUnchanged": true,
   "componentSha256": "82f0b3350de27b80f92f4016ddccd2544ade8de50471131d20848b96211729a6",
   "redTestLog": "work/v5/CXV/jobs/victory-fallback-test-red.log",
   "redTestLogSha256": "1939b5d736cf5d465e817103eaee9ea6574f501153911e3af7dbd6ba43d5b1c5",
@@ -14,6 +13,29 @@
       "rejected asset replacement retains stale drawn=4"
     ]
   },
-  "green": null,
-  "nativeCapture": null
+  "green": {
+    "testsPassed": 6,
+    "testsFailed": 0,
+    "log": "work/v5/CXV/jobs/victory-fallback-test-green.log",
+    "typecheck": "pass: tsc --noEmit, no diagnostics",
+    "typecheckLog": "work/v5/CXV/jobs/victory-fallback-tsc.log"
+  },
+  "nativeCapture": {
+    "bothMotionModesApplicationPass": true,
+    "reviewedUtc": "2026-11-18T00:17:39Z",
+    "review": "Eight frames measured before two1024x576 sheets reviewed once; failed restarts and fresh failures show all four original static cats; successful load and recovery show drawn cats. Receipt and Next remain clear. Do not reopen sheets.",
+    "baselinePixelComparison": "FAILED at loaded reduced frame; numerical difference attribution pending. Exact pixel acceptance remains open."
+  },
+  "nativeAppliedUtc": "2026-11-18T00:17:00.945387+00:00",
+  "change": "Clear ready, drawn and loadError on the retained host before constructing its replacement renderer. Preserve all scene, pose and scheduling code.",
+  "baselineComponentUnchanged": true,
+  "actualNativeComponentSha256": "efc9c39e4d96240054913ed90e5560e2eb6a46e950fe61880c37e320a905eafc",
+  "retainedPageControl": {
+    "report": "V7-E-victory-fallback-retained-page.json",
+    "fullLoadedRecoveredExact": true,
+    "oldNativeFailureChangedPixels": 36564,
+    "changedPixelsOutsideCrew": 0,
+    "reviewedUtc": "2026-11-18T00:21:37.090479+00:00"
+  },
+  "status": "READY for scoped constructor-failure correctness review:6 lifecycle tests/typecheck/native bothmotion checks pass. Independent judge integration pending. Cross-browser fullpage pixel equivalence remains failed and preserved; original demand-rendering optimization stays blocked."
 }

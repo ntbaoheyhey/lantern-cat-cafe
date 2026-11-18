@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+const root=resolve(import.meta.dirname,'../..'),dir=resolve(root,'work/v5/CXV/films/V7-E-victory-fallback-retained-page'),input=resolve(dir,'report.json'),rawBytes=readFileSync(input),raw=JSON.parse(rawBytes),output=resolve(root,'reports/v5/CXV/V7-E-victory-fallback-retained-page.json');assert(raw.pass&&!existsSync(output));
+const hash=v=>createHash('sha256').update(v).digest('hex'),buffers=new Map();
+for(const c of raw.captures){const encoded=readFileSync(c.path);assert.equal(hash(encoded),c.sha256);assert.equal(encoded.readUInt32BE(16),1280);assert.equal(encoded.readUInt32BE(20),720);const rgb=execFileSync('ffmpeg',['-v','error','-i',c.path,'-frames:v','1','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],{maxBuffer:4000000});buffers.set(c.name,rgb);Object.assign(c,{width:1280,height:720,rgbSha256:hash(rgb)});}
+const compare=(a,b,rect)=>{let changedPixels=0,maxChannel=0,outsideCrew=0;for(let i=0;i<a.length;i+=3){const delta=Math.max(...[0,1,2].map(k=>Math.abs(a[i+k]-b[i+k])));if(!delta)continue;changedPixels++;maxChannel=Math.max(maxChannel,delta);const x=i/3%1280,y=Math.floor(i/3/1280);if(rect&&(x<Math.floor(rect.x)||x>=Math.ceil(rect.right)||y<Math.floor(rect.y)||y>=Math.ceil(rect.bottom)))outsideCrew++;}return{exact:!changedPixels,changedPixels,maxChannel,outsideCrew};};
+const recovered=compare(buffers.get('native-loaded'),buffers.get('native-recovered')),failure=compare(buffers.get('old-restart-failed'),buffers.get('native-restart-failed'),raw.captures[3].state.crewRect);
+const sheet=resolve(dir,'review.jpg');assert(!existsSync(sheet));execFileSync('ffmpeg',['-v','error',...raw.captures.flatMap(c=>['-i',c.path]),'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',sheet]);
+const report={...raw,raw:{path:input,sha256:hash(rawBytes)},measuredUtc:new Date().toISOString(),comparison:{nativeLoadedRecovered:recovered,oldVsNativeFailure:failure},sheet:{path:sheet,width:1024,height:576,sha256:hash(readFileSync(sheet))},reviewedUtc:null,interpretation:null};writeFileSync(output,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({output,comparison:report.comparison,sheet}));assert(recovered.exact&&failure.changedPixels>0&&failure.outsideCrew===0);

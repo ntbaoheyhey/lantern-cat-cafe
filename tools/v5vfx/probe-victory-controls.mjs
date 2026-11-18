@@ -6,14 +6,14 @@ import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {chromium,config,openFixture,runtimeEvidence,judgeUrl} from '/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs';
-const root=resolve(import.meta.dirname,'../..'),out=resolve(root,'work/v5/CXV/films/V7-E-victory-controls');assert(!existsSync(out));await mkdir(out,{recursive:true});
+const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-E-victory-controls'));assert(!existsSync(out));await mkdir(out,{recursive:true});
 const hash=v=>createHash('sha256').update(v).digest('hex'),board=await readFile('/Users/bao/taskbar-hero-mailbox/BOARD.md','utf8');
 const report={utc:new Date().toISOString(),url:judgeUrl,source:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),servedSource:board.match(/Currently served candidate:([a-f0-9]{40})/)[1],...runtimeEvidence(),harnessSha256:hash(await readFile(import.meta.filename)),viewport:{width:1280,height:720},method:'Seeded boss; natural speed1 rule-selected battle to result. Sample all result button center/inset corners with elementFromPoint while native unlock celebration is visible. No control activation or account/chain claim. Captures are diagnostic, not performance measurements.',runs:[],pass:false};
 const stop=()=>{for(const f of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+f),'STOP: '+f);};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{for(const reduced of [false,true]){
  stop();const mode=reduced?'reduced':'normal',{page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));
- await page.evaluate(reduced=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.state.settings.speed=1;m.paused=false;m.notify(false);},reduced);
+ await page.evaluate(reduced=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.state.settings.speed=1;m.paused=false;m.notify(false);const s=window.__depthScene;cancelAnimationFrame(s.raf);s.raf=requestAnimationFrame(s.loop);},reduced);
  const deadline=Date.now()+180000;while(Date.now()<deadline){stop();if(await page.evaluate(()=>window.__depthReview.screen==='result'))break;await page.waitForTimeout(200);}
  assert.equal(await page.evaluate(()=>window.__depthReview.screen),'result');const start=Date.now(),run={mode,utc:new Date().toISOString(),samples:[],captures:[],errors,blockedRequests};
  for(const offset of [0,1000,5500]){

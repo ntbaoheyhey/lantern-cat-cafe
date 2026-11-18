@@ -11,10 +11,12 @@ export interface VictoryCat {id:string;name:string;alive:boolean}
 export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
  const host=useRef<HTMLDivElement>(null),key=cats.map(c=>`${c.id}:${c.alive}`).join(',');
  useEffect(()=>{
-  const element=host.current!;let renderer:T.WebGLRenderer;
+  const element=host.current!;
+  // React retains this host when an effect restarts; construction can fail.
+  delete element.dataset.ready;delete element.dataset.drawn;delete element.dataset.loadError;
+  let renderer:T.WebGLRenderer;
   try{renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});}catch{return;}
   const scene=new T.Scene(),camera=new T.OrthographicCamera(-1,1,1,0,.1,1000),actors=new Map<number,SpineActor>(),drawings=new Map<number,DrawnPoses>();
-  delete element.dataset.ready;delete element.dataset.loadError;
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.outputColorSpace=T.SRGBColorSpace;camera.position.z=100;
   renderer.domElement.setAttribute('aria-hidden','true');element.append(renderer.domElement);
   let disposed=false,raf=0,start=0,width=0,height=0;

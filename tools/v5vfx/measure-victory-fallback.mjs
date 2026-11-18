@@ -17,11 +17,25 @@ for(const name of names){
  const dir=resolve(film,name);assert(dir.startsWith(film+'/'));const path=resolve(dir,'report.json'),rawBytes=readFileSync(path),raw=JSON.parse(rawBytes);assert(raw.harnessCompleted);
  const captures=[];
  for(const c of raw.captures){const encoded=readFileSync(c.path);assert.equal(encoded.readUInt32BE(16),1280);assert.equal(encoded.readUInt32BE(20),720);const rgb=decode(c.path);assert.equal(rgb.length,1280*720*3);let sum=0,sum2=0;for(const v of rgb){sum+=v;sum2+=v*v;}const mean=sum/rgb.length,stdDev=Math.sqrt(sum2/rgb.length-mean*mean);assert(mean>5&&mean<250&&stdDev>10);captures.push({...c,width:1280,height:720,pngSha256:hash(encoded),rgbSha256:hash(rgb),mean,stdDev});buffers.set(name+'/'+c.name,rgb);}
- const sheet=resolve(dir,'review.jpg');assert(!existsSync(sheet));execFileSync('ffmpeg',['-v','error',...captures.flatMap(c=>['-i',c.path]),'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',sheet]);
+ const sheet=resolve(dir,'review.jpg');if(process.env.CXV_FALLBACK_REUSE_SHEETS==='1')assert(existsSync(sheet));else{assert(!existsSync(sheet));execFileSync('ffmpeg',['-v','error',...captures.flatMap(c=>['-i',c.path]),'-filter_complex','[0:v]scale=512:288[a];[1:v]scale=512:288[b];[2:v]scale=512:288[c];[3:v]scale=512:288[d];[a][b][c][d]xstack=inputs=4:layout=0_0|w0_0|0_h0|w0_h0[v]','-map','[v]','-frames:v','1','-q:v','3',sheet]);}
  const meta=JSON.parse(execFileSync('ffprobe',['-v','error','-show_entries','stream=width,height','-of','json',sheet],{encoding:'utf8'})).streams[0];assert(meta.width<=1024&&meta.height<=1024);
  report.runs.push({...raw,name,captures,raw:{path,sha256:hash(rawBytes)},loadedRecovered:compare(buffers.get(name+'/loaded'),buffers.get(name+'/recovered'))});
  report.sheets.push({name,path:sheet,...meta,sha256:hash(readFileSync(sheet)),frames:captures.map(c=>c.name)});
 }
 const base=names.find(n=>n.endsWith('candidate-baseline')),proto=names.find(n=>n.endsWith('prototype'));
 if(base&&proto)for(const stage of ['loaded','restart-failed','recovered','initial-failed'])report.pairs.push({stage,...compare(buffers.get(base+'/'+stage),buffers.get(proto+'/'+stage))});
+if(process.env.CXV_FALLBACK_REFERENCE){
+ const refPath=resolve(process.env.CXV_FALLBACK_REFERENCE),refBytes=readFileSync(refPath),ref=JSON.parse(refBytes);assert(ref.reviewedUtc);
+ report.reference={path:refPath,sha256:hash(refBytes),reviewedUtc:ref.reviewedUtc,method:'Read retained PNG bytes for numerical comparison only; do not regenerate or reopen earlier review sheets.'};
+ for(const run of report.runs){
+  const baseline=ref.runs.find(r=>!r.production&&!r.prototype&&r.initialReduced===run.initialReduced);if(!baseline)continue;
+  for(const stage of ['loaded','restart-failed','recovered','initial-failed']){
+   const capture=baseline.captures.find(c=>c.name===stage);assert.equal(hash(readFileSync(capture.path)),capture.pngSha256);
+   const measured=compare(decode(capture.path),buffers.get(run.name+'/'+stage));report.pairs.push({run:run.name,baseline:baseline.name,stage,...measured});
+   if(stage!=='restart-failed'&&!measured.exact)(report.comparisonFailures??=[]).push({run:run.name,stage,reason:'Full RGB frame differs from retained baseline'});
+  }
+ }
+}
 writeFileSync(dest,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({dest,runs:report.runs.map(r=>({name:r.name,applicationPass:r.applicationPass,blank:r.reproducedBlankRestart,loadedRecovered:r.loadedRecovered})),pairs:report.pairs,sheets:report.sheets.map(s=>s.path)}));
+
+assert(!report.comparisonFailures?.length,'Full RGB comparison failed; complete measurements retained in report');
