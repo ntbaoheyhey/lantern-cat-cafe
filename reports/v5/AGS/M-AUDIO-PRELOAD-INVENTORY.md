@@ -1,10 +1,10 @@
 # Audio Preload Inventory (T-CXI-11 - Finalized)
 
-## 1. Inventory Summary
-- Based on verified R5 requests in /Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-r5-audio-served-inventory.json
-- Status: Preload references confirmed against manifest; 37 artifacts identified.
+## 1. Summary
+- Inventory Status: 37 artifacts verified in R5 request logs.
+- Reachability Proof: Unverified (No dynamic cue mapping).
 
-## 2. Audio Reference Table (Sample)
-| Artifact | Source Hash | Provenance |
+## 2. Audio Reference Audit
+| Artifact | Source Reference | Reachability Status |
 | :--- | :--- | :--- |
-| R5 Audio Requests | 613c54b4 | Provenance Inventory |
+| All R5 Audio | [CXI-v8-R5-Audio-Inventory](file:///Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-r5-audio-served-inventory.json) | Unverified |
