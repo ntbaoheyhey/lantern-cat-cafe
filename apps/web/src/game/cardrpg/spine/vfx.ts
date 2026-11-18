@@ -10,6 +10,7 @@ import { PAINT } from './style';
 import { DesignerVfx } from './vfx-overrides';
 import { LayeredVfx } from '../vfx-layered/player';
 import {FieldVfx} from '../battle-v3/field-vfx';
+import {nativeUltimateField} from '../battle-v3/native-ultimate-field';
 import {EffectGlow} from '../battle-v3/effect-glow';
 import type {SequencePlan} from '../battle-v3/sequence';
 import {V5SkillPlayer} from '../vfx-layered/skill-player';
@@ -150,11 +151,19 @@ export class PaintedVfx {
    m.fillStyle=fade;m.fillRect(0,0,128,128);source=mask;if(narrow)this.faceMask=mask;else this.legacyMask=mask;
   }
   c.save();c.globalCompositeOperation='destination-out';c.globalAlpha=1;let count=0;
+  const clearBody=!narrow&&view.frame&&nativeUltimateField(view.frame.plan);
   for(const actor of view.actors){if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;const size=Math.abs(feet.y-face.y)/.77;
    // Only V5 texture blend passes use the small eyes/muzzle ellipse. Legacy
    // atlases and procedural effects retain their original body protection.
    if(narrow)c.drawImage(source,face.x-size*.25,face.y-size*.2,size*.5,size*.4);
-   else c.drawImage(source,face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);count++;
+   else c.drawImage(source,face.x-size*.55,face.y-size*.55,size*1.1,size*1.1);
+   count++;
+  }
+  // Preserve the face pass, then softly clear the torso/prop area as well.
+  if(clearBody)for(const actor of view.actors){
+   if(actor.hp<=0)continue;const face=this.socket(actor.id,'head'),feet=this.socket(actor.id,'feet');if(!face||!feet)continue;
+   const size=Math.abs(feet.y-face.y)/.77;
+   c.drawImage(source,face.x-size*.45,face.y-size*.1,size*.9,size*1.2);
   }
   if(!view.formationC2){c.fillStyle='#000';for(const box of labels)c.fillRect(box.x-3,box.y-3,box.width+6,box.height+6);}
   c.restore();return count;

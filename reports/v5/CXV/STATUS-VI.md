@@ -37,3 +37,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T06:47:47.119780+00:00 Ảnh landing R2 108.498 B đã kiểm tra mới ở 1280×720: tốt hơn R1 nhưng chi tiết lông/viền khiên/gạch vẫn bị làm mịn, cần sửa. Tiết kiệm 99.369 B, riêng ảnh này vẫn thiếu 42.417 B so với ngân sách trận 3. Chưa tích hợp.
 
 2026-11-18T06:55:31.285324+00:00 Thử nghiệm hiệu ứng riêng: thu nhỏ vùng và kết thúc dư sáng sớm chưa đủ; thêm lớp bảo vệ thân giúp Mallow/Cinnamon giữ rõ chân, áo và đạo cụ khi trúng đòn. Đã xem 4 ảnh mới, 50 mẫu giữ đúng luật/hình học. Chưa áp dụng; còn Sorrel/Biscuit/Brioche và kiểm tra production.
+
+2026-11-18T07:04:22.877097+00:00 Đã áp dụng sửa vùng hiệu ứng cho 5 mèo Mallow/Sorrel/Biscuit/Cinnamon/Brioche sau 10 ảnh thử nghiệm đạt. 17 kiểm thử và TypeScript đạt; chưa nghiệm thu bản chạy thật hoặc production. Mochi 931.787 B đã qua đo 300 khung hình trên hai trình duyệt của CXI; chưa đăng ký vào trận.
