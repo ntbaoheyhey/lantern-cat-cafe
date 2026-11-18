@@ -1,10 +1,10 @@
 # CXV V8 handoff
-ACTIVE Batch M production field verifier prepared/offline10fixtures pass; Clover remaining socket evidence next; assistant: AGV.
+ACTIVE Batch M media comparison capture preparation; Clover muzzlehead rejected with independent support; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: Inspect Clover head/offHand evidence and choose one measured independent channel experiment; preserve acceptedhip/mainHand payload.
+NEXT 1: Inspect current media sample/seek diagnostics and prepare Mochi/Clover comparison film harness for accepted productioncandidate; no app enrollment.
 NEXT 2: Run capture-native-field-production.mjs after CXIintegrates4files/releases6301 with source/index;50phases/10captures, actualmodelact/rules parity. Preparedscript nodecheck+10fixtures pass.
 NEXT 3: M/C media+casts; Mochi931787B full300frames Chromium/WebKit passed07:04Z;no enrollment. AGV landing/T-M1 refinement; legacy afterM.
-Last confirmed push8e5d29c83; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push395344386; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min preserved/viewed07:03Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; never mutate absent ownerSTOP.
 Running Vite21525/6310 only; no CXVjobs. CXI6301 Mochi scene lease from07:11Z; do not compete.
@@ -15,5 +15,5 @@ Soot fresh3833paths unchanged + actual301samples/11meshes exactbothmodes; arriva
 Panko root concern retracted:85b3c2fb7 revertsd419002a4; never import d419 alone. CXI actualproduction feet/root0; originalREADY valid.
 Mochi R3hip/wrist/lantern adapterACCEPT06:21Z; Clover hip/mainHandR1 adapterACCEPT06:30:35Z,3000checks/overlayPASS. Unsupportedchannels and M/C art/seam/budget remainopen.
 Legacy V-F pair248c3667/2e92e22d built,series unstarted; pending6groups11paths; V-E172c317d4/T10accepted;capture-arrival hash1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6.
-Mailbox consumed INBOX-CXV305/USER24; STOP absent; RULES reread2026-11-18T07:12:32.424719+00:00. Reviewed-image ledgers retained; never reopen prior reviews; exact hashreuse only.
+Mailbox consumed INBOX-CXV306/USER24; STOP absent; RULES reread2026-11-18T07:15:49.375131+00:00. All reviewed images retained; newCloverhead F0crop95a0a3bb viewedonce; no reopen.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; experimental6310 addsdev=1.
