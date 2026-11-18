@@ -1,6 +1,7 @@
 # CXV V8 queue — Batch M first
 - OWNER override12:09:40Z: byte cap removed;all historical byte-budget failures are report-only and never block release/art. No new byte optimization required.
 - REJECTED fixed Clover(-28,+14) proof REJECTED:1534layouts/198rigidmismatches (81candidateownavoid,117baselinefallbackremoved);solvedpaint15/33originalvalid guard2failures,0directhits. Newfivecontrols2valid/0fails is separate protocol. Actualnative target unmeasured;no refit/sourceadoption. Resolvecontrols;assess lowerMochi-only scope.
+- REJECTED authored-only bodyoccluders/originaltarget:88geometryclear,40displacementfails,28axisloss,max165.575px. Noappchange/refit;labelpresentation requiresnewdesign,commissionedart work continues. M-mochi-body-occluders-R1.json.
 - REJECTED Mochi-only+6:86/88nativeClover bounds conflicts,6association failures;all20visibility/opacity controlsRGBfail despite6400statechecks. M-mochi-label-controls-R1.json;no sourceadoption.
 - HISTORICAL controlsR1:50hashes,1700statechecks exact;untouched/sham exact5/5;firstconceal changes4/5. Nativepaint attribution BLOCKED;Mochi-only conservative bounds next. M-label-controls-native-R1.json.
 - HISTORICAL fullpaint-aware placement: lowerMochipilotR2 normalPanko57rows/10validcontrols/67layouts pass,exactrectpaint0;oneview associationclear. StrictpaintFAIL:Clover drop-shadow extends5px;ownbody1/3pixels>4 at775/800ms. Nativefull16 regression now CXIlease;study completepaint support offline. R1dense decoder timeout retained;R2exactcallback/currentPTS gate passed494checks independently.
