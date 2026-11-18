@@ -1,0 +1,559 @@
+{
+  "utc": "2026-11-18T09:39:24.501784+00:00",
+  "source": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "shape": [
+      300,
+      390,
+      318,
+      4
+    ],
+    "premultiplied": true
+  },
+  "annotations": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/annotations.json",
+    "sha256": "741872687320c399a548156c283882f6005dc7a8e7c6343dd7efe8c560c359fb"
+  },
+  "harnessSha256": "13a8187a573f2dffd83c0e9ee154c427d8db140a667deb4eedcb3f873ae29a49",
+  "sourceFunctionSha256": "98f589b55a17f5745737a0e808157a2ba8580e9bd23d771cfb9f302e902bd3df",
+  "exactSavedMapReproduced": true,
+  "regions": [
+    {
+      "frame": 0,
+      "name": "visible-tail-core",
+      "className": "certainTail",
+      "pixels": 1897,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 1895,
+      "protectedPixels": 46,
+      "transitionPixels": 153
+    },
+    {
+      "frame": 0,
+      "name": "cream-underskirt-core",
+      "className": "certainCloth",
+      "pixels": 276,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 275,
+      "protectedPixels": 276,
+      "transitionPixels": 0
+    },
+    {
+      "frame": 0,
+      "name": "green-dress-core",
+      "className": "certainCloth",
+      "pixels": 728,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 72,
+      "protectedPixels": 728,
+      "transitionPixels": 0
+    },
+    {
+      "frame": 299,
+      "name": "visible-tail-core",
+      "className": "certainTail",
+      "pixels": 2504,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 2433,
+      "protectedPixels": 205,
+      "transitionPixels": 438
+    },
+    {
+      "frame": 299,
+      "name": "cream-underskirt-core",
+      "className": "certainCloth",
+      "pixels": 276,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 276,
+      "protectedPixels": 276,
+      "transitionPixels": 0
+    },
+    {
+      "frame": 299,
+      "name": "green-dress-core",
+      "className": "certainCloth",
+      "pixels": 728,
+      "minAlpha": 255,
+      "warmHeuristicPixels": 74,
+      "protectedPixels": 728,
+      "transitionPixels": 0
+    }
+  ],
+  "rows": [
+    {
+      "mapping": "identity",
+      "targetDomain": "annotatedTailTarget",
+      "pixels": 1897,
+      "weightedSupportFraction": {
+        "unknown": 0.16605166051660517,
+        "annotatedTail": 0.7042698998418555,
+        "annotatedCloth": 0.0,
+        "alphaEmpty": 0.12967843964153927,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 315,
+        "annotatedTail": 1336,
+        "annotatedCloth": 0,
+        "alphaEmpty": 246,
+        "outsideRaster": 0
+      }
+    },
+    {
+      "mapping": "identity",
+      "targetDomain": "expandedWarmTarget",
+      "pixels": 5029,
+      "weightedSupportFraction": {
+        "unknown": 0.37601908928216343,
+        "annotatedTail": 0.37601908928216343,
+        "annotatedCloth": 0.0689998011533108,
+        "alphaEmpty": 0.1789620202823623,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 1891,
+        "annotatedTail": 1891,
+        "annotatedCloth": 347,
+        "alphaEmpty": 900,
+        "outsideRaster": 0
+      }
+    },
+    {
+      "mapping": "protectedMLS",
+      "targetDomain": "annotatedTailTarget",
+      "pixels": 1897,
+      "weightedSupportFraction": {
+        "unknown": 0.11594327415977436,
+        "annotatedTail": 0.8161128685784995,
+        "annotatedCloth": 0.0,
+        "alphaEmpty": 0.06794385726172604,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 283,
+        "annotatedTail": 1588,
+        "annotatedCloth": 0,
+        "alphaEmpty": 158,
+        "outsideRaster": 0
+      }
+    },
+    {
+      "mapping": "protectedMLS",
+      "targetDomain": "expandedWarmTarget",
+      "pixels": 5029,
+      "weightedSupportFraction": {
+        "unknown": 0.35369506163545517,
+        "annotatedTail": 0.4659263874221554,
+        "annotatedCloth": 0.0689998011533108,
+        "alphaEmpty": 0.11137874978907883,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 1908,
+        "annotatedTail": 2419,
+        "annotatedCloth": 347,
+        "alphaEmpty": 615,
+        "outsideRaster": 0
+      }
+    },
+    {
+      "mapping": "unmaskedMLS",
+      "targetDomain": "annotatedTailTarget",
+      "pixels": 1897,
+      "weightedSupportFraction": {
+        "unknown": 0.12335711518339848,
+        "annotatedTail": 0.8082910198827902,
+        "annotatedCloth": 0.0,
+        "alphaEmpty": 0.06835186493381122,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 309,
+        "annotatedTail": 1585,
+        "annotatedCloth": 0,
+        "alphaEmpty": 160,
+        "outsideRaster": 0
+      }
+    },
+    {
+      "mapping": "unmaskedMLS",
+      "targetDomain": "expandedWarmTarget",
+      "pixels": 5029,
+      "weightedSupportFraction": {
+        "unknown": 0.3756542394967671,
+        "annotatedTail": 0.42837300256485333,
+        "annotatedCloth": 0.05050130128509745,
+        "alphaEmpty": 0.14547145665328193,
+        "outsideRaster": 0.0
+      },
+      "pixelsTouchingCategory": {
+        "unknown": 2096,
+        "annotatedTail": 2240,
+        "annotatedCloth": 302,
+        "alphaEmpty": 808,
+        "outsideRaster": 0
+      }
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/labels-F0.png",
+      "sha256": "4d0691b13f550e28929583df4ac9c31b75fe5a41b37dbae17e6908a39c5b94ab",
+      "dimensions": [
+        936,
+        560
+      ],
+      "frame": 0,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:40:32.260902+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/labels-F299.png",
+      "sha256": "6dd357889832a69bce3b0bc3b7b051037af712f821557d895aff613c8ce843bf",
+      "dimensions": [
+        936,
+        560
+      ],
+      "frame": 299,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T09:40:32.260902+00:00"
+    }
+  ],
+  "visualReviewed": true,
+  "runtimeChanged": false,
+  "sequenceChanged": false,
+  "acceptedRepair": false,
+  "limits": "Sparse analyst observations at two endpoints, not recovered layer alpha or material correspondences. Unknown dominates unannotated visible pixels. No claim that green is cloth or warm is tail. Existing failed maps are measured only; no remapped raster generated.",
+  "reviewedUTC": "2026-11-18T09:40:32.260902+00:00",
+  "annotationReview": "Two fresh label overlays inspected once. Blue core polygons lie within visibly continuous tail; pink polygons lie within green dress and cream underskirt, with gaps at uncertain boundaries. Both endpoint labels are sparse analyst observations, not full segmentation, alpha, hidden anatomy or material correspondences.",
+  "finding": "Warm connected component includes275/276 pixels of the annotated cream underskirt atF0 and276/276 atF299. It therefore cannot establish tail identity. Even on the1897px independently annotated target-tail core, unmasked inverseMLS has6.835% alpha-empty support (160destinations touch empty taps); map remains rejected.",
+  "holdoutUse": "Endpoint interior annotations were authored before reading CXI seeded trial; suitable as sparse independent control regions, not a training mask or full ground truth.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/audit.json",
+    "sha256": "bc3b61b0aa98fad5dc3d15ced69ee90e5ee335b12eb01f27d4b2bdc88730224c"
+  },
+  "annotationPayload": {
+    "utc": "2026-11-18T09:38:15.227259+00:00",
+    "source": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+      "shape": [
+        300,
+        390,
+        318,
+        4
+      ],
+      "premultiplied": true
+    },
+    "sourcePlotsSha256": "e8878a277c269501e4b6adc4ada126889d60df1e8afd9a120ececfaa68fab18d",
+    "coordinateSystem": "318x390 source RGBA pixels; explicit analyst-selected interior regions only, all remaining pixels unknown",
+    "purpose": "Diagnostic semantic labels, not masks for rendering or anatomical ground truth",
+    "frames": [
+      {
+        "frame": 0,
+        "certainTail": [
+          {
+            "name": "visible-tail-core",
+            "polygon": [
+              [
+                42,
+                267
+              ],
+              [
+                50,
+                264
+              ],
+              [
+                61,
+                266
+              ],
+              [
+                65,
+                270
+              ],
+              [
+                60,
+                274
+              ],
+              [
+                55,
+                280
+              ],
+              [
+                52,
+                290
+              ],
+              [
+                55,
+                300
+              ],
+              [
+                64,
+                308
+              ],
+              [
+                72,
+                311
+              ],
+              [
+                72,
+                320
+              ],
+              [
+                75,
+                326
+              ],
+              [
+                67,
+                330
+              ],
+              [
+                53,
+                328
+              ],
+              [
+                40,
+                321
+              ],
+              [
+                31,
+                310
+              ],
+              [
+                26,
+                296
+              ],
+              [
+                28,
+                284
+              ],
+              [
+                34,
+                274
+              ]
+            ]
+          }
+        ],
+        "certainCloth": [
+          {
+            "name": "cream-underskirt-core",
+            "polygon": [
+              [
+                88,
+                312
+              ],
+              [
+                100,
+                316
+              ],
+              [
+                110,
+                320
+              ],
+              [
+                110,
+                329
+              ],
+              [
+                96,
+                326
+              ],
+              [
+                86,
+                322
+              ]
+            ]
+          },
+          {
+            "name": "green-dress-core",
+            "polygon": [
+              [
+                99,
+                271
+              ],
+              [
+                116,
+                261
+              ],
+              [
+                117,
+                294
+              ],
+              [
+                106,
+                302
+              ],
+              [
+                93,
+                299
+              ]
+            ]
+          }
+        ],
+        "boundary": "Unlabelled; do not infer a boundary from the convex hull of these interior regions."
+      },
+      {
+        "frame": 299,
+        "certainTail": [
+          {
+            "name": "visible-tail-core",
+            "polygon": [
+              [
+                44,
+                281
+              ],
+              [
+                52,
+                275
+              ],
+              [
+                62,
+                275
+              ],
+              [
+                68,
+                278
+              ],
+              [
+                72,
+                283
+              ],
+              [
+                67,
+                287
+              ],
+              [
+                63,
+                292
+              ],
+              [
+                60,
+                300
+              ],
+              [
+                62,
+                308
+              ],
+              [
+                69,
+                317
+              ],
+              [
+                74,
+                322
+              ],
+              [
+                87,
+                330
+              ],
+              [
+                96,
+                338
+              ],
+              [
+                88,
+                342
+              ],
+              [
+                76,
+                345
+              ],
+              [
+                62,
+                343
+              ],
+              [
+                48,
+                338
+              ],
+              [
+                38,
+                330
+              ],
+              [
+                32,
+                320
+              ],
+              [
+                29,
+                307
+              ],
+              [
+                31,
+                296
+              ],
+              [
+                36,
+                287
+              ]
+            ]
+          }
+        ],
+        "certainCloth": [
+          {
+            "name": "cream-underskirt-core",
+            "polygon": [
+              [
+                88,
+                312
+              ],
+              [
+                100,
+                316
+              ],
+              [
+                110,
+                320
+              ],
+              [
+                110,
+                329
+              ],
+              [
+                96,
+                326
+              ],
+              [
+                86,
+                322
+              ]
+            ]
+          },
+          {
+            "name": "green-dress-core",
+            "polygon": [
+              [
+                99,
+                271
+              ],
+              [
+                116,
+                261
+              ],
+              [
+                117,
+                294
+              ],
+              [
+                106,
+                302
+              ],
+              [
+                93,
+                299
+              ]
+            ]
+          }
+        ],
+        "boundary": "Unlabelled; do not infer a boundary from the convex hull of these interior regions."
+      }
+    ]
+  },
+  "sourcePlotReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-boundary-study-R1/plots.json",
+    "sha256": "e8878a277c269501e4b6adc4ada126889d60df1e8afd9a120ececfaa68fab18d"
+  }
+}
