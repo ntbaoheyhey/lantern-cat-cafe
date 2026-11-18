@@ -38,6 +38,7 @@ def main():
     parser.add_argument('rules_audit', type=Path)
     parser.add_argument('output', type=Path)
     parser.add_argument('--pilot', help='Explicit mode-cat-skill, otherwise all16 required')
+    parser.add_argument('--suite', choices=('full','recovery'), default='full')
     args = parser.parse_args()
     assert not args.output.exists()
     root = Path(__file__).resolve().parents[2]
@@ -91,12 +92,16 @@ def main():
         data = subprocess.check_output(['git','show',raw['sourceCommit']+':'+item['path']],cwd=root)
         assert hashlib.sha256(data).hexdigest() == item['sha256']
     expected = [(mode,cat,skill) for mode in ('normal','reduced') for cat in CATS for skill in (1,4)]
+    if args.suite == 'recovery':
+        expected = [a for a in expected if a[1:] in (('panko',1),('mallow',4))]
     if args.pilot:
         expected = [a for a in expected if '-'.join(map(str,a)) == args.pilot]
-    assert len(expected) == (1 if args.pilot else 16)
+    assert len(expected) == (1 if args.pilot else 4 if args.suite == 'recovery' else 16)
     action_key = lambda a: (a['mode'],a['cat'],a['skill'])
     assert [action_key(a) for a in raw['actions']] == expected
-    assert [action_key(a) for a in raw['cases']] == expected
+    expected_pixels = [(*action,ms) for action in expected for ms in
+                       ((0,175,250,350,600,799.9999,800) if args.suite=='recovery' and action[1]=='panko' else (1100 if action[2]==4 else 350,))]
+    assert [(*action_key(a),a['ms']) for a in raw['cases']] == expected_pixels
     assert [c['key'] for c in raw['cases']] == [c['key'] for c in raw['plannedPixelCases']]
     assert rules['actions'] == len(expected) == d['actions'] and d['rulesEqual']
     start, finish = [datetime.fromisoformat(raw[k].replace('Z','+00:00')) for k in ('utc','finishedUTC')]
@@ -122,9 +127,20 @@ def main():
     rows = []
     state_checks = comparisons = 0
     for case, delivered in zip(raw['cases'], d['cases']):
-        assert delivered['key'] == case['key'] and case['ms'] == (1100 if case['skill']==4 else 350)
+        assert delivered['key'] == case['key']
         initial = case['before']
-        assert initial['paused'] and initial['plan']['skillId'] == case['cat']+'-'+str(case['skill'])
+        expected_plan = case['cat']+'-'+str(case['skill']) if case['ms'] < (2200 if case['skill']==4 else 800) else None
+        assert initial['paused'] and (initial['plan'] or {}).get('skillId') == expected_plan
+        if 'expectedPlan' in case:
+            assert case['expectedPlan'] == expected_plan
+        total_lifecycle = case.get('totalLifecycle')
+        if total_lifecycle is not None:
+            assert 'totalBadge' in prereg and initial['totalBadge']['hidden']
+            first, last = total_lifecycle['before'], total_lifecycle['after']
+            assert math.isfinite(first['wallTime']) and math.isfinite(last['wallTime'])
+            assert 0 <= last['wallTime'] - first['wallTime'] <= 3000
+            assert last['hidden']
+            assert {k:v for k,v in last.items() if k!='wallTime'} == initial['totalBadge']
         hud_pause = case.get('hudPortraitPause', [])
         for paused in hud_pause:
             assert paused['target'] in ('b3-portrait','b3-portrait-shine')
@@ -143,6 +159,8 @@ def main():
                 assert state['paused'] and state['renderTime'] == case['fixedTime']
                 for key in ('plan','battle','labels','labelPaintState','sceneTime','host','anchors','hud','animations'):
                     assert state[key] == initial[key], (case['key'],cap['variant'],when,key)
+                if total_lifecycle is not None:
+                    assert state['totalBadge'] == initial['totalBadge']
                 for cat in MEDIA:
                     a,b = state['media'][cat],initial['media'][cat]
                     assert a['state']['ready'] and a['state']['paused'] and not any(a['state'].get(k) for k in ('failure','disposed','seeking'))
@@ -193,6 +211,7 @@ def main():
         pre_regions = {label['id']:{name:int((initial_delta & region_mask(rect)).sum()) for name,rect in label['regions'].items() if rect is not None} for label in initial['labels'] if label['id'] in MEDIA}
         rows.append(dict(key=case['key'],frames=case['expectedFrames'],controls=controls,paint=stats(union),nonzero=hits,
                          attributionValid=valid,paintCountsAcceptedAsAttribution=valid,
+                         totalLifecycle=total_lifecycle,
                          hudPortraitPause=hud_pause,preconditionHiddenVsControlled=stats(pre_hidden_delta),
                          preconditionRestoredVsControlled=stats(pre_restored_delta),
                          preconditionChangedPixels=int(initial_delta.sum()),preconditionRegions=pre_regions))
@@ -203,7 +222,7 @@ def main():
                   rulesAudit=dict(path=str(args.rules_audit),sha256=sha(args.rules_audit)),toolSha256=sha(__file__),helperSha256=sha(helper_path),
                   sourceCommit=raw['sourceCommit'],indexSha256=raw['indexSha256'],url=raw['url'],viewport=raw['viewport'],
                   verifiedHashes=len(hashes),verifiedHashDigest=hashlib.sha256(json.dumps(hashes,sort_keys=True).encode()).hexdigest(),
-                  actions=len(expected),geometryRows=len(expected_rows),geometryFailures=geometries,
+                  suite=args.suite,pilot=args.pilot,actions=len(expected),pixelCases=len(expected_pixels),geometryRows=len(expected_rows),geometryFailures=geometries,
                   stateSnapshots=state_checks,independentCountComparisons=comparisons,cases=rows,
                   numericalEvidenceAccepted=True,attributionValidCases=sum(row['attributionValid'] for row in rows),
                   attributionInvalidCases=[row['key'] for row in rows if not row['attributionValid']],

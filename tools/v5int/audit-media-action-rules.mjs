@@ -7,7 +7,8 @@ import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 
-const { values, positionals } = parseArgs({ allowPositionals: true, options: { pilot: { type: 'string' } } });
+const { values, positionals } = parseArgs({ allowPositionals: true, options: { pilot: { type: 'string' }, suite:{type:'string',default:'full'} } });
+assert(['full','recovery'].includes(values.suite));
 assert.equal(positionals.length, 2);
 const [input, output] = positionals.map(p => resolve(p));
 assert(!existsSync(output), 'Preserve existing evidence');
@@ -15,8 +16,9 @@ const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const bytes = await readFile(input), raw = JSON.parse(bytes);
 const root = resolve(import.meta.dirname, '../..');
 let planned = ['normal', 'reduced'].flatMap(mode => ['mochi', 'clover', 'panko', 'mallow'].flatMap(cat => [1, 4].map(skill => ({ mode, cat, skill }))));
+if (values.suite === 'recovery') planned = planned.filter(a => a.cat==='panko'&&a.skill===1 || a.cat==='mallow'&&a.skill===4);
 if (values.pilot) planned = planned.filter(a => `${a.mode}-${a.cat}-${a.skill}` === values.pilot);
-assert(planned.length === (values.pilot ? 1 : 16));
+assert(planned.length === (values.pilot ? 1 : values.suite==='recovery' ? 4 : 16));
 assert.deepEqual(raw.plannedActions, planned);
 assert.deepEqual(raw.actions.map(({mode, cat, skill}) => ({mode, cat, skill})), planned);
 assert(raw.pass && !raw.errors.length && !raw.blockedRequests.length);
@@ -44,14 +46,17 @@ try {
       initialSha256:sha(JSON.stringify(action.initialBattle)), resultSha256:sha(JSON.stringify(battle))});
   }
   if (!values.pilot) {
-    for (let i = 0; i < 8; i++) {
-      assert.deepEqual(raw.actions[i].initialBattle, raw.actions[i+8].initialBattle);
-      assert.deepEqual(raw.actions[i].observedBattle, raw.actions[i+8].observedBattle);
+    const half = raw.actions.length/2;
+    for (let i = 0; i < half; i++) {
+      assert.equal(raw.actions[i].mode,'normal');assert.equal(raw.actions[i+half].mode,'reduced');
+      assert.equal(raw.actions[i].cat,raw.actions[i+half].cat);assert.equal(raw.actions[i].skill,raw.actions[i+half].skill);
+      assert.deepEqual(raw.actions[i].initialBattle, raw.actions[i+half].initialBattle);
+      assert.deepEqual(raw.actions[i].observedBattle, raw.actions[i+half].observedBattle);
     }
   }
   const result = { utc:new Date().toISOString(), raw:{path:input,sha256:sha(bytes)}, sourceCommit:raw.sourceCommit,
     indexSha256:raw.indexSha256, url:raw.url, toolSha256:sha(await readFile(import.meta.filename)),
-    rulesArchiveSha256:sha(archive), actions:rows.length, rows, fullBattleExact:true,
+    rulesArchiveSha256:sha(archive), suite:values.suite, pilot:values.pilot??null, actions:rows.length, rows, fullBattleExact:true,
     normalReducedParity:values.pilot ? null : true, productionAcceptance:false,
     limits:['Independently replayed seeded legal actions; initial HP/charge/queue were modified, so this does not establish natural reachability.',
       'No renderer, motion, label paint, art or performance acceptance from rules replay.'] };
