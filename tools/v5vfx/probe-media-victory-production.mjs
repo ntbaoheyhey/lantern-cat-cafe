@@ -30,12 +30,13 @@ try{
   await page.evaluate(({battle,reduced})=>{globalThis.__cxvVictoryVideoStart=globalThis.__cxvVictoryVideos.length;const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.tutorialBattle=battle;m.showResult();},{battle,reduced});
   await page.waitForFunction(()=>{const e=document.querySelector('.b3-victory-crew');return e?.dataset.ready==='true'||e?.dataset.loadError==='true';},null,{timeout:15000});
   const snapshot=()=>page.evaluate(()=>{
-   const e=document.querySelector('.b3-victory-crew');return{at:performance.now(),ready:e?.dataset.ready??null,drawn:e?.dataset.drawn??null,loadError:e?.dataset.loadError??null,videos:globalThis.__cxvVictoryVideos.slice(globalThis.__cxvVictoryVideoStart).map(v=>({currentTime:v.currentTime,duration:v.duration,paused:v.paused,seeking:v.seeking,readyState:v.readyState,error:v.error?.message??null,source:v.currentSrc,quality:v.getVideoPlaybackQuality?.().toJSON?.()??null}))};
+   const e=document.querySelector('.b3-victory-crew');return{at:performance.now(),ready:e?.dataset.ready??null,drawn:e?.dataset.drawn??null,loadError:e?.dataset.loadError??null,videos:globalThis.__cxvVictoryVideos.slice(globalThis.__cxvVictoryVideoStart).map(v=>{const q=v.getVideoPlaybackQuality?.();return{currentTime:v.currentTime,duration:v.duration,paused:v.paused,seeking:v.seeking,readyState:v.readyState,error:v.error?.message??null,source:v.currentSrc,quality:q?{totalVideoFrames:q.totalVideoFrames,droppedVideoFrames:q.droppedVideoFrames,corruptedVideoFrames:q.corruptedVideoFrames}:null};})};
   });
   run.initial=await snapshot();
   if(failure){assert.equal(run.initial.loadError,'true');assert.notEqual(run.initial.ready,'true');assert(run.exceptions.some(e=>e.data?.description?.includes('Drawing swaps require an accepted cut-out rig')));}
   else{
    assert.equal(run.initial.ready,'true');assert.equal(run.initial.drawn,'3');assert.equal(run.initial.loadError,null);
+   await page.waitForFunction(()=>{const v=globalThis.__cxvVictoryVideos.slice(globalThis.__cxvVictoryVideoStart);return v.length===1&&v[0].readyState>=2&&!v[0].seeking;},null,{timeout:15000});
    for(let i=0;i<(reduced?20:120);i++){await page.waitForTimeout(100);run.samples.push(await snapshot());}
    assert(run.samples.every(s=>s.videos.length===1&&s.videos[0].readyState>=2&&!s.videos[0].error));
    const times=run.samples.map(s=>s.videos[0].currentTime),deltas=times.slice(1).map((v,i)=>v-times[i]);

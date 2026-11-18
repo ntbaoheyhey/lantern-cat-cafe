@@ -53,3 +53,5 @@ M-V2 Mallow thử trên bản sao rig:300frame/10s,không lỗi,hai chân và m�
 2026-11-18T08:09:28.814774+00:00 Batch M: phép nội suy phi tuyến cho đầu Clover không đủ bằng chứng (điểm nằm ngoài vùng theo dõi, lệch vòng lặp3,06px); giữ nguyên dữ liệu đã nhận. CXI đã nhận bản sửa viền vàng Mochi, đang kiểm tra bản dựng mới.
 
 2026-11-18T08:15:46.130648+00:00 Mochi: bản dựng R4 đã hết khung vàng; kiểm tra290mẫu/280khung hình,16ảnh mới, thời điểm chạm350/1100ms và chuyển về nghỉ đều đạt. Chưa phát hành: dung lượng tải và Clover còn mở.
+
+2026-11-18T08:30:45.193387+00:00 Trận thật Mochi đã thắng nhưng màn hình mừng thắng bị lỗi chuyển video sang rig cắt lớp. Đã tái hiện lỗi trên bản production R4; bản sửa chỉ cho Mochi/Clover đã đạt33kiểm thử và TypeScript, giữ đồng hồ video liên tục và vẽ lại khi giải mã xong. Đã đẩy6eb22f242 và gửi CXI; sẽ nghiệm thu lại trên bản dựng mới. LandingR6 không đạt: tệp thực242.887B, lớn hơn bản đang dùng35.020B, khác số liệu báo cáo.
