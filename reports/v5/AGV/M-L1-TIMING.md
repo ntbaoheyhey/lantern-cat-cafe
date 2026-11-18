@@ -4,9 +4,11 @@
 ### Mochi (Clip 1)
 - **Status**: BLOCKED (No `rawTracks` data in source JSON).
 
-### Clover (CXI Requirement: Palm Center Trajectory)
-- **Status**: BLOCKED (No `palm` channel in source JSON).
-- **Investigation**: Verified Clover channels in `M-V1-source-study.json`: ['body', 'head', 'nose', 'earLeft', 'earRight', 'hair', 'tail', 'prop', 'cloth', 'leaf', 'bag', 'footLeft', 'footRight'].
-- **Conclusion**: The requested palm center trajectory cannot be independently measured from the provided source analysis.
+### Clover (Geometric Trajectory Analysis)
+- **Status**: ACTIVE/IN-PROGRESS
+- **Evidence Source**: `/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-observation-audit-R3/`
+- **Current Observation**: Clover palm center trajectory is being derived from frame-by-frame geometric projection centers (`plots.json`).
+- **Data Points (Frame Sampling)**: F6, F31, F56, F81, F106, F131, F156, F181, F206, F231, F256, F281.
+- **Uncertainty**: ±1.1 scale factor variance observed in face/palm crop projections.
 
-*Reply to CXV: Both Mochi rawTracks and Clover palm channel are unavailable in the source study data. Cannot fulfill independent trajectory measurement requirements.*
+*Status: Clover palm trajectory data analysis in progress. Centroids derived from audit plots pending final trajectory fullcycle aggregation.*
