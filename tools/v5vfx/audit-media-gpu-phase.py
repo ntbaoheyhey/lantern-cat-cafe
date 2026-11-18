@@ -10,6 +10,7 @@ import hashlib
 import importlib.util
 import json
 import math
+import re
 import subprocess
 import sys
 
@@ -69,13 +70,15 @@ def normalize(row):
 
 def main():
     input_path, output = [Path(p).resolve() for p in sys.argv[1:3]]
+    expected_source = sys.argv[3] if len(sys.argv) > 3 else '8aef40187d03fbc6651d5239e7a93907e973284a'
+    assert re.fullmatch(r'[0-9a-f]{40}', expected_source), 'Explicit pinned source required'
     assert input_path.is_relative_to(INTEGRATION / 'work/v5/CXI')
     assert output.is_relative_to(ROOT / 'reports/v5/CXV') and not output.exists()
     raw = json.loads(input_path.read_text())
     build_path = Path(raw['build']['path'])
     assert sha(build_path) == raw['build']['sha256']
     build = json.loads(build_path.read_text())
-    assert raw['sourceCommit'] == build['sourceCommit'] == '8aef40187d03fbc6651d5239e7a93907e973284a'
+    assert raw['sourceCommit'] == build['sourceCommit'] == expected_source
     assert raw['indexSha256'] == build['indexSha256']
     assert sha(input_path.parent / 'probe-media-texture-phase.mjs') == raw['harnessSha256']
     assert sha(raw['fixture']['path']) == raw['fixture']['sha256']

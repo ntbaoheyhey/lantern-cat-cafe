@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-18T14:00:16.363598+00:00",
+  "sourceCandidate": "93f3637f2",
+  "sourceMustContain": "if(view.formationC2&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body};",
+  "judgeUrl": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "requirements": [
+    "fresh CXI build descriptor and explicit6301/timing lease",
+    "pinned source/index/payload/harness hashes",
+    "diagnostic label offset0; source already contains Clover+5",
+    "all original attribution and exact repeat/restore controls retained"
+  ],
+  "regressionCloverFrames": [
+    0,
+    17,
+    147,
+    236
+  ],
+  "freshHeldoutCloverFrames": [
+    9,
+    27,
+    59,
+    86,
+    129,
+    173,
+    219,
+    257,
+    297
+  ],
+  "reducedFrame": 0,
+  "expandedStress": {
+    "frames": [
+      0,
+      147,
+      236
+    ],
+    "reducedFrame": 0,
+    "scope": "Synthetic statuses/shield/12345 counter for overflow. Not legal battle evidence."
+  },
+  "naturalGate": "Independent full-state rules replay of two unchanged 1x normal/reduced battles with both cats; all label/body/face/other-label metrics retained, conservative failures not waived.",
+  "images": "Measure first; select at most4 fresh <=1024px sheets per view call; never reopen identical hashes.",
+  "productionAcceptance": false
+}
