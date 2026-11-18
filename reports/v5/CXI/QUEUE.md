@@ -1,5 +1,5 @@
 # CXI V7 assignments — evidence required
-I-A VALIDATED/PUBLISH: m1.12 app8b8d0b8ca DPR/context;full5365=5352pass+11skip+2expectedfail;8finalsteps+priorbuild0;publishbranch/tag thenremoteverify.
+I-A DONE/REPEAT: m1.12 app8b8d0b8ca DPR/context;full5365=5352pass+11skip+2expectedfail;8finalsteps+priorbuild0;v5-m1.12@9c93780ee atomicpush+remoteverified.
 I-B OPEN:m1.12 cold7667601/8228854/7745296B;wave3FAIL228854B;AGV4halfAVIFabsent;AGS e33headersstereo corrected,native/listening pending.No rejectedreplacements integrated.
 I-C FIRST-HIT DONE:21167ms incl17700reading8cards;HP165→119;route9747ms excludesreading;ordinary0errors.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
