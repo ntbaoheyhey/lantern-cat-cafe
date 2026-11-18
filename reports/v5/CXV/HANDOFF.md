@@ -4,7 +4,7 @@ Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; des
 NEXT 1: Poll natural R3 PID43641 work/v5/CXV/jobs/v8-r6-natural-r3.log; on exit measure tools/v5vfx/measure-media-battle.py into fresh report.
 NEXT 2: Review at most4 fresh1024px R3 sheets once; send scoped READY/REDO; landingR9 review; explicitly release6301.
 NEXT 3: Clover motion/art/budget and AGV deliveries; legacy after Batch M. Existing captures must never be overwritten or reopened.
-Last confirmed pushb98dd9f57 verified remote; R6 sourceadb526a86/indexf9a00162,offline identity+patchhashes exact.
+Last confirmed push24e1bf069 verified remote; R6 sourceadb526a86/indexf9a00162,offline identity+patchhashes exact.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified09:14Z with app view+TOML; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
 Running naturalR3 PID43641,log work/v5/CXV/jobs/v8-r6-natural-r3.log;Vite21525/6310. CXI released6301+timing09:13:43Z;lease CXV.
