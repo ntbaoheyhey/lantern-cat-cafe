@@ -40,7 +40,8 @@ export class IdentifiedFocusBanner {
    const project=(r:LabelRect):LabelRect=>({...r,x:r.x+offset.x,y:r.y+offset.y});
    const anchors=owner.anchors.filter(a=>a.visible),caster=anchors.find(a=>a.id===owner.id)?.body;
    const hudNodes=[...document.querySelectorAll<HTMLElement>('.b3-top,.b3-bottom,.b3-boss,.th-audio,.b3-party')].filter(visible);
-   const hud=hudNodes.map(n=>rect(n.getBoundingClientRect())).filter(r=>r.width&&r.height);
+   const hudRects=hudNodes.map(node=>({node,box:rect(node.getBoundingClientRect())}));
+   const hud=hudRects.map(row=>row.box).filter(r=>r.width&&r.height);
    const faces=anchors.flatMap(a=>a.face?[{...project(a.face),id:a.id}]:[]);
    const labels:WorldLabel[]=[],pendingLabels:WorldLabel[]=[];
    const pendingNodes:{node:HTMLElement;anchor:BannerAnchor;current:WorldLabel}[]=[];
@@ -55,16 +56,18 @@ export class IdentifiedFocusBanner {
      width:Math.max(...boxes.map(r=>r.right))-left,height:Math.max(...boxes.map(r=>r.bottom))-top}});
     pendingNodes.push({node,anchor,current:labels[labels.length-1]!});
    }
+   // Read before temporary pending labels invalidate layout on removal.
+   const title=rect(this.title.getBoundingClientRect());
    const pendingExtents=pendingLabelExtents(pendingNodes.map(item=>item.node));
    for(const {node,anchor,current}of pendingNodes){
     const pending=pendingExtents.get(node);
     pendingLabels.push(pending?{id:anchor.id,side:node.dataset.side==='enemy'?'enemy':'party',rect:{...pending,
      x:offset.x+anchor.labelX+pending.x,y:offset.y+anchor.labelY+pending.y}}:current);
    }
-   const worldHud=hudNodes.filter(n=>!n.classList.contains('b3-party')).map(n=>rect(n.getBoundingClientRect())).filter(r=>r.width&&r.height);
+   const worldHud=hudRects.filter(row=>!row.node.classList.contains('b3-party')).map(row=>row.box).filter(r=>r.width&&r.height);
    const placed=layoutWorldLabels(labels,innerWidth,innerHeight,worldHud,faces);
    const pendingPlaced=layoutWorldLabels(pendingLabels,innerWidth,innerHeight,worldHud,faces);
-   const title=rect(this.title.getBoundingClientRect());
+
    this.placement=layoutFocusBanner({title,caster:caster?project(caster):title,width:innerWidth,height:innerHeight,
     hud,faces,bodies:anchors.flatMap(a=>a.body?[project(a.body)]:[]),labels:[...placed,...pendingPlaced].map(p=>p.rect)});
    this.dirty=false;

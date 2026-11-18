@@ -67,3 +67,5 @@
 2026-11-18T01:00:51.783621+00:00 V-F focus read-order prototype passes80geometry+8RGBpairs/4freshsheets;first harness audit-array failure retained;unprofiled production and native gates remain.
 
 2026-11-18T01:10:29.957445+00:00 V-F focus read production passes6trials;focusentry4.8->4.1/22.7->19.6ms with80geometry/8RGBprototype. Global cadence unchanged;native adoption/validation after01:12:31Z.
+
+2026-11-18T01:16:22.650710+00:00 V-F nativefocus adopted after study gate, source0f1a74b4fc4 matches productionprototype except whitespace-only blankline;13tests/TSC0,80geometry/8RGBexact,fourfreshsheets reviewedonce. Native untransformed production gate next.

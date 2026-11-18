@@ -1,0 +1,225 @@
+{
+  "source": "144f5c2e303574fc2fe78494d9c328c9da7b6ae6",
+  "runtimePatchSha256": "6e44c20f655ee6109182db31c731e5904a47725be6a746a17c41918927ea4318",
+  "runtimeUntrackedSha256": {},
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Native application read reuse, audit-only focus instrumentation. Compare current/pending footprints and banner placement against the preserved original80group baseline;CSS animations fixed at300ms for exact screenshot comparison. No behavioral module override;not production acceptance.",
+  "baseline": {
+    "source": "4587b0496a1a5b26a70375f4a713ed9d837a59da",
+    "utc": "2026-11-18T00:59:46.188Z",
+    "overrideSha256": "444c5085f81f2422dbca18df3598a3b5261b31fed0c0db4059dc242f24c1f756"
+  },
+  "expectedFixtureBlocks": [
+    {
+      "url": "https://fonts.googleapis.com/css2",
+      "type": "stylesheet"
+    }
+  ],
+  "pass": true,
+  "errors": [],
+  "utc": "2026-11-18T01:16:02.872518+00:00",
+  "started": "2026-11-18T01:15:29.407Z",
+  "ended": "2026-11-18T01:15:35.912Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/report.json",
+    "sha256": "a8176acea2e469249eb5e30121ad3f7b736284962037c25d303b3ec385b2787a"
+  },
+  "modules": [
+    {
+      "candidate": true,
+      "audit": true,
+      "native": true,
+      "modules": {
+        "focus": {
+          "url": "http://127.0.0.1:6310/src/game/cardrpg/battle-v3/identified-focus.ts?t=1794964495554",
+          "sourceSha256": "a9af01117cb2c247b1d51551479fe40c1a6086404cc231074353a7c0284cbfd2",
+          "overrideSha256": "4990901a115978e52997f15d9031460ab760257cb15d0544059bcb4171a5241c"
+        }
+      }
+    }
+  ],
+  "checks": 80,
+  "geometryExact": 80,
+  "clean": 80,
+  "measured": 80,
+  "pixelPairs": [
+    {
+      "hero": "mochi",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "fcfbe2ce933f8032808dc84c4dab934bd37eb405bd67fe6fae549f6d4dbc77b4",
+        "fcfbe2ce933f8032808dc84c4dab934bd37eb405bd67fe6fae549f6d4dbc77b4"
+      ]
+    },
+    {
+      "hero": "mochi",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "9b61b20b1f7705000a7c59ab6d050368b2990d5b750722cc574c64aaab856a9d",
+        "9b61b20b1f7705000a7c59ab6d050368b2990d5b750722cc574c64aaab856a9d"
+      ]
+    },
+    {
+      "hero": "soot",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "f334ac76a22dbc4035ca07d29abaf2fd5fb9985ba2660ae8cde5441a00c3c365",
+        "f334ac76a22dbc4035ca07d29abaf2fd5fb9985ba2660ae8cde5441a00c3c365"
+      ]
+    },
+    {
+      "hero": "soot",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "78e79616a2db6181a81e8406616db844e18ea595a0f94a432a239553a540bbb4",
+        "78e79616a2db6181a81e8406616db844e18ea595a0f94a432a239553a540bbb4"
+      ]
+    },
+    {
+      "hero": "clover",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "320b2197d951caba1a90d739cfd8cbcd58466b036da11ca90fbd010a2ec318fb",
+        "320b2197d951caba1a90d739cfd8cbcd58466b036da11ca90fbd010a2ec318fb"
+      ]
+    },
+    {
+      "hero": "clover",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "aca8b64059638f3e078adcd8aa3d7db156a63e4b914136c3572e0ab9dd535344",
+        "aca8b64059638f3e078adcd8aa3d7db156a63e4b914136c3572e0ab9dd535344"
+      ]
+    },
+    {
+      "hero": "panko",
+      "reduced": false,
+      "equal": true,
+      "rgbSha256": [
+        "4f00baafdd26b381ef4407e8e8ef7b4a6da5a093890786a90c741bc1e8e39ecd",
+        "4f00baafdd26b381ef4407e8e8ef7b4a6da5a093890786a90c741bc1e8e39ecd"
+      ]
+    },
+    {
+      "hero": "panko",
+      "reduced": true,
+      "equal": true,
+      "rgbSha256": [
+        "0180ad3bef012937049d7ab680adac611523522548143ffcfed50d58c005770c",
+        "0180ad3bef012937049d7ab680adac611523522548143ffcfed50d58c005770c"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/mochi-normal-batch.png",
+      "hero": "mochi",
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "3c5e2dc741453de9f204d1c10b02107cec232346cfbc63182de17802814d180a",
+      "rgbSha256": "fcfbe2ce933f8032808dc84c4dab934bd37eb405bd67fe6fae549f6d4dbc77b4"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/mochi-reduced-batch.png",
+      "hero": "mochi",
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "1ae4aafd28ec80296076d9ec87432b779947d6dc852f6afe598ee3e08605e44c",
+      "rgbSha256": "9b61b20b1f7705000a7c59ab6d050368b2990d5b750722cc574c64aaab856a9d"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/soot-normal-batch.png",
+      "hero": "soot",
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "b315d2e2d2fc7e9c472810326beeb67296a396b45304e3a0c832aeac42068e42",
+      "rgbSha256": "f334ac76a22dbc4035ca07d29abaf2fd5fb9985ba2660ae8cde5441a00c3c365"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/soot-reduced-batch.png",
+      "hero": "soot",
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "32ed5e74e4f17974d21ea200122c434c64141a02763fcdf0908cec8dafa07984",
+      "rgbSha256": "78e79616a2db6181a81e8406616db844e18ea595a0f94a432a239553a540bbb4"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/clover-normal-batch.png",
+      "hero": "clover",
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "c790834b838507a909287aac17f5677880b7234284e750e39f1ba0dd05c73249",
+      "rgbSha256": "320b2197d951caba1a90d739cfd8cbcd58466b036da11ca90fbd010a2ec318fb"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/clover-reduced-batch.png",
+      "hero": "clover",
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "54c4676a60711a419609e2b903828cf8bfec4d8f9a3a9ee3083200d60fcc1110",
+      "rgbSha256": "aca8b64059638f3e078adcd8aa3d7db156a63e4b914136c3572e0ab9dd535344"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/panko-normal-batch.png",
+      "hero": "panko",
+      "reduced": false,
+      "width": 1280,
+      "height": 720,
+      "sha256": "50bd6b0898aaf2867d3f05837e533a995206d5d00ceda05b6ce0a76ad853500c",
+      "rgbSha256": "4f00baafdd26b381ef4407e8e8ef7b4a6da5a093890786a90c741bc1e8e39ecd"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/panko-reduced-batch.png",
+      "hero": "panko",
+      "reduced": true,
+      "width": 1280,
+      "height": 720,
+      "sha256": "a6d4d9e95dd182dd60f18dae43c0552d8a82d4c011b3da590122248516e7eca1",
+      "rgbSha256": "0180ad3bef012937049d7ab680adac611523522548143ffcfed50d58c005770c"
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/mochi-comparison.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "89a2005dbcc6dbc2b14cdf2bac88225b57a3926ad5a5e707f39226e6acbf0fbc"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/soot-comparison.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "f00c8793bde6ccb9d4d604f6daa223f5addde6adcd29f12a5c467abeb488cd12"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/clover-comparison.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "ac63890ef379327b92fce86cd183b923be84a3b8905592c23a1fd2211a72e9bb"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native/panko-comparison.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "43a305b26436fe8cd1719e43ceda13155cde5999820f30da234cce831aa0553c"
+    }
+  ],
+  "reviewedUtc": "2026-11-18T01:16:22.650710+00:00",
+  "interpretation": "Reviewed four fresh 1024x576 comparisons once after measuring eight native1280x720 frames. Four hero identities, title placement, faces, health/status labels and HUD match preserved baseline in both motion modes. All80 geometry groups and8fullRGB pairs exact; known predeclared fixture Fonts CSS block only. Local native correctness, not independent judge acceptance."
+}
