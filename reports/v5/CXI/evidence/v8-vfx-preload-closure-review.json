@@ -1,0 +1,96 @@
+{
+  "utc": "2026-11-18T10:38:15.086Z",
+  "sourceCommit": "1f8eebcd13351032f2364a40fce24d975bc3edee",
+  "verified": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/depth/model.ts",
+      "sha256": "ff6c426a8704791daa11bf87f8a00b00e4bbe85daaaa8857a72677eba5d83210"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/depth/passive-presentation.ts",
+      "sha256": "9c4e69c8f59d973de94e2ad95f97842acb1e4069ba5b818c09d211139a6671f1"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "93333a95af8bac2672946005704542154c9c2da25ff8d4b36d9a72cd4af930de"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/vfx.ts",
+      "sha256": "527427832c72ea96346e9f37626b9c2372a3004c6a274db0c2c89b8d1c5577f4"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/vfx-layered/player.ts",
+      "sha256": "1340a7219ca75cea1c0f5ec362f97a29d8f78ef8ca3267ecaa4539b5971d372b"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/battle-v3/field-vfx.ts",
+      "sha256": "fbbd063aca142afafbcd804c7f2205f839ba46c005857687a8ed9e3e6d687539"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/vfx-layered/skill-player.ts",
+      "sha256": "dab426856a4e6444ff7f67fb2f3de5f38dc853a89584c19270d8d7b94dc07fb1"
+    }
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/preload/closure-r1/rows.json",
+    "sha256": "8bf9d13568b810b18b3bcc27465f015362a63dedf224e1e1cc75804821e5328b"
+  },
+  "cases": 160,
+  "groups": [
+    {
+      "a6": true,
+      "override": false,
+      "cases": 40,
+      "chargePlans": 0,
+      "atlasConsumerCases": 20,
+      "atlases": [
+        "button-guard-0.webp",
+        "sock-skipper-0.webp",
+        "spool-ram-0.webp",
+        "crumb-sentinel-0.webp",
+        "pollen-scout-0.webp"
+      ]
+    },
+    {
+      "a6": true,
+      "override": true,
+      "cases": 40,
+      "chargePlans": 0,
+      "atlasConsumerCases": 40,
+      "atlases": [
+        "button-guard-0.webp",
+        "sock-skipper-0.webp",
+        "spool-ram-0.webp",
+        "needle-moth-0.webp",
+        "teacup-healer-0.webp",
+        "kettle-knight-0.webp",
+        "yarn-giant-0.webp",
+        "binding-thread-0.webp",
+        "crumb-sentinel-0.webp",
+        "pollen-scout-0.webp"
+      ]
+    },
+    {
+      "a6": false,
+      "override": false,
+      "cases": 40,
+      "chargePlans": 2,
+      "atlasConsumerCases": 0,
+      "atlases": []
+    },
+    {
+      "a6": false,
+      "override": true,
+      "cases": 40,
+      "chargePlans": 2,
+      "atlasConsumerCases": 0,
+      "atlases": []
+    }
+  ],
+  "runtimeChanged": false,
+  "imagesViewed": 0,
+  "provenSafeRemovals": [],
+  "limits": "Source-contract audit using real DepthModel enemy actions and actual render functions, dummy image handles and a non-rendering canvas. Explicit override cases are defensive fallback coverage, not a claim that an override is installed. No browser pixels, natural scheduling, performance or full reachability proof. Legacy passive and round-plan paths remain separate.",
+  "decision": "No blanket atlas removal. Real A6 plans use five enemy atlases; explicit override fallback can use all ten tested enemy atlases. Five default enemy paths are candidates only for override-aware narrowing, pending gallery/passive/idle closure and native parity.",
+  "fixtureCorrections": "Initial audit invalidly combined legacy gameplay with C2; corrected creation follows C2 requires A6. Final run uses C2 only for A6 and records both branches."
+}

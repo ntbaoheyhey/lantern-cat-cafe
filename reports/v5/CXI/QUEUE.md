@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover seam topology/strain and head/off sockets unresolved;spout adapter scopedPASS; no sequence adoption.
+M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover817118Bclip/897635Bpackage nativeall300framesPASS;own26decodedcastrows/2views scopedPASS;tail/head/off/HPnative open;source registryempty.
 M-I2 OPEN: loader suspension9bcbce1d5+scene00903 imported45f0d8c73;40focused/TSC0;R6 own146sample retained-decoder/victory gatePASS,2freshviews;naturalR3 numericACCEPT35hashes/1059actionrows/28postresult;nativevisibilityOPEN. R6 cold8509074/8975988/8584766B FAIL8MB; Clover absent. Ordinary1x/performance and media performance require verified receipts.
 M-I3 OPEN: release only after byte/quality/performance/journey/film gates; latest green milestone v5-m1.13; R6 untagged,fullsuite5499exit0.
 SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parity retained. Never import retractedPanko d419002a4.
@@ -26,3 +26,6 @@ CANCELLED:olderduplicate/time-based queues and mobilecaptures;V8 desktop1280x720
 
 CloverQ21:817118B offline+native all300frames/2engines numericPASS;ignoredspoutstudy next. Q22 rejectedChrome3.043149. Loop/originalmatte/head/palm/scene stillOPEN.
 VFXpreload:whole-owner removal unsafe until cross-actor passive presentationCues,charge/idle/override/fallback coverage proved;no filter implemented.
+
+Preload closure160actualsourcecases:fiveenemy atlases needed by20/40A6default actions;override fallback usesall10. No filter. Sourcepassive/gallery/round closure and nativeproof stillOPEN.
+Current6301 ignoreddualcat546ec5252/index0b0a76b7;MochiR6payload exact;CXVdecodedspout/HP review active. Sixcallout hashes unchanged49artifacts/6sources;not accepted.
