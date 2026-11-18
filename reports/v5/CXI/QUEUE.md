@@ -1,11 +1,11 @@
 # CXI V7 assignments — evidence required
 I-A DONE/REPEAT:m1.13 app13fb390e9 paused-battle recovery;full5374=5361pass+11skip+2expectedfail;7finalsteps+build/typecheck+44focused0;v5-m1.13@4e5fe161a atomicpush+remoteverified.
-I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;CXI4halfAVIFtakeoverencoding;AGS audioREDO/nointegration.
+I-B OPEN:m1.13 cold7667824/8230950/7743499B;wave3FAIL230950B;4halfAVIFACCEPT94340B saving+nativefallbackPASS;candidatecoldpending;AGVT11landing assigned;AGS audioREDO/nointegration.
 I-C FIRST-HIT DONE:20448ms incl17700reading8cards;HP165→119;route10037ms excludesreading;ordinary0errors.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms;no publictransaction;runbook exact.
 I-E DONE/REFRESH:m1.13 3actual1x30.000s films/browseraudio1280x720;8images measured andreviewed/hashmatched;priorfilms preserved.
 I-F DONE/REPEAT:docs currentm1.13;327word180s narrationdraft unrecorded;AGS T2threeawards/T5stereo+sources PART accepted;T1/T2remainder/T3/T5remainder/T7/T8 OPEN.
-I-G OPEN/REPEAT:paused-battle recoveryACCEPT;toast/Nextoverlap fixed+own2modevalidated; lossnotice/bossHP overlap assignedCXV. Recovery635/8677ms;T1exactQA unresolved.
+I-G OPEN/REPEAT:paused-battle recoveryACCEPT;toast/Nextoverlap fixed+own2modevalidated; T10lossnoticeACCEPT2modes0overlap/10hits/exactRGBrestore. Recovery635/8677ms;T1exactQA unresolved.
 
 Preserved DONE evidence
 SETUP/I0/I1/I3/R0 DONE:2cd16cbf7,315904a14,reports/I1.md,R0.md; v5-m1 original suite2821web/5121root/build/typecheck0.
