@@ -3,3 +3,4 @@
 - Command: node /Users/bao/taskbar-hero-chain/tools/v5int/qa-toolchain.mjs --target "..." --capture
 - Output: Config only, no browser execution trace.
 - Status: OPEN (Blocker: Toolchain not launching browser tasks).
+QA toolchain still not launching browser; T-CXI-13 remains blocked.
