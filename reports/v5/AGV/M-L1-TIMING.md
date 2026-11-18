@@ -1,14 +1,9 @@
-# Mochi Blink/Wink Analysis (T-M1)
+# M-L1-TIMING.md
+## Designer Idle Measurement (Independent Raw Tracks)
 
-## Analysis Methodology
-- **Data Source**: `mochi-rows.json` (Frame-by-frame MAE metrics).
-- **Inference**: High-MAE spikes in `maskMAE` coupled with `affectedPixels` variations indicate significant facial state changes (e.g., blink onset/offset).
+### Clover (Geometric Trajectory Analysis)
+- **Status**: BLOCKED (Semantic timing rejected by CXV).
+- **Audit Update**: Semantic boundary is traceable via sleeve edge, but the "palm-core" center is not independently identifiable per R3 semantic gate.
+- **Action**: All blink/wink onset/minimum/reopen coordinate-based timing measurements have been halted per CXV instructions (semantic timing remains BLOCKED).
 
-## Blink/Wink Onsets (Inferred)
-| Event | Frame | Affected Pixels | Mask MAE Spike | Uncertainty (Frames) |
-| :--- | :--- | :--- | :--- | :--- |
-| Blink Onset | 7 | 575 | 0.0084 | ±2 |
-| Blink Minimum | 23 | 526 | 0.0076 | ±2 |
-| Blink Reopen | 296 | 524 | 0.0075 | ±2 |
-
-*Status: T-M1: Independent Mochi blink/wink onset, minimum, and reopen frame numbers delivered.*
+*Status: T-M1: BLOCKED (No new boundary proof accepted; further resubmission halted per CXV).*
