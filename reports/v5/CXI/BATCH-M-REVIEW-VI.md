@@ -1,8 +1,8 @@
 # Mochi và Clover — media chưa phát hành
 
-Cập nhật 2026-11-18T18:19:53.482335+00:00. Bản xanh **v5-m1.15** vẫn gồm chín mèo native. Cổng6301 hiện là chẩn đoán chỉMochi;Clover dùng actor native placeholder. FooterR2 đang được thử riêng,không đổi app;Panko cache bị loại vì chưa đạt ngưỡng lợi ích đã chốt. Media được đặt hàng chưa bật trong release.
+Cập nhật 2026-11-18T18:32:06.950406+00:00. Bản xanh **v5-m1.15** vẫn gồm chín mèo native. Cổng6301 đã khôi phục đúngR7 hai media để kiểm tra fallback bằng lỗi decoder thật. Footer chưa áp dụng;focus18/18 khớp nhưng scene1100ms thêm CSSanimation nên kiểm tra nghiêm ngặt chưa đạt. Media được đặt hàng chưa bật trong release.
 
-Preview hiện tại dùng source `bf01d462ac32233ab11475605d571aea691f96bf`,index `e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1`;registry production vẫn{}. [Đường desktop local](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Bản xanh giữ riêng ở `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist`;R7 hai media giữ nguyên để đối chiếu. Phần bên dưới ghi lịch sửR7 cùng các cập nhật có thời gian,không phải mọi mục đều mô tả preview hiện tại.
+Preview hiện tại dùng source `bf01d462ac32233ab11475605d571aea691f96bf`,index `eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67`;registry production vẫn{}. [Đường desktop local](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Bản xanh và bản chỉMochi giữ riêng. Phần bên dưới ghi lịch sửR7 cùng các cập nhật có thời gian,không phải mọi mục đều mô tả kết quả hiện tại.
 
 Đã kiểm tra:
 

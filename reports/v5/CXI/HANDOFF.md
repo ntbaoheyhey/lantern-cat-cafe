@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: Checkpoint owned focus-heldout WIP/failure receipts;send CXV exact1100ms CSS-animation failure;verify trajectory scope beforegrant.
-NEXT 2: Prepare explicit dualmedia descriptor and real media-fault fixture/build after CXV trajectory;no stale-build acceptance.
+NEXT 1: Checkpoint restoreddualR7/nativefault receipts;review CXV animation attribution6f68 when delivered;preserve strict1100ms failure.
+NEXT 2: Supply native React lifecycle/fallback acceptance using verified realfaultfixture;no app adoption before art/fullpaint/performance.
 NEXT 3: Use verified CPU sample-site receipt for scoped performance hypothesis;no appchange or commissionedmedia release until art/labels/performance green.
-Last pushedbc569d751 confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
-Live6301 Mochi-only sourcebf01d462a/indexe66485f9;work/v5/CXI/batch-m/mochi-only-profile-r1/build.json;3795files/291925344B exact;productionregistry{}.
+Last pusheda44c63cd3 confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
+Live6301 restoreddualR7 sourcebf01d462/indexeb93ee0d;work/v5/CXI/batch-m/dual-media-fault-r1/build.json;registry{};exactR7fullinventory.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified18:26Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T18:27:30.394051+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;own86303 completed18:24:59Z,groupempty+timingreleased2026-11-18T18:27:30.394051+00:00;strict heldout sceneFAIL,focus18/18exact;0views.
-Mailboxread INBOX-CXI622;USER24;LEARN120. NEXTBUILD620 pending dualmedia/fault;trajectory622 frozen c98638ef,notgranted.
+Running:ownnone;88414/88718empty+released2026-11-18T18:35:03.047050+00:00;CXV animationlease6f68 until2026-11-18T18:42:03.107416+00:00 ANDrelease;PIDpending.
+Mailboxread INBOX-CXI625;USER24;LEARN120. NEXTBUILD620satisfied dualdescriptor+faultfixture;CXVanimation granted;oldtrajectoryungranted.
 AGS OPEN:T-CXI13desktopQA,T-M5trialaudit,T-CXI14PTSfieldstudy,T-CXI15CPUresearch,T-M4videoresearch,T-CXI12mask,T-CXI11bed;fixedsixREJECTED.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
