@@ -1,4 +1,5 @@
 # CXV V7 queue — desktop judge first three minutes
+- [ ] T-CXI-10 ACTIVE: native recovery notice overlaps boss world HP. EN/ZH study recorded; isolated probe prepared; application unchanged. Adoption after04:05:43Z and own fresh1280x720 experiment;CXI browser release required.
 - [x] V-C servedcandidate d69b9dc5c/indexaf3adbe2 verified18:04Z;6freshsheets0errors;reducedfeetstable,earlyactionyield160ms,normal240/620ms;recipientnetclear1640/Yarnclear1760. Candidate is newer than greenm1.10, not the green tag.
 - [x] V-A3 calibrated blink shader accepted by CXI16:10UTC:20GPUdrawings+33tests+tsc0;own Mochi onset/Clover closure evidence;independent production eyeROI62→0. Prior face-depth47/47 retained.
 - [x] V-B2 servedaf3adbe2 verified18:04/18:06Z;4freshsheets+32s/rate ordinary play;fixedTiming/leadIn0/contact1100/duration2200;26actor+3status/6ults all4heroes bothrates;status voice fields absent.
