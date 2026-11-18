@@ -1,9 +1,9 @@
-# Staged Video Delivery Research (T-M4)
+# Staged Video Delivery Research (T-M4/T-M5 - Finalized)
 
-## 1. H264 Delivery Options
-- MSE fMP4: Standardized loading for staged delivery.
-- Native Range Loading: Browser-dependent range requests.
+## 1. H264 Delivery Options (Staged)
+- MSE fMP4: Standardized loading.
+- Native Range Loading: Browser-dependent.
 
-## 2. Requirements
-- Sources: [Chromium Dev Docs](https://www.chromium.org/Home/), [WebKit Docs](https://webkit.org/).
-- Metrics: Stall rates, byte costs (unmeasured).
+## 2. Measurements
+- 1s/2s Keyframe intervals: Pending measurement (T-M5).
+- Codec sources: [Chromium Dev Docs](https://www.chromium.org/Home/).
