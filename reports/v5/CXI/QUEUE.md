@@ -9,7 +9,7 @@ RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromi
 AGS OPEN:T-CXI-13 exactm1.15QA on6350,T-M5 independentactualtrials,T-M4 stageddeliveryEN+ZH,T-CXI-12 maskdraft,T-CXI-11 cueconditions,T-CXI-5 provenance/listening. >=2 useful tasks;line392/399/401/402audited;M4/M5 REDO.
 AGS DISPOSITIONS through532:528codec/dimensions/bytes partialACCEPT;529docfix/531rawclaims unsupportedREDO;530route/532toolerrors pendingexactproof. Sharedqa-toolchain import/browser/SharpPASS fromAGS cwd;twoTASKs remainOPEN.
 AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
-AUDIO OPEN:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
+AUDIO FIXEDSET REJECTED:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
 CXV: introR2 audited16artifacts/40rows;transientWave1/1 with0sampled ordinary actionoverlap. New dualcat ordinary/lifecycle/art lease after R5 own capture.
 CXV ACCEPT scoped:nativeR1 63hashes/48PNGs/6wins/270actions/all9/exactnormalreduced rules;noimagesviewed/nolaptopclaim. SourceR5head/R6paw21artifacts/24freshcontrols/1500conversioneach;oldcombinedR4reject retained.
 I-C DONE currentnativeR3/m1.15:firsthit21163ms including17700ms8cardreading;route9766ms;recovery640/8707ms;bothmotion GPUrestore exact.
@@ -34,3 +34,4 @@ M-I2 STAGING:own2fresh0/800ms association scopedPASS. Full16/1500geometry/34case
 M-I2 FULLPAINT GRID:598hashes/56exactcontrols/134456integercounts reproduce sole Clover(-28,+14);development evidence only. FrozenCXVpilot lease until2026-11-18T16:32:03.028081+00:00 AND explicitrelease. No sourceadoption;regression/fullpaint/newidle/status/association gates open.
 M-I2 AGS535-543:ownreview rejects absent/oldQAartifacts;exactstderr accepted as wrong-tool evidence only;twoTASKs stillOPEN;HANDOFF list corrected. Audio canonical assertion adds no recipe/listening.
 M-I2 FIXED CLOVER REJECT:own1534layoutreplays/198failures;maxfallback11.385870/rigid10.691869px;81failures directly intersect ownavoid,117need sourcecause. Grid remains developmental only. No browser launched;CXVexplicitrelease16:23:31Z.
+AUDIO CURRENTSET REVIEW COMPLETE:exact30a1six296493B tied to historicalnative evidence;all36canonical cues still matchm1.15,−264frames each/gain changes. Retain canonical. No releaseblocker and no repeat unchanged audit;reopen on actual new evidence.
