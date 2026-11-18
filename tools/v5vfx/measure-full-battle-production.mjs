@@ -56,6 +56,6 @@ for(const [index,run]of raw.runs.entries()){
  }
 }
 report.pass=Object.values(parity).every(Boolean)&&report.runs.every(r=>!r.errors.length&&!r.blockedRequests.length);
-report.limits='Current served candidate, not latest green artifact. All battle progression after seeded setup is natural; no account/reward/public-chain proof. Screenshot windows are recorded because capture interrupts wall-clock smoothness. Whole-run timing is descriptive, includes capture overhead and is not a before/after performance claim. Reduced/normal captures are not synchronized pixel-equality pairs. Fresh visual review remains required.';
+report.limits=(report.local?'Current local untransformed artifact, not independent judge acceptance. ':'Current served candidate, not latest green artifact. ')+'All battle progression after seeded setup is natural; no account/reward/public-chain proof. Screenshot windows are recorded because capture interrupts wall-clock smoothness. Whole-run timing is descriptive, includes capture overhead and is not a before/after performance claim. Reduced/normal captures are not synchronized pixel-equality pairs. Fresh visual review remains required.';
 writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({output,pass:report.pass,parity,sheets:report.sheets.map(s=>s.path)}));

@@ -71,3 +71,5 @@
 2026-11-18T01:16:22.650710+00:00 V-F nativefocus adopted after study gate, source0f1a74b4fc4 matches productionprototype except whitespace-only blankline;13tests/TSC0,80geometry/8RGBexact,fourfreshsheets reviewedonce. Native untransformed production gate next.
 
 2026-11-18T01:18:31.104836+00:00 V-F nativefocus production pass:source3050ee5ae/index45f38b93,3764artifactfiles exact,26actions/6ultimates each32s,zeroerrors/blocks,2freshviewsreviewed. Nativefocus4.3/18.8ms;global4xp9533.4ms. ScopedREADY follows push;fullbattle next.
+
+2026-11-18T01:23:33.707185+00:00 V-F focusfullbattle4x pass:source3050ee5ae/index45f38b93;normal/reducedwin99.420/98.951s,68actions24ults,82apply46expire exactparity,0errors/blocks.16capturesmeasured4sheetsreviewed;p9533.4msboth/late35,25;toastCXIpending. Shaderattribution99654next;gate01:36:53Z.
