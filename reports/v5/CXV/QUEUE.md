@@ -1,7 +1,7 @@
 # CXV V8 queue — Batch M first
 - OWNER override12:09:40Z: byte cap removed;all historical byte-budget failures are report-only and never block release/art. No new byte optimization required.
 - READY scoped current native9: six fresh wins on0b669/index3e7d27,normal/reduced rules exact,0errors,12fresh sheets reviewedonce;dense effects noted,no all-frame claim. 6301 released aftercapture;M-native-nine-current-R1.json.
-- READY source R5head/R6paw:24/24 fresh heldouts each;actual CXI adapter2100idle/3600cast/600isolation checks pass. R4 candidate854ce6eec/index9e39c7d7 built+suite exit0;BLOCKED-ON explicit installation+6301lease. Native305idle/4actions/16captures preregistered. OriginalR4 combined rejection retained.
+- READY source R5head/R6paw:24/24 fresh heldouts each;actual CXI adapter2100idle/3600cast/600isolation checks pass. R4installed854ce6eec/index9e39c7d7:own305idle+38action/4legalactions/16PNG,4freshsheets once;headdecoded.727542/paw.319577px within.75;HP/spoutPASS. Scoped native READY6ad5e2427;reducedidle banner overlap open;6301released. OriginalR4 combined rejection retained.
 - DONE scoped M-V1 source/L1/L2/L4 study and Panko experiment; source/EN+ZH notebook retained; native-eight learning gate passed05:19:53Z. AGV supplemental tables/research still rejected and active.
 - READY scoped M-V2 nine idles: Panko992492c6f, Mallow4ec917401+c7d3cf13a, native7a3173c08e/evidence6ee844355. CXI production motionACCEPT06:16:45Z; performance/art gates remain; bytes report-only.
 - READY scoped M-V3 same nine native/drawn casts, real rules350ms→skill.55 and additive handoff; M/C cast API accepted, final media cast art/gameplay remains OPEN.
