@@ -14,6 +14,6 @@ HUDtext15minstudy19:40→19:55;6alternating32s/rate render4→3/18.6→13.7ms;st
 Open TASKs:T-CXV-1auditREDO20:07Z(newscript stillcountscontainerframes/nohashes),T-CXV-2researchREDO17:16Z(genericlinks/unsourced5–10%);CXI ownscompletedT4/T6conversions;unrelatedlegacyart/captureWIP preserved.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
 Wake cxv-wake ACTIVE15min exactORDER text refreshed in place and verified2026-11-18T00:10:10.469680+00:00;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running Vite21525;no detached capture jobs. Completed judgeultimate32s/rate at00:08:45Z;log work/v5/CXV/jobs/judge-ultimate-attribution.log.
+Running Vite21525;victorycontrolnaturalprobe PID88478 log work/v5/CXV/jobs/victory-controls.log;1detachedjob. Judgeultimate trace complete/reviewed.
 Mailbox INBOX-CXV192,USER23;BOARDread23:52Z;STOPabsent00:09Z;lastRULESreread00:09Z;AGVcc09530a2;T-CXV-1/2 and T-CXI-9 open.
 Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; own16freshimages reviewedonce;do not reopen V7-judge-m110-candidate sheets/reviewJPGs.

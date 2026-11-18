@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T00:14:31.668786+00:00",
+  "studyGate": "2026-11-18T00:16:43.634070Z",
+  "componentUnchanged": true,
+  "componentSha256": "82f0b3350de27b80f92f4016ddccd2544ade8de50471131d20848b96211729a6",
+  "redTestLog": "work/v5/CXV/jobs/victory-fallback-test-red.log",
+  "redTestLogSha256": "1939b5d736cf5d465e817103eaee9ea6574f501153911e3af7dbd6ba43d5b1c5",
+  "redTestResult": {
+    "failed": 3,
+    "passed": 3,
+    "expectedFailures": [
+      "failed restart from normal retains ready=true",
+      "failed restart from reduced retains ready=true",
+      "rejected asset replacement retains stale drawn=4"
+    ]
+  },
+  "green": null,
+  "nativeCapture": null
+}

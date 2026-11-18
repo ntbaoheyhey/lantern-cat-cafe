@@ -8,14 +8,14 @@ import {resolve} from 'node:path';
 import {runtimeEvidence as localEvidence} from './runtime-evidence.mjs';
 const root=resolve(import.meta.dirname,'../..'),integration='/Users/bao/taskbar-hero-chain';
 const production=process.env.CXV_PRODUCTION==='1',prototype=process.env.CXV_FALLBACK_PROTOTYPE==='1';assert(!(production&&prototype));
-const initialReduced=process.env.CXV_FALLBACK_START_REDUCED==='1';
+const initialReduced=process.env.CXV_FALLBACK_START_REDUCED==='1',expectPass=process.env.CXV_FALLBACK_EXPECT_PASS==='1';
 const fixture=await import(production?integration+'/tools/v5int/production-fixture.mjs':'./browser-fixture.mjs');
 const {chromium,config,openFixture}=fixture;
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-E-victory-fallback-baseline'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));await mkdir(out,{recursive:true});
 const hash=b=>createHash('sha256').update(b).digest('hex');
-const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...(production?fixture.runtimeEvidence():localEvidence()),production,prototype,viewport:{width:1280,height:720},method:'Seeded wave1 rule-resolved result; inject new WebGL2 context creation failure only while changing reduced-motion preference. Restore method and toggle back, then check a fresh failed mount. Failure frequency and ordinary gameplay performance are not measured. No application file edits.',override:[],captures:[],harnessCompleted:false};
-report.initialReduced=initialReduced;report.harnessSha256=hash(await readFile(import.meta.filename));
+const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...(production?fixture.runtimeEvidence():localEvidence()),production,prototype,viewport:{width:1280,height:720},method:'Seeded wave1 rule-resolved result; inject new WebGL2 context creation failure only while changing reduced-motion preference. Restore method and toggle back, then check a fresh failed mount. Failure frequency and ordinary gameplay performance are not measured. Source identity and any browser-response override are recorded separately.',override:[],captures:[],harnessCompleted:false};
+report.initialReduced=initialReduced;report.expectPass=expectPass;report.componentSha256=hash(await readFile(resolve(root,'apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx')));report.harnessSha256=hash(await readFile(import.meta.filename));
 await writeFile(resolve(out,'harness.mjs'),await readFile(import.meta.filename));
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
@@ -57,7 +57,7 @@ try{
  const expected='THREE.WebGLRenderer: Error creating WebGL context.';
  report.expectedConsoleErrors=consoleErrors.filter(e=>e===expected);report.unexpectedErrors=errors.filter(e=>e!==expected);report.unhandledPageErrors=unhandledPageErrors;
  assert.equal(report.expectedConsoleErrors.length,2,'Exactly two intentional constructor failures');assert.equal(initial.injectedCalls,4,'Two failed getContext attempts per constructor');
- report.identityAfter=production?fixture.runtimeEvidence():localEvidence();if(production)assert.equal(report.identityAfter.indexSha256,report.indexSha256);
+ report.identityAfter=production?fixture.runtimeEvidence():localEvidence();if(production)assert.equal(report.identityAfter.indexSha256,report.indexSha256);else{assert.equal(report.identityAfter.runtimePatchSha256,report.runtimePatchSha256);assert.deepEqual(report.identityAfter.runtimeUntrackedSha256,report.runtimeUntrackedSha256);}
  report.harnessCompleted=!report.unexpectedErrors.length&&!unhandledPageErrors.length&&report.recovered&&initial.fallback.visible;report.applicationPass=report.harnessCompleted&&restarted.fallback.visible;
- if(prototype)assert.equal(report.override.length,1);report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({out,harnessCompleted:report.harnessCompleted,applicationPass:report.applicationPass,reproducedBlankRestart:report.reproducedBlankRestart,errors,consoleErrors}));assert(report.harnessCompleted);
+ if(prototype)assert.equal(report.override.length,1);report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({out,harnessCompleted:report.harnessCompleted,applicationPass:report.applicationPass,reproducedBlankRestart:report.reproducedBlankRestart,errors,consoleErrors}));assert(report.harnessCompleted);if(expectPass)assert(report.applicationPass,'Native failure/recovery must retain visible fallback');
 }finally{await browser.close();}
