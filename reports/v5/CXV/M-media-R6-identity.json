@@ -1,0 +1,51 @@
+{
+  "utc": "2026-11-18T09:13:51.859615+00:00",
+  "descriptor": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/build.json",
+  "descriptorSha256": "0c6ff4f005842e39fa74f60918b8613b77744ea48608be690ce67ad14c14c06d",
+  "source": "adb526a869012cecef2da673f1bc6d86e42d8a5d",
+  "indexSha256": "f9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0",
+  "expectedIndex": "f9a0016290c1c3c437d158178404ab4a81d083b66d728e3497e39d37f8493ef0",
+  "files": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/dist/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+      "bytes": 32138,
+      "sha256": "4b74f34091bdc1f1f7669919c246682346c19c6c6fe65a7c1c1cd52f650b0704",
+      "matches": true
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/dist/units/mochi/designer-idle-3f92069b2aa15723.mp4",
+      "bytes": 931787,
+      "sha256": "3f92069b2aa15723277749c5833fb8e3a254cdf728b66fafbeb6fad785ae2949",
+      "matches": true
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-scene-q22-r6/dist/units/mochi/designer-idle-bd9e44966dc4ccde.webp",
+      "bytes": 69030,
+      "sha256": "bd9e44966dc4ccdef2e8a4d7337bfcf6ca9a7646c2afeff8c1464e31c5cd83a5",
+      "matches": true
+    }
+  ],
+  "patches": {
+    "apps/web/src/game/cardrpg/spine/scene.ts": {
+      "cxv": "5e1e0d4e7555e8a1341346689a3c04ba147201546390b0e565f2b4e33d15b3ef",
+      "cxi": "5e1e0d4e7555e8a1341346689a3c04ba147201546390b0e565f2b4e33d15b3ef",
+      "matches": true
+    },
+    "apps/web/src/game/cardrpg/battle-v3/boss-phase.ts": {
+      "cxv": "4bed5574784a4a73dc491d7f90da4b0ffeaac0a8f135d6288f3aebeb61e84725",
+      "cxi": "4bed5574784a4a73dc491d7f90da4b0ffeaac0a8f135d6288f3aebeb61e84725",
+      "matches": true
+    }
+  },
+  "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+  "nativeAcceptance": false,
+  "reason": "Offline identity only; CXI holds 6301 lease. Native retained-scene and natural R3 gates pending.",
+  "lastConfirmedPush": "932c15e9f0218084bf0690c4369a4dd83b03a045",
+  "wake": {
+    "id": "cxv-wake",
+    "status": "ACTIVE",
+    "intervalMinutes": 15,
+    "verifiedUTC": "2026-11-18T09:13:51.859615+00:00",
+    "mutated": false
+  }
+}
