@@ -1,0 +1,82 @@
+{
+  "utc": "2026-11-18T16:22:13.695041+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "candidateRelativeR7": [
+    -28,
+    14
+  ],
+  "decision": "REJECT fixed rigid placement hypothesis: actual constrained solver moves candidate; no native launch or refit.",
+  "geometry": {
+    "samples": 1534,
+    "maxBaselineError": 0.015580714705720311,
+    "maxUnchangedError": 0.015551199475112298,
+    "maxFallback": 11.385870217124591,
+    "maxRigidError": 10.691868649401044
+  },
+  "geometryFailures": 198,
+  "groups": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 4,
+      "samples": 34,
+      "minMs": 1233.333333,
+      "maxMs": 1783.333333
+    },
+    {
+      "mode": "normal",
+      "cat": "clover",
+      "skill": 1,
+      "samples": 33,
+      "minMs": 133.333333,
+      "maxMs": 633.333333
+    },
+    {
+      "mode": "normal",
+      "cat": "clover",
+      "skill": 4,
+      "samples": 63,
+      "minMs": 733.333333,
+      "maxMs": 1750
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 4,
+      "samples": 34,
+      "minMs": 1233.333333,
+      "maxMs": 1783.333333
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "samples": 34,
+      "minMs": 1233.333333,
+      "maxMs": 1783.333333
+    }
+  ],
+  "paint": {
+    "cases": 34,
+    "verifiedPNGHashes": 408,
+    "originalFourControlValid": 33,
+    "newFiveControlValid": 2,
+    "initialConditioningChanged": 32,
+    "validModelFailures": [],
+    "limit": "Additional initial-vs-conditioned comparison was newly preregistered and fails32cases;prior33/34 designation refers to original four controls. These are not interchangeable. No actual new candidate paint claim."
+  },
+  "artifacts": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/paint.json",
+      "sha256": "634abdb0a3e6e7223fc164b6466a25890b2ecb481b103ca806e1961e4e0354c3"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-fixed-regression-r1/layout.json",
+      "sha256": "6740ea28ef2d5b63a36921e05ec6b24d59ec3cfc60f77a0d0f53c9de43a57831"
+    }
+  ],
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "next": "Explain source solver avoidance before any new placement hypothesis. Retain frozen shifts;no tuning against reserved failures."
+}
