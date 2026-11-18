@@ -24,7 +24,7 @@ export async function buildHudArtifacts(out){
 export async function buildProductionComparison(out,{modulePath,currentSource,variants,metadata={}}){
  out=resolve(out);assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'),'Output must remain in owned ignored work');
  assert.equal(await readFile(resolve(root,modulePath),'utf8'),currentSource,'Source changed before comparison build');
- assert.equal(Object.keys(variants).length,2);assert(Object.keys(variants).every(mode=>/^[a-z]+$/.test(mode)));
+ assert([1,2].includes(Object.keys(variants).length));assert(Object.keys(variants).every(mode=>/^[a-z]+$/.test(mode)));
  const {build,loadConfigFromFile}=await import(require.resolve('vite'));
  const report={...metadata,utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),...runtimeEvidence(),configSha256:hash(await readFile(resolve(appRoot,'vite.config.ts'))),envDir:false,artifacts:[]};
  await mkdir(out,{recursive:true});
@@ -51,8 +51,8 @@ export async function buildProductionComparison(out,{modulePath,currentSource,va
  }
  const [baseline,text]=report.artifacts;
  const media=artifact=>artifact.files.filter(f=>!/\.(?:js|html|map)$/.test(f.path));
- assert.deepEqual(media(baseline),media(text),'Non-script production assets must match exactly');
- report.staticAssetsExact=true;report.identityAfter=runtimeEvidence();assert.deepEqual(report.identityAfter,{runtimePatchSha256:report.runtimePatchSha256,runtimeUntrackedSha256:report.runtimeUntrackedSha256});
+ if(text)assert.deepEqual(media(baseline),media(text),'Non-script production assets must match exactly');
+ report.staticAssetsExact=text?true:null;report.identityAfter=runtimeEvidence();assert.deepEqual(report.identityAfter,{runtimePatchSha256:report.runtimePatchSha256,runtimeUntrackedSha256:report.runtimeUntrackedSha256});
  report.ended=new Date().toISOString();await writeFile(resolve(out,'build.json'),JSON.stringify(report,null,2));
  return report;
 }

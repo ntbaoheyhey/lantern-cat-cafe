@@ -5,7 +5,9 @@ import {existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
-import {chromium,config,openFixture,runtimeEvidence,judgeUrl} from '/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs';
+const local=process.env.CXV_FULL_LOCAL==='1';
+const fixturePath=local?'./production-candidate-fixture.mjs':'/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs';
+const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(fixturePath);
 const root=resolve(import.meta.dirname,'../..');
 const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpuRate),'Full-battle CPU rate must be1 or4');
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-judge'));
@@ -14,11 +16,12 @@ await mkdir(out,{recursive:true});
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);};
 const board=await readFile('/Users/bao/taskbar-hero-mailbox/BOARD.md','utf8');
-const servedSource=board.match(/Currently served candidate:([a-f0-9]{40})/)[1];
-const expectedIndex=board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)[1];
+const artifactIdentity=runtimeEvidence();
+const servedSource=local?artifactIdentity.buildSource:board.match(/Currently served candidate:([a-f0-9]{40})/)[1];
+const expectedIndex=local?artifactIdentity.indexSha256:board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)[1];
 assert.equal(runtimeEvidence().indexSha256,expectedIndex);
 const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),servedSource,indexSha256:expectedIndex,
- harnessSha256:hash(await readFile(import.meta.filename)),productionFixtureSha256:hash(await readFile('/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs')),
+ harnessSha256:hash(await readFile(import.meta.filename)),productionFixtureSha256:hash(await readFile(local?resolve(root,'tools/v5vfx/production-candidate-fixture.mjs'):fixturePath)),local,artifactIdentity,
  url:judgeUrl,viewport:{width:1280,height:720},method:'Seeded level6 boss encounter, then uninterrupted normal rule-selected model/scene RAF at speed1 until natural result. Normal and reduced motion start from the same battle. No rule fast-forward, fixed-clock seek, HP/charge changes, plan replacement or result injection after setup. Captures add overhead; frame timings are descriptive only, not an optimization comparison. Fixture setup is not ordinary account progression.',runs:[],errors:[],pass:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.cpuRate=cpuRate;report.browser=browser.version();report.hardware=execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim();

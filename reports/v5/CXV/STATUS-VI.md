@@ -45,3 +45,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-17T23:59:19.887636+00:00 V-F:loại alpha mask.80mẫu đúng tuyệt đối nhưng cảhai cách đọc không tăng hiệu năng;thêm19823B gzip cho4nguồn ảnh nên không đáng. Không sửa ứngdụng. Bước kế:trận đầyđủ ở4xCPU để kiểm đoạncuối/chiêu cuối trên URLjudge.
 
 2026-11-18T00:05:21.828385+00:00 Trận đầyđủ4xCPU:hai chếđộ đều thắng~101giây,68hànhđộng/24ulti vàlog giốngnhau;0lỗi,4ảnh mới đãxem. Hiệuứng/số/mặt/mànthắng rõ. Framep95=50ms;64/79khoảng>50.5ms còn tồn tại,không kếtluận máy thật chạy20FPS hayđã tốiưu xong.
+
+2026-11-18: Đã sửa fallback chiến thắng khi WebGL khởi tạo lại thất bại (d4491cbb5): 6 kiểm thử và typecheck đạt; hai chế độ chuyển động đạt. Đã gửi CXI kiểm tra tích hợp. Sai khác pixel nền giữa các lượt vẫn được giữ lại, tối ưu render chiến thắng vẫn bị chặn. Xác nhận toast mở khóa che một phần cạnh dưới Next/Details, đã gửi CXI. Đang kiểm tra trọn trận bằng bản build production cục bộ ở mức CPU 4x; không dùng làm bằng chứng laptop thực tế.

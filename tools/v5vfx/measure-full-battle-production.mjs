@@ -20,6 +20,7 @@ const report={utc:new Date().toISOString(),source:raw.source,servedSource:raw.se
  captureUtc:raw.utc,captureEnded:raw.ended,raw:{path:rawPath,sha256:hash(readFileSync(rawPath))},
  harnessSha256:raw.harnessSha256,productionFixtureSha256:raw.productionFixtureSha256,runtimePatch:'No application-response substitution; seeded setup only.',
  method:raw.method,parity,runs:[],captures:[],sheets:[],reviewedUtc:null,visualReview:null,pass:false};
+report.local=raw.local??false;report.artifactIdentity=raw.artifactIdentity??null;report.buildRuntimePatchSha256=raw.artifactIdentity?.buildRuntimePatchSha256??null;
 report.cpuRate=raw.cpuRate??1;report.hardware=raw.hardware??null;report.browser=raw.browser??null;
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const [index,run]of raw.runs.entries()){
