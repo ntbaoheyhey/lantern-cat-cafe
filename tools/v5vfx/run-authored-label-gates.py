@@ -75,6 +75,8 @@ try:
                         paintedIntersections=c.get('threshold0Union')) for c in analysis['cases']]))
         save()
     natural = out / 'natural'
+    for key in ('CXV_LABEL_TARGET_DY', 'CXV_LABEL_STATUS_FIXTURE', 'CXV_LABEL_FRAMES'):
+        env.pop(key, None)
     natural_report = report_path.with_name(report_path.stem + '-natural.json')
     assert not natural_report.exists()
     run('natural-capture', [sys.executable, 'tools/v5vfx/run-media-natural.py', '--cat', 'both',

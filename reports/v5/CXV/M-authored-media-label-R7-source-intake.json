@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-18T14:06:21.851656+00:00",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-label-r7/build.json",
+    "sha256": "16c9a4e4ae7c190ea490d71aa666a30680758087e9a07b592d565ceb8451ab3c"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "importedCandidate": "93f3637f2",
+  "scopedChangedLinesExact": true,
+  "paths": [
+    "apps/web/src/game/cardrpg/spine/scene.ts",
+    "apps/web/src/game/cardrpg/spine/scene-clover-hud.test.ts"
+  ],
+  "addedAndRemovedLines": [
+    "-it('carries the prepared Clover HP socket and body independently from its face-side legacy anchor',()=>{",
+    "- const f=fixture('clover',true);expect(f.anchor.labelTarget).toEqual({...f.projected,avoid:f.body});",
+    "+it.each([['clover',5],['mochi',0]] as const)('carries the prepared %s HP socket and body independently from its face-side legacy anchor',(asset,tailClearance)=>{",
+    "+ const f=fixture(asset,true);expect(f.anchor.labelTarget).toEqual({x:f.projected.x,y:f.projected.y+tailClearance,avoid:f.body});",
+    "-it.each([['clover',false,true],['mochi',true,true],['clover',true,false]] as const)('retains ordinary label routing for %s prepared=%s formation=%s',(asset,prepared,formation)=>{",
+    "+it.each([['clover',false,true],['mochi',false,true],['clover',true,false],['mochi',true,false],['panko',true,true]] as const)('retains ordinary label routing for %s prepared=%s formation=%s',(asset,prepared,formation)=>{",
+    "-   if(view.formationC2&&entry.asset==='clover'&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y,avoid:body};",
+    "+   // Authored HP sockets clear the commissioned props; Clover's badge also needs the measured tail clearance.",
+    "+   if(view.formationC2&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body};"
+  ],
+  "captureStarted": false,
+  "productionAcceptance": false
+}
