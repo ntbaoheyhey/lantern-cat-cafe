@@ -17,7 +17,7 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const batch of native?[true]:[false,true]){
   const mode={batch,rows:[]};let override;
-  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:async p=>{await p.addInitScript(()=>{Math.random=()=>.5;});override=await installFocusReadOverride(p,{candidate:batch,audit:true,native});}});
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false,setupPage:async p=>{await p.addInitScript(()=>{Math.random=()=>.5;});override=await installFocusReadOverride(p,{candidate:batch,audit:true,native});}});
   report.url=page.url();await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   for(const hero of ['mochi','soot','clover','panko'])for(const reduced of [false,true]){
    await page.evaluate(async({hero,reduced})=>{
@@ -67,7 +67,7 @@ try{
    mode.rows.push({hero,reduced,rows,capture,animations});
    console.log(`${batch?'batch':'single'} ${hero} ${reduced?'reduced':'normal'} ${rows.length} groups`);
   }
-  mode.override=override;report.modes.push(mode);report.errors.push(...errors);await page.close();
+  mode.override=override;mode.blockedRequests=blockedRequests;report.modes.push(mode);report.errors.push(...errors);await page.close();
  }
  const baseline=native?JSON.parse(await readFile(resolve(process.env.CXV_BASELINE??'work/v5/CXV/films/V7-F-focus-read-order/report.json'),'utf8')):null;
  const [single,batch]=native?[baseline.modes[0],report.modes[0]]:report.modes;
@@ -86,6 +86,7 @@ try{
   report.pixelChecks.push({hero:a.hero,reduced:a.reduced,equal:pixels[0].equals(pixels[1]),rgbSha256:pixels.map(hash)});
  }
  report.native=native;report.baseline=native?{source:baseline.source,utc:baseline.utc,overrideSha256:baseline.overrideSha256}:undefined;
- report.freezeCss=freezeCss;report.pass=!report.errors.length&&report.checks.length===80&&report.checks.every(c=>c.equal&&c.clean&&c.measured)&&report.pixelChecks.every(c=>c.equal);
+ report.expectedFixtureBlocks=[{url:'https://fonts.googleapis.com/css2',type:'stylesheet'}];
+ report.freezeCss=freezeCss;report.pass=report.modes.every(m=>m.blockedRequests.every(r=>r.url==='https://fonts.googleapis.com/css2'&&r.type==='stylesheet'))&&!report.errors.length&&report.checks.length===80&&report.checks.every(c=>c.equal&&c.clean&&c.measured)&&report.pixelChecks.every(c=>c.equal);
 }catch(error){report.pass=false;report.error=String(error);}
 finally{await browser.close();report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({out,pass:report.pass,error:report.error,errors:report.errors,checks:report.checks.length,failures:report.checks.filter(c=>!c.equal||!c.clean||!c.measured).map(({detail,...c})=>c)}));if(!report.pass)process.exitCode=1;}

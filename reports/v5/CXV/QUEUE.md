@@ -65,3 +65,5 @@
 2026-11-18T00:56:00.718596+00:00 V-F current-native32s attribution:1x0lateRender/RAF;4x4/8. Entry layout reads remain after pending-clone cleanup. New same-paint geometry reuse study next; no source change or benefit claim.
 
 2026-11-18T01:00:51.783621+00:00 V-F focus read-order prototype passes80geometry+8RGBpairs/4freshsheets;first harness audit-array failure retained;unprofiled production and native gates remain.
+
+2026-11-18T01:10:29.957445+00:00 V-F focus read production passes6trials;focusentry4.8->4.1/22.7->19.6ms with80geometry/8RGBprototype. Global cadence unchanged;native adoption/validation after01:12:31Z.
