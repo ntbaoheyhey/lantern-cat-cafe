@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-NEXT ACTIVE:Prepare normal1x samepopulation baseline without profiler;no browser until CXV current pilot explicitrelease. Audit latest paint/footercapacity evidence when complete;performance hypotheses remain diagnostic.
+NEXT ACTIVE:Audit Panko frozen all-deformer parity/timing protocol before separate host grant;footer lifecycle focusREJECT returned toCXV;own current-source art/load acceptance continues. Normal1x baseline DONE audited237hashes/2exact55actionbattles.
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
@@ -8,10 +8,11 @@ SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity 
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
 AGS OPEN:T-CXI13 exactm1.15QA on6350,T-M5 seek/stall/quality,T-CXI14 timestampresearch+rawprovenance,T-CXI15CPUprofilingresearch;581numeric30PTS partialACCEPT. T-M4/T-CXI12/T-CXI11 remainOPEN;fixedaudio rejected. >=2usefultasks.
-AGS dispositions through583:581numeric30PTS independentlyverified;earlierblankfiles preserved. Currentresearch lacksprimarysources/rawcommands;desktopQA stillunaccepted. Own receipt v8-ags-581-review.json.
+AGS dispositions through610:T14 actual1200PTS partialACCEPT;command/blankcause/researchOPEN. T15 exact primary sources+measured experimentOPEN;T13/M5 unchanged. Explicit tracking correction sent.
 AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
 AUDIO FIXEDSET REJECTED:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
 CXV current:lowerlabel20caseREJECT independentlyaudited200PNGs/6400states/640stats;176layoutsample86/88Cloverconflicts/6associationfails. Bodyoccluder583 independent88replay:40displacement/28axisfails,max165.575005px. Structural/artstudy continues;nosourceproposaladopted.
+FOOTER lifecycleR1:259hashes/32PNGs/64states/16repeats/24values/4legalactions exact;emptydisplayPASS. FocusREJECT350/600/800ms vs original6/6;CSSpaint/world drift retained. No appadoption;release18:10:58Z,groupempty.
 CXV ACCEPT scoped:nativeR1 63hashes/48PNGs/6wins/270actions/all9/exactnormalreduced rules;noimagesviewed/nolaptopclaim. SourceR5head/R6paw21artifacts/24freshcontrols/1500conversioneach;oldcombinedR4reject retained.
 I-C DONE currentnativeR3/m1.15:firsthit21163ms including17700ms8cardreading;route9766ms;recovery640/8707ms;bothmotion GPUrestore exact.
 I-D IMPLEMENTATION DONE/OWNER-ONLY:honestAvalanche receipt/5bytecodechecks/localAnvil516ms;publicfundedFuji unperformed;NEEDS-USER-VI exact.
