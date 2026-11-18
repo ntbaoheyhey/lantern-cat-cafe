@@ -97,7 +97,7 @@ def main():
     images_to_make = []
     for case in raw['cases']:
         initial = case['before']
-        row = dict(mode=case['mode'], sourceFrame=case['frame'], fixedTime=case['fixedTime'],
+        row = dict(mode=case['mode'], sourceFrame=case['frame'], fixedTime=case['fixedTime'], expectedFrames=case['expectedFrames'],
                    decoded={cat:initial['media'][cat]['decoded'] for cat in CATS},
                    rulesSha256=hashlib.sha256(initial['battle'].encode()).hexdigest(),
                    controls={}, stateGates=[], captures=[], labels=[], complete=False)
@@ -129,7 +129,7 @@ def main():
         row['valid'] = (not case.get('errors') and not case.get('blockedRequests') and all(x['exact'] for x in row['controls'].values()) and
                         all(all(x['gates'].values()) for x in row['stateGates']) and
                         all(abs(initial['media'][cat]['decoded']['mediaTime'] -
-                                case['frame'] / 30) < 1e-5 for cat in CATS))
+                                case['expectedFrames'][cat] / 30) < 1e-5 for cat in CATS))
         paint = delta(images['baseline'], images['labels-hidden'])
         contributions = {cat:delta(images['labels-hidden'], images['without-' + cat])
                          for cat in CATS}
@@ -202,7 +202,7 @@ def main():
             factor = min(496 / crop.shape[1], 236 / crop.shape[0], 2)
             w, h = max(1, round(crop.shape[1] * factor)), max(1, round(crop.shape[0] * factor))
             sheet[344:344+h, left+8:left+8+w] = cv2.resize(crop, (w, h), interpolation=cv2.INTER_NEAREST)
-        title = f"{case['mode']} source F{case['frame']} | exact controls {row['valid']} | own red; cross magenta | threshold 0"
+        title = f"{case['mode']} Clover F{case['frame']} Mochi F{case['expectedFrames']['mochi']} | exact controls {row['valid']} | own red; cross magenta | threshold 0"
         cv2.putText(sheet, title, (8, 334), cv2.FONT_HERSHEY_SIMPLEX, .43, (240, 240, 240), 1)
         dest = review / f"{case['mode']}-{case['frame']}.png"
         assert not dest.exists() and cv2.imwrite(str(dest), sheet)

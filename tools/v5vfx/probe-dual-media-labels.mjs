@@ -28,23 +28,27 @@ const sample=()=>{
  const measure=node=>{if(!node||node.hidden)return null;const rr=[node,...node.querySelectorAll('*')].map(n=>n.getBoundingClientRect()).filter(r=>r.width&&r.height);if(!rr.length)return null;const x=Math.min(...rr.map(r=>r.left)),y=Math.min(...rr.map(r=>r.top));return{x,y,width:Math.max(...rr.map(r=>r.right))-x,height:Math.max(...rr.map(r=>r.bottom))-y};};
  return{url:location.href,screen:m.screen,paused:m.paused,plan:m.plan,battle:JSON.stringify(m.battle),sceneTime:s.time,renderTime:s.renderTime,host:canvas.toJSON(),media:Object.fromEntries(['mochi','clover'].map(cat=>{const actor=[...s.actors.values()].find(e=>e.asset===cat).actor,media=actor.designerMedia.media;return[cat,{state:{...media.state},decoded:window.__cxvMediaAudits[cat].decoded.at(-1),planeVisible:media.plane.visible,rootVisible:actor.root.visible,body:s.anchors.find(x=>x.id===cat)?.body,face:s.anchors.find(x=>x.id===cat)?.face}];})),labels:[...document.querySelectorAll('.b3-world')].map(node=>({id:node.dataset.actor,rect:measure(node),text:node.textContent,regions:Object.fromEntries([['hp','.b3-hp'],['rage','.b3-rage'],['name','.b3-world-name'],['status','.b3-marker-row']].map(([name,selector])=>[name,measure(node.querySelector(selector))]))})).filter(x=>x.rect)};
 };
-let browser;
+let browser,activePage;
 try{
  browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
  for(const condition of [{mode:'normal',frame:0},{mode:'normal',frame:90},{mode:'normal',frame:180},{mode:'normal',frame:270},{mode:'reduced',frame:0}]){
   stop();const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));report.errors.push(...errors);report.blockedRequests.push(...blockedRequests);
-  const reduced=condition.mode==='reduced',fixedTime=20+condition.frame/30+.25/30;
+  activePage=page;const reduced=condition.mode==='reduced';
   await page.evaluate(reduced=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state.settings.reducedMotion=false;m.paused=true;m.notify(false);},reduced);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
-  await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:21+.25/30,paused:true},0);});
-  await waitForDecodedMediaFrame(page,{sourceFrame:30});
+  await page.evaluate(()=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime:30,paused:true},0);});
+  await waitForDecodedMediaFrame(page);
+  const phaseOffsets=await page.evaluate(()=>Object.fromEntries(['mochi','clover'].map(cat=>[cat,[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state.desired])));
+  const fixedTime=40+(condition.frame+.25)/30-phaseOffsets.clover;
   await page.evaluate(reduced=>{window.__depthReview.state.settings.reducedMotion=reduced;},reduced);
   await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
-  await waitForDecodedMediaFrame(page,{sourceFrame:condition.frame,reduced});
+  const expectedFrames=await page.evaluate(reduced=>Object.fromEntries(['mochi','clover'].map(cat=>{const media=[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state;return[cat,reduced?0:Math.floor(media.desired*30+1e-6)];})),reduced);
+  assert.equal(expectedFrames.clover,condition.frame);
+  await page.waitForFunction(expected=>Object.entries(expected).every(([cat,frame])=>{const m=[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state,d=window.__cxvMediaAudits[cat].decoded.at(-1);return m.ready&&!m.seeking&&!m.failure&&d&&Math.abs(m.currentTime-m.desired)<=1/60&&Math.abs(d.mediaTime-frame/30)<1e-5;}),expectedFrames,{timeout:10000});
   await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
-  const before=await page.evaluate(sample),entry={...condition,fixedTime,before,errors,blockedRequests,captures:[]};report.cases.push(entry);await save();
+  const before=await page.evaluate(sample),entry={...condition,fixedTime,phaseOffsets,expectedFrames,before,errors,blockedRequests,captures:[]};report.cases.push(entry);await save();
   assert(before.paused&&!before.plan);assert.equal(before.url,judgeUrl);
-  for(const m of Object.values(before.media)){assert(m.state.ready&&!m.state.failure&&!m.state.disposed);assert(m.planeVisible&&m.rootVisible);assert(Math.abs(m.decoded.mediaTime-condition.frame/30)<1e-5);}
+  for(const [cat,m] of Object.entries(before.media)){assert(m.state.ready&&!m.state.failure&&!m.state.disposed);assert(m.planeVisible&&m.rootVisible);assert(Math.abs(m.decoded.mediaTime-expectedFrames[cat]/30)<1e-5);}
   await page.evaluate(installIsolation);
   const folder=resolve(out,condition.mode+'-'+condition.frame);await mkdir(folder,{recursive:true});
   for(const variant of ['baseline','baseline-repeat','labels-hidden','labels-hidden-repeat','without-mochi','without-clover','restored']){
@@ -63,5 +67,5 @@ try{
   assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);await page.close();await save();
  }
  assert.equal(runtimeEvidence().indexSha256,build.indexSha256);report.pass=true;
-}catch(error){report.failure=error.stack;process.exitCode=1;}
+}catch(error){report.failure=error.stack;if(activePage&&!activePage.isClosed())report.failureSample=await activePage.evaluate(sample).catch(e=>({error:String(e)}));process.exitCode=1;}
 finally{if(browser)await browser.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,cases:report.cases.length,captures:report.cases.reduce((n,c)=>n+c.captures.length,0),failure:report.failure}));}
