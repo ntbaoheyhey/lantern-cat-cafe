@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
 import {root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
-const production=resolve(root,'work/v5/CXV/films/V7-F-focus-read-native-production'),out=resolve(root,'work/v5/CXV/films/V7-F-density-roundtrip-pixels');assert(!existsSync(out));
+const production=resolve(root,'work/v5/CXV/films/V7-F-focus-read-native-production'),out=resolve(process.env.CXV_DENSITY_PIXEL_OUT??resolve(root,'work/v5/CXV/films/V7-F-density-roundtrip-pixels'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));
 const manifest=await readFile(resolve(production,'build.json')),built=JSON.parse(manifest),artifact=built.artifacts.find(a=>a.mode==='native');assert.equal(artifact.transformed,0);
 for(const f of artifact.files)assert.equal(hash(await readFile(resolve(artifact.dist,f.path))),f.sha256);
 await mkdir(out,{recursive:true});const script=await readFile(import.meta.filename);await writeFile(resolve(out,'probe.mjs'),script);
@@ -21,9 +21,10 @@ try{
   const name=initial+'-'+(reduced?'reduced':'normal'),{page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:initial,setupPage:p=>p.addInitScript(()=>{Math.random=()=>.5;})});await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});const cdp=await page.context().newCDPSession(page);
   await page.evaluate(reduced=>{for(const a of document.getAnimations())a.pause();const s=window.__depthScene,view=s.view;cancelAnimationFrame(s.raf);s.phaseNoticeAt=-100;s.view=()=>({...view(),reducedMotion:reduced,fixedTime:20.3,paused:true,galleryPreview:true});},reduced);
   const rows=[];let originScreenshot,originCanvas,originGeometry;
-  for(const [step,action]of ['initial','repeat','noop','other','return','repeat-return','noop-return'].entries()){
-   const ratio=action==='other'?(initial===1?2:1):initial;await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:ratio,mobile:false});
-   const data=await page.evaluate(({ratio,action})=>{const s=window.__depthScene;if(['noop','other','return','noop-return'].includes(action)){s.renderer.setPixelRatio(ratio);s.postFx.resize(s.width,s.height);}s.render(s.view(),0);return{canvas:s.renderer.domElement.toDataURL('image/png'),geometry:s.sizeAudit().units.sort((a,b)=>a.id.localeCompare(b.id)),ratio:s.renderer.getPixelRatio()};},{ratio,action});
+  const actions=process.env.CXV_DENSITY_PIXEL_SEQUENCE==='matched'?['initial','other','middle','return']:['initial','repeat','noop','other','return','repeat-return','noop-return'];
+  for(const [step,action]of actions.entries()){
+   const ratio=action==='other'?(initial===1?2:1):action==='middle'?1.5:initial;await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:720,deviceScaleFactor:ratio,mobile:false});
+   const data=await page.evaluate(({ratio,action})=>{const s=window.__depthScene;if(['noop','other','middle','return','noop-return'].includes(action)){s.renderer.setPixelRatio(ratio);s.postFx.resize(s.width,s.height);}s.render(s.view(),0);return{canvas:s.renderer.domElement.toDataURL('image/png'),geometry:s.sizeAudit().units.sort((a,b)=>a.id.localeCompare(b.id)),ratio:s.renderer.getPixelRatio()};},{ratio,action});
    if(!originGeometry)originGeometry=data.geometry;assert.deepEqual(data.geometry,originGeometry);
    await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
    const css=Buffer.from((await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,clip:{x:0,y:0,width:1280,height:720,scale:1/ratio}})).data,'base64'),canvas=Buffer.from(data.canvas.split(',')[1],'base64'),path=resolve(out,`${name}-${step}-${action}.png`),canvasPath=resolve(out,`${name}-${step}-${action}-canvas.png`);await writeFile(path,css);await writeFile(canvasPath,canvas);assert.equal(css.readUInt32BE(16),1280);assert.equal(css.readUInt32BE(20),720);

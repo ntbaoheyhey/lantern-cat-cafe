@@ -1,0 +1,682 @@
+{
+  "utc": "2026-11-18T02:02:25.527Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "artifactFilesVerified": 3764,
+  "toolSha256": "e5e68e3d3860960c611af58b15da318bd298e1c9bd23701c42e4ff6b326a2819",
+  "method": "Frozen native scene;no prototype wrapper. Compare repeat renders,no-op native setPixelRatio,and native2/1.5/origin buffer roundtrips. Same-session CDP CSS screenshots plus canvas pixels read synchronously immediately after existing native render. All geometry comparisons exact;pixel differences retained without tolerance.",
+  "runs": [
+    {
+      "initial": 1,
+      "reduced": false,
+      "rows": [
+        {
+          "step": 0,
+          "action": "initial",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-0-initial.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-0-initial-canvas.png",
+          "screenshotSha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+          "canvasSha256": "e9023ba91e8b65ae5a694adc07481f11d0aac4a220b5d092d3f8b01ccc0f637b",
+          "screenshotRgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+          "canvasRgbSha256": "9394cc0219783aa85d4cb4b79577497639e8b142bc7d2aa8759cc8deb26902e1",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 1,
+          "action": "repeat",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-1-repeat.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-1-repeat-canvas.png",
+          "screenshotSha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+          "canvasSha256": "e9023ba91e8b65ae5a694adc07481f11d0aac4a220b5d092d3f8b01ccc0f637b",
+          "screenshotRgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+          "canvasRgbSha256": "9394cc0219783aa85d4cb4b79577497639e8b142bc7d2aa8759cc8deb26902e1",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "noop",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-2-noop.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-2-noop-canvas.png",
+          "screenshotSha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+          "canvasSha256": "e9023ba91e8b65ae5a694adc07481f11d0aac4a220b5d092d3f8b01ccc0f637b",
+          "screenshotRgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+          "canvasRgbSha256": "9394cc0219783aa85d4cb4b79577497639e8b142bc7d2aa8759cc8deb26902e1",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 3,
+          "action": "other",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-3-other.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-3-other-canvas.png",
+          "screenshotSha256": "b7b0ebfac4a926e7cce5dfccefe56fbb6aaa105e0264ff5e617b1732504d401a",
+          "canvasSha256": "52e8437aa07f61260904c9d3480cbd460f06e930f4719e7e0467e93172bf5c24",
+          "screenshotRgbSha256": "f3385fa52b7f5c3b5ee841d61503152dcb6d9b767a0ac5150aeb759cdad0e894",
+          "canvasRgbSha256": "e72e52eb38d2e698a4266cf692757f722d2a746533575c39d6e077eb9adee298",
+          "geometryExact": true,
+          "screenshotDifference": null,
+          "canvasDifference": null
+        },
+        {
+          "step": 4,
+          "action": "return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-4-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-4-return-canvas.png",
+          "screenshotSha256": "b820ffa9ceb3777b7b589d68c2b92d8c247c6ef196945dbbacefda725c924aca",
+          "canvasSha256": "5fddd81b1e3a9b745fc0801e7aa3338f9acab65fe03f7a5246c382d299a3f940",
+          "screenshotRgbSha256": "44395fd5cb9b5ff4b45b87356bc59ea7ff10bfb922b149bef789932474b96001",
+          "canvasRgbSha256": "4c09308cae451c51e9b64893b22cf6af0bc9f56e79ee29166b824e1e1f3b588a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 344,
+            "max": 1,
+            "sum": 349
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 366,
+            "max": 1,
+            "sum": 372
+          }
+        },
+        {
+          "step": 5,
+          "action": "repeat-return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-5-repeat-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-5-repeat-return-canvas.png",
+          "screenshotSha256": "b820ffa9ceb3777b7b589d68c2b92d8c247c6ef196945dbbacefda725c924aca",
+          "canvasSha256": "5fddd81b1e3a9b745fc0801e7aa3338f9acab65fe03f7a5246c382d299a3f940",
+          "screenshotRgbSha256": "44395fd5cb9b5ff4b45b87356bc59ea7ff10bfb922b149bef789932474b96001",
+          "canvasRgbSha256": "4c09308cae451c51e9b64893b22cf6af0bc9f56e79ee29166b824e1e1f3b588a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 344,
+            "max": 1,
+            "sum": 349
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 366,
+            "max": 1,
+            "sum": 372
+          }
+        },
+        {
+          "step": 6,
+          "action": "noop-return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-6-noop-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-normal-6-noop-return-canvas.png",
+          "screenshotSha256": "b820ffa9ceb3777b7b589d68c2b92d8c247c6ef196945dbbacefda725c924aca",
+          "canvasSha256": "5fddd81b1e3a9b745fc0801e7aa3338f9acab65fe03f7a5246c382d299a3f940",
+          "screenshotRgbSha256": "44395fd5cb9b5ff4b45b87356bc59ea7ff10bfb922b149bef789932474b96001",
+          "canvasRgbSha256": "4c09308cae451c51e9b64893b22cf6af0bc9f56e79ee29166b824e1e1f3b588a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 344,
+            "max": 1,
+            "sum": 349
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 366,
+            "max": 1,
+            "sum": 372
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "initial": 1,
+      "reduced": true,
+      "rows": [
+        {
+          "step": 0,
+          "action": "initial",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-0-initial.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-0-initial-canvas.png",
+          "screenshotSha256": "6f312046c06f166aeb96efe6678296d4f898244fd031a52b620b15789ac08d31",
+          "canvasSha256": "6e36ed7289d91f1153d26a5291108c2660c8c7848840e90a1d650a7197fe5a31",
+          "screenshotRgbSha256": "ae786852cce9a0f65d7d78cce9e841ba8b0abba5de96c1cff8c199b742e613ad",
+          "canvasRgbSha256": "906180568a4e79b43e196c38d4720963780799d34ced620b401b757c36250acd",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 1,
+          "action": "repeat",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-1-repeat.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-1-repeat-canvas.png",
+          "screenshotSha256": "6f312046c06f166aeb96efe6678296d4f898244fd031a52b620b15789ac08d31",
+          "canvasSha256": "6e36ed7289d91f1153d26a5291108c2660c8c7848840e90a1d650a7197fe5a31",
+          "screenshotRgbSha256": "ae786852cce9a0f65d7d78cce9e841ba8b0abba5de96c1cff8c199b742e613ad",
+          "canvasRgbSha256": "906180568a4e79b43e196c38d4720963780799d34ced620b401b757c36250acd",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "noop",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-2-noop.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-2-noop-canvas.png",
+          "screenshotSha256": "6f312046c06f166aeb96efe6678296d4f898244fd031a52b620b15789ac08d31",
+          "canvasSha256": "6e36ed7289d91f1153d26a5291108c2660c8c7848840e90a1d650a7197fe5a31",
+          "screenshotRgbSha256": "ae786852cce9a0f65d7d78cce9e841ba8b0abba5de96c1cff8c199b742e613ad",
+          "canvasRgbSha256": "906180568a4e79b43e196c38d4720963780799d34ced620b401b757c36250acd",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 3,
+          "action": "other",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-3-other.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-3-other-canvas.png",
+          "screenshotSha256": "c9a854d20ca3fdfd360b4354ed04f70f9609a22266e4e2407da93b5a967e313c",
+          "canvasSha256": "c6a266c3dd024b6c85793495bbcc064665ba9d4c91d7afcf0a49cd9b23c4d536",
+          "screenshotRgbSha256": "17bc462a5063d2ba99ca68bccba24ab86013d4ce5fb02f3236334e22fe9bdee5",
+          "canvasRgbSha256": "1772b0397c2dacfeaf4f913e6b57be38b3b3785e2457fd977461b776d63b6ca7",
+          "geometryExact": true,
+          "screenshotDifference": null,
+          "canvasDifference": null
+        },
+        {
+          "step": 4,
+          "action": "return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-4-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-4-return-canvas.png",
+          "screenshotSha256": "9c27bc2f3c0614dd144796cd5e2438b4ad922e524e8b09baaf36798b00b84d10",
+          "canvasSha256": "4e1ea6935cc26533c74eb56541b28d956db1b7d7fd75b3ec476602dd0113992a",
+          "screenshotRgbSha256": "75b7731f827e1753ad0004cdf726ce5959b0142f993d575b849806cfe42613d0",
+          "canvasRgbSha256": "1bbd27b8a47564b3431723fe3c74fa1d4eee13ad283619a2cbcf286656fb6121",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 148,
+            "max": 1,
+            "sum": 151
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 152,
+            "max": 1,
+            "sum": 155
+          }
+        },
+        {
+          "step": 5,
+          "action": "repeat-return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-5-repeat-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-5-repeat-return-canvas.png",
+          "screenshotSha256": "9c27bc2f3c0614dd144796cd5e2438b4ad922e524e8b09baaf36798b00b84d10",
+          "canvasSha256": "4e1ea6935cc26533c74eb56541b28d956db1b7d7fd75b3ec476602dd0113992a",
+          "screenshotRgbSha256": "75b7731f827e1753ad0004cdf726ce5959b0142f993d575b849806cfe42613d0",
+          "canvasRgbSha256": "1bbd27b8a47564b3431723fe3c74fa1d4eee13ad283619a2cbcf286656fb6121",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 148,
+            "max": 1,
+            "sum": 151
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 152,
+            "max": 1,
+            "sum": 155
+          }
+        },
+        {
+          "step": 6,
+          "action": "noop-return",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-6-noop-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/1-reduced-6-noop-return-canvas.png",
+          "screenshotSha256": "9c27bc2f3c0614dd144796cd5e2438b4ad922e524e8b09baaf36798b00b84d10",
+          "canvasSha256": "4e1ea6935cc26533c74eb56541b28d956db1b7d7fd75b3ec476602dd0113992a",
+          "screenshotRgbSha256": "75b7731f827e1753ad0004cdf726ce5959b0142f993d575b849806cfe42613d0",
+          "canvasRgbSha256": "1bbd27b8a47564b3431723fe3c74fa1d4eee13ad283619a2cbcf286656fb6121",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": false,
+            "pixels": 148,
+            "max": 1,
+            "sum": 151
+          },
+          "canvasDifference": {
+            "exact": false,
+            "pixels": 152,
+            "max": 1,
+            "sum": 155
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "initial": 2,
+      "reduced": false,
+      "rows": [
+        {
+          "step": 0,
+          "action": "initial",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-0-initial.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-0-initial-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 1,
+          "action": "repeat",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-1-repeat.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-1-repeat-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "noop",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-2-noop.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-2-noop-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 3,
+          "action": "other",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-3-other.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-3-other-canvas.png",
+          "screenshotSha256": "7d09bbde5f3a22deb3d99ab638be338c5022baf4e23bf440d44aa8a104e598a8",
+          "canvasSha256": "c45274675c0ca6ad6290c5935a8ff89fac086976bb1e47dd189a6878592b3add",
+          "screenshotRgbSha256": "47c1f935c42cd3ee7991b2279d398fcbae5ca3c1f0c313915143262d17d3b068",
+          "canvasRgbSha256": "4e44c04b3cc078ec34c9a5a0ef394408ac9c399ac57047d67b262f9059627857",
+          "geometryExact": true,
+          "screenshotDifference": null,
+          "canvasDifference": null
+        },
+        {
+          "step": 4,
+          "action": "return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-4-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-4-return-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 5,
+          "action": "repeat-return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-5-repeat-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-5-repeat-return-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 6,
+          "action": "noop-return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-6-noop-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-normal-6-noop-return-canvas.png",
+          "screenshotSha256": "1f80bdd6a5ec97027add93fe64011a1e7a10f085d1d544a7485f5ad73d5091f0",
+          "canvasSha256": "cbaee0550a1b5b94d5b6a34156ad8684e8974d3e9bf85fb6b5d3e004b543a057",
+          "screenshotRgbSha256": "05088429647caad723e8d797108e60b6eab877e1d22abc853b98e41c12678eb0",
+          "canvasRgbSha256": "de525d2e79c1a9aa5e6f7900370322b7173dd5499f3aacecb1859113ce564f0a",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "initial": 2,
+      "reduced": true,
+      "rows": [
+        {
+          "step": 0,
+          "action": "initial",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-0-initial.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-0-initial-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 1,
+          "action": "repeat",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-1-repeat.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-1-repeat-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 2,
+          "action": "noop",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-2-noop.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-2-noop-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 3,
+          "action": "other",
+          "ratio": 1,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-3-other.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-3-other-canvas.png",
+          "screenshotSha256": "82c69c0fc4d4d855d73778490230da6d3031fde558e723e9b3604c04ee701de3",
+          "canvasSha256": "9e782d363b779f50deac04398850c0b58955c94ffb26e460e5f4df41130b8060",
+          "screenshotRgbSha256": "4e006fe39ffffc1cc6e3be9c114a516c90d6191aac265f8a1ae397e16fd0e412",
+          "canvasRgbSha256": "22bf8d4700505be295ae1f38798d311d1f279f0c0c1204534f87053a72fc8bc7",
+          "geometryExact": true,
+          "screenshotDifference": null,
+          "canvasDifference": null
+        },
+        {
+          "step": 4,
+          "action": "return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-4-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-4-return-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 5,
+          "action": "repeat-return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-5-repeat-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-5-repeat-return-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        },
+        {
+          "step": 6,
+          "action": "noop-return",
+          "ratio": 2,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-6-noop-return.png",
+          "canvasPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/2-reduced-6-noop-return-canvas.png",
+          "screenshotSha256": "34ce6798e001029ef011b36a7aec9472092c10b41ac853cf9486c45198c261a2",
+          "canvasSha256": "efc58dd35aeab788083f7a6d8f3b0d42ffc9806e413c007ef6fcf9fd954820f4",
+          "screenshotRgbSha256": "59396e15371ddf2b4d0c1a430235c7a555be6fd8f21a9e8bfb45070fa5614f63",
+          "canvasRgbSha256": "e5aff7505770e0f7c0fa7c8236b26fdade125a1704617b01f1800b83f725e4be",
+          "geometryExact": true,
+          "screenshotDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          },
+          "canvasDifference": {
+            "exact": true,
+            "pixels": 0,
+            "max": 0,
+            "sum": 0
+          }
+        }
+      ],
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "pass": true,
+  "ended": "2026-11-18T02:02:48.900Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-density-roundtrip-pixels/report.json",
+    "sha256": "3cca48dec1e2115cb3d67d733739038c9430939ef604cca8597f9fc6c4e9c12f"
+  }
+}
