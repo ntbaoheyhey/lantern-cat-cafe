@@ -15,6 +15,7 @@ const sha=x=>createHash('sha256').update(x).digest('hex');
 const candidateMode=process.argv.includes('--candidate-mochi');
 const fourIndex=process.argv.indexOf('--four-plane-study'),fourPlaneLabel=fourIndex<0?null:process.argv[fourIndex+1];
 const runIndex=process.argv.indexOf('--run-label'),runLabel=runIndex<0?'r1':process.argv[runIndex+1];
+const suspensionMode=process.argv.includes('--suspension');assert(!suspensionMode||fourPlaneLabel,'Suspension gate uses the accepted four-plane study');
 assert(fourIndex<0||(/^[a-z0-9-]+$/.test(fourPlaneLabel??'')&&!candidateMode));assert(/^[a-z0-9-]+$/.test(runLabel??''));
 const oneCatMode=candidateMode||!!fourPlaneLabel;
 const work=resolve(root,'work/v5/CXI/batch-m',fourPlaneLabel?`${fourPlaneLabel}/runtime-native-${runLabel}`:runIndex<0?'loader':`loader-${runLabel}`);
@@ -85,11 +86,16 @@ window.run=async (m,mode='normal')=>{
  render();check('poster-before-decode',media.packed.value===0);
  const initial=new Float32Array(media.basePositions);
  if(mode==='dispose-early'){media.dispose();check('early-disposal-resolves',await media.ready===false);check('early-src-released',!media.video.getAttribute('src'));renderer.dispose();return {mode,checks};}
+ if(mode==='suspend-early'){
+  media.setSuspended(true);await wait(5200);
+  check('suspended-startup-no-timeout',!media.failure&&media.video.paused&&!media.state.ready,media.state);
+  media.setSuspended(false);
+ }
  media.sample({worldTime:0,paused:true,fixedTime:true,frozen:false},false);
  const ready=await media.ready;
  HTMLMediaElement.prototype.play=oldPlay;
- check('ready-result',ready===(mode==='normal'),media.state);
- if(mode!=='normal'){
+ check('ready-result',ready===(mode==='normal'||mode==='suspend-early'),media.state);
+ if(mode!=='normal'&&mode!=='suspend-early'){
   check('failure-retains-poster',media.material.map===media.posterTexture&&media.packed.value===0,media.failure);
   check('failure-releases-decoder',!media.video.getAttribute('src')&&media.video.paused);
   media.dispose();renderer.dispose();return {mode,checks};
@@ -131,6 +137,17 @@ window.run=async (m,mode='normal')=>{
  const beforeEvents=events;media.sample({worldTime:3,paused:false,fixedTime:false,frozen:false,playbackRate:1},false);const one=media.video.currentTime;await wait(420);check('normal-playback',media.video.currentTime-one>.25,media.video.currentTime-one);check('frame-invalidations',events-beforeEvents>=5,events-beforeEvents);
  media.sample({worldTime:media.video.currentTime,paused:false,fixedTime:false,frozen:false,playbackRate:2},false);const two=media.video.currentTime;await wait(350);check('double-speed',media.video.currentTime-two>.45&&media.video.currentTime-two<1.1,media.video.currentTime-two);
  await seek(9.9);media.sample({worldTime:9.9,paused:false,fixedTime:false,frozen:false,playbackRate:1},false);await wait(240);check('native-loop-crossing',media.video.currentTime<.6,media.state);
+ if(${suspensionMode}){
+  media.setSuspended(true);await wait(120);
+  const at=media.video.currentTime,frames=media.video.getVideoPlaybackQuality(),heldEvents=events;
+  media.sample({worldTime:8,paused:false,fixedTime:false,frozen:false},false);await wait(650);
+  const after=media.video.getVideoPlaybackQuality();
+  check('suspended-decoder-stops',media.video.paused&&Math.abs(media.video.currentTime-at)<.002&&after.totalVideoFrames===frames.totalVideoFrames&&after.droppedVideoFrames===frames.droppedVideoFrames&&events===heldEvents,{at,afterTime:media.video.currentTime,framesBefore:frames.totalVideoFrames,framesAfter:after.totalVideoFrames,droppedBefore:frames.droppedVideoFrames,droppedAfter:after.droppedVideoFrames,invalidations:events-heldEvents,state:media.state});
+  media.setSuspended(false);check('resume-awaits-clock',media.video.paused);
+  media.sample({worldTime:at,paused:true,fixedTime:false,frozen:false},false);check('paused-resume-stays-paused',media.video.paused);
+  media.sample({worldTime:at,paused:false,fixedTime:false,frozen:false},false);await wait(240);
+  check('active-resume-plays',!media.video.paused&&media.video.currentTime-at>.12&&!media.failure,media.state);
+ }
  media.sample({worldTime:1,paused:true,fixedTime:true,frozen:false},false);media.sample({worldTime:8,paused:true,fixedTime:true,frozen:false},false);
  await until(()=>!media.video.seeking&&designerDrift(media.video.currentTime,8)<.04,'queued seek lost');check('latest-seek-wins',true,media.state);
  await seek(4);const beforeRestore=renderer.domElement.toDataURL('image/png');const extension=renderer.getContext().getExtension('WEBGL_lose_context');let lost=false,restored=false;
@@ -153,7 +170,7 @@ try{for(const engine of ['chromium','webkit']){
  if(!existsSync(engines[engine].executablePath())){report.runs.push({engine,unavailable:true});continue;}
  const browser=await engines[engine].launch({headless:true,...(engine==='chromium'?{args:['--use-angle=metal']}: {})});
  try{if(controlOnly){const page=await browser.newPage(),errors=[];page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await page.goto(report.url);await page.waitForFunction(()=>window.harnessReady);await page.evaluate(()=>window.control());await page.waitForTimeout(100);report.runs.push({engine,errors});await page.close();continue;}
- for(const [cat,manifest] of Object.entries(manifests))for(const mode of (fourPlaneLabel?['normal','reject','dispose-early','bad-metadata']:['normal','reject','dispose-early'])){
+ for(const [cat,manifest] of Object.entries(manifests))for(const mode of (fourPlaneLabel?['normal','reject','dispose-early','bad-metadata',...(suspensionMode?['suspend-early']:[])]:['normal','reject','dispose-early'])){
   const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
   try{await page.goto(report.url);await page.waitForFunction(()=>window.harnessReady);const row=await page.evaluate(({manifest,mode})=>window.run(manifest,mode),{manifest,mode});
    for(const key of ['capture','castCapture'])if(row[key]){const png=Buffer.from(row[key].split(',')[1],'base64');delete row[key];const file=resolve(work,`${candidateMode?'candidate-':''}${engine}-${cat}-${key}.png`);await writeFile(file,png);row[key+'Image']={path:file,sha256:sha(png),...await sharp(png).metadata()};delete row[key+'Image'].icc;}
@@ -161,7 +178,7 @@ try{for(const engine of ['chromium','webkit']){
   }catch(e){report.runs.push({engine,cat,mode,error:String(e),errors});console.log(engine,cat,mode,String(e));}finally{await page.close();}
  }}finally{await browser.close();}
 }}finally{await server.close();}
-report.pass=report.runs.length===(fourPlaneLabel?8:candidateMode?6:12)&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
+report.pass=report.runs.length===(fourPlaneLabel?(suspensionMode?10:8):candidateMode?6:12)&&report.runs.every(r=>!r.error&&!r.errors?.length&&r.checks?.every(c=>c.pass));
 report.candidate=candidateMode;report.adapterSha256=sha(await readFile(resolve(app,'src/game/cardrpg/spine/designer-idle-actor-loader.ts')));
 if(candidateMode)report.purpose='Actual384px candidate isolated native loader+cast; gameplay, cold bytes and art acceptance remain separate';
 if(fourPlaneLabel){report.purpose='Actual four-plane candidate through production loader; rescaled study anchors only, not anatomy or judge-scene acceptance';report.fourPlane={label:fourPlaneLabel,sourceRgbaSha256:fourPlaneReceipt.sourceRgbaSha256,videoSha256:manifests.mochi.videoSha256,videoBytes:manifests.mochi.videoBytes};report.harnessSha256=sha(await readFile(import.meta.filename));await writeFile(resolve(work,'report.json'),JSON.stringify(report,null,2)+'\n');}
