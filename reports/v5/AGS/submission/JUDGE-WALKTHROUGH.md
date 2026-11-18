@@ -37,3 +37,4 @@
 | :--- | :--- | :--- |
 | **Guest Mode** | Play locally | Click "Play free". |
 | **Chain Integration** | Local demo mode | Battle result screen explicitly states no transaction was sent. |
+| **Funding** | Local simulation | Plays locally without a wallet or test tokens. |
