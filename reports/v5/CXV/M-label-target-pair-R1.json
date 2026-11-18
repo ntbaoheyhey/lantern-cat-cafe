@@ -1,0 +1,1780 @@
+{
+  "utc": "2026-11-18T13:46:39.760135+00:00",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-target-pair-r1-134447/dy0/analysis.json",
+      "sha256": "9061e9e38a5a041bf802671307e1fd5627ac563f8e399cab4a4ae69e6d5a7253"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-target-pair-r1-134447/dy5/analysis.json",
+      "sha256": "df2eef8c7f682f966b55dca47da03ebe5d6b6675dc3fe5e6c69d697b3bbfe1f8"
+    }
+  ],
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/compare-label-target-pair.py",
+    "sha256": "9a647663b25a3b72fdeac33ea63c83eddad59d85d9d13f4fb7df7bb1d2096a5a"
+  },
+  "cases": [
+    {
+      "mode": "normal",
+      "sourceFrame": 0,
+      "expectedFrames": {
+        "mochi": 191,
+        "clover": 0
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 32,
+          "bbox": [
+            361,
+            346,
+            369,
+            353
+          ],
+          "sampleXY": [
+            [
+              361,
+              346
+            ],
+            [
+              362,
+              346
+            ],
+            [
+              363,
+              346
+            ],
+            [
+              364,
+              346
+            ],
+            [
+              365,
+              346
+            ],
+            [
+              366,
+              346
+            ],
+            [
+              361,
+              347
+            ],
+            [
+              362,
+              347
+            ]
+          ]
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 32,
+          "bbox": [
+            361,
+            346,
+            369,
+            353
+          ],
+          "sampleXY": [
+            [
+              361,
+              346
+            ],
+            [
+              362,
+              346
+            ],
+            [
+              363,
+              346
+            ],
+            [
+              364,
+              346
+            ],
+            [
+              365,
+              346
+            ],
+            [
+              366,
+              346
+            ],
+            [
+              361,
+              347
+            ],
+            [
+              362,
+              347
+            ]
+          ]
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 17,
+      "expectedFrames": {
+        "mochi": 208,
+        "clover": 17
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 56,
+          "bbox": [
+            546,
+            247,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              247
+            ],
+            [
+              546,
+              248
+            ],
+            [
+              547,
+              248
+            ],
+            [
+              548,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        "own": {
+          "count": 56,
+          "bbox": [
+            546,
+            247,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              247
+            ],
+            [
+              546,
+              248
+            ],
+            [
+              547,
+              248
+            ],
+            [
+              548,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 56,
+          "bbox": [
+            546,
+            247,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              247
+            ],
+            [
+              546,
+              248
+            ],
+            [
+              547,
+              248
+            ],
+            [
+              548,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        "own": {
+          "count": 56,
+          "bbox": [
+            546,
+            247,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              247
+            ],
+            [
+              546,
+              248
+            ],
+            [
+              547,
+              248
+            ],
+            [
+              548,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 43,
+      "expectedFrames": {
+        "mochi": 234,
+        "clover": 43
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 4,
+          "bbox": [
+            365,
+            346,
+            369,
+            350
+          ],
+          "sampleXY": [
+            [
+              365,
+              346
+            ],
+            [
+              366,
+              346
+            ],
+            [
+              366,
+              347
+            ],
+            [
+              368,
+              349
+            ]
+          ]
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 4,
+          "bbox": [
+            365,
+            346,
+            369,
+            350
+          ],
+          "sampleXY": [
+            [
+              365,
+              346
+            ],
+            [
+              366,
+              346
+            ],
+            [
+              366,
+              347
+            ],
+            [
+              368,
+              349
+            ]
+          ]
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 68,
+      "expectedFrames": {
+        "mochi": 259,
+        "clover": 68
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 113,
+      "expectedFrames": {
+        "mochi": 4,
+        "clover": 113
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 147,
+      "expectedFrames": {
+        "mochi": 38,
+        "clover": 147
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 340,
+          "bbox": [
+            546,
+            239,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        "own": {
+          "count": 340,
+          "bbox": [
+            546,
+            239,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 340,
+          "bbox": [
+            546,
+            239,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        "own": {
+          "count": 340,
+          "bbox": [
+            546,
+            239,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 204,
+      "expectedFrames": {
+        "mochi": 95,
+        "clover": 204
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 236,
+      "expectedFrames": {
+        "mochi": 127,
+        "clover": 236
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 93,
+          "bbox": [
+            546,
+            245,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ],
+            [
+              548,
+              247
+            ],
+            [
+              551,
+              247
+            ],
+            [
+              562,
+              247
+            ],
+            [
+              563,
+              247
+            ]
+          ]
+        },
+        "own": {
+          "count": 93,
+          "bbox": [
+            546,
+            245,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ],
+            [
+              548,
+              247
+            ],
+            [
+              551,
+              247
+            ],
+            [
+              562,
+              247
+            ],
+            [
+              563,
+              247
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 93,
+          "bbox": [
+            546,
+            245,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ],
+            [
+              548,
+              247
+            ],
+            [
+              551,
+              247
+            ],
+            [
+              562,
+              247
+            ],
+            [
+              563,
+              247
+            ]
+          ]
+        },
+        "own": {
+          "count": 93,
+          "bbox": [
+            546,
+            245,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ],
+            [
+              548,
+              247
+            ],
+            [
+              551,
+              247
+            ],
+            [
+              562,
+              247
+            ],
+            [
+              563,
+              247
+            ]
+          ]
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "normal",
+      "sourceFrame": 289,
+      "expectedFrames": {
+        "mochi": 180,
+        "clover": 289
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    },
+    {
+      "mode": "reduced",
+      "sourceFrame": 0,
+      "expectedFrames": {
+        "mochi": 0,
+        "clover": 0
+      },
+      "gates": {
+        "bothAttributionsValid": true,
+        "rules": true,
+        "frames": true,
+        "clocks": true,
+        "hudUnchanged": true,
+        "actualLabelDisplacement": true,
+        "canvasExact": true,
+        "outsideCloverExact": true,
+        "facesHudOtherLabelsClear": true
+      },
+      "labelDeltas": {
+        "mochi": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "clover": {
+          "x": 0.0,
+          "y": 5.0,
+          "width": 0,
+          "height": 0
+        },
+        "panko": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "mallow": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-0-yarn-giant": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-1-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        },
+        "foe-2-binding-thread": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "canvasChangedPixels": 0,
+      "outsideCloverChangedPixels": 0,
+      "baseline": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidate": {
+        "all": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "own": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        },
+        "cross": {
+          "count": 0,
+          "bbox": null,
+          "sampleXY": []
+        }
+      },
+      "candidateBodyRectangleIntersections": [
+        "mochi"
+      ]
+    }
+  ],
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "pairValid": true,
+  "sampledCommissionedPaintClear": false,
+  "limits": [
+    "Fitted baseline F0 plus eight new paused idle poses and reduced F0; no all-frame or cast clearance.",
+    "Reversible target offset on unchanged application source, not an accepted source change.",
+    "Only commissioned media contributions isolated; native-body paint and source seam/matte remain open.",
+    "Conservative body-rectangle results are retained; no natural-play acceptance."
+  ],
+  "cloverTargetSampledPaintClear": true,
+  "remainingMochiOwn": [
+    {
+      "cloverFrame": 17,
+      "mochiFrame": 208,
+      "regions": {
+        "whole": {
+          "0": 56,
+          "1": 34,
+          "2": 33,
+          "4": 27
+        },
+        "hp": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        },
+        "rage": {
+          "0": 52,
+          "1": 34,
+          "2": 33,
+          "4": 27
+        },
+        "status": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      "initialVsBaseline": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "cloverFrame": 147,
+      "mochiFrame": 38,
+      "regions": {
+        "whole": {
+          "0": 340,
+          "1": 281,
+          "2": 262,
+          "4": 251
+        },
+        "hp": {
+          "0": 129,
+          "1": 83,
+          "2": 67,
+          "4": 61
+        },
+        "rage": {
+          "0": 157,
+          "1": 150,
+          "2": 148,
+          "4": 145
+        },
+        "status": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      "initialVsBaseline": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "cloverFrame": 236,
+      "mochiFrame": 127,
+      "regions": {
+        "whole": {
+          "0": 93,
+          "1": 73,
+          "2": 67,
+          "4": 63
+        },
+        "hp": {
+          "0": 4,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        },
+        "rage": {
+          "0": 74,
+          "1": 69,
+          "2": 64,
+          "4": 61
+        },
+        "status": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "4": 0
+        }
+      },
+      "initialVsBaseline": {
+        "hp": 0,
+        "rage": 81
+      }
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-target-pair-r1-134447/dy5/label-review-134633169531/normal-0.png",
+      "sha256": "79d8feabb6e30f2d1ac855ace7a319749aaae39b151691ec0c2332f222bad5ce",
+      "dimensions": [
+        1024,
+        600
+      ],
+      "mode": "normal",
+      "sourceFrame": 0,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:48:46.826453+00:00",
+      "observation": "Clover status mark is visibly clear of Mochi tail at this source phase with +5px target;no face/HUD intrusion seen. Whole scene remains readable at sheet scale."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-target-pair-r1-134447/dy0/label-review-134539207615/normal-147.png",
+      "sha256": "407de561a7fbfdec1a5263b7381f252468e169d728740ef8f66db057aac04e50",
+      "dimensions": [
+        1024,
+        600
+      ],
+      "mode": "normal",
+      "sourceFrame": 147,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:48:46.826453+00:00",
+      "observation": "Mochi HP/rage bars cover part of raised shield/hand area. Red attribution lies along left/lower HP and rage surfaces;face remains visible. All exact controls pass;HP initial pixels exact, rage initial paint differs81pixels."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-target-pair-r1-134447/dy0/label-review-134539207615/normal-236.png",
+      "sha256": "c22b3ebf88f1a50b8b0318c8d619eb75493de49c4d0b353ad778f24cb8fdf1da",
+      "dimensions": [
+        1024,
+        600
+      ],
+      "mode": "normal",
+      "sourceFrame": 236,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:48:46.826453+00:00",
+      "observation": "Mochi rage lower-left edge grazes raised hand/shield area. HP threshold0 contribution4pixels disappears above1. Whole scene readable;this is separate from Clover target offset."
+    }
+  ],
+  "visualReviewed": true,
+  "visualReviewedUTC": "2026-11-18T13:48:46.826453+00:00",
+  "verdict": "Clover +5px scoped ten-paused-case candidate passes. Overall label/media clearance fails on three fresh Mochi own-label phases;no source or ordinary-play acceptance."
+}
