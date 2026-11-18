@@ -3,8 +3,8 @@ ACTIVE structural label association study;L1 R1/R2 sixsheets once,83+40crops;ons
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
 NEXT 1: Finish portrait/status capacity and canvas-readback studies;implementation gates17:44:46/17:45:44Z;freeze pilot,then request freshCXI lease.
 NEXT 2: CXI audit independently ACCEPTS numbers/REJECTS lowerproposal;study structuralpresentation;bodyoccluder40/88 displacementfail,max165.575px;strictpaintcontrolsBLOCKED,nooffsetrefit.
-NEXT 3: AGV T-M2/T-M4-EVIDENCE latestREDO;18percat timelinehashesverified;film/sheet/L1/testmissing;2tasks active.
-Last confirmed pushed71d8bfa56;priorrecovery94705exit0;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
+NEXT 3: AGV T-M2/T-M4-EVIDENCE REDO;36timeline/report hashes verified;FilmPath wronglyJSON,correct realfilm/sheet/L1/test inventory.
+Last confirmed pushed7552c681c;priorrecovery94705exit0;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T17:40Z;preserve unchanged.
 Jobs:none;CXI reserves6301/timing17:30:34–17:48:34Z ANDrelease;CXV nolease/no browser.

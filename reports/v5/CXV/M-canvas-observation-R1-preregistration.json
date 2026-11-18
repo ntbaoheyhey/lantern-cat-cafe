@@ -1,0 +1,102 @@
+{
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "hudPortraitPause": {
+    "enabled": true,
+    "targets": [
+      ".b3-bottom .b3-portrait",
+      ".b3-bottom .b3-portrait-shine"
+    ],
+    "basis": "R1 controls differed only readiness portrait area617..749x606..720. Recorded infinite1200ms ready and2400ms shine kept advancing; all world-state gates exact.",
+    "method": "Pause these existing infinite HUD animations at their observed currentTime; await ready and require paused. Record targets/times/rects. Do not hide HUD or alter labels; no blanket animation disabling.",
+    "scope": "Additional diagnostic only;no natural presentation acceptance. Preserve R1invalid result."
+  },
+  "hudMeterSettlement": {
+    "timeoutMs": 2500,
+    "stableFrames": 3,
+    "inlinePercentTolerance": 1e-06,
+    "widthToleranceCSSpx": 0.015625,
+    "scope": "Natural five visible boss/bottom HUD meter convergence plus finite animation completion; CXI independently validated pilot; no timer/style mutations.",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-control-pilot-r1/hud-meter-observation.mjs",
+    "sourceSha256": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  },
+  "displayedFrameGate": true,
+  "utc": "2026-11-18T17:42:23.109304+00:00",
+  "study": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-canvas-paint-observation-v8-20261118.md",
+  "implementationNotBeforeUTC": "2026-11-18T17:45:44Z",
+  "captureRequires": "Fresh explicit CXI grant and predecessor job release",
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 1,
+      "ms": 350
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 125
+    },
+    {
+      "mode": "normal",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 225
+    },
+    {
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 125
+    },
+    {
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 225
+    }
+  ],
+  "sequence": [
+    "screen0",
+    "canvas0",
+    "screen1",
+    "canvas1",
+    "screen2",
+    "canvas2"
+  ],
+  "screenDimensions": [
+    1280,
+    720
+  ],
+  "mutations": "Only inherited deterministic fixture/action/decoded-frame/HUD animation pause and natural settlement before series; no style/conceal/layout injection or redraw for readback within series.",
+  "gates": {
+    "screens": "screen0 RGB exactly equals screen1 and screen2, no masks",
+    "canvases": "canvas0 RGBA exactly equals canvas1 and canvas2, no masks",
+    "state": "Full inherited sample plus renderer, computed styles, footer geometry identical before and after all six observations; record actual mismatches without removing fields",
+    "rules": "Independent legal action reference exact; initial/expected/actual retained",
+    "dimensions": "PNG sizes equal declared screenshot and actual canvas bitmap; raw compositor comparison only when canvas bitmap/CSS rect match at integer CSS origin and identity transform",
+    "errors": "No page errors or blocked requests"
+  },
+  "crossMethod": "Screen crop minus raw canvas descriptive only. Count every changed pixel, in and outside label/HUD union+2px. No inference that changes are label paint; no masking into a pass.",
+  "footerCapacity": {
+    "mode": "Read-only unchanged baseline geometry; no panel injection",
+    "panelWidth": 160,
+    "panelHeight": 72,
+    "panelGap": 8,
+    "controlClearance": 12,
+    "topOffset": 7,
+    "count": 2,
+    "left": "speed.right+12",
+    "rightLimit": "party.left-12",
+    "need": "Both rectangles entirely inside existing footer and zero overlap with controls, portrait paint or body bounds. Does not establish actual content or owner association."
+  },
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "priorRejectionsRetained": true
+}
