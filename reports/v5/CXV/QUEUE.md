@@ -101,3 +101,6 @@
 2026-11-18T02:43:08.002741+00:00 V-E native context-loss defect reproducedf991fb117:both motion modes ready=true hide original fallback while GPUbuffer lost;real restoration recovers, reduced fullRGBexact.6captures measured/2freshsheets reviewed once;0errors/blocks. Tools-only prototype next;no applicationedit.
 
 2026-11-18T02:54:15.165647+00:00 V-E context-loss prototype localPASS28tests/TSC0/6exactRGBpairs/2lifecycles;original fallback visible only after hiding lostcanvas,12frames/4freshreviews. Earlier whitecanvas prototype retainedvisualFAIL. Nativeadoption BLOCKED-ON CXI densityaudit sourcehold;verifier/runner prepared. m1.11green merged1d83dcba7.
+
+2026-11-18T03:02:58.155553+00:00 CXI ACCEPT02:57Z independently verifies battle/victory density+fallback/demand dependencies:26tests/build0,12transitions,8freshimages,exactgeometry,reducedidle0. Native context repairaaf822cad now28tests/fullTSC0;production25904 context+density gates pass,4ordinarytrials ongoing.
+2026-11-18T03:05:55.742705+00:00 V7 V-E native context repairaaf822cad PASS28tests/TSC0/3764artifacthashes/6tools/2lossrestore/6density/four32sCPU1x4x;reduced0draws/uploads,fullRGBexact;18full+4crew captures,5freshsheetsreviewedonce. V-F pausedbattle loss native reproduced:restored0draws+erroroverlay in bothmodes,6captures/2freshsheetsreviewedonce;application unchanged. Browser released.

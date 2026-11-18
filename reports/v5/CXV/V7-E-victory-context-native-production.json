@@ -1,0 +1,204 @@
+{
+  "utc": "2026-11-18T03:03:42.552Z",
+  "source": "aaf822cad63501dff0dfdf4cf4f9845ad2f4cc46",
+  "victoryContextSha256": "adaec017f79251580a399db2200295fbf476fc2e1d0f49ea58b0911ad94a6dc5",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "57aaadc8c71f59bc4490d4a73ebbbae5694cc06b4fba98b4258fc5127ef16bd8",
+  "artifactTransforms": 0,
+  "artifactFiles": 3764,
+  "envDir": false,
+  "snapshots": [
+    {
+      "name": "run-victory-context-native.mjs",
+      "sha256": "f4cac72cbc19f1a675f7a163f68cb66ddbab26134eb3656a025d7cb1454241d8"
+    },
+    {
+      "name": "build-hud-production.mjs",
+      "sha256": "ed0207338f9a07a6cdd74cd1728251a41608f6a43ac73ebf78064c2fd4fa45a2"
+    },
+    {
+      "name": "probe-victory-context-loss.mjs",
+      "sha256": "1ece70e0e93322fe5d3eac2563d55d00baea89a9682f0a87225477c59c0b31c9"
+    },
+    {
+      "name": "probe-victory-density.mjs",
+      "sha256": "96cc7d0db68e6759a84384b595484043c2b640a8fb1600ceab7d750db2410e35"
+    },
+    {
+      "name": "benchmark-victory-production.mjs",
+      "sha256": "fc116d2775e702990a04c717744b5d9217a53aae71f984fe93b00400a0da0fef"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/build.json",
+    "sha256": "2c44c5b8953a948b95544c157268504133b6607305ebc710f9f921f8d823dfde"
+  },
+  "context": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/context/report.json",
+    "sha256": "5569e8730777b69f44e45177fc90b50bd296ddde520151d0f8914162a8e5e59b",
+    "cases": 2,
+    "captures": 6
+  },
+  "density": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/density/report.json",
+    "sha256": "99743f4e727ceb96ded1253f90ea17ebe06539aa6ea1bab04f140f7f077eb2e1",
+    "transitions": 6,
+    "captures": 8
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/report.json",
+    "sha256": "d8329d20980bb62eccd8b9b7b741e32827a06834d6a2d5669f18fc454ec73cc1"
+  },
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "deviceScaleFactor": 2,
+  "started": "2026-11-18T03:00:51.696Z",
+  "ended": "2026-11-18T03:03:42.513Z",
+  "runs": [
+    {
+      "rate": 1,
+      "reduced": true,
+      "utc": "2026-11-18T03:01:50.916Z",
+      "elapsedMs": 32005.59999999404,
+      "counters": {
+        "draws": 0,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 0.11184,
+        "ScriptDuration": 0.005406,
+        "LayoutDuration": 0.000691,
+        "RecalcStyleDuration": 0.005425,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 2
+      },
+      "heapBefore": 35681692,
+      "heapAfter": 24856500,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/1x-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/1x-reduced-crew.png",
+      "crewSha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "rate": 1,
+      "reduced": false,
+      "utc": "2026-11-18T03:02:28.046Z",
+      "elapsedMs": 32005.10000000894,
+      "counters": {
+        "draws": 7680,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 3.8742650000000003,
+        "ScriptDuration": 3.181171,
+        "LayoutDuration": 0.000559,
+        "RecalcStyleDuration": 0.022135,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 121
+      },
+      "heapBefore": 43346904,
+      "heapAfter": 43324536,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/1x-normal.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/1x-normal-crew.png",
+      "crewSha256": "efb7acddf508a179946b6cabe24efc9b2a21cda53334b979e3246601044733c7"
+    },
+    {
+      "rate": 4,
+      "reduced": true,
+      "utc": "2026-11-18T03:03:05.766Z",
+      "elapsedMs": 32003.70000000298,
+      "counters": {
+        "draws": 0,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 0.166731,
+        "ScriptDuration": 0.007293,
+        "LayoutDuration": 0.00166,
+        "RecalcStyleDuration": 0.008058,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 2
+      },
+      "heapBefore": 36911088,
+      "heapAfter": 24889992,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 0,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/4x-reduced.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/4x-reduced-crew.png",
+      "crewSha256": "f59ad53479464f28d3970666929ddf08711e47e4431ad8d894a878593c2e9a24"
+    },
+    {
+      "rate": 4,
+      "reduced": false,
+      "utc": "2026-11-18T03:03:42.508Z",
+      "elapsedMs": 32005.59999999404,
+      "counters": {
+        "draws": 7680,
+        "uploads": 0
+      },
+      "metrics": {
+        "TaskDuration": 7.677191,
+        "ScriptDuration": 6.19881,
+        "LayoutDuration": 0.000685,
+        "RecalcStyleDuration": 0.041609,
+        "LayoutCount": 3,
+        "RecalcStyleCount": 120
+      },
+      "heapBefore": 32608836,
+      "heapAfter": 40452568,
+      "crew": {
+        "ready": "true",
+        "drawn": "4",
+        "confetti": 1,
+        "width": 461,
+        "height": 245
+      },
+      "errors": [],
+      "blockedRequests": [],
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/4x-normal.png",
+      "crewPath": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/trial/4x-normal-crew.png",
+      "crewSha256": "f41fc7f1ba4034c87931f1723347799867e3de1d92988da7233fbd3bf39d8853"
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-18T03:05:55.742705+00:00",
+  "limits": "Local native artifact; independent acceptance pending. Real extension context loss is failure injection, not hardware incidence. Reduced density media events are synthetic. Ordinary32s CPU1x/4x trials are configuration coverage, not a before/after speedup.",
+  "visualReview": {
+    "pass": true,
+    "freshSheets": 5,
+    "fullCaptures": 18,
+    "crewCrops": 4,
+    "notes": "Four original cats visible during real loss; no white-canvas occlusion. Native restored and density/ordinary views preserve crew/title/layout. Reduced restored full-frame RGB exact. Existing unlock-toast overlap remains separate CXI-owned debt."
+  }
+}

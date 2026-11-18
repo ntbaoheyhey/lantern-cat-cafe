@@ -1,0 +1,338 @@
+{
+  "utc": "2026-11-18T03:04:06.941Z",
+  "source": "aaf822cad63501dff0dfdf4cf4f9845ad2f4cc46",
+  "indexSha256": "57aaadc8c71f59bc4490d4a73ebbbae5694cc06b4fba98b4258fc5127ef16bd8",
+  "artifactMode": "native",
+  "buildSource": "aaf822cad63501dff0dfdf4cf4f9845ad2f4cc46",
+  "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "buildManifestSha256": "2c44c5b8953a948b95544c157268504133b6607305ebc710f9f921f8d823dfde",
+  "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-context-native-production/build.json",
+    "sha256": "2c44c5b8953a948b95544c157268504133b6607305ebc710f9f921f8d823dfde"
+  },
+  "verifiedArtifactFiles": 3764,
+  "method": "Untransformed native boss fixture paused through actual native loss/restoration. Native scene RAF resumed after fixture setup; no render/view/error overrides. CSS animations paused, existing scene time set20.3 before initial native draw. Measure native GPU events, draw deltas and persistent error overlay. Failure injection, not incidence or a gameplay-policy proposal.",
+  "snapshots": [
+    {
+      "name": "probe-battle-context-loss.mjs",
+      "sha256": "9653eb03ead636bceab9d21854494b728844f8c5079122022fef84e1df1d860c"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "runs": [
+    {
+      "mode": "normal",
+      "loaded": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "93fbb5455affc3a84968b004884e1ebda6f37cda3d574efca2a0afa3a6b3e08f"
+      },
+      "lost": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [
+          {
+            "text": "The cafe canvas needs a reload. Battle controls remain available.",
+            "visibility": "visible",
+            "display": "flex",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720,
+              "top": 0,
+              "right": 1280,
+              "bottom": 720,
+              "left": 0
+            }
+          }
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "93fbb5455affc3a84968b004884e1ebda6f37cda3d574efca2a0afa3a6b3e08f"
+      },
+      "restored": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [
+          {
+            "text": "The cafe canvas needs a reload. Battle controls remain available.",
+            "visibility": "visible",
+            "display": "flex",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720,
+              "top": 0,
+              "right": 1280,
+              "bottom": 720,
+              "left": 0
+            }
+          }
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "93fbb5455affc3a84968b004884e1ebda6f37cda3d574efca2a0afa3a6b3e08f"
+      },
+      "reproduced": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "loaded": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": false,
+        "lostEvents": 0,
+        "restoredEvents": 0,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "8dba1f7e92b5a32d00734eb1a9227ecc0c5c7cfaf9f58f241001c6f04c11c623"
+      },
+      "lost": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": true,
+        "lostEvents": 1,
+        "restoredEvents": 0,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [
+          {
+            "text": "The cafe canvas needs a reload. Battle controls remain available.",
+            "visibility": "visible",
+            "display": "flex",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720,
+              "top": 0,
+              "right": 1280,
+              "bottom": 720,
+              "left": 0
+            }
+          }
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "8dba1f7e92b5a32d00734eb1a9227ecc0c5c7cfaf9f58f241001c6f04c11c623"
+      },
+      "restored": {
+        "ready": true,
+        "sceneReady": true,
+        "sceneError": "The cafe canvas needs a reload. Battle controls remain available.",
+        "paused": true,
+        "canAct": false,
+        "dirty": false,
+        "contextLost": false,
+        "lostEvents": 1,
+        "restoredEvents": 1,
+        "draws": 29,
+        "canvas": {
+          "width": 1280,
+          "height": 720
+        },
+        "overlays": [
+          {
+            "text": "The cafe canvas needs a reload. Battle controls remain available.",
+            "visibility": "visible",
+            "display": "flex",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720,
+              "top": 0,
+              "right": 1280,
+              "bottom": 720,
+              "left": 0
+            }
+          }
+        ],
+        "age": 0,
+        "battleSha256": "f281e0898b5193f6c7e7373253fd727195d6510250a75f18fab1ca3480b13a6c",
+        "planSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "unitsSha256": "8dba1f7e92b5a32d00734eb1a9227ecc0c5c7cfaf9f58f241001c6f04c11c623"
+      },
+      "reproduced": true,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/normal/loaded.png",
+      "utc": "2026-11-18T03:04:10.332Z",
+      "sha256": "ef0038ed584b95ec5bb6652030eaa6cb8906849938d53f2675c00024c9952450",
+      "rgbSha256": "be0074205f989df2daf8090aa04f79d49a59e592d7a08c90e38876651da78e93",
+      "mean": 114.9068337673611,
+      "stdDev": 50.372213463601625
+    },
+    {
+      "mode": "normal",
+      "name": "lost",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/normal/lost.png",
+      "utc": "2026-11-18T03:04:10.968Z",
+      "sha256": "40b271f502f7afeb075bce0482b44203f53b9b0984f52baf4b321f09ec74548b",
+      "rgbSha256": "ac200abbbde449087051a427bc208553511a6e052888b17006c2e3c6606ce2e5",
+      "mean": 40.65192491319444,
+      "stdDev": 26.657928697476873
+    },
+    {
+      "mode": "normal",
+      "name": "restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/normal/restored.png",
+      "utc": "2026-11-18T03:04:12.116Z",
+      "sha256": "40b271f502f7afeb075bce0482b44203f53b9b0984f52baf4b321f09ec74548b",
+      "rgbSha256": "ac200abbbde449087051a427bc208553511a6e052888b17006c2e3c6606ce2e5",
+      "mean": 40.65192491319444,
+      "stdDev": 26.657928697476873
+    },
+    {
+      "mode": "reduced",
+      "name": "loaded",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/reduced/loaded.png",
+      "utc": "2026-11-18T03:04:15.246Z",
+      "sha256": "6f312046c06f166aeb96efe6678296d4f898244fd031a52b620b15789ac08d31",
+      "rgbSha256": "ae786852cce9a0f65d7d78cce9e841ba8b0abba5de96c1cff8c199b742e613ad",
+      "mean": 114.97279405381944,
+      "stdDev": 50.415399671723925
+    },
+    {
+      "mode": "reduced",
+      "name": "lost",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/reduced/lost.png",
+      "utc": "2026-11-18T03:04:15.901Z",
+      "sha256": "78b7f7f2c45415163c77d742f6e7f9039f34a77b56b09dbf6e70938fdb8afa3d",
+      "rgbSha256": "ba569c8caadf629177b8e580522814a451c97e0fa66eb31aba1bf4b5aaa6309b",
+      "mean": 40.6573509837963,
+      "stdDev": 26.66054873237052
+    },
+    {
+      "mode": "reduced",
+      "name": "restored",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/reduced/restored.png",
+      "utc": "2026-11-18T03:04:17.063Z",
+      "sha256": "78b7f7f2c45415163c77d742f6e7f9039f34a77b56b09dbf6e70938fdb8afa3d",
+      "rgbSha256": "ba569c8caadf629177b8e580522814a451c97e0fa66eb31aba1bf4b5aaa6309b",
+      "mean": 40.6573509837963,
+      "stdDev": 26.66054873237052
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-18T03:05:55.742705+00:00",
+  "reproduced": true,
+  "ended": "2026-11-18T03:04:17.078Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/report.json",
+    "sha256": "f9a88ad54130fae2bdf7f389383d336423d202829e337ca5bdec7f0332ea4edc"
+  },
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/normal-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "071f3dc92a1e70693973ee147c8e4ff088e93f3a6a10c4e40a75582247ea463c",
+      "mode": "normal",
+      "frames": [
+        "loaded",
+        "lost",
+        "restored"
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-loss/reduced-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "0ed2e659e092f3753bfe60ef50d96c9b81d32c103ffa086204c798206d7bda4a",
+      "mode": "reduced",
+      "frames": [
+        "loaded",
+        "lost",
+        "restored"
+      ]
+    }
+  ],
+  "measuredUtc": "2026-11-18T03:04:56.335915+00:00",
+  "visualReview": {
+    "reproductionConfirmed": true,
+    "freshSheets": 2,
+    "fullCaptures": 6,
+    "notes": "Both paused modes remain blank with the reload notice after actual restoration; zero restored draws. Seven-unit geometry and game state retained. Diagnostic only, no battle repair."
+  }
+}
