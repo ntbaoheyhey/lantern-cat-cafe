@@ -27,11 +27,12 @@ await new Promise((done,reject)=>{server.once('error',reject);server.listen(6313
 let browser;
 try{
  browser=await chromium.launch({headless:true,args:['--use-angle=metal']});report.browser=browser.version();
- const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'),{fixedClock:false});report.url=page.url();
+ const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='wave1'),{fixedClock:false});report.url=page.url();report.errors=errors;report.blockedRequests=blockedRequests;
  await page.addStyleTag({content:'*,*::before,*::after{animation:none!important;transition:none!important}'});
  await page.evaluate(()=>{const m=window.__depthReview;window.__v3a2.R.playBattle(m.battle,'auto');m.state.settings.reducedMotion=true;m.showResult();});
  await page.waitForSelector('.b3-victory-crew[data-ready=true][data-drawn="4"] canvas',{timeout:60000});
  await page.waitForTimeout(6500);await page.evaluate(()=>document.fonts.ready);
+ await page.evaluate(()=>{performance.setResourceTimingBufferSize(10000);performance.clearResourceTimings();});
  const cdp=await page.context().newCDPSession(page);await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:true});
  const network=[];for(const event of ['requestWillBeSent','responseReceived','dataReceived','loadingFinished','loadingFailed'])cdp.on('Network.'+event,data=>network.push({event,...data}));
  const state=()=>page.evaluate(()=>{const e=document.querySelector('.uv-sheet'),c=document.querySelector('.b3-victory-crew'),s=getComputedStyle(e);return{sheet:e.getBoundingClientRect().toJSON(),crew:c.getBoundingClientRect().toJSON(),canvas:c.querySelector('canvas').getBoundingClientRect().toJSON(),ready:c.dataset.ready,drawn:c.dataset.drawn,backgroundImage:s.backgroundImage,backgroundSize:s.backgroundSize,backgroundPosition:s.backgroundPosition,animations:document.getAnimations().length};});
@@ -42,11 +43,11 @@ try{
  const categories='blink,cc,skia,devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline,disabled-by-default-devtools.timeline.frame,disabled-by-default-skia,disabled-by-default-cc.debug';report.traceCategories=categories;
  for(const [i,mode] of ['complete','delayed','delayed','complete'].entries()){
   const name=String(i+1)+'-'+mode,key=name+'.webp',url='http://127.0.0.1:6313/'+key;let started;const first=new Promise(done=>started=done);const d={mode,requests:0,started};deliveries.set(key,d);
-  await cdp.send('Tracing.start',{categories,transferMode:'ReturnAsStream'});
+  await cdp.send('Tracing.start',{categories,transferMode:'ReturnAsStream'});const responsePromise=page.waitForResponse(url,{timeout:30000});
   await page.evaluate(({url,name})=>{performance.mark('cxv-image-'+name+'-start');const e=document.querySelector('.uv-sheet');if(!window.__cxvOriginalScene)window.__cxvOriginalScene={value:e.style.getPropertyValue('--b2-scene'),priority:e.style.getPropertyPriority('--b2-scene')};e.style.setProperty('--b2-scene',`url("${url}")`,'important');},{url,name});
   let timer;try{await Promise.race([first,new Promise((_,reject)=>timer=setTimeout(()=>reject(Error('No image request '+name)),15000))]);}finally{clearTimeout(timer);}
   await page.waitForTimeout(700);await paint();const intermediate=await capture(name+'-intermediate');d.intermediateUtc=intermediate.utc;if(d.release)d.release();
-  await page.waitForFunction(url=>performance.getEntriesByName(url).some(e=>e.responseEnd>0),url,{timeout:30000});await paint();await page.waitForTimeout(500);
+  const response=await responsePromise;assert.equal(await response.finished(),null);assert.equal(hash(await response.body()),report.asset.sha256);await paint();await page.waitForTimeout(500);
   await page.evaluate(name=>performance.mark('cxv-image-'+name+'-settled'),name);const settled=await capture(name+'-settled');
   const finished=new Promise(done=>cdp.once('Tracing.tracingComplete',done));await cdp.send('Tracing.end');const {stream}=await finished;assert(stream);let trace='';for(;;){const chunk=await cdp.send('IO.read',{handle:stream});trace+=chunk.base64Encoded?Buffer.from(chunk.data,'base64').toString('utf8'):chunk.data;if(chunk.eof)break;}await cdp.send('IO.close',{handle:stream});
   const tracePath=resolve(out,name+'.trace.json');await writeFile(tracePath,trace);const events=JSON.parse(trace).traceEvents;
