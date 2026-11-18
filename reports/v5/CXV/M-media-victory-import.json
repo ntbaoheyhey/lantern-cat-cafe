@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-18T08:28:37.925817+00:00",
+  "status": "Implementation ready; committed-source production follow-up required",
+  "parentCommit": "f90a35b1e9aad4e83cfc5853493a068be6df19a2",
+  "files": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.tsx",
+      "sha256": "478dd1037ee4fdf5dd2c642545e9e382cddb998858e973101138db610cb96bf4"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/VictoryCrew.media.test.tsx",
+      "sha256": "b54dbb45614a059ae8b6e3ad4673023a28a2300facc707d087f3977169534e72"
+    }
+  ],
+  "before": {
+    "focusedFailed": 4,
+    "focusedPassed": 1,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/m-media-victory-before.log",
+    "nativeReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/media-victory-native-before-R1/report.json",
+    "nativeSha256": "85a7c187bbb0ead1995bd6c8c6feab9e23a9b14b0da06c93136c7be1c7044999",
+    "source": "b352eff42da2171543af3f116a802ff1be851433",
+    "indexSha256": "b715cfcba31673a53ee97f2c2a82b07766493dfcc01526cdd63dc4d0d9523d02",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "ready": "false",
+    "loadError": "true",
+    "caught": "Drawing swaps require an accepted cut-out rig",
+    "reviewedImages": 0
+  },
+  "after": {
+    "focusedPassed": 33,
+    "focusedFiles": 5,
+    "focusedLogSha256": "9c94e8048d988e6ce060f82602a23a8e8e15c95584f18ac9ec91282b6509b4f2",
+    "typecheckExit": 0,
+    "typecheckLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "guard": "Existing hasDesignerIdleBody only prepared Mochi/Clover; no conversion to DrawnPoses; continuous worldTime and decoder invalidation. Other actors keep six arguments and original fallback.",
+  "protected": {
+    "baseline": "5aa25d2e52660dae8f2f920269b26918cf9220d5",
+    "paths": 3833,
+    "changed": [],
+    "arrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6"
+  },
+  "limits": "No new media registration, loader edit, natural-play or budget acceptance. NativeR1 rejected and preserved; new natural captures follow integrated build. Expected caught app/framework exceptions retained in raw CDP evidence."
+}

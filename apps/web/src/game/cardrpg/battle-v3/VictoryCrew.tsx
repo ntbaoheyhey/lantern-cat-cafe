@@ -1,6 +1,7 @@
 import {useEffect,useRef} from 'react';
 import * as T from 'three';
 import {loadSpineActor,type SpineActor} from '../spine/assets';
+import {hasDesignerIdleBody} from '../spine/designer-idle-body';
 import {unitCore} from '../stage/core';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {isCraftOwner} from '../vfx-craft/encounter';
@@ -41,7 +42,9 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
    const calm=reduced||media.matches,seconds=calm?.75:(now-start)/1000;
    for(const [i,actor] of actors){
     const cat=cats[i]!,core=unitCore(cat.id,actor.bounds).world,scale=Math.min(height*.43/core.height,width*.34/actor.bounds.width),pose=victoryPose(cat.id,seconds+i*.12,calm);
-    actor.sample(cat.alive?'victory':'idle','result',calm?actor.duration('victory')*.65:seconds%actor.duration(cat.alive?'victory':'idle'),0,camera,calm);
+    const animation=cat.alive?'victory':'idle',time=calm?actor.duration('victory')*.65:seconds%actor.duration(animation);
+    if(hasDesignerIdleBody(cat.id,actor))actor.sample(animation,'result',time,0,camera,calm,{worldTime:seconds,paused:calm,fixedTime:calm,frozen:false});
+    else actor.sample(animation,'result',time,0,camera,calm);
     drawings.get(i)?.deform(cat.alive?'victory':'idle',seconds,calm);
     const b=actor.bounds,footX=(b.x+b.width/2)*scale,footY=core.y*scale;
     const sx=cat.alive?pose.sx:1,sy=cat.alive?pose.sy:1,angle=cat.alive?pose.angle:0,cos=Math.cos(-angle),sin=Math.sin(-angle);
@@ -56,9 +59,11 @@ export function VictoryCrew({cats,reduced}:{cats:VictoryCat[];reduced:boolean}){
   cats.forEach((cat,i)=>void loadSpineActor(cat.id,undefined,{deferNativePixels:isCraftOwner(cat.id)}).then(async actor=>{
    try{
     if(disposed){actor.dispose();return;}
-    const set=isCraftOwner(cat.id)&&actor.source!=='designer'&&actor.source!=='sequence'?await loadDrawnPoseSet(cat.id):undefined;
+    const mediaBody=hasDesignerIdleBody(cat.id,actor);
+    const set=isCraftOwner(cat.id)&&!mediaBody&&actor.source!=='designer'&&actor.source!=='sequence'?await loadDrawnPoseSet(cat.id):undefined;
     if(disposed){actor.dispose();return;}
     if(set)drawings.set(i,new DrawnPoses(actor,set));
+    if(mediaBody)actor.onMediaFrame=requestDraw;
     actors.set(i,actor);scene.add(actor.root);element.dataset.ready=String(!contextLost&&!restoring&&actors.size===cats.length);element.dataset.drawn=String(drawings.size);requestDraw();
    }catch(error){actor.dispose();throw error;}
   }).catch(()=>{if(!disposed)element.dataset.loadError='true';}));

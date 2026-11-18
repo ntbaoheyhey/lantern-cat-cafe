@@ -35,6 +35,11 @@ if(liveDensity){report.densitySequence=densitySequence;report.method+=' Live CDP
 if(resultDensity){report.victoryDensitySequence=[1,2];report.method+=' After natural victory, density changes2->1->2; synthetic events on original resolution MediaQueryLists exercise reduced invalidation. This is not physical monitor event-delivery coverage.';}
 report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.';
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
+let active;
+const persistTimeline=async(page,dir)=>{
+ const data=await page.evaluate(()=>{const d=globalThis.__cxvFull,m=window.__depthReview;if(d){d.scene.render=d.render;d.scene.beforeFrame=d.beforeFrame;}if(m){m.paused=true;m.notify(false);}return{elapsedMs:d?performance.now()-d.start:null,frames:d?.frames??[],plans:d?.plans??[],log:m?.battle?.log,mediaAudit:globalThis.__cxvMediaAudit??null};});
+ await writeFile(resolve(dir,'timeline.json'),JSON.stringify(data));return data;
+};
 try{
  for(const reduced of [false,true]){
   stop();const mode=reduced?'reduced':'normal',dir=resolve(out,mode);await mkdir(dir,{recursive:true});
@@ -46,6 +51,7 @@ try{
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   const initial=await page.evaluate(()=>{const m=window.__depthReview;return{battle:structuredClone(m.battle),speed:m.state.settings.speed,reduced:m.state.settings.reducedMotion};});
   const run={mode,utc:new Date().toISOString(),identity,initialBattleSha256:hash(JSON.stringify(initial.battle)),speed:initial.speed,captures:[],errors,blockedRequests};
+  active={page,run,dir};report.runs.push(run);await save();
   if(liveDensity)run.densityTransitions=[];
   if(resultDensity)run.victoryDensityTransitions=[];
   if(process.env.CXV_FULL_DPR)run.desktopDensity=await(await import('./desktop-density.mjs')).desktopDensity(page,desktopDpr);
@@ -58,6 +64,7 @@ try{
     scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
     crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON(),width:e.clientWidth,height:e.clientHeight,canvas:{width:e.querySelector('canvas')?.width??0,height:e.querySelector('canvas')?.height??0}}))};
   });
+  active.snapshot=snapshot;
   const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();
    if(liveDensity){const bytes=Buffer.from((await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false,clip:{x:0,y:0,width:1280,height:720,scale:1/before.devicePixelRatio}})).data,'base64');assert.equal(bytes.readUInt32BE(16),1280);assert.equal(bytes.readUInt32BE(20),720);await writeFile(path,bytes);}else await page.screenshot({path,scale:'css'});
    const after=await snapshot();if(liveDensity)assert.equal(after.devicePixelRatio,before.devicePixelRatio);run.captures.push({reason,path,utc,before,after});};
@@ -108,8 +115,7 @@ try{
    }
    await page.waitForTimeout(700);await capture('result-later');
   }else await capture('timeout');
-  const data=await page.evaluate(()=>{const d=globalThis.__cxvFull,m=window.__depthReview;d.scene.render=d.render;d.scene.beforeFrame=d.beforeFrame;m.paused=true;m.notify(false);return{elapsedMs:performance.now()-d.start,frames:d.frames,plans:d.plans,log:m.battle?.log};});
-  await writeFile(resolve(dir,'timeline.json'),JSON.stringify(data));
+  const data=await persistTimeline(page,dir);
   const stats=values=>{const a=values.filter(Number.isFinite).sort((a,b)=>a-b);return{samples:a.length,median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],max:a.at(-1)};};
   run.elapsedMs=data.elapsedMs;run.frameMs=stats(data.frames.map(f=>f.frameMs).filter(f=>f>0));run.renderCpuMs=stats(data.frames.map(f=>f.cpuMs));
   run.presentations=data.plans.length;run.actions=data.plans.filter(p=>p.events.some(e=>e.type==='action_start'||e.type==='charge')).length;
@@ -117,11 +123,18 @@ try{
   run.identityAfter=runtimeEvidence();run.ended=new Date().toISOString();
   if(run.identityAfter.indexSha256!==identity.indexSha256)errors.push('Served artifact changed during natural battle');
   if(!reachedResult)errors.push('Natural battle did not reach result within180s');
-  report.runs.push(run);report.errors.push(...errors);await save();
+  report.errors.push(...errors);await save();active=undefined;
   console.log(JSON.stringify({mode,elapsedMs:run.elapsedMs,result:run.final.result,captures:run.captures.length,actions:run.actions,ultimates:run.ultimates.length,errors}));await page.close();
  }
  report.initialBattleEqual=report.runs[0].initialBattleSha256===report.runs[1].initialBattleSha256;
  report.finalResultEqual=report.runs[0].final.result===report.runs[1].final.result;
  report.ended=new Date().toISOString();report.pass=report.initialBattleEqual&&report.finalResultEqual&&!report.errors.length&&report.runs.every(r=>r.reachedResult&&!r.blockedRequests.length);
  await save();if(!report.pass)process.exitCode=1;
-}catch(error){report.errors.push(String(error));await save();throw error;}finally{await browser.close();}
+}catch(error){
+ report.errors.push(String(error));
+ if(active){
+  active.run.failure=String(error);active.run.ended=new Date().toISOString();
+  try{active.run.final=await active.snapshot?.();await persistTimeline(active.page,active.dir);active.run.timelinePersisted=true;}catch(persistenceError){active.run.persistenceError=String(persistenceError);}
+ }
+ await save();throw error;
+}finally{await browser.close();}
