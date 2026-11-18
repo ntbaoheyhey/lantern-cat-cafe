@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-18T11:53:30.222712+00:00",
+  "failedFrame": 205,
+  "observedEyeY": 159.1071,
+  "neighborTraining": [
+    {
+      "frame": 197,
+      "y": 143.3929
+    },
+    {
+      "frame": 210,
+      "y": 147.5
+    }
+  ],
+  "localNoOvershootYRange": [
+    143.3929,
+    147.5
+  ],
+  "nearestPossibleLocalNoOvershootErrorY": 11.607100000000003,
+  "unchangedBoundY": 8,
+  "everyLocalNoOvershootCurveFails": true,
+  "evidence": "Frozen first-view note marks F205 closed lids; F197 open and F210 partially open in retained observations. No images reopened.",
+  "inference": "Temporal samples miss the closed-lid excursion. Local no-overshoot interpolation cannot reach the heldout within bound. Replacing interpolation order alone cannot fix missing observation support.",
+  "nextEvidence": "New event-representative source observations with an independent fresh validation set,or explicitly different head semantics;never tune the frozen R4 holdout.",
+  "runtimeExported": false,
+  "paw": "12/12 sparse controls pass separately;combined prereg exportgate remains failed."
+}

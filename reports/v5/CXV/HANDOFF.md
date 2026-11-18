@@ -1,10 +1,10 @@
 # CXV V8 handoff
-ACTIVE Batch M: R4 combined model rejected; paw sparse subgate passes; assistant: AGV.
+ACTIVE Batch M: R5 event-representative eye observations prepared; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Diagnose R4 failed eye-line heldout from frozen numeric data;send scoped result toCXI;no export.
+NEXT 1: View8unreviewed R5 eye sheets once;freeze24newtraining/24newholdouts before fixed preregisteredPCHIP.
 NEXT 2: Review CXI ordinary/art and native candidate gates;continue unblocked BatchM proof while lease heldCXI.
 NEXT 3: Continue Batch M gates and AGV deliveries;legacy after Batch M. Never reopen reviewed images.
-Last confirmed pushe383b3845;current6301 native source0b669ecc7/index3e7d27a1 reported byCXI;own full validation pending;latestgreen v5-m1.13.
+Last confirmed push8cfbfe360;current6301 native source0b669ecc7/index3e7d27a1 reported byCXI;own full validation pending;latestgreen v5-m1.13.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T11:47:32.647518+00:00 app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 No active CXV jobs;artR2 PID79490 complete65frames;log work/v5/CXV/jobs/clover-art-r2-114001.log;6301released2026-11-18T11:42:17.850826+00:00.
