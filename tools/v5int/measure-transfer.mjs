@@ -8,12 +8,13 @@ import {createHash} from 'node:crypto';
 import {loadRules} from '../cardrpg-big/a4-load.mjs';
 import {transferSummary} from '../v4ship-lab/rehearsal/metrics.mjs';
 import {waitForBattleReady} from '../v4ship-lab/rehearsal/battle-ready.mjs';
+import {buildIdentity} from './build-identity.mjs';
 
 const root=resolve(import.meta.dirname,'../..');
 const args=Object.fromEntries(process.argv.slice(2).map(arg=>{
  const match=/^--([a-z-]+)=(.*)$/.exec(arg);assert(match,'Use --name=value');return [match[1],match[2]];
 }));
-assert(Object.keys(args).every(key=>['label','scenario','url','capture'].includes(key)),'Unknown argument');
+assert(Object.keys(args).every(key=>['label','scenario','url','capture','build-descriptor'].includes(key)),'Unknown argument');
 const label=args.label??'baseline',scenario=args.scenario??'all',url=new URL(args.url??'http://127.0.0.1:6301');
 assert(/^[a-z0-9-]+$/.test(label),'Use a distinct lowercase evidence label');
 assert(['wave1','wave3','boss','all'].includes(scenario),'Unknown encounter');
@@ -30,7 +31,14 @@ const productionIndex=readFileSync(resolve(root,'apps/web/dist/index.html'));
 const served=await fetch(url);assert(served.ok,'Production preview unavailable');
 assert.equal(hash(Buffer.from(await served.arrayBuffer())),hash(productionIndex),'Preview is not the current production build');
 const require=createRequire(resolve(root,'apps/web/package.json')),{chromium}=require('@playwright/test');
-const report={at:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),
+const descriptorPath=args['build-descriptor']?resolve(root,args['build-descriptor']):undefined;
+const identity=buildIdentity({captureCheckoutCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),
+ indexSha256:hash(productionIndex),descriptorPath,descriptorBytes:descriptorPath?readFileSync(descriptorPath):undefined});
+assert(!process.env.BIG_RULES_ROOT||resolve(process.env.BIG_RULES_ROOT)===root,'Measure fixtures from the recorded capture checkout');
+const fixturePaths=['packages/game-rules','scripts/v3a2/fixtures.json'];
+if(identity.sourceCommit)assert.equal(execFileSync('git',['diff','--name-only',identity.sourceCommit,'--',...fixturePaths],{cwd:root,encoding:'utf8'}).trim(),'','Fixture inputs differ from served source');
+const report={at:new Date().toISOString(),...identity,
+ buildIdentityHarnessSha256:hash(readFileSync(resolve(import.meta.dirname,'build-identity.mjs'))),fixturePaths,
  indexSha256:hash(productionIndex),harnessSha256:hash(readFileSync(import.meta.filename)),viewport:{width:1280,height:720},
  method:'Fresh Chromium context, service workers blocked, HTTP cache disabled. Count the full encoded response of every request started from navigation to visible battle-ready UI, including navigation and responses finishing after readiness. Production bundles only; unchanged official rules/fixtures are prepared outside the browser, then selected through the existing review interface.',
  limits:['These are cold combat fixture entries, not guest authentication, sponsored transaction, or campaign journey evidence.','No development server/source module is requested by the browser. The existing dev=1 review switch only selects the official fixture.'],
