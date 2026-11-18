@@ -1,0 +1,3219 @@
+{
+  "utc": "2026-11-18T14:38:48.944666+00:00",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "viewport": [
+    1280,
+    720
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/report.json",
+    "sha256": "5b2fe00edec843e1c1e1f09295eb91da69ff66d07c21895c740bad97d67d309c"
+  },
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/artifact-verification.json",
+    "sha256": "00e65d13e7b62bad9d474a33e85c4bb2a3ede900f6af21a8e35d658febb415ba"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/harness-provenance.json",
+    "sha256": "a085b09cc65d635b529d38e66f9a1dac1db6a86ce8441d054c0d41e94836f15f"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-action-labels.py",
+    "sha256": "c2ec871c66b42c30cc924aad35e1cf9f13f3329884057c9d5e9270af5d04a9e7"
+  },
+  "runtimeDiagnostic": {
+    "labelTarget": {
+      "dx": -12,
+      "dy": 19,
+      "wrapperSha256": "f4fcfe113d7507d6e87e7fe4a0694f42275f60c2fc75cf3c9744a892673de010"
+    },
+    "hiddenLabelCss": ".b3-world { visibility: hidden !important; }",
+    "hiddenLabelCssSha256": "85522b6a33ec22cac09b1563d7d7b58babc5f0c9404c3953d63d4957099d9873",
+    "bodyIsolation": {
+      "wrapperSha256": "bacd43ac77a4b3c4c0d74ebf48f10ccae18ef6090703810b4cb19b3fb3021efa",
+      "scope": "Hide commissioned media plane or native actor root only during postFx draw,then restore. Native shadow/effects are not isolated."
+    }
+  },
+  "actions": 16,
+  "geometryRows": 120,
+  "capturePass": true,
+  "captureFailure": null,
+  "rulesEqual": true,
+  "attributionValid": false,
+  "sampledPaintClear": false,
+  "productionAcceptance": false,
+  "limits": [
+    "Seeded setup modifies HP/charge/queue,then real legalChoices/act and model.tick;not a naturally reached state.",
+    "Pixel isolation hides the commissioned media plane or native actor root,excluding native shadows and separate VFX.",
+    "Unchanged application source plus explicit Clover(-12,+19) diagnostic. No ordinary-play,seam,matte or laptop acceptance."
+  ],
+  "finishedUTC": "2026-11-18T14:38:06.077Z",
+  "analysis": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/analysis.json",
+    "sha256": "09922a0ef65fc235ad036330de6828cf70d6fec3f7fc02455bb3f9a17537d3da"
+  },
+  "validCases": 14,
+  "geometryFailureRows": 128,
+  "cases": [
+    {
+      "key": "normal-mochi-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 438.796875,
+            "y": 125.546875,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 313.53125,
+            "y": 370.25,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-mochi-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 438.671875,
+            "y": 125.96875,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-clover-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 299.140625,
+            "y": 373.078125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-clover-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 299.34375,
+            "y": 371.640625,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-panko-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 1340,
+        "bbox": [
+          451,
+          105,
+          509,
+          140
+        ]
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 451.46875,
+            "y": 105.703125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1340,
+                "bbox": [
+                  451,
+                  105,
+                  509,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1266,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1261,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1252,
+                "bbox": [
+                  451,
+                  105,
+                  508,
+                  140
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 313.53125,
+            "y": 370.25,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-panko-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-mallow-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 451.671875,
+            "y": 112.6875,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 313.734375,
+            "y": 370.25,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "normal-mallow-4-1100",
+      "valid": false,
+      "controls": {
+        "baselineRepeat": {
+          "count": 13514,
+          "bbox": [
+            23,
+            555,
+            251,
+            628
+          ]
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 13514,
+          "bbox": [
+            23,
+            555,
+            251,
+            628
+          ]
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 447.75,
+            "y": 113.921875,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 309.8125,
+            "y": 371.484375,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-mochi-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-mochi-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-clover-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-clover-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-panko-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 1302,
+        "bbox": [
+          450,
+          106,
+          505,
+          141
+        ]
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 106.5,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1302,
+                "bbox": [
+                  450,
+                  106,
+                  505,
+                  141
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1236,
+                "bbox": [
+                  450,
+                  106,
+                  505,
+                  141
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1228,
+                "bbox": [
+                  450,
+                  106,
+                  505,
+                  141
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 1218,
+                "bbox": [
+                  450,
+                  106,
+                  505,
+                  141
+                ]
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-panko-4-1100",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-mallow-1-350",
+      "valid": true,
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "reduced-mallow-4-1100",
+      "valid": false,
+      "controls": {
+        "baselineRepeat": {
+          "count": 13514,
+          "bbox": [
+            23,
+            555,
+            251,
+            628
+          ]
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 13514,
+          "bbox": [
+            23,
+            555,
+            251,
+            628
+          ]
+        }
+      },
+      "decodedExact": true,
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      },
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 450.453125,
+            "y": 112.75,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 312.515625,
+            "y": 370.3125,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/review-selection.json",
+    "sha256": "c5e74471d7248df4a65a5773e72db84a5e634674adfd55fc6bd779854b48c396",
+    "imagesViewed": 2,
+    "selection": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/action-review-143848944410/normal-panko-1-350.png",
+        "sha256": "29fc55a9149eff2de7065146be9a4d4dc579c433885da352aec0557c0420faa4",
+        "dimensions": [
+          1024,
+          600
+        ],
+        "caseKey": "normal-panko-1-350",
+        "views": 1,
+        "reviewed": true,
+        "observation": "Mochi HP/rage/status visibly lie over Panko chef hat/upper head during the basic strike; Panko eyes remain visible at the crop scale. Identity association is ambiguous."
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/action-review-143848944410/normal-clover-4-1100.png",
+        "sha256": "eb8cf0529104a2041d84d2aacfcbd84159f903d3d407b4784b291cc5efeb9c32",
+        "dimensions": [
+          1024,
+          600
+        ],
+        "caseKey": "normal-clover-4-1100",
+        "views": 1,
+        "reviewed": true,
+        "observation": "Sampled labels remain separated from isolated bodies; Clover leaf field visibly covers party lower bodies. Faces and +94 values readable at sheet scale. No whole-effect clearance claim."
+      }
+    ]
+  },
+  "disposition": "FAIL: fourteen valid contact cases include normal/reduced Panko basic overlap1340/1302; Mallow ultimate two controls invalid13514px, zero hits inconclusive. No application source adoption."
+}
