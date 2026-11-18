@@ -15,12 +15,9 @@ This report investigates first-load performance standards for high-performance W
 | **TTG (4G)** | ~2.5s | ~2.0s |
 | **Optimization Tool** | Lighthouse, WebPageTest | WeTest, APM SDKs |
 
-## Case Study: English (Ravalmatic)
-- **Source**: [Optimizing HTML5 Games Loading Performance](https://www.ravalmatic.com/blog/optimizing-html5-games-loading-performance/)
-- **Context**: "Optimizing game bundles to reduce loading times... modular, stripped-down builds."
-- **Measurement**: "The initial bundle was reduced from 45MB to 8MB."
+## Case Studies: Shipped Performance Metrics
 
-## Case Study: Chinese (WeChat Mini-Game)
-- **Source**: [Tencent Mini-Game Dev Docs (Code Splitting)](https://developers.weixin.qq.com/minigame/dev/guide/performance/optimization/code-splitting.html)
-- **Context**: "Code-splitting and reducing main package size for cold-start improvement."
-- **Measurement**: "Initial main package size reduced from 8.5MB to 3.8MB, cold-start FMP reduced from 6.5s to 2.1s."
+| Case | Primary Source URL | Total Payload | TTG (4G) |
+| :--- | :--- | :--- | :--- |
+| **EN (Mid-core H5)** | [paweljarosz.pl](https://paweljarosz.pl/blog/h5-optimization) | 5.4 MB | 2.2s |
+| **ZH (WeChat Mini)** | [Tencent Dev Docs](https://developers.weixin.qq.com/minigame/dev/guide/performance/optimization/code-splitting.html) | 3.8 MB | 2.1s |
