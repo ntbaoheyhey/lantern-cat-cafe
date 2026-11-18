@@ -39,7 +39,27 @@
       "normal3sDraws": 180,
       "osNormalResumed1_5sDraws": 91,
       "networkLimit": "Native lifecycle raw harness pass=false solely for fixture-blocked Google Fonts CSS; all behavior/pixel gates pass; original status preserved."
+    },
+    "production": {
+      "report": "V7-F-victory-native-production.json",
+      "pass": true,
+      "source": "96d1e75c38e3a8d03dc7ea76efc2adcb7210175d",
+      "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "indexSha256": "b507c31bd9fa3735d2959ef6a7c1aff0801be0c2b3d02f3794311eb41f6411ee",
+      "reviewedUtc": "2026-11-18T00:52:28.000344+00:00",
+      "runs": 4,
+      "durationPerRunMs": 32000,
+      "zeroErrorsAndBlockedRequests": true,
+      "reducedSteadyGlDraws": [
+        0,
+        0
+      ],
+      "normalSteadyGlDraws": [
+        7680,
+        7680
+      ],
+      "reducedFullRgbExact": true
     }
   },
-  "status": "Native12tests/TSC0 and8fullframe+9lifecycle pixel checks pass;3freshsheetsreviewed. Unmodified production validation pending; not yet READY."
+  "status": "Scoped native scheduling READY: 12 tests, web TSC0, 8 matched-delivery fullframe + 9 lifecycle crew checks and untransformed production gate pass. Fixture font-block failure preserved separately. Independent judge integration and battle stress remain open."
 }

@@ -1,6 +1,8 @@
-# V7 V-F: reduced-motion victory rendering — acceptance pending
+# V7 V-F: reduced-motion victory rendering — scoped READY
 
-The reduced-motion result renders the same four-cat pose every animation frame. A preserved build-time candidate requests a draw when actors arrive, the container changes size, the OS motion preference changes, or WebGL recovers. Normal animation retains continuous rendering. Application `VictoryCrew.tsx` is still unchanged; this is not READY for CXI.
+Native `VictoryCrew.tsx` now requests a draw when actors arrive, the container changes size, the OS motion preference changes, or WebGL recovers. Reduced scenes stop redundant frames; normal animation continues. Application commit `96d1e75c38e3a8d03dc7ea76efc2adcb7210175d` and regression tests in `6d94a279d` are scoped READY for CXI. Twelve tests, full web typecheck, matched-delivery and lifecycle pixel checks, and the untransformed production validation pass. Independent judge integration remains pending.
+
+The following chronology preserves the original failures and investigation. Its blocked decisions are historical; the current decision is above and the final native gate is below.
 
 Source: `53f8c4a17419ab9c7f4f8126bc74b05dea778871`, empty runtime patch `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`. Baseline module SHA256 `82f0b3350de27b80f92f4016ddccd2544ade8de50471131d20848b96211729a6`; candidate `d1d4c5606fe5f24cf2a095ae59cfa8b267b5af5fe2eb8aaed5479e414f15b479`. Both artifacts have3764files; every file and five production-tool snapshots were reverified. Non-script assets are identical. Local ports6311/6312 use `/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`,1280×720. These are isolated local artifacts, not independent judge acceptance.
 
@@ -33,7 +35,7 @@ The early-lifecycle diagnostic completed six trials at2026-11-17T22:23:57.101Z. 
 
 The six fresh unchanged-baseline32s captures finished2026-11-17T22:27:57.503Z. Every full-frame and crew image exactly matches the original baseline. The measured1024×576 sheet was reviewed once; all four heroes, title, receipt, HUD and Next remain clear. The discrepant variant was not reproduced without the earlier diagnostics.
 
-Decision: BLOCKED-ON unresolved full-page pixel attribution. Preserve the exact original failures and both baseline series; do not widen tolerance or claim a proven compositor cause. No application change or READY. The native harness is prepared (native mode adds audit instrumentation only; lifecycle/blocked-request gates and elapsed-time naming are explicit), but is not run. Continue the separate startup-stall investigation under the two-failed-attempt rule.
+Historical decision before decoder attribution: BLOCKED-ON unresolved full-page pixel attribution. Preserve the exact original failures and both baseline series; do not widen tolerance or claim a proven compositor cause. No application change or READY. The native harness is prepared (native mode adds audit instrumentation only; lifecycle/blocked-request gates and elapsed-time naming are explicit), but is not run. Continue the separate startup-stall investigation under the two-failed-attempt rule.
 
 ## Evidence
 
@@ -49,3 +51,7 @@ All 18 baseline/native pairs are RGB-exact; 36 frames measured and three fresh 1
 ## Delivery attribution and native gate 2026-11-18T00:44:34.185865+00:00
 
 The original A/B full-page hashes are now reproduced exactly by complete versus delayed delivery of the same465026-byte WebP. Target-linked traces show YUV for complete input and RGB for incremental input. The original182269-pixel/max12 difference is preserved and explained; no tolerance changed. Four alternating scheduler trials compare exact fullviewport pixels under both decode paths:24cross-trial checks pass. Native scheduling was applied after the new15-minute study gate;12tests and fullweb typecheck pass. Native captures and production validation remain required. See V7-F-image-delivery-decode.json, V7-F-image-delivery-decode-repeat.json and V7-F-victory-delivery-matrix.json. The first two diagnostics retain their terminal failure caused by fixture-blocked Google Fonts CSS; the matrix declares that block explicitly in advance.
+
+## Native production gate 2026-11-18T00:52:28.000344+00:00
+
+Untransformed source96d1e75c3, empty runtime patch, envDir=false, indexb507c31b: four32s runs pass with zero browser errors or blocked requests. Reduced1x/4x have0WebGL draws and0uploads; normal has7680GL calls in each window. These are GL calls, not frames. Reduced full RGB is exact across rates. Whole-page task elapsed is107.524/206.355ms reduced and5622.248/7496.393ms normal; no new causal speedup or physical-laptop claim. Four frames measured before one1024x576 sheet review: all heroes, title, receipt, HUD and Next remain clear. Native matched-delivery8 and lifecycle9 comparisons plus12tests/TSC0 remain passing. The lifecycle raw font-block failure is preserved; the production network gate has zero blocks. See V7-F-victory-native-production.json and V7-F-victory-scheduling-checks.json.

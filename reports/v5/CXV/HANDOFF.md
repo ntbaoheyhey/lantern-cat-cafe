@@ -1,19 +1,20 @@
 # CXV V7 handoff
-ACTIVE V7 V-F native reduced-victory scheduling applied00:43:01Z;assistant: AGV. 12tests/TSC0. Decoder attributionresolved;matchedprototype24cross-trial fullRGBexact. Nativecapture gatepending.
+ACTIVE V7 V-F: native reduced-victory scheduling scoped READY; assistant: AGV. Battle stress remains open.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Check nativeproductionPID93872 log work/v5/CXV/jobs/victory-native-production.log;build untransformed source,32s eachnormal/reduced1x/4x. No competingbrowser/performance workloads.
-NEXT 2: Measure/review nativeproduction4frames;report actualzero idle draws/normalcontinuation. READY toCXI only afternativeproductionchecks;reference96d1e75c3 andtest6d94a279d.
-NEXT 3: Panko local gate passed21:22Z;128px9048B,1x1normal,4native sheets reviewedonce,36tests/TSC0. CXI loader entry pending;AGVmanifest untouched. Study gate21:18:42Z elapsed.
-Last confirmed push96d1e75c3;V-A3WIP13659e2b4 already pushed;capture-arrivalSHA1f1d220e unchanged23:51Z;fullbattle53f8c4a17;Panko addba7446;READYsentCXI;stationaryREADY4c5f0fa55/evidence93772cb8e. HUD79d408c71 READY19:59Z; greenm1.10 merge bf9520741 retained.
-V-A3 own6301 normal/reduced fresh19:29/19:30Z8sheets inspectedonce;4heroesfeetstable,reduceddepth0;source d69b9dc5c/indexaf3adbe2. CXI ACCEPT16:10 retained;capture-arrival unchanged.
-V-C servedaf3adbe2 own18:04Z6sheets0errors;normal240/620ms,reducedfeetstable,actionyield160ms,incomingdx9dy-2;net12@1280clear1640,Yarnsocket0clear1760.
-V-B2/E/F natural served6301 d69b9dc5c/indexaf3adbe2 21:32–21:36Z normal/reducedwin97.5/97.2s,68actions24ults (15hero/9enemy),82statusapply46expire each;logs/order/finalactors exact,4freshsheets clear,0errors/blocked,reducedresultPNGexact. 53f8c4a17 READY sentCXI.
-V-E servedaf3adbe2 own18:05Z4sheets;status120/400thenexpiry1200,4drawncrew,reducedPNGexact/confetti0;rulefixturewin,notprogression.
-V-F label study19:12→19:30Z;6alternating32s/rate prototypefocusCPU13.5→5.0/80.5→24.3ms;entryframe20.25→11.7/105.7→50.2ms;framep95unchanged16.8/66.7ms.
-HUDtext15minstudy19:40→19:55;6alternating32s/rate render4→3/18.6→13.7ms;style2635→674/6820→2308ms;normalp95same16.8,4xp95~66.7. Native19:56source0ac228aaa+patch55656ba9:render2.9/13.5ms,0errors,26actions6ults each;candidate only.
-Open TASKs:T-CXV-1auditREDO20:07Z(newscript stillcountscontainerframes/nohashes),T-CXV-2researchREDO17:16Z(genericlinks/unsourced5–10%);CXI ownscompletedT4/T6conversions;unrelatedlegacyart/captureWIP preserved.
+NEXT 1: Commit/push reviewed production report and tools/v5vfx/run-current-ultimate-attribution.mjs; send scoped READY to CXI for96d1e75c3 + tests6d94a279d.
+NEXT 2: Launch node tools/v5vfx/run-current-ultimate-attribution.mjs detached; log work/v5/CXV/jobs/current-ultimate-attribution.log; no competing browser work.
+NEXT 3: Analyze via tools/v5vfx/analyze-startup-attribution.mjs with CXV_ATTRIBUTION_INPUT=work/v5/CXV/films/V7-F-current-ultimate-attribution and CXV_ATTRIBUTION_REPORT=reports/v5/CXV/V7-F-current-ultimate-attribution.json (absolute paths); measure then inspect fresh sheets.
+Last confirmed push1d504dba5; application96d1e75c3; tests6d94a279d; V-A3WIP13659e2b4 already pushed. capture-arrival SHA1f1d220e unchanged 2026-11-18T00:52:28.000344+00:00.
+Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
+Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
+V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
+V-C fresh18:04Z six sheets:240/620ms arrival,160ms action yield,netclear1640/Yarn1760;0errors. V-B2 contact1100/duration2200/leadIn0 reasoned no change.
+V-E/F judge6301 source d69b9dc5c/indexaf3adbe2 natural wins97.5/97.2s;68actions24ults,82apply46expire each,exactgameparity,0errors/blocks;53f8c4a17READY.
+V-F current local fullbattle4x normal/reduced wins100.376/99.678s,68actions24ults exact;framep95=33.4ms both,late>50.5ms33/27. Sheets reviewed00:28Z;do not reopen.
+Pending CXI: fallbackd4491cbb5; toast lower-edge repair; labels2fd7665b4; packedc79f50b71+6f71118f1; posecrope1b1f58f5; HUD79d408c71; stationary4c5f0fa55/evidence93772cb8e; Pankoaddba7446 loader entry.
+Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
-Wake cxv-wake ACTIVE15min exactORDER text refreshedinplace 2026-11-18T00:30:51.533250+00:00;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
-Running Vite21525;nativeproductionPID93872 log work/v5/CXV/jobs/victory-native-production.log;1detachedjob. Nativevalidation93536ended;knownfontassertfailure preserved,17pixelchecks/12tests pass.
-Mailbox INBOX-CXV192,USER23;BOARDread00:30Z;STOPabsent00:30Z;lastRULESreread00:30Z;AGVcc09530a2;T-CXV-1/2 and T-CXI-9 open.
-Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310samequery;BOARD servesd69b9dc5c/indexaf3adbe2,greenm1.10; own16freshimages reviewedonce;do not reopen V7-judge-m110-candidate sheets/reviewJPGs.
+Wake cxv-wake ACTIVE15min exactORDER text refreshed 2026-11-18T00:52:28.000344+00:00;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
+Running: Vite21525 only; nativeproduction93872 ended00:48:20Z; zero detached capture jobs. Current battle attribution NOT launched.
+Mailbox INBOX-CXV192/USER23; STOP absent; BOARD/RULES reread 2026-11-18T00:52:28.000344+00:00.
+Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.
