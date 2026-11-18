@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-18T16:52:27.379853+00:00",
+  "inboxLines": [
+    559,
+    560
+  ],
+  "inputs": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-RAW-AUDIT-V2.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-559-560-review/T-M5-RAW-AUDIT-V2.md",
+      "sha256": "ba66512d13670e0cf2a76d3adbf003e4dba258e5320f237880cd49f0e263446a",
+      "bytes": 1101
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/QA-FAILURE-LOG.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-559-560-review/QA-FAILURE-LOG.md",
+      "sha256": "b8c770bd1f164cb05df0d868077f1efae96db9125ef5e1c276c6698e384bcb92",
+      "bytes": 287
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/QA-v5-m1.15-final.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-559-560-review/QA-v5-m1.15-final.md",
+      "sha256": "e66bd39673e02af8670ced2079ac65d5472bb5a4b5b7a9d0daa12cb9b216ff71",
+      "bytes": 81
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/result_screen.png",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-559-560-review/result_screen.png",
+      "sha256": "7ecdd1d150523438d557e7e98b9e05026700756912d08d6d239035595b0de2f9",
+      "bytes": 13854
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/HANDOFF.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-559-560-review/HANDOFF.md",
+      "sha256": "6388716957e6aa59233e05f9271e260d2abd84d10a9fd64fbe46c647eab5da8d",
+      "bytes": 104
+    }
+  ],
+  "verifiedPrior": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-ags-549-551-review.json",
+    "sha256": "3763a1c9ba15ac8fea7d2f06adda97b70707d390b98d5613efa13abd6ef5cf9d"
+  },
+  "fullHashValuesMatched": 4,
+  "numericKeyframeTimestampsDelivered": 0,
+  "imageDimensions": [
+    308,
+    1024
+  ],
+  "imagesViewed": 0,
+  "disposition": {
+    "T-M5": "Partial ACCEPT four correct full hashes only; keyframe section blank, no seek/stall/quality proof. Keep task OPEN.",
+    "T-CXI-13": "REDO: 308x1024 image violates required1280x720 desktop. 81B report has no URL/source/index/UTC or console proof. No image viewing or native acceptance.",
+    "toolFailure": "qa-toolchain.mjs is a library/config entrypoint; invented --target/--capture flags do not prove browser capability failure. Shared import/browser/PNG smoke already passed.",
+    "handoff": "T-M5 removed despite incomplete evidence;restore alongside QA."
+  },
+  "applicationChanged": false
+}

@@ -46,8 +46,13 @@ const sources=sourceFiles.map(p=>execFileSync('git',['show',raw.sourceCommit+':'
 assert(sources[1].toString().includes('x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y'));
 assert(sources[1].toString().includes("anchor.labelTarget={x:hp.x,y:hp.y+(entry.asset==='clover'?5:0),avoid:body}"));
 const require=createRequire(resolve(root,'apps/web/package.json')),ts=require('typescript');
-const js=ts.transpileModule(sources[0].toString(),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
-const {layoutWorldLabels}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+const tracedClaim=!!fixedClaim?.results?.[0]?.originalTrace;
+const traceMarker='  const [replacement]=layoutWorldLabels(';
+const layoutText=tracedClaim?'export const trace:any[]=[];\n'+sources[0].toString().replace(traceMarker,
+ '  trace.push({id:label.id,target:target.rect,avoid:target.avoid,fixed:result.filter(r=>r.id!==label.id),faces,obstacles});\n'+traceMarker):sources[0].toString();
+if(tracedClaim)assert.equal(sources[0].toString().split(traceMarker).length,2);
+const js=ts.transpileModule(layoutText,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+const {layoutWorldLabels,trace}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 const key=a=>[a.mode,a.cat,a.skill,a.ms].join('-');
 const expectedRows=[],expectedPixels=[];
 for(const action of raw.actions){
@@ -61,6 +66,13 @@ for(const action of raw.actions){
 assert.deepEqual(raw.rows.map(key),expectedRows);
 assert.deepEqual(raw.cases.map(key),expectedPixels);
 const overlap=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+const explain=()=>{
+ const rows=trace.filter(t=>t.id==='clover');assert.equal(rows.length,1);const t=rows[0];
+ return{target:t.target,avoid:t.avoid,blockers:[...(overlap(t.target,t.avoid)?['own-avoid']:[]),
+  ...t.faces.filter(x=>overlap(t.target,x)).map(x=>'face:'+x.id),
+  ...t.obstacles.flatMap((x,i)=>overlap(t.target,x)?['HUD:'+i]:[]),
+  ...t.fixed.filter(x=>overlap(t.target,x.rect)).map(x=>'placed-label:'+x.id)]};
+};
 const tol=1/64,results=[];
 for(const sample of [...raw.rows.map(r=>({...r,kind:'geometry'})),...raw.cases.map(r=>({...r,snapshot:r.before,kind:'pixel'}))]){
  const s=sample.snapshot,actors=JSON.parse(s.battle).actors,extents=new Map();
@@ -77,13 +89,17 @@ for(const sample of [...raw.rows.map(r=>({...r,kind:'geometry'})),...raw.cases.m
   return{id:a.id,side:actors.find(x=>x.id===a.id).side,rect:{...e,x:a.labelX+s.host.x+e.x,y:a.labelY+s.host.y+e.y},
    ...(t?{anchorPlacement:{rect:{...e,x:t.x+s.host.x+e.x,y:t.y+s.host.y+e.y},avoid:project(t.avoid)}}:{})};
  });
+ if(tracedClaim)trace.length=0;
  const hud=s.hud.map(h=>h.rect),replay=layoutWorldLabels(labels,1280,720,hud,faces);
+ const originalTrace=tracedClaim?explain():null;
  assert.equal(replay.length,s.labels.length);
  const errors=replay.map(l=>Math.max(...['x','y','width','height'].map(k=>Math.abs(l.rect[k]-s.labels.find(x=>x.id===l.id).rect[k]))));
  if(fixedClaim){
   const predictedInputs=structuredClone(labels),input=predictedInputs.find(l=>l.id==='clover');
   input.anchorPlacement.rect.x-=16;input.anchorPlacement.rect.y-=5;
+  if(tracedClaim)trace.length=0;
   const predicted=layoutWorldLabels(predictedInputs,1280,720,hud,faces);
+  const candidateTrace=tracedClaim?explain():null;
   const rect=predicted.find(l=>l.id==='clover').rect,target=input.anchorPlacement.rect;
   const observed=s.labels.find(l=>l.id==='clover').rect;
   const difference=(a,b)=>Math.max(...['x','y','width','height'].map(k=>Math.abs(a[k]-b[k])));
@@ -92,13 +108,15 @@ for(const sample of [...raw.rows.map(r=>({...r,kind:'geometry'})),...raw.cases.m
   const fallback=difference(rect,target),rigidError=difference(rect,{...observed,x:observed.x-16,y:observed.y-5});
   const claim=fixedClaim.results[fixedResults.length];
   assert(claim);
+  if(tracedClaim){assert.deepEqual(originalTrace,claim.originalTrace);assert.deepEqual(candidateTrace,claim.candidateTrace);}
   for(const k of ['mode','cat','skill','ms'])assert.equal(sample[k],claim[k]);
   for(const [k,value] of Object.entries({baselineError,unchanged,fallback,rigidError}))assert(Math.abs(value-claim[k])<1e-9,k);
   assert.deepEqual(rect,claim.clover);
   const pass=baselineError<=tol&&unchanged<=tol&&fallback<=tol&&rigidError<=tol;
   assert.equal(pass,claim.pass);
   fixedResults.push({key:claim.key,mode:sample.mode,cat:sample.cat,skill:sample.skill,ms:sample.ms,
-   baselineError,unchanged,fallback,rigidError,pass,targetHitsOwnAvoid:overlap(target,input.anchorPlacement.avoid)});
+   baselineError,unchanged,fallback,rigidError,pass,targetHitsOwnAvoid:overlap(target,input.anchorPlacement.avoid),
+   ...(tracedClaim?{originalTrace,candidateTrace}:{})});
  }
  const anchor=s.anchors.find(a=>a.id==='mochi'),target=labels.find(l=>l.id==='mochi').anchorPlacement.rect;
  const bodyBottom=s.host.y+Math.max(anchor.body.y+anchor.body.height,anchor.footY);
@@ -141,6 +159,14 @@ if(fixedClaim){
   failedWithOwnAvoidIntersection:fixedResults.filter(r=>!r.pass&&r.targetHitsOwnAvoid).length,
   groups:[...groups.values()],numericalClaimReproduced:true,productionAcceptance:false,
   disposition:fixedClaim.failures.length?'Reject rigid-placement hypothesis; actual constrained solver does not preserve translated label paint.':'Geometry only; rendered paint and association gates remain required.'};
+ if(tracedClaim){
+  const failed=fixedResults.filter(r=>!r.pass);
+  result.fixedCandidate.solverCause={tracesCompared:fixedResults.length*2,
+   candidateOwnAvoidIntersections:failed.filter(r=>r.candidateTrace.blockers.includes('own-avoid')).length,
+   baselineOwnAvoidRemovedByCandidate:failed.filter(r=>r.originalTrace.blockers.includes('own-avoid')&&!r.candidateTrace.blockers.length).length,
+   otherBlockerCategories:[...new Set(failed.flatMap(r=>[...r.originalTrace.blockers,...r.candidateTrace.blockers]).filter(x=>x!=='own-avoid'))]};
+  result.fixedCandidate.disposition='Rigid translation rejected: distinguish a newly blocked target from removal of the baseline fallback; this does not establish an application defect or new rendered paint.';
+ }
 }
 await writeFile(output,JSON.stringify(result,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify({samples:result.samples,labels:result.labels,maxErrorCSSpx:result.maxErrorCSSpx,otherLabelsUnchanged:result.otherLabelsUnchanged,failedSamples:result.failedSamples,fixedCandidate:result.fixedCandidate}));
