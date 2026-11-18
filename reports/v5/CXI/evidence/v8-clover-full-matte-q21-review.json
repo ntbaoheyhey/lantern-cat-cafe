@@ -1,0 +1,93 @@
+{
+  "utc": "2026-11-18T12:46:55.156930+00:00",
+  "cat": "clover",
+  "status": "STUDY_ONLY",
+  "sourceRgba": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-q21-r1/source.rgba",
+  "sourceRgbaSha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+  "originalMatte": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+  },
+  "sourceSize": [
+    318,
+    390
+  ],
+  "logicalSize": [
+    318,
+    390
+  ],
+  "opaqueHeight": 384,
+  "frames": 300,
+  "fps": 30,
+  "duration": 10,
+  "scale": 1,
+  "resize": "Identity; exact original matte RGBA",
+  "trials": [
+    {
+      "mode": "ycrcb",
+      "video": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-q21-r1/ycrcb-crf21.mp4",
+      "bytes": 1502465,
+      "sha256": "6ac1c3d45c70bbc3fb29628bb56daa8a94fe28b5db63c12d984065b982538196",
+      "encodedDimensions": [
+        636,
+        780
+      ],
+      "foregroundWhiteMAE": 2.5277431635321146,
+      "foregroundBlackMAE": 2.3445753270997103,
+      "edgeFrameMax": 8.526636225266362,
+      "maskMAE": 0.34734102026554853,
+      "command": [
+        "ffmpeg",
+        "-y",
+        "-nostdin",
+        "-v",
+        "error",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "yuv420p",
+        "-video_size",
+        "636x780",
+        "-framerate",
+        "30",
+        "-color_range",
+        "pc",
+        "-i",
+        "-",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-threads",
+        "2",
+        "-preset",
+        "veryslow",
+        "-crf",
+        "21",
+        "-pix_fmt",
+        "yuv420p",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "iec61966-2-1",
+        "-colorspace",
+        "smpte170m",
+        "-color_range",
+        "pc",
+        "-bsf:v",
+        "h264_metadata=colour_primaries=1:transfer_characteristics=13:matrix_coefficients=6:video_full_range_flag=1",
+        "-movflags",
+        "+faststart",
+        "-vf",
+        "addroi=0:0:318:390:-0.12,addroi=318:390:318:390:-0.04",
+        "-psy",
+        "0",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-full-matte-q21-r1/ycrcb-crf21.mp4"
+      ],
+      "numericPass": true
+    }
+  ],
+  "nativeAssetAcceptance": false,
+  "loopAccepted": false,
+  "imagesViewed": 0,
+  "limits": "Compression error measured against resized pinned matte only. Original alpha/fringe quality, downsampling loss, tail seam and provisional head/palm sockets remain unaccepted. No runtime or registry change."
+}

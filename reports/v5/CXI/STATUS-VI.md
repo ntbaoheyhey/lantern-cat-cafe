@@ -40,3 +40,5 @@ Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hàn
 2026-11-18T11:53:03.364738+00:00: Bản thử chỉ có 9 mèo native đang chạy ở6301;Mochi/Clover chưa bật trong bản phát hành. Wave1/boss đạt8MB,wave3 còn vượt39.216byte. Đã kiểm chứng lại65khung Clover:điểm nối đuôi vẫn nhảy,không do chân/gốc bị dịch;chưa chấp nhận chất lượng viền/halo. Nghiên cứu nén dữ liệu rig không mất số liệu;chưa tích hợp. Bản phát hành vẫn v5-m1.13.
 
 2026-11-18T12:19:33.429998+00:00 — NativeR2 qua5.552kiểm tra(5.539đạt,11bỏqua,2lỗi dự kiến),7bước browser và3phim thật30giây;đòn đầu20,880giây.9ảnh mới đã xem. Chuẩn bị tagv5-m1.14 cho9mèo native;Mochi/Clover commissioned chưa bật. Owner bỏ8MB nên tải7.591.445/8.030.924/7.624.476byte chỉ báo cáo.
+
+2026-11-18T12:52:08.533839+00:00 — Bản phát hành v5-m1.14 giữ nguyên 9 mèo native. Hai thử nghiệm lấy mẫu Clover đạt300khung trên Chromium/WebKit; bản318×390 giữ nguyên148.824.000byteRGBA, chuẩn bị kiểm tra trong sân đấu. Chưa chấp nhận viền/halo/nối đuôi. LandingR12 đã duyệt hình và đưa vào nguồn; dung lượng chỉ báo cáo.
