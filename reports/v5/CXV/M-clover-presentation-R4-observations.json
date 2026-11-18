@@ -1,0 +1,2347 @@
+{
+  "utc": "2026-11-18T11:50:41.189240+00:00",
+  "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+  "sourceSha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e",
+  "preregistrationSha256": "2871c5ec045c44167613b69c42b4b310fc39a661a9fb84bf547e5e3d5e0dd531",
+  "definitions": {
+    "eye-line": "Midpoint of the two visible eye-line centers. Operational observation is the average of medial/lateral visible eyelid-line endpoints for each eye;exclude extra eyelash tips and pupil/gaze position. Closed lids use visible crease endpoints;occluded endpoint stays null.",
+    "visible-paw": "Midpoint of axis-aligned visible paw+digits bounding rectangle clipped at the visible sleeve opening;include all visible exposed appendage between sleeve and digits. Occluding cloth clips the visible extent;never infer hidden wrist/palm anatomy."
+  },
+  "observationBoundsSourcePxPerAxis": {
+    "eye-line": 8,
+    "visible-paw": 6
+  },
+  "files": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/observations-1.json",
+      "sha256": "faf4a179abdc37913191eb4ca5ea3cde25eea3acd5486ef274e1adf82bc0d89c"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/observations-2.json",
+      "sha256": "62fb08865122c374adc384da94dea8dd1e2e846d1bdf7c519b1a99e9e9d21c93"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/observations-3.json",
+      "sha256": "f168184a220890ef8b720f8fc132f06e0303c116445df7d6cafdf9d9e5586900"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/observations-4.json",
+      "sha256": "015c157d7ee8444aa7272a0c70f14419307b8ae897557d48ceda6a8ccac404ba"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/observations-1.json",
+      "sha256": "831d06e6d4e4ce4c86ce8ce5d565a6803584a4b012cf67340acdd7971a348b51"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/observations-2.json",
+      "sha256": "58fb30b56b0be99b9f44843b6bb2077d105536062ec9a1f7d66b736d9d05716b"
+    }
+  ],
+  "reviewedSheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/eye-line-source-observation-1.jpg",
+      "sha256": "ee7a6c643157e2875dee3c900f01e2e6e8b5ac449634681ebfdb22e3d10b9503",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/visible-paw-source-observation-1.jpg",
+      "sha256": "021d8019a2eb46e27298301b13444a229c0ffbe8252f49231d7146ddea38f210",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/eye-line-source-observation-2.jpg",
+      "sha256": "466767b00e84af76881a880da946981605415086523287fe57bb060898ee39f8",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/visible-paw-source-observation-2.jpg",
+      "sha256": "16f6e2d8c8e6553fcc9363ea1c9ed94623dcdf7da93c0758bea9d72de75c9f9d",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/eye-line-source-observation-3.jpg",
+      "sha256": "01ff98169cbdcb5692d0620f7668f388b347ff370cac793f5136cdfdd6059a5d",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/visible-paw-source-observation-3.jpg",
+      "sha256": "946e7d07d5850d6157674acc34b8778f73a4ac31e396cb33f2353119ccdeb34c",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/eye-line-source-observation-4.jpg",
+      "sha256": "f44eae87a46772e3ebf1f5122659d18ad2aa2bab9c90f8a0aa97567333f35ef6",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/training/visible-paw-source-observation-4.jpg",
+      "sha256": "481eba0bb5664a422ff2b37fdd2197b853a52b17fa2375b2eae2c190ebc6741a",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/eye-line-source-observation-1.jpg",
+      "sha256": "2f783a86289da090fc77d90152ae2e07b2037487ffc7cf64dd80dbd37556c12d",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/visible-paw-source-observation-1.jpg",
+      "sha256": "d66f2601243bbb18020065e32e74d6e5810d6c624c4ea47afa85b41ee49d00d2",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/eye-line-source-observation-2.jpg",
+      "sha256": "ce5a26dd885269428d037102ffc56b7b0a7f7212ad05e2f942c2658609d6a1f6",
+      "views": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/holdouts/visible-paw-source-observation-2.jpg",
+      "sha256": "a56ae1653c630b35df851dd761ffd75c4a73c8abbec8627106b0219781bd676a",
+      "views": 1
+    }
+  ],
+  "observations": {
+    "training": [
+      {
+        "frame": 10,
+        "eyeLineEndpointsSheetPx": [
+          [
+            132,
+            101
+          ],
+          [
+            207,
+            137
+          ],
+          [
+            262,
+            141
+          ],
+          [
+            296,
+            99
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            231.4286,
+            136.4286
+          ],
+          [
+            285.0,
+            162.1429
+          ],
+          [
+            324.2857,
+            165.0
+          ],
+          [
+            348.5714,
+            135.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          297.3214,
+          149.6429
+        ],
+        "visiblePawBoundsSourcePx": [
+          78,
+          332,
+          154,
+          387
+        ],
+        "visiblePawCenterSourcePx": [
+          116.0,
+          359.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Manual approximate presentation coordinates; no hidden anatomy."
+      },
+      {
+        "frame": 22,
+        "eyeLineEndpointsSheetPx": [
+          [
+            519,
+            132
+          ],
+          [
+            600,
+            146
+          ],
+          [
+            658,
+            146
+          ],
+          [
+            693,
+            137
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            233.5714,
+            158.5714
+          ],
+          [
+            291.4286,
+            168.5714
+          ],
+          [
+            332.8571,
+            168.5714
+          ],
+          [
+            357.8571,
+            162.1429
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          303.9285,
+          164.4643
+        ],
+        "visiblePawBoundsSourcePx": [
+          74,
+          330,
+          150,
+          385
+        ],
+        "visiblePawCenterSourcePx": [
+          112.0,
+          357.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "F22 lids closed; crease endpoints used."
+      },
+      {
+        "frame": 35,
+        "eyeLineEndpointsSheetPx": [
+          [
+            155,
+            411
+          ],
+          [
+            241,
+            455
+          ],
+          [
+            285,
+            460
+          ],
+          [
+            309,
+            411
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            247.8571,
+            135.0
+          ],
+          [
+            309.2857,
+            166.4286
+          ],
+          [
+            340.7143,
+            170.0
+          ],
+          [
+            357.8571,
+            135.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          313.9286,
+          151.6071
+        ],
+        "visiblePawBoundsSourcePx": [
+          68,
+          322,
+          150,
+          377
+        ],
+        "visiblePawCenterSourcePx": [
+          109.0,
+          349.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Manual approximate presentation coordinates; no hidden anatomy."
+      },
+      {
+        "frame": 47,
+        "eyeLineEndpointsSheetPx": [
+          [
+            535,
+            407
+          ],
+          [
+            627,
+            448
+          ],
+          [
+            667,
+            451
+          ],
+          [
+            695,
+            402
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            245.0,
+            132.1429
+          ],
+          [
+            310.7143,
+            161.4286
+          ],
+          [
+            339.2857,
+            163.5714
+          ],
+          [
+            359.2857,
+            128.5714
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          313.5714,
+          146.4286
+        ],
+        "visiblePawBoundsSourcePx": [
+          66,
+          317,
+          149,
+          368
+        ],
+        "visiblePawCenterSourcePx": [
+          107.5,
+          342.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Manual approximate presentation coordinates; no hidden anatomy."
+      },
+      {
+        "frame": 60,
+        "eyeLineEndpointsSheetPx": [
+          [
+            135,
+            721
+          ],
+          [
+            225,
+            757
+          ],
+          [
+            272,
+            762
+          ],
+          [
+            301,
+            714
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            233.5714,
+            133.5714
+          ],
+          [
+            297.8571,
+            159.2857
+          ],
+          [
+            331.4286,
+            162.8571
+          ],
+          [
+            352.1429,
+            128.5714
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          303.75,
+          146.0714
+        ],
+        "visiblePawBoundsSourcePx": [
+          65,
+          315,
+          146,
+          367
+        ],
+        "visiblePawCenterSourcePx": [
+          105.5,
+          341.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Manual approximate presentation coordinates; no hidden anatomy."
+      },
+      {
+        "frame": 72,
+        "eyeLineEndpointsSheetPx": [
+          [
+            504,
+            733
+          ],
+          [
+            587,
+            762
+          ],
+          [
+            641,
+            767
+          ],
+          [
+            679,
+            723
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.8571,
+            142.1429
+          ],
+          [
+            282.1429,
+            162.8571
+          ],
+          [
+            320.7143,
+            166.4286
+          ],
+          [
+            347.8571,
+            135.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          293.3929,
+          151.6071
+        ],
+        "visiblePawBoundsSourcePx": [
+          67,
+          318,
+          148,
+          372
+        ],
+        "visiblePawCenterSourcePx": [
+          107.5,
+          345.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; eyelid joins estimated excluding protruding lash branches",
+          "visiblePaw": "medium; visible sleeve opening and digit silhouette; tail backdrop does not define paw"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Manual approximate presentation coordinates; no hidden anatomy."
+      },
+      {
+        "frame": 85,
+        "eyeLineEndpointsSheetPx": [
+          [
+            117,
+            110
+          ],
+          [
+            196,
+            139
+          ],
+          [
+            248,
+            137
+          ],
+          [
+            288,
+            92
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            220.7143,
+            142.8571
+          ],
+          [
+            277.1429,
+            163.5714
+          ],
+          [
+            314.2857,
+            162.1429
+          ],
+          [
+            342.8571,
+            130.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          288.75,
+          149.6429
+        ],
+        "visiblePawBoundsSourcePx": [
+          80,
+          330,
+          154,
+          393
+        ],
+        "visiblePawCenterSourcePx": [
+          117.0,
+          361.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 97,
+        "eyeLineEndpointsSheetPx": [
+          [
+            499,
+            100
+          ],
+          [
+            579,
+            132
+          ],
+          [
+            632,
+            129
+          ],
+          [
+            671,
+            84
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            219.2857,
+            135.7143
+          ],
+          [
+            276.4286,
+            158.5714
+          ],
+          [
+            314.2857,
+            156.4286
+          ],
+          [
+            342.1429,
+            124.2857
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          288.0357,
+          143.75
+        ],
+        "visiblePawBoundsSourcePx": [
+          108,
+          348,
+          174,
+          420
+        ],
+        "visiblePawCenterSourcePx": [
+          141.0,
+          384.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 110,
+        "eyeLineEndpointsSheetPx": [
+          [
+            123,
+            403
+          ],
+          [
+            198,
+            435
+          ],
+          [
+            250,
+            437
+          ],
+          [
+            291,
+            392
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            225.0,
+            129.2857
+          ],
+          [
+            278.5714,
+            152.1429
+          ],
+          [
+            315.7143,
+            153.5714
+          ],
+          [
+            345.0,
+            121.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          291.0714,
+          139.1071
+        ],
+        "visiblePawBoundsSourcePx": [
+          117,
+          349,
+          179,
+          421
+        ],
+        "visiblePawCenterSourcePx": [
+          148.0,
+          385.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 122,
+        "eyeLineEndpointsSheetPx": [
+          [
+            508,
+            404
+          ],
+          [
+            586,
+            435
+          ],
+          [
+            641,
+            439
+          ],
+          [
+            682,
+            395
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            225.7143,
+            130.0
+          ],
+          [
+            281.4286,
+            152.1429
+          ],
+          [
+            320.7143,
+            155.0
+          ],
+          [
+            350.0,
+            123.5714
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          294.4643,
+          140.1786
+        ],
+        "visiblePawBoundsSourcePx": [
+          106,
+          344,
+          174,
+          414
+        ],
+        "visiblePawCenterSourcePx": [
+          140.0,
+          379.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 135,
+        "eyeLineEndpointsSheetPx": [
+          [
+            123,
+            722
+          ],
+          [
+            206,
+            758
+          ],
+          [
+            261,
+            767
+          ],
+          [
+            302,
+            723
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            225.0,
+            134.2857
+          ],
+          [
+            284.2857,
+            160.0
+          ],
+          [
+            323.5714,
+            166.4286
+          ],
+          [
+            352.8571,
+            135.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          296.4285,
+          148.9286
+        ],
+        "visiblePawBoundsSourcePx": [
+          75,
+          332,
+          152,
+          390
+        ],
+        "visiblePawCenterSourcePx": [
+          113.5,
+          361.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 147,
+        "eyeLineEndpointsSheetPx": [
+          [
+            514,
+            728
+          ],
+          [
+            593,
+            767
+          ],
+          [
+            649,
+            779
+          ],
+          [
+            690,
+            735
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            230.0,
+            138.5714
+          ],
+          [
+            286.4286,
+            166.4286
+          ],
+          [
+            326.4286,
+            175.0
+          ],
+          [
+            355.7143,
+            143.5714
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          299.6429,
+          155.8929
+        ],
+        "visiblePawBoundsSourcePx": [
+          67,
+          325,
+          149,
+          378
+        ],
+        "visiblePawCenterSourcePx": [
+          108.0,
+          351.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible lid joins excluding lash tips",
+          "visiblePaw": "medium; outer extent clipped by visible dress at F97/F110/F122"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Approximate authored presentation geometry only; cloth-covered paw extent not inferred."
+      },
+      {
+        "frame": 160,
+        "eyeLineEndpointsSheetPx": [
+          [
+            137,
+            100
+          ],
+          [
+            211,
+            138
+          ],
+          [
+            267,
+            148
+          ],
+          [
+            310,
+            115
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            235.0,
+            135.7143
+          ],
+          [
+            287.8571,
+            162.8571
+          ],
+          [
+            327.8571,
+            170.0
+          ],
+          [
+            358.5714,
+            146.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          302.3214,
+          153.75
+        ],
+        "visiblePawBoundsSourcePx": [
+          66,
+          322,
+          149,
+          375
+        ],
+        "visiblePawCenterSourcePx": [
+          107.5,
+          348.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 172,
+        "eyeLineEndpointsSheetPx": [
+          [
+            519,
+            120
+          ],
+          [
+            590,
+            136
+          ],
+          [
+            654,
+            145
+          ],
+          [
+            696,
+            138
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            233.5714,
+            150.0
+          ],
+          [
+            284.2857,
+            161.4286
+          ],
+          [
+            330.0,
+            167.8571
+          ],
+          [
+            360.0,
+            162.8571
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          301.9643,
+          160.5357
+        ],
+        "visiblePawBoundsSourcePx": [
+          82,
+          333,
+          157,
+          396
+        ],
+        "visiblePawCenterSourcePx": [
+          119.5,
+          364.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 185,
+        "eyeLineEndpointsSheetPx": [
+          [
+            140,
+            402
+          ],
+          [
+            210,
+            440
+          ],
+          [
+            265,
+            453
+          ],
+          [
+            308,
+            412
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            237.1429,
+            128.5714
+          ],
+          [
+            287.1429,
+            155.7143
+          ],
+          [
+            326.4286,
+            165.0
+          ],
+          [
+            357.1429,
+            135.7143
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          301.9643,
+          146.25
+        ],
+        "visiblePawBoundsSourcePx": [
+          110,
+          350,
+          177,
+          424
+        ],
+        "visiblePawCenterSourcePx": [
+          143.5,
+          387.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 197,
+        "eyeLineEndpointsSheetPx": [
+          [
+            520,
+            403
+          ],
+          [
+            590,
+            437
+          ],
+          [
+            646,
+            447
+          ],
+          [
+            687,
+            404
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            234.2857,
+            129.2857
+          ],
+          [
+            284.2857,
+            153.5714
+          ],
+          [
+            324.2857,
+            160.7143
+          ],
+          [
+            353.5714,
+            130.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          299.1071,
+          143.3929
+        ],
+        "visiblePawBoundsSourcePx": [
+          117,
+          352,
+          179,
+          426
+        ],
+        "visiblePawCenterSourcePx": [
+          148.0,
+          389.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 210,
+        "eyeLineEndpointsSheetPx": [
+          [
+            142,
+            733
+          ],
+          [
+            224,
+            757
+          ],
+          [
+            270,
+            754
+          ],
+          [
+            298,
+            718
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            238.5714,
+            142.1429
+          ],
+          [
+            297.1429,
+            159.2857
+          ],
+          [
+            330.0,
+            157.1429
+          ],
+          [
+            350.0,
+            131.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          303.9286,
+          147.5
+        ],
+        "visiblePawBoundsSourcePx": [
+          109,
+          347,
+          177,
+          421
+        ],
+        "visiblePawCenterSourcePx": [
+          143.0,
+          384.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 222,
+        "eyeLineEndpointsSheetPx": [
+          [
+            531,
+            724
+          ],
+          [
+            617,
+            751
+          ],
+          [
+            655,
+            750
+          ],
+          [
+            678,
+            697
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            242.1429,
+            135.7143
+          ],
+          [
+            303.5714,
+            155.0
+          ],
+          [
+            330.7143,
+            154.2857
+          ],
+          [
+            347.1429,
+            116.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          305.8929,
+          140.3571
+        ],
+        "visiblePawBoundsSourcePx": [
+          86,
+          334,
+          160,
+          400
+        ],
+        "visiblePawCenterSourcePx": [
+          123.0,
+          367.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F172 closed crease, F222 far eye foreshortened",
+          "visiblePaw": "medium; visible cloth clips F185/F197/F210 digit side"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Observed visible boundaries only; no hidden continuation beneath dress."
+      },
+      {
+        "frame": 235,
+        "eyeLineEndpointsSheetPx": [
+          [
+            138,
+            104
+          ],
+          [
+            224,
+            131
+          ],
+          [
+            265,
+            129
+          ],
+          [
+            291,
+            86
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            235.7143,
+            138.5714
+          ],
+          [
+            297.1429,
+            157.8571
+          ],
+          [
+            326.4286,
+            156.4286
+          ],
+          [
+            345.0,
+            125.7143
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          301.0715,
+          144.6428
+        ],
+        "visiblePawBoundsSourcePx": [
+          69,
+          320,
+          150,
+          378
+        ],
+        "visiblePawCenterSourcePx": [
+          109.5,
+          349.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      },
+      {
+        "frame": 247,
+        "eyeLineEndpointsSheetPx": [
+          [
+            510,
+            110
+          ],
+          [
+            592,
+            142
+          ],
+          [
+            640,
+            142
+          ],
+          [
+            674,
+            95
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            227.1429,
+            142.8571
+          ],
+          [
+            285.7143,
+            165.7143
+          ],
+          [
+            320.0,
+            165.7143
+          ],
+          [
+            344.2857,
+            132.1429
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          294.2857,
+          151.6071
+        ],
+        "visiblePawBoundsSourcePx": [
+          67,
+          319,
+          149,
+          375
+        ],
+        "visiblePawCenterSourcePx": [
+          108.0,
+          347.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      },
+      {
+        "frame": 260,
+        "eyeLineEndpointsSheetPx": [
+          [
+            120,
+            429
+          ],
+          [
+            199,
+            459
+          ],
+          [
+            252,
+            457
+          ],
+          [
+            292,
+            414
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.8571,
+            147.8571
+          ],
+          [
+            279.2857,
+            169.2857
+          ],
+          [
+            317.1429,
+            167.8571
+          ],
+          [
+            345.7143,
+            137.1429
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          291.25,
+          155.5357
+        ],
+        "visiblePawBoundsSourcePx": [
+          66,
+          322,
+          149,
+          378
+        ],
+        "visiblePawCenterSourcePx": [
+          107.5,
+          350.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      },
+      {
+        "frame": 272,
+        "eyeLineEndpointsSheetPx": [
+          [
+            503,
+            426
+          ],
+          [
+            583,
+            457
+          ],
+          [
+            638,
+            454
+          ],
+          [
+            677,
+            410
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.1429,
+            145.7143
+          ],
+          [
+            279.2857,
+            167.8571
+          ],
+          [
+            318.5714,
+            165.7143
+          ],
+          [
+            346.4286,
+            134.2857
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          291.6071,
+          153.3929
+        ],
+        "visiblePawBoundsSourcePx": [
+          68,
+          322,
+          151,
+          380
+        ],
+        "visiblePawCenterSourcePx": [
+          109.5,
+          351.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      },
+      {
+        "frame": 285,
+        "eyeLineEndpointsSheetPx": [
+          [
+            120,
+            731
+          ],
+          [
+            200,
+            761
+          ],
+          [
+            254,
+            764
+          ],
+          [
+            294,
+            720
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.8571,
+            140.7143
+          ],
+          [
+            280.0,
+            162.1429
+          ],
+          [
+            318.5714,
+            164.2857
+          ],
+          [
+            347.1429,
+            132.8571
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          292.1429,
+          150.0
+        ],
+        "visiblePawBoundsSourcePx": [
+          74,
+          329,
+          153,
+          389
+        ],
+        "visiblePawCenterSourcePx": [
+          113.5,
+          359.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      },
+      {
+        "frame": 297,
+        "eyeLineEndpointsSheetPx": [
+          [
+            510,
+            726
+          ],
+          [
+            585,
+            758
+          ],
+          [
+            638,
+            759
+          ],
+          [
+            677,
+            715
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            227.1429,
+            137.1429
+          ],
+          [
+            280.7143,
+            160.0
+          ],
+          [
+            318.5714,
+            160.7143
+          ],
+          [
+            346.4286,
+            129.2857
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          293.2143,
+          146.7857
+        ],
+        "visiblePawBoundsSourcePx": [
+          79,
+          332,
+          156,
+          396
+        ],
+        "visiblePawCenterSourcePx": [
+          117.5,
+          364.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; lid/aperture joins, fading inner contour approximate; F235 far eye foreshortened",
+          "visiblePaw": "medium; tail behind paw at F235/F247 does not define extent"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Endpoint locations estimated at eyelid/aperture joins, excluding protruding lashes and pupil position; not precise stroke-segmentation ground truth."
+      }
+    ],
+    "holdouts": [
+      {
+        "frame": 5,
+        "eyeLineEndpointsSheetPx": [
+          [
+            126,
+            99
+          ],
+          [
+            202,
+            133
+          ],
+          [
+            256,
+            137
+          ],
+          [
+            295,
+            94
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            227.1429,
+            135.0
+          ],
+          [
+            281.4286,
+            159.2857
+          ],
+          [
+            320.0,
+            162.1429
+          ],
+          [
+            347.8571,
+            131.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          294.1071,
+          146.9643
+        ],
+        "visiblePawBoundsSourcePx": [
+          79,
+          332,
+          154,
+          394
+        ],
+        "visiblePawCenterSourcePx": [
+          116.5,
+          363.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 30,
+        "eyeLineEndpointsSheetPx": [
+          [
+            535,
+            108
+          ],
+          [
+            620,
+            143
+          ],
+          [
+            666,
+            148
+          ],
+          [
+            695,
+            117
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            245.0,
+            141.4286
+          ],
+          [
+            305.7143,
+            166.4286
+          ],
+          [
+            338.5714,
+            170.0
+          ],
+          [
+            359.2857,
+            147.8571
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          312.1428,
+          156.4286
+        ],
+        "visiblePawBoundsSourcePx": [
+          70,
+          326,
+          150,
+          380
+        ],
+        "visiblePawCenterSourcePx": [
+          110.0,
+          353.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 55,
+        "eyeLineEndpointsSheetPx": [
+          [
+            144,
+            409
+          ],
+          [
+            234,
+            447
+          ],
+          [
+            279,
+            452
+          ],
+          [
+            306,
+            405
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            240.0,
+            133.5714
+          ],
+          [
+            304.2857,
+            160.7143
+          ],
+          [
+            336.4286,
+            164.2857
+          ],
+          [
+            355.7143,
+            130.7143
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          309.1072,
+          147.3214
+        ],
+        "visiblePawBoundsSourcePx": [
+          65,
+          315,
+          148,
+          369
+        ],
+        "visiblePawCenterSourcePx": [
+          106.5,
+          342.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 80,
+        "eyeLineEndpointsSheetPx": [
+          [
+            504,
+            425
+          ],
+          [
+            581,
+            452
+          ],
+          [
+            634,
+            451
+          ],
+          [
+            674,
+            405
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.8571,
+            145.0
+          ],
+          [
+            277.8571,
+            164.2857
+          ],
+          [
+            315.7143,
+            163.5714
+          ],
+          [
+            344.2857,
+            130.7143
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          290.1785,
+          150.8929
+        ],
+        "visiblePawBoundsSourcePx": [
+          70,
+          322,
+          150,
+          382
+        ],
+        "visiblePawCenterSourcePx": [
+          110.0,
+          352.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 105,
+        "eyeLineEndpointsSheetPx": [
+          [
+            120,
+            719
+          ],
+          [
+            197,
+            750
+          ],
+          [
+            249,
+            751
+          ],
+          [
+            288,
+            706
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.8571,
+            132.1429
+          ],
+          [
+            277.8571,
+            154.2857
+          ],
+          [
+            315.0,
+            155.0
+          ],
+          [
+            342.8571,
+            122.8571
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          289.6428,
+          141.0714
+        ],
+        "visiblePawBoundsSourcePx": [
+          116,
+          348,
+          181,
+          423
+        ],
+        "visiblePawCenterSourcePx": [
+          148.5,
+          385.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 130,
+        "eyeLineEndpointsSheetPx": [
+          [
+            507,
+            720
+          ],
+          [
+            588,
+            754
+          ],
+          [
+            643,
+            759
+          ],
+          [
+            684,
+            715
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            225.0,
+            132.8571
+          ],
+          [
+            282.8571,
+            157.1429
+          ],
+          [
+            322.1429,
+            160.7143
+          ],
+          [
+            351.4286,
+            129.2857
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          295.3571,
+          145.0
+        ],
+        "visiblePawBoundsSourcePx": [
+          86,
+          334,
+          160,
+          402
+        ],
+        "visiblePawCenterSourcePx": [
+          123.0,
+          368.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; visible eyelid/aperture joins estimated; far eye foreshortened at F30/F55",
+          "visiblePaw": "medium; tail behind at F30/F55/F80; dress clips F105"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 155,
+        "eyeLineEndpointsSheetPx": [
+          [
+            136,
+            97
+          ],
+          [
+            211,
+            141
+          ],
+          [
+            266,
+            151
+          ],
+          [
+            309,
+            107
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            234.2857,
+            133.5714
+          ],
+          [
+            287.8571,
+            165.0
+          ],
+          [
+            327.1429,
+            172.1429
+          ],
+          [
+            357.8571,
+            140.7143
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          301.7857,
+          152.8572
+        ],
+        "visiblePawBoundsSourcePx": [
+          66,
+          322,
+          149,
+          375
+        ],
+        "visiblePawCenterSourcePx": [
+          107.5,
+          348.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 180,
+        "eyeLineEndpointsSheetPx": [
+          [
+            527,
+            88
+          ],
+          [
+            595,
+            129
+          ],
+          [
+            650,
+            142
+          ],
+          [
+            691,
+            101
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            239.2857,
+            127.1429
+          ],
+          [
+            287.8571,
+            156.4286
+          ],
+          [
+            327.1429,
+            165.7143
+          ],
+          [
+            356.4286,
+            136.4286
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          302.6786,
+          146.4286
+        ],
+        "visiblePawBoundsSourcePx": [
+          102,
+          344,
+          172,
+          416
+        ],
+        "visiblePawCenterSourcePx": [
+          137.0,
+          380.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 205,
+        "eyeLineEndpointsSheetPx": [
+          [
+            134,
+            444
+          ],
+          [
+            213,
+            450
+          ],
+          [
+            275,
+            446
+          ],
+          [
+            304,
+            439
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            232.8571,
+            158.5714
+          ],
+          [
+            289.2857,
+            162.8571
+          ],
+          [
+            333.5714,
+            160.0
+          ],
+          [
+            354.2857,
+            155.0
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          302.5,
+          159.1071
+        ],
+        "visiblePawBoundsSourcePx": [
+          114,
+          349,
+          179,
+          423
+        ],
+        "visiblePawCenterSourcePx": [
+          146.5,
+          386.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 230,
+        "eyeLineEndpointsSheetPx": [
+          [
+            528,
+            414
+          ],
+          [
+            612,
+            449
+          ],
+          [
+            653,
+            435
+          ],
+          [
+            676,
+            393
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            240.0,
+            137.1429
+          ],
+          [
+            300.0,
+            162.1429
+          ],
+          [
+            329.2857,
+            152.1429
+          ],
+          [
+            345.7143,
+            122.1429
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          303.75,
+          143.3929
+        ],
+        "visiblePawBoundsSourcePx": [
+          71,
+          324,
+          151,
+          383
+        ],
+        "visiblePawCenterSourcePx": [
+          111.0,
+          353.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 255,
+        "eyeLineEndpointsSheetPx": [
+          [
+            117,
+            746
+          ],
+          [
+            198,
+            774
+          ],
+          [
+            251,
+            771
+          ],
+          [
+            293,
+            726
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            220.7143,
+            151.4286
+          ],
+          [
+            278.5714,
+            171.4286
+          ],
+          [
+            316.4286,
+            169.2857
+          ],
+          [
+            346.4286,
+            137.1429
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          290.5357,
+          157.3214
+        ],
+        "visiblePawBoundsSourcePx": [
+          67,
+          323,
+          150,
+          376
+        ],
+        "visiblePawCenterSourcePx": [
+          108.5,
+          349.5
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      },
+      {
+        "frame": 280,
+        "eyeLineEndpointsSheetPx": [
+          [
+            503,
+            734
+          ],
+          [
+            583,
+            764
+          ],
+          [
+            638,
+            765
+          ],
+          [
+            678,
+            721
+          ]
+        ],
+        "eyeLineEndpointsSourcePx": [
+          [
+            222.1429,
+            142.8571
+          ],
+          [
+            279.2857,
+            164.2857
+          ],
+          [
+            318.5714,
+            165.0
+          ],
+          [
+            347.1429,
+            133.5714
+          ]
+        ],
+        "eyeLineCenterSourcePx": [
+          291.7857,
+          151.4286
+        ],
+        "visiblePawBoundsSourcePx": [
+          71,
+          328,
+          153,
+          386
+        ],
+        "visiblePawCenterSourcePx": [
+          112.0,
+          357.0
+        ],
+        "confidence": {
+          "eyeLine": "medium; F205 closed crease endpoints, F230 far eye foreshortened",
+          "visiblePaw": "medium; visible dress clips F180/F205; tail backdrop at F155/F230/F255"
+        },
+        "sourceBoundsPerAxis": {
+          "eyeLine": 8,
+          "visiblePaw": 6
+        },
+        "notes": "Frozen without fitted predictions; manual approximate presentation geometry."
+      }
+    ]
+  },
+  "allObservationsFrozenBeforeFit": true,
+  "limits": [
+    "Single-observer approximate visible presentation anchors; bounds are stated manual tolerance,not empirical confidence intervals.",
+    "Eye endpoint is the visible eyelid/aperture join; fading inner contour is approximate.",
+    "No hidden anatomy,full-cycle correspondence,source-alpha,scene or release acceptance.",
+    "Old R1/R2/R3 data and failures unchanged."
+  ]
+}
