@@ -162,7 +162,43 @@
           "sceneError": ""
         }
       },
-      "blockedRequests": []
+      "blockedRequests": [],
+      "steadyWindowStartMs": 2000,
+      "frameScope": "Steady window beginning at 2000ms",
+      "wholeRun": {
+        "samples": 1919,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 4.899999991059303,
+          "p99": 14.299999997019768,
+          "max": 39.29999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.5,
+          "p95": 14.200000002980232,
+          "p99": 21.200000002980232,
+          "max": 39.29999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      }
     },
     {
       "rate": 4,
@@ -263,7 +299,43 @@
           "sceneError": ""
         }
       },
-      "blockedRequests": []
+      "blockedRequests": [],
+      "steadyWindowStartMs": 2000,
+      "frameScope": "Steady window beginning at 2000ms",
+      "wholeRun": {
+        "samples": 1314,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.900000000001455,
+          "p99": 66.60000000000218,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 14.200000002980232,
+          "p95": 22.400000005960464,
+          "p99": 45.79999999701977,
+          "max": 120.20000000298023
+        },
+        "over33": 70,
+        "over50": 22
+      },
+      "startup": {
+        "samples": 63,
+        "frameMs": {
+          "median": 33.19999999999982,
+          "p95": 66.59999999999991,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 16.599999994039536,
+          "p95": 44.70000000298023,
+          "p99": 120.20000000298023,
+          "max": 120.20000000298023
+        },
+        "over33": 9,
+        "over50": 5
+      }
     }
   ],
   "errors": [],
@@ -305,5 +377,6 @@
   "reviewedUtc": "2026-11-18T03:29:33.882315+00:00",
   "limits": "Untransformed local application;independent acceptance pending. Native extension events are injected failures,not hardware incidence. Density/motion/error-notification controls are synthetic. Ordinary CPU1x/4x runs are configuration coverage,not a speedup or physical laptop equivalence.",
   "visualPass": true,
-  "visualNotes": "Two fresh ordinary boss captures reviewed once: seven actors, HP/status labels and controls remain readable; Yarn sweep retains identifiable recipients. No performance improvement claim."
+  "visualNotes": "Two fresh ordinary boss captures reviewed once: seven actors, HP/status labels and controls remain readable; Yarn sweep retains identifiable recipients. No performance improvement claim.",
+  "cadenceClarifiedUtc": "2026-11-18T03:32:28.906987+00:00"
 }

@@ -70,3 +70,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T02:43:08.002741+00:00 V-E native context-loss defect reproducedf991fb117:both motion modes ready=true hide original fallback while GPUbuffer lost;real restoration recovers, reduced fullRGBexact.6captures measured/2freshsheets reviewed once;0errors/blocks. Tools-only prototype next;no applicationedit.
 
 2026-11-18T02:54:15.165647+00:00 V-E context-loss prototype localPASS28tests/TSC0/6exactRGBpairs/2lifecycles;original fallback visible only after hiding lostcanvas,12frames/4freshreviews. Earlier whitecanvas prototype retainedvisualFAIL. Nativeadoption BLOCKED-ON CXI densityaudit sourcehold;verifier/runner prepared. m1.11green merged1d83dcba7.
+
+2026-11-18T03:39:22.592250+00:00 V7: Sửa khôi phục trận đang tạm dừng đã qua35test/tsc0,2chế độRGBkhớp,2vònglifecycle và2lượt32sDPR2 khônglỗi;đã gửi CXI172c317d4 đểkiểmtrađộclập. m1.12đãgộp. 4x:p95toànlượt49.9ms,ổnđịnhsau2s33.4ms;chưakhẳngđịnhhếtgiật. Đangphântíchtraceoffline;nhườngbrowserchoCXIđếnkhithôngbáotrả.

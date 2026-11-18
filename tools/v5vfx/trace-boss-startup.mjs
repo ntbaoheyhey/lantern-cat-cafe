@@ -6,16 +6,20 @@ import {resolve} from 'node:path';
 const production=process.env.CXV_TRACE_JUDGE==='1';
 const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(production?'/Users/bao/taskbar-hero-chain/tools/v5int/production-fixture.mjs':'./production-candidate-fixture.mjs');
 import {hash} from './victory-demand-source.mjs';
+import {desktopDensity} from './desktop-density.mjs';
 const out=resolve(process.env.CXV_CAPTURE_OUT);assert(!existsSync(resolve(out,'report.json')));await mkdir(out,{recursive:true});
 const durationMs=Number(process.env.CXV_TRACE_DURATION_MS??6000);assert([6000,32000].includes(durationMs));
 const shaderAudit=process.env.CXV_TRACE_SHADER==='1';
+const desktopDpr=Number(process.env.CXV_TRACE_DPR??1);assert([1,1.5,2].includes(desktopDpr));
 const report={utc:new Date().toISOString(),url:judgeUrl,...runtimeEvidence(),viewport:{width:1280,height:720},method:'Preserved current-runtime baseline artifact; seeded boss then6s normal speed1 automatic rule-selected play at1x/4x. Inclusive elapsed method/submission wrappers, CPU sampling and timeline traces add overhead. User-timing marks align render intervals to profiler samples. Attribution only; no FPS, exclusive-CPU, physical-laptop or judge-acceptance claim.',runs:[],errors:[],pass:false};
 report.production=production;report.durationMs=durationMs;report.method=report.method.replace('Preserved current-runtime baseline artifact',production?'Current served judge artifact':'Preserved current-runtime baseline artifact').replace('then6s','then'+durationMs/1000+'s');
+report.deviceScaleFactor=desktopDpr;
 if(production){const board=await readFile('/Users/bao/taskbar-hero-mailbox/BOARD.md','utf8');report.servedSource=board.match(/Currently served candidate:([a-f0-9]{40})/)[1];assert.equal(report.indexSha256,board.match(/Currently served candidate:[^\n]*index:([a-f0-9]{64})/)[1]);}
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  for(const rate of [1,4]){
-  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr});await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
+  const densityBefore=await desktopDensity(page,desktopDpr);
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
   await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:1000});
   await cdp.send('Tracing.start',{categories:'devtools.timeline,blink.user_timing,disabled-by-default-devtools.timeline.stack',transferMode:'ReturnAsStream'});await cdp.send('Profiler.start');
@@ -51,7 +55,12 @@ try{
   const complete=new Promise(done=>cdp.once('Tracing.tracingComplete',done));await cdp.send('Tracing.end');const {stream}=await complete;assert(stream);let trace='';
   for(;;){const chunk=await cdp.send('IO.read',{handle:stream});trace+=chunk.base64Encoded?Buffer.from(chunk.data,'base64').toString('utf8'):chunk.data;if(chunk.eof)break;}await cdp.send('IO.close',{handle:stream});
   const tracePath=resolve(out,`${rate}x.trace.json`);await writeFile(tracePath,trace);await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});
-  const path=resolve(out,`${rate}x.png`);await page.screenshot({path});run.capture={path,sha256:hash(await readFile(path))};run.profile={path:profilePath,sha256:hash(await readFile(profilePath))};run.trace={path:tracePath,sha256:hash(trace)};run.errors=errors;run.blockedRequests=blockedRequests;run.utc=new Date().toISOString();assert(run.frames.length>40&&run.plans.length>1&&run.final.log>run.initial.log);report.runs.push(run);report.errors.push(...errors);await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({rate,frames:run.frames.length,plans:run.plans.length,maxElapsedMs:Math.max(...run.frames.map(f=>f.elapsedMs)),errors}));await page.close();
+  await page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
+  run.desktopDensity={before:densityBefore,after:await desktopDensity(page,desktopDpr)};
+  const path=resolve(out,`${rate}x.png`),liveDpr=await page.evaluate(()=>devicePixelRatio);
+  const shot=await cdp.send('Page.captureScreenshot',{format:'png',fromSurface:true,captureBeyondViewport:false,clip:{x:0,y:0,width:1280,height:720,scale:1/liveDpr}});
+  await writeFile(path,Buffer.from(shot.data,'base64'));const png=await readFile(path);assert.equal(png.readUInt32BE(16),1280);assert.equal(png.readUInt32BE(20),720);
+  run.capture={path,sha256:hash(png)};run.profile={path:profilePath,sha256:hash(await readFile(profilePath))};run.trace={path:tracePath,sha256:hash(trace)};run.errors=errors;run.blockedRequests=blockedRequests;run.utc=new Date().toISOString();assert(run.frames.length>40&&run.plans.length>1&&run.final.log>run.initial.log);report.runs.push(run);report.errors.push(...errors);await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({rate,frames:run.frames.length,plans:run.plans.length,maxElapsedMs:Math.max(...run.frames.map(f=>f.elapsedMs)),errors}));await page.close();
  }
  report.pass=report.runs.length===2&&!report.errors.length&&report.runs.every(r=>!r.blockedRequests.length);report.ended=new Date().toISOString();await writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');assert(report.pass);
 }finally{await browser.close();}

@@ -1,0 +1,101 @@
+{
+  "utc": "2026-11-18T03:32:28.906987+00:00",
+  "source": "9efabfa865f95cb4f020b9a68bba6b9f388356da",
+  "indexSha256": "6f27065a021e115c3acec1e7c985d690af7fea26d4bdd6f6248b8ac595bc353d",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/trial/report.json",
+    "sha256": "440d14f4a62ede4f6162e0ae97153e8af27eb6ad2134dc047a3586d32c6113e5"
+  },
+  "cadence": [
+    {
+      "rate": 1,
+      "steadyStartMs": 2000,
+      "steadyFrame": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "wholeRun": {
+        "samples": 1919,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 4.899999991059303,
+          "p99": 14.299999997019768,
+          "max": 39.29999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.5,
+          "p95": 14.200000002980232,
+          "p99": 21.200000002980232,
+          "max": 39.29999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      }
+    },
+    {
+      "rate": 4,
+      "steadyStartMs": 2000,
+      "steadyFrame": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.60000000000036,
+        "max": 116.60000000000218
+      },
+      "wholeRun": {
+        "samples": 1314,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 49.900000000001455,
+          "p99": 66.60000000000218,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 14.200000002980232,
+          "p95": 22.400000005960464,
+          "p99": 45.79999999701977,
+          "max": 120.20000000298023
+        },
+        "over33": 70,
+        "over50": 22
+      },
+      "startup": {
+        "samples": 63,
+        "frameMs": {
+          "median": 33.19999999999982,
+          "p95": 66.59999999999991,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 16.599999994039536,
+          "p95": 44.70000000298023,
+          "p99": 120.20000000298023,
+          "max": 120.20000000298023
+        },
+        "over33": 9,
+        "over50": 5
+      }
+    }
+  ],
+  "interpretation": "1x produced no intervals above33.5ms. At4x, whole-run p95 49.9ms exceeds steady33.4ms;startup and late ultimate/contact stalls remain. No speedup claim;do not repeat rejected number-atlas,readback,preupload,shader-preparation experiments without a new mechanism.",
+  "next": "Inspect current native late ultimate attribution after CXI browser coordination;no application change."
+}
