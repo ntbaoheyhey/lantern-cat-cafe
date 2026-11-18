@@ -1,0 +1,2879 @@
+{
+  "utc": "2026-11-18T01:48:04.538Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "series": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/series.json",
+    "sha256": "2215b5b4af017782fb19d6d18add1c35ae053c9c60c55f790a29e1db2202c7a6",
+    "utc": "2026-11-18T01:40:28.373Z",
+    "ended": "2026-11-18T01:47:26.817Z",
+    "order": [
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ]
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/build.json",
+    "sha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8"
+  },
+  "artifactFilesVerified": 3764,
+  "verifiedToolSnapshots": [
+    {
+      "name": "run-desktop-density-production.mjs",
+      "sha256": "a87ade1461907f4310fd3cc9ed65be09056e48f9dc9c9bc0efd0fd1353dce437"
+    },
+    {
+      "name": "desktop-density.mjs",
+      "sha256": "975caa1c159664052871f72045576455f42190ac4738f9b43413cea14f44b690"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "1fa44c8981a2f5ad7289e58b5ed50462d755b6f4f02be4a30df704185bc920c8"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "method": "Six sequential native deviceScaleFactor1/2 trials,one unchanged production artifact,32s/rate ordinary seeded boss play at speed1. 1x/4xCPU,three-trial medians. Pixel ratio is the only changed browser configuration;no shader preparation or renderer/quality overrides. Desktop viewport1280x720;CSS-scaled captures after timed play.",
+  "limits": "DPR emulation is not a second physical laptop. CPU throttling is a stress proxy. Render submission and CDP task durations are elapsed times,not GPU completion or exclusive CPU. Fixture loading is excluded. Headline steady windows exclude first2000ms;whole-run/startup retained. This is configuration coverage,not an optimization or independent6301acceptance.",
+  "behavior": {
+    "initial": {
+      "round": 1,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 736,
+          "charge": 35
+        },
+        {
+          "id": "soot",
+          "hp": 568,
+          "charge": 35
+        },
+        {
+          "id": "clover",
+          "hp": 477,
+          "charge": 35
+        },
+        {
+          "id": "panko",
+          "hp": 753,
+          "charge": 35
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 1398,
+          "charge": 15
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "hp": 987,
+          "charge": 15
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "hp": 987,
+          "charge": 15
+        }
+      ],
+      "log": 0
+    },
+    "final": {
+      "round": 4,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 736,
+          "charge": 100
+        },
+        {
+          "id": "soot",
+          "hp": 568,
+          "charge": 100
+        },
+        {
+          "id": "clover",
+          "hp": 477,
+          "charge": 96
+        },
+        {
+          "id": "panko",
+          "hp": 753,
+          "charge": 58
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 765,
+          "charge": 52
+        },
+        {
+          "id": "foe-1-binding-thread",
+          "hp": 689,
+          "charge": 100
+        },
+        {
+          "id": "foe-2-binding-thread",
+          "hp": 845,
+          "charge": 100
+        }
+      ],
+      "log": 171,
+      "result": null,
+      "screen": "map"
+    },
+    "plans": [
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-1-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-2-binding-thread",
+        "skillId": "threadAttack",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "non-action",
+        "actorId": "",
+        "skillId": "round-status",
+        "ultimate": false,
+        "duration": 300,
+        "leadIn": null,
+        "fixedTiming": true,
+        "voiceWindows": null
+      },
+      {
+        "kind": "action",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "soot",
+        "skillId": "soot-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "clover",
+        "skillId": "clover-1",
+        "ultimate": false,
+        "duration": 800,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "panko",
+        "skillId": "panko-4",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      },
+      {
+        "kind": "action",
+        "actorId": "foe-0-yarn-giant",
+        "skillId": "yarnAttack",
+        "ultimate": true,
+        "duration": 2200,
+        "leadIn": 0,
+        "fixedTiming": true,
+        "voiceWindows": 0
+      }
+    ]
+  },
+  "trials": [
+    {
+      "index": 0,
+      "dpr": 1,
+      "rate": 1,
+      "utc": "2026-11-18T01:40:28.673Z",
+      "ended": "2026-11-18T01:41:39.072Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-1/report.json",
+      "rawSha256": "41b728d337a1597b74960a484e2abfd22a6ec39bbf1e948df4ccaf4eab5a2de8",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32001,
+      "firstRenderLatencyMs": 8.899999991059303,
+      "startup": {
+        "samples": 118,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "p99": 16.800000000000182,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 13.900000005960464,
+          "p99": 18.599999994039536,
+          "max": 37.099999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.299999997019768,
+          "p99": 13.700000002980232,
+          "max": 37.099999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.199999988079071,
+          "p99": 11.900000005960464,
+          "max": 19.599999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2749,
+        "LayoutDuration": 0.097772,
+        "RecalcStyleCount": 5684,
+        "RecalcStyleDuration": 0.594864,
+        "TaskDuration": 9.250786
+      },
+      "focusEntryCpuMs": {
+        "median": 4.4000000059604645,
+        "p95": 5.299999997019768,
+        "p99": 5.299999997019768,
+        "max": 5.299999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.900000005960464,
+        "p95": 17.900000005960464,
+        "p99": 17.900000005960464,
+        "max": 17.900000005960464
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 0,
+      "dpr": 1,
+      "rate": 4,
+      "utc": "2026-11-18T01:40:28.673Z",
+      "ended": "2026-11-18T01:41:39.072Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-1/report.json",
+      "rawSha256": "41b728d337a1597b74960a484e2abfd22a6ec39bbf1e948df4ccaf4eab5a2de8",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32001,
+      "firstRenderLatencyMs": 20.900000005960464,
+      "startup": {
+        "samples": 71,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.69999999999982,
+          "p99": 150,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 15.100000008940697,
+          "p95": 42.3999999910593,
+          "p99": 127.29999999701977,
+          "max": 127.29999999701977
+        },
+        "over33": 10,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1461,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999854,
+          "max": 150
+        },
+        "submitCpuMs": {
+          "median": 12.700000002980232,
+          "p95": 19.599999994039536,
+          "p99": 42.20000000298023,
+          "max": 127.29999999701977
+        },
+        "over33": 58,
+        "over50": 17
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1390,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.100000000000364,
+          "max": 100.10000000000218
+        },
+        "submitCpuMs": {
+          "median": 12.700000002980232,
+          "p95": 19.399999991059303,
+          "p99": 40.900000005960464,
+          "max": 62.099999994039536
+        },
+        "over33": 48,
+        "over50": 12
+      },
+      "layout": {
+        "LayoutCount": 2077,
+        "LayoutDuration": 0.377024,
+        "RecalcStyleCount": 4351,
+        "RecalcStyleDuration": 2.37731,
+        "TaskDuration": 31.820724
+      },
+      "focusEntryCpuMs": {
+        "median": 20.200000002980232,
+        "p95": 25.799999997019768,
+        "p99": 25.799999997019768,
+        "max": 25.799999997019768
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.400000005960464,
+        "p95": 62.099999994039536,
+        "p99": 62.099999994039536,
+        "max": 62.099999994039536
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "dpr": 2,
+      "rate": 1,
+      "utc": "2026-11-18T01:41:39.344Z",
+      "ended": "2026-11-18T01:42:49.768Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-2/report.json",
+      "rawSha256": "91d13f14953621e6a73c981d06bf276e037250443288a00013f826d2961fc3c7",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32001.30000001192,
+      "firstRenderLatencyMs": 10.600000008940697,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.29999999999973,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.3999999910593033,
+          "p95": 14.200000002980232,
+          "p99": 20.899999991059303,
+          "max": 41.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000291,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 4.5,
+          "p99": 13.900000005960464,
+          "max": 41.79999999701977
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000291,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 4.300000011920929,
+          "p99": 12.200000002980232,
+          "max": 20.299999997019768
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2746,
+        "LayoutDuration": 0.102588,
+        "RecalcStyleCount": 5680,
+        "RecalcStyleDuration": 0.628136,
+        "TaskDuration": 9.701074
+      },
+      "focusEntryCpuMs": {
+        "median": 4.5999999940395355,
+        "p95": 5.300000011920929,
+        "p99": 5.300000011920929,
+        "max": 5.300000011920929
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.900000005960464,
+        "p95": 17.899999991059303,
+        "p99": 17.899999991059303,
+        "max": 17.899999991059303
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 1,
+      "dpr": 2,
+      "rate": 4,
+      "utc": "2026-11-18T01:41:39.344Z",
+      "ended": "2026-11-18T01:42:49.768Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-2/report.json",
+      "rawSha256": "91d13f14953621e6a73c981d06bf276e037250443288a00013f826d2961fc3c7",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32008.60000000894,
+      "firstRenderLatencyMs": 21.5,
+      "startup": {
+        "samples": 62,
+        "frameMs": {
+          "median": 16.800000000000182,
+          "p95": 66.69999999999982,
+          "p99": 200,
+          "max": 200
+        },
+        "submitCpuMs": {
+          "median": 16.400000005960464,
+          "p95": 45,
+          "p99": 171.1000000089407,
+          "max": 171.1000000089407
+        },
+        "over33": 11,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1354,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000218,
+          "max": 200
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 20.399999991059303,
+          "p99": 41.6000000089407,
+          "max": 171.1000000089407
+        },
+        "over33": 64,
+        "over50": 16
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1292,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.100000000000364,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 13.400000005960464,
+          "p95": 19.69999998807907,
+          "p99": 41.29999999701977,
+          "max": 59.80000001192093
+        },
+        "over33": 53,
+        "over50": 11
+      },
+      "layout": {
+        "LayoutCount": 1939,
+        "LayoutDuration": 0.469334,
+        "RecalcStyleCount": 4037,
+        "RecalcStyleDuration": 2.71267,
+        "TaskDuration": 31.876365
+      },
+      "focusEntryCpuMs": {
+        "median": 20,
+        "p95": 25,
+        "p99": 25,
+        "max": 25
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 40.69999998807907,
+        "p95": 59.80000001192093,
+        "p99": 59.80000001192093,
+        "max": 59.80000001192093
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "dpr": 2,
+      "rate": 1,
+      "utc": "2026-11-18T01:42:50.052Z",
+      "ended": "2026-11-18T01:43:59.030Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/2-2/report.json",
+      "rawSha256": "71a2ed08c705174f851059ef221d3fcf7ba9cc58cde3a71d0e1a58429d140847",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32001.5,
+      "firstRenderLatencyMs": 13.099999994039536,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.30000000000018,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 3.0999999940395355,
+          "p95": 13.400000005960464,
+          "p99": 23.700000002980232,
+          "max": 41
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.399999999999636
+        },
+        "submitCpuMs": {
+          "median": 2.8999999910593033,
+          "p95": 4.399999991059303,
+          "p99": 13.400000005960464,
+          "max": 41
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.800000011920929,
+          "p95": 4.299999997019768,
+          "p99": 11.5,
+          "max": 20.299999997019768
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2753,
+        "LayoutDuration": 0.102724,
+        "RecalcStyleCount": 5678,
+        "RecalcStyleDuration": 0.629957,
+        "TaskDuration": 9.600145999999999
+      },
+      "focusEntryCpuMs": {
+        "median": 4.299999997019768,
+        "p95": 5.200000002980232,
+        "p99": 5.200000002980232,
+        "max": 5.200000002980232
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.399999991059303,
+        "p95": 17.599999994039536,
+        "p99": 17.599999994039536,
+        "max": 17.599999994039536
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 2,
+      "dpr": 2,
+      "rate": 4,
+      "utc": "2026-11-18T01:42:50.052Z",
+      "ended": "2026-11-18T01:43:59.030Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/2-2/report.json",
+      "rawSha256": "71a2ed08c705174f851059ef221d3fcf7ba9cc58cde3a71d0e1a58429d140847",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32025.59999999404,
+      "firstRenderLatencyMs": 20.700000002980232,
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 33.19999999999982,
+          "p95": 66.69999999999982,
+          "p99": 166.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 16,
+          "p95": 46.599999994039536,
+          "p99": 130.19999998807907,
+          "max": 130.19999998807907
+        },
+        "over33": 8,
+        "over50": 5
+      },
+      "wholeRun": {
+        "samples": 1357,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 13.599999994039536,
+          "p95": 20.899999991059303,
+          "p99": 43.6000000089407,
+          "max": 130.19999998807907
+        },
+        "over33": 59,
+        "over50": 20
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1293,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000036,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 13.5,
+          "p95": 20,
+          "p99": 41.400000005960464,
+          "max": 61.70000000298023
+        },
+        "over33": 51,
+        "over50": 15
+      },
+      "layout": {
+        "LayoutCount": 1945,
+        "LayoutDuration": 0.473559,
+        "RecalcStyleCount": 4041,
+        "RecalcStyleDuration": 2.60211,
+        "TaskDuration": 31.8923
+      },
+      "focusEntryCpuMs": {
+        "median": 18.700000002980232,
+        "p95": 25.399999991059303,
+        "p99": 25.399999991059303,
+        "max": 25.399999991059303
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.29999999701977,
+        "p95": 61.70000000298023,
+        "p99": 61.70000000298023,
+        "max": 61.70000000298023
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "dpr": 1,
+      "rate": 1,
+      "utc": "2026-11-18T01:43:59.306Z",
+      "ended": "2026-11-18T01:45:08.315Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/3-1/report.json",
+      "rawSha256": "16c0a23418d45af18ce7c190b35d662132933d1fe00a7a375b867af59893723b",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32004.60000000894,
+      "firstRenderLatencyMs": 4.5,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.700000000000273,
+          "p99": 33.29999999999973,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 3,
+          "p95": 13.5,
+          "p99": 19.899999991059303,
+          "max": 40.3999999910593
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 33.30000000000018
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.200000002980232,
+          "p99": 13.5,
+          "max": 40.3999999910593
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1801,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "p99": 16.80000000000109,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.7000000029802322,
+          "p95": 4.200000002980232,
+          "p99": 10.799999997019768,
+          "max": 20.399999991059303
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2748,
+        "LayoutDuration": 0.095865,
+        "RecalcStyleCount": 5680,
+        "RecalcStyleDuration": 0.590851,
+        "TaskDuration": 9.244207000000001
+      },
+      "focusEntryCpuMs": {
+        "median": 4.200000002980232,
+        "p95": 5,
+        "p99": 5,
+        "max": 5
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10.399999991059303,
+        "p95": 16.700000002980232,
+        "p99": 16.700000002980232,
+        "max": 16.700000002980232
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 3,
+      "dpr": 1,
+      "rate": 4,
+      "utc": "2026-11-18T01:43:59.306Z",
+      "ended": "2026-11-18T01:45:08.315Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/3-1/report.json",
+      "rawSha256": "16c0a23418d45af18ce7c190b35d662132933d1fe00a7a375b867af59893723b",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32021.20000000298,
+      "firstRenderLatencyMs": 21.100000008940697,
+      "startup": {
+        "samples": 66,
+        "frameMs": {
+          "median": 16.700000000000273,
+          "p95": 66.69999999999982,
+          "p99": 166.69999999999982,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 14.900000005960464,
+          "p95": 46.900000005960464,
+          "p99": 133.5,
+          "max": 133.5
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1466,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000036,
+          "max": 166.69999999999982
+        },
+        "submitCpuMs": {
+          "median": 12.899999991059303,
+          "p95": 19.700000002980232,
+          "p99": 43.1000000089407,
+          "max": 133.5
+        },
+        "over33": 60,
+        "over50": 20
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1400,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.100000000000364,
+          "max": 100
+        },
+        "submitCpuMs": {
+          "median": 12.799999997019768,
+          "p95": 19.200000002980232,
+          "p99": 41.30000001192093,
+          "max": 63.20000000298023
+        },
+        "over33": 48,
+        "over50": 13
+      },
+      "layout": {
+        "LayoutCount": 2088,
+        "LayoutDuration": 0.375405,
+        "RecalcStyleCount": 4364,
+        "RecalcStyleDuration": 2.300011,
+        "TaskDuration": 31.843338
+      },
+      "focusEntryCpuMs": {
+        "median": 19.599999994039536,
+        "p95": 23.19999998807907,
+        "p99": 23.19999998807907,
+        "max": 23.19999998807907
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.30000001192093,
+        "p95": 63.20000000298023,
+        "p99": 63.20000000298023,
+        "max": 63.20000000298023
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "dpr": 1,
+      "rate": 1,
+      "utc": "2026-11-18T01:45:08.584Z",
+      "ended": "2026-11-18T01:46:17.534Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/4-1/report.json",
+      "rawSha256": "6ecca25ab561e3b2fdbf8f8d047c27b5c0e3323870f348a379e2bafbe60f80af",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32003,
+      "firstRenderLatencyMs": 7.0999999940395355,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "p99": 33.20000000000027,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 3.2000000029802322,
+          "p95": 14.200000002980232,
+          "p99": 20.200000002980232,
+          "max": 39.3999999910593
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1917,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.29999999999973
+        },
+        "submitCpuMs": {
+          "median": 2.8999999910593033,
+          "p95": 4.4000000059604645,
+          "p99": 14.200000002980232,
+          "max": 39.3999999910593
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1800,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.800000011920929,
+          "p95": 4.399999991059303,
+          "p99": 12.5,
+          "max": 20.099999994039536
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2744,
+        "LayoutDuration": 0.09197,
+        "RecalcStyleCount": 5675,
+        "RecalcStyleDuration": 0.597272,
+        "TaskDuration": 9.637307
+      },
+      "focusEntryCpuMs": {
+        "median": 3.8999999910593033,
+        "p95": 4.9000000059604645,
+        "p99": 4.9000000059604645,
+        "max": 4.9000000059604645
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 12.5,
+        "p95": 17.600000008940697,
+        "p99": 17.600000008940697,
+        "max": 17.600000008940697
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 4,
+      "dpr": 1,
+      "rate": 4,
+      "utc": "2026-11-18T01:45:08.584Z",
+      "ended": "2026-11-18T01:46:17.534Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/4-1/report.json",
+      "rawSha256": "6ecca25ab561e3b2fdbf8f8d047c27b5c0e3323870f348a379e2bafbe60f80af",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 1,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 1,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 1280,
+            "height": 720,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 1280,
+            "height": 720
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 1280,
+              "height": 720
+            },
+            "output": {
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32028.79999999702,
+      "firstRenderLatencyMs": 22.200000002980232,
+      "startup": {
+        "samples": 64,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 66.69999999999982,
+          "p99": 166.5999999999999,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 15.300000011920929,
+          "p95": 47.400000005960464,
+          "p99": 132.40000000596046,
+          "max": 132.40000000596046
+        },
+        "over33": 12,
+        "over50": 6
+      },
+      "wholeRun": {
+        "samples": 1471,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.60000000000036,
+          "max": 166.5999999999999
+        },
+        "submitCpuMs": {
+          "median": 12.700000002980232,
+          "p95": 20,
+          "p99": 42.900000005960464,
+          "max": 132.40000000596046
+        },
+        "over33": 57,
+        "over50": 21
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1407,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 66.59999999999854,
+          "max": 83.30000000000291
+        },
+        "submitCpuMs": {
+          "median": 12.599999994039536,
+          "p95": 19.400000005960464,
+          "p99": 41.29999999701977,
+          "max": 58
+        },
+        "over33": 45,
+        "over50": 15
+      },
+      "layout": {
+        "LayoutCount": 2095,
+        "LayoutDuration": 0.393882,
+        "RecalcStyleCount": 4386,
+        "RecalcStyleDuration": 2.304166,
+        "TaskDuration": 31.809878
+      },
+      "focusEntryCpuMs": {
+        "median": 20,
+        "p95": 25,
+        "p99": 25,
+        "max": 25
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 42.70000000298023,
+        "p95": 58,
+        "p99": 58,
+        "max": 58
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "dpr": 2,
+      "rate": 1,
+      "utc": "2026-11-18T01:46:17.801Z",
+      "ended": "2026-11-18T01:47:26.777Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/5-2/report.json",
+      "rawSha256": "af18967af815c3f483e7b0bdf0d6fc5f127231b06fc7b47114d938275e8226ea",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32002.5,
+      "firstRenderLatencyMs": 4.700000002980232,
+      "startup": {
+        "samples": 117,
+        "frameMs": {
+          "median": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "p99": 33.30000000000018,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 3.2999999970197678,
+          "p95": 14.099999994039536,
+          "p99": 19.69999998807907,
+          "max": 40
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "wholeRun": {
+        "samples": 1918,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 33.40000000000009
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 4.4000000059604645,
+          "p99": 14.099999994039536,
+          "max": 40
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1801,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.700000000004366,
+          "p99": 16.800000000000182,
+          "max": 16.80000000000291
+        },
+        "submitCpuMs": {
+          "median": 2.9000000059604645,
+          "p95": 4.300000011920929,
+          "p99": 11.099999994039536,
+          "max": 22.399999991059303
+        },
+        "over33": 0,
+        "over50": 0
+      },
+      "layout": {
+        "LayoutCount": 2749,
+        "LayoutDuration": 0.103171,
+        "RecalcStyleCount": 5678,
+        "RecalcStyleDuration": 0.636192,
+        "TaskDuration": 9.784657000000001
+      },
+      "focusEntryCpuMs": {
+        "median": 3.7999999970197678,
+        "p95": 5.0999999940395355,
+        "p99": 5.0999999940395355,
+        "max": 5.0999999940395355
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 10,
+        "p95": 18,
+        "p99": 18,
+        "max": 18
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "index": 5,
+      "dpr": 2,
+      "rate": 4,
+      "utc": "2026-11-18T01:46:17.801Z",
+      "ended": "2026-11-18T01:47:26.777Z",
+      "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "raw": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/5-2/report.json",
+      "rawSha256": "af18967af815c3f483e7b0bdf0d6fc5f127231b06fc7b47114d938275e8226ea",
+      "identity": {
+        "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+        "artifactMode": "native",
+        "buildSource": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+        "buildRuntimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "buildManifestSha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8",
+        "harnessSha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+      },
+      "desktopDensity": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "elapsedMs": 32021.79999999702,
+      "firstRenderLatencyMs": 20.200000002980232,
+      "startup": {
+        "samples": 60,
+        "frameMs": {
+          "median": 33.29999999999973,
+          "p95": 66.80000000000018,
+          "p99": 149.9000000000001,
+          "max": 149.9000000000001
+        },
+        "submitCpuMs": {
+          "median": 15.700000002980232,
+          "p95": 47.1000000089407,
+          "p99": 132.09999999403954,
+          "max": 132.09999999403954
+        },
+        "over33": 12,
+        "over50": 7
+      },
+      "wholeRun": {
+        "samples": 1382,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.5,
+          "p99": 66.69999999999709,
+          "max": 149.9000000000001
+        },
+        "submitCpuMs": {
+          "median": 13.099999994039536,
+          "p95": 20.400000005960464,
+          "p99": 44.19999998807907,
+          "max": 132.09999999403954
+        },
+        "over33": 67,
+        "over50": 17
+      },
+      "steady": {
+        "startMs": 2000,
+        "samples": 1322,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 33.400000000001455,
+          "p99": 50.099999999999454,
+          "max": 83.40000000000146
+        },
+        "submitCpuMs": {
+          "median": 13,
+          "p95": 19.100000008940697,
+          "p99": 40.79999999701977,
+          "max": 60.6000000089407
+        },
+        "over33": 55,
+        "over50": 10
+      },
+      "layout": {
+        "LayoutCount": 1974,
+        "LayoutDuration": 0.501858,
+        "RecalcStyleCount": 4128,
+        "RecalcStyleDuration": 2.627002,
+        "TaskDuration": 31.847893
+      },
+      "focusEntryCpuMs": {
+        "median": 19.099999994039536,
+        "p95": 27.900000005960464,
+        "p99": 27.900000005960464,
+        "max": 27.900000005960464
+      },
+      "focusEntryRenderCpuMs": {
+        "median": 41.900000005960464,
+        "p95": 60.6000000089407,
+        "p99": 60.6000000089407,
+        "max": 60.6000000089407
+      },
+      "actions": 26,
+      "ultimates": 6,
+      "exactBehavior": true,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "summary": [
+    {
+      "rate": 1,
+      "dpr": 1,
+      "trials": 3,
+      "taskMs": 9250.786,
+      "wholeFrameP95Ms": 16.799999999999272,
+      "wholeOver50": 0,
+      "startupFrameP95Ms": 16.700000000000728,
+      "startupSubmitMaxMs": 39.3999999910593,
+      "startupOver50": 0,
+      "steadyFrameP95Ms": 16.799999999999272,
+      "steadyOver50": 0,
+      "submitMedianMs": 2.7000000029802322,
+      "focusMedianMs": 4.200000002980232,
+      "focusRenderMedianMs": 10.900000005960464,
+      "bufferPixels": 921600
+    },
+    {
+      "rate": 1,
+      "dpr": 2,
+      "trials": 3,
+      "taskMs": 9701.074,
+      "wholeFrameP95Ms": 16.799999999999272,
+      "wholeOver50": 0,
+      "startupFrameP95Ms": 16.799999999999727,
+      "startupSubmitMaxMs": 41,
+      "startupOver50": 0,
+      "steadyFrameP95Ms": 16.799999999999272,
+      "steadyOver50": 0,
+      "submitMedianMs": 2.9000000059604645,
+      "focusMedianMs": 4.299999997019768,
+      "focusRenderMedianMs": 10.399999991059303,
+      "bufferPixels": 3686400
+    },
+    {
+      "rate": 4,
+      "dpr": 1,
+      "trials": 3,
+      "taskMs": 31820.724,
+      "wholeFrameP95Ms": 33.400000000001455,
+      "wholeOver50": 20,
+      "startupFrameP95Ms": 66.69999999999982,
+      "startupSubmitMaxMs": 132.40000000596046,
+      "startupOver50": 6,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "steadyOver50": 13,
+      "submitMedianMs": 12.700000002980232,
+      "focusMedianMs": 20,
+      "focusRenderMedianMs": 41.400000005960464,
+      "bufferPixels": 921600
+    },
+    {
+      "rate": 4,
+      "dpr": 2,
+      "trials": 3,
+      "taskMs": 31876.365,
+      "wholeFrameP95Ms": 33.400000000001455,
+      "wholeOver50": 17,
+      "startupFrameP95Ms": 66.69999999999982,
+      "startupSubmitMaxMs": 132.09999999403954,
+      "startupOver50": 5,
+      "steadyFrameP95Ms": 33.400000000001455,
+      "steadyOver50": 11,
+      "submitMedianMs": 13.400000005960464,
+      "focusMedianMs": 19.099999994039536,
+      "focusRenderMedianMs": 41.29999999701977,
+      "bufferPixels": 3686400
+    }
+  ],
+  "captures": [
+    {
+      "index": 0,
+      "dpr": 1,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-1/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "1f5208d82d972490f5549cdb562853ea319d5f06b95dc941c606d938b073e145",
+      "rgbSha256": "33f0855786001ff1fdcc4d70af772ae83eeb5250a558a5dbb3ce7fc2ad88dc89",
+      "mean": 113.17785590277778,
+      "stdDev": 52.057715713254304
+    },
+    {
+      "index": 0,
+      "dpr": 1,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-1/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "40dd45598bfc3b5938367fbb753a57a765621a419236004bff331da7454f31af",
+      "rgbSha256": "6e55df46a9625f16d1ce9db4fa41181cc58c49e6c698cbe80e9999a028f92435",
+      "mean": 114.082119140625,
+      "stdDev": 51.81428201522153
+    },
+    {
+      "index": 1,
+      "dpr": 2,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-2/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ddde06bc6ccb3ff2939e7f2b915339119200343f92a287c16c1ad1f726d6aab5",
+      "rgbSha256": "501af760d7b7da628c9ceeb5e62d63c79e20b008121c5996ac7f6acb5e652fe3",
+      "mean": 113.24081597222222,
+      "stdDev": 52.184302722812966
+    },
+    {
+      "index": 1,
+      "dpr": 2,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-2/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e100ae23e911099110717c69c8075fc68260f5f142f92bbd807fa1fefef06068",
+      "rgbSha256": "57d773c3e730614baf296d9c253a4bd20a4ac79facbbe1de96116e92d30c1463",
+      "mean": 114.47571144386573,
+      "stdDev": 52.008187932609786
+    },
+    {
+      "index": 2,
+      "dpr": 2,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/2-2/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "5024eba326a6deef72090ab79ec9bd104f34df12d6dd50a4d9ec95ccb5860ecb",
+      "rgbSha256": "861e9911ef978c83b1208ef9734df5e6371515bf88720735156602fd6b04fc0c",
+      "mean": 113.30344654224537,
+      "stdDev": 52.29272710422548
+    },
+    {
+      "index": 2,
+      "dpr": 2,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/2-2/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8fbaa8bd1d88bbad2ee58ab2152e8b63072c633f85030df5a6c50e1d9fcd745a",
+      "rgbSha256": "8262b484106af1f2dbd5d8a35862c669f1b70b1d577b0325c2c771f102be4885",
+      "mean": 114.1722193287037,
+      "stdDev": 51.903812187084746
+    },
+    {
+      "index": 3,
+      "dpr": 1,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/3-1/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "821305355015ad30230237736a133ec0a787f21d6689e1ad7a473103dfeccc66",
+      "rgbSha256": "af63f0d0f5d7a0ca544dd1bfe7432927c48982f8fafad8e2946de31fe61765e7",
+      "mean": 113.23009331597223,
+      "stdDev": 52.170011150398615
+    },
+    {
+      "index": 3,
+      "dpr": 1,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/3-1/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "94141943777146bca4882dbaaa279d16b34c143e82b423fa0a6ea0f93481680b",
+      "rgbSha256": "c56eafc0e77b89ef7a7d2f7e3aadc8e087566eb555c3919ec63a6eef6b09cd22",
+      "mean": 114.13928023726852,
+      "stdDev": 51.78580841178264
+    },
+    {
+      "index": 4,
+      "dpr": 1,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/4-1/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b9ecf744d06710412559c89d198ec86d9333b7d722b31b0cb063a5130cee8c24",
+      "rgbSha256": "ffad60666a00867c2561ea8c478dc0a09f676ad0d3f492e04eba18789d5aa864",
+      "mean": 113.11057508680555,
+      "stdDev": 51.94550898714747
+    },
+    {
+      "index": 4,
+      "dpr": 1,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/4-1/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ded40b78ae2b7bf6b15b84a6236a6406dc60a3d5acee8a93aefcb334345194cc",
+      "rgbSha256": "48a0c28ae0d9e9355a9c12d52f5f6fa63fb1674fd59da8df5db7d7a37a0bc4db",
+      "mean": 114.1406882957176,
+      "stdDev": 51.81453773259312
+    },
+    {
+      "index": 5,
+      "dpr": 2,
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/5-2/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "bcc367275e2e30f58f362b1343ec5787663bfbf44532d047ca0d8ec4f6241640",
+      "rgbSha256": "fc62832c315381df4a875d89ef968b88a7feb1602d10738894ca68fbba74b431",
+      "mean": 113.29973234953704,
+      "stdDev": 52.286932989711936
+    },
+    {
+      "index": 5,
+      "dpr": 2,
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/5-2/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "797325537194fae4db787cdd40514846777e5a710035d4dee7836315d20e0d4e",
+      "rgbSha256": "2db0185f1ad27410accde45cd6a73c3ca9d27cd732a7cb371ea938b1769a75a4",
+      "mean": 114.11560221354166,
+      "stdDev": 51.927627931557325
+    }
+  ],
+  "reviews": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-dpr1-1x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "b0df359e2c516bd205d831e51a791fbd76d1193d04a179e982bdc9036e09c75b"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/0-dpr1-4x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "0cda0af02bbe254922be582297af8e1ff2e451180f7cd8a685a361a2ba55a568"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-dpr2-1x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "8cc92f5ab8d887ba2e72c46a4cd87d35789c7fdce5bc95b74808485d1781602d"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-desktop-density-production/1-dpr2-4x-review.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "6eedaedb0afb26ebe2626c24a610728a38b15eb5a4ddfecc4941c7b3626a755c"
+    }
+  ],
+  "reviewedUtc": "2026-11-18T01:48:46.002528+00:00",
+  "interpretation": "NativeDPR2 coverage passes. Three-trial framep95 stays16.8ms1x/33.4ms4x at both densities;normal TaskDuration9250.786->9701.074ms,stress31820.724->31876.365ms. Drawing buffer921600->3686400pixels. No late>50.5ms intervals at1x;4x medians20vs17 are mixed small samples,not a density performance benefit. Preserve native quality;no optimization claim.",
+  "pass": true,
+  "visualReview": "Four measured1024x576 views inspected once. Seven actors,HP/status rows,boss bar,hit totals and four card controls remain readable atDPR1/2. Yarn ground effects remain below faces and numbers. Different ordinary-play times are not pixel-parity comparisons."
+}

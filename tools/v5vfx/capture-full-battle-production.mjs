@@ -10,6 +10,7 @@ const fixturePath=local?'./production-candidate-fixture.mjs':'/Users/bao/taskbar
 const {chromium,config,openFixture,runtimeEvidence,judgeUrl}=await import(fixturePath);
 const root=resolve(import.meta.dirname,'../..');
 const cpuRate=Number(process.env.CXV_FULL_CPU_RATE??1);assert([1,4].includes(cpuRate),'Full-battle CPU rate must be1 or4');
+const desktopDpr=Number(process.env.CXV_FULL_DPR??1);assert([1,1.5,2].includes(desktopDpr)&&(!process.env.CXV_FULL_DPR||local),'Explicit desktop density is local-only');
 const out=resolve(process.env.CXV_CAPTURE_OUT??resolve(root,'work/v5/CXV/films/V7-F-full-battle-judge'));
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')),'Preserve earlier evidence');
 await mkdir(out,{recursive:true});
@@ -25,18 +26,20 @@ const report={utc:new Date().toISOString(),source:execFileSync('git',['rev-parse
  url:judgeUrl,viewport:{width:1280,height:720},method:'Seeded level6 boss encounter, then uninterrupted normal rule-selected model/scene RAF at speed1 until natural result. Normal and reduced motion start from the same battle. No rule fast-forward, fixed-clock seek, HP/charge changes, plan replacement or result injection after setup. Captures add overhead; frame timings are descriptive only, not an optimization comparison. Fixture setup is not ordinary account progression.',runs:[],errors:[],pass:false};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 report.cpuRate=cpuRate;report.browser=browser.version();report.hardware=execFileSync('sysctl',['-n','machdep.cpu.brand_string'],{encoding:'utf8'}).trim();
+report.deviceScaleFactor=desktopDpr;
 report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a host-relative stress diagnostic,not a calibrated laptop or cold-page benchmark.';
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 try{
  for(const reduced of [false,true]){
   stop();const mode=reduced?'reduced':'normal',dir=resolve(out,mode);await mkdir(dir,{recursive:true});
-  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));
+  const {page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{deviceScaleFactor:desktopDpr});
   assert.equal(page.url(),judgeUrl);const identity=runtimeEvidence();
   const cdp=await page.context().newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpuRate});
   await page.evaluate(reduced=>{const m=window.__depthReview;m.state.settings.reducedMotion=reduced;m.notify(false);},reduced);
   await page.locator('.b3-wave-intro').waitFor({state:'hidden',timeout:5000});
   const initial=await page.evaluate(()=>{const m=window.__depthReview;return{battle:structuredClone(m.battle),speed:m.state.settings.speed,reduced:m.state.settings.reducedMotion};});
   const run={mode,utc:new Date().toISOString(),identity,initialBattleSha256:hash(JSON.stringify(initial.battle)),speed:initial.speed,captures:[],errors,blockedRequests};
+  if(process.env.CXV_FULL_DPR)run.desktopDensity=await(await import('./desktop-density.mjs')).desktopDensity(page,desktopDpr);
   assert.equal(initial.speed,1);await writeFile(resolve(dir,'initial.json'),JSON.stringify(initial,null,2));
   const snapshot=()=>page.evaluate(()=>{
    const m=window.__depthReview,s=window.__depthScene;
@@ -46,7 +49,7 @@ try{
     scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
     crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON()}))};
   });
-  const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();await page.screenshot({path});const after=await snapshot();run.captures.push({reason,path,utc,before,after});};
+  const capture=async reason=>{const before=await snapshot(),path=resolve(dir,`${String(run.captures.length).padStart(2,'0')}-${reason}.png`),utc=new Date().toISOString();await page.screenshot({path,scale:'css'});const after=await snapshot();run.captures.push({reason,path,utc,before,after});};
   await capture('opening');
   await page.evaluate(()=>{
    const s=window.__depthScene,m=window.__depthReview,render=s.render,beforeFrame=s.beforeFrame,seen=new Set(),captured=new Set();

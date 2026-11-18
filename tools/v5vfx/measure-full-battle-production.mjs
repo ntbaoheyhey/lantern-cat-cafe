@@ -22,6 +22,7 @@ const report={utc:new Date().toISOString(),source:raw.source,servedSource:raw.se
  method:raw.method,parity,runs:[],captures:[],sheets:[],reviewedUtc:null,visualReview:null,pass:false};
 report.local=raw.local??false;report.artifactIdentity=raw.artifactIdentity??null;report.buildRuntimePatchSha256=raw.artifactIdentity?.buildRuntimePatchSha256??null;
 report.cpuRate=raw.cpuRate??1;report.hardware=raw.hardware??null;report.browser=raw.browser??null;
+report.deviceScaleFactor=raw.deviceScaleFactor??1;report.desktopDensity=raw.runs.map(r=>r.desktopDensity??null);
 const review=resolve(input,'review');mkdirSync(review,{recursive:true});
 for(const [index,run]of raw.runs.entries()){
  const timeline=timelines[index],actions=timeline.plans.filter(p=>p.events.some(e=>e.type==='action_start'||e.type==='charge'));

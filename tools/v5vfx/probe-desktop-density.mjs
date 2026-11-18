@@ -29,7 +29,7 @@ try{
     const s=window.__depthScene,m=window.__depthReview;cancelAnimationFrame(s.raf);s.phaseNoticeAt=-100;
     s.render({...s.view(),reducedMotion:reduced,fixedTime:20.3,paused:true,galleryPreview:true},0);
     const rect=node=>{const r=node.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height};};
-    return{battle:m.battle,plan:m.plan,age:m.animationAt,units:s.sizeAudit().units,camera:{projection:s.camera.projectionMatrix.elements,world:s.camera.matrixWorld.elements},
+    return{battle:m.battle,plan:m.plan,age:m.animationAt,units:s.sizeAudit().units.sort((a,b)=>a.id.localeCompare(b.id)),camera:{projection:s.camera.projectionMatrix.elements,world:s.camera.matrixWorld.elements},
      labels:[...document.querySelectorAll('.b3-world')].map(n=>({actor:n.dataset.actor,hidden:n.hidden,text:n.textContent,rect:rect(n),transform:n.style.transform})),
      cards:[...document.querySelectorAll('.b3-card')].map(n=>({text:n.textContent,rect:rect(n)}))};
    },reduced);
