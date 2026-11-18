@@ -1,0 +1,228 @@
+{
+  "utc": "2026-11-18T09:52:43.829901+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-observed-support-r1/report.json",
+    "sha256": "3f81e3fca1f9229c2f11c4217a02b0b432261d0d8c57aa39ea09c7be6ba9b734"
+  },
+  "study": {
+    "utc": "2026-11-18T09:51:17.849824+00:00",
+    "source": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+    },
+    "inputs": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-seeded-boundary-r1/report.json",
+        "sha256": "e3bcc33be4470f25295b5ebf672a2a55e952fc7b83ce92d32123c1690ab4b51e"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-seeded-boundary-r1/frame-15-labels.npz",
+        "sha256": "a1de231c95e87ebcce4cbf08e21c5414d325cb308fbcef0eac89ddc6e42283f1"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-seeded-boundary-r1/frame-285-labels.npz",
+        "sha256": "ba6ed7b0bf83e305a6ae2cffe059aa85cc80af6616e75fbd41332e690024ba9b"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-endpoint-labels-r1/report.json",
+        "sha256": "1c2b1696b1bc109094160046801c4bb12bbed51df1fd38e5c9a38e6b6fd95c26"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-endpoint-labels-r1/frame-0-labels.npz",
+        "sha256": "69e1687bb089e0f055e93cc6c43408f9b7577b401aec216407355d97fe0e1f42"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-endpoint-labels-r1/frame-299-labels.npz",
+        "sha256": "eb73038a53692daee41494606e4b2e5025062d66026d9829b96dca8f3844d83c"
+      }
+    ],
+    "harnessSha256": "1a0896b425852f1e15ba8f09a70c1a27032b946adb983bb9fe14ec75ec016adb",
+    "rows": [
+      {
+        "sourceFrame": 0,
+        "targetFrame": 0,
+        "matrix": [
+          [
+            1.0,
+            9.852663525539498e-15,
+            -2.8672027859583116e-12
+          ],
+          [
+            -9.852663525539498e-15,
+            1.0,
+            7.104672210787866e-13
+          ]
+        ],
+        "eccScore": 0.9999966214770215,
+        "determinant": 1.0,
+        "support": {
+          "wholeVisibleTail": {
+            "pixels": 3570,
+            "meanWeights": {
+              "empty": 6.7163206213502555e-15,
+              "segmentedTail": 0.9999999999999913,
+              "otherVisible": 3.293972626562862e-15,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 3570,
+            "pixelsTouchingOtherVisible": 0,
+            "pixelsTouchingEmpty": 0
+          },
+          "eroded3pxCore": {
+            "pixels": 2549,
+            "meanWeights": {
+              "empty": 0.0,
+              "segmentedTail": 1.0,
+              "otherVisible": 0.0,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 2549,
+            "pixelsTouchingOtherVisible": 0,
+            "pixelsTouchingEmpty": 0
+          }
+        }
+      },
+      {
+        "sourceFrame": 15,
+        "targetFrame": 0,
+        "matrix": [
+          [
+            0.9981703758239746,
+            -0.06046416610479355,
+            12.098861694335938
+          ],
+          [
+            0.06046416610479355,
+            0.9981703758239746,
+            -22.486597061157227
+          ]
+        ],
+        "eccScore": 0.9610202937053599,
+        "determinant": 1.000000014555323,
+        "support": {
+          "wholeVisibleTail": {
+            "pixels": 3570,
+            "meanWeights": {
+              "empty": 0.017933631437226278,
+              "segmentedTail": 0.9485924020840271,
+              "otherVisible": 0.03347396647874654,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 3295,
+            "pixelsTouchingOtherVisible": 145,
+            "pixelsTouchingEmpty": 135
+          },
+          "eroded3pxCore": {
+            "pixels": 2549,
+            "meanWeights": {
+              "empty": 0.0,
+              "segmentedTail": 0.9962998123755571,
+              "otherVisible": 0.0037001876244428847,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 2534,
+            "pixelsTouchingOtherVisible": 15,
+            "pixelsTouchingEmpty": 0
+          }
+        }
+      },
+      {
+        "sourceFrame": 285,
+        "targetFrame": 0,
+        "matrix": [
+          [
+            0.9344509243965149,
+            0.3560918867588043,
+            -92.03270721435547
+          ],
+          [
+            -0.3560918867588043,
+            0.9344509243965149,
+            63.34225082397461
+          ]
+        ],
+        "eccScore": 0.962864903044022,
+        "determinant": 0.9999999619209463,
+        "support": {
+          "wholeVisibleTail": {
+            "pixels": 3570,
+            "meanWeights": {
+              "empty": 0.009246128103696297,
+              "segmentedTail": 0.9491380074620803,
+              "otherVisible": 0.041615864434223555,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 3319,
+            "pixelsTouchingOtherVisible": 177,
+            "pixelsTouchingEmpty": 81
+          },
+          "eroded3pxCore": {
+            "pixels": 2549,
+            "meanWeights": {
+              "empty": 0.0,
+              "segmentedTail": 0.9851584663656461,
+              "otherVisible": 0.01484153363435404,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 2502,
+            "pixelsTouchingOtherVisible": 47,
+            "pixelsTouchingEmpty": 0
+          }
+        }
+      },
+      {
+        "sourceFrame": 299,
+        "targetFrame": 0,
+        "matrix": [
+          [
+            0.9834715723991394,
+            0.181062713265419,
+            -45.05337142944336
+          ],
+          [
+            -0.181062713265419,
+            0.9834715723991394,
+            28.728679656982422
+          ]
+        ],
+        "eccScore": 0.9690112824285677,
+        "determinant": 1.000000039852271,
+        "support": {
+          "wholeVisibleTail": {
+            "pixels": 3570,
+            "meanWeights": {
+              "empty": 0.011559421335584734,
+              "segmentedTail": 0.9382876583156834,
+              "otherVisible": 0.050152920348732005,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 3243,
+            "pixelsTouchingOtherVisible": 210,
+            "pixelsTouchingEmpty": 123
+          },
+          "eroded3pxCore": {
+            "pixels": 2549,
+            "meanWeights": {
+              "empty": 0.0,
+              "segmentedTail": 0.9685272508599667,
+              "otherVisible": 0.03147274914003335,
+              "outside": 0.0
+            },
+            "fullyTailSupportedPixels": 2457,
+            "pixelsTouchingOtherVisible": 92,
+            "pixelsTouchingEmpty": 0
+          }
+        }
+      }
+    ],
+    "imagesCreated": 0,
+    "runtimeChanged": false,
+    "acceptedRepair": false,
+    "limits": [
+      "Diagnostic segmented-tail support is not anatomical ground truth or material correspondence.",
+      "No interpolation, temporal source switching, alpha compositing or loop velocity has been validated.",
+      "Frame0 identity is a numeric control, not a repair candidate."
+    ]
+  },
+  "disposition": "No endpoint candidate: F15/F285 rigid observed-source masks still leave15/47core destinations touchingother visible pixels;whole-tail94.8592%/94.9138%coverage. Material correspondence and transition not proven. Identity control passes; prior299matrix reproduced exactly."
+}
