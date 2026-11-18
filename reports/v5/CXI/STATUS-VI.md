@@ -52,3 +52,5 @@ Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hàn
 2026-11-18T13:19:51.102134+00:00 — Kiểm tra độc lập log trậnR5: video Mochi bỏ15/2430khung,Clover19/2431khung;không được tuyên bố zero-drop. Mỗi video có8lần nối vòng. Chưa xác nhận hiệu năng laptop phổ thông;đang tách thời gian video thực tế khỏi pha socket trước khi đề xuất sửa loader.
 
 2026-11-18T13:31:23.896989+00:00 — Đã tính độc lập R6:274hash,70trạng thái,1040phép đếm khớp. Ở1/5pha,32pixel Mochi chạm nhãn khiên Clover (7pixel ở ngưỡngRGB>4);thanh HP/rage và nhãn của chính mèo không bị che trong5pha. Đây chỉ là phép đo tạm dừng sauẩn/hiện nhãn;chưa gỡ lỗi seam/matte hay duyệt media vào bảnphát hành.
+
+2026-11-18T13:45:44.320467+00:00 — Phép đo GPU có kiểm soát đã qua: 8 đối chứng, 600 khung tham chiếu native, 24 khung đang chạy nhận dạng duy nhất; 653 tệp được băm lại. CXV tái dựng đúng 168 socket. Pha socket hiện chạy theo currentTime nên có thể lệch lớn trong lúc seek; đang chuẩn bị sửa theo khung đã giải mã. Chưa chứng nhận gameplay tự nhiên, hiệu năng, seam hay chất lượng alpha; media vẫn chưa bật.
