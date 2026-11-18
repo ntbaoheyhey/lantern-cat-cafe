@@ -1,0 +1,1254 @@
+{
+  "utc": "2026-11-18T12:09:30.759167+00:00",
+  "groups": [
+    {
+      "group": 0,
+      "roster": [
+        "mallow",
+        "sorrel",
+        "biscuit",
+        "inkcap"
+      ],
+      "source": "0b669ecc7cf802cccdbae4a740431c3546e998e4",
+      "indexSha256": "3e7d27a1321983ef655f4dfe5b3f4113e68736034e6d7b332aaa7e6bf086e8ae",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T11:59:35.631Z",
+      "captureEnded": "2026-11-18T12:01:42.996Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/report.json",
+        "sha256": "e41e25121a876c4fe7b6c82f350dd79c99d70a8b4ea12ec18b78db9388c5a30e"
+      },
+      "harnessSha256": "64ddf7b25db6410911b00b5a1071ec4090291278c7546c5c2c0542fc5080f385",
+      "fixtureSha256": "cac8613201a4a14d2d511ce2b89fd5e6d68e8ae3d63b94883397150f1f72f420",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 58633.70000000298,
+          "actions": 40,
+          "ultimates": {
+            "mallow": 3,
+            "sorrel": 3,
+            "biscuit": 3,
+            "inkcap": 2
+          },
+          "logSha256": "876f7ecd63dedd9a6490917a4d90c306aea28447491e10d3350af83c11755ffe",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3424,
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366,
+            "max": 50
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3424,
+            "median": 4.5999999940395355,
+            "p95": 7.200000002980232,
+            "max": 50.400000005960464
+          },
+          "excludedIntervals": 78,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/timeline.json",
+            "sha256": "c76cd8139c22024eb916a0366ad9c7acda8510f1b7553c4ce7486e1d5a762b38"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 58670.79999999702,
+          "actions": 40,
+          "ultimates": {
+            "mallow": 3,
+            "sorrel": 3,
+            "biscuit": 3,
+            "inkcap": 2
+          },
+          "logSha256": "876f7ecd63dedd9a6490917a4d90c306aea28447491e10d3350af83c11755ffe",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3434,
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634,
+            "max": 49.90000000000009
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3434,
+            "median": 4.5999999940395355,
+            "p95": 5.799999997019768,
+            "max": 49.599999994039536
+          },
+          "excludedIntervals": 70,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/timeline.json",
+            "sha256": "be82cfe982e9e7d6e4ed972363262283f814a673aecbcc7eb8dbf447530b8167"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/00-opening.png",
+          "sha256": "91783cf0b1d89cbb9d431fe97b225f5e804a39788aa22f4b43697fcabfb53954",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:40.140Z",
+          "bytes": 1181907,
+          "rgbMean": 107.73844509548611,
+          "rgbStdDev": 46.36223446627776
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/01-status.png",
+          "sha256": "8d715e99d322a358aeb09c67ebb4528981dd07b780bc053e6efb526b75f9f30e",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:43.495Z",
+          "bytes": 1174195,
+          "rgbMean": 114.86932725694444,
+          "rgbStdDev": 54.55262015610062
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/02-ultimate-mallow.png",
+          "sha256": "ff9a2e66ca2ccf08f819fba62dde5c7b49f1d094c02786207e2055009e8108ab",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:48.184Z",
+          "bytes": 1262629,
+          "rgbMean": 128.76067346643518,
+          "rgbStdDev": 65.51829134141673
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-sorrel",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/03-ultimate-sorrel.png",
+          "sha256": "73a53f8bcc3fbb59f53dd491eac8e032e76c1d18c467614bf4fb28b6ed4ad0a9",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:50.397Z",
+          "bytes": 1327445,
+          "rgbMean": 129.09000108506945,
+          "rgbStdDev": 55.656481239186775
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/04-ultimate-biscuit.png",
+          "sha256": "a6b361c9b44e2d297a5e051bbd3a7d26431deb732e8a23c9b982fb29cf5d1ab1",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:52.746Z",
+          "bytes": 1325574,
+          "rgbMean": 123.94099537037037,
+          "rgbStdDev": 58.841724607351026
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "b5802bb0c573987c3a844d8c3f37e4525ee331e94c080571962b8672bb9ec65a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T11:59:55.901Z",
+          "bytes": 1297030,
+          "rgbMean": 108.37653862847222,
+          "rgbStdDev": 48.60724729543197
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/06-result-ready.png",
+          "sha256": "60f44e438547a19bae9b53c401c21bf905eab93d68d4058719054bb4a7094fb6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:39.293Z",
+          "bytes": 925025,
+          "rgbMean": 50.580969690393516,
+          "rgbStdDev": 35.38578892802225
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/normal/07-result-later.png",
+          "sha256": "2a6ef421686455b7b87e5ef760225c497c78d6da82f8946ba1e237c874386b80",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:40.183Z",
+          "bytes": 940143,
+          "rgbMean": 52.428807508680556,
+          "rgbStdDev": 39.76496041961014
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/00-opening.png",
+          "sha256": "91783cf0b1d89cbb9d431fe97b225f5e804a39788aa22f4b43697fcabfb53954",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:42.765Z",
+          "bytes": 1181907,
+          "rgbMean": 107.73844509548611,
+          "rgbStdDev": 46.36223446627776
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/01-status.png",
+          "sha256": "488179e3bc7c33537c534622391d0f27afeb64443b0529a6b342421c694ab0fa",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:46.042Z",
+          "bytes": 1174804,
+          "rgbMean": 111.30998408564815,
+          "rgbStdDev": 50.749900765043684
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/02-ultimate-mallow.png",
+          "sha256": "688735787431952963c3f565c3dcf9f319b7065c83359d7bad1079a4250361aa",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:50.751Z",
+          "bytes": 1292521,
+          "rgbMean": 117.06190212673611,
+          "rgbStdDev": 57.753789366056836
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-sorrel",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/03-ultimate-sorrel.png",
+          "sha256": "baffbf491481456ead82cde89f195690a0388572e24645e27fd7cf11235b8447",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:52.987Z",
+          "bytes": 1335530,
+          "rgbMean": 120.37817418981481,
+          "rgbStdDev": 48.445477748577765
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/04-ultimate-biscuit.png",
+          "sha256": "3842f2c6960d7847dfbabc86789d6c4982ceb76baf4693038d90070d154cca53",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:55.342Z",
+          "bytes": 1334338,
+          "rgbMean": 116.04907660590278,
+          "rgbStdDev": 53.034903509725964
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "8c3e2574c4426b7357d567783025bd57a1db9730c51531a95adafcf10afed10f",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:00:58.490Z",
+          "bytes": 1309168,
+          "rgbMean": 106.27569552951388,
+          "rgbStdDev": 48.558819439078405
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/06-result-ready.png",
+          "sha256": "6277a2443341f1a2f866056cbba02a331bb5966f4dc55752479c7ca9e4ea8015",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:41.865Z",
+          "bytes": 935220,
+          "rgbMean": 52.326693793402775,
+          "rgbStdDev": 39.61274766540982
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/reduced/07-result-later.png",
+          "sha256": "6277a2443341f1a2f866056cbba02a331bb5966f4dc55752479c7ca9e4ea8015",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:42.723Z",
+          "bytes": 935220,
+          "rgbMean": 52.326693793402775,
+          "rgbStdDev": 39.61274766540982
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/review/normal-0.jpg",
+          "sha256": "fc99c8117c71b015be098288934aee889be15f6027108ab3adca0ab9be995d45",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 216293,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-mallow",
+            "ultimate-sorrel"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/review/normal-1.jpg",
+          "sha256": "c7d4e76175efdae238e5b370fcf1a74c2872c3850865a3f871a922fc7f7f91a7",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 226906,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/review/reduced-0.jpg",
+          "sha256": "dc0dfcb3eab3546648f50d6ecf6bb9d668211b3cdeaf0d1ff0169d66ba4d2d9f",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 215408,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-mallow",
+            "ultimate-sorrel"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-0/review/reduced-1.jpg",
+          "sha256": "c8c8cfb35f8cab7fd1333389f46e1732bf3c626c5bbe6cc97132a60d846b2a6d",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 230395,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        }
+      ]
+    },
+    {
+      "group": 1,
+      "roster": [
+        "cinnamon",
+        "brioche",
+        "velvet",
+        "marigold"
+      ],
+      "source": "0b669ecc7cf802cccdbae4a740431c3546e998e4",
+      "indexSha256": "3e7d27a1321983ef655f4dfe5b3f4113e68736034e6d7b332aaa7e6bf086e8ae",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T12:01:43.393Z",
+      "captureEnded": "2026-11-18T12:04:32.037Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/report.json",
+        "sha256": "b29c2fd52c09d8bc52421a964dd5d9785ccdcded378cf7897d3bda722ca4d518"
+      },
+      "harnessSha256": "64ddf7b25db6410911b00b5a1071ec4090291278c7546c5c2c0542fc5080f385",
+      "fixtureSha256": "cac8613201a4a14d2d511ce2b89fd5e6d68e8ae3d63b94883397150f1f72f420",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 80138.60000000894,
+          "actions": 54,
+          "ultimates": {
+            "cinnamon": 4,
+            "brioche": 3,
+            "velvet": 4,
+            "marigold": 2
+          },
+          "logSha256": "59ff19bcd1ab7d39d5cd8a7dfe31e17fb40f7bfa31f992f411d8ef6325b43a9d",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 4730,
+            "median": 16.69999999999709,
+            "p95": 16.70000000001164,
+            "max": 33.39999999999418
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 4730,
+            "median": 4.199999988079071,
+            "p95": 5.199999988079071,
+            "max": 33.599999994039536
+          },
+          "excludedIntervals": 66,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/timeline.json",
+            "sha256": "893f5693116b6cb791a64d4757cd51d882f78ed1b15d219fca766b2c0aa2c50f"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 79938.09999999404,
+          "actions": 54,
+          "ultimates": {
+            "cinnamon": 4,
+            "brioche": 3,
+            "velvet": 4,
+            "marigold": 2
+          },
+          "logSha256": "59ff19bcd1ab7d39d5cd8a7dfe31e17fb40f7bfa31f992f411d8ef6325b43a9d",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 4723,
+            "median": 16.69999999999709,
+            "p95": 16.70000000001164,
+            "max": 33.400000000001455
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 4723,
+            "median": 4.200000002980232,
+            "p95": 5.200000002980232,
+            "max": 37.70000000298023
+          },
+          "excludedIntervals": 65,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/timeline.json",
+            "sha256": "78f440e965ffc0fd8b7699dfafc4ac3aee786d353ff25e26ef0e836b75946538"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/00-opening.png",
+          "sha256": "db9d87e42db8dbaeb40b1fdd538acdce7f2890c008f68ff2c15b2b57017f8f8a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:46.127Z",
+          "bytes": 1170501,
+          "rgbMean": 108.07142975983797,
+          "rgbStdDev": 46.76153427109947
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/01-status.png",
+          "sha256": "c0f4c74af9481c783110cb47a13b72df9a93ee0b9a6d4a75349faf4b402b2a00",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:49.397Z",
+          "bytes": 1175758,
+          "rgbMean": 111.1370677806713,
+          "rgbStdDev": 50.04314438875845
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-velvet",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/02-ultimate-velvet.png",
+          "sha256": "9f5e6ec3fb133f8b4e85f673dce374535374014a173fe57aa44e5f4b67fbdc36",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:55.890Z",
+          "bytes": 1277794,
+          "rgbMean": 136.8877007378472,
+          "rgbStdDev": 61.08102376972939
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/03-ultimate-foe-0-yarn-giant.png",
+          "sha256": "517bcfe8e7c085b1586c16b4ac10b50124d7c76d7a9a968b3c53d38be9664080",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:01:59.040Z",
+          "bytes": 1300771,
+          "rgbMean": 114.42144350405093,
+          "rgbStdDev": 53.42252110998987
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-cinnamon",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/04-ultimate-cinnamon.png",
+          "sha256": "396d74b80b71741f7fa313ff103eb90916aa92a3d157682b7ed0fdcc989862ee",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:02:03.516Z",
+          "bytes": 1279484,
+          "rgbMean": 128.52528175636573,
+          "rgbStdDev": 62.44734783597418
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-brioche",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/05-ultimate-brioche.png",
+          "sha256": "c4c0fb2f238a17b784270d2a9dc6b9ce1b0114e83bc4971c5d914ae4b017b7b1",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:02:05.686Z",
+          "bytes": 1268155,
+          "rgbMean": 129.08053132233798,
+          "rgbStdDev": 58.69807038842723
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/06-result-ready.png",
+          "sha256": "1c6769e44ff9d2d2a8d7495894aa4abe444eb58e051f0ef94dbef376c7694191",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:06.679Z",
+          "bytes": 917980,
+          "rgbMean": 50.214765625,
+          "rgbStdDev": 34.964190560210554
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/normal/07-result-later.png",
+          "sha256": "55ab90811699b7ef87072d8c2232ad3ce5dae1b33050918cfbc2f957091c5fde",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:07.560Z",
+          "bytes": 938482,
+          "rgbMean": 52.36038773148148,
+          "rgbStdDev": 39.79566527349822
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/00-opening.png",
+          "sha256": "db9d87e42db8dbaeb40b1fdd538acdce7f2890c008f68ff2c15b2b57017f8f8a",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:10.433Z",
+          "bytes": 1170501,
+          "rgbMean": 108.07142975983797,
+          "rgbStdDev": 46.76153427109947
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/01-status.png",
+          "sha256": "a9f5c9ad67b41ef89cb71f03f95ace7bc8446b6d758eef1302a77d59245505bf",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:13.718Z",
+          "bytes": 1180512,
+          "rgbMean": 110.83529007523148,
+          "rgbStdDev": 49.368598436202674
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-velvet",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/02-ultimate-velvet.png",
+          "sha256": "9a84ec346688d1a48db08b5c36c1105bffedff7cbad871c02d5a1fd1670c5b13",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:20.064Z",
+          "bytes": 1296143,
+          "rgbMean": 122.27079788773148,
+          "rgbStdDev": 50.93024085928048
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/03-ultimate-foe-0-yarn-giant.png",
+          "sha256": "efadbd0ed5f801c6660e0042342c6f888181f1cd14090a26b4ce85f9b0707187",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:23.322Z",
+          "bytes": 1297152,
+          "rgbMean": 107.21119429976852,
+          "rgbStdDev": 49.05742364166498
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-cinnamon",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/04-ultimate-cinnamon.png",
+          "sha256": "30cb27696b02db6e09f70f8993b834dcf0fd809698d0434079949e004c83ec34",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:27.650Z",
+          "bytes": 1279489,
+          "rgbMean": 118.14531611689814,
+          "rgbStdDev": 55.653732365358216
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-brioche",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/05-ultimate-brioche.png",
+          "sha256": "2c912c8f59771f3d93980d508202b94b40bf93acf0afdda547cc3255d6713b8f",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:03:29.984Z",
+          "bytes": 1343491,
+          "rgbMean": 125.87178096064815,
+          "rgbStdDev": 58.02227202594461
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/06-result-ready.png",
+          "sha256": "cf66de7a3376e4d82644b0bdb8857759cc3fd3d2216dd179e4f92f82e2d111f8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:04:30.874Z",
+          "bytes": 933716,
+          "rgbMean": 52.24557978877315,
+          "rgbStdDev": 39.63580525014202
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/reduced/07-result-later.png",
+          "sha256": "cf66de7a3376e4d82644b0bdb8857759cc3fd3d2216dd179e4f92f82e2d111f8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:04:31.736Z",
+          "bytes": 933716,
+          "rgbMean": 52.24557978877315,
+          "rgbStdDev": 39.63580525014202
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/review/normal-0.jpg",
+          "sha256": "123b5be0bc6c05b696acb769f79205e94add955b83af53b82b63c40c883ad5f1",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 220957,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-velvet",
+            "ultimate-foe-0-yarn-giant"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/review/normal-1.jpg",
+          "sha256": "52a8abe42a884d1f59161268b3f658fe1ce7ec51723bf7f24d6eddb47d533218",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 213748,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-cinnamon",
+            "ultimate-brioche",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/review/reduced-0.jpg",
+          "sha256": "f5f32d1a5b0dc2d11964aae590556753ae071f761d11fee5e27afaac7c11e663",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 219651,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-velvet",
+            "ultimate-foe-0-yarn-giant"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/group-1/review/reduced-1.jpg",
+          "sha256": "34585e6f40025883c9289b666d6f285001893156f7d8f9c1103555ef87a1db83",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 225982,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-cinnamon",
+            "ultimate-brioche",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "roster": [
+        "panko",
+        "mallow",
+        "sorrel",
+        "biscuit"
+      ],
+      "source": "0b669ecc7cf802cccdbae4a740431c3546e998e4",
+      "indexSha256": "3e7d27a1321983ef655f4dfe5b3f4113e68736034e6d7b332aaa7e6bf086e8ae",
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuRate": 1,
+      "hardware": "Apple M3 Pro",
+      "browser": "156.0.8078.4",
+      "captureUTC": "2026-11-18T12:05:42.655Z",
+      "captureEnded": "2026-11-18T12:07:56.523Z",
+      "raw": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/report.json",
+        "sha256": "e53eaa230bef5b189684acbdbc1561ce154efcbb4ca4cd19822312226ae22c9c"
+      },
+      "harnessSha256": "64ddf7b25db6410911b00b5a1071ec4090291278c7546c5c2c0542fc5080f385",
+      "fixtureSha256": "cac8613201a4a14d2d511ce2b89fd5e6d68e8ae3d63b94883397150f1f72f420",
+      "runtimePatch": "No application-response substitution; fixture setup and descriptive render timer only.",
+      "parity": {
+        "initial": true,
+        "result": true,
+        "logs": true,
+        "presentations": true,
+        "finalActors": true
+      },
+      "runs": [
+        {
+          "mode": "normal",
+          "result": "party",
+          "naturalResultMs": 62273,
+          "actions": 41,
+          "ultimates": {
+            "panko": 3,
+            "mallow": 3,
+            "sorrel": 2,
+            "biscuit": 3
+          },
+          "logSha256": "a9f66f5fb81df0a812837a20ba66138faf38c2220a0a9d2404019fbbec5dd74b",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3666,
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366,
+            "max": 50
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3666,
+            "median": 4.299999997019768,
+            "p95": 5.199999988079071,
+            "max": 35.70000000298023
+          },
+          "excludedIntervals": 65,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/timeline.json",
+            "sha256": "f913ea8340b6e136d904fb1aed7e5ff6417c6b8a3f811dbb6499e9c20b85af2d"
+          },
+          "errors": [],
+          "blockedRequests": []
+        },
+        {
+          "mode": "reduced",
+          "result": "party",
+          "naturalResultMs": 62202.09999999404,
+          "actions": 41,
+          "ultimates": {
+            "panko": 3,
+            "mallow": 3,
+            "sorrel": 2,
+            "biscuit": 3
+          },
+          "logSha256": "a9f66f5fb81df0a812837a20ba66138faf38c2220a0a9d2404019fbbec5dd74b",
+          "frameMsWithoutCaptureWindows": {
+            "samples": 3661,
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366,
+            "max": 49.90000000000009
+          },
+          "submissionMsWithoutCaptureWindows": {
+            "samples": 3661,
+            "median": 4,
+            "p95": 5.0999999940395355,
+            "max": 33.5
+          },
+          "excludedIntervals": 66,
+          "intervalsOver50p5ms": 0,
+          "timeline": {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/timeline.json",
+            "sha256": "e0a5b9ac6dd93d99835ceb328126f1b44f97cdbe7c922dfe5e501857e9ac4ace"
+          },
+          "errors": [],
+          "blockedRequests": []
+        }
+      ],
+      "captures": [
+        {
+          "mode": "normal",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/00-opening.png",
+          "sha256": "7828990272c23a28309788efbb5b7575d6ef2fdb515fdb75fc22351212ca70b6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:05:46.385Z",
+          "bytes": 1169436,
+          "rgbMean": 110.25446867766203,
+          "rgbStdDev": 47.77426683450635
+        },
+        {
+          "mode": "normal",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/01-status.png",
+          "sha256": "3ad32d6ef98bc4377468c072460dc4a606d6e012db7a59a500f518488c2a6a78",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:05:49.652Z",
+          "bytes": 1220952,
+          "rgbMean": 119.35277922453703,
+          "rgbStdDev": 55.28362988932647
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/02-ultimate-panko.png",
+          "sha256": "70fa281aba33a3be373d885d0b8dfda5fed3aa025aa6cf1f99df77ed62eee2cd",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:05:54.331Z",
+          "bytes": 1261403,
+          "rgbMean": 111.38185040509259,
+          "rgbStdDev": 52.85083523767829
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/03-ultimate-mallow.png",
+          "sha256": "23c22715daccdbbe00651f8d38e456e151195c8bbd6e05e785fa5e30e7756ef4",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:05:56.524Z",
+          "bytes": 1247955,
+          "rgbMean": 125.23438006365741,
+          "rgbStdDev": 61.23877463047988
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/04-ultimate-biscuit.png",
+          "sha256": "780f10563106887057074d2ec9cde1ba6e85b5aa4676d2a9aea0c86870f95a0e",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:05:59.782Z",
+          "bytes": 1323037,
+          "rgbMean": 125.10287507233797,
+          "rgbStdDev": 58.65567110335243
+        },
+        {
+          "mode": "normal",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "8d6006299bdc6b1a2b1936185050b35c8684135ce09fd025cbb132b242294565",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:06:02.128Z",
+          "bytes": 1297913,
+          "rgbMean": 109.00649305555555,
+          "rgbStdDev": 50.11417135415733
+        },
+        {
+          "mode": "normal",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/06-result-ready.png",
+          "sha256": "22db290a481ac72783e956d8a3b75e6e34f79c1090a654fd3f7d3a200b4be552",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:06:49.153Z",
+          "bytes": 918897,
+          "rgbMean": 50.93373119212963,
+          "rgbStdDev": 36.421002267759725
+        },
+        {
+          "mode": "normal",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/normal/07-result-later.png",
+          "sha256": "8aaa38c62f17cc00b89a0afa26dc45721b6824d738aba9f26865e66c01a37cb3",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:06:50.028Z",
+          "bytes": 939486,
+          "rgbMean": 53.08353334780092,
+          "rgbStdDev": 41.04595061329036
+        },
+        {
+          "mode": "reduced",
+          "reason": "opening",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/00-opening.png",
+          "sha256": "7828990272c23a28309788efbb5b7575d6ef2fdb515fdb75fc22351212ca70b6",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:06:52.667Z",
+          "bytes": 1169436,
+          "rgbMean": 110.25446867766203,
+          "rgbStdDev": 47.77426683450635
+        },
+        {
+          "mode": "reduced",
+          "reason": "status",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/01-status.png",
+          "sha256": "5fbea9ac7ad76b06a1182ac117a64c620a5d646fb96ef18ddf51430532225604",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:06:55.917Z",
+          "bytes": 1197900,
+          "rgbMean": 114.15843677662038,
+          "rgbStdDev": 51.00475545825215
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-panko",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/02-ultimate-panko.png",
+          "sha256": "e3010192e488235d0eb91d47399190db5edb3bdfa4d2365cc6ed4f8150b72fc9",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:00.596Z",
+          "bytes": 1246370,
+          "rgbMean": 112.74849175347222,
+          "rgbStdDev": 51.93829769518304
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-mallow",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/03-ultimate-mallow.png",
+          "sha256": "89d909072548374787e868b83eb2aceeeb3c4abd64f8c7bf586c04135e726513",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:02.931Z",
+          "bytes": 1286831,
+          "rgbMean": 119.06485170717593,
+          "rgbStdDev": 57.91361283527861
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-biscuit",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/04-ultimate-biscuit.png",
+          "sha256": "0f0a62bf0f40662586bec3831403004ced503b856d69a6ee2a4c1fc16d12bda5",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:06.030Z",
+          "bytes": 1298447,
+          "rgbMean": 118.36309425636574,
+          "rgbStdDev": 54.63031285360598
+        },
+        {
+          "mode": "reduced",
+          "reason": "ultimate-foe-0-yarn-giant",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/05-ultimate-foe-0-yarn-giant.png",
+          "sha256": "52c77922b386e4bfc74a7a40283b8d4e347017aca54445fcb11ee5f6c7133207",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:08.367Z",
+          "bytes": 1283194,
+          "rgbMean": 110.7131199363426,
+          "rgbStdDev": 49.84040215190448
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-ready",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/06-result-ready.png",
+          "sha256": "5ef5ef16d20c9d786cc8dcb4cb9c39626d2a319b974ca91ae819b3b90420f40d",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:55.392Z",
+          "bytes": 934442,
+          "rgbMean": 52.967957175925925,
+          "rgbStdDev": 40.88318318059995
+        },
+        {
+          "mode": "reduced",
+          "reason": "result-later",
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/reduced/07-result-later.png",
+          "sha256": "5ef5ef16d20c9d786cc8dcb4cb9c39626d2a319b974ca91ae819b3b90420f40d",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "utc": "2026-11-18T12:07:56.246Z",
+          "bytes": 934442,
+          "rgbMean": 52.967957175925925,
+          "rgbStdDev": 40.88318318059995
+        }
+      ],
+      "reviewImages": [
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/review/normal-0.jpg",
+          "sha256": "2813529c1b3054b893ebca1ac126ef5011b6c552a16a1e74c0a87699da3baaa1",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 219719,
+          "mode": "normal",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-panko",
+            "ultimate-mallow"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/review/normal-1.jpg",
+          "sha256": "99537ae40b28ca6749b64134adc061e6561cfb6aa89a78f09a5667e5e4ca9c33",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 225595,
+          "mode": "normal",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/review/reduced-0.jpg",
+          "sha256": "ca4c14a7f14dac14871f45141548a618df8fef2cc61cbc60d34438456cfebf36",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 218770,
+          "mode": "reduced",
+          "captureReasons": [
+            "opening",
+            "status",
+            "ultimate-panko",
+            "ultimate-mallow"
+          ],
+          "reviewed": false,
+          "views": 0
+        },
+        {
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/group-2/review/reduced-1.jpg",
+          "sha256": "835384463af75b71d0a93a3f3bc6a25c6ee47ec45433408ed9ba1a8d0098490a",
+          "dimensions": [
+            1024,
+            576
+          ],
+          "bytes": 227306,
+          "mode": "reduced",
+          "captureReasons": [
+            "ultimate-biscuit",
+            "ultimate-foe-0-yarn-giant",
+            "result-ready",
+            "result-later"
+          ],
+          "reviewed": false,
+          "views": 0
+        }
+      ]
+    }
+  ],
+  "reviewed": false,
+  "pass": false,
+  "scope": "Native9 natural seeded battles on current production at1280x720, normal/reduced motion, local1x descriptive frame intervals. Not calibrated laptop coverage, no optimization comparison, no cold-start or Mochi/Clover media acceptance.",
+  "harnessProvenance": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/harness-provenance.json",
+      "sha256": "8a6a2d36fb234aaf278bd2347a3d9c564e4cd9a293f89d1d611fb80929af1faa",
+      "artifactVerification": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/artifact-verification.json",
+        "sha256": "cb6b267d4eeb2b3b08683d474a7e73e3b6a45510a9f83961873b4fee2b4d2c63"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/harness-provenance.json",
+      "sha256": "8a6a2d36fb234aaf278bd2347a3d9c564e4cd9a293f89d1d611fb80929af1faa",
+      "artifactVerification": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-panko-r1-120539/artifact-verification.json",
+        "sha256": "81d1ffc0b29ca08eb05e43cf11e2f32863d4a923aa02398bc4897aa75ca0bdfb"
+      }
+    }
+  ],
+  "numericPass": true,
+  "coveredCats": [
+    "biscuit",
+    "brioche",
+    "cinnamon",
+    "inkcap",
+    "mallow",
+    "marigold",
+    "panko",
+    "sorrel",
+    "velvet"
+  ],
+  "protectedPaths": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/native-current-r1-115931/protected-paths.json",
+    "sha256": "33e14c93cc21c3da7b13f7cd8b889c81c3a1b4e080005b5ee5e5a8d37c6be314",
+    "count": 3833,
+    "changed": [],
+    "arrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6"
+  }
+}
