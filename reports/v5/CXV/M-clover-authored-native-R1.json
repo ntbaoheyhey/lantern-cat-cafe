@@ -1,0 +1,495 @@
+{
+  "utc": "2026-11-18T12:36:09.093125+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/report.json",
+    "sha256": "8e6b857086a375a370680c71da36279bfe2ea0c184cfd8ec684ab16fc16f700f"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-clover-authored-production.py",
+    "sha256": "f8dd66fbc68d1fa9bd82ff5b66591e67524dc1929606101a39fba3705ce59763"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-R1-preregistration.json",
+    "sha256": "881467428c4a66b82e0885f14440b2183b37bd591da62a7eee0743c8fa213988"
+  },
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "sourceCommit": "854ce6eecac5ded2af4dfd39983b211c5efca1bd",
+  "indexSha256": "9e39c7d758823cc8d85ca1174e0ad86745ee487e60b6c8984804e181dca6ca13",
+  "runtimePatch": {
+    "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+    "clover": "/units/clover/designer-idle-ccfa7ac9864c5f15.json"
+  },
+  "captureUTC": "2026-11-18T12:34:34.209Z",
+  "captureEndedUTC": "2026-11-18T12:35:06.691Z",
+  "idleSamples": 305,
+  "actionSamples": 38,
+  "actions": [
+    {
+      "reduced": false,
+      "skill": 1,
+      "contact": 350
+    },
+    {
+      "reduced": false,
+      "skill": 4,
+      "contact": 1100
+    },
+    {
+      "reduced": true,
+      "skill": 1,
+      "contact": 350
+    },
+    {
+      "reduced": true,
+      "skill": 4,
+      "contact": 1100
+    }
+  ],
+  "authored": {
+    "head": {
+      "samples": 343,
+      "maxContinuousError": 0.011723426488671241,
+      "maxDecodedError": 0.7275412105353803
+    },
+    "offHand": {
+      "samples": 343,
+      "maxContinuousError": 0.0005714917992092019,
+      "maxDecodedError": 0.3195764421131363
+    }
+  },
+  "maxNormalIdleFootDeltaCSSPx": 0.0,
+  "maxEmissionError": 0,
+  "emissionSamples": 10,
+  "captures": [
+    {
+      "name": "idle-5-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-5-normal.png",
+      "sha256": "275ad8b6333383ef41f6bf2a4b1fd4beeb3bd593730a24cd67917c524a4569df",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:38.227Z",
+      "row": 5,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.6687937644676,
+      "rgbStdDev": 48.61019525361398
+    },
+    {
+      "name": "idle-45-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-45-normal.png",
+      "sha256": "f0fd71ff1f0d940e506d097bb4370e22b38529a26529d9d744d900803f794df6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:39.799Z",
+      "row": 45,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.35736436631944,
+      "rgbStdDev": 48.27180250502465
+    },
+    {
+      "name": "idle-85-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-85-normal.png",
+      "sha256": "509eae08cf6796e76a705e4035d69229bfad1ec9ea3fe49d3a067e22e7ba161d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:42.015Z",
+      "row": 85,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.40279116030092,
+      "rgbStdDev": 48.30864150128406
+    },
+    {
+      "name": "idle-125-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-125-normal.png",
+      "sha256": "a208dccc25e647ed42a944d3d10aac7beb80259093d1a6c989f27ac8b9efd646",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:44.579Z",
+      "row": 125,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.403955078125,
+      "rgbStdDev": 48.33908529498041
+    },
+    {
+      "name": "idle-165-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-165-normal.png",
+      "sha256": "dc354086070bf27a2b6bbc4e3951deff41c201251036f37f71910ddf660ab87a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:47.651Z",
+      "row": 165,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.32491500289352,
+      "rgbStdDev": 48.30655181647438
+    },
+    {
+      "name": "idle-205-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-205-normal.png",
+      "sha256": "e19282161de30e3783bcc44d9643379dbdf699aaaeb1b68ea0a1a70efcf765b4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:51.252Z",
+      "row": 205,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.32194046585649,
+      "rgbStdDev": 48.23726131775847
+    },
+    {
+      "name": "idle-245-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-245-normal.png",
+      "sha256": "7d967f7ddd6b45265b3fa17cbbf5f13947a66f42068c814df39a9a8d396d6697",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:55.434Z",
+      "row": 245,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.40507667824075,
+      "rgbStdDev": 48.32069936330414
+    },
+    {
+      "name": "idle-285-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-285-normal.png",
+      "sha256": "b6cce1124e15b5a0b2b539b58e982d049f78cdba3b3565acfe3532672d55000b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:57.360Z",
+      "row": 285,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.3418923611111,
+      "rgbStdDev": 48.320011010650965
+    },
+    {
+      "name": "cast-1-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/cast-1-normal.png",
+      "sha256": "29c146765dc8eaf5f7374b0ae8877b5d0b59c32372c45b40d7543485eb09f28f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:34:58.411Z",
+      "row": 302,
+      "cropXYXY": [
+        334,
+        147,
+        576,
+        420
+      ],
+      "reviewScale": 1.5567765567765568,
+      "rgbMean": 111.40794451678241,
+      "rgbStdDev": 48.32653125215542
+    },
+    {
+      "name": "focus-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/focus-normal.png",
+      "sha256": "55bf4a44d76d51303273ca7f29dc3cc9b2c69873956c7f2c2516761cfd147fd7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:00.780Z",
+      "row": 312,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 86.50370225694445,
+      "rgbStdDev": 41.644379456479896
+    },
+    {
+      "name": "cast-4-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/cast-4-normal.png",
+      "sha256": "b91ca8ee80c0089a3319de22181c0bcfc1f183003194a0037beafca772dc592b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:01.141Z",
+      "row": 314,
+      "cropXYXY": [
+        335,
+        145,
+        566,
+        417
+      ],
+      "reviewScale": 1.5625,
+      "rgbMean": 112.09159071180555,
+      "rgbStdDev": 48.63905074237698
+    },
+    {
+      "name": "idle-0-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-0-reduced.png",
+      "sha256": "8b9cd44d0a09e184c6a99287c36d582c9e65286c572740a4d19f43cbba0f9d9f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:03.283Z",
+      "row": 319,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 109.62347475405093,
+      "rgbStdDev": 48.85069211398346
+    },
+    {
+      "name": "idle-205-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/idle-205-reduced.png",
+      "sha256": "ba5f42fba56a0e0cd0df8f7b90068088a17b360e5688ec43c6d0cb7b659ca2cc",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:03.550Z",
+      "row": 322,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 109.64603153935185,
+      "rgbStdDev": 48.84832311525766
+    },
+    {
+      "name": "cast-1-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/cast-1-reduced.png",
+      "sha256": "65877974ab730528b3802f4c31b1d099441b1c03e6af92fc717deb691f296be8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:03.894Z",
+      "row": 326,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.37318793402778,
+      "rgbStdDev": 48.303907973069386
+    },
+    {
+      "name": "focus-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/focus-reduced.png",
+      "sha256": "d922ba9c31ed4744c2dd8fc7a6fe5fd661a134cea4dcf24032acf6839d6ebfca",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:06.146Z",
+      "row": 336,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 85.70624240451389,
+      "rgbStdDev": 40.55172078043802
+    },
+    {
+      "name": "cast-4-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/cast-4-reduced.png",
+      "sha256": "ba3fcf113951d92706e8ff06cad606b402677b4b7ef104adc56041f36774ee12",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:35:06.428Z",
+      "row": 338,
+      "cropXYXY": [
+        337,
+        144,
+        559,
+        414
+      ],
+      "reviewScale": 1.5740740740740742,
+      "rgbMean": 111.96939814814814,
+      "rgbStdDev": 48.584484940694665
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/authored-review/sheet-0.jpg",
+      "sha256": "a306477871c32d77d9443305c45731c43b3a5f98a85d09806980d0cb7225f9ee",
+      "dimensions": [
+        1024,
+        1000
+      ],
+      "bytes": 241720,
+      "captureNames": [
+        "idle-5-normal",
+        "idle-45-normal",
+        "idle-85-normal",
+        "idle-125-normal"
+      ],
+      "reviewed": true,
+      "views": 1,
+      "reviewUTC": "2026-11-18T12:37:39.722208+00:00",
+      "observation": "Normal idle F5/45/85/125: red ring remains at approximate eye-line midpoint through turn; blue ring remains on visible free paw+digits inside sleeve boundary. Feet planted. Fine fur/cloth edges are softly sampled; no restored matte/halo claim."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/authored-review/sheet-1.jpg",
+      "sha256": "ff1f3c739dc74798388288146b405ef31b5737f457b820d141cbf46360232507",
+      "dimensions": [
+        1024,
+        1000
+      ],
+      "bytes": 240716,
+      "captureNames": [
+        "idle-165-normal",
+        "idle-205-normal",
+        "idle-245-normal",
+        "idle-285-normal"
+      ],
+      "reviewed": true,
+      "views": 1,
+      "reviewUTC": "2026-11-18T12:37:39.722208+00:00",
+      "observation": "Normal idle F165/205/245/285: head ring remains between visible eye lines through blink closure/reopening; paw ring follows free paw rather than teapot grip. Tail pose varies. Static crops do not accept loop seam."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/authored-review/sheet-2.jpg",
+      "sha256": "5c4483d7f197ba6de4dc4106053f697e7ac88f885524595654edbd862691e70f",
+      "dimensions": [
+        1024,
+        1000
+      ],
+      "bytes": 246886,
+      "captureNames": [
+        "cast-1-normal",
+        "focus-normal",
+        "cast-4-normal",
+        "idle-0-reduced"
+      ],
+      "reviewed": true,
+      "views": 1,
+      "reviewUTC": "2026-11-18T12:37:39.722208+00:00",
+      "observation": "Normal basic/ultimate/focus: head and paw rings stay on approximate presentation landmarks; focus outline follows body,leaves originate near teapot. Reduced idle F0 has a dark boss/banner panel covering part of teapot/right arm;outside anchor placement acceptance."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/authored-review/sheet-3.jpg",
+      "sha256": "ce680016a16ea02aa0e92dc5e63e4e7c4145da2d2bb9facc949317f44f9ade2e",
+      "dimensions": [
+        1024,
+        1000
+      ],
+      "bytes": 243836,
+      "captureNames": [
+        "idle-205-reduced",
+        "cast-1-reduced",
+        "focus-reduced",
+        "cast-4-reduced"
+      ],
+      "reviewed": true,
+      "views": 1,
+      "reviewUTC": "2026-11-18T12:37:39.722208+00:00",
+      "observation": "Reduced idle F205 retains frame0 appearance and dark panel over teapot/right arm. Reduced basic/focus/ultimate retain visible head/paw rings,planted feet and readable teapot. Green focus outline visible. No all-frame zero-occlusion or final-art claim."
+    }
+  ],
+  "numericPass": true,
+  "visualReviewed": true,
+  "limits": [
+    "Authored approximate source curves have8/6sourcepx manual bounds,not statistical confidence intervals or continuous anatomical truth.",
+    "Native ring locations and numerical alignment do not validate the underlying alpha,tail seam or normal-laptop performance.",
+    "Byte counts are report-only;no byte cap.",
+    "Nearest enlargement adds no native detail;actual viewport1280x720."
+  ],
+  "pass": true,
+  "visualReviewUTC": "2026-11-18T12:37:39.722208+00:00",
+  "observationsFrozen": true,
+  "scopedAnchorPass": true,
+  "artAccepted": false,
+  "allFrameReadabilityAccepted": false,
+  "scope": "Sampled R5 head/R6 free-paw native binding implementation only;frozen single-observer approximate source curves,decoded idle/legal casts/HP/spout checks. Not final art or occlusion acceptance.",
+  "openFindings": [
+    "Reduced idle F0/F205 dark boss/banner panel overlaps teapot/right arm.",
+    "Soft fur/cloth sampling,alpha fringe/halo,Clover loop seam and normal-laptop performance remain open."
+  ],
+  "captureHarness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-authored-native-r1-123433/harness-at-capture.mjs",
+    "sha256": "969514ae66de830fcc6d526c3e174002d9d326c4c5f6b329a7f2e6d3c3e292f0"
+  },
+  "measurementFailureReceipt": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-authored-measurement-schema-R1.json",
+    "sha256": "e2467a6dcc3a04ec0e745e2966eaf64cfa39ed0a59703d5c181b1e5849618aae"
+  },
+  "recordingNote": "First observation-write command had Python reserved-keyword syntax error before execution;corrected here. All four images were viewed exactly once before this write,not reopened."
+}

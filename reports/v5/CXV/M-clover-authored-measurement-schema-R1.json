@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-18T12:36:08.532754+00:00",
+  "failure": "Initial measurement raised KeyError: failed at line40;no sheets or report existed",
+  "cause": "Actual loader getter exposes failure:string|undefined,not failed. JSON omits undefined. ready implies firstFrame&&!failure&&!disposed.",
+  "source": "/Users/bao/taskbar-hero-chain/apps/web/src/game/cardrpg/spine/designer-idle-loader.ts:239",
+  "rows": 343,
+  "readyTrueRows": 343,
+  "failurePresentRows": 0,
+  "correction": "Use ready is True, not media.get(failure), and not disposed;all original rows retained. No requested frame/curve/tolerance changed;no recapture.",
+  "rawSha256": "8e6b857086a375a370680c71da36279bfe2ea0c184cfd8ec684ab16fc16f700f",
+  "captureHarnessSha256": "969514ae66de830fcc6d526c3e174002d9d326c4c5f6b329a7f2e6d3c3e292f0"
+}

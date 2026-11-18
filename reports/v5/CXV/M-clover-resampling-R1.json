@@ -1,0 +1,203 @@
+{
+  "utc": "2026-11-18T12:37:39.821294+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-resampling-R1/report.json",
+    "sha256": "fbd0a6af30485cb39af4df16bf8bf0b22c88d0210a42ed56a2a04dea6b08adc9"
+  },
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/sources/clover-idle-original.mp4",
+      "sha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+      "sha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-four-plane-q21-r1/source.rgba",
+      "sha256": "21fd9e6e159cbb1390c96dfc1b3dab4dffaa96d1ecb16ed7a97b0cbfcdecb7ac"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/experiments/clover-384/measurements.json",
+      "sha256": "567bdddf73b90c6987870b0a962a3ea0e635707c5041e2e75cd2e80fe3f0bb6f"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-media-resampling-v8-20261118.md",
+      "sha256": "dd22faf0864be5ab681c4cfd7ef58c53d362a7073a60f71cc49149501d1bb155"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/study-clover-resampling.py",
+      "sha256": "f025d7a9e5e29bb1dbbe9cdb4e099c4ddc63075acd604e94c83890b4c73ae2cb"
+    }
+  ],
+  "frames": 300,
+  "exactMatteRGBReproductions": 300,
+  "exactFinalRGBAReproductions": 300,
+  "aggregate": {
+    "sequentialVsDirect": {
+      "all": {
+        "pixelFrames": 16536000,
+        "mae": 0.810474379132398,
+        "maximum": 56.0,
+        "frameMAEP95": 0.8519508950169328
+      },
+      "transparent": {
+        "pixelFrames": 9260848,
+        "mae": 0.01710354530528234,
+        "maximum": 2.0,
+        "frameMAEP95": 0.02321078664668377
+      },
+      "edge": {
+        "pixelFrames": 757094,
+        "mae": 6.40329338232769,
+        "maximum": 56.0,
+        "frameMAEP95": 6.878022251974933
+      },
+      "opaque": {
+        "pixelFrames": 6518058,
+        "mae": 1.2880701583201621,
+        "maximum": 44.0,
+        "frameMAEP95": 1.3323547766867838
+      }
+    },
+    "integerRounding": {
+      "all": {
+        "pixelFrames": 16536000,
+        "mae": 0.13712701927232465,
+        "maximum": 0.9394073486328125,
+        "frameMAEP95": 0.14317139360914002
+      },
+      "transparent": {
+        "pixelFrames": 9260848,
+        "mae": 0.02966579629689683,
+        "maximum": 0.9177181720733643,
+        "frameMAEP95": 0.03692054647003391
+      },
+      "edge": {
+        "pixelFrames": 757094,
+        "mae": 0.27477692480340876,
+        "maximum": 0.926483154296875,
+        "frameMAEP95": 0.2780525360163712
+      },
+      "opaque": {
+        "pixelFrames": 6518058,
+        "mae": 0.27381928778104236,
+        "maximum": 0.9394073486328125,
+        "frameMAEP95": 0.2750291480214873
+      }
+    },
+    "matteZeroing": {
+      "all": {
+        "pixelFrames": 16536000,
+        "mae": 0.07891398564747622,
+        "maximum": 8.0,
+        "frameMAEP95": 0.10888395016932753
+      },
+      "transparent": {
+        "pixelFrames": 9260848,
+        "mae": 0.11660440454984972,
+        "maximum": 8.0,
+        "frameMAEP95": 0.16905856693897417
+      },
+      "edge": {
+        "pixelFrames": 757094,
+        "mae": 0.29727616385812067,
+        "maximum": 7.0,
+        "frameMAEP95": 0.3128842697707855
+      },
+      "opaque": {
+        "pixelFrames": 6518058,
+        "mae": 0.0,
+        "maximum": 0.0,
+        "frameMAEP95": 0.0
+      }
+    }
+  },
+  "controls": {
+    "constant": {
+      "sequentialProfile": [
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0
+      ],
+      "directProfile": [
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0,
+        128.0
+      ],
+      "maxDelta": 1.52587890625e-05
+    },
+    "step": {
+      "sequentialProfile": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        66.08802032470703,
+        255.0,
+        255.0,
+        255.0,
+        255.0,
+        255.0
+      ],
+      "directProfile": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        66.08802032470703,
+        255.0,
+        254.99998474121094,
+        254.99998474121094,
+        254.99998474121094,
+        254.99998474121094
+      ],
+      "maxDelta": 4.57763671875e-05
+    },
+    "impulse": {
+      "sequentialProfile": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        66.08802032470703,
+        66.08802032470703,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "directProfile": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        66.08802032470703,
+        66.08802032470703,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maxDelta": 7.62939453125e-06
+    }
+  },
+  "imagesViewed": 0,
+  "runtimeChanges": false,
+  "scope": "Numerical operator attribution only; direct resize is a control, not quality ground truth. Final alpha strata remain frozen. No alpha/fringe/halo recovery, art acceptance or native timing claim.",
+  "interpretation": "Intermediate area filtering changes edge RGB more than rounding:edgeMAE6.403293 vs rounding.274777;opaque1.288070. Directresize is a control,not established better art. Replacing RGB with frozen alpha needs separate consistency/native review. No source/loader/asset change."
+}

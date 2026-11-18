@@ -37,7 +37,8 @@ for key in ['head', 'offHand']:
     summary[key] = dict(samples=len(values), maxContinuousError=max(v['continuousError'] for v in values), maxDecodedError=max(v['decodedError'] for v in values))
     assert summary[key]['maxContinuousError'] <= prereg['gate']['maxContinuousMeshAttachmentCSSPx']
     assert summary[key]['maxDecodedError'] <= prereg['gate']['maxDecodedMeshAttachmentCSSPx']
-assert all(r['minTriangleRatio'] > 0 and r['media']['ready'] and not r['media']['failed'] for r in raw['rows'])
+assert all(r['minTriangleRatio'] > 0 and r['media']['ready'] is True
+           and not r['media'].get('failure') and not r['media']['disposed'] for r in raw['rows'])
 assert all(r['decodedFrame'] == r['sourceFrame'] for r in normal)
 assert all(r['decodedFrame'] == 0 and r['maxMeshDelta'] == 0 for r in reduced)
 foot = lambda r: np.array([r['foot'][k] for k in ['x', 'y']])
