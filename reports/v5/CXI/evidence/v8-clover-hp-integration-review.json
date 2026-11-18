@@ -1,5 +1,5 @@
 {
-  "utc": "2026-11-18T10:51:54.452924+00:00",
+  "utc": "2026-11-18T10:53:50.195369+00:00",
   "laneCommit": "04462a098def59af0621ee3e2dc4c37713eb7cbe",
   "files": [
     {
@@ -44,6 +44,30 @@
     }
   ],
   "nativeAcceptance": false,
-  "focusedChecks": "pending",
-  "limits": "Import only authored Clover HP placement; original face-side default and other labels preserved. No old focus perf patch imported."
+  "focusedChecks": {
+    "passed": 24,
+    "files": 7,
+    "typecheckExit": 0,
+    "logs": [
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-focused.log",
+        "sha256": "cd17166d3f50ef48457491dba818f36cc3e0157f61b3f9c468f6f3f757cd79e3"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-existing.log",
+        "sha256": "fd666deaff7893f3b2813889616c74b6175680ec83e696c96ceb9c2f78362b1a"
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-clover-hp-typecheck.log",
+        "sha256": "ff18b5a37377e72874b511ed6e05de3ff2b2b6c6df5c23f9bbd54dd071028c34"
+      }
+    ]
+  },
+  "limits": "Import only authored Clover HP placement; original face-side default and other labels preserved. No old focus perf patch imported.",
+  "protectedSoot": {
+    "baseline": "c4bd12552",
+    "pathCount": 247,
+    "changed": [],
+    "scope": "apps/assets/packages/tools; CXI audit report excluded"
+  }
 }
