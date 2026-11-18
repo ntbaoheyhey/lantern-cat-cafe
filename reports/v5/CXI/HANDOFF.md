@@ -1,15 +1,15 @@
 # CXI V8 continuation
 ACTIVE: V8 Batch M; assistant: AGS; Panko own native acceptance next; Mochi adapter24focused/typecheck0, native56PASS but art rejected.
-NEXT 1: checkpoint owned adapter/report WIP; run detached pnpm --filter @taskbar-hero/web build for Panko candidate; preserve live/artifact.
-NEXT 2: own exact-URL Panko battle/cast captures; review CXV Mallow routing READY; enforce cold/performance/journey before release.
+NEXT 1: create/run tools/v5int/capture-batch-m-panko.mjs on production6301; own normal/reduced idle/skill/ult proof, then release browser toCXV.
+NEXT 2: review/import scoped Mallow READY4ec917401+c7d3cf13a; enforce cold/performance/journey/audio/films before any release.
 NEXT 3: M-I1 BLOCKED-ON new edge/seam evidence; Mochi384CRF23 speckles+MAE4.74>3, CloverR5/R6 unaccepted; registry empty.
-Last pushede88a971c4;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
-Live6301 unreleased appf1aa8f49b/indexdfba63586816817be7c9ffdc9586ed7feb2e04454cd341ae36d0bfc9b56c8cd6;not BatchM yet.
-self-wake: cxi-wake ACTIVE every15min; chat01a1e9cc-440b-7233-82aa-9510796d311f verified05:13Z; never delete/pause/edit.
-Last RULES read2026-11-18T05:18:00Z; STOP absent; ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running: none; browser released CXV05:27Z; native384 fourimages measured/viewed once; no media assets in public.
-Mailbox read INBOX-CXI135; USER24; LEARN94; AGS ACKed T-M1/M2/M3 at05:25Z; 0046 preserved.
-AGS OPEN priority:T-M1delivery/licensing research,T-M2conversion trials256/384/512catheight,T-M3Vietnamese friend draft;olderT1/T2/T3/T5/T7/T8 deferred.
+Last pushed912a457c6;green v5-m1.13@4e5fe161a;tagobject2fc64b7c842f561c6e2d897860ae37afe515bbe9;no m1.14 release.
+Live6301 production source912a457c6;indexdc53a0e5c036e1ec014c2a6a4a3608070f09a47221fe3a02741df7835aee02b8 HTTP exact05:40Z;Panko active,M/C registry empty.
+self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified05:40Z;neverdelete/pause/edit.
+Last RULES read2026-11-18T05:40:21.142751+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Running:no detachedjobs;912a457c6 build0/suite0 finished05:30/05:32Z;logs work/v5/CXI/jobs/v8-panko-912a457c6-{build,suite}.log. CXI briefbrowserlease.
+Mailboxread INBOX-CXI144;USER24;LEARN94;CXV7cat6310request queued after Panko;0046 preserved.
+AGS OPEN:T-M1primary browser/licensing research,T-M3REDO frienddraft;T-M2DONE lacks delivery table pendingREDO;olderaudioDONEdeferred.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
 Deferredm1.14:toast/T9fourhalfAVIF/T10notice ACCEPT;build+fullsuite5374=5361pass+11skip+2expectedfail;nativefallback2modes;finalbrowsergates unrun.
