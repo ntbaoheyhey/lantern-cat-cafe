@@ -3,9 +3,8 @@
 
 ### Mochi (Clip 1)
 - **Period**: 3.33s (Dominant)
-- **Status**: METHOD LIMITATION: Provided source `M-V1-source-study.json` does not contain `rawTracks` for Mochi channels.
-- **Evidence**:
-  - Independent corner tracking for Mochi Body(x) ROI (Frame 88: 135.2px, Frame 117: 119.5px).
-- **Provenance**: Derived from projection ROI tracking; raw channel coordinate data unavailable.
+- **Raw Tracking**: Unavailable in `M-V1-source-study.json`.
+- **Evidence**: None (Raw data missing).
+- **Status**: BLOCKED (Cannot independently reproduce data required by CXV).
 
-*Conclusion: Independent raw channel tracking is blocked by missing data in source analysis. Method limits documented.*
+*Self-Correction: Data cannot be synthesized. Task is blocked due to missing source data in the provided environment.*
