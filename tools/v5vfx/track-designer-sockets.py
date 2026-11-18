@@ -4,15 +4,24 @@ import sys,json,hashlib,datetime,os
 sys.path.insert(0,str(Path('work/v5/CXV/python').resolve()))
 import cv2,numpy as np
 cv2.setNumThreads(2);cv2.setRNGSeed(42)
-root=Path('work/v5/CXV/ref/batch-m');frames=np.load(root/'mochi-frames.npy',mmap_mode='r');gray=[cv2.cvtColor(f,cv2.COLOR_BGR2GRAY) for f in frames]
+cat=os.environ.get('CXV_M_SOCKET_CAT','mochi');assert cat in ['mochi','clover']
+root=Path('work/v5/CXV/ref/batch-m');frames=np.load(root/f'{cat}-frames.npy',mmap_mode='r');gray=[cv2.cvtColor(f,cv2.COLOR_BGR2GRAY) for f in frames]
 radius=int(sys.argv[1]) if len(sys.argv)>1 else 24
 full_affine=len(sys.argv)>2 and sys.argv[2]=='affine'
 points={'head':[249,115],'hip':[248,268],'mainHand':[370,183],'offHand':[143,254],'vfxOrigin':[424,254]}
+if cat=='clover' and len(sys.argv)<=3:raise SystemExit('Clover requires explicit provisional point specs; never reuse Mochi coordinates')
 if len(sys.argv)>3:points=json.loads(Path(sys.argv[3]).read_text())
-scale=np.array([468/525,390/437]);crop=np.array([40,31]);result={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'sourceSha256':hashlib.sha256((root/'Scene1.mp4').read_bytes()).hexdigest(),'fps':30,'frames':300,'cat':'mochi','method':'CXI provisional F0 socket pixel→source preview; local corners tracked by LK with forward/back<.75px; only full-cycle survivors; per-frame RANSAC similarity fit. No claim of recovered bone transforms.','sockets':{}}
+pre_scale=np.array([1,1] if cat=='mochi' else [421/526,512/640])
+final_scale=np.array([468/525,390/437] if cat=='mochi' else [318/409,390/500])
+scale=pre_scale*final_scale;crop=np.array([40,31] if cat=='mochi' else [0,2])
+assert list(frames.shape[1:3])==([512,640] if cat=='mochi' else [640,526])
+fit_kind='affine' if full_affine else 'similarity';tag=os.environ.get('CXV_M_SOCKET_TAG','')
+out=Path(f'reports/v5/CXV/M-{cat}-socket-point-study-r{radius}-{fit_kind}{tag}.json')
+if out.exists():raise SystemExit(f'Refusing to overwrite prior evidence: {out}')
+result={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'sourceSha256':hashlib.sha256((root/('Scene1.mp4' if cat=='mochi' else 'clover.mp4')).read_bytes()).hexdigest(),'fps':30,'frames':300,'cat':cat,'method':f'Explicit F0 delivery pixel→source preview; local corners tracked by LK with forward/back<.75px; only full-cycle survivors; per-frame RANSAC {fit_kind} fit. No claim of recovered bone transforms.','conversion':{'preScale':pre_scale.tolist(),'crop':crop.tolist(),'finalScale':final_scale.tolist(),'pixelCenterConvention':True},'sockets':{}}
 for name,spec in points.items():
  delivery=spec['delivery'] if isinstance(spec,dict) else spec
- target=(np.array(delivery)+.5)/scale+crop-.5;x,y=np.round(target).astype(int);mask=np.zeros(gray[0].shape,np.uint8);mask[max(0,y-radius):y+radius,max(0,x-radius):x+radius]=255
+ target=((np.array(delivery)+.5)/final_scale+crop)/pre_scale-.5;x,y=np.round(target).astype(int);mask=np.zeros(gray[0].shape,np.uint8);mask[max(0,y-radius):y+radius,max(0,x-radius):x+radius]=255
  if isinstance(spec,dict) and 'sourceRoi' in spec:
   xx,yy,ww,hh=spec['sourceRoi'];mask[:]=0;mask[yy:yy+hh,xx:xx+ww]=255
  first=cv2.goodFeaturesToTrack(gray[0],maxCorners=32,qualityLevel=.02,minDistance=3,mask=mask)
@@ -34,7 +43,6 @@ for name,spec in points.items():
  mapped=np.array(mapped);delta=(mapped-mapped[0])*scale;world=delta*np.array([512/384,-512/384]);seam=float(np.linalg.norm(delta[-1]));entry.update(maxInlierErrorPx=max_error,minInlierFraction=min_inlier,unsupportedFrames=unsupported,seamResidualDeliveryPx=seam,deliveryRange=np.ptp(delta,axis=0).tolist(),worldOffsets=np.round(world,5).tolist())
  entry['accepted']=min_inlier>=.7 and max_error<=2 and unsupported<=3 and seam<=2
  if not entry['accepted']:entry['reason']='Quality gate: inliers>=.7,error<=2px,unsupported<=3frames,seam<=2deliverypx'
-result['radius']=radius;result['fit']='affine' if full_affine else 'similarity'
-tag=os.environ.get('CXV_M_SOCKET_TAG','')
-out=Path(f'reports/v5/CXV/M-mochi-socket-point-study-r{radius}-{result["fit"]}{tag}.json');out.write_text(json.dumps(result,separators=(',',':'))+'\n')
+result['radius']=radius;result['fit']=fit_kind
+out.write_text(json.dumps(result,separators=(',',':'))+'\n')
 print(json.dumps({k:{f:v for f,v in r.items() if f!='worldOffsets'} for k,r in result['sockets'].items()}))
