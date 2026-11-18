@@ -7,7 +7,7 @@
 
 ## Shot List
 | Time | Scene | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | 0:00-0:30 | Hook | Fresh desktop landing → Play free → Fight → Fight; record the real guide. |
 | 0:30-1:00 | Wave 1 | Current green wave1 film, actual 1× gameplay with browser audio; label review fixture. |
 | 1:00-1:30 | Wave 3 | Current green wave3 film, 1×; preserve its audio and frame timing. |
