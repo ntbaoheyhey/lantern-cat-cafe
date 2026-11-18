@@ -13,10 +13,12 @@ const hash=b=>createHash('sha256').update(b).digest('hex');
 const candidatePath=resolve(process.argv[2]||'/Users/bao/th-v5-ag2/work/v5/AGV/landing.avif');
 const originalPath='/Users/bao/taskbar-hero-chain/apps/web/public/art/v3-shell/landing.webp';
 const candidate=await readFile(candidatePath),original=await readFile(originalPath);
+const buildPath=process.env.CXV_MEDIA_BUILD;
+const build=buildPath?JSON.parse(await readFile(buildPath)):null;
 const index=Buffer.from(await (await fetch(url)).arrayBuffer());
-if(hash(index)!=='d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84')throw Error('Served build changed; revalidate before capture');
+if(hash(index)!==(build?.indexSha256??'d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84'))throw Error('Served build changed; revalidate before capture');
 const served=Buffer.from(await (await fetch(new URL('/art/v3-shell/landing.avif',url))).arrayBuffer());
-const report={utc:new Date().toISOString(),url,viewport:[1280,720],sourceCommit:'85cb62233d016faf5c5235ffe178408df1682af3',indexSha256:hash(index),
+const report={utc:new Date().toISOString(),url,viewport:[1280,720],sourceCommit:build?.sourceCommit??'85cb62233d016faf5c5235ffe178408df1682af3',indexSha256:hash(index),buildPath,buildSha256:buildPath?hash(await readFile(buildPath)):undefined,registryOverride:build?.registryOverride,
  runnerSha256:hash(await readFile(new URL(import.meta.url))),candidate:{path:candidatePath,sha256:hash(candidate),bytes:candidate.length},original:{path:originalPath,sha256:hash(original),bytes:original.length},
  served:{sha256:hash(served),bytes:served.length},runtimePatch:'None in baseline; original/candidate substitute only the landing image response in isolated browser contexts. No app/source/style edits.',conditions:[]};
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
