@@ -96,7 +96,10 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 58621.5,
+        "rawMs": 58621.5,
+        "timeEqualAtReportedOneDecimal": true
       },
       {
         "group": 0,
@@ -105,7 +108,10 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 58598.6,
+        "rawMs": 58598.59999999404,
+        "timeEqualAtReportedOneDecimal": true
       },
       {
         "group": 1,
@@ -114,7 +120,10 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 80179.7,
+        "rawMs": 80179.70000000298,
+        "timeEqualAtReportedOneDecimal": true
       },
       {
         "group": 1,
@@ -123,7 +132,10 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 80108.7,
+        "rawMs": 80108.70000000298,
+        "timeEqualAtReportedOneDecimal": true
       },
       {
         "group": 2,
@@ -132,7 +144,10 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 62309.7,
+        "rawMs": 62309.70000000298,
+        "timeEqualAtReportedOneDecimal": true
       },
       {
         "group": 2,
@@ -141,9 +156,13 @@
         "actionsExact": true,
         "ultimatesExact": true,
         "source": "85cb62233d016faf5c5235ffe178408df1682af3",
-        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84"
+        "indexSha256": "d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84",
+        "reportedMs": 62443.6,
+        "rawMs": 62443.59999999404,
+        "timeEqualAtReportedOneDecimal": true
       }
     ],
-    "decision": "The six aggregate rows match retained historical first native full-battle evidence. Accept those counts with this provenance only. They are not the requested per-cat evidence inventory, nor measurements of the currently installed profile."
-  }
+    "decision": "Six aggregate rows match retained historical first native full-battle evidence at their reported one-decimal millisecond precision; five raw float timestamps are not strictly equal. Action and ultimate counts are exact. Accept historical aggregate counts only, not requested per-cat inventory or current profile measurements."
+  },
+  "correctionUTC": "2026-11-18T17:12:44.021245+00:00"
 }
