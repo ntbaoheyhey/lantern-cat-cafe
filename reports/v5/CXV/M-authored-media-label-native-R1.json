@@ -1,0 +1,857 @@
+{
+  "utc": "2026-11-18T14:08:08.479630+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-label-r7/build.json",
+    "sha256": "16c9a4e4ae7c190ea490d71aa666a30680758087e9a07b592d565ceb8451ab3c"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-authored-media-label-native-R1-preregistration.json",
+    "sha256": "c7123fcf8bc2a2aa8c855cd2ece1226bdddfc273403a8f3c9a64ca395bddab48"
+  },
+  "runnerSha256": "f3f5c0f2d52a6786637f71cfc1ee19a4635cb6ea68dc59aad361c906892160d3",
+  "stages": [
+    {
+      "name": "regression-heldouts-capture",
+      "startedUTC": "2026-11-18T14:08:08.480552+00:00",
+      "completedUTC": "2026-11-18T14:09:19.167350+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/regression-heldouts-capture.log",
+        "sha256": "0763c57e503dcae5405876c48c7793589a20d3f3e7f4eed79ae3c5c12089b040"
+      }
+    },
+    {
+      "name": "regression-heldouts-measure",
+      "startedUTC": "2026-11-18T14:09:19.167968+00:00",
+      "completedUTC": "2026-11-18T14:09:29.865917+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/regression-heldouts-measure.log",
+        "sha256": "0cf6546c86cc8f0279ea01dc8c1972bcfb8ad6004f5ee0636e0ddf2e19d28a52"
+      }
+    },
+    {
+      "name": "expanded-status-capture",
+      "startedUTC": "2026-11-18T14:09:29.870528+00:00",
+      "completedUTC": "2026-11-18T14:09:49.628346+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/expanded-status-capture.log",
+        "sha256": "75db154929f25183cb67e260e7b081d9d10b3ece4367b278f7ae8f0b30baa0f6"
+      }
+    },
+    {
+      "name": "expanded-status-measure",
+      "startedUTC": "2026-11-18T14:09:49.629333+00:00",
+      "completedUTC": "2026-11-18T14:09:52.542675+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/expanded-status-measure.log",
+        "sha256": "72eb113811cb6c4d98bb9a0acdfe9ec56977c6e00aa82f0216631d38cb3c44f5"
+      }
+    },
+    {
+      "name": "natural-capture",
+      "startedUTC": "2026-11-18T14:09:52.545536+00:00",
+      "completedUTC": "2026-11-18T14:12:46.849160+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/natural-capture.log",
+        "sha256": "4c5a66f348ef5754dcff5684c073f763fd8f09131f1586d9caaca5fef076cc05"
+      }
+    },
+    {
+      "name": "natural-rules",
+      "startedUTC": "2026-11-18T14:12:46.850176+00:00",
+      "completedUTC": "2026-11-18T14:12:47.124068+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/natural-rules.log",
+        "sha256": "de0b70a47b264c94366f4e7003734bfff3356c0e1be34deef48950170d353634"
+      }
+    },
+    {
+      "name": "natural-measure",
+      "startedUTC": "2026-11-18T14:12:47.125102+00:00",
+      "completedUTC": "2026-11-18T14:12:48.678134+00:00",
+      "exit": 0,
+      "log": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/natural-measure.log",
+        "sha256": "9348b23abe3e2ccf75382a12b8daa2d396e60a40f1559643d66af69b0177cb78"
+      }
+    }
+  ],
+  "labels": [
+    {
+      "name": "regression-heldouts",
+      "syntheticStatusFixture": false,
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/regression-heldouts/analysis.json",
+        "sha256": "5394937129ba47de86e80651ffc69ff2afe6c2c31c1a53c4d2dbaa0ad1a98550"
+      },
+      "attributionValid": true,
+      "zeroPaintOverlap": false,
+      "cases": [
+        {
+          "mode": "normal",
+          "sourceFrame": 0,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 17,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 147,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 236,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 9,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 27,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 59,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 86,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 129,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 173,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 219,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 257,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 297,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 17,
+              "bbox": [
+                363,
+                351,
+                369,
+                357
+              ],
+              "sampleXY": [
+                [
+                  363,
+                  351
+                ],
+                [
+                  364,
+                  351
+                ],
+                [
+                  365,
+                  351
+                ],
+                [
+                  366,
+                  351
+                ],
+                [
+                  365,
+                  352
+                ],
+                [
+                  366,
+                  352
+                ],
+                [
+                  367,
+                  352
+                ],
+                [
+                  364,
+                  353
+                ]
+              ]
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 17,
+              "bbox": [
+                363,
+                351,
+                369,
+                357
+              ],
+              "sampleXY": [
+                [
+                  363,
+                  351
+                ],
+                [
+                  364,
+                  351
+                ],
+                [
+                  365,
+                  351
+                ],
+                [
+                  366,
+                  351
+                ],
+                [
+                  365,
+                  352
+                ],
+                [
+                  366,
+                  352
+                ],
+                [
+                  367,
+                  352
+                ],
+                [
+                  364,
+                  353
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "mode": "reduced",
+          "sourceFrame": 0,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "expanded-status",
+      "syntheticStatusFixture": true,
+      "analysis": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/expanded-status/analysis.json",
+        "sha256": "0dec165964d61a93caa267699e3f3b4af3e5249c33303dfda5a6379ff257bb5d"
+      },
+      "attributionValid": true,
+      "zeroPaintOverlap": false,
+      "cases": [
+        {
+          "mode": "normal",
+          "sourceFrame": 0,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 208,
+              "bbox": [
+                368,
+                351,
+                408,
+                360
+              ],
+              "sampleXY": [
+                [
+                  368,
+                  351
+                ],
+                [
+                  369,
+                  351
+                ],
+                [
+                  370,
+                  351
+                ],
+                [
+                  371,
+                  351
+                ],
+                [
+                  372,
+                  351
+                ],
+                [
+                  373,
+                  351
+                ],
+                [
+                  374,
+                  351
+                ],
+                [
+                  375,
+                  351
+                ]
+              ]
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 208,
+              "bbox": [
+                368,
+                351,
+                408,
+                360
+              ],
+              "sampleXY": [
+                [
+                  368,
+                  351
+                ],
+                [
+                  369,
+                  351
+                ],
+                [
+                  370,
+                  351
+                ],
+                [
+                  371,
+                  351
+                ],
+                [
+                  372,
+                  351
+                ],
+                [
+                  373,
+                  351
+                ],
+                [
+                  374,
+                  351
+                ],
+                [
+                  375,
+                  351
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 147,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 69,
+              "bbox": [
+                393,
+                351,
+                408,
+                358
+              ],
+              "sampleXY": [
+                [
+                  393,
+                  351
+                ],
+                [
+                  395,
+                  351
+                ],
+                [
+                  396,
+                  351
+                ],
+                [
+                  397,
+                  351
+                ],
+                [
+                  398,
+                  351
+                ],
+                [
+                  399,
+                  351
+                ],
+                [
+                  400,
+                  351
+                ],
+                [
+                  401,
+                  351
+                ]
+              ]
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 69,
+              "bbox": [
+                393,
+                351,
+                408,
+                358
+              ],
+              "sampleXY": [
+                [
+                  393,
+                  351
+                ],
+                [
+                  395,
+                  351
+                ],
+                [
+                  396,
+                  351
+                ],
+                [
+                  397,
+                  351
+                ],
+                [
+                  398,
+                  351
+                ],
+                [
+                  399,
+                  351
+                ],
+                [
+                  400,
+                  351
+                ],
+                [
+                  401,
+                  351
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "mode": "normal",
+          "sourceFrame": 236,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            }
+          }
+        },
+        {
+          "mode": "reduced",
+          "sourceFrame": 0,
+          "valid": true,
+          "paintedIntersections": {
+            "all": {
+              "count": 74,
+              "bbox": [
+                393,
+                351,
+                408,
+                360
+              ],
+              "sampleXY": [
+                [
+                  393,
+                  351
+                ],
+                [
+                  394,
+                  351
+                ],
+                [
+                  395,
+                  351
+                ],
+                [
+                  396,
+                  351
+                ],
+                [
+                  397,
+                  351
+                ],
+                [
+                  398,
+                  351
+                ],
+                [
+                  399,
+                  351
+                ],
+                [
+                  400,
+                  351
+                ]
+              ]
+            },
+            "own": {
+              "count": 0,
+              "bbox": null,
+              "sampleXY": []
+            },
+            "cross": {
+              "count": 74,
+              "bbox": [
+                393,
+                351,
+                408,
+                360
+              ],
+              "sampleXY": [
+                [
+                  393,
+                  351
+                ],
+                [
+                  394,
+                  351
+                ],
+                [
+                  395,
+                  351
+                ],
+                [
+                  396,
+                  351
+                ],
+                [
+                  397,
+                  351
+                ],
+                [
+                  398,
+                  351
+                ],
+                [
+                  399,
+                  351
+                ],
+                [
+                  400,
+                  351
+                ]
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "productionAcceptance": false,
+  "complete": true,
+  "natural": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-authored-media-label-native-R1-natural.json",
+    "sha256": "f8fe4b72adf459b37870724207cc2f1f0956c847e464a66812b5de7072ba66aa",
+    "numericPass": false,
+    "parity": {
+      "initial": true,
+      "result": true,
+      "logs": true,
+      "presentations": true,
+      "independentRules": true
+    }
+  },
+  "sampledNumericPass": false,
+  "limits": [
+    "Paused attribution is post-conceal and preserves initial-raster deltas.",
+    "Expanded status is synthetic overflow stress, not a reachable rules state.",
+    "Natural rectangle failures remain failures; no all-frame/seam/matte/laptop acceptance.",
+    "Three paused sheets and four natural sheets viewed once after measurements; failures retained. Source and diagnostic scopes recorded separately."
+  ],
+  "completedUTC": "2026-11-18T14:12:48.682962+00:00",
+  "visualReview": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/review-selection.json",
+    "sha256": "8c70953d2f151bcc993c77c32059947f968f8d0892d6f55b3eca831dd379e365",
+    "views": 3,
+    "recordUTC": "2026-11-18T14:13:52.638121+00:00"
+  },
+  "leaseRelease": {
+    "utc": "2026-11-18T14:13:52.638121+00:00",
+    "pid": 24575,
+    "processAbsent": true,
+    "captureExit": 0,
+    "browserClosureBasis": "Both capture harnesses await browser.close() in finally; child calls returned zero; natural report ended2026-11-18T14:12:46.753Z."
+  },
+  "naturalReview": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/natural-review-selection.json",
+    "sha256": "6b7410de13e625bdd4e50e9993775a8062f7ea72862b5cb0fc100e46bbced234",
+    "views": 4
+  }
+}

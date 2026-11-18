@@ -1,14 +1,13 @@
 # CXV — Batch M: mèo sống động
-Cập nhật: 2026-11-18T13:26:27.636344+00:00
-Tag xanh v5-m1.15 đã nhập/đẩy tại1a78aab2f;7kiểm tra tập trung+TSC0;3.833đường dẫn bảo vệ/Soot và capture-arrival nguyên vẹn. Chín mèo native đã nhận;hai video Mochi/Clover chưa đăng ký.
-Kiểm tra nhãn R6 trên bản thử R5:5pha/35ảnh chính+15ảnh kiểm soát;15cặp RGB giống hệt,5ảnh ghép xem một lần. Chỉ32pixel giao giữa đuôi Mochi và góc huy hiệu khiên Clover ở một pha(7pixel ngưỡng>4);thanh HP/rage và nhãn đè mèo của chính nó đều0. Lỗi hộp bao ở trận tự nhiên vẫn giữ,không suy ra mọi khung đều sạch;chưa sửa ứng dụng.
-Sáu trận R1 trên0b669/index3e7d27 thắng,270 hành động,luật/diễn biến/trạng thái khớp hai chế độ,không lỗi.48 ảnh đo và12 ảnh ghép xem đúng một lần;không gọi chúng là ảnh mới của m1.14. Vài hiệu ứng vẫn dày.
-Đầu Clover R5 và tay tự do R6 đạt24/24 điểm mới mỗi loại. Bộ chuyển tọa độ thực của CXI đạt2.100 idle/3.600 cast/600 kiểm tra cách ly; sai số thế giới tối đa1,20e-6. Đây là neo trình bày xấp xỉ,không phải chân lý giải phẫu.
-Bản thử authored R4 nguồn854ce6eec/index9e39c7d7:305 mẫu idle+38 mẫu hành động,4 hành động hợp lệ,16 ảnh đạt kiểm tra native;4 ảnh ghép xem đúng một lần. Sai số neo đầu/tay so với hình giải mã tối đa0,728/0,320px. R2 xác định bảng Wave1/1 thoáng qua: khi pause biến mất ở mẫu1,06s; chơi1x bảng đã mất khi hành động đầu ở194ms,không có mẫu chồng hành động. Không sửa ứng dụng;không suy ra mọi khung đều không che.
-Clover HP đã đạt56 trạng thái/4 hành động/10 glint,không chồng nhãn,khoảng hở thân nhỏ nhất19,30px. Vòng lặp vẫn lỗi:10,515 so với trung vị1,992 ở bước nối. Viền/halo và laptop thường còn mở.
-Chủ dự án bỏ giới hạn8MB từ12:09:40Z;byte chỉ báo cáo,không chặn phát hành/hình ảnh. Bằng chứng thất bại cũ giữ nguyên nhưng cách diễn giải chặn theo byte đã bị thay thế.
-AGV giữ hai nhiệm vụ:số liệu tay Clover độc lập và nghiên cứu L2/L4 Trung/Anh;ngừng nén landing theo giới hạn đã bỏ.
-Kiểm tra merge:17 ca focus+16 preload,TSC0,3.833 đường dẫn bảo vệ và capture-arrival.mjs không đổi. cxv-wake còn ACTIVE mỗi15phút;không có job hoặc lease capture đang chạy;đã trả6301 lúc12:35Z.
-R5 mới8aef/index82f:hai trận Mochi+Clover/Panko/Mallow thắng,110 hành động;replay độc lập toàn trạng thái khớp tuyệt đối. Hai decoder hoạt động đúng và dừng sau thắng,không callback muộn/không lỗi;16 ảnh,4 ảnh ghép xem một lần. P95 khung16,7/16,8ms trên M3 Pro,chỉ mô tả máy này. Hộp HP chồng hộp thân ở cả hai mèo;chưa kết luận che pixel thật,cần đo riêng trước khi sửa.6301 đã trả13:02Z.
-2026-11-18T13:36:09.298138+00:00 R6 đã được CXI kiểm chứng độc lập:32 pixel mép đuôi Mochi chạm góc huy hiệu khiên Clover tại một tư thế;HP/rage và nhãn của chính mèo không giao trong5mẫu. Dịch thử mặt nạ nhãn5px có thể hết giao trong5mẫu,nhưng chưa phải kiểm tra bố cục thật/toàn vòng/thi triển. Chưa sửa mã ứng dụng;đang chuẩn bị kiểm tra pha texture GPU và capture mới.
-2026-11-18T13:49:53.715283+00:00 Dịch nhãn Clover xuống5px đạt cả10tư thế mới,không đổi nhãn khác/pixel canvas/HUD. Tuy nhiên3tư thế mới của Mochi có nhãn HP/rage phủ tay/mép khiên:56/340/93pixel. Ảnh HP trước/sau thao tácẩn khớp;rage khác81pixel nên giữ giới hạn chẩn đoán. Đã xem3ảnh mới một lần;chưa áp dụngmã;đã trả6301 lúc13:48:47Z.
+Cập nhật: 2026-11-18T14:14:44.809834+00:00
+Tag xanh v5-m1.15 đã nhập; chín mèo native đã nhận, hai video Mochi/Clover chưa đăng ký production. Soot và capture-arrival.mjs được giữ nguyên.
+R7 đã nhập đúng hai thay đổi nhãn từ93f3637f2: Mochi/Clover dùng neo HP authored, Clover thêm5px.25 kiểm tra tập trung và typecheck đạt; chưa READY nhãn.
+Capture R7 nguồn bf01d462a/index eb93ee0d tại6301 hoàn tất14:12:48Z.18 ca attribution đều hợp lệ, nhãn không đè hình của chính mèo; nhưng F297 Clover/F188 Mochi còn17 pixel đuôi chạm huy hiệu Clover. Ba ca status tổng hợp còn208/69/74 pixel giao; đây là stress giả lập, không phải trạng thái luật đã chứng minh.
+Hai trận tự nhiên thắng,110 hành động,24 ultimate; luật/trạng thái/log/diễn biến khớp độc lập, không lỗi. Hộp nhãn/thân mèo khác còn giao: Mochi47/48 mẫu, Clover749/766 mẫu (normal/reduced); hộp bao có vùng trong suốt nên chưa suy ra tất cả là che pixel.
+P95 khung16,8ms cả hai chế độ trênM3 Pro; chỉ mô tả máy này. Decoder chạy/dừng sau thắng đúng, không callback muộn; không suy ra laptop thường đạt.
+Ba ảnh attribution và bốn ảnh ghép trận được đo trước, xem đúng một lần. Mặt còn nhận ra; lửa/lá/sóng khiên vẫn che vùng thân và số khiên chồng. Giữ lỗi, không gọi toàn bộ hiệu ứng thông thoáng.
+Đã trả6301/timing14:13:52Z sau khi job và browser đóng. Không còn job CXV đang chạy. Tiếp theo: đo giả thuyết bố trí nhãn tính cả đuôi mèo lân cận/status mở rộng trên dữ liệu đóng băng trước khi sửa mã.
+R6 GPU:648 file,600 tham chiếu,24 khung GPU và168 socket khớp pha0, gồm hai mẫu seeking; phạm vi controlled draw, không chứng minh toàn bộ chơi thường.
+Đầu CloverR5/tayR6 đạt24/24 heldout mỗi loại; native sai số decoded tối đa0,728/0,320px. Bằng chứng saiR2/R3/R4 cũ giữ nguyên.
+Vòng lặp Clover vẫn REJECT:11,1581 so với trung vị2,2484. Crossfade15frame bị loại:4149 pixel trộn/3434 vùng đuôi-vải và chu kỳ còn9,5s; chưa xuất art. Viền/halo và laptop thường còn mở.
+Chủ dự án bỏ giới hạn8MB lúc12:09:40Z; byte chỉ báo cáo. AGV có hai việc mở: hiệu chuẩn một điểm/bounds tayF6 nguồn gốc và nghiên cứu3ZH+3EN có trích dẫn kiểm chứng. Wake cxv-wake còn ACTIVE mỗi15phút, đã kiểm tra14:13Z.

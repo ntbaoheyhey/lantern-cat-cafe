@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-18T14:09:51.647073+00:00",
+  "input": "/Users/bao/th-v5-ag2/reports/v5/AGV/M-L1-TIMING.md",
+  "sha256": "db857a8c0eb171769074c7bb5a66b93f836bf2b5ac44cca7e3c721982fccc801",
+  "decision": "REDO, narrow next deliverable to one original-source F6 observation",
+  "observations": [
+    "Coordinates repeat a two-column,three-row sheet grid: x46/430,y64/376/688. These identify plot placement,not a measured paw point.",
+    "Truncated hashes cbc47667 and589da725 reference whole CXV contact sheets,not independently hashed source frames.",
+    "No crop/display-to-original coordinate transform or point annotation is supplied.",
+    "Manual +/-5px remains unsupported; no confidence interval inferred."
+  ],
+  "fullCycleAccepted": false,
+  "next": "One independently observed visible-paw point or bounds in original2300x2800 F6,complete source/frame hashes and uncertainty basis. Only after that is verifiable,extend full-cycle samples.",
+  "otherActiveTask": "T-M2"
+}
