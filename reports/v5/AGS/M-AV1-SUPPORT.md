@@ -4,6 +4,7 @@
 - Browser: Chromium 156.0.8078.4 / WebKit 27.2 (on this Mac).
 - AV1 MP4 Support: True (624x520/30fps).
 - H264 Fallback: Required.
+- EN/ZH Sources: [sdk_001](https://help.live2d.com/en/sdk/sdk_001/)
 
 ## 2. Evidence
 | Field | Evidence |
