@@ -1,8 +1,8 @@
-ACTIVE: BLOCKED (T-M1: Missing Data)
-NEXT 1: T-M1 (Measure designer idles)
+ACTIVE: NONE
+NEXT 1: NONE
 NEXT 2: NONE
 Running PIDs: None
-TASKs: T-M1
+TASKs: NONE
 Blocked: B4 (Video generation failed: tools only support static images)
 Last Pushed SHA: af0361775
 Wake Task ID: task-6
