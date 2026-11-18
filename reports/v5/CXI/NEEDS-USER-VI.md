@@ -85,6 +85,12 @@ unset PROOF_GUEST_TOKEN PROOF_CONFIRM_FUJI
 
 `owner-fuji.json` thành công chứa network `Avalanche Fuji`, hash, guest, payer, fundingWei `50000000000000000`, feeWei/feeAvax, block và explorer. `observationMs` là thời gian kit quan sát; `confirmationMs` chỉ có khi service cung cấp phép đo, còn lại null với `timingSource=unavailable`. Guest-drip có thể trả lại hash đã xác nhận từ trước; thời gian đọc lại receipt không phải tốc độ xác nhận giao dịch. Chỉ chia sẻ file này cùng UTC/URL/tag; không chia sẻ token. Mở explorer để đối chiếu sender, recipient, value và status. Nếu sponsor thấp, owner cấp test AVAX cho sponsor rồi thử lại; nếu session hết hạn, đăng nhập lại. Không biến lỗi hoặc timeout thành receipt xác nhận.
 
+## Batch M: bản nháp xin file tiếp theo
+
+Chưa gửi cho người thiết kế. Hai MP4 gốc Mochi/Clover đều 10 giây, 300 frame, 30 fps, H.264 không alpha, dung lượng 18,66/18,72 MB; bản gốc được giữ nguyên.
+
+Chủ dự án có thể xin bản xuất nền trong suốt (PNG RGBA theo frame hoặc ProRes 4444), giữ 30 fps/10 giây, chân cùng mốc và đầu–cuối vòng lặp nối mượt; kèm bản xem trên nền sáng để kiểm tra viền và ánh đèn. Phần mèo trong bản giao có thể cao 512–1024 px; nhóm tự tạo bản chạy 256/384/512 px và đo ngân sách. Nếu có bộ runtime Cubism, xin model3/moc3, textures, motion3, physics3 và phiên bản xuất để đánh giá riêng. Nhóm chưa chấp thuận giấy phép SDK hay tải lên dịch vụ nào. Skill mong muốn dài 1 giây, cast ở 250 ms và hit ở 550 ms, giữ chân, có chuẩn bị và thu động tác. Mọi yêu cầu gửi bạn, chấp thuận điều khoản và upload do chủ dự án thực hiện.
+
 ## 4. Giới hạn của bằng chứng hiện tại
 
 Receipt ở I-C đến từ hành trình practice qua UI thường và ghi rõ local/no transaction. Các phim dùng fixture review, không phải bằng chứng chain. Anvil là chain local. [PUBLIC-FUJI.json](PUBLIC-FUJI.json) xác minh **có bytecode** ở năm địa chỉ registry tại block 61.234.900; không xác minh code tương đương source và không thay thế giao dịch guest thật. Guest hiện là EOA ký SIWE và nhận test gas từ sponsor; không có bằng chứng cho ERC-4337/paymaster. RelicNFT là ERC-1155. Chỉ dùng các mô tả này trong submission cho đến khi có bằng chứng mới.
