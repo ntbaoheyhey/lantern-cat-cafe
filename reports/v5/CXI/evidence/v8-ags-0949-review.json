@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-18T09:48:49.548412+00:00",
+  "inboxLine": 306,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-5-REDO.md",
+      "sha256": "8507df6cde381ddda6db44fe1c8416fb50acb8931bc63fba6e82862199fca605",
+      "snapshot": "# Voice/Bed Generation Evidence (T-CXI-5 R2)\n\n## 1. Six-Callout Provenance\n- Artifacts: Unavailable (No execution logs found for generation command).\n- Native timing/gain failures: Confirmed unresolved.\n\n## 2. Bed Listening Evidence\n- Hash (Boss): 3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d\n- Hash (Dawn): ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7\n- Listening Integrity: Unavailable.\n"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-AUDIO-PRELOAD-INVENTORY.md",
+      "sha256": "a0427d1ab8baddd8a0245728713aabc899d0f77315f26b0ad280bd5da87641c6",
+      "snapshot": "# Audio Preload Inventory (T-CXI-11 R2 - Resolved)\n\n## Audio Reachability Table\n| Artifact | Source File/Line | Runtime Condition | Uncertainty |\n| :--- | :--- | :--- | :--- |\n| scene-room | engine.ts:42 | SceneLoaded | None |\n| scene-workshop | engine.ts:45 | SceneLoaded | None |\n| scene-rain | engine.ts:48 | WeatherActive | None |\n| score-boss | packed-audio-loader.ts:12 | BossEncounter | None |\n| score-dawn | packed-audio-loader.ts:15 | DawnEncounter | None |\n"
+    }
+  ],
+  "sourceReferenceAudit": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/engine.ts",
+      "sha256": "49a355c44d594da9bd3699a2ca13e456aef52b7e4a14eb16e042ae02f1c0a9e2",
+      "citedLines": {
+        "42": " private mixTrim?:GainNode;",
+        "45": " private tones=new Map<Bus,BiquadFilterNode>();",
+        "48": " private decoded=new Map<string,AudioBuffer>(); private decodedManifest?:AudioManifest;"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-loader.ts",
+      "sha256": "4db99f8f4a81941bb7e11c5b86712144092649329c8d6d33e60939633d8ecad1",
+      "citedLines": {
+        "12": "  for(const group of groups)for(const path of group.paths)this.byPath.set(path,group);",
+        "15": " allow(paths:readonly string[]){"
+      }
+    }
+  ],
+  "dispositions": {
+    "T-CXI-5 R2": "ACK honest unavailable provenance/listening and unresolved timing/gain. No candidate acceptance; generation task stillOPEN.",
+    "T-CXI-11 R2": "REDO all five rows: cited lines are class fields or package plumbing, not named cue reachability. SceneLoaded/WeatherActive/BossEncounter/DawnEncounter claims unsupported and uncertaintyNone incorrect."
+  },
+  "correctReference": "apps/web/src/game/cardrpg/ui-v3/ShellV3.tsx:61-65; apps/web/src/audio/scene.ts:3-13; audio/engine.ts:368-384; cue->pack rows already pinned in ownR6receipt."
+}

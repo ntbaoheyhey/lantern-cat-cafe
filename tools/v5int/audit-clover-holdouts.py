@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Reproduce sparse controls and score frozen masks/maps without image viewing."""
 import ast
+import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -12,7 +13,11 @@ cv2.setNumThreads(1)
 ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / 'work/v5/CXI/batch-m'
 CXV = Path('/Users/bao/taskbar-hero-cardrpg-a6')
-OUT = BASE / 'clover-holdout-audit-r1'
+parser = argparse.ArgumentParser()
+parser.add_argument('--output-name', default='clover-holdout-audit-r1')
+args = parser.parse_args()
+assert Path(args.output_name).name == args.output_name
+OUT = BASE / args.output_name
 OUT.mkdir(exist_ok=False)
 verified = []
 
@@ -114,19 +119,47 @@ for name, mapping in [('identity', grid), ('protectedMLS', saved_map), ('unmaske
 
 endpoint = read(BASE / 'clover-endpoint-labels-r1/report.json')
 agreement = []
+frozen_masks = {}
 for row in endpoint['rows']:
     frame = row['endpointFrame']
     trials = np.load(pin(row['output']['path'], row['output']['sha256']))['trials']
+    frozen_masks[frame] = trials[1]
     tail = labels[frame] == 1
     cloth = labels[frame] == 2
     agreement.append(dict(frame=frame, sparseTailPixels=int(tail.sum()), sparseClothPixels=int(cloth.sum()),
                           trials=[dict(selectedPixels=int(m.sum()), annotatedTailSelected=int((m & tail).sum()),
                                        annotatedClothSelected=int((m & cloth).sum()), annotatedTailMissed=int((~m & tail).sum())) for m in trials]))
 
+# Localize full-domain failures without promoting unknown pixels to tail.
+segmented_source = np.where(raw[299, :, :, 3] <= 4, 3, np.where(frozen_masks[299], 1, 2)).astype(np.uint8)
+full_domain = frozen_masks[0]
+full_weights = taps(rigid_map, segmented_source, full_domain)
+other_map = np.zeros((h, w), float)
+other_map[full_domain] = full_weights[:, 2]
+core = cv2.erode(full_domain.astype(np.uint8), np.ones((7, 7), np.uint8)).astype(bool)
+bad_core = core & (other_map > 1e-8)
+assert int(bad_core.sum()) == rigid['support']['eroded3pxCore']['pixelsTouchingOtherVisible']
+count, components, stats, centers = cv2.connectedComponentsWithStats(bad_core.astype(np.uint8), 8)
+boundary_rows = []
+distance = cv2.distanceTransform((~frozen_masks[299]).astype(np.uint8), cv2.DIST_L2, cv2.DIST_MASK_PRECISE)
+for component in range(1, count):
+    selected = components == component
+    sparse_weights = taps(rigid_map, labels[299], selected)
+    coords = rigid_map[selected]
+    rounded = np.rint(coords).astype(int)
+    assert ((rounded >= 0) & (rounded < [w, h])).all()
+    nearest_distance = distance[rounded[:, 1], rounded[:, 0]]
+    boundary_rows.append(dict(pixels=int(selected.sum()), bbox=stats[component, :4].tolist(),
+                              sourceCoordinateBounds=[coords.min(axis=0).tolist(), coords.max(axis=0).tolist()],
+                              targetInsideSparseTail=int((selected & (labels[0] == 1)).sum()),
+                              sparseSourceMean=dict(zip(names, sparse_weights.mean(axis=0).tolist())),
+                              sourceNearestDistanceOutsideSegmentedTail=dict(max=float(nearest_distance.max()), mean=float(nearest_distance.mean()))))
+
 report = dict(utc=datetime.now(timezone.utc).isoformat(), source=ann['source'], verified=verified,
               harnessSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), regions=region_checks,
               originalRowsReproduced=True, controls=['identity exact', 'outside exact', 'bilinear weight sum', 'published rows exact within 1e-12'],
               segmentationAgreement=agreement, sparseTargetSampling=rows, imagesViewed=0, runtimeChanged=False,
+              unresolvedRigidBoundary=dict(corePixels=int(core.sum()), unsupportedCorePixels=int(bad_core.sum()), components=boundary_rows),
               acceptedRepair=False, limits=['Frozen sparse analyst controls, not full boundaries, material correspondence or hidden anatomy.',
                                            'Agreement against these controls cannot prove all tail pixels or boundary alpha.',
                                            'Unknown source taps remain unknown, including those selected by the diagnostic segmentation.'])
