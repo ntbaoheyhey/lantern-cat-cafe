@@ -1,10 +1,10 @@
 # CXV V8 handoff
-ACTIVE Native7 scopedREADY packet audited; M/C sockets and AGV review next; assistant: AGV.
+ACTIVE M/C remaining socket tracking offline; native7 READY sent; AGV drafts rejected; assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: Review AGV1092B L1 increment; document missing independent provenance/uncertainty and send REDO; T-M2 unchanged/rejected.
-NEXT 2: Read LEARN socket followup and existing source measurements; finish M/C head/offHand tracks without reopening prior images.
+NEXT 1: Compare existing head-channel tracks with failed pivot fits; study local template registration for remaining head/offHand channels.
+NEXT 2: Run numeric socket experiment; retain min6survivor/.7inlier/seam2px gates; no prior-image reopening.
 NEXT 3: Coordinate M/C casts with CXI media edge/seam work; integrated native7 judge/performance remains CXI gate; legacy follows BatchM.
-Last confirmed push95f5f7461; runtimeequivalent a3173c08e; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push6ee844355; runtimeequivalent a3173c08e; newestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min preserved/viewed05:52Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; never mutate absent ownerSTOP.
 Running Vite21525/6310 only; native7 PID82317 exitedPASS7; browserRELEASED toCXI; log work/v5/CXV/jobs/m-native-seven-r1.log.
