@@ -36,6 +36,12 @@ function fixture(reduced,skill){
 async function observe(page,fixedTime,metadata){
  await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
  await page.waitForFunction(()=>{const media=[...window.__depthScene.actors.values()].find(e=>e.asset==='clover').actor.designerMedia.media.state;return media.ready&&!media.seeking&&Math.abs(((media.currentTime-media.desired+15)%10)-5)<=1/60;},null,{timeout:10000});
+ await page.waitForFunction(metadata=>{
+  const media=[...window.__depthScene.actors.values()].find(e=>e.asset==='clover').actor.designerMedia.media.state,decoded=window.__cxvMediaAudit?.decoded.at(-1);
+  if(!decoded)return false;
+  const expected=metadata.reduced?0:metadata.phase==='idle'?metadata.sourceFrame/30:media.desired;
+  return Math.abs(decoded.mediaTime-expected)<=(metadata.reduced||metadata.phase==='idle'?1e-5:1/30+1e-6);
+ },metadata,{timeout:10000});
  const row=await page.evaluate(({fixedTime,metadata})=>{
   const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);
   const [id,entry]=[...s.actors].find(([,e])=>e.asset==='clover'),a=entry.actor,media=a.designerMedia.media;
@@ -54,7 +60,8 @@ async function observe(page,fixedTime,metadata){
   const label=rect?{x:rect.x-canvas.x,y:rect.y-canvas.y,width:rect.width,height:rect.height,hidden:plate.hidden,text:plate.textContent}:null;
   const anchor=s.anchors.find(x=>x.id===id),body=anchor?.body;
   const overlap=(p,q)=>Math.max(0,Math.min(p.x+p.width,q.x+q.width)-Math.max(p.x,q.x))*Math.max(0,Math.min(p.y+p.height,q.y+q.height)-Math.max(p.y,q.y));
-  return{...metadata,fixedTime,url:location.href,source:a.source,media:{...media.state},decoded:window.__cxvMediaAudit?.decoded.at(-1),
+  const decoded=window.__cxvMediaAudit?.decoded.at(-1);
+  return{...metadata,fixedTime,url:location.href,source:a.source,media:{...media.state},decoded,decodedClockDelta:decoded?Math.abs(decoded.mediaTime-media.state.desired):null,
    manifest:metadata.includeManifest?media.manifest:undefined,spout,grip,hp,head,localSpout:localSpout.toArray(),localHp:localHp.toArray(),
    renderedSource:actual?{...actual}:null,emissionError:delta(actual,spout),gripDistance:delta(spout,grip),glint:glint?{visible:glint.visible,position:glint.position.toArray(),alpha:glint.material.uniforms.uAlpha.value}:null,
    glintPlacementError:glint?delta({x:glint.position.x,y:glint.position.y},spout):null,paintLightPresent:!!entry.craftLight,lightSource:light?.toArray()??null,
@@ -103,6 +110,6 @@ try{
  assert(glints.some(x=>!x.reduced&&x.skill===1)&&glints.some(x=>!x.reduced&&x.skill===4),'Both legal cards must actually render their source glint');
  report.emissionSamples=glints.length;report.maxEmissionError=Math.max(...glints.map(x=>x.emissionError));
  assert.equal(runtimeEvidence().indexSha256,build.indexSha256);report.pass=true;
- report.limits='Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, head/offHand, source loop, budget, native physical visibility and general laptop FPS remain open.';
+ report.limits='Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Native callback must match each requested idle source frame; action callback may precede continuous socket time by at most one30Hz frame. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, head/offHand, source loop, budget, native physical visibility and general laptop FPS remain open.';
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,rows:report.rows.length,captures:report.captures.length,maxEmissionError:report.maxEmissionError,failure:report.failure}));}

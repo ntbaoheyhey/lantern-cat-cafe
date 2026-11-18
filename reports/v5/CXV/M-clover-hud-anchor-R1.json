@@ -1,0 +1,76 @@
+{
+  "utc": "2026-11-18T10:47:22.726101+00:00",
+  "status": "SOURCE CANDIDATE; native current build acceptance required",
+  "trigger": "Prepared Clover face-side HUD obscures spout despite a clear authored HP anchor.",
+  "change": "After exact original placement, relocate only prepared Clover using authored HP/actual descendant extents; protect conservative body and retain every other actor placement. Focus current/pending reserves use the same target.",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "1f2ea53da34b001c2b5aeb927d49b6d7efea13cf1121cbbeb70d449261226ef0"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts",
+      "sha256": "2ac0c93d48a3463841c0328618798df456a99957539f80267e60903611648db3"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+      "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "sha256": "69bb7f91032710b5ca26bdea1149102a03c4aec9855d2f847e688da0d4bbed55"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene-clover-hud.test.ts",
+      "sha256": "5a8ab6aee8f8b22ade5f8e74f0a478fe39bdf4dfdcb2bff1d147523bb419c991"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-anchor.test.ts",
+      "sha256": "5871217a18e0c4c2301560687f38b924ce0cf46e219ff2a2591bce4644904df7"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus-anchor.test.ts",
+      "sha256": "a6ac40905a6218bced08eb5192aaa88ce3b054a35ddb3c02b3cd7cb648239db8"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/clover-hud-fixtures.json",
+      "sha256": "d7028762aa679f3aaefc7f5a97846415987cbaefaf47e4a988adbde2cb1bd9d1"
+    }
+  ],
+  "beforeTests": "4 failed /3 passed",
+  "afterTests": "29 unique tests in7 files pass; portable focus mock rerun1pass",
+  "typecheck": {
+    "exit": 0,
+    "log": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-hud-repair-r1/typecheck-final.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "geometry": {
+    "utc": "2026-11-18T10:47:21.798Z",
+    "prior": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-hud-repair-r1/world-label-layout-before.ts",
+      "sha256": "ba7bd2a18fbb0555360d07b04ed09a72c6611a6955ca535cb2c5577061e35dfb"
+    },
+    "candidate": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+      "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+    },
+    "originalFixtures": 4,
+    "nativeGeometryCases": 50,
+    "fixedCompanionCases": 150,
+    "minBodyGap": 19.29702179592823,
+    "maxSpoutOverlap": 0,
+    "protectedPaths": 3833,
+    "pass": true,
+    "arrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6",
+    "limits": "Offline placement/metadata proof from frozen measured geometry; full HUD obstacles and actual DOM/source-decoder timing need fresh current-production capture. No source-art, loop, budget or general performance claim."
+  },
+  "cxiPort": {
+    "reason": "CXV identified-focus.ts includes unadopted legacy read-batching; do not copy fullfile or import old optimization. Apply only supplied patch against served-source baseline. Other3 appfiles match served before new hunks.",
+    "patch": "reports/v5/CXV/M-clover-hud-cxi-focus.patch",
+    "patchSha256": "543c7df6ab7f3bd3ecb26a5c4e15998c9509c9d47d9a11f4c5ff52af62e68c66",
+    "baseSha256": "0a6de9b7c5c4cb809bb68e88c18d93e31204e68ceeda0f8317554947496380ae",
+    "expectedSha256": "904ebf382f779951a467e6baf15f047360617e90e70c77cc3cf8da1a143df04c"
+  },
+  "nativeProbe": "Fresh requestVideoFrameCallback alignment gate added; exact requested idle frames,action callbacks within1/30s. No new native run yet.",
+  "limits": "Current production still HP FAIL. No art,loop,face/palm,budget or general laptop FPS claim."
+}

@@ -44,6 +44,7 @@ import {PaintDeath} from '../vfx-craft/paint-death';
 import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
 
 interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
+interface SceneAnchor extends Anchor {labelTarget?:{x:number;y:number;avoid:Rect}}
 /** A6-compatible renderer. Rules and their impact snapshot remain owned by DepthModel. */
 export class SpineScene {
  private audio=new BattleAudio();
@@ -57,7 +58,7 @@ export class SpineScene {
  private cinematicRects:Rect[]=[];
  readonly eventAudit:{actorId:string;name:string;fallback:boolean;skillId:string;elapsed:number}[]=[];
  readonly motionAudit:{id:string;asset:string;homeX:number;homeY:number;x:number;y:number;dx:number;dy:number;phase:string;archetype:string;hitOffset:number;flash:number;crowd:string}[]=[];
- readonly anchors:Anchor[]=[];
+ readonly anchors:SceneAnchor[]=[];
  readonly cinematic={ultimateVisible:false,actorId:'',box:null as Rect|null,phaseVisible:false,phaseText:'',phaseBox:null as Rect|null,focus:0};
  private stage=new PaintedStage(()=>this.invalidate());private numbers:PuppetNumbers;readonly effects:PaintedVfx;private resize:ResizeObserver;
  private disposed=false;private pending=new Map<string,symbol>();private failed=new Set<string>();private lanes=new Map<string,{side:string;lane:number}>();private raf=0;private last=0;private time=0;private dirty=true;
@@ -588,7 +589,8 @@ export class SpineScene {
   this.anchors.length=0;const labels:LabelInput[]=[],text:LabelInput[]=[],bodies:Rect[]=[];
   for(const unit of view.actors){const entry=this.actors.get(unit.id);if(!entry)continue;
    const actor=entry.actor,hp=this.screen(actor.socket('hpAnchor',this.scratch)),face=this.screen(actor.socket('head',this.scratch)),foot=this.screen(actor.socket('feet',this.scratch)),body=this.bounds(entry);
-   const anchor:Anchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,body,face:this.faceBounds(entry),visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
+   const anchor:SceneAnchor={id:unit.id,x:face.x,y:hp.y,labelX:hp.x,labelY:hp.y,footY:foot.y,body,face:this.faceBounds(entry),visible:unit.hp>0&&(unit.side==='enemy'||!!view.formationC2)};this.anchors.push(anchor);
+   if(view.formationC2&&entry.asset==='clover'&&hasDesignerIdleBody(entry.asset,actor))anchor.labelTarget={x:hp.x,y:hp.y,avoid:body};
    if(unit.hp>0)bodies.push(body);
    if(anchor.visible)labels.push({id:unit.id,x:hp.x,y:hp.y,height:view.formationC2?40:52,head:body});
    const rows=view.cardNumberRows?.[unit.id]??0,burst=view.cardPresentation?.bursts.includes(unit.id);if(rows||burst)text.push({id:unit.id,x:hp.x,y:hp.y-52,height:Math.max(34,rows*34)+(burst?34:0),head:body});

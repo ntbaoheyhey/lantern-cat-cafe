@@ -1,5 +1,5 @@
 export interface LabelRect {x:number;y:number;width:number;height:number}
-export interface WorldLabel {id:string;side:'party'|'enemy';rect:LabelRect}
+export interface WorldLabel {id:string;side:'party'|'enemy';rect:LabelRect;anchorPlacement?:{rect:LabelRect;avoid:LabelRect}}
 export interface LabelFace extends LabelRect {id:string}
 export interface PlacedWorldLabel {id:string;rect:LabelRect;feasible:boolean}
 
@@ -26,6 +26,13 @@ export function layoutWorldLabels(labels:readonly WorldLabel[],width:number,heig
   }
   // Keep information present even when an unusually crowded viewport has no free rectangle.
   const box=chosen??preferred;placed.push(box);result.push({id:label.id,rect:box,feasible:!!chosen});
+ }
+ // Relocate explicitly authored labels after ordinary lanes are fixed. The
+ // other actors retain their exact original placement, even in a crowded row.
+ for(const label of [...labels].filter(l=>l.anchorPlacement).sort((a,b)=>a.id.localeCompare(b.id))){
+  const target=label.anchorPlacement!,fixed=result.filter(r=>r.id!==label.id).map(r=>r.rect);
+  const [replacement]=layoutWorldLabels([{id:label.id,side:label.side,rect:target.rect}],width,height,[...obstacles,...faces,...fixed,target.avoid],[]);
+  result[result.findIndex(r=>r.id===label.id)]=replacement!;
  }
  return result;
 }

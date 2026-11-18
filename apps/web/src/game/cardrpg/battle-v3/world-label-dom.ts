@@ -1,6 +1,6 @@
 import {layoutWorldLabels,type LabelRect,type WorldLabel} from './world-label-layout';
 
-interface WorldAnchor {id:string;visible:boolean;labelX:number;labelY:number;face?:LabelRect}
+interface WorldAnchor {id:string;visible:boolean;labelX:number;labelY:number;face?:LabelRect;labelTarget?:{x:number;y:number;avoid:LabelRect}}
 
 /** Cache glyph extents; moving an actor should not measure every descendant each frame. */
 export function createWorldLabelLayout(nodes:Map<string,HTMLDivElement>){
@@ -42,7 +42,9 @@ export function createWorldLabelLayout(nodes:Map<string,HTMLDivElement>){
     dirty=false;
    }
    const labels:WorldLabel[]=active.flatMap(({anchor,node,x,y})=>{
-    const box=extents.get(node);return box?[{id:anchor.id,side:node.dataset.side==='enemy'?'enemy' as const:'party' as const,rect:{...box,x:x+box.x,y:y+box.y}}]:[];
+    const box=extents.get(node),target=anchor.labelTarget;
+    return box?[{id:anchor.id,side:node.dataset.side==='enemy'?'enemy' as const:'party' as const,rect:{...box,x:x+box.x,y:y+box.y},
+     ...(target?{anchorPlacement:{rect:{...box,x:canvas.left+target.x+box.x,y:canvas.top+target.y+box.y},avoid:{...target.avoid,x:canvas.left+target.avoid.x,y:canvas.top+target.avoid.y}}}:{})}]:[];
    });
    const faces=anchors.flatMap(a=>a.visible&&a.face?[{...a.face,id:a.id,x:a.face.x+canvas.left,y:a.face.y+canvas.top}]:[]);
    for(const placed of layoutWorldLabels(labels,viewportWidth,viewportHeight,obstacles,faces)){
