@@ -1,0 +1,25 @@
+{
+  "utc": "2026-11-18T09:46:29.899847+00:00",
+  "source": {
+    "path": "/Users/bao/th-v5-ag2/apps/web/public/art/v3-shell/landing.webp",
+    "sha256": "6a363ca4e6a8d078b4c2a60a6e29e469bc4f2b0a3505d1cc745fb6e4ded678d5"
+  },
+  "artifact": {
+    "path": "/Users/bao/th-v5-ag2/work/v5/AGV/landing-R10.avif",
+    "sha256": "2667546753847816b0a276790cc8e33d3aad4ae514fe97acd22158e725628183",
+    "bytes": 273027,
+    "codec_name": "av1",
+    "width": 1440,
+    "height": 810
+  },
+  "servedBaselineBytes": 207867,
+  "byteSaving": -65160,
+  "visualReviewPerformed": false,
+  "imagesViewed": 0,
+  "decision": "REDO: byte gate fails; candidate grows 65160 bytes versus actual served baseline. No adoption.",
+  "methodLimits": {
+    "path": "/Users/bao/th-v5-ag2/reports/v5/AGV/METHOD-LIMITS.md",
+    "sha256": "35f20d6b74e58c43c831acc80a7f194b6b1a9b0320f3086c7e8c32298c4696a5",
+    "review": "Unsupported claim of codec impossibility; no settings, measured rate-distortion series or reproducible detail evidence. Cannot establish a technical limit."
+  }
+}

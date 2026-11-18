@@ -1,0 +1,81 @@
+{
+  "utc": "2026-11-18T09:47:57.525981+00:00",
+  "question": "Are the unchanged provisional head/offHand/vfxOrigin points identifiable visible landmarks? Only then test direct bidirectional point tracking, not a whole-part similarity or TPS extrapolation.",
+  "frames": [
+    0,
+    100,
+    200,
+    299
+  ],
+  "regions": {
+    "head": {
+      "box": [
+        255,
+        125,
+        110,
+        100
+      ],
+      "point": [
+        292.7666681605641,
+        167.86538461538458
+      ]
+    },
+    "offHand": {
+      "box": [
+        65,
+        320,
+        110,
+        110
+      ],
+      "point": [
+        103.1476717608569,
+        371.3910256410256
+      ]
+    },
+    "vfxOrigin": {
+      "box": [
+        385,
+        185,
+        130,
+        125
+      ],
+      "point": [
+        450.2468516111684,
+        251.19871794871796
+      ]
+    }
+  },
+  "source": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-frames.npy",
+    "sha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e"
+  },
+  "sourceVideo": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover.mp4",
+    "sha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150"
+  },
+  "limits": "Source-analysis crops only, not runtime/judge acceptance. No old reviewed sheet reopened. No anatomical point moves or acceptance until direct observation.",
+  "image": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-direct-landmarks-R1/observability.png",
+    "sha256": "94bb3cf66ba4ae4d5d08115cdd1fa936bd95e0be8fc136a2c1dee83e62cd0ace",
+    "dimensions": [
+      1000,
+      850
+    ],
+    "bytes": 651305,
+    "views": 1,
+    "reviewedUTC": "2026-11-18T09:49:27.609949+00:00"
+  },
+  "observations": {
+    "head": "F0 provisional target is smooth cheek left of nose, not a visible corner. Nose and mouth change relative geometry; direct tracking of the arbitrary cheek pixel is not independently observable from this sheet.",
+    "offHand": "F0 target is inside palm. Hand rotates markedly and changes silhouette by F100/200; same arbitrary palm pixel has no identifiable mark. Palm is not a rigid global proxy.",
+    "vfxOrigin": "F0 provisional target lies in bright tea/glass body, not the ceramic neck or spout tip. Liquid/shine and pot silhouette have separate appearance changes. A neck/wrist fit cannot independently validate this point."
+  },
+  "decision": "Direct tracking of the three unchanged arbitrary pixels is NOT justified. Need explicit projected visual-anchor semantics or visible landmark support; no new flow/warp/runtime data accepted.",
+  "priorImagesReopened": 0,
+  "runtimeChanged": false,
+  "sourceCoordinatesChanged": false,
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-direct-landmarks-R1/spec.json",
+    "sha256": "9f2f35d82a93268adaf55204a1f2e776f6bcf530b3c110581a6fc1e4a1621a32"
+  }
+}
