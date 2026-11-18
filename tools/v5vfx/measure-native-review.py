@@ -4,6 +4,11 @@ import sys,json,hashlib,datetime
 sys.path.insert(0,str(Path('work/v5/CXV/python').resolve()))
 import cv2
 cat=sys.argv[1];root=Path(f'work/v5/CXV/films/M-V2-{cat}-native-R1')
+review_path=root/'review-measure.json'
+if review_path.exists():
+ previous=json.loads(review_path.read_text())
+ if any(im.get('reviewed') for im in previous.get('images',[])):
+  raise SystemExit(f'{cat}: refusing to reset completed image reviews; use the recorded hashes without reopening.')
 report=json.loads((root/'report.json').read_text());comparison=json.loads((root/'comparison.json').read_text())
 assert report['pass'] and comparison['cat']==cat
 mode=next(m for m in report['modes'] if m['mode']=='candidate');measure=json.loads(Path(mode['measure']).read_text())
@@ -20,5 +25,5 @@ for p in files:
  assert max(im.shape[:2])<=1024
  images.append({'path':str(p.resolve()),'dimensions':[im.shape[1],im.shape[0]],'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'reviewed':False})
 result={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cat':cat,'captureReport':str((root/'report.json').resolve()),'captureReportSha256':hashlib.sha256((root/'report.json').read_bytes()).hexdigest(),'comparison':comparison,'rangesPercentH':ranges,'images':images,'scope':'Fresh candidate body/style/blink/cast review at desktop1280x720; no integrated judge or performance claim.'}
-(root/'review-measure.json').write_text(json.dumps(result,indent=2)+'\n')
+review_path.write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps({'cat':cat,'capturePass':report['pass'],'headRangePercentH':ranges['head'],'tailRangePercentH':ranges['tail_3'],'castHit':report['cast']['exactHit'],'handoffs':report['cast']['handoffs'],'images':images}))
