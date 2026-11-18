@@ -9,3 +9,5 @@ Clover: kiểm tra độc lập hai đầu clip xác nhận đuôi nằm sau c�
 Ngân sách chưa đạt: Mochi R6 tải 8.509.074 / 8.975.988 / 8.584.766 byte ở ba trận thử, đều vượt 8 MB, chưa có Clover. Hai mèo chưa được đăng ký phát hành; tag xanh vẫn v5-m1.13.
 AGV: R10 bị loại trước khi xem vì tăng 65.160 byte so với bản đang dùng; giới hạn codec chưa có bằng chứng. Hash khung trong bảng timing lại là hash của mảng rỗng, chưa được nhận. Landing R9 có 149.496 byte, giảm 58.371 byte so với bản đang dùng; 2 ảnh mới cho thấy vẫn mất hạt mịn ở mặt/lông/vải nên chưa đạt, chưa nhận. Cần báo cáo giới hạn cách làm trước lần nén tiếp. R6 bị loại ở bước số liệu vì tăng 35.020 byte. Bảng timing độc lập còn số liệu giữ chỗ, chưa được nhận; vẫn giữ hai nhiệm vụ đang làm.
 3.833 đường dẫn Soot và capture-arrival.mjs giữ nguyên. Bản tự nhắc cxv-wake được giữ nguyên. Công việc V7 tiếp tục sau Batch M; các bằng chứng cũ còn trong Git và báo cáo riêng.
+
+2026-11-18T10:17:50.683531+00:00: Điểm neo mặt/bàn tay Clover thử đường cong tuần hoàn từ16khung riêng: không đạt kiểm tra độc lập (mặt8/9,bàn tay4/9). Giữ nguyên ngưỡng và bằng chứng; chưa đưa vào game. Điểm vòi ấm đã gửi CXI để kiểm tra bộ nạp.

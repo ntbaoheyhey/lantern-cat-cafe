@@ -1,0 +1,968 @@
+{
+  "utc": "2026-11-18T10:17:19.577963+00:00",
+  "model": {
+    "kind": "Periodic least-squares Fourier curve from manual training centers only",
+    "periodFrames": 300,
+    "maxHarmonic": 6,
+    "parametersPerAxis": 13,
+    "trainingSamples": 16,
+    "noUseOfHoldoutValuesDuringFit": true,
+    "gate": "Every fitted training and heldout coordinate must lie within its predeclared per-axis observation bounds; any failure remains rejected. Scene/cast and alpha/occlusion acceptance remain separate."
+  },
+  "holdout": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/holdout-annotations.json",
+    "sha256": "d0027a6605308aed890775b2487a2ea0046a1dde6ed262f7787671bae11be0e9"
+  },
+  "channels": {
+    "face": {
+      "decision": "REJECTED unchanged observation-bound gate",
+      "training": {
+        "samples": 16,
+        "passed": 16,
+        "maxAbsErrorSourcePxPerAxis": [
+          4.882151414745408,
+          1.1442827784882752
+        ],
+        "rows": [
+          {
+            "frame": 9,
+            "expected": [
+              270.0,
+              153.0
+            ],
+            "fitted": [
+              272.88320470799977,
+              151.90230586744963
+            ],
+            "signedError": [
+              2.8832047079997665,
+              -1.097694132550373
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 28,
+            "expected": [
+              286.0,
+              157.0
+            ],
+            "fitted": [
+              283.1167197246425,
+              158.14428277848828
+            ],
+            "signedError": [
+              -2.8832802753574924,
+              1.1442827784882752
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 46,
+            "expected": [
+              280.0,
+              166.0
+            ],
+            "fitted": [
+              282.9079862172927,
+              164.91602096173665
+            ],
+            "signedError": [
+              2.9079862172927164,
+              -1.083979038263351
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 65,
+            "expected": [
+              276.0,
+              164.0
+            ],
+            "fitted": [
+              273.0468875347023,
+              164.92705909880533
+            ],
+            "signedError": [
+              -2.953112465297693,
+              0.92705909880533
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 84,
+            "expected": [
+              264.0,
+              157.0
+            ],
+            "fitted": [
+              267.2398974950765,
+              156.21913257333134
+            ],
+            "signedError": [
+              3.239897495076491,
+              -0.7808674266686637
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 103,
+            "expected": [
+              270.0,
+              143.0
+            ],
+            "fitted": [
+              266.240823689504,
+              143.65007597460766
+            ],
+            "signedError": [
+              -3.7591763104960023,
+              0.6500759746076596
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 121,
+            "expected": [
+              269.0,
+              145.0
+            ],
+            "fitted": [
+              273.1357684627751,
+              144.49418619107868
+            ],
+            "signedError": [
+              4.135768462775104,
+              -0.5058138089213173
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 140,
+            "expected": [
+              284.0,
+              154.0
+            ],
+            "fitted": [
+              279.6945000336219,
+              154.37266423034512
+            ],
+            "signedError": [
+              -4.305499966378079,
+              0.37266423034512286
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 159,
+            "expected": [
+              273.0,
+              151.0
+            ],
+            "fitted": [
+              277.55697312004395,
+              150.6873361033054
+            ],
+            "signedError": [
+              4.556973120043949,
+              -0.3126638966946018
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 178,
+            "expected": [
+              281.0,
+              146.0
+            ],
+            "fitted": [
+              276.1178485852546,
+              146.32773028192702
+            ],
+            "signedError": [
+              -4.882151414745408,
+              0.3277302819270176
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 196,
+            "expected": [
+              269.0,
+              153.0
+            ],
+            "fitted": [
+              273.8574454728103,
+              152.61196597784829
+            ],
+            "signedError": [
+              4.857445472810298,
+              -0.38803402215171445
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 215,
+            "expected": [
+              276.0,
+              156.0
+            ],
+            "fitted": [
+              271.51293463725443,
+              156.4832989304399
+            ],
+            "signedError": [
+              -4.487065362745568,
+              0.4832989304399007
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 234,
+            "expected": [
+              267.0,
+              158.0
+            ],
+            "fitted": [
+              271.2002803329673,
+              157.37050939742355
+            ],
+            "signedError": [
+              4.2002803329672815,
+              -0.6294906025764533
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 253,
+            "expected": [
+              272.0,
+              158.0
+            ],
+            "fitted": [
+              267.99374462039333,
+              158.82193708580763
+            ],
+            "signedError": [
+              -4.006255379606671,
+              0.8219370858076331
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 271,
+            "expected": [
+              264.0,
+              158.0
+            ],
+            "fitted": [
+              267.62966322732785,
+              157.0338007485061
+            ],
+            "signedError": [
+              3.6296632273278533,
+              -0.9661992514938902
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 290,
+            "expected": [
+              272.0,
+              152.0
+            ],
+            "fitted": [
+              268.86532213833453,
+              153.03769379890022
+            ],
+            "signedError": [
+              -3.134677861665466,
+              1.0376937989002215
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          }
+        ]
+      },
+      "holdout": {
+        "samples": 9,
+        "passed": 8,
+        "maxAbsErrorSourcePxPerAxis": [
+          6.42926250642364,
+          13.078952271901386
+        ],
+        "rows": [
+          {
+            "frame": 0,
+            "expected": [
+              267.0,
+              151.0
+            ],
+            "fitted": [
+              269.94095215970253,
+              151.6537145464311
+            ],
+            "signedError": [
+              2.940952159702533,
+              0.6537145464311038
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 37,
+            "expected": [
+              280.0,
+              149.0
+            ],
+            "fitted": [
+              284.9533046741526,
+              162.0789522719014
+            ],
+            "signedError": [
+              4.953304674152605,
+              13.078952271901386
+            ],
+            "boundPerAxis": 8.0,
+            "pass": false
+          },
+          {
+            "frame": 75,
+            "expected": [
+              273.0,
+              155.0
+            ],
+            "fitted": [
+              269.34664868177896,
+              161.4547960715493
+            ],
+            "signedError": [
+              -3.6533513182210413,
+              6.4547960715493105
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 112,
+            "expected": [
+              270.0,
+              135.0
+            ],
+            "fitted": [
+              268.7967960990653,
+              141.83798014985297
+            ],
+            "signedError": [
+              -1.2032039009346818,
+              6.837980149852967
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 150,
+            "expected": [
+              283.0,
+              149.0
+            ],
+            "fitted": [
+              279.0741706744079,
+              154.22791445215574
+            ],
+            "signedError": [
+              -3.925829325592076,
+              5.227914452155744
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 187,
+            "expected": [
+              281.0,
+              149.0
+            ],
+            "fitted": [
+              275.3600129569579,
+              148.91079728076474
+            ],
+            "signedError": [
+              -5.639987043042083,
+              -0.08920271923526002
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 225,
+            "expected": [
+              278.0,
+              164.0
+            ],
+            "fitted": [
+              271.57073749357636,
+              156.7844353531678
+            ],
+            "signedError": [
+              -6.42926250642364,
+              -7.215564646832206
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 262,
+            "expected": [
+              266.0,
+              157.0
+            ],
+            "fitted": [
+              267.2435989151929,
+              158.3699880461475
+            ],
+            "signedError": [
+              1.2435989151928766,
+              1.3699880461475118
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          },
+          {
+            "frame": 299,
+            "expected": [
+              270.0,
+              154.0
+            ],
+            "fitted": [
+              269.7515466984548,
+              151.72863678832422
+            ],
+            "signedError": [
+              -0.2484533015452257,
+              -2.2713632116757765
+            ],
+            "boundPerAxis": 8.0,
+            "pass": true
+          }
+        ]
+      },
+      "provenance": {
+        "annotations": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/face-training-annotations.json",
+        "sha256": "998c6e1091ab1cab867527cfb0a8e07f848a26f80f771d0fb02fb8a4c48d2682",
+        "rank": 13,
+        "condition": 1.4489756457399863,
+        "residualSumSquares": [
+          239.0967206838702,
+          9.647346076642398
+        ]
+      },
+      "seam299to0SourcePx": 0.2036854709614003,
+      "closure300to0SourcePx": 0.0,
+      "peakSpeedSourcePxPerFrame": 0.7740141772328367,
+      "peakAccelerationSourcePxPerFrame2": 0.06435163688714692,
+      "rangeSourceXY": [
+        [
+          265.80780395294465,
+          141.81239640046712
+        ],
+        [
+          284.9533046741526,
+          165.97648763445324
+        ]
+      ]
+    },
+    "palm": {
+      "decision": "REJECTED unchanged observation-bound gate",
+      "training": {
+        "samples": 16,
+        "passed": 16,
+        "maxAbsErrorSourcePxPerAxis": [
+          3.08503995239937,
+          1.24467960581552
+        ],
+        "rows": [
+          {
+            "frame": 9,
+            "expected": [
+              108.0,
+              365.0
+            ],
+            "fitted": [
+              110.59523057009478,
+              364.39721792772883
+            ],
+            "signedError": [
+              2.5952305700947846,
+              -0.6027820722711681
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 28,
+            "expected": [
+              106.0,
+              354.0
+            ],
+            "fitted": [
+              103.51849208217695,
+              354.6857651091581
+            ],
+            "signedError": [
+              -2.481507917823052,
+              0.685765109158126
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 46,
+            "expected": [
+              99.0,
+              346.0
+            ],
+            "fitted": [
+              101.26882971191685,
+              345.39986362021057
+            ],
+            "signedError": [
+              2.268829711916851,
+              -0.6001363797894328
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 65,
+            "expected": [
+              100.0,
+              343.0
+            ],
+            "fitted": [
+              98.00656216625005,
+              343.3604876296577
+            ],
+            "signedError": [
+              -1.993437833749951,
+              0.36048762965771175
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 84,
+            "expected": [
+              109.0,
+              364.0
+            ],
+            "fitted": [
+              110.87634917600197,
+              363.952201869145
+            ],
+            "signedError": [
+              1.8763491760019662,
+              -0.047798130855028376
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 103,
+            "expected": [
+              145.0,
+              391.0
+            ],
+            "fitted": [
+              143.07869437460417,
+              390.6720607273233
+            ],
+            "signedError": [
+              -1.9213056253958314,
+              -0.3279392726767014
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 121,
+            "expected": [
+              138.0,
+              385.0
+            ],
+            "fitted": [
+              139.9701417533365,
+              385.6798567431471
+            ],
+            "signedError": [
+              1.9701417533364918,
+              0.679856743147127
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 140,
+            "expected": [
+              109.0,
+              359.0
+            ],
+            "fitted": [
+              106.98546446427872,
+              358.052014963421
+            ],
+            "signedError": [
+              -2.0145355357212793,
+              -0.9479850365789844
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 159,
+            "expected": [
+              99.0,
+              349.0
+            ],
+            "fitted": [
+              101.20142502535799,
+              350.13828652479384
+            ],
+            "signedError": [
+              2.2014250253579917,
+              1.1382865247938412
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 178,
+            "expected": [
+              131.0,
+              377.0
+            ],
+            "fitted": [
+              128.47516234002788,
+              375.7553203941845
+            ],
+            "signedError": [
+              -2.524837659972121,
+              -1.24467960581552
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 196,
+            "expected": [
+              145.0,
+              396.0
+            ],
+            "fitted": [
+              147.73751586587858,
+              397.15905087644757
+            ],
+            "signedError": [
+              2.737515865878578,
+              1.1590508764475658
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 215,
+            "expected": [
+              132.0,
+              383.0
+            ],
+            "fitted": [
+              129.19678223829754,
+              382.10400791782075
+            ],
+            "signedError": [
+              -2.803217761702456,
+              -0.895992082179248
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 234,
+            "expected": [
+              99.0,
+              355.0
+            ],
+            "fitted": [
+              101.92030641945068,
+              355.5833025833772
+            ],
+            "signedError": [
+              2.9203064194506823,
+              0.5833025833771899
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 253,
+            "expected": [
+              103.0,
+              351.0
+            ],
+            "fitted": [
+              99.91496004760063,
+              350.7690247760193
+            ],
+            "signedError": [
+              -3.08503995239937,
+              -0.2309752239806926
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 271,
+            "expected": [
+              101.0,
+              358.0
+            ],
+            "fitted": [
+              104.03620382445888,
+              357.87905775351084
+            ],
+            "signedError": [
+              3.0362038244588803,
+              -0.12094224648916452
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 290,
+            "expected": [
+              112.0,
+              365.0
+            ],
+            "fitted": [
+              109.21787994026882,
+              365.41248058405745
+            ],
+            "signedError": [
+              -2.7821200597311844,
+              0.41248058405744814
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          }
+        ]
+      },
+      "holdout": {
+        "samples": 9,
+        "passed": 4,
+        "maxAbsErrorSourcePxPerAxis": [
+          5.43485216153546,
+          10.843088316973137
+        ],
+        "rows": [
+          {
+            "frame": 0,
+            "expected": [
+              111.0,
+              358.0
+            ],
+            "fitted": [
+              111.43095150698299,
+              366.3657962537495
+            ],
+            "signedError": [
+              0.4309515069829928,
+              8.365796253749522
+            ],
+            "boundPerAxis": 6.0,
+            "pass": false
+          },
+          {
+            "frame": 37,
+            "expected": [
+              100.0,
+              344.0
+            ],
+            "fitted": [
+              101.90247065790155,
+              349.7440308628149
+            ],
+            "signedError": [
+              1.9024706579015458,
+              5.7440308628148955
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 75,
+            "expected": [
+              104.0,
+              343.0
+            ],
+            "fitted": [
+              100.68552241643862,
+              351.1281876668257
+            ],
+            "signedError": [
+              -3.314477583561384,
+              8.128187666825681
+            ],
+            "boundPerAxis": 6.0,
+            "pass": false
+          },
+          {
+            "frame": 112,
+            "expected": [
+              144.0,
+              391.0
+            ],
+            "fitted": [
+              147.6529079552065,
+              392.68558366904773
+            ],
+            "signedError": [
+              3.6529079552065014,
+              1.6855836690477304
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 150,
+            "expected": [
+              104.0,
+              352.0
+            ],
+            "fitted": [
+              98.56514783846454,
+              349.32885746388945
+            ],
+            "signedError": [
+              -5.43485216153546,
+              -2.671142536110551
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 187,
+            "expected": [
+              143.0,
+              393.0
+            ],
+            "fitted": [
+              141.6971111048714,
+              389.84156919590276
+            ],
+            "signedError": [
+              -1.3028888951286035,
+              -3.158430804097236
+            ],
+            "boundPerAxis": 6.0,
+            "pass": true
+          },
+          {
+            "frame": 225,
+            "expected": [
+              110.0,
+              357.0
+            ],
+            "fitted": [
+              112.28640881761748,
+              366.38126269082164
+            ],
+            "signedError": [
+              2.2864088176174846,
+              9.381262690821643
+            ],
+            "boundPerAxis": 6.0,
+            "pass": false
+          },
+          {
+            "frame": 262,
+            "expected": [
+              106.0,
+              343.0
+            ],
+            "fitted": [
+              102.23320634167109,
+              353.84308831697314
+            ],
+            "signedError": [
+              -3.7667936583289077,
+              10.843088316973137
+            ],
+            "boundPerAxis": 6.0,
+            "pass": false
+          },
+          {
+            "frame": 299,
+            "expected": [
+              112.0,
+              358.0
+            ],
+            "fitted": [
+              111.33445757288214,
+              366.4176081808387
+            ],
+            "signedError": [
+              -0.665542427117856,
+              8.417608180838727
+            ],
+            "boundPerAxis": 6.0,
+            "pass": false
+          }
+        ]
+      },
+      "provenance": {
+        "annotations": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/palm-training-annotations.json",
+        "sha256": "b639ea099b0d65871bd4d7637556be0ddbd0e5614c416321e2efd413dfa2cd58",
+        "rank": 13,
+        "condition": 1.4489756457399863,
+        "residualSumSquares": [
+          98.74388647500854,
+          8.363927661990797
+        ]
+      },
+      "seam299to0SourcePx": 0.10952422155375488,
+      "closure300to0SourcePx": 1.4210854715202004e-14,
+      "peakSpeedSourcePxPerFrame": 2.4863647729786047,
+      "peakAccelerationSourcePxPerFrame2": 0.19888942193403217,
+      "rangeSourceXY": [
+        [
+          97.96563312422069,
+          342.1761542976604
+        ],
+        [
+          147.79638605427164,
+          397.4669466597307
+        ]
+      ]
+    }
+  },
+  "limitations": "Manual presentation anchors, not material correspondence. Sparse control pass cannot establish full trajectory, decoded-media, hp clearance, scene, cast, alpha, loop repair, budget or release acceptance.",
+  "runtimeChanged": false,
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/fit.json",
+    "sha256": "9eaa591ff58d6b33429e39de337953c4e9f7fc6d266e6d68cecae1cfe3d30472"
+  }
+}
