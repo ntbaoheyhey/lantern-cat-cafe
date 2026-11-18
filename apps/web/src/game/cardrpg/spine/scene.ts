@@ -314,6 +314,9 @@ export class SpineScene {
     name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
     const authored=sequence?.seq.casterAnim.filter(k=>k.t<=frame.elapsed&&k.name).at(-1)?.name;
     if(authored&&!chargeEvent(frame.plan))name=authored;
+    // Native active cards keep the living cast even when a legacy effect track
+    // labels its body motion as attack. Basic and ultimate clips stay authored.
+    if(actor.mesh?.livingCat&&!frame.plan.ultimate&&SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation==='skill')name='skill';
     if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':
      ['mochi','panko'].includes(entry.asset)&&isSupportCast(frame.plan)?'skill':'attack';
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;

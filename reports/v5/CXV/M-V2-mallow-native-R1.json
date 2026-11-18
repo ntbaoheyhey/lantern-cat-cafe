@@ -1,0 +1,358 @@
+{
+  "utc": "2026-11-18T05:23:36.231Z",
+  "cat": "mallow",
+  "sourceCommit": "4ec917401dbf727ad1e693e8d539228cf3cac0ab",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 337,
+        "y": 137,
+        "width": 272,
+        "height": 291,
+        "body": {
+          "x": 369.64784306349884,
+          "y": 169.5220858251574,
+          "width": 207.8992229099115,
+          "height": 226.37217685147843
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 337,
+        "y": 136,
+        "width": 271,
+        "height": 292,
+        "body": {
+          "x": 369.2668295840299,
+          "y": 168.2969427182304,
+          "width": 206.94129048390437,
+          "height": 227.59731995840542
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "d6b15751cb40f1e38e9fa2e2bbcc0f527bda9d9694cd77fe76adfc12998a186d",
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "mallow-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "attack",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "attack",
+        "at": 0.02761904761904762
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "attack",
+        "at": 0.05523809523809524
+      },
+      {
+        "ms": 100,
+        "pose": "attack",
+        "at": 0.08285714285714285
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "attack",
+        "at": 0.11047619047619048
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "attack",
+        "at": 0.1380952380952381
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "attack",
+        "at": 0.16571428571428573
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "attack",
+        "at": 0.19333333333333333
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "attack",
+        "at": 0.22095238095238096
+      },
+      {
+        "ms": 300,
+        "pose": "attack",
+        "at": 0.24857142857142855
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "attack",
+        "at": 0.27619047619047615
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "attack",
+        "at": 0.29
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "attack",
+        "at": 0.29
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "attack",
+        "at": 0.29
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "attack",
+        "at": 0.30919710197743683
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "attack",
+        "at": 0.34175271739130425
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "attack",
+        "at": 0.3691175608442134
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "attack",
+        "at": 0.3917391304347826
+      },
+      {
+        "ms": 600,
+        "pose": "attack",
+        "at": 0.4143478260869565
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "attack",
+        "at": 0.43695652173913047
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "attack",
+        "at": 0.4595652173913044
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "attack",
+        "at": 0.48217391304347834
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "attack",
+        "at": 0.5047826086956523
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "attack",
+        "at": 0.5273913043478262
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 2.240000000000002
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 2.2733333333333334
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 2.3066666666666684
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 2.34
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 2.373333333333335
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 2.40666666666667
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 2.4400000000000013
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 2.4733333333333363
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 2.5066666666666677
+      }
+    ],
+    "pass": false
+  },
+  "errors": [],
+  "pass": false,
+  "completedUTC": "2026-11-18T05:24:51.005Z",
+  "review": "Idle only passed: feet/worldroot/10smeshseam zero; bothSootmodes exact. All6newimages viewedonce. Smooth long blink, stable face/feet; prop/tail quieter than reference. Actualmallow-2 usedlegacyattack so cast failed; corrected scoped registry routing next. Other actor HUD overlays whisk region in fullscene.",
+  "comparison": {
+    "utc": "2026-11-18T05:25:23.854622+00:00",
+    "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/mallow-vs-mochi-1280x720.mp4",
+    "sha256": "2f8e9c873d564e934e525841c379f990ab9b2972ac5c95a4a0aed0696a59ce3e",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "frames": 300,
+    "fps": 30,
+    "durationSeconds": 10,
+    "sameBodyHeightPx": 228,
+    "sourceHeightPx": 431,
+    "cat": "mallow",
+    "candidateMeasuredHeight": 227.59731995840542,
+    "sourcePhase": "F0..299",
+    "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/report.json",
+    "captureReportSha256": "743f62a03b15a3102df1caf28002b51cc54676e5c8d1e07f9dc4c3618abb22b0",
+    "reviews": [
+      {
+        "frame": 15,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/comparison-15.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "0e892abd4f11b050829078ff0710cd6b1ff99fb4f38acb5da9b8f26b49e04a80"
+      },
+      {
+        "frame": 75,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/comparison-75.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "fddb236c0c92fe54e52bf337f5cb663ad2c2985ab747c80a4485cc854bf298d0"
+      },
+      {
+        "frame": 165,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/comparison-165.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "f504ca25a06a34ca3cf8324828485aa0a44075c8595499e79a38985983f354d9"
+      },
+      {
+        "frame": 255,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-mallow-native-R1/comparison-255.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "540c1c74df79e74785a4b02e1e07339bd968aafe73fd32ec7bd97589c26e8eed"
+      }
+    ],
+    "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+  }
+}
