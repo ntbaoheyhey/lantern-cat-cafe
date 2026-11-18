@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-M-I1 BLOCKED-ON new matte/seam evidence: Mochi384CRF23 isolated56PASS but native4images show edge speckles; CloverR5/R6 rejected/unaccepted. Panko own native acceptance ACTIVE.
+M-I1 BLOCKED-ON new matte/seam evidence: Mochi384CRF23 isolated56PASS but native4images show edge speckles; CloverR5/R6 rejected/unaccepted. Panko own production scene ACCEPT; release budgets still open. Mallow scoped import validated.
 M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
 M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
 SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.

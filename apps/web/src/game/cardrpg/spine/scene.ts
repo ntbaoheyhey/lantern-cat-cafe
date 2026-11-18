@@ -35,6 +35,8 @@ import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {hasDesignerIdleBody} from './designer-idle-body';
+import {animationCues} from './events';
+import {LIVING_CAT_SKILL_EVENTS} from '../../rig/living-cast';
 import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
@@ -153,6 +155,10 @@ export class SpineScene {
    const asset=view.models?.[unit.id]??unit.cardRpg?.cardId??'mochi';
    void loadSpineActor(asset,undefined,{deferNativePixels:isCraftOwner(asset)}).then(async actor=>{
     if(this.disposed||this.pending.get(unit.id)!==request||!this.view().actors.some(a=>a.id===unit.id)){actor.dispose();return;}
+    if(actor.mesh?.enableLivingCat?.(asset)){
+     for(const name of ['idle','idle-phase2'])if(actor.clips.has(name))actor.clips.set(name,{duration:10,cues:[]});
+     actor.clips.set('skill',{duration:1,cues:animationCues('skill',1,[...LIVING_CAT_SKILL_EVENTS])});
+    }
     // The media loader marks only a successfully prepared commissioned body.
     // Failed/unregistered media still uses the existing drawing fallback.
     const mediaBody=hasDesignerIdleBody(asset,actor);
@@ -308,6 +314,9 @@ export class SpineScene {
     name=chargeEvent(frame.plan)?'skill':SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation??(frame.plan.ultimate?'ult':frame.clip==='attack'?'attack':'skill');key=frame.plan;
     const authored=sequence?.seq.casterAnim.filter(k=>k.t<=frame.elapsed&&k.name).at(-1)?.name;
     if(authored&&!chargeEvent(frame.plan))name=authored;
+    // Native active cards keep the living cast even when a legacy effect track
+    // labels its body motion as attack. Basic and ultimate clips stay authored.
+    if(actor.mesh?.livingCat&&!frame.plan.ultimate&&SPINE_SKILLS.get(frame.plan.presentationId??frame.plan.skillId)?.animation==='skill')name='skill';
     if(entry.craftPose&&!chargeEvent(frame.plan))name=frame.plan.ultimate?'ult':
      ['mochi','panko'].includes(entry.asset)&&isSupportCast(frame.plan)?'skill':'attack';
     const duration=actor.duration(name),hit=actor.cues(name).find(c=>c.name==='hit')?.time??duration*.55;
@@ -325,7 +334,7 @@ export class SpineScene {
    const previous=this.sampled.get(unit.id),iced=statuses.includes('freeze'),frozen=iced||!view.reducedMotion&&view.fixedTime===undefined&&performance.now()<this.hitstopUntil;
    if(iced&&unit.hp>0&&previous){name=previous.name;key=previous.key;at=previous.at;}
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
-   if(actor.mesh&&!frozen)actor.mesh.proceduralTime=worldTime+phaseOffset;
+   if(actor.mesh&&!frozen){actor.mesh.proceduralTime=worldTime+phaseOffset;if(actor.mesh.livingCat)actor.mesh.livingReducedMotion=!!view.reducedMotion;}
    if(entry.asset==='mochi'||entry.asset==='clover')actor.sample(name,key,at,delta,this.camera,view.reducedMotion,
     {worldTime:worldTime+phaseOffset,paused:!!view.paused,fixedTime:view.fixedTime!==undefined,frozen,playbackRate:view.playbackSpeed??1});
    else actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
@@ -354,7 +363,7 @@ export class SpineScene {
     reaction=hitPose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&unit.hp>0&&!statuses.includes('stun'))rootPose=bracePose(plan,frame?.elapsed??0,unit.id,home.point.x>=from?1:-1,height);
     if(rootPose.phase==='idle'&&crowd.kind!=='idle')rootPose=crowd.pose;
-    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun')&&!hasDesignerIdleBody(entry.asset,actor))rootPose=idlePose(worldTime,unit.id);
+    if(rootPose.phase==='idle'&&unit.hp>0&&!iced&&!statuses.includes('stun')&&!hasDesignerIdleBody(entry.asset,actor)&&!actor.mesh?.livingCat)rootPose=idlePose(worldTime,unit.id);
     // A hit hold must also stop the recipient's brace/idle root, otherwise
     // their independent motion adds displacement to the bounded recoil.
     if(damageAge!==undefined&&damageAge>=0&&damageAge<.3)rootPose=neutralPose();
@@ -409,7 +418,7 @@ export class SpineScene {
    actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
    actor.root.updateMatrixWorld(true);
    const opaque=opaqueWorldBounds(actor.root);
-   if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2){
+   if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2&&!actor.mesh?.livingCat){
     const target=core.world.height*position.scale*arrival.sy;
     const factor=Math.max(target*.985,Math.min(target*1.015,opaque.height))/opaque.height;
     // Constrain size around the planted foot; preserve the authored pose shape.

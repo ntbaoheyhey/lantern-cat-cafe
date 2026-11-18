@@ -1,0 +1,257 @@
+{
+  "status": "ACCEPT_PANKO_SCENE_ONLY_RELEASE_GATES_OPEN",
+  "utc": "2026-11-18T05:47:08.972148+00:00",
+  "sourceCommit": "162efac4c79956b45f49167f4d3a3b58625d50b7",
+  "buildSource": "912a457c6f0cc6f5e6836efe3130408d8b74e9b8",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "indexSha256": "dc53a0e5c036e1ec014c2a6a4a3608070f09a47221fe3a02741df7835aee02b8",
+  "captureUTC": [
+    "2026-11-18T05:41:29.784Z",
+    "2026-11-18T05:42:49.909Z"
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Current production scene at exact judge URL; isolated real-rule archives for skill/ult. 30Hz simulation playback at 1x, not measured frame performance.",
+  "errors": [],
+  "blockedRequests": [],
+  "worldMetrics": [
+    {
+      "reduced": false,
+      "feetWorldDrift": 0,
+      "feetScreenDrift": 0,
+      "feetWorldSeam": 0,
+      "feetScreenSeam": 0,
+      "rootDrift": 0,
+      "rootSeam": 0
+    },
+    {
+      "reduced": true,
+      "feetWorldDrift": 0,
+      "feetScreenDrift": 0,
+      "feetWorldSeam": 0,
+      "feetScreenSeam": 0,
+      "rootDrift": 0,
+      "rootSeam": 0
+    }
+  ],
+  "castContacts": [
+    {
+      "id": "panko-2",
+      "reduced": false,
+      "impactMs": 350,
+      "pose": "skill",
+      "clipAt": 0.55
+    },
+    {
+      "id": "panko-4",
+      "reduced": false,
+      "impactMs": 1100,
+      "pose": "ult",
+      "clipAt": 1.1
+    },
+    {
+      "id": "panko-2",
+      "reduced": true,
+      "impactMs": 350,
+      "pose": "skill",
+      "clipAt": 0.55
+    },
+    {
+      "id": "panko-4",
+      "reduced": true,
+      "impactMs": 1100,
+      "pose": "ult",
+      "clipAt": 1.1
+    }
+  ],
+  "channels": [
+    {
+      "channel": "body",
+      "range": 1.0999076824894811,
+      "dominantHarmonicSeconds": 3.3333333333333335,
+      "units": "authored signal, not source optical displacement"
+    },
+    {
+      "channel": "turn",
+      "range": 1.0035136389409716,
+      "dominantHarmonicSeconds": 10.0,
+      "units": "authored signal, not source optical displacement"
+    },
+    {
+      "channel": "tilt",
+      "range": 2.8854152697921136,
+      "dominantHarmonicSeconds": 10.0,
+      "units": "authored signal, not source optical displacement"
+    },
+    {
+      "channel": "ear",
+      "range": 1.721328171891272,
+      "dominantHarmonicSeconds": 3.3333333333333335,
+      "units": "authored signal, not source optical displacement"
+    },
+    {
+      "channel": "accessory",
+      "range": 1.7342354975170817,
+      "dominantHarmonicSeconds": 3.3333333333333335,
+      "units": "authored signal, not source optical displacement"
+    },
+    {
+      "channel": "head",
+      "rangePctHeight": [
+        4.190673724262963,
+        2.6949496056654088
+      ],
+      "dominantXYSeconds": [
+        10.0,
+        3.3333333333333335
+      ]
+    },
+    {
+      "channel": "tail tip",
+      "rangePctHeight": [
+        3.793900419916435,
+        4.141594888832429
+      ],
+      "dominantXYSeconds": [
+        3.3333333333333335,
+        3.3333333333333335
+      ]
+    },
+    {
+      "channel": "apron hem",
+      "rangePctHeight": [
+        2.4864501775222894,
+        2.347698596754421
+      ],
+      "dominantXYSeconds": [
+        3.3333333333333335,
+        3.3333333333333335
+      ]
+    }
+  ],
+  "blinkAbove80Percent": [
+    {
+      "side": "leftBlink",
+      "start": 2.3666666666666667,
+      "end": 2.933333333333333,
+      "durationMs": 566.6666666666666
+    },
+    {
+      "side": "leftBlink",
+      "start": 5.7,
+      "end": 6.266666666666667,
+      "durationMs": 566.6666666666666
+    },
+    {
+      "side": "leftBlink",
+      "start": 9.033333333333333,
+      "end": 9.6,
+      "durationMs": 566.6666666666666
+    },
+    {
+      "side": "rightBlink",
+      "start": 2.433333333333333,
+      "end": 3.0,
+      "durationMs": 566.6666666666666
+    },
+    {
+      "side": "rightBlink",
+      "start": 5.766666666666667,
+      "end": 6.333333333333333,
+      "durationMs": 566.6666666666666
+    },
+    {
+      "side": "rightBlink",
+      "start": 9.1,
+      "end": 9.666666666666666,
+      "durationMs": 566.6666666666666
+    }
+  ],
+  "images": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-2-normal.jpg",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "sha256": "cc8f1a7d269294dea53c3206969fbe2b22643bbc4935ef11a049a40533dd87a7",
+      "status": "viewed-once",
+      "review": "Skill subtle planted additive gesture; ult retained authored key art/effect; no actor/HUD clipping in sampled scene."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-4-normal.jpg",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "sha256": "7d356e051dbb9272b5dcafecfff4c095c2f27bd9758f1b2f323c8576a3b57360",
+      "status": "viewed-once",
+      "review": "Skill subtle planted additive gesture; ult retained authored key art/effect; no actor/HUD clipping in sampled scene."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-2-reduced.jpg",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "sha256": "1031d13e11f045ce71302b6601aafa5800f6b7481f6eb68c40fe68ea2eb21954",
+      "status": "viewed-once",
+      "review": "Skill subtle planted additive gesture; ult retained authored key art/effect; no actor/HUD clipping in sampled scene."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-4-reduced.jpg",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "sha256": "f6baef0c82123444c58510dee143ea8ed04653ece5b9d6cce664978b1293dad7",
+      "status": "viewed-once",
+      "review": "Skill subtle planted additive gesture; ult retained authored key art/effect; no actor/HUD clipping in sampled scene."
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-vs-designer-contact.jpg",
+      "dimensions": [
+        560,
+        992
+      ],
+      "sha256": "97d7fd9f87f8a3949feece4ff098a0c054ad56d243118d4f8355ebcf11e7098c",
+      "status": "viewed-once",
+      "review": "Comparable cat height. Panko preserves feet, slow upper-body turn/nod and soft asymmetric blink; source has larger prop/head perspective changes. No sampled crop clipping of Panko. Approximate vocabulary match, not identical animation."
+    }
+  ],
+  "comparison": {
+    "film": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/panko-vs-designer-10s.mp4",
+    "sha256": "d12e93b8799cc3dffeb66e7d34679c6bbf99cebbf1dee4c2d3ca992b7128bb06",
+    "source": "/Users/bao/Downloads/Scene1.mp4",
+    "sourceSha256": "1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524",
+    "seconds": 10,
+    "fps": 30,
+    "sourceOpaqueHeight": 224,
+    "gameAnchorBodyHeight": 224.41437129920018,
+    "gameCrop": [
+      280,
+      390,
+      240,
+      248
+    ],
+    "sourceCrop": [
+      151,
+      120,
+      1825,
+      1515
+    ],
+    "note": "Original black composite retained on reference side. Equal~224px cat height and1x simulation playback; phase not matched. Not a real-time performance film."
+  },
+  "fullCapture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/report.json",
+  "fullCaptureSha256": "453a15dd147b99c637d32b6c67242e2d5bda36692ff87a582cbd5e2541eda26a",
+  "worldCapture": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/panko-production-r1/world.json",
+  "worldCaptureSha256": "a039208f804ce94ae5e09fec1ac7cd552c0dc0012c0ef25b93a5561e9d6828fe",
+  "limitations": [
+    "Deterministic30Hz sampled playback; not a real-time FPS result.",
+    "Projected points and source optical trackers are different estimators; compare vocabulary, not parameter identity.",
+    "Skill uses real-rules archive panko-2; ultimate panko-4 retained. Ordinary boss fixture independently verified world feet/root.",
+    "Budget,frame-time,journey,audio and final films remain release gates."
+  ]
+}
