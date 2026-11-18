@@ -1,8 +1,8 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã kiểm tra **v5-m1.14**, source ứng dụng/quay **c4108923c25a9c982b0831318e16a93cc991f8e7**. Full suite5.539passed,11skipped,2expected failures; tổng5.552, gồm3.239web.24test tập trung,TypeScript/build và7bước browser đạt; đòn đầu20,880giây gồm17,7giây đọc. Chín mèo native đã nhận; commissioned media Mochi/Clover chưa bật. Owner đã bỏ8MB:byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-atlas-r2-release-review.json). Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra và xác minh từ xa **v5-m1.15**, release **59f5f3c57ff05df85f5a835da65bf28c136403f3**, source ứng dụng/quay **b9b6f172824a7daa4ba95836081cade7c472ffb6**. Bộ5.556kiểm tra kế thừa(5.543đạt,11bỏqua,2lỗi dự kiến;3.243web) với cùng mã ứng dụng trừ texture landing đã duyệt;7cổng browser mới đạt. Đòn đầu21,163giây gồm17,7giây đọc. Chín mèo native đã nhận;media Mochi/Clover chưa bật. Byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-r3-release-review.json), [tag từ xa](evidence/v8-m115-publication.json).
 
-Cổng6301 đang dùng bản thử Mochi/Clover R4, source854ce6eec/index9e39c7d7; bản này chưa được phát hành vì viền/halo và vòng đuôi còn mở. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
+Cổng6301 có thể được đổi sang thử nghiệm Mochi/Clover;đối chiếu BOARD trước khi dùng. Bản thử R5 source8aef40187d/index82f08611 chưa phát hành vì viền/halo,nối đuôi và HP/body còn mở. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting,sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact phát hành giữ riêng tại /Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.14'
+release_tag='v5-m1.15'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1

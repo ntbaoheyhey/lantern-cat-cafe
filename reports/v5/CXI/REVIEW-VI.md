@@ -1,6 +1,6 @@
 # Bản review desktop — v5-m1.15
 
-Bản nativeR3 đã qua các cổng phát hành, source `b9b6f172824a7daa4ba95836081cade7c472ffb6`, index `fedad6e26829f235b1a6dcda2cfc30aa7d4a90f17df9f8ab7f925352a32d265b`. Xác minh tag đã push trên BOARD trước khi dùng. Artifact đầy đủ: `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist` (293,767,093 byte). Preview6301 có thể chuyển sang thử nghiệm Mochi/Clover sau khi xuất bản; luôn đối chiếu BOARD.
+Bản nativeR3 đã qua các cổng phát hành, source `b9b6f172824a7daa4ba95836081cade7c472ffb6`, index `fedad6e26829f235b1a6dcda2cfc30aa7d4a90f17df9f8ab7f925352a32d265b`. Tag đã được push nguyên tử và xác minh từ xa: release59f5f3c57,tagobject226cc4425; xem evidence/v8-m115-publication.json. Artifact đầy đủ: `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist` (293,767,093 byte). Preview6301 có thể chuyển sang thử nghiệm Mochi/Clover sau khi xuất bản; luôn đối chiếu BOARD.
 
 Mở [game1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Đây là preview local; chưa deploy công khai.
 
