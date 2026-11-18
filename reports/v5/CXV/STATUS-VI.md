@@ -15,3 +15,5 @@ AGV: R10 bị loại trước khi xem vì tăng 65.160 byte so với bản đang
 2026-11-18T10:26:39.812063+00:00: Neo HP Clover theo quy ước chiều cao hiện có đạt khoảng cách an toàn trong hình học: kiểm tra6006tư thế, tối thiểu52.87đơn vị; cận bảo thủ48.51. Chưa kết luận độ rõ trong cảnh1280×720. Vòi ấm đạt kiểm tra adapter riêng; chờ ứng viên giải mã để tự quay kiểm chứng.
 
 2026-11-18T11:11:49.273583+00:00: Clover đã đạt kiểm tra riêng điểm phát sáng và nhãn HP trên bản93498388c:56mẫu,4hành động,10đốm sáng,không lỗi;không che thân hay nhãn khác,khoảng cách nhỏ nhất19,30px. Cả5ảnh ghép mới đã xem một lần. Chưa nghiệm thu toàn bộ idle/cast,viền,đuôi,vòng lặp,ngân sách hoặc hiệu năng.
+
+2026-11-18T11:19:49.669313+00:00: Clover đã quay xong so sánh1280×720:cùng chiều cao227px,tốc độ1×;idle304mẫu/300khung,cast290mẫu/280khung qua4hành động hợp lệ. Điểm chạm350/1100ms và trở về idle đạt;20ảnh mới xem một lần,5phim/5ảnh ghép. Bản idle mới chờ banner tự hết;giữ bằng chứng lỗi hai lần quay trước. Chỉ nghiệm thu chuyển động/bố trí;viền,độ nét,mặt/tay,đuôi,vòng lặp,8MB và hiệu năng laptop còn mở.

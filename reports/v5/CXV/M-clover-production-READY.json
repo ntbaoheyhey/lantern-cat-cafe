@@ -1,0 +1,965 @@
+{
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "sourceCommit": "93498388c5fd89fd8db45086503e0bfdbef9055a",
+  "indexSha256": "6afd6640d8b35dd24f9caa8eca40891bf7c92ba6ddb9324b6edc55f080f9904d",
+  "registryOverride": {
+    "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+    "clover": "/units/clover/designer-idle-9cc154e07830b714.json"
+  },
+  "buildPath": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-hp-q21-r2/build.json",
+  "buildSha256": "439def0785aefd9180503a47e5691fd07f3dde404a7d2b96f1bf76324f0de952",
+  "runtimeSourceSubstitutions": [],
+  "utc": "2026-11-18T11:19:49.669313+00:00",
+  "status": "SCOPED READY: Clover decoded idle and A6 cast motion/placement; art/loop/budget still open",
+  "idle": {
+    "capture": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/report.json",
+      "sha256": "5c373e0df21ae91cdcd40488fd300aebf32fe31ecb5e26c9a5bec72473fb483b"
+    },
+    "comparison": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/comparison.json",
+      "sha256": "8f34a0871d031689de9c9b48364eb86a708a899adf1825fe398a4c851dbef43a"
+    },
+    "captureUTC": "2026-11-18T11:16:33.636Z",
+    "finishedUTC": "2026-11-18T11:17:54.739Z",
+    "rows": 304,
+    "captures": 300,
+    "nativeCallbackFramesExact": 301,
+    "introBefore": 1,
+    "introSettledUTC": "2026-11-18T11:16:37.803Z",
+    "allRowsIntroAbsent": true,
+    "footDelta": 0,
+    "loopRootDelta": 0,
+    "sameBodyHeightPx": 227,
+    "video": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/clover-source-vs-production-1280x720.mp4",
+      "sha256": "a5e65ccd323f315a640dc77df6850ae248d618fd4214931aa5794da5c6e78c06"
+    },
+    "stream": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "duration": "10.000000",
+          "nb_frames": "300"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "frame": 0,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/comparison-000.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 53075,
+        "rgbMean": [
+          39.51651509602865,
+          36.11262512207031,
+          32.7195078531901
+        ],
+        "sha256": "c0c97bd2829589700700625a2d34d8b57725e19c80ad838a0b3d43925f61a204",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T11:18:38.689444+00:00"
+      },
+      {
+        "frame": 99,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/comparison-099.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 51972,
+        "rgbMean": [
+          39.20500691731771,
+          35.79673597547743,
+          32.51417880588107
+        ],
+        "sha256": "4939d38fdc99e11d60133bfc1d8c9bd369ea4893f2e020c015064c4f73fd00e7",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T11:18:38.689444+00:00"
+      },
+      {
+        "frame": 199,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/comparison-199.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 51803,
+        "rgbMean": [
+          39.09952629937066,
+          35.70482211642795,
+          32.44394768608941
+        ],
+        "sha256": "99b4ae6e95e06e7192e810a1a9b683ffd548d15e8de6088cfb18b88ba2cea476",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T11:18:38.689444+00:00"
+      },
+      {
+        "frame": 299,
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/comparison-299.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 52999,
+        "rgbMean": [
+          39.51948038736979,
+          36.095579359266495,
+          32.728980170355904
+        ],
+        "sha256": "71b3a4a09b1c4b290e97a4c9726ace054fcec06013d716cf5405b27e62cccf1b",
+        "reviewed": true,
+        "views": 1,
+        "reviewUTC": "2026-11-18T11:18:38.689444+00:00"
+      }
+    ],
+    "review": {
+      "status": "SCOPED PASS motion/placement; art/loop gates remain open",
+      "views": 4,
+      "observations": [
+        "All4 fresh samples clear of intro and match commissioned source pose at same height.",
+        "Native callback proves frame identity across300 frames; not an independent runtime amplitude fit.",
+        "Source tail seam preserved; matte/downsample quality and head/palm remain unaccepted."
+      ]
+    }
+  },
+  "cast": {
+    "capture": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/report.json",
+      "sha256": "cb0bac00c56bdecee08bddc4b334b42cab02173aa40dd09f2d2e0ebb32992df4"
+    },
+    "comparison": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/comparison.json",
+      "sha256": "b8e0c63d40264895945a9968cafbd1a4571f511ef0e0f5d63d1e459376edff46"
+    },
+    "captureUTC": "2026-11-18T11:14:13.664Z",
+    "finishedUTC": "2026-11-18T11:15:25.607Z",
+    "rows": 290,
+    "captures": 280,
+    "actions": [
+      {
+        "name": "clover-1-normal",
+        "skill": 1,
+        "reduced": false,
+        "returnBoundary": {
+          "timeStepMilliseconds": 0.0001,
+          "rootDelta": 1.1368683772161603e-13,
+          "footDelta": 1.1368683772161603e-13,
+          "meshBefore": 0,
+          "meshAfter": 0,
+          "afterSample": {
+            "name": "idle",
+            "at": 0.8083333333333229
+          }
+        },
+        "maximumFootExcursion": 0.37955236182529006,
+        "minimumTriangleRatio": 1,
+        "frames": 49,
+        "fps": 30,
+        "durationSeconds": 1.6333333333333333,
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/clover-1-normal-production-1280x720.mp4",
+        "videoSha256": "b37b12f7a248350f884a9d587b2c6a691ee724e350473e1e4b0325b46439e9b8"
+      },
+      {
+        "name": "clover-4-normal",
+        "skill": 4,
+        "reduced": false,
+        "returnBoundary": {
+          "timeStepMilliseconds": 0.0001,
+          "rootDelta": 1.1368683772161603e-13,
+          "footDelta": 1.1368683772161603e-13,
+          "meshBefore": 0,
+          "meshAfter": 0,
+          "afterSample": {
+            "name": "idle",
+            "at": 2.2083333333333286
+          }
+        },
+        "maximumFootExcursion": 0.37955236182529006,
+        "minimumTriangleRatio": 0.9164795334849885,
+        "frames": 91,
+        "fps": 30,
+        "durationSeconds": 3.033333333333333,
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/clover-4-normal-production-1280x720.mp4",
+        "videoSha256": "ccef65685619f1d4b8facc76dec2abe99b408a5e553f0f81e754937ef9390eb3"
+      },
+      {
+        "name": "clover-1-reduced",
+        "skill": 1,
+        "reduced": true,
+        "returnBoundary": {
+          "timeStepMilliseconds": 0.0001,
+          "rootDelta": 0,
+          "footDelta": 0,
+          "meshBefore": 0,
+          "meshAfter": 0,
+          "afterSample": {
+            "name": "idle",
+            "at": 5.651333333333326
+          }
+        },
+        "maximumFootExcursion": 0,
+        "minimumTriangleRatio": 1,
+        "frames": 49,
+        "fps": 30,
+        "durationSeconds": 1.6333333333333333,
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/clover-1-reduced-production-1280x720.mp4",
+        "videoSha256": "02e8fe849124c5bf83ee1626434d46e9312c79f055cafeaf8c3217c694d54d69"
+      },
+      {
+        "name": "clover-4-reduced",
+        "skill": 4,
+        "reduced": true,
+        "returnBoundary": {
+          "timeStepMilliseconds": 0.0001,
+          "rootDelta": 0,
+          "footDelta": 0,
+          "meshBefore": 0,
+          "meshAfter": 0,
+          "afterSample": {
+            "name": "idle",
+            "at": 7.051333333333332
+          }
+        },
+        "maximumFootExcursion": 0,
+        "minimumTriangleRatio": 1,
+        "frames": 91,
+        "fps": 30,
+        "durationSeconds": 3.033333333333333,
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/clover-4-reduced-production-1280x720.mp4",
+        "videoSha256": "486e15645f31535d176622393bcf1c2d6c7d3aa1871207dc64567a8c1dcff848"
+      }
+    ],
+    "contactMilliseconds": [
+      350,
+      1100,
+      350,
+      1100
+    ],
+    "gates": {
+      "routingPass": true,
+      "hitPass": true,
+      "mediaCastPass": true,
+      "boundaryPass": true
+    },
+    "maxNativeCallbackGapSeconds": 0.02500033333333429,
+    "mediaPhaseOffsetSeconds": 0.008333333333333333,
+    "errors": [],
+    "blockedRequests": [],
+    "review": {
+      "status": "Scoped cast presentation and return PASS; full art and loop acceptance open.",
+      "observations": [
+        "Normal basic preserves commissioned idle with a readable spout glint; normal ultimate adds a soft lean, leaf bloom and readable heal number.",
+        "Ultimate nameplate remains above head; comparison crop clips its text but full native HP probe supplies caption evidence.",
+        "Normal recovery returns to source pose; reduced variants hold source frame0 while retaining the skill cue.",
+        "Matte/downsampling, head/palm semantics, tail seam, cold bytes, ordinary-play and laptop timing remain outside this acceptance."
+      ],
+      "views": 16
+    },
+    "comparisons": [
+      {
+        "name": "clover-1-normal",
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/clover-1-normal-source-comparison-1280x720.mp4",
+        "videoSha256": "49ee23532427817c8c9cddb9444cbb8f14d5be59b982a454873c9a762060c4ff",
+        "frames": 49,
+        "fps": 30,
+        "durationSeconds": 1.6333333333333333,
+        "initialBodyHeight": 227,
+        "crop": [
+          299,
+          129,
+          601,
+          444
+        ],
+        "previews": [
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/comparison-006.jpg",
+            "sha256": "88e316bf1b18bec501c36c21883fd300dab4e541d9fce803cbe748d2989ababc",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 56185,
+            "ms": -100,
+            "frame": 6,
+            "sourceFrame": 297,
+            "nativeDecoderTime": 9.908333,
+            "rgbMean": [
+              44.073233710394966,
+              38.91213141547309,
+              34.541868421766495
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/comparison-014.jpg",
+            "sha256": "b0f920dcbebadc943ebb3c22afd2ec280f7e9051b78f70baae444174402b461b",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 56330,
+            "ms": 166.66666666666669,
+            "frame": 14,
+            "sourceFrame": 5,
+            "nativeDecoderTime": 0.174999,
+            "rgbMean": [
+              44.0192616780599,
+              38.88059828016493,
+              34.488433837890625
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/comparison-019.jpg",
+            "sha256": "1c57071de5ef7e05c563198799862b5a1cfe2ef69f6053ecfc710efe3cd1da94",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 56423,
+            "ms": 333.33333333333337,
+            "frame": 19,
+            "sourceFrame": 10,
+            "nativeDecoderTime": 0.341666,
+            "rgbMean": [
+              44.02254401312934,
+              38.903739081488716,
+              34.514473809136284
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/comparison-036.jpg",
+            "sha256": "1edd0ba6c65f93a20bf938b0b239893687881d992863160c589ba5abb5ab87b1",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 55603,
+            "ms": 900,
+            "frame": 36,
+            "sourceFrame": 27,
+            "nativeDecoderTime": 0.908333,
+            "rgbMean": [
+              43.94428507486979,
+              38.7724117702908,
+              34.42627970377604
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          }
+        ],
+        "streamProbe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30/1",
+              "duration": "1.633008",
+              "nb_frames": "49"
+            }
+          ]
+        }
+      },
+      {
+        "name": "clover-4-normal",
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/clover-4-normal-source-comparison-1280x720.mp4",
+        "videoSha256": "f6902cdc5b3c422a7cced7705c8c139e0a123d90e044ba22f96ac884543f948e",
+        "frames": 91,
+        "fps": 30,
+        "durationSeconds": 3.033333333333333,
+        "initialBodyHeight": 227,
+        "crop": [
+          299,
+          129,
+          601,
+          444
+        ],
+        "previews": [
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/comparison-006.jpg",
+            "sha256": "eec373e02d937edc7c23c9e42a1e6a70b63050b7f52156da7d8b8fe5d0a89767",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 56299,
+            "ms": -100,
+            "frame": 6,
+            "sourceFrame": 297,
+            "nativeDecoderTime": 9.908333,
+            "rgbMean": [
+              44.08153957790799,
+              38.920437282986114,
+              34.55017428927951
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/comparison-025.jpg",
+            "sha256": "2be59d8e106f11f0aefce44fa47d0152884cf40fbb4ee7b11c98ffe643551eb7",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 55950,
+            "ms": 533.3333333333334,
+            "frame": 25,
+            "sourceFrame": 16,
+            "nativeDecoderTime": 0.541666,
+            "rgbMean": [
+              40.41882663302951,
+              36.56635538736979,
+              32.807852851019966
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/comparison-042.jpg",
+            "sha256": "3d341df2f3b0905ce6626c7c06a94bc57c39873d4e1e9b872eea696482e91b81",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 59410,
+            "ms": 1100,
+            "frame": 42,
+            "sourceFrame": 33,
+            "nativeDecoderTime": 1.108333,
+            "rgbMean": [
+              44.648033989800346,
+              41.68972608778212,
+              36.23207092285156
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/comparison-078.jpg",
+            "sha256": "f20f0b3a04211da71b8a6d537ea68069a4675716fa902f96f26a0f0c02cf7672",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 55977,
+            "ms": 2300,
+            "frame": 78,
+            "sourceFrame": 69,
+            "nativeDecoderTime": 2.308333,
+            "rgbMean": [
+              43.921790228949654,
+              38.76864793565538,
+              34.43846299913194
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:10.082975+00:00"
+          }
+        ],
+        "streamProbe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30/1",
+              "duration": "3.033008",
+              "nb_frames": "91"
+            }
+          ]
+        }
+      },
+      {
+        "name": "clover-1-reduced",
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/clover-1-reduced-source-comparison-1280x720.mp4",
+        "videoSha256": "2ead43191e977f4bf9f98b72b4dde84dc89223120d8dc8bd1bc366cca15acb3f",
+        "frames": 49,
+        "fps": 30,
+        "durationSeconds": 1.6333333333333333,
+        "initialBodyHeight": 227,
+        "crop": [
+          315,
+          129,
+          581,
+          436
+        ],
+        "previews": [
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/comparison-006.jpg",
+            "sha256": "845b4d7a46d90b843d9585bda8a0a04f006326ca4fe05f69969daf453933b624",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54200,
+            "ms": -100,
+            "frame": 6,
+            "sourceFrame": 297,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.84693060980903,
+              37.46984354654948,
+              33.54745313856337
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:19.472415+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/comparison-014.jpg",
+            "sha256": "4af35bf80fc3825c58f4b2d0e82cf8ce1a5c7d8694555ba93496da8892103312",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54172,
+            "ms": 166.66666666666669,
+            "frame": 14,
+            "sourceFrame": 5,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.80577256944444,
+              37.43856641981337,
+              33.50957743326823
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:19.472415+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/comparison-019.jpg",
+            "sha256": "3087138f380e14409a2f26302c126740aa8e5d82e95b71765063387e996dbbae",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54229,
+            "ms": 333.33333333333337,
+            "frame": 19,
+            "sourceFrame": 10,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.80760701497396,
+              37.4570058186849,
+              33.523525661892364
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:19.472415+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/comparison-036.jpg",
+            "sha256": "26f85b641ce4e0b46cc1a0f217501d892f62ee1698314480e07f800bc8be84fc",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 53766,
+            "ms": 900,
+            "frame": 36,
+            "sourceFrame": 27,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.736901177300346,
+              37.37665473090278,
+              33.47735087076823
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:19.472415+00:00"
+          }
+        ],
+        "streamProbe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30/1",
+              "duration": "1.633008",
+              "nb_frames": "49"
+            }
+          ]
+        }
+      },
+      {
+        "name": "clover-4-reduced",
+        "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/clover-4-reduced-source-comparison-1280x720.mp4",
+        "videoSha256": "1b771fa733407d02dd90eace610f0e475740c89c2b76ad35a76f4db58826f765",
+        "frames": 91,
+        "fps": 30,
+        "durationSeconds": 3.033333333333333,
+        "initialBodyHeight": 227,
+        "crop": [
+          315,
+          129,
+          581,
+          436
+        ],
+        "previews": [
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/comparison-006.jpg",
+            "sha256": "9aa9022c2d8c97a667972778c6ad4ec9ec63b36d2722ee343a403a873719d488",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54303,
+            "ms": -100,
+            "frame": 6,
+            "sourceFrame": 297,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.85523647732205,
+              37.4781494140625,
+              33.555759006076386
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:29.526597+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/comparison-025.jpg",
+            "sha256": "0ad0fe12f0fc16b09e69d00722295d3095166a184a45fbe097915099d384a125",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54127,
+            "ms": 533.3333333333334,
+            "frame": 25,
+            "sourceFrame": 16,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              38.86944240993924,
+              35.60136922200521,
+              32.176210191514755
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:29.526597+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/comparison-042.jpg",
+            "sha256": "73fa3fcc19ee2e7bee21685e7b03e45ec121165f671e6ce4c434d72a260bf2f5",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 56838,
+            "ms": 1100,
+            "frame": 42,
+            "sourceFrame": 33,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              42.38274468315972,
+              39.897806803385414,
+              35.008919609917534
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:29.526597+00:00"
+          },
+          {
+            "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/comparison-078.jpg",
+            "sha256": "f91ba6f08cd388088ec910e0d97c19be28f20713b2e3bf87c93630241cb36a7f",
+            "dimensions": [
+              1024,
+              576
+            ],
+            "bytes": 54137,
+            "ms": 2300,
+            "frame": 78,
+            "sourceFrame": 69,
+            "nativeDecoderTime": 0,
+            "rgbMean": [
+              41.73515828450521,
+              37.402464124891495,
+              33.507344563802086
+            ],
+            "reviewed": true,
+            "views": 1,
+            "reviewUTC": "2026-11-18T11:17:29.526597+00:00"
+          }
+        ],
+        "streamProbe": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30/1",
+              "duration": "3.033008",
+              "nb_frames": "91"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "source": {
+    "original": {
+      "path": "/Users/bao/Downloads/clover.mp4",
+      "sha256": "4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150"
+    },
+    "frames": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/ref/batch-m/clover-frames.npy",
+      "sha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e"
+    },
+    "timing": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-V1-source-study.json",
+      "sha256": "2b7b7038e99d80126550c2f49c8bf23096ee0a42ef8b6f4aa45a8d1cc2d49781"
+    }
+  },
+  "timingVsL1": [
+    {
+      "channel": "body",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        5.560999870300293,
+        2.3329999446868896
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "head",
+      "sourcePeriodSeconds": 5.0,
+      "sourceRangePctHeight": [
+        8.680999755859375,
+        3.7639999389648438
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "earLeft",
+      "sourcePeriodSeconds": 5.0,
+      "sourceRangePctHeight": [
+        14.83899974822998,
+        7.918000221252441
+      ],
+      "quality": "REJECT unstable",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "earRight",
+      "sourcePeriodSeconds": 10.0,
+      "sourceRangePctHeight": [
+        15.262999534606934,
+        5.3460001945495605
+      ],
+      "quality": "REJECT unstable",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "tail",
+      "sourcePeriodSeconds": 10.0,
+      "sourceRangePctHeight": [
+        17.382999420166016,
+        30.673999786376953
+      ],
+      "quality": "REJECT unstable",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "prop",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        3.2639999389648438,
+        5.702000141143799
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "cloth",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        15.331999778747559,
+        3.8910000324249268
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    },
+    {
+      "channel": "leaf",
+      "sourcePeriodSeconds": 3.3333333333333335,
+      "sourceRangePctHeight": [
+        1.9809999465942383,
+        1.6740000247955322
+      ],
+      "quality": "usable projection, not rig parameter",
+      "runtimeVerification": "Decoded original clip phase; no independent production amplitude fit. Tail/ear source tracker rejection retained."
+    }
+  ],
+  "contactSheets": [
+    {
+      "name": "idle",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r2-111633/contact-sheet.jpg",
+      "sha256": "32aeb105c6c3b7874864ace09a8278a4372b7bcf6ca0511c01b639734f12e65f",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 73535,
+      "derivedFrom": [
+        "c0c97bd2829589700700625a2d34d8b57725e19c80ad838a0b3d43925f61a204",
+        "4939d38fdc99e11d60133bfc1d8c9bd369ea4893f2e020c015064c4f73fd00e7",
+        "99b4ae6e95e06e7192e810a1a9b683ffd548d15e8de6088cfb18b88ba2cea476",
+        "71b3a4a09b1c4b290e97a4c9726ace054fcec06013d716cf5405b27e62cccf1b"
+      ],
+      "views": 0,
+      "reviewReuse": "Four exact reviewed preview hashes; derivative was not reopened."
+    },
+    {
+      "name": "clover-1-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-normal/contact-sheet.jpg",
+      "sha256": "03d15b14cc8c2db7c4aa7651bbef2419a5648d016a24ca4f0b6c2859797ebe95",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 84512,
+      "derivedFrom": [
+        "88e316bf1b18bec501c36c21883fd300dab4e541d9fce803cbe748d2989ababc",
+        "b0f920dcbebadc943ebb3c22afd2ec280f7e9051b78f70baae444174402b461b",
+        "1c57071de5ef7e05c563198799862b5a1cfe2ef69f6053ecfc710efe3cd1da94",
+        "1edd0ba6c65f93a20bf938b0b239893687881d992863160c589ba5abb5ab87b1"
+      ],
+      "views": 0,
+      "reviewReuse": "Four exact reviewed preview hashes; derivative was not reopened."
+    },
+    {
+      "name": "clover-4-normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-normal/contact-sheet.jpg",
+      "sha256": "871930dc4f551a06cb6f8050286353c7e77b77b1b9a85c84469bbd320b844b00",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 85455,
+      "derivedFrom": [
+        "eec373e02d937edc7c23c9e42a1e6a70b63050b7f52156da7d8b8fe5d0a89767",
+        "2be59d8e106f11f0aefce44fa47d0152884cf40fbb4ee7b11c98ffe643551eb7",
+        "3d341df2f3b0905ce6626c7c06a94bc57c39873d4e1e9b872eea696482e91b81",
+        "f20f0b3a04211da71b8a6d537ea68069a4675716fa902f96f26a0f0c02cf7672"
+      ],
+      "views": 0,
+      "reviewReuse": "Four exact reviewed preview hashes; derivative was not reopened."
+    },
+    {
+      "name": "clover-1-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-1-reduced/contact-sheet.jpg",
+      "sha256": "98b70d19390be8e820ab191fb85efd03cc5700ba3789833023f44dd856eca51e",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 80726,
+      "derivedFrom": [
+        "845b4d7a46d90b843d9585bda8a0a04f006326ca4fe05f69969daf453933b624",
+        "4af35bf80fc3825c58f4b2d0e82cf8ce1a5c7d8694555ba93496da8892103312",
+        "3087138f380e14409a2f26302c126740aa8e5d82e95b71765063387e996dbbae",
+        "26f85b641ce4e0b46cc1a0f217501d892f62ee1698314480e07f800bc8be84fc"
+      ],
+      "views": 0,
+      "reviewReuse": "Four exact reviewed preview hashes; derivative was not reopened."
+    },
+    {
+      "name": "clover-4-reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r2-111413/clover-4-reduced/contact-sheet.jpg",
+      "sha256": "756af4071c06d1231282e6fe2b82bf23f3fbadbd3e08bc83b08d84e5d446aa72",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "bytes": 81635,
+      "derivedFrom": [
+        "9aa9022c2d8c97a667972778c6ad4ec9ec63b36d2722ee343a403a873719d488",
+        "0ad0fe12f0fc16b09e69d00722295d3095166a184a45fbe097915099d384a125",
+        "73fa3fcc19ee2e7bee21685e7b03e45ec121165f671e6ce4c434d72a260bf2f5",
+        "f91ba6f08cd388088ec910e0d97c19be28f20713b2e3bf87c93630241cb36a7f"
+      ],
+      "views": 0,
+      "reviewReuse": "Four exact reviewed preview hashes; derivative was not reopened."
+    }
+  ],
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-production-artifact-check.json",
+    "sha256": "09863979c67bda46d6cb8ffc299d7edb6967a12e990d91879224b545d2ee5521"
+  },
+  "preservedAttempts": [
+    {
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r1-111246/report.json",
+        "sha256": "51b6f3b919c0773762b7fe03f1e56cbd0d4f4d2df350d2c3223cc3e5c13fbfa8"
+      },
+      "comparison": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-idle-production-r1-111246/comparison.json",
+        "sha256": "0a03d6ff15bd158c1d14327cfdf1af91a99a42bb8b87e14e1f6e9e9b8db29563"
+      },
+      "decision": "Numeric304pass,visual partial: initial Wave1 obscuresF0;four previews viewedonce."
+    },
+    {
+      "capture": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-cast-production-r1-111246/report.json",
+        "sha256": "9e981a1af11e1d3ba486901154293444ca60b82785ce5d332b38b8042dcfc242"
+      },
+      "decision": "Rejected15rows: nativecallback timeout at175ms; previous seek below frame boundary plus1/60s loader deadband. R2 adds.25/30s media phase,unchanged1/30s fence and action times."
+    }
+  ],
+  "checks": {
+    "harnessSyntax": "both node --check exit0",
+    "sourceValidation": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-hud-anchor-R1.json",
+      "sha256": "4e0426cdfc416a1a95f9af581d7a616a20b91043f8e2fec3afced8770d433e0b"
+    },
+    "nativeHP": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-hp-native-R1.json",
+      "sha256": "d49baad834b863be80dc3141efb17037028632ac3177439d3f90c4528fdd1291"
+    },
+    "protectedPaths": 3833,
+    "protectedDifferences": 0,
+    "captureArrivalSha256": "1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6"
+  },
+  "limits": [
+    "Ignored candidate registry override; no release enrollment.",
+    "Deterministic30Hz captures; no ordinary-play or normal-laptop FPS claim.",
+    "Original matte/fringe/halo, downsample detail, source tail loop seam, anatomy/head/offHand and cold bytes remain open.",
+    "Cast left panel is commissioned idle; no designer cast was delivered. Comparison checks style, not exact cast matching.",
+    "Clover A6 basic preserves idle and spout cue; only ultimate has nonzero cast mesh deformation.",
+    "Ultimate text clipped by comparison crop; separate native HP/full-viewport review supplies caption evidence."
+  ]
+}

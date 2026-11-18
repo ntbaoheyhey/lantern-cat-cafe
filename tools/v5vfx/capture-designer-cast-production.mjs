@@ -9,10 +9,12 @@ import {chromium,config,openFixture,runtimeEvidence,judgeUrl,waitForDecodedMedia
 import {loadRules} from '/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load.mjs';
 const root=resolve(import.meta.dirname,'../..'),hash=x=>createHash('sha256').update(x).digest('hex');
 const cat=process.env.CXV_MEDIA_CAT??'mochi';assert(['mochi','clover'].includes(cat));
+// Request a quarter-frame inside each decode interval; action/event times stay exact.
+const mediaPhaseOffsetSeconds=.25/30;
 const buildPath=process.env.CXV_MEDIA_BUILD;assert(buildPath,'Explicit current candidate build.json required');
 const build=JSON.parse(await readFile(buildPath)),out=resolve(process.env.CXV_CAPTURE_OUT??'');
 assert(out.startsWith(resolve(root,'work/v5/CXV')+'/')&&!existsSync(out),'Fresh owned output required');await mkdir(out,{recursive:true});
-const report={utc:new Date().toISOString(),cat,url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,registryOverride:build.registryOverride,buildPath,buildSha256:hash(await readFile(buildPath)),harnessSha256:hash(await readFile(import.meta.filename)),runtimeSourceSubstitutions:[],rows:[],actions:[],captures:[],pass:false};
+const report={utc:new Date().toISOString(),cat,url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,registryOverride:build.registryOverride,buildPath,buildSha256:hash(await readFile(buildPath)),harnessSha256:hash(await readFile(import.meta.filename)),runtimeSourceSubstitutions:[],mediaPhaseOffsetSeconds,rows:[],actions:[],captures:[],pass:false};
 report.fixtureSha256=runtimeEvidence().harnessSha256;
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 const stop=()=>{for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP '+name);};
@@ -47,7 +49,7 @@ try{
   for(const ms of [...new Set([...filmTimes,175,action.plan.contact,600,action.plan.duration-.0001,action.plan.duration])].sort((a,b)=>a-b)){
    if(ms>=0)await page.evaluate(({previous,ms})=>{const m=window.__depthReview;let at=previous,now=100000+previous;m.tick(0,now);m.paused=false;while(at<ms-1e-8){const delta=Math.min(16,ms-at);now+=delta;at+=delta;m.tick(delta,now);}m.paused=true;m.notify(false);},{previous,ms});if(ms>=0)previous=ms;
    await page.waitForFunction(()=>{const m=window.__depthReview,s=window.__depthScene;return s.view().actors.every(a=>{const b=m.visualBattle.actors.find(x=>x.id===a.id);return b&&a.hp===b.hp&&a.shield===b.shield;});});
-   const fixedTime=40+ms/1000-phaseOffset;
+   const fixedTime=40+ms/1000+mediaPhaseOffsetSeconds-phaseOffset;
    await page.evaluate(({fixedTime,ms})=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true,...(ms<0?{frame:null}:{})},0);},{fixedTime,ms});
    await page.waitForFunction(cat=>{const media=[...window.__depthScene.actors.values()].find(e=>e.asset===cat).actor.designerMedia.media.state;return media.ready&&!media.seeking&&Math.abs(((media.currentTime-media.desired+15)%10)-5)<=1/60;},cat,{timeout:10000});
    await waitForDecodedMediaFrame(page,{reduced});
@@ -75,6 +77,6 @@ try{
  report.routingPass=report.rows.filter(r=>r.ms>=0&&r.ms<(r.skill===4?2200:800)).every(r=>r.sampled.name===(r.skill===4?'ult':'attack'));
  report.hitPass=report.rows.filter(r=>r.ms===(r.skill===4?1100:350)).every(r=>Math.abs(r.sampled.at-(r.skill===4?1.1:.35))<1e-8);
  report.mediaCastPass=report.rows.some(r=>r.skill===4&&!r.reduced&&r.maxMeshDelta>0)&&report.rows.filter(r=>r.reduced).every(r=>r.maxMeshDelta===0);
- report.boundaryPass=report.actions.every(a=>a.returnBoundary.rootDelta<1e-4&&a.returnBoundary.footDelta<1e-4&&a.returnBoundary.meshBefore<1e-4&&a.returnBoundary.meshAfter===0&&a.returnBoundary.afterSample.name==='idle');report.pass=report.routingPass&&report.hitPass&&report.mediaCastPass&&report.boundaryPass;report.limits='Actual A6 basic/ultimate actions. Deterministic30Hz films with300ms idle lead and500ms tail, not realtime FPS. Native callback within1/30s of continuous socket clock. Contact/mesh/root boundaries measured; visual review required. Static intake bounds are not per-frame silhouette; no enrollment/byte claim.';
+ report.boundaryPass=report.actions.every(a=>a.returnBoundary.rootDelta<1e-4&&a.returnBoundary.footDelta<1e-4&&a.returnBoundary.meshBefore<1e-4&&a.returnBoundary.meshAfter===0&&a.returnBoundary.afterSample.name==='idle');report.pass=report.routingPass&&report.hitPass&&report.mediaCastPass&&report.boundaryPass;report.limits='Actual A6 basic/ultimate actions. Deterministic30Hz films with300ms idle lead and500ms tail, not realtime FPS. Native callback within1/30s of continuous socket clock. World media phase starts a quarter-frame after the action clock to avoid timestamp truncation at exact decoder boundaries; authored action/event times stay unchanged. Contact/mesh/root boundaries measured; visual review required. Static intake bounds are not per-frame silhouette; no enrollment/byte claim.';
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,routingPass:report.routingPass,hitPass:report.hitPass,rows:report.rows.length,captures:report.captures.length,boundaryPass:report.boundaryPass,failure:report.failure}));}
