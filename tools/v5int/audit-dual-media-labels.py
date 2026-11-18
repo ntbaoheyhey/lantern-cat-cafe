@@ -49,6 +49,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('delivery', type=Path)
     parser.add_argument('output', type=Path)
+    parser.add_argument('--frames', default='0,90,180,270', help='Explicit preregistered normal-frame list; reduced F0 is always required')
     args = parser.parse_args()
     assert not args.output.exists(), 'Never replace an existing audit'
     root = Path(__file__).resolve().parents[2]
@@ -93,9 +94,11 @@ def main():
         source = subprocess.check_output(['git', 'show', raw['sourceCommit'] + ':' + item['path']], cwd=root)
         assert hashlib.sha256(source).hexdigest() == item['sha256'], item['path']
     start, finish = (datetime.fromisoformat(raw[k].replace('Z', '+00:00')) for k in ('utc', 'finishedUTC'))
-    expected = [('normal', n) for n in (0, 90, 180, 270)] + [('reduced', 0)]
+    frames = [int(x) for x in args.frames.split(',')]
+    assert frames and len(frames) == len(set(frames)) and all(0 <= n < 300 for n in frames)
+    expected = [('normal', n) for n in frames] + [('reduced', 0)]
     assert [(c['mode'], c['frame']) for c in raw['cases']] == expected
-    assert len(d['cases']) == len(raw['cases']) == 5
+    assert len(d['cases']) == len(raw['cases']) == len(expected)
     cases = []
     state_checks = count_checks = 0
     for case, delivered in zip(raw['cases'], d['cases']):
@@ -184,13 +187,13 @@ def main():
                   sourceCommit=raw['sourceCommit'], indexSha256=raw['indexSha256'], url=raw['url'],
                   viewport=raw['viewport'], verifiedHashes=len(verified),
                   verifiedHashDigest=hashlib.sha256(json.dumps(verified, sort_keys=True).encode()).hexdigest(),
-                  captures=35, preconditionCaptures=15, stateSnapshots=state_checks,
+                  captures=7*len(expected), preconditionCaptures=3*len(expected), stateSnapshots=state_checks,
                   independentCountComparisons=count_checks, cases=cases,
                   numericalEvidenceAccepted=True, productionAcceptance=False, imagesViewed=0,
                   limits=['CXV captures independently measured; no CXI subjective image review claimed.',
                           'Post-conceal paused raster only; initial differences remain preserved.',
-                          'Mochi contribution to Clover status label; semantic tail classification is CXV visual evidence.',
-                          'Five phases do not certify every frame or action; native-body/other-label occlusion not isolated.',
+                          'Commissioned media contributions only; semantic anatomy classification remains separate.',
+                          'Specified paused phases do not certify every frame or action; native-body paint not isolated.',
                           'Original natural rectangle FAIL and source seam REJECT retained.'])
     args.output.write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps({k: result[k] for k in ('verifiedHashes', 'captures', 'preconditionCaptures',
