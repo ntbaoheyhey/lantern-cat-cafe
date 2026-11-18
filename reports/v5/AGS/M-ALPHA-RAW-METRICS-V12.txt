@@ -1,0 +1,35 @@
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      61.  1.102 / 61.  1.102
+  libavcodec     63.  1.102 / 63.  1.102
+  libavformat    63.  1.102 / 63.  1.102
+  libavdevice    63.  1.102 / 63.  1.102
+  libavfilter    12.  1.102 / 12.  1.102
+  libswscale     10.  1.102 / 10.  1.102
+  libswresample   7.  1.102 /  7.  1.102
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.102
+  Duration: 00:00:10.00, start: 0.000000, bitrate: 660 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc, progressive), 640x256, 656 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc63.1.102 libx264
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+[Parsed_extractplanes_0 @ 0x75eb019f80] Requested planes not available.
+[Parsed_extractplanes_0 @ 0x75eb019f80] Failed to configure input pad on Parsed_extractplanes_0
+[vf#0:0 @ 0x75ea804000] Error reinitializing filters!
+[vf#0:0 @ 0x75ea804000] Task finished with error code: -22 (Invalid argument)
+[vf#0:0 @ 0x75ea804000] Terminating thread with return code -22 (Invalid argument)
+[vost#0:0/wrapped_avframe @ 0x75eb42c300] [enc:wrapped_avframe @ 0x75eb00c3f0] Could not open encoder before EOF
+[vost#0:0/wrapped_avframe @ 0x75eb42c300] Task finished with error code: -22 (Invalid argument)
+[vost#0:0/wrapped_avframe @ 0x75eb42c300] Terminating thread with return code -22 (Invalid argument)
+[out#0/null @ 0x75eb018240] Nothing was written into output file, because at least one of its streams received no packets.
+frame=    0 fps=0.0 q=0.0 Lsize=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.00    
+Conversion failed!

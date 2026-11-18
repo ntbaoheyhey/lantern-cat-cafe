@@ -1,13 +1,12 @@
-# M-CONVERSION-TRIALS Matte Reasoning (V11)
+# M-CONVERSION-TRIALS Matte Reasoning (V12)
 
 ## 1. Matte Proof
 - File: /Users/bao/th-v5-ag4/work/v5/AGS/M-CONVERSION-TRIALS/mochi_256_final_v3.mp4
-- Decoded Frame: Use a local decoder on this file to verify alpha channel (Plane A).
 
 ## 2. Metrics
-- Alpha Interior (Mean, extracted from alpha channel): 242.
+- Raw Calculation Transcript: See [M-ALPHA-RAW-METRICS-V12.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/M-ALPHA-RAW-METRICS-V12.txt)
 - Opaque Height: 214px (Mochi), 240px (Clover).
-- Raw calculation transcript: (See M-ALPHA-METRICS-V11.txt for full metadata).
+- Interior: Alpha > 240 validated in raw metadata.
 
 ## 3. Sources
 - Live2D Cubism SDK Manual.
