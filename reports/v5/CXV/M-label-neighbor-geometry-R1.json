@@ -1,0 +1,408 @@
+{
+  "utc": "2026-11-18T14:17:28.496Z",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/regression-heldouts/report.json",
+      "sha256": "5f1dc04f4aa6c447ffd9c1933923f6d47f20333f45161c0de7a4aa658f81ffd7"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/authored-label-native-r1-140808/expanded-status/report.json",
+      "sha256": "c0672c6e23e121da1c117aaf3fcb725a694859824464a5731ee9c5bd5354c760"
+    }
+  ],
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-neighbor-geometry-R1-preregistration.json",
+    "sha256": "8efed4f919358cafe6594709a117c9f673baeb14900c2e829809e1495da51018"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/assess-label-neighbor-geometry.mjs",
+    "sha256": "9a463a2ca6388b3398a8ea7b8a233b3203f7d8a55a3752cf2fc8be087c80ae74"
+  },
+  "source": {
+    "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+    "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-neighbor-geometry-r1/rows.json",
+    "sha256": "c759004ed59a62d43989968d46c8cc190e38841b2bc6c6018cac4d8587a2501b"
+  },
+  "analyticControls": 6,
+  "cases": 18,
+  "maxBaselineErrorCSSpx": 0.014154004231158979,
+  "ordinaryUnchanged": true,
+  "candidateClear": true,
+  "associationRiskCount": 4,
+  "maxDisplacementCSSpx": 159.68009644851494,
+  "representative": [
+    {
+      "suite": "regression-heldouts",
+      "mode": "normal",
+      "cloverFrame": 0,
+      "mochiFrame": 191,
+      "syntheticStatus": false,
+      "baselineError": 0.011385616270899845,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 267.1656294533051,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [
+            {
+              "id": "mochi",
+              "area": 1746.0415519555004
+            }
+          ],
+          "fromTargetCSSpx": 57.354163292808835,
+          "fromBaselineCSSpx": 57.354163292808835,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [],
+          "fromTargetCSSpx": 0,
+          "fromBaselineCSSpx": 0,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        }
+      ]
+    },
+    {
+      "suite": "regression-heldouts",
+      "mode": "normal",
+      "cloverFrame": 297,
+      "mochiFrame": 188,
+      "syntheticStatus": false,
+      "baselineError": 0.014154004231158979,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 267.1656294533051,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [
+            {
+              "id": "mochi",
+              "area": 1746.0415519555004
+            }
+          ],
+          "fromTargetCSSpx": 57.354163292808835,
+          "fromBaselineCSSpx": 57.354163292808835,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [],
+          "fromTargetCSSpx": 0,
+          "fromBaselineCSSpx": 0,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        }
+      ]
+    },
+    {
+      "suite": "regression-heldouts",
+      "mode": "reduced",
+      "cloverFrame": 0,
+      "mochiFrame": 0,
+      "syntheticStatus": false,
+      "baselineError": 0.008175616270818864,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 324.5197927461139,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 267.1656294533051,
+            "y": 351.3125803108808,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [
+            {
+              "id": "mochi",
+              "area": 1746.0415519555004
+            }
+          ],
+          "fromTargetCSSpx": 57.354163292808835,
+          "fromBaselineCSSpx": 57.354163292808835,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "target": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "candidate": {
+            "x": 450.45937499999997,
+            "y": 112.75625000000002,
+            "width": 64,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [],
+          "fromTargetCSSpx": 0,
+          "fromBaselineCSSpx": 0,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        }
+      ]
+    },
+    {
+      "suite": "expanded-status",
+      "mode": "normal",
+      "cloverFrame": 0,
+      "mochiFrame": 191,
+      "syntheticStatus": true,
+      "baselineError": 0.011385616270899845,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 305.5197927461139,
+            "y": 351.3125803108808,
+            "width": 102,
+            "height": 34
+          },
+          "target": {
+            "x": 305.5197927461139,
+            "y": 351.3125803108808,
+            "width": 102,
+            "height": 34
+          },
+          "candidate": {
+            "x": 456.941451447502,
+            "y": 400.87875647668386,
+            "width": 102,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [
+            {
+              "id": "mochi",
+              "area": 2392.0415519555004
+            }
+          ],
+          "fromTargetCSSpx": 159.32772685122663,
+          "fromBaselineCSSpx": 159.32772685122663,
+          "associationRisk": true,
+          "facesHudOtherLabelsClear": true
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "target": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "candidate": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [],
+          "fromTargetCSSpx": 0,
+          "fromBaselineCSSpx": 0,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        }
+      ]
+    },
+    {
+      "suite": "expanded-status",
+      "mode": "reduced",
+      "cloverFrame": 0,
+      "mochiFrame": 0,
+      "syntheticStatus": true,
+      "baselineError": 0.008175616270818864,
+      "ordinaryUnchanged": true,
+      "labels": [
+        {
+          "id": "clover",
+          "baseline": {
+            "x": 305.5197927461139,
+            "y": 351.3125803108808,
+            "width": 102,
+            "height": 34
+          },
+          "target": {
+            "x": 305.5197927461139,
+            "y": 351.3125803108808,
+            "width": 102,
+            "height": 34
+          },
+          "candidate": {
+            "x": 456.941451447502,
+            "y": 400.87875647668386,
+            "width": 102,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [
+            {
+              "id": "mochi",
+              "area": 2392.0415519555004
+            }
+          ],
+          "fromTargetCSSpx": 159.32772685122663,
+          "fromBaselineCSSpx": 159.32772685122663,
+          "associationRisk": true,
+          "facesHudOtherLabelsClear": true
+        },
+        {
+          "id": "mochi",
+          "baseline": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "target": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "candidate": {
+            "x": 431.45937499999997,
+            "y": 112.75625000000002,
+            "width": 102,
+            "height": 34
+          },
+          "feasible": true,
+          "bodyIntersections": [],
+          "baselineBodyIntersections": [],
+          "fromTargetCSSpx": 0,
+          "fromBaselineCSSpx": 0,
+          "associationRisk": false,
+          "facesHudOtherLabelsClear": true
+        }
+      ]
+    }
+  ],
+  "productionAcceptance": false,
+  "limits": [
+    "Frozen paused geometry fit only;14regression/heldouts plus4synthetic status cases.",
+    "Body bounds include transparent space;moving by a full label width is an association-risk flag,not an empirically accepted visual threshold.",
+    "No fresh native paint,legal action,loop,matte or performance acceptance. No application source or images changed."
+  ],
+  "decision": "Do not adopt full body-rectangle blocker candidate: all18cases clear numerically but Clover shifts57.35px for ordinary rows and159.68px for expanded status, flipping side and risking association. No runtime edit.",
+  "decisionUTC": "2026-11-18T14:18:09.241694+00:00"
+}

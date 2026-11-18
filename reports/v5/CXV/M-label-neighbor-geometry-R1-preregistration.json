@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-18T14:16:31.386692+00:00",
+  "question": "Can complete body-rectangle avoidance clear the new neighbor/status conflicts without large detachments or changes to ordinary labels?",
+  "basis": "18 frozen R7 paused snapshots:14 regression/heldouts and4 synthetic expanded-status. Existing failures and7 viewed-sheet observations frozen before this study.",
+  "hypothesis": "Keep the current authored HP target and ordinary label placements; for commissioned labels only, include all visible actor body bounds as obstacles in the second relocation pass.",
+  "measures": [
+    "Reconstruct unchanged source placements within1/64 CSSpx before evaluating candidate.",
+    "Require zero intersection against all bodies,faces,HUD and other labels; retain infeasible cases.",
+    "Record displacement from authored target and change from R7 observed placement; flag movement over the label width as association risk,not a formal visual threshold.",
+    "Report ordinary-label equality exactly. No image is generated or viewed."
+  ],
+  "scope": "Offline geometry fit on frozen paused snapshots,not new native/legal-action/paint clearance. Do not change application or transfer source based on this alone.",
+  "source": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "index": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "productionAcceptance": false
+}
