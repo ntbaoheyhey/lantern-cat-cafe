@@ -1,6 +1,6 @@
 # Bản review desktop — v5-m1.14
 
-Preview hiện tại: bản thử Mochi/Clover R4 (854ce6eec/index9e39c7d7), chưa đạt cổng mỹ thuật và chưa phát hành. Bản xanh v5-m1.14 và phim bên dưới giữ nguyên trong artifact riêng.
+Preview hiện tại: nativeR3 (b9b6f1728/indexfedad6e2) đang kiểm tra để phát hành landingR12; Mochi/Clover R5 đã lưu riêng, chưa đạt nối đuôi/matte và chưa phát hành. Bản xanh v5-m1.14 và phim bên dưới giữ nguyên trong artifact riêng.
 Mở [game 1280×720](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) trên máy này, giữ đầy đủ query string. Đây là preview local; chưa deploy công khai. Xác minh tag đã push ở BOARD trước khi dùng runbook.
 
 Ứng dụng và phim cùng source `c4108923c25a9c982b0831318e16a93cc991f8e7`; index SHA256 `fe8bdd0096a5dba4817b7c559b0a238c700fd37a453ee93f7e8b1e6e5f577c6e`. Artifact đầy đủ: `work/v5/CXI/releases/v5-m1.14-dist` (293.731.858 byte). Tag thêm tài liệu, không đổi ứng dụng đã quay.
