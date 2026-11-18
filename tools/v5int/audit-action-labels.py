@@ -223,12 +223,10 @@ def main():
             controls[name] = stats(difference(images[left],images[right]) > 0)
             if not args.raw_input:
                 assert controls[name] == delivered['controls'][name]
-        valid = all(control['count'] == 0 for control in controls.values())
-        if not args.raw_input:
-            assert valid == delivered['valid']
         pre_restored_delta = difference(pre['restored'],images['baseline']) > 0
-        if valid:
-            assert not pre_restored_delta.any()
+        valid = all(control['count'] == 0 for control in controls.values()) and not pre_restored_delta.any()
+        if not args.raw_input:
+            assert valid == delivered['valid'], (case['key'], 'full-image restoration control failed')
         # The first conceal is the recorded precondition, not a controlled sample.
         # Its top-HUD raster may differ even when all later full-image controls
         # are exact. Preserve that difference separately, never erase or reuse it.

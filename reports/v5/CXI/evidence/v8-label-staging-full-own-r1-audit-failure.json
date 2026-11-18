@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T15:45:05.124427+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/report.json",
+    "sha256": "95adc6f239c6bd92bcebbc24fbf2ef1f6ee04c738cc1de220f55da738bcb057f"
+  },
+  "run": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/audits/run.json",
+    "sha256": "03d0a700c30ac00ac4cd48ed3e167089e1611448709faf3e6c048c3cf2e9c922"
+  },
+  "log": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/jobs/v8-staging-full-own-r1-paint-audit.log",
+    "sha256": "29bfc12d36598143d64e22e6a3c22e9ab355166f6e2edf6117b99a885e04b6a0"
+  },
+  "tool": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/v5int/audit-action-labels.py",
+    "sha256": "cd461f9faacb72cc7617055d9ca2ab20df64558d4f2042fa64bdc8dca5cdf965"
+  },
+  "error": "AssertionError at audit-action-labels.py:231: assert not pre_restored_delta.any()",
+  "completeAttributionValid": false,
+  "marginAuditRan": false,
+  "productionAcceptance": false,
+  "ruleAndLayoutAudits": "Pass preserved; no paint acceptance follows from these."
+}

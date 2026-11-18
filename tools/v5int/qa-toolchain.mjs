@@ -17,6 +17,6 @@ export const toolchain = Object.freeze({
   chromiumExecutableExists: existsSync(chromium.executablePath()),
 });
 
-if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (process.argv[1] && existsSync(process.argv[1]) && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   console.log(JSON.stringify(toolchain));
 }

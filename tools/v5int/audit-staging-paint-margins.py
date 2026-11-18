@@ -5,15 +5,22 @@ import hashlib
 import json
 import math
 import sys
+import argparse
 import cv2
 import numpy as np
 
 cv2.setNumThreads(2)
-prior_path,output=map(Path,sys.argv[1:])
+parser=argparse.ArgumentParser()
+parser.add_argument('prior',type=Path)
+parser.add_argument('output',type=Path)
+parser.add_argument('--diagnostic-invalid-controls',action='store_true',help='Retain failed controls; arithmetic only for invalid cases, never clearance acceptance.')
+args=parser.parse_args()
+prior_path,output=args.prior,args.output
 assert not output.exists()
 sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 prior=json.loads(prior_path.read_text())
-assert prior['suite']=='staging' and prior['completeAttributionValid']
+assert prior['suite']=='staging' and prior['numericalEvidenceAccepted']
+assert prior['completeAttributionValid'] or args.diagnostic_invalid_controls, 'Invalid controls require explicit diagnostic mode'
 raw_path=Path(prior['raw']['path'])
 assert sha(raw_path)==prior['raw']['sha256']
 raw=json.loads(raw_path.read_text())
@@ -43,7 +50,7 @@ def region(rect,padding):
 
 results=[]
 comparisons=0
-for case in raw['cases']:
+for case,prior_case in zip(raw['cases'],prior['cases']):
     captures={c['variant']:c for c in case['captures']}
     baseline=image(captures['baseline'])
     hidden=image(captures['labels-hidden'])
@@ -71,13 +78,15 @@ for case in raw['cases']:
                     if count:
                         hits.append(dict(threshold=threshold,margin=margin,body=cat,pixels=count))
         rows.append(dict(label=label['id'],extraPixelsWithinPadding=extra,ambiguousPaintWithOtherLabel=ambiguous,hits=hits))
-    results.append(dict(key=case['key'],outsideAllPaddedLabels=outside,labels=rows))
+    results.append(dict(key=case['key'],attributionValid=prior_case['attributionValid'],outsideAllPaddedLabels=outside,labels=rows))
 clear=all(not r['outsideAllPaddedLabels'] and all(not l['ambiguousPaintWithOtherLabel'] and not l['hits'] for l in r['labels']) for r in results)
 result=dict(utc=datetime.now(timezone.utc).isoformat(),priorAudit=dict(path=str(prior_path.resolve()),sha256=sha(prior_path)),
             raw=prior['raw'],toolSha256=sha(__file__),sourceCommit=raw['sourceCommit'],indexSha256=raw['indexSha256'],url=raw['url'],
-            verifiedImageHashes=len(hashes),cases=len(results),comparisons=comparisons,completeControlsInherited=True,
-            fourPixelLabelSupportAndTwoPixelBodyMarginClear=clear,results=results,imagesViewed=0,productionAcceptance=False,
+            verifiedImageHashes=len(hashes),cases=len(results),comparisons=comparisons,completeControlsInherited=prior['completeAttributionValid'],
+            diagnosticInvalidControls=args.diagnostic_invalid_controls,invalidControlCases=[r['key'] for r in results if not r['attributionValid']],
+            fourPixelLabelSupportAndTwoPixelBodyMarginClear=bool(prior['completeAttributionValid'] and clear),results=results,imagesViewed=0,productionAcceptance=False,
             limits=['Full-image controls and state checks are inherited from the pinned independent audit.',
+                    'Invalid-control counts are arithmetic only and cannot establish attribution or clearance.',
                     'All label paint outside the union of padded DOM bounds is a failure; overlapping label support is not attributed.',
                     'Native shadows and separate VFX remain outside isolated body contributions.',
                     'No perceived association, ordinary-play, seam, fringe/halo or release acceptance.'])

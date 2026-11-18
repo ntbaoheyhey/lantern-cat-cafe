@@ -1,6 +1,6 @@
 # Mochi và Clover — bản thử R7, chưa phát hành
 
-Cập nhật 2026-11-18T15:28:14.888627+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
+Cập nhật 2026-11-18T15:46Z. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
 
 R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67`. Kiểm tra BOARD trước khi mở vì cổng6301 còn dùng cho nghiên cứu. Artifact xanh được giữ riêng tại `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist`.
 
@@ -10,7 +10,11 @@ R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb5
 - 3.250 bài kiểm tra web đạt. Hai trận tự nhiên hoàn tất110hành động, rules khớp giữa normal và reduced motion; không thấy lỗi decoder trong mẫu đã ghi.
 - CXI tự chụp12ảnh từ8skill hợp lệ ở52mốc; đo cả12 rồi xem đủ12ảnh, mỗi ảnh một lần. Hai mèo có tỷ lệ sân khấu phù hợp trong các ảnh này, không hiện ô video nền đen; các thanh HP/rage được xem không che mặt chính mèo đó.
 
-Thử nghiệm nhãn dưới thân Mochi mới (chỉ wrapper, chưa sửa source):76layout đóng băng và46mẫu/7.296phép so sánh đạt. Pilot Panko mới có57mốc,10đối chứng ảnh hợp lệ,320phép so sánh trong DOM sạch;494kiểm tra frame trình bày và67layout/469nhãn khớp. Kiểm tra mở rộng cho thấy bóng nhãn cần5px thay vì4px; ở775/800ms còn1/3pixel chạm Clover với sai khác RGB trên4. Vì vậy kết luận sạch trong DOM không phải sạch toàn bộ nét vẽ. Chưa có ảnh tự chụp để duyệt cảm giác nhãn thuộc đúng mèo; chờ kết thúc quyền dùng cổng của CXV.
+Thử nghiệm nhãn dưới thân Mochi mới (chỉ wrapper, chưa sửa source):76layout đóng băng và46mẫu/7.296phép so sánh đạt. Pilot Panko mới có57mốc,10đối chứng ảnh hợp lệ,320phép so sánh trong DOM sạch;494kiểm tra frame trình bày và67layout/469nhãn khớp. Kiểm tra mở rộng cho thấy bóng nhãn cần5px thay vì4px; ở775/800ms còn1/3pixel chạm Clover với sai khác RGB trên4. Vì vậy kết luận sạch trong DOM không phải sạch toàn bộ nét vẽ.
+
+Hai ảnh mới do CXI tự chụp ở0/800ms cho thấy nhãn dưới thân đọc được là của Mochi, tách biệt nhãn Clover. Đây chỉ là duyệt cảm giác liên kết trong hai ảnh, không xóa lỗi pixel. Lượt hồi quy riêng đã kết thúc đủ16hành động,1.500mốc hình học và34mẫu ảnh. Rules khớp normal/reduced;1.534layout/10.738nhãn khớp trong0,015581CSSpx. Đối chứng toàn ảnh chỉ đạt33/34: mẫu Panko350ms normal có10pixel thay đổi ở HUD phía trên giữa ảnh khôi phục trước đo và baseline. Lượt đo pixel chưa hợp lệ hoàn toàn; giữ nguyên ảnh và lỗi, chưa phát hành.
+
+Kiểm toán đầy đủ đã xác minh628hash,4.292kiểm tra frame và1.088phép so sánh trong DOM. Các số đếm trong DOM bằng0, nhưng mẫu lỗi đối chứng không được dùng làm chứng cứ sạch. Trong3.264phép so sánh mở rộng, năm mẫu có đối chứng hợp lệ vẫn có bóng nhãn chạm thân Clover với sai khác RGB trên4: ba ultimate và Panko775/800ms. [Kết quả đầy đủ và các tệp gốc](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-staging-full-own-r1-review.json) giữ rõ phần đạt, phần không hợp lệ và phần còn lỗi.
 
 **Chưa đạt để phát hành:**
 

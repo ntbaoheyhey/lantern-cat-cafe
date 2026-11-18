@@ -7,7 +7,7 @@ SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity 
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
 AGS OPEN:T-CXI-13 exactm1.15QA on6350,T-M5 independentactualtrials,T-M4 stageddeliveryEN+ZH,T-CXI-12 maskdraft,T-CXI-11 cueconditions,T-CXI-5 provenance/listening. >=2 useful tasks;line392/399/401/402audited;M4/M5 REDO.
-AGS DISPOSITIONS through500:QA paths absent;M5 dimensions corrected but hashes regressed to placeholders. T-CXI13+M5 remain useful/open;two continuationTASKs14:47Z;futuretimestamps unreliable.
+AGS DISPOSITIONS through532:528codec/dimensions/bytes partialACCEPT;529docfix/531rawclaims unsupportedREDO;530route/532toolerrors pendingexactproof. Sharedqa-toolchain import/browser/SharpPASS fromAGS cwd;twoTASKs remainOPEN.
 AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
 AUDIO OPEN:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
 CXV: introR2 audited16artifacts/40rows;transientWave1/1 with0sampled ordinary actionoverlap. New dualcat ordinary/lifecycle/art lease after R5 own capture.
@@ -29,4 +29,4 @@ M-I2 ACTIONR2 PILOT:exactGit1rule replayPASS;242hashes/18stable states/32counts.
 
 M-I2 ACTIONR2 FULL:437hashes/288states/512counts,16exactGit rule replays,normal/reduced parity.14valid contacts;Mochi/Panko1340/1302FAIL;2Mallowults13514controlpixels invalid. Offset-onlyREJECT;nativeguardstudy next.
 
-M-I2 STAGING:76frozen layouts/46paint cases scopedPASS;freshR2pilot57geometry/10validcontrols/320counts exactDOMclear/494decodedchecks/67layouts otherlabelsunchanged. FullpaintFAIL:5pxneeded,775/800ms Clover shadow/body overlap;ownview prereg ready BLOCKED-ON explicitCXV6301release. No R8/sourceadoption.
+M-I2 STAGING:own2fresh0/800ms association scopedPASS. Full16/1500geometry/34cases complete;rules parity+1534layouts/10738labels PASS. Fullcontrols33/34:normalPanko350 pre-restored differs10pixels topHUD. 628hashes/4292framechecks/1088DOMcounts0;3264marginchecksFAIL/5validClover shadowhits. Invalidcontrol retained. No sourceadoption.
