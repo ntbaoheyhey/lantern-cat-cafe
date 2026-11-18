@@ -20,3 +20,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T08:40:07.963404+00:00 — Bản thử R5 đã sửa màn thắng cho Mochi video: 146 mẫu hai chế độ, vòng10giây liên tục và khung đứng khi giảm chuyển động; hai ảnh tự chụp đã xem. Bộ kiểm tra5471 mục thành công theo kỳ vọng (5458 đạt,11 bỏ qua,2 lỗi dự kiến). Chưa phát hành: lượt đầu8.51/8.98/8.58MB đều vượt8MB, chưa có Clover; kiểm tra chơi thường do CXV tiếp tục.
 
 2026-11-18T09:07:08.966183+00:00 — Đã đối chiếu 37 tệp âm thanh với bản R5 đang phục vụ, đúng byte/hash và index. Tải âm thanh đo được 2,22/2,44/2,46 MB; đây chỉ là bằng chứng tải, chưa chứng minh có thể bỏ preload. Bản sửa ngừng video ẩn đã nhập và qua 40 kiểm tra tập trung, chưa dựng R6. Chưa phát hành.
+
+2026-11-18T09:14:37.307271+00:00 — R6 đã ngừng video sân đấu khi mở màn thắng: đồng hồ và bộ đếm frame/drop giữ nguyên ở cả hai chế độ; video màn thắng vẫn chạy đủ vòng10giây.146mẫu và2ảnh mới đạt. Toàn bộ5499kiểm tra thành công theo kỳ vọng(5486đạt,11bỏqua,2lỗidựkiến);chưa có kết luận FPS chung. CXV kiểm tra trận tự nhiên/panelboss;Clover và ngân sách8MB còn chặn phát hành.
