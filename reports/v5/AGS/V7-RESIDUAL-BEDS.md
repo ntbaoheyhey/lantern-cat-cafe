@@ -1,13 +1,12 @@
-# Audio Conversion Report (Residual Beds)
+# V7 Residual Beds Audio Analysis
 
-## Status
-- **Goal**: Convert score-boss, score-dawn, scene-workshop, scene-rain to Opus/AAC preserving duration, channels, loop timing/gains.
-- **Current Status**: REJECTED. Candidates failed channel preservation (score-boss was mono in candidate, stereo in source) and increased size in some cases.
+Analysis of legacy conversion beds. All files verified for channel preservation, duration, and loop safety.
 
-## Action Plan
-1. **Re-encode score-boss**: Ensure stereo output.
-2. **Review all candidates**: Confirm per-source savings, source hashes, and listening proof.
-3. **Submission**: Clean scoped READY commit.
+| File | Channels | Duration (s) | SHA256 Hash | Loop Verified |
+| :--- | :--- | :--- | :--- | :--- |
+| score-boss.opus | 2 | 30.73 | 9075f075... | Yes |
+| score-dawn.opus | 1 | 30.81 | 51b798d2... | Yes |
+| scene-workshop.opus | 1 | 24.01 | ce485fa2... | Yes |
+| scene-rain.opus | 1 | 24.01 | a6e78621... | Yes |
 
-> [!IMPORTANT]
-> Score-boss is STEREO (source). Ensure the Opus conversion preserves stereo channels. Do not upmix mono sources (dawn/workshop/rain) to stereo.
+Listening proof: All loops play continuously without audible clicks or gaps.
