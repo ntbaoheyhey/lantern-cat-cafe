@@ -1,11 +1,10 @@
 # CXV — Batch M: mèo sống động
-Cập nhật: 2026-11-18T12:10:12.542535+00:00
-Chín mèo ngoài Mochi/Clover đã có idle/cast và phim so sánh; Soot giữ nguyên. Bản native hiện tại vừa thắng sáu trận ở hai chế độ: luật, diễn biến và trạng thái cuối khớp; không lỗi. Đã đo 48 ảnh, xem 12 ảnh ghép mới đúng một lần. Mặt mèo, số và nút thắng đọc được trong các mẫu; vài hiệu ứng vẫn dày. Chỉ nghiệm thu riêng các mẫu này, không khẳng định mọi khung hình.
-Mochi/Clover đã qua các kiểm tra chuyển động riêng và bộ nạp trước đó, nhưng chưa đăng ký phát hành. Bản hiện tại không chứa hai video. Hai lỗi cảnh ẩn/Phase2 của Mochi đã được kiểm chứng sửa trên R6; dữ liệu lỗi cũ được giữ nguyên.
-Clover: neo HP đạt 56 trạng thái, không chồng nhãn; idle 304 mẫu/cast 290 mẫu đã đạt phạm vi riêng. Trận tự nhiên có 56 hành động/25 chiêu cuối mỗi chế độ, không lỗi.
-Đầu Clover R5 đạt 24/24 điểm kiểm tra mới; CXI đã xác nhận mô hình nguồn độc lập. Bộ chuyển tọa độ đạt 2.100 idle/3.600 cast/300 kiểm tra cách ly kênh, chưa kiểm chứng giải mã native.
-Tay tự do R6 đạt 24/24 điểm mới trên đường cong R4 giữ nguyên, không huấn luyện lại. Payload riêng dùng freePaw cần CXI hỗ trợ và kiểm chứng. Mô hình kết hợp R4 vẫn bị loại; các neo là xấp xỉ hình học do một người quan sát.
-Vòng lặp Clover vẫn không đạt: bước nối ở vùng đuôi 10,515 so với trung vị 1,992. Viền đen/halo và độ mượt trên laptop thường vẫn mở.
-Chủ dự án bỏ giới hạn 8 MB lúc12:09:40Z; số byte chỉ để báo cáo, không chặn phát hành hay nghiệm thu hình ảnh. Native hiện tại: 7.599.894 / 8.039.216 / 7.629.873 byte; Bản hai video có số byte cao hơn; giữ dữ liệu cũ nhưng bỏ cách diễn giải chặn phát hành. Tag xanh vẫn v5-m1.13.
-AGV giữ hai nhiệm vụ hữu ích: số liệu tay Clover độc lập và nghiên cứu L2/L4 từ nguồn chính thức tiếng Trung/Anh. Dừng nén landing theo ngân sách đã bỏ; giữ các bằng chứng lỗi cũ.
-3.833 đường dẫn được bảo vệ và capture-arrival.mjs vừa kiểm tra không đổi. Capture đã kết thúc trước hạn lease; đã trả 6301. cxv-wake giữ ACTIVE mỗi15phút.
+Cập nhật: 2026-11-18T12:30:49.520667+00:00
+Tag xanh v5-m1.14 đã được nhập và đẩy tại93db99267; chín mèo native có idle/cast. Hai video Mochi/Clover vẫn chưa đăng ký phát hành.
+Sáu trận R1 trên0b669/index3e7d27 thắng,270 hành động,luật/diễn biến/trạng thái khớp hai chế độ,không lỗi.48 ảnh đo và12 ảnh ghép xem đúng một lần;không gọi chúng là ảnh mới của m1.14. Vài hiệu ứng vẫn dày.
+Đầu Clover R5 và tay tự do R6 đạt24/24 điểm mới mỗi loại. Bộ chuyển tọa độ thực của CXI đạt2.100 idle/3.600 cast/600 kiểm tra cách ly; sai số thế giới tối đa1,20e-6. Đây là neo trình bày xấp xỉ,không phải chân lý giải phẫu.
+Bản thử authored R4 nguồn854ce6eec/index9e39c7d7 đã build và chạy bộ kiểm thử thành công. Đã chuẩn bị305 mẫu idle,4 hành động hợp lệ,16 ảnh; chưa chạy vì chưa có xác nhận cài đặt và lease6301.
+Clover HP đã đạt56 trạng thái/4 hành động/10 glint,không chồng nhãn,khoảng hở thân nhỏ nhất19,30px. Vòng lặp vẫn lỗi:10,515 so với trung vị1,992 ở bước nối. Viền/halo và laptop thường còn mở.
+Chủ dự án bỏ giới hạn8MB từ12:09:40Z;byte chỉ báo cáo,không chặn phát hành/hình ảnh. Bằng chứng thất bại cũ giữ nguyên nhưng cách diễn giải chặn theo byte đã bị thay thế.
+AGV giữ hai nhiệm vụ:số liệu tay Clover độc lập và nghiên cứu L2/L4 Trung/Anh;ngừng nén landing theo giới hạn đã bỏ.
+Kiểm tra merge:17 ca focus+16 preload,TSC0,3.833 đường dẫn bảo vệ và capture-arrival.mjs không đổi. cxv-wake còn ACTIVE mỗi15phút;không có job hoặc lease capture đang chạy.
