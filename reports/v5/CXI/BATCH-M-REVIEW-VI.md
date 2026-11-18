@@ -1,6 +1,6 @@
 # Mochi và Clover — bản thử R7, chưa phát hành
 
-Cập nhật 2026-11-18T16:21:01.618137+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
+Cập nhật 2026-11-18T16:44:57.881569+00:00. Bản xanh hiện tại vẫn là **v5-m1.15**, gồm chín mèo native đã được duyệt. Media được đặt hàng của Mochi/Clover chỉ bật trong bản thử tại [đường desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3); đây là địa chỉ local, không phải link public gửi giám khảo.
 
 R7 dùng source `bf01d462ac32233ab11475605d571aea691f96bf`, index `eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67`. Kiểm tra BOARD trước khi mở vì cổng6301 còn dùng cho nghiên cứu. Artifact xanh được giữ riêng tại `/Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist`.
 
@@ -38,3 +38,5 @@ Bổ sung mới: [R3 recovery độc lập](/Users/bao/taskbar-hero-chain/report
 Kiểm tra mới:598hash/56đối chứng/134.456phép đếm tái lập vị trí Clover(-28,+14) duy nhất trên lưới phát triển. Đây chỉ là cơ sở cho pilot render cố định, không phải bằng chứng phát hành. Cần đối chứng toàn ảnh, khoảng hở của cả bóng nhãn, trạng thái idle/status mới và ảnh liên kết nhãn với mèo. Giữ nguyên các lỗi hồi quy cũ; chưa đổi bản6301 hay đăng ký media.
 
 2026-11-18T16:24:22.913191+00:00: Phương án lưới Clover(-28,+14) bị loại trước khi chạy browser:1.534layout được tự tái lập,198mẫu đổi vị trí theo solver, lệch lớn nhất11,386px. Vì vậy phép dịch mask không đại diện cho ảnh render ở các mẫu đó. Không suy ra lỗi ảnh native mới;R7 và bản phát hành vẫn giữ nguyên.
+
+2026-11-18T16:44:57.881569+00:00: Kiểm toán stress Mochi/Panko/Mallow/Sorrel hoàn tất: bốn trận thắng, mỗi trận47hành động/19ultimate; replay độc lập và toàn bộ trạng thái/log/plan khớp qua1x/4x và thường/giảm chuyển động. Ở chế độ thường, p95 frame đã loại cửa sổ chụp ảnh là16,7ms tại1x và83,4ms tại4x; video rơi20/2118 và623/3022frame. Chế độ giảm chuyển động giữ video tạm dừng;không dùng nó làm bằng chứng phát video sạch. M3Pro và CPUthrottle chỉ là stress local,GPU không giảm;DOM quan sát và tải nền còn ảnh hưởng. Chưa chứng minh laptop phổ thông,không duyệt art hoặc phát hành media. [Bằng chứng](/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-performance-r1-review.json).
