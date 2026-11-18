@@ -1,0 +1,659 @@
+{
+  "utc": "2026-11-18T05:53:25.015Z",
+  "cat": "marigold",
+  "sourceCommit": "74f2440943038073cfaa4fa8c8d2ce383e5efd43",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 19,
+        "y": 18,
+        "width": 271,
+        "height": 291,
+        "body": {
+          "x": 51.52734313964842,
+          "y": 50.11815097170174,
+          "width": 206.94628497950035,
+          "height": 226.99138609554277
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 23,
+        "y": 15,
+        "width": 266,
+        "height": 294,
+        "body": {
+          "x": 55.337242994121496,
+          "y": 47.6287341698539,
+          "width": 201.68958835470505,
+          "height": 229.48080289739062
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "c1906e0424090c67e5682333de494dbea6f3241cb8a31b46ffd566ea2d5bbcf6",
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "marigold-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.5695652173913043
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.608695652173913
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.6478260869565217
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.6869565217391304
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 4.074999999999999
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 4.108333333333331
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 4.141666666666666
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 4.174999999999997
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 4.208333333333332
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 4.241666666666667
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 4.274999999999999
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 4.308333333333334
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 4.341666666666665
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 1.3524762192538016e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 6.103515625e-05,
+        "maxRootDelta": 1.3524762192538016e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:54:39.704Z",
+  "visualReview": {
+    "utc": "2026-11-18T05:55:06.437058+00:00",
+    "cat": "marigold",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/report.json",
+    "captureReportSha256": "02a226f0af13bd683347b2efbe19f7324796367f8742c3579bd9099bc675e3b9",
+    "comparison": {
+      "utc": "2026-11-18T05:54:44.997210+00:00",
+      "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/marigold-vs-mochi-1280x720.mp4",
+      "sha256": "fd182b2b48920d7ba8c03a4492b2f7ba9d9c146fad72da8fdcdebee2f7974282",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frames": 300,
+      "fps": 30,
+      "durationSeconds": 10,
+      "sameBodyHeightPx": 229,
+      "sourceHeightPx": 431,
+      "cat": "marigold",
+      "candidateMeasuredHeight": 229.48080289739062,
+      "sourcePhase": "F0..299",
+      "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+      "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/report.json",
+      "captureReportSha256": "02a226f0af13bd683347b2efbe19f7324796367f8742c3579bd9099bc675e3b9",
+      "reviews": [
+        {
+          "frame": 15,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-15.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "69cd368c4cd86fd80a34b539c136bd2c1d5d256b039f0312787f3552621a21dd"
+        },
+        {
+          "frame": 75,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-75.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "7340b44920d4908ed8dc348ba2c04e43f027970a98056bc30b9e294daabb4f3a"
+        },
+        {
+          "frame": 165,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-165.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "f8acd14af7514d03c36866a0035f70b1f18cbe8d0e32a55e3796a15e522f11a8"
+        },
+        {
+          "frame": 255,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-255.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "fc2ac7c43afbc99e2b3678a4dee2eea730a5c1dc09d7a4d7001db5acd83e66bf"
+        }
+      ],
+      "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+    },
+    "rangesPercentH": {
+      "leg_l": [
+        0.0,
+        0.0
+      ],
+      "leg_r": [
+        0.0,
+        0.0
+      ],
+      "head": [
+        1.6756435107688694,
+        2.1235926934205396
+      ],
+      "tail_3": [
+        3.1304040501226815,
+        2.3822997793165546
+      ],
+      "weapon": [
+        0.8733680110622866,
+        2.128529400524437
+      ],
+      "torso": [
+        0.23436455816110216,
+        1.0309770357173953
+      ]
+    },
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-15.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 52865,
+        "sha256": "69cd368c4cd86fd80a34b539c136bd2c1d5d256b039f0312787f3552621a21dd",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:55:30.538141+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/comparison-165.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 51727,
+        "sha256": "f8acd14af7514d03c36866a0035f70b1f18cbe8d0e32a55e3796a15e522f11a8",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:55:30.538141+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/candidate/blink-sheet.jpg",
+        "dimensions": [
+          1024,
+          224
+        ],
+        "bytes": 44218,
+        "sha256": "bd9b95d79048db9e7db0c02b100e2d25edce6e1fc715286b94b7d0586a679fa9",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:55:30.538141+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-marigold-native-R1/cast/cast-sheet.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 83994,
+        "sha256": "d14096ab56d625dff75806265f6b6edb86223fcb1ee4d745066f6fe2631eb22d",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:55:30.538141+00:00",
+        "views": 1
+      }
+    ],
+    "scope": "Fresh candidate body/style/blink/cast review at desktop1280x720; no integrated judge or performance claim.",
+    "assessment": {
+      "motion": "Marigold has a brighter head lift and broader tail follow-through within the same slow breathing family; the little held cup stays controlled during the welcoming free-hand cast.",
+      "quality": "The selected idle extremes preserve the flower collar, facial features and arm joins. The blink strip closes fully and reopens cleanly, and the cast samples keep feet planted while the open-hand release connects to the support arcs. Heal numbers remain readable.",
+      "limits": "The health bar crosses the upper cup and the top-row pose has limited headroom. The pre-existing group healing glow covers substantial recipient body detail at contact; no blanket effect-readability or integrated-build acceptance is implied by this motion review."
+    },
+    "status": "Scoped motion evidence passes; pending integrated judge acceptance.",
+    "filmProbe": {
+      "width": 1280,
+      "height": 720,
+      "avg_frame_rate": "30/1",
+      "duration": "10.000000",
+      "nb_frames": "300"
+    }
+  },
+  "geometry": [
+    {
+      "cat": "marigold",
+      "reduced": false,
+      "profile": {
+        "idea": "gentle first-leaf offering",
+        "neck": 3.7,
+        "tilt": 1,
+        "breath": 1.1,
+        "ear": 0.9,
+        "tail": 0.95,
+        "prop": 1.4,
+        "cloth": 1.25,
+        "face": 1,
+        "offset": 3.8,
+        "blink": 0.16,
+        "lag": 1.15,
+        "castX": 0.8,
+        "castY": 1.1,
+        "castArm": 1.1,
+        "castRight": 1,
+        "castProp": -1
+      },
+      "rigSha256": "2d5d0294bb1ffc1122814620afcf989cab46b3f7df85608e4ea463e6ff6ae5ff",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.6708113400914274,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.993401582806547,
+        "idle:body": 0.9744661466159026,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 0.7559663948732718,
+        "idle:hidden-arm-l": 0.9934015787059679,
+        "idle:arm-l": 0.8888433480441926,
+        "idle:weapon": 0.9934017845573094,
+        "idle:arm-r": 0.967837202731149,
+        "idle:head": 0.9385741699362301,
+        "skill:hidden-body": 0.9934050680189422,
+        "skill:body": 0.9332868779427173,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 0.7682428643989493,
+        "skill:hidden-arm-l": 0.9934047792105603,
+        "skill:arm-l": 0.6708113400914274,
+        "skill:weapon": 0.9934051745055683,
+        "skill:arm-r": 0.8519700944281159,
+        "skill:head": 0.9225254423657527
+      },
+      "worst": {
+        "clip": "skill",
+        "part": "arm-l",
+        "clock": 0.45,
+        "at": 0.31666666666666665,
+        "triangle": 115
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          1.6756435107688694,
+          2.1235926934205396
+        ],
+        "tail_3": [
+          3.1304040501226815,
+          2.3822997793165546
+        ],
+        "weapon": [
+          0.8733680110622866,
+          2.128529400524437
+        ],
+        "torso": [
+          0.23436455816110216,
+          1.0309770357173953
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    },
+    {
+      "cat": "marigold",
+      "reduced": true,
+      "profile": {
+        "idea": "gentle first-leaf offering",
+        "neck": 3.7,
+        "tilt": 1,
+        "breath": 1.1,
+        "ear": 0.9,
+        "tail": 0.95,
+        "prop": 1.4,
+        "cloth": 1.25,
+        "face": 1,
+        "offset": 3.8,
+        "blink": 0.16,
+        "lag": 1.15,
+        "castX": 0.8,
+        "castY": 1.1,
+        "castArm": 1.1,
+        "castRight": 1,
+        "castProp": -1
+      },
+      "rigSha256": "2d5d0294bb1ffc1122814620afcf989cab46b3f7df85608e4ea463e6ff6ae5ff",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.9941272309126787,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.998482375242176,
+        "idle:body": 0.9941272309126787,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 1,
+        "idle:hidden-arm-l": 0.9984822976591068,
+        "idle:arm-l": 0.9984811819578018,
+        "idle:weapon": 0.9984826347391114,
+        "idle:arm-r": 0.9984810588524181,
+        "idle:head": 0.9984750511908611,
+        "skill:hidden-body": 0.9984831909302604,
+        "skill:body": 0.994130152688344,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 1,
+        "skill:hidden-arm-l": 0.9984829029242477,
+        "skill:arm-l": 0.9984811819578018,
+        "skill:weapon": 0.9984832413455161,
+        "skill:arm-r": 0.9984820279485442,
+        "skill:head": 0.9984804397025542
+      },
+      "worst": {
+        "clip": "idle",
+        "part": "body",
+        "clock": 1.8333333333333333,
+        "at": 0,
+        "triangle": 48
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          0,
+          0.4884263194867122
+        ],
+        "tail_3": [
+          0,
+          0
+        ],
+        "weapon": [
+          0,
+          0.2774100564071569
+        ],
+        "torso": [
+          0,
+          0.23712471821499825
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    }
+  ],
+  "checks": {
+    "focused": 60,
+    "files": 4,
+    "typecheckExit": 0,
+    "runtimeEquivalentTo": "a3173c08e",
+    "logs": [
+      "work/v5/CXV/jobs/m-native-eight-tests-r2.log",
+      "work/v5/CXV/jobs/m-native-eight-typecheck-r2.log"
+    ]
+  }
+}
