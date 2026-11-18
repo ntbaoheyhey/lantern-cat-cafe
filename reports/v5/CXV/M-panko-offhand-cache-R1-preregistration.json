@@ -1,0 +1,45 @@
+{
+  "utc": "2026-11-18T18:04:07.239396+00:00",
+  "study": "/Users/bao/taskbar-hero-mailbox/LEARN/CXV-panko-offhand-cache-v8-20261118.md",
+  "implementationNotBeforeUTC": "2026-11-18T18:07:11.457301+00:00",
+  "source": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/apps/web/src/game/rig/drawing-layer.ts",
+    "sha256": "41b919467bb541b2f53b2a9ee50c21e018baec06a48b2c44d89bb9d82709129b"
+  },
+  "hypothesis": "Cache Panko immutable offHand ellipse weight in one appended Float64 slot after existing overlap weights; remove repeated arithmetic only inside existing Panko living branch.",
+  "scope": "Tools-only source transform and isolated original/candidate modules;no app edit or adoption before evidence.",
+  "guards": [
+    "Only Panko with an authored offHand socket increases vertex stride by1.",
+    "Existing fixed enum positions,overlap slots and other units remain byte-identical.",
+    "Arbitrary point/seek without cached weights uses original expression;same operation order.",
+    "dispose clears same Map;no new global cache."
+  ],
+  "correctness": {
+    "cats": [
+      "panko",
+      "mochi",
+      "clover",
+      "mallow",
+      "sorrel",
+      "biscuit",
+      "inkcap",
+      "cinnamon",
+      "brioche",
+      "velvet",
+      "marigold"
+    ],
+    "exclude": "Soot paths/tests untouched",
+    "cases": "Forward/backward,normal/reduced,idle/skill/attack/ult/hurt/ko/victory boundaries;all5Panko poses;nonfinite recovery;all Float32 vertices,UV/index bytes,feet/face/arbitrary sockets/map references exact against original.",
+    "sampling": "Development deterministic cases;not motion heldouts or production acceptance."
+  },
+  "memory": {
+    "bytesPerPose": 8712,
+    "maxFivePoses": 43560,
+    "meaning": "Upper bounds;report actually materialized pose keys and buffer-byte delta,plus cold setup."
+  },
+  "timing": {
+    "requires": "Fresh explicit CXI host timing grant;no browser or benchmark while another lease active",
+    "decision": "First compare all-deformer warmed/cold work,not the isolated ellipse only. Advance to native unprofiled ABBA full battles only if correctness exact and useful stable gain warrants integration complexity. No FPS or causal claim from prior10.3percent sample share."
+  },
+  "productionAcceptance": false
+}
