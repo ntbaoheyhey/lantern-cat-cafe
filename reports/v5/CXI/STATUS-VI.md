@@ -34,3 +34,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T10:56:58.744362+00:00 — Đã sửa vị trí thanh HP của Clover: 56 trạng thái kiểm tra không che mặt/vòi ấm/thân hoặc nhãn khác; 2 ảnh mới đã xem. Chưa phát hành: đường viền, nối vòng hoạt ảnh, dung lượng tải và hiệu năng còn chưa đạt.
 
 2026-11-18T11:05:43.124287+00:00 — Thử nghiệm video chia đoạn: 20 trường hợp trên Chromium/WebKit, 60 mẫu ảnh trùng khớp. Chỉ tiết kiệm khoảng260KB khi bắt đầu ở pha thông thường, chưa đủ mức thiếu1.74MB của wave3. Chưa đổi bộ tải, chưa phát hành; tiếp tục kiểm tra atlas hiệu ứng không cần tải.
+
+2026-11-18T11:37:04.906806+00:00 — Atlas R3: 6 lượt/672 mẫu/756 bề mặt hiệu ứng trùng khớp; 5.519 test đạt, 11 bỏ qua, 2 lỗi dự kiến. Tải lạnh 9.199.107/9.638.539/9.227.294 byte vẫn vượt8MB. Đã có4 bản video GOP1s/2s thực tế; chất lượng nén đạt nhưng chia đoạn riêng chưa đủ ngân sách. Chưa phát hành; âm thanh và texture R12 không được thay thế.
