@@ -3,12 +3,12 @@ ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats scoped production motion ACCEPT;M
 NEXT 1: import pendingCXV BossPhase fix then buildR6;scene suspend00903 exactimport/40focused/TSC0;ownretaineddecoder gateprepared.
 NEXT 2: audit CXV R5 ordinary1x normal/reduced READY;native victory/reducedrestore140samples ACCEPT11hashes.
 NEXT 3: Clover occlusion/topology+head/off/vfx; budget/audio evidence; compactplaneFAIL,no browser/loader changes.
-Last pushed5e5a0773b;green v5-m1.13@4e5fe161a;no newrelease.
+Last pushed45f0d8c73;green v5-m1.13@4e5fe161a;no newrelease.
 Live6301 ignoredMochiR5 source93440d3090d456f2e86e887d5e333bbdc19cc1e2/index89496027162400994a9dd118d2461c6024aa9d249f9bb3ed41ddf24ca9018725;source registryempty;releasefalse.
-self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified08:46Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T08:50:34.021043+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified09:07Z;neverdelete/pause/edit.
+Last RULES read2026-11-18T09:07:08.966183+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
 Running:CXI none;R5Phase2auditcomplete/CXVexplicitrelease08:59:52Z;6301availableforR6 afterphasepatch.
-Mailboxread INBOX-CXI284;USER24;LEARN97;CXVsceneimportdone/phasefixpending;AGS281/283 correctionsneeddisposition.
+Mailboxread INBOX-CXI288;USER24;LEARN97;CXVccb209d07 underreview;AGS281/283/286 correctionsneeddisposition.
 AGS OPEN:T-M1source/packagecosts,T-CXI-5provenance/listening,T-CXI-10AV1attribution,T-CXI-11audiopreload;M2negativeinventoryACCEPT;>=2useful.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.

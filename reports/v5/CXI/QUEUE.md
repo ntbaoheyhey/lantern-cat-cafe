@@ -1,13 +1,13 @@
 # CXI V8 — Batch M first
 M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover seam topology/strain and head/off/vfx sockets unresolved; no sequence adoption.
-M-I2 OPEN: hidden battle video runs afterresult (43extradrops/1.45s); loader suspend hook+CXV scene wiring required. R5 cold8508596/8975543/8584317B FAIL8MB; Clover absent. Ordinary1x/performance and media performance require verified receipts.
+M-I2 OPEN: loader suspension9bcbce1d5+scene00903 imported45f0d8c73;40focused/TSC0;production retained-decoder gate pending R6. R5 cold8508596/8975543/8584317B FAIL8MB; Clover absent. Ordinary1x/performance and media performance require verified receipts.
 M-I3 OPEN: release only after byte/quality/performance/journey/film gates; latest green milestone v5-m1.13; R5 untagged.
 SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parity retained. Never import retractedPanko d419002a4.
 CXV ACCEPT: all9nativecats scoped motion; FIELD5 R2; Mochi304sample idle/300hashes/equal227px; R4cast290samples/280frames+focusalpha. Do not reopen reviewed views.
 CXV VICTORY: exact6eb22f242 two-file import; ownR5 146samples+2freshviews PASS; fullsuite5471=5458passed+11skipped+2expectedfail,exit0. CXV native140/reduced-restore ACCEPT11verifiedhashes/fullPNGexact.
-CXV LEASE:6301/timing explicitlyreleased08:46:13Z afterordinaryR2 bothmodes won; natural measuredREADY pending.
+CXV LEASE:6301 explicitlyreleased08:59:52Z;R5 naturalPhase2 960rows confirms portrait conflict;ccb209d07 candidate underreview.
 AGS OPEN:T-M1 sourced licenses/packagecosts,T-CXI-5 listening/provenance,T-CXI-10 AV1 receipts/EN+ZH sources,T-CXI-11 real audio inventory;>=2useful.
-AGS DONE scoped:T-M2 negative provenance inventory only,214/240px unverified;T-M3 ownerdraft only. New268/270 DONE lines auditedREDO forM1/CXI10/CXI11; exactmissing data pinned.
+AGS DONE scoped:T-M2 negative provenance inventory only,214/240px unverified;T-M3 ownerdraft only. Through277 scopedREDO pinned;281/283/286 underreview. R5 audio37artifacts ownhashes verified;request is not audible-use proof.
 AGV landingR6 REJECT:242887B vs served207867B;35020B growth,claimed213293B wrong;hash verified,no view/adoption. R4finegrain rejection retained.
 CLOVER DIAGNOSTIC:unmasked0visible folds/protected216alltransition;unmasked stretchmin.450872/moves113372protectedpixels. Noadoption;layer/domain constraints require evidence.
 CODEC REJECT:compact-planeq20 1054572B/whiteMAE3.646272/edge6.882252/mask.453090;AV1 1106676B. No browser/loader adoption; retainH264fallback.

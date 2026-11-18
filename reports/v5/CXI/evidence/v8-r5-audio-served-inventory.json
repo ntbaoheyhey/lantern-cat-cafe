@@ -1,0 +1,915 @@
+{
+  "utc": "2026-11-18T09:03:28.960647+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/transfer/v8-mochi-scene-q22-r5/all.json",
+    "sha256": "a8d35143eea4b78e524b26fb390276f6e1ef4388d9f150978b9522440a983670"
+  },
+  "sourceCommit": "93440d3090d456f2e86e887d5e333bbdc19cc1e2",
+  "indexSha256": "89496027162400994a9dd118d2461c6024aa9d249f9bb3ed41ddf24ca9018725",
+  "fixtures": [
+    {
+      "fixture": "wave1",
+      "requestCount": 27,
+      "conservativeTransferBytes": 2220984,
+      "packageRequests": 11,
+      "expandedAudioPaths": 485,
+      "requests": [
+        {
+          "path": "/audio/manifest.json",
+          "totalBytes": 48592,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/manifest.json",
+          "totalBytes": 38027,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "totalBytes": 69814,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-click.opus",
+          "totalBytes": 1345,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/menu-home.opus",
+          "totalBytes": 161610,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "totalBytes": 98469,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-ui.3634c77003d19b55.json",
+          "totalBytes": 57716,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/chain-tx-confirmed.opus",
+          "totalBytes": 8228,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/scene-room.webm",
+          "totalBytes": 138442,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-confirm.opus",
+          "totalBytes": 2129,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/score-battle.opus",
+          "totalBytes": 148426,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "totalBytes": 156525,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-motion.8e1057d05d3cba4d.json",
+          "totalBytes": 62195,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-magic.18b2ee355ed517b6.json",
+          "totalBytes": 34491,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-ember.f6a20e4120cfc0e5.json",
+          "totalBytes": 120556,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-heavy.22ada4256bc7c343.json",
+          "totalBytes": 135262,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+          "totalBytes": 206000,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/scene-night.opus",
+          "totalBytes": 88948,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-mochi.522e0e7ac93ec0ff.json",
+          "totalBytes": 78408,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-soot.edd5581d2b35af78.json",
+          "totalBytes": 69407,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-clover.5ad482213dce2cf4.json",
+          "totalBytes": 95478,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-panko.72fa85c3a73c9207.json",
+          "totalBytes": 74302,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-button-guard.webm",
+          "totalBytes": 76003,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-sock-skipper.webm",
+          "totalBytes": 71979,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-needle-moth.webm",
+          "totalBytes": 84295,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-teacup-healer.webm",
+          "totalBytes": 65671,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/voice.webm",
+          "totalBytes": 28666,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "fixture": "wave3",
+      "requestCount": 29,
+      "conservativeTransferBytes": 2436071,
+      "packageRequests": 11,
+      "expandedAudioPaths": 487,
+      "requests": [
+        {
+          "path": "/audio/manifest.json",
+          "totalBytes": 48592,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/manifest.json",
+          "totalBytes": 38027,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "totalBytes": 69814,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-click.opus",
+          "totalBytes": 1345,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/menu-home.opus",
+          "totalBytes": 161610,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "totalBytes": 98469,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-ui.3634c77003d19b55.json",
+          "totalBytes": 57716,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/chain-tx-confirmed.opus",
+          "totalBytes": 8228,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/scene-room.webm",
+          "totalBytes": 138442,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-confirm.opus",
+          "totalBytes": 2129,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/score-battle.opus",
+          "totalBytes": 148426,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "totalBytes": 156525,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-motion.8e1057d05d3cba4d.json",
+          "totalBytes": 62195,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-magic.18b2ee355ed517b6.json",
+          "totalBytes": 34491,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-ember.f6a20e4120cfc0e5.json",
+          "totalBytes": 120556,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-heavy.22ada4256bc7c343.json",
+          "totalBytes": 135262,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+          "totalBytes": 206000,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/scene-workshop.webm",
+          "totalBytes": 142349,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-mochi.522e0e7ac93ec0ff.json",
+          "totalBytes": 78408,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-soot.edd5581d2b35af78.json",
+          "totalBytes": 69407,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-clover.5ad482213dce2cf4.json",
+          "totalBytes": 95478,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-panko.72fa85c3a73c9207.json",
+          "totalBytes": 74302,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-spool-ram.webm",
+          "totalBytes": 62290,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-needle-moth.webm",
+          "totalBytes": 84295,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-teacup-healer.webm",
+          "totalBytes": 65671,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-kettle-knight.webm",
+          "totalBytes": 84396,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-pollen-scout.webm",
+          "totalBytes": 75498,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-crumb-sentinel.webm",
+          "totalBytes": 87484,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/voice.webm",
+          "totalBytes": 28666,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    },
+    {
+      "fixture": "boss",
+      "requestCount": 26,
+      "conservativeTransferBytes": 2455547,
+      "packageRequests": 11,
+      "expandedAudioPaths": 484,
+      "requests": [
+        {
+          "path": "/audio/manifest.json",
+          "totalBytes": 48592,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/manifest.json",
+          "totalBytes": 38027,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/b2-ui-baked.webm",
+          "totalBytes": 69814,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-click.opus",
+          "totalBytes": 1345,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/legacy/menu-home.opus",
+          "totalBytes": 161610,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/menu-voices.webm",
+          "totalBytes": 98469,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-ui.3634c77003d19b55.json",
+          "totalBytes": 57716,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/chain-tx-confirmed.opus",
+          "totalBytes": 8228,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/scene-room.webm",
+          "totalBytes": 138442,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/v5/ui-confirm.opus",
+          "totalBytes": 2129,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/score-boss.webm",
+          "totalBytes": 261256,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/score-dawn.webm",
+          "totalBytes": 237119,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-hits.69f566877ed6baef.json",
+          "totalBytes": 156525,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-motion.8e1057d05d3cba4d.json",
+          "totalBytes": 62195,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/b2-magic.18b2ee355ed517b6.json",
+          "totalBytes": 34491,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-ember.f6a20e4120cfc0e5.json",
+          "totalBytes": 120556,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/v4-ranged-heavy.22ada4256bc7c343.json",
+          "totalBytes": 135262,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+          "totalBytes": 206000,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/scene-rain.webm",
+          "totalBytes": 135699,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-mochi.522e0e7ac93ec0ff.json",
+          "totalBytes": 78408,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-soot.edd5581d2b35af78.json",
+          "totalBytes": 69407,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-clover.5ad482213dce2cf4.json",
+          "totalBytes": 95478,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio-delivery/voice-panko.72fa85c3a73c9207.json",
+          "totalBytes": 74302,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-yarn-giant.webm",
+          "totalBytes": 67125,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/callout-binding-thread.webm",
+          "totalBytes": 68686,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        },
+        {
+          "path": "/audio/voice.webm",
+          "totalBytes": 28666,
+          "type": "Fetch",
+          "cached": false,
+          "failed": false
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "url": "/audio/manifest.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/manifest.json",
+      "artifactBytes": 1267982,
+      "sha256": "fce93f58fb53010e0bb7e6955fde488dc0b1791a3030507a46c7d0cb58bcaea8",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/v5/manifest.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/manifest.json",
+      "artifactBytes": 917133,
+      "sha256": "31a7a50102e145f62fc3637807f45e39329f8524eac3c6c3dc7b6569ec8eb724",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/b2-ui-baked.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/b2-ui-baked.webm",
+      "artifactBytes": 69546,
+      "sha256": "5431611741da5b8c8fd9aa0c8571eba484f0eab377a2b6ea71b92e54963a65f2",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/v5/ui-click.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/ui-click.opus",
+      "artifactBytes": 1080,
+      "sha256": "7e4406657b9f201d4d568c124790c11ee83ebbbd0f67573e8cf95c60bb5768e6",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/v5/legacy/menu-home.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/legacy/menu-home.opus",
+      "artifactBytes": 161341,
+      "sha256": "fc236fe75a99e29cfe0a8781b003b384efd1dd7f759a442e787ced9ebf840664",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/menu-voices.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/menu-voices.webm",
+      "artifactBytes": 98201,
+      "sha256": "f2d1df577f3b0a22308fe600510ea17c4e0e24e8e45a02ccde7593cbc529d84a",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio-delivery/b2-ui.3634c77003d19b55.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/b2-ui.3634c77003d19b55.json",
+      "artifactBytes": 99896,
+      "sha256": "3634c77003d19b554a8b3925cd1b25fd48937817aec769ed6c58c17d9bd15a07",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 103,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio/v5/chain-tx-confirmed.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/chain-tx-confirmed.opus",
+      "artifactBytes": 7963,
+      "sha256": "0311ba0531df1ad7957e132ae83e629bdc5b5dec9169e2228a7e6668b7006e5f",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/scene-room.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/scene-room.webm",
+      "artifactBytes": 138172,
+      "sha256": "01aa3e4e2cdffaa7d1a83e624495a6c7444908d83b3bc435e93f0b04326eaad3",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/v5/ui-confirm.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/ui-confirm.opus",
+      "artifactBytes": 1864,
+      "sha256": "197b4d3a4fdb68a4f6dc70b32fd99b2ba639cc25e1c51d1b3985bec051eab8f6",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/v5/legacy/score-battle.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/legacy/score-battle.opus",
+      "artifactBytes": 148157,
+      "sha256": "04a37ea2c40c15cadc154ae4d69358b889e70a3b09300dade0499bdb36edd6ca",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio-delivery/b2-hits.69f566877ed6baef.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/b2-hits.69f566877ed6baef.json",
+      "artifactBytes": 232376,
+      "sha256": "69f566877ed6baefe90e0703d1358b79bddb8dfef6c33122e2227c584347e5c7",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 113,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/b2-motion.8e1057d05d3cba4d.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/b2-motion.8e1057d05d3cba4d.json",
+      "artifactBytes": 93389,
+      "sha256": "8e1057d05d3cba4d8656e49726368afd7fbb1f1af9d67e556cac15ce4d8347c0",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 48,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/b2-magic.18b2ee355ed517b6.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/b2-magic.18b2ee355ed517b6.json",
+      "artifactBytes": 50545,
+      "sha256": "18b2ee355ed517b61b42aca73430cb8382eccf297a1238cc74b11d0808264db8",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 24,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/v4-ranged-ember.f6a20e4120cfc0e5.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/v4-ranged-ember.f6a20e4120cfc0e5.json",
+      "artifactBytes": 188391,
+      "sha256": "f6a20e4120cfc0e571dd273939c6e0fc6a9141155862b48fb96055d25a638020",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 36,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/v4-ranged-heavy.22ada4256bc7c343.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/v4-ranged-heavy.22ada4256bc7c343.json",
+      "artifactBytes": 208791,
+      "sha256": "22ada4256bc7c343ed0e45d54a2e3e803af7f06d87503bf2c1481896aa167942",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 36,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+      "artifactBytes": 330030,
+      "sha256": "2e9c13d9e898fadcac238700c70cc7e9f45a39f74a71014a2ee66037ef24be59",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 68,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio/v5/legacy/scene-night.opus",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/v5/legacy/scene-night.opus",
+      "artifactBytes": 88681,
+      "sha256": "d6eecd1ca71998e28740cbf628ec6994b899e56551c4602824f3ff6d976baa68",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio-delivery/voice-mochi.522e0e7ac93ec0ff.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/voice-mochi.522e0e7ac93ec0ff.json",
+      "artifactBytes": 111439,
+      "sha256": "522e0e7ac93ec0ff8ab7b53dc5c57e69f3c52ea3a9ba731e72e6c3719453d73a",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 11,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/voice-soot.edd5581d2b35af78.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/voice-soot.edd5581d2b35af78.json",
+      "artifactBytes": 98712,
+      "sha256": "edd5581d2b35af78189742f9e66da64660473f4bd9cd3102e46e0c3963e4470e",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 11,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/voice-clover.5ad482213dce2cf4.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/voice-clover.5ad482213dce2cf4.json",
+      "artifactBytes": 133338,
+      "sha256": "5ad482213dce2cf4c3b75ec13c1277946237b29e22dda853aa60f6547210ace3",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 11,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio-delivery/voice-panko.72fa85c3a73c9207.json",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio-delivery/voice-panko.72fa85c3a73c9207.json",
+      "artifactBytes": 106051,
+      "sha256": "72fa85c3a73c92075a17bfb3c746d3dfdcd4aeffe744d0eda3e5b513e0f925f4",
+      "kind": "transportPackage",
+      "verifiedExtractedFiles": 11,
+      "indexPath": "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-index.json"
+    },
+    {
+      "url": "/audio/callout-button-guard.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-button-guard.webm",
+      "artifactBytes": 75735,
+      "sha256": "41da5a22e742fdedd227dad2276cb8040fdeddcd60e9553bdb24f6f25563b9aa",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-sock-skipper.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-sock-skipper.webm",
+      "artifactBytes": 71711,
+      "sha256": "751520fb78dde40d2593f416a5367e492ffd43d095af9688e973828e3306b411",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-needle-moth.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-needle-moth.webm",
+      "artifactBytes": 84027,
+      "sha256": "c262162cf5debca5810339c8299381e867534904c737e4a774329990f24ffb94",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-teacup-healer.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-teacup-healer.webm",
+      "artifactBytes": 65403,
+      "sha256": "2fa2b79dd176fcc551b4adb3904e77625cceaa5804b8a87301495c2634d2fa92",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/voice.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/voice.webm",
+      "artifactBytes": 28398,
+      "sha256": "34019a0436987fed6f39fa4a7ea86b714dad1eeab665ed0bceb71e45ff2b3cd0",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/scene-workshop.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/scene-workshop.webm",
+      "artifactBytes": 142079,
+      "sha256": "4553f39e2e6545ef30494d41d8295146eaa278faad56645dd59ace28b96354a7",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-spool-ram.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-spool-ram.webm",
+      "artifactBytes": 62022,
+      "sha256": "13ef450711c6fd80a925e78ea61f9fa249d83fd3ce63a603790e9277b95a0ce6",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-kettle-knight.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-kettle-knight.webm",
+      "artifactBytes": 84128,
+      "sha256": "449ca1d594a7df73a6bf141408060f69f37cc5604b40eef93e604981c413b2ba",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-pollen-scout.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-pollen-scout.webm",
+      "artifactBytes": 75230,
+      "sha256": "cf75dc40316844c8ec5ec1175adc0a7a3e575c7a7e11225e7a67b2c9e03e15cb",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-crumb-sentinel.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-crumb-sentinel.webm",
+      "artifactBytes": 87216,
+      "sha256": "cfdb0b847b76e5ca11a4cf852cf3adeccee117945bcdcb5573ed5c4a5764d28a",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/score-boss.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/score-boss.webm",
+      "artifactBytes": 260986,
+      "sha256": "3318cc29fe47738585b02a1d96c7dcfeb3ce4da4dbeb65fd8f18872914f46c1d",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/score-dawn.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/score-dawn.webm",
+      "artifactBytes": 236849,
+      "sha256": "ce793a852af228cfd9d8f57fd30c80981ce5458ca8c9a8e18207d8b9872fbbb7",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/scene-rain.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/scene-rain.webm",
+      "artifactBytes": 135429,
+      "sha256": "01302f0900d343f6a3ff9da0424b934d79a655faeabce5d26e648d1daf48b85e",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-yarn-giant.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-yarn-giant.webm",
+      "artifactBytes": 66857,
+      "sha256": "71a23c2ce20a746dcc72c622fafd2b458977b4d2ba9fb1a6aa64e067edce905d",
+      "kind": "audioFile"
+    },
+    {
+      "url": "/audio/callout-binding-thread.webm",
+      "absolutePath": "/Users/bao/taskbar-hero-chain/apps/web/dist/audio/callout-binding-thread.webm",
+      "artifactBytes": 68418,
+      "sha256": "16e417a280ce85c10b19f6cfa2f4fd604cef38fcb43330f22dc53149c07da985",
+      "kind": "audioFile"
+    }
+  ],
+  "compressionProbe": {
+    "url": "http://127.0.0.1:6301/audio-delivery/authored-combat.2e9c13d9e898fadc.json",
+    "method": "GET Accept-Encoding:gzip",
+    "headers": {
+      "Content-Type": "application/json",
+      "ETag": "W/\"330030-1794990834077\"",
+      "Content-Encoding": "gzip"
+    },
+    "wireBodyBytes": 205542,
+    "decodedBodyBytes": 330030,
+    "artifactHashMatches": true
+  },
+  "interpretation": "Requested resources with actual installed artifact paths/hashes and exact package extraction. This is not proof of audible use, dynamic cue reachability, or safe removal. Artifact bytes differ from compressed transfer plus response headers.",
+  "sourcePointers": [
+    "/Users/bao/taskbar-hero-chain/apps/web/src/audio/engine.ts",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/audio/v5-manifest-loader.ts",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/audio/packed-audio-loader.ts",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/audio/voice-preload.ts",
+    "/Users/bao/taskbar-hero-chain/apps/web/src/audio/ranged-packs.ts"
+  ]
+}
