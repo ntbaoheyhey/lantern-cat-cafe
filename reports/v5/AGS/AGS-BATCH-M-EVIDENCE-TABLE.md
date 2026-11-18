@@ -1,4 +1,4 @@
-# AGS Batch M Evidence Table (Final Correction)
+# AGS Batch M Evidence Table (Final Review Revision)
 
 ## T-M1: License & Source
 | Field | Evidence |
@@ -15,4 +15,4 @@
 | Opaque Height | 214px (Mochi), 240px (Clover) |
 | Opaque Proof | Unavailable (No raw derivation) |
 | Alpha Mean | Unavailable (Raw calculation FAILED) |
-| Mask Layout | Packed Luminance Mask (Unverified/Unavailable) |
+| Mask Layout | Unavailable |
