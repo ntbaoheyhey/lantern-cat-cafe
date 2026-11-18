@@ -1,15 +1,14 @@
-# T-M1: Batch M License and Source Evidence (V6)
+# T-M1: Batch M License and Source Evidence (V7)
 
 ## 1. Video Export License
 - Official EN Help: https://help.live2d.com/en/sdk/sdk_001/
 - Official ZH Help: https://help.live2d.com/zh-CHS/sdk/sdk_001/
-- License Distinction (sdk_001):
-  - "Editor-video exemption" for non-runtime video exports.
-  - "Small-scale application exemption" for revenue <10MJPY.
-  - SDK Runtime integration: Full agreement compliance required.
+- License Agreement:
+  - Exemption A (Video Export): Does not require PRO for non-runtime video exports (Editor).
+  - Exemption B (Revenue): Application revenue (under 10MJPY) is a distinct exemption.
+  - SDK Runtime Integration: Full agreement compliance required for all runtime integration.
 
-## 2. Browser Evidence
+## 2. Browser Evidence (Pinned Receipts)
 - Method: Packed H264 loader (passes 92/92 tests).
-- Receipts (Pinned Local): /Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/
+- Pinned Receipt File: [RECEIPTS.txt](/Users/bao/th-v5-ag4/reports/v5/AGS/RECEIPTS.txt)
 - Browser Version (Chromium): 156.0.7788.0.
-- Cost (300 frames): 650kb/s - 1900kb/s (384px baseline).
